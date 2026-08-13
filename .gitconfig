@@ -1,0 +1,9 @@
+[safe]
+	directory = /storage/emulated/0/Download/x/deutschpfad
+	directory = /storage/emulated/0/Download/X/deutschpfad
+	directory = /sdcard/Download/X/deutschpfad
+	directory = /sdcard/Download/X/deutschpfad
+	directory = /data/data/com.termux/files/home/proj/deutschpfad
+[user]
+	email = balinader@gmail.com
+	name = naderba69
