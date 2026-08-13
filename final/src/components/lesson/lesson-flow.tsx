@@ -59,6 +59,8 @@ export function LessonFlow({ lesson, onFinish }: { lesson: Lesson; onFinish?: ()
   const [stage, setStage] = React.useState(0);
   const [learnIdx, setLearnIdx] = React.useState(0);
   const [practiceShown, setPracticeShown] = React.useState(1); // عدد التمارين المتكشفة
+  const [practiceSolved, setPracticeSolved] = React.useState(0); // عدد التمارين المحلولة
+  const practiceRequired = Math.min(2, practiceCount); // تمرينان فقط كافيان للمتابعة
   const [quizAnswered, setQuizAnswered] = React.useState(0);
   const [done, setDone] = React.useState(false);
   // المستوى الذهبي: أخطاء الجلسة تُعاد في النهاية + تلميحات متدرجة
@@ -115,7 +117,8 @@ export function LessonFlow({ lesson, onFinish }: { lesson: Lesson; onFinish?: ()
   React.useEffect(() => {
     const handler = () => {
       if (stage === PRACTICE_IDX && practiceCount > 0) {
-        // مرحلة التدريب: أظهر التمرين التالي
+        // مرحلة التدريب: زد المحلول + أظهر التالي
+        setPracticeSolved((n) => Math.min(practiceCount, n + 1));
         setPracticeShown((p) => {
           if (p < practiceCount) return p + 1;
           return p;
@@ -628,10 +631,10 @@ export function LessonFlow({ lesson, onFinish }: { lesson: Lesson; onFinish?: ()
         </div>
       </div>
 
-      {/* إرشاد صغير */}
-      {stage === PRACTICE_IDX && practiceCount > 0 && practiceShown < practiceCount && (
+      {/* إرشاد صغير: فقط في مرحلة التدريب حيث توجد تمارين فعلية */}
+      {stage === PRACTICE_IDX && practiceCount > 0 && (
         <p className="mt-3 text-center text-xs font-semibold text-muted-foreground">
-          🔒 حُلّ التمرين الظاهر ليُكشف التالي — ثم يُفعَّل زر «متابعة».
+          💡 التمارين اختيارية — حُلّ ما تستطيع، ثم تابع متى شئت.
         </p>
       )}
       {stage === QUIZ_IDX && quizCount > 0 && quizAnswered < quizCount && (
@@ -652,11 +655,8 @@ export function LessonFlow({ lesson, onFinish }: { lesson: Lesson; onFinish?: ()
               size="lg"
               className="btn-glow gap-2 px-8 text-base"
               onClick={next}
-              disabled={
-                (stage === PRACTICE_IDX && practiceCount > 0 && practiceShown < practiceCount) ||
-                (stage === QUIZ_IDX && quizCount > 0 && quizAnswered < quizCount) ||
-                (hasMistakeStage && stage === MISTAKE_IDX && mistakes.length > 0)
-              }
+              // لا تعطيل قسري — التمارين اختيارية، المستخدم لا يُحبس أبداً
+              disabled={false}
             >
               متابعة
               <ArrowLeft className="h-5 w-5" aria-hidden="true" />

@@ -41,4 +41,3 @@ next-env.d.ts
 
 # عدّاد LLM اليومي (ملف تشغيل مؤقت على الخادم)
 /.llm-counter.json
-.github/
