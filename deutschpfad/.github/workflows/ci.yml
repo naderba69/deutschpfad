@@ -1,0 +1,38 @@
+name: CI — فحص الجودة والبناء
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: Typecheck + Production Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: سحب الكود
+        uses: actions/checkout@v4
+
+      - name: إعداد Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: تثبيت الحزم
+        run: npm ci
+
+      - name: فحص الأنواع (TypeScript)
+        run: npm run typecheck
+
+      - name: اختبارات الوحدة (Unit Tests)
+        run: npm test
+
+      - name: البناء الإنتاجي
+        run: npm run build
+        env:
+          NEXT_PUBLIC_APP_URL: https://deutschpfad.vercel.app
+
+      - name: اختبارات E2E (Smoke)
+        run: npx playwright install --with-deps chromium && npm run test:e2e
