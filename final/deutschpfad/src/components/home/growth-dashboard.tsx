@@ -21,6 +21,30 @@ export function GrowthDashboard() {
   const [accuracy, setAccuracy] = React.useState<number | null>(null);
   const [streak, setStreak] = React.useState(0);
   const [badges, setBadges] = React.useState<{ name: string; emoji: string }[]>([]);
+  const [todayDone, setTodayDone] = React.useState(0);
+  const [xp, setXp] = React.useState(0);
+
+  // بطاقة الإنجاز اليومية + XP (بند 7 و9)
+  React.useEffect(() => {
+    void (async () => {
+      try {
+        const {getRecentEvents} = await import("@/lib/analytics/events");
+        const events = await getRecentEvents(2000);
+        const today = new Date().toDateString();
+        const doneToday = events.filter((e) => e.type === "lesson-completed" && new Date(e.ts).toDateString() === today).length;
+        setTodayDone(doneToday);
+        // XP من الأحداث
+        let xpTotal = 0;
+        for (const e of events) {
+          if (e.type === "exercise-result") xpTotal += e.correct ? 10 : 2;
+          if (e.type === "lesson-completed") xpTotal += 50;
+        }
+        setXp(xpTotal);
+      } catch {
+        /* تجاهل */
+      }
+    })();
+  }, []);
 
   React.useEffect(() => {
     void (async () => {
@@ -72,6 +96,23 @@ export function GrowthDashboard() {
           تطورك
         </h3>
         <span className="font-de text-lg font-extrabold text-primary">{overallPct}%</span>
+      </div>
+
+      {/* الأفاتار + الإنجاز اليومي + XP */}
+      <div className="mb-4 flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 p-3">
+        <span className="text-3xl" aria-hidden="true">
+          {overallPct >= 75 ? "🏆" : overallPct >= 40 ? "🚀" : overallPct >= 10 ? "🌱" : "🐣"}
+        </span>
+        <div className="min-w-0 flex-1">
+          <p className="text-xs font-extrabold">
+            {overallPct >= 75 ? "خبير الطريق" : overallPct >= 40 ? "متقدم واثق" : overallPct >= 10 ? "متعلم نشط" : "باحث جديد"}
+          </p>
+          <p className="text-[11px] text-muted-foreground">
+            إنجاز اليوم: <span className="font-de font-bold">{todayDone}</span> درس · إجمالي XP:{" "}
+            <span className="font-de font-bold text-gold-strong">⚡{xp}</span>
+          </p>
+        </div>
+        {todayDone > 0 && <span className="shrink-0 rounded-full bg-success/15 px-2 py-0.5 text-[10px] font-bold text-success">يوم نشط ✓</span>}
       </div>
 
       {/* أشرطة المستويات الأربعة */}

@@ -1,27 +1,10 @@
-import {Faq} from "@/components/home/faq";
-import {Features} from "@/components/home/features";
-import {FinalCta} from "@/components/home/final-cta";
-import {Hero} from "@/components/home/hero";
-import {HowItWorks} from "@/components/home/how-it-works";
-import {LearnerJourney} from "@/components/home/learner-journey";
-import {LevelsPreview} from "@/components/home/levels-preview";
-import {StatsBar} from "@/components/home/stats-bar";
+import {HomeContent} from "@/components/home/home-content";
 
 /**
- * الصفحة الرئيسية — ترتيب الأقسام البيداغوجية
- * (لوحة الرحلة تتصدر الصفحة: ترحيب + استئناف + نقطة البداية)
+ * الصفحة الرئيسية الذكية:
+ * — مسجّل: يرى مساره مباشرة (لوحة الرحلة + نقاط الاستئناف)
+ * — زائر: يرى الترويج ثم يبدأ
  */
 export default function HomePage() {
-  return (
-    <>
-      <LearnerJourney />
-      <Hero />
-      <StatsBar />
-      <Features />
-      <LevelsPreview />
-      <HowItWorks />
-      <Faq />
-      <FinalCta />
-    </>
-  );
+  return <HomeContent />;
 }

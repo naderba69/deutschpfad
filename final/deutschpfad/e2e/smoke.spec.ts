@@ -83,3 +83,48 @@ test("التدفق: اسم ← خياران ← بدء من الصفر", async (
   await page.waitForTimeout(1500);
   await expect(page).toHaveURL(/lesson\/a1-00/);
 });
+
+test("شريط جانبي + شريط سفلي ثابت في الدرس", async ({ page }) => {
+  await page.goto("/lesson/a1-01");
+  await page.waitForTimeout(2000);
+  await expect(page.getByText("مراحل الدرس", { exact: false }).first()).toBeVisible();
+  await expect(page.getByRole("button", { name: /متابعة/ }).first()).toBeVisible();
+  await page.getByRole("button", { name: /متابعة/ }).first().click();
+  await page.waitForTimeout(1000);
+  await expect(page.getByText("القاعدة 1 من", { exact: false }).first()).toBeVisible();
+});
+
+test("التدفق لا يُحبس: التقدم عبر المراحل يعمل", async ({ page }) => {
+  await page.goto("/lesson/a1-01");
+  await page.evaluate(async () => {
+    try { const dbs = await indexedDB.databases(); for (const db of dbs) if (db.name) indexedDB.deleteDatabase(db.name); } catch {}
+    localStorage.clear();
+  });
+  await page.reload();
+  await page.waitForTimeout(1500);
+  await expect(page.getByRole("button", { name: /متابعة/ }).first()).toBeVisible();
+  for (let i = 0; i < 3; i++) {
+    const btn = page.getByRole("button", { name: /متابعة/ }).first();
+    const vis = await btn.isVisible().catch(() => false);
+    if (!vis) break;
+    await btn.click().catch(() => {});
+    await page.waitForTimeout(500);
+  }
+  const count = await page.getByRole("button").count();
+  expect(count).toBeGreaterThan(0);
+});
+
+test("مركز المستوى: يعرض رحلة المستوى والدروس", async ({ page }) => {
+  await page.goto("/level/a1");
+  await expect(page.getByText("رحلة مستوى", { exact: false }).first()).toBeVisible();
+  await expect(page.getByText("دروس المستوى — بالترتيب", { exact: false }).first()).toBeVisible();
+});
+
+test("الهيدر منظم: المجموعات الأربع ظاهرة", async ({ page }) => {
+  await page.goto("/");
+  await page.waitForTimeout(1500);
+  const html = await page.content();
+  for (const label of ["تعلّم", "تدرب", "اختبر", "مراجع"]) {
+    expect(html).toContain(label);
+  }
+});

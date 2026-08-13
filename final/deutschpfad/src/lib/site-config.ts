@@ -63,6 +63,50 @@ export const siteConfig = {
     { code: "B1", href: "/learning-path#b1" },
     { code: "B2", href: "/learning-path#b2" },
   ],
+  /* ═══ التنقل المنظم (المجموعات المنسدلة) — الشكل الاحترافي ═══ */
+  navGroups: [
+    {
+      label: "تعلّم",
+      items: [
+        { title: "مسار التعلم", href: "/learning-path" },
+        { title: "مركز A1", href: "/level/a1" },
+        { title: "مركز A2", href: "/level/a2" },
+        { title: "مركز B1", href: "/level/b1" },
+        { title: "مركز B2", href: "/level/b2" },
+      ],
+    },
+    {
+      label: "تدرب",
+      items: [
+        { title: "بطاقاتي (مراجعة ذكية)", href: "/flashcards" },
+        { title: "تدريب التحدث", href: "/sprechtraining" },
+        { title: "مقيّم الكتابة", href: "/schreib-bewertung" },
+        { title: "تدريب الإملاء", href: "/diktate" },
+        { title: "لعبة تركيب الجمل", href: "/satzbau" },
+      ],
+    },
+    {
+      label: "اختبر",
+      items: [
+        { title: "مركز الاختبارات", href: "/tests" },
+        { title: "تحديد المستوى", href: "/placement" },
+        { title: "محاكاة Goethe", href: "/tests/mock" },
+        { title: "امتحان الختم", href: "/tests/seal/b2" },
+        { title: "محاكاة B2 الكاملة", href: "/tests/vollpruefung" },
+      ],
+    },
+    {
+      label: "مراجع",
+      items: [
+        { title: "القاموس الشامل", href: "/glossar" },
+        { title: "المرجع النحوي", href: "/grammatik" },
+        { title: "القراءة المتدرجة", href: "/reading" },
+        { title: "مكتبة الاستماع", href: "/hoeren" },
+        { title: "الأفعال الشاذة", href: "/verben" },
+        { title: "بنك العبارات", href: "/redemittel" },
+      ],
+    },
+  ],
   footerLinks: {
     منصة: [
       { title: "الرئيسية", href: "/" },

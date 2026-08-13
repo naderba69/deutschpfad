@@ -69,9 +69,17 @@ export function SequentialPath() {
                       </div>
                     </div>
                   </div>
-                  <span className="shrink-0 rounded-full bg-muted px-3 py-1 text-xs font-bold text-muted-foreground">
-                    {levelLessons.length} دروس
-                  </span>
+                  <div className="flex shrink-0 items-center gap-2">
+                    <Link
+                      href={`/level/${level.code.toLowerCase()}`}
+                      className="rounded-lg border border-primary/30 bg-card px-3 py-1 text-xs font-bold text-primary transition-colors hover:bg-primary/10"
+                    >
+                      مركز المستوى ←
+                    </Link>
+                    <span className="rounded-full bg-muted px-3 py-1 text-xs font-bold text-muted-foreground">
+                      {levelLessons.length} دروس
+                    </span>
+                  </div>
                 </div>
 
                 {/* الدروس */}
