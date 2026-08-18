@@ -1,0 +1,406 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════
+   نظام التصميم — Design Tokens (CSS Variables)
+   Light Mode في :root — Dark Mode في .dark
+   ═══════════════════════════════════════════════════════════ */
+
+@layer base {
+  :root {
+    /* الألوان الأساسية */
+    --background: 213 44% 98%;
+    --foreground: 224 46% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 46% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 46% 12%;
+
+    --primary: 215 100% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 214 32% 94%;
+    --secondary-foreground: 224 46% 12%;
+
+    --muted: 214 32% 94%;
+    --muted-foreground: 217 17% 45%;
+
+    --accent: 214 32% 92%;
+    --accent-foreground: 224 46% 12%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* ألوان مميزة للنظام */
+    --success: 166 78% 28%;
+    --success-foreground: 0 0% 100%;
+
+    --gold: 45 100% 51%;
+    --gold-foreground: 224 46% 12%;
+    /* ذهبي داكن للاستخدام كنص/أيقونة — يحقق تباين AA (≥4.5:1) على الخلفيات الفاتحة */
+    --gold-strong: 41 95% 30%;
+
+    --border: 214 24% 88%;
+    --input: 214 24% 86%;
+    --ring: 215 100% 47%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 226 44% 7%;
+    --foreground: 214 30% 96%;
+
+    --card: 226 40% 10%;
+    --card-foreground: 214 30% 96%;
+
+    --popover: 226 40% 10%;
+    --popover-foreground: 214 30% 96%;
+
+    --primary: 213 94% 62%;
+    --primary-foreground: 226 44% 8%;
+
+    --secondary: 226 30% 16%;
+    --secondary-foreground: 214 30% 96%;
+
+    --muted: 226 30% 16%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 226 30% 19%;
+    --accent-foreground: 214 30% 96%;
+
+    --destructive: 0 72% 58%;
+    --destructive-foreground: 226 44% 8%;
+
+    --success: 161 68% 52%;
+    --success-foreground: 226 44% 8%;
+
+    --gold: 45 100% 52%;
+    --gold-foreground: 226 44% 8%;
+    /* ذهبي فاتح للاستخدام كنص/أيقونة — يحقق تباين عالٍ على الخلفيات الداكنة */
+    --gold-strong: 45 100% 62%;
+
+    --border: 226 28% 18%;
+    --input: 226 28% 20%;
+    --ring: 213 94% 62%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    overflow-x: clip;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-tajawal), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-primary/20 text-foreground;
+  }
+
+  /* حلقة تركيز واضحة لأي عنصر تفاعلي عند التنقل بلوحة المفاتيح
+     (ضمان وصولية كاملة حتى للعناصر التي لا تملك class صريح) */
+  :focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* احترام تفضيل تقليل الحركة في النظام */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* شريط تمرير أنيق */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-border;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     شبكة أمان أفقية: قصّ الفائض أفقيًا على مستوى الجذر
+     overflow-x: clip (وليس hidden) — يمنع الفيضان الأفقي
+     دون كسر position:sticky (clip لا ينشئ حاوية تمرير)
+     ═══════════════════════════════════════════════════════════ */
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     الكلمات الألمانية المركبة الطويلة (مثل Wohnungsbesichtigung)
+     لا تخرج من بطاقاتها على الشاشات الضيقة — تُكسر داخل الكلمة
+     عند الحاجة فقط (لا يؤثر على النصوص العادية أبداً)
+     ═══════════════════════════════════════════════════════════ */
+  [lang="de"],
+  .font-de {
+    overflow-wrap: break-word;
+  }
+
+  /* صناديق الإدخال الألمانية: منع التكبير التلقائي على iOS */
+  input[lang="de"],
+  textarea[lang="de"] {
+    font-size: 16px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ملاحظة حاسمة (درس من كارثة v5.4):
+   ❌ لا تُضف أبداً قاعدة عمومية تكسر whitespace-nowrap على
+      الجوال — فئة whitespace-nowrap أساسية في كل أزرار Button،
+      وكسرها يجعل كل الأزرار تلتفّ وتتمدد وتتداخل مع المحتوى.
+   الحل الصحيح لأي زر طويل: class مخصصة على ذلك الزر فقط
+   (مثل whitespace-normal) وليس قاعدة @media عمومية.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════
+   أدوات مساعدة (Utilities) خاصة بالمنصة
+   ═══════════════════════════════════════════════════════════ */
+
+@layer utilities {
+  /* النص الألماني: اتجاه LTR + خط لاتيني (يُستعمل مع مكوّن LangDe) */
+  .font-de {
+    font-family: var(--font-inter), var(--font-tajawal), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  /* نص متدرّج الألوان للعناوين */
+  .text-gradient {
+    @apply bg-gradient-to-l from-sky-500 via-blue-600 to-indigo-600 bg-clip-text text-transparent;
+  }
+
+  /* مؤشر شريط التقدم — يعمل في الاتجاهين RTL/LTR (عرض لا إزاحة) */
+  .progress-indicator {
+    left: 0;
+  }
+  [dir="rtl"] .progress-indicator {
+    left: auto;
+    right: 0;
+  }
+
+  /* زجاجية (Glassmorphism) خفيفة */
+  .glass {
+    @apply border border-white/25 bg-white/70 backdrop-blur-md;
+  }
+  .dark .glass {
+    @apply border-white/10 bg-slate-900/60;
+  }
+
+  /* خلفية شبكية خفيفة للأقسام */
+  .bg-grid {
+    background-image:
+      linear-gradient(to left, hsl(var(--border) / 0.55) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.55) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  /* موازنة أسطر العناوين الطويلة */
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   حركات خفيفة وسلسة
+   ═══════════════════════════════════════════════════════════ */
+
+@layer utilities {
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes blob {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(26px, -34px) scale(1.08);
+    }
+    66% {
+      transform: translate(-22px, 22px) scale(0.94);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.7s ease-out both;
+  }
+
+  .animate-blob {
+    animation: blob 9s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 5s ease-in-out infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   أنماط الطباعة (Print) — احفظ الدرس PDF نظيفاً
+   ═══════════════════════════════════════════════════════════ */
+@media print {
+  header,
+  footer,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  main {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* منع كسر البطاقات عبر الصفحات */
+  article,
+  section,
+  .rounded-xl,
+  .rounded-2xl,
+  .rounded-lg {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* إظهار روابط الأقسام كاملة عند الطباعة */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #555;
+  }
+
+  /* ألوان داكنة تصبح سوداء للتباين */
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* ═══ حركة دخول خطوة الدرس (تفاعلية) ═══ */
+@keyframes lesson-step-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lesson-step-enter {
+  animation: lesson-step-in 0.35s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lesson-step-enter {
+    animation: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   تحسينات UI/UX الاحترافية
+   ═══════════════════════════════════════════════════════════ */
+
+/* ظلال ناعمة + حواف موحدة */
+.shadow-soft {
+  box-shadow: 0 4px 20px -4px rgb(0 0 0 / 0.08), 0 1px 3px rgb(0 0 0 / 0.04);
+}
+
+/* بطاقات تفاعلية عند التحويم */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px -8px rgb(0 0 0 / 0.15);
+}
+
+/* حركة ظهور ناعمة */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fade-up 0.4s ease-out;
+}
+
+/* شريط تقدم متدرج */
+.progress-gradient {
+  background: linear-gradient(to left, #2563eb, #f59e0b, #16a34a);
+}
+
+/* أزرار رئيسية محسّنة */
+.btn-glow {
+  box-shadow: 0 4px 14px -2px rgb(37 99 235 / 0.4);
+  transition: all 0.2s ease;
+}
+.btn-glow:hover {
+  box-shadow: 0 6px 20px -2px rgb(37 99 235 / 0.5);
+  transform: translateY(-1px);
+}
+
+/* فواصل ناعمة */
+.divider-soft {
+  background: linear-gradient(to left, transparent, rgb(0 0 0 / 0.08), transparent);
+  height: 1px;
+}
+
+/* ═══ شريط الانتقال بعد إتمام الدرس ═══ */
+@keyframes progressbar {
+  from { width: 0%; }
+  to { width: 100%; }
+}

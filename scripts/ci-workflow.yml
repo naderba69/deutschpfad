@@ -1,0 +1,39 @@
+# ═══════════════════════════════════════════════════════════
+#  CI — DeutschPfad (يُفعَّل عند توفر Token بصلاحية workflow)
+#  انسخ هذا الملف إلى: .github/workflows/ci.yml ثم ارفعه
+#  سيشغّل GitHub كل الاختبارات تلقائياً على كل push/PR
+# ═══════════════════════════════════════════════════════════
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: تثبيت الاعتماديات
+        run: npm ci
+
+      - name: فحص الأنواع (TypeScript)
+        run: npm run typecheck
+
+      - name: فحص ESLint
+        run: npm run lint
+
+      - name: اختبارات الوحدة
+        run: npx vitest run
+
+      - name: البناء الإنتاجي
+        run: npm run build

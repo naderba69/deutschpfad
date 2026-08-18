@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="درب الألمانية — DeutschPfad">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <circle cx="112" cy="104" r="30" fill="#7dd3fc" opacity="0.35"/>
+  <circle cx="424" cy="396" r="42" fill="#c7d2fe" opacity="0.3"/>
+  <text x="256" y="296" font-family="Inter, Arial, sans-serif" font-size="232" font-weight="800" fill="#ffffff" text-anchor="middle">De</text>
+  <g>
+    <rect x="126" y="372" width="260" height="22" rx="11" fill="#0a0a0a"/>
+    <rect x="126" y="394" width="260" height="22" rx="11" fill="#dd0000"/>
+    <rect x="126" y="416" width="260" height="22" rx="11" fill="#ffcc00"/>
+  </g>
+</svg>

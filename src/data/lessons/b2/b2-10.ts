@@ -1,0 +1,511 @@
+import type { Lesson } from "@/types/lesson";
+
+/**
+ * الدرس B2-10: الدراسة في ألمانيا — الكتابة الأكاديمية + مراجعة B2 الشاملة
+ */
+export const lessonB210: Lesson = {
+  id: "b2-10",
+  unitId: "b2-10",
+  level: "B2",
+  order: 1,
+  titleDe: "Studium in Deutschland",
+  titleAr: "الدراسة في ألمانيا",
+  duration: 45,
+  summary:
+    "النظام الجامعي والكتابة الأكاديمية (Fachsprache)، أساليب التأكيد والتلطيف والتحفظ، ومراجعة شاملة تجمع كل قواعد B2 — خاتمة المستويات الأربعة!",
+
+  lernziele: [
+    { id: "z1", de: "Ich kann akademische Texte schreiben.", ar: "أن أكتب نصوصاً أكاديمية بلغة التخصص." },
+    { id: "z2", de: "Ich kann Meinungen abschwächen und betonen.", ar: "أن ألطّف وأؤكد وأتحفظ في الكتابة الأكاديمية." },
+    { id: "z3", de: "Ich kann alle B2-Grammatik kombinieren.", ar: "أن أجمع كل قواعد B2 — وأكون جاهزاً للامتحانات." },
+      { id: "z4", de: "Ich kann über Studienmöglichkeiten in Deutschland informieren.", ar: "أن أقدم معلومات عن فرص الدراسة في ألمانيا." },
+  ],
+  einfuehrung: {
+    motivatingQuestionAr:
+      "أنت الآن في قمة رحلتك! هذا الدرس الأخير يجمّع B2 كله: Konjunktiv I (النقل)، Passiv المتقدم، النسبية المتقدمة، المشاركات، الروابط المتقدمة، الاشتقاق، Futur II، الأفعال مع حروف الجر. وستضيف مهارة الباحث: التأكيد والتلطيف والتحفظ — لغة الأكاديميا.",
+    motivatingQuestionDe: "Wie schreibt man eine Hausarbeit?",
+    contextAr:
+      "الدراسة في ألمانيا حلم كثيرين: نتعلم لغة الجامعة — المقال الأكاديمي وطرق التعبير الدقيق — ثم نراجع B2 كله في ختام المستويات الأربعة.",
+    contextDe: "Die vorliegende Arbeit beschäftigt sich mit der deutschen Sprache.",
+    connectionToPreviousAr: "هذا ختام B2: من Konjunktiv I (درس 1) إلى الوصلات (درس 9). كل شيء يجتمع في الدرس الأخير — وبعده: اختبارات Goethe الكاملة (المرحلة 10)!",
+    activateVocabulary: [
+      { de: "das Studium", ar: "الدراسة الجامعية" },
+      { de: "die Hausarbeit", ar: "البحث الجامعي" },
+      { de: "die Fachsprache", ar: "لغة التخصص" },
+      { de: "das Seminar", ar: "الندوة" },
+      { de: "die Universität", ar: "الجامعة" },
+    ],
+  },
+
+  review: [
+    {
+      id: "r1",
+      type: "multiple-choice",
+      instructionAr: "مراجعة من B2: اختر النقل:",
+      questionDe: "Er sagt, er ___ Zeit. (Konjunktiv I)",
+      options: ["habe", "hat", "hätte", "haben"],
+      correctIndex: 0,
+      explanation: "Konjunktiv I: habe (درس العلوم).",
+      errorType: "grammar",
+    },
+    {
+      id: "r2",
+      type: "multiple-choice",
+      instructionAr: "مراجعة من B2: اختر الحالة:",
+      questionDe: "Die Tür ___ geöffnet. (مفتوحة — حالة)",
+      options: ["ist", "wird", "kann", "wurde"],
+      correctIndex: 0,
+      explanation: "Zustandspassiv: ist (درس الاقتصاد).",
+      errorType: "grammar",
+    },
+    {
+      id: "r3",
+      type: "fill-blank",
+      instructionAr: "مراجعة من B2: أكمل:",
+      template: "Ich interessiere mich ___ Musik. (بـ)",
+      blanks: [
+        { correct: "für", options: ["für", "auf", "von"] },
+      ],
+      explanation: "sich interessieren für (درس اللغات).",
+      errorType: "preposition",
+    },
+  ],
+
+  theory: [
+    {
+      id: "t1",
+      titleAr: "الكتابة الأكاديمية: التأكيد والتلطيف والتحفظ",
+      titleDe: "Akademisches Schreiben: betonen, abschwächen, einschränken",
+      explanationAr:
+        "الأسلوب الأكاديمي يحتاج ثلاث أدوات: التأكيد: zweifellos (بلا شك)، eindeutig (بوضوح)، es ist erwiesen (ثابت). التلطيف: meiner Ansicht nach (في رأيي)، möglicherweise (ربما)، es scheint (يبدو). التحفظ: unter Umständen (في بعض الحالات)، in gewissem Maße (إلى حد ما)، es lässt sich nicht leugnen (لا يمكن إنكار).",
+      whyAr:
+        "لماذا هذه الثلاثية؟ لأن الأكاديميا تقيّم «الجرأة المدروسة»: ادعاء حاد بلا دليل = ضعف. تحفظ زائد = ضعف. التوازن: أكّد المدعوم، ولطّف غير المؤكد، وتحفظ عند الشك. هذا «النضج الفكري» الذي يبحث عنه المصححون.",
+      table: {
+        title: "أدوات الأسلوب الأكاديمي",
+        columns: ["الوظيفة", "العبارات", "مثال"],
+        rows: [
+          { label: "تأكيد", cells: ["zweifellos, eindeutig, es ist erwiesen", "Es ist erwiesen, dass Sprache das Denken prägt."] },
+          { label: "تلطيف", cells: ["meiner Ansicht nach, möglicherweise, es scheint", "Meiner Ansicht nach ist das ein wichtiger Punkt."] },
+          { label: "تحفظ", cells: ["unter Umständen, in gewissem Maße", "In gewissem Maße stimmt das."] },
+        ],
+      },
+      examples: [
+        { de: "Es ist erwiesen, dass Sprachenlernen das Gehirn stärkt.", ar: "ثابت أن تعلم اللغات يقوي الدماغ." },
+        { de: "Meiner Ansicht nach ist der Austausch unverzichtbar.", ar: "في رأيي التبادل لا غنى عنه." },
+        { de: "Möglicherweise spielt auch die Motivation eine Rolle.", ar: "ربما تلعب الحوافز دوراً أيضاً." },
+        { de: "In gewissem Maße kann man dem zustimmen.", ar: "إلى حد ما يمكن الموافقة على ذلك." },
+        { de: "Zusammenfassend lässt sich sagen, dass B2 ein Meilenstein ist.", ar: "خلاصةً يمكن القول إن B2 علامة فارقة." },
+      ],
+      comparisonWithArabic:
+        "«ثابت أن» = es ist erwiesen، dass. «في رأيي» = meiner Ansicht nach. «إلى حد ما» = in gewissem Maße. «خلاصة القول» = zusammenfassend lässt sich sagen. كلها تطابق عباراتنا الأكاديمية.",
+      eselsbruecke:
+        "«ثلاثية الأكاديميا: أكّد (erwiesen)، لطّف (meiner Ansicht)، تحفظ (in gewissem Maße)» — و«Zusammenfassend lässt sich sagen» = خاتمة ذهبية.",
+      commonMistakes: [
+        { wrong: "أسلوب حاد بلا دليل", right: "لطّف: meiner Ansicht nach, möglicherweise", whyAr: "الأكاديميا تكره الجزم بلا دليل." },
+        { wrong: "تحفظ زائد (vielleicht في كل جملة)", right: "وازن: أكّد المدعوم ولطّف الباقي", whyAr: "التوازن هو النضج." },
+        { wrong: "ich denke (عامية) في مقال أكاديمي", right: "meiner Ansicht nach / meines Erachtens", whyAr: "الأسلوب الرسمي: Erachtens أرقى." },
+      ],
+      relatedRuleComparison: {
+        title: "Erörterung أم Hausarbeit؟",
+        content: "Erörterung = مقال رأي (رأي + حجج). Hausarbeit = بحث أكاديمي (منهجية + مصادر + استشهاد). كلاهما بأسلوب رسمي — لكن البحث أعمق ببنية: Einleitung, Hauptteil, Schluss + Literaturverzeichnis.",
+      },
+    },
+    {
+      id: "t2",
+      titleAr: "الأسلوب الاسمي (Nominalstil) في الكتابة الرسمية",
+      titleDe: "Erweiterung",
+      explanationAr: "تحويل الأفعال إلى أسماء: weil man spart → wegen der Einsparung، wenn man ankommt → bei der Ankunft. هذا يضغط النص ويعطيه طابعاً رسمياً — أساسي في الرسائل الرسمية B2.",
+      whyAr: "لماذا؟ لأن الرسالة الرسمية B2 (75 دقيقة) تتطلب أسلوباً اسمياً موجزاً — من يستخدم جمل الفعل فقط يفقد علامات الجودة.",
+      examples: [
+        { de: "Nach der Ankunft melden Sie sich bitte.", ar: "بعد الوصول يرجى تسجيل حضوركم (بدل wenn Sie ankommen)." }, { de: "Die Einsparung der Kosten ist unser Ziel.", ar: "توفير التكاليف هدفنا." }
+      ],
+      comparisonWithArabic: "العربية تعبر عن هذا المعنى بطرق مختلفة، والألمانية تقدم صيغة محددة — التدريب على النمط يبني الدقة.",
+      eselsbruecke: "راجع المثالين وحاول إنتاج جملتين مشابهتين عن حياتك — الاستخدام الشخصي يثبت القاعدة.",
+      commonMistakes: [
+        { wrong: "خلط الصيغة مع الصيغ المشابهة", right: "استخدم القاعدة كما في الأمثلة", whyAr: "التمييز بين الأنماط يأتي بالممارسة." },
+      ],
+    },
+  ],
+  listening: {
+    items: [
+      {
+        id: "l1",
+        title: "محاضرة افتتاحية",
+        lines: [
+          { speaker: "Professor", de: "Willkommen im Seminar! Die vorliegende Veranstaltung beschäftigt sich mit der Linguistik.", ar: "أهلاً في الندوة! تتناول هذه الفعالية علم اللغة." },
+          { speaker: "Professor", de: "Es ist erwiesen, dass Sprachen unser Denken beeinflussen.", ar: "ثابت أن اللغات تؤثر على تفكيرنا." },
+          { speaker: "Sami", de: "Meiner Ansicht nach ist das besonders bei Mehrsprachigen sichtbar.", ar: "في رأيي هذا واضح خاصة لدى متعددي اللغات." },
+          { speaker: "Professor", de: "Sehr guter Punkt! Möglicherweise vertiefen wir das nächste Woche.", ar: "نقطة ممتازة! ربما نعمق هذا الأسبوع القادم." },
+        ],
+      },
+      {
+        id: "l2",
+        title: "التحضير للامتحان",
+        lines: [
+          { speaker: "Anna", de: "Bis zum Goethe-Zertifikat werde ich alle Übungen gemacht haben.", ar: "بحلول شهادة غوته سأكون قد أنجزت كل التمارين." },
+          { speaker: "Karim", de: "Zusammenfassend lässt sich sagen: Wir sind bereit!", ar: "خلاصةً يمكن القول: نحن جاهزون!" },
+          { speaker: "Anna", de: "In gewissem Maße ja. Aber die mündliche Prüfung macht mir noch Sorgen.", ar: "إلى حد ما نعم. لكن الامتحان الشفهي ما زال يقلقني." },
+          { speaker: "Karim", de: "Keine Sorge! Wir üben jeden Tag, indem wir sprechen.", ar: "لا تقلقي! نتدرب كل يوم بالتحدث." },
+        ],
+      },
+    ],
+    questions: [
+      {
+        id: "q1",
+        itemId: "l1",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Womit beschäftigt sich die Veranstaltung?",
+        questionAr: "بماذا تتناول الفعالية؟",
+        options: ["mit der Linguistik", "mit der Geschichte", "mit der Kunst", "mit der Wirtschaft"],
+        correctIndex: 0,
+        explanation: "قال الأستاذ: Die vorliegende Veranstaltung beschäftigt sich mit der Linguistik.",
+        errorType: "vocabulary",
+      },
+      {
+        id: "q2",
+        itemId: "l2",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Was macht Anna Sorgen?",
+        questionAr: "ما الذي يقلق آنا؟",
+        options: ["die mündliche Prüfung", "die schriftliche Prüfung", "die Hausarbeit", "das Seminar"],
+        correctIndex: 0,
+        explanation: "قالت آنا: Die mündliche Prüfung macht mir noch Sorgen.",
+        errorType: "vocabulary",
+      },
+      {
+        id: "q3",
+        itemId: "l2",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Wie üben sie?",
+        questionAr: "كيف يتدربون؟",
+        options: ["indem sie sprechen", "indem sie schreiben", "indem sie lesen", "indem sie schlafen"],
+        correctIndex: 0,
+        explanation: "قال كريم: Wir üben jeden Tag, indem wir sprechen.",
+        errorType: "vocabulary",
+      },
+    ],
+  },
+
+  pronunciation: {
+    id: "p1",
+    title: "مراجعة أصوات B2",
+    items: [
+      { de: "die Hausarbeit", ar: "البحث الجامعي", note: "au = آو: هاوس-أربايت" },
+      { de: "die Fachsprache", ar: "لغة التخصص", note: "ch = خ + sp = شپ: فاخ-شپراخه" },
+      { de: "das Seminar", ar: "الندوة", note: "s = ز: زيمينار" },
+      { de: "die Linguistik", ar: "علم اللغة", note: "gu = غو: لينگڤيستيك" },
+      { de: "zweifellos", ar: "بلا شك", note: "zw = تسڤ: تسڤايفِلوس" },
+      { de: "erwiesen", ar: "مثبت", note: "ie = إي: إرڤيزِن" },
+    ],
+    tip: "Fachsprache = فاخ-شپراخه — خ + شپ معاً. وzweifellos = تسڤايفِلوس — zw ألمانية تسڤ.",
+    shadowing: [
+      { de: "Es ist erwiesen, dass...", ar: "ثابت أن...", tip: "erwiesen = إرڤيزِن" },
+      { de: "Meiner Ansicht nach ist das wichtig.", ar: "في رأيي هذا مهم.", tip: "Meiner Ansicht nach" },
+      { de: "Möglicherweise stimmt das.", ar: "ربما هذا صحيح.", tip: "möglicherweise = مُوكليخرڤايزِه" },
+      { de: "Zusammenfassend lässt sich sagen...", ar: "خلاصةً يمكن القول...", tip: "zusammenfassend = تسو-زامِن-فاسِنت" },
+    ],
+  },
+
+  writing: [
+    {
+      id: "w1",
+      type: "transformation",
+      instructionAr: "اكتب جملة أكاديمية:",
+      prompt: "«ثابت أن تعلم اللغات يقوي الدماغ» (es ist erwiesen)",
+      acceptedAnswers: ["Es ist erwiesen, dass Sprachenlernen das Gehirn stärkt", "Es ist erwiesen, dass Sprachen das Gehirn stärken"],
+      sampleAnswer: "Es ist erwiesen, dass Sprachenlernen das Gehirn stärkt.",
+      explanation: "es ist erwiesen + dass + فعل في النهاية.",
+      errorType: "grammar",
+    },
+    {
+      id: "w2",
+      type: "fill-blank",
+      instructionAr: "أكمل بالعبارة:",
+      template: "___ Ansicht nach ist das wichtig. (في رأيي) ___ lässt sich sagen: B2 ist geschafft. (خلاصةً)",
+      blanks: [
+        { correct: "Meiner", options: ["Meiner", "Meine", "Mein"] },
+        { correct: "Zusammenfassend", options: ["Zusammenfassend", "Erstens", "Außerdem"] },
+      ],
+      explanation: "Meiner Ansicht nach + Zusammenfassend.",
+      errorType: "grammar",
+    },
+    {
+      id: "w3",
+      type: "dictation",
+      instructionAr: "استمع واكتب الجملة:",
+      audioText: "Es ist erwiesen, dass Sprachen unser Denken beeinflussen.",
+      explanation: "ثابت أن اللغات تؤثر على تفكيرنا — جملة أكاديمية.",
+      errorType: "spelling",
+    },
+  ],
+
+  practiceBank: [
+    {
+      id: "e1",
+      type: "multiple-choice",
+      instructionAr: "اختر عبارة التأكيد:",
+      questionDe: "___ ist das richtig. (ثابت أن)",
+      options: ["Es ist erwiesen, dass", "Vielleicht", "In gewissem Maße", "Unter Umständen"],
+      correctIndex: 0,
+      explanation: "التأكيد: es ist erwiesen.",
+      errorType: "grammar",
+    },
+    {
+      id: "e2",
+      type: "multiple-choice",
+      instructionAr: "اختر عبارة التحفظ:",
+      questionDe: "___ stimmt das. (إلى حد ما)",
+      options: ["In gewissem Maße", "Zweifellos", "Eindeutig", "Es ist erwiesen"],
+      correctIndex: 0,
+      explanation: "التحفظ: in gewissem Maße.",
+      errorType: "grammar",
+    },
+    {
+      id: "e3",
+      type: "matching",
+      instructionAr: "صل كلمة الدراسة بمعناها:",
+      pairs: [
+        { left: "die Hausarbeit", right: "البحث الجامعي" },
+        { left: "das Seminar", right: "الندوة" },
+        { left: "die Fachsprache", right: "لغة التخصص" },
+        { left: "die Linguistik", right: "علم اللغة" },
+      ],
+      explanation: "أربع كلمات جامعية أساسية.",
+      errorType: "vocabulary",
+    },
+    {
+      id: "e4",
+      type: "word-ordering",
+      instructionAr: "رتّب الجملة:",
+      tokens: ["erwiesen", "Es", "ist", "dass", "Sprachen", "Denken", "unser", "beeinflussen", ","],
+      correctSentence: "Es ist erwiesen, dass Sprachen unser Denken beeinflussen.",
+      explanation: "جملة أكاديمية: es ist erwiesen + dass.",
+      errorType: "word-order",
+    },
+    {
+      id: "e5",
+      type: "error-correction",
+      instructionAr: "صحّح الخطأ:",
+      wrongSentence: "Zusammenfassend kann man sagen, dass B2 ein Meilenstein ist. (صحيحة؟)",
+      wrongWord: "Zusammenfassend kann man sagen",
+      correctWord: "Zusammenfassend kann man sagen (صحيحة!)",
+      options: ["Zusammenfassend kann man sagen (صحيحة!)", "Zusammenfassend man kann sagen", "Kann man zusammenfassend sagen", "Man zusammenfassend kann sagen"],
+      explanation: "الترتيب صحيح: Zusammenfassend + kann + man + sagen.",
+      errorType: "grammar",
+    },
+    {
+      id: "e6",
+      type: "fill-blank",
+      instructionAr: "أكمل بالعبارة:",
+      template: "___ ist erwiesen, dass... (ثابت) ___ Ansicht nach... (رأي) In gewissem ___ stimmt das. (حد)",
+      blanks: [
+        { correct: "Es", options: ["Es", "Das", "Man"] },
+        { correct: "Meiner", options: ["Meiner", "Meine", "Mein"] },
+        { correct: "Maße", options: ["Maße", "Maß", "Masse"] },
+      ],
+      explanation: "es ist erwiesen + meiner Ansicht nach + in gewissem Maße.",
+      errorType: "grammar",
+    },
+    {
+      id: "e7",
+      type: "transformation",
+      instructionAr: "حوّل من عامي إلى أكاديمي:",
+      prompt: "«أعتقد أن هذا مهم» → (meiner Ansicht nach)",
+      acceptedAnswers: ["Meiner Ansicht nach ist das wichtig", "Meiner Ansicht nach ist das wichtig."],
+      sampleAnswer: "Meiner Ansicht nach ist das wichtig.",
+      explanation: "الأكاديمي: meiner Ansicht nach.",
+      errorType: "grammar",
+    },
+    {
+      id: "e8",
+      type: "multiple-choice",
+      instructionAr: "اختر الترجمة الصحيحة:",
+      questionDe: "möglicherweise",
+      questionAr: "ما معنى الكلمة؟",
+      options: ["ربما", "بلا شك", "إلى حد ما", "بوضوح"],
+      correctIndex: 0,
+      explanation: "möglicherweise = ربما (تلطيف).",
+      errorType: "vocabulary",
+    },
+    {
+      id: "e9",
+      type: "error-correction",
+      instructionAr: "صحّح الخطأ:",
+      wrongSentence: "Ich denke, dass das wichtig ist. (حوّلها للأكاديمي)",
+      wrongWord: "Ich denke",
+      correctWord: "Meiner Ansicht nach",
+      options: ["Meiner Ansicht nach", "Ich glaube", "Ich meine", "Für mich"],
+      explanation: "الأكاديمي: Meiner Ansicht nach / Meines Erachtens.",
+      errorType: "grammar",
+    },
+    {
+      id: "e10-punct",
+      type: "error-correction",
+      instructionAr: "علامات الترقيم: صحّح الفاصلة (نوع الخطأ: Zeichensetzung):",
+      wrongSentence: "Ich komme morgen, weil ich Zeit habe.",
+      wrongWord: "، (صحيحة!)",
+      correctWord: "، (صحيحة!)",
+      options: ["، (صحيحة!)", "; (صحيحة أحياناً)", ". (خطأ)", ": (خطأ)"],
+      explanation: "الفاصلة قبل weil إلزامية في الألمانية — الجملة صحيحة! هذا تمرين وعي: لا تظن أن كل جملة بها خطأ.",
+      errorType: "punctuation",
+    },
+    {
+      id: "e11-punct",
+      type: "error-correction",
+      instructionAr: "علامات الترقيم: أين الفاصلة الناقصة؟",
+      wrongSentence: "Meiner Meinung nach ist das Problem groß.",
+      wrongWord: "nach (بدون فاصلة — صحيحة!)",
+      correctWord: "nach (بدون فاصلة — صحيحة!)",
+      options: ["nach (بدون فاصلة — صحيحة!)", "nach, (بفاصلة)", "nach. (بنقطة)", "nach: (بنقطتين)"],
+      explanation: "بعد التعبير الافتتاحي القصير Meiner Meinung nach لا فاصلة إلزامية في الألمانية الحديثة.",
+      errorType: "punctuation",
+    },
+    {
+      id: "e12-punct",
+      type: "fill-blank",
+      instructionAr: "ضع علامة الترقيم الصحيحة (اكتبها في نهاية الجملة):",
+      template: "Er fragte mich, ob ich komme __  — Ich habe Hunger, aber ich koche __  — Vorsicht, die Tür ist offen __",
+      blanks: [
+        { correct: ".", options: [".", ",", "?", "!"] },
+        { correct: ".", options: [".", "?", "!", ":"] },
+        { correct: "!", options: [".", ",", "?", "!"] },
+      ],
+      explanation: "جملة خبرية → نقطة. تحذير → علامة تعجب.",
+      errorType: "punctuation",
+    },
+    {
+      id: "e10",
+      type: "dictation",
+      instructionAr: "استمع واكتب الجملة:",
+      audioText: "Zusammenfassend lässt sich sagen, dass B2 ein Meilenstein ist.",
+      explanation: "خلاصةً يمكن القول إن B2 علامة فارقة — الخاتمة الذهبية.",
+      errorType: "spelling",
+    },
+  ],
+
+  fehlerUndTipps: {
+    mistakes: [
+      { wrong: "أسلوب حاد بلا دليل", right: "لطّف: meiner Ansicht nach", whyAr: "الأكاديميا تكره الجزم." },
+      { wrong: "Ich denke في مقال أكاديمي", right: "Meiner Ansicht nach / Meines Erachtens", whyAr: "الأسلوب الرسمي." },
+      { wrong: "تحفظ زائد", right: "وازن: أكّد + لطّف + تحفظ", whyAr: "التوازن هو النضج." },
+    ],
+    eselsbruecken: [
+      "«ثلاثية الأكاديميا: أكّد (erwiesen)، لطّف (meiner Ansicht)، تحفظ (in gewissem Maße)».",
+      "«Zusammenfassend lässt sich sagen» — خاتمة ذهبية لكل مقال.",
+    ],
+    culturalNote: {
+      title: "الجامعات الألمانية",
+      content:
+        "الدراسة في ألمانيا مجانية تقريباً (رسوم فصل ~300 يورو). والجامعات: TU (تقنية)، Universität (شاملة)، Fachhochschule (تطبيقية). وتختلف متطلبات اللغة حسب الجامعة والبرنامج (عادةً B2–C1 أو TestDaF/DSH). وعبارة: «der Numerus clausus» (قيد القبول — تخصص محدود القبول مثل الطب؛ تُحدَّد علامة القطع من المنافسة ولا تُعلن سلفاً).",
+    },
+  },
+
+  miniTest: [
+    {
+      id: "m1",
+      type: "multiple-choice",
+      instructionAr: "اختر عبارة التأكيد:",
+      questionDe: "___ ist das bewiesen. (ثابت)",
+      options: ["Es ist erwiesen, dass", "Vielleicht", "Unter Umständen", "In gewissem Maße"],
+      correctIndex: 0,
+      explanation: "التأكيد: es ist erwiesen.",
+      errorType: "grammar",
+    },
+    {
+      id: "m2",
+      type: "multiple-choice",
+      instructionAr: "اختر عبارة التلطيف:",
+      questionDe: "___ ist das möglich. (ربما)",
+      options: ["Möglicherweise", "Zweifellos", "Eindeutig", "Es ist erwiesen"],
+      correctIndex: 0,
+      explanation: "التلطيف: möglicherweise.",
+      errorType: "grammar",
+    },
+    {
+      id: "m3",
+      type: "word-ordering",
+      instructionAr: "رتّب الجملة:",
+      tokens: ["Meiner", "nach", "ist", "Ansicht", "das", "wichtig", "."],
+      correctSentence: "Meiner Ansicht nach ist das wichtig.",
+      explanation: "في رأيي هذا مهم — عبارة أكاديمية.",
+      errorType: "word-order",
+    },
+    {
+      id: "m4",
+      type: "error-correction",
+      instructionAr: "صحّح الخطأ:",
+      wrongSentence: "Bis 2030 werde ich alle Übungen gemacht haben. (صحيحة؟)",
+      wrongWord: "werde ... gemacht haben",
+      correctWord: "werde ... gemacht haben (صحيحة!)",
+      options: ["werde ... gemacht haben (صحيحة!)", "habe ... gemacht werden", "werde ... gemacht haben gehabt", "mache ... gemacht haben"],
+      explanation: "Futur II: werde + PII + haben — صحيحة!",
+      errorType: "grammar",
+    },
+    {
+      id: "m5",
+      type: "fill-blank",
+      instructionAr: "أكمل:",
+      template: "Es ist ___, dass... (ثابت) Meiner ___ nach... (رأي) Zusammenfassend lässt sich ___... (قول)",
+      blanks: [
+        { correct: "erwiesen", options: ["erwiesen", "bewiesen", "gesehen"] },
+        { correct: "Ansicht", options: ["Ansicht", "Meinung", "Sicht"] },
+        { correct: "sagen", options: ["sagen", "sagen", "sprechen"] },
+      ],
+      explanation: "erwiesen + Ansicht nach + lässt sich sagen.",
+      errorType: "grammar",
+    },
+  ],
+
+  flashcards: [
+    { id: "fc1", de: "das Studium", ar: "الدراسة الجامعية", example: "Das Studium beginnt im Oktober.", exampleAr: "تبدأ الدراسة في أكتوبر.", level: "B2" },
+    { id: "fc2", de: "die Hausarbeit", ar: "البحث الجامعي", example: "Die Hausarbeit ist fertig.", exampleAr: "البحث جاهز.", level: "B2" },
+    { id: "fc3", de: "das Seminar", ar: "الندوة", example: "Das Seminar ist interessant.", exampleAr: "الندوة ممتعة.", level: "B2" },
+    { id: "fc4", de: "die Fachsprache", ar: "لغة التخصص", example: "Die Fachsprache ist präzise.", exampleAr: "لغة التخصص دقيقة.", level: "B2" },
+    { id: "fc5", de: "es ist erwiesen, dass", ar: "ثابت أن", example: "Es ist erwiesen, dass...", exampleAr: "ثابت أن...", level: "B2" },
+    { id: "fc6", de: "meiner Ansicht nach", ar: "في رأيي", example: "Meiner Ansicht nach ist das gut.", exampleAr: "في رأيي هذا جيد.", level: "B2" },
+    { id: "fc7", de: "möglicherweise", ar: "ربما", example: "Möglicherweise stimmt das.", exampleAr: "ربما هذا صحيح.", level: "B2" },
+    { id: "fc8", de: "zusammenfassend", ar: "خلاصةً", example: "Zusammenfassend lässt sich sagen...", exampleAr: "خلاصةً يمكن القول...", level: "B2" },
+  ],
+
+  /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
+  mediation: [
+    {
+      id: "med-b2-10-1",
+      type: "merge-info",
+      titleAr: "ادمج معلومات عن الدراسة في ألمانيا في تلخيص عربي",
+      sourceDe: "Text 1: Die meisten staatlichen Universitäten erheben keine Studiengebühren. Text 2: Allerdings benötigen internationale Studierende einen Sprachnachweis und ausreichende finanzielle Mittel.",
+      taskAr: "ادمج المعلومتين في تلخيص متماسك: مجانية الدراسة + الشروط (اللغة والتمويل).",
+      modelAnswerAr: "«معظم الجامعات الحكومية لا تفرض رسوماً دراسية، لكن الطلاب الدوليين يحتاجون شهادة لغة وإثبات موارد مالية كافية.»",
+      keyPointsAr: ["دمجت المعلومتين معاً", "نقلت مجانية الدراسة", "نقلت شرطي اللغة والتمويل"],
+    },
+  ],
+  interaction: [
+    {
+      id: "int-b2-10-1",
+      scenarioAr: "محاكاة مناقشة Goethe-B2 عن الدراسة بالخارج.",
+      scenarioDe: "Simulation einer B2-Diskussion über Auslandsstudium.",
+      strategyAr: "الاستراتيجية: حجاج منظم (أطروحة، نقيض، تركيب) بأسلوب امتحاني.",
+      rounds: [
+        {
+          speakerDe: "Lohnt sich ein Studium im Ausland trotz der Herausforderungen?",
+          speakerAr: "هل يستحق الدراسة في الخارج رغم التحديات؟",
+          options: [
+            { de: "Obwohl ein Auslandsstudium mit Sprachbarrieren und Heimweh verbunden ist, überwiegen meiner Meinung nach die Vorteile.", ar: "رغم أن الدراسة بالخارج ترتبط بحواجز اللغة والحنين للوطن، أرى أن المزايا تفوق.", best: true, replyDe: "Ein starkes Argument. Wie würden Sie mit dem Heimweh umgehen?", replyAr: "حجة قوية. كيف تتعامل مع الحنين للوطن؟" },
+            { de: "Ein Auslandsstudium ist reine Zeitverschwendung.", ar: "الدراسة بالخارج مضيعة للوقت تماماً.", best: false, replyDe: "Das widerspricht den Erfahrungen vieler erfolgreicher Absolventen.", replyAr: "هذا يتعارض مع تجارب خريجين ناجحين كثيرين." },
+          ],
+        },
+        {
+          speakerDe: "Wie würden Sie mit dem Heimweh umgehen?",
+          speakerAr: "كيف تتعامل مع الحنين للوطن؟",
+          options: [
+            { de: "Ich würde regelmäßigen Kontakt mit der Familie halten und neue soziale Kreise aufbauen.", ar: "سأحافظ على تواصل منتظم مع العائلة وأبني دوائر اجتماعية جديدة.", best: true, replyDe: "Eine reife Strategie. Viel Erfolg!", replyAr: "استراتيجية ناضجة. بالتوفيق!" },
+            { de: "Ich würde einfach zurückfliegen, sobald es schwer wird.", ar: "سأعود ببساطة بمجرد أن يصعب الأمر.", best: false, replyDe: "Herausforderungen gehören zum Wachstum.", replyAr: "التحديات جزء من النمو." },
+          ],
+        },
+      ],
+    },
+  ],
+};
