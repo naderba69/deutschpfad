@@ -50,3 +50,7 @@ next-env.d.ts
 /scripts/bundle.sh
 /scripts/generate-icons.py
 /scripts/gen-lesson-meta.py
+
+# audit evidence (local only)
+.audit-shots/
+test-results/
