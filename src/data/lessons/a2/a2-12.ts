@@ -215,7 +215,7 @@ export const lessonA212: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات المشاعر: ü، au، وeu",
+    title: "أصوات المشاعر: ü، au، وst",
     items: [
       { de: "glücklich", ar: "سعيد", note: "ü + ck: غلوك-ليش" },
       { de: "traurig", ar: "حزين", note: "au = آو: تراوريخ" },

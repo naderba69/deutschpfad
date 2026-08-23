@@ -223,7 +223,7 @@ export const lessonB102: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات العمل: sch، ch، وei",
+    title: "أصوات العمل: ei، au، وw",
     items: [
       { de: "die Erfahrung", ar: "الخبرة", note: "f + a: إرفارونغ" },
       { de: "der Arbeitgeber", ar: "صاحب العمل", note: "ei = آي: أربايت-غيبر" },

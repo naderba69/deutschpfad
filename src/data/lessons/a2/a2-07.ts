@@ -223,7 +223,7 @@ export const lessonA207: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات البنك: ie، ü، وck",
+    title: "أصوات البنك: ü، au، وei",
     items: [
       { de: "das Konto", ar: "الحساب", note: "o مفتوح: كونتوه" },
       { de: "das Geld", ar: "المال", note: "g = غ: غِلت" },

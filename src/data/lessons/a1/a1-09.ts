@@ -189,7 +189,7 @@ export const lessonA109: Lesson = {
   },
   pronunciation: {
     id: "p1",
-    title: "أصوات التقويم: ig، ch، وie",
+    title: "أصوات التقويم: ch، ng، وü",
     items: [
       { de: "Montag", ar: "الاثنين", note: "g في النهاية = ك قاطعة (تقسية الأواخر)، وo طويلة: موون-تااك" },
       { de: "Mittwoch", ar: "الأربعاء", note: "ch بعد o = خ حلقية: ميت-فوخ" },

@@ -234,7 +234,7 @@ export const lessonB106: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات الثقافة: ä، ö، وch",
+    title: "أصوات الثقافة: ä، ö، وsch",
     items: [
       { de: "das Gemälde", ar: "اللوحة", note: "ä + l: غِميلدِه" },
       { de: "der Maler", ar: "الرسام", note: "a مفتوح: مالِر" },

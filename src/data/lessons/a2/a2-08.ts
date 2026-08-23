@@ -223,7 +223,7 @@ export const lessonA208: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات النقل: ab، an، وsch",
+    title: "أصوات النقل: sch، ei، وst",
     items: [
       { de: "der Zug", ar: "القطار", note: "u طويلة + g في النهاية = ك (تقسية الأواخر، لا خ): تسووك" },
       { de: "die Fahrkarte", ar: "التذكرة", note: "h يطيل a: فار-كارته" },

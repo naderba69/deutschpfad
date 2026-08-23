@@ -195,7 +195,7 @@ export const lessonA108: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات الألوان: ei، sch، وä",
+    title: "أصوات الألوان: ei، sch، وau",
     items: [
       { de: "weiß", ar: "أبيض", note: "ei = آي + ß = سّ: ڤايس" },
       { de: "blau", ar: "أزرق", note: "au = آو: بلاو" },

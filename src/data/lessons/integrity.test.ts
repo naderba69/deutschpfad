@@ -503,3 +503,40 @@ describe("كتل الشرح النظري", () => {
     expect(dupes).toEqual([]);
   });
 });
+
+describe("قسم النطق", () => {
+  // العنوان يَعِد المتعلّم بأصوات بعينها («أصوات الطقس: ie، sch، وw»).
+  // كانت 36 وحدة تَعِد صوتاً لا تشرحه أيُّ ملاحظة — أحياناً لا تحمله ولا
+  // كلمة واحدة من كلمات القسم. الوعد المُخلَف يُفقد المتعلّم ثقته بالفهرس،
+  // ويجعله يبحث عن شرحٍ غير موجود.
+  const LAT = "A-Za-zÄÖÜäöüß";
+
+  /** ذِكرٌ مثبِت للصوت — «لا يوجد tz هنا» نفيٌ لا يُحتسب شرحاً. */
+  const taught = (sound: string, note: string): boolean => {
+    const re = new RegExp(`(?<![${LAT}])${sound.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?![${LAT}])`, "g");
+    for (let m = re.exec(note); m; m = re.exec(note)) {
+      if (!/لا\s*(?:يوجد\s*)?$/.test(note.slice(Math.max(0, m.index - 22), m.index))) return true;
+    }
+    return false;
+  };
+
+  it("كل صوت يَعِد به العنوان تشرحه ملاحظةٌ فعلاً", () => {
+    const broken: string[] = [];
+    let checked = 0;
+    for (const lesson of LESSONS) {
+      const { title, items } = lesson.pronunciation;
+      const colon = title.indexOf(":");
+      if (colon < 0) continue; // عنوان وصفي بلا وعد صريح
+      const promised = title.slice(colon + 1).match(new RegExp(`[${LAT}]{1,8}`, "g")) ?? [];
+      if (promised.length === 0) continue;
+      checked++;
+      const notes = items.map((i) => i.note);
+      for (const sound of promised) {
+        if (!notes.some((n) => taught(sound, n)))
+          broken.push(`${lesson.id} — العنوان يَعِد «${sound}» ولا ملاحظة تشرحه: ${title}`);
+      }
+    }
+    expect(checked).toBeGreaterThan(40);
+    expect(broken, `عناوين نطق تَعِد بما لا تفي به:\n${broken.join("\n")}`).toEqual([]);
+  });
+});

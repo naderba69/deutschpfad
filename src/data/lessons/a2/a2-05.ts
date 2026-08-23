@@ -224,7 +224,7 @@ export const lessonA205: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات المكتب: sch، ie، وck",
+    title: "أصوات المكتب: ch، sp، وü",
     items: [
       { de: "das Büro", ar: "المكتب", note: "ü: بُورو" },
       { de: "anrufen", ar: "يتصل", note: "an + rufen: آن-روفِن" },

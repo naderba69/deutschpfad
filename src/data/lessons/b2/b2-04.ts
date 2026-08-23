@@ -223,7 +223,7 @@ export const lessonB204: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات الأدب: ie، ch، وer",
+    title: "أصوات الأدب: ch، sch، وau",
     items: [
       { de: "die Literatur", ar: "الأدب", note: "tu = تو: ليتِراتور" },
       { de: "der Roman", ar: "الرواية", note: "o مفتوح: رومان" },

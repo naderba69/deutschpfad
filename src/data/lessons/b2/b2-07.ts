@@ -217,7 +217,7 @@ export const lessonB207: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات الفلسفة: ph، ch، وie",
+    title: "أصوات الفلسفة: sch، ö، وth",
     items: [
       { de: "die Philosophie", ar: "الفلسفة", note: "ph = ف: فيلوزوفي" },
       { de: "die These", ar: "الأطروحة", note: "th = ت: تيزِه" },

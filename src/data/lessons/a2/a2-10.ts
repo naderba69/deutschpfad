@@ -217,7 +217,7 @@ export const lessonA210: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات المدرسة: ü، ch، وei",
+    title: "أصوات المدرسة: ü، ch، وie",
     items: [
       { de: "die Prüfung", ar: "الامتحان", note: "ü طويلة + ung = ونغ بغُنّة (لا خ): پريوفونغ" },
       { de: "der Unterricht", ar: "الحصة", note: "ch بعد i = ش ناعمة: أونتر-ريخت" },

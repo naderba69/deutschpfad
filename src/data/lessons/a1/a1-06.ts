@@ -352,7 +352,7 @@ export const lessonA106: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات الهوايات: h، ä، و-tion",
+    title: "أصوات الهوايات: h، ö، وz",
     items: [
       { de: "das Hobby", ar: "الهواية", note: "h في البداية = نَفَس خفيف: هوبي" },
       { de: "gern", ar: "بسرور", note: "g = غ: غيرن" },

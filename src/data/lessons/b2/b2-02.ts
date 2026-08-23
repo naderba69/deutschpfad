@@ -220,7 +220,7 @@ export const lessonB202: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات الاقتصاد: ch، ö، وtion",
+    title: "أصوات الاقتصاد: tion، sch، وtz",
     items: [
       { de: "die Wirtschaft", ar: "الاقتصاد", note: "sch = ش: ڤيرت-شافَت" },
       { de: "der Umsatz", ar: "المبيعات", note: "tz = تس: أوم-زاتس" },

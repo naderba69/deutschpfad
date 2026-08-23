@@ -223,7 +223,7 @@ export const lessonA112: Lesson = {
   },
   pronunciation: {
     id: "p1",
-    title: "أصوات الطقس: ie، sch، وw",
+    title: "أصوات الطقس: sch، وw",
     items: [
       { de: "das Wetter", ar: "الطقس", note: "w = ڤ: ڤِتّر" },
       { de: "die Sonne", ar: "الشمس", note: "o قصيرة + n مزدوجة: زونّـِه" },

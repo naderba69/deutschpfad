@@ -225,7 +225,7 @@ export const lessonA202: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات الجسم: ch، sch، وie",
+    title: "أصوات الجسم: ch، sch، وau",
     items: [
       { de: "der Kopf", ar: "الرأس", note: "o قصيرة + pf: كوپف" },
       { de: "der Bauch", ar: "البطن", note: "au = آو + ch خ: باوخ" },

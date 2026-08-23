@@ -263,7 +263,7 @@ export const lessonA103: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات الطعام: ei، ch، وÖ",
+    title: "أصوات الطعام: ei، ch، وpf",
     items: [
       { de: "der Apfel", ar: "التفاحة", note: "pf معاً: آپفِل" },
       { de: "das Brot", ar: "الخبز", note: "o قصيرة: بروت" },

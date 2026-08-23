@@ -244,7 +244,7 @@ export const lessonA204: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات السكن: ü، ch، وzw",
+    title: "أصوات السكن: ck، ei، وie",
     items: [
       { de: "umziehen", ar: "ينتقل", note: "zieh = إي: أوم-تسيهن" },
       { de: "die Miete", ar: "الإيجار", note: "ie = إي: ميتِه" },

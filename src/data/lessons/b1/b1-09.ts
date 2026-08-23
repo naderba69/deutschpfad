@@ -222,7 +222,7 @@ export const lessonB109: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات التطوع: eh، nn، وtz",
+    title: "أصوات التطوع: eh، ei، وsp",
     items: [
       { de: "das Ehrenamt", ar: "العمل التطوعي", note: "eh = e طويلة: إيرِن-أمت" },
       { de: "der Verein", ar: "الجمعية", note: "ei = آي: فِرآين" },

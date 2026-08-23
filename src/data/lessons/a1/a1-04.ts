@@ -192,7 +192,7 @@ export const lessonA104: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات السكن: ch، ß، وW",
+    title: "أصوات السكن: ch، ß، وsch",
     items: [
       { de: "die Küche", ar: "المطبخ", note: "ü (يُو) + ch ناعمة: كُيخِه" },
       { de: "das Schlafzimmer", ar: "غرفة النوم", note: "sch (ش) + pf؟ لا — sch فقط: شلاف-تسِمّر" },

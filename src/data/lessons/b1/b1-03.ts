@@ -244,7 +244,7 @@ export const lessonB103: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات البيئة: ö، ü، وch",
+    title: "أصوات البيئة: ü، pf، وw",
     items: [
       { de: "die Umwelt", ar: "البيئة", note: "um + welt: أوم-ڤِلت" },
       { de: "der Müll", ar: "النفايات", note: "ü قصيرة: مول" },

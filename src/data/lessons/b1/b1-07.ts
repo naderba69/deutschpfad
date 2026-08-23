@@ -221,7 +221,7 @@ export const lessonB107: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات السياسة: ch، w، وei",
+    title: "أصوات السياسة: w، tz، وie",
     items: [
       { de: "die Politik", ar: "السياسة", note: "k في النهاية: پوليتيك" },
       { de: "das Gesetz", ar: "القانون", note: "g = غ + tz = تس: غِزِتس" },

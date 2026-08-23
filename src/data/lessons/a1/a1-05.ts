@@ -226,7 +226,7 @@ export const lessonA105: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات اليوم: st، ch، وau",
+    title: "أصوات اليوم: st، ch، وü",
     items: [
       { de: "aufstehen", ar: "يستيقظ", note: "st في بداية المقطع = شت: آوف-شتيهن" },
       { de: "frühstücken", ar: "يتناول الفطور", note: "früh = فريو (ü طويل) + st = شت" },

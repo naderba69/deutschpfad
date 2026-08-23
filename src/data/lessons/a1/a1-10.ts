@@ -186,7 +186,7 @@ export const lessonA110: Lesson = {
   },
   pronunciation: {
     id: "p1",
-    title: "أصوات المهن: ch، pf، وig",
+    title: "أصوات المهن: ch، ö، وä",
     items: [
       { de: "der Arzt", ar: "الطبيب", note: "rz معاً: آرتست (t≈س)" },
       { de: "die Ärztin", ar: "الطبيبة", note: "ä مفتوح: إرتست-إن" },

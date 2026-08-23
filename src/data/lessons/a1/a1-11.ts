@@ -184,7 +184,7 @@ export const lessonA111: Lesson = {
   },
   pronunciation: {
     id: "p1",
-    title: "أصوات المدينة: sch، pf، وch",
+    title: "أصوات المدينة: h، au، وst",
     items: [
       { de: "der Bahnhof", ar: "المحطة", note: "h يُنطق: بان-هوف" },
       { de: "die Straße", ar: "الشارع", note: "st في البداية = شت: شتراسِه" },

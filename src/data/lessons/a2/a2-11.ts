@@ -239,7 +239,7 @@ export const lessonA211: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات الخدمات: sch، ü، وr",
+    title: "أصوات الخدمات: sch، r، وie",
     items: [
       { de: "sich beschweren", ar: "يشتكي", note: "sch = ش: بِشڤيرن" },
       { de: "der Friseur", ar: "الحلاق", note: "كلمة فرنسية: فريزُور" },

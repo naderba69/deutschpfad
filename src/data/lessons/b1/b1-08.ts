@@ -221,7 +221,7 @@ export const lessonB108: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات التقنية: ch، ie، وk",
+    title: "أصوات التقنية: ch، z، وw",
     items: [
       { de: "die Technik", ar: "التقنية", note: "ch بعد e = ناعمة: تيشنيك" },
       { de: "der Computer", ar: "الحاسوب", note: "كلمة إنجليزية: كومپيوتِر" },

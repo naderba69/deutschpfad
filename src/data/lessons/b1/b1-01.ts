@@ -232,7 +232,7 @@ export const lessonB101: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات B1: s ز، ch، وr",
+    title: "أصوات B1: ch، وst",
     items: [
       { de: "das Studium", ar: "الدراسة الجامعية", note: "d في بداية = د + s = ز: شتوديوم" },
       { de: "der Lehrer", ar: "المعلم", note: "e مفتوحة: ليرِر" },

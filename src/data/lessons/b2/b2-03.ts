@@ -209,7 +209,7 @@ export const lessonB203: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات القانون: ch، ei، وck",
+    title: "أصوات القانون: ch، tz، وst",
     items: [
       { de: "das Recht", ar: "الحق/القانون", note: "ch بعد e = ناعمة: رِشت" },
       { de: "das Gesetz", ar: "القانون", note: "tz = تس: غِزِتس" },

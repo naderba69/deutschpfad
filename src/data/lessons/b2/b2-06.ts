@@ -236,7 +236,7 @@ export const lessonB206: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات المهنة: ch، tion، وie",
+    title: "أصوات المهنة: sch، ei، وss",
     items: [
       { de: "die Karriere", ar: "المسار المهني", note: "كلمة فرنسية: كارييرِه" },
       { de: "verhandeln", ar: "يتفاوض", note: "v = ف: فِر-هاندلن" },

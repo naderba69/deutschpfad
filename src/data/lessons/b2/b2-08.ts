@@ -216,7 +216,7 @@ export const lessonB208: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات الثقافات: sch، ü، وie",
+    title: "أصوات الثقافات: sch، au، وsp",
     items: [
       { de: "die Sprache", ar: "اللغة", note: "sp = شپ: شپراخِه" },
       { de: "die Kultur", ar: "الثقافة", note: "u + r: كولتور" },

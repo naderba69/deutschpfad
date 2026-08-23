@@ -210,7 +210,7 @@ export const lessonB105: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات الصحة: hätte، wäre، وsch",
+    title: "أصوات الصحة: ä، ie، وß",
     items: [
       { de: "hätte", ar: "كان سيملك (شرطي)", note: "ä + tt: هِتِّه" },
       { de: "wäre", ar: "كان سيكون (شرطي)", note: "ä مفتوح: ڤيرِه" },

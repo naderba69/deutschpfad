@@ -210,7 +210,7 @@ export const lessonB209: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات التقديم: sch، ch، وie",
+    title: "أصوات التقديم: sch، au، وst",
     items: [
       { de: "die Bewerbung", ar: "التقديم", note: "w = ڤ (لا يوجد v) + b تبقى ب لأنها بداية مقطع: بِڤِربونغ" },
       { de: "das Anschreiben", ar: "خطاب التقديم", note: "sch = ش: آن-شرايبِن" },

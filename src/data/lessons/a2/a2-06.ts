@@ -212,7 +212,7 @@ export const lessonA206: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات الإعلام: ig، sch، وie",
+    title: "أصوات الإعلام: ei، ch، وw",
     items: [
       { de: "die Zeitung", ar: "الصحيفة", note: "ei = آي + ung = ونغ بغُنّة (لا خ): تسايْتونغ" },
       { de: "das Fernsehen", ar: "التلفاز", note: "s بين علة = ز: فِرن-زيهِن" },

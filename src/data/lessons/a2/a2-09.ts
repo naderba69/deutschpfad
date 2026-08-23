@@ -212,7 +212,7 @@ export const lessonA209: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات الاحتفال: sch، ä، وck",
+    title: "أصوات الاحتفال: sch، ei، وü",
     items: [
       { de: "das Geschenk", ar: "الهدية", note: "ge + schenk: غِشِنك" },
       { de: "feiern", ar: "يحتفل", note: "ei = آي: فايْرن" },

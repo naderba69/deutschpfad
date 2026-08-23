@@ -275,7 +275,7 @@ export const lessonB205: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات التواصل: sch، ie، وck",
+    title: "أصوات التواصل: tion، ei، وö",
     items: [
       { de: "die Kommunikation", ar: "التواصل", note: "tion = تسيون: كومونيكاتسيون" },
       { de: "das Missverständnis", ar: "سوء الفهم", note: "شديدة: ميس-فِر-شتندنيس" },

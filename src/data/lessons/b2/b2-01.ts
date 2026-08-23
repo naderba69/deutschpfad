@@ -220,7 +220,7 @@ export const lessonB201: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات العلوم: ei، ie، وtion",
+    title: "أصوات العلوم: tion، sch، وck",
     items: [
       { de: "die Wissenschaft", ar: "العلم", note: "sch = ش: ڤيسن-شافَت" },
       { de: "die Forschung", ar: "البحث", note: "or: فورشونغ" },
