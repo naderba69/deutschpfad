@@ -324,7 +324,7 @@ export const lessonB102: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich habe gestern in der Stadt gegangen.",
       wrongWord: "habe ... gegangen",
       correctWord: "bin ... gegangen",
@@ -369,7 +369,7 @@ export const lessonB102: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Nachdem er gegessen hat, ging er. (حوّلها لـ Plusquamperfekt)",
       wrongWord: "gegessen hat",
       correctWord: "gegessen hatte",
@@ -437,7 +437,7 @@ export const lessonB102: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Sie habe gesehen den Film. (حوّلها لـ Präteritum)",
       wrongWord: "habe gesehen",
       correctWord: "sah",

@@ -342,7 +342,7 @@ export const lessonA204: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich lege das Buch auf dem Tisch. (حركة)",
       wrongWord: "auf dem",
       correctWord: "auf den",
@@ -387,11 +387,12 @@ export const lessonA204: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Die Miete ist sechshundert Euro warm.",
       wrongWord: "warm",
-      correctWord: "warm (صحيحة!)",
-      options: ["warm (صحيحة!)", "heiß", "kalt", "warme"],
+      correctWord: "warm",
+      isAlreadyCorrect: true,
+      options: ["warm", "heiß", "kalt", "warme"],
       explanation: "«warm» هنا تعني شاملة التدفئة — الكلمة صحيحة! (warm/kalt للإيجار: مع/بدون تدفئة).",
       errorType: "vocabulary",
     },
@@ -485,7 +486,7 @@ export const lessonA204: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Die Katze liegt unter den Bett.",
       wrongWord: "unter den",
       correctWord: "unter dem",

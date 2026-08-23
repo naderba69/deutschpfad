@@ -6,7 +6,7 @@ import {Wrench} from "lucide-react";
 import {FeedbackPanel} from "@/components/lesson/exercises/feedback-panel";
 import {useExerciseState} from "@/components/lesson/exercises/use-exercise-state";
 import {Button} from "@/components/ui/button";
-import {buildHighlightSegments} from "@/lib/lesson/error-correction-highlight";
+import {NO_ERROR_OPTION, buildHighlightSegments} from "@/lib/lesson/error-correction-highlight";
 import {evaluateErrorCorrection} from "@/lib/lesson/exercise-engine";
 import {shuffle} from "@/lib/lesson/shuffle";
 import {cn} from "@/lib/utils";
@@ -22,11 +22,25 @@ export function ErrorCorrectionExerciseView({
   exercise: ErrorCorrectionExercise;
   onResult?: (r: FeedbackResult) => void;
 }) {
-  const [options] = React.useState(() => shuffle(exercise.options));
-  const segments = React.useMemo(
-    () => buildHighlightSegments(exercise.wrongSentence, exercise.wrongWord),
-    [exercise.wrongSentence, exercise.wrongWord],
+  // خيار «لا خطأ» يُعرض في *كل* بنود التصحيح، لا في البنود الخادعة وحدها:
+  // لو ظهر عند الخدعة فقط لصار وجوده ذاته كاشفاً للإجابة.
+  const [options] = React.useState(() =>
+    shuffle([
+      ...exercise.options.filter(
+        (o) => o !== NO_ERROR_OPTION && !(exercise.isAlreadyCorrect && o === exercise.correctWord),
+      ),
+      NO_ERROR_OPTION,
+    ]),
   );
+  // لا نشطب شيئاً حين تكون الجملة سليمة — الشطب وحده يوحي بوجود خطأ
+  const segments = React.useMemo(
+    () =>
+      exercise.isAlreadyCorrect
+        ? [{ text: exercise.wrongSentence, isTarget: false }]
+        : buildHighlightSegments(exercise.wrongSentence, exercise.wrongWord),
+    [exercise.isAlreadyCorrect, exercise.wrongSentence, exercise.wrongWord],
+  );
+  const expectedAnswer = exercise.isAlreadyCorrect ? NO_ERROR_OPTION : exercise.correctWord;
   const [selected, setSelected] = React.useState<string | null>(null);
   const state = useExerciseState(exercise);
 
@@ -69,13 +83,14 @@ export function ErrorCorrectionExerciseView({
         </p>
         <p className="mt-2 text-xs text-muted-foreground">
           <Wrench className="inline h-3.5 w-3.5 align-[-2px]" aria-hidden="true" />
-          {" "}اكتشف الخطأ ثم اختر التصحيح الصحيح:
+          {" "}
+          {"اقرأ الجملة بتمعّن: قد تحتوي خطأً واحداً وقد تكون صحيحة كما هي."}
         </p>
       </div>
 
       <div className="grid grid-cols-1 gap-2 sm:grid-cols-2" role="radiogroup" aria-label="خيارات التصحيح">
         {options.map((option, i) => {
-          const isCorrectOption = option === exercise.correctWord;
+          const isCorrectOption = option === expectedAnswer;
           const isSelected = option === selected;
           const showState =
             selected !== null && (isSelected || (state.revealedSolution && isCorrectOption) || (state.result && !state.result.isCorrect && isCorrectOption));
@@ -108,7 +123,7 @@ export function ErrorCorrectionExerciseView({
         result={state.result}
         frustrated={state.frustrated}
         revealed={state.revealedSolution}
-        solution={exercise.correctWord}
+        solution={expectedAnswer}
         hint={exercise.hint}
         onRetry={handleRetry}
         onRevealSolution={state.revealSolution}

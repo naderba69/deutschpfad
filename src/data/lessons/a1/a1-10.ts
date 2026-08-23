@@ -283,7 +283,7 @@ export const lessonA110: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich habe nicht ein Bruder.",
       wrongWord: "nicht ein",
       correctWord: "keinen",
@@ -329,7 +329,7 @@ export const lessonA110: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Meine Mutter ist Kochin.",
       wrongWord: "Kochin",
       correctWord: "Köchin",
@@ -396,7 +396,7 @@ export const lessonA110: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Wir haben nicht Auto.",
       wrongWord: "nicht Auto",
       correctWord: "kein Auto",

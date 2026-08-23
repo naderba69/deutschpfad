@@ -321,8 +321,8 @@ export const lessonA112: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
-      wrongSentence: "Ich bin kalt. (أنا بارد — خطأ)",
+      instructionAr: "صحّح الخطأ (المقصود: الجو بارد):",
+      wrongSentence: "Ich bin kalt.",
       wrongWord: "Ich bin",
       correctWord: "Es ist",
       options: ["Es ist", "Ich werde", "Du bist", "Er ist"],
@@ -365,7 +365,7 @@ export const lessonA112: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Der Wetter ist schön.",
       wrongWord: "Der Wetter",
       correctWord: "Das Wetter",
@@ -431,7 +431,7 @@ export const lessonA112: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich werde kalt. (أنا بارد — للطقس)",
       wrongWord: "Ich werde",
       correctWord: "Es wird",

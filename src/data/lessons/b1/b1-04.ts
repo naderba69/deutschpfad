@@ -310,7 +310,7 @@ export const lessonB104: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Wenn ich Zeit habe, würde ich kommen.",
       wrongWord: "habe",
       correctWord: "hätte",
@@ -355,7 +355,7 @@ export const lessonB104: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich würde nach Deutschland gegangen.",
       wrongWord: "gegangen",
       correctWord: "gehen",
@@ -423,7 +423,7 @@ export const lessonB104: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Du solltest mehr Wasser getrunken.",
       wrongWord: "getrunken",
       correctWord: "trinken",

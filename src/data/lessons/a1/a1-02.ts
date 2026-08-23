@@ -295,7 +295,7 @@ export const lessonA102: Lesson = {
     {
       id: "e6",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Mein Mutter heißt Leila.",
       wrongWord: "Mein",
       correctWord: "Meine",
@@ -402,7 +402,7 @@ export const lessonA102: Lesson = {
     {
       id: "m5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Meine Vater heißt Ahmed.",
       wrongWord: "Meine",
       correctWord: "Mein",

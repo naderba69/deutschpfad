@@ -314,7 +314,7 @@ export const lessonB208: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich interessiere mich auf Musik.",
       wrongWord: "auf",
       correctWord: "für",
@@ -359,7 +359,7 @@ export const lessonB208: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich freue mich über den Urlaub. (مستقبل)",
       wrongWord: "über",
       correctWord: "auf",
@@ -427,7 +427,7 @@ export const lessonB208: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich warte für dich.",
       wrongWord: "für",
       correctWord: "auf",

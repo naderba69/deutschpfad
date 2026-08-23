@@ -11,7 +11,7 @@
 
 import { describe, expect, it } from "vitest";
 
-import { buildHighlightSegments } from "@/lib/lesson/error-correction-highlight";
+import { NO_ERROR_OPTION, buildHighlightSegments } from "@/lib/lesson/error-correction-highlight";
 import { evaluateErrorCorrection } from "@/lib/lesson/exercise-engine";
 import { LESSONS } from "@/data/lessons";
 import { LESSON_META } from "@/data/lessons/meta";
@@ -158,20 +158,30 @@ describe("تمارين تصحيح الخطأ", () => {
     const broken: string[] = [];
     for (const { key, ex } of allExercises()) {
       if (ex.type !== "error-correction") continue;
+      // في البند الخادع يستبدل العارض المفتاحَ بخيار «لا خطأ»
+      const expected = ex.isAlreadyCorrect ? NO_ERROR_OPTION : ex.correctWord;
+      const shown = ex.isAlreadyCorrect
+        ? [...ex.options.filter((o) => o !== ex.correctWord), NO_ERROR_OPTION]
+        : ex.options;
       const seen = new Set<string>();
-      for (const option of ex.options) {
+      for (const option of shown) {
         if (seen.has(option)) broken.push(`${key} — خيار مكرّر ${JSON.stringify(option)}`);
         seen.add(option);
       }
       // كل مشتّت يجب أن يُقيَّم خاطئاً فعلياً عبر المحرّك الحقيقي
-      for (const option of ex.options) {
-        if (option === ex.correctWord) continue;
+      for (const option of shown) {
+        if (option === expected) continue;
         if (evaluateErrorCorrection(ex, option).isCorrect) {
           broken.push(`${key} — المشتّت ${JSON.stringify(option)} يُقبل كإجابة صحيحة`);
         }
       }
-      if (!evaluateErrorCorrection(ex, ex.correctWord).isCorrect) {
+      if (!evaluateErrorCorrection(ex, expected).isCorrect) {
         broken.push(`${key} — المفتاح نفسه يُرفض`);
+      }
+      // بند غير مُعلَّم isAlreadyCorrect لكن «تصحيحه» = «خطؤه»: بند خادع
+      // فقد علمه، فيصير غير قابل للحل (المتعلّم يُصحّح ما ليس خطأً).
+      if (!ex.isAlreadyCorrect && ex.wrongWord.trim() === ex.correctWord.trim()) {
+        broken.push(`${key} — wrongWord = correctWord بلا isAlreadyCorrect`);
       }
     }
     expect(broken, `خلل في تمارين التصحيح:\n${broken.join("\n")}`).toEqual([]);
@@ -256,6 +266,8 @@ describe("كتل الشرح النظري", () => {
       for (const group of ["practiceBank", "miniTest", "review"] as const) {
         for (const ex of (lesson[group] ?? []) as Exercise[]) {
           if (ex.type !== "error-correction") continue;
+          // بند «خدعة»: الجملة سليمة عمداً فلا يُشطب فيها شيء
+          if (ex.isAlreadyCorrect) continue;
           const segments = buildHighlightSegments(ex.wrongSentence, ex.wrongWord);
           // الجملة يجب أن تبقى سليمة حرفياً بعد التقسيم
           expect(segments.map((s) => s.text).join("")).toBe(ex.wrongSentence);
@@ -265,8 +277,69 @@ describe("كتل الشرح النظري", () => {
         }
       }
     }
-    // b2-10:e10-punct بند «(صحيحة!)» زائف — مسجَّل ضمن العطب O ويُعالَج مع محتواه
-    expect(unhighlighted).toEqual(['b2-10:e10-punct wrongWord="، (صحيحة!)"']);
+    expect(unhighlighted).toEqual([]);
+  });
+
+  it("لا يكشف نص التمرين إجابته عبر وسم عربي مثل «(صحيحة!)»", () => {
+    // العطب O: كان المؤلف يكتب الحكم داخل الخيار نفسه، فيختار المتعلّم
+    // الإجابة دون قراءة الألمانية أصلاً. البديل البنيوي: isAlreadyCorrect.
+    const verdict = /صحيحة|صحيح|خطأ|خاطئ|أحيانًا|أحياناً/;
+    const leaks: string[] = [];
+    for (const lesson of LESSONS) {
+      for (const group of ["practiceBank", "miniTest", "review"] as const) {
+        for (const ex of (lesson[group] ?? []) as Exercise[]) {
+          if (ex.type !== "error-correction") continue;
+          const fields: [string, string][] = [
+            ["wrongSentence", ex.wrongSentence],
+            ["wrongWord", ex.wrongWord],
+            ["correctWord", ex.correctWord],
+            ...ex.options.map((o, i): [string, string] => [`options[${i}]`, o]),
+          ];
+          for (const [field, value] of fields) {
+            if (verdict.test(value)) leaks.push(`${lesson.id}:${ex.id} ${field}="${value}"`);
+          }
+        }
+      }
+    }
+    expect(leaks).toEqual([]);
+  });
+
+  it("لا تنفرد البنود الخادعة بصيغة تعليمات تكشفها", () => {
+    // لو كانت جملة التعليمات مستعملة *فقط* في البنود التي جوابها «لا خطأ»،
+    // لصار نصّها نفسه كاشفاً للإجابة دون قراءة الألمانية.
+    const all = new Map<string, number>();
+    const trick = new Map<string, number>();
+    for (const { ex } of allExercises()) {
+      if (ex.type !== "error-correction") continue;
+      const k = ex.instructionAr ?? "";
+      all.set(k, (all.get(k) ?? 0) + 1);
+      if (ex.isAlreadyCorrect) trick.set(k, (trick.get(k) ?? 0) + 1);
+    }
+    const exclusive = [...trick.keys()].filter((k) => trick.get(k) === all.get(k));
+    expect(exclusive).toEqual([]);
+  });
+
+  it("لا يكرر تمرينُ تصحيح الخطأ خياراً بعد إضافة خيار «لا خطأ»", () => {
+    const dups: string[] = [];
+    for (const lesson of LESSONS) {
+      for (const group of ["practiceBank", "miniTest", "review"] as const) {
+        for (const ex of (lesson[group] ?? []) as Exercise[]) {
+          if (ex.type !== "error-correction") continue;
+          // هذا ما يبنيه العارض فعلياً للبنود الخادعة
+          const shown = ex.isAlreadyCorrect
+            ? [...ex.options.filter((o) => o !== ex.correctWord), NO_ERROR_OPTION]
+            : ex.options;
+          if (new Set(shown).size !== shown.length) {
+            dups.push(`${lesson.id}:${ex.id} [${shown.join(" | ")}]`);
+          }
+          // البند الخادع يجب أن يُبقي الإجابة الصحيحة خارج الخيارات المعروضة
+          if (!ex.isAlreadyCorrect && !ex.options.includes(ex.correctWord)) {
+            dups.push(`${lesson.id}:${ex.id} correctWord مفقود من الخيارات`);
+          }
+        }
+      }
+    }
+    expect(dups).toEqual([]);
   });
 
   it("لا ينسخ الاختبار القصير بنداً من بنك التدريب حرفياً", () => {

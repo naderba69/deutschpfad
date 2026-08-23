@@ -326,7 +326,7 @@ export const lessonA203: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich möchte trinken einen Kaffee.",
       wrongWord: "trinken einen Kaffee",
       correctWord: "einen Kaffee trinken",
@@ -371,7 +371,7 @@ export const lessonA203: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich möchte zahlen die Rechnung.",
       wrongWord: "zahlen die Rechnung",
       correctWord: "die Rechnung zahlen",
@@ -439,7 +439,7 @@ export const lessonA203: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Die Suppe schmeckt gut nicht.",
       wrongWord: "gut nicht",
       correctWord: "nicht gut",

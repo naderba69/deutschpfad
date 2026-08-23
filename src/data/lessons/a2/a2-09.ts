@@ -310,7 +310,7 @@ export const lessonA209: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich gratuliere dich zum Geburtstag.",
       wrongWord: "dich",
       correctWord: "dir",
@@ -355,7 +355,7 @@ export const lessonA209: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich helfe die Eltern.",
       wrongWord: "die",
       correctWord: "den Eltern",
@@ -423,7 +423,7 @@ export const lessonA209: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich helfe die Oma im Haus.",
       wrongWord: "die",
       correctWord: "der",

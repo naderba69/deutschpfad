@@ -320,7 +320,7 @@ export const lessonB109: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich sehe den Student.",
       wrongWord: "Student",
       correctWord: "Studenten",
@@ -364,7 +364,7 @@ export const lessonB109: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Wir sprechen mit dem Kollege.",
       wrongWord: "Kollege",
       correctWord: "Kollegen",
@@ -432,7 +432,7 @@ export const lessonB109: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Der Polizist fragt den Journalist.",
       wrongWord: "Journalist",
       correctWord: "Journalisten",

@@ -318,7 +318,7 @@ export const lessonB201: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Er sagt, er hat keine Zeit.",
       wrongWord: "hat",
       correctWord: "habe",
@@ -362,7 +362,7 @@ export const lessonB201: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Der Reporter sagt, die Ergebnisse ist positiv.",
       wrongWord: "ist",
       correctWord: "seien",
@@ -457,7 +457,7 @@ export const lessonB201: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Er sagt, er ist krank.",
       wrongWord: "ist",
       correctWord: "sei",

@@ -13,6 +13,8 @@ import type {
   ZuordnungExercise,
 } from "@/types/lesson";
 
+import { NO_ERROR_OPTION } from "@/lib/lesson/error-correction-highlight";
+
 /**
  * ═══════════════════════════════════════════════════════
  *  محرك التصحيح الفوري — يقيّم أي تمرين ويعيد:
@@ -170,13 +172,15 @@ export function evaluateErrorCorrection(
   // لذلك تجب المقارنة الحرفية: الفرق بين "lesen" و"Lesen" أو بين
   // "stehe auf" و"stehe ... auf" هو جوهر التمرين نفسه، و normalizeText
   // (تصغير الحروف + إزالة الترقيم) كان يمحوه ويقبل خيارات خاطئة.
-  const isCorrect = selected.trim() === exercise.correctWord.trim();
+  // بند «خدعة»: الجملة سليمة، والإجابة الصحيحة هي اختيار «لا خطأ»
+  const expected = exercise.isAlreadyCorrect ? NO_ERROR_OPTION : exercise.correctWord;
+  const isCorrect = selected.trim() === expected.trim();
   return {
     isCorrect,
     pointsEarned: isCorrect ? exercisePoints(exercise) : 0,
     explanation: exercise.explanation,
     errorType: exercise.errorType,
-    correctAnswer: exercise.correctWord,
+    correctAnswer: expected,
   };
 }
 

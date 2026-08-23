@@ -339,7 +339,7 @@ export const lessonA211: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich freue auf den Urlaub.",
       wrongWord: "freue",
       correctWord: "freue mich",
@@ -384,7 +384,7 @@ export const lessonA211: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Er freut mich sich.",
       wrongWord: "mich sich",
       correctWord: "sich",
@@ -482,7 +482,7 @@ export const lessonA211: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Du freust mich.",
       wrongWord: "mich",
       correctWord: "dich",

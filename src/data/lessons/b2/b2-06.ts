@@ -347,7 +347,7 @@ export const lessonB206: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Beim lesen lernt man.",
       wrongWord: "lesen",
       correctWord: "Lesen",
@@ -392,7 +392,7 @@ export const lessonB206: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Die Verbesserung von Bedingungen (عامية)",
       wrongWord: "von Bedingungen",
       correctWord: "der Bedingungen",
@@ -486,7 +486,7 @@ export const lessonB206: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Beim arbeiten höre ich Musik.",
       wrongWord: "arbeiten",
       correctWord: "Arbeiten",

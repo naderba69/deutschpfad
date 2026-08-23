@@ -308,7 +308,7 @@ export const lessonB203: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Der Mann, den ich warte auf.",
       wrongWord: "den ich warte auf",
       correctWord: "auf den ich warte",
@@ -353,7 +353,7 @@ export const lessonB203: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Alles, das er sagt, ist wahr.",
       wrongWord: "das",
       correctWord: "was",
@@ -421,7 +421,7 @@ export const lessonB203: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Das Gesetz, das ich denke an, ist neu.",
       wrongWord: "das ich denke an",
       correctWord: "an das ich denke",

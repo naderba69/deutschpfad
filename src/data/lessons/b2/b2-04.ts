@@ -325,7 +325,7 @@ export const lessonB204: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Das spielend Kind ist glücklich.",
       wrongWord: "spielend",
       correctWord: "spielende",
@@ -369,7 +369,7 @@ export const lessonB204: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Die lesend Frau sitzt am Fenster.",
       wrongWord: "lesend",
       correctWord: "lesende",
@@ -437,7 +437,7 @@ export const lessonB204: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Der geschrieben Brief liegt hier.",
       wrongWord: "geschrieben",
       correctWord: "geschriebene",

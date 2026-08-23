@@ -336,7 +336,7 @@ export const lessonB202: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Die Tür ist geöffnet worden. (أريد حالة)",
       wrongWord: "ist geöffnet worden",
       correctWord: "ist geöffnet",
@@ -380,12 +380,12 @@ export const lessonB202: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Die Tür ist öffnenbar.",
       wrongWord: "öffnenbar",
-      correctWord: "öffnenbar (صحيحة!)",
-      options: ["öffnenbar (صحيحة!)", "öffnbar", "geöffnetbar", "öffnenbar"],
-      explanation: "öffnenbar = قابلة للفتح — صحيحة (من öffnen + bar).",
+      correctWord: "öffenbar",
+      options: ["öffenbar", "öffnenbar", "öffnbar", "geöffnetbar"],
+      explanation: "الصيغة الصحيحة هي öffenbar (قابلة للفتح): نُشتق bar- من جذر الفعل، لكن öffnen يستعيد الـ e المحذوفة من أصله offen فتصير öffen + bar. قارن: ordnen ← ordenbar، rechnen ← rechenbar. أما öffnenbar فليست كلمة ألمانية.",
       errorType: "grammar",
     },
     {
@@ -448,7 +448,7 @@ export const lessonB202: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Das Fenster ist geöffnet worden. (أريد حالة)",
       wrongWord: "ist geöffnet worden",
       correctWord: "ist geöffnet",

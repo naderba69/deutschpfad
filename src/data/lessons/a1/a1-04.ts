@@ -292,7 +292,7 @@ export const lessonA104: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich schlafe in dem Bett. (اكتب الصيغة المختصرة)",
       wrongWord: "in dem",
       correctWord: "im",
@@ -337,7 +337,7 @@ export const lessonA104: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Das Sofa ist in das Wohnzimmer.",
       wrongWord: "in das",
       correctWord: "im",
@@ -406,7 +406,7 @@ export const lessonA104: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Das Buch ist auf der Tisch.",
       wrongWord: "auf der",
       correctWord: "auf dem",

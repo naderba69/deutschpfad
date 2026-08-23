@@ -325,7 +325,7 @@ export const lessonA202: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich bin Kopfschmerzen.",
       wrongWord: "bin",
       correctWord: "habe",
@@ -370,7 +370,7 @@ export const lessonA202: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich sollst Medizin nehmen.",
       wrongWord: "sollst",
       correctWord: "soll",
@@ -438,7 +438,7 @@ export const lessonA202: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Mein Kopf tut weht.",
       wrongWord: "weht",
       correctWord: "weh",

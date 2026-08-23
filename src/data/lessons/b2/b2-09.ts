@@ -310,7 +310,7 @@ export const lessonB209: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich bewerbe für die Stelle.",
       wrongWord: "für",
       correctWord: "um",
@@ -354,7 +354,7 @@ export const lessonB209: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich lege Wert für Pünktlichkeit.",
       wrongWord: "für",
       correctWord: "auf",
@@ -422,7 +422,7 @@ export const lessonB209: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich stelle meine Erfahrung zu Verfügung.",
       wrongWord: "zu",
       correctWord: "zur",

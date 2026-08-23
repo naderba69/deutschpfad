@@ -287,7 +287,7 @@ export const lessonA109: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "In Montag habe ich Zeit.",
       wrongWord: "In Montag",
       correctWord: "Am Montag",
@@ -332,10 +332,11 @@ export const lessonA109: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
-      wrongSentence: "Heute ist der dritte Mai? (تأكيد التاريخ)",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      wrongSentence: "Heute ist der dritte Mai.",
       wrongWord: "der dritte",
       correctWord: "der dritte",
+      isAlreadyCorrect: true,
       options: ["der dritte", "der dritete", "der dreite", "der drei"],
       explanation: "الصيغة صحيحة! dritte شاذة لكنها هكذا — لا تغيرها.",
       errorType: "vocabulary",
@@ -398,7 +399,7 @@ export const lessonA109: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Mein Geburtstag ist in Mai.",
       wrongWord: "in Mai",
       correctWord: "im Mai",

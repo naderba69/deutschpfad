@@ -327,7 +327,7 @@ export const lessonA105: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich aufstehe um sieben Uhr.",
       wrongWord: "aufstehe",
       correctWord: "stehe ... auf",
@@ -372,7 +372,7 @@ export const lessonA105: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Es ist halb sieben = 7:30.",
       wrongWord: "halb sieben",
       correctWord: "6:30",
@@ -457,7 +457,7 @@ export const lessonA105: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich stehe auf um halb sieben.",
       wrongWord: "auf um halb sieben",
       correctWord: "um halb sieben auf",

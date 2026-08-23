@@ -341,7 +341,7 @@ export const lessonB103: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Das Haus wird bauen.",
       wrongWord: "bauen",
       correctWord: "gebaut",
@@ -385,7 +385,7 @@ export const lessonB103: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Viele Bäume wird gepflanzt.",
       wrongWord: "wird",
       correctWord: "werden",
@@ -477,7 +477,7 @@ export const lessonB103: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Das Haus wurde bauen.",
       wrongWord: "bauen",
       correctWord: "gebaut",

@@ -314,7 +314,7 @@ export const lessonB207: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Er wird gegangen haben.",
       wrongWord: "haben",
       correctWord: "sein",
@@ -358,7 +358,7 @@ export const lessonB207: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich werde das Buch beendet haben haben.",
       wrongWord: "haben haben",
       correctWord: "haben",
@@ -426,7 +426,7 @@ export const lessonB207: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Sie wird das Buch gelesen sein.",
       wrongWord: "sein",
       correctWord: "haben",

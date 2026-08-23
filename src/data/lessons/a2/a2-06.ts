@@ -309,7 +309,7 @@ export const lessonA206: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich glaube, dass er kommt heute.",
       wrongWord: "kommt heute",
       correctWord: "heute kommt",
@@ -354,7 +354,7 @@ export const lessonA206: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich finde, dass der Artikel ist interessant.",
       wrongWord: "ist interessant",
       correctWord: "interessant ist",
@@ -422,7 +422,7 @@ export const lessonA206: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Er sagt, dass er hat keine Zeit.",
       wrongWord: "hat keine Zeit",
       correctWord: "keine Zeit hat",

@@ -310,7 +310,7 @@ export const lessonB105: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Wenn ich Zeit gehabt hätte, ich wäre gekommen.",
       wrongWord: "ich wäre",
       correctWord: "wäre ich",
@@ -355,7 +355,7 @@ export const lessonB105: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Sie tut so, als ob sie alles weiß.",
       wrongWord: "weiß",
       correctWord: "wüsste",
@@ -423,7 +423,7 @@ export const lessonB105: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich hätte gestern gegangen.",
       wrongWord: "hätte ... gegangen",
       correctWord: "wäre ... gegangen",

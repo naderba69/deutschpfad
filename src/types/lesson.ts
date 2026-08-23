@@ -104,6 +104,17 @@ export interface ErrorCorrectionExercise extends BaseExercise {
   correctWord: string;
   /** خيارات الإصلاح (تشمل الصواب) */
   options: string[];
+  /**
+   * بند «خدعة»: الجملة سليمة أصلاً ولا خطأ فيها.
+   *
+   * يُدرّب المتعلّم على ألّا يفترض وجود خطأ في كل جملة. حين يكون `true`:
+   * - لا يُشطب أي جزء من الجملة (فلا إيحاء بموضع خطأ غير موجود)
+   * - يُضاف خيار «لا خطأ — الجملة صحيحة» تلقائياً في العارض
+   *
+   * البديل القديم كان وسم الخيار نصّياً بـ «(صحيحة!)»، وهو يكشف الإجابة
+   * للمتعلّم قبل أن يقرأ الألمانية أصلاً فيُبطل قيمة البند التقويمية.
+   */
+  isAlreadyCorrect?: boolean;
 }
 
 export interface TransformationExercise extends BaseExercise {

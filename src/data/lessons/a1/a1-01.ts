@@ -384,7 +384,7 @@ export const lessonA101: Lesson = {
     {
       id: "e7",
       type: "error-correction",
-      instructionAr: "الجملة تحتوي خطأً واحداً. صحّحه:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich aus Tunesien.",
       wrongWord: "aus",
       correctWord: "bin",
@@ -395,7 +395,7 @@ export const lessonA101: Lesson = {
     {
       id: "e8",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ في الجملة:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Wie du heißt?",
       wrongWord: "du heißt",
       correctWord: "heißt du",
@@ -516,7 +516,7 @@ export const lessonA101: Lesson = {
     {
       id: "m5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Warum du lernst Deutsch?",
       wrongWord: "du lernst",
       correctWord: "lernst du",

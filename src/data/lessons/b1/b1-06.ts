@@ -333,7 +333,7 @@ export const lessonB106: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Das ist ein gut Mann.",
       wrongWord: "gut",
       correctWord: "guter",
@@ -377,7 +377,7 @@ export const lessonB106: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Mit einem guten Freund? أم Mit einem gute Freund؟",
       wrongWord: "gute",
       correctWord: "guten",
@@ -473,7 +473,7 @@ export const lessonB106: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Das berühmtes Museum ist groß.",
       wrongWord: "berühmtes",
       correctWord: "berühmte",

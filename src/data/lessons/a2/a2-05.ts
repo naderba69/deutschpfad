@@ -323,7 +323,7 @@ export const lessonA205: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Wir war im Büro.",
       wrongWord: "war",
       correctWord: "waren",
@@ -368,7 +368,7 @@ export const lessonA205: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Mit freundliche Grüßen.",
       wrongWord: "freundliche",
       correctWord: "freundlichen",
@@ -436,7 +436,7 @@ export const lessonA205: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich hatte ein Termin.",
       wrongWord: "ein",
       correctWord: "einen",

@@ -320,7 +320,7 @@ export const lessonB108: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich werde morgen lernen werde.",
       wrongWord: "lernen werde",
       correctWord: "lernen",
@@ -366,7 +366,7 @@ export const lessonB108: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich habe nicht weder Zeit noch Geld.",
       wrongWord: "nicht weder",
       correctWord: "weder",
@@ -434,7 +434,7 @@ export const lessonB108: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich werde morgen lerne.",
       wrongWord: "lerne",
       correctWord: "lernen",

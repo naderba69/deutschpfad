@@ -321,7 +321,7 @@ export const lessonA207: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Kannst du mich helfen?",
       wrongWord: "mich",
       correctWord: "mir",
@@ -366,7 +366,7 @@ export const lessonA207: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Das Buch gehört ihn.",
       wrongWord: "ihn",
       correctWord: "ihm",
@@ -434,7 +434,7 @@ export const lessonA207: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich danke dich für alles.",
       wrongWord: "dich",
       correctWord: "dir",

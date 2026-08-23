@@ -363,7 +363,7 @@ export const lessonA103: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich habe ein Brot. Und ich esse die Käse.",
       wrongWord: "die Käse",
       correctWord: "den Käse",
@@ -408,7 +408,7 @@ export const lessonA103: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich bin Durst.",
       wrongWord: "bin",
       correctWord: "habe",
@@ -477,7 +477,7 @@ export const lessonA103: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich esse die Apfel.",
       wrongWord: "die Apfel",
       correctWord: "den Apfel",

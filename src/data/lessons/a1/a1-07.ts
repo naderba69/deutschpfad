@@ -331,7 +331,7 @@ export const lessonA107: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich kaufe zwei Apfel.",
       wrongWord: "Apfel",
       correctWord: "Äpfel",
@@ -375,7 +375,7 @@ export const lessonA107: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Die Bücher ist neu.",
       wrongWord: "ist",
       correctWord: "sind",
@@ -443,7 +443,7 @@ export const lessonA107: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Das kostet fünfzehn Euro, das ist sehr teuer!",
       wrongWord: "teuer",
       correctWord: "billig",

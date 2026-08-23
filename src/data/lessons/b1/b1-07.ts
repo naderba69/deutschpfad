@@ -322,7 +322,7 @@ export const lessonB107: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Als ich Zeit habe, lerne ich.",
       wrongWord: "Als",
       correctWord: "Wenn",
@@ -368,7 +368,7 @@ export const lessonB107: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Bevor ich schlafe, ich lese ein Buch.",
       wrongWord: "ich lese",
       correctWord: "lese ich",
@@ -462,7 +462,7 @@ export const lessonB107: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Wenn ich gestern nach Hause kam, war niemand da.",
       wrongWord: "Wenn",
       correctWord: "Als",

@@ -315,7 +315,7 @@ export const lessonA210: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich sehe mein Bruder.",
       wrongWord: "mein",
       correctWord: "meinen",
@@ -359,7 +359,7 @@ export const lessonA210: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Wenn es regnet, ich bleibe zu Hause.",
       wrongWord: "ich bleibe",
       correctWord: "bleibe ich",
@@ -427,7 +427,7 @@ export const lessonA210: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich sehe meine Vater.",
       wrongWord: "meine",
       correctWord: "meinen",

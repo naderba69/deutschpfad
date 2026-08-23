@@ -322,7 +322,7 @@ export const lessonA201: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich habe nach Berlin gefliegen.",
       wrongWord: "habe ... gefliegen",
       correctWord: "bin ... geflogen",
@@ -367,7 +367,7 @@ export const lessonA201: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich habe geschwimmen.",
       wrongWord: "geschwimmen",
       correctWord: "geschwommen",
@@ -435,7 +435,7 @@ export const lessonA201: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Wir haben nach Tunis gefahren.",
       wrongWord: "haben ... gefahren",
       correctWord: "sind ... gefahren",

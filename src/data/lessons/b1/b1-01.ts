@@ -330,7 +330,7 @@ export const lessonB101: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Wegen den Regen bleiben wir.",
       wrongWord: "den Regen",
       correctWord: "des Regens",
@@ -374,7 +374,7 @@ export const lessonB101: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Das ist das Buch von dem Lehrer. (حوّلها للرسمية)",
       wrongWord: "von dem Lehrer",
       correctWord: "des Lehrers",
@@ -442,7 +442,7 @@ export const lessonB101: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Trotz dem Wetter gehen wir spazieren.",
       wrongWord: "dem",
       correctWord: "des",

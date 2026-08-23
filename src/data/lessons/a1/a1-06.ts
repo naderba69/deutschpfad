@@ -452,7 +452,7 @@ export const lessonA106: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich gern spiele Tennis.",
       wrongWord: "gern spiele",
       correctWord: "spiele gern",
@@ -497,7 +497,7 @@ export const lessonA106: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Du kommst bitte! (أمر مع صديق)",
       wrongWord: "Du kommst",
       correctWord: "Komm",
@@ -615,7 +615,7 @@ export const lessonA106: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Hast du Lust für Kaffee?",
       wrongWord: "für Kaffee",
       correctWord: "auf Kaffee",

@@ -353,7 +353,7 @@ export const lessonA100: Lesson = {
     {
       id: "e6",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ الإملائي:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Das ist die Strasse.",
       wrongWord: "Strasse",
       correctWord: "Straße",
@@ -472,10 +472,11 @@ export const lessonA100: Lesson = {
     {
       id: "m5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ في التهجئة:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Wie spricht man „Buchstabe“?",
       wrongWord: "Buchstabe",
       correctWord: "Buchstabe",
+      isAlreadyCorrect: true,
       options: ["Buchstabe", "Buchstabbe", "Buchstabeh", "Buchstape"],
       explanation: "Buchstabe (حرف) صحيحة كما هي! هذا تمرين ثقة: أحياناً الإجابة الصحيحة هي الأصل نفسه. أتقنت الأبجدية! 🎉",
       errorType: "spelling",

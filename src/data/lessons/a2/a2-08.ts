@@ -320,7 +320,7 @@ export const lessonA208: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Der Zug ist schneller wie der Bus.",
       wrongWord: "wie",
       correctWord: "als",
@@ -365,7 +365,7 @@ export const lessonA208: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Der Zug fährt ab um zehn Uhr.",
       wrongWord: "ab um zehn",
       correctWord: "um zehn ab",
@@ -433,7 +433,7 @@ export const lessonA208: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich gehe lieber mit dem Zug als mit der Bus.",
       wrongWord: "der Bus",
       correctWord: "dem Bus",

@@ -294,7 +294,7 @@ export const lessonA108: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Die Schuhe ist schwarz.",
       wrongWord: "ist",
       correctWord: "sind",
@@ -339,7 +339,7 @@ export const lessonA108: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Das Kleid ist sehr schöne.",
       wrongWord: "schöne",
       correctWord: "schön",
@@ -408,7 +408,7 @@ export const lessonA108: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich trage ein rot Hemd.",
       wrongWord: "rot",
       correctWord: "rotes",

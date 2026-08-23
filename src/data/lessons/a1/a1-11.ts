@@ -281,7 +281,7 @@ export const lessonA111: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich gehe zu Deutschland.",
       wrongWord: "zu",
       correctWord: "nach",
@@ -326,7 +326,7 @@ export const lessonA111: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich gehe zu Hause. (أنا ذاهب إلى المنزل الآن)",
       wrongWord: "zu Hause",
       correctWord: "nach Hause",
@@ -393,7 +393,7 @@ export const lessonA111: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ:",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich gehe ins Stadt.",
       wrongWord: "ins Stadt",
       correctWord: "in die Stadt",
