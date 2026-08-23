@@ -4,6 +4,7 @@ import * as React from "react";
 import {BrainCircuit, CheckCircle2, RotateCcw, XCircle} from "lucide-react";
 
 import {B2_GRAMMATIK} from "@/data/exams/b2-grammatik";
+import {shuffleChoiceItems} from "@/lib/tests/shuffle-questions";
 import {useCountdown} from "@/lib/tests/use-countdown";
 import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
@@ -21,11 +22,15 @@ export function B2GrammarTrainer() {
   const [result, setResult] = React.useState<{ correct: number; total: number } | null>(null);
   const [runKey, setRunKey] = React.useState(0);
 
+  // خلط الخيارات لكل محاولة — البنك يضع الإجابة الصحيحة في الموضع الأول دائماً
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- runKey مقصود: يعيد الخلط عند إعادة المحاولة
+  const questions = React.useMemo(() => shuffleChoiceItems(B2_GRAMMATIK), [runKey]);
+
   // 60 دقيقة = دقيقة لكل سؤال (توصية تدريبية)
   const totalSeconds = B2_GRAMMATIK.length * 60;
   const remaining = useCountdown(totalSeconds, () => finish());
 
-  const current = B2_GRAMMATIK[idx];
+  const current = questions[idx];
   const chosen = answers[current.id];
   const answeredCount = Object.keys(answers).length;
 
@@ -36,7 +41,7 @@ export function B2GrammarTrainer() {
 
   const next = () => {
     setChecked(false);
-    if (idx + 1 < B2_GRAMMATIK.length) {
+    if (idx + 1 < questions.length) {
       setIdx((i) => i + 1);
     } else {
       finish();
@@ -50,10 +55,10 @@ export function B2GrammarTrainer() {
 
   const finish = () => {
     let correct = 0;
-    for (const q of B2_GRAMMATIK) {
+    for (const q of questions) {
       if (answers[q.id] === q.correct) correct++;
     }
-    setResult({ correct, total: B2_GRAMMATIK.length });
+    setResult({ correct, total: questions.length });
   };
 
   const restart = () => {
@@ -99,7 +104,7 @@ export function B2GrammarTrainer() {
       <div className="sticky top-16 z-30 flex flex-wrap items-center gap-3 rounded-xl border bg-background/95 px-4 py-2.5 shadow-sm backdrop-blur-md">
         <span className="inline-flex items-center gap-1.5 text-sm font-bold">
           <BrainCircuit className="h-4 w-4 text-primary" aria-hidden="true" />
-          قواعد ومفردات B2 — {idx + 1}/{B2_GRAMMATIK.length}
+          قواعد ومفردات B2 — {idx + 1}/{questions.length}
         </span>
         <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-bold text-muted-foreground">
           {current.skill === "grammatik" ? "🧩 قواعد" : "💬 مفردات"}
@@ -150,13 +155,13 @@ export function B2GrammarTrainer() {
           السابق
         </Button>
         <span className="text-xs font-bold text-muted-foreground">
-          أجبت على {answeredCount} من {B2_GRAMMATIK.length}
+          أجبت على {answeredCount} من {questions.length}
         </span>
         {!checked ? (
           <Button onClick={() => setChecked(true)} disabled={chosen === undefined}>
             تحقق
           </Button>
-        ) : idx < B2_GRAMMATIK.length - 1 ? (
+        ) : idx < questions.length - 1 ? (
           <Button onClick={next}>التالي</Button>
         ) : (
           <Button variant="gold" onClick={finish}>إنهاء التدريب</Button>

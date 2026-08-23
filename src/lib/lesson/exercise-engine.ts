@@ -33,6 +33,27 @@ export function normalizeText(s: string): string {
     .trim();
 }
 
+/**
+ * تطبيع يحافظ على علامات الترقيم — لتمارين الترقيم نفسها.
+ * `normalizeText` يمسح كل علامة ترقيم، فتصير «.» و«?» و«» كلها نصاً فارغاً
+ * وتُقبل أي إجابة. هنا نُبقي العلامة ونُطبّع المسافات وحدها.
+ */
+export function normalizePunctuation(s: string): string {
+  return s.toLowerCase().replace(/\s+/g, " ").trim();
+}
+
+/** هل يقيس هذا التمرين علامات الترقيم نفسها؟ */
+function isPunctuationExercise(errorType?: string): boolean {
+  return errorType === "punctuation";
+}
+
+/** المقارنة المناسبة حسب نوع الخطأ الذي يقيسه التمرين */
+function answersMatch(given: string, expected: string, errorType?: string): boolean {
+  return isPunctuationExercise(errorType)
+    ? normalizePunctuation(given) === normalizePunctuation(expected)
+    : normalizeText(given) === normalizeText(expected);
+}
+
 /** مجموع نقاط تمرين */
 export function exercisePoints(exercise: Exercise): number {
   return exercise.points ?? 10;
@@ -80,8 +101,8 @@ export function evaluateOrdering(exercise: OrderingExercise, answerTokens: strin
 }
 
 export function evaluateFillBlank(exercise: FillBlankExercise, answers: string[]): FeedbackResult {
-  const allCorrect = exercise.blanks.every(
-    (blank, i) => normalizeText(answers[i] ?? "") === normalizeText(blank.correct),
+  const allCorrect = exercise.blanks.every((blank, i) =>
+    answersMatch(answers[i] ?? "", blank.correct, exercise.errorType),
   );
   const filledCount = answers.filter((a) => a.trim() !== "").length;
   const isComplete = filledCount === exercise.blanks.length;
@@ -90,7 +111,7 @@ export function evaluateFillBlank(exercise: FillBlankExercise, answers: string[]
   if (!allCorrect) {
     const wrongIndices = exercise.blanks
       .map((blank, i) => ({ blank, i }))
-      .filter(({ blank, i }) => normalizeText(answers[i] ?? "") !== normalizeText(blank.correct));
+      .filter(({ blank, i }) => !answersMatch(answers[i] ?? "", blank.correct, exercise.errorType));
     if (wrongIndices.length > 0) {
       const first = wrongIndices[0];
       explanation = `الفراغ رقم ${first.i + 1}: الصواب «${first.blank.correct}» — ${exercise.explanation}`;

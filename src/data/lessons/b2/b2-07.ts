@@ -250,7 +250,7 @@ export const lessonB207: Lesson = {
       id: "w2",
       type: "fill-blank",
       instructionAr: "أكمل بـ Futur II:",
-      template: "Bis 2030 werde ich Deutsch ___ (gelernt haben/gelernt sein). Er wird ___ gegangen ___ (sein/haben).",
+      template: "Bis 2030 werde ich Deutsch ___ (gelernt haben/gelernt sein). Er wird gegangen ___ (sein/haben).",
       blanks: [
         { correct: "gelernt haben", options: ["gelernt haben", "gelernt sein", "gelernt"] },
         { correct: "sein", options: ["sein", "haben", "gehabt"] },

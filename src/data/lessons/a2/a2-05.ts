@@ -64,7 +64,8 @@ export const lessonA205: Lesson = {
       instructionAr: "مراجعة من A1: أكمل حرف الجر:",
       template: "Der Termin ist ___ Montag ___ neun Uhr.",
       blanks: [
-        { correct: "am ... um", options: ["am ... um", "um ... am", "im ... um"] },
+        { correct: "am", options: ["am", "um", "im"] },
+        { correct: "um", options: ["um", "am", "im"] },
       ],
       explanation: "am + يوم، um + ساعة (درس التقويم).",
       errorType: "preposition",

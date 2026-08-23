@@ -253,7 +253,7 @@ export const lessonA210: Lesson = {
       template: "Ich lerne, ___ ich will. ___ ich Zeit habe, lerne ich. Ich weiß nicht, ___ er kommt.",
       blanks: [
         { correct: "weil", options: ["weil", "wenn", "ob"] },
-        { correct: "Wenn", options: ["weil", "wenn", "ob"] },
+        { correct: "Wenn", options: ["Wenn", "Weil", "Ob"] },
         { correct: "ob", options: ["weil", "wenn", "ob"] },
       ],
       explanation: "سبب → weil. شرط → wenn. سؤال مخفي → ob.",
@@ -442,7 +442,7 @@ export const lessonA210: Lesson = {
       template: "Ich bleibe zu Hause, ___ es regnet. ___ ich müde bin, schlafe ich. Ich frage, ___ du mitkommst.",
       blanks: [
         { correct: "weil", options: ["weil", "wenn", "ob"] },
-        { correct: "Wenn", options: ["weil", "wenn", "ob"] },
+        { correct: "Wenn", options: ["Wenn", "Weil", "Ob"] },
         { correct: "ob", options: ["weil", "wenn", "ob"] },
       ],
       explanation: "سبب → weil. شرط → wenn. سؤال → ob.",

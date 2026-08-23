@@ -257,7 +257,7 @@ export const lessonA109: Lesson = {
       type: "multiple-choice",
       instructionAr: "اختر الترتيبي الصحيح:",
       questionDe: "der ___ Tag (اليوم الثالث)",
-      options: ["dritte", "dritte", "dreite", "dritete"],
+      options: ["dritte", "dreite", "dritete", "drittte"],
       correctIndex: 0,
       explanation: "3 شاذ: der dritte (دريتّه) — بدون مضاعفة القاعدة.",
       errorType: "vocabulary",

@@ -4,6 +4,7 @@ import * as React from "react";
 import {PlayCircle, RotateCcw, Volume2} from "lucide-react";
 
 import {FALLSTRICKE} from "@/data/exams/fallstricke";
+import {shuffleTrapItem} from "@/lib/tests/shuffle-questions";
 import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
 import {cn} from "@/lib/utils";
@@ -29,7 +30,10 @@ export function FallstrickeTrainer() {
   const [done, setDone] = React.useState(false);
   const [runKey, setRunKey] = React.useState(0);
 
-  const ex = FALLSTRICKE[idx];
+  // خلط الخيارات لكل محاولة (مع نقل فهرسي الصحيح والمصيدة)
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- runKey مقصود: يعيد الخلط عند إعادة المحاولة
+  const exercises = React.useMemo(() => FALLSTRICKE.map(shuffleTrapItem), [runKey]);
+  const ex = exercises[idx];
   const answered = chosen !== null;
   const isRight = answered && chosen === ex.correct;
 
@@ -41,7 +45,7 @@ export function FallstrickeTrainer() {
 
   const next = () => {
     setChosen(null);
-    if (idx + 1 < FALLSTRICKE.length) {
+    if (idx + 1 < exercises.length) {
       setIdx((i) => i + 1);
     } else {
       setDone(true);

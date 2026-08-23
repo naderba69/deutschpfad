@@ -416,7 +416,7 @@ export const lessonA107: Lesson = {
       type: "multiple-choice",
       instructionAr: "اختر الرقم الصحيح كتابةً:",
       questionDe: "33 = ___",
-      options: ["dreiunddreißig", "dreißigdrei", "dreiunddrei", "dreiunddreißig"],
+      options: ["dreiunddreißig", "dreißigdrei", "dreiunddrei", "dreiundreißig"],
       correctIndex: 0,
       explanation: "33 = dreiunddreißig (ثلاثة وثلاثون).",
       errorType: "vocabulary",

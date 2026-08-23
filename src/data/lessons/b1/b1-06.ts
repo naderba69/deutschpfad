@@ -241,9 +241,9 @@ export const lessonB106: Lesson = {
       type: "transformation",
       instructionAr: "صف شيئاً بنعت:",
       prompt: "اكتب: «هذه لوحة جميلة» (ein + صفة + اسم)",
-      acceptedAnswers: ["Das ist ein schönes Bild", "Das ist ein schönes Bild.", "Das ist eine schöne Gemälde"],
+      acceptedAnswers: ["Das ist ein schönes Bild", "Das ist ein schönes Bild.", "Das ist ein schönes Gemälde", "Das ist ein schönes Gemälde."],
       sampleAnswer: "Das ist ein schönes Bild.",
-      explanation: "Bild محايد مع ein: schönes.",
+      explanation: "das Bild محايد، ومع ein تأخذ الصفة النهاية القوية ‑es: ein schönes Bild. والأمر نفسه في das Gemälde ← ein schönes Gemälde (وليس «eine schöne»، فالكلمة ليست مؤنثة).",
       errorType: "grammar",
     },
     {

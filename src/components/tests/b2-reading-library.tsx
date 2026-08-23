@@ -4,6 +4,7 @@ import * as React from "react";
 import {BookOpenCheck} from "lucide-react";
 
 import {B2_READING_EXAM, B2_READING_SOURCES} from "@/data/reading/b2-exam-library";
+import {shuffleChoiceItems} from "@/lib/tests/shuffle-questions";
 import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
 
@@ -12,6 +13,11 @@ import {Button} from "@/components/ui/button";
  * (الجزء 2 من المرحلة 2: ثراء الامتحان)
  */
 export function B2ReadingExamLibrary() {
+  // خلط خيارات كل نص مرة واحدة عند التحميل — البنك يضع الصحيح في الموضع 0
+  const texts = React.useMemo(
+    () => B2_READING_EXAM.map((text) => ({ ...text, questions: shuffleChoiceItems(text.questions) })),
+    [],
+  );
   const [openId, setOpenId] = React.useState<string | null>(B2_READING_EXAM[0].id);
   const [answers, setAnswers] = React.useState<Record<string, Record<string, number>>>({});
   const [checked, setChecked] = React.useState<Record<string, boolean>>({});
@@ -41,7 +47,7 @@ export function B2ReadingExamLibrary() {
         </p>
       </div>
 
-      {B2_READING_EXAM.map((text) => {
+      {texts.map((text) => {
         const isOpen = openId === text.id;
         const textAnswers = answers[text.id] ?? {};
         const isChecked = checked[text.id];

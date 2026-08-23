@@ -367,7 +367,7 @@ export const lessonB210: Lesson = {
       id: "e12-punct",
       type: "fill-blank",
       instructionAr: "ضع علامة الترقيم الصحيحة (اكتبها في نهاية الجملة):",
-      template: "Er fragte mich, ob ich komme __  — Ich habe Hunger, aber ich koche __  — Vorsicht, die Tür ist offen __",
+      template: "Er fragte mich, ob ich komme ___  — Ich habe Hunger, aber ich koche ___  — Vorsicht, die Tür ist offen ___",
       blanks: [
         { correct: ".", options: [".", ",", "?", "!"] },
         { correct: ".", options: [".", "?", "!", ":"] },
@@ -452,7 +452,7 @@ export const lessonB210: Lesson = {
       blanks: [
         { correct: "erwiesen", options: ["erwiesen", "bewiesen", "gesehen"] },
         { correct: "Ansicht", options: ["Ansicht", "Meinung", "Sicht"] },
-        { correct: "sagen", options: ["sagen", "sagen", "sprechen"] },
+        { correct: "sagen", options: ["sagen", "sprechen", "reden"] },
       ],
       explanation: "erwiesen + Ansicht nach + lässt sich sagen.",
       errorType: "grammar",

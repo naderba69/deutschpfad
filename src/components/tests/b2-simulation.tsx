@@ -8,6 +8,7 @@ import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
 import {useCountdown} from "@/lib/tests/use-countdown";
 import {playCorrect, playWrong} from "@/lib/audio/sfx";
+import {shuffleChoiceItems} from "@/lib/tests/shuffle-questions";
 import {cn} from "@/lib/utils";
 
 /**
@@ -238,17 +239,27 @@ export function B2SimulationClient() {
   const secs = phase === "lesen" ? 65 * 60 : phase === "hören" ? 40 * 60 : phase === "schreiben" ? 75 * 60 : phase === "sprechen" ? 15 * 60 : 0;
   const remaining = useCountdown(secs, () => setPhase("result"));
 
-  const reading = READING[readingIdx];
-  const listening = LISTENING[listeningIdx];
+  // خلط الخيارات لكل جلسة — كل الأسئلة مكتوبة بالإجابة الصحيحة في الموضع 0
+  const readingTasks = React.useMemo(
+    () => READING.map((task) => ({ ...task, questions: shuffleChoiceItems(task.questions) })),
+    [],
+  );
+  const listeningTasks = React.useMemo(
+    () => LISTENING.map((task) => ({ ...task, questions: shuffleChoiceItems(task.questions) })),
+    [],
+  );
+
+  const reading = readingTasks[readingIdx];
+  const listening = listeningTasks[listeningIdx];
 
   const readingScore = () => {
     let c = 0, t = 0;
-    for (const task of READING) for (const q of task.questions) { t++; if (readingAnswers[`${task.id}:${q.q}`] === q.correct) c++; }
+    for (const task of readingTasks) for (const q of task.questions) { t++; if (readingAnswers[`${task.id}:${q.q}`] === q.correct) c++; }
     return t ? Math.round((c / t) * 100) : 0;
   };
   const listeningScore = () => {
     let c = 0, t = 0;
-    for (const task of LISTENING) for (const q of task.questions) { t++; if (listeningAnswers[`${task.id}:${q.q}`] === q.correct) c++; }
+    for (const task of listeningTasks) for (const q of task.questions) { t++; if (listeningAnswers[`${task.id}:${q.q}`] === q.correct) c++; }
     return t ? Math.round((c / t) * 100) : 0;
   };
 

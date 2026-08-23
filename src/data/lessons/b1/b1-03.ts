@@ -63,9 +63,9 @@ export const lessonB103: Lesson = {
       id: "r3",
       type: "fill-blank",
       instructionAr: "مراجعة من A2: أكمل:",
-      template: "Ich habe ___ gegessen. (قد)",
+      template: "Ich habe eine Pizza ___. (essen)",
       blanks: [
-        { correct: "gegessen", options: ["gegessen", "geessen", "gegessen"] },
+        { correct: "gegessen", options: ["gegessen", "geessen", "gegesst"] },
       ],
       explanation: "essen → gegessen (Perfekt).",
       errorType: "grammar",

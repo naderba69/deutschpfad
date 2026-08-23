@@ -9,7 +9,25 @@ import type { LessonMeta } from "./meta-types";
  * ═══════════════════════════════════════════════════════════
  */
 
-export const LESSON_META: LessonMeta[] = [
+const LEVEL_RANK: Record<LessonMeta["level"], number> = { A1: 0, A2: 1, B1: 2, B2: 3 };
+
+/**
+ * ترتيب الدروس كما يسير فيها المتعلّم: المستوى ← الوحدة ← ترتيب الدرس داخلها.
+ * التنقّل (السابق/التالي) يعتمد على موضع العنصر في المصفوفة، وكان الترتيب
+ * الحرفي ينتهي بـ «… a1-12, a1-14, a1-13» فيقفز المتعلّم من درس الطقس
+ * إلى درس الأرقام (وهو الدرس الثاني للوحدة a1-07) ثم يعود للمراجعة الشاملة.
+ */
+function sortLessonMeta(list: LessonMeta[]): LessonMeta[] {
+  return [...list].sort(
+    (a, b) =>
+      LEVEL_RANK[a.level] - LEVEL_RANK[b.level] ||
+      a.unitId.localeCompare(b.unitId) ||
+      a.order - b.order ||
+      a.id.localeCompare(b.id),
+  );
+}
+
+const LESSON_META_SOURCE: LessonMeta[] = [
   { id: "a1-00", unitId: "a1-01", level: "A1", order: 0, titleDe: "Das Alphabet und die Aussprache", titleAr: "الأبجدية الألمانية والنطق", duration: 35, summary: "الحروف الستة والعشرون + الحروف المعلمة (ä, ö, ü) وß + الأصوات المركبة (ch, sch, ei, ie, eu, äu, sp, st, pf, tz) — مع تمارين نطق مكثفة مصممة لأخطاء المتعلم العربي." },
   { id: "a1-01", unitId: "a1-01", level: "A1", order: 1, titleDe: "Hallo! Ich heiße …", titleAr: "التعارف والتحيات", duration: 30, summary: "التحيات والوداع، تقديم النفس، تصريف sein وheißen، السلسلة الذهبية لتصريف الأفعال المنتظمة، وأسئلة W الأساسية مع ترتيب الجملة الألماني (الفعل في المركز الثاني)." },
   { id: "a1-02", unitId: "a1-02", level: "A1", order: 2, titleDe: "Meine Familie", titleAr: "العائلة والأصدقاء", duration: 30, summary: "أفراد العائلة بالعربية والألمانية، أدوات الملكية mein/meine حسب جنس الاسم، ووصف العائلة بجمل بسيطة." },
@@ -61,6 +79,9 @@ export const LESSON_META: LessonMeta[] = [
 
 ];
 
+/** الفهرس المُصدَّر — مرتَّب دائماً بترتيب المسار التعليمي */
+export const LESSON_META: LessonMeta[] = sortLessonMeta(LESSON_META_SOURCE);
+
 /** إيجاد درس بمعرّفه (من الفهرس الخفيف) */
 export function getLessonMeta(id: string): LessonMeta | undefined {
   return LESSON_META.find((l) => l.id === id);
@@ -78,7 +99,7 @@ export function getLessonCountForUnit(unitId: string): number {
 
 /** كل دروس مستوى (بيانات وصفية) */
 export function getLessonMetaByLevel(level: string): LessonMeta[] {
-  return LESSON_META.filter((l) => l.level === level).sort((a, b) => a.order - b.order);
+  return LESSON_META.filter((l) => l.level === level);
 }
 
 export const TOTAL_LESSONS_META = LESSON_META.length;

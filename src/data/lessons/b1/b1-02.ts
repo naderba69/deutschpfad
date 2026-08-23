@@ -294,7 +294,7 @@ export const lessonB102: Lesson = {
       type: "multiple-choice",
       instructionAr: "اختر Präteritum الصحيح:",
       questionDe: "Sie ___ viel in der Firma.",
-      options: ["arbeitete", "arbeitet", "gearbeitet", "arbeitete"],
+      options: ["arbeitete", "arbeitet", "gearbeitet", "arbeitte"],
       correctIndex: 0,
       explanation: "المنتظم: arbeitete.",
       errorType: "grammar",
@@ -338,7 +338,8 @@ export const lessonB102: Lesson = {
       instructionAr: "أكمل بـ Plusquamperfekt:",
       template: "Bevor ich kam, ___ er schon ___ (essen). Nachdem sie ___ (arbeiten), ging sie nach Hause.",
       blanks: [
-        { correct: "hatte ... gegessen", options: ["hatte ... gegessen", "war ... gegessen", "hatte ... geessen"] },
+        { correct: "hatte", options: ["hatte", "war", "hat"] },
+        { correct: "gegessen", options: ["gegessen", "geessen", "gegesst"] },
         { correct: "gearbeitet hatte", options: ["gearbeitet hatte", "gearbeitet hat", "arbeitete hatte"] },
       ],
       explanation: "Plusquamperfekt: hatte + Partizip II (مع nachdem: الفعل في النهاية).",

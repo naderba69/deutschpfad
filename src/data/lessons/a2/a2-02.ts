@@ -54,7 +54,7 @@ export const lessonA202: Lesson = {
       type: "multiple-choice",
       instructionAr: "مراجعة من A1: اختر المؤنث الصحيح:",
       questionDe: "der Arzt → die ___",
-      options: ["Ärztin", "Arztin", "Ärzte", "Ärztin"],
+      options: ["Ärztin", "Arztin", "Ärzte", "Ärztinnen"],
       correctIndex: 0,
       explanation: "المهن: Arzt → Ärztin (مع Umlaut).",
       errorType: "vocabulary",

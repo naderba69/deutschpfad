@@ -12,6 +12,7 @@ import {speakSequence} from "@/lib/speech/voices";
 import {buildTestResult, formatTime} from "@/lib/tests/test-engine";
 import {useCountdown} from "@/lib/tests/use-countdown";
 import {cn} from "@/lib/utils";
+import {shuffleTestQuestions} from "@/lib/tests/shuffle-questions";
 import type { TestQuestion, TestResult, TestSkill } from "@/types/test";
 
 export interface TestSectionConfig {
@@ -53,8 +54,16 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
   const [startedAt] = React.useState(() => Date.now());
   const [runKey, setRunKey] = React.useState(0);
 
+  // خلط الخيارات مرة واحدة لكل محاولة — بنوك الأسئلة تضع الإجابة الصحيحة
+  // في الموضع الأول دائماً، فبدون الخلط يكفي اختيار «أ» للنجاح بنسبة 100%.
+  const shuffledQuestions = React.useMemo(
+    () => shuffleTestQuestions(questions),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [questions, runKey, resetKey],
+  );
+
   const section = sections[sectionIdx];
-  const sectionQuestions = questions.filter((q) => q.skill === section.skill);
+  const sectionQuestions = shuffledQuestions.filter((q) => q.skill === section.skill);
   const totalSeconds = section.minutes * 60;
   const remaining = useCountdown(totalSeconds, () => {
     // انتهاء وقت القسم → الانتقال للقسم التالي أو التسليم
@@ -74,7 +83,7 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
       level,
       startedAt,
       finishedAt: Date.now(),
-      questions,
+      questions: shuffledQuestions,
       answers,
     });
     setResult(res);
