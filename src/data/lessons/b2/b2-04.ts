@@ -114,17 +114,34 @@ export const lessonB204: Lesson = {
     {
       id: "t2",
       titleAr: "الصفات المشتقة (Partizipialattribute)",
-      titleDe: "Erweiterung",
+      titleDe: "Partizipialattribute",
       explanationAr: "تحويل جملة موصولة إلى صفة قبل الاسم: Der Mann, der arbeitet → der arbeitende Mann. مع Partizip II: Das Buch, das gelesen wurde → das gelesene Buch. هذه البنية تختصر الجمل وتضفي رسمية أكاديمية.",
       whyAr: "لماذا؟ لأن النصوص الأكاديمية والأدبية تعتمد هذه البنية بكثافة — وفهمها ضروري لقراءة B2.",
+      table: {
+        title: "من الجملة الموصولة إلى الصفة المشتقة",
+        columns: ["الأصل", "النوع", "الصفة المشتقة", "المعنى"],
+        rows: [
+          { label: "der Mann, der arbeitet", cells: ["Partizip I", "der arbeitende Mann", "فاعل ومستمر"] },
+          { label: "das Buch, das gelesen wurde", cells: ["Partizip II", "das gelesene Buch", "مفعول ومنتهٍ"] },
+          { label: "das Kind, das schläft", cells: ["Partizip I", "das schlafende Kind", "فاعل ومستمر"] },
+          { label: "die Aufgabe, die gelöst wurde", cells: ["Partizip II", "die gelöste Aufgabe", "مفعول ومنتهٍ"] },
+          { label: "das Problem, das gelöst werden muss", cells: ["zu + Partizip I", "das zu lösende Problem", "واجب الحل"] },
+        ],
+      },
       examples: [
-        { de: "Die steigende Arbeitslosigkeit ist ein Problem.", ar: "البطالة المتزايدة مشكلة." }, { de: "Das vorgeschlagene Gesetz wird diskutiert.", ar: "القانون المقترح قيد النقاش." }
+        { de: "Die steigende Arbeitslosigkeit ist ein Problem.", ar: "البطالة المتزايدة مشكلة." }, { de: "Das vorgeschlagene Gesetz wird diskutiert.", ar: "القانون المقترح قيد النقاش." }, { de: "Die steigenden Preise beunruhigen die Kunden.", ar: "الأسعار المرتفعة تقلق الزبائن." }, { de: "Das vom Chef unterschriebene Dokument liegt hier.", ar: "الوثيقة الموقّعة من المدير موجودة هنا." }, { de: "Die zu treffende Entscheidung ist schwierig.", ar: "القرار الواجب اتخاذه صعب." }
       ],
-      comparisonWithArabic: "العربية تعبر عن هذا المعنى بطرق مختلفة، والألمانية تقدم صيغة محددة — التدريب على النمط يبني الدقة.",
-      eselsbruecke: "راجع المثالين وحاول إنتاج جملتين مشابهتين عن حياتك — الاستخدام الشخصي يثبت القاعدة.",
+      comparisonWithArabic: "العربية تملك اسم الفاعل (العامل) واسم المفعول (المقروء)، وهو تقابل شبه تام مع Partizip I وPartizip II. الفارق أن الألمانية تسمح بإدخال جملة كاملة بين الأداة والاسم: das vom Chef unterschriebene Dokument — وهو ما لا تفعله العربية فتلجأ إلى جملة موصولة.",
+      eselsbruecke: "Partizip I يُصنع بإضافة d إلى المصدر (arbeiten صار arbeitend) ويدل على فعل جارٍ. وPartizip II هو اسم المفعول ويدل على أثر منتهٍ. ثم صرّف كليهما كأي صفة عادية قبل الاسم.",
       commonMistakes: [
-        { wrong: "خلط الصيغة مع الصيغ المشابهة", right: "استخدم القاعدة كما في الأمثلة", whyAr: "التمييز بين الأنماط يأتي بالممارسة." },
+        { wrong: "das arbeitend Mann", right: "der arbeitende Mann", whyAr: "الصفة المشتقة تُصرَّف كأي صفة، فتأخذ نهاية e بعد der." },
+        { wrong: "die gelesende Zeitung", right: "die gelesene Zeitung", whyAr: "المقصود أثر منتهٍ فيلزم Partizip II (gelesen) لا Partizip I." },
+        { wrong: "das lösende Problem", right: "das zu lösende Problem", whyAr: "للدلالة على الوجوب أو الإمكان تُضاف zu قبل Partizip I." },
       ],
+      relatedRuleComparison: {
+        title: "صفة مشتقة أم جملة موصولة؟",
+        content: "المعنى واحد لكن الأسلوب يختلف: الصفة المشتقة مكثّفة وسمة للنصوص المكتوبة والصحفية، والجملة الموصولة أوضح وأخفّ وهي المفضّلة في الكلام. في امتحان B2 تُظهر السيطرة على التركيب الأول تمكّناً أسلوبياً.",
+      },
     },
   ],
   listening: {

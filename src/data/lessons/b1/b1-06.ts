@@ -114,17 +114,34 @@ export const lessonB106: Lesson = {
     {
       id: "t2",
       titleAr: "تصريف الصفة بعد أدوات مختلفة",
-      titleDe: "Erweiterung",
+      titleDe: "Adjektivdeklination nach verschiedenen Artikeln",
       explanationAr: "قاعدة النهايات: بعد der/die/das نستخدم -e/-en (der gute Mann, die gute Frau, das gute Kind, die guten Leute). بعد ein/mein نستخدم النهايات القوية أحياناً: ein guter Mann, eine gute Frau, ein gutes Kind. بعد kein/all/alle نتبع نمطاً محدداً.",
       whyAr: "لماذا؟ لأن النهاية تعتمد على «من يظهر الجنس»: إن كانت الأداة تظهره نستخدم -e، وإن لم تكن نستخدم النهاية القوية.",
+      table: {
+        title: "نهايات الصفة حسب الأداة",
+        columns: ["الأداة", "مذكر", "مؤنث/محايد", "الجمع"],
+        rows: [
+          { label: "der/die/das (Nom.)", cells: ["der gute Mann", "die gute Frau / das gute Kind", "die guten Leute"] },
+          { label: "den/dem (Akk./Dat.)", cells: ["den guten Mann", "der guten Frau", "den guten Leuten"] },
+          { label: "ein/eine (Nom.)", cells: ["ein guter Mann", "eine gute Frau / ein gutes Kind", "—"] },
+          { label: "einen/einem (Akk./Dat.)", cells: ["einen guten Mann", "einer guten Frau", "—"] },
+          { label: "بلا أداة", cells: ["guter Wein", "gute Milch / gutes Brot", "gute Leute"] },
+        ],
+      },
       examples: [
-        { de: "Der neue Lehrer ist sehr nett.", ar: "المعلم الجديد لطيف جداً." }, { de: "Ein guter Freund hilft immer.", ar: "الصديق الجيد يساعد دائماً." }
+        { de: "Der neue Lehrer ist sehr nett.", ar: "المعلم الجديد لطيف جداً." }, { de: "Ein guter Freund hilft immer.", ar: "الصديق الجيد يساعد دائماً." }, { de: "Ich suche eine günstige Wohnung im Zentrum.", ar: "أبحث عن شقة رخيصة في المركز." }, { de: "Der neue Kollege kommt aus Tunesien.", ar: "الزميل الجديد من تونس." }, { de: "Mit freundlichen Grüßen.", ar: "مع تحياتي الودية." }
       ],
-      comparisonWithArabic: "العربية تعبر عن هذا المعنى بطرق مختلفة، والألمانية تقدم صيغة محددة — التدريب على النمط يبني الدقة.",
-      eselsbruecke: "راجع المثالين وحاول إنتاج جملتين مشابهتين عن حياتك — الاستخدام الشخصي يثبت القاعدة.",
+      comparisonWithArabic: "العربية تُطابق الصفة موصوفها في التعريف والجنس والعدد والإعراب، والألمانية تفعل شيئاً مشابهاً لكن بمنطق معاكس: كلما كانت الأداة أوضح في بيان الجنس، خفّت نهاية الصفة — فالمعلومة تُذكر مرة واحدة لا مرتين.",
+      eselsbruecke: "قاعدة واحدة تكفي: إن أظهرت الأداة الجنس والحالة (der، die، das) فالصفة ضعيفة بـ e أو en. وإن غابت الأداة أو كانت غامضة (ein) فالصفة هي التي تحمل العلامة القوية: ein guter Mann.",
       commonMistakes: [
-        { wrong: "خلط الصيغة مع الصيغ المشابهة", right: "استخدم القاعدة كما في الأمثلة", whyAr: "التمييز بين الأنماط يأتي بالممارسة." },
+        { wrong: "ein gute Mann", right: "ein guter Mann", whyAr: "ein لا تبيّن أن الاسم مذكر، فتحمل الصفةُ العلامةَ القوية r." },
+        { wrong: "der gute Männer", right: "die guten Männer", whyAr: "الجمع المعرّف يأخذ die وتنتهي الصفة بـ en دائماً." },
+        { wrong: "mit freundliche Grüße", right: "mit freundlichen Grüßen", whyAr: "بعد mit تأتي حالة Dativ، وفي جمع Dativ تنتهي الصفة بـ en ويأخذ الاسم نوناً." },
       ],
+      relatedRuleComparison: {
+        title: "الصفة قبل الاسم أم بعد الفعل؟",
+        content: "الصفة الخبرية لا تُصرَّف أبداً: Der Mann ist gut. أما الصفة الوصفية التي تسبق الاسم فتُصرَّف دائماً: der gute Mann. هذا أول ما ينبغي فحصه قبل اختيار النهاية.",
+      },
     },
   ],
   listening: {

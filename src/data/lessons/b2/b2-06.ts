@@ -116,17 +116,34 @@ export const lessonB206: Lesson = {
     {
       id: "t2",
       titleAr: "أدوات الربط المتقدمة للسبب والنتيجة",
-      titleDe: "Erweiterung",
+      titleDe: "Kausale und konsekutive Konnektoren",
       explanationAr: "تدرج أدوات السبب: weil (لأن — عامة)، da (بما أن — رسمية)، zumal (خاصة أن)، umso...als (كلما...لأن). للنتيجة: sodass (حتى/بحيث)، so...dass (لدرجة أن).",
       whyAr: "لماذا؟ لأن تدرج الأدوات يرفع الأسلوب من B1 إلى B2 — النص الذي يستخدم فقط weil يبدو B1.",
+      table: {
+        title: "أدوات السبب والنتيجة وموضع الفعل",
+        columns: ["الأداة", "المعنى", "موضع الفعل", "مثال"],
+        rows: [
+          { label: "weil", cells: ["لأن (عامة)", "في النهاية", "Ich bleibe, weil es regnet."] },
+          { label: "da", cells: ["بما أن (رسمية، سبب معروف)", "في النهاية", "Da es regnet, bleibe ich."] },
+          { label: "denn", cells: ["لأن (ربط متساوٍ)", "لا تغيير", "Ich bleibe, denn es regnet."] },
+          { label: "deshalb", cells: ["لذلك (نتيجة)", "ثانياً بعده", "Es regnet, deshalb bleibe ich."] },
+          { label: "sodass", cells: ["بحيث (نتيجة)", "في النهاية", "Es regnet, sodass ich bleibe."] },
+        ],
+      },
       examples: [
-        { de: "Da die Kosten steigen, müssen wir sparen.", ar: "بما أن التكاليف ترتفع، يجب أن ندخر." }, { de: "Die Nachfrage ist so hoch, dass die Preise steigen.", ar: "الطلب مرتفع لدرجة أن الأسعار ترتفع." }
+        { de: "Da die Kosten steigen, müssen wir sparen.", ar: "بما أن التكاليف ترتفع، يجب أن ندخر." }, { de: "Die Nachfrage ist so hoch, dass die Preise steigen.", ar: "الطلب مرتفع لدرجة أن الأسعار ترتفع." }, { de: "Da die Nachfrage gestiegen ist, wurden die Preise erhöht.", ar: "بما أن الطلب ارتفع، رُفعت الأسعار." }, { de: "Die Firma expandiert, denn der Umsatz wächst.", ar: "الشركة تتوسع، لأن المبيعات تنمو." }, { de: "Er sprach so leise, dass ihn niemand verstand.", ar: "تحدث بصوت خافت لدرجة أن أحداً لم يفهمه." }
       ],
-      comparisonWithArabic: "العربية تعبر عن هذا المعنى بطرق مختلفة، والألمانية تقدم صيغة محددة — التدريب على النمط يبني الدقة.",
-      eselsbruecke: "راجع المثالين وحاول إنتاج جملتين مشابهتين عن حياتك — الاستخدام الشخصي يثبت القاعدة.",
+      comparisonWithArabic: "العربية تكتفي غالباً بـ«لأن» و«لذلك» في كل السياقات. والألمانية توزّع الوظيفة على أدوات تختلف في الرسمية وفي أثرها النحوي: weil وda ترسلان الفعل إلى النهاية، وdenn لا تغيّر شيئاً، وdeshalb تحتل المرتبة الأولى فتزيح الفاعل.",
+      eselsbruecke: "احفظ ثلاث فئات: ثانوية ترمي الفعل إلى النهاية (weil، da، sodass)، ومتساوية لا تحرّك شيئاً (denn، aber، und)، وظرفية تحتل المرتبة الأولى فيليها الفعل (deshalb، deswegen، daher).",
       commonMistakes: [
-        { wrong: "خلط الصيغة مع الصيغ المشابهة", right: "استخدم القاعدة كما في الأمثلة", whyAr: "التمييز بين الأنماط يأتي بالممارسة." },
+        { wrong: "Ich bleibe, denn es regnet draußen stark ist.", right: "Ich bleibe, denn es regnet draußen stark.", whyAr: "denn أداة ربط متساوية ولا ترسل الفعل إلى النهاية، فالجملة بعدها تُبنى كجملة رئيسية عادية." },
+        { wrong: "Es regnet, deshalb ich bleibe zu Hause.", right: "Es regnet, deshalb bleibe ich zu Hause.", whyAr: "deshalb ظرف رابط يشغل المرتبة الأولى، فيأتي الفعل ثانياً قبل الفاعل." },
+        { wrong: "Weil es regnet, deshalb bleibe ich.", right: "Weil es regnet, bleibe ich.", whyAr: "لا يُجمع بين أداة السبب وأداة النتيجة في الجملة نفسها." },
       ],
+      relatedRuleComparison: {
+        title: "weil أم da؟",
+        content: "المعنى متقارب، لكن da تُقدَّم حين يكون السبب معروفاً للطرفين أو بديهياً، وتتصدّر الجملة عادةً وتكثر في اللغة المكتوبة والرسمية. أما weil فهي الجواب الطبيعي عن سؤال warum في الكلام اليومي.",
+      },
     },
   ],
   listening: {

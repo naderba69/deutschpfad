@@ -194,3 +194,73 @@ describe("ترتيب فهرس الدروس", () => {
     expect(missing).toEqual([]);
   });
 });
+
+describe("كتل الشرح النظري", () => {
+  const blocks = LESSONS.flatMap((l) =>
+    (l.theory ?? []).map((t) => ({ key: `${l.id}:${t.id}`, t })),
+  );
+
+  it("لا تتكرر المقارنة بالعربية حرفياً بين كتلتين", () => {
+    const seen = new Map<string, string[]>();
+    for (const { key, t } of blocks) {
+      const v = (t.comparisonWithArabic ?? "").trim();
+      if (!v) continue;
+      seen.set(v, [...(seen.get(v) ?? []), key]);
+    }
+    const dups = [...seen.entries()].filter(([, k]) => k.length > 1).map(([v, k]) => `${k.join(", ")} :: ${v.slice(0, 50)}`);
+    expect(dups).toEqual([]);
+  });
+
+  it("لا يتكرر تريك الحفظ حرفياً بين كتلتين", () => {
+    const seen = new Map<string, string[]>();
+    for (const { key, t } of blocks) {
+      const v = (t.eselsbruecke ?? "").trim();
+      if (!v) continue;
+      seen.set(v, [...(seen.get(v) ?? []), key]);
+    }
+    const dups = [...seen.entries()].filter(([, k]) => k.length > 1).map(([v, k]) => `${k.join(", ")} :: ${v.slice(0, 50)}`);
+    expect(dups).toEqual([]);
+  });
+
+  it("كل كتلة تحمل مثالين على الأقل وخطأً شائعاً واحداً", () => {
+    expect(blocks.length).toBeGreaterThan(80);
+    const thin = blocks
+      .filter(({ t }) => (t.examples?.length ?? 0) < 2 || (t.commonMistakes?.length ?? 0) < 1)
+      .map(({ key }) => key);
+    expect(thin).toEqual([]);
+  });
+
+  it("أعمدة الجدول تطابق عدد الخلايا في كل صف", () => {
+    const broken: string[] = [];
+    for (const { key, t } of blocks) {
+      if (!t.table) continue;
+      for (const r of t.table.rows) {
+        if (r.cells.length !== t.table.columns.length - 1) broken.push(`${key} (${r.label})`);
+      }
+    }
+    expect(broken).toEqual([]);
+  });
+
+  it("لا يوجد عنوان ألماني عام مثل Erweiterung", () => {
+    const placeholders = ["erweiterung", "vertiefung", "teil 2", "extra"];
+    const generic = blocks
+      .filter(({ t }) => placeholders.includes((t.titleDe ?? "").trim().toLowerCase()))
+      .map(({ key }) => key);
+    expect(generic).toEqual([]);
+  });
+
+  it("العنوان الألماني لكل كتلة غير مكرر داخل الدرس نفسه", () => {
+    const dupes: string[] = [];
+    for (const lesson of LESSONS) {
+      const seen = new Map<string, string>();
+      for (const t of lesson.theory ?? []) {
+        const title = (t.titleDe ?? "").trim();
+        if (!title) continue;
+        const prev = seen.get(title);
+        if (prev) dupes.push(`${lesson.id}: ${prev} ↔ ${t.id} («${title}»)`);
+        else seen.set(title, t.id);
+      }
+    }
+    expect(dupes).toEqual([]);
+  });
+});

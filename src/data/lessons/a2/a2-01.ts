@@ -80,7 +80,7 @@ export const lessonA201: Lesson = {
         "لماذا الفعل المساعد في المركز الثاني والتصريف في النهاية؟ لأن الجملة الألمانية «إطار»: الفعل المتصرف يفتح الجملة، والتصريف يغلقها في النهاية. هذا يسمح بوضع كل التفاصيل (أين؟ متى؟ مع من؟) في المنتصف: Ich habe gestern mit Anna einen Film gesehen.",
       table: {
         title: "متى sein ومتى haben؟",
-        columns: ["haben (الأكثر)", "sein", "مثال"],
+        columns: ["نوع الفعل", "haben (الأكثر)", "sein", "مثال"],
         rows: [
           { label: "أفعال متعدية (لها مفعول)", cells: ["kaufen, sehen, essen", "—", "Ich habe einen Apfel gegessen."] },
           { label: "أفعال انعكاسية", cells: ["sich freuen...", "—", "Ich habe mich gefreut."] },
@@ -112,17 +112,34 @@ export const lessonA201: Lesson = {
     {
       id: "t2",
       titleAr: "اختيار haben أم sein في Perfekt — القاعدة الكاملة",
-      titleDe: "Erweiterung",
+      titleDe: "Perfekt mit haben oder sein",
       explanationAr: "القاعدة الكاملة: sein مع أفعال الحركة (kommen, gehen, fahren) وتغير الحالة (aufstehen, wachsen) والأفعال اللازمة (bleiben, sein). haben مع كل الباقي. ملاحظة: «أنا مشيت» = ich bin gegangen (حركة) بينما «أنا قمت بالقيادة لشخص» = ich habe gefahren (متعدي).",
       whyAr: "لماذا؟ لأن اختيار الفعل المساعد يحدد صحة الجملة كلها — وأخطاؤه شائعة جداً بين متعلمي A2.",
+      table: {
+        title: "haben أم sein في Perfekt؟",
+        columns: ["نوع الفعل", "المساعد", "مثال", "بالعربية"],
+        rows: [
+          { label: "حركة من مكان إلى مكان", cells: ["sein", "Ich bin nach Berlin gefahren.", "سافرت إلى برلين."] },
+          { label: "تغيّر حالة", cells: ["sein", "Er ist eingeschlafen.", "نام (انتقل إلى النوم)."] },
+          { label: "bleiben / sein / werden", cells: ["sein", "Wir sind zu Hause geblieben.", "بقينا في البيت."] },
+          { label: "فعل متعدٍّ (له مفعول)", cells: ["haben", "Ich habe einen Brief geschrieben.", "كتبت رسالة."] },
+          { label: "فعل انعكاسي", cells: ["haben", "Sie hat sich gefreut.", "فرحت."] },
+        ],
+      },
       examples: [
-        { de: "Ich bin nach Berlin geflogen.", ar: "طرت إلى برلين (حركة)." }, { de: "Ich habe ein Taxi gefahren.", ar: "قدت سيارة أجرة (متعدي)." }
+        { de: "Ich bin nach Berlin geflogen.", ar: "طرت إلى برلين (حركة)." }, { de: "Ich habe ein Taxi gefahren.", ar: "قدت سيارة أجرة (متعدي)." }, { de: "Wir sind um acht Uhr aufgestanden.", ar: "استيقظنا في الثامنة." }, { de: "Hast du den Film gesehen?", ar: "هل شاهدت الفيلم؟" }, { de: "Der Zug ist pünktlich angekommen.", ar: "وصل القطار في موعده." }
       ],
-      comparisonWithArabic: "العربية تعبر عن هذا المعنى بطرق مختلفة، والألمانية تقدم صيغة محددة — التدريب على النمط يبني الدقة.",
-      eselsbruecke: "راجع المثالين وحاول إنتاج جملتين مشابهتين عن حياتك — الاستخدام الشخصي يثبت القاعدة.",
+      comparisonWithArabic: "العربية تصوغ الماضي بفعل واحد: «سافرتُ». والألمانية تحتاج جزأين: فعلاً مساعداً مصرَّفاً + اسم مفعول في آخر الجملة. هذا الجزء الأخير هو ما ينساه المتعلم العربي غالباً.",
+      eselsbruecke: "اسأل: هل تحرّك الفاعل أو تغيّرت حالته؟ إذن sein. هل فعل شيئاً بمفعول؟ إذن haben. باختصار: الحركة والتغيّر مع sein، والباقي مع haben.",
       commonMistakes: [
-        { wrong: "خلط الصيغة مع الصيغ المشابهة", right: "استخدم القاعدة كما في الأمثلة", whyAr: "التمييز بين الأنماط يأتي بالممارسة." },
+        { wrong: "Ich habe nach Hause gegangen.", right: "Ich bin nach Hause gegangen.", whyAr: "gehen فعل حركة، فمساعده sein لا haben." },
+        { wrong: "Ich bin einen Brief geschrieben.", right: "Ich habe einen Brief geschrieben.", whyAr: "وجود مفعول به (einen Brief) يعني فعلاً متعدياً، ومساعده haben دائماً." },
+        { wrong: "Ich bin gefahren nach Berlin.", right: "Ich bin nach Berlin gefahren.", whyAr: "اسم المفعول يقع في نهاية الجملة، لا بعد الفعل المساعد مباشرة." },
       ],
+      relatedRuleComparison: {
+        title: "Perfekt أم Präteritum؟",
+        content: "في الكلام اليومي يستخدم الألمان Perfekt لأغلب الأفعال. أما haben وsein والأفعال الناقصة فتُفضَّل بصيغة Präteritum حتى في المحادثة: Ich war، Ich hatte، Ich konnte — لا Ich bin gewesen.",
+      },
     },
   ],
   listening: {

@@ -13,8 +13,13 @@ import type { TheoryBlock } from "@/types/lesson";
 /** جدول التصريف مع أزرار نطق لكل خلية ألمانية */
 function ConjugationTable({ table }: { table: NonNullable<TheoryBlock["table"]> }) {
   return (
-    <div className="overflow-x-auto rounded-xl border bg-background" dir="ltr">
-      <table className="w-full text-sm">
+    <div className="overflow-x-auto rounded-xl border bg-background">
+      {table.title ? (
+        <p className="border-b bg-muted/20 px-4 py-2.5 text-sm font-bold" dir="rtl">
+          {table.title}
+        </p>
+      ) : null}
+      <table className="w-full text-sm" dir="ltr">
         <thead>
           <tr className="border-b bg-muted/40">
             {table.columns.map((col) => (

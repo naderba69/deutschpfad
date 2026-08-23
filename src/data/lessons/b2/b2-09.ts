@@ -115,17 +115,34 @@ export const lessonB209: Lesson = {
     {
       id: "t2",
       titleAr: "Funktionsverbgefüge: تراكيب الأفعال الوظيفية",
-      titleDe: "Erweiterung",
+      titleDe: "Funktionsverbgefüge",
       explanationAr: "تراكيب تجعل الاسم هو حامل المعنى: eine Entscheidung treffen (يقرر) بدل entscheiden، zur Verfügung stellen (يوفّر) بدل verfügbar machen، in Betracht ziehen (يأخذ بعين الاعتبار). هذه ترتقي بالأسلوب.",
       whyAr: "لماذا؟ لأن النصوص المهنية والأكاديمية تستخدمها باستمرار — وهي علامة B2 النموذجية.",
+      table: {
+        title: "Funktionsverbgefüge الشائعة",
+        columns: ["التركيب", "الفعل البسيط", "المعنى", "المجال"],
+        rows: [
+          { label: "eine Entscheidung treffen", cells: ["entscheiden", "يتخذ قراراً", "إدارة"] },
+          { label: "zur Verfügung stellen", cells: ["verfügbar machen", "يوفّر", "عمل"] },
+          { label: "in Betracht ziehen", cells: ["berücksichtigen", "يأخذ في الاعتبار", "رسمي"] },
+          { label: "Kritik üben", cells: ["kritisieren", "يوجّه نقداً", "إعلام"] },
+          { label: "eine Rolle spielen", cells: ["wichtig sein", "يؤدي دوراً", "عام"] },
+        ],
+      },
       examples: [
-        { de: "Die Firma trifft eine wichtige Entscheidung.", ar: "الشركة تتخذ قراراً مهماً." }, { de: "Wir müssen die Kosten in Betracht ziehen.", ar: "يجب أن نأخذ التكاليف بعين الاعتبار." }
+        { de: "Die Firma trifft eine wichtige Entscheidung.", ar: "الشركة تتخذ قراراً مهماً." }, { de: "Wir müssen die Kosten in Betracht ziehen.", ar: "يجب أن نأخذ التكاليف بعين الاعتبار." }, { de: "Wir müssen eine Entscheidung treffen.", ar: "علينا اتخاذ قرار." }, { de: "Das Unternehmen stellt die Daten zur Verfügung.", ar: "توفّر الشركة البيانات." }, { de: "Diese Option sollten wir in Betracht ziehen.", ar: "ينبغي أن نأخذ هذا الخيار في الاعتبار." }
       ],
-      comparisonWithArabic: "العربية تعبر عن هذا المعنى بطرق مختلفة، والألمانية تقدم صيغة محددة — التدريب على النمط يبني الدقة.",
-      eselsbruecke: "راجع المثالين وحاول إنتاج جملتين مشابهتين عن حياتك — الاستخدام الشخصي يثبت القاعدة.",
+      comparisonWithArabic: "هذا التركيب مألوف تماماً للعربي: نقول «اتخذ قراراً» لا «قرّر»، و«وجّه نقداً» لا «انتقد». الفارق أن الاختيار في الألمانية مقيّد بشدة: لا يجوز machen eine Entscheidung ولا geben Kritik — فالفعل الوظيفي جزء من التركيب المحفوظ.",
+      eselsbruecke: "احفظ التركيب كاملاً كوحدة واحدة: الاسم مع فعله ومع حرف الجر إن وُجد. فالخطأ الشائع ليس في الاسم بل في اختيار الفعل، ولا يوجد منطق يهديك إليه — السماع والحفظ فقط.",
       commonMistakes: [
-        { wrong: "خلط الصيغة مع الصيغ المشابهة", right: "استخدم القاعدة كما في الأمثلة", whyAr: "التمييز بين الأنماط يأتي بالممارسة." },
+        { wrong: "eine Entscheidung machen", right: "eine Entscheidung treffen", whyAr: "الفعل الوظيفي المرتبط بـ Entscheidung هو treffen، وmachen ترجمة حرفية من الإنجليزية." },
+        { wrong: "Kritik geben", right: "Kritik üben", whyAr: "التركيب المحفوظ هو Kritik üben أو Kritik äußern." },
+        { wrong: "in Betracht nehmen", right: "in Betracht ziehen", whyAr: "التركيب الثابت هو ziehen مع Betracht، أما nehmen فترد في in Kauf nehmen." },
       ],
+      relatedRuleComparison: {
+        title: "Funktionsverbgefüge أم الفعل البسيط؟",
+        content: "الفعل البسيط أوضح وأخفّ وهو الأفضل في الكلام: Wir entscheiden. أما التركيب الوظيفي فأرسم وأكثر تجريداً، وهو سمة لغة الإدارة والصحافة والتقارير. في امتحان B2 استعمله في الكتابة الرسمية ولا تُثقل به المحادثة.",
+      },
     },
   ],
   listening: {

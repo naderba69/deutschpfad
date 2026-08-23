@@ -115,17 +115,34 @@ export const lessonB104: Lesson = {
     {
       id: "t2",
       titleAr: "Konjunktiv II: الافتراضات والرغبات",
-      titleDe: "Erweiterung",
+      titleDe: "Konjunktiv II: Wünsche und Hypothesen",
       explanationAr: "Konjunktiv II يعبر عن: الرغبات (Ich möchte...)، الافتراضات (Wenn ich Zeit hätte...)، والمجاملات (Ich würde sagen...). الصيغ: würde + مصدر (الأسهل)، والصيغ الخاصة: wäre (يكون), hätte (يملك), könnte (يستطيع).",
       whyAr: "لماذا؟ لأن Konjunktiv II أساس الأدب الألماني — الطلبات المهذبة تعتمد عليه (Könnten Sie...?).",
+      table: {
+        title: "صيغ Konjunktiv II الأساسية",
+        columns: ["الفعل", "Präteritum", "Konjunktiv II", "مثال"],
+        rows: [
+          { label: "haben", cells: ["hatte", "hätte", "Ich hätte gern Zeit."] },
+          { label: "sein", cells: ["war", "wäre", "Wenn ich reich wäre..."] },
+          { label: "können", cells: ["konnte", "könnte", "Könnten Sie mir helfen?"] },
+          { label: "werden", cells: ["wurde", "würde", "Ich würde gern kommen."] },
+          { label: "أفعال أخرى", cells: ["—", "würde + مصدر", "Ich würde das kaufen."] },
+        ],
+      },
       examples: [
-        { de: "Ich würde gern mehr reisen.", ar: "أود السفر أكثر." }, { de: "Wenn ich Millionär wäre, würde ich helfen.", ar: "لو كنت مليونيراً لساعدت." }
+        { de: "Ich würde gern mehr reisen.", ar: "أود السفر أكثر." }, { de: "Wenn ich Millionär wäre, würde ich helfen.", ar: "لو كنت مليونيراً لساعدت." }, { de: "Wenn ich mehr Zeit hätte, würde ich Spanisch lernen.", ar: "لو كان لديّ وقت أكثر، لتعلمت الإسبانية." }, { de: "Könnten Sie bitte das Fenster schließen?", ar: "هل يمكنكم إغلاق النافذة من فضلكم؟" }, { de: "An deiner Stelle würde ich mit dem Chef sprechen.", ar: "لو كنت مكانك لتحدثت مع المدير." }
       ],
-      comparisonWithArabic: "العربية تعبر عن هذا المعنى بطرق مختلفة، والألمانية تقدم صيغة محددة — التدريب على النمط يبني الدقة.",
-      eselsbruecke: "راجع المثالين وحاول إنتاج جملتين مشابهتين عن حياتك — الاستخدام الشخصي يثبت القاعدة.",
+      comparisonWithArabic: "العربية تبني الافتراض بـ«لو... لَـ...» وتُبقي الفعل ماضياً في الشرطين. والألمانية تحتاج صيغة صرفية خاصة (hätte، wäre، käme) أو تركيب würde + مصدر — أي أن الافتراض في الألمانية يظهر في شكل الفعل نفسه.",
+      eselsbruecke: "احفظ ثلاثة أعمدة فقط: hätte وwäre وkönnte. وكل ما عداها استعمل معه würde + مصدر — فهذا يغطي أكثر من تسعين بالمئة من كلام الألمان اليومي.",
       commonMistakes: [
-        { wrong: "خلط الصيغة مع الصيغ المشابهة", right: "استخدم القاعدة كما في الأمثلة", whyAr: "التمييز بين الأنماط يأتي بالممارسة." },
+        { wrong: "Wenn ich Zeit haben würde, würde ich kommen.", right: "Wenn ich Zeit hätte, würde ich kommen.", whyAr: "مع haben وsein والأفعال الناقصة تُستعمل الصيغة الصرفية المباشرة، ولا يُجمع würde مع haben في جملة الشرط." },
+        { wrong: "Ich wünsche, ich habe mehr Geld.", right: "Ich wünsche, ich hätte mehr Geld.", whyAr: "التمني يخالف الواقع فيلزمه Konjunktiv II لا المضارع." },
+        { wrong: "Wenn ich reich wäre, ich würde reisen.", right: "Wenn ich reich wäre, würde ich reisen.", whyAr: "الجملة الشرطية تحتل المرتبة الأولى، فيأتي الفعل الرئيسي مباشرة بعد الفاصلة." },
       ],
+      relatedRuleComparison: {
+        title: "Konjunktiv II أم Imperativ؟",
+        content: "الأمر المباشر Schließen Sie das Fenster! صحيح لكنه حادّ. أما Könnten Sie das Fenster schließen? فهو الصيغة المهذبة المعتادة في الخدمة والعمل. Konjunktiv II هنا أداة تأدّب لا افتراض.",
+      },
     },
   ],
   listening: {

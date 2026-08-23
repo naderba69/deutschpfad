@@ -119,17 +119,34 @@ export const lessonB110: Lesson = {
     {
       id: "t2",
       titleAr: "الجمل الشرطية غير الواقعية",
-      titleDe: "Erweiterung",
+      titleDe: "Irreale Bedingungssätze",
       explanationAr: "الجملة الشرطية مع wenn تعبر عن: الحقيقية (Wenn ich Zeit habe, komme ich — مضارع)، وغير الواقعية (Wenn ich Zeit hätte, käme ich — Konjunktiv II). في غير الواقعية: wenn + Konjunktiv II، والنتيجة ebenfalls Konjunktiv II.",
       whyAr: "لماذا؟ لأن التمييز بين الشرط الحقيقي وغير الواقعي أساسي في B1 — والخلط بينهما يفقد الدقة.",
+      table: {
+        title: "شرط واقعي أم غير واقعي؟",
+        columns: ["النوع", "الزمن", "مثال", "بالعربية"],
+        rows: [
+          { label: "واقعي (ممكن)", cells: ["مضارع", "Wenn ich Zeit habe, komme ich.", "إن كان لديّ وقت، آتي."] },
+          { label: "غير واقعي (حاضر)", cells: ["Konjunktiv II", "Wenn ich Zeit hätte, käme ich.", "لو كان لديّ وقت، لأتيت."] },
+          { label: "غير واقعي (ماضٍ)", cells: ["hätte/wäre + P2", "Wenn ich Zeit gehabt hätte, wäre ich gekommen.", "لو كان لديّ وقت، لكنت أتيت."] },
+          { label: "بلا wenn", cells: ["الفعل أولاً", "Hätte ich Zeit, käme ich.", "لو كان لديّ وقت لأتيت."] },
+          { label: "تمنٍّ", cells: ["nur + Konjunktiv II", "Wenn ich nur Zeit hätte!", "ليت لديّ وقتاً!"] },
+        ],
+      },
       examples: [
-        { de: "Wenn ich genug Geld hätte, würde ich studieren.", ar: "لو كان لدي مال كافٍ لدرست." }, { de: "Wenn das Wetter schön wäre, gingen wir wandern.", ar: "لو كان الطقس جميلاً لتنزهنا." }
+        { de: "Wenn ich genug Geld hätte, würde ich studieren.", ar: "لو كان لدي مال كافٍ لدرست." }, { de: "Wenn das Wetter schön wäre, gingen wir wandern.", ar: "لو كان الطقس جميلاً لتنزهنا." }, { de: "Wenn das Wetter besser wäre, würden wir grillen.", ar: "لو كان الطقس أفضل لشوينا." }, { de: "Wenn ich das gewusst hätte, hätte ich dir geholfen.", ar: "لو كنت أعلم ذلك لساعدتك." }, { de: "Ohne deine Hilfe hätte ich das nicht geschafft.", ar: "لولا مساعدتك لما نجحت في ذلك." }
       ],
-      comparisonWithArabic: "العربية تعبر عن هذا المعنى بطرق مختلفة، والألمانية تقدم صيغة محددة — التدريب على النمط يبني الدقة.",
-      eselsbruecke: "راجع المثالين وحاول إنتاج جملتين مشابهتين عن حياتك — الاستخدام الشخصي يثبت القاعدة.",
+      comparisonWithArabic: "العربية تميّز الشرط الممكن («إن») من الممتنع («لو») بالأداة نفسها. والألمانية تستعمل wenn في الحالتين وتنقل التمييز كله إلى زمن الفعل — ولهذا يخطئ المتعلم العربي فيبقي المضارع حيث يلزم Konjunktiv II.",
+      eselsbruecke: "الشرط الممتنع في الماضي يحتاج hätte أو wäre مرتين: مرة في جملة wenn ومرة في الجواب. إن رأيت فعلين مساعدين في صيغة Konjunktiv فالجملة تتحدث عمّا لم يحدث.",
       commonMistakes: [
-        { wrong: "خلط الصيغة مع الصيغ المشابهة", right: "استخدم القاعدة كما في الأمثلة", whyAr: "التمييز بين الأنماط يأتي بالممارسة." },
+        { wrong: "Wenn ich Zeit hätte, komme ich.", right: "Wenn ich Zeit hätte, käme ich.", whyAr: "الشرط غير الواقعي يلزم فيه الجوابُ صيغةَ Konjunktiv II أيضاً، أو würde kommen." },
+        { wrong: "Wenn ich das gewusst habe, hätte ich geholfen.", right: "Wenn ich das gewusst hätte, hätte ich geholfen.", whyAr: "الشرط الممتنع في الماضي يُصاغ بـ hätte مع اسم المفعول لا بصيغة Perfekt العادية." },
+        { wrong: "Wenn ich reich wäre, ich würde reisen.", right: "Wenn ich reich wäre, würde ich reisen.", whyAr: "الجملة الشرطية المتصدّرة تشغل المرتبة الأولى فيليها الفعل مباشرة." },
       ],
+      relatedRuleComparison: {
+        title: "wenn أم falls؟",
+        content: "wenn هي الأداة العامة للشرط والزمن معاً. أما falls فتخص الاحتمال وحده وتعني في حال، وهي أوضح في النصوص الرسمية: Falls Sie Fragen haben, rufen Sie an.",
+      },
     },
   ],
   listening: {

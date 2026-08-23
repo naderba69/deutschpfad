@@ -133,17 +133,34 @@ export const lessonA113: Lesson = {
     {
       id: "t2",
       titleAr: "دمج تراكيب A1 في موقف واحد",
-      titleDe: "Erweiterung",
+      titleDe: "A1-Strukturen im Zusammenhang",
       explanationAr: "المراجعة الحقيقية ليست حفظ قائمة قواعد — بل استخدامها معاً في موقف. مثال: في «زيارة مقهى» تجمع: التحية (Guten Tag)، تقديم النفس (Ich heiße...)، الطلب بالنصب (Ich hätte gern einen Kaffee)، الدفع بالأرقام (zwei Euro fünfzig)، والوداع (Auf Wiedersehen).",
       whyAr: "لماذا؟ لأن الدماغ يخزّن اللغة في مواقف لا في جداول. الجمع بين التراكيب في سياق واحد يبني طلاقة حقيقية.",
+      table: {
+        title: "سيناريو المقهى: من التحية إلى الحساب",
+        columns: ["المرحلة", "العبارة الألمانية", "بالعربية"],
+        rows: [
+          { label: "1. التحية", cells: ["Guten Tag!", "نهارك سعيد!"] },
+          { label: "2. الطلب", cells: ["Ich hätte gern einen Kaffee.", "أريد قهوة من فضلك."] },
+          { label: "3. السؤال", cells: ["Was kostet das?", "كم يكلّف هذا؟"] },
+          { label: "4. الدفع", cells: ["Zusammen, bitte.", "الحساب كاملاً من فضلك."] },
+          { label: "5. الوداع", cells: ["Auf Wiedersehen!", "إلى اللقاء!"] },
+        ],
+      },
       examples: [
-        { de: "Im Café: Guten Tag! Ich hätte gern einen Tee, bitte.", ar: "في المقهى: نهارك سعيد! أريد شاياً من فضلك." }, { de: "Das macht zusammen drei Euro zwanzig.", ar: "المجموع 3.20 يورو." }
+        { de: "Im Café: Guten Tag! Ich hätte gern einen Tee, bitte.", ar: "في المقهى: نهارك سعيد! أريد شاياً من فضلك." }, { de: "Das macht zusammen drei Euro zwanzig.", ar: "المجموع 3.20 يورو." }, { de: "Entschuldigung, ist dieser Platz frei?", ar: "عفواً، هل هذا المقعد شاغر؟" }, { de: "Ich nehme ein Wasser und ein Stück Kuchen.", ar: "آخذ ماءً وقطعة كعك." }, { de: "Kann ich mit Karte bezahlen?", ar: "هل يمكنني الدفع بالبطاقة؟" }
       ],
-      comparisonWithArabic: "العربية تعبر عن هذا المعنى بطرق مختلفة، والألمانية تقدم صيغة محددة — التدريب على النمط يبني الدقة.",
-      eselsbruecke: "راجع المثالين وحاول إنتاج جملتين مشابهتين عن حياتك — الاستخدام الشخصي يثبت القاعدة.",
+      comparisonWithArabic: "في العربية نبدأ الطلب غالباً بـ«أريد» مباشرة، أما الألمانية فتفضّل صيغة التأدب hätte gern بدل will؛ فقول Ich will einen Kaffee مفهوم لكنه يبدو فظاً.",
+      eselsbruecke: "رتّب المشهد في خمس خطوات: تحية ← طلب ← سؤال عن السعر ← دفع ← وداع. احفظ الترتيب لا الجمل، فالترتيب هو ما يتكرر في كل مقهى.",
       commonMistakes: [
-        { wrong: "خلط الصيغة مع الصيغ المشابهة", right: "استخدم القاعدة كما في الأمثلة", whyAr: "التمييز بين الأنماط يأتي بالممارسة." },
+        { wrong: "Ich will einen Kaffee.", right: "Ich hätte gern einen Kaffee.", whyAr: "will تعني الإرادة الصريحة وتبدو غير مهذبة في الخدمة؛ hätte gern هي الصيغة المعتادة." },
+        { wrong: "Ich möchte der Kaffee.", right: "Ich möchte den Kaffee.", whyAr: "بعد möchte يأتي المفعول به في حالة النصب Akkusativ، فتتحول der إلى den." },
+        { wrong: "Was kostet es zusammen?", right: "Zusammen, bitte.", whyAr: "عند طلب الحساب في المقهى تُستعمل العبارة الجاهزة zusammen (معاً) أو getrennt (منفصلاً)." },
       ],
+      relatedRuleComparison: {
+        title: "hätte gern أم möchte؟",
+        content: "كلاهما مهذب ومتبادل في المقهى. möchte أشيع في المحادثة اليومية وأسهل تصريفاً، وhätte gern أدفأ قليلاً وأكثر شيوعاً عند طلب سلعة أو خدمة. تجنّب will في المواقف الرسمية.",
+      },
     },
   ],
   listening: {

@@ -114,17 +114,34 @@ export const lessonB105: Lesson = {
     {
       id: "t2",
       titleAr: "الكلام المنقول: Konjunktiv I",
-      titleDe: "Erweiterung",
+      titleDe: "Die indirekte Rede: Konjunktiv I",
       explanationAr: "عند نقل كلام شخص آخر نحول الفعل إلى Konjunktiv I: Er sagt, er habe keine Zeit. الصيغة: من المضارع نأخذ الجذر ونضيف -e, -est, -e, -en, -et, -en. ملاحظة: عندما يطابق Konjunktiv I المضارع نستخدم Konjunktiv II كبديل.",
       whyAr: "لماذا؟ لأن نقل الأخبار والآراء (الأساس في B1 الإعلامي) يتطلب هذا البناء.",
+      table: {
+        title: "Konjunktiv I في الكلام المنقول",
+        columns: ["الشخص", "الحاضر", "Konjunktiv I", "البديل عند التطابق"],
+        rows: [
+          { label: "er/sie/es", cells: ["hat", "habe", "—"] },
+          { label: "er/sie/es", cells: ["ist", "sei", "—"] },
+          { label: "er/sie/es", cells: ["kommt", "komme", "—"] },
+          { label: "sie (جمع)", cells: ["haben", "haben", "hätten (Konjunktiv II)"] },
+          { label: "ich", cells: ["habe", "habe", "hätte (Konjunktiv II)"] },
+        ],
+      },
       examples: [
-        { de: "Die Politikerin sagt, die Lage sei stabil.", ar: "تقول السياسية إن الوضع مستقر." }, { de: "Er behauptet, er wisse die Antwort.", ar: "يزعم أنه يعرف الإجابة." }
+        { de: "Die Politikerin sagt, die Lage sei stabil.", ar: "تقول السياسية إن الوضع مستقر." }, { de: "Er behauptet, er wisse die Antwort.", ar: "يزعم أنه يعرف الإجابة." }, { de: "Der Minister sagte, er sei zufrieden.", ar: "قال الوزير إنه راضٍ." }, { de: "Sie behauptet, sie habe nichts gewusst.", ar: "تزعم أنها لم تكن تعلم شيئاً." }, { de: "Die Zeitung berichtet, die Preise seien gestiegen.", ar: "تفيد الصحيفة بأن الأسعار ارتفعت." }
       ],
-      comparisonWithArabic: "العربية تعبر عن هذا المعنى بطرق مختلفة، والألمانية تقدم صيغة محددة — التدريب على النمط يبني الدقة.",
-      eselsbruecke: "راجع المثالين وحاول إنتاج جملتين مشابهتين عن حياتك — الاستخدام الشخصي يثبت القاعدة.",
+      comparisonWithArabic: "العربية تنقل الكلام بـ«قال إنّ» ويبقى الفعل كما هو، فالتمييز بين الخبر ورأي الناقل يأتي من السياق. أما الألمانية فتملك صيغة صرفية مستقلة تُشعر القارئ فوراً أن الكلام منقول لا مؤكَّد من الكاتب — ولذلك تسيطر على لغة الصحافة.",
+      eselsbruecke: "علامة Konjunktiv I هي الحرف e في الغائب: er habe، er sei، er komme. وإن جاءت الصيغة مطابقة للمضارع العادي (مثل sie haben) فانتقل إلى Konjunktiv II: sie hätten — وهذا ما يفعله الصحفيون.",
       commonMistakes: [
-        { wrong: "خلط الصيغة مع الصيغ المشابهة", right: "استخدم القاعدة كما في الأمثلة", whyAr: "التمييز بين الأنماط يأتي بالممارسة." },
+        { wrong: "Er sagt, er ist krank.", right: "Er sagt, er sei krank.", whyAr: "في النقل الرسمي والصحفي يُستعمل Konjunktiv I، وsein شاذة فتصير sei بلا نهاية في الغائب المفرد." },
+        { wrong: "Sie sagte, sie hat keine Zeit gehabt.", right: "Sie sagte, sie habe keine Zeit gehabt.", whyAr: "الفعل المساعد هو الذي يتحول إلى Konjunktiv I: habe، ويبقى اسم المفعول كما هو." },
+        { wrong: "Sie sagen, sie haben es gesehen.", right: "Sie sagen, sie hätten es gesehen.", whyAr: "عند تطابق Konjunktiv I مع المضارع يُستبدل بـ Konjunktiv II لإزالة اللبس." },
       ],
+      relatedRuleComparison: {
+        title: "Konjunktiv I أم dass؟",
+        content: "يمكن نقل الكلام بجملة dass مع المضارع في المحادثة اليومية: Er sagt, dass er krank ist. أما في الصحافة والتقارير الرسمية فيُفضَّل حذف dass واستعمال Konjunktiv I: Er sagt, er sei krank.",
+      },
     },
   ],
   listening: {

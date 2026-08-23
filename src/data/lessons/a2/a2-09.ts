@@ -114,17 +114,34 @@ export const lessonA209: Lesson = {
     {
       id: "t2",
       titleAr: "Dativ: متى ولماذا",
-      titleDe: "Erweiterung",
+      titleDe: "Der Dativ: Gebrauch und Funktion",
       explanationAr: "Dativ يجيب عن «لمن؟» (wem?). يُستخدم مع: الأفعال الخاصة (helfen, gefallen, gehören, gratulieren, danken)، حروف الجر (mit, nach, bei, von, zu, aus, seit, außer, gegenüber)، وحروف الجر المتغيرة عند السكون. الضمائر: mir, dir, ihm, ihr, uns, euch, ihnen.",
       whyAr: "لماذا؟ لأن أفعالاً مثل helfen تحتاج Dativ دائماً — «أنا أساعدك» = Ich helfe dir (وليس dich!).",
+      table: {
+        title: "متى يلزم Dativ؟",
+        columns: ["السبب", "الأداة النموذجية", "مثال", "بالعربية"],
+        rows: [
+          { label: "أفعال خاصة", cells: ["helfen, danken, gefallen", "Ich helfe dem Kind.", "أساعد الطفل."] },
+          { label: "حروف جر ثابتة", cells: ["mit, nach, bei, von, zu, aus", "Ich fahre mit dem Bus.", "أذهب بالحافلة."] },
+          { label: "المفعول غير المباشر", cells: ["wem?", "Er gibt der Frau das Buch.", "يعطي المرأة الكتاب."] },
+          { label: "جمع + n", cells: ["den ...-n", "Ich helfe den Kindern.", "أساعد الأطفال."] },
+          { label: "حرف متغيّر مع السكون", cells: ["in, an, auf (wo?)", "Wir sind im Park.", "نحن في الحديقة."] },
+        ],
+      },
       examples: [
-        { de: "Ich helfe meiner Mutter.", ar: "أساعد أمي (Dativ)." }, { de: "Das Buch gehört dem Lehrer.", ar: "الكتاب يخص المعلم (Dativ)." }
+        { de: "Ich helfe meiner Mutter.", ar: "أساعد أمي (Dativ)." }, { de: "Das Buch gehört dem Lehrer.", ar: "الكتاب يخص المعلم (Dativ)." }, { de: "Das Buch gehört meinem Bruder.", ar: "الكتاب لأخي." }, { de: "Wie gefällt dir die Stadt?", ar: "كيف تعجبك المدينة؟" }, { de: "Nach dem Essen trinken wir Tee.", ar: "بعد الطعام نشرب الشاي." }
       ],
-      comparisonWithArabic: "العربية تعبر عن هذا المعنى بطرق مختلفة، والألمانية تقدم صيغة محددة — التدريب على النمط يبني الدقة.",
-      eselsbruecke: "راجع المثالين وحاول إنتاج جملتين مشابهتين عن حياتك — الاستخدام الشخصي يثبت القاعدة.",
+      comparisonWithArabic: "العربية تربط «لمن» بحرف اللام غالباً: «أعطيتُ للولد». والألمانية لا تحتاج حرفاً مع أفعال مثل helfen وgeben، بل تكتفي بتغيير الأداة إلى dem أو der — فالحالة تحلّ محل حرف الجر.",
+      eselsbruecke: "احفظ حروف الجر الستة نشيداً: mit, nach, bei, von, zu, aus — كلها Dativ بلا استثناء. وفي الجمع لا تنسَ نون النهاية: den Kindern.",
       commonMistakes: [
-        { wrong: "خلط الصيغة مع الصيغ المشابهة", right: "استخدم القاعدة كما في الأمثلة", whyAr: "التمييز بين الأنماط يأتي بالممارسة." },
+        { wrong: "Ich helfe den Mann.", right: "Ich helfe dem Mann.", whyAr: "helfen من الأفعال التي تلزم Dativ دائماً، فالمذكر يأخذ dem لا den." },
+        { wrong: "Ich fahre mit der Bus.", right: "Ich fahre mit dem Bus.", whyAr: "mit حرف جر يلزم Dativ، وder Bus مذكر فيصير mit dem Bus." },
+        { wrong: "Ich helfe den Kinder.", right: "Ich helfe den Kindern.", whyAr: "في جمع Dativ تُضاف نون إلى آخر الاسم ما لم ينتهِ بـ s أصلاً." },
       ],
+      relatedRuleComparison: {
+        title: "Dativ أم Akkusativ؟",
+        content: "Akkusativ يجيب عن wen/was (من/ماذا) وهو المفعول المباشر: Ich sehe den Mann. أما Dativ فيجيب عن wem (لمن) وهو المفعول غير المباشر: Ich helfe dem Mann. مع فعلين معاً يسبق Dativ الـ Akkusativ عادةً: Er gibt mir das Buch.",
+      },
     },
   ],
   listening: {

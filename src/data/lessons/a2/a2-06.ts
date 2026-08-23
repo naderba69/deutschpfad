@@ -114,17 +114,34 @@ export const lessonA206: Lesson = {
     {
       id: "t2",
       titleAr: "جمل dass: الفعل في النهاية",
-      titleDe: "Erweiterung",
+      titleDe: "Der Nebensatz mit „dass“: Verb am Ende",
       explanationAr: "الجملة الثانوية مع dass (أنّ) تنقلب: الفعل يذهب للنهاية. Ich glaube, dass Deutsch wichtig ist. ملاحظة: عندما يكون الفعل مركّباً (مثلاً kann lernen) يذهب الجزء المتصرف للنهاية: Ich denke, dass du gut Deutsch lernen kannst.",
       whyAr: "لماذا؟ لأن ترتيب الفعل في الجمل الثانوية هو الفرق الأكبر بين العربية والألمانية — والخطأ فيه يفقد نصف المعنى.",
+      table: {
+        title: "من الجملة البسيطة إلى جملة dass",
+        columns: ["النوع", "الجملة", "موضع الفعل"],
+        rows: [
+          { label: "بسيطة", cells: ["Deutsch ist wichtig.", "الفعل ثانياً (ist)"] },
+          { label: "مع dass", cells: ["Ich glaube, dass Deutsch wichtig ist.", "الفعل أخيراً (ist)"] },
+          { label: "فعل مركّب", cells: ["Ich denke, dass du kommen kannst.", "المتصرّف أخيراً (kannst)"] },
+          { label: "فعل منفصل", cells: ["Ich weiß, dass er um acht aufsteht.", "يلتحم الفعل (aufsteht)"] },
+          { label: "نفي", cells: ["Ich glaube nicht, dass er kommt.", "النفي في الجملة الرئيسية"] },
+        ],
+      },
       examples: [
-        { de: "Ich finde, dass die Nachrichten interessant sind.", ar: "أجد أن الأخبار مثيرة للاهتمام." }, { de: "Sie sagt, dass sie morgen kommt.", ar: "تقول إنها ستأتي غداً." }
+        { de: "Ich finde, dass die Nachrichten interessant sind.", ar: "أجد أن الأخبار مثيرة للاهتمام." }, { de: "Sie sagt, dass sie morgen kommt.", ar: "تقول إنها ستأتي غداً." }, { de: "Es ist schade, dass du keine Zeit hast.", ar: "من المؤسف أنه ليس لديك وقت." }, { de: "Ich hoffe, dass wir uns bald wiedersehen.", ar: "آمل أن نلتقي قريباً." }, { de: "Weißt du, dass sie umgezogen ist?", ar: "أتعلم أنها انتقلت؟" }
       ],
-      comparisonWithArabic: "العربية تعبر عن هذا المعنى بطرق مختلفة، والألمانية تقدم صيغة محددة — التدريب على النمط يبني الدقة.",
-      eselsbruecke: "راجع المثالين وحاول إنتاج جملتين مشابهتين عن حياتك — الاستخدام الشخصي يثبت القاعدة.",
+      comparisonWithArabic: "العربية تقول «أعتقد أنّ الألمانية مهمة» ويبقى ترتيب الجملة بعد «أنّ» كما هو. أما الألمانية فتنقل الفعل إلى آخر الجملة بعد dass — وهذا أكبر فارق بنيوي بين اللغتين، وإهماله يفقد الجملة صحتها.",
+      eselsbruecke: "dass تدفع الفعل إلى آخر الصف. تخيّل أن dass حارس يقف على الباب فيُجبر الفعل على الجلوس في المقعد الأخير. ولا تنسَ الفاصلة قبل dass — فهي إلزامية.",
       commonMistakes: [
-        { wrong: "خلط الصيغة مع الصيغ المشابهة", right: "استخدم القاعدة كما في الأمثلة", whyAr: "التمييز بين الأنماط يأتي بالممارسة." },
+        { wrong: "Ich glaube, dass Deutsch ist wichtig.", right: "Ich glaube, dass Deutsch wichtig ist.", whyAr: "بعد dass يذهب الفعل المصرَّف إلى نهاية الجملة الثانوية." },
+        { wrong: "Ich denke, das du kommst.", right: "Ich denke, dass du kommst.", whyAr: "dass بحرفَي s أداة ربط، أما das بحرف واحد فهي أداة تعريف أو اسم موصول." },
+        { wrong: "Ich weiß dass er kommt.", right: "Ich weiß, dass er kommt.", whyAr: "الفاصلة قبل dass إلزامية في الألمانية ولا يجوز حذفها." },
       ],
+      relatedRuleComparison: {
+        title: "dass أم ob؟",
+        content: "dass تنقل خبراً مؤكداً: Ich weiß, dass er kommt (أعلم أنه قادم). أما ob فتنقل سؤالاً أو شكاً: Ich weiß nicht, ob er kommt (لا أعلم هل سيأتي). كلتاهما ترسل الفعل إلى النهاية.",
+      },
     },
   ],
   listening: {

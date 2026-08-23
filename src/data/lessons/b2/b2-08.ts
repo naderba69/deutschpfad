@@ -120,17 +120,34 @@ export const lessonB208: Lesson = {
     {
       id: "t2",
       titleAr: "الجسيمات التداولية: doch, ja, mal, eben",
-      titleDe: "Erweiterung",
+      titleDe: "Modalpartikeln: doch, ja, mal, eben",
       explanationAr: "الجسيمات (Partikeln) لا تُترجم حرفياً لكنها تنقل النبرة: doch (على العكس/بل)، ja (كما تعلم)، mal (قليلاً/فقط)، eben (ببساطة). مثال: Das ist ja interessant! (هذا مثير فعلاً!) — ja تضيف المفاجأة.",
       whyAr: "لماذا؟ لأن هذه الجسيمات هي سر «الطبيعية» في الألمانية المحكية — غيابها يجعل الكلام جامداً كتابياً.",
+      table: {
+        title: "الجسيمات التداولية ووظائفها",
+        columns: ["الجسيم", "الوظيفة", "مثال", "بالعربية"],
+        rows: [
+          { label: "ja", cells: ["أمر معروف للطرفين", "Das ist ja bekannt.", "هذا معروف كما تعلم."] },
+          { label: "doch", cells: ["ردّ توقّع معاكس", "Komm doch mit!", "هيا تعال معنا!"] },
+          { label: "mal", cells: ["تخفيف الطلب", "Warte mal kurz.", "انتظر قليلاً."] },
+          { label: "eben", cells: ["تسليم بأمر واقع", "Das ist eben so.", "الأمر هكذا ببساطة."] },
+          { label: "denn", cells: ["تلطيف السؤال", "Was machst du denn?", "ماذا تفعل إذن؟"] },
+        ],
+      },
       examples: [
-        { de: "Komm doch mal vorbei!", ar: "تعال قليلاً! (ودّي)" }, { de: "Das ist eben so.", ar: "الأمر ببساطة هكذا." }
+        { de: "Komm doch mal vorbei!", ar: "تعال قليلاً! (ودّي)" }, { de: "Das ist eben so.", ar: "الأمر ببساطة هكذا." }, { de: "Das war ja klar!", ar: "كان هذا واضحاً بالطبع!" }, { de: "Ruf mich doch morgen an.", ar: "اتصل بي غداً إذن." }, { de: "Wo bist du denn gewesen?", ar: "أين كنت إذن؟" }
       ],
-      comparisonWithArabic: "العربية تعبر عن هذا المعنى بطرق مختلفة، والألمانية تقدم صيغة محددة — التدريب على النمط يبني الدقة.",
-      eselsbruecke: "راجع المثالين وحاول إنتاج جملتين مشابهتين عن حياتك — الاستخدام الشخصي يثبت القاعدة.",
+      comparisonWithArabic: "العربية تملك نظيراً وظيفياً واضحاً: «يا أخي»، «إذن»، «بالله عليك»، «ببساطة». فالجسيمات ليست غريبة عن العربية، لكن الفارق أن الألمانية تضعها في مواضع نحوية محددة داخل الجملة لا في أولها أو آخرها كما نفعل غالباً.",
+      eselsbruecke: "الجسيم لا يُترجم بل يُحسّ. موضعه المعتاد بعد الفعل والفاعل مباشرة وقبل بقية الجملة. وإن حذفته بقيت الجملة صحيحة نحوياً لكنها تفقد دفأها وتبدو جافة كأنها من كتاب.",
       commonMistakes: [
-        { wrong: "خلط الصيغة مع الصيغ المشابهة", right: "استخدم القاعدة كما في الأمثلة", whyAr: "التمييز بين الأنماط يأتي بالممارسة." },
+        { wrong: "Doch komm mit!", right: "Komm doch mit!", whyAr: "الجسيم لا يتصدّر الجملة، بل يقع بعد الفعل في صيغة الأمر." },
+        { wrong: "Was denn machst du?", right: "Was machst du denn?", whyAr: "في السؤال يقع denn بعد الفاعل لا بين أداة الاستفهام والفعل." },
+        { wrong: "Das ist ja doch mal eben so.", right: "Das ist eben so.", whyAr: "لا تُكدَّس الجسيمات؛ واحد أو اثنان على الأكثر، وإلا صارت الجملة ركيكة." },
       ],
+      relatedRuleComparison: {
+        title: "doch جسيماً أم جواباً؟",
+        content: "doch لها استعمالان: جسيم تداولي داخل الجملة (Komm doch mit)، وجواب مستقل يردّ نفياً سابقاً: Kommst du nicht? — Doch! أي بل سآتي. الاستعمال الثاني لا نظير له في العربية بكلمة واحدة.",
+      },
     },
   ],
   listening: {

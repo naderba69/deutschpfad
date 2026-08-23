@@ -117,17 +117,34 @@ export const lessonA212: Lesson = {
     {
       id: "t2",
       titleAr: "obwohl: الاستدراك بفعل في النهاية",
-      titleDe: "Erweiterung",
+      titleDe: "Der Konzessivsatz mit „obwohl“",
       explanationAr: "obwohl (رغم أن) تقدم جملة استدراكية: الفعل في النهاية. Obwohl es regnet, gehe ich spazieren. ملاحظة: obwohl تفترض حقيقة (رغم أن الجو ممطر) بينما trotzdem تفصل بين جملتين (Es regnet. Trotzdem gehe ich spazieren).",
       whyAr: "لماذا؟ لأن obwohl من أكثر أدوات الربط استخداماً في B1 — والتمييز بينها وبين trotzdem يرفع جودة الأسلوب.",
+      table: {
+        title: "obwohl وأخواتها في التعبير عن الاستدراك",
+        columns: ["الأداة", "نوعها", "موضع الفعل", "مثال"],
+        rows: [
+          { label: "obwohl", cells: ["أداة ربط ثانوية", "في النهاية", "Obwohl es regnet, gehe ich."] },
+          { label: "trotzdem", cells: ["ظرف رابط", "ثانياً بعده", "Es regnet. Trotzdem gehe ich."] },
+          { label: "aber", cells: ["أداة ربط متساوية", "لا تغيير", "Es regnet, aber ich gehe."] },
+          { label: "trotz + Genitiv", cells: ["حرف جر", "لا فعل بعده", "Trotz des Regens gehe ich."] },
+          { label: "dennoch", cells: ["ظرف رابط رسمي", "ثانياً بعده", "Es regnet, dennoch gehe ich."] },
+        ],
+      },
       examples: [
-        { de: "Obwohl ich müde bin, lerne ich weiter.", ar: "رغم أنني متعب، أواصل التعلم." }, { de: "Sie kommt, obwohl sie keine Zeit hat.", ar: "تأتي رغم أنها بلا وقت." }
+        { de: "Obwohl ich müde bin, lerne ich weiter.", ar: "رغم أنني متعب، أواصل التعلم." }, { de: "Sie kommt, obwohl sie keine Zeit hat.", ar: "تأتي رغم أنها بلا وقت." }, { de: "Obwohl er müde war, hat er weitergearbeitet.", ar: "رغم أنه كان متعباً، واصل العمل." }, { de: "Sie spricht gut Deutsch, obwohl sie erst ein Jahr hier ist.", ar: "تتحدث الألمانية جيداً رغم أنها هنا منذ سنة فقط." }, { de: "Trotz der Kälte sind wir spazieren gegangen.", ar: "رغم البرد ذهبنا للتنزّه." }
       ],
-      comparisonWithArabic: "العربية تعبر عن هذا المعنى بطرق مختلفة، والألمانية تقدم صيغة محددة — التدريب على النمط يبني الدقة.",
-      eselsbruecke: "راجع المثالين وحاول إنتاج جملتين مشابهتين عن حياتك — الاستخدام الشخصي يثبت القاعدة.",
+      comparisonWithArabic: "العربية تستعمل «رغم أن» مع جملة و«رغم» مع اسم — وهو التمييز نفسه بين obwohl وtrotz. الفارق أن الألمانية تُلزمك زيادةً بنقل الفعل إلى آخر جملة obwohl، وبجرّ الاسم بعد trotz في حالة Genitiv.",
+      eselsbruecke: "obwohl تُتبع بجملة كاملة وترمي الفعل إلى النهاية، وtrotz تُتبع باسم مجرور. وإن بدأت الجملة بـ obwohl فتذكّر أن الجملة الرئيسية بعد الفاصلة تبدأ بالفعل: Obwohl es regnet, gehe ich.",
       commonMistakes: [
-        { wrong: "خلط الصيغة مع الصيغ المشابهة", right: "استخدم القاعدة كما في الأمثلة", whyAr: "التمييز بين الأنماط يأتي بالممارسة." },
+        { wrong: "Obwohl es regnet, ich gehe spazieren.", right: "Obwohl es regnet, gehe ich spazieren.", whyAr: "إذا تصدّرت الجملةُ الثانويةُ الكلامَ احتلّت المرتبة الأولى، فيأتي فعل الجملة الرئيسية مباشرة بعد الفاصلة." },
+        { wrong: "Obwohl des Regens gehe ich.", right: "Trotz des Regens gehe ich.", whyAr: "obwohl أداة ربط تحتاج جملة، أما مع الاسم المجرور فالصواب حرف الجر trotz." },
+        { wrong: "Obwohl er müde war, trotzdem hat er gearbeitet.", right: "Obwohl er müde war, hat er gearbeitet.", whyAr: "لا يجمع بين obwohl وtrotzdem في الجملة نفسها لأن كلاً منهما يؤدي الوظيفة كاملة." },
       ],
+      relatedRuleComparison: {
+        title: "obwohl أم weil؟",
+        content: "weil تقدّم السبب المتوقَّع: Ich bleibe zu Hause, weil es regnet. أما obwohl فتقدّم عكس المتوقَّع: Ich gehe spazieren, obwohl es regnet. كلتاهما ترسل الفعل إلى نهاية الجملة الثانوية.",
+      },
     },
   ],
   listening: {

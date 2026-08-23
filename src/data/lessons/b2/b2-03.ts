@@ -114,17 +114,34 @@ export const lessonB203: Lesson = {
     {
       id: "t2",
       titleAr: "تراكيب المبني للمجهول المتقدمة",
-      titleDe: "Erweiterung",
+      titleDe: "Alternativen zum Passiv",
       explanationAr: "أنماط متقدمة: sein + zu + مصدر (Das ist zu lösen = يمكن حله)، sein + Partizip II (Das ist gelöst = محلول)، وlassen sich (Das lässt sich lösen = يمكن حله). هذه الثلاث تعبر عن الإمكانية بدرجات مختلفة.",
       whyAr: "لماذا؟ لأن هذه التراكيب شائعة في النصوص القانونية والإدارية (وهي جوهر اختبار B2 القرائي).",
+      table: {
+        title: "بدائل المبني للمجهول",
+        columns: ["التركيب", "المعنى", "مثال", "بالعربية"],
+        rows: [
+          { label: "Passiv عادي", cells: ["حدث يقع", "Das Problem wird gelöst.", "تُحلّ المشكلة."] },
+          { label: "sein + zu + مصدر", cells: ["إمكان أو وجوب", "Das Problem ist zu lösen.", "يمكن حل المشكلة."] },
+          { label: "sein + Partizip II", cells: ["حالة ناتجة", "Das Problem ist gelöst.", "المشكلة محلولة."] },
+          { label: "lassen sich", cells: ["إمكان", "Das Problem lässt sich lösen.", "المشكلة قابلة للحل."] },
+          { label: "صفة بـ -bar", cells: ["قابلية", "Das Problem ist lösbar.", "المشكلة قابلة للحل."] },
+        ],
+      },
       examples: [
-        { de: "Die Aufgabe ist zu lösen.", ar: "المهمة قابلة للحل." }, { de: "Das Problem lässt sich leicht erklären.", ar: "المشكلة يمكن شرحها بسهولة." }
+        { de: "Die Aufgabe ist zu lösen.", ar: "المهمة قابلة للحل." }, { de: "Das Problem lässt sich leicht erklären.", ar: "المشكلة يمكن شرحها بسهولة." }, { de: "Die Rechnung ist bis Freitag zu bezahlen.", ar: "يجب دفع الفاتورة قبل الجمعة." }, { de: "Der Fehler lässt sich leicht beheben.", ar: "يمكن إصلاح الخطأ بسهولة." }, { de: "Nach der Reparatur war das Gerät wieder einsatzbereit.", ar: "بعد الإصلاح صار الجهاز جاهزاً للعمل مجدداً." }
       ],
-      comparisonWithArabic: "العربية تعبر عن هذا المعنى بطرق مختلفة، والألمانية تقدم صيغة محددة — التدريب على النمط يبني الدقة.",
-      eselsbruecke: "راجع المثالين وحاول إنتاج جملتين مشابهتين عن حياتك — الاستخدام الشخصي يثبت القاعدة.",
+      comparisonWithArabic: "العربية تملك المبني للمجهول (تُحلّ) وصيغة اسم المفعول (محلولة)، لكنها تعبّر عن الإمكان بجملة مستقلة: «يمكن حلها». والألمانية تضغط هذا كله في تركيب واحد قصير مثل lässt sich lösen — وهذا ما يمنح نصوص B2 كثافتها.",
+      eselsbruecke: "فرّق بين الحدث والحالة: wird gelöst يعني أن العمل يجري الآن، وist gelöst يعني أنه انتهى. وأما ist zu lösen وlässt sich lösen فكلاهما يقول: هذا ممكن.",
       commonMistakes: [
-        { wrong: "خلط الصيغة مع الصيغ المشابهة", right: "استخدم القاعدة كما في الأمثلة", whyAr: "التمييز بين الأنماط يأتي بالممارسة." },
+        { wrong: "Das Problem ist gelöst worden können.", right: "Das Problem lässt sich lösen.", whyAr: "لا يُجمع بين Passiv والفعل الناقص بهذه الطريقة؛ التركيب الصحيح للإمكان هو lassen sich أو sein + zu." },
+        { wrong: "Die Rechnung ist zu bezahlt.", right: "Die Rechnung ist zu bezahlen.", whyAr: "تركيب sein + zu يأخذ المصدر لا اسم المفعول." },
+        { wrong: "Das Fenster wird geöffnet seit einer Stunde.", right: "Das Fenster ist seit einer Stunde geöffnet.", whyAr: "استمرار الحالة يُعبَّر عنه بـ Zustandspassiv مع sein لا بـ Vorgangspassiv مع werden." },
       ],
+      relatedRuleComparison: {
+        title: "Vorgangspassiv أم Zustandspassiv؟",
+        content: "werden + Partizip II يصف العملية وهي تجري: Die Tür wird geschlossen (يجري إغلاق الباب). وsein + Partizip II يصف النتيجة الباقية: Die Tür ist geschlossen (الباب مغلق). اختيار المساعد يغيّر المعنى كلياً.",
+      },
     },
   ],
   listening: {

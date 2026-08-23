@@ -113,17 +113,34 @@ export const lessonB210: Lesson = {
     {
       id: "t2",
       titleAr: "الأسلوب الاسمي (Nominalstil) في الكتابة الرسمية",
-      titleDe: "Erweiterung",
+      titleDe: "Nominalstil in der formellen Schriftsprache",
       explanationAr: "تحويل الأفعال إلى أسماء: weil man spart → wegen der Einsparung، wenn man ankommt → bei der Ankunft. هذا يضغط النص ويعطيه طابعاً رسمياً — أساسي في الرسائل الرسمية B2.",
       whyAr: "لماذا؟ لأن الرسالة الرسمية B2 (75 دقيقة) تتطلب أسلوباً اسمياً موجزاً — من يستخدم جمل الفعل فقط يفقد علامات الجودة.",
+      table: {
+        title: "من الأسلوب الفعلي إلى الأسلوب الاسمي",
+        columns: ["الأسلوب الفعلي", "الأسلوب الاسمي", "بالعربية"],
+        rows: [
+          { label: "weil man spart", cells: ["wegen der Einsparung", "بسبب التوفير"] },
+          { label: "wenn man ankommt", cells: ["bei der Ankunft", "عند الوصول"] },
+          { label: "nachdem er geprüft hat", cells: ["nach der Prüfung", "بعد الفحص"] },
+          { label: "damit man es versteht", cells: ["zum Verständnis", "من أجل الفهم"] },
+          { label: "obwohl es regnet", cells: ["trotz des Regens", "رغم المطر"] },
+        ],
+      },
       examples: [
-        { de: "Nach der Ankunft melden Sie sich bitte.", ar: "بعد الوصول يرجى تسجيل حضوركم (بدل wenn Sie ankommen)." }, { de: "Die Einsparung der Kosten ist unser Ziel.", ar: "توفير التكاليف هدفنا." }
+        { de: "Nach der Ankunft melden Sie sich bitte.", ar: "بعد الوصول يرجى تسجيل حضوركم (بدل wenn Sie ankommen)." }, { de: "Die Einsparung der Kosten ist unser Ziel.", ar: "توفير التكاليف هدفنا." }, { de: "Nach Erhalt Ihrer Unterlagen melden wir uns.", ar: "بعد استلام أوراقكم سنتواصل معكم." }, { de: "Wegen der Verspätung des Zuges kam sie zu spät.", ar: "بسبب تأخر القطار وصلت متأخرة." }, { de: "Zur Klärung der Frage brauchen wir mehr Zeit.", ar: "لتوضيح المسألة نحتاج وقتاً أكثر." }
       ],
-      comparisonWithArabic: "العربية تعبر عن هذا المعنى بطرق مختلفة، والألمانية تقدم صيغة محددة — التدريب على النمط يبني الدقة.",
-      eselsbruecke: "راجع المثالين وحاول إنتاج جملتين مشابهتين عن حياتك — الاستخدام الشخصي يثبت القاعدة.",
+      comparisonWithArabic: "العربية تفعل الشيء نفسه بالمصدر: نقول «بعد الوصول» لا «بعد أن وصل»، و«بسبب التأخر» لا «لأنه تأخر». فالمهارة منقولة أصلاً من لغتك؛ ما ينقصك هو معرفة أي حرف جر يرافق كل اسم في الألمانية.",
+      eselsbruecke: "لكل أداة ربط نظير من حروف الجر: weil تقابل wegen، وwenn تقابل bei، وnachdem تقابل nach، وobwohl تقابل trotz. حوّل الفعل إلى اسم ثم ضع حرف الجر المناسب وأعرب ما بعده.",
       commonMistakes: [
-        { wrong: "خلط الصيغة مع الصيغ المشابهة", right: "استخدم القاعدة كما في الأمثلة", whyAr: "التمييز بين الأنماط يأتي بالممارسة." },
+        { wrong: "wegen dem Regen", right: "wegen des Regens", whyAr: "wegen حرف جر يلزم Genitiv في اللغة المكتوبة الفصيحة، وإن شاع Dativ في الكلام اليومي." },
+        { wrong: "nach die Prüfung", right: "nach der Prüfung", whyAr: "nach حرف جر يلزم Dativ دائماً." },
+        { wrong: "Trotz es regnet, gehe ich.", right: "Trotz des Regens gehe ich.", whyAr: "trotz حرف جر يُتبع باسم مجرور لا بجملة؛ ومع الجملة تُستعمل obwohl." },
       ],
+      relatedRuleComparison: {
+        title: "أسلوب اسمي أم فعلي؟",
+        content: "الأسلوب الاسمي مكثّف ورسمي وهو المتوقَّع في الرسائل الإدارية وتقارير B2. لكن الإفراط فيه يجعل النص ثقيلاً وبارداً. القاعدة العملية: استعمله في المقدمات والصيغ الجاهزة، وعُد إلى الأسلوب الفعلي في الشرح والتفصيل.",
+      },
     },
   ],
   listening: {

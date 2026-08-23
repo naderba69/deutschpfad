@@ -120,17 +120,34 @@ export const lessonA204: Lesson = {
     {
       id: "t2",
       titleAr: "حروف الجر المتغيرة: الحركة Akkusativ والسكون Dativ",
-      titleDe: "Erweiterung",
+      titleDe: "Wechselpräpositionen: Akkusativ oder Dativ",
       explanationAr: "حروف الجر التسعة (in, an, auf, über, unter, vor, hinter, neben, zwischen) تتغير حسب المعنى: مع الحركة (wohin?) نستخدم Akkusativ، مع السكون (wo?) نستخدم Dativ. مثال: Ich stelle den Tisch in die Küche (حركة) / Der Tisch steht in der Küche (سكون).",
       whyAr: "لماذا؟ لأن السؤال السحري: اسأل «wohin?» (إلى أين) أم «wo?» (أين) — الجواب يحدد الحالة.",
+      table: {
+        title: "حروف الجر المتغيرة: wohin؟ أم wo؟",
+        columns: ["السؤال", "الحالة", "مثال", "بالعربية"],
+        rows: [
+          { label: "wohin? (إلى أين)", cells: ["Akkusativ", "Ich gehe in die Schule.", "أذهب إلى المدرسة."] },
+          { label: "wo? (أين)", cells: ["Dativ", "Ich bin in der Schule.", "أنا في المدرسة."] },
+          { label: "wohin?", cells: ["Akkusativ", "Er hängt das Bild an die Wand.", "يعلّق الصورة على الجدار."] },
+          { label: "wo?", cells: ["Dativ", "Das Bild hängt an der Wand.", "الصورة معلّقة على الجدار."] },
+          { label: "wohin?", cells: ["Akkusativ", "Die Katze springt auf den Tisch.", "تقفز القطة على الطاولة."] },
+        ],
+      },
       examples: [
-        { de: "Ich lege das Buch auf den Tisch.", ar: "أضع الكتاب على الطاولة (حركة)." }, { de: "Das Buch liegt auf dem Tisch.", ar: "الكتاب على الطاولة (سكون)." }
+        { de: "Ich lege das Buch auf den Tisch.", ar: "أضع الكتاب على الطاولة (حركة)." }, { de: "Das Buch liegt auf dem Tisch.", ar: "الكتاب على الطاولة (سكون)." }, { de: "Stell die Tasche unter den Tisch!", ar: "ضع الحقيبة تحت الطاولة!" }, { de: "Die Tasche steht unter dem Tisch.", ar: "الحقيبة موضوعة تحت الطاولة." }, { de: "Wir fahren aufs Land, und dort bleiben wir auf dem Land.", ar: "نسافر إلى الريف، وهناك نبقى في الريف." }
       ],
-      comparisonWithArabic: "العربية تعبر عن هذا المعنى بطرق مختلفة، والألمانية تقدم صيغة محددة — التدريب على النمط يبني الدقة.",
-      eselsbruecke: "راجع المثالين وحاول إنتاج جملتين مشابهتين عن حياتك — الاستخدام الشخصي يثبت القاعدة.",
+      comparisonWithArabic: "العربية تستخدم «في» و«إلى» لتفريق السكون عن الحركة، فتتغير الكلمة نفسها. أما الألمانية فتُبقي حرف الجر كما هو (in يبقى in) وتغيّر حالة الاسم بعده — التغيير في الأداة لا في الحرف.",
+      eselsbruecke: "الحركة تحتاج طاقة، والطاقة تحتاج حرفاً زائداً: den، das، die مع النصب. أما السكون فهادئ فيأخذ dem أو der. اسأل دائماً: wohin أم wo؟",
       commonMistakes: [
-        { wrong: "خلط الصيغة مع الصيغ المشابهة", right: "استخدم القاعدة كما في الأمثلة", whyAr: "التمييز بين الأنماط يأتي بالممارسة." },
+        { wrong: "Ich gehe in der Schule.", right: "Ich gehe in die Schule.", whyAr: "gehen حركة نحو هدف، فالسؤال wohin والجواب Akkusativ: in die Schule." },
+        { wrong: "Das Buch liegt auf den Tisch.", right: "Das Buch liegt auf dem Tisch.", whyAr: "liegen تدل على السكون، فالسؤال wo والجواب Dativ: auf dem Tisch." },
+        { wrong: "Ich hänge das Bild an der Wand.", right: "Ich hänge das Bild an die Wand.", whyAr: "hängen هنا متعدٍّ ويدل على فعل الحركة، فيلزم Akkusativ." },
       ],
+      relatedRuleComparison: {
+        title: "stellen/legen/hängen أم stehen/liegen/hängen؟",
+        content: "الأفعال المتعدية stellen وlegen وsetzen تصف الحركة وتأخذ Akkusativ. أما اللازمة stehen وliegen وsitzen فتصف السكون وتأخذ Dativ. لاحظ أن hängen يعمل في المجموعتين بتصريفين مختلفين.",
+      },
     },
   ],
   listening: {

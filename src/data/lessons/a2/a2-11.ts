@@ -117,17 +117,34 @@ export const lessonA211: Lesson = {
     {
       id: "t2",
       titleAr: "الأفعال الانعكاسية: mich أم mir",
-      titleDe: "Erweiterung",
+      titleDe: "Reflexive Verben: mich oder mir",
       explanationAr: "الأفعال الانعكاسية تحتاج ضميراً يعكس الفاعل: في حالة النصب (sich freuen, sich anmelden) نستخدم mich/dich/sich، وفي حالة الجر (sich etwas vorstellen, sich die Zähne putzen) نستخدم mir/dir. السؤال: هل الفعل يحتاج مفعولاً ثانياً؟ إن نعم → Dativ (mir).",
       whyAr: "لماذا؟ لأن الخلط بين mich وmir يغير المعنى: Ich freue mich (أنا سعيد) ≠ Ich wasche mir die Hände (أغسل يديّ).",
+      table: {
+        title: "mich أم mir؟",
+        columns: ["الحالة", "الضمير", "مثال", "بالعربية"],
+        rows: [
+          { label: "Akkusativ (بلا مفعول آخر)", cells: ["mich", "Ich freue mich.", "أنا سعيد."] },
+          { label: "Akkusativ", cells: ["dich", "Du wäschst dich.", "تغتسل."] },
+          { label: "Dativ (مع مفعول ثانٍ)", cells: ["mir", "Ich wasche mir die Hände.", "أغسل يديّ."] },
+          { label: "Dativ", cells: ["dir", "Stell dir das vor!", "تخيّل ذلك!"] },
+          { label: "الغائب في الحالتين", cells: ["sich", "Er interessiert sich dafür.", "يهتم بذلك."] },
+        ],
+      },
       examples: [
-        { de: "Ich freue mich auf den Urlaub.", ar: "أنا متحمس للعطلة." }, { de: "Ich putze mir die Zähne.", ar: "أغسل أسناني (لكن: Ich wasche mich = أغسل نفسي)." }
+        { de: "Ich freue mich auf den Urlaub.", ar: "أنا متحمس للعطلة." }, { de: "Ich putze mir die Zähne.", ar: "أغسل أسناني (لكن: Ich wasche mich = أغسل نفسي)." }, { de: "Wir treffen uns um sieben.", ar: "نلتقي في السابعة." }, { de: "Ich putze mir die Zähne.", ar: "أنظّف أسناني." }, { de: "Setz dich bitte!", ar: "اجلس من فضلك!" }
       ],
-      comparisonWithArabic: "العربية تعبر عن هذا المعنى بطرق مختلفة، والألمانية تقدم صيغة محددة — التدريب على النمط يبني الدقة.",
-      eselsbruecke: "راجع المثالين وحاول إنتاج جملتين مشابهتين عن حياتك — الاستخدام الشخصي يثبت القاعدة.",
+      comparisonWithArabic: "العربية تعبّر عن الانعكاس بصيغة الفعل نفسه غالباً: «اغتسل»، «جلس». والألمانية تُلزمك بضمير منفصل يرافق الفعل دائماً، وحذفه خطأ صريح لا مجرد ركاكة.",
+      eselsbruecke: "إن كان في الجملة مفعول به آخر (die Hände، die Zähne) فالضمير يتنحّى إلى Dativ فيصير mir. وإن لم يكن ثمة مفعول آخر فالضمير هو المفعول نفسه: mich.",
       commonMistakes: [
-        { wrong: "خلط الصيغة مع الصيغ المشابهة", right: "استخدم القاعدة كما في الأمثلة", whyAr: "التمييز بين الأنماط يأتي بالممارسة." },
+        { wrong: "Ich freue.", right: "Ich freue mich.", whyAr: "sich freuen فعل انعكاسي إلزامي، فلا تصح الجملة بلا ضمير انعكاسي." },
+        { wrong: "Ich wasche mich die Hände.", right: "Ich wasche mir die Hände.", whyAr: "وجود مفعول به صريح (die Hände) ينقل الضمير الانعكاسي إلى Dativ: mir." },
+        { wrong: "Er interessiert ihn für Musik.", right: "Er interessiert sich für Musik.", whyAr: "في الغائب يكون الضمير الانعكاسي sich دائماً، وihn تعني شخصاً آخر." },
       ],
+      relatedRuleComparison: {
+        title: "انعكاسي حقيقي أم متبادل؟",
+        content: "بعض الأفعال انعكاسية إلزامياً مثل sich freuen وsich bedanken. وبعضها يفيد التبادل في الجمع: Wir treffen uns (نلتقي ببعضنا)، Sie streiten sich (يتشاجرون فيما بينهم).",
+      },
     },
   ],
   listening: {
