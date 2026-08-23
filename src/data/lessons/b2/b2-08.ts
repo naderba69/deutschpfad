@@ -77,7 +77,7 @@ export const lessonB208: Lesson = {
       titleAr: "الأفعال مع حروف الجر الثابتة (Verben mit Präpositionen)",
       titleDe: "Verben mit festen Präpositionen",
       explanationAr:
-        "كل فعل له حرف جر ثابت وحالة: sich interessieren für + نصب (يهتم بـ)، warten auf + نصب (ينتظر)، sich freuen über/auf (يفرح)، denken an (يفكر في)، sich gewöhnen an (يعتاد)، träumen von (يحلم بـ)، abhängen von (يعتمد على)، sich kümmern um (يعتني بـ)، diskutieren über (يناقش)، sich beschweren über (يشتكي من).",
+        "أسّست هذا الباب في b1-09 (teilnehmen an, sich erinnern an, warten auf) — وهنا نوسّع القائمة إلى مستوى B2 ونضيف الحالات الدقيقة. كل فعل له حرف جر ثابت وحالة: sich interessieren für + نصب (يهتم بـ)، warten auf + نصب (ينتظر)، sich freuen über/auf (يفرح)، denken an (يفكر في)، sich gewöhnen an (يعتاد)، träumen von (يحلم بـ)، abhängen von (يعتمد على)، sich kümmern um (يعتني بـ)، diskutieren über (يناقش)، sich beschweren über (يشتكي من).",
       whyAr:
         "لماذا «ثابتة»؟ لأن الألمانية لا تسمح بالتبديل: لا يمكنك أن تقول «warten für» — كل فعل «اختار» حرفه عبر التاريخ. الحل: احفظ كل فعل مع حرفه وكأنهما كلمة واحدة: «sich-interessieren-für» وحدة واحدة.",
       table: {

@@ -79,7 +79,7 @@ export const lessonB203: Lesson = {
       explanationAr:
         "1) مع حرف جر: Der Mann, auf den ich warte... — حرف الجر يبقى والضمير بحالته. 2) was للجمل الكاملة أو الضمائر (alles, nichts): Alles, was ich weiß... 3) wo للمكان: Das Land, wo ich lebe (= in dem). 4) wofür/womit للأسئلة المدمجة: Ich weiß nicht, wofür er sich interessiert.",
       whyAr:
-        "لماذا wo بدل in dem؟ لأن wo «يختصر» النسبية المكانية: das Land, wo ich lebe — أسهل وأشيع في الكلام. وwas يختصر النسبية بعد «كل شيء»: Alles, was... هذه الاختصارات علامة الطلاقة.",
+        "أولاً تنبيه: حرف الجر هنا ليس اختيارياً بل يفرضه الفعل — Der Mann, auf den ich warte لأن warten auf، وDas Gesetz, auf das sich alle berufen لأن sich berufen auf. فراجع درس b1-09 (الأفعال مع حروف الجر الثابتة) قبل المتابعة: من لا يعرف حرف الفعل لا يستطيع بناء نسبيته. وكذلك wofür ليست إلا wo + für مأخوذاً من sich interessieren für. ولماذا wo بدل in dem؟ لأن wo «يختصر» النسبية المكانية: das Land, wo ich lebe — أسهل وأشيع في الكلام. وwas يختصر النسبية بعد «كل شيء»: Alles, was... هذه الاختصارات علامة الطلاقة.",
       table: {
         title: "الضمائر النسبية المتقدمة",
         columns: ["النوع", "التركيب", "مثال"],

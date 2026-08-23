@@ -18,6 +18,7 @@ export const lessonB109: Lesson = {
     { id: "z1", de: "Ich kann über Ehrenamt sprechen.", ar: "أن أتحدث عن العمل التطوعي والمشاريع الاجتماعية." },
     { id: "z2", de: "Ich kenne die wichtigsten Nomen-Verb-Verbindungen.", ar: "أن أتقن الوصلات الاسمية-الفعلية: يطرح سؤالاً، يعطي خبراً." },
     { id: "z3", de: "Ich kenne die n-Deklination.", ar: "أن أتقن تصريف n (der Student → den Studenten)." },
+    { id: "z5", de: "Ich kann Verben mit festen Präpositionen richtig verwenden.", ar: "أن أستعمل الأفعال مع حروف الجر الثابتة وحالاتها: teilnehmen an + Dativ، sich erinnern an + Akkusativ." },
       { id: "z4", de: "Ich kann über soziales Engagement sprechen.", ar: "أن أتحدث عن العمل التطوعي والاجتماعي." },
   ],
   einfuehrung: {
@@ -150,6 +151,50 @@ export const lessonB109: Lesson = {
       relatedRuleComparison: {
         title: "n-Deklination أم عادية؟",
         content: "اختبر: هل الاسم مذكر + ينتهي بـ e أو لاتيني؟ نعم → n/en. لا → عادي. (der Mann عادي: dem Mann بدون n).",
+      },
+    },
+    {
+      id: "t3",
+      titleAr: "الأفعال مع حروف الجر الثابتة (Verben mit Präpositionen)",
+      titleDe: "Verben mit festen Präpositionen: teilnehmen an, sich erinnern an",
+      explanationAr:
+        "كما أن بعض الأفعال تلزمها وصلة اسمية، فإن أفعالاً كثيرة يلزمها حرف جر ثابت لا يتغير — وهو جزء من الفعل يُحفظ معه: teilnehmen an + Dativ (يشارك في)، sich erinnern an + Akkusativ (يتذكر)، sich interessieren für + Akkusativ (يهتم بـ)، warten auf + Akkusativ (ينتظر)، denken an + Akkusativ (يفكر في)، sich kümmern um + Akkusativ (يعتني بـ)، helfen bei + Dativ (يساعد في). القاعدة الذهبية: احفظ ثلاثة أشياء معاً لا اثنين — الفعل + حرف الجر + الحالة.",
+      whyAr:
+        "لماذا حرف جر «ثابت»؟ لأنه هنا لا يحمل معناه الأصلي: an في an der Wand تعني «على الجدار» (مكان)، لكن في teilnehmen an لا تعني مكاناً إطلاقاً — إنها مجرد أداة نحوية يفرضها الفعل. لذلك لا يمكن ترجمتها من العربية، ولذلك أيضاً تفشل هنا قاعدة Wechselpräpositionen التي تعلمتها في a1-04: الحالة بعد الحرف الثابت مُقرَّرة سلفاً ولا تتغير بحركة أو سكون. وهذا الباب من صميم امتحان Goethe B1، وستحتاجه في B2 لبناء الجمل النسبية مع حروف الجر (Der Mann, auf den ich warte).",
+      table: {
+        title: "أهم الأفعال مع حروف الجر الثابتة",
+        columns: ["الفعل + الحرف", "الحالة", "المعنى", "مثال"],
+        rows: [
+          { label: "teilnehmen an", cells: ["Dativ", "يشارك في", "Ich nehme am Kurs teil."] },
+          { label: "sich erinnern an", cells: ["Akkusativ", "يتذكر", "Ich erinnere mich an den Tag."] },
+          { label: "sich interessieren für", cells: ["Akkusativ", "يهتم بـ", "Er interessiert sich für Musik."] },
+          { label: "warten auf", cells: ["Akkusativ", "ينتظر", "Wir warten auf den Bus."] },
+          { label: "denken an", cells: ["Akkusativ", "يفكر في", "Sie denkt an ihre Familie."] },
+          { label: "sich kümmern um", cells: ["Akkusativ", "يعتني بـ", "Er kümmert sich um die Kinder."] },
+          { label: "helfen bei", cells: ["Dativ", "يساعد في", "Ich helfe dir bei der Arbeit."] },
+        ],
+      },
+      examples: [
+        { de: "Ich nehme an einem Sprachkurs teil.", ar: "أشارك في دورة لغة." },
+        { de: "Erinnerst du dich an unseren ersten Tag?", ar: "هل تتذكر يومنا الأول؟" },
+        { de: "Viele Freiwillige kümmern sich um die Flüchtlinge.", ar: "متطوعون كثيرون يعتنون باللاجئين." },
+        { de: "Wir warten auf die Antwort des Vereins.", ar: "ننتظر جواب الجمعية." },
+        { de: "Sie interessiert sich für das Ehrenamt.", ar: "هي مهتمة بالعمل التطوعي." },
+        { de: "Der Verein hilft den Familien bei der Anmeldung.", ar: "الجمعية تساعد العائلات في التسجيل." },
+      ],
+      comparisonWithArabic:
+        "العربية تفعل الشيء نفسه تماماً! «يعتني بـ» — لماذا الباء؟ لا سبب منطقي، هكذا يلزم الفعل. و«يفكر في»، و«يشارك في»، و«ينتظر» بلا حرف أصلاً. المشكلة أن الحروف لا تتطابق بين اللغتين: العربية تقول «ينتظرُ الحافلةَ» بلا حرف، والألمانية تفرض auf. فلا تترجم الحرف — احفظه مع فعله.",
+      eselsbruecke:
+        "«الفعل يسافر بحقيبتين»: الحرف والحالة. لا تحفظ warten وحده بل warten auf + Akkusativ. وللأغلبية الساحقة القاعدة مريحة: an وauf وfür وum وüber مع هذه الأفعال تأخذ Akkusativ، ولا يشذّ إلا القليل مثل teilnehmen an وhelfen bei (Dativ).",
+      commonMistakes: [
+        { wrong: "Ich warte den Bus. (بلا حرف)", right: "Ich warte auf den Bus.", whyAr: "العربية «أنتظر الحافلة» بلا حرف، والألمانية تفرض auf. حذف الحرف أشيع خطأ عربي في هذا الباب." },
+        { wrong: "Ich nehme an dem Kurs teil → Ich nehme an den Kurs teil.", right: "Ich nehme an dem (am) Kurs teil.", whyAr: "teilnehmen an من الاستثناءات: Dativ لا Akkusativ." },
+        { wrong: "Ich erinnere an den Tag. (بلا mich)", right: "Ich erinnere mich an den Tag.", whyAr: "الفعل انعكاسي: sich erinnern an — الضمير الانعكاسي جزء منه (راجع a2-11)." },
+        { wrong: "Er interessiert sich über Musik.", right: "Er interessiert sich für Musik.", whyAr: "لكل فعل حرفه الثابت؛ لا يجوز استبداله بحرف آخر قريب المعنى." },
+      ],
+      relatedRuleComparison: {
+        title: "حرف جر ثابت أم Wechselpräposition؟",
+        content: "في a1-04 كان الحرف يحمل معنى مكانياً والحالة تتبع السؤال: wohin؟ ← Akkusativ، wo؟ ← Dativ. أما هنا فالحرف بلا معنى مكاني والحالة محفوظة مع الفعل. الاختبار: احذف الحرف واسأل «أين؟» — إن كان السؤال بلا معنى (Ich warte auf den Bus) فالحرف ثابت.",
       },
     },
   ],
@@ -380,6 +425,39 @@ export const lessonB109: Lesson = {
       explanation: "نودع أصدقاءنا — Abschied nehmen.",
       errorType: "spelling",
     },
+    {
+      id: "e11",
+      type: "multiple-choice",
+      instructionAr: "اختر حرف الجر الثابت الصحيح:",
+      questionDe: "Ich warte ___ den Bus.",
+      options: ["auf", "für", "an", "über"],
+      correctIndex: 0,
+      explanation: "warten auf + Akkusativ. لا تترجم من العربية «أنتظر الحافلة» بلا حرف — الألمانية تفرض auf.",
+      errorType: "preposition",
+    },
+    {
+      id: "e12",
+      type: "fill-blank",
+      instructionAr: "أكمل بحرف الجر والحالة الصحيحين:",
+      template: "Viele Studenten nehmen ___ Projekt teil und interessieren sich ___ das Ehrenamt.",
+      blanks: [
+        { correct: "am", options: ["am", "an das", "für das"] },
+        { correct: "für", options: ["für", "über", "an"] },
+      ],
+      explanation: "teilnehmen an + Dativ ⇒ an dem = am. وsich interessieren für + Akkusativ.",
+      errorType: "preposition",
+    },
+    {
+      id: "e13",
+      type: "error-correction",
+      instructionAr: "صحّح الخطأ في حرف الجر:",
+      wrongSentence: "Er interessiert sich über moderne Kunst.",
+      wrongWord: "über",
+      correctWord: "für",
+      options: ["für", "über", "auf", "an"],
+      explanation: "sich interessieren für + Akkusativ. حرف الجر الثابت جزء من الفعل ولا يُستبدل بحرف قريب المعنى.",
+      errorType: "preposition",
+    },
   ],
 
   fehlerUndTipps: {
@@ -451,6 +529,16 @@ export const lessonB109: Lesson = {
       ],
       explanation: "Bescheid sagen + Abschied nehmen.",
       errorType: "grammar",
+    },
+    {
+      id: "m6",
+      type: "multiple-choice",
+      instructionAr: "اختر الحرف والحالة الصحيحين:",
+      questionDe: "Ich nehme ___ Deutschkurs teil.",
+      options: ["am", "an den", "auf dem", "für den"],
+      correctIndex: 0,
+      explanation: "teilnehmen an + Dativ ⇒ an dem = am. وهو استثناء: أغلب الأفعال مع an تأخذ Akkusativ.",
+      errorType: "preposition",
     },
   ],
 
