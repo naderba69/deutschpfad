@@ -388,7 +388,7 @@ export const lessonA110: Lesson = {
       id: "m3",
       type: "word-ordering",
       instructionAr: "رتّب الجملة:",
-      tokens: ["als", "Ich", "arbeit", "Verkäufer", "."],
+      tokens: ["als", "Ich", "arbeite", "Verkäufer", "."],
       correctSentence: "Ich arbeite als Verkäufer.",
       explanation: "أعمل بائعاً: Ich + arbeite + als Verkäufer.",
       errorType: "word-order",

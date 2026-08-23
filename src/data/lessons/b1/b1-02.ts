@@ -429,7 +429,7 @@ export const lessonB102: Lesson = {
       id: "m3",
       type: "word-ordering",
       instructionAr: "رتّب الجملة:",
-      tokens: ["arbeitete", "Ich", "Jahren", "fünf", "in", "Firma", "einer", "."],
+      tokens: ["arbeitete", "Ich", "Jahre", "fünf", "in", "Firma", "einer", "."],
       correctSentence: "Ich arbeitete fünf Jahre in einer Firma.",
       explanation: "عملت خمس سنوات في شركة — Präteritum.",
       errorType: "word-order",

@@ -79,21 +79,31 @@ export function evaluateMcq(exercise: McqExercise, selected: string): FeedbackRe
 }
 
 export function evaluateOrdering(exercise: OrderingExercise, answerTokens: string[]): FeedbackResult {
-  const joined = answerTokens.join(" ").trim();
+  // تمارين بناء الكلمة من حروف مفردة (H A U S → HAUS): الوصل بمسافات
+  // يجعلها مستحيلة الحل، لذا نصلها بلا فاصل عندما تكون كل الرموز حرفاً واحداً.
+  const isLetterBuilding =
+    exercise.tokens.length > 1 && exercise.tokens.every((t) => t.trim().length === 1);
+  const joined = isLetterBuilding
+    ? answerTokens.join("").trim()
+    : answerTokens.join(" ").trim();
   const isCorrect = normalizeText(joined) === normalizeText(exercise.correctSentence);
 
   // حالة جزئية: نفس الكلمات لكن بترتيب خاطئ
-  const sameWords =
-    !isCorrect &&
-    normalizeText(joined).split(" ").sort().join(" ") ===
-      normalizeText(exercise.correctSentence).split(" ").sort().join(" ");
+  const splitUnits = (s: string) =>
+    (isLetterBuilding ? normalizeText(s).replace(/\s+/g, "").split("") : normalizeText(s).split(" "))
+      .filter(Boolean)
+      .sort()
+      .join(" ");
+  const sameWords = !isCorrect && splitUnits(joined) === splitUnits(exercise.correctSentence);
 
   return {
     isCorrect,
     partial: sameWords,
     pointsEarned: isCorrect ? exercisePoints(exercise) : 0,
     explanation: sameWords
-      ? "الكلمات صحيحة لكن الترتيب خاطئ! تذكّر القاعدة: الفعل في المركز الثاني (V2)."
+      ? isLetterBuilding
+        ? "الحروف صحيحة لكن ترتيبها خاطئ — أعد ترتيبها لتكوين الكلمة."
+        : "الكلمات صحيحة لكن الترتيب خاطئ! تذكّر القاعدة: الفعل في المركز الثاني (V2)."
       : exercise.explanation,
     errorType: sameWords ? "word-order" : exercise.errorType,
     correctAnswer: exercise.correctSentence,

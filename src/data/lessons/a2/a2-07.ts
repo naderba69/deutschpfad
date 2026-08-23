@@ -426,7 +426,7 @@ export const lessonA207: Lesson = {
       id: "m3",
       type: "word-ordering",
       instructionAr: "رتّب الجملة:",
-      tokens: ["Geld", "ein", "Es", "gibt", "hier", "Automat", "?"],
+      tokens: ["Geldautomaten", "einen", "Es", "gibt", "hier", "?"],
       correctSentence: "Gibt es hier einen Geldautomaten?",
       explanation: "هل يوجد صراف آلي هنا؟ — Gibt es + نصب.",
       errorType: "word-order",

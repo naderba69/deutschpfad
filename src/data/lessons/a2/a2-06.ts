@@ -397,7 +397,7 @@ export const lessonA206: Lesson = {
       id: "m3",
       type: "word-ordering",
       instructionAr: "رتّب الجملة:",
-      tokens: ["dass", "Hoffe", "ich", "du", "kommst", "Ich", ","],
+      tokens: ["dass", "hoffe", "du", "kommst", "Ich", ","],
       correctSentence: "Ich hoffe, dass du kommst.",
       explanation: "آمل أن تأتي: Ich hoffe + dass du kommst (الفعل في النهاية).",
       errorType: "word-order",

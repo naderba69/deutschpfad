@@ -398,7 +398,7 @@ export const lessonB105: Lesson = {
       id: "m3",
       type: "word-ordering",
       instructionAr: "رتّب الجملة:",
-      tokens: ["wäre", "früher", "gekommen", "Ich", "geworden", "fit", "wenn", "ich", "Sport", "hätte", "gemacht", ","],
+      tokens: ["wäre", "früher", "Ich", "geworden", "fit", "Wenn", "ich", "Sport", "hätte", "gemacht", ","],
       correctSentence: "Wenn ich Sport gemacht hätte, wäre ich früher fit geworden.",
       explanation: "لو كنت مارست الرياضة لكنت أليق مبكراً.",
       errorType: "word-order",

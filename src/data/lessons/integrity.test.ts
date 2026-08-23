@@ -101,6 +101,38 @@ describe("سلامة تمارين الاختيار من متعدد", () => {
   });
 });
 
+describe("تمارين ترتيب الكلمات", () => {
+  it("الرموز تُكوّن الجملة الصحيحة بالضبط (العطل A)", () => {
+    // يحاكي evaluateOrdering: الحروف المفردة تُوصل بلا مسافة، وغيرها بمسافة.
+    const norm = (s: string) =>
+      s.toLowerCase().trim().replace(/[.,!?;:«»„“”()"'،؟؛]/g, " ").replace(/\s+/g, " ").trim();
+    let checked = 0;
+    const broken: string[] = [];
+    for (const lesson of LESSONS) {
+      for (const key of ["practiceBank", "miniTest", "review"] as const) {
+        for (const ex of (lesson[key] ?? []) as Exercise[]) {
+          if (ex.type !== "word-ordering") continue;
+          checked++;
+          const tokens = ex.tokens ?? [];
+          const isLetter = tokens.length > 1 && tokens.every((x) => x.trim().length === 1);
+          const cut = (s: string) =>
+            (isLetter ? norm(s).replace(/\s+/g, "").split("") : norm(s).split(" "))
+              .filter(Boolean)
+              .sort()
+              .join(" ");
+          if (cut(tokens.join(isLetter ? "" : " ")) !== cut(ex.correctSentence ?? ""))
+            broken.push(
+              `${lesson.id}:${ex.id} tokens=${JSON.stringify(tokens)} correct=${JSON.stringify(ex.correctSentence)}`,
+            );
+        }
+      }
+    }
+    expect(checked).toBeGreaterThan(90);
+    expect(broken, `تمارين ترتيب غير قابلة للحل:\n${broken.join("\n")}`).toEqual([]);
+  });
+
+});
+
 describe("ترتيب فهرس الدروس", () => {
   it("مرتّب حسب المستوى ثم الوحدة ثم ترتيب الدرس (التنقّل يعتمد موضع المصفوفة)", () => {
     const rank = { A1: 0, A2: 1, B1: 2, B2: 3 } as const;

@@ -410,7 +410,7 @@ export const lessonA201: Lesson = {
       id: "m3",
       type: "word-ordering",
       instructionAr: "رتّب الجملة:",
-      tokens: ["ein", "Habe", "Souvenir", "du", "gekauft", "?"],
+      tokens: ["ein", "Hast", "Souvenir", "du", "gekauft", "?"],
       correctSentence: "Hast du ein Souvenir gekauft?",
       explanation: "سؤال Perfekt: الفعل المساعد أولاً + التصريف في النهاية.",
       errorType: "word-order",

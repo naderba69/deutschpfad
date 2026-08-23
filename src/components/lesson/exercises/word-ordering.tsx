@@ -22,50 +22,61 @@ export function WordOrderingExercise({
   exercise: OrderingExercise;
   onResult?: (r: FeedbackResult) => void;
 }) {
-  const [bank, setBank] = React.useState<string[]>(() => shuffle(exercise.tokens));
-  const [answer, setAnswer] = React.useState<string[]>([]);
+  // كل رمز يحمل مفتاحاً فريداً: الجمل مثل «Bevor ich … , studierte ich»
+  // تحتوي الكلمة نفسها مرّتين، والحذف بالقيمة كان يُزيل النسختين معاً.
+  type Token = { word: string; key: string };
+  const makeTokens = React.useCallback(
+    () => shuffle(exercise.tokens.map((word, i) => ({ word, key: `${word}#${i}` }))),
+    [exercise.tokens],
+  );
+  const [bank, setBank] = React.useState<Token[]>(makeTokens);
+  const [answer, setAnswer] = React.useState<Token[]>([]);
   const [dragIndex, setDragIndex] = React.useState<number | null>(null);
   const state = useExerciseState(exercise);
 
   const locked = state.result?.isCorrect === true || state.revealedSolution;
 
-  const addWord = (word: string) => {
+  const addWord = (token: Token) => {
     if (locked) return;
-    setBank((prev) => prev.filter((w) => w !== word));
-    setAnswer((prev) => [...prev, word]);
+    setBank((prev) => prev.filter((t) => t.key !== token.key));
+    setAnswer((prev) => [...prev, token]);
   };
 
-  const removeWord = (word: string) => {
+  const removeWord = (token: Token) => {
     if (locked) return;
-    setAnswer((prev) => prev.filter((w) => w !== word));
-    setBank((prev) => [...prev, word]);
+    setAnswer((prev) => prev.filter((t) => t.key !== token.key));
+    setBank((prev) => [...prev, token]);
   };
 
   /** إسقاط كلمة من البنك في منطقة الإجابة */
   const handleDrop = (e: React.DragEvent, target: "answer" | "bank", index?: number) => {
     e.preventDefault();
-    const word = e.dataTransfer.getData("text/plain");
-    if (!word || locked) return;
+    const key = e.dataTransfer.getData("text/plain");
+    if (!key || locked) return;
     if (target === "answer") {
-      setBank((prev) => prev.filter((w) => w !== word));
-      setAnswer((prev) => [...prev, word]);
+      const token = bank.find((t) => t.key === key);
+      if (!token) return;
+      setBank((prev) => prev.filter((t) => t.key !== key));
+      setAnswer((prev) => [...prev, token]);
     } else if (target === "bank") {
       // إعادة كلمة من الإجابة إلى البنك
-      setAnswer((prev) => prev.filter((w) => w !== word));
-      setBank((prev) => [...prev, word]);
+      const token = answer.find((t) => t.key === key);
+      if (!token) return;
+      setAnswer((prev) => prev.filter((t) => t.key !== key));
+      setBank((prev) => [...prev, token]);
     }
     setDragIndex(null);
   };
 
   const handleCheck = () => {
     if (answer.length === 0) return;
-    const feedback = evaluateOrdering(exercise, answer);
+    const feedback = evaluateOrdering(exercise, answer.map((t) => t.word));
     state.submit(feedback);
     onResult?.(feedback);
   };
 
   const handleRetry = () => {
-    setBank(shuffle(exercise.tokens));
+    setBank(makeTokens());
     setAnswer([]);
     state.retry();
   };
@@ -92,23 +103,23 @@ export function WordOrderingExercise({
               : "انقر الكلمات بالترتيب، أو اسحبها إلى هنا…"}
           </span>
         )}
-        {answer.map((word, i) => (
-          <span key={`${word}-${i}`} className="inline-flex items-center">
+        {answer.map((token, i) => (
+          <span key={token.key} className="inline-flex items-center">
             {i > 0 && <span className="mx-0.5 text-muted-foreground">·</span>}
             {locked || state.revealedSolution ? (
               <span className="rounded-lg bg-success/15 px-2.5 py-1.5 font-de font-semibold" dir="ltr" lang="de">
-                {word}
+                {token.word}
               </span>
             ) : (
               <button
                 type="button"
-                onClick={() => removeWord(word)}
+                onClick={() => removeWord(token)}
                 title="إزالة الكلمة (انقر عليها)"
                 className="group flex items-center gap-1 rounded-lg border bg-background px-2.5 py-1.5 font-de font-semibold transition-colors hover:border-destructive/50 hover:bg-destructive/10"
                 dir="ltr"
                 lang="de"
               >
-                {word}
+                {token.word}
                 <X className="h-3 w-3 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true" />
               </button>
             )}
@@ -124,17 +135,17 @@ export function WordOrderingExercise({
         aria-label="بنك الكلمات"
       >
         {bank.length === 0 && <span className="text-sm text-muted-foreground/70">كل الكلمات استُخدمت ✓</span>}
-        {bank.map((word, i) => (
+        {bank.map((token, i) => (
           <button
-            key={`${word}-${i}`}
+            key={token.key}
             type="button"
             draggable={!locked}
             onDragStart={(e) => {
-              e.dataTransfer.setData("text/plain", word);
+              e.dataTransfer.setData("text/plain", token.key);
               setDragIndex(i);
             }}
             onDragEnd={() => setDragIndex(null)}
-            onClick={() => addWord(word)}
+            onClick={() => addWord(token)}
             disabled={locked}
             className={cn(
               "inline-flex items-center gap-1 rounded-lg border bg-background px-3 py-2 font-de font-semibold shadow-sm transition-all",
@@ -146,7 +157,7 @@ export function WordOrderingExercise({
             lang="de"
           >
             <GripVertical className="h-3.5 w-3.5 text-muted-foreground/60" aria-hidden="true" />
-            {word}
+            {token.word}
           </button>
         ))}
       </div>
