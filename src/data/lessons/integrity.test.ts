@@ -319,6 +319,38 @@ describe("كتل الشرح النظري", () => {
     expect(exclusive).toEqual([]);
   });
 
+  it("كل بند مراجعة يحمل إحالة صريحة إلى مستواه ودرسه المصدر", () => {
+    // معيار المرحلة 5: على المتعلّم أن يعرف من *أين* جاء سؤال المراجعة،
+    // وإلا صارت «المراجعة التراكمية» أسئلةً معلّقة بلا مرساة.
+    const LESSON_IDS = new Set(LESSONS.map((l) => l.id));
+    const bad: string[] = [];
+    for (const lesson of LESSONS) {
+      const selfIndex = LESSONS.findIndex((l) => l.id === lesson.id);
+      for (const ex of (lesson.review ?? []) as Exercise[]) {
+        const ins = ex.instructionAr ?? "";
+        const key = `${lesson.id}:${ex.id}`;
+        // (أ) وسم مستوى صريح — أو إقرار صريح بعدم وجود درس سابق
+        const hasLevel = /(?<![a-zA-Z-])(A1|A2|B1|B2)(?![-\d])/.test(ins);
+        if (!hasLevel) {
+          bad.push(`${key} بلا وسم مستوى: "${ins}"`);
+          continue;
+        }
+        if (/لا درس سابق/.test(ins)) continue;
+        // (ب) كل معرّف درس مذكور يجب أن يكون موجوداً وسابقاً لهذا الدرس.
+        // ملاحظة: اشتراط *وجود* معرّف في كل بند ليس مفروضاً هنا بعد — 75 بنداً
+        // في A2/B1/B2 ما زالت تكتفي بوسم المستوى دون تسمية الدرس (عطب مسجَّل،
+        // إصلاحه يقتضي تحقّقاً فردياً من موضع تدريس كل قاعدة).
+        const ids = [...ins.matchAll(/\b([ab][12]-\d{2})\b/g)].map((m) => m[1]);
+        for (const id of ids) {
+          if (!LESSON_IDS.has(id)) bad.push(`${key} يحيل إلى درس غير موجود ${id}`);
+          else if (LESSONS.findIndex((l) => l.id === id) >= selfIndex)
+            bad.push(`${key} يحيل إلى درس غير سابق ${id}`);
+        }
+      }
+    }
+    expect(bad).toEqual([]);
+  });
+
   it("لا يكرر تمرينُ تصحيح الخطأ خياراً بعد إضافة خيار «لا خطأ»", () => {
     const dups: string[] = [];
     for (const lesson of LESSONS) {

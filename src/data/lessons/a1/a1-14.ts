@@ -44,7 +44,7 @@ export const lessonA114: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة تراكمية (من a1-07): كيف تقرأ السعر؟",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-07 — التسوق): كيف تقرأ السعر؟",
       questionDe: "Was kostet das? — 2,50 €",
       questionAr: "كم يكلف هذا؟ — 2,50 يورو",
       options: ["zwei Euro fünfzig", "zwei fünfzig Euro", "zwei Komma fünfzig", "fünfzig zwei Euro"],
@@ -55,7 +55,7 @@ export const lessonA114: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة تراكمية (من a1-09): متى الموعد؟",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-09 — المواعيد والتقويم): متى الموعد؟",
       questionDe: "Am Montag um neun Uhr — wann ist das?",
       questionAr: "الاثنين الساعة التاسعة — متى ذلك؟",
       options: ["Am Montag um 9 Uhr", "Am Freitag um 9 Uhr", "Am Montag um 10 Uhr", "Am Dienstag um 9 Uhr"],
@@ -66,7 +66,7 @@ export const lessonA114: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة تراكمية: أكمل العدد (من a1-07)",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-07 — التسوق: الأعداد 0–1000): أكمل العدد",
       template: "13 = ___",
       blanks: [{ correct: "dreizehn", options: ["dreizehn", "dreißig", "drei zehn", "zehn drei"] }],
       explanation: "13 = dreizehn (ثلاثة عشر) — لا تخلط مع 30 = dreißig.",

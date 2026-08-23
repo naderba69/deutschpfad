@@ -43,7 +43,7 @@ export const lessonA107: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة تراكمية (من a1-05): ما وقت الاستيقاظ؟",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-05 — الحياة اليومية والروتين): ما وقت الاستيقاظ؟",
       questionDe: "Wann stehst du auf?",
       questionAr: "متى تستيقظ؟",
       options: ["Ich stehe um 7 Uhr auf.", "Ich aufstehe um 7 Uhr.", "Ich stehe auf um 7 Uhr.", "Um 7 Uhr ich aufstehe."],
@@ -54,7 +54,7 @@ export const lessonA107: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة تراكمية (من a1-06): ماذا تحب أن تفعل؟",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-06 — أوقات الفراغ والهوايات): ماذا تحب أن تفعل؟",
       questionDe: "Was machst du gern?",
       questionAr: "ماذا تحب أن تفعل؟",
       options: ["Ich spiele gern Fußball.", "Ich gern Fußball spiele.", "Ich spiele Fußball gern bin.", "Gern ich Fußball spiele."],
@@ -65,7 +65,7 @@ export const lessonA107: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة تراكمية: أكمل بـ können (من a1-06)",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-06 — أوقات الفراغ والهوايات): أكمل بـ können",
       template: "Ich ___ Deutsch sprechen. (können)",
       blanks: [{ correct: "kann", options: ["kann", "können", "kannt", "könnt"] }],
       explanation: "ich kann (من درس a1-06): Ich kann Deutsch sprechen.",

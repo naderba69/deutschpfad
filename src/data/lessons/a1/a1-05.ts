@@ -43,7 +43,7 @@ export const lessonA105: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة تراكمية (من a1-03): كيف تطلب شيئاً بأدب؟",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-03 — الطعام والشراب): كيف تطلب شيئاً بأدب؟",
       questionDe: "Was sagt man im Café, wenn man etwas möchte?",
       questionAr: "ماذا تقول في المقهى عندما تريد شيئاً؟",
       options: ["Ich hätte gern einen Kaffee.", "Ich bin einen Kaffee.", "Ich möchte einen Kaffee bin.", "Ich habe gern Kaffee sein."],
@@ -54,7 +54,7 @@ export const lessonA105: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة تراكمية (من a1-04): أين يقع السرير؟",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-04 — السكن والمنزل): أين يقع السرير؟",
       questionDe: "Wo steht das Bett?",
       questionAr: "أين يقع السرير؟",
       options: ["im Schlafzimmer", "in der Küche", "im Bad", "im Wohnzimmer"],
@@ -65,7 +65,7 @@ export const lessonA105: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة تراكمية: أكمل تصريف sein (من a1-01)",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-01 — التعارف والتحيات): أكمل تصريف sein",
       template: "Ich ___ aus Tunesien. (sein)",
       blanks: [{ correct: "bin", options: ["bin", "bist", "ist", "sind"] }],
       explanation: "ich bin (من درس a1-01): Ich bin aus Tunesien.",

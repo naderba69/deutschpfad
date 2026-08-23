@@ -42,7 +42,7 @@ export const lessonA112: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة: كم الثمن؟ (من درس التسوق والأرقام):",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-07 — التسوق): كم الثمن؟",
       questionDe: "Was kostet das Brot?",
       questionAr: "كم ثمن الخبز؟",
       options: ["Zwei Euro fünfzig.", "Es ist zwei Euro.", "Ich bin zwei Euro.", "Das macht zwei Uhr."],
@@ -53,7 +53,7 @@ export const lessonA112: Lesson = {
     {
       id: "r2",
       type: "fill-blank",
-      instructionAr: "مراجعة: النفي الصحيح (من درس المهن):",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-10 — العمل والمهن): النفي الصحيح:",
       template: "Ich ___ Lehrer. (لست معلماً) · Ich habe ___ Auto. (لا سيارة)",
       blanks: [
         { correct: "bin kein", options: ["bin kein", "bin nicht", "habe kein", "werde kein"] },
@@ -66,7 +66,7 @@ export const lessonA112: Lesson = {
     {
       id: "r3",
       type: "error-correction",
-      instructionAr: "مراجعة: صحّح الخطأ (من درس المدينة — الاتجاه):",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-11 — التنقل في المدينة، الاتجاه): افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich gehe nach der Bahnhof.",
       wrongWord: "nach der Bahnhof",
       correctWord: "zum Bahnhof",
@@ -321,7 +321,7 @@ export const lessonA112: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ (المقصود: الجو بارد):",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich bin kalt.",
       wrongWord: "Ich bin",
       correctWord: "Es ist",

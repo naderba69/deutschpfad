@@ -48,7 +48,7 @@ export const lessonA113: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة شاملة: ما السؤال الصحيح؟",
+      instructionAr: "مراجعة شاملة من A1 (درس a1-11 — التنقل في المدينة: Wo / Wohin / Woher): ما السؤال الصحيح؟",
       questionDe: "___ kommst du? — Aus Tunesien.",
       questionAr: "من أين أنت؟ — من تونس.",
       options: ["Woher", "Wo", "Wohin", "Wer"],
@@ -59,7 +59,7 @@ export const lessonA113: Lesson = {
     {
       id: "r2",
       type: "fill-blank",
-      instructionAr: "مراجعة شاملة: أكمل بالأداة الصحيحة:",
+      instructionAr: "مراجعة شاملة من A1 (درس a1-04 — السكن والمنزل: أدوات التعريف der/die/das): أكمل بالأداة الصحيحة:",
       template: "___ Tisch (مذكر) · ___ Lampe (مؤنث) · ___ Buch (محايد)",
       blanks: [
         { correct: "der", options: ["der", "die", "das", "den"] },
@@ -73,7 +73,7 @@ export const lessonA113: Lesson = {
     {
       id: "r3",
       type: "error-correction",
-      instructionAr: "مراجعة شاملة: صحّح الخطأ (نصب + منفصل):",
+      instructionAr: "مراجعة شاملة من A1 (درس a1-05 — الحياة اليومية: um + الساعة والأفعال المنفصلة): افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich stehe sieben Uhr auf.",
       wrongWord: "sieben Uhr",
       correctWord: "um sieben Uhr",
@@ -328,7 +328,7 @@ export const lessonA113: Lesson = {
     {
       id: "e4",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ (النصب):",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich esse ein Apfel.",
       wrongWord: "ein Apfel",
       correctWord: "einen Apfel",
@@ -387,7 +387,7 @@ export const lessonA113: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ (النفي):",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich habe nicht Auto.",
       wrongWord: "nicht Auto",
       correctWord: "kein Auto",

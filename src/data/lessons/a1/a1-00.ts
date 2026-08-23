@@ -500,7 +500,7 @@ export const lessonA100: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة تمهيدية: ما هي اللغة التي تتعلمها في هذه المنصة؟",
+      instructionAr: "مراجعة تمهيدية (قبل A1 — لا درس سابق): ما هي اللغة التي تتعلمها في هذه المنصة؟",
       questionDe: "Welche Sprache lernst du hier?",
       questionAr: "أي لغة تتعلم هنا؟",
       options: ["Deutsch", "Englisch", "Spanisch", "Französisch"],
@@ -511,7 +511,7 @@ export const lessonA100: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة تمهيدية: كم حرفاً في الأبجدية الألمانية؟",
+      instructionAr: "مراجعة تمهيدية (قبل A1 — لا درس سابق): كم حرفاً في الأبجدية الألمانية؟",
       questionDe: "Wie viele Buchstaben hat das deutsche Alphabet?",
       questionAr: "كم حرفاً في الأبجدية الألمانية؟",
       options: ["26", "24", "28", "30"],

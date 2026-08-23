@@ -47,7 +47,7 @@ export const lessonA106: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من الدروس السابقة: ماذا تقول عندما يُسأل عن بلدك؟",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-01 — التعارف والتحيات): ماذا تقول عندما يُسأل عن بلدك؟",
       questionDe: "Woher kommst du?",
       questionAr: "من أين أنت؟",
       options: ["Ich komme aus Tunesien.", "Ich heiße Tunesien.", "Ich bin Tunesien.", "Ich wohne Tunesien."],
@@ -58,7 +58,7 @@ export const lessonA106: Lesson = {
     {
       id: "r2",
       type: "fill-blank",
-      instructionAr: "مراجعة: اختر أداة الملكية الصحيحة (من درس العائلة):",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-02 — العائلة والأصدقاء): اختر أداة الملكية الصحيحة:",
       template: "Das ist ___ Vater. (أبي — مذكر) · Das ist ___ Mutter. (أمي — مؤنث)",
       blanks: [
         { correct: "mein", options: ["mein", "meine", "meinen", "meiner"] },
@@ -71,7 +71,7 @@ export const lessonA106: Lesson = {
     {
       id: "r3",
       type: "error-correction",
-      instructionAr: "مراجعة: صحّح الخطأ (من درس الطعام — النصب):",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-03 — الطعام والشراب، النصب): افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Ich esse ein Apfel.",
       wrongWord: "ein Apfel",
       correctWord: "einen Apfel",

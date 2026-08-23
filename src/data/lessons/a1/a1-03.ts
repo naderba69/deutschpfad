@@ -44,7 +44,7 @@ export const lessonA103: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة تراكمية (من a1-01): كيف تقدّم نفسك؟",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-01 — التعارف والتحيات): كيف تقدّم نفسك؟",
       questionDe: "Wie heißt du?",
       questionAr: "ما اسمك؟",
       options: ["Ich heiße Sami.", "Ich bin Sami heißen.", "Mein heißen ist Sami.", "Ich heiße mich Sami."],
@@ -55,7 +55,7 @@ export const lessonA103: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة تراكمية (من a1-02): ما أداة «الأم»؟",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-02 — العائلة والأصدقاء): ما أداة «الأم»؟",
       questionDe: "Welcher Artikel hat „Mutter“?",
       questionAr: "ما أداة التعريف لكلمة «أم»؟",
       options: ["die", "der", "das"],
@@ -66,7 +66,7 @@ export const lessonA103: Lesson = {
     {
       id: "r3",
       type: "multiple-choice",
-      instructionAr: "مراجعة تراكمية (من a1-01): ماذا تقول عند الوداع؟",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-01 — التعارف والتحيات): ماذا تقول عند الوداع؟",
       questionDe: "Was sagt man zum Abschied?",
       questionAr: "ماذا تقول عند الوداع؟",
       options: ["Auf Wiedersehen!", "Guten Morgen!", "Entschuldigung!", "Bitte schön!"],
