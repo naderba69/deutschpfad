@@ -225,7 +225,7 @@ export const lessonA208: Lesson = {
     id: "p1",
     title: "أصوات النقل: ab، an، وsch",
     items: [
-      { de: "der Zug", ar: "القطار", note: "u قصيرة + g = خ: تسوخ" },
+      { de: "der Zug", ar: "القطار", note: "u طويلة + g في النهاية = ك (تقسية الأواخر، لا خ): تسووك" },
       { de: "die Fahrkarte", ar: "التذكرة", note: "h يطيل a: فار-كارته" },
       { de: "umsteigen", ar: "يغيّر", note: "ei = آي: أوم-شتايغن" },
       { de: "die Straßenbahn", ar: "الترام", note: "st = شت + ß = سّ: شتراسن-بان" },

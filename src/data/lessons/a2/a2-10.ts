@@ -219,7 +219,7 @@ export const lessonA210: Lesson = {
     id: "p1",
     title: "أصوات المدرسة: ü، ch، وei",
     items: [
-      { de: "die Prüfung", ar: "الامتحان", note: "ü + g = خ: پريوفونغ" },
+      { de: "die Prüfung", ar: "الامتحان", note: "ü طويلة + ung = ونغ بغُنّة (لا خ): پريوفونغ" },
       { de: "der Unterricht", ar: "الحصة", note: "ch بعد i = ش ناعمة: أونتر-ريخت" },
       { de: "studieren", ar: "يدرس (جامعة)", note: "ie = إي: شتوديرن" },
       { de: "die Vokabeln", ar: "المفردات", note: "v = ف: ڤوكابلن" },

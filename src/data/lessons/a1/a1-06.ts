@@ -356,7 +356,7 @@ export const lessonA106: Lesson = {
     items: [
       { de: "das Hobby", ar: "الهواية", note: "h في البداية = نَفَس خفيف: هوبي" },
       { de: "gern", ar: "بسرور", note: "g = غ: غيرن" },
-      { de: "tanzen", ar: "يرقص", note: "tz = تس: تسانتسن" },
+      { de: "tanzen", ar: "يرقص", note: "z بعد n = تس (لا يوجد tz هنا)، وحرف t الأول عادي: تانتسِن" },
       { de: "hören", ar: "يستمع", note: "ö بشفتين مستديرتين: هُورِن" },
       { de: "die Musik", ar: "الموسيقى", note: "s في نهاية = س: موزيك" },
       { de: "fotografieren", ar: "يصور", note: "alle o واضحة: فوتوغرافيرن" },

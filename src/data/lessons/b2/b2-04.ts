@@ -325,7 +325,7 @@ export const lessonB204: Lesson = {
         { correct: "kochende", options: ["kochende", "gekochte"] },
         { correct: "gekochte", options: ["kochende", "gekochte"] },
       ],
-      explanation: "يغلي الآن → kochendes. مغلي سابقاً → gekochtes.",
+      explanation: "يغلي الآن (Partizip I) → das kochende Wasser. مغلي سابقاً (Partizip II) → das gekochte Wasser. بعد das التصريف ضعيف فالنهاية ‎-e.",
       errorType: "grammar",
     },
     {

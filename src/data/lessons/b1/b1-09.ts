@@ -229,7 +229,7 @@ export const lessonB109: Lesson = {
       { de: "die Spende", ar: "التبرع", note: "sp = شپ: شپِندِه" },
       { de: "das Projekt", ar: "المشروع", note: "j = ي: پرويِكت" },
       { de: "der Kunde", ar: "الزبون", note: "u + nd: كونده" },
-      { de: "das Mitglied", ar: "العضو", note: "g = خ: ميت-غليهد" },
+      { de: "das Mitglied", ar: "العضو", note: "مركّبة Mit+Glied: g بداية مقطع = غ، وd في النهاية = ت: ميت-غليت" },
     ],
     tip: "Ehrenamt = إيرِن-أمت — eh في البداية تُنطق e طويلة (حرف h يطيل). تذكر: الحرف + h = طويل!",
     shadowing: [

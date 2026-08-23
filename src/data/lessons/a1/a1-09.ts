@@ -191,10 +191,10 @@ export const lessonA109: Lesson = {
     id: "p1",
     title: "أصوات التقويم: ig، ch، وie",
     items: [
-      { de: "Montag", ar: "الاثنين", note: "g في نهاية = خفيفة (مون-تاخ)" },
+      { de: "Montag", ar: "الاثنين", note: "g في النهاية = ك قاطعة (تقسية الأواخر)، وo طويلة: موون-تااك" },
       { de: "Mittwoch", ar: "الأربعاء", note: "ch بعد o = خ حلقية: ميت-فوخ" },
       { de: "Donnerstag", ar: "الخميس", note: "rr مزدوجة: دونّر-شتاخ" },
-      { de: "der Frühling", ar: "الربيع", note: "ü طويل + g = خ: فريو-لينخ" },
+      { de: "der Frühling", ar: "الربيع", note: "ü طويلة + ng = نون غُنّة واحدة (لا g منفصلة ولا خ): فريو-لينغ" },
       { de: "der Monat", ar: "الشهر", note: "o مفتوح: مو-نات" },
       { de: "der Herbst", ar: "الخريف", note: "h + r: هيربست (b لا تُنطق تقريباً)" },
     ],

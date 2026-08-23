@@ -201,7 +201,7 @@ export const lessonB110: Lesson = {
     id: "p1",
     title: "مراجعة أصوات B1",
     items: [
-      { de: "die Zukunft", ar: "المستقبل", note: "z = تس + ch = خ: تسوكونفت" },
+      { de: "die Zukunft", ar: "المستقبل", note: "z = تس (لا يوجد ch) + u الأولى طويلة والثانية قصيرة: تسووكونفت" },
       { de: "würde", ar: "كنت سأفعل", note: "ü: ڤوردِه" },
       { de: "das Gemälde", ar: "اللوحة", note: "ä: غِميلدِه" },
       { de: "der Bürger", ar: "المواطن", note: "ü + r: بورغِر" },

@@ -227,8 +227,8 @@ export const lessonB108: Lesson = {
       { de: "der Computer", ar: "الحاسوب", note: "كلمة إنجليزية: كومپيوتِر" },
       { de: "digital", ar: "رقمي", note: "g = غ: ديغيتال" },
       { de: "die Entwicklung", ar: "التطور", note: "w = ڤ: إنت-ڤيكلونغ" },
-      { de: "die Intelligenz", ar: "الذكاء", note: "tz = تس: إنتِلِيغِنتس" },
-      { de: "die Zukunft", ar: "المستقبل", note: "z = تس + ch = خ: تسوكونفت" },
+      { de: "die Intelligenz", ar: "الذكاء", note: "z في النهاية = تس (لا tz) + g = غ شديدة: إنتِليغِنتس" },
+      { de: "die Zukunft", ar: "المستقبل", note: "z = تس (لا يوجد ch) + u الأولى طويلة والثانية قصيرة: تسووكونفت" },
     ],
     tip: "Zukunft = تسوكونفت — Z تس + ch خ. كلمة المستقبل نفسها صعبة النطق — أتقنها!",
     shadowing: [

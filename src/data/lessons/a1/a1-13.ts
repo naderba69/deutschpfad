@@ -230,7 +230,7 @@ export const lessonA113: Lesson = {
     title: "أصوات A1: ei، ie، ch، وsch",
     items: [
       { de: "heißen", ar: "يُسمى", note: "ei = آي: هاي-سِن" },
-      { de: "lesen", ar: "يقرأ", note: "ie = إي: ليزِن" },
+      { de: "lesen", ar: "يقرأ", note: "e طويلة = إي (لا يوجد ie) + s بين حركتين = ز: ليزِن" },
       { de: "Buch", ar: "كتاب", note: "ch بعد u = خفيف: بوخ" },
       { de: "Schule", ar: "مدرسة", note: "sch = ش: شولِه" },
       { de: "Woche", ar: "أسبوع", note: "ch بعد o = خفيف: فوخِه" },

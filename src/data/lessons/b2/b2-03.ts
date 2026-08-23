@@ -201,7 +201,7 @@ export const lessonB203: Lesson = {
       { de: "das Gericht", ar: "المحكمة", note: "g = غ + ch ناعمة: غِريشت" },
       { de: "die Strafe", ar: "العقوبة", note: "st = شت: شترافه" },
     ],
-    tip: "Gericht = غِريشت — gh ناعمة بعد i. وAnwalt = آن-ڤالت — w ألمانية ڤ.",
+    tip: "Gericht = غِريشت — G في البداية = غ، وch بعد i = ش خفيفة (ich-Laut). وAnwalt = آن-ڤالت — w ألمانية ڤ.",
     shadowing: [
       { de: "Der Anwalt, mit dem ich sprach, ist erfahren.", ar: "المحامي الذي تحدثت معه خبير.", tip: "mit dem — حرف الجر + ضمير نسبي" },
       { de: "Alles, was du sagst, ist wichtig.", ar: "كل ما تقوله مهم.", tip: "was بعد alles" },

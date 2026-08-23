@@ -197,7 +197,7 @@ export const lessonA206: Lesson = {
     id: "p1",
     title: "أصوات الإعلام: ig، sch، وie",
     items: [
-      { de: "die Zeitung", ar: "الصحيفة", note: "ei = آي + g = خ: تسايْتونغ" },
+      { de: "die Zeitung", ar: "الصحيفة", note: "ei = آي + ung = ونغ بغُنّة (لا خ): تسايْتونغ" },
       { de: "das Fernsehen", ar: "التلفاز", note: "s بين علة = ز: فِرن-زيهِن" },
       { de: "die Nachricht", ar: "الخبر", note: "ch = خ: ناخ-ريشت" },
       { de: "die Werbung", ar: "الإعلانات", note: "w = ڤ + b = پ: ڤِربونغ" },

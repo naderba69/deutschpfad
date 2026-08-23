@@ -199,7 +199,7 @@ export const lessonB105: Lesson = {
       { de: "wäre", ar: "كان سيكون (شرطي)", note: "ä مفتوح: ڤيرِه" },
       { de: "gesund", ar: "سليم", note: "g = غ + u: غِزونت" },
       { de: "die Prävention", ar: "الوقاية", note: "p + ä: پريڤِنتسيون" },
-      { de: "trainieren", ar: "يتدرب", note: "ei = آي: تراينيرن" },
+      { de: "trainieren", ar: "يتدرب", note: "ai في هذه الكلمة الدخيلة = إيه (لا آي) + ie = إي طويلة: تريه-نيرِن" },
       { de: "die Süßigkeiten", ar: "الحلويات", note: "ü + ß: زوسيغكايتن" },
     ],
     tip: "Süßigkeiten = زوسيغكايتن — كلمة فيها ü وß معاً. قسّمها: زوس + يغ + كايتن.",

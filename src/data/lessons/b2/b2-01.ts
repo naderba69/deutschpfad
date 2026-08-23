@@ -225,7 +225,7 @@ export const lessonB201: Lesson = {
       { de: "die Wissenschaft", ar: "العلم", note: "sch = ش: ڤيسن-شافَت" },
       { de: "die Forschung", ar: "البحث", note: "or: فورشونغ" },
       { de: "das Experiment", ar: "التجربة", note: "x = كس: إكسبيريمِنت" },
-      { de: "die Entdeckung", ar: "الاكتشاف", note: "w = ڤ: إنت-دِكّونغ" },
+      { de: "die Entdeckung", ar: "الاكتشاف", note: "ck = ك مشددة (لا يوجد w) + انطق t ثم d بوضوح: إنت-دِكّونغ" },
       { de: "die Revolution", ar: "الثورة", note: "tion = تسيون: رِڤولوتسيون" },
       { de: "das Genie", ar: "العبقري", note: "g = ج: جيني" },
     ],

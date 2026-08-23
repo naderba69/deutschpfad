@@ -448,7 +448,7 @@ export const lessonB208: Lesson = {
         {
       id: "med-b2-08-1", type: "relay-instructions",
       titleAr: "اشرح سلوكاً ثقافياً ألمانياً لشخص عربي",
-      sourceDe: "In Deutschland ist es üblich, sich bei Geschäftstreffen pünktlich zu erscheinen. Verspätungen gelten als unhöflich und werden selten entschuldigt.",
+      sourceDe: "In Deutschland ist es üblich, bei Geschäftstreffen pünktlich zu erscheinen. Verspätungen gelten als unhöflich und werden selten entschuldigt.",
       taskAr: "اشرح بالعربية القاعدة الثقافية: الالتزام بالمواعيد، وكيف يُنظر إلى التأخير — مع مقارنة موجزة بعادات بلدك.",
       modelAnswerAr: "«في ألمانيا من المعتاد الحضور في الموعد في اللقاءات التجارية. يُعد التأخير غير مهذب ونادراً ما يُغتفر. في بلدنا الوضع مختلف غالباً.»",
       keyPointsAr: ["شرحت قاعدة الالتزام بالمواعيد", "نقلت نظرة التأخير", "أضفت مقارنة مع بلدك"],

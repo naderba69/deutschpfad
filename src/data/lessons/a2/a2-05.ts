@@ -229,7 +229,7 @@ export const lessonA205: Lesson = {
       { de: "das Büro", ar: "المكتب", note: "ü: بُورو" },
       { de: "anrufen", ar: "يتصل", note: "an + rufen: آن-روفِن" },
       { de: "der Kollege", ar: "الزميل", note: "o مفتوحة + g: كولِغِه" },
-      { de: "die Besprechung", ar: "الاجتماع", note: "ch = خ + sch = ش: بِشپْريشونغ" },
+      { de: "die Besprechung", ar: "الاجتماع", note: "sp في بداية المقطع = شپ (لا sch) + ch بعد e = ش خفيفة: بِشپْريشونغ" },
       { de: "die Nachricht", ar: "الرسالة", note: "ch بعد n = خ: ناخريشت" },
       { de: "verbinden", ar: "يصل (مكالمة)", note: "v = ف + i قصير: فِر-بيندن" },
     ],

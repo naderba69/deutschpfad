@@ -195,7 +195,7 @@ export const lessonB209: Lesson = {
     id: "p1",
     title: "أصوات التقديم: sch، ch، وie",
     items: [
-      { de: "die Bewerbung", ar: "التقديم", note: "v = ف + b = پ: بِڤِربونغ" },
+      { de: "die Bewerbung", ar: "التقديم", note: "w = ڤ (لا يوجد v) + b تبقى ب لأنها بداية مقطع: بِڤِربونغ" },
       { de: "das Anschreiben", ar: "خطاب التقديم", note: "sch = ش: آن-شرايبِن" },
       { de: "der Lebenslauf", ar: "السيرة الذاتية", note: "au = آو: ليبِنْس-لاوف" },
       { de: "die Stelle", ar: "المنصب", note: "st = شت: شتِلِّه" },

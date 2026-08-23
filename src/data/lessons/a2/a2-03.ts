@@ -233,7 +233,7 @@ export const lessonA203: Lesson = {
       { de: "lecker", ar: "لذيذ", note: "e مفتوحة + ck: لِكّر" },
       { de: "die Küche", ar: "المطبخ", note: "ü + ch ناعمة: كُيخِه" },
       { de: "die Suppe", ar: "الحساء", note: "p مزدوجة: زوپّـِه" },
-      { de: "die Rechnung", ar: "الحساب/الفاتورة", note: "ch بعد n؟ خ: ريش-نونغ (ch = خ)" },
+      { de: "die Rechnung", ar: "الحساب/الفاتورة", note: "ch بعد e = ش خفيفة (ich-Laut) لا خ + ung = ونغ: ريش-نونغ" },
       { de: "bestellen", ar: "يطلب", note: "e مفتوحة: بِشتِلِن" },
     ],
     tip: "Rechnung لها نطق صعب: «ريش-نونغ» — ch هنا تُنطق خ حلقية. كررها 5 مرات ببطء.",

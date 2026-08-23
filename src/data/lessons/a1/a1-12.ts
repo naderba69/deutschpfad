@@ -227,7 +227,7 @@ export const lessonA112: Lesson = {
     items: [
       { de: "das Wetter", ar: "الطقس", note: "w = ڤ: ڤِتّر" },
       { de: "die Sonne", ar: "الشمس", note: "o قصيرة + n مزدوجة: زونّـِه" },
-      { de: "der Regen", ar: "المطر", note: "e مفتوحة + g = خ: رِيغِن" },
+      { de: "der Regen", ar: "المطر", note: "e طويلة مغلقة = إي + g بين حركتين = غ شديدة (لا خ): رِيغِن" },
       { de: "der Schnee", ar: "الثلج", note: "sch = ش + ee طويلة: شنيه" },
       { de: "kalt / warm", ar: "بارد / دافئ", note: "warm = ڤارم (w = ڤ)" },
       { de: "der Wind", ar: "الرياح", note: "W = ڤ + i قصير: ڤِنت" },

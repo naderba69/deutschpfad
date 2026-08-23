@@ -229,7 +229,7 @@ export const lessonB102: Lesson = {
       { de: "der Arbeitgeber", ar: "صاحب العمل", note: "ei = آي: أربايت-غيبر" },
       { de: "das Vorstellungsgespräch", ar: "مقابلة العمل", note: "كلمة طويلة: فورش-تيلونغس-غِشپريش" },
       { de: "der Lebenslauf", ar: "السيرة الذاتية", note: "au = آو: ليبِنْس-لاوف" },
-      { de: "die Bewerbung", ar: "طلب الوظيفة", note: "v = ف + b = پ: بِڤِربونغ" },
+      { de: "die Bewerbung", ar: "طلب الوظيفة", note: "w = ڤ (لا يوجد v) + b تبقى ب لأنها بداية مقطع: بِڤِربونغ" },
       { de: "der Kollege", ar: "الزميل", note: "o مفتوحة + g: كولِغِه" },
     ],
     tip: "Vorstellungsgespräch = فورش-تيلونغس-غِشپريش — أطول كلمة اليوم. قسّمها: Vorstellung (تقديم) + Gespräch (حديث).",

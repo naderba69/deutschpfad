@@ -190,7 +190,7 @@ export const lessonA111: Lesson = {
       { de: "die Straße", ar: "الشارع", note: "st في البداية = شت: شتراسِه" },
       { de: "geradeaus", ar: "مباشرة", note: "g = غ + au = آو: غرادِه-آوس" },
       { de: "die Apotheke", ar: "الصيدلية", note: "th = ت فقط: آبوتيكِه" },
-      { de: "das Krankenhaus", ar: "المستشفى", note: "ch = خ بعد n؟ لا، خ بعد a: كرانكن-هاوس" },
+      { de: "das Krankenhaus", ar: "المستشفى", note: "لا يوجد ch هنا: nk = نغ+ك، وh مسموعة لأنها تبدأ الجزء الثاني (Kranken+Haus): كرانكن-هاوس" },
       { de: "die Ampel", ar: "إشارة المرور", note: "p مزدوجة قصيرة: آمپِل" },
     ],
     tip: "Apotheke تُنطق «آبوتيكه» — th الألمانية ت = ت عادية وليست ذ إنجليزية!",

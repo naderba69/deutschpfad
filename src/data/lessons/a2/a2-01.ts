@@ -209,7 +209,7 @@ export const lessonA201: Lesson = {
       { de: "die Reise", ar: "الرحلة", note: "ei = آي + s بين علة = ز: رايْزِه" },
       { de: "fliegen", ar: "يطير", note: "ie = إي: فليغِن" },
       { de: "der Urlaub", ar: "الإجازة", note: "au = آو: أورلاوب" },
-      { de: "das Flugzeug", ar: "الطائرة", note: "eu = أُوي + tz = تس: فلوغ-تسويغ" },
+      { de: "das Flugzeug", ar: "الطائرة", note: "eu = أُوي + z = تس (لا tz)، وg في نهاية كل جزء = ك: فلووك-تسويك" },
       { de: "geschwommen", ar: "سبح (تصريف)", note: "sch = ش + o مزدوجة: غِشڤومِن" },
       { de: "der Strand", ar: "الشاطئ", note: "st في البداية = شت: شترانت" },
     ],
