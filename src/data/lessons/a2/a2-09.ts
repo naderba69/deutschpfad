@@ -341,7 +341,7 @@ export const lessonA209: Lesson = {
       instructionAr: "صحّح الخطأ:",
       wrongSentence: "Ich helfe die Eltern.",
       wrongWord: "die",
-      correctWord: "den (+n)",
+      correctWord: "den Eltern",
       options: ["den Eltern", "dem Eltern", "der Eltern", "die Eltern"],
       explanation: "الجمع Dativ: den + n → den Eltern.",
       errorType: "case",

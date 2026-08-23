@@ -11,6 +11,7 @@
 
 import { describe, expect, it } from "vitest";
 
+import { evaluateErrorCorrection } from "@/lib/lesson/exercise-engine";
 import { LESSONS } from "@/data/lessons";
 import { LESSON_META } from "@/data/lessons/meta";
 import type { Exercise } from "@/types/lesson";
@@ -129,6 +130,48 @@ describe("تمارين ترتيب الكلمات", () => {
     }
     expect(checked).toBeGreaterThan(90);
     expect(broken, `تمارين ترتيب غير قابلة للحل:\n${broken.join("\n")}`).toEqual([]);
+  });
+
+});
+
+describe("تمارين تصحيح الخطأ", () => {
+  it("المفتاح موجود حرفياً ضمن الخيارات", () => {
+    const broken: string[] = [];
+    let checked = 0;
+    for (const { key, ex } of allExercises()) {
+      if (ex.type !== "error-correction") continue;
+      checked++;
+      if (!ex.options.includes(ex.correctWord)) {
+        broken.push(
+          `${key} — correctWord ${JSON.stringify(ex.correctWord)} ليس ضمن ${JSON.stringify(ex.options)}`,
+        );
+      }
+    }
+    expect(checked).toBeGreaterThan(130);
+    expect(broken, `مفاتيح غير قابلة للاختيار:\n${broken.join("\n")}`).toEqual([]);
+  });
+
+  it("لا خيار مكرّر ولا مشتّت يُقيَّم صحيحاً", () => {
+    const broken: string[] = [];
+    for (const { key, ex } of allExercises()) {
+      if (ex.type !== "error-correction") continue;
+      const seen = new Set<string>();
+      for (const option of ex.options) {
+        if (seen.has(option)) broken.push(`${key} — خيار مكرّر ${JSON.stringify(option)}`);
+        seen.add(option);
+      }
+      // كل مشتّت يجب أن يُقيَّم خاطئاً فعلياً عبر المحرّك الحقيقي
+      for (const option of ex.options) {
+        if (option === ex.correctWord) continue;
+        if (evaluateErrorCorrection(ex, option).isCorrect) {
+          broken.push(`${key} — المشتّت ${JSON.stringify(option)} يُقبل كإجابة صحيحة`);
+        }
+      }
+      if (!evaluateErrorCorrection(ex, ex.correctWord).isCorrect) {
+        broken.push(`${key} — المفتاح نفسه يُرفض`);
+      }
+    }
+    expect(broken, `خلل في تمارين التصحيح:\n${broken.join("\n")}`).toEqual([]);
   });
 
 });

@@ -166,11 +166,15 @@ export function evaluateErrorCorrection(
   exercise: ErrorCorrectionExercise,
   selected: string,
 ): FeedbackResult {
-  const isCorrect = normalizeText(selected) === normalizeText(exercise.correctWord);
+  // تمرين تصحيح الخطأ يُجاب بالنقر على خيار جاهز، لا بالكتابة الحرة.
+  // لذلك تجب المقارنة الحرفية: الفرق بين "lesen" و"Lesen" أو بين
+  // "stehe auf" و"stehe ... auf" هو جوهر التمرين نفسه، و normalizeText
+  // (تصغير الحروف + إزالة الترقيم) كان يمحوه ويقبل خيارات خاطئة.
+  const isCorrect = selected.trim() === exercise.correctWord.trim();
   return {
     isCorrect,
     pointsEarned: isCorrect ? exercisePoints(exercise) : 0,
-    explanation: isCorrect ? exercise.explanation : exercise.explanation,
+    explanation: exercise.explanation,
     errorType: exercise.errorType,
     correctAnswer: exercise.correctWord,
   };

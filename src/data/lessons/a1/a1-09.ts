@@ -402,7 +402,7 @@ export const lessonA109: Lesson = {
       wrongSentence: "Mein Geburtstag ist in Mai.",
       wrongWord: "in Mai",
       correctWord: "im Mai",
-      options: ["im Mai", "am Mai", "in dem Mai", "am Mai"],
+      options: ["im Mai", "am Mai", "in dem Mai", "an Mai"],
       explanation: "الشهور تأخذ im: im Mai.",
       errorType: "preposition",
     },

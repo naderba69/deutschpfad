@@ -354,7 +354,7 @@ export const lessonA201: Lesson = {
       wrongSentence: "Ich habe geschwimmen.",
       wrongWord: "geschwimmen",
       correctWord: "geschwommen",
-      options: ["geschwommen", "geschwimmt", "geschwommen", "geschwimmen"],
+      options: ["geschwommen", "geschwimmt", "geschwammen", "geschwimmen"],
       explanation: "schwimmen فعل قوي: geschwommen.",
       errorType: "grammar",
     },
