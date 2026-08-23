@@ -419,10 +419,10 @@ export const lessonB204: Lesson = {
       id: "m2",
       type: "multiple-choice",
       instructionAr: "اختر المشارك:",
-      questionDe: "der ___ Brief (مكتوب)",
-      options: ["geschriebene", "schreibende", "geschrieben", "schreibt"],
+      questionDe: "der ___ Roman (مترجَم)",
+      options: ["übersetzte", "übersetzende", "übersetzt", "übersetzen"],
       correctIndex: 0,
-      explanation: "منتهي → geschriebene.",
+      explanation: "فعل منتهٍ ومبني للمجهول → Partizip II مع نهاية الصفة: der übersetzte Roman. أما übersetzend فيعني «الذي يترجم».",
       errorType: "grammar",
     },
     {

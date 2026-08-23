@@ -458,10 +458,10 @@ export const lessonB206: Lesson = {
       id: "m1",
       type: "multiple-choice",
       instructionAr: "اختر الاسم المشتق:",
-      questionDe: "verbessern → die ___",
-      options: ["Verbesserung", "Verbessern", "Besserung", "Verbessert"],
+      questionDe: "verhandeln → die ___",
+      options: ["Verhandlung", "Verhandeln", "Handlung", "Verhandelt"],
       correctIndex: 0,
-      explanation: "die Verbesserung.",
+      explanation: "الاشتقاق بـ ung- يعطي die Verhandlung. و das Verhandeln اسم مصدر محايد، و die Handlung كلمة أخرى معناها «فعل/حبكة».",
       errorType: "grammar",
     },
     {

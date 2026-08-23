@@ -249,6 +249,57 @@ describe("كتل الشرح النظري", () => {
     expect(generic).toEqual([]);
   });
 
+  it("لا ينسخ الاختبار القصير بنداً من بنك التدريب حرفياً", () => {
+    const norm = (s: string) =>
+      s.toLowerCase().replace(/\s+/g, " ").replace(/[.,!?;:«»„""()"'،؟؛]/g, "").trim();
+    /** الجملة الجوهرية التي يراها الطالب — بغض النظر عن نوع التمرين */
+    const core = (ex: Exercise): string => {
+      const e = ex as unknown as Record<string, unknown>;
+      for (const k of [
+        "questionDe",
+        "correctSentence",
+        "template",
+        "wrongSentence",
+        "sentenceDe",
+        "targetSentence",
+        "statementDe",
+      ]) {
+        const v = e[k];
+        if (typeof v === "string" && v.trim()) return norm(v);
+      }
+      return "";
+    };
+    /** الإجابة الصحيحة — تمنع الإنذار الكاذب حين يتشارك بندان تعليمة عامة
+     *  مثل «Welcher Satz ist korrekt?» بخيارات مختلفة تماماً */
+    const answer = (ex: Exercise): string => {
+      const e = ex as unknown as Record<string, unknown>;
+      if (typeof e.correctIndex === "number" && Array.isArray(e.options))
+        return norm((e.options as string[])[e.correctIndex] ?? "");
+      if (Array.isArray(e.blanks))
+        return (e.blanks as { correct: string }[]).map((b) => norm(b.correct)).join("|");
+      if (typeof e.correctWord === "string") return norm(e.correctWord);
+      if (typeof e.correctSentence === "string") return norm(e.correctSentence);
+      return "";
+    };
+    const copied: string[] = [];
+    for (const lesson of LESSONS) {
+      const bank = new Map<string, string>();
+      for (const ex of lesson.practiceBank ?? []) {
+        const c = core(ex);
+        if (c.length < 8) continue;
+        const k = `${c}##${answer(ex)}`;
+        if (!bank.has(k)) bank.set(k, ex.id);
+      }
+      for (const ex of lesson.miniTest ?? []) {
+        const c = core(ex);
+        if (c.length < 8) continue;
+        const src = bank.get(`${c}##${answer(ex)}`);
+        if (src) copied.push(`${lesson.id}: ${ex.id} ينسخ ${src} («${c}»)`);
+      }
+    }
+    expect(copied).toEqual([]);
+  });
+
   it("العنوان الألماني لكل كتلة غير مكرر داخل الدرس نفسه", () => {
     const dupes: string[] = [];
     for (const lesson of LESSONS) {

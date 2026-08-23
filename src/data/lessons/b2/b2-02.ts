@@ -420,10 +420,10 @@ export const lessonB202: Lesson = {
       id: "m1",
       type: "multiple-choice",
       instructionAr: "اختر الحالة:",
-      questionDe: "Die Tür ___ geöffnet. (مفتوحة)",
-      options: ["ist", "wird", "kann", "wurde"],
+      questionDe: "Der Vertrag ___ unterschrieben. (موقَّع — النتيجة)",
+      options: ["ist", "wird", "hat", "wurde"],
       correctIndex: 0,
-      explanation: "حالة: ist.",
+      explanation: "Zustandspassiv = sein + Partizip II ويصف النتيجة الباقية: der Vertrag ist unterschrieben. أما wird/wurde فيصفان الحدث نفسه.",
       errorType: "grammar",
     },
     {

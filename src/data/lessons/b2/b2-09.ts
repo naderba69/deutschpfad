@@ -394,10 +394,10 @@ export const lessonB209: Lesson = {
       id: "m1",
       type: "multiple-choice",
       instructionAr: "اختر الوصلة:",
-      questionDe: "Ich ___ die Stelle in Betracht.",
-      options: ["ziehe", "stelle", "lege", "mache"],
+      questionDe: "Ich ___ eine Entscheidung. (أتخذ قراراً)",
+      options: ["treffe", "mache", "nehme", "gebe"],
       correctIndex: 0,
-      explanation: "in Betracht ziehen.",
+      explanation: "eine Entscheidung treffen هي الصيغة الثابتة. والخطأ الشائع machen ترجمةً حرفية لـ«يعمل/يتخذ».",
       errorType: "grammar",
     },
     {
