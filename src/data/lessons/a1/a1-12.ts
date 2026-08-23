@@ -432,7 +432,7 @@ export const lessonA112: Lesson = {
       id: "m4",
       type: "error-correction",
       instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Ich werde kalt. (أنا بارد — للطقس)",
+      wrongSentence: "Ich werde kalt. (عن الطقس)",
       wrongWord: "Ich werde",
       correctWord: "Es wird",
       options: ["Es wird", "Du wirst", "Wir werden", "Ihr werdet"],

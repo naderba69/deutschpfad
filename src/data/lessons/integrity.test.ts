@@ -351,6 +351,40 @@ describe("كتل الشرح النظري", () => {
     expect(bad).toEqual([]);
   });
 
+  it("تطبيق التصحيح يُنتج جملة صحيحة، بلا بقايا «...»", () => {
+    // العطبان J و J-a: لا يكفي أن يكون `correctWord` بين الخيارات — يجب أن
+    // يُنتج وضعُه مكان `wrongWord` جملةً سليمة. النمط «habe ... gegangen»
+    // (J-a) كان يترك النقاط في الناتج، والنمط J كان يترك خطأً باقياً لأن
+    // `wrongWord` أضيقُ من الخطأ الفعلي (dem بدل «dem Wetter» ⇒ «des Wetter»).
+    //
+    // حدّ هذا الحارس: يمسك J-a آلياً (بقايا «...» أو مقاطع مميَّزة ≠ 1)، لكنه
+    // لا يستطيع الحكم على *صحّة* الجملة الناتجة نحوياً — «Trotz des Wetter»
+    // سليمة بنيوياً وخاطئة لغوياً. تلك الحالات (J) فُحصت يدوياً بند بند وقت
+    // الإصلاح؛ ما يحرسه الاختبار هنا هو ألّا يعود نمط النقاط ولا ينكسر
+    // التمييز. أي بند تصحيح خطأ جديد يحتاج مراجعة بشرية للجملة الناتجة.
+    const problems: string[] = [];
+    for (const lesson of LESSONS) {
+      for (const group of ["practiceBank", "miniTest", "review"] as const) {
+        for (const ex of (lesson[group] ?? []) as Exercise[]) {
+          if (ex.type !== "error-correction" || ex.isAlreadyCorrect) continue;
+          const key = `${lesson.id}:${ex.id}`;
+          const segments = buildHighlightSegments(ex.wrongSentence, ex.wrongWord);
+          const targets = segments.filter((s) => s.isTarget).length;
+          if (targets !== 1) {
+            problems.push(`${key} — عدد المقاطع المميَّزة ${targets} (المتوقَّع 1)`);
+            continue;
+          }
+          const corrected = segments
+            .map((s) => (s.isTarget ? ex.correctWord : s.text))
+            .join("");
+          if (/\.{3}|…/.test(corrected))
+            problems.push(`${key} — الجملة بعد التصحيح تحتوي «...»: ${corrected}`);
+        }
+      }
+    }
+    expect(problems).toEqual([]);
+  });
+
   it("لا يعرض تمرينُ تصحيح الخطأ إجابته داخل السؤال", () => {
     // العطب K: إن ظهرت الصيغة الصحيحة في نصّ السؤال — داخل الكلمة الخاطئة
     // نفسها (خطأ «زيادة») أو في موضع آخر من الجملة — حُلّ البند بالمطابقة

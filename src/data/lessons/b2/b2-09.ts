@@ -311,11 +311,11 @@ export const lessonB209: Lesson = {
       id: "e5",
       type: "error-correction",
       instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Ich bewerbe für die Stelle.",
+      wrongSentence: "Ich bewerbe mich für die Stelle.",
       wrongWord: "für",
       correctWord: "um",
       options: ["um", "für", "auf", "an"],
-      explanation: "sich bewerben um.",
+      explanation: "التركيب الثابت: sich bewerben um + Akkusativ — Ich bewerbe mich um die Stelle.",
       errorType: "preposition",
     },
     {
