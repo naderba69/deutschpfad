@@ -6,6 +6,7 @@ import {Wrench} from "lucide-react";
 import {FeedbackPanel} from "@/components/lesson/exercises/feedback-panel";
 import {useExerciseState} from "@/components/lesson/exercises/use-exercise-state";
 import {Button} from "@/components/ui/button";
+import {buildHighlightSegments} from "@/lib/lesson/error-correction-highlight";
 import {evaluateErrorCorrection} from "@/lib/lesson/exercise-engine";
 import {shuffle} from "@/lib/lesson/shuffle";
 import {cn} from "@/lib/utils";
@@ -22,6 +23,10 @@ export function ErrorCorrectionExerciseView({
   onResult?: (r: FeedbackResult) => void;
 }) {
   const [options] = React.useState(() => shuffle(exercise.options));
+  const segments = React.useMemo(
+    () => buildHighlightSegments(exercise.wrongSentence, exercise.wrongWord),
+    [exercise.wrongSentence, exercise.wrongWord],
+  );
   const [selected, setSelected] = React.useState<string | null>(null);
   const state = useExerciseState(exercise);
 
@@ -46,21 +51,21 @@ export function ErrorCorrectionExerciseView({
 
       {/* الجملة الخاطئة مع تمييز الكلمة المشكوك فيها */}
       <div className="rounded-xl border bg-muted/30 p-4">
-        <p className="flex flex-wrap items-center gap-x-1.5 text-lg leading-relaxed" dir="ltr" lang="de">
-          {exercise.wrongSentence.split(/(\s+)/).map((word, i) => {
-            const isTarget = word.replace(/[^a-zA-ZäöüßÄÖÜ]/g, "") === exercise.wrongWord.replace(/[^a-zA-ZäöüßÄÖÜ]/g, "");
-            return (
-              <span key={i}>
-                {isTarget ? (
-                  <span className="rounded-md bg-destructive/15 px-1.5 py-0.5 font-de font-bold text-destructive line-through decoration-2">
-                    {word}
-                  </span>
-                ) : (
-                  <span className="font-de">{word}</span>
-                )}
+        <p className="text-lg leading-relaxed" dir="ltr" lang="de">
+          {segments.map((segment, i) =>
+            segment.isTarget ? (
+              <span
+                key={i}
+                className="rounded-md bg-destructive/15 px-1.5 py-0.5 font-de font-bold text-destructive line-through decoration-2"
+              >
+                {segment.text}
               </span>
-            );
-          })}
+            ) : (
+              <span key={i} className="font-de">
+                {segment.text}
+              </span>
+            ),
+          )}
         </p>
         <p className="mt-2 text-xs text-muted-foreground">
           <Wrench className="inline h-3.5 w-3.5 align-[-2px]" aria-hidden="true" />

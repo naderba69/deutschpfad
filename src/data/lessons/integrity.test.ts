@@ -11,6 +11,7 @@
 
 import { describe, expect, it } from "vitest";
 
+import { buildHighlightSegments } from "@/lib/lesson/error-correction-highlight";
 import { evaluateErrorCorrection } from "@/lib/lesson/exercise-engine";
 import { LESSONS } from "@/data/lessons";
 import { LESSON_META } from "@/data/lessons/meta";
@@ -247,6 +248,25 @@ describe("كتل الشرح النظري", () => {
       .filter(({ t }) => placeholders.includes((t.titleDe ?? "").trim().toLowerCase()))
       .map(({ key }) => key);
     expect(generic).toEqual([]);
+  });
+
+  it("كل بند تصحيح خطأ يُبرز موضع الخطأ فعلياً في الجملة", () => {
+    const unhighlighted: string[] = [];
+    for (const lesson of LESSONS) {
+      for (const group of ["practiceBank", "miniTest", "review"] as const) {
+        for (const ex of (lesson[group] ?? []) as Exercise[]) {
+          if (ex.type !== "error-correction") continue;
+          const segments = buildHighlightSegments(ex.wrongSentence, ex.wrongWord);
+          // الجملة يجب أن تبقى سليمة حرفياً بعد التقسيم
+          expect(segments.map((s) => s.text).join("")).toBe(ex.wrongSentence);
+          if (!segments.some((s) => s.isTarget)) {
+            unhighlighted.push(`${lesson.id}:${ex.id} wrongWord="${ex.wrongWord}"`);
+          }
+        }
+      }
+    }
+    // b2-10:e10-punct بند «(صحيحة!)» زائف — مسجَّل ضمن العطب O ويُعالَج مع محتواه
+    expect(unhighlighted).toEqual(['b2-10:e10-punct wrongWord="، (صحيحة!)"']);
   });
 
   it("لا ينسخ الاختبار القصير بنداً من بنك التدريب حرفياً", () => {
