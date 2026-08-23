@@ -351,6 +351,35 @@ describe("كتل الشرح النظري", () => {
     expect(bad).toEqual([]);
   });
 
+  it("لا يعرض تمرينُ تصحيح الخطأ إجابته داخل السؤال", () => {
+    // العطب K: إن ظهرت الصيغة الصحيحة في نصّ السؤال — داخل الكلمة الخاطئة
+    // نفسها (خطأ «زيادة») أو في موضع آخر من الجملة — حُلّ البند بالمطابقة
+    // البصرية دون معرفة القاعدة.
+    const split = (s: string) => s.split(/[\s.,!?;:„""»«()؟—-]+/).filter(Boolean);
+    const leaks: string[] = [];
+    for (const lesson of LESSONS) {
+      for (const group of ["practiceBank", "miniTest", "review"] as const) {
+        for (const ex of (lesson[group] ?? []) as Exercise[]) {
+          if (ex.type !== "error-correction" || ex.isAlreadyCorrect) continue;
+          const key = `${lesson.id}:${ex.id}`;
+          // حسّاس لحالة الأحرف عمداً: حين يكون الخطأ هو الحرف الصغير نفسه
+          // (lesen → Lesen) فالتطابق غير الحسّاس إنذار كاذب.
+          const cw = ex.correctWord.trim();
+          const ww = ex.wrongWord.trim();
+          if (!cw) continue;
+          if (split(ww).includes(cw))
+            leaks.push(`${key} — الصيغة الصحيحة "${cw}" داخل wrongWord "${ww}"`);
+          const rest = ex.wrongSentence.includes(ww)
+            ? ex.wrongSentence.replace(ww, " \u0000 ")
+            : ex.wrongSentence;
+          if (split(rest).includes(cw))
+            leaks.push(`${key} — الصيغة الصحيحة "${cw}" معروضة في الجملة`);
+        }
+      }
+    }
+    expect(leaks).toEqual([]);
+  });
+
   it("لا يكرر تمرينُ تصحيح الخطأ خياراً بعد إضافة خيار «لا خطأ»", () => {
     const dups: string[] = [];
     for (const lesson of LESSONS) {

@@ -104,7 +104,7 @@ export const lessonB106: Lesson = {
       commonMistakes: [
         { wrong: "ein guter Mann أم ein gut Mann؟", right: "ein guter Mann (بـ -er)", whyAr: "بعد ein المذكر الرفع: الصفة تأخذ نهاية الأداة القوية: -er." },
         { wrong: "Das schönes Bild (بعد das مباشرة)", right: "Das schöne Bild", whyAr: "بعد der/die/das المعرفة: -e (وليس -es)." },
-        { wrong: "mit einem guten Freund أم guten؟", right: "mit einem guten Freund (بـ -en)", whyAr: "Dativ بعد ein: -en دائماً." },
+        { wrong: "mit einem gute Freund أم mit einem guten Freund؟", right: "mit einem guten Freund (بـ -en)", whyAr: "Dativ بعد ein: -en دائماً." },
       ],
       relatedRuleComparison: {
         title: "الخبرية أم النعتية؟",
@@ -378,7 +378,7 @@ export const lessonB106: Lesson = {
       id: "e9",
       type: "error-correction",
       instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Mit einem guten Freund? أم Mit einem gute Freund؟",
+      wrongSentence: "Ich fahre mit einem gute Freund nach Berlin.",
       wrongWord: "gute",
       correctWord: "guten",
       options: ["guten", "gute", "guter", "gutes"],
