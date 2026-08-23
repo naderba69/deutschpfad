@@ -62,13 +62,13 @@ export const lessonB206: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من B1: أكمل:",
-      template: "Ich träume von einer guten ___.",
+      instructionAr: "مراجعة من B1 (صيغة الشرط — b1-04): أكمل:",
+      template: "Wenn ich mehr Zeit ___, würde ich eine Weiterbildung machen.",
       blanks: [
-        { correct: "Karriere", options: ["Karriere", "Schule", "Firma"] },
+        { correct: "hätte", options: ["hätte", "habe", "hatte"] },
       ],
-      explanation: "Karriere = المسار المهني.",
-      errorType: "vocabulary",
+      explanation: "Konjunktiv II: hätte (لا hatte الماضي ولا habe المضارع) — درس b1-04.",
+      errorType: "grammar",
     },
   ],
 

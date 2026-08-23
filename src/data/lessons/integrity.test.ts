@@ -20,12 +20,14 @@ import type { Exercise } from "@/types/lesson";
 function allExercises(): { key: string; ex: Exercise }[] {
   const out: { key: string; ex: Exercise }[] = [];
   for (const lesson of LESSONS) {
-    // ملاحظة: lesson.writing و lesson.listening لهما أنواع خاصة بهما
-    // (WritingExercise / ListeningQuestion) ولا تدخل في فحوص Exercise هنا.
+    // lesson.writing نوعه WritingExercise، وهو مجموعة جزئية من Exercise
+    // (transformation | dictation | fill-blank | ordering) فيدخل الفحوص بأمان.
+    // يبقى lesson.listening خارجها لأن ListeningQuestion نوع مستقل.
     const buckets: (Exercise[] | undefined)[] = [
       lesson.practiceBank,
       lesson.miniTest,
       lesson.review,
+      lesson.writing,
     ];
     for (const bucket of buckets) {
       for (const ex of bucket ?? []) out.push({ key: `${lesson.id}:${ex.id}`, ex });

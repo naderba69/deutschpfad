@@ -61,13 +61,13 @@ export const lessonB203: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من B1: أكمل:",
-      template: "Ich warte ___ den Bus. (على)",
+      instructionAr: "مراجعة من B1 (المبني للمجهول — b1-03): أكمل:",
+      template: "Das Problem ___ von der Regierung diskutiert.",
       blanks: [
-        { correct: "auf", options: ["auf", "für", "mit"] },
+        { correct: "wird", options: ["wird", "ist", "hat"] },
       ],
-      explanation: "warten auf (درس B1).",
-      errorType: "preposition",
+      explanation: "المبني للمجهول: werden + Partizip II ⇒ wird diskutiert (درس b1-03).",
+      errorType: "grammar",
     },
   ],
 

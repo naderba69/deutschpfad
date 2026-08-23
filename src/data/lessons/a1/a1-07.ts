@@ -269,7 +269,7 @@ export const lessonA107: Lesson = {
       blanks: [
         { correct: "zwei", options: ["zwei", "zwo", "drei", "ein"] },
         { correct: "drei", options: ["zwei", "drei", "vier", "fünf"] },
-        { correct: "zehn", options: ["zehn", "zehn", "neun", "zwölf"] },
+        { correct: "zehn", options: ["zehn", "elf", "neun", "zwölf"] },
       ],
       explanation: "2=zwei، 3=drei، 10=zehn. (zwo تستخدم في الهاتف فقط لتمييزها عن drei).",
       errorType: "vocabulary",
