@@ -184,6 +184,7 @@ export const lessonB205: Lesson = {
           { label: "zur Kenntnis nehmen", cells: ["akzeptieren", "يُحيط علماً", "Die Parteien nahmen das Urteil zur Kenntnis."] },
           { label: "in Betracht ziehen", cells: ["erwägen", "يأخذ بعين الاعتبار", "Wir ziehen eine Alternative in Betracht."] },
           { label: "eine Rolle spielen", cells: ["wichtig sein", "يلعب دوراً", "Die Kosten spielen eine große Rolle."] },
+          { label: "in Kauf nehmen", cells: ["hinnehmen", "يقبل بـ (على مضض)", "Für den Beruf nahm sie einen Umzug in Kauf."] },
         ],
       },
       examples: [

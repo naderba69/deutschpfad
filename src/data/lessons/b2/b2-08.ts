@@ -92,6 +92,7 @@ export const lessonB208: Lesson = {
           { label: "abhängen", cells: ["von", "Dat", "Das hängt von dir ab."] },
           { label: "sich kümmern", cells: ["um", "Akk", "Er kümmert sich um die Kinder."] },
           { label: "diskutieren", cells: ["über", "Akk", "Wir diskutieren über Politik."] },
+          { label: "sich beschweren", cells: ["über / bei", "Akk / Dat", "Ich beschwere mich über den Lärm bei der Verwaltung."] },
         ],
       },
       examples: [
