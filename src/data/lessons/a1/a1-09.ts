@@ -122,6 +122,53 @@ export const lessonA109: Lesson = {
         content: "مثل الصفات، الترتيبي يتصرف مع الاسم: Ich habe den ersten Termin (نصب: den ersten). هذه مقدمة لتصريف الصفات الكامل في B1.",
       },
     },
+    {
+      id: "t3",
+      titleAr: "كتابة التاريخ ونطقه: der wievielte؟",
+      titleDe: "Das Datum: Der wievielte ist heute?",
+      explanationAr:
+        "الأعداد الترتيبية التي أخذتها للتوّ تُستعمل أكثر ما تُستعمل في التاريخ — وهنا فرق حاسم بين صيغتين:\n\n· **السؤال عن اليوم**: Der wievielte ist heute? ← Heute ist der dritte Mai. (بالرفع، مع der)\n· **تحديد موعد**: Wann? ← Am dritten Mai. (بحرف الجر an + Dativ ⇒ am، والنهاية ـen)\n\nوفي الكتابة تُختصر بنقطة بعد الرقم: der 3. Mai · am 3. Mai. النقطة نفسها هي التي تقول «ترتيبي» — فلا تُهملها.",
+      whyAr:
+        "لماذا تتغيّر النهاية من dritte إلى dritten؟ لأنّ الأعداد الترتيبية تتصرّف كالصفات: تتبع حالة الاسم. مع der (رفع) تنتهي بـ ـe، ومع am (جرّ) تنتهي بـ ـen. هذه أوّل مرّة ترى فيها الصفة تُغيّر نهايتها حسب الحالة، وهو باب كامل سيتوسّع في B1.",
+      table: {
+        title: "الصيغتان جنباً إلى جنب",
+        columns: ["الموقف", "الصيغة", "مثال"],
+        rows: [
+          { label: "ما تاريخ اليوم؟", cells: ["der + ـte/ـste", "Heute ist der erste März."] },
+          { label: "متى الموعد؟", cells: ["am + ـten/ـsten", "Der Termin ist am ersten März."] },
+          { label: "من … إلى …", cells: ["vom … bis zum …", "vom 1. bis zum 15. Juni"] },
+          { label: "سنة الميلاد", cells: ["بلا حرف جر", "Ich bin 1995 geboren."] },
+        ],
+      },
+      examples: [
+        { de: "Der wievielte ist heute? — Heute ist der siebte April.", ar: "ما تاريخ اليوم؟ — اليوم السابع من أبريل." },
+        { de: "Mein Geburtstag ist am zwölften Oktober.", ar: "عيد ميلادي في الثاني عشر من أكتوبر." },
+        { de: "Der Kurs geht vom ersten bis zum dritten Mai.", ar: "الدورة من الأول إلى الثالث من مايو." },
+        { de: "Ich habe am 3. Januar einen Termin beim Arzt.", ar: "لديّ موعد عند الطبيب في الثالث من يناير." },
+        { de: "Sie ist 1998 geboren.", ar: "وُلدت عام 1998." },
+      ],
+      comparisonWithArabic:
+        "العربية تقول «في الثالث من مايو» بحرف جرّ واحد لا يتغيّر، وتقول «اليوم الثالث من مايو» دون أن يتبدّل شكل «الثالث». الألمانية تُبدّل النهاية حسب الموضع: der dritte مقابل am dritten. وانتبه لفخّ آخر: الألمان يكتبون اليوم قبل الشهر (3.5. = الثالث من مايو) لا الشهر قبل اليوم.",
+      eselsbruecke:
+        "«am تجرّ الـ n»: كلّما قلت am وجب أن تسحب معك نوناً في آخر العدد — am dritten، am ersten، am zwanzigsten. أمّا der فيكتفي بـ ـe.",
+      commonMistakes: [
+        {
+          wrong: "Mein Geburtstag ist am dritte Mai.",
+          right: "Mein Geburtstag ist am dritten Mai.",
+          whyAr: "بعد am تأخذ الصفة الترتيبية النهاية ـen دائماً. القاعدة صارمة بلا استثناء هنا.",
+        },
+        {
+          wrong: "Heute ist am fünften Mai.",
+          right: "Heute ist der fünfte Mai.",
+          whyAr: "«اليوم هو…» جملة خبرية بالرفع، فلا حرف جرّ فيها: der fünfte. أمّا am فلتحديد موعد.",
+        },
+      ],
+      relatedRuleComparison: {
+        title: "am للتاريخ واليوم، um للساعة، im للشهر",
+        content:
+          "ثلاثة حروف لا تختلط: am + يوم أو تاريخ (am Montag, am 3. Mai) · um + ساعة (um neun Uhr) · im + شهر أو فصل (im Mai, im Sommer). جملة واحدة تجمعها: Am dritten Mai um neun Uhr — im Frühling.",
+      },
+    },
   ],
   listening: {
     items: [
@@ -349,6 +396,73 @@ export const lessonA109: Lesson = {
       explanation: "نتقابل السبت في الثالثة — am + يوم + um + ساعة.",
       errorType: "spelling",
     },
+    {
+      id: "e11",
+      type: "fill-blank",
+      instructionAr: "أكمل بالصيغة الصحيحة للتاريخ:",
+      template: "Heute ist ___ zweite Juni. Mein Termin ist ___ zweiten Juni.",
+      blanks: [
+        { correct: "der", options: ["der", "am", "im"] },
+        { correct: "am", options: ["am", "der", "um"] },
+      ],
+      explanation: "«اليوم هو…» رفعٌ بلا حرف جرّ ⇒ der zweite. وتحديد الموعد بحرف الجر ⇒ am zweiten.",
+      errorType: "preposition",
+    },
+    {
+      id: "e12",
+      type: "error-correction",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      wrongSentence: "Mein Geburtstag ist am dritte Mai.",
+      wrongWord: "dritte",
+      correctWord: "dritten",
+      options: ["dritten", "dritte", "drittes", "drei"],
+      explanation: "بعد am تأخذ الصفة الترتيبية النهاية ـen: am dritten Mai.",
+      errorType: "case",
+    },
+    {
+      id: "e13",
+      type: "multiple-choice",
+      instructionAr: "اقرأ التاريخ الألماني المكتوب بالأرقام.",
+      questionDe: "Der Termin ist am 5.9.",
+      questionAr: "ما التاريخ المقصود؟",
+      options: [
+        "الخامس من سبتمبر",
+        "التاسع من مايو",
+        "الخامس والتسعون",
+        "من الخامس إلى التاسع",
+      ],
+      correctIndex: 0,
+      explanation: "الألمان يكتبون اليوم أوّلاً ثم الشهر: 5.9. = الخامس من الشهر التاسع (سبتمبر).",
+      optionExplanations: [
+        undefined,
+        "هذا الترتيب الإنجليزي/الأمريكي (شهر ثم يوم) لا الألماني.",
+        "النقطتان تفصلان يوماً عن شهر ولا تصنعان عدداً واحداً.",
+        "المدى يُكتب vom … bis zum …",
+      ],
+      errorType: "vocabulary",
+    },
+    {
+      id: "e14",
+      type: "word-ordering",
+      instructionAr: "رتّب الكلمات لتكوين سؤال عن تاريخ اليوم:",
+      tokens: ["Der", "wievielte", "ist", "heute", "?"],
+      correctSentence: "Der wievielte ist heute?",
+      explanation: "السؤال المعتاد عن التاريخ: Der wievielte ist heute? ويُجاب: Heute ist der …",
+      errorType: "word-order",
+    },
+    {
+      id: "e15",
+      type: "transformation",
+      instructionAr: "حوّل الخبر إلى موعد.",
+      prompt: "Heute ist der zehnte Mai. → قل إنّ لديك موعداً في ذلك اليوم (ابدأ بـ Ich habe).",
+      acceptedAnswers: [
+        "Ich habe am zehnten Mai einen Termin.",
+        "Ich habe einen Termin am zehnten Mai.",
+      ],
+      sampleAnswer: "Ich habe am zehnten Mai einen Termin.",
+      explanation: "الانتقال من der zehnte (رفع) إلى am zehnten (بعد حرف الجر) هو جوهر التمرين.",
+      errorType: "case",
+    },
   ],
   fehlerUndTipps: {
     mistakes: [
@@ -431,6 +545,8 @@ export const lessonA109: Lesson = {
     { id: "fc6", de: "am / im", ar: "على (يوم) / في (شهر)", example: "Am Montag, im Mai", exampleAr: "الاثنين، في مايو", level: "A1" },
     { id: "fc7", de: "der erste ... der letzte", ar: "الأول ... الأخير", example: "Der erste Monat ist Januar.", exampleAr: "الشهر الأول يناير.", level: "A1" },
     { id: "fc8", de: "die Ordinalzahl", ar: "العدد الترتيبي", example: "Der dritte Tag.", exampleAr: "اليوم الثالث.", level: "A1" },
+    { id: "fc9", de: "Der wievielte ist heute?", ar: "ما تاريخ اليوم؟", example: "Der wievielte ist heute? — Der dritte Mai.", exampleAr: "ما تاريخ اليوم؟ — الثالث من مايو.", level: "A1" },
+    { id: "fc10", de: "am dritten Mai", ar: "في الثالث من مايو", example: "Ich habe am dritten Mai einen Termin.", exampleAr: "لديّ موعد في الثالث من مايو.", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
