@@ -42,9 +42,9 @@ export const lessonA110: Lesson = {
       titleAr: "المهن: المذكر والمؤنث + arbeiten als",
       titleDe: "Berufe: maskulin, feminin und „arbeiten als“",
       explanationAr:
-        "أشهر المهن: der Lehrer (معلم)، der Arzt (طبيب)، der Ingenieur (مهندس)، der Verkäufer (بائع)، der Student (طالب)، der Koch (طباخ)، der Fahrer (سائق)، der Kellner (نادل). المؤنث: أضف -in: Lehrerin، Ärztin (مع Umlaut!)، Verkäuferin. للتعبير عن المهنة: Ich bin Lehrer أو Ich arbeite als Lehrer (أعمل كمعلم).",
+        "المهنة أوّل ما يُسأل عنه المرء في ألمانيا بعد اسمه، والسؤال ثابت: **Was sind Sie von Beruf?** أو **Was machen Sie beruflich?**\n\n**أوّلاً — بناء المؤنّث: اللاحقة ـin.**\nder Lehrer ⇐ die Lehrer**in** · der Verkäufer ⇐ die Verkäufer**in** · der Student ⇐ die Student**in**.\nوكلّ مؤنّث بـ ـin فهو **مؤنّث** حتماً (die) وجمعه بـ **ـnen**: die Lehrerinnen. وهذه قاعدة لا تشذّ.\n\n**ثانياً — الشذوذ: مهنٌ تُضيف Umlaut مع اللاحقة.**\n· der Arzt ⇐ die **Ä**rztin · der Koch ⇐ die K**ö**chin · der Bauer ⇐ die B**äu**erin\nوالسبب تاريخيّ: اللاحقة كانت في الألمانية القديمة تحمل حرف i، وحرف i يجذب حرف العلّة الذي قبله فيرقّقه — وهذه ظاهرة اسمها **Umlaut** رأيتَها في الجمع (der Apfel ⇐ die Äpfel) وفي تصريف الفعل (fahren ⇐ du fährst). فالظاهرة واحدة في ثلاثة أبواب.\n\n**ثالثاً — الصيغتان: bin مقابل arbeite als.**\n· **Ich bin Lehrer.** = هويّة مهنية، تُقال في التعريف بالنفس.\n· **Ich arbeite als Lehrer.** = وظيفة حالية، وتوحي بأنّها قد تتغيّر.\nوكلتاهما صحيحة، لكن انتبه إلى قاعدة تخالف العربية والإنجليزية معاً: **المهنة بعد sein تُقال بلا أداة**. لا تقل Ich bin ein Lehrer، بل Ich bin Lehrer. والأداة تعود فقط إذا وُصفت المهنة بصفة: Ich bin **ein guter** Lehrer.\n\n**رابعاً — مفردات المحيط المهنيّ.** der Chef (المدير) · die Kollegin (الزميلة) · die Firma (الشركة) · die Abteilung (القسم) · das Praktikum (التدريب العمليّ) · das Gehalt (الراتب) · arbeitslos (عاطل عن العمل) · selbstständig (يعمل لحسابه).\nوتعبيرٌ لا غنى عنه للطالب: **Ich mache ein Praktikum bei …** (أؤدّي تدريباً عملياً في …).",
       whyAr:
-        "لماذا Ärztin وليست Arztin؟ لأن الألمانية أحياناً تضيف Umlaut مع -in (Arzt→Ärztin، Koch→Köchin). هذه كلمات قليلة لكنها شائعة — احفظها مع مجموعتها.",
+        "لماذا تسقط الأداة في Ich bin Lehrer؟ لأنّ الألمانية تعامل المهنة بعد sein **صفةً لا اسماً**: أنت لا تقول إنّك واحدٌ من مجموعة المعلّمين، بل تصف حالتك. والصفة لا تحتاج أداة. والدليل أنّ الأداة تعود فوراً إذا أضفتَ صفةً حقيقية: ein guter Lehrer — لأنّ التركيب حينئذٍ صار اسمياً موصوفاً.\n\nولماذا يُعنى الدرس بهذه النقطة الصغيرة؟ لأنّها أوّل جملة تقولها في أيّ مقابلة أو تعارف، وIch bin ein Lehrer تُسمع فوراً ترجمةً حرفية من الإنجليزية (I am a teacher). وهي من أكثر ثلاثة أخطاء يرصدها ممتحنو Goethe A1 في قسم Sprechen Teil 1 — التعريف بالنفس.\n\nوأمّا اللاحقة ـin فمسألة اجتماعية معاصرة: ألمانيا اليوم تكتب المهن بصيغتين في كلّ إعلان وظيفة (Lehrer/in أو Lehrer:in)، ومن لا يعرف بناء المؤنّث لا يفهم إعلانات العمل نفسها.",
       table: {
         title: "المهن المذكر والمؤنث",
         columns: ["مذكر", "مؤنث", "العربية"],
@@ -60,20 +60,24 @@ export const lessonA110: Lesson = {
         ],
       },
       examples: [
-        { de: "Ich bin Lehrer von Beruf.", ar: "أنا معلم مهنة." },
-        { de: "Meine Mutter ist Ärztin.", ar: "أمي طبيبة." },
-        { de: "Er arbeitet als Ingenieur.", ar: "يعمل مهندساً." },
-        { de: "Sie ist Verkäuferin in einem Supermarkt.", ar: "هي بائعة في سوبرماركت." },
-        { de: "Ich arbeite in einer Firma.", ar: "أعمل في شركة." },
+        {"de": "Ich bin Lehrer von Beruf.", "ar": "أنا معلّم بالمهنة. (بلا أداة بعد bin)"},
+        {"de": "Meine Mutter ist Ärztin.", "ar": "أمّي طبيبة. (Umlaut مع اللاحقة)"},
+        {"de": "Er arbeitet als Ingenieur bei Siemens.", "ar": "يعمل مهندساً في سيمنس."},
+        {"de": "Sie ist Verkäuferin in einem Supermarkt.", "ar": "هي بائعة في سوبرماركت."},
+        {"de": "Was sind Sie von Beruf? — Ich bin Krankenpfleger.", "ar": "ما مهنتك؟ — أنا ممرّض."},
+        {"de": "Ich mache ein Praktikum bei einer Firma in Berlin.", "ar": "أؤدّي تدريباً عملياً في شركة ببرلين."},
+        {"de": "Mein Bruder ist zurzeit arbeitslos.", "ar": "أخي عاطل عن العمل حالياً."},
+        {"de": "Unsere Kollegin ist selbstständig.", "ar": "زميلتنا تعمل لحسابها الخاصّ."},
       ],
       comparisonWithArabic:
-        "مثل العربية تماماً: معلم/معلمة، طبيب/طبيبة — الألمانية تضيف -in للمؤنث مثلما تضيف العربية تاء التأنيث! التشابه مذهل: Lehrer → Lehrerin كأنها «معلم→معلمة».",
+        "التشابه بين اللغتين هنا لافت: العربية تضيف تاء التأنيث (معلّم ⇐ معلّمة) والألمانية تضيف ـin (Lehrer ⇐ Lehrerin). لاحقة واحدة منتظمة في كلتيهما.\n\nلكنّ ثلاثة فروق تُوقع العربيّ:\n**١.** العربية تقول „أنا معلّم“ بلا رابط وبلا أداة، والألمانية تُلزمك بالرابط ist/bin وتمنع الأداة. فالعربيّ يضيف الأداة (متأثّراً بالإنجليزية) ويصيب في حذف… لا، بل يصيب في الرابط ويخطئ في الأداة.\n**٢.** العربية لا تعرف ظاهرة Umlaut إطلاقاً، فتغيير حرف العلّة في Arzt ⇐ Ärztin يبدو للعربيّ تعسّفاً يجب حفظه، بينما هو للألمانيّ قاعدة صوتية مطّردة.\n**٣.** العربية تقول „أعمل معلّماً“ بالحال منصوباً بلا حرف، والألمانية تُلزم بـals: arbeiten **als** Lehrer. وحذف als من أشيع أخطاء العرب في وصف العمل.",
       eselsbruecke:
         "«المؤنث = +in»: Lehrerin، Verkäuferin، Studentin — تماماً كالتاء المربوطة في العربية. وثلاثة شواذ بخطة أ: Arzt→Ärztin، Koch→Köchin.",
       commonMistakes: [
-        { wrong: "die Arztin (بدون Umlaut)", right: "die Ärztin", whyAr: "Arzt يضيف Umlaut مع المؤنث: Ärztin." },
-        { wrong: "Ich arbeite Lehrer (بدون als)", right: "Ich arbeite als Lehrer", whyAr: "الصيغة: arbeiten als + مهنة." },
-        { wrong: "Ich bin Lehrerin sein (جملتان مدمجتان)", right: "Ich bin Lehrerin.", whyAr: "اختر واحدة: إما sein وإما arbeiten als — لا تجمعهما." },
+        {"wrong": "Ich bin ein Lehrer.", "right": "Ich bin Lehrer.", "whyAr": "المهنة بعد sein تُقال بلا أداة لأنّ الألمانية تعاملها معاملة الصفة لا الاسم. والخطأ ترجمة حرفية من الإنجليزية I am a teacher. وتعود الأداة فقط مع الوصف: ein guter Lehrer."},
+        {"wrong": "die Arztin", "right": "die Ärztin", "whyAr": "اللاحقة ـin تجذب حرف العلّة فترقّقه في طائفة من المهن: Arzt ⇐ Ärztin، Koch ⇐ Köchin. وهي الظاهرة نفسها التي رأيتها في جمع Apfel ⇐ Äpfel وفي du fährst."},
+        {"wrong": "Ich arbeite Lehrer.", "right": "Ich arbeite als Lehrer.", "whyAr": "الفعل arbeiten يحتاج als ليربط بينه وبين المهنة. والعربية تقول «أعمل معلّماً» بالحال بلا حرف، فينقل المتعلّم البنية العربية عاريةً إلى الألمانية."},
+        {"wrong": "Ich bin Lehrerin und arbeite als Lehrerin sein.", "right": "Ich bin Lehrerin.", "whyAr": "جملتان مدمجتان في واحدة. اختر إحدى البنيتين: sein + مهنة، أو arbeiten als + مهنة. وجمعهما يُنتج جملةً بفعلين لا رابط بينهما."},
       ],
       relatedRuleComparison: {
         title: "bin أم arbeite als؟",
@@ -85,9 +89,9 @@ export const lessonA110: Lesson = {
       titleAr: "النفي: nicht وkein",
       titleDe: "Die Negation: nicht und kein",
       explanationAr:
-        "نفيان: nicht ينفي الفعل والصفة والجملة (Ich arbeite nicht)، وkein ينفي الاسم المنكّر (Ich habe keinen Bruder = ليس لدي أخ). kein يتصرف مثل ein: kein، keine، keinen... قاعدة ذهبية: إذا كانت الجملة إيجابية فيها ein/eine → النفي بـ kein/keine.",
+        "النفي الألمانيّ أداتان لا واحدة، واختيار الأداة الخاطئة يجعل الجملة غير مفهومة لا مجرّد ركيكة.\n\n**القاعدة الفاصلة في سطر: kein ينفي الاسم، وnicht ينفي كلّ ما عداه.**\n\n**أوّلاً — متى kein؟** حين تنفي اسماً مسبوقاً بـein أو اسماً بلا أداة أصلاً:\n· Ich habe **ein** Auto. ⇐ Ich habe **kein** Auto.\n· Ich habe Zeit. (بلا أداة) ⇐ Ich habe **keine** Zeit.\nوkein يُصرَّف تصريف ein حرفاً بحرف: kein Auto (رفع/نصب محايد) · kein**en** Bruder (نصب مذكّر) · kein**e** Schwester (مؤنّث) · kein**e** Kinder (جمع، وهنا يعمل kein حيث لا وجود لـein).\n\n**ثانياً — متى nicht؟** مع الفعل والصفة والظرف والاسم المعرَّف:\n· الفعل: Ich arbeite **nicht**.\n· الصفة: Das ist **nicht** teuer.\n· الاسم المعرَّف: Ich kenne **den Chef nicht**. (معرَّف بـden ⇒ nicht لا kein)\n\n**ثالثاً — موضع nicht، وهو أصعب من اختيارها.**\n· تنفي الجملة كلّها ⇐ nicht في **آخر** الجملة: Ich arbeite heute nicht.\n· تنفي عنصراً بعينه ⇐ nicht **قبله مباشرةً**: Ich arbeite nicht **heute**, sondern morgen.\n· مع الصفة الخبرية ⇐ nicht قبلها: Das Buch ist **nicht** interessant.\n· مع الفعل المنفصل ⇐ nicht قبل الجزء المنفصل: Ich rufe heute **nicht an**.\n\n**رابعاً — قاعدة النفي الواحد.** الألمانية تمنع النفي المزدوج منعاً باتّاً. فلا تقل Ich habe kein Geld nicht. أداة واحدة تكفي وتنفي، والثانية تُبطل الأولى منطقياً.",
       whyAr:
-        "لماذا نفرق؟ لأن «لا» العربية تخدم الجملتين، لكن الألمانية تفرق بين نفي الفعل (nicht) ونفي الوجود (kein). تخيل: Ich habe nicht einen Bruder (خطأ!) — الألمانية تلغي الأداة وتستبدلها بـ keinen: Ich habe keinen Bruder.",
+        "لماذا تُفرّق الألمانية بين أداتين وقد كفت العربية بـ„لا“ و„ليس“ و„ما“؟ في الحقيقة العربية تفرّق أيضاً — لكنّها تفرّق حسب **زمن الفعل ونوع الجملة** (لا للمضارع، لم للماضي، ليس للاسمية)، والألمانية تفرّق حسب **ما يقع عليه النفي** (اسم أم غير اسم). فالمعيار مختلف لا الظاهرة.\n\nولماذا يُعدّ موضع nicht أصعب من اختيارها؟ لأنّ موضعها **يغيّر المعنى** لا الصحّة فقط. قارن: Ich arbeite nicht in Berlin (لا أعمل في برلين إطلاقاً) مقابل Nicht ich arbeite in Berlin (لست أنا من يعمل في برلين، بل غيري). كلمة واحدة انتقلت مكاناً فانتقل النفي من الفعل إلى الفاعل. وهذا مستوى من الدقّة لا تملكه العربية بهذه السهولة، إذ تحتاج فيه إلى „إنّما“ أو إلى نبرةٍ صوتية.\n\nوأمّا منع النفي المزدوج فقاعدة منطقية صارمة في الألمانية المعيارية: نفيان يساويان إثباتاً. والعربية تُجيز التوكيد بالنفي المكرّر („ما رأيت أحداً أبداً“)، فينقل العربيّ العادة فيقول Ich habe nichts nicht gesehen وهي في الألمانية جملة تعني عكس مقصوده.",
       table: {
         title: "nicht أم kein؟",
         columns: ["الموقف", "الاستخدام", "مثال"],
@@ -99,20 +103,24 @@ export const lessonA110: Lesson = {
         ],
       },
       examples: [
-        { de: "Ich arbeite nicht am Sonntag.", ar: "لا أعمل يوم الأحد." },
-        { de: "Das ist nicht teuer.", ar: "هذا ليس غالياً." },
-        { de: "Ich habe kein Geld.", ar: "ليس لدي مال." },
-        { de: "Er hat keine Schwester.", ar: "ليس لديه أخت." },
-        { de: "Wir haben keinen Hund.", ar: "ليس لدينا كلب." },
+        {"de": "Ich arbeite am Sonntag nicht.", "ar": "لا أعمل يوم الأحد. (nicht بعد الفعل في آخر الجملة)"},
+        {"de": "Das ist nicht teuer.", "ar": "هذا ليس غالياً. (نفي صفة)"},
+        {"de": "Ich habe kein Geld.", "ar": "ليس لديّ مال. (اسم بلا أداة ⇐ kein)"},
+        {"de": "Er hat keine Schwester.", "ar": "ليس له أخت. (مؤنّث ⇐ keine)"},
+        {"de": "Ich habe keinen Bruder.", "ar": "ليس لي أخ. (نصب مذكّر ⇐ keinen)"},
+        {"de": "Ich kenne den Chef nicht.", "ar": "لا أعرف المدير. (اسم معرَّف ⇐ nicht لا kein)"},
+        {"de": "Ich arbeite nicht heute, sondern morgen.", "ar": "لا أعمل اليوم بل غداً. (نفي عنصر بعينه)"},
+        {"de": "Ich rufe heute nicht an.", "ar": "لن أتّصل اليوم. (nicht قبل الجزء المنفصل)"},
       ],
       comparisonWithArabic:
-        "العربية: «لا» تنفي كل شيء. الألمانية تفرق: nicht (لا أفعل) وkein (لا وجود). أقرب ترجمة: kein ≈ «لا يوجد»: Ich habe kein Geld = لا يوجد عندي مال.",
+        "العربية تنفي بأدوات كثيرة موزّعة على الأزمنة: لا، لم، لن، ما، ليس. والألمانية تكتفي باثنتين موزّعتين على نوع المنفيّ. فالعبء الذهنيّ منتقل من الزمن إلى نوع الكلمة.\n\nوأقرب مقابل عربيّ لـkein هو **„لا … عندي“** أو „ليس لديّ“: Ich habe keine Zeit = ليس لديّ وقت. ولاحظ أنّ العربية تنفي بالجملة كلّها، والألمانية تنفي الاسم في ذاته بأداة تلتصق به.\n\nوالفخّ الأكبر: العربيّ يقول „ليس عندي أخ“ فيترجم „ليس“ إلى nicht و„أخ“ إلى ein Bruder فيُنتج Ich habe nicht ein Bruder. والصواب أن تُلغى الأداة ein وتُستبدل بـkeinen: **الأداة نفسها هي التي تحمل النفي**. وهذا مفهوم لا نظير له في العربية إطلاقاً، ولهذا يحتاج تدريباً واعياً لا حفظاً.\n\nوفخٌّ أخير في الموضع: العربية تضع أداة النفي **قبل** الفعل دائماً (لا أعمل)، والألمانية تضعها **بعده** (Ich arbeite nicht). فالترتيب معكوس تماماً، ومنه يأتي خطأ Ich nicht arbeite.",
       eselsbruecke:
         "«kein = كَين (لا شيء)»: عندما تنفي وجود شيء، استبدل ein بـ kein: ein Bruder → kein Bruder، eine Schwester → keine Schwester.",
       commonMistakes: [
-        { wrong: "Ich habe nicht ein Bruder.", right: "Ich habe keinen Bruder.", whyAr: "لا نضع nicht مع ein — نستبدل الأداة بـ keinen." },
-        { wrong: "Ich habe kein Geld nicht. (نفي مزدوج)", right: "Ich habe kein Geld.", whyAr: "الألمانية تمنع النفي المزدوج: نفي واحد فقط." },
-        { wrong: "Ich nicht arbeite.", right: "Ich arbeite nicht.", whyAr: "nicht بعد الفعل المتصرف (أو في نهاية الجملة)." },
+        {"wrong": "Ich habe nicht ein Bruder.", "right": "Ich habe keinen Bruder.", "whyAr": "nicht لا تجتمع مع ein أبداً؛ الأداة نفسها تتحوّل إلى kein وتحمل النفي. والمفهوم غريب على العربية التي تنفي بالجملة لا بالأداة، ولهذا يحتاج تدريباً واعياً."},
+        {"wrong": "Ich nicht arbeite heute.", "right": "Ich arbeite heute nicht.", "whyAr": "العربية تضع أداة النفي قبل الفعل («لا أعمل») والألمانية بعده. ووضع nicht قبل الفعل يزيحه عن المركز الثاني فيكسر قاعدة V2 التي تحكم كلّ جملة خبرية."},
+        {"wrong": "Ich habe kein Geld nicht.", "right": "Ich habe kein Geld.", "whyAr": "نفي مزدوج على المنوال العربي التوكيديّ. والألمانية المعيارية تمنعه منعاً باتّاً لأنّ نفيين يساويان إثباتاً منطقياً. أداة واحدة تكفي."},
+        {"wrong": "Ich kenne keinen Chef.", "right": "Ich kenne den Chef nicht.", "whyAr": "الاسم هنا معرَّف (المدير المعيَّن) والمعرَّف يُنفى بـnicht لا بـkein. وقولك keinen Chef يعني «لا أعرف أيّ مدير كان» — معنى آخر تماماً."},
       ],
       relatedRuleComparison: {
         title: "kein مع الحالات",
@@ -124,9 +132,9 @@ export const lessonA110: Lesson = {
       titleAr: "أين تعمل؟ أداة النكرة في الجرّ: bei / in + einem / einer",
       titleDe: "Wo arbeitest du? bei und in mit einem/einer",
       explanationAr:
-        "قلتَ ما مهنتك (Ich bin Lehrer)، وبقي أن تقول أين تعمل. وهنا تحتاج شيئاً جديداً: **أداة النكرة في حالة الجرّ**.\n\nفي درس السكن أخذتَ أداة المعرفة مجرورة (im Zimmer، in der Küche). أمّا مع مكان عمل غير محدَّد فالأداة نكرة:\n\n· der/das ← einem: in einem Büro · bei einem Arzt\n· die ← einer: in einer Firma · bei einer Bank\n\nوالفرق بين الحرفين: **bei** مع الأشخاص وأسماء الشركات (bei Siemens, bei einem Anwalt)، و**in** مع المباني والقطاعات (in einem Krankenhaus, in einer Schule).",
+        "قلتَ ما مهنتك (Ich bin Lehrer)، وبقي أن تقول أين تعمل. وهنا تحتاج شيئاً جديداً: **أداة النكرة في حالة الجرّ**.\n\n**أوّلاً — من المعرفة إلى النكرة.** في درس السكن أخذتَ أداة المعرفة مجرورة (im Zimmer، in der Küche). أمّا مع مكان عملٍ غير محدَّد فالأداة نكرة:\n· der/das ⇐ **einem**: in einem Büro · bei einem Arzt\n· die ⇐ **einer**: in einer Firma · bei einer Bank\nوالقاعدة التي تُغنيك عن الحفظ: **ein تستعير نهايات der**. فكما أنّ der ⇐ dem فإنّ ein ⇐ einem؛ وكما أنّ die ⇐ der فإنّ eine ⇐ einer. غطِّ الجذر بإصبعك وانظر إلى النهاية وحدها.\n\n**ثانياً — bei أم in؟ فرقٌ لا يجوز الخلط فيه.**\n· **bei** مع **الأشخاص** وأسماء الشركات: bei einem Arzt · bei Siemens · bei einem Anwalt\n· **in** مع **المباني والمؤسّسات**: in einem Krankenhaus · in einer Schule · in einem Büro\nوقارن الجملتين: Ich arbeite **bei einem Arzt** (أعمل عند طبيب — هو ربّ عملي، وقد أكون ممرّضاً أو سكرتيراً) مقابل Ich arbeite **in einer Arztpraxis** (أعمل في عيادة — المكان). الحرف يحدّد إن كنت تتكلّم عن **مَن** توظّفك أم عن **أين** تجلس.\n\n**ثالثاً — bei تحمل معنى ثالثاً: عند/لدى في المكان.**\nIch wohne **bei** meinen Eltern (أسكن عند والديّ) · **beim** Arzt (عند الطبيب، أي في عيادته). وهي دائماً + Dativ بلا استثناء، فهي من حروف الجرّ التي لا تعرف النصب إطلاقاً — بخلاف in التي تعرف الحالتين.\n\n**رابعاً — الاختصارات الإلزامية.** bei + dem = **beim** · in + dem = **im**. وهي ليست اختياراً بل الصيغة المعتادة: beim Arzt لا bei dem Arzt (إلّا للتوكيد).",
       whyAr:
-        "لماذا einem وeiner لا ein وeine؟ لأنّ ein «تقترض» نهايات der: der ⇒ dem فـ ein ⇒ einem، وdie ⇒ der فـ eine ⇒ einer. إن حفظتَ جدول المعرفة فأنت تملك جدول النكرة أصلاً — أضف الجذر ein وألصق به النهاية نفسها.",
+        "لماذا einem وeiner لا ein وeine؟ لأنّ حالة الجرّ (Dativ) تفرض نهاياتها على كلّ ما في المجموعة الاسمية. وein ليست استثناءً بل عضو في عائلة ein-Wörter كلّها تتصرّف معاً: einem · keinem · meinem · unserem. فإن حفظتَ خانةً واحدة ملكتَ العائلة كلّها.\n\nولماذا نُفرد كتلةً لحرفَي bei وin وقد يبدو الفرق بينهما ترفاً؟ لأنّ سؤال Wo arbeiten Sie? يُطرح في كلّ مقابلةٍ وكلّ استمارة، والجواب الخاطئ يُفهم خطأً لا يُسمع ركيكاً: من قال Ich arbeite in einem Arzt فقد قال حرفياً إنّه يعمل **داخل** طبيب.\n\nوأمّا لماذا تُطلب حالة الجرّ لا النصب مع in هنا؟ لأنّ السؤال wo? (أين، مكان ثابت) لا wohin? (إلى أين، حركة). وهذه هي قاعدة Wechselpräpositionen التي أخذتها في درس السكن، وها هي تعود في سياق العمل. القاعدة واحدة والسياق يتبدّل — وهكذا تُبنى الكفاءة.",
       table: {
         title: "من أداة المعرفة إلى أداة النكرة في الجرّ",
         columns: ["الجنس", "معرفة (تعرفها)", "نكرة (الجديد)"],
@@ -138,27 +146,24 @@ export const lessonA110: Lesson = {
         ],
       },
       examples: [
-        { de: "Ich arbeite in einer Firma.", ar: "أعمل في شركة." },
-        { de: "Sie arbeitet in einem Krankenhaus.", ar: "هي تعمل في مستشفى." },
-        { de: "Er arbeitet bei einem Anwalt.", ar: "يعمل عند محامٍ." },
-        { de: "Meine Schwester arbeitet bei einer Bank.", ar: "أختي تعمل في بنك." },
-        { de: "Wo arbeiten Sie? — In einem Büro in Berlin.", ar: "أين تعملون؟ — في مكتب في برلين." },
+        {"de": "Ich arbeite in einer Firma.", "ar": "أعمل في شركة. (مؤنّث ⇐ einer)"},
+        {"de": "Sie arbeitet in einem Krankenhaus.", "ar": "هي تعمل في مستشفى. (محايد ⇐ einem)"},
+        {"de": "Er arbeitet bei einem Anwalt.", "ar": "يعمل عند محامٍ. (شخص ⇐ bei)"},
+        {"de": "Meine Schwester arbeitet bei einer Bank.", "ar": "أختي تعمل في بنك."},
+        {"de": "Wo arbeiten Sie? — In einem Büro in Berlin.", "ar": "أين تعملون؟ — في مكتب في برلين."},
+        {"de": "Mein Vater arbeitet bei Siemens.", "ar": "أبي يعمل في سيمنس. (اسم شركة ⇐ bei بلا أداة)"},
+        {"de": "Ich bin heute beim Arzt.", "ar": "أنا اليوم عند الطبيب. (bei + dem = beim)"},
+        {"de": "Sie macht ein Praktikum in einer Schule.", "ar": "هي تؤدّي تدريباً عملياً في مدرسة."},
       ],
       comparisonWithArabic:
-        "العربية تقول «في شركة» و«في مستشفى» بحرف واحد لا يتغيّر، ولا تفرّق بين «عند محامٍ» و«في مكتب» تفريقاً نحوياً. الألمانية تفرض اختيارين معاً: أيّ حرف (bei للشخص، in للمبنى)، وأيّ نهاية (einem أو einer). الفخّ العربي الشائع: «Ich arbeite in eine Firma» بالنصب، لأنّ العربي يترجم «في» فقط ولا ينتبه إلى أنّ المكان الثابت يطلب الجرّ.",
+        "العربية تقول „في شركة“ و„في مستشفى“ بحرفٍ واحد لا يتغيّر، ولا تفرّق نحوياً بين „عند محامٍ“ و„في مكتب“. والألمانية تفرض اختيارين معاً في كلّ مرّة: أيّ حرف (bei للشخص، in للمبنى)، وأيّ نهاية (einem أو einer).\n\nوأقرب مقابل عربيّ لـbei هو „عند“: أعمل عند طبيب = Ich arbeite bei einem Arzt. والتطابق هنا مريح ويستحقّ أن يُستثمر: كلّما ترجمتَ „عند“ فاستعمل bei، وكلّما ترجمتَ „في“ مبنىً فاستعمل in.\n\nوالفخّ العربيّ الأشيع: Ich arbeite in eine Firma بالنصب، لأنّ العربيّ يترجم „في“ فقط ولا ينتبه إلى أنّ المكان الثابت يطلب الجرّ. والعربية لا تملك حالة إعرابية تتغيّر بتغيّر الثبات والحركة، فالفكرة كلّها غريبة عليها ولا يعوّضها إلّا التنبّه المتكرّر.",
       eselsbruecke:
         "«ein يستعير من der»: dem ⇒ einem، der ⇒ einer. غطِّ الجذر ein بإصبعك، وانظر إلى النهاية وحدها — ستجدها نهاية أداة المعرفة نفسها التي حفظتها في درس السكن.",
       commonMistakes: [
-        {
-          wrong: "Ich arbeite in eine Firma.",
-          right: "Ich arbeite in einer Firma.",
-          whyAr: "مكان العمل ثابت لا حركة إليه، فالسؤال wo? والجواب بالجرّ: einer لا eine.",
-        },
-        {
-          wrong: "Ich arbeite in einem Arzt.",
-          right: "Ich arbeite bei einem Arzt.",
-          whyAr: "in للمباني، وbei للأشخاص. لا تعمل «داخل طبيب» بل «عند طبيب».",
-        },
+        {"wrong": "Ich arbeite in eine Firma.", "right": "Ich arbeite in einer Firma.", "whyAr": "مكان العمل ثابت لا حركة إليه، فالسؤال wo? والجواب بالجرّ: einer لا eine. والعربية لا تملك حالة تتغيّر بالثبات والحركة، فالتمييز كلّه غريب عليها ويحتاج تنبّهاً."},
+        {"wrong": "Ich arbeite in einem Arzt.", "right": "Ich arbeite bei einem Arzt.", "whyAr": "in تعني «داخل»، فالجملة تقول حرفياً إنّك تعمل داخل جسد طبيب. والأشخاص يأخذون bei دائماً، والمباني تأخذ in."},
+        {"wrong": "Ich arbeite bei einem Krankenhaus.", "right": "Ich arbeite in einem Krankenhaus.", "whyAr": "الخطأ المعاكس: المستشفى مبنى لا شخص، فحرفه in. وقاعدة الفرز بسيطة: إن أمكنك أن تدخل فيه فهو in، وإن كان يوظّفك أو تزوره فهو bei."},
+        {"wrong": "Ich bin heute bei dem Arzt.", "right": "Ich bin heute beim Arzt.", "whyAr": "bei + dem تندمجان وجوباً في beim في الاستعمال العاديّ. والصيغة المفكوكة bei dem لا تُستعمل إلّا للتوكيد على طبيبٍ بعينه، وهي نادرة في الكلام."},
       ],
       relatedRuleComparison: {
         title: "als للمهنة، bei/in لمكانها",
@@ -166,7 +171,269 @@ export const lessonA110: Lesson = {
           "الجملة الكاملة تجمع ما تعلّمته في هذا الدرس كلّه: Ich arbeite als Ingenieur bei einer Firma in Berlin — als + المهنة بلا أداة، bei/in + مكان العمل بالجرّ، in + المدينة.",
       },
     },
+    {
+      id: "t4",
+      titleAr: "الملكية في محيط العمل: unser · euer · Ihr",
+      titleDe: "Unsere Firma, euer Büro, Ihr Termin",
+      explanationAr:
+        "أخذتَ mein وdein وsein وihr في درس العائلة. وبقيت ثلاث أدوات لا يستغني عنها من يعمل مع الناس: **unser** (لنا) و**euer** (لكم) و**Ihr** (لحضرتكم). ومحيط العمل هو موطنها الطبيعيّ، لأنّك فيه تتكلّم باسم فريق لا باسم نفسك: unsere Firma · unser Chef · unser Team.\n\n**أوّلاً — القاعدة العامّة لم تتغيّر.** الجذر يتبع المالك، والنهاية تتبع المملوك: بلا نهاية مع المذكّر والمحايد، وبـ ـe مع المؤنّث والجمع.\n· unser Chef (مذكّر) — unser**e** Firma (مؤنّث) — unser Büro (محايد) — unser**e** Kollegen (جمع)\n\n**ثانياً — الشذوذ الكبير: euer تُسقط حرف e.**\neuer وحدها بين كلّ الأدوات تتغيّر بنيتها حين تُضاف إليها نهاية. فلا تقل euere بل **eure**:\n· euer Chef ⇐ **eure** Firma (لا euere)\n· euer Büro ⇐ **eure** Kollegen\nوسبب السقوط صوتيّ محض: euere فيها ثلاثة مقاطع متتابعة ثقيلة، فأسقطت الألمانية e الوسطى تخفيفاً. والقاعدة العملية: **متى أضفتَ نهاية إلى euer فاحذف e الثانية.**\n\n**ثالثاً — Ihr الرسمية بحرف كبير دائماً.** في العمل تخاطب الزبون والمدير والزميل الأكبر بـSie، وأداة ملكيتهم **Ihr** بحرفٍ كبير أينما وقعت في الجملة:\n· Herr Meier, ist das **Ihr** Büro?\n· Frau Klein, wie ist **Ihre** Telefonnummer?\nوالحرف الكبير هنا ليس تجميلاً بل هو الفارق الوحيد كتابةً بين „مكتبها“ و„مكتب حضرتك“. أمّا في الكلام فلا يميّزهما إلّا السياق.\n\n**رابعاً — أين الخطر عملياً؟** في المكتب تسمع الجمل الثلاث في دقيقة واحدة: Unser Chef ist heute nicht da · Ist das eure Abteilung? · Frau Weber, hier ist Ihr Kaffee. ومن خلط بين euer الودّية وIhr الرسمية أوقع نفسه في حرجٍ اجتماعيّ لا نحويّ فقط.",
+      whyAr:
+        "لماذا تُؤجَّل هذه الأدوات الثلاث إلى درس العمل ولا تُعطى كلّها دفعةً واحدة في درس العائلة؟ لأنّ المتعلّم لا يحتاج „لنا“ و„لكم“ وهو يصف أباه وأمّه، فيحفظها بلا سياق ثمّ ينساها. أمّا في العمل فهي أدوات يوميّة: الشركة لنا، والمدير لنا، والقسم لكم. والقاعدة التي تُستعمل في اليوم نفسه تُحفظ، والتي تُخزَّن للمستقبل تُنسى.\n\nولماذا نُفرد شذوذ eure بهذا الاهتمام؟ لأنّه الشذوذ الوحيد في منظومة أدوات الملكية كلّها. كلّ الأدوات الأخرى تُلصق النهاية بجذرٍ ثابت، وeuer وحدها تتغيّر بنيتها. والمتعلّم الذي أتقن القاعدة العامّة سيُنتج euere تلقائياً بمنطقٍ سليم ونتيجة خاطئة — وهذا نوع الخطأ الذي لا يُصحّحه إلّا التنبيه الصريح.\n\nوأمّا Ihr الرسمية فمسألة امتحان قبل أن تكون مسألة لغة: قسم Schreiben في Goethe A1 يطلب استمارةً أو رسالةً قصيرة إلى جهةٍ رسمية، وكتابة ihr بحرفٍ صغير فيها تُحسب خطأً في السجلّ اللغويّ لا في الإملاء وحده.",
+      table: {
+        title: "الأدوات الثلاث مع الأجناس",
+        columns: ["المالك", "مذكّر/محايد", "مؤنّث/جمع"],
+        rows: [
+          { label: "نحن (wir)", cells: ["unser Chef", "unsere Firma"] },
+          { label: "أنتم (ihr)", cells: ["euer Büro", "eure Kollegen"] },
+          { label: "حضرتك (Sie)", cells: ["Ihr Termin", "Ihre Adresse"] },
+          { label: "هم (sie)", cells: ["ihr Chef", "ihre Firma"] },
+        ],
+      },
+      examples: [
+        { de: "Unsere Firma ist klein, aber gut.", ar: "شركتنا صغيرة لكنّها جيّدة." },
+        { de: "Unser Chef kommt heute nicht.", ar: "مديرنا لا يأتي اليوم. (مذكّر ⇐ بلا نهاية)" },
+        { de: "Ist das eure Abteilung?", ar: "هل هذا قسمكم؟ (لا euere)" },
+        { de: "Euer Büro ist im dritten Stock.", ar: "مكتبكم في الطابق الثالث." },
+        { de: "Herr Meier, ist das Ihr Büro?", ar: "سيّد ماير، هل هذا مكتب حضرتك؟" },
+        { de: "Frau Klein, wie ist Ihre Telefonnummer?", ar: "سيّدة كلاين، ما رقم هاتف حضرتك؟" },
+        { de: "Unsere Kollegen arbeiten auch am Samstag.", ar: "زملاؤنا يعملون يوم السبت أيضاً. (جمع ⇐ ـe)" },
+        { de: "Wo sind eure Papiere?", ar: "أين أوراقكم؟" },
+      ],
+      comparisonWithArabic:
+        "العربية تلصق „ـنا“ و„ـكم“ باسمٍ لا يتغيّر: شركتنا، مديرنا، قسمكم. لاحقةٌ واحدة لكلّ الأجناس، ولا نهاية تُضاف ولا حرف يسقط. والألمانية تطلب منك متغيّرين كالعادة: الجذر للمالك والنهاية للمملوك.\n\nوموضع الالتباس الحقيقيّ ليس في النحو بل في **التمييز الاجتماعيّ**: العربية تخاطب الجمع بصيغة واحدة („كم“) سواء كانوا أصدقاء أم رؤساء، وتُظهر الاحترام بالألقاب لا بالضمائر. والألمانية تفرض عليك اختياراً معلَناً في كلّ جملة: eure للزملاء الأنداد، وIhre للمدير والزبون. فالعربيّ الذي يقول للمدير Ist das eure Firma? لم يخطئ نحواً بل تجاوز حدّاً اجتماعياً.\n\nوفخٌّ ثالث خاصّ بالعربيّ: „لنا“ في العربية تُستعمل كثيراً للتواضع أو للتعميم، فينقلها المتعلّم إلى unser في مواضع يقول فيها الألمانيّ mein. قل Mein Büro ist im zweiten Stock إذا كان مكتبك أنت، ولا تقل unser إلّا إذا شاركك فيه غيرك فعلاً.",
+      eselsbruecke:
+        "**euer يخسر حرفاً حين يكبر**: كلّما أضفتَ نهاية سقطت e الثانية ⟵ euer + e = **eure**. تخيّلها كلمةً تخلع معطفها قبل أن تدخل. وأمّا **Ihr** الرسمية فبحرفٍ كبير دائماً — كبيرة الحرف لأنّ صاحبها كبير المقام.",
+      commonMistakes: [
+        {
+          wrong: "Das ist euere Firma.",
+          right: "Das ist eure Firma.",
+          whyAr: "euer وحدها بين كلّ أدوات الملكية تُسقط e الثانية عند إضافة النهاية. والخطأ ناتج عن تطبيقٍ سليم للقاعدة العامّة على الكلمة الوحيدة التي تشذّ عنها — ولهذا يقع فيه المتقن لا الجاهل.",
+        },
+        {
+          wrong: "Unsere Chef ist nett.",
+          right: "Unser Chef ist nett.",
+          whyAr: "der Chef مذكّر فلا نهاية له. والخطأ يأتي من أنّ unsere أكثر وروداً في السمع (unsere Firma، unsere Kollegen) فيظنّها المتعلّم الصيغة الأساسية.",
+        },
+        {
+          wrong: "Herr Weber, ist das ihr Büro?",
+          right: "Herr Weber, ist das Ihr Büro?",
+          whyAr: "الحرف الصغير يجعل الجملة تعني „هل هذا مكتبها؟“ — سؤالٌ عن امرأة غائبة لا عن المخاطَب. ومخاطبة شخصٍ بلقب Herr أو Frau توجب Ihr بحرفٍ كبير.",
+        },
+        {
+          wrong: "Mein Kollege und ich: unser Büro ist klein. Ich arbeite in unser Büro.",
+          right: "… Ich arbeite in unserem Büro.",
+          whyAr: "الأداة صحّت في الجملة الأولى وأخطأت في الثانية: بعد in الدالّة على مكانٍ ثابت تأتي حالة الجرّ، فتصير unser ⟵ unserem مثل ein ⟵ einem. والملكية لا تُعفي من التصريف.",
+        },
+      ],
+      relatedRuleComparison: {
+        title: "ein-Wörter: عائلةٌ واحدة بتصريف واحد",
+        content:
+          "unser وeuer وIhr أعضاء في العائلة نفسها التي فيها ein وkein وmein — تُسمّى جميعاً **ein-Wörter** لأنّها تُصرَّف تصريفاً واحداً حرفاً بحرف. قارن في الجرّ: in **einem** Büro · in **keinem** Büro · in **meinem** Büro · in **unserem** Büro. فما تعلّمته في كتلة النفي عن keinen ينطبق حرفياً على unseren. وأنت إذاً لا تحفظ أربعة جداول بل جدولاً واحداً بأربعة جذور.",
+      },
+    },
   ],
+  reading: {
+    "id": "read-a1-10",
+    "titleDe": "Ein neuer Job im Büro",
+    "titleAr": "وظيفة جديدة في المكتب",
+    "textType": "erzaehlung",
+    "paragraphs": [
+      "Karim kommt aus Tunesien und wohnt seit zwei Jahren in Köln. Er ist Ingenieur von Beruf, aber im Moment arbeitet er als Praktikant. Er macht ein Praktikum bei einer kleinen Firma für Solartechnik.",
+      "Heute ist sein erster Tag. Um acht Uhr kommt er ins Büro. Eine Frau steht am Kopierer. Guten Morgen, ich bin Karim Ben Salah, der neue Praktikant. — Herzlich willkommen! Ich bin Frau Grün. Ich bin hier die Chefin.",
+      "Frau Grün zeigt ihm alles. Das hier ist unser Büro. Ihr Platz ist am Fenster. Der Computer dort ist Ihr Computer, und das ist Ihre Telefonnummer. Unsere Abteilung ist klein: wir sind nur fünf Personen.",
+      "Dann kommt ein junger Mann. Das ist Tom, unser Techniker. Und wo ist eure Kollegin Lena? — Lena ist heute nicht da. Sie ist krank. Aber morgen kommt sie wieder.",
+      "Karim hat viele Fragen. Arbeiten wir auch am Samstag? — Nein, wir arbeiten am Samstag nicht. Wir arbeiten von Montag bis Freitag, von neun bis siebzehn Uhr. Und wir haben keine Kantine, aber es gibt ein Restaurant neben der Firma.",
+      "Am Abend ruft Karim seine Mutter an. Und, wie war dein erster Tag? — Sehr gut! Unsere Firma ist klein und meine Chefin ist sehr nett. Ich bin kein Ingenieur hier, nur Praktikant. Aber das ist kein Problem: ich lerne jeden Tag etwas Neues."
+    ],
+    "paragraphsAr": [
+      "كريم من تونس ويسكن في كولونيا منذ سنتين. مهنته مهندس، لكنّه في الوقت الحالي يعمل متدرّباً. يؤدّي تدريباً عملياً في شركة صغيرة لتقنية الطاقة الشمسية.",
+      "اليوم يومه الأوّل. في الثامنة يصل إلى المكتب. امرأة واقفة عند آلة النسخ. صباح الخير، أنا كريم بن صالح، المتدرّب الجديد. — أهلاً وسهلاً! أنا السيّدة غرون. أنا المديرة هنا.",
+      "تُريه السيّدة غرون كلّ شيء. هذا مكتبنا. مكانك عند النافذة. الحاسوب هناك حاسوبك، وهذا رقم هاتفك. قسمنا صغير: نحن خمسة أشخاص فقط.",
+      "ثمّ يأتي شابّ. هذا توم، فنّيّنا. وأين زميلتكم لينا؟ — لينا ليست هنا اليوم. هي مريضة. لكنّها تعود غداً.",
+      "عند كريم أسئلة كثيرة. هل نعمل يوم السبت أيضاً؟ — لا، لا نعمل يوم السبت. نعمل من الاثنين إلى الجمعة، من التاسعة إلى الخامسة. وليس عندنا مقصف، لكن هناك مطعم بجانب الشركة.",
+      "في المساء يتّصل كريم بأمّه. وكيف كان يومك الأوّل؟ — جيّد جداً! شركتنا صغيرة ومديرتي لطيفة جداً. لستُ مهندساً هنا، بل متدرّباً فقط. لكن هذه ليست مشكلة: أتعلّم كلّ يوم شيئاً جديداً."
+    ],
+    "glossary": [
+      {
+        "de": "der Praktikant / die Praktikantin",
+        "ar": "متدرّب / متدرّبة",
+        "noteAr": "المؤنّث باللاحقة ـin كسائر المهن."
+      },
+      {
+        "de": "das Praktikum",
+        "ar": "تدريب عمليّ",
+        "noteAr": "ein Praktikum machen bei …"
+      },
+      {
+        "de": "die Chefin",
+        "ar": "المديرة",
+        "noteAr": "من der Chef + ـin."
+      },
+      {
+        "de": "die Abteilung",
+        "ar": "القسم",
+        "noteAr": "في الشركة أو الإدارة."
+      },
+      {
+        "de": "der Techniker",
+        "ar": "الفنّيّ",
+        "noteAr": "وجمعه die Techniker بلا تغيير."
+      },
+      {
+        "de": "die Kollegin",
+        "ar": "الزميلة",
+        "noteAr": "والمذكّر der Kollege."
+      },
+      {
+        "de": "unsere Firma",
+        "ar": "شركتنا",
+        "noteAr": "unser + ـe لأنّ Firma مؤنّثة."
+      },
+      {
+        "de": "eure Kollegin",
+        "ar": "زميلتكم",
+        "noteAr": "euer تُسقط e عند إضافة النهاية."
+      },
+      {
+        "de": "Ihre Telefonnummer",
+        "ar": "رقم هاتف حضرتك",
+        "noteAr": "Ihr بحرف كبير = الصيغة الرسمية."
+      },
+      {
+        "de": "die Kantine",
+        "ar": "مقصف الشركة",
+        "noteAr": "مطعم داخليّ للموظّفين."
+      },
+      {
+        "de": "ruft … an (anrufen)",
+        "ar": "يتّصل هاتفياً",
+        "noteAr": "فعل منفصل: ruft seine Mutter an."
+      },
+      {
+        "de": "kein Problem",
+        "ar": "ليست مشكلة",
+        "noteAr": "نفي الاسم بـkein لا nicht."
+      }
+    ],
+    "questions": [
+      {
+        "id": "rq1",
+        "type": "multiple-choice",
+        "instructionAr": "أجب عن السؤال بحسب النصّ:",
+        "questionDe": "Was ist Karim von Beruf?",
+        "errorType": "vocabulary",
+        "options": [
+          "Ingenieur",
+          "Techniker",
+          "Lehrer",
+          "Arzt"
+        ],
+        "correctIndex": 0,
+        "paragraph": 0,
+        "explanation": "الفقرة الأولى: Er ist Ingenieur von Beruf — وهو يعمل متدرّباً في الوقت الحالي فقط."
+      },
+      {
+        "id": "rq2",
+        "type": "multiple-choice",
+        "instructionAr": "أجب عن السؤال بحسب النصّ:",
+        "questionDe": "Wo macht Karim sein Praktikum?",
+        "errorType": "preposition",
+        "options": [
+          "Bei einer Firma für Solartechnik",
+          "In einem Krankenhaus",
+          "Bei einem Anwalt",
+          "In einer Schule"
+        ],
+        "correctIndex": 0,
+        "paragraph": 0,
+        "explanation": "Er macht ein Praktikum bei einer kleinen Firma für Solartechnik — وbei مع أسماء الشركات."
+      },
+      {
+        "id": "rq3",
+        "type": "multiple-choice",
+        "instructionAr": "أجب عن السؤال بحسب النصّ:",
+        "questionDe": "Warum ist Lena nicht im Büro?",
+        "errorType": "vocabulary",
+        "options": [
+          "Sie ist krank.",
+          "Sie hat Urlaub.",
+          "Sie arbeitet zu Hause.",
+          "Sie ist die Chefin."
+        ],
+        "correctIndex": 0,
+        "paragraph": 3,
+        "explanation": "Lena ist heute nicht da. Sie ist krank — وتعود غداً."
+      },
+      {
+        "id": "rq4",
+        "type": "multiple-choice",
+        "instructionAr": "أجب عن السؤال بحسب النصّ:",
+        "questionDe": "Was sagt Frau Grün über den Samstag?",
+        "errorType": "negation",
+        "options": [
+          "Sie arbeiten am Samstag nicht.",
+          "Sie arbeiten nur am Samstag.",
+          "Sie arbeiten bis siebzehn Uhr am Samstag.",
+          "Sie haben am Samstag eine Kantine."
+        ],
+        "correctIndex": 0,
+        "paragraph": 4,
+        "explanation": "Wir arbeiten am Samstag nicht — نفي الفعل بـnicht في آخر الجملة."
+      },
+      {
+        "id": "rq5",
+        "type": "multiple-choice",
+        "instructionAr": "أجب عن السؤال بحسب النصّ:",
+        "questionDe": "Wie findet Karim seinen ersten Tag?",
+        "errorType": "vocabulary",
+        "options": [
+          "Sehr gut",
+          "Sehr schwer",
+          "Langweilig",
+          "Zu lang"
+        ],
+        "correctIndex": 0,
+        "paragraph": 5,
+        "explanation": "يجيب أمّه: Sehr gut! ويصف مديرته بأنّها sehr nett، ويرى أنّ كونه متدرّباً kein Problem."
+      }
+    ],
+    "redemittel": [
+      {
+        "de": "Was sind Sie von Beruf?",
+        "ar": "ما مهنتك؟"
+      },
+      {
+        "de": "Ich bin Ingenieur. / Ich arbeite als Praktikant.",
+        "ar": "أنا مهندس. / أعمل متدرّباً."
+      },
+      {
+        "de": "Ich mache ein Praktikum bei …",
+        "ar": "أؤدّي تدريباً عملياً في …"
+      },
+      {
+        "de": "Wo arbeiten Sie? — In einem Büro / bei einer Firma.",
+        "ar": "أين تعمل؟ — في مكتب / في شركة."
+      },
+      {
+        "de": "Unsere Abteilung ist klein.",
+        "ar": "قسمنا صغير."
+      },
+      {
+        "de": "Ist das Ihr Platz?",
+        "ar": "هل هذا مكان حضرتك؟"
+      },
+      {
+        "de": "Wir arbeiten von Montag bis Freitag.",
+        "ar": "نعمل من الاثنين إلى الجمعة."
+      },
+      {
+        "de": "Das ist kein Problem.",
+        "ar": "هذه ليست مشكلة."
+      }
+    ],
+    "discussionAr": "صف مكان عملك أو دراستك بالألمانية: ما مهنتك، وأين تعمل (in أم bei؟)، وكم عدد زملائك، وما أيام العمل وساعاته؟ واستعمل unser مرّةً وnicht وkein مرّةً لكلٍّ منهما."
+  },
+
   listening: {
     items: [
       {
@@ -455,6 +722,17 @@ export const lessonA110: Lesson = {
       explanation: "das Krankenhaus مبنى ⇒ in، وفي الجرّ ⇒ einem.",
       errorType: "case",
     },
+    {"id": "e16", "type": "multiple-choice", "instructionAr": "اختر الصيغة الصحيحة للتعريف بالمهنة:", "questionDe": "Ich ___ Lehrer von Beruf.", "options": ["bin", "bin ein", "arbeite", "arbeite ein"], "correctIndex": 0, "errorType": "article", "explanation": "المهنة بعد sein تُقال بلا أداة: Ich bin Lehrer. والأداة تعود فقط مع الوصف: ein guter Lehrer."},
+    {"id": "e17", "type": "error-correction", "instructionAr": "صحّح صيغة المؤنّث:", "wrongSentence": "Meine Mutter ist Arztin.", "wrongWord": "Arztin", "correctWord": "Ärztin", "options": ["Ärztin", "Arzterin", "Arztin", "Ärzterin"], "errorType": "spelling", "explanation": "اللاحقة ـin تجذب حرف العلّة فترقّقه: Arzt ⇐ Ärztin، كما في Koch ⇐ Köchin."},
+    {"id": "e18", "type": "fill-blank", "instructionAr": "أكمل بأداة الملكية الصحيحة:", "errorType": "pronoun", "template": "Wir arbeiten zusammen: ___ Firma ist klein. Und wo ist ___ Büro, Herr Meier?", "blanks": [{"correct": "unsere", "options": ["unsere", "unser", "euer", "eure"], "errorType": "pronoun"}, {"correct": "Ihr", "options": ["Ihr", "ihr", "euer", "dein"], "errorType": "pronoun"}], "explanation": "Firma مؤنّثة ⇐ unsere. ومخاطبة Herr Meier رسمية ⇐ Ihr بحرف كبير مع Büro المحايد بلا نهاية."},
+    {"id": "e19", "type": "error-correction", "instructionAr": "صحّح أداة الملكية:", "wrongSentence": "Das ist euere Abteilung.", "wrongWord": "euere", "correctWord": "eure", "options": ["eure", "euere", "euer", "eurer"], "errorType": "pronoun", "explanation": "euer وحدها بين أدوات الملكية تُسقط e الثانية عند إضافة النهاية: euer + e = eure."},
+    {"id": "e20", "type": "multiple-choice", "instructionAr": "اختر الحرف الصحيح:", "questionDe": "Meine Schwester arbeitet ___ einer Bank.", "options": ["bei", "in einem", "als", "auf"], "correctIndex": 0, "errorType": "preposition", "explanation": "bei مع المؤسّسات والأشخاص وأسماء الشركات. وbei einer Bank هي الصيغة المعتادة."},
+    {"id": "e21", "type": "error-correction", "instructionAr": "صحّح حرف الجرّ:", "wrongSentence": "Ich arbeite in einem Arzt.", "wrongWord": "in", "correctWord": "bei", "options": ["bei", "an", "zu", "mit"], "errorType": "preposition", "explanation": "in تعني «داخل» فالجملة تقول إنّك تعمل داخل جسد طبيب. والأشخاص يأخذون bei دائماً."},
+    {"id": "e22", "type": "multiple-choice", "instructionAr": "اختر أداة النفي الصحيحة:", "questionDe": "Ich kenne ___ Chef ___.", "options": ["den … nicht", "keinen … —", "kein … nicht", "der … nicht"], "correctIndex": 0, "errorType": "negation", "explanation": "الاسم معرَّف (المدير المعيَّن) والمعرَّف يُنفى بـnicht لا بـkein: Ich kenne den Chef nicht."},
+    {"id": "e23", "type": "transformation", "instructionAr": "انفِ الجملة بالأداة الصحيحة:", "prompt": "Ich habe einen Bruder. ⇐ (انفِها)", "errorType": "negation", "acceptedAnswers": ["Ich habe keinen Bruder.", "Ich habe keinen Bruder"], "sampleAnswer": "Ich habe keinen Bruder.", "explanation": "الاسم المسبوق بـein يُنفى باستبدال الأداة: einen ⇐ keinen. ولا يجوز nicht ein أبداً."},
+    {"id": "e24", "type": "word-ordering", "instructionAr": "رتّب الكلمات لتكوّن جملة نفي صحيحة:", "tokens": ["Wir", "arbeiten", "am", "Samstag", "nicht"], "errorType": "word-order", "correctSentence": "Wir arbeiten am Samstag nicht.", "explanation": "nicht تنفي الجملة كلّها فتقع في آخرها. ووضعها قبل الفعل يكسر قاعدة المركز الثاني."},
+    {"id": "e25", "type": "matching", "instructionAr": "صِل كلّ حالة بأداتها الصحيحة:", "errorType": "negation", "pairs": [{"left": "نفي فعل", "right": "nicht في آخر الجملة"}, {"left": "نفي اسم مسبوق بـein", "right": "kein بدل الأداة"}, {"left": "نفي اسم معرَّف بـder", "right": "nicht لا kein"}, {"left": "نفي صفة", "right": "nicht قبل الصفة"}, {"left": "نفي جزء بعينه", "right": "nicht قبله مباشرةً"}], "explanation": "القاعدة الفاصلة: kein ينفي الاسم المنكّر، وnicht ينفي كلّ ما عداه — والموضع يحدّد ما يقع عليه النفي."},
+    {"id": "e26", "type": "fill-blank", "instructionAr": "أكمل بأداة النكرة في حالة الجرّ:", "errorType": "case", "template": "Er arbeitet in ___ Büro und sie arbeitet in ___ Schule.", "blanks": [{"correct": "einem", "options": ["einem", "ein", "einer", "einen"], "errorType": "case"}, {"correct": "einer", "options": ["einer", "eine", "einem", "einen"], "errorType": "case"}], "explanation": "das Büro محايد ⇐ einem؛ die Schule مؤنّثة ⇐ einer. وein تستعير نهايات der في الجرّ."},
   ],
   fehlerUndTipps: {
     mistakes: [
@@ -539,6 +817,15 @@ export const lessonA110: Lesson = {
     { id: "fc8", de: "die Firma", ar: "الشركة", example: "Die Firma ist groß.", exampleAr: "الشركة كبيرة.", level: "A1" },
     { id: "fc9", de: "in einer Firma arbeiten", ar: "يعمل في شركة", example: "Ich arbeite in einer Firma.", exampleAr: "أعمل في شركة.", level: "A1" },
     { id: "fc10", de: "bei einem Arzt arbeiten", ar: "يعمل عند طبيب", example: "Er arbeitet bei einem Arzt.", exampleAr: "يعمل عند طبيب.", level: "A1" },
+    {"id": "fc11", "de": "unser / unsere", "ar": "لنا (أداة ملكية)", "example": "Unsere Firma ist klein.", "exampleAr": "شركتنا صغيرة.", "level": "A1"},
+    {"id": "fc12", "de": "euer / eure", "ar": "لكم (أداة ملكية)", "example": "Ist das eure Abteilung?", "exampleAr": "هل هذا قسمكم؟", "level": "A1"},
+    {"id": "fc13", "de": "Ihr / Ihre (formell)", "ar": "لحضرتك (رسميّ، بحرف كبير)", "example": "Herr Meier, ist das Ihr Büro?", "exampleAr": "سيّد ماير، هل هذا مكتب حضرتك؟", "level": "A1"},
+    {"id": "fc14", "de": "das Praktikum", "ar": "تدريب عمليّ", "example": "Ich mache ein Praktikum bei einer Firma.", "exampleAr": "أؤدّي تدريباً عملياً في شركة.", "level": "A1"},
+    {"id": "fc15", "de": "die Abteilung", "ar": "القسم (في شركة)", "example": "Unsere Abteilung ist klein.", "exampleAr": "قسمنا صغير.", "level": "A1"},
+    {"id": "fc16", "de": "der Chef / die Chefin", "ar": "المدير / المديرة", "example": "Meine Chefin ist sehr nett.", "exampleAr": "مديرتي لطيفة جداً.", "level": "A1"},
+    {"id": "fc17", "de": "arbeitslos", "ar": "عاطل عن العمل", "example": "Mein Bruder ist zurzeit arbeitslos.", "exampleAr": "أخي عاطل عن العمل حالياً.", "level": "A1"},
+    {"id": "fc18", "de": "selbstständig", "ar": "يعمل لحسابه الخاصّ", "example": "Unsere Kollegin ist selbstständig.", "exampleAr": "زميلتنا تعمل لحسابها الخاصّ.", "level": "A1"},
+    {"id": "fc19", "de": "Was sind Sie von Beruf?", "ar": "ما مهنتك؟", "example": "Was sind Sie von Beruf? — Ich bin Ingenieur.", "exampleAr": "ما مهنتك؟ — أنا مهندس.", "level": "A1"},
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
