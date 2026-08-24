@@ -43,7 +43,7 @@ export const lessonB205: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر الرابط:",
+      instructionAr: "مراجعة من A2 (درس a2-10 — المدرسة والتعلم): اختر الرابط:",
       questionDe: "Ich lerne, ___ ich will.",
       options: ["weil", "dass", "wenn", "ob"],
       correctIndex: 0,
@@ -53,7 +53,7 @@ export const lessonB205: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر الرابط:",
+      instructionAr: "مراجعة من A2 (درس a2-12 — العلاقات بين الناس): اختر الرابط:",
       questionDe: "Es regnet, ___ bleibe ich.",
       options: ["deshalb", "aber", "und", "oder"],
       correctIndex: 0,
@@ -63,7 +63,7 @@ export const lessonB205: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من B1: أكمل:",
+      instructionAr: "مراجعة من B1 (درس b1-07 — السياسة والمجتمع): أكمل:",
       template: "Er hört Musik, ___ er arbeitet. (بينما)",
       blanks: [
         { correct: "während", options: ["während", "als", "bevor"] },

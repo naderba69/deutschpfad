@@ -41,7 +41,7 @@ export const lessonB207: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر المستقبل:",
+      instructionAr: "مراجعة من B1 (درس b1-08 — التقنية والرقمنة): اختر المستقبل:",
       questionDe: "Ich ___ morgen lernen.",
       options: ["werde", "wirst", "wird", "werden"],
       correctIndex: 0,
@@ -51,7 +51,7 @@ export const lessonB207: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A2: اختر Perfekt:",
+      instructionAr: "مراجعة من A2 (درس a2-01 — السفر والعطلات): اختر Perfekt:",
       questionDe: "Ich habe ein Buch ___.",
       options: ["gelesen", "lesen", "gelest", "liest"],
       correctIndex: 0,
@@ -61,7 +61,7 @@ export const lessonB207: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من B2: أكمل:",
+      instructionAr: "مراجعة من B2 (درس b2-01 — العلوم والبحث): أكمل:",
       template: "Er sagt, er ___ Zeit. (Konjunktiv I من haben)",
       blanks: [
         { correct: "habe", options: ["habe", "hat", "hätte"] },

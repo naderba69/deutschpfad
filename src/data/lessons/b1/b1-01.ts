@@ -41,7 +41,7 @@ export const lessonB101: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A2: اختر الصيغة الصحيحة:",
+      instructionAr: "مراجعة من A2 (درس a2-09 — المناسبات والاحتفالات): اختر الصيغة الصحيحة:",
       questionDe: "Ich helfe ___ Bruder. (أخي)",
       options: ["meinem", "meinen", "mein", "meine"],
       correctIndex: 0,
@@ -51,7 +51,7 @@ export const lessonB101: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A2: اختر حرف الربط:",
+      instructionAr: "مراجعة من A2 (درس a2-10 — المدرسة والتعلم): اختر حرف الربط:",
       questionDe: "Ich lerne Deutsch, ___ ich will.",
       options: ["weil", "dass", "wenn", "ob"],
       correctIndex: 0,
@@ -61,7 +61,7 @@ export const lessonB101: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من A1: أكمل:",
+      instructionAr: "مراجعة من A1 (درس a1-10 — العمل والمهن): أكمل:",
       template: "Mein Vater ist ___. (معلّم)",
       blanks: [
         { correct: "Lehrer", options: ["Lehrer", "Student", "Koch"] },

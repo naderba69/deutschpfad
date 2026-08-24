@@ -41,7 +41,7 @@ export const lessonA206: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر الصيغة الصحيحة:",
+      instructionAr: "مراجعة من A1 (درس a1-08 — الملابس والألوان): اختر الصيغة الصحيحة:",
       questionDe: "Ich ___ das Kleid sehr schön. (رأي)",
       options: ["finde", "findest", "findet", "finden"],
       correctIndex: 0,
@@ -51,7 +51,7 @@ export const lessonA206: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر المعنى:",
+      instructionAr: "مراجعة من A1 (درس a1-05 — الحياة اليومية والروتين): اختر المعنى:",
       questionDe: "Ich sehe gern fern.",
       options: ["أشاهد التلفاز بسرور", "أقرأ الصحيفة", "أستمع للراديو", "أكتب بريداً"],
       correctIndex: 0,
@@ -61,7 +61,7 @@ export const lessonA206: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من A1: أكمل بالضمير:",
+      instructionAr: "مراجعة من A1 (درس a1-06 — أوقات الفراغ والهوايات): أكمل بالضمير:",
       template: "Ich höre gern ___.",
       blanks: [
         { correct: "Musik", options: ["Musik", "Zeitung", "Nachricht"] },

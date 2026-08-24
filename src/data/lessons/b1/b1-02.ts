@@ -41,7 +41,7 @@ export const lessonB102: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A2: اختر الماضي الصحيح:",
+      instructionAr: "مراجعة من A2 (درس a2-05 — في المكتب والعمل): اختر الماضي الصحيح:",
       questionDe: "Ich ___ gestern im Büro. (كنت)",
       options: ["war", "hatte", "bin", "habe"],
       correctIndex: 0,
@@ -51,7 +51,7 @@ export const lessonB102: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A2: اختر Perfekt الصحيح:",
+      instructionAr: "مراجعة من A2 (درس a2-01 — السفر والعطلات): اختر Perfekt الصحيح:",
       questionDe: "Ich ___ ein Buch ___. (قرأت)",
       options: ["habe ... gelesen", "bin ... gelesen", "habe ... gelest", "bin ... gelest"],
       correctIndex: 0,
@@ -61,7 +61,7 @@ export const lessonB102: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من A1: أكمل:",
+      instructionAr: "مراجعة من A1 (درس a1-10 — العمل والمهن): أكمل:",
       template: "Ich arbeite als ___.",
       blanks: [
         { correct: "Lehrer", options: ["Lehrer", "Schüler", "Student"] },

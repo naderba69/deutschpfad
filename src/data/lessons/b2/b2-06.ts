@@ -42,7 +42,7 @@ export const lessonB206: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر الصيغة:",
+      instructionAr: "مراجعة من B1 (درس b1-08 — التقنية والرقمنة): اختر الصيغة:",
       questionDe: "Ich werde nächstes Jahr in Deutschland ___.",
       options: ["studieren", "studiere", "studiert", "studiert haben"],
       correctIndex: 0,
@@ -52,7 +52,7 @@ export const lessonB206: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر الوصلة:",
+      instructionAr: "مراجعة من B1 (درس b1-09 — العمل التطوعي والاجتماعي): اختر الوصلة:",
       questionDe: "eine Entscheidung ___",
       options: ["treffen", "stellen", "sagen", "machen"],
       correctIndex: 0,

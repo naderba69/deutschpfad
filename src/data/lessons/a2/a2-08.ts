@@ -42,7 +42,7 @@ export const lessonA208: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر الأرقام:",
+      instructionAr: "مراجعة من A1 (درس a1-07 — التسوق): اختر الأرقام:",
       questionDe: "Wie viel ist „zwei plus drei“?",
       options: ["fünf", "vier", "sechs", "drei"],
       correctIndex: 0,
@@ -52,7 +52,7 @@ export const lessonA208: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر حرف الجر:",
+      instructionAr: "مراجعة من A1 (درس a1-11 — التنقل في المدينة): اختر حرف الجر:",
       questionDe: "Ich fahre ___ Berlin.",
       options: ["nach", "zu", "in", "aus"],
       correctIndex: 0,
@@ -62,13 +62,13 @@ export const lessonA208: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من A1: أكمل الكلمة:",
-      template: "die ___ = المحطة (قطار)",
+      instructionAr: "مراجعة من A2 (درس a2-05 — في المكتب والعمل): أكمل الماضي البسيط:",
+      template: "Gestern ___ ich in Hamburg. (sein)",
       blanks: [
-        { correct: "Haltestelle", options: ["Haltestelle", "Fahrkarte", "U-Bahn"] },
+        { correct: "war", options: ["war", "bin", "hatte"] },
       ],
-      explanation: "Haltestelle = محطة التوقف.",
-      errorType: "vocabulary",
+      explanation: "Präteritum من sein مع ich: war (درس المكتب).",
+      errorType: "conjugation",
     },
   ],
 

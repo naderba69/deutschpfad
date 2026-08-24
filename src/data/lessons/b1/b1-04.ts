@@ -41,7 +41,7 @@ export const lessonB104: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر تصريف werden:",
+      instructionAr: "مراجعة من A1 (درس a1-12 — الطقس والفصول): اختر تصريف werden:",
       questionDe: "Ich ___ müde. (أصبح)",
       options: ["werde", "wirst", "wird", "werden"],
       correctIndex: 0,
@@ -51,7 +51,7 @@ export const lessonB104: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر المجهول:",
+      instructionAr: "مراجعة من B1 (درس b1-03 — البيئة والمناخ): اختر المجهول:",
       questionDe: "Das Haus ___ gebaut. (يُبنى)",
       options: ["wird", "wurde", "ist", "war"],
       correctIndex: 0,
@@ -61,7 +61,7 @@ export const lessonB104: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من A2: أكمل:",
+      instructionAr: "مراجعة من A2 (درس a2-06 — الإعلام والأخبار): أكمل:",
       template: "Ich finde, dass der Film gut ___.",
       blanks: [
         { correct: "ist", options: ["ist", "sein", "wird"] },

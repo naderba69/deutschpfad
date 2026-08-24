@@ -42,7 +42,7 @@ export const lessonA203: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر الصيغة الصحيحة (النصب):",
+      instructionAr: "مراجعة من A1 (درس a1-03 — الطعام والشراب): اختر الصيغة الصحيحة (النصب):",
       questionDe: "Ich esse ___ Apfel.",
       options: ["einen", "ein", "eine", "der"],
       correctIndex: 0,
@@ -52,7 +52,7 @@ export const lessonA203: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر صيغة الأمر المهذبة:",
+      instructionAr: "مراجعة من A1 (درس a1-06 — أوقات الفراغ والهوايات): اختر صيغة الأمر المهذبة:",
       questionDe: "___ Sie bitte! (تعالوا)",
       options: ["Kommen", "Komm", "Kommt", "Kommen Sie"],
       correctIndex: 3,
@@ -62,7 +62,7 @@ export const lessonA203: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من A1: أكمل بـ der/die/das:",
+      instructionAr: "مراجعة من A1 (درس a1-03 — الطعام والشراب): أكمل بـ der/die/das:",
       template: "___ Brot · ___ Milch · ___ Käse",
       blanks: [
         { correct: "das", options: ["das", "die", "der"] },

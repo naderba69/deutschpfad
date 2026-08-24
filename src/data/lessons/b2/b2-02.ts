@@ -41,7 +41,7 @@ export const lessonB202: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر المجهول:",
+      instructionAr: "مراجعة من B1 (درس b1-03 — البيئة والمناخ): اختر المجهول:",
       questionDe: "Das Haus ___ gebaut. (يُبنى)",
       options: ["wird", "wurde", "ist", "war"],
       correctIndex: 0,
@@ -51,7 +51,7 @@ export const lessonB202: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر المجهول:",
+      instructionAr: "مراجعة من B1 (درس b1-03 — البيئة والمناخ): اختر المجهول:",
       questionDe: "Das Haus ___ 1900 gebaut. (بُني)",
       options: ["wurde", "wird", "ist", "war"],
       correctIndex: 0,
@@ -61,7 +61,7 @@ export const lessonB202: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من B1: أكمل:",
+      instructionAr: "مراجعة من B1 (درس b1-03 — البيئة والمناخ): أكمل:",
       template: "Man ___ die Umwelt schützen. (يمكن)",
       blanks: [
         { correct: "kann", options: ["kann", "könnte", "konnte"] },

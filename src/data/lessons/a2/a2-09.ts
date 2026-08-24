@@ -41,7 +41,7 @@ export const lessonA209: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر الصيغة الصحيحة:",
+      instructionAr: "مراجعة من A1 (درس a1-02 — العائلة والأصدقاء): اختر الصيغة الصحيحة:",
       questionDe: "Ich helfe ___ Bruder. (أخي)",
       options: ["meinem", "meinen", "mein", "meine"],
       correctIndex: 0,
@@ -51,7 +51,7 @@ export const lessonA209: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر الترجمة:",
+      instructionAr: "مراجعة من A1 (درس a1-09 — المواعيد والتقويم): اختر الترجمة:",
       questionDe: "der Geburtstag",
       options: ["عيد الميلاد", "الزواج", "العيد الوطني", "رأس السنة"],
       correctIndex: 0,
@@ -61,7 +61,7 @@ export const lessonA209: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من A1: أكمل:",
+      instructionAr: "مراجعة من A2 (درس a2-07 — البنك والمال): أكمل:",
       template: "Ich möchte ___ einladen. (أنتَ — نصب)",
       blanks: [
         { correct: "dich", options: ["dich", "dir", "mich"] },

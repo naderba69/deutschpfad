@@ -42,7 +42,7 @@ export const lessonB107: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A2: اختر حرف الربط:",
+      instructionAr: "مراجعة من A2 (درس a2-10 — المدرسة والتعلم): اختر حرف الربط:",
       questionDe: "Ich lerne, ___ ich will.",
       options: ["weil", "wenn", "ob", "dass"],
       correctIndex: 0,
@@ -52,7 +52,7 @@ export const lessonB107: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A2: اختر حرف الربط:",
+      instructionAr: "مراجعة من A2 (درس a2-10 — المدرسة والتعلم): اختر حرف الربط:",
       questionDe: "___ du Zeit hast, hilf mir.",
       options: ["Wenn", "Weil", "Ob", "Dass"],
       correctIndex: 0,
@@ -62,7 +62,7 @@ export const lessonB107: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من B1: أكمل:",
+      instructionAr: "مراجعة من B1 (درس b1-03 — البيئة والمناخ): أكمل:",
       template: "Das Haus ___ gebaut. (يُبنى)",
       blanks: [
         { correct: "wird", options: ["wird", "wurde", "ist"] },

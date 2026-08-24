@@ -41,7 +41,7 @@ export const lessonA201: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر التصريف الصحيح:",
+      instructionAr: "مراجعة من A1 (درس a1-01 — التعارف والتحيات): اختر التصريف الصحيح:",
       questionDe: "Ich ___ aus Tunesien.",
       options: ["bin", "habe", "werde", "ist"],
       correctIndex: 0,
@@ -51,7 +51,7 @@ export const lessonA201: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر حرف الجر الصحيح:",
+      instructionAr: "مراجعة من A1 (درس a1-11 — التنقل في المدينة): اختر حرف الجر الصحيح:",
       questionDe: "Ich fahre ___ Deutschland.",
       options: ["nach", "zu", "in", "aus"],
       correctIndex: 0,
@@ -61,7 +61,7 @@ export const lessonA201: Lesson = {
     {
       id: "r3",
       type: "word-ordering",
-      instructionAr: "مراجعة من A1: رتّب الجملة:",
+      instructionAr: "مراجعة من A1 (درس a1-03 — الطعام والشراب): رتّب الجملة:",
       tokens: ["Ich", "habe", "Hunger", "."],
       correctSentence: "Ich habe Hunger.",
       explanation: "عندي جوع = أنا جائع (درس الطعام).",

@@ -42,7 +42,7 @@ export const lessonB201: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر الصيغة الصحيحة:",
+      instructionAr: "مراجعة من B1 (درس b1-04 — الإعلام والمجتمع): اختر الصيغة الصحيحة:",
       questionDe: "Wenn ich Zeit ___, würde ich kommen.",
       options: ["hätte", "habe", "hatte", "haben"],
       correctIndex: 0,
@@ -52,7 +52,7 @@ export const lessonB201: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر المجهول:",
+      instructionAr: "مراجعة من B1 (درس b1-03 — البيئة والمناخ): اختر المجهول:",
       questionDe: "Das Experiment ___ durchgeführt. (يُجرى)",
       options: ["wird", "wurde", "ist", "war"],
       correctIndex: 0,
@@ -62,7 +62,7 @@ export const lessonB201: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من B1: أكمل:",
+      instructionAr: "مراجعة من B1 (درس b1-01 — التعليم والدراسة): أكمل:",
       template: "Der Wissenschaftler, ___ forscht, ist berühmt. (الذي)",
       blanks: [
         { correct: "der", options: ["der", "den", "dem"] },

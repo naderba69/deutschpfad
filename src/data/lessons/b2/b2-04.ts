@@ -41,7 +41,7 @@ export const lessonB204: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر نهاية الصفة:",
+      instructionAr: "مراجعة من B1 (درس b1-06 — الثقافة والفن): اختر نهاية الصفة:",
       questionDe: "ein ___ (gut) Buch",
       options: ["gutes", "gute", "guten", "guter"],
       correctIndex: 0,
@@ -51,7 +51,7 @@ export const lessonB204: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر النسبية:",
+      instructionAr: "مراجعة من B1 (درس b1-01 — التعليم والدراسة): اختر النسبية:",
       questionDe: "Der Mann, ___ dort steht.",
       options: ["der", "den", "dem", "dessen"],
       correctIndex: 0,
@@ -61,7 +61,7 @@ export const lessonB204: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من A2: أكمل:",
+      instructionAr: "مراجعة من A2 (درس a2-01 — السفر والعطلات): أكمل:",
       template: "Ich habe ein Buch ___. (قراءة)",
       blanks: [
         { correct: "gelesen", options: ["gelesen", "gelest", "lesen"] },

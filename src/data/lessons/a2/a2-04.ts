@@ -42,7 +42,7 @@ export const lessonA204: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر الصيغة الصحيحة:",
+      instructionAr: "مراجعة من A1 (درس a1-04 — السكن والمنزل): اختر الصيغة الصحيحة:",
       questionDe: "Das Buch ist ___ Tisch. (على — سكون)",
       options: ["auf dem", "auf den", "auf der", "auf das"],
       correctIndex: 0,
@@ -52,7 +52,7 @@ export const lessonA204: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر حرف الحركة الصحيح:",
+      instructionAr: "مراجعة من A1 (درس a1-11 — التنقل في المدينة): اختر حرف الحركة الصحيح:",
       questionDe: "Ich gehe ___ die Stadt.",
       options: ["in", "nach", "zu", "aus"],
       correctIndex: 0,
@@ -62,7 +62,7 @@ export const lessonA204: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من A1: أكمل حروف الجر:",
+      instructionAr: "مراجعة من A1 (درس a1-04 — السكن والمنزل): أكمل حروف الجر:",
       template: "Die Lampe ist ___ Küche. (في — مؤنث)",
       blanks: [
         { correct: "in der", options: ["in der", "in dem", "im", "in die"] },

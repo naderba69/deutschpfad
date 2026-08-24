@@ -41,7 +41,7 @@ export const lessonA212: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A2: اختر حرف الربط:",
+      instructionAr: "مراجعة من A2 (درس a2-10 — المدرسة والتعلم): اختر حرف الربط:",
       questionDe: "Ich lerne Deutsch, ___ ich will.",
       options: ["weil", "dass", "wenn", "ob"],
       correctIndex: 0,
@@ -51,7 +51,7 @@ export const lessonA212: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A2: اختر الضمير الانعكاسي:",
+      instructionAr: "مراجعة من A2 (درس a2-11 — الخدمات والمعاملات): اختر الضمير الانعكاسي:",
       questionDe: "Ich freue ___.",
       options: ["mich", "dich", "sich", "uns"],
       correctIndex: 0,
@@ -61,12 +61,12 @@ export const lessonA212: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من A1: أكمل:",
-      template: "Ich bin müde, ___ ich habe viel gearbeitet. (لكن)",
+      instructionAr: "مراجعة من A2 (درس a2-08 — المواصلات والتنقل): أكمل صيغة المقارنة:",
+      template: "Der Zug ist ___ als das Auto. (schnell)",
       blanks: [
-        { correct: "aber", options: ["aber", "und", "oder"] },
+        { correct: "schneller", options: ["schneller", "schnell", "am schnellsten"] },
       ],
-      explanation: "aber = لكن (ربط عادي).",
+      explanation: "المقارنة: schnell → schneller + als (درس المواصلات).",
       errorType: "grammar",
     },
   ],

@@ -42,7 +42,7 @@ export const lessonB103: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر تصريف werden:",
+      instructionAr: "مراجعة من A1 (درس a1-12 — الطقس والفصول): اختر تصريف werden:",
       questionDe: "Es ___ kalt. (يصبح)",
       options: ["wird", "werde", "wirst", "werden"],
       correctIndex: 0,
@@ -52,7 +52,7 @@ export const lessonB103: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر Genitiv:",
+      instructionAr: "مراجعة من B1 (درس b1-01 — التعليم والدراسة): اختر Genitiv:",
       questionDe: "Wegen ___ Regens bleiben wir.",
       options: ["des", "der", "dem", "den"],
       correctIndex: 0,
@@ -62,7 +62,7 @@ export const lessonB103: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من A2: أكمل:",
+      instructionAr: "مراجعة من A2 (درس a2-01 — السفر والعطلات): أكمل:",
       template: "Ich habe eine Pizza ___. (essen)",
       blanks: [
         { correct: "gegessen", options: ["gegessen", "geessen", "gegesst"] },

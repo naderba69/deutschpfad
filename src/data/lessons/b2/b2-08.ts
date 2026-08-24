@@ -61,7 +61,7 @@ export const lessonB208: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من B2: أكمل:",
+      instructionAr: "مراجعة من B2 (درس b2-01 — العلوم والبحث): أكمل:",
       template: "Er sagt, er ___ Zeit. (Konjunktiv I)",
       blanks: [
         { correct: "habe", options: ["habe", "hat", "hätte"] },

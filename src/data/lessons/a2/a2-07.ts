@@ -41,7 +41,7 @@ export const lessonA207: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر الصيغة الصحيحة (النصب):",
+      instructionAr: "مراجعة من A1 (درس a1-07 — التسوق): اختر الصيغة الصحيحة (النصب):",
       questionDe: "Ich kaufe ___ Kaffee.",
       options: ["einen", "ein", "eine", "der"],
       correctIndex: 0,
@@ -51,7 +51,7 @@ export const lessonA207: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر الترجمة:",
+      instructionAr: "مراجعة من A1 (درس a1-07 — التسوق): اختر الترجمة:",
       questionDe: "das Geld",
       options: ["المال", "الذهب", "البطاقة", "الحساب"],
       correctIndex: 0,
@@ -61,7 +61,7 @@ export const lessonA207: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من A1: أكمل الجمع:",
+      instructionAr: "مراجعة من A1 (درس a1-07 — التسوق): أكمل الجمع:",
       template: "der Euro → die ___",
       blanks: [
         { correct: "Euro", options: ["Euro", "Euros", "Euroen"] },

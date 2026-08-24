@@ -41,7 +41,7 @@ export const lessonB203: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر الضمير النسبي:",
+      instructionAr: "مراجعة من B1 (درس b1-01 — التعليم والدراسة): اختر الضمير النسبي:",
       questionDe: "Der Mann, ___ dort steht, ist mein Chef.",
       options: ["der", "den", "dem", "dessen"],
       correctIndex: 0,
@@ -51,7 +51,7 @@ export const lessonB203: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر الضمير النسبي:",
+      instructionAr: "مراجعة من B1 (درس b1-01 — التعليم والدراسة): اختر الضمير النسبي:",
       questionDe: "Das Buch, ___ ich lese, ist gut. (نصب)",
       options: ["das", "der", "die", "dem"],
       correctIndex: 0,

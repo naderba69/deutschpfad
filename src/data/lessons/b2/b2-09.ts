@@ -41,7 +41,7 @@ export const lessonB209: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر الوصلة:",
+      instructionAr: "مراجعة من B1 (درس b1-09 — العمل التطوعي والاجتماعي): اختر الوصلة:",
       questionDe: "eine Frage ___",
       options: ["stellen", "treffen", "sagen", "nehmen"],
       correctIndex: 0,
@@ -51,7 +51,7 @@ export const lessonB209: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر الماضي:",
+      instructionAr: "مراجعة من B1 (درس b1-02 — عالم العمل): اختر الماضي:",
       questionDe: "Ich ___ drei Jahre in einer Firma.",
       options: ["arbeitete", "arbeite", "gearbeitet", "arbeitest"],
       correctIndex: 0,
@@ -61,7 +61,7 @@ export const lessonB209: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من B2: أكمل:",
+      instructionAr: "مراجعة من B2 (درس b2-02 — الاقتصاد والمالية): أكمل:",
       template: "Die Bewerbung ist ___ worden. (أُرسلت)",
       blanks: [
         { correct: "geschickt", options: ["geschickt", "schickt", "schicken"] },

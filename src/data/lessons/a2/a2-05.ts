@@ -41,7 +41,7 @@ export const lessonA205: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر تصريف الفعل:",
+      instructionAr: "مراجعة من A1 (درس a1-10 — العمل والمهن): اختر تصريف الفعل:",
       questionDe: "Ich ___ in einer Firma. (arbeiten)",
       options: ["arbeite", "arbeitest", "arbeitet", "arbeiten"],
       correctIndex: 0,
@@ -51,7 +51,7 @@ export const lessonA205: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر النفي الصحيح:",
+      instructionAr: "مراجعة من A1 (درس a1-10 — العمل والمهن): اختر النفي الصحيح:",
       questionDe: "Ich arbeite ___ am Sonntag.",
       options: ["nicht", "kein", "keine", "keinen"],
       correctIndex: 0,
@@ -61,7 +61,7 @@ export const lessonA205: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من A1: أكمل حرف الجر:",
+      instructionAr: "مراجعة من A1 (درس a1-09 — المواعيد والتقويم): أكمل حرف الجر:",
       template: "Der Termin ist ___ Montag ___ neun Uhr.",
       blanks: [
         { correct: "am", options: ["am", "um", "im"] },

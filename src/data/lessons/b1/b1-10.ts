@@ -41,7 +41,7 @@ export const lessonB110: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر الصيغة الصحيحة:",
+      instructionAr: "مراجعة من B1 (درس b1-01 — التعليم والدراسة): اختر الصيغة الصحيحة:",
       questionDe: "Das Buch ___ Lehrers ist neu. (مضاف)",
       options: ["des", "der", "dem", "den"],
       correctIndex: 0,
@@ -51,7 +51,7 @@ export const lessonB110: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر الشرطية:",
+      instructionAr: "مراجعة من B1 (درس b1-04 — الإعلام والمجتمع): اختر الشرطية:",
       questionDe: "Wenn ich reich ___, würde ich reisen.",
       options: ["wäre", "bin", "war", "werde"],
       correctIndex: 0,
@@ -61,7 +61,7 @@ export const lessonB110: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من B1: أكمل المجهول:",
+      instructionAr: "مراجعة من B1 (درس b1-03 — البيئة والمناخ): أكمل المجهول:",
       template: "Das Haus ___ gebaut. (بُني — ماضٍ)",
       blanks: [
         { correct: "wurde", options: ["wurde", "wird", "ist"] },

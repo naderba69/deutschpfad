@@ -41,7 +41,7 @@ export const lessonA210: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر الصيغة الصحيحة:",
+      instructionAr: "مراجعة من A1 (درس a1-01 — التعارف والتحيات): اختر الصيغة الصحيحة:",
       questionDe: "Ich ___ Deutsch. (أتعلم)",
       options: ["lerne", "lernst", "lernt", "lernen"],
       correctIndex: 0,
@@ -51,7 +51,7 @@ export const lessonA210: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A2: اختر حرف الربط:",
+      instructionAr: "مراجعة من A2 (درس a2-06 — الإعلام والأخبار): اختر حرف الربط:",
       questionDe: "Ich glaube, ___ das stimmt.",
       options: ["dass", "weil", "wenn", "ob"],
       correctIndex: 0,
@@ -61,7 +61,7 @@ export const lessonA210: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من A1: أكمل الملكية:",
+      instructionAr: "مراجعة من A1 (درس a1-02 — العائلة والأصدقاء): أكمل الملكية:",
       template: "Das ist ___ Bruder. (أخي)",
       blanks: [
         { correct: "mein", options: ["mein", "meine", "meinen"] },

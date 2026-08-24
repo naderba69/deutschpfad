@@ -42,7 +42,7 @@ export const lessonA211: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر الضمير الصحيح:",
+      instructionAr: "مراجعة من A2 (درس a2-07 — البنك والمال): اختر الضمير الصحيح:",
       questionDe: "Ich sehe ___. (أنتَ)",
       options: ["dich", "dir", "mich", "mir"],
       correctIndex: 0,
@@ -52,7 +52,7 @@ export const lessonA211: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر الترجمة:",
+      instructionAr: "مراجعة من A1 (درس a1-11 — التنقل في المدينة): اختر الترجمة:",
       questionDe: "die Post",
       options: ["البريد", "المكتب", "البنك", "المحطة"],
       correctIndex: 0,
@@ -62,7 +62,7 @@ export const lessonA211: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من A1: أكمل:",
+      instructionAr: "مراجعة من A1 (درس a1-03 — الطعام والشراب): أكمل:",
       template: "Ich möchte ___ Termin. (موعد)",
       blanks: [
         { correct: "einen", options: ["einen", "ein", "eine"] },

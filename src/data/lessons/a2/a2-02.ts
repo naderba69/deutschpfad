@@ -41,7 +41,7 @@ export const lessonA202: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر الصيغة الصحيحة:",
+      instructionAr: "مراجعة من A1 (درس a1-03 — الطعام والشراب): اختر الصيغة الصحيحة:",
       questionDe: "Ich habe ___.",
       questionAr: "عندي جوع.",
       options: ["Hunger", "hungrig", "der Hunger", "hunger"],
@@ -52,7 +52,7 @@ export const lessonA202: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر المؤنث الصحيح:",
+      instructionAr: "مراجعة من A1 (درس a1-10 — العمل والمهن): اختر المؤنث الصحيح:",
       questionDe: "der Arzt → die ___",
       options: ["Ärztin", "Arztin", "Ärzte", "Ärztinnen"],
       correctIndex: 0,
@@ -62,7 +62,7 @@ export const lessonA202: Lesson = {
     {
       id: "r3",
       type: "word-ordering",
-      instructionAr: "مراجعة من A1: رتّب الجملة:",
+      instructionAr: "مراجعة من A1 (درس a1-09 — المواعيد والتقويم): رتّب الجملة:",
       tokens: ["ist", "Der", "Termin", "Montag", "am", "."],
       correctSentence: "Der Termin ist am Montag.",
       explanation: "الموعد يوم الاثنين: am + يوم.",

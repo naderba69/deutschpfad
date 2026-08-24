@@ -42,7 +42,7 @@ export const lessonB109: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A2: اختر الضمير:",
+      instructionAr: "مراجعة من A2 (درس a2-09 — المناسبات والاحتفالات): اختر الضمير:",
       questionDe: "Ich helfe ___ Bruder.",
       options: ["meinem", "meinen", "mein", "meine"],
       correctIndex: 0,
@@ -52,7 +52,7 @@ export const lessonB109: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر المعنى:",
+      instructionAr: "مراجعة من A1 (درس a1-06 — أوقات الفراغ والهوايات): اختر المعنى:",
       questionDe: "der Verein",
       options: ["الجمعية/النادي", "الشركة", "المدرسة", "المستشفى"],
       correctIndex: 0,
@@ -62,7 +62,7 @@ export const lessonB109: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من B1: أكمل:",
+      instructionAr: "مراجعة من B1 (درس b1-01 — التعليم والدراسة): أكمل:",
       template: "Das Buch des ___ (معلم).",
       blanks: [
         { correct: "Lehrers", options: ["Lehrers", "Lehrer", "Lehreren"] },

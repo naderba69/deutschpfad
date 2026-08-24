@@ -42,7 +42,7 @@ export const lessonB106: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر الصيغة الصحيحة:",
+      instructionAr: "مراجعة من A1 (درس a1-08 — الملابس والألوان): اختر الصيغة الصحيحة:",
       questionDe: "Das Hemd ist ___. (أحمر)",
       options: ["rot", "rote", "rotes", "roten"],
       correctIndex: 0,
@@ -52,7 +52,7 @@ export const lessonB106: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر الأداة:",
+      instructionAr: "مراجعة من A1 (درس a1-11 — التنقل في المدينة): اختر الأداة:",
       questionDe: "___ Museum ist groß.",
       options: ["Das", "Der", "Die", "Ein"],
       correctIndex: 0,
@@ -62,7 +62,7 @@ export const lessonB106: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من A2: أكمل:",
+      instructionAr: "مراجعة من A2 (درس a2-06 — الإعلام والأخبار): أكمل:",
       template: "Ich finde, dass der Film gut ___.",
       blanks: [
         { correct: "ist", options: ["ist", "sein", "wird"] },

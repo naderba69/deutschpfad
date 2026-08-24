@@ -41,7 +41,7 @@ export const lessonB105: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1: اختر الصيغة الصحيحة:",
+      instructionAr: "مراجعة من B1 (درس b1-04 — الإعلام والمجتمع): اختر الصيغة الصحيحة:",
       questionDe: "Wenn ich Zeit ___, würde ich kommen.",
       options: ["hätte", "habe", "hatte", "haben"],
       correctIndex: 0,
@@ -51,7 +51,7 @@ export const lessonB105: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A1: اختر المعنى:",
+      instructionAr: "مراجعة من A1 (درس a1-06 — أوقات الفراغ والهوايات): اختر المعنى:",
       questionDe: "der Sport",
       options: ["الرياضة", "الصحة", "الغذاء", "النوم"],
       correctIndex: 0,
@@ -61,7 +61,7 @@ export const lessonB105: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من A2: أكمل:",
+      instructionAr: "مراجعة من A2 (درس a2-02 — الصحة والطبيب): أكمل:",
       template: "Ich habe ___. (صداع)",
       blanks: [
         { correct: "Kopfschmerzen", options: ["Kopfschmerzen", "Bauchschmerzen", "Halsschmerzen"] },
