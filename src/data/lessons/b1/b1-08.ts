@@ -130,6 +130,7 @@ export const lessonB108: Lesson = {
           { label: "weder ... noch", cells: ["لا... ولا", "Ich habe weder Zeit noch Geld."] },
           { label: "entweder ... oder", cells: ["إما... أو", "Entweder du lernst, oder du bestehst nicht."] },
           { label: "je ... desto", cells: ["كلما... كلما", "Je mehr du übst, desto besser wirst du."] },
+          { label: "einerseits ... andererseits", cells: ["من ناحية... ومن ناحية أخرى", "Einerseits spart die Technik Zeit, andererseits macht sie abhängig."] },
         ],
       },
       examples: [
@@ -138,6 +139,7 @@ export const lessonB108: Lesson = {
         { de: "Ich habe weder Zeit noch Geduld.", ar: "ليس لدي وقت ولا صبر." },
         { de: "Entweder wir passen uns an, oder wir bleiben zurück.", ar: "إما أن نتكيف أو نبقى متخلفين." },
         { de: "Je mehr Technik wir haben, desto schneller leben wir.", ar: "كلما زادت التقنية زادت سرعة حياتنا." },
+        { de: "Einerseits ist das Smartphone praktisch, andererseits kostet es viel Zeit.", ar: "من ناحية الهاتف الذكي عملي، ومن ناحية أخرى يكلّف وقتاً كثيراً." },
       ],
       comparisonWithArabic:
         "«ليس فقط... بل أيضاً» = nicht nur... sondern auch — مطابقة تامة! «إما... أو» = entweder... oder، «لا... ولا» = weder... noch. والروابط العربية نفسها تماماً.",
@@ -381,6 +383,18 @@ export const lessonB108: Lesson = {
       audioText: "Sowohl das Handy als auch der Computer sind nützlich.",
       explanation: "كل من الهاتف والحاسوب مفيدان — sowohl... als auch.",
       errorType: "spelling",
+    },
+    {
+      id: "e11",
+      type: "fill-blank",
+      instructionAr: "أكمل بالرابط المزدوج المناسب (موازنة إيجابيات وسلبيات):",
+      template: "___ spart die Technik viel Zeit, andererseits macht sie uns abhängig.",
+      blanks: [
+        { correct: "Einerseits", options: ["Einerseits", "Entweder", "Weder"], errorType: "grammar" },
+      ],
+      explanation:
+        "الموازنة بين وجهين: einerseits ... andererseits (من ناحية... ومن ناحية أخرى). لا تخلطها بـ entweder... oder (اختيار) ولا weder... noch (نفي).",
+      errorType: "grammar",
     },
   ],
 
