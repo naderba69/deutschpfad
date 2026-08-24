@@ -1,4 +1,4 @@
-import {AlertTriangle, BookOpen, ClipboardCheck, Dumbbell, Headphones, Languages, Layers, Lightbulb, MessageSquareText, Mic, PenLine, Repeat, Sparkles, TableProperties, Target, type LucideIcon} from "lucide-react";
+import {AlertTriangle, BookMarked, BookOpen, ClipboardCheck, Dumbbell, Headphones, Languages, Layers, Lightbulb, MessageSquareText, Mic, PenLine, Repeat, Sparkles, TableProperties, Target, type LucideIcon} from "lucide-react";
 
 /**
  * المكونات العشرة الإلزامية لكل درس — تعريف موحد
@@ -16,6 +16,7 @@ export const LESSON_SECTIONS: LessonSectionDef[] = [
   { id: "review", label: "مراجعة تراكمية (Interleaving)", short: "مراجعة سابقة", icon: Repeat },
   { id: "theorie", label: "الشرح النظري", short: "الشرح", icon: BookOpen },
   { id: "verben", label: "جدول الأفعال الشاذة", short: "أفعال شاذة", icon: TableProperties },
+  { id: "lesetext", label: "نصّ القراءة (Lesetext)", short: "القراءة", icon: BookMarked },
   { id: "hoerverstehen", label: "الاستماع (Hörverstehen)", short: "الاستماع", icon: Headphones },
   { id: "aussprache", label: "النطق (Aussprache)", short: "النطق", icon: Mic },
   { id: "schreiben", label: "الكتابة (Schreiben)", short: "الكتابة", icon: PenLine },

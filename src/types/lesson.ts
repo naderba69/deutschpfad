@@ -284,6 +284,49 @@ export interface TheoryBlock {
 }
 
 /** 4) الاستماع */
+/** ═══ نصّ القراءة الممتدّ (Lesetext) ═══
+ * بنية معاهد اللغة: نصّ متّصل ← مفردات مشروحة ← أسئلة فهم ← عبارات جاهزة.
+ * القراءة المتّصلة هي ما ينقل المتعلّم من فهم الجملة إلى فهم الخطاب،
+ * ولا يبلغ أحدٌ B2 بجملٍ مفردة مهما كثرت. */
+export interface ReadingGlossItem {
+  /** الكلمة كما وردت في النصّ */
+  de: string;
+  ar: string;
+  /** ملاحظة نحوية أو استعمالية موجزة (اختياري) */
+  noteAr?: string;
+}
+export interface ReadingComprehensionQuestion extends McqExercise {
+  /** فقرة النصّ التي يقع فيها الجواب — للتغذية الراجعة */
+  paragraph?: number;
+}
+export interface ReadingText {
+  id: string;
+  titleDe: string;
+  titleAr: string;
+  /** نوع النصّ: يُدرَّب المتعلّم على تمييز الأنواع كما في امتحانات Goethe */
+  textType:
+    | "dialog"
+    | "email"
+    | "blog"
+    | "artikel"
+    | "erzaehlung"
+    | "anzeige"
+    | "brief"
+    | "bericht";
+  /** فقرات النصّ الألماني — فقرة لكل عنصر */
+  paragraphs: string[];
+  /** الترجمة العربية، فقرةً بفقرة — بالطول نفسه */
+  paragraphsAr: string[];
+  /** المفردات الجديدة مشروحة */
+  glossary: ReadingGlossItem[];
+  /** أسئلة الفهم */
+  questions: ReadingComprehensionQuestion[];
+  /** عبارات جاهزة للاستعمال مستخرَجة من النصّ (Redemittel) */
+  redemittel?: { de: string; ar: string }[];
+  /** سؤال نقاش يربط النصّ بحياة المتعلّم */
+  discussionAr?: string;
+}
+
 export interface ListeningLine {
   speaker: string;
   de: string;
@@ -405,6 +448,8 @@ export interface Lesson {
   review?: Exercise[];
   /** 3 */
   theory: TheoryBlock[];
+  /** 3.5 — نصّ القراءة الممتدّ (Lesetext) */
+  reading?: ReadingText;
   /** 4 */
   listening: { items: ListeningItem[]; questions: ListeningQuestion[] };
   /** 5 */

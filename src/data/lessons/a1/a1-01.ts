@@ -50,9 +50,9 @@ export const lessonA101: Lesson = {
       titleAr: "الفعل sein (يكون) — تصريفه في المضارع",
       titleDe: "Das Verb „sein“ im Präsens",
       explanationAr:
-        "الفعل sein هو أهم فعل في اللغة الألمانية. نستخدمه للتعريف بالنفس (الاسم، البلد، المهنة، الصفة). تصريفه شاذ تماماً ويجب حفظه عن ظهر قلب.",
+        "الفعل **sein** (يكون) هو أكثر أفعال الألمانية استعمالاً على الإطلاق، وأشدّها شذوذاً. ولذلك نبدأ به: لأنّك لن تنطق جملةً واحدة عن نفسك دونه.\n\n**لماذا هو شاذّ إلى هذا الحدّ؟** لأنّ صيغه الحالية ليست تصريفاً لفعلٍ واحد، بل بقايا **ثلاثة جذور هندو-أوروبية قديمة** اندمجت في فعل واحد عبر القرون: جذر *es-* أعطانا ist و sind، وجذر *bheu-* أعطانا bin و bist، وجذر ثالث أعطانا صيغ الماضي. والظاهرة نفسها في الإنجليزية (am / is / are / was) وفي الفرنسية (suis / est / sommes). فالشذوذ ليس عبثاً لغوياً، بل أثرٌ تاريخي — وهذا يعني أنّه **لا قاعدة تُشتقّ منه**، والحفظ هو السبيل الوحيد.\n\n**متى نستعمله؟** في أربعة مواضع:\n· الاسم والهويّة: Ich bin Sami.\n· الأصل والجنسية: Ich bin aus Tunesien.\n· المهنة — **بلا أداة**: Ich bin Student. (لا نقول ein Student)\n· الحالة والصفة: Ich bin müde.\n\n**والقاعدة الحاسمة التي تُخالف العربية:** الفعل sein **لا يُحذف أبداً**. العربية تقول «أنا مهندس» بلا فعل — وهي جملة تامّة. والألمانية لا تقبل ذلك إطلاقاً: Ich Ingenieur جملة مكسورة لا معنى لها. يجب أن تقول Ich **bin** Ingenieur.\n\n**تنبيه على النطق:** حرف s في أوّل sind و seid يُنطق **ز** لا **س** — زِنْد لا سِنْد. وهذه قاعدة عامّة في الألمانية: s قبل حرف علّة تُنطق مجهورة.",
       whyAr:
-        "لماذا؟ لأن العربية في جمل كثيرة لا تحتاج فعل ربط: نقول «أنا من تونس» مباشرة، أما الألمانية فتتطلب دائماً فعلاً — Ich bin aus Tunesien. بدون bin تكون الجملة ناقصة.",
+        "لماذا نبدأ الألمانية كلّها بهذا الفعل تحديداً؟\n\nأوّلاً لأنّه **مفتاح الجملة الاسمية**، وهي أوّل ما يحتاجه المتعلّم: من أنت، من أين، ما مهنتك، كيف حالك. أربعة أسئلة يُجاب عنها كلّها بـ sein.\n\nوثانياً — وهو الأهمّ — لأنّ **العربي بالذات معرَّض لخطأ بنيوي هنا**. لغتك الأم تسمح بالجملة الاسمية بلا فعل رابط، فذهنك مبرمَج على أنّ «أنا متعب» جملة كاملة. حين تنقل هذه البرمجة إلى الألمانية تُنتج Ich müde، وهي أشيع أخطاء المبتدئين العرب على الإطلاق. فالبدء بـ sein ليس ترتيباً اعتباطياً، بل علاجٌ مبكّر لعادةٍ ذهنية.\n\nوثالثاً لأنّ sein سيعود إليك مرّتين لاحقاً: فعلاً مساعداً في الماضي التامّ (Ich **bin** gefahren)، وفعلاً في المبني للمجهول الحالي. فمن أتقنه اليوم وفّر على نفسه عناءً في B1.",
       table: {
         title: "تصريف sein في المضارع",
         columns: ["الضمير", "تصريفه", "النطق التقريبي"],
@@ -66,28 +66,24 @@ export const lessonA101: Lesson = {
         ],
       },
       examples: [
-        { de: "Ich bin Sami.", ar: "أنا سامي." },
-        { de: "Ich bin aus Tunesien.", ar: "أنا من تونس." },
-        { de: "Du bist sehr nett.", ar: "أنتَ لطيف جداً." },
-        { de: "Er ist Lehrer.", ar: "هو معلم." },
-        { de: "Wir sind Studenten.", ar: "نحن طلاب." },
-        { de: "Sie sind Frau Weber.", ar: "حضرتكِ السيدة فيبر." },
+        {"de": "Ich bin Sami.", "ar": "أنا سامي."},
+        {"de": "Du bist sehr nett.", "ar": "أنتَ لطيف جداً."},
+        {"de": "Er ist Ingenieur.", "ar": "هو مهندس. (بلا أداة قبل المهنة)"},
+        {"de": "Wir sind aus Tunesien.", "ar": "نحن من تونس."},
+        {"de": "Ihr seid Studenten.", "ar": "أنتم طلاب."},
+        {"de": "Sie sind Frau Meier, richtig?", "ar": "حضرتك السيدة ماير، أليس كذلك؟"},
+        {"de": "Das ist meine Schwester.", "ar": "هذه أختي. (das للتقديم مهما كان جنس المقدَّم)"},
+        {"de": "Ich bin müde, aber glücklich.", "ar": "أنا متعب لكنّي سعيد."},
       ],
       comparisonWithArabic:
-        "في العربية الجملة الاسمية لا تحتاج فعلاً رابطاً: «أنا من تونس» (بدون «أكون»). في الألمانية الجملة الاسمية تحتاج فعلاً دائماً. أيضاً: العربية تلحق ضمير الملكية بالاسم، لكن هذا موضوع درس قادم.",
+        "الفرق بين اللغتين هنا **بنيوي لا معجمي** — أي أنّه في تركيب الجملة نفسه لا في الكلمات.\n\nالعربية تعرف ما يسمّيه النحاة **الجملة الاسمية**: مبتدأ وخبر بلا فعل. «أنا من تونس»، «الجوّ جميل»، «هو طبيب». والرابط فيها مقدَّر لا ملفوظ. بل إنّ العربية تُظهر «يكون» فقط حين تحتاج إلى زمنٍ غير الحاضر: «كنتُ طالباً»، «سأكون هناك».\n\nوالألمانية على النقيض: **لا جملة بلا فعل مصرَّف**، أيّاً كان زمنها. فما تُقدّره العربية يجب أن تنطقه الألمانية.\n\nوهذا فرقٌ يُنتج ثلاثة أخطاء متتالية عند العربي:\n· حذف الفعل: Ich müde ✗\n· وضع haben مكانه، قياساً على «عندي»: Ich habe müde ✗\n· إضافة أداة قبل المهنة، قياساً على «أنا مهندسٌ» بالتنوين: Ich bin ein Ingenieur ✗\n\nوالمفارقة أنّ العربية **تملك** الرابط الملفوظ في الماضي («كنتُ»)، فالبنية ليست غريبة عن ذهنك — الغريب أن تلفظها في الحاضر.",
       eselsbruecke:
-        "احفظها كقصة بيت العائلة: «أنا بِنْ (bin) داخل البيت، وأنتَ بِسْت (bist) عند الباب، وهو/هي إسْت (ist) فوق السطح، ونحن زِنْد (sind) جميعاً، وأنتم زايْت (seid) في الحديقة». تكررها ثلاث مرات بصوت عالٍ وسيثبت التصريف.",
+        "بيت العائلة: «أنا بِنْ (bin) داخل البيت، وأنتَ بِسْت (bist) عند الباب، وهو/هي إِسْت (ist) فوق السطح، ونحن زِنْد (sind) في الصالة، وأنتم زايْت (seid) في الحديقة، وهم زِنْد (sind) عائدون». كرّرها ثلاثاً بصوتٍ عالٍ. ولاحظ أنّ wir و sie يتشاركان sind — فالصيغ ستّ والأشكال خمسة.",
       commonMistakes: [
-        {
-          wrong: "Ich aus Tunis.",
-          right: "Ich bin aus Tunis.",
-          whyAr: "حذف الفعل bin — في العربية نقول «أنا من تونس» بدون فعل، لكن الألمانية تتطلب الفعل دائماً.",
-        },
-        {
-          wrong: "Ich ist Sami.",
-          right: "Ich bin Sami.",
-          whyAr: "خلط بين bin (أنا) و ist (هو/هي) — لأنك حفظت ist أولاً. تذكّر: ist للغير، bin لي.",
-        },
+        {"wrong": "Ich müde.", "right": "Ich bin müde.", "whyAr": "حذف الفعل الرابط — وهو أشيع أخطاء العربي على الإطلاق. العربية تُجيز «أنا متعب» بلا فعل، والألمانية لا جملة فيها بلا فعل مصرَّف. الرابط مقدَّرٌ عندك، ملفوظٌ عندهم."},
+        {"wrong": "Ich habe müde.", "right": "Ich bin müde.", "whyAr": "خلط sein بـ haben. الفعل haben يعني «يملك شيئاً»، وsein يعني «يكون في حالة». والتعب حالةٌ لا مِلك. والخطأ ناتج عن قياس «عندي تعب» العربية على الألمانية."},
+        {"wrong": "Ich bin ein Ingenieur.", "right": "Ich bin Ingenieur.", "whyAr": "المهن والجنسيات والديانات تأتي بعد sein بلا أداة إطلاقاً. والعربي يُقحم ein لأنّ العربية تُنوّن «مهندسٌ»، فيترجم التنوين أداةً. أمّا إذا وُصفت المهنة فتعود الأداة: Er ist ein guter Ingenieur."},
+        {"wrong": "Du sind mein Freund.", "right": "Du bist mein Freund.", "whyAr": "خلط صيغة du بصيغة wir/sie. والسبب أنّ sind تتكرّر في خانتين فتلتصق في الذهن كأنّها الصيغة العامّة. راجع الجدول: du تأخذ bist وحدها."},
       ],
       relatedRuleComparison: {
         title: "sein أم haben؟",
@@ -100,9 +96,9 @@ export const lessonA101: Lesson = {
       titleAr: "أسئلة الاستفهام W-Fragen وترتيب الجملة (V2)",
       titleDe: "W-Fragen und die Satzstellung (V2)",
       explanationAr:
-        "أسئلة الاستفهام في الألمانية تبدأ بكلمة سؤال تبدأ بحرف W: wer (من)، was (ماذا)، wo (أين)، woher (من أين)، wohin (إلى أين)، wann (متى)، warum (لماذا)، wie (كيف). بعد كلمة السؤال يأتي الفعل مباشرة ثم الفاعل.",
+        "السؤال في الألمانية نوعان، وهذه الكتلة عن أوّلهما: **السؤال المفتوح** الذي يبدأ بكلمة استفهام ويطلب معلومة (لا نعم/لا).\n\n**كل كلمات الاستفهام تبدأ بحرف W** — وهذه ليست مصادفة: فهي جميعاً من أصلٍ هندو-أوروبي واحد *kʷ-*، وهو نفسه الذي أعطى الإنجليزية wh- (who, what, where) واللاتينية qu- (qui, quid). عائلة واحدة في ثلاث لغات.\n\n**الكلمات الثماني الأساسية:**\n· wer = من · was = ماذا · wo = أين\n· woher = من أين · wohin = إلى أين\n· wann = متى · warum = لماذا · wie = كيف\n\nولاحظ الثلاثية wo / woher / wohin: الجذر wo يعني «أين»، ثم -her تعني «قادماً من» و-hin تعني «ذاهباً إلى». فالألمانية تُفرّق بين المكان والمصدر والوجهة بثلاث كلمات، بينما العربية تقول «أين» و«من أين» و«إلى أين».\n\n**والقاعدة البنيوية — V2:** الفعل المصرَّف يقع في **المركز الثاني** من الجملة دائماً. وفي السؤال المفتوح تحتلّ كلمة الاستفهام المركز الأوّل، فيأتي الفعل بعدها مباشرة، ثم الفاعل:\n\nWoher **kommst** du? — المركز الأوّل Woher، والثاني kommst.\nWie **heißt** Ihre Tochter? — المركز الأوّل Wie، والثاني heißt.\n\nو«المركز» هنا لا يعني الكلمة، بل **الوحدة المعنوية**. فجملة Wie alt bist du? تضع Wie alt كلّها في المركز الأوّل، لأنّها سؤال واحد («كم عمرك») لا سؤالان.",
       whyAr:
-        "لماذا الفعل مباشرة بعد W؟ لأن الألمانية تعتمد على ترتيب صارم للجملة: «الفعل في المركز الثاني». في السؤال W: الكلمة W في المركز الأول والفعل في الثاني — هذا هو ترتيب الجملة الألماني (V2) الذي تختلف فيه عن العربية.",
+        "لماذا نُلحّ على قاعدة V2 من الدرس الأوّل، مع أنّها تبدو تفصيلاً نحوياً متقدّماً؟\n\nلأنّها **العمود الفقري للجملة الألمانية كلّها**، ولأنّ كل ما تتعلّمه لاحقاً يُبنى عليها. الجملة الخبرية V2، والسؤال المفتوح V2، والجملة المبدوءة بظرف V2 (Morgen komme ich). ثم تأتي الجملة الفرعية في A2 لتقلبها فتضع الفعل في النهاية — وحينها لن تفهم الاستثناء إن لم تكن القاعدة راسخة.\n\nوالسبب الثاني عملي: العربي حين يسأل يميل إلى ترتيب لغته الأم، فيقول Woher du kommst؟ لأنّ العربية تقول «من أين أنتَ تأتي». وهذا الترتيب مفهوم للألماني لكنّه **يُصنَّف فوراً كخطأ أجنبي**، ويُخفّض تقييمك في الامتحان الشفوي. تثبيت V2 مبكراً يمنع تحجّر هذه العادة.",
       table: {
         title: "كلمات الاستفهام الأساسية",
         columns: ["الكلمة", "المعنى", "مثال"],
@@ -117,37 +113,35 @@ export const lessonA101: Lesson = {
         ],
       },
       examples: [
-        { de: "Wie heißt du? — Ich heiße Anna.", ar: "ما اسمك؟ — اسمي آنا." },
-        { de: "Woher kommst du? — Ich komme aus Tunesien.", ar: "من أين أنت؟ — أنا من تونس." },
-        { de: "Wo wohnst du? — Ich wohne in Tunis.", ar: "أين تسكن؟ — أسكن في تونس." },
-        { de: "Wer ist das? — Das ist meine Schwester.", ar: "من هذه؟ — هذه أختي." },
-        { de: "Was ist das? — Das ist ein Buch.", ar: "ما هذا؟ — هذا كتاب." },
+        {"de": "Wie heißt du?", "ar": "ما اسمك؟ (حرفياً: كيف تُسمّى؟)"},
+        {"de": "Woher kommst du?", "ar": "من أين أنت؟ (حرفياً: من أين تأتي؟)"},
+        {"de": "Wo wohnen Sie?", "ar": "أين تسكن حضرتك؟"},
+        {"de": "Wann beginnt der Kurs?", "ar": "متى تبدأ الدورة؟"},
+        {"de": "Warum lernst du Deutsch?", "ar": "لماذا تتعلّم الألمانية؟"},
+        {"de": "Wie alt bist du?", "ar": "كم عمرك؟ (Wie alt وحدةٌ واحدة في المركز الأوّل)"},
+        {"de": "Wohin gehst du?", "ar": "إلى أين تذهب؟"},
       ],
       comparisonWithArabic:
-        "في العربية نقول «من أين أنت؟» — كلمة السؤال ثم الاسم مباشرة بدون فعل. في الألمانية: Woher kommst du? — كلمة السؤال ثم الفعل ثم الفاعل. انتبه أن الفعل لا يُحذف أبداً.",
+        "العربية والألمانية تتّفقان في وضع أداة الاستفهام أوّلاً، وتختلفان في كلّ ما بعدها.\n\n**أوّلاً: وجوب الفعل.** العربية تسأل بلا فعل: «من أين أنت؟» — أداة ثم ضمير. والألمانية توجب الفعل: Woher **kommst** du؟ حرفيّاً «من أين تأتي أنت؟». فالعربي يميل إلى Woher du؟ أو Woher bist du؟ — والثانية مفهومة لكنّها غير مألوفة؛ الألماني يسأل عن الفعل لا عن الكون.\n\n**ثانياً: الترتيب.** العربية تقول «متى أنتَ تسافر؟» فتُقدّم الفاعل على الفعل. والألمانية تعكس: Wann **fährst du**؟ — الفعل قبل الفاعل دائماً.\n\n**ثالثاً: التفريق الثلاثي.** العربية تبني «من أين» و«إلى أين» بإضافة حرف جرّ إلى «أين». والألمانية تملك كلمات مستقلّة: wo / woher / wohin. والخطأ الشائع أن يُستعمل wo مكان woher: Wo kommst du؟ تعني «أين تأتي؟» وهي ركيكة؛ الصواب Woher kommst du؟\n\n**ورابعاً — نقطة تشابه مفيدة:** العربية تسأل عن العمر بـ«كم عمرك؟» والألمانية بـ Wie alt bist du؟ أي «كم كبيرٌ أنت؟». كلتاهما تسأل عن مقدارٍ لا عن شيء.",
       eselsbruecke:
-        "كل أسئلة الاستفهام الألمانية تبدأ بـ W — تذكّرها بعبارة: «وَصَلَنا السؤال بـ W». و«W تليها الفعل مباشرة»: W + Verb + Subjekt.",
+        "أدوات الاستفهام كلّها تبدأ بـ W — ولذلك تُسمّى W-Fragen. واحفظ ترتيب السؤال كسُلَّم من ثلاث درجات: **W + فعل + فاعل**. «وَقَفَ فؤاد» — W، ثم قِف عند الفعل، ثم الفاعل. وللثلاثية: wo ثابتٌ في مكانه، wo**her** جاء من هناك (her = هنا إليّ)، wo**hin** ذهب إلى هناك (hin = من هنا بعيداً).",
       commonMistakes: [
-        {
-          wrong: "Wo du wohnst?",
-          right: "Wo wohnst du?",
-          whyAr: "وضع الفعل في آخر السؤال (تأثير من ترتيب العربية) — القاعدة: بعد W يأتي الفعل مباشرة.",
-        },
-        {
-          wrong: "Wie du heißt?",
-          right: "Wie heißt du?",
-          whyAr: "نفس الخطأ: الفعل heißt يجب أن يأتي بعد wie مباشرة.",
-        },
+        {"wrong": "Woher du kommst?", "right": "Woher kommst du?", "whyAr": "ترتيب عربي منقول حرفياً: «من أين أنت تأتي». الألمانية توجب الفعل في المركز الثاني مباشرة بعد أداة الاستفهام، والفاعل بعده. هذا الخطأ مفهومٌ للسامع لكنّه يُسمع أجنبياً فوراً."},
+        {"wrong": "Wo kommst du?", "right": "Woher kommst du?", "whyAr": "خلط wo (أين — مكان ثابت) بـ woher (من أين — مصدر). فعل kommen يدلّ على حركةٍ من مكان، فيلزمه woher. أمّا wo فمع الأفعال الساكنة: Wo wohnst du?"},
+        {"wrong": "Was ist dein Name? — Ich bin Name Sami.", "right": "Wie heißt du? — Ich heiße Sami.", "whyAr": "السؤال عن الاسم في الألمانية بـ wie (كيف) لا بـ was (ماذا)، لأنّ المنطق «كيف تُسمّى» لا «ما اسمك». وWas ist dein Name? صحيحة نحوياً لكنّها أقلّ استعمالاً وأكثر رسمية."},
+        {"wrong": "Wie alt du bist?", "right": "Wie alt bist du?", "whyAr": "Wie alt وحدة معنوية واحدة تحتلّ المركز الأوّل كلّه، فيأتي الفعل bist في الثاني ثم الفاعل. والخطأ أن يُحسب alt كلمةً مستقلّة فيُزاح الفعل إلى الثالث."},
       ],
+      relatedRuleComparison: {"title": "سؤال W أم سؤال نعم/لا؟", "content": "هذه الكتلة عن السؤال المفتوح. وهناك نوعٌ ثانٍ: سؤال الإجابة بنعم/لا (Ja/Nein-Frage)، وفيه يتقدّم الفعل إلى المركز الأوّل بلا أداة استفهام: Kommst du aus Tunesien? — Ja. فالفرق بين النوعين موضع الفعل: الأوّل أم الثاني. ومع أداة W يستحيل أن يتصدّر الفعل."},
     },
+    
     {
       id: "t3",
       titleAr: "تصريف الأفعال المنتظمة في المضارع — السلسلة الذهبية",
       titleDe: "Das Präsens der regelmäßigen Verben: lernen, wohnen, spielen",
       explanationAr:
-        "معظم الأفعال الألمانية منتظمة: نأخذ جذر الفعل (lernen → lern-) ونضيف النهايات الثابتة: -e، -st، -t، -en، -t، -en. Ich lerne (أتعلم)، du lernst، er lernt، wir lernen، ihr lernt، sie lernen. جربها مع wohnen وspielen وkommen — نفس السلسلة تماماً.",
+        "بعد الفعل الشاذّ sein، ننتقل إلى **الأغلبية الساحقة**: الأفعال المنتظمة (regelmäßige Verben)، وهي نحو 90% من أفعال الألمانية.\n\n**كيف نبني الفعل؟** خطوتان لا ثالثة لهما:\n١. خذ المصدر واحذف نهاية **-en**: lern**en** ← lern- (هذا هو **الجذع**، der Stamm)\n٢. أضف نهاية الضمير إلى الجذع.\n\n**والنهايات ستّ، نسمّيها السلسلة الذهبية:**\nich **-e** · du **-st** · er/sie/es **-t** · wir **-en** · ihr **-t** · sie/Sie **-en**\n\nlernen ← ich lerne, du lernst, er lernt, wir lernen, ihr lernt, sie lernen.\nوالسلسلة نفسها تعمل مع wohnen و spielen و kommen و machen و kochen — بلا استثناء.\n\n**لاحظ اقتصاد النظام:** ستّ خانات لكنّ الأشكال أربعة فقط، لأنّ wir و sie/Sie يتشاركان -en، و er و ihr يتشاركان -t. فالحفظ أخفّ ممّا يبدو.\n\n**قاعدة النطق المساعدة (وصلة -e-):** إذا انتهى الجذع بـ **t** أو **d** أو بمجموعة صعبة، أُدخلت -e- قبل النهاية تسهيلاً للنطق:\narbeiten ← du arbeit**e**st, er arbeit**e**t (لا arbeitst التي يعسر لفظها)\nfinden ← du find**e**st · warten ← er wart**e**t\n\n**والاستثناء الصوتي:** الأفعال المنتهية بـ -s / -ß / -z / -tz تكتفي بـ **-t** في du، لأنّ صوت s موجود أصلاً:\nheißen ← du heiß**t** (لا heißst) · tanzen ← du tanz**t**",
       whyAr:
-        "لماذا نبدأ بها هنا؟ لأن 90% من أفعال المحادثة اليومية منتظمة: kommen، wohnen، lernen، spielen، kochen، arbeiten... من أتقن السلسلة الذهبية (-e/-st/-t/-en/-t/-en) استطاع التحدث عن نفسه في عشرات المواقف قبل حفظ أي استثناء.",
+        "لماذا تُقدَّم السلسلة الذهبية في الدرس الأوّل، قبل أيّ فعل شاذّ آخر؟\n\nلأنّها **أعلى مردودٍ تعليمي في المنهج كلّه**. ستّ نهايات تُحفظ في دقائق، تفتح لك مئات الأفعال دفعةً واحدة. من أتقنها اليوم يستطيع أن يقول «أسكن، أعمل، أتعلّم، ألعب، أطبخ، أشتري» — أي أن يتحدّث عن يومه كاملاً قبل أن يحفظ استثناءً واحداً.\n\nولأنّها كذلك **المرجع الذي يُقاس عليه الشذوذ**. حين تلتقي لاحقاً بـ fahren ← du fährst أو nehmen ← du nimmst، لن تراها فوضى بل انحرافاً محدَّداً عن قاعدةٍ تعرفها: النهايات نفسها، لكنّ حرف العلّة في الجذع تغيّر. ومن لم يُتقن القاعدة يرى الشذوذ عشوائياً فيحفظ كل فعل على حدة — وهو طريق مسدود.\n\nوأخيراً: وصلة -e- ليست تفصيلاً تجميلياً. arbeiten من أوائل الأفعال التي ستستعملها («أين تعمل؟»)، وحذف الوصلة يجعل الكلمة عسرة النطق ومسموعة كخطأ.",
       table: {
         title: "السلسلة الذهبية: نهايات المضارع",
         columns: ["الضمير", "lernen", "wohnen", "النهاية"],
@@ -161,21 +155,24 @@ export const lessonA101: Lesson = {
         ],
       },
       examples: [
-        { de: "Ich lerne Deutsch.", ar: "أتعلم الألمانية." },
-        { de: "Du spielst Fußball.", ar: "أنتَ تلعب كرة القدم." },
-        { de: "Er wohnt in Berlin.", ar: "هو يسكن في برلين." },
-        { de: "Wir kochen zusammen.", ar: "نطبخ معاً." },
-        { de: "Ihr arbeitet viel.", ar: "أنتم تعملون كثيراً." },
-        { de: "Sie kommen aus Tunesien.", ar: "هم قادمون من تونس." },
+        {"de": "Ich lerne Deutsch.", "ar": "أتعلّم الألمانية."},
+        {"de": "Du wohnst in Tunis.", "ar": "أنت تسكن في تونس."},
+        {"de": "Er spielt Fußball.", "ar": "هو يلعب كرة القدم."},
+        {"de": "Wir kochen zusammen.", "ar": "نطبخ معاً."},
+        {"de": "Ihr macht das gut.", "ar": "أنتم تفعلون ذلك جيداً."},
+        {"de": "Sie kommen aus Deutschland.", "ar": "هم يأتون من ألمانيا."},
+        {"de": "Du arbeitest viel.", "ar": "أنت تعمل كثيراً. (وصلة -e- لأنّ الجذع ينتهي بـ t)"},
+        {"de": "Du heißt Sami.", "ar": "أنت تُسمّى سامي. (‑t وحدها بعد ß)"},
       ],
       comparisonWithArabic:
-        "العربية تلحق الضمائر بالأفعال أو تغيّر حركة الفعل («يأكلُ/يأكلون»). الألمانية تلحق نهايات ثابتة بالفعل — نفس النهاية لكل ضمير. والتشابه: كلاهما يغيّر شكل الفعل مع الضمير — لكن الألمانية هنا أسهل وأكثر انتظاماً.",
+        "المقارنة هنا **تصبّ في صالحك**، خلافاً لما يظنّه أكثر المبتدئين.\n\n**العربية أعقد في التصريف.** فعل «كتب» يتغيّر في أوّله وآخره ووسطه: أكتبُ، تكتبُ، يكتبُ، نكتبُ، تكتبون، يكتبون — سوابق ولواحق وحركات داخلية. والألمانية لا تمسّ الجذع إطلاقاً في الأفعال المنتظمة: lern- ثابتة، والتغيير في النهاية وحدها.\n\n**والاشتقاق مألوف لك.** أنت تعرف من العربية فكرة الجذر الذي تُبنى عليه صيغ: ك-ت-ب ← كتب، كاتب، مكتوب، مكتبة. والألمانية تفعل الشيء نفسه بجذعٍ ونهايات: lern- ← lerne, lernst, Lerner, gelernt. فالآلية ليست غريبة عن ذهنك، بل هي آليتك نفسها بأدوات أبسط.\n\n**فأين تكمن الصعوبة الحقيقية إذاً؟** في موضعين:\n· **ضمائر لا مقابل لها.** الألمانية تفرّق بين du (أنتَ الودّي) و Sie (حضرتك الرسمي)، والعربية لا تملك هذا التمييز فتستعمل «أنتَ» للجميع. واختيار الضمير الخطأ في الألمانية **خطأٌ اجتماعي** لا نحوي، وهو أثقل.\n· **غياب المثنّى.** العربية تقول «أنتما تكتبان»، والألمانية لا مثنّى فيها إطلاقاً: ihr للاثنين وللعشرة سواء. وهذا **تبسيط** لصالحك، لا صعوبة.\n\nوموضع الالتباس الأخير: er و ihr يتشاركان النهاية -t، فتسمع lernt ولا تعرف أهو «هو» أم «أنتم» — والفاعل وحده يفصل.",
       eselsbruecke:
-        "السلسلة الذهبية: «-e، -st، -t، -en، -t، -en» — احفظها كأغنية: «أنا ليرنِه، أنتَ ليرنست، هو ليرنت، نحن ليرنِن، أنتم ليرنت، هم ليرنِن».",
+        "السلسلة الذهبية على إيقاع: «إِهْ ـ إِسْت ـ تْ ـ إِنْ ـ تْ ـ إِنْ» (‑e ‑st ‑t ‑en ‑t ‑en). ولاحظ التناظر: الطرفان -e و -en، والوسطان -st و -t، ثم تتكرّر -t و -en. وللوصلة: **إذا انتهى الجذع بـ t أو d، فامنحه راحةً (-e-) قبل النهاية** — arbeit-**e**-st.",
       commonMistakes: [
-        { wrong: "Ich lernen Deutsch.", right: "Ich lerne Deutsch.", whyAr: "مع ich: النهاية -e دائماً." },
-        { wrong: "Du lerne Deutsch.", right: "Du lernst Deutsch.", whyAr: "مع du: النهاية -st." },
-        { wrong: "Er lernst (بدل lernt)", right: "Er lernt.", whyAr: "مع er/sie/es: -t (وليس -st)." },
+        {"wrong": "Ich lernen Deutsch.", "right": "Ich lerne Deutsch.", "whyAr": "استعمال المصدر بدل الفعل المصرَّف. والسبب أنّ المتعلّم يحفظ الفعل بصيغة القاموس lernen ثم ينساها كما هي. النهاية -en لـ wir وsie فقط، أمّا ich فتأخذ -e."},
+        {"wrong": "Du arbeitst hier.", "right": "Du arbeitest hier.", "whyAr": "إغفال وصلة -e-. جذع arbeit- ينتهي بـ t، فإضافة -st مباشرة تُنتج tst وهي عسرة النطق. القاعدة: الجذع المنتهي بـ t أو d يأخذ -e- قبل نهايتَي du وer."},
+        {"wrong": "Du heißst Sami.", "right": "Du heißt Sami.", "whyAr": "مضاعفة صوت s. الجذع heiß- ينتهي بـ ß وهو صوت s أصلاً، فتكتفي du بـ -t. والقاعدة نفسها مع tanzen ← du tanzt وreisen ← du reist."},
+        {"wrong": "Er lernen Deutsch.", "right": "Er lernt Deutsch.", "whyAr": "خلط نهاية الغائب المفرد بنهاية الجمع. er/sie/es تأخذ -t، أمّا -en فللجمع wir/sie وللصيغة الرسمية Sie. وهذا الخطأ يُربك السامع لأنّه يُغيّر عدد الفاعل."},
       ],
       relatedRuleComparison: {
         title: "sein وheißen — ما تعلمته بالفعل",
@@ -185,6 +182,231 @@ export const lessonA101: Lesson = {
   ],
 
   /* 4) الاستماع */
+  reading: {
+    "id": "read-a1-01",
+    "titleDe": "Amir stellt sich vor",
+    "titleAr": "أمير يقدّم نفسه",
+    "textType": "erzaehlung",
+    "paragraphs": [
+      "Hallo! Ich heiße Amir Ben Salah. Ich komme aus Tunesien, aus der Stadt Sfax. Jetzt wohne ich in Leipzig. Leipzig ist eine Stadt in Deutschland. Ich bin 24 Jahre alt und ich bin Student. Ich lerne Deutsch, denn ich möchte hier Informatik studieren.",
+      "Ich wohne nicht allein. Meine Mitbewohnerin heißt Lena. Sie kommt aus Polen und sie ist auch Studentin. Lena ist sehr nett und sie ist immer freundlich. Am Morgen sagt sie: Guten Morgen, Amir! Wie geht es dir? Und ich antworte: Danke, gut! Und dir?",
+      "Am Montag beginnt mein Deutschkurs. Der Kurs ist von neun bis zwölf Uhr. Meine Lehrerin heißt Frau Weber. Sie fragt uns immer: Woher kommen Sie? Wo wohnen Sie? Warum lernen Sie Deutsch? Wir antworten auf Deutsch. Das ist nicht leicht, aber es macht Spaß.",
+      "Am Abend telefoniere ich mit meiner Familie in Sfax. Meine Mutter fragt: Wie geht es dir in Deutschland? Ich sage: Es geht mir gut, aber ich vermisse euch. Deutschland ist neu für mich, doch ich lerne jeden Tag etwas Neues. Auf Wiedersehen und bis bald!"
+    ],
+    "paragraphsAr": [
+      "مرحباً! اسمي أمير بن صالح. أنا من تونس، من مدينة صفاقس. أسكن الآن في لايبتسيغ، وهي مدينة في ألمانيا. عمري 24 سنة وأنا طالب. أتعلّم الألمانية لأنّني أودّ دراسة المعلوماتية هنا.",
+      "أنا لا أسكن وحدي. شريكتي في السكن اسمها لينا. هي من بولندا وهي طالبة أيضاً. لينا لطيفة جداً وودودة دائماً. في الصباح تقول: صباح الخير يا أمير! كيف حالك؟ فأجيب: بخير، شكراً! وأنتِ؟",
+      "يوم الاثنين تبدأ دورتي في الألمانية. الدورة من التاسعة إلى الثانية عشرة. معلّمتي اسمها السيدة فيبر. تسألنا دائماً: من أين أنتم؟ أين تسكنون؟ لماذا تتعلّمون الألمانية؟ ونجيب بالألمانية. ليس الأمر سهلاً، لكنّه ممتع.",
+      "في المساء أتّصل بأسرتي في صفاقس. تسألني أمّي: كيف حالك في ألمانيا؟ فأقول: أنا بخير، لكنّني أشتاق إليكم. ألمانيا جديدة عليّ، غير أنّني أتعلّم كلّ يوم شيئاً جديداً. إلى اللقاء وإلى القريب!"
+    ],
+    "glossary": [
+      {
+        "de": "heißen",
+        "ar": "يُسمّى / اسمه",
+        "noteAr": "فعل منتظم لكن du تأخذ ‑t وحدها: du heißt (لأنّ الجذع ينتهي بـ ß)."
+      },
+      {
+        "de": "kommen aus",
+        "ar": "يأتي من / أصله من",
+        "noteAr": "aus + اسم البلد للتعبير عن الأصل: Ich komme aus Tunesien."
+      },
+      {
+        "de": "wohnen",
+        "ar": "يسكن",
+        "noteAr": "يُتبع بـ in + مدينة: Ich wohne in Leipzig. لا تخلطه بـ leben (يعيش)."
+      },
+      {
+        "de": "die Stadt",
+        "ar": "المدينة",
+        "noteAr": "مؤنّثة، والجمع شاذّ: die Städte."
+      },
+      {
+        "de": "der Student / die Studentin",
+        "ar": "طالب جامعي / طالبة",
+        "noteAr": "المؤنّث بإضافة ‑in. وبعد sein تأتي بلا أداة: Ich bin Student."
+      },
+      {
+        "de": "nett",
+        "ar": "لطيف",
+        "noteAr": "صفة مع sein: Sie ist nett. لا تحتاج أداةً ولا نهاية."
+      },
+      {
+        "de": "beginnen",
+        "ar": "يبدأ",
+        "noteAr": "منتظم: der Kurs beginnt. مرادفه anfangen (فعل بسابقة منفصلة، لاحقاً)."
+      },
+      {
+        "de": "fragen",
+        "ar": "يسأل",
+        "noteAr": "منتظم تماماً: sie fragt. ضدّه antworten (وجذعه ينتهي بـ t فيأخذ وصلة ‑e‑: du antwortest)."
+      },
+      {
+        "de": "die Lehrerin",
+        "ar": "المعلّمة",
+        "noteAr": "المذكّر der Lehrer، والمؤنّث بإضافة ‑in مع مدّ الحرف أحياناً."
+      },
+      {
+        "de": "leicht",
+        "ar": "سهل / خفيف",
+        "noteAr": "ضدّه schwer. وتُستعمل للوزن والصعوبة معاً."
+      },
+      {
+        "de": "Es macht Spaß",
+        "ar": "إنّه ممتع",
+        "noteAr": "تعبير ثابت. حرفياً «يصنع متعة»؛ لا يُترجم كلمةً كلمة."
+      },
+      {
+        "de": "jeden Tag",
+        "ar": "كلّ يوم",
+        "noteAr": "ظرف زمان في حالة النصب (Akkusativ) — يُحفظ الآن كوحدة."
+      }
+    ],
+    "questions": [
+      {
+        "id": "r1",
+        "type": "multiple-choice",
+        "instructionAr": "اقرأ الفقرة الأولى ثمّ اختر الجواب الصحيح:",
+        "questionDe": "Woher kommt Amir?",
+        "questionAr": "من أين أمير؟",
+        "options": [
+          "Aus Polen",
+          "Aus Tunesien",
+          "Aus Deutschland",
+          "Aus Leipzig"
+        ],
+        "correctIndex": 1,
+        "explanation": "في الفقرة الأولى: «Ich komme aus Tunesien». انتبه للفرق بين مكان الأصل (Tunesien) ومكان السكن الحالي (Leipzig) — كلاهما مذكور، والسؤال بـ woher يطلب الأصل.",
+        "optionExplanations": [
+          "بولندا بلد لينا لا أمير.",
+          undefined,
+          "ألمانيا بلد إقامته لا أصله.",
+          "لايبتسيغ مدينة سكنه الآن، والسؤال عن الأصل."
+        ],
+        "errorType": "vocabulary",
+        "paragraph": 0
+      },
+      {
+        "id": "r2",
+        "type": "multiple-choice",
+        "instructionAr": "اختر الجواب الصحيح حسب الفقرة الثانية:",
+        "questionDe": "Wer ist Lena?",
+        "questionAr": "من هي لينا؟",
+        "options": [
+          "Seine Lehrerin",
+          "Seine Mutter",
+          "Seine Mitbewohnerin",
+          "Seine Schwester"
+        ],
+        "correctIndex": 2,
+        "explanation": "«Meine Mitbewohnerin heißt Lena» — أي شريكته في السكن. أمّا المعلّمة فاسمها Frau Weber، والأمّ ذُكرت في الفقرة الأخيرة بلا اسم.",
+        "optionExplanations": [
+          "المعلّمة هي Frau Weber في الفقرة الثالثة.",
+          "الأمّ وردت في الفقرة الرابعة.",
+          undefined,
+          "لم تُذكر أخت في النصّ إطلاقاً."
+        ],
+        "errorType": "vocabulary",
+        "paragraph": 1
+      },
+      {
+        "id": "r3",
+        "type": "multiple-choice",
+        "instructionAr": "ابحث في الفقرة الثالثة عن المعلومة الزمنية:",
+        "questionDe": "Wann beginnt der Deutschkurs?",
+        "questionAr": "متى تبدأ دورة الألمانية؟",
+        "options": [
+          "Am Abend",
+          "Am Montag",
+          "Am Morgen",
+          "Am Wochenende"
+        ],
+        "correctIndex": 1,
+        "explanation": "«Am Montag beginnt mein Deutschkurs». لاحظ ترتيب الكلمات: الظرف Am Montag في المركز الأوّل، فانزاح الفاعل بعد الفعل beginnt — وهذه قاعدة المركز الثاني نفسها التي درستَها.",
+        "optionExplanations": [
+          "المساء وقت المكالمة العائلية.",
+          undefined,
+          "الصباح وقت تحية لينا.",
+          "لم تُذكر عطلة نهاية الأسبوع."
+        ],
+        "errorType": "word-order",
+        "paragraph": 2
+      },
+      {
+        "id": "r4",
+        "type": "multiple-choice",
+        "instructionAr": "انتبه للتصريف في الفقرة الثالثة:",
+        "questionDe": "Welcher Satz steht so im Text?",
+        "questionAr": "أيّ جملة وردت هكذا في النصّ؟",
+        "options": [
+          "Sie frag uns immer",
+          "Sie fragt uns immer",
+          "Sie fragen uns immer",
+          "Sie fragst uns immer"
+        ],
+        "correctIndex": 1,
+        "explanation": "الفاعل sie (هي) مفرد غائب، فيأخذ الفعل النهاية ‑t: sie fragt. أمّا fragen فللجمع، وfragst لـ du، وfrag بلا نهاية صيغة أمر.",
+        "optionExplanations": [
+          "frag بلا نهاية = صيغة الأمر لا الإخبار.",
+          undefined,
+          "‑en للجمع wir/sie أو للصيغة الرسمية Sie.",
+          "‑st نهاية du وحدها."
+        ],
+        "errorType": "conjugation",
+        "paragraph": 2
+      },
+      {
+        "id": "r5",
+        "type": "multiple-choice",
+        "instructionAr": "افهم الموقف العامّ في الفقرة الأخيرة:",
+        "questionDe": "Wie geht es Amir in Deutschland?",
+        "questionAr": "كيف حال أمير في ألمانيا؟",
+        "options": [
+          "Er ist krank",
+          "Er möchte zurück nach Sfax",
+          "Es geht ihm gut, aber er vermisst die Familie",
+          "Er lernt kein Deutsch mehr"
+        ],
+        "correctIndex": 2,
+        "explanation": "يجمع النصّ حالين معاً: «Es geht mir gut, aber ich vermisse euch». الأداة aber هي مفتاح الفهم — فهي تربط شعورين متضادّين، ومَن قرأ نصفَ الجملة فقط أخطأ.",
+        "optionExplanations": [
+          "لم يُذكر مرض.",
+          "يشتاق لأهله لكنّه لم يقل إنّه يريد العودة.",
+          undefined,
+          "بل يتعلّم كلّ يوم شيئاً جديداً."
+        ],
+        "errorType": "vocabulary",
+        "paragraph": 3
+      }
+    ],
+    "redemittel": [
+      {
+        "de": "Ich heiße … und ich komme aus …",
+        "ar": "اسمي … وأنا من …"
+      },
+      {
+        "de": "Ich wohne in … / Ich bin … Jahre alt.",
+        "ar": "أسكن في … / عمري … سنة."
+      },
+      {
+        "de": "Wie geht es dir? — Danke, gut! Und dir?",
+        "ar": "كيف حالك؟ — بخير، شكراً! وأنتَ؟"
+      },
+      {
+        "de": "Ich lerne Deutsch, denn ich möchte hier studieren.",
+        "ar": "أتعلّم الألمانية لأنّني أودّ الدراسة هنا."
+      },
+      {
+        "de": "Das ist nicht leicht, aber es macht Spaß.",
+        "ar": "ليس الأمر سهلاً، لكنّه ممتع."
+      },
+      {
+        "de": "Auf Wiedersehen und bis bald!",
+        "ar": "إلى اللقاء وإلى القريب!"
+      }
+    ],
+    "discussionAr": "قدّم نفسك أنت الآن على منوال أمير: اسمك، بلدك، مدينتك، عمرك، مهنتك أو دراستك، وسببُ تعلّمك الألمانية. اكتب خمس جملٍ على الأقلّ مستعملاً sein مرّةً والأفعال المنتظمة مرّتين، ثم اقرأها بصوتٍ عالٍ."
+  },
+
   listening: {
     items: [
       {
@@ -438,6 +660,10 @@ export const lessonA101: Lesson = {
       errorType: "conjugation",
       points: 2,
     },
+    {"id": "e12", "type": "multiple-choice", "instructionAr": "اختر الأداة الصحيحة للسؤال:", "questionDe": "___ wohnst du? — In Tunis.", "questionAr": "أين تسكن؟ — في تونس.", "options": ["Wo", "Woher", "Wohin", "Wann"], "correctIndex": 0, "explanation": "الجواب «in Tunis» يدلّ على مكانٍ ثابت، فالأداة Wo. أمّا Woher فتسأل عن الأصل (aus …) وWohin عن الوجهة (nach …).", "optionExplanations": [undefined, "Woher تنتظر جواباً بـ aus: aus Tunesien.", "Wohin تنتظر جواباً بـ nach: nach Berlin.", "Wann تسأل عن الزمن لا المكان."], "errorType": "vocabulary"},
+    {"id": "e13", "type": "fill-blank", "instructionAr": "صرّف الفعل بين قوسين تصريفاً صحيحاً:", "template": "Du ___ sehr schnell. (arbeiten)", "blanks": [{"correct": "arbeitest", "options": ["arbeitest", "arbeitst", "arbeiten", "arbeitet"]}], "explanation": "جذع arbeit- ينتهي بحرف t، فتُدخَل وصلة ‑e‑ قبل نهاية du: arbeit + e + st = arbeitest. ولولا الوصلة لتعذّر نطق tst.", "errorType": "conjugation"},
+    {"id": "e14", "type": "word-ordering", "instructionAr": "رتّب الكلمات لتكوّن سؤالاً صحيحاً:", "tokens": ["Warum", "lernst", "du", "Deutsch", "?"], "correctSentence": "Warum lernst du Deutsch ?", "explanation": "أداة الاستفهام أوّلاً، ثمّ الفعل المصرَّف في المركز الثاني، ثمّ الفاعل، ثمّ المفعول. هذا هو ترتيب سؤال W الثابت.", "errorType": "word-order"},
+    {"id": "e15", "type": "error-correction", "instructionAr": "ابحث عن الكلمة الخاطئة وصحّحها:", "wrongSentence": "Meine Lehrerin heißen Frau Weber.", "wrongWord": "heißen", "correctWord": "heißt", "options": ["heißt", "heiße", "heißest", "bin"], "explanation": "الفاعل «meine Lehrerin» مفردٌ غائب، فيأخذ الفعل النهاية ‑t. والجذع heiß- ينتهي بـ ß لكنّ ذلك لا يمسّ صيغة الغائب: heißt.", "errorType": "conjugation"}
   ],
 
   /* 8) الأخطاء الشائعة والتريكات + لقطة ثقافية */
@@ -538,6 +764,9 @@ export const lessonA101: Lesson = {
     { id: "fc8", de: "die Stadt", ar: "المدينة", example: "Tunis ist eine schöne Stadt.", exampleAr: "تونس مدينة جميلة.", level: "A1" },
     { id: "fc9", de: "lernen / ich lerne", ar: "يتعلم / أتعلم", example: "Ich lerne Deutsch.", exampleAr: "أتعلم الألمانية.", level: "A1" },
     { id: "fc10", de: "die Endungen: -e, -st, -t, -en, -t, -en", ar: "نهايات المضارع (السلسلة الذهبية)", example: "ich lerne, du lernst, er lernt", exampleAr: "أتعلم، تتعلم، يتعلم", level: "A1" },
+    {"id": "fc11", "de": "die Mitbewohnerin", "ar": "شريكة السكن", "example": "Meine Mitbewohnerin heißt Lena.", "exampleAr": "شريكتي في السكن اسمها لينا.", "level": "A1"},
+    {"id": "fc12", "de": "Es macht Spaß.", "ar": "إنّه ممتع.", "example": "Deutsch lernen macht Spaß.", "exampleAr": "تعلّم الألمانية ممتع.", "level": "A1"},
+    {"id": "fc13", "de": "du arbeitest (وصلة ‑e‑)", "ar": "أنت تعمل — جذع بـ t يأخذ ‑e‑", "example": "Du arbeitest viel.", "exampleAr": "أنت تعمل كثيراً.", "level": "A1"}
   ],
 
   /* ═══ مهام الوساطة والتفاعل (CEFR 2020) ═══ */

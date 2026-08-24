@@ -24,6 +24,7 @@ import {LessonSummary} from "@/components/lesson/sections/lesson-summary";
 import {SchreibenSection} from "@/components/lesson/sections/schreiben";
 import {TheorieSection} from "@/components/lesson/sections/theorie";
 import {VertiefungSection} from "@/components/lesson/sections/vertiefung";
+import {LesetextSection} from "@/components/lesson/sections/lesetext";
 import {LangDe} from "@/components/shared/lang-de";
 import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
@@ -367,6 +368,8 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       /* ═══ الوساطة والتفاعل: تُعرضان فقط إذا كان الدرس يحتويهما ═══ */
       (def.id !== "mediation" || (lesson.mediation && lesson.mediation.length > 0)) &&
       (def.id !== "interaction" || (lesson.interaction && lesson.interaction.length > 0)) &&
+      /* ═══ نصّ القراءة: يُعرض فقط إن كُتب للدرس ═══ */
+      (def.id !== "lesetext" || !!lesson.reading) &&
       /* ═══ التعمّق: يُعرض فقط إن رُبطت بالدرس موارد رديفة ═══ */
       (def.id !== "vertiefung" || hasRelatedResources),
   );
@@ -505,6 +508,8 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
         return <MediationSection tasks={lesson.mediation ?? []} />;
       case "interaction":
         return <InteractionSection tasks={lesson.interaction ?? []} />;
+      case "lesetext":
+        return lesson.reading ? <LesetextSection reading={lesson.reading} /> : null;
       case "vertiefung":
         return <VertiefungSection lessonId={lesson.id} />;
       default:
