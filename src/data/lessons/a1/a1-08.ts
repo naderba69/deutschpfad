@@ -124,6 +124,54 @@ export const lessonA108: Lesson = {
         content: "tragen = يرتدي (حالة دائمة: Ich trage eine Brille = أرتدي نظارة). anziehen = يرتدي (فعل لحظي: Ich ziehe eine Jacke an = أرتدي سترة الآن). anziehen فعل منفصل!",
       },
     },
+    {
+      id: "t3",
+      titleAr: "أيّهما أجمل؟ المقارنة بين شيئين",
+      titleDe: "Vergleichen: schöner als, so teuer wie",
+      explanationAr:
+        "لا يكتمل التسوّق دون مقارنة. والألمانية تبني درجة المقارنة بلاحقة ـer تُضاف إلى الصفة، ثم تربط بـ als:\n\nbillig ← billiger als (أرخص من) · schön ← schöner als (أجمل من)\n\nوالصفات القصيرة ذات الحركة a/o/u تأخذ نقطتين فوقها: alt ← älter · groß ← größer · jung ← jünger.\n\nوثلاث صفات شاذّة تُحفظ كما هي: gut ← besser · viel ← mehr · gern ← lieber.\n\nوللتساوي صيغة أخرى لا تُخلط بها: **so … wie** (بمثل ما). Das Hemd ist so teuer wie die Jacke.",
+      whyAr:
+        "لماذا als للمفاضلة وwie للتساوي؟ لأنّ الألمانية تفصل بين الحالتين فصلاً حاسماً، والخلط بينهما من أشهر أخطاء المتعلّمين: «größer wie» خطأ يسمعه الألمان فوراً حتى في كلام بعض أبنائهم. اربطها هكذا: als مع الفارق، wie مع التطابق.",
+      table: {
+        title: "الأساس والمقارنة",
+        columns: ["الصفة", "المقارنة", "مثال"],
+        rows: [
+          { label: "billig (رخيص)", cells: ["billiger", "Das Hemd ist billiger als die Jacke."] },
+          { label: "schön (جميل)", cells: ["schöner", "Das Kleid ist schöner als der Rock."] },
+          { label: "alt (قديم)", cells: ["älter (بنقطتين)", "Mein Mantel ist älter als deiner."] },
+          { label: "groß (كبير)", cells: ["größer (بنقطتين)", "Die Hose ist größer als das Hemd."] },
+          { label: "gut (جيد)", cells: ["besser (شاذّ)", "Diese Schuhe sind besser."] },
+        ],
+      },
+      examples: [
+        { de: "Die Jacke ist teurer als der Pullover.", ar: "الجاكيت أغلى من الكنزة." },
+        { de: "Das rote Kleid gefällt mir besser.", ar: "الفستان الأحمر يعجبني أكثر." },
+        { de: "Diese Schuhe sind so teuer wie die Tasche.", ar: "هذا الحذاء بمثل ثمن الحقيبة." },
+        { de: "Mein Bruder ist größer als ich.", ar: "أخي أطول منّي." },
+        { de: "Ich trage lieber Blau als Grün.", ar: "أفضّل ارتداء الأزرق على الأخضر." },
+      ],
+      comparisonWithArabic:
+        "العربية تبني أفعل التفضيل على وزن ثابت: كبير ← أكبر، جميل ← أجمل، وتربط بـ«من». الألمانية تُلحق ـer بآخر الصفة وتربط بـals — فالبنية معكوسة الاتجاه لكنّ المنطق واحد. أمّا التساوي فالعربية تقول «بمثل» أو «مثل»، والألمانية so … wie بكلمتين تحيطان بالصفة، وهو ما يُنسى كثيراً فيُقال wie وحدها.",
+      eselsbruecke:
+        "«als للفارق، wie للتطابق»: إن وُجد فرق فقل als، وإن تساوى الشيئان فأحِط الصفة بـ so … wie. وللنقطتين: الصفات القصيرة بحركة a/o/u تكاد كلّها تأخذ Umlaut — alt, groß, jung, kalt, warm.",
+      commonMistakes: [
+        {
+          wrong: "Die Jacke ist teurer wie das Hemd.",
+          right: "Die Jacke ist teurer als das Hemd.",
+          whyAr: "وُجد فارق في السعر ⇒ als. وwie لا تصلح إلّا حين يتساوى الشيئان.",
+        },
+        {
+          wrong: "Das Hemd ist mehr billig als die Jacke.",
+          right: "Das Hemd ist billiger als die Jacke.",
+          whyAr: "الألمانية لا تبني المقارنة بكلمة مستقلّة مثل «more» الإنجليزية؛ اللاحقة ـer هي الأداة الوحيدة مهما طالت الصفة.",
+        },
+      ],
+      relatedRuleComparison: {
+        title: "درجة ثالثة تنتظرك",
+        content:
+          "ما أخذته هنا هو درجة المقارنة (Komparativ). وللألمانية درجة عليا (Superlativ): am billigsten، am schönsten — «الأرخص على الإطلاق». ستأخذها موسّعةً مع تصريف الصفات في B1؛ ويكفيك الآن أن تعرف أنّها تُبنى بـ am + ـsten.",
+      },
+    },
   ],
 
   listening: {
@@ -355,6 +403,69 @@ export const lessonA108: Lesson = {
       explanation: "أرتدي اليوم قبعة حمراء — rote صفة قبل اسم مؤنث (تلميح للمستقبل).",
       errorType: "spelling",
     },
+    {
+      id: "e11",
+      type: "multiple-choice",
+      instructionAr: "اختر الأداة الصحيحة للمقارنة:",
+      questionDe: "Die Jacke ist teurer ___ das Hemd.",
+      questionAr: "الجاكيت أغلى من القميص.",
+      options: ["als", "wie", "so", "denn"],
+      correctIndex: 0,
+      explanation: "وُجد فارق في السعر ⇒ als. وso … wie للتساوي فقط.",
+      optionExplanations: [
+        undefined,
+        "wie للتساوي: so teuer wie. وهنا الأسعار مختلفة.",
+        "so وحدها لا تكفي؛ تحتاج so … wie كاملةً وللتساوي.",
+        "denn تعني «لأنّ» ولا علاقة لها بالمقارنة.",
+      ],
+      errorType: "grammar",
+    },
+    {
+      id: "e12",
+      type: "fill-blank",
+      instructionAr: "أكمل بصيغة المقارنة الصحيحة (انتبه للنقطتين وللشاذّ):",
+      template: "Der Rock ist ___ als das Kleid (billig). Mein Mantel ist ___ als deiner (alt). Diese Schuhe sind ___ (gut).",
+      blanks: [
+        { correct: "billiger", options: ["billiger", "billig", "am billigsten"] },
+        { correct: "älter", options: ["älter", "alter", "mehr alt"] },
+        { correct: "besser", options: ["besser", "guter", "mehr gut"] },
+      ],
+      explanation: "billig ⇒ billiger · alt ⇒ älter بنقطتين · gut ⇒ besser شاذّ لا يُبنى بلاحقة.",
+      errorType: "grammar",
+    },
+    {
+      id: "e13",
+      type: "error-correction",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      wrongSentence: "Mein Bruder ist größer wie ich.",
+      wrongWord: "wie",
+      correctWord: "als",
+      options: ["als", "wie", "so", "dann"],
+      explanation: "أشهر خطأ في الباب: مع وجود فارق تُستعمل als لا wie.",
+      errorType: "grammar",
+    },
+    {
+      id: "e14",
+      type: "word-ordering",
+      instructionAr: "رتّب الكلمات لتكوين جملة تساوٍ:",
+      tokens: ["Das", "Hemd", "ist", "so", "teuer", "wie", "die", "Jacke", "."],
+      correctSentence: "Das Hemd ist so teuer wie die Jacke.",
+      explanation: "صيغة التساوي تحيط بالصفة: so + الصفة + wie.",
+      errorType: "word-order",
+    },
+    {
+      id: "e15",
+      type: "transformation",
+      instructionAr: "قارن بين القطعتين مستعملاً الصفة المعطاة.",
+      prompt: "die Jacke (80 €) / der Pullover (40 €) — استعمل teuer.",
+      acceptedAnswers: [
+        "Die Jacke ist teurer als der Pullover.",
+        "Der Pullover ist billiger als die Jacke.",
+      ],
+      sampleAnswer: "Die Jacke ist teurer als der Pullover.",
+      explanation: "أيّ الاتجاهين صحيح ما دامت اللاحقة ـer والأداة als في موضعهما.",
+      errorType: "grammar",
+    },
   ],
 
   fehlerUndTipps: {
@@ -440,6 +551,8 @@ export const lessonA108: Lesson = {
     { id: "fc6", de: "rot / blau / grün", ar: "أحمر / أزرق / أخضر", example: "Der Himmel ist blau.", exampleAr: "السماء زرقاء.", level: "A1" },
     { id: "fc7", de: "tragen", ar: "يرتدي", example: "Ich trage eine Brille.", exampleAr: "أرتدي نظارة.", level: "A1" },
     { id: "fc8", de: "Wie findest du …?", ar: "ما رأيك في…؟", example: "Wie findest du mein Hemd?", exampleAr: "ما رأيك في قميصي؟", level: "A1" },
+    { id: "fc9", de: "billiger als / teurer als", ar: "أرخص من / أغلى من", example: "Das Hemd ist billiger als die Jacke.", exampleAr: "القميص أرخص من الجاكيت.", level: "A1" },
+    { id: "fc10", de: "so … wie", ar: "بمثل … (تساوٍ)", example: "Der Rock ist so teuer wie die Hose.", exampleAr: "التنورة بمثل ثمن البنطال.", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */

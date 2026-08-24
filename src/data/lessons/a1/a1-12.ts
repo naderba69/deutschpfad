@@ -158,6 +158,54 @@ export const lessonA112: Lesson = {
         content: "اليوم: werden + صفة = يصبح (Es wird kalt). في B1: werden + Infinitiv = المستقبل (Ich werde lernen). نفس الفعل، وظيفتان — وأنت تعرف نصفه الآن!",
       },
     },
+    {
+      id: "t3",
+      titleAr: "im أم am أم um؟ حروف الجر الزمنية مجموعةً",
+      titleDe: "Zeitangaben ordnen: im, am, um und ohne Präposition",
+      explanationAr:
+        "تعلّمتَ الساعة في درس اليوم، والأيام والتواريخ في درس المواعيد، والفصول هنا. وقد آن أوان جمع الحروف الثلاثة في قاعدة واحدة تُحفظ مرّةً وتكفيك:\n\n· **im** ← الشهور والفصول: im Mai · im Sommer\n· **am** ← الأيام وأوقات اليوم والتواريخ: am Montag · am Abend · am 3. Mai\n· **um** ← الساعة فقط: um acht Uhr\n\nوأربعة تعبيرات تُقال **بلا حرف جرّ إطلاقاً**: heute · morgen · gestern · jeden Tag.\n\nواستثناء واحد يُحفظ: **in der Nacht** (في الليل) — مؤنّثة فتشذّ عن am.",
+      whyAr:
+        "لماذا نجمعها في درس الطقس؟ لأنّ الحديث عن الطقس لا يخلو من زمن: «في الصيف حارّ»، «غداً تمطر»، «صباح الاثنين باردة». وحين تتفرّق القاعدة على ثلاثة دروس يحفظ المتعلّم كل جزء منفصلاً ثم يخلط بينها عند الكلام. الجدول الواحد يمنع هذا الخلط.",
+      table: {
+        title: "متى تستعمل أيّها",
+        columns: ["الحرف", "يُستعمل مع", "مثال"],
+        rows: [
+          { label: "im", cells: ["الشهور والفصول", "Im Winter ist es kalt."] },
+          { label: "am", cells: ["الأيام والتواريخ وأوقات اليوم", "Am Montag regnet es."] },
+          { label: "um", cells: ["الساعة فقط", "Um sieben Uhr ist es noch dunkel."] },
+          { label: "بلا حرف", cells: ["heute, morgen, gestern", "Morgen scheint die Sonne."] },
+          { label: "in der", cells: ["الليل (استثناء)", "In der Nacht wird es kühl."] },
+        ],
+      },
+      examples: [
+        { de: "Im Sommer ist es in Tunis sehr heiß.", ar: "في الصيف الجوّ حارّ جداً في تونس." },
+        { de: "Am Wochenende bleibe ich zu Hause.", ar: "في عطلة الأسبوع أبقى في البيت." },
+        { de: "Morgen wird es kalt.", ar: "غداً يصير الجوّ بارداً." },
+        { de: "Am Abend regnet es oft im Herbst.", ar: "في المساء تمطر كثيراً في الخريف." },
+        { de: "In der Nacht sind es nur fünf Grad.", ar: "في الليل تكون خمس درجات فقط." },
+      ],
+      comparisonWithArabic:
+        "العربية تكتفي بحرف واحد لكل هذه المعاني: «في الصيف»، «في الاثنين»، «في الثامنة». والعربي يميل إذاً إلى استعمال in لكل شيء فيقول «in Montag» و«in acht Uhr». الألمانية توزّع الأزمنة على ثلاثة حروف بحسب حجم الوحدة الزمنية: كلّما كبرت المدّة اتّسع الحرف — um للحظة، am لليوم، im للشهر والفصل.",
+      eselsbruecke:
+        "سُلَّم من الصغير إلى الكبير: **um** ساعة ← **am** يوم ← **im** شهر وفصل. كلّما اتّسعت المدّة تقدّم الحرف في السُلَّم. واليوم وغده وأمسه أحرار بلا حرف.",
+      commonMistakes: [
+        {
+          wrong: "In Montag regnet es.",
+          right: "Am Montag regnet es.",
+          whyAr: "الأيام تأخذ am لا in. والخطأ ناتج عن ترجمة «في» العربية حرفياً.",
+        },
+        {
+          wrong: "Am morgen scheint die Sonne. (بمعنى: غداً)",
+          right: "Morgen scheint die Sonne.",
+          whyAr: "فخّ مزدوج: morgen (غداً) تُقال بلا حرف جرّ، أمّا am Morgen (بحرف كبير) فتعني «في الصباح» — كلمتان مختلفتان تماماً.",
+        },
+      ],
+      relatedRuleComparison: {
+        title: "wann؟ ثلاثة أحرف وجواب واحد",
+        content:
+          "كل هذه الحروف تُجيب عن سؤال واحد: wann? (متى؟). وفي درس المدينة أخذت wohin? (إلى أين) بحروفها nach/zu، وفي درس السكن wo? (أين) بحروف الجرّ المكانية. ثلاثة أسئلة، ثلاث مجموعات — لا تخلط بينها.",
+      },
+    },
   ],
   listening: {
     items: [
@@ -381,6 +429,75 @@ export const lessonA112: Lesson = {
       explanation: "تشرق الشمس وتهب الرياح — اسم + فعل لكل عنصر.",
       errorType: "spelling",
     },
+    {
+      id: "e11",
+      type: "fill-blank",
+      instructionAr: "أكمل بحرف الجر الزمني الصحيح:",
+      template: "___ Winter ist es kalt. ___ Montag regnet es. ___ acht Uhr ist es noch dunkel.",
+      blanks: [
+        { correct: "Im", options: ["Im", "Am", "Um"] },
+        { correct: "Am", options: ["Am", "Im", "Um"] },
+        { correct: "Um", options: ["Um", "Am", "Im"] },
+      ],
+      explanation: "الفصل ⇒ im · اليوم ⇒ am · الساعة ⇒ um. سُلَّم من الكبير إلى الصغير.",
+      errorType: "preposition",
+    },
+    {
+      id: "e12",
+      type: "error-correction",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      wrongSentence: "In Montag scheint die Sonne.",
+      wrongWord: "In",
+      correctWord: "Am",
+      options: ["Am", "In", "Um", "Im"],
+      explanation: "أيام الأسبوع تأخذ am دائماً: Am Montag.",
+      errorType: "preposition",
+    },
+    {
+      id: "e13",
+      type: "multiple-choice",
+      instructionAr: "أيّ جملة تعني «غداً تمطر»؟",
+      questionDe: "morgen + regnen",
+      questionAr: "اختر الصياغة الصحيحة:",
+      options: [
+        "Morgen regnet es.",
+        "Am morgen regnet es.",
+        "Im Morgen regnet es.",
+        "Um morgen regnet es.",
+      ],
+      correctIndex: 0,
+      explanation: "morgen (غداً) تُستعمل بلا حرف جرّ. أمّا am Morgen فتعني «في الصباح» لا «غداً».",
+      optionExplanations: [
+        undefined,
+        "am Morgen تعني «في الصباح» — معنىً آخر تماماً.",
+        "im لا تُستعمل مع أوقات اليوم أصلاً.",
+        "um للساعة المحدّدة فقط.",
+      ],
+      errorType: "preposition",
+    },
+    {
+      id: "e14",
+      type: "word-ordering",
+      instructionAr: "رتّب الكلمات لتكوين جملة عن طقس الفصل:",
+      tokens: ["Im", "Sommer", "ist", "es", "sehr", "heiß", "."],
+      correctSentence: "Im Sommer ist es sehr heiß.",
+      explanation: "تقديم الظرف يبقي الفعل ثانياً: Im Sommer · ist · es …",
+      errorType: "word-order",
+    },
+    {
+      id: "e15",
+      type: "transformation",
+      instructionAr: "أجب عن السؤال بالمعطيات المذكورة.",
+      prompt: "Wann ist es in Deutschland kalt? (der Winter)",
+      acceptedAnswers: [
+        "Im Winter ist es kalt.",
+        "Im Winter.",
+        "Es ist im Winter kalt.",
+      ],
+      sampleAnswer: "Im Winter ist es in Deutschland kalt.",
+      explanation: "الفصول تأخذ im: im Winter.",
+      errorType: "preposition",
+    },
   ],
   fehlerUndTipps: {
     mistakes: [
@@ -462,6 +579,8 @@ export const lessonA112: Lesson = {
     { id: "fc6", de: "werden", ar: "يصبح", example: "Es wird kalt.", exampleAr: "يصبح الجو بارداً.", level: "A1" },
     { id: "fc7", de: "der Wind", ar: "الرياح", example: "Der Wind weht.", exampleAr: "تهب الرياح.", level: "A1" },
     { id: "fc8", de: "die Jahreszeit", ar: "الفصل (من السنة)", example: "Der Sommer ist meine Lieblingsjahreszeit.", exampleAr: "الصيف فصلي المفضل.", level: "A1" },
+    { id: "fc9", de: "im Sommer / im Winter", ar: "في الصيف / في الشتاء", example: "Im Winter schneit es oft.", exampleAr: "في الشتاء تثلج كثيراً.", level: "A1" },
+    { id: "fc10", de: "am Montag / um acht Uhr", ar: "يوم الاثنين / في الثامنة", example: "Am Montag um acht Uhr.", exampleAr: "يوم الاثنين في الثامنة.", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
