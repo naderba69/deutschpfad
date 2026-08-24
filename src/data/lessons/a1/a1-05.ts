@@ -158,6 +158,55 @@ export const lessonA105: Lesson = {
         content: "um = لحظة زمنية واحدة: um acht Uhr (في الثامنة). am = مع أوقات اليوم والأيام: am Morgen, am Montag. von … bis = مدى زمني: von 8 bis 16 Uhr (من الثامنة حتى الرابعة). الثلاثة تكمل بعضها: Ich arbeite von 8 bis 16 Uhr، und um 12 Uhr esse ich.",
       },
     },
+    {
+      id: "t3",
+      titleAr: "كم مرّة؟ ظروف التكرار وموضعها في الجملة",
+      titleDe: "Wie oft? Häufigkeitsadverbien",
+      explanationAr:
+        "وصف الروتين لا يكتمل بالأفعال وحدها — يحتاج «كم مرّة». الترتيب من الأكثر إلى الأقل:\n\nimmer (دائماً) ← meistens (غالباً) ← oft (كثيراً) ← manchmal (أحياناً) ← selten (نادراً) ← nie (أبداً)\n\nوالقاعدة الذهبية لموضعها: **مباشرةً بعد الفعل المصرَّف**. Ich stehe immer früh auf.\n\nويمكن أيضاً وضع الظرف في أوّل الجملة للتوكيد، وحينها ينزاح الفاعل خلف الفعل حفاظاً على قاعدة «الفعل ثانياً»: Manchmal stehe ich spät auf.",
+      whyAr:
+        "لماذا الموضع بهذه الأهمية؟ لأنّ الألمانية لغة ترتيب لا لغة إعراب في هذا الموضع: لا علامة على آخر الكلمة تدلّ على وظيفتها، فالموضع وحده هو الذي يحمل المعنى. وضع الظرف في غير محلّه لا يُنتج خطأً نحوياً فحسب، بل جملةً تبدو أجنبية للأذن الألمانية.",
+      table: {
+        title: "سُلَّم التكرار من الدائم إلى المعدوم",
+        columns: ["الظرف", "المعنى", "مثال من يومك"],
+        rows: [
+          { label: "immer", cells: ["دائماً (100٪)", "Ich frühstücke immer um sieben."] },
+          { label: "meistens", cells: ["غالباً (80٪)", "Ich gehe meistens zu Fuß."] },
+          { label: "oft", cells: ["كثيراً (60٪)", "Wir kochen oft zusammen."] },
+          { label: "manchmal", cells: ["أحياناً (40٪)", "Ich sehe manchmal fern."] },
+          { label: "selten", cells: ["نادراً (10٪)", "Er steht selten früh auf."] },
+          { label: "nie", cells: ["أبداً (0٪)", "Ich trinke nie Kaffee am Abend."] },
+        ],
+      },
+      examples: [
+        { de: "Ich stehe immer um sechs Uhr auf.", ar: "أستيقظ دائماً في السادسة." },
+        { de: "Manchmal frühstücke ich nicht.", ar: "أحياناً لا أتناول الفطور." },
+        { de: "Meine Schwester kocht oft am Abend.", ar: "أختي تطبخ كثيراً في المساء." },
+        { de: "Er sieht selten fern.", ar: "هو نادراً ما يشاهد التلفاز." },
+        { de: "Ich gehe nie vor Mitternacht ins Bett.", ar: "لا أنام أبداً قبل منتصف الليل." },
+      ],
+      comparisonWithArabic:
+        "العربية تقول «نادراً ما يشاهد» بأداة «ما» وتضع الظرف في أوّل الجملة غالباً، وهي حرّة في ذلك. الألمانية أضيق: الموضع الطبيعي بعد الفعل المصرَّف مباشرةً، وإن قدّمته وجب أن يليه الفعل ثم الفاعل. الفخّ العربي الشائع: «Ich immer stehe auf» — بترتيب عربي حرفيّ يفصل الفاعل عن فعله.",
+      eselsbruecke:
+        "«الفعل أوّلاً، ثم كم مرّة»: الفاعل، فالفعل، فالظرف — Ich · stehe · immer. وإن بدأتَ بالظرف فتذكّر أنّ الفعل يبقى ثانياً دائماً فينقلب الترتيب: Immer · stehe · ich.",
+      commonMistakes: [
+        {
+          wrong: "Ich immer stehe früh auf.",
+          right: "Ich stehe immer früh auf.",
+          whyAr: "الظرف لا يفصل بين الفاعل وفعله. الفعل المصرَّف يحتلّ المركز الثاني، والظرف يأتي بعده.",
+        },
+        {
+          wrong: "Manchmal ich sehe fern.",
+          right: "Manchmal sehe ich fern.",
+          whyAr: "حين يتصدّر الظرفُ الجملةَ يبقى الفعل في المركز الثاني، فينزاح الفاعل إلى ما بعده — قاعدة V2 نفسها التي أخذتها في a1-01.",
+        },
+      ],
+      relatedRuleComparison: {
+        title: "الفرق بين «كم مرّة» و«متى»",
+        content:
+          "wie oft? يُجاب عنه بظروف التكرار (immer, oft, nie). أمّا wann? فيُجاب عنه بوقت محدّد (um sieben, am Montag). ويمكن الجمع بينهما: Ich stehe immer um sechs auf — التكرار أوّلاً ثم الوقت الدقيق.",
+      },
+    },
   ],
 
   listening: {
@@ -405,6 +454,71 @@ export const lessonA105: Lesson = {
       errorType: "preposition",
       points: 2,
     },
+    {
+      id: "e12",
+      type: "multiple-choice",
+      instructionAr: "اختر الترتيب الصحيح:",
+      questionDe: "___ (أستيقظ دائماً في السادسة)",
+      questionAr: "أي جملة صحيحة؟",
+      options: [
+        "Ich stehe immer um sechs auf.",
+        "Ich immer stehe um sechs auf.",
+        "Immer ich stehe um sechs auf.",
+        "Ich stehe um sechs immer auf.",
+      ],
+      correctIndex: 0,
+      explanation: "الفاعل ثم الفعل المصرَّف ثم ظرف التكرار: Ich stehe immer …، والبادئة auf تُغلق الجملة.",
+      optionExplanations: [
+        undefined,
+        "الظرف لا يفصل الفاعل عن فعله.",
+        "لو بدأتَ بـ Immer لوجب أن يليه الفعل: Immer stehe ich …",
+        "ظرف التكرار يسبق التوقيت الدقيق لا يتبعه.",
+      ],
+      errorType: "word-order",
+    },
+    {
+      id: "e13",
+      type: "fill-blank",
+      instructionAr: "أكمل بظرف التكرار المناسب للنسبة المذكورة:",
+      template: "Ich trinke ___ Kaffee (100٪). Wir kochen ___ zusammen (40٪). Er kommt ___ zu spät (0٪).",
+      blanks: [
+        { correct: "immer", options: ["immer", "nie", "selten"] },
+        { correct: "manchmal", options: ["manchmal", "immer", "nie"] },
+        { correct: "nie", options: ["nie", "oft", "meistens"] },
+      ],
+      explanation: "immer = 100٪ · manchmal = نحو 40٪ · nie = 0٪. لاحظ أنّ الثلاثة تقع بعد الفعل المصرَّف مباشرةً.",
+      errorType: "vocabulary",
+    },
+    {
+      id: "e14",
+      type: "error-correction",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      wrongSentence: "Manchmal ich gehe früh ins Bett.",
+      wrongWord: "ich gehe",
+      correctWord: "gehe ich",
+      options: ["gehe ich", "ich gehe", "ich gehen", "geht ich"],
+      explanation: "الظرف تصدّر الجملة، فوجب أن يبقى الفعل ثانياً وينزاح الفاعل بعده: Manchmal gehe ich …",
+      errorType: "word-order",
+    },
+    {
+      id: "e15",
+      type: "word-ordering",
+      instructionAr: "رتّب الكلمات لتكوين جملة صحيحة:",
+      tokens: ["Meine", "Schwester", "kocht", "oft", "am", "Abend", "."],
+      correctSentence: "Meine Schwester kocht oft am Abend.",
+      explanation: "الفاعل (Meine Schwester) ثم الفعل (kocht) ثم التكرار (oft) ثم الوقت (am Abend).",
+      errorType: "word-order",
+    },
+    {
+      id: "e16",
+      type: "transformation",
+      instructionAr: "أعد صياغة الجملة بادئاً بظرف التكرار (انتبه لموضع الفعل).",
+      prompt: "Ich sehe manchmal fern. → ابدأ الجملة بـ Manchmal.",
+      acceptedAnswers: ["Manchmal sehe ich fern."],
+      sampleAnswer: "Manchmal sehe ich fern.",
+      explanation: "تقديم الظرف يستدعي قلب الفاعل والفعل: Manchmal sehe ich fern — والفعل يبقى في المركز الثاني.",
+      errorType: "word-order",
+    },
   ],
 
   fehlerUndTipps: {
@@ -489,6 +603,8 @@ export const lessonA105: Lesson = {
     { id: "fc6", de: "der Morgen / der Abend", ar: "الصباح / المساء", example: "Am Morgen und am Abend.", exampleAr: "صباحاً ومساءً.", level: "A1" },
     { id: "fc7", de: "die Uhrzeit", ar: "الوقت", example: "Wie spät ist es?", exampleAr: "كم الساعة؟", level: "A1" },
     { id: "fc8", de: "halb", ar: "نصف (الطريق إلى الساعة التالية)", example: "halb acht = 7:30", exampleAr: "نصف الثامنة = 7:30", level: "A1" },
+    { id: "fc9", de: "immer / oft / manchmal / nie", ar: "دائماً / كثيراً / أحياناً / أبداً", example: "Ich stehe immer früh auf.", exampleAr: "أستيقظ دائماً باكراً.", level: "A1" },
+    { id: "fc10", de: "Wie oft …?", ar: "كم مرّة …؟", example: "Wie oft gehst du ins Kino?", exampleAr: "كم مرّة تذهب إلى السينما؟", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
