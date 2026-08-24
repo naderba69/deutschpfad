@@ -19,9 +19,9 @@ import {
  */
 
 describe("اتساق أرقام الدروس (المرحلة 4)", () => {
-  it("TOTAL_LESSONS يساوي عدد الدروس الفعلية (49 — لا 251 الوهمي)", () => {
+  it("TOTAL_LESSONS يساوي عدد الدروس الفعلية (51 — لا 251 الوهمي)", () => {
     expect(TOTAL_LESSONS).toBe(LESSON_META.length);
-    expect(TOTAL_LESSONS).toBe(49);
+    expect(TOTAL_LESSONS).toBe(51);
   });
 
   it("عدد دروس كل وحدة معروض = الدروس الفعلية لهذه الوحدة", () => {
