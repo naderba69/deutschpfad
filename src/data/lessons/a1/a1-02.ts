@@ -137,6 +137,53 @@ export const lessonA102: Lesson = {
         },
       ],
     },
+    {
+      id: "t3",
+      titleAr: "عائلة غيرك: dein / sein / ihr",
+      titleDe: "Wem gehört es? dein, sein und ihr",
+      explanationAr:
+        "حتى الآن تحدّثنا عن عائلتك أنت (mein). لكن المحادثة الحقيقية تحتاج الحديث عن عائلة غيرك أيضاً. القاعدة أبسط ممّا تظنّ: اختر الجذر حسب **المالك**، ثم أضف ـe أو لا تضف حسب **الاسم المملوك** — بالقاعدة نفسها التي تعلّمتها للتوّ.\n\n· أنا ← mein · أنتَ/أنتِ ← dein · هو ← sein · هي ← ihr\n\nوالخطوة الثانية لا تتغيّر أبداً: der/das ⇒ بلا ـe، وdie (مؤنث أو جمع) ⇒ بـ ـe.",
+      whyAr:
+        "لماذا خطوتان لا واحدة؟ لأنّ الألمانية تُشفّر معلومتين في كلمة واحدة: مَن يملك (الجذر) وما المملوك (النهاية). العربية تفعل الشيء نفسه بترتيب معكوس: «أخوها» = أخ (المملوك) + ها (المالك). فأنت تعرف المنطق أصلاً — الجديد هو الترتيب فقط.",
+      table: {
+        title: "الجذر حسب المالك، والنهاية حسب المملوك",
+        columns: ["المالك", "مع der/das", "مع die (مؤنث/جمع)"],
+        rows: [
+          { label: "أنا (ich)", cells: ["mein Bruder", "meine Schwester"] },
+          { label: "أنتَ/أنتِ (du)", cells: ["dein Bruder", "deine Schwester"] },
+          { label: "هو (er)", cells: ["sein Bruder", "seine Schwester"] },
+          { label: "هي (sie)", cells: ["ihr Bruder", "ihre Schwester"] },
+        ],
+      },
+      examples: [
+        { de: "Ist das dein Bruder?", ar: "هل هذا أخوك؟" },
+        { de: "Nein, das ist ihr Bruder.", ar: "لا، هذا أخوها." },
+        { de: "Ali kommt aus Tunis. Seine Mutter wohnt in Sfax.", ar: "علي من تونس. أمّه تسكن في صفاقس." },
+        { de: "Lena ist neu hier. Ihr Vater arbeitet in Berlin.", ar: "لينا جديدة هنا. أبوها يعمل في برلين." },
+        { de: "Deine Eltern sind sehr nett.", ar: "والداك لطيفان جداً." },
+      ],
+      comparisonWithArabic:
+        "العربية تلصق المالك في آخر الكلمة: أخوه / أخوها — حرف واحد يفرّق بين المذكر والمؤنث. الألمانية تفعل العكس تماماً: تضع المالك في كلمة مستقلة **قبل** الاسم، وتترك آخر الكلمة للمملوك. الفخّ الذي يقع فيه العربي: يظنّ أنّ ihre مؤنثة لأنّ المالكة أنثى — والحقيقة أنّ الـ ـe جاءت من Schwester لا من «هي».",
+      eselsbruecke:
+        "سؤالان بالترتيب لا سؤال واحد: (1) مَن المالك؟ ⇒ اختر m-/d-/s-/ihr. (2) ما جنس المملوك؟ ⇒ die تعني زيادة ـe، وغيرها بلا زيادة. جرّبها على «أختُه»: المالك «هو» ⇒ sein، والمملوك Schwester مؤنث ⇒ seine Schwester.",
+      commonMistakes: [
+        {
+          wrong: "ihre Bruder",
+          right: "ihr Bruder",
+          whyAr: "المالكة أنثى، لكنّ النهاية تتبع المملوك لا المالك: Bruder مذكر (der) ⇒ بلا ـe. هذا أشهر خطأ عربي في الباب كلّه.",
+        },
+        {
+          wrong: "sein Mutter",
+          right: "seine Mutter",
+          whyAr: "المالك «هو» ⇒ الجذر sein صحيح، لكنّ Mutter مؤنثة (die) ⇒ لا بدّ من seine.",
+        },
+      ],
+      relatedRuleComparison: {
+        title: "الخطوة التالية: هذه الأدوات في بقية الحالات",
+        content:
+          "ما تعلّمته هنا هو حالة الرفع (Nominativ) — أي حين يكون الاسم فاعلاً أو خبراً بعد ist. في A2 (الدرس a2-10) ستأخذ المنظومة نفسها في النصب والجرّ: meinen Bruder، meinem Bruder. الجذور لا تتغيّر أبداً، النهايات وحدها هي التي تتوسّع.",
+      },
+    },
   ],
 
   /* 4) الاستماع */
@@ -324,6 +371,56 @@ export const lessonA102: Lesson = {
       explanation: "الجملة الصحيحة: Meine Schwester heißt Nour — لاحظ meine لأن Schwester مؤنثة.",
       errorType: "spelling",
     },
+    {
+      id: "e9",
+      type: "multiple-choice",
+      instructionAr: "أكمل: الحديث عن عائلة شخص آخر.",
+      questionDe: "Lena ist meine Freundin. ___ Vater arbeitet in Berlin.",
+      questionAr: "لينا صديقتي. أبوها يعمل في برلين.",
+      options: ["Ihr", "Ihre", "Sein", "Seine"],
+      correctIndex: 0,
+      explanation: "المالكة أنثى (Lena) ⇒ الجذر ihr. والمملوك Vater مذكر (der) ⇒ بلا ـe: Ihr Vater.",
+      optionExplanations: [
+        undefined,
+        "الجذر صحيح لكنّ الـ ـe زائدة: Vater مذكر لا مؤنث. النهاية تتبع المملوك لا المالكة.",
+        "sein تعني «له»، والمالكة هنا لينا.",
+        "خطآن معاً: الجذر للمذكر والنهاية للمؤنث.",
+      ],
+      errorType: "pronoun",
+    },
+    {
+      id: "e10",
+      type: "fill-blank",
+      instructionAr: "أكمل بالأداة المناسبة (انتبه: مَن المالك؟ وما جنس المملوك؟).",
+      template: "Das ist Ali. ___ Bruder heißt Omar und ___ Schwester heißt Mona. Und du? Ist das ___ Vater?",
+      blanks: [
+        { correct: "Sein", options: ["Sein", "Seine", "Ihr"] },
+        { correct: "seine", options: ["sein", "seine", "ihre"] },
+        { correct: "dein", options: ["dein", "deine", "sein"] },
+      ],
+      explanation: "علي مذكر ⇒ الجذر sein في الأولَيَين. Bruder مذكر ⇒ Sein بلا ـe؛ Schwester مؤنث ⇒ seine. ثم خاطبناك أنت ⇒ dein، وVater مذكر ⇒ بلا ـe.",
+      errorType: "pronoun",
+    },
+    {
+      id: "e11",
+      type: "error-correction",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      wrongSentence: "Fatma wohnt in Sousse. Ihre Bruder studiert in Tunis.",
+      wrongWord: "Ihre",
+      correctWord: "Ihr",
+      options: ["Ihr", "Seine", "Ihre", "Deine"],
+      explanation: "الفخّ المتوقّع: المالكة أنثى فيُظنّ أنّ الأداة تأخذ ـe. لكنّ النهاية تتبع المملوك: Bruder مذكر (der) ⇒ Ihr Bruder.",
+      errorType: "pronoun",
+    },
+    {
+      id: "e12",
+      type: "word-ordering",
+      instructionAr: "رتّب الكلمات لتكوين سؤال صحيح:",
+      tokens: ["Ist", "das", "deine", "Schwester", "?"],
+      correctSentence: "Ist das deine Schwester?",
+      explanation: "السؤال بلا أداة استفهام يبدأ بالفعل: Ist das …? والمملوك Schwester مؤنث ⇒ deine.",
+      errorType: "word-order",
+    },
   ],
 
   /* 8) الأخطاء والتريكات */
@@ -422,6 +519,8 @@ export const lessonA102: Lesson = {
     { id: "fc6", de: "der Sohn / die Tochter", ar: "الابن / الابنة", example: "Das ist mein Sohn.", exampleAr: "هذا ابني.", level: "A1" },
     { id: "fc7", de: "mein / meine", ar: "لي (حسب الجنس)", example: "mein Vater, meine Mutter", exampleAr: "أبي، أمي", level: "A1" },
     { id: "fc8", de: "der Opa / die Oma", ar: "الجد / الجدة", example: "Mein Opa ist achtzig Jahre alt.", exampleAr: "جدي عمره ثمانون عاماً.", level: "A1" },
+    { id: "fc9", de: "dein / deine", ar: "لكَ/لكِ (حسب جنس المملوك)", example: "Ist das dein Bruder?", exampleAr: "هل هذا أخوك؟", level: "A1" },
+    { id: "fc10", de: "sein / ihr", ar: "له / لها", example: "Sein Vater und ihr Vater.", exampleAr: "أبوه وأبوها.", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
