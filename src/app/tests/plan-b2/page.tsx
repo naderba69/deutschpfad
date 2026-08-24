@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import {Badge} from "@/components/ui/badge";
+import {TOTAL_ESTIMATED_HOURS} from "@/lib/constants/curriculum";
 
 export const metadata: Metadata = {
   title: "خطة 12 شهراً — من A1 إلى Goethe-B2",
@@ -68,9 +69,11 @@ export default function PlanB2Page() {
           خطة 12 شهراً → Goethe-Zertifikat B2
         </h1>
         <p className="mt-2 max-w-2xl text-balance text-muted-foreground">
-          خطة واقعية من 90 دقيقة يومياً (الدروس ~355 ساعة + المراجعة والامتحانات = ~550 ساعة
-          فعلية — ضمن النطاق الموصى به من Goethe للدراسة الذاتية). كل مرحلة بشهرين، وأدوات
-          المنصة لكل هدف.
+          خطة واقعية من 90 دقيقة يومياً. دروس المنصّة نفسها ~{TOTAL_ESTIMATED_HOURS} ساعة من
+          الشرح والتمرين المُوجَّه؛ وهي نواة الخطة لا كلّها — الوصول إلى B2 يتطلّب إضافةً
+          إليها مراجعةً بالتكرار المتباعد، وقراءةً واستماعاً خارجيّين، ومحادثةً وامتحاناتٍ
+          تجريبية، بما مجموعه ~550 ساعة ضمن النطاق الذي توصي به Goethe للدراسة الذاتية.
+          كل مرحلة بشهرين، وأدوات المنصة لكل هدف.
         </p>
       </div>
 

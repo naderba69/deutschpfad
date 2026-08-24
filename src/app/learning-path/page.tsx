@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import {LearningPathClient} from "@/components/learning-path/learning-path-client";
 import {LangDe} from "@/components/shared/lang-de";
 import {Badge} from "@/components/ui/badge";
-import {TOTAL_LESSONS, TOTAL_UNITS, TOTAL_WORDS} from "@/lib/constants/curriculum";
+import {TOTAL_ESTIMATED_HOURS, TOTAL_LESSONS, TOTAL_UNITS, TOTAL_WORDS} from "@/lib/constants/curriculum";
 
 export const metadata: Metadata = {
   title: "مسار التعلم — خارطة الطريق من A1 إلى B2",
@@ -28,7 +28,7 @@ export default function LearningPathPage() {
           <LangDe className="font-extrabold">B2</LangDe>
         </h1>
         <p className="max-w-2xl text-balance text-base leading-relaxed text-muted-foreground sm:text-lg">
-          أربعة مستويات معتمدة دولياً، {TOTAL_UNITS} وحدة دراسية، {TOTAL_LESSONS}+ درساً
+          أربعة مستويات معتمدة دولياً، {TOTAL_UNITS} وحدة دراسية، {TOTAL_LESSONS} درساً
           تفاعلياً، وحصيلة مفرداتية تزيد عن {TOTAL_WORDS.toLocaleString("ar-EG")} كلمة.
           الوحدات تُفتح تباعاً: أتقن وحدة لفتح التي تليها، وأكمل 80% من المستوى للانتقال للتالي.
         </p>
@@ -40,8 +40,10 @@ export default function LearningPathPage() {
           <div className="min-w-0">
             <p className="text-sm font-extrabold text-gold-strong">📅 الخطة الزمنية الواقعية</p>
             <p className="mt-0.5 text-xs text-muted-foreground">
-              الدروس والتمارين والمراجعة معاً ≈ <b>550 ساعة فعلية</b> (ضمن نطاق Goethe الموصى به
-              للدراسة الذاتية) — بوتيرة 90 دقيقة يومياً تصل إلى B2 في ~12 شهراً.
+              دروس المنصّة ≈ <b>{TOTAL_ESTIMATED_HOURS} ساعة</b> شرحاً وتمريناً مُوجَّهاً؛ ومع
+              المراجعة المتباعدة والقراءة والاستماع والمحادثة خارجها ≈ <b>550 ساعة فعلية</b>{" "}
+              (ضمن نطاق Goethe الموصى به للدراسة الذاتية) — بوتيرة 90 دقيقة يومياً تصل إلى B2
+              في ~12 شهراً.
             </p>
           </div>
           <a

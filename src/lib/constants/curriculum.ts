@@ -82,8 +82,6 @@ export const UNITS: Unit[] = [
     titleAr: "التعارف والتحيات",
     descDe: "Begrüßungen, das Alphabet und sich vorstellen.",
     descAr: "التحيات، الحروف الأبجدية والنطق، والتعريف بالنفس والآخرين.",
-    lessons: 6,
-    minutes: 55,
     keyWords: ["Hallo", "Guten Tag", "heißen", "kommen aus", "das Alphabet"],
   },
   {
@@ -94,8 +92,6 @@ export const UNITS: Unit[] = [
     titleAr: "العائلة والأصدقاء",
     descDe: "Familienmitglieder vorstellen und Possessivartikel.",
     descAr: "أفراد العائلة، أدوات الملكية (mein/dein)، ووصف العلاقات.",
-    lessons: 6,
-    minutes: 55,
     keyWords: ["die Familie", "der Vater", "die Mutter", "mein", "dein"],
   },
   {
@@ -106,8 +102,6 @@ export const UNITS: Unit[] = [
     titleAr: "الطعام والشراب",
     descDe: "Lebensmittel, der Akkusativ und einkaufen gehen.",
     descAr: "المأكولات والمشروبات، حالة النصب (Akkusativ) مع der/ein، والتسوق.",
-    lessons: 6,
-    minutes: 50,
     keyWords: ["das Brot", "der Apfel", "essen", "trinken", "der Akkusativ"],
   },
   {
@@ -118,8 +112,6 @@ export const UNITS: Unit[] = [
     titleAr: "السكن والمنزل",
     descDe: "Die Wohnung beschreiben und über Möbel sprechen.",
     descAr: "وصف الشقة والمنزل، الأثاث، وحروف الجر مع المكان (in/auf).",
-    lessons: 6,
-    minutes: 50,
     keyWords: ["das Zimmer", "die Küche", "wohnen", "die Möbel", "in/auf"],
   },
   {
@@ -130,8 +122,6 @@ export const UNITS: Unit[] = [
     titleAr: "الحياة اليومية والروتين",
     descDe: "Tagesablauf, Uhrzeiten und trennbare Verben.",
     descAr: "الروتين اليومي، الساعة وأوقات اليوم، والأفعال المنفصلة.",
-    lessons: 6,
-    minutes: 55,
     keyWords: ["aufstehen", "die Uhrzeit", "am Morgen", "trennbare Verben"],
   },
   {
@@ -142,8 +132,6 @@ export const UNITS: Unit[] = [
     titleAr: "أوقات الفراغ والهوايات",
     descDe: "Über Hobbys sprechen und Verabredungen treffen.",
     descAr: "الحديث عن الهوايات، صيغة الأمر (Imperativ)، وتنظيم المواعيد.",
-    lessons: 6,
-    minutes: 50,
     keyWords: ["das Hobby", "spielen", "der Sport", "der Imperativ"],
   },
   {
@@ -154,8 +142,6 @@ export const UNITS: Unit[] = [
     titleAr: "التسوق والأرقام",
     descDe: "Einkaufen, Preise, Mengenangaben, Telefonnummern und Adressen.",
     descAr: "التسوق والأسعار والكميات، ثم درس الأرقام والهاتف والعناوين (a1-14): أرقام حتى 100 بثقة، أرقام الهاتف، والعناوين.",
-    lessons: 2,
-    minutes: 50,
     keyWords: ["der Preis", "kosten", "das Kilo", "die Telefonnummer", "die Adresse"],
   },
   {
@@ -166,8 +152,6 @@ export const UNITS: Unit[] = [
     titleAr: "الملابس والألوان",
     descDe: "Kleidung, Farben und Adjektive als Prädikat.",
     descAr: "الملابس والألوان، الصفات الخبرية، والسؤال عن الرأي (Wie findest du?).",
-    lessons: 5,
-    minutes: 45,
     keyWords: ["das Hemd", "die Farbe", "rot", "tragen", "finden"],
   },
   {
@@ -178,8 +162,6 @@ export const UNITS: Unit[] = [
     titleAr: "المواعيد والوقت",
     descDe: "Termine, Wochentage, Monate und Jahreszeiten.",
     descAr: "المواعيد، أيام الأسبوع، الأشهر والفصول، والأعداد الترتيبية.",
-    lessons: 5,
-    minutes: 45,
     keyWords: ["der Termin", "der Wochentag", "der Monat", "um/am"],
   },
   {
@@ -190,8 +172,6 @@ export const UNITS: Unit[] = [
     titleAr: "العمل والمهن",
     descDe: "Berufe nennen und über die Arbeit sprechen.",
     descAr: "المهن والوظائف، النفي بـ (nicht/kein)، والحديث عن العمل.",
-    lessons: 5,
-    minutes: 45,
     keyWords: ["der Beruf", "arbeiten", "der Arzt", "nicht", "kein"],
   },
   {
@@ -202,8 +182,6 @@ export const UNITS: Unit[] = [
     titleAr: "التنقل في المدينة",
     descDe: "Nach dem Weg fragen und Wegbeschreibungen verstehen.",
     descAr: "السؤال عن الطريق، الاتجاهات، ووسائل النقل الأساسية.",
-    lessons: 5,
-    minutes: 45,
     keyWords: ["die Straße", "geradeaus", "rechts", "links", "der Bahnhof"],
   },
   {
@@ -214,8 +192,6 @@ export const UNITS: Unit[] = [
     titleAr: "الطقس والفصول",
     descDe: "Über das Wetter sprechen und es ist + Adjektiv.",
     descAr: "الحديث عن الطقس، (es ist + صفة)، والملابس المناسبة لكل فصل.",
-    lessons: 5,
-    minutes: 45,
     keyWords: ["das Wetter", "die Sonne", "der Regen", "es ist kalt"],
   },
   {
@@ -226,8 +202,6 @@ export const UNITS: Unit[] = [
     titleAr: "A1 المراجعة الشاملة",
     descDe: "Alle A1-Grammatik kombinieren und bereit für A2 sein.",
     descAr: "جمع كل قواعد A1 في جمل صحيحة، مراجعة شاملة، والاستعداد لامتحان الختم وA2.",
-    lessons: 1,
-    minutes: 35,
     keyWords: ["die Wiederholung", "kombinieren", "die Prüfung", "bereit für A2"],
   },
 
@@ -240,8 +214,6 @@ export const UNITS: Unit[] = [
     titleAr: "السفر والعطلات",
     descDe: "Urlaubserlebnisse im Perfekt erzählen.",
     descAr: "حكاية تجارب السفر بصيغة الماضي التام (Perfekt) مع haben/sein.",
-    lessons: 6,
-    minutes: 55,
     keyWords: ["der Urlaub", "die Reise", "das Perfekt", "sein/haben"],
   },
   {
@@ -252,8 +224,6 @@ export const UNITS: Unit[] = [
     titleAr: "الصحة والطبيب",
     descDe: "Körperteile, Krankheiten und Ratschläge.",
     descAr: "أجزاء الجسم، الأمراض، وطلب النصيحة مع (sollen/sollte).",
-    lessons: 6,
-    minutes: 55,
     keyWords: ["der Körper", "die Schmerzen", "der Termin", "sollen"],
   },
   {
@@ -264,8 +234,6 @@ export const UNITS: Unit[] = [
     titleAr: "المطعم والطعام",
     descDe: "Bestellen, bezahlen und über Geschmack sprechen.",
     descAr: "طلب الطعام، الدفع، والتعبير عن الرأي في الأكل (schmecken).",
-    lessons: 6,
-    minutes: 50,
     keyWords: ["die Speisekarte", "bestellen", "schmecken", "die Rechnung"],
   },
   {
@@ -276,8 +244,6 @@ export const UNITS: Unit[] = [
     titleAr: "البحث عن سكن",
     descDe: "Anzeigen verstehen und eine Wohnung beschreiben.",
     descAr: "فهم إعلانات العقارات، وصف شقة، وحروف الجر المتغيرة (Wechselpräpositionen).",
-    lessons: 6,
-    minutes: 55,
     keyWords: ["die Wohnung", "die Miete", "der Vermieter", "Wechselpräpositionen"],
   },
   {
@@ -288,8 +254,6 @@ export const UNITS: Unit[] = [
     titleAr: "في المكتب والعمل",
     descDe: "Telefonieren, E-Mails schreiben und Termine koordinieren.",
     descAr: "الاتصالات الهاتفية، كتابة البريد الإلكتروني البسيط، وتنسيق المواعيد.",
-    lessons: 6,
-    minutes: 50,
     keyWords: ["das Büro", "anrufen", "die E-Mail", "der Kollege"],
   },
   {
@@ -300,8 +264,6 @@ export const UNITS: Unit[] = [
     titleAr: "الإعلام والأخبار",
     descDe: "Über Medien sprechen und Nachrichten verstehen.",
     descAr: "التحدث عن وسائل الإعلام، فهم الأخبار، والرأي الشخصي (ich finde/ich glaube).",
-    lessons: 5,
-    minutes: 45,
     keyWords: ["das Fernsehen", "die Zeitung", "das Internet", "die Nachrichten"],
   },
   {
@@ -312,8 +274,6 @@ export const UNITS: Unit[] = [
     titleAr: "البنك والمال",
     descDe: "Bankgespräche, Geld und Zahlungsarten.",
     descAr: "معاملات البنك، المال، وطرق الدفع (überweisen/bar zahlen).",
-    lessons: 5,
-    minutes: 45,
     keyWords: ["das Konto", "das Geld", "überweisen", "bar"],
   },
   {
@@ -324,8 +284,6 @@ export const UNITS: Unit[] = [
     titleAr: "المواصلات والتنقل",
     descDe: "Fahrkarten kaufen, Verbindungen und Verkehrsmittel.",
     descAr: "شراء التذاكر، جداول المواصلات، ووسائل النقل (Bahn/Bus/Straßenbahn).",
-    lessons: 5,
-    minutes: 45,
     keyWords: ["die Fahrkarte", "der Zug", "umsteigen", "die Haltestelle"],
   },
   {
@@ -336,8 +294,6 @@ export const UNITS: Unit[] = [
     titleAr: "المناسبات والاحتفالات",
     descDe: "Einladungen, Geschenke und Feste in Deutschland.",
     descAr: "الدعوات، الهدايا، والمناسبات الألمانية (Geburtstag/Weihnachten...).",
-    lessons: 5,
-    minutes: 45,
     keyWords: ["die Einladung", "feiern", "das Geschenk", "der Geburtstag"],
   },
   {
@@ -348,8 +304,6 @@ export const UNITS: Unit[] = [
     titleAr: "المدرسة والتعلم",
     descDe: "Über Lernen, Kurse und Prüfungen sprechen.",
     descAr: "الحديث عن الدراسة والدورات والامتحانات، والجمل الثانوية (dass/weil).",
-    lessons: 5,
-    minutes: 50,
     keyWords: ["der Kurs", "lernen", "die Prüfung", "weil", "dass"],
   },
   {
@@ -360,8 +314,6 @@ export const UNITS: Unit[] = [
     titleAr: "الخدمات والمعاملات",
     descDe: "Post, Friseur, Reparaturen und Beschwerden.",
     descAr: "البريد، الحلاق، الإصلاحات، وتقديم شكوى بأدب.",
-    lessons: 5,
-    minutes: 45,
     keyWords: ["die Post", "der Friseur", "reparieren", "sich beschweren"],
   },
   {
@@ -372,8 +324,6 @@ export const UNITS: Unit[] = [
     titleAr: "العلاقات بين الناس",
     descDe: "Gefühle, Meinungen und Konflikte ansprechen.",
     descAr: "المشاعر والآراء، الأفعال الانعكاسية، والتعامل مع الخلافات.",
-    lessons: 5,
-    minutes: 50,
     keyWords: ["die Gefühle", "die Meinung", "sich freuen", "sich ärgern"],
   },
 
@@ -386,8 +336,6 @@ export const UNITS: Unit[] = [
     titleAr: "التعليم والدراسة",
     descDe: "Bildungssysteme vergleichen und Studiengänge beschreiben.",
     descAr: "مقارنة الأنظمة التعليمية، وصف التخصصات، وصيغ التفضيل والشرط (als ob/wenn).",
-    lessons: 6,
-    minutes: 60,
     keyWords: ["die Ausbildung", "das Studium", "der Studiengang", "der Vergleich"],
   },
   {
@@ -398,8 +346,6 @@ export const UNITS: Unit[] = [
     titleAr: "عالم العمل",
     descDe: "Bewerbungen, Arbeitsbedingungen und Berufserfahrung.",
     descAr: "طلبات التوظيف، ظروف العمل، والخبرات المهنية بصيغة Präteritum.",
-    lessons: 6,
-    minutes: 60,
     keyWords: ["die Bewerbung", "der Arbeitgeber", "die Erfahrung", "das Präteritum"],
   },
   {
@@ -410,8 +356,6 @@ export const UNITS: Unit[] = [
     titleAr: "البيئة والمناخ",
     descDe: "Umweltprobleme diskutieren und Lösungen vorschlagen.",
     descAr: "مناقشة مشاكل البيئة، اقتراح الحلول، والمبني للمجهول (Passiv).",
-    lessons: 6,
-    minutes: 60,
     keyWords: ["die Umwelt", "das Klima", "der Müll", "das Passiv"],
   },
   {
@@ -422,8 +366,6 @@ export const UNITS: Unit[] = [
     titleAr: "الإعلام والمجتمع",
     descDe: "Medien kritisch betrachten und Meinungen begründen.",
     descAr: "النظر النقدي للإعلام، تبرير الآراء، والجمل السببية (weil/da).",
-    lessons: 6,
-    minutes: 55,
     keyWords: ["die Medien", "die Meinung", "begründen", "da/weil"],
   },
   {
@@ -434,8 +376,6 @@ export const UNITS: Unit[] = [
     titleAr: "الصحة والوقاية",
     descDe: "Gesund leben, Sport und Vorsorge.",
     descAr: "الحياة الصحية، الرياضة، والوقاية مع الروابط الشرطية (wenn/falls).",
-    lessons: 6,
-    minutes: 55,
     keyWords: ["die Gesundheit", "die Vorsorge", "der Sport", "wenn", "falls"],
   },
   {
@@ -446,8 +386,6 @@ export const UNITS: Unit[] = [
     titleAr: "الثقافة والفن",
     descDe: "Kunstwerke beschreiben und über Kultur sprechen.",
     descAr: "وصف الأعمال الفنية، الحديث عن الثقافة، والجمل النسبية (Relativsätze).",
-    lessons: 6,
-    minutes: 55,
     keyWords: ["die Kunst", "das Museum", "beschreiben", "Relativsatz"],
   },
   {
@@ -458,8 +396,6 @@ export const UNITS: Unit[] = [
     titleAr: "السياسة والمجتمع",
     descDe: "Politische Grundbegriffe und gesellschaftliche Themen.",
     descAr: "المفاهيم السياسية الأساسية، القضايا المجتمعية، وحروف الجر مع المضاف إليه (wegen/trotz/während).",
-    lessons: 6,
-    minutes: 60,
     keyWords: ["die Politik", "die Gesellschaft", "wegen", "trotz"],
   },
   {
@@ -470,8 +406,6 @@ export const UNITS: Unit[] = [
     titleAr: "التقنية والرقمنة",
     descDe: "Technik im Alltag, Vor- und Nachteile abwägen.",
     descAr: "التقنية في الحياة اليومية، موازنة الإيجابيات والسلبيات (einerseits/andererseits).",
-    lessons: 6,
-    minutes: 55,
     keyWords: ["die Technik", "der Computer", "digital", "einerseits"],
   },
   {
@@ -482,8 +416,6 @@ export const UNITS: Unit[] = [
     titleAr: "العمل التطوعي والاجتماعي",
     descDe: "Ehrenamt, Projekte und soziales Engagement.",
     descAr: "العمل التطوعي، المشاريع الاجتماعية، وصيغة المستقبل (Futur I).",
-    lessons: 5,
-    minutes: 50,
     keyWords: ["das Ehrenamt", "das Projekt", "helfen", "das Futur"],
   },
   {
@@ -494,8 +426,6 @@ export const UNITS: Unit[] = [
     titleAr: "المستقبل والخطط",
     descDe: "Über Zukunftspläne sprechen und Vermutungen äußern.",
     descAr: "التحدث عن خطط المستقبل، التعبير عن الافتراضات بصيغة Konjunktiv II.",
-    lessons: 5,
-    minutes: 50,
     keyWords: ["die Zukunft", "der Plan", "würde", "könnte"],
   },
   /* ═══ المرحلة 4: وحدة b1-11 (المراجعة الختامية B1) — كانت مفقودة من المسار ═══ */
@@ -507,8 +437,6 @@ export const UNITS: Unit[] = [
     titleAr: "B1 الشامل — التحضير للامتحان",
     descDe: "Gesamtwiederholung von B1 und Prüfungsvorbereitung.",
     descAr: "المراجعة الختامية لمستوى B1 ودمج القواعد في مواقف حية، مع محاكاة أقسام Goethe-B1.",
-    lessons: 1,
-    minutes: 45,
     keyWords: ["Wiederholung", "Prüfung", "Mediation", "Interaktion"],
   },
 
@@ -521,8 +449,6 @@ export const UNITS: Unit[] = [
     titleAr: "العلوم والبحث",
     descDe: "Wissenschaftliche Themen verstehen und referieren.",
     descAr: "فهم الموضوعات العلمية، تقديم عرض، ونقل الكلام غير المباشر (Konjunktiv I).",
-    lessons: 6,
-    minutes: 65,
     keyWords: ["die Wissenschaft", "die Forschung", "das Referat", "Konjunktiv I"],
   },
   {
@@ -533,8 +459,6 @@ export const UNITS: Unit[] = [
     titleAr: "الاقتصاد والمالية",
     descDe: "Wirtschaftsnachrichten und Marktentwicklungen analysieren.",
     descAr: "تحليل الأخبار الاقتصادية وتطورات الأسواق بمفردات متخصصة.",
-    lessons: 6,
-    minutes: 65,
     keyWords: ["die Wirtschaft", "der Markt", "die Konjunktur", "analysieren"],
   },
   {
@@ -545,8 +469,6 @@ export const UNITS: Unit[] = [
     titleAr: "القانون والحياة اليومية",
     descDe: "Rechtliche Grundbegriffe und Verträge verstehen.",
     descAr: "المفاهيم القانونية الأساسية، فهم العقود، والصيغ الرسمية.",
-    lessons: 6,
-    minutes: 60,
     keyWords: ["das Recht", "der Vertrag", "das Gesetz", "formell"],
   },
   {
@@ -557,8 +479,6 @@ export const UNITS: Unit[] = [
     titleAr: "الأدب والإعلام المتقدم",
     descDe: "Literarische Texte und anspruchsvolle Medienbeiträge.",
     descAr: "النصوص الأدبية والمساهمات الإعلامية الراقية، والصفات المشتقة من الفعل (Partizipien).",
-    lessons: 6,
-    minutes: 60,
     keyWords: ["die Literatur", "der Roman", "der Beitrag", "Partizip"],
   },
   {
@@ -569,8 +489,6 @@ export const UNITS: Unit[] = [
     titleAr: "علم النفس والتواصل",
     descDe: "Kommunikationsmodelle und psychologische Aspekte.",
     descAr: "نماذج التواصل والجوانب النفسية، والافتراضات والتحفظات (es sei denn, je nachdem).",
-    lessons: 6,
-    minutes: 60,
     keyWords: ["die Psychologie", "die Kommunikation", "das Verhalten", "je nachdem"],
   },
   {
@@ -581,8 +499,6 @@ export const UNITS: Unit[] = [
     titleAr: "المسار المهني",
     descDe: "Karrierewege, Verhandlungen und professionelle Kommunikation.",
     descAr: "المسارات المهنية، التفاوض، والتواصل الاحترافي الرسمي.",
-    lessons: 6,
-    minutes: 60,
     keyWords: ["die Karriere", "verhandeln", "professionell", "die Führungskraft"],
   },
   {
@@ -593,8 +509,6 @@ export const UNITS: Unit[] = [
     titleAr: "الفلسفة والمجتمع",
     descDe: "Abstrakte Themen diskutieren und argumentieren.",
     descAr: "مناقشة الموضوعات المجردة، بناء الحجج، والكتابة الجدلية (Erörterung).",
-    lessons: 6,
-    minutes: 60,
     keyWords: ["die Philosophie", "argumentieren", "die These", "die Erörterung"],
   },
   {
@@ -605,8 +519,6 @@ export const UNITS: Unit[] = [
     titleAr: "اللغات والتبادل الثقافي",
     descDe: "Interkulturelle Unterschiede und Mehrsprachigkeit.",
     descAr: "الاختلافات بين الثقافات، تعدد اللغات، والاشتقاق الاسمي (Nominalisierung).",
-    lessons: 6,
-    minutes: 60,
     keyWords: ["die Kultur", "mehrsprachig", "interkulturell", "Nominalisierung"],
   },
   {
@@ -617,8 +529,6 @@ export const UNITS: Unit[] = [
     titleAr: "سوق العمل والتقديم الوظيفي",
     descDe: "Bewerbungsunterlagen und Vorstellungsgespräche führen.",
     descAr: "ملفات التقديم، مقابلات العمل، والمراسلات الرسمية الكاملة.",
-    lessons: 6,
-    minutes: 65,
     keyWords: ["der Lebenslauf", "das Vorstellungsgespräch", "das Anschreiben"],
   },
   {
@@ -629,8 +539,6 @@ export const UNITS: Unit[] = [
     titleAr: "الدراسة في ألمانيا",
     descDe: "Universitätssystem, Seminare und wissenschaftliches Schreiben.",
     descAr: "النظام الجامعي، الندوات، والكتابة الأكاديمية العلمية (Fachsprache).",
-    lessons: 6,
-    minutes: 65,
     keyWords: ["die Universität", "das Seminar", "die Fachsprache", "die Hausarbeit"],
   },
 ];
@@ -655,8 +563,27 @@ export function getUnitLessonCount(unitId: string): number {
   return LESSON_META.filter((l) => l.unitId === unitId).length;
 }
 
-/** إجمالي الساعات الإرشادية الفعلية (من خريطة المنهج المطابقة للدروس) */
-export const TOTAL_ESTIMATED_HOURS = 355;
+/**
+ * الزمن التقديري لوحدة بالدقائق — مجموع `duration` دروسها الفعلية.
+ *
+ * كان حقلاً يدوياً في UNITS يعلن 45–60 دقيقة للوحدة، بينما الدرس الوحيد
+ * داخلها مكتوب عليه 30–45. الرقم المعروض للمتعلّم يجب أن يكون مجموع ما
+ * سيقرؤه فعلاً، لا تقديراً منفصلاً عنه.
+ */
+export function getUnitMinutes(unitId: string): number {
+  return LESSON_META.filter((l) => l.unitId === unitId).reduce((sum, l) => sum + l.duration, 0);
+}
+
+/**
+ * إجمالي الساعات الإرشادية — محسوبة من `duration` الدروس الفعلية.
+ *
+ * كان ثابتاً مكتوباً بـ 355 ساعة، وهو رقم لا مصدر له: مجموع الحقول
+ * اليدوية كان 40.7 ساعة، ومجموع الدروس الفعلية 28.5. الفارق بين 355
+ * و28.5 ليس خطأً حسابياً بل رقم دعائي لا يقابله محتوى.
+ */
+export const TOTAL_ESTIMATED_HOURS = Math.round(
+  LESSON_META.reduce((sum, l) => sum + l.duration, 0) / 60,
+);
 
 /** الحصيلة المفرداتية الإجمالية التقريبية */
 export const TOTAL_WORDS = LEVELS.reduce((sum, l) => sum + l.words, 0);

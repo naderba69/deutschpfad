@@ -2,7 +2,14 @@ import {describe, expect, it} from "vitest";
 
 import {LESSON_META} from "@/data/lessons/meta";
 import {getAllCurriculumUnits} from "@/data/curriculum/cefr-map";
-import {getUnitLessonCount, TOTAL_LESSONS, UNITS, TOTAL_UNITS} from "@/lib/constants/curriculum";
+import {
+  getUnitLessonCount,
+  getUnitMinutes,
+  TOTAL_ESTIMATED_HOURS,
+  TOTAL_LESSONS,
+  UNITS,
+  TOTAL_UNITS,
+} from "@/lib/constants/curriculum";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -19,18 +26,45 @@ describe("اتساق أرقام الدروس (المرحلة 4)", () => {
 
   it("عدد دروس كل وحدة معروض = الدروس الفعلية لهذه الوحدة", () => {
     for (const unit of UNITS) {
-      const declared = unit.lessons; // القيمة القديمة المعلنة (يجب ألا تُستخدم بعد الآن)
-      const real = getUnitLessonCount(unit.id);
-      // الواجهة تعرض getUnitLessonCount — يجب أن يطابق واقع LESSON_META
       const expected = LESSON_META.filter((l) => l.unitId === unit.id).length;
-      expect(real, `وحدة ${unit.id}: العدد المحسوب لا يطابق الدروس الفعلية`).toBe(expected);
-      // يجب ألا يعرض المكوّن القيمة القديمة — نضمن بصرياً عبر التحقق أن الفرق مُعالج
-      if (declared !== real) {
-        // هذه وحدات كانت معلنة خطأً — نتحقق أن العرض يستخدم المحسوب (لا يمكن اختباره هنا،
-        // لكن نضمن أن العدد الفعلي مطابق للواقع)
-        expect(real).toBeGreaterThanOrEqual(1);
-      }
+      expect(getUnitLessonCount(unit.id), `وحدة ${unit.id}: العدد المحسوب لا يطابق الدروس الفعلية`).toBe(
+        expected,
+      );
     }
+  });
+
+  /**
+   * الحقلان lessons وminutes كانا يُكتبان يدوياً داخل UNITS فتعفّنا:
+   * 44 وحدة من 46 تُعلن 5–6 دروس ولها درس واحد فعلي، و44 تُعلن زمناً
+   * يزيد 15–25 دقيقة عن duration الدرس. حُذفا من النوع Unit، وهذا الحارس
+   * يمنع إعادة إدخالهما بدل الدالتين المحسوبتين.
+   */
+  it("لا يعود إعلان lessons/minutes يدوياً في UNITS", () => {
+    const fs = require("fs");
+    const src: string = fs.readFileSync("src/lib/constants/curriculum.ts", "utf8");
+    const manual = src.match(/^\s*(lessons|minutes): *\d+,/gm) ?? [];
+    expect(manual, "أُعيد إعلان lessons/minutes يدوياً — استعمل getUnitLessonCount/getUnitMinutes").toEqual(
+      [],
+    );
+  });
+
+  it("الزمن المعروض للوحدة = مجموع duration دروسها الفعلية", () => {
+    for (const unit of UNITS) {
+      const expected = LESSON_META.filter((l) => l.unitId === unit.id).reduce((sum, l) => sum + l.duration, 0);
+      expect(getUnitMinutes(unit.id), `وحدة ${unit.id}: الزمن المعروض لا يطابق دروسها`).toBe(expected);
+      expect(getUnitMinutes(unit.id), `وحدة ${unit.id}: زمن صفري`).toBeGreaterThan(0);
+    }
+  });
+
+  /**
+   * كان TOTAL_ESTIMATED_HOURS مكتوباً يدوياً بـ 355 ساعة بلا مصدر:
+   * مجموع الحقول اليدوية كان 40.7 ساعة، ومجموع الدروس الفعلية 28.5.
+   * لا يجوز أن يَعِد الموقع بزمن لا يقابله محتوى.
+   */
+  it("إجمالي الساعات محسوب من الدروس لا مكتوباً يدوياً", () => {
+    const real = Math.round(LESSON_META.reduce((sum, l) => sum + l.duration, 0) / 60);
+    expect(TOTAL_ESTIMATED_HOURS).toBe(real);
+    expect(TOTAL_ESTIMATED_HOURS).toBeLessThan(100);
   });
 
   it("مجموع دروس الوحدات الفعلية = إجمالي الدروس", () => {
