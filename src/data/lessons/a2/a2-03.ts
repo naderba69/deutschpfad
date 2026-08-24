@@ -157,6 +157,54 @@ export const lessonA203: Lesson = {
         content: "كلاهما «جيد»: lecker للطعم تحديداً (لذيذ)، gut عام. Es schmeckt lecker / Es schmeckt gut — كلاهما صحيح.",
       },
     },
+    {
+      id: "t3",
+      titleAr: "من الفاعل حقاً؟ mir gefällt / mir schmeckt",
+      titleDe: "Das Essen schmeckt mir: der Dativ als Empfänger",
+      explanationAr:
+        "قلتَ في هذا الدرس «Das schmeckt mir» و«Die Suppe schmeckt lecker». وآن الأوان لتعرف **لماذا** تُقال هكذا — لأنّ هذه البنية تخالف حدسك العربي مخالفةً تامّة.\n\nفي «Das Essen schmeckt mir»:\n· **das Essen** = الفاعل النحوي (Nominativ) — هو الذي يفعل\n· **mir** = المتلقّي (Dativ) — أنا الذي يقع عليه الأثر\n\nأي أنّ الجملة حرفياً: «الطعامُ يَطيبُ لي». الطعام هو الفاعل، لا أنا!\n\nولذلك يتبع الفعلُ **الطعامَ** لا المتكلّم:\nDas Essen schmeck**t** mir. (مفرد)\nDie Nudeln schmeck**en** mir. (جمع ⇒ الفعل جمع)\n\nوالقاعدة نفسها في gefallen (يعجب) وgehören (يخصّ) وpassen (يناسب).",
+      whyAr:
+        "لماذا يقع العربي في هذا الفخّ تحديداً؟ لأنّ العربية تقول «أنا أحبّ الطعام» — المتكلّم فاعل. فيترجم حرفياً «Ich schmecke das Essen» وهي جملة تعني «أنا أتذوّق الطعام بلساني» — أي أنّه هو الطعام الذي يُتذوَّق! والمفارقة أنّ العربية تملك البنية ذاتها في «يُعجبني» و«يَحلو لي»: فيهما الشيء فاعل والمتكلّم متلقٍّ. فالبنية ليست غريبة عنك، بل غريبة عن الفعل الذي اخترتَه للترجمة.",
+      table: {
+        title: "من يحكم صيغة الفعل؟",
+        columns: ["الفاعل (Nominativ)", "الفعل", "المتلقّي (Dativ)"],
+        rows: [
+          { label: "Das Essen", cells: ["schmeckt", "mir"] },
+          { label: "Die Nudeln (ج)", cells: ["schmecken", "mir"] },
+          { label: "Der Kuchen", cells: ["gefällt", "dir"] },
+          { label: "Die Suppe", cells: ["schmeckt", "ihm / ihr"] },
+          { label: "Die Getränke (ج)", cells: ["schmecken", "uns"] },
+        ],
+      },
+      examples: [
+        { de: "Das Essen schmeckt mir sehr gut.", ar: "الطعام يعجبني كثيراً (طعمه)." },
+        { de: "Die Nudeln schmecken mir nicht.", ar: "المعكرونة لا تعجبني." },
+        { de: "Wie schmeckt Ihnen die Suppe?", ar: "كيف تجد الحساء؟" },
+        { de: "Der Nachtisch gefällt uns.", ar: "الحلوى تعجبنا." },
+        { de: "Schmeckt dir das Fleisch?", ar: "هل يعجبك اللحم؟" },
+      ],
+      comparisonWithArabic:
+        "«يُعجبني الطعام» — انظر إلى العربية جيّداً: الطعام مرفوع فاعل، والياء في «يعجبني» ضمير نصب للمتلقّي. هذه هي البنية الألمانية حرفاً بحرف! لكنّ العربي حين يترجم لا يستحضر «يعجبني» بل «أحبّ»، فينقلب الترتيب ويخطئ. فالعلاج أن تُترجم schmecken بـ«يَطيب لي» لا بـ«أتذوّق»، وgefallen بـ«يُعجبني» لا بـ«أُعجَب بـ».",
+      eselsbruecke:
+        "الطبقُ هو البطل، وأنت الجمهور. الفعل يتبع **الطبق**: طبق واحد ⇒ schmeckt، أطباق ⇒ schmecken. أمّا mir فلا تُغيّر الفعل أبداً مهما تبدّلت.",
+      commonMistakes: [
+        {
+          wrong: "Ich schmecke die Suppe gut.",
+          right: "Die Suppe schmeckt mir gut.",
+          whyAr: "Ich schmecke تعني «أنا أتذوّق بلساني» — فتجعل نفسك أنت من له طعم. الطعام هو الفاعل، وأنت في الـDativ.",
+        },
+        {
+          wrong: "Die Nudeln schmeckt mir.",
+          right: "Die Nudeln schmecken mir.",
+          whyAr: "الفعل يتبع الفاعل النحوي وهو Die Nudeln (جمع) ⇒ schmecken. وجود mir المفرد لا يؤثّر في الفعل إطلاقاً.",
+        },
+      ],
+      relatedRuleComparison: {
+        title: "عائلة الأفعال المقلوبة",
+        content:
+          "الفعل schmecken هنا، وgefallen وgehören وpassen في درس المناسبات، وwehtun في درس الطبيب («Der Kopf tut mir weh» — الرأس هو الفاعل!) — كلّها أسرة واحدة: الشيء فاعل والإنسان متلقٍّ. ومن فهم واحداً منها فهمها جميعاً.",
+      },
+    },
   ],
 
   listening: {
@@ -387,6 +435,69 @@ export const lessonA203: Lesson = {
       explanation: "الحساء طعمه جيد جداً عندي — schmeckt + Dativ (mir).",
       errorType: "spelling",
     },
+    {
+      id: "e11",
+      type: "fill-blank",
+      instructionAr: "أكمل بصيغة الفعل الصحيحة (schmecken) بحسب الفاعل:",
+      template: "Das Essen ___ mir gut. Die Nudeln ___ mir nicht. Die Suppe ___ ihm.",
+      blanks: [
+        { correct: "schmeckt", options: ["schmeckt", "schmecken", "schmecke"] },
+        { correct: "schmecken", options: ["schmecken", "schmeckt", "schmecke"] },
+        { correct: "schmeckt", options: ["schmeckt", "schmecken", "schmecke"] },
+      ],
+      explanation: "الفعل يتبع الفاعل النحوي: das Essen مفرد ⇒ schmeckt · die Nudeln جمع ⇒ schmecken · die Suppe مفرد ⇒ schmeckt.",
+      errorType: "conjugation",
+    },
+    {
+      id: "e12",
+      type: "error-correction",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      wrongSentence: "Ich schmecke die Suppe sehr gut.",
+      wrongWord: "Ich",
+      correctWord: "Mir",
+      options: ["Mir", "Ich", "Mich", "Mein"],
+      explanation: "الطعام هو الفاعل والإنسان متلقٍّ: Mir schmeckt die Suppe sehr gut. أمّا Ich schmecke فتعني أنّ لي أنا طعماً.",
+      errorType: "case",
+    },
+    {
+      id: "e13",
+      type: "multiple-choice",
+      instructionAr: "النادل يسألك عن رأيك في الحساء. أيّ صيغة صحيحة؟",
+      questionDe: "Wie ___ Ihnen die Suppe?",
+      questionAr: "كيف تجد الحساء؟",
+      options: ["schmeckt", "schmecken", "schmecke", "schmeckst"],
+      correctIndex: 0,
+      explanation: "die Suppe مفرد وهي الفاعل ⇒ schmeckt. وIhnen في الـDativ لا تؤثّر في الفعل.",
+      optionExplanations: [
+        undefined,
+        "schmecken للجمع، والحساء مفرد.",
+        "schmecke لـ ich، وich ليست فاعل الجملة هنا.",
+        "schmeckst لـ du، وdu ليست الفاعل.",
+      ],
+      errorType: "conjugation",
+    },
+    {
+      id: "e14",
+      type: "word-ordering",
+      instructionAr: "رتّب الكلمات لتقول إنّ المعكرونة لا تعجبك:",
+      tokens: ["Die", "Nudeln", "schmecken", "mir", "nicht", "."],
+      correctSentence: "Die Nudeln schmecken mir nicht.",
+      explanation: "الفاعل (Die Nudeln) أوّلاً، ثم الفعل جمعاً، ثم المتلقّي mir، ثم النفي.",
+      errorType: "word-order",
+    },
+    {
+      id: "e15",
+      type: "transformation",
+      instructionAr: "حوّل الجملة إلى البنية الألمانية الصحيحة (الطعام فاعلاً).",
+      prompt: "أريد أن أقول: «أنا أحبّ الكعكة» (der Kuchen) — بفعل gefallen.",
+      acceptedAnswers: [
+        "Der Kuchen gefällt mir.",
+        "Mir gefällt der Kuchen.",
+      ],
+      sampleAnswer: "Der Kuchen gefällt mir.",
+      explanation: "الكعكة هي الفاعل وأنا المتلقّي — كما تقول العربية «تعجبني الكعكة».",
+      errorType: "case",
+    },
   ],
 
   fehlerUndTipps: {
@@ -471,6 +582,8 @@ export const lessonA203: Lesson = {
     { id: "fc6", de: "schmecken", ar: "يكون طعمه جيداً", example: "Das schmeckt mir gut.", exampleAr: "هذا طعمه جيد.", level: "A2" },
     { id: "fc7", de: "lecker", ar: "لذيذ", example: "Die Pizza ist lecker!", exampleAr: "البيتزا لذيذة!", level: "A2" },
     { id: "fc8", de: "die Rechnung", ar: "الحساب", example: "Die Rechnung, bitte!", exampleAr: "الحساب من فضلك!", level: "A2" },
+    { id: "fc9", de: "Das Essen schmeckt mir.", ar: "الطعام يعجبني (طعمه).", example: "Das Essen schmeckt mir sehr gut.", exampleAr: "الطعام يعجبني كثيراً.", level: "A2" },
+    { id: "fc10", de: "Wie schmeckt Ihnen ...?", ar: "كيف تجد ...؟", example: "Wie schmeckt Ihnen die Suppe?", exampleAr: "كيف تجد الحساء؟", level: "A2" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
