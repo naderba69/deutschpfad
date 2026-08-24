@@ -20,6 +20,14 @@ export function DailyLibrary() {
     });
   }, []);
 
+  /* ═══ فتح حوار بعينه من رابط الدرس: /dialogues?open=<id> ═══ */
+  React.useEffect(() => {
+    const wanted = new URLSearchParams(window.location.search).get("open");
+    if (!wanted) return;
+    const dialogue = DAILY_DIALOGUES.find((d) => d.id === wanted);
+    if (dialogue) setCurrent(dialogue);
+  }, []);
+
   if (current) return <DailyDialoguePlayer dialogue={current} onBack={() => setCurrent(null)} />;
 
   return (

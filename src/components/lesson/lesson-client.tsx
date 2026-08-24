@@ -6,6 +6,7 @@ import {ArrowLeft, ArrowRight, Award, CheckCircle2, Clock, ListChecks, Printer, 
 
 import {LESSON_SECTIONS} from "@/components/lesson/lesson-sections";
 import {LESSON_META} from "@/data/lessons/meta";
+import {getRelatedResources} from "@/data/lessons/related-resources";
 import {useProgress} from "@/components/providers/progress-provider";
 import {isLevelLessonsDone, getLessonLevelCompletion} from "@/lib/progress-selectors";
 import {InterleavingReview} from "@/components/lesson/sections/interleaving-review";
@@ -22,6 +23,7 @@ import {MiniTestSection} from "@/components/lesson/sections/mini-test";
 import {LessonSummary} from "@/components/lesson/sections/lesson-summary";
 import {SchreibenSection} from "@/components/lesson/sections/schreiben";
 import {TheorieSection} from "@/components/lesson/sections/theorie";
+import {VertiefungSection} from "@/components/lesson/sections/vertiefung";
 import {LangDe} from "@/components/shared/lang-de";
 import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
@@ -352,13 +354,21 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
     }
   }, [currentSection, lesson.id]);
 
+  // هل لهذا الدرس موارد رديفة مربوطة؟ (يحدد ظهور قسم «التعمّق»)
+  const hasRelatedResources = React.useMemo(
+    () => getRelatedResources(lesson.id).length > 0,
+    [lesson.id],
+  );
+
   const sectionDefs = LESSON_SECTIONS.filter(
     (def) =>
       (def.id !== "review" || (reviewLoaded && reviewQuestions.length > 0)) &&
       (def.id !== "verben" || lesson.level === "B1" || lesson.level === "B2") &&
       /* ═══ الوساطة والتفاعل: تُعرضان فقط إذا كان الدرس يحتويهما ═══ */
       (def.id !== "mediation" || (lesson.mediation && lesson.mediation.length > 0)) &&
-      (def.id !== "interaction" || (lesson.interaction && lesson.interaction.length > 0)),
+      (def.id !== "interaction" || (lesson.interaction && lesson.interaction.length > 0)) &&
+      /* ═══ التعمّق: يُعرض فقط إن رُبطت بالدرس موارد رديفة ═══ */
+      (def.id !== "vertiefung" || hasRelatedResources),
   );
   const total = sectionDefs.length;
   const progressPct = Math.round((visited.size / total) * 100);
@@ -495,6 +505,8 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
         return <MediationSection tasks={lesson.mediation ?? []} />;
       case "interaction":
         return <InteractionSection tasks={lesson.interaction ?? []} />;
+      case "vertiefung":
+        return <VertiefungSection lessonId={lesson.id} />;
       default:
         return null;
     }

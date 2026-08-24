@@ -40,6 +40,16 @@ export function StoriesLibrary() {
     });
   }, [refreshProgress]);
 
+  /* ═══ فتح قصة بعينها من رابط الدرس: /stories?open=<id> ═══
+     دروس المسار تُحيل إلى قصتها المحددة؛ بدون هذا يهبط المتعلّم
+     على مكتبة من ستّين بطاقة ولا يعرف أيّها قُصد. */
+  React.useEffect(() => {
+    const wanted = new URLSearchParams(window.location.search).get("open");
+    if (!wanted) return;
+    const story = INTERACTIVE_STORIES.find((s) => s.id === wanted);
+    if (story) setCurrent(story);
+  }, []);
+
   if (current) {
     return (
       <InteractiveStoryPlayer

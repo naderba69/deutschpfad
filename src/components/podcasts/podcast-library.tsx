@@ -20,6 +20,14 @@ export function PodcastLibrary() {
     });
   }, []);
 
+  /* ═══ فتح حلقة بعينها من رابط الدرس: /podcasts?open=<id> ═══ */
+  React.useEffect(() => {
+    const wanted = new URLSearchParams(window.location.search).get("open");
+    if (!wanted) return;
+    const episode = PODCASTS.find((e) => e.id === wanted);
+    if (episode) setCurrent(episode);
+  }, []);
+
   if (current) return <PodcastPlayer episode={current} onBack={() => setCurrent(null)} />;
 
   return (

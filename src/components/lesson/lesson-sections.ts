@@ -1,4 +1,4 @@
-import {AlertTriangle, BookOpen, ClipboardCheck, Dumbbell, Headphones, Languages, Layers, Lightbulb, MessageSquareText, Mic, PenLine, Repeat, TableProperties, Target, type LucideIcon} from "lucide-react";
+import {AlertTriangle, BookOpen, ClipboardCheck, Dumbbell, Headphones, Languages, Layers, Lightbulb, MessageSquareText, Mic, PenLine, Repeat, Sparkles, TableProperties, Target, type LucideIcon} from "lucide-react";
 
 /**
  * المكونات العشرة الإلزامية لكل درس — تعريف موحد
@@ -26,4 +26,6 @@ export const LESSON_SECTIONS: LessonSectionDef[] = [
   /* ═══ مكوّنا الوساطة والتفاعل (CEFR 2020) — يُعرضان إن توفرا في الدرس ═══ */
   { id: "mediation", label: "الوساطة اللغوية (Mediation)", short: "الوساطة", icon: Languages },
   { id: "interaction", label: "تفاعل حي (Interaktion)", short: "التفاعل", icon: MessageSquareText },
+  /* ═══ التعمّق: قصة/حوار/بودكاست هذا الدرس — يُعرض إن رُبطت موارد به ═══ */
+  { id: "vertiefung", label: "التعمّق بعد الدرس", short: "التعمّق", icon: Sparkles },
 ];
