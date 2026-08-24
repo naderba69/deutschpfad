@@ -118,6 +118,54 @@ export const lessonA111: Lesson = {
         content: "wo? (أين؟ سكون) → Dativ: in der Stadt. wohin? (إلى أين؟ حركة) → Akkusativ: in die Stadt. woher? (من أين؟) → aus: aus Deutschland. ثلاثية كاملة للمكان!",
       },
     },
+    {
+      id: "t3",
+      titleAr: "بمَ تتنقّل؟ mit + Dativ ووسائل المواصلات",
+      titleDe: "Verkehrsmittel: mit dem Bus, mit der Bahn",
+      explanationAr:
+        "عرفتَ «إلى أين» (wohin) — بقي «بماذا» (womit). ووسيلة النقل في الألمانية تُقال بحرف الجر mit، وهو حرف يطلب حالة الجرّ (Dativ) دائماً بلا استثناء:\n\n· der Bus ← mit dem Bus · die Bahn ← mit der Bahn · das Auto ← mit dem Auto · die Öffentlichen (جمع) ← mit den Öffentlichen\n\nواستثناء وحيد يجب حفظه كما هو: **zu Fuß** (مشياً) — بلا mit وبلا أداة.\n\nوالفعل المصاحب غالباً fahren (يذهب بمركبة)، إلّا مع الطائرة fliegen ومع القدمين gehen.",
+      whyAr:
+        "لماذا Dativ لا Akkusativ؟ لأنّ mit من الحروف التي لا تتغيّر حالتها أبداً (mit, nach, aus, bei, seit, von, zu) — بخلاف in وauf اللذين يتنقّلان بين الحالتين حسب المعنى. فحفظ مجموعة mit يريحك من التفكير: dem/der/dem/den وانتهى الأمر.",
+      table: {
+        title: "الوسيلة والأداة والفعل",
+        columns: ["الوسيلة", "مع mit", "الفعل المعتاد"],
+        rows: [
+          { label: "der Bus", cells: ["mit dem Bus", "Ich fahre mit dem Bus."] },
+          { label: "die Bahn / die U-Bahn", cells: ["mit der Bahn", "Sie fährt mit der U-Bahn."] },
+          { label: "das Fahrrad", cells: ["mit dem Fahrrad", "Wir fahren mit dem Fahrrad."] },
+          { label: "das Flugzeug", cells: ["mit dem Flugzeug", "Er fliegt nach Berlin."] },
+          { label: "بلا وسيلة", cells: ["zu Fuß (استثناء)", "Ich gehe zu Fuß."] },
+        ],
+      },
+      examples: [
+        { de: "Ich fahre jeden Tag mit dem Bus zur Arbeit.", ar: "أذهب كل يوم بالحافلة إلى العمل." },
+        { de: "Wie kommst du zur Uni? — Mit der U-Bahn.", ar: "كيف تصل إلى الجامعة؟ — بمترو الأنفاق." },
+        { de: "Zum Supermarkt gehe ich zu Fuß.", ar: "إلى السوبرماركت أذهب مشياً." },
+        { de: "Wir fahren mit dem Auto in die Stadt.", ar: "نذهب بالسيارة إلى المدينة." },
+        { de: "Sie fliegt mit dem Flugzeug nach Tunis.", ar: "تسافر بالطائرة إلى تونس." },
+      ],
+      comparisonWithArabic:
+        "العربية تقول «بالحافلة» بحرف الباء الملتصق، ولا تُغيّر شيئاً بعده. الألمانية تحتاج كلمتين: mit + أداة مجرورة (dem/der). والفخّ العربي: ترجمة «مشياً» بـ mit den Füßen حرفياً — والصواب تعبير جاهز لا يُترجم: zu Fuß.",
+      eselsbruecke:
+        "«mit تعطي دائماً dem/der»: تخيّل mit مفتاحاً لا يفتح إلّا باب الـ Dativ. وللاستثناء: قدماك لا تحتاجان تذكرةً ولا أداة — zu Fuß وكفى.",
+      commonMistakes: [
+        {
+          wrong: "Ich fahre mit den Bus.",
+          right: "Ich fahre mit dem Bus.",
+          whyAr: "der Bus في الجرّ يصير dem لا den. النون هنا خطأ شائع لأنّ المتعلّم يخلط النصب بالجرّ.",
+        },
+        {
+          wrong: "Ich gehe mit Fuß.",
+          right: "Ich gehe zu Fuß.",
+          whyAr: "تعبير جامد يُحفظ كما هو: zu Fuß. ولا يُقال mit Fuß ولا mit den Füßen.",
+        },
+      ],
+      relatedRuleComparison: {
+        title: "wohin / womit / wie lange — ثلاثة أسئلة لرحلة واحدة",
+        content:
+          "wohin? يُجاب بـ nach/zu/in (إلى أين) · womit? أو wie? يُجاب بـ mit + Dativ (بأي وسيلة) · wie lange? يُجاب بمدّة (zwanzig Minuten). جملة تجمعها: Ich fahre mit dem Bus zur Arbeit — zwanzig Minuten.",
+      },
+    },
   ],
   listening: {
     items: [
@@ -342,6 +390,70 @@ export const lessonA111: Lesson = {
       explanation: "السوبرماركت بجانب المحطة — neben + Dativ: neben dem Bahnhof.",
       errorType: "spelling",
     },
+    {
+      id: "e11",
+      type: "fill-blank",
+      instructionAr: "أكمل بالأداة الصحيحة بعد mit:",
+      template: "Ich fahre mit ___ Bus. Sie fährt mit ___ U-Bahn. Wir fahren mit ___ Auto.",
+      blanks: [
+        { correct: "dem", options: ["dem", "den", "der"] },
+        { correct: "der", options: ["der", "dem", "die"] },
+        { correct: "dem", options: ["dem", "das", "den"] },
+      ],
+      explanation: "mit يطلب الجرّ دائماً: der Bus ⇒ dem · die U-Bahn ⇒ der · das Auto ⇒ dem.",
+      errorType: "case",
+    },
+    {
+      id: "e12",
+      type: "error-correction",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      wrongSentence: "Zum Supermarkt gehe ich mit Fuß.",
+      wrongWord: "mit Fuß",
+      correctWord: "zu Fuß",
+      options: ["zu Fuß", "mit Fuß", "mit dem Fuß", "auf Fuß"],
+      explanation: "«مشياً» تعبير جامد لا يُترجم حرفياً: zu Fuß، بلا mit وبلا أداة.",
+      errorType: "preposition",
+    },
+    {
+      id: "e13",
+      type: "multiple-choice",
+      instructionAr: "اختر الإجابة الصحيحة للسؤال:",
+      questionDe: "Wie kommst du zur Arbeit?",
+      questionAr: "كيف تصل إلى العمل؟",
+      options: ["Mit der Bahn.", "Mit die Bahn.", "Zu die Bahn.", "Nach der Bahn."],
+      correctIndex: 0,
+      explanation: "die Bahn في الجرّ بعد mit تصير der Bahn.",
+      optionExplanations: [
+        undefined,
+        "die صيغة رفع أو نصب؛ بعد mit نحتاج الجرّ der.",
+        "zu للوجهة لا للوسيلة، والأداة خاطئة أيضاً.",
+        "nach للوجهة (المدن والبلدان) لا للوسيلة.",
+      ],
+      errorType: "case",
+    },
+    {
+      id: "e14",
+      type: "word-ordering",
+      instructionAr: "رتّب الكلمات لتكوين جملة صحيحة:",
+      tokens: ["Ich", "fahre", "mit", "dem", "Fahrrad", "zur", "Uni", "."],
+      correctSentence: "Ich fahre mit dem Fahrrad zur Uni.",
+      explanation: "الفاعل ثم الفعل ثم الوسيلة (mit + Dativ) ثم الوجهة (zur Uni).",
+      errorType: "word-order",
+    },
+    {
+      id: "e15",
+      type: "transformation",
+      instructionAr: "أجب عن السؤال بوسيلة النقل المذكورة.",
+      prompt: "Womit fährst du in die Stadt? (das Auto)",
+      acceptedAnswers: [
+        "Ich fahre mit dem Auto in die Stadt.",
+        "Mit dem Auto.",
+        "Ich fahre mit dem Auto.",
+      ],
+      sampleAnswer: "Ich fahre mit dem Auto in die Stadt.",
+      explanation: "das Auto بعد mit تصير mit dem Auto.",
+      errorType: "case",
+    },
   ],
   fehlerUndTipps: {
     mistakes: [
@@ -424,6 +536,8 @@ export const lessonA111: Lesson = {
     { id: "fc6", de: "wohin?", ar: "إلى أين؟", example: "Wohin gehst du?", exampleAr: "إلى أين تذهب؟", level: "A1" },
     { id: "fc7", de: "die Ampel", ar: "إشارة المرور", example: "An der Ampel links!", exampleAr: "عند الإشارة يساراً!", level: "A1" },
     { id: "fc8", de: "um die Ecke", ar: "خلف الزاوية", example: "Die Post ist um die Ecke.", exampleAr: "البريد خلف الزاوية.", level: "A1" },
+    { id: "fc9", de: "mit dem Bus / mit der Bahn", ar: "بالحافلة / بالقطار", example: "Ich fahre mit dem Bus zur Arbeit.", exampleAr: "أذهب بالحافلة إلى العمل.", level: "A1" },
+    { id: "fc10", de: "zu Fuß gehen", ar: "يذهب مشياً", example: "Zum Markt gehe ich zu Fuß.", exampleAr: "إلى السوق أذهب مشياً.", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
