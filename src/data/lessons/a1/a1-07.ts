@@ -758,78 +758,6 @@ export const lessonA107: Lesson = {
     {"id": "e18", "type": "transformation", "instructionAr": "حوّل الطلب الفظّ إلى صيغة مهذّبة:", "prompt": "Ich will einen Kaffee. → (بصيغة hätte gern)", "acceptedAnswers": ["Ich hätte gern einen Kaffee", "Ich hätte gern einen Kaffee."], "sampleAnswer": "Ich hätte gern einen Kaffee.", "explanation": "wollen يعبّر عن إرادة متشدّدة ويُسمع فظّاً في المتجر. ولاحظ بقاء النصب: einen Kaffee.", "errorType": "vocabulary"},
     {"id": "e19", "type": "multiple-choice", "instructionAr": "اختر الرقم المكتوب صحيحاً:", "questionDe": "Das Fahrrad kostet ___ Euro. (365)", "questionAr": "الدرّاجة بـ365 يورو.", "options": ["dreihundertfünfundsechzig", "dreihundertsechzigfünf", "dreihundertfünfsechzig", "drei hundert fünf und sechzig"], "correctIndex": 0, "explanation": "المئات أوّلاً ثمّ الآحاد فالعشرات بـund: dreihundert + fünf + und + sechzig، وكلّها كلمة واحدة.", "optionExplanations": [undefined, "قلبتَ الآحاد والعشرات وأسقطت und.", "نقصتك und بين الآحاد والعشرات.", "الأرقام تُكتب موصولة دون مسافات."], "errorType": "spelling"},
     {"id": "e20", "type": "true-false", "instructionAr": "اقرأ الحوار ثمّ احكم على العبارات:", "title": "An der Käsetheke", "textDe": "Verkäuferin: Guten Tag! Was darf es sein? — Kunde: Ich hätte gern dreihundert Gramm Käse. — Verkäuferin: Gern. Sonst noch etwas? — Kunde: Ja, zwei Flaschen Wasser, bitte. — Verkäuferin: Das macht acht Euro zwanzig. — Kunde: Bar, bitte. Hier sind zehn Euro. — Verkäuferin: Und ein Euro achtzig zurück. Schönen Tag!", "textAr": "حوار قصير عند بسطة الجبن.", "statements": [{"id": "s1", "de": "Der Kunde kauft dreihundert Gramm Käse.", "ar": "يشتري الزبون ثلاثمئة غرام جبن.", "isTrue": true, "whyAr": "قالها حرفيّاً: Ich hätte gern dreihundert Gramm Käse."}, {"id": "s2", "de": "Er bezahlt mit Karte.", "ar": "يدفع بالبطاقة.", "isTrue": false, "whyAr": "قال Bar, bitte أي نقداً، ثمّ أعطى عشرة يورو."}, {"id": "s3", "de": "Er bekommt ein Euro achtzig zurück.", "ar": "يستردّ يورو وثمانين.", "isTrue": true, "whyAr": "10,00 − 8,20 = 1,80، والبائعة قالتها."}, {"id": "s4", "de": "Er kauft nur eine Flasche Wasser.", "ar": "يشتري قارورة ماء واحدة.", "isTrue": false, "whyAr": "طلب zwei Flaschen — ولاحظ جمع Flasche لأنّها مؤنّثة."}], "explanation": "حوار شراء كامل: طلب مهذّب، فمقدار، فحساب، فدفع، فباقٍ.", "errorType": "vocabulary"},
-  ],
-
-  fehlerUndTipps: {
-    mistakes: [
-      { wrong: "einsundzwanzig", right: "einundzwanzig", whyAr: "eins تفقد s عند التركيب: einundzwanzig." },
-      { wrong: "zwei Apfel (مفرد بعد رقم)", right: "zwei Äpfel", whyAr: "بعد 2+ يأتي الجمع دائماً." },
-      { wrong: "die Buchs", right: "die Bücher", whyAr: "Buch من نمط -er مع Umlaut: Bücher." },
-    ],
-    eselsbruecken: [
-      "«واحد-و-عشرون مثل العربية تماماً»: ein+und+zwanzig = 21.",
-      "«الجمع دائماً die»: مهما كان جنس المفرد، الجمع يبدأ بـ die.",
-    ],
-    culturalNote: {
-      title: "الأسواق الأسبوعية (Wochenmarkt)",
-      content:
-        "في كل مدينة ألمانية سوق أسبوعي صباحي (غالباً السبت): خضار وفواكه طازجة من المزارعين. العبارة الشائعة: «Ein Kilo Äpfel, bitte!» — والألمان يدفعون غالباً نقداً (bar) في الأسواق، بينما المتاجر الكبرى تقبل البطاقات.",
-    },
-  },
-
-  miniTest: [
-    {
-      id: "m1",
-      type: "multiple-choice",
-      instructionAr: "اختر الرقم الصحيح كتابةً:",
-      questionDe: "33 = ___",
-      options: ["dreiunddreißig", "dreißigdrei", "dreiunddrei", "dreiundreißig"],
-      correctIndex: 0,
-      explanation: "33 = dreiunddreißig (ثلاثة وثلاثون).",
-      errorType: "vocabulary",
-    },
-    {
-      id: "m2",
-      type: "multiple-choice",
-      instructionAr: "اختر جمع الكلمة:",
-      questionDe: "das Zimmer → die ___",
-      options: ["Zimmer", "Zimmers", "Zimmern", "Zimmeres"],
-      correctIndex: 0,
-      explanation: "Zimmer لا يتغير في الجمع: die Zimmer.",
-      errorType: "plural",
-    },
-    {
-      id: "m3",
-      type: "word-ordering",
-      instructionAr: "رتّب الجملة:",
-      tokens: ["drei", "Ich", "kaufe", "Äpfel", "."],
-      correctSentence: "Ich kaufe drei Äpfel.",
-      explanation: "Ich + kaufe (V2) + drei Äpfel (جمع).",
-      errorType: "word-order",
-    },
-    {
-      id: "m4",
-      type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Das kostet fünfzehn Euro, das ist sehr teuer!",
-      wrongWord: "teuer",
-      correctWord: "billig",
-      options: ["billig", "teuer", "neu", "gut"],
-      explanation: "خمسة عشر يورو رخيص (billig) وليس غالياً (teuer) — السياق يحدد!",
-      errorType: "vocabulary",
-    },
-    {
-      id: "m5",
-      type: "fill-blank",
-      instructionAr: "أكمل الجمع الصحيح:",
-      template: "Zwei ___ (Apfel) und drei ___ (Banane), bitte!",
-      blanks: [
-        { correct: "Äpfel", options: ["Äpfel", "Apfels", "Apfelen"] },
-        { correct: "Bananen", options: ["Bananen", "Bana", "Bananens"] },
-      ],
-      explanation: "Apfel → Äpfel (Umlaut)، Banane → Bananen (-n).",
-      errorType: "plural",
-    },
     {
       id: "e21",
       type: "multiple-choice",
@@ -916,6 +844,78 @@ export const lessonA107: Lesson = {
       sampleAnswer: "acht null drei drei eins",
       explanation: "الرمز البريديّ خمسة أرقام تُملى مفردة، لا «achtzigtausend…».",
       errorType: "vocabulary",
+    },
+  ],
+
+  fehlerUndTipps: {
+    mistakes: [
+      { wrong: "einsundzwanzig", right: "einundzwanzig", whyAr: "eins تفقد s عند التركيب: einundzwanzig." },
+      { wrong: "zwei Apfel (مفرد بعد رقم)", right: "zwei Äpfel", whyAr: "بعد 2+ يأتي الجمع دائماً." },
+      { wrong: "die Buchs", right: "die Bücher", whyAr: "Buch من نمط -er مع Umlaut: Bücher." },
+    ],
+    eselsbruecken: [
+      "«واحد-و-عشرون مثل العربية تماماً»: ein+und+zwanzig = 21.",
+      "«الجمع دائماً die»: مهما كان جنس المفرد، الجمع يبدأ بـ die.",
+    ],
+    culturalNote: {
+      title: "الأسواق الأسبوعية (Wochenmarkt)",
+      content:
+        "في كل مدينة ألمانية سوق أسبوعي صباحي (غالباً السبت): خضار وفواكه طازجة من المزارعين. العبارة الشائعة: «Ein Kilo Äpfel, bitte!» — والألمان يدفعون غالباً نقداً (bar) في الأسواق، بينما المتاجر الكبرى تقبل البطاقات.",
+    },
+  },
+
+  miniTest: [
+    {
+      id: "m1",
+      type: "multiple-choice",
+      instructionAr: "اختر الرقم الصحيح كتابةً:",
+      questionDe: "33 = ___",
+      options: ["dreiunddreißig", "dreißigdrei", "dreiunddrei", "dreiundreißig"],
+      correctIndex: 0,
+      explanation: "33 = dreiunddreißig (ثلاثة وثلاثون).",
+      errorType: "vocabulary",
+    },
+    {
+      id: "m2",
+      type: "multiple-choice",
+      instructionAr: "اختر جمع الكلمة:",
+      questionDe: "das Zimmer → die ___",
+      options: ["Zimmer", "Zimmers", "Zimmern", "Zimmeres"],
+      correctIndex: 0,
+      explanation: "Zimmer لا يتغير في الجمع: die Zimmer.",
+      errorType: "plural",
+    },
+    {
+      id: "m3",
+      type: "word-ordering",
+      instructionAr: "رتّب الجملة:",
+      tokens: ["drei", "Ich", "kaufe", "Äpfel", "."],
+      correctSentence: "Ich kaufe drei Äpfel.",
+      explanation: "Ich + kaufe (V2) + drei Äpfel (جمع).",
+      errorType: "word-order",
+    },
+    {
+      id: "m4",
+      type: "error-correction",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      wrongSentence: "Das kostet fünfzehn Euro, das ist sehr teuer!",
+      wrongWord: "teuer",
+      correctWord: "billig",
+      options: ["billig", "teuer", "neu", "gut"],
+      explanation: "خمسة عشر يورو رخيص (billig) وليس غالياً (teuer) — السياق يحدد!",
+      errorType: "vocabulary",
+    },
+    {
+      id: "m5",
+      type: "fill-blank",
+      instructionAr: "أكمل الجمع الصحيح:",
+      template: "Zwei ___ (Apfel) und drei ___ (Banane), bitte!",
+      blanks: [
+        { correct: "Äpfel", options: ["Äpfel", "Apfels", "Apfelen"] },
+        { correct: "Bananen", options: ["Bananen", "Bana", "Bananens"] },
+      ],
+      explanation: "Apfel → Äpfel (Umlaut)، Banane → Bananen (-n).",
+      errorType: "plural",
     },
   ],
 

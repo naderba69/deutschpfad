@@ -45,19 +45,28 @@ def main(payload_path):
     src = "\n".join(lines)
 
     # ── 2) التدريبات ────────────────────────────────────────────────
+    #
+    # يُدرَج عند سطر إغلاق مصفوفة practiceBank نفسها، لا بالبحث عن آخر
+    # معرّف "eN". النسخة القديمة كانت ترسو على آخر eN في بقية الملف، فإن
+    # لم يكن ذلك البند آخرَ عنصرٍ في practiceBank انزلق الإدراج إلى
+    # المصفوفة التالية (miniTest) بصمت — وقد وقع فعلاً في a1-07.
     if p.get("exercises"):
-        pb_start = src.index("practiceBank: [")
-        tail = src[pb_start:]
-        existing_e = re.findall(r'id: "(e\d+)"', tail)
-        last = existing_e[-1]
+        lines = src.split("\n")
+        pb_start, pb_end = find_array_bounds(lines, "practiceBank")
+        existing_e = re.findall(r'id: "(e\d+)"', "\n".join(lines[pb_start:pb_end]))
         for ex in p["exercises"]:
             eid = re.search(r'id: "(e\d+)"', ex).group(1)
             assert eid not in existing_e, f"{path}: معرّف التدريب {eid} مستعمل"
-        # نغلق المصفوفة بعد آخر بند
-        m = list(re.finditer(r'\n    \{\n      id: "%s",.*?\n    \},\n  \],' % last, src, re.S))
-        assert len(m) == 1, f"{path}: تعذّر تحديد نهاية practiceBank عند {last}"
-        added = "\n" + "\n".join(x.rstrip("\n") for x in p["exercises"]) + "\n  ],"
-        src = src[: m[0].end() - len("\n  ],")] + added + src[m[0].end():]
+        block = "\n".join(x.rstrip("\n") for x in p["exercises"])
+        lines.insert(pb_end, block)
+        src = "\n".join(lines)
+        # تأكيد: العدد داخل حدود practiceBank ارتفع بالمقدار المطلوب
+        lines2 = src.split("\n")
+        s2, e2 = find_array_bounds(lines2, "practiceBank")
+        after = re.findall(r'id: "(e\d+)"', "\n".join(lines2[s2:e2]))
+        assert len(after) == len(existing_e) + len(p["exercises"]), (
+            f"{path}: التدريبات لم تدخل practiceBank فعلاً"
+        )
 
     # ── 3) البطاقات ─────────────────────────────────────────────────
     if p.get("flashcards"):
