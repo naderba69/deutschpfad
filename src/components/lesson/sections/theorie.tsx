@@ -8,6 +8,7 @@ import {SpeakButton} from "@/components/shared/speak-button";
 import {TextDe} from "@/components/shared/text-de";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {DetailTabs} from "@/components/shared/detail-tabs";
+import {RichText} from "@/components/shared/rich-text";
 import type { TheoryBlock } from "@/types/lesson";
 
 /** جدول التصريف مع أزرار نطق لكل خلية ألمانية */
@@ -121,13 +122,13 @@ export function TheoryBlockView({ block, lessonId }: { block: TheoryBlock; lesso
               icon: <BookOpen className="h-3.5 w-3.5" aria-hidden="true" />,
               content: (
                 <div>
-                  <p className="leading-relaxed">{block.explanationAr}</p>
+                  <RichText text={block.explanationAr} />
                   <div className="mt-3 flex items-start gap-2 rounded-xl border border-primary/25 bg-primary/5 p-3 text-sm">
                     <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-                    <p>
-                      <span className="font-bold">لماذا؟ </span>
-                      {block.whyAr}
-                    </p>
+                    <div>
+                      <p className="mb-1 font-bold">لماذا؟</p>
+                      <RichText text={block.whyAr} className="space-y-2 leading-relaxed" />
+                    </div>
                   </div>
                   <div className="mt-3">
                     <ExplainAgain
@@ -162,10 +163,10 @@ export function TheoryBlockView({ block, lessonId }: { block: TheoryBlock; lesso
               content: (
                 <div className="flex items-start gap-2 rounded-xl border bg-muted/30 p-3 text-sm leading-relaxed">
                   <GitCompare className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-                  <p>
-                    <span className="font-bold">مقارنة مع العربية: </span>
-                    {block.comparisonWithArabic}
-                  </p>
+                  <div>
+                    <p className="mb-1 font-bold">مقارنة مع العربية</p>
+                    <RichText text={block.comparisonWithArabic} className="space-y-2 leading-relaxed" />
+                  </div>
                 </div>
               ),
             },
@@ -176,10 +177,10 @@ export function TheoryBlockView({ block, lessonId }: { block: TheoryBlock; lesso
               content: (
                 <div className="flex items-start gap-2 rounded-xl border border-gold/40 bg-gold/10 p-3 text-sm leading-relaxed">
                   <Brain className="mt-0.5 h-4 w-4 shrink-0 text-gold-foreground" aria-hidden="true" />
-                  <p>
-                    <span className="font-bold">تريك حفظ (Eselsbrücke): </span>
-                    {block.eselsbruecke}
-                  </p>
+                  <div>
+                    <p className="mb-1 font-bold">تريك حفظ (Eselsbrücke)</p>
+                    <RichText text={block.eselsbruecke} className="space-y-2 leading-relaxed" />
+                  </div>
                 </div>
               ),
             },
@@ -199,10 +200,10 @@ export function TheoryBlockView({ block, lessonId }: { block: TheoryBlock; lesso
                   content: (
                     <div className="flex items-start gap-2 rounded-xl border border-indigo-300/50 bg-indigo-500/5 p-3 text-sm leading-relaxed">
                       <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-indigo-500" aria-hidden="true" />
-                      <p>
-                        <span className="font-bold">{block.relatedRuleComparison.title}: </span>
-                        {block.relatedRuleComparison.content}
-                      </p>
+                      <div>
+                        <p className="mb-1 font-bold">{block.relatedRuleComparison.title}</p>
+                        <RichText text={block.relatedRuleComparison.content} className="space-y-2 leading-relaxed" />
+                      </div>
                     </div>
                   ),
                 }]

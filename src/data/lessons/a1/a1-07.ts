@@ -78,9 +78,9 @@ export const lessonA107: Lesson = {
       titleAr: "الأرقام من 0 إلى 1000",
       titleDe: "Die Zahlen 0–1000",
       explanationAr:
-        "الأرقام: null، eins، zwei، drei... عشرة: zehn، عشرون: zwanzig. من 21 إلى 99: العدد «معكوس»: einundzwanzig = واحد وعشرون (واحد-و-عشرون). المئات: hundert (مئة)، zweihundert (مئتان). الألف: tausend. انتبه: eins تتحول إلى ein عند التركيب: einundzwanzig (وليس einsundzwanzig).",
+        "**١. الأساس: من صفر إلى اثني عشر — تُحفظ حفظاً**\n\nnull · eins · zwei · drei · vier · fünf · sechs · sieben · acht · neun · zehn · elf · zwölf\n\nهذه الثلاثة عشر لا قاعدة لها، شأنها شأن «واحد، اثنان، ثلاثة» في العربية. احفظها كما تحفظ الحروف.\n\n**٢. من ١٣ إلى ١٩: الوحدة + zehn**\n\nهنا تبدأ القاعدة. خُذ رقم الوحدة وألصق به zehn:\n\ndrei + zehn = **dreizehn** (١٣) · vier + zehn = **vierzehn** (١٤) · fünf + zehn = **fünfzehn** (١٥)\n\nوشذّ اثنان فقط عن هذا: **sechzehn** (١٦) تفقد الـs من sechs، و**siebzehn** (١٧) تفقد الـen من sieben. والسبب صوتي بحت: «sechszehn» و«siebenzehn» ثقيلتان على اللسان، فحذفت الألمانية ما استثقلته.\n\n**٣. العشرات: الوحدة + zig**\n\nvier + zig = **vierzig** (٤٠) · fünf + zig = **fünfzig** (٥٠) · acht + zig = **achtzig** (٨٠)\n\nوثلاثة استثناءات: **zwanzig** (٢٠ — لا «zweizig»)، **dreißig** (٣٠ — بـ ßig لا zig)، و**sechzig / siebzig** اللذان يحذفان كما فعلا في العشرات الأولى.\n\n**٤. القاعدة الذهبية: ٢١ إلى ٩٩ تُقرأ من اليمين**\n\nوهذه هي النقطة التي يتعثّر فيها كل متعلّم أوروبي — وتمرّ عليك أنت بلا عناء:\n\n**einundzwanzig** = ein + und + zwanzig = «واحدٌ وعشرون»\n\nالوحدة أوّلاً، ثم und، ثم العشرة. حرفياً كما تقول العربية. وتُكتب **كلمة واحدة متّصلة** بلا فراغات: zweiunddreißig, siebenundvierzig, neunundneunzig.\n\nوانتبه: **eins تفقد الـs** عند التركيب ⇒ ein**und**zwanzig لا einsundzwanzig.\n\n**٥. المئات والألوف**\n\nhundert (١٠٠) · zweihundert (٢٠٠) · tausend (١٠٠٠). والمركّب يُقرأ: المئة، ثم الوحدة، ثم العشرة:\n\n**٣٤٥ = dreihundertfünfundvierzig** (ثلاثمئة، خمسة، وأربعون)\n\nفالانعكاس لا يصيب إلا الخانتين الأخيرتين؛ أمّا المئات فتتقدّم كما في العربية.",
       whyAr:
-        "لماذا معكوس؟ لأن الألمانية «تقرأ من اليمين» في الأرقام: 21 = einundzwanzig (واحد وعشرون) — نفس ترتيب العربية! إنه تشابه رائع: العربية تقول «واحد وعشرون» والألمانية einundzwanzig — نفس البنية تماماً!",
+        "لماذا تُقلب الوحدة على العشرة في الألمانية؟\n\nهذا الترتيب ليس شذوذاً ألمانياً، بل هو الأصل الجرماني القديم الذي حفظته الألمانية وتخلّت عنه الإنكليزية الحديثة جزئياً. وأثره باقٍ في الإنكليزية إلى اليوم في fourteen وsixteen — الوحدة قبل العشرة تماماً كالألمانية؛ لكنّ الإنكليزية عكست الترتيب فيما فوق العشرين (twenty-one) بينما ثبتت الألمانية على القديم.\n\nوالمهمّ لك أنت: **هذا الترتيب هو ترتيب العربية الفصحى نفسه.** «خمسة وأربعون» — الوحدة أوّلاً والعطف ثم العشرة. فما يشكو منه الطالب الفرنسي والإنكليزي أسابيعَ، تملكه أنت جاهزاً في لسانك.\n\nلكن احذر فخّاً مقابلاً: العربية الدارجة التونسية تقول «خمسة وأربعين» بالترتيب نفسه، لكنّها تفصل الكلمات؛ والألمانية تصلها كلمةً واحدة. وحين تسمع رقماً سريعاً في السوق، يجب أن يلتقط أذنك المقطع الأخير أوّلاً (zwanzig? dreißig?) ثم يعود إلى أوّله. تدرَّب على الاستماع بهذا الترتيب المعكوس، لا على القراءة وحدها.",
       table: {
         title: "الأرقام الأساسية",
         columns: ["الرقم", "الألمانية", "الرقم", "الألمانية"],
@@ -98,24 +98,26 @@ export const lessonA107: Lesson = {
         ],
       },
       examples: [
-        { de: "Das kostet fünf Euro.", ar: "هذا يكلف خمسة يورو." },
-        { de: "Das ist einundzwanzig Euro.", ar: "هذا واحد وعشرون يورو." },
-        { de: "Ich brauche hundert Gramm Käse.", ar: "أحتاج مئة غرام جبن." },
-        { de: "Der Fernseher kostet neunhundert Euro.", ar: "التلفاز يكلف تسعمائة يورو." },
-        { de: "Zwei Äpfel, bitte!", ar: "تفاحتان من فضلك!" },
+        {"de": "Das kostet fünf Euro achtzig.", "ar": "هذا يكلّف خمسة يورو وثمانين سنتاً (5,80 €)."},
+        {"de": "Ich hätte gern zweihundert Gramm Käse.", "ar": "أودّ مئتي غرام من الجبن."},
+        {"de": "Der Mantel kostet neunundneunzig Euro.", "ar": "المعطف يكلّف تسعة وتسعين يورو."},
+        {"de": "Zusammen macht das dreiunddreißig Euro fünfzig.", "ar": "المجموع ثلاثة وثلاثون يورو وخمسون سنتاً."},
+        {"de": "Meine Nummer ist sechzehn siebenundzwanzig.", "ar": "رقمي ستّة عشر، سبعة وعشرون."},
+        {"de": "Das Fahrrad hat dreihundertfünfundvierzig Euro gekostet.", "ar": "الدرّاجة كلّفت ثلاثمئة وخمسة وأربعين يورو."},
       ],
       comparisonWithArabic:
-        "التركيب 21-99 مطابق للعربية حرفياً: einundzwanzig = واحد وعشرون، zweiunddreißig = اثنان وثلاثون. هذا يسهل عليك كل شيء — ركّز فقط على حفظ العشرات والمئات.",
+        "التطابق بين اللغتين في الأعداد المركّبة تطابقٌ بنيويّ نادر، ويستحقّ أن تراه مفصّلاً:\n\n| العربية | البنية | الألمانية |\n|---|---|---|\n| واحد **و**عشرون | وحدة + عطف + عشرة | ein**und**zwanzig |\n| خمسة **و**أربعون | وحدة + عطف + عشرة | fünf**und**vierzig |\n| ثلاثمئة وخمسة وأربعون | مئة + وحدة + عشرة | dreihundertfünfundvierzig |\n\nوحرف und يقابل واو العطف مقابلةً تامّة في الموضع والوظيفة.\n\nأمّا الفروق التي يجب أن تنتبه لها فثلاثة:\n\n**الأوّل** أنّ العربية تُعرب المعدود («واحدٌ وعشرون كتاباً» بالنصب مفرداً) بينما الألمانية تضع المعدود جمعاً بلا إعراب: einundzwanzig Bücher. فلا تنقل قاعدة التمييز العربي إلى الألمانية.\n\n**الثاني** أنّ العربية تخالف بين المذكّر والمؤنّث في العدد («ثلاث تفاحات» و«ثلاثة كتب») — والألمانية لا تعرف هذا إطلاقاً: drei Äpfel وdrei Bücher سواء. وهذا تبسيطٌ لصالحك.\n\n**الثالث** أنّ الفاصلة العشرية عندهم فاصلة لا نقطة: **3,50 €** تُقرأ drei Euro fünfzig. ونقطة الألوف عكسنا كذلك: 1.000 تعني ألفاً لا واحداً.",
       eselsbruecke:
-        "«واحد-و-عشرون» — الألمانية تقولها بنفس ترتيب العربية تماماً: ein + und + zwanzig. فقط أضف und في المنتصف!",
+        "**«اقرأ العدد الألماني كما تقرأ العربي الفصيح: الوحدة تسبق العشرة.»**\n\nوللاستثناءات الأربعة التي تحذف حرفاً، احفظ هذه الجملة: **«ستّة وسبعة تُنحِفان قبل العشرة»** — sechs تفقد s وsieben تفقد en كلّما لحقتهما zehn أو zig:\nsechzehn · siebzehn · sechzig · siebzig.\n\nوللثلاثين وحدها: **dreißig بـ ß** — تخيّل أنّ الرقم ٣٠ عمرٌ ثقيل يحتاج حرفاً ثقيلاً.",
       commonMistakes: [
-        { wrong: "einsundzwanzig (مع s)", right: "einundzwanzig", whyAr: "eins تفقد s عند التركيب: einundzwanzig." },
-        { wrong: "نطق dreißig كـ«دريسيغ»", right: "دْراي-سِش (ß = سّ)", whyAr: "ei = آي وß = سّ حادة: درايسش." },
-        { wrong: "sechs تُنطق «سيكس»", right: "زِكس (s في البداية = ز)", whyAr: "s في بداية الكلمة تُنطق ز عادة." },
+        {"wrong": "einsundzwanzig", "right": "einundzwanzig", "whyAr": "eins تفقد الـs عند التركيب. والقاعدة عامّة: تبقى eins وحدها عند العدّ المجرّد (eins, zwei, drei) وتصير ein داخل المركّب أو قبل اسم مذكّر/محايد."},
+        {"wrong": "zwei und zwanzig Euro (منفصلة)", "right": "zweiundzwanzig Euro", "whyAr": "العدد المركّب يُكتب كلمةً واحدة متّصلة مهما طال — حتى dreihundertfünfundvierzig. والكتابة منفصلاً خطأ إملائي يُحسب في الامتحان."},
+        {"wrong": "sechszehn / siebenzig", "right": "sechzehn / siebzig", "whyAr": "حذف صوتيّ إلزامي: sechs تفقد الـs وsieben تفقد الـen قبل zehn وzig."},
+        {"wrong": "3.50 € (بنقطة)", "right": "3,50 €", "whyAr": "الألمانية تعكس علامات العربية والإنكليزية: الفاصلة للكسر العشري والنقطة للألوف. فـ1.000 € تعني ألف يورو لا يورو واحداً."},
       ],
       relatedRuleComparison: {
-        title: "ein أم eins؟",
-        content: "عند العد وحدها: eins. عند التركيب أو قبل اسم: ein (ein Euro, einundzwanzig). نفس فكرة العربية: «واحد» و«واحد وعشرون».",
+        "title": "ein أم eins أم einen؟ ثلاث صور لعدد واحد",
+        "content": "**eins** حين تعدّ مجرّداً أو تذكر الرقم وحده: «Wie viel? — Eins.» · **ein/eine** حين يليها اسم، وتتبع جنسه كأداة النكرة: ein Apfel, eine Banane · **einen** حين يقع المعدود مفعولاً به مذكّراً: Ich kaufe einen Apfel. وهذا يربط درس الأرقام بدرس النصب الذي أخذته في درس الطعام: العدد «واحد» هو الوحيد بين الأعداد الذي يُصرَّف، لأنّه في الأصل أداة نكرة لا عدد."
       },
     },
     {
@@ -123,9 +125,9 @@ export const lessonA107: Lesson = {
       titleAr: "جمع الأسماء (Plural) — أهم الأنماط",
       titleDe: "Der Plural: Äpfel, Bananen, Bücher",
       explanationAr:
-        "الجمع في الألمانية له أنماط عديدة، أشهرها: إضافة -e (der Tisch → die Tische)، إضافة -en/-n (die Banane → die Bananen)، إضافة -er (das Buch → die Bücher)، لا تغيير مع Umlaut (der Apfel → die Äpfel) أو بدون (das Zimmer → die Zimmer)، أو -s للكلمات الأجنبية (das Auto → die Autos).",
+        "**لماذا يخيف الجمع الألماني؟ ولماذا لا ينبغي أن يخيفك؟**\n\nفي العربية جمعان: سالم مطّرد (معلّم ← معلّمون) وتكسير سماعيّ (كتاب ← كتب). ولا أحد يشكو، لأنّك تعلّمت أن تحفظ جمع التكسير مع الكلمة. الألمانية تصنع الشيء نفسه بالضبط، لكن بخمسة أنماط بدل نمطين. فالمهارة المطلوبة ليست جديدة عليك.\n\n**١. النمط -e — الأوسع انتشاراً**\n\nder Tisch ← die Tisch**e** · das Jahr ← die Jahr**e** · der Hund ← die Hund**e**\n\nوكثير من المذكّرات يضيف Umlaut معه: der Stuhl ← die St**ü**hl**e** · die Hand ← die H**ä**nd**e**\n\n**٢. النمط -(e)n — قاعدة شبه مطّردة للمؤنّث**\n\nهنا الخبر الأفضل في الدرس كلّه: **أكثر من ٩٠٪ من الأسماء المؤنّثة تُجمع بـ -n أو -en.** فإن عرفت أنّ الكلمة مؤنّثة، عرفتَ جمعها بلا حفظ:\n\ndie Banane ← die Banane**n** · die Frau ← die Frau**en** · die Zeitung ← die Zeitung**en**\n\nوالمنتهية بـ -e تكتفي بـ n، والمنتهية بساكن تأخذ en. والمنتهية بـ **-in** تُضعّف النون: die Lehrerin ← die Lehrerin**nen**.\n\n**٣. النمط -er — للمحايد غالباً، ومعه Umlaut دائماً إن أمكن**\n\ndas Buch ← die B**ü**ch**er** · das Kind ← die Kind**er** · das Haus ← die H**äu**s**er**\n\n**٤. النمط الصفري — تغيّر لا تراه إلا في الحركة**\n\nالأسماء المنتهية بـ **-er / -en / -el** لا تضيف شيئاً، وقد تكتفي بـ Umlaut:\n\nder Apfel ← die **Ä**pfel · das Zimmer ← die Zimmer (بلا أيّ تغيير!) · der Lehrer ← die Lehrer\n\nوهذا النمط أخطر ما في الباب، لأنّ الكلمة لا تتغيّر — فلا يدلّك على الجمع إلا **الأداة die** أو الصفة أو الفعل.\n\n**٥. النمط -s — للدخيل الأجنبي**\n\ndas Auto ← die Auto**s** · das Handy ← die Handy**s** · das Hotel ← die Hotel**s**\n\nفإن رأيت كلمة تبدو إنكليزية أو فرنسية، فجمعها بـ s على الأرجح.\n\n**والقاعدة الجامعة فوق هذا كلّه: أداة الجمع دائماً die، مهما كان جنس المفرد.** der Tisch وdas Buch وdie Frau ⇒ die Tische, die Bücher, die Frauen. جنسٌ واحد يبتلع الأجناس الثلاثة في الجمع.",
       whyAr:
-        "لماذا لا قاعدة واحدة؟ لأن الجمع الألماني «تاريخي»: لكل كلمة عائلتها. لكن الخبر السار: 80% من الكلمات تتبع أحد 5 أنماط، ومع الأداة die في الجمع دائماً (die Äpfel).",
+        "لماذا خمسة أنماط ولا قاعدة واحدة؟\n\nلأنّ الجمع الألماني طبقاتٌ تاريخية متراكمة. الأسماء الجرمانية القديمة كانت تُصنَّف في «عائلات صرفية» بحسب الصائت الذي ينتهي به جذرها، ولكل عائلة لاحقة جمع خاصّة. ثم اندثرت تلك الصوائت من النطق وبقيت آثارها في اللواحق — كما اندثرت أوزان بعينها في العربية وبقي جمعها.\n\nأمّا **Umlaut** فقصّته أطرف: النقطتان ليستا زينة، بل أثر صوتيّ. كانت لاحقة الجمع القديمة تحتوي صوت **i**، وهو صوت أماميّ رفيع، فجذب معه صائت الجذر إلى الأمام: a صارت ä، وo صارت ö، وu صارت ü. ثم سقطت الـ i نفسها من النطق وبقي الأثر الذي أحدثته. فحين ترى **Äpfel** فأنت تنظر إلى بصمة حرفٍ مات قبل ألف سنة.\n\nوهذه الظاهرة نفسها موجودة في العربية باسم **الإمالة**، وفي جمع التكسير حين ينكسر الصائت الداخلي: «كتاب ← كُتُب» — تغيّر داخل بنية الكلمة لا في آخرها. فالألمانية والعربية تشتركان في أنّ الجمع قد يكون **داخلياً** لا لاحقةً مضافة، وهذا ما لا تعرفه الإنكليزية إلا في بقايا نادرة (man/men, foot/feet — وهي Umlaut بعينها!).\n\nالخلاصة العملية: لا تحاول اشتقاق الجمع بالقياس. **احفظه مع الكلمة والأداة معاً** — ثلاثيّاً: der Apfel, die Äpfel. هكذا تُكتب في كل قاموس ألماني، وهكذا يجب أن تُكتب في دفترك.",
       table: {
         title: "الأنماط الخمسة الأساسية للجمع",
         columns: ["النمط", "مثال مفرد", "مثال جمع"],
@@ -139,27 +141,306 @@ export const lessonA107: Lesson = {
         ],
       },
       examples: [
-        { de: "Ich kaufe drei Äpfel.", ar: "أشتري ثلاث تفاحات." },
-        { de: "Die Bananen sind billig.", ar: "الموز رخيص." },
-        { de: "Wir lesen viele Bücher.", ar: "نقرأ كتباً كثيرة." },
-        { de: "Die Tische sind neu.", ar: "الطاولات جديدة." },
-        { de: "Zwei Zimmer, bitte!", ar: "غرفتان من فضلك!" },
+        {"de": "Ich kaufe drei Äpfel und zwei Kilo Kartoffeln.", "ar": "أشتري ثلاث تفاحات وكيلوين من البطاطا."},
+        {"de": "Die Bücher sind heute im Angebot.", "ar": "الكتب اليوم في عرض ترويجي."},
+        {"de": "Wie viele Zimmer hat die Wohnung?", "ar": "كم غرفة في الشقّة؟"},
+        {"de": "Die Tomaten kosten zwei Euro das Kilo.", "ar": "الطماطم بيوروين للكيلو."},
+        {"de": "Meine Schwestern kaufen gern Handys.", "ar": "أخواتي يحببن شراء الهواتف."},
+        {"de": "Zwei Flaschen Wasser, bitte.", "ar": "قنّينتا ماء من فضلك."},
       ],
       comparisonWithArabic:
-        "العربية لها جمع مؤنث سالم (تفاحات) وجمع تكسير (كتب). الألمانية أيضاً: Bananen (سالم) وBücher (تكسير!) — الفكرة نفسها: أنماط متعددة تُحفظ مع الكلمة.",
+        "الشبه بين النظامين أعمق ممّا يبدو، والفرق أخطر ممّا يبدو.\n\n**أوجه الشبه:**\n\nالعربية تجمع بلاحقة (معلّمون، معلّمات) وتجمع بتغيير داخلي (كتاب ← كُتُب). والألمانية كذلك: لاحقة (Bananen) وتغيير داخلي (Äpfel). فمن أتقن جمع التكسير العربيّ سماعاً، يملك المهارة الذهنية نفسها المطلوبة هنا.\n\n**أوجه الاختلاف الخطِرة:**\n\n**أوّلاً** — العربية تعامل جمع غير العاقل معاملة المفرد المؤنّث: «الكتبُ **جميلة**». والألمانية لا تعرف هذا إطلاقاً: الجمع جمعٌ دائماً، والفعل يتبعه جمعاً: Die Bücher **sind** schön (لا ist). وهذا خطأ متكرّر جداً عند العرب.\n\n**ثانياً** — العربية تُلزم المفرد بعد الأعداد ١١–٩٩ («خمسةَ عشرَ كتاباً» — كتاباً مفرد منصوب!). والألمانية تُلزم الجمع بعد كل عدد أكبر من واحد: fünfzehn **Bücher**. فلا تقل «zwei Apfel» متأثّراً بالتمييز العربي.\n\n**ثالثاً** — للعربية مثنّى مستقلّ (كتابان)، والألمانية لا مثنّى لها: zwei Bücher وحدها. فإن أردت التثنية، فالعدد zwei هو كلّ ما تملك.\n\n**رابعاً** — وحدات الكيل والوزن تبقى **مفردة** بعد الأعداد في الألمانية: zwei **Kilo** (لا Kilos) · hundert **Gramm** · fünf **Euro** (لا Euros). وهذا يوافق العربية في «خمسة كيلو» ويخالف الإنكليزية.",
       eselsbruecke:
-        "«أهم ثلاثة: -e، -en، -er» — احفظ مفرداتك دائماً مع جمعها: Tisch/Tische، Banane/Bananen، Buch/Bücher. مثل ما تحفظ المفرد والجمع في العربية.",
+        "**قاعدة الجنس تكفيك نصف الطريق:**\n\nمؤنّثة؟ ⇐ **-(e)n** بنسبة تفوق ٩٠٪ (Banane**n**, Frau**en**, Zeitung**en**)\nمحايدة قصيرة؟ ⇐ **-er + Umlaut** غالباً (B**ü**ch**er**, H**äu**s**er**)\nتنتهي بـ **-er / -el / -en**؟ ⇐ **لا لاحقة** أصلاً، وربّما Umlaut وحده (**Ä**pfel, Zimmer)\nتبدو أجنبية؟ ⇐ **-s** (Auto**s**, Handy**s**)\n\nواحفظ هذه العبارة: **«الجمع كلّه die»** — مهما كان المفرد der أو das أو die.",
       commonMistakes: [
-        { wrong: "die Apfels (جمع خاطئ)", right: "die Äpfel", whyAr: "Apfel من نمط Umlaut: Äpfel بدون إضافة." },
-        { wrong: "der Bücher (أداة خاطئة للجمع)", right: "die Bücher", whyAr: "الجمع دائماً die — مهما كان جنس المفرد." },
-        { wrong: "zwei Apfel (بدون جمع)", right: "zwei Äpfel", whyAr: "بعد الأرقام >1 يأتي الجمع دائماً: zwei Äpfel." },
+        {"wrong": "Die Bücher ist teuer.", "right": "Die Bücher sind teuer.", "whyAr": "الفعل يتبع الجمع جمعاً. والخطأ مصدره العربية التي تعامل جمع غير العاقل معاملة المفردة المؤنّثة («الكتب جميلة»). الألمانية لا تعرف هذه القاعدة إطلاقاً."},
+        {"wrong": "zwei Apfel", "right": "zwei Äpfel", "whyAr": "بعد كل عدد أكبر من واحد يأتي الجمع. ولا تنقل التمييز العربي («خمسةَ عشرَ كتاباً» بالمفرد) إلى الألمانية."},
+        {"wrong": "die Apfels", "right": "die Äpfel", "whyAr": "لاحقة -s للدخيل الأجنبي فقط (Autos, Handys). وApfel كلمة جرمانية أصيلة من نمط Umlaut الصفري."},
+        {"wrong": "drei Kilos Tomaten", "right": "drei Kilo Tomaten", "whyAr": "وحدات الكيل والوزن والعملة تبقى مفردة بعد العدد: Kilo, Gramm, Euro, Stück. وهذا يوافق العربية ويخالف الإنكليزية."},
+        {"wrong": "der Bücher", "right": "die Bücher", "whyAr": "أداة الجمع die دائماً مهما كان جنس المفرد. das Buch محايد لكن جمعه die Bücher."},
       ],
       relatedRuleComparison: {
-        title: "الجمع بعد الأرقام",
-        content: "بعد 2 وما فوق: جمع. بعد 1: مفرد. (ein Apfel, zwei Äpfel, fünf Äpfel). والأرقام بعد 12 لا تغير صيغة الجمع في أغلب الحالات.",
+        "title": "الجمع في حالة الـDativ: نون زائدة تُنسى",
+        "content": "ستلتقي لاحقاً بقاعدة تُنسى كثيراً: الجمع في حالة الـDativ يضيف **-n** إن لم يكن منتهياً بها أصلاً ⇒ die Bücher لكن **mit den Büchern**، die Kinder لكن **mit den Kindern**. أمّا ما انتهى بـ -n أو -s فلا يزيد: mit den Frauen · mit den Autos. لا يلزمك هذا اليوم، لكن دوّنه فسيعود في A2."
+      },
+    },
+    {
+      id: "t3",
+      titleAr: "قول الأسعار والمقادير — Was kostet das? و ein Kilo Äpfel",
+      titleDe: "Preise und Mengenangaben: Was kostet ein Kilo?",
+      explanationAr:
+        "تعرف الآن الأرقام وتعرف الجمع، ويبقي أن تركّبهما في الموقف الذي من أجله تعلّمتهما: أن تسأل عن ثمنٍ وتطلب كمّيةً وتدفع. وهذا التركيب له ثلاث مفاصل دقيقة يخطئ فيها المتعلّم العربي تحديداً.\n\n**أوّلاً: صيغة السؤال تتبع عدد السلعة لا عدد النقود.** الفعل kosten يُصرّف مع الشيء المُشترى لا مع السعر:\n• مفرد ⇒ Was **kostet** das Brot? — Es kostet zwei Euro.\n• جمع ⇒ Was **kosten** die Äpfel? — Sie kosten drei Euro.\nومثله Wie viel kostet ...? (أطول قليلاً وأكثر رسميّة)، وWas macht das (zusammen)? للمجموع في نهاية الشراء.\n\n**ثانياً: السعر يُقرأ بطريقةٍ واحدة.** يُكتب السعر بفاصلة لا بنقطة: 3,50 €، والعلامة € تأتي بعد الرقم. وتُقرأ: **drei Euro fünfzig**، أو مختصرةً في السوق: drei fünfzig. والأدقّ رسميّاً: drei Euro fünfzig Cent. أمّا ما دون اليورو فبالسنت وحده: 0,99 € ⇐ neunundneunzig Cent. ولا يُقال أبداً „drei Komma fünf Euro“ — الـKomma تُقرأ في الرياضيات لا في المتجر.\n\n**ثالثاً: المقدار يلتصق بالسلعة بلا حرف جرّ ولا أداة.** البنية: **عدد + وحدة + اسم السلعة** مرصوفةً مباشرةً: ein Kilo Äpfel · zweihundert Gramm Käse · eine Flasche Wasser · drei Stück Kuchen. والوحدات المحايدة والمذكّرة (Kilo, Gramm, Liter, Stück, Euro, Cent) **تبقى مفردة الصورة بعد العدد**: zwei Kilo لا zwei Kilos. أمّا الوحدات المؤنّثة فتُجمَع عاديّاً: zwei **Flaschen** Wasser · drei **Tassen** Kaffee — وهذا الفرق ليس اعتباطيّاً بل بقيّة قاعدة قديمة في الجرمانية تخصّ أوزان القياس والنقد.\n\n**ورابعاً — لغة الطلب والدفع.** ثلاث صيغ مرتّبة من الأكثر تأدّباً إلى الأحيد: Ich hätte gern ... > Ich möchte ... > Ich nehme ... وكلّها تنصب مفعولها (Akkusativ)، فيظهر الـden/einen مع المذكّر وحده: Ich nehme **den** Käse. وجواب البائع الثابت: Sonst noch etwas? ⇒ Nein, danke, das ist alles. ثمّ Das macht 13,50 €. — Bar oder mit Karte?",
+      whyAr:
+        "لأنّ هذا الموقف هو **أوّل ما تمارسه فعلاً في ألمانيا**، قبل أن تفتح حساباً بنكيّاً أو تذهب إلى طبيب. ولأنّ امتحان Goethe A1 يخصّص له مكانين صريحين: Sprechen Teil 2 (طرح سؤال وإجابته عن موضوع مثل Einkaufen) وTeil 3 (صياغة طلب مهذّب). وما يُقيّم هنا ليس ثراء المفردات بل **دقّة القوالب**: هل صرّفت kosten مع الجمع؟ هل قرأت السعر كما يقرأه الألماني؟ هل حذفت حرف الجرّ بين المقدار والسلعة؟ وهناك سبب أعمق: هذه الكتلة هي أوّل موضعٍ ترى فيه الأرقام والجمع والنصب **تعمل معاً في جملة واحدة**، وهذا الدمج هو ما ينقل القاعدة من الذاكرة إلى اللسان. وأخيراً: خطأ المقدار (zwei Kilos von Äpfel) لا يمنع الفهم، لكنّه يُسمع فوراً أجنبيّاً، لأنّه يقع في أكثر جملةٍ يقولها الإنسان أسبوعيّاً.",
+      table: {
+        title: "من السؤال إلى الدفع — قوالب جاهزة",
+        columns: ["المرحلة", "القالب الألماني", "ملاحظة"],
+        rows: [
+          { label: "السؤال (مفرد)", cells: ["Was kostet der Käse?", "kostet مع المفرد"] },
+          { label: "السؤال (جمع)", cells: ["Was kosten die Äpfel?", "kosten مع الجمع"] },
+          { label: "المقدار", cells: ["ein Kilo Äpfel, bitte", "بلا von وبلا أداة"] },
+          { label: "الطلب المهذّب", cells: ["Ich hätte gern 200 Gramm Käse.", "ألطف من möchte"] },
+          { label: "الأخذ", cells: ["Ich nehme den Käse.", "نصب: den للمذكّر"] },
+          { label: "الحساب", cells: ["Das macht 13,50 €.", "drei… zehn Euro fünfzig"] },
+          { label: "الدفع", cells: ["Bar oder mit Karte?", "جوابه: Bar, bitte."] },
+        ],
+      },
+      examples: [
+        { de: "Was kostet ein Kilo Tomaten? — Zwei Euro neunzig.", ar: "بكم كيلو الطماطم؟ — يوروان وتسعون. (kostet مع ein Kilo وهو مفرد)" },
+        { de: "Was kosten die Bananen? — Sie kosten 1,90 €.", ar: "بكم الموز؟ — بيورو وتسعين. (جمع ⇒ kosten وضميره sie)" },
+        { de: "Ich hätte gern zweihundert Gramm Käse.", ar: "أودّ مئتي غرام جبن. (Gramm تبقى مفردة الصورة)" },
+        { de: "Zwei Flaschen Wasser und drei Brötchen, bitte.", ar: "قارورتا ماء وثلاث خبزات من فضلك. (Flasche مؤنّثة ⇒ تُجمَع)" },
+        { de: "Ich nehme den Kuchen und das Brot.", ar: "سآخذ الكعكة والخبز. (nehmen تنصب: den مذكّر، das محايد بلا تغيير)" },
+        { de: "Das macht zusammen sieben Euro fünfzig. — Bar, bitte.", ar: "المجموع سبعة يورو ونصف. — نقداً من فضلك." },
+        { de: "Der Kaffee kostet 0,99 € — also neunundneunzig Cent.", ar: "القهوة بتسعة وتسعين سنتاً. (دون اليورو ⇒ Cent وحده)" },
+      ],
+      comparisonWithArabic:
+        "أربعة فروق تُنتج أربعة أخطاء متوقّعة عند العربي:\n\n**١. «من» التبعيضيّة لا مقابل لها.** نقول بالعربية «كيلو **من** التفّاح»، فيندفع المتعلّم إلى ein Kilo **von** Äpfeln. والألمانية ترصف الاسمين مجاورين بلا رابط: ein Kilo Äpfel. وهذا يُسمّى Maßangabe — إضافة قياسية مباشرة.\n\n**٢. تمييز العدد معكوس.** العربية تجمع الوحدة (ثلاثة **كيلوغرامات**) وتفرد المميّز، والألمانية تفعل العكس تماماً: تُبقي الوحدة مفردة (drei **Kilo**) وتجمع السلعة (drei Kilo **Äpfel**). فالمتعلّم ينقل عادته فيقول zwei Kilos.\n\n**٣. جملة السعر في العربية بلا فعل.** «بكم الخبز؟» جملة اسمية تامّة، والألمانية توجب فعلاً مصرّفاً: Was **kostet** das Brot? ولاحظ أنّ الفعل يتبع السلعة لا السعر — وهذا موضع الخطأ الثالث: Was kostet die Äpfel?\n\n**٤. الفاصلة والنقطة متبادلتان.** الألمانية تكتب الكسر بفاصلة (3,50 €) والألوف بنقطة (1.000 €) — عكس ما اعتاده من درَس بالإنجليزيّة. وفوق ذلك لا تُلفَظ الفاصلة أبداً في الأسعار: تُقرأ الوحدتان متتاليتين (drei Euro fünfzig)، تماماً كما نقول بالدارجة «ثلاثة ونصّ».",
+      eselsbruecke:
+        "**«الوحدة تثبُت والسلعة تجمَع»** — zwei Kilo Äpfel: الـKilo واقفة والـÄpfel تتكاثر. وللسعر: **«يورو ثمّ الباقي، ولا فاصلة في السوق»** — 3,50 € = drei Euro fünfzig. وللفعل: **«اسأل عن السلعة لا عن المال»** — جمعتِ السلعة؟ فاجمعِ الفعل: Was kosten die Äpfel?",
+      commonMistakes: [
+        { wrong: "Was kostet die Äpfel?", right: "Was kosten die Äpfel?", whyAr: "الفعل في الألمانية يطابق فاعله، وفاعل kosten هنا هو «die Äpfel» وهو جمع، لا السعر ولا المتكلّم. ومصدر الخطأ أنّ المتعلّم يحفظ «Was kostet das?» كوحدة جامدة ثمّ يبدّل المفعول وينسى تعديل الفعل." },
+        { wrong: "Ich möchte ein Kilo von Äpfeln.", right: "Ich möchte ein Kilo Äpfel.", whyAr: "نقلٌ حرفيّ لـ«من» التبعيضيّة العربية. الألمانية ترصف المقدار والسلعة متجاورين بلا رابط ولا أداة، وإقحام von يحمل معنى آخر (من أين جاءت) ويجرّ الاسم فيزيد الخطأ ظهوراً." },
+        { wrong: "Ich nehme zwei Kilos Tomaten.", right: "Ich nehme zwei Kilo Tomaten.", whyAr: "وحدات القياس المحايدة والمذكّرة (Kilo, Gramm, Liter, Stück, Euro, Cent) تبقى مفردة الصورة بعد العدد. أمّا المؤنّثة فتُجمَع: zwei Flaschen · drei Tassen. فالقاعدة تدور على الجنس لا على المعنى." },
+        { wrong: "Das kostet drei Komma fünfzig Euro.", right: "Das kostet drei Euro fünfzig.", whyAr: "الـKomma تُقرأ في الرياضيات والقياسات فحسب (3,5 kg = drei Komma fünf Kilo)، أمّا الأسعار فتُقرأ وحدتين متتاليتين: اليورو ثمّ السنت، وكلمة Cent تُحذف عادةً." },
+        { wrong: "Ich will einen Kaffee.", right: "Ich hätte gern einen Kaffee.", whyAr: "الجملة سليمة نحواً وفظّة اجتماعيّاً: wollen يعبّر عن إرادة متشدّدة ويُستعمل في الأمر لا في الطلب. وسلّم التأدّب: hätte gern > möchte > nehme > will." },
+      ],
+      relatedRuleComparison: {
+        title: "Ich hätte gern أم Ich möchte أم Ich nehme؟",
+        content:
+          "الثلاث صحيحة ولكلّ واحدة موضعها. **Ich hätte gern** أصلها صيغة شرطية (Konjunktiv II من haben) وتُدرّس كاملةً في B1، لكنّها تُحفَظ في A1 قالباً جاهزاً لأنّها **ألطف صيغة طلب في المتجر**؛ ومعناها الحرفي «لوددتُ أن يكون لي»، وهذا الابتعاد عن الطلب المباشر هو عينه مصدر التأدّب — كما نقول بالعربية «لو تكرمت» بدل »أعطني«. **Ich möchte** مهذّبة أيضاً وأخفّ رسميّة، وهي الأشيع في المطاعم. **Ich nehme** لا تُقال إلّا بعد أن ترى البضاعة أو تُعرَض عليك خيارات، فهي **حسم اختيار** لا افتتاح طلب: لا تدخل المخبز وتقول مباشرةً Ich nehme… قبل أن تسأل. والثلاث تنصب مفعولها، فالفرق بينها تداوليّ (pragmatisch) لا نحويّ.",
       },
     },
   ],
+
+  reading: {
+    "id": "read-a1-07",
+    "titleDe": "Samstagvormittag auf dem Wochenmarkt",
+    "titleAr": "صباح السبت في سوق الأسبوع",
+    "textType": "bericht",
+    "paragraphs": [
+      "Jeden Samstag um neun Uhr geht Leila auf den Wochenmarkt in Leipzig. Sie kommt aus Tunis und wohnt seit acht Monaten in Deutschland. Der Markt ist für sie mehr als nur Einkaufen: Hier hört sie Deutsch, hier spricht sie Deutsch, und hier lernt sie jede Woche neue Wörter.",
+      "Zuerst geht sie zum Obststand. Die Äpfel kosten heute zwei Euro fünfzig das Kilo, die Bananen ein Euro neunzig. „Zwei Kilo Äpfel, bitte“, sagt Leila. Der Verkäufer wiegt die Äpfel und antwortet: „Fünf Euro. Sonst noch etwas?“ Leila nimmt noch vier Tomaten und drei Zwiebeln.",
+      "Am Käsestand ist es komplizierter. Leila möchte nicht ein ganzes Stück, sondern nur ein bisschen. „Zweihundert Gramm, bitte“, sagt sie. Die Verkäuferin lächelt: „Zweihundert Gramm sind sehr wenig. Nehmen Sie dreihundert!“ Leila lacht und nimmt dreihundert Gramm für vier Euro zwanzig.",
+      "Dann sieht sie die Bücher. Ein alter Mann verkauft gebrauchte Bücher für einen Euro das Stück. Leila kauft zwei Kinderbücher — die Sätze sind kurz und die Wörter sind einfach. „Für meine Tochter?“, fragt der Mann. „Nein“, sagt Leila, „für mich. Ich lerne Deutsch.“",
+      "Zum Schluss rechnet Leila alles zusammen: fünf Euro für die Äpfel, zwei Euro dreißig für das Gemüse, vier Euro zwanzig für den Käse und zwei Euro für die Bücher. Das macht dreizehn Euro fünfzig. Sie hat zwanzig Euro dabei und bekommt sechs Euro fünfzig zurück.",
+      "Auf dem Weg nach Hause denkt Leila: Im Kurs lernt sie die Zahlen langsam und deutlich. Auf dem Markt spricht niemand langsam. Aber genau deshalb kommt sie jeden Samstag wieder."
+    ],
+    "paragraphsAr": [
+      "كلَّ سبتٍ في التاسعة تذهب ليلى إلى سوق الأسبوع في لايبتسيغ. هي من تونس وتسكن في ألمانيا منذ ثمانية أشهر. والسوق عندها أكثر من مجرّد تسوّق: هنا تسمع الألمانية، وهنا تتكلّمها، وهنا تتعلّم كلَّ أسبوع كلماتٍ جديدة.",
+      "تذهب أوّلاً إلى بسطة الفواكه. التفّاح اليوم بيوروين ونصف للكيلو، والموز بيورو وتسعين. تقول ليلى: «كيلوان من التفّاح من فضلك». يزن البائع التفّاح ويجيب: «خمسة يورو. شيء آخر؟» فتأخذ ليلى أربع طماطم وثلاث بصلات.",
+      "وعند بسطة الجبن يصير الأمر أعقد. ليلى لا تريد قطعة كاملة بل قليلاً فقط. تقول: «مئتا غرام من فضلك». فتبتسم البائعة: «مئتا غرام قليلة جداً. خذي ثلاثمئة!» تضحك ليلى وتأخذ ثلاثمئة غرام بأربعة يورو وعشرين.",
+      "ثم ترى الكتب. رجلٌ مسنّ يبيع كتباً مستعملة بيورو للقطعة. تشتري ليلى كتابَي أطفال — الجمل قصيرة والكلمات سهلة. يسألها الرجل: «لابنتك؟» فتقول: «لا، لي أنا. أنا أتعلّم الألمانية.»",
+      "وفي الختام تحسب ليلى كلَّ شيء: خمسة يورو للتفّاح، ويوروان وثلاثون للخضار، وأربعة يورو وعشرون للجبن، ويوروان للكتب. المجموع ثلاثة عشر يورو ونصف. معها عشرون يورو فتستردّ ستّة يورو ونصفاً.",
+      "وفي طريق العودة تفكّر ليلى: في الدورة تتعلّم الأرقام ببطء ووضوح. أمّا في السوق فلا أحد يتكلّم ببطء. ولهذا بالضبط تعود كلَّ سبت."
+    ],
+    "glossary": [
+      {
+        "de": "der Wochenmarkt, ¨-e",
+        "ar": "سوق أسبوعية",
+        "noteAr": "تُقام يوماً محدّداً في ساحة المدينة؛ جمعها بـ ¨-e مع إمالة: die Wochenmärkte"
+      },
+      {
+        "de": "der Stand, ¨-e",
+        "ar": "بسطة، كشك بيع",
+        "noteAr": "مركّباتها كثيرة: der Obststand، der Käsestand، der Bücherstand"
+      },
+      {
+        "de": "wiegen",
+        "ar": "يزن",
+        "noteAr": "فعل قويّ: wiegt – wog – hat gewogen"
+      },
+      {
+        "de": "Sonst noch etwas?",
+        "ar": "«شيء آخر؟»",
+        "noteAr": "عبارة البائع الثابتة في نهاية الطلب؛ جوابها: Nein, danke, das ist alles."
+      },
+      {
+        "de": "ein bisschen",
+        "ar": "قليلاً، شيئاً يسيراً",
+        "noteAr": "لا تتغيّر أبداً، وتُكتب بـ ss لا بـ ß"
+      },
+      {
+        "de": "das Stück, -e",
+        "ar": "قطعة",
+        "noteAr": "تبقى مفردة الصورة بعد العدد: zwei Stück لا zwei Stücke"
+      },
+      {
+        "de": "gebraucht",
+        "ar": "مستعمَل",
+        "noteAr": "اسم مفعول من brauchen يُستعمل صفةً"
+      },
+      {
+        "de": "rechnet zusammen (zusammenrechnen)",
+        "ar": "يجمع الحساب",
+        "noteAr": "فعل منفصل السابقة: sie rechnet alles zusammen"
+      },
+      {
+        "de": "Das macht ...",
+        "ar": "«المجموع ...»",
+        "noteAr": "أشيع من Der Preis ist ... في لغة البائع"
+      },
+      {
+        "de": "bekommt zurück (zurückbekommen)",
+        "ar": "يستردّ (الباقي)",
+        "noteAr": "فعل منفصل: sie bekommt sechs Euro zurück"
+      },
+      {
+        "de": "deutlich",
+        "ar": "واضح، بيّن",
+        "noteAr": "تقابل undeutlich وتُستعمل كثيراً مع sprechen"
+      },
+      {
+        "de": "genau deshalb",
+        "ar": "لهذا بالضبط",
+        "noteAr": "genau يُقوّي deshalb؛ وما بعده يأتي بالقلب: ... kommt sie wieder"
+      }
+    ],
+    "questions": [
+      {
+        "id": "r1",
+        "type": "multiple-choice",
+        "instructionAr": "الفكرة العامّة للنصّ:",
+        "questionDe": "Worum geht es in dem Text hauptsächlich?",
+        "questionAr": "ما الموضوع الرئيسي للنصّ؟",
+        "options": [
+          "Leila kauft auf dem Markt ein und übt dabei ihr Deutsch.",
+          "Leila arbeitet als Verkäuferin auf dem Wochenmarkt.",
+          "Leila sucht ein Buch für ihre Tochter.",
+          "Leila vergleicht die Preise in Tunis und in Leipzig."
+        ],
+        "correctIndex": 0,
+        "explanation": "الفقرة الأولى تقول صراحةً إنّ السوق عندها «أكثر من مجرّد تسوّق»: تسمع الألمانية وتتكلّمها وتتعلّم كلمات، والفقرة الأخيرة تؤكّد أنّها تعود لهذا السبب. أمّا الكتاب فتفصيل في فقرة واحدة، ولم يُذكر أنّها تعمل بائعة ولا أنّها قارنت الأسعار.",
+        "optionExplanations": [
+          undefined,
+          "لم يُذكر أبداً أنّها تعمل؛ هي زبونة تشتري.",
+          "الكتاب تفصيل في فقرة واحدة، وقد نفت صراحةً أنّه لابنتها.",
+          "أسعار تونس لم تُذكر في النصّ قطّ."
+        ],
+        "errorType": "vocabulary",
+        "paragraph": 0
+      },
+      {
+        "id": "r2",
+        "type": "multiple-choice",
+        "instructionAr": "تفصيل — السعر:",
+        "questionDe": "Wie viel bezahlt Leila für den Käse?",
+        "questionAr": "كم دفعت ليلى ثمناً للجبن؟",
+        "options": [
+          "4,20 €",
+          "2,50 €",
+          "1,90 €",
+          "13,50 €"
+        ],
+        "correctIndex": 0,
+        "explanation": "في الفقرة الثالثة: أخذت ثلاثمئة غرام بأربعة يورو وعشرين (vier Euro zwanzig). والمبالغ الأخرى مذكورة في النصّ لكن لأشياء أخرى: 2,50 للتفّاح كيلواً، و1,90 للموز، و13,50 هو المجموع الكلّي.",
+        "optionExplanations": [
+          undefined,
+          "2,50 € هو سعر كيلو التفّاح.",
+          "1,90 € هو سعر كيلو الموز.",
+          "13,50 € هو المجموع الكلّي لا ثمن الجبن."
+        ],
+        "errorType": "vocabulary",
+        "paragraph": 1
+      },
+      {
+        "id": "r3",
+        "type": "multiple-choice",
+        "instructionAr": "تفصيل — الباقي:",
+        "questionDe": "Wie viel Geld bekommt Leila zurück?",
+        "questionAr": "كم استردّت ليلى من النقود؟",
+        "options": [
+          "6,50 €",
+          "20,00 €",
+          "13,50 €",
+          "5,00 €"
+        ],
+        "correctIndex": 0,
+        "explanation": "الفقرة الخامسة: معها عشرون يورو والمجموع ثلاثة عشر ونصف ⇒ 20,00 − 13,50 = 6,50، والنصّ يذكر الناتج صراحةً: bekommt sechs Euro fünfzig zurück.",
+        "optionExplanations": [
+          undefined,
+          "20,00 € هو ما دفعته لا ما استردّته.",
+          "13,50 € هو المجموع.",
+          "5,00 € ثمن التفّاح وحده."
+        ],
+        "errorType": "vocabulary",
+        "paragraph": 2
+      },
+      {
+        "id": "r4",
+        "type": "multiple-choice",
+        "instructionAr": "استنتاج:",
+        "questionDe": "Warum kauft Leila Kinderbücher?",
+        "questionAr": "لماذا اشترت ليلى كتب أطفال؟",
+        "options": [
+          "Weil die Sprache darin einfach ist und sie Deutsch lernt.",
+          "Weil ihre Tochter gern liest.",
+          "Weil sie nur einen Euro kosten.",
+          "Weil der alte Mann sie ihr empfohlen hat."
+        ],
+        "correctIndex": 0,
+        "explanation": "استنتاج من معطيَين: النصّ يقول إنّ «الجمل قصيرة والكلمات سهلة»، ثم تُصرّح ليلى «لا، لي أنا. أنا أتعلّم الألمانية». والرخص صحيح لكنّه ليس السبب المذكور، والابنة نفتها ليلى صراحةً.",
+        "optionExplanations": [
+          undefined,
+          "الابنة احتمال طرحه البائع ورفضته ليلى صراحةً.",
+          "الثمن صحيح لكنّ النصّ يربط الشراء بسهولة اللغة لا بالرخص.",
+          "الرجل سأل فقط، ولم ينصح بشيء."
+        ],
+        "errorType": "vocabulary",
+        "paragraph": 3
+      },
+      {
+        "id": "r5",
+        "type": "multiple-choice",
+        "instructionAr": "ملاحظة لغويّة:",
+        "questionDe": "Warum heißt es „Zweihundert Gramm sind sehr wenig“ und nicht „ist“?",
+        "questionAr": "لماذا جاء الفعل sind لا ist في هذه الجملة؟",
+        "options": [
+          "Weil „zweihundert Gramm“ eine Mengenangabe im Plural ist.",
+          "Weil „Gramm“ immer feminin ist.",
+          "Weil die Verkäuferin höflich sein möchte.",
+          "Weil nach Zahlen immer „sind“ kommt."
+        ],
+        "correctIndex": 0,
+        "explanation": "الفعل يتبع الفاعل، والفاعل هنا كمّية بالجمع. ولاحظ الدقّة: كلمة Gramm نفسها تبقى مفردة الصورة بعد العدد (لا Gramms)، لكنّ المعنى جمع فيأتي الفعل جمعاً — وهذا التمييز بين صورة الكلمة وعددها المنطقي يخطئ فيه العربي كثيراً.",
+        "optionExplanations": [
+          undefined,
+          "Gramm محايد (das Gramm) لا مؤنّث، والجنس لا علاقة له بالفعل هنا.",
+          "التأدّب لا يغيّر تصريف الفعل في الألمانية.",
+          "خطأ: ein Euro ist genug — العدد 1 يأخذ المفرد."
+        ],
+        "errorType": "grammar",
+        "paragraph": 2
+      }
+    ],
+    "redemittel": [
+      {
+        "de": "Was kostet ...? / Wie viel kostet ...?",
+        "ar": "بكم ...؟"
+      },
+      {
+        "de": "Zwei Kilo ..., bitte.",
+        "ar": "كيلوان من ... من فضلك."
+      },
+      {
+        "de": "Sonst noch etwas? — Nein, danke, das ist alles.",
+        "ar": "شيء آخر؟ — لا شكراً، هذا كلّ شيء."
+      },
+      {
+        "de": "Das macht zusammen ... Euro.",
+        "ar": "المجموع ... يورو."
+      },
+      {
+        "de": "Ich hätte gern ...",
+        "ar": "أودّ ... — أرقى من ich möchte"
+      },
+      {
+        "de": "Haben Sie es passend?",
+        "ar": "«هل معك المبلغ بالضبط؟» — سؤال البائع المعتاد"
+      }
+    ],
+    "discussionAr": "هل توجد في مدينتك سوق أسبوعية كسوق ليلى؟ صف ما يُباع فيها وبأيّ الأسعار — واذكر ثلاثة أرقام على الأقلّ بالألمانية. ثمّ فكّر: لماذا يتعلّم المرء في السوق ما لا يتعلّمه في الفصل؟"
+  },
 
   listening: {
     items: [
@@ -391,6 +672,16 @@ export const lessonA107: Lesson = {
       explanation: "سآخذ الجبن والخبز — Ich nehme + النصب: den Käse (مذكر).",
       errorType: "spelling",
     },
+    {"id": "e11", "type": "multiple-choice", "instructionAr": "صرّف فعل السعر مع فاعله:", "questionDe": "Was ___ die Äpfel? — Drei Euro.", "questionAr": "بكم التفّاح؟", "options": ["kosten", "kostet", "kostest", "koste"], "correctIndex": 0, "explanation": "الفاعل die Äpfel جمع ⇒ الفعل جمع: kosten. والفعل يتبع السلعة لا السعر.", "optionExplanations": [undefined, "kostet للمفرد: Was kostet der Apfel?", "صيغة مخاطب لا توجد هنا.", "koste للمتكلّم ich — والفاعل هنا التفّاح."], "errorType": "conjugation"},
+    {"id": "e12", "type": "multiple-choice", "instructionAr": "اختر قراءة السعر الصحيحة:", "questionDe": "3,50 € =", "questionAr": "كيف يُقرأ هذا السعر؟", "options": ["drei Euro fünfzig", "drei Komma fünfzig Euro", "drei Euro und fünfzig Euro", "dreifünfzig Euro"], "correctIndex": 0, "explanation": "السعر يُقرأ وحدتين متتاليتين: اليورو ثمّ السنت، وكلمة Cent تُحذف عادةً.", "optionExplanations": [undefined, "Komma تُقرأ في الرياضيات والأوزان لا في الأسعار.", "تكرار Euro خطأ؛ الجزء الثاني سنتات.", "لا يُلصق الرقمان؛ بينهما كلمة Euro."], "errorType": "vocabulary"},
+    {"id": "e13", "type": "error-correction", "instructionAr": "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».", "wrongSentence": "Ich nehme zwei Kilos Tomaten.", "wrongWord": "Kilos", "correctWord": "Kilo", "options": ["Kilo", "Kilon", "Kiloe", "Kilose"], "explanation": "وحدات القياس المحايدة تبقى مفردة الصورة بعد العدد: zwei Kilo، drei Gramm، fünf Euro. والمؤنّثة وحدها تُجمَع: zwei Flaschen.", "errorType": "plural"},
+    {"id": "e14", "type": "error-correction", "instructionAr": "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».", "wrongSentence": "Ich möchte ein Kilo von Äpfeln.", "wrongWord": "von", "correctWord": "Äpfel", "options": ["Äpfel", "aus", "mit", "für"], "explanation": "الألمانية ترصف المقدار والسلعة متجاورين: ein Kilo Äpfel — بلا حرف جرّ ولا أداة. و«von Äpfeln» نقلٌ حرفيّ لـ«من» العربية.", "errorType": "preposition"},
+    {"id": "e15", "type": "fill-blank", "instructionAr": "أكمل أداة النصب بعد nehmen:", "template": "Ich nehme ___ Käse und ___ Flasche Wasser.", "blanks": [{"correct": "den", "options": ["den", "der", "dem"]}, {"correct": "eine", "options": ["eine", "einen", "ein"]}], "explanation": "nehmen تنصب: المذكّر der Käse ⇐ den، والمؤنّث die Flasche ⇐ eine دون تغيير — المذكّر وحده يتغيّر.", "errorType": "case"},
+    {"id": "e16", "type": "word-ordering", "instructionAr": "رتّب طلباً مهذّباً:", "tokens": ["hätte", "Ich", "gern", "zweihundert", "Gramm", "Käse", "."], "correctSentence": "Ich hätte gern zweihundert Gramm Käse.", "explanation": "القالب: Ich hätte gern + المقدار + السلعة. والفعل hätte في المرتبة الثانية كعادة الخبرية.", "errorType": "word-order"},
+    {"id": "e17", "type": "matching", "instructionAr": "صل المقدار بالسلعة المناسبة:", "pairs": [{"left": "ein Kilo", "right": "Äpfel"}, {"left": "zweihundert Gramm", "right": "Käse"}, {"left": "eine Flasche", "right": "Wasser"}, {"left": "drei Stück", "right": "Kuchen"}], "explanation": "لاحظ أنّ الوحدة لا تتبعها von: ein Kilo Äpfel. وKilo/Gramm/Stück مفردة الصورة، وFlasche مؤنّثة تُجمَع: zwei Flaschen.", "errorType": "vocabulary"},
+    {"id": "e18", "type": "transformation", "instructionAr": "حوّل الطلب الفظّ إلى صيغة مهذّبة:", "prompt": "Ich will einen Kaffee. → (بصيغة hätte gern)", "acceptedAnswers": ["Ich hätte gern einen Kaffee", "Ich hätte gern einen Kaffee."], "sampleAnswer": "Ich hätte gern einen Kaffee.", "explanation": "wollen يعبّر عن إرادة متشدّدة ويُسمع فظّاً في المتجر. ولاحظ بقاء النصب: einen Kaffee.", "errorType": "vocabulary"},
+    {"id": "e19", "type": "multiple-choice", "instructionAr": "اختر الرقم المكتوب صحيحاً:", "questionDe": "Das Fahrrad kostet ___ Euro. (365)", "questionAr": "الدرّاجة بـ365 يورو.", "options": ["dreihundertfünfundsechzig", "dreihundertsechzigfünf", "dreihundertfünfsechzig", "drei hundert fünf und sechzig"], "correctIndex": 0, "explanation": "المئات أوّلاً ثمّ الآحاد فالعشرات بـund: dreihundert + fünf + und + sechzig، وكلّها كلمة واحدة.", "optionExplanations": [undefined, "قلبتَ الآحاد والعشرات وأسقطت und.", "نقصتك und بين الآحاد والعشرات.", "الأرقام تُكتب موصولة دون مسافات."], "errorType": "spelling"},
+    {"id": "e20", "type": "true-false", "instructionAr": "اقرأ الحوار ثمّ احكم على العبارات:", "title": "An der Käsetheke", "textDe": "Verkäuferin: Guten Tag! Was darf es sein? — Kunde: Ich hätte gern dreihundert Gramm Käse. — Verkäuferin: Gern. Sonst noch etwas? — Kunde: Ja, zwei Flaschen Wasser, bitte. — Verkäuferin: Das macht acht Euro zwanzig. — Kunde: Bar, bitte. Hier sind zehn Euro. — Verkäuferin: Und ein Euro achtzig zurück. Schönen Tag!", "textAr": "حوار قصير عند بسطة الجبن.", "statements": [{"id": "s1", "de": "Der Kunde kauft dreihundert Gramm Käse.", "ar": "يشتري الزبون ثلاثمئة غرام جبن.", "isTrue": true, "whyAr": "قالها حرفيّاً: Ich hätte gern dreihundert Gramm Käse."}, {"id": "s2", "de": "Er bezahlt mit Karte.", "ar": "يدفع بالبطاقة.", "isTrue": false, "whyAr": "قال Bar, bitte أي نقداً، ثمّ أعطى عشرة يورو."}, {"id": "s3", "de": "Er bekommt ein Euro achtzig zurück.", "ar": "يستردّ يورو وثمانين.", "isTrue": true, "whyAr": "10,00 − 8,20 = 1,80، والبائعة قالتها."}, {"id": "s4", "de": "Er kauft nur eine Flasche Wasser.", "ar": "يشتري قارورة ماء واحدة.", "isTrue": false, "whyAr": "طلب zwei Flaschen — ولاحظ جمع Flasche لأنّها مؤنّثة."}], "explanation": "حوار شراء كامل: طلب مهذّب، فمقدار، فحساب، فدفع، فباقٍ.", "errorType": "vocabulary"},
   ],
 
   fehlerUndTipps: {
@@ -474,6 +765,16 @@ export const lessonA107: Lesson = {
     { id: "fc6", de: "der Plural", ar: "الجمع", example: "Äpfel ist der Plural von Apfel.", exampleAr: "Äpfel جمع Apfel.", level: "A1" },
     { id: "fc7", de: "das Kilo", ar: "الكيلوغرام", example: "Ein Kilo Äpfel, bitte!", exampleAr: "كيلو تفاح من فضلك!", level: "A1" },
     { id: "fc8", de: "Ich nehme …", ar: "سآخذ… (عند الشراء)", example: "Ich nehme den Käse.", exampleAr: "سآخذ الجبن.", level: "A1" },
+    {"id": "fc9", "de": "Was kostet ...? / Was kosten ...?", "ar": "بكم ...؟ (مفرد / جمع)", "example": "Was kosten die Äpfel?", "exampleAr": "بكم التفّاح؟", "level": "A1"},
+    {"id": "fc10", "de": "Ich hätte gern ...", "ar": "أودّ ... (ألطف صيغة طلب)", "example": "Ich hätte gern zweihundert Gramm Käse.", "exampleAr": "أودّ مئتي غرام جبن.", "level": "A1"},
+    {"id": "fc11", "de": "das Gramm / das Kilo", "ar": "الغرام / الكيلو — يبقيان مفردي الصورة بعد العدد", "example": "Zweihundert Gramm, bitte.", "exampleAr": "مئتا غرام من فضلك.", "level": "A1"},
+    {"id": "fc12", "de": "die Flasche, -n", "ar": "القارورة — مؤنّثة فتُجمَع بعد العدد", "example": "Zwei Flaschen Wasser, bitte.", "exampleAr": "قارورتا ماء من فضلك.", "level": "A1"},
+    {"id": "fc13", "de": "Sonst noch etwas?", "ar": "شيء آخر؟ — سؤال البائع الثابت", "example": "Sonst noch etwas? — Nein, danke, das ist alles.", "exampleAr": "شيء آخر؟ — لا شكراً، هذا كلّ شيء.", "level": "A1"},
+    {"id": "fc14", "de": "Das macht ... Euro.", "ar": "المجموع ... يورو", "example": "Das macht dreizehn Euro fünfzig.", "exampleAr": "المجموع ثلاثة عشر يورو ونصف.", "level": "A1"},
+    {"id": "fc15", "de": "bar / mit Karte bezahlen", "ar": "الدفع نقداً / بالبطاقة", "example": "Bar oder mit Karte? — Bar, bitte.", "exampleAr": "نقداً أم بالبطاقة؟ — نقداً من فضلك.", "level": "A1"},
+    {"id": "fc16", "de": "der Wochenmarkt, ¨-e", "ar": "السوق الأسبوعية", "example": "Am Samstag gehe ich auf den Wochenmarkt.", "exampleAr": "يوم السبت أذهب إلى السوق الأسبوعية.", "level": "A1"},
+    {"id": "fc17", "de": "neunundneunzig Cent", "ar": "تسعة وتسعون سنتاً (0,99 €)", "example": "Der Kaffee kostet neunundneunzig Cent.", "exampleAr": "القهوة بتسعة وتسعين سنتاً.", "level": "A1"},
+    {"id": "fc18", "de": "zurückbekommen", "ar": "يستردّ الباقي — فعل منفصل", "example": "Sie bekommt sechs Euro fünfzig zurück.", "exampleAr": "تستردّ ستّة يورو ونصفاً.", "level": "A1"},
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */

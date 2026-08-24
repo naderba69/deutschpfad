@@ -8,6 +8,7 @@ import {MultipleChoiceExercise} from "@/components/lesson/exercises/multiple-cho
 import {Celebration} from "@/components/gamification/celebration";
 import {InterleavingReview} from "@/components/lesson/sections/interleaving-review";
 import {TextDe} from "@/components/shared/text-de";
+import {RichText} from "@/components/shared/rich-text";
 import {SpeakButton} from "@/components/shared/speak-button";
 import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
@@ -370,7 +371,7 @@ export function LessonFlow({ lesson, onFinish }: { lesson: Lesson; onFinish?: ()
             </p>
           </div>
           <div className="flex items-start justify-between gap-3">
-            <p className="text-sm leading-relaxed">{block.explanationAr}</p>
+            <RichText text={block.explanationAr} className="space-y-2 text-sm leading-relaxed" />
             <SpeakRule text={block.explanationAr} />
           </div>
           {block.examples && block.examples.length > 0 && (
