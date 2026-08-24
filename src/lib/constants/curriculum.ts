@@ -17,8 +17,8 @@ export const LEVELS: LevelMeta[] = [
     subtitleDe: "Grundstufe 1",
     titleAr: "المبتدئ",
     description:
-      "نقطة الانطلاق: الأبجدية والنطق، التعارف، الضمائر والأفعال في المضارع، أدوات التعريف والتنكير، الأرقام والوقت، وبناء أول جمل صحيحة بالترتيب الألماني (الفعل في المركز الثاني).",
-    topics: ["Präsens", "Nominativ / Akkusativ", "W-Fragen", "Zahlen & Uhrzeit", "Imperativ", "kein / nicht"],
+      "نقطة الانطلاق: الأبجدية والنطق، التعارف، الضمائر والأفعال في المضارع، أدوات التعريف والتنكير، الأرقام والوقت، الأفعال الناقصة الستّة، والماضي المحكيّ (Perfekt) الذي يُغلق به المستوى — مع بناء أول جمل صحيحة بالترتيب الألماني (الفعل في المركز الثاني).",
+    topics: ["Präsens", "Nominativ / Akkusativ", "W-Fragen", "Zahlen & Uhrzeit", "Imperativ", "Modalverben", "Perfekt", "kein / nicht"],
     units: 13,
     words: 800,
     unlockThreshold: 80,
@@ -135,8 +135,8 @@ export const UNITS: Unit[] = [
     number: 7,
     titleDe: "Einkaufen & Zahlen",
     titleAr: "التسوق والأرقام",
-    descDe: "Einkaufen, Preise, Mengenangaben, Telefonnummern und Adressen.",
-    descAr: "التسوق والأسعار والكميات، ثم درس الأرقام والهاتف والعناوين (a1-14): أرقام حتى 100 بثقة، أرقام الهاتف، والعناوين.",
+    descDe: "Einkaufen, Preise, Mengenangaben — und das Perfekt zum Abschluss von A1.",
+    descAr: "التسوق والأسعار والكميات وأرقام الهاتف والعناوين، ثم درس الماضي المحكيّ (a1-14): haben/sein + Partizip II، وwollen وsollen.",
   },
   {
     id: "a1-08",

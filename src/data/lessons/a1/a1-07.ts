@@ -211,6 +211,82 @@ export const lessonA107: Lesson = {
           "الثلاث صحيحة ولكلّ واحدة موضعها. **Ich hätte gern** أصلها صيغة شرطية (Konjunktiv II من haben) وتُدرّس كاملةً في B1، لكنّها تُحفَظ في A1 قالباً جاهزاً لأنّها **ألطف صيغة طلب في المتجر**؛ ومعناها الحرفي «لوددتُ أن يكون لي»، وهذا الابتعاد عن الطلب المباشر هو عينه مصدر التأدّب — كما نقول بالعربية «لو تكرمت» بدل »أعطني«. **Ich möchte** مهذّبة أيضاً وأخفّ رسميّة، وهي الأشيع في المطاعم. **Ich nehme** لا تُقال إلّا بعد أن ترى البضاعة أو تُعرَض عليك خيارات، فهي **حسم اختيار** لا افتتاح طلب: لا تدخل المخبز وتقول مباشرةً Ich nehme… قبل أن تسأل. والثلاث تنصب مفعولها، فالفرق بينها تداوليّ (pragmatisch) لا نحويّ.",
       },
     },
+    {
+      id: "t4",
+      titleAr: "أرقام الهاتف والعناوين والتهجئة على الهاتف",
+      titleDe: "Telefonnummern, Adressen und Buchstabieren am Telefon",
+      explanationAr:
+        "أتقنتَ الأرقام والأسعار. وبقي الموضع الذي تسقط فيه الأرقام أكثر من السوق: **الهاتف والعنوان**. وهما بابان إجرائيّان لا تنجو منهما: تسجيلٌ في مدرسة لغة، موعدٌ عند طبيب، عقد إيجار، بطاقة إقامة. وفي امتحان Goethe A1 يظهران في **Hören Teil 1** (رسالةٌ صوتية تُملي رقماً) وفي **Schreiben Teil 1** (استمارةٌ تُملأ).\n\n**أوّلاً — رقم الهاتف يُقرأ رقماً رقماً، لا عدداً واحداً.**\nالرقم 0176 24 83 591 لا يُقال أبداً „مئةٌ وستةٌ وسبعون“، بل: **null - eins - sieben - sechs …** وهذا يريحك: لن تحتاج البنية المعكوسة (einundzwanzig) هنا إطلاقاً، تسعة أرقامٍ فقط من null إلى neun تكفيك.\n· السؤال: **Wie ist deine Telefonnummer?** (لصديق) · **Wie ist Ihre Telefonnummer?** (رسمي)\n· الجواب: **Meine Nummer ist null eins sieben sechs …**\n· وإن أسرع المتكلّم: **Können Sie das bitte wiederholen?** أو **Langsamer, bitte!**\nوتسمع أحياناً القراءة مزدوجةً (**vierundzwanzig** لـ24)، وهي شائعة بين الألمان لكنّها ليست مطلوبةً منك؛ اِفهمها ولا تُنتجها.\n\n**ثانياً — العنوان الألمانيّ مقلوبٌ عن عادتك في موضعين.**\nالصورة القياسية أربعة أسطر:\n| Frau Leila Ben Amor | ← الاسم |\n| Goethestraße 12 | ← الشارع ثمّ الرقم |\n| 10115 Berlin | ← الرمز البريديّ ثمّ المدينة |\n| Deutschland | ← البلد |\nالموضع الأوّل: **رقم البيت يأتي بعد اسم الشارع** لا قبله. الموضع الثاني: **الرمز البريديّ (Postleitzahl) قبل اسم المدينة**، وهو خمسة أرقام تُقرأ رقماً رقماً كذلك: **eins null eins eins fünf**.\nولاحظ أنّ **Straße تلتصق بالاسم** كلمةً واحدة: Goethestraße لا Goethe Straße. وتُختصر كتابةً **Goethestr. 12**.\n\n**ثالثاً — التهجئة: الحرف وحده لا يكفي على الهاتف.**\nحرفا **m** و**n** يتشابهان في سمّاعةٍ رديئة، وكذلك **b/p** و**d/t**. فاعتمد الألمان جدولاً معياريّاً (DIN 5009) يُسنِد إلى كلّ حرفٍ مدينة: **B wie Berlin** أي „الباء التي في برلين“. والصيغة: **B wie Berlin, E wie Essen, N wie Nürnberg**.\nوتحتاج ثلاث عباراتٍ إضافية: **Doppel-n** (نونان) · **groß / klein** (كبير/صغير) · **Bindestrich** (شَرْطة). ولحروف العلّة المعلَّمة قُل **Umlaut**: ä = **Umlaut Aachen**، ولـß قُل **Eszett** ببساطة.",
+      whyAr:
+        "لماذا يُملي الألمان الأرقام رقماً رقماً بينما ينطقونها في السوق عدداً كاملاً؟ لأنّ البنية المعكوسة نفسها هي الخطر: من يقول einundzwanzig يَنطق الآحاد قبل العشرات، فإذا كتب السامع ما يسمعه بترتيب سماعه خرج 12 بدل 21. والقراءة المفردة تُلغي المشكلة من أصلها لأنّها تُلغي البنية.\n\nولماذا يأتي رقم البيت بعد الشارع والرمز قبل المدينة؟ لأنّ العنوان الألمانيّ مرتَّبٌ بمنطق **البحث** لا بمنطق النطق: ساعي البريد يجد الشارع أوّلاً ثمّ يمشي فيه بحثاً عن الرقم، وآلة الفرز تقرأ الرمز البريديّ قبل أن يعنيها اسم المدينة. فالترتيب خدمةٌ لمن يقرأ العنوان لا لمن يكتبه.\n\nولماذا مدنٌ في جدول التهجئة لا أسماء أشخاص؟ الجدول القديم كان بأسماء (A wie Anton)، وحُذفت منه الأسماء اليهودية في العهد النازيّ. وفي 2022 أصدر معهد التقييس الألمانيّ جدولاً جديداً بأسماء المدن قطعاً للجذر. والجدولان مستعملان اليوم، فافهم الاثنين وأنتج الجديد.",
+      table: {
+        title: "جدول التهجئة على الهاتف — مقتطف عمليّ",
+        columns: ["الحرف", "DIN 5009 الجديد (مدن)", "القديم (أسماء) — ما زلت تسمعه"],
+        rows: [
+          { label: "A", cells: ["A wie Aachen", "A wie Anton"] },
+          { label: "B", cells: ["B wie Berlin", "B wie Berta"] },
+          { label: "D", cells: ["D wie Düsseldorf", "D wie Dora"] },
+          { label: "E", cells: ["E wie Essen", "E wie Emil"] },
+          { label: "K", cells: ["K wie Köln", "K wie Kaufmann"] },
+          { label: "M", cells: ["M wie München", "M wie Martha"] },
+          { label: "N", cells: ["N wie Nürnberg", "N wie Nordpol"] },
+          { label: "T", cells: ["T wie Tübingen", "T wie Theodor"] },
+          { label: "ä / ö / ü", cells: ["Umlaut Aachen / Offenbach / Unna", "Ärger / Ökonom / Übermut"] },
+          { label: "ß", cells: ["Eszett", "Eszett"] },
+        ],
+      },
+      examples: [
+        { de: "Wie ist Ihre Telefonnummer? – Null eins sieben eins, zwei drei vier, fünf sechs sieben acht.", ar: "ما رقم هاتفك؟ — صفر واحد سبعة واحد، اثنان ثلاثة أربعة، خمسة ستة سبعة ثمانية." },
+        { de: "Meine Adresse ist Goethestraße 12, 10115 Berlin.", ar: "عنواني: شارع غوته 12، الرمز 10115 برلين. (الرقم بعد الشارع، والرمز قبل المدينة)" },
+        { de: "Wie schreibt man das? – Ben Amor: B wie Berlin, E wie Essen, N wie Nürnberg.", ar: "كيف يُكتب هذا؟ — بن عمر: الباء التي في برلين، الهاء التي في إيسن، النون التي في نورنبرغ." },
+        { de: "Wie ist die Postleitzahl? – Eins null eins eins fünf.", ar: "ما الرمز البريديّ؟ — واحد صفر واحد واحد خمسة. (خمسة أرقام مفردة)" },
+        { de: "Ich wohne in der Bahnhofstraße.", ar: "أسكن في شارع المحطة. (in der + مؤنّث لأنّ die Straße مؤنّثة)" },
+        { de: "Können Sie das bitte buchstabieren? – Ja, gern: Mueller, M-U-E-L-L-E-R.", ar: "أيمكنك التهجئة من فضلك؟ — نعم بكلّ سرور: مولر، ميم-يو-إي-لام-لام-إي-راء." },
+        { de: "Entschuldigung, langsamer bitte! Können Sie die Nummer wiederholen?", ar: "عذراً، أبطأ من فضلك! أيمكنك إعادة الرقم؟ (أنقذ نفسك بهذه الجملة في Hören)" },
+        { de: "Schmitt mit Doppel-t, nicht Schmidt mit d.", ar: "شميت بتاءين، لا شميد بدال. (Doppel- تسبق الحرف المضاعف)" },
+      ],
+      comparisonWithArabic:
+        "العربية تكتب العنوان من الجزء إلى الكلّ أيضاً، لكنّها تضع **رقم البيت أوّلاً** في العادة الفرنسية المتوارثة في تونس والمغرب: „12 نهج غوته“. والألمانية تعكس: **Goethestraße 12**. وهذا ليس ذوقاً بل معيار بريد، والاستمارة التي تُملأ في الامتحان تُقيَّم على هذا الترتيب.\n\nوفي أرقام الهاتف تقرأ العربية غالباً بالثنائيات: „اثنان وعشرون، أربعة وثلاثون“. والألمانية الإجرائية تُفرِد كلّ رقم. والسبب في الألمانية أوجه منه في العربية لأنّ العربية تنطق العشرات والآحاد بالترتيب المكتوب نفسه في هذه الصيغة، بينما الألمانية تعكسه — ففَقْدُ رقمٍ واحد يقلب العدد.\n\nوأمّا التهجئة فالعربيّ يقولها بالكلمات كذلك („الباء بواحدة من تحت“)، لكنّه يصف **شكل** الحرف؛ والألمانيّ يصف **كلمةً تبدأ به**. فالمنطقان مختلفان: وصفٌ بصريّ عندنا، ومرساةٌ صوتية عندهم.",
+      eselsbruecke:
+        "العنوان الألمانيّ يمشي كساعي البريد: يجد الشارع ثمّ يعدّ الأبواب (Goethestraße 12)، ويقرأ الرمز قبل المدينة لأنّ الآلة تفرز بالرمز. والهاتف يُملى رقماً رقماً لأنّ العكس يقلب العدد.",
+      commonMistakes: [
+        {
+          wrong: "Meine Adresse ist 12 Goethestraße.",
+          right: "Meine Adresse ist Goethestraße 12.",
+          whyAr:
+            "نقلٌ للعادة الفرنسية السائدة في تونس (12 نهج غوته). والألمانية تضع الرقم بعد الشارع دائماً، وهذا يُقيَّم في استمارة Schreiben Teil 1 نقطةً مستقلّة.",
+        },
+        {
+          wrong: "Ich wohne in Berlin 10115.",
+          right: "Ich wohne in 10115 Berlin.",
+          whyAr:
+            "الرمز البريديّ يسبق المدينة ولا يتبعها. والترتيب مقصود: آلة الفرز تقرأ الرمز أوّلاً، فوضعُه بعد الاسم يُعطّل الغرض منه ويُقرأ خطأً إملائياً لا اختلافَ ذوق.",
+        },
+        {
+          wrong: "Meine Nummer ist einundzwanzig, dreiundvierzig.",
+          right: "Meine Nummer ist zwei eins, vier drei.",
+          whyAr:
+            "البنية المعكوسة هي الفخّ نفسه: من يسمع einundzwanzig ويكتب ما يسمعه بترتيبه يُخرج 12 بدل 21. والإملاء المفرد يُلغي البنية فيُلغي الخطأ.",
+        },
+        {
+          wrong: "Ich wohne in die Goethestraße.",
+          right: "Ich wohne in der Goethestraße.",
+          whyAr:
+            "wohnen يجيب عن wo? فيلزمه الجرّ (Dativ)، وdie Straße مؤنّثة فتصير der. وهذا الخطأ ذاته درسته في السكن: in dem Zimmer لا in das Zimmer عند الإقامة.",
+        },
+        {
+          wrong: "Wie buchstabiert man? – M, U, E, L, L, E, R … oder Mueller?",
+          right: "Müller schreibt man mit Umlaut U: U-Umlaut, L, L, E, R.",
+          whyAr:
+            "ü تُكتب ue فقط حين يتعذّر رسم النقطتين (بريد إلكترونيّ، لوحة أجنبية). وفي الاسم الرسميّ تبقى Müller، فخلطُ الصورتين يُنتج اسمين مختلفين في السجلّ الإداريّ.",
+        },
+      ],
+      relatedRuleComparison: {
+        title: "الرقم في السوق مقابل الرقم على الهاتف",
+        content:
+          "قابِل الاستعمالين في هذا الدرس نفسه: في السوق قلتَ **Das kostet dreiundzwanzig Euro** — عدداً كاملاً ببنيته المعكوسة، لأنّ المقصود **كمّية**. وعلى الهاتف تقول **zwei drei** — رقمين مفردين، لأنّ المقصود **سلسلة رموز** لا كمّية. والفارق ليس لغوياً بل وظيفيّاً: 23 يورو مقدارٌ يُجمع ويُطرح، و23 في رقم هاتف ليس مقداراً بل خانتان.\n\nوالقاعدة العملية: **كلّ ما يُحسب يُقرأ عدداً، وكلّ ما يُملى يُقرأ رقماً رقماً**. فالسعر والعمر والكمّية أعداد؛ ورقم الهاتف والرمز البريديّ ورقم الحساب وسنة الميلاد المتقطّعة رموز. وسنةُ الميلاد نفسها تُقرأ عدداً (**neunzehnhundertneunzig** لـ1990) لأنّها تقع على خطّ زمنٍ يُقاس.",
+      },
+    },
   ],
 
   reading: {
@@ -754,6 +830,93 @@ export const lessonA107: Lesson = {
       explanation: "Apfel → Äpfel (Umlaut)، Banane → Bananen (-n).",
       errorType: "plural",
     },
+    {
+      id: "e21",
+      type: "multiple-choice",
+      instructionAr: "أيّ صيغة عنوان صحيحة بالمعيار الألمانيّ؟",
+      questionDe: "Welche Adresse ist richtig geschrieben?",
+      options: [
+        "Goethestraße 12, 10115 Berlin",
+        "12 Goethestraße, Berlin 10115",
+        "Goethe Straße 12, Berlin 10115",
+        "10115 Goethestraße 12, Berlin",
+      ],
+      correctIndex: 0,
+      explanation: "الشارع ثمّ الرقم، ثمّ الرمز البريديّ ثمّ المدينة. وStraße تلتصق بالاسم كلمةً واحدة.",
+      errorType: "word-order",
+    },
+    {
+      id: "e22",
+      type: "fill-blank",
+      instructionAr: "أكمل: كيف تُقرأ الأرقام على الهاتف؟",
+      instructionDe: "Telefonnummer 0176: wie liest man das?",
+      template: "___ - eins - sieben - sechs",
+      blanks: [{ correct: "null", options: ["null", "nichts", "kein"], errorType: "vocabulary" }],
+      explanation: "الصفر في الأرقام هو null. أمّا nichts فمعناها «لا شيء» وkein أداة نفي للأسماء.",
+      errorType: "vocabulary",
+    },
+    {
+      id: "e23",
+      type: "error-correction",
+      instructionAr: "صحّح الخطأ في الجملة",
+      wrongSentence: "Ich wohne in die Bahnhofstraße.",
+      wrongWord: "die",
+      correctWord: "der",
+      options: ["der", "dem", "das", "den"],
+      explanation: "wohnen يجيب عن wo? فيلزمه الجرّ (Dativ)، وdie Straße مؤنّثة ⟵ in der Bahnhofstraße.",
+      errorType: "case",
+    },
+    {
+      id: "e24",
+      type: "matching",
+      instructionAr: "طابق كلّ حرفٍ بمدينته في جدول التهجئة الجديد (DIN 5009)",
+      pairs: [
+        { left: "B", right: "Berlin" },
+        { left: "K", right: "Köln" },
+        { left: "M", right: "München" },
+        { left: "N", right: "Nürnberg" },
+        { left: "E", right: "Essen" },
+      ],
+      explanation: "الصيغة على الهاتف: «B wie Berlin» — أي الحرف الذي تبدأ به هذه المدينة.",
+      errorType: "vocabulary",
+    },
+    {
+      id: "e25",
+      type: "word-ordering",
+      instructionAr: "رتّب السؤال عن رقم الهاتف (بصيغة رسمية)",
+      tokens: ["Wie", "ist", "Ihre", "Telefonnummer"],
+      correctSentence: "Wie ist Ihre Telefonnummer?",
+      explanation: "أداة السؤال في المركز الأوّل، والفعل ist في المركز الثاني. وIhre بكافٍ كبيرة للمخاطبة الرسمية.",
+      errorType: "word-order",
+    },
+    {
+      id: "e26",
+      type: "multiple-choice",
+      instructionAr: "متى يُقرأ العدد كاملاً ومتى يُقرأ رقماً رقماً؟",
+      questionDe: "Der Preis ist 23 Euro. Wie sagt man das?",
+      options: [
+        "dreiundzwanzig Euro",
+        "zwei drei Euro",
+        "zwanzig drei Euro",
+        "drei zwanzig Euro",
+      ],
+      correctIndex: 0,
+      explanation: "السعر كمّية تُحسب فيُقرأ عدداً كاملاً. والقراءة المفردة (zwei drei) للرموز: الهاتف والرمز البريديّ.",
+      errorType: "vocabulary",
+    },
+    {
+      id: "e27",
+      type: "transformation",
+      instructionAr: "اكتب الرمز البريديّ 80331 بالكلمات كما يُملى على الهاتف",
+      prompt: "80331 →",
+      acceptedAnswers: [
+        "acht null drei drei eins",
+        "Acht null drei drei eins",
+      ],
+      sampleAnswer: "acht null drei drei eins",
+      explanation: "الرمز البريديّ خمسة أرقام تُملى مفردة، لا «achtzigtausend…».",
+      errorType: "vocabulary",
+    },
   ],
 
   flashcards: [
@@ -765,6 +928,12 @@ export const lessonA107: Lesson = {
     { id: "fc6", de: "der Plural", ar: "الجمع", example: "Äpfel ist der Plural von Apfel.", exampleAr: "Äpfel جمع Apfel.", level: "A1" },
     { id: "fc7", de: "das Kilo", ar: "الكيلوغرام", example: "Ein Kilo Äpfel, bitte!", exampleAr: "كيلو تفاح من فضلك!", level: "A1" },
     { id: "fc8", de: "Ich nehme …", ar: "سآخذ… (عند الشراء)", example: "Ich nehme den Käse.", exampleAr: "سآخذ الجبن.", level: "A1" },
+    { id: "fc19", de: "die Telefonnummer", ar: "رقم الهاتف", example: "Wie ist deine Telefonnummer?", exampleAr: "ما رقم هاتفك؟", level: "A1" },
+    { id: "fc20", de: "die Adresse", ar: "العنوان", example: "Meine Adresse ist Goethestraße 12.", exampleAr: "عنواني شارع غوته 12.", level: "A1" },
+    { id: "fc21", de: "die Postleitzahl", ar: "الرمز البريديّ (خمسة أرقام قبل المدينة)", example: "Die Postleitzahl von Berlin-Mitte ist 10115.", exampleAr: "الرمز البريديّ لوسط برلين هو 10115.", level: "A1" },
+    { id: "fc22", de: "buchstabieren", ar: "يتهجّى", example: "Können Sie das bitte buchstabieren?", exampleAr: "أيمكنك تهجئة ذلك من فضلك؟", level: "A1" },
+    { id: "fc23", de: "wiederholen", ar: "يُعيد، يكرّر", example: "Können Sie die Nummer wiederholen?", exampleAr: "أيمكنك إعادة الرقم؟", level: "A1" },
+    { id: "fc24", de: "die Straße", ar: "الشارع (مؤنّثة ⟵ in der Straße)", example: "Ich wohne in der Bahnhofstraße.", exampleAr: "أسكن في شارع المحطة.", level: "A1" },
     {"id": "fc9", "de": "Was kostet ...? / Was kosten ...?", "ar": "بكم ...؟ (مفرد / جمع)", "example": "Was kosten die Äpfel?", "exampleAr": "بكم التفّاح؟", "level": "A1"},
     {"id": "fc10", "de": "Ich hätte gern ...", "ar": "أودّ ... (ألطف صيغة طلب)", "example": "Ich hätte gern zweihundert Gramm Käse.", "exampleAr": "أودّ مئتي غرام جبن.", "level": "A1"},
     {"id": "fc11", "de": "das Gramm / das Kilo", "ar": "الغرام / الكيلو — يبقيان مفردي الصورة بعد العدد", "example": "Zweihundert Gramm, bitte.", "exampleAr": "مئتا غرام من فضلك.", "level": "A1"},
