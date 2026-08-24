@@ -3,6 +3,7 @@ import {describe, expect, it} from "vitest";
 import {LESSON_META} from "@/data/lessons/meta";
 import {getAllCurriculumUnits} from "@/data/curriculum/cefr-map";
 import {
+  getUnitKeyWords,
   getUnitLessonCount,
   getUnitMinutes,
   TOTAL_ESTIMATED_HOURS,
@@ -61,6 +62,35 @@ describe("اتساق أرقام الدروس (المرحلة 4)", () => {
    * مجموع الحقول اليدوية كان 40.7 ساعة، ومجموع الدروس الفعلية 28.5.
    * لا يجوز أن يَعِد الموقع بزمن لا يقابله محتوى.
    */
+  /**
+   * الكلمات المفتاحية كانت تُكتب يدوياً في UNITS فتعفّنت: 90 من 193
+   * لم تقابلها بطاقة في دروس وحدتها، وبعضها وعَد بنحوٍ يُدرَّس في وحدة
+   * أخرى. صارت تُشتقّ من بطاقات الدروس، وهذا يمنع انفصالها ثانيةً.
+   */
+  it("كل كلمة مفتاحية للوحدة مأخوذة من بطاقات دروسها فعلاً", () => {
+    for (const unit of UNITS) {
+      const pool = new Set(
+        LESSON_META.filter((l) => l.unitId === unit.id).flatMap((l) => l.keyWords),
+      );
+      for (const word of getUnitKeyWords(unit.id)) {
+        expect(pool.has(word), `وحدة ${unit.id}: الكلمة "${word}" لا تقابلها بطاقة`).toBe(true);
+      }
+    }
+  });
+
+  it("كل وحدة تعرض 4 كلمات مفتاحية على الأقل", () => {
+    for (const unit of UNITS) {
+      expect(getUnitKeyWords(unit.id).length, `وحدة ${unit.id}: كلمات مفتاحية ناقصة`).toBeGreaterThanOrEqual(4);
+    }
+  });
+
+  it("لا يعود إعلان keyWords يدوياً في UNITS", () => {
+    const fs = require("fs");
+    const src: string = fs.readFileSync("src/lib/constants/curriculum.ts", "utf8");
+    const manual = src.match(/^\s*keyWords: \[/gm) ?? [];
+    expect(manual, "أُعيد إعلان keyWords يدوياً — استعمل getUnitKeyWords").toEqual([]);
+  });
+
   it("إجمالي الساعات محسوب من الدروس لا مكتوباً يدوياً", () => {
     const real = Math.round(LESSON_META.reduce((sum, l) => sum + l.duration, 0) / 60);
     expect(TOTAL_ESTIMATED_HOURS).toBe(real);

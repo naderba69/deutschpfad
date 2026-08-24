@@ -57,8 +57,16 @@ export interface Unit {
    * البديل: يُشتقّان من LESSON_META عبر getUnitLessonCount/getUnitMinutes،
    * فلا يمكن أن يتناقضا مع الدروس الفعلية بعد اليوم.
    */
-  /** أهم المفردات في الوحدة */
-  keyWords: string[];
+  /**
+   * ملاحظة: لا يوجد هنا `keyWords` أيضاً.
+   *
+   * كان يُكتب يدوياً فتعفّن كما تعفّن سابقاه: 90 كلمة من 193 لم تكن
+   * تقابلها أي بطاقة في دروس وحدتها، وبعضها كان يَعِد المتعلّم بنحوٍ
+   * يُدرَّس في وحدة أخرى — مثل b1-06 التي تَعِد بـ Relativsatz بينما
+   * درسها الفعلي هو Adjektivdeklination.
+   *
+   * البديل: getUnitKeyWords(unitId) يجمعها من بطاقات الدروس نفسها.
+   */
 }
 
 export interface ProgressState {
