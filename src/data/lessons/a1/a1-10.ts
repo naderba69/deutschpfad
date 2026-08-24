@@ -119,6 +119,53 @@ export const lessonA110: Lesson = {
         content: "kein يتصرف مثل ein: kein (رفع مذكر)، keinen (نصب مذكر)، keine (مؤنث/جمع)، keinem (جر مذكر). Ich habe keinen Bruder — نصب مذكر: keinen.",
       },
     },
+    {
+      id: "t3",
+      titleAr: "أين تعمل؟ أداة النكرة في الجرّ: bei / in + einem / einer",
+      titleDe: "Wo arbeitest du? bei und in mit einem/einer",
+      explanationAr:
+        "قلتَ ما مهنتك (Ich bin Lehrer)، وبقي أن تقول أين تعمل. وهنا تحتاج شيئاً جديداً: **أداة النكرة في حالة الجرّ**.\n\nفي درس السكن أخذتَ أداة المعرفة مجرورة (im Zimmer، in der Küche). أمّا مع مكان عمل غير محدَّد فالأداة نكرة:\n\n· der/das ← einem: in einem Büro · bei einem Arzt\n· die ← einer: in einer Firma · bei einer Bank\n\nوالفرق بين الحرفين: **bei** مع الأشخاص وأسماء الشركات (bei Siemens, bei einem Anwalt)، و**in** مع المباني والقطاعات (in einem Krankenhaus, in einer Schule).",
+      whyAr:
+        "لماذا einem وeiner لا ein وeine؟ لأنّ ein «تقترض» نهايات der: der ⇒ dem فـ ein ⇒ einem، وdie ⇒ der فـ eine ⇒ einer. إن حفظتَ جدول المعرفة فأنت تملك جدول النكرة أصلاً — أضف الجذر ein وألصق به النهاية نفسها.",
+      table: {
+        title: "من أداة المعرفة إلى أداة النكرة في الجرّ",
+        columns: ["الجنس", "معرفة (تعرفها)", "نكرة (الجديد)"],
+        rows: [
+          { label: "der (مذكر)", cells: ["dem Arzt", "bei einem Arzt"] },
+          { label: "das (محايد)", cells: ["dem Büro", "in einem Büro"] },
+          { label: "die (مؤنث)", cells: ["der Firma", "in einer Firma"] },
+          { label: "die (جمع)", cells: ["den Kindern", "bei Kindern (بلا أداة)"] },
+        ],
+      },
+      examples: [
+        { de: "Ich arbeite in einer Firma.", ar: "أعمل في شركة." },
+        { de: "Sie arbeitet in einem Krankenhaus.", ar: "هي تعمل في مستشفى." },
+        { de: "Er arbeitet bei einem Anwalt.", ar: "يعمل عند محامٍ." },
+        { de: "Meine Schwester arbeitet bei einer Bank.", ar: "أختي تعمل في بنك." },
+        { de: "Wo arbeiten Sie? — In einem Büro in Berlin.", ar: "أين تعملون؟ — في مكتب في برلين." },
+      ],
+      comparisonWithArabic:
+        "العربية تقول «في شركة» و«في مستشفى» بحرف واحد لا يتغيّر، ولا تفرّق بين «عند محامٍ» و«في مكتب» تفريقاً نحوياً. الألمانية تفرض اختيارين معاً: أيّ حرف (bei للشخص، in للمبنى)، وأيّ نهاية (einem أو einer). الفخّ العربي الشائع: «Ich arbeite in eine Firma» بالنصب، لأنّ العربي يترجم «في» فقط ولا ينتبه إلى أنّ المكان الثابت يطلب الجرّ.",
+      eselsbruecke:
+        "«ein يستعير من der»: dem ⇒ einem، der ⇒ einer. غطِّ الجذر ein بإصبعك، وانظر إلى النهاية وحدها — ستجدها نهاية أداة المعرفة نفسها التي حفظتها في درس السكن.",
+      commonMistakes: [
+        {
+          wrong: "Ich arbeite in eine Firma.",
+          right: "Ich arbeite in einer Firma.",
+          whyAr: "مكان العمل ثابت لا حركة إليه، فالسؤال wo? والجواب بالجرّ: einer لا eine.",
+        },
+        {
+          wrong: "Ich arbeite in einem Arzt.",
+          right: "Ich arbeite bei einem Arzt.",
+          whyAr: "in للمباني، وbei للأشخاص. لا تعمل «داخل طبيب» بل «عند طبيب».",
+        },
+      ],
+      relatedRuleComparison: {
+        title: "als للمهنة، bei/in لمكانها",
+        content:
+          "الجملة الكاملة تجمع ما تعلّمته في هذا الدرس كلّه: Ich arbeite als Ingenieur bei einer Firma in Berlin — als + المهنة بلا أداة، bei/in + مكان العمل بالجرّ، in + المدينة.",
+      },
+    },
   ],
   listening: {
     items: [
@@ -345,6 +392,69 @@ export const lessonA110: Lesson = {
       explanation: "ليس لدي أخ لكن لدي أخت — keinen (نفي نصب مذكر) + aber (لكن).",
       errorType: "spelling",
     },
+    {
+      id: "e11",
+      type: "fill-blank",
+      instructionAr: "أكمل بأداة النكرة في الجرّ:",
+      template: "Ich arbeite in ___ Firma. Sie arbeitet in ___ Büro. Er arbeitet bei ___ Anwalt.",
+      blanks: [
+        { correct: "einer", options: ["einer", "eine", "einem"] },
+        { correct: "einem", options: ["einem", "ein", "einer"] },
+        { correct: "einem", options: ["einem", "einer", "eine"] },
+      ],
+      explanation: "die Firma ⇒ einer · das Büro ⇒ einem · der Anwalt ⇒ einem. النهايات مستعارة من أداة المعرفة.",
+      errorType: "article",
+    },
+    {
+      id: "e12",
+      type: "error-correction",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      wrongSentence: "Meine Schwester arbeitet in eine Bank.",
+      wrongWord: "eine",
+      correctWord: "einer",
+      options: ["einer", "eine", "einem", "ein"],
+      explanation: "مكان ثابت (wo?) ⇒ جرّ. die Bank ⇒ in einer Bank.",
+      errorType: "case",
+    },
+    {
+      id: "e13",
+      type: "multiple-choice",
+      instructionAr: "اختر حرف الجر الصحيح:",
+      questionDe: "Er ist Assistent und arbeitet ___ einem Zahnarzt.",
+      questionAr: "هو مساعد ويعمل عند طبيب أسنان.",
+      options: ["bei", "in", "an", "zu"],
+      correctIndex: 0,
+      explanation: "bei تُستعمل مع الأشخاص وأصحاب المهن: bei einem Zahnarzt.",
+      optionExplanations: [
+        undefined,
+        "in للمباني والقطاعات (in einer Klinik) لا للأشخاص.",
+        "an للحواف والمؤسسات التعليمية (an einer Universität) لا لشخص.",
+        "zu للاتجاه لا لمكان العمل.",
+      ],
+      errorType: "preposition",
+    },
+    {
+      id: "e14",
+      type: "word-ordering",
+      instructionAr: "رتّب الكلمات لتكوين جملة كاملة عن العمل:",
+      tokens: ["Ich", "arbeite", "als", "Ingenieur", "in", "einer", "Firma", "."],
+      correctSentence: "Ich arbeite als Ingenieur in einer Firma.",
+      explanation: "als + المهنة بلا أداة، ثم in + مكان العمل بالجرّ.",
+      errorType: "word-order",
+    },
+    {
+      id: "e15",
+      type: "transformation",
+      instructionAr: "أجب عن السؤال بالمعطيات المذكورة.",
+      prompt: "Wo arbeitest du? (das Krankenhaus)",
+      acceptedAnswers: [
+        "Ich arbeite in einem Krankenhaus.",
+        "In einem Krankenhaus.",
+      ],
+      sampleAnswer: "Ich arbeite in einem Krankenhaus.",
+      explanation: "das Krankenhaus مبنى ⇒ in، وفي الجرّ ⇒ einem.",
+      errorType: "case",
+    },
   ],
   fehlerUndTipps: {
     mistakes: [
@@ -427,6 +537,8 @@ export const lessonA110: Lesson = {
     { id: "fc6", de: "nicht", ar: "لا (نفي فعل/صفة)", example: "Ich arbeite nicht.", exampleAr: "لا أعمل.", level: "A1" },
     { id: "fc7", de: "kein / keine", ar: "لا (نفي اسم)", example: "Ich habe kein Geld.", exampleAr: "ليس لدي مال.", level: "A1" },
     { id: "fc8", de: "die Firma", ar: "الشركة", example: "Die Firma ist groß.", exampleAr: "الشركة كبيرة.", level: "A1" },
+    { id: "fc9", de: "in einer Firma arbeiten", ar: "يعمل في شركة", example: "Ich arbeite in einer Firma.", exampleAr: "أعمل في شركة.", level: "A1" },
+    { id: "fc10", de: "bei einem Arzt arbeiten", ar: "يعمل عند طبيب", example: "Er arbeitet bei einem Arzt.", exampleAr: "يعمل عند طبيب.", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
