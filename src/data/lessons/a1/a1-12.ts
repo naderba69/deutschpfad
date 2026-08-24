@@ -81,9 +81,9 @@ export const lessonA112: Lesson = {
       titleAr: "وصف الطقس: es ist، es regnet، die Sonne scheint",
       titleDe: "Das Wetter beschreiben",
       explanationAr:
-        "ثلاث صيغ للطقس: 1) es ist + صفة: Es ist kalt (بارد)، Es ist sonnig (مشمس). 2) فعل الطقس: Es regnet (تمطر)، Es schneit (تثلج). 3) اسم + فعل: Die Sonne scheint (تشرق الشمس)، Der Wind weht (تهب الرياح). كلها بضمير es الغامض — تماماً مثل «الجو» في العربية.",
+        "الطقس أوّل موضوعٍ يُفتح به الحديث في ألمانيا مع الغريب والجار والزميل. وله في الألمانية **ثلاث بنى** لا واحدة، ولكلٍّ موضعها.\n\n**البنية الأولى — es ist + صفة:** Es ist kalt · Es ist warm · Es ist sonnig · Es ist windig · Es ist neblig (ضبابيّ) · Es ist bewölkt (غائم).\nوانتبه: الصفة بعد ist **لا تأخذ نهاية** إطلاقاً — تماماً كما تعلّمت في درس الملابس (Das Hemd ist rot).\n\n**البنية الثانية — فعل الطقس وحده:** Es regnet (تمطر) · Es schneit (تثلج) · Es donnert (ترعد) · Es blitzt (تبرق) · Es friert (تتجمّد).\nوهذه أفعال **لا فاعل لها في الواقع**: من الذي يمطر؟ لا أحد. وes هنا مجرّد حاملٍ للفعل لأنّ الألمانية لا تقبل جملةً بلا فاعل ظاهر.\n\n**البنية الثالثة — اسم + فعل:** Die Sonne scheint (تشرق الشمس) · Der Wind weht (تهبّ الريح) · Der Himmel ist blau.\nوهنا فاعلٌ حقيقيّ، فتصريف الفعل يتبعه: Die Blätter fall**en** (جمع).\n\n**رابعاً — درجة الحرارة، وفيها فخّان:**\n· Es sind zwanzig **Grad**. — وGrad **لا تُجمع** بعد الأعداد: zwanzig Grad لا zwanzig Grade.\n· وتحت الصفر: Es sind **minus** fünf Grad. أو الأدقّ: fünf Grad **unter null**.\n· ولاحظ **sind** لا ist: العدد جمعٌ فالفعل جمع. أمّا Es ist ein Grad فبالمفرد.\n\n**خامساً — الفخّ الشهير: Mir ist kalt مقابل Ich bin kalt.**\n· **Es ist kalt.** = الجوّ بارد (وصف موضوعيّ للطقس)\n· **Mir ist kalt.** = أشعر بالبرد (إحساسٌ شخصيّ — بالدّاتيف كما تعلّمت في gefallen)\n· **Ich bin kalt.** = أنا إنسانٌ بارد المشاعر! (وصفٌ للشخصية لا للإحساس)\nوالثالثة تُسمع مضحكةً أو مُهينة، وهي من أشهر زلّات المتعلّمين على الإطلاق.",
       whyAr:
-        "لماذا es؟ لأن es هنا «فاعل ظاهري» بلا معنى محدد — يشبه «هو» في «هو بارد اليوم» ببعض اللهجات. إنها طريقة الألمانية في بدء جملة بدون فاعل حقيقي.",
+        "لماذا es وليس شيئاً آخر؟ لأنّ الجملة الألمانية **لا تقوم بلا فاعل مصرَّف معه فعل** — وهذا شرطٌ بنيويّ لا استثناء له. وأفعال الطقس بطبيعتها بلا فاعل: المطر ينزل من غير مُنزِل مذكور. فاخترعت الألمانية فاعلاً صورياً فارغاً من المعنى هو es، وظيفته الوحيدة أن يملأ المقعد الأوّل ليصحّ البناء. ويسمّيه النحاة **Scheinsubjekt** أي الفاعل الظاهريّ.\n\nولماذا يقع العربيّ في Ich bin kalt تحديداً؟ لأنّ العربية تقول „أنا بردان“ فتُسند الإحساس إلى المتكلّم مباشرةً بالمبتدأ. والألمانية تُسنده إليه بالدّاتيف: **mir** ist kalt، أي „البرد واقعٌ عليّ“. وهذا هو المنطق نفسه الذي رأيته في das gefällt mir — الشعور يقع على الشخص ولا يصدر عنه. فمن فهم gefallen فهم mir ist kalt بلا حفظٍ جديد.\n\nوأمّا الطقس بوصفه موضوعاً فليس حشواً ثقافياً: امتحان Goethe A1 يستعمله في Hören (نشرة الطقس) وفي Sprechen (المحادثة الافتتاحية). والألمان يفتحون به كلّ حديث لأنّه الموضوع الوحيد الذي لا يخصّ أحداً فلا يُعدّ تطفّلاً.",
       table: {
         title: "صيغ الطقس الثلاث",
         columns: ["الصيغة", "مثال", "المعنى"],
@@ -97,20 +97,24 @@ export const lessonA112: Lesson = {
         ],
       },
       examples: [
-        { de: "Es ist kalt und windig.", ar: "الجو بارد وعاصف." },
-        { de: "Heute ist es sehr sonnig.", ar: "اليوم الجو مشمس جداً." },
-        { de: "Es regnet seit drei Stunden.", ar: "تمطر منذ ثلاث ساعات." },
-        { de: "Im Winter schneit es.", ar: "في الشتاء تثلج." },
-        { de: "Die Sonne scheint im Sommer.", ar: "تشرق الشمس في الصيف." },
+        {"de": "Es ist kalt und windig.", "ar": "الجوّ بارد وعاصف."},
+        {"de": "Heute ist es sehr sonnig.", "ar": "اليوم الجوّ مشمس جداً."},
+        {"de": "Es regnet seit drei Stunden.", "ar": "تمطر منذ ثلاث ساعات."},
+        {"de": "Im Winter schneit es oft.", "ar": "في الشتاء تثلج كثيراً."},
+        {"de": "Die Sonne scheint und der Himmel ist blau.", "ar": "الشمس مشرقة والسماء زرقاء."},
+        {"de": "Es sind zwanzig Grad.", "ar": "الحرارة عشرون درجة. (Grad بلا جمع، والفعل sind)"},
+        {"de": "Heute Nacht sind es minus fünf Grad.", "ar": "الليلة خمس درجات تحت الصفر."},
+        {"de": "Mir ist kalt. Hast du eine Jacke?", "ar": "أشعر بالبرد. أعندك سترة؟ (إحساس ⇐ mir)"},
       ],
       comparisonWithArabic:
-        "العربية: «الجو بارد»، «تمطر». الألمانية: Es ist kalt، Es regnet. نفس الفكرة — es هو «الجو/هو». والتشابه ممتاز: الفعل es regnet مثل «تُمطِر» بلا فاعل واضح.",
+        "العربية تقول „الجوّ بارد“ بجملة اسمية بلا فعل، والألمانية Es ist kalt بفعلٍ واجب. فأوّل ما يسقط من العربيّ هو ist.\n\nوأمّا es فأقرب مقابلٍ لها في العربية هو **الضمير المستتر في „تُمطر“**: من الذي يُمطر؟ لا أحد بعينه، والفعل مؤنّث بلا مؤنّثٍ ظاهر. فالظاهرة نفسها موجودة في العربية لكنّها **مستترة**، وفي الألمانية **ظاهرة** بحرفين. وهذا يريح المتعلّم: الفكرة مألوفة، والجديد إظهارها فقط.\n\nوالفرق الحادّ في التعبير عن الإحساس. العربية تقول:\n· „أنا بردان“ ⟵ مبتدأ وخبر، الإحساس صفةٌ للمتكلّم.\nوالألمانية تقول:\n· **Mir** ist kalt ⟵ بالدّاتيف، الإحساس واقعٌ على المتكلّم.\nفالنقل الحرفيّ يُنتج Ich bin kalt وهي جملة صحيحة نحواً وخاطئة معنىً — تصف شخصيتك لا شعورك. وهذا أخطر أنواع الخطأ لأنّه لا يُصحَّح تلقائياً: مخاطبك يفهم شيئاً آخر ولا يعلم أنّك أخطأت.",
       eselsbruecke:
         "«es = الجو»: كلما رأيت es مع الطقس ترجمها ذهنياً «الجو/هي»: Es regnet = الجو يمطر. وسهّلها: es ist kalt = الجو بارد.",
       commonMistakes: [
-        { wrong: "Ich bin kalt (أنا بارد — خطأ طقس!)", right: "Es ist kalt. (و: Mir ist kalt = أشعر بالبرد)", whyAr: "لا تقل Ich bin kalt (تعني أنت بارد الشخصية!) — للطقس: Es ist kalt." },
-        { wrong: "Es regnen (فعل غير مصروف)", right: "Es regnet.", whyAr: "الفعل يتصرف مع es: regnet." },
-        { wrong: "Der Wetter ist schön (جنس خاطئ)", right: "Das Wetter ist schön.", whyAr: "das Wetter محايد." },
+        {"wrong": "Ich bin kalt.", "right": "Mir ist kalt.", "whyAr": "Ich bin kalt تعني «أنا إنسان بارد المشاعر» — وصفٌ لشخصيتك لا لإحساسك. والإحساس في الألمانية يقع على الشخص بالدّاتيف: mir ist kalt، بالمنطق نفسه الذي في das gefällt mir."},
+        {"wrong": "Es regnen.", "right": "Es regnet.", "whyAr": "es ضمير مفرد للغائب فيلزمه تصريف er/sie/es أي regnet. والصيغة regnen مصدرٌ أو جمع، ولا موضع لهما هنا لأنّ فاعل الطقس مفرد دائماً."},
+        {"wrong": "Der Wetter ist schön.", "right": "Das Wetter ist schön.", "whyAr": "das Wetter محايدة لا مذكّرة. والخطأ يأتي من أنّ «الجوّ» مذكّر في العربية فينقل المتعلّم الجنس من لغته — وهو أشيع مصادر خطأ الأدوات كلّها."},
+        {"wrong": "Es ist zwanzig Grade.", "right": "Es sind zwanzig Grad.", "whyAr": "خطآن: Grad لا تُجمع بعد الأعداد (كما Euro وJahr)، والعدد جمعٌ فالفعل sind لا ist. وقارن: Es ist ein Grad بالمفرد لأنّ العدد واحد."},
       ],
       relatedRuleComparison: {
         title: "Mir ist kalt أم Ich bin kalt؟",
@@ -122,9 +126,9 @@ export const lessonA112: Lesson = {
       titleAr: "فعل werden (يصبح) — إكمال مثلث الأفعال المساعدة",
       titleDe: "Das Verb „werden“: ich werde, du wirst...",
       explanationAr:
-        "werden (يصبح) — التصريف: ich werde، du wirst، er wird، wir werden، ihr werdet، sie werden. نستخدمه: 1) للتغير: Es wird kalt (يصبح بارداً). 2) للتنبؤ: Ich werde müde (أصبح متعباً). 3) سيصبح أساس المستقبل في B1: Ich werde lernen (سأتعلم) — لكن الآن نكتفي بـ«يصبح».",
+        "مع الطقس تحتاج فعلاً يعبّر عن **التحوّل** لا عن الحالة: الجوّ ليس بارداً فحسب بل **يصير** بارداً. وهذا الفعل هو **werden**.\n\n**أوّلاً — التصريف، وفيه شذوذان:**\nich werde · du **wirst** · er/sie/es **wird** · wir werden · ihr werdet · sie/Sie werden\nلاحظ سقوط حرف e في du wirst وer wird — فلا تقل du werdest ولا er werdet. وهذا شذوذٌ في الجذر يشبه ما رأيته في du nimmst وer nimmt.\n\n**ثانياً — الوظيفة اليوم: التحوّل من حالٍ إلى حال.**\n· Es **wird** kalt. (يصير الجوّ بارداً — لم يكن كذلك قبل قليل)\n· Die Tage **werden** kürzer. (تصير الأيّام أقصر)\n· Ich **werde** müde. (بدأ التعب يأخذني)\n\n**ثالثاً — المثلّث الذي يكتمل اليوم.** الألمانية تقوم على ثلاثة أفعال مساعدة:\n· **sein** ⟵ الحالة القائمة: Es **ist** kalt.\n· **haben** ⟵ الملكية: Ich **habe** einen Schirm.\n· **werden** ⟵ التحوّل: Es **wird** kalt.\nوأنت تعرف الثلاثة الآن. وهذه الأفعال ليست مفردات بل **هياكل**: عليها يُبنى الماضي التامّ (habe/bin gemacht) والمستقبل (werde machen) والمبنيّ للمجهول (wird gemacht). فما تحفظه اليوم صفحةٌ واحدة تُقرأ منها ثلاثة أبواب لاحقة.\n\n**رابعاً — werden مع الاسم لا الصفة فقط.**\n· Er **wird** Arzt. (سيصير طبيباً — بلا أداة كما في Ich bin Lehrer)\n· Es **wird** Winter. (يدخل الشتاء)\n\n**خامساً — تمييزٌ حاسم: ist مقابل wird.**\n· Es **ist** kalt ⟵ الحالة الآن. · Es **wird** kalt ⟵ التحوّل أو التنبّؤ.\nوكلتاهما صحيحة، والفرق زمنيّ لا صوابيّ: الأولى تصف، والثانية تُنبئ بتغيّر.",
       whyAr:
-        "لماذا هو ثالث «أفعال مساعدة»؟ لأنها الثلاثة التي تبني النظام الألماني: sein (الحالة)، haben (الملكية)، werden (التغير والمستقبل). إتقان تصريفها الثلاثة يفتح لك 80% من التراكيب.",
+        "لماذا يُعدّ werden ثالث الأفعال المساعدة ولا يُعامَل معاملة فعلٍ عاديّ؟ لأنّه سيحمل لاحقاً ثلاث بنى كاملة لا واحدة: المستقبل (Ich werde lernen) والمبنيّ للمجهول (Das Haus wird gebaut) وصيغة التمنّي (Ich würde gern …). فمن أتقن تصريفه اليوم في معناه البسيط „يصير“، وجد الأبواب الثلاثة نصفَ مفتوحة حين يصلها.\n\nولماذا يسقط حرف e في du wirst وer wird؟ للسبب الصوتيّ نفسه الذي يحكم أفعالاً كثيرة: تتابع rd مع النهاية st ثقيل، فتحذف الألمانية العلّة الوسطى. وهذه ليست قاعدةً تُقاس بل نمطٌ يتكرّر في الأفعال القديمة الشائعة — وشيوعها هو ما حفظ شذوذها من الاندثار.\n\nولماذا نُقدّم werden في درس الطقس بالذات؟ لأنّ الطقس هو الظاهرة التي **تتحوّل** أمام عينيك: يصفو ثمّ يغيم، يدفأ ثمّ يبرد. فالمعنى محسوس والفعل يلتصق به. ولو قُدّم في سياقٍ مجرّد لحُفظ جدولاً وأُنسي.",
       table: {
         title: "تصريف werden",
         columns: ["الضمير", "werden", "مثال"],
@@ -138,20 +142,24 @@ export const lessonA112: Lesson = {
         ],
       },
       examples: [
-        { de: "Im Herbst werden die Blätter bunt.", ar: "في الخريف تصبح الأوراق ملونة." },
-        { de: "Es wird kalt.", ar: "يصبح الجو بارداً." },
-        { de: "Ich werde müde.", ar: "أصبح متعباً." },
-        { de: "Das Wetter wird besser.", ar: "يصبح الطقس أفضل." },
-        { de: "Wir werden gute Freunde.", ar: "نصبح أصدقاء جيدين." },
+        {"de": "Im Herbst werden die Blätter bunt.", "ar": "في الخريف تصير الأوراق ملوّنة. (جمع ⇐ werden)"},
+        {"de": "Es wird kalt. Nimm eine Jacke mit!", "ar": "يصير الجوّ بارداً. خذ سترةً معك!"},
+        {"de": "Ich werde müde.", "ar": "بدأت أتعب."},
+        {"de": "Du wirst schnell besser.", "ar": "ستتحسّن بسرعة. (du ⇐ wirst بلا e)"},
+        {"de": "Das Wetter wird morgen besser.", "ar": "يصير الطقس أفضل غداً."},
+        {"de": "Es wird Winter und die Tage werden kürzer.", "ar": "يدخل الشتاء وتصير الأيّام أقصر."},
+        {"de": "Mein Bruder wird Arzt.", "ar": "أخي سيصير طبيباً. (مهنة بلا أداة)"},
+        {"de": "Es ist kalt, aber morgen wird es wärmer.", "ar": "الجوّ بارد، لكن غداً يصير أدفأ."},
       ],
       comparisonWithArabic:
-        "العربية «يصبح» — تماماً: يصبح بارداً = Es wird kalt. والتشابه مذهل: werden هو «صار/يصبح» بكل معانيه. العربية أيضاً تستخدم «سوف/سـ» للمستقبل — والألمانية ستفعل الشيء نفسه بـ werden في B1.",
+        "العربية تملك مقابلاً دقيقاً لـwerden هو **„صار / يصير“** وأخواتها من أفعال التحوّل (أصبح، أمسى، بات). والتطابق ممتاز: Es wird kalt = يصير الجوّ بارداً.\n\nلكنّ فرقاً بنيوياً يستحقّ الانتباه: „صار“ في العربية من أخوات كان، **ترفع المبتدأ وتنصب الخبر**: صار الجوُّ بارداً. أمّا werden فلا تُغيّر شيئاً في الإعراب — الصفة بعدها عاريةٌ بلا نهاية: Es wird kalt، لا kaltes ولا kalten. فالعربية تُثقل والألمانية تُخفّف، عكس ما اعتاده المتعلّم.\n\nوفرقٌ ثانٍ في المستقبل: العربية تُعبّر عنه بحرفٍ يلتصق بالفعل (سـ / سوف). والألمانية تستعمل werden فعلاً مساعداً مستقلاًّ يدفع الفعل الأصليّ إلى آخر الجملة. فحين تصل إلى المستقبل في B1 لن تتعلّم كلمةً جديدة، بل ستتعلّم **موضعاً جديداً** لفعلٍ تعرفه أصلاً.\n\nوأخيراً تنبيه: العربية تخلط أحياناً بين „هو بارد“ و„صار بارداً“ في الكلام السريع، والألمانية لا تخلط أبداً. فاختر بوعي: ist للوصف، wird للتحوّل.",
       eselsbruecke:
         "«فِردِن = يصبح»: كل تغير = werden. وأشهر استخدام: Es wird kalt. احفظ السلم: فِردِه-ڤيرست-ڤيرت، فِردِن-ڤيردِت-فِردِن.",
       commonMistakes: [
-        { wrong: "Ich wirt müde (خطأ في التصريف)", right: "Ich werde müde.", whyAr: "wird مع er/sie/es فقط — مع ich: werde." },
-        { wrong: "Es wird kalt أم Es ist kalt؟", right: "كلاهما صحيح: ist = الآن، wird = يصبح/سيصبح", whyAr: "الفرق زمني: ist حالة قائمة، wird تغير أو تنبؤ." },
-        { wrong: "خلط werden مع sein في الجملة الاسمية", right: "Ich bin müde (حالة) / Ich werde müde (تحول)", whyAr: "bin = أكون الآن، werde = أصير." },
+        {"wrong": "Du werdest müde.", "right": "Du wirst müde.", "whyAr": "werden يسقط منه حرف e في du وer: wirst وwird. وهو شذوذ في الجذر يشبه du nimmst وer nimmt، وسببه صوتيّ محض: تتابع rd مع st ثقيل على اللسان."},
+        {"wrong": "Ich wird müde.", "right": "Ich werde müde.", "whyAr": "wird صيغة الغائب المفرد وحده. والخطأ يأتي من أنّ es wird أكثر ما يُسمع في نشرة الطقس، فيحفظها المتعلّم صيغةً واحدة ويعمّمها على كلّ الضمائر."},
+        {"wrong": "Es wird kaltes.", "right": "Es wird kalt.", "whyAr": "الصفة الخبرية بعد werden وsein لا تأخذ نهاية إطلاقاً، تماماً كما في Das Hemd ist rot. والنهاية لا تُضاف إلّا إذا سبقت الصفة اسماً: ein kalter Tag."},
+        {"wrong": "Es wird kalt. (بمعنى: الجوّ بارد الآن)", "right": "Es ist kalt.", "whyAr": "wird تدلّ على تحوّلٍ أو تنبّؤ لا على حالة قائمة. فمن أراد وصف اللحظة الراهنة قال ist. والفرق زمنيّ لا صوابيّ، لكنّ اختيار الخطأ يُفهم منه أنّ البرد لم يحلّ بعد."},
       ],
       relatedRuleComparison: {
         title: "werden الآن وwerden في المستقبل",
@@ -163,9 +171,9 @@ export const lessonA112: Lesson = {
       titleAr: "im أم am أم um؟ حروف الجر الزمنية مجموعةً",
       titleDe: "Zeitangaben ordnen: im, am, um und ohne Präposition",
       explanationAr:
-        "تعلّمتَ الساعة في درس اليوم، والأيام والتواريخ في درس المواعيد، والفصول هنا. وقد آن أوان جمع الحروف الثلاثة في قاعدة واحدة تُحفظ مرّةً وتكفيك:\n\n· **im** ← الشهور والفصول: im Mai · im Sommer\n· **am** ← الأيام وأوقات اليوم والتواريخ: am Montag · am Abend · am 3. Mai\n· **um** ← الساعة فقط: um acht Uhr\n\nوأربعة تعبيرات تُقال **بلا حرف جرّ إطلاقاً**: heute · morgen · gestern · jeden Tag.\n\nواستثناء واحد يُحفظ: **in der Nacht** (في الليل) — مؤنّثة فتشذّ عن am.",
+        "تعلّمتَ الساعة في درس اليوم، والأيّام والتواريخ في درس المواعيد، والفصول هنا. وقد آن أوان جمع الحروف الثلاثة في قاعدةٍ واحدة تُحفظ مرّةً وتكفيك.\n\n**القاعدة الأساسية — سُلَّم من الصغير إلى الكبير:**\n· **um** ⟵ الساعة وحدها: um acht Uhr · um halb neun\n· **am** ⟵ الأيّام وأوقات اليوم والتواريخ: am Montag · am Abend · am 3. Mai\n· **im** ⟵ الشهور والفصول والسنوات: im Mai · im Sommer · im Jahr 2026\nكلّما اتّسعت المدّة تقدّم الحرف في السُلَّم: لحظةٌ فيوم فشهر.\n\n**ثانياً — أربعة تُقال بلا حرف جرّ إطلاقاً:** heute · morgen · gestern · jeden Tag. فلا تقل am heute ولا im morgen.\n\n**ثالثاً — استثناءٌ واحد يُحفظ: in der Nacht** (في الليل). كلّ أوقات اليوم تأخذ am — am Morgen, am Mittag, am Abend — إلّا الليل. والسبب أنّ die Nacht مؤنّثة، وan + der لا تندمجان في am (الاندماج يقع مع dem وحده). فالشذوذ صرفيّ لا اعتباطيّ.\n\n**رابعاً — فخّ morgen مزدوج:**\n· **morgen** بحرفٍ صغير = غداً ⟵ Morgen regnet es.\n· **am Morgen** بحرفٍ كبير = في الصباح ⟵ Am Morgen ist es kalt.\n· وللجمع بينهما: **morgen früh** = غداً صباحاً.\nكلمتان مختلفتان تماماً لا يفرّق بينهما إلّا حرفٌ كبير — وهذا سببٌ إضافيّ للعناية بالحروف الكبيرة في الألمانية.\n\n**خامساً — حروفٌ زمنية أخرى تحتاجها مع الطقس:**\n· **seit** + Dativ = منذ ⟵ Es regnet **seit** drei Stunden.\n· **in** + Dativ = بعد (زمنٌ قادم) ⟵ **In** einer Stunde hört es auf. (بعد ساعة يتوقّف)\n· **ab** = ابتداءً من ⟵ **Ab** morgen wird es wärmer.\nوانتبه إلى in: لا تعني „في“ هنا بل „بعد“. فقولك in einer Woche يعني بعد أسبوعٍ من الآن لا خلاله.",
       whyAr:
-        "لماذا نجمعها في درس الطقس؟ لأنّ الحديث عن الطقس لا يخلو من زمن: «في الصيف حارّ»، «غداً تمطر»، «صباح الاثنين باردة». وحين تتفرّق القاعدة على ثلاثة دروس يحفظ المتعلّم كل جزء منفصلاً ثم يخلط بينها عند الكلام. الجدول الواحد يمنع هذا الخلط.",
+        "لماذا نجمعها في درس الطقس؟ لأنّ الحديث عن الطقس لا يخلو من زمن: „في الصيف حارّ“، „غداً تمطر“، „صباح الاثنين باردة“. وحين تتفرّق القاعدة على ثلاثة دروس يحفظ المتعلّم كلّ جزءٍ منفصلاً ثمّ يخلط بينها عند الكلام. الجدول الواحد يمنع هذا الخلط.\n\nولماذا هذه القسمة تحديداً — um للساعة وam لليوم وim للشهر؟ لأنّها ليست اعتباطاً بل تعكس **حجم الوحدة الزمنية**. حرف an الأصليّ يعني الملامسة من الخارج (تلمس اليوم كما تلمس سطحاً)، وحرف in يعني الاحتواء من الداخل (الشهر يحتويك)، وum يعني الإحاطة بنقطة (الساعة نقطة تدور حولها). فالحروف احتفظت بمعناها المكانيّ الأصليّ ونقلته إلى الزمن — وهذا يفسّر لك لماذا لا يجوز التبديل بينها.\n\nوأمّا فخّ morgen فمسألة امتحان: في Hören يقول المتحدّث Morgen früh أو Am Morgen، والفرق بينهما يومٌ كامل. ومن لا يميّزهما بالأذن يخسر السؤال وإن فهم كلّ كلمةٍ أخرى في الجملة.",
       table: {
         title: "متى تستعمل أيّها",
         columns: ["الحرف", "يُستعمل مع", "مثال"],
@@ -178,27 +186,24 @@ export const lessonA112: Lesson = {
         ],
       },
       examples: [
-        { de: "Im Sommer ist es in Tunis sehr heiß.", ar: "في الصيف الجوّ حارّ جداً في تونس." },
-        { de: "Am Wochenende bleibe ich zu Hause.", ar: "في عطلة الأسبوع أبقى في البيت." },
-        { de: "Morgen wird es kalt.", ar: "غداً يصير الجوّ بارداً." },
-        { de: "Am Abend regnet es oft im Herbst.", ar: "في المساء تمطر كثيراً في الخريف." },
-        { de: "In der Nacht sind es nur fünf Grad.", ar: "في الليل تكون خمس درجات فقط." },
+        {"de": "Im Sommer ist es in Tunis sehr heiß.", "ar": "في الصيف الجوّ حارّ جداً في تونس."},
+        {"de": "Am Wochenende bleibe ich zu Hause.", "ar": "في عطلة الأسبوع أبقى في البيت."},
+        {"de": "Morgen wird es kalt.", "ar": "غداً يصير الجوّ بارداً. (بلا حرف جرّ)"},
+        {"de": "Am Abend regnet es oft im Herbst.", "ar": "في المساء تمطر كثيراً في الخريف."},
+        {"de": "In der Nacht sind es nur fünf Grad.", "ar": "في الليل تكون خمس درجات فقط. (استثناء)"},
+        {"de": "Es regnet seit drei Stunden.", "ar": "تمطر منذ ثلاث ساعات."},
+        {"de": "In einer Stunde hört der Regen auf.", "ar": "بعد ساعة يتوقّف المطر. (in = بعد)"},
+        {"de": "Ab morgen wird es wärmer.", "ar": "ابتداءً من غد يصير الجوّ أدفأ."},
       ],
       comparisonWithArabic:
-        "العربية تكتفي بحرف واحد لكل هذه المعاني: «في الصيف»، «في الاثنين»، «في الثامنة». والعربي يميل إذاً إلى استعمال in لكل شيء فيقول «in Montag» و«in acht Uhr». الألمانية توزّع الأزمنة على ثلاثة حروف بحسب حجم الوحدة الزمنية: كلّما كبرت المدّة اتّسع الحرف — um للحظة، am لليوم، im للشهر والفصل.",
+        "العربية تكتفي بحرف واحد لكلّ هذه المعاني: „في الصيف“، „في الاثنين“، „في الثامنة“. والعربيّ يميل إذاً إلى استعمال in لكلّ شيء فيقول in Montag وin acht Uhr.\n\nوالألمانية توزّع الأزمنة على ثلاثة حروف بحسب حجم الوحدة الزمنية. وهذه دقّةٌ إضافية لا تقابلها العربية بشيء، فالمتعلّم مطالبٌ بتصنيفٍ لا تطلبه لغته الأمّ.\n\nلكنّ نقطة التقاء تستحقّ الاستثمار: العربية أيضاً تقول „اليومَ“ و„غداً“ و„أمسِ“ **بلا حرف جرّ** — منصوبةً على الظرفية. والألمانية كذلك: heute · morgen · gestern عاريةٌ من الحروف. فالقاعدة الرابعة مألوفة للعربيّ تماماً وتحتاج تنبيهاً لا تدريباً.\n\nوأمّا **in** بمعنى „بعد“ فمصيدةٌ حقيقية: العربيّ يقرأ in einer Stunde فيفهم „خلال ساعة“، والألمانية تعني „بعد ساعةٍ من الآن“. والفرق عمليّ: من قال in einer Stunde bin ich da فقد وعد بالوصول بعد ساعة لا خلالها.",
       eselsbruecke:
         "سُلَّم من الصغير إلى الكبير: **um** ساعة ← **am** يوم ← **im** شهر وفصل. كلّما اتّسعت المدّة تقدّم الحرف في السُلَّم. واليوم وغده وأمسه أحرار بلا حرف.",
       commonMistakes: [
-        {
-          wrong: "In Montag regnet es.",
-          right: "Am Montag regnet es.",
-          whyAr: "الأيام تأخذ am لا in. والخطأ ناتج عن ترجمة «في» العربية حرفياً.",
-        },
-        {
-          wrong: "Am morgen scheint die Sonne. (بمعنى: غداً)",
-          right: "Morgen scheint die Sonne.",
-          whyAr: "فخّ مزدوج: morgen (غداً) تُقال بلا حرف جرّ، أمّا am Morgen (بحرف كبير) فتعني «في الصباح» — كلمتان مختلفتان تماماً.",
-        },
+        {"wrong": "In Montag regnet es.", "right": "Am Montag regnet es.", "whyAr": "الأيّام تأخذ am لا in. والخطأ ناتج عن ترجمة «في» العربية حرفياً، والعربية تستعمل حرفاً واحداً حيث تستعمل الألمانية ثلاثة بحسب حجم الوحدة الزمنية."},
+        {"wrong": "Am morgen scheint die Sonne. (بمعنى: غداً)", "right": "Morgen scheint die Sonne.", "whyAr": "فخّ مزدوج: morgen (غداً) تُقال بلا حرف جرّ، أمّا am Morgen (بحرف كبير) فتعني «في الصباح» — كلمتان مختلفتان تماماً لا يفرّق بينهما إلّا حرف كبير."},
+        {"wrong": "Am der Nacht ist es kalt.", "right": "In der Nacht ist es kalt.", "whyAr": "كلّ أوقات اليوم تأخذ am إلّا الليل. والسبب صرفيّ: die Nacht مؤنّثة، وan + der لا تندمجان في am لأنّ الاندماج يقع مع dem وحده. فالشذوذ له علّة لا يُحفظ صمّاً."},
+        {"wrong": "In einer Stunde = خلال ساعة", "right": "In einer Stunde = بعد ساعة", "whyAr": "in الزمنية تعني «بعد» لا «خلال». فمن قال in einer Stunde bin ich da فقد وعد بالوصول بعد ساعة من الآن. وللدلالة على «خلال» تُستعمل innerhalb أو in + الفترة مع سياقٍ مختلف."},
       ],
       relatedRuleComparison: {
         title: "wann؟ ثلاثة أحرف وجواب واحد",
@@ -206,7 +211,270 @@ export const lessonA112: Lesson = {
           "كل هذه الحروف تُجيب عن سؤال واحد: wann? (متى؟). وفي درس المدينة أخذت wohin? (إلى أين) بحروفها nach/zu، وفي درس السكن wo? (أين) بحروف الجرّ المكانية. ثلاثة أسئلة، ثلاث مجموعات — لا تخلط بينها.",
       },
     },
+    {
+      id: "t4",
+      titleAr: "أدوات الربط الأربع: und · aber · oder · denn",
+      titleDe: "Konjunktionen: und, aber, oder, denn",
+      explanationAr:
+        "تعرف الآن كيف تصف الطقس بجملةٍ واحدة. والحديث الحقيقيّ عن الطقس لا يكون بجملة بل بجملتين مربوطتين: „الجوّ بارد **لكنّ** الشمس مشرقة“، „أبقى في البيت **لأنّ** المطر ينزل“. وهنا تحتاج **أدوات الربط**.\n\n**أوّلاً — الأدوات الأربع الأساسية:**\n· **und** = و (إضافة) ⟵ Es ist kalt **und** windig.\n· **aber** = لكن (تضادّ) ⟵ Es ist kalt, **aber** die Sonne scheint.\n· **oder** = أو (اختيار) ⟵ Gehen wir spazieren **oder** bleiben wir zu Hause?\n· **denn** = لأنّ (سبب) ⟵ Ich bleibe zu Hause, **denn** es regnet.\n\n**ثانياً — القاعدة الذهبية: هذه الأربع لا تُحسب موضعاً في الجملة.**\nوهذه أهمّ جملة في الكتلة كلّها. أنت تعلم أنّ الفعل المصرَّف يقع في **المركز الثاني** دائماً. والسؤال: إذا وضعتُ aber في أوّل الجملة الثانية، أفلا تصير هي المركز الأوّل فيُزاح الفعل؟\n**لا.** الأدوات الأربع تجلس **خارج** الجملة في موضعٍ يسمّيه النحاة **الموضع صفر (Position 0)**. فالجملة بعدها تبدأ من جديد كأنّ الأداة غير موجودة:\n· Es ist kalt, **aber** | **die Sonne** (١) | **scheint** (٢).\n· Ich bleibe zu Hause, **denn** | **es** (١) | **regnet** (٢).\nلاحظ: الفاعل أوّلاً والفعل ثانياً — الترتيب الطبيعيّ لم يتغيّر بشيء.\n\n**ثالثاً — الفاصلة.** قبل **aber** و**denn** فاصلةٌ **واجبة**. وقبل **und** و**oder** **لا فاصلة** في الغالب. وهذه ليست تفصيلاً تجميلياً: قسم Schreiben في الامتحان يُقيّم علامات الترقيم.\n\n**رابعاً — denn ليست weil.** كلتاهما تعني „لأنّ“، والفرق في ترتيب الجملة:\n· **denn** ⟵ الترتيب عاديّ: Ich bleibe zu Hause, denn **es regnet**.\n· **weil** ⟵ الفعل يذهب إلى **آخر** الجملة: Ich bleibe zu Hause, weil **es regnet**.\nمع es regnet لا يظهر الفرق لأنّ الجملة من كلمتين. لكن قارن: denn **das Wetter ist** schlecht ⟵ weil das Wetter schlecht **ist**. وweil بابٌ كامل يأتيك في A2؛ اكتفِ اليوم بـdenn وهي الأسهل والأشيع في الكلام.",
+      whyAr:
+        "لماذا نُدرّس أدوات الربط في درس الطقس؟ لأنّ الطقس هو الموضوع الذي يُتكلَّم فيه بالجمل المزدوجة بطبعه. لا أحد يقول „الجوّ بارد“ ويسكت؛ بل يقول „بارد لكن مشمس“، „يمطر لذلك آخذ المظلّة“. فالموضوع نفسه يستدعي الأداة، والقاعدة التي يستدعيها الموضوع تُحفظ.\n\nولماذا نُلحّ على **الموضع صفر** بهذا القدر؟ لأنّه سوء الفهم الأكبر في هذه المرحلة. المتعلّم الذي أتقن قاعدة V2 إتقاناً حقيقياً — وهو إتقانٌ مطلوب — سيقول لنفسه: „aber احتلّت المركز الأوّل، إذن أُزيح الفاعل“، فيُنتج Es ist kalt, aber scheint die Sonne. وهذا خطأٌ **ناتج عن فهمٍ صحيح** طُبّق في غير موضعه، ولا يُصحّحه إلّا التصريح بأنّ هذه الأربع خارج العدّ.\n\nوالتمييز بين denn وweil استثمارٌ مبكّر: من عرف اليوم أنّ denn لا تُحرّك الفعل، أدرك غداً حين يرى weil أنّ الفرق بينهما **بنيويّ لا معنويّ**، فيتعلّم الجملة الثانوية على أساسٍ متين بدل أن يخلط الأداتين شهوراً كما يفعل أكثر المتعلّمين.",
+      table: {
+        title: "الأدوات الأربع ووظائفها",
+        columns: ["الأداة", "المعنى", "الفاصلة قبلها؟"],
+        rows: [
+          { label: "und", cells: ["و (إضافة)", "لا"] },
+          { label: "aber", cells: ["لكن (تضادّ)", "نعم — واجبة"] },
+          { label: "oder", cells: ["أو (اختيار)", "لا"] },
+          { label: "denn", cells: ["لأنّ (سبب)", "نعم — واجبة"] },
+          { label: "الأربع معاً", cells: ["الموضع صفر: لا تُحسب", "الفعل يبقى ثانياً"] },
+        ],
+      },
+      examples: [
+        { de: "Es ist kalt und windig.", ar: "الجوّ بارد وعاصف." },
+        { de: "Es ist kalt, aber die Sonne scheint.", ar: "الجوّ بارد لكنّ الشمس مشرقة. (الفاعل أوّلاً بعد aber)" },
+        { de: "Ich bleibe zu Hause, denn es regnet.", ar: "أبقى في البيت لأنّها تمطر." },
+        { de: "Gehen wir spazieren oder bleiben wir hier?", ar: "أنذهب في نزهة أم نبقى هنا؟" },
+        { de: "Im Sommer ist es heiß, aber im Winter wird es kalt.", ar: "في الصيف حارّ، لكن في الشتاء يصير بارداً." },
+        { de: "Ich nehme den Regenschirm mit, denn das Wetter ist schlecht.", ar: "آخذ المظلّة معي لأنّ الطقس سيّئ." },
+        { de: "Heute schneit es und morgen wird es noch kälter.", ar: "اليوم تثلج وغداً يصير أبرد." },
+        { de: "Der Himmel ist grau, aber es regnet nicht.", ar: "السماء رمادية لكنّها لا تمطر." },
+      ],
+      comparisonWithArabic:
+        "العربية تربط بالواو والفاء وثمّ ولكنّ ولأنّ — وأدواتها لا تُغيّر ترتيب ما بعدها إطلاقاً، لأنّ العربية أصلاً لا تعرف قاعدة المركز الثاني. فالعربيّ محظوظ هنا: الأدوات الأربع الألمانية تتصرّف كما تتصرّف أدواته تماماً.\n\nلكنّ ثلاثة فروق تستحقّ الانتباه:\n**١. الواو العربية تُستعمل أكثر بكثير من und.** العربية تصل الجمل بالواو حتّى حين لا تكون هناك إضافة حقيقية، والألمانية تعدّ ذلك ركاكةً. فلا تبدأ كلّ جملة بـund كما تبدأ بالواو في العربية.\n**٢. „لكنّ“ العربية تنصب ما بعدها**، وaber لا تفعل شيئاً بالإعراب — تجلس ولا تعمل.\n**٣. الفاصلة.** العربية تتساهل في الفاصلة، والألمانية تفرضها قبل aber وdenn فرضاً. ومن أهملها خسر نقاطاً في التصحيح الرسميّ.\n\nوأمّا التطابق الجميل فهو **denn = لأنّ**: كلتاهما تعلّل، وكلتاهما تُبقي الجملة بعدها على ترتيبها الطبيعيّ. فإن ترجمتَ „لأنّ“ إلى denn لم تخطئ أبداً في A1.",
+      eselsbruecke:
+        "**الأربع تجلس ولا تعمل**: und · aber · oder · denn تقف على عتبة الجملة ولا تدخلها، فلا تُحسب موضعاً ولا تُزيح فاعلاً. واحفظ الفاصلة بقاعدة النصف: النصف الذي فيه **a**ber و**d**enn يأخذ فاصلة، والنصف الآخر لا.",
+      commonMistakes: [
+        {
+          wrong: "Es ist kalt, aber scheint die Sonne.",
+          right: "Es ist kalt, aber die Sonne scheint.",
+          whyAr: "خطأٌ ناتج عن فهمٍ صحيح طُبّق في غير موضعه: المتعلّم ظنّ أنّ aber احتلّت المركز الأوّل فأزاح الفاعل. والأربع تقع في الموضع صفر خارج العدّ، فالجملة بعدها تبدأ من جديد بترتيبها الطبيعيّ.",
+        },
+        {
+          wrong: "Ich bleibe zu Hause denn es regnet.",
+          right: "Ich bleibe zu Hause, denn es regnet.",
+          whyAr: "الفاصلة قبل denn واجبة لا اختيارية، وكذلك قبل aber. وقسم Schreiben في الامتحان يُقيّم علامات الترقيم، فإهمالها خسارة نقاطٍ لا مجرّد عيبٍ شكليّ.",
+        },
+        {
+          wrong: "Ich bleibe zu Hause, denn das Wetter schlecht ist.",
+          right: "Ich bleibe zu Hause, denn das Wetter ist schlecht.",
+          whyAr: "خلطٌ بين denn وweil: الفعل يذهب إلى آخر الجملة مع weil وحدها. أمّا denn فتُبقي الترتيب عادياً — فاعل ثمّ فعل. وهذا هو الفرق البنيويّ الوحيد بينهما.",
+        },
+        {
+          wrong: "Es ist kalt und aber sonnig.",
+          right: "Es ist kalt, aber sonnig.",
+          whyAr: "أداتان متتاليتان لا تجتمعان. والعربية تقول «وَلكنْ» فتجمع بينهما جمعاً مألوفاً، فينقل المتعلّم العادة. والألمانية تكتفي بواحدة: aber وحدها تحمل معنى الاستدراك.",
+        },
+      ],
+      relatedRuleComparison: {
+        title: "الموضع صفر مقابل المركز الأوّل",
+        content:
+          "قارن ثلاث جمل بعناية: (١) **Die Sonne scheint.** الفاعل في المركز الأوّل. (٢) **Heute scheint die Sonne.** الظرف احتلّ المركز الأوّل فانزاح الفاعل إلى الثالث — هذه قاعدة V2 من درس اليوم اليوميّ. (٣) **…, aber die Sonne scheint.** الأداة في الموضع صفر فلم تُزح شيئاً. والفرق بين الحالتين ٢ و٣ هو جوهر هذه الكتلة: الظرف **داخل** الجملة فيُحسب، والأداة **خارجها** فلا تُحسب.",
+      },
+    },
   ],
+  reading: {
+    "id": "read-a1-12",
+    "titleDe": "Vier Jahreszeiten, vier Wetter",
+    "titleAr": "أربعة فصول، أربعة أجواء",
+    "textType": "blog",
+    "paragraphs": [
+      "Hallo! Ich heiße Amine und ich komme aus Tunis. Seit einem Jahr wohne ich in Hamburg und studiere hier. In meinem Blog schreibe ich heute über das deutsche Wetter, denn es ist wirklich anders als zu Hause.",
+      "Im Sommer ist es in Hamburg oft schön. Die Sonne scheint, es sind fünfundzwanzig Grad und die Tage sind sehr lang. Um zweiundzwanzig Uhr ist es noch hell! Aber der Sommer hier ist kurz, und manchmal regnet es auch im Juli.",
+      "Im Herbst wird es schnell kalt. Die Blätter werden bunt und der Wind weht stark. Am Morgen ist es oft neblig, aber am Nachmittag scheint manchmal die Sonne. Ich nehme jetzt immer einen Regenschirm mit, denn das Wetter ändert sich sehr schnell.",
+      "Der Winter ist für mich am schwersten. Es ist kalt und dunkel, und in der Nacht sind es minus fünf Grad. Manchmal schneit es. Das ist schön, aber mir ist immer kalt! In Tunis habe ich nie eine dicke Jacke gebraucht, hier brauche ich zwei.",
+      "Und dann kommt der Frühling. Ab März wird es wärmer, die Tage werden länger und alles wird grün. Das ist meine Lieblingsjahreszeit, denn nach dem langen Winter ist jeder Sonnentag ein kleines Fest.",
+      "Und wie ist das Wetter bei euch? Schreibt mir bitte in den Kommentaren! Morgen soll es hier übrigens regnen. In einer Woche fahre ich nach Tunis, und dort sind es dreißig Grad. Ich freue mich schon!"
+    ],
+    "paragraphsAr": [
+      "أهلاً! اسمي أمين وأنا من تونس. أسكن في هامبورغ منذ سنة وأدرس هنا. في مدوّنتي أكتب اليوم عن الطقس الألمانيّ، لأنّه مختلف حقاً عمّا في بلدي.",
+      "في الصيف يكون الجوّ في هامبورغ جميلاً غالباً. الشمس مشرقة، والحرارة خمس وعشرون درجة، والأيّام طويلة جداً. في العاشرة مساءً ما زال النهار! لكنّ الصيف هنا قصير، وأحياناً تمطر حتّى في يوليو.",
+      "في الخريف يصير الجوّ بارداً بسرعة. تصير الأوراق ملوّنة وتهبّ الريح بقوّة. في الصباح يكون الجوّ ضبابياً غالباً، لكن بعد الظهر تشرق الشمس أحياناً. صرت آخذ المظلّة معي دائماً، لأنّ الطقس يتبدّل بسرعة شديدة.",
+      "الشتاء هو الأصعب عليّ. الجوّ بارد ومظلم، وفي الليل تكون الحرارة خمس درجات تحت الصفر. أحياناً تثلج. هذا جميل، لكنّي أشعر بالبرد دائماً! في تونس لم أحتج قطّ إلى سترة سميكة، وهنا أحتاج اثنتين.",
+      "ثمّ يأتي الربيع. ابتداءً من مارس يصير الجوّ أدفأ، وتصير الأيّام أطول، ويخضرّ كلّ شيء. هذا فصلي المفضّل، لأنّ كلّ يومٍ مشمس بعد الشتاء الطويل عيدٌ صغير.",
+      "وكيف الطقس عندكم؟ اكتبوا لي في التعليقات من فضلكم! وبالمناسبة يُتوقّع أن تمطر هنا غداً. بعد أسبوع أسافر إلى تونس، وهناك الحرارة ثلاثون درجة. أنا متشوّق!"
+    ],
+    "glossary": [
+      {
+        "de": "das Wetter ändert sich",
+        "ar": "الطقس يتبدّل",
+        "noteAr": "فعل انعكاسيّ: sich ändern."
+      },
+      {
+        "de": "neblig",
+        "ar": "ضبابيّ",
+        "noteAr": "من der Nebel (الضباب)."
+      },
+      {
+        "de": "der Wind weht",
+        "ar": "تهبّ الريح",
+        "noteAr": "اسم + فعل، ثالث بنى الطقس."
+      },
+      {
+        "de": "bunt",
+        "ar": "ملوّن، زاهي الألوان",
+        "noteAr": "Die Blätter werden bunt."
+      },
+      {
+        "de": "der Regenschirm",
+        "ar": "المظلّة",
+        "noteAr": "مركّبة: Regen (مطر) + Schirm."
+      },
+      {
+        "de": "minus fünf Grad",
+        "ar": "خمس درجات تحت الصفر",
+        "noteAr": "وGrad لا تُجمع بعد العدد."
+      },
+      {
+        "de": "mir ist kalt",
+        "ar": "أشعر بالبرد",
+        "noteAr": "بالدّاتيف؛ وIch bin kalt معناها آخر."
+      },
+      {
+        "de": "in der Nacht",
+        "ar": "في الليل",
+        "noteAr": "استثناء وحيد بين أوقات اليوم."
+      },
+      {
+        "de": "ab März",
+        "ar": "ابتداءً من مارس",
+        "noteAr": "مدى مفتوح."
+      },
+      {
+        "de": "in einer Woche",
+        "ar": "بعد أسبوع",
+        "noteAr": "in الزمنية = بعد، لا خلال."
+      },
+      {
+        "de": "die Lieblingsjahreszeit",
+        "ar": "الفصل المفضّل",
+        "noteAr": "Lieblings- بادئة تعني «المفضّل»."
+      },
+      {
+        "de": "hell / dunkel",
+        "ar": "مضيء / مظلم",
+        "noteAr": "Um zweiundzwanzig Uhr ist es noch hell."
+      }
+    ],
+    "questions": [
+      {
+        "id": "rq1",
+        "type": "multiple-choice",
+        "instructionAr": "أجب عن السؤال بحسب النصّ:",
+        "questionDe": "Wie lange wohnt Amine schon in Hamburg?",
+        "errorType": "preposition",
+        "options": [
+          "Seit einem Jahr",
+          "Seit einer Woche",
+          "Seit fünf Jahren",
+          "Seit einem Monat"
+        ],
+        "correctIndex": 0,
+        "paragraph": 0,
+        "explanation": "Seit einem Jahr wohne ich in Hamburg — وseit تعني «منذ» وتطلب الجرّ."
+      },
+      {
+        "id": "rq2",
+        "type": "multiple-choice",
+        "instructionAr": "أجب عن السؤال بحسب النصّ:",
+        "questionDe": "Was sagt Amine über den Sommer in Hamburg?",
+        "errorType": "vocabulary",
+        "options": [
+          "Er ist schön, aber kurz.",
+          "Er ist sehr lang.",
+          "Es regnet nie.",
+          "Es sind vierzig Grad."
+        ],
+        "correctIndex": 0,
+        "paragraph": 1,
+        "explanation": "الجوّ جميل والأيّام طويلة، لكنّه يقول: Aber der Sommer hier ist kurz."
+      },
+      {
+        "id": "rq3",
+        "type": "multiple-choice",
+        "instructionAr": "أجب عن السؤال بحسب النصّ:",
+        "questionDe": "Warum nimmt Amine im Herbst immer einen Regenschirm mit?",
+        "errorType": "grammar",
+        "options": [
+          "Denn das Wetter ändert sich schnell.",
+          "Denn es schneit immer.",
+          "Denn er hat keine Jacke.",
+          "Denn es ist zu heiß."
+        ],
+        "correctIndex": 0,
+        "paragraph": 2,
+        "explanation": "denn das Wetter ändert sich sehr schnell — وdenn أداة سبب تُبقي ترتيب الجملة عادياً."
+      },
+      {
+        "id": "rq4",
+        "type": "multiple-choice",
+        "instructionAr": "أجب عن السؤال بحسب النصّ:",
+        "questionDe": "Wie kalt ist es im Winter in der Nacht?",
+        "errorType": "vocabulary",
+        "options": [
+          "Minus fünf Grad",
+          "Fünf Grad",
+          "Fünfzehn Grad",
+          "Null Grad"
+        ],
+        "correctIndex": 0,
+        "paragraph": 3,
+        "explanation": "in der Nacht sind es minus fünf Grad — ولاحظ sind لا ist مع العدد الجمع."
+      },
+      {
+        "id": "rq5",
+        "type": "multiple-choice",
+        "instructionAr": "أجب عن السؤال بحسب النصّ:",
+        "questionDe": "Welche Jahreszeit mag Amine am liebsten?",
+        "errorType": "vocabulary",
+        "options": [
+          "Den Frühling",
+          "Den Winter",
+          "Den Herbst",
+          "Den Sommer"
+        ],
+        "correctIndex": 0,
+        "paragraph": 4,
+        "explanation": "Das ist meine Lieblingsjahreszeit — يقولها عن الربيع، لأنّ كلّ يوم مشمس بعد الشتاء عيدٌ صغير."
+      }
+    ],
+    "redemittel": [
+      {
+        "de": "Wie ist das Wetter heute?",
+        "ar": "كيف الطقس اليوم؟"
+      },
+      {
+        "de": "Es ist sonnig / bewölkt / neblig.",
+        "ar": "الجوّ مشمس / غائم / ضبابيّ."
+      },
+      {
+        "de": "Es sind zwanzig Grad.",
+        "ar": "الحرارة عشرون درجة."
+      },
+      {
+        "de": "Mir ist kalt / warm.",
+        "ar": "أشعر بالبرد / بالدفء."
+      },
+      {
+        "de": "Es wird kälter / wärmer.",
+        "ar": "يصير الجوّ أبرد / أدفأ."
+      },
+      {
+        "de": "Es regnet seit … Stunden.",
+        "ar": "تمطر منذ … ساعات."
+      },
+      {
+        "de": "Morgen soll es regnen.",
+        "ar": "يُتوقّع أن تمطر غداً."
+      },
+      {
+        "de": "Nimm einen Regenschirm mit!",
+        "ar": "خذ مظلّة معك!"
+      }
+    ],
+    "discussionAr": "صف طقس بلدك في الفصول الأربعة: أيّ فصلٍ تفضّل ولماذا؟ اكتب خمس جمل على الأقلّ، واربط بينها بـund وaber وdenn، واستعمل werden مرّةً للتعبير عن التحوّل."
+  },
+
   listening: {
     items: [
       {
@@ -498,6 +766,17 @@ export const lessonA112: Lesson = {
       explanation: "الفصول تأخذ im: im Winter.",
       errorType: "preposition",
     },
+    {"id": "e16", "type": "multiple-choice", "instructionAr": "اختر الصيغة الصحيحة للتعبير عن الإحساس:", "questionDe": "Brr! ___ kalt. Hast du eine Jacke?", "options": ["Mir ist", "Ich bin", "Es bin", "Mich ist"], "correctIndex": 0, "errorType": "case", "explanation": "الإحساس الشخصيّ بالدّاتيف: Mir ist kalt. أمّا Ich bin kalt فتعني «أنا إنسان بارد المشاعر»."},
+    {"id": "e17", "type": "error-correction", "instructionAr": "صحّح تصريف فعل الطقس:", "wrongSentence": "Es regnen seit zwei Stunden.", "wrongWord": "regnen", "correctWord": "regnet", "options": ["regnet", "regne", "regnest", "geregnet"], "errorType": "conjugation", "explanation": "es ضمير مفرد للغائب فيلزمه regnet. وregnen مصدر لا يصلح فعلاً مصرَّفاً في المركز الثاني."},
+    {"id": "e18", "type": "error-correction", "instructionAr": "صحّح تصريف werden:", "wrongSentence": "Du werdest bald müde.", "wrongWord": "werdest", "correctWord": "wirst", "options": ["wirst", "wird", "werde", "werdet"], "errorType": "conjugation", "explanation": "werden يسقط منه حرف e في du وer: du wirst · er wird. وهو شذوذ صوتيّ يشبه du nimmst."},
+    {"id": "e19", "type": "fill-blank", "instructionAr": "أكمل بأداة الربط المناسبة:", "errorType": "grammar", "template": "Es ist kalt, ___ die Sonne scheint. Ich bleibe zu Hause, ___ es regnet.", "blanks": [{"correct": "aber", "options": ["aber", "denn", "oder", "und"], "errorType": "grammar"}, {"correct": "denn", "options": ["denn", "aber", "oder", "und"], "errorType": "grammar"}], "explanation": "الأولى تضادّ ⇐ aber، والثانية سبب ⇐ denn. وكلتاهما تسبقها فاصلة واجبة، ولا تُزيح الفاعل."},
+    {"id": "e20", "type": "error-correction", "instructionAr": "صحّح ترتيب الجملة بعد أداة الربط:", "wrongSentence": "Es ist kalt, aber scheint die Sonne.", "wrongWord": "scheint die Sonne", "correctWord": "die Sonne scheint", "options": ["die Sonne scheint", "scheint die Sonne", "die Sonne scheinen", "scheint sie die Sonne"], "errorType": "word-order", "explanation": "الأدوات الأربع تقع في الموضع صفر خارج العدّ، فلا تُزيح الفاعل. والجملة بعدها تبدأ بترتيبها الطبيعيّ: فاعل ثمّ فعل."},
+    {"id": "e21", "type": "multiple-choice", "instructionAr": "اختر الحرف الزمنيّ الصحيح:", "questionDe": "___ Winter ist es kalt, aber ___ Montag scheint die Sonne.", "options": ["Im … am", "Am … im", "In … an", "Um … am"], "correctIndex": 0, "errorType": "preposition", "explanation": "im للفصول والشهور، وam للأيّام. والسُلَّم: um للساعة ⇐ am لليوم ⇐ im للشهر والفصل."},
+    {"id": "e22", "type": "error-correction", "instructionAr": "صحّح حرف الجرّ الزمنيّ:", "wrongSentence": "Am der Nacht sind es fünf Grad.", "wrongWord": "Am", "correctWord": "In", "options": ["In", "Um", "Im", "An"], "errorType": "preposition", "explanation": "كلّ أوقات اليوم تأخذ am إلّا الليل: in der Nacht. والسبب صرفيّ — die Nacht مؤنّثة وan + der لا تندمجان."},
+    {"id": "e23", "type": "word-ordering", "instructionAr": "رتّب الكلمات لتكوّن جملة بأداة ربط:", "tokens": ["Ich", "nehme", "den", "Schirm", "mit", ",", "denn", "es", "regnet"], "correctSentence": "Ich nehme den Schirm mit , denn es regnet.", "errorType": "word-order", "explanation": "الفعل المنفصل mitnehmen يترك جزأه في آخر الجملة الأولى، ثمّ تأتي الفاصلة فـdenn فجملة بترتيب طبيعيّ."},
+    {"id": "e24", "type": "transformation", "instructionAr": "حوّل الجملة من وصف حالة إلى تعبير عن تحوّل:", "prompt": "Es ist kalt. ⇐ (يصير بارداً)", "errorType": "conjugation", "acceptedAnswers": ["Es wird kalt.", "Es wird kalt"], "sampleAnswer": "Es wird kalt.", "explanation": "sein للحالة القائمة وwerden للتحوّل. والصفة بعد werden عاريةٌ بلا نهاية تماماً كما بعد sein."},
+    {"id": "e25", "type": "matching", "instructionAr": "صِل كلّ بنية بمثالها الصحيح:", "errorType": "grammar", "pairs": [{"left": "es ist + صفة", "right": "Es ist neblig."}, {"left": "فعل طقس بلا فاعل", "right": "Es schneit."}, {"left": "اسم + فعل", "right": "Der Wind weht."}, {"left": "إحساس شخصيّ", "right": "Mir ist kalt."}, {"left": "تحوّل", "right": "Es wird kälter."}], "explanation": "خمس بنى مختلفة لموضوع واحد: ثلاث لوصف الطقس، وواحدة للإحساس، وواحدة للتحوّل."},
+    {"id": "e26", "type": "fill-blank", "instructionAr": "أكمل بالحرف الزمنيّ الصحيح:", "errorType": "preposition", "template": "Es regnet ___ drei Stunden, aber ___ einer Stunde hört es auf.", "blanks": [{"correct": "seit", "options": ["seit", "in", "ab", "für"], "errorType": "preposition"}, {"correct": "in", "options": ["in", "seit", "nach", "ab"], "errorType": "preposition"}], "explanation": "seit للماضي المستمرّ (منذ)، وin الزمنية للمستقبل (بعد). وin لا تعني «خلال» هنا."},
   ],
   fehlerUndTipps: {
     mistakes: [
@@ -581,6 +860,15 @@ export const lessonA112: Lesson = {
     { id: "fc8", de: "die Jahreszeit", ar: "الفصل (من السنة)", example: "Der Sommer ist meine Lieblingsjahreszeit.", exampleAr: "الصيف فصلي المفضل.", level: "A1" },
     { id: "fc9", de: "im Sommer / im Winter", ar: "في الصيف / في الشتاء", example: "Im Winter schneit es oft.", exampleAr: "في الشتاء تثلج كثيراً.", level: "A1" },
     { id: "fc10", de: "am Montag / um acht Uhr", ar: "يوم الاثنين / في الثامنة", example: "Am Montag um acht Uhr.", exampleAr: "يوم الاثنين في الثامنة.", level: "A1" },
+    {"id": "fc11", "de": "aber", "ar": "لكن (أداة ربط)", "example": "Es ist kalt, aber die Sonne scheint.", "exampleAr": "الجوّ بارد لكنّ الشمس مشرقة.", "level": "A1"},
+    {"id": "fc12", "de": "denn", "ar": "لأنّ (أداة ربط بترتيب عاديّ)", "example": "Ich bleibe zu Hause, denn es regnet.", "exampleAr": "أبقى في البيت لأنّها تمطر.", "level": "A1"},
+    {"id": "fc13", "de": "Mir ist kalt.", "ar": "أشعر بالبرد", "example": "Mir ist kalt. Hast du eine Jacke?", "exampleAr": "أشعر بالبرد. أعندك سترة؟", "level": "A1"},
+    {"id": "fc14", "de": "neblig / bewölkt", "ar": "ضبابيّ / غائم", "example": "Am Morgen ist es oft neblig.", "exampleAr": "في الصباح يكون الجوّ ضبابياً غالباً.", "level": "A1"},
+    {"id": "fc15", "de": "der Regenschirm", "ar": "المظلّة", "example": "Nimm einen Regenschirm mit!", "exampleAr": "خذ مظلّة معك!", "level": "A1"},
+    {"id": "fc16", "de": "minus fünf Grad", "ar": "خمس درجات تحت الصفر", "example": "In der Nacht sind es minus fünf Grad.", "exampleAr": "في الليل الحرارة خمس تحت الصفر.", "level": "A1"},
+    {"id": "fc17", "de": "seit (+ Dativ)", "ar": "منذ", "example": "Es regnet seit drei Stunden.", "exampleAr": "تمطر منذ ثلاث ساعات.", "level": "A1"},
+    {"id": "fc18", "de": "in einer Stunde", "ar": "بعد ساعة", "example": "In einer Stunde hört der Regen auf.", "exampleAr": "بعد ساعة يتوقّف المطر.", "level": "A1"},
+    {"id": "fc19", "de": "der Himmel", "ar": "السماء", "example": "Der Himmel ist grau.", "exampleAr": "السماء رمادية.", "level": "A1"},
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
