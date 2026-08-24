@@ -122,6 +122,54 @@ export const lessonA104: Lesson = {
         content: "wo? (أين؟) → Dativ: in der Küche. wohin? (إلى أين؟) → Akkusativ: in die Küche. القاعدة: «السكون Dativ، الحركة Akkusativ» — سنطبقها عملياً في درس المدينة.",
       },
     },
+    {
+      id: "t3",
+      titleAr: "قواعد البيت: müssen و dürfen",
+      titleDe: "Hausregeln: müssen und dürfen",
+      explanationAr:
+        "السكن في ألمانيا يعني قواعد مكتوبة على باب كل عمارة. للتعامل معها تحتاج فعلين ناقصين:\n\n· müssen = الإلزام (يجب). Ich muss die Miete bezahlen.\n· dürfen = الإذن (مسموح). Darf ich hier parken?\n\nوالأهم — وهو ما يقلب المعنى تماماً: nicht dürfen = ممنوع، أمّا nicht müssen = غير مُلزَم (لكنّه مسموح).\n\nولاحظ بنية الجملة: الفعل الناقص يأخذ المركز الثاني، والفعل الأصلي يذهب إلى آخر الجملة بصيغة المصدر. هذا هو «القوس الفعلي» الألماني.",
+      whyAr:
+        "لماذا نتعلّمهما مع درس السكن؟ لأنّ أول احتكاك للوافد بالألمانية الرسمية هو Hausordnung (نظام العمارة): متى يُمنع الضجيج، أين تُرمى القمامة، هل يجوز الشواء في الشرفة. ومن يخلط بين «غير مُلزَم» و«ممنوع» يقع في مشكلة حقيقية مع الجيران لا في خطأ لغوي فحسب.",
+      table: {
+        title: "تصريف müssen و dürfen (لاحظ: لا ـt في هو/هي)",
+        columns: ["الضمير", "müssen (يجب)", "dürfen (مسموح)"],
+        rows: [
+          { label: "ich", cells: ["muss", "darf"] },
+          { label: "du", cells: ["musst", "darfst"] },
+          { label: "er / sie / es", cells: ["muss", "darf"] },
+          { label: "wir / sie / Sie", cells: ["müssen", "dürfen"] },
+          { label: "ihr", cells: ["müsst", "dürft"] },
+        ],
+      },
+      examples: [
+        { de: "Ich muss die Miete am ersten Tag bezahlen.", ar: "يجب أن أدفع الإيجار في اليوم الأول." },
+        { de: "Darf ich im Garten grillen?", ar: "هل يُسمح لي أن أشوي في الحديقة؟" },
+        { de: "Nach 22 Uhr darf man nicht laut sein.", ar: "بعد العاشرة مساءً لا يُسمح بالضجيج." },
+        { de: "Du musst nicht kommen, aber du darfst.", ar: "لستَ مُلزماً بالحضور، لكن يُسمح لك." },
+        { de: "Wir müssen den Müll trennen.", ar: "علينا أن نفرز القمامة." },
+      ],
+      comparisonWithArabic:
+        "العربية تنفي الإلزام والإذن بالأداة نفسها تقريباً («لا يجب» / «لا يُسمح»)، وكثير من العرب يستعملون «لا يجب» بمعنى «ممنوع». الألمانية تفصل بحدّة: nicht dürfen = ممنوع منعاً باتّاً، وnicht müssen = اختياري. قل «Du musst nicht warten» لضيف تقصد إعفاءه، فإن قلت «Du darfst nicht warten» فقد منعته!",
+      eselsbruecke:
+        "«müssen واجب، dürfen باب»: الواجب يُحمل، والباب يُفتح أو يُغلق. وللنفي: أغلق الباب (nicht dürfen) ⇒ ممنوع؛ ارمِ الحِمل (nicht müssen) ⇒ ارتَح، فأنت حرّ.",
+      commonMistakes: [
+        {
+          wrong: "Du musst nicht rauchen. (بمعنى: ممنوع التدخين)",
+          right: "Du darfst nicht rauchen.",
+          whyAr: "الجملة الأولى صحيحة نحوياً لكنّها تقول «لستَ مضطراً للتدخين» — وهي عبثية. المنع يكون بـ nicht dürfen حصراً.",
+        },
+        {
+          wrong: "Ich muss die Miete bezahlen morgen.",
+          right: "Ich muss morgen die Miete bezahlen.",
+          whyAr: "مع الفعل الناقص يُغلَق «القوس الفعلي»: المصدر (bezahlen) يقف في آخر الجملة، فلا يأتي بعده شيء.",
+        },
+      ],
+      relatedRuleComparison: {
+        title: "أين يقف هذان الفعلان بين ما تعرفه",
+        content:
+          "في الدرس a1-06 أخذت können (القدرة) وmöchte (الرغبة المهذّبة). müssen وdürfen يكملان الرباعية الأساسية: قدرة، رغبة، إلزام، إذن. الأربعة تشترك في القاعدة نفسها — لا ـt في «هو/هي»، والمصدر في آخر الجملة.",
+      },
+    },
   ],
 
   listening: {
@@ -353,6 +401,75 @@ export const lessonA104: Lesson = {
       explanation: "القطة تحت الطاولة: unter + dem (Dativ للمذكر).",
       errorType: "spelling",
     },
+    {
+      id: "e11",
+      type: "multiple-choice",
+      instructionAr: "لافتة على باب العمارة. ماذا تعني؟",
+      questionDe: "Nach 22 Uhr darf man nicht laut sein.",
+      questionAr: "اختر المعنى الصحيح:",
+      options: [
+        "ممنوع الضجيج بعد العاشرة مساءً.",
+        "لستَ مضطراً للضجيج بعد العاشرة.",
+        "يجب أن تكون صاخباً بعد العاشرة.",
+        "يمكنك الضجيج حتى العاشرة فقط إن أردت.",
+      ],
+      correctIndex: 0,
+      explanation: "nicht dürfen = المنع. اللافتة تمنع الضجيج ولا تكتفي بإعفائك منه.",
+      optionExplanations: [
+        undefined,
+        "هذا معنى nicht müssen لا nicht dürfen — والفرق بينهما هو بيت القصيد.",
+        "müssen تعني الإلزام، ولا وجود لها في الجملة.",
+        "الجملة منعٌ صريح لا خيار مطروح.",
+      ],
+      errorType: "grammar",
+    },
+    {
+      id: "e12",
+      type: "fill-blank",
+      instructionAr: "أكمل بالفعل الناقص المناسب في صيغته الصحيحة:",
+      template: "Ich ___ die Miete bezahlen. ___ ich hier parken? Kinder ___ nicht allein im Aufzug fahren.",
+      blanks: [
+        { correct: "muss", options: ["muss", "musst", "darf"] },
+        { correct: "Darf", options: ["Darf", "Muss", "Darfst"] },
+        { correct: "dürfen", options: ["dürfen", "darf", "müssen"] },
+      ],
+      explanation: "ich muss (إلزام) · Darf ich …? (طلب إذن، والفعل أول الجملة في السؤال) · Kinder جمع ⇒ dürfen، والنفي هنا منعٌ.",
+      errorType: "conjugation",
+    },
+    {
+      id: "e13",
+      type: "error-correction",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      wrongSentence: "Ich muss heute die Wohnung putzen nicht.",
+      wrongWord: "putzen nicht",
+      correctWord: "nicht putzen",
+      options: ["nicht putzen", "putzen nicht", "nicht zu putzen", "kein putzen"],
+      explanation: "المصدر يُغلق الجملة، فلا يأتي بعده شيء: النفي يسبقه ⇒ … heute die Wohnung nicht putzen.",
+      errorType: "word-order",
+    },
+    {
+      id: "e14",
+      type: "word-ordering",
+      instructionAr: "رتّب الكلمات لتكوين سؤال مهذّب لطلب الإذن:",
+      tokens: ["Darf", "ich", "im", "Garten", "grillen", "?"],
+      correctSentence: "Darf ich im Garten grillen?",
+      explanation: "سؤال الإذن يبدأ بالفعل الناقص، والمصدر (grillen) يُغلق الجملة.",
+      errorType: "word-order",
+    },
+    {
+      id: "e15",
+      type: "transformation",
+      instructionAr: "أعد الصياغة: عبّر عن الإعفاء لا المنع.",
+      prompt: "صديقك يظنّ أنّ عليه إحضار هدية. طمئنه بأنّه غير مُلزم (استعمل müssen منفياً).",
+      acceptedAnswers: [
+        "Du musst nichts mitbringen.",
+        "Du musst kein Geschenk mitbringen.",
+        "Sie müssen nichts mitbringen.",
+      ],
+      sampleAnswer: "Du musst nichts mitbringen.",
+      explanation: "الإعفاء يكون بـ nicht/nichts + müssen. لو قلت «Du darfst nichts mitbringen» لمنعته من إحضار أي شيء!",
+      errorType: "grammar",
+    },
   ],
 
   fehlerUndTipps: {
@@ -437,6 +554,8 @@ export const lessonA104: Lesson = {
     { id: "fc6", de: "das Bad", ar: "الحمام", example: "Das Bad ist sauber.", exampleAr: "الحمام نظيف.", level: "A1" },
     { id: "fc7", de: "der Tisch / der Stuhl", ar: "الطاولة / الكرسي", example: "Auf dem Tisch steht ein Stuhl.", exampleAr: "بجانب الطاولة كرسي.", level: "A1" },
     { id: "fc8", de: "wohnen", ar: "يسكن", example: "Wo wohnst du?", exampleAr: "أين تسكن؟", level: "A1" },
+    { id: "fc9", de: "müssen (ich muss)", ar: "يجب / مُلزَم", example: "Ich muss die Miete bezahlen.", exampleAr: "يجب أن أدفع الإيجار.", level: "A1" },
+    { id: "fc10", de: "dürfen (ich darf)", ar: "مسموح / يجوز", example: "Darf ich hier parken?", exampleAr: "هل يُسمح لي بالركن هنا؟", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
