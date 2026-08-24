@@ -6,7 +6,8 @@ import { LESSON_META } from "@/data/lessons/meta";
  *  المنهج الأكاديمي الكامل — مصدر البيانات الوحيد للمسار التعليمي
  *  (فصل تام بين المحتوى والمكونات كما هو مطلوب)
  * ═══════════════════════════════════════════════════════════
- *  4 مستويات (A1→B2) × 46 وحدة دراسية (وحدات عرض) تغطي 48 درساً فعلياً
+ *  4 مستويات (A1→B2) × وحدات دراسية (وحدات عرض) تغطي كل الدروس الفعلية.
+ *  الأعداد لا تُكتب هنا يدوياً: TOTAL_UNITS وTOTAL_LESSONS مشتقّان آلياً.
  */
 
 export const LEVELS: LevelMeta[] = [
@@ -33,7 +34,7 @@ export const LEVELS: LevelMeta[] = [
     description:
       "التوسع في الزمن الماضي (Perfekt/Präteritum)، حالة الجر (Dativ)، الأفعال الشرطية الست، حروف الجر المتغيرة، الجمل الثانوية الأولى (weil/dass/wenn)، والمقارنة والتفضيل.",
     topics: ["Perfekt", "Präteritum", "Dativ", "Modalverben", "Wechselpräpositionen", "weil / dass / wenn"],
-    units: 12,
+    units: 13,
     words: 800,
     unlockThreshold: 80,
     gradient: "from-emerald-500 via-teal-500 to-cyan-500",
@@ -73,7 +74,7 @@ export const LEVELS: LevelMeta[] = [
 ];
 
 export const UNITS: Unit[] = [
-  // ═══ A1 — 12 وحدة ═══
+  // ═══ A1 — 13 وحدة ═══
   {
     id: "a1-01",
     level: "A1",
@@ -192,7 +193,7 @@ export const UNITS: Unit[] = [
     descAr: "جمع كل قواعد A1 في جمل صحيحة، مراجعة شاملة، والاستعداد لامتحان الختم وA2.",
   },
 
-  // ═══ A2 — 12 وحدة ═══
+  // ═══ A2 — 13 وحدة (12 موضوعية + a2-13 الخاتمة الجامعة) ═══
   {
     id: "a2-01",
     level: "A2",
@@ -302,7 +303,17 @@ export const UNITS: Unit[] = [
     descAr: "المشاعر والآراء، الأفعال الانعكاسية، والتعامل مع الخلافات.",
   },
 
-  // ═══ B1 — 10 وحدات ═══
+  {
+    id: "a2-13",
+    level: "A2",
+    number: 13,
+    titleDe: "A2 kompakt — die Brücke nach B1",
+    titleAr: "A2 الشاملة — الجسر إلى B1",
+    descDe: "Alle A2-Strukturen kombinieren und den Schritt nach B1 vorbereiten.",
+    descAr: "دمج كل تراكيب A2 في مواقف حية، وخريطة الانتقال إلى B1.",
+  },
+
+  // ═══ B1 — 11 وحدة ═══
   {
     id: "b1-01",
     level: "B1",
@@ -515,6 +526,11 @@ export const TOTAL_LESSONS = LESSON_META.length;
 /** عدد الدروس الفعلية في وحدة معيّنة (يُحسب من LESSON_META — لا يُعلن يدوياً) */
 export function getUnitLessonCount(unitId: string): number {
   return LESSON_META.filter((l) => l.unitId === unitId).length;
+}
+
+/** عدد الدروس الفعلية في مستوى كامل — لنصوص الواجهة، حتى لا تتعفّن عند إضافة درس */
+export function getLevelLessonCount(level: LevelMeta["code"]): number {
+  return LESSON_META.filter((l) => l.level === level).length;
 }
 
 /**

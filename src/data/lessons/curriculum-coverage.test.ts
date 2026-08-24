@@ -13,7 +13,7 @@ import {LESSON_META} from "@/data/lessons/meta";
  */
 
 describe("تغطية المنهج — الوساطة والتفاعل", () => {
-  it("كل درس فعلي له وساطة وتفاعل (48/48)", () => {
+  it("كل درس فعلي له وساطة وتفاعل (49/49)", () => {
     const missing: string[] = [];
     for (const m of LESSON_META) {
       const lesson = getLesson(m.id);

@@ -7,8 +7,7 @@ import {TOTAL_ESTIMATED_HOURS, TOTAL_LESSONS, TOTAL_UNITS, TOTAL_WORDS} from "@/
 
 export const metadata: Metadata = {
   title: "مسار التعلم — خارطة الطريق من A1 إلى B2",
-  description:
-    "خارطة طريقك التفاعلية لإتقان الألمانية: 46 وحدة دراسية و48 درساً موزعة على المستويات الأربعة A1 وA2 وB1 وB2 وفق منهجية معهد غوته ومعايير CEFR.",
+  description: `خارطة طريقك التفاعلية لإتقان الألمانية: ${TOTAL_UNITS} وحدة دراسية و${TOTAL_LESSONS} درساً موزعة على المستويات الأربعة A1 وA2 وB1 وB2 وفق منهجية معهد غوته ومعايير CEFR.`,
 };
 
 /**

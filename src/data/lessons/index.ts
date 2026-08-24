@@ -26,6 +26,7 @@ import { lessonA209 } from "@/data/lessons/a2/a2-09";
 import { lessonA210 } from "@/data/lessons/a2/a2-10";
 import { lessonA211 } from "@/data/lessons/a2/a2-11";
 import { lessonA212 } from "@/data/lessons/a2/a2-12";
+import { lessonA213 } from "@/data/lessons/a2/a2-13";
 import { lessonB101 } from "@/data/lessons/b1/b1-01";
 import { lessonB102 } from "@/data/lessons/b1/b1-02";
 import { lessonB103 } from "@/data/lessons/b1/b1-03";
@@ -61,9 +62,9 @@ export const LESSONS: Lesson[] = [
   /* A1 — 15 */
   lessonA100, lessonA101, lessonA102, lessonA103, lessonA104, lessonA105,
   lessonA106, lessonA107, lessonA108, lessonA109, lessonA110, lessonA111, lessonA112, lessonA113, lessonA114,
-  /* A2 — 12 */
+  /* A2 — 13 */
   lessonA201, lessonA202, lessonA203, lessonA204, lessonA205, lessonA206,
-  lessonA207, lessonA208, lessonA209, lessonA210, lessonA211, lessonA212,
+  lessonA207, lessonA208, lessonA209, lessonA210, lessonA211, lessonA212, lessonA213,
   /* B1 — 11 */
   lessonB101, lessonB102, lessonB103, lessonB104, lessonB105,
   lessonB106, lessonB107, lessonB108, lessonB109, lessonB110, lessonB111,

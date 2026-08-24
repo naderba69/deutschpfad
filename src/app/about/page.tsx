@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 import {BookOpen, Heart, Lock, Sparkles, Target, Users} from "lucide-react";
 
+import {TOTAL_LESSONS} from "@/lib/constants/curriculum";
+
 export const metadata: Metadata = {
   title: "عن المنصة — DeutschPfad",
   description:
@@ -10,11 +12,11 @@ export const metadata: Metadata = {
 
 const VALUES = [
   { icon: Heart, title: "مجانية 100%", desc: "بلا اشتراكات ولا إعلانات ولا مدفوعات — مدى الحياة. التعليم الجيد ليس سلعة." },
-  { icon: Target, title: "منهجية Goethe/CEFR", desc: "48 درساً متسلسلاً من A1 حتى B2 وفق منهجية معهد غوته والإطار الأوروبي المرجعي." },
+  { icon: Target, title: "منهجية Goethe/CEFR", desc: `${TOTAL_LESSONS} درساً متسلسلاً من A1 حتى B2 وفق منهجية معهد غوته والإطار الأوروبي المرجعي.` },
   { icon: Lock, title: "خصوصية كاملة", desc: "تقدمك يبقى على جهازك فقط — بلا حسابات ولا تتبع. حتى صوتك لا يغادر متصفحك." },
   { icon: Sparkles, title: "إتقان لا تلقين", desc: "تمارين إنتاج وتفكير لغوي لا حفظ — تخرج تتقن اللغة لا تحفظها." },
   { icon: Users, title: "للمجتمع العربي", desc: "صُممت خصيصاً لأخطاء المتعلم العربي: الأجناس، الهملات ä ö ü ß، والنطق." },
-  { icon: BookOpen, title: "محتوى غني", desc: "48 درساً + 60 قصة + 20 بودكاست + ثقافة ألمانية + اختبارات محاكاة Goethe." },
+  { icon: BookOpen, title: "محتوى غني", desc: `${TOTAL_LESSONS} درساً + 60 قصة + 20 بودكاست + ثقافة ألمانية + اختبارات محاكاة Goethe.` },
 ];
 
 export default function AboutPage() {

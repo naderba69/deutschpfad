@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import {Badge} from "@/components/ui/badge";
-import {TOTAL_ESTIMATED_HOURS} from "@/lib/constants/curriculum";
+import {getLevelLessonCount, TOTAL_ESTIMATED_HOURS, TOTAL_LESSONS} from "@/lib/constants/curriculum";
 
 export const metadata: Metadata = {
   title: "خطة 12 شهراً — من A1 إلى Goethe-B2",
@@ -15,7 +15,7 @@ const PLAN = [
     months: "الشهران 1-2",
     level: "A1",
     focus: "الأساس: الأبجدية، النطق، الجمل البسيطة",
-    tools: ["دروس A1 (15 درساً)", "مفردات A1 (500+ كلمة)", "بطاقات SM-2 يومياً", "قصص A1"],
+    tools: [`دروس A1 (${getLevelLessonCount("A1")} درساً)`, "مفردات A1 (500+ كلمة)", "بطاقات SM-2 يومياً", "قصص A1"],
     goal: "إكمال A1: التحية، التعريف، التسوق، المواعيد — اختبار مستوى A1 ≥ 60%",
     daily: "درس واحد (45د) + 20 بطاقة (15د) + استماع خارجي (30د)",
   },
@@ -23,7 +23,7 @@ const PLAN = [
     months: "الشهران 3-4",
     level: "A2",
     focus: "التوسع: السفر، الصحة، السكن، الماضي (Perfekt)",
-    tools: ["دروس A2 (12 درساً)", "مفردات A2 (500+ كلمة)", "الحوارات اليومية", "مكتبة القراءة A2"],
+    tools: [`دروس A2 (${getLevelLessonCount("A2")} درساً)`, "مفردات A2 (500+ كلمة)", "الحوارات اليومية", "مكتبة القراءة A2"],
     goal: "إكمال A2: وصف الماضي، المواعيد، الشكوى — اختبار مستوى A2 ≥ 60%",
     daily: "درس واحد (45د) + 25 بطاقة (15د) + حوار تفاعلي (15د)",
   },
@@ -31,7 +31,7 @@ const PLAN = [
     months: "الشهران 5-6",
     level: "B1",
     focus: "الاستقلالية: Konjunktiv II، Passiv، الجمل الثانوية",
-    tools: ["دروس B1 (11 درساً)", "مفردات B1 (900+ كلمة)", "البودكاست (20 حلقة)", "الكتابة: فقرة ← رسالة"],
+    tools: [`دروس B1 (${getLevelLessonCount("B1")} درساً)`, "مفردات B1 (900+ كلمة)", "البودكاست (20 حلقة)", "الكتابة: فقرة ← رسالة"],
     goal: "إكمال B1: إبداء الرأي، الحجج البسيطة — اختبار مستوى B1 ≥ 60%",
     daily: "درس واحد (50د) + 30 بطاقة (15د) + بودكاست (25د)",
   },
@@ -82,7 +82,7 @@ export default function PlanB2Page() {
         {[
           { n: "12", l: "شهراً" },
           { n: "~90", l: "دقيقة يومياً" },
-          { n: "48", l: "درساً" },
+          { n: String(TOTAL_LESSONS), l: "درساً" },
           { n: "3", l: "محاكاة B2 كاملة" },
         ].map((s) => (
           <div key={s.l} className="rounded-xl border bg-card p-3 text-center">
