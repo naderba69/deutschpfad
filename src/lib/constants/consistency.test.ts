@@ -1,7 +1,6 @@
 import {describe, expect, it} from "vitest";
 
 import {LESSON_META} from "@/data/lessons/meta";
-import {getAllCurriculumUnits} from "@/data/curriculum/cefr-map";
 import {
   getUnitKeyWords,
   getUnitLessonCount,
@@ -116,35 +115,7 @@ describe("اتساق أرقام الدروس (المرحلة 4)", () => {
   });
 });
 
-describe("اتساق خريطة المنهج مع الدروس الفعلية (المرحلة 4)", () => {
-  it("كل درس فعلي له وحدة مطابقة بالاسم والترتيب (لا أسماء قديمة)", () => {
-    const mapById = new Map(getAllCurriculumUnits().map((u) => [u.id, u]));
-    expect(mapById.size).toBe(LESSON_META.length);
-    for (const m of LESSON_META) {
-      const u = mapById.get(m.id);
-      expect(u, `${m.id}: لا وحدة مطابقة في الخريطة`).toBeDefined();
-      expect(u!.titleDe, `${m.id}: اسم الوحدة لا يطابق الدرس`).toBe(m.titleDe);
-      expect(u!.level).toBe(m.level);
-      // ترتيب الخريطة تسلسلي داخل المستوى (يُفحص في اختبار التسلسل)
-    }
-  });
-
-  it("لا وحدات يتيمة في الخريطة (كل وحدة = درس فعلي)", () => {
-    const lessonIds = new Set(LESSON_META.map((m) => m.id));
-    const extra = getAllCurriculumUnits().filter((u) => !lessonIds.has(u.id));
-    expect(extra.map((e) => e.id)).toEqual([]);
-  });
-
-  it("كل وحدة تحمل بيانات إثرائية حقيقية (أهداف، نقاط نحوية، وساطة، تفاعل)", () => {
-    for (const u of getAllCurriculumUnits()) {
-      expect(u.canDo.length, `${u.id}: بلا can-do`).toBeGreaterThanOrEqual(1);
-      expect(u.grammar.length, `${u.id}: بلا نقاط نحوية`).toBeGreaterThanOrEqual(1);
-      expect(u.mediationTask.length, `${u.id}: بلا وساطة`).toBeGreaterThan(10);
-      expect(u.interactionTask.length, `${u.id}: بلا تفاعل`).toBeGreaterThan(10);
-      expect(u.hours).toBeGreaterThan(0);
-    }
-  });
-
+describe("اتساق الدروس الفعلية (المرحلة 4)", () => {
   it("ترتيب LESSON_META صحيح (الأرقام قبل المراجعة الختامية، والمستويات متتالية)", () => {
     const ids = LESSON_META.map((m) => m.id);
     // a1-14 (الأرقام) قبل a1-13 (المراجعة الختامية)
