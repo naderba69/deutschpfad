@@ -13,7 +13,7 @@ import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
 import {LESSON_META} from "@/data/lessons/meta";
 import {consumeRefills} from "@/lib/gamification/hearts";
-import {buildInterleavedReview, PREVIOUS_LEVEL_LABEL} from "@/lib/lesson/review-generator";
+import {buildInterleavedReview, reviewLevelLabel} from "@/lib/lesson/review-generator";
 import {playCorrect, playWrong} from "@/lib/audio/sfx";
 import {cn} from "@/lib/utils";
 import type { Exercise, Lesson, TheoryBlock } from "@/types/lesson";
@@ -302,7 +302,7 @@ export function LessonFlow({ lesson, onFinish }: { lesson: Lesson; onFinish?: ()
             <div className="text-start">
               <InterleavingReview
                 review={reviewQuestions}
-                levelLabel={PREVIOUS_LEVEL_LABEL[lesson.level] ?? "مستوى سابق"}
+                levelLabel={reviewLevelLabel(reviewQuestions, lesson.level)}
               />
             </div>
           )}

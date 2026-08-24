@@ -21,6 +21,33 @@ export const PREVIOUS_LEVEL_LABEL: Record<string, string> = {
   B2: "B1",
 };
 
+/**
+ * عنوان المراجعة كما يجب أن يُعرض فعلاً — مشتقّاً من *محتوى* البنود لا من
+ * مستوى الدرس وحده.
+ *
+ * كان العنوان يُقرأ من `PREVIOUS_LEVEL_LABEL[lesson.level]`، أي أنه يفترض أن
+ * كل بنود المراجعة تأتي من المستوى السابق مباشرةً. لكن المراجعة التراكمية
+ * الحقيقية تخلط المستويات عمداً: `b1-03` يراجع A1 وB1 معاً، و`b2-10` يراجع
+ * B2 نفسه. فكان العنوان يقول «مراجعة تراكمية من A2» فوق سؤال نصُّه «مراجعة من
+ * A1» — تناقض ظاهر للمتعلّم في أكثر من أربعين بنداً.
+ *
+ * الحل: نستخرج وسوم المستويات من نصوص التعليمات ونبني العنوان منها.
+ */
+export function reviewLevelLabel(review: Exercise[], lessonLevel: string): string {
+  const found: string[] = [];
+  for (const ex of review) {
+    const ins = (ex as { instructionAr?: string }).instructionAr ?? "";
+    // نتجنّب مطابقة معرّفات الدروس (a1-03) فنشترط ألّا يتبع الوسمَ شَرطةٌ ورقم
+    for (const m of ins.matchAll(/(?<![a-zA-Z-])(A1|A2|B1|B2)(?![-\d])/g)) {
+      if (!found.includes(m[1])) found.push(m[1]);
+    }
+  }
+  if (found.length === 0) return PREVIOUS_LEVEL_LABEL[lessonLevel] ?? "مستوى سابق";
+  const ordered = found.sort((a, b) => (LEVEL_ORDER[a] ?? 0) - (LEVEL_ORDER[b] ?? 0));
+  if (ordered.length === 1) return ordered[0];
+  return `${ordered.slice(0, -1).join(" و")} و${ordered[ordered.length - 1]}`;
+}
+
 /** هل يملك الدرس مراجعة مكتوبة يدوياً؟ */
 export function hasManualReview(lesson: Lesson): boolean {
   return Array.isArray(lesson.review) && lesson.review.length > 0;

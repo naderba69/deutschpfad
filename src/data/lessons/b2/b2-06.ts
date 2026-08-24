@@ -434,6 +434,61 @@ export const lessonB206: Lesson = {
       errorType: "word-order",
       points: 2,
     },
+    {
+      id: "e13-konn",
+      type: "multiple-choice",
+      instructionAr: "أدوات السبب والنتيجة: اختر الترتيب الصحيح بعد deshalb:",
+      questionDe: "Die Nachfrage ist gestiegen, deshalb ___.",
+      options: [
+        "erhöhte die Firma die Preise",
+        "die Firma erhöhte die Preise",
+        "die Firma die Preise erhöhte",
+        "erhöhte die Preise die Firma zu",
+      ],
+      correctIndex: 0,
+      explanation:
+        "deshalb ظرف رابط يحتل المركز الأول، فيأتي الفعل مباشرةً بعده في المركز الثاني ثم الفاعل: deshalb erhöhte die Firma... وهذا يخالف weil التي تدفع الفعل إلى النهاية.",
+      errorType: "word-order",
+    },
+    {
+      id: "e14-konn",
+      type: "fill-blank",
+      instructionAr: "أكمل بأداة الربط المناسبة (انتبه لموضع الفعل):",
+      template:
+        "___ die Kosten steigen, müssen wir sparen. (بما أن — رسمية) · Ich bleibe zu Hause, ___ es regnet. (لأن — ربط متساوٍ) · Der Umsatz war so gering, ___ die Filiale schloss. (بحيث)",
+      blanks: [
+        { correct: "Da", options: ["Da", "Denn", "Deshalb"], errorType: "grammar" },
+        { correct: "denn", options: ["denn", "weil ist", "deshalb"], errorType: "grammar" },
+        { correct: "dass", options: ["dass", "denn", "deshalb"], errorType: "grammar" },
+      ],
+      explanation:
+        "da أداة جملة ثانوية تصدّر السبب المعروف في الأسلوب الرسمي (الفعل في النهاية: steigen)، وdenn رابط متساوٍ لا يغيّر ترتيب ما بعده، وso ... dass تركيب النتيجة.",
+      errorType: "grammar",
+    },
+    {
+      id: "e15-konn",
+      type: "error-correction",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      wrongSentence: "Es regnet, deshalb ich bleibe zu Hause.",
+      wrongWord: "ich bleibe",
+      correctWord: "bleibe ich",
+      options: ["bleibe ich", "ich bleibe", "ich bin bleiben", "bleiben ich"],
+      explanation:
+        "deshalb يشغل المركز الأول، فيجب أن يليه الفعل مباشرةً (V2) ثم الفاعل: deshalb bleibe ich zu Hause. الخطأ الشائع هو معاملة deshalb كأنه und.",
+      errorType: "word-order",
+    },
+    {
+      id: "e16-konn",
+      type: "word-ordering",
+      instructionAr: "رتّب الجملة (السبب الرسمي في الصدارة — انتبه لموضع الفعلين):",
+      tokens: ["Da", "die", "Kosten", "steigen", ",", "müssen", "wir", "sparen", "."],
+      correctSentence: "Da die Kosten steigen, müssen wir sparen.",
+      hint: "الجملة الثانوية أولاً: فعلها في نهايتها، ثم يبدأ الرئيسي بفعله.",
+      explanation:
+        "حين تتصدّر جملة da، تُحسب كاملةً «المركز الأول»، فيأتي فعل الجملة الرئيسية مباشرةً بعد الفاصلة: ... steigen, müssen wir sparen.",
+      errorType: "word-order",
+      points: 2,
+    },
   ],
 
   fehlerUndTipps: {

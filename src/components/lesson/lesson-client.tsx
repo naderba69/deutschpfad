@@ -9,7 +9,7 @@ import {LESSON_META} from "@/data/lessons/meta";
 import {useProgress} from "@/components/providers/progress-provider";
 import {isLevelLessonsDone, getLessonLevelCompletion} from "@/lib/progress-selectors";
 import {InterleavingReview} from "@/components/lesson/sections/interleaving-review";
-import {buildInterleavedReview, PREVIOUS_LEVEL_LABEL} from "@/lib/lesson/review-generator";
+import {buildInterleavedReview, reviewLevelLabel} from "@/lib/lesson/review-generator";
 import {AusspracheSection} from "@/components/lesson/sections/aussprache";
 import {EinfuehrungSection} from "@/components/lesson/sections/einfuehrung";
 import {FehlerUndTippsSection} from "@/components/lesson/sections/fehler-und-tipps";
@@ -445,7 +445,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
         return (
           <InterleavingReview
             review={reviewQuestions}
-            levelLabel={PREVIOUS_LEVEL_LABEL[lesson.level] ?? "مستوى سابق"}
+            levelLabel={reviewLevelLabel(reviewQuestions, lesson.level)}
           />
         );
       case "theorie":

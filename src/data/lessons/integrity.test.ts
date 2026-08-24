@@ -9,9 +9,13 @@
  *  - ترتيب الفهرس: التنقّل «السابق/التالي» يتبع ترتيب المصفوفة.
  */
 
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+
 import { describe, expect, it } from "vitest";
 
 import { NO_ERROR_OPTION, buildHighlightSegments } from "@/lib/lesson/error-correction-highlight";
+import { reviewLevelLabel } from "@/lib/lesson/review-generator";
 import { evaluateErrorCorrection } from "@/lib/lesson/exercise-engine";
 import { LESSONS } from "@/data/lessons";
 import { LESSON_META } from "@/data/lessons/meta";
@@ -538,5 +542,122 @@ describe("قسم النطق", () => {
     }
     expect(checked).toBeGreaterThan(40);
     expect(broken, `عناوين نطق تَعِد بما لا تفي به:\n${broken.join("\n")}`).toEqual([]);
+  });
+});
+
+describe("كل كتلة نظرية يقابلها تدريب", () => {
+  /**
+   * العطب: `b2-10:t2` (الأسلوب الاسمي) كان يُشرح في جدول ذي خمسة صفوف وخمسة
+   * أمثلة، ثم لا يظهر منه *حرف واحد* في بنك التدريب ولا الاختبار ولا الكتابة
+   * ولا البطاقات. المتعلّم يقرأ القاعدة ثم لا يُطالَب بها أبداً، فتسقط من
+   * ذاكرته قبل الامتحان — والدرس يبدو مكتملاً في كل عدّ آلي.
+   *
+   * الحارس: لكل كتلة نظرية نستخرج «بصماتها» — الكلمات الألمانية المميِّزة من
+   * صفوف الجدول وأمثلته — ونشترط أن تظهر واحدة منها على الأقل في مادة
+   * التدريب. هذا فحص وجود لا فحص جودة، لكنه يمسك الانفصال التام.
+   */
+  const STOP = new Set([
+    "der", "die", "das", "den", "dem", "des", "ein", "eine", "einen", "einem", "einer", "eines",
+    "ich", "du", "er", "sie", "es", "wir", "ihr", "man", "sich", "mich", "dir", "mir",
+    "ist", "sind", "war", "hat", "habe", "haben", "wird", "werden", "wurde", "sein", "kann",
+    "und", "oder", "aber", "dass", "weil", "wenn", "nicht", "auch", "nur", "noch", "schon",
+    "in", "im", "an", "am", "auf", "zu", "zur", "zum", "mit", "von", "vom", "für", "bei",
+    "nach", "aus", "über", "unter", "vor", "als", "wie", "so", "sehr", "mehr", "gut",
+  ]);
+
+  it("لكل كتلة نظرية أثرٌ في بنك التدريب أو الاختبار أو الكتابة", () => {
+    const orphans: string[] = [];
+    let checked = 0;
+    for (const lesson of LESSONS) {
+      // مادة التدريب كاملةً: التمارين + البطاقات + قسم الأخطاء والنصائح
+      const practice = JSON.stringify([
+        lesson.practiceBank,
+        lesson.miniTest,
+        lesson.review ?? [],
+        lesson.writing,
+        lesson.flashcards,
+        lesson.fehlerUndTipps,
+      ]).toLowerCase();
+
+      for (const t of lesson.theory) {
+        checked += 1;
+        // بصمات الكتلة: كلمات ألمانية ذات دلالة من الجدول والأمثلة
+        const source = [
+          ...(t.table?.rows ?? []).flatMap((r) => [r.label, ...r.cells]),
+          ...(t.examples ?? []).map((e) => e.de),
+        ].join(" ");
+        const fingerprints = [
+          ...new Set(
+            source
+              .split(/[^A-Za-zäöüßÄÖÜ-]+/)
+              .map((w) => w.toLowerCase())
+              .filter((w) => w.length >= 4 && !STOP.has(w)),
+          ),
+        ];
+        if (fingerprints.length === 0) continue;
+        if (!fingerprints.some((w) => practice.includes(w))) {
+          orphans.push(`${lesson.id}:${t.id} «${t.titleDe}» — لا أثر لها في أي تدريب`);
+        }
+      }
+    }
+    expect(checked).toBeGreaterThan(100);
+    expect(orphans, `كتل نظرية بلا تدريب:\n${orphans.join("\n")}`).toEqual([]);
+  });
+});
+
+describe("عنوان المراجعة التراكمية", () => {
+  /**
+   * العطب: العنوان المعروض كان يُشتقّ من مستوى الدرس وحده
+   * (`PREVIOUS_LEVEL_LABEL`)، فيقول «مراجعة تراكمية من A2» فوق بندٍ نصُّه
+   * «مراجعة من A1» — أكثر من أربعين تناقضاً ظاهراً للمتعلّم. الإصلاح جعل
+   * العنوان يُشتقّ من وسوم البنود نفسها.
+   *
+   * ملاحظة منهجية: فحصُ «هل يطابق العنوانُ البنودَ؟» تحصيلُ حاصل بعد الإصلاح،
+   * لأن العنوان صار مشتقاً منها. لذا نثبّت هنا شيئين *قابلين* للانكسار:
+   * (أ) سلوك الدالة نفسه على حالات معلومة، (ب) أن المكوّنات تستدعيها فعلاً
+   * ولا تعود إلى الوسم الثابت.
+   */
+  it("تستخرج الدالة كل المستويات المذكورة وترتّبها", () => {
+    const mk = (instructionAr: string) =>
+      ({ id: "x", type: "multiple-choice", instructionAr, explanation: "", errorType: "grammar" }) as unknown as Exercise;
+
+    // مستوى واحد ⇒ يُعرض وحده
+    expect(reviewLevelLabel([mk("مراجعة من B1: أكمل")], "B2")).toBe("B1");
+    // مستويان مختلطان ⇒ يُذكران معاً بترتيب تصاعدي مهما ورد ترتيبهما
+    expect(reviewLevelLabel([mk("مراجعة من B1"), mk("مراجعة من A1")], "B1")).toBe("A1 وB1");
+    // معرّف الدرس (a1-03) ليس وسم مستوى ⇒ لا يُلتقط وحده
+    expect(reviewLevelLabel([mk("مراجعة (درس a1-03)")], "B2")).toBe("B1");
+    // بلا وسم إطلاقاً ⇒ نعود إلى المستوى السابق كقيمة احتياطية
+    expect(reviewLevelLabel([mk("مراجعة سريعة")], "A2")).toBe("A1");
+  });
+
+  it("مكوّنات الدرس تشتقّ العنوان ولا تستعمل الوسم الثابت", () => {
+    for (const file of [
+      "src/components/lesson/lesson-flow.tsx",
+      "src/components/lesson/lesson-client.tsx",
+    ]) {
+      const src = readFileSync(resolve(process.cwd(), file), "utf8");
+      expect(src, `${file} لا يستدعي reviewLevelLabel`).toMatch(/levelLabel=\{reviewLevelLabel\(/);
+      expect(src, `${file} ما زال يستعمل PREVIOUS_LEVEL_LABEL للعنوان`).not.toMatch(
+        /levelLabel=\{PREVIOUS_LEVEL_LABEL/,
+      );
+    }
+  });
+
+  it("لا يتعارض العنوان المعروض مع وسوم بنوده", () => {
+    const bad: string[] = [];
+    for (const lesson of LESSONS) {
+      const review = (lesson.review ?? []) as Exercise[];
+      if (review.length === 0) continue;
+      const label = reviewLevelLabel(review, lesson.level);
+      for (const ex of review) {
+        const ins = ex.instructionAr ?? "";
+        for (const m of ins.matchAll(/(?<![a-zA-Z-])(A1|A2|B1|B2)(?![-\d])/g)) {
+          if (!label.includes(m[1]))
+            bad.push(`${lesson.id}:${ex.id} البند يذكر ${m[1]} والعنوان «${label}»`);
+        }
+      }
+    }
+    expect(bad, `تعارض بين عنوان المراجعة وبنوده:\n${bad.join("\n")}`).toEqual([]);
   });
 });

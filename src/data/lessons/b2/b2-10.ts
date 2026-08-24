@@ -41,33 +41,39 @@ export const lessonB210: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B2: اختر النقل:",
-      questionDe: "Er sagt, er ___ Zeit. (Konjunktiv I)",
-      options: ["habe", "hat", "hätte", "haben"],
+      instructionAr: "مراجعة شاملة من B2 (درس b2-01 — العلوم: نقل الكلام بـ Konjunktiv I): اختر الصيغة:",
+      questionDe: "Der Professor sagt, die Frist ___ verlängert.",
+      options: ["werde", "wird", "würde", "wurde"],
       correctIndex: 0,
-      explanation: "Konjunktiv I: habe (درس العلوم).",
+      explanation:
+        "النقل المكتوب الرسمي يلزم Konjunktiv I: werden ← er/sie werde. أما wird فإخبار (يجعل الكلام رأي الكاتب)، وwürde صيغة شرطية، وwurde ماضٍ للمجهول.",
       errorType: "grammar",
     },
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B2: اختر الحالة:",
-      questionDe: "Die Tür ___ geöffnet. (مفتوحة — حالة)",
-      options: ["ist", "wird", "kann", "wurde"],
+      instructionAr: "مراجعة شاملة من B2 (درس b2-02 — الاقتصاد: Zustandspassiv مقابل Vorgangspassiv): اختر الحالة:",
+      questionDe: "Die Bibliothek ___ seit acht Uhr geöffnet. (مفتوحة الآن — وصف حالة)",
+      options: ["ist", "wird", "kann", "hat"],
       correctIndex: 0,
-      explanation: "Zustandspassiv: ist (درس الاقتصاد).",
+      explanation:
+        "Zustandspassiv = sein + Partizip II ويصف النتيجة القائمة (مفتوحة). أما wird geöffnet فهو Vorgangspassiv أي فعل الفتح نفسه وهو يجري الآن.",
       errorType: "grammar",
     },
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة من B2: أكمل:",
-      template: "Ich interessiere mich ___ Musik. (بـ)",
+      instructionAr: "مراجعة شاملة من B2 (درس b2-03 — القانون: بدائل المجهول · درس b2-07 — الفلسفة: Futur II · درس b2-08 — اللغات: الأفعال مع حروف الجر): أكمل:",
+      template:
+        "Das Problem ___ sich leicht lösen. (يمكن حلّه) — Bis Juni werde ich die Prüfung bestanden ___. (Futur II) — Ich interessiere mich ___ ein Studium in Deutschland. (بـ)",
       blanks: [
-        { correct: "für", options: ["für", "auf", "von"] },
+        { correct: "lässt", options: ["lässt", "kann", "wird"], errorType: "grammar" },
+        { correct: "haben", options: ["haben", "sein", "werden"], errorType: "grammar" },
+        { correct: "für", options: ["für", "auf", "an"], errorType: "preposition" },
       ],
-      explanation: "sich interessieren für (درس اللغات).",
-      errorType: "preposition",
+      explanation:
+        "ثلاث وحدات في بندٍ واحد: lassen + sich + مصدر بديلاً عن المجهول (b2-03)، وFutur II = werde + Partizip II + haben لأن bestehen فعل متعدٍّ (b2-07)، وsich interessieren يلزمه für + منصوب (b2-08).",
+      errorType: "grammar",
     },
   ],
 
@@ -142,6 +148,52 @@ export const lessonB210: Lesson = {
         content: "الأسلوب الاسمي مكثّف ورسمي وهو المتوقَّع في الرسائل الإدارية وتقارير B2. لكن الإفراط فيه يجعل النص ثقيلاً وبارداً. القاعدة العملية: استعمله في المقدمات والصيغ الجاهزة، وعُد إلى الأسلوب الفعلي في الشرح والتفصيل.",
       },
     },
+    {
+      id: "t3",
+      titleAr: "خريطة قواعد B2 كاملة — تسع وحدات في جدول واحد",
+      titleDe: "Die B2-Grammatik im Überblick",
+      explanationAr:
+        "هذه ليست قاعدة جديدة، بل خريطة الطريق التي قطعتها. كل سطر في الجدول التالي يقابل وحدةً درستَها في B2: من نقل الكلام (الوحدة 1) إلى التراكيب الاسمية-الفعلية (الوحدة 9). اقرأ العمود الأوسط، وغطِّ عمود المثال بيدك، ثم حاول توليد مثالك أنت. ما تعجز عن توليده هو بالضبط ما يجب أن تعود إليه قبل الامتحان.",
+      whyAr:
+        "لماذا؟ لأن امتحان B2 لا يسأل عن قاعدة معزولة، بل يطلب نصاً واحداً تجتمع فيه ستُّ قواعد أو سبع. من درس القواعد متفرقةً يعرفها فرادى ولا يستحضرها مجتمعةً؛ ووظيفة هذه الخريطة أن تحوّل تسع معارف منفصلة إلى شبكة واحدة يمكن استدعاؤها دفعةً واحدة.",
+      table: {
+        title: "قواعد B2 التسع — الوحدة والقاعدة والمثال",
+        columns: ["الوحدة", "القاعدة", "مثال"],
+        rows: [
+          { label: "1 — العلوم", cells: ["Konjunktiv I لنقل الكلام", "Er sagt, er habe keine Zeit."] },
+          { label: "1 — العلوم", cells: ["الأفعال الناقصة الذاتية (التخمين)", "Das dürfte richtig sein."] },
+          { label: "2 — الاقتصاد", cells: ["Zustandspassiv والمجهول مع الناقصة", "Die Entscheidung muss getroffen werden."] },
+          { label: "3 — القانون", cells: ["الموصول مع حرف جر + بدائل المجهول", "Das Problem lässt sich leicht lösen."] },
+          { label: "4 — الأدب والإعلام", cells: ["Partizip I / II صفةً", "Die steigenden Preise beunruhigen uns."] },
+          { label: "5 — علم النفس", cells: ["روابط متقدمة + جسيمات تداولية", "Man lernt, indem man täglich übt."] },
+          { label: "6 — المسار المهني", cells: ["الاشتقاق الاسمي (Nominalisierung)", "Beim Lesen erweitert man den Wortschatz."] },
+          { label: "7 — الفلسفة", cells: ["Futur II للفعل المنجَز مستقبلاً", "Bis 2030 werde ich B2 erreicht haben."] },
+          { label: "8 — اللغات", cells: ["الأفعال مع حروف الجر الثابتة", "Ich interessiere mich für Sprachen."] },
+          { label: "9 — سوق العمل", cells: ["التراكيب الاسمية-الفعلية (FVG)", "Wir müssen eine Entscheidung treffen."] },
+        ],
+      },
+      examples: [
+        { de: "Die Universität teilte mit, die Bewerbungsfrist werde verlängert.", ar: "أفادت الجامعة بأن مهلة التقديم ستُمدَّد. (نقل الكلام — الوحدة 1)" },
+        { de: "Der eingereichte Antrag muss noch geprüft werden.", ar: "الطلب المقدَّم لا يزال يجب فحصه. (صفة مشتقة + مجهول مع ناقص — الوحدتان 4 و2)" },
+        { de: "Das Seminar, an dem ich teilnehme, beginnt im Oktober.", ar: "الندوة التي أشارك فيها تبدأ في أكتوبر. (موصول مع حرف جر — الوحدة 3)" },
+        { de: "Bis zum Semesterende werde ich alle Hausarbeiten abgegeben haben.", ar: "بحلول نهاية الفصل سأكون قد سلّمت كل الأبحاث. (Futur II — الوحدة 7)" },
+        { de: "Man verbessert sein Deutsch, indem man beim Lesen Notizen macht.", ar: "يحسّن المرء ألمانيته بأن يدوّن ملاحظات أثناء القراءة. (رابط + اشتقاق اسمي — الوحدتان 5 و6)" },
+        { de: "Wegen der Verlängerung der Frist lässt sich die Bewerbung noch einreichen.", ar: "بسبب تمديد المهلة لا يزال بالإمكان تقديم الطلب. (أسلوب اسمي + بديل المجهول — الوحدتان 10 و3)" },
+      ],
+      comparisonWithArabic:
+        "العربية أيضاً تملك هذه الطبقات مجتمعةً: تقول «أفاد بأن المهلة ستُمدَّد» (نقل)، «الطلب المقدَّم» (اسم مفعول صفةً)، «يمكن حلّه» (بديل المجهول)، «بسبب التمديد» (أسلوب اسمي). فالفرق ليس في وجود الأدوات بل في إعرابها: الألمانية تطالبك بحالةٍ صريحة (Genitiv بعد wegen، Dativ بعد an) حيث تكتفي العربية بالسياق.",
+      eselsbruecke:
+        "اختصار الوحدات التسع في جملة واحدة: «قال إنّه سيُنجَز، والمنجَز يمكن فحصه بأن نراجعه، وبحلول الموعد نكون قد اتخذنا القرار.» احفظ هذه الجملة العربية: كل مقطع فيها يقابل وحدةً من B2 بالترتيب.",
+      commonMistakes: [
+        { wrong: "Er sagt, er hat keine Zeit.", right: "Er sagt, er habe keine Zeit.", whyAr: "في النقل الرسمي المكتوب يُستعمل Konjunktiv I لا الإخبار؛ والإخبار يجعل الجملة رأياً للكاتب لا نقلاً عن غيره (الوحدة 1)." },
+        { wrong: "Das Problem kann sich lösen.", right: "Das Problem lässt sich lösen.", whyAr: "بديل المجهول هو lassen + sich + مصدر، لا können + sich؛ فـ«can itself» ليست بنية ألمانية (الوحدة 3)." },
+        { wrong: "Bis 2030 werde ich B2 erreichen haben.", right: "Bis 2030 werde ich B2 erreicht haben.", whyAr: "Futur II يبنى بالتصريف الثالث لا بالمصدر: werde + Partizip II + haben/sein (الوحدة 7)." },
+      ],
+      relatedRuleComparison: {
+        title: "متى أستعمل أي طبقة؟",
+        content: "القاعدة العملية للامتحان: النقل (Konjunktiv I) لعرض آراء الغير، والمجهول وبدائله لإخفاء الفاعل في النص العلمي، والصفات المشتقة والأسلوب الاسمي لضغط المعلومة، وFutur II للتخطيط، والروابط لبناء الحجّة. من يستعمل الطبقات الخمس في نصٍ واحد يصل إلى سقف علامة «التراكيب» في Goethe B2؛ ومن يكتفي بالجمل البسيطة يُقيَّم عند B1 مهما صحّت لغته.",
+      },
+    },
   ],
   listening: {
     items: [
@@ -213,7 +265,7 @@ export const lessonB210: Lesson = {
       { de: "die Hausarbeit", ar: "البحث الجامعي", note: "au = آو: هاوس-أربايت" },
       { de: "die Fachsprache", ar: "لغة التخصص", note: "ch = خ + sp = شپ: فاخ-شپراخه" },
       { de: "das Seminar", ar: "الندوة", note: "s = ز: زيمينار" },
-      { de: "die Linguistik", ar: "علم اللغة", note: "gu = غو: لينگڤيستيك" },
+      { de: "die Linguistik", ar: "علم اللغة", note: "gu هنا /gu/ لا /gv/: لينْگوإستيك [lɪŋɡuˈɪstɪk] — والنبر على إستيك" },
       { de: "zweifellos", ar: "بلا شك", note: "zw = تسڤ: تسڤايفِلوس" },
       { de: "erwiesen", ar: "مثبت", note: "ie = إي: إرڤيزِن" },
     ],
@@ -397,6 +449,65 @@ export const lessonB210: Lesson = {
       errorType: "punctuation",
     },
     {
+      id: "e13-nominal",
+      type: "multiple-choice",
+      instructionAr: "حوّل إلى الأسلوب الاسمي (Nominalstil): اختر المقابل الصحيح لـ «weil man spart»:",
+      questionDe: "___ konnte die Universität neue Labore bauen.",
+      options: ["Wegen der Einsparung", "Wegen die Einsparung", "Weil der Einsparung", "Wegen sparen"],
+      correctIndex: 0,
+      explanation:
+        "wegen حرف جر يلزم Genitiv في اللغة المكتوبة: wegen der Einsparung. وweil أداة ربط لجملة لا لاسم، وwegen sparen خطأ لأن المصدر يحتاج تنكيراً اسمياً (das Sparen).",
+      errorType: "case",
+    },
+    {
+      id: "e14-nominal",
+      type: "fill-blank",
+      instructionAr: "أكمل بحرف الجر المناسب للأسلوب الاسمي:",
+      template:
+        "___ der Ankunft melden Sie sich im Sekretariat. (عند الوصول) — ___ des Regens fand die Feier statt. (رغم المطر) — ___ Klärung der Frage brauchen wir Zeit. (لتوضيح)",
+      blanks: [
+        { correct: "Bei", options: ["Bei", "Wenn", "Mit"], errorType: "preposition" },
+        { correct: "Trotz", options: ["Trotz", "Obwohl", "Wegen"], errorType: "preposition" },
+        { correct: "Zur", options: ["Zur", "Damit", "Für"], errorType: "preposition" },
+      ],
+      explanation:
+        "لكل أداة ربط نظيرٌ من حروف الجر: wenn ← bei + Dativ، وobwohl ← trotz + Genitiv، وdamit ← zu + Dativ (zur Klärung). أدوات الربط تُتبع بجملة، وحروف الجر تُتبع باسم.",
+      errorType: "preposition",
+    },
+    {
+      id: "e15-nominal",
+      type: "error-correction",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      wrongSentence: "Nach die Prüfung fahren die Studenten nach Hause.",
+      wrongWord: "die",
+      correctWord: "der",
+      options: ["der", "die", "des", "dem"],
+      explanation:
+        "nach حرف جر يلزم Dativ دائماً، ومؤنث Dativ هو der: nach der Prüfung. (die نصب/رفع، وdes للمضاف المذكر والمحايد.)",
+      errorType: "case",
+    },
+    {
+      id: "e16-b2",
+      type: "word-ordering",
+      instructionAr: "رتّب الجملة (صفة مشتقة + مجهول مع فعل ناقص — الوحدتان 4 و2):",
+      tokens: ["Der", "eingereichte", "Antrag", "muss", "noch", "geprüft", "werden", "."],
+      correctSentence: "Der eingereichte Antrag muss noch geprüft werden.",
+      explanation:
+        "الصفة المشتقة من Partizip II تسبق الاسم (der eingereichte Antrag)، والمجهول مع الناقص يضع Partizip II + werden في آخر الجملة: muss ... geprüft werden.",
+      errorType: "word-order",
+    },
+    {
+      id: "e17-b2",
+      type: "multiple-choice",
+      instructionAr: "مزج قواعد B2 (درس b2-05 — الروابط المتقدمة): اختر الرابط:",
+      questionDe: "Man verbessert sein Deutsch, ___ man täglich liest.",
+      options: ["indem", "obwohl", "damit", "trotzdem"],
+      correctIndex: 0,
+      explanation:
+        "indem تبيّن *الوسيلة* (بأن): يتحسّن المرء بأن يقرأ يومياً. وobwohl للتنازل، وdamit للغاية، وtrotzdem ظرف رابط لا أداة جملة ثانوية.",
+      errorType: "grammar",
+    },
+    {
       id: "e10",
       type: "dictation",
       instructionAr: "استمع واكتب الجملة:",
@@ -477,6 +588,43 @@ export const lessonB210: Lesson = {
       ],
       explanation: "erwiesen + Ansicht nach + lässt sich sagen.",
       errorType: "grammar",
+    },
+    {
+      id: "m6",
+      type: "multiple-choice",
+      instructionAr: "الاختبار الختامي — نقل الكلام (الوحدة 1):",
+      questionDe: "Die Hochschule teilte mit, das Auswahlverfahren ___ im Mai.",
+      options: ["beginne", "beginnt", "begänne", "begann"],
+      correctIndex: 0,
+      explanation:
+        "النقل الرسمي المكتوب يلزم Konjunktiv I: beginnen ← es beginne. وbeginnt إخبار ينسب الكلام للكاتب، وbegänne صيغة Konjunktiv II، وbegann ماضٍ.",
+      errorType: "grammar",
+    },
+    {
+      id: "m7",
+      type: "multiple-choice",
+      instructionAr: "الاختبار الختامي — بدائل المجهول (الوحدة 3):",
+      questionDe: "Die Zulassungsbedingungen ___ sich online nachlesen.",
+      options: ["lassen", "können", "werden", "sind"],
+      correctIndex: 0,
+      explanation:
+        "lassen + sich + مصدر = بديل المجهول بمعنى «يمكن أن يُقرأ». وkönnen sich ليست بنية ألمانية هنا، وwerden يقتضي Partizip II (werden nachgelesen)، وsein يقتضي zu + مصدر.",
+      errorType: "grammar",
+    },
+    {
+      id: "m8",
+      type: "fill-blank",
+      instructionAr: "الاختبار الختامي — الأسلوب الاسمي وحروف الجر (الوحدتان 8 و10):",
+      template:
+        "___ der Verspätung des Zuges kam sie zu spät. (بسبب) — Ich bewerbe mich ___ einen Studienplatz. (على) — ___ der Ankunft bekommen Sie Ihren Ausweis. (عند)",
+      blanks: [
+        { correct: "Wegen", options: ["Wegen", "Weil", "Denn"], errorType: "preposition" },
+        { correct: "um", options: ["um", "für", "auf"], errorType: "preposition" },
+        { correct: "Bei", options: ["Bei", "Wenn", "Als"], errorType: "preposition" },
+      ],
+      explanation:
+        "wegen حرف جر + Genitiv (وweil/denn أدوات جملة)، وsich bewerben يلزمه um + منصوب لا für، وbei + Dativ يقابل wenn في الأسلوب الاسمي.",
+      errorType: "preposition",
     },
   ],
 
