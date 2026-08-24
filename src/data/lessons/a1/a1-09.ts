@@ -42,9 +42,9 @@ export const lessonA109: Lesson = {
       titleAr: "أيام الأسبوع والأشهر والفصول",
       titleDe: "Wochentage, Monate und Jahreszeiten",
       explanationAr:
-        "الأيام: Montag، Dienstag، Mittwoch (وسط الأسبوع!)، Donnerstag، Freitag، Samstag/Sonnabend، Sonntag. الأشهر: Januar، Februar، März، April، Mai، Juni، Juli، August، September، Oktober، November، Dezember. الفصول: der Frühling (ربيع)، der Sommer (صيف)، der Herbst (خريف)، der Winter (شتاء).",
+        "التقويم الألمانيّ ليس قائمةً تُحفظ بل نظامٌ يُفهم. وأسماء الأيام السبعة أقدم من الألمانية نفسها: نُقلت عن الرومان الذين سمّوا أيامهم بالكواكب، ثمّ استبدل الجرمانيون بآلهة روما آلهتَهم.\n\n**أوّلاً — الأيام السبعة وأصولها.**\n· **Montag** = يوم القمر (der Mond) — كما الإنجليزية Monday واللاتينية dies Lunae\n· **Dienstag** = يوم الإله Tyr إله الحرب\n· **Mittwoch** = **منتصف الأسبوع** (Mitte + Woche) — اليوم الوحيد الذي هرب من الأساطير إلى الحساب\n· **Donnerstag** = يوم الرعد (der Donner)، أي يوم الإله Thor\n· **Freitag** = يوم الإلهة Freya إلهة الحبّ\n· **Samstag** = من Sabbat العبريّ؛ وفي شمال ألمانيا يقولون **Sonnabend** حرفياً „مساء الأحد“\n· **Sonntag** = يوم الشمس (die Sonne)\nوكلّها **مذكّرة** بلا استثناء: der Montag, der Dienstag … لأنّ der Tag مذكّر، والكلمة المركّبة تأخذ جنس جزئها الأخير. وهذه قاعدة عامّة تنفعك في آلاف الكلمات.\n\n**ثانياً — الشهور الاثنا عشر.**\nJanuar · Februar · März · April · Mai · Juni · Juli · August · September · Oktober · November · Dezember.\nكلّها مذكّرة أيضاً (der Januar)، وكلّها لاتينية الأصل فتشبه نظائرها في لغاتٍ كثيرة. وفي الهاتف يقول الألمان **Juno** بدل Juni و**Julei** بدل Juli لئلّا يختلطا على السامع — حيلةٌ عملية تسمعها في المطارات والمواعيد.\n\n**ثالثاً — الفصول الأربعة.** der Frühling (الربيع) · der Sommer · der Herbst (الخريف) · der Winter. أربعتها مذكّرة، وهذا يسهّل الأمر: **الأيام والشهور والفصول كلّها مذكّرة**، فلا جدول جنسٍ تحفظه هنا.\n\n**رابعاً — التكرار بالحرف الصغير.** إذا أردت „كلّ اثنين“ فحوّل اليوم إلى ظرف بإضافة s وبحرفٍ صغير: **montags** · **dienstags** · **sonntags**. قارن: Am Montag arbeite ich (الاثنين القادم) مقابل Montags arbeite ich (كلّ اثنين). حرفٌ صغير وسينٌ واحدة تُغيّران المعنى من مرّةٍ إلى عادة.",
       whyAr:
-        "لماذا Mittwoch تعني «منتصف الأسبوع»؟ لأن الألمان رتبوا أيامهم: بعضها من الكواكب (Montag = يوم القمر، Sonntag = يوم الشمس)، وبعضها من الآلهة (Donnerstag = يوم ثور إله الرعد). حفظ هذه القصص يجعل الحفظ أسهل بكثير.",
+        "لماذا نُتعب أنفسنا بأصول الكلمات وقد كان يكفي الحفظ؟ لأنّ الذاكرة البشرية تحفظ القصّة ولا تحفظ القائمة. من عرف أنّ Donnerstag يوم الرعد لن ينساه أبداً، ومن حفظه رقماً رابعاً في قائمة سينساه بعد أسبوع. وهذا مبدأٌ تربويّ مُثبَت لا زخرفة.\n\nولماذا Mittwoch شاذّ عن إخوته؟ لأنّ الكنيسة في القرون الوسطى كرهت أن يحمل يومٌ اسم إله وثنيّ (كان Wodanstag على اسم Wodan)، فاستبدلت به الحساب المحايد „منتصف الأسبوع“. وهذا يفسّر لك أمراً عملياً: الأسبوع الألمانيّ يبدأ **الاثنين** لا الأحد، وإلّا لما كان الأربعاء وسطه. وتراه في كلّ تقويم ألمانيّ ورقيّ أو رقميّ.",
       table: {
         title: "الأيام والأشهر والفصول",
         columns: ["العربية", "الألمانية", "ملاحظة"],
@@ -60,20 +60,24 @@ export const lessonA109: Lesson = {
         ],
       },
       examples: [
-        { de: "Heute ist Montag.", ar: "اليوم الاثنين." },
-        { de: "Am Samstag gehe ich einkaufen.", ar: "يوم السبت أذهب للتسوق." },
-        { de: "Mein Geburtstag ist im Mai.", ar: "عيد ميلادي في مايو." },
-        { de: "Im Winter ist es kalt.", ar: "في الشتاء يكون الجو بارداً." },
-        { de: "Der Termin ist am Freitag um drei Uhr.", ar: "الموعد يوم الجمعة في الثالثة." },
+        {"de": "Heute ist Montag.", "ar": "اليوم الاثنين."},
+        {"de": "Am Samstag gehe ich einkaufen.", "ar": "يوم السبت أذهب للتسوّق."},
+        {"de": "Mein Geburtstag ist im Mai.", "ar": "عيد ميلادي في مايو."},
+        {"de": "Im Winter ist es kalt.", "ar": "في الشتاء يكون الجوّ بارداً."},
+        {"de": "Der Termin ist am Freitag um drei Uhr.", "ar": "الموعد يوم الجمعة في الثالثة."},
+        {"de": "Montags habe ich immer Deutschkurs.", "ar": "كلّ اثنين عندي درس ألمانية. (عادة ⇐ حرف صغير + s)"},
+        {"de": "In Norddeutschland sagt man Sonnabend statt Samstag.", "ar": "في شمال ألمانيا يقولون Sonnabend بدل Samstag."},
+        {"de": "Der Sommer ist meine Lieblingsjahreszeit.", "ar": "الصيف فصلي المفضّل. (der Sommer مذكّر)"},
       ],
       comparisonWithArabic:
-        "مثل العربية، الأسبوع يبدأ يوم الاثنين (وليس الأحد كما في الإنجليزية). Mittwoch = «منتصف الأسبوع» تماماً مثل عربيتنا «الأربعاء» التي تعني رابع يوم — كلاهما يعبر عن الترتيب!",
+        "العربية تُرقّم أيامها ترقيماً صافياً: الأحد (الأوّل) والاثنين (الثاني) والثلاثاء (الثالث) والأربعاء (الرابع) والخميس (الخامس)، ثمّ تخرج عن الحساب في الجمعة والسبت. والألمانية على العكس: كلّها أساطير إلّا Mittwoch وحده.\n\nونقطة التقاء طريفة: **الأربعاء = Mittwoch** كلاهما يشير إلى موقعٍ في الأسبوع لا إلى إله — لكنّ العربية تعدّه رابعاً من الأحد، والألمانية تعدّه وسطاً من الاثنين. والعدد نفسه بمرجعين مختلفين.\n\nوفخٌّ يقع فيه العربيّ كثيراً: „يوم الجمعة“ في العربية تحتاج كلمة „يوم“، فيقول المتعلّم Tag Freitag. والألمانية تكتفي بالاسم مجرّداً: Am Freitag — لأنّ Freitag يحمل Tag في آخره أصلاً.",
       eselsbruecke:
         "«الثلاثاء Dienstag فيه خدمة، والخميس Donnerstag فيه رعد، والأحد Sonntag فيه شمس» — أربع قصص صغيرة تحفظها كلها. و«ميت-فوخ = منتصف الأسبوع»: ميت (وسط) + فوخ (أسبوع).",
       commonMistakes: [
-        { wrong: "In Montag (قلت في بدل على)", right: "am Montag", whyAr: "مع الأيام نستخدم am دائماً: am Montag." },
-        { wrong: "Im Januar أم in Januar؟", right: "im Januar", whyAr: "الأشهر تأخذ im: im Januar (in+dem)." },
-        { wrong: "die Jahreszeit مؤنثة لكن جمعها die Jahreszeiten", right: "die Jahreszeiten (جمع -en)", whyAr: "كلمة مركبة: Jahr + Zeit → مؤنثة (die Zeit)." },
+        {"wrong": "Tag Freitag habe ich frei.", "right": "Am Freitag habe ich frei.", "whyAr": "ترجمة حرفية لـ„يوم الجمعة“. واسم اليوم الألمانيّ يحمل Tag في آخره أصلاً، فإضافة كلمة Tag تكرارٌ ركيك. والحرف الصحيح am لا غير."},
+        {"wrong": "Die Montag ist schwer.", "right": "Der Montag ist schwer.", "whyAr": "كلّ أيام الأسبوع مذكّرة لأنّ جزأها الأخير der Tag مذكّر، والكلمة المركّبة الألمانية تأخذ جنس جزئها الأخير دائماً. وهذه قاعدة تنفعك في آلاف المركّبات لا في الأيام وحدها."},
+        {"wrong": "Ich arbeite Montags.", "right": "Ich arbeite montags.", "whyAr": "حين يتحوّل اليوم إلى ظرف تكرار يفقد صفة الاسم فيُكتب بحرفٍ صغير: montags. والحرف الكبير يعني اليوم المعيَّن، والصغير يعني العادة المتكرّرة."},
+        {"wrong": "Im Montag habe ich Zeit.", "right": "Am Montag habe ich Zeit.", "whyAr": "im للشهور والفصول، وam للأيام والتواريخ. والخطأ يأتي من أنّ العربية تستعمل „في“ للاثنين ولمايو معاً، فينقل المتعلّم حرفاً واحداً إلى موضعين مختلفين."},
       ],
       relatedRuleComparison: {
         title: "am أم im؟",
@@ -85,9 +89,9 @@ export const lessonA109: Lesson = {
       titleAr: "الأعداد الترتيبية (Ordinalzahlen)",
       titleDe: "Die Ordinalzahlen: der erste, der zweite...",
       explanationAr:
-        "لترتيب الأشياء نستخدم الأعداد الترتيبية: der erste (الأول)، der zweite (الثاني)، der dritte (الثالث — شاذ!)، der vierte...، der fünfte... القاعدة: 1-19 نضيف -te (erste, zweite, dritte...)، من 20 فما فوق نضيف -ste (zwanzigste، dreißigste...). مع التاريخ: der erste Mai (الأول من مايو) تُكتب 1. Mai.",
+        "العدد الترتيبيّ هو ما يجيب عن سؤال **der wievielte?** (الكم؟ أي: أيّ واحدٍ في الترتيب؟). ولا يمكن أن تحدّد موعداً أو تعطي عنواناً أو تقول تاريخ ميلادك من دونه.\n\n**القاعدة في سطرين:**\n· من **1 إلى 19**: العدد + **te** ⟵ vier ⇐ vier**te** · fünf ⇐ fünf**te** · neunzehn ⇐ neunzehn**te**\n· من **20 فما فوق**: العدد + **ste** ⟵ zwanzig ⇐ zwanzig**ste** · hundert ⇐ hundert**ste**\nولماذا تنقلب te إلى ste عند العشرين؟ لسببٍ صوتيّ محض: zwanzigte ثقيلة على اللسان، والسين تفصل بين الجيم والتاء فتُسهّل النطق. جرّبها بنفسك وستسمع الفرق.\n\n**والشواذّ ثلاثة لا رابع لها:**\n· 1 ⇐ **erste** (لا einte)\n· 3 ⇐ **dritte** (لا dreite — لاحظ سقوط e من drei)\n· 7 ⇐ **siebte** (لا siebente — تسقط en اختصاراً)\nوثلاثة شواذّ في نظامٍ كامل حظٌّ عظيم إذا قارنته بالعربية التي تشذّ في „أوّل“ و„ثانٍ“ وتُغيّر البنية كلّها.\n\n**والنهاية تتحرّك مع الحالة** — وهذه أوّل مرّة ترى فيها الصفة تتصرّف:\n· الرفع: Heute ist **der erste** Mai.\n· بعد am (جرّ): Der Termin ist **am ersten** Mai.\n· النصب: Ich nehme **den ersten** Termin.\nالقاعدة العملية: **مع der تنتهي بـ e، ومع am أو den تنتهي بـ en.**\n\n**وفي الكتابة تكفي نقطة.** الرقم متبوعاً بنقطة يعني „ترتيبيّ“: 1. Mai تُقرأ der erste Mai. والنقطة ليست زينةً بل هي كلّ الفرق بين 3 (ثلاثة) و3. (الثالث).",
       whyAr:
-        "لماذا -te و-stه؟ لأن الألمانية تميز «الترتيب» بإضافة نهاية ثابتة: 4 → vierte (الرابع). شاهد الشواذ: erste (1)، dritte (3)، siebte (7) — ثلاثة شواذ احفظها.",
+        "لماذا نُعنى بالنقطة إلى هذا الحدّ؟ لأنّها في ألمانيا وثيقة رسمية. تكتب في استمارة البنك 3.5.1995 فتعني الثالث من مايو، ويقرؤها الأمريكيّ الخامس من مارس. وقد تُرفض معاملتك أو يُحجز لك موعدٌ خطأ بسبب نقطةٍ واحدة.\n\nولماذا تتحرّك النهاية بين e وen؟ لأنّ العدد الترتيبيّ ليس عدداً في الحقيقة بل **صفة**: der erste Mai بنيتها كبنية der schöne Mai. والصفة الألمانية تتبع حالة اسمها. فما تتعلّمه هنا ليس قاعدة تواريخ بل أوّل درسٍ في تصريف الصفات — وهو بابٌ سيتوسّع في A2 وB1. من أتقن ersten/erste اليوم وجد ذلك الباب مفتوحاً غداً.",
       table: {
         title: "الأعداد الترتيبية الأساسية",
         columns: ["العدد", "الترتيبي", "التاريخ"],
@@ -102,20 +106,24 @@ export const lessonA109: Lesson = {
         ],
       },
       examples: [
-        { de: "Heute ist der erste Mai.", ar: "اليوم الأول من مايو." },
-        { de: "Der Termin ist am dritten Juli.", ar: "الموعد في الثالث من يوليو." },
-        { de: "Das ist mein zweiter Besuch.", ar: "هذه زيارتي الثانية." },
-        { de: "Sie wohnt im vierten Stock.", ar: "هي تسكن في الطابق الرابع." },
-        { de: "Wir treffen uns am zwanzigsten November.", ar: "نتقابل في العشرين من نوفمبر." },
+        {"de": "Heute ist der erste Mai.", "ar": "اليوم الأوّل من مايو."},
+        {"de": "Der Termin ist am dritten Juli.", "ar": "الموعد في الثالث من يوليو. (am ⇐ ـen)"},
+        {"de": "Das ist mein zweiter Besuch.", "ar": "هذه زيارتي الثانية."},
+        {"de": "Sie wohnt im vierten Stock.", "ar": "هي تسكن في الطابق الرابع."},
+        {"de": "Wir treffen uns am zwanzigsten November.", "ar": "نلتقي في العشرين من نوفمبر. (20 ⇐ ste)"},
+        {"de": "Der siebte Tag heißt Sonntag.", "ar": "اليوم السابع اسمه الأحد. (شاذّ: siebte)"},
+        {"de": "Ich nehme den ersten Termin.", "ar": "آخذ الموعد الأوّل. (نصب ⇐ den ersten)"},
+        {"de": "Der Kurs beginnt am achten Januar.", "ar": "الدورة تبدأ في الثامن من يناير."},
       ],
       comparisonWithArabic:
-        "العربية: أول، ثانٍ، ثالث... والألمانية: erste، zweite، dritte... نفس الفكرة. والشاذان الكبيران: dritte (3) وsiebte (7) — تماماً مثل «ثالث» في العربية لا تتبع القاعدة.",
+        "العربية تُبدّل بنية الكلمة كلّها لتصنع الترتيبيّ: واحد ⇐ أوّل، اثنان ⇐ ثانٍ، ثلاثة ⇐ ثالث. اشتقاقٌ لا إلصاق. والألمانية تُبقي العدد كما هو وتُلصق به te أو ste، فالعمل الذهنيّ فيها أخفّ بكثير.\n\nلكنّ العربية تُريح المتعلّم في موضعٍ تُتعبه الألمانية فيه: نقول „في الثالث من مايو“ و„اليوم الثالث من مايو“ دون أن تتبدّل „الثالث“. والألمانية تفرض der dritte مرّةً وam dritten مرّةً — فرقٌ في النهاية يقابله في العربية صفر تغيير.\n\nوترتيب الكتابة معكوس بينهما أيضاً: العربية تكتب اليوم فالشهر فالسنة، والألمانية كذلك (3.5.2026) — وهذا **تطابق** يريحك، خلافاً للإنجليزية الأمريكية التي تقدّم الشهر.",
       eselsbruecke:
         "«1-19: +te، 20+: +ste» — وفقط ثلاثة شواذ: 1 erste، 3 dritte، 7 siebte. احفظهم كأغنية: «إيرستِه، تسڤايته، دريتِّه، ڤيرته».",
       commonMistakes: [
-        { wrong: "der dritte → dritete (مضاعفة القاعدة)", right: "der dritte (شاذ بلا -te إضافية)", whyAr: "dritte جاهزة: دري + tte." },
-        { wrong: "التاريخ: 5. Mai بدون أداة", right: "der 5. Mai (بأداة)", whyAr: "نقول: Heute ist der fünfte Mai — بأداة der." },
-        { wrong: "خلط vierte (4) مع vierzigste (40)", right: "vierte = 4، vierzigste = 40", whyAr: "الأساس 4 → vierte، والأساس 40 → vierzigste." },
+        {"wrong": "der dreite Mai", "right": "der dritte Mai", "whyAr": "drei تفقد حرف e عند صياغة الترتيبيّ فتصير dritte لا dreite. وهو أوّل الشواذّ الثلاثة وأكثرها وروداً لأنّه يقع في كلّ شهر مرّة."},
+        {"wrong": "am zwanzigte Mai", "right": "am zwanzigsten Mai", "whyAr": "خطآن في كلمة: العشرون فما فوق يأخذ ste لا te، وبعد am تُضاف النهاية en. فالصواب zwanzig + ste + n. وتفكيك الكلمة إلى أجزائها الثلاثة يمنع الخطأ."},
+        {"wrong": "Heute ist am fünften Mai.", "right": "Heute ist der fünfte Mai.", "whyAr": "«اليوم هو…» جملة خبرية بالرفع فلا حرف جرّ فيها. وam موضعها جواب سؤال wann? لا جواب سؤال der wievielte?. والخلط بينهما أشيع أخطاء التاريخ."},
+        {"wrong": "Ich habe am 3 Mai einen Termin.", "right": "Ich habe am 3. Mai einen Termin.", "whyAr": "النقطة بعد الرقم هي التي تجعله ترتيبياً. وبدونها تُقرأ الجملة «في ثلاثة مايو» وهي بلا معنى. النقطة إذاً حرفٌ لا علامة ترقيم."},
       ],
       relatedRuleComparison: {
         title: "الترتيبي مع النصب",
@@ -127,9 +135,9 @@ export const lessonA109: Lesson = {
       titleAr: "كتابة التاريخ ونطقه: der wievielte؟",
       titleDe: "Das Datum: Der wievielte ist heute?",
       explanationAr:
-        "الأعداد الترتيبية التي أخذتها للتوّ تُستعمل أكثر ما تُستعمل في التاريخ — وهنا فرق حاسم بين صيغتين:\n\n· **السؤال عن اليوم**: Der wievielte ist heute? ← Heute ist der dritte Mai. (بالرفع، مع der)\n· **تحديد موعد**: Wann? ← Am dritten Mai. (بحرف الجر an + Dativ ⇒ am، والنهاية ـen)\n\nوفي الكتابة تُختصر بنقطة بعد الرقم: der 3. Mai · am 3. Mai. النقطة نفسها هي التي تقول «ترتيبي» — فلا تُهملها.",
+        "الأعداد الترتيبية التي أخذتها للتوّ تُستعمل أكثر ما تُستعمل في التاريخ — وهنا فرقٌ حاسم بين صيغتين لا يُغتفر الخلط بينهما.\n\n**أوّلاً — سؤال اليوم مقابل تحديد الموعد.**\n· **السؤال عن تاريخ اليوم**: Der wievielte ist heute? ⇐ Heute ist **der dritte** Mai. (رفع، مع der، والنهاية ـe)\n· **تحديد موعد**: Wann? ⇐ **Am dritten** Mai. (an + Dativ ⇒ am، والنهاية ـen)\nسؤالان مختلفان يستدعيان صيغتين مختلفتين. ومن أجاب عن der wievielte بـam فقد أجاب عن سؤالٍ لم يُطرح.\n\n**ثانياً — الكتابة بالنقطة.** der 3. Mai · am 3. Mai. النقطة نفسها هي التي تقول „ترتيبيّ“، فلا تُهملها. وترتيب الأرقام في ألمانيا: **يوم. شهر. سنة** ⟵ 3.5.2026 = الثالث من مايو.\n\n**ثالثاً — المدى بين تاريخين: vom … bis zum …**\nDer Kurs geht **vom** ersten **bis zum** dritten Mai. لاحظ أنّ الطرفين كليهما في حالة الجرّ، فكلاهما ينتهي بـ ـen: vom **ersten** bis zum **dritten**. والتركيب متلازم: من قال vom لزمه bis zum، ولا يجوز حذف zum.\n\n**رابعاً — سنة الميلاد: الاستثناء الذي يخالف كلّ ما سبق.**\nالسنة تُقال **عاريةً بلا حرف جرّ**: Ich bin 1995 geboren. أو بالصيغة الكاملة im Jahr 1995. أمّا im 1995 فخليطٌ خاطئ. وسبب الشذوذ تاريخيّ: السنة في الألمانية القديمة كانت ظرفاً في ذاتها لا تحتاج حرفاً.\n\nوتُقرأ سنوات القرن العشرين بالمئات لا بالآلاف: 1995 = neunzehnhundertfünfundneunzig (تسعة عشر مئة…) لا eintausendneunhundert… أمّا سنوات هذا القرن فتُقرأ عادية: 2026 = zweitausendsechsundzwanzig.",
       whyAr:
-        "لماذا تتغيّر النهاية من dritte إلى dritten؟ لأنّ الأعداد الترتيبية تتصرّف كالصفات: تتبع حالة الاسم. مع der (رفع) تنتهي بـ ـe، ومع am (جرّ) تنتهي بـ ـen. هذه أوّل مرّة ترى فيها الصفة تُغيّر نهايتها حسب الحالة، وهو باب كامل سيتوسّع في B1.",
+        "لماذا تتغيّر النهاية من dritte إلى dritten؟ لأنّ الأعداد الترتيبية تتصرّف كالصفات: تتبع حالة الاسم. مع der (رفع) تنتهي بـ ـe، ومع am (جرّ) تنتهي بـ ـen. هذه أوّل مرّة ترى فيها الصفة تُغيّر نهايتها حسب الحالة، وهو بابٌ كامل سيتوسّع في B1.\n\nولماذا يُصرّ الألمان على der wievielte بدل السؤال المباشر Welches Datum? الذي يبدو أبسط؟ لأنّ wievielte تسأل عن **الرتبة** لا عن **الاسم**: أنت لا تسأل ما اسم اليوم بل كم عدده في الشهر. والصيغتان مسموعتان لكنّ الأولى أشيع بكثير في الكلام اليوميّ، وهي التي يستعملها الممتحن في Goethe A1.",
       table: {
         title: "الصيغتان جنباً إلى جنب",
         columns: ["الموقف", "الصيغة", "مثال"],
@@ -141,27 +149,23 @@ export const lessonA109: Lesson = {
         ],
       },
       examples: [
-        { de: "Der wievielte ist heute? — Heute ist der siebte April.", ar: "ما تاريخ اليوم؟ — اليوم السابع من أبريل." },
-        { de: "Mein Geburtstag ist am zwölften Oktober.", ar: "عيد ميلادي في الثاني عشر من أكتوبر." },
-        { de: "Der Kurs geht vom ersten bis zum dritten Mai.", ar: "الدورة من الأول إلى الثالث من مايو." },
-        { de: "Ich habe am 3. Januar einen Termin beim Arzt.", ar: "لديّ موعد عند الطبيب في الثالث من يناير." },
-        { de: "Sie ist 1998 geboren.", ar: "وُلدت عام 1998." },
+        {"de": "Der wievielte ist heute? — Heute ist der siebte April.", "ar": "ما تاريخ اليوم؟ — اليوم السابع من أبريل."},
+        {"de": "Mein Geburtstag ist am zwölften Oktober.", "ar": "عيد ميلادي في الثاني عشر من أكتوبر."},
+        {"de": "Der Kurs geht vom ersten bis zum dritten Mai.", "ar": "الدورة من الأوّل إلى الثالث من مايو."},
+        {"de": "Ich habe am 3. Januar einen Termin beim Arzt.", "ar": "لديّ موعد عند الطبيب في الثالث من يناير."},
+        {"de": "Sie ist 1998 geboren.", "ar": "وُلدت عام 1998. (بلا حرف جرّ)"},
+        {"de": "Vom fünften bis zum zehnten August habe ich Urlaub.", "ar": "من الخامس إلى العاشر من أغسطس عندي إجازة."},
+        {"de": "Der wievielte ist morgen? — Morgen ist der neunte.", "ar": "ما تاريخ الغد؟ — غداً التاسع."},
       ],
       comparisonWithArabic:
-        "العربية تقول «في الثالث من مايو» بحرف جرّ واحد لا يتغيّر، وتقول «اليوم الثالث من مايو» دون أن يتبدّل شكل «الثالث». الألمانية تُبدّل النهاية حسب الموضع: der dritte مقابل am dritten. وانتبه لفخّ آخر: الألمان يكتبون اليوم قبل الشهر (3.5. = الثالث من مايو) لا الشهر قبل اليوم.",
+        "العربية تقول „في الثالث من مايو“ بحرف جرٍّ واحد لا يتغيّر، وتقول „اليوم الثالث من مايو“ دون أن يتبدّل شكل „الثالث“. والألمانية تُبدّل النهاية حسب الموضع: der dritte مقابل am dritten.\n\nوترتيب الكتابة يتطابق بين اللغتين — اليوم فالشهر فالسنة — وهذا يريحك خلافاً للإنجليزية الأمريكية التي تقدّم الشهر (5/3 عندها = الخامس من مارس).\n\nوفي قراءة السنوات فرقٌ لافت: العربية تقول „ألف وتسعمئة وخمسة وتسعين“، والألمانية تقول „تسعة عشر مئة وخمسة وتسعين“ — تعدّ المئات لا الآلاف. وهذا يربك العربيّ حين يسمع تاريخ ميلاد في مقابلة رسمية.",
       eselsbruecke:
         "«am تجرّ الـ n»: كلّما قلت am وجب أن تسحب معك نوناً في آخر العدد — am dritten، am ersten، am zwanzigsten. أمّا der فيكتفي بـ ـe.",
       commonMistakes: [
-        {
-          wrong: "Mein Geburtstag ist am dritte Mai.",
-          right: "Mein Geburtstag ist am dritten Mai.",
-          whyAr: "بعد am تأخذ الصفة الترتيبية النهاية ـen دائماً. القاعدة صارمة بلا استثناء هنا.",
-        },
-        {
-          wrong: "Heute ist am fünften Mai.",
-          right: "Heute ist der fünfte Mai.",
-          whyAr: "«اليوم هو…» جملة خبرية بالرفع، فلا حرف جرّ فيها: der fünfte. أمّا am فلتحديد موعد.",
-        },
+        {"wrong": "Mein Geburtstag ist am dritte Mai.", "right": "Mein Geburtstag ist am dritten Mai.", "whyAr": "بعد am تأخذ الصفة الترتيبية النهاية ـen دائماً. القاعدة صارمة بلا استثناء هنا، لأنّ am اختصار an + dem وهو جرٌّ يفرض نهايته على الصفة."},
+        {"wrong": "Heute ist am fünften Mai.", "right": "Heute ist der fünfte Mai.", "whyAr": "«اليوم هو…» جملة خبرية بالرفع، فلا حرف جرّ فيها: der fünfte. أمّا am فلتحديد موعد جواباً لسؤال wann?. والخلط بين السؤالين أشيع أخطاء التاريخ عند المبتدئين."},
+        {"wrong": "Ich bin im 1995 geboren.", "right": "Ich bin 1995 geboren.", "whyAr": "سنة الميلاد تُقال عاريةً بلا حرف جرّ، أو بالصيغة الكاملة im Jahr 1995. أمّا im 1995 فخليطٌ بين الصيغتين لا تقوله الألمانية، وهو من أشيع أخطاء الاستمارات الرسمية."},
+        {"wrong": "vom ersten bis dritten Mai", "right": "vom ersten bis zum dritten Mai", "whyAr": "التركيب مزدوج ومتلازم: vom … bis zum. وحذف zum يترك bis بلا أداة فتصير العبارة ناقصة. احفظهما وحدةً واحدة لا حرفين منفصلين."},
       ],
       relatedRuleComparison: {
         title: "am للتاريخ واليوم، um للساعة، im للشهر",
@@ -169,7 +173,270 @@ export const lessonA109: Lesson = {
           "ثلاثة حروف لا تختلط: am + يوم أو تاريخ (am Montag, am 3. Mai) · um + ساعة (um neun Uhr) · im + شهر أو فصل (im Mai, im Sommer). جملة واحدة تجمعها: Am dritten Mai um neun Uhr — im Frühling.",
       },
     },
+    {
+      id: "t4",
+      titleAr: "حجز الموعد وإلغاؤه: von … bis · ab · gegen",
+      titleDe: "Einen Termin vereinbaren, absagen und verschieben",
+      explanationAr:
+        "معرفة أسماء الأيام لا تكفي لحجز موعد. الموعد الألمانيّ حوارٌ له أدواته: تحديدٌ، ثمّ اعتذارٌ، ثمّ اقتراحٌ بديل. وهذه الأدوات أربعة حروف وثلاث عبارات لا أكثر.\n\n**أوّلاً — حروف المدى الزمنيّ الأربعة.**\n· **von … bis …** = من … إلى … : Die Praxis ist von acht bis achtzehn Uhr offen.\n· **ab** = ابتداءً من : Ab Montag habe ich Zeit. (وما بعده كلّه مفتوح)\n· **bis** وحدها = حتّى : Ich arbeite bis sechs.\n· **gegen** = نحو، تقريباً : Ich komme gegen drei. (الثالثة إلّا قليلاً أو بعدها بقليل)\nوأضف إليها **zwischen … und …**: Zwischen zwei und vier bin ich da.\n\n**ثانياً — الحرفان الخطران: ab وbis.**\nab تفتح المدى ولا تغلقه، وbis تغلقه ولا تفتحه. فقولك Ab Montag habe ich Urlaub يعني أنّ الإجازة تبدأ الاثنين وتمتدّ؛ وقولك Bis Montag habe ich Urlaub يعني أنّها تنتهي الاثنين. حرفٌ واحد يقلب المعنى رأساً على عقب — ولهذا يُخطئ المتعلّم في العيادة فيأتي في اليوم الخطأ.\n\n**ثالثاً — ثلاث عبارات تُدير الحوار كلّه.**\n· الطلب: **Ich hätte gern einen Termin.** (أودّ موعداً — أدبٌ لازم، لا Ich will)\n· الاعتذار: **Es tut mir leid, da kann ich nicht.** (آسف، لا أستطيع حينها)\n· الاقتراح البديل: **Geht es auch am Mittwoch?** (هل يمكن الأربعاء أيضاً؟)\n\nوانتبه إلى الكلمة الصغيرة **da** في العبارة الثانية: معناها هنا „في ذلك الوقت“ لا „هناك“. وهي أخصر طريقة للإشارة إلى الموعد المرفوض دون إعادة ذكره.\n\n**رابعاً — الفعلان المتقابلان:** einen Termin **vereinbaren** (يتّفق على موعد) مقابل einen Termin **absagen** (يُلغي موعداً) أو **verschieben** (يؤجّله). والثلاثة تُبنى مع Termin كما يُبنى „الموعد“ مع „يحجز/يلغي“ في العربية.",
+      whyAr:
+        "لماذا نفرد كتلةً كاملةً لعبارات قد تبدو مفرداتٍ لا قواعد؟ لأنّ امتحان Goethe A1 في قسم Sprechen Teil 3 يطلب منك حرفياً أن تتّفق مع زميلك على موعد: بطاقةٌ فيها صورة ساعة، وعليك أن تقترح وترفض وتقبل. ومن يعرف أسماء الأيام ولا يعرف Geht es auch am …? يقف صامتاً أمام الممتحن.\n\nولماذا gegen لا um؟ لأنّ الألمانية تفرّق بين الموعد الملزم والتقريبيّ تفريقاً اجتماعياً لا نحوياً: um drei يعني الثالثة تماماً وتأخّرك عنها اعتذارٌ واجب، وgegen drei يمنحك هامشاً معلَناً. اختيار الحرف إذاً وعدٌ ضمنيّ — وهذه هي الدقّة الألمانية في اللغة قبل السلوك.",
+      table: {
+        title: "حروف المدى الزمنيّ",
+        columns: ["الحرف", "المعنى", "مثال"],
+        rows: [
+          { label: "von … bis …", cells: ["من … إلى … (مدى مغلق)", "Von neun bis zwölf."] },
+          { label: "ab", cells: ["ابتداءً من (مدى مفتوح)", "Ab Montag habe ich Zeit."] },
+          { label: "bis", cells: ["حتّى (نهاية فقط)", "Ich arbeite bis sechs."] },
+          { label: "gegen", cells: ["نحو، تقريباً", "Ich komme gegen drei."] },
+          { label: "zwischen … und …", cells: ["بين … و…", "Zwischen zwei und vier."] },
+        ],
+      },
+      examples: [
+        { de: "Guten Tag, ich hätte gern einen Termin.", ar: "نهارك سعيد، أودّ موعداً." },
+        { de: "Die Praxis ist von acht bis achtzehn Uhr geöffnet.", ar: "العيادة مفتوحة من الثامنة إلى السادسة مساءً." },
+        { de: "Ab Montag habe ich wieder Zeit.", ar: "ابتداءً من الاثنين أصير متفرّغاً من جديد." },
+        { de: "Es tut mir leid, da kann ich nicht.", ar: "آسف، لا أستطيع في ذلك الوقت." },
+        { de: "Geht es auch am Mittwoch um zehn?", ar: "هل يمكن الأربعاء في العاشرة أيضاً؟" },
+        { de: "Ich komme gegen drei Uhr.", ar: "سآتي نحو الثالثة." },
+        { de: "Ich muss den Termin leider absagen.", ar: "للأسف عليّ إلغاء الموعد." },
+        { de: "Können wir den Termin verschieben?", ar: "هل يمكننا تأجيل الموعد؟" },
+      ],
+      comparisonWithArabic:
+        "العربية تقول „من الثامنة إلى السادسة“ بحرفين، والألمانية von … bis بحرفين كذلك — تطابقٌ مريح. لكنّ الفخّ في ab: العربية تؤدّي معناها بـ„ابتداءً من“ أو „من“ نفسها، فيميل العربيّ إلى استعمال von في الموضعين فيقول Von Montag habe ich Zeit وهي ناقصة، لأنّ von تنتظر bis بعدها ولا تقف وحدها في المدى المفتوح.\n\nوفي الاعتذار فرقٌ ثقافيّ لا لغويّ: العربية تعتذر بالدعاء والمجاملة الطويلة، والألمانية تكتفي بـEs tut mir leid ثمّ تنتقل فوراً إلى البديل. والإطالة هنا تُفهَم تردّداً لا تهذيباً.",
+      eselsbruecke:
+        "**ab يفتح وbis يغلق**: تخيّل ab باباً مفتوحاً على ما بعده، وbis جداراً يقف عنده الزمن. وvon … bis غرفةٌ لها باب وجدار. أمّا gegen فسحابةٌ حول الساعة: لا تُمسك بها تماماً.",
+      commonMistakes: [
+        {
+          wrong: "Von Montag habe ich Zeit.",
+          right: "Ab Montag habe ich Zeit.",
+          whyAr: "von لا تقف وحدها في المدى المفتوح، بل تنتظر bis لتُغلقه. والمدى المفتوح — ما بعد يومٍ ما إلى غير نهاية — حرفه ab وحده. ومصدر الخطأ أنّ العربية تؤدّي المعنيين بـ„من“ نفسها.",
+        },
+        {
+          wrong: "Ich will einen Termin.",
+          right: "Ich hätte gern einen Termin.",
+          whyAr: "wollen تصريحٌ بالإرادة يُسمع في العيادة فظّاً كأنّك تأمر. وhätte gern صيغة مجاملة ثابتة يستعملها الألمان في كلّ طلب. وليست ترفاً: نبرتها هي التي تفتح لك الباب.",
+        },
+        {
+          wrong: "Es tut mir leid, dort kann ich nicht.",
+          right: "Es tut mir leid, da kann ich nicht.",
+          whyAr: "dort ظرف مكان (هناك) بينما da هنا ظرف زمان يحيل على الموعد المذكور. وترجمة „هناك“ حرفياً تُنتج جملةً يفهم منها المخاطب أنّك تتكلّم عن مكان العيادة لا عن ساعتها.",
+        },
+        {
+          wrong: "Ich komme um circa drei Uhr.",
+          right: "Ich komme gegen drei Uhr.",
+          whyAr: "um تعني الدقّة، وcirca تعني التقريب، فاجتماعهما تناقض. والألمانية أعدّت لهذا حرفاً واحداً هو gegen يحمل التقريب في ذاته دون حاجة إلى كلمة إضافية.",
+        },
+      ],
+      relatedRuleComparison: {
+        title: "um للساعة · am لليوم · von…bis للمدى",
+        content:
+          "رأيت um للساعة وam لليوم وim للشهر. وهذه الكتلة تضيف البُعد الرابع: **المدى** لا اللحظة. فحين تسأل Wann? تجيب بـum أو am؛ وحين تسأل **Wie lange?** (كم من الوقت؟) تجيب بـvon … bis أو ab. سؤالان مختلفان لا يُخلط جوابهما: Am Montag um neun — von neun bis zehn.",
+      },
+    },
   ],
+  reading: {
+    "id": "read-a1-09",
+    "titleDe": "Ein Termin beim Zahnarzt",
+    "titleAr": "موعد عند طبيب الأسنان",
+    "textType": "dialog",
+    "paragraphs": [
+      "Nadia hat Zahnschmerzen. Sie sucht die Telefonnummer von der Zahnarztpraxis Dr. Klein und ruft an. Es ist Dienstag, der siebte April, halb neun am Morgen.",
+      "Praxis Dr. Klein, guten Morgen! — Guten Morgen, mein Name ist Nadia Belhadj. Ich habe Zahnschmerzen und ich hätte gern einen Termin. — Waren Sie schon einmal bei uns? — Nein, ich bin neu hier.",
+      "Kein Problem. Wann haben Sie Zeit? Wir sind von acht bis achtzehn Uhr für Sie da. — Am Montag und am Mittwoch arbeite ich bis sechs. Aber ab Donnerstag habe ich Urlaub.",
+      "Dann passt der Donnerstag sehr gut. Geht es am neunten April um zehn Uhr? — Einen Moment bitte ... Nein, es tut mir leid, da kann ich leider nicht. Um zehn kommt der Techniker zu mir nach Hause.",
+      "Kein Problem. Und gegen vierzehn Uhr? — Ja, das passt perfekt! Der neunte April um vierzehn Uhr. — Sehr gut. Und bringen Sie bitte Ihre Versichertenkarte mit.",
+      "Vielen Dank! Und wenn ich den Termin verschieben muss? — Dann rufen Sie bitte einen Tag vorher an. Wir sagen den Termin dann ab und finden einen neuen. Bis Donnerstag, Frau Belhadj! — Bis Donnerstag!"
+    ],
+    "paragraphsAr": [
+      "نادية تشكو ألماً في أسنانها. تبحث عن رقم هاتف عيادة الدكتور كلاين وتتّصل. اليوم الثلاثاء، السابع من أبريل، الثامنة والنصف صباحاً.",
+      "عيادة الدكتور كلاين، صباح الخير! — صباح الخير، اسمي نادية بالحاج. أشكو ألماً في الأسنان وأودّ موعداً. — هل زرتِنا من قبل؟ — لا، أنا جديدة هنا.",
+      "لا مشكلة. متى عندك وقت؟ نحن في خدمتك من الثامنة إلى السادسة مساءً. — الاثنين والأربعاء أعمل حتّى السادسة. لكن ابتداءً من الخميس عندي إجازة.",
+      "إذاً الخميس يناسب جداً. هل يمكن في التاسع من أبريل في العاشرة؟ — لحظة من فضلك… لا، آسفة، لا أستطيع في ذلك الوقت للأسف. في العاشرة يأتي الفنّيّ إلى بيتي.",
+      "لا مشكلة. وماذا عن نحو الثانية بعد الظهر؟ — نعم، هذا يناسب تماماً! التاسع من أبريل في الثانية. — ممتاز. وأحضري بطاقة التأمين من فضلك.",
+      "شكراً جزيلاً! وإن اضطررت إلى تأجيل الموعد؟ — عندئذٍ اتّصلي قبله بيوم من فضلك. نلغي الموعد ونجد موعداً جديداً. إلى الخميس يا سيّدة بالحاج! — إلى الخميس!"
+    ],
+    "glossary": [
+      {
+        "de": "die Zahnschmerzen (Pl.)",
+        "ar": "ألم الأسنان",
+        "noteAr": "تُستعمل بالجمع دائماً: Ich habe Zahnschmerzen."
+      },
+      {
+        "de": "die Praxis, Praxen",
+        "ar": "عيادة",
+        "noteAr": "عيادة الطبيب الخاصّة، لا المستشفى (das Krankenhaus)."
+      },
+      {
+        "de": "ruft an (anrufen)",
+        "ar": "يتّصل هاتفياً",
+        "noteAr": "فعل منفصل: ruft … an."
+      },
+      {
+        "de": "ich hätte gern",
+        "ar": "أودّ",
+        "noteAr": "صيغة الطلب المهذّبة الثابتة."
+      },
+      {
+        "de": "von acht bis achtzehn Uhr",
+        "ar": "من الثامنة إلى السادسة مساءً",
+        "noteAr": "مدى مغلق: von … bis."
+      },
+      {
+        "de": "ab Donnerstag",
+        "ar": "ابتداءً من الخميس",
+        "noteAr": "مدى مفتوح لا نهاية له."
+      },
+      {
+        "de": "der Urlaub",
+        "ar": "إجازة",
+        "noteAr": "إجازة العمل؛ وعطلة المدرسة die Ferien."
+      },
+      {
+        "de": "es tut mir leid",
+        "ar": "آسف/آسفة",
+        "noteAr": "صيغة الاعتذار المعيارية."
+      },
+      {
+        "de": "gegen vierzehn Uhr",
+        "ar": "نحو الثانية بعد الظهر",
+        "noteAr": "تقريب لا تحديد."
+      },
+      {
+        "de": "die Versichertenkarte",
+        "ar": "بطاقة التأمين الصحّيّ",
+        "noteAr": "يطلبها كلّ طبيب في ألمانيا."
+      },
+      {
+        "de": "verschieben",
+        "ar": "يؤجّل",
+        "noteAr": "ينقل الموعد إلى وقت آخر."
+      },
+      {
+        "de": "sagen … ab (absagen)",
+        "ar": "يُلغي",
+        "noteAr": "فعل منفصل: Wir sagen den Termin ab."
+      }
+    ],
+    "questions": [
+      {
+        "id": "rq1",
+        "type": "multiple-choice",
+        "instructionAr": "أجب عن السؤال بحسب النصّ:",
+        "questionDe": "Warum ruft Nadia in der Praxis an?",
+        "options": [
+          "Sie hat Zahnschmerzen.",
+          "Sie sucht Arbeit.",
+          "Sie will einen Urlaub buchen.",
+          "Sie hat ihre Karte verloren."
+        ],
+        "correctIndex": 0,
+        "errorType": "vocabulary",
+        "paragraph": 0,
+        "explanation": "الفقرة الأولى تقول Nadia hat Zahnschmerzen — ولهذا تتّصل بالعيادة."
+      },
+      {
+        "id": "rq2",
+        "type": "multiple-choice",
+        "instructionAr": "أجب عن السؤال بحسب النصّ:",
+        "questionDe": "Wie lange ist die Praxis geöffnet?",
+        "options": [
+          "Von acht bis achtzehn Uhr",
+          "Nur am Vormittag",
+          "Von neun bis zwölf Uhr",
+          "Ab vierzehn Uhr"
+        ],
+        "correctIndex": 0,
+        "errorType": "preposition",
+        "paragraph": 2,
+        "explanation": "السكرتيرة تقول Wir sind von acht bis achtzehn Uhr für Sie da — مدى مغلق بحرفَي von … bis."
+      },
+      {
+        "id": "rq3",
+        "type": "multiple-choice",
+        "instructionAr": "أجب عن السؤال بحسب النصّ:",
+        "questionDe": "Warum passt zehn Uhr am Donnerstag nicht?",
+        "options": [
+          "Ein Techniker kommt zu ihr nach Hause.",
+          "Sie muss arbeiten.",
+          "Sie ist im Urlaub.",
+          "Die Praxis ist zu."
+        ],
+        "correctIndex": 0,
+        "errorType": "vocabulary",
+        "paragraph": 3,
+        "explanation": "تقول Um zehn kommt der Techniker zu mir nach Hause — فترفض الموعد بـ es tut mir leid, da kann ich nicht."
+      },
+      {
+        "id": "rq4",
+        "type": "multiple-choice",
+        "instructionAr": "أجب عن السؤال بحسب النصّ:",
+        "questionDe": "Wann ist der Termin am Ende?",
+        "options": [
+          "Am neunten April um vierzehn Uhr",
+          "Am siebten April um zehn Uhr",
+          "Am Montag um sechs Uhr",
+          "Am neunten April um zehn Uhr"
+        ],
+        "correctIndex": 0,
+        "errorType": "grammar",
+        "paragraph": 4,
+        "explanation": "الاتّفاق النهائيّ: der neunte April um vierzehn Uhr — والتاريخ ترتيبيّ بالنقطة 9."
+      },
+      {
+        "id": "rq5",
+        "type": "multiple-choice",
+        "instructionAr": "أجب عن السؤال بحسب النصّ:",
+        "questionDe": "Was muss Nadia tun, wenn sie den Termin nicht schafft?",
+        "options": [
+          "Einen Tag vorher anrufen",
+          "Nichts tun",
+          "Eine E-Mail schreiben",
+          "Am selben Tag kommen"
+        ],
+        "correctIndex": 0,
+        "errorType": "vocabulary",
+        "paragraph": 5,
+        "explanation": "الجواب في الفقرة الأخيرة: Dann rufen Sie bitte einen Tag vorher an — الاتّصال قبل الموعد بيوم."
+      }
+    ],
+    "redemittel": [
+      {
+        "de": "Ich hätte gern einen Termin.",
+        "ar": "أودّ موعداً."
+      },
+      {
+        "de": "Wann haben Sie Zeit?",
+        "ar": "متى عندك وقت؟"
+      },
+      {
+        "de": "Wir sind von … bis … für Sie da.",
+        "ar": "نحن في خدمتك من … إلى …"
+      },
+      {
+        "de": "Geht es am … um … Uhr?",
+        "ar": "هل يمكن في … الساعة …؟"
+      },
+      {
+        "de": "Es tut mir leid, da kann ich nicht.",
+        "ar": "آسف، لا أستطيع في ذلك الوقت."
+      },
+      {
+        "de": "Ja, das passt perfekt!",
+        "ar": "نعم، هذا يناسب تماماً!"
+      },
+      {
+        "de": "Können wir den Termin verschieben?",
+        "ar": "هل يمكننا تأجيل الموعد؟"
+      },
+      {
+        "de": "Ich muss den Termin leider absagen.",
+        "ar": "للأسف عليّ إلغاء الموعد."
+      }
+    ],
+    "discussionAr": "احكِ عن آخر موعدٍ حجزته: متى كان ومع من؟ وهل حدث أن اضطررت إلى تأجيله أو إلغائه؟ اكتب الحوار بالألمانية مستعملاً von … bis وab وgegen وثلاث عبارات من قائمة Redemittel أعلاه."
+  },
+
   listening: {
     items: [
       {
@@ -463,6 +730,19 @@ export const lessonA109: Lesson = {
       explanation: "الانتقال من der zehnte (رفع) إلى am zehnten (بعد حرف الجر) هو جوهر التمرين.",
       errorType: "case",
     },
+    {"id": "e16", "type": "multiple-choice", "instructionAr": "اختر الحرف الصحيح للمدى الزمنيّ:", "questionDe": "Die Praxis ist ___ acht ___ achtzehn Uhr geöffnet.", "options": ["von … bis", "ab … bis", "in … zu", "um … bis"], "correctIndex": 0, "errorType": "preposition", "explanation": "المدى المغلق تركيبه ثابت: von … bis …. وab لا تُستعمل مع bis لأنّها للمدى المفتوح."},
+    {"id": "e17", "type": "multiple-choice", "instructionAr": "أيّ جملة تعني أنّ الإجازة تبدأ الاثنين وتستمرّ؟", "questionDe": "Welcher Satz bedeutet: Der Urlaub beginnt am Montag und geht weiter?", "options": ["Ab Montag habe ich Urlaub.", "Bis Montag habe ich Urlaub.", "Am Montag habe ich Urlaub.", "Von Montag habe ich Urlaub."], "correctIndex": 0, "errorType": "preposition", "explanation": "ab تفتح المدى ولا تغلقه. وbis Montag تعني أنّ الإجازة تنتهي الاثنين — معنى معاكس تماماً."},
+    {"id": "e18", "type": "fill-blank", "instructionAr": "أكمل بالعدد الترتيبيّ في صيغته الصحيحة:", "errorType": "grammar",
+      "template": "Mein Geburtstag ist am ___ Mai, und heute ist ___ zwanzigste Mai.", "blanks": [{"correct": "dritten", "options": ["dritten", "dritte", "dreite", "dritter"], "errorType": "grammar"}, {"correct": "der", "options": ["der", "am", "den", "im"], "errorType": "article"}], "explanation": "بعد am تأتي النهاية ـen (dritten)، وفي الجملة الخبرية بالرفع تأتي الأداة der مع النهاية ـe."},
+    {"id": "e19", "type": "error-correction", "instructionAr": "صحّح الخطأ في الجملة:", "wrongSentence": "Ich komme um circa drei Uhr.", "wrongWord": "um circa", "correctWord": "gegen", "options": ["gegen", "ab", "von", "bis"], "errorType": "preposition", "explanation": "um تعني الدقّة وcirca تعني التقريب، فاجتماعهما تناقض. وgegen وحدها تحمل معنى التقريب."},
+    {"id": "e20", "type": "error-correction", "instructionAr": "صحّح الخطأ في الجملة:", "wrongSentence": "Es tut mir leid, dort kann ich nicht.", "wrongWord": "dort", "correctWord": "da", "options": ["da", "dann", "dort", "hier"], "errorType": "vocabulary", "explanation": "da هنا ظرف زمان يحيل على الموعد المذكور، أمّا dort فظرف مكان. والفرق بينهما يقلب معنى الاعتذار."},
+    {"id": "e21", "type": "word-ordering", "instructionAr": "رتّب الكلمات لتكوّن طلب موعد مهذّباً:", "tokens": ["Ich", "hätte", "gern", "einen", "Termin", "am", "Donnerstag"], "correctSentence": "Ich hätte gern einen Termin am Donnerstag.", "errorType": "word-order", "explanation": "صيغة الطلب المهذّبة ثابتة: Ich hätte gern + المفعول به، ثمّ التحديد الزمنيّ في آخر الجملة."},
+    {"id": "e22", "type": "matching", "instructionAr": "صِل كلّ حرف بمعناه الزمنيّ:", "pairs": [{"left": "von … bis …", "right": "مدى مغلق: من … إلى …"}, {"left": "ab", "right": "مدى مفتوح: ابتداءً من"}, {"left": "gegen", "right": "تقريب: نحو الساعة"}, {"left": "montags", "right": "تكرار: كلّ اثنين"}, {"left": "vom … bis zum …", "right": "بين تاريخين"}], "errorType": "preposition", "explanation": "أربعة حروف وظرف تكرار واحد يغطّون كلّ ما تحتاجه لترتيب موعد بالألمانية."},
+    {"id": "e23", "type": "transformation", "instructionAr": "حوّل الجملة من تحديد يومٍ معيّن إلى عادة متكرّرة:", "prompt": "Am Montag habe ich Deutschkurs. ⇐ (كلّ اثنين)", "acceptedAnswers": ["Montags habe ich Deutschkurs.", "montags habe ich Deutschkurs."], "sampleAnswer": "Montags habe ich Deutschkurs.", "errorType": "word-order", "explanation": "ظرف التكرار يُصاغ بإضافة s إلى اسم اليوم وبحرفٍ صغير: montags. ويبقى الفعل في المركز الثاني."},
+    {"id": "e24", "type": "multiple-choice", "instructionAr": "اختر الصيغة الصحيحة لسنة الميلاد:", "questionDe": "Ich bin ___ geboren.", "options": ["1995", "im 1995", "am 1995", "in 1995"], "correctIndex": 0, "errorType": "preposition", "explanation": "سنة الميلاد تُقال عاريةً بلا حرف جرّ، أو بالصيغة الكاملة im Jahr 1995. أمّا im 1995 فخليط خاطئ."},
+    {"id": "e25", "type": "fill-blank", "instructionAr": "أكمل تركيب المدى بين تاريخين:", "errorType": "preposition",
+      "template": "Der Kurs geht ___ ersten ___ zum zehnten Juli.", "blanks": [{"correct": "vom", "options": ["vom", "von", "ab", "am"], "errorType": "preposition"}, {"correct": "bis", "options": ["bis", "und", "zu", "auf"], "errorType": "preposition"}], "explanation": "التركيب متلازم: vom … bis zum …. من قال vom لزمه bis zum، ولا يجوز حذف zum."},
+    {"id": "e26", "type": "error-correction", "instructionAr": "صحّح صيغة الطلب في العيادة:", "wrongSentence": "Guten Tag, ich will einen Termin.", "wrongWord": "will", "correctWord": "hätte", "options": ["hätte", "muss", "kann", "soll"], "errorType": "vocabulary", "explanation": "Ich will يُسمع أمراً فظّاً في العيادة. والصيغة المعيارية المهذّبة: Ich hätte gern einen Termin."},
   ],
   fehlerUndTipps: {
     mistakes: [
@@ -547,6 +827,15 @@ export const lessonA109: Lesson = {
     { id: "fc8", de: "die Ordinalzahl", ar: "العدد الترتيبي", example: "Der dritte Tag.", exampleAr: "اليوم الثالث.", level: "A1" },
     { id: "fc9", de: "Der wievielte ist heute?", ar: "ما تاريخ اليوم؟", example: "Der wievielte ist heute? — Der dritte Mai.", exampleAr: "ما تاريخ اليوم؟ — الثالث من مايو.", level: "A1" },
     { id: "fc10", de: "am dritten Mai", ar: "في الثالث من مايو", example: "Ich habe am dritten Mai einen Termin.", exampleAr: "لديّ موعد في الثالث من مايو.", level: "A1" },
+    {"id": "fc11", "de": "ab (+ Dativ)", "ar": "ابتداءً من", "example": "Ab Montag habe ich Zeit.", "exampleAr": "ابتداءً من الاثنين أصير متفرّغاً.", "level": "A1"},
+    {"id": "fc12", "de": "von … bis …", "ar": "من … إلى …", "example": "Die Praxis ist von acht bis achtzehn Uhr offen.", "exampleAr": "العيادة مفتوحة من الثامنة إلى السادسة مساءً.", "level": "A1"},
+    {"id": "fc13", "de": "gegen (+ Uhrzeit)", "ar": "نحو، تقريباً", "example": "Ich komme gegen drei Uhr.", "exampleAr": "سآتي نحو الثالثة.", "level": "A1"},
+    {"id": "fc14", "de": "Ich hätte gern einen Termin.", "ar": "أودّ موعداً.", "example": "Guten Tag, ich hätte gern einen Termin.", "exampleAr": "نهارك سعيد، أودّ موعداً.", "level": "A1"},
+    {"id": "fc15", "de": "Es tut mir leid, da kann ich nicht.", "ar": "آسف، لا أستطيع في ذلك الوقت.", "example": "Am Montag? Es tut mir leid, da kann ich nicht.", "exampleAr": "الاثنين؟ آسف، لا أستطيع حينها.", "level": "A1"},
+    {"id": "fc16", "de": "verschieben", "ar": "يؤجّل", "example": "Können wir den Termin verschieben?", "exampleAr": "هل يمكننا تأجيل الموعد؟", "level": "A1"},
+    {"id": "fc17", "de": "sagt … ab (absagen)", "ar": "يُلغي", "example": "Ich muss den Termin leider absagen.", "exampleAr": "للأسف عليّ إلغاء الموعد.", "level": "A1"},
+    {"id": "fc18", "de": "montags, dienstags …", "ar": "كلّ اثنين، كلّ ثلاثاء …", "example": "Montags habe ich immer Deutschkurs.", "exampleAr": "كلّ اثنين عندي درس ألمانية.", "level": "A1"},
+    {"id": "fc19", "de": "die Versichertenkarte", "ar": "بطاقة التأمين الصحّيّ", "example": "Bringen Sie bitte Ihre Versichertenkarte mit.", "exampleAr": "أحضر بطاقة التأمين من فضلك.", "level": "A1"},
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
