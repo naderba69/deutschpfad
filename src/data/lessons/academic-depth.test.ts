@@ -18,9 +18,34 @@ import type { Lesson, ReadingText, TheoryBlock } from "@/types/lesson";
  */
 
 /** الدروس التي رُقّيت إلى المعيار الأكاديمي — تكبر هذه القائمة مع كل ترقية. */
-export const ACADEMIC_LESSONS: string[] = ["a1-00", "a1-01", "a1-02", "a1-03", "a1-04", "a1-05", "a1-06", "a1-07", "a1-08", "a1-09", "a1-10", "a1-11", "a1-12", "a1-14", "a1-13", "a2-01", "a2-02", "a2-03"];
+export const ACADEMIC_LESSONS: string[] = [
+  "a1-00",
+  "a1-01",
+  "a1-02",
+  "a1-03",
+  "a1-04",
+  "a1-05",
+  "a1-06",
+  "a1-07",
+  "a1-08",
+  "a1-09",
+  "a1-10",
+  "a1-11",
+  "a1-12",
+  "a1-14",
+  "a1-13",
+  "a2-01",
+  "a2-02",
+  "a2-03",
+];
 
 const MIN_EXPLANATION = 900;
+/**
+ * سقف أمانٍ لا سقف أسلوبيّ. المعيار المتّفق عليه هو «900 حدّاً أدنى بلا سقف صارم»،
+ * لأنّ العمق مقصودٌ لذاته. لكنّ الكتلة التي تتجاوز هذا الحدّ لم تعد كتلةً واحدة
+ * بل درساً كاملاً حُشر في موضع كتلة — وعلاجها التقسيم لا التقليم.
+ */
+const MAX_EXPLANATION = 2800;
 const MIN_WHY = 250;
 const MIN_COMPARISON = 250;
 const MIN_PARAGRAPHS_IN_EXPLANATION = 2;
@@ -48,11 +73,25 @@ describe("العمق الأكاديمي — الشرح النظري", () => {
     expect(thin).toEqual([]);
   });
 
+  it(`لا كتلة تتجاوز ${MAX_EXPLANATION} حرف — ما تجاوزها فهو درسٌ يحتاج تقسيماً`, () => {
+    const bloated: string[] = [];
+    for (const lesson of academic()) {
+      for (const t of lesson.theory) {
+        if (t.explanationAr.length > MAX_EXPLANATION) {
+          bloated.push(`${lesson.id}:${t.id} = ${t.explanationAr.length}`);
+        }
+      }
+    }
+    expect(bloated).toEqual([]);
+  });
+
   it(`كل شرح مُقسَّم إلى ${MIN_PARAGRAPHS_IN_EXPLANATION}+ فقرات — الكتلة المصمتة لا تُقرأ`, () => {
     const walls: string[] = [];
     for (const lesson of academic()) {
       for (const t of lesson.theory) {
-        const paras = t.explanationAr.split("\n").filter((p) => p.trim().length > 0);
+        const paras = t.explanationAr
+          .split("\n")
+          .filter((p) => p.trim().length > 0);
         if (paras.length < MIN_PARAGRAPHS_IN_EXPLANATION) {
           walls.push(`${lesson.id}:${t.id} = ${paras.length} فقرة`);
         }
@@ -65,7 +104,8 @@ describe("العمق الأكاديمي — الشرح النظري", () => {
     const thin: string[] = [];
     for (const lesson of academic()) {
       for (const t of lesson.theory) {
-        if ((t.whyAr ?? "").length < MIN_WHY) thin.push(`${lesson.id}:${t.id} = ${t.whyAr?.length ?? 0}`);
+        if ((t.whyAr ?? "").length < MIN_WHY)
+          thin.push(`${lesson.id}:${t.id} = ${t.whyAr?.length ?? 0}`);
       }
     }
     expect(thin).toEqual([]);
@@ -87,7 +127,8 @@ describe("العمق الأكاديمي — الشرح النظري", () => {
     const missing: string[] = [];
     for (const lesson of academic()) {
       for (const t of lesson.theory) {
-        if (!t.relatedRuleComparison?.content) missing.push(`${lesson.id}:${t.id}`);
+        if (!t.relatedRuleComparison?.content)
+          missing.push(`${lesson.id}:${t.id}`);
       }
     }
     expect(missing).toEqual([]);
@@ -97,9 +138,11 @@ describe("العمق الأكاديمي — الشرح النظري", () => {
     const weak: string[] = [];
     for (const lesson of academic()) {
       for (const t of lesson.theory) {
-        if (t.commonMistakes.length < 3) weak.push(`${lesson.id}:${t.id} = ${t.commonMistakes.length} أخطاء`);
+        if (t.commonMistakes.length < 3)
+          weak.push(`${lesson.id}:${t.id} = ${t.commonMistakes.length} أخطاء`);
         for (const m of t.commonMistakes) {
-          if (m.whyAr.length < 60) weak.push(`${lesson.id}:${t.id} تفسير قصير: "${m.whyAr}"`);
+          if (m.whyAr.length < 60)
+            weak.push(`${lesson.id}:${t.id} تفسير قصير: "${m.whyAr}"`);
         }
       }
     }
@@ -110,14 +153,20 @@ describe("العمق الأكاديمي — الشرح النظري", () => {
     const few: string[] = [];
     for (const lesson of academic()) {
       for (const t of lesson.theory) {
-        if (t.examples.length < 6) few.push(`${lesson.id}:${t.id} = ${t.examples.length}`);
+        if (t.examples.length < 6)
+          few.push(`${lesson.id}:${t.id} = ${t.examples.length}`);
       }
     }
     expect(few).toEqual([]);
   });
 });
 
-const MIN_WORDS_BY_LEVEL: Record<string, number> = { A1: 90, A2: 150, B1: 250, B2: 320 };
+const MIN_WORDS_BY_LEVEL: Record<string, number> = {
+  A1: 90,
+  A2: 150,
+  B1: 250,
+  B2: 320,
+};
 
 function words(r: ReadingText): number {
   return r.paragraphs.join(" ").split(/\s+/).filter(Boolean).length;
@@ -125,7 +174,9 @@ function words(r: ReadingText): number {
 
 describe("العمق الأكاديمي — نصّ القراءة", () => {
   it("كل درس مُرقّى يحمل نصّ قراءة ممتدّاً", () => {
-    const missing = academic().filter((l) => !l.reading).map((l) => l.id);
+    const missing = academic()
+      .filter((l) => !l.reading)
+      .map((l) => l.id);
     expect(missing).toEqual([]);
   });
 
@@ -146,9 +197,12 @@ describe("العمق الأكاديمي — نصّ القراءة", () => {
       const r = lesson.reading;
       if (!r) continue;
       if (r.paragraphs.length !== r.paragraphsAr.length) {
-        bad.push(`${lesson.id}: ${r.paragraphs.length} ألمانية مقابل ${r.paragraphsAr.length} عربية`);
+        bad.push(
+          `${lesson.id}: ${r.paragraphs.length} ألمانية مقابل ${r.paragraphsAr.length} عربية`,
+        );
       }
-      if (r.paragraphs.length < 3) bad.push(`${lesson.id}: ${r.paragraphs.length} فقرات فقط`);
+      if (r.paragraphs.length < 3)
+        bad.push(`${lesson.id}: ${r.paragraphs.length} فقرات فقط`);
     }
     expect(bad).toEqual([]);
   });
@@ -158,7 +212,8 @@ describe("العمق الأكاديمي — نصّ القراءة", () => {
     for (const lesson of academic()) {
       const r = lesson.reading;
       if (!r) continue;
-      if (r.glossary.length < 8) bad.push(`${lesson.id}: ${r.glossary.length} مفردة`);
+      if (r.glossary.length < 8)
+        bad.push(`${lesson.id}: ${r.glossary.length} مفردة`);
       const text = r.paragraphs.join(" ").toLowerCase();
       for (const g of r.glossary) {
         // الكلمة قد ترد مصرَّفة، فنكتفي بجذعٍ من الحروف الأولى.
@@ -177,7 +232,8 @@ describe("العمق الأكاديمي — نصّ القراءة", () => {
     for (const lesson of academic()) {
       const r = lesson.reading;
       if (!r) continue;
-      if (r.questions.length < 4) bad.push(`${lesson.id}: ${r.questions.length} أسئلة`);
+      if (r.questions.length < 4)
+        bad.push(`${lesson.id}: ${r.questions.length} أسئلة`);
       for (const q of r.questions) {
         if (q.options.length < 3) bad.push(`${lesson.id}:${q.id} خيارات قليلة`);
         if (q.correctIndex < 0 || q.correctIndex >= q.options.length) {
@@ -213,8 +269,10 @@ describe("العمق الأكاديمي — نصّ القراءة", () => {
     for (const lesson of academic()) {
       const r = lesson.reading;
       if (!r) continue;
-      if (!r.redemittel || r.redemittel.length < 4) bad.push(`${lesson.id}: Redemittel ناقصة`);
-      if (!r.discussionAr || r.discussionAr.length < 40) bad.push(`${lesson.id}: سؤال النقاش ناقص`);
+      if (!r.redemittel || r.redemittel.length < 4)
+        bad.push(`${lesson.id}: Redemittel ناقصة`);
+      if (!r.discussionAr || r.discussionAr.length < 40)
+        bad.push(`${lesson.id}: سؤال النقاش ناقص`);
     }
     expect(bad).toEqual([]);
   });

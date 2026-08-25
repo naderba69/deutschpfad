@@ -15,10 +15,26 @@ export const lessonA203: Lesson = {
     "سُلّم الطلب المهذّب من will إلى hätte gern (وأصله Konjunktiv II من haben ومögen)، وأفعال «الشيء فاعلٌ والإنسان متلقٍّ» schmecken/gefallen/passen، ومسار الزيارة كاملاً من الحجز والجلوس إلى Zusammen oder getrennt? والبقشيش المنطوق، وصفات الطعم والمقادير وقاعدة etwas Warmes — مع نصّ «Ein Abend im Gasthaus Löwen».",
 
   lernziele: [
-    { id: "z1", de: "Ich kann höflich bestellen und die Stufen der Höflichkeit unterscheiden.", ar: "أن أطلب بأدب وأميّز درجات السُلّم: will ⟵ möchte ⟵ hätte gern ⟵ Könnte ich…?" },
-    { id: "z2", de: "Ich kann mit schmecken, gefallen und passen über Essen sprechen.", ar: "أن أستعمل الأفعال التي يكون الشيء فيها فاعلاً والإنسان في الداتيف: Das Essen schmeckt mir." },
-    { id: "z3", de: "Ich kann einen Restaurantbesuch von der Reservierung bis zur Rechnung führen.", ar: "أن أدير زيارة مطعمٍ كاملة: الحجز، الجلوس، الطلب على مرحلتين، ثمّ Zusammen oder getrennt? والبقشيش." },
-    { id: "z4", de: "Ich kann Geschmack, Mengen und Wünsche wie etwas Warmes ausdrücken.", ar: "أن أصف الطعم (scharf مقابل heiß)، وأطلب المقادير (zwei Tassen Kaffee)، وأقول etwas Warmes." },
+    {
+      id: "z1",
+      de: "Ich kann höflich bestellen und die Stufen der Höflichkeit unterscheiden.",
+      ar: "أن أطلب بأدب وأميّز درجات السُلّم: will ⟵ möchte ⟵ hätte gern ⟵ Könnte ich…?",
+    },
+    {
+      id: "z2",
+      de: "Ich kann mit schmecken, gefallen und passen über Essen sprechen.",
+      ar: "أن أستعمل الأفعال التي يكون الشيء فيها فاعلاً والإنسان في الداتيف: Das Essen schmeckt mir.",
+    },
+    {
+      id: "z3",
+      de: "Ich kann einen Restaurantbesuch von der Reservierung bis zur Rechnung führen.",
+      ar: "أن أدير زيارة مطعمٍ كاملة: الحجز، الجلوس، الطلب على مرحلتين، ثمّ Zusammen oder getrennt? والبقشيش.",
+    },
+    {
+      id: "z4",
+      de: "Ich kann Geschmack, Mengen und Wünsche wie etwas Warmes ausdrücken.",
+      ar: "أن أصف الطعم (scharf مقابل heiß)، وأطلب المقادير (zwei Tassen Kaffee)، وأقول etwas Warmes.",
+    },
   ],
 
   einfuehrung: {
@@ -206,7 +222,7 @@ export const lessonA203: Lesson = {
       titleAr: "schmecken وgefallen — حين يكون الطعام هو الفاعل",
       titleDe: "Schmecken, gefallen, passen: der Dativ des Erlebenden",
       explanationAr:
-        "في a1-08 التقيتَ gefallen في سياق الملابس، وفي a2-02 التقيتَ fehlen عند الطبيب. اليوم نجمع هذه الأفعال في **بابٍ واحد** ونُظهر منطقها، لأنّها ليست شواذّ متفرّقةً تُحفظ بل عائلةٌ لها منطقٌ واحد.\n\n**القاعدة الجامعة: في هذه الأفعال، الشيءُ هو الفاعل والإنسانُ مجرور.** الألمانية تنظر إلى الذوق والإعجاب والملاءمة بوصفها **أثراً يصدر عن الشيء ويقع على الإنسان**، لا فعلاً يصدر عن الإنسان. فالطعام هو الذي «يَطعُم لك»، والقميص هو الذي «يُعجِب لك».\n\n**البنية الثابتة:** الشيء (Nominativ) + الفعل + الشخص (Dativ).\n· **Das Essen schmeckt mir.** — الطعام يعجبني طعمه. (das Essen مرفوع، mir مجرور)\n· **Die Suppe schmeckt mir nicht.** — الشوربة لا تعجبني.\n· **Der Salat schmeckt uns allen.** — السلطة أعجبتنا جميعاً.\n\n**وأهمّ ما في الباب: الفعل يُصرَّف مع الشيء لا مع الشخص.**\n· مفرد ⟵ Das Essen **schmeckt** mir.\n· جمع ⟵ Die Nudeln **schmecken** mir.\nوهذا هو موضع الخطأ الأوّل: يقول المتعلّم Die Nudeln schmeckt mir لأنّه يُصرِّف مع «أنا» في ذهنه.\n\n**أعضاء العائلة في هذا الدرس:**\n· **schmecken** (يكون طعمه طيّباً لـ) — للطعام والشراب حصراً.\n· **gefallen** (يُعجِب) — للمظهر والانطباع العامّ: Das Restaurant gefällt mir.\n· **passen** (يُلائم) — للمواعيد والمقاسات: Der Tisch am Fenster passt uns gut.\n\n**والفرق بين schmecken وgefallen دقيق ويُخطئ فيه الجميع:** schmecken **للطعم في الفم**، وgefallen **للانطباع بالعين أو العقل**. فتقول عن مطعمٍ Das Restaurant gefällt mir (يعجبني مكاناً)، وعن طبقٍ Das Gericht schmeckt mir (طعمه طيّب). ولو قلت Das Essen gefällt mir لفُهم أنّك أُعجبتَ بشكله وترتيبه في الطبق لا بمذاقه — وهي جملةٌ صحيحة لكنّها تقول شيئاً آخر.\n\n**وصيغة السؤال الجاهزة التي يقولها كلّ نادلٍ في ألمانيا: Schmeckt es Ihnen?** (أطعامك طيّب؟) — والجواب: Ja, sehr gut, danke. / Ja, ausgezeichnet!",
+        "في a1-08 التقيتَ gefallen في سياق الملابس، وفي a2-02 التقيتَ fehlen عند الطبيب. اليوم نجمع هذه الأفعال في **بابٍ واحد** ونُظهر منطقها، لأنّها ليست شواذّ متفرّقةً تُحفظ بل عائلةٌ لها منطقٌ واحد.\n\n**القاعدة الجامعة: في هذه الأفعال، الشيءُ هو الفاعل والإنسانُ مجرور.** الألمانية تنظر إلى الذوق والإعجاب والملاءمة بوصفها **أثراً يصدر عن الشيء ويقع على الإنسان**، لا فعلاً يصدر عن الإنسان. فالطعام هو الذي «يَطعُم لك»، والقميص هو الذي «يُعجِب لك».\n\n**البنية الثابتة:** الشيء (Nominativ) + الفعل + الشخص (Dativ).\n· **Das Essen schmeckt mir.** — الطعام يعجبني طعمه. (das Essen مرفوع، mir مجرور)\n· **Die Suppe schmeckt mir nicht.** — الشوربة لا تعجبني.\n· **Der Salat schmeckt uns allen.** — السلطة أعجبتنا جميعاً.\n\n**وأهمّ ما في الباب: الفعل يُصرَّف مع الشيء لا مع الشخص.**\n· مفرد ⟵ Das Essen **schmeckt** mir.\n· جمع ⟵ Die Nudeln **schmecken** mir.\nوهذا هو موضع الخطأ الأوّل: يقول المتعلّم Die Nudeln schmeckt mir لأنّه يُصرِّف مع «أنا» في ذهنه.\n\n**أعضاء العائلة في هذا الدرس:**\n· **schmecken** (يكون طعمه طيّباً لـ) — للطعام والشراب حصراً.\n· **gefallen** (يُعجِب) — للمظهر والانطباع العامّ: Das Restaurant gefällt mir.\n· **passen** (يُلائم) — للمواعيد والمقاسات: Der Tisch am Fenster passt uns gut.\n\n**والفرق بين schmecken وgefallen دقيق ويُخطئ فيه الجميع:** schmecken **للطعم في الفم**، وgefallen **للانطباع بالعين أو العقل**. فتقول عن مطعمٍ Das Restaurant gefällt mir (يعجبني مكاناً)، وعن طبقٍ Das Gericht schmeckt mir (طعمه طيّب). ولو قلت Das Essen gefällt mir لفُهم أنّك أُعجبتَ بشكله وترتيبه في الطبق لا بمذاقه — وهي جملةٌ صحيحة لكنّها تقول شيئاً آخر.\n\n**وصيغة السؤال الجاهزة التي يقولها كلّ نادلٍ في ألمانيا: Schmeckt es Ihnen?** (أطعامك طيّب؟) — والجواب: Ja, sehr gut, danke. / Ja, ausgezeichnet!\n\n**من أين جاءت هذه القاعدة؟** هذا الباب ليس شذوذاً ألمانياً بل **إرثٌ هندو-أوروبيّ قديم** يسمّيه اللغويون «داتيف المتلقّي» (Dativus des Experiencers): حين لا يكون الإنسان فاعلاً مختاراً بل **متلقّياً لأثرٍ يقع عليه**، تضعه اللغة في الداتيف لا في الرفع. والفكرة أنّ الطعم يحدث لك، ولا تصنعه أنت. وللعربية الباب نفسه حيّاً: «أعجبني الطعام» — الطعام فاعل والياء مفعول، لا «أنا أعجبتُ الطعام». فالعربيّ يملك الحدس صحيحاً، وإنّما تخونه الإنجليزية (I like) لا لغته الأمّ.",
       whyAr:
         "لأنّ هذا الباب هو **الاختبار الحقيقيّ لفهم الـDativ**، لا حفظه. المتعلّم يستطيع أن يحفظ mir/dir/ihm ويظلّ عاجزاً عن بناء Das Essen schmeckt mir، لأنّ العائق ليس في الضمير بل في **إعادة توزيع الأدوار**: من الفاعل؟ فحين يفهم أنّ الطعام فاعلٌ والإنسان متلقٍّ، ينفتح له مع schmecken بابُ gefallen وpassen وgehören وfehlen وwehtun وgutgehen — وهي سبعة أفعالٍ من أكثر ما يُستعمل يومياً.\n\nوهذه الكتلة تُوضَع هنا لا في a2-09 (درس الـDativ الكامل) لسببٍ منهجيّ: الـDativ يُتعلَّم **موزّعاً على مواقف** ثمّ يُجمَع، لا يُجمَع أوّلاً. فأنت تلتقي gefallen مع الملابس (a1-08)، وwehtun وfehlen عند الطبيب (a2-02)، وschmecken في المطعم (اليوم) — ثمّ يأتي a2-09 فيقول لك: هذه كلّها بابٌ واحد اسمه Dativ-Verben، وهذه قائمته الكاملة وضمائره في كلّ الحالات. والتعلّم الذي يسبق التسمية أرسخ من التسمية التي تسبق التعلّم.\n\nوسببٌ ثالث عمليّ: Schmeckt es Ihnen? سؤالٌ **يُطرح عليك حتماً** في أيّ مطعمٍ ألمانيّ، وصمتُك عنه أو جوابك بـIch bin gut يُفسد لحظةً اجتماعيةً بسيطة. وهذه الكتلة تُسلّحك بالجواب قبل أن يُطرح السؤال.",
       table: {
