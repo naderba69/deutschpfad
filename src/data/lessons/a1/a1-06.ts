@@ -915,6 +915,12 @@ export const lessonA106: Lesson = {
     {"id": "fc18", "de": "Modalverb + Infinitiv (ohne zu)", "ar": "الناقص + مصدر عارٍ في الآخر", "example": "Ich kann sehr gut kochen.", "exampleAr": "أُحسن الطبخ جيّداً.", "level": "A1"},
     {"id": "fc19", "de": "ich möchte / er möchte", "ar": "أودّ — الطلب المهذّب", "example": "Ich möchte bitte einen Tee.", "exampleAr": "أودّ شاياً من فضلك.", "level": "A1"},
     {"id": "fc20", "de": "Ich hatte Hunger / Zeit / Angst", "ar": "الجوع والوقت والخوف تُملَك لا توصَف", "example": "Ich hatte gestern keine Zeit.", "exampleAr": "لم يكن لديّ وقت أمس.", "level": "A1"},
+    { id: "fc21", de: "schwimmen", ar: "يسبح", example: "Ich gehe zweimal pro Woche schwimmen.", exampleAr: "أذهب للسباحة مرّتين في الأسبوع.", level: "A1" },
+    { id: "fc22", de: "kochen", ar: "يطبخ", example: "Am Wochenende koche ich gern.", exampleAr: "في العطلة أطبخ بسرور.", level: "A1" },
+    { id: "fc23", de: "spielen", ar: "يلعب", example: "Ich spiele Volleyball.", exampleAr: "ألعب الكرة الطائرة.", level: "A1" },
+    { id: "fc24", de: "die Stunde", ar: "الساعة (مدّة)", example: "Eine halbe Stunde reicht.", exampleAr: "نصف ساعة يكفي.", level: "A1" },
+    { id: "fc25", de: "die Woche", ar: "الأسبوع", example: "Zweimal pro Woche.", exampleAr: "مرّتين في الأسبوع.", level: "A1" },
+    { id: "fc26", de: "leider", ar: "للأسف", example: "Leider habe ich keine Zeit.", exampleAr: "للأسف ليس عندي وقت.", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */

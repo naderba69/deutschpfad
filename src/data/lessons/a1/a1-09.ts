@@ -836,6 +836,11 @@ export const lessonA109: Lesson = {
     {"id": "fc17", "de": "sagt … ab (absagen)", "ar": "يُلغي", "example": "Ich muss den Termin leider absagen.", "exampleAr": "للأسف عليّ إلغاء الموعد.", "level": "A1"},
     {"id": "fc18", "de": "montags, dienstags …", "ar": "كلّ اثنين، كلّ ثلاثاء …", "example": "Montags habe ich immer Deutschkurs.", "exampleAr": "كلّ اثنين عندي درس ألمانية.", "level": "A1"},
     {"id": "fc19", "de": "die Versichertenkarte", "ar": "بطاقة التأمين الصحّيّ", "example": "Bringen Sie bitte Ihre Versichertenkarte mit.", "exampleAr": "أحضر بطاقة التأمين من فضلك.", "level": "A1"},
+    { id: "fc20", de: "die Praxis", ar: "العيادة", example: "Die Praxis ist am Dienstag geschlossen.", exampleAr: "العيادة مغلقة يوم الثلاثاء.", level: "A1" },
+    { id: "fc21", de: "der Zahnarzt", ar: "طبيب الأسنان", example: "Ich habe einen Termin beim Zahnarzt.", exampleAr: "عندي موعد عند طبيب الأسنان.", level: "A1" },
+    { id: "fc22", de: "passen", ar: "يناسب (موعداً)", example: "Passt Ihnen Dienstag um zehn?", exampleAr: "أيناسبك الثلاثاء في العاشرة؟", level: "A1" },
+    { id: "fc23", de: "das Problem", ar: "المشكلة", example: "Kein Problem, bis morgen!", exampleAr: "لا مشكلة، إلى الغد!", level: "A1" },
+    { id: "fc24", de: "klein", ar: "صغير", example: "Einen kleinen Moment, bitte.", exampleAr: "لحظةً صغيرة من فضلك.", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */

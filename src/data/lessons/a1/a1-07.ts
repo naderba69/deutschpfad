@@ -944,6 +944,11 @@ export const lessonA107: Lesson = {
     {"id": "fc16", "de": "der Wochenmarkt, ¨-e", "ar": "السوق الأسبوعية", "example": "Am Samstag gehe ich auf den Wochenmarkt.", "exampleAr": "يوم السبت أذهب إلى السوق الأسبوعية.", "level": "A1"},
     {"id": "fc17", "de": "neunundneunzig Cent", "ar": "تسعة وتسعون سنتاً (0,99 €)", "example": "Der Kaffee kostet neunundneunzig Cent.", "exampleAr": "القهوة بتسعة وتسعين سنتاً.", "level": "A1"},
     {"id": "fc18", "de": "zurückbekommen", "ar": "يستردّ الباقي — فعل منفصل", "example": "Sie bekommt sechs Euro fünfzig zurück.", "exampleAr": "تستردّ ستّة يورو ونصفاً.", "level": "A1"},
+    { id: "fc25", de: "der Markt", ar: "السوق", example: "Jeden Samstag geht sie auf den Markt.", exampleAr: "كلّ سبتٍ تذهب إلى السوق.", level: "A1" },
+    { id: "fc26", de: "die Bücher (das Buch)", ar: "الكتب (مفردها das Buch)", example: "Ich kaufe zwei Bücher.", exampleAr: "أشتري كتابين.", level: "A1" },
+    { id: "fc27", de: "das Wort", ar: "الكلمة (ج. Wörter)", example: "Ich lerne neue Wörter.", exampleAr: "أتعلّم كلماتٍ جديدة.", level: "A1" },
+    { id: "fc28", de: "spricht (sprechen)", ar: "يتكلّم — هو/هي (شاذّ: e ⟵ i)", example: "Sie spricht sehr gut Deutsch.", exampleAr: "تتكلّم الألمانية جيداً جداً.", level: "A1" },
+    { id: "fc29", de: "langsam", ar: "ببطء", example: "Sprechen Sie bitte langsam.", exampleAr: "تكلّم ببطء من فضلك.", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */

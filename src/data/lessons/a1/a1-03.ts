@@ -758,6 +758,12 @@ export const lessonA103: Lesson = {
     {"id": "fc12", "de": "die Rechnung", "ar": "الفاتورة", "example": "Die Rechnung, bitte!", "exampleAr": "الفاتورة من فضلك!", "level": "A1"},
     {"id": "fc13", "de": "das Brötchen", "ar": "الخبزة الصغيرة (محايدة بـ‑chen)", "example": "Ein Brötchen kostet fünfzig Cent.", "exampleAr": "الكعكة بخمسين سنتاً.", "level": "A1"},
     {"id": "fc14", "de": "hungrig / satt", "ar": "جائع / شبعان (صفتان مع sein)", "example": "Ich bin satt, danke.", "exampleAr": "أنا شبعان، شكراً.", "level": "A1"},
+    { id: "fc15", de: "die Suppe", ar: "الحساء", example: "Ich nehme eine Suppe.", exampleAr: "آخذ حساءً.", level: "A1" },
+    { id: "fc16", de: "der Salat", ar: "السلطة", example: "Möchten Sie einen Salat?", exampleAr: "أتودّ سلطة؟", level: "A1" },
+    { id: "fc17", de: "der Kaffee", ar: "القهوة", example: "Einen Kaffee, bitte.", exampleAr: "قهوةً من فضلك.", level: "A1" },
+    { id: "fc18", de: "nehmen", ar: "يأخذ", example: "Ich nehme das Käsebrötchen.", exampleAr: "آخذ سندويش الجبن.", level: "A1" },
+    { id: "fc19", de: "Vielen Dank!", ar: "شكراً جزيلاً!", example: "Vielen Dank für alles!", exampleAr: "شكراً جزيلاً على كلّ شيء!", level: "A1" },
+    { id: "fc20", de: "natürlich", ar: "بالطبع، طبعاً", example: "Natürlich, gern!", exampleAr: "بالطبع، بكلّ سرور!", level: "A1" },
   ],
 
   mediation: [

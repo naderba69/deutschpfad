@@ -844,6 +844,12 @@ export const lessonA105: Lesson = {
     {"id": "fc14", "de": "montags / abends", "ar": "كلّ اثنين / كلّ مساء (بحرف صغير)", "example": "Montags habe ich Deutschkurs.", "exampleAr": "عندي درس ألماني كلّ اثنين.", "level": "A1"},
     {"id": "fc15", "de": "anrufen / abholen / mitnehmen", "ar": "يتّصل / يقلّ من مكان / يأخذ معه", "example": "Ich rufe dich morgen an.", "exampleAr": "سأتّصل بك غداً.", "level": "A1"},
     {"id": "fc16", "de": "der Wecker klingelt", "ar": "يرنّ المنبّه", "example": "Der Wecker klingelt um halb sechs.", "exampleAr": "يرنّ المنبّه في الخامسة والنصف.", "level": "A1"},
+    { id: "fc17", de: "duschen", ar: "يستحمّ", example: "Ich dusche jeden Morgen.", exampleAr: "أستحمّ كلّ صباح.", level: "A1" },
+    { id: "fc18", de: "schnell", ar: "بسرعة، سريع", example: "Ich frühstücke schnell.", exampleAr: "أتناول الفطور بسرعة.", level: "A1" },
+    { id: "fc19", de: "die Minute", ar: "الدقيقة", example: "Der Weg dauert zwanzig Minuten.", exampleAr: "الطريق يستغرق عشرين دقيقة.", level: "A1" },
+    { id: "fc20", de: "dauern", ar: "يستغرق (وقتاً)", example: "Wie lange dauert das?", exampleAr: "كم يستغرق هذا؟", level: "A1" },
+    { id: "fc21", de: "das Krankenhaus", ar: "المستشفى", example: "Ich arbeite in einem Krankenhaus.", exampleAr: "أعمل في مستشفى.", level: "A1" },
+    { id: "fc22", de: "früh", ar: "مبكّراً", example: "Ich stehe sehr früh auf.", exampleAr: "أنهض مبكّراً جداً.", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */

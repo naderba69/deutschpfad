@@ -912,6 +912,12 @@ export const lessonA113: Lesson = {
     { id: "fc16", de: "nervös", ar: "متوتّر، قلق", example: "Ich bin vor der Prüfung nervös.", exampleAr: "أنا متوتّر قبل الامتحان.", level: "A1" },
     { id: "fc17", de: "hätte gern", ar: "أودّ (صيغة طلبٍ مهذّبة)", example: "Ich hätte gern einen Tee, bitte.", exampleAr: "أودّ شاياً من فضلك.", level: "A1" },
     { id: "fc18", de: "gedacht (denken)", ar: "فكَّر", example: "Ich habe an dich gedacht.", exampleAr: "فكّرتُ فيك.", level: "A1" },
+    { id: "fc19", de: "das Problem", ar: "المشكلة", example: "Die Artikel waren mein größtes Problem.", exampleAr: "كانت الأدوات أكبر مشكلةٍ عندي.", level: "A1" },
+    { id: "fc20", de: "einfach", ar: "بسيط، سهل", example: "Ich konnte einfache Sätze sagen.", exampleAr: "استطعتُ قول جملٍ بسيطة.", level: "A1" },
+    { id: "fc21", de: "der Supermarkt", ar: "السوق الكبير", example: "Im Supermarkt habe ich bezahlt.", exampleAr: "دفعتُ في السوق الكبير.", level: "A1" },
+    { id: "fc22", de: "bezahlen", ar: "يدفع", example: "Ich habe auf Deutsch bezahlt.", exampleAr: "دفعتُ بالألمانية.", level: "A1" },
+    { id: "fc23", de: "lachen", ar: "يضحك", example: "Der Kellner hat gelacht.", exampleAr: "ضحك النادل.", level: "A1" },
+    { id: "fc24", de: "funktionieren", ar: "ينجح، يؤدّي الغرض", example: "Es ist nicht perfekt, aber es funktioniert.", exampleAr: "ليس كمالاً لكنّه يؤدّي الغرض.", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */

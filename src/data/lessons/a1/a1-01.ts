@@ -766,7 +766,13 @@ export const lessonA101: Lesson = {
     { id: "fc10", de: "die Endung", ar: "النهاية (لاحقة تصريف الفعل)", example: "Die Endungen sind -e, -st, -t, -en: ich lerne, du lernst, er lernt.", exampleAr: "النهايات هي ‎-e و‎-st و‎-t و‎-en: أتعلّم، تتعلّم، يتعلّم.", level: "A1" },
     {"id": "fc11", "de": "die Mitbewohnerin", "ar": "شريكة السكن", "example": "Meine Mitbewohnerin heißt Lena.", "exampleAr": "شريكتي في السكن اسمها لينا.", "level": "A1"},
     {"id": "fc12", "de": "Es macht Spaß.", "ar": "إنّه ممتع.", "example": "Deutsch lernen macht Spaß.", "exampleAr": "تعلّم الألمانية ممتع.", "level": "A1"},
-    {"id": "fc13", "de": "du arbeitest (وصلة ‑e‑)", "ar": "أنت تعمل — جذع بـ t يأخذ ‑e‑", "example": "Du arbeitest viel.", "exampleAr": "أنت تعمل كثيراً.", "level": "A1"}
+    {"id": "fc13", "de": "du arbeitest (وصلة ‑e‑)", "ar": "أنت تعمل — جذع بـ t يأخذ ‑e‑", "example": "Du arbeitest viel.", "exampleAr": "أنت تعمل كثيراً.", "level": "A1"},
+    { id: "fc14", de: "studieren", ar: "يدرس في الجامعة", example: "Ich möchte hier Informatik studieren.", exampleAr: "أودّ أن أدرس المعلوماتية هنا.", level: "A1" },
+    { id: "fc15", de: "allein", ar: "وحده", example: "Ich wohne nicht allein.", exampleAr: "لا أسكن وحدي.", level: "A1" },
+    { id: "fc16", de: "freundlich", ar: "لطيف، ودود", example: "Lena ist immer freundlich.", exampleAr: "لينا ودودة دائماً.", level: "A1" },
+    { id: "fc17", de: "nett", ar: "لطيف", example: "Meine Mitbewohnerin ist sehr nett.", exampleAr: "شريكتي في السكن لطيفة جداً.", level: "A1" },
+    { id: "fc18", de: "beginnen", ar: "يبدأ", example: "Am Montag beginnt mein Deutschkurs.", exampleAr: "يوم الاثنين تبدأ دورتي.", level: "A1" },
+    { id: "fc19", de: "der Deutschkurs", ar: "دورة اللغة الألمانية", example: "Der Deutschkurs ist von neun bis zwölf.", exampleAr: "الدورة من التاسعة إلى الثانية عشرة.", level: "A1" },
   ],
 
   /* ═══ مهام الوساطة والتفاعل (CEFR 2020) ═══ */

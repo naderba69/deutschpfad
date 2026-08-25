@@ -1098,6 +1098,12 @@ export const lessonA114: Lesson = {
     { id: "fc17", de: "gestern", ar: "أمس", example: "Gestern habe ich viel gearbeitet.", exampleAr: "أمس عملتُ كثيراً.", level: "A1" },
     { id: "fc18", de: "letztes Wochenende", ar: "عطلة الأسبوع الماضية", example: "Letztes Wochenende bin ich gereist.", exampleAr: "عطلة الأسبوع الماضية سافرتُ.", level: "A1" },
     { id: "fc19", de: "gefallen (hat gefallen)", ar: "أعجب", example: "Berlin hat mir sehr gefallen.", exampleAr: "أعجبتني برلين كثيراً.", level: "A1" },
+    { id: "fc20", de: "die Fahrt", ar: "الرحلة، السفرة", example: "Die Fahrt hat vier Stunden gedauert.", exampleAr: "استغرقت الرحلة أربع ساعات.", level: "A1" },
+    { id: "fc21", de: "treffen", ar: "يقابل، يلتقي", example: "In Berlin habe ich Nadia getroffen.", exampleAr: "في برلين قابلتُ نادية.", level: "A1" },
+    { id: "fc22", de: "probieren", ar: "يجرّب، يذوق", example: "Ich habe eine Currywurst probiert.", exampleAr: "جرّبتُ الكاري فورست.", level: "A1" },
+    { id: "fc23", de: "schmecken", ar: "يكون طعمه طيّباً", example: "Es hat mir gut geschmeckt.", exampleAr: "أعجبني طعمه.", level: "A1" },
+    { id: "fc24", de: "deshalb", ar: "لذلك، لهذا السبب", example: "Es hat geregnet, deshalb sind wir ins Museum gegangen.", exampleAr: "أمطرت، لذلك ذهبنا إلى المتحف.", level: "A1" },
+    { id: "fc25", de: "das Museum", ar: "المتحف", example: "Im Museum habe ich viel gelernt.", exampleAr: "في المتحف تعلّمتُ كثيراً.", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل ═══ */

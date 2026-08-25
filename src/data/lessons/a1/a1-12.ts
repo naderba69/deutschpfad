@@ -869,6 +869,12 @@ export const lessonA112: Lesson = {
     {"id": "fc17", "de": "seit (+ Dativ)", "ar": "منذ", "example": "Es regnet seit drei Stunden.", "exampleAr": "تمطر منذ ثلاث ساعات.", "level": "A1"},
     {"id": "fc18", "de": "in einer Stunde", "ar": "بعد ساعة", "example": "In einer Stunde hört der Regen auf.", "exampleAr": "بعد ساعة يتوقّف المطر.", "level": "A1"},
     {"id": "fc19", "de": "der Himmel", "ar": "السماء", "example": "Der Himmel ist grau.", "exampleAr": "السماء رمادية.", "level": "A1"},
+    { id: "fc20", de: "scheinen", ar: "تشرق (الشمس)", example: "Die Sonne scheint heute.", exampleAr: "الشمس مشرقة اليوم.", level: "A1" },
+    { id: "fc21", de: "der Tag", ar: "اليوم (ج. Tage)", example: "Die Tage sind sehr lang.", exampleAr: "الأيّام طويلة جداً.", level: "A1" },
+    { id: "fc22", de: "das Jahr", ar: "السنة", example: "Seit einem Jahr wohne ich hier.", exampleAr: "أسكن هنا منذ سنة.", level: "A1" },
+    { id: "fc23", de: "anders", ar: "مختلف، على نحوٍ آخر", example: "Das Wetter ist hier anders.", exampleAr: "الطقس هنا مختلف.", level: "A1" },
+    { id: "fc24", de: "wirklich", ar: "حقاً، فعلاً", example: "Es ist wirklich kalt.", exampleAr: "الجوّ باردٌ حقاً.", level: "A1" },
+    { id: "fc25", de: "bunt", ar: "ملوّن، زاهي الألوان", example: "Die Blätter werden bunt.", exampleAr: "تصير الأوراق ملوّنة.", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */

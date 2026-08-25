@@ -949,6 +949,12 @@ export const lessonA108: Lesson = {
     { id: "fc14", de: "stehen (+ Dativ)", ar: "يليق بـ", example: "Das Kleid steht dir gut.", exampleAr: "الفستان يليق بك.", level: "A1" },
     { id: "fc15", de: "mir / dir / Ihnen", ar: "لي / لك / لحضرتك (ضمائر الدّاتيف)", example: "Wie gefällt Ihnen das?", exampleAr: "كيف يعجبك هذا؟", level: "A1" },
     { id: "fc16", de: "Wie gefällt Ihnen …?", ar: "كيف يعجبك …؟ (سؤال البائع)", example: "Wie gefällt Ihnen dieser Mantel?", exampleAr: "كيف يعجبك هذا المعطف؟", level: "A1" },
+    { id: "fc17", de: "der Mantel", ar: "المعطف", example: "Der Mantel ist zu teuer.", exampleAr: "المعطف غالٍ جداً.", level: "A1" },
+    { id: "fc18", de: "die Farbe", ar: "اللون", example: "Welche Farbe magst du?", exampleAr: "أيّ لونٍ تحبّ؟", level: "A1" },
+    { id: "fc19", de: "grau", ar: "رماديّ", example: "Der graue Mantel gefällt mir.", exampleAr: "المعطف الرماديّ يعجبني.", level: "A1" },
+    { id: "fc20", de: "suchen", ar: "يبحث عن", example: "Ich suche eine Jacke.", exampleAr: "أبحث عن سترة.", level: "A1" },
+    { id: "fc21", de: "brauchen", ar: "يحتاج", example: "Im Herbst braucht man eine Jacke.", exampleAr: "في الخريف يحتاج المرء سترة.", level: "A1" },
+    { id: "fc22", de: "der Herbst", ar: "الخريف", example: "Im Herbst wird es kalt.", exampleAr: "في الخريف يصير الجوّ بارداً.", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */

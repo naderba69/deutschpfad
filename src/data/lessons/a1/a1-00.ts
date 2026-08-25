@@ -735,6 +735,11 @@ export const lessonA100: Lesson = {
     {"id": "fc12", "de": "ch بعد a-o-u = خاء", "ar": "Buch, auch, Nacht", "example": "Das Buch ist auch neu.", "exampleAr": "الكتاب جديد أيضاً.", "level": "A1"},
     {"id": "fc13", "de": "ch بعد i-e-ä = شين ناعمة", "ar": "ich, nicht, Milch", "example": "Ich spreche nicht viel.", "exampleAr": "لا أتكلّم كثيراً.", "level": "A1"},
     {"id": "fc14", "de": "St- / Sp- في أوّل الكلمة = شت / شپ", "ar": "Stadt = شتات، Sport = شپورت", "example": "Die Stadt ist schön.", "exampleAr": "المدينة جميلة.", "level": "A1"},
+    { id: "fc15", de: "der Student", ar: "الطالب الجامعيّ", example: "Ich bin Student aus Tunesien.", exampleAr: "أنا طالب من تونس.", level: "A1" },
+    { id: "fc16", de: "der Stift", ar: "القلم", example: "Haben Sie einen Stift?", exampleAr: "هل معك قلم؟", level: "A1" },
+    { id: "fc17", de: "fragen", ar: "يسأل", example: "Die Lehrerin fragt: Wie heißen Sie?", exampleAr: "تسأل المعلّمة: ما اسمك؟", level: "A1" },
+    { id: "fc18", de: "antworten", ar: "يجيب", example: "Ich antworte auf Deutsch.", exampleAr: "أجيب بالألمانية.", level: "A1" },
+    { id: "fc19", de: "Auf Wiedersehen!", ar: "إلى اللقاء! (وداعٌ رسميّ)", example: "Auf Wiedersehen, Frau Weber!", exampleAr: "إلى اللقاء سيدة فيبر!", level: "A1" },
   ],
 
   /* 11) مراجعة تمهيدية (أول درس: ننشط معارف ما قبل البدء) */

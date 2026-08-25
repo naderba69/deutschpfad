@@ -798,6 +798,12 @@ export const lessonA104: Lesson = {
     {"id": "fc14", "de": "den Müll trennen", "ar": "يفرز النفايات", "example": "Wir müssen den Müll trennen.", "exampleAr": "علينا أن نفرز النفايات.", "level": "A1"},
     {"id": "fc15", "de": "die Ruhezeit", "ar": "وقت الهدوء (٢٢–٦ والأحد)", "example": "Nach 22 Uhr beginnt die Ruhezeit.", "exampleAr": "يبدأ وقت الهدوء بعد العاشرة.", "level": "A1"},
     {"id": "fc16", "de": "wohnen vs. leben", "ar": "يسكن (عنوان) مقابل يعيش (حياة)", "example": "Ich lebe in Deutschland und wohne in Köln.", "exampleAr": "أعيش في ألمانيا وأسكن في كولونيا.", "level": "A1"},
+    { id: "fc17", de: "das Bett", ar: "السرير", example: "Das Bett steht am Fenster.", exampleAr: "السرير عند النافذة.", level: "A1" },
+    { id: "fc18", de: "hell", ar: "مضيء", example: "Das Zimmer ist hell und ruhig.", exampleAr: "الغرفة مضيئة وهادئة.", level: "A1" },
+    { id: "fc19", de: "ruhig", ar: "هادئ", example: "Die Straße ist sehr ruhig.", exampleAr: "الشارع هادئ جداً.", level: "A1" },
+    { id: "fc20", de: "gefunden (finden)", ar: "وجَد", example: "Endlich habe ich eine Wohnung gefunden!", exampleAr: "أخيراً وجدتُ شقّة!", level: "A1" },
+    { id: "fc21", de: "endlich", ar: "أخيراً", example: "Endlich ist es warm.", exampleAr: "أخيراً صار الجوّ دافئاً.", level: "A1" },
+    { id: "fc22", de: "das Fenster", ar: "النافذة", example: "Das Fenster ist groß.", exampleAr: "النافذة كبيرة.", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */

@@ -826,6 +826,11 @@ export const lessonA110: Lesson = {
     {"id": "fc17", "de": "arbeitslos", "ar": "عاطل عن العمل", "example": "Mein Bruder ist zurzeit arbeitslos.", "exampleAr": "أخي عاطل عن العمل حالياً.", "level": "A1"},
     {"id": "fc18", "de": "selbstständig", "ar": "يعمل لحسابه الخاصّ", "example": "Unsere Kollegin ist selbstständig.", "exampleAr": "زميلتنا تعمل لحسابها الخاصّ.", "level": "A1"},
     {"id": "fc19", "de": "Was sind Sie von Beruf?", "ar": "ما مهنتك؟", "example": "Was sind Sie von Beruf? — Ich bin Ingenieur.", "exampleAr": "ما مهنتك؟ — أنا مهندس.", "level": "A1"},
+    { id: "fc20", de: "der Ingenieur", ar: "المهندس", example: "Er ist Ingenieur von Beruf.", exampleAr: "هو مهندس بالمهنة.", level: "A1" },
+    { id: "fc21", de: "das Büro", ar: "المكتب", example: "Mein Büro ist im dritten Stock.", exampleAr: "مكتبي في الطابق الثالث.", level: "A1" },
+    { id: "fc22", de: "der Computer", ar: "الحاسوب", example: "Auf dem Tisch steht ein Computer.", exampleAr: "على الطاولة حاسوب.", level: "A1" },
+    { id: "fc23", de: "seit", ar: "منذ", example: "Ich wohne seit zwei Jahren hier.", exampleAr: "أسكن هنا منذ سنتين.", level: "A1" },
+    { id: "fc24", de: "der Moment", ar: "اللحظة", example: "Einen Moment, bitte!", exampleAr: "لحظةً من فضلك!", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */

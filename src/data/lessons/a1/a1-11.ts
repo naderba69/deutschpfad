@@ -829,6 +829,12 @@ export const lessonA111: Lesson = {
     {"id": "fc17", "de": "Wie komme ich zum …?", "ar": "كيف أصل إلى …؟", "example": "Entschuldigung, wie komme ich zum Bahnhof?", "exampleAr": "عذراً، كيف أصل إلى المحطة؟", "level": "A1"},
     {"id": "fc18", "de": "Können Sie das bitte wiederholen?", "ar": "أيمكنك إعادة ذلك من فضلك؟", "example": "Ich verstehe nicht. Können Sie das bitte wiederholen?", "exampleAr": "لا أفهم. أيمكنك الإعادة من فضلك؟", "level": "A1"},
     {"id": "fc19", "de": "die Fahrkarte", "ar": "تذكرة السفر", "example": "Eine Fahrkarte nach Berlin, bitte.", "exampleAr": "تذكرة إلى برلين من فضلك.", "level": "A1"},
+    { id: "fc20", de: "kennen", ar: "يعرف (شخصاً أو مكاناً)", example: "Ich kenne die Stadt noch nicht.", exampleAr: "لا أعرف المدينة بعد.", level: "A1" },
+    { id: "fc21", de: "zuerst", ar: "أوّلاً", example: "Zuerst gehen Sie geradeaus.", exampleAr: "أوّلاً امشِ مستقيماً.", level: "A1" },
+    { id: "fc22", de: "weit", ar: "بعيد", example: "Ist das weit von hier?", exampleAr: "هل هذا بعيد من هنا؟", level: "A1" },
+    { id: "fc23", de: "die Kirche", ar: "الكنيسة", example: "Neben der Kirche ist eine Apotheke.", exampleAr: "بجانب الكنيسة صيدلية.", level: "A1" },
+    { id: "fc24", de: "der Hund", ar: "الكلب", example: "Eine Frau mit einem Hund hilft mir.", exampleAr: "امرأةٌ مع كلبٍ تساعدني.", level: "A1" },
+    { id: "fc25", de: "Entschuldigung!", ar: "عذراً! (لاستيقاف أحد)", example: "Entschuldigung, wo ist der Bahnhof?", exampleAr: "عذراً، أين المحطّة؟", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */

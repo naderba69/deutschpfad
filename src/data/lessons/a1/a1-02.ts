@@ -751,6 +751,12 @@ export const lessonA102: Lesson = {
     {"id": "fc13", "de": "unser / euer / Ihr", "ar": "لنا / لكم / لحضرتك (رسمي)", "example": "Unsere Familie ist groß.", "exampleAr": "عائلتنا كبيرة.", "level": "A1"},
     {"id": "fc14", "de": "Väter, Mütter, Brüder, Töchter", "ar": "جموعٌ بالإمالة وحدها", "example": "Ich habe zwei Brüder.", "exampleAr": "لي أخوان.", "level": "A1"},
     {"id": "fc15", "de": "das Kind (محايد!)", "ar": "الطفل — محايد مهما كان جنسه", "example": "Mein Kind heißt Nour.", "exampleAr": "طفلي اسمه نور.", "level": "A1"},
+    { id: "fc16", de: "das Haus", ar: "البيت", example: "Unser Haus ist groß.", exampleAr: "بيتنا كبير.", level: "A1" },
+    { id: "fc17", de: "zusammen", ar: "معاً", example: "Wir wohnen zusammen.", exampleAr: "نسكن معاً.", level: "A1" },
+    { id: "fc18", de: "neben", ar: "بجانب", example: "Er sitzt neben seiner Schwester.", exampleAr: "يجلس بجانب أخته.", level: "A1" },
+    { id: "fc19", de: "sitzen", ar: "يجلس", example: "Meine Oma sitzt im Wohnzimmer.", exampleAr: "جدّتي تجلس في غرفة المعيشة.", level: "A1" },
+    { id: "fc20", de: "stehen", ar: "يقف", example: "Mein Vater steht links.", exampleAr: "أبي يقف على اليسار.", level: "A1" },
+    { id: "fc21", de: "das Krankenhaus", ar: "المستشفى", example: "Meine Mutter arbeitet im Krankenhaus.", exampleAr: "أمّي تعمل في المستشفى.", level: "A1" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
