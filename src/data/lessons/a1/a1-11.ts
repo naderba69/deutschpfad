@@ -822,7 +822,7 @@ export const lessonA111: Lesson = {
     { id: "fc10", de: "zu Fuß gehen", ar: "يذهب مشياً", example: "Zum Markt gehe ich zu Fuß.", exampleAr: "إلى السوق أذهب مشياً.", level: "A1" },
     {"id": "fc11", "de": "ihn (Akkusativ von er)", "ar": "إيّاه (ضمير مفعول للمذكّر)", "example": "Der Bus? Ich nehme ihn.", "exampleAr": "الحافلة؟ آخذها.", "level": "A1"},
     {"id": "fc12", "de": "mich / dich", "ar": "إيّاي / إيّاك", "example": "Können Sie mich hören?", "exampleAr": "هل تسمعني؟", "level": "A1"},
-    {"id": "fc13", "de": "die Ampel", "ar": "إشارة المرور", "example": "An der Ampel gehen Sie links.", "exampleAr": "عند الإشارة اتّجه يساراً.", "level": "A1"},
+    {"id": "fc13", "de": "das Institut", "ar": "المعهد", "example": "Das Institut ist gleich um die Ecke.", "exampleAr": "المعهد خلف الزاوية مباشرة.", "level": "A1"},
     {"id": "fc14", "de": "die Haltestelle", "ar": "موقف الحافلة", "example": "Wo ist die Haltestelle?", "exampleAr": "أين الموقف؟", "level": "A1"},
     {"id": "fc15", "de": "steigt … um (umsteigen)", "ar": "يبدّل وسيلة النقل", "example": "Ich steige in Köln um.", "exampleAr": "أبدّل القطار في كولونيا.", "level": "A1"},
     {"id": "fc16", "de": "gegenüber von", "ar": "مقابل", "example": "Das Institut ist gegenüber von einer Apotheke.", "exampleAr": "المعهد مقابل صيدلية.", "level": "A1"},

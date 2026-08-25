@@ -243,4 +243,64 @@ describe("العمق الأكاديمي — كثافة التدريب", () => {
       .map((l) => `${l.id} = ${l.flashcards.length}`);
     expect(thin).toEqual([]);
   });
+
+  /**
+   * بطاقتان بالوجه الألمانيّ نفسه داخل درس واحد تعنيان أنّ المتعلّم
+   * يراجع الكلمة مرّتين في الجلسة الواحدة بينما كلمةٌ أخرى لا تُراجَع
+   * أصلاً. وقعت فعلاً ثلاث مرّات (a1-11 «die Ampel» · a1-13 «die Prüfung»
+   * و«bereit sein») ولم يلتقطها أي حارس لأنّ المعرّفات كانت مختلفة.
+   */
+  it("لا بطاقة مكرّرة داخل الدرس الواحد", () => {
+    const dups: string[] = [];
+    for (const lesson of academic()) {
+      const seen = new Map<string, number>();
+      for (const card of lesson.flashcards) {
+        const key = card.de.trim().toLowerCase();
+        seen.set(key, (seen.get(key) ?? 0) + 1);
+      }
+      for (const [key, n] of seen) {
+        if (n > 1) dups.push(`${lesson.id}: «${key}» ×${n}`);
+      }
+    }
+    expect(dups, `بطاقات مكرّرة:\n${dups.join("\n")}`).toEqual([]);
+  });
+
+  /**
+   * البطاقة موعدٌ مع كلمةٍ قابلها المتعلّم في سياق. فإن لم ترد الكلمة
+   * في نصّ الدرس ولا في شرحه ولا في تدريباته، فهي مفردة معلّقة بلا
+   * مرساة — وهي بالضبط العلّة التي أُصلحت في كلمات الوحدات المفتاحية.
+   */
+  it("كل بطاقة مرساةٌ في مادّة درسها", () => {
+    const orphans: string[] = [];
+    for (const lesson of academic()) {
+      const haystack = JSON.stringify([
+        lesson.theory,
+        lesson.reading ?? {},
+        lesson.practiceBank,
+        lesson.miniTest,
+        lesson.listening,
+        lesson.pronunciation,
+        lesson.einfuehrung,
+        lesson.fehlerUndTipps,
+      ]).toLowerCase();
+      for (const card of lesson.flashcards) {
+        // يكفي أن ترسو *كلمةٌ واحدة* من وجه البطاقة: فبطاقةٌ مثل
+        // «anrufen / abholen / mitnehmen» تجمع ثلاثة أفعال، ووجود
+        // أحدها في المادّة يكفي مرساةً. والجذع يتسامح مع التصريف.
+        const words = card.de
+          .replace(/^(der|die|das)\s+/i, "")
+          .split(/[^A-Za-zäöüßÄÖÜ]+/)
+          .filter((w) => w.length >= 4)
+          .map((w) => w.toLowerCase());
+        if (words.length === 0) continue;
+        const anchored = words.some((w) =>
+          haystack.includes(w.slice(0, Math.max(4, w.length - 3))),
+        );
+        if (!anchored) {
+          orphans.push(`${lesson.id}:${card.id} «${card.de}»`);
+        }
+      }
+    }
+    expect(orphans, `بطاقات بلا مرساة:\n${orphans.join("\n")}`).toEqual([]);
+  });
 });
