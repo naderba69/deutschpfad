@@ -18,7 +18,7 @@ import type { Lesson, ReadingText, TheoryBlock } from "@/types/lesson";
  */
 
 /** الدروس التي رُقّيت إلى المعيار الأكاديمي — تكبر هذه القائمة مع كل ترقية. */
-export const ACADEMIC_LESSONS: string[] = ["a1-00", "a1-01", "a1-02", "a1-03", "a1-04", "a1-05", "a1-06", "a1-07", "a1-08", "a1-09", "a1-10", "a1-11", "a1-12", "a1-14", "a1-13", "a2-01"];
+export const ACADEMIC_LESSONS: string[] = ["a1-00", "a1-01", "a1-02", "a1-03", "a1-04", "a1-05", "a1-06", "a1-07", "a1-08", "a1-09", "a1-10", "a1-11", "a1-12", "a1-14", "a1-13", "a2-01", "a2-02"];
 
 const MIN_EXPLANATION = 900;
 const MIN_WHY = 250;
