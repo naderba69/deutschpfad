@@ -77,7 +77,7 @@ export const lessonA209: Lesson = {
       titleAr: "Dativ الكامل مع الأسماء + أفعال الجر",
       titleDe: "Der Dativ: dem, der, den + Dativ-Verben",
       explanationAr:
-        "الأسماء في Dativ: المذكر der→dem، المؤنث die→der، المحايد das→dem، الجمع die→den (+n). أفعال تأخذ Dativ دائماً: helfen (يساعد)، gefallen (يعجب)، gehören (يخصّ)، danken (يشكر)، gratulieren (يهنئ)، antworten (يجيب)، gefallen. Ich helfe dem Vater. Das Geschenk gehört der Mutter.",
+        "الأسماء في Dativ: المذكر der→dem، المؤنث die→der، المحايد das→dem، الجمع die→den (+n). أفعال تأخذ Dativ دائماً: helfen (يساعد)، gefallen (يعجب)، gehören (يخصّ)، danken (يشكر)، gratulieren (يهنئ)، antworten (يجيب)، gefallen. Ich helfe dem Vater. Das Geschenk gehört der Mutter. لا نتعامل مع Dativ على أنه قائمة أدوات فقط؛ فهو يحدد المشارِك الذي يستفيد أو يتلقى أو يتجه إليه الفعل. ابدأ بسؤال الوظيفة: لمن أساعد؟ لمن أشكر؟ لمن يخص الشيء؟ ثم اختر الأداة. في المفرد المذكر والمحايد تصبح der/das إلى dem، وفي المؤنث تصبح die إلى der، وفي الجمع تصبح die إلى den، وغالباً نضيف n إلى الاسم إذا كان ذلك ممكنًا: den Kindern، den Freunden. بعض الأسماء الجمع التي تنتهي بـ n لا تضيف n ثانية، مثل den Eltern. بعد ذلك اربط الفعل بنمطه: Ich sehe den Freund، لكن Ich helfe dem Freund؛ Ich gratuliere der Freundin، وDas Geschenk gehört dem Kind. وفي جملة فيها ضمير يصبح الفرق أوضح: Ich sehe ihn (Akkusativ)، Ich helfe ihm (Dativ). لاحظ أن gefallen يعمل من منظور الشيء الذي يعجب والشخص الذي يشعر بالإعجاب: Das Geschenk gefällt mir، وليس Ich gefalle das Geschenk. هذا التحليل يمنع الحفظ الآلي ويهيئ المتعلم لجمل الأفعال ذات المفعولين في B1.",
       whyAr:
         "لماذا هذه الأفعال خاصة؟ لأنها «تتجه نحو شخص» — الفعل يذهب إلى شخص وليس إلى شيء: أساعد (إلى) الأب. الألمانية جعلت هذا الاتجاه حالة مستقلة (Dativ) بأدوات مميزة. التعرف عليها: اسأل «لمن؟/إلى من؟» (wem؟).",
       table: {
@@ -112,6 +112,47 @@ export const lessonA209: Lesson = {
       },
     },
   ],
+
+  reading: {
+    titleDe: "Ein Fest mit Freunden",
+    titleAr: "احتفال مع الأصدقاء",
+    paragraphs: [
+      "Am Samstag feiert Lina ihren Geburtstag. Sie lädt ihre Freunde zu sich nach Hause ein. In der Einladung stehen der Tag, die Uhrzeit und die Adresse. Lina bittet die Gäste, ihr kurz zu antworten. Einige Freunde kommen gern, aber eine Freundin kann leider nicht kommen, weil sie arbeiten muss.",
+      "Am Nachmittag helfen Linas Bruder und ihre Nachbarin bei der Vorbereitung. Der Bruder bringt Getränke, und die Nachbarin backt einen Kuchen. Lina gefällt die Idee, dass jeder eine kleine Aufgabe übernimmt. Später schenkt ihr ihr Freund Karim ein Buch. Lina dankt ihm und sagt, dass ihr das Geschenk sehr gefällt.",
+      "Am Abend gratulieren alle Gäste Lina zum Geburtstag. Sie sprechen über die Musik und die Dekoration. Den Kindern gefällt besonders der Garten. Als das Fest endet, hilft Lina den Gästen beim Aufräumen. Sie bedankt sich bei allen und lädt sie schon zur nächsten Feier ein. Am Ende sind alle müde, aber sie freuen sich auf das nächste gemeinsame Fest."
+    ],
+    paragraphsAr: [
+      "تحتفل لينا يوم السبت بعيد ميلادها. تدعو أصدقاءها إلى بيتها. وتحتوي الدعوة على اليوم والوقت والعنوان. وتطلب لينا من الضيوف أن يجيبوا عليها باختصار. يأتي بعض الأصدقاء بسرور، لكن صديقة لا تستطيع الحضور لأنها مضطرة إلى العمل.",
+      "بعد الظهر يساعد أخو لينا وجارتها في التحضير. يحضر الأخ المشروبات، وتخبز الجارة كعكة. تعجب لينا فكرة أن يتولى كل شخص مهمة صغيرة. وبعد ذلك يهديها صديقها كريم كتابًا. تشكره لينا وتقول إن الهدية تعجبها كثيرًا.",
+      "في المساء يهنئ جميع الضيوف لينا بعيد ميلادها. ويتحدثون عن الموسيقى والزينة. ويعجب الأطفال بالحديقة خصوصًا. وعندما ينتهي الاحتفال، تساعد لينا الضيوف في الترتيب. وتشكر الجميع وتدعوهم إلى الاحتفال القادم."
+    ],
+    glossary: [
+      { de: "einladen", ar: "يدعو", example: "Ich lade meine Freunde ein." },
+      { de: "die Einladung", ar: "الدعوة", example: "Die Einladung ist kurz." },
+      { de: "vorbereiten", ar: "يحضّر", example: "Wir bereiten das Fest vor." },
+      { de: "übernehmen", ar: "يتولى", example: "Jeder übernimmt eine Aufgabe." },
+      { de: "die Dekoration", ar: "الزينة", example: "Die Dekoration gefällt den Gästen." },
+      { de: "gratulieren", ar: "يهنئ", example: "Alle gratulieren Lina." },
+      { de: "sich bedanken", ar: "يشكر", example: "Lina bedankt sich bei allen." },
+      { de: "aufräumen", ar: "يرتب/ينظف بعد المناسبة", example: "Wir räumen nach dem Fest auf." },
+      { de: "der Gast", ar: "الضيف", example: "Die Gäste kommen um sieben." },
+      { de: "übernehmen", ar: "يتولى", example: "Ich übernehme diese Aufgabe." },
+    ],
+    questions: [
+      { id: "rq1", type: "multiple-choice", instructionAr: "أجب عن النص.", questionDe: "Wen lädt Lina ein?", options: ["Ihre Freunde", "Ihre Lehrer", "Ihre Nachbarn allein", "Ihre Kollegen aus dem Büro"], correctIndex: 0, explanation: "تدعو لينا أصدقاءها.", errorType: "vocabulary" },
+      { id: "rq2", type: "multiple-choice", instructionAr: "أجب عن النص.", questionDe: "Wer backt einen Kuchen?", options: ["Die Nachbarin", "Karim", "Lina", "Der Bruder"], correctIndex: 0, explanation: "الجارة تخبز الكعكة.", errorType: "vocabulary" },
+      { id: "rq3", type: "multiple-choice", instructionAr: "أجب عن النص.", questionDe: "Wem dankt Lina für das Buch?", options: ["Karim", "Ihrer Nachbarin", "Den Kindern", "Ihrem Bruder"], correctIndex: 0, explanation: "تشكر كريم؛ danken يأخذ Dativ: ihm.", errorType: "case" },
+      { id: "rq4", type: "multiple-choice", instructionAr: "أجب عن النص.", questionDe: "Wem gefällt der Garten besonders?", options: ["Den Kindern", "Den Gästen nicht", "Nur Lina", "Der Nachbarin"], correctIndex: 0, explanation: "يعجب الأطفال بالحديقة خصوصًا.", errorType: "case" },
+    ],
+    redemittel: [
+      { de: "Danke für die Einladung!", ar: "شكرًا على الدعوة!" },
+      { de: "Ich komme gern.", ar: "سآتي بسرور." },
+      { de: "Leider kann ich nicht kommen.", ar: "للأسف لا أستطيع الحضور." },
+      { de: "Herzlichen Glückwunsch zum Geburtstag!", ar: "تهانينا الحارة بعيد الميلاد!" },
+      { de: "Das Geschenk gefällt mir sehr.", ar: "الهدية تعجبني كثيرًا." },
+    ],
+    discussionAr: "خطط لاحتفال صغير: من تدعو؟ ماذا تحضر؟ وما الهدية المناسبة؟ استعمل دعوتين وعبارة فيها Dativ مثل Das gefällt mir أو Ich danke dir.",
+  },
 
   listening: {
     items: [
@@ -340,6 +381,10 @@ export const lessonA209: Lesson = {
       explanation: "نهنئ الصديق بعيد ميلاده — gratulieren + Dativ.",
       errorType: "spelling",
     },
+    { id: "e11", type: "multiple-choice", instructionAr: "اختر الأداة الصحيحة.", questionDe: "Ich gratuliere ___ Freundin.", options: ["der", "die", "den", "dem"], correctIndex: 0, explanation: "gratulieren يأخذ Dativ، والمؤنث der Freundin.", errorType: "case" },
+    { id: "e12", type: "word-ordering", instructionAr: "رتّب الجملة.", tokens: ["mir", "Das", "gefällt", "sehr", "."], correctSentence: "Das gefällt mir sehr.", explanation: "gefällt + Dativ: mir.", errorType: "word-order" },
+    { id: "e13", type: "transformation", instructionAr: "حوّل الجملة إلى دعوة.", prompt: "Du kommst zu meiner Party. → (أدعوك)", acceptedAnswers: ["Ich lade dich zu meiner Party ein", "Ich lade dich zu meiner Party ein."], sampleAnswer: "Ich lade dich zu meiner Party ein.", explanation: "einladen فعل منفصل، وdich مفعول به.", errorType: "grammar" },
+    { id: "e14", type: "dictation", instructionAr: "استمع واكتب الجملة.", audioText: "Herzlichen Glückwunsch zum Geburtstag!", explanation: "عبارة التهنئة الأساسية.", errorType: "spelling" },
   ],
 
   fehlerUndTipps: {
@@ -423,5 +468,9 @@ export const lessonA209: Lesson = {
     { id: "fc6", de: "gefallen (+Dativ)", ar: "يعجب", example: "Das gefällt mir.", exampleAr: "هذا يعجبني.", level: "A2" },
     { id: "fc7", de: "gehören (+Dativ)", ar: "يخصّ", example: "Das gehört mir.", exampleAr: "هذا يخصني.", level: "A2" },
     { id: "fc8", de: "gratulieren (+Dativ)", ar: "يهنئ", example: "Ich gratuliere dir!", exampleAr: "أهنئك!", level: "A2" },
+    { id: "fc9", de: "der Gast", ar: "الضيف", example: "Die Gäste kommen um sieben.", exampleAr: "يأتي الضيوف في السابعة.", level: "A2" },
+    { id: "fc10", de: "die Dekoration", ar: "الزينة", example: "Die Dekoration gefällt mir.", exampleAr: "الزينة تعجبني.", level: "A2" },
+    { id: "fc11", de: "sich bedanken", ar: "يشكر", example: "Ich bedanke mich bei dir.", exampleAr: "أشكرك.", level: "A2" },
+    { id: "fc12", de: "aufräumen", ar: "يرتب بعد المناسبة", example: "Wir räumen zusammen auf.", exampleAr: "نرتب معًا.", level: "A2" },
   ],
 };
