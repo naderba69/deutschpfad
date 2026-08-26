@@ -286,6 +286,18 @@ export interface Flashcard {
   level: LevelCode;
 }
 
+/** نص قراءة ممتد للدرس الأكاديمي */
+export interface ReadingText {
+  titleDe: string;
+  titleAr: string;
+  paragraphs: string[];
+  paragraphsAr: string[];
+  glossary: { de: string; ar: string; example?: string }[];
+  questions: McqExercise[];
+  redemittel: { de: string; ar: string }[];
+  discussionAr: string;
+}
+
 /** الدرس الكامل */
 export interface Lesson {
   id: string;
@@ -302,6 +314,8 @@ export interface Lesson {
   einfuehrung: Einfuehrung;
   /** مراجعة تراكمية (Interleaving) — أسئلة من المستوى السابق */
   review?: Exercise[];
+  /** قراءة أكاديمية ممتدة (اختيارية، مطلوبة في الدروس الأكاديمية A2+) */
+  reading?: ReadingText;
   /** 3 */
   theory: TheoryBlock[];
   /** 4 */

@@ -1,4 +1,4 @@
-import {AlertTriangle, BookOpen, ClipboardCheck, Dumbbell, Headphones, Layers, Lightbulb, Mic, PenLine, Repeat, TableProperties, Target, type LucideIcon} from "lucide-react";
+import {AlertTriangle, BookOpen, BookOpenText, ClipboardCheck, Dumbbell, Headphones, Layers, Lightbulb, Mic, PenLine, Repeat, TableProperties, Target, type LucideIcon} from "lucide-react";
 
 /**
  * المكونات العشرة الإلزامية لكل درس — تعريف موحد
@@ -15,6 +15,7 @@ export const LESSON_SECTIONS: LessonSectionDef[] = [
   { id: "einfuehrung", label: "التمهيد وتنشيط المعرفة", short: "التمهيد", icon: Lightbulb },
   { id: "review", label: "مراجعة تراكمية (Interleaving)", short: "مراجعة سابقة", icon: Repeat },
   { id: "theorie", label: "الشرح النظري", short: "الشرح", icon: BookOpen },
+  { id: "lesen", label: "قراءة ممتدة (Lesen)", short: "القراءة", icon: BookOpenText },
   { id: "verben", label: "جدول الأفعال الشاذة", short: "أفعال شاذة", icon: TableProperties },
   { id: "hoerverstehen", label: "الاستماع (Hörverstehen)", short: "الاستماع", icon: Headphones },
   { id: "aussprache", label: "النطق (Aussprache)", short: "النطق", icon: Mic },

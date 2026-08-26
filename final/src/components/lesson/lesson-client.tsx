@@ -15,6 +15,7 @@ import {FehlerUndTippsSection} from "@/components/lesson/sections/fehler-und-tip
 import {HoerverstehenSection} from "@/components/lesson/sections/hoerverstehen";
 import {InteraktiveUebungenSection} from "@/components/lesson/sections/interaktive-uebungen";
 import {LernkartenSection} from "@/components/lesson/sections/lernkarten";
+import {LesenSection} from "@/components/lesson/sections/lesen";
 import {LernzieleSection} from "@/components/lesson/sections/lernziele";
 import {MiniTestSection} from "@/components/lesson/sections/mini-test";
 import {LessonSummary} from "@/components/lesson/sections/lesson-summary";
@@ -331,6 +332,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
   const sectionDefs = LESSON_SECTIONS.filter(
     (def) =>
       (def.id !== "review" || (lesson.review && lesson.review.length > 0)) &&
+      (def.id !== "lesen" || Boolean(lesson.reading)) &&
       (def.id !== "verben" || lesson.level === "B1" || lesson.level === "B2"),
   );
   const total = sectionDefs.length;
@@ -368,6 +370,8 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
         );
       case "theorie":
         return <TheorieSection blocks={lesson.theory} lessonId={lesson.id} />;
+      case "lesen":
+        return lesson.reading ? <LesenSection reading={lesson.reading} /> : null;
       case "verben":
         return (
           <Card className="overflow-hidden">

@@ -4,6 +4,7 @@ import * as React from "react";
 import {ArrowLeft, CheckCircle2, Hand, Headphones, Lightbulb, PenLine, RotateCcw, Sparkles, Trophy, Volume2} from "lucide-react";
 
 import {ExerciseRenderer} from "@/components/lesson/exercises/exercise-renderer";
+import {LesenSection} from "@/components/lesson/sections/lesen";
 import {MultipleChoiceExercise} from "@/components/lesson/exercises/multiple-choice";
 import {TextDe} from "@/components/shared/text-de";
 import {SpeakButton} from "@/components/shared/speak-button";
@@ -76,7 +77,9 @@ export function LessonFlow({ lesson, onFinish }: { lesson: Lesson; onFinish?: ()
 
   // ═══ فهارس المراحل الدقيقة (لا تعتمد على totalStages-2 الهشة) ═══
   const hasMistakeStage = mistakes.length > 0;
-  const PRACTICE_IDX = 1 + learnBlocks.length;
+  const hasReading = Boolean(lesson.reading);
+  const READ_IDX = 1 + learnBlocks.length;
+  const PRACTICE_IDX = READ_IDX + (hasReading ? 1 : 0);
   const LISTEN_IDX = PRACTICE_IDX + (practiceCount > 0 ? 1 : 0);
   const PRODUCE_IDX = LISTEN_IDX + (hasListening ? 1 : 0);
   const DIALOGUE_IDX = PRODUCE_IDX + 1;
@@ -286,6 +289,12 @@ export function LessonFlow({ lesson, onFinish }: { lesson: Lesson; onFinish?: ()
 
     s -= learnBlocks.length;
 
+    // القراءة الممتدة: تُعرض في التدفق الافتراضي للدروس الأكاديمية
+    if (hasReading && s === 0) {
+      return <LesenSection reading={lesson.reading!} />;
+    }
+    if (hasReading) s -= 1;
+
     // مرحلة التدريب (تتكشف التمارين واحداً واحداً)
     if (practiceCount > 0 && s === 0) {
       return (
@@ -486,6 +495,7 @@ export function LessonFlow({ lesson, onFinish }: { lesson: Lesson; onFinish?: ()
   const stageNames = React.useMemo(() => {
     const names: string[] = ["الافتتاح"];
     learnBlocks.forEach((b, i) => names.push(`القاعدة ${i + 1}`));
+    if (hasReading) names.push("القراءة");
     if (practiceCount > 0) names.push("التدريب");
     if (hasListening) names.push("الاستماع");
     names.push("الإنتاج"); // مرحلة الكتابة الأصلية
@@ -494,7 +504,7 @@ export function LessonFlow({ lesson, onFinish }: { lesson: Lesson; onFinish?: ()
     if (hasMistakeStage) names.push("أخطاؤك");
     names.push("الإكمال");
     return names;
-  }, [learnBlocks, practiceCount, hasListening, quizCount, hasMistakeStage]);
+  }, [learnBlocks, hasReading, practiceCount, hasListening, quizCount, hasMistakeStage]);
 
   /* ── الواجهة ── */
   return (
