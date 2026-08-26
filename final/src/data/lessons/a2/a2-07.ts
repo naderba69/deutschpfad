@@ -77,7 +77,7 @@ export const lessonA207: Lesson = {
       titleAr: "es gibt + Akkusativ (يوجد/هناك)",
       titleDe: "„Es gibt“ + Akkusativ",
       explanationAr:
-        "es gibt = يوجد/هناك (للتعبير عن وجود شيء). التركيب الإلزامي: es gibt + Akkusativ: Es gibt einen Bahnhof in der Stadt (يوجد محطة في المدينة). لا يتغير أبداً (es gibt دائماً). للسؤال: Gibt es...? وللنفي: Es gibt keinen/keine...",
+        "es gibt = يوجد/هناك (للتعبير عن وجود شيء). التركيب الإلزامي: es gibt + Akkusativ: Es gibt einen Bahnhof in der Stadt (يوجد محطة في المدينة). لا يتغير أبداً (es gibt دائماً). للسؤال: Gibt es...? وللنفي: Es gibt keinen/keine... في الخطوة الأولى نحدد جنس الاسم وعدده، ثم نختار أداة النصب: المذكر der يصبح den، وein يصبح einen، وkein يصبح keinen؛ أما المؤنث die/eine، والمحايد das/ein، والجمع die، فشكلها لا يتغير غالباً في Akkusativ. لا تخلط بين وجود شيء ووصفه: Es gibt eine Bank يقدم بنكاً جديداً في الحديث، بينما Die Bank ist geöffnet يتحدث عن بنك معروف. وإذا أضفنا مكاناً فالمكان لا يغير حالة المفعول: Es gibt einen Automaten im Bahnhof. وفي السؤال نقلب الفعل وes فقط: Gibt es hier einen Automaten? أما النفي بـ nicht فينفي الفعل أو الصفة، وkein ينفي الاسم غير المعرف: Es gibt keinen Automaten. هذه القاعدة تدرّب المتعلم على قراءة وظيفة الاسم لا على حفظ ترجمة «يوجد» فقط، وهي تمهيد ضروري لفهم ترتيب المفعول في الجملة الألمانية.",
       whyAr:
         "لماذا Akkusativ بعد es gibt؟ لأن الجملة تعني حرفياً «هو يعطي شيئاً»: es (هو) + gibt (يعطي) + مفعولاً. أي أن es «يعطي» الوجود للمفعول — والنصب هو حالة المفعول به. منطق لغوي جميل!",
       table: {
@@ -116,7 +116,7 @@ export const lessonA207: Lesson = {
       titleAr: "ضمائر النصب والجر (Akkusativ/Dativ Pronomen)",
       titleDe: "Akkusativ- und Dativpronomen: mich, dich, mir, dir",
       explanationAr:
-        "الضمائر تتغير حسب الحالة: Nominativ: ich, du, er... Akkusativ: mich (إياي)، dich (إياك)، ihn, sie, es, uns, euch, sie. Dativ: mir (لي)، dir (لك)، ihm, ihr, ihm, uns, euch, ihnen. الأفعال مع النصب: sehen, lieben, kennen. مع الجر: helfen, gefallen, gehören, danken, antworten.",
+        "الضمائر تتغير حسب الحالة: Nominativ: ich, du, er... Akkusativ: mich (إياي)، dich (إياك)، ihn, sie, es, uns, euch, sie. Dativ: mir (لي)، dir (لك)، ihm, ihr, ihm, uns, euch, ihnen. الأفعال مع النصب: sehen, lieben, kennen. مع الجر: helfen, gefallen, gehören, danken, antworten. لا يكفي أن نسأل عن معنى الفعل بالعربية؛ علينا أن نعرف نمطه الألماني. يمكن أن يظهر المفعول قبل الضمير أو بعده، لكن وظيفة الفعل لا تتغير: Ich sehe den Berater، ثم Ich sehe ihn؛ وIch helfe dem Berater، ثم Ich helfe ihm. في الجملة التي تحتوي مفعولين نحتاج إلى التمييز بين الشخص المستفيد والشيء: Ich gebe ihm die Karte؛ الشخص في Dativ والشيء في Akkusativ. في مستوى A2 نركز على الضمائر الشخصية، ونؤجل ترتيب الضمائر المتعددة إلى مستوى أعلى، لكننا نثبت الاختبار العملي: من أرى؟ mich/dich/ihn؛ لمن أساعد أو أجيب؟ mir/dir/ihm. لاحظ أن بعض الأشكال تتطابق: sie في Nominativ وAkkusativ، وuns وeuch في Akkusativ وDativ، لذلك يساعد السياق والفعل على تحديد الوظيفة. احفظ الضمير داخل جملة قصيرة لا منفرداً، وبدّل الشخص مع بقاء الفعل حتى تصبح العلاقة بين الفعل والحالة تلقائية.",
       whyAr:
         "لماذا ضميران لكل شخص؟ لأن الفعل يحدد: «يرى» يطلب مفعولاً به (نصب): Ich sehe dich. «يساعد» يطلب جراً: Ich helfe dir. هذا مثل العربية: «رأيتُكَ» (نصب) مقابل «أعطيتُكَ» — لكن الألمانية تجعلها ظاهرة منضبطة.",
       table: {
@@ -153,6 +153,47 @@ export const lessonA207: Lesson = {
       },
     },
   ],
+
+  reading: {
+    titleDe: "Ein Konto in Deutschland eröffnen",
+    titleAr: "فتح حساب في ألمانيا",
+    paragraphs: [
+      "Wer in Deutschland arbeitet oder studiert, braucht oft ein Bankkonto. Mit einem Konto kann man Geld bekommen, Rechnungen bezahlen und eine Miete überweisen. Für die Eröffnung bringt man normalerweise einen Pass oder Personalausweis und eine Adresse mit. Die Bankangestellte erklärt, welche Kontomodelle es gibt und ob Gebühren entstehen.",
+      "Viele Banken bieten heute ein Onlinekonto an. Das ist praktisch, weil man Überweisungen mit dem Handy machen kann. Trotzdem möchte nicht jeder alles online erledigen. Manche Kundinnen und Kunden sprechen lieber mit einer Person in der Filiale, besonders wenn sie eine wichtige Frage haben. Ein Gespräch hilft auch, die Bedingungen eines Kontos genau zu verstehen.",
+      "Beim Bezahlen gibt es verschiedene Möglichkeiten. Man kann bar zahlen, eine Girocard benutzen oder eine Rechnung überweisen. Vor einer Überweisung sollte man den Namen und die IBAN kontrollieren. Wenn ein Problem entsteht, hilft die Bank dem Kunden. Deshalb ist es nützlich, die Pronomen richtig zu verwenden: Ich sehe den Berater, aber ich helfe ihm und danke ihm für die Erklärung."
+    ],
+    paragraphsAr: [
+      "يحتاج من يعمل أو يدرس في ألمانيا غالبًا إلى حساب بنكي. وبالحساب يستطيع المرء استلام المال ودفع الفواتير وتحويل الإيجار. ولفتح الحساب يحضر الشخص عادة جواز السفر أو بطاقة الهوية وعنوانًا. تشرح الموظفة نماذج الحساب الموجودة وما إذا كانت هناك رسوم.",
+      "تقدم بنوك كثيرة اليوم حسابًا إلكترونيًا. وهذا عملي لأن المرء يستطيع إجراء التحويلات بالهاتف. لكن ليس الجميع يريد إنجاز كل شيء عبر الإنترنت؛ فبعض العملاء يفضلون الحديث مع شخص في الفرع، خصوصًا عندما يكون لديهم سؤال مهم. وتساعد المحادثة أيضًا على فهم شروط الحساب بدقة.",
+      "توجد طرق مختلفة للدفع: يمكن الدفع نقدًا، أو استعمال بطاقة Girocard، أو تحويل الفاتورة. وقبل التحويل ينبغي التحقق من الاسم ورقم IBAN. وإذا حدثت مشكلة، يساعد البنك العميل. لذلك من المفيد استعمال الضمائر بشكل صحيح: أرى المستشار، لكنني أساعده وأشكره على الشرح."
+    ],
+    glossary: [
+      { de: "das Bankkonto", ar: "الحساب البنكي", example: "Ich eröffne ein Bankkonto." },
+      { de: "die Eröffnung", ar: "الفتح/الافتتاح", example: "Die Eröffnung dauert nicht lange." },
+      { de: "der Personalausweis", ar: "بطاقة الهوية", example: "Ich habe meinen Personalausweis dabei." },
+      { de: "die Gebühr", ar: "الرسم/العمولة", example: "Gibt es eine Gebühr?" },
+      { de: "die Filiale", ar: "الفرع", example: "Ich gehe in die Filiale." },
+      { de: "die Überweisung", ar: "التحويل البنكي", example: "Die Überweisung ist heute angekommen." },
+      { de: "die Rechnung", ar: "الفاتورة", example: "Ich bezahle die Rechnung." },
+      { de: "kontrollieren", ar: "يتحقق/يفحص", example: "Kontrollieren Sie bitte die IBAN." },
+      { de: "der Berater", ar: "المستشار", example: "Ich spreche mit dem Berater." },
+      { de: "entstehen", ar: "ينشأ/يترتب", example: "Welche Kosten entstehen?" },
+    ],
+    questions: [
+      { id: "rq1", type: "multiple-choice", instructionAr: "أجب عن النص.", questionDe: "Was braucht man oft für die Eröffnung eines Kontos?", options: ["Einen Pass und eine Adresse", "Nur eine Bankkarte", "Nur Bargeld", "Eine Zeitung"], correctIndex: 0, explanation: "يذكر النص جواز السفر أو الهوية والعنوان.", errorType: "vocabulary" },
+      { id: "rq2", type: "multiple-choice", instructionAr: "أجب عن النص.", questionDe: "Warum ist ein Onlinekonto praktisch?", options: ["Man kann mit dem Handy überweisen.", "Es gibt keine Bedingungen.", "Man braucht keine Adresse.", "Es ist immer kostenlos."], correctIndex: 0, explanation: "السبب المذكور هو إجراء التحويلات بالهاتف.", errorType: "vocabulary" },
+      { id: "rq3", type: "multiple-choice", instructionAr: "أجب عن النص.", questionDe: "Was sollte man vor einer Überweisung kontrollieren?", options: ["Name und IBAN", "Die Zeitung", "Die Öffnungszeit", "Den Reisepass des Beraters"], correctIndex: 0, explanation: "ينبغي فحص الاسم ورقم IBAN.", errorType: "vocabulary" },
+      { id: "rq4", type: "multiple-choice", instructionAr: "أجب عن النص.", questionDe: "Welches Pronomen passt: Ich helfe ___.", options: ["ihm", "ihn", "er", "sie"], correctIndex: 0, explanation: "helfen يأخذ Dativ، والمستشار المذكر المفرد هو ihm.", errorType: "case" },
+    ],
+    redemittel: [
+      { de: "Ich möchte ein Konto eröffnen.", ar: "أريد فتح حساب." },
+      { de: "Welche Gebühren entstehen?", ar: "ما الرسوم التي تترتب؟" },
+      { de: "Können Sie mir bitte helfen?", ar: "هل يمكنكم مساعدتي من فضلكم؟" },
+      { de: "Ich möchte mit Karte zahlen.", ar: "أريد الدفع بالبطاقة." },
+      { de: "Ich habe eine Frage zu meinem Konto.", ar: "لدي سؤال عن حسابي." },
+    ],
+    discussionAr: "قارن بين الدفع نقدًا والدفع بالبطاقة. ما الطريقة التي تفضلها؟ اذكر سببين، واستعمل جملة mit es gibt وجملة فيها mir أو dir.",
+  },
 
   listening: {
     items: [
@@ -382,6 +423,43 @@ export const lessonA207: Lesson = {
       explanation: "أحوّل المال إلى حسابك — überweisen فعل منفصل.",
       errorType: "spelling",
     },
+    {
+      id: "e11",
+      type: "multiple-choice",
+      instructionAr: "اختر الضمير الصحيح مع الفعل danken.",
+      questionDe: "Ich danke ___. (أنتَ)",
+      options: ["dir", "dich", "du", "ihn"],
+      correctIndex: 0,
+      explanation: "danken يأخذ Dativ: dir.",
+      errorType: "case",
+    },
+    {
+      id: "e12",
+      type: "word-ordering",
+      instructionAr: "رتّب سؤال es gibt.",
+      tokens: ["hier", "Gibt", "es", "eine", "Bank", "?"],
+      correctSentence: "Gibt es hier eine Bank?",
+      explanation: "في سؤال es gibt يأتي الفعل أولًا ثم es ثم المكان والمفعول.",
+      errorType: "word-order",
+    },
+    {
+      id: "e13",
+      type: "transformation",
+      instructionAr: "حوّل الجملة إلى النفي.",
+      prompt: "Es gibt einen Automaten. → (لا يوجد)",
+      acceptedAnswers: ["Es gibt keinen Automaten", "Es gibt keinen Automaten."],
+      sampleAnswer: "Es gibt keinen Automaten.",
+      explanation: "المذكر في Akkusativ: einen يصبح keinen.",
+      errorType: "negation",
+    },
+    {
+      id: "e14",
+      type: "dictation",
+      instructionAr: "استمع واكتب الجملة.",
+      audioText: "Ich überweise das Geld auf dein Konto.",
+      explanation: "تذكّر: überweisen = يحوّل، Konto = حساب.",
+      errorType: "spelling",
+    },
   ],
 
   fehlerUndTipps: {
@@ -465,5 +543,9 @@ export const lessonA207: Lesson = {
     { id: "fc6", de: "es gibt", ar: "يوجد (مع نصب)", example: "Es gibt eine Bank.", exampleAr: "يوجد بنك.", level: "A2" },
     { id: "fc7", de: "mich / dich / mir / dir", ar: "إياي / إياك / لي / لك", example: "Ich sehe dich. Ich helfe dir.", exampleAr: "أراك. أساعدك.", level: "A2" },
     { id: "fc8", de: "die Karte", ar: "البطاقة", example: "Ich zahle mit Karte.", exampleAr: "أدفع بالبطاقة.", level: "A2" },
+    { id: "fc9", de: "die Filiale", ar: "الفرع", example: "Ich gehe in die Filiale.", exampleAr: "أذهب إلى الفرع.", level: "A2" },
+    { id: "fc10", de: "die Gebühr", ar: "الرسم/العمولة", example: "Gibt es eine Gebühr?", exampleAr: "هل توجد عمولة؟", level: "A2" },
+    { id: "fc11", de: "die Überweisung", ar: "التحويل البنكي", example: "Ich mache eine Überweisung.", exampleAr: "أجري تحويلاً بنكياً.", level: "A2" },
+    { id: "fc12", de: "der Berater", ar: "المستشار", example: "Ich helfe dem Berater.", exampleAr: "أساعد المستشار.", level: "A2" },
   ],
 };
