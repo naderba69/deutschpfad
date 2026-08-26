@@ -156,6 +156,47 @@ export const lessonA208: Lesson = {
     },
   ],
 
+  reading: {
+    titleDe: "Mit dem Zug durch Deutschland",
+    titleAr: "بالقطار عبر ألمانيا",
+    paragraphs: [
+      "Wer mit dem Zug reist, kann eine Stadt bequem erreichen und unterwegs die Landschaft sehen. Vor der Reise kauft man eine Fahrkarte online, am Automaten oder am Schalter. Eine einfache Fahrkarte ist für eine Strecke gültig; bei einer Hin- und Rückfahrt kann man am Ende wieder nach Hause fahren. Auf der Fahrkarte stehen der Bahnhof, die Uhrzeit und manchmal die Nummer des Gleises.",
+      "Auf längeren Strecken ist der ICE schneller als ein Regionalzug. Ein Regionalzug hält aber an mehr Bahnhöfen und ist oft billiger. Manche Reisende finden den Zug bequemer als den Bus, weil sie im Zug arbeiten oder lesen können. Andere fahren lieber mit dem Auto, weil sie nicht umsteigen müssen und flexibler sind.",
+      "Bei einer Reise sollte man den Fahrplan aufmerksam lesen. Wenn man umsteigen muss, braucht man genug Zeit zwischen den Zügen. Man prüft auch, ob der Zug pünktlich ist und ob die Verbindung geändert wurde. Die beste Verbindung ist nicht immer die schnellste: Für manche Menschen ist eine direkte, ruhigere oder billigere Fahrt wichtiger als ein paar Minuten Zeitgewinn."
+    ],
+    paragraphsAr: [
+      "من يسافر بالقطار يستطيع الوصول إلى مدينة بسهولة ورؤية المناظر الطبيعية في الطريق. وقبل الرحلة يشتري تذكرة عبر الإنترنت أو من الجهاز أو من الشباك. التذكرة ذات الاتجاه الواحد صالحة لمسار واحد، أما تذكرة الذهاب والعودة فتسمح بالعودة إلى المنزل. وتظهر على التذكرة المحطة والوقت وأحيانًا رقم الرصيف.",
+      "في المسافات الطويلة يكون قطار ICE أسرع من القطار الإقليمي. لكن القطار الإقليمي يتوقف في محطات أكثر وغالبًا ما يكون أرخص. يرى بعض المسافرين أن القطار أريح من الحافلة لأنهم يستطيعون العمل أو القراءة فيه. ويفضل آخرون السيارة لأنهم لا يحتاجون إلى تغيير الوسيلة ولأنها أكثر مرونة.",
+      "ينبغي في الرحلة قراءة جدول المواعيد بانتباه. وإذا كان على المسافر تغيير القطار، فإنه يحتاج إلى وقت كاف بين القطارين. كما يفحص هل القطار في موعده وهل تغيرت الرحلة. وليست أفضل رحلة هي الأسرع دائمًا؛ فبالنسبة لبعض الناس تكون الرحلة المباشرة أو الهادئة أو الأرخص أهم من توفير بضع دقائق."
+    ],
+    glossary: [
+      { de: "die Strecke", ar: "المسار/المسافة", example: "Die Strecke ist lang." },
+      { de: "gültig", ar: "صالح", example: "Die Fahrkarte ist heute gültig." },
+      { de: "das Gleis", ar: "الرصيف", example: "Der Zug fährt von Gleis drei." },
+      { de: "der Regionalzug", ar: "القطار الإقليمي", example: "Der Regionalzug hält oft." },
+      { de: "bequem", ar: "مريح", example: "Der Zug ist bequem." },
+      { de: "die Landschaft", ar: "المناظر الطبيعية", example: "Ich sehe die Landschaft." },
+      { de: "der Fahrplan", ar: "جدول المواعيد", example: "Ich lese den Fahrplan." },
+      { de: "die Verbindung", ar: "وصلة/رحلة مواصلات", example: "Die Verbindung ist direkt." },
+      { de: "pünktlich", ar: "في الموعد", example: "Der Zug ist pünktlich." },
+      { de: "der Zeitgewinn", ar: "توفير الوقت", example: "Der Zeitgewinn ist klein." },
+    ],
+    questions: [
+      { id: "rq1", type: "multiple-choice", instructionAr: "أجب عن النص.", questionDe: "Wo kann man eine Fahrkarte kaufen?", options: ["Online, am Automaten oder am Schalter", "Nur im Bus", "Nur im Hotel", "Nur am Gleis"], correctIndex: 0, explanation: "يذكر النص ثلاث طرق لشراء التذكرة.", errorType: "vocabulary" },
+      { id: "rq2", type: "multiple-choice", instructionAr: "أجب عن النص.", questionDe: "Was ist oft billiger?", options: ["Ein Regionalzug", "Ein ICE", "Ein Flugzeug", "Ein Taxi"], correctIndex: 0, explanation: "القطار الإقليمي غالبًا أرخص، بينما ICE أسرع.", errorType: "vocabulary" },
+      { id: "rq3", type: "multiple-choice", instructionAr: "أجب عن النص.", questionDe: "Warum fahren manche Menschen lieber mit dem Auto?", options: ["Sie müssen nicht umsteigen.", "Das Auto hält an mehr Bahnhöfen.", "Es ist immer schneller.", "Sie lesen den Fahrplan nicht."], correctIndex: 0, explanation: "السيارة لا تتطلب تغيير الوسيلة وتمنح مرونة أكبر.", errorType: "vocabulary" },
+      { id: "rq4", type: "multiple-choice", instructionAr: "أجب عن النص.", questionDe: "Was sollte man beim Umsteigen einplanen?", options: ["Genug Zeit", "Eine neue Wohnung", "Mehr Werbung", "Ein anderes Land"], correctIndex: 0, explanation: "ينبغي ترك وقت كاف بين القطارين.", errorType: "vocabulary" },
+    ],
+    redemittel: [
+      { de: "Eine Fahrkarte nach ..., bitte.", ar: "تذكرة إلى ... من فضلك." },
+      { de: "Wie viel kostet die Fahrt?", ar: "كم تكلف الرحلة؟" },
+      { de: "Wo muss ich umsteigen?", ar: "أين يجب أن أغيّر؟" },
+      { de: "Der Zug ist schneller als der Bus.", ar: "القطار أسرع من الحافلة." },
+      { de: "Für mich ist eine direkte Verbindung besser.", ar: "بالنسبة لي الوصلة المباشرة أفضل." },
+    ],
+    discussionAr: "اختر وسيلة نقل لرحلة طويلة. قارنها بوسيلة أخرى باستعمال schneller، billiger، bequemer، ثم اشرح أي خصائص أهم لك.",
+  },
+
   listening: {
     items: [
       {
@@ -381,6 +422,10 @@ export const lessonA208: Lesson = {
       explanation: "أين يجب أن أغيّر؟ — umsteigen فعل منفصل (أيضاً في هذا السؤال مع muss).",
       errorType: "spelling",
     },
+    { id: "e11", type: "multiple-choice", instructionAr: "اختر المقارنة الصحيحة.", questionDe: "Der ICE ist ___ als der Regionalzug.", options: ["schneller", "schnellsten", "schnell", "mehr schnell"], correctIndex: 0, explanation: "المقارنة بين قطارين: schneller als.", errorType: "grammar" },
+    { id: "e12", type: "word-ordering", instructionAr: "رتّب الجملة.", tokens: ["muss", "ich", "Wo", "umsteigen", "?"], correctSentence: "Wo muss ich umsteigen?", explanation: "في سؤال W يأتي الفعل المصرف ثانيًا، والمصدر المنفصل في النهاية.", errorType: "word-order" },
+    { id: "e13", type: "transformation", instructionAr: "اكتب التفضيل.", prompt: "Der Zug ist schnell. → (الأسرع)", acceptedAnswers: ["Der Zug ist am schnellsten", "Der Zug ist am schnellsten."], sampleAnswer: "Der Zug ist am schnellsten.", explanation: "التفضيل المطلق: am schnellsten.", errorType: "grammar" },
+    { id: "e14", type: "dictation", instructionAr: "استمع واكتب الجملة.", audioText: "Eine Fahrkarte nach Berlin, bitte.", explanation: "nach مع المدن، وFahrkarte تذكرة.", errorType: "spelling" },
   ],
 
   fehlerUndTipps: {
@@ -464,5 +509,9 @@ export const lessonA208: Lesson = {
     { id: "fc6", de: "schneller als", ar: "أسرع من", example: "Der Zug ist schneller als der Bus.", exampleAr: "القطار أسرع من الحافلة.", level: "A2" },
     { id: "fc7", de: "am schnellsten", ar: "الأسرع", example: "Das Flugzeug ist am schnellsten.", exampleAr: "الطائرة الأسرع.", level: "A2" },
     { id: "fc8", de: "gut, besser, am besten", ar: "جيد، أفضل، الأفضل", example: "Mein Deutsch ist besser als vorher.", exampleAr: "ألمانيّتي أفضل من قبل.", level: "A2" },
+    { id: "fc9", de: "der Fahrplan", ar: "جدول المواعيد", example: "Ich lese den Fahrplan.", exampleAr: "أقرأ جدول المواعيد.", level: "A2" },
+    { id: "fc10", de: "das Gleis", ar: "الرصيف", example: "Der Zug fährt von Gleis drei.", exampleAr: "ينطلق القطار من الرصيف الثالث.", level: "A2" },
+    { id: "fc11", de: "pünktlich", ar: "في الموعد", example: "Der Zug ist pünktlich.", exampleAr: "القطار في الموعد.", level: "A2" },
+    { id: "fc12", de: "die Verbindung", ar: "وصلة المواصلات", example: "Die Verbindung ist direkt.", exampleAr: "الوصلة مباشرة.", level: "A2" },
   ],
 };
