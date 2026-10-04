@@ -438,7 +438,6 @@ export interface Lesson {
   order: number;
   titleDe: string;
   titleAr: string;
-  duration: number;
   summary: string;
   /** 1 */
   lernziele: Lernziel[];

@@ -11,7 +11,6 @@ export const lessonA101: Lesson = {
   order: 1,
   titleDe: "Hallo! Ich heiße …",
   titleAr: "التعارف والتحيات",
-  duration: 30,
   summary:
     "التحيات والوداع، تقديم النفس، تصريف sein وheißen، السلسلة الذهبية لتصريف الأفعال المنتظمة، وأسئلة W الأساسية مع ترتيب الجملة الألماني (الفعل في المركز الثاني).",
 

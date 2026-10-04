@@ -11,7 +11,6 @@ export const lessonA202: Lesson = {
   order: 1,
   titleDe: "Beim Arzt",
   titleAr: "الصحة والطبيب",
-  duration: 35,
   summary:
     "أربع بنى لوصف الألم (haben + Schmerzen · tut weh · mir ist schlecht · sich fühlen)، وسُلّم النصح والمنع: sollen وsollten مقابل الفرق الحاسم بين nicht dürfen (تحريم) وnicht müssen (إعفاء)، ومسار العيادة كاملاً من حجز الموعد إلى الوصفة والشهادة المرضية والإحالة، وأفعال الصحة الانعكاسية — مع نصّ «Drei Tage Grippe».",
 

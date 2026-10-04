@@ -10,7 +10,6 @@ export const lessonB104: Lesson = {
   order: 1,
   titleDe: "Medien und Gesellschaft",
   titleAr: "الإعلام والمجتمع",
-  duration: 40,
   summary:
     "النظر النقدي للإعلام، صيغة الشرط (Konjunktiv II): würde + Infinitiv والأفعال الشائعة (wäre, hätte, könnte) — للتمني والافتراض والتهذيب.",
 

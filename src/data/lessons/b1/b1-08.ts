@@ -10,7 +10,6 @@ export const lessonB108: Lesson = {
   order: 1,
   titleDe: "Technik und Digitales",
   titleAr: "التقنية والرقمنة",
-  duration: 40,
   summary:
     "التقنية في الحياة اليومية، الروابط المزدوجة (nicht nur... sondern auch, sowohl... als auch, weder... noch, entweder... oder, je... desto)، والمستقبل (Futur I) مع werden.",
 

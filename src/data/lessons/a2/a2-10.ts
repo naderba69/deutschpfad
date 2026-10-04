@@ -10,7 +10,6 @@ export const lessonA210: Lesson = {
   order: 1,
   titleDe: "Lernen und Schule",
   titleAr: "المدرسة والتعلم",
-  duration: 35,
   summary:
     "الدراسة والدورات، الجمل الثانوية weil (لأنّ) وwenn (إذا/عندما) وob (هل)، والضمائر الملكية في كل الحالات.",
 

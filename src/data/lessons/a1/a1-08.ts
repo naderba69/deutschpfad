@@ -11,7 +11,6 @@ export const lessonA108: Lesson = {
   order: 1,
   titleDe: "Kleidung und Farben",
   titleAr: "الملابس والألوان",
-  duration: 30,
   summary:
     "أسماء الملابس والألوان، وصفها بالصفات الخبرية، فعل tragen (يرتدي)، والسؤال عن الرأي: Wie findest du...?",
 

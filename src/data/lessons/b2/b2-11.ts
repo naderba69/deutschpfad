@@ -18,7 +18,6 @@ export const lessonB211: Lesson = {
   order: 2,
   titleDe: "Zugehörigkeit und doppelter Infinitiv",
   titleAr: "الإسناد والمِلكية في الجملة المركّبة",
-  duration: 45,
   summary:
     "الضمائر النسبية في حالة المضاف إليه (dessen/deren) للتعبير عن المِلكية داخل الجملة النسبية، والصيغة المصدرية المزدوجة في الماضي (habe arbeiten müssen) مع الأفعال المودالية وlassen وأفعال الإدراك.",
 

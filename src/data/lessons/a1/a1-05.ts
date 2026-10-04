@@ -11,7 +11,6 @@ export const lessonA105: Lesson = {
   order: 1,
   titleDe: "Mein Tag",
   titleAr: "الحياة اليومية والروتين",
-  duration: 30,
   summary:
     "الروتين اليومي، الأفعال المنفصلة (aufstehen, fernsehen...)، قراءة الساعة، وأوقات اليوم (am Morgen, am Abend)، والمدى الزمني von … bis (من … إلى).",
 

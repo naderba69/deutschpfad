@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import {ArrowLeft, ArrowRight, Award, CheckCircle2, Clock, ListChecks, Printer, Sparkles, TableProperties, Trophy} from "lucide-react";
+import {ArrowLeft, ArrowRight, Award, CheckCircle2, ListChecks, Printer, Sparkles, TableProperties, Trophy} from "lucide-react";
 
 import {LESSON_SECTIONS} from "@/components/lesson/lesson-sections";
 import {LESSON_META} from "@/data/lessons/meta";
@@ -203,7 +203,7 @@ function LessonPosition({ lessonId }: { lessonId: string }) {
 /**
  * شريط هدف اليوم — يذكّر المتعلم بهدفه اليومي ويظهر تقدّم إكمال الدرس.
  */
-function DailyGoalBar({ duration }: { duration: number }) {
+function DailyGoalBar() {
   const [profile, setProfile] = React.useState<{ dailyGoalMinutes?: number; studyHour?: number } | null>(null);
 
   React.useEffect(() => {
@@ -224,9 +224,6 @@ function DailyGoalBar({ duration }: { duration: number }) {
             · وقتك المفضل: <span className="font-de font-bold">{String(studyHour).padStart(2, "0")}:00</span>
           </span>
         )}
-        <span className="ms-2 text-muted-foreground">
-          · هذا الدرس ≈ <span className="font-de font-bold">{duration} دقيقة</span>
-        </span>
       </p>
     </div>
   );
@@ -544,10 +541,6 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
           <Badge variant="secondary">
             {LEVEL_LABEL[lesson.level] ?? lesson.level}
           </Badge>
-          <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
-            <Clock className="h-3.5 w-3.5" aria-hidden="true" />
-            ~{lesson.duration} دقيقة
-          </span>
         </div>
 
         <h1 className="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
@@ -640,7 +633,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       )}
 
       {/* ═══ هدف اليوم + مراجعة قبل النسيان ═══ */}
-      <DailyGoalBar duration={lesson.duration} />
+      <DailyGoalBar />
 
       {/* ═══ وضع العرض: خطوة بخطوة (تفاعلي) أم عرض الكل ═══ */}
       <div className="mb-4 flex items-center justify-between gap-3">

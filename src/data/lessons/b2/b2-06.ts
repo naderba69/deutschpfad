@@ -10,7 +10,6 @@ export const lessonB206: Lesson = {
   order: 1,
   titleDe: "Beruf und Karriere",
   titleAr: "المسار المهني",
-  duration: 45,
   summary:
     "المسارات المهنية والتفاوض، الاشتقاق الاسمي (Nominalisierung): beim Lesen, das Schreiben, zum Nachdenken — تحويل الأفعال والجمل إلى أسماء بأسلوب رسمي، والعمل المرن وعن بعد (Homeoffice, Gleitzeit) ومفرداته.",
 

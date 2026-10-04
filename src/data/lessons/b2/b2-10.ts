@@ -10,7 +10,6 @@ export const lessonB210: Lesson = {
   order: 1,
   titleDe: "Studium in Deutschland",
   titleAr: "الدراسة في ألمانيا",
-  duration: 45,
   summary:
     "النظام الجامعي والكتابة الأكاديمية (Fachsprache)، أساليب التأكيد والتلطيف والتحفظ، ومراجعة شاملة تجمع كل قواعد B2 — خاتمة المستويات الأربعة!",
 

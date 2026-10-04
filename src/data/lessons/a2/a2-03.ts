@@ -10,7 +10,6 @@ export const lessonA203: Lesson = {
   order: 1,
   titleDe: "Im Restaurant",
   titleAr: "المطعم والطعام",
-  duration: 35,
   summary:
     "سُلّم الطلب المهذّب من will إلى hätte gern (وأصله Konjunktiv II من haben ومögen)، وأفعال «الشيء فاعلٌ والإنسان متلقٍّ» schmecken/gefallen/passen، ومسار الزيارة كاملاً من الحجز والجلوس إلى Zusammen oder getrennt? والبقشيش المنطوق، وصفات الطعم والمقادير وقاعدة etwas Warmes — مع نصّ «Ein Abend im Gasthaus Löwen».",
 

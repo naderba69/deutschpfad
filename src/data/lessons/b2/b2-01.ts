@@ -10,7 +10,6 @@ export const lessonB201: Lesson = {
   order: 1,
   titleDe: "Wissenschaft und Forschung",
   titleAr: "العلوم والبحث",
-  duration: 45,
   summary:
     "فهم الموضوعات العلمية وتقديم العروض الأكاديمية (Präsentation)، نقل الكلام غير المباشر (Konjunktiv I / indirekte Rede) بالكامل: er sagt, er habe... — ونقل الأقوال في الأخبار والتقارير، والاستخدام الذاتي للأفعال الناقصة للتخمين (dürfte, müsste, muss, könnte).",
 

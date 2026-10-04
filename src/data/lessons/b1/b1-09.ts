@@ -10,7 +10,6 @@ export const lessonB109: Lesson = {
   order: 1,
   titleDe: "Soziales Engagement",
   titleAr: "العمل التطوعي والاجتماعي",
-  duration: 40,
   summary:
     "العمل التطوعي والمشاريع الاجتماعية، الوصلات الاسمية-الفعلية (Nomen-Verb-Verbindungen): eine Frage stellen, Bescheid sagen — وتصريف n-Deklination.",
 

@@ -10,7 +10,6 @@ export const lessonA207: Lesson = {
   order: 1,
   titleDe: "Bank und Geld",
   titleAr: "البنك والمال",
-  duration: 35,
   summary:
     "معاملات البنك، es gibt + Akkusativ (يوجد)، ضمائر النصب والجر (mich/dich، mir/dir)، وطرق الدفع.",
 

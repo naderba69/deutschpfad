@@ -16,7 +16,6 @@ export const lessonA213: Lesson = {
   order: 1,
   titleDe: "A2 kompakt — die Brücke nach B1",
   titleAr: "A2 الشاملة — الجسر إلى B1",
-  duration: 35,
   summary:
     "المراجعة الختامية لمستوى A2: الماضي التام (Perfekt)، الأفعال الناقصة، حروف الجر المتغيرة، الماضي البسيط war/hatte، الجمل الثانوية (dass, weil, wenn, ob)، حالة الجر Dativ، المقارنة والتفضيل، والأفعال الانعكاسية — مدموجةً في مواقف حية، مع اختبار تجميعي وتمهيد صريح لما يتغيّر في B1.",
 

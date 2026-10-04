@@ -11,7 +11,6 @@ export const lessonA110: Lesson = {
   order: 1,
   titleDe: "Arbeit und Berufe",
   titleAr: "العمل والمهن",
-  duration: 30,
   summary:
     "أسماء المهن وأشكالها المذكرة والمؤنثة، فعل arbeiten، والنفي بالألمانية: nicht مع الأفعال والصفات، kein مع الأسماء.",
   lernziele: [

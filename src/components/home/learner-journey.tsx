@@ -429,9 +429,6 @@ export function LearnerJourney() {
                     <span className="font-de rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-extrabold text-primary">
                       الدرس {nextIndex + 1} من {LESSON_META.length} · {nextLesson.level}
                     </span>
-                    <span className="rounded-full bg-muted px-2 py-0.5 text-[11px] font-bold text-muted-foreground">
-                      ⏱ {nextLesson.duration} دقيقة
-                    </span>
                   </div>
                   <p className="text-lg font-extrabold leading-snug">
                     <LangDe className="font-extrabold">{nextLesson.titleDe}</LangDe>

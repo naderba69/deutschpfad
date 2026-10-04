@@ -11,7 +11,6 @@ export const lessonA111: Lesson = {
   order: 1,
   titleDe: "In der Stadt",
   titleAr: "التنقل في المدينة",
-  duration: 30,
   summary:
     "أماكن المدينة (Bahnhof, Supermarkt, Apotheke...)، السؤال عن الطريق، الاتجاهات (geradeaus, rechts, links)، والحركة: wohin? مع nach وzu.",
   lernziele: [

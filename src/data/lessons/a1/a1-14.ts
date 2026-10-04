@@ -13,7 +13,6 @@ export const lessonA114: Lesson = {
   order: 2,
   titleDe: "Das Perfekt: Was hast du gemacht?",
   titleAr: "الماضي المحكيّ (Perfekt) — ماذا فعلتَ؟",
-  duration: 40,
   summary:
     "الزمن الماضي المستعمل في الكلام: haben أو sein + Partizip II، وصناعة Partizip II في الأفعال الضعيفة والقوية والمنفصلة وغير المنفصلة وأفعال -ieren، وقاعدة اختيار المساعد باختبار المفعول به، ثمّ الفعلان الناقصان الأخيران wollen وsollen.",
 

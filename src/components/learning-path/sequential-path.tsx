@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {ArrowLeft, BookOpen, CheckCircle2, Clock, Map, PlayCircle, Route} from "lucide-react";
+import {ArrowLeft, BookOpen, CheckCircle2, Map, PlayCircle, Route} from "lucide-react";
 
 import {LangDe} from "@/components/shared/lang-de";
 import {Badge} from "@/components/ui/badge";
@@ -118,10 +118,6 @@ export function SequentialPath() {
                           </p>
                           <p className="flex items-center gap-2 truncate text-xs text-muted-foreground">
                             <span className="truncate">{lesson.titleAr}</span>
-                            <span className="inline-flex shrink-0 items-center gap-0.5">
-                              <Clock className="h-3 w-3" aria-hidden="true" />
-                              {lesson.duration}د
-                            </span>
                           </p>
                         </div>
 

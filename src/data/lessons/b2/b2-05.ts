@@ -10,7 +10,6 @@ export const lessonB205: Lesson = {
   order: 1,
   titleDe: "Psychologie und Kommunikation",
   titleAr: "علم النفس والتواصل",
-  duration: 45,
   summary:
     "نماذج التواصل والجوانب النفسية، أدوات الربط المتقدمة (indem, anstatt...zu, ohne...zu, es sei denn, je nachdem, statt dass, sodass) + روابط النتيجة (folglich, demnach) — روابط المستوى المتقدم الكاملة، مع الجسيمات المشدِّدة (Modalpartikeln: doch, ja, mal, denn, eigentlich, wohl) لغة الألمان الطبيعية في المحادثة.",
 

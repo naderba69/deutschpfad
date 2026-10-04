@@ -11,7 +11,6 @@ export const lessonA103: Lesson = {
   order: 1,
   titleDe: "Essen und Trinken",
   titleAr: "الطعام والشراب",
-  duration: 45,
   summary:
     "المأكولات والمشروبات، أدوات التعريف والتنكير (der/die/das + ein/eine)، حالة النصب (Akkusativ): Ich esse einen Apfel، وفعل haben مع الجوع والعطش.",
 

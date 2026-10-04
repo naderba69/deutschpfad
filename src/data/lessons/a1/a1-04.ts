@@ -11,7 +11,6 @@ export const lessonA104: Lesson = {
   order: 1,
   titleDe: "Meine Wohnung",
   titleAr: "السكن والمنزل",
-  duration: 30,
   summary:
     "غرف البيت والأثاث، وصف المنزل بصفات بسيطة، حروف الجر المكانية in/auf مع حالة Dativ (im/in der)، والسؤال: Wo wohnst du?",
 

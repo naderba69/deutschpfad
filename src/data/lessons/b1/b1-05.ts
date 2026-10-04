@@ -10,7 +10,6 @@ export const lessonB105: Lesson = {
   order: 1,
   titleDe: "Gesundheit und Prävention",
   titleAr: "الصحة والوقاية",
-  duration: 40,
   summary:
     "الحياة الصحية والوقاية، صيغة الشرط المتقدمة (hätte/wäre + Partizip II)، والجمل الشرطية الكاملة: Wenn... dann... (لو... لـ...).",
 

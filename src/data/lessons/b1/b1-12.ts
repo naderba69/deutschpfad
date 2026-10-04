@@ -14,7 +14,6 @@ export const lessonB112: Lesson = {
   order: 2,
   titleDe: "Ziele, Gründe und Absichten",
   titleAr: "الأهداف والأسباب والنوايا",
-  duration: 40,
   summary:
     "التعبير عن الغرض بـ damit و um … zu (وشرط وحدة الفاعل)، وحروف الجر مع المضاف إليه (wegen, trotz, während, aufgrund) وبدائلها الشائعة في اللغة المحكية.",
 

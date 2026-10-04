@@ -11,7 +11,6 @@ export const lessonA109: Lesson = {
   order: 1,
   titleDe: "Termine und der Kalender",
   titleAr: "المواعيد والتقويم",
-  duration: 30,
   summary:
     "أيام الأسبوع والأشهر والفصول، الأعداد الترتيبية (der erste...)، وحروف الجر الزمنية am/um/in لترتيب المواعيد: Am Montag um neun Uhr.",
   lernziele: [

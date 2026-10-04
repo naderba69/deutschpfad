@@ -10,7 +10,6 @@ export const lessonB208: Lesson = {
   order: 1,
   titleDe: "Sprachen und Kulturen",
   titleAr: "اللغات والتبادل الثقافي",
-  duration: 45,
   summary:
     "الاختلافات بين الثقافات وتعدد اللغات، الأفعال مع حروف الجر الثابتة (Verben mit Präpositionen): sich interessieren für, warten auf, sich freuen über/auf — وجدول كامل.",
 

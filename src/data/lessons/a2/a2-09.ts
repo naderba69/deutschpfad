@@ -10,7 +10,6 @@ export const lessonA209: Lesson = {
   order: 1,
   titleDe: "Feste und Feiern",
   titleAr: "المناسبات والاحتفالات",
-  duration: 35,
   summary:
     "الدعوات والهدايا والمناسبات الألمانية، حالة الجر (Dativ) الكاملة مع أفعالها الخاصة (helfen, gefallen, gehören, gratulieren) وضمائرها.",
 

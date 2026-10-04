@@ -11,7 +11,6 @@ export const lessonA100: Lesson = {
   order: 0,
   titleDe: "Das Alphabet und die Aussprache",
   titleAr: "الأبجدية الألمانية والنطق",
-  duration: 35,
   summary:
     "الحروف الستة والعشرون + الحروف المعلمة (ä, ö, ü) وß + الأصوات المركبة (ch, sch, ei, ie, eu, äu, sp, st, pf, tz) — مع تمارين نطق مكثفة مصممة لأخطاء المتعلم العربي.",
 

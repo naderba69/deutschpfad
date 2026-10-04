@@ -11,7 +11,6 @@ export const lessonA102: Lesson = {
   order: 2,
   titleDe: "Meine Familie",
   titleAr: "العائلة والأصدقاء",
-  duration: 45,
   summary:
     "أفراد العائلة، وأدوات الملكية: الجذر بحسب المالك والنهاية بحسب الاسم المملوك؛ مع وصف العائلة بجمل بسيطة.",
 

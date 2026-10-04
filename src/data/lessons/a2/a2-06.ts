@@ -10,7 +10,6 @@ export const lessonA206: Lesson = {
   order: 1,
   titleDe: "Medien und Nachrichten",
   titleAr: "الإعلام والأخبار",
-  duration: 35,
   summary:
     "وسائل الإعلام، التعبير عن الرأي، والجملة الثانوية بـ dass (أنّ): Ich glaube, dass... مع قاعدة الفعل في نهاية الجملة الثانوية.",
 

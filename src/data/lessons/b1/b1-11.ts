@@ -12,7 +12,6 @@ export const lessonB111: Lesson = {
   order: 1,
   titleDe: "B1 kompakt — Prüfungsvorbereitung",
   titleAr: "B1 الشامل — التحضير للامتحان",
-  duration: 45,
   summary:
     "المراجعة الختامية لمستوى B1: دمج الجمل الموصولة وGenitiv وPassiv وKonjunktiv II في مواقف حية، مع محاكاة أقسام Goethe-B1 الأربعة (قراءة، استماع، كتابة، تحدث) وتدريب على وساطة وتفاعل حقيقيين.",
 

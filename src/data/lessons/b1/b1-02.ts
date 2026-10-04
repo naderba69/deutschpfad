@@ -10,7 +10,6 @@ export const lessonB102: Lesson = {
   order: 1,
   titleDe: "Arbeitswelt",
   titleAr: "عالم العمل",
-  duration: 40,
   summary:
     "الماضي البسيط الكامل (Präteritum) لكل الأفعال المنتظمة والشاذة، الماضي التام المركب (Plusquamperfekt)، وسرد تجربة العمل: Ich arbeitete, ich hatte gearbeitet.",
 

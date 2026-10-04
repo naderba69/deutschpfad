@@ -10,7 +10,6 @@ export const lessonB207: Lesson = {
   order: 1,
   titleDe: "Philosophie und Gesellschaft",
   titleAr: "الفلسفة والمجتمع",
-  duration: 45,
   summary:
     "مناقشة الموضوعات المجردة وبناء الحجج، المستقبل التام (Futur II): werde + Partizip II + haben/sein — والكتابة الجدلية (Erörterung) بأسلوب أكاديمي.",
 

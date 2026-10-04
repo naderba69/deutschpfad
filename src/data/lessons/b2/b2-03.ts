@@ -10,7 +10,6 @@ export const lessonB203: Lesson = {
   order: 1,
   titleDe: "Recht und Alltag",
   titleAr: "القانون والحياة اليومية",
-  duration: 45,
   summary:
     "المفاهيم القانونية الأساسية وفهم العقود، الجمل النسبية المتقدمة (مع حروف الجر: auf den, mit der, wofür) والضمائر النسبية was/wo.",
 

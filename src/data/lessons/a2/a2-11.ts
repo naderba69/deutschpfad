@@ -10,7 +10,6 @@ export const lessonA211: Lesson = {
   order: 1,
   titleDe: "Dienstleistungen",
   titleAr: "الخدمات والمعاملات",
-  duration: 35,
   summary:
     "البريد والحلاق والإصلاحات، الأفعال الانعكاسية (sich freuen, sich ärgern, sich anmelden) مع ضمائر mich/mir، وتقديم شكوى بأدب، وملء الاستمارات الرسمية (Formulare ausfüllen: Anmeldung, Angaben).",
 

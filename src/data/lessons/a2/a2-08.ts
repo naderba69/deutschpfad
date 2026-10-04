@@ -10,7 +10,6 @@ export const lessonA208: Lesson = {
   order: 1,
   titleDe: "Mobil sein",
   titleAr: "المواصلات والتنقل",
-  duration: 35,
   summary:
     "شراء التذاكر وقراءة الجداول، المقارنة والتفضيل (Komparativ/Superlativ) مع الشواذ، ومقارنة وسائل النقل: Der Zug ist schneller als der Bus.",
 

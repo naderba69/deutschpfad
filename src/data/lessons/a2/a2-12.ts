@@ -10,7 +10,6 @@ export const lessonA212: Lesson = {
   order: 1,
   titleDe: "Zwischenmenschliches",
   titleAr: "العلاقات بين الناس",
-  duration: 35,
   summary:
     "المشاعر والآراء، أدوات الربط المزدوجة (und, aber, oder, denn, sondern, deshalb, trotzdem, dann) وقواعدها، والتعامل مع الخلافات بلطف — خاتمة مستوى A2.",
 

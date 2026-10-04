@@ -7,7 +7,6 @@ export interface LessonMeta {
   order: number;
   titleDe: string;
   titleAr: string;
-  duration: number;
   summary: string;
   /**
    * أهم مفردات الدرس — مأخوذة من بطاقاته (flashcards) لا مكتوبة يدوياً.

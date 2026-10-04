@@ -10,7 +10,6 @@ export const lessonB202: Lesson = {
   order: 1,
   titleDe: "Wirtschaft und Finanzen",
   titleAr: "الاقتصاد والمالية",
-  duration: 45,
   summary:
     "تحليل الأخبار الاقتصادية، المبني للمجهول المتقدم: Zustandspassiv (sein + Partizip II)، Passiv مع الأفعال الشرطية، وبدائله (sich lassen, -bar, man).",
 

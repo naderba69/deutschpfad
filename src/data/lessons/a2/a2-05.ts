@@ -10,7 +10,6 @@ export const lessonA205: Lesson = {
   order: 1,
   titleDe: "Im Büro",
   titleAr: "في المكتب والعمل",
-  duration: 35,
   summary:
     "الاتصالات الهاتفية والبريد الإلكتروني، الماضي البسيط (Präteritum) للأفعال المساعدة (war, hatte) والأفعال الشائعة، وتنسيق المواعيد مهنياً.",
 

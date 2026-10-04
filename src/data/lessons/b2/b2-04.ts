@@ -10,7 +10,6 @@ export const lessonB204: Lesson = {
   order: 1,
   titleDe: "Literatur und Medien",
   titleAr: "الأدب والإعلام المتقدم",
-  duration: 45,
   summary:
     "النصوص الأدبية والمساهمات الإعلامية الراقية، الصفات المشتقة من الفعل (Partizipialkonstruktionen): das spielende Kind, der geschriebene Brief — واختصار الجمل النسبية.",
 

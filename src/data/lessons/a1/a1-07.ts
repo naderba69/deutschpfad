@@ -11,7 +11,6 @@ export const lessonA107: Lesson = {
   order: 1,
   titleDe: "Einkaufen",
   titleAr: "التسوق",
-  duration: 30,
   summary:
     "الأرقام من 0 حتى 1000، قراءة الأسعار باليورو، أنماط جمع الأسماء الأساسية، وعبارات التسوق: Was kostet das? Ich nehme...",
 

@@ -33,7 +33,6 @@ export function LessonSummary({ lesson }: { lesson: Lesson }) {
 
       <p className="mb-4 text-sm text-muted-foreground">
         <LangDe className="font-bold">{lesson.titleDe}</LangDe> — {lesson.titleAr}
-        <span className="ms-2 text-xs opacity-70">({lesson.duration} دقيقة)</span>
       </p>
 
       {/* 1) القواعد */}

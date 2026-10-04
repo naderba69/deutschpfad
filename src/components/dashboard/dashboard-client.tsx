@@ -149,7 +149,7 @@ export function DashboardClient() {
               </div>
               <div className="min-w-0 flex-1 space-y-1">
                 <p className="text-[11px] font-bold text-muted-foreground">
-                  درسك التالي في التسلسل · {nextLesson.level} · ⏱ {nextLesson.duration} دقيقة
+                  درسك التالي في التسلسل · {nextLesson.level}
                 </p>
                 <p className="truncate text-lg font-extrabold">
                   <span dir="ltr">{nextLesson.titleDe}</span>

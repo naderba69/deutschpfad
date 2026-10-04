@@ -10,7 +10,6 @@ export const lessonA204: Lesson = {
   order: 1,
   titleDe: "Wohnungssuche",
   titleAr: "البحث عن سكن",
-  duration: 35,
   summary:
     "إعلانات العقارات، وصف الشقة، وحروف الجر المتغيرة (Wechselpräpositionen) التسعة: السكون Dativ والحركة Akkusativ، والعيش المشترك: الجيران ونظام البيت وأوقات الهدوء (Nachbarn, Hausordnung, Ruhezeiten).",
 

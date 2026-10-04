@@ -10,7 +10,6 @@ export const lessonB101: Lesson = {
   order: 1,
   titleDe: "Ausbildung und Studium",
   titleAr: "التعليم والدراسة",
-  duration: 40,
   summary:
     "مقارنة الأنظمة التعليمية، حالة المضاف إليه (Genitiv) واستخداماتها، والجمل النسبية (Relativsätze) مع der/die/das.",
 

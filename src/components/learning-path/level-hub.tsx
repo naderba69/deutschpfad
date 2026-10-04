@@ -184,7 +184,7 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
                     <LangDe className="font-bold">{lesson.titleDe}</LangDe>
                   </p>
                   <p className="truncate text-xs text-muted-foreground">
-                    {lesson.titleAr} · {lesson.duration} دقيقة
+                    {lesson.titleAr}
                   </p>
                   <div className="mt-1 flex flex-wrap items-center gap-1.5 text-[11px] text-muted-foreground">
                     {locked ? (

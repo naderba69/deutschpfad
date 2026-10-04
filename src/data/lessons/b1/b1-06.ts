@@ -10,7 +10,6 @@ export const lessonB106: Lesson = {
   order: 1,
   titleDe: "Kultur und Kunst",
   titleAr: "الثقافة والفن",
-  duration: 40,
   summary:
     "وصف الأعمال الفنية، تصريف الصفات الكامل (Adjektivdeklination) مع الأدوات المعرفة وغير المعرفة وبدون أداة، والمقارنة بين الثقافات، ومفهوم الوطن والهجرة وصدمات الثقافة (Heimat, Migration und Kulturschock).",
 

@@ -11,7 +11,6 @@ export const lessonA106: Lesson = {
   order: 1,
   titleDe: "Freizeit und Hobbys",
   titleAr: "أوقات الفراغ والهوايات",
-  duration: 30,
   summary:
     "الحديث عن الهوايات مع gern، فعل mögen، وصيغة الأمر (Imperativ) بصورها الثلاث، وتغيّر الصوت في الأفعال الشاذة (essen→isst)، والأفعال الناقصة الأولى (können, möchte)، والماضي الأول (war, hatte).",
 

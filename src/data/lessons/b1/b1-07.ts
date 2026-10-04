@@ -10,7 +10,6 @@ export const lessonB107: Lesson = {
   order: 1,
   titleDe: "Politik und Gesellschaft",
   titleAr: "السياسة والمجتمع",
-  duration: 40,
   summary:
     "المفاهيم السياسية الأساسية، الجمل الثانوية الزمنية (als, wenn, während, bevor, nachdem, bis) والسببية (weil, da) والتخالفية (obwohl, obgleich) — الخريطة الكاملة للجمل الثانوية.",
 

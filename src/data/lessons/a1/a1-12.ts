@@ -11,7 +11,6 @@ export const lessonA112: Lesson = {
   order: 1,
   titleDe: "Wetter und Jahreszeiten",
   titleAr: "الطقس والفصول",
-  duration: 30,
   summary:
     "الحديث عن الطقس: es ist kalt، عبارات المطر والشمس، فعل werden (يصبح) في المضارع — يكتمل به مثلث الأفعال المساعدة sein/haben/werden — وربط الطقس بالفصول.",
   lernziele: [
