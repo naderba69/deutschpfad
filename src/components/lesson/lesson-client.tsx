@@ -448,7 +448,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
   const renderSection = (id: string) => {
     switch (id) {
       case "lernziele":
-        return <LernzieleSection lernziele={lesson.lernziele} />;
+        return <LernzieleSection lernziele={lesson.lernziele} lessonId={lesson.id} />;
       case "einfuehrung":
         return <EinfuehrungSection einfuehrung={lesson.einfuehrung} />;
       case "review":

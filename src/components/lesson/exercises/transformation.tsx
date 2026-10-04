@@ -67,7 +67,7 @@ export function TransformationExerciseView({
           </Button>
         </div>
         <p className="text-xs text-muted-foreground">
-          يُقبل أي صياغة صحيحة — اكتب الجملة كما تفهمها، والتصحيح يشرح لك الصيغة المثالية.
+          اكتب الصياغة المطلوبة؛ يقارن التصحيح إجابتك بالإجابات المقبولة لهذا التمرين، ثم يشرح لك الإجابة النموذجية.
         </p>
       </form>
 

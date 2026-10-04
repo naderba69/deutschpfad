@@ -15,10 +15,10 @@ export const lessonA104: Lesson = {
     "غرف البيت والأثاث، وصف المنزل بصفات بسيطة، حروف الجر المكانية in/auf مع حالة Dativ (im/in der)، والسؤال: Wo wohnst du?",
 
   lernziele: [
-    { id: "z1", de: "Ich kann wichtige Raumwörter verstehen und zuordnen.", ar: "أن أتعرف أسماء الغرف الأساسية وأطابق كل اسم بمعناه." },
-    { id: "z2", de: "Ich kann meine Wohnung beschreiben.", ar: "أن أصف منزلي بجمل بسيطة (Das Zimmer ist groß)." },
-    { id: "z3", de: "Ich kann sagen, wo etwas ist: im, in der, auf dem.", ar: "أن أحدد مكان الأشياء بحروف الجر المكانية مع Dativ." },
-    { id: "z4", de: "Ich kann fragen: Wo wohnst du? und mit Ich wohne in ... antworten.", ar: "أن أسأل: أين تسكن؟ وأجيب بجملة بسيطة عن مكان سكني." },
+    { id: "z1", de: "Ich kann wichtige Raumwörter verstehen und zuordnen.", ar: "أن أتعرف أسماء الغرف الأساسية وأطابق كل اسم بمعناه.", evidence: { exerciseIds: ["e3"], labelAr: "صِل أسماء الغرف بمعانيها في تمرين المطابقة.", completion: "any-correct" } },
+    { id: "z2", de: "Ich kann meine Wohnung beschreiben.", ar: "أن أصف منزلي بجمل بسيطة (Das Zimmer ist groß).", evidence: { exerciseIds: ["w1"], labelAr: "اختر اسماً وصفةً من الكلمات المعطاة، ثم كوّن جملة قصيرة تصف المكان.", completion: "any-correct" } },
+    { id: "z3", de: "Ich kann sagen, wo etwas ist: im, in der, auf dem.", ar: "أن أحدد مكان الأشياء بحروف الجر المكانية مع Dativ.", evidence: { exerciseIds: ["w2"], labelAr: "أكمل جمل المكان الثلاث باستعمال im وin der وauf dem.", completion: "any-correct" } },
+    { id: "z4", de: "Ich kann fragen: Wo wohnst du? und mit Ich wohne in ... antworten.", ar: "أن أسأل: أين تسكن؟ وأجيب بجملة بسيطة عن مكان سكني.", evidence: { exerciseIds: ["w4"], labelAr: "اكتب سؤالاً عن مكان السكن ثم أجب عنه.", completion: "any-correct" } },
   ],
 
   einfuehrung: {
@@ -91,7 +91,7 @@ export const lessonA104: Lesson = {
       titleAr: "حروف الجر المكانية مع Dativ: im، in der، auf dem",
       titleDe: "Präpositionen mit Dativ: wo?",
       explanationAr:
-        "حالة الجرّ (Dativ) هي الحالة الثالثة في الترتيب التعليمي، وهي تتيح وصف المكان.\n\n**الأساس المطلوب هنا (A1):** عند تحديد المكان والإجابة عن Wo? نستخدم Dativ؛ ركّز على الصيغ التي تظهر في هذا الدرس: im Wohnzimmer، in der Küche، auf dem Tisch.\n\n**جدول مرجعي للتوسّع؛ لا يلزم حفظ كلّ تفاصيله الآن:**\n\n| الجنس | الرفع | الجرّ (Dativ) |\n|---|---|---|\n| مذكّر | der / ein | **dem / einem** |\n| مؤنّث | die / eine | **der / einer** |\n| محايد | das / ein | **dem / einem** |\n| جمع | die | **den + ‑n على الاسم** |\n\nولاحظ ثلاث ملاحظات تختصر الحفظ:\n1. **المذكّر والمحايد يتّحدان** في dem — كما اتّحدا في ein.\n2. **المؤنّث يأخذ der** — وهذه أخبث خانةٍ في الجدول، لأنّ der تبدو مذكّرةً وهي هنا مؤنّثة مجرورة! «in **der** Küche» ليست خطأً بل هي الصواب.\n3. **الجمع يأخذ den ويزيد ‑n على آخر الاسم نفسه**: mit den Kinder**n** · in den Zimmer**n**. وهذه الزيادة إلزامية وينساها الجميع. (ولا تُزاد إن كان الجمع منتهياً بـ‑n أو ‑s أصلاً: mit den Frauen · mit den Autos.)\n\n**للاطّلاع: اندماجات شائعة أخرى؛ ركّز الآن على im:**\nin + dem = **im** · an + dem = **am** · zu + dem = **zum** · zu + der = **zur** · bei + dem = **beim** · von + dem = **vom**.\nهذه صيغ مختصرة شائعة في الاستعمال المحايد. والصيغة الكاملة «in dem Bad» صحيحة أيضاً، وقد تُستعمل للتوكيد أو المقابلة؛ لذلك لا تُعاملها كخطأ نحوي.\n\n**توسّع اختياري: Wechselpräpositionen (حروف الجرّ المتبدّلة).**\nتسعةٌ من حروف الجرّ تسمّى **Wechselpräpositionen** لأنها قد تأتي مع Dativ أو Akkusativ بحسب المعنى:\n**in · an · auf · über · unter · vor · hinter · neben · zwischen**\nوالمعيار **ليس** الحرف بل **السؤال الذي تجيب عنه الجملة**:\n• **Wo?** (أين؟) — الموضع الذي يحدث فيه الفعل ⟵ **Dativ**.\n  Das Buch ist **auf dem** Tisch. · Ich bin **in der** Küche.\n• **Wohin?** (إلى أين؟) — وجهة الحركة أو مقصدها ⟵ **Akkusativ**.\n  Ich lege das Buch **auf den** Tisch. · Ich gehe **in die** Küche.\n\nوالاختيار لا يعتمد على وجود حركة جسدية فحسب، بل على معنى العبارة المكانية: أهي تحدد مكان وقوع الفعل (Wo? ⟵ Dativ) أم وجهته (Wohin? ⟵ Akkusativ)؟ فـ«Ich laufe in der Küche» تصف الجري داخل المطبخ، بينما «Ich laufe in die Küche» تصف الاتجاه إلى داخله.\n\nالأفعال قرائن لا قاعدة آلية: مع Wechselpräpositionen يأتي Dativ للمكان وAkkusativ للوجهة. والفعل hängen مثلاً يصحّ مع كليهما: Das Bild hängt an der Wand / Ich hänge das Bild an die Wand. كما تصف Ich laufe in der Küche حركةً داخل مكان، لا وجهةً إليه. **ابدأ بالسؤال: Wo? أم Wohin?**",
+        "حالة الجرّ (Dativ) هي الحالة الثالثة في الترتيب التعليمي، وهي تتيح وصف المكان.\n\n**الأساس المطلوب هنا (A1):** عند تحديد المكان والإجابة عن Wo? نستخدم Dativ؛ ركّز على الصيغ التي تظهر في هذا الدرس: im Wohnzimmer، in der Küche، auf dem Tisch.\n\n**جدول مرجعي للتوسّع؛ لا يلزم حفظ كلّ تفاصيله الآن:**\n\n| الجنس | الرفع | الجرّ (Dativ) |\n|---|---|---|\n| مذكّر | der / ein | **dem / einem** |\n| مؤنّث | die / eine | **der / einer** |\n| محايد | das / ein | **dem / einem** |\n| جمع | die | **den + ‑n على الاسم** |\n\nولاحظ ثلاث ملاحظات تختصر الحفظ:\n1. **المذكّر والمحايد يتّحدان** في dem — كما اتّحدا في ein.\n2. **في Dativ، أداة التعريف للمؤنث هي der، وأداة النكرة هي einer.** وقد تلتبس الصيغة لأنّ der تظهر أيضاً في مواضع أخرى؛ ففي «in **der** Küche» هي أداة Dativ للمؤنث، لا علامة على أن Küche مذكّر.\n3. **الجمع يأخذ den ويزيد ‑n على آخر الاسم نفسه**: mit den Kinder**n** · in den Zimmer**n**. وهذه الزيادة إلزامية وينساها الجميع. (ولا تُزاد إن كان الجمع منتهياً بـ‑n أو ‑s أصلاً: mit den Frauen · mit den Autos.)\n\n**للاطّلاع: اندماجات شائعة أخرى؛ ركّز الآن على im:**\nin + dem = **im** · an + dem = **am** · zu + dem = **zum** · zu + der = **zur** · bei + dem = **beim** · von + dem = **vom**.\nهذه صيغ مختصرة شائعة في الاستعمال المحايد. والصيغة الكاملة «in dem Bad» صحيحة أيضاً، وقد تُستعمل للتوكيد أو المقابلة؛ لذلك لا تُعاملها كخطأ نحوي.\n\n**توسّع اختياري: Wechselpräpositionen (حروف الجرّ المتبدّلة).**\nتسعةٌ من حروف الجرّ تسمّى **Wechselpräpositionen** لأنها قد تأتي مع Dativ أو Akkusativ بحسب المعنى:\n**in · an · auf · über · unter · vor · hinter · neben · zwischen**\nوالمعيار **ليس** الحرف بل **السؤال الذي تجيب عنه الجملة**:\n• **Wo?** (أين؟) — الموضع الذي يحدث فيه الفعل ⟵ **Dativ**.\n  Das Buch ist **auf dem** Tisch. · Ich bin **in der** Küche.\n• **Wohin?** (إلى أين؟) — وجهة الحركة أو مقصدها ⟵ **Akkusativ**.\n  Ich lege das Buch **auf den** Tisch. · Ich gehe **in die** Küche.\n\nوالاختيار لا يعتمد على وجود حركة جسدية فحسب، بل على معنى العبارة المكانية: أهي تحدد مكان وقوع الفعل (Wo? ⟵ Dativ) أم وجهته (Wohin? ⟵ Akkusativ)؟ فـ«Ich laufe in der Küche» تصف الجري داخل المطبخ، بينما «Ich laufe in die Küche» تصف الاتجاه إلى داخله.\n\nالأفعال قرائن لا قاعدة آلية: مع Wechselpräpositionen يأتي Dativ للمكان وAkkusativ للوجهة. والفعل hängen مثلاً يصحّ مع كليهما: Das Bild hängt an der Wand / Ich hänge das Bild an die Wand. كما تصف Ich laufe in der Küche حركةً داخل مكان، لا وجهةً إليه. **ابدأ بالسؤال: Wo? أم Wohin?**",
       whyAr:
         "لأنّ أسئلة المكان شائعة في المواقف اليومية: أين المفتاح؟ أين الحمّام؟ أين تسكن؟ ولأنّ Dativ يظهر في استعمالات يومية كثيرة ولا يقتصر على المكان: فحروف الجرّ الثابتة (mit, nach, aus, zu, bei, seit, von, gegenüber) تفرضه دائماً بلا سؤال، والمفعول غير المباشر يأخذه (Ich gebe **dem Kind** ein Buch)، وطائفةٌ كاملة من الأفعال تحكمه (helfen, danken, gefallen, gehören, passen). ومعرفة أشكال dem/der/dem/den تمهّد لفهم استعمالات لاحقة، مع تعلّم كل قاعدة في سياقها. أمّا تقديمه هنا في سياق البيت فاختيارٌ منهجي مقصود: المكان **مرئيّ وملموس** — الكتاب على الطاولة، القطّة تحت الكرسي — فيتعلّق الجرّ بصورةٍ ذهنية بدل أن يبقى جدولاً مجرّداً. تساعد الأمثلة الملموسة على ربط الحالة بالمعنى، من دون ادعاء أن جدولاً واحداً يكفي لكل استعمالات Dativ.",
       table: {
@@ -115,12 +115,12 @@ export const lessonA104: Lesson = {
         {"de": "Das Bild hängt an der Wand.", "ar": "الصورة معلّقة على الجدار. (an + مؤنّث مجرور)"},
       ],
       comparisonWithArabic:
-        "**١. اسم الحالة نفسه مضلِّل.** «الجرّ» في العربية يعني ما بعد حرف الجرّ. وDativ الألمانية أوسع: تشمل المفعول غير المباشر والأفعال الحاكمة، وليست مقصورةً على حروف الجرّ. وفي المقابل: بعض حروف الجرّ الألمانية **تنصب** لا تجرّ (durch, für, ohne, gegen, um). فلا تقس القاعدة العربية «كلّ ما بعد الحرف مجرور» على الألمانية — فهي لا تصحّ.\n\n**٢. العربية لا تفرّق بين «أين» و«إلى أين» في الحرف.** نقول «في المطبخ» للموقع و«إلى المطبخ» للحركة، فالفرق في **الحرف نفسه**. والألمانية تستعمل **الحرف نفسه** in وتغيّر **الحالة** بعده. فالعربي يبحث عن حرفٍ آخر ولا يجد، ويهمل التغيير الذي لا يألفه. وهذا قد يفسّر خطأً شائعاً لدى بعض المتعلّمين العرب في هذا الباب.\n\n**٣. der المؤنّثة صدمة.** المتعلّم رسّخ أنّ der = مذكّر، ثمّ يصادف «in der Küche» فيظنّ أنّ Küche مذكّرة، أو يظنّ الجملة خاطئة. والحلّ أن يتعلّم منذ اليوم أنّ **شكل الأداة لا يدلّ على الجنس وحده بل على الجنس + الحالة معاً**. فـder ثلاثة أشياء: مذكّر مرفوع، ومؤنّث مجرور، ومؤنّث في حالة الملكية.\n\n**٤. الاندماجات شائعة في الألمانية.** من الشائع أن تُختصر in + dem إلى im، وan + dem إلى am، وzu + dem إلى zum، وzu + der إلى zur. والصيغة الكاملة قد تبقى صحيحة، خاصةً عند التوكيد؛ لذلك احفظ im بوصفها الصيغة المحايدة الشائعة، لا بوصف in dem خطأً.\n\n**٥. النون الزائدة في الجمع لا مثيل لها.** «مع الأطفال» في العربية لا تغيّر الاسم. والألمانية تزيد ‑n على الاسم نفسه: mit den Kinder**n**. فهذه علامة إعرابٍ على الاسم — وهو أمرٌ مألوف للعربي في المبدأ (الحركات) لكنّه هنا حرفٌ كامل يُضاف، لا حركة تُقدَّر.",
+        "**١. اسم الحالة نفسه مضلِّل.** «الجرّ» في العربية يعني ما بعد حرف الجرّ. وDativ الألمانية أوسع: تشمل المفعول غير المباشر والأفعال الحاكمة، وليست مقصورةً على حروف الجرّ. وفي المقابل: بعض حروف الجرّ الألمانية **تنصب** لا تجرّ (durch, für, ohne, gegen, um). فلا تقس القاعدة العربية «كلّ ما بعد الحرف مجرور» على الألمانية — فهي لا تصحّ.\n\n**٢. العربية لا تفرّق بين «أين» و«إلى أين» في الحرف.** نقول «في المطبخ» للموقع و«إلى المطبخ» للحركة، فالفرق في **الحرف نفسه**. والألمانية تستعمل **الحرف نفسه** in وتغيّر **الحالة** بعده. فالعربي يبحث عن حرفٍ آخر ولا يجد، ويهمل التغيير الذي لا يألفه. وهذا قد يفسّر خطأً شائعاً لدى بعض المتعلّمين العرب في هذا الباب.\n\n**٣. لا يكفي شكل der لمعرفة جنس الاسم أو حالته.** قد يلتبس على المتعلّم أن der في «der Tisch» أداة مذكّر في الرفع، ثمّ يراها في «in der Küche» مع اسم مؤنّث. في المثال الثاني، der أداة التعريف في Dativ للمؤنث؛ لذا اقرأ التركيب كاملاً ولا تستنتج جنس الاسم من شكل الأداة وحده.\n\n**٤. الاندماجات شائعة في الألمانية.** من الشائع أن تُختصر in + dem إلى im، وan + dem إلى am، وzu + dem إلى zum، وzu + der إلى zur. والصيغة الكاملة قد تبقى صحيحة، خاصةً عند التوكيد؛ لذلك احفظ im بوصفها الصيغة المحايدة الشائعة، لا بوصف in dem خطأً.\n\n**٥. النون الزائدة في الجمع لا مثيل لها.** «مع الأطفال» في العربية لا تغيّر الاسم. والألمانية تزيد ‑n على الاسم نفسه: mit den Kinder**n**. فهذه علامة إعرابٍ على الاسم — وهو أمرٌ مألوف للعربي في المبدأ (الحركات) لكنّه هنا حرفٌ كامل يُضاف، لا حركة تُقدَّر.",
       eselsbruecke:
-        "**«Wo? ⟵ Dativ (ثابت)، Wohin? ⟵ Akkusativ (متحرّك)»** — سؤالان يحسمان تسعة حروف. وللجدول احفظ الإيقاع الرباعي: **dem – der – dem – den+n**. ولتذكّر انقلاب المؤنّث: **«المؤنّث في الجرّ يستعير der من المذكّر»**. وللاندماجات: **in+dem = im · an+dem = am · zu+der = zur** — ثلاث كلماتٍ تُحفظ كما هي.",
+        "**«Wo? ⟵ Dativ (موضع الحدث)، Wohin? ⟵ Akkusativ (الوجهة)»** — ابدأ بالسؤال عن معنى العبارة، لا بمجرد وجود حركة. وللجدول احفظ الإيقاع الرباعي: **dem – der – dem – den+n**. ولتذكّر انقلاب المؤنّث: **«المؤنّث في الجرّ يستعير der من المذكّر»**. وللاندماجات: **in+dem = im · an+dem = am · zu+der = zur** — ثلاث كلماتٍ تُحفظ كما هي.",
       commonMistakes: [
-        {"wrong": "auf der Tisch", "right": "auf dem Tisch", "whyAr": "der Tisch مذكّر، والمذكّر في الجرّ يصير dem لا der. والخطأ ناتج عن سحب أداة المعجم كما هي إلى الجملة. تذكّر: der ثلاثة أشياء مختلفة — مذكّر مرفوع، ومؤنّث مجرور، ولا ثالث لهما هنا؛ وليست أبداً مذكّراً مجروراً."},
-        {"wrong": "Die Lampe ist in die Küche.", "right": "Die Lampe ist in der Küche.", "whyAr": "خلط Wo? بـ Wohin?. الفعل sein فعل موقعٍ لا حركة، والجملة تجيب عن «أين المصباح؟» ⟵ فالجرّ واجب: in der Küche. أمّا in die Küche فتصحّ مع فعل حركة: Ich gehe in die Küche."},
+        {"wrong": "auf der Tisch", "right": "auf dem Tisch", "whyAr": "Tisch اسم مذكّر؛ وفي وصف الموقع على الطاولة نستخدم Dativ: auf dem Tisch. أمّا in der Küche فـder أداة Dativ لاسم مؤنّث. لا تنقل der من صيغة المعجم، ولا تستنتج جنس الاسم من شكل الأداة وحده."},
+        {"wrong": "Die Lampe ist in die Küche.", "right": "Die Lampe ist in der Küche.", "whyAr": "خلط Wo? بـ Wohin?. الجملة تصف موضع المصباح وتجيب عن «أين هو؟»، لذلك يأتي Dativ بعد in: in der Küche. أمّا in die Küche فتعبّر عن وجهة، كما في Ich gehe in die Küche."},
         {"wrong": "Die Lampe ist in dem Küche.", "right": "Die Lampe ist in der Küche.", "whyAr": "Küche مؤنثة؛ لذلك يأتي Dativ der بعد in عند وصف المكان. أمّا in dem فقد تكون صحيحة مع اسم مذكر أو محايد عند التوكيد، وليست خطأً بحد ذاتها."},
         {"wrong": "Die Möbel sind in den Zimmer.", "right": "Die Möbel sind in den Zimmern.", "whyAr": "نُسيت النون الزائدة على الاسم الجمع. فالجمع في الجرّ يأخذ den **وأيضاً** ‑n على آخر الاسم: Zimmer ⟵ Zimmern · Kinder ⟵ Kindern · Freunde ⟵ Freunden. وتُستثنى الجموع المنتهية بـ‑n أو ‑s أصلاً."},
       ],
@@ -181,14 +181,14 @@ export const lessonA104: Lesson = {
     "titleAr": "الشقّة الجديدة",
     "textType": "email",
     "paragraphs": [
-      "Liebe Sonia,\nwie geht es dir? Ich habe endlich eine Wohnung gefunden! Sie ist nicht sehr groß, aber sie ist hell und ruhig. Ich wohne jetzt in der Gartenstraße 14, im dritten Stock. Die Miete ist nicht billig, aber die Lage ist perfekt.",
+      "Liebe Sonia,\nwie geht es dir? Ich habe endlich eine Wohnung gefunden! Sie ist nicht sehr groß, aber sie ist hell und ruhig. Ich wohne jetzt in der Gartenstraße 14, im dritten Stock. Die Miete ist nicht billig, aber die Lage ist sehr gut.",
       "Die Wohnung hat zwei Zimmer, eine Küche und ein Bad. Das Wohnzimmer ist mein Lieblingsraum. Dort stehen ein Sofa, ein kleiner Tisch und ein Regal mit meinen Büchern. An der Wand hängt ein Bild aus Tunesien. Auf dem Balkon habe ich drei Pflanzen.",
       "Die Küche ist sehr klein, aber praktisch. Der Kühlschrank steht neben dem Fenster und der Herd ist ziemlich neu. Im Schlafzimmer gibt es nur ein Bett und einen Schrank. Das ist genug für mich. Unter dem Bett habe ich meine Koffer.",
       "Es gibt aber auch Regeln. In unserem Haus darf man nach 22 Uhr nicht laut sein, denn dann beginnt die Ruhezeit. Laut Hausordnung darf ich am Sonntag keine Wäsche waschen. Und ich muss den Müll trennen: Papier, Glas, Plastik und Biomüll. Am Anfang war das kompliziert!",
       "Meine Nachbarn sind sehr freundlich. Frau Berger wohnt unter mir und sie hat einen kleinen Hund. Sie sagt immer: Du musst nicht klingeln, die Tür ist offen. Kommst du mich bald besuchen? Du darfst gern eine Woche bleiben.\nViele Grüße,\ndeine Amira"
     ],
     "paragraphsAr": [
-      "عزيزتي سنية،\nكيف حالك؟ وجدتُ أخيراً شقّة! ليست كبيرة جداً لكنّها مضيئة وهادئة. أسكن الآن في شارع الحديقة رقم ١٤، في الطابق الثالث. الإيجار ليس رخيصاً لكنّ الموقع مثالي.",
+      "عزيزتي سنية،\nكيف حالك؟ وجدتُ أخيراً شقّة! ليست كبيرة جداً لكنّها مضيئة وهادئة. أسكن الآن في شارع الحديقة رقم ١٤، في الطابق الثالث فوق الطابق الأرضي. الإيجار ليس رخيصاً لكنّ الموقع جيد جداً.",
       "الشقّة فيها غرفتان ومطبخ وحمّام. غرفة المعيشة هي غرفتي المفضّلة. فيها أريكة وطاولة صغيرة ورفّ عليه كتبي. وعلى الجدار صورة معلّقة من تونس. وعلى الشرفة عندي ثلاث نبتات.",
       "المطبخ صغير جداً لكنّه عمليّ. الثلّاجة بجانب النافذة والموقد جديد نسبياً. وفي غرفة النوم سرير وخزانة فقط. وهذا يكفيني. وتحت السرير حقائبي.",
       "لكن هناك قواعد أيضاً. في مبنانا لا يُسمح بإحداث الضجيج بعد العاشرة مساءً، إذ يبدأ حينها وقت الهدوء. ووفق لائحة المبنى لا يُسمح لي بغسل الملابس يوم الأحد. وعليّ أن أفرز النفايات: ورق وزجاج وبلاستيك ونفايات عضوية. كان ذلك معقّداً في البداية!",
@@ -203,12 +203,12 @@ export const lessonA104: Lesson = {
       {
         "de": "die Lage",
         "ar": "الموقع",
-        "noteAr": "مؤنّثة بـ‑e. وتُستعمل في إعلانات السكن دائماً: ruhige Lage (موقع هادئ)، zentrale Lage (موقع مركزي)."
+        "noteAr": "اسم مؤنث؛ ومعناه هنا موقع الشقة بالنسبة إلى محيطها، لا الحالة. من التراكيب الشائعة: ruhige Lage (موقع هادئ) وgute Lage (موقع جيد)."
       },
       {
         "de": "der Stock",
         "ar": "الطابق",
-        "noteAr": "im dritten Stock = في الطابق الثالث. وحذارِ: الطابق الأرضي يسمّى Erdgeschoss ولا يُعدّ، فـ«الأوّل» الألماني هو «الثاني» في كثير من البلاد العربية."
+        "noteAr": "في الترقيم الشائع، Erdgeschoss هو الطابق الأرضي وim ersten Stock هو الطابق الذي فوقه؛ لكن تسميات الطوابق قد تختلف محلياً أو بين المباني، فتحقّق عند الحاجة. في النص: im dritten Stock = الطابق الثالث فوق الأرضي."
       },
       {
         "de": "hängen",
@@ -380,7 +380,7 @@ export const lessonA104: Lesson = {
       },
       {
         "de": "Ich wohne in der Gartenstraße 14, im dritten Stock.",
-        "ar": "أسكن في شارع الحديقة ١٤، الطابق الثالث."
+        "ar": "أسكن في شارع الحديقة ١٤، في الطابق الثالث فوق الأرضي."
       },
       {
         "de": "Die Wohnung ist hell und ruhig, aber nicht billig.",
@@ -530,7 +530,7 @@ export const lessonA104: Lesson = {
       type: "transformation",
       instructionAr: "كوّن سؤالاً عن السكن ثم أجب عنه بجملة مناسبة:",
       prompt: "Antwort: Ich wohne in Tunis. → Frage + Antwort: ...",
-      acceptedAnswers: ["Wo wohnst du? Ich wohne in Tunis."],
+      acceptedAnswers: ["Wo wohnst du? Ich wohne in Tunis.", "Wo wohnst du? — Ich wohne in Tunis."],
       sampleAnswer: "Wo wohnst du? Ich wohne in Tunis.",
       explanation: "في سؤال W تأتي أداة السؤال أولاً ثم الفعل المصرف: Wo wohnst du? وتكون الإجابة بضمير المتكلم: Ich wohne in Tunis.",
       errorType: "word-order",
@@ -723,7 +723,7 @@ export const lessonA104: Lesson = {
 
   fehlerUndTipps: {
     mistakes: [
-      { wrong: "auf der Tisch", right: "auf dem Tisch", whyAr: "المذكر der→dem بعد حروف الجر المكانية." },
+      { wrong: "auf der Tisch", right: "auf dem Tisch", whyAr: "مع auf عند وصف الموقع (Wo?) نستخدم Dativ: der Tisch تصير dem Tisch في auf dem Tisch." },
       { wrong: "im die Küche", right: "in der Küche", whyAr: "im = in+dem للمذكر/المحايد فقط؛ المؤنث يبقى in der." },
       { wrong: "نطق Wohnzimmer كـ«وُهن»", right: "ڤوهن-تسِمّر (w=ڤ)", whyAr: "تذكر قاعدة الأبجدية: W=ڤ دائماً." },
     ],

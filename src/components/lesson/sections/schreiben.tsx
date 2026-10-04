@@ -4,6 +4,7 @@ import {PenLine} from "lucide-react";
 
 import {ExerciseRenderer} from "@/components/lesson/exercises/exercise-renderer";
 import {FreeWritingTrainer} from "@/components/lesson/sections/free-writing-trainer";
+import {recordEvent} from "@/lib/analytics/events";
 import type { Lesson, WritingExercise } from "@/types/lesson";
 
 /**
@@ -22,7 +23,23 @@ export function SchreibenSection({ exercises, lesson }: { exercises: WritingExer
       <FreeWritingTrainer lesson={lesson} />
 
       {exercises.map((exercise) => (
-        <ExerciseRenderer key={exercise.id} exercise={exercise} />
+        <ExerciseRenderer
+          key={exercise.id}
+          exercise={exercise}
+          onResult={(result) => {
+            void recordEvent({
+              type: "exercise-result",
+              exerciseId: exercise.id,
+              exerciseType: exercise.type,
+              correct: result.isCorrect,
+              points: result.pointsEarned,
+              errorType: result.errorType,
+              skill: "الكتابة",
+              lessonId: lesson.id,
+              taskId: `writing:${lesson.id}:${exercise.id}`,
+            });
+          }}
+        />
       ))}
     </div>
   );

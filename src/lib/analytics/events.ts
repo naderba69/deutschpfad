@@ -1,5 +1,6 @@
 import {getDb} from "@/lib/storage/db";
 import type { AnalyticsEvent, EventStats } from "@/types/analytics";
+import {GOAL_EVIDENCE_UPDATED_EVENT} from "@/lib/lesson/goal-evidence";
 
 /**
  * الأحداث التحليلية — تسجيل وقراءة (تغذي لوحة التحكم لاحقاً)
@@ -20,6 +21,11 @@ export async function recordEvent(event: AnalyticsEventInput): Promise<void> {
     const {ensureSeeded} = await import("@/lib/gamification/counters");
     await ensureSeeded();
     await (await getDb()).add("events", full);
+    if (full.type === "exercise-result" && full.lessonId && typeof window !== "undefined") {
+      window.dispatchEvent(
+        new CustomEvent(GOAL_EVIDENCE_UPDATED_EVENT, {detail: {lessonId: full.lessonId}}),
+      );
+    }
     // تحديث العدادات التراكمية (XP لا ينقص أبداً) — ذرية عبر transaction
     await import("@/lib/gamification/counters").then(({bumpCounter}) => bumpCounter(full));
   } catch {
