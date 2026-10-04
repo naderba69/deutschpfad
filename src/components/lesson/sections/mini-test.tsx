@@ -60,6 +60,8 @@ export function MiniTestSection({
       correct: result.isCorrect,
       points: result.pointsEarned,
       errorType: result.errorType,
+      ...(lessonId ? {lessonId} : {}),
+      taskId: `mini-test:${lessonId ?? unitId}:${exercise.id}`,
     });
 
     // التقدم التلقائي بعد 900ms ليتسنى للمتعلم قراءة التصحيح

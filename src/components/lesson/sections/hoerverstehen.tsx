@@ -10,6 +10,7 @@ import {SpeakButton} from "@/components/shared/speak-button";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {DetailTabs} from "@/components/shared/detail-tabs";
+import {recordEvent} from "@/lib/analytics/events";
 import {speakRepeated} from "@/lib/speech/voices";
 import {cn} from "@/lib/utils";
 import type { ListeningItem, ListeningQuestion } from "@/types/lesson";
@@ -45,9 +46,11 @@ function playDialogue(lines: { de: string }[], rate: number) {
 export function HoerverstehenSection({
   items,
   questions,
+  lessonId,
 }: {
   items: ListeningItem[];
   questions: ListeningQuestion[];
+  lessonId: string;
 }) {
   const [rate, setRate] = React.useState<number>(1);
   const [showText, setShowText] = React.useState(true);
@@ -146,7 +149,23 @@ export function HoerverstehenSection({
             content: (
               <div className="space-y-5">
                 {questions.map((q) => (
-                  <MultipleChoiceExercise key={q.id} exercise={q} />
+                  <MultipleChoiceExercise
+                    key={q.id}
+                    exercise={q}
+                    onResult={(result) => {
+                      void recordEvent({
+                        type: "exercise-result",
+                        exerciseId: q.id,
+                        exerciseType: q.type,
+                        correct: result.isCorrect,
+                        points: result.pointsEarned,
+                        errorType: result.errorType,
+                        skill: "الاستماع",
+                        lessonId,
+                        taskId: `listening:${q.itemId}:${q.id}`,
+                      });
+                    }}
+                  />
                 ))}
               </div>
             ),

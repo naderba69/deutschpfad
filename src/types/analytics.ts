@@ -4,6 +4,14 @@ import type { ErrorTypeCode, ExerciseType } from "@/types/lesson";
  * الأحداث التحليلية — تُسجَّل في IndexedDB (مخزن events)
  * — تغذي لوحة التحكم والمراجعة الذكية (المرحلة 12) —
  */
+export type AnalyticsSkill =
+  | "الاستماع"
+  | "القراءة"
+  | "الكتابة"
+  | "التحدث"
+  | "القواعد"
+  | "المفردات";
+
 export type AnalyticsEvent =
   | {
       id?: number;
@@ -14,6 +22,10 @@ export type AnalyticsEvent =
       correct: boolean;
       points: number;
       errorType?: ErrorTypeCode;
+      /** المهارة المقاسة وسياق المهمة والدرس، إن توفرا. */
+      skill?: AnalyticsSkill;
+      lessonId?: string;
+      taskId?: string;
     }
   | {
       id?: number;

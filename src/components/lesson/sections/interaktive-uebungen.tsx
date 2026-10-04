@@ -17,7 +17,7 @@ const BATCH_SIZE = 5;
  * 7) التدريبات التفاعلية — بنك أسئلة عشوائي واسع
  * — في كل جلسة تُسحب 5 تمارين عشوائية من البنك (Varied Practice) —
  */
-export function InteraktiveUebungenSection({ bank }: { bank: Exercise[] }) {
+export function InteraktiveUebungenSection({bank, lessonId}: {bank: Exercise[]; lessonId: string}) {
   const [batch, setBatch] = React.useState<Exercise[]>(() => sample(bank, BATCH_SIZE));
   const [index, setIndex] = React.useState(0);
   const [solved, setSolved] = React.useState<Record<string, boolean>>({});
@@ -36,6 +36,8 @@ export function InteraktiveUebungenSection({ bank }: { bank: Exercise[] }) {
       correct: result.isCorrect,
       points: result.pointsEarned,
       errorType: result.errorType,
+      lessonId,
+      taskId: `practice:${lessonId}:${exercise.id}`,
     });
   };
 

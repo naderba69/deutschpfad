@@ -7,6 +7,7 @@ import {MultipleChoiceExercise} from "@/components/lesson/exercises/multiple-cho
 import {SpeakButton} from "@/components/shared/speak-button";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
+import {recordEvent} from "@/lib/analytics/events";
 import {cn} from "@/lib/utils";
 import type {ReadingText} from "@/types/lesson";
 
@@ -30,7 +31,7 @@ const TEXT_TYPE_LABEL: Record<ReadingText["textType"], string> = {
  * وفي الحياة. ثم تُكشف الترجمة للتحقّق. عرض النصّين جنباً إلى جنب منذ
  * البداية يجعل العين تقفز إلى العربية فلا تُقرأ الألمانية أصلاً.
  */
-export function LesetextSection({reading}: {reading: ReadingText}) {
+export function LesetextSection({reading, lessonId}: {reading: ReadingText; lessonId: string}) {
   const [showTranslation, setShowTranslation] = React.useState(false);
   const [openGloss, setOpenGloss] = React.useState(false);
   const fullText = reading.paragraphs.join(" ");
@@ -150,7 +151,23 @@ export function LesetextSection({reading}: {reading: ReadingText}) {
           </CardHeader>
           <CardContent className="space-y-4">
             {reading.questions.map((q) => (
-              <MultipleChoiceExercise key={q.id} exercise={q} />
+              <MultipleChoiceExercise
+                key={q.id}
+                exercise={q}
+                onResult={(result) => {
+                  void recordEvent({
+                    type: "exercise-result",
+                    exerciseId: q.id,
+                    exerciseType: q.type,
+                    correct: result.isCorrect,
+                    points: result.pointsEarned,
+                    errorType: result.errorType,
+                    skill: "القراءة",
+                    lessonId,
+                    taskId: `reading:${reading.id}:${q.id}`,
+                  });
+                }}
+              />
             ))}
           </CardContent>
         </Card>

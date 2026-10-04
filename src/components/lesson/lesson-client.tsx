@@ -479,6 +479,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
           <HoerverstehenSection
             items={lesson.listening.items}
             questions={lesson.listening.questions}
+            lessonId={lesson.id}
           />
         );
       case "aussprache":
@@ -486,7 +487,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       case "schreiben":
         return <SchreibenSection exercises={lesson.writing} lesson={lesson} />;
       case "uebungen":
-        return <InteraktiveUebungenSection bank={lesson.practiceBank} />;
+        return <InteraktiveUebungenSection bank={lesson.practiceBank} lessonId={lesson.id} />;
       case "fehler":
         return <FehlerUndTippsSection data={lesson.fehlerUndTipps} />;
       case "minitest":
@@ -506,7 +507,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       case "interaction":
         return <InteractionSection tasks={lesson.interaction ?? []} />;
       case "lesetext":
-        return lesson.reading ? <LesetextSection reading={lesson.reading} /> : null;
+        return lesson.reading ? <LesetextSection reading={lesson.reading} lessonId={lesson.id} /> : null;
       case "vertiefung":
         return <VertiefungSection lessonId={lesson.id} />;
       default:

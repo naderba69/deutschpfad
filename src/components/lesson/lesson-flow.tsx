@@ -409,7 +409,23 @@ export function LessonFlow({ lesson, onFinish }: { lesson: Lesson; onFinish?: ()
           </div>
           {lesson.practiceBank.slice(0, practiceShown).map((ex) => (
             <div key={ex.id}>
-              <ExerciseRenderer exercise={ex} />
+              <ExerciseRenderer
+                exercise={ex}
+                onResult={(r) => {
+                  void import("@/lib/analytics/events").then(({recordEvent}) =>
+                    recordEvent({
+                      type: "exercise-result",
+                      exerciseId: ex.id,
+                      exerciseType: ex.type,
+                      correct: r.isCorrect,
+                      points: r.pointsEarned,
+                      errorType: r.errorType,
+                      lessonId: lesson.id,
+                      taskId: `flow-practice:${lesson.id}:${ex.id}`,
+                    }),
+                  );
+                }}
+              />
             </div>
           ))}
           {practiceShown >= practiceCount && (
@@ -458,9 +474,19 @@ export function LessonFlow({ lesson, onFinish }: { lesson: Lesson; onFinish?: ()
                   key={q.id}
                   exercise={q}
                   onResult={(r) => {
-                    // تسجيل مهارة الاستماع في كفايات CEFR
+                    // اربط نتيجة السؤال بمهارة الاستماع وسياق الدرس والمهمة، لا بتخمين نوع التمرين.
                     void import("@/lib/analytics/events").then(({recordEvent}) =>
-                      recordEvent({ type: "skill-result", skill: "الاستماع", correct: r.isCorrect }),
+                      recordEvent({
+                        type: "exercise-result",
+                        exerciseId: q.id,
+                        exerciseType: q.type,
+                        correct: r.isCorrect,
+                        points: r.pointsEarned,
+                        errorType: r.errorType,
+                        skill: "الاستماع",
+                        lessonId: lesson.id,
+                        taskId: `listening:${q.itemId}:${q.id}`,
+                      }),
                     );
                   }}
                 />
@@ -514,7 +540,21 @@ export function LessonFlow({ lesson, onFinish }: { lesson: Lesson; onFinish?: ()
             <div key={q.id}>
               <MultipleChoiceExercise
                 exercise={q}
-                onResult={() => setQuizAnswered((n) => Math.max(n, i + 1))}
+                onResult={(r) => {
+                  setQuizAnswered((n) => Math.max(n, i + 1));
+                  void import("@/lib/analytics/events").then(({recordEvent}) =>
+                    recordEvent({
+                      type: "exercise-result",
+                      exerciseId: q.id,
+                      exerciseType: q.type,
+                      correct: r.isCorrect,
+                      points: r.pointsEarned,
+                      errorType: r.errorType,
+                      lessonId: lesson.id,
+                      taskId: `flow-mini-test:${lesson.id}:${q.id}`,
+                    }),
+                  );
+                }}
               />
             </div>
           ))}
