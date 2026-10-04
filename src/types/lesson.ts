@@ -228,6 +228,8 @@ export interface Lernziel {
    */
   evidence?: {
     exerciseIds: string[];
+    /** معرّفات taskId الدقيقة كما تسجلها أحداث التمرين؛ عند وجودها لا تُقبل معرّفات أخرى. */
+    taskIds?: string[];
     /** شرح واضح للمهمة التي تقدّم دليل الأداء */
     labelAr: string;
     completion: "any-correct" | "all-correct";

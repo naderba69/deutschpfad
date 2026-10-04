@@ -9,6 +9,7 @@ export type GoalEvidenceStatus = "unmapped" | "pending" | "evidenced";
 /**
  * Derive a goal's evidence state from persisted, correct exercise-result events.
  * Viewing/opening an exercise is deliberately not considered evidence.
+ * When taskIds are supplied, only correct results from those exact task contexts count.
  */
 export function getGoalEvidenceStatus(
   goal: Lernziel,
@@ -18,13 +19,21 @@ export function getGoalEvidenceStatus(
   const evidence = goal.evidence;
   if (!evidence || evidence.exerciseIds.length === 0) return "unmapped";
 
+  const acceptedTaskIds = evidence.taskIds?.length
+    ? new Set(evidence.taskIds)
+    : undefined;
   const correctlyCompleted = new Set(
     events
       .filter(
         (event) =>
           event.type === "exercise-result" &&
           event.lessonId === lessonId &&
-          event.correct,
+          event.correct &&
+          // taskIds include the exercise id as their final segment; require both fields to agree.
+          (!acceptedTaskIds ||
+            (event.taskId !== undefined &&
+              acceptedTaskIds.has(event.taskId) &&
+              event.taskId.endsWith(`:${event.exerciseId}`))),
       )
       .map((event) => (event.type === "exercise-result" ? event.exerciseId : "")),
   );

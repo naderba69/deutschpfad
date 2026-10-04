@@ -1,8 +1,9 @@
 import {describe, expect, it} from "vitest";
 
 import {lessonA104} from "@/data/lessons/a1/a1-04";
+import {lessonA105} from "@/data/lessons/a1/a1-05";
 import {getGoalEvidenceStatus} from "@/lib/lesson/goal-evidence";
-import {evaluateFillBlank, evaluateMatching, evaluateTransformation} from "@/lib/lesson/exercise-engine";
+import {evaluateFillBlank, evaluateMatching, evaluateMcq, evaluateTransformation} from "@/lib/lesson/exercise-engine";
 import type {AnalyticsEvent} from "@/types/analytics";
 import type {Lernziel} from "@/types/lesson";
 
@@ -21,6 +22,7 @@ function exerciseResult(
   exerciseId: string,
   correct: boolean,
   lessonId = "a1-04",
+  taskId = `practice:${lessonId}:${exerciseId}`,
 ): AnalyticsEvent {
   return {
     type: "exercise-result",
@@ -30,7 +32,7 @@ function exerciseResult(
     correct,
     points: correct ? 5 : 0,
     lessonId,
-    taskId: `practice:${lessonId}:${exerciseId}`,
+    taskId,
   };
 }
 
@@ -43,6 +45,29 @@ describe("lesson goal evidence", () => {
   it("requires a correct result for a mapped task in the same lesson", () => {
     expect(getGoalEvidenceStatus(goal, "a1-04", [exerciseResult("e3", true, "a1-03")])).toBe("pending");
     expect(getGoalEvidenceStatus(goal, "a1-04", [exerciseResult("e3", true)])).toBe("evidenced");
+  });
+
+  it("accepts only listed taskIds when a goal specifies exact task contexts", () => {
+    const taskScopedGoal: Lernziel = {
+      ...goal,
+      evidence: {
+        exerciseIds: ["e3"],
+        taskIds: ["practice:a1-04:e3", "flow-practice:a1-04:e3"],
+        labelAr: "أكمل تمرين المطابقة في الدرس.",
+        completion: "any-correct",
+      },
+    };
+
+    expect(
+      getGoalEvidenceStatus(taskScopedGoal, "a1-04", [
+        exerciseResult("e3", true, "a1-04", "unrelated:a1-04:e3"),
+      ]),
+    ).toBe("pending");
+    expect(
+      getGoalEvidenceStatus(taskScopedGoal, "a1-04", [
+        exerciseResult("e3", true, "a1-04", "flow-practice:a1-04:e3"),
+      ]),
+    ).toBe("evidenced");
   });
 
   it("supports goals that require every listed task", () => {
@@ -88,6 +113,124 @@ describe("lesson goal evidence", () => {
         expect(taskIds.has(exerciseId), `${ziel.id} → ${exerciseId}`).toBe(true);
       }
     }
+  });
+
+  it("links every A1-05 goal to an existing recorded taskId", () => {
+    const reading = lessonA105.reading;
+    if (!reading) throw new Error("A1-05 reading passage is required");
+    const exerciseIds = new Set([
+      ...lessonA105.practiceBank.map((task) => task.id),
+      ...lessonA105.writing.map((task) => task.id),
+      ...reading.questions.map((task) => task.id),
+      ...lessonA105.listening.questions.map((task) => task.id),
+    ]);
+    const taskIds = new Set([
+      ...lessonA105.practiceBank.flatMap((task) => [
+        `practice:${lessonA105.id}:${task.id}`,
+        `flow-practice:${lessonA105.id}:${task.id}`,
+      ]),
+      ...lessonA105.writing.map((task) => `writing:${lessonA105.id}:${task.id}`),
+      ...reading.questions.map((task) => `reading:${reading.id}:${task.id}`),
+      ...lessonA105.listening.questions.map((task) => `listening:${task.itemId}:${task.id}`),
+    ]);
+
+    expect(lessonA105.lernziele).toHaveLength(6);
+    for (const ziel of lessonA105.lernziele) {
+      expect(ziel.evidence?.exerciseIds.length, `${ziel.id} exerciseIds`).toBeGreaterThan(0);
+      expect(ziel.evidence?.taskIds?.length, `${ziel.id} taskIds`).toBeGreaterThan(0);
+      expect(ziel.evidence?.labelAr.trim(), `${ziel.id} evidence label`).toBeTruthy();
+      for (const exerciseId of ziel.evidence?.exerciseIds ?? []) {
+        expect(exerciseIds.has(exerciseId), `${ziel.id} → exercise:${exerciseId}`).toBe(true);
+      }
+      for (const taskId of ziel.evidence?.taskIds ?? []) {
+        expect(taskIds.has(taskId), `${ziel.id} → ${taskId}`).toBe(true);
+      }
+    }
+  });
+
+  it("checks every A1-05 mapped task against its accepted correct answer", () => {
+    const e1 = lessonA105.practiceBank.find((task) => task.id === "e1");
+    const e2 = lessonA105.practiceBank.find((task) => task.id === "e2");
+    const w1 = lessonA105.writing.find((task) => task.id === "w1");
+    const w2 = lessonA105.writing.find((task) => task.id === "w2");
+    const w4 = lessonA105.writing.find((task) => task.id === "w4");
+    const w5 = lessonA105.writing.find((task) => task.id === "w5");
+    if (!e1 || e1.type !== "multiple-choice") throw new Error("A1-05 e1 must be multiple-choice");
+    if (!e2 || e2.type !== "multiple-choice") throw new Error("A1-05 e2 must be multiple-choice");
+    if (!w1 || w1.type !== "transformation") throw new Error("A1-05 w1 must be transformation");
+    if (!w2 || w2.type !== "fill-blank") throw new Error("A1-05 w2 must be fill-blank");
+    if (!w4 || w4.type !== "fill-blank") throw new Error("A1-05 w4 must be fill-blank");
+    if (!w5 || w5.type !== "fill-blank") throw new Error("A1-05 w5 must be fill-blank");
+
+    expect(e1.options[e1.correctIndex]).toBe("stehe ... auf");
+    expect(evaluateMcq(e1, e1.options[e1.correctIndex]).isCorrect).toBe(true);
+    expect(evaluateMcq(e1, e1.options[(e1.correctIndex + 1) % e1.options.length]).isCorrect).toBe(false);
+    expect(e2.options[e2.correctIndex]).toBe("8:30");
+    expect(evaluateMcq(e2, e2.options[e2.correctIndex]).isCorrect).toBe(true);
+    expect(evaluateTransformation(w1, "Ich stehe um sieben Uhr auf.").isCorrect).toBe(true);
+    expect(evaluateTransformation(w1, "Ich aufstehe um sieben Uhr.").isCorrect).toBe(false);
+    expect(evaluateFillBlank(w2, ["auf", "fern", "an", "ein"]).isCorrect).toBe(true);
+    expect(evaluateFillBlank(w2, ["auf", "fern", "aus", "ein"]).isCorrect).toBe(false);
+    expect(evaluateFillBlank(w4, ["fünf", "zwanzig"]).isCorrect).toBe(true);
+    expect(evaluateFillBlank(w4, ["fünf", "dreißig"]).isCorrect).toBe(false);
+    expect(evaluateFillBlank(w5, ["Am", "Am", "Am"]).isCorrect).toBe(true);
+    expect(evaluateFillBlank(w5, ["Um", "Am", "Am"]).isCorrect).toBe(false);
+
+    const readingAnswers: Record<string, string> = {
+      r1: "Um 5:30 Uhr",
+      r2: "Fast jeden Tag",
+      r3: "Weil er dann immer zu müde ist",
+      r4: "Weil die Zeitangabe auf Position 1 steht",
+      r5: "Anstrengend, aber er mag seinen Beruf",
+    };
+    for (const [id, expectedAnswer] of Object.entries(readingAnswers)) {
+      const question = lessonA105.reading?.questions.find((task) => task.id === id);
+      if (!question || question.type !== "multiple-choice") throw new Error(`A1-05 reading ${id} is missing`);
+      expect(question.options[question.correctIndex]).toBe(expectedAnswer);
+      expect(evaluateMcq(question, expectedAnswer).isCorrect).toBe(true);
+      expect(evaluateMcq(question, question.options[(question.correctIndex + 1) % question.options.length]).isCorrect).toBe(false);
+    }
+    const listeningAnswers: Record<string, string> = {
+      q1: "um sechs Uhr",
+      q2: "fernsehen oder lesen",
+      q3: "um sieben Uhr",
+    };
+    for (const [id, expectedAnswer] of Object.entries(listeningAnswers)) {
+      const question = lessonA105.listening.questions.find((task) => task.id === id);
+      if (!question || question.type !== "multiple-choice") throw new Error(`A1-05 listening ${id} is missing`);
+      expect(question.options[question.correctIndex]).toBe(expectedAnswer);
+      expect(evaluateMcq(question, expectedAnswer).isCorrect).toBe(true);
+      expect(evaluateMcq(question, question.options[(question.correctIndex + 1) % question.options.length]).isCorrect).toBe(false);
+    }
+  });
+
+  it("requires all mapped A1-05 parts and ignores correct results from other taskIds", () => {
+    const ziel = lessonA105.lernziele.find((candidate) => candidate.id === "z2");
+    if (!ziel?.evidence) throw new Error("A1-05 z2 must have task evidence");
+
+    expect(
+      getGoalEvidenceStatus(ziel, lessonA105.id, [
+        exerciseResult("e1", true, lessonA105.id, "flow-practice:a1-05:e1"),
+      ]),
+    ).toBe("pending");
+    expect(
+      getGoalEvidenceStatus(ziel, lessonA105.id, [
+        exerciseResult("e1", true, lessonA105.id, "flow-practice:a1-05:e1"),
+        exerciseResult("w2", true, lessonA105.id, "writing:a1-05:w2"),
+      ]),
+    ).toBe("evidenced");
+    expect(
+      getGoalEvidenceStatus(ziel, lessonA105.id, [
+        exerciseResult("e1", true, lessonA105.id, "unmapped:a1-05:e1"),
+        exerciseResult("w2", true, lessonA105.id, "writing:a1-05:w2"),
+      ]),
+    ).toBe("pending");
+    expect(
+      getGoalEvidenceStatus(ziel, lessonA105.id, [
+        exerciseResult("e1", true, lessonA105.id, "writing:a1-05:w2"),
+        exerciseResult("w2", true, lessonA105.id, "flow-practice:a1-05:e1"),
+      ]),
+    ).toBe("pending");
   });
 
   it("checks the mapped A1-04 answers against each task's accepted responses", () => {
