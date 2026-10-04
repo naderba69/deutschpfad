@@ -41,8 +41,9 @@ export function MediationSection({ tasks }: { tasks: MediationTask[] }) {
         <Languages className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
         <p>
           <span className="font-bold">الوساطة اللغوية (Mediation): </span>
-          نقل المعنى بين الألمانية والعربية — مهارة حقيقية من إطار CEFR 2020
-          تختبرها امتحانات Goethe الحديثة. نفّذ المهمة ثم قيّم نفسك بالنقاط.
+          نقل المعنى بين الألمانية والعربية — تدريب على أنشطة الوساطة في المرفق الإضافي لإطار CEFR Companion Volume (2020).
+          قد تختلف صيغ تقويم الوساطة؛ ولا يعني ذلك وجود قسم مستقل لها في كل اختبار Goethe.
+          هذه مهمة تدريب ذاتي؛ نفّذها ثم قيّم تغطية النقاط بنفسك.
         </p>
       </div>
 
@@ -154,7 +155,7 @@ export function InteractionSection({ tasks }: { tasks: InteractionTask[] }) {
       <div className="flex items-start gap-2 rounded-xl border border-gold/40 bg-gold/10 p-3 text-sm">
         <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-gold-strong" aria-hidden="true" />
         <p>
-          <span className="font-bold">تفاعل حي (Interaction): </span>
+          <span className="font-bold">محاكاة تفاعل (Interaction): </span>
           <span className="text-muted-foreground">{task.strategyAr}</span>
         </p>
       </div>
@@ -207,7 +208,7 @@ export function InteractionSection({ tasks }: { tasks: InteractionTask[] }) {
       {/* الخيارات */}
       {!reply && (
         <div className="space-y-2">
-          <p className="text-xs font-bold text-muted-foreground">اختر ردّك الأنسب:</p>
+          <p className="text-xs font-bold text-muted-foreground">اختر رداً مناسباً؛ قد تكون أكثر من صياغة مقبولة:</p>
           {round.options.map((opt, i) => (
             <button
               key={i}

@@ -420,7 +420,7 @@ export interface InteractionTask {
   /** السيناريو (نادل/موظف بنك/جار/صديق…) */
   scenarioAr: string;
   scenarioDe?: string;
-  /** الجولات: المحاور يقول → خياراتك (أحدها الأنسب) → رد المحاور */
+  /** الجولات: المحاور يقول → خيارات ردّك (قد يكون أكثر من خيار مقبولاً) → رد المحاور */
   rounds: {
     speakerDe: string;
     speakerAr: string;
