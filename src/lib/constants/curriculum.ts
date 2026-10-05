@@ -534,17 +534,6 @@ export function getLevelLessonCount(level: LevelMeta["code"]): number {
 }
 
 /**
- * الزمن التقديري لوحدة بالدقائق — مجموع `duration` دروسها الفعلية.
- *
- * كان حقلاً يدوياً في UNITS يعلن 45–60 دقيقة للوحدة، بينما الدرس الوحيد
- * داخلها مكتوب عليه 30–45. الرقم المعروض للمتعلّم يجب أن يكون مجموع ما
- * سيقرؤه فعلاً، لا تقديراً منفصلاً عنه.
- */
-export function getUnitMinutes(unitId: string): number {
-  return LESSON_META.filter((l) => l.unitId === unitId).reduce((sum, l) => sum + l.duration, 0);
-}
-
-/**
  * أهم مفردات الوحدة — مجموعة من بطاقات دروسها الفعلية.
  *
  * كان `keyWords` حقلاً يُكتب يدوياً في UNITS فتعفّن: 90 كلمة من 193 لم
@@ -560,17 +549,6 @@ export function getUnitKeyWords(unitId: string, limit = 5): string[] {
   }
   return out.slice(0, limit);
 }
-
-/**
- * إجمالي الساعات الإرشادية — محسوبة من `duration` الدروس الفعلية.
- *
- * كان ثابتاً مكتوباً بـ 355 ساعة، وهو رقم لا مصدر له: مجموع الحقول
- * اليدوية كان 40.7 ساعة، ومجموع الدروس الفعلية 28.5. الفارق بين 355
- * و28.5 ليس خطأً حسابياً بل رقم دعائي لا يقابله محتوى.
- */
-export const TOTAL_ESTIMATED_HOURS = Math.round(
-  LESSON_META.reduce((sum, l) => sum + l.duration, 0) / 60,
-);
 
 /** الحصيلة المفرداتية الإجمالية التقريبية */
 export const TOTAL_WORDS = LEVELS.reduce((sum, l) => sum + l.words, 0);

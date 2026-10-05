@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import {BookOpen, Check, CheckCircle2, ClipboardCheck, Clock, Lock, PlayCircle} from "lucide-react";
+import {BookOpen, CheckCircle2, ClipboardCheck, Lock, PlayCircle} from "lucide-react";
 
 import {getFirstLessonMetaForUnit} from "@/data/lessons/meta";
-import {getUnitLessonCount, getUnitMinutes} from "@/lib/constants/curriculum";
+import {getUnitLessonCount} from "@/lib/constants/curriculum";
 import {LangDe} from "@/components/shared/lang-de";
 import {Button} from "@/components/ui/button";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
@@ -79,10 +79,6 @@ export function UnitRow({ unit, status, onToggle }: UnitRowProps) {
           <span className="inline-flex items-center gap-1">
             <BookOpen className="h-3.5 w-3.5" aria-hidden="true" />
             {getUnitLessonCount(unit.id)} دروس
-          </span>
-          <span className="inline-flex items-center gap-1">
-            <Clock className="h-3.5 w-3.5" aria-hidden="true" />
-            ~{getUnitMinutes(unit.id)} د
           </span>
         </div>
 

@@ -77,14 +77,18 @@ export interface OrderingExercise extends BaseExercise {
   type: "word-ordering";
   /** الكلمات المعروضة (تُخلط عند العرض) */
   tokens: string[];
-  /** الجملة الصحيحة مفصولة بمسافات */
+  /** الجملة النموذجية مفصولة بمسافات */
   correctSentence: string;
+  /** ترتيبات أخرى مقبولة إذا سمح السياق بأكثر من ترتيب صحيح للكلمات نفسها */
+  acceptedSentences?: string[];
 }
 
 export interface FillBlankExercise extends BaseExercise {
   type: "fill-blank";
   /** الجملة مع ___ لكل فراغ */
   template: string;
+  /** هل يجب الحفاظ على حالة الأحرف في الإجابة (مثل Ihr الرسمية مقابل ihr للغائبة)؟ */
+  caseSensitive?: boolean;
   blanks: { correct: string; options?: string[]; errorType?: ErrorTypeCode }[];
 }
 
@@ -121,6 +125,8 @@ export interface TransformationExercise extends BaseExercise {
   type: "transformation";
   /** الجملة الأصلية أو التعليمة */
   prompt: string;
+  /** هل يجب الحفاظ على حالة الأحرف الألمانية في الإجابة؟ */
+  caseSensitive?: boolean;
   /** إجابات مقبولة (للتسامح في الصياغة) */
   acceptedAnswers: string[];
   /** إجابة نموذجية تُعرض عند الاستسلام */
@@ -131,6 +137,8 @@ export interface DictationExercise extends BaseExercise {
   type: "dictation";
   /** النص الذي يُسمع ويُكتب */
   audioText: string;
+  /** هل يجب الحفاظ على حالة الأحرف الألمانية عند مقارنة النص؟ */
+  caseSensitive?: boolean;
   /** اختلافات إملائية مقبولة */
   acceptedVariants?: string[];
 }

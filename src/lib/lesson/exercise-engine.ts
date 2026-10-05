@@ -49,10 +49,27 @@ function isPunctuationExercise(errorType?: string): boolean {
   return errorType === "punctuation";
 }
 
-/** المقارنة المناسبة حسب نوع الخطأ الذي يقيسه التمرين */
-function answersMatch(given: string, expected: string, errorType?: string): boolean {
-  return isPunctuationExercise(errorType)
-    ? normalizePunctuation(given) === normalizePunctuation(expected)
+/** تطبيع النص مع الحفاظ على حالة الأحرف الألمانية. */
+function normalizeTextCaseSensitive(s: string): string {
+  return s
+    .trim()
+    .replace(/[.,!?;:«»„“”()\"'،؟؛]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/** المقارنة المناسبة بحسب كون المهمة تقيس الترقيم أو حالة الأحرف. */
+function answersMatch(
+  given: string,
+  expected: string,
+  errorType?: string,
+  caseSensitive = false,
+): boolean {
+  if (isPunctuationExercise(errorType)) {
+    return normalizePunctuation(given) === normalizePunctuation(expected);
+  }
+  return caseSensitive
+    ? normalizeTextCaseSensitive(given) === normalizeTextCaseSensitive(expected)
     : normalizeText(given) === normalizeText(expected);
 }
 
@@ -88,7 +105,10 @@ export function evaluateOrdering(exercise: OrderingExercise, answerTokens: strin
   const joined = isLetterBuilding
     ? answerTokens.join("").trim()
     : answerTokens.join(" ").trim();
-  const isCorrect = normalizeText(joined) === normalizeText(exercise.correctSentence);
+  const acceptedSentences = [exercise.correctSentence, ...(exercise.acceptedSentences ?? [])];
+  const isCorrect = acceptedSentences.some(
+    (sentence) => normalizeText(joined) === normalizeText(sentence),
+  );
 
   // حالة جزئية: نفس الكلمات لكن بترتيب خاطئ
   const splitUnits = (s: string) =>
@@ -114,7 +134,7 @@ export function evaluateOrdering(exercise: OrderingExercise, answerTokens: strin
 
 export function evaluateFillBlank(exercise: FillBlankExercise, answers: string[]): FeedbackResult {
   const allCorrect = exercise.blanks.every((blank, i) =>
-    answersMatch(answers[i] ?? "", blank.correct, exercise.errorType),
+    answersMatch(answers[i] ?? "", blank.correct, exercise.errorType, exercise.caseSensitive),
   );
   const filledCount = answers.filter((a) => a.trim() !== "").length;
   const isComplete = filledCount === exercise.blanks.length;
@@ -123,7 +143,9 @@ export function evaluateFillBlank(exercise: FillBlankExercise, answers: string[]
   if (!allCorrect) {
     const wrongIndices = exercise.blanks
       .map((blank, i) => ({ blank, i }))
-      .filter(({ blank, i }) => !answersMatch(answers[i] ?? "", blank.correct, exercise.errorType));
+      .filter(({ blank, i }) =>
+        !answersMatch(answers[i] ?? "", blank.correct, exercise.errorType, exercise.caseSensitive),
+      );
     if (wrongIndices.length > 0) {
       const first = wrongIndices[0];
       explanation = `الفراغ رقم ${first.i + 1}: الصواب «${first.blank.correct}» — ${exercise.explanation}`;
@@ -188,8 +210,9 @@ export function evaluateTransformation(
   exercise: TransformationExercise,
   answer: string,
 ): FeedbackResult {
-  const normalized = normalizeText(answer);
-  const accepted = exercise.acceptedAnswers.map(normalizeText);
+  const normalizeAnswer = exercise.caseSensitive ? normalizeTextCaseSensitive : normalizeText;
+  const normalized = normalizeAnswer(answer);
+  const accepted = exercise.acceptedAnswers.map(normalizeAnswer);
   const isCorrect = accepted.includes(normalized);
 
   return {
@@ -202,13 +225,14 @@ export function evaluateTransformation(
 }
 
 export function evaluateDictation(exercise: DictationExercise, answer: string): FeedbackResult {
-  const normalizedAnswer = normalizeText(answer);
-  const variants = [exercise.audioText, ...(exercise.acceptedVariants ?? [])].map(normalizeText);
+  const normalizeAnswer = exercise.caseSensitive ? normalizeTextCaseSensitive : normalizeText;
+  const normalizedAnswer = normalizeAnswer(answer);
+  const variants = [exercise.audioText, ...(exercise.acceptedVariants ?? [])].map(normalizeAnswer);
   const isCorrect = variants.includes(normalizedAnswer);
 
   // تحليل الخطأ: هل الكلمات نفسها لكن بترتيب مختلف؟
   const answerWords = normalizedAnswer.split(" ").filter(Boolean).sort();
-  const audioWords = normalizeText(exercise.audioText).split(" ").filter(Boolean).sort();
+  const audioWords = normalizeAnswer(exercise.audioText).split(" ").filter(Boolean).sort();
   const sameWordsDifferentOrder =
     !isCorrect && answerWords.length === audioWords.length &&
     answerWords.join(" ") === audioWords.join(" ");

@@ -4,8 +4,6 @@ import {LESSON_META} from "@/data/lessons/meta";
 import {
   getUnitKeyWords,
   getUnitLessonCount,
-  getUnitMinutes,
-  TOTAL_ESTIMATED_HOURS,
   TOTAL_LESSONS,
   UNITS,
   TOTAL_UNITS,
@@ -33,34 +31,21 @@ describe("اتساق أرقام الدروس (المرحلة 4)", () => {
     }
   });
 
-  /**
-   * الحقلان lessons وminutes كانا يُكتبان يدوياً داخل UNITS فتعفّنا:
-   * 44 وحدة من 46 تُعلن 5–6 دروس ولها درس واحد فعلي، و44 تُعلن زمناً
-   * يزيد 15–25 دقيقة عن duration الدرس. حُذفا من النوع Unit، وهذا الحارس
-   * يمنع إعادة إدخالهما بدل الدالتين المحسوبتين.
-   */
+  /** لا تكرر الوحدة أعداد الدروس أو الكلمات التي تُستمد من محتوى الدروس. */
   it("لا يعود إعلان lessons/minutes يدوياً في UNITS", () => {
     const fs = require("fs");
     const src: string = fs.readFileSync("src/lib/constants/curriculum.ts", "utf8");
     const manual = src.match(/^\s*(lessons|minutes): *\d+,/gm) ?? [];
-    expect(manual, "أُعيد إعلان lessons/minutes يدوياً — استعمل getUnitLessonCount/getUnitMinutes").toEqual(
-      [],
-    );
+    expect(manual, "أُعيد إعلان lessons/minutes يدوياً في UNITS").toEqual([]);
   });
 
-  it("الزمن المعروض للوحدة = مجموع duration دروسها الفعلية", () => {
-    for (const unit of UNITS) {
-      const expected = LESSON_META.filter((l) => l.unitId === unit.id).reduce((sum, l) => sum + l.duration, 0);
-      expect(getUnitMinutes(unit.id), `وحدة ${unit.id}: الزمن المعروض لا يطابق دروسها`).toBe(expected);
-      expect(getUnitMinutes(unit.id), `وحدة ${unit.id}: زمن صفري`).toBeGreaterThan(0);
+  it("لا يسجل فهرس الدروس مدة ثابتة للحصة", () => {
+    for (const lesson of LESSON_META) {
+      expect(Object.prototype.hasOwnProperty.call(lesson, "duration")).toBe(false);
+      expect(Object.prototype.hasOwnProperty.call(lesson, "durationMinutes")).toBe(false);
     }
   });
 
-  /**
-   * كان TOTAL_ESTIMATED_HOURS مكتوباً يدوياً بـ 355 ساعة بلا مصدر:
-   * مجموع الحقول اليدوية كان 40.7 ساعة، ومجموع الدروس الفعلية 28.5.
-   * لا يجوز أن يَعِد الموقع بزمن لا يقابله محتوى.
-   */
   /**
    * الكلمات المفتاحية كانت تُكتب يدوياً في UNITS فتعفّنت: 90 من 193
    * لم تقابلها بطاقة في دروس وحدتها، وبعضها وعَد بنحوٍ يُدرَّس في وحدة
@@ -88,12 +73,6 @@ describe("اتساق أرقام الدروس (المرحلة 4)", () => {
     const src: string = fs.readFileSync("src/lib/constants/curriculum.ts", "utf8");
     const manual = src.match(/^\s*keyWords: \[/gm) ?? [];
     expect(manual, "أُعيد إعلان keyWords يدوياً — استعمل getUnitKeyWords").toEqual([]);
-  });
-
-  it("إجمالي الساعات محسوب من الدروس لا مكتوباً يدوياً", () => {
-    const real = Math.round(LESSON_META.reduce((sum, l) => sum + l.duration, 0) / 60);
-    expect(TOTAL_ESTIMATED_HOURS).toBe(real);
-    expect(TOTAL_ESTIMATED_HOURS).toBeLessThan(100);
   });
 
   it("مجموع دروس الوحدات الفعلية = إجمالي الدروس", () => {
