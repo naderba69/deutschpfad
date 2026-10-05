@@ -77,6 +77,10 @@
 - DWDS: [Arzt](https://www.dwds.de/wb/Arzt)، [Ärztin](https://www.dwds.de/wb/%C3%84rztin)، [Lehrer](https://www.dwds.de/wb/Lehrer)، [Kellner](https://www.dwds.de/wb/Kellner)، [Koch](https://www.dwds.de/wb/Koch)؛ وCollins: [Koch](https://www.collinsdictionary.com/dictionary/german-english/koch) — صيغ ونقول صوتية للمفردات المختارة. اختلاف الرموز الصوتية بين المراجع لا يُعامل وحده بوصفه اختلافاً في النطق.
 - Duden: [Arzt](https://www.duden.de/rechtschreibung/Arzt)، [Ärztin](https://www.duden.de/rechtschreibung/Aerztin)، [Köchin](https://www.duden.de/rechtschreibung/Koechin) — صيغ الكلمات وكتابتها.
 
+## التسليم
+
+حُفظت الدفعة في commit `7cc84dc` ودُفعت بنجاح إلى `origin/arena/01a10631-deutschpfad` بتاريخ 2026-10-05. لم تُدرج التغييرات السابقة غير المتعلقة؛ ما بقي منها في شجرة العمل تُرك دون staging أو تعديل.
+
 ## حدود هذه الدفعة
 
 هذا تدقيق لمادة A1-10 المحددة، وليس مراجعة اعتماد شاملة لكل مستويات A1–B2. لا يُستنتج من نجاح الاختبارات أن كل محتوى المنصة مكتمل أو صحيح، ولا من النتائج الحالية إتقان CEFR/Goethe. تبقى إخفاقات الاختبارات وفحوص الأنواع المذكورة أعلاه منفصلة عن الدفعة، ويجب عدم خلط إصلاحاتها بها من دون مراجعة وتكليف مستقلين.
