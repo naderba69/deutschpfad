@@ -280,7 +280,11 @@ export interface CommonMistake {
   right: string;
   whyAr: string;
   /** الصيغة الأولى خطأ بنيوي، أم بديل ممكن لكنه أقل ملاءمة للسياق؟ */
-  classification?: "error" | "contextual-alternative";
+  classification?:
+    | "error"
+    | "contextual-alternative"
+    | "pedagogical-simplification"
+    | "unverified-claim";
 }
 
 /** 3) كتلة شرح نظرية (تتبع النمط الإلزامي ذي 9 نقاط) */

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import {Eye, EyeOff, Headphones, Play, Repeat2, Users} from "lucide-react";
+import {Headphones, Play, Users} from "lucide-react";
 
 import {MultipleChoiceExercise} from "@/components/lesson/exercises/multiple-choice";
 import {DialogueOrdering} from "@/components/lesson/sections/dialogue-ordering";
@@ -11,7 +11,7 @@ import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {DetailTabs} from "@/components/shared/detail-tabs";
 import {recordEvent} from "@/lib/analytics/events";
-import {speakRepeated} from "@/lib/speech/voices";
+import {getListeningQuestionTaskId} from "@/lib/lesson/listening-evidence";
 import {cn} from "@/lib/utils";
 import type { ListeningItem, ListeningQuestion } from "@/types/lesson";
 
@@ -53,9 +53,8 @@ export function HoerverstehenSection({
   lessonId: string;
 }) {
   const [rate, setRate] = React.useState<number>(1);
-  const [showText, setShowText] = React.useState(true);
-  // وضع الامتحان: يُخفي النص إجبارياً حتى الإجابة — يحاكي Hören الحقيقي
-  const [examMode, setExamMode] = React.useState(false);
+  const [showText, setShowText] = React.useState(false);
+  const [transcriptWasRevealed, setTranscriptWasRevealed] = React.useState(false);
 
   return (
     <div className="space-y-6">
@@ -101,12 +100,20 @@ export function HoerverstehenSection({
                     <Button
                       variant={showText ? "outline" : "default"}
                       size="sm"
-                      onClick={() => setShowText((v) => !v)}
+                      onClick={() => {
+                        if (!showText) setTranscriptWasRevealed(true);
+                        setShowText((v) => !v);
+                      }}
                     >
-                      {showText ? "إخفاء النص (وضع امتحان)" : "أظهر النص"}
+                      {showText ? "أخف النص" : "أظهر النص بعد الاستماع"}
                     </Button>
                     <SpeakButton text={fullText} rate={rate} size="sm" label="كل النص" />
                   </div>
+                  <p className="text-xs text-muted-foreground">
+                    {transcriptWasRevealed
+                      ? "كُشف نص الحوار سابقاً؛ إجابات الأسئلة التالية للمراجعة ولا تُحتسب دليلاً على الاستماع."
+                      : "إظهار النص اختياري للمراجعة؛ إذا كشفته فلن تُحتسب إجابات الأسئلة التالية دليلاً على الاستماع."}
+                  </p>
 
                   <div className="space-y-3">
                     {item.lines.map((line, i) => (
@@ -162,7 +169,12 @@ export function HoerverstehenSection({
                         errorType: result.errorType,
                         skill: "الاستماع",
                         lessonId,
-                        taskId: `listening:${q.itemId}:${q.id}`,
+                        taskId: getListeningQuestionTaskId(
+                          lessonId,
+                          q.itemId,
+                          q.id,
+                          transcriptWasRevealed,
+                        ),
                       });
                     }}
                   />

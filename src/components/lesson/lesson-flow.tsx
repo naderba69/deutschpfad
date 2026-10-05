@@ -68,6 +68,7 @@ export function LessonFlow({ lesson, onFinish }: { lesson: Lesson; onFinish?: ()
   const [practiceSolved, setPracticeSolved] = React.useState(0); // عدد التمارين المحلولة
   const practiceRequired = Math.min(2, practiceCount); // تمرينان فقط كافيان للمتابعة
   const [quizAnswered, setQuizAnswered] = React.useState(0);
+  const [showListeningTranscript, setShowListeningTranscript] = React.useState(false);
   const [done, setDone] = React.useState(false);
   // المستوى الذهبي: أخطاء الجلسة تُعاد في النهاية + تلميحات متدرجة
   const [mistakes, setMistakes] = React.useState<Exercise[]>([]);
@@ -451,14 +452,37 @@ export function LessonFlow({ lesson, onFinish }: { lesson: Lesson; onFinish?: ()
             <h3 className="text-base font-extrabold">استمع ثم أجب</h3>
           </div>
           <div className="rounded-xl border border-muted bg-muted/20 p-4">
-            <p className="text-xs font-bold text-primary">{item.title}</p>
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="text-xs font-bold text-primary">{item.title}</p>
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={() => setShowListeningTranscript((visible) => !visible)}
+                aria-pressed={showListeningTranscript}
+              >
+                {showListeningTranscript ? "أخف النص" : "أظهر النص بعد الاستماع"}
+              </Button>
+            </div>
+            <p className="mt-2 text-xs text-muted-foreground">
+              إجابات هذا المسار لا تُستخدم دليلاً على الاستماع، سواء أظهرت النص أم أخفيته.
+            </p>
             <div className="mt-3 space-y-2">
               {item.lines.map((line, i) => (
                 <div key={i} className="flex items-start justify-between gap-2">
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-xs font-bold text-primary">{line.speaker}</p>
-                    <TextDe text={line.de} />
-                    <p className="text-xs text-muted-foreground">{line.ar}</p>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <SpeakButton text={line.de} />
+                      {showListeningTranscript ? (
+                        <span className="font-de" dir="ltr" lang="de">{line.de}</span>
+                      ) : (
+                        <span className="text-xs text-muted-foreground">النص مخفي</span>
+                      )}
+                    </div>
+                    {showListeningTranscript && (
+                      <p className="text-xs text-muted-foreground">{line.ar}</p>
+                    )}
                   </div>
                 </div>
               ))}
@@ -485,7 +509,9 @@ export function LessonFlow({ lesson, onFinish }: { lesson: Lesson; onFinish?: ()
                         errorType: r.errorType,
                         skill: "الاستماع",
                         lessonId: lesson.id,
-                        taskId: `listening:${q.itemId}:${q.id}`,
+                        // Flow questions may be answered after the optional transcript is revealed;
+                        // keep them separate from dedicated hidden-transcript listening evidence.
+                        taskId: `flow-listening:${lesson.id}:${q.itemId}:${q.id}`,
                       }),
                     );
                   }}
