@@ -9,7 +9,8 @@ import {TextDe} from "@/components/shared/text-de";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {DetailTabs} from "@/components/shared/detail-tabs";
 import {RichText} from "@/components/shared/rich-text";
-import type { TheoryBlock } from "@/types/lesson";
+import {cn} from "@/lib/utils";
+import type {TheoryBlock} from "@/types/lesson";
 
 /** جدول التصريف مع أزرار نطق لكل خلية ألمانية */
 function ConjugationTable({ table }: { table: NonNullable<TheoryBlock["table"]> }) {
@@ -72,29 +73,42 @@ function Examples({ examples }: { examples: TheoryBlock["examples"] }) {
   );
 }
 
-/** أخطاء شائعة: خاطئ → صحيح مع السبب */
-function CommonMistakes({ mistakes }: { mistakes: TheoryBlock["commonMistakes"] }) {
+/** أخطاء بنيوية وبدائل سياقية — لا نعرض البديل الأسلوبي كأنه خطأ نحوي. */
+function CommonMistakes({mistakes}: {mistakes: TheoryBlock["commonMistakes"]}) {
   return (
     <div>
       <p className="mb-2 text-sm font-bold text-muted-foreground">
-        أخطاء يقع فيها المتعلم العربي تحديداً:
+        أخطاء وبدائل شائعة في هذا السياق:
       </p>
       <ul className="space-y-3">
-        {mistakes.map((m, i) => (
-          <li key={i} className="rounded-xl border bg-background p-3">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1 rounded-lg bg-destructive/10 px-2 py-1 font-de text-sm text-destructive line-through decoration-2" dir="ltr" lang="de">
-                {m.wrong}
-              </span>
-              <XCircle className="h-4 w-4 text-destructive" aria-hidden="true" />
-              <span className="inline-flex items-center gap-1 rounded-lg bg-success/10 px-2 py-1 font-de text-sm font-semibold text-success" dir="ltr" lang="de">
-                {m.right}
-              </span>
-              <CheckCircle2 className="h-4 w-4 text-success" aria-hidden="true" />
-            </div>
-            <p className="mt-2 text-sm text-muted-foreground">{m.whyAr}</p>
-          </li>
-        ))}
+        {mistakes.map((mistake, index) => {
+          const isAlternative = mistake.classification === "contextual-alternative";
+          return (
+            <li key={index} className="rounded-xl border bg-background p-3">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className={cn(
+                  "inline-flex items-center gap-1 rounded-lg px-2 py-1 font-de text-sm",
+                  isAlternative ? "bg-muted text-foreground" : "bg-destructive/10 text-destructive line-through decoration-2",
+                )} dir="ltr" lang="de">
+                  {mistake.wrong}
+                </span>
+                {isAlternative ? (
+                  <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold text-muted-foreground">بديل سياقي</span>
+                ) : (
+                  <XCircle className="h-4 w-4 text-destructive" aria-hidden="true" />
+                )}
+                <span className={cn(
+                  "inline-flex items-center gap-1 rounded-lg px-2 py-1 font-de text-sm font-semibold",
+                  isAlternative ? "bg-primary/10 text-primary" : "bg-success/10 text-success",
+                )} dir="ltr" lang="de">
+                  {mistake.right}
+                </span>
+                {!isAlternative && <CheckCircle2 className="h-4 w-4 text-success" aria-hidden="true" />}
+              </div>
+              <p className="mt-2 text-sm text-muted-foreground">{mistake.whyAr}</p>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

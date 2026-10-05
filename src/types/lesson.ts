@@ -271,6 +271,8 @@ export interface CommonMistake {
   wrong: string;
   right: string;
   whyAr: string;
+  /** الصيغة الأولى خطأ بنيوي، أم بديل ممكن لكنه أقل ملاءمة للسياق؟ */
+  classification?: "error" | "contextual-alternative";
 }
 
 /** 3) كتلة شرح نظرية (تتبع النمط الإلزامي ذي 9 نقاط) */
