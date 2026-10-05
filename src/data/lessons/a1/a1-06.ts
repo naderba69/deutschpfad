@@ -50,8 +50,8 @@ export const lessonA106: Lesson = {
     },
     {
       id: "z4",
-      de: "Ich kann einen kurzen schriftlichen Dialog über eine Verabredung ergänzen.",
-      ar: "أن أكمل كتابة حوار قصير حول دعوة وقبولها أو الاعتذار عنها بأدب مع اقتراح بديل.",
+      de: "Ich kann in einem modellierten Einladungsdialog passende Reaktionen, eine höfliche Absage und einen Gegenvorschlag auswählen.",
+      ar: "أن أختار في حوار نموذجي حول دعوة ردّاً مناسباً، واعتذاراً مهذباً مع اقتراح بديل.",
       evidence: {
         exerciseIds: ["w4"],
         taskIds: ["writing:a1-06:w4"],
