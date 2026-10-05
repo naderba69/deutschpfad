@@ -1,8 +1,8 @@
 import type { Lesson } from "@/types/lesson";
 
 /**
- * الدرس A1-08: الملابس والألوان
- * — الملابس + الألوان + الصفات الخبرية + tragen/finden + Wie findest du...?
+ * A1-08 — Kleidung und Farben.
+ * Lernzielstatus beruht auf korrekten Ergebnissen der verknüpften Aufgaben, nicht auf dem Öffnen eines Abschnitts.
  */
 export const lessonA108: Lesson = {
   id: "a1-08",
@@ -12,40 +12,141 @@ export const lessonA108: Lesson = {
   titleDe: "Kleidung und Farben",
   titleAr: "الملابس والألوان",
   summary:
-    "أسماء الملابس والألوان، وصفها بالصفات الخبرية، فعل tragen (يرتدي)، والسؤال عن الرأي: Wie findest du...?",
+    "ملابس وألوان؛ وصف خبرِيّ بسيط بعد sein، وتصريف tragen، والسؤال عن الرأي، وصيغ مختارة من welcher-/dieser- وأفعال gefallen/passen/stehen.",
 
   lernziele: [
     {
       id: "z1",
-      de: "Ich kann Kleidung nennen.",
-      ar: "أن أسمّي الملابس: Hemd, Hose, Jacke, Schuhe...",
+      de: "Ich kann ausgewählte Kleidungsstücke und Farben benennen.",
+      ar: "أسمّي مفردات أساسية للملابس والألوان مع أداة الاسم الألماني.",
+      evidence: {
+        exerciseIds: ["e3", "e26"],
+        taskIds: ["practice:a1-08:e3", "flow-practice:a1-08:e3", "practice:a1-08:e26", "flow-practice:a1-08:e26"],
+        labelAr: "صِل الألوان في e3 وقطع الملابس في e26 بمعانيها؛ يلزم إكمال المهمتين بإجابات صحيحة.",
+        completion: "all-correct",
+      },
     },
     {
       id: "z2",
-      de: "Ich kann die Farben sagen.",
-      ar: "أن أسمّي الألوان: rot, blau, grün, gelb, schwarz, weiß.",
+      de: "Ich kann ein Kleidungsstück mit sein und einem prädikativen Adjektiv einfach beschreiben.",
+      ar: "أكتب وصفاً بسيطاً لقطعة ملابس باستعمال sein وصفة خبرية بلا نهاية، مثل: Das Hemd ist rot.",
+      evidence: {
+        exerciseIds: ["e1", "e4", "e9", "w1"],
+        taskIds: ["practice:a1-08:e1", "flow-practice:a1-08:e1", "practice:a1-08:e4", "flow-practice:a1-08:e4", "practice:a1-08:e9", "flow-practice:a1-08:e9", "writing:a1-08:w1"],
+        labelAr: "اختر الصفة الخبرية الصحيحة في e1 وe9، رتّب جملة الوصف في e4، ثم اكتب الجملتين في w1؛ يجب أن تصحّ كل النتائج.",
+        completion: "all-correct",
+      },
     },
     {
       id: "z3",
-      de: "Ich kann sagen: Ich trage ein rotes Hemd.",
-      ar: "أن أصف ما أرتدي بجملة كاملة (مقدمة لتصريف الصفات).",
+      de: "Ich kann tragen im Präsens an das Subjekt anpassen.",
+      ar: "أصرّف tragen في المضارع مع الفاعل في أمثلة مختارة.",
+      evidence: {
+        exerciseIds: ["e2", "e6", "m2"],
+        taskIds: ["practice:a1-08:e2", "flow-practice:a1-08:e2", "practice:a1-08:e6", "flow-practice:a1-08:e6", "mini-test:a1-08:m2"],
+        labelAr: "أجب عن تصريف du في e2، وصيغ الفاعل في e6، ثم أعده في سؤال الاختبار m2؛ يلزم الصواب في المهمات الثلاث.",
+        completion: "all-correct",
+      },
     },
     {
       id: "z4",
-      de: "Ich kann fragen: Wie findest du das?",
-      ar: "أن أسأل عن الرأي وأجيب: Das finde ich schön.",
+      de: "Ich kann die Frage „Wie findest du …?“ schriftlich bilden.",
+      ar: "أصوغ كتابةً سؤالاً بسيطاً عن الرأي باستعمال Wie findest du …?",
+      evidence: {
+        exerciseIds: ["e7"],
+        taskIds: ["practice:a1-08:e7", "flow-practice:a1-08:e7"],
+        labelAr: "حوّل العبارة إلى سؤال رأي في e7 واكتب صيغة مقبولة كاملة.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z5",
+      de: "Ich kann ausgewählte Formen von welcher- und dieser- im Nominativ und Akkusativ verwenden.",
+      ar: "أستعمل صيغاً مختارة من welcher- وdieser- مع أسماء الملابس في الرفع والنصب.",
+      evidence: {
+        exerciseIds: ["e11", "e12", "e13", "e14", "e15"],
+        taskIds: ["practice:a1-08:e11", "flow-practice:a1-08:e11", "practice:a1-08:e12", "flow-practice:a1-08:e12", "practice:a1-08:e13", "flow-practice:a1-08:e13", "practice:a1-08:e14", "flow-practice:a1-08:e14", "practice:a1-08:e15", "flow-practice:a1-08:e15"],
+        labelAr: "أكمل صيغ الإشارة والسؤال في e11–e14، وطابق اسم القطعة مع dies- في e15؛ يلزم الصواب في كل مهمة.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z6",
+      de: "Ich kann einfache Sätze mit gefallen und einem Dativpronomen bilden.",
+      ar: "أبني جملاً بسيطة بـ gefallen، وأختار ضمير الداتيف وأطابق الفعل مع فاعله.",
+      evidence: {
+        exerciseIds: ["e16", "e18", "e19", "e20", "e22", "e23", "e25"],
+        taskIds: ["practice:a1-08:e16", "flow-practice:a1-08:e16", "practice:a1-08:e18", "flow-practice:a1-08:e18", "practice:a1-08:e19", "flow-practice:a1-08:e19", "practice:a1-08:e20", "flow-practice:a1-08:e20", "practice:a1-08:e22", "flow-practice:a1-08:e22", "practice:a1-08:e23", "flow-practice:a1-08:e23", "practice:a1-08:e25", "flow-practice:a1-08:e25"],
+        labelAr: "أجب عن توافق الفعل والضمير في e16 وe19 وe20 وe23، وصحّح/حوّل الجملة في e18 وe22، ثم اختر الرد المناسب في e25؛ كل النتائج مطلوبة.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z7",
+      de: "Ich kann passen (Größe) und stehen (jemandem gut stehen) im Kleidungskontext unterscheiden.",
+      ar: "أميّز في أمثلة الملابس بين ملاءمة المقاس بـpassen وملاءمة المظهر بـstehen.",
+      evidence: {
+        exerciseIds: ["e17", "e24", "e25"],
+        taskIds: ["practice:a1-08:e17", "flow-practice:a1-08:e17", "practice:a1-08:e24", "flow-practice:a1-08:e24", "practice:a1-08:e25", "flow-practice:a1-08:e25"],
+        labelAr: "اختر فعل المقاس في سياقه في e17، وطابق الأفعال بمعانيها في e24، ثم اختر جواباً يفصل المقاس عن الإعجاب في e25.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z8",
+      de: "Ich kann eine positive Antwort auf eine verneinte Ja/Nein-Frage mit „doch“ markieren.",
+      ar: "أختار doch عندما أرفض مضمون سؤال منفي وأجيب بالإيجاب في الأمثلة المعطاة.",
+      evidence: {
+        exerciseIds: ["e27", "rq3"],
+        taskIds: ["practice:a1-08:e27", "flow-practice:a1-08:e27", "reading:r1:rq3"],
+        labelAr: "أكمل جواب السؤال المنفي في e27، ثم حدّد سبب جواب أميرة بـDoch في سؤال فهم القراءة rq3؛ يلزم الصواب في كليهما.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z9",
+      de: "Ich kann einem kurzen Lesetext wichtige Informationen zu Kleidungsstücken, Größen und Preisen entnehmen.",
+      ar: "أستخرج معلومات محددة عن الملابس والمقاسات والأسعار من نص قصير.",
+      evidence: {
+        exerciseIds: ["rq1", "rq2", "rq3", "rq4", "rq5"],
+        taskIds: ["reading:r1:rq1", "reading:r1:rq2", "reading:r1:rq3", "reading:r1:rq4", "reading:r1:rq5"],
+        labelAr: "أجب عن أسئلة فهم القراءة rq1–rq5 كلها إجابة صحيحة؛ فتح النص وحده لا يُسجّل دليلاً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z10",
+      de: "Ich kann in kurzen Einkaufsdialogen Kleidungsstück, Farbe und Preis heraushören.",
+      ar: "ألتقط اسم قطعة الملابس واللون والسعر من حوارين قصيرين.",
+      evidence: {
+        exerciseIds: ["q1", "q2", "q3"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
+        labelAr: "أجب عن أسئلة الاستماع الثلاثة q1–q3 كلها إجابة صحيحة، بما فيها السعر والقطعة التي ترتديها آنا.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z11",
+      de: "Ich kann zwei kurze Sätze über Kleidung und Farbe schriftlich formulieren.",
+      ar: "أكتب جملتين قصيرتين عن قطعة ملابس ولونها باستعمال tragen وsein.",
+      evidence: {
+        exerciseIds: ["w1"],
+        taskIds: ["writing:a1-08:w1"],
+        labelAr: "اكتب المطلوب في w1 بجملتين كاملتين، مع تصريف tragen ووصف اللون بعد sein.",
+        completion: "all-correct",
+      },
     },
   ],
 
   einfuehrung: {
     motivatingQuestionAr:
-      "في العربية نقول: «قميص أحمر» — الصفة تتبع الاسم. في الألمانية، قبل أن تتعلم القواعد الكاملة (B1)، هناك صيغة بسيطة: الصفة «الخبرية» بعد الفعل sein. خمّن: كيف تقول «القميص أحمر»؟",
+      "كيف تصف لون قميص بالألمانية بجملة كاملة؟ لاحظ الفرق بين: Das Hemd ist rot وDie Jacke ist blau.",
     motivatingQuestionDe: "Wie findest du meine Jacke?",
     contextAr:
-      "نتسوق للملابس اليوم: الألوان، القطع الأساسية، وصف ما نرتديه، وطلب الرأي بلطف — كلها عبارات ستحتاجها في أي متجر ألماني.",
+      "نتدرّب في موقف متجر ملابس على تسمية قطع وألوان مختارة، ووصف اللون بجملة خبرية، والسؤال عن الرأي والمقاس. هذه أمثلة تدريبية وليست قائمة بكل ما يقال في المتجر.",
     contextDe: "Diese Hose ist sehr schön!",
     connectionToPreviousAr:
-      "تعلمت في درس التسوق الأرقام والأسعار. اليوم نضيف الملابس والألوان — جولة تسوق كاملة بالملابس!",
+      "تعلمت في الدرس السابق الأرقام والأسعار. هنا نضيف مفردات الملابس والألوان وبعض الأسئلة المناسبة للموقف.",
     activateVocabulary: [
       { de: "die Kleidung", ar: "الملابس" },
       { de: "das Hemd", ar: "القميص" },
@@ -61,9 +162,9 @@ export const lessonA108: Lesson = {
       titleAr: "الملابس والألوان + الصفات الخبرية",
       titleDe: "Kleidung, Farben und prädikative Adjektive",
       explanationAr:
-        "الملابس والألوان ليست قائمة مفردات تُحفَظ، بل هي أوّل ميدانٍ تتدرّب فيه على **وصف الأشياء** بالألمانية. وسنبني الدرس في ثلاث خطوات: القطعة، ثمّ اللون، ثمّ الجملة التي تجمعهما.\n\n**الخطوة الأولى: القطعة مع أداتها.**\nلا تحفظ Hemd وحدها بل **das** Hemd. فالأداة جزء من الكلمة لا زينة عليها، ومن يحفظ الاسم عارياً يضطرّ إلى تخمين جنسه كلّ مرّة. والملابس تتوزّع على الأجناس الثلاثة بلا منطق ظاهر:\n• مذكّر: **der** Pullover · **der** Mantel · **der** Rock\n• مؤنّث: **die** Hose · **die** Jacke · **die** Mütze · **die** Bluse\n• محايد: **das** Hemd · **das** Kleid · **das** T-Shirt\n• وجمعٌ دائم: **die** Schuhe · **die** Socken · **die** Jeans — هذه لا تُستعمل مفردةً في الحديث العادي، تماماً كما نقول بالعربية «حذاء» ونعني فردتين.\n\n**الخطوة الثانية: اللون.** rot (أحمر) · blau (أزرق) · grün (أخضر) · gelb (أصفر) · schwarz (أسود) · weiß (أبيض) · braun (بنّي) · grau (رماديّ) · orange · rosa. ولاحظ أنّ أسماء الألوان تُكتب بحرف صغير لأنّها صفات لا أسماء.\n\n**الخطوة الثالثة — وهي القاعدة الحقيقية: الصفة الخبرية لا تتغيّر أبداً.**\nحين تأتي الصفة **بعد الفعل sein** فهي «خبر»، وتبقى في صورتها المجرّدة مهما كان الاسم:\n• Der Pullover ist rot. (مذكّر)\n• Die Hose ist rot. (مؤنّث)\n• Das Hemd ist rot. (محايد)\n• Die Schuhe **sind** rot. (جمع)\nلاحظ: تغيّر **الفعل** وحده من ist إلى sind، أمّا rot فثابتة. وهذا مكسبٌ ضخم للمبتدئ: تستطيع وصف كلّ شيء حولك بلا نهايات ولا تصريف.\n\n**الحدّ الذي يقف عنده الدرس:** حين تلتصق الصفة بالاسم مباشرةً (ein **rotes** Hemd) تبدأ نهايات الصفة، وهي بابٌ واسع محلُّه لاحقاً. فما دمتَ في A1 قل **Das Hemd ist rot** لا ein rot Hemd — الأولى سليمة تماماً وتؤدّي المعنى كاملاً.\n\n**استثناءان يجب أن تعرفهما الآن:** **rosa** و**orange** و**lila** لا تأخذ نهايات إطلاقاً حتى قبل الاسم (eine rosa Bluse) لأنّها كلمات دخيلة تنتهي بحرف علة. وهذا يعني أنّك تستعملها بأمان في كلّ موضع.\n\n**من أين جاءت هذه القاعدة؟** لماذا تخلو الصفة الخبرية من النهايات وحدها؟ لأنّ النهاية في الجرمانية **وظيفتها الربط بالاسم**: هي تُعلن جنسه وحالته حين تلتصق به (ein rotes Kleid). أمّا الصفة الخبرية فلا تلتصق باسم أصلاً، بل يفصلها الفعل عنه (Das Kleid ist rot) — فلا وظيفة للنهاية فتسقط. فالخلوّ من النهاية ليس كسلاً ولا استثناءً، بل **نتيجةٌ منطقية للموضع**. ومن فهم هذا اليوم وفّر على نفسه نصف صعوبة تصريف الصفة في B1.",
+        "احفظ اسم قطعة الملابس مع أداته:\n• مذكّر: **der** Pullover · **der** Mantel · **der** Rock · **der** Schuh\n• مؤنّث: **die** Hose · **die** Jacke · **die** Mütze · **die** Bluse · **die** Socke\n• محايد: **das** Hemd · **das** Kleid · **das** T-Shirt\nجنس الاسم خاصية معجمية؛ لا توجد حيلة واحدة مضمونة تستنتجه من شكل القطعة.\n\n**انتبه إلى المفرد والجمع:** المفرد **der Schuh** وجمعه **die Schuhe**؛ والمفرد **die Socke** وجمعها **die Socken**. أمّا **die Jeans** فتُستعمل للمفرد وللجمع بالصورة نفسها، ويبيّن السياق العدد. وللإشارة إلى زوج من الأحذية نقول **ein Paar Schuhe**.\n\n**ألوان في صيغتها الوصفية:** rot · blau · grün · gelb · schwarz · weiß · braun · grau · orange · rosa · lila. تُكتب الصفة بحرف صغير حين تصف اسماً: **Die Jacke ist rot.** وإذا استُعمل اسم اللون اسماً مستقلاً كُتب بحرف كبير: **Rot ist meine Lieblingsfarbe.**\n\n**الصفة الخبرية بعد sein:** في **Das Hemd ist rot** و**Die Schuhe sind rot** تبقى الصفة في صورتها الأساسية؛ الذي يتغير هنا هو فعل sein مع الفاعل: **ist/sind**. لا تأخذ الصفة في هذا الموقع نهايةً لمطابقة الاسم.\n\nنركّز في هذا الدرس على جمل وصفية من نوع **Das Kleid ist rosa/orange/lila**. لا نعمّم منها قاعدة على الصفة قبل الاسم؛ فالصفة النعتية تتأثر بالحالة والجنس والعدد ونوع الأداة، وهذا نطاق مؤجل إلى كتلة لاحقة. وألوان مثل rosa وlila وorange لها استعمالات كتابية مختلفة قبل الاسم؛ لذلك لا نقرر لها قاعدة استثنائية عامة هنا.",
       whyAr:
-        "لماذا نبدأ بالصفة الخبرية لا النعتية؟ لأنّ الخبرية **مجّانية**: قاعدة واحدة تكفي لوصف كل شيء في العالم، بينما النعتية تحتاج جدولاً من ستّ عشرة نهاية تتقاطع فيها الحالة والجنس ونوع الأداة. وليس من الحكمة أن يدفع المبتدئ هذه الكلفة قبل أن يملك ما يصفه.\n\nولماذا الملابس تحديداً؟ لأنّها ميدان الوصف الأقرب: أنت ترتديها الآن، وتراها على غيرك، وتشتريها كل شهر. وامتحان Goethe A1 يجعل التسوّق موضوعاً صريحاً في Sprechen Teil 2 (طلب معلومة) وفي Hören (حوارات المتجر).\n\nثمّ إنّ الملابس أفضل حقلٍ لتثبيت **الأدوات**. فقائمة أسماء موزّعة على الأجناس الثلاثة، تُستعمل يومياً، وتتكرّر في كل جملة — هذا بالضبط ما يحتاجه العقل ليحوّل der/die/das من قاعدةٍ يستحضرها إلى عادةٍ ينطقها.",
+        "اختيرت الصفة الخبرية لتكوين جمل وصفية قصيرة من دون تقديم جدول نهايات الصفة قبل الاسم؛ هذا تحديدٌ لنطاق الدرس، لا ادعاءٌ بأن الوصف يقتصر على هذه الصيغة أو أن النهايات تخص مستوى امتحان بعينه.\n\nاخترنا الملابس لأنها سياق مناسب لمفردات القطع والألوان والمقاسات. ويتضمن نموذج Goethe الرسمي لـA1 موضوع **Einkaufen** في مهمة شفهية لطلب المعلومات، ومن بطاقاته مثال عن **Schuhe**؛ وهذا يبرر التدريب على السياق، لكنه لا يعني أن كل امتحان يطرح الموضوع أو هذه الأفعال بعينها.\n\nتُراجع أداة الاسم بوصفها جزءاً من المفردة. لا نعتمد على ربط جنس الاسم بشكل القطعة أو طول الكلمة؛ احفظ مثلاً **der Schuh** و**das Hemd** كما هما.",
       table: {
         title: "الملابس والألوان",
         columns: ["القطعة", "العربية", "لون", "العربية"],
@@ -73,7 +174,7 @@ export const lessonA108: Lesson = {
           { label: "die Jacke", cells: ["السترة", "grün", "أخضر"] },
           { label: "das Kleid", cells: ["الفستان", "gelb", "أصفر"] },
           { label: "der Pullover", cells: ["الكنزة", "schwarz", "أسود"] },
-          { label: "die Schuhe", cells: ["الحذاء", "weiß", "أبيض"] },
+          { label: "die Schuhe (جمع)", cells: ["الأحذية", "weiß", "أبيض"] },
           { label: "die Socken", cells: ["الجوارب", "braun", "بني"] },
           { label: "die Mütze", cells: ["القبعة", "grau", "رمادي"] },
         ],
@@ -81,12 +182,12 @@ export const lessonA108: Lesson = {
       examples: [
         { de: "Das Hemd ist rot.", ar: "القميص أحمر." },
         { de: "Meine Jacke ist blau.", ar: "سترتي زرقاء." },
-        { de: "Die Schuhe sind schwarz.", ar: "الحذاء أسود. (جمع ⇐ sind)" },
+        { de: "Die Schuhe sind schwarz.", ar: "الأحذية سوداء. (فاعل جمع ⇐ sind)" },
         { de: "Das Kleid ist sehr schön.", ar: "الفستان جميل جداً." },
         { de: "Der Pullover ist warm.", ar: "الكنزة دافئة." },
         {
           de: "Die Schuhe sind schwarz und die Socken sind weiß.",
-          ar: "الحذاء أسود والجوارب بيضاء. (الصفتان بلا نهاية)",
+          ar: "الأحذية سوداء والجوارب بيضاء. (الصفتان بعد sein بلا نهاية)",
         },
         {
           de: "Meine Mütze ist grau, nicht braun.",
@@ -98,39 +199,43 @@ export const lessonA108: Lesson = {
         },
       ],
       comparisonWithArabic:
-        "**فرق مطمئن وفرق خطر.**\n\nالمطمئن أنّ العربية تفعل الشيء نفسه في الخبر: «القميص أحمر» — لا نغيّر «أحمر» تبعاً لشيء. والألمانية كذلك: Das Hemd ist rot. فالبنية متطابقة تقريباً، إلا في شيء واحد: العربية تحذف الفعل في الجملة الاسمية، والألمانية **لا تحذفه أبداً**. وهذا مصدر الخطأ الأوّل عند العربي: يقول Das Hemd rot لأنّ أذنه لا تفتقد الرابط.\n\nالخطر أنّ العربية تُطابق الصفة الاسمَ في التذكير والتأنيث: «قميص أحمر / سترة حمراء». فيتوقّع العربي أن تُطابق الألمانية أيضاً، ويقول Die Jacke ist rote. والصواب أنّ الخبر الألماني **لا يطابق شيئاً**: Die Jacke ist rot. فما تعوّدتَه في لغتك هو بالضبط ما يجب أن تكفّ عنه هنا.\n\nوفارقٌ ثالث في الجمع: العربية تقول «الأحذية سوداء» بمطابقة، والألمانية تقول Die Schuhe sind schwarz — الفعل وحده جمع.",
+        "في العربية نقول «القميص أحمر» وقد لا نذكر فعلاً رابطاً في المضارع؛ كما تتبدل الصفة بحسب جنس الاسم: **القميص أحمر، السترة حمراء**. أمّا الألمانية فتضع **sein** في الجملة الخبرية: **Das Hemd ist rot. Die Jacke ist rot.** وتبقى الصفة الخبرية بلا نهاية في المثالين.\n\nإذن لا تنقل نهاية التأنيث العربية إلى الصفة الألمانية بعد **sein**: **Die Jacke ist rot** لا **Die Jacke ist rote**. كذلك يتغير الفعل مع الفاعل: **Die Schuhe sind schwarz**. لا تُسقط رابط **ist/sind** من الجملة الألمانية.",
       eselsbruecke:
-        "**«بعد sein تنام الصفة»** — كل صفة تأتي بعد ist/sind تنام ساكنةً بلا نهاية.\nوللأدوات في هذا الحقل احفظ ثلاثيّة تقريبية: **der** يغطّي الجذع (Pullover, Mantel, Rock) · **die** يغطّي القطع الرقيقة والأطراف (Hose, Jacke, Mütze, Bluse) · **das** قطعتان قصيرتان (Hemd, Kleid). قاعدة مساعدة لا قانون، لكنّها تنجح في أغلب هذا الحقل.\nوللألوان: **schwarz-rot-gold** علم ألمانيا نفسه — ثلاثة ألوان بلا حفظ.",
+        "**بعد sein تبقى الصفة الخبرية في صورتها الأساسية:** Das Hemd ist rot · Die Schuhe sind rot. واحفظ أداة كل اسم معه: der Schuh، die Socke، das Hemd.",
       commonMistakes: [
         {
           wrong: "Das Hemd rot.",
           right: "Das Hemd ist rot.",
           whyAr:
-            "العربية تحذف الرابط في الجملة الاسمية «القميص أحمر»، فلا تفتقده أذن العربي. والألمانية لا تقبل جملةً بلا فعل مصرَّف إطلاقاً، فوجود ist شرط لا زينة.",
+            "في هذه الجملة الخبرية الكاملة نحتاج صيغة الفعل sein مع الفاعل؛ لذلك نقول ist مع das Hemd: Das Hemd ist rot.",
+          classification: "error",
         },
         {
           wrong: "Die Schuhe ist neu.",
           right: "Die Schuhe sind neu.",
           whyAr:
-            "die Schuhe جمعٌ دائم لا مفرد له في الاستعمال العادي، فالفعل جمع: sind. ومصدر الخطأ أنّ المتعلّم يترجم «الحذاء» مفرداً في ذهنه فيصرّف الفعل مفرداً.",
+            "في الجملة die Schuhe جمع der Schuh، لذا يطابقه الفعل الجمع sind. للمفرد نقول der Schuh ist neu.",
+          classification: "error",
         },
         {
           wrong: "Die Jacke ist rote.",
           right: "Die Jacke ist rot.",
           whyAr:
-            "نقلٌ لعادة المطابقة العربية «سترة حمراء». والخبر الألماني بعد sein لا يطابق الاسم في جنسٍ ولا عدد، فيبقى rot مجرّداً مهما كان الموصوف.",
+            "بعد sein تأتي الصفة الخبرية بلا نهاية: Die Jacke ist rot. لا نضيف نهاية التأنيث إلى الصفة في هذا التركيب.",
+          classification: "error",
         },
         {
-          wrong: "Ich trage rosane Bluse.",
-          right: "Ich trage eine rosa Bluse.",
+          wrong: "Die Bluse ist rosane.",
+          right: "Die Bluse ist rosa.",
           whyAr:
-            "rosa وorange وlila كلمات دخيلة تنتهي بحرف علة فلا تقبل نهايات إطلاقاً. وrosane صيغة عامّية يسمعها المتعلّم في الشارع فيظنّها فصيحة.",
+            "في هذا المثال جاءت الصفة بعد sein، فتُستعمل في صورتها الأساسية: rosa. أمّا الصيغ قبل الاسم فلها استعمالات مختلفة ولا تُحسم بقاعدة واحدة لجميع الألوان.",
+          classification: "error",
         },
       ],
       relatedRuleComparison: {
         title: "الصفة الخبرية أم النعتية؟",
         content:
-          "بعد sein: خبرية ساكنة (Das Hemd ist rot). قبل الاسم: نعتية متغيرة (ein rotes Hemd) — سنتعلمها في B1. في A1 استخدم الخبرية دائماً.",
+          "في هذا الدرس نستعمل الصفة خبرية بعد sein: Das Hemd ist rot. أمّا إذا سبقت الصفة الاسم فتدخل في نظام تصريف يتأثر بالحالة والجنس والعدد ونوع الأداة؛ هذا النظام الكامل خارج نطاق هذه الكتلة. استخدم الجمل الخبرية في التدريبات ولا تخلط بين الموقعين.",
       },
     },
     {
@@ -138,9 +243,9 @@ export const lessonA108: Lesson = {
       titleAr: "فعل tragen + السؤال عن الرأي (Wie findest du...?)",
       titleDe: "Das Verb „tragen“ und „Wie findest du...?“",
       explanationAr:
-        "بعد أن صرتَ تصف الملابس، تبقى جملتان تحتاجهما كلّ يوم: **ماذا ترتدي؟** و**ما رأيك؟** ولكلٍّ منهما فعلها.\n\n**أوّلاً: tragen — فعل بتغيّر صوتيّ.**\nمعناه «يرتدي» وأيضاً «يحمل»، وهو من الأفعال التي تُبدّل حرف علّة الجذر في صيغتي **du** و**er/sie/es** وحدهما: a ⇐ ä.\nich trag**e** · du tr**ä**gst · er tr**ä**gt · wir tragen · ihr tragt · sie tragen\nوهذه ليست شذوذاً عشوائياً بل عائلة كاملة تسير على النمط نفسه: fahren ⇐ du fährst · schlafen ⇐ du schläfst · laufen ⇐ du läufst. فمن أتقن tragen اليوم فتح باب العائلة كلّها.\nولاحظ أنّ **التغيير محصورٌ في صيغتين فقط**. الجمع كلّه يعود إلى a سالمة: wir tragen, ihr tragt, sie tragen. والخطأ الشائع هو تعميم الـä على الجمع.\n\n**ثانياً: السؤال عن الرأي — Wie findest du …?**\nالألمانية لا تقول «ما رأيك؟» بل تقول حرفياً «**كيف تجد** هذا؟»:\n• Wie findest du meine Jacke? — والجواب: Ich finde sie schön.\nوالبنية ثابتة: **finden + المفعول به + صفة**. أي أنّ finden هنا لا يعني «يعثر على» بل «يرى/يحكم». وتُصرَّف كأيّ فعل عاديّ: ich finde · du find**e**st · er find**e**t (تُدرَج e لتسهيل النطق بعد الدال).\n\n**ثالثاً — وهذه كلمة صغيرة ذات شأن: doch.**\nإذا سُئلتَ سؤالاً **منفيّاً** وأردتَ نفي النفي — أي «بلى» — فلا يجوز أن تقول ja. الألمانية تُخصّص لهذا كلمةً مستقلّة:\n• Gefällt dir das Hemd nicht? — **Doch**, es gefällt mir sehr! (بلى، يعجبني جداً)\n• Trägst du keine Jacke? — **Doch**, ich trage eine.\nأمّا لو وافقتَ على النفي فقُل nein: Gefällt dir das Hemd nicht? — Nein, es gefällt mir nicht.\nفالقاعدة في ثلاث كلمات: **سؤال منفيّ + جواب مثبت = doch**. والعربية تملك نظيرها تماماً وهو «بلى» في مقابل «نعم» — ومن استحضر هذا الفرق العربي أتقن doch في دقيقة.",
+        "**أولاً: tragen.** معناه «يرتدي» أو «يحمل» بحسب المفعول والسياق. في المضارع يتغير حرف الجذر في صيغتي **du** و**er/sie/es**: **ich trage · du trägst · er/sie/es trägt · wir tragen · ihr tragt · sie/Sie tragen**. احفظ هاتين الصيغتين مع الفعل؛ فليست كل الأفعال التي فيها a تتبع هذا النمط. تشبهه في هذا التصريف أفعال مثل **fahren: du fährst** و**schlafen: du schläfst**.\n\n**ثانياً: السؤال عن الرأي بـfinden.** في هذا السياق تعني **finden** «ما رأيك في/أجد»، لا «أعثر على»: **Wie findest du meine Jacke? — Ich finde sie schön.** يأتي الشيء مفعولاً به، ويمكن أن تليه صفة تصف رأيك: **Ich finde das Kleid schön.** صيغ الفعل هنا: **ich finde · du findest · er/sie/es findet**.\n\n**ثالثاً: doch مع السؤال المنفي.** إذا كان السؤال يحتوي على نفي وأردت أن ترفض النفي وتجيب بالإيجاب، فاستعمل **doch**: **Gefällt dir die Jacke nicht? — Doch, sie gefällt mir.** أما **Nein** فيقدّم جواباً سلبياً يؤكد النفي: **Nein, sie gefällt mir nicht.** هذا وصف لجواب هذا النوع من الأسئلة، لا قاعدة عن كل استعمالات الكلمة.\n\nللمقارنة مع العربية، يمكن تذكّر **بلى** مع **doch** في هذا المثال تحديداً، لكن لا تترجم الكلمتين آلياً في كل سياق.",
       whyAr:
-        "لماذا تُبدّل بعض الأفعال حرف علّتها؟ لأسبابٍ صوتية تاريخية: هذه أفعالٌ «قويّة» ورثت من الجرمانية القديمة تنويعاً في الجذر، وبقي أثره في صيغتَي المفرد المخاطَب والغائب. فالتغيير ليس قاعدةً تُشتقّ بل بصمةٌ تُحفَظ مع الفعل — لكنّها بصمة منتظمة تكفيك فيها معرفة العائلة: كل فعلٍ جذرُه a ويُصنَّف قويّاً يفعل هذا.\n\nولماذا نتعلّم doch في درس الملابس؟ لأنّ التسوّق موطنها الطبيعيّ: البائع يسأل Passt es Ihnen nicht؟ وأنت تريد أن تقول «بلى، يناسبني». ولأنّ غيابها يُنتج سوء فهم حقيقيّ لا مجرّد خطأ نحويّ: من يجيب ja على سؤال منفيّ يبدو للألمانيّ كأنّه يؤكّد النفي، فينصرف البائع بالقطعة.\n\nوامتحان Goethe A1 يختبر هذا صراحةً في Hören، حيث تُبنى أسئلة الفهم على حواراتٍ يردّ فيها المتحدّث بـ doch — فمن لا يميّزها يفهم عكس المقصود.",
+        "يُحفظ تصريف **tragen** في المفرد الثاني والثالث، حيث تظهر **ä**: **trägst/trägt**؛ أما **wir tragen** و**ihr tragt** فبلا Umlaut. لا نستنتج التغيير من حرف a وحده في كل الأفعال.\n\nتُقدَّم **finden** هنا في سؤال رأي مع أمثلة قصيرة: **Wie findest du …?** و**Ich finde … schön**. ويدرب سؤال منفي واحد على فرق عملي: في السياق المحدد **doch** يرفض النفي، و**nein** يوافقه. اخترنا حواراً تسوقياً للتدريب، ولا ندّعي أن **doch** بندٌ مضمون في اختبار Goethe A1.",
       table: {
         title: "تصريف tragen",
         columns: ["الضمير", "trage/trägst/trägt", "مثال"],
@@ -170,7 +275,7 @@ export const lessonA108: Lesson = {
         },
         {
           de: "Wie findest du diese Schuhe? — Ich finde sie zu teuer.",
-          ar: "كيف تجد هذا الحذاء؟ — أجده غالياً جداً.",
+          ar: "ما رأيك في هذه الأحذية؟ — أجدها غالية جداً.",
         },
         {
           de: "Gefällt dir die Mütze nicht? — Doch, sie ist super!",
@@ -182,39 +287,43 @@ export const lessonA108: Lesson = {
         },
       ],
       comparisonWithArabic:
-        "**١. «ما رأيك» مقابل «كيف تجد».** العربية تسأل عن الرأي بالاسم: «ما رأيك في السترة؟» والألمانية تسأل بالفعل: Wie findest du die Jacke؟ فمن يترجم حرفياً يقول Was ist deine Meinung — وهي مفهومة لكنّها ثقيلة ونادرة في الكلام اليوميّ.\n\n**٢. العربية لا تُبدّل حرف الجذر مع المخاطب.** نقول «أحمل / تحمل / يحمل» بجذر واحد ثابت. فحين تجد الألمانية تقول trage ثمّ trägst يبدو الأمر كأنّه فعلان مختلفان، ويميل المتعلّم إلى تسوية الجذر فيقول **du tragst**. والعلاج أن تحفظ الصيغتين المتغيّرتين وحدهما — فهما فقط الاستثناء.\n\n**٣. وأمّا doch فالعربية أسعد حظّاً من الإنجليزية هنا.** الإنجليزي لا يملك كلمةً لـ«بلى» فيضطرّ إلى Yes, it does، أمّا نحن فنملك «بلى» مقابل «نعم» بالضبط كما تملك الألمانية doch مقابل ja. فالخطأ عند العربي ليس في غياب المفهوم بل في نسيان أنّ لغته تملكه: انقل «بلى» إلى doch مباشرةً وستصيب في كل مرّة.",
+        "**١. السؤال عن الرأي:** العربية تقول «ما رأيك في السترة؟»، وفي هذا الموقف الألمانية تستعمل الصيغة **Wie findest du …?**. تعلّم القالب الألماني مع مفعوله بدلاً من نقل ترتيب العربية حرفياً.\n\n**٢. تصريف tragen:** احفظ الصيغ الألمانية كما هي؛ لا تفترض أن تغيّر الجذر أو ثباته في العربية والألمانية يتطابق.\n\n**٣. doch:** في جواب السؤال المنفي، **بلى** تذكير عربي مفيد لـ**doch** عندما يكون الرد إيجابياً ومخالفاً للنفي. هذه مقابلة وظيفية في هذا السياق فقط، لا ترجمة ثابتة للكلمة في جميع استعمالاتها.",
       eselsbruecke:
-        "**«الاثنان يتأمّلان»** — في التغيير الصوتيّ، صيغتان فقط تتغيّران: **du** و**er**. تخيّلهما وجهين متقابلين فوقهما نقطتا الـä. أمّا الجمع فيعود سالماً.\nولـ doch: **«سؤال فيه nicht أو kein ⇐ جوابك بلى ⇐ doch»**. اربطها بالعربية مباشرة: بلى = doch، نعم = ja، لا = nein.",
+        "**trägst / trägt**: راقب النقطتين فوق ä في صيغتي المخاطب والغائب المفرد؛ وتذكّر أن **wir tragen / ihr tragt** بلا Umlaut.\n**doch**: سؤال منفي + رد إيجابي يناقض النفي ← **Doch, …**؛ تأكيد النفي ← **Nein, …**. أضف الجملة بعد كلمة الجواب لتوضيح المقصود.",
       commonMistakes: [
         {
           wrong: "Du tragst ein Hemd.",
           right: "Du trägst ein Hemd.",
           whyAr:
-            "tragen من أفعال التغيّر الصوتيّ a⇐ä، والتغيير واجبٌ في du وer وحدهما. ومصدر الخطأ أنّ المتعلّم يقيس على الجذر الذي سمعه في ich trage.",
+            "في تصريف هذا الفعل نقول du trägst وer/sie/es trägt؛ لا ننقل صيغة ich trage إلى du.",
+          classification: "error",
         },
         {
           wrong: "Wir trägen Jacken.",
           right: "Wir tragen Jacken.",
           whyAr:
-            "تعميمٌ عكسيّ: بعد أن يتعلّم المتعلّم الـä يُسرف فيها فيضعها في الجمع. والجمع يعود إلى الجذر السالم دائماً: wir tragen, ihr tragt, sie tragen.",
+            "في صيغ الجمع الواردة هنا لا يظهر Umlaut: wir/sie tragen وihr tragt.",
+          classification: "error",
         },
         {
           wrong: "Wie finden du das Kleid?",
           right: "Wie findest du das Kleid?",
           whyAr:
-            "الفعل يُصرَّف مع الفاعل du فيصير findest بإدراج e قبل st لتسهيل النطق بعد الدال. وصيغة finden للجمع والمصدر لا للمخاطب المفرد.",
+            "مع الفاعل du نقول findest؛ ومع er/sie/es نقول findet، لأن صيغة الفعل تتغير مع الضمير.",
+          classification: "error",
         },
         {
           wrong: "Gefällt dir das Hemd nicht? — Ja, es gefällt mir.",
           right: "Gefällt dir das Hemd nicht? — Doch, es gefällt mir.",
           whyAr:
-            "السؤال منفيّ والجواب مثبت ⇒ doch لا ja. وقول ja هنا يُفهم منه تأكيد النفي، فيظنّ المخاطَب أنّ القميص لا يعجبك — سوء فهم لا مجرّد خطأ نحويّ.",
+            "المقصود هنا تأكيد أن القميص يعجب المتكلم، أي رفض النفي في السؤال؛ لذلك تكون صيغة الرد الواضحة Doch. وقد تُفهم ja على أنها موافقة على النفي، فلا نعرضها هنا جواباً مكافئاً.",
+          classification: "contextual-alternative",
         },
       ],
       relatedRuleComparison: {
         title: "tragen أم anziehen؟",
         content:
-          "tragen = يرتدي (حالة دائمة: Ich trage eine Brille = أرتدي نظارة). anziehen = يرتدي (فعل لحظي: Ich ziehe eine Jacke an = أرتدي سترة الآن). anziehen فعل منفصل!",
+          "**tragen** يصف ارتداء الشيء أو حمله: **Ich trage einen Mantel.** أما **anziehen** فيعني وضع قطعة الملابس/ارتداءها بوصفه فعلاً: **Ich ziehe den Mantel an.** وهو فعل ذو بادئة منفصلة: **Ich ziehe … an.** يختلف اختيار الفعل بحسب ما تريد قوله؛ ليسا بديلين متطابقين في كل سياق.",
       },
     },
     {
@@ -222,11 +331,11 @@ export const lessonA108: Lesson = {
       titleAr: "أيّ قميص؟ هذا القميص — dieser وwelcher",
       titleDe: "Welcher Pullover? Dieser Pullover!",
       explanationAr:
-        "في متجر الملابس سؤالان لا غنى عنهما: **welch-** للسؤال «أيّ؟» و**dies-** للإشارة «هذا/هذه». والخبر السارّ أنّهما لا يحتاجان حفظاً جديداً إطلاقاً.\n\n**القاعدة كلّها في سطر: كلاهما يأخذ نهايات أداة التعريف der/die/das نفسها.**\nder Pullover ⇐ **welcher** Pullover? ⇐ **dieser** Pullover\ndie Hose ⇐ **welche** Hose? ⇐ **diese** Hose\ndas Hemd ⇐ **welches** Hemd? ⇐ **dieses** Hemd\ndie Schuhe (جمع) ⇐ **welche** Schuhe? ⇐ **diese** Schuhe\nانظر إلى آخر حرف: d-**er** · welch-**er** · dies-**er**. النهاية واحدة، والأداة قالبٌ تصبّ فيه الكلمتان. فمن يعرف جنس الكلمة يعرف الصيغتين فوراً بلا جدول جديد.\n\n**الخطوة الثانية: الحالة تُغيّر النهاية كما يُغيّرها الجنس.**\nما سبق كان في حالة الرفع (Nominativ). فإذا صار الملبوس **مفعولاً به** — بعد nehmen أو möchten أو kaufen — تغيّرت نهاية المذكّر وحده من -er إلى -en:\n• Der Mantel ist schön. ⇐ Ich nehme **diesen** Mantel.\n• **Welchen** Mantel möchten Sie?\nأمّا المؤنّث والمحايد والجمع فلا تتغيّر نهاياتها بين الرفع والنصب: diese Hose يبقى diese Hose، وdieses Hemd يبقى dieses Hemd. وهذه هي القاعدة الذهبية التي رأيتَها في درس الأكوزاتيف: **المذكّر وحده يتحرّك**.\n\n**الخطوة الثالثة: dies- تستغني عن الاسم.**\nإذا كان الملبوس مفهوماً من السياق فلك أن تُشير دون أن تُسمّي: Welches Hemd möchten Sie? — **Dieses**, bitte. وهذه الجملة القصيرة هي أكثر ما تقوله في المتجر فعلاً.\n\n**فرقٌ عمليّ بين dies- وder:** كلاهما يعني «هذا»، لكنّ dies- تُميّز واحداً من عدّة: بين ثلاثة قمصان معروضة تقول dieses Hemd لتستبعد الآخرَين. أمّا das Hemd فتحيل على قميصٍ معروف سلفاً بلا مقارنة. ولهذا كانت dies- لغةَ الرفوف بامتياز.\n\n**من أين جاءت هذه القاعدة؟** لماذا تحمل dieser وwelcher نهايات der/die/das نفسها بلا استثناء؟ لأنّ أداة التعريف **نفسها كانت في الأصل اسم إشارة**: der في الألمانية القديمة كانت تعني «ذاك» لا «الـ». ثمّ ضعف معناها الإشاريّ بكثرة الاستعمال حتّى صارت أداةً محايدة، واحتاجت اللغة إشارةً جديدة أقوى فصنعت dies-. فـdieser وder **قريبان من أصلٍ واحد**، ولذلك يتصرّفان تصرّفاً واحداً. وهذا يفسّر تسميتها كلّها der-Wörter.",
+        "في متجر الملابس نحتاج إلى السؤال «أيّ؟» والإشارة إلى قطعة. نستعمل **welcher-/welche-/welches-** للسؤال، و**dieser/diese/dieses** للإشارة. في أمثلة الرفع:\n**der Pullover → welcher Pullover? → dieser Pullover**\n**die Hose → welche Hose? → diese Hose**\n**das Hemd → welches Hemd? → dieses Hemd**\n**die Schuhe (جمع) → welche Schuhe? → diese Schuhe**\n\nمع مفعول مذكر في النصب نقول **diesen Mantel** و**welchen Mantel**: **Ich nehme diesen Mantel. Welchen Mantel möchten Sie?** في الأمثلة المؤنثة والمحايدة والجمع الواردة هنا تبقى هذه الصيغ كما هي بين الرفع والنصب: **diese Hose / dieses Hemd / diese Schuhe**.\n\nويمكن استعمال **dieses** وحدها إذا كان الاسم مفهوماً: **Welches Hemd möchten Sie? — Dieses, bitte.** أما **dieser-** فيشير إلى شيء في السياق؛ و**der/die/das** أداة تعريف في هذه التراكيب، ويتوقف معنى الإشارة أيضاً على التركيب والنبر. لا نعمّم هنا على جميع الحالات الإعرابية؛ نتدرّب على أمثلة الرفع والنصب الواردة فقط.",
       whyAr:
-        "لماذا هذه الكتلة في درس الملابس تحديداً؟ لأنّها اللغة الفعلية للتسوّق: البائع يسأل «Welche Größe?» وأنت تشير «Dieses Hemd, bitte». ولأنّها كذلك أوّل مكسب عملي من حفظ الأدوات: النهايات التي تعبتَ في حفظها مع der/die/das تُثمر الآن في كلمتين جديدتين بلا جهد إضافي — وستُثمر لاحقاً في jeder وmancher أيضاً.",
+        "هذه الصيغ نافعة في سؤال اختيار قطعة أو الإشارة إليها في حوار تمثيلي. ويعرض نموذج Goethe A1 الرسمي موضوع التسوق مثالاً في مهمة السؤال عن المعلومات، لكنه لا يفرض هذه الكلمات أو القاعدة بعينها في كل امتحان.\n\nابدأ بالأشكال الظاهرة في الجدول: أداة الاسم تساعد على تذكّر welcher/dieser، ثم لاحظ صيغة النصب المذكر **welchen/diesen**. لا نقول إن كل الحالات متطابقة؛ لهذا حُدّدت أمثلة الدرس بالرفع والنصب.",
       table: {
-        title: "نهاية واحدة تتكرّر",
+        title: "صيغ مختارة للسؤال والإشارة",
         columns: ["الأداة", "welch- (أيّ؟)", "dies- (هذا)"],
         rows: [
           {
@@ -248,55 +357,59 @@ export const lessonA108: Lesson = {
       examples: [
         { de: "Welcher Pullover gefällt dir?", ar: "أيّ كنزة تعجبك؟" },
         { de: "Dieses Hemd ist zu klein.", ar: "هذا القميص صغير جداً." },
-        { de: "Welche Größe haben Sie?", ar: "أيّ مقاس تلبس؟" },
+        { de: "Welche Größe haben Sie?", ar: "ما مقاسك؟" },
         {
           de: "Ich nehme diesen Mantel.",
           ar: "آخذ هذا المعطف. (مفعول به مذكّر ⇐ -en)",
         },
-        { de: "Diese Schuhe sind sehr bequem.", ar: "هذا الحذاء مريح جداً." },
+        { de: "Diese Schuhe sind sehr bequem.", ar: "هذه الأحذية مريحة جداً." },
         {
           de: "Welches Hemd möchten Sie? — Dieses, bitte.",
           ar: "أيّ قميص تريد؟ — هذا، من فضلك. (بلا اسم)",
         },
         {
-          de: "Welche Jacke ist billiger, diese oder diese?",
-          ar: "أيّ سترة أرخص، هذه أم هذه؟",
+          de: "Welche Jacke nimmst du? — Diese Jacke.",
+          ar: "أيّ سترة ستأخذ؟ — هذه السترة.",
         },
       ],
       comparisonWithArabic:
-        "العربية تقول «هذا» و«هذه» فقط — صيغتان اثنتان تكفيان. والألمانية تُلزمك بأربع نهايات تتبع جنس الكلمة، فلا تستطيع أن تُشير إلى شيء دون أن تعرف جنسه أوّلاً. وهذا فارق جوهري: في العربية تُشير ثم تُسمّي، وفي الألمانية تُسمّي في ذهنك ثم تُشير. أمّا «أيّ» العربية فثابتة لا تتغيّر أبداً: «أيّ قميص، أيّ حقيبة» — بينما welcher تتلوّن مع كل كلمة.",
+        "للعربية والألمانية صيغ إشارة تتأثر بالجنس والعدد، لكن لا تتطابق أجزاؤها كلمةً بكلمة. في الألمانية تتغير صيغة **dieser-** و**welcher-** أيضاً مع الحالة في بعض المواضع: **dieser Mantel** في الرفع، و**diesen Mantel** مفعولاً به. تعلّم الاسم مع أداته والصيغة في المثال، ولا تفترض أن هذا/هذه العربية يقابل دائماً نهاية ألمانية واحدة.",
       eselsbruecke:
-        "احذف **d** من der وضع مكانها **dies** ← dies+er. واحذفها وضع **welch** ← welch+er. الأداة هي القالب، والكلمتان تصبّان فيه: d-er · dies-er · welch-er.",
+        "لأمثلة هذا الدرس: **der → dieser/welcher** · **die → diese/welche** · **das → dieses/welches** · **الجمع → diese/welche**. وإذا كان المفعول مذكراً في النصب: **diesen/welchen**.",
       commonMistakes: [
         {
           wrong: "Welche Pullover möchten Sie?",
           right: "Welchen Pullover möchten Sie?",
           whyAr:
-            "der Pullover مذكّر، وبعد möchten يأتي المفعول به فتصير النهاية -en: welchen. النهاية تتبع الحالة كما تتبع الجنس، والمذكّر وحده هو الذي يتحرّك بينهما.",
+            "Pullover مفعول به بعد möchten في هذا السؤال، وهو مذكر؛ صيغة النصب هنا welchen.",
+          classification: "error",
         },
         {
           wrong: "Dieses Hose ist schön.",
           right: "Diese Hose ist schön.",
           whyAr:
-            "die Hose مؤنّثة فتأخذ -e لا -es. والخطأ شائع لأنّ المتعلّم يسمع «هذا» بالعربية فيختار أوّل صيغة حفظها، والعربية لا تُلزمه بمعرفة جنس الكلمة قبل الإشارة.",
+            "Hose مؤنث؛ لذلك نقول في الرفع diese Hose لا dieses Hose، فصيغة الإشارة توافق جنس الاسم.",
+          classification: "error",
         },
         {
           wrong: "Ich nehme dieser Mantel.",
           right: "Ich nehme diesen Mantel.",
           whyAr:
-            "nehmen فعل متعدٍّ ينصب مفعوله، والمذكّر في النصب ينتهي بـ-en لا -er. ومصدر الخطأ أنّ المتعلّم حفظ dieser Mantel في الرفع ثمّ نقلها كما هي.",
+            "Mantel مفعول به مذكر في النصب بعد nehmen؛ الصيغة هنا diesen.",
+          classification: "error",
         },
         {
           wrong: "Welche ist dein Größe?",
           right: "Welche Größe haben Sie?",
           whyAr:
-            "صيغة إنجليزية مترجمة. الألمانية تسأل عن المقاس بالفعل haben لا بـ sein، وwelche تلتصق بالاسم Größe لا تنفصل عنه.",
+            "في التعبير المقصود تأتي welche قبل الاسم المؤنث Größe، وتُصاغ الجملة بالسؤال الشائع Welche Größe haben Sie?.",
+          classification: "error",
         },
       ],
       relatedRuleComparison: {
         title: "عائلة تكبر لاحقاً",
         content:
-          "هذه النهايات نفسها ستعود مع jeder (كل) وmancher (بعض) وsolcher (مثل هذا). ومن أتقنها اليوم في كلمتين، أتقن غداً خمساً بلا حفظ جديد. وفي B1 ستراها مرّةً أخرى في نهايات الصفة — فهي استثمار طويل الأجل.",
+          "هنا نراجع صيغ الرفع والنصب المختارة من **welcher-** و**dieser-**. تظهر الصيغ في حالات أخرى أيضاً، لكن هذا الدرس لا يشرح تصريفهما كاملاً.",
       },
     },
     {
@@ -304,9 +417,9 @@ export const lessonA108: Lesson = {
       titleAr: "يعجبني هذا! — أفعال الدّاتيف gefallen وpassen وstehen",
       titleDe: "Das gefällt mir: Dativ-Verben beim Einkaufen",
       explanationAr:
-        "حتى الآن كنتَ تصف الملابس من الخارج: Das Hemd ist rot. وتبقى الجملة التي تحتاجها فعلاً في المتجر: **أن تقول رأيك**. والألمانية تفعل ذلك بثلاثة أفعال تسير كلُّها على نمطٍ واحد غريبٍ على العربي — لكنّه نمطٌ واحد لا ثلاثة.\n\n**النمط: الشيء هو الفاعل، وأنت المستقبِل.**\nقل بالعربية: «أنا أحبّ القميص» — أنت الفاعل والقميص مفعول. أمّا الألمانية فتقلب المشهد: **القميص** هو الذي يفعل، وأنت الذي يقع عليه الأثر:\n• Das Hemd gefällt **mir**. — حرفيّاً: «القميص يُرضي لي» أي يعجبني.\n• Die Hose passt **mir**. — «البنطال يناسب لي» أي مقاسه صحيح.\n• Das Kleid steht **dir**. — «الفستان يقف لك» أي يليق بك.\nوهذه ليست بلاغةً بل بنية: الشخص يأتي في حالة **الدّاتيف** (mir, dir, ihm, ihr, uns, euch, ihnen, Ihnen).\n\n**الخطوة الأولى: احفظ ضمائر الدّاتيف الثلاثة الأشيع.**\nich ⇐ **mir** (لي) · du ⇐ **dir** (لك) · Sie ⇐ **Ihnen** (لحضرتك). وهذه الثلاثة تكفيك في المتجر كلِّه.\n\n**الخطوة الثانية: الفعل يتبع الشيء لا الشخص.** وهذا موضع الخطأ الأكثر شيوعاً. الفاعل هو الملبوس، فإن كان مفرداً قلنا gefällt وإن كان جمعاً قلنا gefallen:\n• Der Pullover gefällt mir. (مفرد ⇐ gefällt)\n• Die Schuhe gefall**en** mir. (جمع ⇐ gefallen)\nلاحظ أنّ mir لم تتغيّر إطلاقاً — المتغيّر هو الفعل، تبعاً للملبوس.\n\n**الخطوة الثالثة: الفرق بين الثلاثة دقيق ولا يجوز الخلط.**\ngefallen = يعجب **الذوق** (شكله جميل) · passen = يناسب **المقاس** (يدخل عليك) · stehen = يليق **بك أنت** (لونه مع بشرتك). فقد يعجبك قميصٌ ولا يناسب مقاسك: Das Hemd gefällt mir, aber es passt mir nicht.\n\n**الحالة الشاذّة النافعة: التقديم.** كثيراً ما يتقدّم الدّاتيف على الفاعل لأنّ المتكلّم يريد إبراز صاحب الرأي: **Mir** gefällt der blaue Pullover. الجملة سليمة تماماً، والفعل ما زال يتبع der Pullover لا mir. وهذا يفسّر لك عبارةً ستسمعها كثيراً: Wie gefällt **Ihnen** das? — «كيف يعجبك هذا؟»",
+        "**النمط الذي ندرّب عليه:** الشيء هو الفاعل النحوي، والشخص يأتي في الداتيف مع الأفعال الثلاثة في هذه المعاني:\n• **Das Hemd gefällt mir.** — القميص يعجبني.\n• **Die Hose passt mir.** — البنطال يناسبني من حيث المقاس.\n• **Das Kleid steht dir gut.** — الفستان يليق بك.\n\nفي هذه الأمثلة نقول **mir, dir, ihm, ihr, uns, euch, ihnen, Ihnen** للشخص. احفظ الفعل مع البنية والضمير في الجملة؛ وليس معنى ذلك أن الداتيف له مقابل واحد في كل استعمالات الألمانية.\n\nمع **gefallen** يطابق الفعل الفاعل: **Der Pullover gefällt mir** (مفرد)، و**Die Schuhe gefallen mir** (جمع). الضمير **mir** لا يغيّر تصريف الفعل.\n\nللتفريق في سياق الملابس: **gefallen** يعبّر عن الإعجاب أو الانطباع؛ **passen** قد يصف ملاءمة المقاس للشخص (**Die Hose passt mir**)؛ و**stehen** يصف كيف تبدو قطعة أو لون على شخص (**Blau steht dir gut**). ولـ**passen** استعمال آخر مع **zu** بمعنى الانسجام مع شيء: **Die Farbe passt zur Hose**. هذه فروق مفيدة في الأمثلة، لا تقسيم حصري لكل استعمالات الأفعال.\n\nيمكن تقديم الداتيف في أول الجملة: **Mir gefällt der Pullover.** يبقى الفعل **gefällt** موافقاً للفاعل **der Pullover**، لا للضمير **mir**. كما يمكن قول **Wie gefällt Ihnen das?** في المخاطبة الرسمية.",
       whyAr:
-        "لماذا تقلب الألمانية المشهد هكذا؟ لأنّها تميّز بين **الفعل الإراديّ** و**التأثّر**. حين أقول Ich mag das Hemd فأنا أُعلن موقفاً أختاره؛ وحين أقول Das Hemd gefällt mir فأنا أصف أثراً وقع عليّ دون اختياري — الجمال بادر إليّ. ولهذا صار الشيء فاعلاً وصرتُ أنا مستقبِلاً في الدّاتيف.\n\nولماذا في درس الملابس تحديداً؟ لأنّ هذه الأفعال الثلاثة هي **كامل لغة المتجر**: البائع يسأل Wie gefällt Ihnen das؟ وأنت تجيب أو تعتذر بـ Es passt mir nicht. ولأنّ امتحان Goethe A1 يخصّص لهذا مكاناً صريحاً في Sprechen Teil 3 (طلب وردّ) وفي Hören (حوارات التسوّق).\n\nوهناك مكسبٌ أبعد: هذا أوّل لقاءٍ لك بحالة الدّاتيف عبر **فعلٍ** لا عبر حرف جرّ. وستجدها بعدُ في helfen وdanken وgehören وschmecken — كلُّها على النمط نفسه. فما تتعلّمه هنا ليس ثلاثة أفعال بل باباً كاملاً.",
+        "يصف IDS Grammis بناء **gefallen** في هذا المعنى بفاعل في الرفع ومتمّم في الداتيف، ويورد أمثلة مثل **Gefällt dir …?**. وتعرض مداخل الأفعال لدى Grammis وDuden استعمال **stehen** مع شخص في الداتيف لبيان ما يليق به، و**passen** للمقاس أو للملاءمة بحسب السياق. لذلك نعرض البنى في جمل قصيرة، ونبيّن المعنى المقصود في المثال بدلاً من وصفها بأنها «كل لغة المتجر».\n\nقد يصادف المتعلم تراكيب داتيف أخرى في دروس سابقة أو لاحقة؛ لا نزعم أن هذا أول لقاء له بالحالة. وفي هذا القسم نركز على أفعال وجمل بعينها، ولا ندّعي أن كل الأفعال التي تأخذ الداتيف تتبع معنى أو ترتيباً واحداً.",
       table: {
         title: "من يفعل ومن يتأثّر",
         columns: [
@@ -348,12 +461,12 @@ export const lessonA108: Lesson = {
       },
       examples: [
         {
-          de: "Das blaue Hemd gefällt mir sehr.",
-          ar: "القميص الأزرق يعجبني كثيراً. (مفرد ⇐ gefällt)",
+          de: "Das Hemd gefällt mir sehr.",
+          ar: "القميص يعجبني كثيراً. (فاعل مفرد ⇐ gefällt)",
         },
         {
-          de: "Die roten Schuhe gefallen mir nicht.",
-          ar: "الحذاء الأحمر لا يعجبني. (جمع ⇐ gefallen)",
+          de: "Die Schuhe gefallen mir nicht.",
+          ar: "الأحذية لا تعجبني. (فاعل جمع ⇐ gefallen)",
         },
         {
           de: "Die Hose passt mir nicht. Haben Sie Größe 42?",
@@ -377,45 +490,50 @@ export const lessonA108: Lesson = {
         },
       ],
       comparisonWithArabic:
-        "ثلاثة فروق تُنتج ثلاثة أخطاء متوقّعة:\n\n**١. العربية تجعلك فاعلاً، والألمانية تجعلك مستقبِلاً.** نقول «أنا يعجبني القميص» فنبدأ بأنفسنا، فيندفع المتعلّم إلى **Ich gefalle das Hemd** — وهي جملة سليمة نحواً وكارثية معنىً: تعني «أنا أُعجِب القميصَ»! الصواب أن يبدأ الملبوس: Das Hemd gefällt mir.\n\n**٢. العربية لا تصرّف الفعل مع المعجَب به.** نقول «يعجبني القميص» و«تعجبني الأحذية» فيتغيّر الفعل عندنا أيضاً، لكنّ المتعلّم يحفظ gefällt mir قالباً جامداً فيقول **Die Schuhe gefällt mir**. القاعدة: الفعل يطابق الملبوس دائماً.\n\n**٣. العربية تخلط ما تفصله الألمانية.** «يعجبني» عندنا تصلح للذوق وللمقاس معاً، فنقول «هذا القميص يعجبني» ونعني أحياناً أنّه على مقاسنا. والألمانية تفصل بحدّة: gefallen للذوق وpassen للمقاس وstehen للّياقة. وقول Das Hemd gefällt mir للبائع وأنت تقصد المقاس يوقعه في لبسٍ حقيقيّ.",
+        "لا تنقل ترتيب الفاعل والمتمّم من ترجمة حرفية؛ احفظ المثال الألماني مع بنيته: **Das Hemd (فاعل) gefällt mir (داتيف)**. وفي الجمع يطابق الفعل الفاعل: **Die Schuhe gefallen mir**.\n\nالعربية تستطيع أن تعبّر عن المعنى بتركيب مختلف، مثل «يعجبني القميص». لا يلزم أن تتطابق علامات الحالة أو مواضع العناصر بين اللغتين. كذلك فإن ترجمة «يعجبني» لا تكفي وحدها لاختيار فعل ألماني: اسأل هل المقصود الإعجاب، ملاءمة المقاس، أم كون القطعة لائقة بالشخص.",
       eselsbruecke:
-        "**«الشيء يَعجَب، وأنا أتلقّى»** — ابدأ الجملة بالملبوس لا بنفسك، وضع نفسك في الآخر: Das Hemd … mir.\nوللتفريق بين الثلاثة احفظ سلسلة المتجر: **العين ثمّ الجسم ثمّ المرآة** — gefallen للعين (شكله)، passen للجسم (مقاسه)، stehen للمرآة (يليق بك).\nوللفعل: **«اسأل الملبوس كم عددُه»** — واحد ⇐ gefällt، أكثر ⇐ gefallen.",
+        "**من يفعل؟** في **Der Pullover gefällt mir** الفاعل هو der Pullover، والشخص في الداتيف.\n**كم قطعة؟** مفرد **gefällt**، جمع **gefallen**.\n**أي معنى؟** المقاس **passen**؛ كيف تبدو عليك **stehen**؛ الانطباع/الإعجاب **gefallen**.",
       commonMistakes: [
         {
           wrong: "Ich gefalle das Hemd.",
           right: "Das Hemd gefällt mir.",
           whyAr:
-            "نقلٌ حرفيّ لبنية «أنا يعجبني». والجملة الخاطئة تعني عكس المقصود تماماً: «أنا أُعجِب القميصَ» — أي أنّ القميص هو المفتون بك. ابدأ دائماً بالملبوس واجعل نفسك في الدّاتيف.",
+            "هذه الصيغة لا تبني المعنى المقصود مع gefallen: الشيء الذي يعجبك هو الفاعل، والشخص يأتي في الداتيف: Das Hemd gefällt mir.",
+          classification: "error",
         },
         {
           wrong: "Die Schuhe gefällt mir.",
           right: "Die Schuhe gefallen mir.",
           whyAr:
-            "الفاعل هو die Schuhe وهو جمع، فالفعل جمع: gefallen. مصدر الخطأ أنّ المتعلّم يحفظ «gefällt mir» وحدةً جامدة ثمّ يبدّل الملبوس وينسى تعديل الفعل — وضمير mir لا علاقة له بالتصريف.",
+            "الفاعل die Schuhe جمع؛ لذلك نقول gefallen. الضمير mir في الداتيف ولا يحدد صيغة الفعل.",
+          classification: "error",
         },
         {
           wrong: "Das Hemd gefällt mich.",
           right: "Das Hemd gefällt mir.",
           whyAr:
-            "mich نصبٌ وmir جرّ. وgefallen من أفعال الدّاتيف فلا تنصب أبداً. والخلط طبيعيّ لأنّ العربية لا تميّز بين «يعجبني» بالنصب والجرّ، لكنّ الألمانية تسمع الفرق فوراً.",
+            "في المعنى المقصود من gefallen يأتي الشخص في الداتيف: mir، لا ضمير النصب mich.",
+          classification: "error",
         },
         {
           wrong: "Das Hemd gefällt mir, Größe 44 bitte.",
           right: "Das Hemd passt mir nicht, haben Sie Größe 44?",
           whyAr:
-            "خلطٌ بين الذوق والمقاس. gefallen حكمٌ جماليّ لا علاقة له بالقياس، فإن أردت مقاساً آخر فالفعل passen. قول gefallen هنا يُفهم منه أنّك راضٍ عن القميص فلمَ تطلب غيره.",
+            "الجملة الأولى قد تعبّر عن إعجابك بالقميص، لكنها لا تشرح وحدها مشكلة المقاس؛ فهي ليست خطأً نحوياً. عند طلب مقاس آخر، أضف جملة بـpassen أو سؤالاً واضحاً عن المقاس.",
+          classification: "contextual-alternative",
         },
         {
           wrong: "Wie gefällt Sie das?",
           right: "Wie gefällt Ihnen das?",
           whyAr:
-            "Sie في الرفع (حضرتك فاعلاً) وIhnen في الجرّ. وبما أنّ الفاعل هنا هو das، فالمخاطَب مستقبِل ⇒ Ihnen. والخطأ شائع لأنّ الصيغتين تُكتبان بحرف كبير.",
+            "das هو الفاعل؛ والمخاطب يأتي في الداتيف مع gefallen، لذا نقول Ihnen.",
+          classification: "error",
         },
       ],
       relatedRuleComparison: {
         title: "gefallen أم mögen أم finden؟",
         content:
-          "الثلاثة تُترجَم «يعجبني» وبينها فروق حقيقية. **gefallen** انطباعٌ بصريّ لحظيّ عن شيء تراه الآن، والشيء فيه فاعل: Der Pullover gefällt mir. **mögen** ميلٌ ثابت ومستقرّ، وأنت فيه الفاعل والشيء منصوب: Ich mag Pullover — أي أحبّ الكنزات عموماً. **finden** حكمٌ تُصدره بصفة، وأنت الفاعل: Ich finde den Pullover schön. والفرق العمليّ في المتجر: أمام قميصٍ بعينه قل gefällt mir؛ وعن ذوقك عموماً قل ich mag؛ وحين تُسأل رأيك صراحةً قل ich finde … schön. ولاحظ أنّ gefallen وحدها هي التي تضعك في الدّاتيف، والفعلان الآخران يجعلانك فاعلاً — وهذا ما يفسّر أنّ العربي يميل إليهما هرباً من القلب.",
+          "هذه الأفعال الثلاثة قد تُترجم أحياناً بكلمة «يعجب» أو «يناسب»، لكن بُنى الجملة ومعانيها تختلف:\n• **gefallen**: الشيء فاعل والشخص في الداتيف: **Der Pullover gefällt mir.**\n• **mögen**: الشخص فاعل والشيء مفعول به: **Ich mag den Pullover.** ويمكن استعماله مع شيء محدد أو مع تفضيل عام بحسب السياق.\n• **finden + Akkusativ + Adjektiv**: يقدّم المتكلم تقييماً: **Ich finde den Pullover schön.**\nهذه صيغ متقاربة في بعض المواقف وليست معانيها متطابقة أو محصورة في تقسيم جامد؛ اختر التركيب الذي يطابق ما تريد قوله.",
       },
     },
   ],
@@ -427,19 +545,19 @@ export const lessonA108: Lesson = {
     textType: "erzaehlung",
     paragraphs: [
       "Es ist Samstagnachmittag. Amira und ihre Freundin Lena gehen zusammen ins Kaufhaus. Amira sucht eine Jacke für den Herbst. Lena braucht nichts, aber sie kommt gern mit. Das Kaufhaus ist groß und voll. Im ersten Stock ist die Damenabteilung.",
-      "Amira sieht eine blaue Jacke. Die Jacke ist schön, aber sie ist teuer: 89 Euro. „Wie findest du diese Jacke?“, fragt Amira. „Die Farbe gefällt mir sehr“, sagt Lena. „Blau steht dir gut.“",
-      "Amira probiert die Jacke an. Leider ist sie zu klein. „Die Jacke passt mir nicht“, sagt Amira traurig. Eine Verkäuferin kommt und fragt: „Welche Größe haben Sie?“ — „Größe 40“, antwortet Amira. Die Verkäuferin bringt die gleiche Jacke in Größe 40.",
+      "Amira sieht eine Jacke. Sie ist blau. Die Jacke ist schön, aber sie ist teuer: 89 Euro. „Wie findest du diese Jacke?“, fragt Amira. „Die Farbe gefällt mir sehr“, sagt Lena. „Blau steht dir gut.“",
+      "Amira probiert die Jacke an. Leider ist sie zu klein. „Die Jacke passt mir nicht“, sagt Amira traurig. Eine Verkäuferin kommt und fragt: „Welche Größe haben Sie?“ — „Größe 40“, antwortet Amira. Die Verkäuferin bringt die Jacke noch einmal, jetzt in Größe 40.",
       "Jetzt passt die Jacke perfekt. Aber der Preis ist immer noch hoch. „Gefällt dir die Jacke nicht?“, fragt Lena. „Doch, sie gefällt mir sehr“, sagt Amira. „Aber 89 Euro sind zu viel für mich.“",
-      "Da sieht Lena einen grauen Mantel. Der Mantel kostet nur 45 Euro. „Dieser Mantel ist warm und nicht teuer“, sagt sie. Amira probiert den Mantel an. Er passt gut und er gefällt ihr auch. Die Farbe ist grau, nicht blau, aber grau passt zu allem.",
-      "Amira nimmt den Mantel. An der Kasse bezahlt sie fünfzig Euro und bekommt fünf Euro zurück. Draußen ist es kalt. Amira trägt ihren neuen Mantel und lacht: „Der Mantel gefällt mir wirklich. Und ich habe noch Geld für einen Kaffee!“",
+      "Da sieht Lena einen Mantel. Er ist grau. Der Mantel kostet nur 45 Euro. „Dieser Mantel ist warm und nicht teuer“, sagt sie. Amira probiert den Mantel an. Er passt ihr gut und gefällt ihr auch. Die Farbe ist grau, nicht blau; Grau gefällt Amira auch.",
+      "Amira nimmt den Mantel. An der Kasse bezahlt sie fünfzig Euro und bekommt fünf Euro zurück. Draußen ist es kalt. Amira trägt ihren Mantel und lacht: „Der Mantel gefällt mir wirklich. Und ich habe noch Geld für einen Kaffee!“",
     ],
     paragraphsAr: [
       "إنّه بعد ظهر السبت. تذهب أميرة وصديقتها لينا معاً إلى المتجر الكبير. أميرة تبحث عن سترة للخريف. لينا لا تحتاج شيئاً، لكنّها تأتي معها بسرور. المتجر كبير ومزدحم. في الطابق الأوّل قسم النساء.",
-      "ترى أميرة سترةً زرقاء. السترة جميلة لكنّها غالية: 89 يورو. «كيف تجدين هذه السترة؟» تسأل أميرة. «اللون يعجبني كثيراً» تقول لينا. «الأزرق يليق بك.»",
-      "تُجرّب أميرة السترة. للأسف هي صغيرة جداً. «السترة لا تناسب مقاسي» تقول أميرة حزينة. تأتي بائعة وتسأل: «أيّ مقاس تلبسين؟» — «مقاس 40» تجيب أميرة. تُحضِر البائعة السترة نفسها بمقاس 40.",
-      "الآن تناسبها السترة تماماً. لكنّ السعر ما يزال مرتفعاً. «ألا تعجبك السترة؟» تسأل لينا. «بلى، تعجبني كثيراً» تقول أميرة. «لكنّ 89 يورو كثيرة عليّ.»",
-      "عندئذٍ ترى لينا معطفاً رمادياً. المعطف يكلّف 45 يورو فقط. «هذا المعطف دافئ وغير غالٍ» تقول. تُجرّب أميرة المعطف. يناسبها ويعجبها أيضاً. اللون رماديّ لا أزرق، لكنّ الرماديّ يناسب كلّ شيء.",
-      "تأخذ أميرة المعطف. عند الصندوق تدفع خمسين يورو وتستلم خمسة يوروهات. في الخارج الجوّ بارد. ترتدي أميرة معطفها الجديد وتضحك: «المعطف يعجبني حقاً. وما زال معي مالٌ لفنجان قهوة!»",
+      "ترى أميرة سترة. لونها أزرق. السترة جميلة لكنّها غالية: 89 يورو. «ما رأيك في هذه السترة؟» تسأل أميرة. «اللون يعجبني كثيراً» تقول لينا. «الأزرق يليق بك.»",
+      "تُجرّب أميرة السترة. للأسف هي صغيرة جداً. «السترة لا تناسب مقاسي» تقول أميرة حزينة. تأتي بائعة وتسأل: «ما مقاسك؟» — «مقاس 40» تجيب أميرة. تُحضِر البائعة السترة مرة أخرى، هذه المرة بمقاس 40.",
+      "الآن تناسبها السترة تماماً. لكنّ السعر ما يزال مرتفعاً. «ألا تعجبك السترة؟» تسأل لينا. «بلى، تعجبني كثيراً» تقول أميرة. «لكن المبلغ أكبر مما أستطيع دفعه.»",
+      "عندئذٍ ترى لينا معطفاً. لونه رماديّ. يكلّف المعطف 45 يورو فقط. «هذا المعطف دافئ وغير غالٍ» تقول. تُجرّب أميرة المعطف. يناسبها ويعجبها أيضاً. اللون رماديّ لا أزرق؛ والرماديّ يعجب أميرة أيضاً.",
+      "تأخذ أميرة المعطف. عند الصندوق تدفع خمسين يورو وتستلم خمسة يوروهات. في الخارج الجوّ بارد. ترتدي أميرة معطفها وتضحك: «المعطف يعجبني حقاً. وما زال معي مالٌ لفنجان قهوة!»",
     ],
     glossary: [
       {
@@ -465,7 +583,7 @@ export const lessonA108: Lesson = {
       {
         de: "die Größe",
         ar: "المقاس",
-        noteAr: "Welche Größe haben Sie? سؤال البائع الثابت.",
+        noteAr: "Welche Größe haben Sie? طريقة مهذبة شائعة للسؤال عن المقاس.",
       },
       {
         de: "passt (passen)",
@@ -500,15 +618,15 @@ export const lessonA108: Lesson = {
       {
         de: "doch",
         ar: "بلى",
-        noteAr: "جواب مثبت على سؤال منفيّ — لا يجوز ja مكانها.",
+        noteAr: "تُستعمل هنا لرفض النفي والإجابة بالإيجاب؛ أما nein فيؤكد النفي.",
       },
     ],
     questions: [
       {
         id: "rq1",
         type: "multiple-choice",
-        instructionAr: "لماذا لم تشترِ أميرة السترة الزرقاء؟",
-        questionDe: "Warum kauft Amira die blaue Jacke nicht?",
+        instructionAr: "لماذا لا تشتري أميرة السترة؟",
+        questionDe: "Warum kauft Amira die Jacke nicht?",
         options: [
           "Sie ist zu teuer.",
           "Sie gefällt ihr nicht.",
@@ -517,7 +635,7 @@ export const lessonA108: Lesson = {
         ],
         correctIndex: 0,
         explanation:
-          "السترة أعجبتها وناسبت مقاسها بعد التبديل، لكنّ 89 يورو كثيرة عليها: Aber 89 Euro sind zu viel für mich.",
+          "أعجبتها السترة وناسبها مقاسها بعد التبديل، لكن المبلغ أكبر مما تستطيع دفعه: Aber 89 Euro sind zu viel für mich.",
         errorType: "vocabulary",
         paragraph: 4,
       },
@@ -551,7 +669,7 @@ export const lessonA108: Lesson = {
         ],
         correctIndex: 0,
         explanation:
-          "السؤال كان منفيّاً Gefällt dir die Jacke nicht؟ والجواب مثبت ⇒ doch لا ja.",
+          "في هذا السياق يرفض Doch النفي في السؤال ويؤكد أن السترة تعجب أميرة؛ لا نعمّم هذا التمييز على كل سؤال منفي أو على كل استعمال لـja.",
         errorType: "grammar",
         paragraph: 4,
       },
@@ -594,11 +712,11 @@ export const lessonA108: Lesson = {
       },
       {
         de: "Welche Größe haben Sie?",
-        ar: "أيّ مقاس تلبس؟ (سؤال البائع)",
+        ar: "ما مقاسك؟ (سؤال البائع بأدب)",
       },
       {
-        de: "Das ist mir zu teuer.",
-        ar: "هذا غالٍ عليّ.",
+        de: "Das ist zu teuer.",
+        ar: "هذا غالٍ جداً.",
       },
       {
         de: "Ich nehme diesen Mantel.",
@@ -614,7 +732,7 @@ export const lessonA108: Lesson = {
       },
     ],
     discussionAr:
-      "لو كنتَ مكان أميرة: أتشتري السترة الزرقاء بـ89 يورو أم المعطف الرماديّ بـ45؟ صُغ جوابك بجملتين، تستعمل في الأولى gefallen وفي الثانية passen أو teuer.",
+      "لو كنتَ مكان أميرة، اكتب أو جرّب أن تقول جملتين: الأولى تعبّر عن الإعجاب بـgefallen، والثانية عن المقاس بـpassen أو السعر. هذا السؤال مفتوح للتدريب ولا يُسجَّل دليلاً على أداء شفهي أو نطق.",
   },
 
   listening: {
@@ -625,8 +743,8 @@ export const lessonA108: Lesson = {
         lines: [
           {
             speaker: "Verkäuferin",
-            de: "Guten Tag! Kann ich helfen?",
-            ar: "نهارك سعيد! هل أساعدك؟",
+            de: "Guten Tag! Kann ich Ihnen helfen?",
+            ar: "نهارك سعيد! هل أستطيع مساعدتك؟",
           },
           {
             speaker: "Mona",
@@ -640,17 +758,17 @@ export const lessonA108: Lesson = {
           },
           {
             speaker: "Mona",
-            de: "Ich möchte eine blaue Jacke.",
-            ar: "أريد سترة زرقاء.",
+            de: "Blau, bitte.",
+            ar: "باللون الأزرق، من فضلك.",
           },
           {
             speaker: "Verkäuferin",
-            de: "Hier ist eine blaue Jacke. Wie finden Sie sie?",
-            ar: "هاهي سترة زرقاء. ما رأيك بها؟",
+            de: "Hier ist eine Jacke in Blau. Wie finden Sie sie?",
+            ar: "هذه سترة باللون الأزرق. ما رأيك بها؟",
           },
           {
             speaker: "Mona",
-            de: "Die finde ich sehr schön! Was kostet sie?",
+            de: "Ich finde sie sehr schön! Was kostet sie?",
             ar: "أجدها جميلة جداً! بكم؟",
           },
           {
@@ -666,8 +784,8 @@ export const lessonA108: Lesson = {
         lines: [
           {
             speaker: "Karim",
-            de: "Schau mal! Ich habe ein neues Hemd.",
-            ar: "انظر! لدي قميص جديد.",
+            de: "Schau mal! Ich habe ein Hemd.",
+            ar: "انظر! لدي قميص.",
           },
           {
             speaker: "Anna",
@@ -676,13 +794,13 @@ export const lessonA108: Lesson = {
           },
           {
             speaker: "Karim",
-            de: "Ja, rot ist meine Lieblingsfarbe.",
+            de: "Ja, Rot ist meine Lieblingsfarbe.",
             ar: "نعم، الأحمر لوني المفضل.",
           },
           {
             speaker: "Anna",
-            de: "Und ich trage heute ein blaues Kleid.",
-            ar: "وأنا أرتدي اليوم فستاناً أزرق.",
+            de: "Und ich trage heute ein Kleid. Das Kleid ist blau.",
+            ar: "وأنا أرتدي اليوم فستاناً. الفستان أزرق.",
           },
           {
             speaker: "Karim",
@@ -701,13 +819,13 @@ export const lessonA108: Lesson = {
         questionDe: "Was sucht Mona?",
         questionAr: "ماذا تبحث منى؟",
         options: [
-          "eine blaue Jacke",
-          "ein rotes Hemd",
-          "ein blaues Kleid",
-          "schwarze Schuhe",
+          "eine Jacke in Blau",
+          "ein Hemd",
+          "ein Kleid",
+          "Schuhe",
         ],
         correctIndex: 0,
-        explanation: "قالت: Ich möchte eine blaue Jacke — سترة زرقاء.",
+        explanation: "أجابت Mona: Blau, bitte، ثم عرضت البائعة eine Jacke in Blau.",
         errorType: "vocabulary",
       },
       {
@@ -730,13 +848,13 @@ export const lessonA108: Lesson = {
         questionDe: "Was trägt Anna?",
         questionAr: "ماذا ترتدي آنا؟",
         options: [
-          "ein blaues Kleid",
-          "ein rotes Hemd",
-          "eine blaue Jacke",
+          "ein Kleid",
+          "ein Hemd",
+          "eine Jacke",
           "eine Mütze",
         ],
         correctIndex: 0,
-        explanation: "قالت آنا: Ich trage heute ein blaues Kleid.",
+        explanation: "قالت آنا: Ich trage heute ein Kleid. Das Kleid ist blau.",
         errorType: "vocabulary",
       },
     ],
@@ -744,21 +862,21 @@ export const lessonA108: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات الألوان: ei، sch، وau",
+    title: "نطق الألوان والملابس: ei، au، ü، sch وطول الصوت",
     items: [
-      { de: "weiß", ar: "أبيض", note: "ei = آي + ß = سّ: ڤايس" },
-      { de: "blau", ar: "أزرق", note: "au = آو: بلاو" },
-      { de: "grün", ar: "أخضر", note: "ü: غرين (شفتان مقربتان)" },
-      { de: "gelb", ar: "أصفر", note: "g = غ + l: غيلب" },
-      { de: "schwarz", ar: "أسود", note: "sch = ش: شڤارتس" },
-      { de: "die Schuhe", ar: "الحذاء", note: "sch + u + h: شووه" },
+      { de: "weiß", ar: "أبيض", note: "تقريباً /vaɪ̯s/: ei مثل /aɪ̯/، وß صوت /s/ واحد، لا سّ مشددة؛ ڤايس تقريب كتابي." },
+      { de: "blau", ar: "أزرق", note: "au يقترب من /aʊ̯/؛ «بلاو» تقريب كتابي للصوت." },
+      { de: "grün", ar: "أخضر", note: "ü هو /yː/: اجعل اللسان قريباً من وضع /i/ مع تدوير الشفتين كما في /u/؛ لا يطابق ياءً عربية تماماً." },
+      { de: "gelb", ar: "أصفر", note: "g في البداية /g/ (گ)، لا غ؛ e قصيرة، وb في آخر الكلمة تُنطق قريباً من p." },
+      { de: "schwarz", ar: "أسود", note: "sch = /ʃ/ (ش)، w = /v/ (ڤ)، وz = /t͡s/؛ «شڤارتس» تقريب كتابي." },
+      { de: "die Schuhe", ar: "الأحذية", note: "Schuh: /ʃuː/؛ h لا يُنطق ويشير هنا إلى طول u، وe الأخيرة في Schuhe صوت ضعيف /ə/." },
     ],
-    tip: "الألوان الأربعة التي تنتهي بصوت مختلف عن المتوقع: weiß (آي)، blau (آو)، grün (ü)، schwarz (ش). ركّز عليها.",
+    tip: "تدرّب على فروق واضحة: ei في weiß، au في blau، ü في grün، وsch/w/z في schwarz. التقريب العربي غير مطابق للصوت؛ استمع إلى التسجيل ولا تعتمد عليه وحده.",
     shadowing: [
       {
         de: "Das Hemd ist rot.",
         ar: "القميص أحمر.",
-        tip: "rot = روت (o قصير)",
+        tip: "rot = /roːt/: o طويلة، لا قصيرة.",
       },
       {
         de: "Meine Jacke ist blau.",
@@ -772,8 +890,8 @@ export const lessonA108: Lesson = {
       },
       {
         de: "Die Schuhe sind schwarz.",
-        ar: "الحذاء أسود.",
-        tip: "schwarz = شڤارتس (sch + w = ڤ)",
+        ar: "الأحذية سوداء.",
+        tip: "schwarz = /ʃvaʁt͡s/؛ sch=/ʃ/، w=/v/، z=/t͡s/.",
       },
     ],
   },
@@ -782,22 +900,21 @@ export const lessonA108: Lesson = {
     {
       id: "w1",
       type: "transformation",
-      instructionAr: "صف ما ترتديه اليوم:",
-      prompt: "Was trägst du heute? (اكتب جملة كاملة)",
+      instructionAr: "ترجم إلى الألمانية بجملتين كاملتين:",
+      prompt: "أرتدي سترة. السترة زرقاء.",
       acceptedAnswers: [
-        "Ich trage ein blaues Hemd",
-        "Ich trage eine Jacke",
-        "Ich trage schwarze Schuhe",
+        "Ich trage eine Jacke. Die Jacke ist blau.",
+        "Ich trage eine Jacke. Sie ist blau.",
       ],
-      sampleAnswer: "Ich trage ein blaues Hemd und schwarze Schuhe.",
+      sampleAnswer: "Ich trage eine Jacke. Die Jacke ist blau.",
       explanation:
-        "الصيغة: Ich trage + قطعة + (لون). في A1 نستخدم ein + لون بنهاية -es/-e.",
+        "اكتب جملة عن اللباس بـIch trage، ثم جملة خبرية عن اللون بـsein. الصفة الخبرية بعد sein تبقى بلا نهاية.",
       errorType: "grammar",
     },
     {
       id: "w2",
       type: "fill-blank",
-      instructionAr: "أكمل بالألوان الصحيحة (rot/blau/grün/schwarz):",
+      instructionAr: "أكمل بالألوان الصحيحة (rot/blau/grün):",
       template:
         "Der Himmel ist ___ (أزرق). Das Gras ist ___ (أخضر). Blut ist ___ (أحمر).",
       blanks: [
@@ -865,8 +982,7 @@ export const lessonA108: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr:
-        "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "صحّح فعل sein في الجملة:",
       wrongSentence: "Die Schuhe ist schwarz.",
       wrongWord: "ist",
       correctWord: "sind",
@@ -878,7 +994,7 @@ export const lessonA108: Lesson = {
       id: "e6",
       type: "fill-blank",
       instructionAr: "أكمل بـ tragen بتصريف صحيح:",
-      template: "Ich ___ eine Brille. Du ___ ein Hemd. Sie ___ ein Kleid.",
+      template: "Ich ___ eine Brille. Du ___ ein Hemd. Anna ___ ein Kleid.",
       blanks: [
         { correct: "trage", options: ["trage", "trägst", "trägt"] },
         { correct: "trägst", options: ["trage", "trägst", "trägt"] },
@@ -891,15 +1007,14 @@ export const lessonA108: Lesson = {
       id: "e7",
       type: "transformation",
       instructionAr: "حوّل إلى سؤال عن الرأي:",
-      prompt: "Meine neue Jacke. → (اسأل: ما رأيك في سترتي الجديدة؟)",
+      prompt: "Meine Jacke. → (اسأل عن رأي شخص آخر في سترتي)",
       acceptedAnswers: [
-        "Wie findest du meine neue Jacke",
         "Wie findest du meine Jacke",
-        "Wie findest du meine neue Jacke?",
+        "Wie findest du meine Jacke?",
       ],
-      sampleAnswer: "Wie findest du meine neue Jacke?",
+      sampleAnswer: "Wie findest du meine Jacke?",
       explanation:
-        "Wie findest du + مفعول به. (neue تلميح لتصريف الصفات — سنكملها في B1).",
+        "في هذا السؤال يأتي الشيء بعد finden: Wie findest du meine Jacke?",
       errorType: "word-order",
     },
     {
@@ -915,14 +1030,13 @@ export const lessonA108: Lesson = {
         "أحمل نظارة فقط",
       ],
       correctIndex: 0,
-      explanation: "tragen = يرتدي (عادة دائمة): أرتدي نظارة.",
+      explanation: "tragen هنا بمعنى ارتداء النظارة على الجسم، لا البحث عنها أو شرائها أو حملها باليد فقط.",
       errorType: "vocabulary",
     },
     {
       id: "e9",
       type: "error-correction",
-      instructionAr:
-        "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "صحّح الصفة الخبرية بعد sein:",
       wrongSentence: "Das Kleid ist sehr schöne.",
       wrongWord: "schöne",
       correctWord: "schön",
@@ -934,9 +1048,9 @@ export const lessonA108: Lesson = {
       id: "e10",
       type: "dictation",
       instructionAr: "استمع واكتب الجملة:",
-      audioText: "Ich trage heute eine rote Mütze.",
+      audioText: "Meine Mütze ist rot.",
       explanation:
-        "أرتدي اليوم قبعة حمراء — rote صفة قبل اسم مؤنث (تلميح للمستقبل).",
+        "اكتب Meine Mütze ist rot. الصفة rot خبرية بعد sein، وتُكتب بلا نهاية.",
       errorType: "spelling",
     },
     {
@@ -957,8 +1071,7 @@ export const lessonA108: Lesson = {
     {
       id: "e12",
       type: "error-correction",
-      instructionAr:
-        "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "صحّح صيغة الإشارة قبل اسم مؤنث:",
       wrongSentence: "Dieses Hose ist sehr teuer.",
       wrongWord: "Dieses",
       correctWord: "Diese",
@@ -1026,7 +1139,7 @@ export const lessonA108: Lesson = {
       questionDe: "Das Hemd ist zu klein. Es ___ mir nicht.",
       options: ["passt", "gefällt", "steht", "trägt"],
       correctIndex: 0,
-      explanation: "المقاس ⇒ passen. أمّا gefallen فللذوق وstehen للّياقة.",
+      explanation: "السؤال يقيّد المعنى بالمقاس، لذا الإجابة المقصودة passen. ويمكن أن تكون gefallen صحيحة في جملة أخرى إذا كان المقصود الإعجاب؛ فهي لا تصف المقاس هنا.",
       errorType: "vocabulary",
     },
     {
@@ -1040,10 +1153,10 @@ export const lessonA108: Lesson = {
         "Das Hemd gefällt mir",
         "Ich gefällt das Hemd",
         "Mich gefällt das Hemd",
-        "Das Hemd gefalle mich",
+        "Das Hemd gefällt mich",
       ],
       explanation:
-        "الملبوس هو الفاعل وأنت المستقبِل في الدّاتيف. والجملة الخاطئة تعني «أنا أُعجِب القميصَ».",
+        "في هذا المعنى من gefallen، القطعة هي الفاعل ويأتي الشخص في الداتيف: Das Hemd gefällt mir.",
       errorType: "case",
     },
     {
@@ -1054,7 +1167,7 @@ export const lessonA108: Lesson = {
       wrongWord: "mich",
       correctWord: "mir",
       options: ["mir", "mich", "meiner", "meine"],
-      explanation: "gefallen من أفعال الدّاتيف فلا تنصب أبداً: gefällt mir.",
+      explanation: "الشخص يأتي في الداتيف مع gefallen في هذا المعنى: gefällt mir، لا gefällt mich.",
       errorType: "pronoun",
     },
     {
@@ -1074,7 +1187,7 @@ export const lessonA108: Lesson = {
       type: "word-ordering",
       instructionAr: "رتّب سؤال البائع:",
       tokens: ["Wie", "gefällt", "Ihnen", "dieser", "Mantel", "?"],
-      correctSentence: "Wie gefällt Ihnen dieser Mantel ?",
+      correctSentence: "Wie gefällt Ihnen dieser Mantel?",
       explanation:
         "أداة الاستفهام ثمّ الفعل ثمّ الدّاتيف المهذّب Ihnen ثمّ الفاعل.",
       errorType: "word-order",
@@ -1103,7 +1216,7 @@ export const lessonA108: Lesson = {
       wrongWord: "Sie",
       correctWord: "Ihnen",
       options: ["Ihnen", "Sie", "Ihre", "Ihr"],
-      explanation: "الفاعل هو das Kleid، فالمخاطَب مستقبِل ⇒ Ihnen لا Sie.",
+      explanation: "das Kleid هو الفاعل؛ الشخص يأتي في الداتيف: Ihnen.",
       errorType: "pronoun",
     },
     {
@@ -1112,11 +1225,11 @@ export const lessonA108: Lesson = {
       instructionAr: "طابق كل فعل بمجاله:",
       pairs: [
         { left: "gefallen", right: "الذوق: شكله جميل" },
-        { left: "passen", right: "المقاس: يدخل عليّ" },
+        { left: "passen", right: "المقاس: يناسبني" },
         { left: "stehen", right: "اللياقة: يليق بك" },
         { left: "anziehen", right: "الارتداء: ألبسه الآن" },
       ],
-      explanation: "أربعة أفعال متجاورة في المتجر ولكلٍّ مجاله الخاص.",
+      explanation: "في هذه الأمثلة تختلف معاني الأفعال؛ وقد يتغير معنى الفعل بحسب التركيب والسياق.",
       errorType: "vocabulary",
     },
     {
@@ -1132,8 +1245,35 @@ export const lessonA108: Lesson = {
       ],
       correctIndex: 0,
       explanation:
-        "جواب سليم يفصل الذوق (gefallen) عن المقاس (passen)، والضمير في الدّاتيف.",
+        "الجواب يعبّر عن الإعجاب بـgefallen وعن المقاس بـpassen؛ في المعنيين المعروضين يأتي الشخص في الداتيف.",
       errorType: "grammar",
+    },
+    {
+      id: "e26",
+      type: "matching",
+      instructionAr: "صِل اسم كل قطعة بترجمتها، وانتبه إلى المفرد والجمع:",
+      pairs: [
+        {left: "das Hemd", right: "القميص"},
+        {left: "die Hose", right: "البنطال"},
+        {left: "die Jacke", right: "السترة"},
+        {left: "der Mantel", right: "المعطف"},
+        {left: "das Kleid", right: "الفستان"},
+        {left: "der Pullover", right: "الكنزة"},
+        {left: "der Schuh", right: "حذاء واحد"},
+        {left: "die Schuhe", right: "الأحذية (جمع)"},
+      ],
+      explanation: "احفظ الاسم مع أداة جنسه؛ der Schuh مفرد وdie Schuhe جمع.",
+      errorType: "vocabulary",
+    },
+    {
+      id: "e27",
+      type: "multiple-choice",
+      instructionAr: "اختر الرد الذي يناقض النفي ويجيب بالإيجاب:",
+      questionDe: "Gefällt dir die Jacke nicht? — ___, sie gefällt mir.",
+      options: ["Doch", "Nein", "Nicht", "Kein"],
+      correctIndex: 0,
+      explanation: "Doch يرفض النفي في السؤال ويؤكد أن السترة تعجب المتكلم؛ Nein سيؤكد أنها لا تعجبه.",
+      errorType: "negation",
     },
   ],
 
@@ -1150,20 +1290,20 @@ export const lessonA108: Lesson = {
         whyAr: "جمع → sind.",
       },
       {
-        wrong: "Ich trage eine rot Jacke.",
-        right: "Ich trage eine rote Jacke. (أو: Die Jacke ist rot)",
+        wrong: "Die Jacke ist rote.",
+        right: "Die Jacke ist rot.",
         whyAr:
-          "الصفة قبل الاسم تحتاج نهاية (rote) — في A1 الأسهل: الخبرية Die Jacke ist rot.",
+          "بعد sein تأتي الصفة الخبرية في صورتها الأساسية: Die Jacke ist rot.",
       },
     ],
     eselsbruecken: [
-      "«ألوان علم ألمانيا»: أسود-أحمر-ذهبي (schwarz-rot-gold) — ستتذكرها في أي احتفال ألماني.",
-      "«الصفة الخبرية ساكنة»: ist + صفة بدون نهاية دائماً في A1.",
+      "ألوان العلم الألماني تُسمّى أحياناً Schwarz-Rot-Gold؛ في الجملة العادية تُكتب أسماء الألوان صفاتٍ بحروف صغيرة: schwarz, rot, gold.",
+      "بعد sein في جملة الوصف: ist/sind + صفة خبرية بلا نهاية، مثل Die Jacke ist rot.",
     ],
     culturalNote: {
       title: "عند شراء الملابس في ألمانيا",
       content:
-        "في المتاجر الألمانية: «Anprobieren» (التجربة) متاحة دائماً مع «Umkleidekabine» (غرفة القياس). وإذا لم يعجبك، لديك حق «Umtausch» (الاستبدال) خلال أسبوعين عادة بشرط الاحتفاظ بالإيصال (der Kassenbon).",
+        "عند الشراء من متجر حضوري في ألمانيا، لا يوجد حق قانوني عام لإرجاع سلعة سليمة لمجرد تغيير الرأي؛ سياسة الاستبدال أو الإرجاع الطوعي تختلف بين المتاجر، فاسأل عنها واحتفظ بالإيصال. أما الشراء عن بُعد، فيوجد في كثير من الحالات حق عدول مدته 14 يوماً مع استثناءات وشروط. هذه معلومة عامة وليست استشارة قانونية.",
     },
   },
 
@@ -1201,14 +1341,13 @@ export const lessonA108: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr:
-        "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Ich trage ein rot Hemd.",
-      wrongWord: "rot",
-      correctWord: "rotes",
-      options: ["rotes", "rote", "roten", "rot"],
+      instructionAr: "صحّح الصفة الخبرية بعد sein:",
+      wrongSentence: "Das Hemd ist rotes.",
+      wrongWord: "rotes",
+      correctWord: "rot",
+      options: ["rot", "rote", "rotes", "roten"],
       explanation:
-        "الصفة قبل اسم محايد (das Hemd): ein rotes Hemd. أو استخدم الخبرية: Das Hemd ist rot.",
+        "بعد sein في جملة الوصف نقول Das Hemd ist rot؛ لا تأخذ الصفة الخبرية نهاية هنا.",
       errorType: "grammar",
     },
     {
@@ -1232,8 +1371,8 @@ export const lessonA108: Lesson = {
       id: "fc1",
       de: "die Kleidung",
       ar: "الملابس",
-      example: "Ich kaufe neue Kleidung.",
-      exampleAr: "أشتري ملابس جديدة.",
+      example: "Ich kaufe Kleidung.",
+      exampleAr: "أشتري ملابس.",
       level: "A1",
     },
     {
@@ -1263,9 +1402,9 @@ export const lessonA108: Lesson = {
     {
       id: "fc5",
       de: "die Schuhe",
-      ar: "الحذاء (جمع)",
+      ar: "الأحذية (جمع؛ المفرد der Schuh)",
       example: "Die Schuhe sind neu.",
-      exampleAr: "الحذاء جديد.",
+      exampleAr: "الأحذية جديدة.",
       level: "A1",
     },
     {
@@ -1295,9 +1434,9 @@ export const lessonA108: Lesson = {
     {
       id: "fc9",
       de: "Welche Größe haben Sie?",
-      ar: "أيّ مقاس تلبس؟",
+      ar: "ما مقاسك؟",
       example: "Welche Größe haben Sie? — Größe 40.",
-      exampleAr: "أيّ مقاس تلبس؟ — مقاس 40.",
+      exampleAr: "ما مقاسك؟ — مقاس 40.",
       level: "A1",
     },
     {
@@ -1312,16 +1451,16 @@ export const lessonA108: Lesson = {
       id: "fc11",
       de: "Das gefällt mir.",
       ar: "هذا يعجبني.",
-      example: "Der blaue Pullover gefällt mir sehr.",
-      exampleAr: "الكنزة الزرقاء تعجبني كثيراً.",
+      example: "Der Pullover gefällt mir sehr.",
+      exampleAr: "الكنزة تعجبني كثيراً.",
       level: "A1",
     },
     {
       id: "fc12",
       de: "Die Schuhe gefallen mir.",
-      ar: "الحذاء يعجبني. (جمع ⇐ الفعل جمع)",
+      ar: "الأحذية تعجبني. (جمع ⇐ الفعل جمع)",
       example: "Die Schuhe gefallen mir, aber sie sind teuer.",
-      exampleAr: "الحذاء يعجبني لكنّه غالٍ.",
+      exampleAr: "الأحذية تعجبني، لكنها غالية.",
       level: "A1",
     },
     {
@@ -1376,8 +1515,8 @@ export const lessonA108: Lesson = {
       id: "fc19",
       de: "grau",
       ar: "رماديّ",
-      example: "Der graue Mantel gefällt mir.",
-      exampleAr: "المعطف الرماديّ يعجبني.",
+      example: "Der Mantel ist grau.",
+      exampleAr: "المعطف رماديّ.",
       level: "A1",
     },
     {
@@ -1400,26 +1539,26 @@ export const lessonA108: Lesson = {
       id: "fc22",
       de: "der Herbst",
       ar: "الخريف",
-      example: "Im Herbst wird es kalt.",
-      exampleAr: "في الخريف يصير الجوّ بارداً.",
+      example: "Im Herbst ist es kalt.",
+      exampleAr: "في الخريف يكون الجوّ بارداً.",
       level: "A1",
     },
   ],
 
-  /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
+  /* ═══ أنشطة الوساطة والتفاعل ═══ */
   mediation: [
     {
       id: "med-a1-08-1",
       type: "summarize-de-to-ar",
       titleAr: "لخّص وصف ملابس بالعربية",
       sourceDe:
-        "Im Winter trage ich eine warme Jacke, einen Schal und Handschuhe. Meine Lieblingsfarbe ist dunkelblau.",
+        "Im Winter trage ich eine Jacke. Sie ist warm. Ich trage auch einen Schal und Handschuhe. Meine Lieblingsfarbe ist Blau.",
       taskAr: "انقل بالعربية ما يرتديه الشخص في الشتاء ولونه المفضل.",
       modelAnswerAr:
-        "«في الشتاء أرتدي سترة دافئة ووشاحاً وقفازات. لوني المفضل أزرق داكن.»",
+        "«في الشتاء أرتدي سترة. هي دافئة. أرتدي أيضاً وشاحاً وقفازات. لوني المفضل أزرق.»",
       keyPointsAr: [
         "ذكرت الملابس الشتوية (سترة، وشاح، قفازات)",
-        "نقلت اللون المفضل (أزرق داكن)",
+        "نقلت اللون المفضل (أزرق)",
       ],
     },
   ],
@@ -1427,47 +1566,47 @@ export const lessonA108: Lesson = {
     {
       id: "int-a1-08-1",
       scenarioAr: "صديقة تسأل رأيك في ملابس.",
-      scenarioDe: "Eine Freundin fragt deine Meinung über Kleidung.",
+      scenarioDe: "Eine Freundin fragt dich nach deiner Meinung zu ihrer Jacke.",
       strategyAr:
-        "الاستراتيجية: إبداء الرأي بلطف (Ich finde... / Wie findest du...?).",
+        "الاستراتيجية: إبداء الرأي بلطف (Ich finde... / Wie findest du...?). الخيارات هنا محاكاة نصية، وليست قياساً لأداء شفهي أو نطق.",
       rounds: [
         {
           speakerDe: "Wie findest du diese Jacke?",
           speakerAr: "كيف تجد هذه السترة؟",
           options: [
             {
-              de: "Ich finde sie sehr schön! Sie passt gut zu dir.",
-              ar: "أجدها جميلة جداً! تناسبك جيداً.",
+              de: "Ich finde sie sehr schön. Die Jacke steht dir gut.",
+              ar: "أجدها جميلة جداً. السترة تليق بك.",
               best: true,
               replyDe: "Danke! Und die Farbe?",
               replyAr: "شكراً! واللون؟",
             },
             {
-              de: "Sie ist hässlich, wie du.",
-              ar: "إنها قبيحة مثلك.",
+              de: "Was kostet die Jacke?",
+              ar: "كم ثمن السترة؟",
               best: false,
-              replyDe: "Das ist wirklich unhöflich!",
-              replyAr: "هذا غير مهذب حقاً!",
+              replyDe: "Das weiß ich noch nicht. Wie gefällt sie dir?",
+              replyAr: "لا أعرف بعد. ما رأيك بها؟",
             },
           ],
         },
         {
-          speakerDe: "Welche Farbe passt besser?",
-          speakerAr: "أي لون يناسب أكثر؟",
+          speakerDe: "Welche Farbe gefällt dir besser?",
+          speakerAr: "أيّ لون يعجبك أكثر؟",
           options: [
             {
-              de: "Ich denke, Rot passt besser als Blau.",
-              ar: "أعتقد أن الأحمر يناسب أكثر من الأزرق.",
+              de: "Blau gefällt mir besser.",
+              ar: "الأزرق يعجبني أكثر.",
               best: true,
-              replyDe: "Guter Tipp! Ich probiere Rot.",
-              replyAr: "نصيحة جيدة! سأجرب الأحمر.",
+              replyDe: "Danke! Dann probiere ich die Jacke in Blau.",
+              replyAr: "شكراً! سأجرّب السترة باللون الأزرق إذن.",
             },
             {
-              de: "Alle Farben sind gleich.",
-              ar: "كل الألوان متشابهة.",
+              de: "Ich wohne in Bonn.",
+              ar: "أسكن في بون.",
               best: false,
-              replyDe: "Nein, Farben machen einen großen Unterschied!",
-              replyAr: "لا، الألوان تصنع فرقاً كبيراً!",
+              replyDe: "Danke, aber ich habe nach der Farbe gefragt.",
+              replyAr: "شكراً، لكنني سألت عن اللون.",
             },
           ],
         },
