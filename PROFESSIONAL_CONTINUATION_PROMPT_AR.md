@@ -8,7 +8,7 @@
 
 ## الحالة الحالية
 
-- اكتملت مراجعة محتوى A1-12 واختباراته وملخصه، وأُنشئ تقرير خاص بالدرس. **تحقق من `git log` في بداية الجلسة التالية لتأكيد commit/push النهائيين.**
+- اكتملت مراجعة محتوى A1-12 واختباراته وملخصه؛ سُجلت الدفعة في commit `91e6553` (`Audit A1-12 lesson content and evidence`) ودُفعت بنجاح إلى `origin/arena/01a10631-deutschpfad` بتاريخ 2026-10-05. تحقق من السجل والفرع عند بدء الجلسة التالية.
 - الملفات المحددة لدفعة A1-12: `src/data/lessons/a1/a1-12.ts`, `src/data/lessons/a1/a1-12.test.ts`, سطر A1-12 في `src/data/lessons/meta.ts`, هذا التقرير، وهذا الموجّه.
 - اختبارات A1-12: **8/8 ناجحة**؛ ESLint المحدد و`git diff --check` ناجحان.
 - `academic-depth.test.ts`: 16 ناجحاً و5 فاشلة، وكل الإخفاقات الظاهرة تخص A1-03/A1-06 لا A1-12. `typecheck` ما زال يفشل في `learning-path-client.tsx`, `unit-row.tsx`, و`src/lib/tests/test-engine.test.ts`؛ راجع التقرير ولا تضمّن إصلاحها ضمن درس A1 آخر دون نطاق مستقل.
