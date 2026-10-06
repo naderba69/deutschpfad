@@ -12,3 +12,11 @@ export function getListeningQuestionTaskId(
     ? `listening-transcript:${lessonId}:${itemId}:${questionId}`
     : `listening:${itemId}:${questionId}`;
 }
+
+/** Textual dialogue-ordering exposes transcript lines; each dialogue has its own reveal gate. */
+export function isDialogueOrderingUnlocked(
+  revealedTranscripts: Readonly<Record<string, boolean>>,
+  itemId: string,
+): boolean {
+  return revealedTranscripts[itemId] === true;
+}

@@ -11,7 +11,10 @@ import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {DetailTabs} from "@/components/shared/detail-tabs";
 import {recordEvent} from "@/lib/analytics/events";
-import {getListeningQuestionTaskId} from "@/lib/lesson/listening-evidence";
+import {
+  getListeningQuestionTaskId,
+  isDialogueOrderingUnlocked,
+} from "@/lib/lesson/listening-evidence";
 import {cn} from "@/lib/utils";
 import type { ListeningItem, ListeningQuestion } from "@/types/lesson";
 
@@ -53,8 +56,8 @@ export function HoerverstehenSection({
   lessonId: string;
 }) {
   const [rate, setRate] = React.useState<number>(1);
-  const [showText, setShowText] = React.useState(false);
-  const [transcriptWasRevealed, setTranscriptWasRevealed] = React.useState(false);
+  const [visibleTranscripts, setVisibleTranscripts] = React.useState<Record<string, boolean>>({});
+  const [revealedTranscripts, setRevealedTranscripts] = React.useState<Record<string, boolean>>({});
 
   return (
     <div className="space-y-6">
@@ -86,6 +89,9 @@ export function HoerverstehenSection({
         tabs={[
           ...items.map((item) => {
             const fullText = item.lines.map((l) => l.de).join(" ");
+            const showText = Boolean(visibleTranscripts[item.id]);
+            const transcriptWasRevealed = isDialogueOrderingUnlocked(revealedTranscripts, item.id);
+            const orderingUnlocked = transcriptWasRevealed;
             return {
               id: `item-${item.id}`,
               label: item.title,
@@ -101,19 +107,40 @@ export function HoerverstehenSection({
                       variant={showText ? "outline" : "default"}
                       size="sm"
                       onClick={() => {
-                        if (!showText) setTranscriptWasRevealed(true);
-                        setShowText((v) => !v);
+                        const nextShowText = !showText;
+                        setVisibleTranscripts((previous) => ({
+                          ...previous,
+                          [item.id]: nextShowText,
+                        }));
+                        if (nextShowText) {
+                          setRevealedTranscripts((previous) => ({
+                            ...previous,
+                            [item.id]: true,
+                          }));
+                        }
                       }}
                     >
-                      {showText ? "أخف النص" : "أظهر النص بعد الاستماع"}
+                      {showText ? "أخف النص" : "اكشف نص الحوار"}
                     </Button>
-                    <SpeakButton text={fullText} rate={rate} size="sm" label="كل النص" />
+                    <SpeakButton
+                      text={fullText}
+                      rate={rate}
+                      size="sm"
+                      label="كل النص"
+                      ariaLabel="استمع إلى الحوار كاملاً"
+                    />
                   </div>
                   <p className="text-xs text-muted-foreground">
                     {transcriptWasRevealed
-                      ? "كُشف نص الحوار سابقاً؛ إجابات الأسئلة التالية للمراجعة ولا تُحتسب دليلاً على الاستماع."
-                      : "إظهار النص اختياري للمراجعة؛ إذا كشفته فلن تُحتسب إجابات الأسئلة التالية دليلاً على الاستماع."}
+                      ? "كُشف نص هذا الحوار؛ أسئلته الآن للمراجعة ولا تُحتسب دليلاً مستقلاً على الاستماع. تمرين الترتيب نصّي أيضاً."
+                      : "استمع قبل كشف النص. كشف هذا الحوار يفتح تمرين ترتيب نصّي، ولا تُحتسب إجاباته اللاحقة دليلاً مستقلاً على الاستماع."}
                   </p>
+
+                  {showText ? (
+                    <p className="text-xs text-muted-foreground">
+                      تقييم الترديد يقارن تفريغ المتصفح بالنص المستهدف؛ لا يقيس مخارج الحروف أو النبر، ولا يُحتسب دليلاً مستقلاً على هدف الاستماع.
+                    </p>
+                  ) : null}
 
                   <div className="space-y-3">
                     {item.lines.map((line, i) => (
@@ -134,16 +161,21 @@ export function HoerverstehenSection({
                           )}
                         </div>
                         <div className="flex shrink-0 flex-col items-end gap-1.5">
-                          <SpeakButton text={line.de} rate={rate} />
-                          <SpeakAndScore target={line.de} compact />
+                          <SpeakButton text={line.de} rate={rate} ariaLabel={`استمع إلى السطر ${i + 1}`} />
+                          {showText ? <SpeakAndScore target={line.de} compact /> : null}
                         </div>
                       </div>
                     ))}
                   </div>
 
-                  {/* ترتيب الحوار — مهارة تُختبر في Goethe */}
                   <div className="border-t pt-4">
-                    <DialogueOrdering item={item} />
+                    {orderingUnlocked ? (
+                      <DialogueOrdering item={item} />
+                    ) : (
+                      <p className="rounded-xl border border-dashed p-3 text-sm text-muted-foreground">
+                        اكشف نص الحوار صراحةً أولاً لعرض تمرين الترتيب النصّي. هذا التمرين لا يُحتسب دليلاً مستقلاً على الاستماع.
+                      </p>
+                    )}
                   </div>
                 </div>
               ),
@@ -173,7 +205,7 @@ export function HoerverstehenSection({
                           lessonId,
                           q.itemId,
                           q.id,
-                          transcriptWasRevealed,
+                          Boolean(revealedTranscripts[q.itemId]),
                         ),
                       });
                     }}

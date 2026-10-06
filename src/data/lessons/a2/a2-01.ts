@@ -19,39 +19,91 @@ export const lessonA201: Lesson = {
   lernziele: [
     {
       id: "z1",
-      de: "Ich kann die Stammformen starker Verben in Reihen lernen.",
-      ar: "أن أتعلّم صور الأفعال القوية الثلاث في عائلاتٍ لا قوائم.",
+      de: "Ich kann ausgewählte Stammformen starker und gemischter Verben erkennen und den gezeigten Mustern zuordnen.",
+      ar: "أن أميّز صور أفعال قوية ومختلطة محددة، وأربطها بالأنماط المعروضة دون تعميمها على كل فعل.",
+      evidence: {
+        exerciseIds: ["e11", "e12", "e13"],
+        taskIds: ["practice:a2-01:e11", "practice:a2-01:e12", "practice:a2-01:e13"],
+        labelAr: "إكمال Partizip II ومطابقة صور الأفعال المختارة بأنماطها المعروضة.",
+        completion: "all-correct",
+      },
     },
     {
       id: "z2",
-      de: "Ich weiß, wann man Perfekt und wann Präteritum benutzt.",
-      ar: "أن أعرف متى أستعمل Perfekt ومتى Präteritum (war · hatte · konnte).",
+      de: "Ich kann in vorgegebenen Reisebeispielen Perfekt und Präteritum unterscheiden und eine zur beschriebenen Verwendung passende Zielform wählen.",
+      ar: "أن أميّز في أمثلة سفر موجّهة بين Perfekt وPräteritum، وأختار الصيغة الملائمة للسياق المحدّد.",
+      evidence: {
+        exerciseIds: ["e14", "e15", "e23", "rq4"],
+        taskIds: ["practice:a2-01:e14", "practice:a2-01:e15", "practice:a2-01:e23", "reading:read-a2-01:rq4"],
+        labelAr: "اختيار الصيغة المحايدة المستهدفة لـsein والأفعال الناقصة، وتحويل مثال محدد، وفهم استعمال Präteritum في النص.",
+        completion: "all-correct",
+      },
     },
     {
       id: "z3",
-      de: "Ich kann längere Sätze im Perfekt richtig ordnen.",
-      ar: "أن أرتّب المساحة الوسطى في جملة Perfekt الطويلة ترتيباً صحيحاً.",
+      de: "Ich kann einfache Perfekt-Hauptsätze mit Verbklammer und einer neutralen Mittelfeld-Reihenfolge bilden.",
+      ar: "أن أرتّب جملة خبرية بسيطة في Perfekt داخل القوسين، مع تطبيق تفضيلات محايدة محددة لترتيب المساحة الوسطى.",
+      evidence: {
+        exerciseIds: ["e4", "e16", "e17", "e18", "e19"],
+        taskIds: ["practice:a2-01:e4", "flow-practice:a2-01:e4", "practice:a2-01:e16", "practice:a2-01:e17", "practice:a2-01:e18", "practice:a2-01:e19"],
+        labelAr: "ترتيب جملة Perfekt، والتدرب على TeKaMoLo وترتيب الضمائر والمفعول والنفي في أمثلة محددة.",
+        completion: "all-correct",
+      },
     },
     {
       id: "z4",
-      de: "Ich kann eine Reise buchen und mich höflich beschweren.",
-      ar: "أن أحجز رحلةً وأشتكي بأدبٍ في فندقٍ أو محطّة.",
+      de: "Ich kann grundlegende Buchungs- und Fahrkartenformulierungen verstehen und für eine konkrete Hotelsituation eine höfliche Beschwerde auswählen.",
+      ar: "أن أفهم عبارات أساسية للحجز والتذاكر، وأختار صياغة شكوى واضحة ومهذبة في موقف فندقي محدد.",
+      evidence: {
+        exerciseIds: ["e21", "e22", "e25"],
+        taskIds: ["practice:a2-01:e21", "practice:a2-01:e22", "practice:a2-01:e25"],
+        labelAr: "تفسير عبارة تذكرة ذهاب فقط/ذهاب وعودة، واختيار صياغة شكوى وطلب حجز ملائمين للموقفين المعروضين.",
+        completion: "all-correct",
+      },
     },
     {
       id: "z5",
-      de: "Ich kann eine Reisegeschichte zusammenhängend erzählen.",
-      ar: "أن أحكي قصّة رحلةٍ حكايةً مترابطة.",
+      de: "Ich kann in einer angeleiteten Schreibaufgabe einen Satz über eine vergangene Reise ins Perfekt umformen.",
+      ar: "أن أحوّل جملة موجّهة عن رحلة سابقة إلى Perfekt كتابةً.",
+      evidence: {
+        exerciseIds: ["w1"],
+        taskIds: ["writing:a2-01:w1"],
+        labelAr: "تحويل جملة موجّهة تضم فعل سفر وفعلًا آخر إلى Perfekt؛ لا يقيس ذلك كتابة قصة حرة مترابطة.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z6",
+      de: "Ich kann zentrale Informationen aus einer Reiseerzählung entnehmen.",
+      ar: "أن أستخرج معلومات أساسية من قصة رحلة.",
+      evidence: {
+        exerciseIds: ["rq1", "rq2", "rq3", "rq6"],
+        taskIds: ["reading:read-a2-01:rq1", "reading:read-a2-01:rq2", "reading:read-a2-01:rq3", "reading:read-a2-01:rq6"],
+        labelAr: "الإجابة الصحيحة عن أسئلة الفهم التي تحيل إلى أحداث الرحلة صراحةً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z7",
+      de: "Ich kann explizite Informationen aus einer vorgelesenen Reiseunterhaltung entnehmen, solange das Transkript nicht geöffnet wurde.",
+      ar: "أن ألتقط معلومات صريحة من حوار سفر يُقرأ بصوت اصطناعي، ما دام نصه غير مكشوف.",
+      evidence: {
+        exerciseIds: ["q1", "q2", "q3", "q4"],
+        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l1:q4"],
+        labelAr: "الإجابة عن أسئلة الحوار بعد الاستماع إلى TTS مع إخفاء التفريغ؛ الإجابات بعد كشف النص لا تدخل الدليل.",
+        completion: "all-correct",
+      },
     },
   ],
   einfuehrung: {
     motivatingQuestionAr:
-      "في A1 قلت: Ich gehe nach Deutschland (أذهب الآن). ماذا لو أردت أن تحكي أنك ذهبت أمس؟ الألمانية لا تستخدم فعل الماضي فقط — بل تركيباً من فعلين! خمّن كيف؟",
+      "في A1-14 درستَ صيغة Perfekt. كيف تحكي عن رحلة ماضية؟ قارن «Ich fahre nach Berlin» بـ«Ich bin nach Berlin gefahren»، ثم لاحظ أن «Ich fuhr» صيغة ماضية أخرى تظهر في سياقات مختلفة.",
     motivatingQuestionDe: "Was hast du im Urlaub gemacht?",
     contextAr:
-      "نبدأ مستوى A2 بزمن المستقبل الأهم في الحديث اليومي: Perfekt. الألمان يتحدثون عن الماضي بهذا التركيب في 90% من المحادثات — وليس بـ Präteritum (الذي سنأخذه لاحقاً للكتابة).",
+      "Perfekt (haben/sein + Partizip II) طريقة شائعة للحديث عن أحداث ماضية في سياقات كثيرة، لكنه ليس صيغة الماضي الوحيدة. يظهر Präteritum أيضاً في الحديث والكتابة، ومنه صيغ كثيرة الدوران مثل war وhatte وأفعال ناقصة؛ ويتأثر الاختيار بالسياق والسجل والمنطقة. يبني هذا الدرس على أساس A1-14 ويعرض أمثلة محددة لا قاعدة مطلقة.",
     contextDe: "Ich bin nach Berlin geflogen und habe viel gesehen.",
     connectionToPreviousAr:
-      "تتذكر haben (درس 3) وwerden (درس 12) من A1. اليوم نحتاج haben وsein معاً لبناء Perfekt — وكل كلمة عربية «فعلتُ» ستتحول لهذا التركيب.",
+      "في A1-14 درست أساس بناء Perfekt واختيار haben/sein في أمثلة محددة. نعود إليه هنا ونوسّع صور الأفعال القوية، ثم نقارن الاستعمالات الشائعة لـPerfekt وPräteritum. لا تُحوّل صيغة عربية واحدة آلياً إلى زمن ألماني واحد؛ اختر التركيب بحسب المعنى والسياق.",
     activateVocabulary: [
       { de: "der Urlaub", ar: "الإجازة" },
       { de: "die Reise", ar: "الرحلة" },
@@ -78,10 +130,10 @@ export const lessonA201: Lesson = {
       type: "multiple-choice",
       instructionAr:
         "مراجعة من A1 (درس a1-11 — التنقل في المدينة): اختر حرف الجر الصحيح:",
-      questionDe: "Ich fahre ___ Deutschland.",
+      questionDe: "Wir fahren von Tunis ___ Deutschland.",
       options: ["nach", "zu", "in", "aus"],
       correctIndex: 0,
-      explanation: "البلدان تأخذ nach: nach Deutschland (درس المدينة).",
+      explanation: "في هذا المثال Deutschland اسم بلد بلا أداة مع معنى الوجهة، لذا نقول nach Deutschland. وتوجد أسماء بلدان تأخذ أداة وتأتي معها تراكيب أخرى.",
       errorType: "preposition",
     },
     {
@@ -101,9 +153,9 @@ export const lessonA201: Lesson = {
       titleAr: "عائلات الأفعال القوية — Ablaut ونظامه",
       titleDe: "Starke Verben und ihre Ablautreihen",
       explanationAr:
-        "تعرف Perfekt من A1: مساعدٌ في المركز الثاني وPartizip II في الآخر، وتعرف أنّ الأفعال القوية تُغيّر صوت جذرها (trinken ⟵ getrunken). وقيل لك حينها: **احفظها**. واليوم نسحب ذلك القول — لأنّها ليست فوضى بل **عائلات**.\n\n**الظاهرة اسمها Ablaut** — تناوبُ حركة الجذر. وهي أقدم من الألمانية نفسها: ورثتها عن الهندوأوروبية الأمّ، وتراها في الإنجليزية كذلك (sing–sang–sung · drink–drank–drunk). والأفعال القوية في الألمانية نحو **200 فعل**، لكنّ العائلات الكبرى **سبع**، ومن حفظها حفظ الأغلبية.\n\n**كلّ فعلٍ قويّ له ثلاث صور (Stammformen) تُحفظ معاً:**\nالمصدر ⟵ Präteritum ⟵ Partizip II ⟵ **trinken – trank – getrunken**\nولا تحفظ الصورة الثانية وحدها ولا الثالثة وحدها: احفظ الثلاث سلسلةً، فهي كذلك تُطبع في الذهن.\n\n**أهمّ أربع عائلات — تغطّي أكثر من نصف ما ستحتاجه:**\n· **i – a – u:** trinken – trank – getrunken · finden – fand – gefunden · singen – sang – gesungen\n· **ei – ie – ie:** schreiben – schrieb – geschrieben · bleiben – blieb – geblieben · steigen – stieg – gestiegen\n· **ie – o – o:** fliegen – flog – geflogen · verlieren – verlor – verloren · schließen – schloss – geschlossen\n· **e – a – o:** nehmen – nahm – genommen · sprechen – sprach – gesprochen · helfen – half – geholfen\n\n**وطائفةٌ رابعة تُسمّى الأفعال المختلطة (gemischte Verben):** تجمع تغيّر الجذر مع نهاية الضعيفة **-t**:\ndenken – dachte – **gedacht** · bringen – brachte – **gebracht** · wissen – wusste – **gewusst** · kennen – kannte – **gekannt**\nوهي قليلة جداً (نحو تسعة أفعال) لكنّها من أكثر الأفعال دوراناً، فتستحقّ الحفظ المفرد.\n\n**والفائدة العملية:** حين تقابل فعلاً جديداً، لا تسأل „أقويٌّ هو أم ضعيف؟“ بل **قِس على عائلته**. فإن عرفت schreiben – schrieb – geschrieben عرفت أنّ bleiben تسير معها، وأنّ treiben وreiben كذلك.",
+        "تُعرض الأفعال القوية غالباً بثلاث صور أساسية للحفظ: المصدر وPräteritum وPartizip II، مثل trinken – trank – getrunken. ويُسمّى تناوب حركة الجذر بين بعض هذه الصور Ablaut. تذكر المراجع سبع فئات تقليدية للأنماط، لكنّ هذا تصنيف وصفي يساعد على تنظيم أمثلة؛ ليس خوارزمية تتنبأ بصيغة كل فعل جديد، كما أن بعض الأفعال لها تفاصيل أو صيغ بديلة.\n\n**أمثلة على أنماط شائعة في هذه الكتلة:**\n· **i – a – u:** trinken – trank – getrunken · finden – fand – gefunden · singen – sang – gesungen\n· **ei – ie – ie:** schreiben – schrieb – geschrieben · bleiben – blieb – geblieben · steigen – stieg – gestiegen\n· **ie – o – o:** fliegen – flog – geflogen · verlieren – verlor – verloren · schließen – schloss – geschlossen\n· **e – a – o:** nehmen – nahm – genommen · sprechen – sprach – gesprochen · helfen – half – geholfen\n\nهذه أمثلة منتقاة لا قائمة شاملة، ولا تدّعي أن أربع مجموعات تغطي نسبة ثابتة من مفردات المتعلم. تعلّم الصور الموثقة لكل فعل ولا تستنتج صورة فعل غير معروف من حركة واحدة وحدها.\n\nوتجمع بعض الأفعال المختلطة (gemischte Verben) تغيّر الجذر مع صيغة تنتهي بـ **-t**، مثل denken – dachte – gedacht وbringen – brachte – gebracht وwissen – wusste – gewusst وkennen – kannte – gekannt. عددها وتصنيفها يعتمدان على ما يُدرج في القائمة، لذلك لا نقدّم عدداً ثابتاً هنا.\n\n**الفائدة العملية:** قارن صور الفعل لتلاحظ النمط وتستعين به في التذكّر؛ لكن احفظ الفعل بصوره المسجلة، وانتبه إلى أن الأفعال ذات البادئة قد ترث صور الفعل الأساسي مع قواعد مستقلة لموضع ge-.",
       whyAr:
-        "لماذا تُغيّر بعض الأفعال حركتها بدل أن تُلحق بها نهايةً كسائرها؟ لأنّ **الأفعال القوية هي الأقدم**. كان تغيير الحركة الداخلية هو الطريقة الجرمانية الأصلية لصنع الماضي، ثمّ نشأت الطريقة الأسهل (إلحاق -t) وانتشرت، فانتقلت إليها الأفعال الجديدة والقليلة الاستعمال، وبقيت على القديم الأفعالُ **كثيرة الدوران** لأنّ كثرة النطق تحمي الشكل من التسوية.\n\nولهذا مفارقةٌ مفيدة لك: الأفعال القوية هي **أهمّ** الأفعال بالضبط لأنّها شاذّة. فما شذّ إلاّ لأنّه كثير الاستعمال، وما كثر استعماله فأنت محتاجٌ إليه. فالجهد المبذول في حفظها مردودُه أعلى من أيّ حفظٍ آخر في اللغة.\n\nولماذا نُحفّظها في عائلاتٍ لا قوائم؟ لأنّ الذاكرة تحفظ **الأنماط** أضعاف ما تحفظ العناصر المفردة. قائمةٌ من مئتي فعلٍ عبءٌ لا يُحتمل، وسبعُ عائلاتٍ بأمثلةٍ نموذجية عبءٌ محتمَل. وهذه ليست حيلةً تعليمية بل وصفٌ صادق للبنية: العائلات موجودة في اللغة فعلاً، وليست تصنيفاً فرضه المعلّمون.",
+        "التصنيف يصف طريقة تصريف أفعال معينة؛ لا يضمن أن كل فعل يشبهها سيتبع النمط نفسه بلا استثناء. اخترنا هنا أمثلة تعليمية محددة، ويظل الرجوع إلى صورة الفعل في معجم موثوق ضرورياً، ولا سيما عند اختلاف Präteritum أو Partizip II أو وجود أكثر من صيغة. هدف هذا التبسيط مساعدة المتعلم على حفظ مجموعة صغيرة، لا إثبات سبب تاريخي واحد أو قاعدة ذهنية عامة لجميع الأفعال.",
       table: {
         title: "عائلات Ablaut الكبرى — الصور الثلاث",
         columns: ["النمط", "المصدر", "Präteritum", "Partizip II", "المعنى"],
@@ -148,7 +200,7 @@ export const lessonA201: Lesson = {
         },
         {
           de: "Sie ist nach Istanbul geflogen.",
-          ar: "طارت إلى إسطنبول. (fliegen، نمط ie–o–o + sein للحركة)",
+          ar: "سافرت بالطائرة إلى إسطنبول. (fliegen، نمط ie–o–o؛ sein في معنى السفر إلى وجهة)",
         },
         {
           de: "Ich habe meinen Pass verloren.",
@@ -160,7 +212,7 @@ export const lessonA201: Lesson = {
         },
         {
           de: "Er hat mir sehr geholfen.",
-          ar: "ساعدني كثيراً. (helfen، النمط نفسه، ومفعوله بالجرّ)",
+          ar: "ساعدني كثيراً. (helfen – half – geholfen؛ المفعول هنا Dativ: mir)",
         },
         {
           de: "Daran habe ich gar nicht gedacht.",
@@ -172,45 +224,46 @@ export const lessonA201: Lesson = {
         },
       ],
       comparisonWithArabic:
-        "هنا تلتقي الألمانية بالعربية التقاءً عميقاً لا يُتاح لمتعلّمٍ آخر. العربية لغةٌ مبنيّة على **الجذر والوزن**: كتب ⟵ كاتب ⟵ مكتوب ⟵ كتاب — جذرٌ ثابت وحركاتٌ متبدّلة تُنتج المعاني. وهذا هو Ablaut بعينه من حيث المبدأ: حروفٌ صامتة ثابتة (t-r-nk) وحركةٌ داخلية متبدّلة (i / a / u).\n\nفالمتعلّم العربيّ **مهيّأ ذهنياً** لهذا الباب أكثر من الإنجليزيّ أو الفرنسيّ، لأنّ لغته دربّته على سماع الجذر تحت الحركات. وقُل لنفسك: trinken – trank – getrunken وزنٌ من أوزان الألمانية، والأفعال التي تسير عليه إخوةٌ في الوزن.\n\nوالفرق الجوهريّ: أوزان العربية **مطّردة ومعناها منتظم** (فاعل اسم فاعلٍ دائماً)، وعائلات الألمانية **مغلقة**: لا تستطيع أن تُدخل فعلاً جديداً في عائلة i–a–u كما تُدخل جذراً جديداً في وزن فَعَل. فالقياس عندنا مُنتِج، وعندهم وصفيّ فقط. ومن قاس فأنتج قال `getrinkt` — وهو خطأ.",
+        "تستعمل العربية الجذر والوزن في بناء كثير من الكلمات والصيغ، ويمكن أن تساعد هذه المقارنة على ملاحظة أن حركة الجذر قد تتغير في trinken – trank – getrunken. لكن **Ablaut ليس هو الوزن العربي نفسه**: فالجذر والوزن العربيان نظام صرفي مختلف، أما Ablaut هنا فيصف تناوباً في صور أفعال ألمانية بعينها. لا تتنبأ المقارنة بصيغ فعل ألماني جديد، ولا تثبت أن متعلمي العربية أقدر من غيرهم على تعلمه. استخدمها لتذكّر وجود تناوب، ثم احفظ الصيغ الألمانية المحددة.",
       eselsbruecke:
-        "احفظ الصور الثلاث سلسلةً واحدة لا مفردة: trinken–trank–getrunken. وفكّر فيها كوزنٍ عربيّ: جذرٌ ثابت وحركةٌ متبدّلة. وأربع عائلات تكفيك أوّلاً: i-a-u · ei-ie-ie · ie-o-o · e-a-o.",
+        "احفظ صور الفعل كما تُعرض: trinken – trank – getrunken. لاحظ النمط للمقارنة، لكن لا تُنشئ Partizip II جديداً بالقياس؛ تحقّق من صورة الفعل نفسه.",
       commonMistakes: [
         {
           wrong: "Ich habe das Buch gefindet.",
           right: "Ich habe das Buch gefunden.",
-          whyAr:
-            "قياسٌ على الضعيفة. وfinden من عائلة i–a–u: fand – gefunden. والقياس هو الخطأ الأوّل في هذا الباب لأنّه يبدو معقولاً — والعائلات مغلقة لا تقبل القياس.",
+          classification: "error",
+          whyAr: "finden من الأفعال القوية؛ Partizip II المعياري في هذا المعنى هو gefunden، لا gefindet. احفظ الصيغة المحددة.",
         },
         {
           wrong: "Ich habe geschreibt.",
           right: "Ich habe geschrieben.",
-          whyAr:
-            "عائلة ei–ie–ie تُغيّر الحركة وتُبقي النهاية -en. ومن أخذ نهاية الضعيفة (-t) على جذرٍ قويّ جمع بين نظامين لا يجتمعان.",
+          classification: "error",
+          whyAr: "Partizip II من schreiben هو geschrieben؛ لا تُركّب نهاية الضعيف -t على هذه الصيغة القوية.",
         },
         {
           wrong: "Ich habe nach Berlin geflogen.",
           right: "Ich bin nach Berlin geflogen.",
-          whyAr:
-            "صيغة Partizip صحيحة والمساعد خاطئ. fliegen حركةٌ بين نقطتين فمساعدها sein. فانتبه إلى أنّ معرفة العائلة لا تُغني عن اختبار المفعول به.",
+          classification: "error",
+          whyAr: "في معنى السفر بالطائرة إلى وجهة، يأخذ fliegen المساعد sein. وفي معانٍ أخرى مثل قيادة طائرة أو نقل شيء قد يختلف المساعد؛ لا تستنتج قاعدة لكل استعمال.",
         },
         {
           wrong: "Ich habe an dich gedenkt.",
           right: "Ich habe an dich gedacht.",
-          whyAr:
-            "denken من الأفعال المختلطة: تُغيّر جذرها (denk ⟵ dach) وتأخذ نهاية الضعيفة -t معاً. فلا هي قوية خالصة ولا ضعيفة خالصة، وهي تسعةٌ تُحفظ مفردة.",
+          classification: "error",
+          whyAr: "الفعل هنا denken، وصيغته المختلطة في المثال denken – dachte – gedacht. أما gedenken ففعل آخر ومعناه وبناؤه مختلفان.",
         },
         {
           wrong: "Er hat mir gehelft.",
           right: "Er hat mir geholfen.",
-          whyAr:
-            "helfen من عائلة e–a–o: half – geholfen. ولاحظ أنّ مفعولها بالجرّ (mir لا mich) لأنّها من أفعال الدّاتيف التي درستَها في a1-08.",
+          classification: "error",
+          whyAr: "Partizip II من helfen هو geholfen؛ وفي هذا المثال يأخذ المفعول Dativ (mir). سبق عرض helfen في A1-06، وهنا نراجع صورته ومفعوله في المثال.",
         },
       ],
       relatedRuleComparison: {
         title: "القويّ في Perfekt مقابل القويّ في المضارع",
         content:
-          "ربطٌ يوفّر عليك نصف الحفظ: كثيرٌ من الأفعال التي تُغيّر حركتها في Partizip II **تُغيّرها في المضارع أيضاً** — وقد درستَ ذلك في a1-06 (تغيّر الصوت e ⟵ i).\n· sprechen: du **sprichst** · gesprochen\n· nehmen: du **nimmst** · genommen\n· helfen: du **hilfst** · geholfen\nفالفعل الذي سمعتَه شاذّاً في المضارع **مرشّحٌ بقوّة** لأن يكون قوياً في الماضي. وهذه إشارةٌ مجّانية تُغنيك عن مراجعة القائمة.\n\nوالعكس ليس صحيحاً دائماً: schreiben منتظمٌ في المضارع (du schreibst) وقويٌّ في الماضي (geschrieben). فالإشارة مرجّحة لا قاطعة — لكنّها في الاتّجاه الأوّل مفيدة جداً.",
+          "تغيّر e/i في المضارع مثل du sprichst قد يساعد على ملاحظة صلة بين بعض الصور، لكنه لا يتنبأ وحده بصيغ الأفعال القوية ولا يغني عن حفظ المصدر وPräteritum وPartizip II. وقد مرّ helfen في A1-06: sprechen – sprach – gesprochen مع du sprichst، وhelfen – half – geholfen مع du hilfst. أمّا schreiben فيأخذ schreiben – schrieb – geschrieben مع du schreibst في المضارع؛ لذا راجع صور الفعل نفسه.",
+
       },
     },
     {
@@ -218,9 +271,9 @@ export const lessonA201: Lesson = {
       titleAr: "Perfekt أم Präteritum؟ — قسمة العمل بين الماضيين",
       titleDe: "Perfekt oder Präteritum? Die Arbeitsteilung",
       explanationAr:
-        "قيل لك في A1: „تكلّم بالـPerfekt واكتب بالـPräteritum“. وكانت قاعدةً آمنة للمبتدئ، وهي الآن **تبسيطٌ يحتاج تدقيقاً**، لأنّك ستقرأ نصوصاً حقيقية وتسمع ألماناً يخالفونها.\n\n**أوّلاً — القاعدة الأساسية تبقى صحيحة:**\n· **الكلام والرسائل الشخصية ⟵ Perfekt:** Ich **habe** gestern einen Film **gesehen**.\n· **السرد المكتوب (روايات، أخبار، تقارير) ⟵ Präteritum:** Er **sah** den Film und **ging** nach Hause.\n\n**ثانياً — الاستثناء الأهمّ: أفعالٌ تُقال بالـPräteritum حتّى في الكلام.**\nوهذه ليست تفصيلاً بل **ضرورة**: من يستعمل Perfekt معها يبدو متكلّفاً.\n· **sein:** Ich **war** in Berlin. ✔ — لا Ich bin in Berlin gewesen (ممكنة لكنّها ثقيلة)\n· **haben:** Ich **hatte** keine Zeit. ✔\n· **الأفعال الناقصة:** Ich **konnte** nicht kommen. · Ich **musste** arbeiten. · Ich **wollte** dich anrufen.\n· وكذلك **es gab** (كان هناك) و**wusste** (عرفتُ).\n\n**وتصريف Präteritum لهذه الأفعال — وهو كلّ ما تحتاجه اليوم:**\n| war · warst · war · waren · wart · waren |\n| hatte · hattest · hatte · hatten · hattet · hatten |\n| konnte · konntest · konnte · konnten · konntet · konnten | (وعلى منوالها musste · wollte · sollte · durfte)\nولاحظ الشذوذ المألوف: **ich وer متطابقان بلا نهاية** — كما في المضارع الناقص تماماً.\n\n**ثالثاً — قسمةٌ جغرافية حقيقية:** كلّما اتّجهتَ **جنوباً** (بايرن، النمسا، سويسرا) اختفى Präteritum من الكلام حتّى يكاد لا يبقى منه شيء، وكلّما اتّجهتَ **شمالاً** سمعتَه أكثر في الحكي. فإن سمعتَ ألمانياً شمالياً يقول „Ich ging“ في حديثٍ عادي فليس مخطئاً.\n\n**والقاعدة التي تعمل بها:** Perfekt لكلّ شيء، **إلاّ** sein وhaben والناقصة فبالـPräteritum. وهذه الجملة وحدها تكفيك في A2 وB1.",
+        "لكلٍّ من Perfekt وPräteritum استعمالات صحيحة للماضي، ولا يصح اختزالهما إلى «الكلام مقابل الكتابة». في كثير من الحديث اليومي المعاصر يغلب Perfekt عند سرد أحداث كثيرة، بينما يشيع Präteritum في السرد المكتوب؛ لكن Präteritum يُسمع أيضاً في الكلام، وPerfekt يرد في الكتابة. تظهر كثيراً في الحديث صيغ مثل war وhatte وبعض الأفعال الناقصة، كما تختلف الأنماط باختلاف المنطقة والسجل والنص.\n\nللتدريب هنا:\n· **تقرير شخصي عن رحلة:** Ich bin nach Wien gefahren und habe dort meine Tante besucht.\n· **سرد مكتوب:** Der Zug fuhr um acht Uhr ab und erreichte Berlin am Mittag.\n· **صيغ قصيرة شائعة في أمثلة محادثة:** Ich war müde · Wir hatten keine Zeit · Ich konnte nicht kommen · Es gab kein WLAN.\n\nهذه اتجاهات ونماذج لا قوانين حصرية. البدائل مثل Ich bin … gewesen وIch habe nicht kommen können وEs hat … gegeben سليمة نحوياً، وقد تلائم سياقاً أو سجلاً أو منطقة بعينها؛ لا تصفها بأنها خطأ لمجرد أن الدرس يختار صيغة أقصر في مثال محدد.",
       whyAr:
-        "لماذا تحتفظ لغةٌ بزمنين للماضي بالمعنى نفسه؟ لأنّهما لم يكونا بالمعنى نفسه في الأصل. كان Präteritum هو الماضي الوحيد، وكان Perfekt يعني **حالةً حاضرة ناتجة عن فعلٍ ماضٍ** („أملك الكتاب مقروءاً“). ثمّ توسّع Perfekt في الكلام حتّى ابتلع وظيفة الماضي البسيط، وانحسر Präteritum إلى الكتابة. وهذه العملية نفسها وقعت في الفرنسية (passé composé أزاح passé simple) ولم تقع في الإنجليزية — والألمانية في منتصف الطريق.\n\nولماذا قاومت sein وhaben والناقصة هذا الانحسار؟ لسببٍ صوتيّ عمليّ: Perfekt منها **ثقيلٌ في النطق**. قارن „Ich war“ بكلمتين مقابل „Ich bin gewesen“ بثلاث، و„Ich konnte“ مقابل „Ich habe kommen können“ بأربع. واللغة تختار الأخفّ في الكلمات الأكثر دوراناً. فالاستثناء ليس شذوذاً بل **اقتصادٌ في الجهد**.\n\nولماذا يهمّك هذا عملياً؟ لأنّ قسم Lesen في امتحانات B1 وB2 يعتمد نصوصاً صحفية وأدبية مكتوبةً بالـPräteritum كلّها. فمن لا يعرفه لا يقرأ. وأنت اليوم تحتاجه **للفهم** أكثر ممّا تحتاجه للإنتاج — وهذا يخفّف العبء: افهم الستّة كلّها، وأنتج ما يلزم.",
+        "يتأثر الاختيار بين الزمنين بنوع النص والسجل والمنطقة والسياق، وقد تؤثر دلالة الفعل أيضاً. لذلك لا يوجد تفسير واحد من قبيل أن صيغة بعينها «ثقيلة دائماً» أو أن الزمنين يتطابقان في كل موضع. يعرض الجدول أمثلة واتجاهات مألوفة لتيسير القراءة والتدريب، لا حدوداً ثابتة بين كلام صحيح وكتابة صحيحة.",
       table: {
         title: "أيّ ماضٍ تختار؟",
         columns: ["الموقف", "الزمن", "المثال"],
@@ -238,19 +291,19 @@ export const lessonA201: Lesson = {
             cells: ["Präteritum", "Der Zug erreichte den Bahnhof um acht."],
           },
           {
-            label: "sein في الكلام",
+            label: "وصف حالة — sein",
             cells: ["Präteritum", "Ich war sehr müde."],
           },
           {
-            label: "haben في الكلام",
+            label: "وصف امتلاك — haben",
             cells: ["Präteritum", "Wir hatten keine Zeit."],
           },
           {
-            label: "فعلٌ ناقص في الكلام",
+            label: "فعلٌ ناقص — مثال موجّه",
             cells: ["Präteritum", "Ich konnte nicht schlafen."],
           },
           {
-            label: "es gibt في الكلام",
+            label: "وجود — es gibt",
             cells: ["Präteritum", "Es gab keinen Kaffee mehr."],
           },
         ],
@@ -258,19 +311,19 @@ export const lessonA201: Lesson = {
       examples: [
         {
           de: "Ich war letztes Jahr in Ägypten. Es war fantastisch!",
-          ar: "كنتُ العام الماضي في مصر. كان رائعاً! (sein ⟵ Präteritum حتّى في الكلام)",
+          ar: "كنتُ العام الماضي في مصر. كانت الرحلة رائعة! (war صيغة Präteritum شائعة لوصف الحالة)",
         },
         {
           de: "Wir hatten leider kein Glück mit dem Wetter.",
           ar: "للأسف لم يحالفنا الحظّ في الطقس. (haben ⟵ hatten)",
         },
         {
-          de: "Ich konnte gestern nicht kommen, ich musste arbeiten.",
+          de: "Ich konnte gestern nicht kommen, denn ich musste arbeiten.",
           ar: "لم أستطع المجيء أمس، كان عليّ أن أعمل. (ناقصان بالـPräteritum)",
         },
         {
           de: "Ich bin nach Wien gefahren und habe dort meine Tante besucht.",
-          ar: "سافرتُ إلى فيينّا وزرتُ عمّتي هناك. (الأفعال العادية ⟵ Perfekt)",
+          ar: "سافرتُ إلى فيينّا وزرتُ عمّتي هناك. (مثال Perfekt للفعلين fahren وbesuchen)",
         },
         {
           de: "Es gab im Hotel kein WLAN.",
@@ -278,7 +331,7 @@ export const lessonA201: Lesson = {
         },
         {
           de: "Der Zug fuhr um acht Uhr ab und erreichte Berlin am Mittag.",
-          ar: "انطلق القطار في الثامنة وبلغ برلين ظهراً. (سردٌ مكتوب ⟵ Präteritum)",
+          ar: "انطلق القطار في الثامنة وبلغ برلين ظهراً. (نموذج سرد بـPräteritum)",
         },
         {
           de: "Ich wusste nicht, dass du auch hier bist.",
@@ -290,45 +343,46 @@ export const lessonA201: Lesson = {
         },
       ],
       comparisonWithArabic:
-        "العربية لها ماضٍ واحد لا اثنان: „ذهبتُ“ تصلح للكلام والكتابة والرواية والخبر. فالمتعلّم العربيّ لا يملك حدساً يميّز „ماضي الكلام“ من „ماضي الكتابة“، ويميل إلى استعمال ما تعلّمه أوّلاً في كلّ موضع.\n\nلكنّ العربية تملك تمييزاً موازياً في مستوىً آخر: **الفصحى والعامّية**. فأنت لا تكتب كما تتكلّم، وتعرف بالسليقة أنّ صيغةً معيّنة تليق بالمقال ولا تليق بالمقهى. والمسافة بين Präteritum وPerfekt من هذا الجنس بالضبط — مسافة **سِجِلّ** لا مسافة زمن. فمن أدرك ذلك أدرك الباب كلّه.\n\nوالخطأ العمليّ الأشيع عند العرب هنا ليس اختيار الزمن بل **الإفراط في Perfekt**: يقول Ich bin sehr müde gewesen حيث يقول الألمانيّ Ich war müde. والجملة سليمةٌ نحواً وثقيلةٌ أسلوباً، وهي من أوضح علامات المتعلّم على المتكلّم الطبيعيّ.",
+        "في العربية طرائق مختلفة للتعبير عن الزمن والحدث، كما تختلف العامية والفصحى في السياق والسجل. يمكن استخدام ذلك لتذكّر أن اختيار الصيغة الألمانية يتأثر بالمقام، لكنه **لا يساوي** Perfekt بالعامية أو Präteritum بالفصحى، ولا يعني أن لكل صيغة مقابلاً عربياً ثابتاً. كلا الزمنين يرد في الكلام والكتابة، ويُفهم المعنى من الجملة والسياق.",
       eselsbruecke:
-        "جملةٌ واحدة تكفيك: «Perfekt لكلّ شيء، إلاّ sein وhaben والأفعال الناقصة فبالـPräteritum». واحفظ war · hatte · konnte · musste · wollte — خمسُ صيغٍ تُغنيك في الكلام كلّه.",
+        "في تقرير محادثي قصير، يكون Perfekt نقطة بداية نافعة لكثير من الأحداث؛ وتدرّب أيضاً على صيغ Präteritum الشائعة مثل war وhatte وkonnte وmusste. تذكّر أنها **أنماط استعمال شائعة لا قاعدة تمنع البدائل**.",
       commonMistakes: [
         {
           wrong: "Ich bin gestern sehr müde gewesen.",
           right: "Ich war gestern sehr müde.",
-          whyAr:
-            "صحيحةٌ نحواً وثقيلةٌ أسلوباً. وsein تُقال بالـPräteritum في الكلام دائماً تقريباً، والإفراط في Perfekt علامةٌ واضحة على المتعلّم.",
+          classification: "contextual-alternative",
+          whyAr: "الصيغة الأولى سليمة؛ يختار المثال war بوصفها صيغة قصيرة شائعة هنا، لا لأن Perfekt ممنوع.",
         },
         {
           wrong: "Ich habe nicht kommen können.",
           right: "Ich konnte nicht kommen.",
-          whyAr:
-            "الأفعال الناقصة تُقال بالـPräteritum. والصيغة الأولى موجودة في القواعد لكنّها ثقيلة ونادرة في الكلام، وتُسمع متكلّفةً في محادثةٍ عادية.",
+          classification: "contextual-alternative",
+          whyAr: "تركيب Perfekt مع مصدرين ممكن وصحيح؛ يدرّب المثال على صيغة Präteritum الأقصر، ولا يصنّف البديل خطأً نحوياً.",
         },
         {
           wrong: "Gestern ich ging ins Kino. (في محادثة)",
           right: "Gestern bin ich ins Kino gegangen.",
-          whyAr:
-            "خطآن: ترتيبٌ خاطئ بعد الظرف (V2 يوجب انزياح الفاعل)، واختيارُ Präteritum لفعلٍ عاديّ في الكلام حيث المتوقّع Perfekt.",
+          classification: "error",
+          whyAr: "الخطأ المؤكد هو V2: بعد Gestern يجب أن يأتي الفعل المصرف في الموضع الثاني؛ Gestern ging ich ins Kino صحيحة أيضاً. اختيار Perfekt هنا هدف تدريبي للسرد المحادثي، لا لأن Präteritum خطأ في الكلام.",
         },
         {
           wrong: "Es hat kein WLAN gegeben.",
           right: "Es gab kein WLAN.",
-          whyAr:
-            "es gibt تتبع sein وhaben في تفضيل Präteritum. والصيغة الأولى ممكنة لكنّها غير معتادة، وes gab هي ما يُقال فعلاً.",
+          classification: "contextual-alternative",
+          whyAr: "Perfekt ممكنة: Es hat kein WLAN gegeben. يعرض المثال es gab كصيغة موجزة مألوفة؛ الاختيار تابع للسياق والسجل.",
         },
         {
           wrong: "Ich habe gewusst, dass du kommst.",
           right: "Ich wusste, dass du kommst.",
-          whyAr:
-            "wissen من الأفعال التي تُلحق بـsein وhaben والناقصة في تفضيل Präteritum، لكثرة دورانها وخفّة صيغتها.",
+          classification: "contextual-alternative",
+          whyAr: "صيغة Perfekt من wissen ممكنة؛ اختير wusste في المثال بوصفها صيغة Präteritum شائعة، لا قاعدة تمنع البديل.",
         },
       ],
       relatedRuleComparison: {
-        title: "war وhatte — من A1 إلى A2",
+        title: "war وhatte ضمن صيغ الماضي",
         content:
-          "تعلّمتَ war وhatte في a1-06 تحت اسم „الماضي الأوّل“، وقيل لك إنّهما استثناءان تُحفظان. والآن تعرف الحقيقة الكاملة: **لم يكونا استثناءين بل عيّنتين** من نظامٍ كامل اسمه Präteritum، قُدِّما لك مبكّراً لأنّ الكلام لا يستقيم بدونهما.\n\nوهذه طريقة بناء المنهج كلّه: تأخذ الجزء العمليّ أوّلاً بلا اسمه، ثمّ يُكشف لك النظام حين تصير مستعدّاً له. وستقابل النظام كاملاً في a2-05 حيث يُصرَّف Präteritum للأفعال الضعيفة والقوية جميعاً — فما تفعله اليوم هو **وضع war وhatte في موضعهما من الخريطة**، لا تعلّمهما من جديد.",
+          "يعرض هذا الدرس war وhatte ضمن Präteritum ويقارنهما باستعمالات Perfekt، دون وصف أي صيغة بأنها ممنوعة من الكلام أو الكتابة. وتأتي تدريبات أوسع على Präteritum في دروس لاحقة؛ هذه أمثلة محددة وليست حصرًا لكل صيغ الماضي.",
+
       },
     },
     {
@@ -336,25 +390,28 @@ export const lessonA201: Lesson = {
       titleAr: "الجملة الطويلة في Perfekt — ما الذي يقع بين القوسين؟",
       titleDe: "Die Satzklammer im Detail: Was steht im Mittelfeld?",
       explanationAr:
-        "تعرف أنّ Perfekt قوسان: المساعد في المركز الثاني وPartizip II في الآخر. وسؤال A2 هو: **ما الذي يقع بينهما، وبأيّ ترتيب؟** فالمساحة الوسطى (Mittelfeld) قد تحمل ستّ كلماتٍ أو أكثر، ولها نظام.\n\n**أوّلاً — الترتيب الأساسيّ داخل المساحة الوسطى:**\n· الضمائر أوّلاً · ثمّ الزمان (Temporal) · ثمّ السبب (Kausal) · ثمّ الكيفية (Modal) · ثمّ المكان (Lokal) · ثمّ المفعول المعرَّف\nوهذا هو **TeKaMoLo** الذي عرفتَه في a1-05، وقد صار الآن يعمل داخل قوسين لا في جملةٍ مفتوحة:\n| Ich | **habe** | dir gestern wegen des Regens schnell in der Stadt eine Jacke | **gekauft**. |\n\n**ثانياً — قاعدةٌ تحسم كثيراً: الضمائر تسبق الأسماء.**\n· Ich habe **es meinem Bruder** gegeben. ✔ (ضميرٌ ثمّ اسم)\n· وإن اجتمع ضميران: **المنصوب قبل المجرور** ⟵ Ich habe **es ihm** gegeben. ✔ لا ihm es\n· وإن اجتمع اسمان: **المجرور قبل المنصوب** ⟵ Ich habe **meinem Bruder das Buch** gegeben. ✔\nوالقاعدة الجامعة: **ما كان أقصر وأعرف تقدّم**. والضمير أقصر من الاسم وأعرف منه، فيتقدّم دائماً.\n\n**ثالثاً — أين يقع nicht؟**\n· لنفي الجملة كلّها: **قبل Partizip II مباشرةً** ⟵ Ich habe das Buch **nicht** gelesen.\n· لنفي جزءٍ بعينه: **قبله مباشرةً** ⟵ Ich habe **nicht das Buch** gelesen, sondern die Zeitung.\nوالفرق في المعنى حقيقيّ: الأولى „لم أقرأ الكتاب“، والثانية „لم أقرأ **الكتاب** بل الجريدة“.\n\n**رابعاً — ماذا يقع خارج القوسين؟** المساحة بعد Partizip II ليست ممنوعةً تماماً، ويُدفع إليها:\n· الجمل المقارنة: Ich habe mehr gegessen, **als ich wollte**.\n· الجمل الفرعية: Ich habe gehört, **dass du umgezogen bist**.\nوما عدا ذلك يبقى داخل القوسين. فلا تقل Ich habe gegessen **einen Apfel** — هذا أشيع أخطاء العرب في الباب.\n\n**من أين جاءت هذه القاعدة؟** من أين جاءت «المساحة الوسطى» أصلاً؟ من قاعدةٍ واحدة تحكم الألمانية كلّها: **الفعل المصرَّف يُثبَّت في الموضع الثاني، وكلّ ما بقي من الفعل يُدفَع إلى الآخر**. وهذا يخلق قوسين — Satzklammer — وما وقع بينهما صار بالضرورة منطقةً وسطى تحتاج نظاماً داخلياً. فالـMittelfeld ليس قاعدةً مستقلّة تُحفظ، بل **نتيجةٌ جانبية** لقانون V2. ومن رأى الأمر هكذا فهم لماذا يتّسع القوس في Perfekt وModalverben والأفعال المنفصلة على السواء: إنّها كلّها الظاهرة نفسها.",
+        "في الجملة الرئيسية الخبرية البسيطة، يكون المساعد المصرف غالباً في القوس الأيسر من Perfekt، ويأتي Partizip II في القوس الأيمن؛ وما بينهما هو Mittelfeld. أما ترتيب عناصر هذه المساحة فليس سلسلة جامدة واحدة.\n\n· في الأمثلة المحايدة، تتقدم الضمائر غير المنبورة عادةً على مجموعات الأسماء. وإذا اجتمع ضميران مفعوليان فترتيب Akkusativ قبل Dativ هو المعتاد؛ وبين مجموعتي اسم يشيع Dativ قبل Akkusativ. قد يغيّر التركيز والسياق ترتيباً مفضلاً.\n· في الظروف، يكون ترتيب الزمان ثم السبب ثم الكيفية ثم المكان (TeKaMoLo) **ميلاً شائعاً**، لا شرطاً نحوياً لا يتغير.\n· يتحدد موضع nicht بما تنفيه: يرد كثيراً قرب القوس الأيمن عند نفي مضمون الجملة المحايد، وقد يتقدم على العنصر الذي ينفيه في المقابلة، كما في Ich habe **nicht den Film**, sondern die Serie gesehen.\n· يمكن وضع جملة فرعية أو مقارنة في Nachfeld، وقد تأتي عناصر مؤجلة أخرى في سياق استدراك/تركيز؛ لذلك ليست عبارة «كل ما ليس فعلاً يبقى قبل Partizip II» قاعدة مطلقة.\n\nاستخدم الجدول أمثلةً لترتيب محايد قابل للتدريب، واقرأ ترتيب الكلمات مع المعنى والتركيز لا منفصلاً عنهما.",
       whyAr:
-        "لماذا تُطيل الألمانية المسافة بين جزأَي الفعل بدل أن تُقرّبهما؟ لأنّ القوسين ليسا عائقاً بل **إطاراً**: المستمع يسمع المساعد فيعرف فوراً أنّ جملةً في الماضي قادمة، وينتظر الإغلاق. فالقوس الأوّل **وعدٌ** والثاني **وفاءٌ به**، وكلّ ما بينهما محميٌّ داخل بنيةٍ معروفة السقف.\n\nوهذا يفسّر لماذا تحتمل الألمانية جملاً أطول ممّا تحتمله لغاتٌ أخرى بلا لبس: البنية تُمسك المعنى. أمّا الإنجليزية فتضع الفعل كاملاً في الأوّل فلا يبقى ما يُنتظر، ولذلك تميل إلى جملٍ أقصر.\n\nولماذا تتقدّم الضمائر على الأسماء؟ لمبدأٍ عامّ في اللغات كلّها: **المعلوم قبل المجهول**. الضمير يشير إلى شيءٍ ذُكر فهو معلوم، والاسم الكامل يقدّم شيئاً جديداً. واللغة ترتّب من المعلوم إلى الجديد لأنّ ذلك يوافق طريقة بناء الفهم عند السامع. فالقاعدة ليست اعتباطاً نحوياً بل انعكاسٌ لمنطق التواصل.\n\nوأمّا موضع nicht قبل Partizip II فمنطقيّ كذلك: النفي يقع على **بؤرة الجملة**، وبؤرة الجملة الألمانية في آخرها. فحيثما وضعتَ nicht عرف السامع ما تنفيه بالضبط — وهذه دقّةٌ تفتقر إليها لغاتٌ كثيرة.",
+        "القوسان يحددان المجال الفعلي ويساعدان على رؤية موضع المساعد وPartizip II. داخل Mittelfeld توجد تفضيلات بنيوية وتواصلية متعددة، وقد تتفاعل؛ لذا لا تفسر ترتيباً واحداً على أنه الترتيب الوحيد المقبول. في التمرينات سنطلب أحياناً ترتيباً محايداً محدداً، مع التنبيه إلى أن السياق والنبر قد يجيزان بديلاً.",
       table: {
-        title: "المساحة الوسطى — ماذا يقع أوّلاً؟",
-        columns: ["الرتبة", "العنصر", "المثال"],
+        title: "المساحة الوسطى — تفضيلات وأمثلة محايدة",
+        columns: ["إرشاد (لا ترتيب إلزامي)", "العنصر", "المثال"],
         rows: [
           {
             label: "١",
-            cells: ["الضمائر (منصوب قبل مجرور)", "Ich habe es ihm gegeben."],
+            cells: ["ضميران مفعوليان: Akk قبل Dat غالباً", "Ich habe es ihm gegeben."],
           },
-          { label: "٢", cells: ["الزمان — متى؟", "… habe ich gestern …"] },
-          { label: "٣", cells: ["السبب — لماذا؟", "… wegen des Regens …"] },
-          { label: "٤", cells: ["الكيفية — كيف؟", "… mit dem Bus …"] },
-          { label: "٥", cells: ["المكان — أين؟", "… in der Stadt …"] },
-          { label: "٦", cells: ["المفعول المنكَّر", "… eine Jacke gekauft."] },
+          { label: "٢", cells: ["الزمان — مثال", "… habe ich gestern …"] },
+          { label: "٣", cells: ["السبب — مثال", "… wegen des Regens …"] },
+          { label: "٤", cells: ["الكيفية — مثال", "… schnell / mit dem Zug …"] },
+          { label: "٥", cells: ["المكان — مثال", "… in der Stadt …"] },
+          {
+            label: "٦",
+            cells: ["اسمان مفعوليان: Dativ قبل Akk شائعاً", "Ich habe meinem Bruder das Buch gegeben."],
+          },
           {
             label: "٧",
-            cells: ["nicht لنفي الجملة", "… das Buch nicht gelesen."],
+            cells: ["موضع nicht يتبع نطاق النفي", "… das Buch nicht gelesen."],
           },
         ],
       },
@@ -369,11 +426,11 @@ export const lessonA201: Lesson = {
         },
         {
           de: "Ich habe es ihm schon gesagt.",
-          ar: "قلتُه له بالفعل. (ضميران: المنصوب es قبل المجرور ihm)",
+          ar: "قلتُه له بالفعل. (ضميران مفعوليان: Akkusativ es قبل Dativ ihm في ترتيب محايد)",
         },
         {
           de: "Ich habe meinem Bruder das Buch gegeben.",
-          ar: "أعطيتُ أخي الكتاب. (اسمان: المجرور قبل المنصوب — عكس الضمائر)",
+          ar: "أعطيتُ أخي الكتاب. (اسمان مفعوليان: Dativ قبل Akkusativ شائعاً، بخلاف ترتيب الضميرين)",
         },
         {
           de: "Ich habe den Film nicht gesehen.",
@@ -393,45 +450,46 @@ export const lessonA201: Lesson = {
         },
       ],
       comparisonWithArabic:
-        "العربية تضع الفعل مجموعاً في موضعٍ واحد ثمّ تُتبعه بما شاءت: „أرسلتُ لك رسالةً أمس“ — الفعل أوّلاً وكلّ شيءٍ بعده. والألمانية تشطر الفعل وتحشو ما بين شطريه. فالمتعلّم العربيّ يبني الجملة بعقلٍ عربيّ ثمّ يُلحق Partizip II في الآخر إن تذكّره، وينساه إن طالت الجملة — وهذا هو **الخطأ الأوّل** في الباب: كلّما طالت المساحة الوسطى زاد احتمال ضياع القوس الثاني.\n\nوالعلاج ليس نحوياً بل **تدريبيّ**: خطّط للجملة كاملةً قبل أن تبدأها. قل في نفسك Partizip II أوّلاً، ثمّ ابنِ ما قبله. وهذه عادةٌ يكتسبها المتحدّث بالألمانية ولا تُشبه أيّ عادةٍ في العربية.\n\nوأمّا ترتيب الضمائر فالعربية تُلصقها بالفعل ضمائرَ متّصلة: „أعطيتُه إيّاه“ — والمنصوب أوّلاً هنا كذلك! فالقاعدة الألمانية (المنصوب قبل المجرور بين الضمائر) لها نظيرٌ عربيّ يُعينك: „أعطيتُكه“ فيها ترتيبٌ محفوظ. لكن انتبه إلى الانقلاب: بين **الأسماء** ينعكس الترتيب في الألمانية، ولا نظير لهذا الانقلاب في العربية.",
+        "تختلف مواضع الفعل والمتممات بين العربية والألمانية، لكن العربية نفسها تسمح بأنماط وتركيزات مختلفة؛ فلا تُختزل إلى قاعدة «الفعل أولاً ثم كل شيء». استعمل قوس Perfekt أداةً لتخطيط المثال الألماني: موضع المساعد، العناصر الوسطى، ثم Partizip II. ولا تفترض أن ترتيب ضمائر العربية يقابل ترتيب ضمائر الألمانية حرفياً؛ لكل لغة نظامها، والسياق يغيّر البؤرة.",
       eselsbruecke:
-        "خطّط لآخر الجملة قبل أوّلها: قل Partizip II في نفسك ثمّ ابنِ ما قبله. وداخل القوسين: الضمائر أوّلاً (المنصوب قبل المجرور)، ثمّ TeKaMoLo، ثمّ المفعول، وnicht قبل الإغلاق.",
+        "لترتيب محايد في الأمثلة الأساسية: حدّد قوسي الفعل أولاً؛ جرّب وضع الضمائر مبكراً، وترتيب الظروف الشائع زماناً ثم سبباً ثم كيفيةً ثم مكاناً، ثم أغلِق المجال بـPartizip II. هذه مساعدة أولية، لا وصفة إلزامية لكل جملة.",
       commonMistakes: [
         {
           wrong: "Ich habe gegessen einen Apfel.",
           right: "Ich habe einen Apfel gegessen.",
-          whyAr:
-            "نقلٌ لترتيب العربية: الفعل ثمّ المفعول. وPartizip II يُغلق الجملة، فكلّ مفعولٍ يسبقه. وهذا الخطأ يزداد كلّما طالت الجملة لأنّ المتكلّم يفقد أثر القوس الثاني.",
+          classification: "contextual-alternative",
+          whyAr: "الترتيب المحايد يضع المفعول قبل Partizip II؛ وقد يأتي عنصرٌ مؤجل بعد القوس في سياق استدراك أو تركيز، فلا نعدّ ذلك مستحيلاً مطلقاً.",
         },
         {
           wrong: "Ich habe ihm es gegeben.",
           right: "Ich habe es ihm gegeben.",
-          whyAr:
-            "بين الضميرين يتقدّم المنصوب على المجرور: es قبل ihm. وهو عكس ترتيب الأسماء تماماً، وهذا الانقلاب هو ما يُربك المتعلّمين.",
+          classification: "contextual-alternative",
+          whyAr: "es قبل ihm هو الترتيب المحايد المألوف لضميرين مفعوليين؛ قد يؤثر التركيز والسياق في الترتيب، لذا لا نصف كل ترتيب آخر بأنه خطأ في جميع المقامات.",
         },
         {
           wrong: "Ich habe das Buch meinem Bruder gegeben.",
           right: "Ich habe meinem Bruder das Buch gegeben.",
-          whyAr:
-            "بين الاسمين يتقدّم المجرور على المنصوب — عكس الضمائر. والجملة الأولى ليست خاطئةً تماماً لكنّها تُفهم على تأكيدٍ خاصّ لم تقصده.",
+          classification: "contextual-alternative",
+          whyAr: "إذا اجتمع اسمان مفعوليان، يشيع Dativ قبل Akkusativ في الترتيب المحايد. يمكن أن يتغير الترتيب مع التركيز والسياق.",
         },
         {
           wrong: "Ich habe nicht gelesen das Buch.",
           right: "Ich habe das Buch nicht gelesen.",
-          whyAr:
-            "خطآن: المفعول خرج بعد القوس، وnicht وُضع في غير موضعه. وموضع nicht لنفي الجملة كلّها هو قبل Partizip II مباشرةً.",
+          classification: "pedagogical-simplification",
+          whyAr: "للتعبير المحايد عن نفي قراءة الكتاب، المثال الأنسب Ich habe das Buch nicht gelesen. يتغير موضع nicht إذا كان النفي مقابلاً لجزء بعينه، وقد يظهر عنصر مؤجل بنبر مختلف.",
         },
         {
           wrong: "Wir sind nach Prag mit dem Zug letzten Sommer gefahren.",
           right: "Wir sind letzten Sommer mit dem Zug nach Prag gefahren.",
-          whyAr:
-            "ترتيبٌ معكوس: المكان أوّلاً والزمان آخراً على المنوال العربيّ. والترتيب المحايد TeKaMoLo: زمان ⟵ كيفية ⟵ مكان. والجملة مفهومة لكنّها تُسمع مترجَمة.",
+          classification: "contextual-alternative",
+          whyAr: "الترتيب زمان–كيفية–مكان نموذج محايد مفيد، لكنه تفضيل للظروف لا ترتيب إلزامي لكل عنصر؛ وقد يخدم التقديم معنىً أو تركيزاً خاصاً.",
         },
       ],
       relatedRuleComparison: {
         title: "قوسٌ واحد بأربعة مِلْآت",
         content:
-          "المساحة الوسطى التي تدرسها اليوم ليست خاصّةً بـPerfekt، بل هي **بين كلّ قوسين** في الألمانية:\n· Ich **habe** dir gestern eine Jacke **gekauft**. ⟵ Perfekt\n· Ich **will** dir morgen eine Jacke **kaufen**. ⟵ ناقص + مصدر\n· Ich **kaufe** dir morgen eine Jacke **ein**. ⟵ فعلٌ منفصل\n· Die Jacke **wird** dir sicher gut **stehen**. ⟵ مستقبل (b1-08)\nالترتيب الداخليّ واحدٌ في الأربعة. فما تتقنه اليوم يخدمك في كلّ زمنٍ مركّب تتعلّمه لاحقاً.\n\nوسيتّسع الباب مرّةً أخيرة في B1 مع الجمل الفرعية، حيث يذهب **الفعل المصرَّف نفسه** إلى الآخر (…, weil ich dir eine Jacke **gekauft habe**). ولاحظ الترتيب هناك: Partizip II ثمّ المساعد — معكوسٌ عمّا تعرفه. وهو أوضح دليلٍ على أنّ الألمانية تدفع الثقل إلى النهاية دفعاً منهجياً.",
+          "تظهر البنية ذات القوسين أيضاً مع الفعل الناقص، والفعل المنفصل، وبعض تراكيب المستقبل؛ لكن ترتيب العناصر الوسطى يتأثر بوظيفتها وبالمعلومة المراد إبرازها. أمثلة: Ich habe dir gestern eine Jacke gekauft · Ich will dir morgen ein Paket schicken · Ich hole dir morgen ein Paket ab · Ich werde dir morgen eine Jacke kaufen. تشترك هذه الأمثلة في أطر فعلية مختلفة، ولا تثبت أن كل ترتيب داخلي فيها واحد في جميع السياقات. وفي الجملة الفرعية يأتي المركب الفعلي غالباً في النهاية مثل weil ich dir eine Jacke gekauft habe.",
+
       },
     },
     {
@@ -439,20 +497,20 @@ export const lessonA201: Lesson = {
       titleAr: "لغة السفر: الحجز والوصول والشكوى",
       titleDe: "Reisewortschatz: buchen, ankommen, sich beschweren",
       explanationAr:
-        "القواعد وحدها لا تُوصلك إلى الفندق. وهذه الكتلة **معجميّة وظيفية**: ما تحتاج قوله فعلاً في مطارٍ ومحطّةٍ وفندق — وهي مادّة **Sprechen Teil 2** في امتحان A2 حيث تُطلب منك محادثةٌ في موقفٍ خدميّ.\n\n**أوّلاً — الحجز والتذكرة:**\n· **buchen** (يحجز) ⟵ Ich habe ein Zimmer **gebucht**. · **reservieren** ⟵ Ich möchte einen Tisch reservieren.\n· **die Hinfahrt / die Rückfahrt** (الذهاب / الإياب) · **hin und zurück** (ذهاباً وإياباً)\n· **einfach** هنا لا تعني „بسيط“ بل **ذهاباً فقط**: Einfach oder hin und zurück?\n· **der Fensterplatz / der Gangplatz** (مقعد النافذة / الممرّ)\n\n**ثانياً — الحركة: أفعالٌ كلّها مع sein، وكلّها منفصلة.**\n· **abfahren** (ينطلق — قطارٌ أو حافلة) ⟵ Der Zug **ist** pünktlich **abgefahren**.\n· **ankommen** (يصل) ⟵ Wir **sind** um acht **angekommen**.\n· **umsteigen** (يبدّل وسيلة النقل) ⟵ Ich **bin** in Köln **umgestiegen**.\n· **abfliegen / landen** (يقلع / يهبط) ⟵ Das Flugzeug **ist** in Wien **gelandet**.\nولاحظ الاطّراد: **حركةٌ ⟵ sein**، و**بادئةٌ منفصلة ⟵ ge- في الوسط**. قاعدتان من A1 تعملان معاً.\n\n**ثالثاً — في الفندق:**\n· **einchecken / auschecken** · **die Übernachtung** (المبيت ليلةً) · **das Einzelzimmer / das Doppelzimmer**\n· **inklusive Frühstück** (شاملاً الفطور) · **die Rezeption** (الاستقبال)\n\n**رابعاً — الشكوى، وهي مهارةٌ تُقيَّم:**\nالشكوى الألمانية **مباشرةٌ ومهذّبة معاً**، وصيغتها ثلاث خطوات: وصفُ المشكلة ⟵ أثرُها ⟵ الطلب.\n· **Entschuldigung, das Zimmer ist leider nicht sauber.** (المشكلة)\n· **Ich konnte deshalb nicht schlafen.** (الأثر)\n· **Könnten Sie mir bitte ein anderes Zimmer geben?** (الطلب)\nوالكلمة المفتاح **leider** (للأسف): تُلطّف الشكوى بلا أن تُضعفها، وهي علامةُ المتكلّم المهذّب في هذا السياق.",
+        "هذه الكتلة تجمع عبارات مفيدة في الحجز والقطار والفندق، وتعرض صيغاً محددة لا قاعدةً تقول إن كل أفعال السفر لها المساعد نفسه.\n\n· **الحجز:** buchen / reservieren: Ich habe ein Zimmer gebucht · Ich möchte einen Tisch reservieren.\n· **أفعال النقل في معناها اللازم المعروض:** abfahren (القطار ينطلق) وankommen (يصل) وumsteigen (يبدّل وسيلة النقل) تُبنى أمثلتها بـsein: ist abgefahren · ist angekommen · ist umgestiegen. والبادئة المنفصلة تحدد موضع ge- في Partizip II، لا اختيار المساعد وحده.\n· **معانٍ أخرى:** abholen في معنى استلام شيء يأخذ haben: hat den Rucksack abgeholt. كما قد يختلف مساعد بعض الأفعال بحسب المعنى؛ فـfliegen إلى وجهة يختلف عن قيادة طائرة أو نقل شيء بها، وschwimmen للانتقال إلى وجهة يختلف عن نشاط السباحة.\n· **في الفندق:** einchecken / auschecken · die Übernachtung · das Einzelzimmer / das Doppelzimmer · inklusive Frühstück · die Rezeption.\n· **طلب واضح ومهذّب:** يمكن تنظيم الرسالة إلى وصف المشكلة ثم بيان أثرها أو الطلب: Entschuldigung, das Zimmer ist leider nicht sauber. Könnten Sie mir bitte ein anderes Zimmer geben? هذه صيغة مناسبة لهذا المثال وليست العبارة المهذبة الوحيدة.",
       whyAr:
-        "لماذا نُفرد كتلةً للمعجم في درسٍ نحويّ؟ لأنّ معايير CEFR لا تقيس النحو وحده بل **القدرة على أداء مهمّة**. ووصفُ A2 يذكر صراحةً „التعامل مع أغلب المواقف التي تنشأ أثناء السفر“. فالسفر ليس موضوعاً لطيفاً اختير للتنويع، بل هو **الميدان الذي يُعرَّف به المستوى**.\n\nولماذا كانت أفعال السفر كلّها منفصلةً ومع sein؟ ليست صدفة: البوادئ ab- وan- وum- تدلّ في أصلها على **اتّجاه الحركة** (ab = بعيداً عن، an = نحو، um = تحوّلاً)، والحركة بين نقطتين هي بالضبط شرط sein. فالمعجم والنحو يلتقيان هنا التقاءً منتظماً: الباب الدلاليّ الواحد يحمل خصائص نحوية واحدة.\n\nوأمّا الشكوى فلها ثقلٌ ثقافيّ يتجاوز اللغة. الألمان يعدّون الشكوى المباشرة **حقّاً مشروعاً** لا وقاحة، ومن سكت عن خطأٍ في خدمةٍ دفع ثمنها لا يُعدّ متسامحاً بل غير مبالٍ. لكنّ المباشرة يجب أن تُغلَّف: leider وkönnten وbitte هي الغلاف. والمتعلّم الذي يحذف الغلاف يبدو عدوانياً، والذي يحذف المضمون لا يُفهم مراده.",
+        "الحاجة إلى عبارات السفر هنا اختيار موضوعي للتدريب على المفردات والوظائف، لا ادعاء بأن هذا الموضوع وحده يعرّف A2 أو يطابق جزءاً محدداً من امتحان. تعلّم كل فعل مع استعماله الشائع ومساعده في ذلك المعنى؛ لا تستنتج sein من البادئة أو من فكرة الحركة وحدهما. وفي خدمة الفندق تساعد صيغ مثل Entschuldigung وbitte وKönnten Sie… على بناء طلب واضح ومهذّب، لكن درجات المباشرة تختلف بين الأشخاص والمواقف ولا يصح تعميمها ثقافياً.",
       table: {
         title: "معجم السفر — الأساسيّ",
         columns: ["الألمانية", "العربية", "ملاحظة"],
         rows: [
           {
             label: "buchen / reservieren",
-            cells: ["يحجز", "Ich habe gebucht (haben — له مفعول)"],
+            cells: ["يحجز", "Ich habe ein Zimmer gebucht (haben في هذا الاستعمال)"],
           },
           {
             label: "abfahren",
-            cells: ["ينطلق (قطار/حافلة)", "ist abgefahren — حركة + منفصل"],
+            cells: ["ينطلق (قطار/حافلة)", "في هذا الاستعمال اللازم: ist abgefahren؛ والبادئة منفصلة"],
           },
           { label: "ankommen", cells: ["يصل", "ist angekommen"] },
           {
@@ -462,7 +520,7 @@ export const lessonA201: Lesson = {
           { label: "landen", cells: ["يهبط (طائرة)", "ist gelandet"] },
           {
             label: "hin und zurück",
-            cells: ["ذهاباً وإياباً", "مقابل einfach = ذهاباً فقط"],
+            cells: ["ذهاباً وإياباً", "في التذاكر: einfache Fahrt = اتجاه واحد"],
           },
           {
             label: "die Verspätung",
@@ -503,46 +561,46 @@ export const lessonA201: Lesson = {
         { de: "Ist das Frühstück inklusive?", ar: "هل الفطور مشمول؟" },
       ],
       comparisonWithArabic:
-        "الشكوى هي الفارق الثقافيّ الأكبر في هذا الدرس. الثقافة العربية تميل إلى **المداورة**: يُلمّح المتكلّم أوّلاً („الغرفة… كيف أقول… فيها شيءٌ بسيط“) ويترك المخاطَب يستنتج. والثقافة الألمانية تعدّ هذا **إضاعةً للوقت** وربّما إرباكاً: الموظّف لا يفهم ما تريد فلا يستطيع مساعدتك.\n\nوالصيغة الألمانية المتوقّعة مباشرةٌ ومغلَّفة معاً: **Entschuldigung** للاستئذان، ثمّ **leider** للتلطيف، ثمّ المشكلة صريحةً، ثمّ الطلب بصيغة **Könnten Sie…?** وهذه ليست وقاحةً بل الشكل المهذّب المعتمد.\n\nوفي المعجم فخٌّ لطيف: كلمة **einfach** تعني „بسيط، سهل“ في كلّ سياقٍ إلاّ التذاكر، فتعني هناك **ذهاباً فقط**. فمن أجاب „einfach“ على سؤال البائع ظنّاً أنّه يقول „الأمر بسيط“ اشترى تذكرة ذهابٍ بلا عودة. وهذا نموذجٌ لما يسمّيه المعجميّون „الصديق الكاذب داخل اللغة الواحدة“: كلمةٌ تُغيّر معناها بتغيّر السياق لا بتغيّر اللغة.",
+        "الصيغة المقترحة تجمع وضوح المشكلة مع طلب مهذّب، ويمكن للمتعلم تعديلها بحسب حاجته. لا نفترض أن المتحدثين بالعربية غير مباشرين أو أن المتحدثين بالألمانية يتكلمون بطريقة واحدة. وفي سياق التذاكر تُستعمل einfache Fahrt لرحلة باتجاه واحد، مقابل hin und zurück؛ وخارج هذا السياق تحمل einfach معاني أخرى مثل «بسيط».",
       eselsbruecke:
-        "أفعال السفر كلّها من نمطٍ واحد: بادئةٌ منفصلة + حركة + sein (ist abgefahren · ist angekommen · ist umgestiegen). وللشكوى ثلاث خطوات: المشكلة ← أثرها ← الطلب، وleider هي الغلاف المهذّب.",
+        "اربط المساعد بالفعل والمعنى في المثال: abfahren في معنى انطلاق القطار → ist abgefahren؛ buchen → hat gebucht؛ abholen لالتقاط حقيبة → hat abgeholt. واحفظ البادئة المنفصلة في موضع Partizip: abgefahren / abgeholt.",
       commonMistakes: [
         {
           wrong: "Der Zug hat um acht abgefahren.",
           right: "Der Zug ist um acht abgefahren.",
-          whyAr:
-            "abfahren حركةٌ بين نقطتين فمساعدها sein. وأفعال السفر كلّها على هذا النمط، فمن أخطأ في واحدٍ منها أخطأ في الباب كلّه.",
+          classification: "error",
+          whyAr: "في معنى انطلاق القطار اللازم، abfahren يبني Perfekt مع sein. ومع البادئة المنفصلة يدخل ge بين ab وfahren؛ والكتابة المعتادة كلمة واحدة: abgefahren.",
         },
         {
           wrong: "Ich habe in Köln umgestiegen.",
           right: "Ich bin in Köln umgestiegen.",
-          whyAr:
-            "umsteigen حركة كذلك ⟵ sein. ولاحظ أنّ وجود اسم مكانٍ (in Köln) لا يجعله مفعولاً به: المفعول به منصوبٌ بلا حرف جرّ.",
+          classification: "error",
+          whyAr: "umsteigen بمعنى تبديل وسيلة النقل يأخذ sein في هذا الاستعمال. لا تجعل البادئة المنفصلة وحدها سبب اختيار المساعد.",
         },
         {
-          wrong: "Einfach, bitte. (والمقصود: الأمر بسيط)",
-          right: "Hin und zurück, bitte.",
-          whyAr:
-            "einfach في سياق التذاكر تعني «ذهاباً فقط» لا «بسيط». وهذا فخّ معجميّ يشتري به المتعلّم تذكرةً بلا عودة.",
+          wrong: "Am Fahrkartenschalter: „Einfach, bitte.“ (إذا كان المقصود «الأمر بسيط»)",
+          right: "Das ist einfach. (للتعبير عن أن الأمر بسيط)",
+          classification: "contextual-alternative",
+          whyAr: "في سياق شباك التذاكر، Einfach, bitte جواب مفهوم لطلب رحلة باتجاه واحد؛ أما معنى البساطة فيعبّر عنه مثلاً Das ist einfach. ليست كلمة einfach خطأ بذاتها، بل يحدد السياق المقصود.",
         },
         {
           wrong: "Das Zimmer ist schlecht! Geben Sie mir ein anderes!",
-          right:
-            "Entschuldigung, das Zimmer ist leider nicht sauber. Könnten Sie mir bitte ein anderes geben?",
-          whyAr:
-            "المضمون صحيح والغلاف مفقود. والصيغة الأولى تُسمع عدوانية: أمرٌ صريح بلا استئذانٍ ولا تلطيف. وقسم Sprechen يُقيّم التهذيب بنداً مستقلّاً.",
+          right: "Entschuldigung, das Zimmer ist leider nicht sauber. Könnten Sie mir bitte ein anderes geben?",
+          classification: "contextual-alternative",
+          whyAr: "الجملة الأولى مفهومة ونحوها صحيح لكنها قد تبدو آمرة في هذا الموقف. الصياغة الثانية خيار واضح ومهذّب للتدريب، وليست العبارة المقبولة الوحيدة.",
         },
         {
           wrong: "Ich habe ein Zimmer gebucht für zwei Nächte.",
           right: "Ich habe für zwei Nächte ein Zimmer gebucht.",
-          whyAr:
-            "خروج الظرف بعد القوس. والمساحة الوسطى تحمله: الزمان يتقدّم على المفعول المنكَّر بحسب ترتيب TeKaMoLo.",
+          classification: "contextual-alternative",
+          whyAr: "الصياغة المقترحة ترتيب محايد شائع؛ قد يظهر الظرف بعد القوس في سياق استدراك/تركيز. لا نصف ترتيب الكلمات بأنه خطأ مطلق خارج السياق.",
         },
       ],
       relatedRuleComparison: {
         title: "من a1-11 إلى a2-01 — المدينة ثمّ السفر",
         content:
-          "في a1-11 تعلّمتَ التنقّل **داخل** المدينة: Wie komme ich zum Bahnhof? · mit dem Bus · umsteigen. واليوم تنتقل إلى التنقّل **بين** المدن والبلدان، والمعجم يتوسّع بالنمط نفسه:\n· داخل المدينة: die Haltestelle · die Fahrkarte · zu Fuß\n· بين المدن: der Bahnsteig · die Hinfahrt · die Verspätung · das Gleis\nوالفعل umsteigen يخدم الميدانين معاً — فهو الجسر بين الدرسين.\n\nوالفرق الوظيفيّ: في A1 كنتَ **تسأل عن الطريق** (سائلاً محتاجاً)، وفي A2 صرتَ **تحجز وتشتكي** (متعاملاً له حقوق). وهذا تدرّجٌ مقصود في معايير CEFR: من طلب المساعدة إلى إدارة الموقف.",
+          "في A1-11 تدربت على مفردات التنقل داخل المدينة، وهنا أضيف عبارات عن رحلة بين مدن وإقامة فندقية: die Fahrkarte، umsteigen، die Verspätung، buchen، die Rezeption. هذا امتداد موضوعي للمفردات، لا ادعاء بأن الدرسين يغطيان مواقف CEFR أو جزءاً بعينه من امتحان.",
+
       },
     },
   ],
@@ -550,23 +608,9 @@ export const lessonA201: Lesson = {
     id: "read-a2-01",
     titleDe: "Eine Reise, die anders lief",
     titleAr: "رحلةٌ سارت على غير ما خُطّط لها",
-    textType: "erzaehlung",
-    paragraphs: [
-      "Letzten Sommer wollten meine Schwester und ich eine Woche in Prag verbringen. Wir hatten alles genau geplant: Wir buchten die Zugtickets schon im Mai, reservierten ein kleines Hotel in der Altstadt und schrieben eine lange Liste mit Museen und Cafés. Ich war noch nie in Tschechien gewesen und freute mich sehr auf die Reise.",
-      "Am Abfahrtstag standen wir um fünf Uhr auf. Der Zug sollte um sieben abfahren. Aber am Bahnhof gab es eine Durchsage: „Der Zug nach Prag hat heute zwei Stunden Verspätung.“ Wir konnten nichts machen und tranken erst einmal einen Kaffee. Nach drei Stunden sind wir endlich abgefahren.",
-      "In Dresden mussten wir umsteigen. Dort ist etwas passiert, was ich nie vergessen werde: Meine Schwester hat ihren Rucksack im ersten Zug vergessen — mit ihrem Pass und ihrem Geld. Wir sind sofort zum Servicepoint gelaufen. Der Mitarbeiter war sehr freundlich. Er hat telefoniert, gesucht und nach zwanzig Minuten gesagt: „Der Rucksack ist da. Sie können ihn morgen in Prag abholen.“",
-      "Am Ende sind wir um Mitternacht angekommen — acht Stunden später als geplant. Das Hotel hatte unser Zimmer schon weitergegeben, weil wir nicht angerufen hatten. Wir standen also nachts in einer fremden Stadt ohne Zimmer und ohne Pass.",
-      "Aber dann kam die schönste Überraschung: Die Frau an der Rezeption hat für uns ein anderes Hotel gefunden, zwei Straßen weiter, und es war sogar billiger und schöner. Am nächsten Morgen haben wir den Rucksack abgeholt, und danach war die Woche wirklich wunderbar.",
-      "Heute erzähle ich diese Geschichte gern. Denn von den perfekten Reisen erinnere ich mich an wenig. Aber an diesen Tag erinnere ich mich an jede Minute.",
-    ],
-    paragraphsAr: [
-      "الصيف الماضي أردنا أنا وأختي أن نقضي أسبوعاً في براغ. كنّا قد خطّطنا لكلّ شيءٍ بدقّة: حجزنا تذاكر القطار في مايو، وحجزنا فندقاً صغيراً في المدينة القديمة، وكتبنا قائمةً طويلة بالمتاحف والمقاهي. لم أكن قد زرتُ التشيك من قبل قطّ، وكنتُ متشوّقاً جداً للرحلة.",
-      "يوم السفر نهضنا في الخامسة. كان القطار سينطلق في السابعة. لكن في المحطّة جاء إعلان: «قطار براغ متأخّر اليوم ساعتين». لم نستطع فعل شيءٍ فشربنا قهوةً أوّلاً. وبعد ثلاث ساعات انطلقنا أخيراً.",
-      "في درسدن كان علينا تبديل القطار. وهناك حدث شيءٌ لن أنساه أبداً: نسيت أختي حقيبة ظهرها في القطار الأوّل — وفيها جواز سفرها ونقودها. ركضنا فوراً إلى مكتب الخدمة. كان الموظّف لطيفاً جداً. اتّصل وبحث وقال بعد عشرين دقيقة: «الحقيبة موجودة. يمكنكم أخذها غداً في براغ».",
-      "وفي النهاية وصلنا منتصف الليل — متأخّرين ثماني ساعات عمّا خُطّط. وكان الفندق قد أعطى غرفتنا لغيرنا لأنّنا لم نتّصل. فوقفنا ليلاً في مدينةٍ غريبة بلا غرفةٍ وبلا جواز.",
-      "لكن جاءت بعد ذلك أجمل مفاجأة: وجدت لنا الموظّفة في الاستقبال فندقاً آخر على بُعد شارعين، وكان أرخص وأجمل. وفي صباح اليوم التالي أخذنا الحقيبة، وبعدها كان الأسبوع رائعاً حقاً.",
-      "واليوم أحكي هذه القصّة بسرور. فالرحلات المثالية لا أذكر منها إلاّ القليل. أمّا هذا اليوم فأذكر منه كلّ دقيقة.",
-    ],
+    textType: "bericht",
+    paragraphs: ["Letzten Sommer wollten meine Schwester und ich eine Woche in Prag verbringen. Wir haben alles genau geplant: Wir haben die Zugtickets schon im Mai gebucht, ein kleines Hotel in der Altstadt reserviert und eine lange Liste mit Museen und Cafés geschrieben. Ich war noch nie in Tschechien, und ich habe mich sehr auf die Reise gefreut.", "Am Abfahrtstag sind wir um fünf Uhr aufgestanden. Der Zug sollte um sieben abfahren. Aber am Bahnhof gab es eine Durchsage: „Der Zug nach Prag hat heute zwei Stunden Verspätung.“ Wir konnten nichts machen und haben erst einmal einen Kaffee getrunken. Nach zwei Stunden sind wir endlich abgefahren.", "In Dresden mussten wir umsteigen. Dort ist etwas passiert, was ich nie vergessen werde: Meine Schwester hat ihren Rucksack im ersten Zug vergessen — mit ihrem Pass und ihrem Geld. Wir sind sofort zum Informationsschalter am Bahnhof gegangen. Der Mitarbeiter war sehr freundlich. Er hat telefoniert, gesucht und nach zwanzig Minuten gesagt: „Der Rucksack ist da. Sie können ihn morgen in Prag abholen.“", "Unterwegs gab es weitere Verspätungen. Am Ende sind wir um Mitternacht angekommen — acht Stunden später als geplant. Das gebuchte Hotel war schon geschlossen. So standen wir nachts in einer fremden Stadt ohne Zimmer und ohne Pass.", "Zum Glück gab es eine schöne Überraschung: Die Rezeption eines anderen Hotels zwei Straßen weiter war noch geöffnet. Die Mitarbeiterin dort hat ein Zimmer für uns gefunden. Das Hotel war sogar billiger und schöner. Am nächsten Morgen haben wir den Rucksack abgeholt, und danach war die Woche wirklich wunderbar.", "Heute erzähle ich diese Geschichte gern. An die perfekten Reisen erinnere ich mich kaum. Aber ich erinnere mich an jede Minute dieses Tages."],
+    paragraphsAr: ["الصيف الماضي أردنا أنا وأختي أن نقضي أسبوعاً في براغ. خططنا لكل شيء بدقة: حجزنا تذاكر القطار في مايو، وحجزنا فندقاً صغيراً في المدينة القديمة، وكتبنا قائمة طويلة بالمتاحف والمقاهي. لم أزر التشيك من قبل، وقد تحمست كثيراً للرحلة.", "يوم السفر نهضنا في الخامسة. كان من المقرر أن ينطلق القطار في السابعة. لكن في المحطة جاء إعلان: «قطار براغ متأخر اليوم ساعتين». لم نستطع فعل شيء فشربنا قهوة أولاً. وبعد ساعتين انطلقنا أخيراً.", "في درسدن كان علينا تبديل القطار. وهناك حدث شيء لن أنساه أبداً: نسيت أختي حقيبة ظهرها في القطار الأول — وفيها جواز سفرها ونقودها. ذهبنا فوراً إلى مكتب الاستعلامات في المحطة. كان الموظف لطيفاً جداً. اتصل وبحث وقال بعد عشرين دقيقة: «الحقيبة موجودة. يمكنكم أخذها غداً في براغ».", "وتأخر القطار مرة أخرى في الطريق. وفي النهاية وصلنا عند منتصف الليل، أي متأخرين ثماني ساعات عن الموعد المخطط. كان الفندق الذي حجزناه مغلقاً. فوجدنا أنفسنا ليلاً في مدينة غريبة بلا غرفة وبلا جواز.", "ولحسن الحظ كانت هناك مفاجأة جميلة: كان مكتب استقبال فندق آخر على بُعد شارعين مفتوحاً. وجدت لنا الموظفة هناك غرفة. وكان الفندق أرخص وأجمل. وفي صباح اليوم التالي استلمنا الحقيبة، وبعدها كان الأسبوع رائعاً حقاً.", "واليوم أحكي هذه القصة بسرور. لا أكاد أذكر من الرحلات المثالية شيئاً، لكنني أذكر كل دقيقة من هذا اليوم."],
     glossary: [
       {
         de: "verbringen",
@@ -574,9 +618,9 @@ export const lessonA201: Lesson = {
         noteAr: "eine Woche in Prag verbringen",
       },
       {
-        de: "buchten (buchen)",
+        de: "gebucht (buchen)",
         ar: "حجزوا",
-        noteAr: "Präteritum — النصّ سردٌ مكتوب",
+        noteAr: "Partizip II في Perfekt داخل التقرير الشخصي",
       },
       {
         de: "die Altstadt",
@@ -594,7 +638,7 @@ export const lessonA201: Lesson = {
       {
         de: "abgefahren (abfahren)",
         ar: "انطلق",
-        noteAr: "حركة ⟵ sein، وbادئة منفصلة",
+        noteAr: "في معنى انطلاق القطار: ist abgefahren؛ والبادئة المنفصلة تحدد موضع ge-",
       },
       {
         de: "umsteigen",
@@ -630,7 +674,7 @@ export const lessonA201: Lesson = {
       {
         de: "erinnere mich an (sich erinnern)",
         ar: "أتذكّر",
-        noteAr: "‎+ Akkusativ: an diesen Tag erinnere ich mich",
+        noteAr: "+ Akkusativ: Ich erinnere mich an jede Minute dieses Tages",
       },
     ],
     questions: [
@@ -648,7 +692,7 @@ export const lessonA201: Lesson = {
         ],
         correctIndex: 0,
         explanation:
-          "«Wir buchten die Zugtickets schon im Mai, reservierten ein kleines Hotel» — حجزٌ مسبق في مايو.",
+          "«Wir haben die Zugtickets schon im Mai gebucht, ein kleines Hotel … reserviert» — حجزٌ مسبق في مايو.",
         errorType: "vocabulary",
       },
       {
@@ -688,33 +732,35 @@ export const lessonA201: Lesson = {
       {
         id: "rq4",
         type: "multiple-choice",
-        questionDe: "Warum steht „Wir buchten“ und nicht „Wir haben gebucht“?",
-        instructionAr: "سؤال قواعد: لماذا buchten لا haben gebucht؟",
+        paragraph: 1,
+        questionDe: "Welche Aussage zu „wollten“ und „haben … gebucht“ im ersten Absatz trifft zu?",
+        instructionAr: "سؤال قواعد: قارن صيغ Präteritum وPerfekt الواردة في الفقرة الأولى.",
         options: [
-          "Weil der Text eine geschriebene Erzählung ist",
-          "Weil buchen ein starkes Verb ist",
-          "Weil es ein Fehler ist",
-          "Weil buchen immer mit Präteritum steht",
+          "wollten steht im Präteritum, haben … gebucht im Perfekt; der Text verwendet beide Formen.",
+          "Beide Formen stehen im Präteritum.",
+          "Beide Formen stehen im Perfekt.",
+          "Im Bericht muss jedes Verb im Präteritum stehen.",
         ],
         correctIndex: 0,
         explanation:
-          "Präteritum هو زمن السرد المكتوب. ولو حكى الراوي القصّة شفهياً لقال «wir haben gebucht».",
+          "النص يجمع wollten في Präteritum وhaben … gebucht في Perfekt. وجود الصيغتين هنا مثال سياقي، لا قاعدة تلزم كل نص سردي بزمن واحد.",
         errorType: "grammar",
       },
       {
         id: "rq5",
         type: "multiple-choice",
-        questionDe: "Welches Hilfsverb steht bei „abfahren“ und warum?",
-        instructionAr: "سؤال قواعد: أيّ مساعدٍ مع abfahren ولماذا؟",
+        paragraph: 2,
+        questionDe: "Welches Hilfsverb steht im Satz „Nach drei Stunden sind wir endlich abgefahren“?",
+        instructionAr: "سؤال قواعد: اختر المساعد في استعمال abfahren الوارد في القصة.",
         options: [
-          "sein — weil es eine Bewegung von A nach B ist",
-          "haben — weil es ein Objekt hat",
-          "sein — weil es trennbar ist",
-          "haben — weil es ein starkes Verb ist",
+          "sein — im intransitiven Sinn «der Zug fährt ab»",
+          "haben — weil jedes trennbare Verb haben nimmt",
+          "sein — weil jedes Bewegungsverb immer sein nimmt",
+          "haben — weil abfahren ein starkes Verb ist",
         ],
         correctIndex: 0,
         explanation:
-          "«sind wir endlich abgefahren» — الحركة بين نقطتين تستدعي sein. والانفصال يُحدّد موضع ge- لا المساعد.",
+          "في معنى انطلاق القطار اللازم، يرد Perfekt مع sein: sind abgefahren. البادئة المنفصلة تحدد موضع ge-، ولا تحدد المساعد وحدها؛ وتختلف استعمالات أفعال أخرى بحسب المعنى.",
         errorType: "grammar",
       },
       {
@@ -724,21 +770,21 @@ export const lessonA201: Lesson = {
         questionDe: "Wie endete die Geschichte?",
         instructionAr: "اقرأ الفقرة الخامسة: كيف انتهت القصّة؟",
         options: [
-          "Sie fanden ein besseres und billigeres Hotel",
+          "Sie fanden ein anderes Hotel, das billiger und schöner war.",
           "Sie fuhren wieder nach Hause",
           "Sie schliefen am Bahnhof",
           "Sie fanden den Rucksack nie",
         ],
         correctIndex: 0,
         explanation:
-          "«ein anderes Hotel gefunden … und es war sogar billiger und schöner».",
+          "«Die Rezeption eines anderen Hotels zwei Straßen weiter war noch geöffnet. Die Mitarbeiterin dort hat ein Zimmer für uns gefunden. Das Hotel war sogar billiger und schöner.»",
         errorType: "vocabulary",
       },
     ],
     redemittel: [
       {
-        de: "Wir hatten alles genau geplant.",
-        ar: "كنّا قد خطّطنا لكلّ شيءٍ بدقّة",
+        de: "Wir haben alles genau geplant.",
+        ar: "خططنا لكلّ شيءٍ بدقّة",
       },
       {
         de: "Der Zug hat zwei Stunden Verspätung.",
@@ -749,20 +795,20 @@ export const lessonA201: Lesson = {
         ar: "في … كان علينا تبديل القطار",
       },
       {
-        de: "Ich war noch nie in … gewesen.",
-        ar: "لم أكن قد زرتُ … من قبل قطّ",
+        de: "Ich habe mich sehr auf die Reise gefreut.",
+        ar: "تحمّست كثيراً للرحلة",
       },
       {
         de: "Am Ende sind wir um … angekommen.",
         ar: "وفي النهاية وصلنا في …",
       },
       {
-        de: "Daran erinnere ich mich an jede Minute.",
-        ar: "أذكر من ذلك كلّ دقيقة",
+        de: "Ich erinnere mich an jede Minute dieses Tages.",
+        ar: "أتذكّر كلّ دقيقة من ذلك اليوم",
       },
     ],
     discussionAr:
-      "احكِ رحلةً لك سارت على غير ما خُطّط لها، في ثماني جملٍ على الأقلّ. استعمل Perfekt للأفعال العادية وPräteritum لـwar وhatte وkonnte وmusste، وأدخل ثلاثة على الأقلّ من أفعال السفر المنفصلة (abfahren · ankommen · umsteigen · abholen). ثمّ راجع كلّ جملة: هل أغلقتَ القوس بـPartizip II في آخرها؟",
+      "اكتب أو احكِ مسودةً ذاتية المراجعة في عدة جمل عن رحلة سابقة، واستعمل بعض Perfekt وبعض صيغ Präteritum التي تناسب السياق مثل war وhatte وkonnte وmusste. أدرج فعلين من أفعال السفر المنفصلة، ثم راجع موضع Partizip II. هذه مسودة اختيارية لا تُصحح آلياً ولا تُحتسب دليلاً على هدف سردٍ حر.",
   },
 
   listening: {
@@ -810,8 +856,8 @@ export const lessonA201: Lesson = {
           { speaker: "Karim", de: "Wie war das Hotel?", ar: "كيف كان الفندق؟" },
           {
             speaker: "Mona",
-            de: "Das Hotel war super! Wir haben geschwommen und in der Sonne gelegen.",
-            ar: "كان الفندق رائعاً! سبحنا واستلقينا في الشمس.",
+            de: "Das Hotel war super! Wir haben im Meer geschwommen und am Strand in der Sonne gelegen.",
+            ar: "كان الفندق رائعاً! سبحنا في البحر واستلقينا على الشاطئ في الشمس.",
           },
           {
             speaker: "Karim",
@@ -843,7 +889,7 @@ export const lessonA201: Lesson = {
         id: "q2",
         itemId: "l2",
         type: "multiple-choice",
-        instructionAr: "اختر الإجابة الصحيحة:",
+        instructionAr: "بعد الاستماع، اختر الإجابة الصحيحة:",
         questionDe: "Wohin sind Mona und Karim gefahren?",
         questionAr: "إلى أين ذهب منى وكريم؟",
         options: ["nach Sousse", "nach Berlin", "nach München", "nach Hamburg"],
@@ -855,7 +901,7 @@ export const lessonA201: Lesson = {
         id: "q3",
         itemId: "l2",
         type: "multiple-choice",
-        instructionAr: "اختر الإجابة الصحيحة:",
+        instructionAr: "بعد الاستماع، اختر الإجابة الصحيحة:",
         questionDe: "Wie war das Hotel?",
         questionAr: "كيف كان الفندق؟",
         options: ["super", "schlecht", "teuer", "klein"],
@@ -893,16 +939,16 @@ export const lessonA201: Lesson = {
       {
         de: "das Flugzeug",
         ar: "الطائرة",
-        note: "eu = أُوي + z = تس (لا tz)، وg في نهاية كل جزء = ك: فلووك-تسويك",
+        note: "eu = /ɔʏ̯/ تقريباً، وz = /ts/، وg في Flugzeug يُنطق /k/ هنا: Flugzeug",
       },
       {
         de: "geschwommen",
         ar: "سبح (تصريف)",
-        note: "sch = ش + o مزدوجة: غِشڤومِن",
+        note: "sch = /ʃ/ تقريباً، وo قصيرة قبل mm: geschwommen",
       },
       { de: "der Strand", ar: "الشاطئ", note: "st في البداية = شت: شترانت" },
     ],
-    tip: "«das Flugzeug» كلمة مركبة رائعة: fliegen (يطير) + Zeug (شيء) = الطائرة حرفياً «شيء الطيران»!",
+    tip: "يورد Duden أن Flugzeug صيغ على غرار Fahrzeug؛ لا تحلّل الكلمة على أنها fliegen + Zeug. استمع إلى /ɔʏ̯/ في المقطع الأخير.",
     shadowing: [
       {
         de: "Ich bin nach Berlin geflogen.",
@@ -910,9 +956,9 @@ export const lessonA201: Lesson = {
         tip: "geflogen = غِفلوغِن (o)",
       },
       {
-        de: "Wir haben geschwommen.",
-        ar: "سبحنا.",
-        tip: "geschwommen = غِشڤومِن (ش+مزدوجة)",
+        de: "Wir haben im Meer geschwommen.",
+        ar: "سبحنا في البحر.",
+        tip: "في نشاط السباحة قد يرد haben أو sein؛ أما السباحة إلى وجهة فتأخذ sein: Wir sind zur Insel geschwommen.",
       },
       {
         de: "Hast du ein Souvenir gekauft?",
@@ -931,18 +977,15 @@ export const lessonA201: Lesson = {
     {
       id: "w1",
       type: "transformation",
-      instructionAr: "اكتب عن عطلتك الماضية (جملة كاملة بـ Perfekt):",
-      prompt:
-        "Was hast du im Urlaub gemacht? (مثال: Ich bin ... gefahren / Ich habe ... gemacht)",
+      instructionAr: "حوّل الجملة الموجّهة إلى Perfekt، مع الحفاظ على الوجهة والفعلين:",
+      prompt: "Präsens: Ich fahre nach Sousse und besuche ein Museum. → Perfekt",
       acceptedAnswers: [
-        "Ich bin nach Sousse gefahren",
-        "Ich habe geschwommen",
-        "Ich habe Fotos gemacht",
-        "Ich bin in Berlin gewesen",
+        "Ich bin nach Sousse gefahren und habe ein Museum besucht.",
+        "Ich bin nach Sousse gefahren und habe ein Museum besucht",
       ],
-      sampleAnswer: "Ich bin nach Sousse gefahren und habe geschwommen.",
+      sampleAnswer: "Ich bin nach Sousse gefahren und habe ein Museum besucht.",
       explanation:
-        "استخدم sein للحركة (gefahren) وhaben للفعل العادي (geschwommen).",
+        "في هذا المعنى يأخذ السفر إلى وجهة sein، ويأخذ besuchen مع المفعول ein Museum haben. هذا تحويل محدد؛ لا يقرر مساعد كل استعمال لأفعال السفر.",
       errorType: "grammar",
     },
     {
@@ -950,7 +993,7 @@ export const lessonA201: Lesson = {
       type: "fill-blank",
       instructionAr: "أكمل بـ haben/sein + التصريف:",
       template:
-        "Ich ___ nach Berlin ___ (fliegen). Wir ___ Pizza ___ (essen). Sie ___ ein Buch ___ (kaufen).",
+        "Ich ___ nach Berlin ___ (fliegen). Wir ___ Pizza ___ (essen). Mona ___ ein Buch ___ (kaufen).",
       blanks: [
         { correct: "bin", options: ["bin", "habe", "hat"] },
         { correct: "geflogen", options: ["geflogen", "gefliegen", "geflogt"] },
@@ -960,7 +1003,7 @@ export const lessonA201: Lesson = {
         { correct: "gekauft", options: ["gekauft", "gekaufen", "gekaufte"] },
       ],
       explanation:
-        "fliegen حركة → bin geflogen. essen/kaufen عادية → haben gegessen / hat gekauft.",
+        "في هذا المثال يسافر fliegen إلى وجهة فيأخذ sein؛ ويأتي essen وkaufen مع haben في هذين الاستعمالين. اختيار المساعد مرتبط بالفعل ومعناه، لا بقاعدة «الحركة» وحدها.",
       errorType: "grammar",
     },
     {
@@ -992,7 +1035,7 @@ export const lessonA201: Lesson = {
     {
       id: "e2",
       type: "multiple-choice",
-      instructionAr: "اختر الصيغة الصحيحة (الحركة):",
+      instructionAr: "اختر الصيغة الصحيحة لمعنى السفر بالطائرة إلى بلد:",
       questionDe: "Wir ___ nach Deutschland ___.",
       options: [
         "sind ... geflogen",
@@ -1001,7 +1044,7 @@ export const lessonA201: Lesson = {
         "haben ... gefliegen",
       ],
       correctIndex: 0,
-      explanation: "fliegen حركة → sein + geflogen.",
+      explanation: "هنا fliegen يعني السفر بالطائرة إلى Deutschland، فيأتي Perfekt مع sein: sind geflogen.",
       errorType: "grammar",
     },
     {
@@ -1029,14 +1072,13 @@ export const lessonA201: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr:
-        "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "اختر الكلمة التي تصلح الخلل في الجملة المعروضة:",
       wrongSentence: "Ich habe nach Berlin geflogen.",
       wrongWord: "habe",
       correctWord: "bin",
       options: ["bin", "habe", "war", "hatte"],
       explanation:
-        "fliegen فعل حركة ⇒ مساعده sein: Ich bin nach Berlin geflogen.",
+        "في معنى السفر بالطائرة إلى Berlin، الصيغة هي: Ich bin nach Berlin geflogen. قد يختلف المساعد في استعمالات أخرى لـfliegen.",
       errorType: "grammar",
     },
     {
@@ -1044,14 +1086,14 @@ export const lessonA201: Lesson = {
       type: "fill-blank",
       instructionAr: "أكمل بـ sein أو haben:",
       template:
-        "Er ___ nach Tunis gefahren. Ich ___ ein Souvenir gekauft. Wir ___ geschwommen.",
+        "Er ___ nach Tunis gefahren. Ich ___ ein Souvenir gekauft. Wir ___ zur Insel geschwommen.",
       blanks: [
         { correct: "ist", options: ["ist", "hat"] },
         { correct: "habe", options: ["ist", "habe"] },
-        { correct: "haben", options: ["sind", "haben"] },
+        { correct: "sind", options: ["sind", "haben"] },
       ],
       explanation:
-        "fahren حركة → ist. kaufen → habe. schwimmen (في البحر) → haben/sind حسب السياق، هنا haben مع wir.",
+        "إلى تونس: ist gefahren. kaufen هنا: habe gekauft. إلى جزيرة بوصفها وجهة: sind geschwommen؛ أما نشاط السباحة فقد يرد معه haben أو sein.",
       errorType: "grammar",
     },
     {
@@ -1074,27 +1116,30 @@ export const lessonA201: Lesson = {
       questionDe: "Ich bin um sieben Uhr aufgestanden.",
       questionAr: "ما معنى الجملة؟",
       options: [
-        "استيقظت في السابعة",
+        "نهضتُ في السابعة",
         "أستيقظ في السابعة",
         "سأستيقظ في السابعة",
         "كنت نائماً في السابعة",
       ],
       correctIndex: 0,
       explanation:
-        "aufstehen فعل منفصل → Partizip: aufgestanden. bin لأنها تغير حالة.",
+        "aufstehen يعني هنا النهوض/مغادرة السرير، وصيغته aufgestanden مع sein في هذا المعنى.",
       errorType: "vocabulary",
     },
     {
       id: "e9",
-      type: "error-correction",
-      instructionAr:
-        "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Ich habe geschwommen.",
-      wrongWord: "habe",
-      correctWord: "bin",
-      options: ["bin", "habe", "war", "hatte"],
+      type: "multiple-choice",
+      instructionAr: "اختر الحكم الدقيق على المساعد في المثال:",
+      questionDe: "Ich habe geschwommen.",
+      options: [
+        "الصيغة ممكنة لنشاط السباحة؛ أما السباحة إلى وجهة فتأخذ sein، مثل Ich bin zur Insel geschwommen.",
+        "الصيغة خطأ دائماً؛ schwimmen يأخذ sein فقط.",
+        "الصيغة خطأ لأن Partizip II هو geschwimmt.",
+        "الصيغة صحيحة فقط إذا كان الكلام في الحاضر.",
+      ],
+      correctIndex: 0,
       explanation:
-        "schwimmen حركة → sein: Ich bin geschwommen. والتصريف الثالث القوي geschwommen.",
+        "يذكر Duden أن نشاط السباحة للمتعة/الرياضة يقبل hat/ist geschwommen؛ أما الانتقال سباحةً إلى مكان مثل zur Insel فيأخذ sein. لذلك لا يصح تصحيح Ich habe geschwommen بلا سياق.",
       errorType: "grammar",
     },
     {
@@ -1102,7 +1147,7 @@ export const lessonA201: Lesson = {
       type: "dictation",
       instructionAr: "استمع واكتب الجملة:",
       audioText: "Wir haben im Hotel gut geschlafen.",
-      explanation: "نمنام جيداً في الفندق — schlafen قوي: geschlafen.",
+      explanation: "نمنا جيداً في الفندق — Partizip II من schlafen هو geschlafen.",
       errorType: "spelling",
     },
     {
@@ -1151,14 +1196,14 @@ export const lessonA201: Lesson = {
         },
       ],
       explanation:
-        "أربع عائلاتٍ كبرى وطائفةٌ مختلطة — من عرف النمط استغنى عن حفظ القائمة كلّها.",
+        "تطابق الأمثلة أربع مجموعات Ablaut مع مجموعة مختلطة. الأنماط وصفٌ للمقارنة والمساعدة على التذكّر، ولا تعفي من حفظ صور الفعل المحدد.",
       errorType: "grammar",
     },
     {
       id: "e14",
       type: "multiple-choice",
-      instructionAr: "في محادثةٍ عادية: أيّ صيغةٍ يقولها الألمانيّ فعلاً؟",
-      questionDe: "Im Gespräch: Wie sagt man das?",
+      instructionAr: "اختر صيغة Präteritum المطلوبة، لا حكماً على صحة Perfekt:",
+      questionDe: "Welche Form ist die Präteritumform von „Ich bin gestern sehr müde gewesen“?",
       options: [
         "Ich war gestern sehr müde.",
         "Ich bin gestern sehr müde gewesen.",
@@ -1167,13 +1212,13 @@ export const lessonA201: Lesson = {
       ],
       correctIndex: 0,
       explanation:
-        "sein تُقال بالـPräteritum في الكلام. والثانية صحيحةٌ نحواً لكنّها ثقيلة ونادرة.",
+        "war هي صيغة Präteritum المطلوبة. Ich bin gestern sehr müde gewesen صيغة Perfekt سليمة أيضاً؛ السؤال يطلب زمناً بعينه، لا يقرر أن البديل غير مستعمل.",
       errorType: "grammar",
     },
     {
       id: "e15",
       type: "fill-blank",
-      instructionAr: "أكمل بالماضي المناسب للكلام (Präteritum للأفعال الخمسة)",
+      instructionAr: "أكمل بصيغ Präteritum المطلوبة في هذا التمرين:",
       template:
         "Ich ___ nicht kommen, ich ___ arbeiten. Es ___ keine andere Möglichkeit.",
       blanks: [
@@ -1194,7 +1239,7 @@ export const lessonA201: Lesson = {
         },
       ],
       explanation:
-        "الأفعال الناقصة وes gibt تُقال بالـPräteritum في الكلام: konnte · musste · gab.",
+        "الصيغ المطلوبة هنا هي konnte وmusste وgab. صيغة Präteritum مناسبة للنموذج المعروض؛ لا يعني ذلك أن Perfekt ممنوع في الكلام.",
       errorType: "grammar",
     },
     {
@@ -1212,39 +1257,38 @@ export const lessonA201: Lesson = {
         "nach",
         "Prag",
         "gefahren",
+        ".",
       ],
-      correctSentence: "Wir sind letzten Sommer mit dem Zug nach Prag gefahren",
+      correctSentence: "Wir sind letzten Sommer mit dem Zug nach Prag gefahren.",
       explanation:
         "زمان (letzten Sommer) ⟵ كيفية (mit dem Zug) ⟵ مكان (nach Prag)، وPartizip II يُغلق.",
       errorType: "word-order",
     },
     {
       id: "e17",
-      type: "error-correction",
-      instructionAr: "صحّح ترتيب الضميرين",
-      wrongSentence: "Ich habe ihm es schon gesagt.",
-      wrongWord: "ihm es",
-      correctWord: "es ihm",
+      type: "multiple-choice",
+      instructionAr: "اختر الترتيب المحايد المألوف للضميرين المفعوليين:",
+      questionDe: "Ich habe ___ schon gesagt.",
       options: ["es ihm", "ihm es", "ihn es", "es ihn"],
+      correctIndex: 0,
       explanation:
-        "بين الضميرين يتقدّم المنصوب (es) على المجرور (ihm) — عكس ترتيب الأسماء.",
+        "في هذا المثال، es (Akkusativ) قبل ihm (Dativ) هو الترتيب المحايد المألوف. تتأثر الترتيبات بالبؤرة والسياق؛ لا نصف كل ترتيب آخر بأنه مستحيل في كل مقام.",
       errorType: "word-order",
     },
     {
       id: "e18",
-      type: "error-correction",
-      instructionAr: "صحّح موضع المفعول",
-      wrongSentence: "Ich habe gegessen einen Apfel.",
-      wrongWord: "gegessen einen Apfel",
-      correctWord: "einen Apfel gegessen",
+      type: "multiple-choice",
+      instructionAr: "اختر الترتيب المحايد في جملة رئيسية بسيطة:",
+      questionDe: "Ich habe ___ gegessen.",
       options: [
-        "einen Apfel gegessen",
+        "einen Apfel",
         "gegessen einen Apfel",
+        "ein Apfel",
         "einen Apfel essen",
-        "gegessen ein Apfel",
       ],
+      correctIndex: 0,
       explanation:
-        "Partizip II يُغلق الجملة، فالمفعول يسبقه — وهذا أشيع أخطاء العرب في الجملة الطويلة.",
+        "في الترتيب المحايد، يسبق المفعول einen Apfel Partizip II. وقد توجد عناصر مؤجلة أو بؤرة خاصة في سياقات أخرى؛ السؤال يحدد الترتيب المحايد.",
       errorType: "word-order",
     },
     {
@@ -1266,7 +1310,7 @@ export const lessonA201: Lesson = {
     {
       id: "e20",
       type: "fill-blank",
-      instructionAr: "أكمل بالفعل المساعد الصحيح لأفعال السفر",
+      instructionAr: "أكمل بمساعد Perfekt الملائم في هذين الاستعمالين اللازمين لأفعال السفر:",
       template:
         "Der Zug ___ pünktlich abgefahren, und wir ___ um acht angekommen.",
       blanks: [
@@ -1282,7 +1326,7 @@ export const lessonA201: Lesson = {
         },
       ],
       explanation:
-        "abfahren وankommen حركةٌ بين نقطتين ⟵ sein. وأفعال السفر كلّها على هذا النمط.",
+        "في هذين الاستعمالين اللازمين — القطار ينطلق ونحن نصل — يأتي المساعد sein. لا تعمّم ذلك على كل معنى لكل فعل سفر.",
       errorType: "grammar",
     },
     {
@@ -1298,40 +1342,40 @@ export const lessonA201: Lesson = {
       ],
       correctIndex: 0,
       explanation:
-        "einfach في سياق التذاكر تعني «ذهاباً فقط» لا «بسيط» — فخّ معجميّ يشتري به المتعلّم تذكرةً بلا عودة.",
+        "في هذا السياق عند شباك التذاكر تعني einfache Fahrt رحلةً باتجاه واحد؛ أما hin und zurück فتعني ذهاباً وإياباً. وخارج سياق التذاكر قد تعني einfach «بسيط».",
       errorType: "vocabulary",
     },
     {
       id: "e22",
       type: "multiple-choice",
-      instructionAr: "أيّ شكوى مناسبة في فندقٍ ألمانيّ؟",
-      questionDe: "Das Zimmer ist nicht sauber. Was sagen Sie?",
+      instructionAr: "أيّ صياغة مناسبة لموقف الشكوى المحدد؟",
+      questionDe: "Sie sind im Hotelzimmer: Das Zimmer ist nicht sauber. Welche Bitte nennt das Problem klar und höflich?",
       options: [
-        "Entschuldigung, das Zimmer ist leider nicht sauber. Könnten Sie mir bitte ein anderes geben?",
+        "Entschuldigung, das Zimmer ist leider nicht sauber. Könnten Sie mir bitte ein anderes Zimmer geben?",
         "Das Zimmer ist schlecht! Geben Sie mir ein anderes!",
-        "Vielleicht ist etwas mit dem Zimmer, ich weiß nicht.",
+        "Vielleicht stimmt etwas mit dem Zimmer nicht; ich bin mir nicht sicher.",
         "Kein Problem, das ist in Ordnung.",
       ],
       correctIndex: 0,
       explanation:
-        "الشكوى الألمانية مباشرةٌ ومغلَّفة: Entschuldigung + leider + المشكلة صريحةً + Könnten Sie …?",
+        "الخيار يجمع وصف المشكلة بوضوح وطلباً مهذباً بصيغة Könnten Sie …? إنه نموذج مناسب للموقف المحدد، لا قاعدة ثقافية عن كل شكوى بالألمانية.",
       errorType: "vocabulary",
     },
     {
       id: "e23",
       type: "transformation",
-      instructionAr: "حوّل الجملة من السرد المكتوب إلى الكلام",
+      instructionAr: "أعد صياغة المثال المحدد بـPerfekt؛ لا تفترض أن الكلام لا يقبل Präteritum:",
       prompt:
-        "Der Zug fuhr um acht ab und erreichte Berlin am Mittag. → (im Gespräch)",
+        "Der Zug fuhr um acht ab und erreichte Berlin am Mittag. → Formulieren Sie beide Prädikate im Perfekt.",
       acceptedAnswers: [
         "Der Zug ist um acht abgefahren und hat Berlin am Mittag erreicht.",
         "Der Zug ist um acht abgefahren und hat Berlin am Mittag erreicht",
       ],
       sampleAnswer:
         "Der Zug ist um acht abgefahren und hat Berlin am Mittag erreicht.",
-      hint: "الأفعال العادية في الكلام تُقال بالـPerfekt، وabfahren حركة ⟵ sein.",
+      hint: "المطلوب هنا Perfekt: abfahren في معنى انطلاق القطار يأخذ sein؛ وerreichen يأخذ haben في هذا المثال.",
       explanation:
-        "abfahren ⟵ ist abgefahren (حركة) · erreichen له مفعول ⟵ hat erreicht.",
+        "صيغة Perfekt المستهدفة هي ist abgefahren وhat erreicht. قد يرد Präteritum أيضاً في الكلام؛ التمرين يطلب تحويل هذين الفعلين إلى Perfekt تحديداً.",
       errorType: "grammar",
     },
     {
@@ -1339,7 +1383,7 @@ export const lessonA201: Lesson = {
       type: "true-false",
       instructionAr: "اقرأ ثمّ احكم على العبارات",
       textDe:
-        "Wir hatten alles geplant. Aber der Zug hatte drei Stunden Verspätung. In Dresden mussten wir umsteigen. Am Ende sind wir um Mitternacht angekommen. Das Hotel war trotzdem noch offen, und wir konnten sofort einchecken.",
+        "Wir haben alles geplant. Aber der Zug hatte drei Stunden Verspätung. In Dresden mussten wir umsteigen. Am Ende sind wir um Mitternacht angekommen. Das Hotel war trotzdem noch offen, und wir konnten sofort einchecken.",
       statements: [
         {
           id: "s1",
@@ -1357,10 +1401,10 @@ export const lessonA201: Lesson = {
         },
         {
           id: "s3",
-          de: "Im Text stehen hatten, mussten und konnten im Präteritum.",
-          ar: "الأفعال hatten وmussten وkonnten وردت بالـPräteritum.",
+          de: "Im Text stehen hatte, mussten und konnten im Präteritum.",
+          ar: "الأفعال hatte وmussten وkonnten وردت بالـPräteritum.",
           isTrue: true,
-          whyAr: "haben والأفعال الناقصة تُقال بالـPräteritum حتّى في الكلام.",
+          whyAr: "في هذا النص تحديداً، هذه الصيغ الثلاث في Präteritum؛ لا تعمم الصيغة على كل مقام أو كل استعمال.",
         },
         {
           id: "s4",
@@ -1371,8 +1415,24 @@ export const lessonA201: Lesson = {
         },
       ],
       explanation:
-        "النصّ يجمع القاعدتين: Perfekt للأفعال العادية (sind angekommen) وPräteritum لـhaben والناقصة.",
+        "في النص هذا المثال المحدد: sind angekommen في Perfekt، وhatte وmussten وwar وkonnten في Präteritum. لا يعني ذلك أن بقية الأفعال أو كل السياقات تتبع قسمة مطلقة.",
       errorType: "grammar",
+    },
+    {
+      id: "e25",
+      type: "multiple-choice",
+      instructionAr: "اختر العبارة التي تطابق نوع الغرفة والفترة المذكورين:",
+      questionDe: "Am Telefon: Sie möchten vom 10. bis zum 12. Juli ein Doppelzimmer reservieren. Was sagen Sie?",
+      options: [
+        "Ich möchte ein Doppelzimmer vom 10. bis zum 12. Juli reservieren, bitte.",
+        "Ich möchte ein Einzelzimmer vom 10. bis zum 12. Juli reservieren, bitte.",
+        "Ich möchte ein Doppelzimmer vom 10. bis zum 12. Juli abholen, bitte.",
+        "Ich möchte eine Fahrkarte vom 10. bis zum 12. Juli reservieren, bitte.",
+      ],
+      correctIndex: 0,
+      explanation:
+        "الخيار الأول يحافظ على نوع الغرفة (Doppelzimmer) والتاريخ، ويستخدم reservieren في طلب حجز واضح. العبارات الأخرى تغيّر نوع الغرفة أو تستعمل فعلاً/اسماً لا يطابق المقصود.",
+      errorType: "vocabulary",
     },
   ],
 
@@ -1381,27 +1441,27 @@ export const lessonA201: Lesson = {
       {
         wrong: "Ich habe nach Berlin gefliegen.",
         right: "Ich bin nach Berlin geflogen.",
-        whyAr: "الحركة → sein + التصريف القوي geflogen.",
+        whyAr: "في معنى السفر بالطائرة إلى وجهة: bin geflogen. راجع مساعد كل فعل بحسب معناه، ولا تعمّم على كل استعمال للحركة.",
       },
       {
-        wrong: "Ich habe gegessen ein Apfel.",
+        wrong: "Ich habe gegessen einen Apfel.",
         right: "Ich habe einen Apfel gegessen.",
-        whyAr: "Partizip II في نهاية الجملة دائماً.",
+        whyAr: "هذا هو الترتيب المحايد للمفعول وPartizip II في الجملة الرئيسية البسيطة؛ قد تظهر عناصر مؤجلة في سياقات مخصوصة.",
       },
       {
-        wrong: "gekaufen (منتظم كقوي)",
+        wrong: "gekaufen",
         right: "gekauft",
-        whyAr: "kaufen منتظم: ge+jذر+t. القوي فقط بـ -en.",
+        whyAr: "صيغة Partizip II القياسية من kaufen هي gekauft. لا تُنشئ الصيغة بقياس عام على أفعال أخرى؛ تعلّم صورة الفعل نفسه.",
       },
     ],
     eselsbruecken: [
-      "«حساب = haben، حركة = sein» — إذا كان الفعل يحرك مكاناً أو يغير حالة فاستخدم sein.",
-      "«الإطار»: الفعل المساعد يفتح، والتصريف يغلق — Ich habe ... gegessen.",
+      "في السفر اللازم إلى وجهة قد يأتي sein؛ لكن المساعد يتبع معنى الفعل وبنيته، وقد يأخذ الفعل نفسه haben في استعمال آخر.",
+      "في جملة رئيسية خبرية بسيطة: يفتح المساعد قوس Perfekt ويأتي Partizip II في آخره؛ راجع ترتيب الفعل في الجمل الفرعية على حدة.",
     ],
     culturalNote: {
-      title: "التخطيط للعطلات",
+      title: "سؤال متابعة عن الرحلة",
       content:
-        "الألمان يحجزون إجازاتهم مبكراً جداً ويخططون لها بعناية: «Urlaubsplanung». وكثيرون يفضلون «Reisen mit dem Auto» أو القطار. وعند العودة يسألون دائماً: «Wie war dein Urlaub?» — فجهّز جملة Perfekt جاهزة دائماً!",
+        "بعد أن يذكر المتحدث رحلة، يمكن متابعة الحديث بسؤال مثل: «Wie war dein Urlaub?» أو «Was hast du dort gemacht?». هذه عبارات للممارسة، وليست ادعاءً بأن جميع المتحدثين يسألون السؤال نفسه.",
     },
   },
 
@@ -1418,14 +1478,14 @@ export const lessonA201: Lesson = {
         "bin ... geseht",
       ],
       correctIndex: 0,
-      explanation: "sehen عادي → habe gesehen.",
+      explanation: "sehen فعل قوي: sehen – sah – gesehen؛ وفي معنى مشاهدة فيلم مع مفعول، Perfekt هنا: habe gesehen.",
       errorType: "grammar",
     },
     {
       id: "m2",
       type: "multiple-choice",
       instructionAr: "اختر الصيغة الصحيحة (الحركة):",
-      questionDe: "Sie ___ nach Hause ___.",
+      questionDe: "Mona ___ nach Hause ___.",
       options: [
         "ist ... gegangen",
         "hat ... gegangen",
@@ -1448,14 +1508,13 @@ export const lessonA201: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr:
-        "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "اختر الكلمة التي تصلح الخلل في الجملة المعروضة:",
       wrongSentence: "Wir haben nach Tunis gefahren.",
       wrongWord: "haben",
       correctWord: "sind",
       options: ["sind", "haben", "waren", "hatten"],
       explanation:
-        "fahren فعل حركة ⇒ مساعده sein: Wir sind nach Tunis gefahren.",
+        "في معنى السفر إلى Tunis دون مفعول منقول، الصيغة هي: Wir sind nach Tunis gefahren. قد يختلف المساعد في استعمالات متعدية أخرى لـfahren.",
       errorType: "grammar",
     },
     {
@@ -1514,7 +1573,7 @@ export const lessonA201: Lesson = {
     {
       id: "fc5",
       de: "das Perfekt",
-      ar: "الماضي التام",
+      ar: "زمن Perfekt الألماني (صيغة ماضٍ مركبة)",
       example: "Ich habe gegessen.",
       exampleAr: "أكلت.",
       level: "A2",
@@ -1522,9 +1581,9 @@ export const lessonA201: Lesson = {
     {
       id: "fc6",
       de: "das Partizip II",
-      ar: "التصريف الثالث",
+      ar: "صيغة Partizip II الألمانية",
       example: "gesehen, gegessen, gekauft",
-      exampleAr: "رأى، أكل، اشترى (في الماضي)",
+      exampleAr: "صيغ Partizip II من sehen وessen وkaufen",
       level: "A2",
     },
     {
@@ -1539,8 +1598,8 @@ export const lessonA201: Lesson = {
       id: "fc8",
       de: "schwimmen",
       ar: "يسبح",
-      example: "Wir haben geschwommen.",
-      exampleAr: "سبحنا.",
+      example: "Wir haben im Meer geschwommen.",
+      exampleAr: "سبحنا في البحر (نشاطاً).",
       level: "A2",
     },
     {
@@ -1681,11 +1740,11 @@ export const lessonA201: Lesson = {
               replyAr: "رائع! ماذا شاهدت هناك؟",
             },
             {
-              de: "Ich habe ein Buch gelesen.",
-              ar: "قرأت كتاباً.",
+              de: "Ich fahre morgen nach Deutschland.",
+              ar: "سأسافر غداً إلى ألمانيا.",
               best: false,
-              replyDe: "Nur ein Buch? Und sonst?",
-              replyAr: "كتاباً فقط؟ وماذا أيضاً؟",
+              replyDe: "Ach, du sprichst von deiner nächsten Reise?",
+              replyAr: "آه، تقصد رحلتك القادمة؟",
             },
           ],
         },
@@ -1701,11 +1760,11 @@ export const lessonA201: Lesson = {
               replyAr: "جميل جداً! هل أكلت أيضاً؟",
             },
             {
-              de: "Ich habe geschlafen.",
-              ar: "نمتُ.",
+              de: "Ich habe gut geschlafen.",
+              ar: "نمت جيداً.",
               best: false,
-              replyDe: "Nur geschlafen? Schade!",
-              replyAr: "نمتَ فقط؟ يا للأسف!",
+              replyDe: "Und was hast du dir dort angesehen?",
+              replyAr: "وماذا شاهدت هناك؟",
             },
           ],
         },
@@ -1721,11 +1780,11 @@ export const lessonA201: Lesson = {
               replyAr: "لذيذ! أنا أحب كاري فورست أيضاً!",
             },
             {
-              de: "Nein, ich habe nichts gegessen.",
-              ar: "لا، لم آكل شيئاً.",
+              de: "Ich bin gestern nach Berlin gefahren.",
+              ar: "سافرت أمس إلى برلين.",
               best: false,
-              replyDe: "Wirklich? Das ist schade für die deutsche Küche!",
-              replyAr: "حقاً؟ هذا مؤسف للطبخ الألماني!",
+              replyDe: "Und welches Essen hast du dort probiert?",
+              replyAr: "وأي طعام جرّبت هناك؟",
             },
           ],
         },

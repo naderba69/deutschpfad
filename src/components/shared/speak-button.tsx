@@ -17,6 +17,8 @@ interface SpeakButtonProps {
   variant?: "ghost" | "outline" | "default" | "gold";
   className?: string;
   label?: string;
+  /** اسم وصول مستقل عند ضرورة إخفاء النص المرئي/المسموع قبل كشفه. */
+  ariaLabel?: string;
   autoLabel?: boolean;
 }
 
@@ -31,6 +33,7 @@ export function SpeakButton({
   variant = "ghost",
   className,
   label,
+  ariaLabel,
 }: SpeakButtonProps) {
   const [speaking, setSpeaking] = React.useState(false);
   const [noVoice, setNoVoice] = React.useState(false);
@@ -102,8 +105,8 @@ export function SpeakButton({
         variant={variant}
         size={size}
         onClick={speak}
-        aria-label={`استمع: ${text}`}
-        title={`استمع: ${text}`}
+        aria-label={ariaLabel ?? `استمع: ${text}`}
+        title={ariaLabel ?? `استمع: ${text}`}
         className={cn("shrink-0", className)}
       >
         {speaking ? <Loader2 className="h-4 w-4 animate-spin" /> : <Volume2 className="h-4 w-4" />}
