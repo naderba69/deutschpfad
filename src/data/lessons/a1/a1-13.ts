@@ -1,55 +1,178 @@
 import type { Lesson } from "@/types/lesson";
 
 /**
- * الدرس A1-13: A1 kompakt — المراجعة الشاملة لمستوى A1 (خاتمة المستوى)
- * يردّ قواعد المستوى الاثنتي عشرة إلى ثلاثة قوانين ناظمة (V2، الحاضنة
- * الفعلية، نظام النهايات)، ثم يدمجها في مشهدين كاملين (المقهى وحكاية
- * اليوم في Perfekt)، ويختم ببنية امتحان Start Deutsch 1 واستراتيجياته.
+ * الدرس A1-13: مراجعة ختامية مختارة لموضوعات من مسار A1.
+ * يعيد استخدام أنماط محددة، ويعرّف ببنية نموذج Start Deutsch 1؛
+ * لا يحصي قواعد المستوى كلها، ولا يقيس الجاهزية أو الإتقان العام.
  */
 export const lessonA113: Lesson = {
   id: "a1-13",
   unitId: "a1-13",
   level: "A1",
   order: 1,
-  titleDe: "A1 kompakt — die große Wiederholung",
-  titleAr: "A1 المراجعة الشاملة",
+  titleDe: "A1 kompakt — Wiederholung und Prüfungseinblick",
+  titleAr: "A1 — مراجعة ختامية مختارة",
   summary:
-    "المراجعة الختامية لمستوى A1: ردّ قواعد المستوى الاثنتي عشرة إلى ثلاثة قوانين (الفعل في المركز الثاني، الحاضنة الفعلية، النهايات تحمل المعنى)، ودمجها في مشهدين كاملين، ثم بنية امتحان Start Deutsch 1 واستراتيجياته — مع اختبار تجميعي وتحضير مباشر لمستوى A2.",
+    "مراجعة ختامية لموضوعات مختارة من دروس A1، مع مهام محددة في القراءة والاستماع والكتابة، وعرض لبنية نموذج Start Deutsch 1. لا يثبت الدرس إتقان المستوى أو الجاهزية للاختبار أو بدء A2.",
 
-  /* 1) الأهداف التعليمية */
+  /* 1) أهداف مرتبطة بأداء مسجّل، لا بمجرد فتح القسم */
   lernziele: [
-    { id: "z1", de: "Ich kann alle A1-Grammatik kombinieren.", ar: "أن أجمع كل قواعد A1 في جمل صحيحة." },
-    { id: "z2", de: "Ich kann über meinen Tag, meine Familie und meine Hobbys sprechen.", ar: "أن أتحدث عن يومي وعائلتي وهواياتي بجمل مترابطة." },
-    { id: "z3", de: "Ich kann im Perfekt erzählen, was ich gestern gemacht habe.", ar: "أن أحكي في الماضي المحكيّ ما فعلتُه أمس." },
-    { id: "z4", de: "Ich kenne die vier Prüfungsteile von Start Deutsch 1.", ar: "أن أعرف أقسام امتحان Start Deutsch 1 الأربعة واستراتيجية كلّ قسم." },
-    { id: "z5", de: "Ich bin bereit für A2!", ar: "أن أكون جاهزاً لمستوى A2!" },
+    {
+      id: "z1",
+      de: "Ich kann ausgewählte Nomen im Nominativ und Akkusativ mit dem passenden Artikel ergänzen.",
+      ar: "أن أختار أداة مناسبة لأسماء مختارة في الجملة الاسمية أو بوصفها مفعولاً به.",
+      evidence: {
+        exerciseIds: ["e1", "e4", "m1", "m5"],
+        taskIds: [
+          "practice:a1-13:e1",
+          "flow-practice:a1-13:e1",
+          "practice:a1-13:e4",
+          "flow-practice:a1-13:e4",
+          "mini-test:a1-13:m1",
+          "mini-test:a1-13:m5",
+        ],
+        labelAr: "اختيار أدوات لأسماء في أربع مهام محددة، منها تصحيح einen Apfel واختيار المفعول في النصب.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann geübte Verbformen und die Wortstellung in einfachen Hauptsätzen ergänzen oder ordnen.",
+      ar: "أن أُكمل تصريفات متدرّباً عليها وأرتّب جملًا رئيسية قصيرة وفق المطلوب.",
+      evidence: {
+        exerciseIds: ["e2", "e7", "e12", "e14"],
+        taskIds: [
+          "practice:a1-13:e2",
+          "flow-practice:a1-13:e2",
+          "practice:a1-13:e7",
+          "practice:a1-13:e12",
+          "practice:a1-13:e14",
+        ],
+        labelAr: "ترتيب جملة حاضرة، واختيار الفعل المنفصل، ثم ترتيب جملة بظرف وتصحيح V2 في مثالين.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann eine einfache Nominalgruppe neutral mit „kein“ verneinen.",
+      ar: "أن أستخدم kein في نفي محايد لاسم ضمن جملة قصيرة.",
+      evidence: {
+        exerciseIds: ["e9"],
+        taskIds: ["practice:a1-13:e9"],
+        labelAr: "تصحيح Ich habe nicht Auto إلى Ich habe kein Auto في السياق المحايد المحدد.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann ausgewählte Modalverben nach einer klaren Bedeutungsangabe einsetzen.",
+      ar: "أن أختار أفعالًا ناقصة متدرّباً عليها حين يحدد السياق معنى القدرة أو الرغبة أو الإذن.",
+      evidence: {
+        exerciseIds: ["e8", "e16"],
+        taskIds: ["practice:a1-13:e8", "practice:a1-13:e16"],
+        labelAr: "إكمال جمل قصيرة بـkann وmöchte وmuss وwill وdarf وفق الإشارات الواضحة في كل جملة.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z5",
+      de: "Ich kann in vorgegebenen Sätzen ausgewählte Perfektformen und Präteritumformen von sein ergänzen.",
+      ar: "أن أُكمل صيغ Perfekt مختارة وصيغة Präteritum من sein في جمل معطاة، من دون تعميم اختيار المساعد على جميع الأفعال.",
+      evidence: {
+        exerciseIds: ["e11", "e17"],
+        taskIds: ["practice:a1-13:e11", "practice:a1-13:e17"],
+        labelAr: "إكمال habe gesehen، ثم صيغ Perfekt محددة وصيغة war في جمل قصة موجّهة؛ لا يقيس ذلك سرداً حراً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z6",
+      de: "Ich kann ausdrücklich genannte Informationen in den vorgegebenen Lesetexten finden.",
+      ar: "أن أستخرج معلومات مصرّحاً بها في نصّ القراءة ونصّ المراجعة المحددين.",
+      evidence: {
+        exerciseIds: ["rq1", "rq2", "rq3", "rq4", "rq5", "rq6", "e18"],
+        taskIds: [
+          "reading:read-a1-13:rq1",
+          "reading:read-a1-13:rq2",
+          "reading:read-a1-13:rq3",
+          "reading:read-a1-13:rq4",
+          "reading:read-a1-13:rq5",
+          "reading:read-a1-13:rq6",
+          "practice:a1-13:e18",
+        ],
+        labelAr: "الإجابة عن أسئلة التفاصيل الستة في القراءة، ثم تصنيف العبارات الأربع المرتبطة بنص Leila؛ لا يقيس ذلك الفهم العام لكل النصوص.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z7",
+      de: "Ich kann in den zwei Hörübungen bestimmte Informationen heraushören, bevor ich das Transkript öffne.",
+      ar: "أن أستخرج معلومات محددة من تمريني الاستماع قبل فتح نص أيٍّ منهما.",
+      evidence: {
+        exerciseIds: ["q1", "q2", "q3", "q4"],
+        taskIds: [
+          "listening:l1:q1",
+          "listening:l1:q2",
+          "listening:l2:q3",
+          "listening:l2:q4",
+        ],
+        labelAr: "الإجابة الصحيحة عن الأسئلة الأربعة قبل كشف النص؛ إجابات ما بعد الكشف مراجعة ولا تثبت الاستماع.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z8",
+      de: "Ich kann vorgegebene einfache Sätze schriftlich vervollständigen und eine Form verändern.",
+      ar: "أن أُكمل جملًا قصيرة مكتوبة وأحوّل صيغة محددة في المهام المعطاة.",
+      evidence: {
+        exerciseIds: ["w1", "w2", "w3"],
+        taskIds: [
+          "writing:a1-13:w1",
+          "writing:a1-13:w2",
+          "writing:a1-13:w3",
+        ],
+        labelAr: "تحويل ich إلى er، وإكمال أربع خانات، ثم كتابة الجملة المسموعة؛ لا يقيس ذلك كتابة رسالة حرة.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z9",
+      de: "Ich kann die Aufgabentypen des Goethe-Modellsatzes Start Deutsch 1 den vier Fertigkeiten zuordnen.",
+      ar: "أن أصل أقسام نموذج Start Deutsch 1 بصيغ المهام الموضّحة في هذا الدرس.",
+      evidence: {
+        exerciseIds: ["m6"],
+        taskIds: ["mini-test:a1-13:m6"],
+        labelAr: "مطابقة الأقسام الأربعة بأوصافها في نموذج Goethe المنشور عام 2024؛ لا تثبت هذه المعرفة الجاهزية للامتحان.",
+        completion: "all-correct",
+      },
+    },
   ],
 
-  /* 2) التمهيد وتنشيط المعرفة السابقة */
+  /* 2) تمهيد يصف المراجعة الانتقائية ولا يعلن الإتقان */
   einfuehrung: {
     motivatingQuestionAr:
-      "أنت الآن عند ختام A1! تذكر أول جملة تعلمتها: Ich heiße Sami. اليوم تستطيع أن تقول: Ich heiße Sami, ich komme aus Tunesien, ich wohne in Tunis, ich lerne Deutsch, ich kann schwimmen und am Wochenende war ich im Park. هذه قفزة حقيقية!",
-    motivatingQuestionDe: "Was kannst du alles auf Deutsch sagen?",
+      "اختر موضوعين من الدروس السابقة: ما جملة قصيرة تستطيع إكمالها عن نفسك، وما جملة تستطيع ترتيبها عن يومك؟ هذا سؤال تنشيط، وليس حكماً على إتقان المستوى كله.",
+    motivatingQuestionDe: "Welche kurzen Sätze kannst du heute noch einmal üben?",
     contextAr:
-      "درس أخير يجمع المفاتيح العشرة لـ A1 في خريطة واحدة، ثم نمرّنها في محادثة واختبار شامل — وبه تنهي المبتدئ الأول بثقة.",
-    contextDe: "Ich lerne Deutsch. Ich kann schon viel sagen!",
+      "نراجع أنماطاً منتقاة في القواعد والقراءة والاستماع والكتابة، ثم نتعرّف إلى بنية نموذج امتحان منشور. لا تحل هذه المراجعة محل اختبار أداء شامل.",
+    contextDe: "Wir wiederholen ausgewählte Themen und Aufgaben.",
     connectionToPreviousAr:
-      "هذا ختام A1: من السلسلة الذهبية (الدرس 1) إلى الماضي الأول war/hatte (درس الترفيه) — كل شيء يجتمع هنا في جملة واحدة كبيرة.",
+      "يعيد هذا الدرس استعمال أمثلة من دروس A1 السابقة، ومنها درس Perfekt الإضافي A1-14 الذي يسبق المراجعة في ترتيب المسار. الإحالة إلى درس لا تعني أن محتواه كله خضع للاختبار هنا.",
     activateVocabulary: [
       { de: "die Wiederholung", ar: "المراجعة" },
-      { de: "der Satz", ar: "الجملة" },
-      { de: "kombinieren", ar: "يدمج/يجمع" },
+      { de: "die Aufgabe", ar: "المهمة" },
+      { de: "das Beispiel", ar: "المثال" },
       { de: "die Prüfung", ar: "الامتحان" },
-      { de: "bereit sein", ar: "يكون مستعداً" },
+      { de: "die Bitte", ar: "الطلب" },
     ],
   },
 
-  /* مراجعة تراكمية: أسئلة من كامل المستوى */
+  /* مراجعة تراكمية منتقاة؛ عناصر هذا القسم لا تسجّل دليل هدف */
   review: [
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة شاملة من A1 (درس a1-11 — التنقل في المدينة: Wo / Wohin / Woher): ما السؤال الصحيح؟",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-11 — التنقل في المدينة: Wo / Wohin / Woher): ما السؤال الصحيح؟",
       questionDe: "___ kommst du? — Aus Tunesien.",
       questionAr: "من أين أنت؟ — من تونس.",
       options: ["Woher", "Wo", "Wohin", "Wer"],
@@ -60,7 +183,7 @@ export const lessonA113: Lesson = {
     {
       id: "r2",
       type: "fill-blank",
-      instructionAr: "مراجعة شاملة من A1 (درس a1-04 — السكن والمنزل: أدوات التعريف der/die/das): أكمل بالأداة الصحيحة:",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-04 — السكن والمنزل): أكمل الأداة المناسبة لكل اسم:",
       template: "___ Tisch (مذكر) · ___ Lampe (مؤنث) · ___ Buch (محايد)",
       blanks: [
         { correct: "der", options: ["der", "die", "das", "den"] },
@@ -74,7 +197,7 @@ export const lessonA113: Lesson = {
     {
       id: "r3",
       type: "error-correction",
-      instructionAr: "مراجعة شاملة من A1 (درس a1-05 — الحياة اليومية: um + الساعة والأفعال المنفصلة): افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-05 — الحياة اليومية): افحص الجملة؛ اختر التصحيح، أو «لا خطأ» إن كانت سليمة.",
       wrongSentence: "Ich stehe sieben Uhr auf.",
       wrongWord: "sieben Uhr",
       correctWord: "um sieben Uhr",
@@ -88,383 +211,356 @@ export const lessonA113: Lesson = {
   theory: [
     {
       id: "t1",
-      titleAr: "خريطة قواعد A1 — الاثنا عشر مفتاحاً في جدول واحد",
-      titleDe: "Die A1-Grammatik auf einen Blick",
+      titleAr: "خريطة منتقاة لموضوعات القواعد",
+      titleDe: "Ausgewählte Grammatikthemen im Überblick",
       explanationAr:
-        "أنت الآن عند خطّ النهاية. وقبل أن تعبره، تحتاج شيئاً واحداً لا يعطيه إيّاك أيّ درسٍ منفرد: **أن ترى المستوى كلّه دفعةً واحدة**. فالقواعد الاثنتا عشرة التي تعلّمتها لم تُبنَ متجاورةً بل متراكبة، وهذا الدرس يُظهر لك كيف تركّبت.\n\n**أوّلاً — العمود الفقريّ: الفعل في المركز الثاني.**\nهذه ليست قاعدةً من اثنتي عشرة، بل هي **القانون** الذي تجري تحته البقيّة. كلّ ما تعلّمتَه من ترتيبٍ فرعٌ عنها:\n· **Ich lerne** Deutsch. ⟵ الفاعل أوّلاً\n· **Heute lerne ich** Deutsch. ⟵ ظرفٌ أوّلاً فانزاح الفاعل إلى الثالث\n· **Woher kommst du?** ⟵ أداة السؤال أوّلاً والفعل ثانياً\n· …, **aber ich lerne** Deutsch. ⟵ الأداة في الموضع صفر فلم تُزح شيئاً\nأربعة مظاهر لقانونٍ واحد. ومن أدركه فقد أدرك نصف نحو الألمانية.\n\n**ثانياً — القانون الثاني: الحاضنة الفعلية.**\nكلّما كان في الجملة **جزءٌ فعليٌّ غير مصرَّف**، ذهب إلى آخرها. وهذا يشمل ثلاثة تراكيب درستَها:\n· منفصل: Ich **stehe** um sieben **auf**.\n· ناقص + مصدر: Ich **kann** gut Deutsch **sprechen**.\n· Perfekt: Ich **habe** gestern Deutsch **gelernt**.\nفالمركز الثاني يفتح، والآخر يُغلق، والباقي بينهما.\n\n**ثالثاً — القانون الثالث: النهايات تحمل المعنى.**\nالعربية تعرف هذا جيداً (كتبَ · كتبتُ · كتبوا). والألمانية توزّع نهاياتها على ثلاثة أشياء: **الفعل** بحسب فاعله (lern-e · lern-st · lern-t)، و**الأداة** بحسب حالتها (ein ⟵ einen في النصب، der ⟵ dem في الجرّ)، و**الصفة الملكية** بحسب معدودها (mein Vater · meine Mutter).\n\n**والخلاصة التي تعبر بها إلى A2:** ما تعلّمتَه ليس اثنتي عشرة قاعدة بل **ثلاثة قوانين** ولها اثنتا عشرة صورة. ومن حفظ القوانين استغنى عن حفظ الصور.",
+        "هذا جدول مراجعة لموضوعات مختارة من المسار، وليس قائمة بكل قواعد A1 ولا اختزالاً لها في «قوانين» قليلة.\n\n**ترتيب الجملة:** في الجملة الرئيسية الخبرية الألمانية يأتي الفعل المصرف عادةً في الموضع الثاني (V2)، أي بعد مكوّن واحد في الحقل الأول؛ قد يكون هذا المكوّن كلمةً أو عبارةً كاملة: **Ich** lerne heute Deutsch. / **Heute** lerne ich Deutsch. وبعد أداة ربط مثل aber تبدأ جملة رئيسية جديدة بترتيبها المناسب: …, aber **ich lerne** weiter. لا نعمّم V2 على الأسئلة ذات نعم/لا أو الجمل التابعة؛ فلكل نوع تركيبُه.\n\n**القوس الفعلي في أمثلة محددة:** قد يفصل بين الفعل المصرف وجزء فعلي آخر: Ich **stehe** um sieben **auf**؛ Ich **kann** Deutsch **sprechen**؛ Ich **habe** Deutsch **gelernt**. هذه أمثلة لأنماط شائعة، وليست قاعدة تقول إن كل جزء غير مصرّف يأتي في آخر كل جملة.\n\n**التصريف والعلامات:** تتغير صيغ أفعال مثل lernen مع الشخص، وتتغير أداة الاسم بحسب الجنس والعدد والحالة في بعض التراكيب: ein Apfel → einen Apfel عندما يكون مفعولاً به مباشراً. هذه علامات نحوية متمايزة؛ لا تحمل نهاية واحدة كل المعنى، ولا تتطابق تسميات الحالات الألمانية تلقائياً مع علامات العربية.",
       whyAr:
-        "لماذا نختم المستوى بمراجعةٍ شاملة بدل أن نمضي إلى A2 مباشرة؟ لسببٍ نفسيٍّ تعليميٍّ ثابت: المعرفة المتفرّقة تُنسى، والمعرفة **المنظَّمة** تبقى. فحين تعلّمتَ النصب في الدرس الثالث كان معزولاً، وحين تعلّمتَ الجرّ في الرابع كان معزولاً، فبقيا في ذهنك جزيرتين. وهذا الدرس يبني الجسر: النصب والجرّ **حالتان من نظامٍ واحد**، ووظيفتهما تمييزُ دور الاسم في الجملة. ومن رآهما نظاماً لم يخلط بينهما بعد اليوم.\n\nولماذا نُصرّ على ردّ القواعد إلى ثلاثة قوانين؟ لأنّ الذاكرة العاملة عند الإنسان تحمل نحو أربعة عناصر في وقتٍ واحد لا اثني عشر. فمن يحاول استحضار اثنتي عشرة قاعدةً وهو يتكلّم يتلعثم لا محالة. ومن يحمل ثلاثة قوانين يتكلّم بطلاقة لأنّ الصور الاثنتي عشرة تتولّد عنها تلقائياً.\n\nوهذا بالضبط الفرق بين من يعرف القواعد ومن يتكلّم اللغة: الأوّل يستحضر ويطبّق، والثاني يستحضر القانون فتأتي الصورة. والانتقال من الأوّل إلى الثاني هو المهمّة الحقيقية لهذا الدرس.",
+        "تفيد الخريطة في رؤية أمثلة متجاورة ومراجعتها، لكنها لا تقيس وحدها قدرة المتعلم على استعمالها. لذلك رُبطت الأهداف أدناه بتمارين تصحيح واختيار وترتيب محددة، لا بعدد الصفوف في الجدول أو بفتح الشرح. وتظل بعض الأنماط، مثل Perfekt، محتاجةً إلى مراجعة درسها الأصلي ومزيد من الأمثلة.",
       table: {
-        title: "الاثنا عشر مفتاحاً لـ A1 — وأين تعلّمتَ كلّاً منها",
-        columns: ["القاعدة", "المثال", "الدرس"],
+        title: "موضوعات مختارة ومراجعها في مسار الدروس",
+        columns: ["الموضوع", "مثال موجز", "الدرس/الدروس"],
         rows: [
-          { label: "السلسلة الذهبية", cells: ["ich lerne, du lernst, er lernt", "a1-01"] },
-          { label: "sein / haben / werden", cells: ["Ich bin Sami. Ich habe Zeit. Es wird kalt.", "a1-01 · a1-03 · a1-12"] },
-          { label: "أدوات der/die/das + ein", cells: ["der Tisch, die Lampe, das Buch", "a1-02 · a1-03"] },
-          { label: "النصب Akkusativ", cells: ["Ich esse einen Apfel.", "a1-03"] },
-          { label: "الجرّ Dativ في المكان", cells: ["Ich wohne in der Stadt. Das Buch liegt auf dem Tisch.", "a1-04 · a1-11"] },
-          { label: "الأفعال المنفصلة", cells: ["Ich stehe um sieben auf.", "a1-05"] },
-          { label: "الأفعال الناقصة الستّة", cells: ["kann · möchte · muss · darf · will · soll", "a1-04 · a1-06 · a1-14"] },
-          { label: "الماضي الأول", cells: ["Ich war im Park. Ich hatte Zeit.", "a1-06"] },
-          { label: "الماضي المحكيّ (Perfekt)", cells: ["Ich habe gelernt. Ich bin gefahren.", "a1-14"] },
-          { label: "W-Fragen + V2", cells: ["Woher kommst du? Ich komme aus Tunesien.", "a1-01 · a1-11"] },
-          { label: "النفي nicht / kein", cells: ["Ich bin kein Lehrer. Das ist nicht teuer.", "a1-10"] },
-          { label: "أدوات الربط + الوقت", cells: ["und · aber · oder · denn · um acht · am Morgen", "a1-09 · a1-12"] },
+          { label: "تصريف أفعال شائعة في المضارع", cells: ["ich lerne · du lernst · er lernt", "a1-01"] },
+          { label: "sein / haben / werden", cells: ["Ich bin hier. · Ich habe Zeit. · Es wird kalt.", "a1-01 · a1-03 · a1-12"] },
+          { label: "أدوات الأسماء", cells: ["der Tisch · die Lampe · das Buch", "a1-02 · a1-03"] },
+          { label: "Akkusativ في مفعول مباشر محدد", cells: ["Ich esse einen Apfel.", "a1-03"] },
+          { label: "بعض استعمالات Dativ الألمانية", cells: ["Ich wohne in der Stadt. · Das Buch liegt auf dem Tisch.", "a1-04 · a1-06 · a1-11"] },
+          { label: "أفعال منفصلة", cells: ["Ich stehe um sieben Uhr auf.", "a1-05"] },
+          { label: "أفعال ناقصة مختارة", cells: ["können · müssen · dürfen · wollen · sollen · möchten", "a1-04 · a1-06 · a1-14"] },
+          { label: "Präteritum من sein / haben", cells: ["Ich war im Park. · Ich hatte Zeit.", "a1-06"] },
+          { label: "Perfekt في أمثلة منتقاة", cells: ["Ich habe gelernt. · Ich bin gefahren.", "a1-14"] },
+          { label: "أسئلة W وترتيب الجملة الرئيسية", cells: ["Woher kommst du? · Ich komme aus Tunesien.", "a1-01 · a1-11"] },
+          { label: "النفي بـnicht / kein في سياقات مختارة", cells: ["Ich bin kein Lehrer. · Das ist nicht teuer.", "a1-10"] },
+          { label: "روابط وتعبيرات وقت", cells: ["und · aber · oder · denn · um acht · am Morgen", "a1-09 · a1-12"] },
         ],
       },
       examples: [
-        {"de": "Ich heiße Sami und komme aus Tunesien.", "ar": "اسمي سامي وأنا من تونس. (الفعل في الثاني مرّتين)"},
-        {"de": "Heute lerne ich Deutsch.", "ar": "اليوم أتعلّم الألمانية. (الظرف أوّلاً فانزاح الفاعل — قانون V2)"},
-        {"de": "Am Morgen stehe ich um sieben auf.", "ar": "في الصباح أستيقظ في السابعة. (V2 + الحاضنة: البادئة في الآخر)"},
-        {"de": "Ich habe gestern einen Film gesehen.", "ar": "شاهدتُ فيلماً أمس. (الحاضنة: habe يفتح وgesehen يُغلق)"},
-        {"de": "Ich kann schon viel sagen, aber ich muss noch viel lernen.", "ar": "أستطيع قول الكثير، لكن عليّ أن أتعلّم كثيراً بعد. (ناقصان + أداة ربط)"},
-        {"de": "Ich esse einen Apfel und trinke einen Tee.", "ar": "آكل تفّاحة وأشرب شاياً. (النصب مرّتين: einen)"},
-        {"de": "Am Wochenende war ich mit meiner Familie im Park.", "ar": "في العطلة كنتُ مع عائلتي في الحديقة. (ماضٍ أوّل + جرّ)"},
-        {"de": "Woher kommst du und wo wohnst du jetzt?", "ar": "من أين أنت وأين تسكن الآن؟ (أداتا سؤالٍ والفعل ثانياً في الاثنتين)"},
+        { de: "Ich heiße Sami und komme aus Tunesien.", ar: "اسمي سامي وأنا من تونس. (تصريف فعلين في سياق واحد)" },
+        { de: "Heute lerne ich Deutsch.", ar: "اليوم أتعلم الألمانية. (مكوّن وقت في البداية، ثم الفعل المصرف)" },
+        { de: "Am Morgen stehe ich um sieben Uhr auf.", ar: "أستيقظ في السابعة صباحاً. (فعل منفصل في جملة رئيسية خبرية)" },
+        { de: "Ich habe gestern einen Film gesehen.", ar: "شاهدت فيلماً أمس. (مثال Perfekt مع sehen)" },
+        { de: "Ich kann schon viel sagen, aber ich muss noch viel lernen.", ar: "أستطيع قول الكثير، لكن عليّ أن أتعلم المزيد. (جملتان رئيسيتان مع aber)" },
+        { de: "Ich esse einen Apfel und trinke einen Tee.", ar: "آكل تفاحة وأشرب شاياً. (einen Apfel مفعول مباشر مذكر)" },
+        { de: "Am Wochenende war ich mit meiner Familie im Park.", ar: "كنت في الحديقة مع عائلتي في نهاية الأسبوع. (مع حرف الجر mit يأتي Dativ في هذا التركيب)" },
+        { de: "Woher kommst du? — Ich komme aus Tunesien.", ar: "من أين أنت؟ — أنا من تونس. (سؤال وجواب)" },
       ],
       comparisonWithArabic:
-        "العربية والألمانية تلتقيان في مبدأٍ عميق وتفترقان في تطبيقه: كلتاهما **لغةٌ إعرابية** تُغيّر أواخر الكلمات لتدلّ على وظائفها. فحين تقول „رأيتُ الولدَ“ فالفتحة على آخر „الولد“ هي ما يخبرك أنّه مفعول. وحين يقول الألمانيّ Ich sehe **den** Jungen فتغيّر الأداة من der إلى den هو ما يخبره بالشيء نفسه.\n\nوالفرق في **موضع العلامة**: العربية تضعها على آخر الاسم، والألمانية تضعها على **الأداة** التي تسبقه. فالاسم الألمانيّ يكاد لا يتغيّر (Jungen ⟵ Junge)، والأداة تحمل العبء كلّه. وهذا خبرٌ سارّ لك: أنت لا تحتاج أن تُعرب الأسماء، بل أن تحفظ أربع أدواتٍ في أربع حالات.\n\nوأمّا موضع الفعل فهنا الافتراق الحقيقيّ: العربية تُقدّم الفعل غالباً („ذهبَ الولدُ“) وتسمح بتقديم الفاعل، وهي في الحالين لا تُلزمك بموضعٍ ثابت. والألمانية تُثبّت الفعل المصرَّف في المركز الثاني إثباتاً لا استثناء فيه. فهذا هو ما ينبغي أن تُدرّب عليه أذنك أكثر من غيره.",
+        "تختلف طريقة إظهار العلاقات النحوية بين اللغتين، ولا توجد مطابقة آلية بين أسماء الحالات الألمانية وتسميات الإعراب العربية. ففي الألمانية تتغير الأداة في أمثلة مثل der Apfel / einen Apfel، بينما تختلف العلامات والتراكيب في العربية. تعلّم المصطلحين Akkusativ وDativ بوصفهما وصفين نحويين ألمانيين؛ لا تترجم Dativ إلى «الجرّ» ولا تستنتج اختيار الحالة من المقابل العربي وحده.\n\nوفي ترتيب الجملة أيضاً، قارن كل نوع على حدة: المثال Heute lerne ich Deutsch يبيّن ترتيب V2 في جملة رئيسية خبرية، لكنه لا يصف جميع الأسئلة والجمل التابعة.",
       eselsbruecke:
-        "ثلاثة قوانين لا اثنتا عشرة قاعدة: الفعل المصرَّف في المركز الثاني · غير المصرَّف في آخر الجملة · النهايات تحمل المعنى (على الفعل بحسب فاعله، وعلى الأداة بحسب حالتها).",
+        "قبل التطبيق اسأل: ما نوع الجملة؟ وأين الفعل المصرف؟ ثم افحص الأداة وصيغة الفعل في المثال المحدد. هذه أسئلة مراجعة، لا قوانين حصرية لكل الألمانية.",
       commonMistakes: [
-        {"wrong": "Am Sonntag ich war im Park.", "right": "Am Sonntag war ich im Park.", "whyAr": "أشهر خطأٍ في A1 كلّه: الظرف احتلّ المركز الأوّل فوجب أن ينزاح الفاعل إلى ما بعد الفعل. والقانون واحدٌ لا استثناء فيه: المصرَّف في الثاني دائماً."},
-        {"wrong": "Ich esse ein Apfel.", "right": "Ich esse einen Apfel.", "whyAr": "المفعول به في حالة النصب، والمذكّر وحده يتغيّر: ein ⟵ einen. وهذه هي العلامة التي تقابل الفتحة في «رأيتُ الولدَ»، لكنّها على الأداة لا على الاسم."},
-        {"wrong": "Ich habe gelernt Deutsch.", "right": "Ich habe Deutsch gelernt.", "whyAr": "قانون الحاضنة: كلّ جزءٍ فعليٍّ غير مصرَّف يُغلق الجملة. وهو القانون نفسه في aufstehen وkönnen — قانونٌ واحد بثلاث صور."},
-        {"wrong": "Ich kommen aus Tunesien.", "right": "Ich komme aus Tunesien.", "whyAr": "نهاية الفعل تحمل الفاعل: مع ich تكون -e دائماً. وترك المصدر كما هو خطأٌ يُفهم منه أنّ المتعلّم لم يستوعب نظام النهايات بعد."},
-        {"wrong": "Ich bin nicht ein Lehrer.", "right": "Ich bin kein Lehrer.", "whyAr": "nicht تنفي الأفعال والصفات، وkein ينفي الأسماء المنكّرة. والخلط بينهما يبقى مفهوماً لكنّه يُعدّ في التصحيح خطأً نحوياً كاملاً لا هفوة."},
+        {
+          wrong: "Am Sonntag ich war im Park.",
+          right: "Am Sonntag war ich im Park.",
+          whyAr: "في هذه الجملة الرئيسية الخبرية، يشغل Am Sonntag الحقل الأول ويأتي الفعل المصرف war بعده؛ أما قاعدة V2 فلا تُعمّم على كل أنواع الجمل.",
+          classification: "error",
+        },
+        {
+          wrong: "Ich esse ein Apfel.",
+          right: "Ich esse einen Apfel.",
+          whyAr: "في المثال المحدد، Apfel مفعول مباشر مذكر، لذلك تكون الأداة einen في Akkusativ.",
+          classification: "error",
+        },
+        {
+          wrong: "Ich habe gelernt Deutsch.",
+          right: "Ich habe Deutsch gelernt.",
+          whyAr: "في هذا المثال المحايد، يقع المفعول Deutsch قبل Partizip II في نهاية الجملة الرئيسية. لا يحوّل ذلك كل تراكيب الفعل إلى ترتيب واحد.",
+          classification: "error",
+        },
+        {
+          wrong: "Ich kommen aus Tunesien.",
+          right: "Ich komme aus Tunesien.",
+          whyAr: "الفعل kommen يتصرف مع ich بصيغة komme في الحاضر. لا تعمم نهاية واحدة على جميع الأفعال؛ فـsein وhaben مثلاً لهما تصريف خاص.",
+          classification: "error",
+        },
+        {
+          wrong: "Ich bin nicht ein Lehrer. (نفي محايد بلا مقابلة)",
+          right: "Ich bin kein Lehrer.",
+          whyAr: "في النفي المحايد لاسم مهنة غير محدد نستخدم عادةً kein. وقد تظهر nicht ein في سياق مقابلة أو تأكيد مختلف؛ لذا لا تُصنّفها خطأً مطلقاً خارج هذا السياق.",
+          classification: "contextual-alternative",
+        },
       ],
       relatedRuleComparison: {
-        "title": "من القاعدة إلى الكلام — أين أنت الآن؟",
-        "content": "أتقنتَ A1 إذا استطعتَ هذه الخمس بلا تفكيرٍ طويل: أن تُعرّف بنفسك وبعائلتك · أن تسأل سؤالاً بسيطاً وتُجيب عنه · أن تطلب بأدبٍ في متجرٍ أو مقهى · أن تحكي ما فعلتَه أمس · أن تفهم إعلاناً قصيراً أو رسالةً بسيطة.\n\nولاحظ أنّ هذه خمس **قدرات** لا خمس قواعد. والفرق جوهريّ: القاعدة تُعرَف، والقدرة تُؤدّى. فإن وجدتَ نفسك تعرف القواعد ولا تؤدّي القدرات، فالنقص ليس في معرفتك بل في **تدريبك** — والعلاج تمارين البنك والمحادثة لا إعادة قراءة الشرح."
+        title: "الخريطة لا تعني إتقان كل موضوع",
+        content:
+          "يعرض الجدول نقاط رجوع منتقاة، وليس قائمة تقييم شاملة. يشير صف Perfekt إلى A1-14، وهو درس إضافي يسبق هذه المراجعة في ترتيب المسار؛ لا يختبر هذا الدرس كل محتوى A1-14. لا يُسجّل أي هدف من قراءة الجدول وحدها: يلزم إتمام المهام المرتبطة به كما هو موضح في الأهداف.",
       },
     },
     {
       id: "t2",
-      titleAr: "دمج تراكيب A1 في موقف واحد",
-      titleDe: "A1-Strukturen im Zusammenhang",
+      titleAr: "تراكيب في مواقف يومية — مع مراعاة السياق",
+      titleDe: "Ausgewählte Strukturen in Alltagssituationen",
       explanationAr:
-        "المراجعة الحقيقية ليست تلاوة قائمة بل **إعادة استعمال**. ولذلك نأخذ في هذه الكتلة موقفين كاملين ونُظهر كيف تتداخل قواعد المستوى كلّها فيهما: موقفٌ حاضر (المقهى) وموقفٌ ماضٍ (حكاية اليوم).\n\n**أوّلاً — موقف المقهى: خمس خطوات ثابتة.**\n· **التحية:** Guten Tag!\n· **الطلب:** Ich hätte gern **einen** Kaffee. ⟵ نصبٌ لأنّه مفعولٌ به\n· **السؤال عن السعر:** Was kostet das? ⟵ أداة سؤالٍ وفعلٌ في الثاني\n· **الدفع:** Zusammen, bitte. / Getrennt, bitte.\n· **الوداع:** Auf Wiedersehen!\nوالترتيب هو ما يتكرّر في كلّ مقهى، فاحفظ الترتيب لا الجمل.\n\n**ثانياً — موقف الحكي: كيف تحكي يومك في ستّ جمل.**\nوهذا هو ما يُطلب منك في **Sprechen Teil 2** حرفياً، وقد صرتَ تملك أدواته كلّها بعد درس Perfekt:\n· Ich **bin** um sieben **aufgestanden**. ⟵ Perfekt + منفصل + sein\n· Dann **habe** ich **gefrühstückt**. ⟵ Perfekt + haben\n· Um acht **bin** ich zur Arbeit **gefahren**. ⟵ ظرفٌ أوّلاً فانزاح الفاعل\n· Ich **musste** viel **arbeiten**, **aber** es **war** interessant. ⟵ ناقصٌ + أداة ربط + ماضٍ أوّل\n· Am Abend **habe** ich meine Familie **angerufen**. ⟵ Perfekt + منفصل + haben\n· Ich **war** sehr müde **und bin** früh **eingeschlafen**. ⟵ ربطٌ + ماضيان مختلفان\nستّ جملٍ فيها تسع قواعد من الاثنتي عشرة. وهذا هو معنى إتمام A1: لا أن تعرفها مفرّقةً بل أن تُشغّلها معاً.\n\n**وثالثاً — أدوات الربط تصنع الفرق بين المبتدئ والمتقدّم.**\nقارن: „Ich war müde. Ich bin früh eingeschlafen.“ مقابل „Ich war müde **und** bin früh eingeschlafen.“ الجملتان صحيحتان، لكنّ الثانية تبدو ألمانيةً والأولى تبدو تمريناً. والفارق كلمةٌ واحدة.",
+        "تجمع الأمثلة الآتية تراكيب سبق التدريب عليها، لكنها أمثلة لغوية عامة وليست ترتيباً إلزامياً لكل زيارة مقهى أو مهمة امتحانية.\n\nفي الطلب يمكن قول **Ich hätte gern einen Kaffee, bitte** أو **Ich möchte einen Kaffee**. وعبارة **Einen Kaffee, bitte** طلب قصير شائع. أما **Ich will einen Kaffee** فهي جملة سليمة نحوياً؛ وقد تبدو أكثر مباشرة في بعض سياقات الخدمة، بحسب النبرة والعلاقة والموقف. لا نصفها بخطأ نحوي ولا نجعل صيغة واحدة واجبة في كل موقف.\n\nوفي حكاية اليوم، راقب ترتيب عناصر الأمثلة المحددة: **Am Morgen bin ich … aufgestanden**؛ **Dann habe ich … gefrühstückt**؛ **Um acht bin ich … gefahren**. وجود الفعل المساعد المصرف في الجملة الرئيسية لا يعني أن سرد اليوم هو مهمة ثابتة في امتحان شفهي بعينه.\n\nعند مراجعة Perfekt، لاحظ صيغة الفعل كاملةً في الأمثلة: **bin aufgestanden** و**bin gefahren**، مقابل **habe gefrühstückt** و**habe gearbeitet**. لا تكفي ترجمة معنى الحركة إلى العربية لاختيار haben أو sein؛ تعلّم صيغة كل فعل واستعماله في سياقه، وراجع المساعد مع Partizip II. ويختبر التمرينان e11 وe17 اختيارات محددة داخل جمل معطاة؛ ولا يثبتان وحدهما القدرة على كتابة حكاية يوم كامل من دون نموذج.",
       whyAr:
-        "لماذا نُدرّب على المواقف لا على القواعد في هذا الدرس؟ لأنّ الدماغ لا يخزّن اللغة في جداول بل في **سيناريوهات**. وحين تدخل مقهىً في برلين لا يستحضر ذهنك „قاعدة النصب“، بل يستحضر مشهد المقهى وما يُقال فيه. فمن تدرّب على المشهد كاملاً وجد الكلام حاضراً، ومن تدرّب على القاعدة وحدها وجد نفسه يُعرب وهو واقفٌ أمام النادل.\n\nولماذا نُلحّ على أدوات الربط تحديداً في الختام؟ لأنّها المؤشّر الأوّل الذي يقيس به المصحّح مستواك. معايير Goethe في A1 تطلب جملاً „مترابطة“ لا مجرّد جملٍ صحيحة، والترابط يُقاس بـund وaber وdenn وdann. فمتعلّمان يملكان القواعد نفسها يفترقان في الدرجة بسبب هذه الكلمات الصغيرة وحدها.\n\nوأمّا لماذا نبني حكاية اليوم على Perfekt؟ فلأنّه الزمن الذي يُسأل عنه فعلاً. وسؤال „Was hast du gestern gemacht?“ يرد في كلّ امتحانٍ شفويّ لأنّه السؤال الذي يفتح الحديث بين غريبين. فمن أتقن الإجابة عنه امتلك مفتاح المحادثة الأوّل.",
+        "تساعد مقارنة مواقف قصيرة على ملاحظة الفرق بين صحة التركيب وملاءمته للموقف. الحوار المعروض قابل للتعديل، ولا يفرض خمس خطوات ثابتة أو عدد جمل محدداً. كما أن صحة إجابة تفاعلية مغلقة لا تقيس وحدها إنتاج كلام حر؛ والكتابة الحرة أو الحديث الشخصي لا يُسجّلان دليلاً آلياً لهدف ما لم توجد مهمة تقييم مرتبطة بذلك.",
       table: {
-        title: "سيناريو المقهى: من التحية إلى الحساب",
-        columns: ["المرحلة", "العبارة الألمانية", "بالعربية"],
+        title: "أمثلة للمقهى — وليست نصاً موحداً يجب حفظه",
+        columns: ["الغرض المحتمل", "مثال بالألمانية", "ملاحظة سياقية"],
         rows: [
-          { label: "1. التحية", cells: ["Guten Tag!", "نهارك سعيد!"] },
-          { label: "2. الطلب", cells: ["Ich hätte gern einen Kaffee.", "أريد قهوة من فضلك."] },
-          { label: "3. السؤال", cells: ["Was kostet das?", "كم يكلّف هذا؟"] },
-          { label: "4. الدفع", cells: ["Zusammen, bitte.", "الحساب كاملاً من فضلك."] },
-          { label: "5. الوداع", cells: ["Auf Wiedersehen!", "إلى اللقاء!"] },
+          { label: "التحية", cells: ["Guten Tag!", "تحية ممكنة؛ قد تختلف بحسب الوقت والموقف."] },
+          { label: "طلب مشروب", cells: ["Ich hätte gern einen Kaffee, bitte.", "صيغة مهذبة مناسبة لهذا المثال."] },
+          { label: "طلب مختصر", cells: ["Einen Kaffee, bitte.", "طلب مفهوم وشائع في سياق الخدمة."] },
+          { label: "السؤال عن السعر", cells: ["Was kostet der Kaffee?", "السعر والإجابة يعتمدان على القائمة."] },
+          { label: "تقسيم الحساب", cells: ["Zusammen oder getrennt? — Zusammen, bitte.", "Zusammen جواب عن كيفية تقسيم الحساب، لا مرادف عام لكلمة «الدفع»." ] },
+          { label: "طلب الحساب", cells: ["Ich möchte bezahlen, bitte.", "طلب دفع مهذب في نهاية الزيارة."] },
         ],
       },
       examples: [
-        {"de": "Guten Tag! Ich hätte gern einen Kaffee, bitte.", "ar": "نهارك سعيد! أودّ قهوةً من فضلك. (تحية + طلبٌ مهذّب بالنصب)"},
-        {"de": "Was kostet das? – Das macht drei Euro zwanzig.", "ar": "كم يكلّف هذا؟ — المجموع 3.20 يورو."},
-        {"de": "Zusammen oder getrennt? – Zusammen, bitte.", "ar": "معاً أم منفصلاً؟ — معاً من فضلك. (سؤال النادل المعتاد)"},
-        {"de": "Ich bin um sieben aufgestanden und habe gefrühstückt.", "ar": "نهضتُ في السابعة وتناولتُ الفطور. (Perfekt بمساعدين مختلفين + ربط)"},
-        {"de": "Um acht bin ich zur Arbeit gefahren.", "ar": "في الثامنة ذهبتُ إلى العمل. (ظرفٌ أوّلاً + Perfekt بـsein)"},
-        {"de": "Ich musste viel arbeiten, aber es war interessant.", "ar": "كان عليّ أن أعمل كثيراً، لكنّه كان ممتعاً. (ناقصٌ ماضٍ + aber + war)"},
-        {"de": "Am Abend habe ich meine Familie angerufen.", "ar": "في المساء اتّصلتُ بعائلتي. (Perfekt + فعلٌ منفصل)"},
-        {"de": "Ich war sehr müde und bin früh eingeschlafen.", "ar": "كنتُ متعباً جداً فغفوتُ مبكّراً. (ماضيان مختلفان في جملةٍ واحدة)"},
+        { de: "Guten Tag! Ich hätte gern einen Kaffee, bitte.", ar: "نهارك سعيد! أود قهوة من فضلك. (مثال لطلب مهذب)" },
+        { de: "Einen Kaffee, bitte.", ar: "قهوة من فضلك. (طلب مختصر في هذا الموقف)" },
+        { de: "Ich will einen Kaffee.", ar: "أريد قهوة. (تركيب صحيح؛ قد يكون أكثر مباشرة بحسب الموقف والنبرة)" },
+        { de: "Was kostet der Kaffee? — Drei Euro zwanzig.", ar: "كم سعر القهوة؟ — ثلاثة يوروهات وعشرون سنتاً." },
+        { de: "Zusammen oder getrennt? — Zusammen, bitte.", ar: "معاً أم على نحو منفصل؟ — معاً من فضلك. (في سياق تقسيم الحساب)" },
+        { de: "Ich möchte bezahlen, bitte.", ar: "أود الدفع من فضلك. (طلب مهذب في نهاية الزيارة)" },
+        { de: "Der Kellner bringt die Speisekarte.", ar: "يُحضر النادل قائمة الطعام. (مثال في موقف المقهى)" },
+        { de: "Gestern bin ich früh aufgestanden und habe gefrühstückt.", ar: "استيقظت مبكراً وتناولت الفطور أمس. (مثالان في Perfekt)" },
+        { de: "Um acht bin ich zur Arbeit gefahren.", ar: "ذهبت إلى العمل في الثامنة. (العبارة الزمنية في البداية)" },
+        { de: "Ich habe viel gearbeitet, aber der Tag war gut.", ar: "عملت كثيراً، لكن اليوم كان جيداً. (ربط جملتين رئيسيتين)" },
+        { de: "Am Abend habe ich meine Familie angerufen.", ar: "اتصلت بعائلتي في المساء. (فعل منفصل في Perfekt)" },
+        { de: "Ich war müde und bin früh eingeschlafen.", ar: "كنت متعباً وغفوت مبكراً. (war وbin eingeschlafen)" },
       ],
       comparisonWithArabic:
-        "العربية تربط جملها بالواو ربطاً كثيفاً حتّى تكاد الفقرة تكون جملةً واحدة. والألمانية تُقلّ من الربط وتُكثر من الوقف، فالمتعلّم العربيّ يميل إلى صفٍّ طويلٍ من und تلو und، وهو مفهومٌ لكنّه يبدو طفولياً. والتوازن المطلوب في A1: جملتان أو ثلاث مربوطة، ثمّ وقفة، ثمّ جملتان.\n\nوفي موقف الطلب تفترق اللغتان في **درجة المباشرة**. العربية تقبل „أريد قهوة“ بلا حرج، والألمانية تعدّ Ich will einen Kaffee فظاظةً وتفرض صيغةً مُلطَّفة: Ich hätte gern / Ich möchte. وهذا ليس تكلّفاً بل قاعدة أدبٍ اجتماعيّ تُقيَّم في الامتحان الشفويّ فعلاً.\n\nوأمّا حكاية اليوم فتلتقي فيها اللغتان التقاءً مريحاً: كلتاهما ترتّب الأحداث زمنياً وتستعمل ظروفاً في أوّل الجملة („في الصباح…“ ⟵ Am Morgen…). والفرق الوحيد الذي يجب أن تحرسه: الظرف في الألمانية يُزيح الفاعل إلى ما بعد الفعل. فقُل Am Morgen **stehe ich** auf ولا تقل Am Morgen ich stehe auf.",
+        "تختلف صيغ الطلب بين اللغات والمواقف، ولا يصح تعميم حكم ثقافي على متحدثي لغة كاملة. في هذا المثال فقط نعرض صيغة ألطف وطلباً مختصراً، ونبيّن أن Ich will صحيحة نحوياً وقد تكون أكثر مباشرة. كذلك لا توجد قاعدة عامة تقول إن الألمانية تقلل الروابط أو إن العربية تكثر منها دائماً؛ اختر الرابط بحسب معنى الجملة.\n\nفي المثال Am Morgen stehe ich um sieben Uhr auf، يتقدم ظرف الوقت ويأتي الفعل المصرف بعده مباشرة في الجملة الرئيسية الخبرية. قارن هذا المثال المحدد بترتيب الجملة الذي اعتدته في العربية، من دون افتراض أن ترتيب كل الجمل متطابق أو متعاكس.",
       eselsbruecke:
-        "احفظ مشهدين لا قائمتين: مشهد المقهى بخمس خطوات (تحية ← طلب ← سعر ← دفع ← وداع)، ومشهد اليوم بستّ جمل في Perfekt مربوطة بـund وaber وdann.",
+        "احفظ غرض العبارة لا مشهداً جامداً: تحية عند الحاجة، طلب يناسب الموقف، سؤال سعر عند الحاجة، ثم ردّ يناسب السؤال. وفي السرد راجع كل صيغة Perfekt على مثالها.",
       commonMistakes: [
-        {"wrong": "Ich will einen Kaffee.", "right": "Ich hätte gern einen Kaffee.", "whyAr": "wollen تعبّر عن إرادةٍ حازمة وتبدو فظّةً في موقف خدمة. وhätte gern وmöchte هما صيغتا الطلب، وقسم Sprechen Teil 3 يُقيّم الأدب بنداً مستقلّاً."},
-        {"wrong": "Ich möchte der Kaffee.", "right": "Ich möchte den Kaffee.", "whyAr": "ما بعد möchte مفعولٌ به في حالة النصب، فتتحوّل der إلى den. والفعل الناقص لا يُغيّر الحالة — المفعول يبقى مفعولاً."},
-        {"wrong": "Am Morgen ich stehe auf. Ich frühstücke. Ich fahre zur Arbeit.", "right": "Am Morgen stehe ich auf, dann frühstücke ich und fahre zur Arbeit.", "whyAr": "خطآن معاً: ترتيبٌ خاطئ بعد الظرف، وجملٌ مرصوفة بلا رابط. ومعايير A1 تطلب نصّاً مترابطاً، فالربط بند تقييمٍ لا زينة."},
-        {"wrong": "Gestern ich habe einen Film gesehen.", "right": "Gestern habe ich einen Film gesehen.", "whyAr": "الظرف gestern في المركز الأوّل يُزيح الفاعل بعد المساعد. والقاعدة نفسها في الحاضر والماضي — فما يُزاح هو الفاعل لا الفعل."},
-        {"wrong": "Ich habe gestern nach Hause gegangen.", "right": "Ich bin gestern nach Hause gegangen.", "whyAr": "gehen حركةٌ بين نقطتين بلا مفعول فمساعدها sein. وسل نفسك في كلّ جملة: هل في الجملة مفعولٌ به؟ فإن كان فـhaben قطعاً."},
+        {
+          wrong: "Ich habe gelernt Deutsch.",
+          right: "Ich habe Deutsch gelernt.",
+          whyAr: "في هذا المثال الخبري المحايد يوضع المفعول Deutsch قبل Partizip II gelernt.",
+          classification: "error",
+        },
+        {
+          wrong: "Gestern ich habe einen Film gesehen.",
+          right: "Gestern habe ich einen Film gesehen.",
+          whyAr: "في الجملة الرئيسية الخبرية، يتبع الفعل المصرف Gestern مباشرة؛ V2 هنا وصف لهذا النوع من الجمل لا لكل الجمل.",
+          classification: "error",
+        },
+        {
+          wrong: "Ich habe gestern nach Hause gegangen.",
+          right: "Ich bin gestern nach Hause gegangen.",
+          whyAr: "مع الفعل gehen في هذا المعنى يكون Perfekt: bin gegangen. لا تستنتج اختيار haben/sein من وجود مفعول به وحده؛ تعلّم صيغة الفعل واستعماله.",
+          classification: "error",
+        },
+        {
+          wrong: "Ich will einen Kaffee. (في كل سياق طلب)",
+          right: "Ich hätte gern einen Kaffee, bitte. (صيغة ألطف في المثال)",
+          whyAr: "الجملة الأولى سليمة، لكنها قد تبدو أكثر مباشرة بحسب الموقف والنبرة. الجملة الثانية بديل ألطف هنا، وليست الصيغة الألمانية الوحيدة المقبولة.",
+          classification: "contextual-alternative",
+        },
+        {
+          wrong: "Zusammen, bitte. (من دون سؤال عن تقسيم الحساب)",
+          right: "اختر رداً يناسب السؤال المطروح.",
+          whyAr: "Zusammen جواب محتمل إذا كان السؤال Zusammen oder getrennt؟؛ أما في سياق آخر فقد لا يكون الرد مناسباً، مع بقاء العبارة نفسها سليمة.",
+          classification: "contextual-alternative",
+        },
       ],
       relatedRuleComparison: {
-        "title": "القائمة مقابل المشهد",
-        "content": "جرّب هذا الاختبار على نفسك: احسب كم ثانيةً تحتاج لتقول «أودّ قهوةً من فضلك» بالألمانية. إن احتجتَ أكثر من ثانيتين فأنت ما زلت **تُركّب** الجملة من قواعدها لا **تستحضرها** من مشهدها.\n\nوالفرق ليس في المعرفة بل في طريقة التخزين. القاعدة تُخزَّن مجرّدةً فتحتاج تركيباً عند كلّ استعمال، والمشهد يُخزَّن جاهزاً فيخرج كاملاً. ولذلك يُطلب منك في هذا الدرس أن تحفظ **عشر جملٍ كاملة** لا عشر قواعد: الجمل تخرج فوراً، والقواعد تصحّح ما بعدها.\n\nوهذه هي الطريقة التي يتعلّم بها الطفل لغته الأولى: جملاً جاهزة أوّلاً، ثمّ استخراج القاعدة منها لاحقاً — لا العكس."
+        title: "التدريب اليومي ليس محاكاة امتحان",
+        content:
+          "يصلح سرد يومك تدريباً كتابياً أو حديثاً عاماً، لكنه لا يطابق تلقائياً مهمة Sprechen Teil 2 في نموذج Goethe. يطلب الجزء الثاني من المشاركين تبادل معلومات عبر بطاقات كلمات في موضوعات يومية؛ أما بنية النموذج المنشور فتشمل أيضاً التعريف بالنفس والطلبات والاستجابة. لذلك لا نسمّي حكاية الأمس سؤالاً امتحانياً مضموناً، ولا نسجل حديثاً حراً دليلاً في هذا الدرس.",
       },
     },
     {
       id: "t3",
-      titleAr: "الاستعداد لامتحان Start Deutsch 1 — بنية الامتحان واستراتيجياته",
-      titleDe: "Fit für Start Deutsch 1: Prüfungsteile und Strategien",
+      titleAr: "نظرة موثقة إلى بنية Goethe-Zertifikat A1: Start Deutsch 1",
+      titleDe: "Einblick in das Format von Start Deutsch 1",
       explanationAr:
-        "أنت الآن تملك مادّة A1 كاملة. وبقي أن تعرف **كيف تُختبر فيها**، لأنّ معرفة اللغة شيءٌ وأداء الامتحان شيءٌ آخر — ومن جهل بنية الامتحان خسر نقاطاً لا علاقة لها بلغته.\n\n**بنية Start Deutsch 1 (Goethe A1) — أربعة أقسام:**\n· **Hören** (نحو 20 دقيقة): ثلاثة أجزاء — رسائل صوتية قصيرة، إعلانات عامّة، ثمّ محادثات. **يُسمع كلّ نصّ مرّتين** إلاّ الجزء الثاني فمرّةً واحدة.\n· **Lesen** (25 دقيقة): نصوصٌ قصيرة — رسالة، إعلانات، لافتات — مع أسئلة صواب/خطأ واختيارٍ من متعدّد.\n· **Schreiben** (20 دقيقة): جزآن — **استمارة** تُملأ ببياناتٍ شخصية، ثمّ **رسالة قصيرة** من نحو 30 كلمة.\n· **Sprechen** (نحو 15 دقيقة، في مجموعة): ثلاثة أجزاء — تقديم النفس، طرح سؤالٍ والإجابة عنه، ثمّ **طلبٌ وردٌّ عليه**.\n\n**استراتيجياتٌ تُكسبك نقاطاً فوراً:**\n· **في Hören:** اقرأ السؤال **قبل** أن يبدأ التسجيل. وأنت تعرف أنّ الجزء الحاسم من الجملة الألمانية يقع في آخرها (Partizip II، البادئة المنفصلة، المصدر) — فلا تحكم قبل أن تسمع الكلمة الأخيرة.\n· **في Schreiben:** في الاستمارة انتبه إلى ترتيب العنوان (الشارع ثمّ الرقم، والرمز ثمّ المدينة). وفي الرسالة اكتب **ثلاث جملٍ مربوطة** بـund وaber وdenn لا ثلاث جملٍ منفصلة.\n· **في Sprechen:** لا تصمت إن لم تفهم. قل **Können Sie das bitte wiederholen?** أو **Langsamer, bitte.** — وهذا يُحسب لك لا عليك، لأنّه استراتيجيةُ تواصلٍ تُقيَّم في معايير CEFR.\n· **في الأقسام كلّها:** أجب عن كلّ سؤال. لا خصمَ على الخطأ، فالفراغ خسارةٌ مؤكّدة والتخمين احتمال.\n\n**والنجاح 60 من 100.** أي أنّك لا تحتاج الكمال بل الكفاية، ولا يُنتظر منك في A1 أن تتكلّم بلا خطأ بل أن **تُفهَم**.",
+        "تعرض هذه الفقرة **نموذج Goethe المنشور في فبراير 2024** وقواعد تنفيذ الاختبار السارية من **1 سبتمبر 2025**؛ إنها معلومات عن امتحان رسمي وليست اعتماداً لهذا الدرس أو تقييماً لاستعداد المتعلم. قد تختلف الأمثلة والأسئلة بين النماذج، لذا تُراجع التعليمات والمواد الرسمية المحدّثة.\n\nفي نموذج 2024: للاستماع ثلاثة أجزاء؛ يُسمع نص الجزء الأول والثالث مرتين، ونص الجزء الثاني مرة واحدة. وللقراءة ثلاثة أجزاء. والكتابة مهمتان: نموذج بيانات ونص قصير يقارب 30 كلمة، مع إجابة من جملة إلى جملتين لكل نقطة وكتابة التحية والختام. والشفهي ثلاثة أجزاء: تقديم النفس، طلب المعلومات وإعطاؤها عبر بطاقات، ثم صياغة طلب والاستجابة له. سرد ما فعله المرء أمس تدريب عام، وليس وصفاً لمهمة Sprechen Teil 2 في هذا النموذج.\n\nبحسب قواعد التنفيذ السارية من 1 سبتمبر 2025، تستغرق الأقسام الكتابية معاً 65 دقيقة: Hören نحو 20، Lesen 25، Schreiben 20. ويستغرق Sprechen 15 دقيقة لمجموعة من أربعة مشاركين كحد أقصى، من دون وقت تحضير. **هذه مدد أقسام الامتحان، وليست مدة لهذا الدرس.**\n\nتذكر صفحة نتائج Goethe أن الدرجة القصوى 100 (75 للجزء الكتابي و25 للشفهي)، والنجاح يتطلب 60 على الأقل مع أداء جميع أجزاء الامتحان. لا يمكن استنتاج نتيجة شخص أو جاهزيته من مشاهدة شرح أو إكمال هذه المراجعة.",
       whyAr:
-        "لماذا نُدرِّس بنية الامتحان بوصفها جزءاً من المنهج لا ملحقاً به؟ لأنّ الفجوة بين „يعرف“ و„ينجح“ فجوةٌ حقيقية يقع فيها متعلّمون أكفاء. من لا يعرف أنّ الجزء الثاني من Hören يُسمع مرّةً واحدة يضيّعه كلّه وهو ينتظر إعادةً لا تأتي. ومن لا يعرف أنّ الاستمارة تُقيَّم على ترتيب العنوان يخسر نقاطاً في مسألةٍ تعلّمها فعلاً.\n\nولماذا يُثاب طلب الإعادة بدل أن يُعاقَب؟ لأنّ الإطار الأوروبيّ المرجعيّ يعدّ **استراتيجيات التواصل** كفاءةً مستقلّة تُقاس مع الكفاءة اللغوية لا ضدّها. فالمتحدّث الذي يستوقف محاوره ليفهم أنجح تواصلياً من الذي يصمت أو يخمّن. وهذا يعكس واقعاً حقيقياً: الناطق الأصليّ نفسه يطلب الإعادة يومياً.\n\nوأمّا عتبة الستّين فرسالةٌ بيداغوجية مقصودة: A1 ليس مستوى إتقانٍ بل مستوى **انطلاق**. ومن انتظر أن يتكلّم بلا خطأٍ قبل أن يمتحن لن يمتحن أبداً، لأنّ الخطأ في هذه المرحلة ليس عرضاً جانبياً للتعلّم بل وسيلته.",
+        "يساعد وصف المهام الرسمي على تمييز شكل الامتحان عن التدريب العام. مصدر التفاصيل هنا نموذج الاختبار الرسمي وقواعده وصفحة النتائج، لا تخمينات عن معايير النقاط. لم أجد في هذه المواد سنداً لقول إن رابطاً بعينه يكسب نقطة، أو أن طلب الإعادة يمنح درجة مستقلة، أو أن ترك الإجابة يخضع دائماً لخصم؛ لذلك حُذفت هذه الوعود. هذا الدرس ليس مادة Goethe رسمية ولا شهادةً بالاستعداد أو الإتقان.",
       table: {
-        title: "Start Deutsch 1 — الأقسام الأربعة",
-        columns: ["القسم", "الزمن", "ما يُطلب", "المفتاح"],
+        title: "مكوّنات نموذج Start Deutsch 1 ومواعيد الامتحان",
+        columns: ["القسم", "شكل المهام في نموذج 2024", "مدة القسم في الامتحان (قواعد 2025)"],
         rows: [
-          { label: "Hören", cells: ["≈20 دقيقة", "رسائل صوتية · إعلانات · محادثات", "اقرأ السؤال أوّلاً، وانتظر آخر الجملة"] },
-          { label: "Lesen", cells: ["25 دقيقة", "رسالة · إعلانات · لافتات", "ابحث عن الكلمة المفتاح لا عن كلّ كلمة"] },
-          { label: "Schreiben", cells: ["20 دقيقة", "استمارة + رسالة ≈30 كلمة", "اربط الجمل بـund/aber/denn"] },
-          { label: "Sprechen", cells: ["≈15 دقيقة", "تقديم النفس · سؤال وجواب · طلب", "اطلب الإعادة عند الحاجة — يُحسب لك"] },
-          { label: "النتيجة", cells: ["—", "60 من 100 للنجاح", "أجب عن كلّ سؤال: لا خصمَ على الخطأ"] },
+          { label: "Hören", cells: ["3 أجزاء؛ 1 و3 مرتان، والجزء 2 مرة واحدة.", "نحو 20 دقيقة"] },
+          { label: "Lesen", cells: ["3 أجزاء؛ منها صواب/خطأ وتحديد مصدر المعلومة.", "25 دقيقة"] },
+          { label: "Schreiben", cells: ["نموذج + نص قصير (نحو 30 كلمة)؛ جملة إلى جملتين لكل نقطة، مع تحية وختام.", "20 دقيقة"] },
+          { label: "Sprechen", cells: ["تعريف بالنفس؛ طلب معلومات وإعطاؤها؛ طلب واستجابة. مجموعة حتى 4، بلا تحضير.", "15 دقيقة"] },
+          { label: "النجاح", cells: ["60/100 على الأقل، مع أداء جميع الأجزاء؛ 75 نقطة كتابية و25 شفوية كحد أقصى.", "—"] },
         ],
       },
       examples: [
-        { de: "Können Sie das bitte wiederholen?", ar: "أيمكنك الإعادة من فضلك؟ — جملة إنقاذٍ تُحسب لك" },
-        { de: "Entschuldigung, ich habe das nicht verstanden.", ar: "عذراً، لم أفهم ذلك. (وهي في Perfekt — قلها كما تعلّمتَها)" },
-        { de: "Langsamer, bitte!", ar: "أبطأ من فضلك!" },
-        { de: "Wie bitte? Noch einmal, bitte.", ar: "عفواً؟ مرّةً أخرى من فضلك." },
-        { de: "Ich heiße Amine. Ich komme aus Tunesien und wohne jetzt in Berlin.", ar: "اسمي أمين. أنا من تونس وأسكن الآن في برلين. (Sprechen Teil 1)" },
-        { de: "Ich hätte gern einen Kaffee, bitte.", ar: "أودّ قهوةً من فضلك. (Sprechen Teil 3 — الطلب)" },
-        { de: "Gestern bin ich ins Kino gegangen und habe einen Film gesehen.", ar: "أمس ذهبتُ إلى السينما وشاهدتُ فيلماً. (جملة Schreiben نموذجية: ماضٍ + ربط)" },
-        { de: "Meine Adresse ist Goethestraße 12, 10115 Berlin.", ar: "عنواني شارع غوته 12، 10115 برلين. (Schreiben Teil 1 — الاستمارة)" },
+        { de: "Wie heißen Sie? — Ich heiße Amine.", ar: "ما اسمك؟ — اسمي أمين. (مثال تدريبي للتعريف بالنفس)" },
+        { de: "Woher kommen Sie? — Ich komme aus Tunesien.", ar: "من أين أتيت؟ — أنا من تونس. (سؤال وجواب شخصيان)" },
+        { de: "Was essen Sie gern? — Ich esse gern Brot.", ar: "ماذا تحب أن تأكل؟ — أحب أكل الخبز. (مثال على تبادل معلومات)" },
+        { de: "Haben Sie Kinder? — Ja, ich habe zwei Söhne.", ar: "هل لديك أطفال؟ — نعم، لدي ابنان. (إجابة تدريبية قصيرة)" },
+        { de: "Können Sie mir bitte helfen? — Ja, gern.", ar: "هل يمكنك مساعدتي من فضلك؟ — نعم، بكل سرور. (طلب واستجابة)" },
+        { de: "Ich heiße Amine. Ich komme aus Tunesien und wohne in Berlin.", ar: "اسمي أمين. أنا من تونس وأسكن في برلين. (مثال لا نص رسمي)" },
+        { de: "Hallo, ich möchte Informationen über Museen. Können Sie mir bitte helfen?", ar: "مرحباً، أود معلومات عن المتاحف. هل يمكنك مساعدتي من فضلك؟ (رسالة تدريبية لا نموذج إجابة رسمي)" },
+        { de: "Entschuldigung, können Sie das bitte wiederholen?", ar: "عذراً، هل يمكنك إعادة ذلك من فضلك؟ (عبارة مفيدة عند الحاجة، لا وعد بنقطة إضافية)" },
       ],
       comparisonWithArabic:
-        "ثقافة الامتحان في العالم العربيّ تُقيّم غالباً **الإنتاج الصحيح**: الإجابة صحيحةٌ أو خاطئة. ومعايير CEFR تُقيّم **الأداء التواصليّ**: هل بلغ المتكلّم غرضه؟ وهذا فارقٌ يغيّر سلوكك في القاعة. فالمتعلّم المتربّي على الثقافة الأولى يصمت إذا لم يجد الصيغة الكاملة، والثاني يقول ما يستطيع ويستعين بما يعرف — وهو الأعلى درجة.\n\nومن مظاهر ذلك أنّ **إعادة الصياغة** تُحسب لك. فإن نسيتَ كلمة Regenschirm فقل: „Das ist für Regen“. هذا في التقليد العربيّ المدرسيّ „تهرّب“، وفي معايير CEFR **استراتيجية تعويضٍ** تُثاب صراحةً.\n\nوأمّا التخمين فالثقافتان تفترقان فيه كذلك: كثيرٌ من الامتحانات العربية تخصم على الخطأ فيتعوّد الطالب ترك الفراغ. وامتحان Goethe لا يخصم البتّة، فترك الفراغ خسارةٌ صافية بلا مقابل.",
+        "هذه المعلومات تخص امتحاناً واحداً ونموذجاً منشوراً محدداً؛ لا تعممها على امتحانات أخرى أو على أنظمة تقييم في بلدان مختلفة. اتبع تعليمات كل ورقة ونموذج. كما أن معرفة صيغة المهمة لا تساوي القدرة على تنفيذها: فهم شكل الاختبار لا يثبت وحده القراءة أو الاستماع أو الكتابة أو الكلام.",
       eselsbruecke:
-        "أربعة أقسام وأربع عادات: في Hören اقرأ السؤال أوّلاً وانتظر آخر الجملة · في Lesen ابحث عن الكلمة المفتاح · في Schreiben اربط بـund/aber/denn · في Sprechen اطلب الإعادة ولا تصمت. والنجاح 60 لا 100.",
+        "للتذكّر فقط: الاستماع ثلاثة أجزاء (مرتان، مرة، مرتان)؛ القراءة ثلاثة؛ الكتابة مهمتان؛ الشفهي ثلاثة. راجع تفاصيل كل مهمة في المصدر الرسمي ولا تعتمد على هذا الملخص بدلاً منه.",
       commonMistakes: [
         {
-          wrong: "ترك سؤالٍ بلا إجابة لأنّك لست متأكّداً",
-          right: "خمّن دائماً — لا خصمَ على الخطأ في Goethe",
-          whyAr:
-            "الفراغ خسارةٌ مؤكّدة، والتخمين احتمالُ ربحٍ بلا خسارة. وكثيرٌ من الطلبة العرب يتركون الفراغ بعادةٍ مدرسية تخصم على الخطأ، وهي عادةٌ لا محلّ لها هنا.",
+          wrong: "Was hast du gestern gemacht? هو وصف مضمون للجزء الثاني من Sprechen.",
+          right: "في نموذج 2024، الجزء الثاني تبادل معلومات عبر بطاقات كلمات؛ حكاية الأمس تدريب عام.",
+          whyAr: "نموذج Goethe يحدد التعريف بالنفس، ثم طلب المعلومات وإعطاءها، ثم الطلب والاستجابة. لا يسند أن سرد الأمس هو المهمة الرسمية للجزء الثاني.",
+          classification: "unverified-claim",
         },
         {
-          wrong: "الصمت في Sprechen عند عدم الفهم",
-          right: "Können Sie das bitte wiederholen?",
-          whyAr:
-            "طلب الإعادة استراتيجيةُ تواصلٍ تُقيَّم إيجاباً في معايير CEFR، والصمت يُقيَّم صفراً. فالجملة نفسها تُكسبك نقطةً بدل أن تُفقدك واحدة.",
+          wrong: "كل نصوص Hören تُسمع مرتين.",
+          right: "في النموذج المنشور: الجزآن 1 و3 مرتان، والجزء 2 مرة.",
+          whyAr: "عدد مرات الاستماع يختلف بين أجزاء النموذج؛ لا تعمم تكراراً واحداً على القسم كله.",
+          classification: "error",
         },
         {
-          wrong: "ثلاث جملٍ منفصلة في رسالة Schreiben",
-          right: "جملتان أو ثلاث مربوطة بـund وaber وdenn",
-          whyAr:
-            "معايير A1 تطلب نصّاً مترابطاً لا جملاً صحيحة فحسب. والترابط بندٌ مستقلّ في شبكة التصحيح، فمن أهمله خسر فيه ولو كانت جمله سليمة.",
+          wrong: "النجاح مضمون بمجرد بلوغ 60 نقطة حتى لو لم يُؤدَّ أحد الأجزاء.",
+          right: "60 نقطة على الأقل، مع أداء جميع الأجزاء.",
+          whyAr: "تذكر صفحة نتائج Goethe الشرطين معاً، وتذكر أن الحد الأقصى 100 نقطة.",
+          classification: "error",
         },
         {
-          wrong: "الحكم على إجابة Hören قبل نهاية الجملة",
-          right: "انتظر الكلمة الأخيرة قبل أن تختار",
-          whyAr:
-            "البنية الألمانية تضع الجزء الحاسم في الآخر: gefahren أو aufgestanden أو nicht. فمن حكم من أوّل الجملة عكس المعنى أحياناً تماماً.",
+          wrong: "يجب أن تتكون كل رسالة من ثلاث جمل مترابطة بـund/aber/denn.",
+          right: "اتبع نقاط وتعليمات المهمة؛ نموذج الكتابة يطلب جملة أو جملتين لكل نقطة ونحو 30 كلمة إجمالاً.",
+          whyAr: "الروابط مفيدة حين تناسب المعنى، لكنها ليست شرطاً عاماً ثابتاً في تعليمات نموذج الكتابة.",
+          classification: "pedagogical-simplification",
         },
         {
-          wrong: "12 Goethestraße في استمارة Schreiben",
-          right: "Goethestraße 12",
-          whyAr:
-            "ترتيب العنوان بندٌ يُقيَّم في الاستمارة، ونقلُ العادة الفرنسية السائدة في تونس والمغرب يُخسرك نقطةً في مسألةٍ تعرفها فعلاً.",
+          wrong: "طلب إعادة السؤال يضمن نقطة مستقلة في التقييم.",
+          right: "اطلب الإعادة إذا احتجت إليها؛ لا يُوعَد هنا بنقاط إضافية.",
+          whyAr: "العبارة استراتيجية تواصل مفيدة، لكن المصادر الرسمية التي راجعناها لا تنص على نقطة مستقلة لمجرد قولها.",
+          classification: "unverified-claim",
         },
       ],
       relatedRuleComparison: {
-        title: "ما بعد A1 — ما الذي ينتظرك في A2؟",
+        title: "معرفة الصيغة مقابل إثبات الأداء",
         content:
-          "أنت تُغلق A1 وتملك: الحاضر، والماضي المحكيّ في صورته الأولى، والأفعال الناقصة الستّة، وحالتي النصب والجرّ في أشيع مواضعهما.\n\nوينتظرك في A2 أربعة توسّعات لا أربعةٌ جديدة:\n· **Perfekt كاملاً** — عائلات الأفعال القوية ومعايير haben/sein بتفصيلها (a2-01)\n· **Präteritum** — الماضي المكتوب الذي تقرؤه في الأخبار والقصص (a2-05)\n· **الجمل الثانوية** — weil وdass وwenn، وفيها يذهب الفعل إلى **آخر** الجملة الفرعية (a2-06)\n· **المقارنة والتفضيل** — größer als, am größten (a2-08)\nولاحظ أنّ الثالث امتدادٌ مباشر لقانون الحاضنة الذي تعرفه: الألمانية تؤخّر الفعل كلّما كانت الجملة تابعة. فأنت لا تبدأ من الصفر في A2 بل تُكمل بناءً قائماً.",
+          "تعرّف هذا الدرس إلى أنواع المهام في نموذج منشور، ويختبر المطابقة في mini-test/m6 فقط. لا يقيس اختبار المطابقة وحده أداء المهارات نفسها، ولا يسجل إكمال الشرح أو فتح الرابط أو التفاعل النصي شهادةً بالجاهزية. يلزم أداء كل مهمة فعلية وفق تعليماتها، وتظل النتيجة النهائية من اختصاص الاختبار الرسمي.",
       },
     },
   ],
+
   reading: {
-    "id": "read-a1-13",
-    "titleDe": "Ein Jahr Deutsch — Amines Rückblick",
-    "titleAr": "سنةٌ من الألمانية — أمين ينظر إلى الوراء",
-    "textType": "blog",
-    "paragraphs": [
-      "Heute ist ein besonderer Tag: Vor genau einem Jahr habe ich meinen ersten Deutschkurs angefangen. Ich erinnere mich noch gut an die erste Stunde. Die Lehrerin hat „Guten Tag“ gesagt, und ich habe nichts verstanden. Gar nichts!",
-      "Am Anfang war alles schwer. Die Artikel der, die und das waren mein größtes Problem. Warum ist der Tisch maskulin und die Lampe feminin? Es gibt keine Logik, habe ich gedacht. Aber dann habe ich gelernt: Man muss den Artikel zusammen mit dem Wort lernen — nicht später.",
-      "Nach drei Monaten konnte ich schon einfache Sätze sagen: Ich heiße Amine, ich komme aus Tunesien, ich wohne in Berlin. Das war ein schönes Gefühl. Im Supermarkt habe ich zum ersten Mal auf Deutsch bezahlt, und die Verkäuferin hat mich verstanden!",
-      "Natürlich habe ich viele Fehler gemacht. Einmal wollte ich einen Kaffee bestellen und habe gesagt: „Ich will einen Kaffee.“ Der Kellner hat gelacht und geantwortet: „Sie meinen: Ich hätte gern einen Kaffee.“ Seitdem sage ich immer hätte gern.",
-      "Jetzt kann ich über meinen Tag sprechen, über meine Familie und über meine Pläne. Ich kann Fragen stellen und antworten. Ich kann sogar erzählen, was ich gestern gemacht habe. Das ist nicht perfekt, aber es funktioniert.",
-      "Nächste Woche mache ich die Prüfung Start Deutsch 1. Ich bin ein bisschen nervös, aber ich habe viel gelernt und ich bin bereit. Und danach? Danach fange ich mit A2 an. Der Weg ist lang, aber ich gehe ihn Schritt für Schritt."
+    id: "read-a1-13",
+    titleDe: "Ein Jahr Deutsch — ein persönlicher Rückblick",
+    titleAr: "سنة من تعلّم الألمانية — مراجعة شخصية",
+    textType: "blog",
+    paragraphs: [
+      "Seit einem Jahr lerne ich Deutsch. Vor einem Jahr habe ich meinen ersten Deutschkurs angefangen. In der ersten Stunde hat die Lehrerin „Guten Tag“ gesagt. Ich habe fast nichts verstanden.",
+      "Am Anfang waren die Artikel „der“, „die“ und „das“ schwierig für mich. Ich habe nicht verstanden: Warum heißt es „der Tisch“, aber „die Lampe“? Im Kurs habe ich gelernt: Ich lerne jedes neue Wort mit dem Artikel.",
+      "Nach drei Monaten habe ich zum ersten Mal kurze Sätze auf Deutsch gesprochen: „Ich heiße Amine. Ich komme aus Tunesien. Ich wohne in Berlin.“ Im Supermarkt habe ich einmal auf Deutsch nach dem Preis gefragt. Die Verkäuferin hat mich verstanden!",
+      "Einmal habe ich im Café gesagt: „Ich will einen Kaffee.“ Der Satz war grammatisch richtig und verständlich. Für eine höflichere Bestellung sage ich heute oft: „Ich hätte gern einen Kaffee, bitte.“ Auch „Einen Kaffee, bitte“ ist möglich.",
+      "Jetzt spreche ich über meinen Tag, meine Familie und meine Pläne. Ich kann einfache Fragen stellen und kurze Antworten geben. Gestern habe ich zu Hause Deutsch gelernt. Es war nicht perfekt, aber es hat funktioniert.",
+      "Nächste Woche mache ich die Prüfung Start Deutsch 1. Ich bin ein bisschen nervös. Danach möchte ich mit A2 anfangen. Ich lerne Schritt für Schritt.",
     ],
-    "paragraphsAr": [
-      "اليوم يومٌ خاصّ: قبل سنةٍ بالضبط بدأتُ أوّل دورةٍ لي في الألمانية. ما زلتُ أذكر الحصّة الأولى جيداً. قالت المعلّمة «نهاركم سعيد» ولم أفهم شيئاً. لا شيء إطلاقاً!",
-      "في البداية كان كلّ شيءٍ صعباً. كانت الأدوات der وdie وdas أكبر مشكلةٍ عندي. لماذا الطاولة مذكّرة والمصباح مؤنّث؟ لا منطق في الأمر، هكذا فكّرتُ. لكنّي تعلّمتُ بعد ذلك: على المرء أن يتعلّم الأداة مع الكلمة — لا بعدها.",
-      "بعد ثلاثة أشهر صرتُ أستطيع قول جملٍ بسيطة: اسمي أمين، أنا من تونس، أسكن في برلين. كان شعوراً جميلاً. في السوق دفعتُ بالألمانية لأوّل مرّة، وفهمتني البائعة!",
-      "طبعاً ارتكبتُ أخطاءً كثيرة. مرّةً أردتُ أن أطلب قهوةً فقلت: «أريد قهوة». ضحك النادل وأجاب: «تقصد: أودّ قهوةً من فضلك». ومنذ ذلك الحين أقول hätte gern دائماً.",
-      "الآن أستطيع الحديث عن يومي وعن عائلتي وعن خططي. أستطيع أن أسأل وأن أجيب. بل أستطيع أن أحكي ما فعلتُه أمس. ليس هذا كمالاً، لكنّه يؤدّي الغرض.",
-      "الأسبوع القادم أُجري امتحان Start Deutsch 1. أنا متوتّرٌ قليلاً، لكنّي تعلّمتُ كثيراً وأنا مستعدّ. وبعده؟ بعده أبدأ بـA2. الطريق طويل، لكنّي أمشيه خطوةً خطوة."
+    paragraphsAr: [
+      "أتعلم الألمانية منذ سنة. قبل سنة بدأت أول دورة ألمانية لي. في الحصة الأولى قالت المعلمة «نهارك سعيد». لم أفهم تقريباً شيئاً.",
+      "في البداية كانت أدوات الأسماء der وdie وdas صعبة عليّ. لم أفهم: لماذا نقول „der Tisch“ لكن „die Lampe“؟ تعلمت في الدورة أن أتعلم كل كلمة جديدة مع أداتها.",
+      "بعد ثلاثة أشهر تحدثت لأول مرة بجمل قصيرة بالألمانية: «اسمي أمين. أنا من تونس. أسكن في برلين». وفي السوبرماركت سألت مرة عن السعر بالألمانية. فهمتني البائعة!",
+      "قلت مرة في المقهى: „Ich will einen Kaffee“؛ كانت الجملة صحيحة نحوياً ومفهومة. ولطلب ألطف أقول اليوم كثيراً: „Ich hätte gern einen Kaffee, bitte“. ويمكن أيضاً قول: „Einen Kaffee, bitte“.",
+      "أتحدث الآن عن يومي وعائلتي وخططي. أستطيع أن أطرح أسئلة بسيطة وأعطي إجابات قصيرة. درست الألمانية في البيت أمس. لم يكن كل شيء مثالياً، لكن الأمر نجح.",
+      "سأمتحن في Start Deutsch 1 الأسبوع القادم. أنا متوتر قليلاً. بعد ذلك أريد أن أبدأ A2. أتعلم خطوة خطوة.",
     ],
-    "glossary": [
-      {
-        "de": "besonderer (besonders)",
-        "ar": "خاصّ، مميّز"
-      },
-      {
-        "de": "angefangen (anfangen)",
-        "ar": "بدأ",
-        "noteAr": "فعلٌ منفصل ⟵ an-ge-fangen"
-      },
-      {
-        "de": "verstanden (verstehen)",
-        "ar": "فهِم",
-        "noteAr": "غير منفصل بـver- ⟵ بلا ge-"
-      },
-      {
-        "de": "das Problem",
-        "ar": "المشكلة"
-      },
-      {
-        "de": "gedacht (denken)",
-        "ar": "فكَّر",
-        "noteAr": "شاذّ تماماً: denken ⟵ gedacht"
-      },
-      {
-        "de": "das Gefühl",
-        "ar": "الشعور، الإحساس"
-      },
-      {
-        "de": "bezahlt (bezahlen)",
-        "ar": "دفَع",
-        "noteAr": "be- ⟵ بلا ge-"
-      },
-      {
-        "de": "der Fehler",
-        "ar": "الخطأ",
-        "noteAr": "Fehler machen = يرتكب خطأً"
-      },
-      {
-        "de": "bestellen",
-        "ar": "يطلب (في مطعمٍ أو متجر)"
-      },
-      {
-        "de": "geantwortet (antworten)",
-        "ar": "أجاب",
-        "noteAr": "جذرٌ ينتهي بـt فيُدخَل حرف علّة: geantwort-e-t"
-      },
-      {
-        "de": "seitdem",
-        "ar": "منذ ذلك الحين"
-      },
-      {
-        "de": "nervös",
-        "ar": "متوتّر، قلق"
-      },
-      {
-        "de": "bereit",
-        "ar": "مستعدّ",
-        "noteAr": "Ich bin bereit = أنا مستعدّ"
-      },
-      {
-        "de": "Schritt für Schritt",
-        "ar": "خطوةً خطوة"
-      }
+    glossary: [
+      { de: "seit einem Jahr", ar: "منذ سنة", noteAr: "عبارة زمنية كما وردت في النص." },
+      { de: "der Deutschkurs", ar: "دورة اللغة الألمانية", noteAr: "تركيب اسمي مذكر." },
+      { de: "die Stunde", ar: "الحصة؛ الساعة", noteAr: "المعنى هنا: حصة الدرس." },
+      { de: "verstanden (verstehen)", ar: "فهم؛ صيغة Partizip II من verstehen", noteAr: "تظهر في النص ضمن „Ich habe fast nichts verstanden“." },
+      { de: "der Artikel", ar: "أداة الاسم النحوية", noteAr: "تعلَّم الأداة مع الاسم؛ لا تستنتج جنس الاسم من معناه وحده." },
+      { de: "schwierig", ar: "صعب", noteAr: "schwierig für mich = صعب عليّ." },
+      { de: "mit dem Artikel", ar: "مع الأداة", noteAr: "طريقة دراسة يذكرها المتحدث في تجربته." },
+      { de: "nach dem Preis fragen", ar: "يسأل عن السعر", noteAr: "السؤال عن الثمن في متجر." },
+      { de: "grammatisch richtig", ar: "صحيح نحوياً", noteAr: "وصف لصحة التركيب، لا حكماً على ملاءمته لكل مقام." },
+      { de: "verständlich", ar: "مفهوم", noteAr: "قد تكون الجملة مفهومة مع وجود بديل ألطف للسياق." },
+      { de: "die Bestellung", ar: "الطلب في مقهى أو متجر", noteAr: "في النص: Bestellung höflicher formulieren." },
+      { de: "hätte gern", ar: "أودّ؛ أفضّل", noteAr: "صيغة طلب ألطف في المثال، وليست الخيار الوحيد." },
+      { de: "ein bisschen nervös", ar: "متوتر قليلاً", noteAr: "تعبير عن شعور المتحدث في قصته." },
+      { de: "Schritt für Schritt", ar: "خطوة خطوة", noteAr: "عبارة للتدرج في فعل شيء." },
     ],
-    "questions": [
+    questions: [
       {
-        "id": "rq1",
-        "type": "multiple-choice",
-        "paragraph": 1,
-        "questionDe": "Wie lange lernt Amine schon Deutsch?",
-        "instructionAr": "اقرأ الفقرة الأولى واختر الإجابة الصحيحة",
-        "options": [
-          "Seit einem Jahr",
-          "Seit drei Monaten",
-          "Seit einer Woche",
-          "Seit zwei Jahren"
-        ],
-        "correctIndex": 0,
-        "explanation": "«Vor genau einem Jahr habe ich meinen ersten Deutschkurs angefangen» — منذ سنةٍ بالضبط.",
-        "errorType": "vocabulary"
+        id: "rq1",
+        type: "multiple-choice",
+        paragraph: 0,
+        questionDe: "Wie lange lernt Amine schon Deutsch?",
+        instructionAr: "اقرأ الفقرة الأولى واختر مدة تعلم أمين للألمانية.",
+        options: ["Seit einem Jahr", "Seit drei Monaten", "Seit einer Woche", "Seit zwei Jahren"],
+        correctIndex: 0,
+        explanation: "يذكر أمين صراحة: „Seit einem Jahr lerne ich Deutsch.“",
+        errorType: "vocabulary",
       },
       {
-        "id": "rq2",
-        "type": "multiple-choice",
-        "paragraph": 2,
-        "questionDe": "Was war am Anfang sein größtes Problem?",
-        "instructionAr": "اقرأ الفقرة الثانية: ما أكبر مشكلةٍ واجهها؟",
-        "options": [
-          "Die Artikel der, die, das",
-          "Die Zahlen",
-          "Die Aussprache",
-          "Das Perfekt"
-        ],
-        "correctIndex": 0,
-        "explanation": "«Die Artikel der, die und das waren mein größtes Problem.»",
-        "errorType": "vocabulary"
+        id: "rq2",
+        type: "multiple-choice",
+        paragraph: 1,
+        questionDe: "Was war am Anfang schwierig für Amine?",
+        instructionAr: "اقرأ الفقرة الثانية وحدد ما كان صعباً عليه.",
+        options: ["Die Artikel der, die und das", "Die Zahlen", "Die Aussprache", "Das Wetter"],
+        correctIndex: 0,
+        explanation: "النص يقول إن الأدوات der وdie وdas كانت صعبة عليه في البداية.",
+        errorType: "vocabulary",
       },
       {
-        "id": "rq3",
-        "type": "multiple-choice",
-        "paragraph": 2,
-        "questionDe": "Welchen Rat gibt der Text zum Lernen der Artikel?",
-        "instructionAr": "اقرأ الفقرة الثانية: ما النصيحة التي يقدّمها النصّ؟",
-        "options": [
-          "Den Artikel zusammen mit dem Wort lernen",
-          "Die Artikel später lernen",
-          "Nur der und die lernen",
-          "Die Artikel ignorieren"
-        ],
-        "correctIndex": 0,
-        "explanation": "«Man muss den Artikel zusammen mit dem Wort lernen — nicht später.» وهي النصيحة نفسها التي مرّت بك في درس العائلة.",
-        "errorType": "vocabulary"
+        id: "rq3",
+        type: "multiple-choice",
+        paragraph: 1,
+        questionDe: "Wie lernt Amine ein neues Wort?",
+        instructionAr: "اقرأ الفقرة الثانية: كيف يقول أمين إنه يتعلم الكلمة الجديدة؟",
+        options: ["Mit dem Artikel", "Ohne Artikel", "Nur mit der Aussprache", "Nur mit dem Plural"],
+        correctIndex: 0,
+        explanation: "يذكر النص: „Ich lerne jedes neue Wort mit dem Artikel.“ هذه طريقة يصفها المتحدث، لا قانوناً وحيداً للتعلم.",
+        errorType: "vocabulary",
       },
       {
-        "id": "rq4",
-        "type": "multiple-choice",
-        "paragraph": 4,
-        "questionDe": "Warum hat der Kellner gelacht?",
-        "instructionAr": "اقرأ الفقرة الرابعة: لماذا ضحك النادل؟",
-        "options": [
-          "Weil „Ich will einen Kaffee“ zu direkt klingt",
-          "Weil Amine falsch bezahlt hat",
-          "Weil es keinen Kaffee gab",
-          "Weil Amine zu laut gesprochen hat"
+        id: "rq4",
+        type: "multiple-choice",
+        paragraph: 3,
+        questionDe: "Welche Formulierung benutzt Amine heute oft im Café?",
+        instructionAr: "اقرأ الفقرة الرابعة واختر العبارة التي يقول أمين إنه يستخدمها كثيراً الآن.",
+        options: [
+          "Ich hätte gern einen Kaffee, bitte.",
+          "Ich bin einen Kaffee.",
+          "Ich esse einen Kaffee.",
+          "Ich habe einen Kaffee.",
         ],
-        "correctIndex": 0,
-        "explanation": "wollen حازمةٌ تبدو فظّةً في موقف طلب، والصيغة المهذّبة hätte gern أو möchte.",
-        "errorType": "vocabulary"
+        correctIndex: 0,
+        explanation: "يقول أمين إنه يستخدم كثيراً „Ich hätte gern einen Kaffee, bitte“ للطلب الألطف. ويذكر أيضاً طلباً مختصراً ممكناً، لا أن العبارة الأولى هي الصيغة الوحيدة.",
+        errorType: "vocabulary",
       },
       {
-        "id": "rq5",
-        "type": "multiple-choice",
-        "questionDe": "Warum heißt es „geantwortet“ und nicht „geantwortt“?",
-        "instructionAr": "سؤال قواعد: لماذا geantwortet بحرف علّة؟",
-        "options": [
-          "Weil der Stamm auf -t endet",
-          "Weil es ein starkes Verb ist",
-          "Weil es trennbar ist",
-          "Weil es mit sein steht"
+        id: "rq5",
+        type: "multiple-choice",
+        paragraph: 4,
+        questionDe: "Was kann Amine jetzt?",
+        instructionAr: "اقرأ الفقرة الخامسة واختر مهارة يذكرها أمين صراحة.",
+        options: [
+          "Einfache Fragen stellen und kurze Antworten geben",
+          "Jeden deutschen Film verstehen",
+          "Ohne Fehler sprechen",
+          "Alle Prüfungsaufgaben lösen",
         ],
-        "correctIndex": 0,
-        "explanation": "جذر antwort ينتهي بـt، فإلحاق t به لا يُنطق، فتُدخَل e فاصلة — كما في gearbeitet وgewartet.",
-        "errorType": "grammar"
+        correctIndex: 0,
+        explanation: "يقول النص: „Ich kann einfache Fragen stellen und kurze Antworten geben.“ ولا يدعي أمين فهم كل فيلم أو حل كل امتحان.",
+        errorType: "vocabulary",
       },
       {
-        "id": "rq6",
-        "type": "multiple-choice",
-        "paragraph": 6,
-        "questionDe": "Was macht Amine nach der Prüfung?",
-        "instructionAr": "اقرأ الفقرة الأخيرة: ماذا سيفعل بعد الامتحان؟",
-        "options": [
-          "Er fängt mit A2 an",
-          "Er hört auf zu lernen",
-          "Er fährt nach Tunesien",
-          "Er wiederholt A1"
-        ],
-        "correctIndex": 0,
-        "explanation": "«Danach fange ich mit A2 an.»",
-        "errorType": "vocabulary"
-      }
+        id: "rq6",
+        type: "multiple-choice",
+        paragraph: 5,
+        questionDe: "Was möchte Amine nach der Prüfung machen?",
+        instructionAr: "اقرأ الفقرة الأخيرة: ما خطته الشخصية بعد الامتحان؟",
+        options: ["Mit A2 anfangen", "Aufhören zu lernen", "Nach Tunesien fahren", "Noch einmal die Prüfung machen"],
+        correctIndex: 0,
+        explanation: "يذكر أمين خطته الشخصية: „Danach möchte ich mit A2 anfangen.“ ولا تعني هذه الخطة إثبات الجاهزية أو النجاح.",
+        errorType: "vocabulary",
+      },
     ],
-    "redemittel": [
-      {
-        "de": "Am Anfang war alles schwer.",
-        "ar": "في البداية كان كلّ شيءٍ صعباً"
-      },
-      {
-        "de": "Ich habe viele Fehler gemacht.",
-        "ar": "ارتكبتُ أخطاءً كثيرة"
-      },
-      {
-        "de": "Das ist nicht perfekt, aber es funktioniert.",
-        "ar": "ليس هذا كمالاً، لكنّه يؤدّي الغرض"
-      },
-      {
-        "de": "Ich bin ein bisschen nervös, aber ich bin bereit.",
-        "ar": "أنا متوتّرٌ قليلاً لكنّي مستعدّ"
-      },
-      {
-        "de": "Schritt für Schritt.",
-        "ar": "خطوةً خطوة — عبارةٌ يقولها الألمان كثيراً"
-      },
-      {
-        "de": "Ich erinnere mich noch gut an …",
-        "ar": "ما زلتُ أذكر … جيداً"
-      }
+    redemittel: [
+      { de: "Seit einem Jahr lerne ich Deutsch.", ar: "أتعلم الألمانية منذ سنة." },
+      { de: "Am Anfang waren die Artikel „der“, „die“ und „das“ schwierig für mich.", ar: "في البداية كانت أدوات الاسم der وdie وdas صعبة عليّ." },
+      { de: "Ich frage auf Deutsch nach dem Preis.", ar: "أسأل عن السعر بالألمانية." },
+      { de: "Ich hätte gern einen Kaffee, bitte.", ar: "أود قهوة من فضلك." },
+      { de: "Ich bin ein bisschen nervös.", ar: "أنا متوتر قليلاً." },
+      { de: "Ich lerne Schritt für Schritt.", ar: "أتعلم خطوة خطوة." },
     ],
-    "discussionAr": "انظر أنت أيضاً إلى الوراء: ما أصعب شيءٍ واجهك في A1، وكيف تغلّبتَ عليه؟ واكتب خمس جملٍ بالألمانية على نسق النصّ — جملتان في Perfekt عمّا فعلتَه، وجملة بـkönnen عمّا صرتَ تستطيعه، وجملة بـwar عن شعورك في البداية، وجملة عمّا تنوي فعله بعد A1."
+    discussionAr:
+      "فكّر في كلمة أو موقف كان جديداً عليك في تعلم لغة. يمكنك كتابة ثلاث جمل شخصية على نمط النص. هذا التأمل المفتوح لا يُصحح آلياً ولا يُسجل دليلاً على هدف أو إتقان.",
   },
 
   listening: {
@@ -473,7 +569,7 @@ export const lessonA113: Lesson = {
         id: "l1",
         title: "يوم سامي",
         lines: [
-          { speaker: "Anna", de: "Erzähl mal, wie ist dein Tag?", ar: "احكِ لنا، كيف يومك؟" },
+          { speaker: "Anna", de: "Erzähl mal, wie ist dein Tag?", ar: "احكِ لي، كيف يومك؟" },
           { speaker: "Sami", de: "Am Morgen stehe ich um sieben Uhr auf.", ar: "صباحاً أستيقظ في السابعة." },
           { speaker: "Anna", de: "Und was isst du zum Frühstück?", ar: "وماذا تأكل في الفطور؟" },
           { speaker: "Sami", de: "Ich esse ein Brot mit Käse und trinke einen Kaffee.", ar: "آكل خبزاً بالجبن وأشرب قهوة." },
@@ -486,10 +582,10 @@ export const lessonA113: Lesson = {
         title: "خطط نهاية الأسبوع",
         lines: [
           { speaker: "Mona", de: "Was machst du am Wochenende?", ar: "ماذا تفعل في نهاية الأسبوع؟" },
-          { speaker: "Karim", de: "Ich möchte ins Kino gehen. Kommst du mit?", ar: "أود الذهاب إلى السينما. هل تأتي معنا؟" },
+          { speaker: "Karim", de: "Ich möchte ins Kino gehen. Kommst du mit?", ar: "أود الذهاب إلى السينما. هل تأتي معي؟" },
           { speaker: "Mona", de: "Gern! Ich kann heute Abend kommen. Letztes Wochenende war ich zu Hause.", ar: "بسرور! أستطيع المجيء الليلة. آخر عطلة كنت في المنزل." },
           { speaker: "Karim", de: "Ich hatte gestern keine Zeit, aber heute bin ich frei.", ar: "لم يكن لدي وقت أمس، لكنني اليوم حر." },
-          { speaker: "Mona", de: "Super! Wir sehen uns um acht Uhr im Kino.", ar: "رائع! نراك في الثامنة في السينما." },
+          { speaker: "Mona", de: "Super! Wir sehen uns um acht Uhr im Kino.", ar: "رائع! نلتقي في السينما الساعة الثامنة." },
         ],
       },
     ],
@@ -548,16 +644,17 @@ export const lessonA113: Lesson = {
   /* 5) النطق */
   pronunciation: {
     id: "p1",
-    title: "أصوات A1: ei، ie، ch، وsch",
+    title: "أصوات في كلمات مختارة: ei، ie، ch، وsch",
     items: [
-      { de: "heißen", ar: "يُسمى", note: "ei = آي: هاي-سِن" },
-      { de: "lesen", ar: "يقرأ", note: "e طويلة = إي (لا يوجد ie) + s بين حركتين = ز: ليزِن" },
-      { de: "Buch", ar: "كتاب", note: "ch بعد u = خفيف: بوخ" },
-      { de: "Schule", ar: "مدرسة", note: "sch = ش: شولِه" },
-      { de: "Woche", ar: "أسبوع", note: "ch بعد o = خفيف: فوخِه" },
-      { de: "sieben", ar: "سبعة", note: "ie = إي طويلة ممدودة (لا «آي»): زيبِن" },
+      { de: "heißen", ar: "يُسمّى", note: "ei في هذه الكلمة يُنطق تقريباً /aɪ̯/؛ وß هنا صوت /s/." },
+      { de: "lesen", ar: "يقرأ", note: "e طويلة /eː/، وs بين حركتين تُنطق /z/ هنا؛ لا توجد ie في تهجئة الكلمة." },
+      { de: "Buch", ar: "كتاب", note: "ch بعد u في هذه الكلمة صوت احتكاكي خلفي /x/؛ تقريب الخاء العربية لا يطابقه تماماً." },
+      { de: "Schule", ar: "مدرسة", note: "sch في Schule يمثّل /ʃ/، وهو قريب تقريباً من ش." },
+      { de: "Woche", ar: "أسبوع", note: "W تُنطق /v/ وch بعد o هنا /x/؛ لا تعمم الصوت على كل مواضع ch." },
+      { de: "sieben", ar: "سبعة", note: "ie في هذه الكلمة يدل على /iː/ الطويلة، وs في البداية صوت /z/." },
     ],
-    tip: "في A1 تعلمت أصوات الحروف المركبة: ei وie وch وsch. أعد تمرينها هنا قبل اختبار الختم — النطق الصحيح نصف الامتحان!",
+    tip:
+      "استمع إلى كل كلمة وكرّرها، ولاحظ الرمز الصوتي للكلمة نفسها. هذه ملاحظات تقريبية على ست مفردات فقط: ch يتغير باختلاف البيئة، وTTS المتصفح لا يضمن صوتاً موحداً أو حكماً على نطقك. هذا النشاط لا يقيس نصف الامتحان ولا يثبت إتقان النطق.",
   },
 
   /* 6) الكتابة */
@@ -567,7 +664,8 @@ export const lessonA113: Lesson = {
       type: "transformation",
       instructionAr: "حوّل الجملة من ich إلى er:",
       prompt: "Ich komme aus Tunesien. → Er ...",
-      acceptedAnswers: ["Er kommt aus Tunesien.", "Er kommt aus Tunesien."],
+      acceptedAnswers: ["Er kommt aus Tunesien."],
+      caseSensitive: true,
       sampleAnswer: "Er kommt aus Tunesien.",
       explanation: "السلسلة الذهبية: ich komme → er kommt (-t).",
       errorType: "conjugation",
@@ -575,7 +673,7 @@ export const lessonA113: Lesson = {
     {
       id: "w2",
       type: "fill-blank",
-      instructionAr: "أكمل الجملة الكبيرة (نحو A1 كامل):",
+      instructionAr: "أكمل الجمل الأربع بصيغ الأفعال المطلوبة:",
       template: "Ich ___ Sami und ___ aus Tunesien. (اسمي/آتي) · Am Wochenende ___ ich im Park. (كنت) · Ich ___ ein Fahrrad. (كانت عندي)",
       blanks: [
         { correct: "heiße", options: ["heiße", "heißt", "heißen", "heißst"] },
@@ -583,7 +681,7 @@ export const lessonA113: Lesson = {
         { correct: "war", options: ["war", "warst", "waren", "wart"] },
         { correct: "hatte", options: ["hatte", "hattest", "hatten", "hattet"] },
       ],
-      hint: "heiße/komme (ich) + war/hatte (الماضي الأول).",
+      hint: "heiße/komme مع ich في الحاضر، وwar/hatte بصيغتي Präteritum في المثالين.",
       explanation: "Ich heiße Sami und komme aus Tunesien. Am Wochenende war ich im Park. Ich hatte ein Fahrrad.",
       errorType: "conjugation",
     },
@@ -592,7 +690,8 @@ export const lessonA113: Lesson = {
       type: "dictation",
       instructionAr: "استمع واكتب الجملة:",
       audioText: "Ich möchte in Deutschland arbeiten.",
-      explanation: "أود العمل في ألمانيا — möchte + مصدر في النهاية.",
+      caseSensitive: true,
+      explanation: "أود العمل في ألمانيا — möchte + مصدر في نهاية المثال.",
       errorType: "spelling",
     },
   ],
@@ -606,7 +705,7 @@ export const lessonA113: Lesson = {
       questionDe: "___ Apfel (مذكر)",
       options: ["der", "die", "das", "den"],
       correctIndex: 0,
-      explanation: "der Apfel — مذكر (شاذ بين الفواكه!).",
+      explanation: "der Apfel — أداة الاسم في حالة الرفع ضمن هذا المثال.",
       errorType: "article",
     },
     {
@@ -622,12 +721,12 @@ export const lessonA113: Lesson = {
       id: "e3",
       type: "fill-blank",
       instructionAr: "أكمل بـ sein أو haben:",
-      template: "Ich ___ Lehrer. · Ich ___ einen Bruder.",
+      template: "Ich ___ von Beruf Lehrer. · Ich ___ einen Bruder.",
       blanks: [
         { correct: "bin", options: ["bin", "habe", "ist", "hat"] },
         { correct: "habe", options: ["habe", "bin", "hat", "ist"] },
       ],
-      explanation: "sein للمهنة (bin Lehrer)، haben للملكية (habe einen Bruder).",
+      explanation: "في المثال الأول تُذكر المهنة بـsein: Ich bin von Beruf Lehrer؛ وفي الثاني تُذكر الملكية بـhaben: Ich habe einen Bruder.",
       errorType: "conjugation",
     },
     {
@@ -661,9 +760,9 @@ export const lessonA113: Lesson = {
       type: "transformation",
       instructionAr: "حوّل إلى أمر (du):",
       prompt: "Du kommst. → !",
-      acceptedAnswers: ["Komm!", "Komm"],
+      acceptedAnswers: ["Komm!", "Komm", "Komme!", "Komme"],
       sampleAnswer: "Komm!",
-      explanation: "الأمر مع du: احذف -st: kommst → Komm!",
+      explanation: "صيغة الأمر القصيرة الشائعة مع du هي Komm!، ويورد Duden أيضاً Komme!؛ لذلك تُقبل الصيغتان هنا.",
       errorType: "grammar",
     },
     {
@@ -692,12 +791,12 @@ export const lessonA113: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "افترض نفياً محايداً بلا مقابلة؛ افحص الجملة واختر التصحيح أو «لا خطأ» إن كانت سليمة.",
       wrongSentence: "Ich habe nicht Auto.",
       wrongWord: "nicht Auto",
       correctWord: "kein Auto",
       options: ["kein Auto", "nicht Auto", "keine Auto", "nicht ein Auto"],
-      explanation: "مع الأسماء: kein (وليس nicht): Ich habe kein Auto.",
+      explanation: "في النفي المحايد لهذا الاسم نستخدم kein: Ich habe kein Auto. أما Ich habe nicht ein Auto, sondern zwei فمقابلةٌ مختلفة تركز على العدد؛ ليست الجواب المحايد المطلوب هنا.",
       errorType: "negation",
     },
     {
@@ -705,25 +804,26 @@ export const lessonA113: Lesson = {
       type: "dictation",
       instructionAr: "استمع واكتب الجملة:",
       audioText: "Am Wochenende war ich im Park.",
-      explanation: "في العطلة كنت في الحديقة — war + am Wochenende.",
+      caseSensitive: true,
+      explanation: "في نهاية الأسبوع كنت في الحديقة — war + am Wochenende.",
       errorType: "spelling",
     },
     {
       id: "e11",
       type: "fill-blank",
-      instructionAr: "مراجعة شاملة: أكمل Partizip II والمساعد الصحيح",
+      instructionAr: "مراجعة منتقاة: أكمل صيغة Perfekt في المثال المحدد.",
       template: "Gestern ___ ich einen Film ___. (sehen)",
       blanks: [
         { correct: "habe", options: ["habe", "bin", "war", "hatte"], errorType: "grammar" },
         { correct: "gesehen", options: ["gesehen", "gesieht", "geseht", "sehen"], errorType: "grammar" },
       ],
-      explanation: "einen Film مفعولٌ به ⟵ haben. وsehen قويّ ⟵ gesehen — من درس a1-14.",
+      explanation: "صيغة المثال هي habe gesehen. تعلّم المساعد مع الفعل واستعماله؛ وجود مفعول به وحده ليس اختباراً عاماً كافياً لاختيار haben أو sein. راجع درس a1-14.",
       errorType: "grammar",
     },
     {
       id: "e12",
       type: "word-ordering",
-      instructionAr: "مراجعة شاملة: رتّب الجملة (ظرفٌ في الأوّل + فعلٌ منفصل)",
+      instructionAr: "رتّب المثال المحدد: عبارة وقت في البداية وفعل منفصل.",
       tokens: ["Am", "Morgen", "stehe", "ich", "um", "sieben", "auf"],
       correctSentence: "Am Morgen stehe ich um sieben auf",
       explanation: "الظرف في الأوّل فانزاح الفاعل بعد الفعل (V2)، والبادئة auf في آخر الجملة.",
@@ -732,7 +832,7 @@ export const lessonA113: Lesson = {
     {
       id: "e13",
       type: "multiple-choice",
-      instructionAr: "مراجعة شاملة: أيّ صيغةٍ مهذّبة في المقهى؟",
+      instructionAr: "في هذا السياق، أي صيغة طلب تبدو ألطف؟",
       questionDe: "Im Café: Welcher Satz ist höflich?",
       options: [
         "Ich hätte gern einen Kaffee, bitte.",
@@ -741,65 +841,70 @@ export const lessonA113: Lesson = {
         "Kaffee!",
       ],
       correctIndex: 0,
-      explanation: "hätte gern وmöchte هما صيغتا الطلب المهذّب، وwollen تبدو فظّةً في موقف خدمة.",
+      explanation: "في هذا السياق، Ich hätte gern صيغة ألطف لطلب القهوة؛ Ich will سليمة نحوياً وقد تبدو أكثر مباشرة بحسب النبرة والموقف. كما يمكن قول Einen Kaffee, bitte.",
       errorType: "vocabulary",
     },
     {
       id: "e14",
       type: "error-correction",
-      instructionAr: "مراجعة شاملة: صحّح الخطأ في الجملة",
+      instructionAr: "صحّح ترتيب الكلمات مع الإبقاء على الفعل war كما ورد، في الجملة الرئيسية الخبرية.",
       wrongSentence: "Am Sonntag ich war im Park.",
       wrongWord: "ich war",
       correctWord: "war ich",
-      options: ["war ich", "ich war", "ich bin", "bin ich"],
-      explanation: "الظرف احتلّ المركز الأوّل فوجب أن ينزاح الفاعل بعد الفعل — قانون V2.",
+      options: ["war ich", "ich war", "ich bin", "war du"],
+      explanation: "في هذه الجملة الرئيسية الخبرية يتبع الفعل المصرف الظرف الذي شغل الحقل الأول؛ لا نعمّم هذا الترتيب على كل نوع من الجمل.",
       errorType: "word-order",
     },
     {
       id: "e15",
       type: "matching",
-      instructionAr: "مراجعة شاملة: طابق كلّ قاعدةٍ بمثالها",
+      instructionAr: "طابق كل موضوع مختار بالمثال الأقرب إليه.",
       pairs: [
         { left: "النصب Akkusativ", right: "Ich esse einen Apfel." },
         { left: "فعلٌ منفصل", right: "Ich stehe um sieben auf." },
         { left: "الماضي المحكيّ", right: "Ich habe Deutsch gelernt." },
-        { left: "الماضي الأول", right: "Ich war im Park." },
+        { left: "Präteritum (war)", right: "Ich war im Park." },
         { left: "النفي بـkein", right: "Ich bin kein Lehrer." },
         { left: "أداة ربط", right: "Es ist kalt, aber sonnig." },
       ],
-      explanation: "ستّ قواعد من الاثنتي عشرة — راجع الجدول في الكتلة الأولى إن التبس عليك شيء.",
+      explanation: "طابق الأمثلة المحددة هنا، ثم ارجع إلى الموضوعات المنتقاة في الجدول عند الحاجة.",
       errorType: "grammar",
     },
     {
       id: "e16",
       type: "fill-blank",
-      instructionAr: "مراجعة شاملة: أكمل الفعل الناقص المناسب",
-      template: "Der Arzt sagt, ich ___ mehr schlafen. · Ich ___ nächstes Jahr nach Deutschland ziehen. · Hier ___ man nicht rauchen.",
+      instructionAr: "مراجعة منتقاة: اختر الفعل الناقص الموافق للمعنى المكتوب بين القوسين.",
+      template: "Ich ___ gut schwimmen. (أستطيع) · Mein Wunsch ist klar: Ich ___ nach Tunis fahren. (أريد) · Im Museum ___ man nicht fotografieren. (لا يُسمح)",
       blanks: [
-        { correct: "soll", options: ["soll", "will", "kann", "muss"], errorType: "vocabulary" },
-        { correct: "will", options: ["will", "soll", "darf", "muss"], errorType: "vocabulary" },
+        { correct: "kann", options: ["kann", "muss", "darf", "soll"], errorType: "vocabulary" },
+        { correct: "will", options: ["will", "kann", "soll", "muss"], errorType: "vocabulary" },
         { correct: "darf", options: ["darf", "kann", "will", "soll"], errorType: "vocabulary" },
       ],
-      explanation: "sollen لأمر الغير · wollen للعزم · dürfen للإذن والمنع — الأفعال الناقصة الستّة مكتملة.",
+      explanation: "تشير القرائن هنا إلى القدرة (kann)، والرغبة المعلنة (will)، والمنع (darf nicht). قد تتغير دلالة الفعل الناقص مع تغيّر السياق.",
       errorType: "vocabulary",
     },
     {
       id: "e17",
-      type: "transformation",
-      instructionAr: "مراجعة شاملة: احكِ يومك أمس في ثلاث جملٍ مربوطة",
-      prompt: "Erzählen Sie in drei verbundenen Sätzen, was Sie gestern gemacht haben.",
-      acceptedAnswers: [
-        "Gestern bin ich früh aufgestanden und habe gefrühstückt. Dann bin ich zur Arbeit gefahren, aber ich war sehr müde. Am Abend habe ich meine Familie angerufen.",
+      type: "fill-blank",
+      instructionAr: "أكمل بـPerfekt للأفعال المعطاة، وبـPräteritum من sein لوصف الحالة؛ هذا تدريب مضبوط وليس كتابة حرة.",
+      template: "Gestern ___ ich früh ___. Dann ___ ich zur Arbeit ___, aber ich ___ sehr müde. Am Abend ___ ich meine Familie ___.",
+      blanks: [
+        { correct: "bin", options: ["bin", "habe", "war", "hatte"], errorType: "grammar" },
+        { correct: "aufgestanden", options: ["aufgestanden", "aufstehen", "aufstand", "gestanden"], errorType: "grammar" },
+        { correct: "bin", options: ["bin", "habe", "war", "hatte"], errorType: "grammar" },
+        { correct: "gefahren", options: ["gefahren", "gefahrt", "fahren", "gefährt"], errorType: "grammar" },
+        { correct: "war", options: ["war", "bin", "habe", "wäre"], errorType: "grammar" },
+        { correct: "habe", options: ["habe", "bin", "war", "hatte"], errorType: "grammar" },
+        { correct: "angerufen", options: ["angerufen", "anrufen", "gerufen", "anrufte"], errorType: "grammar" },
       ],
-      sampleAnswer: "Gestern bin ich früh aufgestanden und habe gefrühstückt. Dann bin ich zur Arbeit gefahren, aber ich war sehr müde. Am Abend habe ich meine Familie angerufen.",
-      hint: "استعمل Perfekt بمساعدَيه، واربط بـund وdann وaber.",
-      explanation: "النموذج يجمع تسع قواعد: Perfekt بمساعدين، فعلاً منفصلاً، ظرفاً في الأوّل مع انزياح الفاعل، ماضياً أوّلَ (war)، وثلاث أدوات ربط.",
+      hint: "راجع: Perfekt bin aufgestanden / bin gefahren / habe angerufen، وPräteritum war لوصف الحالة müde.",
+      explanation: "الإجابة تتبع الجمل المعطاة: bin aufgestanden · bin gefahren · war müde · habe angerufen. هذا لا يثبت القدرة على سرد يوم كامل من دون نموذج.",
       errorType: "grammar",
     },
     {
       id: "e18",
       type: "true-false",
-      instructionAr: "مراجعة شاملة: اقرأ ثمّ احكم على العبارات",
+      instructionAr: "اقرأ النص المحدد ثم احكم على العبارات الأربع؛ هذه مراجعة قراءة منتقاة.",
       textDe: "Hallo! Ich heiße Leila. Ich komme aus Tunesien und wohne seit zwei Jahren in Hamburg. Ich arbeite als Krankenschwester im Krankenhaus. Am Wochenende bin ich gern zu Hause, aber manchmal gehe ich mit Freunden ins Kino. Letztes Wochenende habe ich einen guten Film gesehen.",
       statements: [
         { id: "s1", de: "Leila wohnt in Tunesien.", ar: "ليلى تسكن في تونس.", isTrue: false, whyAr: "هي من تونس لكنّها تسكن في هامبورغ منذ سنتين: «wohne seit zwei Jahren in Hamburg»." },
@@ -807,7 +912,7 @@ export const lessonA113: Lesson = {
         { id: "s3", de: "Leila geht jedes Wochenende ins Kino.", ar: "ليلى تذهب إلى السينما كلّ عطلة.", isTrue: false, whyAr: "النصّ يقول manchmal (أحياناً) لا jedes Wochenende — وكلمة «أحياناً» هي مفتاح السؤال." },
         { id: "s4", de: "Letztes Wochenende hat Leila einen Film gesehen.", ar: "شاهدت ليلى فيلماً عطلة الأسبوع الماضية.", isTrue: true, whyAr: "«Letztes Wochenende habe ich einen guten Film gesehen» — في Perfekt." },
       ],
-      explanation: "نصٌّ على نسق Lesen Teil 1 في الامتحان: ابحث عن الكلمة المفتاح (seit, manchmal, letztes) لا عن كلّ كلمة.",
+      explanation: "تدريب قراءة بصيغة صواب/خطأ، شبيه بنوع يظهر في نموذج Lesen المنشور؛ هذه المهمة من إعداد الدرس وليست سؤالاً رسمياً.",
       errorType: "vocabulary",
     },
   ],
@@ -815,18 +920,18 @@ export const lessonA113: Lesson = {
   /* 8) الأخطاء الشائعة والتريكات + لقطة ثقافية */
   fehlerUndTipps: {
     mistakes: [
-      { wrong: "Ich kommen aus Tunesien.", right: "Ich komme aus Tunesien.", whyAr: "السلسلة الذهبية: مع ich -e دائماً." },
-      { wrong: "Am Sonntag ich war im Park.", right: "Am Sonntag war ich im Park.", whyAr: "V2: الفعل في المركز الثاني حتى بعد الظرف." },
-      { wrong: "Ich habe nicht Zeit.", right: "Ich habe keine Zeit.", whyAr: "kein مع الأسماء: keine Zeit." },
+      { wrong: "Ich kommen aus Tunesien.", right: "Ich komme aus Tunesien.", whyAr: "مع الفعل kommen نصرف ich بصيغة komme؛ لا تعمم هذه النهاية على جميع الأفعال.", classification: "error" },
+      { wrong: "Am Sonntag ich war im Park.", right: "Am Sonntag war ich im Park.", whyAr: "في هذه الجملة الرئيسية الخبرية يأتي الفعل المصرف بعد Am Sonntag؛ لا تعمم V2 على كل أنواع الجمل.", classification: "error" },
+      { wrong: "Ich habe nicht Zeit. (نفي محايد)", right: "Ich habe keine Zeit.", whyAr: "في النفي المحايد نقول keine Zeit؛ ويمكن أن تظهر nicht مع مقابلة أو تركيز مختلف، فلا تُعدّ بديلاً مستحيلاً في كل سياق.", classification: "contextual-alternative" },
     ],
     eselsbruecken: [
-      "الجملة الأم: «Ich heiße Sami, komme aus Tunesien, wohne in Tunis, lerne Deutsch, kann schwimmen, war im Park und hatte Zeit» — 8 قواعد في جملة واحدة.",
-      "قبل اختبار الختم: أعد قراءة جداول الدروس العشرة (الدرس 1 حتى 12) — كل جدول = قاعدة واحدة.",
+      "عند مراجعة ترتيب الجملة، حدّد نوعها أولاً؛ V2 يصف هنا أمثلة الجمل الرئيسية الخبرية ولا يغني عن بقية الأنماط.",
+      "لا تستنتج تحقق هدف من فتح الدرس أو قراءة الجدول؛ راجع المهمة المسجلة المرتبطة به.",
     ],
     culturalNote: {
-      title: "شهادة A1 في ألمانيا",
+      title: "حدود معلومات الامتحان في هذا الدرس",
       content:
-        "شهادة «Start Deutsch 1» (Goethe) هي بوابة الاندماج الرسمية: تُطلب غالباً لتجديد الإقامة أو لمّ شمل الأسرة. تتكون من قراءة واستماع (45 دقيقة) ومحادثة (15 دقيقة). بعد إتمام هذه المراجعة، أنت قادر على اجتيازها بثقة!",
+        "الأرقام والأجزاء أعلاه تصف مصادر Goethe الرسمية التي روجعت: نموذج فبراير 2024 وقواعد تنفيذ سارية من سبتمبر 2025 وصفحة النتائج. لا يمثل هذا الدرس مادة معتمدة من Goethe، ولا يشهد بإتقان A1 أو الجاهزية للاختبار أو A2. راجع الوثائق الرسمية الحالية أو مركز الامتحان لأي موعد أو شرط تنظيمي.",
     },
   },
 
@@ -845,14 +950,14 @@ export const lessonA113: Lesson = {
     {
       id: "m2",
       type: "fill-blank",
-      instructionAr: "أكمل بالفعل الصحيح:",
+      instructionAr: "أكمل صيغة الفعل المناسبة لكل ضمير في الأمثلة المعطاة:",
       template: "Ich ___ aus Tunesien. (آتي) · Du ___ Deutsch. (تتعلم) · Er ___ Fußball. (يلعب)",
       blanks: [
         { correct: "komme", options: ["komme", "kommst", "kommt", "kommen"] },
         { correct: "lernst", options: ["lernst", "lerne", "lernt", "lernen"] },
         { correct: "spielt", options: ["spielt", "spiele", "spielst", "spielen"] },
       ],
-      explanation: "السلسلة الذهبية: ich -e، du -st، er -t.",
+      explanation: "الصيغ في الأمثلة هي ich komme، du lernst، er spielt. لا تمثل هذه التصريفات كل أنماط الأفعال؛ راجع صيغ sein وhaben الخاصة.",
       errorType: "conjugation",
     },
     {
@@ -869,13 +974,13 @@ export const lessonA113: Lesson = {
     {
       id: "m4",
       type: "fill-blank",
-      instructionAr: "أكمل بالماضي الأول:",
-      template: "Ich ___ gestern im Kino. (كنت) · Sie ___ viele Bücher. (كانت تملك)",
+      instructionAr: "أكمل بـPräteritum من sein أو haben:",
+      template: "Ich ___ gestern im Kino. (كنت) · Maria ___ viele Bücher. (كانت تملك)",
       blanks: [
         { correct: "war", options: ["war", "warst", "waren", "wart"] },
         { correct: "hatte", options: ["hatte", "hattest", "hatten", "hattet"] },
       ],
-      explanation: "war من sein، hatte من haben — الماضي الأول.",
+      explanation: "war صيغة Präteritum من sein، وhatte صيغة Präteritum من haben؛ وهما الصيغتان المستهدفتان هنا.",
       errorType: "conjugation",
     },
     {
@@ -886,8 +991,21 @@ export const lessonA113: Lesson = {
       questionAr: "أشتري تفاحة.",
       options: ["einen", "ein", "eine", "einem"],
       correctIndex: 0,
-      explanation: "Akkusativ المذكر: einen Apfel.",
+      explanation: "في هذه الجملة، Apfel مفعول مباشر مذكر، لذلك نستخدم einen.",
       errorType: "case",
+    },
+    {
+      id: "m6",
+      type: "matching",
+      instructionAr: "صِل أقسام نموذج Start Deutsch 1 بصيغ المهام الموصوفة في نموذج Goethe المنشور عام 2024:",
+      pairs: [
+        { left: "Hören", right: "3 أجزاء؛ الجزآن 1 و3 مرتان، والجزء 2 مرة" },
+        { left: "Lesen", right: "3 أجزاء؛ منها صواب/خطأ وتحديد مصدر المعلومات" },
+        { left: "Schreiben", right: "نموذج بيانات + نص قصير يقارب 30 كلمة" },
+        { left: "Sprechen", right: "تعريف بالنفس + تبادل معلومات + طلب واستجابة" },
+      ],
+      explanation: "هذه مطابقة لصيغ المهام في نموذج 2024، وليست تدريباً على أداء المهارات نفسها أو توقعاً لمحتوى كل امتحان.",
+      errorType: "vocabulary",
     },
   ],
 
@@ -895,62 +1013,64 @@ export const lessonA113: Lesson = {
   flashcards: [
     { id: "fc1", de: "die Wiederholung", ar: "المراجعة", example: "Die Wiederholung ist wichtig.", exampleAr: "المراجعة مهمة.", level: "A1" },
     { id: "fc2", de: "der Satz", ar: "الجملة", example: "Der Satz ist richtig.", exampleAr: "الجملة صحيحة.", level: "A1" },
-    { id: "fc3", de: "kombinieren", ar: "يدمج/يجمع", example: "Ich kombiniere die Regeln.", exampleAr: "أدمج القواعد.", level: "A1" },
-    { id: "fc4", de: "die Prüfung", ar: "الامتحان", example: "Die Prüfung ist nicht schwer.", exampleAr: "الامتحان ليس صعباً.", level: "A1" },
-    { id: "fc5", de: "der Artikel", ar: "أداة التعريف (der/die/das)", example: "Man muss den Artikel zusammen mit dem Wort lernen.", exampleAr: "على المرء أن يتعلّم الأداة مع الكلمة.", level: "A1" },
-    { id: "fc6", de: "bereit sein", ar: "يكون مستعداً", example: "Ich bin bereit für A2.", exampleAr: "أنا مستعد لـ A2.", level: "A1" },
+    { id: "fc3", de: "die Aufgabe", ar: "المهمة", example: "Die Aufgabe ist klar.", exampleAr: "المهمة واضحة.", level: "A1" },
+    { id: "fc4", de: "die Prüfung", ar: "الامتحان", example: "Nächste Woche mache ich die Prüfung.", exampleAr: "سأجري الامتحان الأسبوع القادم.", level: "A1" },
+    { id: "fc5", de: "der Artikel", ar: "أداة الاسم النحوية", example: "Ich lerne das Wort mit dem Artikel.", exampleAr: "أتعلم الكلمة مع أداتها.", level: "A1" },
+    { id: "fc6", de: "die Antwort", ar: "الإجابة", example: "Die Antwort ist richtig.", exampleAr: "الإجابة صحيحة.", level: "A1" },
     { id: "fc7", de: "alles klar", ar: "كل شيء واضح", example: "Alles klar, ich verstehe.", exampleAr: "كل شيء واضح، أفهم.", level: "A1" },
-    { id: "fc8", de: "das Gefühl", ar: "الشعور، الإحساس", example: "Das war ein schönes Gefühl.", exampleAr: "كان ذلك شعوراً جميلاً.", level: "A1" },
+    { id: "fc8", de: "der Anfang", ar: "البداية", example: "Am Anfang war Deutsch neu für mich.", exampleAr: "كانت الألمانية جديدة عليّ في البداية.", level: "A1" },
     { id: "fc9", de: "die Verkäuferin", ar: "البائعة", example: "Die Verkäuferin hat mich verstanden.", exampleAr: "فهمتني البائعة.", level: "A1" },
-    { id: "fc10", de: "der Kellner", ar: "النادل", example: "Der Kellner hat gelacht.", exampleAr: "ضحك النادل.", level: "A1" },
+    { id: "fc10", de: "der Kellner", ar: "النادل", example: "Der Kellner bringt die Speisekarte.", exampleAr: "يُحضر النادل قائمة الطعام.", level: "A1" },
     { id: "fc11", de: "der Fehler", ar: "الخطأ", example: "Ich habe viele Fehler gemacht.", exampleAr: "ارتكبتُ أخطاءً كثيرة.", level: "A1" },
     { id: "fc12", de: "wiederholen", ar: "يُعيد، يراجع", example: "Können Sie das bitte wiederholen?", exampleAr: "أيمكنك الإعادة من فضلك؟", level: "A1" },
-    { id: "fc13", de: "Schritt für Schritt", ar: "خطوةً خطوة", example: "Der Weg ist lang, aber ich gehe ihn Schritt für Schritt.", exampleAr: "الطريق طويل لكنّي أمشيه خطوةً خطوة.", level: "A1" },
+    { id: "fc13", de: "Schritt für Schritt", ar: "خطوةً خطوة", example: "Ich lerne Schritt für Schritt.", exampleAr: "أتعلم خطوة خطوة.", level: "A1" },
     { id: "fc14", de: "anfangen (hat angefangen)", ar: "يبدأ", example: "Ich habe einen Deutschkurs angefangen.", exampleAr: "بدأتُ دورةً في الألمانية.", level: "A1" },
     { id: "fc15", de: "bestellen (hat bestellt)", ar: "يطلب (في مطعم)", example: "Ich möchte einen Kaffee bestellen.", exampleAr: "أودّ أن أطلب قهوة.", level: "A1" },
     { id: "fc16", de: "nervös", ar: "متوتّر، قلق", example: "Ich bin vor der Prüfung nervös.", exampleAr: "أنا متوتّر قبل الامتحان.", level: "A1" },
     { id: "fc17", de: "hätte gern", ar: "أودّ (صيغة طلبٍ مهذّبة)", example: "Ich hätte gern einen Tee, bitte.", exampleAr: "أودّ شاياً من فضلك.", level: "A1" },
-    { id: "fc18", de: "gedacht (denken)", ar: "فكَّر", example: "Ich habe an dich gedacht.", exampleAr: "فكّرتُ فيك.", level: "A1" },
-    { id: "fc19", de: "das Problem", ar: "المشكلة", example: "Die Artikel waren mein größtes Problem.", exampleAr: "كانت الأدوات أكبر مشكلةٍ عندي.", level: "A1" },
-    { id: "fc20", de: "einfach", ar: "بسيط، سهل", example: "Ich konnte einfache Sätze sagen.", exampleAr: "استطعتُ قول جملٍ بسيطة.", level: "A1" },
-    { id: "fc21", de: "der Supermarkt", ar: "السوق الكبير", example: "Im Supermarkt habe ich bezahlt.", exampleAr: "دفعتُ في السوق الكبير.", level: "A1" },
-    { id: "fc22", de: "bezahlen", ar: "يدفع", example: "Ich habe auf Deutsch bezahlt.", exampleAr: "دفعتُ بالألمانية.", level: "A1" },
-    { id: "fc23", de: "lachen", ar: "يضحك", example: "Der Kellner hat gelacht.", exampleAr: "ضحك النادل.", level: "A1" },
-    { id: "fc24", de: "funktionieren", ar: "ينجح، يؤدّي الغرض", example: "Es ist nicht perfekt, aber es funktioniert.", exampleAr: "ليس كمالاً لكنّه يؤدّي الغرض.", level: "A1" },
+    { id: "fc18", de: "die Familie", ar: "العائلة", example: "Meine Familie wohnt in Tunis.", exampleAr: "تسكن عائلتي في تونس.", level: "A1" },
+    { id: "fc19", de: "der Deutschkurs", ar: "دورة اللغة الألمانية", example: "Mein Deutschkurs beginnt heute.", exampleAr: "تبدأ دورة الألمانية اليوم.", level: "A1" },
+    { id: "fc20", de: "einfach", ar: "بسيط، سهل", example: "Ich kann einfache Sätze sagen.", exampleAr: "أستطيع قول جمل بسيطة.", level: "A1" },
+    { id: "fc21", de: "der Supermarkt", ar: "السوبرماركت", example: "Im Supermarkt habe ich bezahlt.", exampleAr: "دفعتُ في السوبرماركت.", level: "A1" },
+    { id: "fc22", de: "bezahlen", ar: "يدفع", example: "Ich möchte bezahlen, bitte.", exampleAr: "أود الدفع من فضلك.", level: "A1" },
+    { id: "fc23", de: "nach dem Preis fragen", ar: "يسأل عن السعر", example: "Ich frage nach dem Preis.", exampleAr: "أسأل عن السعر.", level: "A1" },
+    { id: "fc24", de: "funktionieren", ar: "يعمل، يؤدّي الغرض", example: "Es ist nicht perfekt, aber es funktioniert.", exampleAr: "الأمر ليس مثالياً، لكنه ينجح.", level: "A1" },
   ],
 
-  /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
+  /* أنشطة مفتوحة للتدريب الذاتي؛ لا تسجلها المنصة دليلاً لهدف */
   mediation: [
-        {
-      id: "med-a1-13-1", type: "summarize-de-to-ar",
-      titleAr: "لخّص رسالة صوتية ألمانية كاملة بالعربية",
+    {
+      id: "med-a1-13-1",
+      type: "summarize-de-to-ar",
+      titleAr: "انقل مضمون رسالة قصيرة بالألمانية إلى العربية",
       sourceDe: "Hallo Karim! Ich bin Anna. Ich lerne Deutsch und komme aus Berlin. Am Wochenende besuche ich meine Familie. Viele Grüße, Anna.",
-      taskAr: "لخّص الرسالة بالعربية لصديق لا يفهم الألمانية: من المتحدثة، من أين، وماذا ستفعل في نهاية الأسبوع.",
-      modelAnswerAr: "«الرسالة من آنا، تتعلم الألمانية وهي من برلين. في نهاية الأسبوع ستزور عائلتها.»",
-      keyPointsAr: ["نقلت اسم المتحدثة (آنا)", "ذكرت أنها من برلين", "نقلت زيارة العائلة في نهاية الأسبوع"],
+      taskAr: "لخّص الرسالة لصديق لا يفهم الألمانية: من المتحدثة، ومن أين هي، وماذا ستفعل في نهاية الأسبوع؟ قارن إجابتك بالنموذج؛ النشاط غير مسجل كدليل على هدف أو إتقان.",
+      modelAnswerAr: "«الرسالة من آنا؛ تتعلم الألمانية وهي من برلين. في نهاية الأسبوع ستزور عائلتها.»",
+      keyPointsAr: ["نقل اسم المتحدثة (آنا)", "ذكر أنها من برلين", "نقل زيارة العائلة في نهاية الأسبوع"],
     },
   ],
-      interaction: [
+  interaction: [
     {
       id: "int-a1-13-1",
-      scenarioAr: "محادثة شاملة: لقاء، طعام، تسوق.",
-      scenarioDe: "Ein umfassendes Gespräch: Treffen, Essen, Einkaufen.",
-      strategyAr: "الاستراتيجية: دمج مهارات A1 في محادثة حقيقية.",
+      scenarioAr: "اختر رداً يلائم سياق لقاء ثم اقتراح الذهاب إلى مطعم.",
+      scenarioDe: "Eine passende Antwort in einem kurzen Gespräch auswählen.",
+      strategyAr:
+        "اختر الرد الأنسب للسياق في جولتين. البديل الآخر غير مناسب للسؤال لكنه ليس بالضرورة خطأ نحوياً. هذا اختيار نصي مغلق، لا إنتاج شفهي؛ لا يُسجّل دليلاً على هدف كلام أو طلاقة.",
       rounds: [
         {
-          speakerDe: "Hallo! Schön dich zu sehen. Wie geht's?",
-          speakerAr: "مرحباً! سعيد برؤيتك. كيف حالك؟",
+          speakerDe: "Hallo! Schön, dich zu sehen. Wie geht's?",
+          speakerAr: "مرحباً! يسعدني أن أراك. كيف حالك؟",
           options: [
-            { de: "Danke, mir geht es gut! Und dir?", ar: "شكراً، أنا بخير! وأنت؟", best: true, replyDe: "Auch gut, danke. Hast du Hunger?", replyAr: "أنا بخير أيضاً. هل أنت جائع؟" },
-            { de: "Ich bin ein Buch.", ar: "أنا كتاب.", best: false, replyDe: "Du bist ein Buch? Sehr witzig!", replyAr: "أنت كتاب؟ مضحك جداً!" },
+            { de: "Danke, mir geht es gut! Und dir?", ar: "شكراً، أنا بخير! وأنت؟", best: true, replyDe: "Auch gut, danke. Hast du Hunger?", replyAr: "أنا بخير أيضاً، شكراً. هل أنت جائع؟" },
+            { de: "Ich wohne in Berlin.", ar: "أسكن في برلين.", best: false, replyDe: "Ah, du wohnst in Berlin. Und wie geht es dir?", replyAr: "آه، تسكن في برلين. وكيف حالك؟" },
           ],
         },
         {
           speakerDe: "Hast du Hunger? Wir können etwas essen gehen.",
-          speakerAr: "هل أنت جائع؟ يمكننا الذهاب لتناول الطعام.",
+          speakerAr: "هل أنت جائع؟ يمكننا الذهاب لتناول شيء ما.",
           options: [
-            { de: "Ja, gern! Ich hätte gern ein Schnitzel.", ar: "نعم بكل سرور! أريد شنيتزل.", best: true, replyDe: "Gute Wahl! Und danach einkaufen?", replyAr: "اختيار جيد! وبعدها التسوق؟" },
-            { de: "Nein, ich esse nie.", ar: "لا، لا آكل أبداً.", best: false, replyDe: "Jeder isst! Komm schon.", replyAr: "الجميع يأكل! هيا." },
+            { de: "Ja, gern! Wohin gehen wir?", ar: "نعم، بكل سرور! إلى أين نذهب؟", best: true, replyDe: "Wir können in ein Café in der Nähe gehen.", replyAr: "يمكننا الذهاب إلى مقهى قريب." },
+            { de: "Ich heiße Karim.", ar: "اسمي كريم.", best: false, replyDe: "Hallo, Karim. Möchtest du trotzdem mitkommen?", replyAr: "مرحباً يا كريم. هل تود المجيء معنا رغم ذلك؟" },
           ],
         },
       ],

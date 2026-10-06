@@ -187,10 +187,10 @@ export const UNITS: Unit[] = [
     id: "a1-13",
     level: "A1",
     number: 13,
-    titleDe: "A1 kompakt — die große Wiederholung",
-    titleAr: "A1 المراجعة الشاملة",
-    descDe: "Alle A1-Grammatik kombinieren und bereit für A2 sein.",
-    descAr: "جمع كل قواعد A1 في جمل صحيحة، مراجعة شاملة، والاستعداد لامتحان الختم وA2.",
+    titleDe: "A1 kompakt — Wiederholung und Prüfungseinblick",
+    titleAr: "A1 — مراجعة ختامية مختارة",
+    descDe: "Ausgewählte A1-Themen wiederholen, kurze Texte bearbeiten und das Format des Modellsatzes Start Deutsch 1 kennenlernen.",
+    descAr: "مراجعة موضوعات مختارة من A1، والتدرب على نصوص قصيرة، والتعرف إلى بنية نموذج Start Deutsch 1؛ لا يثبت الدرس إتقان المستوى أو الجاهزية للامتحان أو A2.",
   },
 
   // ═══ A2 — 13 وحدة (12 موضوعية + a2-13 الخاتمة الجامعة) ═══
