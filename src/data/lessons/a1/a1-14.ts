@@ -1,10 +1,8 @@
 import type { Lesson } from "@/types/lesson";
 
 /**
- * الدرس A1-14: الماضي المحكيّ (Perfekt) — ختام قواعد A1
- * — التركيب (haben/sein + Partizip II)، اختيار الفعل المساعد،
- *   Partizip II في الأفعال المنفصلة وغير المنفصلة وأفعال -ieren،
- *   ثمّ إتمام الأفعال الناقصة الستّة بـwollen وsollen —
+ * الدرس A1-14: مدخل تطبيقي إلى Perfekt وwollen/sollen.
+ * تُراجع صيغة المساعد وPartizip II وأمثلة شائعة، من دون ادعاء استكمال A1.
  */
 export const lessonA114: Lesson = {
   id: "a1-14",
@@ -14,24 +12,96 @@ export const lessonA114: Lesson = {
   titleDe: "Das Perfekt: Was hast du gemacht?",
   titleAr: "الماضي المحكيّ (Perfekt) — ماذا فعلتَ؟",
   summary:
-    "الزمن الماضي المستعمل في الكلام: haben أو sein + Partizip II، وصناعة Partizip II في الأفعال الضعيفة والقوية والمنفصلة وغير المنفصلة وأفعال -ieren، وقاعدة اختيار المساعد باختبار المفعول به، ثمّ الفعلان الناقصان الأخيران wollen وsollen.",
+    "تدريب على تكوين Perfekt في الجمل الرئيسية (haben/sein + Partizip II)، وصيغ أفعال شائعة ضعيفة وقوية ومنفصلة وغير منفصلة وأفعال -ieren، واختيار المساعد بحسب الفعل والمعنى والسياق (وجود مفعول Akkusativ قرينة مفيدة لا اختبار وحيد)، ثم استعمال wollen وsollen في مواقف مألوفة.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann über das Wochenende im Perfekt erzählen.", ar: "أن أحكي عن عطلة الأسبوع بصيغة Perfekt." },
-    { id: "z2", de: "Ich kann das Partizip II regelmäßiger und wichtiger unregelmäßiger Verben bilden.", ar: "أن أصوغ Partizip II للأفعال المنتظمة ولأهمّ الأفعال الشاذّة." },
-    { id: "z3", de: "Ich kann zwischen haben und sein als Hilfsverb wählen.", ar: "أن أختار بين haben وsein فعلاً مساعداً بحسب القاعدة." },
-    { id: "z4", de: "Ich kann sagen, was ich will und was ich soll.", ar: "أن أعبّر عمّا أريده (wollen) وعمّا يُطلب منّي (sollen)." },
-    { id: "z5", de: "Ich kann eine kurze E-Mail über ein Erlebnis schreiben.", ar: "أن أكتب رسالة قصيرة أحكي فيها تجربةً مضت." },
+    {
+      id: "z1",
+      de: "Ich kann einfache Vorgaben in Perfekt-Sätze umformen.",
+      ar: "أن أحوّل مطالب قصيرة إلى جمل Perfekt في التمرين.",
+      evidence: {
+        exerciseIds: ["wr-a1-14-1", "wr-a1-14-2", "e14", "e22"],
+        taskIds: ["writing:a1-14:wr-a1-14-1", "writing:a1-14:wr-a1-14-2", "practice:a1-14:e14", "practice:a1-14:e22"],
+        labelAr: "إتمام تحويلي الكتابة المحددين، والإجابة الصحيحة عن تحويليْن في بنك التدريب؛ هذه مهام تحويل مضبوطة لا قياسٌ لسرد حر.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann häufige Partizip-II-Formen in vorgegebenen Sätzen ergänzen.",
+      ar: "أن أُكمل صيغ Partizip II شائعة في جمل معطاة.",
+      evidence: {
+        exerciseIds: ["e1", "e2", "e7", "e8", "e9"],
+        taskIds: ["practice:a1-14:e1", "flow-practice:a1-14:e1", "practice:a1-14:e2", "flow-practice:a1-14:e2", "practice:a1-14:e7", "practice:a1-14:e8", "practice:a1-14:e9"],
+        labelAr: "إكمال خمس صيغ في جمل: فعل ضعيف، قوي، منفصل، غير منفصل، وفعل منتهٍ بـ-ieren.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann in häufigen Beispielen das Perfekthilfsverb passend zum Verbgebrauch wählen.",
+      ar: "أن أختار الفعل المساعد المناسب في أمثلة شائعة مع مراعاة معنى الفعل وسياقه.",
+      evidence: {
+        exerciseIds: ["e3", "e4", "e12", "e21", "e24", "mt-a1-14-1"],
+        taskIds: ["practice:a1-14:e3", "flow-practice:a1-14:e3", "practice:a1-14:e4", "flow-practice:a1-14:e4", "practice:a1-14:e12", "practice:a1-14:e21", "practice:a1-14:e24", "mini-test:a1-14:mt-a1-14-1", "flow-mini-test:a1-14:mt-a1-14-1"],
+        labelAr: "اختيار/تصحيح haben وsein في جمل انتقالية ونشاطية وأمثلة متقابلة، بما فيها فعل يتغير مساعده بحسب المعنى.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann wollen und sollen in einfachen Sätzen passend konjugieren, den Infinitiv ans Ende stellen und eine häufige höfliche Bitte erkennen.",
+      ar: "أن أستعمل wollen وsollen في مطالب قصيرة، وأضع المصدر في آخر الجملة، وأتعرف على صيغة طلب مهذبة شائعة.",
+      evidence: {
+        exerciseIds: ["e15", "e16", "e17", "e18", "e19", "mt-a1-14-5"],
+        taskIds: ["practice:a1-14:e15", "practice:a1-14:e16", "practice:a1-14:e17", "practice:a1-14:e18", "practice:a1-14:e19", "mini-test:a1-14:mt-a1-14-5", "flow-mini-test:a1-14:mt-a1-14-5"],
+        labelAr: "إتمام تصريفات وجمل سياقية، واختيار عبارة طلب شائعة، وترتيب جملة ناقص مع مصدر.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z5",
+      de: "Ich kann vorgegebene Perfektformen in einer kurzen E-Mail-Vorlage ergänzen.",
+      ar: "أن أُكمل المساعدات وصيغ Partizip II المعطاة داخل قالب بريد قصير.",
+      evidence: {
+        exerciseIds: ["wr-a1-14-3"],
+        taskIds: ["writing:a1-14:wr-a1-14-3"],
+        labelAr: "إتمام جميع الفراغات في قالب البريد؛ لا يثبت هذا وحده القدرة على إنشاء بريد حر.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z6",
+      de: "Ich kann gezielte Informationen aus einer kurzen E-Mail entnehmen.",
+      ar: "أن أستخرج تفاصيل محددة من بريد إلكتروني قصير.",
+      evidence: {
+        exerciseIds: ["rq1", "rq2", "rq3", "rq6"],
+        taskIds: ["reading:read-a1-14:rq1", "reading:read-a1-14:rq2", "reading:read-a1-14:rq3", "reading:read-a1-14:rq6"],
+        labelAr: "الإجابة الصحيحة عن أسئلة وسيلة السفر والأنشطة وسبب الذهاب إلى المتحف وحالة أمين يوم الأحد.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z7",
+      de: "Ich kann zentrale Angaben aus einer kurzen Sprachnachricht entnehmen.",
+      ar: "أن أستخرج معلومات أساسية من رسالة صوتية قصيرة.",
+      evidence: {
+        exerciseIds: ["lsq-a1-14-1", "lsq-a1-14-3"],
+        taskIds: ["listening:ls-a1-14-1:lsq-a1-14-1", "listening:ls-a1-14-1:lsq-a1-14-3"],
+        labelAr: "الإجابة قبل كشف نص الرسالة عن نشاط يوم السبت ووسيلة الوصول إلى البحيرة يوم الأحد.",
+        completion: "all-correct",
+      },
+    },
   ],
 
   einfuehrung: {
     motivatingQuestionAr:
-      "سؤالٌ واحد يتكرّر في كلّ امتحانٍ شفويّ وفي كلّ لقاءٍ أوّل: «Was hast du am Wochenende gemacht?» — ماذا فعلتَ في عطلة الأسبوع؟ وحتّى اليوم لا تملك أن تجيب، لأنّ كلّ ما تعرفه من الألمانية يقع في الحاضر. واليوم يُفتح الماضي.",
+      "سؤالٌ مفيد للتدرّب على الحديث عن عطلة الأسبوع: «Was hast du am Wochenende gemacht?» — ماذا فعلتَ في نهاية الأسبوع؟ يتيح لك هذا الدرس تكوين إجابات بسيطة بالماضي المركّب Perfekt، من دون افتراض أن هذا السؤال يظهر في كل لقاء أو امتحان.",
     motivatingQuestionDe: "Was hast du am Wochenende gemacht?",
     contextAr:
-      "الألمانية لها ماضيان: واحدٌ يُكتب (Präteritum) وواحدٌ يُقال (Perfekt). ونحن نتعلّم اليوم المحكيّ لأنّه ما تحتاجه في الشارع وفي الامتحان الشفويّ. وهو تركيبٌ من قطعتين، والقطعة الثانية تذهب إلى آخر الجملة — تماماً كما رأيتَ في الأفعال المنفصلة والناقصة.",
+      "Perfekt صيغة ماضٍ مركّبة شائعة في كثير من المحادثات اليومية، لكنها ليست الصيغة الوحيدة؛ فقد يظهر Präteritum أيضاً في الحديث والكتابة، ويتغيّر الاستعمال بحسب الفعل والسياق والمنطقة. نتمرّن هنا على بناء Perfekt: فعل مساعد مصرّف وPartizip II. في الجملة الرئيسية الخبرية يأتي المساعد في المركز الثاني ويقع Partizip II عادةً في نهاية المجال الفعلي؛ أمّا في الجملة الفرعية فقد يأتي المساعد بعد Partizip II في النهاية: weil ich Deutsch gelernt habe.",
     contextDe: "Ich bin nach Berlin gefahren und habe viel gesehen.",
-    connectionToPreviousAr: "أنت تملك بالفعل نصف هذا الدرس: الحاضنة الفعلية من درس الروتين اليوميّ (Ich stehe … auf)، وhaben من درس الطعام، وsein من درس التعارف. اليوم نجمع الثلاثة في زمنٍ جديد، ونُتمّ الأفعال الناقصة الستّة.",
+    connectionToPreviousAr: "يعيد الدرس استخدام مفردات وصيغ سبق أن ظهرت في أمثلة A1، مثل الأفعال المنفصلة وبعض الأفعال الناقصة. راجعها عند الحاجة؛ فمعرفة المفردة أو المضارع وحدهما لا تعني إتقان Perfekt. هنا نتدرّب على المساعد وPartizip II في سياقات محددة.",
     activateVocabulary: [
       { de: "gestern", ar: "أمس" },
       { de: "letztes Wochenende", ar: "عطلة الأسبوع الماضية" },
@@ -46,7 +116,7 @@ export const lessonA114: Lesson = {
     {
       id: "r1",
       type: "fill-blank",
-      instructionAr: "مراجعة تراكمية من A1 (درس a1-06 — الهوايات): أكمل الفعل الناقص وموضع المصدر",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-06 — الهوايات): أكمل الفعل الناقص في صيغة الحاضر وانتبه إلى موضع المصدر",
       template: "Ich ___ gut Deutsch sprechen. · ___ du schwimmen?",
       blanks: [
         { correct: "kann", options: ["kann", "kannst", "können", "konnte"] },
@@ -84,18 +154,18 @@ export const lessonA114: Lesson = {
     {
       id: "t1",
       titleAr: "الماضي المحكيّ (Perfekt): فعلٌ مساعد + Partizip II",
-      titleDe: "Das Perfekt: haben + Partizip II",
+      titleDe: "Das Perfekt: haben/sein + Partizip II",
       explanationAr:
-        "حتّى اليوم كنتَ تعيش في الحاضر وحده. تقول Ich lerne Deutsch، وتقول Es regnet، وكلّ ما مضى كان يفلت منك. والباب الذي يفتح الماضي كلّه اسمه **Perfekt** — وهو **الماضي المحكيّ**: ما يستعمله الألمانيّ في الكلام وفي الرسائل وفي الامتحان الشفويّ.\n\n**أوّلاً — التركيب: فعلان لا فعل واحد.**\nالعربية تقول „تعلّمتُ“ بكلمة واحدة. والألمانية تحتاج قطعتين:\n· **فعل مساعد مصرَّف** (haben أو sein) — يحمل الشخص والزمن\n· **Partizip II** — يحمل المعنى، ولا يتصرّف أبداً\n**Ich habe Deutsch gelernt.** ⟵ habe (أنا، ماضٍ) + gelernt (تعلَّم).\n\n**ثانياً — أين يقع كلٌّ منهما؟ هذا نصف الدرس.**\nالفعل المساعد يأخذ **المركز الثاني** كأيّ فعلٍ مصرَّف تعرفه. وPartizip II يذهب إلى **آخر الجملة**، مهما طالت:\n| Ich | habe | gestern in der Schule Deutsch | **gelernt**. |\nولاحظ أنّ هذه ليست قاعدةً جديدة: هي **الحاضنة الفعلية** (Satzklammer) نفسها التي عرفتها في الأفعال المنفصلة (Ich **stehe** um sieben **auf**) وفي الأفعال الناقصة (Ich **kann** Deutsch **sprechen**). الألمانية تفتح الجملة بفعلٍ مصرَّف وتغلقها بجزءٍ غير مصرَّف — ثلاث مرّاتٍ الآن بالنمط نفسه.\n\n**ثالثاً — كيف تصنع Partizip II؟ ثلاث عائلات.**\n· **الأفعال الضعيفة (المنتظمة):** **ge- + جذر + -t** ⟵ lernen ⟵ **gelernt** · machen ⟵ **gemacht** · kaufen ⟵ **gekauft**\n· **الأفعال القوية (الشاذّة):** **ge- + جذر (كثيراً ما يتغيّر صوته) + -en** ⟵ trinken ⟵ **getrunken** · lesen ⟵ **gelesen** · schreiben ⟵ **geschrieben**\n· **حالةٌ ثالثة صغيرة:** جذرٌ بحرفٍ يمنع النطق (arbeiten, warten) فيُدخَل حرف علّة: **gearbeitet** · **gewartet** — تماماً كما أدخلتَه في المضارع (du arbeit**e**st).\n\n**رابعاً — الفعل المساعد الافتراضيّ هو haben.**\nالأغلبية الساحقة من الأفعال تأخذ haben. وsein استثناءٌ محصور سنُفصّله في الكتلة التالية. فإذا شككتَ ولم تتذكّر، فـ**haben** أقرب إلى الصواب إحصائياً.",
+        "نستخدم Perfekt للحديث عن أحداث أو حالات في الماضي. وهو شائع في المحادثات اليومية، لكن لا يصح اختزاله في «ماضٍ يُقال فقط»؛ فـPräteritum يظهر أيضاً في الكلام والكتابة بحسب الفعل والسياق والمنطقة.\n\n**أولاً — التركيب:** يتكوّن Perfekt من **فعل مساعد مصرّف** (haben أو sein) و**Partizip II** للفعل الأساسي: **Ich habe Deutsch gelernt.** يحمل المساعد تصريف الشخص والزمن، ويقدّم Partizip II معنى الفعل. وفي تركيب Perfekt لا يتصرّف Partizip II مثل فعل مصرّف؛ أمّا استعماله صفةً قبل اسم، مثل *ein gelerntes Wort*، فقد يأخذ نهاية الصفة.\n\n**ثانياً — موضع الفعلين:** في الجملة الرئيسية الخبرية يأتي الفعل المساعد في المركز الثاني (V2؛ أي بعد المكوّن الأول، لا بالضرورة بعد الكلمة الثانية)، ويأتي Partizip II عادةً في نهاية الجملة: **Gestern | habe | ich in der Schule Deutsch | gelernt.** وفي سؤال نعم/لا يتقدّم المساعد: **Hast du gestern Deutsch gelernt?** أمّا في الجملة الفرعية فيأتي الفعل المساعد المصرف في النهاية بعد Partizip II: **…, weil ich gestern Deutsch gelernt habe.**\n\n**ثالثاً — أنماط تكوين شائعة:** الأفعال الضعيفة تكوّن Partizip II غالباً بإضافة **ge-** إلى الجذع والنهاية **-t**: *lernen → gelernt; machen → gemacht*. وإذا انتهى الجذع بـ*d* أو *t*، أو احتاج نطقه إلى مقطع إضافي، تظهر غالباً **-et**: *arbeiten → gearbeitet; warten → gewartet*. للأفعال القوية صيغ معجمية ينبغي تعلّمها؛ وكثير منها ينتهي بـ**-en** وقد يتغيّر الجذع: *trinken → getrunken; schreiben → geschrieben*. لا تنطبق هذه الأنماط على كل فعل بلا استثناء؛ تعلّم صيغة Partizip II مع الفعل نفسه.",
       whyAr:
-        "لماذا فعلان بدل واحد؟ لأنّ Perfekt في أصله لم يكن زمناً ماضياً بل **وصفاً لحالةٍ حاضرة**. جملة Ich habe das Buch gelesen معناها الأصليّ الحرفيّ: „أنا أملك الكتاب مقروءاً“ — أي أنّ عندي الآن كتاباً في حال القراءة المنجزة. لذلك جاء haben (يملك) مساعداً، ولذلك كان Partizip II في الأصل **صفةً** لا فعلاً (ولذلك ما زال يشبه الصفة: ein **gelerntes** Wort). ثمّ انزاح المعنى مع القرون من „أملك منجَزاً“ إلى „فعلتُ“، وبقي التركيب شاهداً على الأصل.\n\nولماذا البادئة ge-؟ هي بقيّةٌ من بادئةٍ جرمانية قديمة (gi-) كانت تعني **الاكتمال**، وهي نفسها البادئة في genug (كافٍ) وgesamt (مجموع). فـge- ليست زخرفاً: هي علامة „تمّ“.\n\nولماذا يقع Partizip II في آخر الجملة؟ لأنّه بحكم أصله **صفةُ الحال** التي تصف نتيجة الفعل، والألمانية تؤخّر ما يحمل ثقل المعنى الجديد. وهذا يعطي الجملة الألمانية سمتها المميّزة: المستمع لا يعرف **ماذا** حدث إلاّ في النهاية، فيلزمه أن ينصت حتّى آخر كلمة. وهذه عادةٌ سمعيّة تحتاج تدريباً، وهي سببٌ مباشر في صعوبة قسم Hören على العرب.",
+        "الفائدة العملية من ملاحظة قطعتَي Perfekt هي معرفة ما الذي يحمل التصريف وما الذي يحمل معنى الفعل. المساعد هو الجزء المصرف؛ لذلك لا تُسقطه من الجملة. في الجملة الرئيسية الخبرية يلتزم المساعد موقع V2، ويأتي Partizip II في نهاية المجال الفعلي. قارن: **Gestern habe ich Deutsch gelernt**، و**…, weil ich Deutsch gelernt habe**؛ فموقع المساعد يتأثر بنوع الجملة. لا يلزم تفسير هذه البنية بحكاية تاريخية مبسطة كي تتعلّم استعمالها.",
       table: {
-        title: "صناعة Partizip II — العائلات الثلاث",
+        title: "أنماط شائعة لتكوين Partizip II",
         columns: ["العائلة", "القاعدة", "المصدر ⟵ Partizip II", "الجملة"],
         rows: [
           { label: "ضعيف", cells: ["ge + جذر + t", "lernen ⟵ gelernt", "Ich habe Deutsch gelernt."] },
           { label: "ضعيف", cells: ["ge + جذر + t", "machen ⟵ gemacht", "Was hast du gemacht?"] },
-          { label: "ضعيف بحرف علّة", cells: ["ge + جذر + et", "arbeiten ⟵ gearbeitet", "Er hat viel gearbeitet."] },
+          { label: "ضعيف مع -et", cells: ["ge + جذر + et", "arbeiten ⟵ gearbeitet", "Er hat viel gearbeitet."] },
           { label: "قويّ", cells: ["ge + جذر متغيّر + en", "trinken ⟵ getrunken", "Wir haben Kaffee getrunken."] },
           { label: "قويّ", cells: ["ge + جذر متغيّر + en", "schreiben ⟵ geschrieben", "Ich habe eine E-Mail geschrieben."] },
           { label: "قويّ بلا تغيّر", cells: ["ge + جذر + en", "lesen ⟵ gelesen", "Sie hat das Buch gelesen."] },
@@ -103,126 +173,121 @@ export const lessonA114: Lesson = {
       },
       examples: [
         { de: "Ich habe gestern Deutsch gelernt.", ar: "تعلّمتُ الألمانية أمس. (habe في الثاني، gelernt في الآخر)" },
-        { de: "Was hast du am Wochenende gemacht?", ar: "ماذا فعلتَ في عطلة الأسبوع؟ (السؤال الأكثر تكراراً في Sprechen)" },
+        { de: "Was hast du am Wochenende gemacht?", ar: "ماذا فعلتَ في عطلة الأسبوع؟ (سؤال تدريبي ممكن، لا ادعاء بتكراره في كل اختبار)" },
         { de: "Wir haben in einem Restaurant gegessen.", ar: "أكلنا في مطعم. (essen ⟵ gegessen — قويّ)" },
         { de: "Meine Mutter hat einen Kuchen gebacken.", ar: "خبزت أمّي كعكة." },
         { de: "Habt ihr die Hausaufgaben gemacht?", ar: "هل عملتم الواجبات؟ (في السؤال يتقدّم المساعد ويبقى الجزء الأخير مكانه)" },
-        { de: "Ich habe zwei Stunden auf den Bus gewartet.", ar: "انتظرتُ الحافلة ساعتين. (warten ⟵ gewartet بحرف علّة)" },
+        { de: "Ich habe zwei Stunden auf den Bus gewartet.", ar: "انتظرتُ الحافلة ساعتين. (warten ⟵ gewartet مع -et)" },
         { de: "Er hat mir ein Buch geschenkt.", ar: "أهداني كتاباً." },
         { de: "Ich habe nichts gesagt.", ar: "لم أقل شيئاً. (sagen ⟵ gesagt)" },
       ],
       comparisonWithArabic:
-        "العربية تصنع الماضي بتغييرٍ داخل الكلمة الواحدة: يتعلّم ⟵ تعلَّم. لا فعل مساعد ولا قطعة ثانية. فالمتعلّم العربيّ يبحث تلقائياً عن „الفعل الماضي“ المفرد، فيقول Ich lernte — وهي صيغةٌ موجودة فعلاً (Präteritum) لكنّها **مكتوبة لا محكيّة**، تُقرأ في الروايات والأخبار ولا تُقال في المقهى. فمن يستعملها في الامتحان الشفويّ يبدو كمن يتكلّم العربية الفصحى في السوق: مفهومٌ لكنّه غريب.\n\nوالعربية تضع الفعل في أوّل الجملة غالباً („تعلّمتُ الألمانيةَ أمسِ“)، والألمانية تشطر فعلها شطرين وتضع أحدهما في المركز الثاني والآخر في الآخِر. فالمسافة بين القطعتين هي مصدر أكثر أخطاء العرب في هذا الباب: يُنطق المساعد ثمّ يُنسى الجزء الثاني.\n\nوفائدةٌ عربية تُعينك: تصوَّر Partizip II كاسم المفعول („مكتوب“، „مقروء“). فـIch habe geschrieben تُقارَب بـ„عندي مكتوبٌ“. والمقاربة ليست ترجمةً بل جسرٌ ذهنيّ يُثبّت التركيب.",
+        "في المثال العربي «تعلّمتُ الألمانية أمس» تظهر دلالة الماضي في صيغة فعل واحدة، بينما تتكوّن الجملة الألمانية **Ich habe Deutsch gelernt** من مساعد مصرّف وPartizip II. هذه مقارنة بين مثالين وليست قاعدةً تصف كل طرائق التعبير عن الماضي في العربية. عملياً، ضع علامة على المساعد وعلى Partizip II كلٌّ على حدة، ثم راجع ترتيب الجملة الألمانية؛ ولا تفترض أن كل مفعول أو ظرف يأتي في موضع ثابت قبل الجزء الأخير.",
       eselsbruecke:
-        "الجملة الألمانية في Perfekt قوسان: المساعد يفتح في المركز الثاني، وPartizip II يُغلق في الآخر. وما بينهما حشوٌ مهما طال. وge- تعني «تمّ» — كما في genug.",
+        "في الجملة الرئيسية الخبرية: المساعد المصرف في V2 وPartizip II في نهاية المجال الفعلي. في السؤال يتقدّم المساعد، وفي جملة *weil* يأتي المساعد المصرف بعد Partizip II. وتعلّم المساعد مع الفعل، لا من اختبار واحد وحده.",
       commonMistakes: [
         {
           wrong: "Ich habe gelernt Deutsch.",
           right: "Ich habe Deutsch gelernt.",
-          whyAr:
-            "نقلٌ لترتيب العربية والإنجليزية: الفعل ثمّ المفعول. والألمانية تُغلق الجملة بـPartizip II، فكلّ مفعولٍ وظرفٍ يسبقه. وهذا أكثر أخطاء الباب شيوعاً.",
+          whyAr: "في الجملة الرئيسية الخبرية المحايدة يأتي المساعد في V2 وPartizip II عادةً في نهاية المجال الفعلي؛ لذلك يسبق المفعول هنا Partizip II. راجع الترتيب في هذا السياق، لا قاعدةً واحدة لكل أنواع الجمل.",
         },
         {
           wrong: "Ich bin Deutsch gelernt.",
           right: "Ich habe Deutsch gelernt.",
-          whyAr:
-            "lernen فعلٌ متعدٍّ له مفعول (Deutsch)، وكلّ متعدٍّ يأخذ haben بلا استثناء. وsein محصورة في أفعال الحركة واللزوم كما في الكتلة التالية.",
+          whyAr: "في هذا المثال يأخذ الفعل المتعدّي lernen، مع المفعول Deutsch، المساعد haben. وجود مفعول مباشر قرينة نافعة، لكنه ليس خوارزمية لاختيار المساعد لكل فعل.",
         },
         {
           wrong: "Ich habe Deutsch lernte.",
           right: "Ich habe Deutsch gelernt.",
-          whyAr:
-            "خلطٌ بين صيغتين: lernte هي Präteritum وتقف وحدها بلا مساعد (Ich lernte). ولا يجتمع مساعدٌ وصيغةُ ماضٍ ثانية في جملة.",
+          whyAr: "إذا طُلب Perfekt، فالصيغة هي المساعد المصرف + Partizip II، لا Präteritum مع المساعد. وPräteritum زمن صحيح في سياقات أخرى، وليس محصوراً بالكتابة.",
         },
         {
           wrong: "Ich habe gearbeit.",
           right: "Ich habe gearbeitet.",
-          whyAr:
-            "جذر arbeit ينتهي بـt، فإلحاق t به يُنتج tt لا يُنطق. فتُدخَل e فاصلة: gearbeit-e-t. وهي العلّة الصوتية نفسها في du arbeitest من درس السلسلة الذهبية.",
+          whyAr: "في هذا الفعل الضعيف ذي الجذع المنتهي بـt تظهر النهاية -et: gearbeitet. تعلّم الصيغة الإملائية المنطوقة مع الفعل.",
         },
         {
           wrong: "Ich habe getrinkt.",
           right: "Ich habe getrunken.",
-          whyAr:
-            "trinken فعلٌ قويّ: صوت جذره يتغيّر (i ⟵ u) ونهايته -en لا -t. والقياس على الضعيفة هو الفخّ: القوية تُحفظ ولا تُشتقّ.",
+          whyAr: "Partizip II من trinken هو getrunken؛ إنه فعل قوي بصيغة ينبغي تعلّمها، ولا تُنشأ هنا بقياس نهاية الأفعال الضعيفة -t.",
         },
       ],
       relatedRuleComparison: {
         title: "الحاضنة الفعلية — ثالث ظهورٍ لها",
         content:
-          "قابِل ثلاث جمل درستَها في ثلاثة دروس مختلفة:\n· **Ich stehe** um sieben Uhr **auf**. ⟵ فعلٌ منفصل\n· **Ich kann** gut Deutsch **sprechen**. ⟵ فعلٌ ناقص + مصدر\n· **Ich habe** gestern Deutsch **gelernt**. ⟵ Perfekt\nالبنية واحدة في الثلاث: **مصرَّفٌ في الثاني، غير مصرَّفٍ في الآخر، والباقي بينهما**. فأنت لا تتعلّم اليوم قاعدةً رابعة بل تُضيف مِلْأً جديداً لقالبٍ تعرفه. وهذه هي طريقة الألمانية في التوسّع: عددٌ قليل من القوالب البنيوية يُعاد استعماله بمحتوياتٍ مختلفة.\n\nوستقابل القالب نفسه مرّتين بعد: في المبنيّ للمجهول (Das Haus **wird** **gebaut**) وفي المستقبل (Ich **werde** **lernen**). فمن أتقن الحاضنة اليوم أراح نفسه في أربعة أبواب.",
+          "قارن ثلاثة أنماط في الجملة الرئيسية الخبرية: **Ich stehe um sieben Uhr auf** (فعل منفصل في المضارع)، **Ich kann Deutsch sprechen** (فعل ناقص + مصدر)، و**Ich habe Deutsch gelernt** (Perfekt). في هذه الأمثلة يأتي الفعل المصرف في V2 ويظهر جزء غير مصرف في نهاية المجال الفعلي؛ لكن لكل تركيب قواعده، ولا يعني التشابه أن جميع الجمل الألمانية تُغلق بالطريقة نفسها. وفي الجملة الفرعية قد يتغير ترتيب الأفعال، مثل **…, weil ich Deutsch gelernt habe**. هذا درس في Perfekt، لا وعداً بتغطية المبني للمجهول أو المستقبل.",
       },
     },
     {
       id: "t2",
-      titleAr: "haben أم sein؟ — القاعدة وحدودها",
+      titleAr: "haben أم sein؟ — قرائن سياقية لا اختبار واحد",
       titleDe: "haben oder sein? Die Wahl des Hilfsverbs",
       explanationAr:
-        "قلنا إنّ haben هو الافتراض. وبقي أن نُحدّد **متى تأخذ الفعلُ sein** تحديداً لا يترك ظنّاً. والقاعدة ثلاث حالات، لا أكثر.\n\n**الحالة الأولى — أفعال الحركة من مكانٍ إلى مكان.**\ngehen · fahren · fliegen · kommen · laufen · reisen · schwimmen\n· Ich **bin** nach Berlin **gefahren.** (ذهبتُ إلى برلين)\n· Er **ist** nach Hause **gekommen.** (جاء إلى البيت)\nوالشرط في هذه الحالة أن تكون الحركة **منتقلةً بين نقطتين**، لا مجرّد نشاطٍ بدنيّ في مكان.\n\n**الحالة الثانية — أفعال تغيّر الحال.**\naufstehen · einschlafen · aufwachen · werden · wachsen · sterben\n· Ich **bin** um sechs **aufgestanden.** (نهضتُ) — انتقالٌ من نومٍ إلى يقظة\n· Das Kind **ist** groß **geworden.** (كبر الطفل) — انتقالٌ من حالٍ إلى حال\n\n**الحالة الثالثة — ثلاثة أفعالٍ تُحفظ حفظاً:**\n**sein** ⟵ Ich **bin** in Berlin **gewesen.** · **bleiben** ⟵ Wir **sind** zu Hause **geblieben.** · **passieren** ⟵ Was **ist** **passiert**?\nوهي شاذّةٌ عن المنطق: bleiben تعني البقاء أي **عدم** الحركة، ومع ذلك تأخذ sein. فلا تُتعِب نفسك بتعليلها.\n\n**وما عدا ذلك فـhaben.** وثمّة اختبارٌ عمليّ لا يخيب تقريباً: **هل للفعل مفعولٌ به مباشر (Akkusativ)؟** إن كان له مفعول فالمساعد haben قطعاً. Ich habe **einen Brief** geschrieben — فيه مفعول ⟵ haben. Ich bin gefahren — لا مفعول، وحركةٌ ⟵ sein.\n\n**وفخٌّ لطيف:** فعلٌ واحد قد يأخذ الاثنين بحسب معناه في الجملة:\n· Ich **bin** nach Berlin **gefahren.** (سافرت — حركة) مقابل Ich **habe** **das Auto** **gefahren.** (قدتُ السيارة — له مفعول)",
+        "اختيار الفعل المساعد في Perfekt يتأثر ببنية الفعل ومعناه واستعماله؛ لذلك لا توجد هنا «ثلاث حالات لا أكثر». هذه **قرائن تعليمية** لأمثلة شائعة:\n\n**haben** يأتي مع الأفعال المتعدية التي تأخذ مفعولاً مباشراً، مثل **ein Buch lesen** و**einen Brief schreiben**، ومع أفعال كثيرة تصف نشاطاً أو حالة بلا انتقال مكاني، مثل **schlafen** و**warten**: *Ich habe acht Stunden geschlafen.*\n\n**sein** يأتي غالباً مع أفعال لازمة تعبّر في معناها المقصود عن انتقال مكاني أو تغيّر حالة: **gehen, kommen, reisen, einschlafen, aufstehen**. مثال: *Ich bin nach Berlin gefahren.*\n\nوتوجد أفعال شائعة تُحفظ مع **sein** مثل **sein, bleiben, passieren, gelingen**؛ وهذه ليست قائمة كاملة بكل الأفعال التي تأخذ sein. تعلّم المساعد مع صيغة الفعل، ولا تستنتجه من حركة ظاهرة وحدها.\n\n**المفعول Akkusativ قرينة قوية لا اختبار آلي وحيد.** وجود مفعول مباشر يرجّح haben في الأمثلة المتعدية، لكن عبارات المدة مثل **acht Stunden** في *acht Stunden schlafen* ليست مفعولاً مباشراً، وبعض أفعال الحركة يتغيّر مساعدها بتغيّر المعنى أو التركيب.\n\n**الفعل قد يبدّل المساعد بحسب المعنى:** *Ich bin nach Berlin gefahren* (انتقلتُ إلى برلين) مقابل *Ich habe das Auto gefahren* (قدتُ السيارة). وقد تقبل بعض الأفعال مثل *laufen* أو *schwimmen* أكثر من صيغة في استعمالات مختلفة؛ لذا نتدرّب هنا على أمثلة محددة ولا نعمّم مفتاحاً واحداً على كل فعل.",
       whyAr:
-        "لماذا يقتسم الألمان مساعدَين بينما تكتفي الإنجليزية بـhave وحده؟ لأنّ الألمانية حافظت على تمييزٍ جرمانيّ قديم بين **ما يفعله الفاعل بشيء** وبين **ما يحدث للفاعل نفسه**. من كتب رسالةً فَعَل شيئاً في العالم ⟵ فهو „يملك“ نتيجته ⟵ haben. ومن ذهب أو نام أو كبر لم يفعل شيئاً في شيء، بل **تغيّر موضعه أو حاله** ⟵ فهو „كائنٌ“ في وضعٍ جديد ⟵ sein.\n\nولهذا كان اختبار المفعول به دقيقاً لا صدفة: وجود المفعول دليلٌ نحويّ على أنّ الفعل واقعٌ على شيءٍ خارج الفاعل، وهذا هو المعنى الذي يستدعي haben بالضبط. فالاختبار ليس حيلةً بل صياغةٌ إجرائية للتمييز الدلاليّ.\n\nوأمّا bleiben وsein وpassieren فبقايا استعمالٍ قديم أوسع لـsein انحسر ولم ينحسر عنها. واللغات كلّها فيها مثل هذه الجزر: صيغٌ نجت من تغيّرٍ عامّ لأنّها كثيرة الدوران فقاومت التسوية.",
+        "تشرح مراجع النحو اختيار haben وsein بمعايير تركيبية ودلالية معاً، لا باختبار المفعول وحده. للمبتدئ، احفظ الفعل في بطاقة واحدة: **المصدر + Partizip II + haben/sein**، ثم انتبه إلى المعنى في الجملة. وجود مفعول مباشر يساعد كثيراً على اختيار haben في الجمل المتعدية، بينما الانتقال أو تغيّر الحالة يرجّح sein في أفعال لازمة شائعة. لكن عبارة Akkusativ قد تكون ظرف مدة لا مفعولاً، وقد يتغير المساعد مع تغيّر معنى فعل مثل fahren. لذلك لا تساوِ علامة Akkusativ وحدها بقرارٍ آليّ، ولا تحوّل القاعدة المختصرة إلى حكم على كل الأفعال.",
       table: {
-        title: "sein أم haben؟ — الحالات الثلاث وما عداها",
+        title: "sein أم haben؟ — قرائن وأمثلة غير حصرية",
         columns: ["الحالة", "أمثلة الأفعال", "المساعد", "الجملة"],
         rows: [
-          { label: "حركة بين نقطتين", cells: ["gehen, fahren, fliegen, kommen", "sein", "Ich bin nach Berlin gefahren."] },
+          { label: "انتقال في المعنى المقصود", cells: ["gehen, kommen, reisen; fahren بمعنى السفر", "sein", "Ich bin nach Berlin gefahren."] },
           { label: "تغيّر حال", cells: ["aufstehen, einschlafen, werden, wachsen", "sein", "Ich bin früh aufgestanden."] },
-          { label: "الثلاثة المحفوظة", cells: ["sein, bleiben, passieren", "sein", "Wir sind zu Hause geblieben."] },
+          { label: "أفعال شائعة تُحفظ مع sein", cells: ["sein, bleiben, passieren, gelingen", "sein", "Wir sind zu Hause geblieben."] },
           { label: "فعلٌ له مفعول", cells: ["lesen, essen, kaufen, schreiben", "haben", "Ich habe ein Buch gelesen."] },
           { label: "نشاطٌ بلا انتقال", cells: ["schlafen, arbeiten, warten, lachen", "haben", "Er hat gut geschlafen."] },
           { label: "الفعل ذو الوجهين", cells: ["fahren (سافر / قاد)", "sein / haben", "Ich bin gefahren. · Ich habe das Auto gefahren."] },
         ],
       },
       examples: [
-        { de: "Ich bin gestern nach München gefahren.", ar: "سافرتُ أمس إلى ميونخ. (حركة ⟵ sein)" },
-        { de: "Ich habe ein Buch gelesen.", ar: "قرأتُ كتاباً. (له مفعول ⟵ haben)" },
+        { de: "Ich bin gestern nach München gefahren.", ar: "سافرتُ أمس إلى ميونخ. (fahren بمعنى السفر إلى وجهة ⟵ sein)" },
+        { de: "Ich habe ein Buch gelesen.", ar: "قرأتُ كتاباً. (lesen مع مفعول مباشر في هذا المثال ⟵ haben)" },
         { de: "Wir sind am Samstag zu Hause geblieben.", ar: "بقينا في البيت يوم السبت. (bleiben محفوظة ⟵ sein)" },
-        { de: "Er hat acht Stunden geschlafen.", ar: "نام ثماني ساعات. (نشاطٌ بلا انتقال ⟵ haben)" },
+        { de: "Er hat acht Stunden geschlafen.", ar: "نام ثماني ساعات. (عبارة مدة، لا مفعول مباشر؛ schlafen هنا مع haben)" },
         { de: "Bist du schon einmal in Deutschland gewesen?", ar: "هل سبق أن كنتَ في ألمانيا؟ (sein ⟵ gewesen)" },
         { de: "Das Kind ist sehr schnell gewachsen.", ar: "كبر الطفل بسرعة. (تغيّر حال ⟵ sein)" },
         { de: "Was ist denn passiert?", ar: "ماذا حدث؟ (passieren محفوظة ⟵ sein)" },
         { de: "Ich bin um sechs Uhr aufgestanden und habe gefrühstückt.", ar: "نهضتُ في السادسة وتناولتُ الفطور. (المساعدان يختلفان في الجملة الواحدة)" },
       ],
       comparisonWithArabic:
-        "العربية لا تعرف هذا التمييز إطلاقاً: „ذهبتُ“ و„كتبتُ“ صيغتان من نمطٍ واحد، والفارق بينهما دلاليّ لا صرفيّ. فالمتعلّم العربيّ لا يملك حدساً جاهزاً هنا، وعليه أن يبنيه بناءً.\n\nلكنّ العربية تُعينه من بابٍ آخر: هي تفرّق بين **المتعدّي** و**اللازم** تفريقاً واضحاً في نحوها المدرسيّ. و„المتعدّي ⟵ haben، واللازمُ الحركيّ ⟵ sein“ ترجمةٌ دقيقة تقريباً للقاعدة الألمانية بمصطلحٍ تعرفه من نحو العربية. فمن درس „كتب“ متعدّياً و„ذهب“ لازماً يملك المفتاح ولا يدري.\n\nوالخطأ الأشيع عند العرب في هذا الباب ليس اختيار المساعد بل **حذفه**: يقول Ich nach Berlin gefahren ظنّاً أنّ Partizip يكفي، لأنّ العربية تكتفي بكلمةٍ واحدة. والألمانية لا تقبل جملةً بلا فعلٍ مصرَّف أبداً.",
+        "لا يقابل haben وsein المساعدان الألمانيان تقسيماً صرفياً واحداً في العربية. قد تساعد معرفة المتعدّي واللازم في تذكّر بعض الأمثلة، لكنها ليست ترجمةً كاملة لاختيار المساعد الألماني؛ فالمعنى المعجمي للفعل وتركيبه واستعماله عوامل مهمة أيضاً. احفظ المثال الألماني مع مساعده، مثل *ein Buch lesen → hat gelesen* و*nach Berlin fahren → ist gefahren*، ولا تجعل كل كلمة في حالة Akkusativ دليلاً على أن لها وظيفة مفعول مباشر.",
       eselsbruecke:
-        "سَل نفسك سؤالاً واحداً: هل في الجملة مفعولٌ به؟ إن كان — فـhaben. وإن لم يكن وكانت حركةً أو تغيّرَ حال — فـsein. والمحفوظات ثلاث: sein · bleiben · passieren.",
+        "ابدأ بمعنى الفعل واستعماله: المفعول المباشر قرينة قوية على haben؛ الانتقال المكاني أو تغيّر الحالة يرجّح sein؛ وكثير من الأنشطة يأخذ haben. ثم راجع المساعد المعجمي، خصوصاً حين يتغير معنى الفعل أو تكون العبارة ظرف مدة.",
       commonMistakes: [
         {
           wrong: "Ich habe nach Berlin gefahren.",
           right: "Ich bin nach Berlin gefahren.",
           whyAr:
-            "fahren هنا حركةٌ بين نقطتين بلا مفعول، فمساعدها sein. ولو قلت Ich habe das Auto gefahren لصحّ haben لأنّ das Auto مفعولٌ به.",
+            "في هذا الاستعمال يدلّ fahren على رحلة إلى وجهة فيأخذ sein. أمّا قيادة مركبة بوصفها مفعولاً فتُبنى عادةً مع haben: Ich habe das Auto gefahren.",
         },
         {
           wrong: "Ich bin ein Buch gelesen.",
           right: "Ich habe ein Buch gelesen.",
           whyAr:
-            "وجود المفعول ein Buch يحسم المسألة: كلّ فعلٍ متعدٍّ يأخذ haben بلا استثناء واحد. فالاختبار يكفيك عن الحفظ في أغلب الحالات.",
+            "في هذا المثال يأخذ lesen مع المفعول المباشر ein Buch المساعد haben. هذه قرينة قوية للأفعال المتعدية، لا قاعدة بلا استثناء لكل اختيار بين المساعدين.",
         },
         {
           wrong: "Ich nach Berlin gefahren.",
           right: "Ich bin nach Berlin gefahren.",
           whyAr:
-            "حذف الفعل المساعد نقلاً عن العربية التي تكتفي بكلمةٍ واحدة للماضي. والجملة الألمانية لا تقوم بلا فعلٍ مصرَّف يحمل الشخص والزمن.",
+            "عند تكوين Perfekt يلزم فعل مساعد مصرّف مع Partizip II. لا ينطبق هذا على كل جملة ماضية أو على كل تركيب ألماني؛ فالمضارع وPräteritum لهما تصريفهما الخاص.",
         },
         {
           wrong: "Wir haben zu Hause geblieben.",
           right: "Wir sind zu Hause geblieben.",
           whyAr:
-            "bleiben من الثلاثة المحفوظة. والمنطق يخذلك هنا لأنّ معناها عدم الحركة، فلا تُعمل القياس بل الحفظ: sein · bleiben · passieren.",
+            "يُحفظ bleiben مع sein: Wir sind geblieben. الحركة ليست شرطاً وحيداً لاستعمال sein، وهذه إحدى الصيغ المعجمية الشائعة التي تتعلّم مع مساعدها.",
         },
         {
           wrong: "Ich bin gut geschlafen.",
           right: "Ich habe gut geschlafen.",
           whyAr:
-            "schlafen نشاطٌ يقع في مكانٍ واحد لا انتقال فيه، فمساعدها haben. ويُخطئ فيها كثيرون بالقياس على einschlafen (يغفو) وهي تغيّرُ حالٍ فتأخذ sein فعلاً.",
+            "schlafen يأخذ haben في هذا المثال، أمّا einschlafen فيأخذ sein في استعماله الشائع الدال على بدء النوم/تغيّر الحالة. تعلّم الصيغة مع الفعل والمعنى.",
         },
       ],
       relatedRuleComparison: {
         title: "sein المساعد مقابل sein الأصليّ",
         content:
-          "انتبه إلى أنّ كلمة **bin** تؤدّي وظيفتين مختلفتين تماماً:\n· **Ich bin Student.** ⟵ هنا bin **فعلٌ تامّ** معناه „أنا“، وStudent خبره.\n· **Ich bin gefahren.** ⟵ هنا bin **مجرّد أداة** لا معنى لها، والمعنى كلّه في gefahren.\nوالدليل على أنّها أداةٌ لا فعل: لا يمكن ترجمتها. فلا تقل „أنا كائنٌ مسافراً“، بل „سافرتُ“ فقط.\n\nوالأمر نفسه في haben: **Ich habe ein Auto** (أملك سيارة — فعلٌ تامّ) مقابل **Ich habe gelesen** (قرأتُ — أداة). وهذه ازدواجيةٌ تتكرّر في الألمانية كلّها: الأفعال الثلاثة sein وhaben وwerden تعمل تارةً أفعالاً كاملةً وتارةً أدواتٍ فارغة. ومن أدرك الفرق مبكراً لم تُربكه الجملة الطويلة.",
+          "في **Ich bin Student** يعمل *sein* فعلاً رابطاً في جملة اسمية. وفي **Ich bin gefahren** هو مساعد مصرّف يبني Perfekt مع Partizip II؛ لا يُترجم عادةً بوصفه كلمة مستقلة، لكن له وظيفة نحوية ويحمل التصريف. وبالمثل، **Ich habe ein Auto** استعمالٌ معجمي لـhaben، بينما **Ich habe gelesen** فيه haben مساعد. لا تُوصف المساعدات بأنها «بلا معنى مطلقاً»؛ ادرس وظيفتها في كل تركيب.",
       },
     },
     {
@@ -230,18 +295,18 @@ export const lessonA114: Lesson = {
       titleAr: "Partizip II في الأفعال المنفصلة وغير المنفصلة وفي -ieren",
       titleDe: "Partizip II bei trennbaren, untrennbaren und -ieren-Verben",
       explanationAr:
-        "تعرف الآن ge- + جذر + t/en. وبقيت ثلاث عائلاتٍ تكسر القاعدة كسراً منتظماً — أي أنّ لها قواعدها هي.\n\n**أوّلاً — الأفعال المنفصلة: ge- تدخل في الوسط.**\nالفعل المنفصل قطعتان: بادئةٌ + فعلٌ أساسيّ. وفي Partizip II تُحشَر **ge-** بينهما:\n· auf|stehen ⟵ auf**ge**standen · ein|kaufen ⟵ ein**ge**kauft · an|rufen ⟵ an**ge**rufen · fern|sehen ⟵ fern**ge**sehen\n**Ich bin um sechs aufgestanden.** · **Ich habe meine Mutter angerufen.**\nوالقاعدة سهلة الحفظ: البادئة تبقى أوّلاً، وge- تحلّ محلّها في موضعها المعتاد.\n\n**ثانياً — الأفعال غير المنفصلة: لا ge- إطلاقاً.**\nثمّة بوادئ **لا تنفصل أبداً** وتمنع ge- منعاً: **be- · ge- · er- · ver- · zer- · ent- · emp- · miss-**\n· be**suchen** ⟵ **besucht** (لا gebesucht) · ver**stehen** ⟵ **verstanden** · er**zählen** ⟵ **erzählt** · be**kommen** ⟵ **bekommen**\n**Ich habe meine Oma besucht.** · **Hast du das verstanden?**\nولاحظ bekommen: صورته في Partizip II مطابقةٌ لمصدره تماماً. وهذا يقع في كلّ فعلٍ غير منفصلٍ قويّ ينتهي بـ-en.\n\n**ثالثاً — أفعال -ieren: لا ge- كذلك.**\nكلّ فعلٍ ينتهي بـ**-ieren** (وأغلبها مستعارٌ من اللاتينية والفرنسية) يصنع Partizip II بحذف -en وإضافة -t، بلا ge-:\n· studieren ⟵ **studiert** · telefonieren ⟵ **telefoniert** · fotografieren ⟵ **fotografiert** · reparieren ⟵ **repariert** · passieren ⟵ **passiert**\n**Ich habe in Tunis studiert.** · **Wir haben lange telefoniert.**\n\n**والعلامة الصوتية التي تجمع العائلتين الأخيرتين:** كلّ فعلٍ **لا يقع النبر على مقطعه الأوّل** لا يأخذ ge-. قُل be-SU-chen · stu-DIE-ren · ver-STE-hen: النبر متأخّر في الثلاثة. وقارنها بـLER-nen · AUF-stehen: النبر أوّلاً فتأخذ ge-. فأذنك تُفتيك قبل أن تفتيك القائمة.",
+        "في Partizip II تظهر أنماط مختلفة بحسب نوع الفعل وبنيته؛ لا تستنتج موضع ge- من النبر وحده.\n\n**1) فعل ذو بادئة منفصلة:** تبقى البادئة جزءاً من الفعل المركب؛ وفي Partizip II يأتي ge- بينها وبين الجذع: **auf|stehen → aufgestanden**, **an|rufen → angerufen**, **ein|kaufen → eingekauft**. وفي المضارع قد تنفصل البادئة في الجملة الرئيسية (**Ich stehe früh auf**)، بينما تكتب متصلة في المصدر وPartizip II (**aufstehen, aufgestanden**).\n\n**2) بادئات غير منفصلة شائعة:** **be-, emp-, ent-, er-, ge-, miss-, ver-, zer-**. لا يضاف ge- آخر إلى Partizip II لهذه الأفعال: **besuchen → besucht, verstehen → verstanden, erzählen → erzählt, bekommen → bekommen**. تعلّم الفعل وصيغته؛ فالتغيّر بين الجذر والPartizip يختلف من فعل إلى آخر.\n\n**3) الأفعال المنتهية بـ-ieren:** لا تأخذ ge- في Partizip II، وتنتهي كثير من صيغها بـ-t: **studieren → studiert, telefonieren → telefoniert, fotografieren → fotografiert, reparieren → repariert**.\n\n**الخلاصة:** موقع ge- أو غيابها مرتبط ببنية الفعل وبادئته ونمطه الصرفي؛ قد يساعد النبر في التمييز بين بعض البوادئ، لكنه ليس قاعدةً شاملةً تحكم كل الأفعال. راجع قوائم الأفعال ودوّن المصدر وPartizip II معاً.",
       whyAr:
-        "لماذا تمتنع ge- مع البوادئ غير المنفصلة وأفعال -ieren معاً، مع أنّهما عائلتان لا صلة بينهما ظاهرياً؟ الجواب في **النبر**.\n\nالبادئة ge- كانت في الأصل مقطعاً غير منبور يسبق الجذر المنبور: **ge**-LERNT. فالكلمة تبدأ خفيفةً ثمّ تثقل. أمّا be-SU-chen وstu-DIE-ren فالنبر فيهما متأخّرٌ أصلاً، فإضافة مقطعٍ خفيفٍ ثالثٍ في أوّلها (ge-be-SUCHT) تُنتج ثلاثة مقاطع خفيفة متتالية قبل النبر — وهو إيقاعٌ ترفضه الألمانية رفضاً. فالقاعدة إذن **صوتيّة** لا نحوية، ولذلك جمعت عائلتين لا تشتركان في شيءٍ آخر.\n\nوهذا يفسّر لماذا تصلح الأذن حَكَماً هنا أكثر من القائمة: القائمة تحفظها فتنساها، والإيقاع تسمعه فتحكم به. ولذلك يُنصح المتعلّم بأن ينطق الفعل بصوتٍ مسموع قبل أن يقرّر: إن سمع النبر على أوّله فـge-، وإلاّ فلا.\n\nوأمّا دخول ge- في وسط الفعل المنفصل فمنطقيٌّ تماماً: البادئة المنفصلة **ليست جزءاً من الفعل** بل كلمةٌ مستقلّة التصقت به (بدليل أنّها تنفصل عنه في المضارع وتذهب إلى آخر الجملة). فـge- تلتصق بالفعل الحقيقيّ، والبادئة تبقى خارجها. أي أنّ aufgestanden = auf + (ge + standen) — لا شذوذ فيها البتّة.",
+        "في الأفعال ذات البادئة المنفصلة، يوضع ge- بعد البادئة وقبل الجذع في Partizip II؛ أما البادئات غير المنفصلة فتشغل موضع البادئة ولا يضاف معها ge- أخرى، وأفعال -ieren تتبع نمطاً صرفياً بلا ge-. يصف IDS Grammis هذه الفئات ويذكر النبر/التنغيم ضمن العوامل ذات الصلة ببناء Partizip II؛ لا يختزل القاعدة في «كل فعل غير منبور في أوله لا يأخذ ge-». كما أن البادئة المنفصلة جزء من الفعل المركب وليست كلمةً مستقلة خارجه: انفصالها في بعض الجمل تصريفٌ نحوي، لا دليل على أنها ليست جزءاً من الفعل.",
       table: {
         title: "أين تذهب ge-؟",
-        columns: ["العائلة", "العلامة", "المصدر ⟵ Partizip II", "النبر"],
+        columns: ["العائلة", "العلامة", "المصدر ⟵ Partizip II", "النبر في هذه الأمثلة"],
         rows: [
           { label: "عاديّ", cells: ["ge- في الأوّل", "lernen ⟵ gelernt", "LER-nen"] },
           { label: "منفصل", cells: ["ge- في الوسط", "aufstehen ⟵ aufgestanden", "AUF-stehen"] },
           { label: "منفصل", cells: ["ge- في الوسط", "anrufen ⟵ angerufen", "AN-rufen"] },
-          { label: "غير منفصل", cells: ["بلا ge-", "besuchen ⟵ besucht", "be-SU-chen"] },
-          { label: "غير منفصل", cells: ["بلا ge-", "verstehen ⟵ verstanden", "ver-STE-hen"] },
+          { label: "بادئة غير منفصلة", cells: ["بلا ge- إضافية", "besuchen ⟵ besucht", "be-SU-chen"] },
+          { label: "بادئة غير منفصلة", cells: ["بلا ge- إضافية", "verstehen ⟵ verstanden", "ver-STE-hen"] },
           { label: "‎-ieren", cells: ["بلا ge-، والنهاية -t", "studieren ⟵ studiert", "stu-DIE-ren"] },
         ],
       },
@@ -256,45 +321,40 @@ export const lessonA114: Lesson = {
         { de: "Wir haben zwei Stunden telefoniert.", ar: "تحدّثنا هاتفياً ساعتين. (telefoniert)" },
       ],
       comparisonWithArabic:
-        "العربية تُغيّر صيغة الفعل بالزوائد كذلك (فعل ⟵ أفعل ⟵ استفعل)، لكنّ زوائدها **تُغيّر المعنى** لا الزمن. أمّا ge- فزائدةٌ **زمنية خالصة** لا تمسّ المعنى — وهذا نمطٌ لا نظير له في العربية، فيصعب على المتعلّم أن يستشعر ضرورته ويميل إلى إسقاطه: يقول Ich habe lernt.\n\nلكنّ العربية تُعينه في بابٍ آخر: هي لغةٌ **حسّاسة للوزن والإيقاع** حساسيةً بالغة (وعليها بُني العَروض كلّه). والقاعدة الألمانية هنا إيقاعيّةٌ في جوهرها. فالعربيّ الذي تدرّب على سماع الوزن أقدرُ من غيره على استعمال الأذن حَكَماً — إن نُبّه إلى أنّ المسألة إيقاعٌ لا قائمةُ حفظ.\n\nوالخطأ العمليّ الأشيع: **gebesucht** و**gestudiert**. وسببه القياس السليم على قاعدةٍ سليمة، طُبّق حيث لا يُطبَّق. وعلاجه لا يكون بالحفظ بل بالنطق: من نطق be-SU-chen مرّةً واحدةً منتبهاً إلى النبر لم يعد يخطئ.",
+        "قد تساعد مقارنة اللواصق في اللغتين على ملاحظة أن شكل الكلمة يتغيّر، لكن لا تقابل ge- زائدةً عربية بعينها ولا تفترض أنها لا تحمل إلا معنى الزمن في كل استعمال. لهذا الدرس، تعلّم الفعل الألماني مع Partizip II ومساعده بوصفها صيغة معجمية؛ مثل *besuchen → hat besucht* و*aufstehen → ist aufgestanden*. هذه المقارنة التذكّرية ليست قاعدةً شاملة عن الصرف العربي.",
       eselsbruecke:
-        "انطق الفعل واسمع النبر: إن وقع على أوّل مقطع فـge- تدخل (LERnen ⟵ gelernt · AUFstehen ⟵ aufgestanden)، وإن تأخّر فلا ge- (beSUchen ⟵ besucht · stuDIEren ⟵ studiert).",
+        "احفظ ثلاثة أمثلة مع عائلاتها: aufstehen → aufgestanden (ge- بين البادئة والجذع)، besuchen → besucht (بادئة غير منفصلة)، وstudieren → studiert (-ieren). قد يساند النبر التعرّف إلى البادئة، لكن راجع البنية والصيغة المعجمية ولا تستعمل النبر وحده حكماً.",
       commonMistakes: [
         {
           wrong: "Ich habe meine Oma gebesucht.",
           right: "Ich habe meine Oma besucht.",
-          whyAr:
-            "be- بادئةٌ غير منفصلة تمنع ge-. والعلامة الصوتية: النبر في be-SU-chen متأخّر، وثلاثةُ مقاطع خفيفة قبله إيقاعٌ ترفضه الألمانية.",
+          whyAr: "besuchen يبدأ بالبادئة غير المنفصلة be-، وصيغة Partizip II القياسية besucht بلا ge- إضافية.",
         },
         {
           wrong: "Ich habe in Tunis gestudiert.",
           right: "Ich habe in Tunis studiert.",
-          whyAr:
-            "كلّ فعلٍ بـ-ieren لا يأخذ ge-، ونهايته -t. والسبب واحد: النبر في stu-DIE-ren متأخّر، فلا موضع لمقطعٍ خفيفٍ إضافيّ في الأوّل.",
+          whyAr: "studieren ينتهي بـ-ieren؛ صيغة Partizip II هي studiert بلا ge-.",
         },
         {
           wrong: "Ich habe geaufstanden.",
           right: "Ich bin aufgestanden.",
-          whyAr:
-            "خطآن: ge- موضعها وسط الفعل المنفصل لا أوّله، وaufstehen تغيّرُ حالٍ فمساعدها sein لا haben. والبادئة auf ليست جزءاً من الفعل أصلاً بل كلمةٌ ملتصقة.",
+          whyAr: "الصيغة aufstehen → aufgestanden تضع ge- بين البادئة والجذع، ويأخذ الفعل المساعد sein في هذا الاستعمال.",
         },
         {
           wrong: "Hast du mich angeruft?",
           right: "Hast du mich angerufen?",
-          whyAr:
-            "rufen فعلٌ قويّ (u ⟵ u ونهاية -en)، والبادئة لا تُغيّر ذلك. فالانفصال يُحدّد موضع ge- فقط، أمّا القوّة والضعف فمن الفعل الأساسيّ.",
+          whyAr: "صيغة rufen القوية في Partizip II هي gerufen؛ ومع البادئة المنفصلة an- تصبح angerufen. المساعد هنا haben.",
         },
         {
           wrong: "Ich habe das nicht verstehen.",
           right: "Ich habe das nicht verstanden.",
-          whyAr:
-            "وضعُ المصدر مكان Partizip II. والفارق حرفان (‑stehen ⟵ ‑standen) لكنّه فارقُ زمنٍ كامل: المصدر يلزم بعد الأفعال الناقصة، وPartizip II بعد haben/sein.",
+          whyAr: "بعد haben في Perfekt نستخدم Partizip II: verstanden، لا المصدر verstehen. تعلّم هذه الصيغة القوية مع الفعل.",
         },
       ],
       relatedRuleComparison: {
         title: "البادئة المنفصلة في المضارع مقابل Perfekt",
         content:
-          "تابِع البادئة auf في الحالين وسترى منطقاً واحداً:\n· **المضارع:** Ich **stehe** um sechs **auf**. ⟵ البادئة انفصلت وذهبت إلى الآخر.\n· **Perfekt:** Ich **bin** um sechs **aufgestanden**. ⟵ البادئة عادت والتصقت، وge- دخلت بينها وبين الجذر.\nوالقاعدة الجامعة: البادئة تلتصق كلّما كان الفعل **غير مصرَّف**. ولذلك تلتصق أيضاً بعد الأفعال الناقصة: Ich muss früh **aufstehen** — لا Ich muss früh stehen auf.\n\nفالمواضع ثلاثة: مصرَّفٌ ⟵ تنفصل · مصدرٌ ⟵ تلتصق · Partizip II ⟵ تلتصق وge- في وسطها. وثلاثتها وجهٌ واحد لقاعدةٍ واحدة، فلا تحفظها ثلاثاً.",
+          "قارن استعمال الفعل المنفصل في جملتين: **Ich stehe um sechs auf** (المضارع المصرف؛ تنفصل البادئة في الجملة الرئيسية) و**Ich bin um sechs aufgestanden** (Partizip II؛ تكتب البادئة متصلة ويقع ge- بينها وبين الجذع). وفي المصدر بعد الفعل الناقص تكتب متصلة أيضاً: **Ich muss früh aufstehen**. الانفصال هنا سمة تركيبية في بعض التصاريف؛ لا يعني أن البادئة ليست جزءاً من الفعل.",
       },
     },
     {
@@ -302,19 +362,19 @@ export const lessonA114: Lesson = {
       titleAr: "wollen وsollen — إتمام الأفعال الناقصة",
       titleDe: "Die Modalverben wollen und sollen",
       explanationAr:
-        "عرفتَ في درس الهوايات **können** (يستطيع) و**möchte** (يودّ)، وفي درس السكن **müssen** (يجب) و**dürfen** (يُسمح). وبقي فعلان يُتمّان الستّة، وهما ضروريّان لأنّ من دونهما لا تستطيع التعبير عن **الإرادة** ولا نقل **أمر غيرك**.\n\n**أوّلاً — wollen = يريد (إرادةٌ حازمة).**\n| ich **will** · du **willst** · er/sie/es **will** |\n| wir **wollen** · ihr **wollt** · sie/Sie **wollen** |\n**Ich will Deutsch lernen.** (أريد أن أتعلّم الألمانية — عزمٌ لا مجرّد رغبة)\n\n**ثانياً — sollen = ينبغي (أمرٌ أو نصيحةٌ من غيرك).**\n| ich **soll** · du **sollst** · er/sie/es **soll** |\n| wir **sollen** · ihr **sollt** · sie/Sie **sollen** |\n**Der Arzt sagt, ich soll viel Wasser trinken.** (يقول الطبيب إنّ عليّ أن أشرب ماءً كثيراً)\n\n**ثالثاً — الشذوذان المشتركان بين كلّ الأفعال الناقصة:**\n· **ich وer متطابقان**، وكلاهما **بلا نهاية**: ich will · er will (لا er willt)\n· صوت الجذر يتغيّر في المفرد: wollen ⟵ **will** (ولا يتغيّر في sollen: soll)\n\n**رابعاً — الفرق الحاسم: will مقابل möchte.**\n· **Ich möchte einen Kaffee.** ⟵ مهذّبٌ، وهو ما تقوله في المقهى والمطعم والمتجر.\n· **Ich will einen Kaffee.** ⟵ حازمٌ يقارب الفظاظة في هذا السياق.\nوالقاعدة العملية: **möchte للطلب، wollen للخطّة والعزم**. Ich will nach Deutschland ziehen (أنوي الانتقال) — هنا wollen في محلّها تماماً.\n\n**وخامساً — فخُّ المتحدّث بالإنجليزية:** كلمة will الألمانية **لا تعني المستقبل**. Ich will gehen معناها „أريد أن أذهب“ لا „سأذهب“. والمستقبل يُصاغ بـwerden، وستدرسه في B1.",
+        "**wollen** و**sollen** من الأفعال الناقصة الشائعة. يتصرّف الفعل الناقص في الجملة الرئيسية، ويأتي مصدر الفعل الآخر عادةً في نهاية المجال الفعلي:\n\n**wollen** يعبّر في أمثلة كثيرة عن رغبة أو إرادة أو نيّة: **Ich will Deutsch lernen.** قوّة الطلب ودرجة مباشرته تتأثران بالسياق والعلاقة والنبرة، فلا يوصف كل استعمال لـwollen بالفظاظة.\n\n**sollen** يعبّر، بحسب السياق، عن تكليف أو نصيحة أو توصية أو أمر منقول/متوقّع: **Der Arzt gibt mir einen Rat: „Du sollst genug Wasser trinken.“** لا توجد مطابقة آلية بين sollen و«أمر الغير» أو بين müssen و«ضرورة داخلية»؛ فكلاهما قد يتأثر بمصدر الإلزام وطريقة عرضه.\n\n**تصريف الحاضر:** *ich will, du willst, er/sie/es will, wir wollen, ihr wollt, sie/Sie wollen*؛ و*ich soll, du sollst, er/sie/es soll, wir sollen, ihr sollt, sie/Sie sollen*. لاحظ في المثالين أن صيغة ich وer متطابقة بلا نهاية شخصية ظاهرة، لكن لا تعمّم ذلك على كل فعل ألماني.\n\n**mögen وmöchte:** mögen أحد الأفعال الناقصة الستة؛ ومن تصريفاته **ich mag**. وتُستعمل صيغة Konjunktiv II **möchte** كثيراً في الطلب المهذّب: **Ich möchte bitte einen Kaffee.** وهي خيار شائع، لا الصيغة المهذّبة الوحيدة. أما **Ich will einen Kaffee** فجملة صحيحة نحوياً وقد تبدو أكثر مباشرة في بعض مواقف الخدمة، وليست خطأ مطلقاً.\n\n**تنبيه للناطق بالإنجليزية:** *will* هنا صيغة مضارع من **wollen** تعبّر عن الرغبة/النية، وليست الأداة النحوية لتكوين Futur I كما في الإنجليزية. يمكن للألمانية أن تستعمل المضارع مع ظرف زمني لخطة مستقبلية (**Ich fahre morgen nach Berlin**)، ويُبنى Futur I بـ**werden + Infinitiv** عند الحاجة؛ لا يلزم تحويل كل مستقبل إلى Futur I.",
       whyAr:
-        "لماذا كلّ الأفعال الناقصة بلا نهاية في ich وer؟ لأنّها في الأصل الجرمانيّ لم تكن مضارعاً بل **ماضياً** لأفعالٍ أخرى (يسمّيها النحاة Präteritopräsentia — „ماضياتٌ صارت مضارعاً“). ونهايات الماضي في الجرمانية كانت صفراً في المتكلّم والغائب. فحين انزاح معناها إلى الحاضر حملت معها نهاياتها القديمة. فما تراه شذوذاً هو أثرُ حفريّةٍ لغوية عمرها ألفا سنة.\n\nولماذا صار الماضي مضارعاً أصلاً؟ لأنّ معنى „عرفتُ فأنا أعرف“ و„قدرتُ فأنا قادر“ يجمع الزمنين طبعاً: من اكتسب القدرة في الماضي فهو يملكها الآن. فانزاح المعنى وبقي الشكل.\n\nولماذا تُميّز الألمانية بين sollen وmüssen وكلاهما „يجب“؟ لأنّ الفرق في **مصدر الإلزام**: müssen ضرورةٌ من الواقع أو من داخلك (Ich muss arbeiten — وإلاّ فلا مال)، وsollen إلزامٌ **صادر عن شخصٍ آخر** (Ich soll Wasser trinken — قاله الطبيب). فsollen تنقل صوت غيرك، وهذا ما يجعلها الفعل الأساسيّ في النصيحة وفي نقل الأوامر.",
+        "للتعلّم العملي، راجع تصريف الفعل والسياق الذي يقدّمه المثال. في الحاضر تتطابق هنا صيغتا **ich will / er will** و**ich soll / er soll**؛ هذه ملاحظة على هذين الفعلين في هذه الصيغة، لا قصة تاريخية تفسّر كل أوجه تصريف الأفعال الناقصة. يسرد IDS Grammis الأفعال الناقصة الستة ومعانيها السياقية، ويذكر أن mögen يظهر كثيراً في صيغة Konjunktiv II möchte. كما يميّز بين استعمال modal للتعبير عن الإرادة/التكليف/التوصية وبين أداة Futur: لا تُترجم الألمانية *will* آلياً إلى مستقبل إنجليزي. أما sollen وmüssen فلا تختزل العلاقة بينهما في ثنائية «إلزام من الخارج/ضرورة من الداخل»؛ فشدة الالتزام ومصدره والسياق عوامل مؤثرة.",
       table: {
-        title: "الأفعال الناقصة الستّة — اكتملت اليوم",
+        title: "الأفعال الناقصة الستّة — نظرة إلى صيغ شائعة",
         columns: ["الفعل", "المعنى", "ich / er", "المثال"],
         rows: [
           { label: "können", cells: ["يستطيع", "kann", "Ich kann schwimmen."] },
-          { label: "möchte", cells: ["يودّ (مهذّب)", "möchte", "Ich möchte einen Kaffee."] },
+          { label: "mögen", cells: ["يحب؛ وتشيع صيغة الطلب möchte", "mag", "Ich mag Tee. · Ich möchte einen Kaffee."] },
           { label: "müssen", cells: ["يجب (ضرورة)", "muss", "Ich muss arbeiten."] },
           { label: "dürfen", cells: ["يُسمح له", "darf", "Hier darf man nicht rauchen."] },
           { label: "wollen", cells: ["يريد (عزم)", "will", "Ich will Deutsch lernen."] },
-          { label: "sollen", cells: ["ينبغي (أمر الغير)", "soll", "Ich soll Wasser trinken."] },
+          { label: "sollen", cells: ["ينبغي/تكليف أو توصية بحسب السياق", "soll", "Ich soll Wasser trinken."] },
         ],
       },
       examples: [
@@ -322,51 +382,36 @@ export const lessonA114: Lesson = {
         { de: "Was willst du am Wochenende machen?", ar: "ماذا تريد أن تفعل في العطلة؟ (willst بنهاية -st)" },
         { de: "Wir wollen heute Abend ins Kino gehen.", ar: "نريد الذهاب إلى السينما هذا المساء." },
         { de: "Der Lehrer sagt, wir sollen die Übung machen.", ar: "يقول المعلّم إنّ علينا عمل التمرين. (نقل أمر الغير ⟵ sollen)" },
-        { de: "Soll ich das Fenster öffnen?", ar: "هل أفتح النافذة؟ (عرض المساعدة — استعمالٌ أساسيّ لـsollen)" },
+        { de: "Soll ich das Fenster öffnen?", ar: "هل أفتح النافذة؟ (قد تأتي سؤالاً لعرض المساعدة أو طلب التوجيه بحسب السياق)" },
         { de: "Du sollst nicht so viel Zucker essen.", ar: "لا ينبغي أن تأكل سكّراً كثيراً." },
-        { de: "Ich möchte bitte ein Wasser. – nicht: Ich will ein Wasser.", ar: "أودّ ماءً من فضلك — لا: أريد ماءً. (الفرق في الأدب لا في المعنى)" },
-        { de: "Ich will gehen. (= أريد الذهاب, nicht: سأذهب)", ar: "will ليست المستقبل الإنجليزيّ — فخٌّ يقع فيه من يعرف الإنجليزية." },
+        { de: "Ich möchte bitte einen Kaffee.", ar: "أودّ قهوةً من فضلك. صيغة شائعة للطلب المهذّب." },
+        { de: "Ich will gehen.", ar: "أريد/أنوي الذهاب؛ *will* صيغة من wollen وليست أداة Futur I الألمانية." },
       ],
       comparisonWithArabic:
-        "العربية تصوغ هذا الباب بفعلٍ تامّ يتلوه مصدرٌ مؤوّل: „أريد أن أتعلّم“، „ينبغي أن أشرب“. والألمانية تُشبهها في المبدأ (ناقصٌ + مصدر) لكنّها تختلف في موضعين: لا أداة تقابل „أن“، والمصدر يذهب إلى **آخر الجملة**. فـ„أريد أن أتعلّم الألمانية“ تصير Ich **will** Deutsch **lernen** — بلا „أن“، والمصدر بعد المفعول لا قبله.\n\nوالتمييز بين müssen وsollen له نظيرٌ عربيّ لطيف: „يجب عليّ“ مقابل „قيل لي أن“. فالثانية تحمل صوت غيرك، وهي sollen بعينها. لكنّ العربية لا تُلزم بالتمييز فيميل المتعلّم إلى استعمال müssen في كلّ موضع، فيقول Ich muss Wasser trinken حيث كان يريد نقل نصيحة الطبيب — والمعنى ينقلب من „أُوصيتُ“ إلى „مضطرّ“.\n\nوأمّا wollen فخطرها عند من يعرف الإنجليزية أشدّ من خطرها عند من لا يعرفها: تشابه will الألمانية وwill الإنجليزية تشابهٌ خادع تامّ.",
+        "في أمثلة الأفعال الناقصة، تأتي صيغة الفعل الناقص مصرّفةً ويتبعها مصدر بلا zu: **Ich will Deutsch lernen**. هذا تقريب بنيوي لمثال محدد؛ فلا نفترض أن كل استعمال عربي لـ«أريد/ينبغي أن» يطابق wollen أو sollen. قد تساعد «أريد أن أتعلم» و«ينبغي أن أشرب» في تذكّر المعنى، لكن ترجمة sollen وmüssen وwollen تتغير مع السياق. وكذلك لا تساوِ الألمانية will بالمستقبل الإنجليزي: هنا هي صيغة من wollen، وقد تعبّر عن نية تتجه إلى المستقبل من غير أن تكون علامة Futur I.",
       eselsbruecke:
-        "müssen ضرورةٌ من الواقع، وsollen صوتُ شخصٍ آخر (الطبيب، المعلّم، الأمّ). وwollen عزمٌ، وmöchte أدب. وكلّها بلا نهاية في ich وer.",
+        "wollen تعبّر هنا عن رغبة أو نيّة؛ sollen قد تعرض نصيحة أو تكليفاً أو توقعاً بحسب السياق؛ وmöchte صيغة شائعة مهذبة للطلب. احفظ التصريف ومصدر الفعل، ولا تجعلها مقابلات عربية أو درجات أدب ثابتة.",
       commonMistakes: [
         {
           wrong: "Er willt nach Berlin fahren.",
           right: "Er will nach Berlin fahren.",
-          whyAr:
-            "الأفعال الناقصة بلا نهاية في er، تماماً كما في ich. والصيغتان متطابقتان: ich will · er will. وهذا شذوذٌ عامّ في الستّة كلّها.",
-        },
-        {
-          wrong: "Ich will einen Kaffee, bitte.",
-          right: "Ich möchte einen Kaffee, bitte.",
-          whyAr:
-            "wollen حازمة تقارب الفظاظة في طلبٍ من نادلٍ أو بائع. وmöchte هي صيغة الطلب المهذّبة، وهي المطلوبة في Sprechen Teil 2 وفي كلّ موقف خدمة.",
+          whyAr: "في هذا التصريف نقول er will بلا t؛ طابق صيغة الفعل مع الفاعل.",
         },
         {
           wrong: "Ich will lernen Deutsch.",
           right: "Ich will Deutsch lernen.",
-          whyAr:
-            "المصدر يقع في آخر الجملة بعد الفعل الناقص، لا مباشرةً بعده. وهي الحاضنة الفعلية نفسها التي في Perfekt — قالبٌ واحد بمِلْأين.",
+          whyAr: "في جملة رئيسية خبرية مع فعل ناقص، يأتي المصدر المتعلق به عادةً في نهاية المجال الفعلي: Ich will Deutsch lernen.",
         },
         {
-          wrong: "Ich will morgen nach Berlin fahren. (بمعنى: سأسافر غداً)",
-          right: "Ich fahre morgen nach Berlin.",
-          whyAr:
-            "will لا تصنع المستقبل في الألمانية بل تعني الإرادة. والمستقبل القريب يُعبَّر عنه بالمضارع + ظرف زمن، وهو الأسلوب الغالب في الكلام.",
-        },
-        {
-          wrong: "Der Arzt sagt, ich muss viel Wasser trinken.",
-          right: "Der Arzt sagt, ich soll viel Wasser trinken.",
-          whyAr:
-            "مصدر الإلزام هنا شخصٌ آخر (الطبيب) فيلزم sollen. وmüssen تجعلها ضرورةً واقعية من داخلك، فينقلب المعنى من نقل نصيحةٍ إلى إخبارٍ عن اضطرار.",
+          wrong: "Du soll mehr für die Prüfung lernen.",
+          right: "Du sollst mehr für die Prüfung lernen.",
+          whyAr: "مع du نضيف -st في صيغة الحاضر هنا: du sollst. أما sollen في جملة النصيحة فهو اختيار سياقي لا تعريف وحيد للفعل.",
         },
       ],
       relatedRuleComparison: {
         title: "القوالب الثلاثة التي تُغلق الجملة",
         content:
-          "اجمع اليوم كلّ ما يُغلق الجملة الألمانية:\n· **ناقصٌ + مصدر:** Ich **will** Deutsch **lernen**.\n· **مساعدٌ + Partizip II:** Ich **habe** Deutsch **gelernt**.\n· **فعلٌ منفصل:** Ich **stehe** früh **auf**.\nثلاثتها تفتح بمصرَّفٍ في المركز الثاني وتُغلق بغير مصرَّفٍ في الآخر. وهي البنية التي تُميّز الألمانية عن العربية والإنجليزية معاً.\n\nوتستطيع اليوم أن تجمعها: **Ich habe gestern früh aufstehen müssen** — أو الأشيع في الكلام: **Ich musste gestern früh aufstehen.** والصيغة الأولى موجودة لكنّها ثقيلة، ولن تحتاجها في A1. المهمّ أن تدرك أنّ ما تعلّمته اليوم ليس قائمةً بل **نظاماً** يتركّب.",
+          "في الجمل الرئيسية الخبرية المحايدة، تقارن هذه الأمثلة بين الفعل المصرف في V2 وما يتبعه: **Ich will Deutsch lernen** (مصدر)، **Ich habe Deutsch gelernt** (Partizip II)، و**Ich stehe früh auf** (بادئة منفصلة في المضارع). هذا نمط مفيد في الأمثلة، لا قاعدة تقول إن الألمانية وحدها تضع كل متمم في آخر الجملة. وفي الجملة الفرعية يتغير ترتيب الأفعال؛ راجع أمثلة كل تركيب على حدة.",
       },
     },
   ],
@@ -380,14 +425,14 @@ export const lessonA114: Lesson = {
       "Liebe Salma,\n\nwie geht es dir? Mir geht es sehr gut! Ich habe dir lange nicht geschrieben, denn ich hatte viel Arbeit. Aber jetzt muss ich dir von meinem Wochenende erzählen. Ich bin nämlich zum ersten Mal in Berlin gewesen!",
       "Am Freitag bin ich um fünf Uhr aufgestanden. Das war sehr früh! Ich habe schnell gefrühstückt und bin dann mit dem Zug nach Berlin gefahren. Die Fahrt hat vier Stunden gedauert. Im Zug habe ich ein Buch gelesen und viel aus dem Fenster geschaut.",
       "In Berlin habe ich meine Freundin Nadia getroffen. Sie hat drei Jahre in Deutschland studiert und spricht sehr gut Deutsch. Wir sind zusammen durch die Stadt gelaufen und haben das Brandenburger Tor fotografiert. Danach haben wir in einem kleinen Restaurant gegessen. Ich habe eine Currywurst probiert — sie hat mir sehr gut geschmeckt!",
-      "Am Samstag hat es leider den ganzen Tag geregnet. Wir sind deshalb nicht spazieren gegangen, sondern ins Museum. Dort habe ich viel über die Geschichte der Stadt gelernt. Am Abend habe ich mit meiner Familie telefoniert, und danach haben Nadia und ich Tee getrunken. Um Mitternacht bin ich endlich eingeschlafen.",
+      "Am Samstag hat es leider den ganzen Tag geregnet. Wir sind deshalb nicht spazieren gegangen, sondern wir sind ins Museum gegangen. Dort habe ich viel über die Geschichte der Stadt gelernt. Am Abend habe ich mit meiner Familie telefoniert, und danach haben Nadia und ich Tee getrunken. Um Mitternacht bin ich endlich eingeschlafen.",
       "Am Sonntag bin ich wieder nach Hause gefahren. Ich bin sehr müde gewesen, aber auch sehr glücklich. Berlin hat mir wirklich gefallen.",
       "Und du? Was hast du am Wochenende gemacht? Bist du auch gereist? Schreib mir bitte bald!\n\nViele Grüße\nAmine"
     ],
     "paragraphsAr": [
       "عزيزتي سلمى،\n\nكيف حالك؟ أنا بخير جداً! لم أكتب لك منذ مدّة طويلة لأنّه كان لديّ عملٌ كثير. لكن عليّ الآن أن أحدّثك عن عطلة أسبوعي. فقد كنتُ في برلين لأوّل مرّة!",
       "يوم الجمعة نهضتُ في الساعة الخامسة. كان ذلك مبكّراً جداً! تناولتُ الفطور بسرعة ثمّ سافرتُ بالقطار إلى برلين. استغرقت الرحلة أربع ساعات. في القطار قرأتُ كتاباً ونظرتُ كثيراً من النافذة.",
-      "في برلين قابلتُ صديقتي نادية. درستْ ثلاث سنوات في ألمانيا وتتكلّم الألمانية جيداً جداً. مشينا معاً في المدينة وصوّرنا بوّابة براندنبورغ. بعد ذلك أكلنا في مطعمٍ صغير. جرّبتُ الكاري فورست — وقد أعجبني كثيراً!",
+      "في برلين قابلتُ صديقتي نادية. درست نادية ثلاث سنوات في ألمانيا وتتكلّم الألمانية جيداً جداً. مشينا معاً في المدينة وصوّرنا بوّابة براندنبورغ. بعد ذلك أكلنا في مطعمٍ صغير. جرّبتُ الكاري فورست — وقد أعجبني كثيراً!",
       "يوم السبت أمطرت للأسف طوال النهار. فلم نذهب للتنزّه بل ذهبنا إلى المتحف. هناك تعلّمتُ كثيراً عن تاريخ المدينة. في المساء تحدّثتُ هاتفياً مع عائلتي، وبعد ذلك شربنا أنا ونادية الشاي. في منتصف الليل غفوتُ أخيراً.",
       "يوم الأحد عدتُ إلى البيت. كنتُ متعباً جداً لكنّي كنتُ سعيداً جداً أيضاً. أعجبتني برلين حقاً.",
       "وأنتِ؟ ماذا فعلتِ في عطلة الأسبوع؟ هل سافرتِ أيضاً؟ اكتبي لي قريباً من فضلك!\n\nتحيّاتي الكثيرة\nأمين"
@@ -447,7 +492,7 @@ export const lessonA114: Lesson = {
       {
         "de": "reisen (ist gereist)",
         "ar": "يسافر",
-        "noteAr": "حركة ⟵ sein"
+        "noteAr": "تعلّم هذا الفعل مع sein: ist gereist."
       }
     ],
     "questions": [
@@ -471,7 +516,7 @@ export const lessonA114: Lesson = {
         "id": "rq2",
         "type": "multiple-choice",
         "paragraph": 3,
-        "questionDe": "Was haben Amine und Nadia am Freitag gemacht?",
+        "questionDe": "Was haben Amine und Nadia in Berlin zusammen gemacht?",
         "instructionAr": "اقرأ الفقرة الثالثة واختر الإجابة الصحيحة",
         "options": [
           "Sie sind durch die Stadt gelaufen und haben gegessen",
@@ -480,7 +525,7 @@ export const lessonA114: Lesson = {
           "Sie haben nur telefoniert"
         ],
         "correctIndex": 0,
-        "explanation": "«Wir sind zusammen durch die Stadt gelaufen … haben wir in einem kleinen Restaurant gegessen». والمتحف كان يوم السبت.",
+        "explanation": "تذكر الفقرة: «Wir sind zusammen durch die Stadt gelaufen» و«Danach haben wir … gegessen». أمّا الذهاب إلى المتحف فورد في الفقرة التالية عن يوم السبت.",
         "errorType": "vocabulary"
       },
       {
@@ -496,27 +541,29 @@ export const lessonA114: Lesson = {
           "Weil sie müde waren"
         ],
         "correctIndex": 0,
-        "explanation": "«Am Samstag hat es leider den ganzen Tag geregnet. Wir sind deshalb … ins Museum.» وdeshalb تدلّ على النتيجة.",
+        "explanation": "تقول الفقرة إن المطر استمرّ طوال السبت: «Am Samstag hat es … geregnet». ثم تذكر «Wir sind deshalb nicht spazieren gegangen, sondern wir sind ins Museum gegangen»؛ فالمطر سبب اختيار المتحف بدلاً من التنزّه.",
         "errorType": "vocabulary"
       },
       {
         "id": "rq4",
         "type": "multiple-choice",
+        "paragraph": 2,
         "questionDe": "Welches Hilfsverb steht bei „aufstehen“ im Text?",
         "instructionAr": "انتبه إلى الفعل المساعد: أيّ مساعدٍ استُعمل مع aufstehen في النصّ؟",
         "options": [
           "sein — ich bin aufgestanden",
           "haben — ich habe aufgestanden",
           "werden — ich werde aufgestanden",
-          "beides ist möglich"
+          "kein Hilfsverb — nur aufgestanden"
         ],
         "correctIndex": 0,
-        "explanation": "aufstehen تغيّرُ حالٍ (من نومٍ إلى يقظة) فمساعدها sein: «bin ich um fünf Uhr aufgestanden».",
+        "explanation": "يذكر النص صراحةً: «bin ich um fünf Uhr aufgestanden». ويأتي aufstehen مع sein في هذا الاستعمال الشائع.",
         "errorType": "grammar"
       },
       {
         "id": "rq5",
         "type": "multiple-choice",
+        "paragraph": 3,
         "questionDe": "Warum heißt es „probiert“ und nicht „geprobiert“?",
         "instructionAr": "لماذا probiert بلا ge-؟",
         "options": [
@@ -526,7 +573,7 @@ export const lessonA114: Lesson = {
           "Weil es mit sein steht"
         ],
         "correctIndex": 0,
-        "explanation": "كلّ فعلٍ بـ-ieren لا يأخذ ge-، والنبر فيه متأخّر: pro-BIE-ren.",
+        "explanation": "probieren ينتهي بـ-ieren، وصيغة Partizip II هي probiert بلا ge-. لا يحتاج التفسير إلى قاعدة نبر شاملة.",
         "errorType": "grammar"
       },
       {
@@ -549,7 +596,7 @@ export const lessonA114: Lesson = {
     "redemittel": [
       {
         "de": "Was hast du am Wochenende gemacht?",
-        "ar": "ماذا فعلتَ في عطلة الأسبوع؟ — سؤال Sprechen الأكثر تكراراً"
+        "ar": "ماذا فعلتَ في عطلة الأسبوع؟ — سؤال للتدرب على الحديث عن تجربة سابقة"
       },
       {
         "de": "Ich bin zum ersten Mal in … gewesen.",
@@ -561,7 +608,7 @@ export const lessonA114: Lesson = {
       },
       {
         "de": "Es hat mir sehr gut gefallen.",
-        "ar": "أعجبني كثيراً — جملة ختامٍ ممتازة لأيّ حكاية"
+        "ar": "أعجبني كثيراً — مثال على استعمال gefallen في Perfekt"
       },
       {
         "de": "Leider hat es den ganzen Tag geregnet.",
@@ -572,7 +619,7 @@ export const lessonA114: Lesson = {
         "ar": "وأنت؟ ماذا فعلتَ؟ — تُعيد الكلمة لمحدّثك"
       }
     ],
-    "discussionAr": "احكِ عطلة أسبوعك الماضية في خمس جملٍ على الأقلّ بصيغة Perfekt، واحرص على أن تحوي جملتان منها المساعد sein وثلاث المساعد haben. ثمّ راجع ما كتبتَ وسل نفسك عن كلّ فعل: هل له مفعولٌ به؟ فإن كان فالمساعد haben قطعاً."
+    "discussionAr": "تدريب إنتاجي اختياري: تحدث أو اكتب مسودة قصيرة عن عطلة سابقة مستخدماً جمل Perfekt بسيطة، ثم راجع كل فعل ومساعده بحسب الفعل والمعنى. هذا السؤال المفتوح لا يُصحح ولا يُسجل آلياً، ولا يثبت هدفاً بمجرد فتحه أو كتابة نص فيه. لا تعتمد على وجود Akkusativ وحده لاختيار المساعد."
   },
 
   listening: {
@@ -597,9 +644,9 @@ export const lessonA114: Lesson = {
         itemId: "ls-a1-14-1",
         questionDe: "Was hat Amine am Samstag gemacht?",
         questionAr: "ماذا فعل أمين يوم السبت؟",
-        options: ["Er hat gelernt und telefoniert", "Er ist zum See gefahren", "Er ist zu Hause geblieben"],
+        options: ["Er hat gelernt und seine Familie angerufen", "Er ist zum See gefahren", "Er ist zu Hause geblieben"],
         correctIndex: 0,
-        errorType: "grammar",
+        errorType: "vocabulary",
         explanation: "يوم السبت: «habe für die Prüfung gelernt» و«habe meine Familie angerufen». أمّا البحيرة فكانت يوم الأحد.",
       },
       {
@@ -612,7 +659,7 @@ export const lessonA114: Lesson = {
         options: ["sein — ich bin geblieben", "haben — ich habe geblieben", "werden — ich werde geblieben"],
         correctIndex: 0,
         errorType: "grammar",
-        explanation: "bleiben من الأفعال الثلاثة المحفوظة التي تأخذ sein: sein · bleiben · passieren.",
+        explanation: "في الرسالة تقول نادية: «Ich bin leider zu Hause geblieben». احفظ صيغة bleiben مع sein في هذا المثال؛ لا تختزل قائمة sein في ثلاثة أفعال.",
       },
       {
         type: "multiple-choice",
@@ -624,7 +671,7 @@ export const lessonA114: Lesson = {
         options: ["Mit dem Fahrrad", "Mit dem Auto", "Zu Fuß"],
         correctIndex: 0,
         errorType: "vocabulary",
-        explanation: "«bin ich mit dem Fahrrad zum See gefahren» — بالدرّاجة، والمساعد sein لأنّها حركة.",
+        explanation: "يذكر أمين: «bin ich mit dem Fahrrad zum See gefahren» — وصل إلى البحيرة بالدراجة؛ fahren بمعنى الانتقال إلى وجهة يأخذ sein في هذا المثال.",
       },
     ],
   },
@@ -633,52 +680,58 @@ export const lessonA114: Lesson = {
     id: "pron-a1-14",
     title: "نطق Partizip II — البادئة ge- والنهايتان -t و-en",
     items: [
-      { de: "gelernt", ar: "تعلَّم", note: "غـِلـِرنت — ge غير منبورة والنبر على LERNT" },
-      { de: "gemacht", ar: "فعَل", note: "غـِماخت — ch هنا [x] خشنة بعد a" },
-      { de: "gesprochen", ar: "تكلَّم", note: "غـِشپروخِن — sp في أوّل المقطع تُنطق «شپ»" },
-      { de: "gefahren", ar: "سافر", note: "غـِفارِن — النهاية -en تُبتلع فتصير [ən]" },
-      { de: "aufgestanden", ar: "نهض", note: "أَوفـْغِشتاندِن — النبر على AUF، وge في الوسط بلا نبر" },
-      { de: "besucht", ar: "زار", note: "بـِزوخت — بلا ge، والنبر على SUCHT" },
-      { de: "studiert", ar: "درس", note: "شتوديرت — st في الأوّل «شت»، والنبر على DIERT" },
-      { de: "gewesen", ar: "كان", note: "غـِڤيزِن — w تُنطق «ڤ» وs بين حرفَي علّة تُنطق «ز»" },
+      { de: "gelernt", ar: "تعلَّم", note: "ge- غير منبورة في هذا المثال؛ النبر على مقطع lern، وg ألمانية [ɡ] وليست غيناً عربية." },
+      { de: "gemacht", ar: "فعَل", note: "ch بعد a تمثل [x] في النطق المعياري الشائع؛ تقريبها بخاء عربية لا يعني تطابق الصوتين." },
+      { de: "gesprochen", ar: "تكلَّم", note: "في بدء الجذر sprechen/gesprochen تُنطق sp عادةً [ʃp]؛ وch بعد o تمثل [x]." },
+      { de: "gefahren", ar: "سافر", note: "ge- غير منبورة، والنبر على fahr مع a طويلة؛ اسمع نهاية -en ولا تفترض أن e محذوفة." },
+      { de: "aufgestanden", ar: "نهض", note: "تظهر ge- بين بادئة auf وجذع stehen؛ موضع النبر خاصّ بالكلمة ولا يُستنتج منه حكم عام عن ge-." },
+      { de: "besucht", ar: "زار", note: "لا ge إضافية مع البادئة غير المنفصلة be-؛ النبر في هذا الفعل على المقطع such." },
+      { de: "studiert", ar: "درس", note: "st في بداية الكلمة تُنطق [ʃt]؛ ie تمثل صوتاً طويلاً، والنبر على المقطع -dier-." },
+      { de: "gewesen", ar: "كان", note: "في النطق المعياري الشائع: w ألمانية [v]، وs بين الحركات [z]؛ ge- غير منبورة." },
     ],
-    tip: "قاعدة النبر تحكم هذا الباب كلّه: ge- لا تُنبر أبداً، فهي مقطعٌ خفيف يمهّد للجذر المنبور. وإن وجدتَ الفعل منبوراً في غير أوّله (be-SU-chen, stu-DIE-ren) فلا ge- فيه أصلاً.",
+    tip: "هذه ملاحظات على الكلمات المعروضة لا قاعدة عامة لاستنتاج Partizip II من النبر. حدّد بنية الفعل والبادئة أولاً، واحفظ النطق بالسماع عند توفر الصوت؛ والكتابة العربية تقريبية لا تمثيل صوتي دقيق للألمانية.",
   },
 
   writing: [
     {
       id: "wr-a1-14-1",
       type: "transformation",
-      instructionAr: "حوّل الجملة من المضارع إلى Perfekt",
+      instructionAr: "حوّل الجملة من المضارع إلى Perfekt مع إبقاء الفاعل في بداية الجملة.",
       prompt: "Ich lerne Deutsch. →",
-      acceptedAnswers: ["Ich habe Deutsch gelernt.", "Ich habe Deutsch gelernt"],
+      acceptedAnswers: ["Ich habe Deutsch gelernt."],
       sampleAnswer: "Ich habe Deutsch gelernt.",
-      hint: "lernen فعلٌ ضعيف له مفعول (Deutsch) ⟵ haben + ge...t، والـPartizip في آخر الجملة.",
-      explanation: "haben في المركز الثاني، gelernt في الآخر، والمفعول بينهما.",
+      hint: "في هذا المثال يأخذ lernen مع المفعول Deutsch المساعد haben؛ وتعلّم الصيغة gelernt. وجود مفعول قرينة، لا قاعدة آلية لكل الأفعال.",
+      explanation: "في هذه الجملة الرئيسية الخبرية يأتي haben في V2 وgelernt في نهاية المجال الفعلي، والمفعول Deutsch بينهما.",
       errorType: "grammar",
     },
     {
       id: "wr-a1-14-2",
       type: "transformation",
-      instructionAr: "حوّل الجملة من المضارع إلى Perfekt (انتبه إلى المساعد)",
+      instructionAr: "حوّل الجملة من المضارع إلى Perfekt مع إبقاء الفاعل في بداية الجملة (انتبه إلى المساعد).",
       prompt: "Wir fahren nach Berlin. →",
-      acceptedAnswers: ["Wir sind nach Berlin gefahren.", "Wir sind nach Berlin gefahren"],
+      acceptedAnswers: ["Wir sind nach Berlin gefahren."],
       sampleAnswer: "Wir sind nach Berlin gefahren.",
-      hint: "حركةٌ بين نقطتين بلا مفعول ⟵ sein.",
-      explanation: "fahren هنا حركة ⟵ sind، وgefahren في آخر الجملة.",
+      hint: "هنا يدلّ fahren على السفر إلى وجهة: Wir sind nach Berlin gefahren.",
+      explanation: "في معنى السفر إلى Berlin نستخدم sein؛ ويأتي Partizip II gefahren في نهاية الجملة الرئيسية.",
       errorType: "grammar",
     },
     {
       id: "wr-a1-14-3",
-      type: "transformation",
-      instructionAr: "اكتب أربع جملٍ عن يومك أمس بصيغة Perfekt: جملتان بـhaben وجملتان بـsein",
-      prompt: "Was hast du gestern gemacht? Schreiben Sie vier Sätze im Perfekt.",
-      acceptedAnswers: [
-        "Ich bin um sieben Uhr aufgestanden. Ich habe gefrühstückt. Ich bin zur Arbeit gefahren. Ich habe am Abend ferngesehen.",
+      type: "fill-blank",
+      instructionAr: "أكمل قالب البريد بصيغة Perfekt بالمساعدات وPartizip II المناسبة",
+      template: "Liebe Salma,\n\nAm Wochenende ___ ich nach Berlin ___. Dort ___ ich meine Freundin Nadia ___. Wir ___ zusammen durch die Stadt ___ und ___ am Abend in einem Restaurant ___.\n\nViele Grüße\nAmine",
+      blanks: [
+        { correct: "bin", options: ["bin", "habe", "sind", "bist"], errorType: "grammar" },
+        { correct: "gefahren", options: ["gefahren", "gefahrt", "gefahrene", "fahren"], errorType: "grammar" },
+        { correct: "habe", options: ["habe", "bin", "hat", "war"], errorType: "grammar" },
+        { correct: "getroffen", options: ["getroffen", "getrefft", "getroffenet", "treffen"], errorType: "grammar" },
+        { correct: "sind", options: ["sind", "haben", "waren", "ist"], errorType: "grammar" },
+        { correct: "gelaufen", options: ["gelaufen", "gelauft", "gelaufenet", "laufen"], errorType: "grammar" },
+        { correct: "haben", options: ["haben", "sind", "hat", "waren"], errorType: "grammar" },
+        { correct: "gegessen", options: ["gegessen", "geesst", "gegessenet", "essen"], errorType: "grammar" },
       ],
-      sampleAnswer: "Ich bin um sieben Uhr aufgestanden. Ich habe gefrühstückt. Ich bin zur Arbeit gefahren. Ich habe am Abend ferngesehen.",
-      hint: "استعمل aufstehen وfahren مع sein، وfrühstücken وfernsehen مع haben.",
-      explanation: "النموذج يجمع العائلات: منفصلٌ بـsein (aufgestanden)، ضعيفٌ بـhaben (gefrühstückt)، حركةٌ بـsein (gefahren)، ومنفصلٌ بـhaben (ferngesehen).",
+      hint: "تذكّر أن المساعد يتبع الفعل ومعناه في الجملة؛ في تركيب Perfekt يأتي Partizip II في نهاية جملة V2.",
+      explanation: "Am Wochenende bin ich nach Berlin gefahren. Dort habe ich meine Freundin Nadia getroffen. Wir sind zusammen durch die Stadt gelaufen und haben am Abend in einem Restaurant gegessen. هذا قالب إكمال موجّه، وليس مهمة تأليف بريد حر.",
       errorType: "grammar",
     },
   ],
@@ -707,26 +760,26 @@ export const lessonA114: Lesson = {
       id: "e3",
       type: "multiple-choice",
       instructionAr: "أيّ فعلٍ مساعد يناسب؟",
-      questionDe: "Ich ___ gestern nach Hamburg gefahren.",
+      questionDe: "Im Perfekt: Ich ___ gestern nach Hamburg gefahren.",
       options: ["bin", "habe", "war", "werde"],
       correctIndex: 0,
-      explanation: "fahren هنا حركةٌ بين نقطتين بلا مفعول ⟵ sein.",
+      explanation: "في هذا الاستعمال يعني fahren السفر إلى وجهة، ويأخذ sein: Ich bin nach Hamburg gefahren.",
       errorType: "grammar",
     },
     {
       id: "e4",
       type: "multiple-choice",
       instructionAr: "أيّ فعلٍ مساعد يناسب؟",
-      questionDe: "Sie ___ einen langen Brief geschrieben.",
+      questionDe: "Meine Freundin ___ einen langen Brief geschrieben.",
       options: ["hat", "ist", "war", "wird"],
       correctIndex: 0,
-      explanation: "einen langen Brief مفعولٌ به ⟵ haben قطعاً. اختبار المفعول يحسم المسألة.",
+      explanation: "في هذا المثال يأخذ schreiben المساعد haben مع المفعول einen langen Brief؛ لا تجعل قرينة المفعول اختباراً آلياً لكل فعل.",
       errorType: "grammar",
     },
     {
       id: "e5",
       type: "word-ordering",
-      instructionAr: "رتّب الجملة: انتبه إلى موضع Partizip II",
+      instructionAr: "رتّب الجملة وابدأ بـIch؛ ضع ظرف gestern قبل المفعول، وانتبه إلى موضع Partizip II",
       tokens: ["Ich", "habe", "gestern", "einen", "Film", "gesehen"],
       correctSentence: "Ich habe gestern einen Film gesehen",
       explanation: "المساعد habe في المركز الثاني، وgesehen في آخر الجملة، وما بينهما ظرفٌ ومفعول.",
@@ -740,7 +793,7 @@ export const lessonA114: Lesson = {
       wrongWord: "gelernt Deutsch",
       correctWord: "Deutsch gelernt",
       options: ["Deutsch gelernt", "gelernt Deutsch", "Deutsch lernte", "lernte Deutsch"],
-      explanation: "Partizip II يُغلق الجملة، فالمفعول Deutsch يسبقه.",
+      explanation: "في الجملة الرئيسية الخبرية المحايدة يأتي Partizip II عادةً في نهاية المجال الفعلي؛ هنا يسبقه المفعول Deutsch. وتختلف مواضع الأفعال في الجمل الفرعية والأسئلة.",
       errorType: "word-order",
     },
     {
@@ -782,7 +835,7 @@ export const lessonA114: Lesson = {
         { left: "telefonieren", right: "telefoniert" },
         { left: "bleiben", right: "geblieben" },
       ],
-      explanation: "لاحظ العائلات: ضعيفٌ (gemacht) · قويّ (gegessen) · منفصل (angerufen) · غير منفصل (verstanden) · ‎-ieren (telefoniert).",
+      explanation: "لاحظ الأنماط: gemacht ضعيف، gegessen وgeblieben قويان، angerufen منفصل، verstanden ببادئة غير منفصلة، وtelefoniert من -ieren.",
       errorType: "grammar",
     },
     {
@@ -797,18 +850,18 @@ export const lessonA114: Lesson = {
         "Wir haben zu Hause bleiben.",
       ],
       correctIndex: 0,
-      explanation: "bleiben من الثلاثة المحفوظة ⟵ sein، وPartizip II لها geblieben (قويّة).",
+      explanation: "في هذا الاستعمال يأتي bleiben مع sein، وصيغة Partizip II هي geblieben؛ احفظ الفعل مع مساعده.",
       errorType: "grammar",
     },
     {
       id: "e12",
       type: "error-correction",
-      instructionAr: "صحّح الخطأ في الجملة",
+      instructionAr: "في جملة Perfekt هذه، صحّح الفعل المساعد.",
       wrongSentence: "Ich habe nach Berlin gefahren.",
       wrongWord: "habe",
       correctWord: "bin",
-      options: ["bin", "habe", "war", "wurde"],
-      explanation: "لا مفعول في الجملة والفعل حركةٌ بين نقطتين ⟵ sein.",
+      options: ["bin", "habe", "bist", "sind"],
+      explanation: "fahren بمعنى السفر إلى Berlin يأخذ sein هنا؛ اختيار المساعد يعتمد على استعمال الفعل، لا على غياب مفعول وحده.",
       errorType: "grammar",
     },
     {
@@ -828,11 +881,11 @@ export const lessonA114: Lesson = {
     {
       id: "e14",
       type: "transformation",
-      instructionAr: "حوّل إلى Perfekt",
+      instructionAr: "حوّل إلى Perfekt مع إبقاء الفاعل في بداية الجملة.",
       prompt: "Er ruft seine Mutter an. →",
-      acceptedAnswers: ["Er hat seine Mutter angerufen.", "Er hat seine Mutter angerufen"],
+      acceptedAnswers: ["Er hat seine Mutter angerufen."],
       sampleAnswer: "Er hat seine Mutter angerufen.",
-      explanation: "seine Mutter مفعولٌ به ⟵ haben. وanrufen منفصل ⟵ an-ge-rufen، وrufen قويّ فالنهاية -en.",
+      explanation: "anrufen يأخذ haben، وصيغته angerufen (بادئة منفصلة + Partizip II من rufen).",
       errorType: "grammar",
     },
     {
@@ -852,10 +905,10 @@ export const lessonA114: Lesson = {
       id: "e16",
       type: "multiple-choice",
       instructionAr: "أيّ فعلٍ ناقصٍ يناسب السياق؟",
-      questionDe: "Der Arzt sagt, ich ___ viel Wasser trinken.",
-      options: ["soll", "will", "kann", "darf"],
+      questionDe: "Der Arzt empfiehlt mir, täglich genug Wasser zu trinken. Er sagt: „Du ___ genug Wasser trinken.“",
+      options: ["sollst", "willst", "kannst", "darfst"],
       correctIndex: 0,
-      explanation: "الإلزام صادرٌ عن شخصٍ آخر (الطبيب) ⟵ sollen. وmüssen تجعلها ضرورةً داخلية فينقلب المعنى.",
+      explanation: "السياق يقول إن الطبيب يوصي؛ لذلك تناسب sollen هذه النصيحة. ليست المقارنة قاعدةً مطلقة تمنع müssen في كل حديث عن الطبيب.",
       errorType: "vocabulary",
     },
     {
@@ -870,7 +923,7 @@ export const lessonA114: Lesson = {
         "Ich muss einen Kaffee.",
       ],
       correctIndex: 0,
-      explanation: "möchte هي صيغة الطلب المهذّبة. وwollen حازمة تقارب الفظاظة في موقف خدمة.",
+      explanation: "المطلوب هنا صيغة شائعة مهذّبة للطلب، لذلك تناسب möchte. جملة Ich will einen Kaffee صحيحة نحوياً وقد تكون مباشرة أكثر بحسب السياق، لا خطأ مطلقاً.",
       errorType: "vocabulary",
     },
     {
@@ -881,16 +934,16 @@ export const lessonA114: Lesson = {
       wrongWord: "willt",
       correctWord: "will",
       options: ["will", "willt", "wollt", "wollen"],
-      explanation: "الأفعال الناقصة بلا نهاية في er: ich will · er will.",
+      explanation: "في هذا التصريف لا نضيف t إلى er: ich will · er will.",
       errorType: "conjugation",
     },
     {
       id: "e19",
       type: "word-ordering",
-      instructionAr: "رتّب الجملة: الفعل الناقص والمصدر",
+      instructionAr: "رتّب الجملة وابدأ بـWir؛ ضع heute Abend قبل ins Kino، واجعل المصدر في النهاية",
       tokens: ["Wir", "wollen", "heute", "Abend", "ins", "Kino", "gehen"],
       correctSentence: "Wir wollen heute Abend ins Kino gehen",
-      explanation: "الناقص في المركز الثاني والمصدر في الآخر — الحاضنة الفعلية نفسها التي في Perfekt.",
+      explanation: "في هذه الجملة الرئيسية يأتي الفعل الناقص في V2 والمصدر في نهاية المجال الفعلي؛ قارن ذلك بموضع Partizip II في Perfekt.",
       errorType: "word-order",
     },
     {
@@ -905,61 +958,62 @@ export const lessonA114: Lesson = {
         "Weil studieren mit sein steht",
       ],
       correctIndex: 0,
-      explanation: "كلّ فعلٍ بـ-ieren بلا ge-، والسبب صوتيّ: النبر في stu-DIE-ren متأخّر.",
+      explanation: "studieren ينتهي بـ-ieren، وPartizip II هو studiert بلا ge-. النبر ليس وحده قاعدةً عامة لتكوين Partizip II.",
       errorType: "grammar",
     },
     {
       id: "e21",
       type: "fill-blank",
-      instructionAr: "أكمل المساعد الصحيح في الجملتين",
+      instructionAr: "أكمل مساعد Perfekt الصحيح في الجملتين",
       template: "Ich ___ um sieben aufgestanden und ___ dann gefrühstückt.",
       blanks: [
         { correct: "bin", options: ["bin", "habe", "war", "werde"], errorType: "grammar" },
         { correct: "habe", options: ["habe", "bin", "war", "wurde"], errorType: "grammar" },
       ],
-      explanation: "المساعدان يختلفان في الجملة الواحدة: aufstehen تغيّرُ حالٍ ⟵ sein، وfrühstücken نشاطٌ ⟵ haben.",
+      explanation: "تقول الصيغة: Ich bin aufgestanden und habe gefrühstückt؛ تعلّم كل فعل مع مساعده في استعماله هنا.",
       errorType: "grammar",
     },
     {
       id: "e22",
       type: "transformation",
-      instructionAr: "أجب عن السؤال بجملةٍ كاملة في Perfekt",
+      instructionAr: "أجب بجملة كاملة في Perfekt؛ ابدأ بـIch أو بـam Wochenende، وضع Partizip II في آخر الجملة.",
       prompt: "Was hast du am Wochenende gemacht? (ins Museum gehen)",
       acceptedAnswers: [
         "Ich bin ins Museum gegangen.",
-        "Ich bin ins Museum gegangen",
+        "Ich bin am Wochenende ins Museum gegangen.",
+        "Am Wochenende bin ich ins Museum gegangen.",
       ],
       sampleAnswer: "Ich bin ins Museum gegangen.",
-      explanation: "gehen حركةٌ بين نقطتين ⟵ sein، وPartizip II لها gegangen (قويّة).",
+      explanation: "gehen بمعنى الذهاب إلى المتحف يأخذ sein، وPartizip II هو gegangen.",
       errorType: "grammar",
     },
     {
       id: "e23",
       type: "multiple-choice",
-      instructionAr: "أيّ جملةٍ تعني «سأسافر غداً» فعلاً؟",
-      questionDe: "Welcher Satz bedeutet „Ich reise morgen ab“ (Zukunft)?",
+      instructionAr: "أيّ جملة تستخدم المضارع للفعل الرئيسي مع ظرف زمني لحدث مستقبلي؟",
+      questionDe: "Welcher Satz verwendet das Präsens des Vollverbs mit einer Zeitangabe für ein zukünftiges Ereignis?",
       options: [
         "Ich fahre morgen nach Berlin.",
-        "Ich will morgen nach Berlin fahren.",
-        "Ich bin morgen nach Berlin gefahren.",
-        "Ich soll morgen nach Berlin fahren.",
+        "Ich werde morgen nach Berlin fahren.",
+        "Ich bin gestern nach Berlin gefahren.",
+        "Ich sollte morgen nach Berlin fahren.",
       ],
       correctIndex: 0,
-      explanation: "will لا تصنع المستقبل في الألمانية بل تعني الإرادة. والمستقبل القريب يُعبَّر عنه بالمضارع + ظرف زمن.",
-      errorType: "vocabulary",
+      explanation: "Ich fahre morgen nach Berlin verwendet das Präsens des Vollverbs fahren mit der Zeitangabe morgen. Die anderen Optionen verwenden Futur I, Perfekt mit gestern oder die Konjunktiv-II-Form sollte; gefragt ist ausdrücklich das Präsens des Vollverbs.",
+      errorType: "grammar",
     },
     {
       id: "e24",
       type: "matching",
-      instructionAr: "طابق كلّ فعلٍ بمساعده الصحيح",
+      instructionAr: "طابق كلّ فعلٍ بالمساعد وصيغة Partizip II المناسبين",
       pairs: [
-        { left: "ein Buch lesen", right: "haben" },
-        { left: "nach Berlin fliegen", right: "sein" },
-        { left: "zu Hause bleiben", right: "sein" },
-        { left: "acht Stunden schlafen", right: "haben" },
-        { left: "früh einschlafen", right: "sein" },
+        { left: "ein Buch lesen", right: "haben + gelesen" },
+        { left: "nach Berlin fliegen", right: "sein + geflogen" },
+        { left: "zu Hause bleiben", right: "sein + geblieben" },
+        { left: "acht Stunden schlafen", right: "haben + geschlafen" },
+        { left: "früh einschlafen", right: "sein + eingeschlafen" },
       ],
-      explanation: "اختبار المفعول: ein Buch وacht Stunden ⟵ haben. والحركةُ وتغيّرُ الحال والمحفوظات ⟵ sein.",
+      explanation: "في هذه الأمثلة يأخذ lesen مع مفعوله وschlafen مع عبارة المدة haben؛ ويأخذ fliegen إلى وجهة وbleiben وeinschlafen sein. هذه أزواج معجمية وسياقية، لا قاعدة «كل حركة = sein».",
       errorType: "grammar",
     },
     {
@@ -971,13 +1025,13 @@ export const lessonA114: Lesson = {
       correctWord: "verstanden",
       isAlreadyCorrect: true,
       options: ["verstanden", "geverstanden", "verstehen", "verstandet"],
-      explanation: "verstehen غير منفصل ⟵ بلا ge-، وله مفعول (das) ⟵ haben. والجملة سليمة.",
+      explanation: "verstehen له البادئة غير المنفصلة ver-، لذلك Partizip II هو verstanden بلا ge- إضافية؛ وفي هذا المثال يستعمل haben. الجملة سليمة.",
       errorType: "grammar",
     },
     {
       id: "e26",
       type: "word-ordering",
-      instructionAr: "رتّب السؤال في Perfekt",
+      instructionAr: "رتّب السؤال: ابدأ بـWas وضع am Wochenende قبل Partizip II",
       tokens: ["Was", "hast", "du", "am", "Wochenende", "gemacht"],
       correctSentence: "Was hast du am Wochenende gemacht",
       explanation: "في السؤال بأداة: الأداة أوّلاً، المساعد ثانياً، وPartizip II في الآخر.",
@@ -990,39 +1044,39 @@ export const lessonA114: Lesson = {
       {
         wrong: "Ich habe gelernt Deutsch.",
         right: "Ich habe Deutsch gelernt.",
-        whyAr: "الخطأ الأوّل في هذا الباب: وضع Partizip II مباشرةً بعد المساعد نقلاً عن العربية والإنجليزية. والألمانية تُغلق به الجملة.",
+        whyAr: "في الجملة الرئيسية الخبرية المحايدة يأتي Partizip II عادةً في نهاية المجال الفعلي؛ لذلك يسبقه المفعول هنا. راجع نوع الجملة قبل تعميم موضع الأفعال.",
       },
       {
         wrong: "Ich habe nach Berlin gefahren.",
         right: "Ich bin nach Berlin gefahren.",
-        whyAr: "لا مفعول والفعل حركة ⟵ sein. وسل نفسك دائماً: هل في الجملة مفعولٌ به؟",
+        whyAr: "fahren بمعنى السفر إلى وجهة يأخذ sein في هذا المثال. غياب المفعول وحده ليس اختباراً شاملاً لاختيار المساعد.",
       },
       {
         wrong: "Ich habe meine Oma gebesucht.",
         right: "Ich habe meine Oma besucht.",
-        whyAr: "بادئة be- غير منفصلة تمنع ge-. والعلامة الصوتية: النبر في be-SU-chen متأخّر.",
+        whyAr: "besuchen يبدأ بالبادئة غير المنفصلة be-، وصيغة Partizip II هي besucht بلا ge- إضافية.",
       },
       {
         wrong: "Ich habe getrinkt.",
         right: "Ich habe getrunken.",
-        whyAr: "trinken قويّ: صوت الجذر يتغيّر والنهاية -en. والقياس على الضعيفة فخٌّ.",
+        whyAr: "Partizip II من trinken هو getrunken؛ تعلّم هذه الصيغة القوية ولا تقسها على نهاية الأفعال الضعيفة.",
       },
       {
-        wrong: "Er willt einen Kaffee.",
-        right: "Er möchte einen Kaffee.",
-        whyAr: "خطآن: النهاية (er will بلا t) والأسلوب (möchte هي المهذّبة في موقف الطلب).",
+        wrong: "Er willt nach Berlin fahren.",
+        right: "Er will nach Berlin fahren.",
+        whyAr: "في الحاضر er will بلا t. لا تخلط ذلك مع مباشرة الطلب؛ فـwollen صحيح نحوياً وتختلف ملاءمته بحسب السياق.",
       },
     ],
     eselsbruecken: [
-      "«قوسان» — المساعد يفتح في المركز الثاني وPartizip II يُغلق في الآخر، مهما طال ما بينهما.",
-      "«اختبار المفعول» — هل في الجملة مفعولٌ به؟ إن كان فـhaben قطعاً، وإلاّ فانظر: حركةٌ أو تغيّرُ حالٍ ⟵ sein.",
-      "«ثلاثةٌ تُحفظ حفظاً» — sein · bleiben · passieren تأخذ sein رغم أنّ منطقها لا يقتضيه.",
-      "«أذنك تُفتيك» — إن كان النبر على أوّل الفعل فـge- (LERnen ⟵ gelernt)، وإن تأخّر فلا ge- (beSUchen · stuDIEren).",
-      "«will ليست will» — الألمانية will تعني «يريد» لا «سوف». فخُّ من يعرف الإنجليزية.",
+      "في الجملة الرئيسية الخبرية المحايدة: الفعل المصرف في V2 والجزء غير المصرف في نهاية المجال الفعلي؛ راجع ترتيب الجملة الفرعية على حدة.",
+      "اختيار haben/sein يتبع الفعل ومعناه واستعماله؛ المفعول المباشر قرينة مفيدة، لا اختبار آلي. واحفظ المساعد مع Partizip II.",
+      "bleiben وsein وpassieren أمثلة شائعة تتعلم معها sein؛ ليست هذه قائمة حصرية لكل الأفعال.",
+      "في Partizip II افحص نوع البادئة والفعل: aufstehen → aufgestanden، besuchen → besucht، studieren → studiert. لا تستنتج القاعدة من النبر وحده.",
+      "الألمانية will صيغة من wollen تعبّر عن رغبة/نية؛ ليست أداة Futur I، وقد يُستعمل Präsens مع ظرف زمني للمستقبل.",
     ],
     culturalNote: {
-      title: "لماذا يتكلّم الألمان بالـPerfekt ويكتبون بالـPräteritum؟",
-      content: "إن قرأتَ روايةً ألمانية وجدتَ «Er ging nach Hause» (Präteritum)، وإن سمعتَ ألمانياً يحكي عن يومه قال «Ich bin nach Hause gegangen» (Perfekt). والقسمة إقليمية أيضاً: كلّما اتّجهتَ جنوباً — بايرن والنمسا وسويسرا — قلّ استعمال Präteritum في الكلام حتّى يكاد يختفي، فلا يبقى منه إلاّ war وhatte. أمّا في الشمال فتسمعه أحياناً في الحكي. والقاعدة الآمنة لك في A1 وA2: تكلّم بالـPerfekt دائماً، واحتفظ بـwar وhatte وحدهما من الماضي البسيط — فهما مستعملان في كلّ مكان.",
+      title: "Perfekt وPräteritum: الاستعمال يتغيّر بحسب السياق",
+      content: "يشيع Perfekt في المحادثات، ويشيع Präteritum في كثير من السرد المكتوب؛ لكن هذا ميل مرتبط بالنوع النصي والسجل، لا قسمة مطلقة بين الكلام والكتابة. توجد فروق إقليمية أيضاً، وقد يقل استعمال Präteritum المنطوق في بعض مناطق الجنوب، لكن لا يصح اختزال ذلك في «لا يبقى إلا war وhatte» أو تقديمه قاعدةً لكل الناطقين. يركّز هذا الدرس على أمثلة Perfekt ولا يطلب استعمال زمن واحد دائماً.",
     },
   },
 
@@ -1031,10 +1085,10 @@ export const lessonA114: Lesson = {
       id: "mt-a1-14-1",
       type: "multiple-choice",
       instructionAr: "اختر الفعل المساعد الصحيح",
-      questionDe: "Am Sonntag ___ wir im Park spazieren gegangen.",
+      questionDe: "Im Perfekt: Am Sonntag ___ wir im Park spazieren gegangen.",
       options: ["sind", "haben", "waren", "werden"],
       correctIndex: 0,
-      explanation: "spazieren gehen حركةٌ بلا مفعول ⟵ sein.",
+      explanation: "في spazieren gehen بمعنى التمشّي، يُستعمل sein: Am Sonntag sind wir spazieren gegangen.",
       errorType: "grammar",
     },
     {
@@ -1059,7 +1113,7 @@ export const lessonA114: Lesson = {
     {
       id: "mt-a1-14-4",
       type: "word-ordering",
-      instructionAr: "رتّب الجملة",
+      instructionAr: "رتّب الجملة وابدأ بالفاعل المركّب Meine Schwester",
       tokens: ["Meine", "Schwester", "hat", "in", "München", "studiert"],
       correctSentence: "Meine Schwester hat in München studiert",
       explanation: "المساعد hat في المركز الثاني بعد المبتدأ المركّب، وstudiert في الآخر.",
@@ -1069,22 +1123,22 @@ export const lessonA114: Lesson = {
       id: "mt-a1-14-5",
       type: "multiple-choice",
       instructionAr: "أيّ فعلٍ ناقصٍ يناسب؟",
-      questionDe: "Meine Eltern sagen, ich ___ mehr lernen.",
-      options: ["soll", "will", "darf", "kann"],
+      questionDe: "Meine Eltern raten mir: „Du ___ mehr für die Prüfung lernen.“",
+      options: ["sollst", "willst", "darfst", "kannst"],
       correctIndex: 0,
-      explanation: "الإلزام صادرٌ عن الوالدين ⟵ sollen: نقلُ صوت غيرك.",
+      explanation: "الفعل raten يضع العبارة في سياق نصيحة؛ لذلك تناسب الصيغة Du sollst. أما wollen وdürfen وkönnen فتعبر هنا عن نية أو إذن أو قدرة لا عن النصيحة المطلوبة.",
       errorType: "vocabulary",
     },
   ],
 
   flashcards: [
-    { id: "fc1", de: "das Perfekt", ar: "الماضي المحكيّ (haben/sein + Partizip II)", example: "Im Gespräch benutzt man das Perfekt.", exampleAr: "في الحديث يُستعمل الماضي المحكيّ.", level: "A1" },
+    { id: "fc1", de: "das Perfekt", ar: "الماضي المحكيّ (haben/sein + Partizip II)", example: "Im Gespräch benutzt man das Perfekt.", exampleAr: "يشيع Perfekt في محادثات كثيرة، ولا يقتصر الماضي الألماني عليه.", level: "A1" },
     { id: "fc2", de: "gemacht (machen)", ar: "فعَل", example: "Was hast du gestern gemacht?", exampleAr: "ماذا فعلتَ أمس؟", level: "A1" },
-    { id: "fc3", de: "gelernt (lernen)", ar: "تعلَّم", example: "Ich habe zwei Stunden gelernt.", exampleAr: "تعلّمتُ ساعتين.", level: "A1" },
+    { id: "fc3", de: "gelernt (lernen)", ar: "تعلَّم", example: "Ich habe zwei Stunden gelernt.", exampleAr: "تعلّمتُ لمدّة ساعتين.", level: "A1" },
     { id: "fc4", de: "gegessen (essen)", ar: "أكَل", example: "Wir haben im Restaurant gegessen.", exampleAr: "أكلنا في المطعم.", level: "A1" },
     { id: "fc5", de: "getrunken (trinken)", ar: "شرِب", example: "Ich habe einen Tee getrunken.", exampleAr: "شربتُ شاياً.", level: "A1" },
     { id: "fc6", de: "gefahren (fahren)", ar: "سافر، ذهب بمركبة", example: "Ich bin nach Berlin gefahren.", exampleAr: "سافرتُ إلى برلين.", level: "A1" },
-    { id: "fc7", de: "gegangen (gehen)", ar: "ذهب مشياً", example: "Wir sind ins Kino gegangen.", exampleAr: "ذهبنا إلى السينما.", level: "A1" },
+    { id: "fc7", de: "gegangen (gehen)", ar: "ذهب", example: "Wir sind ins Kino gegangen.", exampleAr: "ذهبنا إلى السينما.", level: "A1" },
     { id: "fc8", de: "gewesen (sein)", ar: "كان", example: "Ich bin in Berlin gewesen.", exampleAr: "كنتُ في برلين.", level: "A1" },
     { id: "fc9", de: "geblieben (bleiben)", ar: "بقي", example: "Wir sind zu Hause geblieben.", exampleAr: "بقينا في البيت.", level: "A1" },
     { id: "fc10", de: "aufgestanden (aufstehen)", ar: "نهض من النوم", example: "Ich bin um sechs aufgestanden.", exampleAr: "نهضتُ في السادسة.", level: "A1" },
@@ -1092,8 +1146,8 @@ export const lessonA114: Lesson = {
     { id: "fc12", de: "besucht (besuchen)", ar: "زار", example: "Wir haben unsere Oma besucht.", exampleAr: "زرنا جدّتنا.", level: "A1" },
     { id: "fc13", de: "verstanden (verstehen)", ar: "فهِم", example: "Ich habe das nicht verstanden.", exampleAr: "لم أفهم ذلك.", level: "A1" },
     { id: "fc14", de: "studiert (studieren)", ar: "درس في الجامعة", example: "Sie hat in Tunis studiert.", exampleAr: "درستْ في تونس.", level: "A1" },
-    { id: "fc15", de: "wollen", ar: "يريد (عزم)", example: "Ich will Deutsch lernen.", exampleAr: "أريد أن أتعلّم الألمانية.", level: "A1" },
-    { id: "fc16", de: "sollen", ar: "ينبغي (أمرُ الغير)", example: "Der Arzt sagt, ich soll Wasser trinken.", exampleAr: "يقول الطبيب إنّ عليّ شرب الماء.", level: "A1" },
+    { id: "fc15", de: "wollen", ar: "يريد/ينوي بحسب السياق", example: "Ich will Deutsch lernen.", exampleAr: "أريد أن أتعلّم الألمانية.", level: "A1" },
+    { id: "fc16", de: "sollen", ar: "ينبغي/يُطلب منه بحسب السياق", example: "Der Arzt sagt, ich soll Wasser trinken.", exampleAr: "يقول الطبيب إنّ عليّ شرب الماء.", level: "A1" },
     { id: "fc17", de: "gestern", ar: "أمس", example: "Gestern habe ich viel gearbeitet.", exampleAr: "أمس عملتُ كثيراً.", level: "A1" },
     { id: "fc18", de: "letztes Wochenende", ar: "عطلة الأسبوع الماضية", example: "Letztes Wochenende bin ich gereist.", exampleAr: "عطلة الأسبوع الماضية سافرتُ.", level: "A1" },
     { id: "fc19", de: "gefallen (hat gefallen)", ar: "أعجب", example: "Berlin hat mir sehr gefallen.", exampleAr: "أعجبتني برلين كثيراً.", level: "A1" },
@@ -1157,7 +1211,7 @@ export const lessonA114: Lesson = {
           options: [
             { de: "Ja, ich will im Sommer wieder nach Hamburg fahren.",
               ar: "نعم، أريد السفر إلى هامبورغ ثانيةً في الصيف.", best: true, replyDe: "Super! Viel Spaß dann!", replyAr: "رائع! استمتع إذن!" },
-            { de: "Ja, ich will fahren wieder.", ar: "نعم، أريد أسافر ثانيةً. (المصدر في غير موضعه)", best: false, replyDe: "Fast! Der Infinitiv kommt ans Ende: „wieder fahren“.", replyAr: "قريب! المصدر يأتي في الآخر: «wieder fahren»." },
+            { de: "Ja, ich will fahren wieder.", ar: "نعم، أريد أسافر ثانيةً. (المصدر في غير موضعه)", best: false, replyDe: "Fast! Der Infinitiv steht am Ende, und „wieder“ kommt davor: „Ja, ich will im Sommer wieder nach Hamburg fahren.“", replyAr: "قريب! المصدر يأتي في الآخر: «wieder fahren»." },
           ],
         },
       ],

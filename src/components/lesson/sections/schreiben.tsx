@@ -8,18 +8,17 @@ import {recordEvent} from "@/lib/analytics/events";
 import type { Lesson, WritingExercise } from "@/types/lesson";
 
 /**
- * 6) الكتابة (Schreiben) — إنشاء جمل، ترجمة، إكمال فراغات، إملاء
- * + مهمة الكتابة الحرة المقيّمة (تدريب Schreiben — 25% من الامتحان)
+ * 6) الكتابة (Schreiben) — إنشاء جمل، إكمال فراغات، إملاء، ومسودة للمراجعة الذاتية
  */
 export function SchreibenSection({ exercises, lesson }: { exercises: WritingExercise[]; lesson: Lesson }) {
   return (
     <div className="space-y-5">
       <div className="flex items-center gap-2 text-muted-foreground">
         <PenLine className="h-5 w-5 text-primary" aria-hidden="true" />
-        <p className="text-sm">تمارين الكتابة — ستكتب جملة كاملة أو تكمل فراغاً. التصحيح فوري.</p>
+        <p className="text-sm">التمارين المحددة تُصحح فورياً؛ أما المسودة الحرة فهي للتدريب والمراجعة الذاتية ولا تُقيّم آلياً.</p>
       </div>
 
-      {/* مهمة الكتابة الحرة المقيّمة (المهارة الأهم في الامتحان) */}
+      {/* مسودة كتابة حرة غير مقيّمة؛ مهام الكتابة المحددة أدناه هي التي تسجل نتائج */}
       <FreeWritingTrainer lesson={lesson} />
 
       {exercises.map((exercise) => (
