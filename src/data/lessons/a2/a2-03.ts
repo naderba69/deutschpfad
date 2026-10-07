@@ -1,7 +1,7 @@
 import type { Lesson } from "@/types/lesson";
 
 /**
- * الدرس A2-03: في المطعم — سُلّم التأدّب، schmecken والداتيف، مسار الزيارة، وصف الطعم
+ * الدرس A2-03: في المطعم — صيغ الطلب في السياق، أمثلة Dativ، مفردات المطعم ووصف الطعام
  */
 export const lessonA203: Lesson = {
   id: "a2-03",
@@ -11,39 +11,68 @@ export const lessonA203: Lesson = {
   titleDe: "Im Restaurant",
   titleAr: "المطعم والطعام",
   summary:
-    "سُلّم الطلب المهذّب من will إلى hätte gern (وأصله Konjunktiv II من haben ومögen)، وأفعال «الشيء فاعلٌ والإنسان متلقٍّ» schmecken/gefallen/passen، ومسار الزيارة كاملاً من الحجز والجلوس إلى Zusammen oder getrennt? والبقشيش المنطوق، وصفات الطعم والمقادير وقاعدة etwas Warmes — مع نصّ «Ein Abend im Gasthaus Löwen».",
+    "تعبيرات طلب شائعة تختلف ملاءمتها بحسب السياق، ومنها möchte وhätte gern وnehmen؛ أمثلة على schmecken مع Dativ ومراجعة gefallen/passen؛ مفردات مختارة من زيارة مطعم ووصف الطعام والكميات؛ ونصّ «Ein Abend im Gasthaus Löwen» مع أسئلة قراءة واستماع وكتابة موجّهة. الملاحظات الثقافية أمثلة محدودة لا قواعد عامة لكل المطاعم أو المناطق.",
 
   lernziele: [
     {
       id: "z1",
-      de: "Ich kann höflich bestellen und die Stufen der Höflichkeit unterscheiden.",
-      ar: "أن أطلب بأدب وأميّز درجات السُلّم: will ⟵ möchte ⟵ hätte gern ⟵ Könnte ich…?",
+      de: "Ich kann in vorgegebenen Situationen eine passende Bestellformulierung auswählen und eine kurze Bestellung schreiben.",
+      ar: "أن أختار في المواقف المحددة صيغة طلب مناسبة للسياق، وأكتب طلباً قصيراً.",
+      evidence: {
+        exerciseIds: ["e16", "e26", "w1"],
+        taskIds: ["practice:a2-03:e16", "practice:a2-03:e26", "writing:a2-03:w1"],
+        labelAr: "اختر صيغة الطلب المقصودة في e16، وأعِد الصياغة واكتب طلباً مقبولاً في e26 وw1.",
+        completion: "all-correct",
+      },
     },
     {
       id: "z2",
-      de: "Ich kann mit schmecken, gefallen und passen über Essen sprechen.",
-      ar: "أن أستعمل الأفعال التي يكون الشيء فيها فاعلاً والإنسان في الداتيف: Das Essen schmeckt mir.",
+      de: "Ich kann in kurzen Beispielen die passenden Formen von schmecken, gefallen und passen wählen.",
+      ar: "أن أختار في أمثلة قصيرة صيغة الفعل المناسبة مع schmecken وgefallen وpassen، وأميز المعنى المقصود.",
+      evidence: {
+        exerciseIds: ["e13", "e15", "e18", "e27"],
+        taskIds: ["practice:a2-03:e13", "practice:a2-03:e15", "practice:a2-03:e18", "practice:a2-03:e27"],
+        labelAr: "أجب عن سؤال schmecken في e13، وحوّل مثال gefallen في e15، وطابق تصريف الفعل والسياق في e18 وe27.",
+        completion: "all-correct",
+      },
     },
     {
       id: "z3",
-      de: "Ich kann einen Restaurantbesuch von der Reservierung bis zur Rechnung führen.",
-      ar: "أن أدير زيارة مطعمٍ كاملة: الحجز، الجلوس، الطلب على مرحلتين، ثمّ Zusammen oder getrennt? والبقشيش.",
+      de: "Ich kann ausdrücklich genannte Einzelheiten im Restaurant-Lesetext und in den Hördialogen finden.",
+      ar: "أن أستخرج تفاصيل مذكورة صراحةً في نص المطعم وحوارات الاستماع، من دون تعميمها على كل زيارة.",
+      evidence: {
+        exerciseIds: ["rq1", "rq2", "rq3", "rq4", "rq5", "rq6", "q1", "q2", "q3"],
+        taskIds: [
+          "reading:read-a2-03:rq1", "reading:read-a2-03:rq2", "reading:read-a2-03:rq3",
+          "reading:read-a2-03:rq4", "reading:read-a2-03:rq5", "reading:read-a2-03:rq6",
+          "listening:l1:q1", "listening:l1:q2", "listening:l2:q3",
+        ],
+        labelAr: "أجب عن أسئلة النص والحوارات؛ لا تُحتسب مشاهدة النص أو إجابات أسئلة الاستماع بعد كشف التفريغ.",
+        completion: "all-correct",
+      },
     },
     {
       id: "z4",
-      de: "Ich kann Geschmack, Mengen und Wünsche wie etwas Warmes ausdrücken.",
-      ar: "أن أصف الطعم (scharf مقابل heiß)، وأطلب المقادير (zwei Tassen Kaffee)، وأقول etwas Warmes.",
+      de: "Ich kann in vorgegebenen Beispielen Geschmackswörter unterscheiden sowie Mengen und etwas Warmes passend ergänzen.",
+      ar: "أن أميز في أمثلة محددة بين صفات الطعم والحرارة، وأختار صيغة كمية وetwas Warmes المناسبة.",
+      evidence: {
+        exerciseIds: ["e20", "e21", "e22"],
+        taskIds: ["practice:a2-03:e20", "practice:a2-03:e21", "practice:a2-03:e22"],
+        labelAr: "ميّز الحرارة عن التوابل في e20، وأكمل وحدات العدّ في e21، واختر كتابة etwas Warmes في e22.",
+        completion: "all-correct",
+      },
     },
   ],
 
   einfuehrung: {
     motivatingQuestionAr:
-      "جملتان تطلبان الشيء نفسه: Ich will einen Kaffee وIch hätte gern einen Kaffee. الأولى مفهومة، لكنّها في أذن النادل الألماني تشبه «أنا عايز قهوة» في وجه ضيف. الفرق ليس في المعنى بل في **صورة الفعل**: hätte ليست فعلاً جديداً بل صورة شرطية من haben، وmöchte صورة شرطية من mögen. اليوم نفكّ هذا اللغز، ثمّ نمشي في المطعم من باب الحجز إلى جملة البقشيش الأخيرة.",
-    motivatingQuestionDe: "Was hätten Sie gern?",
+      "يمكن أن تسمع في المطعم «Ich möchte einen Kaffee» أو «Ich hätte gern einen Kaffee» أو «Ich nehme einen Kaffee». صيغٌ شائعة، لكنّها ليست درجاتٍ ثابتةً على سلّم عالمي. و«Ich will einen Kaffee» صحيحة نحوياً وقد تبدو مباشرةً في بعض المواقف؛ يؤثر السياق والنبرة والصياغة المصاحبة في وقعها. تاريخياً ترتبط möchte بـKonjunktiv II من mögen، لكنّها تُستعمل اليوم غالباً كصيغة طلب حاضرة مألوفة. سنقارن المعاني والاستعمالات من دون وصف بديل صحيح بأنه مرفوض اجتماعياً.",
+    motivatingQuestionDe: "Was möchten Sie bestellen?",
     contextAr:
-      "المطعم موقفٌ صغير لكنّه يجمع أربعة دروس في واحد: التأدّب الصرفيّ، وأفعالٌ يكون الشيء فيها فاعلاً والإنسان متلقّياً (Das Essen schmeckt mir)، ومسارٌ اجتماعيّ له محطّاتٌ ثابتة (الجلوس بانتظار الإرشاد، الطلب على مرحلتين، الماء المدفوع، سؤال Zusammen oder getrennt?)، ولغةُ وصفٍ للطعم والمقادير. من أتقن هذه الأربعة أكل بلا خوف.",
+      "يعرض هذا الدرس صيغاً شائعة للطلب، وأمثلةً على schmecken مع ضمير Dativ مع مراجعة gefallen/passen، وبعض مفردات المطاعم وصفات الطعام والكميات. الحوارات التالية مواقف تدريبية محددة؛ ولا نستنتج منها ترتيباً أو سياسةً واحدة للخدمة أو الماء أو الحساب في جميع المطاعم.",
     connectionToPreviousAr:
-      "في a1-03 تعلّمتَ الطعام والنصب، وفي a1-07 تعلّمتَ الأسعار وسُلّم الطلب في المخبز، وفي a2-01 تعلّمتَ خطوات الشكوى المهذّبة الثلاث. اليوم نضمّها كلّها ونضيف أصلها الصرفيّ، فتصير الجملة مفهومةً لا محفوظة.",
+      "في A1-03 تعلّمتَ الطعام والنصب، وفي A1-06 ظهرت möchte وصيغ الطلب، وفي A1-07 تدربتَ على الأسعار والشراء، وفي A2-01 درستَ صيغ شكوى مهذّبة. نراجع ما سبق ونضيف أمثلةً سياقيةً جديدةً من المطعم، لا «أول لقاء» بهذه الصيغ.",
+
     activateVocabulary: [
       { de: "die Speisekarte", ar: "قائمة الطعام" },
       { de: "bestellen", ar: "يطلب (طعاماً)" },
@@ -70,11 +99,16 @@ export const lessonA203: Lesson = {
       id: "r2",
       type: "multiple-choice",
       instructionAr:
-        "مراجعة من A1 (درس a1-06 — أوقات الفراغ والهوايات): اختر صيغة الأمر المهذبة:",
-      questionDe: "___ Sie bitte! (تعالوا)",
-      options: ["Kommen", "Komm", "Kommt", "Kommen Sie"],
-      correctIndex: 3,
-      explanation: "الأمر المهذب مع Sie: Kommen Sie! (درس الهوايات).",
+        "مراجعة من A1 (درس a1-06 — أوقات الفراغ والهوايات): اختر الأمر الرسمي لدعوة ضيفٍ إلى الدخول:",
+      questionDe: "Sie bitten einen Gast formell hereinzukommen. Was sagen Sie?",
+      options: [
+        "Kommen Sie bitte herein!",
+        "Komm bitte herein!",
+        "Kommt bitte herein!",
+        "Kommen bitte herein!",
+      ],
+      correctIndex: 0,
+      explanation: "الأمر الرسمي مع Sie: Kommen Sie bitte herein!",
       errorType: "grammar",
     },
     {
@@ -96,54 +130,55 @@ export const lessonA203: Lesson = {
   theory: [
     {
       id: "t1",
-      titleAr: "سُلّم الطلب — من Ich will إلى Ich hätte gern",
-      titleDe: "Höflich bestellen: möchten, hätte gern, nehmen",
+      titleAr: "صيغ الطلب في المطعم — اختيارٌ بحسب السياق",
+      titleDe: "Im Restaurant bestellen: Formulierungen im Kontext",
       explanationAr:
-        "تعرف من A1 أنّ möchten تعني «أودّ»، وتعرف Ich nehme. لكنّ المطعم الألمانيّ لا يقيس صحّة الجملة وحدها، بل **درجة تأدّبها** — والمتعلّم الذي يقول Ich will einen Kaffee يبني جملةً سليمةً نحوياً ومرفوضةً اجتماعياً. لذلك نرتّب اليوم الصيغ في **سُلّمٍ من خمس درجات**، لا لنحفظها بل لنعرف متى نصعد ومتى ننزل.\n\n**الدرجة الأولى (الأدنى) — Ich will …** إرادةٌ عارية. تُقال للطفل ولا تُقال للنادل. وهي في أذن الألمانيّ أقرب إلى «أنا عايز» منها إلى «أريد».\n\n**الثانية — Ich nehme …** «آخذ». محايدةٌ عمليّة، وهي أكثر ما يُسمع فعلاً في المطاعم اليومية. ليست فظّة، لكنّها لا تحمل تأدّباً زائداً. صالحةٌ تماماً حين يكون الطلب واضحاً وسريعاً.\n\n**الثالثة — Ich möchte …** «أودّ». وهي في الأصل **صيغة Konjunktiv II من الفعل mögen**، أي أنّ تأدّبها ليس اصطلاحاً بل نحوٌ عامل: الصيغة الشرطية تُبعد الطلب عن المباشرة فتلطّفه. ولهذا لا يوجد لها مصدرٌ حقيقيّ في الاستعمال الحديث — تقول Ich mag Kaffee (أحبّ القهوة، ميلٌ دائم) وIch möchte einen Kaffee (أودّ قهوةً الآن، طلبٌ عارض)، والفرق بينهما فرق الميل عن الطلب.\n\n**الرابعة — Ich hätte gern …** «سأحبّ أن يكون لديّ». وهي أيضاً Konjunktiv II، لكن من **haben** هذه المرّة: hätte + gern. وهي أرقى قليلاً من möchten وأكثر شيوعاً عند النادل والبائع. لاحظ البنية: **hätte gern + مفعولٌ منصوب**، بلا فعلٍ ثانٍ ⟵ Ich hätte gern **einen** Salat.\n\n**الخامسة (الأعلى) — Könnte ich bitte … haben? / Ich würde gern …** سؤالٌ لا خبر. يُستعمل حين يكون الطلب استثنائياً أو مُكلِّفاً للطرف الآخر: Könnte ich bitte noch ein Glas Wasser haben?\n\n**والقاعدة الحاكمة للسُّلّم كلّه: كلّما ابتعدت الصيغة عن الإخبار المباشر ازداد التأدّب.** الشرطية أبعد من الإخبار، والسؤال أبعد من الشرطية. وهذه ليست خصوصيةً ألمانية بل مبدأ عامّ في اللغات، لكنّ الألمانية تُشغّله بصيغةٍ صرفية صريحة.",
+        `تسمع في المطعم صيغاً مختلفة للطلب، ولا تصطفّ في سلّم عالميّ ثابت للتأدّب. يتأثر وقع العبارة بالموقف، والنبرة، والعلاقة بين المتحدثين، وما إذا أضيفت كلمات مثل **bitte**.
+
+· **Ich möchte …** صيغة شائعة للرغبة أو الطلب: **Ich möchte einen Kaffee, bitte.** استُعملت **möchte** كثيراً في الطلبات اليومية. تاريخياً هي صيغة Konjunktiv II من **mögen**، لكنّها تُعامل في الاستعمال الحديث غالباً كصيغة الحاضر؛ فلا نصف كل استعمال لها كأنّه شرطٌ حيّ.
+· **Ich hätte gern …** صيغة طلب شائعة أخرى: **Ich hätte gern einen Salat, bitte.** و**hätte** صيغة Konjunktiv II من **haben**؛ وهي لا تجعلها «أرقى» في كل موقف من möchte.
+· **Ich nehme …** اختيارٌ مألوف لما ستتناوله: **Ich nehme die Suppe.**
+· **Könnte ich bitte … haben?** سؤالٌ يمكن أن يخفف الطلب في سياقات كثيرة: **Könnte ich bitte die Karte haben?** وليس قاعدةً آليةً بأن السؤال دائماً ألطف من الخبر.
+· **Für mich bitte …** تركيب مختصر ممكن في الطلب: **Für mich bitte einen Salat.**
+· **Ich will …** صحيحة نحوياً وتعبّر بوضوح عن الإرادة؛ قد تبدو مباشرةً في طلب خدمة، ويؤثر السياق والنبرة ووجود **bitte** في وقعها. لذلك لا نسمّيها «مرفوضة اجتماعياً» ولا نعدّها خطأً.
+
+في **hätte gern + اسم** يأتي الاسم في الحالة المطلوبة في الجملة؛ في **Ich hätte gern einen Salat** نقول **einen Salat** لأنّ المفعول مذكر منصوب. نتدرّب هنا على فهم العبارات واختيارها لموقف محدد، لا على ترتيبها من الأكثر إلى الأقل تهذّباً.`,
       whyAr:
-        "لأنّ هذا هو الموضع الذي يُحكَم فيه على المتعلّم اجتماعياً قبل أن يُحكَم عليه لغوياً. جملةٌ فيها خطأٌ في الأداة تُغتفر ويُصحّحها المستمع في ذهنه؛ أمّا نبرةُ الأمر فتُسجَّل انطباعاً عن الشخص لا عن لغته. وامتحان Goethe A2 يقيس هذا صراحةً في **Sprechen Teil 3** (تقديم طلبٍ والاستجابة لطلب)، وفي معايير التقييم بندٌ اسمه Angemessenheit — ملاءمة الصيغة للموقف — منفصلٌ عن بند الصحّة النحوية.\n\nوهناك سببٌ بنيويّ أعمق: möchten وhätte gern هما **أوّل لقاءٍ منهجيّ للمتعلّم بالـKonjunktiv II**، وهو الوضع الصرفيّ الذي سيحمل لاحقاً في B1 كلّ التمنّي والافتراض والنصيحة (wäre, könnte, würde, sollte). فإن فهمهما اليوم بوصفهما **صيغةً شرطيةً تعمل**، لا كلمتين مفردتين تُحفظان، دخل B1 وقد بُني نصف الباب. ولهذا نُسمّيهما هنا باسمهما الصرفيّ صراحةً بدل أن نمرّرهما كمفردات.\n\nوأخيراً: hätte gern تُدرَّب هنا لأنّها أكثر صيغة يسمعها المقيم في ألمانيا يومياً — في المخبز والمقهى والصيدلية — وهي مع ذلك من أكثر ما يُهمله كتاب المستوى، فيخرج المتعلّم يجيد möchten وحدها ويبدو مقروءاً من كتاب.",
+        "المتعلم يحتاج إلى أكثر من صيغة واحدة ليختار ما يناسب الموقف، وإلى فهم أن صحة التركيب النحوي لا تحسم وحدها أثره التداولي. قدّمت A1-06 بالفعل möchte وميّزت بين سياقاتها وwill؛ يوسّع هذا القسم التدريب إلى صيغ أخرى في طلب المطعم، من غير ادعاء سلّم تأدب ثابت أو معيار امتحاني.",
       table: {
-        title: "سُلّم الطلب — خمس درجات",
-        columns: ["الصيغة", "الأصل الصرفيّ", "درجة التأدّب", "المثال"],
+        title: "صيغ ممكنة ومعناها في الموقف",
+        columns: ["الصيغة", "وظيفة ممكنة", "ملاحظة السياق", "مثال"],
         rows: [
           {
-            label: "Ich will …",
-            cells: ["إخبار مباشر", "✗ مرفوضة", "Ich will einen Kaffee."],
-          },
-          {
-            label: "Ich nehme …",
-            cells: ["إخبار مباشر", "محايدة", "Ich nehme die Suppe."],
-          },
-          {
             label: "Ich möchte …",
-            cells: [
-              "Konjunktiv II من mögen",
-              "مهذّبة",
-              "Ich möchte einen Tee.",
-            ],
+            cells: ["رغبة أو طلب", "صيغة شائعة للطلب؛ ليست درجة رقمية", "Ich möchte einen Tee, bitte."],
           },
           {
             label: "Ich hätte gern …",
-            cells: [
-              "Konjunktiv II من haben",
-              "أرقى",
-              "Ich hätte gern einen Salat.",
-            ],
+            cells: ["طلب بصيغة gern", "صيغة شائعة أخرى؛ لا يلزم أن تكون أرقى من möchte", "Ich hätte gern einen Salat."],
+          },
+          {
+            label: "Ich nehme …",
+            cells: ["اختيار من القائمة", "مناسبة عند بيان ما ستتناوله", "Ich nehme die Suppe."],
+          },
+          {
+            label: "Für mich bitte …",
+            cells: ["طلب مختصر", "يتحدد وقعه بالنبرة والمقام", "Für mich bitte einen Salat."],
           },
           {
             label: "Könnte ich … haben?",
-            cells: [
-              "سؤال + Konjunktiv II",
-              "الأعلى",
-              "Könnte ich bitte die Karte haben?",
-            ],
+            cells: ["طلب في صورة سؤال", "قد يخفف الطلب؛ ليست قاعدة مطلقة", "Könnte ich bitte die Karte haben?"],
+          },
+          {
+            label: "Ich will …",
+            cells: ["إرادة أو طلب مباشر", "صحيحة؛ قد تكون مباشرةً بحسب السياق", "Ich will einen Kaffee, bitte."],
           },
         ],
       },
       examples: [
         {
           de: "Ich hätte gern einen Kaffee, bitte.",
-          ar: "أودّ قهوةً من فضلك. (hätte gern + منصوب)",
+          ar: "أودّ قهوةً من فضلك. (صيغة طلب شائعة)",
         },
         {
           de: "Ich möchte die Gemüsesuppe, bitte.",
@@ -151,232 +186,267 @@ export const lessonA203: Lesson = {
         },
         {
           de: "Ich nehme das Schnitzel mit Pommes.",
-          ar: "آخذ الشنيتسل مع البطاطا. (محايدة عمليّة)",
+          ar: "سآخذ الشنيتسل مع البطاطا. (اختيار من القائمة)",
+        },
+        {
+          de: "Ich will heute einen Tee.",
+          ar: "أريد شاياً اليوم. (صحيحة، ووقعها المباشر يتأثر بالسياق والنبرة)",
         },
         {
           de: "Könnte ich bitte noch ein Glas Wasser haben?",
-          ar: "أيمكنني كوب ماءٍ آخر من فضلك؟ (الأرقى)",
+          ar: "هل يمكنني الحصول على كأس ماء آخر من فضلك؟",
         },
         {
           de: "Für mich bitte nur einen Salat.",
-          ar: "لي سلطة فقط من فضلك. (بلا فعلٍ أصلاً — مختصرة ومهذّبة)",
+          ar: "لي سلطة فقط من فضلك. (صيغة مختصرة)",
         },
         {
           de: "Wir hätten gern die Karte, bitte.",
-          ar: "نودّ قائمة الطعام من فضلك. (الجمع: hätten)",
+          ar: "نودّ قائمة الطعام من فضلك. (تصريف wir: hätten)",
         },
         {
           de: "Ich mag Fisch, aber heute möchte ich Fleisch.",
-          ar: "أحبّ السمك، لكنّي أودّ اللحم اليوم. (ميلٌ دائم مقابل طلبٍ عارض)",
-        },
-        {
-          de: "Als Vorspeise hätte ich gern die Suppe.",
-          ar: "كمقبّلات أودّ الشوربة. (لاحظ: hätte ich بعد التقديم — V2)",
+          ar: "أحبّ السمك، لكنّي أودّ اللحم اليوم. (ميلٌ عام مقابل رغبة في هذا الموقف)",
         },
       ],
       comparisonWithArabic:
-        "العربية تصنع التأدّب **بالمعجم والدعاء** أكثر ممّا تصنعه بالصرف: «لو سمحت»، «من فضلك»، «إذا تكرّمت»، «الله يخليك». والفعل نفسه يبقى كما هو: «أريد قهوة» تصير مهذّبةً بإضافة «لو سمحت» لا بتغيير «أريد».\n\nالألمانية تفعل العكس: **تغيّر صورة الفعل نفسه**. Ich will ⟵ Ich möchte ⟵ Ich hätte gern: ثلاث درجاتٍ من التأدّب في ثلاث صورٍ صرفية، وbitte إضافةٌ فوقها لا بديلٌ عنها. ومن هنا خطأٌ شائع ومحرج: يقول المتعلّم Ich will einen Kaffee, bitte ظانّاً أنّ bitte كافيةٌ كما تكفي «لو سمحت» في العربية — فتخرج الجملة كمن يقول «أنا عايز قهوة، لو سمحت» بنبرة أمر.\n\nوفرقٌ ثانٍ: العربية تستعمل «أودّ» و«أريد» متقاربتين، وكثيراً ما تُترجَم möchten بـ«أريد» في المعاجم — فيقيس المتعلّم عليها wollen. والصواب أنّ **wollen تقابل «أريد» بمعنى الإرادة والعزم** (Ich will Deutsch lernen — عزمٌ مشروع)، أمّا في الطلب الخدميّ فلا موضع لها البتّة.\n\nوثالثاً: العربية لا تملك مقابلاً صرفياً مباشراً لـhätte gern. أقرب ما يقابلها «كنت أودّ» أو «حابب» في العاميّة — وكلاهما يستعمل الماضي للتلطيف، وهذا بالضبط ما تفعله الألمانية. فالمنطق مشترك والأداة مختلفة، وهذه أفضل حالٍ للمتعلّم: يفهم العلّة ويحفظ الصورة.",
+        `يمكن أن تضيف العربية كلمات مثل «من فضلك» أو «لو سمحت»، ويمكن للألمانية أن تستعمل **bitte** أيضاً إلى جانب أفعال الطلب. لا توجد مطابقة آلية بين فعل عربي وصيغة ألمانية واحدة، ولا قاعدة تقول إن إضافة bitte تجعل كل عبارة متساوية في وقعها.
+
+**Ich möchte** و**Ich hätte gern** و**Ich nehme** و**Könnte ich …?** خيارات مختلفة للتعبير عن الرغبة أو الاختيار أو الطلب؛ يحدّد السياق والنبرة ما يلائم. أمّا **Ich will einen Kaffee** فهي سليمة نحوياً، لكنها قد تبدو أكثر مباشرة في موقف خدمة؛ ويمكن أن تغيّر **bitte** والنبرة أثرها. لا نصف صيغة صحيحة بأنها ممنوعة اجتماعياً، ولا نعمّم على كل متحدثي العربية طريقةً واحدة لصنع التأدّب.`,
       eselsbruecke:
-        "«كلّما ابتعدتَ عن الإخبار اقتربتَ من الأدب»: will (إخبار) ⟵ möchte (شرط) ⟵ hätte gern (شرط + gern) ⟵ Könnte ich …? (سؤال). والسُّلّم يُصعَد لا يُقفَز.",
+        "لا تحفظ سلّماً ثابتاً: احفظ الصيغة ومعناها، ثمّ انظر إلى الموقف والنبرة. ومن الخيارات الشائعة: **Ich möchte … / Ich hätte gern … / Ich nehme …**.",
       commonMistakes: [
         {
           wrong: "Ich will einen Kaffee, bitte.",
-          right: "Ich hätte gern einen Kaffee, bitte.",
+          right: "Ich hätte gern einen Kaffee, bitte. (إذا أردت صياغة أقل مباشرة في هذا المثال)",
           whyAr:
-            "bitte لا تُنقذ wollen. العربية تُهذّب بالإضافة، والألمانية تُهذّب بتغيير صورة الفعل — فالخطأ ليس نحوياً بل اجتماعياً، وهو أوّل ما يُسمع منك.",
+            "الجملة الأولى صحيحة نحوياً؛ قد تبدو مباشرة في بعض طلبات الخدمة. الصيغة الثانية بديل شائع أقل مباشرة في المثال، وليست تصحيحاً لخطأ نحوي ولا قاعدة مطلقة.",
+          classification: "contextual-alternative",
         },
         {
           wrong: "Ich hätte gern ein Salat.",
           right: "Ich hätte gern einen Salat.",
           whyAr:
-            "hätte gern تنصب مفعولها: der Salat ⟵ einen Salat. والتأدّب لا يُعفي من الإعراب.",
+            "في هذا التركيب يكون der Salat مفعولاً منصوباً مذكراً؛ لذلك نقول einen Salat.",
+          classification: "error",
         },
         {
           wrong: "Ich möchte einen Kaffee trinken möchte.",
           right: "Ich möchte einen Kaffee trinken.",
           whyAr:
-            "الفعل الناقص يُصرَّف مرّةً واحدةً في الموضع الثاني، والمصدر وحده في الآخر. تكراره من أثر الترجمة الحرفية لـ«أودّ أن أشرب».",
+            "في هذا التركيب يأتي الفعل المصرف möchte مرةً واحدة، والمصدر trinken في نهاية الجملة.",
+          classification: "error",
         },
         {
-          wrong: "Ich mag einen Kaffee.",
-          right: "Ich möchte einen Kaffee.",
+          wrong: "Ich mag einen Kaffee. (إذا كان المقصود طلبه الآن)",
+          right: "Ich möchte einen Kaffee. / Ich hätte gern einen Kaffee.",
           whyAr:
-            "mag ميلٌ دائم (أحبّ القهوة عموماً)، وmöchte طلبٌ الآن. قولها للنادل يجعله ينتظر بقيّة الجملة.",
+            "mag يعبّر غالباً عن الميل أو التفضيل؛ لا يصرّح وحده بالطلب في هذا المثال. الجملة ليست خطأً نحوياً في كل سياق.",
+          classification: "contextual-alternative",
         },
         {
           wrong: "Wir hätte gern zwei Bier.",
           right: "Wir hätten gern zwei Bier.",
           whyAr:
-            "hätte تُصرَّف كسائر الأفعال: ich/er hätte · wir/sie hätten · du hättest. وكونها شرطيةً لا يُجمّدها.",
+            "مع wir نقول hätten، لا hätte؛ أمّا عبارة zwei Bier فهي طلب مختصر ممكن في سياق المطعم.",
+          classification: "error",
         },
       ],
       relatedRuleComparison: {
-        title: "من möchten إلى Konjunktiv II الكامل (B1)",
+        title: "möchte بين أصل الصيغة واستعمالها الحالي",
         content:
-          "ما تتعلّمه اليوم صورتان محفوظتان: möchte وhätte. وفي B1 تُفتح المنظومة كلّها وتتّضح القاعدة التي تولّدهما:\n\n| الفعل | الماضي | Konjunktiv II | المعنى |\n|---|---|---|---|\n| mögen | mochte | **möchte** | أودّ |\n| haben | hatte | **hätte** | لو كان لديّ |\n| sein | war | **wäre** | لو كنت |\n| können | konnte | **könnte** | لو أمكن |\n| werden | wurde | **würde** | لكنت |\n\nوالقاعدة: **تُؤخذ صيغة الماضي ويُضاف Umlaut** (hatte ⟵ hätte · konnte ⟵ könnte · war ⟵ wäre). فما تحفظه اليوم مفردتين تراه في B1 نظاماً مطّرداً. ولذلك سمّيناه اليوم باسمه: لتجد الباب مفتوحاً حين تصل.",
+          "تذكر IDS Grammis أن **möchte** أصلها التاريخي Konjunktiv II من **mögen**، لكنها تُعامل في الاستعمال الحديث غالباً كصيغة الحاضر. أمّا **hätte** فهي صيغة Konjunktiv II من **haben**، وتظهر في النمط الشائع **Ich hätte gern …**. ليست هذه أول مرة تظهر فيها möchten: تناولتها A1-06، ثمّ توسّع B1-04 في وظائف Konjunktiv II الأخرى؛ وهذا القسم يراجع الصيغة ويضيف استعمال المطعم، لا يقدّم تاريخاً كاملاً للنحو.",
       },
     },
     {
       id: "t2",
-      titleAr: "schmecken وgefallen — حين يكون الطعام هو الفاعل",
-      titleDe: "Schmecken, gefallen, passen: der Dativ des Erlebenden",
+      titleAr: "الشخص في Dativ: schmecken ومراجعة gefallen وpassen",
+      titleDe: "Schmecken, gefallen und passen: Beispiele mit Dativ",
       explanationAr:
-        "في a1-08 التقيتَ gefallen في سياق الملابس، وفي a2-02 التقيتَ fehlen عند الطبيب. اليوم نجمع هذه الأفعال في **بابٍ واحد** ونُظهر منطقها، لأنّها ليست شواذّ متفرّقةً تُحفظ بل عائلةٌ لها منطقٌ واحد.\n\n**القاعدة الجامعة: في هذه الأفعال، الشيءُ هو الفاعل والإنسانُ مجرور.** الألمانية تنظر إلى الذوق والإعجاب والملاءمة بوصفها **أثراً يصدر عن الشيء ويقع على الإنسان**، لا فعلاً يصدر عن الإنسان. فالطعام هو الذي «يَطعُم لك»، والقميص هو الذي «يُعجِب لك».\n\n**البنية الثابتة:** الشيء (Nominativ) + الفعل + الشخص (Dativ).\n· **Das Essen schmeckt mir.** — الطعام يعجبني طعمه. (das Essen مرفوع، mir مجرور)\n· **Die Suppe schmeckt mir nicht.** — الشوربة لا تعجبني.\n· **Der Salat schmeckt uns allen.** — السلطة أعجبتنا جميعاً.\n\n**وأهمّ ما في الباب: الفعل يُصرَّف مع الشيء لا مع الشخص.**\n· مفرد ⟵ Das Essen **schmeckt** mir.\n· جمع ⟵ Die Nudeln **schmecken** mir.\nوهذا هو موضع الخطأ الأوّل: يقول المتعلّم Die Nudeln schmeckt mir لأنّه يُصرِّف مع «أنا» في ذهنه.\n\n**أعضاء العائلة في هذا الدرس:**\n· **schmecken** (يكون طعمه طيّباً لـ) — للطعام والشراب حصراً.\n· **gefallen** (يُعجِب) — للمظهر والانطباع العامّ: Das Restaurant gefällt mir.\n· **passen** (يُلائم) — للمواعيد والمقاسات: Der Tisch am Fenster passt uns gut.\n\n**والفرق بين schmecken وgefallen دقيق ويُخطئ فيه الجميع:** schmecken **للطعم في الفم**، وgefallen **للانطباع بالعين أو العقل**. فتقول عن مطعمٍ Das Restaurant gefällt mir (يعجبني مكاناً)، وعن طبقٍ Das Gericht schmeckt mir (طعمه طيّب). ولو قلت Das Essen gefällt mir لفُهم أنّك أُعجبتَ بشكله وترتيبه في الطبق لا بمذاقه — وهي جملةٌ صحيحة لكنّها تقول شيئاً آخر.\n\n**وصيغة السؤال الجاهزة التي يقولها كلّ نادلٍ في ألمانيا: Schmeckt es Ihnen?** (أطعامك طيّب؟) — والجواب: Ja, sehr gut, danke. / Ja, ausgezeichnet!\n\n**من أين جاءت هذه القاعدة؟** هذا الباب ليس شذوذاً ألمانياً بل **إرثٌ هندو-أوروبيّ قديم** يسمّيه اللغويون «داتيف المتلقّي» (Dativus des Experiencers): حين لا يكون الإنسان فاعلاً مختاراً بل **متلقّياً لأثرٍ يقع عليه**، تضعه اللغة في الداتيف لا في الرفع. والفكرة أنّ الطعم يحدث لك، ولا تصنعه أنت. وللعربية الباب نفسه حيّاً: «أعجبني الطعام» — الطعام فاعل والياء مفعول، لا «أنا أعجبتُ الطعام». فالعربيّ يملك الحدس صحيحاً، وإنّما تخونه الإنجليزية (I like) لا لغته الأمّ.",
+        `في النمط المقصود هنا، يكون الطعام أو الموعد أو الشيء **فاعلاً نحوياً في Nominativ**، ويأتي الشخص المعني في صيغة **Dativ**:
+· **Das Essen schmeckt mir gut.** — الطعام طيّب المذاق عندي.
+· **Das Restaurant gefällt mir.** — يعجبني المطعم / يلقى قبولي.
+· **Der Termin passt uns gut.** — الموعد مناسب لنا.
+
+يتبع الفعل فاعله النحوي: **Das Essen schmeckt** (مفرد)، و**Die Nudeln schmecken** (جمع)، مهما تغيّرت صيغة الضمير في Dativ. ولا يعني اجتماع البنية في هذه الأمثلة أن الأفعال متطابقة في المعنى أو أن كل استعمال لها يصف «أثراً» واحداً.
+
+**schmecken** له استعمالان ينبغي عدم خلطهما: **Die Suppe schmeckt mir gut** تصف مذاقها بالنسبة إلى الشخص؛ أما **Ich schmecke die Suppe** فقد تعني أنني أتذوقها/أتبين مذاقها، وهي جملة صحيحة في هذا المعنى. في جملة التقييم يمكن أن يساعد **gut** أو **ausgezeichnet** على بيان الرأي بوضوح.
+
+**gefallen** يعني أن شيئاً يلقى قبول شخص أو يترك لديه انطباعاً حسناً، ولا يقتصر على المظهر. ويمكن أن يكون **Das Essen gefällt mir** صحيحاً عند الحديث عن الانطباع العام؛ إذا كان المقصود تحديداً مذاق الطبق فـ**Das Essen schmeckt mir** أوضح. و**passen** يتغير معناه بحسب السياق: قد يلائم الموعد شخصاً، أو يكون المقاس مناسباً، أو ينسجم شيء مع آخر.
+
+للمقارنة مع العربية، قد تساعدك الجملة **«أعجبني الطعام»** على ملاحظة أن الطعام هو الفاعل الدلالي والشخص هو من يختبر الأثر؛ لكنها ليست حالة Dativ ألمانية. ضمير العربية **ـني** يُحلَّل في نظام العربية، أما الألمانية فتستعمل **mir** بوصفه Dativ. التشابه هنا في توزيع الأدوار الدلالية، لا في تطابق الحالات أو علامات الإعراب.`,
       whyAr:
-        "لأنّ هذا الباب هو **الاختبار الحقيقيّ لفهم الـDativ**، لا حفظه. المتعلّم يستطيع أن يحفظ mir/dir/ihm ويظلّ عاجزاً عن بناء Das Essen schmeckt mir، لأنّ العائق ليس في الضمير بل في **إعادة توزيع الأدوار**: من الفاعل؟ فحين يفهم أنّ الطعام فاعلٌ والإنسان متلقٍّ، ينفتح له مع schmecken بابُ gefallen وpassen وgehören وfehlen وwehtun وgutgehen — وهي سبعة أفعالٍ من أكثر ما يُستعمل يومياً.\n\nوهذه الكتلة تُوضَع هنا لا في a2-09 (درس الـDativ الكامل) لسببٍ منهجيّ: الـDativ يُتعلَّم **موزّعاً على مواقف** ثمّ يُجمَع، لا يُجمَع أوّلاً. فأنت تلتقي gefallen مع الملابس (a1-08)، وwehtun وfehlen عند الطبيب (a2-02)، وschmecken في المطعم (اليوم) — ثمّ يأتي a2-09 فيقول لك: هذه كلّها بابٌ واحد اسمه Dativ-Verben، وهذه قائمته الكاملة وضمائره في كلّ الحالات. والتعلّم الذي يسبق التسمية أرسخ من التسمية التي تسبق التعلّم.\n\nوسببٌ ثالث عمليّ: Schmeckt es Ihnen? سؤالٌ **يُطرح عليك حتماً** في أيّ مطعمٍ ألمانيّ، وصمتُك عنه أو جوابك بـIch bin gut يُفسد لحظةً اجتماعيةً بسيطة. وهذه الكتلة تُسلّحك بالجواب قبل أن يُطرح السؤال.",
+        "هذه مراجعة متدرجة لا أول لقاء بـDativ أو بهذه الأفعال. ظهر Dativ المكاني وذُكرت أفعال مثل gefallen/passen في A1-04؛ وترد صيغة helfen مع mir في A1-06؛ ثمّ خصص A1-08 تدريباً سياقياً على gefallen/passen/stehen، وتناول A2-02 أمثلة fehlen/wehtun. يضيف A2-03 تركيزاً على معنى schmecken في وصف المذاق، وعلى مطابقة الفعل مع فاعله، مع توضيح أن الصيغ التي تضم Dativ ليست عائلةً ذات معنى واحد.",
       table: {
-        title: "الشيء يرفع والإنسان يُجرّ",
-        columns: [
-          "الفعل",
-          "الشيء (Nominativ)",
-          "الشخص (Dativ)",
-          "المعنى ومجاله",
-        ],
+        title: "أمثلة مختلفة على فاعلٍ ومتمّم Dativ",
+        columns: ["الفعل/التركيب", "الفاعل (Nominativ)", "الشخص (Dativ)", "ملاحظة المعنى"],
         rows: [
           {
             label: "schmecken",
-            cells: ["Das Essen", "mir", "طعمه طيّب — الفم حصراً"],
+            cells: ["Das Essen", "mir", "مذاق الطعام بالنسبة إلى الشخص؛ للفعل استعمالات أخرى أيضاً"],
           },
           {
             label: "gefallen",
-            cells: ["Das Restaurant", "mir", "يُعجب — العين والانطباع"],
+            cells: ["Das Restaurant", "mir", "يلقى قبولي/يترك انطباعاً حسناً، لا المظهر وحده"],
           },
           {
             label: "passen",
-            cells: ["Der Termin", "uns", "يُلائم — الموعد والمقاس"],
+            cells: ["Der Termin", "uns", "يناسبنا في هذا السياق؛ وله استعمالات أخرى"],
           },
           {
             label: "fehlen",
-            cells: ["Der Löffel", "mir", "ينقص (a2-02: Was fehlt Ihnen?)"],
+            cells: ["Der Löffel", "mir", "ينقصني الملعقة في المثال"],
           },
-          { label: "wehtun", cells: ["Der Bauch", "mir", "يؤلم (a2-02)"] },
-          { label: "gehören", cells: ["Das Glas", "dir", "يخصّ، مِلك"] },
+          {
+            label: "wehtun",
+            cells: ["Der Bauch", "mir", "يؤلمني البطن؛ تركيبٌ فعليّ مختلف"],
+          },
+          {
+            label: "gehören",
+            cells: ["Das Glas", "dir", "ملكية؛ المثال للمقارنة في البنية لا في معنى الإحساس"],
+          },
         ],
       },
       examples: [
         {
           de: "Das Essen schmeckt mir sehr gut.",
-          ar: "الطعام طعمه طيّب جداً. (الطعام فاعل، أنا مجرور)",
+          ar: "مذاق الطعام طيّب جداً بالنسبة إليّ. (Das Essen فاعل، وmir في Dativ)",
         },
         {
           de: "Die Nudeln schmecken mir nicht.",
-          ar: "المعكرونة لا يعجبني طعمها. (جمع ⟵ schmecken)",
+          ar: "لا يعجبني مذاق المعكرونة. (فاعل جمع، لذلك schmecken)",
         },
         {
-          de: "Schmeckt es Ihnen? – Ja, ausgezeichnet, danke!",
-          ar: "أطعامك طيّب؟ — نعم، ممتاز، شكراً!",
+          de: "Hat es Ihnen geschmeckt? – Ja, ausgezeichnet, danke!",
+          ar: "هل راق لكم مذاق الطعام؟ — نعم، ممتاز، شكراً!",
         },
         {
           de: "Das Restaurant gefällt mir, aber das Essen schmeckt mir nicht.",
-          ar: "المطعم يعجبني لكنّ الطعام لا يعجبني طعمه. (الفرق في جملة واحدة)",
+          ar: "يعجبني المطعم، لكن مذاق الطعام لا يعجبني.",
         },
         {
           de: "Passt Ihnen ein Tisch am Fenster?",
-          ar: "أتناسبك طاولةٌ عند النافذة؟",
+          ar: "هل تناسبكم طاولة عند النافذة؟ (بحسب سياق الاختيار)",
         },
         {
           de: "Wie schmeckt dir die Suppe? – Sie ist ein bisschen salzig.",
-          ar: "كيف طعم الشوربة عندك؟ — مالحةٌ قليلاً.",
+          ar: "كيف مذاق الشوربة بالنسبة إليك؟ — مالحة قليلاً.",
         },
         {
           de: "Uns hat das Schnitzel sehr gut geschmeckt.",
-          ar: "أعجبنا الشنيتسل كثيراً. (Perfekt مع haben)",
+          ar: "كان مذاق الشنيتسل طيباً جداً بالنسبة إلينا. (Perfekt مع haben)",
         },
         {
           de: "Der Nachtisch hat allen geschmeckt.",
-          ar: "الحلوى أعجبت الجميع طعماً.",
+          ar: "أعجبت الحلوى الجميع من حيث المذاق. (allen في Dativ)",
         },
       ],
       comparisonWithArabic:
-        "العربية تملك هذا الباب نفسه وتُشغّله بكثرة، وهذه فرصةٌ للمتعلّم العربيّ لا عقبة:\n\n**«أعجبني الطعام»** — من الفاعل؟ **الطعام**. ومن المفعول؟ **الياء** (أنا). فالبنية العربية مطابقةٌ للألمانية تماماً: الشيء يرفع والإنسان يُنصب. ومثلها «راقني المكان»، «طاب لي الطعام»، «يؤلمني رأسي» — كلّها تجعل الشيء فاعلاً.\n\n**فالمنطق موجودٌ في لغتك، والمطلوب نقله لا بناؤه.** الفرق الوحيد: العربية تنصب الإنسان («أعجبَ**ني**») والألمانية تجرّه (**mir**). فبدّل النصب بالجرّ وستكون الجملة صحيحة.\n\nلكنّ ثلاثة مزالق تبقى:\n\n**١. الإنجليزية تُفسد القياس.** المتعلّم الذي يمرّ بالإنجليزية يقول I like the food فيجعل الإنسان فاعلاً، ثمّ يترجم Ich schmecke das Essen — وهي جملةٌ خاطئة تماماً (وتعني حرفياً «أنا أتذوّق الطعام» بمعنى الفحص المهنيّ). فحين تشكّ، ارجع إلى العربية لا إلى الإنجليزية: «أعجبني» أقرب إلى الألمانية من I like.\n\n**٢. تصريف الفعل مع الشيء.** العربية تقول «أعجبتني الأطباق» فتؤنّث الفعل وتُجمعه مع الأطباق — وهذا بالضبط ما تفعله الألمانية: Die Gerichte schmecken mir. فالقياس سليم، لكنّ المتعلّم يهمله لأنّه يفكّر بالإنجليزية عند التصريف.\n\n**٣. schmecken ليست «يحبّ».** العربية تقول «أحبّ الشوربة» وتقصد الميل الدائم، وتقول «طابت لي الشوربة» وتقصد هذه المرّة. الألمانية تفصل: Ich mag Suppe (ميل) · Die Suppe schmeckt mir (هذه الآن).",
+        `في **«أعجبني الطعام»** الطعام فاعلٌ، والشخص مضمَّن في الضمير **ـني** وفق تحليل العربية. وفي **Das Essen schmeckt mir** الطعام فاعل، و**mir** في Dativ وفق قواعد الألمانية. يمكن أن تساعد المقارنة في ملاحظة من يقوم بالدور الدلالي في الجملة، لكنها لا تجعل Dativ الألمانية مقابلاً مباشراً لـ«الجرّ» العربي ولا تنقل علامة حالة من لغة إلى أخرى.
+
+انتبه أيضاً إلى المعنى: **Ich schmecke die Suppe** يمكن أن تصف التذوق، فلا تُعدّ خطأً في ذاتها؛ أما **Die Suppe schmeckt mir gut** فتصف المذاق بالنسبة إلى الشخص. و**gefallen** أوسع من الإعجاب البصري، بينما يحدد السياق أيّ معنى من معاني **passen** هو المقصود.`,
       eselsbruecke:
-        "«الطعامُ هو الذي يفعل، وأنا الذي يتلقّى»: Das Essen schmeckt **mir** — لا أنا أشمكّ الطعام. وقس عليها كلّ ما أعجبك أو لاءمك أو نقصك أو آلمك.",
+        "في المثال **Das Essen schmeckt mir gut** اسأل: ما الفاعل الذي يحدد تصريف الفعل؟ **Das Essen**. ومن الشخص المعني بالمذاق؟ **mir** في Dativ. لا تستنتج من المثال قاعدةً لكل استعمالات الفعل.",
       commonMistakes: [
         {
-          wrong: "Ich schmecke das Essen.",
-          right: "Das Essen schmeckt mir.",
+          wrong: "Ich schmecke das Essen. (إذا كان المقصود أن مذاقه طيب لي)",
+          right: "Das Essen schmeckt mir gut.",
           whyAr:
-            "أثر الإنجليزية I like. الجملة الخاطئة تعني «أفحص الطعام بلساني» — وهي ما يقوله طاهٍ محترف. ارجع إلى العربية: «أعجبني الطعام»، فالطعام فاعل.",
+            "الجملة الأولى صحيحة في معنى «أتذوق الطعام»، لكنها لا تعبّر وحدها عن تقييم مذاقه بالنسبة إليّ. الصيغة الثانية هي المقصودة لهذا المعنى.",
+          classification: "contextual-alternative",
         },
         {
           wrong: "Die Nudeln schmeckt mir.",
           right: "Die Nudeln schmecken mir.",
           whyAr:
-            "الفعل يُصرَّف مع الشيء لا مع الشخص. Die Nudeln جمع ⟵ schmecken. والعربية تفعل مثله: «أعجبتني الأطباق».",
+            "الفاعل Die Nudeln جمع؛ لذلك يأتي الفعل بصيغة الجمع. وجود mir في Dativ لا يغيّر تصريف الفعل.",
+          classification: "error",
         },
         {
           wrong: "Das Essen schmeckt mich.",
           right: "Das Essen schmeckt mir.",
           whyAr:
-            "هذه الأفعال تجرّ متلقّيها ولا تنصبه. العربية تنصب («أعجبني») فيقيس المتعلّم mich — والألمانية تجرّ: mir.",
+            "في هذا البناء يأتي الشخص المعني بالمذاق في Dativ، لذا نستخدم mir لا mich.",
+          classification: "error",
         },
         {
-          wrong: "Das Essen gefällt mir sehr gut. (وأنت تقصد المذاق)",
+          wrong: "Das Essen gefällt mir sehr gut. (إذا كان المقصود تحديد مذاقه)",
           right: "Das Essen schmeckt mir sehr gut.",
           whyAr:
-            "gefallen للعين والانطباع، وschmecken للفم. الجملة الأولى صحيحة نحواً لكنّها تمدح شكل الطبق لا مذاقه.",
+            "الجملة الأولى صحيحة ويمكن أن تصف الانطباع العام؛ أما schmecken فتحدد معنى المذاق بوضوح. الاختيار دلاليّ لا تصحيحٌ لخطأ نحوي.",
+          classification: "contextual-alternative",
         },
         {
           wrong: "Schmeckt es Sie?",
           right: "Schmeckt es Ihnen?",
           whyAr:
-            "صيغة الاحترام في الجرّ هي Ihnen لا Sie — وهي القاعدة نفسها في Wie geht es Ihnen? وWas fehlt Ihnen?",
+            "في هذا السؤال الرسمي يأتي الضمير Ihnen بصيغة Dativ؛ لا نضع Sie في هذا الموضع.",
+          classification: "error",
         },
       ],
       relatedRuleComparison: {
-        title: "أين هذا من a1-08 وa2-02 وa2-09؟",
+        title: "ما سبق عن Dativ وهذه الأفعال",
         content:
-          "هذه العائلة تُبنى عندك على أربع دفعات، وكلّ دفعةٍ في موقعها الطبيعيّ:\n\n| الدرس | الفعل | الموقف |\n|---|---|---|\n| a1-08 | gefallen | الملابس: Der Pullover gefällt mir |\n| a2-02 | fehlen · wehtun | الطبيب: Was fehlt Ihnen? · Der Kopf tut mir weh |\n| **a2-03 (هنا)** | **schmecken · passen** | **المطعم: Das Essen schmeckt mir** |\n| a2-09 | القائمة الكاملة | helfen · gehören · gratulieren + كلّ ضمائر الجرّ |\n\nفما تراه اليوم ليس قاعدةً جديدةً بل **الطبقة الثالثة** من بناءٍ واحد. وفي a2-09 تُجمع الطبقات ويُسمّى البناء: Dativ-Verben.",
+          `| الدرس | ما يظهر فيه | صلته بهذا القسم |
+|---|---|---|
+| A1-04 | Dativ مكاني، مع ذكر gefallen/passen ضمن أمثلة أفعال تأخذ هذه الصيغة | تعرض سابق، لا بداية التعلّم |
+| A1-06 | مثال **Können Sie mir helfen?** | سبق ظهور ضمير Dativ في جملة |
+| A1-08 | تدريب سياقي على gefallen/passen/stehen في الملابس | مراجعة للمعاني والبنى بحسب السياق |
+| A2-02 | fehlen وwehtun في سياق الطبيب | أمثلة سابقة مختلفة المعنى |
+| A2-03 | schmecken، مع مراجعة gefallen/passen | التركيز هنا على المذاق واتفاق الفعل مع الفاعل |
+| A2-09 | Dativ مع أسماء وضمائر وأفعال مختارة | معالجة لاحقة أوسع؛ لا ندّعي أن هذا أول تعرض أو أن درساً واحداً يحصي النظام كله |`,
       },
     },
     {
       id: "t3",
-      titleAr: "مسار الزيارة — من الحجز إلى «zusammen oder getrennt?»",
-      titleDe: "Vom Reservieren bis zur Rechnung: der Ablauf",
+      titleAr: "عبارات ومواقف مختارة في المطعم",
+      titleDe: "Im Restaurant: ausgewählte Situationen und Redemittel",
       explanationAr:
-        "المطعم الألمانيّ يجري وفق **مسارٍ ثابت**، ومن عرف محطّاته عرف ماذا يُقال في كلٍّ منها فلم يُفاجأ. وأهمّ ما في هذه الكتلة أنّ ثلاثاً من محطّاتها **تخالف العادة العربية مخالفةً تامّة** — وهي مواضع الإحراج الحقيقيّ لا مواضع الخطأ النحويّ.\n\n**١. الدخول والجلوس.** لا تجلس حيث شئت. تنتظر عند اللافتة Bitte warten Sie, Sie werden platziert، أو تسأل: **Haben Sie einen Tisch für zwei Personen?** وإن كنت قد حجزت: **Ich habe einen Tisch auf den Namen Ben Ali reserviert.**\n\n**٢. الطلب على مرحلتين.** يأتي النادل أوّلاً للمشروبات وحدها: **Was möchten Sie trinken?** ثمّ يعود للطعام. ومن طلب الطعام في الجولة الأولى استعجل النادل، ومن انتظر النادل ليأتي بالماء مجّاناً انتظر طويلاً — **الماء في ألمانيا يُطلب ويُدفع**، وتسأل: Stilles Wasser oder mit Kohlensäure? (بلا غاز أم فوّار؟)\n\n**٣. بنية القائمة:** die Vorspeise (مقبّلات) ⟵ das Hauptgericht (الطبق الرئيس) ⟵ die Beilage (طبق جانبي: Pommes, Reis, Salat) ⟵ der Nachtisch / die Nachspeise (الحلوى). وتُطلب هكذا: **Als Vorspeise hätte ich gern die Suppe, als Hauptgericht das Schnitzel.**\n\n**٤. أثناء الأكل — سؤالان ثابتان.** قبله يقول النادل أو من معك: **Guten Appetit!** (بالهناء) وتردّ: Danke, gleichfalls! (شكراً، وأنت كذلك). وأثناءه يسأل: **Schmeckt es Ihnen?** أو **Ist alles in Ordnung?**\n\n**٥. طلب الحساب — والمحطّة التي تُربك العرب.** تقول: **Die Rechnung, bitte** أو **Zahlen, bitte** أو الأرقى: **Könnten wir bitte zahlen?** فيسأل النادل سؤالاً لا مقابل له في ثقافتنا: **Zusammen oder getrennt?** (معاً أم كلٌّ على حدة؟) — والدفع المنفصل في ألمانيا هو **العُرف الطبيعيّ** لا شحّاً ولا قطيعةً، والنادل مستعدٌّ لحساب كلّ شخصٍ وحده. فالجواب: Zusammen, bitte. أو Getrennt, bitte.\n\n**٦. البقشيش (das Trinkgeld).** لا يُترك على الطاولة كما في أمريكا، بل **يُقال شفهياً عند الدفع**: إن كان الحساب 18,50 € وأردت أن تعطي عشرين، تقول **«Zwanzig, bitte»** أو **«Stimmt so»** إن أردت له الباقي كلّه. والمعتاد ٥–١٠٪. وأن تصمت وتنتظر الباقي كاملاً ليس خطأً، لكنّ الكلمة تُقال عادةً.\n\n**٧. الشكوى — إن لزمت.** بالبنية الثلاثية نفسها التي تعلّمتها في a2-01: **Entschuldigung, das habe ich nicht bestellt.** · **Die Suppe ist leider kalt.** · **Könnten Sie das bitte noch einmal prüfen?**",
+        `يعرض هذا القسم عباراتٍ يمكن استعمالها في مواقف مطعم محددة، لا مساراً إلزامياً لكل زيارة. قد تطلب لافتة في مكان ما الانتظار أو يرافقك موظف إلى الطاولة؛ اتبع التعليمات المكتوبة أو اسأل عند عدم التأكد.
+
+تختلف خطوات الطلب بين الحوارات نفسها: في قصة القراءة تأتي المشروبات أولاً، بينما يسأل حوار الاستماع عن اختيار الطعام ثم عن الشراب. هذا اختلاف ممكن، لا تناقضٌ نحوي ولا قاعدة عن ترتيب الخدمة. وتظهر في القوائم كلمات مثل **Vorspeise** (مقبّلات)، و**Hauptgericht** (طبق رئيس)، و**Beilage** (طبق جانبي)، و**Nachtisch/Nachspeise** (حلوى)؛ وهي أسماء لأقسام أو أطباق، وليست ترتيباً واجباً.
+
+يمكن أن تسمع **Stilles Wasser oder mit Kohlensäure?** للسؤال عن ماء بلا غاز أو فوّار؛ و**ein stilles Wasser** لا يحدد وحده إن كان المقصود ماء الصنبور. إذا أردت ماء الصنبور فاسأل **Haben Sie Leitungswasser?**؛ واسأل المكان عن التوفر والسعر. مصدر جودة ماء الصنبور لا يحدد سياسة المطعم.
+
+من العبارات العملية: **Die Rechnung, bitte** لطلب الحساب، و**Zusammen oder getrennt?** سؤالٌ عن طريقة الحساب إذا طُرح في ذلك الموقف. يمكن الإجابة **Zusammen, bitte** أو **Getrennt, bitte**. لا نستنتج من السؤال أو من قصة واحدة قاعدةً وطنية أو واجبة.
+
+وعن الإكرامية، يذكر دليل برلين السياحي ممارسات محلية: يصفها بأنها اختيارية، ويعرض 5–10% كمبلغ مناسب في كثير من المقاهي ذات الجلوس والمطاعم غير الرسمية في برلين، كما يذكر وجود علب إكرامية في بعض الحانات. هذا إرشاد محلي لا وصفٌ ملزم لكل مكان في ألمانيا. في المثال النقدي **Das macht 18,50 € – Zwanzig, bitte** يكون المقصود دفع إجمالي عشرين يورو؛ و**Stimmt so** تعني أن يحتفظ البائع بالباقي في هذا السياق.`,
       whyAr:
-        "لأنّ الفشل في المطعم نادراً ما يكون نحوياً. المتعلّم الذي يعرف كلّ قواعد A2 قد يجلس في مكانٍ محجوز، ويطلب الطعام قبل الشراب، ويصمت أمام zusammen oder getrennt، ويترك النقود على الطاولة فيلحق به النادل ظانّاً أنّه نسيها. وكلّ هذا **معرفةٌ إجرائية** لا تُستنبط من القواعد ولا تُوجد في قوائم المفردات.\n\nومعايير CEFR في A2 تنصّ على التعامل مع «التبادلات القصيرة الروتينية في المتاجر والمطاعم»، والكلمة المفتاح **روتينية**: أي أنّ المطلوب ليس ارتجالاً لغوياً بل **إتقان سيناريو معروف**. ومن حفظ المسار حرّر ذهنه للّغة نفسها.\n\nوسؤال zusammen oder getrennt يستحقّ وقفة: في الثقافة العربية دعوةٌ للطعام يدفعها واحد، والإصرار على القسمة قد يُفهم جفاءً. وفي ألمانيا الدفع المنفصل هو الافتراض، ومن دفع عن الجميع بلا اتّفاقٍ مسبق قد يُحرج جلساءه لا يُكرمهم. فالمسألة ليست في ترجمة الجملة بل في **توقّع السؤال أصلاً** — والمتعلّم الذي لم يسمع به يتجمّد لأنّه لا يفهم لماذا يُسأل.\n\nوأخيراً: هذه الكتلة تُدرّب **الفهم السماعيّ الموجّه**. أنت لا تحتاج أن تنتج هذه الجمل كلّها، لكنّك تحتاج أن **تتعرّفها فوراً** حين تُقال بسرعة — وهذا ما يقيسه Hören Teil 1 في امتحان A2.",
+        "تساعد العبارات النموذجية على فهم حوار قصير والتدرّب على طلب المعلومة أو الحساب. أما الممارسات التجارية والثقافية فتختلف بين المطاعم والمناطق؛ لذلك يقيّد الدرس أمثلته بالمشهد المكتوب ويقدّم الإرشاد الثقافي بوصفه مثالاً موثقاً، لا استعداداً عاماً ولا قاعدة اجتماعية شاملة.",
       table: {
-        title: "محطّات الزيارة — ماذا يُقال ومتى",
-        columns: ["المحطّة", "يقول النادل", "تقول أنت"],
+        title: "عبارات محتملة في مشاهد الدرس",
+        columns: ["الموقف", "سؤال ممكن", "رد ممكن"],
         rows: [
           {
-            label: "الدخول",
-            cells: [
-              "Haben Sie reserviert?",
-              "Ja, auf den Namen Ben Ali. / Nein, haben Sie einen Tisch frei?",
-            ],
+            label: "عند الوصول",
+            cells: ["Haben Sie reserviert?", "Ja, auf den Namen Ben Ali. / Nein, haben Sie noch einen Tisch für zwei frei?"],
           },
           {
-            label: "المشروبات",
+            label: "اختيار المشروب",
             cells: ["Was möchten Sie trinken?", "Ein stilles Wasser, bitte."],
           },
           {
-            label: "الطعام",
-            cells: [
-              "Und was möchten Sie essen?",
-              "Als Hauptgericht hätte ich gern das Schnitzel.",
-            ],
+            label: "اختيار الطعام",
+            cells: ["Was möchten Sie essen?", "Als Hauptgericht hätte ich gern das Schnitzel."],
           },
           {
-            label: "أثناء الأكل",
-            cells: ["Schmeckt es Ihnen?", "Ja, sehr gut, danke!"],
+            label: "بعد الطعام",
+            cells: ["Hat es Ihnen geschmeckt?", "Ja, sehr gut, danke! / Ja, ausgezeichnet!"],
           },
           {
-            label: "الحساب",
-            cells: ["Zusammen oder getrennt?", "Getrennt, bitte."],
+            label: "الحساب، إن سُئلت",
+            cells: ["Zusammen oder getrennt?", "Zusammen, bitte. / Getrennt, bitte."],
           },
           {
-            label: "الدفع",
+            label: "دفع نقدي في المثال",
             cells: ["Das macht 18,50 €.", "Zwanzig, bitte. / Stimmt so."],
           },
         ],
       },
       examples: [
         {
-          de: "Haben Sie einen Tisch für zwei Personen?",
-          ar: "أعندكم طاولةٌ لشخصين؟",
+          de: "Haben Sie noch einen Tisch für zwei Personen frei?",
+          ar: "هل لديكم طاولة متاحة لشخصين؟",
         },
         {
           de: "Ich habe einen Tisch auf den Namen Ben Ali reserviert.",
@@ -384,7 +454,7 @@ export const lessonA203: Lesson = {
         },
         {
           de: "Stilles Wasser oder mit Kohlensäure?",
-          ar: "ماءٌ بلا غاز أم فوّار؟ (سؤالٌ يُطرح حتماً)",
+          ar: "ماء بلا غاز أم فوّار؟ (سؤال عن نوع الماء)",
         },
         {
           de: "Als Vorspeise hätte ich gern die Suppe.",
@@ -392,7 +462,7 @@ export const lessonA203: Lesson = {
         },
         {
           de: "Guten Appetit! – Danke, gleichfalls!",
-          ar: "بالهناء! — شكراً، وأنت كذلك!",
+          ar: "بالهناء! — شكراً، وأنت كذلك! (إذا كان الآخر يتناول الطعام أيضاً)",
         },
         {
           de: "Zusammen oder getrennt? – Getrennt, bitte.",
@@ -400,170 +470,191 @@ export const lessonA203: Lesson = {
         },
         {
           de: "Das macht 18,50 €. – Zwanzig, bitte.",
-          ar: "الحساب ١٨٫٥٠. — عشرون من فضلك. (بقشيش ١٫٥٠)",
+          ar: "الحساب ١٨٫٥٠. — عشرون من فضلك. (إجمالي المبلغ في هذا المثال)",
         },
         {
-          de: "Entschuldigung, das habe ich nicht bestellt.",
-          ar: "عذراً، هذا ليس ما طلبتُه.",
+          de: "Entschuldigung, der Fisch ist leider ziemlich trocken. Könnten Sie das bitte an die Küche weitergeben?",
+          ar: "عذراً، السمك جافّ للأسف إلى حدّ ما. هل يمكن أن تنقلوا ذلك إلى المطبخ من فضلكم؟",
         },
       ],
       comparisonWithArabic:
-        "الفروق هنا **ثقافيّةٌ في لبوسٍ لغويّ**، وهي أخطر من الفروق النحوية لأنّها لا تُصحَّح بالقواعد:\n\n**١. الجلوس.** في المقهى العربيّ تدخل وتجلس. وفي المطعم الألمانيّ (لا المقهى البسيط) تنتظر أن يُجلسك النادل. والجملة المكتوبة على اللافتة Sie werden platziert مبنيّةٌ للمجهول («ستُجلَسون») — وهي أوّل Passiv يراه كثيرٌ من المتعلّمين في الحياة قبل الكتاب.\n\n**٢. الماء.** في تونس ومصر يوضع الماء على الطاولة مجّاناً. وفي ألمانيا **لا ماء إلّا بطلبٍ وثمن**، ومن انتظر أن يأتي وحده انتظر إلى آخر الوجبة. وLeitungswasser (ماء الحنفية) يُطلب أحياناً مجّاناً لكنّ كثيراً من المطاعم يرفضه أو يتحرّج منه.\n\n**٣. الدفع المنفصل.** هذا أكبر فرق. «getrennt» ليست شحّاً بل عُرفاً، والنادل يحسب لكلّ واحدٍ ما أكل بلا ضجر. أمّا في ثقافتنا فالمكارمة على الحساب جزءٌ من الضيافة، والسؤال نفسه قد يبدو غريباً.\n\n**٤. البقشيش يُقال ولا يُترك.** العربيّ يترك النقود على الطاولة وينصرف؛ والألمانيّ يقول المبلغ **قبل** أن يأخذ النادل النقود. ومن ترك المال وانصرف قد يلحق به النادل ظانّاً أنّه نسي — موقفٌ محرج سببه صمتٌ لا خطأ.\n\n**٥. Guten Appetit وردّها.** العربية تقول «بالهناء والشفاء» ويُردّ عليها بالدعاء. والألمانية تردّ بكلمةٍ واحدة: **gleichfalls** (وأنت كذلك) — ومن سكت بدا غافلاً، ومن أطال بدا غريباً.",
+        `تعرض هذه العبارات وسائل السؤال عن الطاولة والطلب والحساب، ولا تفترض أن العادات في بلدٍ أو أسرةٍ عربية واحدة. لا يلزم أن يتبع كل مطعم ترتيباً واحداً، ولا أن يُطلب ماء الصنبور أو تُقسّم الفاتورة أو تُعطى الإكرامية بالطريقة نفسها في كل مكان.
+
+**Guten Appetit!** تهنئةٌ بالوجبة؛ يمكن الرد **Danke**، أو **Danke, gleichfalls** إذا كان المتحدث الآخر يأكل أيضاً. و**Zusammen oder getrennt?** سؤالٌ عن طريقة الحساب عند طرحه، لا دليلٌ على قاعدة عامة بشأن الضيافة.
+
+في دليل برلين السياحي، الإكرامية اختيارية؛ ويذكر الدليل أمثلة محلية للمبلغ وطريقة إبلاغ النادل بالإجمالي عند الدفع، كما يذكر علب الإكرامية في بعض الحانات. لذلك لا نحوّل صيغة **Zwanzig, bitte** إلى قاعدة عن كل المطاعم، ولا نحكم على طريقة دفع أخرى بأنها خطأ لغوي أو اجتماعي.`,
       eselsbruecke:
-        "رتّب المسار في ستّ كلمات: **reservieren ⟵ trinken ⟵ essen ⟵ schmecken ⟵ zahlen ⟵ getrennt**. ومن حفظ هذا الخيط لم يُفاجئه سؤال.",
+        "احفظ العبارة مع موقفها: **Die Rechnung, bitte** لطلب الحساب؛ أمّا ترتيب الطلب، وتقسيمه، والإكرامية فتتفاوت بحسب المكان.",
       commonMistakes: [
         {
-          wrong: "(تدخل وتجلس في أيّ طاولة)",
-          right: "Haben Sie einen Tisch für zwei Personen?",
+          wrong: "In Deutschland werden Gäste in jedem Restaurant platziert.",
+          right: "Die Abläufe variieren; folgen Sie einer vorhandenen Beschilderung oder fragen Sie freundlich.",
           whyAr:
-            "في المطعم الألمانيّ يُجلسك النادل. والجلوس في طاولةٍ محجوزة (Reserviert) موقفٌ محرج يتكرّر كثيراً مع الوافدين.",
+            "هذه عبارة ثقافية مطلقة غير مسندة. الانتظار مناسب إذا دعت إليه لافتة أو تعليمات المكان؛ لا نعممه على كل المطاعم.",
+          classification: "unverified-claim",
         },
         {
-          wrong: "Die Rechnung, bitte. Zusammen. (وأنتم خمسة لم تتّفقوا)",
-          right: "Getrennt, bitte.",
+          wrong: "In jedem Restaurant kommen die Getränke vor dem Essen.",
+          right: "Die Reihenfolge kann variieren; die beiden Dialoge hier zeigen unterschiedliche Abläufe.",
           whyAr:
-            "الدفع المنفصل هو العُرف لا الاستثناء. والدفع عن الجميع بلا اتّفاقٍ مسبق قد يُحرج الجلساء بدل أن يُكرمهم.",
+            "القصة تقدّم المشروبات أولاً، بينما يبدأ حوار الاستماع باختيار الطعام؛ لا يثبت أي منهما ترتيباً عاماً.",
+          classification: "unverified-claim",
         },
         {
-          wrong: "Ich möchte Wasser. (وتنتظره مجّاناً)",
-          right: "Ein stilles Wasser, bitte.",
+          wrong: "Ein Wasser bedeutet immer kostenloses Leitungswasser.",
+          right: "Ein stilles Wasser, bitte. / Haben Sie Leitungswasser?",
           whyAr:
-            "الماء يُطلب ويُدفع، ويُسأل عن نوعه: stilles (بلا غاز) أو mit Kohlensäure (فوّار). ومن قال Wasser فقط سُئل ثانيةً.",
+            "العبارة الأولى لا تحدد وحدها ماء الصنبور أو سياسة السعر؛ إذا كان ذلك مهماً فاسأل بوضوح.",
+          classification: "unverified-claim",
         },
         {
-          wrong: "Guten Appetit! – Danke.",
-          right: "Guten Appetit! – Danke, gleichfalls!",
+          wrong: "Getrennte Rechnungen sind in Deutschland immer die übliche Wahl.",
+          right: "Zusammen, bitte. / Getrennt, bitte.",
           whyAr:
-            "gleichfalls («وأنت كذلك») جزءٌ ثابت من الردّ. حذفها ليس خطأً نحوياً لكنّه يُسمع ناقصاً.",
+            "العبارتان خياران لغويان صحيحان؛ لا يثبت السؤال أو هذا المثال عادةً واحدةً لكل المجموعات والمطاعم.",
+          classification: "unverified-claim",
         },
         {
-          wrong: "(تضع البقشيش على الطاولة وتنصرف)",
-          right: "Zwanzig, bitte. / Stimmt so.",
+          wrong: "Man muss in jedem deutschen Restaurant 10 Prozent Trinkgeld geben und es immer mündlich bezahlen.",
+          right: "Der Berliner Ratgeber beschreibt Trinkgeld als freiwillig; Bräuche und Methoden variieren.",
           whyAr:
-            "البقشيش يُقال شفهياً عند الدفع لا يُترك بعده. الصمت قد يجعل النادل يظنّك نسيت نقودك فيلحق بك.",
+            "التعميم الإلزامي لا يسنده المصدر: دليل برلين يصف الإكرامية بأنها اختيارية، ويخصّص مقداراً وطريقةً بسياقات محلية؛ ويذكر علب الإكرامية في بعض الحانات.",
+          classification: "unverified-claim",
         },
       ],
       relatedRuleComparison: {
-        title: "المسار نفسه في مواقف أخرى",
+        title: "مواقف الخدمة: عبارات قابلة للتكييف",
         content:
-          "بنية «المسار الثابت» تتكرّر في كلّ موقفٍ خدميّ، وقد رأيتَها مرّتين:\n\n| الموقف | الدرس | المحطّات |\n|---|---|---|\n| العيادة | a2-02 | موعد ⟵ بطاقة تأمين ⟵ Was fehlt Ihnen? ⟵ وصفة |\n| الفندق والسفر | a2-01 | حجز ⟵ einchecken ⟵ شكوى ⟵ auschecken |\n| **المطعم** | **a2-03** | **حجز ⟵ شراب ⟵ طعام ⟵ حساب** |\n\nوالقاسم المشترك **الشكوى بثلاث خطوات**: المشكلة ⟵ أثرها ⟵ الطلب، مع leider وkönnten. تعلّمتَها في a2-01 مع الفندق، وتستعملها اليوم مع طبقٍ بارد، وستستعملها في a2-11 مع خدمةٍ رديئة. قالبٌ واحد يُعاد تعبئته.",
+          "في A2-01 دُرّبت صيغ شكوى مهذّبة، وهنا يظهر مثال عن طعام جاف: **Der Fisch ist leider ziemlich trocken. Könnten Sie das bitte an die Küche weitergeben?** يمكن تغيير تفاصيل الطلب وفق المشكلة الفعلية. أمّا خطوات الخدمة—الجلوس، وتوقيت الطلب، ونوع الماء، وتقسيم الفاتورة، والإكرامية—فلا تُعامل كقواعد ثابتة؛ اسأل عند الحاجة واتبع تعليمات المكان.",
       },
     },
     {
       id: "t4",
-      titleAr: "وصف الطعم — الصفات والمقادير وetwas Warmes",
-      titleDe: "Wie schmeckt es? Adjektive und Mengen beim Essen",
+      titleAr: "صفات الطعم والكميات وعبارة etwas Warmes",
+      titleDe: "Geschmack, Mengen und etwas Warmes",
       explanationAr:
-        "يبقى أن تقول **كيف** كان الطعام، لا أن تكتفي بـgut وschlecht. وهذه الكتلة ثلاثة أقسام: صفات الطعم، والمقادير، وقالبٌ نحويّ صغير يُفتح هنا لأوّل مرّة.\n\n**أوّلاً — صفات الطعم، وكلّها تُستعمل بعد sein أو schmecken بلا نهاياتٍ إعرابية** (فهي مسندة لا موصوفة، كما تعلّمت في a1-08):\n· **lecker** (لذيذ) · **frisch** (طازج) · **süß** (حلو) · **salzig** (مالح) · **sauer** (حامض) · **scharf** (حارّ بالتوابل) · **bitter** (مُرّ) · **fett** (دسم) · **trocken** (جافّ)\n⟵ Die Suppe ist **salzig**. · Das Fleisch schmeckt **trocken**.\n\n**وانتبه إلى فخّين معجميّين:**\n· **scharf** = حارٌّ بالفلفل والتوابل، أمّا الحارّ حرارةً فهو **heiß**. فمن قال Die Suppe ist scharf وهو يعني سخونتها قال شيئاً آخر.\n· **warm** = دافئ ومقبول، **heiß** = ساخنٌ جداً وقد يحرق، **kalt** = بارد. وفي وصف الأطباق: warme Gerichte (أطباق ساخنة) مقابل kalte Platte (طبق بارد).\n\n**ثانياً — التدرّج (die Abstufung):** لا تقل gut وحدها بل درّج:\n**sehr gut > gut > ganz gut > geht so > nicht so gut > gar nicht gut**\nوأدوات التلطيف الصغيرة تعمل هنا عملاً كبيراً: **ein bisschen** (قليلاً) و**etwas** (بعض الشيء) و**zu** (أكثر من اللازم):\n⟵ Die Suppe ist **ein bisschen** salzig. (شكوى لطيفة) مقابل Die Suppe ist **zu** salzig. (شكوى صريحة)\nوالفرق بينهما هو الفرق بين ملاحظةٍ ودعوةٍ لتغيير الطبق. وكلمة **zu** هنا لا تعني «إلى» بل «أكثر من اللازم» — ومعناها هذا هو الأكثر وروداً في الكلام اليوميّ.\n\n**ثالثاً — المقادير في المطعم.** تعلّمتَ في a1-07 قاعدة «عدد + وحدة + سلعة» بلا حرف جرّ: zwei Kilo Äpfel. وتعمل هنا نفسها:\n· **ein Glas Wasser · eine Tasse Kaffee · eine Flasche Wein · ein Stück Kuchen · eine Portion Pommes**\n· والوحدات المذكّرة والمحايدة تبقى مفردةً بعد العدد: **zwei Glas Wasser · drei Stück Kuchen**، أمّا المؤنّثة فتُجمع: **zwei Tassen Kaffee · drei Flaschen Wasser**.\n· وشذوذٌ يوميّ يستحقّ الحفظ: **zwei Bier · drei Kaffee** — تُقال بلا جمعٍ في المطعم اختصاراً (والأصل zwei Gläser Bier).\n\n**رابعاً — القالب الجديد: etwas + صفةٌ مكبّرة.** حين تريد شيئاً بصفةٍ لا باسم:\n· **etwas Warmes** (شيئاً دافئاً) · **etwas Kaltes** · **etwas Süßes** · **nichts Scharfes** (لا شيء حارّ)\nوالقاعدة: بعد etwas وnichts **تُكتب الصفة بحرفٍ كبير وتأخذ -es**. لأنّها صارت اسماً. ⟵ Ich möchte **etwas Warmes** essen. · Ich esse **nichts Scharfes**.",
+        `تصف هذه الكلمات أبعاداً مختلفة للطعام: **süß** حلو، و**sauer** حامض، و**bitter** مُرّ، و**salzig** مالح. أمّا **scharf** فيصف الطعم الحارّ/اللاذع، و**warm/heiß** يصفان حرارة الطعام أو الشراب.
+
+قارن **Die Suppe ist sehr salzig** (الشوربة مالحة جداً) بـ**Die Suppe ist mir zu salzig** (ملوحتها أكثر مما أراه مناسباً). كلمة **zu** تعبّر عن تجاوز حدّ المتكلم، لكنها لا تطلب تلقائياً استبدال الطبق؛ إذا أردت طلب تغيير فقل ذلك صراحةً.
+
+في **Ich möchte etwas Warmes essen** استُعملت الصفة اسماً بعد **etwas**؛ لذلك تبدأ بحرف كبير وتأتي هنا بنهاية **-es**. هذه ملاحظة عن هذا التركيب، لا شرح كامل لتصريف الصفات. والجملة **Ich möchte etwas warm essen** سليمة أيضاً في معنى «أريد أن آكل شيئاً وهو دافئ»؛ يختلف تركيبها ومعناها عن اختيار «شيء دافئ».
+
+للكميات، نقول **zwei Tassen Kaffee** لأننا نعدّ فنجانين/كوبين، و**zwei Gläser Wasser** عندما نتحدث عن كأسين قابلين للعدّ. يتبع الجمع هنا عدد الأشياء المعدودة، لا جنس الاسم. وتختلف صيغة وحدة القياس في بعض التراكيب: يسجل Duden استعمال **zwei Glas Wein** في سياق كمية/طلب مشروب، فلا نعمّم قاعدة **Gläser** على كل عبارات القياس. ويمكن أن تقول عن شرابين من التفاح: **zwei Apfelschorlen**، أو **zwei Gläser Apfelschorle**.`,
       whyAr:
-        "لأنّ الفرق بين متعلّمٍ في A1 ومتعلّمٍ في A2 يظهر هنا بالضبط: كلاهما يستطيع الطلب، لكنّ الثاني يستطيع **التقييم**. ووصفُ A2 في CEFR ينصّ على «وصف أشياء مألوفة بعباراتٍ بسيطة وإبداء رأي» — والطعام هو أكثر موضوعٍ يُطلب فيه الرأي في الحياة اليومية وفي الامتحان معاً.\n\nوأمّا التدرّج (ein bisschen مقابل zu) فله وزنٌ اجتماعيّ يتجاوز المفردات: هو الفرق بين ملاحظةٍ مهذّبة وشكوى. والمتعلّم الذي لا يملك إلّا الطرفين — gut أو schlecht — يُجبَر على أن يكون إمّا مجاملاً كاذباً أو فظّاً، ولا يملك المنطقة الوسطى التي يعيش فيها الكلام الحقيقيّ. فأدوات التلطيف ليست زينةً بل **آلة ضبط النبرة**.\n\nوقالب etwas Warmes يُفتح هنا عمداً وهو صغير: فهو أوّل موضعٍ ترى فيه **صفةً تتحوّل إلى اسم** (die Substantivierung) — وهي ظاهرةٌ ألمانية واسعة ستعود في B1 (der Deutsche, das Wichtigste, die Erwachsenen). ونحن نأخذ منها اليوم صورةً واحدةً مغلقة (etwas/nichts + صفة + -es) تُحفظ كقالبٍ جاهز، ونؤجّل النظام كلّه — لأنّ فتح باب التصريف الوصفيّ الآن يُربك، وإغفال القالب يحرمك جملةً تُقال يومياً.\n\n**وهذه الكتلة بابٌ نصفيّ بوعي:** نهايات الصفة الموصوفة (ein **guter** Wein · die **frische** Suppe) لا تُدرَّس هنا. موطنها b1-06 وb1-10. فما تراه اليوم صفاتٌ مسندة (بعد sein/schmecken) وقالبٌ واحدٌ مغلق — لا أكثر، وذلك مقصود.",
+        "يعالج القسم مفردات ووحدات معدودة محددة يحتاجها المتعلم في القائمة والطلب، ويقارن بين عبارتين صحيحتين عند اختلاف التركيب. لا يدّعي تعليم نظام الصفات أو وحدات القياس الألماني كاملاً؛ كما يفصل بين الطعم وحرارة الطعام لتقليل الالتباس.",
       table: {
-        title: "وصف الطعم — من المدح إلى الشكوى",
-        columns: ["الدرجة", "العبارة", "المعنى والاستعمال"],
+        title: "وصف الطعم والحرارة في أمثلة قصيرة",
+        columns: ["الكلمة", "المعنى المقصود", "مثال", "ملاحظة"],
         rows: [
           {
-            label: "ممتاز",
-            cells: ["Das schmeckt ausgezeichnet!", "مدحٌ صريح — يُفرح الطاهي"],
+            label: "süß",
+            cells: ["حلو", "Der Nachtisch ist süß.", "وصف للطعم"],
           },
           {
-            label: "جيّد",
-            cells: [
-              "Sehr lecker, danke.",
-              "الردّ المعتاد على Schmeckt es Ihnen?",
-            ],
-          },
-          { label: "مقبول", cells: ["Es geht so.", "فاترة — تُفهم تحفّظاً"] },
-          {
-            label: "ملاحظة لطيفة",
-            cells: [
-              "Die Suppe ist ein bisschen salzig.",
-              "لا تستدعي تغيير الطبق",
-            ],
+            label: "sauer",
+            cells: ["حامض", "Die Zitrone schmeckt sauer.", "وصف للطعم"],
           },
           {
-            label: "شكوى صريحة",
-            cells: ["Die Suppe ist zu salzig.", "تستدعي اعتذاراً أو استبدالاً"],
+            label: "bitter",
+            cells: ["مُرّ", "Der Kaffee schmeckt bitter.", "وصف للطعم"],
           },
           {
-            label: "طلبٌ بصفة",
-            cells: ["Ich möchte etwas Warmes.", "etwas + صفة كبيرة + -es"],
+            label: "salzig",
+            cells: ["مالح", "Die Suppe ist mir zu salzig.", "zu salzig يتضمن تقديراً بأنه أكثر من المناسب للمتكلم"],
+          },
+          {
+            label: "scharf",
+            cells: ["حارّ/لاذع في الطعم", "Das Curry ist sehr scharf.", "ليس وصفاً لدرجة الحرارة هنا"],
+          },
+          {
+            label: "warm / heiß",
+            cells: ["دافئ / ساخن", "Der Tee ist noch heiß.", "وصف لدرجة الحرارة"],
           },
         ],
       },
       examples: [
         {
-          de: "Das Schnitzel ist wirklich lecker!",
-          ar: "الشنيتسل لذيذٌ حقاً! (صفة مسندة بلا نهاية)",
+          de: "Der Kaffee ist mir zu bitter.",
+          ar: "القهوة مُرّة أكثر مما أفضّل.",
         },
         {
-          de: "Die Suppe ist ein bisschen salzig.",
-          ar: "الشوربة مالحةٌ قليلاً. (ملاحظة لطيفة)",
+          de: "Das Wasser ist noch warm.",
+          ar: "الماء ما زال دافئاً. (حرارة، لا طعم حار)",
         },
         {
-          de: "Das Fleisch ist leider zu trocken.",
-          ar: "اللحم جافٌّ أكثر من اللازم للأسف. (شكوى)",
+          de: "Die Suppe ist sehr salzig, aber nicht zu salzig für mich.",
+          ar: "الشوربة مالحة جداً، لكنها ليست أكثر من المناسب لي.",
         },
         {
-          de: "Vorsicht, das Essen ist sehr heiß!",
-          ar: "احذر، الطعام ساخنٌ جداً! (heiß حرارة لا توابل)",
-        },
-        {
-          de: "Ich esse nichts Scharfes.",
-          ar: "لا آكل شيئاً حارّاً. (nichts + صفة كبيرة + -es)",
+          de: "Das Curry ist scharf, aber nur lauwarm.",
+          ar: "الكاري حارّ في الطعم، لكنه فاتر فقط. (وصفان مختلفان)",
         },
         {
           de: "Ich möchte etwas Warmes essen.",
-          ar: "أودّ أن آكل شيئاً دافئاً.",
+          ar: "أودّ أن آكل شيئاً دافئاً. (Warmes اسم مشتق من صفة)",
         },
         {
-          de: "Zwei Bier und eine Tasse Kaffee, bitte.",
-          ar: "بيرتان وفنجان قهوة من فضلك. (Bier بلا جمع، Tasse مؤنّثة تُجمع)",
+          de: "Ich möchte etwas warm essen.",
+          ar: "أودّ أن آكل شيئاً وهو دافئ. (warm تصف طريقة/حالة الأكل في هذا السياق)",
         },
         {
-          de: "Eine Portion Pommes als Beilage, bitte.",
-          ar: "حصّة بطاطا كطبقٍ جانبيّ من فضلك.",
+          de: "Wir bestellen zwei Tassen Kaffee und zwei Gläser Wasser.",
+          ar: "نطلب فنجانين من القهوة وكأسين من الماء.",
+        },
+        {
+          de: "Für zwei Personen: zwei Apfelschorlen oder zwei Gläser Apfelschorle.",
+          ar: "لشخصين: شرابا تفاح مخففان بالماء الغازي، أو كأسان من شراب التفاح المخفف.",
         },
       ],
       comparisonWithArabic:
-        "**١. «حارّ» كلمةٌ واحدة في العربية ومعنيان في الألمانية.** نقول «الشوربة حارّة» فنعني السخونة، ونقول «الأكل حارّ» فنعني الفلفل، ويفصل السياق. والألمانية تفصل بالمفردة: **heiß** للحرارة و**scharf** للتوابل. وهذا من أكثر ما يخطئ فيه العرب والأتراك والهنود معاً، والخطأ مضحكٌ لا مُشكل: من قال Der Tee ist scharf وصف شاياً بالفلفل.\n\n**٢. التدرّج في العربية يقع على الصفة، وفي الألمانية على أداةٍ قبلها.** نقول «مالحة شوية» و«مالحة زيادة» فنضيف كلمةً بعد الصفة؛ والألمانية تضع الأداة **قبلها**: ein bisschen salzig · zu salzig. والترتيب مهمّ لأنّ ما بعد الصفة في الألمانية موضعٌ آخر.\n\n**٣. zu لا تعني «إلى» هنا.** المتعلّم يعرف zu حرف جرٍّ (ich gehe zum Arzt) ثمّ يراها قبل صفةٍ فيرتبك. وهي هنا **ظرفٌ بمعنى «أكثر من اللازم»**، ولا علاقة لها بالجرّ. وقريبٌ منها في العربية «زيادة عن اللزوم».\n\n**٤. etwas Warmes لا مقابل بنيويّ لها.** العربية تقول «شيئاً دافئاً» فتصف الاسم بصفة؛ والألمانية **تحذف الاسم وتُصعّد الصفة مكانه** فتكتبها بحرفٍ كبير: etwas Warmes حرفياً «بعضُ الدافئ». وأقرب ما يشبهها عربياً «شيءٌ من الدافئ» أو استعمال «الحلو» اسماً في «أحبّ الحلو». فالمنطق موجودٌ عندنا لكنّه ليس قاعدةً مطّردة كما في الألمانية.\n\n**٥. المقادير بلا «مِن».** العربية تقول «كوبٌ **من** الماء» و«فنجانٌ **من** القهوة»، والألمانية تحذف الحرف: **ein Glas Wasser** لا ein Glas von Wasser. وهذا الخطأ من أعند ما يقع فيه المتعلّم العربيّ لأنّ «من» عنده لازمةٌ في البنية.",
+        `تظهر في وصف الطعام فروقٌ ينبغي أن يبيّنها السياق: **warm/heiß** لدرجة الحرارة في الأمثلة، و**scharf** للطعم الحارّ/اللاذع. قد تختلف طريقة تقسيم هذه المعاني أو ألفاظها بين اللهجات العربية؛ لا نفترض مقابلةً كلمةً بكلمة.
+
+**sehr salzig** يصف شدة الملوحة، و**zu salzig** يضيف حكماً بأنّها تجاوزت ما يناسب المتكلم. لكنّ هذه العبارة وحدها لا تحدد ما إذا كان سيطلب التبديل أو سيأكل الطبق أو سيتركه.
+
+في **etwas Warmes** صفةٌ مستعملة اسماً فتُكتب بحرف كبير؛ أما **etwas warm essen** فتركيب سليم بمعنى مختلف. يقتصر المثال على هاتين الصيغتين ولا يشرح كل نهايات الصفات. و**zwei Tassen** و**zwei Gläser** في أمثلتنا جمعٌ لأشياء معدودة؛ في بعض وحدات الشراب ترد صيغة أخرى مثل **zwei Glas Wein**، لذا يعتمد الاختيار على التركيب المقصود لا على جنس الاسم وحده.`,
       eselsbruecke:
-        "**scharf بالفلفل وheiß بالنار.** وللتدرّج: **ein bisschen** يُبقي الطبق و**zu** يُرجعه. وبعد etwas وnichts: **حرفٌ كبير و-es**.",
+        "اسأل أولاً: أصف حرارة الطبق أم مذاقه؟ ثمّ حدّد هل تعدّ الوعاء نفسه (**zwei Gläser**) أم تستعمل تركيباً لوحدة مشروب؛ فالسياق مهم.",
       commonMistakes: [
         {
-          wrong: "Die Suppe ist scharf. (وأنت تعني أنّها ساخنة)",
-          right: "Die Suppe ist heiß.",
+          wrong: "Die Suppe ist scharf. (إذا كان المقصود أنها ساخنة الحرارة)",
+          right: "Die Suppe ist heiß. / Die Suppe ist warm.",
           whyAr:
-            "scharf للتوابل وheiß للحرارة. العربية تجمعهما في «حارّ» فينتقل اللبس، والنتيجة وصفُ شايٍ بالفلفل.",
+            "scharf يصف الطعم الحارّ/اللاذع في هذا السياق، لا درجة الحرارة. قد تكون الشوربة حارة الطعم وساخنة الحرارة معاً إذا قيل الأمران.",
+          classification: "contextual-alternative",
         },
         {
-          wrong: "Ich möchte etwas warm.",
-          right: "Ich möchte etwas Warmes.",
+          wrong: "Die Suppe ist sehr salzig. (إذا كان المقصود أنها تجاوزت ما أستسيغه)",
+          right: "Die Suppe ist mir zu salzig.",
           whyAr:
-            "بعد etwas/nichts تصير الصفة اسماً: حرفٌ كبير ونهاية -es. قالبٌ مغلق يُحفظ كما هو.",
+            "sehr يصف درجة عالية، لكنه لا يعني وحده «أكثر مما يناسبني»؛ تضيف zu هذا التقييم. لا تستلزم الجملة طلب الاستبدال.",
+          classification: "contextual-alternative",
         },
         {
-          wrong: "Ein Glas von Wasser, bitte.",
-          right: "Ein Glas Wasser, bitte.",
+          wrong: "Ich möchte etwas warmes essen.",
+          right: "Ich möchte etwas Warmes essen.",
           whyAr:
-            "المقدار يلتصق بالسلعة بلا حرف جرّ (a1-07). و«من» العربية لا تُترجَم هنا البتّة.",
+            "في هذا التركيب استُعملت Warmes اسماً بعد etwas، فتبدأ بحرف كبير. أمّا etwas warm essen فتركيب سليم في معنى آخر.",
+          classification: "error",
         },
         {
-          wrong: "Zwei Tasse Kaffee, bitte.",
-          right: "Zwei Tassen Kaffee, bitte.",
+          wrong: "Auf dem Tisch stehen zwei Glas.",
+          right: "Auf dem Tisch stehen zwei Gläser.",
           whyAr:
-            "الوحدات المؤنّثة تُجمع (Tassen, Flaschen)، والمذكّرة والمحايدة تبقى مفردة (zwei Glas, drei Stück, zwei Bier).",
+            "هنا نعدّ كأسين ماديين على الطاولة، ولذلك نستخدم جمع Glas: Gläser. هذا لا ينفي ورود zwei Glas Wein بوصفه تركيب كمية في استعمال آخر.",
+          classification: "error",
         },
         {
-          wrong: "Die Suppe ist sehr salzig. (وأنت تشكو وتريد استبدالها)",
-          right: "Die Suppe ist zu salzig.",
+          wrong: "Das ist zwei Tassen Kaffee.",
+          right: "Das sind zwei Tassen Kaffee. / Ich bestelle zwei Tassen Kaffee.",
           whyAr:
-            "sehr تُقوّي الوصف وzu تُعلن تجاوز الحدّ. وحدها zu تُفهم شكوى تستدعي تصرّفاً.",
+            "مع الفاعل الجمعي zwei Tassen يأتي الفعل بصيغة الجمع sind؛ وجمع Tasse هنا لعدّ أكواب القهوة، لا بسبب جنس الاسم.",
+          classification: "error",
         },
       ],
       relatedRuleComparison: {
-        title: "الصفات: ما تعرفه اليوم وما يأتي في B1",
+        title: "الصفات المستعملة اسماً ووحدات القياس",
         content:
-          "الصفة الألمانية لها وضعان، وأنت تملك الأوّل كاملاً:\n\n| الوضع | المثال | النهاية | أين |\n|---|---|---|---|\n| **مسندة** (بعد sein/werden/schmecken) | Die Suppe ist **salzig** | ✗ بلا نهاية | a1-08 واليوم |\n| **موصوفة** (قبل الاسم) | die **salzige** Suppe | ✔ نهاية متغيّرة | b1-06 · b1-10 |\n| **مُصعَّدة** (بعد etwas/nichts) | etwas **Warmes** | ‑es وحرفٌ كبير | اليوم — قالبٌ مغلق |\n\nفما دامت الصفة بعد الفعل فأنت في أمان. وحين تسبق الاسم يبدأ نظام النهايات — وهو بابٌ كامل مؤجّل إلى B1 عن قصد، لأنّه يحتاج الحالات الأربع مُتقنةً أوّلاً.",
+          "توضح مراجع IDS Grammis أن الصفة التي تستعمل اسماً تُكتب بحرف كبير، وتعرض مراجع التصريف نهايات تتغير بحسب السياق. في **etwas Warmes** نرى صيغةً واحدة بعد **etwas**؛ لا نستنتج منها أن جميع الصفات تنتهي **-es**. كما يورد Duden **Gläser** لجمع كؤوس الشرب، ويذكر **zwei Glas Wein** في استعمال قياسي محدد؛ لذلك يجب ربط صيغة الجمع بنوع المعدود والتركيب.",
       },
     },
   ],
@@ -576,18 +667,18 @@ export const lessonA203: Lesson = {
     paragraphs: [
       "Letzten Samstag wollten wir endlich mal wieder essen gehen. Meine Frau hatte am Mittwoch angerufen und einen Tisch für vier Personen auf den Namen Haddad reserviert. Das war eine gute Idee, denn das Gasthaus Löwen war am Abend komplett voll.",
       "Wir sind um sieben angekommen. Am Eingang stand ein Schild: „Bitte warten Sie, Sie werden platziert.“ Früher hätte ich mich einfach hingesetzt, aber inzwischen weiß ich, wie es hier läuft. Nach zwei Minuten kam der Kellner und hat uns an einen schönen Tisch am Fenster geführt.",
-      "Zuerst kamen nur die Getränke. „Was möchten Sie trinken?“ – „Zweimal stilles Wasser und zwei Apfelschorle, bitte.“ Erst danach hat er die Speisekarte gebracht und nach dem Essen gefragt. Als Vorspeise hätten wir gern die Kürbissuppe, als Hauptgericht zweimal das Schnitzel mit Pommes und zweimal den Fisch.",
-      "Das Essen hat fast allen sehr gut geschmeckt. Nur mein Bruder war nicht ganz zufrieden: Sein Fisch war leider etwas trocken. Er hat den Kellner gerufen und höflich gesagt: „Entschuldigung, der Fisch ist leider ziemlich trocken. Könnten Sie das bitte in der Küche sagen?“ Der Kellner hat sich entschuldigt und ihm einen neuen Teller gebracht.",
+      "Zuerst kamen nur die Getränke. „Was möchten Sie trinken?“ – „Zweimal stilles Wasser und zwei Apfelschorlen, bitte.“ Erst danach hat er die Speisekarte gebracht und gefragt, was wir essen möchten. Als Vorspeise hätten wir gern die Kürbissuppe, als Hauptgericht zweimal das Schnitzel mit Pommes und zweimal den Fisch.",
+      "Das Essen hat fast allen sehr gut geschmeckt. Nur mein Bruder war nicht ganz zufrieden: Sein Fisch war leider etwas trocken. Er hat den Kellner gerufen und höflich gesagt: „Entschuldigung, der Fisch ist leider ziemlich trocken. Könnten Sie das bitte an die Küche weitergeben?“ Der Kellner hat sich entschuldigt und ihm einen neuen Teller gebracht.",
       "Nach dem Hauptgericht wollte niemand mehr etwas Süßes. Wir waren alle satt. „Hat es Ihnen geschmeckt?“, fragte der Kellner. „Ja, ausgezeichnet, danke!“",
-      "Dann kam die Frage, die ich am Anfang nie verstanden habe: „Zusammen oder getrennt?“ Wir haben getrennt gezahlt – das ist hier ganz normal. Mein Anteil waren 21,40 Euro. Ich habe gesagt: „Dreiundzwanzig, bitte.“ Der Kellner hat sich bedankt, und wir sind zufrieden nach Hause gegangen.",
+      "Dann kam die Frage, die ich am Anfang nie verstanden habe: „Zusammen oder getrennt?“ An diesem Abend haben wir getrennt gezahlt. Mein Anteil war 21,40 Euro. Ich habe freiwillig auf 23 Euro aufgerundet und gesagt: „Dreiundzwanzig, bitte.“ So gab ich 1,60 Euro Trinkgeld. Der Kellner hat sich bedankt, und wir sind zufrieden nach Hause gegangen.",
     ],
     paragraphsAr: [
       "السبت الماضي أردنا أخيراً أن نخرج للعشاء من جديد. كانت زوجتي قد اتّصلت يوم الأربعاء وحجزت طاولةً لأربعة أشخاص باسم حدّاد. وكانت فكرةً صائبة، فقد كان نُزُل الأسد ممتلئاً تماماً في المساء.",
       "وصلنا في السابعة. عند المدخل كانت لافتة: «انتظروا من فضلكم، سيُجلسكم أحدُنا». في السابق كنتُ سأجلس ببساطة، لكنّي صرتُ أعرف الآن كيف تجري الأمور هنا. وبعد دقيقتين جاء النادل وقادنا إلى طاولةٍ جميلة عند النافذة.",
-      "أوّلاً جاءت المشروبات وحدها. «ماذا تحبّون أن تشربوا؟» — «ماءان بلا غاز وعصيرا تفّاحٍ بالمياه الغازية من فضلك». وبعد ذلك فقط أحضر قائمة الطعام وسأل عن الأكل. كمقبّلاتٍ أردنا شوربة القرع، وكطبقٍ رئيس شنيتسلين مع البطاطا وسمكتين.",
-      "أعجب الطعام الجميع تقريباً. غير أنّ أخي لم يكن راضياً تماماً: كانت سمكته للأسف جافّةً بعض الشيء. نادى النادل وقال بأدب: «عذراً، السمك جافٌّ إلى حدٍّ ما للأسف. أيمكنك أن تُبلغ المطبخ من فضلك؟» فاعتذر النادل وأحضر له طبقاً جديداً.",
-      "وبعد الطبق الرئيس لم يُرد أحدٌ شيئاً حلواً. كنّا كلّنا شباعاً. «هل أعجبكم الطعام؟» سأل النادل. «نعم، ممتاز، شكراً!»",
-      "ثمّ جاء السؤال الذي لم أكن أفهمه في البداية أبداً: «معاً أم كلٌّ على حدة؟» دفعنا كلٌّ على حدة — وهذا أمرٌ عاديّ تماماً هنا. كان نصيبي ٢١٫٤٠ يورو. فقلت: «ثلاثة وعشرون من فضلك». شكرني النادل، وعدنا إلى البيت راضين.",
+      "في البداية جاءت المشروبات وحدها. «ماذا تحبّون أن تشربوا؟» — «ماءان بلا غاز وشرابا تفاح مخففان بالماء الغازي من فضلك». وبعد ذلك أحضر قائمة الطعام وسألنا عمّا نريد أن نأكل. كمقبّلات أردنا شوربة القرع، وكطبق رئيس شنيتسلين مع البطاطا وسمكتين.",
+      "كان مذاق الطعام طيباً جداً لدى الجميع تقريباً. غير أنّ أخي لم يكن راضياً تماماً: كانت سمكته للأسف جافةً بعض الشيء. نادى النادل وقال بأدب: «عذراً، السمك جاف إلى حد ما للأسف. هل يمكن أن تنقل ذلك إلى المطبخ من فضلك؟» فاعتذر النادل وأحضر له طبقاً جديداً.",
+      "وبعد الطبق الرئيس لم يُرد أحدٌ شيئاً حلواً. كنّا كلّنا شباعاً. «هل راق لكم مذاق الطعام؟» سأل النادل. «نعم، ممتاز، شكراً!»",
+      "ثمّ جاء السؤال: «معاً أم كلٌّ على حدة؟» دفعنا في تلك الأمسية كلٌّ على حدة. كان نصيبي ٢١٫٤٠ يورو. قرّبتُ المبلغ طوعاً إلى ٢٣ يورو وقلت: «ثلاثة وعشرون من فضلك». بذلك أعطيتُ إكراميةً قدرها ١٫٦٠ يورو. شكرني النادل، وعدنا إلى البيت راضين.",
     ],
     glossary: [
       {
@@ -602,7 +693,7 @@ export const lessonA203: Lesson = {
       {
         de: "platziert (platzieren)",
         ar: "يُجلس، يُنزل في مكان",
-        noteAr: "Sie werden platziert مبنيّ للمجهول",
+        noteAr: "صيغة مبنيّة للمجهول؛ واللافتة في القصة تطلب من الزبائن الانتظار",
       },
       {
         de: "geführt (führen)",
@@ -620,7 +711,7 @@ export const lessonA203: Lesson = {
       {
         de: "die Vorspeise",
         ar: "المقبّلات",
-        noteAr: "ثمّ Hauptgericht ثمّ Nachtisch",
+        noteAr: "قد تردّ على القائمة أيضاً كلمتا Hauptgericht وNachtisch؛ Beilage طبق جانبي",
       },
       {
         de: "das Hauptgericht",
@@ -628,8 +719,8 @@ export const lessonA203: Lesson = {
       },
       {
         de: "geschmeckt (schmecken)",
-        ar: "كان طعمه طيّباً لـ",
-        noteAr: "الطعام فاعل والشخص مجرور",
+        ar: "كان مذاقه (لشخص) بحسب السياق",
+        noteAr: "في مثال الدرس Essen في Nominativ وضمير الشخص في Dativ الألمانية",
       },
       {
         de: "trocken",
@@ -686,7 +777,7 @@ export const lessonA203: Lesson = {
         ],
         correctIndex: 0,
         explanation:
-          "عرفٌ ألمانيّ: يُجلسك النادل ولا تختار طاولتك — ولذلك «Nach zwei Minuten kam der Kellner».",
+          "في هذه القصة توجّه اللافتة الزبائن إلى الانتظار، ثمّ يأتي النادل ويقود المجموعة إلى طاولة.",
         errorType: "vocabulary",
       },
       {
@@ -703,42 +794,38 @@ export const lessonA203: Lesson = {
         ],
         correctIndex: 0,
         explanation:
-          "«Zuerst kamen nur die Getränke» — الطلب في المطعم الألمانيّ يجري على مرحلتين.",
+          "هذا ما حدث في القصة: يذكر النص المشروبات أولاً ثمّ قائمة الطعام؛ لا يقرر ترتيباً عاماً للخدمة.",
         errorType: "vocabulary",
       },
       {
         id: "rq4",
         type: "multiple-choice",
         paragraph: 4,
-        questionDe: "Wie hat sich der Bruder beschwert?",
-        instructionAr: "اقرأ الفقرة الرابعة: كيف اشتكى الأخ؟",
+        questionDe: "Wie hat der Bruder den trockenen Fisch angesprochen?",
+        instructionAr: "اقرأ الفقرة الرابعة: كيف أشار الأخ إلى جفاف السمك؟",
         options: [
-          "Höflich, mit leider und Könnten Sie",
-          "Laut und wütend",
-          "Er hat gar nichts gesagt",
-          "Er hat das Restaurant verlassen",
+          "Höflich: „Entschuldigung … Könnten Sie das bitte an die Küche weitergeben?“",
+          "Er hat den Kellner beschimpft.",
+          "Er hat nur nach der Rechnung gefragt.",
+          "Er hat den Fisch als ausgezeichnet gelobt.",
         ],
         correctIndex: 0,
         explanation:
-          "«leider» تُلطّف الشكوى و«Könnten Sie … bitte» تجعلها طلباً لا اتّهاماً — بنية a2-01 الثلاثية.",
+          "يذكر النص أنه نادى النادل بأدب، واستعمل Entschuldigung وKönnten Sie … bitte لطلب نقل الملاحظة إلى المطبخ.",
         errorType: "vocabulary",
       },
       {
         id: "rq5",
         type: "multiple-choice",
-        questionDe:
-          "Warum heißt es „Das Essen hat allen geschmeckt“ und nicht „Alle haben das Essen geschmeckt“?",
-        instructionAr: "سؤال قواعد: لماذا هذا الترتيب؟",
-        options: [
-          "Weil bei schmecken die Speise das Subjekt ist",
-          "Weil geschmeckt immer mit Dativ steht und kein Subjekt hat",
-          "Weil alle ein Pluralwort ist",
-          "Weil das Perfekt die Wörter umdreht",
-        ],
+        paragraph: 4,
+        questionDe: "Das Essen ___ allen sehr gut geschmeckt. Welche Form passt?",
+        instructionAr:
+          "أكمل الفعل في الجملة: راعِ فاعلها النحوي، ولا تخلط بينه وبين ضمير Dativ.",
+        options: ["hat", "haben", "habe", "hast"],
         correctIndex: 0,
         explanation:
-          "schmecken من أفعال الدّاتيف: الطعام فاعلٌ مرفوع والأشخاص مجرورون (allen).",
-        errorType: "case",
+          "Das Essen هو الفاعل المفرد، لذلك نستخدم hat؛ وallen ضمير جمع في Dativ. جملة Alle haben das Essen geschmeckt ممكنة في معنى «تذوّق الجميع الطعام»، لكنها تعني شيئاً آخر وليست تصحيحاً لهذه الجملة.",
+        errorType: "conjugation",
       },
       {
         id: "rq6",
@@ -749,7 +836,7 @@ export const lessonA203: Lesson = {
         options: ["1,60 Euro", "23 Euro", "21,40 Euro", "Gar nichts"],
         correctIndex: 0,
         explanation:
-          "الحساب 21,40 ودفع 23 ⟵ الفرق 1,60 يورو. والبقشيش يُقال شفهياً: «Dreiundzwanzig, bitte».",
+          "في القصة الحساب 21,40 يورو والمجموع بعد التقريب 23؛ أي إكرامية قدرها 1,60 يورو في هذا المثال.",
         errorType: "vocabulary",
       },
     ],
@@ -768,7 +855,7 @@ export const lessonA203: Lesson = {
       },
       {
         de: "Hat es Ihnen geschmeckt? – Ja, ausgezeichnet!",
-        ar: "هل أعجبكم الطعام؟ — نعم، ممتاز!",
+        ar: "هل راق مذاق الطعام لكم؟ — نعم، ممتاز!",
       },
       {
         de: "Zusammen oder getrennt? – Getrennt, bitte.",
@@ -776,11 +863,11 @@ export const lessonA203: Lesson = {
       },
       {
         de: "Dreiundzwanzig, bitte.",
-        ar: "ثلاثة وعشرون من فضلك (صيغة إعطاء البقشيش)",
+        ar: "ثلاثة وعشرون من فضلك (صيغة الدفع في مشهد القصة)",
       },
     ],
     discussionAr:
-      "احكِ عن أمسيةٍ في مطعم، في ثماني جملٍ على الأقلّ. استعمل صيغتين مختلفتين من سُلّم الطلب (hätte gern · möchte · nehme)، وجملةً واحدة بـschmecken تجعل الطعام فيها فاعلاً، وصفةً مُدرَّجة (ein bisschen … أو zu …). ثمّ راجع: هل صرّفتَ schmecken مع الطعام لا مع نفسك؟ وهل جعلتَ الشخص مجروراً (mir/uns)؟",
+      "احكِ عن أمسية في مطعم في ثماني جمل على الأقل. استعمل صيغتين مختلفتين من (hätte gern · möchte · nehme) في سياقين يناسبان المعنى، وجملةً بـschmecken يكون فيها الطعام فاعلاً، وصفةً للطعم. ثمّ راجع تصريف الفعل وحالة ضمير الشخص.",
   },
 
   listening: {
@@ -807,8 +894,13 @@ export const lessonA203: Lesson = {
           { speaker: "Sami", de: "Ein Wasser, bitte.", ar: "ماء من فضلك." },
           {
             speaker: "Kellner",
-            de: "Sehr gerne. (nach dem Essen) Wie hat es geschmeckt?",
-            ar: "بكل سرور. (بعد الأكل) كيف كان الطعم؟",
+            de: "Sehr gerne.",
+            ar: "بكل سرور.",
+          },
+          {
+            speaker: "Kellner (nach dem Essen)",
+            de: "Wie hat es Ihnen geschmeckt?",
+            ar: "كيف كان مذاق الطعام بالنسبة إليكم؟",
           },
           {
             speaker: "Sami",
@@ -854,24 +946,25 @@ export const lessonA203: Lesson = {
         id: "q1",
         itemId: "l1",
         type: "multiple-choice",
-        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        instructionAr: "أجب بعد الاستماع وقبل فتح التفريغ:",
         questionDe: "Was bestellt Sami?",
         questionAr: "ماذا طلب سامي؟",
         options: [
-          "Spaghetti und Salat",
-          "Fleisch und Suppe",
+          "Spaghetti, einen Salat und ein Wasser",
+          "Spaghetti und einen Salat",
           "Pizza und Wasser",
           "Gemüseteller",
         ],
         correctIndex: 0,
-        explanation: "قال: Ich möchte die Spaghetti und einen Salat.",
+        explanation:
+          "طلب سامي Spaghetti وسلطةً وماءً؛ الإجابة تجمع الطعام والشراب المذكورين.",
         errorType: "vocabulary",
       },
       {
         id: "q2",
         itemId: "l1",
         type: "multiple-choice",
-        instructionAr: "اختر الإجابة الصحيحة:",
+        instructionAr: "أجب بعد الاستماع وقبل فتح التفريغ:",
         questionDe: "Wie waren die Spaghetti?",
         questionAr: "كيف كانت السباغيتي؟",
         options: ["lecker", "schlecht", "scharf", "kalt"],
@@ -883,7 +976,7 @@ export const lessonA203: Lesson = {
         id: "q3",
         itemId: "l2",
         type: "multiple-choice",
-        instructionAr: "اختر الإجابة الصحيحة:",
+        instructionAr: "أجب بعد الاستماع وقبل فتح التفريغ:",
         questionDe: "Was kann Mona nicht essen?",
         questionAr: "ماذا لا تستطيع منى أكل؟",
         options: ["Fleisch", "Gemüse", "Salat", "Fisch"],
@@ -900,36 +993,53 @@ export const lessonA203: Lesson = {
     items: [
       {
         de: "schmecken",
-        ar: "يكون طعمه جيداً",
-        note: "sch = ش + ck = ك مشددة: شمِكِن",
+        ar: "يكون مذاقه (بحسب السياق)",
+        note: "schmecken [ˈʃmɛkən]: sch = [ʃ]، وck تمثّل [k] بعد حركة قصيرة.",
       },
-      { de: "lecker", ar: "لذيذ", note: "e مفتوحة + ck: لِكّر" },
-      { de: "die Küche", ar: "المطبخ", note: "ü + ch ناعمة: كُيخِه" },
-      { de: "die Suppe", ar: "الحساء", note: "p مزدوجة: زوپّـِه" },
+      {
+        de: "lecker",
+        ar: "لذيذ",
+        note: "lecker [ˈlɛkɐ]: e في المقطع الأول [ɛ] قصيرة، وck تمثّل [k] بعد حركة قصيرة.",
+      },
+      {
+        de: "die Küche",
+        ar: "المطبخ",
+        note: "Küche [ˈkʏçə]: ü [ʏ] صوت أمامي مدوّر قصير؛ وch هنا [ç] (ich-Laut)، لا خ [x] ولا ش عربية حرفياً.",
+      },
+      {
+        de: "die Suppe",
+        ar: "الحساء",
+        note: "Suppe [ˈzʊpə]: s في البداية [z]، وu [ʊ] قصيرة؛ pp مكتوبتان لكن النطق [p] واحدة بعد حركة قصيرة.",
+      },
       {
         de: "die Rechnung",
         ar: "الحساب/الفاتورة",
-        note: "ch بعد e = ش خفيفة (ich-Laut) لا خ + ung = ونغ: ريش-نونغ",
+        note: "Rechnung [ˈʁɛçnʊŋ]: ch بعد e هو [ç] (ich-Laut)، لا يطابق خ [x] ولا ش العربية حرفياً.",
       },
-      { de: "bestellen", ar: "يطلب", note: "e مفتوحة: بِشتِلِن" },
+      {
+        de: "bestellen",
+        ar: "يطلب",
+        note: "bestellen [bəˈʃtɛlən]: المقطع الأول مخفّف [bə]، وe المنبورة [ɛ] قصيرة.",
+      },
     ],
-    tip: "Rechnung لها نطق صعب: «ريش-نونغ» — ch هنا تُنطق خ حلقية. كررها 5 مرات ببطء.",
+    tip:
+      "في Rechnung يُنطق ch بصوت [ç] (ich-Laut)، وهو ليس خ العربية الخلفية [x] ولا ش العربية. في Küche الصوت نفسه؛ ويمكن تقريب [ç] بوصفه احتكاكاً أمامياً قرب موضع نطق الياء. أما ö في möchte [ˈmœçtə] وkönnen [ˈkœnən] فهو صوت أمامي مدوّر، لا تمثّله كتابة عربية واحدة بدقة.",
     shadowing: [
       {
         de: "Ich möchte bitte einen Tee.",
         ar: "أود شاياً من فضلك.",
-        tip: "möchte = مُوخشـتِه (ö)",
+        tip: "في möchte: ö [œ] صوت أمامي مدوّر؛ وch هو [ç]، لا خ عربية مطابقة.",
       },
       {
         de: "Die Speisekarte, bitte!",
         ar: "القائمة من فضلك!",
-        tip: "Speisekarte = شپايْزِه-كارته (sp=شپ)",
+        tip: "في أول Speisekarte، sp تُنطق [ʃp] تقريباً؛ وei تُنطق [aɪ̯]. والكتابة العربية تقريبٌ لا نقل صوتي دقيق.",
       },
       { de: "Das schmeckt lecker!", ar: "هذا لذيذ!", tip: "schmeckt = شمِكْت" },
       {
         de: "Können Sie mir helfen?",
         ar: "هل يمكنكم مساعدتي؟",
-        tip: "Können = كُنِن (ö)",
+        tip: "können [ˈkœnən]: ö [œ] صوت أمامي مدوّر؛ استمع وحاول تقريب وضع الشفتين.",
       },
     ],
   },
@@ -938,16 +1048,27 @@ export const lessonA203: Lesson = {
     {
       id: "w1",
       type: "transformation",
-      instructionAr: "اكتب طلبك في المطعم:",
-      prompt: "Was möchtest du bestellen? (اكتب جملة كاملة بـ Ich möchte...)",
+      instructionAr:
+        "اكتب طلباً كاملاً بـIch möchte، واختر عبارةً واحدة من الأسماء المحددة في السؤال. إن أضفت bitte فضعها بعد möchte أو في آخر الجملة.",
+      prompt:
+        "Was möchtest du bestellen? Verwende genau einen Ausdruck: eine Pizza / einen Salat / die Suppe / Wasser. (Schreibe einen vollständigen Satz mit Ich möchte ...)",
       acceptedAnswers: [
-        "Ich möchte eine Pizza",
-        "Ich möchte einen Salat",
-        "Ich möchte die Suppe",
-        "Ich möchte Wasser",
+        "Ich möchte eine Pizza.",
+        "Ich möchte bitte eine Pizza.",
+        "Ich möchte eine Pizza, bitte.",
+        "Ich möchte einen Salat.",
+        "Ich möchte bitte einen Salat.",
+        "Ich möchte einen Salat, bitte.",
+        "Ich möchte die Suppe.",
+        "Ich möchte bitte die Suppe.",
+        "Ich möchte die Suppe, bitte.",
+        "Ich möchte Wasser.",
+        "Ich möchte bitte Wasser.",
+        "Ich möchte Wasser, bitte.",
       ],
-      sampleAnswer: "Ich möchte bitte eine Pizza und einen Salat.",
-      explanation: "الصيغة: Ich möchte + المفعول (بالنصب) + من فضلك.",
+      sampleAnswer: "Ich möchte bitte eine Pizza.",
+      explanation:
+        "استخدم العبارة المختارة كما وردت في القائمة: Ich möchte + اسم الطلب، ويمكن وضع bitte بعد möchte أو في نهاية الجملة.",
       errorType: "grammar",
     },
     {
@@ -963,7 +1084,7 @@ export const lessonA203: Lesson = {
         { correct: "möchten", options: ["möchte", "möchtest", "möchten"] },
       ],
       explanation:
-        "سلم möchte: möchte، möchtest، möchte، möchten، möchtet، möchten.",
+        "الإجابات المطلوبة هنا: ich möchte، du möchtest، wir möchten، وSie möchten (للمخاطب المفرد أو الجمع بصيغة الاحترام).",
       errorType: "conjugation",
     },
     {
@@ -990,11 +1111,12 @@ export const lessonA203: Lesson = {
     {
       id: "e2",
       type: "multiple-choice",
-      instructionAr: "اختر الصيغة الصحيحة:",
+      instructionAr: "اختر التصريف مع المخاطب الرسمي Sie، سواء أخاطبتَ شخصاً واحداً أو أكثر:",
       questionDe: "___ Sie mir helfen?",
       options: ["Können", "Kann", "Kannst", "Könnt"],
       correctIndex: 0,
-      explanation: "مع Sie: Können (صيغة الاحترام = صيغة الجمع).",
+      explanation:
+        "مع Sie الرسمية، سواء خاطبتَ شخصاً واحداً أو أكثر، نستخدم können. لا تدلّ صيغة المخاطبة الرسمية وحدها على أن المخاطَبين جمع.",
       errorType: "conjugation",
     },
     {
@@ -1007,13 +1129,13 @@ export const lessonA203: Lesson = {
         { left: "der Kellner", right: "النادل" },
         { left: "das Getränk", right: "المشروب" },
       ],
-      explanation: "أربع كلمات أساسية في أي مطعم.",
+      explanation: "أربع مفردات مرتبطة بمشهد المطعم في هذا الدرس.",
       errorType: "vocabulary",
     },
     {
       id: "e4",
       type: "word-ordering",
-      instructionAr: "رتّب الجملة:",
+      instructionAr: "رتّب الجملة في الصيغة التي تبدأ بـ Ich:",
       tokens: ["möchte", "Ich", "die", "Suppe", "bestellen", "."],
       correctSentence: "Ich möchte die Suppe bestellen.",
       explanation: "Ich + möchte + die Suppe + bestellen (في النهاية).",
@@ -1052,15 +1174,20 @@ export const lessonA203: Lesson = {
     {
       id: "e7",
       type: "transformation",
-      instructionAr: "اطلب الحساب بأدب:",
+      instructionAr: "اطلب الحساب بإحدى الصيغ المناسبة للمشهد:",
       prompt: "(النادل اقترب — اطلب الحساب)",
       acceptedAnswers: [
         "Die Rechnung, bitte!",
         "Ich möchte zahlen, bitte!",
         "Ich möchte bitte zahlen.",
+        "Ich hätte gern die Rechnung, bitte.",
+        "Ich möchte bitte die Rechnung.",
+        "Könnten Sie mir bitte die Rechnung bringen?",
+        "Könnte ich bitte die Rechnung haben?",
       ],
       sampleAnswer: "Die Rechnung, bitte!",
-      explanation: "أبسط طلب: Die Rechnung, bitte! أو Ich möchte zahlen.",
+      explanation:
+        "Die Rechnung, bitte! وIch möchte zahlen وIch hätte gern die Rechnung وKönnten Sie mir bitte die Rechnung bringen? صيغ ممكنة لهذا الطلب؛ يتغير الاختيار بحسب الموقف.",
       errorType: "grammar",
     },
     {
@@ -1119,16 +1246,20 @@ export const lessonA203: Lesson = {
     },
     {
       id: "e12",
-      type: "error-correction",
-      instructionAr:
-        "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Ich schmecke die Suppe sehr gut.",
-      wrongWord: "Ich",
-      correctWord: "Mir",
-      options: ["Mir", "Ich", "Mich", "Mein"],
+      type: "multiple-choice",
+      instructionAr: "اختر معنى الجملة في هذا السياق:",
+      questionDe: "Die Suppe schmeckt mir sehr gut.",
+      questionAr: "ماذا تعني الجملة؟",
+      options: [
+        "مذاق الشوربة طيب جداً بالنسبة إليّ.",
+        "أنا أتذوق الشوربة الآن.",
+        "الشوربة تذوقني جيداً.",
+        "أعجبتني الشوربة من ناحية شكلها فقط.",
+      ],
+      correctIndex: 0,
       explanation:
-        "الطعام هو الفاعل والإنسان متلقٍّ: Mir schmeckt die Suppe sehr gut. أمّا Ich schmecke فتعني أنّ لي أنا طعماً.",
-      errorType: "case",
+        "Die Suppe schmeckt mir sehr gut تصف المذاق بالنسبة إلى الشخص. أمّا Ich schmecke die Suppe فيمكن أن تعني «أتذوق الشوربة»، وهي جملة صحيحة بمعنى آخر.",
+      errorType: "vocabulary",
     },
     {
       id: "e13",
@@ -1151,11 +1282,12 @@ export const lessonA203: Lesson = {
     {
       id: "e14",
       type: "word-ordering",
-      instructionAr: "رتّب الكلمات لتقول إنّ المعكرونة لا تعجبك:",
+      instructionAr: "رتّب الكلمات في صيغة ممكنة لتقول إنّ مذاق المعكرونة لا يروق لك:",
       tokens: ["Die", "Nudeln", "schmecken", "mir", "nicht", "."],
       correctSentence: "Die Nudeln schmecken mir nicht.",
+      acceptedSentences: ["Mir schmecken die Nudeln nicht."],
       explanation:
-        "الفاعل (Die Nudeln) أوّلاً، ثم الفعل جمعاً، ثم المتلقّي mir، ثم النفي.",
+        "الترتيب النموذجي هنا يبدأ بالفاعل: Die Nudeln schmecken mir nicht. ويصحّ أيضاً تقديم mir: Mir schmecken die Nudeln nicht؛ يتبع الفعل المصرف في الجملة الخبرية أحد عناصر المقدّمة.",
       errorType: "word-order",
     },
     {
@@ -1163,27 +1295,29 @@ export const lessonA203: Lesson = {
       type: "transformation",
       instructionAr:
         "حوّل الجملة إلى البنية الألمانية الصحيحة (الطعام فاعلاً).",
-      prompt: "أريد أن أقول: «أنا أحبّ الكعكة» (der Kuchen) — بفعل gefallen.",
+      prompt:
+        "مثّل أن الكعكة تروق لك باستخدام gefallen (der Kuchen)، لا بوصف مذاقها.",
       acceptedAnswers: ["Der Kuchen gefällt mir.", "Mir gefällt der Kuchen."],
       sampleAnswer: "Der Kuchen gefällt mir.",
       explanation:
-        "الكعكة هي الفاعل وأنا المتلقّي — كما تقول العربية «تعجبني الكعكة».",
+        "في هذا المثال Der Kuchen هو الفاعل وmir في Dativ. استُخدم gefallen للانطباع المقصود، لا بوصفه مرادفاً وحيداً لكل معاني الإعجاب.",
       errorType: "case",
     },
     {
       id: "e16",
       type: "multiple-choice",
-      instructionAr: "أيّ صيغةٍ هي الأنسب لطلبٍ مهذّب من النادل؟",
-      questionDe: "Sie bestellen beim Kellner. Was sagen Sie?",
+      instructionAr:
+        "حدّد الجملة التي تستعمل صيغة التدريب Ich hätte gern؛ المقصود اختيار التركيب، لا ترتيب الصيغ على سلّم ثابت.",
+      questionDe: "Welche Formulierung verwendet „Ich hätte gern“ für eine Bestellung?",
       options: [
         "Ich hätte gern einen Kaffee, bitte.",
-        "Ich will einen Kaffee, bitte.",
+        "Ich möchte einen Kaffee, bitte.",
+        "Ich nehme einen Kaffee.",
         "Ich mag einen Kaffee.",
-        "Gib mir einen Kaffee.",
       ],
       correctIndex: 0,
       explanation:
-        "bitte لا تُنقذ wollen: التأدّب في الألمانية يقع على صورة الفعل. وmag ميلٌ دائم لا طلب.",
+        "الأولى تستعمل الصيغة المطلوبة. möchte وnehme بديلان صحيحان في سياقات مناسبة، وmag يعبّر هنا عن الميل لا عن طلب واضح؛ لا يعني ذلك أن البدائل الأخرى ممنوعة أو وقحة دائماً.",
       errorType: "vocabulary",
     },
     {
@@ -1217,83 +1351,87 @@ export const lessonA203: Lesson = {
         },
       ],
       explanation:
-        "das Essen مفرد ⟵ schmeckt، وdie Nudeln جمع ⟵ schmecken. الفعل يتبع الطعام لا المتكلّم.",
+        "في هاتين الجملتين يتبع الفعل الفاعل النحوي: das Essen مفرد ⟵ schmeckt، وdie Nudeln جمع ⟵ schmecken. ضمير الشخص في Dativ لا يتحكم في التصريف.",
       errorType: "conjugation",
     },
     {
       id: "e19",
       type: "error-correction",
-      instructionAr: "صحّح أثر الإنجليزية في هذه الجملة",
-      wrongSentence: "Ich schmecke das Essen sehr gut.",
-      wrongWord: "Ich",
-      correctWord: "Das Essen schmeckt mir",
-      options: ["Das Essen schmeckt mir", "Ich", "Mir", "Mich"],
+      instructionAr: "صحّح حالة الضمير في هذا المثال عن المذاق:",
+      wrongSentence: "Das Essen schmeckt ich sehr gut.",
+      wrongWord: "ich",
+      correctWord: "mir",
+      options: ["mir", "mich", "ich", "meine"],
       explanation:
-        "قياسٌ على I like the food. الصواب أنّ الطعام فاعل: Das Essen schmeckt mir. وارجع إلى العربية «أعجبني الطعام» فهي أقرب.",
+        "في هذا المعنى يكون Das Essen فاعلاً، ويأتي الشخص المتأثر بالمذاق في Dativ: mir. المطلوب استبدال الضمير القصير فقط.",
       errorType: "case",
     },
     {
       id: "e20",
       type: "multiple-choice",
       instructionAr: "الشوربة ساخنةٌ جداً. أيّ صفةٍ تصف حرارتها؟",
-      questionDe: "Die Suppe kommt direkt aus der Küche. Sie ist ...",
+      questionDe: "Die Temperatur der Suppe ist sehr hoch. Sie ist ...",
       options: ["heiß", "scharf", "warm", "trocken"],
       correctIndex: 0,
       explanation:
-        "heiß للحرارة وscharf للتوابل. «حارّ» العربية تجمعهما فينتقل اللبس.",
+        "heiß يصف الحرارة العالية هنا؛ أما scharf فيصف الطعم الحارّ/اللاذع.",
       errorType: "vocabulary",
     },
     {
       id: "e21",
       type: "fill-blank",
-      instructionAr: "أكمل بالمقدار الصحيح",
+      instructionAr:
+        "أكمل صيغة المعدود في المثالين؛ في الفراغ الثاني نعدّ كؤوس شرب فعلية، لا كمية مشروب.",
       template:
-        "Zwei ___ Kaffee, bitte. · Drei ___ Wasser, bitte. (الوحدة: Glas)",
+        "Zwei ___ Kaffee, bitte. · Auf dem Tisch stehen drei leere ___. (Trinkgläser)",
       blanks: [
         {
           correct: "Tassen",
-          options: ["Tassen", "Tasse", "Tassens", "Tassen von"],
+          options: ["Tassen", "Tasse", "Tassens", "Tassenen"],
           errorType: "plural",
         },
         {
-          correct: "Glas",
-          options: ["Glas", "Gläser", "Glases", "Glas von"],
+          correct: "Gläser",
+          options: ["Gläser", "Glas", "Gläsern", "Glases"],
           errorType: "plural",
         },
       ],
       explanation:
-        "الوحدات المؤنّثة تُجمع (zwei Tassen)، والمذكّرة والمحايدة تبقى مفردةً بعد العدد (drei Glas, zwei Bier).",
+        "Tassen جمعٌ للأكواب المعدودة، وGläser جمعٌ للكؤوس الفعلية على الطاولة. هذا لا يضع قاعدةً لكل وحدات القياس؛ فـDuden يورد مثلاً استعمال zwei Glas Wein في سياق كمية مشروب.",
       errorType: "plural",
     },
     {
       id: "e22",
-      type: "multiple-choice",
-      instructionAr: "تريد أن تأكل شيئاً دافئاً. كيف تقولها؟",
-      questionDe: "Sie möchten kein kaltes Essen. Was sagen Sie?",
-      options: [
-        "Ich möchte etwas Warmes essen.",
-        "Ich möchte etwas warm essen.",
-        "Ich möchte ein Warmes essen.",
-        "Ich möchte etwas Warme essen.",
+      type: "fill-blank",
+      instructionAr:
+        "أكمل الصيغة التي تجعل الصفة اسماً بعد etwas؛ لا تختبر هذه المسألة الصيغة الأخرى ذات المعنى المختلف etwas warm essen.",
+      template: "Ich möchte etwas ___ essen.",
+      blanks: [
+        {
+          correct: "Warmes",
+          options: ["Warmes", "Warm", "Warme", "Warmem"],
+          errorType: "grammar",
+        },
       ],
-      correctIndex: 0,
-      explanation: "بعد etwas/nichts تصير الصفة اسماً: حرفٌ كبير ونهاية -es.",
+      explanation:
+        "في هذا التركيب المحدد نقول etwas Warmes: تُكتب الصفة اسماً بحرف كبير وتأتي هنا النهاية -es. والجملة Ich möchte etwas warm essen سليمة أيضاً بمعنى مختلف؛ ليست مشتتاً في هذا السؤال.",
       errorType: "grammar",
     },
     {
       id: "e23",
       type: "word-ordering",
-      instructionAr: "رتّب جملة الطلب: انتبه إلى V2 بعد التقديم",
+      instructionAr:
+        "رتّب الطلب بالصيغة المستهدفة «hätte gern + المفعول»، وانتبه إلى V2 بعد التقديم:",
       tokens: ["Als", "Vorspeise", "hätte", "ich", "gern", "die", "Suppe"],
       correctSentence: "Als Vorspeise hätte ich gern die Suppe",
       explanation:
-        "تقديم Als Vorspeise يدفع الفاعل بعد الفعل: الفعل يبقى ثانياً دائماً.",
+        "في هذه الصيغة والجملة الرئيسية، تأتي العبارة المتقدمة Als Vorspeise في الموقع الأول، ثم الفعل المصرف hätte في الموقع الثاني من بنية الجملة، يليه الفاعل ich؛ وتأتي هنا صيغة gern قبل المفعول die Suppe.",
       errorType: "word-order",
     },
     {
       id: "e24",
       type: "matching",
-      instructionAr: "طابق كلّ سؤالٍ بجوابه المعتاد في المطعم",
+      instructionAr: "طابق كلّ سؤالٍ بجوابه المناسب في هذا المشهد",
       pairs: [
         { left: "Haben Sie reserviert?", right: "Ja, auf den Namen Haddad." },
         {
@@ -1304,55 +1442,55 @@ export const lessonA203: Lesson = {
         { left: "Zusammen oder getrennt?", right: "Getrennt, bitte." },
       ],
       explanation:
-        "أربعة أسئلةٍ تُطرح في كلّ زيارة تقريباً — ومن توقّعها لم يتجمّد أمامها.",
+        "هذه أربعة أزواج سؤال وجواب مأخوذة من مشاهد الدرس؛ ترتيب الخطوات وصياغة الأسئلة يختلفان بحسب الموقف.",
       errorType: "vocabulary",
     },
     {
       id: "e25",
       type: "true-false",
-      instructionAr: "اقرأ ثمّ احكم على العبارات",
+      instructionAr: "اقرأ تفاصيل الموقف نفسه ثمّ احكم على العبارات",
       textDe:
-        "Herr Haddad sitzt im Gasthaus. Der Kellner fragt: „Schmeckt es Ihnen?“ Herr Haddad antwortet: „Der Fisch ist leider ein bisschen trocken, aber die Suppe war ausgezeichnet.“ Am Ende fragt der Kellner: „Zusammen oder getrennt?“ Die Rechnung macht 21,40 Euro. Herr Haddad sagt: „Dreiundzwanzig, bitte.“",
+        "Herr Haddad sitzt im Gasthaus. Der Kellner fragt: „Hat es Ihnen geschmeckt?“ Herr Haddad antwortet: „Der Fisch war ein bisschen trocken, aber die Suppe war ausgezeichnet.“ Der Kellner entschuldigt sich und bringt dem Bruder einen neuen Teller. Die Rechnung beträgt 21,40 Euro. Herr Haddad rundet freiwillig auf 23 Euro auf und gibt 1,60 Euro Trinkgeld.",
       statements: [
         {
           id: "s1",
-          de: "Herr Haddad hat sich sehr laut beschwert.",
-          ar: "اشتكى السيّد حدّاد بصوتٍ عالٍ.",
-          isTrue: false,
-          whyAr:
-            "«ein bisschen trocken» ملاحظةٌ لطيفة لا شكوى؛ ولو أراد الشكوى لقال zu trocken.",
+          de: "Herr Haddad sagt, dass der Fisch ein bisschen trocken war.",
+          ar: "يقول السيد حدّاد إن السمك كان جافاً بعض الشيء.",
+          isTrue: true,
+          whyAr: "ورد ذلك صراحةً في الحوار.",
         },
         {
           id: "s2",
-          de: "Die Suppe hat ihm gut geschmeckt.",
-          ar: "أعجبته الشوربة طعماً.",
+          de: "Die Suppe war für ihn ausgezeichnet.",
+          ar: "كانت الشوربة ممتازةً بالنسبة إليه.",
           isTrue: true,
-          whyAr: "«die Suppe war ausgezeichnet».",
+          whyAr: "قال: „Die Suppe war ausgezeichnet.“",
         },
         {
           id: "s3",
-          de: "Er gibt 1,60 Euro Trinkgeld.",
-          ar: "ترك ١٫٦٠ يورو بقشيشاً.",
+          de: "Herr Haddad gibt in diesem Beispiel 1,60 Euro Trinkgeld.",
+          ar: "يعطي السيد حدّاد إكراميةً قدرها ١٫٦٠ يورو في هذا المثال.",
           isTrue: true,
-          whyAr: "23 − 21,40 = 1,60 — والبقشيش يُقال شفهياً عند الدفع.",
+          whyAr: "يذكر النص ذلك صراحةً: الحساب 21,40 والإجمالي 23 يورو.",
         },
         {
           id: "s4",
-          de: "In Deutschland ist getrennt zahlen unhöflich.",
-          ar: "الدفع المنفصل قلّة أدبٍ في ألمانيا.",
+          de: "Der Kellner hat dem Bruder keinen neuen Teller gebracht.",
+          ar: "لم يُحضر النادل طبقاً جديداً للأخ.",
           isTrue: false,
-          whyAr: "بل هو العُرف الطبيعيّ، ولذلك يسأل النادل عنه ابتداءً.",
+          whyAr: "النص يقول إن النادل اعتذر وأحضر له طبقاً جديداً.",
         },
       ],
       explanation:
-        "النصّ يجمع التدرّج (ein bisschen) وschmecken وسؤال الحساب والبقشيش في موقفٍ واحد.",
+        "تحقّق من العبارات مقابل تفاصيل النص؛ مبلغ الإكرامية في هذا الموقف حدث قصصي محدد، لا قاعدة عن كل المطاعم.",
       errorType: "vocabulary",
     },
     {
       id: "e26",
       type: "transformation",
-      instructionAr: "حوّل الطلب الفظّ إلى طلبٍ مهذّب بصيغة hätte gern",
-      prompt: "Ich will eine Suppe. → (höflich mit hätte gern)",
+      instructionAr:
+        "أعِد صياغة الجملة باستعمال Ich hätte gern؛ المطلوب التدريب على صيغة شائعة أخرى، لا الحكم بأن الأصل خطأ أو وقح دائماً.",
+      prompt: "Ich will eine Suppe. → (mit Ich hätte gern …)",
       acceptedAnswers: [
         "Ich hätte gern eine Suppe.",
         "Ich hätte gern eine Suppe",
@@ -1360,8 +1498,20 @@ export const lessonA203: Lesson = {
       sampleAnswer: "Ich hätte gern eine Suppe.",
       hint: "hätte gern + مفعولٌ منصوب، بلا فعلٍ ثانٍ.",
       explanation:
-        "الصعود في سُلّم التأدّب يتمّ بتغيير صورة الفعل لا بإضافة bitte.",
+        "تدرّب هنا على إعادة التعبير بصيغة Ich hätte gern. Ich will eine Suppe صحيحة نحوياً، وقد تبدو أكثر مباشرةً بحسب السياق والنبرة؛ لا يوجد سلّم تهذّب ثابت.",
       errorType: "grammar",
+    },
+    {
+      id: "e27",
+      type: "multiple-choice",
+      instructionAr: "اختر تصريف passen الذي يوافق الفاعل في هذا المثال:",
+      questionDe: "Der Termin ___ mir gut.",
+      questionAr: "أي تصريف يلائم الفاعل Der Termin؟",
+      options: ["passt", "passen", "passe", "gefallen"],
+      correctIndex: 0,
+      explanation:
+        "Der Termin فاعل مفرد، لذا نقول passt؛ وmir متمّم Dativ لا يغيّر تصريف الفعل. هنا passen بمعنى يناسب/يلائم في هذا السياق.",
+      errorType: "conjugation",
     },
   ],
 
@@ -1373,9 +1523,9 @@ export const lessonA203: Lesson = {
         whyAr: "الفعل الأساسي في نهاية الجملة (الإطار).",
       },
       {
-        wrong: "Ich schmecke das gut (المتذوق كفاعل)",
-        right: "Das schmeckt mir gut.",
-        whyAr: "الطعام فاعل، والمتذوق Dativ (mir).",
+        wrong: "Das Essen schmeckt mich gut.",
+        right: "Das Essen schmeckt mir gut.",
+        whyAr: "في هذا المثال التقييمي يأتي الشخص المعني بالمذاق في Dativ: mir.",
       },
       {
         wrong: "Kannst du mich helfen",
@@ -1384,13 +1534,13 @@ export const lessonA203: Lesson = {
       },
     ],
     eselsbruecken: [
-      "«möchte = أود» للطلب المهذب — في أي مطعم ألماني: Ich möchte bitte...",
-      "«lecker = لذيذ»: كلمة السر لإطراء النادل: Das schmeckt lecker!",
+      "للطلب في المثال: Ich möchte …, bitte. ويمكن اختيار صيغ أخرى بحسب الموقف.",
+      "lecker تعني لذيذ: Das schmeckt lecker! مثال ممكن لوصف الطعم.",
     ],
     culturalNote: {
-      title: "نظام Trinkgeld (الإكرامية)",
+      title: "إكرامية: مثال محلي لا قاعدة عامة",
       content:
-        "في ألمانيا لا توجد نسبة إكرامية إلزامية، لكن من اللباقة تقريب المبلغ: «Stimmt so» (الباقي لك) أو 5-10%. تدفع للنادل مباشرة عند الطاولة — وغالباً بعد الأكل ينتظرونك أنت لتطلب الحساب وليس العكس.",
+        "يذكر دليل برلين السياحي أن الإكرامية اختيارية، ويعرض 5–10% كمبلغ مناسب في كثير من المقاهي ذات الجلوس والمطاعم غير الرسمية في برلين، مع اختلاف الممارسة في الحانات. هذا إرشاد محلي لا نسبة إلزامية ولا قاعدة لكل المطاعم. في مثال نقدي، يمكن تحديد المبلغ الإجمالي بقول «Zwanzig, bitte»؛ وتتبع طريقة الدفع الفعلية تعليمات المكان.",
     },
   },
 
@@ -1418,10 +1568,10 @@ export const lessonA203: Lesson = {
     {
       id: "m3",
       type: "word-ordering",
-      instructionAr: "رتّب الجملة:",
+      instructionAr: "ابدأ باسم المطلوب، ثم أضف bitte لصياغة طلب الحساب المختصر:",
       tokens: ["Die", "Rechnung", "bitte", "!"],
       correctSentence: "Die Rechnung, bitte!",
-      explanation: "الحساب من فضلك! — أبسط وأشيع طلب.",
+      explanation: "الحساب من فضلك! — طلب مختصر ممكن للحساب.",
       errorType: "word-order",
     },
     {
@@ -1433,7 +1583,7 @@ export const lessonA203: Lesson = {
       wrongWord: "gut nicht",
       correctWord: "nicht gut",
       options: ["nicht gut", "gut nicht", "nicht gut nicht", "schlecht nicht"],
-      explanation: "النفي قبل الصفة: schmeckt nicht gut.",
+      explanation: "في هذه الجملة، يأتي nicht قبل الصفة gut: schmeckt nicht gut.",
       errorType: "grammar",
     },
     {
@@ -1489,7 +1639,7 @@ export const lessonA203: Lesson = {
     {
       id: "fc4",
       de: "möchten",
-      ar: "أود (طلب مهذب)",
+      ar: "أودّ (صيغة شائعة للرغبة أو الطلب)",
       example: "Ich möchte einen Kaffee.",
       exampleAr: "أود قهوة.",
       level: "A2",
@@ -1505,7 +1655,7 @@ export const lessonA203: Lesson = {
     {
       id: "fc6",
       de: "schmecken",
-      ar: "يكون طعمه جيداً",
+      ar: "يكون مذاقه (لشخص)؛ ويحدّد السياق إن راق المذاق أم لا",
       example: "Das schmeckt mir gut.",
       exampleAr: "هذا طعمه جيد.",
       level: "A2",
@@ -1529,7 +1679,7 @@ export const lessonA203: Lesson = {
     {
       id: "fc9",
       de: "Das Essen schmeckt mir.",
-      ar: "الطعام يعجبني (طعمه).",
+      ar: "يعجبني مذاق الطعام.",
       example: "Das Essen schmeckt mir sehr gut.",
       exampleAr: "الطعام يعجبني كثيراً.",
       level: "A2",
@@ -1537,15 +1687,15 @@ export const lessonA203: Lesson = {
     {
       id: "fc10",
       de: "Wie schmeckt Ihnen ...?",
-      ar: "كيف تجد ...؟",
+      ar: "ما مذاق ... بالنسبة إليكم؟",
       example: "Wie schmeckt Ihnen die Suppe?",
-      exampleAr: "كيف تجد الحساء؟",
+      exampleAr: "ما مذاق الحساء بالنسبة إليكم؟",
       level: "A2",
     },
     {
       id: "fc11",
       de: "Ich hätte gern ...",
-      ar: "أودّ … (أرقى من möchte — Konjunktiv II من haben)",
+      ar: "أودّ … (صيغة طلب شائعة؛ hätte صيغة من haben)",
       example: "Ich hätte gern einen Salat, bitte.",
       exampleAr: "أودّ سلطةً من فضلك.",
       level: "A2",
@@ -1553,7 +1703,7 @@ export const lessonA203: Lesson = {
     {
       id: "fc12",
       de: "Ich nehme ...",
-      ar: "آخذ … (محايدة عمليّة)",
+      ar: "سآخذ … (اختيار مما سأطلبه)",
       example: "Ich nehme das Schnitzel mit Pommes.",
       exampleAr: "آخذ الشنيتسل مع البطاطا.",
       level: "A2",
@@ -1585,7 +1735,7 @@ export const lessonA203: Lesson = {
     {
       id: "fc16",
       de: "stilles Wasser",
-      ar: "ماءٌ بلا غاز",
+      ar: "مياه بلا غاز (لا تعني تلقائياً ماء الصنبور)",
       example: "Stilles Wasser oder mit Kohlensäure?",
       exampleAr: "ماءٌ بلا غاز أم فوّار؟",
       level: "A2",
@@ -1609,7 +1759,7 @@ export const lessonA203: Lesson = {
     {
       id: "fc19",
       de: "das Trinkgeld",
-      ar: "البقشيش (يُقال شفهياً لا يُترك)",
+      ar: "الإكرامية (تختلف أعرافها؛ يذكر دليل برلين المحلي أنها اختيارية)",
       example: "Das macht 21,40. – Dreiundzwanzig, bitte.",
       exampleAr: "الحساب ٢١٫٤٠. — ثلاثة وعشرون من فضلك.",
       level: "A2",
@@ -1617,7 +1767,7 @@ export const lessonA203: Lesson = {
     {
       id: "fc20",
       de: "Stimmt so.",
-      ar: "احتفظ بالباقي",
+      ar: "احتفظ بالباقي (في سياق الدفع بالمثال)",
       example: "Hier sind fünfundzwanzig Euro. Stimmt so.",
       exampleAr: "هذه خمسة وعشرون يورو. احتفظ بالباقي.",
       level: "A2",
@@ -1633,7 +1783,7 @@ export const lessonA203: Lesson = {
     {
       id: "fc22",
       de: "scharf",
-      ar: "حارّ (بالتوابل)",
+      ar: "حارّ/لاذع في الطعم",
       example: "Ich esse nichts Scharfes.",
       exampleAr: "لا آكل شيئاً حارّاً.",
       level: "A2",
@@ -1657,7 +1807,7 @@ export const lessonA203: Lesson = {
     {
       id: "fc25",
       de: "etwas Warmes",
-      ar: "شيءٌ دافئ (etwas + صفة كبيرة + ‑es)",
+      ar: "شيء دافئ؛ Warmes اسم مشتق من صفة في هذا المثال",
       example: "Ich möchte etwas Warmes essen.",
       exampleAr: "أودّ أن آكل شيئاً دافئاً.",
       level: "A2",
@@ -1665,14 +1815,14 @@ export const lessonA203: Lesson = {
     {
       id: "fc26",
       de: "Guten Appetit!",
-      ar: "بالهناء! — ويُردّ: Danke, gleichfalls!",
+      ar: "بالهناء! يمكن الردّ بـDanke أو gleichfalls بحسب الموقف",
       example: "Guten Appetit! – Danke, gleichfalls!",
       exampleAr: "بالهناء! — شكراً، وأنت كذلك!",
       level: "A2",
     },
   ],
 
-  /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
+  /* ═══ الوساطة والتفاعل ═══ */
   mediation: [
     {
       id: "med-a2-03-1",
@@ -1692,7 +1842,7 @@ export const lessonA203: Lesson = {
       id: "int-a2-03-1",
       scenarioAr: "في مطعم — تطلب وتشكو من الطبق.",
       scenarioDe: "Im Restaurant — du bestellst und reklamierst.",
-      strategyAr: "الاستراتيجية: الطلب بأدب وتقديم شكوى مهذبة.",
+      strategyAr: "الاستراتيجية: اربط الردّ بالسؤال، واذكر المشكلة المحددة بوضوح.",
       rounds: [
         {
           speakerDe: "Was möchten Sie bestellen?",
@@ -1715,15 +1865,15 @@ export const lessonA203: Lesson = {
           ],
         },
         {
-          speakerDe: "Hier ist Ihr Schnitzel. Guten Appetit!",
-          speakerAr: "هذا شنيتزلك. بالهناء والشفاء!",
+          speakerDe: "Ist mit dem Schnitzel alles in Ordnung?",
+          speakerAr: "هل كل شيء على ما يرام مع الشنيتزل؟",
           options: [
             {
-              de: "Entschuldigung, das Schnitzel ist kalt. Können Sie es bitte warm machen?",
-              ar: "عذراً، الشنيتزل بارد. هل يمكنك تسخينه من فضلك؟",
+              de: "Entschuldigung, das Schnitzel ist leider kalt. Können Sie es bitte noch einmal erwärmen?",
+              ar: "عذراً، الشنيتزل بارد للأسف. هل يمكنكم تسخينه مرةً أخرى من فضلكم؟",
               best: true,
-              replyDe: "Es tut mir leid! Ich bringe sofort ein neues.",
-              replyAr: "آسف! سأحضر واحداً جديداً فوراً.",
+              replyDe: "Es tut mir leid. Ich kläre das mit der Küche.",
+              replyAr: "أعتذر. سأتحقق من الأمر مع المطبخ.",
             },
             {
               de: "Das Schnitzel ist kalt. Sie sind schrecklich!",
