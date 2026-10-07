@@ -1,8 +1,8 @@
 import type { Lesson } from "@/types/lesson";
 
 /**
- * الدرس A2-02: الصحة والطبيب — الجسم والأعراض + sollen/sollten/nicht dürfen
- * + سيناريو العيادة من الاستقبال إلى الوصفة + الأفعال الانعكاسية للعناية بالجسم
+ * الدرس A2-02: مواد مختارة عن الصحة والطبيب — أعراض، أفعال ناقصة، ووثائق صحية
+ * مع أمثلة موجّهة؛ لا تمثل مساراً طبياً كاملاً أو اعتماداً منهجياً.
  */
 export const lessonA202: Lesson = {
   id: "a2-02",
@@ -12,46 +12,134 @@ export const lessonA202: Lesson = {
   titleDe: "Beim Arzt",
   titleAr: "الصحة والطبيب",
   summary:
-    "أربع بنى لوصف الألم (haben + Schmerzen · tut weh · mir ist schlecht · sich fühlen)، وسُلّم النصح والمنع: sollen وsollten مقابل الفرق الحاسم بين nicht dürfen (تحريم) وnicht müssen (إعفاء)، ومسار العيادة كاملاً من حجز الموعد إلى الوصفة والشهادة المرضية والإحالة، وأفعال الصحة الانعكاسية — مع نصّ «Drei Tage Grippe».",
+    "موضوعات مختارة في وصف أعراض شائعة، واستعمال sollen/sollten ونفي الإذن أو الوجوب، ومفردات زيارة الطبيب، وبعض الأفعال الانعكاسية؛ مع مهام موجّهة للقراءة والاستماع والكتابة. التفاعل والنطق والوساطة هنا أنشطة تدريبية ولا تثبت إتقاناً عاماً أو اعتماداً.",
 
   lernziele: [
     {
       id: "z1",
-      de: "Ich kann Beschwerden auf vier verschiedene Arten ausdrücken.",
-      ar: "أن أصف شكواي بأربع بنى مختلفة: haben + Schmerzen · tut weh · mir ist … · sich fühlen.",
+      de: "Ich kann häufige Schmerzangaben in den geübten Mustern ergänzen und einen kurzen Symptom-Satz schreiben.",
+      ar: "أن أختار الصيغة المناسبة في مثالين عن الألم، وأكتب جملة محدّدة بـhaben + Kopfschmerzen.",
+      evidence: {
+        exerciseIds: ["e1", "e12", "w1"],
+        taskIds: [
+          "practice:a2-02:e1",
+          "flow-practice:a2-02:e1",
+          "practice:a2-02:e12",
+          "writing:a2-02:w1",
+        ],
+        labelAr: "اختيار التعبير الشائع Kopfschmerzen، وتصريف tut/tun في مثالين، ثم كتابة جملة محددة تبدأ بـIch عن الصداع.",
+        completion: "all-correct",
+      },
     },
     {
       id: "z2",
-      de: "Ich kann Ratschläge mit sollen und sollten geben.",
-      ar: "أن أنصح بـsollen وأُلطّف النصيحة بـsollten.",
+      de: "Ich kann in vorgegebenen Kontexten eine Form von sollen oder sollten passend auswählen oder bilden.",
+      ar: "أن أختار أو أبني soll/sollten في أمثلة محددة، مع مراعاة أن درجة التوجيه يحددها السياق.",
+      evidence: {
+        exerciseIds: ["e17", "e21", "e22"],
+        taskIds: [
+          "practice:a2-02:e17",
+          "practice:a2-02:e21",
+          "practice:a2-02:e22",
+        ],
+        labelAr: "تمييز نصيحة أقل مباشرة في e17، وإكمال صيغ sollen/sollten في e21، ثم تحويل جملة موجّهة إلى اقتراح بـsollten في e22.",
+        completion: "all-correct",
+      },
     },
     {
       id: "z3",
-      de: "Ich kann ein Verbot von einer Befreiung unterscheiden.",
-      ar: "أن أفرّق بين nicht dürfen (ممنوع) وnicht müssen (غير لازم) في الفهم والإنتاج.",
+      de: "Ich kann in den vorgegebenen Beispielen ein Verbot von fehlender Verpflichtung unterscheiden.",
+      ar: "أن أميّز في الأمثلة المحددة بين عدم الإذن بـdürfen nicht وعدم لزوم الفعل بـmüssen nicht.",
+      evidence: {
+        exerciseIds: ["e13", "e14", "e23"],
+        taskIds: [
+          "practice:a2-02:e13",
+          "practice:a2-02:e14",
+          "practice:a2-02:e23",
+        ],
+        labelAr: "اختيار المنع في e13، وفهم الإعفاء في e14، وتصنيف العبارات الأربع المرتبطة بالنص في e23؛ المطلوب إكمال المهام الثلاث كلها.",
+        completion: "all-correct",
+      },
     },
     {
       id: "z4",
-      de: "Ich kann einen Termin vereinbaren und beim Arzt über meine Symptome sprechen.",
-      ar: "أن أحجز موعداً وأن أجيب عن «Was fehlt Ihnen?» بأعراضٍ مرتّبة.",
+      de: "Ich kann ausdrücklich genannte Informationen in diesem Gesundheitstext finden.",
+      ar: "أن أستخرج معلومات مصرّحاً بها في نص القراءة وأسئلته المحددة، لا أن أستنتج جاهزية قراءة عامة.",
+      evidence: {
+        exerciseIds: ["rq1", "rq2", "rq3", "rq4", "rq5", "rq6"],
+        taskIds: [
+          "reading:read-a2-02:rq1",
+          "reading:read-a2-02:rq2",
+          "reading:read-a2-02:rq3",
+          "reading:read-a2-02:rq4",
+          "reading:read-a2-02:rq5",
+          "reading:read-a2-02:rq6",
+        ],
+        labelAr: "الإجابة عن أسئلة الأعراض والنصيحة والمنع والعودة إلى العمل في النص المحدد؛ يجب أن تصح الإجابات الست كلها.",
+        completion: "all-correct",
+      },
     },
     {
       id: "z5",
-      de: "Ich kann Rezept, Krankschreibung und Überweisung unterscheiden.",
-      ar: "أن أميّز الوصفة من الشهادة المرضية من الإحالة، وأعرف جهة كلٍّ منها.",
+      de: "Ich kann bestimmte Informationen aus den zwei bereitgestellten Hörtexten entnehmen, bevor ich das Transkript öffne.",
+      ar: "أن أستخرج معلومات محددة من تمريني الاستماع قبل كشف أيٍّ من نصيهما.",
+      evidence: {
+        exerciseIds: ["q1", "q2", "q3"],
+        taskIds: [
+          "listening:l1:q1",
+          "listening:l1:q2",
+          "listening:l2:q3",
+        ],
+        labelAr: "الإجابة الصحيحة عن الأسئلة الثلاثة قبل كشف التفريغ؛ إجابات ما بعد الكشف لا تدخل في الدليل.",
+        completion: "all-correct",
+      },
     },
     {
       id: "z6",
-      de: "Ich kann reflexive Verben zum Thema Gesundheit benutzen.",
-      ar: "أن أستعمل أفعال الصحة الانعكاسية: sich fühlen, sich ausruhen, sich erholen, sich erkälten.",
+      de: "Ich kann die in der Zuordnungsaufgabe geübten Gesundheitsdokumente und Nachweise ihren Funktionen zuordnen.",
+      ar: "أن أطابق الوصفة والشهادة المرضية والإحالة وبطاقة التأمين بوظائفها في تمرين المطابقة المحدد، من دون تعميم النظام على كل حالة.",
+      evidence: {
+        exerciseIds: ["e19"],
+        taskIds: ["practice:a2-02:e19"],
+        labelAr: "إكمال أزواج المطابقة الأربعة في e19؛ لا يقيس التمرين متى تكون الإحالة مطلوبة قانونياً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z7",
+      de: "Ich kann ausgewählte reflexive Formen und Pronomen in den vorgegebenen Sätzen ergänzen.",
+      ar: "أن أختار الضمائر الانعكاسية وصيغتها الألمانية المناسبة في الأمثلة المحددة.",
+      evidence: {
+        exerciseIds: ["e15", "e16"],
+        taskIds: [
+          "practice:a2-02:e15",
+          "practice:a2-02:e16",
+        ],
+        labelAr: "إكمال ضمائر ich/er/wir في e15، وتصحيح mich إلى mir في تركيب غسل اليدين المحدد في e16.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z8",
+      de: "Ich kann vorgegebene Gesundheitssätze mit sollen schriftlich ergänzen und eine kurze Diktatzeile verschriftlichen.",
+      ar: "أن أكمل تصريفات sollen في جمل مكتوبة، ثم أكتب جملة قصيرة مملاة كما سُمعت.",
+      evidence: {
+        exerciseIds: ["w2", "w3"],
+        taskIds: [
+          "writing:a2-02:w2",
+          "writing:a2-02:w3",
+        ],
+        labelAr: "إكمال أربع خانات في w2 وكتابة نص الإملاء القصير في w3؛ هذا تدريب موجّه لا يقيس كتابة حرة.",
+        completion: "all-correct",
+      },
     },
   ],
   einfuehrung: {
     motivatingQuestionAr:
-      "طبيبٌ يقول لك Sie sollten mehr trinken، وآخر يقول Sie dürfen nicht rauchen. الأول نصيحة والثاني منع، والفرق بينهما ليس في النبرة بل في الفعل نفسه. أنت تعرف الأفعال الشرطية الستّة من A1 — واليوم نستعملها حيث تُصنع بها القرارات الحقيقية: في عيادة الطبيب.",
+      "في المثال التدريبي، Sie sollten sich ausruhen اقتراحٌ، وSie dürfen nicht rauchen منعٌ. يساعدك الفعل الناقص على فهم المعنى، لكن السياق يظل مهماً. نراجع اليوم صيغاً سبق أن قابلت بعضها في دروس A1.",
     motivatingQuestionDe: "Was fehlt Ihnen?",
     contextAr:
-      "زيارة الطبيب من أوّلها إلى آخرها: أجزاء الجسم والأعراض، ثمّ سُلّم النصيحة والمنع (sollen · sollten · nicht dürfen)، ثمّ سيناريو العيادة من الاستقبال إلى الوصفة، وأخيراً الأفعال الانعكاسية التي لا غنى عنها في الحديث عن الجسم والعناية به.",
+      "موضوعات لغوية مختارة في الجسم والأعراض، وصيغ sollen/sollten وdürfen/müssen، وبعض عبارات العيادة والوثائق، ثم أفعال انعكاسية شائعة. المحادثة والنصوص أمثلة تدريبية وليست وصفاً كاملاً للرعاية الصحية أو لامتحان رسمي.",
     contextDe: "Ich habe Kopfschmerzen und Fieber.",
     connectionToPreviousAr:
       "تتذكر من A1: Ich habe Hunger (عندي جوع). اليوم نعمم: Ich habe Kopfschmerzen (عندي صداع) — نفس البنية مع haben + اسم.",
@@ -72,7 +160,7 @@ export const lessonA202: Lesson = {
         "مراجعة من A1 (درس a1-03 — الطعام والشراب): اختر الصيغة الصحيحة:",
       questionDe: "Ich habe ___.",
       questionAr: "عندي جوع.",
-      options: ["Hunger", "hungrig", "der Hunger", "hunger"],
+      options: ["Hunger", "hungrig", "der Hunger", "hungrig sein"],
       correctIndex: 0,
       explanation: "تذكر: Ich habe Hunger (الجوع اسم مع haben).",
       errorType: "grammar",
@@ -103,19 +191,19 @@ export const lessonA202: Lesson = {
   theory: [
     {
       id: "t1",
-      titleAr: "وصف الألم — أربع بنى لا واحدة",
+      titleAr: "تراكيب مختارة لوصف الألم والأعراض",
       titleDe: "Körper, Symptome und Schmerzen",
       explanationAr:
-        "الألم لا يُوصف في الألمانية ببنيةٍ واحدة بل بأربع، ولكلٍّ منها موضعها. ومن حفظ واحدةً فقط ظلّ يكرّرها في كلّ موقف فبدا كلامه فقيراً — والطبيب يحتاج التفصيل لا العبارة الجاهزة.\n\n**البنية الأولى — haben + اسم الألم (الأشيع والأسهل):**\n**Ich habe Kopfschmerzen.** · **Ich habe Fieber.** · **Ich habe Husten.**\nوالتركيب مطّرد: **العضو + schmerzen** ⟵ Kopf**schmerzen** · Bauch**schmerzen** · Rücken**schmerzen** · Hals**schmerzen** · Zahn**schmerzen**.\nفمن عرف عشرة أعضاء عرف عشرة آلام بلا حفظٍ إضافيّ.\n\n**البنية الثانية — العضو + tut weh (أدقّ حين يكون الألم موضعياً):**\n**Mein Rücken tut weh.** · **Meine Augen tun weh.** (جمعٌ ⟵ tun لا tut)\nوحرفياً: „ظهري يفعل ألماً“. وweh صفةٌ قديمة معناها „مؤلم“، وtun هو „يفعل“.\n\n**البنية الثالثة — الدّاتيف للإحساس العامّ:**\n**Mir ist schlecht.** (أشعر بالغثيان) · **Mir ist schwindelig.** (أشعر بالدوار) · **Mir ist heiß / kalt.**\nوهذه هي البنية نفسها التي عرفتَها في a1-12 (Mir ist kalt) وفي gefallen: **الإحساس يقع على الشخص فيُجرّ**.\nوالخطأ المقابل خطير: **Ich bin schlecht** تعني „أنا شخصٌ سيّئ“ لا „أشعر بالغثيان“.\n\n**البنية الرابعة — sich fühlen للحالة العامّة:**\n**Ich fühle mich nicht gut.** · **Ich fühle mich schwach.** (بالمنصوب: mich لا mir)\n\n**وأداتان لا تستغني عنهما عند الطبيب:**\n· **المدّة بـseit + الجرّ:** Ich habe **seit drei Tagen** Halsschmerzen. (منذ ثلاثة أيّام)\n· **الشدّة:** leicht (خفيف) ⟵ stark (شديد) ⟵ sehr stark. وقُل **Es tut sehr weh** لا Es tut viel weh.",
+        "تُعرض الأعراض الألمانية بأكثر من تركيب. احفظ كل صيغة مع مثالها، ولا تحاول نقل حالة الإعراب حرفياً من العربية.\n\n**١ — haben + اسم عرض:** **Ich habe Kopfschmerzen / Fieber / Husten.** ومن المركّبات الشائعة **Kopf-, Bauch-, Rücken-, Hals-** و**Zahnschmerzen**. يذكر Duden أن **Kopfschmerz** يأتي غالباً في الجمع **Kopfschmerzen**، لكن المفرد موجود أيضاً؛ لذلك نقول هنا «الصيغة الشائعة» لا «الجمع دائماً».\n\n**٢ — العضو + tut/tun weh:** **Mein Rücken tut weh.** · **Meine Augen tun weh.** يتبع الفعلُ الفاعلَ: المفرد **tut** والجمع **tun**.\n\n**٣ — mir ist + صفة في أمثلة الإحساس:** **Mir ist schlecht / schwindelig / heiß / kalt.** الضمير **mir** في هذه البنية الألمانية في حالة **Dativ** ويشير إلى صاحب الإحساس. هذا وصف لحالة ألمانية، لا ترجمة مباشرة لعلامة إعراب عربية.\n\n**٤ — sich fühlen للحالة التي يصفها المتكلم:** **Ich fühle mich nicht gut / schwach.** استعمل الفعل مع الضمير الانعكاسي في هذا المعنى.\n\n**المدة والشدّة:** مع اسم ظاهر، **seit** تأخذ **Dativ**: **seit drei Tagen**؛ أما **seit gestern** فتركيب زمني بلا اسم ظاهر. ومن صفات الشدة الشائعة **leicht, mittel, stark, sehr stark**. المثال **Es tut sehr weh** طبيعي لوصف درجة الألم؛ لا نحوّل اختيار **sehr** هنا إلى قاعدة مطلقة عن كل استعمال لـ**viel**.",
       whyAr:
-        "لماذا يضع الألمانيّ نفسه في حالة الجرّ حين يشعر (mir ist schlecht) بينما يضعها في الرفع حين يكون (ich bin krank)؟ لأنّ الألمانية تفرّق بين ما **أنتَ عليه** وما **يقع عليك**. المرض صفةٌ لك فترفعك (ich bin krank)، والإحساس العارض شيءٌ يصيبك من خارجك فيجرّك (mir ist schlecht). وهذا هو المنطق نفسه في das gefällt **mir** — الإعجاب يقع عليك ولا يصدر عنك.\n\nولهذا التمييز أثرٌ عمليّ خطير عند الطبيب: **Ich bin schlecht** تعني حرفياً „أنا رديء الأخلاق“، و**Ich bin heiß** لا تعني „أشعر بالحرّ“ بل معنىً جنسياً صريحاً. فالخطأ هنا ليس نحوياً فحسب بل محرجٌ اجتماعياً، وهو من أشهر زلّات المتعلّمين في العيادات الألمانية.\n\nولماذا جاء الألم جمعاً (Schmerzen)؟ لأنّ الألم في التصوّر الجرمانيّ **نوباتٌ متكرّرة** لا كتلةٌ واحدة: الرأس لا يؤلم ألماً واحداً مستمرّاً بل يَنبِض. والعربية توافق هذا التصوّر في „آلام“ و„أوجاع“، فالجمع هنا مفهومٌ لك بلا تكلّف. والمفرد der Schmerz موجود لكنّه للألم المجرّد أو الأدبيّ.",
+        "في **Ich bin krank** يكون **ich** فاعلاً في Nominativ مع صفة خبرية. أما **Mir ist schlecht** فهو تركيب ألماني شائع يضع صاحب الإحساس في Dativ؛ لا يلزم أن نعيد بناء المعنى من ترجمة حرفية، ولا أن نساوي Dativ بالإعراب العربي. احفظ البناءين كما هما: **Ich bin krank** و**Mir ist schlecht**.\n\nو**Ich bin schlecht** جملة ممكنة بمعانٍ أخرى، مثل «أنا ضعيف/سيّئ في هذا المجال» إذا دلّ السياق؛ لكنها ليست الصيغة المحايدة للتعبير عن الغثيان.\n\nأما **Kopfschmerz** فالمفرد صحيح، ويذكر Duden أن الاسم يُستعمل غالباً في الجمع. لا يسند ذلك تفسيراً ثقافياً أو اشتقاقياً عن طبيعة الألم؛ يكفي تعلّم العبارة الشائعة **Ich habe Kopfschmerzen**.",
       table: {
-        title: "أربع بنى لوصف الألم — أيّها تستعمل؟",
+        title: "تراكيب ألمانية شائعة في وصف الأعراض",
         columns: ["البنية", "المثال", "متى؟"],
         rows: [
           {
             label: "haben + Schmerzen",
-            cells: ["Ich habe Kopfschmerzen.", "الأشيع — لأيّ عضو"],
+            cells: ["Ich habe Kopfschmerzen.", "صيغة شائعة لاسم الألم؛ لا تعني أن كل ألم يُبنى هكذا"],
           },
           {
             label: "العضو + tut weh",
@@ -129,14 +217,14 @@ export const lessonA202: Lesson = {
             label: "mir ist + صفة",
             cells: [
               "Mir ist schlecht / schwindelig.",
-              "إحساسٌ عامّ (غثيان، دوار)",
+              "تعبير ألماني عن إحساس؛ mir في Dativ هنا",
             ],
           },
           {
             label: "sich fühlen",
             cells: [
               "Ich fühle mich nicht gut.",
-              "الحالة العامّة — بالمنصوب mich",
+              "حالة عامة؛ صيغة الفعل انعكاسية في هذا المعنى",
             ],
           },
           {
@@ -145,7 +233,7 @@ export const lessonA202: Lesson = {
           },
           {
             label: "المدّة",
-            cells: ["seit drei Tagen", "seit + الجرّ دائماً"],
+            cells: ["seit drei Tagen / seit gestern", "Dativ مع اسم ظاهر؛ seit gestern تركيب زمني"],
           },
         ],
       },
@@ -164,7 +252,7 @@ export const lessonA202: Lesson = {
         },
         {
           de: "Mir ist schlecht und schwindelig.",
-          ar: "أشعر بالغثيان والدوار. (إحساسٌ عامّ ⟵ الجرّ)",
+          ar: "أشعر بالغثيان والدوار. (mir في Dativ ضمن هذا التركيب الألماني)",
         },
         {
           de: "Ich fühle mich seit gestern sehr schwach.",
@@ -184,82 +272,87 @@ export const lessonA202: Lesson = {
         },
       ],
       comparisonWithArabic:
-        "العربية تقول „عندي صداع“ و„رأسي يؤلمني“ — بنيتان تطابقان الأولى والثانية في الألمانية مطابقةً مريحة. فـ„عندي“ = ich habe، و„يؤلمني“ = tut mir weh. وهذا الباب من أيسر ما يقابله المتعلّم العربيّ.\n\nلكنّ الثالثة لا نظير لها. العربية تقول „أشعر بالغثيان“ بفعلٍ صريح، والألمانية تقول „لي سيّئٌ“ (mir ist schlecht) بلا فعل شعور. والمتعلّم العربيّ يبحث عن الفعل فلا يجده، فيلجأ إلى ich bin — ويقع في الخطأ المحرج.\n\nوثمّة فرقٌ ثقافيّ في **الشدّة**: العربية تُكثر المبالغة في وصف الألم مجاملةً للسامع أو استدراراً لعطفه („أموت من الألم“). والألمانية تتوقّع وصفاً **مقياسياً محايداً**: leicht · mittel · stark، وقد يسألك الطبيب صراحةً: **Auf einer Skala von eins bis zehn?** (على مقياسٍ من واحد إلى عشرة؟). فالمبالغة هنا لا تزيد العناية بل تُربك التشخيص.",
+        "قد تنقل العربية الألم بـ«عندي صداع» أو «رأسي يؤلمني»، بينما تُستعمل في الألمانية **Ich habe Kopfschmerzen** و**Mein Kopf tut weh**؛ هذه مقابلات وظيفية لا تطابق حرفي في ترتيب الكلمات أو الحالة.\n\nوللتعبير عن الغثيان يمكن ترجمة **Mir ist schlecht** بـ«أشعر بالغثيان». لكن **mir** هنا صيغة Dativ ألمانية؛ لا يعني ذلك أنها تقابل الجر العربي، ولا أن **Ich bin schlecht** خطأ في كل سياق.\n\nيطلب هذا النشاط وصفاً واضحاً مثل العرض ومدته، ويمكن إضافة صفة شدة. هذا قالب تعليمي للإجابة في التمرين، لا تعميم عن طريقة حديث المرضى بالعربية أو الألمانية، ولا تعليمات تشخيصية.",
       eselsbruecke:
-        "ما أنتَ عليه يرفعك (ich bin krank)، وما يقع عليك يجرّك (mir ist schlecht). والألم اسماً: العضو + schmerzen. والألم فعلاً: العضو + tut weh — وtun في الجمع (Augen tun weh).",
+        "للتذكّر: **Ich habe Kopfschmerzen** · **Mein Rücken tut weh** · **Mir ist schlecht** · **Ich fühle mich schwach**. تعلّم **mir** بوصفها Dativ في هذا التركيب الألماني، لا بترجمة «الجرّ» العربية.",
       commonMistakes: [
         {
-          wrong: "Ich bin schlecht.",
+          wrong: "Ich bin schlecht. (للتعبير المحايد عن الغثيان)",
           right: "Mir ist schlecht.",
+          classification: "contextual-alternative",
           whyAr:
-            "الأولى تعني «أنا شخصٌ سيّئ الأخلاق». والإحساس العارض يقع على الشخص فيُجرّ: mir. وهو المنطق نفسه في mir ist kalt من a1-12 وفي das gefällt mir.",
+            "Ich bin schlecht جملة سليمة في معانٍ أخرى، مثل ضعف الأداء في مجال يحدده السياق؛ لكنها ليست الصيغة المحايدة للغثيان. يُستعمل Mir ist schlecht لهذا الإحساس، وmir Dativ في البناء الألماني؛ لا يعني ذلك مقابلةً مباشرة للجر العربي.",
         },
         {
           wrong: "Ich bin Kopfschmerzen.",
           right: "Ich habe Kopfschmerzen.",
+          classification: "error",
           whyAr:
-            "Kopfschmerzen اسمٌ لا صفة، والأسماء المملوكة تأتي مع haben. وsein تصلح للصفات فقط: Ich bin krank ✔.",
+            "في هذا المعنى نقول عادةً Ich habe Kopfschmerzen. أما Ich bin krank فجملة صحيحة لأن krank صفة خبرية؛ لا تُسند إلى sein عبارةُ الاسم Kopfschmerzen بهذه الصورة.",
         },
         {
           wrong: "Meine Augen tut weh.",
           right: "Meine Augen tun weh.",
+          classification: "error",
           whyAr:
-            "Augen جمعٌ فالفعل جمع: tun لا tut. ويكثر هذا الخطأ لأنّ المتعلّم يحفظ العبارة «tut weh» كتلةً واحدة لا يصرّفها.",
+            "الفاعل Meine Augen جمع؛ لذلك يأتي الفعل بصيغة الجمع tun، لا المفرد tut.",
         },
         {
           wrong: "Ich habe Kopfschmerzen seit drei Tage.",
           right: "Ich habe seit drei Tagen Kopfschmerzen.",
+          classification: "error",
           whyAr:
-            "خطآن: seit تجرّ دائماً (drei Tagen بنون الجمع)، والظرف الزمنيّ يتقدّم على المفعول في المساحة الوسطى — بترتيب TeKaMoLo.",
+            "الخطأ النحوي المحدد هو drei Tage بعد seit: مع اسم ظاهر في هذا التركيب نستعمل Dativ، seit drei Tagen. أما ترتيب منذ متى والجملة فله بدائل يحددها التركيز، ولا نحتاج إلى ادعاء ترتيب TeKaMoLo إلزامي.",
         },
         {
-          wrong: "Es tut viel weh.",
+          wrong: "Es tut viel weh. (في وصف محايد للألم الشديد)",
           right: "Es tut sehr weh.",
+          classification: "contextual-alternative",
           whyAr:
-            "viel للكمّية وsehr للشدّة، والألم شدّةٌ لا كمّية. والتمييز نفسه في oft (مرّات) مقابل viel (مقدار) من a1-05.",
+            "Es tut sehr weh صيغة محايدة شائعة لتقوية وصف الألم. لا نصف viel بأنه مستحيل في كل تركيب؛ المطلوب هنا اختيار الصيغة الأنسب للسياق المحايد المحدد.",
         },
       ],
       relatedRuleComparison: {
-        title: "الدّاتيف للإحساس — ثالث ظهورٍ له",
+        title: "تراكيب Dativ ظهرت في سياقات سابقة",
         content:
-          "تابِع البنية الواحدة في ثلاثة دروس:\n· **Das gefällt mir.** (a1-08) ⟵ الإعجاب يقع عليك\n· **Mir ist kalt.** (a1-12) ⟵ الإحساس بالبرد يقع عليك\n· **Mir ist schlecht.** (اليوم) ⟵ الغثيان يقع عليك\nثلاثتها نمطٌ واحد: **الشخص ليس فاعلاً بل متلقّياً**، فيُجرّ. وستقابله في a2-09 مجموعاً في باب أفعال الدّاتيف.\n\nوالفائدة العملية: إذا شككتَ هل تقول ich أم mir، فاسأل نفسك: هل أنا **أفعل** هذا أم **يقع عليّ**؟ فالمرض حالٌ أنا فيها (ich bin krank)، والغثيان شيءٌ أصابني (mir ist schlecht).",
+          "تُظهر الدروس السابقة أن Dativ ظهر في أكثر من سياق، لا في درس واحد حصراً: في A1-04 مع بعض تراكيب المكان، وفي A1-06 في مثال helfen، وفي A1-08 مع gefallen/passen/stehen، كما ظهر Mir ist kalt في A1-12. في هذا الدرس نستخدم Mir ist schlecht مثالاً إضافياً على تركيب ألماني يعبّر عن الإحساس.\n\nتختلف وظيفة Dativ بين هذه التراكيب؛ فلا تُختزل كلها إلى قاعدة دلالية واحدة مثل «الشخص متلقٍّ»، ولا يُساوى Dativ بالجرّ العربي. تعلّم كل فعل أو حرف جر أو بناء مع مثاله وحالته، واستعمل ترجمة المعنى لا ترجمة العلامة الإعرابية.",
       },
     },
     {
       id: "t2",
       titleAr: "النصيحة والمنع: sollen · sollten · nicht dürfen · nicht müssen",
-      titleDe: "Ratschläge und Verbote: sollen, sollten, nicht dürfen",
+      titleDe: "Ratschläge, Verbote und fehlende Notwendigkeit: sollen, sollten, nicht dürfen, nicht müssen",
       explanationAr:
-        "تعرف **sollen** من a1-14: إلزامٌ صادرٌ عن شخصٍ آخر. واليوم نُكمل المنظومة، لأنّ العيادة هي موطن النصيحة والمنع، وثمّة **أربع صيغ** يخلط بينها المتعلّمون خلطاً يقلب المعنى.\n\n**أوّلاً — sollen: نقلُ أمر الغير.**\n**Der Arzt sagt, ich soll viel trinken.** (يقول الطبيب إنّ عليّ أن أشرب كثيراً)\nفأنت هنا **راوٍ** لا آمر: تنقل ما قيل لك.\n\n**ثانياً — sollten: النصيحة المهذّبة (وهي صيغة Konjunktiv II).**\n**Sie sollten mehr schlafen.** (ينبغي لك أن تنام أكثر)\n| ich **sollte** · du **solltest** · er **sollte** · wir **sollten** · ihr **solltet** · sie/Sie **sollten** |\nوالفرق عن sollen جوهريّ: **sollen تنقل إلزاماً، وsollten تقترح**. والطبيب يستعمل الثانية غالباً لأنّها ألطف، وهي **الصيغة المتوقّعة منك** حين تنصح أحداً. وانتبه: صورتها مطابقة لـPräteritum (ich sollte)، والسياق يفصل.\n\n**ثالثاً — nicht dürfen = المنع (وهو الفخّ الأكبر).**\n**Sie dürfen nicht rauchen.** = **ممنوعٌ** عليك التدخين.\nفنفيُ الإذن ليس „عدم وجوب“ بل **تحريم**. وهذا يخالف حدس المتعلّم تماماً.\n\n**رابعاً — nicht müssen = لا لزوم (وهو نقيض ما يظنّه الأكثرون).**\n**Sie müssen nicht kommen.** = **لستَ مضطرّاً** للمجيء (لكن يجوز لك).\nوالخطأ الشائع أن يُفهم منها „يجب ألاّ تأتي“ — وهو معنىً معاكس تماماً.\n\n**فالقاعدة الحاسمة:**\n| **nicht dürfen** = ممنوع (تحريم) | **nicht müssen** = غير لازم (إعفاء) |\nوقُل لنفسك: من نفى الإذن **حرّم**، ومن نفى الوجوب **أعفى**.",
+        "في الجملة الرئيسية الخبرية يأتي الفعل الناقص المصرف غالباً في الموقع الثاني، ويأتي مصدر الفعل الآخر في النهاية: **Der Arzt sagt, ich soll mich ausruhen.** تنقل الجملة توجيهاً من الطبيب؛ وقد تستعمل **sollen** أيضاً للتوقع أو التوصية بحسب السياق، فلا تختصره في «أمر الغير» دائماً.\n\n**sollten** هي صيغة Konjunktiv II من **sollen**، وصورتها قد تطابق Präteritum. في نصيحة حاضرة مثل **Sie sollten sich ausruhen** تُستعمل كثيراً لاقتراح أقل مباشرة؛ ليست الصيغة الوحيدة للنصيحة، والسياق هو الذي يحدد القراءة.\n\nفي المقابل، في القراءة المحايدة المقصودة هنا: **Sie dürfen nicht rauchen** تعني عدم الإذن/المنع، أما **Sie müssen nicht kommen** فتعني أن المجيء غير لازم، لا أنه ممنوع.\n\n| **nicht dürfen** = عدم إذن/منع في السياق | **nicht müssen** = عدم وجوب/إعفاء في السياق |\n\nوفي نفي الاسم المنكّر المحايد نقول مثلاً **Sie dürfen keinen Alkohol trinken**؛ صيغة **keinen** هي Akkusativ المذكر من **kein**.\n\nوفي سؤال **Was soll ich machen?** قد يطلب المتكلم نصيحةً أو يسأل عمّا ينبغي فعله؛ لذلك لا تنقل **sollen** دائماً أمراً صادراً عن شخص آخر.",
       whyAr:
-        "لماذا ينقلب معنى النفي في müssen ولا ينقلب في dürfen؟ لأنّ النفي لا يقع على الفعل الناقص نفسه بل على **مضمونه**، والمضمونان مختلفان. dürfen تعني „الإذن ممنوح“، فنفيها ينزع الإذن ⟵ منع. وmüssen تعني „الضرورة قائمة“، فنفيها ينزع الضرورة ⟵ إعفاء لا منع. فما تراه شذوذاً هو منطقٌ صارم: نفيتَ ما كان مثبتاً، والمثبتان ليسا من جنسٍ واحد.\n\nوالإنجليزية تفعل الشيء نفسه بالضبط: must not = تحريم، ولا need not / don't have to = إعفاء. لكنّها تُنبّه عليه بفعلين مختلفين، والألمانية تكتفي بالنفي — فيقع اللبس على من لم يُنبَّه.\n\nوأمّا sollten فأصلها **Konjunktiv II**، أي صيغة الافتراض. وقولك „ينبغي“ بصيغة الافتراض معناه الضمنيّ: „لو كان الأمر بيدي لاقترحتُ“ — أي أنّك تُبعد نفسك خطوةً عن الأمر المباشر فتلطّفه. وهذا مبدأ التأدّب في الألمانية كلّها: **الابتعاد عن الواقع يزيد التهذيب**. ولذلك كانت möchte ألطف من will، وkönnten ألطف من können — وستراه كاملاً في B1.",
+        "في هذه الأمثلة، **dürfen** تتعلق بالإذن، و**müssen** بالوجوب: لذلك يختلف معنى **dürfen nicht** عن **müssen nicht**. هذا فرق دلالي مهم في الجمل المعطاة، وليس قاعدة تمنع كل استعمال آخر للفعلين في الألمانية.\n\nتُستعمل **sollten** في أمثلة كثيرة للتوصية أو الاقتراح، وقد تبدو أقل مباشرة من **sollen**؛ لكن **sollen** نفسها قد تؤدي وظيفة النصيحة أو التوجيه، كما قد تدل **sollten** على ماضٍ أو افتراض. لا نفسر ذلك بأن الابتعاد عن الواقع يزيد الأدب في كل موقف.\n\nللمقارنة الوظيفية بالعربية يمكن قول **ليس ضرورياً/لا يلزم** في نفي الوجوب، و**لا يجوز/ممنوع** في نفي الإذن. عبارة **لا يجب** قد تُفهم بطرق مختلفة؛ فالأفضل استخدام المقصود صراحةً. ولا توجد مطابقة صرفية واحدة بين **sollten** وأداة عربية بعينها.",
       table: {
-        title: "النصيحة والمنع — أربع صيغ لا تختلط",
+        title: "معانٍ مختارة للأفعال الناقصة في السياق",
         columns: ["الصيغة", "المعنى", "المثال"],
         rows: [
           {
             label: "sollen",
             cells: [
-              "نقلُ إلزام الغير",
-              "Der Arzt sagt, ich soll viel trinken.",
+              "توجيه أو نقل ما طُلب؛ المعنى يتحدد بالسياق",
+              "Der Arzt sagt, ich soll mich ausruhen.",
             ],
           },
           {
             label: "sollten",
-            cells: ["نصيحةٌ مهذّبة (اقتراح)", "Sie sollten mehr schlafen."],
+            cells: ["اقتراح/نصيحة في هذا السياق؛ غالباً أقل مباشرة", "Sie sollten sich ausruhen."],
           },
           {
             label: "müssen",
-            cells: ["ضرورة", "Sie müssen das Medikament nehmen."],
+            cells: ["ضرورة بحسب السياق", "Sie müssen heute wiederkommen."],
           },
           {
             label: "nicht müssen",
-            cells: ["غير لازم — إعفاء", "Sie müssen nicht kommen. (لكن يجوز)"],
+            cells: ["غير لازم في هذا السياق", "Sie müssen nicht wiederkommen."],
           },
-          { label: "dürfen", cells: ["إذن", "Sie dürfen aufstehen."] },
+          { label: "dürfen", cells: ["إذن أو سماح بحسب السياق", "Sie dürfen jetzt aufstehen."] },
           {
             label: "nicht dürfen",
-            cells: ["ممنوع — تحريم", "Sie dürfen nicht rauchen."],
+            cells: ["عدم إذن/منع في السياق", "Sie dürfen nicht rauchen."],
           },
           {
             label: "kein + اسم",
@@ -269,12 +362,12 @@ export const lessonA202: Lesson = {
       },
       examples: [
         {
-          de: "Der Arzt sagt, ich soll drei Tage im Bett bleiben.",
-          ar: "يقول الطبيب إنّ عليّ البقاء في الفراش ثلاثة أيّام. (نقلُ أمر)",
+          de: "Der Arzt sagt, ich soll mich ausruhen.",
+          ar: "يقول الطبيب إن عليّ أن أستريح. (ينقل توجيهاً في هذا السياق)",
         },
         {
-          de: "Sie sollten weniger Kaffee trinken.",
-          ar: "ينبغي لك أن تشرب قهوةً أقلّ. (نصيحةٌ مهذّبة)",
+          de: "Sie sollten sich ausruhen.",
+          ar: "من الأفضل أن تستريح. (اقتراح بصيغة شائعة)",
         },
         {
           de: "Sie dürfen nicht rauchen — das ist sehr wichtig.",
@@ -286,73 +379,78 @@ export const lessonA202: Lesson = {
         },
         {
           de: "Du solltest mal zum Arzt gehen.",
-          ar: "ينبغي لك أن تذهب إلى الطبيب. (نصيحةٌ لصديق — وmal تلطّفها أكثر)",
+          ar: "ينبغي أن تذهب إلى الطبيب. (اقتراح أقل مباشرة بحسب السياق)",
         },
         {
-          de: "Sie dürfen keinen Sport machen, bis der Arm heilt.",
-          ar: "ممنوعٌ عليك ممارسة الرياضة حتّى تُشفى الذراع.",
+          de: "Sie dürfen keinen Sport machen, solange Sie Fieber haben.",
+          ar: "لا يجوز لك ممارسة الرياضة ما دمت مصاباً بالحمى.",
         },
         {
           de: "Was soll ich jetzt machen? – Sie sollten sich ausruhen.",
           ar: "ماذا أفعل الآن؟ — ينبغي أن ترتاح. (سؤالٌ بـsollen وجوابٌ بـsollten)",
         },
         {
-          de: "Muss ich das Medikament jeden Tag nehmen? – Nein, Sie müssen nicht.",
-          ar: "أيجب أن آخذ الدواء كلّ يوم؟ — لا، لستَ مضطرّاً.",
+          de: "Muss ich heute wiederkommen? – Nein, das müssen Sie nicht.",
+          ar: "هل عليّ أن أعود اليوم؟ — لا، لست مضطراً إلى ذلك.",
         },
       ],
       comparisonWithArabic:
-        "العربية تنفي الوجوب والإذن بأدواتٍ متمايزة لا تلتبس: „لا يجوز لك“ (منع) مقابل „لا يلزمك“ (إعفاء). والفارق ظاهرٌ في الفعل نفسه (يجوز / يلزم)، فلا يحتاج المتكلّم العربيّ إلى تفكير.\n\nوالألمانية تضع النفي نفسه على فعلين مختلفين فيُنتج معنيين متعاكسين. فالمتعلّم العربيّ يترجم „لا يجب أن تأتي“ فيقول Sie müssen nicht kommen ظانّاً أنّه منَع — وقد أعفى. والعكس أخطر: من أراد أن يقول „لا يلزمك التدخين“ فقال Sie dürfen nicht rauchen فقد حرّم.\n\nوأمّا sollten فلها في العربية نظيرٌ لطيف: صيغة التحضيض „لولا فعلتَ“ و„حبّذا لو“ — وكلتاهما تُبعد الأمر عن المباشرة. فالعربية تعرف مبدأ التلطيف بالابتعاد، لكنّها لا تربطه بصيغةٍ صرفية ثابتة كما تفعل الألمانية بـKonjunktiv II. والفارق العمليّ: عليك أن **تتعلّم الصيغة** لا أن تعتمد على السياق.",
+        "لتمييز المثالين: **nicht dürfen** = لا يُسمح/ممنوع؛ **nicht müssen** = ليس ضرورياً/لستَ مضطراً. وفي العربية، استخدم عبارة واضحة مثل «لا يجوز» أو «لا يلزم» بدل الاعتماد على «لا يجب» وحدها. أما **sollten** فغالباً ما تقدّم نصيحة أقل مباشرة في هذا السياق؛ احفظها مع مثالها، ولا تجعلها مرادفاً وحيداً للنصيحة.",
       eselsbruecke:
-        "من نفى الإذن حرّم (nicht dürfen = ممنوع)، ومن نفى الوجوب أعفى (nicht müssen = غير لازم). وللنصيحة: sollten لا sollen — لأنّ الابتعاد عن المباشرة هو التهذيب.",
+        "اسأل عن المعنى المقصود: هل الفعل **غير مسموح**؟ استعمل **nicht dürfen**. هل الفعل **غير لازم**؟ استعمل **nicht müssen**. وفي النصيحة قد تناسب **sollten**، لكن لا تحكم على الملاءمة من الصيغة وحدها دون سياق.",
       commonMistakes: [
         {
-          wrong: "Sie müssen nicht rauchen. (والمقصود: ممنوع التدخين)",
+          wrong: "Sie müssen nicht rauchen. (إذا كان المقصود منع التدخين)",
           right: "Sie dürfen nicht rauchen.",
+          classification: "contextual-alternative",
           whyAr:
-            "nicht müssen تعني «لستَ مضطرّاً للتدخين» — إعفاءٌ لا منع، والمعنى ينقلب تماماً. والمنع بـnicht dürfen وحدها.",
+            "الجملة الأولى سليمة لكنها تعني أن التدخين غير لازم؛ لا تدل وحدها على المنع. إذا كان المقصود عدم السماح فاستعمل dürfen nicht. في هذا السياق يتغير المعنى، لا صحة الجملة النحوية.",
         },
         {
-          wrong: "Sie dürfen nicht kommen. (والمقصود: لا داعي أن تأتي)",
+          wrong: "Sie dürfen nicht kommen. (إذا كان المقصود: لا داعي أن تأتي)",
           right: "Sie müssen nicht kommen.",
+          classification: "contextual-alternative",
           whyAr:
-            "الخطأ المعاكس: nicht dürfen تحريمٌ صريح، فتكون قد منعتَ المريض من المجيء بدل أن تعفيه. وهذا خطأٌ يُسبّب سوء فهمٍ حقيقياً.",
+            "Sie dürfen nicht kommen جملة صحيحة تفيد المنع في القراءة المعتادة؛ أما الإعفاء من ضرورة المجيء فيناسبه müssen nicht. اختَر بحسب المعنى المقصود، لا لأن الصيغة الأولى خطأ في ذاتها.",
         },
         {
-          wrong: "Sie sollen mehr schlafen. (نصيحةً من الطبيب)",
-          right: "Sie sollten mehr schlafen.",
+          wrong: "Sie sollen sich ausruhen. (إذا كان المقصود اقتراحاً أقل مباشرة)",
+          right: "Sie sollten sich ausruhen.",
+          classification: "contextual-alternative",
           whyAr:
-            "sollen تنقل إلزاماً صادراً عن ثالثٍ، وsollten تقترح. والطبيب ينصح فيستعمل sollten، وهي كذلك الصيغة المتوقّعة منك في Sprechen حين تُطلب منك نصيحة.",
+            "sollen قد يفيد توجيهاً أو نصيحة بحسب السياق، فلا يكون خطأ لمجرد ورود نصيحة. sollten صيغة شائعة لاقتراح أقل مباشرة في هذا المثال؛ ولا ندّعي أنها الصيغة الوحيدة أو المطلوبة في كل موقف.",
         },
         {
-          wrong: "Sie dürfen nicht Alkohol trinken.",
+          wrong: "Sie dürfen nicht Alkohol trinken. (نفي محايد بلا مقابلة)",
           right: "Sie dürfen keinen Alkohol trinken.",
+          classification: "pedagogical-simplification",
           whyAr:
-            "nicht تنفي الأفعال والصفات، وkein ينفي الأسماء المنكّرة. وAlkohol اسمٌ بلا أداة فيلزمه kein — وهي قاعدة a1-10 تعمل داخل جملةٍ بفعلٍ ناقص.",
+            "في النفي المحايد لاسم غير معرّف نستعمل عادةً keinen Alkohol. أما nicht Alkohol فقد يظهر في نفي تقابلي مثل nicht Alkohol, sondern Wasser؛ لذا فالاختيار في المثال مرتبط بالسياق المقصود، لا باستحالة التركيب مطلقاً.",
         },
         {
-          wrong: "Du sollst zum Arzt gehen. (نصيحةً لصديق)",
+          wrong: "Du sollst zum Arzt gehen. (إذا كان المراد اقتراحاً أقل مباشرة)",
           right: "Du solltest mal zum Arzt gehen.",
+          classification: "contextual-alternative",
           whyAr:
-            "sollst تبدو أمراً فظّاً بين الأصدقاء. وsolltest + mal هي الصيغة الودّية، وmal كلمةٌ صغيرة تلطّف الجملة كما تلطّفها bitte.",
+            "Du sollst جملة صحيحة وقد تعبّر عن توجيه قوي أو نصيحة بحسب العلاقة والتنغيم والسياق. Du solltest mal zum Arzt gehen اقتراح شائع أقل مباشرة في هذا المثال؛ لا نصف sollen بالفظاظة حكماً ولا mal بالتلطيف الحتمي.",
         },
       ],
       relatedRuleComparison: {
-        title: "الأفعال الناقصة الستّة — من A1 إلى A2",
+        title: "مراجعة صيغ سبق أن ظهرت في A1",
         content:
-          "أتممتَ الستّة في a1-14. وA2 لا يضيف فعلاً سابعاً بل **يضيف طبقةً** على ما تعرفه:\n· **النفي المنقلب:** nicht dürfen ≠ nicht müssen (اليوم)\n· **صيغة التلطيف:** sollten · könnten · dürfte (اليوم وb1-04)\n· **الماضي:** konnte · musste · wollte (a2-01)\n· **الناقص في الجملة الفرعية:** …, weil ich nicht kommen **konnte** (a2-10)\nفالمنظومة الواحدة تُستكمل على أربعة دروس، ولا يُطلب منك في أيّ منها أن تبدأ من الصفر.\n\nوستقابل في B1 استعمالاً ثالثاً لـsollen لم يُذكر بعد: **نقل خبرٍ غير مؤكّد** — Er **soll** sehr reich sein (يُقال إنّه ثريّ جداً). وهو امتدادٌ طبيعيّ لمعناها الأصليّ: نقلُ كلام الغير.",
+          "في الدروس التي راجعتها من A1 ظهرت صيغ مودالية في مواضع مختلفة: **müssen/dürfen** في A1-04، و**können/möchten** في A1-06، ثم **wollen/sollen** في A1-14. لا يعني ذلك أن درس A1-14 وحده درّب الأفعال الستة كلها، ولا أن معانيها اكتملت في هذه الوحدات.\n\nيركّز هذا الدرس على أمثلة سياقية مختارة لـ**sollen/sollten** وعلى الفرق بين **nicht dürfen** و**nicht müssen**. للأفعال الناقصة استعمالات أوسع؛ لا يختزل الجدول كل دلالاتها، ولا يقرر اكتمال منهج أو تسلسل CEFR.",
       },
     },
     {
       id: "t3",
-      titleAr: "في العيادة: من الاستقبال إلى الوصفة",
-      titleDe: "In der Praxis: von der Anmeldung bis zum Rezept",
+      titleAr: "عبارات ووثائق مختارة في العيادة",
+      titleDe: "In der Praxis: ausgewählte Ausdrücke und Dokumente",
       explanationAr:
-        "زيارة الطبيب في ألمانيا مسارٌ ثابت الخطوات، ولكلّ خطوةٍ عباراتها. ومن عرف المسار لم يرتبك — وهذا مطلوبٌ منك في **Sprechen Teil 2** من امتحان A2 حيث يُحاكى موقفٌ خدميّ كامل.\n\n**الخطوة الأولى — الموعد بالهاتف:**\n· **Praxis Dr. Weber, guten Tag!** — **Guten Tag, ich hätte gern einen Termin.**\n· **Waren Sie schon einmal bei uns?** (هل سبق أن زرتنا؟) — سؤالٌ يُطرح دائماً في المرّة الأولى.\n· **Passt Ihnen Dienstag um zehn?** — **Ja, das passt.** / **Nein, da kann ich leider nicht.**\n\n**الخطوة الثانية — الاستقبال (die Anmeldung):**\n· **Ihre Versichertenkarte, bitte.** (بطاقة التأمين من فضلك) — لا تُنسَ، فبدونها قد تُطالَب بالدفع نقداً.\n· **Nehmen Sie bitte im Wartezimmer Platz.** (تفضّل بالجلوس في غرفة الانتظار)\n\n**الخطوة الثالثة — عند الطبيب:**\n· **Was fehlt Ihnen?** — وهي حرفياً „ما الذي ينقصك؟“، ومعناها „ما شكواك؟“\n· **Seit wann haben Sie die Beschwerden?** (منذ متى تشكو؟)\n· **Machen Sie bitte den Oberkörper frei.** · **Atmen Sie tief ein.** (خذ نفساً عميقاً)\n\n**الخطوة الرابعة — النتيجة:**\n· **das Rezept** (الوصفة) ⟵ تُصرف في **die Apotheke** وحدها؛ والصيدلية الألمانية لا تبيع الدواء الموصوف بلا وصفة.\n· **die Krankschreibung** أو **der gelbe Schein** (الشهادة المرضية) — تُسلَّم لصاحب العمل، وهي حقٌّ قانونيّ لا منّة.\n· **die Überweisung** (إحالة إلى أخصّائي) — تحتاجها للانتقال من **der Hausarzt** (طبيب الأسرة) إلى **der Facharzt**.\n\n**وأداةٌ لغويّة تلزمك هنا: الأمر بصيغة Sie.**\nصيغة الأمر الرسمية تُبنى بقلب الترتيب: **الفعل + Sie** ⟵ **Nehmen Sie** · **Atmen Sie** · **Gehen Sie**. وهي الصيغة التي ستسمعها من الطبيب في كلّ جملة، فافهمها ولو لم تُنتجها كثيراً.",
+        "هذه عبارات تدريبية ممكنة للتواصل في العيادة، وليست مساراً ثابتاً لكل زيارة.\n\n**حجز موعد:** **Praxis Dr. Weber, guten Tag! — Guten Tag, ich hätte gern einen Termin.** وقد يُسأل المراجع مثلاً **Waren Sie schon einmal bei uns?** أو **Passt Ihnen Dienstag um zehn?**؛ تختلف الأسئلة والإجراءات بين العيادات.\n\n**عند الاستقبال:** قد تطلب العيادة من المؤمن عليه قانونياً **Ihre Gesundheitskarte / Versichertenkarte, bitte**. وتُستخدم في بعض الحالات وثيقة أخرى لإثبات التأمين؛ غياب البطاقة لا يعني تلقائياً دفع ثمن الزيارة نقداً، لذلك يُستحسن سؤال العيادة أو شركة التأمين.\n\n**عند الطبيب:** **Was fehlt Ihnen?** سؤال عن الشكوى، و**Seit wann haben Sie die Beschwerden?** عن بدايتها. ومن أمثلة التعليمات الممكنة **Atmen Sie tief ein** أو **Machen Sie bitte den Oberkörper frei** بحسب الفحص والحاجة.\n\n**وثائق قد تُذكر:**\n· **das Rezept** وصفة دواء. الأدوية الموصوفة تُصرف في الصيدلية، لكن ليس كل دواء يحتاج وصفة؛ فبعض الأدوية المتاحة دون وصفة تُباع أيضاً خارج الصيدليات.\n· **die Krankschreibung / Arbeitsunfähigkeitsbescheinigung (AU)** إثبات طبي لعدم القدرة على العمل. في نظام التأمين القانوني تُرسل eAU عادةً إلكترونياً، وعلى العامل إبلاغ جهة العمل؛ وتوجد استثناءات وإجراءات أخرى.\n· **die Überweisung** إحالة إلى طبيب/اختصاصي عند الحاجة. يستطيع المريض في حالات كثيرة مراجعة اختصاصي مباشرة، لكن بعض المواعيد أو التعريفات التأمينية تتطلب إحالة؛ تحقّق من العيادة أو شركة التأمين.\n\n**أمر المخاطبة الرسمية Sie:** في الأمثلة يأتي الفعل أولاً ثم **Sie**: **Nehmen Sie … / Atmen Sie … / Gehen Sie …**. هذه أمثلة صياغة، لا دعوى أن كل طبيب يستخدم العبارة نفسها.",
       whyAr:
-        "لماذا يسأل الألمانيّ „ما الذي ينقصك؟“ بدل „ما بك؟“؟ لأنّ الصحّة في التصوّر اللغويّ الألمانيّ **حالةٌ كاملة** والمرض **نقصٌ** فيها. فـfehlen (ينقص) هو الفعل نفسه في „Du fehlst mir“ (أفتقدك — حرفياً: تنقصني). ولاحظ أنّها من أفعال الدّاتيف: **Was fehlt Ihnen?** لا Ihnen منصوبة — فالنقص يقع عليك.\n\nولماذا هذا النظام الصارم من الوصفات والإحالات؟ لأنّ التأمين الصحّيّ الألمانيّ **إلزاميّ وشامل**، وثمنُ ذلك مسارٌ موثَّق: طبيب الأسرة بوّابة، والأخصّائيّ خلفها بإحالة، والدواء الموصوف بوصفة. فمن ذهب إلى الأخصّائيّ مباشرةً قد يُطالَب بالدفع من جيبه.\n\nوأمّا **الشهادة المرضية** فلها ثقلٌ ثقافيّ يجهله الوافد: في ألمانيا لا يُنتظر منك أن تعمل وأنت مريض، بل يُعدّ حضورك مريضاً **تصرّفاً غير مسؤول** لأنّك تنقل العدوى. والقانون يمنحك أيّاماً بأجرٍ كامل. فالمتعلّم القادم من ثقافةٍ تعدّ المرض عذراً يُستحيا منه يحتاج أن يعرف أنّ الأمر هنا **إجراءٌ عاديّ** لا استجداء.",
+        "تختلف بعض إجراءات الرعاية بحسب نوع التأمين والحالة. يوضح الموقع الصحي الاتحادي الألماني أن الاختصاصيين يمكن زيارتهم مباشرة في حالات كثيرة، مع وجود استثناءات وإحالات لازمة في حالات محددة؛ كما أن برنامج طبيب الأسرة قد يغيّر المسار. لذلك عُدّلت العبارة القديمة التي جعلت طبيب الأسرة بوابة إلزامية لكل اختصاصي.\n\nكذلك تُستخدم البطاقة الصحية الإلكترونية (eGK) أو وثيقة أخرى لإثبات التأمين، ولا يصح الجزم بأن نسيان بطاقة بعينها يفرض الدفع النقدي دائماً. وبالنسبة إلى AU، يصف المصدر الرسمي الإرسال الإلكتروني المعتاد في التأمين القانوني منذ 2023 مع بقاء واجب إبلاغ جهة العمل؛ فلا نصفها بأنها ورقة يسلمها كل مريض لصاحب العمل.\n\nأخيراً، تُصرف الأدوية الموصوفة في الصيدليات، لكن بعض الأدوية المتاحة دون وصفة تباع خارجها؛ «دواء» لا يعني آلياً «دواء بوصفة». هذه معلومات عامة لتفسير المفردات وليست نصيحة طبية أو قانونية.",
       table: {
-        title: "مسار زيارة الطبيب — الخطوات وعباراتها",
+        title: "أمثلة لعبارات ووثائق قد تُذكر في العيادة",
         columns: ["الخطوة", "ما يُقال", "ملاحظة"],
         rows: [
           {
@@ -361,7 +459,7 @@ export const lessonA202: Lesson = {
           },
           {
             label: "الاستقبال",
-            cells: ["Ihre Versichertenkarte, bitte.", "بطاقة التأمين إلزامية"],
+            cells: ["Ihre Gesundheitskarte oder ein anderer Versicherungsnachweis.", "قد تطلب العيادة إثبات التأمين؛ التفاصيل تختلف"],
           },
           {
             label: "الانتظار",
@@ -369,23 +467,23 @@ export const lessonA202: Lesson = {
           },
           {
             label: "الشكوى",
-            cells: ["Was fehlt Ihnen?", "حرفياً: ما الذي ينقصك؟ — فعل دّاتيف"],
+            cells: ["Was fehlt Ihnen?", "سؤال عن الشكوى؛ Ihnen في Dativ مع fehlen"],
           },
           { label: "الفحص", cells: ["Atmen Sie tief ein.", "خذ نفساً عميقاً"] },
           {
             label: "الدواء",
             cells: [
-              "das Rezept ⟵ die Apotheke",
-              "الوصفة تُصرف في الصيدلية وحدها",
+              "Rezept für ein verschreibungspflichtiges Medikament",
+              "الأدوية الموصوفة تُصرف في الصيدلية؛ ليست كل الأدوية بوصفة",
             ],
           },
           {
             label: "العمل",
-            cells: ["die Krankschreibung", "الشهادة المرضية — حقٌّ قانونيّ"],
+            cells: ["AU / eAU", "إثبات عدم القدرة على العمل؛ الإجراء يختلف وقد يكون إلكترونياً"],
           },
           {
             label: "الأخصّائيّ",
-            cells: ["die Überweisung", "إحالةٌ من طبيب الأسرة"],
+            cells: ["die Überweisung", "قد تُطلب في حالات محددة؛ ليست شرطاً عاماً لكل اختصاصي"],
           },
         ],
       },
@@ -399,8 +497,8 @@ export const lessonA202: Lesson = {
           ar: "هل سبق أن زرتنا؟ — لا، أنا جديد هنا.",
         },
         {
-          de: "Ihre Versichertenkarte, bitte. – Hier, bitte schön.",
-          ar: "بطاقة التأمين من فضلك. — تفضّلي.",
+          de: "Ihre Gesundheitskarte, bitte. – Ja, gern. Hier ist sie.",
+          ar: "بطاقة التأمين الصحي من فضلك. — نعم، تفضل. ها هي.",
         },
         {
           de: "Was fehlt Ihnen denn? – Ich habe seit gestern Fieber.",
@@ -411,58 +509,63 @@ export const lessonA202: Lesson = {
           ar: "سأكتب لك وصفة. اذهب بها إلى الصيدلية.",
         },
         {
-          de: "Können Sie mich bitte krankschreiben? Ich brauche das für meinen Arbeitgeber.",
-          ar: "أيمكنك إعطائي شهادةً مرضية؟ أحتاجها لصاحب العمل.",
+          de: "Können Sie mich bitte krankschreiben? Ich informiere meinen Arbeitgeber dann gleich.",
+          ar: "هل يمكنك إصدار شهادة بعدم قدرتي على العمل؟ سأبلغ صاحب العمل فوراً.",
         },
         {
-          de: "Sie brauchen eine Überweisung zum Facharzt.",
-          ar: "تحتاج إحالةً إلى الأخصّائيّ.",
+          de: "Für diese Untersuchung brauchen Sie eine Überweisung zum Facharzt.",
+          ar: "تحتاج إلى إحالة لهذا الفحص عند الاختصاصي. (في هذه الحالة المحددة)",
         },
         {
           de: "Gute Besserung! – Danke schön.",
-          ar: "شفاءً عاجلاً! — شكراً جزيلاً. (تُقال دائماً في الوداع)",
+          ar: "أتمنى لك الشفاء العاجل! — شكراً جزيلاً. (عبارة شائعة في هذا السياق)",
         },
       ],
       comparisonWithArabic:
-        "العبارة الختامية **Gute Besserung!** (شفاءً عاجلاً) تقابل „سلامتك“ و„ألف سلامة“ في العربية مقابلةً وظيفية تامّة، وهي تُقال في ألمانيا بالقدر نفسه من الاطّراد: من الطبيب والصيدليّ والزميل والجار. فمن أهملها بدا جافّاً.\n\nوالفارق الأكبر في **تفصيل الشكوى**. العربية تقبل الإجمال („تعبان شويّة“) ويتولّى الطبيب استخراج التفاصيل بالأسئلة. والطبيب الألمانيّ يتوقّع منك أن تُقدّم ثلاثة عناصر من تلقاء نفسك: **ما العَرَض · منذ متى · ما شدّته**. فمن اكتفى بالإجمال أطال الزيارة وأربك التشخيص.\n\nوأمّا **Was fehlt Ihnen?** فبنيةٌ لا نظير لها: العربية تقول „ما بك؟“ فتجعل المرض ظرفاً محيطاً بك، والألمانية تجعله نقصاً واقعاً عليك. والمتعلّم الذي يترجم حرفياً قد يظنّ السؤال عن حاجةٍ مادّية („ما الذي تحتاجه؟“) فيجيب إجابةً في غير محلّها.",
+        "**Gute Besserung!** عبارة ألمانية شائعة لتمني التحسن لشخص مريض أو مصاب؛ تقابلها وظيفياً عبارات مثل «سلامتك»، من دون افتراض أنها تُقال دائماً أو أن تركها وقاحة.\n\nيمكن أن يساعد قالب التدريب **العَرَض + منذ متى + وصف مختصر** على بناء جواب واضح. إنه اقتراح تعليمي للمحادثة، لا قاعدة ثقافية تلزم كل مريض بذكر الشدة تلقائياً.\n\nأما **Was fehlt Ihnen?** فهي عبارة اصطلاحية تسأل عن الشكوى؛ تُترجم بحسب الموقف إلى «ما شكواك؟» أو «ما الذي يزعجك؟». لا حاجة إلى بناء نظرية ثقافية عن تصور المرض انطلاقاً من ترجمة حرفية لكلمة **fehlen**.",
       eselsbruecke:
-        "المسار خمس محطّات: موعد ← بطاقة تأمين ← Was fehlt Ihnen ← وصفة أو شهادة ← Gute Besserung. وقدّم ثلاثة عناصر بلا أن تُسأل: العَرَض · منذ متى · الشدّة.",
+        "في محادثة تدريبية، يمكن ترتيب الأفكار هكذا: **طلب موعد → وصف الشكوى → فهم التعليمات والوثائق المناسبة للحالة → وداع**. هذه خريطة للتدريب وليست تسلسلاً إلزامياً لكل عيادة. وعند وصف الشكوى، جرّب ذكر العرض والمدة إن كانا معروفين.",
       commonMistakes: [
         {
           wrong: "Was fehlt Sie?",
           right: "Was fehlt Ihnen?",
+          classification: "error",
           whyAr:
-            "fehlen من أفعال الدّاتيف كـgefallen وhelfen، فالشخص يُجرّ لا يُنصب: Ihnen لا Sie. والقاعدة نفسها في Wie geht es Ihnen؟",
+            "في معنى السؤال عن الشكوى يأخذ fehlen الشخصَ في Dativ: Ihnen. هذه حالة ألمانية تخص هذا البناء، وليست ترجمة لقاعدة الجرّ العربية.",
         },
         {
-          wrong: "Ich will einen Termin.",
+          wrong: "Ich will einen Termin. (عند طلب مهذّب في هذا المثال)",
           right: "Ich hätte gern einen Termin.",
+          classification: "contextual-alternative",
           whyAr:
-            "wollen حازمة تبدو فظّةً في طلبٍ من موظّفة الاستقبال. وhätte gern هي الصيغة المعتمدة، وقسم Sprechen يُقيّم التهذيب بنداً مستقلّاً.",
+            "Ich will einen Termin صحيح نحوياً وقد يكون مباشراً بحسب الموقف. Ich hätte gern einen Termin صيغة شائعة مهذبة في الطلب الرسمي؛ ليست الصيغة الوحيدة ولا يعني اختيار الأخرى أنها فظة دائماً.",
         },
         {
-          wrong: "Ich kaufe das Medikament im Supermarkt.",
-          right: "Ich kaufe das Medikament in der Apotheke.",
+          wrong: "Ich kaufe ein verschreibungspflichtiges Medikament im Supermarkt.",
+          right: "Ich löse das Rezept in einer Apotheke ein.",
+          classification: "error",
           whyAr:
-            "الدواء الموصوف لا يُباع إلاّ في الصيدلية في ألمانيا، ولا يُصرف بلا وصفة. وهذا فرقٌ نظاميّ لا لغويّ، لكنّه يُوقع الوافد في حرجٍ عمليّ.",
+            "في ألمانيا تُصرف الأدوية التي تتطلب وصفة عبر الصيدليات؛ لكن لا نعمّم ذلك على كل دواء، فبعض الأدوية المتاحة دون وصفة يمكن شراؤها خارجها. الخطأ هنا محدد بالدواء الموصوف.",
         },
         {
           wrong: "Nehmen bitte Platz.",
           right: "Nehmen Sie bitte Platz.",
+          classification: "error",
           whyAr:
-            "الأمر بصيغة Sie يحتفظ بالضمير بعد الفعل: Nehmen Sie. وحذفه يجعلها صيغة ihr أو مصدراً، وكلاهما في غير محلّه مع الغريب.",
+            "في الأمر الرسمي المقصود نذكر ضمير المخاطبة Sie بعد الفعل المصرف: Nehmen Sie bitte Platz.",
         },
         {
           wrong: "Ich brauche eine Krankschreibung für die Apotheke.",
-          right: "Ich brauche eine Krankschreibung für meinen Arbeitgeber.",
+          right: "Für das verschreibungspflichtige Medikament brauche ich ein Rezept.",
+          classification: "contextual-alternative",
           whyAr:
-            "خلطٌ بين وثيقتين: الوصفة (Rezept) للصيدلية، والشهادة المرضية (Krankschreibung) لصاحب العمل. والإحالة (Überweisung) للأخصّائيّ — ثلاثٌ لا تختلط.",
+            "الجملة مفهومة نحوياً؛ عدم ملاءمتها هنا دلالي/إجرائي لأنها تخلط وظيفة الوثيقتين: AU/Krankschreibung توثّق عدم القدرة على العمل، أما Rezept فيرتبط بصرف دواء موصوف. وفي التأمين القانوني قد تُرسل AU إلكترونياً؛ فلا يلزم افتراض ورقة تُسلّمها للصيدلية أو لصاحب العمل.",
         },
       ],
       relatedRuleComparison: {
-        title: "حجز الموعد — من a1-09 إلى a2-02",
+        title: "صلة بموضوع المواعيد في A1-09",
         content:
-          "تعلّمتَ في a1-09 حجز الموعد وإلغاءه: Ich hätte gern einen Termin · Passt Ihnen …? · Es tut mir leid, da kann ich nicht. وتلك كانت **البنية العامّة** لأيّ موعد.\n\nواليوم تملؤها بمضمونٍ متخصّص: سببُ الموعد (الأعراض)، والوثائق (بطاقة التأمين)، ومخرجاته (وصفة، شهادة، إحالة). فأنت لا تتعلّم مهارةً جديدة بل **تُعمّق مهارةً قائمة** في ميدانٍ بعينه.\n\nوهذه طريقة CEFR في التدرّج: الوظيفة تُقدَّم عامّةً في A1 ثمّ تُخصَّص في A2 ثمّ تُعقَّد في B1 (حيث ستتعلّم الشكوى من خطأٍ طبّيّ وطلب رأيٍ ثانٍ). فالحلزون يصعد ولا يعيد.",
+          "تضمّن A1-09 مواد عن المواعيد والتقويم، وعبارات مثل **Ich hätte gern einen Termin**، ويمارس هذا الدرس العبارة في سياق صحي. الاقتباس هنا للمراجعة اللغوية فقط؛ لا يعني أن قائمة العبارات تمثل كل حجز موعد أو كل إجراءات العيادات.\n\nيركّز هذا المقطع على مفردات مختارة: الشكوى، وإثبات التأمين، وبعض الوثائق. قد تختلف الحاجة إلى بطاقة أو AU أو إحالة بحسب الحالة والتأمين؛ راجع الملاحظات والمصادر، ولا تستنتج من المثال قاعدة إجرائية عامة أو تسلسلاً كاملاً لمستويات CEFR.",
       },
     },
     {
@@ -470,9 +573,9 @@ export const lessonA202: Lesson = {
       titleAr: "الأفعال الانعكاسية في سياق الصحّة والعناية",
       titleDe: "Reflexive Verben rund um Gesundheit und Körperpflege",
       explanationAr:
-        "قابلتَ **sich fühlen** في الكتلة الأولى (Ich fühle **mich** nicht gut) ولم نشرح بنيتها. وهي من باب **الأفعال الانعكاسية** — أفعالٍ يعود مفعولها على فاعلها. وسياق الصحّة والعناية أغنى مواطنها، ولذلك نفتحه هنا تمهيداً لبابه الكامل في a2-11.\n\n**أوّلاً — البنية: فعلٌ + ضميرٌ انعكاسيّ.**\n| ich wasche **mich** · du wäschst **dich** · er wäscht **sich** |\n| wir waschen **uns** · ihr wascht **euch** · sie waschen **sich** |\nولاحظ أنّ الضمائر هي ضمائر النصب التي تعرفها (mich, dich, uns, euch) إلاّ **sich** التي تخدم الغائب والمخاطبة الرسمية معاً.\n\n**ثانياً — أفعال الصحّة والعناية الأشيع:**\n· **sich fühlen** (يشعر) ⟵ Ich fühle mich besser.\n· **sich ausruhen** (يستريح) ⟵ Sie sollten sich ausruhen.\n· **sich erholen** (يتعافى، ينقه) ⟵ Ich habe mich gut erholt.\n· **sich waschen** (يغتسل) · **sich duschen** · **sich anziehen** (يرتدي ملابسه)\n· **sich verletzen** (يُصاب) ⟵ Ich habe mich am Fuß verletzt.\n· **sich erkälten** (يُصاب بالزكام) ⟵ Ich habe mich erkältet.\n\n**ثالثاً — أين يقع الضمير؟** بعد الفعل المصرَّف مباشرةً:\n· **Ich fühle mich** besser. · **Heute fühle ich mich** besser. (الفاعل انزاح فتبعه الضمير)\n· وفي Perfekt: **Ich habe mich** gut **erholt**. — الضمير في المساحة الوسطى وPartizip II يُغلق.\n\n**ورابعاً — لمحةٌ عن mich مقابل mir (وتفصيلها في a2-11):**\nإن كان في الجملة **مفعولٌ آخر**، انتقل الضمير الانعكاسيّ إلى الجرّ:\n· **Ich wasche mich.** (أغتسل — لا مفعول آخر ⟵ منصوب)\n· **Ich wasche mir die Hände.** (أغسل يديّ — die Hände هي المفعول ⟵ الضمير يُجرّ)\nوالقاعدة: **مفعولٌ واحد للجملة**؛ فإن أخذه غيرُ الضمير، تنحّى الضمير إلى الجرّ.",
+        "تُستعمل ضمائر انعكاسية مع أفعال ألمانية مختارة، ويُحفظ الفعل مع الضمير والحالة التي يتطلبها المثال.\n\n**waschen** يوضح فرقاً شائعاً: **Ich wasche mich**؛ هنا **mich** مفعول انعكاسي في Akkusativ. ومع ذكر عضو الجسم نقول **Ich wasche mir die Hände**؛ **die Hände** في Akkusativ، و**mir** في Dativ للدلالة على صاحب اليدين. هذا شرح لهذا التركيب، لا قاعدة عامة تقول إن كل ضمير انعكاسي يتحول إلى Dativ عند ظهور أي مفعول آخر.\n\nفي تصريف **waschen**: **ich wasche mich · du wäschst dich · er/sie/es wäscht sich · wir waschen uns · ihr wascht euch · sie/Sie waschen sich**. **sich** تُستخدم للغائب، وللجمع الغائب، وللمخاطبة الرسمية.\n\nفي الأمثلة البسيطة هنا يظهر الضمير قرب الفعل المصرف أو بعد الفاعل: **Ich fühle mich besser** و**Heute fühle ich mich besser**؛ وفي Perfekt: **Ich habe mich gut erholt**. يتغير ترتيب العناصر مع نوع الجملة ومكوّناتها، لذا فهذه أمثلة لا قاعدة «بعد الفعل مباشرةً» لكل تركيب.\n\nقارن أيضاً **Er wäscht sich** (sich في Akkusativ) بـ**Er wäscht sich die Hände** (sich في Dativ، و**die Hände** في Akkusativ): شكل الضمير وحده لا يكفي لتحديد الحالة؛ انظر إلى تركيب الجملة.",
       whyAr:
-        "لماذا تحتاج الألمانية ضميراً انعكاسياً حيث تكتفي العربية بصيغةٍ صرفية؟ لأنّ العربية تملك **أوزاناً** تحمل معنى الانعكاس: اغتسل، استراح، تعافى — كلّها أوزانٌ (افتعل، استفعل، تفاعل) تدلّ على وقوع الفعل على فاعله بلا كلمةٍ زائدة. والألمانية فقدت هذه الأوزان فعوّضت عنها بضميرٍ مستقلّ.\n\nفما تراه عبئاً إضافياً هو في الحقيقة **الوظيفة نفسها بأداةٍ مختلفة**: العربية تُدخلها في بنية الكلمة، والألمانية تضعها بجانبها. ومن أدرك التقابل أراح نفسه: كلّما وجدتَ في العربية وزن „افتعل“ أو „تفعّل“ فتوقّع في الألمانية sich.\n\nولماذا يكثر الانعكاس في باب الصحّة تحديداً؟ لأنّ العناية بالجسد فعلٌ يقع من المرء على نفسه بطبيعته: من يغتسل يغسل نفسه، ومن يستريح يُريح نفسه. فالباب الدلاليّ يستدعي البنية النحوية استدعاءً طبيعياً — ولذلك كان تعلّمهما معاً أنفع من تعلّم كلٍّ على حدة.",
+        "قد تعبر العربية عن معنى بعض الأفعال الألمانية الانعكاسية بفعل مشتق أو فعل غير انعكاسي أو تركيب آخر؛ لا توجد مقابلة آلية بين وزن عربي و**sich**. لذلك تُحفظ الأفعال التي تظهر هنا بوصفها وحدات مع ضمائرها، مثل **sich fühlen** و**sich erholen**.\n\nويفيد التمييز بين مثالين محددين: **Ich wasche mich** (أغتسل/أغسل نفسي) و**Ich wasche mir die Hände** (أغسل يديّ). الأولى فيها ضمير انعكاسي في Akkusativ، والثانية فيها **mir** في Dativ و**die Hände** في Akkusativ. ولا نستنتج حالة الفعل الألماني من تسمية عربية أو ترجمة حرفية.",
       table: {
         title: "أفعال انعكاسية في باب الصحّة",
         columns: ["الفعل", "المعنى", "المثال", "Perfekt"],
@@ -503,7 +606,7 @@ export const lessonA202: Lesson = {
           },
           {
             label: "sich verletzen",
-            cells: ["يُصاب بجرح", "Er hat sich verletzt.", "hat sich verletzt"],
+            cells: ["يتعرّض لإصابة/يجرح نفسه بحسب السياق", "Er hat sich verletzt.", "hat sich verletzt"],
           },
           {
             label: "sich waschen",
@@ -512,9 +615,9 @@ export const lessonA202: Lesson = {
           {
             label: "sich … waschen",
             cells: [
-              "يغسل عضواً منه",
+              "يغسل يديه",
               "Ich wasche mir die Hände.",
-              "الضمير يُجرّ لوجود مفعول",
+              "hat sich die Hände gewaschen؛ sich في Dativ وdie Hände في Akkusativ",
             ],
           },
         ],
@@ -533,8 +636,8 @@ export const lessonA202: Lesson = {
           ar: "تعافيتُ جيداً في العطلة.",
         },
         {
-          de: "Ich habe mich erkältet — das Wetter war zu kalt.",
-          ar: "أُصبتُ بالزكام — كان الطقس بارداً جداً.",
+          de: "Ich habe mich erkältet und ruhe mich heute aus.",
+          ar: "أُصبتُ بنزلة برد وأستريح اليوم.",
         },
         {
           de: "Mein Sohn hat sich beim Fußball am Knie verletzt.",
@@ -542,81 +645,86 @@ export const lessonA202: Lesson = {
         },
         {
           de: "Waschen Sie sich bitte vorher die Hände.",
-          ar: "اغسل يديك قبل ذلك من فضلك. (وجود die Hände ⟵ sich بالجرّ)",
+          ar: "اغسل يديك قبل ذلك من فضلك. (sich هنا في Dativ وdie Hände في Akkusativ)",
         },
         {
           de: "Heute fühle ich mich viel besser als gestern.",
           ar: "أشعر اليوم بتحسّنٍ كبير عن أمس. (الظرف أوّلاً ⟵ الفاعل انزاح)",
         },
         {
-          de: "Ruhen Sie sich aus und trinken Sie viel Tee.",
-          ar: "استرح واشرب شاياً كثيراً. (أمرٌ بصيغة Sie + فعلٌ انعكاسيّ منفصل)",
+          de: "Ruhen Sie sich aus und bleiben Sie zu Hause.",
+          ar: "استرح وابقَ في البيت. (أمران بصيغة Sie؛ ausruhen فعل منفصل انعكاسي)",
         },
       ],
       comparisonWithArabic:
-        "التقابل هنا منتظمٌ ومريح: أوزان العربية الانعكاسية تقابل sich الألمانية مقابلةً شبه تامّة.\n· **اغتسل** (افتعل) ⟵ sich waschen · **استراح** (استفعل) ⟵ sich ausruhen · **تعافى** (تفاعل) ⟵ sich erholen\nفالمتعلّم العربيّ يملك **حدساً جاهزاً** لهذا الباب: هو يعرف متى يكون الفعل واقعاً على فاعله لأنّ لغته تُعلمه ذلك بالصيغة.\n\nوالخطر في موضعين. الأوّل: أفعالٌ انعكاسية في الألمانية وغير انعكاسية في العربية — **sich erkälten** ليست „تزكّم“ بل „أُصيب بالزكام“، فالعربية تجعلها مبنيّةً للمجهول والألمانية تجعلها انعكاسية. والثاني: **نسيان الضمير أصلاً**، لأنّ العربيّ نطق معنى الانعكاس في الفعل فظنّ أنّه أدّاه — فيقول Ich fühle gut وقد أسقط mich.\n\nونصيحةٌ عملية: احفظ الفعل الانعكاسيّ **بضميره دائماً** — لا تحفظ fühlen بل sich fühlen، ولا erholen بل sich erholen. فالضمير جزءٌ من هويّة الفعل لا زيادةٌ عليه.",
+        "احفظ الفعل مع الضمير في المعنى المقصود: **sich fühlen**, **sich ausruhen**, **sich erholen**. وفي **waschen** قارن البنيتين فقط: **Ich wasche mich** / **Ich wasche mir die Hände**؛ فالحالة هنا ألمانية (Akkusativ/Dativ)، وليست مقابلة مباشرة لإعراب عربي.",
       eselsbruecke:
-        "كلّما وجدتَ في العربية وزن «افتعل» أو «استفعل» أو «تفعّل» فتوقّع sich في الألمانية. واحفظ الفعل بضميره: sich fühlen لا fühlen. وإن كان في الجملة مفعولٌ آخر، تنحّى الضمير إلى الجرّ (mir die Hände).",
+        "لا تحفظ الفعل الألماني وحده إذا كان المثال انعكاسياً: تعلّم **sich fühlen** و**sich erholen** مع الضمير. وفي **waschen** احفظ الزوج **mich** بلا مفعول عضو، و**mir + عضو في Akkusativ** في مثال غسل اليدين؛ لا تعمّم الزوج على كل الأفعال.",
       commonMistakes: [
         {
-          wrong: "Ich fühle gut.",
+          wrong: "Ich fühle gut. (لوصف حالتي)",
           right: "Ich fühle mich gut.",
+          classification: "error",
           whyAr:
-            "إسقاط الضمير الانعكاسيّ لأنّ العربية تنطق الانعكاس في بنية الفعل نفسه. وfühlen بلا ضمير تعني «يلمس» أو «يتحسّس شيئاً» — فالمعنى يتغيّر لا يضيع فقط.",
+            "عند وصف الحالة الجسدية أو النفسية، يُستعمل الفعل هنا انعكاسياً: Ich fühle mich gut. أما fühlen من دون ضمير فيأتي في تراكيب أخرى، مثل etwas fühlen (أشعر بشيء/أتحسّس شيئاً). لذلك لا تنقل Ich fühle gut المعنى المقصود من دون mich.",
         },
         {
           wrong: "Ich habe mich gut erholen.",
           right: "Ich habe mich gut erholt.",
+          classification: "error",
           whyAr:
-            "وضعُ المصدر مكان Partizip II. وerholen ضعيفٌ بادئته er- غير منفصلة ⟵ erholt بلا ge-، وهي قاعدة a1-14 تعمل على فعلٍ انعكاسيّ.",
+            "بعد haben في Perfekt نحتاج هنا Partizip II erholt، لا المصدر erholen. والعبارة erholt بلا ge-؛ احفظ الصورة المصرفة نفسها.",
         },
         {
           wrong: "Ich wasche mich die Hände.",
           right: "Ich wasche mir die Hände.",
+          classification: "error",
           whyAr:
-            "وجود مفعولٍ صريح (die Hände) يدفع الضمير الانعكاسيّ إلى الجرّ. والقاعدة: مفعولٌ منصوب واحد للجملة، فإن أخذه غيرُ الضمير تنحّى الضمير.",
+            "في هذا التركيب المحدد تكون die Hände في Akkusativ وmir في Dativ. ليس السبب قاعدةً عامة بأن أي مفعول آخر يغيّر كل ضمير انعكاسي إلى Dativ، ولا أن Dativ يساوي الجرّ العربي.",
         },
         {
-          wrong: "Er fühlt mich nicht gut.",
+          wrong: "Er fühlt mich nicht gut. (لوصف حال Er)",
           right: "Er fühlt sich nicht gut.",
+          classification: "contextual-alternative",
           whyAr:
-            "الضمير الانعكاسيّ يتبع الفاعل لا المتكلّم: مع er يكون sich. ويكثر هذا الخطأ لأنّ المتعلّم يحفظ العبارة «fühle mich» كتلةً جامدة.",
+            "في وصف حالة Er نقول Er fühlt sich nicht gut. أما fühlt mich فبنية أخرى يكون فيها mich مفعولاً لشخص آخر بحسب السياق؛ لذلك يُحدد الخطأ بقراءة الجملة على أنها وصف لحال Er.",
         },
         {
-          wrong: "Ich bin erkältet mich.",
+          wrong: "Ich habe erkältet. (للتعبير عن الإصابة بنزلة برد)",
           right: "Ich habe mich erkältet.",
+          classification: "error",
           whyAr:
-            "خطآن: المساعد والضمير معاً. والأفعال الانعكاسية تأخذ haben دائماً — لأنّ الضمير الانعكاسيّ نفسه مفعولٌ به، واختبار المفعول يحسم لصالح haben.",
+            "يحتاج sich erkälten إلى الضمير الانعكاسي في هذا الاستعمال، ويأخذ Perfekt هنا haben + erkältet. وهناك جملة صحيحة أخرى لوصف الحالة الحالية: Ich bin erkältet؛ ليست خطأً، لكنها بناء مختلف.",
         },
       ],
       relatedRuleComparison: {
-        title: "تمهيدٌ لبابٍ يكتمل في a2-11",
+        title: "أمثلة انعكاسية في A2-11",
         content:
-          "ما تأخذه اليوم **نصف الباب**: البنية الأساسية وأفعال الصحّة والعناية. وسيكتمل في a2-11 (Dienstleistungen) بثلاث إضافات:\n· **الأفعال الانعكاسية مع حروف الجرّ:** sich freuen **auf** (يتشوّق إلى) مقابل sich freuen **über** (يفرح بـ)\n· **قاعدة mich/mir كاملةً** بأمثلتها كلّها\n· **الانعكاسيّ المتبادل:** Wir treffen **uns** (نلتقي — كلٌّ منّا بالآخر)\n\nوسبب التقسيم أنّ الباب أوسع من أن يُبتلع دفعةً واحدة، وأنّ سياق الصحّة يفرض نصفه فرضاً: لا تستطيع أن تقول „أشعر بتحسّن“ ولا „ينبغي أن ترتاح“ بلا sich. فأخذتَ منه اليوم ما يلزمك للموقف، وتأخذ بقيّته حين يتّسع الوقت له.",
+          "يعرض A2-11 أفعالاً انعكاسية أخرى، منها **sich freuen** و**sich anmelden**، وأمثلةً مثل **sich freuen auf den Urlaub** و**Wir treffen uns**. هذه إحالة إلى أمثلة من وحدة أخرى، لا دعوى بأن A2-11 أو A2-02 يقدّم وصفاً كاملاً للأفعال الانعكاسية أو لقاعدة mich/mir.\n\nفي هذا المقطع نقتصر على أفعال صحية مختارة وعلى مثالين محددين لـwaschen. يُرجع إلى كل فعل وبنائه ومفعوله؛ لا تُعمّم قاعدةً واحدة على جميع الأفعال الانعكاسية.",
       },
     },
   ],
 
   reading: {
     id: "read-a2-02",
-    titleDe: "Drei Tage Grippe",
-    titleAr: "ثلاثة أيّامٍ من النزلة",
+    titleDe: "Drei Tage zu Hause",
+    titleAr: "ثلاثة أيام في البيت",
     textType: "erzaehlung",
     paragraphs: [
-      "Am Montagmorgen bin ich aufgewacht und wusste sofort: Heute stimmt etwas nicht. Mein Hals tat weh, mir war abwechselnd heiß und kalt, und ich fühlte mich sehr schwach. Ich habe trotzdem versucht aufzustehen, aber nach zehn Minuten musste ich mich wieder hinlegen.",
-      "Meine Kollegin hat mir am Telefon gesagt: „Du solltest unbedingt zum Arzt gehen. Und du musst dich krankschreiben lassen, sonst gibt es Probleme mit dem Chef.“ Sie hatte recht. Ich habe in der Praxis angerufen und einen Termin für den Nachmittag bekommen.",
-      "Im Wartezimmer saßen schon sechs Leute. Nach vierzig Minuten war ich endlich dran. Die Ärztin hat gefragt: „Was fehlt Ihnen denn?“ Ich habe erzählt: seit dem Morgen Halsschmerzen, Fieber und Kopfschmerzen. Sie hat mich untersucht und gesagt: „Sie haben eine Grippe. Das ist nicht schlimm, aber Sie brauchen Ruhe.“",
-      "Dann hat sie mir erklärt, was ich machen soll: „Sie sollten viel trinken und drei Tage im Bett bleiben. Sie dürfen keinen Sport machen. Aber Sie müssen nicht wiederkommen, wenn es Ihnen besser geht.“ Ich habe ein Rezept und eine Krankschreibung für drei Tage bekommen.",
-      "Auf dem Weg nach Hause war ich in der Apotheke. Der Apotheker war sehr freundlich und hat mir alles genau erklärt. Zu Hause habe ich Tee gekocht und mich ins Bett gelegt.",
-      "Nach drei Tagen ging es mir schon viel besser. Ich habe mich gut erholt und bin am Freitag wieder arbeiten gegangen. Meine Kollegin hat gelacht und gesagt: „Siehst du? Manchmal muss man einfach auf den Körper hören.“",
+      "Am Montagmorgen bin ich aufgewacht und wusste sofort: Heute stimmt etwas nicht. Mein Hals tat weh, ich hatte Fieber, mir war heiß und kalt, und ich fühlte mich sehr schwach. Ich habe trotzdem versucht aufzustehen, aber nach zehn Minuten musste ich mich wieder hinlegen.",
+      "Meine Kollegin hat mir am Telefon gesagt: „Du solltest zum Arzt gehen. Wenn du nicht arbeiten kannst, frag nach einer Krankschreibung und informiere deinen Chef.“ Sie hatte recht. Ich habe in der Praxis angerufen und einen Termin für den Nachmittag bekommen.",
+      "Im Wartezimmer saßen schon sechs Leute. Nach vierzig Minuten war ich endlich dran. Die Ärztin hat gefragt: „Was fehlt Ihnen denn?“ Ich habe erzählt, dass ich seit dem Morgen Halsschmerzen, Fieber und Kopfschmerzen habe. Sie hat mich untersucht und gesagt: „Sie haben eine Erkältung. Die Beschwerden sind im Moment nicht sehr stark, aber Sie brauchen Ruhe.“",
+      "Dann hat sie mir erklärt, was ich machen soll: „Sie sollten sich ausruhen und zu Hause bleiben. Solange Sie Fieber haben, dürfen Sie keinen Sport machen. Aber Sie müssen nicht wiederkommen, wenn es Ihnen besser geht.“ Ich habe ein Rezept und eine Krankschreibung für die nächsten drei Tage bekommen.",
+      "Auf dem Weg nach Hause bin ich in die Apotheke gegangen. Der Apotheker war sehr freundlich und hat mir alles genau erklärt. Zu Hause habe ich Tee gekocht und mich ins Bett gelegt.",
+      "Nach drei Tagen zu Hause ging es mir viel besser. Ich habe mich gut erholt und bin am Freitag wieder zur Arbeit gegangen. Meine Kollegin hat gelacht und gesagt: „Siehst du? Manchmal muss man einfach auf den Körper hören.“",
     ],
     paragraphsAr: [
-      "صباح الاثنين استيقظتُ وعرفتُ فوراً: اليوم ثمّة خطبٌ ما. كان حلقي يؤلمني، وكنتُ أشعر بالحرّ والبرد بالتناوب، وكنتُ ضعيفاً جداً. حاولتُ رغم ذلك أن أنهض، لكن بعد عشر دقائق اضطررتُ أن أستلقي ثانيةً.",
-      "قالت لي زميلتي على الهاتف: «ينبغي لك أن تذهب إلى الطبيب حتماً. وعليك أن تحصل على شهادةٍ مرضية، وإلاّ صارت مشكلةٌ مع المدير». كانت مُحقّة. اتّصلتُ بالعيادة وحصلتُ على موعدٍ بعد الظهر.",
-      "في غرفة الانتظار كان يجلس ستّة أشخاص. وبعد أربعين دقيقة جاء دوري أخيراً. سألت الطبيبة: «ما شكواك؟» فحكيتُ: ألمُ حلقٍ منذ الصباح، وحمّى، وصداع. فحصتني وقالت: «عندك نزلة. ليست خطيرة، لكنّك تحتاج راحة».",
-      "ثمّ شرحت لي ما ينبغي أن أفعل: «ينبغي أن تشرب كثيراً وأن تبقى في الفراش ثلاثة أيّام. وممنوعٌ عليك ممارسة الرياضة. لكن لستَ مضطرّاً للعودة إن تحسّنت حالك». وحصلتُ على وصفةٍ وشهادةٍ مرضية لثلاثة أيّام.",
-      "وفي طريق العودة مررتُ بالصيدلية. كان الصيدليّ لطيفاً جداً وشرح لي كلّ شيءٍ بدقّة. وفي البيت أعددتُ شاياً واستلقيتُ في الفراش.",
-      "وبعد ثلاثة أيّام صرتُ أحسن حالاً بكثير. تعافيتُ جيداً وعدتُ إلى العمل يوم الجمعة. ضحكت زميلتي وقالت: «أرأيت؟ أحياناً على المرء أن يُصغي إلى جسده ببساطة».",
+      "صباح الاثنين استيقظتُ وعرفتُ فوراً: ثمّة خطبٌ ما اليوم. كان حلقي يؤلمني، وكانت لديّ حمى، وشعرتُ بالحرّ والبرد، وكنتُ ضعيفاً جداً. حاولتُ رغم ذلك أن أنهض، لكن بعد عشر دقائق اضطررتُ إلى الاستلقاء ثانيةً.",
+      "قالت لي زميلتي على الهاتف: «ينبغي أن تذهب إلى الطبيب. وإذا لم تكن قادراً على العمل، فاسأل عن شهادة مرضية وأبلغ مديرك». كانت محقّة. اتصلتُ بالعيادة وحصلتُ على موعد بعد الظهر.",
+      "في غرفة الانتظار كان يجلس ستة أشخاص. وبعد أربعين دقيقة جاء دوري أخيراً. سألت الطبيبة: «ما شكواك؟» فحكيت لها أن حلقي يؤلمني منذ الصباح، وأن لديّ حمى وصداعاً. فحصتني وقالت: «عندك نزلة برد. الأعراض ليست شديدة الآن، لكنك تحتاج إلى الراحة».",
+      "ثم شرحت لي ما ينبغي أن أفعل: «ينبغي أن تستريح وتبقى في البيت. لا يجوز لك ممارسة الرياضة ما دمت مصاباً بالحمى. لكنك لست مضطراً إلى العودة إذا تحسنت حالك». وحصلت على وصفة وشهادة مرضية للأيام الثلاثة التالية.",
+      "وفي طريق العودة ذهبت إلى الصيدلية. كان الصيدلي لطيفاً جداً وشرح لي كل شيء بدقة. وفي البيت أعددت شاياً واستلقيت في الفراش.",
+      "وبعد ثلاثة أيام في البيت شعرت بتحسن كبير. تعافيت جيداً وعدت إلى العمل يوم الجمعة. ضحكت زميلتي وقالت: «أرأيت؟ أحياناً ينبغي للمرء أن يصغي إلى جسده».",
     ],
     glossary: [
       {
@@ -648,13 +756,13 @@ export const lessonA202: Lesson = {
         noteAr: "غير منفصل ⟵ untersucht بلا ge-",
       },
       {
-        de: "die Grippe",
-        ar: "النزلة، الإنفلونزا",
+        de: "die Erkältung",
+        ar: "نزلة برد (ليست مرادفاً للإنفلونزا Grippe)",
       },
       {
-        de: "schlimm",
-        ar: "خطير، سيّئ",
-        noteAr: "Das ist nicht schlimm = ليس خطيراً",
+        de: "stark",
+        ar: "شديد/قوي بحسب السياق",
+        noteAr: "في النص: Die Beschwerden sind nicht sehr stark = الأعراض ليست شديدة جداً؛ لا يثبت ذلك حكماً طبياً عاماً.",
       },
       {
         de: "die Ruhe",
@@ -663,12 +771,12 @@ export const lessonA202: Lesson = {
       {
         de: "das Rezept",
         ar: "الوصفة الطبّية",
-        noteAr: "تُصرف في الصيدلية وحدها",
+        noteAr: "وصفة لدواء موصوف؛ تُقدَّم لصرفه في صيدلية",
       },
       {
         de: "die Krankschreibung",
         ar: "الشهادة المرضية",
-        noteAr: "تُسلَّم لصاحب العمل",
+        noteAr: "تثبت عدم القدرة على العمل؛ قد تُرسل إلكترونياً، مع وجوب إبلاغ جهة العمل في الحالات المعتادة",
       },
       {
         de: "der Apotheker",
@@ -692,14 +800,14 @@ export const lessonA202: Lesson = {
         questionDe: "Welche Symptome hatte die Person am Montagmorgen?",
         instructionAr: "اقرأ الفقرة الأولى: ما الأعراض؟",
         options: [
-          "Halsschmerzen, Fieber und Schwäche",
-          "Nur Kopfschmerzen",
-          "Bauchschmerzen",
-          "Rückenschmerzen",
+          "Die Person hatte Halsschmerzen und Fieber, ihr war heiß und kalt, und sie fühlte sich sehr schwach.",
+          "Die Person hatte nur Kopfschmerzen und fühlte sich sonst gut.",
+          "Die Person hatte Bauchschmerzen und kein Fieber.",
+          "Die Person hatte Rückenschmerzen, aber keine weiteren Beschwerden.",
         ],
         correctIndex: 0,
         explanation:
-          "«Mein Hals tat weh, mir war abwechselnd heiß und kalt, und ich fühlte mich sehr schwach».",
+          "«Mein Hals tat weh, ich hatte Fieber, mir war heiß und kalt, und ich fühlte mich sehr schwach.»",
         errorType: "vocabulary",
       },
       {
@@ -709,14 +817,14 @@ export const lessonA202: Lesson = {
         questionDe: "Was hat die Kollegin geraten?",
         instructionAr: "اقرأ الفقرة الثانية: بماذا نصحت الزميلة؟",
         options: [
-          "Zum Arzt gehen und sich krankschreiben lassen",
-          "Zu Hause bleiben ohne Arzt",
-          "Zur Arbeit kommen",
-          "Medikamente im Supermarkt kaufen",
+          "Zum Arzt gehen; bei Bedarf nach einer Krankschreibung fragen und den Chef informieren",
+          "Zu Hause bleiben, ohne die Praxis anzurufen",
+          "Zur Arbeit gehen, obwohl man nicht arbeiten kann",
+          "Den Termin absagen und weiterarbeiten",
         ],
         correctIndex: 0,
         explanation:
-          "«Du solltest unbedingt zum Arzt gehen. Und du musst dich krankschreiben lassen».",
+          "«Du solltest zum Arzt gehen. Wenn du nicht arbeiten kannst, frag nach einer Krankschreibung und informiere deinen Chef.»",
         errorType: "vocabulary",
       },
       {
@@ -726,14 +834,14 @@ export const lessonA202: Lesson = {
         questionDe: "Was bedeutet: „Sie müssen nicht wiederkommen“?",
         instructionAr: "اقرأ الفقرة الرابعة: ماذا تعني هذه الجملة؟",
         options: [
-          "Es ist nicht nötig zurückzukommen",
-          "Es ist verboten zurückzukommen",
+          "Es ist nicht nötig, zurückzukommen",
+          "Es ist verboten, zurückzukommen",
           "Sie sollen morgen kommen",
           "Sie müssen unbedingt kommen",
         ],
         correctIndex: 0,
         explanation:
-          "nicht müssen = إعفاءٌ لا منع. ولو أرادت المنع لقالت «Sie dürfen nicht wiederkommen».",
+          "في هذه القراءة، müssen nicht ينفي الوجوب؛ أما dürfen nicht فيعبّر عن عدم الإذن/المنع.",
         errorType: "grammar",
       },
       {
@@ -743,32 +851,32 @@ export const lessonA202: Lesson = {
         questionDe: "Was war verboten?",
         instructionAr: "اقرأ الفقرة الرابعة: ما الممنوع؟",
         options: [
-          "Sport machen",
+          "Sport machen, solange die Person Fieber hat",
           "Tee trinken",
-          "Im Bett bleiben",
+          "Zu Hause bleiben",
           "Zur Apotheke gehen",
         ],
         correctIndex: 0,
         explanation:
-          "«Sie dürfen keinen Sport machen» — nicht/kein dürfen يفيد التحريم.",
+          "«Solange Sie Fieber haben, dürfen Sie keinen Sport machen»؛ يذكر النص المنع مع شرط الحمى.",
         errorType: "grammar",
       },
       {
         id: "rq5",
         type: "multiple-choice",
-        questionDe:
-          "Warum heißt es „Was fehlt Ihnen?“ und nicht „Was fehlt Sie?“",
-        instructionAr: "سؤال قواعد: لماذا Ihnen لا Sie؟",
+        paragraph: 5,
+        questionDe: "Wohin ist die Person auf dem Weg nach Hause gegangen?",
+        instructionAr: "اقرأ الفقرة الخامسة: إلى أين ذهب الشخص في طريق عودته؟",
         options: [
-          "Weil fehlen ein Dativ-Verb ist",
-          "Weil es höflicher klingt",
-          "Weil Sie hier Plural ist",
-          "Weil fehlen reflexiv ist",
+          "In die Apotheke",
+          "In ein Restaurant",
+          "Zur Arbeit",
+          "In eine Schule",
         ],
         correctIndex: 0,
         explanation:
-          "fehlen من أفعال الدّاتيف كـgefallen وhelfen: النقص يقع على الشخص فيُجرّ.",
-        errorType: "case",
+          "«Auf dem Weg nach Hause bin ich in die Apotheke gegangen.»",
+        errorType: "vocabulary",
       },
       {
         id: "rq6",
@@ -778,7 +886,7 @@ export const lessonA202: Lesson = {
         instructionAr: "اقرأ الفقرة الأخيرة: متى عاد إلى العمل؟",
         options: ["Am Freitag", "Am Montag", "Am Mittwoch", "Am Sonntag"],
         correctIndex: 0,
-        explanation: "«bin am Freitag wieder arbeiten gegangen».",
+        explanation: "«bin am Freitag wieder zur Arbeit gegangen».",
         errorType: "vocabulary",
       },
     ],
@@ -788,19 +896,19 @@ export const lessonA202: Lesson = {
         ar: "اليوم ثمّة خطبٌ ما",
       },
       {
-        de: "Du solltest unbedingt zum Arzt gehen.",
-        ar: "ينبغي لك أن تذهب إلى الطبيب حتماً",
+        de: "Du solltest zum Arzt gehen.",
+        ar: "ينبغي أن تذهب إلى الطبيب",
       },
       {
         de: "Was fehlt Ihnen denn?",
-        ar: "ما شكواك؟ — سؤال الطبيب المعتاد",
+        ar: "ما شكواك؟ — سؤال ممكن عن الأعراض",
       },
       {
         de: "Das ist nicht schlimm, aber Sie brauchen Ruhe.",
-        ar: "ليس خطيراً، لكنّك تحتاج راحة",
+        ar: "الأمر ليس شديداً، لكنك تحتاج إلى الراحة.",
       },
       {
-        de: "Nach drei Tagen ging es mir schon viel besser.",
+        de: "Nach drei Tagen zu Hause ging es mir viel besser.",
         ar: "وبعد ثلاثة أيّام صرتُ أحسن حالاً بكثير",
       },
       {
@@ -809,7 +917,7 @@ export const lessonA202: Lesson = {
       },
     ],
     discussionAr:
-      "احكِ مرّةً مرضتَ فيها، في ثماني جملٍ على الأقلّ. صف الأعراض ببنيتين مختلفتين على الأقلّ (haben + Schmerzen · tut weh · mir ist …)، واذكر نصيحةً تلقّيتَها بصيغة sollten، وشيئاً مُنعتَ منه بصيغة nicht dürfen. ثمّ راجع: هل استعملتَ mir حيث يقع الإحساس عليك، وich حيث تصف حالك؟",
+      "تدريب شفهي أو كتابي اختياري غير مسجّل: صفّ في بضع جمل حالةً صحية خيالية أو موقفاً غير شخصي. جرّب تركيباً لعرض ومدة، وجملةً فيها sollen أو sollten، إن شئت. لا يلزم الإفصاح عن معلومات صحية شخصية؛ وهذا النشاط لا يقيّم الكلام أو الكتابة ولا يضيف دليلاً إلى الأهداف.",
   },
 
   listening: {
@@ -821,7 +929,7 @@ export const lessonA202: Lesson = {
           {
             speaker: "Arzt",
             de: "Guten Tag! Was fehlt Ihnen?",
-            ar: "نهارك سعيد! ما الذي ينقصك (ما بك)؟",
+            ar: "نهارك سعيد! ما شكواك؟",
           },
           {
             speaker: "Sami",
@@ -836,14 +944,14 @@ export const lessonA202: Lesson = {
           { speaker: "Sami", de: "Ja, ein bisschen.", ar: "نعم، قليلاً." },
           {
             speaker: "Arzt",
-            de: "Sie haben eine Erkältung. Sie sollen viel trinken und sich ausruhen.",
-            ar: "عندك زكام. يجب أن تشرب كثيراً وتستريح.",
+            de: "Sie haben eine Erkältung. Sie sollen sich ausruhen und zu Hause bleiben.",
+            ar: "عندك نزلة برد. ينبغي أن تستريح وتبقى في البيت.",
           },
           { speaker: "Sami", de: "Und Tabletten?", ar: "وأقراص؟" },
           {
             speaker: "Arzt",
-            de: "Nehmen Sie dreimal täglich eine Tablette.",
-            ar: "خذ قرصاً ثلاث مرات يومياً.",
+            de: "Ich stelle Ihnen ein Rezept aus. Bitte nehmen Sie das Medikament nach der Packungsbeilage ein.",
+            ar: "سأحرر لك وصفة. تناول الدواء وفق النشرة المرفقة من فضلك.",
           },
         ],
       },
@@ -864,12 +972,12 @@ export const lessonA202: Lesson = {
           {
             speaker: "Anna",
             de: "Du sollst dich ausruhen und nicht so viel arbeiten!",
-            ar: "يجب أن تستريح وألا تعمل كثيراً!",
+            ar: "ينبغي أن تستريح وألا تعمل كثيراً!",
           },
           {
             speaker: "Karim",
-            de: "Du hast recht. Und ich soll zum Arzt gehen.",
-            ar: "معك حق. ويجب أن أذهب للطبيب.",
+            de: "Du hast recht. Dann sollte ich zum Arzt gehen.",
+            ar: "معك حق. ينبغي أن أذهب إلى الطبيب إذن.",
           },
         ],
       },
@@ -879,13 +987,13 @@ export const lessonA202: Lesson = {
         id: "q1",
         itemId: "l1",
         type: "multiple-choice",
-        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
-        questionDe: "Was hat Sami?",
-        questionAr: "ماذا لدى سامي؟",
+        instructionAr: "استمع إلى الحوار وأجب قبل فتح التفريغ:",
+        questionDe: "Welche Beschwerden nennt Sami zuerst?",
+        questionAr: "ما العرضان اللذان ذكرهما سامي أولاً؟",
         options: [
           "Kopfschmerzen und Fieber",
           "Bauchschmerzen",
-          "Husten nur",
+          "Nur Husten",
           "Rückenschmerzen",
         ],
         correctIndex: 0,
@@ -896,24 +1004,24 @@ export const lessonA202: Lesson = {
         id: "q2",
         itemId: "l1",
         type: "multiple-choice",
-        instructionAr: "اختر الإجابة الصحيحة:",
+        instructionAr: "استمع إلى الحوار وأجب قبل فتح التفريغ:",
         questionDe: "Was soll Sami machen?",
-        questionAr: "ماذا يجب أن يفعل سامي؟",
+        questionAr: "ماذا نصحه الطبيب أن يفعل؟",
         options: [
-          "viel trinken und sich ausruhen",
+          "sich ausruhen und zu Hause bleiben",
           "arbeiten",
           "Sport machen",
           "kalt baden",
         ],
         correctIndex: 0,
-        explanation: "قال الطبيب: Sie sollen viel trinken und sich ausruhen.",
+        explanation: "قال الطبيب: Sie sollen sich ausruhen und zu Hause bleiben.",
         errorType: "vocabulary",
       },
       {
         id: "q3",
         itemId: "l2",
         type: "multiple-choice",
-        instructionAr: "اختر الإجابة الصحيحة:",
+        instructionAr: "استمع إلى الحوار الثاني وأجب قبل فتح التفريغ:",
         questionDe: "Warum hat Karim Rückenschmerzen?",
         questionAr: "لماذا ألم ظهر كريم؟",
         options: [
@@ -933,34 +1041,34 @@ export const lessonA202: Lesson = {
     id: "p1",
     title: "أصوات الجسم: ch، sch، وau",
     items: [
-      { de: "der Kopf", ar: "الرأس", note: "o قصيرة + pf: كوپف" },
-      { de: "der Bauch", ar: "البطن", note: "au = آو + ch خ: باوخ" },
-      { de: "der Rücken", ar: "الظهر", note: "ü + ck: رُكِن" },
-      { de: "die Schulter", ar: "الكتف", note: "sch = ش: شولتر" },
-      { de: "das Auge", ar: "العين", note: "au = آو + g = غ: آوغِه" },
-      { de: "der Husten", ar: "السعال", note: "u قصيرة: هوستِن" },
+      { de: "der Kopf", ar: "الرأس", note: "IPA /kɔpf/: o قصيرة؛ pf في نهاية المقطع، من دون حركة بينهما." },
+      { de: "der Bauch", ar: "البطن", note: "IPA /baʊ̯x/: au ثنائي الصوت؛ ch هنا /x/، والخاء العربية تقريبية." },
+      { de: "der Rücken", ar: "الظهر", note: "IPA /ˈʁʏkn̩/: ü حركة أمامية مدوّرة قصيرة؛ النبر على المقطع الأول." },
+      { de: "die Schulter", ar: "الكتف", note: "IPA /ˈʃʊltɐ/: sch = /ʃ/، وu قصيرة." },
+      { de: "das Auge", ar: "العين", note: "IPA /ˈaʊ̯ɡə/: au ثنائي الصوت؛ g هنا /ɡ/ انفجاري مجهور، لا /ɣ/ العربية." },
+      { de: "der Husten", ar: "السعال", note: "IPA /ˈhuːstən/: u طويلة /uː/؛ راجع Cambridge وCollins." },
     ],
-    tip: "«das Auge» نطقها مضحك للعرب: آوغِه (مثل «آوغه») — au ثم g المجهورة. استمع وكرر ثلاث مرات.",
+    tip: "استخدم IPA للاستدلال على الأصوات؛ الكتابة بالحروف العربية تقريبية ولا تمثل صوتاً ألمانياً مطابقاً. يبيّن نطق Auge أن g هنا /ɡ/ لا غ /ɣ/، وHusten فيه u طويلة. تكرار النص أو مطابقة التفريغ لا يقيسان وحدهما مخارج الأصوات والنبر.",
     shadowing: [
       {
         de: "Ich habe Kopfschmerzen.",
         ar: "عندي صداع.",
-        tip: "Kopfschmerzen = كوپف-شميرتسن (sch)",
+        tip: "في Kopfschmerzen انتبه إلى pf ثم sch /ʃ/؛ لا تعتمد على تهجئة عربية تقريبية للحركات.",
       },
       {
         de: "Mein Rücken tut weh.",
         ar: "ظهري يؤلمني.",
-        tip: "tut weh = توت ڤيه",
+        tip: "tut weh: في weh يُنطق w /v/ وe طويلة /eː/.",
       },
       {
-        de: "Sie sollen viel trinken.",
-        ar: "يجب أن تشربوا كثيراً.",
-        tip: "sollen = زولِن (s=ز)",
+        de: "Sie sollen sich ausruhen.",
+        ar: "ينبغي أن تستريح.",
+        tip: "sollen: البداية s قبل الحركة /z/؛ الحركة o قصيرة في هذا الفعل.",
       },
       {
         de: "Ich soll im Bett bleiben.",
         ar: "يجب أن أبقى في السرير.",
-        tip: "bleiben = بلايبن (ei=آي)",
+        tip: "bleiben: ei = /aɪ̯/، مع نبر المقطع الأول.",
       },
     ],
   },
@@ -969,16 +1077,11 @@ export const lessonA202: Lesson = {
     {
       id: "w1",
       type: "transformation",
-      instructionAr: "صف ما يؤلمك:",
-      prompt: "Was tut dir weh? (اكتب جملة كاملة)",
-      acceptedAnswers: [
-        "Ich habe Kopfschmerzen",
-        "Mein Rücken tut weh",
-        "Ich habe Bauchschmerzen",
-        "Ich habe Halsschmerzen",
-      ],
-      sampleAnswer: "Ich habe Kopfschmerzen.",
-      explanation: "الأسهل: Ich habe + Schmerzen. أو: Mein + عضو + tut weh.",
+      instructionAr: "اكتب جملة واحدة عن الصداع تبدأ بـIch:",
+      prompt: "Übersetze: «عندي صداع منذ أمس». Beginne mit „Ich“ und benutze haben + Kopfschmerzen.",
+      acceptedAnswers: ["Ich habe seit gestern Kopfschmerzen."],
+      sampleAnswer: "Ich habe seit gestern Kopfschmerzen.",
+      explanation: "صيغة الجواب المحددة: Ich habe + seit gestern + Kopfschmerzen.",
       errorType: "grammar",
     },
     {
@@ -986,7 +1089,7 @@ export const lessonA202: Lesson = {
       type: "fill-blank",
       instructionAr: "أكمل بتصريف sollen:",
       template:
-        "Ich ___ viel trinken. Du ___ im Bett bleiben. Er ___ Medizin nehmen. Wir ___ zum Arzt gehen.",
+        "Ich ___ mich ausruhen. Du ___ im Bett bleiben. Er ___ sich ausruhen. Wir ___ heute zu Hause bleiben.",
       blanks: [
         { correct: "soll", options: ["soll", "sollst", "sollt"] },
         { correct: "sollst", options: ["soll", "sollst", "sollt"] },
@@ -1000,9 +1103,9 @@ export const lessonA202: Lesson = {
       id: "w3",
       type: "dictation",
       instructionAr: "استمع واكتب الجملة:",
-      audioText: "Sie sollen dreimal täglich eine Tablette nehmen.",
+      audioText: "Sie sollen sich ausruhen und zu Hause bleiben.",
       explanation:
-        "يجب أن تأخذوا قرصاً ثلاث مرات يومياً — sollen + الفعل الأساسي في النهاية.",
+        "تنتهي جملة الفعل الناقص بالفعل الأساسي bleiben؛ والضمير sich جزء من sich ausruhen.",
       errorType: "spelling",
     },
   ],
@@ -1011,24 +1114,24 @@ export const lessonA202: Lesson = {
     {
       id: "e1",
       type: "multiple-choice",
-      instructionAr: "اختر الإجابة الصحيحة:",
-      questionDe: "Ich habe ___.",
-      questionAr: "عندي صداع.",
+      instructionAr: "اختر الصيغة الأكثر شيوعاً في التعبير اليومي:",
+      questionDe: "Welche Form ist in der üblichen Wendung „Ich habe ___“ am gebräuchlichsten?",
+      questionAr: "أي صيغة هي الأكثر شيوعاً في التعبير عن الصداع؟",
       options: [
         "Kopfschmerzen",
-        "Kopfschmerz",
+        "Kopfschmerzern",
         "Kopfschmerzenen",
         "Kopfschmerzten",
       ],
       correctIndex: 0,
-      explanation: "الصداع جمع دائماً: Kopfschmerzen.",
+      explanation: "Kopfschmerzen هي الصيغة المعتادة في هذا التعبير؛ يذكر Duden أن المفرد Kopfschmerz موجود أيضاً، لذا لا نقول إن الجمع هو الصورة الوحيدة.",
       errorType: "vocabulary",
     },
     {
       id: "e2",
       type: "multiple-choice",
       instructionAr: "اختر تصريف sollen الصحيح:",
-      questionDe: "Du ___ viel trinken.",
+      questionDe: "Du ___ dich ausruhen.",
       options: ["sollst", "soll", "sollt", "sollen"],
       correctIndex: 0,
       explanation: "مع du: sollst.",
@@ -1051,21 +1154,20 @@ export const lessonA202: Lesson = {
       id: "e4",
       type: "word-ordering",
       instructionAr: "رتّب الجملة:",
-      tokens: ["viel", "Du", "sollst", "trinken", "."],
-      correctSentence: "Du sollst viel trinken.",
-      explanation: "Du + sollst + viel + trinken (الأساسي في النهاية).",
+      tokens: ["dich", "Du", "sollst", "ausruhen", "."],
+      correctSentence: "Du sollst dich ausruhen.",
+      explanation: "في الجملة الرئيسية يأتي الفعل المصرف في الموقع الثاني، ويأتي مصدر sollen في النهاية.",
       errorType: "word-order",
     },
     {
       id: "e5",
       type: "error-correction",
-      instructionAr:
-        "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "صحّح الكلمة الخاطئة في الجملة:",
       wrongSentence: "Ich bin Kopfschmerzen.",
       wrongWord: "bin",
       correctWord: "habe",
       options: ["habe", "bin", "soll", "werde"],
-      explanation: "الألم يُملَك: Ich habe Kopfschmerzen.",
+      explanation: "في التعبير المعتاد عن Kopfschmerzen نستخدم haben: Ich habe Kopfschmerzen.",
       errorType: "grammar",
     },
     {
@@ -1098,22 +1200,21 @@ export const lessonA202: Lesson = {
       instructionAr: "اختر الترجمة الصحيحة:",
       questionDe: "Was fehlt Ihnen?",
       questionAr: "ما معنى السؤال؟",
-      options: ["ما الذي ينقصك (ما بك)؟", "كم عمرك؟", "ما اسمك؟", "أين يؤلمك؟"],
+      options: ["ما شكواك؟", "كم عمرك؟", "ما اسمك؟", "أين يؤلمك؟"],
       correctIndex: 0,
       explanation:
-        "عبارة الطبيب الشهيرة: Was fehlt Ihnen? = ما بك؟ (حرفياً: ما الذي ينقصك).",
+        "Was fehlt Ihnen? سؤال عن الشكوى؛ الترجمة الوظيفية «ما شكواك؟» أنسب من بناء المعنى على الترجمة الحرفية.",
       errorType: "vocabulary",
     },
     {
       id: "e9",
       type: "error-correction",
-      instructionAr:
-        "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Ich sollst Medizin nehmen.",
+      instructionAr: "صحّح تصريف الفعل في الجملة:",
+      wrongSentence: "Ich sollst im Bett bleiben.",
       wrongWord: "sollst",
       correctWord: "soll",
       options: ["soll", "sollst", "sollt", "sollen"],
-      explanation: "مع ich: soll (وليست sollst التي مع du).",
+      explanation: "في المثال، الفاعل ich؛ لذلك الصيغة هي soll. أما sollst فتُستعمل مع du.",
       errorType: "conjugation",
     },
     {
@@ -1127,8 +1228,8 @@ export const lessonA202: Lesson = {
     {
       id: "e11",
       type: "multiple-choice",
-      instructionAr: "أيّ صيغةٍ صحيحة للتعبير عن الغثيان؟",
-      questionDe: "Sie fühlen sich übel. Was sagen Sie?",
+      instructionAr: "أي صيغة ألمانية شائعة للتعبير عن الغثيان؟",
+      questionDe: "Ihnen ist übel. Was können Sie im Alltag sagen?",
       options: [
         "Mir ist schlecht.",
         "Ich bin schlecht.",
@@ -1137,7 +1238,7 @@ export const lessonA202: Lesson = {
       ],
       correctIndex: 0,
       explanation:
-        "الإحساس العارض يقع على الشخص فيُجرّ: mir. وIch bin schlecht تعني «أنا شخصٌ سيّئ الأخلاق».",
+        "Mir ist schlecht صيغة شائعة للغثيان؛ mir هنا Dativ ألمانية. Ich bin schlecht جملة سليمة في معانٍ أخرى بحسب السياق، لكنها ليست الصيغة المحايدة لهذا الإحساس.",
       errorType: "case",
     },
     {
@@ -1164,17 +1265,17 @@ export const lessonA202: Lesson = {
     {
       id: "e13",
       type: "multiple-choice",
-      instructionAr: "الطبيب يمنعك من التدخين. أيّ جملةٍ تُعبّر عن المنع؟",
-      questionDe: "Rauchen ist verboten. Was sagt der Arzt?",
+      instructionAr: "أي جملة تعبّر صراحةً عن عدم الإذن بالتدخين؟",
+      questionDe: "In der Praxis ist Rauchen verboten. Welche Aussage passt?",
       options: [
         "Sie dürfen nicht rauchen.",
         "Sie müssen nicht rauchen.",
-        "Sie sollten nicht rauchen wollen.",
-        "Sie können nicht rauchen.",
+        "Sie dürfen rauchen.",
+        "Sie sollten nicht rauchen.",
       ],
       correctIndex: 0,
       explanation:
-        "nicht dürfen = تحريم. وnicht müssen تعني «لستَ مضطرّاً للتدخين» — إعفاءٌ لا منع.",
+        "dürfen nicht يعبّر عن منع/عدم إذن في هذا السياق. müssen nicht يعني أن الفعل غير لازم، وsollten nicht نصيحةً لا حظراً بذاتها.",
       errorType: "negation",
     },
     {
@@ -1229,14 +1330,14 @@ export const lessonA202: Lesson = {
       correctWord: "mir",
       options: ["mir", "mich", "sich", "meine"],
       explanation:
-        "وجود مفعولٍ صريح (die Hände) يدفع الضمير الانعكاسيّ إلى الجرّ: mir.",
+        "في هذا المثال تكون die Hände في Akkusativ وmir في Dativ؛ لا نعمّم الحالة على كل الأفعال الانعكاسية.",
       errorType: "case",
     },
     {
       id: "e17",
       type: "multiple-choice",
       instructionAr: "تنصح صديقاً بلطف. أيّ صيغةٍ تختار؟",
-      questionDe: "Sie geben einem Freund einen Rat. Was sagen Sie?",
+      questionDe: "Sie möchten einem Freund einen weniger direkten Rat geben. Was sagen Sie?",
       options: [
         "Du solltest mal zum Arzt gehen.",
         "Du sollst zum Arzt gehen.",
@@ -1245,13 +1346,13 @@ export const lessonA202: Lesson = {
       ],
       correctIndex: 0,
       explanation:
-        "sollten تقترح وsollen تنقل إلزاماً. وmal كلمةٌ صغيرة تزيد اللطف.",
+        "في هذا السياق، sollten مع mal صيغة شائعة لاقتراح أقل مباشرة؛ Du sollst جملة صحيحة لكنها توجيه أكثر مباشرة هنا، لا خطأ نحوي.",
       errorType: "vocabulary",
     },
     {
       id: "e18",
       type: "word-ordering",
-      instructionAr: "رتّب الجملة: انتبه إلى المدّة وموضع Partizip II",
+      instructionAr: "رتّب الكلمات لتكوين جملة عن مدة الأعراض، وابدأ بـIch:",
       tokens: [
         "Ich",
         "habe",
@@ -1260,24 +1361,26 @@ export const lessonA202: Lesson = {
         "Tagen",
         "starke",
         "Halsschmerzen",
+        ".",
       ],
-      correctSentence: "Ich habe seit drei Tagen starke Halsschmerzen",
+      correctSentence: "Ich habe seit drei Tagen starke Halsschmerzen.",
+      acceptedSentences: ["Ich habe starke Halsschmerzen seit drei Tagen."],
       explanation:
-        "seit + الجرّ (drei Tagen)، والظرف الزمنيّ يتقدّم على المفعول بترتيب TeKaMoLo.",
+        "بعد seit مع اسم ظاهر هنا نقول drei Tagen. ويقبل التمرين أيضاً وضع العبارة الزمنية في آخر الجملة؛ فليس ترتيب الزمن قبل بقية المفعولات قاعدة مطلقة.",
       errorType: "word-order",
     },
     {
       id: "e19",
       type: "matching",
-      instructionAr: "طابق كلّ وثيقةٍ بجهتها",
+      instructionAr: "طابق كل وثيقة بوظيفتها أو بسياق استعمالها:",
       pairs: [
-        { left: "das Rezept", right: "die Apotheke" },
-        { left: "die Krankschreibung", right: "der Arbeitgeber" },
-        { left: "die Überweisung", right: "der Facharzt" },
-        { left: "die Versichertenkarte", right: "die Anmeldung" },
+        { left: "das Rezept", right: "in einer Apotheke einlösen" },
+        { left: "AU / Krankschreibung", right: "Arbeitsunfähigkeit nachweisen" },
+        { left: "die Überweisung", right: "bei Bedarf zum Facharzt" },
+        { left: "die Gesundheitskarte", right: "Versicherungsnachweis in der Praxis" },
       ],
       explanation:
-        "أربع وثائق لا تختلط: الوصفة للصيدلية، والشهادة لصاحب العمل، والإحالة للأخصّائيّ، وبطاقة التأمين للاستقبال.",
+        "الوصفة تُستخدم لصرف الدواء الموصوف في صيدلية؛ وAU توثّق عدم القدرة على العمل؛ والإحالة تُطلب في بعض الحالات؛ والبطاقة أو وثيقة أخرى قد تثبت التأمين. ليست كل حالة متطابقة.",
       errorType: "vocabulary",
     },
     {
@@ -1289,7 +1392,7 @@ export const lessonA202: Lesson = {
       correctWord: "Ihnen",
       options: ["Ihnen", "Sie", "Ihr", "Ihren"],
       explanation:
-        "fehlen من أفعال الدّاتيف ⟵ Ihnen. والمنطق نفسه في Wie geht es Ihnen?",
+        "في سؤال الشكوى مع fehlen تأتي Ihnen في Dativ. هذه خاصية البناء الألماني، وليست مقابلة مباشرة للجرّ العربي.",
       errorType: "case",
     },
     {
@@ -1297,17 +1400,17 @@ export const lessonA202: Lesson = {
       type: "fill-blank",
       instructionAr: "أكمل بالفعل الناقص المناسب للسياق",
       template:
-        "Der Arzt sagt, ich ___ viel trinken. · Sie ___ mehr schlafen. (نصيحة) · Sie ___ keinen Alkohol trinken. (منع)",
+        "Im Bericht: Ich ___ mich ausruhen. (sollen) · Vorschlag: Sie ___ sich heute ausruhen. (sollen, Konjunktiv II) · Verbot bei Fieber: Sie ___ keinen Sport machen. (dürfen)",
       blanks: [
         {
           correct: "soll",
-          options: ["soll", "sollte", "darf", "muss"],
-          errorType: "vocabulary",
+          options: ["soll", "sollst", "sollen", "darf"],
+          errorType: "conjugation",
         },
         {
           correct: "sollten",
-          options: ["sollten", "sollen", "dürfen", "müssen"],
-          errorType: "vocabulary",
+          options: ["sollten", "sollt", "sollen", "dürfen"],
+          errorType: "conjugation",
         },
         {
           correct: "dürfen",
@@ -1316,21 +1419,21 @@ export const lessonA202: Lesson = {
         },
       ],
       explanation:
-        "soll ينقل أمر الطبيب · sollten تنصح · nicht/kein dürfen يمنع.",
+        "تُظهر الخانات صيغاً مختلفة في سياقات مسماة: نقل توجيه بـsollen، وصيغة اقتراح بـsollten، ومنع ممارسة الرياضة هنا بـdürfen + keinen Sport. للسياق دور، ولا تستنفد الأمثلة معاني الأفعال.",
       errorType: "vocabulary",
     },
     {
       id: "e22",
       type: "transformation",
-      instructionAr: "حوّل النصيحة إلى صيغةٍ مهذّبة",
-      prompt: "Sie sollen mehr schlafen. → (höflicher)",
+      instructionAr: "حوّل الجملة إلى اقتراح أقل مباشرة في هذا السياق:",
+      prompt: "Sie sollen mehr schlafen. → Formulieren Sie denselben Rat mit sollten weniger direkt.",
       acceptedAnswers: [
         "Sie sollten mehr schlafen.",
         "Sie sollten mehr schlafen",
       ],
       sampleAnswer: "Sie sollten mehr schlafen.",
-      hint: "صيغة Konjunktiv II تُبعد الأمر عن المباشرة فتلطّفه.",
-      explanation: "sollen ⟵ sollten: من نقل الإلزام إلى الاقتراح.",
+      hint: "Konjunktiv II مع sollten صيغة شائعة للاقتراح الأقل مباشرة؛ ليست حكماً ثابتاً عن الأدب في كل موقف.",
+      explanation: "في هذا المثال، يُصاغ الاقتراح بـsollten. ولا يعني ذلك أن sollen لا يمكن أن يقدّم نصيحة في سياق آخر.",
       errorType: "grammar",
     },
     {
@@ -1338,14 +1441,14 @@ export const lessonA202: Lesson = {
       type: "true-false",
       instructionAr: "اقرأ ثمّ احكم على العبارات",
       textDe:
-        "Die Ärztin sagt: „Sie haben eine Grippe. Sie sollten drei Tage im Bett bleiben und viel Tee trinken. Sie dürfen keinen Sport machen. Sie müssen nicht wiederkommen, wenn es Ihnen besser geht. Hier ist ein Rezept für die Apotheke.“",
+        "Die Ärztin sagt: „Sie haben eine Erkältung. Sie sollten sich ausruhen. Solange Sie Fieber haben, dürfen Sie keinen Sport machen. Sie müssen nicht wiederkommen, wenn es Ihnen besser geht. Hier ist ein Rezept für das Medikament.“",
       statements: [
         {
           id: "s1",
-          de: "Sport ist verboten.",
-          ar: "الرياضة ممنوعة.",
+          de: "Solange die Person Fieber hat, darf sie keinen Sport machen.",
+          ar: "لا يجوز للشخص ممارسة الرياضة ما دام مصاباً بالحمى.",
           isTrue: true,
-          whyAr: "«Sie dürfen keinen Sport machen» — نفي الإذن تحريم.",
+          whyAr: "يفيد النص المنع في شرط محدد: solange Sie Fieber haben.",
         },
         {
           id: "s2",
@@ -1356,21 +1459,21 @@ export const lessonA202: Lesson = {
         },
         {
           id: "s3",
-          de: "Das Rezept ist für die Apotheke.",
-          ar: "الوصفة للصيدلية.",
+          de: "Die Ärztin gibt der Person ein Rezept für ein Medikament.",
+          ar: "أعطت الطبيبة الشخص وصفة لدواء.",
           isTrue: true,
-          whyAr: "«ein Rezept für die Apotheke» — والوصفة لا تُصرف في غيرها.",
+          whyAr: "تذكر الطبيبة أنها أعطت الشخص وصفة؛ لا يستنتج هذا البند أن كل دواء يحتاج إليها.",
         },
         {
           id: "s4",
           de: "Die Ärztin gibt einen Befehl, keinen Rat.",
           ar: "الطبيبة تأمر ولا تنصح.",
           isTrue: false,
-          whyAr: "استعملت sollten وهي صيغة الاقتراح المهذّب لا الأمر.",
+          whyAr: "يظهر في النص اقتراح بـsollten ومنع مشروط بـdürfen nicht؛ ولا تختزل هذه الفروق في نبرة ثابتة.",
         },
       ],
       explanation:
-        "النصّ يجمع الصيغ الأربع: sollten نصيحةً · dürfen nicht منعاً · müssen nicht إعفاءً.",
+        "في النص: sollten لاقتراح، وdürfen nicht لمنع مشروط، وmüssen nicht لعدم لزوم العودة.",
       errorType: "negation",
     },
     {
@@ -1386,7 +1489,7 @@ export const lessonA202: Lesson = {
       ],
       correctIndex: 0,
       explanation:
-        "Gute Besserung تقابل «سلامتك» وتُقال في ألمانيا باطّراد — فإهمالها يبدو جفاءً.",
+        "Gute Besserung عبارة شائعة لتمني التحسن في هذا السياق؛ يختلف اختيار عبارات الوداع بحسب العلاقة والموقف، ولا يلزم استعمالها في كل مرة.",
       errorType: "vocabulary",
     },
   ],
@@ -1396,27 +1499,30 @@ export const lessonA202: Lesson = {
       {
         wrong: "Ich bin Kopfschmerzen.",
         right: "Ich habe Kopfschmerzen.",
-        whyAr: "الألم يُملك بـ haben.",
+        classification: "error",
+        whyAr: "في هذا التعبير الألماني الشائع يأتي اسم Kopfschmerzen مع haben: Ich habe Kopfschmerzen.",
       },
       {
-        wrong: "Ich sollst (مع ich)",
-        right: "Ich soll",
-        whyAr: "sollst مع du فقط.",
+        wrong: "Ich sollst mich ausruhen.",
+        right: "Ich soll mich ausruhen.",
+        classification: "error",
+        whyAr: "مع ich تكون صيغة sollen هي soll؛ أما sollst فتأتي مع du.",
       },
       {
-        wrong: "خلط das Auge (عين) مع das Ohr (أذن)",
-        right: "Auge = عين، Ohr = أذن",
-        whyAr: "احفظ: Auge فيه A مثل «عين»، Ohr فيه O مثل «أذن» (تشابه صوتي).",
+        wrong: "der Auge",
+        right: "das Auge",
+        classification: "error",
+        whyAr: "Auge اسم محايد، لذا نحفظه مع أداته das. لا توجد قاعدة صوتية تربط أداة الاسم بحرفٍ عربي أو معنى الكلمة.",
       },
     ],
     eselsbruecken: [
-      "«Schmerzen = آلام»: كل ما يؤلمك Schmerzen مع haben.",
-      "«soll = ينبغي»: عند الطبيب اسمعها كثيراً: Sie sollen...",
+      "في العبارة الشائعة Ich habe Kopfschmerzen يأتي اسم الصداع مع haben؛ لا تعمّم البناء على كل وصف للألم.",
+      "قارن المثالين في سياقهما: Der Arzt sagt, ich soll … لنقل توجيه، وSie sollten … لاقتراح أقل مباشرة؛ الفعل نفسه قد يتعدد استعماله.",
     ],
     culturalNote: {
-      title: "التأمين الصحي الألماني",
+      title: "ملاحظات عامة عن التغطية الصحية والوثائق",
       content:
-        "في ألمانيا «die Krankenversicherung» (التأمين الصحي) إلزامي للجميع. عند المرض: اتصل بالطبيب وحجز «Termin». والأدوية تصرف من «die Apotheke» (وليس من الطبيب مباشرة). عبارة مهمة: «Ich bin krankenversichert» (أنا مؤمن صحياً).",
+        "تُطلب التغطية الصحية في ألمانيا عموماً، لكن الوضع قد يكون ضمن التأمين القانوني أو الخاص؛ ولا يعني ذلك وجود مسار موحّد لكل زيارة. قد تطلب العيادة البطاقة الصحية الإلكترونية أو إثباتاً آخر؛ إذا لم تكن الوثيقة معك فاسأل العيادة أو شركة التأمين بدلاً من افتراض وجوب الدفع النقدي. الدواء الموصوف يُصرف في صيدلية، لكن ليس كل دواء بوصفة، وبعض الأدوية المتاحة دون وصفة تُباع خارج الصيدليات. وفي التأمين القانوني تُرسل eAU عادةً إلكترونياً، مع بقاء واجب إبلاغ جهة العمل في الحالات المعتادة. المعلومات عامة وليست نصيحة طبية أو قانونية.",
     },
   },
 
@@ -1426,7 +1532,7 @@ export const lessonA202: Lesson = {
       type: "multiple-choice",
       instructionAr: "اختر الإجابة الصحيحة:",
       questionDe: "Ich habe ___ und Fieber.",
-      options: ["Husten", "husten", "der Husten", "hust"],
+      options: ["Husten", "hustet", "der Husten", "hust"],
       correctIndex: 0,
       explanation: "Husten اسم مع haben: Ich habe Husten.",
       errorType: "vocabulary",
@@ -1444,7 +1550,7 @@ export const lessonA202: Lesson = {
     {
       id: "m3",
       type: "word-ordering",
-      instructionAr: "رتّب الجملة:",
+      instructionAr: "رتّب الجملة، وابدأ بـEr:",
       tokens: ["sich", "Er", "ausruhen", "soll", "."],
       correctSentence: "Er soll sich ausruhen.",
       explanation: "يجب أن يستريح: Er + soll + sich ausruhen.",
@@ -1453,8 +1559,7 @@ export const lessonA202: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr:
-        "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "صحّح الكلمة الخاطئة في الجملة:",
       wrongSentence: "Mein Kopf tut weht.",
       wrongWord: "weht",
       correctWord: "weh",
@@ -1467,7 +1572,7 @@ export const lessonA202: Lesson = {
       type: "fill-blank",
       instructionAr: "أكمل بـ sollen الصحيح:",
       template:
-        "Ich ___ viel trinken. Sie ___ Medizin nehmen. Ihr ___ früh schlafen.",
+        "Ich ___ mich ausruhen. Sie ___ sich ausruhen. Ihr ___ früh schlafen.",
       blanks: [
         { correct: "soll", options: ["soll", "sollst", "sollt"] },
         { correct: "sollen", options: ["soll", "sollen", "sollt"] },
@@ -1530,9 +1635,9 @@ export const lessonA202: Lesson = {
     {
       id: "fc7",
       de: "sollen",
-      ar: "ينبغي (نصيحة)",
-      example: "Du sollst viel trinken.",
-      exampleAr: "يجب أن تشرب كثيراً.",
+      ar: "يُفترض/ينبغي بحسب السياق",
+      example: "Der Arzt sagt, ich soll mich ausruhen.",
+      exampleAr: "يقول الطبيب إن عليّ أن أستريح.",
       level: "A2",
     },
     {
@@ -1540,13 +1645,13 @@ export const lessonA202: Lesson = {
       de: "sich ausruhen",
       ar: "يستريح",
       example: "Sie sollen sich ausruhen.",
-      exampleAr: "يجب أن تستريحوا.",
+      exampleAr: "ينبغي أن تستريح.",
       level: "A2",
     },
     {
       id: "fc9",
       de: "Mir ist schlecht.",
-      ar: "أشعر بالغثيان (لا Ich bin schlecht!)",
+      ar: "أشعر بالغثيان؛ ليست Ich bin schlecht الصيغة المحايدة لهذا المعنى.",
       example: "Mir ist schlecht und schwindelig.",
       exampleAr: "أشعر بالغثيان والدوار.",
       level: "A2",
@@ -1586,17 +1691,17 @@ export const lessonA202: Lesson = {
     {
       id: "fc14",
       de: "sollten",
-      ar: "ينبغي (نصيحة مهذّبة — Konjunktiv II)",
-      example: "Sie sollten mehr schlafen.",
-      exampleAr: "ينبغي أن تنام أكثر.",
+      ar: "Konjunktiv II من sollen؛ اقتراح أقل مباشرة في سياقات كثيرة",
+      example: "Sie sollten sich ausruhen.",
+      exampleAr: "من الأفضل أن تستريح في هذا السياق.",
       level: "A2",
     },
     {
       id: "fc15",
       de: "nicht dürfen",
-      ar: "ممنوع (نفي الإذن = تحريم)",
+      ar: "عدم الإذن/منع بحسب السياق",
       example: "Sie dürfen nicht rauchen.",
-      exampleAr: "ممنوعٌ عليك التدخين.",
+      exampleAr: "لا يُسمح لك بالتدخين.",
       level: "A2",
     },
     {
@@ -1610,7 +1715,7 @@ export const lessonA202: Lesson = {
     {
       id: "fc17",
       de: "Was fehlt Ihnen?",
-      ar: "ما شكواك؟ (حرفياً: ما الذي ينقصك؟)",
+      ar: "ما شكواك؟ (سؤال اصطلاحي عن الأعراض)",
       example: "Guten Tag, was fehlt Ihnen denn?",
       exampleAr: "نهارك سعيد، ما شكواك؟",
       level: "A2",
@@ -1618,7 +1723,7 @@ export const lessonA202: Lesson = {
     {
       id: "fc18",
       de: "das Rezept",
-      ar: "الوصفة الطبّية (للصيدلية)",
+      ar: "وصفة لدواء موصوف؛ تُصرف في صيدلية",
       example: "Ich schreibe Ihnen ein Rezept.",
       exampleAr: "سأكتب لك وصفة.",
       level: "A2",
@@ -1626,17 +1731,17 @@ export const lessonA202: Lesson = {
     {
       id: "fc19",
       de: "die Krankschreibung",
-      ar: "الشهادة المرضية (لصاحب العمل)",
+      ar: "إثبات عدم القدرة على العمل (AU؛ تختلف الإجراءات)",
       example: "Ich brauche eine Krankschreibung.",
       exampleAr: "أحتاج شهادةً مرضية.",
       level: "A2",
     },
     {
       id: "fc20",
-      de: "die Grippe",
-      ar: "النزلة، الإنفلونزا",
-      example: "Sie haben eine Grippe.",
-      exampleAr: "عندك نزلة.",
+      de: "die Erkältung",
+      ar: "نزلة برد (وليست مرادفاً للإنفلونزا Grippe)",
+      example: "Sie haben eine Erkältung.",
+      exampleAr: "عندك نزلة برد.",
       level: "A2",
     },
     {
@@ -1666,37 +1771,37 @@ export const lessonA202: Lesson = {
     {
       id: "fc24",
       de: "schlimm",
-      ar: "خطير، سيّئ",
-      example: "Das ist nicht schlimm.",
-      exampleAr: "ليس خطيراً.",
+      ar: "سيّئ/شديد بحسب السياق",
+      example: "Die Beschwerden sind nicht sehr schlimm.",
+      exampleAr: "الأعراض ليست شديدة جداً.",
       level: "A2",
     },
   ],
 
-  /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
+  /* ═══ أنشطة إضافية: الوساطة والتفاعل ═══ */
   mediation: [
     {
       id: "med-a2-02-1",
       type: "relay-instructions",
       titleAr: "انقل تعليمات طبية بالعربية لشخص",
       sourceDe:
-        "Nehmen Sie diese Tabletten zweimal am Tag nach dem Essen. Trinken Sie viel Wasser und ruhen Sie sich aus.",
-      taskAr: "انقل التعليمات بالعربية: جرعة الدواء، الوقت، والنصائح الإضافية.",
+        "Nehmen Sie die Tabletten nach der Packungsbeilage oder der ärztlichen Anweisung ein. Ändern Sie die empfohlene Dosis nicht selbst. Ruhen Sie sich aus.",
+      taskAr: "انقل طريقة الاستخدام الآمن والتنبيه إلى عدم تغيير الجرعة ونصيحة الراحة؛ لا تضف جرعة أو توقيتاً غير وارد في النص.",
       modelAnswerAr:
-        "«خذ هذه الأقراص مرتين يومياً بعد الأكل. اشرب ماءً كثيراً واسترح.»",
+        "«تناول الأقراص وفق النشرة المرفقة أو تعليمات الطبيب، ولا تغيّر الجرعة الموصى بها بنفسك. استرح.»",
       keyPointsAr: [
-        "نقلت الجرعة (مرتين يومياً)",
-        "ذكرت التوقيت (بعد الأكل)",
-        "نقلت نصائح الماء والراحة",
+        "نقلت الرجوع إلى النشرة أو تعليمات الطبيب.",
+        "ذكرت عدم تغيير الجرعة الموصى بها من تلقاء النفس.",
+        "نقلت نصيحة الراحة.",
       ],
     },
   ],
   interaction: [
     {
       id: "int-a2-02-1",
-      scenarioAr: "عند الطبيب — تصف الأعراض وتطلب النصيحة.",
+      scenarioAr: "تدريب اختيار نص على حوار قصير في العيادة.",
       scenarioDe: "Beim Arzt — du beschreibst Symptome.",
-      strategyAr: "الاستراتيجية: وصف الأعراض بدقة وفهم النصائح.",
+      strategyAr: "اختر الرد الملائم للسؤال؛ هذا نشاط اختيار من متعدد، لا يسجل إنتاجاً شفهياً أو نطقاً.",
       rounds: [
         {
           speakerDe: "Was fehlt Ihnen?",
@@ -1710,11 +1815,11 @@ export const lessonA202: Lesson = {
               replyAr: "هل لديك سعال أيضاً؟",
             },
             {
-              de: "Ich bin ein Fahrrad.",
-              ar: "أنا دراجة.",
+              de: "Ich habe morgen einen Termin.",
+              ar: "لدي موعد غداً.",
               best: false,
-              replyDe: "Sie sind ein Fahrrad? Sehr komisch.",
-              replyAr: "أنت دراجة؟ غريب جداً.",
+              replyDe: "Verstanden. Welche Beschwerden haben Sie?",
+              replyAr: "حسناً. ما الأعراض التي لديك؟",
             },
           ],
         },
@@ -1726,16 +1831,15 @@ export const lessonA202: Lesson = {
               de: "Ja, ein bisschen. Besonders nachts.",
               ar: "نعم قليلاً. خاصة في الليل.",
               best: true,
-              replyDe: "Okay. Nehmen Sie diese Medizin und trinken Sie viel.",
-              replyAr: "حسناً. خذ هذا الدواء واشرب كثيراً.",
+              replyDe: "Seit wann haben Sie Husten?",
+              replyAr: "منذ متى لديك سعال؟",
             },
             {
-              de: "Nein, nur ich huste nie.",
-              ar: "لا، فقط أنا لا أسعل أبداً.",
+              de: "Ich habe seit gestern Fieber.",
+              ar: "لديّ حمى منذ أمس.",
               best: false,
-              replyDe:
-                "„Nur ich huste nie“ ist falsch. Sagen Sie: Ich huste nicht.",
-              replyAr: "«فقط أنا لا أسعل أبداً» خاطئة. قل: لا أسعل.",
+              replyDe: "Danke. Ich frage noch einmal: Husten Sie auch?",
+              replyAr: "شكراً. أسأل مرة أخرى: هل لديك سعال أيضاً؟",
             },
           ],
         },
