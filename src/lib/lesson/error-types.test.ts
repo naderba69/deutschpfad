@@ -6,8 +6,8 @@ import {describe, expect, it} from "vitest";
 import {ERROR_TYPES, errorTypeDe, errorTypeLabel} from "@/lib/lesson/error-types";
 
 describe("ERROR_TYPES", () => {
-  it("يغطي الأنواع الأساسية الثلاثة عشر", () => {
-    expect(Object.keys(ERROR_TYPES)).toHaveLength(13);
+  it("يغطي الأنواع الأساسية الأربعة عشر", () => {
+    expect(Object.keys(ERROR_TYPES)).toHaveLength(14);
   });
 
   it("كل نوع له وصف عربي وألماني", () => {
@@ -22,6 +22,7 @@ describe("errorTypeLabel", () => {
   it("يعيد التسمية الصحيحة", () => {
     expect(errorTypeLabel("grammar")).toBe("خطأ نحوي");
     expect(errorTypeLabel("case")).toBe("الحالة الإعرابية");
+    expect(errorTypeLabel("comprehension")).toBe("فهم المقروء والمسموع");
   });
 
   it("نوع غير معروف → رسالة عامة", () => {
@@ -32,6 +33,7 @@ describe("errorTypeLabel", () => {
 describe("errorTypeDe", () => {
   it("يعيد المصطلح الألماني", () => {
     expect(errorTypeDe("conjugation")).toBe("Konjugation");
+    expect(errorTypeDe("comprehension")).toBe("Lese- und Hörverstehen");
   });
 
   it("غير معروف → Fehler", () => {

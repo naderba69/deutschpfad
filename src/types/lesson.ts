@@ -14,6 +14,7 @@ export type ErrorTypeCode =
   | "gender"
   | "word-order"
   | "vocabulary"
+  | "comprehension"
   | "spelling"
   | "preposition"
   | "negation"

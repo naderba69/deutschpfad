@@ -12,6 +12,11 @@ export const ERROR_TYPES: Record<ErrorTypeCode, ErrorTypeInfo> = {
   gender: { code: "gender", ar: "جنس الاسم", de: "Genus" },
   "word-order": { code: "word-order", ar: "ترتيب الكلمات", de: "Wortstellung" },
   vocabulary: { code: "vocabulary", ar: "المفردات", de: "Wortschatz" },
+  comprehension: {
+    code: "comprehension",
+    ar: "فهم المقروء والمسموع",
+    de: "Lese- und Hörverstehen",
+  },
   spelling: { code: "spelling", ar: "الإملاء", de: "Rechtschreibung" },
   preposition: { code: "preposition", ar: "حرف الجر", de: "Präposition" },
   negation: { code: "negation", ar: "النفي", de: "Negation" },
