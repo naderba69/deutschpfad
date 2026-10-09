@@ -39,7 +39,7 @@ export function ShadowingTrainer({ lines }: ShadowingTrainerProps) {
       next[index] += 1;
       return next;
     });
-    // جولة جديدة في ممارسة النطق بعد كل تقييم
+    // جولة جديدة في التدريب بعد كل مقارنة نصية
     setPracticeKey((k) => k + 1);
   };
 
@@ -84,7 +84,7 @@ export function ShadowingTrainer({ lines }: ShadowingTrainerProps) {
         <div className="flex items-center gap-2 text-sm">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-success/10 px-3 py-1 text-success">
             <Check className="h-3.5 w-3.5" aria-hidden="true" />
-            أفضل تقييم: {bestScores[index]}%
+            أفضل تشابه نصي: {bestScores[index]}%
           </span>
           <span className="text-xs text-muted-foreground">
             (<Mic className="inline h-3 w-3" aria-hidden="true" /> {attempts[index]} محاولة)
@@ -106,7 +106,7 @@ export function ShadowingTrainer({ lines }: ShadowingTrainerProps) {
         </Button>
         <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
           <Repeat className="h-3.5 w-3.5" aria-hidden="true" />
-          كرر المحاكاة حتى تصل 90%+
+          قارن التفريغ النصي بالهدف؛ النسبة لا تقيس النطق
         </span>
         <Button
           variant={index === lines.length - 1 ? "gold" : "outline"}

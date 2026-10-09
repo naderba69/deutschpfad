@@ -16,13 +16,10 @@ import {RecordAndCompare} from "./record-and-compare";
 
 /**
  * ═══════════════════════════════════════════════════════════
- *  انطق واحصل على تقييمك (تقييم النطق الفوري)
- *  زر ميكروفون بجانب أي كلمة/جملة ألمانية:
- *  المستخدم ينطق → يُقارن بالهدف → تظهر فوراً:
- *  · الدرجة 0-100
- *  · ✓ كلمات صحيحة / ✗ مفقودة أو خاطئة
- *  · أين أخطأت بالضبط (مقارنة حرفية ملوّنة)
- *  (Web Speech API — SpeechRecognition + Levenshtein — بلا أي مفتاح LLM)
+ *  تحدث ثم قارن تفريغ SpeechRecognition بالنص الهدف.
+ *  النسبة ناتجة عن تشابه نصي تقريبي؛ لا تقيس الإشارة الصوتية أو مخارج الحروف أو النبر.
+ *  مقارنة Levenshtein ليست حكماً بشرياً ولا دليلاً على إتقان النطق.
+ *  لا يستدعي المكوّن نموذج LLM.
  *
  *  ── لماذا لا يتجمد أبداً؟ ──
  *  · كل أخطاء المتصفح تظهر برسالة واضحة (إذن الميكروفون، الصمت، الشبكة…)
@@ -174,7 +171,7 @@ export function SpeakAndScore({ target, compact }: { target: string; compact?: b
             compact ? "h-7 px-2.5" : "px-2.5 py-1",
           )}
           aria-label={`استمع إلى: ${target}`}
-          title="استمع إلى النطق الصحيح"
+          title="استمع إلى الصوت المولّد للكلمة"
         >
           <Volume2 className="h-3.5 w-3.5" aria-hidden="true" />
           استمع
@@ -201,7 +198,7 @@ export function SpeakAndScore({ target, compact }: { target: string; compact?: b
                   : "border-primary/40 bg-primary/10 text-primary hover:bg-primary/15",
           )}
           aria-label={`سجّل نطقك: ${target}`}
-          title="اضغط وتحدث بالكلمة — ستحصل على تقييم فوري"
+          title="تحدث بالكلمة — سيقارن المتصفح التفريغ النصي بالهدف"
         >
           {listening ? (
             <>
@@ -211,7 +208,7 @@ export function SpeakAndScore({ target, compact }: { target: string; compact?: b
           ) : result ? (
             <>
               <Mic className="h-3.5 w-3.5" aria-hidden="true" />
-              {score}% — أعد
+              {score}% تشابه نصي — أعد
             </>
           ) : error ? (
             <>
@@ -270,15 +267,15 @@ export function SpeakAndScore({ target, compact }: { target: string; compact?: b
               {result.score}%
             </span>
             {result.score >= 80 ? (
-              <span className="inline-flex items-center gap-1 font-bold"><CheckCircle2 className="h-3 w-3" /> نطق ممتاز — مطابق!</span>
+              <span className="inline-flex items-center gap-1 font-bold"><CheckCircle2 className="h-3 w-3" /> مطابقة نصية عالية للتفريغ</span>
             ) : result.score >= 50 ? (
-              <span className="inline-flex items-center gap-1 font-bold"><CircleAlert className="h-3 w-3" /> قريب جداً — حاول مرة أخرى</span>
+              <span className="inline-flex items-center gap-1 font-bold"><CircleAlert className="h-3 w-3" /> مطابقة نصية جزئية — قارن النصين</span>
             ) : (
-              <span className="inline-flex items-center gap-1 font-bold"><XCircle className="h-3 w-3" /> استمع ثم أعد النطق</span>
+              <span className="inline-flex items-center gap-1 font-bold"><XCircle className="h-3 w-3" /> التفريغ يختلف عن الهدف — تحقق من التعرف</span>
             )}
           </div>
 
-          {/* مقارنة حرفية — أين أخطأت بالضبط */}
+          {/* مقارنة حرفية تقريبية بين التفريغ والهدف — ليست تحديداً لموضع خطأ نطقي */}
           {!result.empty && result.score < 100 && (
             <p className="mt-1 font-de rounded bg-background/70 px-1.5 py-1 text-[11px]" dir="ltr" lang="de">
               {charDiff(target, result.recognizedText).map((seg, i) => (
@@ -287,19 +284,19 @@ export function SpeakAndScore({ target, compact }: { target: string; compact?: b
                 </span>
               ))}
               <span className="ms-1.5 text-[9px] text-muted-foreground">
-                <span className="text-success">■ مطابق</span> <span className="text-destructive">■ اختلف</span>
+                <span className="text-success">■ مطابق نصياً</span> <span className="text-destructive">■ اختلف نصياً</span>
               </span>
             </p>
           )}
 
           {result.missedWords.length > 0 && (
             <p className="mt-0.5 text-muted-foreground">
-              لم تُدرك: <span className="font-de" dir="ltr">{result.missedWords.join("، ")}</span>
+              لم تظهر في التفريغ: <span className="font-de" dir="ltr">{result.missedWords.join("، ")}</span>
             </p>
           )}
           {result.wrongWords.length > 0 && (
             <p className="mt-0.5 text-muted-foreground">
-              سُمعت بدلاً منها: <span className="font-de" dir="ltr">{result.wrongWords.join("، ")}</span>
+              ظهرت بدلاً منها في التفريغ: <span className="font-de" dir="ltr">{result.wrongWords.join("، ")}</span>
             </p>
           )}
         </div>

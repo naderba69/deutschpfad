@@ -13,7 +13,7 @@ export function buildLocalWeeklyReport(stats: EventStats): string {
 
   // النشاط
   lines.push(`✅ تمارين محلولة: ${stats.exercisesAnswered} (دقة ${stats.accuracyPct}%)`);
-  lines.push(`🎧 تقييمات نطق: ${stats.pronunciationScores.length} (متوسط ${stats.pronunciationAvg ?? "—"}%)`);
+  lines.push(`🎧 مقارنات التفريغ النصي بالهدف: ${stats.pronunciationScores.length} (متوسط تشابه تقريبي ${stats.pronunciationAvg ?? "—"}%)`);
   lines.push(`🔁 مراجعات بطاقات: ${stats.reviewsCount}`);
   lines.push(`📘 دروس مكتملة: ${stats.lessonsCompleted}`);
   lines.push(`⚡ نقاط الخبرة: ${stats.xp}`);
@@ -44,7 +44,7 @@ export function buildLocalWeeklyReport(stats: EventStats): string {
   lines.push("🎯 خطة الأسبوع القادم:");
   lines.push("1) راجع 5 بطاقات مستحقة يومياً (SM-2 يذكرك).");
   lines.push("2) أكمل درساً واحداً + تمريناته التفاعلية.");
-  lines.push("3) درّب نطقك 3 مرات على الأقل (سجّل نطقك وقارن).");
+  lines.push("3) درّب النطق 3 مرات؛ وإذا قارنت، فاعتبر التفريغ الآلي بالهدف مقارنة نصية تقريبية لا تقييماً صوتياً.");
   lines.push("");
   lines.push("تذكّر: الانتظام اليومي أهم من الكمية — حتى 5 دقائق تصنع فرقاً! 💛");
 
@@ -57,7 +57,7 @@ export function motivationalMessage(stats: EventStats): string {
     return "أداء أسطوري هذا الأسبوع — أنت تتقدم بسرعة كبيرة! 🏆";
   }
   if (stats.pronunciationScores.length >= 5) {
-    return "تدريب نطق ممتاز! أذنك تتحسن — واصل التسجيل والمقارنة. 🎧";
+    return "أنجزت عدة مقارنات بين التفريغ والهدف؛ تذكّر أن النتيجة تقريبية وتتأثر بالتعرف الآلي. 🎧";
   }
   if (stats.reviewsCount >= 20) {
     return "مراجعة ذكية رائعة — SM-2 يبني ذاكرتك بصمت. 🔁";

@@ -23,8 +23,8 @@ interface SpeakButtonProps {
 }
 
 /**
- * زر النطق — Web Speech API (SpeechSynthesis) بصوت ألماني de-DE
- * (النسخة الأساسية — التقييم الكامل للكلام في المرحلة 3)
+ * زر الاستماع — يولّد Web Speech API (SpeechSynthesis) صوتاً ألمانياً بطلب de-DE.
+ * جودة الصوت واللكنة يعتمدان على الأصوات المتاحة في المتصفح والجهاز.
  */
 export function SpeakButton({
   text,

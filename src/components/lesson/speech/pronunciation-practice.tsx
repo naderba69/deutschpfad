@@ -25,11 +25,9 @@ interface PronunciationPracticeProps {
 }
 
 /**
- * ممارسة النطق — استمع ثم سجّل نطقك، واحصل على تقييم فوري:
- * — درجة 0-100
- * — الكلمات التي نطقتها صحيحة / المفقودة / الزائدة
- * — ملاحظة لفظية بالعربية
- * (يعمل بـ Web Speech API: SpeechSynthesis للنطق + SpeechRecognition للاستماع)
+ * تدريب على النطق مع مقارنة تقريبية بين التفريغ النصي من SpeechRecognition والهدف.
+ * النتيجة لا تحلل الإشارة الصوتية ولا تقيس مخارج الحروف أو النبر.
+ * يُستخدم SpeechSynthesis لتوليد الصوت، وقد تختلف المعالجة بحسب المتصفح وإعداداته.
  */
 export function PronunciationPractice({
   target,
@@ -221,7 +219,7 @@ export function PronunciationPractice({
                         )}
                         dir="ltr"
                         lang="de"
-                        title={matched ? "نطقتها صحيحاً ✓" : missed ? "لم تُدرك بوضوح" : ""}
+                        title={matched ? "ظهرت الكلمة في التفريغ ✓" : missed ? "لم تظهر الكلمة بوضوح في التفريغ" : ""}
                       >
                         {word}
                       </span>
@@ -232,14 +230,14 @@ export function PronunciationPractice({
 
               <p className="text-xs text-muted-foreground">
                 {result.empty
-                  ? "لم يلتقط المتصفح كلاماً — تأكد من إذن الميكروفون وأعد المحاولة."
-                  : `النص المعترف به: «${result.recognizedText}» — النطق يُقيَّم داخل متصفحك ولا يُرسل لأي خادم.`}
+                  ? "لم يُعِد المتصفح تفريغاً نصياً — تحقق من إذن الميكروفون وأعد المحاولة."
+                  : `التفريغ الذي أعاده المتصفح: «${result.recognizedText}». النسبة تقارن النصين تقريبياً ولا تقيس مخارج الحروف أو النبر؛ راجع إعدادات الخصوصية في متصفحك.`}
               </p>
             </div>
           )}
 
           {!result && scoredOnce && (
-            <p className="text-xs text-muted-foreground">انتظر… جارٍ تحليل نطقك</p>
+            <p className="text-xs text-muted-foreground">انتظر… جارٍ مقارنة التفريغ بالنص المستهدف</p>
           )}
 
           {/* ═══ البديل الذي يعمل دائماً (سجّل واستمع لنفسك) ═══ */}

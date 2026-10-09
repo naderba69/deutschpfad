@@ -20,7 +20,7 @@ export function AiWeeklyReport() {
     const stats = await getEventStats();
     const summary = [
       `تمارين محلولة: ${stats.exercisesAnswered} (صحيحة: ${stats.exercisesCorrect} — دقة ${stats.accuracyPct}%)`,
-      `تقييمات نطق: ${stats.pronunciationScores.length} (متوسط ${stats.pronunciationAvg ?? "—"}%)`,
+      `مقارنات التفريغ النصي بالهدف: ${stats.pronunciationScores.length} (متوسط تشابه تقريبي ${stats.pronunciationAvg ?? "—"}%)`,
       `مراجعات بطاقات: ${stats.reviewsCount}`,
       `دروس مكتملة: ${stats.lessonsCompleted}`,
       `نقاط XP: ${stats.xp}`,

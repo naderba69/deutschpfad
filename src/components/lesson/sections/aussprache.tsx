@@ -57,7 +57,7 @@ const MinimalPairsGame = dynamic(
 /**
  * 5) النطق (Aussprache) — النسخة الكاملة للمرحلة 3:
  * 1) الكلمات الأساسية مع الاستماع بسرعتين
- * 2) ممارسة النطق الفعلية (تسجيل + تقييم فوري)
+ * 2) تحدث ومقارنة تقريبية بين التفريغ النصي والكلمة المستهدفة (لا قياس صوتي)
  * 3) مدرب الظل (Shadowing) خطوة بخطوة
  * 4) لعبة الأزواج الصوتية (Minimal Pairs)
  */
@@ -132,7 +132,7 @@ export function AusspracheSection({ focus }: { focus: PronunciationFocus }) {
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-lg">
             <Mic className="h-5 w-5 text-primary" aria-hidden="true" />
-            تدرّب على نطقك — سجّل واستمع لتقييمك
+            تدرّب على النطق — قارن التفريغ الآلي بالنص المستهدف
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -141,8 +141,8 @@ export function AusspracheSection({ focus }: { focus: PronunciationFocus }) {
             targetAr={focus.items[0]?.ar ?? "نهارك سعيد"}
           />
           <p className="text-xs text-muted-foreground">
-            اختر أي كلمة من القائمة أعلاه لتدريبها، أو استخدم المثال: انقر «سجّل نطقك» وتحدث
-            بالكلمة — سيحلل المتصفح نطقك فوراً (المتصفح الموصى به: Chrome/Edge).
+            تحدث بالكلمة ثم قارن التفريغ النصي الذي أعاده المتصفح بالنص المستهدف. هذه مقارنة تقريبية
+            لا تقيس مخارج الحروف أو النبر، وقد تختلف معالجة الصوت بحسب المتصفح وإعداداته.
           </p>
         </CardContent>
       </Card>

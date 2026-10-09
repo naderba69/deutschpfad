@@ -1,21 +1,21 @@
 /**
- * تقييم النطق — مقارنة النص المعترف به (من SpeechRecognition)
- * مع النص المستهدف، باستخدام تشابه الكلمات (Levenshtein)
- * — ينتج درجة + الكلمات المطابقة/المفقودة/الخاطئة + ملاحظات —
+ * مقارنة نصية تقريبية بين التفريغ المعترف به (SpeechRecognition)
+ * والنص المستهدف باستخدام تشابه الكلمات (Levenshtein).
+ * لا تحلل الموجة الصوتية، ولا تقيس مخارج الحروف أو النبر أو جودة النطق.
  */
 
 export interface PronunciationScore {
-  /** الدرجة من 0 إلى 100 */
+  /** نسبة تقريبية لتشابه التفريغ النصي، وليست قياساً صوتياً من 0 إلى 100 */
   score: number;
-  /** النص الذي تعرّف عليه المتصفح */
+  /** النص الذي أعاده التعرف على الكلام */
   recognizedText: string;
-  /** كلمات الهدف التي أُدركت بشكل صحيح */
+  /** كلمات الهدف التي طابقها التفريغ وفق تشابه التهجئة */
   matchedWords: string[];
-  /** كلمات الهدف التي لم تُدرك */
+  /** كلمات الهدف التي لم يطابقها التفريغ */
   missedWords: string[];
-  /** كلمات أُدركت لكنها ليست في الهدف (زائدة/بديلة) */
+  /** كلمات زائدة أو بديلة في التفريغ مقارنة بالهدف */
   wrongWords: string[];
-  /** هل سُجّل أي كلام؟ */
+  /** هل كان التفريغ فارغاً؟ */
   empty: boolean;
 }
 
@@ -52,7 +52,7 @@ export function levenshtein(a: string, b: string): number {
   return dp[n];
 }
 
-/** تشابه كلمتين كنسبة 0..1 (1 = تطابق تام) */
+/** تشابه تهجئة كلمتين كنسبة 0..1 (1 = تطابق نصي تام) */
 export function wordSimilarity(a: string, b: string): number {
   if (a === b) return 1;
   const dist = levenshtein(a, b);
@@ -60,10 +60,10 @@ export function wordSimilarity(a: string, b: string): number {
   return 1 - dist / maxLen;
 }
 
-/** عتبة اعتبار الكلمة "مُطابقة" */
+/** عتبة اعتبار تهجئة الكلمة مطابقة تقريبياً */
 const MATCH_THRESHOLD = 0.66;
 
-/** تقييم النطق الكامل */
+/** حساب تشابه نص التفريغ مع النص المستهدف */
 export function scorePronunciation(target: string, recognized: string): PronunciationScore {
   const targetWords = normalizeGermanText(target)
     .split(" ")
@@ -110,9 +110,9 @@ export function scorePronunciation(target: string, recognized: string): Pronunci
 
   const wrongWords = recognizedWords.filter((_, j) => !usedRecognized.has(j));
 
-  // الدرجة = متوسط التشابه الفعلي (يعكس جودة النطق لا مجرد مطابقة/عدم)
-  // · الكلمات الناقصة تُحتسب 0
-  // · الكلمات المطابقة تُحتسب بنسبة تشابهها (Hallo→Halo = 80% وليس 100%)
+  // الدرجة = متوسط تشابه سلاسل الكلمات، ولا تمثل جودة النطق الصوتية.
+  // · الكلمات غير المطابقة تُحتسب 0
+  // · التشابه التهجئي لا يثبت صحة المخارج أو النبر أو الإيقاع.
   let score: number;
   if (targetWords.length === 0) {
     score = 0;
@@ -131,24 +131,24 @@ export function scorePronunciation(target: string, recognized: string): Pronunci
   };
 }
 
-/** وصف لفظي للدرجة بالعربية */
+/** وصف لفظي لمقدار تشابه التفريغ النصي، لا لحكم على النطق */
 export function scoreLabel(score: number): { label: string; emoji: string; tone: "great" | "good" | "ok" | "weak" } {
-  if (score >= 90) return { label: "ممتاز! نطق شبه كامل 👏", emoji: "🏆", tone: "great" };
-  if (score >= 75) return { label: "جيد جداً — قليل من التحسين", emoji: "👍", tone: "good" };
-  if (score >= 55) return { label: "جيد — أعد الاستماع وكرر", emoji: "🙂", tone: "ok" };
-  return { label: "حاول مجدداً ببطء — الممارسة تصنع الفرق", emoji: "💪", tone: "weak" };
+  if (score >= 90) return { label: "مطابقة نصية عالية للتفريغ", emoji: "🏆", tone: "great" };
+  if (score >= 75) return { label: "مطابقة نصية جيدة", emoji: "👍", tone: "good" };
+  if (score >= 55) return { label: "مطابقة نصية جزئية — قارن النصين", emoji: "🙂", tone: "ok" };
+  return { label: "التفريغ يختلف عن الهدف — تحقق من التعرف", emoji: "💪", tone: "weak" };
 }
 
-/** مقاطع النص مع علامة مطابقة (لإظهار أين اختلف النطق حرفياً) */
+/** مقاطع مقارنة نصية لتمييز مواضع اختلاف التفريغ عن الهدف */
 export interface CharDiffSegment {
   text: string;
   matched: boolean;
 }
 
 /**
- * مقارنة حرفية بين النص المعترف به والهدف، وإرجاع مقاطع مميزة:
- * المطابقة خضراء، والاختلافات حمراء — فيرى المتعلم بالضبط أي جزء أخطأ فيه.
- * (محاذاة بسيطة: مقارنة غير حساسة لحالة الأحرف + إزاحة متدرجة — تحافظ على الأحرف الأصلية)
+ * مقارنة حرفية تقريبية بين التفريغ والهدف، لا بين الصوتين.
+ * تُميّز المقاطع النصية المتطابقة والمختلفة، ولا تحدد موضع خطأ نطقي بعينه.
+ * (محاذاة بسيطة غير حساسة لحالة الأحرف — تحافظ على الأحرف الأصلية)
  */
 export function charDiff(target: string, recognized: string): CharDiffSegment[] {
   const a = target.replace(/[.,!?;:«»„“”()"'،؟؛\-]/g, " ").replace(/\s+/g, " ").trim();

@@ -38,7 +38,7 @@ export function WeeklyReportCard() {
       const p = weeklyReportPrompt(
         [
           `تمارين: ${stats.exercisesAnswered} (دقة ${stats.accuracyPct}%)`,
-          `نطق: ${stats.pronunciationScores.length} (متوسط ${stats.pronunciationAvg ?? "—"}%)`,
+          `مقارنات التفريغ النصي بالهدف: ${stats.pronunciationScores.length} (متوسط تشابه تقريبي ${stats.pronunciationAvg ?? "—"}%)`,
           `مراجعات: ${stats.reviewsCount}`,
           `دروس: ${stats.lessonsCompleted}`,
           `أخطاء: ${Object.entries(stats.errorTypeCounts).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([k, v]) => `${k}(${v})`).join(", ")}`,

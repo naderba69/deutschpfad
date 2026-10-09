@@ -41,9 +41,8 @@ export function MediationSection({ tasks }: { tasks: MediationTask[] }) {
         <Languages className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
         <p>
           <span className="font-bold">الوساطة اللغوية (Mediation): </span>
-          نقل المعنى بين الألمانية والعربية — تدريب على أنشطة الوساطة في المرفق الإضافي لإطار CEFR Companion Volume (2020).
-          قد تختلف صيغ تقويم الوساطة؛ ولا يعني ذلك وجود قسم مستقل لها في كل اختبار Goethe.
-          هذه مهمة تدريب ذاتي؛ نفّذها ثم قيّم تغطية النقاط بنفسك.
+          نقل المعنى بين الألمانية والعربية — تدريب ذاتي على صياغة المعنى للقارئ؛ نفّذ المهمة ثم قارن إجابتك بالنقاط الإرشادية.
+          لا يصحح هذا المكوّن الإجابة ولا يصدر حكماً معيارياً على مستوى لغوي.
         </p>
       </div>
 
@@ -208,7 +207,7 @@ export function InteractionSection({ tasks }: { tasks: InteractionTask[] }) {
       {/* الخيارات */}
       {!reply && (
         <div className="space-y-2">
-          <p className="text-xs font-bold text-muted-foreground">اختر رداً مناسباً؛ قد تكون أكثر من صياغة مقبولة:</p>
+          <p className="text-xs font-bold text-muted-foreground">اختر الرد الأنسب في هذا السياق النصي:</p>
           {round.options.map((opt, i) => (
             <button
               key={i}

@@ -1,13 +1,13 @@
 import {describe, expect, it} from "vitest";
 
-import {charDiff, scorePronunciation, wordSimilarity} from "@/lib/speech/scoring";
+import {charDiff, scoreLabel, scorePronunciation, wordSimilarity} from "@/lib/speech/scoring";
 
-describe("تقييم النطق (دقة التمييز بين الصحيح والخاطئ)", () => {
-  it("نطق مطابق تماماً = 100", () => {
+describe("مقارنة التفريغ النصي بالهدف (ليست قياساً صوتياً)", () => {
+  it("تفريغ مطابق تماماً = 100", () => {
     expect(scorePronunciation("Hallo", "Hallo").score).toBe(100);
   });
 
-  it("خطأ بسيط (حذف حرف) لا يُعطى 100 — بل أقل", () => {
+  it("اختلاف تهجئة بسيط لا يُعطى 100 — بل أقل", () => {
     // Halo بدل Hallo — قريب لكن ليس مطابقاً
     expect(scorePronunciation("Hallo", "Halo").score).toBeLessThan(100);
   });
@@ -16,11 +16,11 @@ describe("تقييم النطق (دقة التمييز بين الصحيح وا�
     expect(scorePronunciation("Hallo", "guten").score).toBe(0);
   });
 
-  it("جملة كاملة مطابقة = 100", () => {
+  it("تفريغ جملة كاملة مطابق = 100", () => {
     expect(scorePronunciation("Ich heiße Sami", "Ich heiße Sami").score).toBe(100);
   });
 
-  it("لا كلام مسجّل (فارغ) = 0", () => {
+  it("لا تفريغ نصياً (فارغ) = 0", () => {
     const r = scorePronunciation("Hallo", "");
     expect(r.score).toBe(0);
     expect(r.empty).toBe(true);
@@ -31,7 +31,7 @@ describe("تقييم النطق (دقة التمييز بين الصحيح وا�
     expect(wordSimilarity("hallo", "halo")).toBeLessThan(1);
   });
 
-  it("charDiff يميّز الحروف المطابقة من المختلفة", () => {
+  it("charDiff يميّز المقاطع النصية المتطابقة من المختلفة", () => {
     const segs = charDiff("Hallo", "Halo");
     const matched = segs.filter((s) => s.matched).map((s) => s.text).join("");
     const diff = segs.filter((s) => !s.matched).map((s) => s.text).join("");
@@ -41,8 +41,14 @@ describe("تقييم النطق (دقة التمييز بين الصحيح وا�
     expect(diff.length).toBeGreaterThan(0);
   });
 
-  it("charDiff عند تطابق كامل: لا يوجد أي اختلاف", () => {
+  it("charDiff عند تطابق نصي كامل: لا يوجد اختلاف", () => {
     const segs = charDiff("Hallo", "Hallo");
     expect(segs.every((s) => s.matched)).toBe(true);
+  });
+
+  it("تصف التسميات المطابقة النصية ولا تدّعي قياس النطق", () => {
+    expect(scoreLabel(100).label).toContain("مطابقة نصية");
+    expect(scoreLabel(40).label).toContain("التفريغ يختلف");
+    expect(scoreLabel(100).label).not.toMatch(/نطق ممتاز|صحيحاً|إتقان/);
   });
 });
