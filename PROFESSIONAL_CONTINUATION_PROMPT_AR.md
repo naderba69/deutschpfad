@@ -16,7 +16,7 @@
 - معرّفات الواجهة: `practice` يسحب خمسة عشوائياً من بنك 14 ويسجل `practice:a2-09:eN`; التدفق يعرض أول `min(4, practiceBank.length)` فقط ويسجل `flow-practice:a2-09:eN`; mini-test التدفق يعرض m1/m2 فقط. أسئلة القراءة معرفها `read-a2-09`، وإجابات الاستماع بعد كشف النص `listening-transcript` ليست دليلاً. لا هدف كلام؛ TTS المتصفح وتقييم النطق المشروط آليان لا حكمان بشريان. w1/w4 كتابة مضبوطة وليستا كتابة حرة.
 - المصادر اللغوية المباشرة: IDS Grammis وDuden وDWDS، مع Wiktionary مرجعاً تعاونياً مساعداً للـIPA وLinguee شاهداً استعمالياً غير معياري على `auf dem Innenhof`. ملاحظة Duden لقائمة Goethe B1 على `Torte` سُجلت كقرار مفردات تربوي محتمل لا دليلاً على مستوى الدرس. الروابط وحدود الاستدلال كاملة في التقرير.
 - التحقق النهائي: اختبار A2-09 **13/13**، ESLint للملفين المستهدفين و`git diff --check` ناجحان. `npm run typecheck -- --pretty false` يفشل بـ25 تشخيصاً خارج A2-09 في `unit-row`, `lesson-access-guard`, اختبارات A1-07/A1-08/A1-09/A1-10/A2-03 و`competencies`/`daily-plan`؛ لا تغيّرها في هذه الدفعة. لم يُشغّل build أو suite كاملة.
-- التسليم: راجع staged diff بحيث يقتصر على الملفات الأربعة أعلاه، ثم أنشئ commit وادفعه إلى الفرع الثابت بعد التحقق؛ احمِ كل تغييرات الشجرة الأخرى ولا تستخدم `git add -A`.
+- حالة الدفع: commit `212d19a` (`Audit A2-09 lesson content and evidence`) دُفع بنجاح إلى `origin/arena/01a10631-deutschpfad` بعد اختبار 13/13 وESLint وفحص staged diff. بقيت تغييرات `src/data/lessons/meta.ts` و`src/data/lessons/academic-depth.test.ts` وملفات أخرى في شجرة العمل خارج هذا commit؛ احمها ولا تستخدم `git add -A`.
 
 ## سجل الدفعة السابقة — A2-08 (حالة تاريخية)
 
