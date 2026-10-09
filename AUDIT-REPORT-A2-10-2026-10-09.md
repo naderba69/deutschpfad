@@ -234,4 +234,4 @@
 - ESLint على `src/data/lessons/a2/a2-10.ts` و`src/data/lessons/a2/a2-10.test.ts`: ناجح.
 - `npm run typecheck -- --pretty false`: يفشل بـ**25 تشخيصاً خارج A2-10**؛ لا تشخيص في ملف الدرس أو اختباره. تتعلق بـ`src/components/learning-path/unit-row.tsx` و`lesson-access-guard.tsx`، واختبارات أحداث النطق في A1-07/A1-08/A1-09/A1-10/A2-03، و`src/lib/competencies.test.ts` و`src/lib/planner/daily-plan.test.ts`. لم تُصلح في هذه الدفعة.
 - لم تُشغّل مجموعة الاختبارات الكاملة أو build؛ لا يُدّعى نجاحهما.
-- بعد حصر stage بالملفات المرتبطة وحدها ومراجعة staged diff، نجح `git diff --cached --check`. أُدرج صف A2-10 وحده من `meta.ts`؛ بقي تعديل A2-09 وسائر التغييرات خارج stage. لا تستخدم `git add -A`.
+- بعد حصر stage بالملفات المرتبطة وحدها ومراجعة staged diff، نجح `git diff --cached --check`. أُدرج صف A2-10 وحده من `meta.ts`؛ بقي تعديل A2-09 وسائر التغييرات خارج stage. commit `aa9c020` (`Audit A2-10 lesson content and evidence`) دُفع بنجاح إلى `origin/arena/01a10631-deutschpfad`. لا تستخدم `git add -A`.
