@@ -104,6 +104,12 @@ export const lessonB211: Lesson = {
       correctIndex: 0,
       explanation: "treffen يأخذ مفعولاً به مباشراً ⇒ Akkusativ مذكّر = den.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«der» مؤنث أو جمع، ولا تناسب مفعول الفعل treffen للمذكر.",
+        "«dem» حالة جر، ولا تناسب مفعول الفعل treffen.",
+        "«das» محايد، ولا يناسب المذكر Mann.",
+      ],
     },
     {
       id: "r2",
@@ -114,6 +120,12 @@ export const lessonB211: Lesson = {
       correctIndex: 0,
       explanation: "warten auf + Akkusativ، وحرف الجر يسبق الضمير النسبي: auf den.",
       errorType: "preposition",
+      optionExplanations: [
+        undefined,
+        "«den auf» ترتيب خاطئ؛ حرف الجر يسبق الضمير الموصول دائماً.",
+        "«auf der» مؤنث، ولا يناسب المذكر Kollege.",
+        "«für den» حرف الجر خطأ؛ الفعل warten يطلب auf.",
+      ],
     },
     {
       id: "r3",
@@ -294,6 +306,12 @@ export const lessonB211: Lesson = {
         correctIndex: 0,
         explanation: "المرجع der Schriftsteller مذكّر ⇒ dessen، والاسم بعده بلا أداة تعريف.",
         errorType: "case",
+        optionExplanations: [
+          undefined,
+          "«deren Bücher beliebt sind» خطأ؛ Schriftsteller مذكر، فالضمير dessen.",
+          "«den die Bücher beliebt sind» خطأ في الحالة وفي ترتيب الجملة.",
+          "«dessen die Bücher beliebt sind» خطأ؛ تكرار الاسم بعد الضمير غير صحيح.",
+        ],
       },
       {
         id: "q2",
@@ -306,6 +324,12 @@ export const lessonB211: Lesson = {
         correctIndex: 0,
         explanation: "مصدر مزدوج مع haben: hat absagen müssen.",
         errorType: "conjugation",
+        optionExplanations: [
+          undefined,
+          "«Sie hat abgesagt gemusst» خطأ؛ تُستعمل الصيغة absagen müssen بعد hat.",
+          "«Sie ist absagen müssen» خطأ؛ الفعل المساعد haben وليس sein.",
+          "«Sie hat absagen gemusst» خطأ؛ الصيغة الصحيحة absagen müssen.",
+        ],
       },
       {
         id: "q3",
@@ -318,6 +342,12 @@ export const lessonB211: Lesson = {
         correctIndex: 0,
         explanation: "قالت reparieren lassen ⇒ كلّفت غيرها، أي الميكانيكي.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Nora selbst» لم تُصلح السيارة بنفسها، بل أعطتها للميكانيكي.",
+          "«Jonas» لم يُصلح السيارة؛ ذكره بوصفه من يسأل.",
+          "«Niemand» تنفي الإصلاح، وهذا عكس ما قالته نورا.",
+        ],
       },
     ],
   },
@@ -388,6 +418,12 @@ export const lessonB211: Lesson = {
       correctIndex: 0,
       explanation: "der Autor مذكّر ⇒ dessen.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«deren» مؤنث أو جمع، ولا تناسب الكاتب المذكر.",
+        "«den» حالة مفعولية، ولا تناسب الملكية هنا.",
+        "«der» مذكر أو مؤنث في الرفع، ولا تناسب الملكية.",
+      ],
     },
     {
       id: "e2",
@@ -398,6 +434,12 @@ export const lessonB211: Lesson = {
       correctIndex: 0,
       explanation: "die Frau مؤنّثة ⇒ deren، ولو كان المملوك محايداً (das Auto).",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«dessen» مذكر أو محايد، ولا تناسب المالكة المؤنثة.",
+        "«die» ضمير إشارة أو موصول للحالة الرفع، ولا يعبّر عن الملكية.",
+        "«der» لا يعبّر عن الملكية هنا.",
+      ],
     },
     {
       id: "e3",
@@ -408,6 +450,12 @@ export const lessonB211: Lesson = {
       correctIndex: 0,
       explanation: "الجمع ⇒ deren.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«dessen» مذكر أو محايد، ولا تناسب الجمع Studenten.",
+        "«die» لا تعبّر عن الملكية هنا.",
+        "«denen» حالة جر للجمع، ولا تعبّر عن الملكية هنا.",
+      ],
     },
     {
       id: "e4",
@@ -443,6 +491,12 @@ export const lessonB211: Lesson = {
       correctIndex: 0,
       explanation: "المالكة مؤنّثة ⇒ deren، ولا تأتي بعدها أداة تعريف ولا ضمير مِلكية.",
       errorType: "article",
+      optionExplanations: [
+        undefined,
+        "«deren der Hund» خطأ؛ لا تأتي أداة تعريف بعد deren.",
+        "«dessen Hund» خطأ؛ Nachbarin مؤنث فالضمير deren.",
+        "«deren ihr Hund» خطأ؛ لا يُستعمل ضميران ملكيان معاً.",
+      ],
     },
     {
       id: "e7",
@@ -462,6 +516,12 @@ export const lessonB211: Lesson = {
       correctIndex: 0,
       explanation: "مصدر مزدوج: haben + arbeiten + müssen.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«bin … müssen» خطأ؛ الفعل المساعد haben وليس sein.",
+        "«habe … gemusst» خطأ؛ تُستعمل صيغة müssen مع Ersatzinfinitiv.",
+        "«habe … zu müssen» خطأ؛ لا يُستعمل zu مع müssen هنا.",
+      ],
     },
     {
       id: "e9",
@@ -511,6 +571,12 @@ export const lessonB211: Lesson = {
       correctIndex: 0,
       explanation: "lassen + مصدر = تكليف الغير بالفعل.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«repariert» تعني أنه أصلحها بنفسه، وهذا عكس المطلوب.",
+        "«wollen» تعني يريد، ولا تعطي معنى أن شخصاً آخر أصلحها.",
+        "«gelassen» خطأ؛ الصيغة الصحيحة reparieren lassen.",
+      ],
     },
     {
       id: "e13",
@@ -594,6 +660,12 @@ export const lessonB211: Lesson = {
       correctIndex: 0,
       explanation: "die Kollegin مؤنّثة ⇒ deren.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«dessen» مذكر أو محايد، ولا تناسب المالكة Kollegin المؤنثة.",
+        "«die» لا تعبّر عن الملكية هنا.",
+        "«der» لا تعبّر عن الملكية هنا.",
+      ],
     },
     {
       id: "m2",
@@ -604,6 +676,12 @@ export const lessonB211: Lesson = {
       correctIndex: 0,
       explanation: "مصدر مزدوج مع haben.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«ist … müssen» خطأ؛ الفعل المساعد haben وليس sein.",
+        "«hat … gemusst» خطأ؛ تُستعمل صيغة müssen مع Ersatzinfinitiv.",
+        "«hat … zu müssen» خطأ؛ لا يُستعمل zu مع müssen هنا.",
+      ],
     },
     {
       id: "m3",
