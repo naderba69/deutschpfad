@@ -105,6 +105,12 @@ export const lessonB210: Lesson = {
       explanation:
         "النقل المكتوب الرسمي يلزم Konjunktiv I: werden ← er/sie werde. أما wird فإخبار (يجعل الكلام رأي الكاتب)، وwürde صيغة شرطية، وwurde ماضٍ للمجهول.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wird» صيغة المضارع، ولا تناسب مضارع الحالة في الكلام غير المباشر.",
+        "«würde» صيغة الشرط، ولا تناسب الكلام غير المباشر هنا.",
+        "«wurde» صيغة الماضي، ولا تناسب الكلام غير المباشر هنا.",
+      ],
     },
     {
       id: "r2",
@@ -116,6 +122,12 @@ export const lessonB210: Lesson = {
       explanation:
         "Zustandspassiv = sein + Partizip II ويصف النتيجة القائمة (مفتوحة). أما wird geöffnet فهو Vorgangspassiv أي فعل الفتح نفسه وهو يجري الآن.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wird» تستعمل مع المبني للمجهول الديناميكي، لا مع حالة مفتوحة.",
+        "«kann» فعل مودال، ولا يعبّر عن وصف الحالة.",
+        "«hat» لا تعبّر عن حالة المكتبة المفتوحة.",
+      ],
     },
     {
       id: "r3",
@@ -287,6 +299,12 @@ export const lessonB210: Lesson = {
         correctIndex: 0,
         explanation: "قال الأستاذ: Die vorliegende Veranstaltung beschäftigt sich mit der Linguistik.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«mit der Geschichte» لم تُذكر كموضوع للندوة.",
+          "«mit der Kunst» لم تُذكر كموضوع للندوة.",
+          "«mit der Wirtschaft» لم تُذكر كموضوع للندوة.",
+        ],
       },
       {
         id: "q2",
@@ -299,6 +317,12 @@ export const lessonB210: Lesson = {
         correctIndex: 0,
         explanation: "قالت آنا: Die mündliche Prüfung macht mir noch Sorgen.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«die schriftliche Prüfung» لم تقل آنا إنها تقلق منها.",
+          "«die Hausarbeit» لم تقل آنا إنها تقلق منها.",
+          "«das Seminar» لم تقل آنا إنها تقلق منه.",
+        ],
       },
       {
         id: "q3",
@@ -311,6 +335,12 @@ export const lessonB210: Lesson = {
         correctIndex: 0,
         explanation: "قال كريم: Wir üben jeden Tag, indem wir sprechen.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«indem sie schreiben» لم يقل كريم إنهم يتدربون بالكتابة.",
+          "«indem sie lesen» لم يقل كريم إنهم يتدربون بالقراءة.",
+          "«indem sie schlafen» تنفي التدريب، وهذا عكس ما قاله كريم.",
+        ],
       },
     ],
   },
@@ -378,6 +408,12 @@ export const lessonB210: Lesson = {
       correctIndex: 0,
       explanation: "التأكيد: es ist erwiesen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Vielleicht» تعني ربما، ولا تعني ثبت أن.",
+        "«In gewissem Maße» تعني إلى حد ما، ولا تعني ثبت أن.",
+        "«Unter Umständen» تعني في ظروف معينة، ولا تعني ثبت أن.",
+      ],
     },
     {
       id: "e2",
@@ -388,6 +424,12 @@ export const lessonB210: Lesson = {
       correctIndex: 0,
       explanation: "التحفظ: in gewissem Maße.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Zweifellos» تعني بلا شك، ولا تعني إلى حد ما.",
+        "«Eindeutig» تعني بوضوح، ولا تعني إلى حد ما.",
+        "«Es ist erwiesen» تعني ثبت أن، ولا تعني إلى حد ما.",
+      ],
     },
     {
       id: "e3",
@@ -456,6 +498,12 @@ export const lessonB210: Lesson = {
       correctIndex: 0,
       explanation: "möglicherweise = ربما (تلطيف).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«بلا شك» تقابل Zweifellos، وليس möglicherweise.",
+        "«إلى حد ما» تقابل In gewissem Maße، وليس möglicherweise.",
+        "«بوضوح» تقابل Eindeutig، وليس möglicherweise.",
+      ],
     },
     {
       id: "e9",
@@ -515,6 +563,12 @@ export const lessonB210: Lesson = {
       explanation:
         "wegen حرف جر يلزم Genitiv في اللغة المكتوبة: wegen der Einsparung. وweil أداة ربط لجملة لا لاسم، وwegen sparen خطأ لأن wegen يتبعه اسم (das Sparen) لا فعل.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«Wegen die Einsparung» خطأ في حالة الاسم بعد wegen؛ الصيغة الصحيحة der Einsparung.",
+        "«Weil der Einsparung» خطأ؛ weil تربط جملة، ولا تُستعمل مع اسم.",
+        "«Wegen sparen» خطأ؛ الاسم المطلوب هو Einsparung.",
+      ],
     },
     {
       id: "e14-nominal",
@@ -563,6 +617,12 @@ export const lessonB210: Lesson = {
       explanation:
         "indem تبيّن *الوسيلة* (بأن): يتحسّن المرء بأن يقرأ يومياً. وobwohl للتنازل، وdamit للغاية، وtrotzdem ظرف رابط لا أداة جملة ثانوية.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«obwohl» تعبّر عن التعارض، ولا تعبّر عن الوسيلة.",
+        "«damit» تعبّر عن الغاية، ولا تعبّر عن الوسيلة.",
+        "«trotzdem» تعبّر عن التعارض، ولا تعبّر عن الوسيلة.",
+      ],
     },
     {
       id: "e10",
@@ -601,6 +661,12 @@ export const lessonB210: Lesson = {
       correctIndex: 0,
       explanation: "التأكيد: es ist erwiesen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Vielleicht» تعني ربما، ولا تعني ثبت أن.",
+        "«Unter Umständen» تعني في ظروف معينة، ولا تعني ثبت أن.",
+        "«In gewissem Maße» تعني إلى حد ما، ولا تعني ثبت أن.",
+      ],
     },
     {
       id: "m2",
@@ -611,6 +677,12 @@ export const lessonB210: Lesson = {
       correctIndex: 0,
       explanation: "التلطيف: möglicherweise.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Zweifellos» تعني بلا شك، ولا تعني ربما.",
+        "«Eindeutig» تعني بوضوح، ولا تعني ربما.",
+        "«Es ist erwiesen» تعني ثبت أن، ولا تعني ربما.",
+      ],
     },
     {
       id: "m3",
@@ -656,6 +728,12 @@ export const lessonB210: Lesson = {
       explanation:
         "النقل الرسمي المكتوب يلزم Konjunktiv I: beginnen ← es beginne. وbeginnt إخبار ينسب الكلام للكاتب، وbegänne صيغة Konjunktiv II، وbegann ماضٍ.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«beginnt» صيغة المضارع، ولا تناسب الكلام غير المباشر.",
+        "«begänne» صيغة الشرط، ولا تناسب الكلام غير المباشر.",
+        "«begann» صيغة الماضي، ولا تناسب الكلام غير المباشر.",
+      ],
     },
     {
       id: "m7",
@@ -667,6 +745,12 @@ export const lessonB210: Lesson = {
       explanation:
         "lassen + sich + مصدر = بديل المجهول بمعنى «يمكن أن يُقرأ». وkönnen وحده لا يكوّن هذا البديل، وwerden يقتضي Partizip II (werden nachgelesen)، وsein يقتضي zu + مصدر.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«können» فعل مودال، ولا يعطي معنى الإمكانية هنا.",
+        "«werden» تستعمل مع المبني للمجهول، ولا تناسب الجملة.",
+        "«sind» تستعمل مع حالة الفعل، ولا تناسب lassen sich.",
+      ],
     },
     {
       id: "m8",
