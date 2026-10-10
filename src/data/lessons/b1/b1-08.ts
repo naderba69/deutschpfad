@@ -281,9 +281,9 @@ export const lessonB108: Lesson = {
     items: [
       { de: "die Technik", ar: "التقنية", note: "ch بعد e = ناعمة: تيشنيك" },
       { de: "der Computer", ar: "الحاسوب", note: "كلمة إنجليزية: كومپيوتِر" },
-      { de: "digital", ar: "رقمي", note: "g = غ: ديغيتال" },
+      { de: "digital", ar: "رقمي", note: "g = ك: ديكيتال" },
       { de: "die Entwicklung", ar: "التطور", note: "w = ڤ: إنت-ڤيكلونغ" },
-      { de: "die Intelligenz", ar: "الذكاء", note: "z = تس، وg = غ: إنتِليغِنتس" },
+      { de: "die Intelligenz", ar: "الذكاء", note: "z = تس، وg = ك: إنتِليكِنتس" },
       { de: "die Zukunft", ar: "المستقبل", note: "z = تس، u الأولى طويلة والثانية قصيرة، k = ك: تسووكونفت" },
     ],
     tip: "Zukunft = تسوكونفت — Z = تس، والنهاية -ft = فت. انتبه إلى u القصيرة في المقطع الثاني.",

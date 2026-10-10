@@ -14,20 +14,92 @@ export const lessonB109: Lesson = {
     "العمل التطوعي والمشاريع الاجتماعية، الوصلات الاسمية-الفعلية (Nomen-Verb-Verbindungen): eine Frage stellen, Bescheid sagen — وتصريف n-Deklination.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann über Ehrenamt sprechen.", ar: "أن أتحدث عن العمل التطوعي والمشاريع الاجتماعية." },
-    { id: "z2", de: "Ich kenne die wichtigsten Nomen-Verb-Verbindungen.", ar: "أن أتقن الوصلات الاسمية-الفعلية: يطرح سؤالاً، يعطي خبراً." },
-    { id: "z3", de: "Ich kenne die n-Deklination.", ar: "أن أتقن تصريف n (der Student → den Studenten)." },
-    { id: "z5", de: "Ich kann Verben mit festen Präpositionen richtig verwenden.", ar: "أن أستعمل الأفعال مع حروف الجر الثابتة وحالاتها: teilnehmen an + Dativ، sich erinnern an + Akkusativ." },
-      { id: "z4", de: "Ich kann über soziales Engagement sprechen.", ar: "أن أتحدث عن العمل التطوعي والاجتماعي." },
+    {
+      id: "z1",
+      de: "Ich kann ein Gespräch über ehrenamtliche Arbeit verstehen und die Fragen dazu beantworten.",
+      ar: "أن أفهم حواراً عن العمل التطوعي وأجيب عن أسئلته.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q1", "q2", "q3"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
+        labelAr: "أجيب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann die Nomen-Verb-Verbindungen eine Frage stellen, eine Entscheidung treffen und Bescheid sagen richtig verwenden.",
+      ar: "أن أستعمل الوصلات الاسمية-الفعلية الأساسية (يطرح سؤالاً، يتخذ قراراً، يبلغ) في موضعها الصحيح.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e1", "e4", "e7", "m1", "m3", "m5", "w1", "w2"],
+        taskIds: [
+          "practice:b1-09:e1",
+          "practice:b1-09:e4",
+          "practice:b1-09:e7",
+          "mini-test:b1-09:m1",
+          "mini-test:b1-09:m3",
+          "mini-test:b1-09:m5",
+          "writing:b1-09:w1",
+          "writing:b1-09:w2",
+        ],
+        labelAr: "أجيب صحيحاً عن تمارين الوصلات (e1 وe4 وe7 وm1 وm3 وm5 وw1 وw2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann die n-Deklination im Akkusativ, Dativ und Genitiv richtig bilden.",
+      ar: "أن أصوغ تصريف n للأسماء المذكرة الحية (den Studenten، dem Kunden، des Herrn) في موضعه.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e2", "e5", "e6", "e9", "m2", "m4", "w3"],
+        taskIds: [
+          "practice:b1-09:e2",
+          "practice:b1-09:e5",
+          "practice:b1-09:e6",
+          "practice:b1-09:e9",
+          "mini-test:b1-09:m2",
+          "mini-test:b1-09:m4",
+          "writing:b1-09:w3",
+        ],
+        labelAr: "أجيب صحيحاً عن تمارين تصريف n (e2 وe5 وe6 وe9 وm2 وm4 وw3)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann Wörter rund um das Ehrenamt wie Verein, Spende und Mitglied ihrer Bedeutung zuordnen.",
+      ar: "أن أربط مفردات التطوع (الجمعية، التبرع، العضو) بمعانيها الصحيحة.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e3", "e8"],
+        taskIds: ["practice:b1-09:e3", "practice:b1-09:e8"],
+        labelAr: "أجيب صحيحاً عن مطابقة المفردات (e3) وعن معنى العبارة (e8). قراءة الشرح لا تُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z5",
+      de: "Ich kann Verben mit festen Präpositionen wie warten auf, sich interessieren für und teilnehmen an mit dem richtigen Kasus verwenden.",
+      ar: "أن أستعمل الأفعال مع حروف الجر الثابتة (warten auf، sich interessieren für، teilnehmen an) بحالتها الصحيحة.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e11", "e12", "e13", "m6"],
+        taskIds: [
+          "practice:b1-09:e11",
+          "practice:b1-09:e12",
+          "practice:b1-09:e13",
+          "mini-test:b1-09:m6",
+        ],
+        labelAr: "أجيب صحيحاً عن تمارين حروف الجر الثابتة (e11 وe12 وe13 وm6)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+      },
+    },
   ],
   einfuehrung: {
     motivatingQuestionAr:
-      "لاحظ بالعربية: «يطرح سؤالاً» — فعل + اسم معاً. الألمانية تفعل هذا كثيراً: eine Frage stellen (يطرح سؤالاً) بدل fragen (يسأل). هذه «الوصلات» تعطي كلامك نكهة رسمية — وسيتطلبها الامتحان!",
+      "لاحظ بالعربية: «يطرح سؤالاً» — فعل + اسم معاً. الألمانية تفعل هذا كثيراً: eine Frage stellen (يطرح سؤالاً) بدل fragen (يسأل). هذه «الوصلات» تعطي كلامك نكهة رسمية.",
     motivatingQuestionDe: "Machst du ehrenamtliche Arbeit?",
     contextAr:
       "العمل التطوعي جزء كبير من الثقافة الألمانية. نتعلم مفرداته، ثم الوصلات الاسمية-الفعلية (الأسلوب الرسمي)، ونهاية n-Deklination الغريبة.",
     contextDe: "Ich helfe ehrenamtlich im Verein.",
-    connectionToPreviousAr: "تتذكر الأفعال المركبة والحالات. اليوم: الوصلات (فعل + اسم) وتصريف n — وهو تصريف شاذ للأسماء المذكرة المنتهية بـ e.",
+    connectionToPreviousAr: "تتذكر الأفعال المركبة والحالات. اليوم: الوصلات (فعل + اسم) وتصريف n — وهو تصريف يخص عدداً محدوداً من الأسماء المذكرة الحية.",
     activateVocabulary: [
       { de: "das Ehrenamt", ar: "العمل التطوعي" },
       { de: "der Verein", ar: "الجمعية/النادي" },
@@ -79,7 +151,7 @@ export const lessonB109: Lesson = {
       explanationAr:
         "بعض الأفعال تُستخدم مع اسم بدل الفعل وحده: eine Frage stellen (يطرح سؤالاً) بدل fragen، Bescheid sagen (يعطي خبراً)، Hilfe leisten (يقدم مساعدة)، eine Entscheidung treffen (يتخذ قراراً)، Abschied nehmen (يودع). هذه الوصلات تعطي أسلوباً رسمياً ومهماً للامتحان.",
       whyAr:
-        "لماذا نستخدم وصلات بدل الأفعال البسيطة؟ لأنها «أسلوب رسمي/إداري»: في التقارير والمقالات تقول eine Entscheidung treffen بدل entscheiden. والألمان يعتبرونها علامة إتقان — وامتحان Goethe B1 يختبرها.",
+        "لماذا نستخدم وصلات بدل الأفعال البسيطة؟ لأنها تشيع خصوصاً في اللغة المكتوبة: تقول النصوص eine Entscheidung treffen بدل entscheiden. والمعنى يتحمله الاسم، والفعل يصبح أداة نحوية (Funktionsverbgefüge).",
       table: {
         title: "أهم الوصلات",
         columns: ["الوصلة", "المعنى", "الفعل المكافئ"],
@@ -100,17 +172,17 @@ export const lessonB109: Lesson = {
         { de: "Wir nehmen Abschied von unseren Freunden.", ar: "نودع أصدقاءنا." },
       ],
       comparisonWithArabic:
-        "«يطرح سؤالاً» = eine Frage stellen — مطابقة تامة للعربية! «يتخذ قراراً» = eine Entscheidung treffen. والوصلات العربية نفسها: يطرح، يقدم، يتخذ — الألمانية تضعها مع اسم.",
+        "«يطرح سؤالاً» = eine Frage stellen، و«يتخذ قراراً» = eine Entscheidung treffen: الفعل العربي يقابله فعل ألماني مع اسم. وفي بعض الوصلات يكون التقابل حرفياً، وفي غيرها لا (مثل Bescheid sagen).",
       eselsbruecke:
-        "«استبدل الفعل البسيط بوصلة»: fragen → eine Frage stellen، helfen → Hilfe leisten. كل وصلاتنا شبيهة بالعربية — احفظها كأزواج.",
+        "«استبدل الفعل البسيط بوصلة»: fragen → eine Frage stellen، helfen → Hilfe leisten. بعضها يشبه العربية، وبعضها لا؛ احفظها كأزواج جاهزة.",
       commonMistakes: [
         { wrong: "eine Frage machen (فعل خاطئ)", right: "eine Frage stellen", whyAr: "السؤال يُطرح (stellen) وليس يُصنع (machen)." },
         { wrong: "eine Entscheidung machen", right: "eine Entscheidung treffen", whyAr: "القرار يُتخذ (treffen) وليس يُصنع." },
-        { wrong: "Abschied sagen بدل nehmen", right: "Abschied nehmen", whyAr: "الوداع يُؤخذ (nehmen)." },
+        { wrong: "Bescheid machen", right: "Bescheid sagen", whyAr: "الخبر يُقال (sagen) أو يُعطى (geben)، ولا يُصنع (machen)." },
       ],
       relatedRuleComparison: {
         title: "الوصلة أم الفعل البسيط؟",
-        content: "في الكلام: الفعل البسيط (fragen). في الرسمية: الوصلة (eine Frage stellen). الامتحان يحب الوصلات — تعلمها كأزواج جاهزة.",
+        content: "الفعل البسيط (fragen) يكفي في أغلب الكلام اليومي. الوصلة (eine Frage stellen) تشيع في اللغة المكتوبة والرسمية. احفظ الوصلة كوحدة جاهزة.",
       },
     },
     {
@@ -118,9 +190,9 @@ export const lessonB109: Lesson = {
       titleAr: "تصريف n (n-Deklination)",
       titleDe: "Die n-Deklination: der Student → den Studenten",
       explanationAr:
-        "بعض الأسماء المذكرة (غالباً المنتهية بـ e أو ذات أصل لاتيني/يوناني) تضيف n/en في كل الحالات ما عدا الرفع: der Student → den Studenten (نصب)، dem Studenten (جر)، des Studenten (مضاف). الأسماء: der Student, der Kunde (زبون), der Herr (سيد), der Polizist, der Journalist, der Kollege, der Junge (فتى).",
+        "بعض الأسماء المذكرة (غالباً مذكر حي ينتهي بـ e، أو بلاحقة مثل -ent وist) تضيف n/en في كل الحالات ما عدا الرفع: der Student → den Studenten (نصب)، dem Studenten (جر)، des Studenten (مضاف). الأسماء: der Student, der Kunde (زبون), der Herr (سيد), der Polizist, der Journalist, der Kollege, der Junge (فتى).",
       whyAr:
-        "لماذا هذه شاذة؟ لأنها أسماء «مذكرة حية» جاءت من اللاتينية (Student, Polizist) أو تنتهي بـ e (Junge, Kollege). الألمانية تحتفظ بآثار الإعراب اللاتيني فيها — فتحفظها كقائمة.",
+        "لماذا هذه شاذة؟ لأنها تخالف القاعدة العامة للمذكر فتحمل n في الحالات غير الرفع. ومعظمها أسماء أشخاص وحيوانات حية (Junge, Kollege)، وبعضها دخيل بلاحقة مثل -ent وist (Student, Polizist). لذلك تُحفظ كقائمة.",
       table: {
         title: "n-Deklination",
         columns: ["الحالة", "der Student", "der Kunde"],
@@ -139,17 +211,17 @@ export const lessonB109: Lesson = {
         { de: "Sie spricht mit dem Kollegen.", ar: "تتحدث مع الزميل." },
       ],
       comparisonWithArabic:
-        "العربية تعرب الأسماء بحركات: «الطالبَ» نصباً. الألمانية n-Deklination: den Studenten — إعراب بحرف n! نفس الفكرة الإعرابية لكن بلاحقة ثابتة.",
+        "العربية تعرب الاسم بالحركة: «الطالبَ» نصباً. وفي الألمانية تتغير نهاية الاسم المذكر الحي في الحالات غير الرفع: den Studenten. فالحالة تظهر في الاسم نفسه، لكن بلاحقة n لا بحركة.",
       eselsbruecke:
-        "«n-Deklination = رجال بـ e»: الأسماء المذكرة المنتهية بـ e (Junge, Kunde, Kollege) + اللاتينية (Student, Polizist) تضيف n/en. تذكّر القائمة: الطالب والزبون والسيد والشرطي والصحفي والزميل والفتى.",
+        "«n-Deklination = مذكر حي + n»: الأسماء المذكرة الحية المنتهية بـ e (Junge, Kunde, Kollege) وبعض الأسماء الدخيلة (Student, Polizist) تضيف n/en. تذكّر القائمة: الطالب والزبون والسيد والشرطي والصحفي والزميل والفتى.",
       commonMistakes: [
         { wrong: "Ich sehe den Student. (بدون n)", right: "Ich sehe den Studenten.", whyAr: "النصب: den Studenten." },
         { wrong: "dem Herr (بدون n)", right: "dem Herrn", whyAr: "Herr يضيف n: Herrn." },
-        { wrong: "مع Frau لا n-Deklination", right: "die Frau → der Frau (عادية)", whyAr: "n-Deklination للمذكر فقط." },
+        { wrong: "Ich sehe den Herr.", right: "Ich sehe den Herrn.", whyAr: "Herr من الأسماء الشاذة: den Herrn (نصب)." },
       ],
       relatedRuleComparison: {
         title: "n-Deklination أم عادية؟",
-        content: "اختبر: هل الاسم مذكر + ينتهي بـ e أو لاتيني؟ نعم → n/en. لا → عادي. (der Mann عادي: dem Mann بدون n).",
+        content: "لا توجد قاعدة تكفي للتخمين. الأسماء المذكرة الحية المنتهية بـ e تأخذ n غالباً (der Junge → den Jungen)، لكن ليس كل اسم ينتهي بـ e كذلك (der Name → des Namens، أي تصريف مختلف). احفظ القائمة. وتبقى الأسماء العادية كما هي: der Mann → dem Mann.",
       },
     },
     {
@@ -159,7 +231,7 @@ export const lessonB109: Lesson = {
       explanationAr:
         "كما أن بعض الأفعال تلزمها وصلة اسمية، فإن أفعالاً كثيرة يلزمها حرف جر ثابت لا يتغير — وهو جزء من الفعل يُحفظ معه: teilnehmen an + Dativ (يشارك في)، sich erinnern an + Akkusativ (يتذكر)، sich interessieren für + Akkusativ (يهتم بـ)، warten auf + Akkusativ (ينتظر)، denken an + Akkusativ (يفكر في)، sich kümmern um + Akkusativ (يعتني بـ)، helfen bei + Dativ (يساعد في). القاعدة الذهبية: احفظ ثلاثة أشياء معاً لا اثنين — الفعل + حرف الجر + الحالة.",
       whyAr:
-        "لماذا حرف جر «ثابت»؟ لأنه هنا لا يحمل معناه الأصلي: an في an der Wand تعني «على الجدار» (مكان)، لكن في teilnehmen an لا تعني مكاناً إطلاقاً — إنها مجرد أداة نحوية يفرضها الفعل. لذلك لا يمكن ترجمتها من العربية، ولذلك أيضاً تفشل هنا قاعدة Wechselpräpositionen التي تعلمتها في a1-04: الحالة بعد الحرف الثابت مُقرَّرة سلفاً ولا تتغير بحركة أو سكون. وهذا الباب من صميم امتحان Goethe B1، وستحتاجه في B2 لبناء الجمل النسبية مع حروف الجر (Der Mann, auf den ich warte).",
+        "لماذا حرف جر «ثابت»؟ لأنه هنا لا يحمل معناه المكاني: an في an der Wand تعني «على الجدار»، أما في teilnehmen an فلا معنى مكانياً له، والفعل وحده يفرضه. لذلك لا تنفع هنا قاعدة Wechselpräpositionen من a1-04 (الحرف يحمل المعنى المكاني والحالة تتبع السؤال Wo؟/Wohin؟)؛ فالحالة هنا مقررة مع الفعل ولا تتغير بالسؤال.",
       table: {
         title: "أهم الأفعال مع حروف الجر الثابتة",
         columns: ["الفعل + الحرف", "الحالة", "المعنى", "مثال"],
@@ -182,18 +254,18 @@ export const lessonB109: Lesson = {
         { de: "Der Verein hilft den Familien bei der Anmeldung.", ar: "الجمعية تساعد العائلات في التسجيل." },
       ],
       comparisonWithArabic:
-        "العربية تفعل الشيء نفسه تماماً! «يعتني بـ» — لماذا الباء؟ لا سبب منطقي، هكذا يلزم الفعل. و«يفكر في»، و«يشارك في»، و«ينتظر» بلا حرف أصلاً. المشكلة أن الحروف لا تتطابق بين اللغتين: العربية تقول «ينتظرُ الحافلةَ» بلا حرف، والألمانية تفرض auf. فلا تترجم الحرف — احفظه مع فعله.",
+        "في العربية أفعال تلزمها حروف، مثل «يشارك في» و«يهتم بـ»، لكن الحروف لا تتطابق بين اللغتين: العربية تقول «ينتظرُ الحافلةَ» بلا حرف، والألمانية تفرض warten auf. لذلك لا تترجم الحرف من العربية، بل احفظه مع فعله.",
       eselsbruecke:
-        "«الفعل يسافر بحقيبتين»: الحرف والحالة. لا تحفظ warten وحده بل warten auf + Akkusativ. وللأغلبية الساحقة القاعدة مريحة: an وauf وfür وum وüber مع هذه الأفعال تأخذ Akkusativ، ولا يشذّ إلا القليل مثل teilnehmen an وhelfen bei (Dativ).",
+        "«الفعل يسافر بحقيبتين»: الحرف والحالة. لا تحفظ warten وحده بل warten auf + Akkusativ. ولا تعمّم حالة الحرف من حرف إلى آخر: teilnehmen an مع Dativ، وdenken an مع Akkusativ؛ احفظ كل فعل مع حالته.",
       commonMistakes: [
         { wrong: "Ich warte den Bus. (بلا حرف)", right: "Ich warte auf den Bus.", whyAr: "العربية «أنتظر الحافلة» بلا حرف، والألمانية تفرض auf. حذف الحرف أشيع خطأ عربي في هذا الباب." },
-        { wrong: "Ich nehme an dem Kurs teil → Ich nehme an den Kurs teil.", right: "Ich nehme an dem (am) Kurs teil.", whyAr: "teilnehmen an من الاستثناءات: Dativ لا Akkusativ." },
+        { wrong: "Ich nehme an den Kurs teil.", right: "Ich nehme am Kurs teil.", whyAr: "teilnehmen an مع Dativ: an dem = am، لا an den." },
         { wrong: "Ich erinnere an den Tag. (بلا mich)", right: "Ich erinnere mich an den Tag.", whyAr: "الفعل انعكاسي: sich erinnern an — الضمير الانعكاسي جزء منه (راجع a2-11)." },
         { wrong: "Er interessiert sich über Musik.", right: "Er interessiert sich für Musik.", whyAr: "لكل فعل حرفه الثابت؛ لا يجوز استبداله بحرف آخر قريب المعنى." },
       ],
       relatedRuleComparison: {
         title: "حرف جر ثابت أم Wechselpräposition؟",
-        content: "في a1-04 كان الحرف يحمل معنى مكانياً والحالة تتبع السؤال: wohin؟ ← Akkusativ، wo؟ ← Dativ. أما هنا فالحرف بلا معنى مكاني والحالة محفوظة مع الفعل. الاختبار: احذف الحرف واسأل «أين؟» — إن كان السؤال بلا معنى (Ich warte auf den Bus) فالحرف ثابت.",
+        content: "في a1-04 كان الحرف يحمل معنى مكانياً والحالة تتبع السؤال: wohin؟ ← Akkusativ، wo؟ ← Dativ. أما هنا فالحرف لا يحمل معنى مكانياً والحالة محفوظة مع الفعل. إذا كان الحرف يغيّر الموضع أو الاتجاه فهو من Wechselpräpositionen؛ وإذا كان الفعل وحده يفرضه (warten auf) فهو ثابت.",
       },
     },
   ],
@@ -256,7 +328,7 @@ export const lessonB109: Lesson = {
         instructionAr: "اختر الإجابة الصحيحة:",
         questionDe: "Was treffen sie heute?",
         questionAr: "ماذا يتخذون اليوم؟",
-        options: ["eine Entscheidung", "eine Frage", "einen Termin", "eine Pause"],
+        options: ["eine Entscheidung", "eine Frage", "einen Fehler", "eine Pause"],
         correctIndex: 0,
         explanation: "قالت منى: Wir treffen eine wichtige Entscheidung heute.",
         errorType: "vocabulary",
@@ -273,7 +345,7 @@ export const lessonB109: Lesson = {
       { de: "die Spende", ar: "التبرع", note: "sp = شپ: شپِندِه" },
       { de: "das Projekt", ar: "المشروع", note: "j = ي: پرويِكت" },
       { de: "der Kunde", ar: "الزبون", note: "u + nd: كونده" },
-      { de: "das Mitglied", ar: "العضو", note: "مركّبة Mit+Glied: g بداية مقطع = غ، وd في النهاية = ت: ميت-غليت" },
+      { de: "das Mitglied", ar: "العضو", note: "مركّبة Mit+Glied: g = ك (نطق شديد، لا غ)، وd في النهاية = ت: ميت-كليت" },
     ],
     tip: "Ehrenamt = إيرِن-أمت — eh في البداية تُنطق e طويلة (حرف h يطيل). تذكر: الحرف + h = طويل!",
     shadowing: [
@@ -324,7 +396,7 @@ export const lessonB109: Lesson = {
       type: "multiple-choice",
       instructionAr: "اختر الوصلة الصحيحة:",
       questionDe: "eine Frage ___",
-      options: ["stellen", "machen", "sagen", "nehmen"],
+      options: ["stellen", "geben", "sagen", "nehmen"],
       correctIndex: 0,
       explanation: "السؤال يُطرح (stellen).",
       errorType: "grammar",
@@ -364,7 +436,7 @@ export const lessonB109: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "افحص الجملة وصحّح الخطأ الوحيد فيها.",
       wrongSentence: "Ich sehe den Student.",
       wrongWord: "Student",
       correctWord: "Studenten",
@@ -408,7 +480,7 @@ export const lessonB109: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "افحص الجملة وصحّح الخطأ الوحيد فيها.",
       wrongSentence: "Wir sprechen mit dem Kollege.",
       wrongWord: "Kollege",
       correctWord: "Kollegen",
@@ -467,12 +539,12 @@ export const lessonB109: Lesson = {
     ],
     eselsbruecken: [
       "«الوصلات = أسلوب رسمي»: fragen → eine Frage stellen.",
-      "«n-Deklination = رجال بـ e + لاتينيون»: Student, Kunde, Herr, Polizist, Kollege, Junge.",
+      "«n-Deklination = مذكر حي + n»: Student, Kunde, Herr, Polizist, Kollege, Junge.",
     ],
     culturalNote: {
       title: "ثقافة التطوع (Ehrenamt)",
       content:
-        "ألمانيا فيها ~600 ألف جمعية تطوعية! من Firefighter المتطوعين (Freiwillige Feuerwehr) إلى مساعدة اللاجئين. «Ehrenamtlich arbeiten» صفة فخر. وكثير من الوافدين يبدأون بالتطوع لتعلم اللغة والتواصل: «Ich helfe ehrenamtlich und lerne Deutsch».",
+        "وفق المسح الألماني للتطوع (Freiwilligensurvey 2019) كان 39.7% من الأشخاص من سن 14 فما فوق يمارسون نشاطاً تطوعياً، أي نحو 28.8 مليون شخص. ومع ذلك، كان نحو نصف المتطوعين (51.7%) يعملون في جمعية أو اتحاد، وهذه النسبة تراجعت منذ 1999 (57.2%).",
     },
   },
 
@@ -509,7 +581,7 @@ export const lessonB109: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "افحص الجملة وصحّح الخطأ الوحيد فيها.",
       wrongSentence: "Der Polizist fragt den Journalist.",
       wrongWord: "Journalist",
       correctWord: "Journalisten",
@@ -536,7 +608,7 @@ export const lessonB109: Lesson = {
       questionDe: "Ich nehme ___ Deutschkurs teil.",
       options: ["am", "an den", "auf dem", "für den"],
       correctIndex: 0,
-      explanation: "teilnehmen an + Dativ ⇒ an dem = am. وهو استثناء: أغلب الأفعال مع an تأخذ Akkusativ.",
+      explanation: "teilnehmen an + Dativ ⇒ an dem = am، لا an den.",
       errorType: "preposition",
     },
   ],
@@ -558,8 +630,8 @@ export const lessonB109: Lesson = {
       id: "med-b1-09-1", type: "relay-instructions",
       titleAr: "انقل إعلان تطوع بالعربية لصديق",
       sourceDe: "Wir suchen Freiwillige für unser Sozialprojekt. Aufgaben: Kinder betreuen und Deutsch üben. Zeit: samstags von 10 bis 14 Uhr.",
-      taskAr: "انقل الإعلان بالعربية: المهام، اليوم والوقت، ولمن يوجه.",
-      modelAnswerAr: "«نبحث عن متطوعين لمشروعنا الاجتماعي. المهام: رعاية الأطفال وممارسة الألمانية. الوقت: السبت من 10 إلى 2.»",
+      taskAr: "انقل الإعلان بالعربية: المهام، اليوم والوقت، ومن المطلوب.",
+      modelAnswerAr: "«نبحث عن متطوعين لمشروعنا الاجتماعي. المهام: رعاية الأطفال وممارسة الألمانية. الوقت: السبت من العاشرة صباحاً حتى الثانية ظهراً.»",
       keyPointsAr: ["نقلت طلب المتطوعين", "ذكرت المهام (رعاية + لغة)", "نقلت اليوم والوقت"],
     },
   ],
