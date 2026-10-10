@@ -144,7 +144,7 @@ export const lessonB111: Lesson = {
         id: "ls-b1-11-1",
         title: "رسالة هاتفية من مكتب العمل",
         lines: [
-          { speaker: "الموظف", de: "Guten Tag, Frau Ben Ali. Hier ist das Arbeitsamt.", ar: "نهارك سعيد سيدة بن علي. هنا مكتب العمل." },
+          { speaker: "الموظف", de: "Guten Tag, Frau Ben Ali. Hier ist das Arbeitsamt.", ar: "طاب يومك سيدة بن علي. هنا مكتب العمل." },
           { speaker: "الموظف", de: "Ihr Termin für das Beratungsgespräch wurde auf Donnerstag, den 15., um 14 Uhr verschoben.", ar: "موعد جلسة الاستشارة أُجل إلى الخميس 15 الساعة 14." },
           { speaker: "الموظف", de: "Bitte bringen Sie Ihren Lebenslauf und die Zeugnisse mit. Wir sehen uns dann!", ar: "يرجى إحضار سيرتك الذاتية والشهادات. نراك حينها!" },
         ],

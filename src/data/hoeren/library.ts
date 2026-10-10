@@ -54,7 +54,7 @@ export const HOEREN_LIBRARY: HoerenText[] = [
     titleDe: "Anrufbeantworter: Frau Kessler",
     titleAr: "رسالة هاتفية: السيدة كيسلر",
     text: "Guten Tag, Frau Kessler. Hier spricht Thomas Weber von der Firma SolarTech. Ich rufe an, weil sich die Lieferung Ihrer Solaranlage um zwei Wochen verzögert. Der Grund sind Probleme mit dem Zulieferer. Die Montage verschiebt sich daher auf den dritten Oktober. Falls dieser Termin nicht passt, rufen Sie mich bitte unter der Nummer 069 55 88 44 an. Ich bin bis 17 Uhr erreichbar. Vielen Dank und einen schönen Tag!",
-    textAr: "نهارك سعيد سيدة كيسلر، معكم توماس فيبر من شركة سولار تك. أتصل لأن شحنة منظومتك الشمسية ستتأخر أسبوعين. السبب مشاكل مع المورد. لذلك يتأجل التركيب إلى الثالث من أكتوبر. إن لم يناسبك هذا الموعد فاتصلي بي على الرقم 069 55 88 44. أنا متاح حتى الساعة 17. شكراً ونهارك سعيد!",
+    textAr: "طاب يومك سيدة كيسلر، معكم توماس فيبر من شركة سولار تك. أتصل لأن شحنة منظومتك الشمسية ستتأخر أسبوعين. السبب مشاكل مع المورد. لذلك يتأجل التركيب إلى الثالث من أكتوبر. إن لم يناسبك هذا الموعد فاتصلي بي على الرقم 069 55 88 44. أنا متاح حتى الساعة 17. شكراً وطاب يومك!",
     questions: [
       { q: "Warum ruft Herr Weber an?", qAr: "لماذا يتصل السيد فيبر؟", options: ["um eine Lieferverzögerung zu melden", "um einen Termin zu bestätigen", "um sich zu bedanken", "um zu reklamieren"], correct: 0, explanation: "ليبلغ عن تأخر الشحنة." },
       { q: "Wann findet die Montage jetzt statt?", qAr: "متى يتم التركيب الآن؟", options: ["am 3. Oktober", "am 3. September", "am 14. Oktober", "am 3. November"], correct: 0, explanation: "الثالث من أكتوبر." },
@@ -157,7 +157,7 @@ export const HOEREN_LIBRARY: HoerenText[] = [
     titleDe: "Anruf vom Zahnarzt",
     titleAr: "اتصال من طبيب الأسنان",
     text: "Guten Tag, Herr Ali. Hier ist die Praxis von Dr. Weber. Ihr Termin für morgen um zehn Uhr muss leider verschoben werden. Können Sie am Donnerstag um vierzehn Uhr kommen? Bitte rufen Sie uns unter der Nummer 0 30 55 66 77 an. Danke!",
-    textAr: "نهارك سعيد سيد علي. هنا عيادة د. فيبر. موعدك غداً العاشرة يجب تأجيله للأسف. هل تستطيع القدوم الخميس في الثانية بعد الظهر؟ من فضلك اتصل بنا على الرقم 0 30 55 66 77. شكراً!",
+    textAr: "طاب يومك سيد علي. هنا عيادة د. فيبر. موعدك غداً العاشرة يجب تأجيله للأسف. هل تستطيع القدوم الخميس في الثانية بعد الظهر؟ من فضلك اتصل بنا على الرقم 0 30 55 66 77. شكراً!",
     questions: [
       { q: "Warum ruft die Praxis an?", qAr: "لماذا تتصل العيادة؟", options: ["Der Termin muss verschoben werden", "Die Praxis ist geschlossen", "Herr Ali hat bezahlt", "Es gibt ein Problem"], correct: 0, explanation: "يجب تأجيل الموعد." },
       { q: "Wann kann Herr Ali kommen?", qAr: "متى يستطيع السيد علي القدوم؟", options: ["am Donnerstag um vierzehn Uhr", "am Freitag um zehn Uhr", "am Montag", "morgen"], correct: 0, explanation: "الخميس في الثانية بعد الظهر (14:00)." },
@@ -199,7 +199,7 @@ export const HOEREN_LIBRARY: HoerenText[] = [
     titleDe: "Vortrag: Gesund leben",
     titleAr: "حديث: عش بصحة",
     text: "Guten Tag! Ich möchte kurz über gesundes Leben sprechen. Gesundheit beginnt im Alltag: genug Schlaf, gesundes Essen und Bewegung. Viele Menschen sitzen den ganzen Tag und essen schnell. Das ist nicht gut für den Körper. Man muss nicht jeden Tag Sport treiben, aber regelmäßig ist wichtig. Zum Beispiel kann man mit dem Fahrrad zur Arbeit fahren oder abends spazieren gehen. Zusammenfassend: Kleine Änderungen haben große Wirkung. Vielen Dank!",
-    textAr: "نهارك سعيد! أريد الحديث باختصار عن الحياة الصحية. الصحة تبدأ في الحياة اليومية: نوم كافٍ وأكل صحي وحركة. كثيرون يجلسون طوال اليوم ويأكلون بسرعة. هذا ليس جيداً للجسم. لا يجب ممارسة الرياضة كل يوم لكن الانتظام مهم. مثلاً يمكن الذهاب للعمل بالدراجة أو التنزه مساءً. خلاصة: تغييرات صغيرة لها أثر كبير. شكراً!",
+    textAr: "طاب يومك! أريد الحديث باختصار عن الحياة الصحية. الصحة تبدأ في الحياة اليومية: نوم كافٍ وأكل صحي وحركة. كثيرون يجلسون طوال اليوم ويأكلون بسرعة. هذا ليس جيداً للجسم. لا يجب ممارسة الرياضة كل يوم لكن الانتظام مهم. مثلاً يمكن الذهاب للعمل بالدراجة أو التنزه مساءً. خلاصة: تغييرات صغيرة لها أثر كبير. شكراً!",
     questions: [
       { q: "Wo beginnt Gesundheit laut dem Vortrag?", qAr: "أين تبدأ الصحة حسب الحديث؟", options: ["im Alltag", "im Krankenhaus", "beim Arzt", "in der Apotheke"], correct: 0, explanation: "في الحياة اليومية." },
       { q: "Was ist wichtig?", qAr: "ما المهم؟", options: ["regelmäßige Bewegung", "viel Sitzen", "schnell essen", "wenig Schlaf"], correct: 0, explanation: "الحركة المنتظمة." },

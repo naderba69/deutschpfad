@@ -411,7 +411,7 @@ describe("A2-02 audited lesson", () => {
   it("keeps the two listening dialogs distinct and asks for answers before transcript reveal", () => {
     expect(lessonA202.listening.items.map((item) => item.id)).toEqual(["l1", "l2"]);
     expect(lessonA202.listening.items.map((item) => item.lines.length)).toEqual([7, 4]);
-    expect(lessonA202.listening.items[0].lines[0].ar).toBe("نهارك سعيد! ما شكواك؟");
+    expect(lessonA202.listening.items[0].lines[0].ar).toBe("طاب يومك! ما شكواك؟");
     expect(
       lessonA202.listening.items.every((item) =>
         item.lines.every((line) => line.de.trim() && line.ar.trim() && line.speaker.trim()),

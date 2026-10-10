@@ -32,7 +32,7 @@ const expectedMultipleChoiceOptions: Record<string, string[]> = {
   r2: ["nicht", "kein", "keine", "keinen"],
   e1: ["war", "warst", "waren", "wart"],
   e2: ["hatten", "hatte", "hattest", "hattet"],
-  e8: ["السيد فيبر المحترم،", "مرحباً يا فيبر!", "إلى اللقاء، سيد فيبر.", "نهارك سعيد يا زميل."],
+  e8: ["السيد فيبر المحترم،", "مرحباً يا فيبر!", "إلى اللقاء، سيد فيبر.", "طاب يومك يا زميل."],
   e11: [
     "Die Kollegen waren gestern im Büro.",
     "Die Kollegen war gestern im Büro.",
@@ -463,8 +463,8 @@ describe("A2-05 audited lesson", () => {
     ]);
     const expectedDialogues = [
       ["l1", [
-        ["Frau Weber", "Firma Weber, Anna Weber, guten Tag!", "شركة فيبر، آنا فيبر، نهارك سعيد!"],
-        ["Sami", "Guten Tag, hier ist Sami Ben Ali. Kann ich mit Herrn Schulz sprechen?", "نهارك سعيد، معك سامي بن علي. هل يمكنني التحدث مع السيد شولتس؟"],
+        ["Frau Weber", "Firma Weber, Anna Weber, guten Tag!", "شركة فيبر، آنا فيبر، طاب يومك!"],
+        ["Sami", "Guten Tag, hier ist Sami Ben Ali. Kann ich mit Herrn Schulz sprechen?", "طاب يومك، معك سامي بن علي. هل يمكنني التحدث مع السيد شولتس؟"],
         ["Frau Weber", "Herr Schulz ist gerade in einer Besprechung. Möchten Sie eine Nachricht hinterlassen?", "السيد شولتس في اجتماع الآن. هل ترغب في ترك رسالة؟"],
         ["Sami", "Ja, bitte sagen Sie ihm, dass ich heute Nachmittag zurückrufe.", "نعم، من فضلك أخبريه أنني سأتصل مجدداً بعد ظهر اليوم."],
         ["Frau Weber", "Gern. Ich richte es aus.", "بكل سرور. سأبلغه ذلك."],
@@ -528,8 +528,8 @@ describe("A2-05 audited lesson", () => {
         ["Ich bin gestern krank gewesen.", "كنت مريضاً أمس؛ هذه صيغة Perfekt صحيحة أيضاً."],
       ],
       [
-        ["Firma Weber, Anna Weber, guten Tag!", "شركة فيبر، آنا فيبر، نهارك سعيد!"],
-        ["Guten Tag, hier ist Sami Ben Ali.", "نهارك سعيد، معك سامي بن علي."],
+        ["Firma Weber, Anna Weber, guten Tag!", "شركة فيبر، آنا فيبر، طاب يومك!"],
+        ["Guten Tag, hier ist Sami Ben Ali.", "طاب يومك، معك سامي بن علي."],
         ["Mit wem spreche ich, bitte?", "مع من أتحدث، من فضلك؟"],
         ["Einen Moment bitte. Ich verbinde Sie.", "لحظة، من فضلك. سأحوّلك إلى الجهة المطلوبة."],
         ["Kann ich eine Nachricht hinterlassen?", "هل يمكنني ترك رسالة؟"],
@@ -621,7 +621,7 @@ describe("A2-05 audited lesson", () => {
     ]);
     expect(lessonA205.pronunciation.tip).toBe("استخدم رموز IPA أو تسجيلاً موثوقاً عند التدرب. لا يقابل ü في Büro صوت عربي مطابق؛ فلا تختزله إلى /u/ أو /i/. وch في Besprechung [ç] ليس شيناً أو خاءً مطابقة؛ أما Nachricht ففيها [x] بعد a و[ç] بعد i. قد يختلف تحقيق r الألماني بحسب المتحدث والمنطقة؛ وهذه الرموز أوصاف قاموسية وليست طريقة نطق وحيدة.");
     expect(lessonA205.pronunciation.shadowing?.map((line) => [line.de, line.ar, line.tip])).toEqual([
-      ["Firma Weber, guten Tag!", "شركة فيبر، نهارك سعيد!", "ابدأ بتحية قصيرة واضحة، ثم انطق اسم الشركة؛ هذا تدريب نطق لا تقييم لمكالمة حقيقية."],
+      ["Firma Weber, guten Tag!", "شركة فيبر، طاب يومك!", "ابدأ بتحية قصيرة واضحة، ثم انطق اسم الشركة؛ هذا تدريب نطق لا تقييم لمكالمة حقيقية."],
       ["Ich verbinde Sie.", "سأحوّلك إلى الجهة المطلوبة.", "ich ينتهي بـ /ç/ بعد حركة أمامية؛ verbinde: /fɛɐ̯ˈbɪndə/."],
       ["Ich war gestern im Büro.", "كنت أمس في المكتب.", "war /vaːɐ̯/؛ Büro /byˈʁoː/، والنبر الرئيس على المقطع الأخير."],
       ["Wir hatten viel Arbeit.", "كان لدينا عمل كثير.", "hatten: /ˈhatn̩/؛ الكتابة tt بعد الحركة القصيرة لا تعني نطق t طويلة مستقلة."],

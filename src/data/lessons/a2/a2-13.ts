@@ -645,11 +645,11 @@ export const lessonA213: Lesson = {
       rounds: [
         {
           speakerDe: "Sprachschule Rheinbogen, guten Tag. Was kann ich für Sie tun?",
-          speakerAr: "مدرسة راينبوغن للغات، نهارك سعيد. كيف أساعدك؟",
+          speakerAr: "مدرسة راينبوغن للغات، طاب يومك. كيف أساعدك؟",
           options: [
             {
               de: "Guten Tag, hier ist Sami Ben Ali. Ich möchte wissen, ob mein A2-Ergebnis schon da ist.",
-              ar: "نهارك سعيد، معك سامي بن علي. أود أن أعرف إن كانت نتيجتي في A2 قد صدرت.",
+              ar: "طاب يومك، معك سامي بن علي. أود أن أعرف إن كانت نتيجتي في A2 قد صدرت.",
               best: true,
               replyDe: "Einen Moment bitte... Ja, Sie haben bestanden. Herzlichen Glückwunsch!",
               replyAr: "لحظة من فضلك... نعم، لقد نجحت. تهانينا!",

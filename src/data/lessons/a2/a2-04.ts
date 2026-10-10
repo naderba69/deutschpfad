@@ -923,7 +923,7 @@ Kaution مبلغ ضمان للسكن، لا رسم معاينة ولا إيجا�
       rounds: [
         {
           speakerDe: "Guten Tag, rufen Sie wegen der Wohnungsanzeige an?",
-          speakerAr: "نهارك سعيد، هل تتصل بخصوص إعلان الشقة؟",
+          speakerAr: "طاب يومك، هل تتصل بخصوص إعلان الشقة؟",
           options: [
             {
               de: "Ja, genau. Ist die Wohnung noch frei?",

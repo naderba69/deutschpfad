@@ -15,7 +15,7 @@ export const A2_DIALOGUES: DailyDialogue[] = [
     emoji: "🩺",
     situation: "تزور الطبيب لأنك مريض",
     turns: [
-      { speaker: "الطبيب", role: "a", de: "Guten Tag! Was fehlt Ihnen?", ar: "نهارك سعيد! ماذا تعاني؟" },
+      { speaker: "الطبيب", role: "a", de: "Guten Tag! Was fehlt Ihnen?", ar: "طاب يومك! ماذا تعاني؟" },
       { speaker: "أنت", role: "b", de: "Ich habe seit zwei Tagen Halsschmerzen und Husten.", ar: "عندي منذ يومين ألم في الحلق وسعال." },
       { speaker: "الطبيب", role: "a", de: "Haben Sie auch Fieber?", ar: "هل عندك حرارة أيضاً؟" },
       { speaker: "أنت", role: "b", de: "Ja, gestern hatte ich 38 Grad.", ar: "نعم، أمس كانت عندي 38 درجة." },
@@ -120,8 +120,8 @@ export const A2_DIALOGUES: DailyDialogue[] = [
     emoji: "🔑",
     situation: "تتصل بوكيل عقارات عن شقة معلنة",
     turns: [
-      { speaker: "أنت", role: "a", de: "Guten Tag! Ich rufe wegen der Wohnung an.", ar: "نهارك سعيد! أتصل بخصوص الشقة." },
-      { speaker: "الوكيل", role: "b", de: "Guten Tag! Welche Wohnung meinen Sie?", ar: "نهارك سعيد! أي شقة تقصد؟" },
+      { speaker: "أنت", role: "a", de: "Guten Tag! Ich rufe wegen der Wohnung an.", ar: "طاب يومك! أتصل بخصوص الشقة." },
+      { speaker: "الوكيل", role: "b", de: "Guten Tag! Welche Wohnung meinen Sie?", ar: "طاب يومك! أي شقة تقصد؟" },
       { speaker: "أنت", role: "a", de: "Die Zweizimmerwohnung in der Hauptstraße.", ar: "شقة الغرفتين في الشارع الرئيسي." },
       { speaker: "الوكيل", role: "b", de: "Ach ja. Sie kostet 700 Euro warm.", ar: "آه نعم. تكلف 700 يورو شامل." },
       { speaker: "أنت", role: "a", de: "Ist sie noch frei? Kann ich sie besichtigen?", ar: "هل ما زالت متاحة؟ هل أستطيع معاينتها؟" },
@@ -155,7 +155,7 @@ export const A2_DIALOGUES: DailyDialogue[] = [
     emoji: "✈️",
     situation: "تحجز رحلة إلى ألمانيا",
     turns: [
-      { speaker: "الموظفة", role: "a", de: "Guten Tag! Wie kann ich Ihnen helfen?", ar: "نهارك سعيد! كيف أساعدك؟" },
+      { speaker: "الموظفة", role: "a", de: "Guten Tag! Wie kann ich Ihnen helfen?", ar: "طاب يومك! كيف أساعدك؟" },
       { speaker: "أنت", role: "b", de: "Ich möchte einen Flug nach Frankfurt buchen.", ar: "أريد حجز رحلة طيران إلى فرانكفورت." },
       { speaker: "الموظفة", role: "a", de: "Wann möchten Sie fliegen?", ar: "متى تريد السفر؟" },
       { speaker: "أنت", role: "b", de: "Am 15. August, am Morgen.", ar: "في 15 أغسطس، في الصباح." },
@@ -190,7 +190,7 @@ export const A2_DIALOGUES: DailyDialogue[] = [
     emoji: "📦",
     situation: "ترسل طرداً إلى الخارج",
     turns: [
-      { speaker: "أنت", role: "a", de: "Guten Tag! Ich möchte ein Paket nach Tunesien schicken.", ar: "نهارك سعيد! أريد إرسال طرد إلى تونس." },
+      { speaker: "أنت", role: "a", de: "Guten Tag! Ich möchte ein Paket nach Tunesien schicken.", ar: "طاب يومك! أريد إرسال طرد إلى تونس." },
       { speaker: "الموظفة", role: "b", de: "Gut. Was ist im Paket?", ar: "جيد. ماذا يوجد في الطرد؟" },
       { speaker: "أنت", role: "a", de: "Kleidung und ein Buch.", ar: "ملابس وكتاب." },
       { speaker: "الموظفة", role: "b", de: "Wie schwer ist es?", ar: "كم وزنه؟" },
@@ -225,7 +225,7 @@ export const A2_DIALOGUES: DailyDialogue[] = [
     emoji: "🏦",
     situation: "تفتح حساباً في البنك",
     turns: [
-      { speaker: "الموظفة", role: "a", de: "Guten Tag! Was kann ich für Sie tun?", ar: "نهارك سعيد! ماذا أفعل لك؟" },
+      { speaker: "الموظفة", role: "a", de: "Guten Tag! Was kann ich für Sie tun?", ar: "طاب يومك! ماذا أفعل لك؟" },
       { speaker: "أنت", role: "b", de: "Ich möchte ein Konto eröffnen.", ar: "أريد فتح حساب." },
       { speaker: "الموظفة", role: "a", de: "Gerne. Haben Sie Ihren Pass dabei?", ar: "بكل سرور. هل معك جواز السفر؟" },
       { speaker: "أنت", role: "b", de: "Ja, hier ist mein Pass.", ar: "نعم، هذا جواز سفري." },
@@ -260,7 +260,7 @@ export const A2_DIALOGUES: DailyDialogue[] = [
     emoji: "📱",
     situation: "تتصل بشركة الاتصالات لأن الهاتف لا يعمل",
     turns: [
-      { speaker: "الموظف", role: "a", de: "Service-Center, guten Tag! Wie kann ich helfen?", ar: "مركز الخدمة، نهارك سعيد! كيف أساعد؟" },
+      { speaker: "الموظف", role: "a", de: "Service-Center, guten Tag! Wie kann ich helfen?", ar: "مركز الخدمة، طاب يومك! كيف أساعد؟" },
       { speaker: "أنت", role: "b", de: "Mein Handy funktioniert nicht. Es hat kein Internet.", ar: "هاتفي لا يعمل. لا يوجد إنترنت." },
       { speaker: "الموظف", role: "a", de: "Haben Sie es neu gestartet?", ar: "هل أعدت تشغيله؟" },
       { speaker: "أنت", role: "b", de: "Ja, aber es hilft nicht.", ar: "نعم، لكن لا ينفع." },
@@ -330,8 +330,8 @@ export const A2_DIALOGUES: DailyDialogue[] = [
     emoji: "💼",
     situation: "تتصل بشركة تسأل عن وظيفة معلنة",
     turns: [
-      { speaker: "أنت", role: "a", de: "Guten Tag! Ich rufe wegen der Stelle als Verkäufer an.", ar: "نهارك سعيد! أتصل بخصوص وظيفة البائع." },
-      { speaker: "السكرتيرة", role: "b", de: "Guten Tag! Haben Sie Erfahrung im Verkauf?", ar: "نهارك سعيد! هل لديك خبرة في البيع؟" },
+      { speaker: "أنت", role: "a", de: "Guten Tag! Ich rufe wegen der Stelle als Verkäufer an.", ar: "طاب يومك! أتصل بخصوص وظيفة البائع." },
+      { speaker: "السكرتيرة", role: "b", de: "Guten Tag! Haben Sie Erfahrung im Verkauf?", ar: "طاب يومك! هل لديك خبرة في البيع؟" },
       { speaker: "أنت", role: "a", de: "Ja, ich habe zwei Jahre Erfahrung.", ar: "نعم، عندي سنتان خبرة." },
       { speaker: "السكرتيرة", role: "b", de: "Sehr gut. Können Sie am Montag zum Gespräch kommen?", ar: "ممتاز. هل تستطيع الحضور للمقابلة يوم الاثنين؟" },
       { speaker: "أنت", role: "a", de: "Ja, gerne. Um wie viel Uhr?", ar: "نعم بكل سرور. في أي ساعة؟" },
@@ -365,7 +365,7 @@ export const A2_DIALOGUES: DailyDialogue[] = [
     emoji: "💇",
     situation: "تقص شعرك وتعبر عن رغبتك",
     turns: [
-      { speaker: "الحلاق", role: "a", de: "Guten Tag! Was möchten Sie?", ar: "نهارك سعيد! ماذا تريد؟" },
+      { speaker: "الحلاق", role: "a", de: "Guten Tag! Was möchten Sie?", ar: "طاب يومك! ماذا تريد؟" },
       { speaker: "أنت", role: "b", de: "Ich möchte meine Haare schneiden lassen.", ar: "أريد قص شعري." },
       { speaker: "الحلاق", role: "a", de: "Wie möchten Sie die Haare? Kürzer?", ar: "كيف تريد الشعر؟ أقصر؟" },
       { speaker: "أنت", role: "b", de: "Ja, ein bisschen kürzer, aber nicht zu kurz.", ar: "نعم، أقصر قليلاً لكن ليس قصيراً جداً." },
@@ -435,7 +435,7 @@ export const A2_DIALOGUES: DailyDialogue[] = [
     emoji: "👖",
     situation: "تعيد بنطالاً لا يناسبك إلى المتجر",
     turns: [
-      { speaker: "أنت", role: "a", de: "Guten Tag! Ich möchte diese Hose zurückgeben.", ar: "نهارك سعيد! أريد إرجاع هذا البنطال." },
+      { speaker: "أنت", role: "a", de: "Guten Tag! Ich möchte diese Hose zurückgeben.", ar: "طاب يومك! أريد إرجاع هذا البنطال." },
       { speaker: "البائعة", role: "b", de: "Ist etwas nicht in Ordnung?", ar: "هل هناك مشكلة؟" },
       { speaker: "أنت", role: "a", de: "Die Größe passt nicht. Sie ist zu klein.", ar: "المقاس غير مناسب. صغير جداً." },
       { speaker: "البائعة", role: "b", de: "Haben Sie den Kassenzettel?", ar: "هل لديك الإيصال؟" },

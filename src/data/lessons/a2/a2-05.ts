@@ -226,8 +226,8 @@ export const lessonA205: Lesson = {
         ],
       },
       examples: [
-        { de: "Firma Weber, Anna Weber, guten Tag!", ar: "شركة فيبر، آنا فيبر، نهارك سعيد!" },
-        { de: "Guten Tag, hier ist Sami Ben Ali.", ar: "نهارك سعيد، معك سامي بن علي." },
+        { de: "Firma Weber, Anna Weber, guten Tag!", ar: "شركة فيبر، آنا فيبر، طاب يومك!" },
+        { de: "Guten Tag, hier ist Sami Ben Ali.", ar: "طاب يومك، معك سامي بن علي." },
         { de: "Mit wem spreche ich, bitte?", ar: "مع من أتحدث، من فضلك؟" },
         { de: "Einen Moment bitte. Ich verbinde Sie.", ar: "لحظة، من فضلك. سأحوّلك إلى الجهة المطلوبة." },
         { de: "Kann ich eine Nachricht hinterlassen?", ar: "هل يمكنني ترك رسالة؟" },
@@ -374,8 +374,8 @@ export const lessonA205: Lesson = {
         id: "l1",
         title: "ترك رسالة هاتفية",
         lines: [
-          { speaker: "Frau Weber", de: "Firma Weber, Anna Weber, guten Tag!", ar: "شركة فيبر، آنا فيبر، نهارك سعيد!" },
-          { speaker: "Sami", de: "Guten Tag, hier ist Sami Ben Ali. Kann ich mit Herrn Schulz sprechen?", ar: "نهارك سعيد، معك سامي بن علي. هل يمكنني التحدث مع السيد شولتس؟" },
+          { speaker: "Frau Weber", de: "Firma Weber, Anna Weber, guten Tag!", ar: "شركة فيبر، آنا فيبر، طاب يومك!" },
+          { speaker: "Sami", de: "Guten Tag, hier ist Sami Ben Ali. Kann ich mit Herrn Schulz sprechen?", ar: "طاب يومك، معك سامي بن علي. هل يمكنني التحدث مع السيد شولتس؟" },
           { speaker: "Frau Weber", de: "Herr Schulz ist gerade in einer Besprechung. Möchten Sie eine Nachricht hinterlassen?", ar: "السيد شولتس في اجتماع الآن. هل ترغب في ترك رسالة؟" },
           { speaker: "Sami", de: "Ja, bitte sagen Sie ihm, dass ich heute Nachmittag zurückrufe.", ar: "نعم، من فضلك أخبريه أنني سأتصل مجدداً بعد ظهر اليوم." },
           { speaker: "Frau Weber", de: "Gern. Ich richte es aus.", ar: "بكل سرور. سأبلغه ذلك." },
@@ -459,7 +459,7 @@ export const lessonA205: Lesson = {
     tip:
       "استخدم رموز IPA أو تسجيلاً موثوقاً عند التدرب. لا يقابل ü في Büro صوت عربي مطابق؛ فلا تختزله إلى /u/ أو /i/. وch في Besprechung [ç] ليس شيناً أو خاءً مطابقة؛ أما Nachricht ففيها [x] بعد a و[ç] بعد i. قد يختلف تحقيق r الألماني بحسب المتحدث والمنطقة؛ وهذه الرموز أوصاف قاموسية وليست طريقة نطق وحيدة.",
     shadowing: [
-      { de: "Firma Weber, guten Tag!", ar: "شركة فيبر، نهارك سعيد!", tip: "ابدأ بتحية قصيرة واضحة، ثم انطق اسم الشركة؛ هذا تدريب نطق لا تقييم لمكالمة حقيقية." },
+      { de: "Firma Weber, guten Tag!", ar: "شركة فيبر، طاب يومك!", tip: "ابدأ بتحية قصيرة واضحة، ثم انطق اسم الشركة؛ هذا تدريب نطق لا تقييم لمكالمة حقيقية." },
       { de: "Ich verbinde Sie.", ar: "سأحوّلك إلى الجهة المطلوبة.", tip: "ich ينتهي بـ /ç/ بعد حركة أمامية؛ verbinde: /fɛɐ̯ˈbɪndə/." },
       { de: "Ich war gestern im Büro.", ar: "كنت أمس في المكتب.", tip: "war /vaːɐ̯/؛ Büro /byˈʁoː/، والنبر الرئيس على المقطع الأخير." },
       { de: "Wir hatten viel Arbeit.", ar: "كان لدينا عمل كثير.", tip: "hatten: /ˈhatn̩/؛ الكتابة tt بعد الحركة القصيرة لا تعني نطق t طويلة مستقلة." },
@@ -594,7 +594,7 @@ export const lessonA205: Lesson = {
       instructionAr: "اختر المعنى الأقرب للتحية الرسمية:",
       questionDe: "Sehr geehrter Herr Weber,",
       questionAr: "ما معنى العبارة في بداية رسالة؟",
-      options: ["السيد فيبر المحترم،", "مرحباً يا فيبر!", "إلى اللقاء، سيد فيبر.", "نهارك سعيد يا زميل."],
+      options: ["السيد فيبر المحترم،", "مرحباً يا فيبر!", "إلى اللقاء، سيد فيبر.", "طاب يومك يا زميل."],
       correctIndex: 0,
       explanation: "هذه تحية افتتاحية رسمية لرجل يُخاطَب بلقب Herr واسم عائلته.",
       errorType: "vocabulary",

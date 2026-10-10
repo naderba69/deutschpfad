@@ -476,7 +476,7 @@ export const lessonA107: Lesson = {
         id: "listen-a1-07-market",
         title: "Am Marktstand",
         lines: [
-          {speaker: "Kundin", de: "Guten Tag. Was kostet ein Kilo Äpfel?", ar: "نهارك سعيد. كم ثمن كيلوغرام من التفاح؟"},
+          {speaker: "Kundin", de: "Guten Tag. Was kostet ein Kilo Äpfel?", ar: "طاب يومك. كم ثمن كيلوغرام من التفاح؟"},
           {speaker: "Verkäufer", de: "Ein Kilo kostet zwei Euro vierzig.", ar: "ثمن الكيلوغرام يورو وأربعون سنتاً."},
           {speaker: "Kundin", de: "Dann nehme ich ein Kilo, bitte. Und ich möchte zwei Orangen.", ar: "إذن سآخذ كيلوغراماً، من فضلك. وأريد برتقالتين."},
           {speaker: "Verkäufer", de: "Gern. Die Orangen kosten zusammen einen Euro.", ar: "بكل سرور. ثمن البرتقالتين يورو واحد."},
@@ -841,7 +841,7 @@ export const lessonA107: Lesson = {
       textDe:
         "Kundin: Guten Tag. Was kostet ein Kilo Äpfel?\nVerkäufer: Ein Kilo kostet 2,40 Euro.\nKundin: Ich nehme ein Kilo, bitte. Und was kostet eine Flasche Wasser?\nVerkäufer: 0,80 Euro.\nKundin: Dann nehme ich auch eine Flasche.\nVerkäufer: Das macht zusammen 3,20 Euro.",
       textAr:
-        "الزبونة: نهارك سعيد. كم ثمن كيلوغرام من التفاح؟\nالبائع: ثمن الكيلوغرام 2,40 يورو.\nالزبونة: سآخذ كيلوغراماً، من فضلك. وكم ثمن قارورة ماء؟\nالبائع: 0,80 يورو.\nالزبونة: إذن سآخذ قارورة أيضاً.\nالبائع: المجموع 3,20 يورو.",
+        "الزبونة: طاب يومك. كم ثمن كيلوغرام من التفاح؟\nالبائع: ثمن الكيلوغرام 2,40 يورو.\nالزبونة: سآخذ كيلوغراماً، من فضلك. وكم ثمن قارورة ماء؟\nالبائع: 0,80 يورو.\nالزبونة: إذن سآخذ قارورة أيضاً.\nالبائع: المجموع 3,20 يورو.",
       statements: [
         {id: "s1", de: "Die Kundin kauft ein Kilo Äpfel.", ar: "تشتري الزبونة كيلوغراماً من التفاح.", isTrue: true, whyAr: "تقول: Ich nehme ein Kilo؛ والسؤال السابق كان عن Äpfel."},
         {id: "s2", de: "Die Flasche Wasser kostet 2,40 Euro.", ar: "ثمن قارورة الماء 2,40 يورو.", isTrue: false, whyAr: "2,40 يورو ثمن كيلو التفاح؛ الماء ثمنه 0,80 يورو."},
@@ -1089,7 +1089,7 @@ export const lessonA107: Lesson = {
       rounds: [
         {
           speakerDe: "Verkäuferin: Guten Tag. Was darf es sein?",
-          speakerAr: "البائعة: نهارك سعيد. ماذا تريد؟",
+          speakerAr: "البائعة: طاب يومك. ماذا تريد؟",
           options: [
             {
               de: "Ich hätte gern ein Kilo Äpfel, bitte.",

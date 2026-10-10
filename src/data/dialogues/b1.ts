@@ -85,7 +85,7 @@ export const B1_DIALOGUES: DailyDialogue[] = [
     emoji: "📝",
     situation: "تشتكي من فندق لخدمة العملاء",
     turns: [
-      { speaker: "الموظف", role: "a", de: "Guten Tag, Service. Wie kann ich helfen?", ar: "نهارك سعيد، الخدمة. كيف أساعد؟" },
+      { speaker: "الموظف", role: "a", de: "Guten Tag, Service. Wie kann ich helfen?", ar: "طاب يومك، الخدمة. كيف أساعد؟" },
       { speaker: "أنت", role: "b", de: "Ich möchte mich über das Hotel beschweren. Das Zimmer war schmutzig.", ar: "أريد تقديم شكوى عن الفندق. الغرفة كانت متسخة." },
       { speaker: "الموظف", role: "a", de: "Das tut mir sehr leid. Wann waren Sie dort?", ar: "يؤسفني جداً. متى كنت هناك؟" },
       { speaker: "أنت", role: "b", de: "Letzte Woche, vom 3. bis 5. August.", ar: "الأسبوع الماضي، من 3 إلى 5 أغسطس." },
@@ -93,7 +93,7 @@ export const B1_DIALOGUES: DailyDialogue[] = [
       { speaker: "أنت", role: "b", de: "Ich erwarte eine Entschädigung, zum Beispiel eine Rückerstattung.", ar: "أتوقع تعويضاً، مثلاً استرداد المال." },
     ],
     questions: [
-      { de: "Worüber beschwert sich die Person?", ar: "عماذا تشتكي الشخص؟", options: [
+      { de: "Worüber beschwert sich die Person?", ar: "ممَّ يشتكي الشخص؟", options: [
         { text: "Über das schmutzige Zimmer", ar: "عن الغرفة المتسخة", correct: true, explanation: "نعم — «Das Zimmer war schmutzig»." },
         { text: "Über das Essen", ar: "عن الطعام", correct: false, explanation: "لا — الغرفة." },
         { text: "Über den Preis", ar: "عن السعر", correct: false, explanation: "لا — النظافة." },
@@ -120,8 +120,8 @@ export const B1_DIALOGUES: DailyDialogue[] = [
     emoji: "📅",
     situation: "تتصل لتأكيد موعد طبيب",
     turns: [
-      { speaker: "السكرتيرة", role: "a", de: "Praxis Dr. Müller, guten Tag!", ar: "عيادة الدكتور مولر، نهارك سعيد!" },
-      { speaker: "أنت", role: "b", de: "Guten Tag! Ich möchte meinen Termin am Donnerstag bestätigen.", ar: "نهارك سعيد! أريد تأكيد موعدي يوم الخميس." },
+      { speaker: "السكرتيرة", role: "a", de: "Praxis Dr. Müller, guten Tag!", ar: "عيادة الدكتور مولر، طاب يومك!" },
+      { speaker: "أنت", role: "b", de: "Guten Tag! Ich möchte meinen Termin am Donnerstag bestätigen.", ar: "طاب يومك! أريد تأكيد موعدي يوم الخميس." },
       { speaker: "السكرتيرة", role: "a", de: "Einen Moment, bitte. Ja, Donnerstag um 14 Uhr. Stimmt das?", ar: "لحظة من فضلك. نعم، الخميس في الثانية. صحيح؟" },
       { speaker: "أنت", role: "b", de: "Ja, genau. Muss ich etwas vorbereiten?", ar: "نعم بالضبط. هل يجب أن أحضر شيئاً؟" },
       { speaker: "السكرتيرة", role: "a", de: "Bitte bringen Sie Ihre Versicherungskarte mit.", ar: "من فضلك أحضر بطاقة التأمين." },
@@ -295,7 +295,7 @@ export const B1_DIALOGUES: DailyDialogue[] = [
     emoji: "🎵",
     situation: "تشتري تذكرتين لحفلة موسيقية",
     turns: [
-      { speaker: "الموظفة", role: "a", de: "Guten Tag! Was möchten Sie bestellen?", ar: "نهارك سعيد! ماذا تريد أن تحجز؟" },
+      { speaker: "الموظفة", role: "a", de: "Guten Tag! Was möchten Sie bestellen?", ar: "طاب يومك! ماذا تريد أن تحجز؟" },
       { speaker: "أنت", role: "b", de: "Ich hätte gern zwei Karten für das Konzert am Freitag.", ar: "أود تذكرتين لحفلة يوم الجمعة." },
       { speaker: "الموظفة", role: "a", de: "Die Karten kosten 40 Euro pro Stück.", ar: "التذاكر تكلف 40 يورو للواحدة." },
       { speaker: "أنت", role: "b", de: "Okay, also 80 Euro insgesamt. Gibt es Studentenrabatt?", ar: "حسناً، إذن 80 إجمالاً. هل يوجد خصم طلاب؟" },

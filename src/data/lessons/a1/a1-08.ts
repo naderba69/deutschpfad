@@ -744,7 +744,7 @@ export const lessonA108: Lesson = {
           {
             speaker: "Verkäuferin",
             de: "Guten Tag! Kann ich Ihnen helfen?",
-            ar: "نهارك سعيد! هل أستطيع مساعدتك؟",
+            ar: "طاب يومك! هل أستطيع مساعدتك؟",
           },
           {
             speaker: "Mona",

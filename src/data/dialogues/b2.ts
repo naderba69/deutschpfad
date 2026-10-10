@@ -50,11 +50,11 @@ export const B2_DIALOGUES: DailyDialogue[] = [
     emoji: "👥",
     situation: "تناقش مع فريقك موعد تسليم المشروع",
     turns: [
-      { speaker: "الزملية", role: "a", de: "Wir haben ein Problem mit der Deadline. Wir schaffen es nicht bis Freitag.", ar: "عندنا مشكلة مع الموعد النهائي. لن ننجز حتى الجمعة." },
+      { speaker: "الزميلة", role: "a", de: "Wir haben ein Problem mit der Deadline. Wir schaffen es nicht bis Freitag.", ar: "عندنا مشكلة مع الموعد النهائي. لن ننجز حتى الجمعة." },
       { speaker: "أنت", role: "b", de: "Das ist besorgniserregend. Was ist der aktuelle Stand?", ar: "هذا مقلق. ما الوضع الحالي؟" },
-      { speaker: "الزملية", role: "a", de: "Wir brauchen noch zwei Tage für die Tests.", ar: "نحتاج يومين إضافيين للاختبارات." },
+      { speaker: "الزميلة", role: "a", de: "Wir brauchen noch zwei Tage für die Tests.", ar: "نحتاج يومين إضافيين للاختبارات." },
       { speaker: "أنت", role: "b", de: "In Anbetracht der Umstände sollten wir den Kunden informieren.", ar: "بالنظر إلى الظروف، يجب إبلاغ العميل." },
-      { speaker: "الزملية", role: "a", de: "Einverstanden. Wer übernimmt die Kommunikation?", ar: "موافقة. من يتولى التواصل؟" },
+      { speaker: "الزميلة", role: "a", de: "Einverstanden. Wer übernimmt die Kommunikation?", ar: "موافقة. من يتولى التواصل؟" },
       { speaker: "أنت", role: "b", de: "Ich kann das übernehmen und einen neuen Termin vorschlagen.", ar: "أستطيع تولي ذلك واقتراح موعد جديد." },
     ],
     questions: [
@@ -155,7 +155,7 @@ export const B2_DIALOGUES: DailyDialogue[] = [
     emoji: "🛂",
     situation: "فقدت جواز سفرك في الخارج وتذهب للسفارة",
     turns: [
-      { speaker: "الموظف", role: "a", de: "Guten Tag! Wie kann ich Ihnen helfen?", ar: "نهارك سعيد! كيف أساعدك؟" },
+      { speaker: "الموظف", role: "a", de: "Guten Tag! Wie kann ich Ihnen helfen?", ar: "طاب يومك! كيف أساعدك؟" },
       { speaker: "أنت", role: "b", de: "Ich habe meinen Pass verloren. Ich brauche einen Ersatz.", ar: "فقدت جواز سفري. أحتاج بديلاً." },
       { speaker: "الموظف", role: "a", de: "Das tut mir leid. Haben Sie eine Anzeige bei der Polizei gemacht?", ar: "يؤسفني. هل قدمت بلاغاً للشرطة؟" },
       { speaker: "أنت", role: "b", de: "Noch nicht. Was muss ich zuerst tun?", ar: "ليس بعد. ماذا أفعل أولاً؟" },
@@ -260,11 +260,11 @@ export const B2_DIALOGUES: DailyDialogue[] = [
     emoji: "📊",
     situation: "تستعد مع زميلة لعرض أمام المديرية",
     turns: [
-      { speaker: "الزملية", role: "a", de: "Sind wir bereit für die Präsentation morgen?", ar: "هل نحن جاهزان للعرض غداً؟" },
+      { speaker: "الزميلة", role: "a", de: "Sind wir bereit für die Präsentation morgen?", ar: "هل نحن جاهزان للعرض غداً؟" },
       { speaker: "أنت", role: "b", de: "Fast. Ich habe die Folien fertig, aber ich bin beim Zeitplan unsicher.", ar: "تقريباً. أنهيت الشرائح لكني غير متأكد من خطة الوقت." },
-      { speaker: "الزملية", role: "a", de: "Wir haben 20 Minuten. Wir sollten die Einleitung kürzen.", ar: "لدينا 20 دقيقة. يجب تقصير المقدمة." },
+      { speaker: "الزميلة", role: "a", de: "Wir haben 20 Minuten. Wir sollten die Einleitung kürzen.", ar: "لدينا 20 دقيقة. يجب تقصير المقدمة." },
       { speaker: "أنت", role: "b", de: "Guter Vorschlag. Und wir müssen die wichtigsten Ergebnisse betonen.", ar: "اقتراح جيد. ويجب التركيز على أهم النتائج." },
-      { speaker: "الزملية", role: "a", de: "Einverstanden. Sollen wir einmal proben?", ar: "موافقة. هل نتدرب مرة؟" },
+      { speaker: "الزميلة", role: "a", de: "Einverstanden. Sollen wir einmal proben?", ar: "موافقة. هل نتدرب مرة؟" },
       { speaker: "أنت", role: "b", de: "Unbedingt. Proben wir jetzt, dann sind wir morgen sicher.", ar: "بالتأكيد. لنتدرب الآن لنكون واثقين غداً." },
     ],
     questions: [
@@ -295,7 +295,7 @@ export const B2_DIALOGUES: DailyDialogue[] = [
     emoji: "🏠",
     situation: "تناقش مشكلة تدفئة مع المالك",
     turns: [
-      { speaker: "أنت", role: "a", de: "Guten Tag! Ich muss mit Ihnen über die Heizung sprechen. Sie funktioniert seit zwei Wochen nicht.", ar: "نهارك سعيد! يجب التحدث عن التدفئة. لا تعمل منذ أسبوعين." },
+      { speaker: "أنت", role: "a", de: "Guten Tag! Ich muss mit Ihnen über die Heizung sprechen. Sie funktioniert seit zwei Wochen nicht.", ar: "طاب يومك! يجب التحدث عن التدفئة. لا تعمل منذ أسبوعين." },
       { speaker: "المالك", role: "b", de: "Das ist ärgerlich. Haben Sie den Handwerker angerufen?", ar: "هذا مزعج. هل اتصلت بالسباك؟" },
       { speaker: "أنت", role: "a", de: "Ja, aber er sagt, es braucht ein neues Teil und das dauert.", ar: "نعم، لكنه يقول إنه يحتاج قطعة جديدة ويستغرق ذلك وقتاً." },
       { speaker: "المالك", role: "b", de: "Ich werde mich darum kümmern. Können Sie bis nächste Woche warten?", ar: "سأتولى الأمر. هل تستطيع الانتظار حتى الأسبوع القادم؟" },
@@ -373,7 +373,7 @@ export const B2_DIALOGUES: DailyDialogue[] = [
       { speaker: "أنت", role: "b", de: "Mindestens 500 Einheiten pro Monat.", ar: "500 وحدة شهرياً كحد أدنى." },
     ],
     questions: [
-      { de: "Was ist der Kunde nicht zufrieden?", ar: "عماذا غير راضٍ العميل؟", options: [
+      { de: "Was ist der Kunde nicht zufrieden?", ar: "ما الذي لم يكن العميل راضياً عنه؟", options: [
         { text: "Über den Preis", ar: "عن السعر", correct: true, explanation: "نعم — «mit dem Preis nicht zufrieden»." },
         { text: "Über die Qualität", ar: "عن الجودة", correct: false, explanation: "لا — السعر." },
         { text: "Über die Lieferung", ar: "عن التسليم", correct: false, explanation: "لا — السعر." },
@@ -400,7 +400,7 @@ export const B2_DIALOGUES: DailyDialogue[] = [
     emoji: "🩻",
     situation: "تشرح أعراضاً معقدة لطبيب متخصص",
     turns: [
-      { speaker: "الطبيب", role: "a", de: "Guten Tag! Was führt Sie zu mir?", ar: "نهارك سعيد! ما الذي أتى بك؟" },
+      { speaker: "الطبيب", role: "a", de: "Guten Tag! Was führt Sie zu mir?", ar: "طاب يومك! ما الذي أتى بك؟" },
       { speaker: "أنت", role: "b", de: "Ich habe seit Monaten wiederkehrende Rückenschmerzen und weiß nicht, woran es liegt.", ar: "عندي منذ أشهر آلام ظهر متكررة ولا أعرف السبب." },
       { speaker: "الطبيب", role: "a", de: "Wann treten die Schmerzen auf?", ar: "متى تظهر الآلام؟" },
       { speaker: "أنت", role: "b", de: "Besonders nach langem Sitzen am Schreibtisch.", ar: "خصوصاً بعد الجلوس الطويل على المكتب." },

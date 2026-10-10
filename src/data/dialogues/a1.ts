@@ -55,7 +55,7 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     emoji: "☕",
     situation: "تدخل مقهى وتطلب مشروباً وحلوى",
     turns: [
-      { speaker: "النادل", role: "a", de: "Guten Tag! Was möchten Sie?", ar: "نهارك سعيد! ماذا تريد؟" },
+      { speaker: "النادل", role: "a", de: "Guten Tag! Was möchten Sie?", ar: "طاب يومك! ماذا تريد؟" },
       { speaker: "أنت", role: "b", de: "Ich möchte einen Kaffee, bitte.", ar: "أريد قهوة من فضلك." },
       { speaker: "النادل", role: "a", de: "Mit Milch oder schwarz?", ar: "مع الحليب أم سوداء؟" },
       { speaker: "أنت", role: "b", de: "Mit Milch, bitte. Und ein Stück Kuchen.", ar: "مع الحليب من فضلك. وقطعة كعك." },
@@ -200,7 +200,7 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     emoji: "👕",
     situation: "في متجر ملابس — تريد قميصاً",
     turns: [
-      { speaker: "البائع", role: "a", de: "Guten Tag! Suchen Sie etwas?", ar: "نهارك سعيد! تبحث عن شيء؟" },
+      { speaker: "البائع", role: "a", de: "Guten Tag! Suchen Sie etwas?", ar: "طاب يومك! تبحث عن شيء؟" },
       { speaker: "أنت", role: "b", de: "Ja, ich suche ein T-Shirt.", ar: "نعم، أبحث عن قميص." },
       { speaker: "البائع", role: "a", de: "Welche Größe haben Sie?", ar: "ما مقاسك؟" },
       { speaker: "أنت", role: "b", de: "Größe M, bitte.", ar: "المقاس M من فضلك." },
@@ -375,7 +375,7 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     emoji: "💊",
     situation: "عندك صداع وتشتري دواء",
     turns: [
-      { speaker: "أنت", role: "a", de: "Guten Tag! Ich habe Kopfschmerzen.", ar: "نهارك سعيد! عندي صداع." },
+      { speaker: "أنت", role: "a", de: "Guten Tag! Ich habe Kopfschmerzen.", ar: "طاب يومك! عندي صداع." },
       { speaker: "الصيدلية", role: "b", de: "Oh, das tut mir leid. Möchten Sie Medikamente?", ar: "أوه، يؤسفني. هل تريد أدوية؟" },
       { speaker: "أنت", role: "a", de: "Ja, bitte. Gibt es etwas für Kopfschmerzen?", ar: "نعم من فضلك. هل يوجد شيء للصداع؟" },
       { speaker: "الصيدلية", role: "b", de: "Ja, hier. Nehmen Sie eine Tablette mit Wasser.", ar: "نعم، تفضل. خذ قرصاً مع الماء." },
@@ -445,8 +445,8 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     emoji: "🏨",
     situation: "تحجز غرفة في فندق هاتفياً",
     turns: [
-      { speaker: "الموظفة", role: "a", de: "Hotel Sonne, guten Tag!", ar: "فندق صن، نهارك سعيد!" },
-      { speaker: "أنت", role: "b", de: "Guten Tag! Ich möchte ein Zimmer reservieren.", ar: "نهارك سعيد! أريد حجز غرفة." },
+      { speaker: "الموظفة", role: "a", de: "Hotel Sonne, guten Tag!", ar: "فندق صن، طاب يومك!" },
+      { speaker: "أنت", role: "b", de: "Guten Tag! Ich möchte ein Zimmer reservieren.", ar: "طاب يومك! أريد حجز غرفة." },
       { speaker: "الموظفة", role: "a", de: "Für eine Person oder zwei?", ar: "لشخص أم لشخصين؟" },
       { speaker: "أنت", role: "b", de: "Für eine Person, bitte.", ar: "لشخص واحد من فضلك." },
       { speaker: "الموظفة", role: "a", de: "Für wie viele Nächte?", ar: "لكم ليلة؟" },

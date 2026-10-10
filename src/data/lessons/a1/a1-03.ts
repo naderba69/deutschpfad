@@ -802,7 +802,7 @@ export const lessonA103: Lesson = {
       rounds: [
         {
           speakerDe: "Guten Tag! Was möchten Sie trinken?",
-          speakerAr: "نهارك سعيد! ماذا تريد أن تشرب؟",
+          speakerAr: "طاب يومك! ماذا تريد أن تشرب؟",
           options: [
             { de: "Ich hätte gern einen Kaffee, bitte.", ar: "أريد قهوة من فضلك.", best: true, replyDe: "Sehr gerne! Mit Milch und Zucker?", replyAr: "بكل سرور! مع حليب وسكر؟" },
             { de: "Ich bin ein Kaffee.", ar: "أنا قهوة.", best: false, replyDe: "Meinen Sie: „Ich hätte gern einen Kaffee“?", replyAr: "هل تقصد: أودّ قهوة؟" },

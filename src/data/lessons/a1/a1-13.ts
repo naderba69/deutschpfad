@@ -308,7 +308,7 @@ export const lessonA113: Lesson = {
         ],
       },
       examples: [
-        { de: "Guten Tag! Ich hätte gern einen Kaffee, bitte.", ar: "نهارك سعيد! أود قهوة من فضلك. (مثال لطلب مهذب)" },
+        { de: "Guten Tag! Ich hätte gern einen Kaffee, bitte.", ar: "طاب يومك! أود قهوة من فضلك. (مثال لطلب مهذب)" },
         { de: "Einen Kaffee, bitte.", ar: "قهوة من فضلك. (طلب مختصر في هذا الموقف)" },
         { de: "Ich will einen Kaffee.", ar: "أريد قهوة. (تركيب صحيح؛ قد يكون أكثر مباشرة بحسب الموقف والنبرة)" },
         { de: "Was kostet der Kaffee? — Drei Euro zwanzig.", ar: "كم سعر القهوة؟ — ثلاثة يوروهات وعشرون سنتاً." },
@@ -450,7 +450,7 @@ export const lessonA113: Lesson = {
       "Nächste Woche mache ich die Prüfung Start Deutsch 1. Ich bin ein bisschen nervös. Danach möchte ich mit A2 anfangen. Ich lerne Schritt für Schritt.",
     ],
     paragraphsAr: [
-      "أتعلم الألمانية منذ سنة. قبل سنة بدأت أول دورة ألمانية لي. في الحصة الأولى قالت المعلمة «نهارك سعيد». لم أفهم تقريباً شيئاً.",
+      "أتعلم الألمانية منذ سنة. قبل سنة بدأت أول دورة ألمانية لي. في الحصة الأولى قالت المعلمة «طاب يومك». لم أفهم تقريباً شيئاً.",
       "في البداية كانت أدوات الأسماء der وdie وdas صعبة عليّ. لم أفهم: لماذا نقول „der Tisch“ لكن „die Lampe“؟ تعلمت في الدورة أن أتعلم كل كلمة جديدة مع أداتها.",
       "بعد ثلاثة أشهر تحدثت لأول مرة بجمل قصيرة بالألمانية: «اسمي أمين. أنا من تونس. أسكن في برلين». وفي السوبرماركت سألت مرة عن السعر بالألمانية. فهمتني البائعة!",
       "قلت مرة في المقهى: „Ich will einen Kaffee“؛ كانت الجملة صحيحة نحوياً ومفهومة. ولطلب ألطف أقول اليوم كثيراً: „Ich hätte gern einen Kaffee, bitte“. ويمكن أيضاً قول: „Einen Kaffee, bitte“.",

@@ -235,7 +235,7 @@ export const lessonA211: Lesson = {
         id: "l1",
         title: "عند الحلاق",
         lines: [
-          { speaker: "Friseurin", de: "Guten Tag! Was möchten Sie?", ar: "نهارك سعيد! ماذا تريد؟" },
+          { speaker: "Friseurin", de: "Guten Tag! Was möchten Sie?", ar: "طاب يومك! ماذا تريد؟" },
           { speaker: "Sami", de: "Ich möchte mir die Haare schneiden lassen.", ar: "أريد قصّ شعري لدى الحلاق." },
           { speaker: "Friseurin", de: "Kurz oder mittellang?", ar: "هل تريده قصيراً أم بطول متوسط؟" },
           { speaker: "Sami", de: "Mittellang, bitte. Ich muss mich beeilen; ich habe um zwölf einen Termin.", ar: "بطول متوسط، من فضلك. عليّ أن أسرع؛ لديّ موعد في الثانية عشرة." },
@@ -257,7 +257,7 @@ export const lessonA211: Lesson = {
         id: "l3",
         title: "ملء استمارة تدريبية افتراضية",
         lines: [
-          { speaker: "Mitarbeiterin", de: "Guten Tag! Sie möchten sich anmelden. Hier ist ein Übungsformular.", ar: "نهارك سعيد! تودّين التسجيل؛ تفضّلي هذه استمارة تدريبية." },
+          { speaker: "Mitarbeiterin", de: "Guten Tag! Sie möchten sich anmelden. Hier ist ein Übungsformular.", ar: "طاب يومك! تودّين التسجيل؛ تفضّلي هذه استمارة تدريبية." },
           { speaker: "Mona", de: "Danke. Ich fülle es gleich aus. Nachname, Vorname, Geburtsdatum, Anschrift...", ar: "شكراً. سأملؤها فوراً: اسم العائلة، الاسم الأول، تاريخ الميلاد، العنوان..." },
           { speaker: "Mitarbeiterin", de: "Tragen Sie bitte auch das Land Ihrer Anschrift und Ihre Telefonnummer ein.", ar: "اكتبي من فضلك أيضاً بلد عنوانك ورقم هاتفك." },
           { speaker: "Mona", de: "Hier steht „Staatsangehörigkeit“. Was bedeutet das?", ar: "مكتوب هنا «الجنسية». ما معنى ذلك؟" },
@@ -658,7 +658,7 @@ export const lessonA211: Lesson = {
       rounds: [
         {
           speakerDe: "Guten Tag, wie kann ich Ihnen helfen?",
-          speakerAr: "نهارك سعيد، كيف يمكنني مساعدتكم؟",
+          speakerAr: "طاب يومك، كيف يمكنني مساعدتكم؟",
           options: [
             { de: "Ich habe vor einer Woche etwas bestellt, aber es ist noch nicht angekommen.", ar: "طلبت شيئاً قبل أسبوع ولم يصل بعد.", best: true, replyDe: "Das tut mir leid. Können Sie mir bitte die Bestellnummer nennen?", replyAr: "آسف. هل يمكنكم ذكر رقم الطلب لي من فضلكم؟" },
             { de: "Ihr Laden ist schrecklich und alles ist kaputt!", ar: "متجركم فظيع وكل شيء معطل!", best: false, replyDe: "Bitte schildern Sie das Problem sachlich, damit wir Ihnen helfen können.", replyAr: "من فضلك اشرح المشكلة بهدوء ووضوح كي نتمكن من مساعدتكم." },

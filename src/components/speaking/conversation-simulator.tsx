@@ -47,7 +47,7 @@ const SCENARIOS: Scenario[] = [
       {
         speaker: "محاور",
         de: "Guten Tag! Was möchten Sie trinken?",
-        ar: "نهارك سعيد! ماذا تريد أن تشرب؟",
+        ar: "طاب يومك! ماذا تريد أن تشرب؟",
         options: [
           { de: "Einen Kaffee, bitte.", ar: "قهوة، من فضلك.", best: true, replyDe: "Sehr gerne. Kommt sofort!", replyAr: "بكل سرور. تأتي فوراً!" },
           { de: "Ich bin ein Tisch.", ar: "أنا طاولة.", best: false, replyDe: "Hmm, das verstehe ich nicht. Was möchten Sie trinken?", replyAr: "همم، لم أفهم. ماذا تريد أن تشرب؟" },
@@ -125,7 +125,7 @@ const SCENARIOS: Scenario[] = [
       {
         speaker: "محاور",
         de: "Guten Tag! Wie kann ich Ihnen helfen?",
-        ar: "نهارك سعيد! كيف يمكنني مساعدتك؟",
+        ar: "طاب يومك! كيف يمكنني مساعدتك؟",
         options: [
           { de: "Ich möchte ein Konto eröffnen.", ar: "أريد أن أفتح حساباً.", best: true, replyDe: "Sehr gerne! Haben Sie einen Termin?", replyAr: "بكل سرور! هل لديك موعد؟" },
           { de: "Ich möchte einen Kaffee.", ar: "أريد قهوة.", best: false, replyDe: "Das ist eine Bank, kein Café. Wie kann ich helfen?", replyAr: "هذا بنك وليس مقهى. كيف أساعدك؟" },

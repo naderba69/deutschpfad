@@ -490,7 +490,7 @@ export const lessonA202: Lesson = {
       examples: [
         {
           de: "Guten Tag, ich hätte gern einen Termin. Ich habe starke Zahnschmerzen.",
-          ar: "نهارك سعيد، أودّ موعداً. عندي ألمٌ شديد في الأسنان.",
+          ar: "طاب يومك، أودّ موعداً. عندي ألمٌ شديد في الأسنان.",
         },
         {
           de: "Waren Sie schon einmal bei uns? – Nein, ich bin neu hier.",
@@ -929,7 +929,7 @@ export const lessonA202: Lesson = {
           {
             speaker: "Arzt",
             de: "Guten Tag! Was fehlt Ihnen?",
-            ar: "نهارك سعيد! ما شكواك؟",
+            ar: "طاب يومك! ما شكواك؟",
           },
           {
             speaker: "Sami",
@@ -1717,7 +1717,7 @@ export const lessonA202: Lesson = {
       de: "Was fehlt Ihnen?",
       ar: "ما شكواك؟ (سؤال اصطلاحي عن الأعراض)",
       example: "Guten Tag, was fehlt Ihnen denn?",
-      exampleAr: "نهارك سعيد، ما شكواك؟",
+      exampleAr: "طاب يومك، ما شكواك؟",
       level: "A2",
     },
     {
