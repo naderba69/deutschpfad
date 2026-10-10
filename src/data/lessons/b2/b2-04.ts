@@ -94,6 +94,12 @@ export const lessonB204: Lesson = {
       correctIndex: 0,
       explanation: "محايد مع ein: gutes (درس الثقافة B1).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«gute» تستعمل مع المؤنث بعد ein، والكلمة Buch محايدة.",
+        "«guten» نهاية الجمع أو الجر، ولا تناسب ein مع Buch.",
+        "«guter» نهاية المذكر، والكلمة Buch محايدة.",
+      ],
     },
     {
       id: "r2",
@@ -104,6 +110,12 @@ export const lessonB204: Lesson = {
       correctIndex: 0,
       explanation: "فاعل مذكر → der.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«den» حالة مفعولية، والفاعل في الجملة الموصولة مذكّر في حالة الرفع.",
+        "«dem» حالة جر، ولا تناسب فاعل الجملة.",
+        "«dessen» تعني ملكية، ولا تناسب الجملة.",
+      ],
     },
     {
       id: "r3",
@@ -228,6 +240,12 @@ export const lessonB204: Lesson = {
         correctIndex: 0,
         explanation: "قال الكاتب: Mein neuer Roman ... ist fertig.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«lang» لم يصفها الكاتب بالطول.",
+          "«kurz» لم يصفها الكاتب بالقصر.",
+          "«schlecht» لم يصفها الكاتب بالسوء.",
+        ],
       },
       {
         id: "q2",
@@ -240,6 +258,12 @@ export const lessonB204: Lesson = {
         correctIndex: 0,
         explanation: "قالت الناقدة: Ein reisender Mann entdeckt seine Herkunft.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«seinen Beruf» لم تقل الناقدة إن الرجل يكتشف مهنته.",
+          "«seinen Freund» لم تقل الناقدة إن الرجل يكتشف صديقه.",
+          "«seine Stadt» لم تقل الناقدة إن الرجل يكتشف مدينته.",
+        ],
       },
       {
         id: "q3",
@@ -252,6 +276,12 @@ export const lessonB204: Lesson = {
         correctIndex: 0,
         explanation: "قالت: Die erzählte Geschichte ist sehr emotional.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«sehr langweilig» عكس ما قالته الناقدة.",
+          "«sehr kurz» لم تُذكر كوصف للقصة.",
+          "«sehr lustig» لم تُذكر كوصف للقصة.",
+        ],
       },
       {
         id: "q4",
@@ -264,6 +294,12 @@ export const lessonB204: Lesson = {
         correctIndex: 0,
         explanation: "قال الكاتب: in drei Jahren geschrieben — المكتوبة في ثلاث سنوات.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«drei Monate» لم يذكرها الكاتب؛ قال إنه كتبها في ثلاث سنوات.",
+          "«ein Jahr» لم يذكرها الكاتب.",
+          "«fünf Jahre» لم يذكرها الكاتب.",
+        ],
       },
     ],
   },
@@ -336,6 +372,12 @@ export const lessonB204: Lesson = {
       correctIndex: 0,
       explanation: "نشط مضارع → Partizip I: spielende.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«gespielte» تعني معنى مفعولاً، والطفل هنا يلعب بنفسه.",
+        "«spielend» صيغة غير مستعملة هنا لوصف الطفل.",
+        "«spielt» صيغة فعل مصرّف، ولا تناسب الصفة.",
+      ],
     },
     {
       id: "e2",
@@ -346,6 +388,12 @@ export const lessonB204: Lesson = {
       correctIndex: 0,
       explanation: "منتهي → Partizip II: geschriebene.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«schreibende» تعني الذي يكتب، والمطلوب معنى المكتوب.",
+        "«geschrieben» بلا نهاية الصفة، ولا تناسب الصفة قبل Brief.",
+        "«schreibt» صيغة فعل مصرّف، ولا تناسب الصفة.",
+      ],
     },
     {
       id: "e3",
@@ -412,6 +460,12 @@ export const lessonB204: Lesson = {
       correctIndex: 0,
       explanation: "der Beitrag = المقال/المساهمة.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«الكتاب» يقابل Buch، وليس Beitrag.",
+        "«المجلة» تقابل Zeitschrift، وليس Beitrag.",
+        "«الخبر» يقابل Nachricht، وليس Beitrag.",
+      ],
     },
     {
       id: "e9",
@@ -461,6 +515,12 @@ export const lessonB204: Lesson = {
       correctIndex: 0,
       explanation: "نشط → lesende.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«gelesene» تعني المقروء، والمطلوب الفاعل الذي يقرأ.",
+        "«lesend» صيغة غير مستعملة هنا بنهاية الصفة.",
+        "«liest» صيغة فعل مصرّف، ولا تناسب الصفة.",
+      ],
     },
     {
       id: "m2",
@@ -471,6 +531,12 @@ export const lessonB204: Lesson = {
       correctIndex: 0,
       explanation: "فعل منتهٍ ومبني للمجهول → Partizip II مع نهاية الصفة: der übersetzte Roman. أما übersetzend فيعني «الذي يترجم».",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«übersetzende» تعني الذي يترجم، والمطلوب معنى المترجَم.",
+        "«übersetzt» بلا نهاية الصفة، ولا تناسب الصفة قبل Roman.",
+        "«übersetzen» مصدر، ولا تناسب الصفة.",
+      ],
     },
     {
       id: "m3",
