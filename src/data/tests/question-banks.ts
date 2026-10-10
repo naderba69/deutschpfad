@@ -158,7 +158,7 @@ export const TEST_BANK: TestQuestion[] = [
   { id: "b1-g6", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "___ ich jung war, lebte ich in Tunis.", options: ["Als", "Wenn", "Während", "Bis"], correctIndex: 0, explanation: "ماضٍ مرة → als." },
   { id: "b1-g7", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "Ich ___ morgen lernen. (سأتعلم)", options: ["werde", "wirst", "wird", "werden"], correctIndex: 0, explanation: "Futur I: werde." },
   { id: "b1-g8", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "Ich habe ___ Zeit ___ Geld.", options: ["weder ... noch", "nicht nur ... sondern auch", "entweder ... oder", "sowohl ... als auch"], correctIndex: 0, explanation: "لا ولا: weder... noch." },
-  { id: "b1-g9", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "Ich sehe den ___. (طالب — نصب)", options: ["Studenten", "Student", "Studentes", "Studenten"], correctIndex: 0, explanation: "n-Deklination: den Studenten." },
+  { id: "b1-g9", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "Ich sehe den ___. (طالب — نصب)", options: ["Studenten", "Student", "Studentes", "Studentin"], correctIndex: 0, explanation: "n-Deklination: den Studenten." },
   { id: "b1-g10", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "Bevor ich studierte, ___ ich gearbeitet.", options: ["hatte", "habe", "hat", "haben"], correctIndex: 0, explanation: "Plusquamperfekt: hatte gearbeitet." },
 
   /* ═══════════ B1 — مفردات ═══════════ */

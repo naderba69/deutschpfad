@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import {GoetheB2Exam} from "@/components/tests/goethe-b2-exam";
 
 export const metadata: Metadata = {
-  title: "محاكاة امتحان Goethe B2 الرسمية — 65/40/75/15 دقيقة",
+  title: "محاكاة امتحان Goethe B2 (مستوحاة من الصيغة الرسمية) — 65/40/75/15 دقيقة",
   description:
     "محاكاة كاملة لامتحان Goethe-Zertifikat B2 بالصيغة الرسمية 2019+: قراءة 65 دقيقة (30 سؤالاً)، استماع 40 دقيقة (30 سؤالاً)، كتابة 75 دقيقة (مهمتان)، تحدث 15 دقيقة — بنجاح 60/100 لكل مكوّن.",
 };
