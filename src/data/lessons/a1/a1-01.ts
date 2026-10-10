@@ -16,12 +16,12 @@ export const lessonA101: Lesson = {
 
   /* 1) الأهداف التعليمية */
   lernziele: [
-    { id: "z1", de: "Ich kann grüßen und mich vorstellen.", ar: "أن أُحيّي وأُقدّم نفسي باللغة الألمانية." },
-    { id: "z2", de: "Ich kann fragen: Wie heißt du? Woher kommst du?", ar: "أن أسأل عن الاسم والبلد (Wie heißt du? / Woher kommst du?)." },
-    { id: "z3", de: "Ich kann „sein“ und „heißen“ konjugieren.", ar: "أن أصرف الفعلين sein (يكون) وheißen (يُسمى) في المضارع." },
-    { id: "z4", de: "Ich kenne den Unterschied zwischen du und Sie.", ar: "أن أميّز بين ضميري المخاطبة du (غير رسمي) وSie (رسمي)." },
-    { id: "z5", de: "Ich kann W-Fragen stellen.", ar: "أن أطرح أسئلة الاستفهام (W-Fragen) وأجيب عنها." },
-    { id: "z6", de: "Ich kann regelmäßige Verben konjugieren: lernen, wohnen, spielen.", ar: "أن أصرف الأفعال المنتظمة في المضارع (أتعلم، أسكن، ألعب)." },
+    { id: "z1", de: "Ich kann grüßen und mich vorstellen.", ar: "أن أُحيّي وأُقدّم نفسي باللغة الألمانية.", evidence: { exerciseIds: ["e3", "e6"], taskIds: ["practice:a1-01:e3", "practice:a1-01:e6"], labelAr: "ترتيب جملة التعارف (e3) ومطابقة التحيات بمعانيها (e6)، دون كشف الحل.", completion: "all-correct" }, },
+    { id: "z2", de: "Ich kann fragen: Wie heißt du? Woher kommst du?", ar: "أن أسأل عن الاسم والبلد (Wie heißt du? / Woher kommst du?).", evidence: { exerciseIds: ["e4", "m1"], taskIds: ["practice:a1-01:e4", "mini-test:a1-01:m1"], labelAr: "ترتيب سؤال «من أين أنت؟» (e4) واختيار أداة السؤال عن الاسم (m1).", completion: "all-correct" }, },
+    { id: "z3", de: "Ich kann „sein“ und „heißen“ konjugieren.", ar: "أن أصرف الفعلين sein (يكون) وheißen (يُسمى) في المضارع.", evidence: { exerciseIds: ["e1", "e5", "m2"], taskIds: ["practice:a1-01:e1", "practice:a1-01:e5", "mini-test:a1-01:m2"], labelAr: "اختيار bin وist وsind في سياقها (e1 وe5 وm2)، دون كشف الحل.", completion: "all-correct" }, },
+    { id: "z4", de: "Ich kann ich, du und er in einfachen Sätzen richtig verwenden.", ar: "أن أستعمل الضمائر ich وdu وer في جمل بسيطة عن نفسي وعن الآخرين.", evidence: { exerciseIds: ["w3"], taskIds: ["writing:a1-01:w3"], labelAr: "إكمال الفراغات بالضمائر ich وdu وer في الكتابة (w3).", completion: "all-correct" }, },
+    { id: "z5", de: "Ich kann W-Fragen stellen.", ar: "أن أطرح أسئلة الاستفهام (W-Fragen) وأجيب عنها.", evidence: { exerciseIds: ["e12", "e14", "m3", "m5"], taskIds: ["practice:a1-01:e12", "practice:a1-01:e14", "mini-test:a1-01:m3", "mini-test:a1-01:m5"], labelAr: "اختيار أداة السؤال المناسبة (e12)، وترتيب أسئلة W (e14 وm3)، وتصحيح ترتيب سؤال (m5).", completion: "all-correct" }, },
+    { id: "z6", de: "Ich kann regelmäßige Verben konjugieren: lernen, wohnen, spielen.", ar: "أن أصرف الأفعال المنتظمة في المضارع (أتعلم، أسكن، ألعب).", evidence: { exerciseIds: ["e11", "e13", "m4"], taskIds: ["practice:a1-01:e11", "practice:a1-01:e13", "mini-test:a1-01:m4"], labelAr: "صرف أفعال منتظمة بالسلسلة الذهبية (e11 وe13)، وملء الفراغ في الجمل (m4).", completion: "all-correct" }, },
   ],
 
   /* 2) التمهيد وتنشيط المعرفة السابقة */
@@ -138,7 +138,7 @@ export const lessonA101: Lesson = {
       titleAr: "تصريف الأفعال المنتظمة في المضارع — السلسلة الذهبية",
       titleDe: "Das Präsens der regelmäßigen Verben: lernen, wohnen, spielen",
       explanationAr:
-        "بعد الفعل الشاذّ sein، ننتقل إلى **الأغلبية الساحقة**: الأفعال المنتظمة (regelmäßige Verben)، وهي نحو 90% من أفعال الألمانية.\n\n**كيف نبني الفعل؟** خطوتان لا ثالثة لهما:\n١. خذ المصدر واحذف نهاية **-en**: lern**en** ← lern- (هذا هو **الجذع**، der Stamm)\n٢. أضف نهاية الضمير إلى الجذع.\n\n**والنهايات ستّ (die Endung, Plural: die Endungen)، نسمّيها السلسلة الذهبية:**\nich **-e** · du **-st** · er/sie/es **-t** · wir **-en** · ihr **-t** · sie/Sie **-en**\n\nlernen ← ich lerne, du lernst, er lernt, wir lernen, ihr lernt, sie lernen.\nوالسلسلة نفسها تعمل مع wohnen و spielen و kommen و machen و kochen — بلا استثناء.\n\n**لاحظ اقتصاد النظام:** ستّ خانات لكنّ الأشكال أربعة فقط، لأنّ wir و sie/Sie يتشاركان -en، و er و ihr يتشاركان -t. فالحفظ أخفّ ممّا يبدو.\n\n**قاعدة النطق المساعدة (وصلة -e-):** إذا انتهى الجذع بـ **t** أو **d** أو بمجموعة صعبة، أُدخلت -e- قبل النهاية تسهيلاً للنطق:\narbeiten ← du arbeit**e**st, er arbeit**e**t (لا arbeitst التي يعسر لفظها)\nfinden ← du find**e**st · warten ← er wart**e**t\n\n**والاستثناء الصوتي:** الأفعال المنتهية بـ -s / -ß / -z / -tz تكتفي بـ **-t** في du، لأنّ صوت s موجود أصلاً:\nheißen ← du heiß**t** (لا heißst) · tanzen ← du tanz**t**",
+        "بعد الفعل الشاذّ sein، ننتقل إلى **الأغلبية الساحقة**: الأفعال المنتظمة (regelmäßige Verben)، وهي الغالبية الساحقة من أفعال الألمانية.\n\n**كيف نبني الفعل؟** خطوتان لا ثالثة لهما:\n١. خذ المصدر واحذف نهاية **-en**: lern**en** ← lern- (هذا هو **الجذع**، der Stamm)\n٢. أضف نهاية الضمير إلى الجذع.\n\n**والنهايات ستّ (die Endung, Plural: die Endungen)، نسمّيها السلسلة الذهبية:**\nich **-e** · du **-st** · er/sie/es **-t** · wir **-en** · ihr **-t** · sie/Sie **-en**\n\nlernen ← ich lerne, du lernst, er lernt, wir lernen, ihr lernt, sie lernen.\nوالسلسلة نفسها تعمل مع wohnen و spielen و kommen و machen و kochen — بلا استثناء.\n\n**لاحظ اقتصاد النظام:** ستّ خانات لكنّ الأشكال أربعة فقط، لأنّ wir و sie/Sie يتشاركان -en، و er و ihr يتشاركان -t. فالحفظ أخفّ ممّا يبدو.\n\n**قاعدة النطق المساعدة (وصلة -e-):** إذا انتهى الجذع بـ **t** أو **d** أو بمجموعة صعبة، أُدخلت -e- قبل النهاية تسهيلاً للنطق:\narbeiten ← du arbeit**e**st, er arbeit**e**t (لا arbeitst التي يعسر لفظها)\nfinden ← du find**e**st · warten ← er wart**e**t\n\n**والاستثناء الصوتي:** الأفعال المنتهية بـ -s / -ß / -z / -tz تكتفي بـ **-t** في du، لأنّ صوت s موجود أصلاً:\nheißen ← du heiß**t** (لا heißst) · tanzen ← du tanz**t**",
       whyAr:
         "لماذا تُقدَّم السلسلة الذهبية في الدرس الأوّل، قبل أيّ فعل شاذّ آخر؟\n\nلأنّها **أعلى مردودٍ تعليمي في المنهج كلّه**. ستّ نهايات تُحفظ في دقائق، تفتح لك مئات الأفعال دفعةً واحدة. من أتقنها اليوم يستطيع أن يقول «أسكن، أعمل، أتعلّم، ألعب، أطبخ، أشتري» — أي أن يتحدّث عن يومه كاملاً قبل أن يحفظ استثناءً واحداً.\n\nولأنّها كذلك **المرجع الذي يُقاس عليه الشذوذ**. حين تلتقي لاحقاً بـ fahren ← du fährst أو nehmen ← du nimmst، لن تراها فوضى بل انحرافاً محدَّداً عن قاعدةٍ تعرفها: النهايات نفسها، لكنّ حرف العلّة في الجذع تغيّر. ومن لم يُتقن القاعدة يرى الشذوذ عشوائياً فيحفظ كل فعل على حدة — وهو طريق مسدود.\n\nوأخيراً: وصلة -e- ليست تفصيلاً تجميلياً. arbeiten من أوائل الأفعال التي ستستعملها («أين تعمل؟»)، وحذف الوصلة يجعل الكلمة عسرة النطق ومسموعة كخطأ.",
       table: {
@@ -423,8 +423,8 @@ export const lessonA101: Lesson = {
         id: "l2",
         title: "لقاء رسمي (formell)",
         lines: [
-          { speaker: "Herr Weber", de: "Guten Tag! Wie heißen Sie?", ar: "مساء الخير! ما اسم حضرتك؟" },
-          { speaker: "Frau Leila", de: "Guten Tag! Ich heiße Leila Mansour.", ar: "مساء الخير! اسمي ليلى منصور." },
+          { speaker: "Herr Weber", de: "Guten Tag! Wie heißen Sie?", ar: "طاب يومك! ما اسم حضرتك؟" },
+          { speaker: "Frau Leila", de: "Guten Tag! Ich heiße Leila Mansour.", ar: "طاب يومك! اسمي ليلى منصور." },
           { speaker: "Herr Weber", de: "Woher kommen Sie, Frau Mansour?", ar: "من أين أنتِ يا سيدة منصور؟" },
           { speaker: "Frau Leila", de: "Ich komme aus Tunesien.", ar: "أنا من تونس." },
         ],
@@ -477,9 +477,9 @@ export const lessonA101: Lesson = {
     items: [
       { de: "Hallo", ar: "مرحباً", note: "h في البداية تُنطق من الحلق بنَفَس خفيف: ها-لو" },
       { de: "heißen", ar: "يُسمى", note: "ei تُنطق «أَيْ» وليس «إي»: هاي-سِن" },
-      { de: "wie", ar: "كيف", note: "الحرف v هنا يُنطق «ڤ»: ڤي" },
-      { de: "woher", ar: "من أين", note: "ووهير — مع h بارزة في المنتصف" },
-      { de: "Guten Tag", ar: "نهارك سعيد", note: "غوتن تاغ — g في آخر الكلمة يُنطق «غ»" },
+      { de: "wie", ar: "كيف", note: "الحرف w هنا يُنطق «ڤ»: ڤي" },
+      { de: "woher", ar: "من أين", note: "ڤوهير — مع h بارزة في المنتصف" },
+      { de: "Guten Tag", ar: "نهارك سعيد", note: "غوتن تاك — الـ g في آخر الكلمة تُهمس فتُنطق «ك»" },
     ],
     tip: "كرّر كل كلمة ثلاث مرات بصوت عالٍ قبل الانتقال — النطق الصحيح من اليوم الأول يمنع العادات الخاطئة.",
     shadowing: [
@@ -686,7 +686,7 @@ export const lessonA101: Lesson = {
     ],
     eselsbruecken: [
       "«بين (bin)»: أنا بين عائلتي = Ich bin — ربط الكلمة بمعناها الصوتي.",
-      "حروف W السبعة تبدأ بـ W: Wer, Was, Wo, Woher, Wann, Warum, Wie — «السؤال يبدأ بـ W».",
+      "أدوات الاستفهام الأساسية في هذا الدرس تبدأ بـ W: Wer, Was, Wo, Woher, Wann, Warum, Wie — «السؤال يبدأ بـ W».",
     ],
     culturalNote: {
       title: "du أم Sie؟",
