@@ -98,6 +98,12 @@ export const lessonB110: Lesson = {
       correctIndex: 0,
       explanation: "Genitiv: des Lehrers (درس التعليم).",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«der» لا تناسب المضاف إليه (Lehrers) في حالة الإضافة.",
+        "«dem» حالة جر، ولا تناسب الإضافة هنا.",
+        "«den» حالة مفعولية، ولا تناسب الإضافة هنا.",
+      ],
     },
     {
       id: "r2",
@@ -108,6 +114,12 @@ export const lessonB110: Lesson = {
       correctIndex: 0,
       explanation: "Konjunktiv II: wäre (درس الإعلام).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«bin» صيغة المضارع، ولا تناسب الشرط غير الواقعي.",
+        "«war» صيغة الماضي، ولا تناسب الشرط غير الواقعي.",
+        "«werde» صيغة المستقبل، ولا تناسب الشرط غير الواقعي.",
+      ],
     },
     {
       id: "r3",
@@ -237,6 +249,12 @@ export const lessonB110: Lesson = {
         correctIndex: 0,
         explanation: "قال سامي: An der Universität, die in München liegt.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«in Berlin» لم يذكرها سامي كمدينة يريد الدراسة فيها.",
+          "«in Hamburg» لم يذكرها سامي كمدينة يريد الدراسة فيها.",
+          "«in Tunis» لم يذكرها سامي كمدينة يريد الدراسة فيها.",
+        ],
       },
       {
         id: "q2",
@@ -249,6 +267,12 @@ export const lessonB110: Lesson = {
         correctIndex: 0,
         explanation: "قال: Ich werde eine Wohnung suchen, die nicht zu teuer ist.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«eine große Wohnung» لم يقلها سامي؛ قال إنه يريد شقة غير غالية.",
+          "«eine Wohnung am Strand» لم يذكرها سامي كخيار للبحث.",
+          "«ein Haus» لم يذكرها سامي كخيار للبحث.",
+        ],
       },
       {
         id: "q3",
@@ -261,6 +285,12 @@ export const lessonB110: Lesson = {
         correctIndex: 0,
         explanation: "قالت منى: Ich möchte eine eigene Firma gründen.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«ein Haus kaufen» لم تذكرها منى كهدفها الأكبر.",
+          "«nach Deutschland gehen» لم تذكرها منى كهدفها الأكبر.",
+          "«ein Buch schreiben» لم تذكرها منى كهدفها الأكبر.",
+        ],
       },
     ],
   },
@@ -331,6 +361,12 @@ export const lessonB110: Lesson = {
       correctIndex: 0,
       explanation: "فاعل مذكر → der.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«den» حالة مفعولية، والفاعل هنا في حالة الرفع.",
+        "«dem» حالة جر، ولا تناسب فاعل الجملة الموصولة.",
+        "«dessen» تعني ملكية، ولا تناسب الفاعل.",
+      ],
     },
     {
       id: "e2",
@@ -341,6 +377,12 @@ export const lessonB110: Lesson = {
       correctIndex: 0,
       explanation: "شرطية: hätte.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«habe» صيغة المضارع، ولا تناسب الشرط غير الواقعي.",
+        "«hatte» صيغة الماضي، ولا تناسب الشرط غير الواقعي.",
+        "«haben» مصدر أو جمع، ولا تناسب الفعل في الشرط.",
+      ],
     },
     {
       id: "e3",
@@ -407,6 +449,12 @@ export const lessonB110: Lesson = {
       correctIndex: 0,
       explanation: "sich bewerben = يتقدم (للوظيفة/الدراسة): تقدمت بالفعل.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«سأقدم لاحقاً» تعني مستقبلاً، ولا تطابق الماضي المركّب habe ... beworben.",
+        "«لم أتقدم بعد» تنفي التقديم، وهذا عكس المعنى.",
+        "«أريد أن أتقدم» تعني رغبة مستقبلية، ولا تطابق الفعل الماضي.",
+      ],
     },
     {
       id: "e9",
@@ -457,6 +505,12 @@ export const lessonB110: Lesson = {
       correctIndex: 0,
       explanation: "نسبية نصب محايد → das.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«der» مذكّر، والكلمة Haus محايدة.",
+        "«die» مؤنث، والكلمة Haus محايدة.",
+        "«dem» حالة جر، ولا تناسب مفعول الفعل kaufen.",
+      ],
     },
     {
       id: "m2",
@@ -467,6 +521,12 @@ export const lessonB110: Lesson = {
       correctIndex: 0,
       explanation: "Futur: werde + Infinitiv.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«studiere» مع ich، ولا تناسب الفعل بعد Ich werde ... in Deutschland.",
+        "«studiert» تستعمل Partizip II، والفعل بعد werde يكون مصدراً.",
+        "«studiert haben» زمن الماضي التام، ولا يناسب المستقبل هنا.",
+      ],
     },
     {
       id: "m3",
