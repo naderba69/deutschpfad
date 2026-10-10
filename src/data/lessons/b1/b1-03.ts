@@ -1,7 +1,7 @@
 import type { Lesson } from "@/types/lesson";
 
 /**
- * الدرس B1-03: البيئة والمناخ — Passiv (المبني للمجهول) + جدول الأفعال الشاذة
+ * الدرس B1-03: البيئة والمناخ — Passiv (المبني للمجهول) + التركيب المصدري (zu + مصدر)
  */
 export const lessonB103: Lesson = {
   id: "b1-03",
@@ -14,10 +14,50 @@ export const lessonB103: Lesson = {
     "مشاكل البيئة والحلول، المبني للمجهول (Passiv): werden + Partizip II في المضارع والماضي، وبدائله (man)، والتركيب المصدري (Infinitiv mit zu): Es ist wichtig, die Umwelt zu schützen.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann über Umweltprobleme sprechen.", ar: "أن أتحدث عن مشاكل البيئة والمناخ." },
-    { id: "z2", de: "Ich kann das Passiv bilden: wird/wurde + Partizip II.", ar: "أن أبني المبني للمجهول: يُبنى / بُني." },
-    { id: "z3", de: "Ich kann man als Passiv-Ersatz benutzen.", ar: "أن أستخدم man كبديل للمجهول." },
-    { id: "z4", de: "Ich kann den Infinitiv mit zu benutzen: Es ist wichtig, die Umwelt zu schützen.", ar: "أن أستخدم التركيب المصدري zu + Infinitiv في جمل النصح البيئي." },
+    {
+      id: "z1",
+      de: "Ich kann Umweltprobleme und Maßnahmen aus einem kurzen Gespräch verstehen.",
+      ar: "أن أفهم مشكلات البيئة والإجراءات المذكورة في حوار قصير.",
+      evidence: {
+        exerciseIds: ["q1", "q2", "q3"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
+        labelAr: "أجب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، دون كشف التفريغ. كشف النص (listening-transcript) لا يُحتسب أداءً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann das Passiv bilden: wird/wurde + Partizip II.",
+      ar: "أن أبني المبني للمجهول: يُبنى / بُني.",
+      evidence: {
+        exerciseIds: ["e1", "e7", "m1"],
+        taskIds: ["practice:b1-03:e1", "flow-practice:b1-03:e1", "practice:b1-03:e7", "mini-test:b1-03:m1"],
+        labelAr: "أجب صحيحاً عن e1 (يظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق)، وحوّل e7 من النشط إلى المجهول بصحة، وأجب عن m1 في الاختبار المصغّر. قراءة جدول t1 لا تُحتسب أداءً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann man als Passiv-Ersatz benutzen.",
+      ar: "أن أستخدم man كبديل للمجهول.",
+      evidence: {
+        exerciseIds: ["e6", "m5"],
+        taskIds: ["practice:b1-03:e6", "mini-test:b1-03:m5"],
+        labelAr: "أكمل e6 وm5 بالاختيار الصحيح بين man والمجهول. الأمثلة المعروضة في الشرح لا تُحتسب أداءً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann den Infinitiv mit zu benutzen: Es ist wichtig, die Umwelt zu schützen.",
+      ar: "أن أستخدم التركيب المصدري zu + مصدر في جمل النصح البيئي.",
+      evidence: {
+        exerciseIds: ["e11", "e12"],
+        taskIds: ["practice:b1-03:e11", "practice:b1-03:e12"],
+        labelAr: "أكمل e11 (zu schützen) وأجب صحيحاً عن ترتيب e12 (Ich versuche, das Fahrrad zu nehmen) ضمن تمارين practice. الجدول والشرح لا يُحتسبان أداءً.",
+        completion: "all-correct",
+      },
+    },
   ],
 
   einfuehrung: {
@@ -25,7 +65,7 @@ export const lessonB103: Lesson = {
       "في العربية نقول «يُبنى البيت» (مجهول) — نغير حركة الفعل. الألمانية تبني المجهول بفعلين: werden + تصريف ثالث: Das Haus wird gebaut (البيت يُبنى). ولاحظ: werden تعمل هنا «علامة المجهول» وليست «يصبح»!",
     motivatingQuestionDe: "Was kann man für die Umwelt tun?",
     contextAr:
-      "البيئة موضوع نقاش دائم في ألمانيا: نتعلم مفرداتها، ثم نضيف المبني للمجهول — أداة النقاش الرسمي والنصوص الإخبارية. وبمناسبة B1: الجدول التفاعلي للأفعال الشاذة مدمج أدناه!",
+      "البيئة موضوع نقاش دائم في ألمانيا: نتعلم مفرداتها، ثم نضيف المبني للمجهول — أداة النقاش الرسمي والنصوص الإخبارية. وبمناسبة B1 نربط المجهول بالتركيب المصدري (zu + مصدر).",
     contextDe: "Das Klima wird immer wärmer.",
     connectionToPreviousAr: "تتذكر werden (يصبح) من A1. اليوم: werden ثانية بمعنى آخر — علامة المجهول. نفس الفعل، وظيفة جديدة.",
     activateVocabulary: [
@@ -77,7 +117,7 @@ export const lessonB103: Lesson = {
       titleAr: "المبني للمجهول (Passiv): werden + Partizip II",
       titleDe: "Das Passiv: wird gebaut, wurde gebaut",
       explanationAr:
-        "المبني للمجهول = التركيز على الحدث لا الفاعل: Das Haus wird gebaut (يُبنى). التركيب: werden (مضارع) أو wurden (ماضٍ) + Partizip II في النهاية. الفاعل الأصلي يظهر بـ von + Dativ (اختياري): Das Haus wird von den Arbeitern gebaut.",
+        "المبني للمجهول = التركيز على الحدث لا الفاعل: Das Haus wird gebaut (يُبنى). التركيب: werden (مضارع: wird/werden) أو wurde/wurden (ماضٍ) + Partizip II في النهاية. الفاعل الأصلي يظهر بـ von + Dativ (اختياري): Das Haus wird von den Arbeitern gebaut.",
       whyAr:
         "لماذا نستخدمه؟ في الأخبار والتقارير الرسمية لا يهم «من» فعل — يهم «ماذا حدث»: Das Klima wird wärmer، Die Umwelt wird zerstört. المجهول يسمح بجملة كاملة بدون فاعل — مثل العربية «يُبنى».",
       table: {
@@ -86,7 +126,7 @@ export const lessonB103: Lesson = {
         rows: [
           { label: "مضارع", cells: ["wird + Partizip II", "Das Haus wird gebaut."] },
           { label: "ماضي", cells: ["wurde + Partizip II", "Das Haus wurde gebaut."] },
-          { label: "مضارع تام", cells: ["ist + Partizip II + worden", "Das Haus ist gebaut worden."] },
+          { label: "ماضٍ مركب (Perfekt)", cells: ["ist + Partizip II + worden", "Das Haus ist gebaut worden."] },
           { label: "المجهول مع man", cells: ["man + فعل (بديل)", "Man baut das Haus."] },
         ],
       },
@@ -102,13 +142,13 @@ export const lessonB103: Lesson = {
       eselsbruecke:
         "«werden = علامة المجهول»: إذا رأيت werden + Partizip II → مجهول. و«wurde = بُني (ماضٍ)». الفرق عن «يصبح»: مع صفة (wird kalt) وليس مع تصريف ثالث.",
       commonMistakes: [
-        { wrong: "Das Haus wird gebaut von den Arbeitern. (von في غير محلها)", right: "Das Haus wird von den Arbeitern gebaut.", whyAr: "von + Dativ يأتي قبل Partizip II." },
+        { wrong: "Das Haus wird von die Arbeiter gebaut.", right: "Das Haus wird von den Arbeitern gebaut.", whyAr: "بعد von يأتي Dativ: von den Arbeitern." },
         { wrong: "Das Haus wird bauen (مجهول خاطئ)", right: "Das Haus wird gebaut.", whyAr: "المجهول: werden + Partizip II وليس Infinitiv." },
         { wrong: "wird أم wurde؟", right: "wird = مضارع (يُبنى). wurde = ماضٍ (بُني)", whyAr: "الفرق زمني: wurde هو ماضي werden." },
       ],
       relatedRuleComparison: {
         title: "Passiv أم Aktiv؟",
-        content: "Aktiv: Die Arbeiter bauen das Haus (التركيز على الفاعل). Passiv: Das Haus wird gebaut (التركيز على الحدث). في الأخبار: Passiv غالباً.",
+        content: "Aktiv: Die Arbeiter bauen das Haus (التركيز على الفاعل). Passiv: Das Haus wird gebaut (التركيز على الحدث). قد يكون المجهول أكثر شيوعاً في النصوص الإخبارية والرسمية (ملاحظة أسلوبية عامة لم تُقَس).",
       },
     },
     {
@@ -118,7 +158,7 @@ export const lessonB103: Lesson = {
       explanationAr:
         "كثير من الأفعال والصفات تحتاج بعدها «zu + مصدر» في نهاية الجملة: Es ist wichtig, die Umwelt zu schützen (من المهم حماية البيئة). التركيب: جملة رئيسية، فاصلة، ثم zu + الفعل في نهاية الجملة الثانوية. الأفعال الأكثر استخداماً مع zu: versuchen (يحاول)، hoffen (يأمل)، anfangen (يبدأ)، vergessen (ينسى)، planen (يخطط). والصفات الشائعة: wichtig (مهم)، möglich (ممكن)، schwer (صعب)، leicht (سهل).",
       whyAr:
-        "لماذا zu؟ لأن كل فعل يملك «سلوكاً»: بعض الأفعال تجذب مصدراً بعلامة zu، وبعضها يرفضها — الأفعال الناقصة (können، müssen، wollen...) تأخذ المصدر مباشرة بدون zu: Ich kann schwimmen. الفرق إلزامي في الألمانية: Es ist wichtig, Deutsch zu lernen — لا يجوز حذف zu إطلاقاً.",
+        "لماذا zu؟ لأن كل فعل يملك «سلوكاً»: بعض الأفعال تجذب مصدراً بعلامة zu، وبعضها يرفضها — الأفعال الناقصة (können، müssen، wollen...) تأخذ المصدر مباشرة بدون zu: Ich kann schwimmen. في هذا التركيب لا يُحذف zu: Es ist wichtig, Deutsch zu lernen.",
       table: {
         title: "التراكيب التي تجذب zu + مصدر (في سياق البيئة)",
         columns: ["التركيب", "المثال", "المعنى"],
@@ -219,9 +259,9 @@ export const lessonB103: Lesson = {
         itemId: "l2",
         type: "multiple-choice",
         instructionAr: "اختر الإجابة الصحيحة:",
-        questionDe: "Was kann man statt dem Auto fahren?",
-        questionAr: "ماذا يمكن ركوبه بدل السيارة؟",
-        options: ["das Fahrrad", "das Motorrad", "die U-Bahn", "der Bus"],
+        questionDe: "Welches Verkehrsmittel nennt Mona als Beispiel?",
+        questionAr: "أي وسيلة نقل تذكرها منى كمثال؟",
+        options: ["das Fahrrad", "das Flugzeug", "das Schiff", "der Zug"],
         correctIndex: 0,
         explanation: "قالت منى: Man kann mit dem Fahrrad fahren.",
         errorType: "vocabulary",
@@ -248,7 +288,7 @@ export const lessonB103: Lesson = {
       { de: "die Umwelt", ar: "البيئة", note: "um + welt: أوم-ڤِلت" },
       { de: "der Müll", ar: "النفايات", note: "ü قصيرة: مول" },
       { de: "die Sonnenenergie", ar: "الطاقة الشمسية", note: "كلمة مركبة طويلة: زونن-إنِرجي" },
-      { de: "recyceln", ar: "يعيد التدوير", note: "cy = سي: ريسايكلن" },
+      { de: "recyceln", ar: "يعيد التدوير", note: "c = س، y = آي: ريسايكلن" },
       { de: "die Pflanze", ar: "النبتة", note: "pf: پفْلانتسِه" },
       { de: "der Klimawandel", ar: "تغير المناخ", note: "w = ڤ: كليما-ڤاندِل" },
     ],
@@ -300,7 +340,7 @@ export const lessonB103: Lesson = {
       type: "multiple-choice",
       instructionAr: "اختر المجهول الصحيح:",
       questionDe: "Das Haus ___ gebaut. (يُبنى)",
-      options: ["wird", "wurde", "ist", "war"],
+      options: ["wird", "wurde", "wirst", "werden"],
       correctIndex: 0,
       explanation: "المضارع المجهول: wird gebaut.",
       errorType: "grammar",
@@ -310,7 +350,7 @@ export const lessonB103: Lesson = {
       type: "multiple-choice",
       instructionAr: "اختر المجهول الصحيح:",
       questionDe: "Das Haus ___ 1900 gebaut. (بُني)",
-      options: ["wurde", "wird", "ist", "war"],
+      options: ["wurde", "wird", "wirst", "werden"],
       correctIndex: 0,
       explanation: "الماضي المجهول: wurde gebaut.",
       errorType: "grammar",
@@ -340,11 +380,11 @@ export const lessonB103: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "في الجملة خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
       wrongSentence: "Das Haus wird bauen.",
       wrongWord: "bauen",
       correctWord: "gebaut",
-      options: ["gebaut", "gebauen", "gebaut werden", "baut"],
+      options: ["gebaut", "gebauen", "gebaute", "baut"],
       explanation: "المجهول: wird + Partizip II (gebaut) وليس Infinitiv.",
       errorType: "grammar",
     },
@@ -355,7 +395,7 @@ export const lessonB103: Lesson = {
       template: "___ baut das Haus. Das Haus ___ gebaut.",
       blanks: [
         { correct: "Man", options: ["Man", "Wird", "Es"] },
-        { correct: "wird", options: ["wird", "wurde", "ist"] },
+        { correct: "wird", options: ["wird", "wirst", "werden"] },
       ],
       explanation: "man + فعل نشط. أو wird + Partizip II.",
       errorType: "grammar",
@@ -384,11 +424,11 @@ export const lessonB103: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "في الجملة خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
       wrongSentence: "Viele Bäume wird gepflanzt.",
       wrongWord: "wird",
       correctWord: "werden",
-      options: ["werden", "wird", "wurde", "ist"],
+      options: ["werden", "wird", "wurde", "wirst"],
       explanation: "الموضوع جمع (Bäume) → werden gepflanzt.",
       errorType: "grammar",
     },
@@ -430,7 +470,7 @@ export const lessonB103: Lesson = {
     mistakes: [
       { wrong: "Das Haus wird bauen.", right: "Das Haus wird gebaut.", whyAr: "المجهول: Partizip II." },
       { wrong: "Viele Bäume wird gepflanzt.", right: "Viele Bäume werden gepflanzt.", whyAr: "الموضوع الجمع → werden." },
-      { wrong: "Man أم Passiv معاً؟", right: "اختر واحدة: Man baut / Das Haus wird gebaut", whyAr: "كلاهما بديل — لا تجمع." },
+      { wrong: "Man wird baut das Haus.", right: "Man baut das Haus. / Das Haus wird gebaut.", whyAr: "كلاهما بديل للفاعل المجهول — لا تجمع man مع werden في الجملة نفسها." },
     ],
     eselsbruecken: [
       "«werden + Partizip II = مجهول»: wird gebaut (يُبنى) / wurde gebaut (بُني).",
@@ -439,7 +479,7 @@ export const lessonB103: Lesson = {
     culturalNote: {
       title: "الألمان والبيئة",
       content:
-        "ألمانيا رائدة إعادة التدوير: «Mülltrennung» (فصل النفايات) إلزامي: Papier (ورق)، Plastik (بلاستيك)، Bio (عضوي)، Rest (متبقٍّ). وأسعار الكهرباء الخضراء مرتفعة لكنها مدعومة. والألمان يهتمون بـ «Nachhaltigkeit» (الاستدامة) جداً.",
+                "في ألمانيا يفرض قانون إدارة المخلفات (Kreislaufwirtschaftsgesetz، المادتان 11 و14) فصل النفايات حيث يكون ذلك ممكناً تقنياً واقتصادياً: البيولوجية والورق والمعادن والبلاستيك والزجاج. أما الحاويات وألوانها فتحددها كل بلدية وقد تختلف من مكان إلى آخر. وقد تُفرض غرامات على المخالفة حتى 2500 يورو في بعض الحالات، ويختلف ذلك بحسب الولاية.",
     },
   },
 
@@ -449,7 +489,7 @@ export const lessonB103: Lesson = {
       type: "multiple-choice",
       instructionAr: "اختر المجهول:",
       questionDe: "Der Müll ___ getrennt. (يُفصل)",
-      options: ["wird", "wurde", "ist", "war"],
+      options: ["wird", "wurde", "wirst", "werden"],
       correctIndex: 0,
       explanation: "مضارع مجهول: wird.",
       errorType: "grammar",
@@ -459,7 +499,7 @@ export const lessonB103: Lesson = {
       type: "multiple-choice",
       instructionAr: "اختر المجهول:",
       questionDe: "Das Buch ___ 2020 geschrieben. (كُتب)",
-      options: ["wurde", "wird", "ist", "war"],
+      options: ["wurde", "wird", "wirst", "werden"],
       correctIndex: 0,
       explanation: "ماضٍ مجهول: wurde geschrieben.",
       errorType: "grammar",
@@ -476,7 +516,7 @@ export const lessonB103: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "في الجملة خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
       wrongSentence: "Das Haus wurde bauen.",
       wrongWord: "bauen",
       correctWord: "gebaut",
@@ -491,7 +531,7 @@ export const lessonB103: Lesson = {
       template: "___ recycelt den Müll. Der Müll ___ recycelt.",
       blanks: [
         { correct: "Man", options: ["Man", "Wird", "Der"] },
-        { correct: "wird", options: ["wird", "wurde", "man"] },
+        { correct: "wird", options: ["wird", "wirst", "man"] },
       ],
       explanation: "Man + نشط. wird + Partizip II.",
       errorType: "grammar",
