@@ -14,10 +14,67 @@ export const lessonB202: Lesson = {
     "تحليل الأخبار الاقتصادية، المبني للمجهول المتقدم: Zustandspassiv (sein + Partizip II)، Passiv مع الأفعال الشرطية، وبدائله (sich lassen, -bar, man).",
 
   lernziele: [
-    { id: "z1", de: "Ich kann Wirtschaftsnachrichten verstehen.", ar: "أن أفهم الأخبار الاقتصادية وأحلل تطورات الأسواق." },
-    { id: "z2", de: "Ich kann das Zustandspassiv bilden: ist geliefert.", ar: "أن أبني مجهول الحالة: مُسلَّم (sein + Partizip II)." },
-    { id: "z3", de: "Ich kann Passiv mit Modalverben und Ersatzformen benutzen.", ar: "أن أستخدم المجهول مع الأفعال الشرطية وبدائله (sich lassen, -bar)." },
-      { id: "z4", de: "Ich kann über wirtschaftliche Zusammenhänge diskutieren.", ar: "أن أناقش العلاقات الاقتصادية المعقدة." },
+    {
+      id: "z1",
+      de: "Ich kann Wirtschaftsnachrichten verstehen.",
+      ar: "أن أفهم الأخبار الاقتصادية الواردة في الاستماع القصير.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q1", "q2", "q3"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
+        labelAr: "أجيب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann das Zustandspassiv bilden: ist geliefert.",
+      ar: "أن أبني مجهول الحالة: مُسلَّم (sein + Partizip II).",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e1", "e5", "w1", "w2", "m1", "m4"],
+        taskIds: [
+          "practice:b2-02:e1",
+          "practice:b2-02:e5",
+          "writing:b2-02:w1",
+          "writing:b2-02:w2",
+          "mini-test:b2-02:m1",
+          "mini-test:b2-02:m4",
+        ],
+        labelAr: "أجيب صحيحاً عن تمارين الحالة والتصحيح (e1 وe5 وw1 وw2 وm1 وm4)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann Passiv mit Modalverben und Ersatzformen benutzen.",
+      ar: "أن أستخدم المجهول مع الأفعال الناقصة وبدائله (sich lassen، -bar).",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e2", "e6", "e7", "e9", "w3", "w4", "m2", "m3", "m5"],
+        taskIds: [
+          "practice:b2-02:e2",
+          "practice:b2-02:e6",
+          "practice:b2-02:e7",
+          "practice:b2-02:e9",
+          "writing:b2-02:w3",
+          "writing:b2-02:w4",
+          "mini-test:b2-02:m2",
+          "mini-test:b2-02:m3",
+          "mini-test:b2-02:m5",
+        ],
+        labelAr: "أجيب صحيحاً عن تمارين الإمكانية والبدائل والترتيب (e2 وe6 وe7 وe9 وw3 وw4 وm2 وm3 وm5)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann Fachwörter der Wirtschaft erkennen: Umsatz, Inflation, Konjunktur.",
+      ar: "أن أتعرّف على مفردات اقتصادية أساسية: المبيعات والتضخم والدورة الاقتصادية.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e3", "e8"],
+        taskIds: ["practice:b2-02:e3", "practice:b2-02:e8"],
+        labelAr: "أربط الكلمات بمعانيها (e3) وأختار معنى die Konjunktur (e8)، دون كشف الحل.",
+      },
+    },
   ],
   einfuehrung: {
     motivatingQuestionAr:
@@ -76,9 +133,9 @@ export const lessonB202: Lesson = {
       titleAr: "المبني للمجهول المتقدم: الحالة والشرطي والبدائل",
       titleDe: "Zustandspassiv, Passiv mit Modalverben, Ersatzformen",
       explanationAr:
-        "1) Zustandspassiv (حالة منتهية): sein + Partizip II: Das Fenster ist geöffnet (مفتوح — نتيجة). 2) Passiv مع شرطي: können/müssen + Partizip II + werden: Die Ware kann geliefert werden. 3) بدائل: sich lassen (Die Tür lässt sich öffnen = يمكن فتحها)، صفة -bar (Die Tür ist öffnbar = قابلة للفتح)، man (Man kann...).",
+        "1) Zustandspassiv (حالة منتهية): sein + Partizip II: Das Fenster ist geöffnet (مفتوح — نتيجة). 2) Passiv مع شرطي: können/müssen + Partizip II + werden: Die Ware kann geliefert werden. 3) بدائل: sich lassen (Die Tür lässt sich öffnen = يمكن فتحها)، صفة -bar (Die Tür ist öffenbar = قابلة للفتح)، man (Man kann...).",
       whyAr:
-        "لماذا كل هذه الطرق؟ لأن الألمانية تعشق الدقة: «يُفتح الآن» (wird geöffnet)، «مفتوح» (ist geöffnet)، «يمكن فتحه» (kann geöffnet werden / lässt sich öffnen / ist öffnbar). كل صيغة تخدم سياقاً مختلفاً — والمتقن يستخدمها كلها.",
+        "لماذا كل هذه الطرق؟ لأن الألمانية تعشق الدقة: «يُفتح الآن» (wird geöffnet)، «مفتوح» (ist geöffnet)، «يمكن فتحه» (kann geöffnet werden / lässt sich öffnen / ist öffenbar). كل صيغة تخدم سياقاً مختلفاً — والمتقن يستخدمها كلها.",
       table: {
         title: "أنواع المجهول",
         columns: ["النوع", "التركيب", "مثال", "المعنى"],
@@ -87,7 +144,7 @@ export const lessonB202: Lesson = {
           { label: "Zustandspassiv", cells: ["sein + PII", "Die Tür ist geöffnet.", "مفتوحة (حالة)"] },
           { label: "Passiv + Modalverb", cells: ["können + PII + werden", "Die Tür kann geöffnet werden.", "يمكن فتحها"] },
           { label: "sich lassen", cells: ["sich + lassen + Inf", "Die Tür lässt sich öffnen.", "تُفتح بسهولة"] },
-          { label: "صفة -bar", cells: ["جذر + bar", "Die Tür ist öffnbar.", "قابلة للفتح"] },
+          { label: "صفة -bar", cells: ["جذر + bar", "Die Tür ist öffenbar.", "قابلة للفتح"] },
         ],
       },
       examples: [
@@ -98,13 +155,13 @@ export const lessonB202: Lesson = {
         { de: "Die Lösung ist durchführbar.", ar: "الحل قابل للتنفيذ." },
       ],
       comparisonWithArabic:
-        "«تُفتح» مقابل «مفتوحة» مقابل «قابلة للفتح» — العربية تملك نفس التدرج! والألمانية: wird geöffnet / ist geöffnet / ist öffnbar. والتشابه مذهل: -bar ≈ «-able/-able» مثل «قابل للفتح».",
+        "«تُفتح» تقابل wird geöffnet، و«مفتوحة» تقابل ist geöffnet، و«قابلة للفتح» تقابل ist öffenbar. التقابل تقريبي فقط، لأن الألمانية تفرّق بين العملية والحالة بتغيير الفعل المساعد.",
       eselsbruecke:
-        "«ist + PII = حالة، wird + PII = عملية» — اسأل: هل النتيجة قائمة (ist) أم الحدث جارٍ (wird)؟ و«-bar = قابل للـ»: öffnbar = قابل للفتح.",
+        "«ist + PII = حالة، wird + PII = عملية» — اسأل: هل النتيجة قائمة (ist) أم الحدث جارٍ (wird)؟ و«-bar = قابل للـ»: öffenbar = قابل للفتح.",
       commonMistakes: [
-        { wrong: "Die Tür ist geöffnet worden. (عملية بدل حالة)", right: "Die Tür ist geöffnet. (حالة)", whyAr: "بدون worden = حالة. مع worden = عملية منتهية." },
+        { wrong: "Die Tür ist gerade geöffnet. (تقصد: تُفتح الآن)", right: "Die Tür wird gerade geöffnet.", whyAr: "«ist geöffnet» حالة قائمة، أما الحدث الجاري فيُبنى بـ wird." },
         { wrong: "Die Tür wird geöffnet. (عملية بدل حالة)", right: "Die Tür ist geöffnet.", whyAr: "السياق يحدد: نتيجة → sein." },
-        { wrong: "lässt sich öffnen أم kann geöffnet werden؟", right: "كلاهما صحيح: lässt sich = يسهل/يمكن. kann werden = يمكن (رسمي)", whyAr: "اختر حسب النبرة." },
+        { wrong: "لا فرق بين lässt sich öffnen و kann geöffnet werden في أي سياق", right: "فرق في المعنى: lässt sich öffnen = يمكن فتحه بسهولة، kann geöffnet werden = إمكانية عامة", whyAr: "قد تتشابه الترجمتان، لكن لكل صيغة استعمالها." },
       ],
       relatedRuleComparison: {
         title: "Vorgangs- أم Zustandspassiv؟",
@@ -118,7 +175,7 @@ export const lessonB202: Lesson = {
       explanationAr:
         "المجهول مع الأفعال الناقصة: können/müssen/sollen/dürfen + Partizip II + werden في نهاية الجملة: Die Ware kann geliefert werden (يمكن تسليم البضاعة)، Das muss entschieden werden (يجب أن يُحسم). مع الماضي: konnte geliefert werden. والبدائل الدقيقة: sein + zu + مصدر (Das ist zu lösen = يجب/يمكن حله)، lassen (Das lässt sich machen = يمكن عمله)، الصفة -bar (machbar = قابل للتنفيذ)، وman (Man kann...).",
       whyAr:
-        "لماذا هذا العمق؟ لأن التقارير الاقتصادية والسياسية مليئة بهذه الصيغ: «يجب أن يُحسم»، «يمكن تنفيذه»، «لا يمكن إيقافه». من يتقن هذه البدائل يقرأ ويكتب بأسلوب رسمي حقيقي — علامة B2 الكاملة.",
+        "لماذا هذا العمق؟ لأن التقارير الاقتصادية والسياسية مليئة بهذه الصيغ: «يجب أن يُحسم»، «يمكن تنفيذه»، «لا يمكن إيقافه». وتُستعمل هذه الصيغ كثيراً في النصوص الرسمية والاقتصادية.",
       table: {
         title: "المجهول + الناقصة والبدائل (تفصيل)",
         columns: ["التركيب", "المعنى", "مثال اقتصادي"],
@@ -139,9 +196,9 @@ export const lessonB202: Lesson = {
         { de: "Diese Lösung ist durchführbar.", ar: "هذا الحل قابل للتنفيذ." },
       ],
       comparisonWithArabic:
-        "«يجب أن يُتخذ القرار» = Die Entscheidung muss getroffen werden. «تعذّر التأكيد» = konnte nicht bestätigt werden. «قابل للتنفيذ» = durchführbar — التطابق مع العربية في «قابل للـ» كامل.",
+        "«يجب أن يُتخذ القرار» = Die Entscheidung muss getroffen werden. «تعذّر التأكيد» = konnte nicht bestätigt werden. «قابل للتنفيذ» = durchführbar — تقابل تقريبي فقط في «قابل للـ».",
       eselsbruecke:
-        "ثلاثية الاحتراف: «muss/kann + PII + werden» (رسمي)، «lässt sich» (طبيعي)، «-bar» (قصير). ابدأ بـ kann/könnte + PII + werden وهي آمنة دائماً.",
+        "ثلاثية الاحتراف: «muss/kann + PII + werden» (رسمي)، «lässt sich» (طبيعي)، «-bar» (قصير). ابدأ بـ kann + PII + werden لأنها الأسهل في البداية.",
       commonMistakes: [
         { wrong: "Die Ware kann geliefert. (نقص werden)", right: "Die Ware kann geliefert werden.", whyAr: "المجهول مع الناقصة: PII + werden معاً في النهاية." },
         { wrong: "Die Tür muss geöffnet werden بدل ist geöffnet", right: "muss geöffnet werden = يجب فتحها. ist geöffnet = مفتوحة (حالة)", whyAr: "السياق: إلزام أم نتيجة؟" },
@@ -267,13 +324,13 @@ export const lessonB202: Lesson = {
       instructionAr: "كتابة إنتاجية: حوّل الجملة النشطة إلى مجهول مع فعل ناقص:",
       instructionDe: "Schreibe im Passiv mit Modalverb:",
       prompt: "Man kann den Preis verhandeln. →",
-      acceptedAnswers: ["Der Preis kann verhandelt werden.", "Der Preis kann verhandelt werden."],
+      acceptedAnswers: ["Der Preis kann verhandelt werden."],
       sampleAnswer: "Der Preis kann verhandelt werden.",
       explanation: "النشط → مجهول + können: kann + Partizip II + werden في النهاية.",
       errorType: "grammar",
     },
     {
-      id: "e11",
+      id: "w4",
       type: "fill-blank",
       instructionAr: "أكمل بالمجهول مع الأفعال الناقصة:",
       instructionDe: "Ergänze: muss/kann + PII + werden",
@@ -336,11 +393,11 @@ export const lessonB202: Lesson = {
       id: "e5",
       type: "error-correction",
       instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Die Tür ist geöffnet worden. (أريد حالة)",
-      wrongWord: "ist geöffnet worden",
-      correctWord: "ist geöffnet",
-      options: ["ist geöffnet", "ist geöffnet worden", "wird geöffnet", "wurde geöffnet worden"],
-      explanation: "الحالة: ist geöffnet (بدون worden).",
+      wrongSentence: "Die Tür ist öffnen.",
+      wrongWord: "öffnen",
+      correctWord: "geöffnet",
+      options: ["geöffnet", "öffnen", "worden", "wird"],
+      explanation: "الحالة تحتاج sein + Partizip II: ist geöffnet، لا المصدر öffnen.",
       errorType: "grammar",
     },
     {
@@ -384,7 +441,7 @@ export const lessonB202: Lesson = {
       wrongWord: "öffnenbar",
       correctWord: "öffenbar",
       options: ["öffenbar", "öffnenbar", "öffnbar", "geöffnetbar"],
-      explanation: "الصيغة الصحيحة هي öffenbar (قابلة للفتح): نُشتق bar- من جذر الفعل، لكن öffnen يستعيد الـ e المحذوفة من أصله offen فتصير öffen + bar. قارن: ordnen ← ordenbar، rechnen ← rechenbar. أما öffnenbar فليست كلمة ألمانية.",
+      explanation: "الصيغة الواردة في القواميس هي öffenbar بمعنى «قابل للفتح». أما öffnenbar فليست صيغة مقبولة.",
       errorType: "grammar",
     },
     {
@@ -405,12 +462,12 @@ export const lessonB202: Lesson = {
     ],
     eselsbruecken: [
       "«ist = حالة، wird = عملية، kann werden = إمكانية».",
-      "«-bar = قابل للـ»: öffnbar، trinkbar، machbar.",
+      "«-bar = قابل للـ»: öffenbar، trinkbar، machbar.",
     ],
     culturalNote: {
       title: "الاقتصاد الألماني",
       content:
-        "ألمانيا رابع أكبر اقتصاد عالمي! «die soziale Marktwirtschaft» (اقتصاد السوق الاجتماعي) — توازن بين السوق والضمان الاجتماعي. والبنك المركزي الأوروبي في فرانكفورت. و«der Mittelstand» (الشركات المتوسطة) عمود الاقتصاد — 99% من الشركات!",
+        "يُعدّ الاقتصاد الألماني من أكبر الاقتصادات في العالم. «die soziale Marktwirtschaft» (اقتصاد السوق الاجتماعي) يجمع بين المنافسة في السوق والضمان الاجتماعي. والبنك المركزي الأوروبي مقرّه في فرانكفورت. و«der Mittelstand» (الشركات المتوسطة) قطاع مهم في الاقتصاد الألماني.",
     },
   },
 
@@ -448,11 +505,11 @@ export const lessonB202: Lesson = {
       id: "m4",
       type: "error-correction",
       instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Das Fenster ist geöffnet worden. (أريد حالة)",
-      wrongWord: "ist geöffnet worden",
-      correctWord: "ist geöffnet",
-      options: ["ist geöffnet", "ist geöffnet worden", "wird geöffnet", "wurde geöffnet"],
-      explanation: "الحالة بدون worden.",
+      wrongSentence: "Das Fenster ist geöffnen.",
+      wrongWord: "geöffnen",
+      correctWord: "geöffnet",
+      options: ["geöffnet", "geöffnen", "worden", "offen"],
+      explanation: "الحالة تحتاج Partizip II (geöffnet)، لا المصدر geöffnen.",
       errorType: "grammar",
     },
     {
@@ -476,7 +533,7 @@ export const lessonB202: Lesson = {
     { id: "fc4", de: "der Vertrag", ar: "العقد", example: "Der Vertrag ist unterschrieben.", exampleAr: "العقد موقع.", level: "B2" },
     { id: "fc5", de: "das Zustandspassiv", ar: "مجهول الحالة", example: "ist geöffnet", exampleAr: "مفتوح", level: "B2" },
     { id: "fc6", de: "sich lassen", ar: "يمكن/يُحل بسهولة", example: "Das Problem lässt sich lösen.", exampleAr: "المشكلة قابلة للحل.", level: "B2" },
-    { id: "fc7", de: "-bar", ar: "قابل للـ", example: "trinkbar, öffnbar", exampleAr: "قابل للشرب/الفتح", level: "B2" },
+    { id: "fc7", de: "-bar", ar: "قابل للـ", example: "trinkbar, öffenbar", exampleAr: "قابل للشرب/للفتح", level: "B2" },
     { id: "fc8", de: "die Lieferung", ar: "التسليم", example: "Die Lieferung kommt morgen.", exampleAr: "يأتي التسليم غداً.", level: "B2" },
     { id: "fc9", de: "Passiv + Modalverb", ar: "المجهول مع الناقصة", example: "Die Ware kann geliefert werden.", exampleAr: "يمكن تسليم البضاعة.", level: "B2" },
     { id: "fc10", de: "sein + zu + Infinitiv", ar: "يجب/يمكن (رسمي)", example: "Das Problem ist zu lösen.", exampleAr: "المشكلة يجب حلها.", level: "B2" },
