@@ -142,6 +142,43 @@ export const lessonA109: Lesson = {
       { de: "der Geburtstag", ar: "عيد الميلاد" },
     ],
   },
+  review: [
+    {
+      id: "r1",
+      type: "multiple-choice",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-08 — الفعل gefallen مع الضمير في الداتيف): اختر الشكل الصحيح.",
+      questionDe: "Das Kleid ___ mir sehr gut.",
+      questionAr: "هذا الفستان يعجبني كثيراً.",
+      options: ["gefällt", "gefalle", "gefallen", "gefällst"],
+      correctIndex: 0,
+      explanation: "مع das Kleid (مفرد): gefällt.",
+      errorType: "conjugation",
+    },
+    {
+      id: "r2",
+      type: "fill-blank",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-05 — الأفعال المنفصلة): أكمل الجملة.",
+      template: "Ich ___ um sieben ___.",
+      blanks: [
+        { correct: "stehe", options: ["stehe", "stehst", "steht", "aufstehe"] },
+        { correct: "auf", options: ["auf", "an", "aus", "ein"] },
+      ],
+      explanation: "الجزء الثاني من الفعل المنفصل يذهب إلى آخر الجملة: Ich stehe um sieben auf.",
+      errorType: "word-order",
+    },
+    {
+      id: "r3",
+      type: "error-correction",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-07 — صيغ الجمع والكميات): افحص الجملة؛ اختر التصحيح، أو «لا خطأ» إن كانت سليمة.",
+      wrongSentence: "Ich kaufe zwei Apfel.",
+      wrongWord: "Apfel",
+      correctWord: "Äpfel",
+      options: ["Äpfel", "Apfel", "Apfeln", "Äpfeln"],
+      explanation: "بعد zwei نستخدم صيغة الجمع: zwei Äpfel.",
+      errorType: "plural",
+    },
+  ],
+
   theory: [
     {
       id: "t1",

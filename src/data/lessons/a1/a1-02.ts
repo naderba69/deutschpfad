@@ -81,6 +81,41 @@ export const lessonA102: Lesson = {
     ],
   },
 
+  review: [
+    {
+      id: "r1",
+      type: "multiple-choice",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-01 — الفعل sein): اختر الشكل الصحيح.",
+      questionDe: "Ich ___ aus Tunesien.",
+      questionAr: "أنا من تونس.",
+      options: ["bin", "bist", "ist", "sind"],
+      correctIndex: 0,
+      explanation: "مع ich يكون الفعل sein على شكل bin.",
+      errorType: "conjugation",
+    },
+    {
+      id: "r2",
+      type: "fill-blank",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-01 — أسئلة W): أكمل سؤال المكان.",
+      template: "___ wohnst du? — In Tunis.",
+      blanks: [{ correct: "Wo", options: ["Wo", "Wer", "Was", "Woher"] }],
+      hint: "Wo = أين (مكان الإقامة).",
+      explanation: "Wo wohnst du? = أين تسكن؟",
+      errorType: "vocabulary",
+    },
+    {
+      id: "r3",
+      type: "error-correction",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-01 — الأفعال المنتظمة في المضارع): افحص الجملة؛ اختر التصحيح، أو «لا خطأ» إن كانت سليمة.",
+      wrongSentence: "Er lernen Deutsch.",
+      wrongWord: "lernen",
+      correctWord: "lernt",
+      options: ["lernt", "lernen", "lerne", "lernst"],
+      explanation: "مع er تأخذ الأفعال النهاية -t: er lernt.",
+      errorType: "conjugation",
+    },
+  ],
+
   /* 3) الشرح النظري */
   theory: [
     {
