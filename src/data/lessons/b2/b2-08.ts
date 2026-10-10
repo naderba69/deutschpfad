@@ -101,6 +101,12 @@ export const lessonB208: Lesson = {
       correctIndex: 2,
       explanation: "الفعل الانعكاسي بلا مفعول به آخر يأخذ Akkusativ: mich (درس a2-11).",
       errorType: "grammar",
+      optionExplanations: [
+        "«dich» ضمير للمخاطَب، ولا يناسب المتكلم ich.",
+        "«mir» ضمير جر، ولا يناسب فعل waschen مع الجسم هنا.",
+        undefined,
+        "«sich» ضمير الغائب، ولا يناسب المتكلم ich.",
+      ],
     },
     {
       id: "r2",
@@ -111,6 +117,12 @@ export const lessonB208: Lesson = {
       correctIndex: 1,
       explanation: "المفعول به المذكر في Akkusativ: einen Apfel (درس a1-03).",
       errorType: "case",
+      optionExplanations: [
+        "«ein» بلا نهاية، ولا تناسب مفعولاً مذكراً بعد الفعل essen.",
+        undefined,
+        "«einem» حالة جر، ولا تناسب مفعول الفعل essen.",
+        "«eine» مؤنث، والكلمة Apfel مذكرة.",
+      ],
     },
     {
       id: "r3",
@@ -241,6 +253,12 @@ export const lessonB208: Lesson = {
         correctIndex: 0,
         explanation: "قال سامي: Ich träume von einem Job in Deutschland.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«von einem Haus» لم يقل سامي إنه يحلم بمنزل.",
+          "«von einer Reise» لم يقل سامي إنه يحلم برحلة.",
+          "«von einem Auto» لم يقل سامي إنه يحلم بسيارة.",
+        ],
       },
       {
         id: "q2",
@@ -253,6 +271,12 @@ export const lessonB208: Lesson = {
         correctIndex: 0,
         explanation: "قالت آنا: Ich freue mich auf einen Austausch.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«auf eine Reise» لم تقل آنا إنها تتطلع إلى رحلة.",
+          "«auf eine Party» لم تقل آنا إنها تتطلع إلى حفلة.",
+          "«auf ein Buch» لم تقل آنا إنها تتطلع إلى كتاب.",
+        ],
       },
       {
         id: "q3",
@@ -265,6 +289,12 @@ export const lessonB208: Lesson = {
         correctIndex: 0,
         explanation: "قال كريم: Ich gewöhne mich langsam daran (أن يسألوا دائماً).",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«daran, dass man isst» لم يقل كريم إنه يعتاد الأكل.",
+          "«daran, dass man schläft» لم يقل كريم إنه يعتاد النوم.",
+          "«daran, dass man arbeitet» لم يقل كريم إنه يعتاد العمل.",
+        ],
       },
     ],
   },
@@ -333,6 +363,12 @@ export const lessonB208: Lesson = {
       correctIndex: 0,
       explanation: "sich interessieren für.",
       errorType: "preposition",
+      optionExplanations: [
+        undefined,
+        "«auf» لا تناسب sich interessieren؛ الفعل يطلب für.",
+        "«an» لا تناسب sich interessieren.",
+        "«über» لا تناسب sich interessieren مع Musik.",
+      ],
     },
     {
       id: "e2",
@@ -343,6 +379,12 @@ export const lessonB208: Lesson = {
       correctIndex: 0,
       explanation: "warten auf.",
       errorType: "preposition",
+      optionExplanations: [
+        undefined,
+        "«für» لا تناسب warten؛ الفعل يطلب auf.",
+        "«von» لا تناسب warten.",
+        "«um» لا تناسب warten.",
+      ],
     },
     {
       id: "e3",
@@ -410,6 +452,12 @@ export const lessonB208: Lesson = {
       correctIndex: 0,
       explanation: "der Austausch = التبادل (ثقافي/طلابي).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«الزيارة» تقابل Besuch، وليس Austausch.",
+        "«الرحلة» تقابل Reise، وليس Austausch.",
+        "«الاجتماع» يقابل Treffen أو Sitzung، وليس Austausch.",
+      ],
     },
     {
       id: "e9",
@@ -459,6 +507,12 @@ export const lessonB208: Lesson = {
       correctIndex: 0,
       explanation: "sich interessieren für.",
       errorType: "preposition",
+      optionExplanations: [
+        undefined,
+        "«auf» لا تناسب sich interessieren.",
+        "«von» لا تناسب sich interessieren.",
+        "«um» لا تناسب sich interessieren.",
+      ],
     },
     {
       id: "m2",
@@ -469,6 +523,12 @@ export const lessonB208: Lesson = {
       correctIndex: 0,
       explanation: "träumen von.",
       errorType: "preposition",
+      optionExplanations: [
+        undefined,
+        "«für» تعني لأجل، ولا تناسب träumen von.",
+        "«auf» لا تناسب träumen.",
+        "«an» لا تناسب träumen.",
+      ],
     },
     {
       id: "m3",
