@@ -162,6 +162,11 @@ export const lessonB111: Lesson = {
         correctIndex: 0,
         errorType: "grammar",
         explanation: "الموظف قال: Donnerstag, den 15., um 14 Uhr.",
+        optionExplanations: [
+          undefined,
+          "«Am Freitag um 9 Uhr» ليس الموعد الجديد؛ الموعد أُجل إلى الخميس الساعة 14.",
+          "«Am Montag» لا تذكر الموعد الجديد في الرسالة.",
+        ],
       },
       {
         type: "multiple-choice",
@@ -174,6 +179,11 @@ export const lessonB111: Lesson = {
         correctIndex: 0,
         errorType: "vocabulary",
         explanation: "bringen Sie Ihren Lebenslauf und die Zeugnisse mit.",
+        optionExplanations: [
+          undefined,
+          "«Ein Geschenk» لم تطلب الرسالة إحضار هدية.",
+          "«Nichts» تنفي ما طُلب، والرسالة تطلب إحضار أوراق.",
+        ],
       },
     ],
   },
@@ -258,6 +268,11 @@ export const lessonB111: Lesson = {
       correctIndex: 0,
       explanation: "في الجملة الموصولة الفعل في النهاية: der mir geholfen hat.",
       errorType: "word-order",
+      optionExplanations: [
+        undefined,
+        "«Der Mann, der hat mir geholfen, ist nett.» الفعل المساعد في غير موضعه، ولا يصح في الجملة الموصولة.",
+        "«Der Mann, der hat geholfen mir, ist nett.» ترتيب الكلمات خاطئ داخل الجملة الموصولة.",
+      ],
     },
     {
       id: "ex-b1-11-5",
@@ -268,6 +283,11 @@ export const lessonB111: Lesson = {
       correctIndex: 0,
       explanation: "Meiner Meinung nach = في رأيي (تعبير أساسي في النقاش).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«في الواقع» تقابل in Wirklichkeit، وليس Meiner Meinung nach.",
+        "«من ناحية أخرى» تقابل andererseits أو auf der anderen Seite، وليس Meiner Meinung nach.",
+      ],
     },
     {
       id: "ex-b1-11-6",
@@ -278,6 +298,11 @@ export const lessonB111: Lesson = {
       correctIndex: 0,
       explanation: "Obwohl + جملة ثانوية، والرئيسية فعلها في المركز الثاني: gingen.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«gehen» صيغة المصدر، ولا تناسب الفعل المصرّف مع wir في الماضي.",
+        "«gegangen» Partizip II، ولا تناسب الفعل المصرّف في الماضي البسيط.",
+      ],
     },
     {
       id: "ex-b1-11-7",
@@ -288,6 +313,11 @@ export const lessonB111: Lesson = {
       correctIndex: 0,
       explanation: "einerseits ... andererseits: من ناحية ... ومن ناحية أخرى.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«damit» تعني لكي، ولا تناسب التقابل هنا.",
+        "«nachdem» تعني بعد أن، ولا تناسب التقابل هنا.",
+      ],
     },
   ],
 
@@ -334,6 +364,11 @@ export const lessonB111: Lesson = {
       correctIndex: 0,
       explanation: "die Frau مؤنث → die.",
       errorType: "article",
+      optionExplanations: [
+        undefined,
+        "«Die Frau, der dort steht» الحالة خاطئة؛ الفاعل مؤنث ويحتاج die.",
+        "«Die Frau, das dort steht» الأداة خاطئة؛ Frau مؤنث ويحتاج die.",
+      ],
     },
     {
       id: "mt-b1-11-2",
@@ -353,6 +388,11 @@ export const lessonB111: Lesson = {
       correctIndex: 0,
       explanation: "die Anmeldung = التسجيل.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«الامتحان» تقابل Prüfung، وليس Anmeldung.",
+        "«النجاح» تقابل Erfolg، وليس Anmeldung.",
+      ],
     },
     {
       id: "mt-b1-11-4",
@@ -363,6 +403,11 @@ export const lessonB111: Lesson = {
       correctIndex: 0,
       explanation: "Konjunktiv II للتمنّي: ich hätte = لو كان لديّ.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«habe» صيغة المضارع، ولا تناسب تمني الحال غير الواقع.",
+        "«hatte» صيغة الماضي، ولا تناسب تمني الحال غير الواقع.",
+      ],
     },
     {
       id: "mt-b1-11-5",
