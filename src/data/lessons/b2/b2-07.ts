@@ -95,6 +95,12 @@ export const lessonB207: Lesson = {
       correctIndex: 0,
       explanation: "مع ich: werde.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wirst» مع du، ولا تناسب ich.",
+        "«wird» مع er أو sie أو es، ولا تناسب ich.",
+        "«werden» مع الجمع أو sie أو wir، ولا تناسب ich.",
+      ],
     },
     {
       id: "r2",
@@ -105,6 +111,12 @@ export const lessonB207: Lesson = {
       correctIndex: 0,
       explanation: "lesen → gelesen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«lesen» مصدر، ولا يكوّن زمن Perfekt مع haben.",
+        "«gelest» صيغة غير صحيحة لهذا الفعل.",
+        "«liest» صيغة المضارع، ولا تناسب Perfekt مع haben.",
+      ],
     },
     {
       id: "r3",
@@ -235,6 +247,12 @@ export const lessonB207: Lesson = {
         correctIndex: 0,
         explanation: "قال سامي: Man braucht Freiheit und Freundschaft.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«nur Geld» لم يقل سامي إن الحاجة إلى المال فقط.",
+          "«nur Arbeit» لم يقل سامي إن الحاجة إلى العمل فقط.",
+          "«nichts» تنفي ما قاله سامي.",
+        ],
       },
       {
         id: "q2",
@@ -247,6 +265,12 @@ export const lessonB207: Lesson = {
         correctIndex: 0,
         explanation: "قال كريم: Andererseits schadet sie der Umwelt.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Sie ist schnell» صفة إيجابية، ولا تمثل حجة ضد التقنية.",
+          "«Sie ist billig» صفة إيجابية، ولا تمثل حجة ضد التقنية.",
+          "«Sie hilft» حجة مع التقنية، وليست حجة ضدها.",
+        ],
       },
       {
         id: "q3",
@@ -259,6 +283,12 @@ export const lessonB207: Lesson = {
         correctIndex: 0,
         explanation: "قال كريم: Meiner Meinung nach brauchen wir nachhaltige Technik.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Wir brauchen keine Technik» تنفي ما قاله كريم.",
+          "«Technik ist nutzlos» تنفي ما قاله كريم.",
+          "«Wir brauchen mehr Geld» لم يقلها كريم.",
+        ],
       },
     ],
   },
@@ -326,6 +356,12 @@ export const lessonB207: Lesson = {
       correctIndex: 0,
       explanation: "فعل عادي: werde + PII + haben.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«werde ... sein» تستعمل sein مع فعل لا يأخذ sein في هذا السياق، والمطلوب haben.",
+        "«wird ... haben» مع ich خاطئة؛ الصيغة الصحيحة werde.",
+        "«habe ... worden» زمن غير مناسب مع Futur II.",
+      ],
     },
     {
       id: "e2",
@@ -336,6 +372,12 @@ export const lessonB207: Lesson = {
       correctIndex: 0,
       explanation: "حركة → sein.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«... haben» تستعمل مع أفعال الحركة مثل gehen، والمطلوب sein.",
+        "«... gehabt» صيغة غير صحيحة هنا.",
+        "«... worden» تستعمل مع المبني للمجهول، ولا تناسب الفعل gehen.",
+      ],
     },
     {
       id: "e3",
@@ -402,6 +444,12 @@ export const lessonB207: Lesson = {
       correctIndex: 0,
       explanation: "Zusammenfassend = ختاماً/خلاصةً.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«أولاً» تقابل Erstens أو Zunächst، وليس Zusammenfassend.",
+        "«علاوة على ذلك» تقابل Außerdem أو Darüber hinaus، وليس Zusammenfassend.",
+        "«مع ذلك» تقابل Trotzdem أو Dennoch، وليس Zusammenfassend.",
+      ],
     },
     {
       id: "e9",
@@ -451,6 +499,12 @@ export const lessonB207: Lesson = {
       correctIndex: 0,
       explanation: "فعل عادي: werde + haben.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«werde ... sein» تستعمل sein مع فعل لا يأخذ sein في هذا السياق، والمطلوب haben.",
+        "«wird ... haben» مع ich خاطئة؛ الصيغة الصحيحة werde.",
+        "«habe ... worden» زمن غير مناسب مع Futur II.",
+      ],
     },
     {
       id: "m2",
@@ -461,6 +515,12 @@ export const lessonB207: Lesson = {
       correctIndex: 0,
       explanation: "حركة → sein.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«... haben» تستعمل مع أفعال الحركة مثل ankommen، والمطلوب sein.",
+        "«... gehabt» صيغة غير صحيحة هنا.",
+        "«... worden» تستعمل مع المبني للمجهول، ولا تناسب الفعل ankommen.",
+      ],
     },
     {
       id: "m3",
