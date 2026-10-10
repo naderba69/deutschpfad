@@ -722,7 +722,7 @@ export const lessonA111: Lesson = {
         },
         {
           "de": "Nimmst du den Bus? — Ja, ich nehme ihn.",
-          "ar": "هل تستقل الحافلة؟ — نعم، أستقلّها."
+          "ar": "هل تستقل الحافلة؟ — نعم، أستقلّه."
         },
         {
           "de": "Siehst du mich?",
@@ -1945,7 +1945,7 @@ export const lessonA111: Lesson = {
       "de": "ihn (Akkusativ von er)",
       "ar": "ضمير مفعول يعود إلى اسم مذكر ألماني",
       "example": "Der Bus? Ich nehme ihn.",
-      "exampleAr": "الحافلة؟ أستقلّها.",
+      "exampleAr": "الحافلة؟ أستقلّه.",
       "level": "A1"
     },
     {
