@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {BookOpen, CheckCircle2, ClipboardCheck, Lock, PlayCircle} from "lucide-react";
+import {BookOpen, Check, CheckCircle2, ClipboardCheck, Lock, PlayCircle} from "lucide-react";
 
 import {getFirstLessonMetaForUnit} from "@/data/lessons/meta";
 import {getUnitLessonCount} from "@/lib/constants/curriculum";

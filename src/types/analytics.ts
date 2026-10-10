@@ -33,6 +33,9 @@ export type AnalyticsEvent =
       ts: number;
       target: string;
       score: number;
+      /** الدرس الذي وقع فيه التدريب، إن توفر. */
+      lessonId?: string;
+      taskId?: string;
     }
   | {
       id?: number;
@@ -40,6 +43,9 @@ export type AnalyticsEvent =
       ts: number;
       target: string;
       rating: 0 | 0.5 | 1;
+      /** الدرس الذي وقع فيه التدريب، إن توفر. */
+      lessonId?: string;
+      taskId?: string;
     }
   | {
       id?: number;
