@@ -873,7 +873,7 @@ export const lessonA106: Lesson = {
       type: "transformation",
       instructionAr: "حوّل الأمر الرسمي إلى أمر غير رسمي موجّه إلى شخص واحد:",
       prompt: "Kommen Sie bitte! (حوّلها إلى أمر du)",
-      acceptedAnswers: ["Komm bitte!", "Komm!", "Komme bitte!", "Komme!"],
+      acceptedAnswers: ["Komm bitte!", "Komm!"],
       sampleAnswer: "Komm bitte!",
       explanation: "مع du نستخدم صيغة الأمر «Komm(e)!» ونحذف ضمير المخاطب عادةً؛ وتبقى bitte مناسبة هنا.",
       errorType: "grammar",
