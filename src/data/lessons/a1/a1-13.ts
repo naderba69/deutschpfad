@@ -311,7 +311,7 @@ export const lessonA113: Lesson = {
         { de: "Guten Tag! Ich hätte gern einen Kaffee, bitte.", ar: "طاب يومك! أود قهوة من فضلك. (مثال لطلب مهذب)" },
         { de: "Einen Kaffee, bitte.", ar: "قهوة من فضلك. (طلب مختصر في هذا الموقف)" },
         { de: "Ich will einen Kaffee.", ar: "أريد قهوة. (تركيب صحيح؛ قد يكون أكثر مباشرة بحسب الموقف والنبرة)" },
-        { de: "Was kostet der Kaffee? — Drei Euro zwanzig.", ar: "كم سعر القهوة؟ — ثلاثة يوروهات وعشرون سنتاً." },
+        { de: "Was kostet der Kaffee? — Drei Euro zwanzig.", ar: "كم سعر القهوة؟ — ثلاثة يورو وعشرون سنتاً." },
         { de: "Zusammen oder getrennt? — Zusammen, bitte.", ar: "معاً أم على نحو منفصل؟ — معاً من فضلك. (في سياق تقسيم الحساب)" },
         { de: "Ich möchte bezahlen, bitte.", ar: "أود الدفع من فضلك. (طلب مهذب في نهاية الزيارة)" },
         { de: "Der Kellner bringt die Speisekarte.", ar: "يُحضر النادل قائمة الطعام. (مثال في موقف المقهى)" },
