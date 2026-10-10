@@ -11,22 +11,70 @@ export const lessonA212: Lesson = {
   titleDe: "Zwischenmenschliches",
   titleAr: "العلاقات بين الناس",
   summary:
-    "المشاعر والآراء، أدوات الربط المزدوجة (und, aber, oder, denn, sondern, deshalb, trotzdem, dann) وقواعدها، والتعامل مع الخلافات بلطف — خاتمة مستوى A2.",
+    "المشاعر والآراء والخلافات الصغيرة، وأدوات الربط العادية والمقلوبة (und, aber, oder, denn, deshalb, trotzdem, dann) وقواعدها، مع صيغ مهذبة للاعتذار والتصالح — قبل المراجعة الختامية A2-13.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann Gefühle ausdrücken.", ar: "أن أعبر عن المشاعر: سعيد، حزين، متوتر، متحمس." },
-    { id: "z2", de: "Ich kann die wichtigsten Konnektoren benutzen.", ar: "أن أستخدم أدوات الربط: und, aber, oder, denn, sondern, deshalb, trotzdem, dann." },
-    { id: "z3", de: "Ich kann Konflikte höflich ansprechen.", ar: "أن أتناول الخلافات بأدب وأتصالح." },
-      { id: "z4", de: "Ich kann höflich widersprechen und Kompromisse vorschlagen.", ar: "أن أعترض بلطف وأقترح حلولاً وسطاً." },
+    {
+      id: "z1",
+      de: "Ich kann passende Gefühlswörter in vorgegebenen Sätzen auswählen.",
+      ar: "أن أختار كلمة الشعور المناسبة (سعيد، حزين، متوتر) في جمل موجّهة؛ هذا اختيار مفردة لا تعبير حر عن مشاعري.",
+      evidence: {
+        exerciseIds: ["e6"],
+        taskIds: ["practice:a2-12:e6"],
+        labelAr: "أجب صحيحاً عن التمرين e6 (ثلاث جمل بفراغات) عندما يظهر في جلسة التدريب العشوائية؛ وهو ليس ضمن أول أربعة تمارين في مسار التدفق. فتح الدرس أو عرض الكلمات وحده ليس دليلاً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann die Konnektoren aber, deshalb, trotzdem und dann in vorgegebenen Sätzen richtig verwenden.",
+      ar: "أن أستعمل أدوات الربط aber وdeshalb وtrotzdem وdann في جمل موجّهة، مع الترتيب الصحيح للفعل والفاعل؛ وهذا اختيار وترتيب موجّهان لا إنتاج حر.",
+      evidence: {
+        exerciseIds: ["e1", "e2", "w1", "w2"],
+        taskIds: [
+          "practice:a2-12:e1",
+          "flow-practice:a2-12:e1",
+          "practice:a2-12:e2",
+          "flow-practice:a2-12:e2",
+          "writing:a2-12:w1",
+          "writing:a2-12:w2",
+        ],
+        labelAr: "أجب صحيحاً عن e1 وe2 (يظهر كلاهما ضمن أول أربعة تمارين في مسار التدفق، وفي جلسة التدريب العشوائية)، ثم أكمل w1 (جملة deshalb مقلوبة) وw2 (أربعة فراغات). هذه مهام اختيار موجّه وترتيب، لا كتابة حرة.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann eine vorgegebene Entschuldigung mit Grund schriftlich formulieren.",
+      ar: "أن أكتب اعتذاراً مهذباً مع ذكر السبب بـ deshalb عند إعطاء المعنى والعبارة المطلوبة؛ وهذا لا يقيس حواراً حراً لحل الخلاف.",
+      evidence: {
+        exerciseIds: ["w4"],
+        taskIds: ["writing:a2-12:w4"],
+        labelAr: "اكتب الاعتذار المحدد في w4 بالألمانية. لا يُحتسب اختيار الرد في محاكاة التفاعل أداءً مكتوباً أو شفهياً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann einen höflichen Einwand mit aber in einem vorgegebenen Satz schriftlich formulieren.",
+      ar: "أن أكتب اعتراضاً مهذباً بـ aber عند إعطاء المعنى والجملة المطلوبة؛ لا يُقيَّم هنا الاعتراض الشفهي ولا اقتراح حل وسط مفتوح.",
+      evidence: {
+        exerciseIds: ["w5"],
+        taskIds: ["writing:a2-12:w5"],
+        labelAr: "اكتب الاعتراض المحدد في w5 بالألمانية. الاختيار في محاكاة التفاعل لا يُحتسب أداءً.",
+        completion: "all-correct",
+      },
+    },
   ],
+
   einfuehrung: {
     motivatingQuestionAr:
-      "الربط في العربية: «لكن» و«لذلك» و«بالرغم من ذلك». الألمانية تملك أدوات مشابهة لكن بقاعدة ذهبية: بعضها لا يغير الترتيب (und, aber, oder, denn) وبعضها يقلب الفعل (deshalb, trotzdem, dann). هذه آخر قاعدة كبرى في A2!",
+      "الربط في العربية: «لكن» و«لذلك» و«بالرغم من ذلك». الألمانية تملك أدوات مشابهة لكن بقاعدة ذهبية: بعضها لا يغير الترتيب (und, aber, oder, denn) وبعضها يقلب الفعل (deshalb, trotzdem, dann). وهي من أهم قواعد هذا المستوى قبل المراجعة الختامية في A2-13.",
     motivatingQuestionDe: "Wie geht es dir heute?",
     contextAr:
-      "نختم مستوى A2 بموضوع العلاقات: مشاعر، آراء، وخلافات. ومعها «أدوات الربط» التي تجعل كلامك متصلاً ومتماسكاً — وتختبر كل ما تعلمته.",
+      "نتناول موضوع العلاقات: مشاعر، وآراء، وخلافات صغيرة. ومعها «أدوات الربط» التي تجعل كلامك متصلاً ومتماسكاً، ثم تأتي المراجعة الختامية في A2-13.",
     contextDe: "Ich bin müde, aber ich bin glücklich.",
-    connectionToPreviousAr: "تذكرت dass وweil (الجمل الثانوية). اليوم: أدوات الربط السطحية — نصفها عادي (V2) ونصفها مقلوب (فعل أولاً). إنجاز A2 يوشك أن يكتمل!",
+    connectionToPreviousAr: "تذكرت dass وweil (الجمل الثانوية). اليوم: أدوات الربط الرئيسية — أربع عادية (und، aber، oder، denn) لا تغيّر الترتيب، وثلاث مقلوبة (deshalb، trotzdem، dann) يأتي الفعل بعدها مباشرة.",
     activateVocabulary: [
       { de: "das Gefühl", ar: "الشعور" },
       { de: "glücklich", ar: "سعيد" },
@@ -78,7 +126,7 @@ export const lessonA212: Lesson = {
       explanationAr:
         "أدوات الربط نوعان: عادية (لا تغير الترتيب — الفعل يبقى في المركز الثاني): und (و)، aber (لكن)، oder (أو)، denn (لأنّ). ومقلوبة (ترسل الفعل أولاً): deshalb (لذلك)، trotzdem (بالرغم من ذلك)، dann (ثم)، außerdem (علاوة على ذلك)، sonst (وإلاّ).",
       whyAr:
-        "لماذا بعضها يقلب؟ لأن deshalb وtrotzdem وdann تحمل «معنى الجملة السابقة» — مثل العربية: «لذلك، نذهب» — الألمانية تجعلها في المركز الأول والفعل بعده مباشرة. أما und/aber/denn فهي «روابط محايدة» لا تحمل معنى إضافياً.",
+        "لماذا بعضها يقلب؟ لأن deshalb وtrotzdem وdann تحتل المكان الأول في جملتها (Vorfeld)، فيأتي الفعل مباشرة بعدها ثم الفاعل. أما und وaber وoder وdenn فلا تحتل المكان الأول، فيأتي الفاعل قبل الفعل كما في الجملة العادية.",
       table: {
         title: "أدوات الربط الأساسية",
         columns: ["الأداة", "المعنى", "الترتيب", "مثال"],
@@ -100,17 +148,17 @@ export const lessonA212: Lesson = {
         { de: "Erst lerne ich, dann sehe ich fern.", ar: "أولاً أتعلم، ثم أشاهد التلفاز." },
       ],
       comparisonWithArabic:
-        "«لكن» = aber (عادي). «لذلك» = deshalb (مقلوب). «رغم ذلك» = trotzdem (مقلوب). العربية لا تغير الترتيب بعدها — الألمانية تفعل مع المعاني «النتيجة/المعاكسة».",
+        "«لكن» = aber (عادية). «لذلك» = deshalb (مقلوبة). «رغم ذلك» = trotzdem (مقلوبة). المقارنة مع العربية تفيد في المعنى لا في الترتيب: الألمانية تُلزمك بقالب شكلي ثابت، هو أن الفعل يأتي مباشرة بعد الأداة المقلوبة ثم الفاعل.",
       eselsbruecke:
         "«عائلة عادية: und-aber-oder-denn» (لا تلمس الفعل). «عائلة مقلوبة: deshalb-trotzdem-dann» (الفعل يقفز أولاً). احفظ العائلتين.",
       commonMistakes: [
         { wrong: "Es regnet, deshalb ich bleibe zu Hause.", right: "Es regnet, deshalb bleibe ich zu Hause.", whyAr: "deshalb يقلب: الفعل بعدها مباشرة." },
-        { wrong: "Ich bin müde, aber ich bin glücklich. → Ich bin müde, aber bin ich glücklich؟", right: "لا — aber عادية: الفعل يبقى بعد الفاعل.", whyAr: "aber من العائلة العادية — لا تقلب." },
-        { wrong: "denn أم deshalb؟", right: "denn = لأنّ (سبب — عادية). deshalb = لذلك (نتيجة — مقلوبة)", whyAr: "السبب denn يفتح، والنتيجة deshalb تعقب." },
+        { wrong: "Ich bin müde, aber bin ich glücklich.", right: "Ich bin müde, aber ich bin glücklich.", whyAr: "aber من العائلة العادية: بعدها الفاعل مباشرة ولا تقلب الفعل." },
+        { wrong: "Ich bleibe, deshalb es regnet.", right: "Ich bleibe, denn es regnet.", whyAr: "deshalb تعطي النتيجة لا السبب، ومعها يأتي الفعل مباشرة بعدها: Es regnet, deshalb bleibe ich. أما denn فتعطي السبب وتترك الترتيب العادي." },
       ],
       relatedRuleComparison: {
         title: "denn أم weil أم deshalb؟",
-        content: "نفس العلاقة بثلاث صيغ: Ich bleibe, denn es regnet (عادية). Ich bleibe, weil es regnet (ثانوية — فعل في النهاية). Es regnet, deshalb bleibe ich (مقلوبة). كلها «لأن/لذلك» — اختر واحدة وكن دقيقاً في ترتيبها.",
+        content: "علاقة السبب والنتيجة بأدوات مختلفة: Ich bleibe, denn es regnet (عادية: السبب بعد الفاصلة). Ich bleibe, weil es regnet (ثانوية: الفعل في النهاية). Es regnet, deshalb bleibe ich (مقلوبة: النتيجة بعد السبب مع قلب الفعل). الأوليان تعطيان السبب والثالثة تعطي النتيجة، فلا تخلط بينها.",
       },
     },
     {
@@ -118,7 +166,7 @@ export const lessonA212: Lesson = {
       titleAr: "obwohl: الاستدراك بفعل في النهاية",
       titleDe: "Der Konzessivsatz mit „obwohl“",
       explanationAr: "obwohl (رغم أن) تقدم جملة استدراكية: الفعل في النهاية. Obwohl es regnet, gehe ich spazieren. ملاحظة: obwohl تفترض حقيقة (رغم أن الجو ممطر) بينما trotzdem تفصل بين جملتين (Es regnet. Trotzdem gehe ich spazieren).",
-      whyAr: "لماذا؟ لأن obwohl من أكثر أدوات الربط استخداماً في B1 — والتمييز بينها وبين trotzdem يرفع جودة الأسلوب.",
+      whyAr: "لماذا؟ هذه توسعة اختيارية في الاستدراك بجملة ثانوية، وتتجاوز الجرد الأساسي لـA2 (تتكرر لاحقاً في B1). التمييز بينها وبين trotzdem يساعدك على فهم ما تقرؤه، وليست مطلوبة في تمارين هذا الدرس المقيّمة.",
       table: {
         title: "obwohl وأخواتها في التعبير عن الاستدراك",
         columns: ["الأداة", "نوعها", "موضع الفعل", "مثال"],
@@ -142,7 +190,7 @@ export const lessonA212: Lesson = {
       ],
       relatedRuleComparison: {
         title: "obwohl أم weil؟",
-        content: "weil تقدّم السبب المتوقَّع: Ich bleibe zu Hause, weil es regnet. أما obwohl فتقدّم عكس المتوقَّع: Ich gehe spazieren, obwohl es regnet. كلتاهما ترسل الفعل إلى نهاية الجملة الثانوية.",
+        content: "weil تقدّم سبباً: Ich bleibe zu Hause, weil es regnet. أما obwohl فتقدّم ما يخالف المتوقّع: Ich gehe spazieren, obwohl es regnet. كلتاهما ترسل الفعل إلى نهاية الجملة الثانوية.",
       },
     },
   ],
@@ -217,10 +265,10 @@ export const lessonA212: Lesson = {
     title: "أصوات المشاعر: ü، au، وst",
     items: [
       { de: "glücklich", ar: "سعيد", note: "ü + ck: غلوك-ليش" },
-      { de: "traurig", ar: "حزين", note: "au = آو: تراوريخ" },
+      { de: "traurig", ar: "حزين", note: "au = آو، وig في آخر الكلمة خفيفة كالشين: تراوريش" },
       { de: "gestresst", ar: "متوتر", note: "st = شت + ss: غِشترست" },
       { de: "sauer", ar: "غاضب", note: "au = آو: زاور" },
-      { de: "das Gefühl", ar: "الشعور", note: "ü طويل: غِفول" },
+      { de: "das Gefühl", ar: "الشعور", note: "ü طويلة (شفتان مدورتان كأنك تقول «ي»): غِفوول تقريباً" },
       { de: "der Streit", ar: "الخلاف", note: "st = شت + ei = آي: شترايت" },
     ],
     tip: "glücklich أشهر كلمة سعادة: غلوك-ليش. وهي من Glück (حظ/سعادة) — تذكرها مع Glückwunsch (تهنئة)!",
@@ -249,10 +297,10 @@ export const lessonA212: Lesson = {
       instructionAr: "أكمل بـ aber/deshalb/trotzdem/dann:",
       template: "Ich bin müde, ___ ich bin glücklich. (لكن) Es regnet, ___ bleibe ich. (لذلك) Es ist kalt, ___ gehe ich. (رغم ذلك) Erst esse ich, ___ schlafe ich. (ثم)",
       blanks: [
-        { correct: "aber", options: ["aber", "deshalb", "trotzdem", "dann"] },
-        { correct: "deshalb", options: ["aber", "deshalb", "trotzdem", "dann"] },
-        { correct: "trotzdem", options: ["aber", "deshalb", "trotzdem", "dann"] },
-        { correct: "dann", options: ["aber", "deshalb", "trotzdem", "dann"] },
+        { correct: "aber", options: ["aber", "deshalb", "dann"] },
+        { correct: "deshalb", options: ["deshalb", "trotzdem"] },
+        { correct: "trotzdem", options: ["trotzdem", "dann"] },
+        { correct: "dann", options: ["dann", "deshalb"] },
       ],
       explanation: "لكن = aber (عادية). لذلك = deshalb (مقلوبة). رغم ذلك = trotzdem (مقلوبة). ثم = dann (مقلوبة).",
       errorType: "grammar",
@@ -265,6 +313,28 @@ export const lessonA212: Lesson = {
       explanation: "تمطر ومع ذلك أذهب في نزهة — trotzdem مقلوبة.",
       errorType: "spelling",
     },
+    {
+      id: "w4",
+      type: "transformation",
+      instructionAr: "اكتب اعتذاراً مهذباً بالألمانية مع ذكر السبب بـ deshalb:",
+      prompt: "اكتب: «آسف، كان يومي متعباً، لذلك لم أكتب لك» بالألمانية",
+      acceptedAnswers: [
+        "Es tut mir leid, ich hatte einen anstrengenden Tag, deshalb habe ich dir nicht geschrieben.",
+      ],
+      sampleAnswer: "Es tut mir leid, ich hatte einen anstrengenden Tag, deshalb habe ich dir nicht geschrieben.",
+      explanation: "اعتذار + سبب: deshalb مقلوبة، فيأتي الفعل habe مباشرة بعدها ثم الفاعل ich.",
+      errorType: "grammar",
+    },
+    {
+      id: "w5",
+      type: "transformation",
+      instructionAr: "اكتب اعتراضاً مهذباً بـ aber:",
+      prompt: "اكتب: «الفكرة جيدة، لكنني أرى أمراً آخر» بالألمانية",
+      acceptedAnswers: ["Die Idee ist gut, aber ich sehe das anders.", "Die Idee ist gut, aber ich sehe es anders."],
+      sampleAnswer: "Die Idee ist gut, aber ich sehe das anders.",
+      explanation: "aber عادية: بعدها الفاعل ich مباشرة، والفعل يبقى في المرتبة الثانية.",
+      errorType: "grammar",
+    },
   ],
 
   practiceBank: [
@@ -273,7 +343,7 @@ export const lessonA212: Lesson = {
       type: "multiple-choice",
       instructionAr: "اختر أداة الربط الصحيحة:",
       questionDe: "Ich bin müde, ___ ich bin glücklich.",
-      options: ["aber", "deshalb", "trotzdem", "dann"],
+      options: ["aber", "deshalb", "denn", "dann"],
       correctIndex: 0,
       explanation: "لكن = aber (عادية، الفعل بعد الفاعل).",
       errorType: "grammar",
@@ -381,16 +451,16 @@ export const lessonA212: Lesson = {
     mistakes: [
       { wrong: "Es regnet, deshalb ich bleibe.", right: "Es regnet, deshalb bleibe ich.", whyAr: "deshalb مقلوبة." },
       { wrong: "Es regnet, aber bleibe ich.", right: "Es regnet, aber ich bleibe.", whyAr: "aber عادية — لا تقلب." },
-      { wrong: "Ich bleibe, denn es regnet أم weil؟", right: "كلاهما صحيح لكن بترتيب مختلف: denn (عادية) / weil (فعل في النهاية)", whyAr: "اختر واحدة والتزم بترتيبها." },
+      { wrong: "Ich bleibe, weil regnet es.", right: "Ich bleibe, weil es regnet.", whyAr: "weil جملة ثانوية: الفعل في النهاية (regnet). أما denn فلا تغيّر الترتيب: Ich bleibe, denn es regnet." },
     ],
     eselsbruecken: [
       "«عائلة عادية: und-aber-oder-denn» (لا تلمس الترتيب) — «عائلة مقلوبة: deshalb-trotzdem-dann» (الفعل يقفز أولاً).",
-      "اختبر: هل الأداة «نتيجة أو معاكسة»؟ نعم → مقلوبة.",
+      "اختبر موقع الأداة: إن كانت نتيجة أو معاكسة أو تسلسلاً زمنياً (dann) وتبدأ بها الجملة، فيأتي الفعل بعدها مباشرة → مقلوبة. وإن كانت تربط جملتين دون أن تحتل المكان الأول → عادية.",
     ],
     culturalNote: {
       title: "الصدق الألماني اللطيف",
       content:
-        "الألمان صريحون في العلاقات: يقولون رأيهم مباشرة لكن بأدب («Ich finde das nicht gut»). والتصالح يتم بسرعة بعد توضيح السبب. عبارة مهمة: «Tut mir leid» (آسف) — و«Es ist okay / Alles gut» (لا بأس). الصدق المباشر جزء من الثقة المتبادلة.",
+        "يُعبَّر عن الرأي المخالف في الألمانية كثيراً بصراحة مع صيغة مهذبة، مثل «Ich finde das nicht gut» (لا أرى ذلك جيداً). والعبارات الأساسية للاعتذار والطمأنة: «Tut mir leid» (آسف) و«Es ist okay / Alles gut» (لا بأس). هذا وصف عام لأسلوب شائع لا قاعدة تنطبق على كل شخص أو موقف.",
     },
   },
 
@@ -439,11 +509,11 @@ export const lessonA212: Lesson = {
       id: "m5",
       type: "fill-blank",
       instructionAr: "أكمل بـ deshalb/trotzdem/dann:",
-      template: "Ich habe Prüfung, ___ lerne ich. (لذلك) Ich bin krank, ___ gehe ich zur Schule. (رغم ذلك) Erst arbeite ich, ___ koche ich. (ثم)",
+      template: "Ich habe eine Prüfung, ___ lerne ich. (لذلك) Ich bin krank, ___ gehe ich zur Arbeit. (رغم ذلك) Erst arbeite ich, ___ koche ich. (ثم)",
       blanks: [
-        { correct: "deshalb", options: ["deshalb", "trotzdem", "dann"] },
-        { correct: "trotzdem", options: ["deshalb", "trotzdem", "dann"] },
-        { correct: "dann", options: ["deshalb", "trotzdem", "dann"] },
+        { correct: "deshalb", options: ["deshalb", "trotzdem"] },
+        { correct: "trotzdem", options: ["trotzdem", "deshalb"] },
+        { correct: "dann", options: ["dann", "deshalb", "trotzdem"] },
       ],
       explanation: "لذلك = deshalb. رغم ذلك = trotzdem. ثم = dann — كلها مقلوبة.",
       errorType: "grammar",
