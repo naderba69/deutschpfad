@@ -198,7 +198,7 @@ export const lessonB108: Lesson = {
       comparisonWithArabic:
         "«ليس فقط... بل أيضاً» = nicht nur... sondern auch؛ «إما... أو» = entweder... oder؛ «لا... ولا» = weder... noch. تتطابق هذه الروابط في المعنى مع العربية.",
       eselsbruecke:
-        "«الأربعة التوأم»: nicht nur-sondern auch، sowohl-als auch، weder-noch، entweder-oder. احفظها كثنائيات متلاصقة.",
+        "«الخمسة التوأم»: nicht nur-sondern auch، sowohl-als auch، weder-noch، entweder-oder، je-desto. احفظها كثنائيات متلاصقة.",
       commonMistakes: [
         { wrong: "Er spricht nicht nur Deutsch und auch Englisch.", right: "Er spricht nicht nur Deutsch, sondern auch Englisch.", whyAr: "الزوج الصحيح: nicht nur... sondern auch، وليس und auch." },
         { wrong: "Ich habe weder Zeit oder Geld.", right: "Ich habe weder Zeit noch Geld.", whyAr: "weder يقابله noch، وليس oder." },

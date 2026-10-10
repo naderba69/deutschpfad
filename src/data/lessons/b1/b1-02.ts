@@ -11,7 +11,7 @@ export const lessonB102: Lesson = {
   titleDe: "Arbeitswelt",
   titleAr: "عالم العمل",
   summary:
-    "الماضي البسيط الكامل (Präteritum) لكل الأفعال المنتظمة والشاذة، الماضي التام المركب (Plusquamperfekt)، وسرد تجربة العمل: Ich arbeitete, ich hatte gearbeitet.",
+    "الماضي البسيط (Präteritum) لكل الأفعال المنتظمة والشاذة، الماضي التام المركب (Plusquamperfekt)، وسرد تجربة العمل: Ich arbeitete, ich hatte gearbeitet.",
 
   lernziele: [
     {
@@ -113,7 +113,7 @@ export const lessonB102: Lesson = {
   theory: [
     {
       id: "t1",
-      titleAr: "الماضي البسيط الكامل (Präteritum) للجميع",
+      titleAr: "الماضي البسيط (Präteritum) للجميع",
       titleDe: "Das komplette Präteritum",
       explanationAr:
         "المنتظم: جذر + te: arbeiten → ich arbeitete، du arbeitetest. الشاذ: تغيير جذري: gehen → ging، kommen → kam، sehen → sah. الأفعال الشرطية: konnte, musste, wollte. القاعدة العامة: في الكتابة والقصص يُستخدم Präteritum غالباً، وفي الكلام يبقى للأفعال sein وhaben والأفعال الشرطية.",
