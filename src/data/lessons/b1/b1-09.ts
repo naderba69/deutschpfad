@@ -119,6 +119,12 @@ export const lessonB109: Lesson = {
       correctIndex: 0,
       explanation: "helfen + Dativ: meinem (درس المناسبات).",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«meinen» مفعول به، وhelfen يطلب الجر، فالصيغة meinem.",
+        "«mein» بلا نهاية لا تناسب الجر المذكر هنا.",
+        "«meine» للمؤنث أو الجمع، والأخ مذكّر.",
+      ],
     },
     {
       id: "r2",
@@ -129,6 +135,12 @@ export const lessonB109: Lesson = {
       correctIndex: 0,
       explanation: "der Verein = الجمعية/النادي.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«الشركة» تقابل Firma، وليس Verein.",
+        "«المدرسة» تقابل Schule، وليس Verein.",
+        "«المستشفى» يقابل Krankenhaus، وليس Verein.",
+      ],
     },
     {
       id: "r3",
@@ -308,6 +320,12 @@ export const lessonB109: Lesson = {
         correctIndex: 0,
         explanation: "قال سامي: Ich möchte ... Erfahrung sammeln.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Geld» لم يذكره سامي كشيء يريد جمعه.",
+          "«Bücher» لم يذكرها سامي كشيء يريد جمعه.",
+          "«Freunde» لم يذكرها سامي كشيء يريد جمعه.",
+        ],
       },
       {
         id: "q2",
@@ -320,6 +338,12 @@ export const lessonB109: Lesson = {
         correctIndex: 0,
         explanation: "قال المدير: Du wirst mit dem Kollegen arbeiten.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«mit dem Chef» لم يذكره المسؤول؛ سيعمل سامي مع الزميل.",
+          "«mit dem Kunden» لم يُذكر أن سامي سيعمل مع الزبون.",
+          "«allein» تنفي العمل مع أحد، وهذا عكس ما قاله المسؤول.",
+        ],
       },
       {
         id: "q3",
@@ -332,6 +356,12 @@ export const lessonB109: Lesson = {
         correctIndex: 0,
         explanation: "قالت منى: Wir treffen eine wichtige Entscheidung heute.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«eine Frage» ليست ما اتفقا عليه اليوم في الحوار.",
+          "«einen Fehler» ليست ما اتفقا عليه اليوم في الحوار.",
+          "«eine Pause» ليست ما اتفقا عليه اليوم في الحوار.",
+        ],
       },
     ],
   },
@@ -400,6 +430,12 @@ export const lessonB109: Lesson = {
       correctIndex: 0,
       explanation: "السؤال يُطرح (stellen).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«geben» لا تشكّل تعبيراً صحيحاً مع Frage؛ نقول eine Frage stellen.",
+        "«sagen» لا تشكّل تعبيراً صحيحاً مع Frage؛ نقول eine Frage stellen.",
+        "«nehmen» لا تشكّل تعبيراً صحيحاً مع Frage؛ نقول eine Frage stellen.",
+      ],
     },
     {
       id: "e2",
@@ -410,6 +446,12 @@ export const lessonB109: Lesson = {
       correctIndex: 0,
       explanation: "النصب: den Studenten.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Student» مفرد بلا نهاية، ولا يناسب الحالة المفعولية الضعيفة هنا.",
+        "«Studentes» نهاية خاطئة لهذا الاسم.",
+        "«Studentin» مؤنث، والسياق يتحدث عن رجل.",
+      ],
     },
     {
       id: "e3",
@@ -476,6 +518,12 @@ export const lessonB109: Lesson = {
       correctIndex: 0,
       explanation: "Bescheid sagen = يبلغ/يعطي خبراً.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«يقول وداعاً» تعني Abschied nehmen، وليس Bescheid sagen.",
+        "«يأخذ قراراً» تعني eine Entscheidung treffen، وليس Bescheid sagen.",
+        "«يقدم مساعدة» تعني Hilfe leisten، وليس Bescheid sagen.",
+      ],
     },
     {
       id: "e9",
@@ -505,6 +553,12 @@ export const lessonB109: Lesson = {
       correctIndex: 0,
       explanation: "warten auf + Akkusativ. لا تترجم من العربية «أنتظر الحافلة» بلا حرف — الألمانية تفرض auf.",
       errorType: "preposition",
+      optionExplanations: [
+        undefined,
+        "«für» تعني لأجل، ولا تناسب warten على شيء.",
+        "«an» لا تناسب الفعل warten مع الشيء المنتظر.",
+        "«über» لا تناسب الفعل warten مع الشيء المنتظر.",
+      ],
     },
     {
       id: "e12",
@@ -558,6 +612,12 @@ export const lessonB109: Lesson = {
       correctIndex: 0,
       explanation: "القرار يُتخذ (treffen).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«stellen» تعني يطرح، ولا تناسب eine Entscheidung.",
+        "«sagen» تعني يقول، ولا تناسب Entscheidung.",
+        "«machen» لا تشكّل تعبيراً صحيحاً مع Entscheidung؛ نقول eine Entscheidung treffen.",
+      ],
     },
     {
       id: "m2",
@@ -568,6 +628,12 @@ export const lessonB109: Lesson = {
       correctIndex: 0,
       explanation: "الجر: dem Kunden.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Kunde» مفرد بلا نهاية، والسياق يتطلب الجمع أو الجر هنا.",
+        "«Kundes» نهاية مضاف إليه، ولا تناسب الجر بعد dem.",
+        "«Kundem» نهاية خاطئة لهذا الاسم.",
+      ],
     },
     {
       id: "m3",
@@ -610,6 +676,12 @@ export const lessonB109: Lesson = {
       correctIndex: 0,
       explanation: "teilnehmen an + Dativ ⇒ an dem = am، لا an den.",
       errorType: "preposition",
+      optionExplanations: [
+        undefined,
+        "«an den» تستعمل مع الحالة المفعولية، ولا تناسب teilnehmen.",
+        "«auf dem» لا تناسب teilnehmen.",
+        "«für den» لا تناسب teilnehmen.",
+      ],
     },
   ],
 
