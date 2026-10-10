@@ -14,17 +14,57 @@ export const lessonB104: Lesson = {
     "النظر النقدي للإعلام، صيغة الشرط (Konjunktiv II): würde + Infinitiv والأفعال الشائعة (wäre, hätte, könnte) — للتمني والافتراض والتهذيب.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann Medien kritisch betrachten.", ar: "أن أنظر للإعلام نظرة نقدية." },
-    { id: "z2", de: "Ich kann den Konjunktiv II bilden: würde + Infinitiv.", ar: "أن أصوغ صيغة الشرط: سوف/لو (würde + مصدر)." },
-    { id: "z3", de: "Ich kann die wichtigen Formen benutzen: wäre, hätte, könnte.", ar: "أن أستخدم الأشكال الشائعة: كان سيكون، كان سيملك، كان يستطيع." },
-      { id: "z4", de: "Ich kann über Medien und ihre Rolle in der Gesellschaft sprechen.", ar: "أن أتحدث عن الإعلام ودوره في المجتمع." },
+    {
+      id: "z1",
+      de: "Ich kann Wirklichkeit und Annahme unterscheiden: ich habe / ich hätte.",
+      ar: "أن أميّز بين الواقع والافتراض: habe (عندي) وhätte (لو كان عندي).",
+      evidence: {
+        exerciseIds: ["e1", "e5", "e7"],
+        taskIds: ["practice:b1-04:e1", "flow-practice:b1-04:e1", "practice:b1-04:e5", "practice:b1-04:e7"],
+        labelAr: "أجب صحيحاً عن e1 (ويظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق)، وصحّح e5، وحوّل e7 إلى جملة شرطية صحيحة. الشرح والأمثلة لا تُحتسب أداءً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann würde + Infinitiv benutzen: Ich würde gern reisen.",
+      ar: "أن أستخدم würde مع المصدر في آخر الجملة: كنت سأسافر.",
+      evidence: {
+        exerciseIds: ["e2", "m2", "w1"],
+        taskIds: ["practice:b1-04:e2", "flow-practice:b1-04:e2", "mini-test:b1-04:m2", "writing:b1-04:w1"],
+        labelAr: "أجب صحيحاً عن e2 (ويظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق)، وعن m2، واكتب w1 بصيغة würde + مصدر في آخر الجملة.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann wäre, hätte und könnte in Wünschen und Bitten benutzen.",
+      ar: "أن أستخدم wäre وhätte وkönnte في الأماني والطلبات المهذبة.",
+      evidence: {
+        exerciseIds: ["e3", "m1", "w2"],
+        taskIds: ["practice:b1-04:e3", "mini-test:b1-04:m1", "writing:b1-04:w2"],
+        labelAr: "أطابق e3 بصحة (كل فعل بصيغته الشرطية)، وأجب عن m1، وأكمل جميع فراغات w2 بصحة. الترجمة والشرح لا تُحتسبان أداءً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann Wünsche und Ratschläge in einem kurzen Gespräch verstehen.",
+      ar: "أن أفهم الأمنيات والنصيحة في حوار قصير.",
+      evidence: {
+        exerciseIds: ["q1", "q2", "q3"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
+        labelAr: "أجب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، دون كشف التفريغ. كشف النص لا يُحتسب أداءً.",
+        completion: "all-correct",
+      },
+    },
   ],
   einfuehrung: {
     motivatingQuestionAr:
-      "قل بالعربية: «لو كنت غنياً، لسافرت». لاحظت «لو... لـ»؟ الألمانية تملك صيغة كاملة لذلك اسمها Konjunktiv II. وأهم أداتها: würde (سوف/كان) + المصدر. خمّن: كيف نقول «كنت سأسافر»؟",
+      "قل بالعربية: «لو كنت غنياً، لسافرت». لاحظت «لو... لـ»؟ الألمانية تملك صيغة كاملة لذلك اسمها Konjunktiv II. وأهم أداتها: würde (معناها «كنت سأ...») + المصدر. خمّن: كيف نقول «كنت سأسافر»؟",
     motivatingQuestionDe: "Was würdest du machen, wenn du reich wärst?",
     contextAr:
-      "ندخل أعمق صيغة في B1: الشرطية. بها نعبر عن الأحلام والافتراضات والنصائح المهذبة — وكل شيء غير واقعي.",
+      "ندخل صيغة مهمة في B1: الشرطية. بها نعبر عن الأحلام والافتراضات والنصائح المهذبة — وكل شيء غير واقعي.",
     contextDe: "Ich würde gern mehr Nachrichten lesen, wenn ich Zeit hätte.",
     connectionToPreviousAr: "تتذكر werden (يصبح + مجهول). اليوم: würde — صيغة شرطية من werden: Ich würde = كنت سأفعل. ثلاثة استخدامات لwerden في مستوى واحد!",
     activateVocabulary: [
@@ -52,7 +92,7 @@ export const lessonB104: Lesson = {
       type: "multiple-choice",
       instructionAr: "مراجعة من B1 (درس b1-03 — البيئة والمناخ): اختر المجهول:",
       questionDe: "Das Haus ___ gebaut. (يُبنى)",
-      options: ["wird", "wurde", "ist", "war"],
+      options: ["wird", "wurde", "wirst", "werden"],
       correctIndex: 0,
       explanation: "مجهول مضارع: wird gebaut (درس البيئة).",
       errorType: "grammar",
@@ -63,7 +103,7 @@ export const lessonB104: Lesson = {
       instructionAr: "مراجعة من A2 (درس a2-06 — الإعلام والأخبار): أكمل:",
       template: "Ich finde, dass der Film gut ___.",
       blanks: [
-        { correct: "ist", options: ["ist", "sein", "wird"] },
+        { correct: "ist", options: ["ist", "sind", "bist"] },
       ],
       explanation: "dass + فعل في النهاية (درس الإعلام).",
       errorType: "grammar",
@@ -95,20 +135,20 @@ export const lessonB104: Lesson = {
         { de: "Wenn ich Zeit hätte, würde ich mehr lesen.", ar: "لو كان عندي وقت لقرأت أكثر." },
         { de: "Ich wäre lieber zu Hause geblieben.", ar: "كنت أفضل البقاء في البيت." },
         { de: "Könnten Sie das bitte wiederholen?", ar: "هل يمكنكم تكرار ذلك من فضلك؟ (مهذب جداً)" },
-        { de: "Du solltest mehr Wasser trinken.", ar: "كان ينبغي أن تشرب ماءً أكثر." },
+        { de: "Du solltest mehr Wasser trinken.", ar: "ينبغي أن تشرب ماءً أكثر." },
       ],
       comparisonWithArabic:
         "«لو... لـ» = Wenn + Konjunktiv II. «كنت سأسافر» = Ich würde reisen. والتهذيب: «هل يمكنكم؟» = Könnten Sie? — نفس فكرة «من فضلك» لكن بصيغة شرطية.",
       eselsbruecke:
-        "«würde = كنت سأفعل» — كل أمنية تبدأ بـ würde. و«wäre = كان سيكون، hätte = كان سيملك، könnte = كان يستطيع» — رباعية الحلم!",
+        "«würde = كنت سأفعل» — كثير من الأمنيات المهذبة تبدأ بـ würde. و«wäre = كان سيكون، hätte = كان سيملك، könnte = كان يستطيع» — رباعية الحلم!",
       commonMistakes: [
         { wrong: "Wenn ich Zeit habe, würde ich... (خلط Indikativ مع Konjunktiv)", right: "Wenn ich Zeit hätte, würde ich...", whyAr: "الشرط غير الواقعي: hätte (Konjunktiv) وليس habe." },
         { wrong: "Ich würde gehen nach Deutschland.", right: "Ich würde nach Deutschland gehen.", whyAr: "المصدر في النهاية: würde ... gehen." },
-        { wrong: "würde أم werde؟", right: "werde = سأصبح (واقع). würde = كنت سأفعل (غير واقع)", whyAr: "الفرق: واقع مقابل افتراض." },
+        { wrong: "würde أم werde؟", right: "werde = سأ... (إخبار عن المستقبل). würde = كنت سأ... (افتراض أو تأدب)", whyAr: "werde للمستقبل، وwürde للافتراض أو الأدب." },
       ],
       relatedRuleComparison: {
         title: "würde أم würde + gern؟",
-        content: "Ich würde gern... = أودّ (مؤدب). Ich würde... = كنت سأفعل (افتراض). أضف gern للرغبة المهذبة — وتذكر: möchten أسهل للطلبات اليومية.",
+        content: "Ich würde gern... = أودّ (مؤدب). Ich würde... = كنت سأفعل (افتراض). أضف gern للرغبة المهذبة.",
       },
     },
     {
@@ -116,7 +156,7 @@ export const lessonB104: Lesson = {
       titleAr: "Konjunktiv II: الافتراضات والرغبات",
       titleDe: "Konjunktiv II: Wünsche und Hypothesen",
       explanationAr: "Konjunktiv II يعبر عن: الرغبات (Ich möchte...)، الافتراضات (Wenn ich Zeit hätte...)، والمجاملات (Ich würde sagen...). الصيغ: würde + مصدر (الأسهل)، والصيغ الخاصة: wäre (يكون), hätte (يملك), könnte (يستطيع).",
-      whyAr: "لماذا؟ لأن Konjunktiv II أساس الأدب الألماني — الطلبات المهذبة تعتمد عليه (Könnten Sie...?).",
+      whyAr: "لماذا؟ لأن Konjunktiv II يُستعمل كثيراً في الطلبات المهذبة، مثل Könnten Sie...?",
       table: {
         title: "صيغ Konjunktiv II الأساسية",
         columns: ["الفعل", "Präteritum", "Konjunktiv II", "مثال"],
@@ -132,7 +172,7 @@ export const lessonB104: Lesson = {
         { de: "Ich würde gern mehr reisen.", ar: "أود السفر أكثر." }, { de: "Wenn ich Millionär wäre, würde ich helfen.", ar: "لو كنت مليونيراً لساعدت." }, { de: "Wenn ich mehr Zeit hätte, würde ich Spanisch lernen.", ar: "لو كان لديّ وقت أكثر، لتعلمت الإسبانية." }, { de: "Könnten Sie bitte das Fenster schließen?", ar: "هل يمكنكم إغلاق النافذة من فضلكم؟" }, { de: "An deiner Stelle würde ich mit dem Chef sprechen.", ar: "لو كنت مكانك لتحدثت مع المدير." }
       ],
       comparisonWithArabic: "العربية تبني الافتراض بـ«لو... لَـ...» وتُبقي الفعل ماضياً في الشرطين. والألمانية تحتاج صيغة صرفية خاصة (hätte، wäre، käme) أو تركيب würde + مصدر — أي أن الافتراض في الألمانية يظهر في شكل الفعل نفسه.",
-      eselsbruecke: "احفظ ثلاثة أعمدة فقط: hätte وwäre وkönnte. وكل ما عداها استعمل معه würde + مصدر — فهذا يغطي أكثر من تسعين بالمئة من كلام الألمان اليومي.",
+      eselsbruecke: "احفظ ثلاثة أعمدة شائعة: hätte وwäre وkönnte. ومع معظم الأفعال الأخرى استعمل würde + مصدر. صيغ أخرى مثل käme وwüsste لا يتناولها هذا الدرس.",
       commonMistakes: [
         { wrong: "Wenn ich Zeit haben würde, würde ich kommen.", right: "Wenn ich Zeit hätte, würde ich kommen.", whyAr: "مع haben وsein والأفعال الناقصة تُستعمل الصيغة الصرفية المباشرة، ولا يُجمع würde مع haben في جملة الشرط." },
         { wrong: "Ich wünsche, ich habe mehr Geld.", right: "Ich wünsche, ich hätte mehr Geld.", whyAr: "التمني يخالف الواقع فيلزمه Konjunktiv II لا المضارع." },
@@ -162,7 +202,7 @@ export const lessonB104: Lesson = {
         title: "نصيحة مهذبة",
         lines: [
           { speaker: "Anna", de: "Ich bin so gestresst.", ar: "أنا متوترة جداً." },
-          { speaker: "Karim", de: "Du solltest weniger arbeiten und mehr schlafen.", ar: "كان ينبغي أن تعملي أقل وتنامي أكثر." },
+          { speaker: "Karim", de: "Du solltest weniger arbeiten und mehr schlafen.", ar: "ينبغي أن تعملي أقل وتنامي أكثر." },
           { speaker: "Anna", de: "Du hast recht. Und was würdest du an meiner Stelle machen?", ar: "معك حق. وماذا كنت ستفعل في مكاني؟" },
           { speaker: "Karim", de: "Ich würde ein Wochenende ohne Handy machen!", ar: "كنت سأقضي نهاية أسبوع بدون هاتف!" },
         ],
@@ -210,7 +250,7 @@ export const lessonB104: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات الشرط: ü، ö، وch",
+    title: "أصوات الشرط: ü، ä، ö، ch، وsch",
     items: [
       { de: "würde", ar: "كنت سأفعل", note: "ü + r: ڤوردِه" },
       { de: "wäre", ar: "كان سيكون", note: "ä مفتوح: ڤيرِه" },
@@ -248,7 +288,7 @@ export const lessonB104: Lesson = {
         { correct: "hätte", options: ["hätte", "wäre", "könnte"] },
         { correct: "würde", options: ["würde", "wäre", "hätte"] },
         { correct: "wäre", options: ["wäre", "hätte", "könnte"] },
-        { correct: "würde", options: ["würde", "wäre", "könnte"] },
+        { correct: "würde", options: ["würde", "wäre", "war"] },
       ],
       explanation: "الوقت → hätte. الفعل الرئيسي → würde. الغنى → wäre.",
       errorType: "grammar",
@@ -309,11 +349,11 @@ export const lessonB104: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "في الجملة خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
       wrongSentence: "Wenn ich Zeit habe, würde ich kommen.",
       wrongWord: "habe",
       correctWord: "hätte",
-      options: ["hätte", "habe", "hatte", "haben würde"],
+      options: ["hätte", "habe", "hatte", "hat"],
       explanation: "الشرط غير الواقعي: hätte.",
       errorType: "grammar",
     },
@@ -323,7 +363,7 @@ export const lessonB104: Lesson = {
       instructionAr: "أكمل بالصيغة الصحيحة:",
       template: "Du ___ mehr schlafen. (نصيحة) ___ Sie bitte helfen? (تهذيب) Wenn ich du ___... (كنت)",
       blanks: [
-        { correct: "solltest", options: ["solltest", "sollst", "sollte"] },
+        { correct: "solltest", options: ["solltest", "solltet", "sollte"] },
         { correct: "Könnten", options: ["Könnten", "Könnt", "Kann"] },
         { correct: "wäre", options: ["wäre", "war", "wird"] },
       ],
@@ -354,7 +394,7 @@ export const lessonB104: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "في الجملة خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
       wrongSentence: "Ich würde nach Deutschland gegangen.",
       wrongWord: "gegangen",
       correctWord: "gehen",
@@ -367,7 +407,7 @@ export const lessonB104: Lesson = {
       type: "dictation",
       instructionAr: "استمع واكتب الجملة:",
       audioText: "Du solltest mehr Wasser trinken.",
-      explanation: "كان ينبغي أن تشرب ماءً أكثر — نصيحة بـ sollte.",
+      explanation: "ينبغي أن تشرب ماءً أكثر — نصيحة بـ sollte.",
       errorType: "spelling",
     },
   ],
@@ -376,16 +416,16 @@ export const lessonB104: Lesson = {
     mistakes: [
       { wrong: "Wenn ich Zeit habe, würde ich... (خلط)", right: "Wenn ich Zeit hätte, würde ich...", whyAr: "الافتراض: hätte." },
       { wrong: "Ich würde nach Deutschland gegangen.", right: "Ich würde nach Deutschland gehen.", whyAr: "würde + Infinitiv." },
-      { wrong: "Kannst du أم Könnten Sie؟", right: "Könnten Sie = تهذيب أعمق (للغرباء). Kannst du = عادي", whyAr: "درجة الأدب تحدد الاختيار." },
+      { wrong: "Könnten du mir helfen?", right: "Könntest du mir helfen? / Könnten Sie mir helfen?", whyAr: "مع du نقول Könntest، ومع Sie نقول Könnten Sie." },
     ],
     eselsbruecken: [
-      "«würde = كنت سأفعل» — كل أمنية تبدأ بـ würde.",
+      "«würde = كنت سأفعل» — كثير من الأمنيات والطلبات المهذبة تبدأ بـ würde.",
       "«رباعية الحلم»: wäre-hätte-könnte-würde.",
     ],
     culturalNote: {
       title: "الأدب الشرطي الألماني",
       content:
-        "الألمان يستخدمون Konjunktiv II للأدب الزائد: «Ich hätte gern...» في المطاعم، «Könnten Sie bitte...» في المتاجر، «Dürfte ich...» للأذن. كلما زاد الأدب زادت الشرطية — استمع وستسمع würde/hätte/könnte باستمرار.",
+        "في الطلبات المهذبة يستعمل الألمان Konjunktiv II مع أفعال مثل können وdürfen وmögen وhaben: «Könnten Sie mir helfen?» و«Hätten Sie einen Moment Zeit?». وتظهر هذه الصيغة كثيراً في المواقف الرسمية وخدمة العملاء والعمل.",
     },
   },
 
@@ -422,7 +462,7 @@ export const lessonB104: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "في الجملة خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
       wrongSentence: "Du solltest mehr Wasser getrunken.",
       wrongWord: "getrunken",
       correctWord: "trinken",
@@ -436,7 +476,7 @@ export const lessonB104: Lesson = {
       instructionAr: "أكمل:",
       template: "Ich ___ (كان يستطيع) helfen. Wenn ich du ___ (كنت)... ___ Sie bitte öffnen? (تهذيب)",
       blanks: [
-        { correct: "könnte", options: ["könnte", "kann", "können"] },
+        { correct: "könnte", options: ["könnte", "könnt", "könnten"] },
         { correct: "wäre", options: ["wäre", "war", "bin"] },
         { correct: "Könnten", options: ["Könnten", "Könnt", "Kann"] },
       ],
@@ -451,7 +491,7 @@ export const lessonB104: Lesson = {
     { id: "fc3", de: "wäre", ar: "كان سيكون", example: "Wenn ich reich wäre...", exampleAr: "لو كنت غنياً...", level: "B1" },
     { id: "fc4", de: "hätte", ar: "كان سيملك", example: "Ich hätte gern Zeit.", exampleAr: "كنت أود وقتاً.", level: "B1" },
     { id: "fc5", de: "könnte", ar: "كان يستطيع", example: "Könnten Sie helfen?", exampleAr: "هل يمكنكم المساعدة؟", level: "B1" },
-    { id: "fc6", de: "solltest", ar: "كان ينبغي (نصيحة)", example: "Du solltest schlafen.", exampleAr: "كان ينبغي أن تنام.", level: "B1" },
+    { id: "fc6", de: "solltest", ar: "ينبغي (نصيحة)", example: "Du solltest schlafen.", exampleAr: "ينبغي أن تنام.", level: "B1" },
     { id: "fc7", de: "die Gesellschaft", ar: "المجتمع", example: "Die Gesellschaft ändert sich.", exampleAr: "المجتمع يتغير.", level: "B1" },
     { id: "fc8", de: "kritisch", ar: "نقدي", example: "Sei kritisch mit den Medien.", exampleAr: "كن نقدياً مع الإعلام.", level: "B1" },
   ],
