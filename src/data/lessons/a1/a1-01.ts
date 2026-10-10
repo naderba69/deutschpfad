@@ -91,6 +91,54 @@ export const lessonA101: Lesson = {
       },
     },
     {
+      id: "t-du-sie",
+      titleAr: "du أم Sie؟ متى نقول «أنتَ» ومتى نقول «حضرتك»",
+      titleDe: "du und Sie? Die Anrede im Alltag",
+      explanationAr:
+        "الألمانية تملك ضميرين للمخاطَب: **du** للشخص الذي تعرفه جيداً أو الذي في عمرك تقريباً، أو صديق وزميل يُخاطَب بالاسم الأول، و**Sie** للتعامل الرسمي والمهذّب مع شخص غريب أو أكبر سناً أو في موقف عمل. وفي الكتابة يُكتب **Sie** دائماً بحرف S كبير، أما **sie** (هم/هنّ) فبحرف صغير. الفعل مع Sie يأخذ صيغة الجمع دائماً، لذلك تقول Sie sind وSie wohnen.",
+      whyAr:
+        "لماذا يهمّ هذا من اليوم الأول؟ لأن الاختيار بين du وSie يُظهر احترامك للمخاطَب، وخطأ الانتقال إلى du مع شخص لا تعرفه يبدو وقحاً. والقاعدة العملية: ابدأ بـSie، والمخاطَب هو من يعرض عليك الانتقال إلى du.",
+      table: {
+        title: "الفرق بين du وSie",
+        columns: ["الضمير", "متى نستعمله", "مثال"],
+        rows: [
+          { label: "du (أنتَ/أنتِ)", cells: ["صديق، زميل قريب، طفل، شخص تعرفه جيداً", "Wie heißt du?"] },
+          { label: "Sie (حضرتك/حضرتكم)", cells: ["شخص غريب، موظف، أكبر سناً، موقف رسمي", "Wie heißen Sie?"] },
+        ],
+      },
+      examples: [
+        { de: "Wie heißt du? (لأخ أو صديق)", ar: "ما اسمك؟ (غير رسمي)" },
+        { de: "Wie heißen Sie? (لموظف في مكتب)", ar: "ما اسمك حضرتك؟ (رسمي)" },
+        { de: "Woher kommen Sie? (سؤال رسمي)", ar: "من أين حضرتك؟" },
+        { de: "Kommst du aus Tunesien? (لصديق جديد بالاسم الأول)", ar: "هل أنت من تونس؟" },
+        { de: "Entschuldigung, wo wohnen Sie? (لغريب في الشارع)", ar: "عذراً، أين تسكن حضرتك؟" },
+      ],
+      comparisonWithArabic:
+        "في العربية نفرّق بين «أنتَ» و«حضرتك»، لكن الفرق لا يظهر في الفعل. في الألمانية يتغيّر الفعل أيضاً: du bist مقابل Sie sind، وكذلك الضمير نفسه: du مقابل Sie.",
+      eselsbruecke:
+        "du = دافئ وقريب (مثل «يا صديقي»)، Sie = مهذّب وبعيد قليلاً (مثل «حضرتك»). ابدأ بـSie، فالانتقال إلى du يحدث بدعوة من المخاطَب.",
+      commonMistakes: [
+        {
+          wrong: "Wie heißt du? (لمدير الشركة في المقابلة)",
+          right: "Wie heißen Sie?",
+          whyAr: "المقابلة موقف رسمي مع شخص لا تعرفه، فنستعمل Sie.",
+          classification: "contextual-alternative",
+        },
+        {
+          wrong: "Sind du Ali?",
+          right: "Bist du Ali?",
+          whyAr: "du يأخذ bist، وSie يأخذ sind. لا تخلط بين الضميرين والفعل.",
+          classification: "error",
+        },
+        {
+          wrong: "Sie bist müde. (لشخص واحد)",
+          right: "Sie sind müde. (لأكثر من شخص أو لحضرتك)",
+          whyAr: "Sie يأخذ صيغة الجمع sind دائماً، حتى حين يخاطب شخصاً واحداً بأدب.",
+          classification: "error",
+        },
+      ],
+    },
+    {
       id: "t2",
       titleAr: "أسئلة الاستفهام W-Fragen وترتيب الجملة (V2)",
       titleDe: "W-Fragen und die Satzstellung (V2)",
