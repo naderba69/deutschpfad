@@ -95,6 +95,12 @@ export const lessonB107: Lesson = {
       correctIndex: 0,
       explanation: "سبب → weil (درس المدرسة A2).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wenn» شرط، والجملة تحتاج سبباً أو إرادة، لذلك weil.",
+        "«ob» تقدّم سؤالاً غير مباشر، ولا تناسب الجملة.",
+        "«dass» تقدّم مضموناً، ولا تعبّر عن السبب.",
+      ],
     },
     {
       id: "r2",
@@ -105,6 +111,12 @@ export const lessonB107: Lesson = {
       correctIndex: 0,
       explanation: "شرط/زمن → wenn.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Weil» تعبّر عن السبب، ولا يناسب الشرط هنا.",
+        "«Ob» تقدّم سؤالاً غير مباشر، ولا تناسب الجملة.",
+        "«Dass» تقدّم مضموناً، ولا تناسب بداية الجملة الشرطية.",
+      ],
     },
     {
       id: "r3",
@@ -238,6 +250,12 @@ export const lessonB107: Lesson = {
         correctIndex: 0,
         explanation: "قال سامي: Seitdem ich in Deutschland wohne, interessiere ich mich.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«seit der Mauerfall» ترتيب خاطئ؛ الصحيح seit dem Mauerfall، والنص لا يربط اهتمام سامي بذلك.",
+          "«seit er zehn war» لا تتوافق مع ما قاله سامي عن بداية اهتمامه.",
+          "«seit kurzem» لم يقلها سامي، وكلامه يربط الاهتمام بالإقامة في ألمانيا.",
+        ],
       },
       {
         id: "q2",
@@ -250,6 +268,12 @@ export const lessonB107: Lesson = {
         correctIndex: 0,
         explanation: "قالت آنا: Bevor wir wählen, müssen wir die Programme lesen.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Werbung machen» ذُكرت كشيء يحدث أثناء الحملة، لا قبل الانتخاب.",
+          "«demonstrieren» لم تذكرها آنا كشيء يجب فعله قبل الانتخاب.",
+          "«arbeiten» لم تذكرها آنا كشيء يجب فعله قبل الانتخاب.",
+        ],
       },
       {
         id: "q3",
@@ -262,6 +286,12 @@ export const lessonB107: Lesson = {
         correctIndex: 0,
         explanation: "قالت: Nachdem ich die Programme gelesen habe, kann ich entscheiden.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«vor der Wahl» تعني الوقت العام، وليس الجملة التي تحدد متى تقرر آنا.",
+          "«während des Wahlkampfs» تعني أثناء الحملة، وليست الجملة التي تحدد متى تقرر آنا.",
+          "«morgen» لم تذكرها آنا في الحوار.",
+        ],
       },
     ],
   },
@@ -333,6 +363,12 @@ export const lessonB107: Lesson = {
       correctIndex: 0,
       explanation: "ماضٍ مرة واحدة → als.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Wenn» شرط، وليس تزامناً في الماضي.",
+        "«Während» تعبّر عن التزامن، وتحتاج معنى مختلفاً.",
+        "«Bis» تعبّر عن الوقت حتى نقطة معينة، ولا تناسب الجملة.",
+      ],
     },
     {
       id: "e2",
@@ -343,6 +379,12 @@ export const lessonB107: Lesson = {
       correctIndex: 0,
       explanation: "مضارع/تكرار → wenn.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Als» تستعمل للحدث الماضي المفرد، ولا تناسب الزمن الحاضر هنا.",
+        "«Während» تعبّر عن تزامن ممتد، لا عن الشرط.",
+        "«Bis» تعبّر عن نقطة النهاية، ولا تناسب الجملة.",
+      ],
     },
     {
       id: "e3",
@@ -411,6 +453,12 @@ export const lessonB107: Lesson = {
       correctIndex: 0,
       explanation: "die Wahl = الانتخاب (سياسياً).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«الحكومة» تقابل Regierung، وليس معنى Wahl.",
+        "«القرار» يقابل Entscheidung، وليس معنى Wahl.",
+        "«الرأي» يقابل Meinung، وليس معنى Wahl.",
+      ],
     },
     {
       id: "e9",
@@ -507,6 +555,12 @@ export const lessonB107: Lesson = {
       correctIndex: 0,
       explanation: "ماضٍ مرة → als.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Wenn» شرط مستقبلي أو عادة، ولا تناسب حدثاً ماضياً محدداً.",
+        "«Während» تعبّر عن التزامن الممتد، ولا تناسب الحدث المحدد.",
+        "«Bis» تعبّر عن نهاية الفترة، ولا تناسب الجملة.",
+      ],
     },
     {
       id: "m2",
@@ -517,6 +571,12 @@ export const lessonB107: Lesson = {
       correctIndex: 0,
       explanation: "متزامن → während.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Als» تعبّر عن حدث ماضٍ محدد، ولا تناسب الحدث الحاضر هنا.",
+        "«Bis» تعبّر عن نهاية الفترة، ولا تناسب الجملة.",
+        "«Nachdem» تعبّر عن حدث سابق، لا عن التزامن.",
+      ],
     },
     {
       id: "m3",
