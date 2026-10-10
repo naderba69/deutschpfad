@@ -77,7 +77,7 @@ export function GrammarReferenceClient() {
           ))}
         </select>
         <p className="text-xs text-muted-foreground">
-          {filtered.length} قاعدة من أصل {GRAMMAR_REFERENCE.length} — تغطي A1 → B2 كاملة
+          {filtered.length} قاعدة من أصل {GRAMMAR_REFERENCE.length} — من A1 حتى B2
         </p>
       </div>
 

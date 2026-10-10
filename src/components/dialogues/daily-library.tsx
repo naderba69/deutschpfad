@@ -84,7 +84,7 @@ export function DailyLibrary() {
       })}
 
       <p className="text-center text-xs font-bold text-muted-foreground">
-        {DAILY_DIALOGUES.length} حواراً يومياً — تغطية تتجاوز كتاب Menschen (24 وحدة × 3 مستويات).
+        {DAILY_DIALOGUES.length} حواراً يومياً متدرجاً من A1 حتى B2.
       </p>
     </div>
   );

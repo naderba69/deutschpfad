@@ -74,7 +74,7 @@ export function Hero() {
         <div className="relative mx-auto w-full max-w-md animate-fade-up animation-delay-2000" aria-hidden="true">
           <div className="glass rounded-3xl border p-6 shadow-soft">
             <div className="mb-4 flex items-center justify-between">
-              <span className="text-sm font-bold">درس اليوم</span>
+              <span className="text-sm font-bold">درس اليوم <span className="ms-1 text-[10px] font-normal text-muted-foreground">(مثال توضيحي)</span></span>
               <Badge className="font-de font-bold">A1</Badge>
             </div>
 
@@ -109,7 +109,7 @@ export function Hero() {
           <div className="absolute -end-4 -top-6 rounded-2xl border bg-background/95 px-4 py-3 shadow-soft animate-float">
             <p className="inline-flex items-center gap-2 text-sm font-semibold">
               <Flame className="h-4 w-4 fill-orange-400 text-orange-400" />
-              سلسلة أيامك
+              مثال: سلسلة أيامك
             </p>
             <p className="font-de mt-0.5 text-xl font-bold">7 أيام 🔥</p>
           </div>
