@@ -101,6 +101,12 @@ export const lessonB108: Lesson = {
       correctIndex: 0,
       explanation: "مع es: wird (درس الطقس).",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«werde» مع ich، ولا يناسب es.",
+        "«wirst» مع du، ولا يناسب es.",
+        "«werden» مع الجمع أو sie، ولا يناسب es.",
+      ],
     },
     {
       id: "r2",
@@ -111,6 +117,12 @@ export const lessonB108: Lesson = {
       correctIndex: 0,
       explanation: "مجهول مضارع (درس البيئة).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wurde» صيغة الماضي، والجملة في المضارع (يُبنى الآن).",
+        "«wirst» مع du، ولا يناسب الفاعل das Haus.",
+        "«werde» مع ich، ولا يناسب الفاعل das Haus.",
+      ],
     },
     {
       id: "r3",
@@ -247,6 +259,12 @@ export const lessonB108: Lesson = {
         correctIndex: 0,
         explanation: "قال سامي: Die künstliche Intelligenz wird viele Jobs verändern.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«das Wetter» لم يذكره سامي كشيء تغيّره الذكاء الاصطناعي.",
+          "«die Politik nur» لم يقلها سامي؛ النص يتكلم عن الوظائف.",
+          "«nichts» تنفي التغيير، وهذا عكس ما قاله سامي.",
+        ],
       },
       {
         id: "q2",
@@ -259,6 +277,12 @@ export const lessonB108: Lesson = {
         correctIndex: 0,
         explanation: "قال: Je mehr wir abhängen, desto verletzlicher werden wir.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Es ist kein Problem» تنفي وجود خطر، وهذا عكس ما قاله سامي.",
+          "«Die Abhängigkeit hilft» تعني أن الاعتماد مفيد، وليس ما قاله.",
+          "«Wir sind sicher» تعني أننا آمنون، وليست فكرة سامي عن الاعتماد.",
+        ],
       },
       {
         id: "q3",
@@ -271,6 +295,12 @@ export const lessonB108: Lesson = {
         correctIndex: 0,
         explanation: "قال كريم: Die Kamera ist nicht gut. Sowohl Fotos als auch Videos sind schlecht.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Das Handy ist kaputt» عكس ما قالته منى، فالهاتف يعمل.",
+          "«Es ist zu alt» لم يذكرها كريم كسبب للشراء.",
+          "«Er hat es verloren» لم يذكرها كريم.",
+        ],
       },
     ],
   },
@@ -340,6 +370,12 @@ export const lessonB108: Lesson = {
       correctIndex: 0,
       explanation: "Futur: werde + Infinitiv.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«werde ... lerne» صيغة الفعل الثاني خاطئة؛ بعد werde يأتي المصدر في آخر الجملة.",
+        "«wird ... lernen» مع ich خاطئة؛ الصيغة الصحيحة werde.",
+        "«werde ... gelernt» تستعمل Partizip II، وبعد werde يأتي المصدر.",
+      ],
     },
     {
       id: "e2",
@@ -350,6 +386,12 @@ export const lessonB108: Lesson = {
       correctIndex: 0,
       explanation: "لا وقت ولا مال → weder... noch.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«nicht nur ... sondern auch» تعني ليس فقط بل أيضاً، ولا تناسب النفي.",
+        "«entweder ... oder» تعني إما ... أو، ولا تناسب هذه الجملة.",
+        "«sowohl ... als auch» تعني كلاهما، ولا تناسب النفي.",
+      ],
     },
     {
       id: "e3",
@@ -418,6 +460,12 @@ export const lessonB108: Lesson = {
       correctIndex: 0,
       explanation: "künstlich = اصطناعي + Intelligenz = ذكاء.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«التقنية الحديثة» تقابل moderne Technik، وليس معنى künstliche Intelligenz.",
+        "«الرقمنة» تقابل Digitalisierung، وليس معنى künstliche Intelligenz.",
+        "«التطور التكنولوجي» تقابل technologische Entwicklung، وليس المعنى المطلوب.",
+      ],
     },
     {
       id: "e9",
@@ -479,6 +527,12 @@ export const lessonB108: Lesson = {
       correctIndex: 0,
       explanation: "Futur: werden + Infinitiv.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wird ... gestalten» مع wir خاطئة؛ الصيغة الصحيحة werden.",
+        "«werdet ... gestalten» صيغة ihr، ولا تناسب wir.",
+        "«werden ... gestaltet» تستعمل Partizip II، والمصدر مطلوب بعد werden.",
+      ],
     },
     {
       id: "m2",
@@ -489,6 +543,12 @@ export const lessonB108: Lesson = {
       correctIndex: 0,
       explanation: "إما أو → entweder... oder.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Weder ... noch» تعني لا ... ولا، ولا تناسب التخيير.",
+        "«Nicht nur ... sondern auch» تعني ليس فقط بل أيضاً، ولا تناسب التخيير.",
+        "«Sowohl ... als auch» تعني كلاهما، ولا تناسب التخيير.",
+      ],
     },
     {
       id: "m3",
