@@ -14,17 +14,57 @@ export const lessonB105: Lesson = {
     "الحياة الصحية والوقاية، صيغة الشرط المتقدمة (hätte/wäre + Partizip II)، والجمل الشرطية الكاملة: Wenn... dann... (لو... لـ...).",
 
   lernziele: [
-    { id: "z1", de: "Ich kann über Gesundheit und Sport sprechen.", ar: "أن أتحدث عن الصحة والرياضة والوقاية." },
-    { id: "z2", de: "Ich kann den Konjunktiv II in der Vergangenheit bilden: hätte/wäre + Partizip II.", ar: "أن أصوغ الشرطية في الماضي: كنت سأفعل (hätte/wäre + تصريف ثالث)." },
-    { id: "z3", de: "Ich kann Wenn-Sätze bilden.", ar: "أن أبني الجمل الشرطية: لو... لـ..." },
-      { id: "z4", de: "Ich kann die Hauptaussage eines Artikels zusammenfassen.", ar: "أن ألخص الفكرة الرئيسية لمقال." },
+    {
+      id: "z1",
+      de: "Ich kann Wünsche, Reue und Ratschläge in einem kurzen Gespräch verstehen.",
+      ar: "أن أفهم الأمنيات والندم والنصيحة في حوار قصير عن الصحة.",
+      evidence: {
+        exerciseIds: ["q1", "q2", "q3"],
+        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3"],
+        labelAr: "أجب صحيحاً عن q1 بعد الاستماع إلى l1، وعن q2 وq3 بعد الاستماع إلى l2، دون كشف التفريغ. كشف النص لا يُحتسب أداءً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann den Konjunktiv II in der Vergangenheit bilden: hätte/wäre + Partizip II.",
+      ar: "أن أصوغ الشرطية في الماضي: كنت سأفعل (hätte/wäre + تصريف ثالث).",
+      evidence: {
+        exerciseIds: ["e1", "m2", "w1"],
+        taskIds: ["practice:b1-05:e1", "flow-practice:b1-05:e1", "mini-test:b1-05:m2", "writing:b1-05:w1"],
+        labelAr: "أجب صحيحاً عن e1 (ويظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق)، وعن m2، واكتب w1 بصيغة hätte + تصريف ثالث. الشرح لا يُحتسب أداءً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann Wenn-Sätze in der Vergangenheit richtig bilden und ordnen.",
+      ar: "أن أرتب الجمل الشرطية في الماضي بالشكل الصحيح: لو... لكنت...",
+      evidence: {
+        exerciseIds: ["e4", "e5", "m3"],
+        taskIds: ["practice:b1-05:e4", "practice:b1-05:e5", "mini-test:b1-05:m3"],
+        labelAr: "رتّب e4 بصحة، وصحّح ترتيب e5، ورتّب m3 بصحة. الأمثلة والشرح لا تُحتسب أداءً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann in einem Bericht erkennen, was jemand gesagt hat: Konjunktiv I.",
+      ar: "أن أختار صيغة النقل غير المباشر (Konjunktiv I) في جمل قصيرة.",
+      evidence: {
+        exerciseIds: ["e11", "e12"],
+        taskIds: ["practice:b1-05:e11", "practice:b1-05:e12"],
+        labelAr: "أجب صحيحاً عن e11 وe12 ضمن تمارين practice. الجدول والأمثلة لا تُحتسب أداءً.",
+        completion: "all-correct",
+      },
+    },
   ],
   einfuehrung: {
     motivatingQuestionAr:
       "في الدرس السابق: Ich würde reisen (كنت سأسافر — الآن). ماذا لو أردت الماضي: «كنت سأسافر أمس لو كان الطقس جيداً»؟ هنا نحتاج hätte/wäre + Partizip II! قارن: würde + Infinitiv (الآن) مقابل hätte + Partizip II (الماضي).",
     motivatingQuestionDe: "Was hättest du anders gemacht?",
     contextAr:
-      "نستكمل صيغة الشرط ببعدها الزمني: الماضي الشرطي (كان قد كان سيفعل...). ونربطها بالجمل الشرطية الكاملة — أهم بنية في B1.",
+      "نستكمل صيغة الشرط ببعدها الزمني: الماضي الشرطي (كان قد كان سيفعل...). ونربطها بالجمل الشرطية الكاملة — بنية مهمة في B1.",
     contextDe: "Wenn ich früher Sport gemacht hätte, wäre ich jetzt fitter.",
     connectionToPreviousAr: "تتذكر würde/wäre/hätte من درس الإعلام. اليوم: بعد الماضي — hätte/wäre + Partizip II — ونظام الجمل الشرطية الكامل.",
     activateVocabulary: [
@@ -78,7 +118,7 @@ export const lessonB105: Lesson = {
       explanationAr:
         "للتعبير عن «ما كان يمكن أن يحدث ولم يحدث»: hätte/wäre (Konjunktiv) + Partizip II في النهاية: Ich hätte Sport gemacht (كنت سأمارس الرياضة — لكن لم أفعل). Ich wäre gegangen (كنت سأذهب — لكن لم أذهب). مع حروف: als ob (كما لو).",
       whyAr:
-        "لماذا نحتاج ماضياً شرطياً؟ لأنه أساس الندم والافتراضات الماضية — في المحادثة والنصوص: Ich hätte gern... (كنت أودّ — في المطعم!) وWenn ich gewusst hätte... (لو كنت أعرف...). هذه «ندم المهاجر» الأشهر في ألمانيا!",
+        "لماذا نحتاج ماضياً شرطياً؟ لأنه أساس الندم والافتراضات الماضية — في المحادثة والنصوص: Ich hätte gern... (كنت أودّ) وWenn ich gewusst hätte... (لو كنت أعرف...).",
       table: {
         title: "الشرطية في الماضي",
         columns: ["الفعل", "الآن (würde + Inf)", "الماضي (hätte/wäre + PII)"],
@@ -99,9 +139,9 @@ export const lessonB105: Lesson = {
       comparisonWithArabic:
         "«لو كنت مارست الرياضة، لكنت أليق» — العربية: لو + ماضٍ + لكنت. الألمانية: Wenn + hätte gemacht + wäre fitter. نفس المنطق: افتراض ماضٍ غير محقق.",
       eselsbruecke:
-        "«الندم = hätte/wäre + Partizip II» — كل «لو كنت...» في الماضي تستخدمها. و«als ob = كما لو»: تصرف كما لو كان يعرف كل شيء.",
+        "«الندم = hätte/wäre + Partizip II» — تستعملها عادةً مع «لو كنت...» عن الماضي. و«als ob = كما لو»: تصرف كما لو كان يعرف كل شيء.",
       commonMistakes: [
-        { wrong: "Ich hätte gern einen Kaffee. (مضارع شرطي) مقابل (Ich hätte einen Kaffee gehabt = ماضٍ شرطي)", right: "كلاهما صحيح لكن بزمنين مختلفين", whyAr: "hätte + اسم = الآن. hätte + Partizip II = ماضٍ." },
+        { wrong: "Ich hätte gestern Kaffee. (بدون Partizip II)", right: "Ich hätte gestern Kaffee getrunken.", whyAr: "للماضي الشرطي نضيف Partizip II: getrunken. وhätte وحده لا يكفي." },
         { wrong: "Wenn ich gewusst hätte, ich wäre gekommen. (ترتيب)", right: "Wenn ich gewusst hätte, wäre ich gekommen.", whyAr: "الجملة الثانوية أولاً → الفعل الرئيسي بعدها." },
         { wrong: "als ob مع فعل في منتصف الجملة", right: "als ob + الفعل في النهاية: als ob er alles wüsste", whyAr: "als ob ثانوية → فعلها في النهاية." },
       ],
@@ -115,7 +155,7 @@ export const lessonB105: Lesson = {
       titleAr: "الكلام المنقول: Konjunktiv I",
       titleDe: "Die indirekte Rede: Konjunktiv I",
       explanationAr: "عند نقل كلام شخص آخر نحول الفعل إلى Konjunktiv I: Er sagt, er habe keine Zeit. الصيغة: من المضارع نأخذ الجذر ونضيف -e, -est, -e, -en, -et, -en. ملاحظة: عندما يطابق Konjunktiv I المضارع نستخدم Konjunktiv II كبديل.",
-      whyAr: "لماذا؟ لأن نقل الأخبار والآراء (الأساس في B1 الإعلامي) يتطلب هذا البناء.",
+      whyAr: "لماذا؟ لأن Konjunktiv I يُستعمل أساساً في نقل الكلام غير المباشر (Wikipedia).",
       table: {
         title: "Konjunktiv I في الكلام المنقول",
         columns: ["الشخص", "الحاضر", "Konjunktiv I", "البديل عند التطابق"],
@@ -130,12 +170,12 @@ export const lessonB105: Lesson = {
       examples: [
         { de: "Die Politikerin sagt, die Lage sei stabil.", ar: "تقول السياسية إن الوضع مستقر." }, { de: "Er behauptet, er wisse die Antwort.", ar: "يزعم أنه يعرف الإجابة." }, { de: "Der Minister sagte, er sei zufrieden.", ar: "قال الوزير إنه راضٍ." }, { de: "Sie behauptet, sie habe nichts gewusst.", ar: "تزعم أنها لم تكن تعلم شيئاً." }, { de: "Die Zeitung berichtet, die Preise seien gestiegen.", ar: "تفيد الصحيفة بأن الأسعار ارتفعت." }
       ],
-      comparisonWithArabic: "العربية تنقل الكلام بـ«قال إنّ» ويبقى الفعل كما هو، فالتمييز بين الخبر ورأي الناقل يأتي من السياق. أما الألمانية فتملك صيغة صرفية مستقلة تُشعر القارئ فوراً أن الكلام منقول لا مؤكَّد من الكاتب — ولذلك تسيطر على لغة الصحافة.",
-      eselsbruecke: "علامة Konjunktiv I هي الحرف e في الغائب: er habe، er sei، er komme. وإن جاءت الصيغة مطابقة للمضارع العادي (مثل sie haben) فانتقل إلى Konjunktiv II: sie hätten — وهذا ما يفعله الصحفيون.",
+      comparisonWithArabic: "العربية تنقل الكلام بـ«قال إنّ» ويبقى الفعل كما هو، فالتمييز بين الخبر ورأي الناقل يأتي من السياق. أما الألمانية فتملك صيغة صرفية مستقلة تُشعر القارئ فوراً أن الكلام منقول لا مؤكَّد من الكاتب — ويستعمله الكتّاب في نقل الكلام.",
+      eselsbruecke: "علامة Konjunktiv I هي الحرف e في الغائب: er habe، er sei، er komme. وإن جاءت الصيغة مطابقة للمضارع العادي (مثل sie haben) فانتقل إلى Konjunktiv II: sie hätten — وهذه صيغة ثانية شائعة في الكلام الرسمي (Wikipedia).",
       commonMistakes: [
-        { wrong: "Er sagt, er ist krank.", right: "Er sagt, er sei krank.", whyAr: "في النقل الرسمي والصحفي يُستعمل Konjunktiv I، وsein شاذة فتصير sei بلا نهاية في الغائب المفرد." },
-        { wrong: "Sie sagte, sie hat keine Zeit gehabt.", right: "Sie sagte, sie habe keine Zeit gehabt.", whyAr: "الفعل المساعد هو الذي يتحول إلى Konjunktiv I: habe، ويبقى اسم المفعول كما هو." },
-        { wrong: "Sie sagen, sie haben es gesehen.", right: "Sie sagen, sie hätten es gesehen.", whyAr: "عند تطابق Konjunktiv I مع المضارع يُستبدل بـ Konjunktiv II لإزالة اللبس." },
+        { wrong: "Er sagt, er ist krank. (كلام يومي، ليس نقلاً رسمياً)", right: "Er sagt, er sei krank.", whyAr: "في النقل الرسمي والكتابي يُستعمل Konjunktiv I؛ وsein تصبح sei في الغائب المفرد. والمؤشر الغالب في الكلام اليومي هو المؤشر." },
+        { wrong: "Sie sagte, sie habt keine Zeit gehabt.", right: "Sie sagte, sie habe keine Zeit gehabt.", whyAr: "مع sie المفرد (هي) يكون المساعد habe في Konjunktiv I؛ habt صيغة المخاطَب الجمع (ihr) ولا تصلح هنا." },
+        { wrong: "Sie sagen, sie haben es gesehen. (كلام يومي)", right: "Sie sagen, sie hätten es gesehen.", whyAr: "عندما يتطابق Konjunktiv I مع المضارع يُستعمل Konjunktiv II لتوضيح أن الكلام منقول (Wikipedia)." },
       ],
       relatedRuleComparison: {
         title: "Konjunktiv I أم dass؟",
@@ -209,11 +249,11 @@ export const lessonB105: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات الصحة: ä، ie، وß",
+    title: "أصوات الصحة: ä، ie، ü، وß",
     items: [
       { de: "hätte", ar: "كان سيملك (شرطي)", note: "ä + tt: هِتِّه" },
       { de: "wäre", ar: "كان سيكون (شرطي)", note: "ä مفتوح: ڤيرِه" },
-      { de: "gesund", ar: "سليم", note: "g = غ + u: غِزونت" },
+      { de: "gesund", ar: "سليم", note: "g في أول الكلمة صوت مجهور قريب من «غ»، u قصيرة: غِزُنت" },
       { de: "die Prävention", ar: "الوقاية", note: "p + ä: پريڤِنتسيون" },
       { de: "trainieren", ar: "يتدرب", note: "ai في هذه الكلمة الدخيلة = إيه (لا آي) + ie = إي طويلة: تريه-نيرِن" },
       { de: "die Süßigkeiten", ar: "الحلويات", note: "ü + ß: زوسيغكايتن" },
@@ -223,7 +263,7 @@ export const lessonB105: Lesson = {
       { de: "Ich hätte Sport gemacht.", ar: "كنت سأمارس الرياضة.", tip: "hätte gemacht — ماضٍ شرطي" },
       { de: "Wenn ich Zeit gehabt hätte...", ar: "لو كان عندي وقت...", tip: "gehabt hätte — الفعل في النهاية" },
       { de: "Ich wäre gekommen, aber...", ar: "كنت سآتي لكن...", tip: "wäre gekommen (حركة → sein)" },
-      { de: "Du solltest mehr schlafen.", ar: "كان ينبغي أن تنام أكثر.", tip: "solltest = زولتِست" },
+      { de: "Du solltest mehr schlafen.", ar: "ينبغي أن تنام أكثر.", tip: "solltest = زولتِست" },
     ],
   },
 
@@ -248,7 +288,7 @@ export const lessonB105: Lesson = {
         { correct: "gekommen", options: ["gekommen", "gekommt", "gekomden"] },
         { correct: "gehabt hätte", options: ["gehabt hätte", "hatte gehabt", "gehabt habe"] },
         { correct: "hätte", options: ["hätte", "wäre", "würde"] },
-        { correct: "gelernt", options: ["gelernt", "gelernen", "gelehrt"] },
+        { correct: "gelernt", options: ["gelernt", "gelernen", "lernte"] },
       ],
       explanation: "kommen حركة → wäre gekommen. haben → hätte gehabt. lernen → hätte gelernt.",
       errorType: "grammar",
@@ -309,7 +349,7 @@ export const lessonB105: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "في الجملة خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
       wrongSentence: "Wenn ich Zeit gehabt hätte, ich wäre gekommen.",
       wrongWord: "ich wäre",
       correctWord: "wäre ich",
@@ -334,8 +374,12 @@ export const lessonB105: Lesson = {
       id: "e7",
       type: "transformation",
       instructionAr: "حوّل إلى شرطية ماضية:",
-      prompt: "Ich lerne Deutsch. → (لو كنت أعرف سابقاً لكنت تعلمت مبكراً)",
-      acceptedAnswers: ["Ich hätte früher Deutsch gelernt", "Ich hätte früher Deutsch gelernt."],
+      prompt: "Ich lerne Deutsch. → (كنت سأتعلم الألمانية مبكراً — ماضٍ شرطي)",
+      acceptedAnswers: [
+        "Ich hätte früher Deutsch gelernt",
+        "Ich hätte früher Deutsch gelernt.",
+        "Ich hätte Deutsch früher gelernt.",
+      ],
       sampleAnswer: "Ich hätte früher Deutsch gelernt.",
       explanation: "الندم: hätte früher gelernt.",
       errorType: "grammar",
@@ -354,12 +398,12 @@ export const lessonB105: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Sie tut so, als ob sie alles weiß.",
-      wrongWord: "weiß",
+      instructionAr: "في الجملة خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
+      wrongSentence: "Er tut so, als ob er alles wüssten.",
+      wrongWord: "wüssten",
       correctWord: "wüsste",
-      options: ["wüsste", "weiß", "gewusst", "weißt"],
-      explanation: "als ob + Konjunktiv II: als ob sie alles wüsste.",
+      options: ["wüsste", "wüssten", "gewusst", "wissen"],
+      explanation: "مع er (مفرد): als ob er alles wüsste.",
       errorType: "grammar",
     },
     {
@@ -370,22 +414,44 @@ export const lessonB105: Lesson = {
       explanation: "كان ينبغي أن أمارس الرياضة أكثر مبكراً — sollen في الماضي الشرطي.",
       errorType: "spelling",
     },
+    {
+      id: "e11",
+      type: "multiple-choice",
+      instructionAr: "اختر صيغة النقل غير المباشر:",
+      questionDe: "Die Politikerin sagt, die Lage ___ stabil.",
+      questionAr: "تقول السياسية إن الوضع ___ (مستقر).",
+      options: ["sei", "sind", "seid", "bist"],
+      correctIndex: 0,
+      explanation: "Konjunktiv I للغائب المفرد: die Lage sei.",
+      errorType: "grammar",
+    },
+    {
+      id: "e12",
+      type: "multiple-choice",
+      instructionAr: "اختر صيغة النقل غير المباشر:",
+      questionDe: "Die Zeitung berichtet, die Preise ___ gestiegen.",
+      questionAr: "تفيد الصحيفة بأن الأسعار ___ ارتفعت.",
+      options: ["seien", "sind", "seid", "bist"],
+      correctIndex: 0,
+      explanation: "Konjunktiv I للجمع: die Preise seien.",
+      errorType: "grammar",
+    },
   ],
 
   fehlerUndTipps: {
     mistakes: [
-      { wrong: "Wenn ich Zeit gehabt hätte, ich wäre gekommen.", right: "...wäre ich gekommen.", whyAr: "الفعل بعد الجملة الثانوية مباشرة." },
+      { wrong: "Wenn ich Zeit gehabt hätte, ich wäre gekommen.", right: "Wenn ich Zeit gehabt hätte, wäre ich gekommen.", whyAr: "الفعل الرئيسي يأتي مباشرة بعد الجملة الثانوية." },
       { wrong: "Ich hätte gegangen (haben بدل sein)", right: "Ich wäre gegangen.", whyAr: "gehen حركة → wäre." },
-      { wrong: "als ob + Indikativ", right: "als ob + Konjunktiv II (wüsste)", whyAr: "كما لو = شرطية." },
+      { wrong: "Er tut so, als ob er alles wüssten.", right: "Er tut so, als ob er alles wüsste.", whyAr: "الفاعل er مفرد: wüsste. و«als ob» تُتبع في الكتابة الفصيحة بـ Konjunktiv II." },
     ],
     eselsbruecken: [
-      "«الندم: hätte/wäre + Partizip II» — كل «لو كنت...» ماضية.",
-      "«als ob = كما لو» — تتبعها شرطية دائماً.",
+      "«الندم: hätte/wäre + Partizip II» — تستعملها عادةً مع «لو كنت...» عن الماضي.",
+      "«als ob = كما لو» — يأتي بعدها Konjunktiv II في الكتابة الفصيحة، ويُسمع Indikativ أحياناً في الكلام اليومي.",
     ],
     culturalNote: {
       title: "الصحة في ألمانيا",
       content:
-        "الألمان يمارسون الرياضة كثيراً: «Fitnessstudio» (نادٍ رياضي) منتشر، و«Sportverein» (نادٍ رياضي تطوعي). وعبارة شائعة: «Sport ist Mord» (الرياضة قتل!) — يقالها من لا يحب الرياضة مازحاً! والوقاية: «Vorsorgeuntersuchung» (فحص وقائي) تشجعه شركات التأمين.",
+        "عبارة «Sport ist Mord» (الرياضة قتل) تُقال مازحةً، وغالباً ما يستعملها من لا يريد ممارسة الرياضة كعذر (DWDS). وفحص Check-up 35 ضمن التأمين الصحي القانوني: مرة واحدة بين 18 و34 عاماً، ثم كل ثلاث سنوات بعد 35 (meine-krankenkasse؛ Helios). وفحص سرطان الجلد: كل سنتين بعد 35 (Helios).",
     },
   },
 
@@ -422,7 +488,7 @@ export const lessonB105: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "في الجملة خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
       wrongSentence: "Ich hätte gestern gegangen.",
       wrongWord: "hätte",
       correctWord: "wäre",
@@ -434,10 +500,10 @@ export const lessonB105: Lesson = {
       id: "m5",
       type: "fill-blank",
       instructionAr: "أكمل:",
-      template: "Wenn ich ___ (يعرف), hätte ich anders gehandelt. Er tut so, als ob er alles ___.",
+      template: "Wenn ich ___ (لو كنت قد عرفت), hätte ich anders gehandelt. Er tut so, als ob er alles ___.",
       blanks: [
-        { correct: "gewusst hätte", options: ["gewusst hätte", "wüsste", "weiß"] },
-        { correct: "wüsste", options: ["wüsste", "weiß", "gewusst"] },
+        { correct: "gewusst hätte", options: ["gewusst hätte", "weiß", "gewusst"] },
+        { correct: "wüsste", options: ["wüsste", "gewusst", "wissen"] },
       ],
       explanation: "gewusst hätte (ماضٍ شرطي) + wüsste (als ob).",
       errorType: "grammar",
