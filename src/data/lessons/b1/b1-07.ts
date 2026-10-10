@@ -1,7 +1,7 @@
 import type { Lesson } from "@/types/lesson";
 
 /**
- * الدرس B1-07: السياسة والمجتمع — الجمل الثانوية الكاملة (تemporal/kausal)
+ * الدرس B1-07: السياسة والمجتمع — الجمل الثانوية الكاملة (temporal/kausal)
  */
 export const lessonB107: Lesson = {
   id: "b1-07",
@@ -11,13 +11,61 @@ export const lessonB107: Lesson = {
   titleDe: "Politik und Gesellschaft",
   titleAr: "السياسة والمجتمع",
   summary:
-    "المفاهيم السياسية الأساسية، الجمل الثانوية الزمنية (als, wenn, während, bevor, nachdem, bis) والسببية (weil, da) والتخالفية (obwohl, obgleich) — الخريطة الكاملة للجمل الثانوية.",
+    "المفاهيم السياسية الأساسية، الجمل الثانوية الزمنية (als, wenn, während, bevor, nachdem, bis) والسببية (weil, da) والتخالفية (obwohl, obgleich).",
 
   lernziele: [
-    { id: "z1", de: "Ich kann über Politik und Gesellschaft sprechen.", ar: "أن أتحدث عن السياسة والقضايا المجتمعية." },
-    { id: "z2", de: "Ich kenne die temporalen Nebensätze: als, wenn, während, bevor, nachdem, bis.", ar: "أن أتقن الجمل الثانوية الزمنية الست." },
-    { id: "z3", de: "Ich kenne die kausalen Nebensätze: weil, da.", ar: "أن أتقن الجمل السببية: لأنّ (weil/da)." },
-    { id: "z4", de: "Ich kann den konzessiven Nebensatz mit obwohl benutzen.", ar: "أن أستخدم الجملة التخالفية: رغم أن (obwohl)." },
+    {
+      id: "z1",
+      de: "Ich kann ein Gespräch über Politik und Wahlen verstehen und Fragen dazu richtig beantworten.",
+      ar: "أن أفهم حواراً عن السياسة والانتخابات وأجيب عن تفاصيله بدقة.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q1", "q2", "q3"],
+        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3"],
+        labelAr: "أجيب صحيحاً عن q1 بعد الاستماع إلى l1، وعن q2 وq3 بعد الاستماع إلى l2، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann temporale Nebensätze mit als, wenn, während, bevor und nachdem richtig bilden.",
+      ar: "أن أستخدم الجمل الزمنية als وwenn وwährend وbevor وnachdem بالأداة المناسبة للمعنى وترتيب الفعل الصحيح.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e1", "e2", "e7", "m1", "m3", "m5", "w2"],
+        taskIds: [
+          "practice:b1-07:e1",
+          "practice:b1-07:e2",
+          "practice:b1-07:e7",
+          "mini-test:b1-07:m1",
+          "mini-test:b1-07:m3",
+          "mini-test:b1-07:m5",
+          "writing:b1-07:w2",
+        ],
+        labelAr: "أجيب صحيحاً عن تمارين الجمل الزمنية (e1 وe2 وe7 وm1 وm3 وm5 وw2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann Sätze mit weil oder da bilden, in denen das Verb am Ende steht.",
+      ar: "أن أكوّن جملة سببية بـ weil أو da بترتيب الفعل الصحيح.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e13", "e14"],
+        taskIds: ["practice:b1-07:e13", "practice:b1-07:e14"],
+        labelAr: "أجيب صحيحاً عن e13 وe14 دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann mit obwohl einen Gegensatz ausdrücken und das Verb richtig an das Satzende setzen.",
+      ar: "أن أكوّن جملة تخالفية بـ obwohl (رغم أن) وأضع فعلها في آخر الجملة الثانوية.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e11", "e12", "w3"],
+        taskIds: ["practice:b1-07:e11", "practice:b1-07:e12", "writing:b1-07:w3"],
+        labelAr: "أكمل e11 بصحة، وأرتب e12 بصحة، وأعيد صياغة w3 بـ obwohl. كشف الحل لا يُحتسب أداءً.",
+      },
+    },
   ],
 
   einfuehrung: {
@@ -25,7 +73,7 @@ export const lessonB107: Lesson = {
       "في A2 تعلمت weil وwenn. اليوم نكمل الخريطة: als (عندما — لماضٍ مرة واحدة)، während (بينما)، bevor (قبل أن)، nachdem (بعد أن)، bis (حتى). وجميعها ترسل الفعل للنهاية — لكن الفرق بين als وwenn دقيق جداً!",
     motivatingQuestionDe: "Was denkst du über Politik?",
     contextAr:
-      "المجتمع والسياسة: مفردات أساسية + الخريطة الكاملة للجمل الزمنية والسببية — أهم مهارة لفهم النصوص الإخبارية والرأي.",
+      "المجتمع والسياسة: مفردات أساسية + الجمل الزمنية والسببية والتخالفية — مهمة لفهم النصوص الإخبارية والرأي.",
     contextDe: "Als ich jung war, war die Politik anders.",
     connectionToPreviousAr: "تتذكر weil/wenn/ob من A2 وdass من درس الإعلام. اليوم: بقية الجمل الثانوية — وخاصة التمييز الصعب: als (ماضٍ مرة) مقابل wenn (متكرر/مضارع).",
     activateVocabulary: [
@@ -41,7 +89,7 @@ export const lessonB107: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A2 (درس a2-10 — المدرسة والتعلم): اختر حرف الربط:",
+      instructionAr: "مراجعة من A2 (درس a2-10 — المدرسة والتعلم): اختر حرف الربط (لأنّ):",
       questionDe: "Ich lerne, ___ ich will.",
       options: ["weil", "wenn", "ob", "dass"],
       correctIndex: 0,
@@ -51,7 +99,7 @@ export const lessonB107: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A2 (درس a2-10 — المدرسة والتعلم): اختر حرف الربط:",
+      instructionAr: "مراجعة من A2 (درس a2-10 — المدرسة والتعلم): اختر حرف الربط (إن كان عندك وقت):",
       questionDe: "___ du Zeit hast, hilf mir.",
       options: ["Wenn", "Weil", "Ob", "Dass"],
       correctIndex: 0,
@@ -62,9 +110,9 @@ export const lessonB107: Lesson = {
       id: "r3",
       type: "fill-blank",
       instructionAr: "مراجعة من B1 (درس b1-03 — البيئة والمناخ): أكمل:",
-      template: "Das Haus ___ gebaut. (يُبنى)",
+      template: "Das Haus ___ gerade gebaut. (يُبنى الآن)",
       blanks: [
-        { correct: "wird", options: ["wird", "wurde", "ist"] },
+        { correct: "wird", options: ["wird", "wurde", "wirst"] },
       ],
       explanation: "مجهول مضارع: wird gebaut (درس البيئة).",
       errorType: "grammar",
@@ -102,11 +150,11 @@ export const lessonB107: Lesson = {
       comparisonWithArabic:
         "«عندما كنت صغيراً» = Als ich jung war. «عندما يكون عندي وقت» = Wenn ich Zeit habe. العربية تستخدم «عندما» للاثنين — الألمانية تفرق. والتشابه: «بينما» = während، «قبل أن» = bevor، «بعد أن» = nachdem — تطابق شبه كامل!",
       eselsbruecke:
-        "«als = حكاية ماضية واحدة (ألصقتها في الماضي)، wenn = عادة أو مستقبل» — اسأل: ماضٍ مرة واحدة؟ → als. تكرار أو مضارع؟ → wenn.",
+        "«als = حدث ماضٍ واحد انتهى، wenn = المضارع أو التكرار» — اسأل: حدث ماضٍ واحد انتهى؟ → als. عادة أو مضارع؟ → wenn.",
       commonMistakes: [
         { wrong: "Als ich Zeit habe... (خلط الزمن)", right: "Wenn ich Zeit habe...", whyAr: "المضارع → wenn. als للماضي فقط." },
-        { wrong: "Als ich 20 bin... (als مع مضارع)", right: "Als ich 20 war...", whyAr: "als + Präteritum دائماً." },
-        { wrong: "Nachdem ich gegessen habe أم hatte؟", right: "nachdem + Perfekt (gegessen habe) عادي في المحادثة. Plusquamperfekt في الكتابة", whyAr: "كلاهما صحيح حسب السياق." },
+        { wrong: "Als ich 20 bin... (als مع مضارع)", right: "Als ich 20 war...", whyAr: "في الحكاية عن حدث ماضٍ يأتي als عادةً مع Präteritum." },
+        { wrong: "Nachdem ich gegessen, gehe ich.", right: "Nachdem ich gegessen habe, gehe ich.", whyAr: "الفعل المساعد habe يأتي في آخر الجملة الثانوية بعد Partizip II." },
       ],
       relatedRuleComparison: {
         title: "weil أم da؟",
@@ -118,16 +166,16 @@ export const lessonB107: Lesson = {
       titleAr: "الجمل التخالفية: obwohl (رغم أن)",
       titleDe: "Der konzessive Nebensatz: obwohl, obgleich, obschon",
       explanationAr:
-        "obwohl = رغم أن (تخالف/تنازل): Obwohl es regnet, gehe ich spazieren (رغم أن المطر يهطل، أتمشى). التركيب مثل كل الجمل الثانوية: الفعل في النهاية، والجملة الرئيسية بعدها يبدأ فعلها مباشرة. المرادفات الرسمية: obgleich وobschon (أدبي)، والبديل الأقصر: trotzdem (رغم ذلك) مع قلب الترتيب.",
+        "obwohl = رغم أن (تخالف/تنازل): Obwohl es regnet, gehe ich spazieren (رغم أن المطر يهطل، أتمشى). التركيب مثل كل الجمل الثانوية: الفعل في النهاية، والجملة الرئيسية بعدها يبدأ فعلها مباشرة. المرادفات: obgleich (أرقى، وأقل شيوعاً في الكلام اليومي)، وobschon (قديم اليوم)، والبديل الأقصر: trotzdem (رغم ذلك) مع قلب الترتيب.",
       whyAr:
-        "لماذا نحتاج obwohl؟ لأنها «الجملة الرافضة للتوقع»: يتوقع المستمع أن تمتنع عن المشي تحت المطر — فتقول obwohl. هي الأداة الأهم في النقاش والرأي: تعترف بالطرف الآخر ثم تصر على رأيك (Obwohl das teuer ist, kaufe ich es).",
+        "لماذا نحتاج obwohl؟ لأنها «الجملة الرافضة للتوقع»: يتوقع المستمع أن تمتنع عن المشي تحت المطر — فتقول obwohl. وهي مفيدة في النقاش والرأي: تعترف بالطرف الآخر ثم تصر على رأيك (Obwohl das teuer ist, kaufe ich es).",
       table: {
         title: "obwohl وأخواتها",
         columns: ["الأداة", "المعنى", "المستوى", "مثال"],
         rows: [
-          { label: "obwohl", cells: ["رغم أن", "B1 (شائع)", "Obwohl es regnet, gehe ich."] },
-          { label: "obgleich", cells: ["رغم أن", "رسمي", "Obgleich er krank war, kam er."] },
-          { label: "obschon", cells: ["رغم أن", "أدبي", "Obschon es spät war, blieben wir."] },
+          { label: "obwohl", cells: ["رغم أن", "شائع في الكلام والكتابة", "Obwohl es regnet, gehe ich."] },
+          { label: "obgleich", cells: ["رغم أن", "أرقى، أقل شيوعاً في الكلام", "Obgleich er krank war, kam er."] },
+          { label: "obschon", cells: ["رغم أن", "قديم (لا يُستعمل اليوم)", "Obschon es spät war, blieben wir."] },
           { label: "trotzdem", cells: ["رغم ذلك", "ظرف (قلب ترتيب V2)", "Es regnete. Trotzdem ging ich."] },
         ],
       },
@@ -140,7 +188,7 @@ export const lessonB107: Lesson = {
       comparisonWithArabic:
         "«رغم أن + جملة» = obwohl + جملة — تطابق تام: رغم أن المطر يهطل = Obwohl es regnet. والفرق الوحيد: الألمانية ترسل الفعل إلى نهاية الجملة التابعة.",
       eselsbruecke:
-        "«obwohl = أُوبفول (رغم أن)» — تذكّرها بـ«وَبول»: أمشي رغم المطر (رغم «الوَبول»). والقاعدة: obwohl + فعل في نهاية جملتها.",
+        "«obwohl = رغم أن + جملة» — الفعل في آخرها. و«trotzdem = رغم ذلك» — بعدها فعل ثانٍ مباشرة (Trotzdem gehe ich).",
       commonMistakes: [
         { wrong: "Obwohl es regnet, ich gehe spazieren.", right: "Obwohl es regnet, gehe ich spazieren.", whyAr: "الجملة الرئيسية بعد التابعة: الفعل أولاً (V1)." },
         { wrong: "Obwohl es regnet. Ich gehe spazieren. (نقطة بدل فاصلة)", right: "Obwohl es regnet, gehe ich spazieren.", whyAr: "الجملة التابعة لا تقف وحدها — تُوصل بالفاصلة." },
@@ -172,7 +220,7 @@ export const lessonB107: Lesson = {
         title: "قبل الانتخابات",
         lines: [
           { speaker: "Anna", de: "Bevor wir wählen, müssen wir die Programme lesen.", ar: "قبل أن ننتخب يجب أن نقرأ البرامج." },
-          { speaker: "Karim", de: "Ja. Während der Wahlkampf läuft, gibt es viel Werbung.", ar: "نعم. بينما يجري الحملة الانتخابية توجد إعلانات كثيرة." },
+          { speaker: "Karim", de: "Ja. Während der Wahlkampf läuft, gibt es viel Werbung.", ar: "نعم. بينما تجري الحملة الانتخابية تكثر الإعلانات." },
           { speaker: "Anna", de: "Nachdem ich die Programme gelesen habe, kann ich entscheiden.", ar: "بعد أن أقرأ البرامج أستطيع أن أقرر." },
           { speaker: "Karim", de: "Genau. Wichtig ist, dass wir wählen gehen.", ar: "بالضبط. المهم أن نذهب للانتخاب." },
         ],
@@ -223,8 +271,8 @@ export const lessonB107: Lesson = {
     title: "أصوات السياسة: w، tz، وie",
     items: [
       { de: "die Politik", ar: "السياسة", note: "k في النهاية: پوليتيك" },
-      { de: "das Gesetz", ar: "القانون", note: "g = غ + tz = تس: غِزِتس" },
-      { de: "die Wahl", ar: "الانتخاب", note: "w = ڤ + h: ڤال" },
+      { de: "das Gesetz", ar: "القانون", note: "g = غ، s بين حركتين = ز، tz = تس: غِزِتس" },
+      { de: "die Wahl", ar: "الانتخاب", note: "w = ڤ، وh صامت: ڤال" },
       { de: "der Bürger", ar: "المواطن", note: "ü + r: بورغِر" },
       { de: "die Regierung", ar: "الحكومة", note: "ie = إي: رِغيرونغ" },
       { de: "das Parlament", ar: "البرلمان", note: "a مفتوح: پارلامنت" },
@@ -255,9 +303,9 @@ export const lessonB107: Lesson = {
       instructionAr: "أكمل بـ als/wenn/während/bevor/nachdem:",
       template: "___ ich jung war, lebte ich in Tunis. (عندما ماضٍ) ___ ich Zeit habe, lerne ich. (كلما) ___ er arbeitet, hört er Musik. (بينما)",
       blanks: [
-        { correct: "Als", options: ["Als", "Wenn", "Während"] },
-        { correct: "Wenn", options: ["Als", "Wenn", "Während"] },
-        { correct: "Während", options: ["Als", "Wenn", "Während"] },
+        { correct: "Als", options: ["Als", "Nachdem", "Bevor"] },
+        { correct: "Wenn", options: ["Wenn", "Als", "Bevor"] },
+        { correct: "Während", options: ["Während", "Als", "Bevor"] },
       ],
       explanation: "ماضٍ مرة → als. مضارع/تكرار → wenn. متزامن → während.",
       errorType: "grammar",
@@ -279,7 +327,7 @@ export const lessonB107: Lesson = {
     {
       id: "e1",
       type: "multiple-choice",
-      instructionAr: "اختر أداة الزمن:",
+      instructionAr: "اختر أداة الزمن (عندما: حدث ماضٍ واحد):",
       questionDe: "___ ich jung war, lebte ich in Tunis.",
       options: ["Als", "Wenn", "Während", "Bis"],
       correctIndex: 0,
@@ -289,7 +337,7 @@ export const lessonB107: Lesson = {
     {
       id: "e2",
       type: "multiple-choice",
-      instructionAr: "اختر أداة الزمن:",
+      instructionAr: "اختر أداة الزمن (كلما كان عندي وقت):",
       questionDe: "___ ich Zeit habe, lerne ich.",
       options: ["Wenn", "Als", "Während", "Bis"],
       correctIndex: 0,
@@ -321,7 +369,7 @@ export const lessonB107: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "افحص الجملة وصحّح الخطأ الوحيد فيها (المعنى: كلما كان عندي وقت).",
       wrongSentence: "Als ich Zeit habe, lerne ich.",
       wrongWord: "Als",
       correctWord: "Wenn",
@@ -359,7 +407,7 @@ export const lessonB107: Lesson = {
       instructionAr: "اختر الترجمة الصحيحة:",
       questionDe: "die Wahl",
       questionAr: "ما معنى الكلمة؟",
-      options: ["الانتخاب", "الاختيار (في المطعم)", "القرار", "الرأي"],
+      options: ["الانتخاب", "الحكومة", "القرار", "الرأي"],
       correctIndex: 0,
       explanation: "die Wahl = الانتخاب (سياسياً).",
       errorType: "vocabulary",
@@ -367,7 +415,7 @@ export const lessonB107: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "افحص الجملة وصحّح الخطأ الوحيد فيها.",
       wrongSentence: "Bevor ich schlafe, ich lese ein Buch.",
       wrongWord: "ich lese",
       correctWord: "lese ich",
@@ -388,7 +436,7 @@ export const lessonB107: Lesson = {
       type: "fill-blank",
       instructionAr: "أكمل بـ obwohl أو trotzdem:",
       instructionDe: "Ergänze: obwohl oder trotzdem",
-      template: "___ ich müde war, habe ich gelernt. · Es regnete. ___ ging ich spazieren.",
+      template: "___ ich müde war, habe ich gelernt. (رغم أني كنت متعباً) · Es regnete. ___ ging ich spazieren. (رغم ذلك)",
       blanks: [
         { correct: "Obwohl", options: ["Obwohl", "Trotzdem", "Weil", "Als"] },
         { correct: "Trotzdem", options: ["Trotzdem", "Obwohl", "Deshalb", "Während"] },
@@ -409,11 +457,32 @@ export const lessonB107: Lesson = {
       errorType: "word-order",
       points: 2,
     },
+    {
+      id: "e13",
+      type: "fill-blank",
+      instructionAr: "أكمل بحرف الربط (لأنّ):",
+      template: "Ich lerne, ___ ich eine Prüfung habe.",
+      blanks: [{ correct: "weil", options: ["weil", "wenn", "ob", "dass"] }],
+      explanation: "weil = لأنّ (سبب). wenn = عندما/إذا، وob = هل، وdass = أنّ.",
+      errorType: "grammar",
+      points: 2,
+    },
+    {
+      id: "e14",
+      type: "word-ordering",
+      instructionAr: "رتّب الكلمات لتكوّن جملة سببية بـ da:",
+      tokens: ["Da", "es", "regnet,", "bleiben", "wir", "zu", "Hause."],
+      correctSentence: "Da es regnet, bleiben wir zu Hause.",
+      hint: "da + فعل في آخر الجملة الثانوية (regnet)، ثم الفعل الرئيسي (bleiben) بعد الفاصلة.",
+      explanation: "بما أنه يمطر نبقى في البيت — da = لأنّ.",
+      errorType: "word-order",
+      points: 2,
+    },
   ],
 
   fehlerUndTipps: {
     mistakes: [
-      { wrong: "Als ich Zeit habe... (als مع مضارع)", right: "Wenn ich Zeit habe...", whyAr: "als للماضي فقط." },
+      { wrong: "Als ich Zeit habe... (als مع مضارع)", right: "Wenn ich Zeit habe...", whyAr: "als لحدث ماضٍ منتهٍ، لا للمضارع." },
       { wrong: "Bevor ich schlafe, ich lese.", right: "Bevor ich schlafe, lese ich.", whyAr: "الفعل بعد الجملة الثانوية مباشرة." },
       { wrong: "seitdem أم seit؟", right: "seitdem + جملة (منذ أن). seit + اسم (منذ)", whyAr: "seitdem يبدأ جملة، seit يتبعها اسم." },
     ],
@@ -424,7 +493,7 @@ export const lessonB107: Lesson = {
     culturalNote: {
       title: "السياسة الألمانية",
       content:
-        "ألمانيا جمهورية برلمانية: «der Bundestag» (البرلمان) و«der Bundeskanzler» (المستشار). والانتخابات: «die Bundestagswahl» كل 4 سنوات. والمشاركة السياسية مهمة: «Wählen gehen» (اذهب للانتخاب) شعار شائع. و«die Demokratie» قيمة أساسية يتعلمها الأطفال في المدرسة.",
+        "ألمانيا ديمقراطية برلمانية: ينتخب الشعب «der Bundestag» (البرلمان) كل أربع سنوات عادةً، ثم يختار البرلمان «der Bundeskanzler» (المستشار)، وليس الشعب مباشرة.",
     },
   },
 
@@ -432,7 +501,7 @@ export const lessonB107: Lesson = {
     {
       id: "m1",
       type: "multiple-choice",
-      instructionAr: "اختر أداة الزمن:",
+      instructionAr: "اختر أداة الزمن (حدث ماضٍ واحد):",
       questionDe: "___ ich in Berlin war, besuchte ich das Museum.",
       options: ["Als", "Wenn", "Während", "Bis"],
       correctIndex: 0,
@@ -442,7 +511,7 @@ export const lessonB107: Lesson = {
     {
       id: "m2",
       type: "multiple-choice",
-      instructionAr: "اختر أداة الزمن:",
+      instructionAr: "اختر أداة الزمن (متزامن: بينما تتعلم):",
       questionDe: "___ du lernst, höre ich Musik.",
       options: ["Während", "Als", "Bis", "Nachdem"],
       correctIndex: 0,
@@ -461,7 +530,7 @@ export const lessonB107: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "افحص الجملة وصحّح الخطأ الوحيد فيها (المعنى: عندما عدت إلى البيت مرة واحدة).",
       wrongSentence: "Wenn ich gestern nach Hause kam, war niemand da.",
       wrongWord: "Wenn",
       correctWord: "Als",
