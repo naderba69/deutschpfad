@@ -21,12 +21,11 @@ describe("B1-08 audit", () => {
     }
   });
 
-  it("removes the false 'no error' option from error-correction instructions", () => {
-    for (const x of lessonB108.practiceBank) {
-      expect(x.instructionAr ?? "").not.toContain("لا خطأ");
-    }
-    for (const x of lessonB108.miniTest) {
-      expect((x as { instructionAr?: string }).instructionAr ?? "").not.toContain("لا خطأ");
+  it("offers a correct word among the error-correction options (the no-error option is added by the interface)", () => {
+    type EC = { type: string; options?: string[]; correctWord?: string; isAlreadyCorrect?: boolean };
+    for (const x of [...lessonB108.practiceBank, ...lessonB108.miniTest] as unknown as EC[]) {
+      if (x.type !== "error-correction" || x.isAlreadyCorrect) continue;
+      expect(x.options ?? []).toContain(x.correctWord);
     }
   });
 

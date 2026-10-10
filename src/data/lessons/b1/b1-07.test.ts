@@ -201,11 +201,11 @@ describe("B1-07 lesson content audit", () => {
     }
   });
 
-  it("removes the false 'لا خطأ' promise from error-correction instructions", () => {
+  it("offers a correct word among the error-correction options (the no-error option is added by the interface)", () => {
     for (const id of ["e5", "e9", "m4"]) {
-      const exercise = task(id);
+      const exercise = task(id) as unknown as { type: string; options: string[]; correctWord: string; isAlreadyCorrect?: boolean };
       if (exercise.type !== "error-correction") throw new Error(`${id} is not error-correction`);
-      expect(exercise.instructionAr, `${id} instruction`).not.toContain("لا خطأ");
+      if (!exercise.isAlreadyCorrect) expect(exercise.options, id).toContain(exercise.correctWord);
     }
   });
 
