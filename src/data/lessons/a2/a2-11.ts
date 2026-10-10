@@ -633,6 +633,9 @@ export const lessonA211: Lesson = {
     { id: "fc10", de: "ausfüllen", ar: "يملأ (استمارة)", example: "Ich fülle das Formular aus.", exampleAr: "أملأ الاستمارة.", level: "A2" },
     { id: "fc11", de: "die Anmeldung", ar: "التسجيل/الانتساب بحسب السياق", example: "Die Anmeldung ist jetzt abgeschlossen.", exampleAr: "اكتمل التسجيل الآن.", level: "A2" },
     { id: "fc12", de: "unterschreiben", ar: "يوقّع", example: "Unterschreiben Sie hier.", exampleAr: "تفضّلوا بالتوقيع هنا (صيغة رسمية).", level: "A2" },
+    { id: "fc13", de: "die Bank", ar: "البنك", example: "Die Bank ist neben der Post.", exampleAr: "البنك بجانب مكتب البريد.", level: "A2" },
+    { id: "fc14", de: "das Geschäft", ar: "المتجر", example: "Das Geschäft ist geöffnet.", exampleAr: "المتجر مفتوح.", level: "A2" },
+    { id: "fc15", de: "bezahlen", ar: "يدفع", example: "Ich bezahle an der Kasse.", exampleAr: "أدفع عند الصندوق.", level: "A2" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */

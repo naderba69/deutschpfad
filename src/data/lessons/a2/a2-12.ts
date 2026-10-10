@@ -529,6 +529,9 @@ export const lessonA212: Lesson = {
     { id: "fc6", de: "deshalb", ar: "لذلك (مقلوبة)", example: "Es regnet, deshalb bleibe ich.", exampleAr: "تمطر لذلك أبقى.", level: "A2" },
     { id: "fc7", de: "trotzdem", ar: "رغم ذلك (مقلوبة)", example: "Es ist kalt, trotzdem gehe ich.", exampleAr: "بارد ورغم ذلك أذهب.", level: "A2" },
     { id: "fc8", de: "dann", ar: "ثم (مقلوبة)", example: "Erst lernen, dann fernsehen.", exampleAr: "أولاً نتعلم ثم نشاهد التلفاز.", level: "A2" },
+    { id: "fc9", de: "überrascht", ar: "متفاجئ", example: "Ich bin überrascht.", exampleAr: "أنا متفاجئ.", level: "A2" },
+    { id: "fc10", de: "ärgerlich", ar: "مزعج", example: "Das ist ärgerlich.", exampleAr: "هذا مزعج.", level: "A2" },
+    { id: "fc11", de: "sich freuen", ar: "يفرح", example: "Ich freue mich auf das Fest.", exampleAr: "أفرح بالاحتفال.", level: "A2" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */

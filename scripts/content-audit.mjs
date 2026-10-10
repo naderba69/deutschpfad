@@ -19,7 +19,7 @@ for (const levelDir of ["a1", "a2", "b1", "b2"]) {
   const dir = join(ROOT, "lessons", levelDir);
   if (!readdirSync(dir).length) continue;
   for (const f of readdirSync(dir)) {
-    if (!f.endsWith(".ts")) continue;
+    if (!f.endsWith(".ts") || f.endsWith(".test.ts")) continue;
     const src = readFileSync(join(dir, f), "utf8");
 
     // ترجمات عربية فارغة
@@ -50,7 +50,7 @@ for (const f of ["a1.ts", "a1-extra.ts", "a2.ts", "a2-extra.ts", "b1.ts", "b1-ex
 
 // 3) أخطاء ألمانية شائعة — مع استثناء الأمثلة الخاطئة المقصودة في تمارين التصحيح
 const COMMON_GERMAN_ERRORS = [
-  [/ich (bin|habe|werde) (gehen|kommen|fahren)/gi, "استخدام خاطئ لـ sein/haben مع فعل الحركة"],
+  [/ich (bin|habe|werde) (gehen|kommen|fahren)(?! (müssen|können|dürfen|sollen|wollen|mögen|lassen|sehen|hören)\b)/gi, "استخدام خاطئ لـ sein/haben مع فعل الحركة"],
   [/\ber (bin|bist)\b/gi, "تصريف خاطئ (er bin/bist)"],
   [/das ist (eine|ein) (gute|schöne|große) (Idee|Woche|Tag)/gi, "جنس خاطئ محتمل"],
   [/viele (Mensch|Leute|Sache|Ding)s?\s+(ist|hat)/gi, "جمع مع فعل مفرد"],
@@ -59,7 +59,7 @@ const COMMON_GERMAN_ERRORS = [
 for (const levelDir of ["a1", "a2", "b1", "b2"]) {
   const dir = join(ROOT, "lessons", levelDir);
   for (const f of readdirSync(dir)) {
-    if (!f.endsWith(".ts")) continue;
+    if (!f.endsWith(".ts") || f.endsWith(".test.ts")) continue;
     const src = readFileSync(join(dir, f), "utf8");
     // نزيل كتل الأخطاء المقصودة (حقول wrong / wrongSentence) قبل الفحص
     const sanitized = src

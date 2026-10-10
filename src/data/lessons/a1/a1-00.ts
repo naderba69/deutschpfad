@@ -817,7 +817,7 @@ export const lessonA100: Lesson = {
       instructionAr: "اختر النطق الصحيح:",
       questionDe: "Wie spricht man „Apfel“?",
       questionAr: "كيف يُنطق Apfel (تفاحة)؟",
-      options: ["آپفِل", "آفِل", "آپِل", "آپفِل (بفاصلة بين الحرفين)"],
+      options: ["آپفِل", "آفِل", "آپِل", "بَفِل"],
       correctIndex: 0,
       explanation:
         "pf يُنطق معاً: الشفتان تبدأ p ثم يمر الهواء f فوراً — آپفِل.",

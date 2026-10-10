@@ -62,10 +62,14 @@ export async function buildInterleavedReview(lesson: Lesson): Promise<Exercise[]
   try {
     const { LESSONS } = await import("@/data/lessons");
     const currentLevelIdx = LEVEL_ORDER[lesson.level] ?? 0;
-    const previousLessons = LESSONS.filter((l) => {
-      const lIdx = LEVEL_ORDER[l.level] ?? 0;
-      return lIdx < currentLevelIdx || (lIdx === currentLevelIdx && l.order < lesson.order);
-    });
+    // الدروس السابقة = ما يسبق الدرس في تسلسل المنهج نفسه (لا حقل order، لأنه غير متمايز بين الدروس)
+    const seqNum = (id: string) => Number(id.split("-")[1] ?? 0);
+    const sequence = [...LESSONS].sort(
+      (a, b) =>
+        (LEVEL_ORDER[a.level] ?? 0) - (LEVEL_ORDER[b.level] ?? 0) || seqNum(a.id) - seqNum(b.id),
+    );
+    const position = sequence.findIndex((l) => l.id === lesson.id);
+    const previousLessons = position > 0 ? sequence.slice(0, position) : [];
 
     // نجمع أسئلة MCQ من الدروس السابقة (اختيار متنوع)
     const mcqs = previousLessons.flatMap((l) =>

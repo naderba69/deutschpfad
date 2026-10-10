@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {notFound} from "next/navigation";
 
 import { LazySealExam } from "@/components/tests/lazy/lazy-seal-exam";
 import { Card, CardContent } from "@/components/ui/card";
@@ -22,6 +23,7 @@ interface Props {
 
 export default function SealExamPage({ params, searchParams }: Props) {
   const level = params.level.toUpperCase();
+  if (!["A1", "A2", "B1", "B2"].includes(level)) notFound();
   const quick = searchParams?.mode === "quick";
 
   return (

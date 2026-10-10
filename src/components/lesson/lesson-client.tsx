@@ -366,7 +366,6 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       (def.id !== "mediation" || (lesson.mediation && lesson.mediation.length > 0)) &&
       (def.id !== "interaction" || (lesson.interaction && lesson.interaction.length > 0)) &&
       /* ═══ نصّ القراءة: يُعرض فقط إن كُتب للدرس ═══ */
-      (def.id !== "lesetext" || !!lesson.reading) &&
       /* ═══ التعمّق: يُعرض فقط إن رُبطت بالدرس موارد رديفة ═══ */
       (def.id !== "vertiefung" || hasRelatedResources),
   );
@@ -501,13 +500,23 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
           />
         );
       case "lernkarten":
-        return <LernkartenSection flashcards={lesson.flashcards} />;
+        return <LernkartenSection lessonId={lesson.id} flashcards={lesson.flashcards} />;
       case "mediation":
         return <MediationSection tasks={lesson.mediation ?? []} />;
       case "interaction":
         return <InteractionSection tasks={lesson.interaction ?? []} />;
       case "lesetext":
-        return lesson.reading ? <LesetextSection reading={lesson.reading} lessonId={lesson.id} /> : null;
+        return lesson.reading ? (
+          <LesetextSection reading={lesson.reading} lessonId={lesson.id} />
+        ) : (
+          <div className="rounded-2xl border border-dashed p-5 text-sm leading-relaxed text-muted-foreground">
+            لا يحوي هذا الدرس نصّ قراءة مستقلاً. يمكنك تدريب القراءة على نصوص مستوى {lesson.level} من{" "}
+            <Link href="/reading" className="font-bold text-primary underline underline-offset-2">
+              مكتبة القراءة
+            </Link>
+            .
+          </div>
+        );
       case "vertiefung":
         return <VertiefungSection lessonId={lesson.id} />;
       default:

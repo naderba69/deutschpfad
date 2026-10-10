@@ -354,6 +354,25 @@ export const lessonB111: Lesson = {
       explanation: "die Anmeldung = التسجيل.",
       errorType: "vocabulary",
     },
+    {
+      id: "mt-b1-11-4",
+      type: "multiple-choice",
+      instructionAr: "اختر الصيغة الصحيحة (تمنٍّ في الحاضر)",
+      questionDe: "Ich wünschte, ich ___ mehr Zeit.",
+      options: ["hätte", "habe", "hatte"],
+      correctIndex: 0,
+      explanation: "Konjunktiv II للتمنّي: ich hätte = لو كان لديّ.",
+      errorType: "grammar",
+    },
+    {
+      id: "mt-b1-11-5",
+      type: "fill-blank",
+      instructionAr: "أكمل بصيغة المبني للمجهول في المضارع",
+      template: "Das Essen ___ gerade gekocht.",
+      blanks: [{ correct: "wird", options: ["wird", "ist", "hat"] }],
+      explanation: "المبني للمجهول في المضارع = werden + اسم المفعول (wird gekocht).",
+      errorType: "grammar",
+    },
   ],
 
   flashcards: [
@@ -364,6 +383,9 @@ export const lessonB111: Lesson = {
     { id: "fc-b1-11-5", de: "Einerseits ... andererseits", ar: "من ناحية ... ومن ناحية أخرى", example: "Einerseits ist es teuer, andererseits gut.", exampleAr: "من ناحية مكلف، ومن ناحية أخرى جيد.", level: "B1" },
     { id: "fc-b1-11-6", de: "das Beratungsgespräch", ar: "جلسة الاستشارة", example: "Ich habe ein Beratungsgespräch beim Arbeitsamt.", exampleAr: "لدي جلسة استشارة في مكتب العمل.", level: "B1" },
     { id: "fc-b1-11-7", de: "der Prüfungsteil", ar: "جزء الامتحان", example: "Ich übe jeden Teil einzeln.", exampleAr: "أتدرّب على كل جزء على حدة.", level: "B1" },
+    { id: "fc-b1-11-8", de: "die Bewerbung", ar: "طلب التوظيف", example: "Ich schreibe eine Bewerbung.", exampleAr: "أكتب طلب توظيف.", level: "B1" },
+    { id: "fc-b1-11-9", de: "trotzdem", ar: "مع ذلك", example: "Es regnet, trotzdem gehen wir spazieren.", exampleAr: "تمطر، ومع ذلك نخرج للتنزّه.", level: "B1" },
+    { id: "fc-b1-11-10", de: "der Lebenslauf", ar: "السيرة الذاتية", example: "Mein Lebenslauf ist auf Deutsch.", exampleAr: "سيرتي الذاتية بالألمانية.", level: "B1" },
   ],
 
   /* ═══ الوساطة والتفاعل ═══ */

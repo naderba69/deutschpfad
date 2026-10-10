@@ -20,7 +20,8 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const LESSONS = [];
 for (const level of ["a1", "a2", "b1", "b2"]) {
   for (const f of readdirSync(join(ROOT, "src/data/lessons", level))) {
-    if (!f.endsWith(".ts")) continue;
+    // ملفات الاختبار (*.test.ts) تحوي معرّفات دروس مكرّرة نصّياً فتفسد البحث
+    if (!f.endsWith(".ts") || f.endsWith(".test.ts")) continue;
     const text = readFileSync(join(ROOT, "src/data/lessons", level, f), "utf8");
     const id = (text.match(/id: "([^"]+)"/) || [])[1] ?? f.replace(".ts", "");
     LESSONS.push({ level, id, text });

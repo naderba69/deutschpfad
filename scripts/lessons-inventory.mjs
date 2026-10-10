@@ -38,7 +38,7 @@ function loadLesson(path) {
 const LESSONS = [];
 for (const level of ["a1", "a2", "b1", "b2"]) {
   for (const f of readdirSync(join(ROOT, "src/data/lessons", level))) {
-    if (!f.endsWith(".ts")) continue;
+    if (!f.endsWith(".ts") || f.endsWith(".test.ts")) continue;
     const L = loadLesson(join(ROOT, "src/data/lessons", level, f));
     if (L) LESSONS.push(L);
   }

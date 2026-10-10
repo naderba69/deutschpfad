@@ -16,7 +16,12 @@ import type { Flashcard } from "@/types/lesson";
  * — قلب البطاقة بالضغط — «أضف للبطاقات» يخزنها في حقيبة SM-2
  * (جدولة المراجعة عبر خوارزمية SM-2 في صفحة /flashcards)
  */
-export function LernkartenSection({ flashcards }: { flashcards: Flashcard[] }) {
+export function LernkartenSection({ lessonId, flashcards: sourceCards }: { lessonId: string; flashcards: Flashcard[] }) {
+  // معرّفات البطاقات مكرّرة بين الدروس (fc1 …)، فنُضيف معرّف الدرس لتكون فريدة في الحقيبة
+  const flashcards = React.useMemo<Flashcard[]>(
+    () => sourceCards.map((c) => ({ ...c, id: `${lessonId}:${c.id}` })),
+    [sourceCards, lessonId],
+  );
   const [flipped, setFlipped] = React.useState<Set<string>>(new Set());
   const [added, setAdded] = React.useState(false);
   const [adding, setAdding] = React.useState(false);

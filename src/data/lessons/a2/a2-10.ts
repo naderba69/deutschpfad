@@ -654,6 +654,9 @@ export const lessonA210: Lesson = {
     { id: "fc6", de: "wenn", ar: "إذا/عندما بحسب السياق", example: "Wenn ich Zeit habe, wiederhole ich Vokabeln.", exampleAr: "إذا توفر لديّ وقت، أراجع المفردات.", level: "A2" },
     { id: "fc7", de: "ob", ar: "ما إذا/هل في سؤال غير مباشر", example: "Ich weiß nicht, ob er kommt.", exampleAr: "لا أعرف ما إذا كان سيأتي.", level: "A2" },
     { id: "fc8", de: "bestehen", ar: "يجتاز", example: "Ich bestehe die Prüfung.", exampleAr: "أجتاز الامتحان.", level: "A2" },
+    { id: "fc9", de: "die Anmeldung", ar: "التسجيل", example: "Die Anmeldung ist online.", exampleAr: "التسجيل إلكترونياً.", level: "A2" },
+    { id: "fc10", de: "der Termin", ar: "الموعد", example: "Ich habe einen Termin um zehn.", exampleAr: "لدي موعد في العاشرة.", level: "A2" },
+    { id: "fc11", de: "lernen", ar: "يتعلّم / يدرس", example: "Ich lerne jeden Tag Deutsch.", exampleAr: "أتعلّم الألمانية كل يوم.", level: "A2" },
   ],
 
   /* ═══ الوساطة والتفاعل: مهام تدريبية غير مقوّمة للأداء الحر ═══ */
