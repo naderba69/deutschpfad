@@ -22,17 +22,54 @@ export const lessonB211: Lesson = {
     "الضمائر النسبية في حالة المضاف إليه (dessen/deren) للتعبير عن المِلكية داخل الجملة النسبية، والصيغة المصدرية المزدوجة في الماضي (habe arbeiten müssen) مع الأفعال المودالية وlassen وأفعال الإدراك.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann Relativsätze mit „dessen“ und „deren“ bilden.", ar: "أن أبني جملة نسبية تعبّر عن المِلكية بـ dessen وderen." },
-    { id: "z2", de: "Ich kann den doppelten Infinitiv im Perfekt verwenden.", ar: "أن أستعمل الصيغة المصدرية المزدوجة في الماضي التام." },
-    { id: "z3", de: "Ich kann „lassen“, „sehen“ und „hören“ im Perfekt korrekt einsetzen.", ar: "أن أصرّف lassen وsehen وhören في الماضي بصيغة المصدر المزدوج." },
-    { id: "z4", de: "Ich kann komplexe Sachverhalte präzise und schriftlich darstellen.", ar: "أن أعرض وقائع مركّبة بدقّة في نصّ مكتوب." },
+    {
+      id: "z1",
+      de: "Ich kann Relativsätze mit „dessen“ und „deren“ bilden.",
+      ar: "أن أبني جملة نسبية تعبّر عن المِلكية بـ dessen وderen.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e1", "e2", "e3", "e4", "e5", "e6", "e7", "m1", "m3", "m5", "w1", "w3"],
+        taskIds: [
+          "practice:b2-11:e1", "practice:b2-11:e2", "practice:b2-11:e3", "practice:b2-11:e4",
+          "practice:b2-11:e5", "practice:b2-11:e6", "practice:b2-11:e7",
+          "mini-test:b2-11:m1", "mini-test:b2-11:m3", "mini-test:b2-11:m5",
+          "writing:b2-11:w1", "writing:b2-11:w3",
+        ],
+        labelAr: "أختار dessen أو deren وأصحح الخطأ فيهما وأرتب جملة نسبية (e1 إلى e7 وm1 وm3 وm5 وw1 وw3)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann den doppelten Infinitiv im Perfekt verwenden.",
+      ar: "أن أستعمل الصيغة المصدرية المزدوجة في الماضي التام.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e8", "e9", "e10", "e14", "m2"],
+        taskIds: ["practice:b2-11:e8", "practice:b2-11:e9", "practice:b2-11:e10", "practice:b2-11:e14", "mini-test:b2-11:m2"],
+        labelAr: "أختار الصيغة الصحيحة وأصحح الخطأ وأحوّل جملة إلى المصدر المزدوج (e8 وe9 وe10 وe14 وm2)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann „lassen“, „sehen“ und „hören“ im Perfekt korrekt einsetzen.",
+      ar: "أن أصرّف lassen وsehen وhören في الماضي بصيغة المصدر المزدوج.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e11", "e12", "e13", "m4", "w2", "q3"],
+        taskIds: [
+          "practice:b2-11:e11", "practice:b2-11:e12", "practice:b2-11:e13",
+          "mini-test:b2-11:m4", "writing:b2-11:w2", "listening:l2:q3",
+        ],
+        labelAr: "أكمل جملة بـ lassen بالمصدر، وأختار التركيب الذي يعني التكليف، وأرتب جملة بـ hören (e11 إلى e13 وm4 وw2 وq3)، دون كشف الحل.",
+      },
+    },
   ],
 
   einfuehrung: {
     motivatingQuestionAr:
       "كيف تقول بالألمانية «الكاتب الذي رواياته مترجمة إلى العربية»؟ العربية تربطها بضمير صغير («رواياته»)، والألمانية تحتاج كلمة واحدة دقيقة: dessen. وكيف تقول «اضطررت أن أعمل»؟ ليس gemusst بل: Ich habe arbeiten müssen. بابان صغيران يفصلان نصّ B1 عن نصّ B2.",
     contextAr:
-      "في المقال الصحفي والنصّ الأدبي وتقرير العمل تتراكم المعلومات داخل الجملة الواحدة. بدل ثلاث جمل قصيرة يكتب الألماني جملة واحدة محكمة: Der Autor, dessen Romane ins Arabische übersetzt wurden, lebt in Berlin. هذا التكثيف هو ما يقرأه المصحّح علامةً على مستوى B2.",
+      "في المقال الصحفي والنصّ الأدبي وتقرير العمل تتراكم المعلومات داخل الجملة الواحدة. بدل ثلاث جمل قصيرة يكتب الألماني جملة واحدة محكمة: Der Autor, dessen Romane ins Arabische übersetzt wurden, lebt in Berlin. ويظهر هذا التكثيف في نصوص مستوى B2 عادةً.",
     activateVocabulary: [
       { de: "der Autor", ar: "الكاتب" },
       { de: "der Roman", ar: "الرواية" },
@@ -81,7 +118,7 @@ export const lessonB211: Lesson = {
       titleAr: "الضمير النسبي في المضاف إليه: dessen وderen",
       titleDe: "Relativpronomen im Genitiv: dessen und deren",
       explanationAr:
-        "حين تكون العلاقة علاقة مِلكية («الكاتب الذي رواياته…») نستعمل الضمير النسبي في حالة المضاف إليه: dessen للمذكّر والمحايد، وderen للمؤنّث والجمع. قاعدتان تحسمان كل شيء: (1) الشكل يتبع الاسم السابق (المرجع) لا الاسم التالي؛ (2) الاسم الذي يلي dessen/deren يأتي بلا أداة تعريف إطلاقاً: der Autor, dessen Romane… وليس dessen die Romane. وحالة الاسم التالي داخل الجملة النسبية حرّة تماماً — قد يكون فاعلاً أو مفعولاً.",
+        "حين تكون العلاقة علاقة مِلكية («الكاتب الذي رواياته…») نستعمل الضمير النسبي في حالة المضاف إليه: dessen للمذكّر والمحايد، وderen للمؤنّث والجمع. قاعدتان أساسيتان: (1) الشكل يتبع الاسم السابق (المرجع) لا الاسم التالي؛ (2) الاسم الذي يلي dessen/deren يأتي بلا أداة تعريف إطلاقاً: der Autor, dessen Romane… وليس dessen die Romane. وحالة الاسم التالي داخل الجملة النسبية حرّة تماماً — قد يكون فاعلاً أو مفعولاً.",
       whyAr:
         "لماذا يخطئ الناطق بالعربية هنا تحديداً؟ لأنّ العربية تعلّق المِلكية على الاسم الثاني بضمير متّصل («رواياتُه»)، فيكون التذكير والتأنيث تابعاً للمالك تلقائياً. الألمانية تفصل: dessen/deren كلمة مستقلّة تسبق المملوك، لكنها مع ذلك تُصرَّف حسب المالك. فمن يقول deren Romane عن كاتب رجل يكون قد طابق الكلمة الخطأ.",
       table: {
@@ -104,9 +141,9 @@ export const lessonB211: Lesson = {
         { de: "Ich kenne einen Arzt, mit dessen Hilfe du einen Termin bekommst.", ar: "أعرف طبيباً تحصل بمساعدته على موعد." },
       ],
       comparisonWithArabic:
-        "«الكاتب الذي رواياتُه مشهورة» = der Autor, dessen Romane bekannt sind. لاحظ الفرق البنيوي: العربية تُلصق الضمير بالمملوك في آخره، والألمانية تضع كلمة مستقلّة قبله. وانتبه: العربية تقول «رواياتُه» بالإفراد المذكّر لأنّ المالك رجل — والألمانية كذلك تختار dessen للمالك المذكّر، لا للرواية المؤنّثة الجمع.",
+        "«الكاتب الذي رواياتُه مشهورة» = der Autor, dessen Romane bekannt sind. لاحظ الفرق البنيوي: العربية تُلصق الضمير بالمملوك في آخره، والألمانية تضع كلمة مستقلّة قبله. وانتبه: الألمانية تختار dessen حسب المالك (رجل)، لا حسب المملوك (Romane جمع).",
       eselsbruecke:
-        "«dessen للرجل والطفل، وderen للمرأة والجماعة». والعلامة الفارقة: بعدهما اسم عارٍ بلا der/die/das — إن وجدت أداة تعريف فقد أخطأت.",
+        "«dessen للمالك المذكّر والمحايد (الرجل والطفل)، وderen للمالكة المؤنّثة والجماعة». والعلامة الفارقة: بعدهما اسم عارٍ بلا der/die/das — إن وجدت أداة تعريف فقد أخطأت.",
       commonMistakes: [
         { wrong: "Der Autor, deren Romane bekannt sind.", right: "Der Autor, dessen Romane bekannt sind.", whyAr: "المطابقة مع المالك (der Autor مذكّر) لا مع المملوك (die Romane جمع)." },
         { wrong: "Die Frau, dessen Auto kaputt ist.", right: "Die Frau, deren Auto kaputt ist.", whyAr: "المالكة مؤنّثة ⇒ deren، ولو كان المملوك محايداً (das Auto)." },
@@ -115,7 +152,7 @@ export const lessonB211: Lesson = {
       relatedRuleComparison: {
         title: "dessen أم von dem؟",
         content:
-          "von dem ممكن نحوياً لكنه ثقيل وغير مستحسن في النصّ المكتوب: der Autor, von dem die Romane bekannt sind. الصيغة المعيارية في B2 هي dessen. استعمل von + Dativ فقط حين يفرضها الفعل نفسه (träumen von, abhängen von) لا للمِلكية.",
+          "von dem ممكن نحوياً لكنه ثقيل وغير مستحسن في النصّ المكتوب: der Autor, von dem die Romane bekannt sind. الصيغة المعيارية في النص المكتوب هي dessen. استعمل von + Dativ فقط حين يفرضها الفعل نفسه (träumen von, abhängen von) لا للمِلكية.",
       },
     },
     {
@@ -125,7 +162,7 @@ export const lessonB211: Lesson = {
       explanationAr:
         "حين يقترن فعل مودالي بفعل رئيسي في الماضي التام لا نستعمل اسم المفعول (gemusst) بل مصدرين متتاليين: Ich habe arbeiten müssen. الترتيب ثابت: haben المصرَّف + الفعل الرئيسي بالمصدر + الفعل المودالي بالمصدر في النهاية. والمساعد دائماً haben ولو كان الفعل الرئيسي حركياً: Ich habe gehen müssen. أمّا اسم المفعول gemusst/gekonnt فلا يُستعمل إلا حين يقف المودالي وحده بلا فعل رئيسي: Ich habe es nicht gekonnt.",
       whyAr:
-        "لماذا هذا الشذوذ؟ لأنّ المصدر المزدوج يحفظ ترتيباً منطقياً: الفعل الأهمّ (المودالي، حامل المعنى) يُختم به الكلام. وفائدته العملية أنّ B2 يطلب سرد الماضي بدقّة نمطية — «اضطررت»، «استطعت»، «لم يُسمح لي» — وهذه كلها تمرّ بهذا الباب حصراً.",
+        "لماذا هذا الشذوذ؟ لأنّ المصدر المزدوج يحفظ ترتيباً منطقياً: الفعل الأهمّ (المودالي، حامل المعنى) يُختم به الكلام. وفائدته العملية أنّ هذه التراكيب تتكرر في سرد الماضي، مثل «اضطررت»، «استطعت»، «لم يُسمح لي».",
       table: {
         title: "المصدر المزدوج مقابل اسم المفعول",
         columns: ["الحالة", "الصيغة", "مثال"],
@@ -145,18 +182,18 @@ export const lessonB211: Lesson = {
         { de: "Ich habe es einfach nicht gekonnt.", ar: "لم أستطع ذلك ببساطة." },
       ],
       comparisonWithArabic:
-        "«اضطررتُ أن أعمل» تترجَم Ich habe arbeiten müssen حرفياً «لديّ عمل اضطرار». العربية تصرّف فعل الاضطرار وتُبقي الثاني منصوباً بـ«أن»، والألمانية تُجرّد الفعلين معاً إلى المصدر وتحمّل الزمن على haben وحده. من يترجم حرفياً يكتب habe gemusst zu arbeiten — وهي غير موجودة في الألمانية.",
+        "«اضطررتُ أن أعمل» تقابلها Ich habe arbeiten müssen. العربية تصرّف فعل الاضطرار وتذكر الفعل الثاني منصوباً بـ«أن»، والألمانية تضع الفعلين في صيغة المصدر وتحمل الزمن على haben وحده. ومن يترجم كلمة بكلمة قد يكتب habe gemusst zu arbeiten، وهذه ليست الصيغة المعيارية.",
       eselsbruecke:
         "«مصدران في الذيل، والمودالي آخرهم». وإن لم يكن معك فعل رئيسي فعد إلى اسم المفعول: gekonnt وحدها، müssen مع رفيق.",
       commonMistakes: [
         { wrong: "Ich habe arbeiten gemusst.", right: "Ich habe arbeiten müssen.", whyAr: "مع فعل رئيسي يتحوّل المودالي إلى مصدر لا اسم مفعول." },
         { wrong: "Ich bin gehen müssen.", right: "Ich habe gehen müssen.", whyAr: "المصدر المزدوج يأخذ haben دائماً، ولو كان الفعل الرئيسي حركياً." },
-        { wrong: "…, weil ich arbeiten müssen habe.", right: "…, weil ich habe arbeiten müssen.", whyAr: "في الجملة التابعة يتقدّم الفعل المصرَّف على المصدرين — استثناء نادر لترتيب الجملة التابعة." },
+        { wrong: "…, weil ich arbeiten müssen habe.", right: "…, weil ich habe arbeiten müssen.", whyAr: "في الجملة التابعة يتقدّم الفعل المصرَّف على المصدرين." },
       ],
       relatedRuleComparison: {
         title: "Perfekt أم Präteritum مع المودالي؟",
         content:
-          "الماضي البسيط أشيع بكثير مع الأفعال المودالية حتى في الكلام: Ich musste arbeiten أخفّ من Ich habe arbeiten müssen. استعمل المصدر المزدوج حين يفرضه السياق (بعد dass أو في سرد متّصل بالحاضر)، ولا تتكلّفه في كل جملة.",
+          "الماضي البسيط أشيع بكثير مع الأفعال المودالية حتى في الكلام: Ich musste arbeiten أخفّ من Ich habe arbeiten müssen. استعمل المصدر المزدوج حين تكون الجملة تابعة (بعد dass أو weil) أو حين يفرضه السياق، ولا تتكلّفه في كل جملة.",
       },
     },
     {
@@ -164,7 +201,7 @@ export const lessonB211: Lesson = {
       titleAr: "lassen وأفعال الإدراك: sehen، hören",
       titleDe: "lassen, sehen und hören im Perfekt",
       explanationAr:
-        "ثلاثة أفعال تسلك سلوك المودالي في الماضي التام: lassen (يدع/يجعل غيره يفعل)، وsehen وhören. فتقول Ich habe das Auto reparieren lassen (جعلتُهم يُصلحون السيارة) لا habe reparieren gelassen. وlassen بمعنى «التكليف» من أكثر التراكيب استعمالاً في الحياة اليومية الألمانية: كل خدمة تطلبها من غيرك تمرّ بها. أمّا حين يقف lassen وحده بمعنى «يترك» فيعود اسم مفعول عادياً: Ich habe den Schlüssel zu Hause gelassen.",
+        "ثلاثة أفعال تسلك سلوك المودالي في الماضي التام: lassen (يدع/يجعل غيره يفعل)، وsehen وhören. فتقول Ich habe das Auto reparieren lassen (جعلتُهم يُصلحون السيارة) لا habe reparieren gelassen. وlassen بمعنى «التكليف» تركيب شائع في الحياة اليومية: كثير من الخدمات التي تطلبها من غيرك يُعبَّر عنها به. أمّا حين يقف lassen وحده بمعنى «يترك» فيعود اسم مفعول عادياً: Ich habe den Schlüssel zu Hause gelassen.",
       whyAr:
         "لماذا تُجمع هذه الأفعال مع المودالية؟ لأنّها كلها «أفعال إطار»: لا تصف حدثاً بذاتها بل تؤطّر حدثاً آخر — الاضطرار إليه، أو تكليف غيرك به، أو إدراكه بالحسّ. والألمانية تعامل الإطار معاملة واحدة: مصدر في الذيل.",
       table: {
@@ -186,7 +223,7 @@ export const lessonB211: Lesson = {
         { de: "Er hat den Mantel im Büro gelassen.", ar: "ترك المعطف في المكتب." },
       ],
       comparisonWithArabic:
-        "«أصلحتُ السيارة» في العربية غامضة: بيدي أم بيد غيري؟ والألمانية تحسمها: Ich habe das Auto repariert (بنفسي) مقابل Ich habe das Auto reparieren lassen (كلّفت غيري). هذا التمييز إلزامي في الألمانية ولا مقابل صرفي له في العربية، فهو من أكثر ما يُنسى.",
+        "«أصلحتُ السيارة» في العربية غامضة: بيدي أم بيد غيري؟ والألمانية تحسمها: Ich habe das Auto repariert (بنفسي) مقابل Ich habe das Auto reparieren lassen (كلّفت غيري). هذا التمييز مطلوب في الألمانية، وليس له مقابل صرفي واضح في العربية.",
       eselsbruecke:
         "«ثلاثة تتشبّه بالمودالية: lassen وsehen وhören». وميزان lassen: إن كان بعده فعل آخر فهو مصدر، وإن وقف وحده فهو gelassen.",
       commonMistakes: [
@@ -197,7 +234,7 @@ export const lessonB211: Lesson = {
       relatedRuleComparison: {
         title: "reparieren أم reparieren lassen؟",
         content:
-          "الفرق فرق مسؤولية لا أسلوب: Ich habe die Wohnung renoviert تعني أنّك طليت بيدك، وIch habe die Wohnung renovieren lassen تعني أنّك استأجرت من فعل. في تقرير رسمي أو مطالبة تأمين يغيّر هذا الاختيار المعنى القانوني كلّه.",
+          "الفرق فرق مسؤولية لا أسلوب: Ich habe die Wohnung renoviert تعني أنّك طليت بيدك، وIch habe die Wohnung renovieren lassen تعني أنّك استأجرت من فعل. في سياق رسمي أو تأميني قد يغيّر هذا الاختيار المعنى المقصود.",
       },
     },
   ],
@@ -273,13 +310,13 @@ export const lessonB211: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات الإسناد: ss المشدّدة وe غير المنبورة وحرف r في النهاية",
+    title: "أصوات الإسناد: ss القصيرة وe غير المنبورة وr النهائية",
     items: [
       { de: "dessen", ar: "الذي (مضاف إليه، مذكّر)", note: "ss قصيرة حادّة والحركة قبلها قصيرة، وe الثانية مختزلة: دِسّـِن" },
       { de: "deren", ar: "التي/الذين (مضاف إليه)", note: "e الأولى طويلة مفتوحة وr خفيفة في الحلق: ديـرِن" },
       { de: "müssen", ar: "يجب", note: "ü شفتان مستديرتان مع نطق i، وss قصيرة: مُيسِّن" },
       { de: "lassen", ar: "يدع/يكلّف", note: "a قصيرة لأنّ ss تقصّر ما قبلها: لاسِّن" },
-      { de: "der Autor", ar: "الكاتب", note: "النبر على المقطع الثاني، وr النهائية تُلفظ حركة خفيفة: أوتوأ" },
+      { de: "der Autor", ar: "الكاتب", note: "النبر على المقطع الأول، وr النهائية تُلفظ حركة خفيفة: آوتوأ" },
       { de: "übersetzen", ar: "يترجم", note: "ü في البداية، وtz = تس، والنبر على setz: أوبَرزِتسِن" },
     ],
     tip: "قاعدة ss: الحرف المزدوج ss يعني أنّ الحركة قبله قصيرة (dessen، müssen، lassen) — بخلاف ß التي تأتي بعد حركة طويلة (Straße). طول الحركة هنا هو ما يفرّق الكلمة عن أختها.",
@@ -397,7 +434,7 @@ export const lessonB211: Lesson = {
       id: "e7",
       type: "word-ordering",
       instructionAr: "رتّب الكلمات لتكوين جملة صحيحة:",
-      tokens: ["Der", "Kollege,", "dessen", "Büro", "neben", "meinem", "ist,", "kommt", "aus", "Wien", "."],
+      tokens: ["Der", "Kollege", ",", "dessen", "Büro", "neben", "meinem", "ist", ",", "kommt", "aus", "Wien", "."],
       correctSentence: "Der Kollege, dessen Büro neben meinem ist, kommt aus Wien.",
       explanation: "الجملة النسبية تتوسّط، وفعلها المصرَّف (ist) في نهايتها.",
       errorType: "word-order",
@@ -503,7 +540,7 @@ export const lessonB211: Lesson = {
       {
         wrong: "Der Autor, deren Romane bekannt sind.",
         right: "Der Autor, dessen Romane bekannt sind.",
-        whyAr: "المطابقة مع المالك السابق لا مع المملوك التالي — أشيع خطأ في هذا الباب.",
+        whyAr: "المطابقة مع المالك السابق لا مع المملوك التالي.",
       },
       {
         wrong: "die Frau, deren das Auto kaputt ist",
@@ -529,7 +566,7 @@ export const lessonB211: Lesson = {
     culturalNote: {
       title: "لماذا يقول الألماني «schneiden lassen» ولا يقول «قصصت شعري»؟",
       content:
-        "الألمانية تفصل بدقّة بين من ينفّذ العمل ومن يطلبه، وهذا انعكاس لثقافة تخصّص مهني صارم: الحلاق يقصّ، والميكانيكي يُصلح، وأنت تكلّف. فحين تقول Ich habe meine Haare geschnitten يفهم المستمع حرفياً أنّك أمسكت المقصّ بنفسك. في تونس والعالم العربي نقول «قصصت شعري» ونعني الحلاق بلا لبس — أمّا في الألمانية فالتمييز إلزامي، وإهماله يُحدث سوء فهم طريفاً في المحادثة اليومية.",
+        "في الألمانية يُفرَّق بين من ينفّذ العمل ومن يطلبه. فحين تقول Ich habe meine Haare geschnitten يفهم المستمع أنّك قصصتها بنفسك، أمّا Ich habe mir die Haare schneiden lassen فتعني أنّك طلبت ذلك من الحلاق. ومن يخلط بين الصيغتين قد يُحدث سوء فهم في المحادثة اليومية.",
     },
   },
 
@@ -578,7 +615,7 @@ export const lessonB211: Lesson = {
       id: "m5",
       type: "word-ordering",
       instructionAr: "رتّب الكلمات لتكوين جملة صحيحة:",
-      tokens: ["Ich", "kenne", "den", "Arzt,", "mit", "dessen", "Hilfe", "du", "einen", "Termin", "bekommst", "."],
+      tokens: ["Ich", "kenne", "den", "Arzt", ",", "mit", "dessen", "Hilfe", "du", "einen", "Termin", "bekommst", "."],
       correctSentence: "Ich kenne den Arzt, mit dessen Hilfe du einen Termin bekommst.",
       explanation: "حرف الجر يسبق dessen، والاسم بعدها بلا أداة تعريف.",
       errorType: "word-order",
@@ -605,7 +642,7 @@ export const lessonB211: Lesson = {
     {
       id: "med-b2-11-1",
       type: "summarize-de-to-ar",
-      titleAr: "لخّص خبراً ثقافياً بالعربية",
+      titleAr: "لخّص نصاً تدريبياً عن زيارة أديب بالعربية",
       sourceDe:
         "Der Schriftsteller, dessen Romane in zwölf Sprachen übersetzt wurden, kommt im Mai nach Tunis. Die Veranstalter haben den Termin einmal verschieben müssen, weil die Übersetzerin, deren Beitrag zentral ist, kurzfristig absagen musste.",
       taskAr: "لخّص لصديق: من الضيف، ولماذا تغيّر الموعد، ومن السبب.",
