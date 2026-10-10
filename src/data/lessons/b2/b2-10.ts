@@ -186,6 +186,61 @@ export const lessonB210: Lesson = {
       },
     },
     {
+      id: "t-praesentation",
+      titleAr: "عرض أكاديمي (Präsentation): بناء المحاضرة وعبارات الانتقال",
+      titleDe: "Die Präsentation: Aufbau eines Vortrags",
+      explanationAr:
+        "العرض الأكاديمي في الجامعة الألمانية له بناء ثابت يتوقعه الأستاذ والطلاب: مقدمة تعرض الموضوع وسؤال البحث، ثم عرض للمحاور الرئيسية بترتيب واضح، ثم خلاصة وشكر على الحضور. عبارات الانتقال هي ما يربط هذه الأجزاء: **Zunächst** للبداية، **Anschließend** أو **Danach** للانتقال إلى المحور التالي، **Zum Schluss** للخاتمة. من دون هذه الإشارات يبدو العرض سلسلة معلومات متفرقة، مهما كانت المادة قوية.\n\nفي المقدمة يقدّم المتحدث نفسه أو موضوعه بعبارة مثل **Ich möchte heute über … sprechen**، ثم يعرض **Gliederung** العرض أي خطة المحاور. وفي الخاتمة يلخص **Zusammenfassend** النتيجة الرئيسية ثم يفتح باب الأسئلة بعبارة **Haben Sie Fragen?**. ومن المهم أن يكون الكلام كاملاً وليس مختصراً إلى كلمات مفردة على الشرائح، لأن العرض الشفهي يحتاج جملاً تربط الفكرة بما قبلها.",
+      whyAr:
+        "لماذا تهم هذه الصيغة في الجامعة؟ لأن الطالب في الألمانية يُقيَّم على وضوح البنية قبل عمق المعلومة أحياناً. عرض بمقدمة واضحة وخطة معلنة يسمح للمستمع بمتابعة الأفكار وتوقّع ما سيأتي، أما العرض المفكك فيُفهم على أنه غير مرتب، حتى لو كان المحتوى جيداً. لذلك تعلّم الألمانية الأكاديمية يبدأ من هذه الأدوات الشكلية والتعبيرات الجاهزة، لا من حفظ المصطلحات وحدها.",
+      table: {
+        title: "بنية العرض وعبارات الانتقال",
+        columns: ["الجزء", "عبارة مفيدة", "وظيفتها"],
+        rows: [
+          { label: "المقدمة", cells: ["Ich möchte heute über … sprechen.", "تعريف الموضوع"] },
+          { label: "خطة العرض", cells: ["Zunächst … Anschließend … Zum Schluss …", "تنظيم المحاور"] },
+          { label: "الخاتمة", cells: ["Zusammenfassend lässt sich sagen, dass …", "تلخيص النتيجة"] },
+        ],
+      },
+      examples: [
+        { de: "Ich möchte heute über Mülltrennung in Deutschland sprechen.", ar: "أودّ اليوم أن أتحدث عن فرز النفايات في ألمانيا." },
+        { de: "Zunächst erkläre ich das Problem, anschließend zeige ich Lösungen.", ar: "أولاً أشرح المشكلة، ثم أعرض الحلول." },
+        { de: "Zum Schluss fasse ich die wichtigsten Ergebnisse zusammen.", ar: "وفي الختام ألخّص أهم النتائج." },
+        { de: "Die Gliederung meines Vortrags besteht aus drei Teilen.", ar: "يتكون هيكل عرضي من ثلاثة أجزاء." },
+        { de: "Wie Sie sehen, sind die Zahlen seit 2015 deutlich gestiegen.", ar: "كما ترون، ارتفعت الأرقام بوضوح منذ 2015." },
+        { de: "Vielen Dank für Ihre Aufmerksamkeit. Haben Sie Fragen?", ar: "شكراً لانتباهكم. هل لديكم أسئلة؟" },
+      ],
+      comparisonWithArabic:
+        "في العربية يمكن أن ينتقل المتحدث من فكرة إلى أخرى بجملة واحدة مرتجلة، أو بعبارات مثل «ومن ناحية أخرى» و«على صعيد آخر». الألمانية الأكاديمية أكثر تنظيماً في هذا الباب: لكل جزء من العرض عبارة متوقعة، والمستمع ينتظرها. كذلك يختلف الترتيب، إذ تضع العربية الخلاصة أحياناً قبل الأدلة، بينما يُفضَّل في العرض الألماني أن تأتي الخلاصة بعد عرض المحاور بوضوح، مع نظرة إلى ما يلي.",
+      eselsbruecke:
+        "Zunächst – Anschließend – Zum Schluss: ثلاث كلمات تمشي معك من أول العرض إلى آخره، كأنها خريطة الطريق.",
+      commonMistakes: [
+        {
+          wrong: "Ich sage jetzt über Müll. (بدون مقدمة ولا خطة)",
+          right: "Ich möchte heute über Mülltrennung sprechen. Zunächst erkläre ich das Problem.",
+          whyAr: "الجملة الأولى تعرض الموضوع بصيغة مهذبة وواضحة، والثانية تعلن الخطة. من دون هذا التمهيد لا يعرف المستمع إلى أين يتجه العرض، فيفقد تركيزه بسرعة.",
+          classification: "contextual-alternative",
+        },
+        {
+          wrong: "Danach ich zeige Lösungen.",
+          right: "Danach zeige ich Lösungen.",
+          whyAr: "بعد عبارة الانتقال Danach يأتي الفعل المصرف في الموقع الثاني، ثم الفاعل. هذه قاعدة V2 نفسها التي درسناها في الوحدات الأولى، ويتكرر خطأ ترتيبها كثيراً في العروض الشفهية.",
+          classification: "error",
+        },
+        {
+          wrong: "Danke. Ende. (في نهاية العرض)",
+          right: "Vielen Dank für Ihre Aufmerksamkeit. Haben Sie Fragen?",
+          whyAr: "الخاتمة المقتضبة تبدو جافة وتقطع التواصل مع الجمهور. الصيغة الكاملة تشكر الحضور وتفتح باب الحوار، وهو جزء متوقع من العرض الأكاديمي.",
+          classification: "pedagogical-simplification",
+        },
+      ],
+      relatedRuleComparison: {
+        title: "Zunächst … dann … مقابل Erstens … Zweitens …",
+        content:
+          "تستعمل الألمانية الأكاديمية أيضاً الترقيم الصريح: Erstens، Zweitens، Drittens، وهذا يناسب العروض التي تعدد نقاطاً متوازية. أما Zunächst … Anschließend فيناسب السرد المتسلسل، أي خطوات تتابع بعضها بعضاً. قاعدة عملية: استعمل الترقيم حين تكون النقاط متساوية في الأهمية، واستعمل الانتقال الزمني حين تكون الخطوات مرتبة في تسلسل.",
+      },
+    },
+    {
       id: "t2",
       titleAr: "الأسلوب الاسمي (Nominalstil) في الكتابة الرسمية",
       titleDe: "Nominalstil in der formellen Schriftsprache",
