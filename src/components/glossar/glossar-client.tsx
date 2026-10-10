@@ -25,7 +25,7 @@ const LEVEL_MAP: Record<string, Record<string, VocabEntry[]>> = {
 const LEVELS = ["all", "A1", "A2", "B1", "B2"] as const;
 
 /**
- * القاموس الشامل القابل للبحث — كل المفردات (~950 كلمة)
+ * القاموس الشامل القابل للبحث — كل المفردات (أكثر من 4000 كلمة)
  * فلترة بالمستوى + بحث + نطق
  */
 export function GlossarClient() {
