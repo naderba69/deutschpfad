@@ -86,6 +86,12 @@ export const lessonB105: Lesson = {
       correctIndex: 0,
       explanation: "الشرط: hätte (درس الإعلام).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«habe» مضارع، ولا يناسب الشرط غير الواقعي في الماضي.",
+        "«hatte» ماضٍ، ولا يناسب الشرط غير الواقعي هنا.",
+        "«haben» مصدر، ولا يناسب الجملة.",
+      ],
     },
     {
       id: "r2",
@@ -96,6 +102,12 @@ export const lessonB105: Lesson = {
       correctIndex: 0,
       explanation: "der Sport = الرياضة (درس الهوايات).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«Gesundheit» تعني الصحة، وليس المعنى المطلوب لـSport.",
+        "«Ernährung» تعني الغذاء، وليس Sport.",
+        "«Schlaf» يعني النوم، وليس Sport.",
+      ],
     },
     {
       id: "r3",
@@ -219,6 +231,12 @@ export const lessonB105: Lesson = {
         correctIndex: 0,
         explanation: "قالت آنا: Ich hätte früher mehr Sport machen sollen.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«weniger schlafen» لم يكن المطلوب هنا النوم، بل الرياضة.",
+          "«mehr essen» لم يُذكر أنه كان ينبغي عليها فعله.",
+          "«weniger arbeiten» لم يذكره النص كنصيحة فائتة.",
+        ],
       },
       {
         id: "q2",
@@ -231,6 +249,12 @@ export const lessonB105: Lesson = {
         correctIndex: 0,
         explanation: "قال الطبيب: Sie sollten mehr Wasser trinken und sich bewegen.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Tabletten nur» لا يذكره الطبيب، والنص يطلب الحركة والماء.",
+          "«Bettruhe» لم يرد في نصيحة الطبيب.",
+          "«wenig essen» لم تذكرها نصيحة الطبيب.",
+        ],
       },
       {
         id: "q3",
@@ -243,6 +267,12 @@ export const lessonB105: Lesson = {
         correctIndex: 0,
         explanation: "قال سامي: Ich hätte früher kommen sollen.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Ich bin gesund» لا تعبّر عن الندم على الماضي الذي قاله سامي.",
+          "«Ich gehe jetzt» لا تعبّر عن الندم على الماضي.",
+          "«Ich brauche Tabletten» لم يذكرها سامي.",
+        ],
       },
     ],
   },
@@ -313,6 +343,12 @@ export const lessonB105: Lesson = {
       correctIndex: 0,
       explanation: "kommen حركة → wäre gekommen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«hätte ... gekommen» لا تناسب kommen الذي يأخذ sein في الماضي التام.",
+        "«wäre ... gekommt» صيغة Partizip II خاطئة؛ الصحيح gekommen.",
+        "«habe ... gekommen» مضارع، ولا تناسب الشرط غير الواقعي.",
+      ],
     },
     {
       id: "e2",
@@ -323,6 +359,12 @@ export const lessonB105: Lesson = {
       correctIndex: 0,
       explanation: "lesen عادي → hätte gelesen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wäre ... gelesen» تستعمل sein، ولا تناسب lesen الذي يأخذ haben.",
+        "«hätte ... lesen» مصدر بدل Partizip II، ولا تصح.",
+        "«würde ... gelesen» تستعمل würde بدل hätte، ولا تناسب الماضي التام.",
+      ],
     },
     {
       id: "e3",
@@ -394,6 +436,12 @@ export const lessonB105: Lesson = {
       correctIndex: 0,
       explanation: "Ich hätte gern = أودّ (طلب مهذب).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«كنت أملك قهوة» تفهم hätte كماضٍ، وليس هذا الاستعمال.",
+        "«أشرب قهوة الآن» لا تعبّر عن الطلب المهذب.",
+        "«شربت قهوة أمس» تستعمل الماضي، ولا تعبّر عن الطلب.",
+      ],
     },
     {
       id: "e9",
@@ -424,6 +472,12 @@ export const lessonB105: Lesson = {
       correctIndex: 0,
       explanation: "Konjunktiv I للغائب المفرد: die Lage sei.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«sind» جمع، والفاعل هنا مفرد، والجملة نقل في Konjunktiv I.",
+        "«seid» صيغة du-Form جمع، ولا تناسب الفاعل.",
+        "«bist» مع du، ولا تناسب الفاعل.",
+      ],
     },
     {
       id: "e12",
@@ -435,6 +489,12 @@ export const lessonB105: Lesson = {
       correctIndex: 0,
       explanation: "Konjunktiv I للجمع: die Preise seien.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«sind» مضارع، والجملة نقل في Konjunktiv I للجمع.",
+        "«seid» صيغة du-Form جمع، ولا تناسب الفاعل.",
+        "«bist» مع du، ولا تناسب الفاعل.",
+      ],
     },
   ],
 
@@ -465,6 +525,12 @@ export const lessonB105: Lesson = {
       correctIndex: 0,
       explanation: "gehen حركة → wäre gegangen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«hätte ... gegangen» تستعمل haben، ولا تناسب gehen الذي يأخذ sein.",
+        "«wäre ... gegeht» صيغة Partizip II خاطئة؛ الصحيح gegangen.",
+        "«habe ... gegangen» مضارع، ولا يناسب الشرط غير الواقعي.",
+      ],
     },
     {
       id: "m2",
@@ -475,6 +541,12 @@ export const lessonB105: Lesson = {
       correctIndex: 0,
       explanation: "machen عادي → hätte gemacht.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wäre ... gemacht» تستعمل sein، ولا تناسب machen الذي يأخذ haben.",
+        "«hätte ... machen» مصدر بدل Partizip II، ولا تصح.",
+        "«hat ... gemacht» مضارع، ولا تعبّر عن الماضي غير الواقعي.",
+      ],
     },
     {
       id: "m3",
