@@ -97,6 +97,12 @@ export const lessonB201: Lesson = {
       correctIndex: 0,
       explanation: "Konjunktiv II: hätte (درس الإعلام B1).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«habe» صيغة المضارع، ولا تناسب الشرط غير الواقعي.",
+        "«hatte» صيغة الماضي، ولا تناسب الشرط غير الواقعي.",
+        "«haben» مصدر أو جمع، ولا تناسب الفعل في الشرط.",
+      ],
     },
     {
       id: "r2",
@@ -107,6 +113,12 @@ export const lessonB201: Lesson = {
       correctIndex: 0,
       explanation: "Passiv مضارع: wird durchgeführt (درس البيئة B1).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wurde» صيغة الماضي، والجملة في المضارع (يُجرى الآن).",
+        "«ist» مع المبني للمجهول تعطي حالة لا فعلاً، ولا تناسب الجملة.",
+        "«war» صيغة الماضي للفعل sein، ولا تناسب المبني للمجهول.",
+      ],
     },
     {
       id: "r3",
@@ -239,6 +251,12 @@ export const lessonB201: Lesson = {
         correctIndex: 0,
         explanation: "قال المراسل: Die Professorin sagt, die Ergebnisse seien sehr wichtig.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Sie seien schlecht» تعني أنها سيئة، وهذا عكس ما قالته الأستاذة.",
+          "«Sie seien unbekannt» لم تقلها الأستاذة في الحوار.",
+          "«Sie seien alt» لم تقلها الأستاذة؛ قالت إنها مهمة.",
+        ],
       },
       {
         id: "q2",
@@ -251,6 +269,12 @@ export const lessonB201: Lesson = {
         correctIndex: 0,
         explanation: "قال المراسل: Die Entdeckung könne die Medizin verändern.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«die Wirtschaft» لم تذكرها الأستاذة كمجال للتغيير.",
+          "«die Politik» لم تذكرها الأستاذة كمجال للتغيير.",
+          "«die Schule» لم تذكرها الأستاذة كمجال للتغيير.",
+        ],
       },
       {
         id: "q3",
@@ -263,6 +287,12 @@ export const lessonB201: Lesson = {
         correctIndex: 0,
         explanation: "قالت آنا: Sie meinte, die Forschung werde weitergehen.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Die Forschung sei fertig» تعني أن البحث انتهى، وهذا عكس ما قالته الأستاذة.",
+          "«Die Forschung sei teuer» لم تقلها الأستاذة.",
+          "«Die Forschung sei langweilig» لم تقلها الأستاذة.",
+        ],
       },
     ],
   },
@@ -331,6 +361,12 @@ export const lessonB201: Lesson = {
       correctIndex: 0,
       explanation: "النقل: habe.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«hat» صيغة المضارع المباشر، ولا تناسب الكلام غير المباشر هنا.",
+        "«hätte» صيغة الشرط، ولا تناسب الكلام غير المباشر هنا.",
+        "«haben» مصدر أو جمع، ولا تناسب الفعل بعد er.",
+      ],
     },
     {
       id: "e2",
@@ -341,6 +377,12 @@ export const lessonB201: Lesson = {
       correctIndex: 0,
       explanation: "النقل: sei.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«ist» صيغة المضارع المباشر، ولا تناسب الكلام غير المباشر.",
+        "«wäre» صيغة الشرط، ولا تناسب الكلام غير المباشر هنا.",
+        "«seid» صيغة ihr، ولا تناسب sie.",
+      ],
     },
     {
       id: "e3",
@@ -407,6 +449,12 @@ export const lessonB201: Lesson = {
       correctIndex: 0,
       explanation: "die Entdeckung = الاكتشاف.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«التجربة» تقابل Experiment، وليس Entdeckung.",
+        "«الاختراع» تقابل Erfindung، وليس Entdeckung.",
+        "«البحث» تقابل Forschung، وليس Entdeckung.",
+      ],
     },
     {
       id: "e9",
@@ -483,6 +531,12 @@ export const lessonB201: Lesson = {
       correctIndex: 0,
       explanation: "النقل: habe.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«hat» صيغة المضارع المباشر، ولا تناسب الكلام غير المباشر هنا.",
+        "«hätte» صيغة الشرط، ولا تناسب الكلام غير المباشر هنا.",
+        "«haben» مصدر أو جمع، ولا تناسب الفعل بعد er.",
+      ],
     },
     {
       id: "m2",
@@ -493,6 +547,12 @@ export const lessonB201: Lesson = {
       correctIndex: 0,
       explanation: "النقل: werde.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wird» صيغة المضارع المباشر، ولا تناسب الكلام غير المباشر.",
+        "«würde» صيغة الشرط، ولا تناسب هذا التعبير غير المباشر.",
+        "«worden» Partizip II للمبني للمجهول، ولا تناسب الجملة.",
+      ],
     },
     {
       id: "m3",
