@@ -21,10 +21,50 @@ export const lessonA213: Lesson = {
 
   /* 1) الأهداف التعليمية */
   lernziele: [
-    { id: "z1", de: "Ich kann alle A2-Strukturen in einem Text kombinieren.", ar: "أن أجمع كل تراكيب A2 في نص واحد مترابط." },
-    { id: "z2", de: "Ich kann über die Vergangenheit mit Perfekt und Präteritum erzählen.", ar: "أن أحكي عن الماضي بالماضي التام والماضي البسيط معاً." },
-    { id: "z3", de: "Ich kann meine Meinung mit Nebensätzen begründen.", ar: "أن أعلّل رأيي بجمل ثانوية (weil, dass, obwohl)." },
-    { id: "z4", de: "Ich bin bereit für die B1-Grammatik.", ar: "أن أكون جاهزاً لقواعد B1." },
+    {
+      id: "z1",
+      de: "Ich kann in vorgegebenen Sätzen Präteritum, Perfekt, weil und Dativ richtig kombinieren.",
+      ar: "أن أملأ فراغات جمل تجمع war وbin + gegangen وweil وDativ (meinem Chef) بصحة؛ هذا ملء موجّه لا نص حر.",
+      evidence: {
+        exerciseIds: ["w1", "w2"],
+        taskIds: ["writing:a2-13:w1", "writing:a2-13:w2"],
+        labelAr: "أكمل w1 (تحويل جملة إلى Perfekt) وw2 (أربعة فراغات في فقرة قصيرة) بصحة. لا يُحتسب فتح الدرس أو الاستماع بعد كشف التفريغ أو الوساطة/التفاعل أداءً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann in vorgegebenen Sätzen das richtige Hilfsverb im Perfekt wählen und war/hatte richtig verwenden.",
+      ar: "أن أختار الفعل المساعد الصحيح (haben أو sein) في الماضي التام، وأستعمل war/hatte في جمل موجّهة.",
+      evidence: {
+        exerciseIds: ["e1", "e5", "e6"],
+        taskIds: ["practice:a2-13:e1", "flow-practice:a2-13:e1", "practice:a2-13:e5", "practice:a2-13:e6"],
+        labelAr: "أجب صحيحاً عن e1 (يظهر ضمن أول أربعة تمارين في مسار التدفق أيضاً) وe5 (war/hatte) وe6 (تصحيح الفعل المساعد) عند ظهورها في جلسة التدريب العشوائية. اختيار الفعل المساعد وحده لا يثبت إنتاج الجملة.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann Gründe mit weil und Aussagen mit dass in vorgegebenen Sätzen richtig anordnen.",
+      ar: "أن أرتّب جملة weil وجملة dass في جمل موجّهة، مع الفعل المصرّف في آخر الجملة الثانوية؛ هذا ترتيب موجّه لا تعليل حر.",
+      evidence: {
+        exerciseIds: ["e4", "e8", "m3"],
+        taskIds: ["practice:a2-13:e4", "flow-practice:a2-13:e4", "practice:a2-13:e8", "mini-test:a2-13:m3"],
+        labelAr: "رتّب e4 (يظهر ضمن أول أربعة تمارين في مسار التدفق أيضاً)، وأجب صحيحاً عن e8 (تصحيح ترتيب dass)، وm3 (اختيار weil) في الاختبار المصغّر. لا يُحتسب كشف الحل أو قراءة الجدول أداءً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann fünf Erweiterungen von A2 nach B1 den passenden Beispielen zuordnen.",
+      ar: "أن أطابق خمس توسعات من A2 إلى B1 بأمثلتها؛ هذا تعرّف على الشكل وليس إتقان B1.",
+      evidence: {
+        exerciseIds: ["e11"],
+        taskIds: ["practice:a2-13:e11"],
+        labelAr: "أكمل مطابقة e11 كاملة عند ظهورها في جلسة التدريب العشوائية. قراءة جدول t3 شرح لا يُحتسب أداءً.",
+        completion: "all-correct",
+      },
+    },
   ],
 
   /* 2) التمهيد وتنشيط المعرفة السابقة */
@@ -92,7 +132,7 @@ export const lessonA213: Lesson = {
       titleAr: "خريطة قواعد A2 — الاثنا عشر مفتاحاً في جدول واحد",
       titleDe: "Die A2-Grammatik auf einen Blick",
       explanationAr:
-        "كل ما دُرِّس في A2 يعود إلى اثني عشر مفتاحاً: 1) الماضي التام Perfekt بـ haben/sein، 2) الأفعال الناقصة (sollen, möchten, können)، 3) حروف الجر المتغيّرة التسعة (سكون Dativ / حركة Akkusativ)، 4) الماضي البسيط war/hatte، 5) الجملة الثانوية بـ dass، 6) es gibt + النصب وضمائر النصب والجر، 7) المقارنة والتفضيل، 8) حالة الجر Dativ وأفعالها، 9) weil / wenn / ob، 10) الضمائر الملكية في كل الحالات، 11) الأفعال الانعكاسية (mich / mir)، 12) أدوات الربط وobwohl.",
+        "كل ما دُرِّس في A2 يعود إلى اثني عشر مفتاحاً: 1) الماضي التام Perfekt بـ haben/sein، 2) الأفعال الناقصة (sollen, möchten, können)، 3) حروف الجر المتغيّرة التسعة (سكون Dativ / حركة Akkusativ)، 4) الماضي البسيط war/hatte، 5) الجملة الثانوية بـ dass، 6) es gibt + النصب وضمائر النصب والجر، 7) المقارنة والتفضيل، 8) حالة الجر Dativ وأفعالها، 9) weil / wenn / ob، 10) الضمائر الملكية في كل الحالات، 11) الأفعال الانعكاسية (mich / mir)، 12) أدوات الربط (وobwohl توسعةً).",
       whyAr:
         "لماذا خريطة واحدة؟ لأن المتعلّم درس كل مفتاح في وحدته منفصلاً، فصار يعرف Perfekt حين يُسأل عن Perfekt فقط. الامتحان — والحياة — لا تسأل هكذا: تطلب جملة واحدة فيها ماضٍ وتعليل وحالة جر معاً. جمعُ المفاتيح في صفحة واحدة هو ما يحوّل المعرفة المتفرّقة إلى قدرة.",
       table: {
@@ -110,7 +150,7 @@ export const lessonA213: Lesson = {
           { label: "weil / wenn / ob", cells: ["Ich lerne, weil ich die Prüfung brauche.", "a2-10"] },
           { label: "الضمائر الملكية", cells: ["Das ist meine Schwester.", "a2-10"] },
           { label: "الأفعال الانعكاسية", cells: ["Ich freue mich auf den Urlaub.", "a2-11"] },
-          { label: "الربط وobwohl", cells: ["Ich bin müde, trotzdem lerne ich.", "a2-12"] },
+          { label: "أدوات الربط (وobwohl توسعةً من a2-12)", cells: ["Ich bin müde, trotzdem lerne ich.", "a2-12"] },
         ],
       },
       examples: [
@@ -121,9 +161,9 @@ export const lessonA213: Lesson = {
         { de: "Ich freue mich auf den Urlaub, obwohl die Reise teuer ist.", ar: "أتطلّع إلى العطلة رغم أن الرحلة غالية." },
       ],
       comparisonWithArabic:
-        "العربية تبني الماضي بصيغة واحدة («سافرتُ»)، والألمانية توزّعه على ثلاثة: Perfekt للحكي المحكي (ich bin gefahren)، وwar/hatte للحالة (ich war müde)، وPräteritum الكامل للكتابة (يأتي في B1). هذا هو أكبر فارق بنيوي جمعه A2.",
+        "العربية تستعمل في الحكي غالباً صيغة ماضٍ واحدة («سافرتُ»)، والألمانية توزّعه على ثلاث صيغ: Perfekt للحكي المحكي (ich bin gefahren)، وwar/hatte للحالة (ich war müde)، وPräteritum الكامل للكتابة (يأتي في B1). هذا من أبرز الفروق البنيوية التي يجمعها A2.",
       eselsbruecke:
-        "اختصار الاثني عشر: «PMW-PDN-KDR-PIO» ثقيل. الأسهل: احفظ جملة الختام «Gestern war ich krank, deshalb bin ich nicht gekommen, obwohl ich meinem Chef geholfen habe» — فيها Präteritum وربط وPerfekt وobwohl وDativ: خمسة مفاتيح في نفَس واحد.",
+        "لا تحفظ الاثني عشر بالاختصار؛ احفظ جملة الختام «Gestern war ich krank, deshalb bin ich nicht gekommen, obwohl ich meinem Chef geholfen habe» — فيها Präteritum وربط وPerfekt وobwohl وDativ: خمسة مفاتيح في نفَس واحد.",
       commonMistakes: [
         { wrong: "Ich habe nach Berlin gefahren.", right: "Ich bin nach Berlin gefahren.", whyAr: "أفعال الحركة وتغيّر المكان تأخذ sein لا haben في الماضي التام." },
         { wrong: "Ich helfe meinen Bruder.", right: "Ich helfe meinem Bruder.", whyAr: "helfen من أفعال الجر Dativ، فالمذكر يصير meinem لا meinen." },
@@ -162,7 +202,7 @@ export const lessonA213: Lesson = {
         { de: "Ich habe meinem Chef schon eine E-Mail geschrieben.", ar: "كتبتُ لرئيسي رسالة إلكترونية بالفعل." },
       ],
       comparisonWithArabic:
-        "العربية تعتذر بجملة اسمية قصيرة غالباً («أنا مريض اليوم»)، والألمانية تتوقّع سرداً قصيراً بالتسلسل الزمني ثم التعليل ثم الإجراء. الاكتفاء بـ «Ich bin krank» مفهوم، لكنه في السياق المهني الألماني يبدو ناقصاً لا مقتضباً.",
+        "قد تكتفي العربية في الاعتذار بجملة قصيرة («أنا مريض اليوم»)، بينما قد يُنتظر في سياق العمل الألماني سرد قصير بالتسلسل الزمني ثم التعليل ثم الإجراء. الاكتفاء بـ «Ich bin krank» مفهوم، لكنه قد يبدو مقتضباً أكثر مما ينبغي في الرسائل الرسمية.",
       eselsbruecke:
         "رتّب أي موقف بالسلّم الخماسي: حالة ← حدث ← سبب ← نصيحة ← إجراء. الترتيب واحد في المرض والتأخّر والاعتذار عن موعد — تتغيّر المفردات وحدها.",
       commonMistakes: [
@@ -173,7 +213,7 @@ export const lessonA213: Lesson = {
       relatedRuleComparison: {
         title: "الاتصال أم الرسالة؟",
         content:
-          "في ألمانيا يُتوقَّع الإبلاغ عن المرض قبل بداية الدوام هاتفياً (sich krankmelden)، والرسالة الإلكترونية تأتي تأكيداً. الشهادة الطبية (Krankschreibung / AU) تُطلب عادةً من اليوم الرابع، وبعض العقود تشترطها من اليوم الأول — راجع عقدك.",
+          "القانون الألماني (§ 5 EntgFG) يوجب إبلاغ صاحب العمل بالمرض «unverzüglich»، أي دون تأخير، وقد يكون ذلك هاتفياً أو بالبريد، ولا يشترط قبل بداية الدوام بالضرورة. الشهادة الطبية (AU) تلزم إذا استمر المرض أكثر من ثلاثة أيام تقويمية، وتُقدَّم في أول يوم عمل بعدها، ويجوز لصاحب العمل أن يطلبها أبكر حسب العقد. راجع عقدك وتعليمات شركتك.",
       },
     },
     {
@@ -183,7 +223,7 @@ export const lessonA213: Lesson = {
       explanationAr:
         "B1 لا يبدأ من الصفر: يأخذ كل تركيب في A2 ويضيف إليه طبقة. المِلكية عبر von + Dativ تصير Genitiv، والجملتان المتجاورتان تصيران جملة موصولة، وسردُ الماضي بالحكي يصير سرداً مكتوباً بـ Präteritum الكامل، والتمنّي بـ möchte يصير Konjunktiv II، والفاعل المجهول بـ man يصير Passiv. من يعرف A2 جيداً يتعلّم B1 كتوسيع لا كبداية.",
       whyAr:
-        "لماذا نعرض B1 الآن؟ لأن أكثر ما يُحبط المتعلّم عند القفزة هو الشعور بأن كل شيء تغيّر. رؤية الخريطة مسبقاً تُظهر العكس: خمس توسعات محدّدة على أساس تعرفه. هذا الإطار المسبق (advance organizer) يخفّض الحمل المعرفي في أول درس B1.",
+        "لماذا نعرض B1 الآن؟ لأن كثيراً من المتعلمين يشعرون عند القفزة بأن كل شيء تغيّر. رؤية الخريطة مسبقاً تُظهر أن التغيير توسعات محددة (خمس) على أساس يعرفونه. هذا إطار تنظيمي مسبق (advance organizer)، وهو فكرة تربوية معروفة، ولم نقِس أثره في هذا الدرس.",
       table: {
         title: "خمس توسعات من A2 إلى B1",
         columns: ["الظاهرة", "كما تعلّمتها في A2", "كما تصير في B1"],
@@ -203,7 +243,7 @@ export const lessonA213: Lesson = {
         { de: "Wer A2 sicher kann, lernt B1 als Erweiterung.", ar: "من يتقن A2 يتعلّم B1 توسيعاً لا بداية جديدة." },
       ],
       comparisonWithArabic:
-        "المضاف إليه في العربية بسيط ومباشر («كتابُ الطالبِ») بلا أداة، وهو أقرب إلى Genitiv الألماني منه إلى تركيب von. المفارقة أن المتعلّم العربي يجد Genitiv في B1 أسهل من الالتفاف بـ von الذي تدرّب عليه في A2.",
+        "المضاف إليه في العربية بنية مباشرة بلا أداة («كتابُ الطالبِ»)، لذلك قد يرى المتعلم العربي أن Genitiv أقرب إلى بنيته من تركيب von. هذه ملاحظة تقابلية تُختبر بتجربة المتعلّم، وليست قاعدة مُقاسة.",
       eselsbruecke:
         "الجسر خمس دعامات: مِلكية، وصف، سرد، تمنٍّ، مجهول. عدّها على أصابع يد واحدة قبل أول درس B1، وستعرف بالضبط ما ينتظرك — لا أكثر.",
       commonMistakes: [
@@ -308,9 +348,9 @@ export const lessonA213: Lesson = {
       { de: "der Apfel", ar: "التفاحة", note: "pf = صوت واحد مركّب: أَبْفِل بلا فاصل بين الحرفين" },
       { de: "jetzt", ar: "الآن", note: "tz = تس قصيرة حادة: يِتْست" },
       { de: "der Termin", ar: "الموعد", note: "الشدّة على المقطع الثاني: تِر-مِين، والراء حلقية خفيفة" },
-      { de: "die Prüfung", ar: "الامتحان", note: "ü = ضمّ الشفتين مع نطق «إي»: بْرُوي-فونغ" },
+      { de: "die Prüfung", ar: "الامتحان", note: "ü = «ي» بشفتين مدورتين، وليست مزدوجة «وي»: بْرَ-ü-فونغ" },
     ],
-    tip: "هذه الأصوات الأربعة تتكرّر في مفردات A2 اليومية (Arbeit, Häuser, Apfel, jetzt). سجّل صوتك وأنت تقرأ الجمل، ثم قارنه بالنموذج — الفارق يُسمع فوراً في pf وtz تحديداً.",
+    tip: "هذه الأصوات تتكرّر في مفردات A2 اليومية (Arbeit, Häuser, Apfel, jetzt, Prüfung). سجّل صوتك وأنت تقرأ الجمل، ثم قارنه بالنموذج — الفارق يُسمع فوراً في pf وtz تحديداً.",
   },
 
   /* 6) الكتابة */
@@ -394,7 +434,7 @@ export const lessonA213: Lesson = {
       id: "e4",
       type: "word-ordering",
       instructionAr: "رتّب الجملة الثانوية (انتبه لموضع الفعل):",
-      tokens: ["Hause", "Ich", "bleibe", "zu", "weil", "Fieber", "ich", "habe", "."],
+      tokens: ["Hause", "Ich", "bleibe", "zu", ",", "weil", "Fieber", "ich", "habe", "."],
       correctSentence: "Ich bleibe zu Hause, weil ich Fieber habe.",
       explanation: "weil تدفع الفعل المصرَّف habe إلى آخر الجملة الثانوية.",
       errorType: "word-order",
@@ -470,6 +510,20 @@ export const lessonA213: Lesson = {
       explanation: "أربعة مفاتيح من A2: Perfekt، Dativ، weil، والمقارنة.",
       errorType: "grammar",
     },
+    {
+      id: "e11",
+      type: "matching",
+      instructionAr: "صِل كل جملة من B1 بالتوسعة التي تمثّلها (من خريطة الجسر):",
+      pairs: [
+        { left: "Das Auto wird repariert.", right: "المبني للمجهول (Passiv)" },
+        { left: "Das ist der Bruder meines Freundes.", right: "المضاف إليه بحالة الإضافة (Genitiv)" },
+        { left: "Ich hätte gern einen Kaffee.", right: "تمنٍّ مهذّب (Konjunktiv II)" },
+        { left: "Das ist mein Bruder, der in Bonn wohnt.", right: "جملة موصولة (Relativsatz)" },
+        { left: "Ich arbeitete gestern lange.", right: "الماضي البسيط في الكتابة (Präteritum)" },
+      ],
+      explanation: "هذه توسعات B1 تُعرض للتعرّف عليها فقط؛ لا تُعد مهارة مكتسبة في هذا الدرس.",
+      errorType: "grammar",
+    },
   ],
 
   /* 8) الأخطاء الشائعة والتريكات + لقطة ثقافية */
@@ -486,9 +540,9 @@ export const lessonA213: Lesson = {
       "قبل امتحان A2: راجع الجدول الأول في هذا الدرس صفاً صفاً، وحوّل كل مثال إلى جملة عن حياتك أنت — التخصيص يثبّت أكثر من التكرار.",
     ],
     culturalNote: {
-      title: "شهادة A2 وما بعدها",
+      title: "شهادات اللغة والإقامة: A1 وA2 وB1",
       content:
-        "«Goethe-Zertifikat A2» و«Start Deutsch 2» يُقبلان لأغراض لمّ شمل الأسرة في كثير من الحالات، لكن الإقامة الدائمة (Niederlassungserlaubnis) تتطلّب عادةً B1، وكذلك التجنيس. أي أن A2 محطة قانونية حقيقية لا شكلية — والخطوة التالية B1 هي التي تفتح أكثر الأبواب.",
+        "شهادة A1 هي الشرط المعتاد لتأشيرة لمّ شمل الزوج أو الزوجة (§ 30 AufenthG)، ولا يُطلب فيها A2. أما الإقامة الدائمة (Niederlassungserlaubnis، § 9 AufenthG) فتشترط «ausreichende Kenntnisse» في الألمانية، وتعدّها التطبيقات العملية عادةً B1، وكذلك التجنيس (B1 بحسب § 10 StAG). لذا A2 محطة مفيدة وليست الشرط القانوني لهذه المراحل. الأنظمة تتغيّر، فراجع المصدر الرسمي قبل أي قرار.",
     },
   },
 
@@ -523,9 +577,9 @@ export const lessonA213: Lesson = {
       instructionAr: "اختر أداة الربط الصحيحة:",
       questionDe: "Ich gehe heute nicht ins Kino, ___ ich kein Geld habe.",
       questionAr: "لن أذهب إلى السينما اليوم لأنه ليس معي مال.",
-      options: ["weil", "denn ich", "deshalb", "obwohl"],
+      options: ["weil", "und", "deshalb", "obwohl"],
       correctIndex: 0,
-      explanation: "التعليل مع فعل في النهاية (habe) ⇒ weil. لو أردنا denn لبقي الترتيب عادياً: denn ich habe kein Geld.",
+      explanation: "التعليل مع فعل في النهاية (habe) ⇒ weil. (denn تعلّل أيضاً، لكنها تترك الترتيب عادياً: denn ich habe kein Geld، فلا تناسب هذا الفراغ.)",
       errorType: "grammar",
     },
     {
