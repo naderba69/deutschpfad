@@ -14,10 +14,63 @@ export const lessonB203: Lesson = {
     "المفاهيم القانونية الأساسية وفهم العقود، الجمل النسبية المتقدمة (مع حروف الجر: auf den, mit der, wofür) والضمائر النسبية was/wo.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann rechtliche Grundbegriffe verstehen.", ar: "أن أفهم المفاهيم القانونية الأساسية والعقود." },
-    { id: "z2", de: "Ich kann Relativsätze mit Präpositionen bilden.", ar: "أن أبني الجمل النسبية مع حروف الجر: auf den, mit der, wofür." },
-    { id: "z3", de: "Ich kann was und wo als Relativpronomen benutzen.", ar: "أن أستخدم was وwo كضمائر وصل." },
-      { id: "z4", de: "Ich kann einfache rechtliche Texte erklären.", ar: "أن أشرح نصوصاً قانونية بسيطة بلغة مفهومة." },
+    {
+      id: "z1",
+      de: "Ich kann rechtliche Grundbegriffe verstehen.",
+      ar: "أن أفهم المفاهيم القانونية الأساسية في حوار قصير.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q1", "q2", "q3"],
+        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3"],
+        labelAr: "أجيب صحيحاً عن q1 بعد الاستماع إلى l1، وعن q2 وq3 بعد الاستماع إلى l2، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann Relativsätze mit Präpositionen bilden.",
+      ar: "أن أبني الجمل النسبية مع حروف الجر: auf den، mit dem.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e1", "e4", "e5", "m1", "w1", "w2"],
+        taskIds: [
+          "practice:b2-03:e1",
+          "practice:b2-03:e4",
+          "practice:b2-03:e5",
+          "mini-test:b2-03:m1",
+          "writing:b2-03:w1",
+          "writing:b2-03:w2",
+        ],
+        labelAr: "أجيب صحيحاً عن تمارين حرف الجر قبل الضمير النسبي (e1 وe4 وe5 وm1 وw1 وw2)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann was und wo als Relativpronomen benutzen.",
+      ar: "أن أستخدم was وwo كضمائر وصل.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e2", "e7", "e9", "m2", "m3"],
+        taskIds: [
+          "practice:b2-03:e2",
+          "practice:b2-03:e7",
+          "practice:b2-03:e9",
+          "mini-test:b2-03:m2",
+          "mini-test:b2-03:m3",
+        ],
+        labelAr: "أجيب صحيحاً عن تمارين was وwo وترتيبهما (e2 وe7 وe9 وm2 وm3)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann Fachwörter des Rechts erkennen: Recht, Gesetz, Vertrag, Gericht.",
+      ar: "أن أتعرّف على مفردات قانونية أساسية: الحق والقانون والعقد والمحكمة.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e3", "e8"],
+        taskIds: ["practice:b2-03:e3", "practice:b2-03:e8"],
+        labelAr: "أربط الكلمات بمعانيها (e3) وأختار معنى der Zeuge (e8)، دون كشف الحل.",
+      },
+    },
   ],
   einfuehrung: {
     motivatingQuestionAr:
@@ -78,7 +131,7 @@ export const lessonB203: Lesson = {
       explanationAr:
         "1) مع حرف جر: Der Mann, auf den ich warte... — حرف الجر يبقى والضمير بحالته. 2) was للجمل الكاملة أو الضمائر (alles, nichts): Alles, was ich weiß... 3) wo للمكان: Das Land, wo ich lebe (= in dem). 4) wofür/womit للأسئلة المدمجة: Ich weiß nicht, wofür er sich interessiert.",
       whyAr:
-        "أولاً تنبيه: حرف الجر هنا ليس اختيارياً بل يفرضه الفعل — Der Mann, auf den ich warte لأن warten auf، وDas Gesetz, auf das sich alle berufen لأن sich berufen auf. فراجع درس b1-09 (الأفعال مع حروف الجر الثابتة) قبل المتابعة: من لا يعرف حرف الفعل لا يستطيع بناء نسبيته. وكذلك wofür ليست إلا wo + für مأخوذاً من sich interessieren für. ولماذا wo بدل in dem؟ لأن wo «يختصر» النسبية المكانية: das Land, wo ich lebe — أسهل وأشيع في الكلام. وwas يختصر النسبية بعد «كل شيء»: Alles, was... هذه الاختصارات علامة الطلاقة.",
+        "أولاً تنبيه: حرف الجر هنا ليس اختيارياً بل يفرضه الفعل — Der Mann, auf den ich warte لأن warten auf، وDas Gesetz, auf das sich alle berufen لأن sich berufen auf. راجع الأفعال المتبوعة بحروف جر ثابتة (warten auf، sich berufen auf، sich interessieren für) قبل المتابعة: من لا يعرف حرف الفعل لا يستطيع بناء نسبيته. وكذلك wofür ليست إلا wo + für مأخوذاً من sich interessieren für. ولماذا wo بدل in dem؟ لأن wo «يختصر» النسبية المكانية: das Land, wo ich lebe — أقصر في الكلام. وwas يختصر النسبية بعد «كل شيء»: Alles, was... هذه الاختصارات علامة الطلاقة.",
       table: {
         title: "الضمائر النسبية المتقدمة",
         columns: ["النوع", "التركيب", "مثال"],
@@ -97,7 +150,7 @@ export const lessonB203: Lesson = {
         { de: "Ich weiß nicht, wofür er sich interessiert.", ar: "لا أعرف ما الذي يهتم به." },
       ],
       comparisonWithArabic:
-        "«الذي تحدثت معه» = mit dem ich gesprochen habe — العربية تحذف حرف الجر أحياناً («مع») لكن الألمانية تبقيه. و«كل ما تقوله» = Alles, was du sagst — مطابقة! و«البلد الذي ولدت فيه» = wo ich geboren wurde.",
+        "«الذي تحدثت معه» = mit dem ich gesprochen habe — في العربية يلتصق حرف الجر بالضمير («معه»)، والألمانية تضعه قبل الضمير النسبي. و«كل ما تقوله» = Alles, was du sagst — تقابل مباشر. و«البلد الذي ولدت فيه» = wo ich geboren wurde.",
       eselsbruecke:
         "«حرف الجر يسبق الضمير»: auf + den، mit + dem. و«wo = في المكان الذي» — اختصار النسبية المكانية. و«was بعد كل شيء»: Alles, was...",
       commonMistakes: [
@@ -107,15 +160,15 @@ export const lessonB203: Lesson = {
       ],
       relatedRuleComparison: {
         title: "wo أم in dem؟",
-        content: "كلاهما مكاني: in dem رسمي، wo عامي/أشيع. Das Land, in dem ich lebe = Das Land, wo ich lebe. اختر wo في الكلام وin dem في الكتابة الرسمية.",
+        content: "كلاهما مكاني: in dem أدق في الكتابة الرسمية، وwo أخف في الكلام. Das Land, in dem ich lebe = Das Land, wo ich lebe. اختر wo في الكلام وin dem في الكتابة الرسمية.",
       },
     },
     {
       id: "t2",
       titleAr: "تراكيب المبني للمجهول المتقدمة",
       titleDe: "Alternativen zum Passiv",
-      explanationAr: "أنماط متقدمة: sein + zu + مصدر (Das ist zu lösen = يمكن حله)، sein + Partizip II (Das ist gelöst = محلول)، وlassen sich (Das lässt sich lösen = يمكن حله). هذه الثلاث تعبر عن الإمكانية بدرجات مختلفة.",
-      whyAr: "لماذا؟ لأن هذه التراكيب شائعة في النصوص القانونية والإدارية (وهي جوهر اختبار B2 القرائي).",
+      explanationAr: "أنماط متقدمة: sein + zu + مصدر (Das ist zu lösen = يمكن حله)، sein + Partizip II (Das ist gelöst = محلول)، وlassen sich (Das lässt sich lösen = يمكن حله). والأولى والثالثة تعبّران عن الإمكانية، والثانية تعبّر عن حالة ناتجة.",
+      whyAr: "لماذا؟ لأن هذه التراكيب تظهر في النصوص القانونية والإدارية.",
       table: {
         title: "بدائل المبني للمجهول",
         columns: ["التركيب", "المعنى", "مثال", "بالعربية"],
@@ -299,7 +352,7 @@ export const lessonB203: Lesson = {
       id: "e4",
       type: "word-ordering",
       instructionAr: "رتّب الجملة:",
-      tokens: ["Der", "auf", "den", "Mann", "warte", "ich", "ist", "Anwalt", "mein", ","],
+      tokens: ["Der", "Mann", ",", "auf", "den", "ich", "warte", ",", "ist", "mein", "Anwalt", "."],
       correctSentence: "Der Mann, auf den ich warte, ist mein Anwalt.",
       explanation: "حرف الجر + الضمير النسبي قبل الفعل.",
       errorType: "word-order",
@@ -412,7 +465,7 @@ export const lessonB203: Lesson = {
       id: "m3",
       type: "word-ordering",
       instructionAr: "رتّب الجملة:",
-      tokens: ["Alles", "sagst", "was", "du", "ist", "wichtig", ","],
+      tokens: ["Alles", ",", "was", "du", "sagst", ",", "ist", "wichtig", "."],
       correctSentence: "Alles, was du sagst, ist wichtig.",
       explanation: "كل ما تقوله مهم — was بعد alles.",
       errorType: "word-order",
@@ -483,7 +536,7 @@ export const lessonB203: Lesson = {
           speakerDe: "Was ist, wenn sie aggressiv reagiert?",
           speakerAr: "ماذا لو ردت بعدوانية؟",
           options: [
-            { de: "In dem Fall solltest du die Situation dokumentieren und dich offiziell beschweren. Ruhezeiten sind gesetzlich geschützt.", ar: "في هذه الحالة وثّق الموقف وقدم شكوى رسمية. أوقات الهدوء محمية قانونياً.", best: true, replyDe: "Das klingt nach einem sinnvollen Vorgehen.", replyAr: "يبدو إجراءً منطقياً." },
+            { de: "In dem Fall solltest du die Situation dokumentieren und dich offiziell beschweren. Ruhezeiten können in der Hausordnung oder im Gesetz geregelt sein.", ar: "في هذه الحالة وثّق الموقف وقدم شكوى رسمية. أوقات الهدوء قد تكون منظمة في لائحة البناء أو في القانون.", best: true, replyDe: "Das klingt nach einem sinnvollen Vorgehen.", replyAr: "يبدو إجراءً منطقياً." },
             { de: "Dann solltest du einfach umziehen und alles aufgeben.", ar: "إذن يجب أن تنتقل وتتخلى عن كل شيء.", best: false, replyDe: "Das ist keine Lösung, es gibt rechtliche Wege.", replyAr: "هذا ليس حلاً، توجد طرق قانونية." },
           ],
         },
