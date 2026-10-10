@@ -710,7 +710,7 @@ export const lessonA111: Lesson = {
       examples: [
         {
           "de": "Wo ist der Bahnhof? — Ich sehe ihn dort.",
-          "ar": "أين محطة القطار؟ — أراها هناك. (der Bahnhof → ihn)"
+          "ar": "أين محطة القطار؟ — أراه هناك. (der Bahnhof → ihn)"
         },
         {
           "de": "Kennst du die Apotheke? — Ja, ich kenne sie.",
@@ -722,15 +722,15 @@ export const lessonA111: Lesson = {
         },
         {
           "de": "Nimmst du den Bus? — Ja, ich nehme ihn.",
-          "ar": "هل تستقل الحافلة؟ — نعم، أستقلها."
+          "ar": "هل تستقل الحافلة؟ — نعم، أستقلّها."
         },
         {
           "de": "Siehst du mich?",
           "ar": "هل تراني؟"
         },
         {
-          "de": "Wir besuchen die Haltestelle. Wir suchen sie.",
-          "ar": "نمرّ بالموقف. نبحث عنه."
+          "de": "Wir suchen die Haltestelle. Wir finden sie.",
+          "ar": "نبحث عن الموقف. نجدها."
         },
         {
           "de": "Gehen Sie an der Kirche vorbei. — Gehen Sie an ihr vorbei.",
@@ -1945,7 +1945,7 @@ export const lessonA111: Lesson = {
       "de": "ihn (Akkusativ von er)",
       "ar": "ضمير مفعول يعود إلى اسم مذكر ألماني",
       "example": "Der Bus? Ich nehme ihn.",
-      "exampleAr": "الحافلة؟ أستقلها.",
+      "exampleAr": "الحافلة؟ أستقلّها.",
       "level": "A1"
     },
     {
