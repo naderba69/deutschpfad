@@ -116,6 +116,12 @@ export const lessonB206: Lesson = {
       correctIndex: 0,
       explanation: "Futur: werde + Infinitiv.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«studiere» مع ich، ولا تناسب الفعل بعد werde.",
+        "«studiert» تستعمل Partizip II، والفعل بعد werde يكون مصدراً.",
+        "«studiert haben» زمن الماضي التام، ولا يناسب المستقبل هنا.",
+      ],
     },
     {
       id: "r2",
@@ -126,6 +132,12 @@ export const lessonB206: Lesson = {
       correctIndex: 0,
       explanation: "القرار يُتخذ: eine Entscheidung treffen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«stellen» تعني يطرح، ولا تناسب eine Entscheidung.",
+        "«sagen» تعني يقول، ولا تناسب Entscheidung.",
+        "«machen» لا تشكّل تعبيراً صحيحاً مع Entscheidung؛ نقول eine Entscheidung treffen.",
+      ],
     },
     {
       id: "r3",
@@ -262,6 +274,12 @@ export const lessonB206: Lesson = {
         correctIndex: 0,
         explanation: "قالت المستشارة: Die Verbesserung Ihrer Qualifikationen ist der erste Schritt.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«die Entscheidung» ليست الخطوة الأولى التي ذكرتها المستشارة.",
+          "«die Bewerbung» ليست الخطوة الأولى التي ذكرتها المستشارة.",
+          "«die Arbeit» ليست الخطوة الأولى التي ذكرتها المستشارة.",
+        ],
       },
       {
         id: "q2",
@@ -274,6 +292,12 @@ export const lessonB206: Lesson = {
         correctIndex: 0,
         explanation: "قالت المديرة: Die Erhöhung ist nach der Probezeit möglich.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«sofort» تعني فوراً، وهذا عكس ما قالته المديرة.",
+          "«nie» تنفي الإمكانية، وهذا عكس ما قالته المديرة.",
+          "«im nächsten Jahr» لم تذكرها المديرة كموعد للزيادة.",
+        ],
       },
       {
         id: "q3",
@@ -286,6 +310,12 @@ export const lessonB206: Lesson = {
         correctIndex: 0,
         explanation: "قال كريم: Die Flexibilität ist mir wichtig.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«das Büro» لم يقل كريم إنه مهم له.",
+          "«die Kollegen» لم يقل كريم إنهم مهمون له.",
+          "«der Urlaub» لم يقل كريم إنه مهم له.",
+        ],
       },
       {
         id: "q4",
@@ -298,6 +328,12 @@ export const lessonB206: Lesson = {
         correctIndex: 0,
         explanation: "قال سامي: Die Trennung von Arbeit und Freizeit ist schwer — الفصل بين العمل والترفيه صعب.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«das Sparen von Zeit» ذكره سامي كشيء رائع، لا كشيء صعب.",
+          "«die Videokonferenzen am Morgen» لم يقل سامي إنها صعبة في الصباح.",
+          "«die Gleitzeit» ذكرتها آنا كشيء يساعد، لا كشيء صعب.",
+        ],
       },
     ],
   },
@@ -379,6 +415,12 @@ export const lessonB206: Lesson = {
       correctIndex: 0,
       explanation: "الاشتقاق: die Verbesserung.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Verbessern» صيغة المصدر، ولا تناسب الاسم المؤنث بعد die.",
+        "«Besserung» اسم آخر بمعنى مختلف، ولا يقابل Verbesserung.",
+        "«Verbesser» ليست اسماً صحيحاً هنا.",
+      ],
     },
     {
       id: "e2",
@@ -389,6 +431,12 @@ export const lessonB206: Lesson = {
       correctIndex: 0,
       explanation: "الرسمية: beim + اسم.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Man liest und lernt.» لا تعبّر عن الصيغة الرسمية المطلوبة.",
+        "«Das Lesen man lernt.» ترتيب خاطئ، ولا تعبّر عن الجملة.",
+        "«Lesen ist lernen.» تغيّر المعنى، ولا تعبّر عن الجملة.",
+      ],
     },
     {
       id: "e3",
@@ -456,6 +504,12 @@ export const lessonB206: Lesson = {
       correctIndex: 0,
       explanation: "Zusammenarbeit = التعاون (zusammen = معاً + Arbeit = عمل).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«الاجتماع» يقابل Treffen أو Sitzung، وليس Zusammenarbeit.",
+        "«الشراكة» تقابل Partnerschaft، وليس Zusammenarbeit.",
+        "«العمل المشترك فقط» تقييد للمعنى، وليس الترجمة الكاملة.",
+      ],
     },
     {
       id: "e9",
@@ -517,6 +571,12 @@ export const lessonB206: Lesson = {
       explanation:
         "deshalb ظرف رابط يحتل المركز الأول، فيأتي الفعل مباشرةً بعده في المركز الثاني ثم الفاعل: deshalb erhöhte die Firma... وهذا يخالف weil التي تدفع الفعل إلى النهاية.",
       errorType: "word-order",
+      optionExplanations: [
+        undefined,
+        "«die Firma erhöhte die Preise» ترتيب خاطئ بعد deshalb؛ الفعل يجب أن يأتي في الموقع الثاني.",
+        "«die Firma die Preise erhöhte» ترتيب خاطئ؛ الفعل المصرّف يجب أن يأتي في الموقع الثاني.",
+        "«erhöhte die Preise die Firma zu» ترتيب خاطئ، ولا معنى لـ zu هنا.",
+      ],
     },
     {
       id: "e14-konn",
@@ -586,6 +646,12 @@ export const lessonB206: Lesson = {
       correctIndex: 0,
       explanation: "الاشتقاق بـ ung- يعطي die Verhandlung. و das Verhandeln اسم مصدر محايد، و die Handlung كلمة أخرى معناها «فعل/حبكة».",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Verhandeln» صيغة المصدر، ولا تناسب الاسم المؤنث بعد die.",
+        "«Handlung» اسم آخر بمعنى الفعل أو القصة، وليس اسم Verhandlung.",
+        "«Verhandelt» صيغة فعل، ولا تناسب الاسم.",
+      ],
     },
     {
       id: "m2",
@@ -596,6 +662,12 @@ export const lessonB206: Lesson = {
       correctIndex: 0,
       explanation: "الرسمية: beim Schreiben.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Man schreibt und übt.» لا تعبّر عن الصيغة الرسمية المطلوبة.",
+        "«Das Schreiben man übt.» ترتيب خاطئ، ولا تعبّر عن الجملة.",
+        "«Schreiben ist üben.» تغيّر المعنى، ولا تعبّر عن الجملة.",
+      ],
     },
     {
       id: "m3",
