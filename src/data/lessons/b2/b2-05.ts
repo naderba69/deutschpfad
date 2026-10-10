@@ -113,6 +113,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "سبب → weil (درس المدرسة A2/B1).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«dass» تقدّم مضموناً، ولا تعبّر عن السبب هنا.",
+        "«wenn» شرط، ولا تعبّر عن السبب.",
+        "«ob» تقدّم سؤالاً غير مباشر، ولا تناسب الجملة.",
+      ],
     },
     {
       id: "r2",
@@ -123,6 +129,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "لذلك → deshalb (درس العلاقات A2).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«aber» تعبّر عن التعارض، ولا تعطي النتيجة المطلوبة.",
+        "«und» تربط فكرتين دون نتيجة، ولا تناسب الجملة.",
+        "«oder» تعبّر عن الاختيار، ولا تناسب الجملة.",
+      ],
     },
     {
       id: "r3",
@@ -310,6 +322,12 @@ export const lessonB205: Lesson = {
         correctIndex: 0,
         explanation: "قالت المدربة: Man verbessert die Kommunikation, indem man aktiv zuhört.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«indem man spricht» لا تعبّر عن تحسين التواصل، والمطلوب الاستماع.",
+          "«indem man schweigt» تعني الصمت، وهذا عكس الحل المطلوب.",
+          "«indem man schreibt» لا تعبّر عن تحسين التواصل في هذا السياق.",
+        ],
       },
       {
         id: "q2",
@@ -322,6 +340,12 @@ export const lessonB205: Lesson = {
         correctIndex: 0,
         explanation: "قالت آنا: Wir treffen uns morgen, es sei denn, es regnet stark.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«heute» لم تُذكر في الحوار كموعد للقاء.",
+          "«übermorgen» لم تُذكر في الحوار كموعد للقاء.",
+          "«nie» تنفي اللقاء، وهذا عكس ما قالته آنا.",
+        ],
       },
       {
         id: "q3",
@@ -334,6 +358,12 @@ export const lessonB205: Lesson = {
         correctIndex: 0,
         explanation: "قال كريم: Je nachdem, wie das Wetter wird, entscheiden wir.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«sofort» لم تُذكر في الحوار كقرار.",
+          "«morgen früh» لم تُذكر في الحوار كقرار.",
+          "«gar nicht» تنفي القرار، ولم يقلها كريم.",
+        ],
       },
     ],
   },
@@ -401,6 +431,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "طريقة → indem.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«anstatt» تعني بدلاً من، ولا تعبّر عن الطريقة هنا.",
+        "«ohne» تعني دون، ولا تعبّر عن الطريقة هنا.",
+        "«damit» تعبّر عن الغاية، ولا تعبّر عن الطريقة.",
+      ],
     },
     {
       id: "e2",
@@ -411,6 +447,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "بدلاً من → anstatt...zu.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Indem» تعبّر عن الطريقة، ولا تناسب معنى بدلاً من النوم.",
+        "«Ohne» تعني دون، ولا تناسب المعنى هنا.",
+        "«Damit» تعبّر عن الغاية، ولا تناسب الجملة.",
+      ],
     },
     {
       id: "e3",
@@ -477,6 +519,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "Missverständnis = سوء الفهم.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«التواصل» يقابل Kommunikation، وليس Missverständnis.",
+        "«السلوك» يقابل Verhalten، وليس Missverständnis.",
+        "«الإنصات» يقابل Zuhören، وليس Missverständnis.",
+      ],
     },
     {
       id: "e9",
@@ -522,6 +570,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "mal = تخفيف الطلب: Komm mal her!",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«ja» تعني نعم، ولا تعطي الطلب الودي المطلوب.",
+        "«denn» تستعمل في الأسئلة، ولا تناسب الأمر هنا.",
+        "«wohl» تعبّر عن الاحتمال، ولا تناسب الأمر.",
+      ],
     },
     {
       id: "e13",
@@ -571,6 +625,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "zum Ausdruck bringen = يُعرب عن (أسلوب رسمي).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«machte ... aus» تعني يُعرف أو يميّز، ولا تعبّر عن الرضا.",
+        "«stellte ... vor» تعني يقدم أو يعرّف، ولا تعبّر عن الرضا.",
+        "«gab ... auf» تعني يتخلى، ولا تعبّر عن الرضا.",
+      ],
     },
     {
       id: "e17",
@@ -581,6 +641,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "zur Verfügung stellen = يوفّر/يضع تحت التصرف.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«تبيع أجهزة جديدة» تقابل verkaufen، وليس zur Verfügung stellen.",
+        "«تصلح أجهزة جديدة» تقابل reparieren، وليس zur Verfügung stellen.",
+        "«ترفض الأجهزة» تعني ablehnen، وهذا عكس المعنى.",
+      ],
     },
     {
       id: "e18",
@@ -591,6 +657,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "in Kraft treten = يدخل حيز التنفيذ.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«kommt ... zu Ende» تعني ينتهي، ولا تعني يدخل حيز التنفيذ.",
+        "«steht ... zur Rede» تعني يُحاسَب أو يُناقَش، ولا تعني يدخل حيز التنفيذ.",
+        "«nimmt ... Teil» تعني يشارك، ولا تعني يدخل حيز التنفيذ.",
+      ],
     },
     {
       id: "e19",
@@ -611,6 +683,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "in Frage stellen = يشكك في.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«يؤكدون النتائج» عكس المعنى؛ in Frage stellen تعني يشكك.",
+        "«ينشرون النتائج» لا تعني in Frage stellen.",
+        "«يعدلون النتائج» لا تعني in Frage stellen.",
+      ],
     },
   ],
 
@@ -644,6 +722,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "بدلاً من → anstatt.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Indem» تعبّر عن الطريقة، ولا تناسب معنى بدلاً من النقد.",
+        "«Ohne» تعني دون، ولا تناسب معنى بدلاً من النقد.",
+        "«Damit» تعبّر عن الغاية، ولا تناسب الجملة.",
+      ],
     },
     {
       id: "m2",
@@ -654,6 +738,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "إلا إذا → es sei denn.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«indem» تعبّر عن الطريقة، ولا تعبّر عن الشرط.",
+        "«ohne» تعني دون، ولا تعبّر عن الشرط.",
+        "«damit» تعبّر عن الغاية، ولا تعبّر عن الشرط.",
+      ],
     },
     {
       id: "m3",
@@ -684,6 +774,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "doch = «بلى» رداً على النفي.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Ja» تعني نعم، ولا تناسب النفي في السؤال.",
+        "«Mal» تعني مرة أو لطفاً، ولا تناسب الرد على النفي.",
+        "«Wohl» تعبّر عن الاحتمال، ولا تناسب الرد.",
+      ],
     },
     {
       id: "m7",
