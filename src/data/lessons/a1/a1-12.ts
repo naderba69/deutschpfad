@@ -905,7 +905,7 @@ export const lessonA112: Lesson = {
   },
   pronunciation: {
     id: "p1",
-    title: "تدريب نطقي استرشادي لمفردات الطقس",
+    title: "أصوات الطقس: w وsch وg",
     items: [
       {
         de: "das Wetter",

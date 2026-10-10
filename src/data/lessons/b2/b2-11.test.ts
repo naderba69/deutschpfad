@@ -11,9 +11,9 @@ const allItems = () => [
 ];
 
 describe("B2-11 audit", () => {
-  it("keeps three measurable goals, each with evidence on existing items", () => {
+  it("keeps four measurable goals, each with evidence on existing items", () => {
     const ids = new Set(allItems().map((x) => x.id));
-    expect(lessonB211.lernziele.map((g) => g.id)).toEqual(["z1", "z2", "z3"]);
+    expect(lessonB211.lernziele.map((g) => g.id)).toEqual(["z1", "z2", "z3", "z4"]);
     for (const goal of lessonB211.lernziele) {
       const ev = goal.evidence as { exerciseIds: string[]; taskIds: string[] };
       expect(ev.taskIds.length).toBe(ev.exerciseIds.length);

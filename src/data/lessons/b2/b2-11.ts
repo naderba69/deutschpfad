@@ -63,6 +63,20 @@ export const lessonB211: Lesson = {
         labelAr: "أكمل جملة بـ lassen بالمصدر، وأختار التركيب الذي يعني التكليف، وأرتب جملة بـ hören (e11 إلى e13 وm4 وw2 وq3)، دون كشف الحل.",
       },
     },
+    {
+      id: "z4",
+      de: "Ich kann in Gesprächen Angaben zu Besitz und Aufgaben verstehen.",
+      ar: "أن أفهم في الحوار ما يخص الملكية والمهام.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q1", "q2"],
+        taskIds: [
+          "listening:l1:q1",
+          "listening:l1:q2",
+        ],
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 وq2، دون كشف النص.",
+      },
+    },
   ],
 
   einfuehrung: {

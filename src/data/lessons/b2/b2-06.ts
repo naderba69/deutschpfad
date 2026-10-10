@@ -110,7 +110,7 @@ export const lessonB206: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1 (المستقبل): اختر الصيغة:",
+      instructionAr: "مراجعة من B1 (درس b1-10 — المستقبل والخطط): اختر الصيغة:",
       questionDe: "Ich werde nächstes Jahr in Deutschland ___.",
       options: ["studieren", "studiere", "studiert", "studiert haben"],
       correctIndex: 0,
@@ -120,7 +120,7 @@ export const lessonB206: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1 (تراكيب الفعل مع الاسم): اختر الفعل المناسب:",
+      instructionAr: "مراجعة من B1 (درس b1-09 — الوصلات الاسمية-الفعلية): اختر الفعل المناسب:",
       questionDe: "eine Entscheidung ___",
       options: ["treffen", "stellen", "sagen", "machen"],
       correctIndex: 0,

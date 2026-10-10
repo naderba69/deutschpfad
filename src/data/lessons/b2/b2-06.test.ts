@@ -50,7 +50,7 @@ describe("B2-06 audit", () => {
 
   it("removes unverified lesson references, overclaims, and invented figures", () => {
     const text = JSON.stringify(lessonB206);
-    expect(text).not.toMatch(/b1-08|b1-09/);
+    expect(text).not.toMatch(/b1-08/);
     expect(text).not.toMatch(/مطابقة تامة|علامة B2|35-40|20-30/);
     expect(text).not.toContain("weil ist");
     expect((lessonB206.practiceBank.find((x) => x.id === "e12") as unknown as Loose).tokens).not.toContain("Zeit.");

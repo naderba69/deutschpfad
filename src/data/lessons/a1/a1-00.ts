@@ -628,7 +628,7 @@ export const lessonA100: Lesson = {
   /* 5) النطق */
   pronunciation: {
     id: "p1",
-    title: "أهم 10 أصوات للمتعلم العربي — استمع وكرر",
+    title: "أهم 10 أصوات للمتعلم العربي: sch وsp وpf — استمع وكرر",
     items: [
       {
         de: "ich",

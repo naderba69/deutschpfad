@@ -678,7 +678,7 @@ export const lessonA114: Lesson = {
 
   pronunciation: {
     id: "pron-a1-14",
-    title: "نطق Partizip II — البادئة ge- والنهايتان -t و-en",
+    title: "نطق Partizip II: ge وch",
     items: [
       { de: "gelernt", ar: "تعلَّم", note: "ge- غير منبورة في هذا المثال؛ النبر على مقطع lern، وg ألمانية [ɡ] وليست غيناً عربية." },
       { de: "gemacht", ar: "فعَل", note: "ch بعد a تمثل [x] في النطق المعياري الشائع؛ تقريبها بخاء عربية لا يعني تطابق الصوتين." },

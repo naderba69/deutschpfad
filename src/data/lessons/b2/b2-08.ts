@@ -59,6 +59,20 @@ export const lessonB208: Lesson = {
         labelAr: "أجيب صحيحاً بعد الاستماع إلى l2 في q3، وأكمل عبارة sich gewöhnen an في e7، دون كشف النص أو الحل.",
       },
     },
+    {
+      id: "z4",
+      de: "Ich kann kurze Sätze über Sprachen und Kultur schriftlich ergänzen.",
+      ar: "أن أكمل جملاً قصيرة عن اللغات والثقافة كتابةً.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["w1", "w2"],
+        taskIds: [
+          "writing:b2-08:w1",
+          "writing:b2-08:w2",
+        ],
+        labelAr: "أكمل جملة وأحوّلها (w1 وw2)، دون كشف الحل. لا يقيس هذا كتابة نص كامل.",
+      },
+    },
   ],
   einfuehrung: {
     motivatingQuestionAr:

@@ -547,7 +547,7 @@ export const lessonA107: Lesson = {
 
   pronunciation: {
     id: "pron-a1-07",
-    title: "الأعداد ووضوح النطق",
+    title: "الأعداد ووضوح النطق: ß وig",
     items: [
       {de: "sechzehn", ar: "ستة عشر", note: "الصيغة المعيارية sechzehn، لا sechszehn."},
       {de: "siebzehn", ar: "سبعة عشر", note: "تسقط n من sieben في صيغة العدد siebzehn."},

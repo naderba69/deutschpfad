@@ -637,7 +637,7 @@ export const lessonA102: Lesson = {
   /* 5) النطق */
   pronunciation: {
     id: "p1",
-    title: "صوت ch والأصوات في كلمات العائلة",
+    title: "أصوات الأسرة: ch وsch وv",
     items: [
       {
         de: "ich",

@@ -62,6 +62,20 @@ export const lessonB210: Lesson = {
         labelAr: "أصحح خطأ الحالة وأرتب جملة مشتقة ومجهولة وأختار الرابط وأكمل الاختبار الختامي (e15-nominal وe16-b2 وe17-b2 وm6 إلى m8)، دون كشف الحل. لا يقيس هذا كل قواعد B2.",
       },
     },
+    {
+      id: "z4",
+      de: "Ich kann Fachbegriffe des Studiums zuordnen.",
+      ar: "أن أربط مصطلحات الدراسة الجامعية بمعانيها.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e3", "w3"],
+        taskIds: [
+          "practice:b2-10:e3",
+          "writing:b2-10:w3",
+        ],
+        labelAr: "أطابق مصطلحات الدراسة الجامعية (e3) وأكتب جملة أكاديمية بالإملاء (w3)، دون كشف الحل.",
+      },
+    },
   ],
   einfuehrung: {
     motivatingQuestionAr:

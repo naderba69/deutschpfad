@@ -89,7 +89,7 @@ export const lessonB207: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1 (المستقبل مع werden): اختر الصيغة:",
+      instructionAr: "مراجعة من B1 (درس b1-10 — المستقبل والخطط: werden): اختر الصيغة:",
       questionDe: "Ich ___ morgen lernen.",
       options: ["werde", "wirst", "wird", "werden"],
       correctIndex: 0,

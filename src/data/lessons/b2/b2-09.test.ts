@@ -11,9 +11,9 @@ const allItems = () => [
 ];
 
 describe("B2-09 audit", () => {
-  it("keeps three measurable goals, each with evidence on existing items", () => {
+  it("keeps four measurable goals, each with evidence on existing items", () => {
     const ids = new Set(allItems().map((x) => x.id));
-    expect(lessonB209.lernziele.map((g) => g.id)).toEqual(["z1", "z2", "z3"]);
+    expect(lessonB209.lernziele.map((g) => g.id)).toEqual(["z1", "z2", "z3", "z4"]);
     for (const goal of lessonB209.lernziele) {
       const ev = goal.evidence as { exerciseIds: string[]; taskIds: string[] };
       expect(ev.taskIds.length).toBe(ev.exerciseIds.length);
@@ -56,7 +56,6 @@ describe("B2-09 audit", () => {
     expect(text).not.toContain("والقائمة الشهيرة");
     expect(text).not.toContain("Ich freue mich über den Urlaub. (مستقبل)");
     expect(text).not.toMatch(/على الأكثر/);
-    expect(text).not.toContain("b1-09");
     expect(text).not.toContain("Die Erfahrung zeigt");
     expect(text).not.toContain("مطابقة");
     expect(text).not.toContain("عامية");

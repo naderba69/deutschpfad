@@ -1716,7 +1716,7 @@ export const lessonA111: Lesson = {
     {
       "id": "e27",
       "type": "error-correction",
-      "instructionAr": "افحص الجملة ولا تفترض وجود خطأ؛ اختر التصحيح أو «لا خطأ»:",
+      "instructionAr": "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       "wrongSentence": "Ich gehe nach Berlin.",
       "wrongWord": "gehe",
       "correctWord": "gehe",

@@ -151,7 +151,7 @@ export const lessonA209: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة تراكمية لصيغة الملكية من A1-02؛ طبّق الآن Dativ بعد helfen:",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-02 — العائلة والأصدقاء: الملكية)؛ طبّق الآن Dativ بعد helfen:",
       questionDe: "Ich helfe ___ Bruder. (أخي)",
       options: ["meinem", "meinen", "mein", "meine"],
       correctIndex: 0,
@@ -162,7 +162,7 @@ export const lessonA209: Lesson = {
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة تراكمية من A1-09: اختر المعنى:",
+      instructionAr: "مراجعة تراكمية من A1 (درس a1-09 — المواعيد والتقويم): اختر المعنى:",
       questionDe: "der Geburtstag",
       options: ["عيد ميلاد شخص", "رأس السنة", "عيد زواج", "عطلة رسمية"],
       correctIndex: 0,
@@ -172,7 +172,7 @@ export const lessonA209: Lesson = {
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة تراكمية لصيغ الضمائر من A2-07: أكمل بضمير Akkusativ بعد einladen:",
+      instructionAr: "مراجعة تراكمية من A2 (درس a2-07 — البنك والمال: صيغ الضمائر بعد الأفعال): أكمل بضمير Akkusativ بعد einladen:",
       template: "Ich möchte ___ einladen. (أنتَ)",
       blanks: [{ correct: "dich", options: ["dich", "dir", "mich"] }],
       explanation:

@@ -321,7 +321,7 @@ export const lessonA211: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "نطق كلمات مختارة: sch، w، ie، ä، r وeu في Friseur",
+    title: "نطق كلمات مختارة: sch، w، ie، ä، r وeu",
     items: [
       { de: "sich beschweren", ar: "يشتكي/يقدّم شكوى", note: "IPA للفعل: [bəˈʃveːʁən]؛ sch يقابل [ʃ] وw يقابل [v]. يختلف تحقيق r إقليمياً." },
       { de: "der Friseur", ar: "مصفّف الشعر/الحلّاق", note: "IPA: [fʁiˈzøːɐ̯]. في هذه الكلمة يقارب eu الصوت الطويل [øː]، ويتبعه r في ختام الكلمة؛ لا يُنطق هنا مثل eu الشائع [ɔʏ̯]." },
@@ -596,7 +596,7 @@ export const lessonA211: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "افحص الجملة دون افتراض وجود خطأ؛ اختر «لا خطأ» إذا كانت سليمة في معنى ممكن.",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Das freut mich.",
       wrongWord: "freut mich",
       correctWord: "freut mich",

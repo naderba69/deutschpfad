@@ -60,6 +60,21 @@ export const lessonB209: Lesson = {
         labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 وq2، وإلى l2 في q3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
+    {
+      id: "z4",
+      de: "Ich kann Wendungen wie „zur Verfügung stellen“ im Bewerbungskontext verwenden.",
+      ar: "أن أستعمل عبارات مثل «zur Verfügung stellen» في سياق التقديم الوظيفي.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e8", "e10", "m4"],
+        taskIds: [
+          "practice:b2-09:e8",
+          "practice:b2-09:e10",
+          "mini-test:b2-09:m4",
+        ],
+        labelAr: "أعرف معنى das Anschreiben وأكتب جملة بـ zur Verfügung stellen وأصحح zur (e8 وe10 وm4)، دون كشف الحل.",
+      },
+    },
   ],
   einfuehrung: {
     motivatingQuestionAr:
@@ -82,7 +97,7 @@ export const lessonB209: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1 (الفعل مع الاسم): اختر الفعل المناسب:",
+      instructionAr: "مراجعة من B1 (درس b1-09 — الوصلات الاسمية-الفعلية): اختر الفعل المناسب:",
       questionDe: "eine Frage ___",
       options: ["stellen", "treffen", "sagen", "nehmen"],
       correctIndex: 0,

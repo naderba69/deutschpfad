@@ -722,7 +722,7 @@ export const lessonA106: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "أصوات مختارة من مفردات الهوايات",
+    title: "أصوات الهوايات: ö وz وh",
     items: [
       { de: "das Hobby", ar: "الهواية", note: "h في أول الكلمة يُنطق /h/ ولا يُحذف." },
       { de: "gern", ar: "بسرور", note: "g صوت /ɡ/ مجهور، قريب من g في go، وليس غ العربية؛ وقد يختلف r بحسب المنطقة." },

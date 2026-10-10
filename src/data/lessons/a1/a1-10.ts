@@ -812,7 +812,7 @@ export const lessonA110: Lesson = {
   },
   pronunciation: {
     id: "p1",
-    title: "أصوات مختارة في أسماء المهن",
+    title: "أصوات المهن: ch",
     items: [
       {
         de: "der Arzt",
