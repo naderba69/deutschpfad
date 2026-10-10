@@ -86,6 +86,12 @@ export const lessonB101: Lesson = {
       correctIndex: 0,
       explanation: "الجر المذكر: meinem (درس المناسبات).",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«meinen» مفعول به (Akkusativ)، وhelfen يطلب الجر هنا، فالصيغة meinem.",
+        "«mein» بلا نهاية لا تناسب الجر المذكر في هذا الموضع.",
+        "«meine» للمؤنث أو الجمع، والأخ مذكّر.",
+      ],
     },
     {
       id: "r2",
@@ -96,6 +102,12 @@ export const lessonB101: Lesson = {
       correctIndex: 0,
       explanation: "سبب → weil (درس المدرسة).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«dass» تقدّم مضموناً أو قولاً، ولا تعبّر عن السبب.",
+        "«obwohl» تعبّر عن التناقض، والجملة لا تحمل تناقضاً.",
+        "«ob» تقدّم سؤالاً غير مباشر، ولا معنى للسؤال هنا.",
+      ],
     },
     {
       id: "r3",
@@ -229,6 +241,12 @@ export const lessonB101: Lesson = {
         correctIndex: 0,
         explanation: "قال سامي: Ich interessiere mich für Informatik.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Medizin» هو الطب، وليس ما ذكره سامي.",
+          "«Germanistik» دراسة الألمانية وآدابها، وليس ما ذكره سامي.",
+          "«Jura» هو القانون، وليس ما ذكره سامي.",
+        ],
       },
       {
         id: "q2",
@@ -241,6 +259,12 @@ export const lessonB101: Lesson = {
         correctIndex: 0,
         explanation: "قالت المستشارة: Die Universität ... ist in München.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«in Berlin» ليست المدينة المذكورة للجامعة في الحوار.",
+          "«in Hamburg» ليست المدينة المذكورة للجامعة في الحوار.",
+          "«in Köln» ليست المدينة المذكورة للجامعة في الحوار.",
+        ],
       },
       {
         id: "q3",
@@ -253,6 +277,12 @@ export const lessonB101: Lesson = {
         correctIndex: 0,
         explanation: "قالت منى: Das Studium der Medizin dauert sechs Jahre.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«vier Jahre» عدد غير مذكور لمدة الدراسة في كلام منى.",
+          "«fünf Jahre» عدد غير مذكور لمدة الدراسة في كلام منى.",
+          "«sieben Jahre» عدد غير مذكور لمدة الدراسة في كلام منى.",
+        ],
       },
       {
         id: "q4",
@@ -270,6 +300,12 @@ export const lessonB101: Lesson = {
         correctIndex: 0,
         explanation: "قالت المستشارة: Die Kosten des Studiums sind niedrig, nur der Semesterbeitrag.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "الخيار الثاني يصف التكاليف بأنها عالية، وهو عكس ما قالته المستشارة.",
+          "الخيار الثالث يقول إن الدراسة بلا أي رسوم، وهذا غير ما ورد.",
+          "الخيار الرابع يربط التكاليف بمدينة واحدة، والنص لا يذكر ذلك.",
+        ],
       },
     ],
   },
@@ -338,6 +374,12 @@ export const lessonB101: Lesson = {
       correctIndex: 0,
       explanation: "المذكر Genitiv: des Lehrers.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«der» جر أو ملكية للمؤنث والجمع، والاسم هنا مذكّر في الملكية.",
+        "«dem» جر، والملكية هنا تحتاج إلى حالة الإضافة.",
+        "«den» للمفعول به أو جمع الجر، لا لملكية مذكّر.",
+      ],
     },
     {
       id: "e2",
@@ -348,6 +390,12 @@ export const lessonB101: Lesson = {
       correctIndex: 0,
       explanation: "فاعل مذكر → der.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«den» مفعول به، والجملة تحتاج إلى فاعل للفعل steht.",
+        "«dem» جر، والضمير هنا فاعل وليس متمماً بالجر.",
+        "«dessen» إضافة وملكية، لا تناسب فاعل الفعل steht.",
+      ],
     },
     {
       id: "e3",
@@ -414,6 +462,12 @@ export const lessonB101: Lesson = {
       correctIndex: 0,
       explanation: "wessen = لمن؟ — سؤال Genitiv.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«ماذا؟» تقابل was، وليس wessen.",
+        "«أين؟» تقابل wo، وليس wessen.",
+        "«متى؟» تقابل wann، وليس wessen.",
+      ],
     },
     {
       id: "e9",
@@ -475,6 +529,12 @@ export const lessonB101: Lesson = {
       correctIndex: 0,
       explanation: "المحايد Genitiv: des Films.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«der» جر أو ملكية للمؤنث والجمع، والاسم هنا محايد.",
+        "«dem» جر، والملكية هنا تحتاج إلى حالة الإضافة.",
+        "«den» للمفعول به أو جمع الجر، لا لملكية محايد.",
+      ],
     },
     {
       id: "m2",
@@ -485,6 +545,12 @@ export const lessonB101: Lesson = {
       correctIndex: 0,
       explanation: "مؤنث فاعل → die.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«der» موصول للمذكر، والمرجع مؤنث، لذلك لا يناسب.",
+        "«das» موصول للمحايد، والمرجع ليس محايداً.",
+        "«den» موصول مفعول به للمذكر، ولا يناسب المرجع.",
+      ],
     },
     {
       id: "m3",
