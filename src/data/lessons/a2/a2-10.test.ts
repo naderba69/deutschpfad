@@ -318,7 +318,7 @@ describe("A2-10 lesson content audit", () => {
       instructionAr: "مراجعة من A1 (درس a1-02 — العائلة والأصدقاء): أكمل الملكية:",
       template: "Das ist ___ Bruder. (أخي)",
       blanks: [{ correct: "mein", options: ["mein", "meine", "meinen"] }],
-      explanation: "Bruder اسم مذكر، ويأتي مسند الخبر بعد sein في حالة Nominativ هنا: mein Bruder. (درس العائلة).",
+      explanation: "Bruder اسم مذكر، والأداة الملكية هنا في حالة Nominativ بعد das ist: mein Bruder. (درس العائلة).",
     });
     expect(review.map((item) => item.instructionAr).join(" ")).toMatch(/a1-01/);
     expect(review.map((item) => item.instructionAr).join(" ")).toMatch(/a1-02/);
