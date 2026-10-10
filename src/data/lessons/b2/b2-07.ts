@@ -14,17 +14,66 @@ export const lessonB207: Lesson = {
     "مناقشة الموضوعات المجردة وبناء الحجج، المستقبل التام (Futur II): werde + Partizip II + haben/sein — والكتابة الجدلية (Erörterung) بأسلوب أكاديمي.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann abstrakte Themen diskutieren.", ar: "أن أناقش الموضوعات المجردة وأبني الحجج." },
-    { id: "z2", de: "Ich kann das Futur II bilden: werde + Partizip II + haben/sein.", ar: "أن أبني المستقبل التام: سيكون قد فعل." },
-    { id: "z3", de: "Ich kann eine Erörterung schreiben.", ar: "أن أكتب مقالاً جدلياً بأسلوب أكاديمي." },
-      { id: "z4", de: "Ich kann über abstrakte gesellschaftliche Fragen diskutieren.", ar: "أن أناقش أسئلة مجتمعية مجردة." },
+    {
+      id: "z1",
+      de: "Ich kann Aussagen zu abstrakten Themen verstehen.",
+      ar: "أن أفهم حديثاً عن موضوع فلسفي مجرد: ماذا يعني حياة جيدة.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q1"],
+        taskIds: ["listening:l1:q1"],
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann das Futur II bilden: werde + Partizip II + haben/sein.",
+      ar: "أن أبني المستقبل التام: سيكون قد فعل.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e1", "e2", "e4", "e5", "m1", "m2", "w1", "w2"],
+        taskIds: [
+          "practice:b2-07:e1",
+          "practice:b2-07:e2",
+          "practice:b2-07:e4",
+          "practice:b2-07:e5",
+          "mini-test:b2-07:m1",
+          "mini-test:b2-07:m2",
+          "writing:b2-07:w1",
+          "writing:b2-07:w2",
+        ],
+        labelAr: "أختار haben أو sein وأرتب الجملة وأصحح المساعد الخطأ (e1 إلى e5 وm1 وm2 وw1 وw2)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann Redemittel der Erörterung benutzen.",
+      ar: "أن أستخدم عبارات المقال الجدلي: في رأيي، ومن ناحية... ومن ناحية أخرى.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e6", "e7", "m5"],
+        taskIds: ["practice:b2-07:e6", "practice:b2-07:e7", "mini-test:b2-07:m5"],
+        labelAr: "أكمل عبارات الرأي والروابط الجدلية وأكتب عبارة الخاتمة (e6 وe7 وm5)، دون كشف الحل. لا يقيس هذا كتابة مقال كامل.",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann Pro- und Contra-Argumente verstehen.",
+      ar: "أن أفهم الحجج المؤيدة والمعارضة في حديث قصير.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q2", "q3"],
+        taskIds: ["listening:l2:q2", "listening:l2:q3"],
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l2 في q2 وq3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+      },
+    },
   ],
   einfuehrung: {
     motivatingQuestionAr:
-      "في B1 تعلمت المستقبل (werde lernen). ماذا لو أردت: «سيكون قد أنهى»؟ هنا المستقبل التام: Er wird fertig geworden sein. التركيب: werde + Partizip II + haben/sein في النهاية. مثل العربية: «سيكون قد...» — تماماً!",
+      "في B1 تعلمت المستقبل (werde lernen). ماذا لو أردت: «سيكون قد أنهى»؟ هنا المستقبل التام: Er wird fertig geworden sein. التركيب: werde + Partizip II + haben/sein في النهاية. وهو قريب في المعنى من «سيكون قد...» في العربية.",
     motivatingQuestionDe: "Was bedeutet ein gutes Leben?",
     contextAr:
-      "الفلسفة: أسئلة كبرى. نضيف المستقبل التام للتعبير عن «الانتهاء في المستقبل»، ثم نتعلم هيكل المقال الجدلي (Erörterung) — مهارة الامتحان الأهم.",
+      "الفلسفة: أسئلة كبرى. نضيف المستقبل التام للتعبير عن «الانتهاء في المستقبل»، ثم نتعلم هيكل المقال الجدلي (Erörterung) — مهارة مهمة في الكتابة الأكاديمية.",
     contextDe: "Bis 2030 wird die Gesellschaft sich verändert haben.",
     connectionToPreviousAr: "تتذكر Futur I (werde lernen) وPerfekt (habe gelernt). اليوم: دمجهما — Futur II. ومعه الكتابة الجدلية التي تجمع كل قواعد B2.",
     activateVocabulary: [
@@ -40,11 +89,11 @@ export const lessonB207: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1 (درس b1-08 — التقنية والرقمنة): اختر المستقبل:",
+      instructionAr: "مراجعة من B1 (المستقبل مع werden): اختر الصيغة:",
       questionDe: "Ich ___ morgen lernen.",
       options: ["werde", "wirst", "wird", "werden"],
       correctIndex: 0,
-      explanation: "مع ich: werde (درس التقنية B1).",
+      explanation: "مع ich: werde.",
       errorType: "grammar",
     },
     {
@@ -78,12 +127,12 @@ export const lessonB207: Lesson = {
       explanationAr:
         "Futur II = حدث سيكون قد اكتمل في المستقبل: Bis 2030 werde ich Deutsch gelernt haben. (بحلول 2030 سأكون قد تعلمت الألمانية). التركيب: werden (مضارع) + Partizip II + haben/sein في النهاية. للحركة: sein (werde gegangen sein). للفعل العادي: haben.",
       whyAr:
-        "لماذا نحتاج زمناً خامساً؟ لأن التوقع يحتاج «الاكتمال»: «سيكون قد انتهى» تختلف عن «سينتهي». والمتحدث المتقدم يستخدمه للتوقعات المؤكدة في المستقبل — علامة الإتقان.",
+        "لماذا نحتاج زمناً إضافياً؟ لأن التوقع يحتاج «الاكتمال»: «سيكون قد انتهى» تختلف عن «سينتهي». ويستخدمه المتحدثون للتوقع بأن حدثاً سيكتمل قبل وقت معين في المستقبل.",
       table: {
         title: "Futur II",
         columns: ["النوع", "التركيب", "مثال"],
         rows: [
-          { label: "فعل عادي", cells: ["werde + PII + haben", "Ich werde gelernt haben."] },
+          { label: "فعل عادي", cells: ["werde + PII + haben", "Ich werde Deutsch gelernt haben."] },
           { label: "حركة", cells: ["werde + PII + sein", "Er wird gegangen sein."] },
           { label: "مع sein", cells: ["werde + gewesen sein", "Sie wird müde gewesen sein."] },
         ],
@@ -96,17 +145,17 @@ export const lessonB207: Lesson = {
         { de: "Sie wird es vergessen haben.", ar: "ستكون قد نسيته." },
       ],
       comparisonWithArabic:
-        "«سأكون قد قرأت» = werde gelesen haben — مطابقة تامة مع «سيكون قد + فعل» العربية! المستقبل التام موجود في لغتنا بنفس المنطق.",
+        "«سأكون قد قرأت» = werde gelesen haben — تقابل قريب من «سيكون قد + فعل» في العربية. والمستقبل التام موجود في العربية بالمنطق نفسه تقريباً.",
       eselsbruecke:
-        "«سيكون قد = werde + Partizip II + haben/sein» — كل توقع اكتمال في المستقبل. واسأل: هل الحدث اكتمل؟ نعم → Futur II.",
+        "«سيكون قد = werde + Partizip II + haben/sein» — كل توقع اكتمال في المستقبل. واسأل: هل سيكون الحدث منتهياً وقت الحديث عن المستقبل؟ نعم → Futur II.",
       commonMistakes: [
-        { wrong: "Ich werde gelernt haben gelernt (تضاعف)", right: "Ich werde gelernt haben.", whyAr: "طبقة واحدة." },
+        { wrong: "Ich werde Deutsch gelernt haben gelernt (تضاعف)", right: "Ich werde Deutsch gelernt haben.", whyAr: "Partizip II يأتي مرة واحدة قبل haben." },
         { wrong: "Er wird gegangen haben (حركة بـ haben)", right: "Er wird gegangen sein.", whyAr: "الحركة: sein." },
         { wrong: "Futur I أم II؟", right: "I = سيفعل. II = سيكون قد فعل", whyAr: "الاكتمال هو الفرق." },
       ],
       relatedRuleComparison: {
         title: "Futur I أم Futur II؟",
-        content: "I: Ich werde lernen (سأتعلم — مستقبل). II: Ich werde gelernt haben (سأكون قد تعلمت — اكتمال في المستقبل). اسأل: هل أتحدث عن الفعل أم اكتماله؟",
+        content: "I: Ich werde lernen (سأتعلم — مستقبل). II: Ich werde Deutsch gelernt haben (سأكون قد تعلمت الألمانية — اكتمال في المستقبل). اسأل: هل أتحدث عن الفعل أم اكتماله؟",
       },
     },
     {
@@ -116,7 +165,7 @@ export const lessonB207: Lesson = {
       explanationAr:
         "المقال الجدلي له هيكل ثابت: 1) المقدمة: عرض الموضوع (Thema + Frage). 2) الجسد: حجج مؤيدة (Pro) ومعارضة (Contra) بأسلوب منظم. 3) الخاتمة: رأيك الشخصي (Meiner Meinung nach...). الروابط: einerseits... andererseits، außerdem، daraus folgt، zusammengefasst.",
       whyAr:
-        "لماذا هيكل صارم؟ لأن الامتحان الألماني (Goethe, TestDaF) يقيّم «البنية» أولاً: مقال بلا مقدمة/خاتمة = درجة منخفضة. الهيكل يعطي القارئ خريطة واضحة — والدرجات تتبعها.",
+        "لماذا هيكل واضح؟ لأن المقال الجدلي يعتمد على ترتيب الحجج، والهيكل يعطي القارئ خريطة واضحة لمتابعة الفكرة.",
       table: {
         title: "هيكل المقال الجدلي",
         columns: ["الجزء", "الوظيفة", "عبارات مفتاحية"],
@@ -135,11 +184,11 @@ export const lessonB207: Lesson = {
         { de: "Zusammenfassend kann man sagen, dass die Zukunft offen ist.", ar: "ختاماً يمكن القول إن المستقبل مفتوح." },
       ],
       comparisonWithArabic:
-        "«في رأيي» = Meiner Meinung nach — مطابقة! و«من ناحية... ومن ناحية أخرى» = einerseits... andererseits. و«خلاصة القول» = Zusammenfassend. المقال الجدلي العربي والألماني متشابهان جداً.",
+        "«في رأيي» = Meiner Meinung nach — تقابل قريب. و«من ناحية... ومن ناحية أخرى» = einerseits... andererseits. و«خلاصة القول» = Zusammenfassend. ويتشابه المقال الجدلي العربي والألماني في البنية العامة.",
       eselsbruecke:
         "«مقدمة → Pro → Contra → خاتمة» — احفظ الهيكل كأربع خطوات. وعباراتك الجاهزة: Meiner Meinung nach... / Zusammenfassend...",
       commonMistakes: [
-        { wrong: "مقال بلا خاتمة", right: "اختم دائماً بـ Meiner Meinung nach + Zusammenfassend", whyAr: "الخاتمة إلزامية للدرجات." },
+        { wrong: "مقال بلا خاتمة", right: "اختم دائماً بـ Meiner Meinung nach + Zusammenfassend", whyAr: "الخاتمة جزء أساسي من المقال الجدلي." },
         { wrong: "رأي واحد فقط (بلا Contra)", right: "اعرض الجانبين ثم رأيك", whyAr: "الجدلية توازن: Pro وContra." },
         { wrong: "عبارات عامية في مقال رسمي", right: "استخدم الروابط الرسمية: außerdem, daraus folgt", whyAr: "الأسلوب الرسمي مطلوب." },
       ],
@@ -160,7 +209,7 @@ export const lessonB207: Lesson = {
           { speaker: "Sami", de: "Ich glaube, man braucht Freiheit und Freundschaft. Meiner Meinung nach ist Glück wichtig.", ar: "أعتقد أن المرء يحتاج الحرية والصداقة. في رأيي السعادة مهمة." },
           { speaker: "Anna", de: "Einerseits ja, andererseits braucht man auch Sicherheit.", ar: "من ناحية نعم، ومن ناحية أخرى يحتاج المرء الأمان أيضاً." },
           { speaker: "Moderator", de: "Bis 2050 wird sich unsere Gesellschaft verändert haben. Was denkt ihr?", ar: "بحلول 2050 سيكون مجتمعنا قد تغير. ما رأيكما؟" },
-          { speaker: "Anna", de: "Die Werte werden sich geändert haben, aber die Grundfragen bleiben.", ar: "ستتغير القيم لكن الأسئلة الأساسية ستبقى." },
+          { speaker: "Anna", de: "Die Werte werden sich verändert haben, aber die Grundfragen bleiben.", ar: "ستتغير القيم لكن الأسئلة الأساسية ستبقى." },
         ],
       },
       {
@@ -220,14 +269,14 @@ export const lessonB207: Lesson = {
     items: [
       { de: "die Philosophie", ar: "الفلسفة", note: "ph = ف: فيلوزوفي" },
       { de: "die These", ar: "الأطروحة", note: "th = ت: تيزِه" },
-      { de: "argumentieren", ar: "يبني حجة", note: "g = غ: أرغومنتيرن" },
-      { de: "das Argument", ar: "الحجة", note: "g = غ: أرغومِنت" },
+      { de: "argumentieren", ar: "يبني حجة", note: "g شديدة (قريبة من ج): أرجومنتيرن" },
+      { de: "das Argument", ar: "الحجة", note: "g شديدة: أرجومِنت" },
       { de: "die Erörterung", ar: "المقال الجدلي", note: "ö + r: إر-أُورتِرونغ" },
-      { de: "die Gesellschaft", ar: "المجتمع", note: "sch = ش: غِزِلشافت" },
+      { de: "die Gesellschaft", ar: "المجتمع", note: "g شديدة، وsch = ش: جِزِلشافت" },
     ],
-    tip: "Philosophie = فيلوزوفي — ph تُنطق ف دائماً (من اليونانية). وThese = تيزِه — th تُنطق ت.",
+    tip: "Philosophie = فيلوزوفي — ph تُنطق ف (من أصل يوناني). وThese = تيزِه — th تُنطق ت.",
     shadowing: [
-      { de: "Bis 2030 werde ich gelernt haben.", ar: "بحلول 2030 سأكون قد تعلمت.", tip: "Futur II: werde ... gelernt haben" },
+      { de: "Bis 2030 werde ich Deutsch gelernt haben.", ar: "بحلول 2030 سأكون قد تعلمت الألمانية.", tip: "Futur II: werde ... gelernt haben" },
       { de: "Er wird gegangen sein.", ar: "سيكون قد ذهب.", tip: "Futur II حركة: sein" },
       { de: "Meiner Meinung nach ist das wichtig.", ar: "في رأيي هذا مهم.", tip: "Meiner Meinung nach" },
       { de: "Einerseits..., andererseits...", ar: "من ناحية... ومن ناحية أخرى...", tip: "الروابط الجدلية" },
@@ -249,7 +298,7 @@ export const lessonB207: Lesson = {
       id: "w2",
       type: "fill-blank",
       instructionAr: "أكمل بـ Futur II:",
-      template: "Bis 2030 werde ich Deutsch ___ (gelernt haben/gelernt sein). Er wird gegangen ___ (sein/haben).",
+      template: "Bis 2030 werde ich Deutsch ___. Er wird gegangen ___.",
       blanks: [
         { correct: "gelernt haben", options: ["gelernt haben", "gelernt sein", "gelernt"] },
         { correct: "sein", options: ["sein", "haben", "gehabt"] },
@@ -325,7 +374,7 @@ export const lessonB207: Lesson = {
       id: "e6",
       type: "fill-blank",
       instructionAr: "أكمل بعبارة جدلية:",
-      template: "___ Meinung nach ist das wichtig. (في رأيي) ___, ... andererseits ... (من ناحية)",
+      template: "___ Meinung nach ist das wichtig. (في رأيي) · ___ ist Technik nützlich, andererseits ... (من ناحية)",
       blanks: [
         { correct: "Meiner", options: ["Meiner", "Meine", "Mein"] },
         { correct: "Einerseits", options: ["Einerseits", "Andererseits", "Außerdem"] },
@@ -388,7 +437,7 @@ export const lessonB207: Lesson = {
     culturalNote: {
       title: "الفلسفة الألمانية",
       content:
-        "ألمانيا بلد الفلاسفة: كانط، هيغل، نيتشه، ماركس، هابرماس. و«die Aufklärung» (التنوير) قيمتها الأساسية. والتعبير عن الرأي (Meinungsfreiheit) محمي دستورياً — الرقابة (die Zensur) مرفوضة في القانون الأساسي؛ لكن خطاب الكراهية (Hate Speech) والتحريض (Volksverhetzung) محظوران قانوناً. والألمان يناقشون بجدية: «Wir diskutieren gerne».",
+        "ارتبطت ألمانيا بأسماء فلسفية كبيرة مثل كانط وهيغل ونيتشه وماركس وهابرماس. ويُعد «die Aufklärung» (التنوير) مرجعاً مهماً في الفكر الأوروبي. وحرية التعبير عن الرأي (Meinungsfreiheit) محمية في القانون الأساسي، ولا توجد رقابة مسبقة (die Zensur)؛ لكن التحريض على الكراهية (Volksverhetzung) يُعاقب عليه القانون الجنائي. وعبارة مثل «Wir diskutieren gerne» تعبّر عن ميل شائع للنقاش، لا عن قاعدة لكل شخص.",
     },
   },
 
@@ -437,7 +486,7 @@ export const lessonB207: Lesson = {
       id: "m5",
       type: "fill-blank",
       instructionAr: "أكمل بعبارة:",
-      template: "___ Meinung nach... (في رأيي) ___, andererseits... (من ناحية)",
+      template: "___ Meinung nach... (في رأيي) · ___ ist Technik nützlich, andererseits... (من ناحية)",
       blanks: [
         { correct: "Meiner", options: ["Meiner", "Meine", "Mein"] },
         { correct: "Einerseits", options: ["Einerseits", "Andererseits", "Außerdem"] },
@@ -481,7 +530,7 @@ export const lessonB207: Lesson = {
           speakerAr: "ماذا تعني السعادة لك؟",
           options: [
             { de: "Für mich ist Glück weniger ein Ziel als ein Zustand. Es entsteht in Momenten der Verbundenheit und Dankbarkeit, nicht durch materiellen Besitz.", ar: "بالنسبة لي السعادة ليست هدفاً بقدر ما هي حالة. تنشأ في لحظات التواصل والامتنان، لا بالملكية المادية.", best: true, replyDe: "Eine tiefe und reflektierte Antwort. Hat sich deine Sichtweise verändert?", replyAr: "إجابة عميقة وتأملية. هل تغيرت نظرتك؟" },
-            { de: "Glück ist Geld, ganz einfach.", ar: "السعادة هي المال، ببساطة.", best: false, replyDe: "Die Forschung zeigt, dass Geld nur bis zu einem gewissen Punkt glücklich macht.", replyAr: "يُظهر البحث أن المال يسعد فقط حتى حد معين." },
+            { de: "Glück ist Geld, ganz einfach.", ar: "السعادة هي المال، ببساطة.", best: false, replyDe: "Manche Studien deuten darauf hin, dass Geld das Glücksgefühl nur bis zu einem gewissen Punkt steigert.", replyAr: "تشير بعض الدراسات إلى أن المال يزيد الشعور بالسعادة حتى حد معين فقط." },
           ],
         },
         {
