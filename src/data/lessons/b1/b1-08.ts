@@ -14,10 +14,65 @@ export const lessonB108: Lesson = {
     "التقنية في الحياة اليومية، الروابط المزدوجة (nicht nur... sondern auch, sowohl... als auch, weder... noch, entweder... oder, je... desto)، والمستقبل (Futur I) مع werden.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann über Technik sprechen.", ar: "أن أتحدث عن التقنية والرقمنة وإيجابياتها وسلبياتها." },
-    { id: "z2", de: "Ich kann die zweiteiligen Konnektoren benutzen.", ar: "أن أستخدم الروابط المزدوجة: ليس فقط... بل أيضاً، إما... أو..." },
-    { id: "z3", de: "Ich kann das Futur I bilden: werden + Infinitiv.", ar: "أن أصوغ المستقبل: سوف + الفعل." },
-      { id: "z4", de: "Ich kann über die Vor- und Nachteile der Digitalisierung diskutieren.", ar: "أن أناقش إيجابيات وسلبيات الرقمنة." },
+    {
+      id: "z1",
+      de: "Ich kann zwei Gespräche über Technik und technische Entscheidungen verstehen und die Fragen dazu beantworten.",
+      ar: "أن أفهم حوارين عن التقنية والقرارات التقنية وأجيب عن تفاصيلهما.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q1", "q3"],
+        taskIds: ["listening:l1:q1", "listening:l2:q3"],
+        labelAr: "أجيب صحيحاً عن q1 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann die Konnektoren nicht nur ... sondern auch, sowohl ... als auch, weder ... noch und entweder ... oder richtig verwenden.",
+      ar: "أن أستخدم الروابط المزدوجة (ليس فقط... بل أيضاً، كلاهما... و، لا... ولا، إما... أو) في موضعها الصحيح.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e2", "e6", "e9", "m2", "m5", "w2"],
+        taskIds: [
+          "practice:b1-08:e2",
+          "practice:b1-08:e6",
+          "practice:b1-08:e9",
+          "mini-test:b1-08:m2",
+          "mini-test:b1-08:m5",
+          "writing:b1-08:w2",
+        ],
+        labelAr: "أجيب صحيحاً عن تمارين الروابط المزدوجة (e2 وe6 وe9 وm2 وm5 وw2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann das Futur I mit werden und einem Infinitiv am Satzende bilden.",
+      ar: "أن أكوّن المستقبل (Futur I) بـ werden والمصدر في آخر الجملة.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e1", "e4", "e5", "e7", "m1", "m4", "w1"],
+        taskIds: [
+          "practice:b1-08:e1",
+          "practice:b1-08:e4",
+          "practice:b1-08:e5",
+          "practice:b1-08:e7",
+          "mini-test:b1-08:m1",
+          "mini-test:b1-08:m4",
+          "writing:b1-08:w1",
+        ],
+        labelAr: "أجيب صحيحاً عن تمارين المستقبل (e1 وe4 وe5 وe7 وm1 وm4 وw1)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+      },
+    },
+      {
+      id: "z4",
+      de: "Ich kann Vor- und Nachteile mit einerseits ... andererseits gegenüberstellen und eine Argumentation im Gespräch verstehen.",
+      ar: "أن أفهم حجة في حوار عن مخاطر التقنية، وأوازن بين المزايا والمخاطر بـ einerseits... andererseits.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q2", "e11"],
+        taskIds: ["listening:l1:q2", "practice:b1-08:e11"],
+        labelAr: "أجيب صحيحاً عن q2 بعد الاستماع إلى l1، وأكمل e11 بالرابط الصحيح. كشف النص لا يُحتسب أداءً.",
+      },
+    },
   ],
   einfuehrung: {
     motivatingQuestionAr:
@@ -51,8 +106,8 @@ export const lessonB108: Lesson = {
       id: "r2",
       type: "multiple-choice",
       instructionAr: "مراجعة من B1 (درس b1-03 — البيئة والمناخ): اختر المجهول:",
-      questionDe: "Das Haus ___ gebaut. (يُبنى)",
-      options: ["wird", "wurde", "ist", "war"],
+      questionDe: "Das Haus ___ gerade gebaut. (يُبنى الآن)",
+      options: ["wird", "wurde", "wirst", "werde"],
       correctIndex: 0,
       explanation: "مجهول مضارع (درس البيئة).",
       errorType: "grammar",
@@ -105,11 +160,11 @@ export const lessonB108: Lesson = {
       commonMistakes: [
         { wrong: "Ich werde morgen lernen werde. (تضاعف)", right: "Ich werde morgen lernen.", whyAr: "werden مرة واحدة + مصدر في النهاية." },
         { wrong: "Ich werde lerne (مصدر أم تصريف؟)", right: "Ich werde lernen (مصدر).", whyAr: "بعد werden: Infinitiv دائماً." },
-        { wrong: "werde أم wirst؟", right: "werde مع ich، wirst مع du", whyAr: "سلم werden: werde-wirst-wird." },
+        { wrong: "Ich wirst lernen.", right: "Ich werde lernen.", whyAr: "مع ich تكون الصيغة werde، ومع du تكون wirst." },
       ],
       relatedRuleComparison: {
         title: "Futur أم Präsens + ظرف؟",
-        content: "كلاهما للمستقبل: Ich lerne morgen (مضارع + غداً — عامي). Ich werde morgen lernen (رسمي/توقع). في المحادثة المضارع شائع — وفي الكتابة الرسمية المستقبل.",
+        content: "كلاهما يعبّر عن المستقبل: Ich lerne morgen (المضارع مع ظرف زمن، شائع في المحادثة اليومية). Ich werde morgen lernen (المستقبل، ويُستعمل كثيراً للتوقع والوعد والنية). لا تُعد أي منهما خطأً.",
       },
     },
     {
@@ -117,9 +172,9 @@ export const lessonB108: Lesson = {
       titleAr: "الروابط المزدوجة (Zweiteilige Konnektoren)",
       titleDe: "nicht nur ... sondern auch, weder ... noch, entweder ... oder",
       explanationAr:
-        "الروابط المزدوجة تربط جزأين متوازيين: nicht nur... sondern auch (ليس فقط... بل أيضاً)، sowohl... als auch (كلاهما)، weder... noch (لا... ولا)، entweder... oder (إما... أو)، je... desto (كلما... كلما). لا تغير ترتيب الفعل (جملة عادية).",
+        "الروابط المزدوجة تربط جزأين متوازيين: nicht nur... sondern auch (ليس فقط... بل أيضاً)، sowohl... als auch (كلاهما)، weder... noch (لا... ولا)، entweder... oder (إما... أو)، je... desto (كلما... كلما). معظمها لا يغيّر ترتيب الفعل في الجملة الرئيسية؛ أما je... desto فيأتي بعد desto فعل مصرّف قبل الفاعل (desto besser wirst du).",
       whyAr:
-        "لماذا «مزدوجة»؟ لأنها تمسك طرفين: إما هذا أو ذاك. والألمانية تضع «فاصلة» بينهما غالباً. هذه الروابط تجعل تعبيرك دقيقاً ومتوازناً — علامة مستوى B1.",
+        "لماذا «مزدوجة»؟ لأنها تمسك طرفين معاً: هذا وذاك، أو لا هذا ولا ذاك. وهي تجعل التعبير أدق وأكثر توازناً.",
       table: {
         title: "الروابط المزدوجة",
         columns: ["الرابط", "المعنى", "مثال"],
@@ -141,17 +196,17 @@ export const lessonB108: Lesson = {
         { de: "Einerseits ist das Smartphone praktisch, andererseits kostet es viel Zeit.", ar: "من ناحية الهاتف الذكي عملي، ومن ناحية أخرى يكلّف وقتاً كثيراً." },
       ],
       comparisonWithArabic:
-        "«ليس فقط... بل أيضاً» = nicht nur... sondern auch — مطابقة تامة! «إما... أو» = entweder... oder، «لا... ولا» = weder... noch. والروابط العربية نفسها تماماً.",
+        "«ليس فقط... بل أيضاً» = nicht nur... sondern auch؛ «إما... أو» = entweder... oder؛ «لا... ولا» = weder... noch. تتطابق هذه الروابط في المعنى مع العربية.",
       eselsbruecke:
-        "«الأربعة التوأم»: nicht nur-sondern auch، sowohl-als auch، weder-noch، entweder-oder. احفظها كثنائيات متلاصقة — ولا تفرقها أبداً.",
+        "«الأربعة التوأم»: nicht nur-sondern auch، sowohl-als auch، weder-noch، entweder-oder. احفظها كثنائيات متلاصقة.",
       commonMistakes: [
-        { wrong: "nicht nur... sondern auch أم sondern؟", right: "بعد nicht nur يأتي sondern auch (وليس sondern وحدها)", whyAr: "الزوج كامل: nicht nur... sondern auch." },
-        { wrong: "weder... noch (لا... ولا) — النفي المزدوج مقصود هنا", right: "weder... noch صحيحة بمعنى لا... ولا", whyAr: "هنا النفي المزدوج مطلوب (عكس القاعدة العامة)." },
-        { wrong: "je... desto مع ترتيب خاطئ", right: "Je + جملة + desto + جملة: Je mehr... desto besser", whyAr: "كلما... كلما: جزآن متوازيان." },
+        { wrong: "Er spricht nicht nur Deutsch und auch Englisch.", right: "Er spricht nicht nur Deutsch, sondern auch Englisch.", whyAr: "الزوج الصحيح: nicht nur... sondern auch، وليس und auch." },
+        { wrong: "Ich habe weder Zeit oder Geld.", right: "Ich habe weder Zeit noch Geld.", whyAr: "weder يقابله noch، وليس oder." },
+        { wrong: "Je mehr du übst, desto besser du wirst.", right: "Je mehr du übst, desto besser wirst du.", whyAr: "بعد desto يأتي الفعل المصرّف قبل الفاعل." },
       ],
       relatedRuleComparison: {
         title: "entweder... oder أم oder؟",
-        content: "oder = أو (بسيطة). entweder... oder = إما... أو (مشددة الاختيار). الأولى محايدة، الثانية حاسمة: إما هذا أو ذاك.",
+        content: "oder = أو. أما entweder... oder فيُستعمل للاختيار بين بديلين: إما هذا أو ذاك.",
       },
     },
   ],
@@ -228,10 +283,10 @@ export const lessonB108: Lesson = {
       { de: "der Computer", ar: "الحاسوب", note: "كلمة إنجليزية: كومپيوتِر" },
       { de: "digital", ar: "رقمي", note: "g = غ: ديغيتال" },
       { de: "die Entwicklung", ar: "التطور", note: "w = ڤ: إنت-ڤيكلونغ" },
-      { de: "die Intelligenz", ar: "الذكاء", note: "z في النهاية = تس (لا tz) + g = غ شديدة: إنتِليغِنتس" },
-      { de: "die Zukunft", ar: "المستقبل", note: "z = تس (لا يوجد ch) + u الأولى طويلة والثانية قصيرة: تسووكونفت" },
+      { de: "die Intelligenz", ar: "الذكاء", note: "z = تس، وg = غ: إنتِليغِنتس" },
+      { de: "die Zukunft", ar: "المستقبل", note: "z = تس، u الأولى طويلة والثانية قصيرة، k = ك: تسووكونفت" },
     ],
-    tip: "Zukunft = تسوكونفت — Z تس + ch خ. كلمة المستقبل نفسها صعبة النطق — أتقنها!",
+    tip: "Zukunft = تسوكونفت — Z = تس، والنهاية -ft = فت. انتبه إلى u القصيرة في المقطع الثاني.",
     shadowing: [
       { de: "Ich werde morgen lernen.", ar: "سأتعلم غداً.", tip: "werde lernen — المستقبل" },
       { de: "Die Technik wird sich ändern.", ar: "ستتغير التقنية.", tip: "wird sich ändern" },
@@ -289,7 +344,7 @@ export const lessonB108: Lesson = {
     {
       id: "e2",
       type: "multiple-choice",
-      instructionAr: "اختر الرابط المزدوج:",
+      instructionAr: "اختر الرابط المزدوج (لا وقت ولا مال):",
       questionDe: "Ich habe ___ Zeit ___ Geld.",
       options: ["weder ... noch", "nicht nur ... sondern auch", "entweder ... oder", "sowohl ... als auch"],
       correctIndex: 0,
@@ -321,7 +376,7 @@ export const lessonB108: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "افحص الجملة وصحّح الخطأ الوحيد فيها.",
       wrongSentence: "Ich wird morgen Deutsch lernen.",
       wrongWord: "wird",
       correctWord: "werde",
@@ -348,7 +403,7 @@ export const lessonB108: Lesson = {
       type: "transformation",
       instructionAr: "حوّل إلى المستقبل:",
       prompt: "Ich lerne Deutsch. → (سأتعلم غداً)",
-      acceptedAnswers: ["Ich werde morgen Deutsch lernen", "Ich werde Deutsch lernen"],
+      acceptedAnswers: ["Ich werde morgen Deutsch lernen"],
       sampleAnswer: "Ich werde morgen Deutsch lernen.",
       explanation: "المضارع → werden + مصدر.",
       errorType: "grammar",
@@ -367,12 +422,12 @@ export const lessonB108: Lesson = {
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "افحص الجملة وصحّح الخطأ الوحيد فيها.",
       wrongSentence: "Ich habe entweder Zeit noch Geld.",
       wrongWord: "entweder",
       correctWord: "weder",
       options: ["weder", "entweder", "sowohl", "nicht nur"],
-      explanation: "noch يقابله weder لا entweder: weder ... noch (نفي مزدوج). entweder يقابله oder.",
+      explanation: "الزوج الصحيح لـ«لا... ولا» هو weder ... noch. أما entweder فيُستعمل مع oder للاختيار.",
       errorType: "grammar",
     },
     {
@@ -400,8 +455,8 @@ export const lessonB108: Lesson = {
   fehlerUndTipps: {
     mistakes: [
       { wrong: "Ich werde morgen lernen werde.", right: "Ich werde morgen lernen.", whyAr: "werden مرة واحدة." },
-      { wrong: "nicht weder (نفي مزدوج خاطئ مع weder)", right: "weder... noch وحدها", whyAr: "weder تحمل النفي." },
-      { wrong: "je... desto بترتيب خاطئ", right: "Je + جملة، desto + جملة", whyAr: "كلما... كلما متوازيان." },
+      { wrong: "Ich habe nicht weder Zeit noch Geld.", right: "Ich habe weder Zeit noch Geld.", whyAr: "weder تحمل النفي، فلا تُضاف nicht معها." },
+      { wrong: "Je mehr du übst, desto besser du wirst.", right: "Je mehr du übst, desto besser wirst du.", whyAr: "بعد desto يأتي الفعل المصرّف قبل الفاعل." },
     ],
     eselsbruecken: [
       "«werden + مصدر = سوف» — الاستخدام الثالث لـ werden.",
@@ -410,7 +465,7 @@ export const lessonB108: Lesson = {
     culturalNote: {
       title: "الرقمنة في ألمانيا",
       content:
-        "ألمانيا متقدمة تقنياً لكن بعض الإجراءات ما زالت ورقية! «Digitalisierung» (الرقمنة) موضوع نقاش ساخن. والخصوصية («Datenschutz») مقدسة قانونياً. وعبارة شائعة: «Ich habe mein Handy vergessen» — كم مرة تسمعها؟",
+        "تطبّق ألمانيا، مثل بقية الاتحاد الأوروبي، قواعد حماية البيانات DSGVO منذ 25 مايو 2018. أما الإدارة فما زالت متأخرة عن أهدافها: كان الهدف أن تكون الخدمات الإدارية متاحة إلكترونياً بحلول نهاية 2022، ولم يتحقق ذلك بعد، ولا تزال كثير من الإجراءات تُنجز ورقياً أو بالفاكس.",
     },
   },
 
@@ -447,7 +502,7 @@ export const lessonB108: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "افحص الجملة وصحّح الخطأ الوحيد فيها.",
       wrongSentence: "Ich werde morgen lerne.",
       wrongWord: "lerne",
       correctWord: "lernen",
