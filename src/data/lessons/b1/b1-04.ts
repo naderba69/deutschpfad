@@ -86,6 +86,12 @@ export const lessonB104: Lesson = {
       correctIndex: 0,
       explanation: "مع ich: werde (درس الطقس).",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«wirst» مع du، ولا يناسب ich.",
+        "«wird» مع er/sie/es، ولا يناسب ich.",
+        "«werden» للجمع أو sie، ولا يناسب ich.",
+      ],
     },
     {
       id: "r2",
@@ -96,6 +102,12 @@ export const lessonB104: Lesson = {
       correctIndex: 0,
       explanation: "مجهول مضارع: wird gebaut (درس البيئة).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wurde» صيغة الماضي، والجملة في المضارع (يُبنى).",
+        "«wirst» مع du، ولا يناسب الفاعل das Haus.",
+        "«werden» للجمع، والفاعل هنا مفرد.",
+      ],
     },
     {
       id: "r3",
@@ -220,6 +232,12 @@ export const lessonB104: Lesson = {
         correctIndex: 0,
         explanation: "قال سامي: Ich würde ein Haus am Strand kaufen und reisen.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«eine Firma gründen» لم يذكرها سامي كأول ما سيفعله.",
+          "«ein Auto kaufen» لم يرد في جوابه عن المال.",
+          "«spenden» لم يذكرها سامي.",
+        ],
       },
       {
         id: "q2",
@@ -232,6 +250,12 @@ export const lessonB104: Lesson = {
         correctIndex: 0,
         explanation: "قالت: Ich würde eine Stiftung für Bildung gründen.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«eine Firma» مكررة وعامة، ولم تذكر المتحدثة هذا الخيار.",
+          "«einen Verein» لم تذكره فراو فيبر.",
+          "«eine Schule» لم تذكرها فراو فيبر.",
+        ],
       },
       {
         id: "q3",
@@ -244,6 +268,12 @@ export const lessonB104: Lesson = {
         correctIndex: 0,
         explanation: "قال كريم: Ich würde ein Wochenende ohne Handy machen!",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«mehr arbeiten» عكس ما يقترحه كارِم لصديقته.",
+          "«Urlaub machen» لم يذكره كارم في النص.",
+          "«sportlich werden» لم يذكره كارم في النص.",
+        ],
       },
     ],
   },
@@ -313,6 +343,12 @@ export const lessonB104: Lesson = {
       correctIndex: 0,
       explanation: "الشرط غير الواقعي: hätte.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«habe» مضارع، والجملة شرط غير واقعي تحتاج إلى Konjunktiv II.",
+        "«hatte» ماضٍ، لا يناسب الشرط غير الواقعي.",
+        "«haben» مصدر، ولا يناسب الجملة.",
+      ],
     },
     {
       id: "e2",
@@ -323,6 +359,12 @@ export const lessonB104: Lesson = {
       correctIndex: 0,
       explanation: "würde + المصدر في النهاية.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«werde reisen» تعبّر عن المستقبل، ولا تعبّر عن الرغبة.",
+        "«reise würde» ترتيب خاطئ للكلمات.",
+        "«würde gereist» صيغة خاطئة؛ الفعل reisen لا يحتاج Partizip II هنا.",
+      ],
     },
     {
       id: "e3",
@@ -390,6 +432,12 @@ export const lessonB104: Lesson = {
       correctIndex: 0,
       explanation: "Könnten = صيغة مهذبة من können.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«هل تريدون التكرار؟» تقابل Wollen Sie...، وليست المعنى المطلوب.",
+        "«لماذا تكررون؟» تسأل عن السبب، وليس طلب التكرار.",
+        "«متى تكررون؟» تسأل عن الوقت، وليس طلب التكرار.",
+      ],
     },
     {
       id: "e9",
@@ -439,6 +487,12 @@ export const lessonB104: Lesson = {
       correctIndex: 0,
       explanation: "الافتراض: wäre.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«bin» مضارع، والجملة شرط غير واقعي تحتاج Konjunktiv II.",
+        "«war» ماضٍ، لا يناسب الشرط غير الواقعي.",
+        "«werde» تعبّر عن المستقبل، ولا تناسب الشرط.",
+      ],
     },
     {
       id: "m2",
@@ -449,6 +503,12 @@ export const lessonB104: Lesson = {
       correctIndex: 0,
       explanation: "würde + Infinitiv.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«werde ... lesen» تعبّر عن المستقبل، ولا تعبّر عن الرغبة.",
+        "«würde ... gelesen» تستعمل Partizip II مع الفعل lesen، ولا يناسب الجملة.",
+        "«würde ... lese» ترتيب وصيغة غير صحيحين، والمصدر يأتي في آخر الجملة.",
+      ],
     },
     {
       id: "m3",
