@@ -38,6 +38,11 @@ export const A1_DIALOGUES: DailyDialogue[] = [
         { text: "Sara", ar: "سارة", correct: false, explanation: "لا — سارة قالتها أولاً." },
         { text: "Der Kellner", ar: "النادل", correct: false, explanation: "لا نادل في الحوار." },
       ]},
+      { de: "Woher kommt Thomas?", ar: "من أين توماس؟", options: [
+        { text: "Aus Tunesien", ar: "من تونس", correct: false, explanation: "لا — هذا بلد سارة." },
+        { text: "Aus Berlin", ar: "من برلين", correct: true, explanation: "نعم — «Ich komme aus Deutschland, aus Berlin»." },
+        { text: "Aus Wien", ar: "من فيينا", correct: false, explanation: "لا — لم تذكر المدينة النمساوية." },
+      ]},
     ],
     keyVocab: [
       { de: "ich heiße", ar: "اسمي" },
@@ -78,6 +83,11 @@ export const A1_DIALOGUES: DailyDialogue[] = [
         { text: "Guten Morgen", ar: "صباح الخير", correct: false, explanation: "لا — هذه تحية صباحية." },
         { text: "Auf Wiedersehen", ar: "إلى اللقاء", correct: false, explanation: "لا — قال شكراً." },
       ]},
+      { de: "Was isst der Gast?", ar: "ماذا يأكل الزبون؟", options: [
+        { text: "Eine Pizza", ar: "بيتزا", correct: false, explanation: "لا — لم يطلب بيتزا." },
+        { text: "Ein Brötchen", ar: "لفافة خبز", correct: false, explanation: "لا — طلب كعكة." },
+        { text: "Ein Stück Kuchen", ar: "قطعة كعك", correct: true, explanation: "نعم — «ein Stück Kuchen»." },
+      ]},
     ],
     keyVocab: [
       { de: "Ich möchte … bitte", ar: "أريد … من فضلك" },
@@ -112,6 +122,11 @@ export const A1_DIALOGUES: DailyDialogue[] = [
         { text: "Brot und Milch", ar: "خبزاً وحليباً", correct: true, explanation: "صحيح — الاثنان معاً." },
         { text: "Nur Brot", ar: "خبزاً فقط", correct: false, explanation: "لا — أخذ الاثنين." },
         { text: "Nur Milch", ar: "حليباً فقط", correct: false, explanation: "لا — أخذ الاثنين." },
+      ]},
+      { de: "Was nimmt der Kunde?", ar: "ماذا يأخذ الزبون؟", options: [
+        { text: "Das Brot und die Milch", ar: "الخبز والحليب", correct: true, explanation: "نعم — «Ich nehme das Brot und die Milch»." },
+        { text: "Nur die Milch", ar: "الحليب فقط", correct: false, explanation: "لا — أخذ الخبز أيضاً." },
+        { text: "Ein Kilo Äpfel", ar: "كيلوغراماً من التفاح", correct: false, explanation: "لا — لم يذكر التفاح." },
       ]},
     ],
     keyVocab: [
@@ -148,6 +163,11 @@ export const A1_DIALOGUES: DailyDialogue[] = [
         { text: "Lehrerin", ar: "معلمة", correct: false, explanation: "لا — الأب معلم." },
         { text: "Ärztin? Nein, Köchin", ar: "لا، طباخة", correct: false, explanation: "لا — طبيبة." },
       ]},
+      { de: "Wie viele Brüder hat Paul?", ar: "كم أخاً لبول؟", options: [
+        { text: "Keinen Bruder", ar: "لا أخ", correct: false, explanation: "لا — قال إن لديه أخاً." },
+        { text: "Einen Bruder", ar: "أخ واحد", correct: true, explanation: "نعم — «einen Bruder und eine Schwester»." },
+        { text: "Zwei Brüder", ar: "أخوان", correct: false, explanation: "لا — ذكر أخاً واحداً فقط." },
+      ]},
     ],
     keyVocab: [
       { de: "die Geschwister", ar: "الإخوة" },
@@ -182,6 +202,11 @@ export const A1_DIALOGUES: DailyDialogue[] = [
         { text: "Um drei Uhr", ar: "في الثالثة", correct: true, explanation: "صحيح — «um drei Uhr»." },
         { text: "Um zwei Uhr", ar: "في الثانية", correct: false, explanation: "لا — الثالثة." },
         { text: "Um vier Uhr", ar: "في الرابعة", correct: false, explanation: "لا — الثالثة." },
+      ]},
+      { de: "Was sagt die Person, als sie noch Zeit hat?", ar: "ماذا يقول الشخص عندما يكون لديه وقت؟", options: [
+        { text: "Ich habe keine Zeit.", ar: "ليس لدي وقت.", correct: false, explanation: "لا — قال العكس." },
+        { text: "Perfekt, ich habe noch Zeit.", ar: "ممتاز، ما زال لدي وقت.", correct: true, explanation: "نعم — هذه جملته." },
+        { text: "Es ist schon drei Uhr.", ar: "الساعة الثالثة بالفعل.", correct: false, explanation: "لا — هذه معلومة وليست رأيه في وقته." },
       ]},
     ],
     keyVocab: [
@@ -218,6 +243,11 @@ export const A1_DIALOGUES: DailyDialogue[] = [
         { text: "10 Euro", ar: "10 يورو", correct: false, explanation: "لا — 15." },
         { text: "20 Euro", ar: "20 يورو", correct: false, explanation: "لا — 15." },
       ]},
+      { de: "Was sagt der Kunde am Ende?", ar: "ماذا يقول الزبون في النهاية؟", options: [
+        { text: "Das ist zu teuer.", ar: "هذا غالٍ جداً.", correct: false, explanation: "لا — لم يقل ذلك." },
+        { text: "Das passt. Ich nehme es!", ar: "يناسبني. سآخذه!", correct: true, explanation: "نعم — قال ذلك عند الشراء." },
+        { text: "Ich suche eine Hose.", ar: "أبحث عن بنطال.", correct: false, explanation: "لا — كان يبحث عن قميص." },
+      ]},
     ],
     keyVocab: [
       { de: "Ich suche …", ar: "أبحث عن …" },
@@ -252,6 +282,11 @@ export const A1_DIALOGUES: DailyDialogue[] = [
         { text: "Im Stadtzentrum", ar: "في وسط المدينة", correct: true, explanation: "صحيح — «Im Stadtzentrum»." },
         { text: "Am Stadtrand", ar: "في الضواحي", correct: false, explanation: "لا — الوسط." },
         { text: "Im Dorf", ar: "في القرية", correct: false, explanation: "لا — وسط المدينة." },
+      ]},
+      { de: "Ist die Wohnung dunkel?", ar: "هل الشقة مظلمة؟", options: [
+        { text: "Ja, sie ist dunkel.", ar: "نعم، إنها مظلمة.", correct: false, explanation: "لا — قال إنها hell." },
+        { text: "Nein, sie ist hell.", ar: "لا، إنها مشرقة.", correct: true, explanation: "نعم — «Sie ist schön und hell»." },
+        { text: "Das Gespräch sagt nichts darüber.", ar: "لم يذكر الحوار ذلك.", correct: false, explanation: "لا — ذكر الحوار أنها hell." },
       ]},
     ],
     keyVocab: [
@@ -288,6 +323,11 @@ export const A1_DIALOGUES: DailyDialogue[] = [
         { text: "Blumen", ar: "زهوراً", correct: false, explanation: "لا — كعكة." },
         { text: "Ein Geschenk", ar: "هدية", correct: false, explanation: "لا — كعكة." },
       ]},
+      { de: "Wer hat am Samstag Geburtstag?", ar: "من لديه عيد ميلاد يوم السبت؟", options: [
+        { text: "Der Gast", ar: "الضيف", correct: false, explanation: "لا — الضيف يسأل عن الحفل." },
+        { text: "Der Freund", ar: "الصديق", correct: true, explanation: "نعم — «Ich habe am Samstag Geburtstag!»." },
+        { text: "Die Mutter", ar: "الأم", correct: false, explanation: "لا — لم تذكر الأم في الحوار." },
+      ]},
     ],
     keyVocab: [
       { de: "Herzlichen Glückwunsch!", ar: "مبروك!" },
@@ -322,6 +362,11 @@ export const A1_DIALOGUES: DailyDialogue[] = [
         { text: "Fünf Minuten zu Fuß", ar: "خمس دقائق مشياً", correct: true, explanation: "صحيح — «nur fünf Minuten zu Fuß»." },
         { text: "Zehn Minuten mit dem Auto", ar: "عشر دقائق بالسيارة", correct: false, explanation: "لا — مشياً." },
         { text: "Dreißig Minuten", ar: "ثلاثين دقيقة", correct: false, explanation: "لا — خمس دقائق." },
+      ]},
+      { de: "Welcher Weg führt zum Bahnhof?", ar: "ما الطريق إلى المحطة؟", options: [
+        { text: "Links, dann geradeaus", ar: "يساراً ثم مستقيماً", correct: false, explanation: "لا — الاتجاه الصحيح مستقيماً ثم يميناً." },
+        { text: "Geradeaus, dann rechts", ar: "مستقيماً ثم يميناً", correct: true, explanation: "نعم — «Gehen Sie geradeaus, dann rechts»." },
+        { text: "Nach Hause", ar: "إلى البيت", correct: false, explanation: "لا — الوجهة المطلوبة المحطة." },
       ]},
     ],
     keyVocab: [
@@ -358,6 +403,11 @@ export const A1_DIALOGUES: DailyDialogue[] = [
         { text: "5 Euro", ar: "5 يورو", correct: false, explanation: "لا — 9." },
         { text: "12 Euro", ar: "12 يورو", correct: false, explanation: "لا — 9." },
       ]},
+      { de: "Mit welchem Belag ist die Pizza?", ar: "ما الإضافة على البيتزا؟", options: [
+        { text: "Mit Salami", ar: "بسلامي", correct: false, explanation: "لا — طلبها بالجبن." },
+        { text: "Mit Käse", ar: "بالجبن", correct: true, explanation: "نعم — «Mit Käse, bitte»." },
+        { text: "Ohne Käse", ar: "بدون جبن", correct: false, explanation: "لا — طلب الجبن صراحة." },
+      ]},
     ],
     keyVocab: [
       { de: "bestellen", ar: "يطلب" },
@@ -392,6 +442,11 @@ export const A1_DIALOGUES: DailyDialogue[] = [
         { text: "Gute Besserung!", ar: "الشفاء العاجل!", correct: true, explanation: "صحيح — تمني الشفاء." },
         { text: "Guten Appetit!", ar: "بالهناء!", correct: false, explanation: "لا — هذا قبل الأكل." },
         { text: "Auf Wiedersehen!", ar: "إلى اللقاء!", correct: false, explanation: "لا — الشفاء العاجل." },
+      ]},
+      { de: "Was soll die Person tun?", ar: "ماذا يجب أن يفعل الشخص؟", options: [
+        { text: "In die Schule gehen", ar: "أن يذهب إلى المدرسة", correct: false, explanation: "لا — لم يُذكر ذلك." },
+        { text: "Eine Tablette mit Wasser nehmen", ar: "أن يأخذ حبة دواء مع الماء", correct: true, explanation: "نعم — «Nehmen Sie eine Tablette mit Wasser»." },
+        { text: "Das Medikament zurückgeben", ar: "أن يعيد الدواء", correct: false, explanation: "لا — اشترى الدواء." },
       ]},
     ],
     keyVocab: [
@@ -428,6 +483,11 @@ export const A1_DIALOGUES: DailyDialogue[] = [
         { text: "Borussia Dortmund", ar: "بوروسيا دورتموند", correct: false, explanation: "لا — بايرن." },
         { text: "Real Madrid", ar: "ريال مدريد", correct: false, explanation: "لا — بايرن ميونخ." },
       ]},
+      { de: "Wann spielen die beiden zusammen?", ar: "متى يلعبان معاً؟", options: [
+        { text: "Am Montag", ar: "يوم الاثنين", correct: false, explanation: "لا — اقترحت لينا السبت." },
+        { text: "Am Samstag", ar: "يوم السبت", correct: true, explanation: "نعم — «Am Samstag?»." },
+        { text: "Gar nicht", ar: "لا يلعبان", correct: false, explanation: "لا — وافقت لينا على اللعب." },
+      ]},
     ],
     keyVocab: [
       { de: "die Freizeit", ar: "وقت الفراغ" },
@@ -462,6 +522,11 @@ export const A1_DIALOGUES: DailyDialogue[] = [
         { text: "Zwei Nächte", ar: "ليلتين", correct: true, explanation: "صحيح — «Zwei Nächte, bitte»." },
         { text: "Eine Nacht", ar: "ليلة", correct: false, explanation: "لا — ليلتين." },
         { text: "Fünf Nächte", ar: "خمس ليالٍ", correct: false, explanation: "لا — ليلتين." },
+      ]},
+      { de: "Was möchte die Person?", ar: "ماذا يريد الشخص؟", options: [
+        { text: "Ein Taxi bestellen", ar: "أن يطلب سيارة أجرة", correct: false, explanation: "لا — تحدث عن الحجز." },
+        { text: "Ein Zimmer reservieren", ar: "أن يحجز غرفة", correct: true, explanation: "نعم — «Ich möchte ein Zimmer reservieren»." },
+        { text: "Eine Pizza bestellen", ar: "أن يطلب بيتزا", correct: false, explanation: "لا — لم يُذكر ذلك." },
       ]},
     ],
     keyVocab: [
@@ -498,6 +563,11 @@ export const A1_DIALOGUES: DailyDialogue[] = [
         { text: "Die Sonne scheint", ar: "الشمس مشرقة", correct: false, explanation: "لا — غداً مطر." },
         { text: "Es schneit", ar: "تثلج", correct: false, explanation: "لا — مطر وبرودة." },
       ]},
+      { de: "Was braucht die Person wegen der Kälte?", ar: "ماذا يحتاج الشخص بسبب البرد؟", options: [
+        { text: "Einen Badeanzug", ar: "مايوه", correct: false, explanation: "لا — الجو بارد." },
+        { text: "Eine Jacke", ar: "سترة", correct: true, explanation: "نعم — «Dann brauche ich eine Jacke»." },
+        { text: "Ein Eis", ar: "آيس كريم", correct: false, explanation: "لا — لم يذكر ذلك." },
+      ]},
     ],
     keyVocab: [
       { de: "das Wetter", ar: "الطقس" },
@@ -532,6 +602,11 @@ export const A1_DIALOGUES: DailyDialogue[] = [
         { text: "Um zehn Uhr", ar: "في العاشرة", correct: true, explanation: "صحيح — «Um zehn Uhr, Gleis 3»." },
         { text: "Um neun Uhr", ar: "في التاسعة", correct: false, explanation: "لا — العاشرة." },
         { text: "Um elf Uhr", ar: "في الحادية عشرة", correct: false, explanation: "لا — العاشرة." },
+      ]},
+      { de: "Wohin fährt die Person?", ar: "إلى أين يسافر الشخص؟", options: [
+        { text: "Nach Berlin", ar: "إلى برلين", correct: false, explanation: "لا — الوجهة هامبورغ." },
+        { text: "Nach Hamburg", ar: "إلى هامبورغ", correct: true, explanation: "نعم — «Ein Ticket nach Hamburg»." },
+        { text: "Nach Tunis", ar: "إلى تونس", correct: false, explanation: "لا — الوجهة هامبورغ." },
       ]},
     ],
     keyVocab: [
