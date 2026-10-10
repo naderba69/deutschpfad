@@ -20,21 +20,45 @@ export const lessonA102: Lesson = {
       id: "z1",
       de: "Ich kann Familienmitglieder nennen.",
       ar: "أن أسمّي أفراد العائلة بالألمانية (Vater, Mutter, Bruder...).",
+      evidence: {
+        exerciseIds: ["e5", "e17"],
+        taskIds: ["practice:a1-02:e5", "practice:a1-02:e17"],
+        labelAr: "مطابقة كلمات العائلة بمعانيها (e5) ومطابقة المفرد بجمعه (e17)، دون كشف الحل.",
+        completion: "all-correct",
+      },
     },
     {
       id: "z2",
       de: "Ich kann mein/meine im Nominativ passend zum Besitzer und zum Nomen verwenden.",
       ar: "أن أختار جذر أداة الملكية بحسب المالك، وصيغتها بحسب الاسم المملوك في حالة الرفع.",
+      evidence: {
+        exerciseIds: ["e7", "m4"],
+        taskIds: ["practice:a1-02:e7", "mini-test:a1-02:m4"],
+        labelAr: "ملء الفراغات بـ mein أو meine حسب جنس الاسم المملوك (e7 وm4).",
+        completion: "all-correct",
+      },
     },
     {
       id: "z3",
       de: "Ich kann meine Familie vorstellen.",
       ar: "أن أقدّم عائلتي بجمل بسيطة (Das ist mein Vater...).",
+      evidence: {
+        exerciseIds: ["e3", "w2"],
+        taskIds: ["practice:a1-02:e3", "writing:a1-02:w2"],
+        labelAr: "ترتيب جملة تقديم الأب (e3) وملء الفراغات في تقديم العائلة كتابةً (w2).",
+        completion: "all-correct",
+      },
     },
     {
       id: "z4",
       de: "Ich kann fragen: Hast du Geschwister?",
       ar: "أن أسأل عن الإخوة والأخوات: هل لديك إخوة أو أخوات؟",
+      evidence: {
+        exerciseIds: ["e2", "e4"],
+        taskIds: ["practice:a1-02:e2", "practice:a1-02:e4"],
+        labelAr: "فهم سؤال «هل لديك إخوة؟» (e2) وترتيب صيغة السؤال (e4).",
+        completion: "all-correct",
+      },
     },
   ],
 
@@ -151,7 +175,7 @@ export const lessonA102: Lesson = {
       explanationAr:
         "مفردات العائلة تصلح للتدرّب على أدوات الملكية والجمع ووصف أشخاص مألوفين.\n\n**أفراد العائلة:**\nder Vater (الأب) · die Mutter (الأمّ) · der Sohn (الابن) · die Tochter (الابنة) · der Bruder (الأخ) · die Schwester (الأخت) · das Kind (الطفل — اسم محايد نحوياً).\n\n**أسماء جامعة:**\n• **die Eltern** تعني الوالدين وتُستعمل عادةً بصيغة الجمع؛ للفرد نقول Vater أو Mutter أو das Elternteil.\n• **die Geschwister** هي الصيغة الشائعة للإخوة والأخوات معاً. يوجد مفرد das Geschwister في استعمال تخصصي أو سويسري، لكن المتعلم في المستوى الأول يستعمل عادة Bruder أو Schwester عند الحديث عن فرد واحد.\n• **die Großeltern** تعني الجدّين، ويشيع في الكلام اليومي أيضاً Opa وOma.\n\n**تركيب الكلمات والاشتقاق:**\n• في كلمات القرابة، يضيف **Groß‑** معنى الجدّ/الجدّة: Großmutter، Großvater، Großeltern.\n• **der Enkel** هو الحفيد، و**die Enkelin** هي الحفيدة؛ هنا تُستعمل اللاحقة الاشتقاقية ‑in لتكوين اسم مؤنث لشخص. ومن الأزواج الواضحة أيضاً Freund/Freundin وLehrer/Lehrerin. لا تجعل مجرد نهاية الحروف ‑in قاعدة لتحديد جنس كل اسم: فـdas Benzin محايد وder Termin مذكر، والنهاية الكتابية ليست دائماً اللاحقة الاشتقاقية المؤنثة.\n\n**جموع شائعة:**\nder Vater ⟵ die Väter · die Mutter ⟵ die Mütter · der Bruder ⟵ die Brüder · die Tochter ⟵ die Töchter. احفظ هذه الصيغ كما هي. وSchwester تأخذ النهاية ‑n: Schwestern، بينما Sohn يصبح Söhne.\n\n**التقديم:** يُقدَّم الشخص بعبارة Das ist …: Das ist mein Vater / meine Mutter / mein Kind. هنا لا يتغير das بتغيّر الشخص الذي نعرّف به.",
       whyAr:
-        "يقدّم موضوع العائلة مفردات مألوفة وفرصة للتدرّب على التعريف بأشخاص وطرح أسئلة بسيطة. يذكر الوصف الرسمي لاختبار Goethe-Zertifikat A1: Start Deutsch 1 المعلوماتَ الشخصية والعائلة ضمن الموضوعات المألوفة واليومية؛ وهذا لا يضمن سؤالاً بعينه ولا يفرض على المتعلم كشف تفاصيل شخصية. في هذا الدرس تُربط المفردات بأدوات الملكية والجمع ووصف صورة؛ وأي تراكيب من حالات أخرى في النص تظل سياقية ما لم تُشرح صراحةً.",
+        "يقدّم موضوع العائلة مفردات مألوفة وفرصة للتدرّب على التعريف بأشخاص وطرح أسئلة بسيطة. وهي موضوعات يومية مألوفة؛ ولا يحاكي الدرس امتحاناً بعينه، ولا يفرض على المتعلم كشف تفاصيل شخصية. في هذا الدرس تُربط المفردات بأدوات الملكية والجمع ووصف صورة؛ وأي تراكيب من حالات أخرى في النص تظل سياقية ما لم تُشرح صراحةً.",
       table: {
         title: "أفراد العائلة",
         columns: ["ألماني", "عربي", "الجنس"],
@@ -573,7 +597,7 @@ export const lessonA102: Lesson = {
     items: [
       {
         id: "l1",
-        title: "حديث عن العائلة — صوت اصطناعي يقرؤه المتصفح",
+        title: "حديث عن العائلة",
         lines: [
           {
             speaker: "Mona",
@@ -637,7 +661,7 @@ export const lessonA102: Lesson = {
   /* 5) النطق */
   pronunciation: {
     id: "p1",
-    title: "أصوات الأسرة: ch وsch وv",
+    title: "أصوات الأسرة: ch وsch وw",
     items: [
       {
         de: "ich",
@@ -645,7 +669,7 @@ export const lessonA102: Lesson = {
         note: "[ɪç]: احتكاك حنكي خفيف بعد i. لا يطابق الشين [ʃ] ولا الخاء العربية الخلفية [x] تماماً؛ استمع إلى الصوت وقلّده برفق.",
       },
       { de: "Bruder", ar: "الأخ", note: "النطق التقريبي [ˈbʁuːdɐ]؛ u طويلة، وr الأخيرة تختلف باختلاف اللهجة." },
-      { de: "Schwester", ar: "الأخت", note: "[ˈʃvɛstɐ]: sch مثل ش، وe قصيرة [ɛ] لا ياء طويلة؛ v تُنطق قريباً من ڤ." },
+      { de: "Schwester", ar: "الأخت", note: "[ˈʃvɛstɐ]: sch مثل ش، وe قصيرة [ɛ] لا ياء طويلة؛ w تُنطق قريباً من ڤ." },
       { de: "Tochter", ar: "الابنة", note: "[ˈtɔxtɐ]: ch هنا [x]، قريب من الخاء العربية، وo قصيرة." },
       {
         de: "Geschwister",
