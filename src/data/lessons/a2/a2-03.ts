@@ -1760,8 +1760,8 @@ export const lessonA203: Lesson = {
       id: "fc19",
       de: "das Trinkgeld",
       ar: "الإكرامية (تختلف أعرافها؛ يذكر دليل برلين المحلي أنها اختيارية)",
-      example: "Das macht 21,40. – Dreiundzwanzig, bitte.",
-      exampleAr: "الحساب ٢١٫٤٠. — ثلاثة وعشرون من فضلك.",
+      example: "Der Kellner bekommt ein Trinkgeld von zwei Euro.",
+      exampleAr: "يحصل النادل على إكرامية قدرها يورويْن.",
       level: "A2",
     },
     {

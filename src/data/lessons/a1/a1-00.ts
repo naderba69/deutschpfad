@@ -1139,8 +1139,8 @@ export const lessonA100: Lesson = {
     },
     {
       id: "fc14",
-      de: "St- / Sp- في أوّل الكلمة = شت / شپ",
-      ar: "Stadt = شتات، Sport = شپورت",
+      de: "St- / Sp-",
+      ar: "في أوّل الكلمة تُنطق شت / شپ (مثل Stadt وSport)",
       example: "Die Stadt ist schön.",
       exampleAr: "المدينة جميلة.",
       level: "A1",
