@@ -86,6 +86,12 @@ export const lessonB102: Lesson = {
       correctIndex: 0,
       explanation: "Präteritum sein: war (درس المكتب).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«hatte» فعل يملك؛ الجملة تحتاج صيغة sein للحال في الماضي، لذلك war.",
+        "«bin» مضارع، والسياق ماضٍ، فالصيغة الصحيحة war.",
+        "«habe» مضارع مع haben، ولا يناسب الجملة.",
+      ],
     },
     {
       id: "r2",
@@ -96,6 +102,12 @@ export const lessonB102: Lesson = {
       correctIndex: 0,
       explanation: "lesen قوي: habe gelesen (درس السفر).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«bin ... gelesen» تستعمل sein، ولا يناسب الفعل lesen المتعدّي مع مفعول.",
+        "«habe ... gelest» صيغة Partizip II خاطئة؛ الصحيح gelesen.",
+        "«bin ... gelest» جمع خطأ الصيغة مع sein، ولا تصح بأي حال.",
+      ],
     },
     {
       id: "r3",
@@ -232,6 +244,12 @@ export const lessonB102: Lesson = {
         correctIndex: 0,
         explanation: "قال: Ich arbeitete drei Jahre als Programmierer.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Lehrer» معلّم، وهو عمل لم يذكره النص عن سامي.",
+          "«Verkäufer» بائع، وليس عمل سامي في الحوار.",
+          "«Ingenieur» مهندس، وهو ليس العمل الذي ذكره النص.",
+        ],
       },
       {
         id: "q2",
@@ -244,6 +262,12 @@ export const lessonB102: Lesson = {
         correctIndex: 0,
         explanation: "قال: Bevor ich mich bewarb, hatte ich viel recherchiert.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Deutsch gelernt» ليس ما قام به سامي قبل التقديم في النص.",
+          "«ein Buch geschrieben» لم يرد في النص عن سامي.",
+          "«ein Praktikum gemacht» ليس ما ورد قبل التقديم في النص.",
+        ],
       },
       {
         id: "q3",
@@ -256,6 +280,12 @@ export const lessonB102: Lesson = {
         correctIndex: 0,
         explanation: "قالت آنا: Nachdem ich ein Jahr gearbeitet hatte, wurde ich sicherer.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Sie hörte auf» تعني توقفت، وهو ما لم يحدث بعد سنة العمل.",
+          "«Sie wechselte die Firma» لم يذكره النص.",
+          "«Sie ging in Rente» تعني تقاعدت، ولم يحدث ذلك في النص.",
+        ],
       },
     ],
   },
@@ -327,6 +357,12 @@ export const lessonB102: Lesson = {
       correctIndex: 0,
       explanation: "gehen → ging (شاذ).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«geht» مضارع، والسياق ماضٍ، فالصيغة ging.",
+        "«gegangen» Partizip II، ويحتاج إلى فعل مساعد.",
+        "«gehe» مضارع مع ich، والسياق ماضٍ.",
+      ],
     },
     {
       id: "e2",
@@ -337,6 +373,12 @@ export const lessonB102: Lesson = {
       correctIndex: 0,
       explanation: "المنتظم: arbeitete.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«arbeitet» مضارع، والجملة تحتاج الماضي البسيط.",
+        "«gearbeitet» Partizip II، ويحتاج إلى مساعد في الجملة.",
+        "«arbeitte» صيغة خاطئة في الماضي؛ الصحيح arbeitete.",
+      ],
     },
     {
       id: "e3",
@@ -404,6 +446,12 @@ export const lessonB102: Lesson = {
       correctIndex: 0,
       explanation: "die Bewerbung = طلب/تقديم الوظيفة.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«السيرة الذاتية» تقابل Lebenslauf، وليست معنى Bewerbung.",
+        "«مقابلة العمل» تقابل Vorstellungsgespräch، وليست المعنى المطلوب.",
+        "«الراتب» يقابل Gehalt، وليس معنى Bewerbung.",
+      ],
     },
     {
       id: "e9",
@@ -452,6 +500,12 @@ export const lessonB102: Lesson = {
       correctIndex: 0,
       explanation: "kommen → kam.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«kommt» مضارع، والسياق يطلب الماضي البسيط kam.",
+        "«gekommen» Partizip II، ويحتاج إلى مساعد.",
+        "«komme» مضارع مع ich، والسياق ماضٍ.",
+      ],
     },
     {
       id: "m2",
@@ -462,6 +516,12 @@ export const lessonB102: Lesson = {
       correctIndex: 0,
       explanation: "Plusquamperfekt: hatte + gegessen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«hat ... gegessen» صيغة مضارع للمساعد، والجملة تحتاج الماضي التام hatte.",
+        "«war ... gegessen» تستعمل sein، ولا يناسب essen الذي يأخذ haben.",
+        "«hatte ... geessen» صيغة Partizip II خاطئة؛ الصحيح gegessen.",
+      ],
     },
     {
       id: "m3",
