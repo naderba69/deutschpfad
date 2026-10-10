@@ -103,6 +103,12 @@ export const lessonB209: Lesson = {
       correctIndex: 0,
       explanation: "السؤال يُطرح: eine Frage stellen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«treffen» تعني يلتقي، ولا تناسب eine Frage.",
+        "«sagen» تعني يقول، ولا تناسب eine Frage.",
+        "«nehmen» لا تشكّل تعبيراً صحيحاً مع Frage؛ نقول eine Frage stellen.",
+      ],
     },
     {
       id: "r2",
@@ -113,6 +119,12 @@ export const lessonB209: Lesson = {
       correctIndex: 0,
       explanation: "Präteritum: arbeitete (درس العمل B1).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«arbeite» صيغة المضارع، ولا تناسب مدة ماضية محددة.",
+        "«gearbeitet» Partizip II، ولا تناسب الجملة بدون فعل مساعد.",
+        "«arbeitest» صيغة du، ولا تناسب ich.",
+      ],
     },
     {
       id: "r3",
@@ -236,6 +248,12 @@ export const lessonB209: Lesson = {
         correctIndex: 0,
         explanation: "قال سامي: Ich lege großen Wert auf Innovation.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Geld» لم يقل سامي إنه يولي أهمية للمال.",
+          "«Urlaub» لم يقل سامي إنه يولي أهمية للإجازة.",
+          "«Essen» لم يقل سامي إنه يولي أهمية للطعام.",
+        ],
       },
       {
         id: "q2",
@@ -248,6 +266,12 @@ export const lessonB209: Lesson = {
         correctIndex: 0,
         explanation: "قال سامي: Ich stelle meine Erfahrung gern zur Verfügung.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«sein Auto» لم يقل سامي إنه يضع سيارته تحت التصرف.",
+          "«sein Büro» لم يقل سامي إنه يضع مكتبه تحت التصرف.",
+          "«seine Zeit nur» لم يقل سامي ذلك؛ قال إنه يضع خبرته تحت التصرف.",
+        ],
       },
       {
         id: "q3",
@@ -260,6 +284,12 @@ export const lessonB209: Lesson = {
         correctIndex: 0,
         explanation: "قالت منى: Ich stehe sofort zur Verfügung!",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«nächste Woche» لم تقل منى إنها تبدأ الأسبوع القادم.",
+          "«im nächsten Monat» لم تقل منى إنها تبدأ الشهر القادم.",
+          "«nie» تنفي البدء، وهذا عكس ما قالته منى.",
+        ],
       },
     ],
   },
@@ -330,6 +360,12 @@ export const lessonB209: Lesson = {
       correctIndex: 0,
       explanation: "in Betracht ziehen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«stelle» تعني يضع، ولا تناسب in Betracht ziehen.",
+        "«lege» تعني يضع، ولا تناسب in Betracht ziehen.",
+        "«mache» تعني يصنع، ولا تناسب in Betracht ziehen.",
+      ],
     },
     {
       id: "e2",
@@ -340,6 +376,12 @@ export const lessonB209: Lesson = {
       correctIndex: 0,
       explanation: "zur Verfügung stellen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«ziehe» تناسب in Betracht ziehen، ولا تناسب zur Verfügung stellen.",
+        "«lege» تعني يضع، ولا تناسب zur Verfügung stellen.",
+        "«gebe» تعني يعطي، ولا تناسب zur Verfügung stellen.",
+      ],
     },
     {
       id: "e3",
@@ -406,6 +448,12 @@ export const lessonB209: Lesson = {
       correctIndex: 0,
       explanation: "das Anschreiben = خطاب التقديم.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«السيرة الذاتية» تقابل Lebenslauf، وليس Anschreiben.",
+        "«الشهادة» تقابل Zeugnis، وليس Anschreiben.",
+        "«العقد» يقابل Vertrag، وليس Anschreiben.",
+      ],
     },
     {
       id: "e9",
@@ -455,6 +503,12 @@ export const lessonB209: Lesson = {
       correctIndex: 0,
       explanation: "eine Entscheidung treffen هي الصيغة الثابتة، ولا تُستعمل machen مع Entscheidung بهذا المعنى.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«mache» لا تشكّل تعبيراً صحيحاً مع Entscheidung؛ نقول eine Entscheidung treffen.",
+        "«nehme» لا تشكّل تعبيراً صحيحاً مع Entscheidung.",
+        "«gebe» لا تشكّل تعبيراً صحيحاً مع Entscheidung.",
+      ],
     },
     {
       id: "m2",
@@ -465,6 +519,12 @@ export const lessonB209: Lesson = {
       correctIndex: 0,
       explanation: "Wert legen auf.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«stelle» تعني يضع، ولا تناسب Wert legen auf.",
+        "«ziehe» تعني يسحب، ولا تناسب Wert legen auf.",
+        "«mache» تعني يصنع، ولا تناسب Wert legen auf.",
+      ],
     },
     {
       id: "m3",
