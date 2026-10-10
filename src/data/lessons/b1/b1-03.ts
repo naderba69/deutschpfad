@@ -87,6 +87,12 @@ export const lessonB103: Lesson = {
       correctIndex: 0,
       explanation: "مع es: wird (درس الطقس).",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«werde» مع ich، ولا يناسب es.",
+        "«wirst» مع du، ولا يناسب es.",
+        "«werden» مع الجمع أو sie، ولا يناسب الفاعل es.",
+      ],
     },
     {
       id: "r2",
@@ -97,6 +103,12 @@ export const lessonB103: Lesson = {
       correctIndex: 0,
       explanation: "wegen + Genitiv: des Regens (درس التعليم).",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«der» لا تناسب حالة الجر بعد wegen هنا؛ الصيغة الصحيحة des.",
+        "«dem» جر، ولكن الاسم مذكّر في الملكية بعد wegen.",
+        "«den» مفعول به، ولا تناسب wegen.",
+      ],
     },
     {
       id: "r3",
@@ -241,6 +253,12 @@ export const lessonB103: Lesson = {
         correctIndex: 0,
         explanation: "قال سامي: Es werden mehr Bäume gepflanzt.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«mehr Blumen» لم يذكرها النص كما يُزرع.",
+          "«mehr Gemüse» لم يذكره النص.",
+          "«mehr Obst» لم يذكره النص.",
+        ],
       },
       {
         id: "q2",
@@ -253,6 +271,12 @@ export const lessonB103: Lesson = {
         correctIndex: 0,
         explanation: "قالت آنا: Der Müll wird getrennt und recycelt.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«verbrannt» لم يرد في النص عن مصير القمامة.",
+          "«ins Meer geworfen» لا يتوافق مع ما ورد عن الفرز وإعادة التدوير.",
+          "«vergraben» لم يرد في النص ولا يناسب المعنى.",
+        ],
       },
       {
         id: "q3",
@@ -265,6 +289,12 @@ export const lessonB103: Lesson = {
         correctIndex: 0,
         explanation: "قالت منى: Man kann mit dem Fahrrad fahren.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«das Flugzeug» و«das Schiff» و«der Zug» لم تكن المثال الذي ذكرته منى.",
+          "«das Schiff» لم تذكره منى في الحوار.",
+          "«der Zug» لم تذكره منى في الحوار.",
+        ],
       },
       {
         id: "q4",
@@ -277,6 +307,12 @@ export const lessonB103: Lesson = {
         correctIndex: 0,
         explanation: "قال سامي: Ich versuche, weniger Plastik zu kaufen — يحاول شراء بلاستيك أقل.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«mehr Auto zu fahren» عكس ما يحاول سامي فعله.",
+          "«weniger zu schlafen» لم يذكرها سامي.",
+          "«mehr Zucker zu essen» عكس الهدف الصحي الذي ذكره سامي.",
+        ],
       },
     ],
   },
@@ -344,6 +380,12 @@ export const lessonB103: Lesson = {
       correctIndex: 0,
       explanation: "المضارع المجهول: wird gebaut.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wurde» صيغة الماضي، والجملة في المضارع (يُبنى).",
+        "«wirst» مع du، ولا يناسب الفاعل das Haus.",
+        "«werden» للجمع، والفاعل هنا مفرد.",
+      ],
     },
     {
       id: "e2",
@@ -354,6 +396,12 @@ export const lessonB103: Lesson = {
       correctIndex: 0,
       explanation: "الماضي المجهول: wurde gebaut.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wird» مضارع، والسياق ماضٍ مع 1900.",
+        "«wirst» مع du، ولا يناسب الفاعل das Haus.",
+        "«werden» للجمع، والفاعل هنا مفرد.",
+      ],
     },
     {
       id: "e3",
@@ -420,6 +468,12 @@ export const lessonB103: Lesson = {
       correctIndex: 0,
       explanation: "man = المرء/الناس: Man sagt = يقال.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«أقول أن...» تقابل ich sage، وليس Man sagt.",
+        "«قالوا لي أن...» تنقل معنى مختلفاً، فيها متحدث محدد.",
+        "«يجب أن أقول...» تقابل ich muss sagen، وليس Man sagt.",
+      ],
     },
     {
       id: "e9",
@@ -493,6 +547,12 @@ export const lessonB103: Lesson = {
       correctIndex: 0,
       explanation: "مضارع مجهول: wird.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wurde» صيغة الماضي، والجملة في المضارع (يُفصل).",
+        "«wirst» مع du، ولا يناسب الفاعل der Müll.",
+        "«werden» للجمع، والفاعل هنا مفرد.",
+      ],
     },
     {
       id: "m2",
@@ -503,6 +563,12 @@ export const lessonB103: Lesson = {
       correctIndex: 0,
       explanation: "ماضٍ مجهول: wurde geschrieben.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wird» مضارع، والجملة في الماضي مع 2020.",
+        "«wirst» مع du، ولا يناسب الفاعل das Buch.",
+        "«werden» للجمع، والفاعل هنا مفرد.",
+      ],
     },
     {
       id: "m3",
