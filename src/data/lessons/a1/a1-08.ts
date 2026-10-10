@@ -156,6 +156,40 @@ export const lessonA108: Lesson = {
     ],
   },
 
+  review: [
+    {
+      id: "r1",
+      type: "multiple-choice",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-07 — الأعداد من صفر إلى ألف): اختر الكتابة الصحيحة.",
+      questionDe: "Wie sagt man „25“ auf Deutsch?",
+      questionAr: "كيف تكتب 25 بالألمانية؟",
+      options: ["fünfundzwanzig", "fünfzig", "fünfzehn", "zweiundzwanzig"],
+      correctIndex: 0,
+      explanation: "25 = fünfundzwanzig (الوحدات أولاً ثم العشرات).",
+      errorType: "vocabulary",
+    },
+    {
+      id: "r2",
+      type: "fill-blank",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-06 — الفعل الجهازي können): أكمل الجملة.",
+      template: "Ich ___ gut schwimmen.",
+      blanks: [{ correct: "kann", options: ["kann", "kannst", "können", "konnte"] }],
+      explanation: "مع ich: Ich kann gut schwimmen.",
+      errorType: "conjugation",
+    },
+    {
+      id: "r3",
+      type: "error-correction",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-06 — تغيير حرف المد في الفعل): افحص الجملة؛ اختر التصحيح، أو «لا خطأ» إن كانت سليمة.",
+      wrongSentence: "Er essen gern Pizza.",
+      wrongWord: "essen",
+      correctWord: "isst",
+      options: ["isst", "essen", "esse", "ist"],
+      explanation: "مع er يصبح essen إلى isst.",
+      errorType: "conjugation",
+    },
+  ],
+
   theory: [
     {
       id: "t1",

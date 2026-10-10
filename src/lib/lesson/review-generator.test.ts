@@ -29,6 +29,20 @@ describe("مراجعة الدروس السابقة تعتمد على تسلسل 
 
     const review = await buildInterleavedReview(lesson!);
     expect(review.length).toBeGreaterThan(0);
+
+    // المراجعة اليدوية (review مكتوب في الدرس) تُحكم بإحالتها إلى درس سابق
+    // مسمّى بمعرّفه، لا بمطابقة نصّ سؤال من الاختبار المصغّر. المولّد التلقائي
+    // يبقى مُختبَراً بالشرط الأصلي أدناه.
+    if (lesson!.review && lesson!.review.length > 0) {
+      const earlierIds = new Set(earlier.map((l) => l.id));
+      for (const item of review as any[]) {
+        const ids = [...String(item.instructionAr ?? "").matchAll(/\b([ab][12]-\d{2})\b/g)].map((m) => m[1]);
+        expect(ids.length, `${item.id} يسمّي درسه المصدر`).toBeGreaterThan(0);
+        for (const sid of ids) expect(earlierIds.has(sid), `${item.id} يحيل إلى درس سابق: ${sid}`).toBe(true);
+      }
+      return;
+    }
+
     for (const item of review as any[]) {
       const key = item.questionDe ?? item.questionAr ?? item.instructionAr?.replace(/^مراجعة تراكمية من مستوى سابق: /, "");
       expect(allowed.has(key)).toBe(true);

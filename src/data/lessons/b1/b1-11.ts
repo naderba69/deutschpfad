@@ -87,6 +87,40 @@ export const lessonB111: Lesson = {
     ],
   },
 
+  review: [
+    {
+      id: "r1",
+      type: "multiple-choice",
+      instructionAr: "مراجعة منتقاة من B1 (درس b1-02 — الماضي البسيط Präteritum): اختر الشكل الصحيح.",
+      questionDe: "Gestern ___ ich nach Hause.",
+      questionAr: "أمس ذهبت إلى البيت.",
+      options: ["ging", "gehe", "gegangen", "geht"],
+      correctIndex: 0,
+      explanation: "في الماضي البسيط: ich ging.",
+      errorType: "conjugation",
+    },
+    {
+      id: "r2",
+      type: "fill-blank",
+      instructionAr: "مراجعة منتقاة من B1 (درس b1-01 — المفعول بالإضافة Genitiv): أكمل الجملة.",
+      template: "Das ist das Auto ___ Vaters.",
+      blanks: [{ correct: "meines", options: ["meines", "meins", "meinem", "meiner"] }],
+      explanation: "المذكر في الجر بالإضافة ينتهي بـ -es: meines Vaters.",
+      errorType: "case",
+    },
+    {
+      id: "r3",
+      type: "error-correction",
+      instructionAr: "مراجعة منتقاة من B1 (درس b1-07 — جملة الزمن als): افحص الجملة؛ اختر التصحيح، أو «لا خطأ» إن كانت سليمة.",
+      wrongSentence: "Als ich Kind war, spiele ich viel.",
+      wrongWord: "spiele",
+      correctWord: "spielte",
+      options: ["spielte", "spiele", "spielt", "spielen"],
+      explanation: "في جملة الزمن الماضي مع als نستخدم الماضي البسيط: spielte.",
+      errorType: "conjugation",
+    },
+  ],
+
   theory: [
     {
       id: "t1",

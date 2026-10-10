@@ -237,6 +237,40 @@ export const lessonA111: Lesson = {
       { de: "rechts / links", ar: "يمين / يسار" },
     ],
   },
+  review: [
+    {
+      id: "r1",
+      type: "multiple-choice",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-10 — النفي بـ nicht وkein): اختر الكلمة الصحيحة.",
+      questionDe: "Ich habe ___ Auto.",
+      questionAr: "ليست لدي سيارة.",
+      options: ["kein", "nicht", "keine", "keinen"],
+      correctIndex: 0,
+      explanation: "عند النفي للاسم بعد habe نستخدم kein: kein Auto.",
+      errorType: "negation",
+    },
+    {
+      id: "r2",
+      type: "fill-blank",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-04 — حروف الجر مع الداتيف للمكان): أكمل الجملة.",
+      template: "Die Lampe hängt über ___ Sofa.",
+      blanks: [{ correct: "dem", options: ["dem", "den", "der", "die"] }],
+      explanation: "حرف الجر über مع المكان يأخذ الداتيف: über dem Sofa.",
+      errorType: "case",
+    },
+    {
+      id: "r3",
+      type: "error-correction",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-06 — الأمر Imperativ): افحص الجملة؛ اختر التصحيح، أو «لا خطأ» إن كانت سليمة.",
+      wrongSentence: "Gehst geradeaus!",
+      wrongWord: "Gehst",
+      correctWord: "Geh",
+      options: ["Geh", "Gehst", "Gehe", "Gehen"],
+      explanation: "في الأمر لشخص واحد (du) نقول: Geh geradeaus!",
+      errorType: "grammar",
+    },
+  ],
+
   theory: [
     {
       id: "t1",
