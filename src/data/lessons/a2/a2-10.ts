@@ -130,7 +130,7 @@ export const lessonA210: Lesson = {
       blanks: [
         { correct: "mein", options: ["mein", "meine", "meinen"] },
       ],
-      explanation: "Bruder اسم مذكر، ويأتي مسند الخبر بعد sein في حالة Nominativ هنا: mein Bruder. (درس العائلة).",
+      explanation: "Bruder اسم مذكر، والأداة الملكية هنا في حالة Nominativ بعد das ist: mein Bruder. (درس العائلة).",
       errorType: "grammar",
     },
   ],
