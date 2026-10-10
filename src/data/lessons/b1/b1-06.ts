@@ -101,6 +101,12 @@ export const lessonB106: Lesson = {
       correctIndex: 0,
       explanation: "الصفة الخبرية لا تتغير: ist rot (درس الملابس).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«rote» صفة بنهاية مؤنث/جمع، وبعد sein تبقى بلا نهاية.",
+        "«rotes» نهاية محايد، والاسم Hemd مذكّر.",
+        "«roten» نهاية جر أو جمع، لا تناسب الصفة الخبرية بعد sein.",
+      ],
     },
     {
       id: "r2",
@@ -111,6 +117,12 @@ export const lessonB106: Lesson = {
       correctIndex: 0,
       explanation: "Museum محايد → Das (درس المدينة).",
       errorType: "gender",
+      optionExplanations: [
+        undefined,
+        "«Der» أداة المذكر، وMuseum محايد، لذلك لا تصح.",
+        "«Die» أداة المؤنث أو الجمع، ولا تناسب Museum المحايد.",
+        "«Ein» أداة غير معرّفة، والسياق يتحدث عن متحف معروف.",
+      ],
     },
     {
       id: "r3",
@@ -247,6 +259,12 @@ export const lessonB106: Lesson = {
         correctIndex: 0,
         explanation: "قال الدليل: Es zeigt eine kleine Stadt am Fluss.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«einen großen Berg» لم تذكر الدليل جبلاً في وصف اللوحة.",
+          "«ein berühmtes Schloss» لم يُذكر قصر في وصف اللوحة.",
+          "«einen Wald» لم يُذكر غابة في وصف اللوحة.",
+        ],
       },
       {
         id: "q2",
@@ -259,6 +277,12 @@ export const lessonB106: Lesson = {
         correctIndex: 0,
         explanation: "قالت منى: Couscous — طبق تونسي لذيذ.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Schnitzel» طبق ألماني، وليس تونسياً.",
+          "«Käsespätzle» طبق ألماني من المعكرونة والجبن، وليس تونسياً.",
+          "«Currywurst» وجبة ألمانية، وليست الطبق التونسي.",
+        ],
       },
       {
         id: "q3",
@@ -271,6 +295,12 @@ export const lessonB106: Lesson = {
         correctIndex: 0,
         explanation: "قالت آنا: Wir haben viele gute Orchester.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«gute Strände» لم تذكرها آنا في الحوار.",
+          "«gute Wüsten» لم تذكرها آنا في الحوار.",
+          "«gute Berge» لم تذكرها آنا في الحوار.",
+        ],
       },
       {
         id: "q4",
@@ -283,6 +313,12 @@ export const lessonB106: Lesson = {
         correctIndex: 0,
         explanation: "قال كريم: Am Anfang war der Kulturschock schwer — صدمة الثقافة كانت صعبة.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«das Essen» لم يذكره كريم كأصعب شيء في البداية.",
+          "«das Wetter» لم يذكره كريم كأصعب شيء في البداية.",
+          "«die Musik» لم يذكرها كريم كأصعب شيء في البداية.",
+        ],
       },
       {
         id: "q5",
@@ -295,6 +331,12 @@ export const lessonB106: Lesson = {
         correctIndex: 0,
         explanation: "قالت منى: Ich vermisse meine Heimat manchmal sehr.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«das Wetter» لم تذكره منى بالاشتياق في الحوار.",
+          "«die Arbeit» لم تذكرها منى بالاشتياق في الحوار.",
+          "«das Essen» لم تذكره منى بالاشتياق في الحوار.",
+        ],
       },
     ],
   },
@@ -376,6 +418,12 @@ export const lessonB106: Lesson = {
       correctIndex: 0,
       explanation: "محايد مع ein: -es.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«schöne» تناسب الاسم المؤنث، وBild محايد هنا.",
+        "«schönen» تناسب الجر أو المذكر، وBild محايد هنا.",
+        "«schöner» صيغة مقارنة، ولا تناسب الصفة بعد ein.",
+      ],
     },
     {
       id: "e2",
@@ -386,6 +434,12 @@ export const lessonB106: Lesson = {
       correctIndex: 0,
       explanation: "بعد das: -e.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«berühmtes» نهاية محايد، لكن بعد الأداة المعرّفة das تبقى الصفة بنهاية -e.",
+        "«berühmten» نهاية جر أو جمع، لا تناسب الأداة المعرّفة هنا.",
+        "«berühmter» صيغة مقارنة، ولا تناسب الصفة هنا.",
+      ],
     },
     {
       id: "e3",
@@ -452,6 +506,12 @@ export const lessonB106: Lesson = {
       correctIndex: 0,
       explanation: "das Jahrhundert = القرن (100 سنة).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«العام» يقابل Jahr، وليس Jahrhundert.",
+        "«العقد» يقابل Jahrzehnt، وليس Jahrhundert.",
+        "«الألفية» تقابل Jahrtausend، وليس Jahrhundert.",
+      ],
     },
     {
       id: "e9",
@@ -539,6 +599,12 @@ export const lessonB106: Lesson = {
       correctIndex: 0,
       explanation: "محايد مع ein: -es.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«klein» نهاية الصفة بعد ein محايد هي -es، لا -e.",
+        "«kleine» نهاية مؤنث أو جمع، ولا تناسب Haus المحايد بعد ein.",
+        "«kleinen» نهاية جر أو مذكر، لا تناسب Haus المحايد.",
+      ],
     },
     {
       id: "m2",
@@ -549,6 +615,12 @@ export const lessonB106: Lesson = {
       correctIndex: 0,
       explanation: "مؤنث مع die: -e.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«guter» نهاية مذكّر، والاسم Frau مؤنث.",
+        "«gutes» نهاية محايد، والاسم Frau مؤنث.",
+        "«guten» نهاية جمع أو جر، لا تناسب الأداة المعرّفة مع المؤنث هنا.",
+      ],
     },
     {
       id: "m3",
