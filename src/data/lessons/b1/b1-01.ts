@@ -14,19 +14,59 @@ export const lessonB101: Lesson = {
     "مقارنة الأنظمة التعليمية، حالة المضاف إليه (Genitiv) واستخداماتها، والجمل النسبية (Relativsätze) مع der/die/das.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann über Bildung sprechen.", ar: "أن أتحدث عن التعليم والدراسة والتخصصات." },
-    { id: "z2", de: "Ich kann den Genitiv benutzen: das Buch des Lehrers.", ar: "أن أستخدم حالة المضاف إليه (Genitiv): كتاب المعلّم." },
-    { id: "z3", de: "Ich kann Relativsätze bilden: Der Mann, der ...", ar: "أن أبني الجمل النسبية: الرجل الذي..." },
-      { id: "z4", de: "Ich kann über das Bildungssystem in meinem Land sprechen.", ar: "أن أتحدث عن النظام التعليمي في بلدي." },
+    {
+      id: "z1",
+      de: "Ich kann Bildungsbegriffe und Angaben aus einem kurzen Gespräch verstehen.",
+      ar: "أن أفهم مصطلحات التعليم والتخصصات من حوار قصير وأجيب عنها.",
+      evidence: {
+        exerciseIds: ["q1", "q2", "q4"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l1:q4"],
+        labelAr: "أجب صحيحاً عن q1 وq2 وq4 بعد الاستماع إلى الحوار l1 دون كشف النص. كشف التفريغ (listening-transcript) لا يُحتسب أداءً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann den Genitiv in einfachen Wendungen bilden: das Buch des Lehrers.",
+      ar: "أن أستخدم حالة المضاف إليه (Genitiv) في عبارات بسيطة: كتاب المعلّم.",
+      evidence: {
+        exerciseIds: ["e1", "e5", "w1"],
+        taskIds: ["practice:b1-01:e1", "flow-practice:b1-01:e1", "practice:b1-01:e5", "writing:b1-01:w1"],
+        labelAr: "أجب صحيحاً عن e1 (يظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق) وe5 (تصحيح wegen + Genitiv)، واكتب w1 بصحة (جملة كاملة مع des). قراءة جدول t1 لا تُحتسب أداءً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann Relativsätze mit der, die, das und dem bilden.",
+      ar: "أن أكوّن الجمل النسبية بـ der وdie وdas وdem حسب دور الاسم في الجملة.",
+      evidence: {
+        exerciseIds: ["e4", "e6", "m5"],
+        taskIds: ["practice:b1-01:e4", "flow-practice:b1-01:e4", "practice:b1-01:e6", "mini-test:b1-01:m5"],
+        labelAr: "رتّب e4 بصحة (يظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق)، وأكمل e6 (الضمير النسبي في النصب)، وأجب صحيحاً عن m5 (dem بعد helfen وdas فاعلاً) في الاختبار المصغّر. لا يُحتسب قراءة t2 أداءً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann Schulformen und Abschlüsse im deutschen Bildungssystem den passenden Erklärungen zuordnen.",
+      ar: "أن أربط أنواع المدارس والشهادات في النظام التعليمي الألماني بالشرح المناسب لها.",
+      evidence: {
+        exerciseIds: ["e12"],
+        taskIds: ["practice:b1-01:e12"],
+        labelAr: "أكمل مطابقة e12 كاملة عند ظهورها في جلسة التدريب العشوائية. الوساطة (med-b1-01-1) والتفاعل النصي (int-b1-01-1) لا يُحتسبان أداءً في هذا الهدف.",
+        completion: "all-correct",
+      },
+    },
   ],
   einfuehrung: {
     motivatingQuestionAr:
-      "قل بالعربية: «كتاب المعلّم». لاحظت أنك أضفت «الـ» للمعلّم؟ في الألمانية هذه «حالة المضاف» (Genitiv) لها أداة خاصة: das Buch des Lehrers. وهي ثالث الحالات الأربع — وتكاد تكون الأخيرة!",
+      "قل بالعربية: «كتاب المعلّم». لاحظت أنك أضفت «الـ» للمعلّم؟ في الألمانية هذه «حالة المضاف» (Genitiv) لها أداة خاصة: das Buch des Lehrers. وهي الحالة الرابعة والأخيرة في ترتيب الحالات الأربع (Nominativ، Akkusativ، Dativ، Genitiv).",
     motivatingQuestionDe: "Welches Fach studierst du?",
     contextAr:
       "ندخل مرحلة B1 — الأهم في رحلتك: نتعلم Genitiv (المضاف إليه) والجمل النسبية (التي/الذي) — البوابة لفهم النصوص الألمانية الحقيقية.",
     contextDe: "Das Studium der Germanistik ist interessant.",
-    connectionToPreviousAr: "أتقنت Nominativ/Akkusativ/Dativ. اليوم الرابعة: Genitiv — وبعدها تكتمل لوحة الحالات الأربع التي يبنى عليها كل شيء.",
+    connectionToPreviousAr: "أتقنت Nominativ/Akkusativ/Dativ. الآن الحالة الرابعة: Genitiv — وبعدها تكتمل لوحة الحالات الأربع التي يبنى عليها كل شيء.",
     activateVocabulary: [
       { de: "die Ausbildung", ar: "التدريب/التأهيل" },
       { de: "das Studium", ar: "الدراسة الجامعية" },
@@ -52,7 +92,7 @@ export const lessonB101: Lesson = {
       type: "multiple-choice",
       instructionAr: "مراجعة من A2 (درس a2-10 — المدرسة والتعلم): اختر حرف الربط:",
       questionDe: "Ich lerne Deutsch, ___ ich will.",
-      options: ["weil", "dass", "wenn", "ob"],
+      options: ["weil", "dass", "obwohl", "ob"],
       correctIndex: 0,
       explanation: "سبب → weil (درس المدرسة).",
       errorType: "grammar",
@@ -78,7 +118,7 @@ export const lessonB101: Lesson = {
       explanationAr:
         "Genitiv = حالة الملكية (لـ/الخاص بـ). الأدوات: المذكر/المحايد des (+s/es للاسم)، المؤنث der، الجمع der. das Buch des Lehrers (كتاب المعلّم). الأسئلة: wessen? (لمن؟). حروف الجر التي تأخذ Genitiv: wegen (بسبب)، trotz (رغم)، während (خلال)، statt (بدلاً من).",
       whyAr:
-        "لماذا نتعلمها رغم أن الألمان أنفسهم يستخدمونها أقل في الكلام؟ لأنها «علامة المستوى المتوسط»: في الكتابة والرسمية والصحافة Genitiv إلزامية. وبدونها لن تفهم الجمل المكتوبة — وهي ضرورية لامتحان Goethe B1.",
+        "لماذا نتعلمها؟ لأنها شائعة في النص المكتوب والرسمي، ويحتاجها القارئ لفهم الجمل المعقدة. وفي الكلام اليومي كثيراً ما تُستبدل بـ von + Dativ، وهذا ما يوضحه التنبيه المقارن أدناه.",
       table: {
         title: "أدوات Genitiv",
         columns: ["الجنس", "Nominativ", "Genitiv", "مثال"],
@@ -86,7 +126,7 @@ export const lessonB101: Lesson = {
           { label: "مذكر", cells: ["der", "des (+s)", "das Buch des Lehrers"] },
           { label: "محايد", cells: ["das", "des (+s)", "das Ende des Films"] },
           { label: "مؤنث", cells: ["die", "der", "das Haus der Mutter"] },
-          { label: "جمع", cells: ["die", "der (+n)", "die Bücher der Studenten"] },
+          { label: "جمع", cells: ["die", "der", "die Bücher der Studenten"] },
         ],
       },
       examples: [
@@ -99,7 +139,7 @@ export const lessonB101: Lesson = {
       comparisonWithArabic:
         "«كتاب المعلّم» = das Buch des Lehrers. العربية تلحق كسرة أو «الـ» — والألمانية تغير الأداة وتضيف s للاسم. أقرب ترجمة: «كتابٌ للمعلّم» بمعنى الملكية. السؤال wessen? = لمن؟",
       eselsbruecke:
-        "«Genitiv = ويسّن (لمن؟)» — اسأل: لمن هذا الكتاب؟ الجواب: des Lehrers. وتذكّر حروفه الأربعة: wegen-trotz-während-statt (سبب-رغم-خلال-بدلاً من).",
+        "«Genitiv = لمن؟ (wessen)» — اسأل: لمن هذا الكتاب؟ الجواب: des Lehrers. وتذكّر حروف الجر الأربعة: wegen-trotz-während-statt (سبب-رغم-خلال-بدلاً من).",
       commonMistakes: [
         { wrong: "das Buch von dem Lehrer (عامية بدل Genitiv)", right: "das Buch des Lehrers", whyAr: "von + Dativ مقبولة في الكلام لكن الرسمية تحتاج Genitiv." },
         { wrong: "des Lehrer (بدون s)", right: "des Lehrers", whyAr: "الاسم المذكر/المحايد يضيف s في Genitiv: Lehrers." },
@@ -107,7 +147,7 @@ export const lessonB101: Lesson = {
       ],
       relatedRuleComparison: {
         title: "Genitiv أم von؟",
-        content: "في الكلام اليومي: von + Dativ (das Buch von dem Lehrer). في الرسمية والكتابة: Genitiv. أتقن الاثنين: تفهم الاثنين، وتكتب بالرسمي.",
+        content: "في الكلام اليومي: von + Dativ (das Buch von dem Lehrer). في الرسمية والكتابة: Genitiv. أتقن الاثنين: تفهم الاثنين، وتكتب بالرسمي. وقد يُستعمل Dativ بعد بعض حروف الجر مثل wegen وtrotz في الاستعمال اليومي (wegen dem Regen)، وهو ما لا تقبله الصيغة الرسمية هنا.",
       },
     },
     {
@@ -136,7 +176,7 @@ export const lessonB101: Lesson = {
         { de: "Die Universität, in der ich studiere, ist groß.", ar: "الجامعة التي أدرس فيها كبيرة." },
       ],
       comparisonWithArabic:
-        "«الرجل الذي يقف...» — العربية تستخدم «الذي/التي». الألمانية: der/die/das حسب الجنس. والفعل في النهاية: Der Mann, der dort steht (الرجل الذي هناك يقف). نفس فكرة dass.",
+        "«الرجل الذي يقف...» — العربية تستخدم «الذي/التي». الألمانية: der/die/das حسب الجنس. والفعل في النهاية: Der Mann, der dort steht (الرجل الذي هناك يقف).",
       eselsbruecke:
         "«الضمير النسبي = بوصلة الجنس + مؤشر الحالة»: اسأل أولاً: الاسم مذكر/مؤنث/محايد؟ ثم: دوره في الجملة النسبية (فاعل/مفعول/بعد حرف جر)؟ الجمع بينهما يعطيك der/den/dem...",
       commonMistakes: [
@@ -170,10 +210,10 @@ export const lessonB101: Lesson = {
         title: "مقارنة الأنظمة",
         lines: [
           { speaker: "Lehrer", de: "Wie ist das Schulsystem in Tunesien?", ar: "كيف النظام المدرسي في تونس؟" },
-          { speaker: "Mona", de: "Die Schüler gehen neun Jahre zur Schule. Danach können sie studieren.", ar: "يذهب التلاميذ للمدرسة تسع سنوات. بعدها يمكنهم الدراسة." },
+          { speaker: "Mona", de: "Die Schüler gehen neun Jahre in die Grundschule und Mittelschule. Danach besuchen sie vier Jahre die Sekundarschule und machen das Baccalauréat. Dann können sie studieren.", ar: "يذهب التلاميذ تسع سنوات إلى المدرسة الابتدائية والمتوسطة. بعدها يدرسون أربع سنوات في الثانوية ويحصلون على البكالوريا. ثم يمكنهم الدراسة الجامعية." },
           { speaker: "Lehrer", de: "Und das Studium der Medizin?", ar: "ودراسة الطب؟" },
           { speaker: "Mona", de: "Das Studium der Medizin dauert sechs Jahre.", ar: "دراسة الطب تستغرق ست سنوات." },
-          { speaker: "Lehrer", de: "Interessant! In Deutschland ist es ähnlich.", ar: "مثير! في ألمانيا مشابه." },
+          { speaker: "Lehrer", de: "Interessant! In Deutschland beträgt die Regelstudienzeit für Medizin ebenfalls sechs Jahre.", ar: "مثير! في ألمانيا مدة الدراسة النظامية للطب ست سنوات أيضاً." },
         ],
       },
     ],
@@ -207,8 +247,8 @@ export const lessonB101: Lesson = {
         itemId: "l2",
         type: "multiple-choice",
         instructionAr: "اختر الإجابة الصحيحة:",
-        questionDe: "Wie lange dauert das Medizinstudium in Tunesien?",
-        questionAr: "كم تستغرق دراسة الطب في تونس؟",
+        questionDe: "Wie lange dauert das Medizinstudium laut Mona?",
+        questionAr: "كم تستغرق دراسة الطب حسب منى؟",
         options: ["sechs Jahre", "vier Jahre", "fünf Jahre", "sieben Jahre"],
         correctIndex: 0,
         explanation: "قالت منى: Das Studium der Medizin dauert sechs Jahre.",
@@ -219,11 +259,16 @@ export const lessonB101: Lesson = {
         itemId: "l1",
         type: "multiple-choice",
         instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
-        questionDe: "Welches Fach möchte Sami studieren?",
-        questionAr: "أي تخصص يريد سامي أن يدرس؟",
-        options: ["Informatik", "Medizin", "Jura", "Kunst"],
+        questionDe: "Was sagt die Beraterin über die Kosten des Studiums?",
+        questionAr: "ماذا تقول المستشارة عن تكاليف الدراسة؟",
+        options: [
+          "Die Kosten sind niedrig, nur der Semesterbeitrag.",
+          "Die Kosten sind sehr hoch.",
+          "Das Studium ist ganz ohne jeden Beitrag.",
+          "Man zahlt die Kosten nur in Berlin.",
+        ],
         correctIndex: 0,
-        explanation: "قال سامي: Ich interessiere mich für Informatik — أهتم بالمعلوماتية.",
+        explanation: "قالت المستشارة: Die Kosten des Studiums sind niedrig, nur der Semesterbeitrag.",
         errorType: "vocabulary",
       },
     ],
@@ -233,14 +278,14 @@ export const lessonB101: Lesson = {
     id: "p1",
     title: "أصوات B1: ch، وst",
     items: [
-      { de: "das Studium", ar: "الدراسة الجامعية", note: "d في بداية = د + s = ز: شتوديوم" },
-      { de: "der Lehrer", ar: "المعلم", note: "e مفتوحة: ليرِر" },
+      { de: "das Studium", ar: "الدراسة الجامعية", note: "St في بداية الكلمة = شت: شتوديوم" },
+      { de: "der Lehrer", ar: "المعلم", note: "e الأولى طويلة (ليه)، و-er في النهاية خفيفة: ليهر" },
       { de: "der Unterricht", ar: "الحصة", note: "ch بعد i = ناعمة: أونترريخت" },
-      { de: "die Universität", ar: "الجامعة", note: "تية في النهاية: أونيڤيرزيتِهت" },
+      { de: "die Universität", ar: "الجامعة", note: "-tät تُنطق «تيت» (ä طويلة): أونيڤيرزيتيت" },
       { de: "das Fach", ar: "التخصص", note: "ch بعد a = خ: فاخ" },
       { de: "der Student", ar: "الطالب", note: "st في البداية = شت: شتودِنت" },
     ],
-    tip: "Universität كلمة طويلة صعبة — قسّمها: أوني + ڤير + زي + تِهت. كرر كل مقطع وحده ثم ادمج.",
+    tip: "Universität كلمة طويلة صعبة — قسّمها: أوني + ڤير + زي + تيت. كرر كل مقطع وحده ثم ادمج.",
     shadowing: [
       { de: "Das Buch des Lehrers ist neu.", ar: "كتاب المعلّم جديد.", tip: "des Lehrers = دِس ليرِرْس (Genitiv)" },
       { de: "Der Mann, der dort steht, ist mein Lehrer.", ar: "الرجل الذي يقف هناك معلّمي.", tip: "der dort steht — الفعل في النهاية" },
@@ -321,7 +366,7 @@ export const lessonB101: Lesson = {
       id: "e4",
       type: "word-ordering",
       instructionAr: "رتّب الجملة (انتبه: الفعل في النهاية):",
-      tokens: ["Der", "Mann", "steht", "der", "dort", "ist", "mein", "Lehrer", ","],
+      tokens: ["Der", "Mann", ",", "der", "dort", "steht", ",", "ist", "mein", "Lehrer", "."],
       correctSentence: "Der Mann, der dort steht, ist mein Lehrer.",
       explanation: "الجملة النسبية: der dort steht — الفعل في النهاية.",
       errorType: "word-order",
@@ -329,12 +374,12 @@ export const lessonB101: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "في الجملة خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
       wrongSentence: "Wegen den Regen bleiben wir.",
       wrongWord: "den Regen",
       correctWord: "des Regens",
-      options: ["des Regens", "dem Regen", "der Regen", "die Regen"],
-      explanation: "wegen يأخذ Genitiv: des Regens.",
+      options: ["des Regens", "des Regen", "der Regen", "die Regen"],
+      explanation: "wegen يأخذ Genitiv: des Regens. den هنا حالة نصب، وهي خطأ.",
       errorType: "case",
     },
     {
@@ -372,13 +417,12 @@ export const lessonB101: Lesson = {
     },
     {
       id: "e9",
-      type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Das ist das Buch von dem Lehrer. (حوّلها للرسمية)",
-      wrongWord: "von dem Lehrer",
-      correctWord: "des Lehrers",
-      options: ["des Lehrers", "dem Lehrer", "der Lehrer", "den Lehrer"],
-      explanation: "الرسمية: Genitiv — des Lehrers.",
+      type: "transformation",
+      instructionAr: "حوّل الجملة إلى الصيغة الرسمية باستخدام Genitiv:",
+      prompt: "Das ist das Buch von dem Lehrer. → (الصيغة الرسمية)",
+      acceptedAnswers: ["Das ist das Buch des Lehrers.", "Das ist das Buch des Lehrers"],
+      sampleAnswer: "Das ist das Buch des Lehrers.",
+      explanation: "الصيغة الرسمية: des Lehrers. أما «von dem Lehrer» فمقبولة في الكلام اليومي.",
       errorType: "case",
     },
     {
@@ -388,6 +432,19 @@ export const lessonB101: Lesson = {
       audioText: "Die Universität, in der ich studiere, ist groß.",
       explanation: "الجامعة التي أدرس فيها كبيرة — جملة نسبية مع حرف جر (in der).",
       errorType: "spelling",
+    },
+    {
+      id: "e12",
+      type: "matching",
+      instructionAr: "صل كل مصطلح بالشرح المناسب له:",
+      pairs: [
+        { left: "das Gymnasium", right: "مدرسة ثانوية تؤدي إلى الأبيتور" },
+        { left: "das Abitur", right: "شهادة تؤهل للدراسة الجامعية" },
+        { left: "die Grundschule", right: "المرحلة الابتدائية الأولى" },
+        { left: "der Bachelor", right: "أول شهادة جامعية (عادةً ثلاث سنوات)" },
+      ],
+      explanation: "أنواع المدارس والشهادات الأساسية في النظام الألماني.",
+      errorType: "vocabulary",
     },
   ],
 
@@ -404,7 +461,7 @@ export const lessonB101: Lesson = {
     culturalNote: {
       title: "الدراسة في ألمانيا",
       content:
-        "الجامعات الألمانية شبه مجانية (رسوم فصل ~300 يورو تشمل تذكرة المواصلات!). وتقسيم «Bachelor» (3 سنوات) و«Master» (سنتان). والمنح: DAAD (الهيئة الألمانية للتبادل الأكاديمي) — أهم جهة للمنح العربية. وعبارة أساسية: «Bewerbung um einen Studienplatz» (طلب مقعد دراسي).",
+                "الجامعات الحكومية في ألمانيا لا تفرض عموماً رسوم دراسة عامة على الطلاب الألمان ومواطني الاتحاد الأوروبي، لكن كل طالب يدفع Semesterbeitrag في كل فصل، وهو عادةً بين 150 و400 يورو تقريباً، ويغطي غالباً تذكرة المواصلات (Semesterticket) وخدمات مؤسسة الطلاب (Studierendenwerk). استثناء معروف: الطلاب من خارج الاتحاد الأوروبي في بادن-فورتمبرغ يدفعون 1500 يورو للفصل. ومن جهات المنح: DAAD (الهيئة الألمانية للتبادل الأكاديمي). وعبارة مفيدة: «Bewerbung um einen Studienplatz» (طلب مقعد دراسي).",
     },
   },
 
@@ -441,12 +498,12 @@ export const lessonB101: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Trotz dem Wetter gehen wir spazieren.",
-      wrongWord: "dem Wetter",
+      instructionAr: "في الجملة خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
+      wrongSentence: "Trotz das Wetter gehen wir spazieren.",
+      wrongWord: "das Wetter",
       correctWord: "des Wetters",
-      options: ["des Wetters", "dem Wetter", "der Wetter", "das Wetters"],
-      explanation: "trotz يأخذ Genitiv: trotz des Wetters.",
+      options: ["des Wetters", "den Wetter", "der Wetter", "das Wetters"],
+      explanation: "trotz يأخذ Genitiv: trotz des Wetters. das هنا محايد غير مناسب لأي حالة مطلوبة.",
       errorType: "case",
     },
     {
@@ -480,8 +537,8 @@ export const lessonB101: Lesson = {
       id: "med-b1-01-1", type: "summarize-de-to-ar",
       titleAr: "لخّص نصاً عن نظام التعليم الألماني بالعربية",
       sourceDe: "In Deutschland gehen die Kinder nach der Grundschule auf verschiedene Schularten. Das Gymnasium führt zum Abitur, das zum Studium berechtigt.",
-      taskAr: "لخّص النص بالعربية: المرحلة بعد الابتدائية، ودور الصالة (Gymnasium).",
-      modelAnswerAr: "«في ألمانيا ينتقل الأطفال بعد الابتدائية إلى مدارس مختلفة. الصالة (Gymnasium) تؤدي إلى الأبيتور الذي يؤهل للدراسة الجامعية.»",
+      taskAr: "لخّص النص بالعربية: المرحلة بعد الابتدائية، ودور المدرسة الثانوية الأكاديمية (Gymnasium).",
+      modelAnswerAr: "«في ألمانيا ينتقل الأطفال بعد الابتدائية إلى مدارس مختلفة. المدرسة الثانوية الأكاديمية (Gymnasium) تؤدي إلى الأبيتور الذي يؤهل للدراسة الجامعية.»",
       keyPointsAr: ["نقلت تعدد المدارس بعد الابتدائية", "شرحت دور Gymnasium", "ربطت الأبيتور بالجامعة"],
     },
   ],
@@ -496,7 +553,7 @@ export const lessonB101: Lesson = {
           speakerDe: "Wie ist das Universitätssystem in deinem Land?",
           speakerAr: "كيف نظام الجامعة في بلدك؟",
           options: [
-            { de: "In meinem Land studieren die meisten nach dem Abitur, ähnlich wie in Deutschland. Allerdings gibt es weniger Auswahlmöglichkeiten.", ar: "في بلدي يدرس معظمهم بعد الثانوية، مشابه لألمانيا. لكن الخيارات أقل.", best: true, replyDe: "Interessant. Und ist das Studium teuer?", replyAr: "مثير للاهتمام. وهل الدراسة مكلفة؟" },
+            { de: "In meinem Land studieren viele nach der Sekundarschule, ähnlich wie in Deutschland. Allerdings hängt die Auswahl oft von den Noten ab.", ar: "في بلدي يدرس كثيرون بعد الثانوية، مشابه لألمانيا. لكن اختيار التخصص يعتمد غالباً على الدرجات.", best: true, replyDe: "Interessant. Und ist das Studium teuer?", replyAr: "مثير للاهتمام. وهل الدراسة مكلفة؟" },
             { de: "In meinem Land gibt es keine Universitäten.", ar: "في بلدي لا توجد جامعات.", best: false, replyDe: "Das kann nicht stimmen, jedes Land hat Universitäten.", replyAr: "هذا غير صحيح، كل بلد له جامعات." },
           ],
         },
@@ -504,7 +561,7 @@ export const lessonB101: Lesson = {
           speakerDe: "Ist das Studium in deinem Land teuer?",
           speakerAr: "هل الدراسة مكلفة في بلدك؟",
           options: [
-            { de: "Nein, die staatlichen Universitäten sind fast kostenlos. Man zahlt nur eine kleine Semestergebühr.", ar: "لا، الجامعات الحكومية شبه مجانية. يدفع المرء رسماً فصلياً صغيراً فقط.", best: true, replyDe: "Das ist ähnlich wie in Deutschland. Ein gutes System.", replyAr: "هذا مشابه لألمانيا. نظام جيد." },
+            { de: "Ich glaube, die staatlichen Universitäten sind eher günstig. Man zahlt meist nur einen kleinen Beitrag.", ar: "أظن أن الجامعات الحكومية أرخص نسبياً. عادةً يدفع المرء رسماً صغيراً فقط.", best: true, replyDe: "Das ist ähnlich wie in Deutschland. Ein gutes System.", replyAr: "هذا مشابه لألمانيا. نظام جيد." },
             { de: "Sehr teuer, nur reiche Leute studieren.", ar: "مكلفة جداً، الأغنياء فقط يدرسون.", best: false, replyDe: "Das ist schade. Bildung sollte für alle zugänglich sein.", replyAr: "هذا مؤسف. التعليم يجب أن يكون متاحاً للجميع." },
           ],
         },
