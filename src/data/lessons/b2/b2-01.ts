@@ -11,13 +11,63 @@ export const lessonB201: Lesson = {
   titleDe: "Wissenschaft und Forschung",
   titleAr: "العلوم والبحث",
   summary:
-    "فهم الموضوعات العلمية وتقديم العروض الأكاديمية (Präsentation)، نقل الكلام غير المباشر (Konjunktiv I / indirekte Rede) بالكامل: er sagt, er habe... — ونقل الأقوال في الأخبار والتقارير، والاستخدام الذاتي للأفعال الناقصة للتخمين (dürfte, müsste, muss, könnte).",
+    "فهم حوارات عن موضوعات علمية، ونقل الكلام غير المباشر (Konjunktiv I / indirekte Rede) بالكامل: er sagt, er habe... — ونقل الأقوال في الأخبار والتقارير، والاستخدام الذاتي للأفعال الناقصة للتخمين (dürfte, müsste, muss, könnte).",
 
   lernziele: [
-    { id: "z1", de: "Ich kann wissenschaftliche Themen verstehen.", ar: "أن أفهم الموضوعات العلمية وأقدم عروضاً عنها." },
-    { id: "z2", de: "Ich kann die indirekte Rede mit Konjunktiv I bilden.", ar: "أن أبني نقل الكلام غير المباشر بـ Konjunktiv I." },
-    { id: "z3", de: "Ich kann Berichte und Zusammenfassungen schreiben.", ar: "أن أكتب تقارير وملخصات تنقل أقوال الآخرين بدقة." },
-    { id: "z4", de: "Ich kann Modalverben subjektiv benutzen: Das dürfte stimmen.", ar: "أن أستخدم الأفعال الناقصة ذاتياً للتخمين: هذا على الأرجح صحيح." },
+    {
+      id: "z1",
+      de: "Ich kann die Aussagen eines Forschers in einem kurzen Gespräch verstehen.",
+      ar: "أن أفهم ما يقوله باحث في حوار قصير.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q1", "q2", "q3"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
+        labelAr: "أجيب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann die indirekte Rede mit Konjunktiv I bilden.",
+      ar: "أن أبني نقل الكلام غير المباشر بـ Konjunktiv I.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e1", "e2", "e5", "e6", "e7", "m1", "m2", "m4", "m5"],
+        taskIds: [
+          "practice:b2-01:e1",
+          "practice:b2-01:e2",
+          "practice:b2-01:e5",
+          "practice:b2-01:e6",
+          "practice:b2-01:e7",
+          "mini-test:b2-01:m1",
+          "mini-test:b2-01:m2",
+          "mini-test:b2-01:m4",
+          "mini-test:b2-01:m5",
+        ],
+        labelAr: "أجيب صحيحاً عن تمارين Konjunktiv I (e1 وe2 وe5 وe6 وe7 وm1 وm2 وm4 وm5)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann Aussagen anderer in kurzen Sätzen schriftlich wiedergeben.",
+      ar: "أن أكتب أقوال الآخرين في جمل قصيرة بدقة.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["w1", "w2"],
+        taskIds: ["writing:b2-01:w1", "writing:b2-01:w2"],
+        labelAr: "أكتب التحويل والإكمال بالصيغة المقبولة (w1 وw2)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann Modalverben subjektiv benutzen: Das dürfte stimmen.",
+      ar: "أن أستخدم الأفعال الناقصة ذاتياً للتخمين: هذا على الأرجح صحيح.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e11", "e12"],
+        taskIds: ["practice:b2-01:e11", "practice:b2-01:e12"],
+        labelAr: "أجيب صحيحاً عن تمرين درجات الاحتمال وتمرين ترتيب dürfte (e11 وe12)، دون كشف الحل.",
+      },
+    },
   ],
 
   einfuehrung: {
@@ -105,7 +155,7 @@ export const lessonB201: Lesson = {
       commonMistakes: [
         { wrong: "Er sagt, er hat keine Zeit. (مضارع بدل Konjunktiv I)", right: "Er sagt, er habe keine Zeit.", whyAr: "النقل: Konjunktiv I (habe). المضارع يؤكد — والنقل لا يؤكد." },
         { wrong: "خلط Konjunktiv I مع II", right: "I = نقل (er habe). II = شرط/رغبة (er hätte)", whyAr: "وظيفتان مختلفتان: النقل مقابل الافتراض." },
-        { wrong: "Wenn Konjunktiv I يشبه المضارع، نستخدم II", right: "عند التطابق (wir haben → wir haben) نستبدل II: sie hätten", whyAr: "قاعدة: إذا تطابق I مع المضارع استخدم II للتمييز." },
+        { wrong: "Sie sagt, sie haben Zeit.", right: "Sie sagt, sie hätten Zeit.", whyAr: "عند تطابق Konjunktiv I مع المضارع (haben) نأخذ Konjunktiv II للتمييز." },
       ],
       relatedRuleComparison: {
         title: "Konjunktiv I أم II؟",
@@ -119,14 +169,14 @@ export const lessonB201: Lesson = {
       explanationAr:
         "بعد النقل غير المباشر، نتعلم «الأفعال الناقصة الذاتية» — استخدامها للتخمين ودرجة الاحتمال: Das Experiment dürfte erfolgreich sein (التجربة على الأرجح ناجحة)، Der Zug muss schon abgefahren sein (لابد أن القطار غادر — استنتاج قوي)، Er könnte krank sein (ربما مريض)، Die Ergebnisse müssten morgen kommen (يجب أن تصل النتائج غداً — توقع).",
       whyAr:
-        "لماذا «ذاتي»؟ لأنك لا تصف قدرة أحد بل تحكم شخصياً على درجة احتمال شيء. الفرق بين: Er kann Deutsch (قدرة = موضوعي) وDas kann stimmen (احتمال = ذاتي). الصحفي والمحلل يستخدمانها كل يوم — وهي مهارة B2 الرسمية في القراءة والاستماع.",
+        "لماذا «ذاتي»؟ لأنك لا تصف قدرة أحد بل تحكم شخصياً على درجة احتمال شيء. الفرق بين: Er kann Deutsch (قدرة = موضوعي) وDas kann stimmen (احتمال = ذاتي). الصحفي والمحلل يستخدمانها كل يوم — وتُستعمل كثيراً في النصوص الإخبارية والعلمية.",
       table: {
         title: "درجات الاحتمال بالأفعال الناقصة الذاتية",
         columns: ["الفعل", "درجة الاحتمال", "المعنى", "مثال"],
         rows: [
-          { label: "muss", cells: ["95% (استنتاج قوي)", "لابد أن", "Er muss zu Hause sein."] },
-          { label: "dürfte", cells: ["80% (على الأرجح)", "غالباً", "Das dürfte richtig sein."] },
-          { label: "könnte", cells: ["50% (محتمل)", "ربما", "Sie könnte krank sein."] },
+          { label: "muss", cells: ["استنتاج قوي", "لابد أن", "Er muss zu Hause sein."] },
+          { label: "dürfte", cells: ["على الأرجح", "غالباً", "Das dürfte richtig sein."] },
+          { label: "könnte", cells: ["محتمل", "ربما", "Sie könnte krank sein."] },
           { label: "kann (إمكانية عامة)", cells: ["عامة", "قد", "Das kann passieren."] },
           { label: "müsste (توقع)", cells: ["توقع مبنٍ على معطيات", "يجب أن (توقعاً)", "Er müsste bald kommen."] },
         ],
@@ -139,13 +189,13 @@ export const lessonB201: Lesson = {
         { de: "Solche Fehler können überall passieren.", ar: "مثل هذه الأخطاء قد تحدث في أي مكان (إمكانية عامة)." },
       ],
       comparisonWithArabic:
-        "العربية تستخدم «لابد أن» (muss)، «على الأرجح» (dürfte)، «ربما» (könnte)، «قد» (kann) — نفس درجات الاحتمال تماماً! والتشابه أوضح في العامية: «أكيد راح» = Er muss gegangen sein.",
+        "تقابل تقريبي لا تطابق تام: «لابد أن» تقابل muss، و«على الأرجح» تقابل dürfte، و«ربما» تقابل könnte، و«قد» تقابل kann.",
       eselsbruecke:
-        "سلم الاحتمال التنازلي: «موس = لابد (95%)، دُورفته = غالباً (80%)، كونتّه = ربما (50%)، موسته = توقعاً». احفظ السلم وستعبّر عن أي شك بدقة.",
+        "سلم الاحتمال التنازلي: «موس = لابد، دُورفته = غالباً أو على الأرجح، كونتّه = ربما، موسته = توقعاً مبنياً على معطيات». احفظ السلم من الأقوى إلى الأضعف.",
       commonMistakes: [
         { wrong: "Er muss krank. (بلا sein)", right: "Er muss krank sein.", whyAr: "التخمين الذاتي يتطلب sein + صفة أو مصدراً مركّباً (gemacht haben)." },
         { wrong: "Er kann schwimmen. = تخمين", right: "قدرة (موضوعي): يعرف السباحة. التخمين: Das kann stimmen.", whyAr: "الذاتي يظهر مع أفعال ليست قدرة (stimmen, passieren, sein)." },
-        { wrong: "Das dürfte gestimmt haben. (خلط زمني بلا حاجة)", right: "تخمين حاضر: Das dürfte stimmen. للماضي: Das dürfte gestimmt haben.", whyAr: "dürfte + مصدر = حاضر. مع Partizip + haben = ماضٍ." },
+        { wrong: "Das dürfte gestimmt sein.", right: "Das dürfte gestimmt haben.", whyAr: "stimmen يأخذ haben في الماضي (Partizip II + haben)، لا sein. الحاضر: Das dürfte stimmen." },
       ],
       relatedRuleComparison: {
         title: "متى يكون الاستخدام «ذاتياً»؟",
@@ -224,7 +274,7 @@ export const lessonB201: Lesson = {
       { de: "die Wissenschaft", ar: "العلم", note: "sch = ش: ڤيسن-شافَت" },
       { de: "die Forschung", ar: "البحث", note: "or: فورشونغ" },
       { de: "das Experiment", ar: "التجربة", note: "x = كس: إكسبيريمِنت" },
-      { de: "die Entdeckung", ar: "الاكتشاف", note: "ck = ك مشددة (لا يوجد w) + انطق t ثم d بوضوح: إنت-دِكّونغ" },
+      { de: "die Entdeckung", ar: "الاكتشاف", note: "ck = ك بعد الحركة القصيرة: إنت-دِكونغ" },
       { de: "die Revolution", ar: "الثورة", note: "tion = تسيون: رِڤولوتسيون" },
       { de: "das Genie", ar: "العبقري", note: "g = ج: جيني" },
     ],
@@ -309,7 +359,7 @@ export const lessonB201: Lesson = {
       id: "e4",
       type: "word-ordering",
       instructionAr: "رتّب الجملة:",
-      tokens: ["sagt", "er", "habe", "Er", "Zeit", ","],
+      tokens: ["sagt", "er", "habe", "Er", "Zeit", ",", "."],
       correctSentence: "Er sagt, er habe Zeit.",
       explanation: "النقل: sagt + Konjunktiv I (habe).",
       errorType: "word-order",
@@ -382,7 +432,7 @@ export const lessonB201: Lesson = {
       type: "fill-blank",
       instructionAr: "اختر الفعل الناقص حسب درجة الاحتمال:",
       instructionDe: "Ergänze: muss, dürfte, könnte",
-      template: "Er ___ zu Hause sein. (95% — لابد) · Das ___ richtig sein. (80% — غالباً) · Sie ___ krank sein. (50% — ربما)",
+      template: "Er ___ zu Hause sein. (لابد) · Das ___ richtig sein. (غالباً) · Sie ___ krank sein. (ربما)",
       blanks: [
         { correct: "muss", options: ["muss", "dürfte", "könnte", "kann"] },
         { correct: "dürfte", options: ["dürfte", "muss", "könnte", "sollte"] },
@@ -397,7 +447,7 @@ export const lessonB201: Lesson = {
       id: "e12",
       type: "word-ordering",
       instructionAr: "رتّب الكلمات لتكوّن تخميناً (dürfte):",
-      tokens: ["Die", "Entdeckung", "dürfte", "die", "Forschung", "verändern."],
+      tokens: ["Die", "Entdeckung", "dürfte", "die", "Forschung", "verändern", "."],
       correctSentence: "Die Entdeckung dürfte die Forschung verändern.",
       hint: "dürfte في المركز الثاني + المصدر في نهاية الجملة.",
       explanation: "الاكتشاف على الأرجح سيغيّر البحث العلمي.",
@@ -410,7 +460,7 @@ export const lessonB201: Lesson = {
     mistakes: [
       { wrong: "Er sagt, er hat Zeit. (مضارع بدل نقل)", right: "Er sagt, er habe Zeit.", whyAr: "النقل يتطلب Konjunktiv I." },
       { wrong: "خلط I مع II", right: "I = نقل (habe). II = شرط (hätte)", whyAr: "وظيفتان مختلفتان." },
-      { wrong: "التطابق مع المضارع", right: "عند التطابق استخدم II: wir haben → sie hätten", whyAr: "قاعدة التمييز عند الالتباس." },
+      { wrong: "Sie sagt, sie haben Zeit.", right: "Sie sagt, sie hätten Zeit.", whyAr: "عند تطابق Konjunktiv I مع المضارع نأخذ Konjunktiv II للتمييز." },
     ],
     eselsbruecken: [
       "«Konjunktiv I = علامة النقل» — sagt/behauptet/meint + habe/sei/werde.",
@@ -419,7 +469,7 @@ export const lessonB201: Lesson = {
     culturalNote: {
       title: "العلم في ألمانيا",
       content:
-        "ألمانيا موطن ~80 جائزة نوبل! مراكز البحث: «Max-Planck» و«Fraunhofer» و«Helmholtz». والدراسة العلمية مجانية تقريباً حتى الدكتوراه. وعبارة أكاديمية: «Die Forschung wird staatlich gefördert» (البحث مدعوم من الدولة).",
+        "من مؤسسات البحث الكبرى في ألمانيا: Max-Planck وFraunhofer وHelmholtz. وتُموَّل كثير من مؤسسات البحث جزئياً من الدولة. عبارة أكاديمية مفيدة: «Die Forschung wird staatlich gefördert» (البحث مدعوم من الدولة).",
     },
   },
 
@@ -448,7 +498,7 @@ export const lessonB201: Lesson = {
       id: "m3",
       type: "word-ordering",
       instructionAr: "رتّب الجملة:",
-      tokens: ["sagt", "Die", "Professorin", "Ergebnisse", "die", "seien", "positiv", ","],
+      tokens: ["sagt", "Die", "Professorin", "Ergebnisse", "die", "seien", "positiv", ",", "."],
       correctSentence: "Die Professorin sagt, die Ergebnisse seien positiv.",
       explanation: "النقل: seien (Konjunktiv I).",
       errorType: "word-order",
@@ -487,7 +537,7 @@ export const lessonB201: Lesson = {
     { id: "fc6", de: "indirekte Rede", ar: "الكلام غير المباشر", example: "Sie sagt, sie sei müde.", exampleAr: "تقول إنها متعبة.", level: "B2" },
     { id: "fc7", de: "behaupten", ar: "يزعم", example: "Er behauptet, er wisse es.", exampleAr: "يزعم أنه يعرفها.", level: "B2" },
     { id: "fc8", de: "die Entdeckung", ar: "الاكتشاف", example: "Die Entdeckung ist neu.", exampleAr: "الاكتشاف جديد.", level: "B2" },
-    { id: "fc9", de: "dürfte", ar: "على الأرجح (تخمين 80%)", example: "Das dürfte richtig sein.", exampleAr: "هذا على الأرجح صحيح.", level: "B2" },
+    { id: "fc9", de: "dürfte", ar: "على الأرجح (تخمين)", example: "Das dürfte richtig sein.", exampleAr: "هذا على الأرجح صحيح.", level: "B2" },
     { id: "fc10", de: "muss / könnte (تخمين)", ar: "لابد أن / ربما", example: "Er muss krank sein. Sie könnte kommen.", exampleAr: "لابد أنه مريض. ربما تأتي.", level: "B2" },
   ],
 
