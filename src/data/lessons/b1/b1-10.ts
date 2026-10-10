@@ -11,17 +11,69 @@ export const lessonB110: Lesson = {
   titleDe: "Zukunft und Pläne",
   titleAr: "المستقبل والخطط",
   summary:
-    "التحدث عن خطط المستقبل، مراجعة شاملة لكل قواعد B1 (Genitiv، Relativsätze، Konjunktiv II، Passiv، Adjektivdeklination)، وخاتمة المستوى المتوسط.",
+    "التحدث عن خطط المستقبل، مراجعة لأهم قواعد B1 (Genitiv، Relativsätze، Konjunktiv II، Passiv، Adjektivdeklination)، وخاتمة المستوى المتوسط.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann über Zukunftspläne sprechen.", ar: "أن أتحدث عن خططي وأهدافي المستقبلية." },
-    { id: "z2", de: "Ich kann alle B1-Grammatik kombinieren.", ar: "أن أجمع كل قواعد B1 في جمل مركبة." },
-    { id: "z3", de: "Ich bin bereit für B2!", ar: "أن أكون جاهزاً للمستوى المتقدم B2!" },
-      { id: "z4", de: "Ich kann über meine Zukunftspläne sprechen und begründen.", ar: "أن أتحدث عن خططي المستقبلية وأبررها." },
+    {
+      id: "z1",
+      de: "Ich kann ein Gespräch über Zukunftspläne verstehen und die Fragen dazu beantworten.",
+      ar: "أن أفهم حواراً عن خطط المستقبل وأجيب عن أسئلته.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q1", "q2", "q3"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
+        labelAr: "أجيب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann einen Satz mit Relativsatz und weil-Satz richtig bilden.",
+      ar: "أن أكوّن جملة تجمع جملة نسبية وجملة بـ weil في موضعيهما.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e4", "e6", "e7", "m1", "m5", "w1"],
+        taskIds: [
+          "practice:b1-10:e4",
+          "practice:b1-10:e6",
+          "practice:b1-10:e7",
+          "mini-test:b1-10:m1",
+          "mini-test:b1-10:m5",
+          "writing:b1-10:w1",
+        ],
+        labelAr: "أجيب صحيحاً عن تمارين الجمل المركبة (e4 وe6 وe7 وm1 وm5 وw1)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann einen irrealen Bedingungssatz mit wenn und Konjunktiv II bilden.",
+      ar: "أن أكوّن جملة شرطية غير واقعية بـ wenn وKonjunktiv II (hätte / würde).",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e2", "e10", "m3", "w2"],
+        taskIds: [
+          "practice:b1-10:e2",
+          "practice:b1-10:e10",
+          "mini-test:b1-10:m3",
+          "writing:b1-10:w2",
+        ],
+        labelAr: "أجيب صحيحاً عن تمارين الشرط غير الواقعي (e2 وe10 وm3 وw2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann Zukunftspläne mit werden plus Infinitiv und weil schriftlich formulieren.",
+      ar: "أن أكتب خطة مستقبلية بـ werden والمصدر في آخر الجملة، مع رابط weil.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["m2", "w1", "w3"],
+        taskIds: ["mini-test:b1-10:m2", "writing:b1-10:w1", "writing:b1-10:w3"],
+        labelAr: "أجيب صحيحاً عن m2، وأكتب w1 وw3 بالصيغة المقبولة. كشف الحل لا يُحتسب أداءً.",
+      },
+    },
   ],
   einfuehrung: {
     motivatingQuestionAr:
-      "أنت الآن عند قمة B1! هذا الدرس الأخير يجمّع كل ما تعلمته في هذا المستوى: Genitiv، Relativsätze، Konjunktiv II، Passiv، Adjektivdeklination، الروابط المزدوجة. هل تستطيع كتابة جملة تجمع أكثر من قاعدة؟ هذه مهارة B1 الحقيقية!",
+      "هذا الدرس الأخير يجمّع كل ما تعلمته في هذا المستوى: Genitiv، Relativsätze، Konjunktiv II، Passiv، Adjektivdeklination، الروابط المزدوجة. هل تستطيع كتابة جملة تجمع أكثر من قاعدة؟ هذه مهارة مهمة في هذا المستوى.",
     motivatingQuestionDe: "Was sind deine Pläne für die Zukunft?",
     contextAr:
       "نخطط للمستقبل ونراجع المستوى كله: في هذا الدرس سترى كيف تتداخل القواعد — وستشعر بقفزة مستواك.",
@@ -61,9 +113,9 @@ export const lessonB110: Lesson = {
       id: "r3",
       type: "fill-blank",
       instructionAr: "مراجعة من B1 (درس b1-03 — البيئة والمناخ): أكمل المجهول:",
-      template: "Das Haus ___ gebaut. (بُني — ماضٍ)",
+      template: "Das Haus ___ 1990 gebaut. (بُني عام 1990)",
       blanks: [
-        { correct: "wurde", options: ["wurde", "wird", "ist"] },
+        { correct: "wurde", options: ["wurde", "wird", "werde"] },
       ],
       explanation: "ماضٍ مجهول: wurde gebaut (درس البيئة).",
       errorType: "grammar",
@@ -74,11 +126,11 @@ export const lessonB110: Lesson = {
     {
       id: "t1",
       titleAr: "جمع قواعد B1 في جمل مركبة",
-      titleDe: "Alles kombinieren: Der B1-Test",
+      titleDe: "Alles kombinieren: Wiederholung",
       explanationAr:
         "الجملة المركبة الحقيقية تجمع قواعد متعددة: Der Student, der Deutsch lernt, möchte später in Deutschland studieren, weil er die Kultur liebt und weil er bessere Chancen haben wird. لاحظ: Relativsatz (der... lernt) + Nebensatz (weil... liebt) + Futur (haben wird). هذا هو مستوى B1!",
       whyAr:
-        "لماذا «الجمع» هو الامتحان؟ لأن الحياة لا تتحدث بقاعدة واحدة: تريد أن تصف، تعلّل، تخطط، وتفترض في نفس الجملة. القدرة على «التداخل» — جملة ثانوية داخل أخرى — هي ما يميز B1 عن A2.",
+        "لماذا «الجمع» هو الامتحان؟ لأن الحياة لا تتحدث بقاعدة واحدة: تريد أن تصف، تعلّل، تخطط، وتفترض في نفس الجملة. القدرة على «التداخل» — جملة ثانوية داخل أخرى — هي ما يتدرب عليه هذا الدرس.",
       table: {
         title: "خريطة قواعد B1",
         columns: ["القاعدة", "المثال", "الدرس"],
@@ -108,18 +160,18 @@ export const lessonB110: Lesson = {
       commonMistakes: [
         { wrong: "Der Student, der Deutsch lernt, er möchte... (تكرير)", right: "Der Student, der Deutsch lernt, möchte...", whyAr: "الضمير النسبي يحل محل الفاعل — لا نعيده." },
         { wrong: "...weil er die Kultur liebt und er will studieren. (ترتيب)", right: "...weil er die Kultur liebt und weil er studieren will.", whyAr: "كل جزء ثانوي له فعله في النهاية." },
-        { wrong: "Ich werde ein Haus kaufen, das am Strand liegt أم liegt؟", right: "das am Strand liegt (مضارع — واقع)", whyAr: "الجملة النسبية تصف البيت — لا تحتاج Futur." },
+        { wrong: "Ich kaufe ein Haus, das am Strand liegen.", right: "Ich kaufe ein Haus, das am Strand liegt.", whyAr: "das يرجع إلى الاسم المفرد Haus، فالفعل مفرد: liegt." },
       ],
       relatedRuleComparison: {
-        title: "امتحان B1 الجاهز",
-        content: "نظام الاختبارات الكامل (المرحلة 10) سيحاكي Goethe-Zertifikat B1 بجميع المهارات. هذا الدرس مراجعة شاملة — أكمل Mini-Test وستكون جاهزاً!",
+        title: "مراجعة قبل التمرين المصغّر",
+        content: "هذا الدرس مراجعة لقواعد الدروس السابقة، ولا يحاكي امتحاناً رسمياً. أكمل التمرين المصغّر وراجع الأخطاء التي تظهر فيه.",
       },
     },
     {
       id: "t2",
       titleAr: "الجمل الشرطية غير الواقعية",
       titleDe: "Irreale Bedingungssätze",
-      explanationAr: "الجملة الشرطية مع wenn تعبر عن: الحقيقية (Wenn ich Zeit habe, komme ich — مضارع)، وغير الواقعية (Wenn ich Zeit hätte, käme ich — Konjunktiv II). في غير الواقعية: wenn + Konjunktiv II، والنتيجة ebenfalls Konjunktiv II.",
+      explanationAr: "الجملة الشرطية مع wenn تعبر عن: الحقيقية (Wenn ich Zeit habe, komme ich — مضارع)، وغير الواقعية (Wenn ich Zeit hätte, käme ich — Konjunktiv II). في غير الواقعية: wenn + Konjunktiv II، والنتيجة أيضاً Konjunktiv II.",
       whyAr: "لماذا؟ لأن التمييز بين الشرط الحقيقي وغير الواقعي أساسي في B1 — والخلط بينهما يفقد الدقة.",
       table: {
         title: "شرط واقعي أم غير واقعي؟",
@@ -135,8 +187,8 @@ export const lessonB110: Lesson = {
       examples: [
         { de: "Wenn ich genug Geld hätte, würde ich studieren.", ar: "لو كان لدي مال كافٍ لدرست." }, { de: "Wenn das Wetter schön wäre, gingen wir wandern.", ar: "لو كان الطقس جميلاً لتنزهنا." }, { de: "Wenn das Wetter besser wäre, würden wir grillen.", ar: "لو كان الطقس أفضل لشوينا." }, { de: "Wenn ich das gewusst hätte, hätte ich dir geholfen.", ar: "لو كنت أعلم ذلك لساعدتك." }, { de: "Ohne deine Hilfe hätte ich das nicht geschafft.", ar: "لولا مساعدتك لما نجحت في ذلك." }
       ],
-      comparisonWithArabic: "العربية تميّز الشرط الممكن («إن») من الممتنع («لو») بالأداة نفسها. والألمانية تستعمل wenn في الحالتين وتنقل التمييز كله إلى زمن الفعل — ولهذا يخطئ المتعلم العربي فيبقي المضارع حيث يلزم Konjunktiv II.",
-      eselsbruecke: "الشرط الممتنع في الماضي يحتاج hätte أو wäre مرتين: مرة في جملة wenn ومرة في الجواب. إن رأيت فعلين مساعدين في صيغة Konjunktiv فالجملة تتحدث عمّا لم يحدث.",
+      comparisonWithArabic: "العربية تميّز الشرط الممكن «إن» عن غير الواقعي «لو» بأداتين مختلفتين. والألمانية تستعمل wenn في الحالتين وتنقل التمييز كله إلى زمن الفعل — ولهذا يخطئ المتعلم العربي فيبقي المضارع حيث يلزم Konjunktiv II.",
+      eselsbruecke: "الشرط الممتنع في الماضي يضع hätte أو wäre في الجملتين معاً، مع اسم المفعول في آخر كل جملة. إن رأيت صيغة Konjunktiv فالجملة تتحدث عمّا لم يحدث أو عمّا يتمناه المتكلم.",
       commonMistakes: [
         { wrong: "Wenn ich Zeit hätte, komme ich.", right: "Wenn ich Zeit hätte, käme ich.", whyAr: "الشرط غير الواقعي يلزم فيه الجوابُ صيغةَ Konjunktiv II أيضاً، أو würde kommen." },
         { wrong: "Wenn ich das gewusst habe, hätte ich geholfen.", right: "Wenn ich das gewusst hätte, hätte ich geholfen.", whyAr: "الشرط الممتنع في الماضي يُصاغ بـ hätte مع اسم المفعول لا بصيغة Perfekt العادية." },
@@ -144,7 +196,7 @@ export const lessonB110: Lesson = {
       ],
       relatedRuleComparison: {
         title: "wenn أم falls؟",
-        content: "wenn هي الأداة العامة للشرط والزمن معاً. أما falls فتخص الاحتمال وحده وتعني في حال، وهي أوضح في النصوص الرسمية: Falls Sie Fragen haben, rufen Sie an.",
+        content: "wenn أداة الشرط العامة، وتُستعمل أيضاً بمعنى «كلما/عندما» للزمن. أما falls فتقتصر على الشرط الاحتمالي، وقد تكون أوضح في الصياغات الرسمية: Falls Sie Fragen haben, rufen Sie an.",
       },
     },
   ],
@@ -218,13 +270,13 @@ export const lessonB110: Lesson = {
     title: "مراجعة أصوات B1",
     items: [
       { de: "die Zukunft", ar: "المستقبل", note: "z = تس (لا يوجد ch) + u الأولى طويلة والثانية قصيرة: تسووكونفت" },
-      { de: "würde", ar: "كنت سأفعل", note: "ü: ڤوردِه" },
-      { de: "das Gemälde", ar: "اللوحة", note: "ä: غِميلدِه" },
-      { de: "der Bürger", ar: "المواطن", note: "ü + r: بورغِر" },
-      { de: "die Regierung", ar: "الحكومة", note: "ie = إي: رِغيرونغ" },
+      { de: "würde", ar: "كنت سأفعل", note: "w = ڤ، وü صوت بين «و» و«ي» مع تدوير الشفتين: ڤورده" },
+      { de: "das Gemälde", ar: "اللوحة", note: "g = ك (لا غ)، وä = e مفتوحة: كيمِلده" },
+      { de: "der Bürger", ar: "المواطن", note: "ü قصيرة، وg = ك: بورْكَر" },
+      { de: "die Regierung", ar: "الحكومة", note: "ie = إي، وg = ك: رِكيرونغ" },
       { de: "während", ar: "بينما", note: "w = ڤ + ä: ڤيرِنت" },
     ],
-    tip: "ستة أصوات B1 الصعبة — كررها يومياً: تسوكونفت، ڤوردِه، غِميلدِه، بورغِر، رِغيرونغ، ڤيرِنت.",
+    tip: "ستة أصوات B1 الصعبة — كررها يومياً: تسوكونفت، ڤورده، كيمِلده، بورْكَر، رِكيرونغ، ڤيرِنت.",
     shadowing: [
       { de: "Der Student, der dort steht, ist mein Freund.", ar: "الطالب الذي يقف هناك صديقي.", tip: "Relativsatz: der dort steht" },
       { de: "Wenn ich reich wäre, würde ich reisen.", ar: "لو كنت غنياً لسافرت.", tip: "Konjunktiv II: wäre + würde" },
@@ -307,7 +359,7 @@ export const lessonB110: Lesson = {
       id: "e4",
       type: "word-ordering",
       instructionAr: "رتّب الجملة المركبة:",
-      tokens: ["Der", "lernt", "Student", "der", "Deutsch", "möchte", "studieren", "Deutschland", "in", ","],
+      tokens: ["Der", "Student", ",", "der", "Deutsch", "lernt", ",", "möchte", "in", "Deutschland", "studieren", "."],
       correctSentence: "Der Student, der Deutsch lernt, möchte in Deutschland studieren.",
       explanation: "جملة مركبة: Relativsatz + جملة رئيسية.",
       errorType: "word-order",
@@ -327,7 +379,7 @@ export const lessonB110: Lesson = {
       id: "e6",
       type: "fill-blank",
       instructionAr: "أكمل الجمل المركبة:",
-      template: "Das Haus, ___ am Strand liegt, ist teuer. Ich werde lernen, ___ ich will.",
+      template: "Das Haus, ___ am Strand liegt, ist teuer. (الذي) Ich werde lernen, ___ ich will. (لأن)",
       blanks: [
         { correct: "das", options: ["das", "der", "die"] },
         { correct: "weil", options: ["weil", "dass", "wenn"] },
@@ -381,7 +433,7 @@ export const lessonB110: Lesson = {
   fehlerUndTipps: {
     mistakes: [
       { wrong: "Der Student, der lernt, er möchte... (تكرير)", right: "Der Student, der lernt, möchte...", whyAr: "الضمير النسبي بديل." },
-      { wrong: "Als ich Zeit habe (المضارع مع als)", right: "Wenn ich Zeit habe", whyAr: "als للماضي فقط." },
+      { wrong: "Als ich Zeit habe (المضارع مع als)", right: "Wenn ich Zeit habe", whyAr: "als يُستعمل لحدث ماضٍ منتهٍ، لا للحاضر أو المستقبل." },
       { wrong: "Ich werde lernen werde (تضاعف)", right: "Ich werde lernen.", whyAr: "werden مرة واحدة." },
     ],
     eselsbruecken: [
@@ -391,7 +443,7 @@ export const lessonB110: Lesson = {
     culturalNote: {
       title: "ماذا بعد B1؟",
       content:
-        "B1 هي عتبة الاندماج في ألمانيا: «Integrationskurs» يختتم بامتحان B1، والجنسية تتطلب B1 غالباً. وبعدها: B2 للجامعة والعمل المهني. أنت الآن تستطيع: محادثة يومية، قراءة أخبار، كتابة رسائل — احتفل بإنجازك! 🎉",
+        "في ألمانيا تُطلب شهادة B1 في مسارين رسميين: دورة الاندماج (Integrationskurs) تنتهي باختبار لغة بمستوى B1، والتجنّس (Einbürgerung) يشترط مستوى B1 على الأقل بحسب قانون الجنسية (§ 10 StAG). أما B2 فليست شرطاً للتجنّس.",
     },
   },
 
@@ -492,7 +544,7 @@ export const lessonB110: Lesson = {
           speakerAr: "ما مهنتك المثالية؟",
           options: [
             { de: "Ich träume davon, als Übersetzer zu arbeiten, weil ich Sprachen liebe und zwischen Kulturen vermitteln möchte.", ar: "أحلم بالعمل مترجماً لأنني أحب اللغات وأريد التوسط بين الثقافات.", best: true, replyDe: "Ein schöner Beruf mit Zukunft!", replyAr: "مهنة جميلة ولها مستقبل!" },
-            { de: "Mein Traumberuf ist, nichts zu tun.", ar: "مهنتي المثالية ألا أفعل شيئاً.", best: false, replyDe: "Das ist kein Beruf, das ist Faulheit!", replyAr: "هذه ليست مهنة، هذا كسل!" },
+            { de: "Mein Traumberuf ist, nichts zu tun.", ar: "مهنتي المثالية ألا أفعل شيئاً.", best: false, replyDe: "Hm, das klingt eher nach einer Pause als nach einem Beruf.", replyAr: "هذا يبدو استراحة أكثر منه مهنة." },
           ],
         },
       ],
