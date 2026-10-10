@@ -99,6 +99,12 @@ export const lessonB203: Lesson = {
       correctIndex: 0,
       explanation: "فاعل مذكر → der (درس التعليم B1).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«den» حالة مفعولية، والفاعل في الجملة الموصولة مذكّر في حالة الرفع.",
+        "«dem» حالة جر، ولا تناسب فاعل الجملة.",
+        "«dessen» تعني ملكية، ولا تناسب الجملة.",
+      ],
     },
     {
       id: "r2",
@@ -109,6 +115,12 @@ export const lessonB203: Lesson = {
       correctIndex: 0,
       explanation: "نصب محايد → das.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«der» مذكّر، والكلمة Buch محايدة.",
+        "«die» مؤنث، والكلمة Buch محايدة.",
+        "«dem» حالة جر، ولا تناسب مفعول الفعل lesen.",
+      ],
     },
     {
       id: "r3",
@@ -231,6 +243,12 @@ export const lessonB203: Lesson = {
         correctIndex: 0,
         explanation: "قال المحامي: Der Punkt, auf den Sie achten müssen, ist die Kündigungsfrist.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«den Preis» لم يذكرها المحامي كشيء ينتبه له سامي.",
+          "«die Lieferung» لم يذكرها المحامي كشيء ينتبه له سامي.",
+          "«die Unterschrift» لم يذكرها المحامي كشيء ينتبه له سامي.",
+        ],
       },
       {
         id: "q2",
@@ -243,6 +261,12 @@ export const lessonB203: Lesson = {
         correctIndex: 0,
         explanation: "قالت القاضية: Der Zeuge, mit dem wir sprechen, hat die Situation gesehen.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«der Anwalt» لم تقل القاضية إنه رأى الموقف.",
+          "«der Richter» لم تقل القاضية إنه رأى الموقف.",
+          "«die Polizei» لم تُذكر كمن رأى الموقف.",
+        ],
       },
       {
         id: "q3",
@@ -255,6 +279,12 @@ export const lessonB203: Lesson = {
         correctIndex: 0,
         explanation: "قالت: Das Gericht, vor dem wir stehen, hört genau zu.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«dem Parlament» لا تناسب المكان الذي يقفون فيه أمام المحكمة.",
+          "«dem Rathaus» لا تناسب المكان الذي يقفون فيه أمام المحكمة.",
+          "«dem Verein» لا تناسب المكان الذي يقفون فيه أمام المحكمة.",
+        ],
       },
     ],
   },
@@ -324,6 +354,12 @@ export const lessonB203: Lesson = {
       correctIndex: 0,
       explanation: "warten auf + نصب مذكر: auf den.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«den auf» ترتيب خاطئ؛ حرف الجر يسبق الضمير الموصول دائماً.",
+        "«auf dem» حالة جر، ولا تناسب الفعل warten على مفعول مذكر.",
+        "«auf der» حالة جر مؤنث، ولا تناسب المذكر.",
+      ],
     },
     {
       id: "e2",
@@ -334,6 +370,12 @@ export const lessonB203: Lesson = {
       correctIndex: 0,
       explanation: "بعد alles: was.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«das» تستعمل لشيء محدد محايد، ولا تناسب alles.",
+        "«wo» تستعمل للمكان أو الزمان، ولا تناسب alles.",
+        "«der» مذكّر، ولا تناسب alles.",
+      ],
     },
     {
       id: "e3",
@@ -401,6 +443,12 @@ export const lessonB203: Lesson = {
       correctIndex: 0,
       explanation: "der Zeuge = الشاهد (n-Deklination: den Zeugen).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«المحامي» يقابل Anwalt، وليس Zeuge.",
+        "«القاضي» يقابل Richter، وليس Zeuge.",
+        "«المتهم» يقابل Angeklagter، وليس Zeuge.",
+      ],
     },
     {
       id: "e9",
@@ -450,6 +498,12 @@ export const lessonB203: Lesson = {
       correctIndex: 0,
       explanation: "sprechen mit + Dativ: mit dem.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«mit den» حالة جمع، ولا تناسب Anwalt المفرد المذكر.",
+        "«auf den» حرف الجر لا يناسب sprechen mit.",
+        "«über den» حرف الجر لا يناسب sprechen mit.",
+      ],
     },
     {
       id: "m2",
@@ -460,6 +514,12 @@ export const lessonB203: Lesson = {
       correctIndex: 0,
       explanation: "مكان → wo.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«was» تستعمل لشيء غير محدد، ولا تناسب مكاناً.",
+        "«womit» تستعمل مع حرف جر لشيء، ولا تناسب مكاناً.",
+        "«wofür» تستعمل مع حرف جر لشيء، ولا تناسب مكاناً.",
+      ],
     },
     {
       id: "m3",
