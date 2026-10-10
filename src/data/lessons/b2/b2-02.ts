@@ -103,6 +103,12 @@ export const lessonB202: Lesson = {
       correctIndex: 0,
       explanation: "Passiv مضارع (درس البيئة B1).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wurde» صيغة الماضي، والجملة في المضارع (يُبنى الآن).",
+        "«ist» مع المبني للمجهول تعطي حالة لا فعلاً، ولا تناسب الفعل الديناميكي.",
+        "«war» صيغة الماضي للفعل sein، ولا تناسب المبني للمجهول.",
+      ],
     },
     {
       id: "r2",
@@ -113,6 +119,12 @@ export const lessonB202: Lesson = {
       correctIndex: 0,
       explanation: "Passiv ماضٍ: wurde gebaut.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wird» صيغة المضارع، ولا تناسب تاريخ البناء في الماضي.",
+        "«ist» مع المبني للمجهول تعطي حالة، ولا تناسب تاريخاً ماضياً.",
+        "«war» صيغة الماضي للفعل sein، ولا تناسب المبني للمجهول.",
+      ],
     },
     {
       id: "r3",
@@ -246,6 +258,12 @@ export const lessonB202: Lesson = {
         correctIndex: 0,
         explanation: "قالت المذيعة: Der Umsatz ist im letzten Quartal gestiegen.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«die Preise» لم تُذكر في الجملة كشيء ارتفع في الربع الأخير.",
+          "«die Steuern» لم تُذكر في الجملة كشيء ارتفع في الربع الأخير.",
+          "«die Löhne» لم تُذكر في الجملة كشيء ارتفع في الربع الأخير.",
+        ],
       },
       {
         id: "q2",
@@ -258,6 +276,12 @@ export const lessonB202: Lesson = {
         correctIndex: 0,
         explanation: "قالت: Das Problem der Inflation lässt sich langsam lösen.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«das Problem des Verkehrs» لم تُذكر في النص كمشكلة تُحل ببطء.",
+          "«das Problem der Schule» لم تُذكر في النص كمشكلة تُحل ببطء.",
+          "«das Problem des Wetters» لم تُذكر في النص كمشكلة تُحل ببطء.",
+        ],
       },
       {
         id: "q3",
@@ -270,6 +294,12 @@ export const lessonB202: Lesson = {
         correctIndex: 0,
         explanation: "قالت المديرة: Der Vertrag ist unterschrieben worden.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«der Brief» لم يُذكر كشيء وُقّع.",
+          "«die Rechnung» لم تُذكر كشيء وُقّع.",
+          "«der Bericht» لم يُذكر كشيء وُقّع.",
+        ],
       },
     ],
   },
@@ -356,6 +386,12 @@ export const lessonB202: Lesson = {
       correctIndex: 0,
       explanation: "حالة: ist geöffnet.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wird» صيغة المضارع، ولا تناسب حالة الباب المفتوحة.",
+        "«kann» فعل مودال، ولا يعطي معنى الحالة هنا.",
+        "«wurde» صيغة الماضي، ولا تناسب حالة الباب المفتوحة.",
+      ],
     },
     {
       id: "e2",
@@ -366,6 +402,12 @@ export const lessonB202: Lesson = {
       correctIndex: 0,
       explanation: "إمكانية: kann ... werden.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«ist» تستعمل مع Zustandspassiv، ولا تناسب الفعل المودال kann في الجملة.",
+        "«wird» تستعمل مع المبني للمجهول، لكن الجملة تحتاج المودال kann.",
+        "«wurde» صيغة الماضي، ولا تناسب الجملة.",
+      ],
     },
     {
       id: "e3",
@@ -432,6 +474,12 @@ export const lessonB202: Lesson = {
       correctIndex: 0,
       explanation: "die Konjunktur = الدورة الاقتصادية.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«الأسهم» تقابل Aktien، وليس Konjunktur.",
+        "«المبيعات» تقابل Umsatz، وليس Konjunktur.",
+        "«الاستثمار» تقابل Investition، وليس Konjunktur.",
+      ],
     },
     {
       id: "e9",
@@ -481,6 +529,12 @@ export const lessonB202: Lesson = {
       correctIndex: 0,
       explanation: "Zustandspassiv = sein + Partizip II ويصف النتيجة الباقية: der Vertrag ist unterschrieben. أما wird/wurde فيصفان الحدث نفسه.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wird» صيغة المضارع، ولا تناسب حالة العقد الموقّع.",
+        "«hat» مع المبني للمجهول لا تعطي الحالة، ولا تناسب الجملة.",
+        "«wurde» صيغة الماضي، ولا تناسب الحالة المكتملة.",
+      ],
     },
     {
       id: "m2",
@@ -491,6 +545,12 @@ export const lessonB202: Lesson = {
       correctIndex: 0,
       explanation: "sich lassen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«mich» ضمير لا يناسب lässt sich، والفاعل هنا غير المتكلم.",
+        "«dich» ضمير لا يناسب lässt sich، والفاعل هنا غير المخاطب.",
+        "«uns» ضمير لا يناسب lässt sich، والفاعل هنا غير الجماعة.",
+      ],
     },
     {
       id: "m3",
