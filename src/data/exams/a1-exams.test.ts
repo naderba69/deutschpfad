@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { A1_HOEREN } from "./a1-hoeren";
 import { A1_LESEN } from "./a1-lesen";
+import { A1_SCHREIBEN } from "./a1-schreiben";
 
 describe("نموذج A1 التدريبي — الاستماع", () => {
   it("مجموع النقاط 100 والأجزاء مرقّمة 1..4", () => {
@@ -41,6 +42,17 @@ describe("نموذج A1 التدريبي — القراءة", () => {
           expect(q.correct).toBeLessThan(q.options.length);
         }
       }
+    }
+  });
+});
+
+describe("نموذج A1 التدريبي — الكتابة", () => {
+  it("مهمتان مرقّمتان، ولكل مهمة حد أدنى للكلمات ونقاط مطلوبة", () => {
+    expect(A1_SCHREIBEN.map((t) => t.teil)).toEqual([1, 2]);
+    for (const t of A1_SCHREIBEN) {
+      expect(t.minWords).toBeGreaterThan(0);
+      expect(t.requires.length).toBeGreaterThanOrEqual(2);
+      expect(t.aufgabeDe.length).toBeGreaterThan(40);
     }
   });
 });
