@@ -107,7 +107,7 @@ export interface ExamSchreibaufgabe {
   /** نص المهمة الألماني الرسمي */
   aufgabeDe: string;
   aufgabeAr: string;
-  /** الحد الأدنى من الكلمات (الرسمي: 150 / 100) */
+  /** الحد الأدنى من الكلمات (يختلف حسب المستوى والمهمة) */
   minWords: number;
   /** نقاط يجب تغطيتها */
   requires: { de: string; ar: string }[];
@@ -120,7 +120,7 @@ export interface ExamSchreibaufgabe {
 export const EXAM_WRITING_RUBRIC = [
   { name: "Erfüllung", ar: "إنجاز المهمة (الغرض + الجوانب المطلوبة)", max: 25 },
   { name: "Kohärenz", ar: "الترابط والتنظيم (الروابط المنطقية)", max: 25 },
-  { name: "Wortschatz", ar: "المفردات (التنوع والدقة والملاءمة B2)", max: 25 },
+  { name: "Wortschatz", ar: "المفردات (التنوع والدقة والملاءمة للمستوى)", max: 25 },
   { name: "Struktur", ar: "البنية النحوية (الصحة والتنوع)", max: 25 },
 ] as const;
 
