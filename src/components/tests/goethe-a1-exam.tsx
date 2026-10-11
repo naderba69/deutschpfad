@@ -18,9 +18,13 @@ import { A2_HOEREN } from "@/data/exams/a2-hoeren";
 import { A2_LESEN } from "@/data/exams/a2-lesen";
 import { A2_SCHREIBEN } from "@/data/exams/a2-schreiben";
 import { A2_SPRECHEN } from "@/data/exams/a2-sprechen";
+import { B1_HOEREN } from "@/data/exams/b1-hoeren";
+import { B1_LESEN } from "@/data/exams/b1-lesen";
+import { B1_SCHREIBEN } from "@/data/exams/b1-schreiben";
+import { B1_SPRECHEN } from "@/data/exams/b1-sprechen";
 import { GoetheA1Speaking } from "@/components/tests/goethe-a1-speaking";
 
-export type ExamLevel = "A1" | "A2";
+export type ExamLevel = "A1" | "A2" | "B1";
 
 /** بيانات كل مستوى ومجلد صوته */
 const EXAM_DATA: Record<ExamLevel, {
@@ -32,6 +36,7 @@ const EXAM_DATA: Record<ExamLevel, {
 }> = {
   A1: { base: "/audio/exam-a1", hoeren: A1_HOEREN, lesen: A1_LESEN, schreiben: A1_SCHREIBEN, sprechen: A1_SPRECHEN },
   A2: { base: "/audio/exam-a2", hoeren: A2_HOEREN, lesen: A2_LESEN, schreiben: A2_SCHREIBEN, sprechen: A2_SPRECHEN },
+  B1: { base: "/audio/exam-b1", hoeren: B1_HOEREN, lesen: B1_LESEN, schreiben: B1_SCHREIBEN, sprechen: B1_SPRECHEN },
 };
 import type { ExamHoerenTeil, ExamLesenTeil, ExamMcq, ExamStatement } from "@/types/exam";
 
@@ -210,7 +215,7 @@ export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
   return (
     <div className="mx-auto w-full max-w-4xl space-y-6 px-4 py-10 sm:px-6" dir="rtl">
       <header className="space-y-2">
-        <h1 className="text-2xl font-extrabold">نموذج تدريبي — {level} (بنية {level === "A1" ? "Start Deutsch 1" : "Goethe A2"})</h1>
+        <h1 className="text-2xl font-extrabold">نموذج تدريبي — {level} (بنية {({ A1: "Start Deutsch 1", A2: "Goethe A2", B1: "Goethe B1" } as const)[level]})</h1>
         <p className="text-sm text-muted-foreground">
           هذا نموذج تدريبي من إعداد المنصة، وليس امتحاناً رسمياً من Goethe-Institut.
         </p>
