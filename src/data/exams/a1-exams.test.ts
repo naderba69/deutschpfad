@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { A1_HOEREN } from "./a1-hoeren";
 import { A1_LESEN } from "./a1-lesen";
 import { A1_SCHREIBEN } from "./a1-schreiben";
+import { A1_SPRECHEN } from "./a1-sprechen";
 
 describe("نموذج A1 التدريبي — الاستماع", () => {
   it("مجموع النقاط 100 والأجزاء مرقّمة 1..4", () => {
@@ -53,6 +54,20 @@ describe("نموذج A1 التدريبي — الكتابة", () => {
       expect(t.minWords).toBeGreaterThan(0);
       expect(t.requires.length).toBeGreaterThanOrEqual(2);
       expect(t.aufgabeDe.length).toBeGreaterThan(40);
+    }
+  });
+});
+
+describe("نموذج A1 التدريبي — التحدث", () => {
+  it("ثلاثة أجزاء مرقّمة، ولكل جزء جمل للشريك وعبارات نموذجية وقائمة فحص", () => {
+    expect(A1_SPRECHEN.map((t) => t.teil)).toEqual([1, 2, 3]);
+    for (const part of A1_SPRECHEN) {
+      expect(part.turns.length).toBeGreaterThan(0);
+      expect(part.checklistAr.length).toBeGreaterThanOrEqual(2);
+      for (const turn of part.turns) {
+        expect(turn.partnerDe.length).toBeGreaterThan(3);
+        expect(turn.modelDe.length).toBeGreaterThan(3);
+      }
     }
   });
 });

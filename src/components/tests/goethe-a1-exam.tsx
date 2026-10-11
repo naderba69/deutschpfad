@@ -13,9 +13,10 @@ import { Button } from "@/components/ui/button";
 import { A1_HOEREN } from "@/data/exams/a1-hoeren";
 import { A1_LESEN } from "@/data/exams/a1-lesen";
 import { A1_SCHREIBEN } from "@/data/exams/a1-schreiben";
+import { GoetheA1Speaking } from "@/components/tests/goethe-a1-speaking";
 import type { ExamHoerenTeil, ExamLesenTeil, ExamMcq, ExamStatement } from "@/types/exam";
 
-type Phase = "intro" | "hoeren" | "lesen" | "schreiben" | "result";
+type Phase = "intro" | "hoeren" | "lesen" | "schreiben" | "sprechen" | "result";
 
 const AUDIO_BASE = "/audio/exam-a1";
 
@@ -195,12 +196,12 @@ export function GoetheA1Exam() {
           هذا نموذج تدريبي من إعداد المنصة، وليس امتحاناً رسمياً من Goethe-Institut.
         </p>
         <nav className="flex flex-wrap gap-2 text-sm">
-          {(["intro", "hoeren", "lesen", "schreiben", "result"] as Phase[]).map((p) => (
+          {(["intro", "hoeren", "lesen", "schreiben", "sprechen", "result"] as Phase[]).map((p) => (
             <span
               key={p}
               className={`rounded-full border px-3 py-1 ${phase === p ? "border-primary font-bold" : ""}`}
             >
-              {{ intro: "المقدمة", hoeren: "الاستماع", lesen: "القراءة", schreiben: "الكتابة", result: "النتيجة" }[p]}
+              {{ intro: "المقدمة", hoeren: "الاستماع", lesen: "القراءة", schreiben: "الكتابة", sprechen: "التحدث", result: "النتيجة" }[p]}
             </span>
           ))}
         </nav>
@@ -303,7 +304,13 @@ export function GoetheA1Exam() {
               </div>
             );
           })}
-          <Button onClick={() => setPhase("result")}>عرض النتيجة</Button>
+          <Button onClick={() => setPhase("sprechen")}>إلى التحدث</Button>
+        </section>
+      )}
+
+      {phase === "sprechen" && (
+        <section className="space-y-6">
+          <GoetheA1Speaking onDone={() => setPhase("result")} />
         </section>
       )}
 
@@ -317,7 +324,7 @@ export function GoetheA1Exam() {
               <ul className="space-y-1 text-sm">
                 <li>الاستماع: {h.correct} من {h.total} ({h.pct}%)</li>
                 <li>القراءة: {l.correct} من {l.total} ({l.pct}%)</li>
-                <li>الكتابة: تقيّمها بنفسك بالنقاط المذكورة أعلاه.</li>
+                <li>الكتابة والتحدث: تقيّمهما بنفسك بالنقاط المذكورة أعلاه.</li>
               </ul>
             );
           })()}
