@@ -23,12 +23,23 @@ function speakDe(text: string) {
   window.speechSynthesis.speak(u);
 }
 
+/** تشغيل تسجيل بشري لجملة الشريك؛ إن تعذّر ذلك (الملف غير موجود) نرجع لصوت الجهاز */
+function playPartnerClip(src: string | undefined, fallbackText: string) {
+  if (!src) return speakDe(fallbackText);
+  const audio = new Audio(src);
+  audio.onerror = () => speakDe(fallbackText);
+  void audio.play().catch(() => speakDe(fallbackText));
+}
+
 export function GoetheA1Speaking({
   onDone,
   parts = A1_SPRECHEN,
+  audioBase,
 }: {
   onDone?: () => void;
   parts?: A1SpeakingPart[];
+  /** مجلد تسجيلات الشريك، مثل /audio/speaking-a2. الملف: t<الجزء>-<رقم الجملة>.mp3 */
+  audioBase?: string;
 }) {
   const SPEAKING = parts;
   const [partIdx, setPartIdx] = React.useState(0);
@@ -65,7 +76,9 @@ export function GoetheA1Speaking({
       <div className="space-y-2 rounded-xl bg-muted p-3">
         <p className="font-de text-sm font-semibold" dir="ltr" lang="de">{turn.partnerDe}</p>
         <p className="text-xs text-muted-foreground">{turn.partnerAr}</p>
-        <Button variant="outline" size="sm" onClick={() => speakDe(turn.partnerDe)}>
+        <Button variant="outline" size="sm" onClick={() =>
+            playPartnerClip(audioBase ? `${audioBase}/t${part.teil}-${turnIdx + 1}.mp3` : undefined, turn.partnerDe)
+          }>
           🔊 استمع لشريكك
         </Button>
       </div>
