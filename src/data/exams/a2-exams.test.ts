@@ -50,3 +50,19 @@ describe("نموذج A2 التدريبي — الكتابة", () => {
     }
   });
 });
+
+import { A2_SPRECHEN } from "./a2-sprechen";
+
+describe("نموذج A2 التدريبي — التحدث", () => {
+  it("ثلاثة أجزاء مرقّمة، ولكل جزء جمل للشريك وعبارات نموذجية وقائمة فحص", () => {
+    expect(A2_SPRECHEN.map((t) => t.teil)).toEqual([1, 2, 3]);
+    for (const part of A2_SPRECHEN) {
+      expect(part.turns.length).toBeGreaterThan(0);
+      expect(part.checklistAr.length).toBeGreaterThanOrEqual(2);
+      for (const turn of part.turns) {
+        expect(turn.partnerDe.length).toBeGreaterThan(3);
+        expect(turn.modelDe.length).toBeGreaterThan(3);
+      }
+    }
+  });
+});

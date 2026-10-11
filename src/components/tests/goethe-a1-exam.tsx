@@ -13,12 +13,30 @@ import { Button } from "@/components/ui/button";
 import { A1_HOEREN } from "@/data/exams/a1-hoeren";
 import { A1_LESEN } from "@/data/exams/a1-lesen";
 import { A1_SCHREIBEN } from "@/data/exams/a1-schreiben";
+import { A1_SPRECHEN, type A1SpeakingPart } from "@/data/exams/a1-sprechen";
+import { A2_HOEREN } from "@/data/exams/a2-hoeren";
+import { A2_LESEN } from "@/data/exams/a2-lesen";
+import { A2_SCHREIBEN } from "@/data/exams/a2-schreiben";
+import { A2_SPRECHEN } from "@/data/exams/a2-sprechen";
 import { GoetheA1Speaking } from "@/components/tests/goethe-a1-speaking";
+
+export type ExamLevel = "A1" | "A2";
+
+/** بيانات كل مستوى ومجلد صوته */
+const EXAM_DATA: Record<ExamLevel, {
+  base: string;
+  hoeren: ExamHoerenTeil[];
+  lesen: ExamLesenTeil[];
+  schreiben: typeof A1_SCHREIBEN;
+  sprechen: A1SpeakingPart[];
+}> = {
+  A1: { base: "/audio/exam-a1", hoeren: A1_HOEREN, lesen: A1_LESEN, schreiben: A1_SCHREIBEN, sprechen: A1_SPRECHEN },
+  A2: { base: "/audio/exam-a2", hoeren: A2_HOEREN, lesen: A2_LESEN, schreiben: A2_SCHREIBEN, sprechen: A2_SPRECHEN },
+};
 import type { ExamHoerenTeil, ExamLesenTeil, ExamMcq, ExamStatement } from "@/types/exam";
 
 type Phase = "intro" | "hoeren" | "lesen" | "schreiben" | "sprechen" | "result";
 
-const AUDIO_BASE = "/audio/exam-a1";
 
 /** ملفات الصوت لكل جزء بالترتيب. الجزء 2 والجزء 4 سطراً بسطر، كل سطر بصوته. */
 const AUDIO_FILES: Record<number, string[]> = {
@@ -37,11 +55,11 @@ const AUDIO_FILES: Record<number, string[]> = {
 const MAX_PLAYS = (teil: number) => (teil === 1 || teil === 3 ? 2 : 1);
 
 /** تشغيل قائمة ملفات بالتسلسل */
-function playSequence(files: string[], onDone: () => void) {
+function playSequence(base: string, files: string[], onDone: () => void) {
   let i = 0;
   const next = () => {
     if (i >= files.length) return onDone();
-    const audio = new Audio(`${AUDIO_BASE}/${files[i]}`);
+    const audio = new Audio(`${base}/${files[i]}`);
     i += 1;
     audio.onended = next;
     audio.onerror = next;
@@ -50,7 +68,7 @@ function playSequence(files: string[], onDone: () => void) {
   next();
 }
 
-function AudioPart({ part, onPlayed }: { part: ExamHoerenTeil; onPlayed?: () => void }) {
+function AudioPart({ part, base, onPlayed }: { part: ExamHoerenTeil; base: string; onPlayed?: () => void }) {
   const [plays, setPlays] = React.useState(0);
   const [busy, setBusy] = React.useState(false);
   const max = MAX_PLAYS(part.teil);
@@ -60,7 +78,7 @@ function AudioPart({ part, onPlayed }: { part: ExamHoerenTeil; onPlayed?: () => 
     if (left <= 0 || busy) return;
     setBusy(true);
     setPlays((p) => p + 1);
-    playSequence(AUDIO_FILES[part.teil] ?? [], () => {
+    playSequence(base, AUDIO_FILES[part.teil] ?? [], () => {
       setBusy(false);
       onPlayed?.();
     });
@@ -159,7 +177,8 @@ function scorePart(correct: number, total: number) {
   return { correct, total, pct: total ? Math.round((correct / total) * 100) : 0 };
 }
 
-export function GoetheA1Exam() {
+export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
+  const data = EXAM_DATA[level];
   const [phase, setPhase] = React.useState<Phase>("intro");
   const [hAns, setHAns] = React.useState<Record<string, boolean | number>>({});
   const [lAns, setLAns] = React.useState<Record<string, boolean | number>>({});
@@ -171,8 +190,8 @@ export function GoetheA1Exam() {
     t.kind === "rf"
       ? (t.statements ?? []).map((s) => ({ id: s.id, correct: s.isTrue }))
       : (t.questions ?? []).map((q) => ({ id: q.id, correct: q.correct }));
-  const hoerenItems: Item[] = A1_HOEREN.flatMap(toItems);
-  const lesenItems: Item[] = A1_LESEN.flatMap(toItems);
+  const hoerenItems: Item[] = data.hoeren.flatMap(toItems);
+  const lesenItems: Item[] = data.lesen.flatMap(toItems);
 
   const grade = (items: Item[], ans: Record<string, boolean | number>) =>
     items.filter((it) => ans[it.id] !== undefined && ans[it.id] === it.correct).length;
@@ -191,7 +210,7 @@ export function GoetheA1Exam() {
   return (
     <div className="mx-auto w-full max-w-4xl space-y-6 px-4 py-10 sm:px-6" dir="rtl">
       <header className="space-y-2">
-        <h1 className="text-2xl font-extrabold">نموذج تدريبي — A1 (بنية Start Deutsch 1)</h1>
+        <h1 className="text-2xl font-extrabold">نموذج تدريبي — {level} (بنية {level === "A1" ? "Start Deutsch 1" : "Goethe A2"})</h1>
         <p className="text-sm text-muted-foreground">
           هذا نموذج تدريبي من إعداد المنصة، وليس امتحاناً رسمياً من Goethe-Institut.
         </p>
@@ -219,11 +238,11 @@ export function GoetheA1Exam() {
 
       {phase === "hoeren" && (
         <section className="space-y-6">
-          {A1_HOEREN.map((t) => (
+          {data.hoeren.map((t) => (
             <div key={t.teil} className="space-y-3 rounded-2xl border bg-card p-5">
               <h2 className="font-extrabold">{t.titleAr}</h2>
               <p className="text-sm text-muted-foreground">{t.introAr}</p>
-              <AudioPart part={t} onPlayed={() => setHeard((h) => ({ ...h, [t.teil]: true }))} />
+              <AudioPart part={t} base={data.base} onPlayed={() => setHeard((h) => ({ ...h, [t.teil]: true }))} />
               {t.kind === "rf" ? (
                 <StatementsBlock
                   statements={t.statements ?? []}
@@ -247,7 +266,7 @@ export function GoetheA1Exam() {
 
       {phase === "lesen" && (
         <section className="space-y-6">
-          {A1_LESEN.map((t) => (
+          {data.lesen.map((t) => (
             <div key={t.teil} className="space-y-3 rounded-2xl border bg-card p-5">
               <h2 className="font-extrabold">{t.titleAr}</h2>
               <p className="text-sm text-muted-foreground">{t.introAr}</p>
@@ -277,7 +296,7 @@ export function GoetheA1Exam() {
 
       {phase === "schreiben" && (
         <section className="space-y-6">
-          {A1_SCHREIBEN.map((t, i) => {
+          {data.schreiben.map((t, i) => {
             const words = writing[i].trim() ? writing[i].trim().split(/\s+/).length : 0;
             return (
               <div key={t.teil} className="space-y-3 rounded-2xl border bg-card p-5">
@@ -310,7 +329,7 @@ export function GoetheA1Exam() {
 
       {phase === "sprechen" && (
         <section className="space-y-6">
-          <GoetheA1Speaking onDone={() => setPhase("result")} />
+          <GoetheA1Speaking parts={data.sprechen} onDone={() => setPhase("result")} />
         </section>
       )}
 

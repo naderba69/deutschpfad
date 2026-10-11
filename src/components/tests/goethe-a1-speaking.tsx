@@ -9,7 +9,7 @@
 import * as React from "react";
 
 import { Button } from "@/components/ui/button";
-import { A1_SPRECHEN } from "@/data/exams/a1-sprechen";
+import { A1_SPRECHEN, type A1SpeakingPart } from "@/data/exams/a1-sprechen";
 
 function speakDe(text: string) {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
@@ -23,16 +23,23 @@ function speakDe(text: string) {
   window.speechSynthesis.speak(u);
 }
 
-export function GoetheA1Speaking({ onDone }: { onDone?: () => void }) {
+export function GoetheA1Speaking({
+  onDone,
+  parts = A1_SPRECHEN,
+}: {
+  onDone?: () => void;
+  parts?: A1SpeakingPart[];
+}) {
+  const SPEAKING = parts;
   const [partIdx, setPartIdx] = React.useState(0);
   const [turnIdx, setTurnIdx] = React.useState(0);
   const [revealed, setRevealed] = React.useState(false);
   const [checked, setChecked] = React.useState<Record<string, boolean>>({});
 
-  const part = A1_SPRECHEN[partIdx];
+  const part = SPEAKING[partIdx];
   const turn = part.turns[turnIdx];
   const lastTurn = turnIdx === part.turns.length - 1;
-  const lastPart = partIdx === A1_SPRECHEN.length - 1;
+  const lastPart = partIdx === SPEAKING.length - 1;
 
   const next = () => {
     setRevealed(false);
@@ -51,7 +58,7 @@ export function GoetheA1Speaking({ onDone }: { onDone?: () => void }) {
         <h2 className="font-extrabold">{part.titleAr}</h2>
         <p className="text-sm text-muted-foreground">{part.instructionAr}</p>
         <p className="text-xs text-muted-foreground">
-          الجزء {partIdx + 1} من {A1_SPRECHEN.length} · الجملة {turnIdx + 1} من {part.turns.length}
+          الجزء {partIdx + 1} من {SPEAKING.length} · الجملة {turnIdx + 1} من {part.turns.length}
         </p>
       </header>
 
