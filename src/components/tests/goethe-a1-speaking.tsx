@@ -91,7 +91,9 @@ export function GoetheA1Speaking({
           <div className="space-y-2 rounded-xl border border-primary/30 bg-primary/5 p-3">
             <p className="font-de text-sm font-semibold" dir="ltr" lang="de">{turn.modelDe}</p>
             <p className="text-xs text-muted-foreground">{turn.modelAr}</p>
-            <Button variant="outline" size="sm" onClick={() => speakDe(turn.modelDe)}>
+            <Button variant="outline" size="sm" onClick={() =>
+                playPartnerClip(audioBase ? `${audioBase}/m${part.teil}-${turnIdx + 1}.mp3` : undefined, turn.modelDe)
+              }>
               🔊 استمع للعبارة النموذجية
             </Button>
           </div>
