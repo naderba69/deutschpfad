@@ -203,6 +203,9 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
                   </div>
                 </div>
 
+                <span className="shrink-0 whitespace-nowrap text-[11px] text-muted-foreground" title="تقدير تقريبي للمتعلم الذاتي">
+                  ⏱ ~{lesson.estimatedMinutes} د
+                </span>
                 {isNext && !isDone && (
                   <span className="shrink-0 rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-bold text-primary">
                     التالي

@@ -551,6 +551,11 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
           <Badge variant="secondary">
             {LEVEL_LABEL[lesson.level] ?? lesson.level}
           </Badge>
+          {LESSON_META.find((m) => m.id === lesson.id)?.estimatedMinutes && (
+            <Badge variant="outline" title="تقدير تقريبي للمتعلم الذاتي، وليس قياساً فعلياً">
+              ⏱ حوالي {LESSON_META.find((m) => m.id === lesson.id)?.estimatedMinutes} دقيقة (تقدير)
+            </Badge>
+          )}
         </div>
 
         <h1 className="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">

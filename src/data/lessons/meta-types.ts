@@ -8,6 +8,8 @@ export interface LessonMeta {
   titleDe: string;
   titleAr: string;
   summary: string;
+  /** مدة تقريبية للدرس بالدقائق (تقدير للمتعلم الذاتي، وليس قياساً فعلياً) */
+  estimatedMinutes: number;
   /**
    * أهم مفردات الدرس — مأخوذة من بطاقاته (flashcards) لا مكتوبة يدوياً.
    *
