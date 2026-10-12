@@ -23,7 +23,7 @@ import type { DailyDialogue } from "@/data/dialogues";
  * ═══════════════════════════════════════════════════════════
  */
 /** المستويات التي سُجّلت حوارتها بصوت بشري (ملف لكل سطر: <id>-<رقم السطر>.mp3) */
-const NATIVE_AUDIO_LEVELS = new Set(["A1"]);
+const NATIVE_AUDIO_LEVELS = new Set(["A1", "A2"]);
 
 function clipSrc(dialogue: DailyDialogue, step: number): string | undefined {
   if (!NATIVE_AUDIO_LEVELS.has(dialogue.level)) return undefined;
