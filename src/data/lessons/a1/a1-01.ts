@@ -4,7 +4,7 @@ import type { Lesson } from "@/types/lesson";
  * الدرس A1-01: التعارف والتحيات — نموذج كامل لنظام الدرس الموحد
  * (يعرض المكونات العشرة كلها؛ يُوسَّع محتواه في المرحلة 6)
  */
-export const lessonA101: Lesson = {
+const masterA101: Lesson = {
   id: "a1-01",
   unitId: "a1-01",
   level: "A1",
@@ -12,7 +12,7 @@ export const lessonA101: Lesson = {
   titleDe: "Hallo! Ich heiße …",
   titleAr: "التعارف والتحيات",
   summary:
-    "التحيات والوداع، تقديم النفس، تصريف sein وheißen، السلسلة الذهبية لتصريف الأفعال المنتظمة، وأسئلة W الأساسية مع ترتيب الجملة الألماني (الفعل في المركز الثاني).",
+    "التحيات والوداع، تقديم النفس، تصريف sein وheißen وkommen، والفرق بين du وSie، مع أسئلة التعارف الأساسية (Wie heißt du؟ Woher kommst du؟).",
 
   /* 1) الأهداف التعليمية */
   lernziele: [
@@ -22,6 +22,28 @@ export const lessonA101: Lesson = {
     { id: "z4", de: "Ich kann ich, du und er in einfachen Sätzen richtig verwenden.", ar: "أن أستعمل الضمائر ich وdu وer في جمل بسيطة عن نفسي وعن الآخرين.", evidence: { exerciseIds: ["w3"], taskIds: ["writing:a1-01:w3"], labelAr: "إكمال الفراغات بالضمائر ich وdu وer في الكتابة (w3).", completion: "all-correct" }, },
     { id: "z5", de: "Ich kann W-Fragen stellen.", ar: "أن أطرح أسئلة الاستفهام (W-Fragen) وأجيب عنها.", evidence: { exerciseIds: ["e12", "e14", "m3", "m5"], taskIds: ["practice:a1-01:e12", "practice:a1-01:e14", "mini-test:a1-01:m3", "mini-test:a1-01:m5"], labelAr: "اختيار أداة السؤال المناسبة (e12)، وترتيب أسئلة W (e14 وm3)، وتصحيح ترتيب سؤال (m5).", completion: "all-correct" }, },
     { id: "z6", de: "Ich kann regelmäßige Verben konjugieren: lernen, wohnen, spielen.", ar: "أن أصرف الأفعال المنتظمة في المضارع (أتعلم، أسكن، ألعب).", evidence: { exerciseIds: ["e11", "e13", "m4"], taskIds: ["practice:a1-01:e11", "practice:a1-01:e13", "mini-test:a1-01:m4"], labelAr: "صرف أفعال منتظمة بالسلسلة الذهبية (e11 وe13)، وملء الفراغ في الجمل (m4).", completion: "all-correct" }, },
+    {
+      id: "z7",
+      de: "Ich kann Ja/Nein-Fragen bilden.",
+      ar: "أن أحوّل الجملة الخبرية إلى سؤال نعم/لا بوضع الفعل في المركز الأول.",
+      evidence: {
+        exerciseIds: ["w2"],
+        taskIds: ["writing:a1-01:w2"],
+        labelAr: "تحويل جملة خبرية إلى سؤال نعم/لا (w2).",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z8",
+      de: "Ich kann Verben mit besonderen Endungen richtig konjugieren.",
+      ar: "أن أصرّف الأفعال التي تحتاج وصلة -e- أو نهاية خاصة في du وer.",
+      evidence: {
+        exerciseIds: ["e13", "e20"],
+        taskIds: ["practice:a1-01:e13", "practice:a1-01:e20"],
+        labelAr: "صرف arbeiten بوصلة -e- (e13) وصرف wohnen مع er/sie (e20).",
+        completion: "all-correct",
+      },
+    },
   ],
 
   /* 2) التمهيد وتنشيط المعرفة السابقة */
@@ -49,7 +71,7 @@ export const lessonA101: Lesson = {
       titleAr: "الفعل sein (يكون) — تصريفه في المضارع",
       titleDe: "Das Verb „sein“ im Präsens",
       explanationAr:
-        "الفعل **sein** يعني «يكون». هو أكثر فعل تستعمله في الألمانية، وصيغه لا تتبع قاعدة واحدة، لذلك تُحفظ مرةً واحدة وتُستعمل كثيراً.\n\n**متى نستعمله؟** في أربعة مواضع:\n· الاسم والهوية: Ich bin Sami.\n· الأصل والجنسية: Ich bin aus Tunesien.\n· المهنة، بلا أداة: Ich bin Student. (لا نقول ein Student)\n· الحالة والصفة: Ich bin müde.\n\n**القاعدة المهمة:** لا يُحذف sein أبداً. العربية تقول «أنا مهندس» بلا فعل، وهي جملة تامة. أما الألمانية فلا تقبل جملة بلا فعل مصرَّف، فتقول Ich **bin** Ingenieur، ولا تقول Ich Ingenieur.\n\n**sein أم haben؟** sein يصف حالةً أو هويةً أو أصلاً. haben يعني «يملك شيئاً». لذلك نقول Ich **bin** müde (أنا متعب)، ولا نقول Ich **habe** müde. وهذا الخلط من أشهر أخطاء المتعلمين العرب.\n\n**الصيغة الرسمية:** مع Sie نستعمل sind دائماً، حتى حين نخاطب شخصاً واحداً بأدب: Sie sind Frau Meier؟\n\n**تنبيه النطق:** الحرف s في أول sind وseid يُنطق «ز»، فنقول زِنْد وزايْت، لا سِنْد وسايْت. وهذه قاعدة عامة: s قبل حرف علّة تُنطق مجهورة.",
+        "الفعل **sein** يعني «يكون». هو أكثر فعل تستعمله في الألمانية، وصيغه لا تتبع قاعدة واحدة، لذلك تُحفظ مرةً واحدة وتُستعمل كثيراً.\n\n**متى نستعمله؟** في أربعة مواضع:\n· الاسم والهوية: Ich bin Sami.\n· الأصل والجنسية: Ich bin aus Tunesien.\n· المهنة، بلا أداة: Ich bin Student. (لا نقول ein Student)\n· الحالة والصفة: Ich bin müde.\n\n**الاسم (der Name):** يُعرَّف الشخص بقولنا Ich heiße Sami أو Mein Name ist Sami، وكلتاهما صحيحة، وMein Name تعني «اسمي».\n\n**القاعدة المهمة:** لا يُحذف sein أبداً. العربية تقول «أنا مهندس» بلا فعل، وهي جملة تامة. أما الألمانية فلا تقبل جملة بلا فعل مصرَّف، فتقول Ich **bin** Ingenieur، ولا تقول Ich Ingenieur.\n\n**sein أم haben؟** sein يصف حالةً أو هويةً أو أصلاً. haben يعني «يملك شيئاً». لذلك نقول Ich **bin** müde (أنا متعب)، ولا نقول Ich **habe** müde. وهذا الخلط من أشهر أخطاء المتعلمين العرب.\n\n**الصيغة الرسمية:** مع Sie نستعمل sind دائماً، حتى حين نخاطب شخصاً واحداً بأدب: Sie sind Frau Meier؟\n\n**تنبيه النطق:** الحرف s في أول sind وseid يُنطق «ز»، فنقول زِنْد وزايْت، لا سِنْد وسايْت. وهذه قاعدة عامة: s قبل حرف علّة تُنطق مجهورة.",
       whyAr:
         "لماذا نبدأ الألمانية كلّها بهذا الفعل تحديداً؟\n\nأوّلاً لأنّه **مفتاح الجملة الاسمية**، وهي أوّل ما يحتاجه المتعلّم: من أنت، من أين، ما مهنتك، كيف حالك. أربعة أسئلة يُجاب عنها كلّها بـ sein.\n\nوثانياً — وهو الأهمّ — لأنّ **العربي بالذات معرَّض لخطأ بنيوي هنا**. لغتك الأم تسمح بالجملة الاسمية بلا فعل رابط، فذهنك مبرمَج على أنّ «أنا متعب» جملة كاملة. حين تنقل هذه البرمجة إلى الألمانية تُنتج Ich müde، وهي أشيع أخطاء المبتدئين العرب على الإطلاق. فالبدء بـ sein ليس ترتيباً اعتباطياً، بل علاجٌ مبكّر لعادةٍ ذهنية.\n\nوثالثاً لأنّ sein سيعود إليك مرّتين لاحقاً: فعلاً مساعداً في الماضي التامّ (Ich **bin** gefahren)، وفعلاً في المبني للمجهول الحالي. فمن أتقنه اليوم وفّر على نفسه عناءً في B1.",
       table: {
@@ -716,7 +738,68 @@ export const lessonA101: Lesson = {
     {"id": "e12", "type": "multiple-choice", "instructionAr": "اختر الأداة الصحيحة للسؤال:", "questionDe": "___ wohnst du? — In Tunis.", "questionAr": "أين تسكن؟ — في تونس.", "options": ["Wo", "Woher", "Wohin", "Wann"], "correctIndex": 0, "explanation": "الجواب «in Tunis» يدلّ على مكانٍ ثابت، فالأداة Wo. أمّا Woher فتسأل عن الأصل (aus …) وWohin عن الوجهة (nach …).", "optionExplanations": [undefined, "Woher تنتظر جواباً بـ aus: aus Tunesien.", "Wohin تنتظر جواباً بـ nach: nach Berlin.", "Wann تسأل عن الزمن لا المكان."], "errorType": "vocabulary"},
     {"id": "e13", "type": "fill-blank", "instructionAr": "صرّف الفعل بين قوسين تصريفاً صحيحاً:", "template": "Du ___ sehr schnell. (arbeiten)", "blanks": [{"correct": "arbeitest", "options": ["arbeitest", "arbeitst", "arbeiten", "arbeitet"]}], "explanation": "جذع arbeit- ينتهي بحرف t، فتُدخَل وصلة ‑e‑ قبل نهاية du: arbeit + e + st = arbeitest. ولولا الوصلة لتعذّر نطق tst.", "errorType": "conjugation"},
     {"id": "e14", "type": "word-ordering", "instructionAr": "رتّب الكلمات لتكوّن سؤالاً صحيحاً:", "tokens": ["Warum", "lernst", "du", "Deutsch", "?"], "correctSentence": "Warum lernst du Deutsch?", "explanation": "أداة الاستفهام أوّلاً، ثمّ الفعل المصرَّف في المركز الثاني، ثمّ الفاعل، ثمّ المفعول. هذا هو ترتيب سؤال W الثابت.", "errorType": "word-order"},
-    {"id": "e15", "type": "error-correction", "instructionAr": "ابحث عن الكلمة الخاطئة وصحّحها:", "wrongSentence": "Meine Lehrerin heißen Frau Weber.", "wrongWord": "heißen", "correctWord": "heißt", "options": ["heißt", "heiße", "heißest", "bin"], "explanation": "الفاعل «meine Lehrerin» مفردٌ غائب، فيأخذ الفعل النهاية ‑t. والجذع heiß- ينتهي بـ ß لكنّ ذلك لا يمسّ صيغة الغائب: heißt.", "errorType": "conjugation"}
+    {"id": "e15", "type": "error-correction", "instructionAr": "ابحث عن الكلمة الخاطئة وصحّحها:", "wrongSentence": "Meine Lehrerin heißen Frau Weber.", "wrongWord": "heißen", "correctWord": "heißt", "options": ["heißt", "heiße", "heißest", "bin"], "explanation": "الفاعل «meine Lehrerin» مفردٌ غائب، فيأخذ الفعل النهاية ‑t. والجذع heiß- ينتهي بـ ß لكنّ ذلك لا يمسّ صيغة الغائب: heißt.", "errorType": "conjugation"},
+    {
+      id: "e16",
+      type: "multiple-choice",
+      instructionAr: "اختر الكلمة الصحيحة لإكمال السؤال:",
+      questionDe: "Wie ___ du?",
+      questionAr: "ما اسمك؟",
+      options: ["heißt", "heiße", "heißen", "hießt"],
+      correctIndex: 0,
+      explanation: "السؤال عن الاسم: Wie heißt du؟ — مع du تأخذ heißen النهاية -t وحدها.",
+      errorType: "conjugation",
+    },
+    {
+      id: "e17",
+      type: "multiple-choice",
+      instructionAr: "اختر التحية المناسبة لوقت الصباح:",
+      questionDe: "Am Morgen sagt man: ___",
+      questionAr: "في الصباح نقول:",
+      options: ["Guten Morgen", "Gute Nacht", "Guten Abend", "Auf Wiedersehen"],
+      correctIndex: 0,
+      explanation: "Guten Morgen للصباح. Gute Nacht تُقال عند النوم، وGuten Abend للمساء.",
+      errorType: "vocabulary",
+    },
+    {
+      id: "e18",
+      type: "fill-blank",
+      instructionAr: "أكمل الفراغات بالصيغة الصحيحة لـ sein:",
+      template: "Ich ___ Student. Du ___ Lehrerin.",
+      blanks: [
+        { correct: "bin", options: ["bin", "bist", "ist"] },
+        { correct: "bist", options: ["bin", "bist", "ist"] },
+      ],
+      explanation: "ich → bin، du → bist. وتذكّر: المهنة بعد sein بلا أداة.",
+      errorType: "conjugation",
+    },
+    {
+      id: "e19",
+      type: "word-ordering",
+      instructionAr: "رتّب الكلمات لتكوين جملة صحيحة:",
+      tokens: ["aus", "Ich", "komme", "Tunesien", "."],
+      correctSentence: "Ich komme aus Tunesien.",
+      explanation: "الفعل في المركز الثاني: Ich (1) + komme (2) + aus Tunesien.",
+      errorType: "word-order",
+    },
+    {
+      id: "e20",
+      type: "fill-blank",
+      instructionAr: "صرّف الفعل بين قوسين:",
+      template: "Sie ___ in Tunis. (wohnen)",
+      blanks: [{ correct: "wohnt", options: ["wohne", "wohnst", "wohnt", "wohnen"] }],
+      explanation: "مع er/sie/es تأخذ الأفعال المنتظمة النهاية -t: sie wohnt.",
+      errorType: "conjugation",
+    },
+    {
+      id: "e21",
+      type: "word-ordering",
+      instructionAr: "رتّب الكلمات لتكوين سؤال صحيح:",
+      tokens: ["kommt", "Woher", "er", "?"],
+      correctSentence: "Woher kommt er?",
+      explanation: "سؤال W: كلمة الاستفهام، ثم الفعل في المركز الثاني، ثم الفاعل.",
+      errorType: "word-order",
+    },
   ],
 
   /* 8) الأخطاء الشائعة والتريكات + لقطة ثقافية */
@@ -885,3 +968,111 @@ export const lessonA101: Lesson = {
     },
   ],
 };
+
+/* ═══ التقسيم إلى جزأين (A1-01 + A1-01b) ═══
+ * الجزء الأول: التعارف، وsein، وdu/Sie، والتحيات، وأسئلة التعارف الأساسية.
+ * الجزء الثاني: أسئلة W وترتيب V2، وتصريف الأفعال المنتظمة.
+ * المصدر واحد (masterA101) لتفادي تكرار المحتوى؛ كل جزء يأخذ نصيبه بالمعرّف. */
+
+const PART2_THEORY = new Set(["t2", "t3"]);
+const PART2_TASKS = new Set(["e8", "e11", "e12", "e13", "e14", "e20", "e21", "m3", "m4", "m5", "w2"]);
+const PART2_FLASHCARDS = new Set(["fc5", "fc9", "fc10", "fc13"]);
+const PART2_GOALS = new Set(["z5", "z6", "z7", "z8"]);
+
+const isPart2Task = (id: string) => PART2_TASKS.has(id);
+
+/** الجزء الأول: كل شيء ما عدا محتوى الجزء الثاني */
+export const lessonA101: Lesson = {
+  ...masterA101,
+  theory: masterA101.theory.filter((t) => !PART2_THEORY.has(t.id)),
+  lernziele: masterA101.lernziele.filter((g) => !PART2_GOALS.has(g.id)),
+  practiceBank: masterA101.practiceBank.filter((t) => !isPart2Task(t.id)),
+  miniTest: masterA101.miniTest.filter((t) => !isPart2Task(t.id)),
+  writing: masterA101.writing.filter((t) => !isPart2Task(t.id)),
+  flashcards: masterA101.flashcards.filter((f) => !PART2_FLASHCARDS.has(f.id)),
+};
+
+const rebaseTaskId = (id: string) => id.replace(":a1-01:", ":a1-01b:");
+
+/** الجزء الثاني: أسئلة W وتصريف الأفعال المنتظمة */
+export const lessonA101b: Lesson = {
+  id: "a1-01b",
+  unitId: "a1-01",
+  level: "A1",
+  order: 1.5,
+  titleDe: "Wer? Woher? Wie? — Fragen und Verben",
+  titleAr: "أسئلة W وتصريف الأفعال المنتظمة",
+  summary:
+    "أسئلة الاستفهام W-Fragen وترتيب الجملة (V2)، وتصريف الأفعال المنتظمة بالسلسلة الذهبية مع وصلة -e- والاستثناءات.",
+  lernziele: masterA101.lernziele
+    .filter((g) => PART2_GOALS.has(g.id))
+    .map((g) => ({
+      ...g,
+      evidence: g.evidence && {
+        ...g.evidence,
+        taskIds: (g.evidence.taskIds ?? []).map(rebaseTaskId),
+      },
+    })),
+  einfuehrung: {
+    motivatingQuestionAr:
+      "لديك الآن جمل عن نفسك. كيف تسأل شخصاً آخر عن اسمه ومكانه وعمله؟ فكّر في الأسئلة قبل أن تبدأ.",
+    motivatingQuestionDe: "Wie fragst du nach Name, Herkunft und Wohnort?",
+    contextAr:
+      "الأسئلة الألمانية تبدأ بكلمة استفهام، ثم يأتي الفعل، ثم الفاعل. هذا الترتيب هو ما نتدرب عليه في هذا الدرس.",
+    contextDe: "Wie? Woher? Wo? Wann? Warum?",
+    connectionToPreviousAr:
+      "يكمّل هذا الدرس ما تعلمته في الجزء الأول: sein وheißen وkommen.",
+    activateVocabulary: [
+      { de: "woher", ar: "من أين" },
+      { de: "wohnen", ar: "يسكن" },
+      { de: "lernen", ar: "يتعلم" },
+    ],
+  },
+  theory: masterA101.theory.filter((t) => PART2_THEORY.has(t.id)),
+  listening: { items: [], questions: [] },
+  pronunciation: masterA101.pronunciation,
+  writing: masterA101.writing.filter((t) => isPart2Task(t.id)),
+  practiceBank: masterA101.practiceBank.filter((t) => isPart2Task(t.id)),
+  fehlerUndTipps: masterA101.fehlerUndTipps,
+  miniTest: masterA101.miniTest.filter((t) => isPart2Task(t.id)),
+  flashcards: masterA101.flashcards.filter((f) => PART2_FLASHCARDS.has(f.id)),
+  mediation: [
+    {
+      id: "med-a1-01b-1",
+      type: "summarize-de-to-ar",
+      titleAr: "انقل إلى صديقك جواب ثلاثة أسئلة عن شخص",
+      sourceDe: "Lena kommt aus Berlin. Sie wohnt jetzt in Tunis und lernt Arabisch.",
+      sourceAr: "لينا من برلين. هي تسكن الآن في تونس وتتعلم العربية.",
+      taskAr: "انقل المعلومات أعلاه إلى صديقك بالعربية، وأجب عن: من أين لينا؟ وأين تسكن؟ وماذا تتعلم؟",
+      modelAnswerAr: "«لينا من برلين، وهي تسكن الآن في تونس، وتتعلم اللغة العربية.»",
+      keyPointsAr: ["ذكرت الأصل (برلين)", "ذكرت مكان السكن (تونس)", "ذكرت ما تتعلمه (العربية)"],
+    },
+  ],
+  interaction: [
+    {
+      id: "int-a1-01b-1",
+      scenarioAr: "تسأل شخصاً ألمانياً عن أصله ومكان سكنه في حفلة.",
+      scenarioDe: "Du fragst eine Person auf einer Party nach ihrer Herkunft.",
+      strategyAr: "الاستراتيجية المستهدفة: طرح أسئلة W والرد على أسئلة الآخر بجملة كاملة.",
+      rounds: [
+        {
+          speakerDe: "Hallo! Woher kommst du?",
+          speakerAr: "مرحباً! من أين أنت؟",
+          options: [
+            { de: "Ich komme aus Tunesien. Und du?", ar: "أنا من تونس. وأنت؟", best: true, replyDe: "Ich komme aus Berlin. Schön, dich kennenzulernen!", replyAr: "أنا من برلين. سررت بمعرفتك!" },
+            { de: "Ich wohne in einem Auto.", ar: "أسكن في سيارة.", best: false, replyDe: "Oh, wirklich? Das ist ungewöhnlich!", replyAr: "أوه، حقاً؟ هذا غير معتاد!" },
+          ],
+        },
+        {
+          speakerDe: "Wo wohnst du in Tunis?",
+          speakerAr: "أين تسكن في تونس؟",
+          options: [
+            { de: "Ich wohne in der Medina.", ar: "أسكن في المدينة العتيقة.", best: true, replyDe: "Wie schön! Die Medina ist toll.", replyAr: "جميل! المدينة العتيقة رائعة." },
+            { de: "Ich wohne in Berlin, ja.", ar: "أسكن في برلين، نعم.", best: false, replyDe: "Moment, du wohnst doch in Tunis?", replyAr: "لحظة، ألست تسكن في تونس؟" },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
