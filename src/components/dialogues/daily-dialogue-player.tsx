@@ -22,6 +22,14 @@ import type { DailyDialogue } from "@/data/dialogues";
  *  4) مفردات الحوار مظللة
  * ═══════════════════════════════════════════════════════════
  */
+/** المستويات التي سُجّلت حوارتها بصوت بشري (ملف لكل سطر: <id>-<رقم السطر>.mp3) */
+const NATIVE_AUDIO_LEVELS = new Set(["A1"]);
+
+function clipSrc(dialogue: DailyDialogue, step: number): string | undefined {
+  if (!NATIVE_AUDIO_LEVELS.has(dialogue.level)) return undefined;
+  return `/audio/dialogues-${dialogue.level.toLowerCase()}/${dialogue.id}-${step}.mp3`;
+}
+
 export function DailyDialoguePlayer({ dialogue, onBack }: { dialogue: DailyDialogue; onBack: () => void }) {
   const [step, setStep] = React.useState(0); // 0 = intro, 1..N = الجولات, N+1 = الأسئلة
   const [showAr, setShowAr] = React.useState(false);
@@ -244,7 +252,7 @@ export function DailyDialoguePlayer({ dialogue, onBack }: { dialogue: DailyDialo
             <p className="text-sm font-bold text-gold-strong">حاول أن تتحدث/تكتب هذا الدور بنفسك…</p>
             <p className="mt-1 text-xs text-muted-foreground">استمع للمتحدث الآخر ثم ردّ — ثم كشف الإجابة للمقارنة.</p>
             <div className="mt-3 flex flex-wrap justify-center gap-2">
-              <SpeakButton text={turn.de} rate={0.75} size="sm" label="استمع (كشف)؟" />
+              <SpeakButton text={turn.de} audioSrc={clipSrc(dialogue, step)} rate={0.75} size="sm" label="استمع (كشف)؟" />
               <Button size="sm" variant="outline" onClick={() => setRevealed((r) => ({ ...r, [step - 1]: true }))} className="gap-1.5">
                 <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
                 كشف الإجابة
@@ -257,7 +265,7 @@ export function DailyDialoguePlayer({ dialogue, onBack }: { dialogue: DailyDialo
               <p className="font-de flex-1 text-base font-bold leading-relaxed" dir="ltr" lang="de">
                 {turn.de}
               </p>
-              <SpeakButton text={turn.de} rate={0.8} size="sm" />
+              <SpeakButton text={turn.de} audioSrc={clipSrc(dialogue, step)} rate={0.8} size="sm" />
             </div>
             {showAr && (
               <p className="rounded-lg bg-primary/5 px-3 py-2 text-sm text-muted-foreground">{turn.ar}</p>
