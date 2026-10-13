@@ -16,6 +16,8 @@
  */
 import { test, expect, type Page } from "@playwright/test";
 
+import {gotoLessonStep} from "./helpers/lesson-steps";
+
 async function clearData(page: Page) {
   await page.evaluate(async () => {
     try {
@@ -43,16 +45,8 @@ async function gotoListen(page: Page) {
   await page.reload();
   await page.waitForTimeout(1800);
   // إلى قسم الاستماع: تنقّل حتى ظهوره (ترتيب الأقسام قد يتغير بين إصدارات الدروس)
-  for (let i = 0; i < 12; i++) {
-    const heading = (await page.locator("#lesson-step-content h2").first().textContent().catch(() => "")) ?? "";
-    if (heading.includes("الاستماع")) break;
-    const nextBtn = page.getByRole("button", { name: /التالي:/ }).last();
-    if (!(await nextBtn.isVisible().catch(() => false))) break;
-    await nextBtn.click().catch(() => {});
-    await page.waitForTimeout(450);
-  }
-  await page.waitForTimeout(900);
-  await expect(page.locator("#lesson-step-content h2").first()).toContainText("الاستماع", { timeout: 8000 });
+  await gotoLessonStep(page, "الاستماع");
+  await page.waitForTimeout(600);
   // أزرار كل سطر («استمع إلى: …» و«سجّل نطقك: …») تظهر بعد كشف نص الحوار
   const reveal = page.getByRole("button", { name: /اكشف نص الحوار/ }).first();
   if (await reveal.isVisible().catch(() => false)) {
