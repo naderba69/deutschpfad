@@ -1,5 +1,7 @@
 # 🎓 درب الألمانية — DeutschPfad
 
+[![CI](https://github.com/naderba69/deutschpfad/actions/workflows/ci.yml/badge.svg)](https://github.com/naderba69/deutschpfad/actions/workflows/ci.yml)
+
 منصة تعليمية عربية متكاملة لتعليم **اللغة الألمانية من الصفر (A1) حتى الاحتراف (B2)**
 وفق منهجية معهد غوته (Goethe-Institut) ومعايير الإطار الأوروبي المرجعي المشترك للغات (CEFR)،
 بتصميم يحاكي الأستاذ الخصوصي بالكامل — تعمل **كبديل كامل** عنه.
