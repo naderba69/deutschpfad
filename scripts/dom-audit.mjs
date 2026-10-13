@@ -2,8 +2,8 @@
 import { chromium } from "@playwright/test";
 import fs from "fs";
 
-const BASE = "http://localhost:3000";
-const OUT = "/home/user/audit-report";
+const BASE = process.env.BASE_URL ?? "http://localhost:3000";
+const OUT = process.env.OUT_DIR ?? "audit-report";
 fs.mkdirSync(OUT, { recursive: true });
 
 const VIEWPORTS = [

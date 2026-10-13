@@ -310,11 +310,11 @@ cp .env.example .env.local
 | واجهات برمجية | `/api/llm` · `/api/llm/status` |
 | ملفات | `manifest.webmanifest` · `robots.txt` · `sitemap.xml` · `icon.png` |
 
-### 📦 حزمة التثبيت الذاتي (ملف واحد = المشروع كاملاً)
+### 📦 التثبيت
 
-بدل نسخ ولصق الملفات، حمّل **`deutschpfad-bundle.sh`** من مساحة العمل ونفّذه على أي جهاز:
-`bash deutschpfad-bundle.sh` → يولّد مجلد المشروع كاملاً جاهزاً للإنتاج (مضغوط tar.gz + base64).
-يولَّد عبر `bash scripts/bundle.sh` ويُعاد توليده تلقائياً بعد كل مرحلة ليبقى محدّثاً.
+الاستنساخ المعتاد: `git clone` ثم `npm ci` ثم `npm run build && npm run start`.
+(حزمة `deutschpfad-bundle.sh` أداة محلية للمطوّر — مُستبعَدة من المستودع بـ`.gitignore`
+ولا تُسلَّم معه، فلا يُبنى عليها في التوثيق العام.)
 
 ---
 
@@ -323,9 +323,9 @@ cp .env.example .env.local
 ```
 deutschpfad/
 ├── public/               # أيقونات PWA + sw.js (مولّد آلياً) + logo.svg + audio/
-├── scripts/              # أدوات تدقيق تُشغَّل يدوياً (curriculum/content/lessons audits)
+├── scripts/              # أدوات تدقيق تُشغَّل يدوياً (الجرد في scripts/README.md)
 ├── .github/workflows/ci.yml  # CI: npm ci → typecheck → lint → vitest → build → Playwright
-├── docs/                 # التقارير ووثائق التحقق وخطة إعادة الهيكلة (REFACTOR-PLAN.md)
+├── docs/                 # وثائق نشطة + أرشيف (الفهرس: docs/README.md)
 ├── vercel.json / DEPLOYMENT.md
 └── src/
     ├── app/              # 86 مساراً (App Router) — راجع خارطة المسار أعلاه

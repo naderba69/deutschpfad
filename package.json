@@ -13,6 +13,11 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "audit:curriculum": "node scripts/curriculum-audit.mjs",
+    "audit:content": "node scripts/content-audit.mjs",
+    "audit:lessons": "node scripts/deep-lesson-audit.mjs",
+    "audit:inventory": "node scripts/lessons-inventory.mjs",
+    "audit:dom": "node scripts/dom-audit.mjs",
+    "shots": "node scripts/screenshots.mjs",
     "verify": "npm run typecheck && npm run lint && npx vitest run && npm run build"
   },
   "dependencies": {
