@@ -20,7 +20,14 @@ export const BACKUP_VERSION = 2 as const;
 const MAX_AUTO_SNAPSHOTS = 14;
 
 /** بادئات مفاتيح localStorage المملوكة للمنصة (allowlist للتصدير/الاستعادة) */
-const LS_PREFIXES = ["dp:", "deutschpfad:"] as const;
+const LS_PREFIXES = [
+  "dp:",
+  "deutschpfad:",
+  // تقدم الدروس (موضع الخطوة/الأقسام): مفاتيح بصيغ أخرى غير dp: — كانت تُفقد عند النسخ
+  "lesson-step:",
+  "dp-flow:",
+  "dp-steps:",
+] as const;
 
 /** ═══ P0-02: مفاتيح لا تُصدَّر أبداً (مفتاح LLM الخاص بالمستخدم) ═══ */
 const LS_EXCLUDED = new Set(["dp:llm:user-key"]);

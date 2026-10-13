@@ -17,6 +17,9 @@ const withPWA = withPWAInit({
   disable: process.env.NODE_ENV === "development",
   workboxOptions: {
     disableDevLogs: true,
+    // حدّ الـ precache: مقطع المحتوى الدروسي ~2.65 MB ويجب أن يعمل دون إنترنت (PWA)،
+    // فنرفع الحد إلى 4 MB بدل استبعاده من التخزين المسبق
+    maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
     runtimeCaching: [
       {
         // الأصول الثابتة: أيقونات التطبيق وشعارات وصور عامة — تُخزَّن محلياً شهراً
