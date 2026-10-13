@@ -2,7 +2,12 @@
 #  CI — DeutschPfad
 #  شبكة الأمان: لا تصل أي دفعة إلى main أو فرع عمل دون أن تمرّ
 #  فحوص الأنواع + ESLint + اختبارات الوحدة + البناء + اختبارات المتصفح.
-#  محلياً نفس الشيء: npm run verify
+#  محلياً نفس الشيء: npm run verify ثم npx playwright test
+#
+#  ملاحظتان تصميميتان (من واقع أول تشغيل حقيقي):
+#  1) كل وظيفة تبني نسختها بنفسها — لا نقل مجلد `.next` بين الوظائف
+#     (actions/upload-artifact يستبعد الملفات المخفية افتراضياً، فأخفقت أول تجربة).
+#  2) الوظيفتان بلا `needs` فتعملان بالتوازي — زمن الجدار = أطول وظيفة لا مجموعهما.
 # ═══════════════════════════════════════════════════════════
 name: CI
 
@@ -17,11 +22,14 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  NEXT_TELEMETRY_DISABLED: "1"
+
 jobs:
   static-and-unit:
-    name: أنواع + ESLint + وحدات + بناء
+    name: أنواع + ESLint + اختبارات الوحدة
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
@@ -42,19 +50,8 @@ jobs:
       - name: اختبارات الوحدة (vitest)
         run: npx vitest run --reporter=dot
 
-      - name: البناء الإنتاجي (next build)
-        run: npm run build
-
-      - name: حفظ مجلد .next للوظيفة التالية
-        uses: actions/upload-artifact@v4
-        with:
-          name: next-build
-          path: .next
-          retention-days: 1
-
   e2e:
-    name: اختبارات المتصفح (Playwright)
-    needs: static-and-unit
+    name: بناء + اختبارات المتصفح (Playwright)
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -71,11 +68,8 @@ jobs:
       - name: تثبيت متصفح Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: استرجاع نسخة البناء
-        uses: actions/download-artifact@v4
-        with:
-          name: next-build
-          path: .next
+      - name: البناء الإنتاجي (next build)
+        run: npm run build
 
       - name: اختبارات المتصفح على نسخة إنتاجية
         run: npx playwright test --reporter=line --workers=2
