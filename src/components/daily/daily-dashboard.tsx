@@ -22,15 +22,30 @@ function byDay<T>(arr: T[]): T {
  * كلمة اليوم + خطأ اليوم + هل تعلم؟ + لقطة ثقافية
  */
 export function DailyDashboard() {
-  const [word, setWord] = React.useState<VocabEntry | null>(null);
+  // الاختيار اليومي يعتمد على التاريخ المحلي، لذا يُحسب بعد الـ mount فقط
+  // (تجنباً لعدم تطابق الخادم والمتصفح). القيم الأولية حتمية.
+  const [picks, setPicks] = React.useState<{
+    word: VocabEntry | null;
+    mistake: (typeof DAILY_MISTAKES)[number];
+    fact: (typeof DID_YOU_KNOW)[number];
+    culture: (typeof CULTURAL_FACTS)[number];
+  }>({
+    word: null,
+    mistake: DAILY_MISTAKES[0],
+    fact: DID_YOU_KNOW[0],
+    culture: CULTURAL_FACTS[0],
+  });
 
   React.useEffect(() => {
-    setWord(byDay(getA1VocabAll()));
+    setPicks({
+      word: byDay(getA1VocabAll()),
+      mistake: byDay(DAILY_MISTAKES),
+      fact: byDay(DID_YOU_KNOW),
+      culture: byDay(CULTURAL_FACTS),
+    });
   }, []);
 
-  const mistake = byDay(DAILY_MISTAKES);
-  const fact = byDay(DID_YOU_KNOW);
-  const culture = byDay(CULTURAL_FACTS);
+  const { word, mistake, fact, culture } = picks;
 
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">

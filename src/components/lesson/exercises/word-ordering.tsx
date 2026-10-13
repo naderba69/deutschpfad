@@ -7,7 +7,7 @@ import {FeedbackPanel} from "@/components/lesson/exercises/feedback-panel";
 import {useExerciseState} from "@/components/lesson/exercises/use-exercise-state";
 import {Button} from "@/components/ui/button";
 import {evaluateOrdering} from "@/lib/lesson/exercise-engine";
-import {shuffle} from "@/lib/lesson/shuffle";
+import {seededShuffle, shuffle} from "@/lib/lesson/shuffle";
 import {cn} from "@/lib/utils";
 import type { OrderingExercise, FeedbackResult } from "@/types/lesson";
 
@@ -29,7 +29,9 @@ export function WordOrderingExercise({
     () => shuffle(exercise.tokens.map((word, i) => ({ word, key: `${word}#${i}` }))),
     [exercise.tokens],
   );
-  const [bank, setBank] = React.useState<Token[]>(makeTokens);
+  const [bank, setBank] = React.useState<Token[]>(() =>
+    seededShuffle(exercise.tokens.map((word, i) => ({ word, key: `${word}#${i}` })), exercise.id),
+  );
   const [answer, setAnswer] = React.useState<Token[]>([]);
   const [dragIndex, setDragIndex] = React.useState<number | null>(null);
   const state = useExerciseState(exercise);

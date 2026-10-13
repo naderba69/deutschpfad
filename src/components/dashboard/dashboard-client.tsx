@@ -151,7 +151,7 @@ export function DashboardClient() {
                 <p className="text-[11px] font-bold text-muted-foreground">
                   درسك التالي في التسلسل · {nextLesson.level}
                 </p>
-                <p className="truncate text-lg font-extrabold">
+                <p className="break-words text-lg font-extrabold [overflow-wrap:anywhere]">
                   <span dir="ltr">{nextLesson.titleDe}</span>
                   <span className="ms-2 text-sm font-medium text-muted-foreground">{nextLesson.titleAr}</span>
                 </p>

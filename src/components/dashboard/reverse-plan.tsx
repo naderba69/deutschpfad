@@ -41,7 +41,10 @@ const DEFAULT_DATE = () => {
 
 export function ReversePlanCard() {
   const { completedUnits, isHydrated } = useProgress();
-  const [targetDate, setTargetDate] = React.useState(DEFAULT_DATE);
+  const [targetDate, setTargetDate] = React.useState("");
+  React.useEffect(() => {
+    setTargetDate(DEFAULT_DATE());
+  }, []);
   const [plan, setPlan] = React.useState<Plan | null>(null);
   const [countdown, setCountdown] = React.useState<{ weeks: number; days: number } | null>(null);
 

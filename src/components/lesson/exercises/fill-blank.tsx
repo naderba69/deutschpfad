@@ -7,7 +7,7 @@ import {FeedbackPanel} from "@/components/lesson/exercises/feedback-panel";
 import {useExerciseState} from "@/components/lesson/exercises/use-exercise-state";
 import {Button} from "@/components/ui/button";
 import {evaluateFillBlank} from "@/lib/lesson/exercise-engine";
-import {shuffle} from "@/lib/lesson/shuffle";
+import {seededShuffle} from "@/lib/lesson/shuffle";
 import {cn} from "@/lib/utils";
 import type { FillBlankExercise, FeedbackResult } from "@/types/lesson";
 
@@ -116,7 +116,7 @@ export function FillBlankExerciseView({
 const optionCache = new WeakMap<object, string[]>();
 function shuffleOnce(options: string[]): string[] {
   if (optionCache.has(options)) return optionCache.get(options)!;
-  const shuffled = shuffle(options);
+  const shuffled = seededShuffle(options, options.join("|"));
   optionCache.set(options, shuffled);
   return shuffled;
 }

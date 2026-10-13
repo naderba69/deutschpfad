@@ -62,7 +62,7 @@ export function UnitRow({ unit, status, onToggle }: UnitRowProps) {
         <div className="min-w-0">
           <p
             className={cn(
-              "truncate text-sm font-bold",
+              "break-words text-sm font-bold [overflow-wrap:anywhere]",
               isCompleted && "text-success",
               isLocked && "text-muted-foreground",
             )}

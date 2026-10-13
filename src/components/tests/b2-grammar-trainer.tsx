@@ -24,7 +24,11 @@ export function B2GrammarTrainer() {
 
   // خلط الخيارات لكل محاولة — البنك يضع الإجابة الصحيحة في الموضع الأول دائماً
   // eslint-disable-next-line react-hooks/exhaustive-deps -- runKey مقصود: يعيد الخلط عند إعادة المحاولة
-  const questions = React.useMemo(() => shuffleChoiceItems(B2_GRAMMATIK), [runKey]);
+  // خلط بعد التركيب فقط (تفادياً لخطأ الـ hydration)
+  const [questions, setQuestions] = React.useState(() => B2_GRAMMATIK);
+  React.useEffect(() => {
+    setQuestions(shuffleChoiceItems(B2_GRAMMATIK));
+  }, [runKey]);
 
   // 60 دقيقة = دقيقة لكل سؤال (توصية تدريبية)
   const totalSeconds = B2_GRAMMATIK.length * 60;

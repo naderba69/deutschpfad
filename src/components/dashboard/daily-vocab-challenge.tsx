@@ -45,7 +45,11 @@ function pickDailyWords(): { word: VocabEntry; topic: B2ExamTopic }[] {
 }
 
 export function DailyVocabChallenge() {
-  const [daily] = React.useState(pickDailyWords);
+  // الكلمات اليومية تعتمد على التاريخ المحلي: تُحسب بعد الـ mount لتجنب عدم التطابق
+  const [daily, setDaily] = React.useState<{ word: VocabEntry; topic: B2ExamTopic }[]>([]);
+  React.useEffect(() => {
+    setDaily(pickDailyWords());
+  }, []);
   const [flipped, setFlipped] = React.useState<Set<number>>(new Set());
   const [added, setAdded] = React.useState<Set<string>>(new Set());
   const [quiz, setQuiz] = React.useState<"off" | "on">("off");

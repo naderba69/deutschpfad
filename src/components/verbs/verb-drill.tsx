@@ -58,7 +58,14 @@ function hint(verb: StarkeVerb, tense: Tense): string {
 }
 
 export function VerbDrill() {
-  const [question, setQuestion] = React.useState<DrillQuestion>(() => buildQuestion());
+  // أول تصيير حتمي (يطابق الخادم) ثم سؤال عشوائي بعد التركيب لتفادي خطأ الـ hydration
+  const [question, setQuestion] = React.useState<DrillQuestion>(() => {
+    const verb = STARK_VERBEN[0];
+    return { verb, tense: "präsens", answer: verb.präsens3 };
+  });
+  React.useEffect(() => {
+    setQuestion(buildQuestion());
+  }, []);
   const [value, setValue] = React.useState("");
   const [feedback, setFeedback] = React.useState<"correct" | "wrong" | null>(null);
   const [score, setScore] = React.useState({ correct: 0, total: 0 });

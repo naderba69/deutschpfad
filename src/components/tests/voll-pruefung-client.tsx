@@ -103,7 +103,7 @@ export function VollPruefungClient() {
             بعد الأجزاء المكتوبة، أكمل الشفهي في صفحته المخصصة: عرض تقديمي (اختر موضوعاً
             وتحدث 3 دقائق) ثم مناقشة (4 دقائق) — مع تسجيل صوتي وتقييم ذاتي بمعايير الممتحن.
           </p>
-          <Button asChild size="lg" className="gap-1.5">
+          <Button asChild size="lg" className="h-auto min-h-11 max-w-full gap-1.5 whitespace-normal py-2 text-start">
             <a href="/tests/sprechen">
               <Mic className="h-4 w-4" aria-hidden="true" />
               انتقل إلى الامتحان الشفهي B2

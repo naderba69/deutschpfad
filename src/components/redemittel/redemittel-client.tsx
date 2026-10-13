@@ -112,14 +112,14 @@ export function RedemittelClient() {
             <CardContent className="p-4">
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0">
-                  <p className="flex flex-wrap items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-2">
                     <span className="font-de text-base font-bold" dir="ltr" lang="de">
                       {r.de}
                     </span>
                     <Badge variant={r.level === "B2" ? "default" : r.level === "B1" ? "secondary" : "outline"} className="font-de text-[11px]">
                       {r.level}
                     </Badge>
-                  </p>
+                  </div>
                   <p className="mt-1 text-sm font-semibold text-primary">{r.ar}</p>
                   <p className="mt-1.5 flex items-start gap-1.5 text-xs leading-relaxed text-muted-foreground">
                     <Volume2 className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />

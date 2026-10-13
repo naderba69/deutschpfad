@@ -4,7 +4,7 @@ import * as React from "react";
 import {CheckCircle2, ListOrdered, RotateCcw, XCircle} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
-import {shuffle} from "@/lib/lesson/shuffle";
+import {seededShuffle} from "@/lib/lesson/shuffle";
 import {cn} from "@/lib/utils";
 import type { ListeningItem } from "@/types/lesson";
 
@@ -17,7 +17,7 @@ import type { ListeningItem } from "@/types/lesson";
  */
 export function DialogueOrdering({ item }: { item: ListeningItem }) {
   const [ordered, setOrdered] = React.useState<string[]>([]);
-  const [remaining, setRemaining] = React.useState<string[]>(() => shuffle(item.lines.map((l) => l.de)));
+  const [remaining, setRemaining] = React.useState<string[]>(() => seededShuffle(item.lines.map((l) => l.de), item.id));
   const [lastWrong, setLastWrong] = React.useState(false);
   const [finished, setFinished] = React.useState(false);
 
@@ -38,7 +38,7 @@ export function DialogueOrdering({ item }: { item: ListeningItem }) {
 
   const reset = () => {
     setOrdered([]);
-    setRemaining(shuffle(item.lines.map((l) => l.de)));
+    setRemaining(seededShuffle(item.lines.map((l) => l.de), item.id));
     setLastWrong(false);
     setFinished(false);
   };

@@ -8,7 +8,7 @@ import {FeedbackPanel} from "@/components/lesson/exercises/feedback-panel";
 import {useExerciseState} from "@/components/lesson/exercises/use-exercise-state";
 ;
 import {evaluateMcq} from "@/lib/lesson/exercise-engine";
-import {shuffle} from "@/lib/lesson/shuffle";
+import {seededShuffle} from "@/lib/lesson/shuffle";
 import {cn} from "@/lib/utils";
 import type { McqExercise, FeedbackResult } from "@/types/lesson";
 
@@ -22,7 +22,7 @@ export function MultipleChoiceExercise({
   exercise: McqExercise;
   onResult?: (r: FeedbackResult) => void;
 }) {
-  const [options] = React.useState(() => shuffle(exercise.options));
+  const [options] = React.useState(() => seededShuffle(exercise.options, exercise.id));
   const [selected, setSelected] = React.useState<string | null>(null);
   const state = useExerciseState(exercise);
 

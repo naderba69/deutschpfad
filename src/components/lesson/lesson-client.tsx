@@ -249,10 +249,10 @@ function LessonPrevNext({ lessonId }: { lessonId: string }) {
           <ArrowRight className="h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" aria-hidden="true" />
           <div className="min-w-0">
             <p className="text-[11px] font-bold text-muted-foreground">الدرس السابق</p>
-            <p className="truncate text-sm font-bold">
+            <p className="break-words text-sm font-bold [overflow-wrap:anywhere]">
               <LangDe className="font-bold">{prev.titleDe}</LangDe>
             </p>
-            <p className="truncate text-xs text-muted-foreground">{prev.titleAr}</p>
+            <p className="break-words text-xs text-muted-foreground [overflow-wrap:anywhere]">{prev.titleAr}</p>
           </div>
         </Link>
       ) : (
@@ -266,10 +266,10 @@ function LessonPrevNext({ lessonId }: { lessonId: string }) {
         >
           <div className="min-w-0 text-end">
             <p className="text-[11px] font-bold text-primary">الدرس التالي — تابع المسار</p>
-            <p className="truncate text-sm font-bold">
+            <p className="break-words text-sm font-bold [overflow-wrap:anywhere]">
               <LangDe className="font-bold">{next.titleDe}</LangDe>
             </p>
-            <p className="truncate text-xs text-muted-foreground">{next.titleAr}</p>
+            <p className="break-words text-xs text-muted-foreground [overflow-wrap:anywhere]">{next.titleAr}</p>
           </div>
           <ArrowLeft className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
         </Link>

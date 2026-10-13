@@ -180,10 +180,10 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
                 </span>
 
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-bold">
+                  <p className="break-words text-sm font-bold [overflow-wrap:anywhere]">
                     <LangDe className="font-bold">{lesson.titleDe}</LangDe>
                   </p>
-                  <p className="truncate text-xs text-muted-foreground">
+                  <p className="break-words text-xs text-muted-foreground [overflow-wrap:anywhere]">
                     {lesson.titleAr}
                   </p>
                   <div className="mt-1 flex flex-wrap items-center gap-1.5 text-[11px] text-muted-foreground">
