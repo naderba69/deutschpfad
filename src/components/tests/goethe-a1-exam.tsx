@@ -23,6 +23,9 @@ import { B1_LESEN } from "@/data/exams/b1-lesen";
 import { B1_SCHREIBEN } from "@/data/exams/b1-schreiben";
 import { B1_SPRECHEN } from "@/data/exams/b1-sprechen";
 import { GoetheA1Speaking } from "@/components/tests/goethe-a1-speaking";
+import { ExamMcqListCompact, ExamStatementsListCompact } from "@/components/tests/exam-question-views";
+import { gradeTeile, scoreModule } from "@/lib/tests/exam-scoring";
+import type { ExamHoerenTeil, ExamLesenTeil } from "@/types/exam";
 
 export type ExamLevel = "A1" | "A2" | "B1";
 
@@ -38,7 +41,6 @@ const EXAM_DATA: Record<ExamLevel, {
   A2: { base: "/audio/exam-a2", hoeren: A2_HOEREN, lesen: A2_LESEN, schreiben: A2_SCHREIBEN, sprechen: A2_SPRECHEN },
   B1: { base: "/audio/exam-b1", hoeren: B1_HOEREN, lesen: B1_LESEN, schreiben: B1_SCHREIBEN, sprechen: B1_SPRECHEN },
 };
-import type { ExamHoerenTeil, ExamLesenTeil, ExamMcq, ExamStatement } from "@/types/exam";
 
 type Phase = "intro" | "hoeren" | "lesen" | "schreiben" | "sprechen" | "result";
 
@@ -101,87 +103,6 @@ function AudioPart({ part, base, onPlayed }: { part: ExamHoerenTeil; base: strin
   );
 }
 
-function StatementsBlock({
-  statements,
-  answers,
-  onPick,
-  disabled,
-}: {
-  statements: ExamStatement[];
-  answers: Record<string, boolean>;
-  onPick: (id: string, v: boolean) => void;
-  disabled?: boolean;
-}) {
-  return (
-    <div className="space-y-2">
-      {statements.map((s) => (
-        <div key={s.id} className="flex flex-wrap items-center justify-between gap-2 rounded-lg border p-3">
-          <span className="font-de text-sm" dir="ltr" lang="de">{s.de}</span>
-          <div className="flex gap-2">
-            {[true, false].map((v) => (
-              <button
-                key={String(v)}
-                type="button"
-                disabled={disabled}
-                onClick={() => onPick(s.id, v)}
-                className={`rounded-md border px-3 py-1 text-sm font-semibold ${
-                  answers[s.id] === v ? "border-primary bg-primary text-primary-foreground" : "bg-background"
-                }`}
-              >
-                {v ? "Richtig / صحيح" : "Falsch / خطأ"}
-              </button>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function McqBlock({
-  questions,
-  answers,
-  onPick,
-  disabled,
-}: {
-  questions: ExamMcq[];
-  answers: Record<string, number>;
-  onPick: (id: string, idx: number) => void;
-  disabled?: boolean;
-}) {
-  return (
-    <div className="space-y-3">
-      {questions.map((q) => (
-        <div key={q.id} className="rounded-lg border p-3">
-          <p className="font-de text-sm font-semibold" dir="ltr" lang="de">{q.q}</p>
-          {q.qAr && <p className="mt-0.5 text-xs text-muted-foreground">{q.qAr}</p>}
-          <div className="mt-2 grid gap-2 sm:grid-cols-3">
-            {q.options.map((opt, idx) => (
-              <button
-                key={idx}
-                type="button"
-                disabled={disabled}
-                onClick={() => onPick(q.id, idx)}
-                className={`rounded-md border px-3 py-2 text-start font-de text-sm ${
-                  answers[q.id] === idx ? "border-primary bg-primary/10 font-bold" : "bg-background"
-                }`}
-                dir="ltr"
-                lang="de"
-              >
-                {opt}
-              </button>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function scorePart(correct: number, total: number) {
-  return { correct, total, pct: total ? Math.round((correct / total) * 100) : 0 };
-}
-
 export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
   const data = EXAM_DATA[level];
   const [phase, setPhase] = React.useState<Phase>("intro");
@@ -190,19 +111,9 @@ export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
   const [writing, setWriting] = React.useState<string[]>(["", ""]);
   const [heard, setHeard] = React.useState<Record<number, boolean>>({});
 
-  type Item = { id: string; correct: boolean | number };
-  const toItems = (t: ExamHoerenTeil | ExamLesenTeil): Item[] =>
-    t.kind === "rf"
-      ? (t.statements ?? []).map((s) => ({ id: s.id, correct: s.isTrue }))
-      : (t.questions ?? []).map((q) => ({ id: q.id, correct: q.correct }));
-  const hoerenItems: Item[] = data.hoeren.flatMap(toItems);
-  const lesenItems: Item[] = data.lesen.flatMap(toItems);
-
-  const grade = (items: Item[], ans: Record<string, boolean | number>) =>
-    items.filter((it) => ans[it.id] !== undefined && ans[it.id] === it.correct).length;
-
-  const hCorrect = grade(hoerenItems, hAns);
-  const lCorrect = grade(lesenItems, lAns);
+  // التصحيح من الوحدة الموحّدة (src/lib/tests/exam-scoring.ts) — لا نسخة محلية
+  const hRes = gradeTeile(data.hoeren, hAns);
+  const lRes = gradeTeile(data.lesen, lAns);
 
   const reset = () => {
     setHAns({});
@@ -249,14 +160,14 @@ export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
               <p className="text-sm text-muted-foreground">{t.introAr}</p>
               <AudioPart part={t} base={data.base} onPlayed={() => setHeard((h) => ({ ...h, [t.teil]: true }))} />
               {t.kind === "rf" ? (
-                <StatementsBlock
+                <ExamStatementsListCompact
                   statements={t.statements ?? []}
                   answers={hAns as Record<string, boolean>}
                   onPick={(id, v) => setHAns((a) => ({ ...a, [id]: v }))}
                   disabled={!heard[t.teil]}
                 />
               ) : (
-                <McqBlock
+                <ExamMcqListCompact
                   questions={t.questions ?? []}
                   answers={hAns as Record<string, number>}
                   onPick={(id, idx) => setHAns((a) => ({ ...a, [id]: idx }))}
@@ -281,13 +192,13 @@ export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
                 </pre>
               )}
               {t.kind === "rf" ? (
-                <StatementsBlock
+                <ExamStatementsListCompact
                   statements={t.statements ?? []}
                   answers={lAns as Record<string, boolean>}
                   onPick={(id, v) => setLAns((a) => ({ ...a, [id]: v }))}
                 />
               ) : (
-                <McqBlock
+                <ExamMcqListCompact
                   questions={t.questions ?? []}
                   answers={lAns as Record<string, number>}
                   onPick={(id, idx) => setLAns((a) => ({ ...a, [id]: idx }))}
@@ -342,8 +253,8 @@ export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
         <section className="space-y-4 rounded-2xl border bg-card p-5">
           <h2 className="text-lg font-extrabold">النتيجة</h2>
           {(() => {
-            const h = scorePart(hCorrect, hoerenItems.length);
-            const l = scorePart(lCorrect, lesenItems.length);
+            const h = scoreModule(hRes.correct, hRes.total);
+            const l = scoreModule(lRes.correct, lRes.total);
             return (
               <ul className="space-y-1 text-sm">
                 <li>الاستماع: {h.correct} من {h.total} ({h.pct}%)</li>

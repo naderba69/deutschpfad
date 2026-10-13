@@ -5,7 +5,7 @@ import {Award, BookOpenCheck, CheckCircle2, Headphones, Mic, PenLine, PlayCircle
 
 import {B2_GRAMMATIK, B2_HOEREN_SETS, B2_LESEN_SETS, GOETHE_B2_EXAM} from "@/data/exams";
 import {SCHREIB_MODELLE} from "@/data/schreibmodelle";
-import type { ExamHoerenTeil, ExamLesenTeil, ExamMcq } from "@/types/exam";
+import type { ExamHoerenTeil, ExamLesenTeil } from "@/types/exam";
 import {useCountdown} from "@/lib/tests/use-countdown";
 import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
@@ -13,6 +13,8 @@ import {Card, CardContent} from "@/components/ui/card";
 import {Progress} from "@/components/ui/progress";
 import {AutoGrowTextarea} from "@/components/shared/auto-grow-textarea";
 import {ExamAudioPlayer} from "@/components/tests/exam-audio-player";
+import {ExamGapList, ExamMcqList, ExamStatementsList, ExamZuordnungList} from "@/components/tests/exam-question-views";
+import {gradeTeile, scoreModule, type ModuleScore} from "@/lib/tests/exam-scoring";
 import {B2_HOEREN_AUDIO, type ExamAudioSpec} from "@/data/exams/b2-hoeren-audio";
 
 /**
@@ -26,13 +28,6 @@ import {B2_HOEREN_AUDIO, type ExamAudioSpec} from "@/data/exams/b2-hoeren-audio"
  */
 
 type Phase = "intro" | "lesen" | "hören" | "schreiben" | "sprechen" | "result";
-
-interface ModulScore {
-  pct: number;
-  correct: number;
-  total: number;
-  passed: boolean;
-}
 
 const MODULE_META: { key: Phase; icon: React.ReactNode; title: string; minutes: number }[] = [
   { key: "lesen", icon: <BookOpenCheck className="h-5 w-5" />, title: "Lesen — القراءة", minutes: GOETHE_B2_EXAM.lesenMinutes },
@@ -49,231 +44,6 @@ function speakText(text: string, rate = 0.95) {
   u.lang = "de-DE";
   u.rate = rate;
   window.speechSynthesis.speak(u);
-}
-
-/* ════════════ عارض MCQ ════════════ */
-function McqList({
-  questions,
-  answers,
-  onAnswer,
-}: {
-  questions: ExamMcq[];
-  answers: Record<string, number>;
-  onAnswer: (id: string, idx: number) => void;
-}) {
-  return (
-    <div className="space-y-4">
-      {questions.map((q, qi) => (
-        <div key={q.id} className="rounded-xl border bg-card p-4">
-          <p className="text-sm font-bold">
-            <span className="ms-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-[11px] font-extrabold text-primary">{qi + 1}</span>
-            <span dir="ltr" lang="de">{q.q}</span>
-          </p>
-          {q.qAr && <p className="mt-0.5 text-xs text-muted-foreground">{q.qAr}</p>}
-          <div className="mt-2 grid gap-1.5 sm:grid-cols-2">
-            {q.options.map((opt, oi) => (
-              <button
-                key={oi}
-                type="button"
-                onClick={() => onAnswer(q.id, oi)}
-                className={cn(
-                  "rounded-lg border px-3 py-2 text-start text-sm transition-colors",
-                  answers[q.id] === oi ? "border-primary bg-primary/10 text-primary" : "border-muted bg-background hover:border-primary/40",
-                )}
-              >
-                <span className="font-de ms-1 inline-block w-4 text-xs font-bold opacity-60">{String.fromCharCode(65 + oi)}</span>
-                <span dir="ltr" lang="de">{opt}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-/* ════════════ عارض Zuordnung ════════════ */
-function ZuordnungList({
-  categories,
-  items,
-  allowRepeat,
-  answers,
-  onAnswer,
-}: {
-  categories: { id: string; de: string; ar?: string }[];
-  items: { id: string; de: string; ar?: string }[];
-  allowRepeat: boolean;
-  answers: Record<string, string>;
-  onAnswer: (itemId: string, catId: string) => void;
-}) {
-  const used = new Set(Object.values(answers));
-  return (
-    <div className="space-y-2">
-      <div className="flex flex-wrap gap-1.5">
-        {categories.map((c) => (
-          <span key={c.id} className="rounded-lg border bg-muted/30 px-2.5 py-1 text-xs font-bold">
-            <span dir="ltr" lang="de">{c.de}</span>
-          </span>
-        ))}
-      </div>
-      {items.map((it, i) => (
-        <div key={it.id} className="rounded-xl border bg-card p-3">
-          <p className="text-sm">
-            <span className="ms-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-muted text-[11px] font-bold">{i + 1}</span>
-            <span dir="ltr" lang="de">{it.de}</span>
-          </p>
-          {it.ar && <p className="mt-0.5 text-xs text-muted-foreground">{it.ar}</p>}
-          <div className="mt-2 flex flex-wrap gap-1.5">
-            {categories.map((c) => {
-              const isSel = answers[it.id] === c.id;
-              const blocked = !allowRepeat && used.has(c.id) && !isSel;
-              return (
-                <button
-                  key={c.id}
-                  type="button"
-                  disabled={blocked}
-                  onClick={() => onAnswer(it.id, c.id)}
-                  className={cn(
-                    "rounded-md border px-2.5 py-1 text-xs font-semibold transition-colors",
-                    isSel ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background hover:border-primary/50",
-                    blocked && "opacity-30",
-                  )}
-                >
-                  <span dir="ltr" lang="de">{c.de}</span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-/* ════════════ عارض Richtig/Falsch ════════════ */
-function RichtigFalschList({
-  statements,
-  answers,
-  onAnswer,
-}: {
-  statements: { id: string; de: string; ar?: string }[];
-  answers: Record<string, boolean>;
-  onAnswer: (id: string, val: boolean) => void;
-}) {
-  return (
-    <div className="space-y-2">
-      {statements.map((s, i) => (
-        <div key={s.id} className="rounded-xl border bg-card p-3">
-          <p className="text-sm">
-            <span className="ms-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-muted text-[11px] font-bold">{i + 1}</span>
-            <span dir="ltr" lang="de">{s.de}</span>
-          </p>
-          {s.ar && <p className="mt-0.5 text-xs text-muted-foreground">{s.ar}</p>}
-          <div className="mt-2 flex gap-2">
-            <button
-              type="button"
-              onClick={() => onAnswer(s.id, true)}
-              className={cn("rounded-md border px-3 py-1 text-xs font-bold", answers[s.id] === true ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background")}
-            >
-              Richtig
-            </button>
-            <button
-              type="button"
-              onClick={() => onAnswer(s.id, false)}
-              className={cn("rounded-md border px-3 py-1 text-xs font-bold", answers[s.id] === false ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background")}
-            >
-              Falsch
-            </button>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-/* ════════════ عارض Lückentext ════════════ */
-function GapList({
-  gap,
-  answers,
-  onAnswer,
-}: {
-  gap: { textWithGaps: string; sentenceBank: { id: string; de: string }[]; gapOrder: string[] };
-  answers: Record<number, string>;
-  onAnswer: (gapIdx: number, sentenceId: string) => void;
-}) {
-  const [bank] = React.useState(() => [...gap.sentenceBank].sort(() => Math.random() - 0.5));
-  const parts = gap.textWithGaps.split(/(\{(\d+)\})/g);
-  const gapCount = gap.gapOrder.length;
-
-  const renderGap = (idx: number) => {
-    const chosen = bank.find((b) => b.id === answers[idx]);
-    return (
-      <button
-        key={idx}
-        type="button"
-        onClick={() => {
-          const next = { ...answers };
-          delete next[idx];
-          // إعادة توزيع: سنستخدم setState خارجاً — نستدعي onAnswer فقط بالاختيار
-          // للإزالة نستدعي onAnswer مع دالة خاصة — نبسط: زر منفصل
-        }}
-        className={cn(
-          "mx-0.5 inline-block min-w-24 rounded-md border-2 px-2 py-0.5 text-sm align-baseline",
-          chosen ? "border-primary bg-primary/10" : "border-dashed border-muted-foreground/50 bg-muted/30",
-        )}
-      >
-        {chosen ? chosen.de : `…[${idx + 1}]`}
-      </button>
-    );
-  };
-
-  return (
-    <div className="space-y-3">
-      <div className="rounded-xl border bg-muted/30 p-4 leading-loose">
-        <p className="text-[15px] leading-loose" dir="ltr" lang="de">
-          {parts.map((part, i) => {
-            if (part.startsWith("{") && part.endsWith("}")) {
-              const idx = Number(part.slice(1, -1));
-              return <React.Fragment key={i}>{renderGap(idx)}</React.Fragment>;
-            }
-            return <React.Fragment key={i}>{part}</React.Fragment>;
-          })}
-        </p>
-      </div>
-      <div>
-        <p className="mb-2 text-xs font-bold text-muted-foreground">اختر جملة لكل فراغ (جملتان زائدتان لا تناسبان):</p>
-        <div className="flex flex-wrap gap-2">
-          {bank.map((s) => {
-            const used = Object.values(answers).includes(s.id);
-            return (
-              <button
-                key={s.id}
-                type="button"
-                onClick={() => {
-                  const firstEmpty = [...Array(gapCount).keys()].find((i) => !answers[i]);
-                  if (firstEmpty === undefined) return;
-                  onAnswer(firstEmpty, s.id);
-                }}
-                className={cn("rounded-lg border px-3 py-1.5 text-sm", used ? "border-success/50 bg-success/10" : "border-muted bg-background hover:border-primary/50")}
-              >
-                <span dir="ltr" lang="de">{s.de}</span>
-              </button>
-            );
-          })}
-        </div>
-      </div>
-      {/* إزالة اختيار */}
-      {Object.keys(answers).length > 0 && (
-        <div className="flex flex-wrap gap-1.5">
-          {[...Array(gapCount).keys()].filter((i) => answers[i]).map((i) => (
-            <button key={i} type="button" onClick={() => onAnswer(i, "")} className="rounded-full border border-destructive/40 px-2.5 py-0.5 text-[11px] font-bold text-destructive">
-              ✕ أزل الفراغ {i + 1}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
-  );
 }
 
 /* ════════════ الجزء الواحد من القراءة ════════════ */
@@ -299,7 +69,7 @@ function LesenTeilView({
         </div>
       )}
       {teil.kind === "gap" && teil.gap && (
-        <GapList
+        <ExamGapList
           gap={teil.gap}
           answers={answers as Record<number, string>}
           onAnswer={(gi, sid) => {
@@ -314,7 +84,7 @@ function LesenTeilView({
         />
       )}
       {teil.kind === "zuordnung" && teil.categories && teil.items && (
-        <ZuordnungList
+        <ExamZuordnungList
           categories={teil.categories}
           items={teil.items}
           allowRepeat={teil.allowRepeat ?? false}
@@ -323,14 +93,14 @@ function LesenTeilView({
         />
       )}
       {teil.kind === "rf" && teil.statements && (
-        <RichtigFalschList
+        <ExamStatementsList
           statements={teil.statements}
           answers={answers as Record<string, boolean>}
           onAnswer={(id, val) => onAnswer(id, val)}
         />
       )}
       {teil.kind === "mcq" && teil.questions && (
-        <McqList
+        <ExamMcqList
           questions={teil.questions}
           answers={answers as Record<string, number>}
           onAnswer={(id, idx) => onAnswer(id, idx)}
@@ -357,21 +127,21 @@ function HoerenTeilView({
       <div className="rounded-xl border bg-muted/20 p-3 text-sm text-muted-foreground">{teil.introAr}</div>
       <ExamAudioPlayer spec={audio} />
       {teil.kind === "rf" && teil.statements && (
-        <RichtigFalschList
+        <ExamStatementsList
           statements={teil.statements}
           answers={answers as Record<string, boolean>}
           onAnswer={(id, val) => onAnswer(id, val)}
         />
       )}
       {teil.kind === "mcq" && teil.questions && (
-        <McqList
+        <ExamMcqList
           questions={teil.questions}
           answers={answers as Record<string, number>}
           onAnswer={(id, idx) => onAnswer(id, idx)}
         />
       )}
       {teil.kind === "zuordnung" && teil.categories && teil.items && (
-        <ZuordnungList
+        <ExamZuordnungList
           categories={teil.categories}
           items={teil.items}
           allowRepeat={teil.allowRepeat ?? false}
@@ -384,12 +154,6 @@ function HoerenTeilView({
   );
 }
 
-/* ════════════ حاسبة النتيجة ════════════ */
-function scoreModule(correct: number, total: number): ModulScore {
-  const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
-  return { pct, correct, total, passed: pct >= GOETHE_B2_EXAM.passThreshold };
-}
-
 export function GoetheB2Exam() {
   const [phase, setPhase] = React.useState<Phase>("intro");
   const [lesenIdx, setLesenIdx] = React.useState(0);
@@ -398,7 +162,7 @@ export function GoetheB2Exam() {
   const [hoerenAnswers, setHoerenAnswers] = React.useState<Record<string, unknown>>({});
   const [writing1, setWriting1] = React.useState("");
   const [writing2, setWriting2] = React.useState("");
-  const [scores, setScores] = React.useState<Partial<Record<Phase, ModulScore>>>({});
+  const [scores, setScores] = React.useState<Partial<Record<Phase, ModuleScore>>>({});
   const [runKey, setRunKey] = React.useState(0);
   const [vortragIdx, setVortragIdx] = React.useState(0);
   const [diskIdx, setDiskIdx] = React.useState(0);
@@ -451,61 +215,15 @@ export function GoetheB2Exam() {
 
   /* ── تصحيح القراءة ── */
   const finishLesen = () => {
-    let correct = 0;
-    let total = 0;
-    const lesen = lesenSet;
-    const gapAnswers = (lesenAnswers["gap"] as Record<number, string>) ?? {};
-    const gapTeil = lesen.find((t) => t.kind === "gap");
-    for (const teil of lesen) {
-      if (teil.kind === "zuordnung") {
-        for (const it of teil.items ?? []) {
-          total++;
-          if (lesenAnswers[it.id] === it.categoryId) correct++;
-        }
-      } else if (teil.kind === "mcq") {
-        for (const q of teil.questions ?? []) {
-          total++;
-          if (lesenAnswers[q.id] === q.correct) correct++;
-        }
-      } else if (teil.kind === "rf") {
-        for (const s of teil.statements ?? []) {
-          total++;
-          if (lesenAnswers[s.id] === s.isTrue) correct++;
-        }
-      } else if (teil.kind === "gap" && gapTeil?.gap) {
-        for (let i = 0; i < gapTeil.gap.gapOrder.length; i++) {
-          total++;
-          if (gapAnswers[i] === gapTeil.gap.gapOrder[i]) correct++;
-        }
-      }
-    }
-    setScores((s) => ({ ...s, lesen: scoreModule(correct, total) }));
+    const { correct, total } = gradeTeile(lesenSet, lesenAnswers);
+    setScores((s) => ({ ...s, lesen: scoreModule(correct, total, GOETHE_B2_EXAM.passThreshold) }));
     setPhase("hören");
   };
 
   /* ── تصحيح الاستماع ── */
   const finishHoeren = () => {
-    let correct = 0;
-    let total = 0;
-    for (const teil of hoerenSet) {
-      if (teil.kind === "rf") {
-        for (const s of teil.statements ?? []) {
-          total++;
-          if (hoerenAnswers[s.id] === s.isTrue) correct++;
-        }
-      } else if (teil.kind === "mcq") {
-        for (const q of teil.questions ?? []) {
-          total++;
-          if (hoerenAnswers[q.id] === q.correct) correct++;
-        }
-      } else if (teil.kind === "zuordnung") {
-        for (const it of teil.items ?? []) {
-          total++;
-          if (hoerenAnswers[it.id] === it.categoryId) correct++;
-        }
-      }
-    }
-    setScores((s) => ({ ...s, hören: scoreModule(correct, total) }));
+    const { correct, total } = gradeTeile(hoerenSet, hoerenAnswers);
+    setScores((s) => ({ ...s, hören: scoreModule(correct, total, GOETHE_B2_EXAM.passThreshold) }));
     setPhase("schreiben");
   };
 
@@ -519,7 +237,7 @@ export function GoetheB2Exam() {
     if (w1words >= minW1 && w2words >= minW2) pct = 60; // الحد الأدنى
     if (w1words >= minW1 + 30 && w2words >= minW2 + 20) pct = 75;
     if (w1words >= 200 && w2words >= 130) pct = 90;
-    setScores((s) => ({ ...s, schreiben: scoreModule(pct, 100) }));
+    setScores((s) => ({ ...s, schreiben: scoreModule(pct, 100, GOETHE_B2_EXAM.passThreshold) }));
     setPhase("sprechen");
   };
 
@@ -952,13 +670,13 @@ export function GoetheB2Exam() {
   }
 
   /* ════════ النتيجة ════════ */
-  const allScores: { key: Phase; label: string; score?: ModulScore }[] = [
+  const allScores: { key: Phase; label: string; score?: ModuleScore }[] = [
     { key: "lesen", label: "القراءة (Lesen)" },
     { key: "hören", label: "الاستماع (Hören)" },
     { key: "schreiben", label: "الكتابة (Schreiben)" },
     { key: "sprechen", label: "التحدث (Sprechen)" },
   ];
-  const anyScore = allScores.some((s) => (scores as Record<string, ModulScore>)[s.key]);
+  const anyScore = allScores.some((s) => (scores as Record<string, ModuleScore>)[s.key]);
   return (
     <div className="space-y-5">
       <Card className="overflow-hidden border-primary/30">
@@ -974,7 +692,7 @@ export function GoetheB2Exam() {
 
           <div className="space-y-3">
             {allScores.map((s) => {
-              const sc = (scores as Record<string, ModulScore>)[s.key];
+              const sc = (scores as Record<string, ModuleScore>)[s.key];
               if (!sc) return null;
               return (
                 <div key={s.key} className={cn("rounded-xl border p-4", sc.passed ? "border-success/40 bg-success/5" : "border-destructive/40 bg-destructive/5")}>
