@@ -320,13 +320,11 @@ cp .env.example .env.local
 
 ```
 deutschpfad/
-├── public/               # أيقونات PWA + sw.js (مولّد آلياً) + logo.svg
-├── scripts/
-│   ├── generate-icons.py # مولّد الأيقونات (PIL)
-│   ├── gen-lesson-meta.py# مولّد فهرس الدروس الخفيف (أداء)
-│   └── bundle.sh         # مولّد حزمة التثبيت الذاتي
-├── .github/workflows/ci.yml  # CI: npm ci → typecheck → build
-├── vercel.json / render.yaml / DEPLOYMENT.md
+├── public/               # أيقونات PWA + sw.js (مولّد آلياً) + logo.svg + audio/
+├── scripts/              # أدوات تدقيق تُشغَّل يدوياً (curriculum/content/lessons audits)
+├── .github/workflows/ci.yml  # CI: npm ci → typecheck → lint → vitest → build → Playwright
+├── docs/                 # التقارير ووثائق التحقق وخطة إعادة الهيكلة (REFACTOR-PLAN.md)
+├── vercel.json / DEPLOYMENT.md
 └── src/
     ├── app/              # 86 مساراً (App Router) — راجع خارطة المسار أعلاه
     ├── components/
@@ -340,8 +338,8 @@ deutschpfad/
     │   ├── grammar/ glossar/ reading/ verbs/ speaking/
     │   └── daily/ alltag/ redewendungen/ dialogues/ forms/ strategies/
     ├── data/
-    │   ├── lessons/      # 45 درساً (a1/a2/b1/b2) + index.ts + meta.ts
-    │   ├── vocabulary/   # ~950 مفردة (a1/a2/b1/b2)
+    │   ├── lessons/      # 52 درساً (a1/a2/b1/b2) + index.ts + meta.ts
+    │   ├── vocabulary/   # 4319 مدخلاً (a1/a2/b1/b2)
     │   ├── grammar/      # 50 موضوعاً نحوياً مرجعياً
     │   ├── reading/ tests/ verbs/ supplemental/
     ├── lib/
@@ -355,6 +353,16 @@ deutschpfad/
 ```
 
 **مبدأ أساسي:** فصل تام بين **المحتوى** (بيانات TS في `src/data`) و**المكونات** (JSX في `src/components`) و**المنطق** (في `src/lib`).
+
+## ✅ التحقق قبل أي دفعة
+
+```bash
+npm run verify       # أنواع + ESLint + 752 اختبار وحدة + بناء إنتاجي
+npx playwright test  # 217 اختبار متصفح على نسخة إنتاجية (npm run build && npm run start أولاً)
+```
+
+هذان الأمران نفسهما يشغّلهما CI في `.github/workflows/ci.yml` على كل دفعة — فلا يُكتشف
+عيب بعد أسابيع. وخطة إعادة الهيكلة المرحلية في `docs/REFACTOR-PLAN.md`.
 
 ---
 

@@ -1,0 +1,89 @@
+# ═══════════════════════════════════════════════════════════
+#  CI — DeutschPfad
+#  شبكة الأمان: لا تصل أي دفعة إلى main أو فرع عمل دون أن تمرّ
+#  فحوص الأنواع + ESLint + اختبارات الوحدة + البناء + اختبارات المتصفح.
+#  محلياً نفس الشيء: npm run verify
+# ═══════════════════════════════════════════════════════════
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  static-and-unit:
+    name: أنواع + ESLint + وحدات + بناء
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: تثبيت الاعتماديات
+        run: npm ci
+
+      - name: فحص الأنواع (TypeScript)
+        run: npm run typecheck
+
+      - name: فحص ESLint
+        run: npm run lint
+
+      - name: اختبارات الوحدة (vitest)
+        run: npx vitest run --reporter=dot
+
+      - name: البناء الإنتاجي (next build)
+        run: npm run build
+
+      - name: حفظ مجلد .next للوظيفة التالية
+        uses: actions/upload-artifact@v4
+        with:
+          name: next-build
+          path: .next
+          retention-days: 1
+
+  e2e:
+    name: اختبارات المتصفح (Playwright)
+    needs: static-and-unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: تثبيت الاعتماديات
+        run: npm ci
+
+      - name: تثبيت متصفح Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: استرجاع نسخة البناء
+        uses: actions/download-artifact@v4
+        with:
+          name: next-build
+          path: .next
+
+      - name: اختبارات المتصفح على نسخة إنتاجية
+        run: npx playwright test --reporter=line --workers=2
+
+      - name: رفع تقارير الفشل (آثار Playwright)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-traces
+          path: test-results
+          retention-days: 7
