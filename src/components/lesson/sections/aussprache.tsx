@@ -138,7 +138,7 @@ export function AusspracheSection({ focus }: { focus: PronunciationFocus }) {
         <CardContent className="space-y-4">
           <PronunciationPractice
             target={focus.items[0]?.de ?? "Guten Tag"}
-            targetAr={focus.items[0]?.ar ?? "نهارك سعيد"}
+            targetAr={focus.items[0]?.ar ?? "طاب يومك"}
           />
           <p className="text-xs text-muted-foreground">
             تحدث بالكلمة ثم قارن التفريغ النصي الذي أعاده المتصفح بالنص المستهدف. هذه مقارنة تقريبية

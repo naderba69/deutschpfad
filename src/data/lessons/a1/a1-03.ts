@@ -15,14 +15,14 @@ export const lessonA103: Lesson = {
     "المأكولات والمشروبات، أدوات التعريف والتنكير (der/die/das + ein/eine)، حالة النصب (Akkusativ): Ich esse einen Apfel، وفعل haben مع الجوع والعطش.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann Lebensmittel mit ihrem Artikel nennen.", ar: "أن أسمّي المأكولات والمشروبات مع أدواتها الصحيحة." },
-    { id: "z2", de: "Ich kann bestimmte und unbestimmte Artikel im Nominativ verwenden.", ar: "أن أميّز أدوات التعريف والتنكير وأستعملها في حالة الرفع." },
-    { id: "z3", de: "Ich kann in einfachen Sätzen passende Akkusativformen verwenden.", ar: "أن أختار صيغ الأدوات المناسبة في Akkusativ مع الأفعال الواردة في الدرس." },
-    { id: "z4", de: "Ich kann haben im Präsens konjugieren und in einfachen Sätzen verwenden.", ar: "أن أصرف haben في المضارع وأستعمله في جمل بسيطة عن الملكية والجوع والعطش." },
-    { id: "z5", de: "Ich kann einem kurzen Lesetext Bestellungen und Preise entnehmen.", ar: "أن أستخرج من نص قصير معلومات أساسية عن الطلبات والأسعار." },
-    { id: "z6", de: "Ich kann in einem kurzen Dialog einfache Bestellungen verstehen.", ar: "أن أفهم طلبات بسيطة للطعام والشراب في حوار قصير مسموع." },
-    { id: "z7", de: "Ich kann im Café höflich bestellen und auf eine einfache Rückfrage reagieren.", ar: "أن أطلب في المقهى بجمل قصيرة مهذبة، وأجيب عن سؤال بسيط." },
-    { id: "z8", de: "Ich kann eine kurze Bestellung mit passenden Artikeln aufschreiben.", ar: "أن أكتب طلباً قصيراً مستخدماً أدوات مناسبة." },
+    { id: "z1", de: "Ich kann Lebensmittel mit ihrem Artikel nennen.", ar: "أن أسمّي المأكولات والمشروبات مع أدواتها الصحيحة." , evidence: { exerciseIds: ["e3", "e1"], taskIds: ["practice:a1-03:e3", "practice:a1-03:e1"], labelAr: "ترتيب كلمات الطعام مع أدواتها (e3) واختيار الأداة الصحيحة في الجملة (e1).", completion: "all-correct" } },
+    { id: "z2", de: "Ich kann bestimmte und unbestimmte Artikel im Nominativ verwenden.", ar: "أن أميّز أدوات التعريف والتنكير وأستعملها في حالة الرفع." , evidence: { exerciseIds: ["e1", "w2"], taskIds: ["practice:a1-03:e1", "writing:a1-03:w2"], labelAr: "اختيار أداة الرفع (e1) وملء الفراغات في جمل قصيرة كتابةً (w2).", completion: "all-correct" } },
+    { id: "z3", de: "Ich kann in einfachen Sätzen passende Akkusativformen verwenden.", ar: "أن أختار صيغ الأدوات المناسبة في Akkusativ مع الأفعال الواردة في الدرس." , evidence: { exerciseIds: ["e2", "e5", "m4", "m5"], taskIds: ["practice:a1-03:e2", "practice:a1-03:e5", "mini-test:a1-03:m4", "mini-test:a1-03:m5"], labelAr: "اختيار صيغ Akkusativ في جمل الأكل والشرب (e2 وe5 وm4 وm5).", completion: "all-correct" } },
+    { id: "z4", de: "Ich kann haben im Präsens konjugieren und in einfachen Sätzen verwenden.", ar: "أن أصرف haben في المضارع وأستعمله في جمل بسيطة عن الملكية والجوع والعطش." , evidence: { exerciseIds: ["e6", "e9", "m2"], taskIds: ["practice:a1-03:e6", "practice:a1-03:e9", "mini-test:a1-03:m2"], labelAr: "ملء الفراغات بصيغ haben (e6)، وتصحيح haben مكان sein (e9)، وصرف السؤال بـ Hast (m2).", completion: "all-correct" } },
+    { id: "z5", de: "Ich kann einem kurzen Lesetext Bestellungen und Preise entnehmen.", ar: "أن أستخرج من نص قصير معلومات أساسية عن الطلبات والأسعار." , evidence: { exerciseIds: ["r1", "r4"], taskIds: ["reading:read-a1-03:r1", "reading:read-a1-03:r4"], labelAr: "الإجابة عن سؤالي الطلب والحساب في نص المقهى (r1 وr4)، دون كشف الحل.", completion: "all-correct" } },
+    { id: "z6", de: "Ich kann in einem kurzen Dialog einfache Bestellungen verstehen.", ar: "أن أفهم طلبات بسيطة للطعام والشراب في حوار قصير مسموع." , evidence: { exerciseIds: ["q1", "q2"], taskIds: ["listening:l1:q1", "listening:l1:q2"], labelAr: "فهم الطلب والسعر في الحوار المسموع (q1 وq2) بعد الاستماع، لا قبل كشف النص.", completion: "all-correct" } },
+    { id: "z7", de: "Ich kann im Café höflich bestellen und auf eine einfache Rückfrage reagieren.", ar: "أن أطلب في المقهى بجمل قصيرة مهذبة، وأجيب عن سؤال بسيط." , evidence: { exerciseIds: ["e10", "w4"], taskIds: ["practice:a1-03:e10", "writing:a1-03:w4"], labelAr: "كتابة الطلب المسموع (e10) وكتابة طلب مهذب بجملة كاملة (w4).", completion: "all-correct" } },
+    { id: "z8", de: "Ich kann eine kurze Bestellung mit passenden Artikeln aufschreiben.", ar: "أن أكتب طلباً قصيراً مستخدماً أدوات مناسبة." , evidence: { exerciseIds: ["w4"], taskIds: ["writing:a1-03:w4"], labelAr: "كتابة طلب قصير بأدوات صحيحة (w4).", completion: "all-correct" } },
   ],
 
   einfuehrung: {
@@ -129,7 +129,7 @@ export const lessonA103: Lesson = {
       explanationAr:
         "يُستعمل Akkusativ كثيراً لتمييز المفعول به المباشر، لكن الحالة لا تقتصر على هذا الاستخدام؛ فالفعل أو التركيب هو الذي يحددها. في هذه الوحدة نركّز على أدوات التعريف والتنكير في الرفع والنصب:\n\n| الجنس | الرفع | النصب |\n|---|---|---|\n| مذكّر | der / ein | **den / einen** |\n| مؤنّث | die / eine | die / eine |\n| محايد | das / ein | das / ein |\n| جمع | die | die |\n\nفي هذا الجدول تتغير أداة الاسم المذكر وحدها بين Nominativ وAkkusativ؛ وهذا وصف لهذه الأدوات في هذا الجدول، لا لكل العلامات الممكنة في الألمانية.\n\n**طريقة مساعدة:** في جملة بسيطة مع فعل متعدٍّ، يمكن أن تسأل Wen? (مَن؟) أو Was? (ماذا؟) للعثور على مفعول مباشر: Ich esse einen Apfel. — Was esse ich? Einen Apfel. هذا اختبار تعليمي مفيد، لكنه لا يحدد وحده كل استعمالات Akkusativ.\n\nأفعال شائعة في موضوع الطعام والشراء تأخذ مفعولاً به في النصب في هذه الأمثلة: essen، trinken، kaufen، haben، möchten، nehmen، sehen، lesen، brauchen، bestellen.\n\nمع استعمال الأفعال الرابطة مثل sein، يأتي الاسم الذي يصف الفاعل في الرفع: Er ist ein Lehrer. قارن ذلك بمفعول الفعل المتعدي: Ich sehe einen Lehrer. هنا تغيّر الأداة لأن Lehrer مفعول به في الجملة الثانية.\n\nوتغيّر بعض الأفعال حركتها الصوتية في du وer/sie/es: ich esse، du isst، er isst؛ وich nehme، du nimmst، er nimmt. احفظ صيغ الفعل مع الضمير.",
       whyAr:
-        "يساعد هذا الدرس على ملاحظة دور الأداة في جمل مألوفة مثل Ich esse einen Apfel وIch möchte einen Kaffee. نركّز على الفرق بين الرفع والنصب في أمثلة محددة، ولا نزعم أن ترتيب تدريس الحالات واحد في جميع الكتب أو أن وصف Goethe/CEFR يفرض هذا التسلسل النحوي.",
+        "يساعد هذا الدرس على ملاحظة دور الأداة في جمل مألوفة مثل Ich esse einen Apfel وIch möchte einen Kaffee. نركّز على الفرق بين الرفع والنصب في أمثلة محددة، ولا نزعم أن ترتيب تدريس الحالات واحد في جميع الكتب أو أن وصف Goethe/CEFR يفرض هذا التسلسل النحوي. هذا التمييز يسهّل عليك قراءة الجمل الطويلة لاحقاً، لأن الأداة تكشف وظيفة الاسم قبل أن يصل القارئ إلى الفعل.",
       table: {
         title: "تغيّر الأداة في النصب",
         columns: ["الجنس", "Nominativ (رفع)", "Akkusativ (نصب)", "مثال"],
@@ -170,9 +170,9 @@ export const lessonA103: Lesson = {
       titleAr: "الفعل haben: الملكية وتعابير الجوع والعطش",
       titleDe: "Das Verb „haben“ und Hunger/Durst",
       explanationAr:
-        "**haben** فعل شائع يُستخدم للملكية ولتعابير ثابتة كثيرة. تصريفه في المضارع:\n\nich **habe** · du **hast** · er/sie/es **hat** · wir **haben** · ihr **habt** · sie/Sie **haben**\n\nالصيغتان hast وhat غير منتظمتين قياساً إلى الجذر haben؛ احفظهما مع الضمير.\n\n**الملكية:** Ich habe einen Bruder. / Sie hat ein Auto.\n\n**تعابير شائعة:** نقول Ich habe Hunger وIch habe Durst وIch habe Angst، وغالباً تأتي هذه الأسماء بلا أداة في هذه التعبيرات. ويمكن أيضاً وصف الحال بصفة مع sein: Ich bin hungrig / durstig / müde. تعلّم التعبير كاملاً، ولا تعمم شكل أداة واحداً على كل استعمال للاسم.\n\n**النفي في هذه الأمثلة:** نقول Ich habe keinen Hunger وIch habe keine Zeit. تستعمل kein هنا لنفي اسم غير محدد؛ وقد تأتي nicht مع عبارة اسمية معرفة إذا كان هذا هو المعنى المقصود. انتبه إلى أن keinen يوافق Hunger المذكر في النصب.",
+        "**haben** فعل شائع يُستخدم للملكية ولتعابير ثابتة كثيرة. تصريفه في المضارع:\n\nich **habe** · du **hast** · er/sie/es **hat** · wir **haben** · ihr **habt** · sie/Sie **haben**\n\nالصيغتان hast وhat غير منتظمتين قياساً إلى الجذر haben؛ احفظهما مع الضمير.\n\n**الملكية:** Ich habe einen Bruder. / Sie hat ein Auto.\n\n**تعابير شائعة:** نقول Ich habe Hunger وIch habe Durst وIch habe Angst، وغالباً تأتي هذه الأسماء بلا أداة في هذه التعبيرات. ويمكن أيضاً وصف الحال بصفة مع sein: Ich bin hungrig / durstig / müde. تعلّم التعبير كاملاً، ولا تعمم شكل أداة واحداً على كل استعمال للاسم.\n\n**ملاحظة على التدريب:** مع الضمائر ich وdu وwir وihr وSie يختلف الشكل في كل مرة، لذلك تدرّب على الجدول في مجموعات صغيرة، لا بحفظ كل صيغة منفصلة عن سياقها. وفي الكتابة الرسمية تأتي Sie haben بالحرف الكبير، وهي الصيغة نفسها لجمع الضمير.\n\n**النفي في هذه الأمثلة:** نقول Ich habe keinen Hunger وIch habe keine Zeit. تستعمل kein هنا لنفي اسم غير محدد؛ وقد تأتي nicht مع عبارة اسمية معرفة إذا كان هذا هو المعنى المقصود. انتبه إلى أن keinen يوافق Hunger المذكر في النصب.",
       whyAr:
-        "haben فعل عالي التواتر يفيد في التعبير عن الملكية وعن تعابير مثل Hunger haben وDurst haben. سيظهر لاحقاً أيضاً فعلاً مساعداً في بعض صيغ Perfekt؛ هذا تمهيد للمستقبل، أما هدف هذه الكتلة فهو تصريفه الأساسي واستعمالاته الحالية، لا إتقان الزمن الماضي.",
+        "haben فعل عالي التواتر يفيد في التعبير عن الملكية وعن تعابير مثل Hunger haben وDurst haben. سيظهر لاحقاً أيضاً فعلاً مساعداً في بعض صيغ Perfekt؛ هذا تمهيد للمستقبل، أما هدف هذه الكتلة فهو تصريفه الأساسي واستعمالاته الحالية، لا إتقان الزمن الماضي. ولأن haben يدخل في عبارات كثيرة من الحياة اليومية، فإن إتقانه مع الضمائر يوفّر على المتعلم وقتاً طويلاً في الكلام والكتابة.",
       table: {
         title: "تصريف haben في المضارع",
         columns: ["الضمير", "haben", "مثال"],
@@ -443,7 +443,7 @@ export const lessonA103: Lesson = {
     items: [
       {
         id: "l1",
-        title: "في المقهى — نطق اصطناعي من المتصفح",
+        title: "في المقهى",
         lines: [
           { speaker: "Kellner", de: "Guten Tag! Was möchten Sie bestellen?", ar: "مرحباً! ماذا تودّ أن تطلب؟" },
           { speaker: "Sami", de: "Ich hätte gern einen Kaffee und ein Brötchen, bitte.", ar: "أودّ قهوةً وخبزةً صغيرة، من فضلك." },
@@ -454,7 +454,7 @@ export const lessonA103: Lesson = {
       },
       {
         id: "l2",
-        title: "في السوبرماركت — نطق اصطناعي من المتصفح",
+        title: "في السوبرماركت",
         lines: [
           { speaker: "Mona", de: "Ich brauche einen Apfel und eine Banane.", ar: "أحتاج تفاحةً وموزةً." },
           { speaker: "Karim", de: "Und wir kaufen auch Brot und Milch.", ar: "ونشتري أيضاً خبزاً وحليباً." },
@@ -507,7 +507,7 @@ export const lessonA103: Lesson = {
     id: "p1",
     title: "أصوات الطعام: ei، ch، وpf",
     items: [
-      { de: "der Apfel", ar: "التفاحة", note: "[ˈapfəl]: النبر على المقطع الأول؛ ينتقل الصوت من p إلى f بلا حركة فاصلة." },
+      { de: "der Apfel", ar: "التفاحة", note: "[ˈapfəl]: الصوت pf يُنطق p وf معاً دون حركة فاصلة بينهما، والنبر على المقطع الأول." },
       { de: "das Brot", ar: "الخبز", note: "[bʁoːt]: الحركة o طويلة [oː]." },
       { de: "die Milch", ar: "الحليب", note: "[mɪlç]: ch هنا صوت ich-Laut [ç] بعد i؛ لا يطابق الشين أو الخاء العربية تماماً." },
       { de: "der Kaffee", ar: "القهوة", note: "من النطق الشائع [kaˈfeː]: النبر على المقطع الثاني وe طويلة؛ توجد فروق إقليمية في النطق." },
@@ -802,7 +802,7 @@ export const lessonA103: Lesson = {
       rounds: [
         {
           speakerDe: "Guten Tag! Was möchten Sie trinken?",
-          speakerAr: "نهارك سعيد! ماذا تريد أن تشرب؟",
+          speakerAr: "طاب يومك! ماذا تريد أن تشرب؟",
           options: [
             { de: "Ich hätte gern einen Kaffee, bitte.", ar: "أريد قهوة من فضلك.", best: true, replyDe: "Sehr gerne! Mit Milch und Zucker?", replyAr: "بكل سرور! مع حليب وسكر؟" },
             { de: "Ich bin ein Kaffee.", ar: "أنا قهوة.", best: false, replyDe: "Meinen Sie: „Ich hätte gern einen Kaffee“?", replyAr: "هل تقصد: أودّ قهوة؟" },

@@ -38,6 +38,40 @@ export const lessonA104: Lesson = {
     ],
   },
 
+  review: [
+    {
+      id: "r1",
+      type: "multiple-choice",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-03 — الأداة غير المحددة في المفعول به): اختر الصيغة الصحيحة.",
+      questionDe: "Ich möchte ___ Apfel.",
+      questionAr: "أريد تفاحة.",
+      options: ["einen", "einem", "ein", "eine"],
+      correctIndex: 0,
+      explanation: "المذكر في حالة المفعول به: einen Apfel.",
+      errorType: "case",
+    },
+    {
+      id: "r2",
+      type: "fill-blank",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-03 — haben مع الجوع والعطش): أكمل الجملة.",
+      template: "Ich ___ Hunger.",
+      blanks: [{ correct: "habe", options: ["habe", "bin", "hat", "ist"] }],
+      explanation: "مع ich نقول: Ich habe Hunger.",
+      errorType: "conjugation",
+    },
+    {
+      id: "r3",
+      type: "error-correction",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-02 — الأدوات الملكية mein وmeine): افحص الجملة؛ اختر التصحيح، أو «لا خطأ» إن كانت سليمة.",
+      wrongSentence: "Das ist meine Bett.",
+      wrongWord: "meine",
+      correctWord: "mein",
+      options: ["mein", "meine", "meinen", "meiner"],
+      explanation: "Bett كلمة محايدة (das)، فيكون mein.",
+      errorType: "gender",
+    },
+  ],
+
   theory: [
     {
       id: "t1",

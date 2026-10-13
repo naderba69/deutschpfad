@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {BookOpen, CheckCircle2, ClipboardCheck, Lock, PlayCircle} from "lucide-react";
+import {BookOpen, Check, CheckCircle2, ClipboardCheck, Lock, PlayCircle} from "lucide-react";
 
 import {getFirstLessonMetaForUnit} from "@/data/lessons/meta";
 import {getUnitLessonCount} from "@/lib/constants/curriculum";
@@ -62,7 +62,7 @@ export function UnitRow({ unit, status, onToggle }: UnitRowProps) {
         <div className="min-w-0">
           <p
             className={cn(
-              "truncate text-sm font-bold",
+              "break-words text-sm font-bold [overflow-wrap:anywhere]",
               isCompleted && "text-success",
               isLocked && "text-muted-foreground",
             )}

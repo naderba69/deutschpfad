@@ -237,6 +237,40 @@ export const lessonA111: Lesson = {
       { de: "rechts / links", ar: "يمين / يسار" },
     ],
   },
+  review: [
+    {
+      id: "r1",
+      type: "multiple-choice",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-10 — النفي بـ nicht وkein): اختر الكلمة الصحيحة.",
+      questionDe: "Ich habe ___ Auto.",
+      questionAr: "ليست لدي سيارة.",
+      options: ["kein", "nicht", "keine", "keinen"],
+      correctIndex: 0,
+      explanation: "عند النفي للاسم بعد habe نستخدم kein: kein Auto.",
+      errorType: "negation",
+    },
+    {
+      id: "r2",
+      type: "fill-blank",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-04 — حروف الجر مع الداتيف للمكان): أكمل الجملة.",
+      template: "Die Lampe hängt über ___ Sofa.",
+      blanks: [{ correct: "dem", options: ["dem", "den", "der", "die"] }],
+      explanation: "حرف الجر über مع المكان يأخذ الداتيف: über dem Sofa.",
+      errorType: "case",
+    },
+    {
+      id: "r3",
+      type: "error-correction",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-06 — الأمر Imperativ): افحص الجملة؛ اختر التصحيح، أو «لا خطأ» إن كانت سليمة.",
+      wrongSentence: "Gehst geradeaus!",
+      wrongWord: "Gehst",
+      correctWord: "Geh",
+      options: ["Geh", "Gehst", "Gehe", "Gehen"],
+      explanation: "في الأمر لشخص واحد (du) نقول: Geh geradeaus!",
+      errorType: "grammar",
+    },
+  ],
+
   theory: [
     {
       id: "t1",
@@ -710,7 +744,7 @@ export const lessonA111: Lesson = {
       examples: [
         {
           "de": "Wo ist der Bahnhof? — Ich sehe ihn dort.",
-          "ar": "أين محطة القطار؟ — أراها هناك. (der Bahnhof → ihn)"
+          "ar": "أين محطة القطار؟ — أراه هناك. (der Bahnhof → ihn)"
         },
         {
           "de": "Kennst du die Apotheke? — Ja, ich kenne sie.",
@@ -722,15 +756,15 @@ export const lessonA111: Lesson = {
         },
         {
           "de": "Nimmst du den Bus? — Ja, ich nehme ihn.",
-          "ar": "هل تستقل الحافلة؟ — نعم، أستقلها."
+          "ar": "هل تستقل الحافلة؟ — نعم، أستقلّه."
         },
         {
           "de": "Siehst du mich?",
           "ar": "هل تراني؟"
         },
         {
-          "de": "Wir besuchen die Haltestelle. Wir suchen sie.",
-          "ar": "نمرّ بالموقف. نبحث عنه."
+          "de": "Wir suchen die Haltestelle. Wir finden sie.",
+          "ar": "نبحث عن الموقف. نجدها."
         },
         {
           "de": "Gehen Sie an der Kirche vorbei. — Gehen Sie an ihr vorbei.",
@@ -1716,7 +1750,7 @@ export const lessonA111: Lesson = {
     {
       "id": "e27",
       "type": "error-correction",
-      "instructionAr": "افحص الجملة ولا تفترض وجود خطأ؛ اختر التصحيح أو «لا خطأ»:",
+      "instructionAr": "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       "wrongSentence": "Ich gehe nach Berlin.",
       "wrongWord": "gehe",
       "correctWord": "gehe",
@@ -1945,7 +1979,7 @@ export const lessonA111: Lesson = {
       "de": "ihn (Akkusativ von er)",
       "ar": "ضمير مفعول يعود إلى اسم مذكر ألماني",
       "example": "Der Bus? Ich nehme ihn.",
-      "exampleAr": "الحافلة؟ أستقلها.",
+      "exampleAr": "الحافلة؟ أستقلّه.",
       "level": "A1"
     },
     {

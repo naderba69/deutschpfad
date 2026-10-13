@@ -71,6 +71,12 @@ describe("قائمة أمان LocalStorage (P0-01)", () => {
     expect(isOwnedLsKey("dp:cando:A1:1")).toBe(true);
   });
 
+  it("مفاتيح تقدم الدروس بصيغ dp-flow / dp-steps / lesson-step مملوكة", () => {
+    expect(isOwnedLsKey("lesson-step:a1-01")).toBe(true);
+    expect(isOwnedLsKey("dp-flow:a1-01")).toBe(true);
+    expect(isOwnedLsKey("dp-steps:a1-01")).toBe(true);
+  });
+
   it("مفاتيح غريبة ليست مملوكة (لا تُكتب عند الاستعادة)", () => {
     expect(isOwnedLsKey("auth_token")).toBe(false);
     expect(isOwnedLsKey("user:session")).toBe(false);

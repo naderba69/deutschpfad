@@ -121,7 +121,7 @@ export function ProgressReport() {
         <div className="border-t pt-4 text-center text-xs text-muted-foreground">
           <Award className="mx-auto h-6 w-6 text-gold-strong" aria-hidden="true" />
           <p className="mt-1">تقرير تلقائي من منصة درب الألمانية — تقدمك يُحفظ محلياً على جهازك.</p>
-          <p>المنصة تغطي المنهج الكامل A1→B2 وفق معايير Goethe-Zertifikat.</p>
+          <p>تغطي المنصة معظم مواضيع المنهج من A1 إلى B2 وتتدرب على معايير Goethe-Zertifikat — وهي تدريب ذاتي وليست شهادة رسمية.</p>
         </div>
       </div>
     </div>

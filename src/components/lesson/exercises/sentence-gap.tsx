@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import {seededShuffle} from "@/lib/lesson/shuffle";
 import {CheckCircle2} from "lucide-react";
 
 import {LangDe} from "@/components/shared/lang-de";
@@ -24,7 +25,7 @@ export function SentenceGapExerciseView({
   const [checked, setChecked] = React.useState(false);
   // البنك المخلوط (ثابت بعد أول رندر)
   const [bank] = React.useState(() =>
-    [...exercise.sentenceBank].sort(() => Math.random() - 0.5),
+    seededShuffle(exercise.sentenceBank, exercise.id),
   );
 
   const gapCount = exercise.gapOrder.length;

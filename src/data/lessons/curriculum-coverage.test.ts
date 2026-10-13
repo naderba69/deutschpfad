@@ -141,7 +141,7 @@ describe("تغطية المنهج — سلامة الفهرس", () => {
 
   it("المراجعات الختامية موجودة (A1 في a1-13، B1 في b1-11)", () => {
     expect(getLesson("a1-13")?.titleDe.toLowerCase()).toContain("wiederholung");
-    expect(getLesson("b1-11")?.titleDe.toLowerCase()).toContain("prüfungsvorbereitung");
+    expect(getLesson("b1-11")?.titleDe.toLowerCase()).toContain("abschlusswiederholung");
     expect(getLesson("a2-12")).toBeDefined();
   });
 });

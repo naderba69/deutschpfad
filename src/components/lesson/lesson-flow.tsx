@@ -995,7 +995,7 @@ function DialogueSimStage({ lesson }: { lesson: Lesson }) {
     const fromTheory = lesson.theory.flatMap((t) => t.examples ?? []).slice(0, 3);
     return fromTheory.length > 0
       ? fromTheory.map((ex) => ({ de: ex.de, ar: ex.ar }))
-      : [{ de: "Guten Tag!", ar: "نهارك سعيد!" }];
+      : [{ de: "Guten Tag!", ar: "طاب يومك!" }];
   }, [lesson]);
 
   const botReply = (i: number) =>

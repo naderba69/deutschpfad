@@ -50,7 +50,7 @@ export const REDEMITTEL: Redemittel[] = [
   { id: "rm-meinung-7", category: "meinung", de: "Ich möchte dazu Folgendes sagen: ...", ar: "أود أن أقول بشأن ذلك ما يلي: ...", usage: "تمهيد لموقف في المناقشة أو المنتدى.", level: "B1" },
 
   /* ── الموافقة ── */
-  { id: "rm-zustimmen-1", category: "zustimmen", de: "Da stimme ich Ihnen vollkommen zu.", ar: "هنا أوافقك الرأي تماماً.", usage: "أشهر صيغة موافقة رسمية — انتبه: Ihnen (مع Sie).", level: "B1" },
+  { id: "rm-zustimmen-1", category: "zustimmen", de: "Da stimme ich Ihnen vollkommen zu.", ar: "أوافقك تماماً في هذا الرأي.", usage: "أشهر صيغة موافقة رسمية — انتبه: Ihnen (مع Sie).", level: "B1" },
   { id: "rm-zustimmen-2", category: "zustimmen", de: "Das sehe ich genauso.", ar: "أرى ذلك بالضبط.", usage: "موافقة ودية — تستخدم في الحوار.", level: "B1" },
   { id: "rm-zustimmen-3", category: "zustimmen", de: "Ich teile Ihre Meinung.", ar: "أشاركك الرأي.", usage: "أدبية — رسمية.", level: "B2" },
   { id: "rm-zustimmen-4", category: "zustimmen", de: "Da haben Sie (völlig) recht.", ar: "أنت محق (تماماً) هنا.", usage: "بسيطة ومؤثرة — recht (بلا حرف تعريف!).", level: "A2" },
@@ -128,7 +128,7 @@ export const REDEMITTEL: Redemittel[] = [
 
   /* ── مشاركة المنتدى ── */
   { id: "rm-forum-1", category: "forum", de: "Ich habe den Beitrag gelesen und möchte meine Meinung dazu äußern.", ar: "قرأت المشاركة وأود إبداء رأيي فيها.", usage: "افتتاح Forumsbeitrag — B2 Schreiben Teil 1.", level: "B2" },
-  { id: "rm-forum-2", category: "forum", de: "Das Thema finde ich sehr aktuell, denn ...", ar: "أجد الموضوع في غاية الراهنية، لأن ...", usage: "انطلاق لطيف ثم سبب.", level: "B1" },
+  { id: "rm-forum-2", category: "forum", de: "Das Thema finde ich sehr aktuell, denn ...", ar: "أجد الموضوع معاصراً جداً، لأن ...", usage: "انطلاق لطيف ثم سبب.", level: "B1" },
   { id: "rm-forum-3", category: "forum", de: "In meinem Land ist die Situation ähnlich/anders.", ar: "في بلدي الوضع مشابه/مختلف.", usage: "إضافة تجربة شخصية — يرفع الدرجة!", level: "B1" },
   { id: "rm-forum-4", category: "forum", de: "Was die anderen Teilnehmer geschrieben haben, finde ich interessant. Besonders der Beitrag von ...", ar: "ما كتبه المشاركون الآخرون مثير للاهتمام. خاصة مشاركة ...", usage: "الرد على مشاركة سابقة — مطلوب حرفياً في الامتحان!", level: "B2" },
   { id: "rm-forum-5", category: "forum", de: "Abschließend möchte ich sagen, dass ...", ar: "ختاماً أود أن أقول إن ...", usage: "خاتمة المنتدى.", level: "B1" },
@@ -138,7 +138,7 @@ export const REDEMITTEL: Redemittel[] = [
   { id: "rm-hoeflichkeit-2", category: "hoeflichkeit", de: "Es freut mich, dass wir uns heute austauschen können.", ar: "يسعدني أننا نستطيع تبادل الأفكار اليوم.", usage: "افتتاح لطيف للمناقشة.", level: "B2" },
   { id: "rm-hoeflichkeit-3", category: "hoeflichkeit", de: "Darf ich Sie um einen Gefallen bitten?", ar: "هل أستطيع أن أطلب منك معروفاً؟", usage: "طلب خدمة بأدب.", level: "B1" },
   { id: "rm-hoeflichkeit-4", category: "hoeflichkeit", de: "Entschuldigen Sie die Störung.", ar: "اعذرني على الإزعاج.", usage: "اعتذار تمهيدي — في المكالمات.", level: "B1" },
-  { id: "rm-hoeflichkeit-5", category: "hoeflichkeit", de: "Es tut mir leid, aber ich muss leider absagen.", ar: "آسف، لكن علي للأسف الاعتذار.", usage: "اعتذار رسمي عن موعد.", level: "B1" },
+  { id: "rm-hoeflichkeit-5", category: "hoeflichkeit", de: "Es tut mir leid, aber ich muss leider absagen.", ar: "آسف، لكن للأسف عليّ أن أعتذر وألغي الموعد.", usage: "اعتذار رسمي عن موعد.", level: "B1" },
 
   /* ── ربط الأفكار ── */
   { id: "rm-struktur-1", category: "struktur", de: "Zuerst ... dann ... danach ... schließlich ...", ar: "أولاً ... ثم ... بعد ذلك ... أخيراً ...", usage: "سلسلة زمنية/ترتيبية — هيكل أي نص.", level: "A2" },

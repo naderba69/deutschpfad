@@ -14,11 +14,76 @@ export const lessonB205: Lesson = {
     "نماذج التواصل والجوانب النفسية، أدوات الربط المتقدمة (indem, anstatt...zu, ohne...zu, es sei denn, je nachdem, statt dass, sodass) + روابط النتيجة (folglich, demnach) — روابط المستوى المتقدم الكاملة، مع الجسيمات المشدِّدة (Modalpartikeln: doch, ja, mal, denn, eigentlich, wohl) لغة الألمان الطبيعية في المحادثة.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann über Kommunikation sprechen.", ar: "أن أتحدث عن نماذج التواصل والجوانب النفسية." },
-    { id: "z2", de: "Ich kann die fortgeschrittenen Konnektoren benutzen.", ar: "أن أستخدم الروابط المتقدمة: indem, anstatt...zu, ohne...zu, es sei denn." },
-    { id: "z3", de: "Ich kann Nuancen ausdrücken.", ar: "أن أعبر عن الدقائق والتحفظات." },
-    { id: "z4", de: "Ich kann Modalpartikeln natürlich benutzen.", ar: "أن أستخدم الجسيمات المشدِّدة (doch, ja, mal, denn, eigentlich) لنطق ألماني طبيعي." },
-    { id: "z5", de: "Ich kann folglich und demnach als Folge-Konnektoren benutzen.", ar: "أن أستخدم folglich/demnach (وبالتالي/وفقاً لذلك) لربط النتائج." },
+    {
+      id: "z1",
+      de: "Ich kann Aussagen über Kommunikation verstehen.",
+      ar: "أن أفهم حديثاً عن الإنصات والتواصل ونماذجه.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q1"],
+        taskIds: ["listening:l1:q1"],
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann die fortgeschrittenen Konnektoren benutzen.",
+      ar: "أن أستخدم الروابط المتقدمة: indem, anstatt...zu, ohne...zu, es sei denn.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e1", "e2", "e4", "e7", "m1", "m3", "w1", "w2"],
+        taskIds: [
+          "practice:b2-05:e1",
+          "practice:b2-05:e2",
+          "practice:b2-05:e4",
+          "practice:b2-05:e7",
+          "mini-test:b2-05:m1",
+          "mini-test:b2-05:m3",
+          "writing:b2-05:w1",
+          "writing:b2-05:w2",
+        ],
+        labelAr: "أختار الرابط الصحيح وأرتب الجملة وأكمل بـ anstatt/ohne (e1 وe2 وe4 وe7 وm1 وm3 وw1 وw2)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann Bedingungen und Vorbehalte ausdrücken.",
+      ar: "أن أعبّر عن الشروط والتحفظات بـ es sei denn وje nachdem.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e6", "m2", "q2", "q3"],
+        taskIds: ["practice:b2-05:e6", "mini-test:b2-05:m2", "listening:l2:q2", "listening:l2:q3"],
+        labelAr: "أكمل جمل es sei denn (e6 وm2) وأفهم الشرط والاختيار بالاستماع إلى l2 (q2 وq3)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann Modalpartikeln natürlich benutzen.",
+      ar: "أن أستخدم الجسيمات المشدِّدة (doch, ja, mal, denn, eigentlich) لنطق ألماني طبيعي.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e11", "e12", "e13", "m6", "m7"],
+        taskIds: [
+          "practice:b2-05:e11",
+          "practice:b2-05:e12",
+          "practice:b2-05:e13",
+          "mini-test:b2-05:m6",
+          "mini-test:b2-05:m7",
+        ],
+        labelAr: "أربط الجسيم بوظيفته وأختاره في الجملة (e11 وe12 وe13 وm6 وm7)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z5",
+      de: "Ich kann folglich und demnach als Folge-Konnektoren benutzen.",
+      ar: "أن أستخدم folglich/demnach (وبالتالي/وفقاً لذلك) لربط النتائج.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e14", "e15"],
+        taskIds: ["practice:b2-05:e14", "practice:b2-05:e15"],
+        labelAr: "أكمل جملة النتيجة بـ folglich/demnach وأرتب الفعل بعدهما (e14 وe15)، دون كشف الحل.",
+      },
+    },
   ],
 
   einfuehrung: {
@@ -48,6 +113,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "سبب → weil (درس المدرسة A2/B1).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«dass» تقدّم مضموناً، ولا تعبّر عن السبب هنا.",
+        "«wenn» شرط، ولا تعبّر عن السبب.",
+        "«ob» تقدّم سؤالاً غير مباشر، ولا تناسب الجملة.",
+      ],
     },
     {
       id: "r2",
@@ -58,6 +129,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "لذلك → deshalb (درس العلاقات A2).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«aber» تعبّر عن التعارض، ولا تعطي النتيجة المطلوبة.",
+        "«und» تربط فكرتين دون نتيجة، ولا تناسب الجملة.",
+        "«oder» تعبّر عن الاختيار، ولا تناسب الجملة.",
+      ],
     },
     {
       id: "r3",
@@ -80,7 +157,7 @@ export const lessonB205: Lesson = {
       explanationAr:
         "1) indem = بأن/بواسطة (طريقة): Man lernt, indem man übt. 2) anstatt...zu = بدلاً من أن: Anstatt zu schlafen, arbeitete er. 3) ohne...zu = دون أن: Er ging, ohne zu grüßen. 4) es sei denn = إلا إذا: Ich komme, es sei denn, es regnet. 5) je nachdem = حسبما: Je nachdem, ob/wie... 6) statt dass = بدل أن (بفاعل). 7) folglich / demnach = وبالتالي / وفقاً لذلك (نتيجة): Er übte viel, folglich bestand er die Prüfung — ينقلبان الترتيب (الفعل مباشرة بعدهما) مثل deshalb. 8) sodass = بحيث/حتى أن (نتيجة/عاقبة): Er sprach laut, sodass alle ihn hörten — جملة نتيجة: النتيجة المترتبة على الفعل الأول، والفعل في نهايتها.",
       whyAr:
-        "لماذا «بلا فاعل» في anstatt/ohne + zu؟ لأن الفاعل نفسه هو فاعل الجملة الرئيسية: «بدلاً من أن أنام» — المتكلم نفسه. لذلك يختصر بـ zu + مصدر. هذا الاختصار أنيق وعلامة B2. أما folglich/demnach فهما «روابط النتيجة المقلوبة» — تختصر سبباً كاملاً في كلمة واحدة، وهي لغة التقارير والتحليل (Folglich = وبالتالي، Demnach = وفقاً لما سبق).",
+        "لماذا «بلا فاعل» في anstatt/ohne + zu؟ لأن الفاعل نفسه هو فاعل الجملة الرئيسية: «بدلاً من أن أنام» — المتكلم نفسه. لذلك يختصر بـ zu + مصدر. وهذا اختصار شائع في الكتابة المتقدمة. أما folglich/demnach فهما «روابط النتيجة المقلوبة» — تختصر سبباً كاملاً في كلمة واحدة، وهي لغة التقارير والتحليل (Folglich = وبالتالي، Demnach = وفقاً لما سبق).",
       table: {
         title: "الروابط المتقدمة",
         columns: ["الرابط", "المعنى", "التركيب", "مثال"],
@@ -105,9 +182,9 @@ export const lessonB205: Lesson = {
         { de: "Die Lage ist ernst. Demnach müssen wir schnell handeln.", ar: "الوضع خطير. وفقاً لذلك يجب أن نتصرف بسرعة." },
       ],
       comparisonWithArabic:
-        "«بالإنصات» = indem man zuhört — مطابقة «بـ + مصدر» العربية! «بدلاً من النوم» = anstatt zu schlafen — تطابق تام! و«دون أن يقول كلمة» = ohne ein Wort zu sagen — مطابقة! أما «وبالتالي/لذلك» = folglich/demnach — وهي من أكثر أدوات الربط تواتراً في الأخبار والتقارير العربية والألمانية معاً.",
+        "«بالإنصات» = indem man zuhört — قريب من «بـ + مصدر» في العربية. «بدلاً من النوم» = anstatt zu schlafen — تقابل قريب. و«دون أن يقول كلمة» = ohne ein Wort zu sagen — تقابل قريب. أما «وبالتالي/وفقاً لذلك» = folglich/demnach فيقابلهما في العربية أدوات مثل «وبالتالي» و«وفقاً لذلك».",
       eselsbruecke:
-        "«indem = بوسيلة (كيف؟)، anstatt...zu = بدلاً من (فاعل واحد)، ohne...zu = دون أن» — والأشهر: «es sei denn = إلا إذا» — احفظها ككتلة واحدة. و«folglich/demnach = وبالتالي» — أخوات deshalb في قلب الترتيب.",
+        "«indem = بوسيلة (كيف؟)، anstatt...zu = بدلاً من (فاعل واحد)، ohne...zu = دون أن» — «es sei denn = إلا إذا» — احفظها ككتلة واحدة. و«folglich/demnach = وبالتالي» — أخوات deshalb في قلب الترتيب.",
       commonMistakes: [
         { wrong: "Anstatt er schläft (جملة بدل zu + مصدر)", right: "Anstatt zu schlafen", whyAr: "بفاعل واحد: zu + مصدر." },
         { wrong: "ohne zu sagen ein Wort (ترتيب)", right: "ohne ein Wort zu sagen", whyAr: "المفعول قبل zu + مصدر." },
@@ -124,7 +201,7 @@ export const lessonB205: Lesson = {
       titleAr: "الجسيمات المشدِّدة (Modalpartikeln) — روح الألمانية المنطوقة",
       titleDe: "Modalpartikeln: doch, ja, mal, denn, eigentlich, wohl",
       explanationAr:
-        "هذه الكلمات الصغيرة لا تُترجم حرفياً — وظيفتها نقل «موقف المتكلم»: doch = «بل أؤكد لك!» (رداً على النفي)، ja = «كما تعلم/حقيقة معروفة»، mal = «فقط/ببساطة» (تخفيف الطلب)، denn = «إذاً/فضول» في الأسئلة، eigentlich = «في الحقيقة/بالمناسبة»، wohl = «على الأرجح». الألماني المنطوق بلا جسيمات يبدو «روبوتاً» — هي علامة B2 الحقيقية في المحادثة والاستماع (Goethe B2 يختبرها في Hören وSprechen).",
+        "هذه الكلمات الصغيرة لا تُترجم حرفياً — وظيفتها نقل «موقف المتكلم»: doch = «بل أؤكد لك!» (رداً على النفي)، ja = «كما تعلم/حقيقة معروفة»، mal = «فقط/ببساطة» (تخفيف الطلب)، denn = «إذاً/فضول» في الأسئلة، eigentlich = «في الحقيقة/بالمناسبة»، wohl = «على الأرجح». بدونها قد يبدو الكلام الألماني أقل طبيعية، وهي تظهر كثيراً في المحادثة والاستماع.",
       whyAr:
         "لماذا لا نكتفي بالترجمة الحرفية؟ لأنها تنقل «النبرة النفسية» لا المعنى المعجمي: «Komm!» أمرٌ، «Komm mal!» طلب ودّي — «Das ist gut» خبر، «Das ist ja gut!» «ما أروع هذا!». العربي يستخدم لهذا أدوات مثل «إيه؟!» «طيب» «يعني» — الألماني يستخدم الجسيمات. إتقانها يرفع طلاقتك من «صحيحة لكن جامدة» إلى «طبيعية».",
       table: {
@@ -148,7 +225,7 @@ export const lessonB205: Lesson = {
         { de: "Er hat wohl den Bus verpasst.", ar: "على الأرجح فاته الحافلة." },
       ],
       comparisonWithArabic:
-        "العربية تفعل ذلك بالأدوات والتنغيم: «تعال!» مقابل «تعال طيب!» = komm mal! و«أنت جائع؟ بلى!» = Doch! و«وش اسمك أصلاً؟» = Wie heißt du eigentlich? و«إيه اللي ضحّكك؟» = Warum lachst du denn? الفكرة واحدة: كلمة صغيرة بلا معنى معجمي تنقل الموقف.",
+        "العربية تفعل ذلك بالأدوات والتنغيم: «تعال!» مقابل «تعال طيب!» = komm mal! و«ألن تأتِ؟ بلى!» = Doch, ich komme! و«ما اسمك أصلاً؟» = Wie heißt du eigentlich? و«إيه اللي ضحّكك؟» = Warum lachst du denn? الفكرة واحدة: كلمة صغيرة بلا معنى معجمي تنقل الموقف.",
       eselsbruecke:
         "اختصار «D-J-M-D-E-W»: Doch=بلى، Ja=أكيد، Mal=فقط، Denn=إذاً، Eigentlich=أصلاً، Wohl=غالباً. والأهم: «لا تترجمها — اشعر بها». دوّنها من الأفلام لا من القواميس.",
       commonMistakes: [
@@ -166,11 +243,11 @@ export const lessonB205: Lesson = {
       titleAr: "Funktionsverbgefüge — الفعل الوظيفي: الأسلوب الرسمي للاقتصاد والأخبار",
       titleDe: "Funktionsverbgefüge: zur Verfügung stellen, in Kraft treten, zum Ausdruck bringen",
       explanationAr:
-        "في اللغة الرسمية (الأخبار، التقارير، الرسائل، النقاش الأكاديمي) لا نقول فقط kommen، بل نستخدم «اسم + فعل وظيفي» (Funktionsverbgefüge): zum Ausdruck bringen (= ausdrücken)، zur Verfügung stellen (= bereitstellen)، in Kraft treten (= beginnen). هذا الأسلوب أرقى وأكثر رسمية — وهو علامة B2 الواضحة في الكتابة والقراءة.",
+        "في اللغة الرسمية (الأخبار، التقارير، الرسائل، النقاش الأكاديمي) لا نقول فقط kommen، بل نستخدم «اسم + فعل وظيفي» (Funktionsverbgefüge): zum Ausdruck bringen (= ausdrücken)، zur Verfügung stellen (= bereitstellen)، in Kraft treten (= beginnen). هذا الأسلوب أكثر رسمية، ويكثر في الكتابة والقراءة الرسمية.",
       whyAr:
-        "لماذا يستخدمه الألمان؟ لأن الجملة الاسمية تعطي «وزناً رسمياً» وتتيح إضافة صفات بسهولة: «Die Maßnahme tritt in Kraft» أنسب من «Die Maßnahme beginnt» في تقرير رسمي. والفهم ضروري: في القراءة ستواجه viele FVG (zum Abschluss bringen، unter Beweis stellen، in Frage stellen) — إن لم تفهمها تضيع الفكرة.",
+        "لماذا يستخدمه الألمان؟ لأن الجملة الاسمية تعطي «وزناً رسمياً» وتتيح إضافة صفات بسهولة: «Die Maßnahme tritt in Kraft» أنسب من «Die Maßnahme beginnt» في تقرير رسمي. والفهم ضروري: في القراءة ستواجه كثيراً من هذه التراكيب (zum Abschluss bringen، unter Beweis stellen، in Frage stellen) — إن لم تفهمها قد تضيع الفكرة.",
       table: {
-        title: "أشهر 10 Funktionsverbgefüge للامتحان",
+        title: "أمثلة من الفعل الوظيفي (Funktionsverbgefüge)",
         columns: ["FVG", "يعادل", "المعنى", "مثال"],
         rows: [
           { label: "zum Ausdruck bringen", cells: ["ausdrücken", "يُعبّر عن", "Er brachte seine Meinung zum Ausdruck."] },
@@ -180,7 +257,7 @@ export const lessonB205: Lesson = {
           { label: "unter Beweis stellen", cells: ["beweisen", "يُثبت", "Er stellte sein Können unter Beweis."] },
           { label: "zum Abschluss bringen", cells: ["abschließen", "يُنهي", "Wir brachten das Projekt zum Abschluss."] },
           { label: "in Betrieb nehmen", cells: ["starten", "يُشغّل", "Das Kraftwerk wird in Betrieb genommen."] },
-          { label: "zur Kenntnis nehmen", cells: ["akzeptieren", "يُحيط علماً", "Die Parteien nahmen das Urteil zur Kenntnis."] },
+          { label: "zur Kenntnis nehmen", cells: ["bemerken", "يأخذ علماً", "Die Parteien nahmen das Urteil zur Kenntnis."] },
           { label: "in Betracht ziehen", cells: ["erwägen", "يأخذ بعين الاعتبار", "Wir ziehen eine Alternative in Betracht."] },
           { label: "eine Rolle spielen", cells: ["wichtig sein", "يلعب دوراً", "Die Kosten spielen eine große Rolle."] },
           { label: "in Kauf nehmen", cells: ["hinnehmen", "يقبل بـ (على مضض)", "Für den Beruf nahm sie einen Umzug in Kauf."] },
@@ -194,17 +271,17 @@ export const lessonB205: Lesson = {
         { de: "Die Gewerkschaft stellte die Entscheidung in Frage.", ar: "شككت النقابة في القرار." },
       ],
       comparisonWithArabic:
-        "العربية تفعل مثلها: «يُعرب عن» بدل «يقول»، «يدخل حيز التنفيذ» بدل «يبدأ»، «يضع تحت التصرف» بدل «يعطي». التشابه مذهل — فكر بالأسلوب الرسمي العربي وستجد المعادل الألماني.",
+        "العربية تفعل مثلها: «يُعرب عن» بدل «يقول»، «يدخل حيز التنفيذ» بدل «يبدأ»، «يضع تحت التصرف» بدل «يعطي». التشابه واضح في كثير من الحالات — فكّر بالأسلوب الرسمي العربي وستجد غالباً معادلاً ألمانياً.",
       eselsbruecke:
-        "«zur Verfügung stellen = يضع تحت التصرف» — تخيل المدير يضع الجهاز (unter) أمامك للاستخدام (Verfügung). و«in Kraft treten»: القانون «يدخل القوة» (Kraft) — قوة القانون.",
+        "«zur Verfügung stellen = يضع تحت التصرف» — احفظها ككتلة كاملة. و«in Kraft treten»: يدخل القانون حيز التنفيذ، وKraft هنا تعني قوة النفاذ.",
       commonMistakes: [
-        { wrong: "تجاهل الفعل المنفصل: treten → tritt ... ein", right: "in Kraft treten: das Gesetz tritt in Kraft", whyAr: "الانفصال يحدث: tritt ... in Kraft." },
+        { wrong: "Das Gesetz treten in Kraft.", right: "Das Gesetz tritt in Kraft.", whyAr: "الفعل يتصرف مع الفاعل المفرد: tritt، و«in Kraft» عبارة ثابتة." },
         { wrong: "خلط zur Verfügung stellen (يوفّر) مع zur Verfügung stehen (متاح)", right: "stellen = يفعلها فاعل · stehen = يصف حالة", whyAr: "stellen متعدٍ (الشركة تضع) · stehen لازم (الشيء متاح)." },
         { wrong: "der Tisch spielt eine Rolle (ترجمة حرفية خاطئة)", right: "die Kosten/Meinung spielen eine Rolle", whyAr: "لا تُستخدم مع الأشياء الجامدة إلا مجازاً عن أهمية." },
       ],
       relatedRuleComparison: {
         title: "FVG أم الفعل البسيط؟",
-        content: "كلاهما صحيح. البسيط (ausdrücken) أسرع في الكلام؛ FVG (zum Ausdruck bringen) أنسب للكتابة الرسمية والخطابات. في الامتحان: استخدم FVG في Schreiben لترفع درجة «Struktur».",
+        content: "كلاهما صحيح. البسيط (ausdrücken) أسرع في الكلام؛ FVG (zum Ausdruck bringen) أنسب للكتابة الرسمية والخطابات.",
       },
     },
   ],
@@ -245,6 +322,12 @@ export const lessonB205: Lesson = {
         correctIndex: 0,
         explanation: "قالت المدربة: Man verbessert die Kommunikation, indem man aktiv zuhört.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«indem man spricht» لا تعبّر عن تحسين التواصل، والمطلوب الاستماع.",
+          "«indem man schweigt» تعني الصمت، وهذا عكس الحل المطلوب.",
+          "«indem man schreibt» لا تعبّر عن تحسين التواصل في هذا السياق.",
+        ],
       },
       {
         id: "q2",
@@ -253,10 +336,16 @@ export const lessonB205: Lesson = {
         instructionAr: "اختر الإجابة الصحيحة:",
         questionDe: "Wann treffen sie sich?",
         questionAr: "متى يتقابلون؟",
-        options: ["morgen, es sei denn es regnet stark", "heute", "übermorgen", "nie"],
+        options: ["morgen, es sei denn, es regnet stark", "heute", "übermorgen", "nie"],
         correctIndex: 0,
         explanation: "قالت آنا: Wir treffen uns morgen, es sei denn, es regnet stark.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«heute» لم تُذكر في الحوار كموعد للقاء.",
+          "«übermorgen» لم تُذكر في الحوار كموعد للقاء.",
+          "«nie» تنفي اللقاء، وهذا عكس ما قالته آنا.",
+        ],
       },
       {
         id: "q3",
@@ -269,6 +358,12 @@ export const lessonB205: Lesson = {
         correctIndex: 0,
         explanation: "قال كريم: Je nachdem, wie das Wetter wird, entscheiden wir.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«sofort» لم تُذكر في الحوار كقرار.",
+          "«morgen früh» لم تُذكر في الحوار كقرار.",
+          "«gar nicht» تنفي القرار، ولم يقلها كريم.",
+        ],
       },
     ],
   },
@@ -284,7 +379,7 @@ export const lessonB205: Lesson = {
       { de: "vermeiden", ar: "يتجنب", note: "ei = آي: فِرمايدن" },
       { de: "das Gefühl", ar: "الشعور", note: "ü طويل: غِفول" },
     ],
-    tip: "Missverständnis = ميس-فِر-شتندنيس — كلمة طويلة بشدة وsch. قسّمها: Miss + ver + ständ + nis.",
+    tip: "Missverständnis = ميس-فِر-شتندنيس — كلمة طويلة فيها sch. قسّمها: Miss + ver + ständ + nis.",
     shadowing: [
       { de: "Man lernt, indem man übt.", ar: "يتعلم المرء بالممارسة.", tip: "indem man übt" },
       { de: "Anstatt zu schlafen, arbeitete er.", ar: "بدلاً من النوم عمل.", tip: "anstatt zu schlafen" },
@@ -336,6 +431,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "طريقة → indem.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«anstatt» تعني بدلاً من، ولا تعبّر عن الطريقة هنا.",
+        "«ohne» تعني دون، ولا تعبّر عن الطريقة هنا.",
+        "«damit» تعبّر عن الغاية، ولا تعبّر عن الطريقة.",
+      ],
     },
     {
       id: "e2",
@@ -346,6 +447,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "بدلاً من → anstatt...zu.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Indem» تعبّر عن الطريقة، ولا تناسب معنى بدلاً من النوم.",
+        "«Ohne» تعني دون، ولا تناسب المعنى هنا.",
+        "«Damit» تعبّر عن الغاية، ولا تناسب الجملة.",
+      ],
     },
     {
       id: "e3",
@@ -364,7 +471,7 @@ export const lessonB205: Lesson = {
       id: "e4",
       type: "word-ordering",
       instructionAr: "رتّب الجملة:",
-      tokens: ["indem", "lernt", "Man", "übt", "man", ","],
+      tokens: ["Man", "lernt", ",", "indem", "man", "übt", "."],
       correctSentence: "Man lernt, indem man übt.",
       explanation: "الطريقة: indem + جملة.",
       errorType: "word-order",
@@ -384,7 +491,7 @@ export const lessonB205: Lesson = {
       id: "e6",
       type: "fill-blank",
       instructionAr: "أكمل بالرابط:",
-      template: "Wir treffen uns, ___ es sei denn regnet. (إلا إذا) ___ er hilft, stört er. (بدل أن)",
+      template: "Wir treffen uns morgen, ___ es regnet stark. (إلا إذا) ___ er hilft, stört er. (بدل أن)",
       blanks: [
         { correct: "es sei denn", options: ["es sei denn", "indem", "anstatt"] },
         { correct: "Statt dass", options: ["Statt dass", "Anstatt zu", "Ohne zu"] },
@@ -412,6 +519,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "Missverständnis = سوء الفهم.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«التواصل» يقابل Kommunikation، وليس Missverständnis.",
+        "«السلوك» يقابل Verhalten، وليس Missverständnis.",
+        "«الإنصات» يقابل Zuhören، وليس Missverständnis.",
+      ],
     },
     {
       id: "e9",
@@ -457,6 +570,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "mal = تخفيف الطلب: Komm mal her!",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«ja» تعني نعم، ولا تعطي الطلب الودي المطلوب.",
+        "«denn» تستعمل في الأسئلة، ولا تناسب الأمر هنا.",
+        "«wohl» تعبّر عن الاحتمال، ولا تناسب الأمر.",
+      ],
     },
     {
       id: "e13",
@@ -490,7 +609,7 @@ export const lessonB205: Lesson = {
       id: "e15",
       type: "word-ordering",
       instructionAr: "رتّب الكلمات لتكوّن جملة نتيجة (folglich):",
-      tokens: ["Er", "übte", "viel,", "folglich", "bestand", "er."],
+      tokens: ["Er", "übte", "viel", ",", "folglich", "bestand", "er", "."],
       correctSentence: "Er übte viel, folglich bestand er.",
       hint: "بعد folglich: الفعل مباشرة ثم الفاعل (قلب الترتيب).",
       explanation: "Er übte viel, folglich bestand er — تدرب كثيراً، وبالتالي نجح.",
@@ -506,6 +625,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "zum Ausdruck bringen = يُعرب عن (أسلوب رسمي).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«machte ... aus» تعني يُعرف أو يميّز، ولا تعبّر عن الرضا.",
+        "«stellte ... vor» تعني يقدم أو يعرّف، ولا تعبّر عن الرضا.",
+        "«gab ... auf» تعني يتخلى، ولا تعبّر عن الرضا.",
+      ],
     },
     {
       id: "e17",
@@ -516,6 +641,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "zur Verfügung stellen = يوفّر/يضع تحت التصرف.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«تبيع أجهزة جديدة» تقابل verkaufen، وليس zur Verfügung stellen.",
+        "«تصلح أجهزة جديدة» تقابل reparieren، وليس zur Verfügung stellen.",
+        "«ترفض الأجهزة» تعني ablehnen، وهذا عكس المعنى.",
+      ],
     },
     {
       id: "e18",
@@ -526,6 +657,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "in Kraft treten = يدخل حيز التنفيذ.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«kommt ... zu Ende» تعني ينتهي، ولا تعني يدخل حيز التنفيذ.",
+        "«steht ... zur Rede» تعني يُحاسَب أو يُناقَش، ولا تعني يدخل حيز التنفيذ.",
+        "«nimmt ... Teil» تعني يشارك، ولا تعني يدخل حيز التنفيذ.",
+      ],
     },
     {
       id: "e19",
@@ -546,6 +683,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "in Frage stellen = يشكك في.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«يؤكدون النتائج» عكس المعنى؛ in Frage stellen تعني يشكك.",
+        "«ينشرون النتائج» لا تعني in Frage stellen.",
+        "«يعدلون النتائج» لا تعني in Frage stellen.",
+      ],
     },
   ],
 
@@ -565,7 +708,7 @@ export const lessonB205: Lesson = {
     culturalNote: {
       title: "التواصل الألماني المباشر",
       content:
-        "الألمان يقدرون الصراحة: «Ich bin ehrlich» (أنا صريح). والنقد يكون مباشراً لكن بنيّة بناءة. و«Small Talk» أقل من ثقافات أخرى — لكن إن حصل، فالمواضيع: الطقس، العمل، العطلات. تجنب الأسئلة الشخصية المبكرة.",
+        "يُوصف التواصل الألماني غالباً بالوضوح والصراحة، وهذا وصف عام لا قاعدة لكل شخص. وكثيراً ما يكون النقد مباشراً مع قصد بنّاء. و«Small Talk» (الحديث الخفيف) قد يكون أقل مما في ثقافات أخرى؛ ومن مواضيعه الشائعة الطقس والعمل والعطلات. والأسئلة الشخصية المبكرة قد تُعدّ تطفلاً.",
     },
   },
 
@@ -579,6 +722,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "بدلاً من → anstatt.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Indem» تعبّر عن الطريقة، ولا تناسب معنى بدلاً من النقد.",
+        "«Ohne» تعني دون، ولا تناسب معنى بدلاً من النقد.",
+        "«Damit» تعبّر عن الغاية، ولا تناسب الجملة.",
+      ],
     },
     {
       id: "m2",
@@ -589,12 +738,18 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "إلا إذا → es sei denn.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«indem» تعبّر عن الطريقة، ولا تعبّر عن الشرط.",
+        "«ohne» تعني دون، ولا تعبّر عن الشرط.",
+        "«damit» تعبّر عن الغاية، ولا تعبّر عن الشرط.",
+      ],
     },
     {
       id: "m3",
       type: "word-ordering",
       instructionAr: "رتّب الجملة:",
-      tokens: ["Er", "ging", "Wort", "ein", "zu", "sagen", "ohne", "."],
+      tokens: ["Er", "ging", ",", "ohne", "ein", "Wort", "zu", "sagen", "."],
       correctSentence: "Er ging, ohne ein Wort zu sagen.",
       explanation: "غادر دون أن يقول كلمة.",
       errorType: "word-order",
@@ -603,7 +758,7 @@ export const lessonB205: Lesson = {
       id: "m4",
       type: "error-correction",
       instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Anstatt er schläft, arbeitet er. (فاعل واحد)",
+      wrongSentence: "Anstatt er schläft, arbeitet er.",
       wrongWord: "er schläft",
       correctWord: "zu schlafen",
       options: ["zu schlafen", "er schläft", "schlafen", "geschlafen"],
@@ -619,6 +774,12 @@ export const lessonB205: Lesson = {
       correctIndex: 0,
       explanation: "doch = «بلى» رداً على النفي.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Ja» تعني نعم، ولا تناسب النفي في السؤال.",
+        "«Mal» تعني مرة أو لطفاً، ولا تناسب الرد على النفي.",
+        "«Wohl» تعبّر عن الاحتمال، ولا تناسب الرد.",
+      ],
     },
     {
       id: "m7",
@@ -688,7 +849,7 @@ export const lessonB205: Lesson = {
               ar: "من ناحية ستتم أتمتة الأعمال البسيطة. ومن ناحية أخرى تظهر مهن جديدة تتطلب الإبداع.", best: true,
               replyDe: "Das ist eine differenzierte Sicht. Welche Berufe meinen Sie konkret?", replyAr: "هذه نظرة متوازنة. أي مهن تقصد تحديداً؟" },
             { de: "Nein, KI wird nie Arbeitsplätze ersetzen.", ar: "لا، لن يحل الذكاء الاصطناعي محل الوظائف أبداً.", best: false,
-              replyDe: "„Nie“ ist eine starke Behauptung. Die Geschichte zeigt das Gegenteil.", replyAr: "«أبداً» ادعاء قوي. التاريخ يظهر العكس." },
+              replyDe: "„Nie“ ist eine starke Behauptung. Frühere technische Umbrüche haben auch neue Berufe hervorgebracht.", replyAr: "«أبداً» ادعاء قوي. التحولات التقنية السابقة أنتجت مهناً جديدة أيضاً." },
           ],
         },
         {
@@ -699,7 +860,7 @@ export const lessonB205: Lesson = {
               ar: "مثلاً في مجال تحليل البيانات وأخلاقيات الذكاء الاصطناعي. كلما زادت التقنية، زادت أهمية الرقابة البشرية.", best: true,
               replyDe: "Ein wichtiger Punkt. Allerdings fehlen oft die Qualifikationen.", replyAr: "نقطة مهمة. لكن المؤهلات غالباً ما تكون ناقصة." },
             { de: "Es entstehen keine neuen Berufe.", ar: "لا تظهر مهن جديدة.", best: false,
-              replyDe: "Das widerspricht allen aktuellen Arbeitsmarktdaten.", replyAr: "هذا يتعارض مع كل بيانات سوق العمل الحالية." },
+              replyDe: "Das lässt sich mit der bisherigen Entwicklung auf dem Arbeitsmarkt schwer vereinbaren.", replyAr: "هذا يصعب توفيقه مع التطورات السابقة في سوق العمل." },
           ],
         },
         {

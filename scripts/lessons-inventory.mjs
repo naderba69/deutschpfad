@@ -18,6 +18,25 @@ import ts from "typescript";
 import { createRequire } from "node:module";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+
+/**
+ * تقدير مدة الدرس بالدقائق — تقدير تقريبي للمتعلم الذاتي، وليس قياساً فعلياً:
+ * شرح ≈4د لكل كتلة، استماع ≈3د لكل مشهد، قراءة ≈5د، نطق ≈5د،
+ * كتابة ≈6د لكل مهمة، تمرين ≈1د، سؤال اختبار مصغّر/مراجعة ≈1د، بطاقة ≈0.25د.
+ */
+function estimateMinutes(L) {
+  const sum =
+    (L.theory?.length ?? 0) * 4 +
+    (L.listening?.items?.length ?? 0) * 3 +
+    (L.reading ? 5 : 0) +
+    5 +
+    (L.writing?.length ?? 0) * 6 +
+    (L.practiceBank?.length ?? 0) +
+    (L.miniTest?.length ?? 0) +
+    (L.review?.length ?? 0) +
+    (L.flashcards?.length ?? 0) * 0.25;
+  return Math.round(sum / 5) * 5;
+}
 const require = createRequire(import.meta.url);
 const TMP = mkdtempSync(join(tmpdir(), "linv-"));
 
@@ -38,7 +57,7 @@ function loadLesson(path) {
 const LESSONS = [];
 for (const level of ["a1", "a2", "b1", "b2"]) {
   for (const f of readdirSync(join(ROOT, "src/data/lessons", level))) {
-    if (!f.endsWith(".ts")) continue;
+    if (!f.endsWith(".ts") || f.endsWith(".test.ts")) continue;
     const L = loadLesson(join(ROOT, "src/data/lessons", level, f));
     if (L) LESSONS.push(L);
   }
@@ -68,7 +87,7 @@ for (const level of ["a1", "a2", "b1", "b2"]) {
     const t = byType(L.practiceBank);
     const tS = Object.entries(t).map(([k, v]) => `${k}:${v}`).join(",") || "—";
     console.log(
-      `  ${L.id} | ${L.titleDe} (${L.titleAr}) | ⏱${L.duration}د\n` +
+      `  ${L.id} | ${L.titleDe} (${L.titleAr}) | ⏱~${estimateMinutes(L)}د (تقدير)\n` +
         `      نظرية:${L.theory?.length ?? 0} | استماع:${L.listening?.items?.length ?? 0}مشهد/${L.listening?.questions?.length ?? 0}سؤال | نطق:${L.pronunciation?.items?.length ?? 0} | كتابة:${L.writing?.length ?? 0} | تمارين:${L.practiceBank?.length ?? 0} (${tS}) | أخطاء:${L.fehlerUndTipps?.mistakes?.length ?? 0} | بطاقات:${L.flashcards?.length ?? 0} | مراجعة:${L.review?.length ?? 0}\n` +
         `      🚩 ${flags(L)}`
     );

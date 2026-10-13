@@ -14,10 +14,67 @@ export const lessonB209: Lesson = {
     "ملفات التقديم ومقابلات العمل، الوصلات الاسمية-الفعلية المتقدمة (in Betracht ziehen, zur Verfügung stellen) والمراسلات الرسمية الكاملة بأسلوب أكاديمي.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann Bewerbungsunterlagen schreiben.", ar: "أن أكتب ملفات التقديم: خطاب + سيرة ذاتية." },
-    { id: "z2", de: "Ich kann fortgeschrittene Nomen-Verb-Verbindungen benutzen.", ar: "أن أستخدم الوصلات الاسمية-الفعلية المتقدمة." },
-    { id: "z3", de: "Ich kann formelle Briefe schreiben.", ar: "أن أكتب مراسلات رسمية كاملة بأسلوب أكاديمي." },
-      { id: "z4", de: "Ich kann einen Arbeitsmarkttrend analysieren und bewerten.", ar: "أن أحلل اتجاهات سوق العمل وأقيّمها." },
+    {
+      id: "z1",
+      de: "Ich kann Anfang und Schluss eines Bewerbungsschreibens formulieren.",
+      ar: "أن أكتب بداية خطاب التقديم وختامه بعبارات رسمية.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["w1", "w3", "e7"],
+        taskIds: ["writing:b2-09:w1", "writing:b2-09:w3", "practice:b2-09:e7"],
+        labelAr: "أكتب بداية خطاب التقديم وختامه (w1 وw3 وe7)، دون كشف الحل. لا يقيس هذا كتابة ملف تقديم كامل.",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann Nomen-Verb-Verbindungen richtig verwenden.",
+      ar: "أن أستخدم الوصلات الاسمية-الفعلية المتقدمة استخداماً صحيحاً.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e1", "e2", "e3", "e4", "e5", "e6", "e9", "m1", "m2", "m4", "m5", "w2"],
+        taskIds: [
+          "practice:b2-09:e1",
+          "practice:b2-09:e2",
+          "practice:b2-09:e3",
+          "practice:b2-09:e4",
+          "practice:b2-09:e5",
+          "practice:b2-09:e6",
+          "practice:b2-09:e9",
+          "mini-test:b2-09:m1",
+          "mini-test:b2-09:m2",
+          "mini-test:b2-09:m4",
+          "mini-test:b2-09:m5",
+          "writing:b2-09:w2",
+        ],
+        labelAr: "أختار الوصلة الصحيحة وأرتب الجملة وأصحح الحرف أو الصيغة (e1 إلى e6 وe9 وm1 وm2 وm4 وm5 وw2)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann Aussagen in einem Vorstellungsgespräch verstehen.",
+      ar: "أن أفهم حديثاً في مقابلة عمل.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q1", "q2", "q3"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 وq2، وإلى l2 في q3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann Wendungen wie „zur Verfügung stellen“ im Bewerbungskontext verwenden.",
+      ar: "أن أستعمل عبارات مثل «zur Verfügung stellen» في سياق التقديم الوظيفي.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e8", "e10", "m4"],
+        taskIds: [
+          "practice:b2-09:e8",
+          "practice:b2-09:e10",
+          "mini-test:b2-09:m4",
+        ],
+        labelAr: "أعرف معنى das Anschreiben وأكتب جملة بـ zur Verfügung stellen وأصحح zur (e8 وe10 وm4)، دون كشف الحل.",
+      },
+    },
   ],
   einfuehrung: {
     motivatingQuestionAr:
@@ -40,12 +97,18 @@ export const lessonB209: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1 (درس b1-09 — العمل التطوعي والاجتماعي): اختر الوصلة:",
+      instructionAr: "مراجعة من B1 (درس b1-09 — الوصلات الاسمية-الفعلية): اختر الفعل المناسب:",
       questionDe: "eine Frage ___",
       options: ["stellen", "treffen", "sagen", "nehmen"],
       correctIndex: 0,
-      explanation: "السؤال يُطرح (درس التطوع B1).",
+      explanation: "السؤال يُطرح: eine Frage stellen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«treffen» تعني يلتقي، ولا تناسب eine Frage.",
+        "«sagen» تعني يقول، ولا تناسب eine Frage.",
+        "«nehmen» لا تشكّل تعبيراً صحيحاً مع Frage؛ نقول eine Frage stellen.",
+      ],
     },
     {
       id: "r2",
@@ -56,6 +119,12 @@ export const lessonB209: Lesson = {
       correctIndex: 0,
       explanation: "Präteritum: arbeitete (درس العمل B1).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«arbeite» صيغة المضارع، ولا تناسب مدة ماضية محددة.",
+        "«gearbeitet» Partizip II، ولا تناسب الجملة بدون فعل مساعد.",
+        "«arbeitest» صيغة du، ولا تناسب ich.",
+      ],
     },
     {
       id: "r3",
@@ -78,7 +147,7 @@ export const lessonB209: Lesson = {
       explanationAr:
         "الوصلات المتقدمة: in Betracht ziehen (يأخذ بعين الاعتبار)، zur Verfügung stellen (يضع تحت التصرف)، eine Rolle spielen (يلعب دوراً)، Wert legen auf (يولي أهمية)، zum Ausdruck bringen (يعبّر عن)، in Kauf nehmen (يقبل بـ). للمراسلة: Sehr geehrte Damen und Herren، Mit freundlichen Grüßen، Anbei finden Sie... (مرفق تجدون...)، Ich bewerbe mich um die Stelle als...",
       whyAr:
-        "لماذا هذه الوصلات؟ لأن خطاب التقديم الألماني «قوالب»: البداية (أي وظيفة)، الوسط (لماذا أنا)، النهاية (مقابلة أرجوها). والوصلات ترفع أسلوبك من «جيد» إلى «ممتاز» في نظر أصحاب العمل.",
+        "لماذا هذه الوصلات؟ لأن خطاب التقديم الألماني «قوالب»: البداية (أي وظيفة)، الوسط (لماذا أنا)، النهاية (مقابلة أرجوها). والوصلات تجعل الأسلوب أدق وأكثر رسمية.",
       table: {
         title: "وصلات B2 المتقدمة",
         columns: ["الوصلة", "المعنى", "مثال"],
@@ -98,17 +167,17 @@ export const lessonB209: Lesson = {
         { de: "Ich stelle meine Fähigkeiten gern zur Verfügung.", ar: "أضع قدراتي بكل سرور تحت التصرف." },
       ],
       comparisonWithArabic:
-        "«أتقدم لمنصب» = Ich bewerbe mich um die Stelle — مطابقة. «مرفق تجدون» = Anbei finden Sie — مطابقة! و«أولي أهمية» = Wert legen auf — نفس التعبير العربي. المراسلة الرسمية متشابهة جداً.",
+        "«أتقدم لمنصب» = Ich bewerbe mich um die Stelle — تقابل قريب. «مرفق تجدون» = Anbei finden Sie — تقابل قريب في المعنى. و«أولي أهمية» = Wert legen auf — يقابله تعبير عربي قريب. وفي المراسلة الرسمية تشابه عام في الصياغة.",
       eselsbruecke:
         "«مرفق تجدون سيرتي» = Anbei finden Sie meinen Lebenslauf — جملة جاهزة. و«أولي أهمية» = Wert legen auf. احفظ الوصلات الخمس كقائمة جاهزة للخطاب.",
       commonMistakes: [
-        { wrong: "Ich bewerbe für die Stelle (حرف خاطئ)", right: "Ich bewerbe mich um die Stelle", whyAr: "sich bewerben um." },
+        { wrong: "Ich bewerbe mich nach der Stelle (حرف خاطئ)", right: "Ich bewerbe mich um die Stelle", whyAr: "sich bewerben um + Akkusativ." },
         { wrong: "Wert machen auf", right: "Wert legen auf", whyAr: "الأهمية تُوضع (legen) لا تُصنع." },
-        { wrong: "Anbei ist mein Lebenslauf (عامية)", right: "Anbei finden Sie meinen Lebenslauf", whyAr: "الصيغة الرسمية: finden Sie." },
+        { wrong: "Anbei ist mein Lebenslauf (أقل شيوعاً)", right: "Anbei finden Sie meinen Lebenslauf", whyAr: "الصيغة المعتادة في المراسلة الرسمية: finden Sie." },
       ],
       relatedRuleComparison: {
         title: "الخطاب الرسمي أم العامي؟",
-        content: "الرسمي: Sehr geehrte... + Anbei finden Sie + Mit freundlichen Grüßen. العامي: Hallo + Ich schicke dir + Liebe Grüße. السياق يحدد — والتقديم رسمي دائماً.",
+        content: "الرسمي: Sehr geehrte... + Anbei finden Sie + Mit freundlichen Grüßen. العامي: Hallo + Ich schicke dir + Liebe Grüße. السياق يحدد — وخطاب التقديم عادةً رسمي.",
       },
     },
     {
@@ -116,7 +185,7 @@ export const lessonB209: Lesson = {
       titleAr: "Funktionsverbgefüge: تراكيب الأفعال الوظيفية",
       titleDe: "Funktionsverbgefüge",
       explanationAr: "تراكيب تجعل الاسم هو حامل المعنى: eine Entscheidung treffen (يقرر) بدل entscheiden، zur Verfügung stellen (يوفّر) بدل verfügbar machen، in Betracht ziehen (يأخذ بعين الاعتبار). هذه ترتقي بالأسلوب.",
-      whyAr: "لماذا؟ لأن النصوص المهنية والأكاديمية تستخدمها باستمرار — وهي علامة B2 النموذجية.",
+      whyAr: "لماذا؟ لأن النصوص المهنية والأكاديمية تستخدمها كثيراً.",
       table: {
         title: "Funktionsverbgefüge الشائعة",
         columns: ["التركيب", "الفعل البسيط", "المعنى", "المجال"],
@@ -131,16 +200,16 @@ export const lessonB209: Lesson = {
       examples: [
         { de: "Die Firma trifft eine wichtige Entscheidung.", ar: "الشركة تتخذ قراراً مهماً." }, { de: "Wir müssen die Kosten in Betracht ziehen.", ar: "يجب أن نأخذ التكاليف بعين الاعتبار." }, { de: "Wir müssen eine Entscheidung treffen.", ar: "علينا اتخاذ قرار." }, { de: "Das Unternehmen stellt die Daten zur Verfügung.", ar: "توفّر الشركة البيانات." }, { de: "Diese Option sollten wir in Betracht ziehen.", ar: "ينبغي أن نأخذ هذا الخيار في الاعتبار." }
       ],
-      comparisonWithArabic: "هذا التركيب مألوف تماماً للعربي: نقول «اتخذ قراراً» لا «قرّر»، و«وجّه نقداً» لا «انتقد». الفارق أن الاختيار في الألمانية مقيّد بشدة: لا يجوز machen eine Entscheidung ولا geben Kritik — فالفعل الوظيفي جزء من التركيب المحفوظ.",
-      eselsbruecke: "احفظ التركيب كاملاً كوحدة واحدة: الاسم مع فعله ومع حرف الجر إن وُجد. فالخطأ الشائع ليس في الاسم بل في اختيار الفعل، ولا يوجد منطق يهديك إليه — السماع والحفظ فقط.",
+      comparisonWithArabic: "هذا التركيب مألوف تماماً للعربي: نقول في الصياغة الرسمية «اتخذ قراراً» و«وجّه نقداً»، وهما أقرب إلى الاسم منهما إلى الفعل البسيط. الفارق أن الاختيار في الألمانية مقيّد بشدة: لا يجوز machen eine Entscheidung ولا geben Kritik — فالفعل الوظيفي جزء من التركيب المحفوظ.",
+      eselsbruecke: "احفظ التركيب كاملاً كوحدة واحدة: الاسم مع فعله ومع حرف الجر إن وُجد. فالخطأ الشائع ليس في الاسم بل في اختيار الفعل، ولا توجد قاعدة تهديك إليه دائماً، لذلك تُحفظ مع الأمثلة.",
       commonMistakes: [
-        { wrong: "eine Entscheidung machen", right: "eine Entscheidung treffen", whyAr: "الفعل الوظيفي المرتبط بـ Entscheidung هو treffen، وmachen ترجمة حرفية من الإنجليزية." },
+        { wrong: "eine Entscheidung machen", right: "eine Entscheidung treffen", whyAr: "الفعل الوظيفي المعتاد مع Entscheidung هو treffen، وmachen لا تُستعمل مع هذا الاسم بهذا المعنى." },
         { wrong: "Kritik geben", right: "Kritik üben", whyAr: "التركيب المحفوظ هو Kritik üben أو Kritik äußern." },
         { wrong: "in Betracht nehmen", right: "in Betracht ziehen", whyAr: "التركيب الثابت هو ziehen مع Betracht، أما nehmen فترد في in Kauf nehmen." },
       ],
       relatedRuleComparison: {
         title: "Funktionsverbgefüge أم الفعل البسيط؟",
-        content: "الفعل البسيط أوضح وأخفّ وهو الأفضل في الكلام: Wir entscheiden. أما التركيب الوظيفي فأرسم وأكثر تجريداً، وهو سمة لغة الإدارة والصحافة والتقارير. في امتحان B2 استعمله في الكتابة الرسمية ولا تُثقل به المحادثة.",
+        content: "الفعل البسيط أوضح وأخفّ وهو الأفضل في الكلام: Wir entscheiden. أما التركيب الوظيفي فأكثر رسمية وتجريداً، ويكثر في لغة الإدارة والصحافة والتقارير. استعمله في الكتابة الرسمية ولا تُثقل به المحادثة.",
       },
     },
   ],
@@ -179,6 +248,12 @@ export const lessonB209: Lesson = {
         correctIndex: 0,
         explanation: "قال سامي: Ich lege großen Wert auf Innovation.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Geld» لم يقل سامي إنه يولي أهمية للمال.",
+          "«Urlaub» لم يقل سامي إنه يولي أهمية للإجازة.",
+          "«Essen» لم يقل سامي إنه يولي أهمية للطعام.",
+        ],
       },
       {
         id: "q2",
@@ -191,6 +266,12 @@ export const lessonB209: Lesson = {
         correctIndex: 0,
         explanation: "قال سامي: Ich stelle meine Erfahrung gern zur Verfügung.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«sein Auto» لم يقل سامي إنه يضع سيارته تحت التصرف.",
+          "«sein Büro» لم يقل سامي إنه يضع مكتبه تحت التصرف.",
+          "«seine Zeit nur» لم يقل سامي ذلك؛ قال إنه يضع خبرته تحت التصرف.",
+        ],
       },
       {
         id: "q3",
@@ -203,6 +284,12 @@ export const lessonB209: Lesson = {
         correctIndex: 0,
         explanation: "قالت منى: Ich stehe sofort zur Verfügung!",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«nächste Woche» لم تقل منى إنها تبدأ الأسبوع القادم.",
+          "«im nächsten Monat» لم تقل منى إنها تبدأ الشهر القادم.",
+          "«nie» تنفي البدء، وهذا عكس ما قالته منى.",
+        ],
       },
     ],
   },
@@ -211,14 +298,14 @@ export const lessonB209: Lesson = {
     id: "p1",
     title: "أصوات التقديم: sch، au، وst",
     items: [
-      { de: "die Bewerbung", ar: "التقديم", note: "w = ڤ (لا يوجد v) + b تبقى ب لأنها بداية مقطع: بِڤِربونغ" },
+      { de: "die Bewerbung", ar: "التقديم", note: "w = ڤ (صوت v): بِڤِربونغ" },
       { de: "das Anschreiben", ar: "خطاب التقديم", note: "sch = ش: آن-شرايبِن" },
       { de: "der Lebenslauf", ar: "السيرة الذاتية", note: "au = آو: ليبِنْس-لاوف" },
       { de: "die Stelle", ar: "المنصب", note: "st = شت: شتِلِّه" },
       { de: "die Erfahrung", ar: "الخبرة", note: "f + a: إرفارونغ" },
       { de: "die Fähigkeit", ar: "المهارة", note: "h = تطويل: فيه-يغكايت" },
     ],
-    tip: "Anschreiben = آن-شرايبِن — sch ثم ei. وLebenslauf = ليبِنْس-لاوف — au طويل.",
+    tip: "Anschreiben = آن-شرايبِن — sch ثم ei. وLebenslauf = ليبِنْس-لاوف — au = آو.",
     shadowing: [
       { de: "Ich bewerbe mich um die Stelle.", ar: "أتقدم للمنصب.", tip: "sich bewerben um" },
       { de: "Anbei finden Sie meinen Lebenslauf.", ar: "مرفقاً سيرتي الذاتية.", tip: "Anbei finden Sie" },
@@ -273,6 +360,12 @@ export const lessonB209: Lesson = {
       correctIndex: 0,
       explanation: "in Betracht ziehen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«stelle» تعني يضع، ولا تناسب in Betracht ziehen.",
+        "«lege» تعني يضع، ولا تناسب in Betracht ziehen.",
+        "«mache» تعني يصنع، ولا تناسب in Betracht ziehen.",
+      ],
     },
     {
       id: "e2",
@@ -283,6 +376,12 @@ export const lessonB209: Lesson = {
       correctIndex: 0,
       explanation: "zur Verfügung stellen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«ziehe» تناسب in Betracht ziehen، ولا تناسب zur Verfügung stellen.",
+        "«lege» تعني يضع، ولا تناسب zur Verfügung stellen.",
+        "«gebe» تعني يعطي، ولا تناسب zur Verfügung stellen.",
+      ],
     },
     {
       id: "e3",
@@ -310,10 +409,10 @@ export const lessonB209: Lesson = {
       id: "e5",
       type: "error-correction",
       instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Ich bewerbe mich für die Stelle.",
-      wrongWord: "für",
+      wrongSentence: "Ich bewerbe mich nach der Stelle.",
+      wrongWord: "nach",
       correctWord: "um",
-      options: ["um", "für", "auf", "an"],
+      options: ["um", "nach", "auf", "an"],
       explanation: "التركيب الثابت: sich bewerben um + Akkusativ — Ich bewerbe mich um die Stelle.",
       errorType: "preposition",
     },
@@ -334,8 +433,8 @@ export const lessonB209: Lesson = {
       type: "transformation",
       instructionAr: "اكتب ختام خطاب:",
       prompt: "«أود أن أعبر عن حماسي وأتطلع لمقابلتكم»",
-      acceptedAnswers: ["Ich möchte meine Motivation zum Ausdruck bringen und freue mich auf ein Gespräch", "Ich freue mich auf ein persönliches Gespräch"],
-      sampleAnswer: "Ich freue mich auf ein persönliches Gespräch.",
+      acceptedAnswers: ["Ich möchte meine Motivation zum Ausdruck bringen und freue mich auf ein Gespräch", "Ich möchte meine Motivation zum Ausdruck bringen und freue mich auf ein Gespräch."],
+      sampleAnswer: "Ich möchte meine Motivation zum Ausdruck bringen und freue mich auf ein Gespräch.",
       explanation: "الختام الرسمي: Ich freue mich auf...",
       errorType: "grammar",
     },
@@ -349,6 +448,12 @@ export const lessonB209: Lesson = {
       correctIndex: 0,
       explanation: "das Anschreiben = خطاب التقديم.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«السيرة الذاتية» تقابل Lebenslauf، وليس Anschreiben.",
+        "«الشهادة» تقابل Zeugnis، وليس Anschreiben.",
+        "«العقد» يقابل Vertrag، وليس Anschreiben.",
+      ],
     },
     {
       id: "e9",
@@ -373,18 +478,18 @@ export const lessonB209: Lesson = {
 
   fehlerUndTipps: {
     mistakes: [
-      { wrong: "Ich bewerbe für die Stelle", right: "Ich bewerbe mich um die Stelle", whyAr: "sich bewerben um." },
+      { wrong: "Ich bewerbe mich nach der Stelle", right: "Ich bewerbe mich um die Stelle", whyAr: "sich bewerben um + Akkusativ." },
       { wrong: "Wert machen auf", right: "Wert legen auf", whyAr: "الأهمية توضع." },
-      { wrong: "Anbei ist (عامية)", right: "Anbei finden Sie", whyAr: "الصيغة الرسمية." },
+      { wrong: "Anbei ist (أقل شيوعاً)", right: "Anbei finden Sie", whyAr: "الصيغة المعتادة في المراسلة الرسمية." },
     ],
     eselsbruecken: [
       "«وصلات الخطاب الخمس»: bewerben um، Anbei finden Sie، Wert legen auf، zur Verfügung stellen، in Betracht ziehen.",
-      "«رسمي دائماً في التقديم»: Sehr geehrte + Anbei + Mit freundlichen Grüßen.",
+      "«الأسلوب الرسمي في التقديم»: Sehr geehrte + Anbei + Mit freundlichen Grüßen.",
     ],
     culturalNote: {
       title: "سوق العمل الألماني",
       content:
-        "سوق العمل منظم: «der Arbeitsvertrag» (عقد عمل)، و«die Probezeit» (فترة تجربة 6 أشهر)، و«der Kündigungsschutz» (حماية من الفصل). والمؤهلات مهمة: «Anerkennung der Abschlüsse» (الاعتراف بالشهادات الأجنبية). وعبارة: «Ich bringe Berufserfahrung mit» (أمتلك خبرة مهنية).",
+        "سوق العمل منظم: «der Arbeitsvertrag» (عقد عمل)، و«die Probezeit» (فترة التجربة)، و«der Kündigungsschutz» (حماية من الفصل). والمؤهلات مهمة: «Anerkennung der Abschlüsse» (الاعتراف بالشهادات الأجنبية). وعبارة: «Ich bringe Berufserfahrung mit» (أمتلك خبرة مهنية).",
     },
   },
 
@@ -396,8 +501,14 @@ export const lessonB209: Lesson = {
       questionDe: "Ich ___ eine Entscheidung. (أتخذ قراراً)",
       options: ["treffe", "mache", "nehme", "gebe"],
       correctIndex: 0,
-      explanation: "eine Entscheidung treffen هي الصيغة الثابتة. والخطأ الشائع machen ترجمةً حرفية لـ«يعمل/يتخذ».",
+      explanation: "eine Entscheidung treffen هي الصيغة الثابتة، ولا تُستعمل machen مع Entscheidung بهذا المعنى.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«mache» لا تشكّل تعبيراً صحيحاً مع Entscheidung؛ نقول eine Entscheidung treffen.",
+        "«nehme» لا تشكّل تعبيراً صحيحاً مع Entscheidung.",
+        "«gebe» لا تشكّل تعبيراً صحيحاً مع Entscheidung.",
+      ],
     },
     {
       id: "m2",
@@ -408,6 +519,12 @@ export const lessonB209: Lesson = {
       correctIndex: 0,
       explanation: "Wert legen auf.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«stelle» تعني يضع، ولا تناسب Wert legen auf.",
+        "«ziehe» تعني يسحب، ولا تناسب Wert legen auf.",
+        "«mache» تعني يصنع، ولا تناسب Wert legen auf.",
+      ],
     },
     {
       id: "m3",
@@ -451,18 +568,18 @@ export const lessonB209: Lesson = {
     { id: "fc5", de: "zur Verfügung stellen", ar: "يضع تحت التصرف", example: "Ich stelle meine Erfahrung zur Verfügung.", exampleAr: "أضع خبرتي تحت التصرف.", level: "B2" },
     { id: "fc6", de: "Wert legen auf", ar: "يولي أهمية", example: "Ich lege Wert auf Qualität.", exampleAr: "أولي أهمية للجودة.", level: "B2" },
     { id: "fc7", de: "Anbei finden Sie ...", ar: "مرفقاً تجدون...", example: "Anbei finden Sie meinen Lebenslauf.", exampleAr: "مرفقاً سيرتي الذاتية.", level: "B2" },
-    { id: "fc8", de: "die Fähigkeit", ar: "المهارة", example: "Meine Fähigkeiten sind breit.", exampleAr: "مهاراتي واسعة.", level: "B2" },
+    { id: "fc8", de: "die Fähigkeit", ar: "المهارة", example: "Meine Fähigkeiten sind vielfältig.", exampleAr: "مهاراتي متنوعة.", level: "B2" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
   mediation: [
         {
       id: "med-b2-09-1", type: "summarize-de-to-ar",
-      titleAr: "لخّص بيانات سوق العمل بالعربية مع نقل الاتجاهات",
+      titleAr: "لخّص نصاً تدريبياً عن سوق العمل بالعربية مع نقل الاتجاهات",
       sourceDe: "Die Arbeitslosenquote ist auf 5,8 Prozent gesunken. Besonders gefragt sind Fachkräfte im Gesundheitswesen und in der IT-Branche. Die Digitalisierung schafft neue Berufsbilder.",
       taskAr: "لخّص البيانات: نسبة البطالة، القطاعات المطلوبة، وتأثير الرقمنة.",
-      modelAnswerAr: "«انخفضت البطالة إلى 5.8%. الأكثر طلباً خبراء الصحة وتقنية المعلومات. والرقمنة تخلق مهناً جديدة.»",
-      keyPointsAr: ["نقلت نسبة البطالة (5.8%)", "ذكرت القطاعين المطلوبين", "نقلت أثر الرقمنة"],
+      modelAnswerAr: "«انخفضت البطالة إلى 5.8 في المئة. الأكثر طلباً خبراء الصحة وتقنية المعلومات. والرقمنة تخلق مهناً جديدة.»",
+      keyPointsAr: ["نقلت نسبة البطالة (5.8 في المئة)", "ذكرت القطاعين المطلوبين", "نقلت أثر الرقمنة"],
     },
   ],
       interaction: [
@@ -477,7 +594,7 @@ export const lessonB209: Lesson = {
           speakerAr: "ما المهارات المهمة لسوق عمل المستقبل؟",
           options: [
             { de: "Neben fachlichen Qualifikationen werden Soft Skills wie Kommunikation und Teamfähigkeit immer wichtiger. Außerdem sind digitale Kompetenzen unverzichtbar.", ar: "إلى جانب المؤهلات المهنية، تزداد أهمية المهارات الناعمة كالتواصل والعمل الجماعي. كما أن الكفاءات الرقمية لا غنى عنها.", best: true, replyDe: "Eine umfassende Antwort. Wie würden Sie sich selbst einschätzen?", replyAr: "إجابة شاملة. كيف تقيّم نفسك؟" },
-            { de: "Nur die technischen Fähigkeiten zählen, der Rest ist unwichtig.", ar: "المهارات التقنية فقط تهم، والباقي غير مهم.", best: false, replyDe: "Die Erfahrung zeigt, dass soziale Kompetenzen ebenso entscheidend sind.", replyAr: "تُظهر الخبرة أن الكفاءات الاجتماعية حاسمة بنفس القدر." },
+            { de: "Nur die technischen Fähigkeiten zählen, der Rest ist unwichtig.", ar: "المهارات التقنية فقط تهم، والباقي غير مهم.", best: false, replyDe: "Viele Arbeitgeber legen auch Wert auf soziale Kompetenzen.", replyAr: "كثير من أصحاب العمل يولون أهمية أيضاً للكفاءات الاجتماعية." },
           ],
         },
         {

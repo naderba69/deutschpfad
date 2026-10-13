@@ -283,6 +283,9 @@ describe("A2-10 lesson content audit", () => {
       { id: "fc6", de: "wenn", ar: "إذا/عندما بحسب السياق", example: "Wenn ich Zeit habe, wiederhole ich Vokabeln.", exampleAr: "إذا توفر لديّ وقت، أراجع المفردات.", level: "A2" },
       { id: "fc7", de: "ob", ar: "ما إذا/هل في سؤال غير مباشر", example: "Ich weiß nicht, ob er kommt.", exampleAr: "لا أعرف ما إذا كان سيأتي.", level: "A2" },
       { id: "fc8", de: "bestehen", ar: "يجتاز", example: "Ich bestehe die Prüfung.", exampleAr: "أجتاز الامتحان.", level: "A2" },
+      { id: "fc9", de: "die Anmeldung", ar: "التسجيل", example: "Die Anmeldung ist online.", exampleAr: "التسجيل إلكتروني.", level: "A2" },
+      { id: "fc10", de: "der Termin", ar: "الموعد", example: "Ich habe einen Termin um zehn.", exampleAr: "لدي موعد في العاشرة.", level: "A2" },
+      { id: "fc11", de: "lernen", ar: "يتعلّم / يدرس", example: "Ich lerne jeden Tag Deutsch.", exampleAr: "أتعلّم الألمانية كل يوم.", level: "A2" },
     ]);
     expect(lessonA210.pronunciation.items).toHaveLength(6);
     expect(lessonA210.pronunciation.shadowing).toHaveLength(4);
@@ -315,7 +318,7 @@ describe("A2-10 lesson content audit", () => {
       instructionAr: "مراجعة من A1 (درس a1-02 — العائلة والأصدقاء): أكمل الملكية:",
       template: "Das ist ___ Bruder. (أخي)",
       blanks: [{ correct: "mein", options: ["mein", "meine", "meinen"] }],
-      explanation: "Bruder اسم مذكر، ويأتي مسند الخبر بعد sein في حالة Nominativ هنا: mein Bruder. (درس العائلة).",
+      explanation: "Bruder اسم مذكر، والأداة الملكية هنا في حالة Nominativ بعد das ist: mein Bruder. (درس العائلة).",
     });
     expect(review.map((item) => item.instructionAr).join(" ")).toMatch(/a1-01/);
     expect(review.map((item) => item.instructionAr).join(" ")).toMatch(/a1-02/);
@@ -387,7 +390,7 @@ describe("A2-10 lesson content audit", () => {
         }
       });
     }
-    expect(task("m5").explanation).toContain("يمكن أن تكون wenn ممكنة في قراءة أخرى تعني «أبقى كلما أمطرت»");
+    expect(task("m5").explanation).toContain("لأنني نمت متأخراً أمس");
   });
 
   it("checks every error-correction sentence, highlighted span, key, and distractor", () => {

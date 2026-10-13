@@ -8,7 +8,7 @@ import {FeedbackPanel} from "@/components/lesson/exercises/feedback-panel";
 import {useExerciseState} from "@/components/lesson/exercises/use-exercise-state";
 import {Button} from "@/components/ui/button";
 import {evaluateMatching} from "@/lib/lesson/exercise-engine";
-import {shuffle} from "@/lib/lesson/shuffle";
+import {seededShuffle} from "@/lib/lesson/shuffle";
 import {cn} from "@/lib/utils";
 import type { MatchingExercise, FeedbackResult } from "@/types/lesson";
 
@@ -23,8 +23,8 @@ export function MatchingExerciseView({
   exercise: MatchingExercise;
   onResult?: (r: FeedbackResult) => void;
 }) {
-  const [leftOrder] = React.useState(() => shuffle(exercise.pairs));
-  const [rightOrder] = React.useState(() => shuffle(exercise.pairs));
+  const [leftOrder] = React.useState(() => seededShuffle(exercise.pairs, `${exercise.id}:L`));
+  const [rightOrder] = React.useState(() => seededShuffle(exercise.pairs, `${exercise.id}:R`));
   const [selectedLeft, setSelectedLeft] = React.useState<string | null>(null);
   const [matched, setMatched] = React.useState<{ left: string; right: string }[]>([]);
   const state = useExerciseState(exercise);

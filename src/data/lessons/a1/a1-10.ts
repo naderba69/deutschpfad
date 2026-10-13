@@ -205,6 +205,42 @@ export const lessonA110: Lesson = {
       { de: "nicht", ar: "أداة نفي؛ يحدد السياق استعمالها وموضعها" },
     ],
   },
+  review: [
+    {
+      id: "r1",
+      type: "multiple-choice",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-01 — الفعل sein): اختر الشكل الصحيح.",
+      questionDe: "Wir ___ Studenten.",
+      questionAr: "نحن طلاب.",
+      options: ["sind", "bin", "ist", "seid"],
+      correctIndex: 0,
+      explanation: "مع wir: sind.",
+      errorType: "conjugation",
+    },
+    {
+      id: "r2",
+      type: "error-correction",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-04 — حروف الجر مع الداتيف للمكان): افحص الجملة؛ اختر التصحيح، أو «لا خطأ» إن كانت سليمة.",
+      wrongSentence: "Das Buch liegt auf den Tisch.",
+      wrongWord: "den Tisch",
+      correctWord: "dem Tisch",
+      options: ["dem Tisch", "den Tisch", "der Tisch", "des Tisch"],
+      explanation: "للسؤال «أين؟» مع auf نستخدم الداتيف: auf dem Tisch.",
+      errorType: "case",
+    },
+    {
+      id: "r3",
+      type: "multiple-choice",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-09 — الأعداد الترتيبية والتاريخ): اختر الشكل الصحيح.",
+      questionDe: "Heute ist der ___ Mai.",
+      questionAr: "اليوم هو الأول من مايو.",
+      options: ["erste", "ersten", "erster", "erstes"],
+      correctIndex: 0,
+      explanation: "التاريخ يُكتب بالعدد الترتيبي: der erste Mai.",
+      errorType: "grammar",
+    },
+  ],
+
   theory: [
     {
       id: "t1",
@@ -812,7 +848,7 @@ export const lessonA110: Lesson = {
   },
   pronunciation: {
     id: "p1",
-    title: "أصوات مختارة في أسماء المهن",
+    title: "أصوات المهن: ch",
     items: [
       {
         de: "der Arzt",

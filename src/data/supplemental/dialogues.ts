@@ -40,7 +40,7 @@ export const DIALOGUES: Dialogue[] = [
         id: "n1",
         speaker: "النادل",
         de: "Guten Tag! Was möchten Sie?",
-        ar: "نهارك سعيد! ماذا تريد؟",
+        ar: "طاب يومك! ماذا تريد؟",
         choices: [
           { id: "c1", de: "Ich möchte bitte einen Kaffee.", ar: "أريد قهوة من فضلك.", next: "n2", feedback: "طلب مهذب ممتاز! (möchte + نصب)" },
           { id: "c2", de: "Ich will Kaffee.", ar: "أريد قهوة.", next: "n1", feedback: "«will» حادة جداً في المطعم — استخدم möchte دائماً." },
@@ -91,7 +91,7 @@ export const DIALOGUES: Dialogue[] = [
         id: "n1",
         speaker: "الطبيبة",
         de: "Guten Tag! Was fehlt Ihnen?",
-        ar: "نهارك سعيد! ما الذي ينقصك (ما بك)؟",
+        ar: "طاب يومك! ما الذي ينقصك (ما بك)؟",
         choices: [
           { id: "c1", de: "Ich habe seit zwei Tagen Kopfschmerzen und Fieber.", ar: "عندي منذ يومين صداع وحمى.", next: "n2", feedback: "وصف أعراض ممتاز! (seit + Dativ)" },
           { id: "c2", de: "Ich bin schlecht.", ar: "أنا سيئ.", next: "n1", feedback: "«Ich bin schlecht» غامضة — صف الأعراض: Ich habe Schmerzen..." },
@@ -190,9 +190,9 @@ export const DIALOGUES: Dialogue[] = [
         id: "n1",
         speaker: "البائع",
         de: "Guten Tag! Kann ich Ihnen helfen?",
-        ar: "نهارك سعيد! هل أستطيع مساعدتك؟",
+        ar: "طاب يومك! هل أستطيع مساعدتك؟",
         choices: [
-          { id: "c1", de: "Guten Tag! Ich möchte diesen Mixer reklamieren. Er funktioniert nicht richtig.", ar: "نهارك سعيد! أريد ردّ هذا الخلاط. إنه لا يعمل بشكل صحيح.", next: "n2", feedback: "ممتاز! ركبت الفعل reklamieren + وصفت المشكلة." },
+          { id: "c1", de: "Guten Tag! Ich möchte diesen Mixer reklamieren. Er funktioniert nicht richtig.", ar: "طاب يومك! أريد ردّ هذا الخلاط. إنه لا يعمل بشكل صحيح.", next: "n2", feedback: "ممتاز! ركبت الفعل reklamieren + وصفت المشكلة." },
           { id: "c2", de: "Der Mixer ist kaputt.", ar: "الخلاط مكسور.", next: "n1", feedback: "قصيرة جداً — أضف التفاصيل: منذ متى؟ ما المشكلة بالضبط؟" },
           { id: "c3", de: "Ich will mein Geld zurück!", ar: "أريد استرداد أموالي!", next: "n1", feedback: "حادة — ابدأ بالأدب ثم اذكر المشكلة: Ich möchte ... reklamieren." },
         ],
@@ -232,7 +232,7 @@ export const DIALOGUES: Dialogue[] = [
         id: "end",
         speaker: "البائع",
         de: "Vielen Dank für Ihr Verständnis! Guten Tag noch!",
-        ar: "شكراً لتفهمك! نهارك سعيد!",
+        ar: "شكراً لتفهمك! طاب يومك!",
         choices: [],
         isEnd: true,
         endMessage: "أنجزت سيناريو الشكوى بنجاح! 🛒 — مفردات B2: reklamieren, Umtausch, Kassenzettel, Garantie, Ausnahme.",
@@ -367,7 +367,7 @@ export const DIALOGUES: Dialogue[] = [
         id: "n1",
         speaker: "الدعم الفني",
         de: "Guten Tag! Wie kann ich Ihnen helfen?",
-        ar: "نهارك سعيد! كيف أساعدك؟",
+        ar: "طاب يومك! كيف أساعدك؟",
         choices: [
           { id: "c1", de: "Ich habe gestern Schuhe bestellt, aber die Größe passt nicht. Kann ich sie umtauschen?", ar: "طلبت حذاء أمس لكن المقاس لا يناسب. هل أستطيع استبداله؟", next: "n2", feedback: "واضح ومحدد: bestellt + Größe passt nicht + umtauschen." },
           { id: "c2", de: "Hallo. Ja, ich brauche Hilfe.", ar: "مرحباً. نعم أحتاج مساعدة.", next: "n2", feedback: "مقبول لكن كن محدداً أكثر." },

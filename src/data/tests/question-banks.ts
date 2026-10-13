@@ -57,7 +57,7 @@ export const TEST_BANK: TestQuestion[] = [
   {
     id: "a1-h1", skill: "hören", level: "A1", kind: "listening",
     text: "Guten Tag! Ich heiße Karim. Ich komme aus Tunesien und wohne jetzt in Berlin. Ich lerne Deutsch in einem Kurs. Am Abend treffe ich Freunde.",
-    textAr: "نهارك سعيد! اسمي كريم. أنا من تونس وأسكن الآن في برلين. أتعلم الألمانية في دورة. مساءً ألتقي الأصدقاء.",
+    textAr: "طاب يومك! اسمي كريم. أنا من تونس وأسكن الآن في برلين. أتعلم الألمانية في دورة. مساءً ألتقي الأصدقاء.",
     questions: [
       { q: "Wie heißt der Mann?", qAr: "ما اسم الرجل؟", options: ["Karim", "Sami", "Anna", "Mona"], correct: 0, explanation: "اسمه كريم." },
       { q: "Wo wohnt er jetzt?", qAr: "أين يسكن الآن؟", options: ["in Berlin", "in Tunis", "in München", "in Hamburg"], correct: 0, explanation: "في برلين." },
@@ -137,7 +137,7 @@ export const TEST_BANK: TestQuestion[] = [
   {
     id: "a2-h2", skill: "hören", level: "A2", kind: "listening",
     text: "Guten Tag, ich möchte eine Fahrkarte nach München, bitte. Hin und zurück. Wann fährt der nächste Zug ab? Um zehn Uhr fünfundzwanzig von Gleis drei.",
-    textAr: "نهارك سعيد، أريد تذكرة إلى ميونخ من فضلك. ذهاب وعودة. متى ينطلق القطار التالي؟ في العاشرة وخمس وعشرين دقيقة من الرصيف الثالث.",
+    textAr: "طاب يومك، أريد تذكرة إلى ميونخ من فضلك. ذهاب وعودة. متى ينطلق القطار التالي؟ في العاشرة وخمس وعشرين دقيقة من الرصيف الثالث.",
     questions: [
       { q: "Wohin fährt der Kunde?", qAr: "إلى أين يسافر الزبون؟", options: ["nach München", "nach Berlin", "nach Hamburg", "nach Köln"], correct: 0, explanation: "إلى ميونخ." },
       { q: "Wann fährt der Zug ab?", qAr: "متى ينطلق القطار؟", options: ["um 10:25", "um 10:05", "um 11:25", "um 9:25"], correct: 0, explanation: "في 10:25." },
@@ -158,7 +158,7 @@ export const TEST_BANK: TestQuestion[] = [
   { id: "b1-g6", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "___ ich jung war, lebte ich in Tunis.", options: ["Als", "Wenn", "Während", "Bis"], correctIndex: 0, explanation: "ماضٍ مرة → als." },
   { id: "b1-g7", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "Ich ___ morgen lernen. (سأتعلم)", options: ["werde", "wirst", "wird", "werden"], correctIndex: 0, explanation: "Futur I: werde." },
   { id: "b1-g8", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "Ich habe ___ Zeit ___ Geld.", options: ["weder ... noch", "nicht nur ... sondern auch", "entweder ... oder", "sowohl ... als auch"], correctIndex: 0, explanation: "لا ولا: weder... noch." },
-  { id: "b1-g9", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "Ich sehe den ___. (طالب — نصب)", options: ["Studenten", "Student", "Studentes", "Studenten"], correctIndex: 0, explanation: "n-Deklination: den Studenten." },
+  { id: "b1-g9", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "Ich sehe den ___. (طالب — نصب)", options: ["Studenten", "Student", "Studentes", "Studentin"], correctIndex: 0, explanation: "n-Deklination: den Studenten." },
   { id: "b1-g10", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "Bevor ich studierte, ___ ich gearbeitet.", options: ["hatte", "habe", "hat", "haben"], correctIndex: 0, explanation: "Plusquamperfekt: hatte gearbeitet." },
 
   /* ═══════════ B1 — مفردات ═══════════ */
@@ -304,7 +304,7 @@ export const TEST_BANK: TestQuestion[] = [
   {
     id: "a1-h3", skill: "hören", level: "A1", kind: "listening",
     text: "Guten Tag! Ich suche eine Wohnung. Ich möchte eine kleine Wohnung mit zwei Zimmern. Sie soll nicht weit vom Zentrum sein. Die Miete darf höchstens sechshundert Euro sein. Ich habe am Freitag Zeit für einen Termin.",
-    textAr: "نهارك سعيد! أبحث عن شقة. أريد شقة صغيرة بغرفتين. يجب ألا تكون بعيدة عن المركز. الإيجار بحد أقصى ستمائة يورو. لدي وقت يوم الجمعة لموعد.",
+    textAr: "طاب يومك! أبحث عن شقة. أريد شقة صغيرة بغرفتين. يجب ألا تكون بعيدة عن المركز. الإيجار بحد أقصى ستمائة يورو. لدي وقت يوم الجمعة لموعد.",
     questions: [
       { q: "Wie viele Zimmer soll die Wohnung haben?", qAr: "كم غرفة تريد؟", options: ["zwei", "drei", "eins", "vier"], correct: 0, explanation: "بغرفتين." },
       { q: "Was darf die Miete höchstens kosten?", qAr: "ما الحد الأقصى للإيجار؟", options: ["600 Euro", "900 Euro", "300 Euro", "1200 Euro"], correct: 0, explanation: "ستمائة يورو." },
@@ -417,7 +417,7 @@ export const TEST_BANK: TestQuestion[] = [
   {
     id: "a2-h4", skill: "hören", level: "A2", kind: "listening",
     text: "Guten Tag, Hotel Sonne. Wie kann ich helfen? – Ich möchte bitte ein Zimmer für zwei Nächte reservieren, von Freitag bis Sonntag. – Für wie viele Personen? – Für zwei Personen, ein Doppelzimmer bitte. – Gerne. Das kostet achtzig Euro pro Nacht mit Frühstück. – Das ist in Ordnung. Können Sie mir die Bestätigung per E-Mail schicken?",
-    textAr: "نهارك سعيد، فندق الشمس. كيف أساعدك؟ – أريد حجز غرفة لليلتين، من الجمعة حتى الأحد. – لكم شخص؟ – لشخصين، غرفة مزدوجة من فضلك. – بكل سرور. التكلفة ثمانون يورو لليلة مع الفطور. – هذا جيد. هل يمكنكم إرسال التأكيد بالبريد؟",
+    textAr: "طاب يومك، فندق الشمس. كيف أساعدك؟ – أريد حجز غرفة لليلتين، من الجمعة حتى الأحد. – لكم شخص؟ – لشخصين، غرفة مزدوجة من فضلك. – بكل سرور. التكلفة ثمانون يورو لليلة مع الفطور. – هذا جيد. هل يمكنكم إرسال التأكيد بالبريد؟",
     questions: [
       { q: "Wie viele Nächte möchte der Gast reservieren?", qAr: "كم ليلة يريد الحجز؟", options: ["zwei Nächte", "eine Nacht", "drei Nächte", "vier Nächte"], correct: 0, explanation: "ليلتان (zwei Nächte)." },
       { q: "Was kostet das Zimmer pro Nacht?", qAr: "كم تكلفة الغرفة لليلة؟", options: ["80 Euro", "60 Euro", "100 Euro", "50 Euro"], correct: 0, explanation: "ثمانون يورو (achtzig Euro)." },

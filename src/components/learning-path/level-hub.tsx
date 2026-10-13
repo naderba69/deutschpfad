@@ -180,10 +180,10 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
                 </span>
 
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-bold">
+                  <p className="break-words text-sm font-bold [overflow-wrap:anywhere]">
                     <LangDe className="font-bold">{lesson.titleDe}</LangDe>
                   </p>
-                  <p className="truncate text-xs text-muted-foreground">
+                  <p className="break-words text-xs text-muted-foreground [overflow-wrap:anywhere]">
                     {lesson.titleAr}
                   </p>
                   <div className="mt-1 flex flex-wrap items-center gap-1.5 text-[11px] text-muted-foreground">
@@ -203,6 +203,9 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
                   </div>
                 </div>
 
+                <span className="shrink-0 whitespace-nowrap text-[11px] text-muted-foreground" title="تقدير تقريبي للمتعلم الذاتي">
+                  ⏱ ~{lesson.estimatedMinutes} د
+                </span>
                 {isNext && !isDone && (
                   <span className="shrink-0 rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-bold text-primary">
                     التالي

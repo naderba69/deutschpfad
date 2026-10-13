@@ -34,6 +34,10 @@ function playDialogue(lines: { de: string }[], rate: number) {
     if (idx >= lines.length) return;
     const u = new SpeechSynthesisUtterance(lines[idx].de);
     u.lang = "de-DE";
+    // اختيار صوت ألماني صراحةً إن وُجد، حتى لا يُنطق النص بصوت إنجليزي على بعض الأجهزة
+    const voices = window.speechSynthesis.getVoices();
+    const gv = voices.find((v) => v.lang === "de-DE") ?? voices.find((v) => v.lang.startsWith("de"));
+    if (gv) u.voice = gv;
     u.rate = rate;
     u.onend = () => speakNext(idx + 1);
     u.onerror = () => speakNext(idx + 1);

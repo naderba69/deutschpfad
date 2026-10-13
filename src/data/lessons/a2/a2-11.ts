@@ -235,7 +235,7 @@ export const lessonA211: Lesson = {
         id: "l1",
         title: "عند الحلاق",
         lines: [
-          { speaker: "Friseurin", de: "Guten Tag! Was möchten Sie?", ar: "نهارك سعيد! ماذا تريد؟" },
+          { speaker: "Friseurin", de: "Guten Tag! Was möchten Sie?", ar: "طاب يومك! ماذا تريد؟" },
           { speaker: "Sami", de: "Ich möchte mir die Haare schneiden lassen.", ar: "أريد قصّ شعري لدى الحلاق." },
           { speaker: "Friseurin", de: "Kurz oder mittellang?", ar: "هل تريده قصيراً أم بطول متوسط؟" },
           { speaker: "Sami", de: "Mittellang, bitte. Ich muss mich beeilen; ich habe um zwölf einen Termin.", ar: "بطول متوسط، من فضلك. عليّ أن أسرع؛ لديّ موعد في الثانية عشرة." },
@@ -257,7 +257,7 @@ export const lessonA211: Lesson = {
         id: "l3",
         title: "ملء استمارة تدريبية افتراضية",
         lines: [
-          { speaker: "Mitarbeiterin", de: "Guten Tag! Sie möchten sich anmelden. Hier ist ein Übungsformular.", ar: "نهارك سعيد! تودّين التسجيل؛ تفضّلي هذه استمارة تدريبية." },
+          { speaker: "Mitarbeiterin", de: "Guten Tag! Sie möchten sich anmelden. Hier ist ein Übungsformular.", ar: "طاب يومك! تودّين التسجيل؛ تفضّلي هذه استمارة تدريبية." },
           { speaker: "Mona", de: "Danke. Ich fülle es gleich aus. Nachname, Vorname, Geburtsdatum, Anschrift...", ar: "شكراً. سأملؤها فوراً: اسم العائلة، الاسم الأول، تاريخ الميلاد، العنوان..." },
           { speaker: "Mitarbeiterin", de: "Tragen Sie bitte auch das Land Ihrer Anschrift und Ihre Telefonnummer ein.", ar: "اكتبي من فضلك أيضاً بلد عنوانك ورقم هاتفك." },
           { speaker: "Mona", de: "Hier steht „Staatsangehörigkeit“. Was bedeutet das?", ar: "مكتوب هنا «الجنسية». ما معنى ذلك؟" },
@@ -321,7 +321,7 @@ export const lessonA211: Lesson = {
 
   pronunciation: {
     id: "p1",
-    title: "نطق كلمات مختارة: sch، w، ie، ä، r وeu في Friseur",
+    title: "نطق كلمات مختارة: sch، w، ie، ä، r وeu",
     items: [
       { de: "sich beschweren", ar: "يشتكي/يقدّم شكوى", note: "IPA للفعل: [bəˈʃveːʁən]؛ sch يقابل [ʃ] وw يقابل [v]. يختلف تحقيق r إقليمياً." },
       { de: "der Friseur", ar: "مصفّف الشعر/الحلّاق", note: "IPA: [fʁiˈzøːɐ̯]. في هذه الكلمة يقارب eu الصوت الطويل [øː]، ويتبعه r في ختام الكلمة؛ لا يُنطق هنا مثل eu الشائع [ɔʏ̯]." },
@@ -596,7 +596,7 @@ export const lessonA211: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "افحص الجملة دون افتراض وجود خطأ؛ اختر «لا خطأ» إذا كانت سليمة في معنى ممكن.",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Das freut mich.",
       wrongWord: "freut mich",
       correctWord: "freut mich",
@@ -633,6 +633,9 @@ export const lessonA211: Lesson = {
     { id: "fc10", de: "ausfüllen", ar: "يملأ (استمارة)", example: "Ich fülle das Formular aus.", exampleAr: "أملأ الاستمارة.", level: "A2" },
     { id: "fc11", de: "die Anmeldung", ar: "التسجيل/الانتساب بحسب السياق", example: "Die Anmeldung ist jetzt abgeschlossen.", exampleAr: "اكتمل التسجيل الآن.", level: "A2" },
     { id: "fc12", de: "unterschreiben", ar: "يوقّع", example: "Unterschreiben Sie hier.", exampleAr: "تفضّلوا بالتوقيع هنا (صيغة رسمية).", level: "A2" },
+    { id: "fc13", de: "die Bank", ar: "البنك", example: "Die Bank ist neben der Post.", exampleAr: "البنك بجانب مكتب البريد.", level: "A2" },
+    { id: "fc14", de: "das Geschäft", ar: "المتجر", example: "Das Geschäft ist geöffnet.", exampleAr: "المتجر مفتوح.", level: "A2" },
+    { id: "fc15", de: "bezahlen", ar: "يدفع", example: "Ich bezahle an der Kasse.", exampleAr: "أدفع عند الصندوق.", level: "A2" },
   ],
 
   /* ═══ الوساطة والتفاعل (CEFR 2020) ═══ */
@@ -655,7 +658,7 @@ export const lessonA211: Lesson = {
       rounds: [
         {
           speakerDe: "Guten Tag, wie kann ich Ihnen helfen?",
-          speakerAr: "نهارك سعيد، كيف يمكنني مساعدتكم؟",
+          speakerAr: "طاب يومك، كيف يمكنني مساعدتكم؟",
           options: [
             { de: "Ich habe vor einer Woche etwas bestellt, aber es ist noch nicht angekommen.", ar: "طلبت شيئاً قبل أسبوع ولم يصل بعد.", best: true, replyDe: "Das tut mir leid. Können Sie mir bitte die Bestellnummer nennen?", replyAr: "آسف. هل يمكنكم ذكر رقم الطلب لي من فضلكم؟" },
             { de: "Ihr Laden ist schrecklich und alles ist kaputt!", ar: "متجركم فظيع وكل شيء معطل!", best: false, replyDe: "Bitte schildern Sie das Problem sachlich, damit wir Ihnen helfen können.", replyAr: "من فضلك اشرح المشكلة بهدوء ووضوح كي نتمكن من مساعدتكم." },

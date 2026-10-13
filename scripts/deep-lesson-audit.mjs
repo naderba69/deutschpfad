@@ -22,7 +22,7 @@ const GERMAN_PATTERNS = [
 
 for (const levelDir of ["a1", "a2", "b1", "b2"]) {
   const dir = join(ROOT, levelDir);
-  for (const f of readdirSync(dir).filter((x) => x.endsWith(".ts"))) {
+  for (const f of readdirSync(dir).filter((x) => x.endsWith(".ts") && !x.endsWith(".test.ts"))) {
     const src = readFileSync(join(dir, f), "utf8");
     const label = `${levelDir}/${f}`;
 
@@ -55,7 +55,7 @@ for (const levelDir of ["a1", "a2", "b1", "b2"]) {
 const levels = ["a1", "a2", "b1", "b2"];
 const orderMap = {};
 for (const l of levels) {
-  for (const f of readdirSync(join(ROOT, l)).filter((x) => x.endsWith(".ts"))) {
+  for (const f of readdirSync(join(ROOT, l)).filter((x) => x.endsWith(".ts") && !x.endsWith(".test.ts"))) {
     const src = readFileSync(join(ROOT, l, f), "utf8");
     const id = src.match(/id: "([a-z0-9-]+)"/)?.[1];
     if (id) orderMap[id] = { level: l.toUpperCase(), order: parseInt(src.match(/order: (\d+)/)?.[1] ?? "0") };
@@ -63,7 +63,7 @@ for (const l of levels) {
 }
 console.log(`\n── فحص المصادر السابقة للمراجعة ──`);
 for (const l of levels) {
-  for (const f of readdirSync(join(ROOT, l)).filter((x) => x.endsWith(".ts"))) {
+  for (const f of readdirSync(join(ROOT, l)).filter((x) => x.endsWith(".ts") && !x.endsWith(".test.ts"))) {
     const src = readFileSync(join(ROOT, l, f), "utf8");
     const id = src.match(/id: "([a-z0-9-]+)"/)?.[1];
     if (!id) continue;

@@ -14,10 +14,79 @@ export const lessonB206: Lesson = {
     "المسارات المهنية والتفاوض، الاشتقاق الاسمي (Nominalisierung): beim Lesen, das Schreiben, zum Nachdenken — تحويل الأفعال والجمل إلى أسماء بأسلوب رسمي، والعمل المرن وعن بعد (Homeoffice, Gleitzeit) ومفرداته.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann über Karrierewege sprechen.", ar: "أن أتحدث عن المسارات المهنية والتفاوض." },
-    { id: "z2", de: "Ich kann Verben nominalisieren: lesen → das Lesen.", ar: "أن أحول الأفعال إلى أسماء (القراءة، الكتابة)." },
-    { id: "z3", de: "Ich kann formelle Sätze bilden: Beim Lesen lernt man.", ar: "أن أبني جملاً رسمية: بالقراءة يتعلم المرء." },
-    { id: "z4", de: "Ich kann über Homeoffice und flexible Arbeitszeiten sprechen.", ar: "أن أتحدث عن العمل عن بعد وأوقات العمل المرنة." },
+    {
+      id: "z1",
+      de: "Ich kann Aussagen über Karrierewege verstehen.",
+      ar: "أن أفهم حديثاً عن المسارات المهنية والتفاوض على الراتب.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q1", "q2", "q3", "q4"],
+        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4"],
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 وl2 وl3 في q1 إلى q4، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann Verben nominalisieren: lesen → das Lesen.",
+      ar: "أن أحوّل الأفعال إلى أسماء (القراءة، الكتابة، التحسين).",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e1", "e5", "e6", "m5", "w1", "w2"],
+        taskIds: [
+          "practice:b2-06:e1",
+          "practice:b2-06:e5",
+          "practice:b2-06:e6",
+          "mini-test:b2-06:m5",
+          "writing:b2-06:w1",
+          "writing:b2-06:w2",
+        ],
+        labelAr: "أختار الاسم المشتق وأصحح حرف البداية وأكمل الأسماء (e1 وe5 وe6 وm5 وw1 وw2)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann formelle Sätze bilden: Beim Lesen lernt man.",
+      ar: "أن أبني جملاً رسمية: بالقراءة يتعلم المرء.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e2", "e4", "m2", "m3", "w3"],
+        taskIds: [
+          "practice:b2-06:e2",
+          "practice:b2-06:e4",
+          "mini-test:b2-06:m2",
+          "mini-test:b2-06:m3",
+          "writing:b2-06:w3",
+        ],
+        labelAr: "أختار الصيغة الرسمية وأرتب الجملة وأكتبها بالإملاء (e2 وe4 وm2 وm3 وw3)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann Wortschatz zu Homeoffice und Arbeitszeiten verwenden.",
+      ar: "أن أستخدم مفردات العمل عن بعد وأوقات العمل المرنة.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e11", "e12", "w4"],
+        taskIds: ["practice:b2-06:e11", "practice:b2-06:e12", "writing:b2-06:w4"],
+        labelAr: "أكمل مفردات العمل عن بعد وأرتب جملة عنه وأكمل الاشتقاق (e11 وe12 وw4)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z5",
+      de: "Ich kann Gründe und Folgen mit passenden Konnektoren ausdrücken.",
+      ar: "أن أعبّر عن الأسباب والنتائج بأدوات الربط المناسبة (da، denn، deshalb، so...dass).",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e13-konn", "e14-konn", "e15-konn", "e16-konn"],
+        taskIds: [
+          "practice:b2-06:e13-konn",
+          "practice:b2-06:e14-konn",
+          "practice:b2-06:e15-konn",
+          "practice:b2-06:e16-konn",
+        ],
+        labelAr: "أختار ترتيب الفعل بعد deshalb وأكمل الأدوات وأرتب جملة da وأصحح موضع الفعل (e13 إلى e16 بمعرّفاتها)، دون كشف الحل.",
+      },
+    },
   ],
 
   einfuehrung: {
@@ -41,22 +110,34 @@ export const lessonB206: Lesson = {
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1 (درس b1-08 — التقنية والرقمنة): اختر الصيغة:",
+      instructionAr: "مراجعة من B1 (درس b1-10 — المستقبل والخطط): اختر الصيغة:",
       questionDe: "Ich werde nächstes Jahr in Deutschland ___.",
       options: ["studieren", "studiere", "studiert", "studiert haben"],
       correctIndex: 0,
-      explanation: "Futur: werde + Infinitiv (درس التقنية B1).",
+      explanation: "Futur: werde + Infinitiv.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«studiere» مع ich، ولا تناسب الفعل بعد werde.",
+        "«studiert» تستعمل Partizip II، والفعل بعد werde يكون مصدراً.",
+        "«studiert haben» زمن الماضي التام، ولا يناسب المستقبل هنا.",
+      ],
     },
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة من B1 (درس b1-09 — العمل التطوعي والاجتماعي): اختر الوصلة:",
+      instructionAr: "مراجعة من B1 (درس b1-09 — الوصلات الاسمية-الفعلية): اختر الفعل المناسب:",
       questionDe: "eine Entscheidung ___",
       options: ["treffen", "stellen", "sagen", "machen"],
       correctIndex: 0,
-      explanation: "القرار يُتخذ (درس التطوع B1).",
+      explanation: "القرار يُتخذ: eine Entscheidung treffen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«stellen» تعني يطرح، ولا تناسب eine Entscheidung.",
+        "«sagen» تعني يقول، ولا تناسب Entscheidung.",
+        "«machen» لا تشكّل تعبيراً صحيحاً مع Entscheidung؛ نقول eine Entscheidung treffen.",
+      ],
     },
     {
       id: "r3",
@@ -79,7 +160,7 @@ export const lessonB206: Lesson = {
       explanationAr:
         "تحويل الفعل إلى اسم: lesen → das Lesen، arbeiten → die Arbeit (مع تغيير أحياناً)، verbessern → die Verbesserung. الاستخدامات الرسمية: beim Lesen (عند القراءة)، zum Nachdenken (للتفكير)، das Schreiben (الكتابة). جملة عامية: Wenn man liest, lernt man → رسمية: Beim Lesen lernt man.",
       whyAr:
-        "لماذا الاشتقاق؟ لأن النصوص الرسمية (تقارير، عقود، أخبار) تحب الأسماء: «die Verbesserung der Arbeitsbedingungen» أرقى من «dass die Arbeitsbedingungen verbessert werden». الاشتقاق يختصر ويجعل الأسلوب «إدارياً» — علامة B2.",
+        "لماذا الاشتقاق؟ لأن النصوص الرسمية (تقارير، عقود، أخبار) تحب الأسماء: «die Verbesserung der Arbeitsbedingungen» أرقى من «dass die Arbeitsbedingungen verbessert werden». الاشتقاق يختصر الجملة ويجعل الأسلوب أقرب إلى لغة الإدارة.",
       table: {
         title: "تحويل الأفعال إلى أسماء",
         columns: ["الفعل", "الاسم", "مثال رسمي"],
@@ -99,13 +180,13 @@ export const lessonB206: Lesson = {
         { de: "Die Zusammenarbeit mit Kollegen ist entscheidend.", ar: "التعاون مع الزملاء حاسم." },
       ],
       comparisonWithArabic:
-        "«بالقراءة يتعلم المرء» = Beim Lesen lernt man — مطابقة تامة مع «بـ + مصدر» العربية! و«تحسين الظروف» = die Verbesserung der Bedingungen — المَصدر العربي نفسه. الاشتقاق الاسمي موجود في عربيتنا بكثرة.",
+        "«بالقراءة يتعلم المرء» = Beim Lesen lernt man — قريب من «بـ + مصدر» في العربية. و«تحسين الظروف» = die Verbesserung der Bedingungen — يقابله المصدر في العربية. والاسم المشتق من الفعل موجود في العربية أيضاً، لكن الألمانية تستعمله بكثرة أكبر في اللغة الرسمية.",
       eselsbruecke:
         "«الفعل → das + مصدر»: lesen → das Lesen. و«beim = عند + اسم»: beim Lesen = عند القراءة. و«zum = للـ»: zum Nachdenken = للتفكير.",
       commonMistakes: [
         { wrong: "beim lesen (حرف صغير)", right: "beim Lesen (اسم بحرف كبير)", whyAr: "الاسم الألماني يبدأ بحرف كبير." },
-        { wrong: "das Lernen أم lernen؟", right: "اسم → das Lernen. فعل → lernen", whyAr: "الاشتقاق: أضف das واكبر الحرف." },
-        { wrong: "Die Verbesserung von أم der Bedingungen؟", right: "die Verbesserung der Bedingungen (Genitiv)", whyAr: "الرسمية: Genitiv بدل von." },
+        { wrong: "das Lernen أم lernen؟", right: "اسم → das Lernen. فعل → lernen", whyAr: "في كثير من الحالات: أضف das واكتب الاسم بحرف كبير." },
+        { wrong: "Die Verbesserung von أم der Bedingungen؟", right: "die Verbesserung der Bedingungen (Genitiv)", whyAr: "Genitiv أكثر رسمية، و von مقبولة أيضاً في الكلام." },
       ],
       relatedRuleComparison: {
         title: "عامية أم رسمية؟",
@@ -116,8 +197,8 @@ export const lessonB206: Lesson = {
       id: "t2",
       titleAr: "أدوات الربط المتقدمة للسبب والنتيجة",
       titleDe: "Kausale und konsekutive Konnektoren",
-      explanationAr: "تدرج أدوات السبب: weil (لأن — عامة)، da (بما أن — رسمية)، zumal (خاصة أن)، umso...als (كلما...لأن). للنتيجة: sodass (حتى/بحيث)، so...dass (لدرجة أن).",
-      whyAr: "لماذا؟ لأن تدرج الأدوات يرفع الأسلوب من B1 إلى B2 — النص الذي يستخدم فقط weil يبدو B1.",
+      explanationAr: "تدرج أدوات السبب: weil (لأن — عامة)، da (بما أن — رسمية)، zumal (خاصة أن). للنتيجة: sodass (حتى/بحيث)، so...dass (لدرجة أن).",
+      whyAr: "لماذا؟ لأن تنوع الأدوات يجعل الأسلوب أدق وأقرب إلى الكتابة الرسمية؛ والاعتماد على weil وحدها يبدو أبسط.",
       table: {
         title: "أدوات السبب والنتيجة وموضع الفعل",
         columns: ["الأداة", "المعنى", "موضع الفعل", "مثال"],
@@ -132,10 +213,10 @@ export const lessonB206: Lesson = {
       examples: [
         { de: "Da die Kosten steigen, müssen wir sparen.", ar: "بما أن التكاليف ترتفع، يجب أن ندخر." }, { de: "Die Nachfrage ist so hoch, dass die Preise steigen.", ar: "الطلب مرتفع لدرجة أن الأسعار ترتفع." }, { de: "Da die Nachfrage gestiegen ist, wurden die Preise erhöht.", ar: "بما أن الطلب ارتفع، رُفعت الأسعار." }, { de: "Die Firma expandiert, denn der Umsatz wächst.", ar: "الشركة تتوسع، لأن المبيعات تنمو." }, { de: "Er sprach so leise, dass ihn niemand verstand.", ar: "تحدث بصوت خافت لدرجة أن أحداً لم يفهمه." }
       ],
-      comparisonWithArabic: "العربية تكتفي غالباً بـ«لأن» و«لذلك» في كل السياقات. والألمانية توزّع الوظيفة على أدوات تختلف في الرسمية وفي أثرها النحوي: weil وda ترسلان الفعل إلى النهاية، وdenn لا تغيّر شيئاً، وdeshalb تحتل المرتبة الأولى فتزيح الفاعل.",
+      comparisonWithArabic: "العربية تستخدم غالباً «لأن» و«لذلك» في سياقات كثيرة. والألمانية توزّع الوظيفة على أدوات تختلف في الرسمية وفي أثرها النحوي: weil وda ترسلان الفعل إلى النهاية، وdenn لا تغيّر شيئاً، وdeshalb تحتل المرتبة الأولى فتزيح الفاعل.",
       eselsbruecke: "احفظ ثلاث فئات: ثانوية ترمي الفعل إلى النهاية (weil، da، sodass)، ومتساوية لا تحرّك شيئاً (denn، aber، und)، وظرفية تحتل المرتبة الأولى فيليها الفعل (deshalb، deswegen، daher).",
       commonMistakes: [
-        { wrong: "Ich bleibe, denn es regnet draußen stark ist.", right: "Ich bleibe, denn es regnet draußen stark.", whyAr: "denn أداة ربط متساوية ولا ترسل الفعل إلى النهاية، فالجملة بعدها تُبنى كجملة رئيسية عادية." },
+        { wrong: "Ich bleibe, denn es regnet draußen stark ist.", right: "Ich bleibe, denn es regnet draußen stark.", whyAr: "بعد denn يأتي الفعل في موضعه كما في الجملة الرئيسية؛ وجود فعل إضافي في آخرها خطأ." },
         { wrong: "Es regnet, deshalb ich bleibe zu Hause.", right: "Es regnet, deshalb bleibe ich zu Hause.", whyAr: "deshalb ظرف رابط يشغل المرتبة الأولى، فيأتي الفعل ثانياً قبل الفاعل." },
         { wrong: "Weil es regnet, deshalb bleibe ich.", right: "Weil es regnet, bleibe ich.", whyAr: "لا يُجمع بين أداة السبب وأداة النتيجة في الجملة نفسها." },
       ],
@@ -163,7 +244,7 @@ export const lessonB206: Lesson = {
         title: "التفاوض على الراتب",
         lines: [
           { speaker: "Karim", de: "Ich möchte über das Gehalt sprechen.", ar: "أريد التحدث عن الراتب." },
-          { speaker: "Chefin", de: "Die Erhöhung ist möglich, nach der Probezeit.", ar: "الزيادة ممكنة بعد فترة التجربة." },
+          { speaker: "Chefin", de: "Die Erhöhung ist nach der Probezeit möglich.", ar: "الزيادة ممكنة بعد فترة التجربة." },
           { speaker: "Karim", de: "Und die Arbeitszeiten? Die Flexibilität ist mir wichtig.", ar: "وأوقات العمل؟ المرونة مهمة لي." },
           { speaker: "Chefin", de: "Das kann verhandelt werden. Die Vereinbarung schreiben wir schriftlich.", ar: "يمكن التفاوض. الاتفاق نكتبه كتابياً." },
         ],
@@ -193,6 +274,12 @@ export const lessonB206: Lesson = {
         correctIndex: 0,
         explanation: "قالت المستشارة: Die Verbesserung Ihrer Qualifikationen ist der erste Schritt.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«die Entscheidung» ليست الخطوة الأولى التي ذكرتها المستشارة.",
+          "«die Bewerbung» ليست الخطوة الأولى التي ذكرتها المستشارة.",
+          "«die Arbeit» ليست الخطوة الأولى التي ذكرتها المستشارة.",
+        ],
       },
       {
         id: "q2",
@@ -203,8 +290,14 @@ export const lessonB206: Lesson = {
         questionAr: "متى تكون الزيادة ممكنة؟",
         options: ["nach der Probezeit", "sofort", "nie", "im nächsten Jahr"],
         correctIndex: 0,
-        explanation: "قالت المديرة: Die Erhöhung ist möglich, nach der Probezeit.",
+        explanation: "قالت المديرة: Die Erhöhung ist nach der Probezeit möglich.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«sofort» تعني فوراً، وهذا عكس ما قالته المديرة.",
+          "«nie» تنفي الإمكانية، وهذا عكس ما قالته المديرة.",
+          "«im nächsten Jahr» لم تذكرها المديرة كموعد للزيادة.",
+        ],
       },
       {
         id: "q3",
@@ -217,6 +310,12 @@ export const lessonB206: Lesson = {
         correctIndex: 0,
         explanation: "قال كريم: Die Flexibilität ist mir wichtig.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«das Büro» لم يقل كريم إنه مهم له.",
+          "«die Kollegen» لم يقل كريم إنهم مهمون له.",
+          "«der Urlaub» لم يقل كريم إنه مهم له.",
+        ],
       },
       {
         id: "q4",
@@ -229,6 +328,12 @@ export const lessonB206: Lesson = {
         correctIndex: 0,
         explanation: "قال سامي: Die Trennung von Arbeit und Freizeit ist schwer — الفصل بين العمل والترفيه صعب.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«das Sparen von Zeit» ذكره سامي كشيء رائع، لا كشيء صعب.",
+          "«die Videokonferenzen am Morgen» لم يقل سامي إنها صعبة في الصباح.",
+          "«die Gleitzeit» ذكرتها آنا كشيء يساعد، لا كشيء صعب.",
+        ],
       },
     ],
   },
@@ -244,7 +349,7 @@ export const lessonB206: Lesson = {
       { de: "die Entscheidung", ar: "القرار", note: "sch = ش: إنت-شايدونغ" },
       { de: "die Probezeit", ar: "فترة التجربة", note: "ei = آي: پروبِه-تسايت" },
     ],
-    tip: "Verbesserung = فِر-بِسّرونغ — ss شديدة. وEntscheidung = إنت-شايدونغ — sch ثم ei.",
+    tip: "Verbesserung = فِر-بِسّرونغ — ss مهموسة (س، لا ز). وEntscheidung = إنت-شايدونغ — sch ثم ei.",
     shadowing: [
       { de: "Beim Lesen lernt man.", ar: "بالقراءة يتعلم المرء.", tip: "beim Lesen — اسم كبير" },
       { de: "Die Verbesserung der Bedingungen ist wichtig.", ar: "تحسين الظروف مهم.", tip: "die Verbesserung — اسم" },
@@ -310,6 +415,12 @@ export const lessonB206: Lesson = {
       correctIndex: 0,
       explanation: "الاشتقاق: die Verbesserung.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Verbessern» صيغة المصدر، ولا تناسب الاسم المؤنث بعد die.",
+        "«Besserung» اسم آخر بمعنى مختلف، ولا يقابل Verbesserung.",
+        "«Verbesser» ليست اسماً صحيحاً هنا.",
+      ],
     },
     {
       id: "e2",
@@ -320,6 +431,12 @@ export const lessonB206: Lesson = {
       correctIndex: 0,
       explanation: "الرسمية: beim + اسم.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Man liest und lernt.» لا تعبّر عن الصيغة الرسمية المطلوبة.",
+        "«Das Lesen man lernt.» ترتيب خاطئ، ولا تعبّر عن الجملة.",
+        "«Lesen ist lernen.» تغيّر المعنى، ولا تعبّر عن الجملة.",
+      ],
     },
     {
       id: "e3",
@@ -371,10 +488,10 @@ export const lessonB206: Lesson = {
       id: "e7",
       type: "transformation",
       instructionAr: "حوّل الجملة إلى رسمية:",
-      prompt: "«عندما يتحسن الوضع، نعمل أفضل» → (رسمية: die Verbesserung...)",
-      acceptedAnswers: ["Die Verbesserung der Situation hilft", "Die Verbesserung ist wichtig"],
-      sampleAnswer: "Die Verbesserung der Situation hilft.",
-      explanation: "الاشتقاق: die Verbesserung + Genitiv.",
+      prompt: "«عندما يتحسن الوضع، نعمل أفضل» → (رسمية، بالاشتقاق الاسمي)",
+      acceptedAnswers: ["Durch die Verbesserung der Situation arbeiten wir besser.", "Durch die Verbesserung der Situation arbeiten wir besser"],
+      sampleAnswer: "Durch die Verbesserung der Situation arbeiten wir besser.",
+      explanation: "الاشتقاق: Durch die Verbesserung + Genitiv (der Situation) = بتحسن الوضع.",
       errorType: "grammar",
     },
     {
@@ -387,16 +504,22 @@ export const lessonB206: Lesson = {
       correctIndex: 0,
       explanation: "Zusammenarbeit = التعاون (zusammen = معاً + Arbeit = عمل).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«الاجتماع» يقابل Treffen أو Sitzung، وليس Zusammenarbeit.",
+        "«الشراكة» تقابل Partnerschaft، وليس Zusammenarbeit.",
+        "«العمل المشترك فقط» تقييد للمعنى، وليس الترجمة الكاملة.",
+      ],
     },
     {
       id: "e9",
       type: "error-correction",
       instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Die Verbesserung von Bedingungen (عامية)",
-      wrongWord: "von Bedingungen",
+      wrongSentence: "Die Verbesserung des Bedingungen ist wichtig.",
+      wrongWord: "des Bedingungen",
       correctWord: "der Bedingungen",
-      options: ["der Bedingungen", "von Bedingungen", "die Bedingungen", "den Bedingungen"],
-      explanation: "الرسمية: Genitiv (der Bedingungen).",
+      options: ["der Bedingungen", "des Bedingungen", "die Bedingungen", "den Bedingungen"],
+      explanation: "Genitiv im Plural lautet der، أما des فيخص المفرد المذكر والمحايد.",
       errorType: "grammar",
     },
     {
@@ -426,7 +549,7 @@ export const lessonB206: Lesson = {
       id: "e12",
       type: "word-ordering",
       instructionAr: "رتّب الكلمات لتكوّن جملة عن العمل عن بعد:",
-      tokens: ["Im", "Homeoffice", "spart", "man", "viel", "Zeit."],
+      tokens: ["Im", "Homeoffice", "spart", "man", "viel", "Zeit", "."],
       correctSentence: "Im Homeoffice spart man viel Zeit.",
       hint: "ظرف المكان أولاً ← الفعل في المركز الثاني (V2).",
       explanation: "في العمل عن بعد يوفّر المرء وقتاً كثيراً.",
@@ -448,6 +571,12 @@ export const lessonB206: Lesson = {
       explanation:
         "deshalb ظرف رابط يحتل المركز الأول، فيأتي الفعل مباشرةً بعده في المركز الثاني ثم الفاعل: deshalb erhöhte die Firma... وهذا يخالف weil التي تدفع الفعل إلى النهاية.",
       errorType: "word-order",
+      optionExplanations: [
+        undefined,
+        "«die Firma erhöhte die Preise» ترتيب خاطئ بعد deshalb؛ الفعل يجب أن يأتي في الموقع الثاني.",
+        "«die Firma die Preise erhöhte» ترتيب خاطئ؛ الفعل المصرّف يجب أن يأتي في الموقع الثاني.",
+        "«erhöhte die Preise die Firma zu» ترتيب خاطئ، ولا معنى لـ zu هنا.",
+      ],
     },
     {
       id: "e14-konn",
@@ -457,7 +586,7 @@ export const lessonB206: Lesson = {
         "___ die Kosten steigen, müssen wir sparen. (بما أن — رسمية) · Ich bleibe zu Hause, ___ es regnet. (لأن — ربط متساوٍ) · Der Umsatz war so gering, ___ die Filiale schloss. (بحيث)",
       blanks: [
         { correct: "Da", options: ["Da", "Denn", "Deshalb"], errorType: "grammar" },
-        { correct: "denn", options: ["denn", "weil ist", "deshalb"], errorType: "grammar" },
+        { correct: "denn", options: ["denn", "und", "deshalb"], errorType: "grammar" },
         { correct: "dass", options: ["dass", "denn", "deshalb"], errorType: "grammar" },
       ],
       explanation:
@@ -493,7 +622,7 @@ export const lessonB206: Lesson = {
   fehlerUndTipps: {
     mistakes: [
       { wrong: "beim lesen (صغير)", right: "beim Lesen", whyAr: "الاسم بحرف كبير." },
-      { wrong: "die Verbesserung von Bedingungen (عامية)", right: "die Verbesserung der Bedingungen", whyAr: "الرسمية: Genitiv." },
+      { wrong: "die Verbesserung des Bedingungen", right: "die Verbesserung der Bedingungen", whyAr: "Genitiv im Plural يكون der، لا des." },
       { wrong: "das Lernen أم lernen؟", right: "اسم → das Lernen. فعل → lernen", whyAr: "الاشتقاق يضيف das." },
     ],
     eselsbruecken: [
@@ -503,7 +632,7 @@ export const lessonB206: Lesson = {
     culturalNote: {
       title: "العمل في ألمانيا",
       content:
-        "«die Work-Life-Balance» مفهوم ألماني مهم. وساعات العمل: 35-40 ساعة أسبوعياً، والإجازة 20-30 يوماً. والتفاوض على الراتب مقبول ومتوقع: «Verhandeln Sie Ihr Gehalt». وعبارة شائعة: «Ich suche eine neue Herausforderung» (أبحث عن تحدٍّ جديد).",
+        "«Work-Life-Balance» (التوازن بين العمل والحياة) مصطلح شائع في النقاش المهني. والتفاوض على الراتب ممكن في كثير من الحالات، وعرض وجهة نظرك بوضوح مفيد: «Verhandeln Sie Ihr Gehalt». وعبارة شائعة في التقديم: «Ich suche eine neue Herausforderung» (أبحث عن تحدٍّ جديد).",
     },
   },
 
@@ -517,6 +646,12 @@ export const lessonB206: Lesson = {
       correctIndex: 0,
       explanation: "الاشتقاق بـ ung- يعطي die Verhandlung. و das Verhandeln اسم مصدر محايد، و die Handlung كلمة أخرى معناها «فعل/حبكة».",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Verhandeln» صيغة المصدر، ولا تناسب الاسم المؤنث بعد die.",
+        "«Handlung» اسم آخر بمعنى الفعل أو القصة، وليس اسم Verhandlung.",
+        "«Verhandelt» صيغة فعل، ولا تناسب الاسم.",
+      ],
     },
     {
       id: "m2",
@@ -527,6 +662,12 @@ export const lessonB206: Lesson = {
       correctIndex: 0,
       explanation: "الرسمية: beim Schreiben.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Man schreibt und übt.» لا تعبّر عن الصيغة الرسمية المطلوبة.",
+        "«Das Schreiben man übt.» ترتيب خاطئ، ولا تعبّر عن الجملة.",
+        "«Schreiben ist üben.» تغيّر المعنى، ولا تعبّر عن الجملة.",
+      ],
     },
     {
       id: "m3",

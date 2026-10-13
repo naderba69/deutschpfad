@@ -192,7 +192,7 @@ export const lessonA112: Lesson = {
       id: "r2",
       type: "fill-blank",
       instructionAr:
-        "مراجعة تراكمية من A1 (درس a1-10 — العمل والمهن): أكمل النفي المحايد غير التبايني، من دون مقابلة المهنة بمهنة أخرى:",
+        "مراجعة تراكمية من A1 (درس a1-10 — العمل والمهن): أكمل النفي المحايد، من دون مقابلة المهنة بمهنة أخرى:",
       template: "Ich ___ Lehrer. (لست معلماً) · Ich habe ___ Auto. (لا سيارة)",
       blanks: [
         {
@@ -202,7 +202,7 @@ export const lessonA112: Lesson = {
         { correct: "kein", options: ["kein", "nicht", "keine", "keinen"] },
       ],
       hint:
-        "في هذا المثال غير التبايني نقول Ich bin kein Lehrer. لا تعمم أن nicht لا يرد مع الأسماء؛ يتغير التركيز والتركيب بحسب السياق.",
+        "في هذا المثال المحايد نقول Ich bin kein Lehrer. لا تعمم أن nicht لا يرد مع الأسماء؛ يتغير التركيز والتركيب بحسب السياق.",
       explanation:
         "في المعنى المحايد المقصود هنا نقول Ich bin kein Lehrer، وkein Auto؛ لا يعني ذلك أن nicht يمتنع مطلقاً مع الأسماء، إذ يختلف التركيز والبناء في سياقات أخرى — من درس a1-10.",
       errorType: "negation",
@@ -905,7 +905,7 @@ export const lessonA112: Lesson = {
   },
   pronunciation: {
     id: "p1",
-    title: "تدريب نطقي استرشادي لمفردات الطقس",
+    title: "أصوات الطقس: w وsch وg",
     items: [
       {
         de: "das Wetter",
@@ -1411,8 +1411,8 @@ export const lessonA112: Lesson = {
         classification: "error",
       },
       {
-        wrong: "اعتبار wird تصريفاً صالحاً لكل الضمائر.",
-        right: "ich werde، du wirst، er/sie/es wird، wir werden، ihr werdet، sie (الجمع) / Sie (صيغة الاحترام): werden",
+        wrong: "Wir wird alt.",
+        right: "Wir werden alt.",
         whyAr:
           "werden فعل غير منتظم في المضارع؛ احفظ التصريفات المعروضة، ولا تعمم صيغة واحدة على جميع الضمائر.",
         classification: "error",

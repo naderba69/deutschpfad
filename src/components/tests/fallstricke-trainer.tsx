@@ -32,7 +32,11 @@ export function FallstrickeTrainer() {
 
   // خلط الخيارات لكل محاولة (مع نقل فهرسي الصحيح والمصيدة)
   // eslint-disable-next-line react-hooks/exhaustive-deps -- runKey مقصود: يعيد الخلط عند إعادة المحاولة
-  const exercises = React.useMemo(() => FALLSTRICKE.map(shuffleTrapItem), [runKey]);
+  // ترتيب الخيارات يُخلط بعد التركيب فقط، لأن العشوائية في التصيير تُسبّب خطأ الـ hydration
+  const [exercises, setExercises] = React.useState(() => FALLSTRICKE);
+  React.useEffect(() => {
+    setExercises(FALLSTRICKE.map(shuffleTrapItem));
+  }, [runKey]);
   const ex = exercises[idx];
   const answered = chosen !== null;
   const isRight = answered && chosen === ex.correct;

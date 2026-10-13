@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {notFound} from "next/navigation";
 
 import { LazySealExam } from "@/components/tests/lazy/lazy-seal-exam";
 import { Card, CardContent } from "@/components/ui/card";
@@ -22,6 +23,7 @@ interface Props {
 
 export default function SealExamPage({ params, searchParams }: Props) {
   const level = params.level.toUpperCase();
+  if (!["A1", "A2", "B1", "B2"].includes(level)) notFound();
   const quick = searchParams?.mode === "quick";
 
   return (
@@ -46,7 +48,7 @@ export default function SealExamPage({ params, searchParams }: Props) {
                 <p className="font-bold">الامتحان الكامل</p>
                 <p className="mt-0.5 text-xs text-muted-foreground">
                   بصيغة Goethe الكاملة (27 سؤالاً: قراءة + استماع + قواعد + مفردات + كتابة)
-                  بتوقيت حقيقي — أقرب محاكاة للامتحان الرسمي.
+                  بتوقيت قريب من الامتحان الرسمي — تدريب وليس امتحاناً رسمياً.
                 </p>
                 <span className="mt-2 inline-block rounded-lg bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
                   مُحدد حالياً

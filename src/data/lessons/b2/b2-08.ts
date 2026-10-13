@@ -14,10 +14,65 @@ export const lessonB208: Lesson = {
     "الاختلافات بين الثقافات وتعدد اللغات، الأفعال مع حروف الجر الثابتة (Verben mit Präpositionen): sich interessieren für, warten auf, sich freuen über/auf — وجدول كامل.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann über Sprachen und Kulturen sprechen.", ar: "أن أتحدث عن تعدد اللغات والتبادل الثقافي." },
-    { id: "z2", de: "Ich kenne die Verben mit festen Präpositionen.", ar: "أن أتقن الأفعال مع حروف الجر الثابتة وحالاتها." },
-    { id: "z3", de: "Ich kann interkulturelle Unterschiede beschreiben.", ar: "أن أصف الاختلافات بين الثقافات." },
-      { id: "z4", de: "Ich kann kulturelle Unterschiede analysieren und erklären.", ar: "أن أحلل الاختلافات الثقافية وأشرحها." },
+    {
+      id: "z1",
+      de: "Ich kann Aussagen über Sprachen und Kulturen verstehen.",
+      ar: "أن أفهم حديثاً عن تعدد اللغات والثقافات.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q1", "q2", "q3"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 وq2، وإلى l2 في q3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann Verben mit festen Präpositionen richtig verwenden.",
+      ar: "أن أستخدم الأفعال مع حروف الجر الثابتة استخداماً صحيحاً.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e1", "e2", "e3", "e5", "e6", "e9", "m1", "m2", "m4", "w1", "w2"],
+        taskIds: [
+          "practice:b2-08:e1",
+          "practice:b2-08:e2",
+          "practice:b2-08:e3",
+          "practice:b2-08:e5",
+          "practice:b2-08:e6",
+          "practice:b2-08:e9",
+          "mini-test:b2-08:m1",
+          "mini-test:b2-08:m2",
+          "mini-test:b2-08:m4",
+          "writing:b2-08:w1",
+          "writing:b2-08:w2",
+        ],
+        labelAr: "أختار حرف الجر الصحيح وأصحح الخطأ فيه وأكمل الجمل بالحرف المناسب (e1 إلى e9 وm1 وm2 وm4 وw1 وw2)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann Aussagen über Gewohnheiten und Anpassung verstehen.",
+      ar: "أن أفهم حديثاً عن الاعتياد والتأقلم مع عادات جديدة.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q3", "e7"],
+        taskIds: ["listening:l2:q3", "practice:b2-08:e7"],
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l2 في q3، وأكمل عبارة sich gewöhnen an في e7، دون كشف النص أو الحل.",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann kurze Sätze über Sprachen und Kultur schriftlich ergänzen.",
+      ar: "أن أكمل جملاً قصيرة عن اللغات والثقافة كتابةً.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["w1", "w2"],
+        taskIds: [
+          "writing:b2-08:w1",
+          "writing:b2-08:w2",
+        ],
+        labelAr: "أكمل جملة وأحوّلها (w1 وw2)، دون كشف الحل. لا يقيس هذا كتابة نص كامل.",
+      },
+    },
   ],
   einfuehrung: {
     motivatingQuestionAr:
@@ -46,6 +101,12 @@ export const lessonB208: Lesson = {
       correctIndex: 2,
       explanation: "الفعل الانعكاسي بلا مفعول به آخر يأخذ Akkusativ: mich (درس a2-11).",
       errorType: "grammar",
+      optionExplanations: [
+        "«dich» ضمير للمخاطَب، ولا يناسب المتكلم ich.",
+        "«mir» ضمير جر، ولا يناسب فعل waschen مع الجسم هنا.",
+        undefined,
+        "«sich» ضمير الغائب، ولا يناسب المتكلم ich.",
+      ],
     },
     {
       id: "r2",
@@ -56,6 +117,12 @@ export const lessonB208: Lesson = {
       correctIndex: 1,
       explanation: "المفعول به المذكر في Akkusativ: einen Apfel (درس a1-03).",
       errorType: "case",
+      optionExplanations: [
+        "«ein» بلا نهاية، ولا تناسب مفعولاً مذكراً بعد الفعل essen.",
+        undefined,
+        "«einem» حالة جر، ولا تناسب مفعول الفعل essen.",
+        "«eine» مؤنث، والكلمة Apfel مذكرة.",
+      ],
     },
     {
       id: "r3",
@@ -104,9 +171,9 @@ export const lessonB208: Lesson = {
         { de: "Worauf wartest du? — Auf den Bus.", ar: "على ماذا تنتظر؟ — على الحافلة." },
       ],
       comparisonWithArabic:
-        "«يهتم بـ» = sich interessieren für — العربية تملك «بـ» بعد الاهتمام. «يحلم بـ» = träumen von. «يعتني بـ» = sich kümmern um. الحروف العربية (بـ، عن، في) تطابق الألمانية تقريباً — احفظ التطابق!",
+        "«يهتم بـ» = sich interessieren für، و«يحلم بـ» = träumen von، و«يعتني بـ» = sich kümmern um: هنا تقابل الحروف العربية الحروف الألمانية تقريباً. لكن «ينتظر» = warten auf لا تحمل حرف جر في العربية، فلا تعتمد على الترجمة وحدها — احفظ الحرف مع الفعل.",
       eselsbruecke:
-        "«الفعل + حرفه = كلمة واحدة»: فكّر بـ «sich-interessieren-für» كوحدة. والقائمة الشهيرة: für (اهتمام)، auf (انتظار/تطلع)، an (تفكير)، von (حلم/اعتماد)، um (اعتناء)، über (نقاش/فرح).",
+        "«الفعل + حرفه = كلمة واحدة»: فكّر بـ «sich-interessieren-für» كوحدة. وقائمة للمراجعة: für (اهتمام)، auf (انتظار/تطلع)، an (تفكير)، von (حلم/اعتماد)، um (اعتناء)، über (نقاش/فرح).",
       commonMistakes: [
         { wrong: "sich interessieren auf (حرف خاطئ)", right: "sich interessieren für", whyAr: "الفعل يحدد حرفه: für." },
         { wrong: "warten für den Bus", right: "warten auf den Bus", whyAr: "warten على: auf." },
@@ -114,7 +181,7 @@ export const lessonB208: Lesson = {
       ],
       relatedRuleComparison: {
         title: "sich freuen auf أم über؟",
-        content: "auf = تطلع لمستقبل (Ich freue mich auf den Urlaub). über = فرح بحاضر/ماضٍ (Ich freue mich über das Geschenk). الزمن يحدد الحرف!",
+        content: "auf = تطلع لمستقبل (Ich freue mich auf den Urlaub). über = فرح بحاضر/ماضٍ (Ich freue mich über das Geschenk). الزمن يحدد الحرف في كثير من الحالات!",
       },
     },
     {
@@ -122,7 +189,7 @@ export const lessonB208: Lesson = {
       titleAr: "الجسيمات التداولية: doch, ja, mal, eben",
       titleDe: "Modalpartikeln: doch, ja, mal, eben",
       explanationAr: "الجسيمات (Partikeln) لا تُترجم حرفياً لكنها تنقل النبرة: doch (على العكس/بل)، ja (كما تعلم)، mal (قليلاً/فقط)، eben (ببساطة). مثال: Das ist ja interessant! (هذا مثير فعلاً!) — ja تضيف المفاجأة.",
-      whyAr: "لماذا؟ لأن هذه الجسيمات هي سر «الطبيعية» في الألمانية المحكية — غيابها يجعل الكلام جامداً كتابياً.",
+      whyAr: "لماذا؟ لأن هذه الجسيمات تساعد كثيراً على طبيعية الكلام في الألمانية المحكية؛ وغيابها قد يجعل الكلام أقرب إلى الكتابة.",
       table: {
         title: "الجسيمات التداولية ووظائفها",
         columns: ["الجسيم", "الوظيفة", "مثال", "بالعربية"],
@@ -131,18 +198,18 @@ export const lessonB208: Lesson = {
           { label: "doch", cells: ["ردّ توقّع معاكس", "Komm doch mit!", "هيا تعال معنا!"] },
           { label: "mal", cells: ["تخفيف الطلب", "Warte mal kurz.", "انتظر قليلاً."] },
           { label: "eben", cells: ["تسليم بأمر واقع", "Das ist eben so.", "الأمر هكذا ببساطة."] },
-          { label: "denn", cells: ["تلطيف السؤال", "Was machst du denn?", "ماذا تفعل إذن؟"] },
+          { label: "denn", cells: ["فضول أو اهتمام بالسؤال", "Was machst du denn?", "ماذا تفعل إذن؟"] },
         ],
       },
       examples: [
         { de: "Komm doch mal vorbei!", ar: "تعال قليلاً! (ودّي)" }, { de: "Das ist eben so.", ar: "الأمر ببساطة هكذا." }, { de: "Das war ja klar!", ar: "كان هذا واضحاً بالطبع!" }, { de: "Ruf mich doch morgen an.", ar: "اتصل بي غداً إذن." }, { de: "Wo bist du denn gewesen?", ar: "أين كنت إذن؟" }
       ],
       comparisonWithArabic: "العربية تملك نظيراً وظيفياً واضحاً: «يا أخي»، «إذن»، «بالله عليك»، «ببساطة». فالجسيمات ليست غريبة عن العربية، لكن الفارق أن الألمانية تضعها في مواضع نحوية محددة داخل الجملة لا في أولها أو آخرها كما نفعل غالباً.",
-      eselsbruecke: "الجسيم لا يُترجم بل يُحسّ. موضعه المعتاد بعد الفعل والفاعل مباشرة وقبل بقية الجملة. وإن حذفته بقيت الجملة صحيحة نحوياً لكنها تفقد دفأها وتبدو جافة كأنها من كتاب.",
+      eselsbruecke: "الجسيم لا يُترجم بل يُحسّ. يقع غالباً في الجزء الأوسط من الجملة، قريباً من الفعل أو الفاعل. وإن حذفته بقيت الجملة صحيحة نحوياً لكنها تفقد دفأها وتبدو جافة كأنها من كتاب.",
       commonMistakes: [
         { wrong: "Doch komm mit!", right: "Komm doch mit!", whyAr: "الجسيم لا يتصدّر الجملة، بل يقع بعد الفعل في صيغة الأمر." },
         { wrong: "Was denn machst du?", right: "Was machst du denn?", whyAr: "في السؤال يقع denn بعد الفاعل لا بين أداة الاستفهام والفعل." },
-        { wrong: "Das ist ja doch mal eben so.", right: "Das ist eben so.", whyAr: "لا تُكدَّس الجسيمات؛ واحد أو اثنان على الأكثر، وإلا صارت الجملة ركيكة." },
+        { wrong: "Das ist ja doch mal eben so.", right: "Das ist eben so.", whyAr: "لا تُكدَّس الجسيمات عادةً؛ واحد أو اثنان في الجملة الواحدة يكفيان، وكثرتها تُثقل الجملة." },
       ],
       relatedRuleComparison: {
         title: "doch جسيماً أم جواباً؟",
@@ -186,6 +253,12 @@ export const lessonB208: Lesson = {
         correctIndex: 0,
         explanation: "قال سامي: Ich träume von einem Job in Deutschland.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«von einem Haus» لم يقل سامي إنه يحلم بمنزل.",
+          "«von einer Reise» لم يقل سامي إنه يحلم برحلة.",
+          "«von einem Auto» لم يقل سامي إنه يحلم بسيارة.",
+        ],
       },
       {
         id: "q2",
@@ -198,6 +271,12 @@ export const lessonB208: Lesson = {
         correctIndex: 0,
         explanation: "قالت آنا: Ich freue mich auf einen Austausch.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«auf eine Reise» لم تقل آنا إنها تتطلع إلى رحلة.",
+          "«auf eine Party» لم تقل آنا إنها تتطلع إلى حفلة.",
+          "«auf ein Buch» لم تقل آنا إنها تتطلع إلى كتاب.",
+        ],
       },
       {
         id: "q3",
@@ -210,6 +289,12 @@ export const lessonB208: Lesson = {
         correctIndex: 0,
         explanation: "قال كريم: Ich gewöhne mich langsam daran (أن يسألوا دائماً).",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«daran, dass man isst» لم يقل كريم إنه يعتاد الأكل.",
+          "«daran, dass man schläft» لم يقل كريم إنه يعتاد النوم.",
+          "«daran, dass man arbeitet» لم يقل كريم إنه يعتاد العمل.",
+        ],
       },
     ],
   },
@@ -225,7 +310,7 @@ export const lessonB208: Lesson = {
       { de: "die Verständigung", ar: "التفاهم", note: "v = ف: فِر-شتنديغونغ" },
       { de: "sich gewöhnen an", ar: "يعتاد على", note: "ö + h: غِفونِن" },
     ],
-    tip: "Verständigung = فِر-شتنديغونغ — v ألمانية ڤ/ف. وAustausch = آوس-تاوش — au مرتين تقريباً.",
+    tip: "Verständigung = فِر-شتنديغونغ — v هنا تُنطق ف. وAustausch = آوس-تاوش — au مرتين.",
     shadowing: [
       { de: "Ich interessiere mich für Musik.", ar: "أهتم بالموسيقى.", tip: "sich interessieren für" },
       { de: "Ich warte auf den Bus.", ar: "أنتظر الحافلة.", tip: "warten auf" },
@@ -278,6 +363,12 @@ export const lessonB208: Lesson = {
       correctIndex: 0,
       explanation: "sich interessieren für.",
       errorType: "preposition",
+      optionExplanations: [
+        undefined,
+        "«auf» لا تناسب sich interessieren؛ الفعل يطلب für.",
+        "«an» لا تناسب sich interessieren.",
+        "«über» لا تناسب sich interessieren مع Musik.",
+      ],
     },
     {
       id: "e2",
@@ -288,6 +379,12 @@ export const lessonB208: Lesson = {
       correctIndex: 0,
       explanation: "warten auf.",
       errorType: "preposition",
+      optionExplanations: [
+        undefined,
+        "«für» لا تناسب warten؛ الفعل يطلب auf.",
+        "«von» لا تناسب warten.",
+        "«um» لا تناسب warten.",
+      ],
     },
     {
       id: "e3",
@@ -355,16 +452,22 @@ export const lessonB208: Lesson = {
       correctIndex: 0,
       explanation: "der Austausch = التبادل (ثقافي/طلابي).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«الزيارة» تقابل Besuch، وليس Austausch.",
+        "«الرحلة» تقابل Reise، وليس Austausch.",
+        "«الاجتماع» يقابل Treffen أو Sitzung، وليس Austausch.",
+      ],
     },
     {
       id: "e9",
       type: "error-correction",
       instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Ich freue mich über den Urlaub. (مستقبل)",
-      wrongWord: "über",
+      wrongSentence: "Ich freue mich mit den Urlaub.",
+      wrongWord: "mit",
       correctWord: "auf",
-      options: ["auf", "über", "an", "von"],
-      explanation: "تطلع لمستقبل → auf. (über للماضي/الحاضر).",
+      options: ["auf", "zu", "von", "bei"],
+      explanation: "sich freuen auf (تطلع لمستقبل). و«mit» لا تأتي مع sich freuen هنا.",
       errorType: "preposition",
     },
     {
@@ -390,7 +493,7 @@ export const lessonB208: Lesson = {
     culturalNote: {
       title: "التعدد اللغوي",
       content:
-        "ألمانيا فيها ~20% من السكان من أصول مهاجرة — ومتعددة اللغات. و«der Spracherwerb» (اكتساب اللغة) موضوع بحث. ونصيحة المعلمين: «Sprich von Tag eins an» (تحدث من اليوم الأول) — الأخطاء جزء من التعلم.",
+        "يعيش في ألمانيا أشخاص كثيرون من خلفيات لغوية وثقافية متعددة. و«der Spracherwerb» (اكتساب اللغة) موضوع واسع في البحث اللغوي. والأخطاء جزء طبيعي من التعلم، والممارسة المبكرة تساعد على تحسين الطلاقة.",
     },
   },
 
@@ -404,6 +507,12 @@ export const lessonB208: Lesson = {
       correctIndex: 0,
       explanation: "sich interessieren für.",
       errorType: "preposition",
+      optionExplanations: [
+        undefined,
+        "«auf» لا تناسب sich interessieren.",
+        "«von» لا تناسب sich interessieren.",
+        "«um» لا تناسب sich interessieren.",
+      ],
     },
     {
       id: "m2",
@@ -414,6 +523,12 @@ export const lessonB208: Lesson = {
       correctIndex: 0,
       explanation: "träumen von.",
       errorType: "preposition",
+      optionExplanations: [
+        undefined,
+        "«für» تعني لأجل، ولا تناسب träumen von.",
+        "«auf» لا تناسب träumen.",
+        "«an» لا تناسب träumen.",
+      ],
     },
     {
       id: "m3",

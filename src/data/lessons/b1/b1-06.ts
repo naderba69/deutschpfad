@@ -14,10 +14,64 @@ export const lessonB106: Lesson = {
     "وصف الأعمال الفنية، تصريف الصفات الكامل (Adjektivdeklination) مع الأدوات المعرفة وغير المعرفة وبدون أداة، والمقارنة بين الثقافات، ومفهوم الوطن والهجرة وصدمات الثقافة (Heimat, Migration und Kulturschock).",
 
   lernziele: [
-    { id: "z1", de: "Ich kann Kunstwerke beschreiben.", ar: "أن أصف الأعمال الفنية والمتاحف." },
-    { id: "z2", de: "Ich kann Adjektive deklinieren.", ar: "أن أصرف الصفات في كل الحالات (نهايات الصفات)." },
-    { id: "z3", de: "Ich kann kulturelle Unterschiede vergleichen.", ar: "أن أقارن بين الثقافات." },
-    { id: "z4", de: "Ich kann über Heimat, Migration und Kulturschock sprechen.", ar: "أن أتحدث عن الوطن والهجرة وصدمات الثقافة وأعبّر عن الحنين (Heimweh)." },
+    {
+      id: "z1",
+      de: "Ich kann ein Kunstwerk mit einem Adjektiv beschreiben.",
+      ar: "أن أكتب وصفاً قصيراً لعمل فني بصفة نعتية صحيحة النهاية.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["w1", "e7"],
+        taskIds: ["writing:b1-06:w1", "practice:b1-06:e7"],
+        labelAr: "أكتب الجملة الوصفية الصحيحة (w1)، وأحوّل الخبرية إلى النعتية (e7). كشف الحل أو قراءة الأمثلة لا تُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann Adjektive nach der, ein und ohne Artikel richtig deklinieren.",
+      ar: "أن أصرف الصفة النعتية بعد der وein وبلا أداة في الرفع والنصب والجر.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e1", "e6", "e9", "m2", "m4", "m6", "w2"],
+        taskIds: [
+          "practice:b1-06:e1",
+          "practice:b1-06:e6",
+          "practice:b1-06:e9",
+          "mini-test:b1-06:m2",
+          "mini-test:b1-06:m4",
+          "mini-test:b1-06:m6",
+          "writing:b1-06:w2",
+        ],
+        labelAr: "أجيب صحيحاً عن تمارين نهايات الصفة بعد der وein وبلا أداة (e1 وe6 وe9 وm2 وm4 وm6 وw2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann einen kulturellen Vergleich in einem kurzen Gespräch verstehen und einen Satz dazu ergänzen.",
+      ar: "أن أفهم مقارنة ثقافية قصيرة في حوار، وأكمل جملة مقارنة بين تونس وألمانيا بصفة صحيحة.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q2", "q3", "w4"],
+        taskIds: ["listening:l2:q2", "listening:l2:q3", "writing:b1-06:w4"],
+        labelAr: "أجيب صحيحاً عن q2 وq3 بعد الاستماع إلى l2، وأكمل w4 بالنهاية الصحيحة. كشف النص لا يُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann Gespräche über Heimat, Heimweh und Kulturschock verstehen und die Ausdrücke richtig verwenden.",
+      ar: "أن أفهم حديثاً عن الوطن والحنين وصدمة الثقافة، وأستخدم عباراتها في جمل مرتبة وصحيحة.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q4", "q5", "e11", "e12", "e13"],
+        taskIds: [
+          "listening:l3:q4",
+          "listening:l3:q5",
+          "practice:b1-06:e11",
+          "practice:b1-06:e12",
+          "practice:b1-06:e13",
+        ],
+        labelAr: "أجيب صحيحاً عن q4 وq5 بعد الاستماع إلى l3، وأرتب وأكمل e11 وe12 وe13 بالفعل والكلمات الصحيحة. كشف النص لا يُحتسب أداءً.",
+      },
+    },
   ],
 
   einfuehrung: {
@@ -47,6 +101,12 @@ export const lessonB106: Lesson = {
       correctIndex: 0,
       explanation: "الصفة الخبرية لا تتغير: ist rot (درس الملابس).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«rote» صفة بنهاية مؤنث/جمع، وبعد sein تبقى بلا نهاية.",
+        "«rotes» نهاية محايد، والاسم Hemd مذكّر.",
+        "«roten» نهاية جر أو جمع، لا تناسب الصفة الخبرية بعد sein.",
+      ],
     },
     {
       id: "r2",
@@ -57,6 +117,12 @@ export const lessonB106: Lesson = {
       correctIndex: 0,
       explanation: "Museum محايد → Das (درس المدينة).",
       errorType: "gender",
+      optionExplanations: [
+        undefined,
+        "«Der» أداة المذكر، وMuseum محايد، لذلك لا تصح.",
+        "«Die» أداة المؤنث أو الجمع، ولا تناسب Museum المحايد.",
+        "«Ein» أداة غير معرّفة، والسياق يتحدث عن متحف معروف.",
+      ],
     },
     {
       id: "r3",
@@ -64,7 +130,7 @@ export const lessonB106: Lesson = {
       instructionAr: "مراجعة من A2 (درس a2-06 — الإعلام والأخبار): أكمل:",
       template: "Ich finde, dass der Film gut ___.",
       blanks: [
-        { correct: "ist", options: ["ist", "sein", "wird"] },
+        { correct: "ist", options: ["ist", "sein", "hat"] },
       ],
       explanation: "dass + فعل في النهاية (درس الإعلام A2).",
       errorType: "grammar",
@@ -79,7 +145,7 @@ export const lessonB106: Lesson = {
       explanationAr:
         "عندما تأتي الصفة قبل الاسم تنال نهاية حسب: الأداة + الجنس + الحالة. الأنماط: 1) بعد der/die/das: -e أو -en (das schöne Bild، mit dem schönen Bild). 2) بعد ein/kein: نهايات الأداة للرفع (ein schönes Bild) و-en للجر (mit einem schönen Bild). 3) بدون أداة: نهايات قوية كاملة (schöne Bilder).",
       whyAr:
-        "لماذا ثلاث أنماط؟ لأن الألمانية تكره «التكرار»: إذا كانت الأداة تكشف الجنس والحالة (der/die/das) تكتفي الصفة بـ -e/-en. إذا كانت الأداة ضعيفة (ein) تتحمل الصفة النهاية القوية. هذا «توازن»: المعلومات تتوزع بين الأداة والصفة.",
+        "لماذا ثلاث أنماط؟ تبسيط تعليمي: الأداة تحمل جزءاً من المعلومة (الجنس والحالة). إذا كانت الأداة تُظهر ذلك بوضوح (der/die/das) تكتفي الصفة بنهاية ضعيفة -e/-en. وإذا لم تُظهره الأداة كفاية (ein، أو بلا أداة) تحمل الصفة النهاية القوية. المعلومات تتوزع بين الأداة والصفة.",
       table: {
         title: "نهايات الصفات — النمط مع ein (الأهم)",
         columns: ["الحالة", "مذكر", "مؤنث", "محايد", "جمع"],
@@ -97,11 +163,11 @@ export const lessonB106: Lesson = {
         { de: "Mit einem guten Freund ist alles besser.", ar: "مع صديق جيد كل شيء أفضل." },
       ],
       comparisonWithArabic:
-        "العربية تصف بدون تغيير: «قميص أحمر» — الصفة ثابتة. الألمانية تضيف نهايات. لكن الفكرة موجودة عندنا: «الرجل الطويل» مقابل «رجلٌ طويل» — التعريف والتنكير يغيران شيئاً! الألمانية تجعل هذا النظام كاملاً.",
+        "العربية تصف بدون تغيير: «قميص أحمر» — الصفة ثابتة. الألمانية تضيف نهايات. لكن الفكرة موجودة عندنا: «الرجل الطويل» مقابل «رجلٌ طويل» — التعريف والتنكير يغيران شيئاً! في الألمانية يظهر هذا الفرق في نهاية الصفة نفسها.",
       eselsbruecke:
-        "«مع ein: الصفة تتحمل الأداة» — الرفع: ein guter (ر-هـ مثل der)، ein gutes (س مثل das). ومع der/die/das: -e للرفع والنصب المفرد و-en للباقي. القاعدة: -en تسيطر على كل شيء بعد der في غير الرفع.",
+        "«مع ein: الصفة تتحمل الأداة» — الرفع: ein guter (ر-هـ مثل der)، ein gutes (س مثل das). ومع der/die/das: -e للرفع والنصب المفرد و-en للباقي. القاعدة: بعد der تكون -e في المفرد الرفع (كل الأجناس) وفي النصب المؤنث والمحايد، وفي غير ذلك -en (بما فيها الجمع).",
       commonMistakes: [
-        { wrong: "ein guter Mann أم ein gut Mann؟", right: "ein guter Mann (بـ -er)", whyAr: "بعد ein المذكر الرفع: الصفة تأخذ نهاية الأداة القوية: -er." },
+        { wrong: "ein gute Mann", right: "ein guter Mann (بـ -er)", whyAr: "بعد ein المذكر الرفع: الصفة تأخذ النهاية القوية -er، لا -e." },
         { wrong: "Das schönes Bild (بعد das مباشرة)", right: "Das schöne Bild", whyAr: "بعد der/die/das المعرفة: -e (وليس -es)." },
         { wrong: "mit einem gute Freund أم mit einem guten Freund؟", right: "mit einem guten Freund (بـ -en)", whyAr: "Dativ بعد ein: -en دائماً." },
       ],
@@ -114,17 +180,19 @@ export const lessonB106: Lesson = {
       id: "t2",
       titleAr: "تصريف الصفة بعد أدوات مختلفة",
       titleDe: "Adjektivdeklination nach verschiedenen Artikeln",
-      explanationAr: "قاعدة النهايات: بعد der/die/das نستخدم -e/-en (der gute Mann, die gute Frau, das gute Kind, die guten Leute). بعد ein/mein نستخدم النهايات القوية أحياناً: ein guter Mann, eine gute Frau, ein gutes Kind. بعد kein/all/alle نتبع نمطاً محدداً.",
+      explanationAr: "قاعدة النهايات: بعد der/die/das نستخدم -e/-en (der gute Mann, die gute Frau, das gute Kind, die guten Leute). بعد ein/mein/kein: في الرفع تأخذ الصفة النهاية القوية (ein guter Mann، eine gute Frau، ein gutes Kind)، وفي النصب المذكر والجر تأخذ -en (einen guten Mann، einem guten Kind). وبعد alle في الجمع تأخذ الصفة -en دائماً (alle guten Männer).",
       whyAr: "لماذا؟ لأن النهاية تعتمد على «من يظهر الجنس»: إن كانت الأداة تظهره نستخدم -e، وإن لم تكن نستخدم النهاية القوية.",
       table: {
         title: "نهايات الصفة حسب الأداة",
         columns: ["الأداة", "مذكر", "مؤنث/محايد", "الجمع"],
         rows: [
           { label: "der/die/das (Nom.)", cells: ["der gute Mann", "die gute Frau / das gute Kind", "die guten Leute"] },
-          { label: "den/dem (Akk./Dat.)", cells: ["den guten Mann", "der guten Frau", "den guten Leuten"] },
+          { label: "den/die/das (Akk.)", cells: ["den guten Mann", "die gute Frau / das gute Kind", "die guten Leute"] },
+          { label: "dem/der (Dat.)", cells: ["dem guten Mann", "der guten Frau / dem guten Kind", "den guten Leuten"] },
           { label: "ein/eine (Nom.)", cells: ["ein guter Mann", "eine gute Frau / ein gutes Kind", "—"] },
-          { label: "einen/einem (Akk./Dat.)", cells: ["einen guten Mann", "einer guten Frau", "—"] },
-          { label: "بلا أداة", cells: ["guter Wein", "gute Milch / gutes Brot", "gute Leute"] },
+          { label: "einen/eine (Akk.)", cells: ["einen guten Mann", "eine gute Frau / ein gutes Kind", "—"] },
+          { label: "einem/einer (Dat.)", cells: ["einem guten Mann", "einer guten Frau / einem guten Kind", "—"] },
+          { label: "بلا أداة (Nom.)", cells: ["guter Wein", "gute Milch / gutes Brot", "gute Leute"] },
         ],
       },
       examples: [
@@ -191,6 +259,12 @@ export const lessonB106: Lesson = {
         correctIndex: 0,
         explanation: "قال الدليل: Es zeigt eine kleine Stadt am Fluss.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«einen großen Berg» لم تذكر الدليل جبلاً في وصف اللوحة.",
+          "«ein berühmtes Schloss» لم يُذكر قصر في وصف اللوحة.",
+          "«einen Wald» لم يُذكر غابة في وصف اللوحة.",
+        ],
       },
       {
         id: "q2",
@@ -203,6 +277,12 @@ export const lessonB106: Lesson = {
         correctIndex: 0,
         explanation: "قالت منى: Couscous — طبق تونسي لذيذ.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Schnitzel» طبق ألماني، وليس تونسياً.",
+          "«Käsespätzle» طبق ألماني من المعكرونة والجبن، وليس تونسياً.",
+          "«Currywurst» وجبة ألمانية، وليست الطبق التونسي.",
+        ],
       },
       {
         id: "q3",
@@ -215,6 +295,12 @@ export const lessonB106: Lesson = {
         correctIndex: 0,
         explanation: "قالت آنا: Wir haben viele gute Orchester.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«gute Strände» لم تذكرها آنا في الحوار.",
+          "«gute Wüsten» لم تذكرها آنا في الحوار.",
+          "«gute Berge» لم تذكرها آنا في الحوار.",
+        ],
       },
       {
         id: "q4",
@@ -227,6 +313,30 @@ export const lessonB106: Lesson = {
         correctIndex: 0,
         explanation: "قال كريم: Am Anfang war der Kulturschock schwer — صدمة الثقافة كانت صعبة.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«das Essen» لم يذكره كريم كأصعب شيء في البداية.",
+          "«das Wetter» لم يذكره كريم كأصعب شيء في البداية.",
+          "«die Musik» لم يذكرها كريم كأصعب شيء في البداية.",
+        ],
+      },
+      {
+        id: "q5",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Was vermisst Mona manchmal?",
+        questionAr: "ماذا تشتاق إليه منى أحياناً؟",
+        options: ["ihre Heimat", "das Wetter", "die Arbeit", "das Essen"],
+        correctIndex: 0,
+        explanation: "قالت منى: Ich vermisse meine Heimat manchmal sehr.",
+        errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«das Wetter» لم تذكره منى بالاشتياق في الحوار.",
+          "«die Arbeit» لم تذكرها منى بالاشتياق في الحوار.",
+          "«das Essen» لم تذكره منى بالاشتياق في الحوار.",
+        ],
       },
     ],
   },
@@ -235,9 +345,9 @@ export const lessonB106: Lesson = {
     id: "p1",
     title: "أصوات الثقافة: ä، ö، وsch",
     items: [
-      { de: "das Gemälde", ar: "اللوحة", note: "ä + l: غِميلدِه" },
+      { de: "das Gemälde", ar: "اللوحة", note: "ä = «ـيـ» ممدودة (مثل e في bed): غِيمِلْدِه" },
       { de: "der Maler", ar: "الرسام", note: "a مفتوح: مالِر" },
-      { de: "das Museum", ar: "المتحف", note: "eu = أُوي: موزِهأوم" },
+      { de: "das Museum", ar: "المتحف", note: "e ممدودة ثم u قصيرة: مُوزِيوم" },
       { de: "wunderschön", ar: "رائع الجمال", note: "sch + ö: ڤوندر-شون" },
       { de: "die Kultur", ar: "الثقافة", note: "u + r: كولتور" },
       { de: "das Jahrhundert", ar: "القرن", note: "J = ي: يارهوندرت" },
@@ -273,7 +383,7 @@ export const lessonB106: Lesson = {
         { correct: "gutes", options: ["guter", "gute", "gutes"] },
         { correct: "guten", options: ["guten", "guter", "gutes"] },
       ],
-      explanation: "الرفع: مذكر -er، مؤنث -e، محايد -es. الجر: -en.",
+      explanation: "الرفع مع ein: مذكر -er، مؤنث -e، محايد -es. النصب المذكر والجر: -en.",
       errorType: "grammar",
     },
     {
@@ -283,6 +393,18 @@ export const lessonB106: Lesson = {
       audioText: "Wir besuchen das berühmte Museum.",
       explanation: "نزور المتحف الشهير — das + berühmte (-e).",
       errorType: "spelling",
+    },
+    {
+      id: "w4",
+      type: "fill-blank",
+      instructionAr: "أكمل جملة المقارنة بالنهاية الصحيحة:",
+      template: "In Tunesien gibt es ein ___ (lecker) Gericht: Couscous. In Deutschland gibt es viele ___ (gut) Orchester.",
+      blanks: [
+        { correct: "leckeres", options: ["leckeres", "leckere", "leckerer"] },
+        { correct: "gute", options: ["gute", "guten", "guter"] },
+      ],
+      explanation: "ein + محايد نصب: -es (ein leckeres Gericht). viele + جمع بلا أداة: -e (viele gute Orchester).",
+      errorType: "grammar",
     },
   ],
 
@@ -296,6 +418,12 @@ export const lessonB106: Lesson = {
       correctIndex: 0,
       explanation: "محايد مع ein: -es.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«schöne» تناسب الاسم المؤنث، وBild محايد هنا.",
+        "«schönen» تناسب الجر أو المذكر، وBild محايد هنا.",
+        "«schöner» صيغة مقارنة، ولا تناسب الصفة بعد ein.",
+      ],
     },
     {
       id: "e2",
@@ -306,6 +434,12 @@ export const lessonB106: Lesson = {
       correctIndex: 0,
       explanation: "بعد das: -e.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«berühmtes» نهاية محايد، لكن بعد الأداة المعرّفة das تبقى الصفة بنهاية -e.",
+        "«berühmten» نهاية جر أو جمع، لا تناسب الأداة المعرّفة هنا.",
+        "«berühmter» صيغة مقارنة، ولا تناسب الصفة هنا.",
+      ],
     },
     {
       id: "e3",
@@ -332,7 +466,7 @@ export const lessonB106: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "افحص الجملة وصحّح الخطأ الوحيد فيها.",
       wrongSentence: "Das ist ein gut Mann.",
       wrongWord: "gut",
       correctWord: "guter",
@@ -372,11 +506,17 @@ export const lessonB106: Lesson = {
       correctIndex: 0,
       explanation: "das Jahrhundert = القرن (100 سنة).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«العام» يقابل Jahr، وليس Jahrhundert.",
+        "«العقد» يقابل Jahrzehnt، وليس Jahrhundert.",
+        "«الألفية» تقابل Jahrtausend، وليس Jahrhundert.",
+      ],
     },
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "افحص الجملة وصحّح الخطأ الوحيد فيها.",
       wrongSentence: "Ich fahre mit einem gute Freund nach Berlin.",
       wrongWord: "gute",
       correctWord: "guten",
@@ -419,6 +559,16 @@ export const lessonB106: Lesson = {
       errorType: "word-order",
       points: 2,
     },
+    {
+      id: "e13",
+      type: "fill-blank",
+      instructionAr: "أكمل بالفعل الصحيح:",
+      template: "Ich ___ Heimweh nach meiner Familie.",
+      blanks: [{ correct: "habe", options: ["habe", "bin", "ist"] }],
+      explanation: "Heimweh يُبنى مع haben: Ich habe Heimweh.",
+      errorType: "grammar",
+      points: 2,
+    },
   ],
 
   fehlerUndTipps: {
@@ -429,13 +579,13 @@ export const lessonB106: Lesson = {
       { wrong: "Ich bin Heimweh.", right: "Ich habe Heimweh.", whyAr: "Heimweh اسم يُبنى مع haben (مثل Hunger وDurst): Ich habe Heimweh — أحِنّ إلى وطني." },
     ],
     eselsbruecken: [
-      "«مع ein: الرفع يحمل نهايات الأداة (ر-هـ، س)» — والجر -en دائماً.",
-      "«بعد der/die/das: -e في الرفع والنصب، -en في الجر».",
+      "«مع ein: الرفع يحمل نهايات الأداة (ر-هـ، س)» — والجر والنصب المذكر -en.",
+      "«بعد der/die/das: -e في الرفع المفرد والنصب المؤنث والمحايد، و-en في الباقي (ومنه الجمع)».",
     ],
     culturalNote: {
       title: "الثقافة في ألمانيا",
       content:
-        "المتاحف الألمانية عالمية: «Die Museumsinsel» (جزيرة المتاحف) في برلين تراث عالمي. والعديد مجاني أو مخفض للطلاب. والموسيقى الكلاسيكية: باخ وبيتهوفن — و«die Philharmonie» شهيرة. وعبارة: «Kultur ist wichtig für die Gesellschaft» (الثقافة مهمة للمجتمع).",
+        "«Die Museumsinsel» (جزيرة المتاحف) في برلين تضم خمسة مبانٍ متحفية بُنيت بين 1830 و1930، وهي مسجّلة تراثاً عالمياً لدى UNESCO منذ 4 ديسمبر 1999.",
     },
   },
 
@@ -449,6 +599,12 @@ export const lessonB106: Lesson = {
       correctIndex: 0,
       explanation: "محايد مع ein: -es.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«klein» نهاية الصفة بعد ein محايد هي -es، لا -e.",
+        "«kleine» نهاية مؤنث أو جمع، ولا تناسب Haus المحايد بعد ein.",
+        "«kleinen» نهاية جر أو مذكر، لا تناسب Haus المحايد.",
+      ],
     },
     {
       id: "m2",
@@ -459,6 +615,12 @@ export const lessonB106: Lesson = {
       correctIndex: 0,
       explanation: "مؤنث مع die: -e.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«guter» نهاية مذكّر، والاسم Frau مؤنث.",
+        "«gutes» نهاية محايد، والاسم Frau مؤنث.",
+        "«guten» نهاية جمع أو جر، لا تناسب الأداة المعرّفة مع المؤنث هنا.",
+      ],
     },
     {
       id: "m3",
@@ -472,7 +634,7 @@ export const lessonB106: Lesson = {
     {
       id: "m4",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "افحص الجملة وصحّح الخطأ الوحيد فيها.",
       wrongSentence: "Das berühmtes Museum ist groß.",
       wrongWord: "berühmtes",
       correctWord: "berühmte",
@@ -490,6 +652,18 @@ export const lessonB106: Lesson = {
         { correct: "gute", options: ["gute", "guter", "guten"] },
       ],
       explanation: "مذكر مع ein: -er. مؤنث مع eine: -e.",
+      errorType: "grammar",
+    },
+    {
+      id: "m6",
+      type: "fill-blank",
+      instructionAr: "أكمل بالنهاية (بلا أداة):",
+      template: "Ich trinke ___ (gut) Wein. Ich kaufe ___ (frisch) Brot.",
+      blanks: [
+        { correct: "guten", options: ["guten", "guter", "gute"] },
+        { correct: "frisches", options: ["frisches", "frische", "frischem"] },
+      ],
+      explanation: "بلا أداة: الصفة تحمل النهاية القوية: guten (مذكر نصب)، frisches (محايد نصب).",
       errorType: "grammar",
     },
   ],
@@ -540,7 +714,7 @@ export const lessonB106: Lesson = {
           speakerDe: "Worum geht es in dem Film?",
           speakerAr: "عم يتحدث الفيلم؟",
           options: [
-            { de: "Es geht um einen Stasi-Offizier, der eine Familie überwacht und sich verändert. Am Ende ist es eine Geschichte über Menschlichkeit.", ar: "يتحدث عن ضابط ستازي يراقب عائلة ويتغير. في النهاية قصة عن الإنسانية.", best: true, replyDe: "Das klingt sehr berührend. Ich schaue ihn mir an!", replyAr: "يبدو مؤثراً جداً. سأشاهده!" },
+            { de: "Es geht um einen Stasi-Offizier, der einen Theaterautor überwacht und sich verändert. Am Ende ist es eine Geschichte über Menschlichkeit.", ar: "يتحدث عن ضابط ستازي يراقب كاتباً مسرحياً ويتغير. في النهاية قصة عن الإنسانية.", best: true, replyDe: "Das klingt sehr berührend. Ich schaue ihn mir an!", replyAr: "يبدو مؤثراً جداً. سأشاهده!" },
             { de: "Es geht um nichts, der Film ist leer.", ar: "لا يتحدث عن شيء، الفيلم فارغ.", best: false, replyDe: "Das ist deine Meinung, aber andere sehen es anders.", replyAr: "هذا رأيك، لكن آخرين يرونه مختلفاً." },
           ],
         },

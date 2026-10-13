@@ -11,20 +11,60 @@ export const lessonB102: Lesson = {
   titleDe: "Arbeitswelt",
   titleAr: "عالم العمل",
   summary:
-    "الماضي البسيط الكامل (Präteritum) لكل الأفعال المنتظمة والشاذة، الماضي التام المركب (Plusquamperfekt)، وسرد تجربة العمل: Ich arbeitete, ich hatte gearbeitet.",
+    "الماضي البسيط (Präteritum) لكل الأفعال المنتظمة والشاذة، الماضي التام المركب (Plusquamperfekt)، وسرد تجربة العمل: Ich arbeitete, ich hatte gearbeitet.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann das Präteritum komplett bilden.", ar: "أن أصوغ الماضي البسيط الكامل لكل الأفعال." },
-    { id: "z2", de: "Ich kann das Plusquamperfekt bilden: hatte/war + Partizip II.", ar: "أن أصوغ الماضي التام المركب (قبل الماضي)." },
-    { id: "z3", de: "Ich kann über Berufserfahrung erzählen.", ar: "أن أحكي عن الخبرات المهنية." },
-      { id: "z4", de: "Ich kann über meine beruflichen Erfahrungen berichten.", ar: "أن أروي تجاربي المهنية." },
+    {
+      id: "z1",
+      de: "Ich kann das Präteritum komplett bilden.",
+      ar: "أن أصوغ الماضي البسيط (Präteritum) للأفعال المنتظمة والشاذة.",
+      evidence: {
+        exerciseIds: ["e1", "m1", "w2"],
+        taskIds: ["practice:b1-02:e1", "flow-practice:b1-02:e1", "mini-test:b1-02:m1", "writing:b1-02:w2"],
+        labelAr: "أجب صحيحاً عن e1 (يظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق) وm1 (kam) في الاختبار المصغّر، وأكمل w2 بالأشكال الثلاثة. قراءة جدول t1 أو كشف الحل لا يُحتسبان أداءً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann das Plusquamperfekt bilden: hatte/war + Partizip II.",
+      ar: "أن أصوغ الماضي التام المركب (Plusquamperfekt) للحدث الذي وقع قبل حدث ماضٍ آخر.",
+      evidence: {
+        exerciseIds: ["e4", "e6", "m2"],
+        taskIds: ["practice:b1-02:e4", "flow-practice:b1-02:e4", "practice:b1-02:e6", "mini-test:b1-02:m2"],
+        labelAr: "رتّب e4 بصحة (يظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق)، وأكمل e6 (الفراغات الثلاثة)، وأجب صحيحاً عن m2 (hatte … gegessen) في الاختبار المصغّر. الجدول والشرح لا يُحتسبان أداءً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann Berufserfahrungen in einem kurzen Gespräch verstehen und die Reihenfolge der Ereignisse erkennen.",
+      ar: "أن أفهم خبرات مهنية في حوار قصير وأحدد ترتيب الأحداث فيه.",
+      evidence: {
+        exerciseIds: ["q1", "q2", "q3"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
+        labelAr: "أجب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، دون كشف التفريغ. كشف النص (listening-transcript) لا يُحتسب أداءً.",
+        completion: "all-correct",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann meine Berufserfahrung in der Vergangenheit schriftlich beschreiben.",
+      ar: "أن أكتب عن خبرتي المهنية الماضية بالزمن المناسب.",
+      evidence: {
+        exerciseIds: ["w1", "w3"],
+        taskIds: ["writing:b1-02:w1", "writing:b1-02:w3"],
+        labelAr: "أكمل w1 (جملة عن خبرة بالـPräteritum) وw3 (تحويل جملة إلى Präteritum) بصحة. الكتابة الحرة وشرح الجدول لا يُحتسبان ضمن هذا الدليل.",
+        completion: "all-correct",
+      },
+    },
   ],
   einfuehrung: {
     motivatingQuestionAr:
       "في A2 تعلمت war/hatte (ماضي sein/haben). اليوم نعمم: كل الأفعال لها Präteritum! المنتظم: arbeitete (عمل). والشاذ: ging (ذهب)، kam (جاء). وهناك طبقة زمنية أعمق: Plusquamperfekt — «ما قبل الماضي» — مثل العربية: «كان قد عمل». ثلاث طبقات زمنية!",
     motivatingQuestionDe: "Wo haben Sie früher gearbeitet?",
     contextAr:
-      "ندخل عالم العمل الاحترافي: نروي تجاربنا بالماضي الكامل، ونستخدم Plusquamperfekt للحديث عن «ما سبق» — مهارة أساسية في مقابلات العمل والسير الذاتية.",
+      "ندخل عالم العمل الاحترافي: نروي تجاربنا بالماضي الكامل، ونستخدم Plusquamperfekt للحديث عن «ما سبق» — مفيدة في مقابلات العمل وكتابة السيرة الذاتية.",
     contextDe: "Bevor ich studierte, hatte ich als Verkäufer gearbeitet.",
     connectionToPreviousAr: "تتذكر Perfekt (habe gegessen) وPräteritum للأفعال المساعدة (war). اليوم: Präteritum للكل + Plusquamperfekt — اكتمال منظومة الأزمنة الماضية الثلاثة.",
     activateVocabulary: [
@@ -46,6 +86,12 @@ export const lessonB102: Lesson = {
       correctIndex: 0,
       explanation: "Präteritum sein: war (درس المكتب).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«hatte» فعل يملك؛ الجملة تحتاج صيغة sein للحال في الماضي، لذلك war.",
+        "«bin» مضارع، والسياق ماضٍ، فالصيغة الصحيحة war.",
+        "«habe» مضارع مع haben، ولا يناسب الجملة.",
+      ],
     },
     {
       id: "r2",
@@ -56,6 +102,12 @@ export const lessonB102: Lesson = {
       correctIndex: 0,
       explanation: "lesen قوي: habe gelesen (درس السفر).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«bin ... gelesen» تستعمل sein، ولا يناسب الفعل lesen المتعدّي مع مفعول.",
+        "«habe ... gelest» صيغة Partizip II خاطئة؛ الصحيح gelesen.",
+        "«bin ... gelest» جمع خطأ الصيغة مع sein، ولا تصح بأي حال.",
+      ],
     },
     {
       id: "r3",
@@ -63,7 +115,7 @@ export const lessonB102: Lesson = {
       instructionAr: "مراجعة من A1 (درس a1-10 — العمل والمهن): أكمل:",
       template: "Ich arbeite als ___.",
       blanks: [
-        { correct: "Lehrer", options: ["Lehrer", "Schüler", "Student"] },
+        { correct: "Lehrer", options: ["Lehrer", "Schüler", "Tisch"] },
       ],
       explanation: "arbeiten als + مهنة (درس المهن).",
       errorType: "vocabulary",
@@ -73,12 +125,12 @@ export const lessonB102: Lesson = {
   theory: [
     {
       id: "t1",
-      titleAr: "الماضي البسيط الكامل (Präteritum) للجميع",
+      titleAr: "الماضي البسيط (Präteritum) للجميع",
       titleDe: "Das komplette Präteritum",
       explanationAr:
-        "المنتظم: جذر + te: arbeiten → ich arbeitete، du arbeitetest. الشاذ: تغيير جذري: gehen → ging، kommen → kam، sehen → sah. الأفعال الشرطية: konnte, musste, wollte. القاعدة: في الكتابة والقصص يستخدم Präteritum للكل، وفي الكلام للأفعال المساعدة والشرطية.",
+        "المنتظم: جذر + te: arbeiten → ich arbeitete، du arbeitetest. الشاذ: تغيير جذري: gehen → ging، kommen → kam، sehen → sah. الأفعال الشرطية: konnte, musste, wollte. القاعدة العامة: في الكتابة والقصص يُستخدم Präteritum غالباً، وفي الكلام يبقى للأفعال sein وhaben والأفعال الشرطية.",
       whyAr:
-        "لماذا نتعلمه كاملاً الآن؟ لأن نصوص القراءة والامتحانات والقصص كلها مكتوبة بـ Präteritum. ومن دون معرفته ستصطدم بجمل لا تفهمها: «Er ging in die Stadt und kaufte ein Brot» — رغم أنك تعرف gehen وkaufen.",
+        "لماذا نتعلمه كاملاً الآن؟ لأن القصص والتقارير والنصوص المكتوبة تستعمل Präteritum كثيراً، وفي الكلام يبقى مع sein وhaben والأفعال الشرطية. ومن دون معرفته ستصطدم بجمل لا تفهمها: «Er ging in die Stadt und kaufte ein Brot» — رغم أنك تعرف gehen وkaufen.",
       table: {
         title: "Präteritum منتظم وشاذ",
         columns: ["الفعل", "Präteritum (ich)", "Partizip II", "النمط"],
@@ -101,17 +153,17 @@ export const lessonB102: Lesson = {
         { de: "Ich konnte gut mit dem Computer arbeiten.", ar: "كنت أجيد العمل بالحاسوب." },
       ],
       comparisonWithArabic:
-        "«عملت» = ich arbeitete. «ذهب» = er ging. العربية تملك ماضياً واحداً يشمل كل شيء — الألمانية توزع على Perfekt (كلام) وPräteritum (كتابة). الفكرة: نفس المعنى، سياق مختلف.",
+        "«عملت» = ich arbeitete. «ذهب» = er ging. العربية تعبّر عن الحدث الماضي بالفعل الماضي عموماً، والألمانية تفرّق بين Perfekt (غالباً في الكلام) وPräteritum (غالباً في الكتابة والسرد). المعنى واحد، والاختيار يتبع السياق والنوع.",
       eselsbruecke:
         "«المنتظم: +te (أربيته)، الشاذ: غيّر الجذر (غينغ، كام)» — احفظ الشواذ بالثلاثي: gehen-ging-gegangen. جدول الأفعال الشاذة (أعلاه) رفيقك الدائم!",
       commonMistakes: [
         { wrong: "Ich gehen ging (خلط المضارع مع الماضي)", right: "Ich ging.", whyAr: "اختر زمناً واحداً: ging ماضٍ كامل." },
-        { wrong: "ich arbeitete أم ich habe gearbeitet؟", right: "كلاهما صحيح: arbeitete (كتابة) / habe gearbeitet (كلام)", whyAr: "السياق يحدد — في السيرة الذاتية: Präteritum." },
-        { wrong: "Ich sah أم Ich habe gesehen؟ في القصة", right: "في القصة: sah (Präteritum). في الكلام: habe gesehen", whyAr: "القصص والكتابة: Präteritum للكل." },
+        { wrong: "ich arbeitete أم ich habe gearbeitet؟", right: "كلاهما صحيح: arbeitete (كتابة) / habe gearbeitet (كلام)", whyAr: "السياق يحدد: السرد المكتوب يميل إلى Präteritum، والكلام إلى Perfekt. sein وhaben والأفعال الشرطية تبقى Präteritum حتى في الكلام." },
+        { wrong: "Ich sah أم Ich habe gesehen؟ في القصة", right: "في القصة: sah (Präteritum). في الكلام: habe gesehen", whyAr: "القصص والكتابة السردية: Präteritum غالباً." },
       ],
       relatedRuleComparison: {
         title: "Präteritum أم Perfekt — القرار",
-        content: "قاعدة عملية: الأفعال المساعدة والشرطية في الكلام → Präteritum (war, konnte). بقية الكلام → Perfekt. الكتابة الرسمية والقصص → Präteritum للكل.",
+        content: "قاعدة عملية: الأفعال المساعدة والشرطية في الكلام → Präteritum (war, konnte). بقية الكلام → Perfekt. الكتابة الرسمية والقصص → Präteritum غالباً.",
       },
     },
     {
@@ -121,7 +173,7 @@ export const lessonB102: Lesson = {
       explanationAr:
         "Plusquamperfekt = حدث قبل حدث ماضٍ آخر: hatte/war (في Präteritum) + Partizip II في النهاية: Bevor ich studierte, hatte ich gearbeitet. (قبل أن أدرس، كنت قد عملت). مثل العربية: «كان قد عمل».",
       whyAr:
-        "لماذا نحتاجها؟ لأن سرد الأحداث الزمنية يحتاج ترتيباً: حدث قديم (Plusquamperfekt) ثم أحدث (Präteritum/Perfekt). بدونها لا نعرف أي حدث سبق أيّاً — وهي علامة المتحدث المتقدم.",
+        "لماذا نحتاجها؟ لأن سرد الأحداث الزمنية يحتاج ترتيباً: حدث قديم (Plusquamperfekt) ثم أحدث (Präteritum/Perfekt). بدونها لا نعرف أي حدث سبق أيّاً — وهي تُظهر ترتيب الأحداث بوضوح.",
       table: {
         title: "Plusquamperfekt",
         columns: ["الفعل", "التركيب", "مثال"],
@@ -145,11 +197,11 @@ export const lessonB102: Lesson = {
       commonMistakes: [
         { wrong: "Ich hatte gearbeitet gehabt (تضاعف)", right: "Ich hatte gearbeitet.", whyAr: "طبقة واحدة فقط: hatte + Partizip II." },
         { wrong: "Bevor ich studierte, ich hatte gearbeitet. (ترتيب)", right: "Bevor ich studierte, hatte ich gearbeitet.", whyAr: "الجملة الثانوية أولاً → الفعل الرئيسي بعدها." },
-        { wrong: "خلط nachdem مع بعدها الزمني", right: "nachdem = بعد أن (الحدث التالي فيه يأتي أولاً؟ لا — nachdem يسبق الحدث الأحدث)", whyAr: "nachdem + Plusquamperfekt يصف الحدث الأقدم: Nachdem er gegessen hatte, ging er." },
+        { wrong: "Nachdem er gegessen hat, ging er. (في السرد الماضي)", right: "Nachdem er gegessen hatte, ging er.", whyAr: "nachdem + Plusquamperfekt للحدث الأقدم شائع في السرد، وفي الكلام اليومي يُستعمل Perfekt أيضاً؛ فالمسألة أسلوبية لا قاعدة مطلقة." },
       ],
       relatedRuleComparison: {
         title: "الأزمنة الثلاثة للماضي",
-        content: "Perfekt (حدث قريب/كلام) → Präteritum (كتابة/قصة) → Plusquamperfekt (قبل حدث ماضٍ). الترتيب الزمني: Plusquamperfekt ← Präteritum ← الآن.",
+        content: "Perfekt (حدث قريب/كلام) → Präteritum (كتابة/قصة) → Plusquamperfekt (قبل حدث ماضٍ). الحدث الأقدم Plusquamperfekt، والأحدث Präteritum أو Perfekt، والحاضر Präsens.",
       },
     },
   ],
@@ -192,6 +244,12 @@ export const lessonB102: Lesson = {
         correctIndex: 0,
         explanation: "قال: Ich arbeitete drei Jahre als Programmierer.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Lehrer» معلّم، وهو عمل لم يذكره النص عن سامي.",
+          "«Verkäufer» بائع، وليس عمل سامي في الحوار.",
+          "«Ingenieur» مهندس، وهو ليس العمل الذي ذكره النص.",
+        ],
       },
       {
         id: "q2",
@@ -204,6 +262,12 @@ export const lessonB102: Lesson = {
         correctIndex: 0,
         explanation: "قال: Bevor ich mich bewarb, hatte ich viel recherchiert.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Deutsch gelernt» ليس ما قام به سامي قبل التقديم في النص.",
+          "«ein Buch geschrieben» لم يرد في النص عن سامي.",
+          "«ein Praktikum gemacht» ليس ما ورد قبل التقديم في النص.",
+        ],
       },
       {
         id: "q3",
@@ -216,6 +280,12 @@ export const lessonB102: Lesson = {
         correctIndex: 0,
         explanation: "قالت آنا: Nachdem ich ein Jahr gearbeitet hatte, wurde ich sicherer.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Sie hörte auf» تعني توقفت، وهو ما لم يحدث بعد سنة العمل.",
+          "«Sie wechselte die Firma» لم يذكره النص.",
+          "«Sie ging in Rente» تعني تقاعدت، ولم يحدث ذلك في النص.",
+        ],
       },
     ],
   },
@@ -224,11 +294,11 @@ export const lessonB102: Lesson = {
     id: "p1",
     title: "أصوات العمل: ei، au، وw",
     items: [
-      { de: "die Erfahrung", ar: "الخبرة", note: "f + a: إرفارونغ" },
+      { de: "die Erfahrung", ar: "الخبرة", note: "a طويلة، وh صامتة بعدها: إرفااروڠ" },
       { de: "der Arbeitgeber", ar: "صاحب العمل", note: "ei = آي: أربايت-غيبر" },
       { de: "das Vorstellungsgespräch", ar: "مقابلة العمل", note: "كلمة طويلة: فورش-تيلونغس-غِشپريش" },
       { de: "der Lebenslauf", ar: "السيرة الذاتية", note: "au = آو: ليبِنْس-لاوف" },
-      { de: "die Bewerbung", ar: "طلب الوظيفة", note: "w = ڤ (لا يوجد v) + b تبقى ب لأنها بداية مقطع: بِڤِربونغ" },
+      { de: "die Bewerbung", ar: "طلب الوظيفة", note: "w = ڤ؛ b في بداية المقطع تبقى ب: بِڤِربونغ" },
       { de: "der Kollege", ar: "الزميل", note: "o مفتوحة + g: كولِغِه" },
     ],
     tip: "Vorstellungsgespräch = فورش-تيلونغس-غِشپريش — أطول كلمة اليوم. قسّمها: Vorstellung (تقديم) + Gespräch (حديث).",
@@ -270,7 +340,7 @@ export const lessonB102: Lesson = {
       instructionAr: "كتابة إنتاجية: حوّل الجملة إلى الماضي البسيط (Präteritum):",
       instructionDe: "Schreibe im Präteritum:",
       prompt: "Heute arbeite ich im Büro. → Gestern ...",
-      acceptedAnswers: ["Gestern arbeitete ich im Büro.", "Gestern habe ich im Büro gearbeitet."],
+      acceptedAnswers: ["Gestern arbeitete ich im Büro.", "Gestern arbeitete ich im Büro"],
       sampleAnswer: "Gestern arbeitete ich im Büro.",
       explanation: "في الكتابة والسيرة الذاتية: Präteritum (arbeitete). في المحادثة: Perfekt (habe gearbeitet).",
       errorType: "grammar",
@@ -287,6 +357,12 @@ export const lessonB102: Lesson = {
       correctIndex: 0,
       explanation: "gehen → ging (شاذ).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«geht» مضارع، والسياق ماضٍ، فالصيغة ging.",
+        "«gegangen» Partizip II، ويحتاج إلى فعل مساعد.",
+        "«gehe» مضارع مع ich، والسياق ماضٍ.",
+      ],
     },
     {
       id: "e2",
@@ -297,6 +373,12 @@ export const lessonB102: Lesson = {
       correctIndex: 0,
       explanation: "المنتظم: arbeitete.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«arbeitet» مضارع، والجملة تحتاج الماضي البسيط.",
+        "«gearbeitet» Partizip II، ويحتاج إلى مساعد في الجملة.",
+        "«arbeitte» صيغة خاطئة في الماضي؛ الصحيح arbeitete.",
+      ],
     },
     {
       id: "e3",
@@ -323,12 +405,12 @@ export const lessonB102: Lesson = {
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Ich habe gestern in der Stadt gegangen.",
-      wrongWord: "habe",
-      correctWord: "bin",
-      options: ["bin", "habe", "war", "hatte"],
-      explanation: "gehen فعل حركة ⇒ مساعده sein: Ich bin gestern in der Stadt gegangen.",
+      instructionAr: "في الجملة خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
+      wrongSentence: "Ich bin gestern im Büro gearbeitet.",
+      wrongWord: "bin",
+      correctWord: "habe",
+      options: ["habe", "bin", "war", "hatte"],
+      explanation: "arbeiten يأخذ haben في Perfekt: Ich habe gestern im Büro gearbeitet. sein للأفعال التي تدل على حركة أو تغيّر.",
       errorType: "grammar",
     },
     {
@@ -348,7 +430,7 @@ export const lessonB102: Lesson = {
       id: "e7",
       type: "transformation",
       instructionAr: "حوّل إلى Plusquamperfekt:",
-      prompt: "Ich arbeitete. → (قبل ذلك كنت قد عملت — كان قد سبق)",
+      prompt: "Ich arbeitete. → (Plusquamperfekt: كنت قد عملت قبل حدث آخر في الماضي)",
       acceptedAnswers: ["Ich hatte gearbeitet", "Ich hatte gearbeitet."],
       sampleAnswer: "Ich hatte gearbeitet.",
       explanation: "Plusquamperfekt: hatte + gearbeitet.",
@@ -364,16 +446,21 @@ export const lessonB102: Lesson = {
       correctIndex: 0,
       explanation: "die Bewerbung = طلب/تقديم الوظيفة.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«السيرة الذاتية» تقابل Lebenslauf، وليست معنى Bewerbung.",
+        "«مقابلة العمل» تقابل Vorstellungsgespräch، وليست المعنى المطلوب.",
+        "«الراتب» يقابل Gehalt، وليس معنى Bewerbung.",
+      ],
     },
     {
       id: "e9",
-      type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Nachdem er gegessen hat, ging er. (حوّلها لـ Plusquamperfekt)",
-      wrongWord: "gegessen hat",
-      correctWord: "gegessen hatte",
-      options: ["gegessen hatte", "gegessen hat", "gegessen gehabt", "aß hatte"],
-      explanation: "nachdem + Plusquamperfekt: gegessen hatte.",
+      type: "transformation",
+      instructionAr: "حوّل الجملة إلى Plusquamperfekt للحدث الأقدم:",
+      prompt: "Nachdem er gegessen hat, ging er. → (استخدم hatte)",
+      acceptedAnswers: ["Nachdem er gegessen hatte, ging er.", "Nachdem er gegessen hatte, ging er"],
+      sampleAnswer: "Nachdem er gegessen hatte, ging er.",
+      explanation: "nachdem + Plusquamperfekt للحدث الأقدم شائع في السرد. وفي الكلام اليومي يُستعمل Perfekt أيضاً، لذلك الجملة الأصلية صحيحة لغوياً.",
       errorType: "grammar",
     },
     {
@@ -388,7 +475,7 @@ export const lessonB102: Lesson = {
 
   fehlerUndTipps: {
     mistakes: [
-      { wrong: "Ich habe gegangen (haben بدل sein)", right: "Ich bin gegangen.", whyAr: "gehen حركة → sein." },
+      { wrong: "Ich habe gegangen (haben بدل sein)", right: "Ich bin gegangen.", whyAr: "gehen حركة → sein في الفصحى." },
       { wrong: "Ich hatte gearbeitet gehabt (تضاعف)", right: "Ich hatte gearbeitet.", whyAr: "طبقة واحدة." },
       { wrong: "خلط ging مع gegangen", right: "ging = Präteritum (في الجملة وحدها). gegangen = مع sein/haben", whyAr: "شكلان مختلفان لنفس الفعل في زمنين." },
     ],
@@ -399,7 +486,7 @@ export const lessonB102: Lesson = {
     culturalNote: {
       title: "التقديم للوظائف في ألمانيا",
       content:
-        "الوثائق الثلاث: Anschreiben (خطاب التقديم)، Lebenslauf (السيرة الذاتية بترتيب زمني عكسي)، Zeugnisse (الشهادات). والألمان يقدرون «Pünktlichkeit» في المقابلات جداً. وعبارة أساسية: «Ich bringe gute Erfahrung mit» (أمتلك خبرة جيدة).",
+                "الوثائق المعتادة في التقديم: Anschreiben (خطاب التقديم)، Lebenslauf (السيرة الذاتية)، وZeugnisse (الشهادات). تختلف الممارسة بين الشركات والمهن، فالأفضل مراجعة إعلان الوظيفة. وعبارة مفيدة: «Ich bringe viel Erfahrung mit» (أملك خبرة كبيرة).",
     },
   },
 
@@ -413,6 +500,12 @@ export const lessonB102: Lesson = {
       correctIndex: 0,
       explanation: "kommen → kam.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«kommt» مضارع، والسياق يطلب الماضي البسيط kam.",
+        "«gekommen» Partizip II، ويحتاج إلى مساعد.",
+        "«komme» مضارع مع ich، والسياق ماضٍ.",
+      ],
     },
     {
       id: "m2",
@@ -423,6 +516,12 @@ export const lessonB102: Lesson = {
       correctIndex: 0,
       explanation: "Plusquamperfekt: hatte + gegessen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«hat ... gegessen» صيغة مضارع للمساعد، والجملة تحتاج الماضي التام hatte.",
+        "«war ... gegessen» تستعمل sein، ولا يناسب essen الذي يأخذ haben.",
+        "«hatte ... geessen» صيغة Partizip II خاطئة؛ الصحيح gegessen.",
+      ],
     },
     {
       id: "m3",
@@ -435,13 +534,12 @@ export const lessonB102: Lesson = {
     },
     {
       id: "m4",
-      type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Sie habe gesehen den Film. (حوّلها لـ Präteritum)",
-      wrongWord: "habe gesehen",
-      correctWord: "sah",
-      options: ["sah", "sieht", "gesehen", "sah gesehen"],
-      explanation: "Präteritum: sah.",
+      type: "transformation",
+      instructionAr: "حوّل الجملة إلى Präteritum:",
+      prompt: "Sie hat den Film gesehen. → (Präteritum)",
+      acceptedAnswers: ["Sie sah den Film.", "Sie sah den Film"],
+      sampleAnswer: "Sie sah den Film.",
+      explanation: "Präteritum: sehen → sah. في السرد الكتابي يُستعمل Präteritum غالباً.",
       errorType: "grammar",
     },
     {
@@ -478,7 +576,7 @@ export const lessonB102: Lesson = {
       titleAr: "انقل تعليمات مقابلة عمل ألمانية بالعربية لصديق",
       sourceDe: "Bitte kommen Sie pünktlich zum Vorstellungsgespräch. Bringen Sie Ihren Lebenslauf und Ihre Zeugnisse mit. Das Gespräch dauert etwa 30 Minuten.",
       taskAr: "أخبر صديقك بالعربية بموعد المقابلة وكل ما يجب إحضاره ومدتها، بدقة كاملة.",
-      modelAnswerAr: "«المقابلة غداً — كن في الموعد. أحضر سيرتك الذاتية وشهاداتك. المقابلة تستغرق حوالي 30 دقيقة.»",
+      modelAnswerAr: "«المقابلة — كن في الموعد. أحضر سيرتك الذاتية وشهاداتك. المقابلة تستغرق حوالي 30 دقيقة.»",
       keyPointsAr: ["نقلت شرط الحضور في الموعد", "ذكرت إحضار السيرة والشهادات", "نقلت المدة (30 دقيقة)"],
     },
   ],
@@ -487,7 +585,7 @@ export const lessonB102: Lesson = {
       id: "int-b1-02-1",
       scenarioAr: "مقابلة عمل لوظيفة في شركة ألمانية.",
       scenarioDe: "Ein Vorstellungsgespräch bei einer deutschen Firma.",
-      strategyAr: "الاستراتيجية: وصف الخبرات بالماضي (Präteritum/Plusquamperfekt) والرد بثقة مهنية.",
+      strategyAr: "الاستراتيجية: وصف الخبرات بالماضي (Perfekt في الكلام، وPlusquamperfekt للحدث الأقدم) والرد بثقة مهنية.",
       rounds: [
         {
           speakerDe: "Erzählen Sie etwas über Ihre Berufserfahrung.",

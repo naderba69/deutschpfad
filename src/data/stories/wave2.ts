@@ -371,7 +371,7 @@ const B2_12: InteractiveStory = {
       ar: "قال المدير التنفيذي إن الإنتاجية ارتفعت في العمل عن بُعد.",
       question: {
         de: "Worüber wird in der Firma diskutiert?",
-        ar: "عماذا يُناقش في الشركة؟",
+        ar: "ما الذي يُناقَش في الشركة؟",
         options: [
           { text: "Über Homeoffice", ar: "عن العمل عن بُعد", correct: true, explanation: "نعم — الموضوع الرئيسي." },
           { text: "Über neue Büros", ar: "عن مكاتب جديدة", correct: false, explanation: "لا — عن العمل عن بُعد." },

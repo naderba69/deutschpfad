@@ -1,6 +1,6 @@
 import type { Lesson } from "@/types/lesson";
 import { lessonA100 } from "@/data/lessons/a1/a1-00";
-import { lessonA101 } from "@/data/lessons/a1/a1-01";
+import { lessonA101, lessonA101b } from "@/data/lessons/a1/a1-01";
 import { lessonA102 } from "@/data/lessons/a1/a1-02";
 import { lessonA103 } from "@/data/lessons/a1/a1-03";
 import { lessonA104 } from "@/data/lessons/a1/a1-04";
@@ -54,15 +54,15 @@ import { lessonB210 } from "@/data/lessons/b2/b2-10";
 /**
  * ═══════════════════════════════════════════════════════════
  *  مكتبة الدروس — السجل المركزي الكامل
- *  A1 (15) + A2 (12) + B1 (11) + B2 (10) = 48 درساً
+ *  A1 (16) + A2 (12) + B1 (11) + B2 (10) = 48 درساً
  *  (A1-13 = المراجعة الشاملة التجميعية)
  *  — اكتمال المحتوى الأكاديمي (المراحل 6-9) —
  * ═══════════════════════════════════════════════════════════
  */
 
 export const LESSONS: Lesson[] = [
-  /* A1 — 15 */
-  lessonA100, lessonA101, lessonA102, lessonA103, lessonA104, lessonA105,
+  /* A1 — 16 */
+  lessonA100, lessonA101, lessonA101b, lessonA102, lessonA103, lessonA104, lessonA105,
   lessonA106, lessonA107, lessonA108, lessonA109, lessonA110, lessonA111, lessonA112, lessonA113, lessonA114,
   /* A2 — 13 */
   lessonA201, lessonA202, lessonA203, lessonA204, lessonA205, lessonA206,

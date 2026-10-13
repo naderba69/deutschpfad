@@ -14,10 +14,11 @@ import {Button} from "@/components/ui/button";
  */
 export function B2ReadingExamLibrary() {
   // خلط خيارات كل نص مرة واحدة عند التحميل — البنك يضع الصحيح في الموضع 0
-  const texts = React.useMemo(
-    () => B2_READING_EXAM.map((text) => ({ ...text, questions: shuffleChoiceItems(text.questions) })),
-    [],
-  );
+  // الخلط بعد التركيب فقط (تفادياً لخطأ الـ hydration)
+  const [texts, setTexts] = React.useState(() => B2_READING_EXAM);
+  React.useEffect(() => {
+    setTexts(B2_READING_EXAM.map((text) => ({ ...text, questions: shuffleChoiceItems(text.questions) })));
+  }, []);
   const [openId, setOpenId] = React.useState<string | null>(B2_READING_EXAM[0].id);
   const [answers, setAnswers] = React.useState<Record<string, Record<string, number>>>({});
   const [checked, setChecked] = React.useState<Record<string, boolean>>({});

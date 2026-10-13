@@ -14,17 +14,65 @@ export const lessonB204: Lesson = {
     "النصوص الأدبية والمساهمات الإعلامية الراقية، الصفات المشتقة من الفعل (Partizipialkonstruktionen): das spielende Kind, der geschriebene Brief — واختصار الجمل النسبية.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann literarische Texte verstehen.", ar: "أن أفهم النصوص الأدبية والمساهمات الإعلامية الراقية." },
-    { id: "z2", de: "Ich kann Partizip I und II als Adjektive benutzen.", ar: "أن أستخدم Partizip I/II كصفات: الطفل اللاعب، الرسالة المكتوبة." },
-    { id: "z3", de: "Ich kann Relativsätze durch Partizipien verkürzen.", ar: "أن أختصر الجمل النسبية بالمشاركات." },
-      { id: "z4", de: "Ich kann literarische Werke kritisch analysieren.", ar: "أن أحلل الأعمال الأدبية نقدياً." },
+    {
+      id: "z1",
+      de: "Ich kann literarische Texte verstehen.",
+      ar: "أن أفهم حوارات وتعليقات أدبية قصيرة عن كتاب أو كاتب.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q1", "q2", "q3", "q4"],
+        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l1:q4"],
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 وl2 في q1 إلى q4، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann Partizip I und II als Adjektive benutzen.",
+      ar: "أن أستخدم Partizip I/II كصفات: الطفل اللاعب، الرسالة المكتوبة.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e1", "e2", "e6", "m1", "m2", "w1", "w2"],
+        taskIds: [
+          "practice:b2-04:e1",
+          "practice:b2-04:e2",
+          "practice:b2-04:e6",
+          "mini-test:b2-04:m1",
+          "mini-test:b2-04:m2",
+          "writing:b2-04:w1",
+          "writing:b2-04:w2",
+        ],
+        labelAr: "أختار المشارك الصحيح وأكمل نهاياته (e1 وe2 وe6 وm1 وm2 وw1 وw2)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann Relativsätze durch Partizipien verkürzen.",
+      ar: "أن أختصر الجمل النسبية بالمشاركات.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e7", "w3"],
+        taskIds: ["practice:b2-04:e7", "writing:b2-04:w3"],
+        labelAr: "أحوّل الجملة النسبية إلى صفة مشتقة صحيحة (e7 وw3)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann Partizipialkonstruktionen in kurzen Texten erkennen und korrigieren.",
+      ar: "أن أتعرّف على الصفات المشتقة في جملة وأصحح نهايتها عند الخطأ.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e5", "e9", "m4"],
+        taskIds: ["practice:b2-04:e5", "practice:b2-04:e9", "mini-test:b2-04:m4"],
+        labelAr: "أصحح نهاية المشارك في الجملة الخاطئة (e5 وe9 وm4)، دون كشف الحل.",
+      },
+    },
   ],
   einfuehrung: {
     motivatingQuestionAr:
-      "قل: «الطفل الذي يلعب» — العربية تحذف «الذي» أحياناً: «الطفل اللاعب». الألمانية تفعل هذا بانتظام: das Kind, das spielt → das spielende Kind (الطفل اللاعب). وللماضي: der Brief, der geschrieben wurde → der geschriebene Brief (الرسالة المكتوبة). هذا أسلوب الأدب والصحافة!",
+      "قل: «الطفل الذي يلعب» — والعربية تعبّر أحياناً بالوصف: «الطفل اللاعب». الألمانية تفعل هذا بانتظام: das Kind, das spielt → das spielende Kind (الطفل اللاعب). وللماضي: der Brief, der geschrieben wurde → der geschriebene Brief (الرسالة المكتوبة). هذا أسلوب شائع في الكتابة الأدبية والصحفية.",
     motivatingQuestionDe: "Was liest du gern?",
     contextAr:
-      "ندخل عالم الأدب والصحافة الراقية: نتعلم المشاركات الصفية — أكثر أساليب النص الألماني أناقةً. بها تقرأ الروايات والمقالات بطلاقة.",
+      "ندخل عالم الأدب والصحافة: نتعلم المشاركات الصفية، وهي من أساليب النص الألماني الراقية. تساعدك على فهم الروايات والمقالات.",
     contextDe: "Der berühmte, viel gelesene Roman.",
     connectionToPreviousAr: "تتذكر الصفات (ein gutes Buch) والنسبية (der Mann, der...) من B1. اليوم: المشاركات — الجمع بينهما: صفة من فعل تعوض الجملة النسبية.",
     activateVocabulary: [
@@ -46,6 +94,12 @@ export const lessonB204: Lesson = {
       correctIndex: 0,
       explanation: "محايد مع ein: gutes (درس الثقافة B1).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«gute» تستعمل مع المؤنث بعد ein، والكلمة Buch محايدة.",
+        "«guten» نهاية الجمع أو الجر، ولا تناسب ein مع Buch.",
+        "«guter» نهاية المذكر، والكلمة Buch محايدة.",
+      ],
     },
     {
       id: "r2",
@@ -56,6 +110,12 @@ export const lessonB204: Lesson = {
       correctIndex: 0,
       explanation: "فاعل مذكر → der.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«den» حالة مفعولية، والفاعل في الجملة الموصولة مذكّر في حالة الرفع.",
+        "«dem» حالة جر، ولا تناسب فاعل الجملة.",
+        "«dessen» تعني ملكية، ولا تناسب الجملة.",
+      ],
     },
     {
       id: "r3",
@@ -78,7 +138,7 @@ export const lessonB204: Lesson = {
       explanationAr:
         "Partizip I (فاعل/نشط): جذر + end: das spielende Kind (الطفل اللاعب). Partizip II (مفعول/منتهي): der geschriebene Brief (الرسالة المكتوبة). كلاهما يتصرف كصفة كاملة: ein spielendes Kind، die geschriebenen Briefe. وتختصر الجمل النسبية: der Mann, der arbeitet → der arbeitende Mann.",
       whyAr:
-        "لماذا هذا الأسلوب؟ لأنه «مكثف»: كلمة واحدة تعوض جملة كاملة. الصحافة والأدب يحبان الإيجاز: «der viel gelesene Autor» = الكاتب الذي يُقرأ كثيراً — في ثلاث كلمات بدل خمس. هذه علامة القراءة المتقدمة.",
+        "لماذا هذا الأسلوب؟ لأنه «مكثف»: كلمة واحدة تعوض جملة كاملة. تميل الكتابة الأدبية والصحفية إلى الإيجاز: «der viel gelesene Autor» = الكاتب الذي يُقرأ كثيراً — في ثلاث كلمات بدل خمس. وهو من سمات النصوص المكتوبة المتقدمة.",
       table: {
         title: "Partizip I وII كصفات",
         columns: ["النوع", "التركيب", "مثال", "المعنى"],
@@ -97,7 +157,7 @@ export const lessonB204: Lesson = {
         { de: "Das neu eröffnete Museum ist beeindruckend.", ar: "المتحف المفتوح حديثاً مذهل." },
       ],
       comparisonWithArabic:
-        "«الطفل اللاعب» = das spielende Kind — مطابقة تامة مع صيغة «فاعل» العربية! و«الرسالة المكتوبة» = der geschriebene Brief — مطابقة مع «مفعول». العربية تملك نفس البنية (فاعل/مفعول) — الألمانية تفعلها بالمشاركات.",
+        "«الطفل اللاعب» = das spielende Kind — يقابل صيغة «اسم الفاعل» في العربية. و«الرسالة المكتوبة» = der geschriebene Brief — يقابل «اسم المفعول» تقريباً. العربية تملك تقابلاً قريباً (فاعل/مفعول)، والألمانية تبنيه بالمشاركات.",
       eselsbruecke:
         "«-end = فاعل (يلعب)، ge-...t/en = مفعول (مكتوب)» — Partizip I نشط مثل «فاعل»، وII منتهي مثل «مفعول». اسأل: هل الشيء يفعل أم يُفعل؟",
       commonMistakes: [
@@ -107,7 +167,7 @@ export const lessonB204: Lesson = {
       ],
       relatedRuleComparison: {
         title: "الاختصار من النسبية",
-        content: "Der Mann, der arbeitet → der arbeitende Mann. Die Frau, die liest → die lesende Frau. إذا كان الفعل مضارعاً نشطاً: Partizip I. إذا ماضياً مجهولاً: Partizip II.",
+        content: "Der Mann, der arbeitet → der arbeitende Mann. Die Frau, die liest → die lesende Frau. قاعدة تقريبية: إذا كان المعنى نشطاً وجارياً فغالباً Partizip I، وإذا كان منتهياً أو مبنياً للمجهول فغالباً Partizip II. بعض الأفعال اللازمة تقبل Partizip II أيضاً، مثل «der angekommene Zug».",
       },
     },
     {
@@ -115,7 +175,7 @@ export const lessonB204: Lesson = {
       titleAr: "الصفات المشتقة (Partizipialattribute)",
       titleDe: "Partizipialattribute",
       explanationAr: "تحويل جملة موصولة إلى صفة قبل الاسم: Der Mann, der arbeitet → der arbeitende Mann. مع Partizip II: Das Buch, das gelesen wurde → das gelesene Buch. هذه البنية تختصر الجمل وتضفي رسمية أكاديمية.",
-      whyAr: "لماذا؟ لأن النصوص الأكاديمية والأدبية تعتمد هذه البنية بكثافة — وفهمها ضروري لقراءة B2.",
+      whyAr: "لماذا؟ لأن النصوص الأكاديمية والأدبية تستخدم هذه البنية كثيراً، وفهمها يساعد على قراءة النصوص المتقدمة.",
       table: {
         title: "من الجملة الموصولة إلى الصفة المشتقة",
         columns: ["الأصل", "النوع", "الصفة المشتقة", "المعنى"],
@@ -130,16 +190,16 @@ export const lessonB204: Lesson = {
       examples: [
         { de: "Die steigende Arbeitslosigkeit ist ein Problem.", ar: "البطالة المتزايدة مشكلة." }, { de: "Das vorgeschlagene Gesetz wird diskutiert.", ar: "القانون المقترح قيد النقاش." }, { de: "Die steigenden Preise beunruhigen die Kunden.", ar: "الأسعار المرتفعة تقلق الزبائن." }, { de: "Das vom Chef unterschriebene Dokument liegt hier.", ar: "الوثيقة الموقّعة من المدير موجودة هنا." }, { de: "Die zu treffende Entscheidung ist schwierig.", ar: "القرار الواجب اتخاذه صعب." }
       ],
-      comparisonWithArabic: "العربية تملك اسم الفاعل (العامل) واسم المفعول (المقروء)، وهو تقابل شبه تام مع Partizip I وPartizip II. الفارق أن الألمانية تسمح بإدخال جملة كاملة بين الأداة والاسم: das vom Chef unterschriebene Dokument — وهو ما لا تفعله العربية فتلجأ إلى جملة موصولة.",
+      comparisonWithArabic: "العربية تملك اسم الفاعل (العامل) واسم المفعول (المقروء)، وهو تقابل قريب من Partizip I وPartizip II. الفارق أن الألمانية تسمح بإدخال عبارة كاملة بين الأداة والاسم: das vom Chef unterschriebene Dokument — وهذا التركيب أقل شيوعاً في العربية، فنلجأ غالباً إلى جملة موصولة.",
       eselsbruecke: "Partizip I يُصنع بإضافة d إلى المصدر (arbeiten صار arbeitend) ويدل على فعل جارٍ. وPartizip II هو اسم المفعول ويدل على أثر منتهٍ. ثم صرّف كليهما كأي صفة عادية قبل الاسم.",
       commonMistakes: [
-        { wrong: "das arbeitend Mann", right: "der arbeitende Mann", whyAr: "الصفة المشتقة تُصرَّف كأي صفة، فتأخذ نهاية e بعد der." },
+        { wrong: "der arbeitend Mann", right: "der arbeitende Mann", whyAr: "الصفة المشتقة تُصرَّف كأي صفة، فتأخذ نهاية e بعد der." },
         { wrong: "die gelesende Zeitung", right: "die gelesene Zeitung", whyAr: "المقصود أثر منتهٍ فيلزم Partizip II (gelesen) لا Partizip I." },
         { wrong: "das lösende Problem", right: "das zu lösende Problem", whyAr: "للدلالة على الوجوب أو الإمكان تُضاف zu قبل Partizip I." },
       ],
       relatedRuleComparison: {
         title: "صفة مشتقة أم جملة موصولة؟",
-        content: "المعنى واحد لكن الأسلوب يختلف: الصفة المشتقة مكثّفة وسمة للنصوص المكتوبة والصحفية، والجملة الموصولة أوضح وأخفّ وهي المفضّلة في الكلام. في امتحان B2 تُظهر السيطرة على التركيب الأول تمكّناً أسلوبياً.",
+        content: "المعنى واحد لكن الأسلوب يختلف: الصفة المشتقة مكثّفة وسمة للنصوص المكتوبة والصحفية، والجملة الموصولة أوضح وأخفّ وهي المفضّلة في الكلام. السيطرة على التركيب الأول تُظهر تمكّناً أسلوبياً.",
       },
     },
   ],
@@ -150,8 +210,8 @@ export const lessonB204: Lesson = {
         title: "معرض الكتاب",
         lines: [
           { speaker: "Moderator", de: "Willkommen auf der Buchmesse! Der viel gelesene Autor Sami Ben Ali ist heute da.", ar: "أهلاً في معرض الكتاب! الكاتب الذي يُقرأ كثيراً سامي بن علي هنا اليوم." },
-          { speaker: "Autor", de: "Danke! Mein neuer Roman, der geschriebene in drei Jahren, ist fertig.", ar: "شكراً! روايتي الجديدة، المكتوبة في ثلاث سنوات، جاهزة." },
-          { speaker: "Moderator", de: "Wie fühlen Sie sich, der erwartete Autor?", ar: "كيف تشعر، أيها الكاتب المنتظر؟" },
+          { speaker: "Autor", de: "Danke! Mein neuer Roman, in drei Jahren geschrieben, ist fertig.", ar: "شكراً! روايتي الجديدة، المكتوبة في ثلاث سنوات، جاهزة." },
+          { speaker: "Moderator", de: "Wie fühlen Sie sich, verehrter Autor?", ar: "كيف تشعر، أيها الكاتب المنتظر؟" },
           { speaker: "Autor", de: "Sehr aufgeregt! Die wartenden Leser freuen mich.", ar: "متوتر جداً! القراء المنتظرون يسعدونني." },
         ],
       },
@@ -162,7 +222,7 @@ export const lessonB204: Lesson = {
           { speaker: "Kritikerin", de: "Der Roman, den ich gelesen habe, ist beeindruckend.", ar: "الرواية التي قرأتها مذهلة." },
           { speaker: "Karim", de: "Was ist das Thema?", ar: "ما الموضوع؟" },
           { speaker: "Kritikerin", de: "Ein reisender Mann entdeckt seine Herkunft. Die erzählte Geschichte ist sehr emotional.", ar: "رجل مسافر يكتشف أصله. القصة المروية عاطفية جداً." },
-          { speaker: "Karim", de: "Klingt gut! Ich kaufe das gelesene... äh, das bekannte Buch.", ar: "يبدو جيداً! سأشتري الكتاب المعروف." },
+          { speaker: "Karim", de: "Klingt gut! Ich kaufe das bekannte Buch.", ar: "يبدو جيداً! سأشتري الكتاب المعروف." },
           { speaker: "Kritikerin", de: "Und der Film zum Buch kommt nächstes Jahr in die Kinos.", ar: "وفيلم الرواية سيصدر في السينما العام القادم." },
           { speaker: "Karim", de: "Dann sehe ich mir erst den Film an und lese dann das Buch!", ar: "إذاً سأشاهد الفيلم أولاً ثم أقرأ الكتاب!" },
         ],
@@ -180,6 +240,12 @@ export const lessonB204: Lesson = {
         correctIndex: 0,
         explanation: "قال الكاتب: Mein neuer Roman ... ist fertig.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«lang» لم يصفها الكاتب بالطول.",
+          "«kurz» لم يصفها الكاتب بالقصر.",
+          "«schlecht» لم يصفها الكاتب بالسوء.",
+        ],
       },
       {
         id: "q2",
@@ -192,6 +258,12 @@ export const lessonB204: Lesson = {
         correctIndex: 0,
         explanation: "قالت الناقدة: Ein reisender Mann entdeckt seine Herkunft.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«seinen Beruf» لم تقل الناقدة إن الرجل يكتشف مهنته.",
+          "«seinen Freund» لم تقل الناقدة إن الرجل يكتشف صديقه.",
+          "«seine Stadt» لم تقل الناقدة إن الرجل يكتشف مدينته.",
+        ],
       },
       {
         id: "q3",
@@ -204,6 +276,12 @@ export const lessonB204: Lesson = {
         correctIndex: 0,
         explanation: "قالت: Die erzählte Geschichte ist sehr emotional.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«sehr langweilig» عكس ما قالته الناقدة.",
+          "«sehr kurz» لم تُذكر كوصف للقصة.",
+          "«sehr lustig» لم تُذكر كوصف للقصة.",
+        ],
       },
       {
         id: "q4",
@@ -214,8 +292,14 @@ export const lessonB204: Lesson = {
         questionAr: "كم استغرق الكاتب في كتابة روايته؟",
         options: ["drei Jahre", "drei Monate", "ein Jahr", "fünf Jahre"],
         correctIndex: 0,
-        explanation: "قال الكاتب: der geschriebene in drei Jahren — المكتوبة في ثلاث سنوات.",
+        explanation: "قال الكاتب: in drei Jahren geschrieben — المكتوبة في ثلاث سنوات.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«drei Monate» لم يذكرها الكاتب؛ قال إنه كتبها في ثلاث سنوات.",
+          "«ein Jahr» لم يذكرها الكاتب.",
+          "«fünf Jahre» لم يذكرها الكاتب.",
+        ],
       },
     ],
   },
@@ -228,10 +312,10 @@ export const lessonB204: Lesson = {
       { de: "der Roman", ar: "الرواية", note: "o مفتوح: رومان" },
       { de: "der Autor", ar: "الكاتب", note: "au = آو: آوتور" },
       { de: "lesen", ar: "يقرأ", note: "s = ز: ليزِن" },
-      { de: "das Gedicht", ar: "القصيدة", note: "ch ناعمة: غِديشت" },
+      { de: "das Gedicht", ar: "القصيدة", note: "ch ناعمة (قريبة من خ خفيفة): غِدِيخت" },
       { de: "die Geschichte", ar: "القصة", note: "sch = ش: غِشيشتِه" },
     ],
-    tip: "Geschichte = غِشيشتِه — sch مرتين في كلمة واحدة. أتقنها وستنطق القصص بطلاقة.",
+    tip: "Geschichte = غِشيشتِه — sch مرة، وch ناعمة بعدها. أتقنهما وستنطق القصص بوضوح.",
     shadowing: [
       { de: "Das spielende Kind ist glücklich.", ar: "الطفل اللاعب سعيد.", tip: "spielende — Partizip I" },
       { de: "Der geschriebene Brief liegt hier.", ar: "الرسالة المكتوبة هنا.", tip: "geschriebene — Partizip II" },
@@ -288,6 +372,12 @@ export const lessonB204: Lesson = {
       correctIndex: 0,
       explanation: "نشط مضارع → Partizip I: spielende.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«gespielte» تعني معنى مفعولاً، والطفل هنا يلعب بنفسه.",
+        "«spielend» صيغة غير مستعملة هنا لوصف الطفل.",
+        "«spielt» صيغة فعل مصرّف، ولا تناسب الصفة.",
+      ],
     },
     {
       id: "e2",
@@ -298,6 +388,12 @@ export const lessonB204: Lesson = {
       correctIndex: 0,
       explanation: "منتهي → Partizip II: geschriebene.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«schreibende» تعني الذي يكتب، والمطلوب معنى المكتوب.",
+        "«geschrieben» بلا نهاية الصفة، ولا تناسب الصفة قبل Brief.",
+        "«schreibt» صيغة فعل مصرّف، ولا تناسب الصفة.",
+      ],
     },
     {
       id: "e3",
@@ -341,7 +437,7 @@ export const lessonB204: Lesson = {
         { correct: "kochende", options: ["kochende", "gekochte"] },
         { correct: "gekochte", options: ["kochende", "gekochte"] },
       ],
-      explanation: "يغلي الآن (Partizip I) → das kochende Wasser. مغلي سابقاً (Partizip II) → das gekochte Wasser. بعد das التصريف ضعيف فالنهاية ‎-e.",
+      explanation: "يغلي الآن (Partizip I) → das kochende Wasser. مغلي سابقاً (Partizip II) → das gekochte Wasser. بعد das التصريف ضعيف فالنهاية -e.",
       errorType: "grammar",
     },
     {
@@ -364,6 +460,12 @@ export const lessonB204: Lesson = {
       correctIndex: 0,
       explanation: "der Beitrag = المقال/المساهمة.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«الكتاب» يقابل Buch، وليس Beitrag.",
+        "«المجلة» تقابل Zeitschrift، وليس Beitrag.",
+        "«الخبر» يقابل Nachricht، وليس Beitrag.",
+      ],
     },
     {
       id: "e9",
@@ -399,7 +501,7 @@ export const lessonB204: Lesson = {
     culturalNote: {
       title: "الأدب الألماني",
       content:
-        "من غوته وشيلر إلى توماس مان وغراس — الأدب الألماني غني. «die Buchmesse» في فرانكفورت أكبر معرض كتب في العالم. والقراءة عادة ألمانية: «Lesen ist wichtig» — ستجد الناس يقرؤون في القطار والحديقة.",
+        "من غوته وشيلر إلى توماس مان وغراس — الأدب الألماني غني. «die Buchmesse» في فرانكفورت من أكبر معارض الكتب في العالم. ويقرأ كثير من الناس في القطار أو في الحديقة.",
     },
   },
 
@@ -413,6 +515,12 @@ export const lessonB204: Lesson = {
       correctIndex: 0,
       explanation: "نشط → lesende.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«gelesene» تعني المقروء، والمطلوب الفاعل الذي يقرأ.",
+        "«lesend» صيغة غير مستعملة هنا بنهاية الصفة.",
+        "«liest» صيغة فعل مصرّف، ولا تناسب الصفة.",
+      ],
     },
     {
       id: "m2",
@@ -423,6 +531,12 @@ export const lessonB204: Lesson = {
       correctIndex: 0,
       explanation: "فعل منتهٍ ومبني للمجهول → Partizip II مع نهاية الصفة: der übersetzte Roman. أما übersetzend فيعني «الذي يترجم».",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«übersetzende» تعني الذي يترجم، والمطلوب معنى المترجَم.",
+        "«übersetzt» بلا نهاية الصفة، ولا تناسب الصفة قبل Roman.",
+        "«übersetzen» مصدر، ولا تناسب الصفة.",
+      ],
     },
     {
       id: "m3",

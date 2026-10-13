@@ -25,7 +25,7 @@ const LEVEL_MAP: Record<string, Record<string, VocabEntry[]>> = {
 const LEVELS = ["all", "A1", "A2", "B1", "B2"] as const;
 
 /**
- * القاموس الشامل القابل للبحث — كل المفردات (~950 كلمة)
+ * القاموس الشامل القابل للبحث — كل المفردات (أكثر من 4000 كلمة)
  * فلترة بالمستوى + بحث + نطق
  */
 export function GlossarClient() {
@@ -115,7 +115,7 @@ export function GlossarClient() {
                   <div className="flex min-w-0 items-center gap-3">
                     <SpeakButton text={entry.de} size="sm" className="h-8 w-8 shrink-0" />
                     <div className="min-w-0">
-                      <p className="flex flex-wrap items-center gap-2">
+                      <div className="flex flex-wrap items-center gap-2">
                         {entry.g === "der" || entry.g === "die" || entry.g === "das" ? (
                           <span className={cn("font-de text-xs font-bold", entry.g === "der" ? "text-sky-600 dark:text-sky-400" : entry.g === "die" ? "text-rose-600 dark:text-rose-400" : "text-emerald-600 dark:text-emerald-400")}>
                             {entry.g}
@@ -148,7 +148,7 @@ export function GlossarClient() {
                             {mastery[entry.de.toLowerCase()]}%
                           </span>
                         )}
-                      </p>
+                      </div>
                       <p className="text-sm text-muted-foreground">{entry.ar}</p>
                       {entry.ex && (
                         <p className="font-de truncate text-xs text-muted-foreground/70" dir="ltr" lang="de">

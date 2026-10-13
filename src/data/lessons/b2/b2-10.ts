@@ -14,10 +14,68 @@ export const lessonB210: Lesson = {
     "النظام الجامعي والكتابة الأكاديمية (Fachsprache)، أساليب التأكيد والتلطيف والتحفظ، ومراجعة شاملة تجمع كل قواعد B2 — خاتمة المستويات الأربعة!",
 
   lernziele: [
-    { id: "z1", de: "Ich kann akademische Texte schreiben.", ar: "أن أكتب نصوصاً أكاديمية بلغة التخصص." },
-    { id: "z2", de: "Ich kann Meinungen abschwächen und betonen.", ar: "أن ألطّف وأؤكد وأتحفظ في الكتابة الأكاديمية." },
-    { id: "z3", de: "Ich kann alle B2-Grammatik kombinieren.", ar: "أن أجمع كل قواعد B2 — وأكون جاهزاً للامتحانات." },
-      { id: "z4", de: "Ich kann über Studienmöglichkeiten in Deutschland informieren.", ar: "أن أقدم معلومات عن فرص الدراسة في ألمانيا." },
+    {
+      id: "z1",
+      de: "Ich kann akademische Sätze mit festen Wendungen formulieren.",
+      ar: "أن أصوغ جملاً أكاديمية بعبارات ثابتة.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["w1", "e4", "e7"],
+        taskIds: ["writing:b2-10:w1", "practice:b2-10:e4", "practice:b2-10:e7"],
+        labelAr: "أكتب جملة أكاديمية بعبارة ثابتة وأرتب جملة (w1 وe4 وe7)، دون كشف الحل. لا يقيس هذا كتابة بحث جامعي كامل.",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann Meinungen abschwächen und betonen.",
+      ar: "أن ألطّف وأؤكد وأتحفظ في الجمل الأكاديمية.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e1", "e2", "e6", "e8", "m1", "m2", "w2"],
+        taskIds: [
+          "practice:b2-10:e1",
+          "practice:b2-10:e2",
+          "practice:b2-10:e6",
+          "practice:b2-10:e8",
+          "mini-test:b2-10:m1",
+          "mini-test:b2-10:m2",
+          "writing:b2-10:w2",
+        ],
+        labelAr: "أختار عبارة التأكيد والتلطيف والتحفظ وأكمل الفراغات بها (e1 وe2 وe6 وe8 وm1 وm2 وw2)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann Grammatikstrukturen aus B2 in einem Satz kombinieren.",
+      ar: "أن أجمع في الجملة الواحدة بين أكثر من بنية من B2.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e15-nominal", "e16-b2", "e17-b2", "m6", "m7", "m8"],
+        taskIds: [
+          "practice:b2-10:e15-nominal",
+          "practice:b2-10:e16-b2",
+          "practice:b2-10:e17-b2",
+          "mini-test:b2-10:m6",
+          "mini-test:b2-10:m7",
+          "mini-test:b2-10:m8",
+        ],
+        labelAr: "أصحح خطأ الحالة وأرتب جملة مشتقة ومجهولة وأختار الرابط وأكمل الاختبار الختامي (e15-nominal وe16-b2 وe17-b2 وm6 إلى m8)، دون كشف الحل. لا يقيس هذا كل قواعد B2.",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann Fachbegriffe des Studiums zuordnen.",
+      ar: "أن أربط مصطلحات الدراسة الجامعية بمعانيها.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e3", "w3"],
+        taskIds: [
+          "practice:b2-10:e3",
+          "writing:b2-10:w3",
+        ],
+        labelAr: "أطابق مصطلحات الدراسة الجامعية (e3) وأكتب جملة أكاديمية بالإملاء (w3)، دون كشف الحل.",
+      },
+    },
   ],
   einfuehrung: {
     motivatingQuestionAr:
@@ -47,6 +105,12 @@ export const lessonB210: Lesson = {
       explanation:
         "النقل المكتوب الرسمي يلزم Konjunktiv I: werden ← er/sie werde. أما wird فإخبار (يجعل الكلام رأي الكاتب)، وwürde صيغة شرطية، وwurde ماضٍ للمجهول.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wird» صيغة المضارع، ولا تناسب مضارع الحالة في الكلام غير المباشر.",
+        "«würde» صيغة الشرط، ولا تناسب الكلام غير المباشر هنا.",
+        "«wurde» صيغة الماضي، ولا تناسب الكلام غير المباشر هنا.",
+      ],
     },
     {
       id: "r2",
@@ -58,6 +122,12 @@ export const lessonB210: Lesson = {
       explanation:
         "Zustandspassiv = sein + Partizip II ويصف النتيجة القائمة (مفتوحة). أما wird geöffnet فهو Vorgangspassiv أي فعل الفتح نفسه وهو يجري الآن.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wird» تستعمل مع المبني للمجهول الديناميكي، لا مع حالة مفتوحة.",
+        "«kann» فعل مودال، ولا يعبّر عن وصف الحالة.",
+        "«hat» لا تعبّر عن حالة المكتبة المفتوحة.",
+      ],
     },
     {
       id: "r3",
@@ -84,7 +154,7 @@ export const lessonB210: Lesson = {
       explanationAr:
         "الأسلوب الأكاديمي يحتاج ثلاث أدوات: التأكيد: zweifellos (بلا شك)، eindeutig (بوضوح)، es ist erwiesen (ثابت). التلطيف: meiner Ansicht nach (في رأيي)، möglicherweise (ربما)، es scheint (يبدو). التحفظ: unter Umständen (في بعض الحالات)، in gewissem Maße (إلى حد ما)، es lässt sich nicht leugnen (لا يمكن إنكار).",
       whyAr:
-        "لماذا هذه الثلاثية؟ لأن الأكاديميا تقيّم «الجرأة المدروسة»: ادعاء حاد بلا دليل = ضعف. تحفظ زائد = ضعف. التوازن: أكّد المدعوم، ولطّف غير المؤكد، وتحفظ عند الشك. هذا «النضج الفكري» الذي يبحث عنه المصححون.",
+        "لماذا هذه الثلاثية؟ لأن النص الأكاديمي يحتاج توازناً: ادعاء حاد بلا دليل يضعف النص، وتحفظ زائد يضعفه أيضاً. التوازن: أكّد المدعوم، ولطّف غير المؤكد، وتحفظ عند الشك.",
       table: {
         title: "أدوات الأسلوب الأكاديمي",
         columns: ["الوظيفة", "العبارات", "مثال"],
@@ -102,13 +172,13 @@ export const lessonB210: Lesson = {
         { de: "Zusammenfassend lässt sich sagen, dass B2 ein Meilenstein ist.", ar: "خلاصةً يمكن القول إن B2 علامة فارقة." },
       ],
       comparisonWithArabic:
-        "«ثابت أن» = es ist erwiesen، dass. «في رأيي» = meiner Ansicht nach. «إلى حد ما» = in gewissem Maße. «خلاصة القول» = zusammenfassend lässt sich sagen. كلها تطابق عباراتنا الأكاديمية.",
+        "«ثابت أن» = es ist erwiesen، dass. «في رأيي» = meiner Ansicht nach. «إلى حد ما» = in gewissem Maße. «خلاصة القول» = zusammenfassend lässt sich sagen. ويقابلها في العربية عبارات أكاديمية قريبة في الغالب.",
       eselsbruecke:
         "«ثلاثية الأكاديميا: أكّد (erwiesen)، لطّف (meiner Ansicht)، تحفظ (in gewissem Maße)» — و«Zusammenfassend lässt sich sagen» = خاتمة ذهبية.",
       commonMistakes: [
         { wrong: "أسلوب حاد بلا دليل", right: "لطّف: meiner Ansicht nach, möglicherweise", whyAr: "الأكاديميا تكره الجزم بلا دليل." },
         { wrong: "تحفظ زائد (vielleicht في كل جملة)", right: "وازن: أكّد المدعوم ولطّف الباقي", whyAr: "التوازن هو النضج." },
-        { wrong: "ich denke (عامية) في مقال أكاديمي", right: "meiner Ansicht nach / meines Erachtens", whyAr: "الأسلوب الرسمي: Erachtens أرقى." },
+        { wrong: "ich denke (أقل رسمية) في مقال أكاديمي", right: "meiner Ansicht nach / meines Erachtens", whyAr: "الأسلوب الرسمي: Erachtens أكثر رسمية." },
       ],
       relatedRuleComparison: {
         title: "Erörterung أم Hausarbeit؟",
@@ -116,11 +186,66 @@ export const lessonB210: Lesson = {
       },
     },
     {
+      id: "t-praesentation",
+      titleAr: "عرض أكاديمي (Präsentation): بناء المحاضرة وعبارات الانتقال",
+      titleDe: "Die Präsentation: Aufbau eines Vortrags",
+      explanationAr:
+        "العرض الأكاديمي في الجامعة الألمانية له بناء ثابت يتوقعه الأستاذ والطلاب: مقدمة تعرض الموضوع وسؤال البحث، ثم عرض للمحاور الرئيسية بترتيب واضح، ثم خلاصة وشكر على الحضور. عبارات الانتقال هي ما يربط هذه الأجزاء: **Zunächst** للبداية، **Anschließend** أو **Danach** للانتقال إلى المحور التالي، **Zum Schluss** للخاتمة. من دون هذه الإشارات يبدو العرض سلسلة معلومات متفرقة، مهما كانت المادة قوية.\n\nفي المقدمة يقدّم المتحدث نفسه أو موضوعه بعبارة مثل **Ich möchte heute über … sprechen**، ثم يعرض **Gliederung** العرض أي خطة المحاور. وفي الخاتمة يلخص **Zusammenfassend** النتيجة الرئيسية ثم يفتح باب الأسئلة بعبارة **Haben Sie Fragen?**. ومن المهم أن يكون الكلام كاملاً وليس مختصراً إلى كلمات مفردة على الشرائح، لأن العرض الشفهي يحتاج جملاً تربط الفكرة بما قبلها.",
+      whyAr:
+        "لماذا تهم هذه الصيغة في الجامعة؟ لأن الطالب في الألمانية يُقيَّم على وضوح البنية قبل عمق المعلومة أحياناً. عرض بمقدمة واضحة وخطة معلنة يسمح للمستمع بمتابعة الأفكار وتوقّع ما سيأتي، أما العرض المفكك فيُفهم على أنه غير مرتب، حتى لو كان المحتوى جيداً. لذلك تعلّم الألمانية الأكاديمية يبدأ من هذه الأدوات الشكلية والتعبيرات الجاهزة، لا من حفظ المصطلحات وحدها.",
+      table: {
+        title: "بنية العرض وعبارات الانتقال",
+        columns: ["الجزء", "عبارة مفيدة", "وظيفتها"],
+        rows: [
+          { label: "المقدمة", cells: ["Ich möchte heute über … sprechen.", "تعريف الموضوع"] },
+          { label: "خطة العرض", cells: ["Zunächst … Anschließend … Zum Schluss …", "تنظيم المحاور"] },
+          { label: "الخاتمة", cells: ["Zusammenfassend lässt sich sagen, dass …", "تلخيص النتيجة"] },
+        ],
+      },
+      examples: [
+        { de: "Ich möchte heute über Mülltrennung in Deutschland sprechen.", ar: "أودّ اليوم أن أتحدث عن فرز النفايات في ألمانيا." },
+        { de: "Zunächst erkläre ich das Problem, anschließend zeige ich Lösungen.", ar: "أولاً أشرح المشكلة، ثم أعرض الحلول." },
+        { de: "Zum Schluss fasse ich die wichtigsten Ergebnisse zusammen.", ar: "وفي الختام ألخّص أهم النتائج." },
+        { de: "Die Gliederung meines Vortrags besteht aus drei Teilen.", ar: "يتكون هيكل عرضي من ثلاثة أجزاء." },
+        { de: "Wie Sie sehen, sind die Zahlen seit 2015 deutlich gestiegen.", ar: "كما ترون، ارتفعت الأرقام بوضوح منذ 2015." },
+        { de: "Vielen Dank für Ihre Aufmerksamkeit. Haben Sie Fragen?", ar: "شكراً لانتباهكم. هل لديكم أسئلة؟" },
+      ],
+      comparisonWithArabic:
+        "في العربية يمكن أن ينتقل المتحدث من فكرة إلى أخرى بجملة واحدة مرتجلة، أو بعبارات مثل «ومن ناحية أخرى» و«على صعيد آخر». الألمانية الأكاديمية أكثر تنظيماً في هذا الباب: لكل جزء من العرض عبارة متوقعة، والمستمع ينتظرها. كذلك يختلف الترتيب، إذ تضع العربية الخلاصة أحياناً قبل الأدلة، بينما يُفضَّل في العرض الألماني أن تأتي الخلاصة بعد عرض المحاور بوضوح، مع نظرة إلى ما يلي.",
+      eselsbruecke:
+        "Zunächst – Anschließend – Zum Schluss: ثلاث كلمات تمشي معك من أول العرض إلى آخره، كأنها خريطة الطريق.",
+      commonMistakes: [
+        {
+          wrong: "Ich sage jetzt über Müll. (بدون مقدمة ولا خطة)",
+          right: "Ich möchte heute über Mülltrennung sprechen. Zunächst erkläre ich das Problem.",
+          whyAr: "الجملة الأولى تعرض الموضوع بصيغة مهذبة وواضحة، والثانية تعلن الخطة. من دون هذا التمهيد لا يعرف المستمع إلى أين يتجه العرض، فيفقد تركيزه بسرعة.",
+          classification: "contextual-alternative",
+        },
+        {
+          wrong: "Danach ich zeige Lösungen.",
+          right: "Danach zeige ich Lösungen.",
+          whyAr: "بعد عبارة الانتقال Danach يأتي الفعل المصرف في الموقع الثاني، ثم الفاعل. هذه قاعدة V2 نفسها التي درسناها في الوحدات الأولى، ويتكرر خطأ ترتيبها كثيراً في العروض الشفهية.",
+          classification: "error",
+        },
+        {
+          wrong: "Danke. Ende. (في نهاية العرض)",
+          right: "Vielen Dank für Ihre Aufmerksamkeit. Haben Sie Fragen?",
+          whyAr: "الخاتمة المقتضبة تبدو جافة وتقطع التواصل مع الجمهور. الصيغة الكاملة تشكر الحضور وتفتح باب الحوار، وهو جزء متوقع من العرض الأكاديمي.",
+          classification: "pedagogical-simplification",
+        },
+      ],
+      relatedRuleComparison: {
+        title: "Zunächst … dann … مقابل Erstens … Zweitens …",
+        content:
+          "تستعمل الألمانية الأكاديمية أيضاً الترقيم الصريح: Erstens، Zweitens، Drittens، وهذا يناسب العروض التي تعدد نقاطاً متوازية. أما Zunächst … Anschließend فيناسب السرد المتسلسل، أي خطوات تتابع بعضها بعضاً. قاعدة عملية: استعمل الترقيم حين تكون النقاط متساوية في الأهمية، واستعمل الانتقال الزمني حين تكون الخطوات مرتبة في تسلسل.",
+      },
+    },
+    {
       id: "t2",
       titleAr: "الأسلوب الاسمي (Nominalstil) في الكتابة الرسمية",
       titleDe: "Nominalstil in der formellen Schriftsprache",
       explanationAr: "تحويل الأفعال إلى أسماء: weil man spart → wegen der Einsparung، wenn man ankommt → bei der Ankunft. هذا يضغط النص ويعطيه طابعاً رسمياً — أساسي في الرسائل الرسمية B2.",
-      whyAr: "لماذا؟ لأن الرسالة الرسمية B2 (75 دقيقة) تتطلب أسلوباً اسمياً موجزاً — من يستخدم جمل الفعل فقط يفقد علامات الجودة.",
+      whyAr: "لماذا؟ لأن الرسائل الرسمية تميل إلى الأسلوب الاسمي الموجز، ومن يكتفي بجمل الفعل قد يبدو نصه أطول وأقل رسمية.",
       table: {
         title: "من الأسلوب الفعلي إلى الأسلوب الاسمي",
         columns: ["الأسلوب الفعلي", "الأسلوب الاسمي", "بالعربية"],
@@ -144,7 +269,7 @@ export const lessonB210: Lesson = {
       ],
       relatedRuleComparison: {
         title: "أسلوب اسمي أم فعلي؟",
-        content: "الأسلوب الاسمي مكثّف ورسمي وهو المتوقَّع في الرسائل الإدارية وتقارير B2. لكن الإفراط فيه يجعل النص ثقيلاً وبارداً. القاعدة العملية: استعمله في المقدمات والصيغ الجاهزة، وعُد إلى الأسلوب الفعلي في الشرح والتفصيل.",
+        content: "الأسلوب الاسمي مكثّف ورسمي، وهو شائع في الرسائل الإدارية والتقارير. لكن الإفراط فيه يجعل النص ثقيلاً وبارداً. القاعدة العملية: استعمله في المقدمات والصيغ الجاهزة، وعُد إلى الأسلوب الفعلي في الشرح والتفصيل.",
       },
     },
     {
@@ -154,7 +279,7 @@ export const lessonB210: Lesson = {
       explanationAr:
         "هذه ليست قاعدة جديدة، بل خريطة الطريق التي قطعتها. كل سطر في الجدول التالي يقابل وحدةً درستَها في B2: من نقل الكلام (الوحدة 1) إلى التراكيب الاسمية-الفعلية (الوحدة 9). اقرأ العمود الأوسط، وغطِّ عمود المثال بيدك، ثم حاول توليد مثالك أنت. ما تعجز عن توليده هو بالضبط ما يجب أن تعود إليه قبل الامتحان.",
       whyAr:
-        "لماذا؟ لأن امتحان B2 لا يسأل عن قاعدة معزولة، بل يطلب نصاً واحداً تجتمع فيه ستُّ قواعد أو سبع. من درس القواعد متفرقةً يعرفها فرادى ولا يستحضرها مجتمعةً؛ ووظيفة هذه الخريطة أن تحوّل تسع معارف منفصلة إلى شبكة واحدة يمكن استدعاؤها دفعةً واحدة.",
+        "لماذا؟ لأن النصوص الحقيقية تجمع عادةً أكثر من قاعدة في الجملة الواحدة. من درس القواعد متفرقةً يعرفها فرادى ولا يستحضرها مجتمعةً؛ ووظيفة هذه الخريطة أن تحوّل تسع معارف منفصلة إلى شبكة واحدة يمكن استدعاؤها دفعةً واحدة.",
       table: {
         title: "قواعد B2 التسع — الوحدة والقاعدة والمثال",
         columns: ["الوحدة", "القاعدة", "مثال"],
@@ -185,12 +310,12 @@ export const lessonB210: Lesson = {
         "اختصار الوحدات التسع في جملة واحدة: «قال إنّه سيُنجَز، والمنجَز يمكن فحصه بأن نراجعه، وبحلول الموعد نكون قد اتخذنا القرار.» احفظ هذه الجملة العربية: كل مقطع فيها يقابل وحدةً من B2 بالترتيب.",
       commonMistakes: [
         { wrong: "Er sagt, er hat keine Zeit.", right: "Er sagt, er habe keine Zeit.", whyAr: "في النقل الرسمي المكتوب يُستعمل Konjunktiv I لا الإخبار؛ والإخبار يجعل الجملة رأياً للكاتب لا نقلاً عن غيره (الوحدة 1)." },
-        { wrong: "Das Problem kann sich lösen.", right: "Das Problem lässt sich lösen.", whyAr: "بديل المجهول هو lassen + sich + مصدر، لا können + sich؛ فـ«can itself» ليست بنية ألمانية (الوحدة 3)." },
+        { wrong: "Das Problem kann leicht gelöst lassen.", right: "Das Problem lässt sich leicht lösen.", whyAr: "بديل المجهول هو lassen + sich + مصدر بمعنى «يمكن حلّه»، أما «gelöst lassen» فليست بنية صحيحة (الوحدة 3)." },
         { wrong: "Bis 2030 werde ich B2 erreichen haben.", right: "Bis 2030 werde ich B2 erreicht haben.", whyAr: "Futur II يبنى بالتصريف الثالث لا بالمصدر: werde + Partizip II + haben/sein (الوحدة 7)." },
       ],
       relatedRuleComparison: {
         title: "متى أستعمل أي طبقة؟",
-        content: "القاعدة العملية للامتحان: النقل (Konjunktiv I) لعرض آراء الغير، والمجهول وبدائله لإخفاء الفاعل في النص العلمي، والصفات المشتقة والأسلوب الاسمي لضغط المعلومة، وFutur II للتخطيط، والروابط لبناء الحجّة. من يستعمل الطبقات الخمس في نصٍ واحد يصل إلى سقف علامة «التراكيب» في Goethe B2؛ ومن يكتفي بالجمل البسيطة يُقيَّم عند B1 مهما صحّت لغته.",
+        content: "القاعدة العملية للامتحان: النقل (Konjunktiv I) لعرض آراء الغير، والمجهول وبدائله لإخفاء الفاعل في النص العلمي، والصفات المشتقة والأسلوب الاسمي لضغط المعلومة، وFutur II للتخطيط، والروابط لبناء الحجّة. من يدمج هذه الطبقات بدقة في نص واحد يكتب نصاً أكثر تماسكاً ورسمية؛ ومن يكتفي بالجمل البسيطة يكتب بصحة لكن بأسلوب أقل تنوعاً.",
       },
     },
   ],
@@ -229,6 +354,12 @@ export const lessonB210: Lesson = {
         correctIndex: 0,
         explanation: "قال الأستاذ: Die vorliegende Veranstaltung beschäftigt sich mit der Linguistik.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«mit der Geschichte» لم تُذكر كموضوع للندوة.",
+          "«mit der Kunst» لم تُذكر كموضوع للندوة.",
+          "«mit der Wirtschaft» لم تُذكر كموضوع للندوة.",
+        ],
       },
       {
         id: "q2",
@@ -241,18 +372,30 @@ export const lessonB210: Lesson = {
         correctIndex: 0,
         explanation: "قالت آنا: Die mündliche Prüfung macht mir noch Sorgen.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«die schriftliche Prüfung» لم تقل آنا إنها تقلق منها.",
+          "«die Hausarbeit» لم تقل آنا إنها تقلق منها.",
+          "«das Seminar» لم تقل آنا إنها تقلق منه.",
+        ],
       },
       {
         id: "q3",
         itemId: "l2",
         type: "multiple-choice",
         instructionAr: "اختر الإجابة الصحيحة:",
-        questionDe: "Wie üben sie?",
+        questionDe: "Wie üben die beiden?",
         questionAr: "كيف يتدربون؟",
         options: ["indem sie sprechen", "indem sie schreiben", "indem sie lesen", "indem sie schlafen"],
         correctIndex: 0,
         explanation: "قال كريم: Wir üben jeden Tag, indem wir sprechen.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«indem sie schreiben» لم يقل كريم إنهم يتدربون بالكتابة.",
+          "«indem sie lesen» لم يقل كريم إنهم يتدربون بالقراءة.",
+          "«indem sie schlafen» تنفي التدريب، وهذا عكس ما قاله كريم.",
+        ],
       },
     ],
   },
@@ -264,7 +407,7 @@ export const lessonB210: Lesson = {
       { de: "die Hausarbeit", ar: "البحث الجامعي", note: "au = آو: هاوس-أربايت" },
       { de: "die Fachsprache", ar: "لغة التخصص", note: "ch = خ + sp = شپ: فاخ-شپراخه" },
       { de: "das Seminar", ar: "الندوة", note: "s = ز: زيمينار" },
-      { de: "die Linguistik", ar: "علم اللغة", note: "gu هنا /gu/ لا /gv/: لينْگوإستيك [lɪŋɡuˈɪstɪk] — والنبر على إستيك" },
+      { de: "die Linguistik", ar: "علم اللغة", note: "g ثم u: لينْگوإستيك [lɪŋɡuˈɪstɪk] — والنبر على «إستيك»" },
       { de: "zweifellos", ar: "بلا شك", note: "zw = تسڤ: تسڤايفِلوس" },
       { de: "erwiesen", ar: "مثبت", note: "ie = إي: إرڤيزِن" },
     ],
@@ -320,6 +463,12 @@ export const lessonB210: Lesson = {
       correctIndex: 0,
       explanation: "التأكيد: es ist erwiesen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Vielleicht» تعني ربما، ولا تعني ثبت أن.",
+        "«In gewissem Maße» تعني إلى حد ما، ولا تعني ثبت أن.",
+        "«Unter Umständen» تعني في ظروف معينة، ولا تعني ثبت أن.",
+      ],
     },
     {
       id: "e2",
@@ -330,6 +479,12 @@ export const lessonB210: Lesson = {
       correctIndex: 0,
       explanation: "التحفظ: in gewissem Maße.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Zweifellos» تعني بلا شك، ولا تعني إلى حد ما.",
+        "«Eindeutig» تعني بوضوح، ولا تعني إلى حد ما.",
+        "«Es ist erwiesen» تعني ثبت أن، ولا تعني إلى حد ما.",
+      ],
     },
     {
       id: "e3",
@@ -348,7 +503,7 @@ export const lessonB210: Lesson = {
       id: "e4",
       type: "word-ordering",
       instructionAr: "رتّب الجملة:",
-      tokens: ["erwiesen", "Es", "ist", "dass", "Sprachen", "Denken", "unser", "beeinflussen", ","],
+      tokens: ["erwiesen", "Es", "ist", "dass", "Sprachen", "Denken", "unser", "beeinflussen", ",", "."],
       correctSentence: "Es ist erwiesen, dass Sprachen unser Denken beeinflussen.",
       explanation: "جملة أكاديمية: es ist erwiesen + dass.",
       errorType: "word-order",
@@ -398,6 +553,12 @@ export const lessonB210: Lesson = {
       correctIndex: 0,
       explanation: "möglicherweise = ربما (تلطيف).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«بلا شك» تقابل Zweifellos، وليس möglicherweise.",
+        "«إلى حد ما» تقابل In gewissem Maße، وليس möglicherweise.",
+        "«بوضوح» تقابل Eindeutig، وليس möglicherweise.",
+      ],
     },
     {
       id: "e9",
@@ -455,8 +616,14 @@ export const lessonB210: Lesson = {
       options: ["Wegen der Einsparung", "Wegen die Einsparung", "Weil der Einsparung", "Wegen sparen"],
       correctIndex: 0,
       explanation:
-        "wegen حرف جر يلزم Genitiv في اللغة المكتوبة: wegen der Einsparung. وweil أداة ربط لجملة لا لاسم، وwegen sparen خطأ لأن المصدر يحتاج تنكيراً اسمياً (das Sparen).",
+        "wegen حرف جر يلزم Genitiv في اللغة المكتوبة: wegen der Einsparung. وweil أداة ربط لجملة لا لاسم، وwegen sparen خطأ لأن wegen يتبعه اسم (das Sparen) لا فعل.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«Wegen die Einsparung» خطأ في حالة الاسم بعد wegen؛ الصيغة الصحيحة der Einsparung.",
+        "«Weil der Einsparung» خطأ؛ weil تربط جملة، ولا تُستعمل مع اسم.",
+        "«Wegen sparen» خطأ؛ الاسم المطلوب هو Einsparung.",
+      ],
     },
     {
       id: "e14-nominal",
@@ -470,7 +637,7 @@ export const lessonB210: Lesson = {
         { correct: "Zur", options: ["Zur", "Damit", "Für"], errorType: "preposition" },
       ],
       explanation:
-        "لكل أداة ربط نظيرٌ من حروف الجر: wenn ← bei + Dativ، وobwohl ← trotz + Genitiv، وdamit ← zu + Dativ (zur Klärung). أدوات الربط تُتبع بجملة، وحروف الجر تُتبع باسم.",
+        "لكل أداة ربط نظيرٌ من حروف الجر: wenn ← bei + Dativ، وobwohl ← trotz + Genitiv، وum ... zu ← zur + Dativ (zur Klärung). أدوات الربط تُتبع بجملة، وحروف الجر تُتبع باسم.",
       errorType: "preposition",
     },
     {
@@ -482,7 +649,7 @@ export const lessonB210: Lesson = {
       correctWord: "der",
       options: ["der", "die", "des", "dem"],
       explanation:
-        "nach حرف جر يلزم Dativ دائماً، ومؤنث Dativ هو der: nach der Prüfung. (die نصب/رفع، وdes للمضاف المذكر والمحايد.)",
+        "nach حرف جر يلزم Dativ دائماً، ومؤنث Dativ هو der: nach der Prüfung. (die صيغة الرفع أو النصب للمؤنث، وdes صيغة الإضافة للمذكر والمحايد.)",
       errorType: "case",
     },
     {
@@ -505,6 +672,12 @@ export const lessonB210: Lesson = {
       explanation:
         "indem تبيّن *الوسيلة* (بأن): يتحسّن المرء بأن يقرأ يومياً. وobwohl للتنازل، وdamit للغاية، وtrotzdem ظرف رابط لا أداة جملة ثانوية.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«obwohl» تعبّر عن التعارض، ولا تعبّر عن الوسيلة.",
+        "«damit» تعبّر عن الغاية، ولا تعبّر عن الوسيلة.",
+        "«trotzdem» تعبّر عن التعارض، ولا تعبّر عن الوسيلة.",
+      ],
     },
     {
       id: "e10",
@@ -529,7 +702,7 @@ export const lessonB210: Lesson = {
     culturalNote: {
       title: "الجامعات الألمانية",
       content:
-        "الدراسة في ألمانيا مجانية تقريباً (رسوم فصل ~300 يورو). والجامعات: TU (تقنية)، Universität (شاملة)، Fachhochschule (تطبيقية). وتختلف متطلبات اللغة حسب الجامعة والبرنامج (عادةً B2–C1 أو TestDaF/DSH). وعبارة: «der Numerus clausus» (قيد القبول — تخصص محدود القبول مثل الطب؛ تُحدَّد علامة القطع من المنافسة ولا تُعلن سلفاً).",
+        "معظم الجامعات الحكومية في ألمانيا لا تفرض رسوم دراسة (كما يرد في نص الوساطة أدناه). والجامعات: TU (تقنية)، Universität (شاملة)، Fachhochschule (تطبيقية). وتختلف متطلبات اللغة حسب الجامعة والبرنامج، وقد تُطلب شهادات مثل TestDaF أو DSH. وعبارة: «der Numerus clausus» (قيد القبول — تخصص محدود القبول مثل الطب؛ تُحدَّد علامة القطع من المنافسة، وغالباً لا تُعلن مسبقاً).",
     },
   },
 
@@ -543,6 +716,12 @@ export const lessonB210: Lesson = {
       correctIndex: 0,
       explanation: "التأكيد: es ist erwiesen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Vielleicht» تعني ربما، ولا تعني ثبت أن.",
+        "«Unter Umständen» تعني في ظروف معينة، ولا تعني ثبت أن.",
+        "«In gewissem Maße» تعني إلى حد ما، ولا تعني ثبت أن.",
+      ],
     },
     {
       id: "m2",
@@ -553,6 +732,12 @@ export const lessonB210: Lesson = {
       correctIndex: 0,
       explanation: "التلطيف: möglicherweise.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Zweifellos» تعني بلا شك، ولا تعني ربما.",
+        "«Eindeutig» تعني بوضوح، ولا تعني ربما.",
+        "«Es ist erwiesen» تعني ثبت أن، ولا تعني ربما.",
+      ],
     },
     {
       id: "m3",
@@ -598,6 +783,12 @@ export const lessonB210: Lesson = {
       explanation:
         "النقل الرسمي المكتوب يلزم Konjunktiv I: beginnen ← es beginne. وbeginnt إخبار ينسب الكلام للكاتب، وbegänne صيغة Konjunktiv II، وbegann ماضٍ.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«beginnt» صيغة المضارع، ولا تناسب الكلام غير المباشر.",
+        "«begänne» صيغة الشرط، ولا تناسب الكلام غير المباشر.",
+        "«begann» صيغة الماضي، ولا تناسب الكلام غير المباشر.",
+      ],
     },
     {
       id: "m7",
@@ -607,8 +798,14 @@ export const lessonB210: Lesson = {
       options: ["lassen", "können", "werden", "sind"],
       correctIndex: 0,
       explanation:
-        "lassen + sich + مصدر = بديل المجهول بمعنى «يمكن أن يُقرأ». وkönnen sich ليست بنية ألمانية هنا، وwerden يقتضي Partizip II (werden nachgelesen)، وsein يقتضي zu + مصدر.",
+        "lassen + sich + مصدر = بديل المجهول بمعنى «يمكن أن يُقرأ». وkönnen وحده لا يكوّن هذا البديل، وwerden يقتضي Partizip II (werden nachgelesen)، وsein يقتضي zu + مصدر.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«können» فعل مودال، ولا يعطي معنى الإمكانية هنا.",
+        "«werden» تستعمل مع المبني للمجهول، ولا تناسب الجملة.",
+        "«sind» تستعمل مع حالة الفعل، ولا تناسب lassen sich.",
+      ],
     },
     {
       id: "m8",
@@ -653,9 +850,9 @@ export const lessonB210: Lesson = {
   interaction: [
     {
       id: "int-b2-10-1",
-      scenarioAr: "محاكاة مناقشة Goethe-B2 عن الدراسة بالخارج.",
+      scenarioAr: "محاكاة مناقشة بمستوى B2 عن الدراسة بالخارج.",
       scenarioDe: "Simulation einer B2-Diskussion über Auslandsstudium.",
-      strategyAr: "الاستراتيجية: حجاج منظم (أطروحة، نقيض، تركيب) بأسلوب امتحاني.",
+      strategyAr: "الاستراتيجية: حجاج منظم (أطروحة، نقيض، تركيب) بأسلوب مناقشة واضح.",
       rounds: [
         {
           speakerDe: "Lohnt sich ein Studium im Ausland trotz der Herausforderungen?",

@@ -3,9 +3,8 @@ import type { Lesson } from "@/types/lesson";
 /**
  * الدرس B1-12: الغرض والسبب — damit / um … zu + حروف الجر مع المضاف إليه
  *
- * يسدّ فجوة نحوية حرجة: لم تكن أيّ كتلة نظرية في المنهج تُدرّس
- * جملة الغرض (damit مقابل um … zu) ولا حروف الجر wegen/trotz/während/aufgrund
- * مع Genitiv، رغم ورودهما في نصوص B1/B2 باستمرار.
+ * يغطّي جملة الغرض (damit مقابل um … zu) وحروف الجر wegen/trotz/während/aufgrund
+ * مع Genitiv، وهي من التراكيب التي تظهر في نصوص B1.
  */
 export const lessonB112: Lesson = {
   id: "b1-12",
@@ -18,10 +17,71 @@ export const lessonB112: Lesson = {
     "التعبير عن الغرض بـ damit و um … zu (وشرط وحدة الفاعل)، وحروف الجر مع المضاف إليه (wegen, trotz, während, aufgrund) وبدائلها الشائعة في اللغة المحكية.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann ein Ziel mit „um … zu“ ausdrücken.", ar: "أن أعبّر عن هدفي بـ um … zu عندما يكون الفاعل واحداً." },
-    { id: "z2", de: "Ich kann „damit“ benutzen, wenn zwei Personen beteiligt sind.", ar: "أن أستخدم damit عندما يختلف فاعل الجملتين." },
-    { id: "z3", de: "Ich kann Gründe mit Präpositionen wie „wegen“ und „trotz“ nennen.", ar: "أن أذكر السبب والتنازل بحروف الجر wegen وtrotz مع المضاف إليه." },
-    { id: "z4", de: "Ich kann über meine Motivation beim Sprachenlernen sprechen.", ar: "أن أتحدث عن دوافعي في تعلّم اللغة وأهدافي منها." },
+    {
+      id: "z1",
+      de: "Ich kann ein Ziel mit „um … zu“ ausdrücken.",
+      ar: "أن أعبّر عن هدفي بـ um … zu عندما يكون الفاعل واحداً.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e1", "e4", "e7", "e14", "m1", "m4", "w1"],
+        taskIds: [
+          "practice:b1-12:e1",
+          "practice:b1-12:e4",
+          "practice:b1-12:e7",
+          "practice:b1-12:e14",
+          "mini-test:b1-12:m1",
+          "mini-test:b1-12:m4",
+          "writing:b1-12:w1",
+        ],
+        labelAr: "أجيب صحيحاً عن تمارين um … zu واختبارات ترتيبها والتحويل المكتوب (e1 وe4 وe7 وe14 وm1 وm4 وw1)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann „damit“ benutzen, wenn zwei Personen beteiligt sind.",
+      ar: "أن أستخدم damit عندما يختلف فاعل الجملتين.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e2", "e5", "e10", "e11", "m2"],
+        taskIds: [
+          "practice:b1-12:e2",
+          "practice:b1-12:e5",
+          "practice:b1-12:e10",
+          "practice:b1-12:e11",
+          "mini-test:b1-12:m2",
+        ],
+        labelAr: "أجيب صحيحاً عن تمارين damit (e2 وe5 وe10 وe11 وm2)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann Gründe mit Präpositionen wie „wegen“ und „trotz“ nennen.",
+      ar: "أن أذكر السبب والتنازل بحروف الجر wegen وtrotz مع المضاف إليه.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["e3", "e6", "e9", "e12", "m3", "w3"],
+        taskIds: [
+          "practice:b1-12:e3",
+          "practice:b1-12:e6",
+          "practice:b1-12:e9",
+          "practice:b1-12:e12",
+          "mini-test:b1-12:m3",
+          "writing:b1-12:w3",
+        ],
+        labelAr: "أجيب صحيحاً عن تمارين wegen وtrotz والمضاف إليه (e3 وe6 وe9 وe12 وm3 وw3)، دون كشف الحل.",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann Gründe und Ziele in einem kurzen Gespräch verstehen.",
+      ar: "أن أفهم الأهداف والأسباب في حوار قصير.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["q1", "q2", "q3"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
+        labelAr: "أجيب صحيحاً عن الأسئلة الثلاثة بعد الاستماع إلى الحوارين، دون كشف النص.",
+      },
+    },
   ],
 
   einfuehrung: {
@@ -29,7 +89,7 @@ export const lessonB112: Lesson = {
       "لماذا تتعلّم الألمانية؟ في العربية تقول «أتعلّم الألمانية لكي أدرس في ألمانيا» و«أتعلّمها لكي يفهمني الأطباء». الجملتان تبدأان بـ«لكي» — لكن الألمانية تفرّق بينهما تفريقاً صارماً: الأولى um … zu والثانية damit. الفرق كله في سؤال واحد: من يفعل الفعل الثاني؟",
     motivatingQuestionDe: "Warum lernen Sie Deutsch?",
     contextAr:
-      "نتعلّم اليوم كيف نربط الفعل بهدفه، ثم كيف نذكر السبب باختصار عبر حرف جرّ واحد بدل جملة كاملة — وهما مفتاحا الأسلوب المكتوب في B1.",
+      "نتعلّم اليوم كيف نربط الفعل بهدفه، ثم كيف نذكر السبب باختصار عبر حرف جرّ واحد بدل جملة كاملة — وهما من أدوات الكتابة المترابطة في B1.",
     contextDe: "Wir sprechen über Ziele, Gründe und Absichten.",
     connectionToPreviousAr:
       "تعرف weil (لأنّ) من A2 وobwohl (رغم أنّ) من B1. اليوم نضيف الوجه الآخر: بدل جملة كاملة بـ weil، حرف جرّ واحد wegen. وبدل «لأنني أريد»، جملة غرض صريحة.",
@@ -47,11 +107,17 @@ export const lessonB112: Lesson = {
       id: "r1",
       type: "multiple-choice",
       instructionAr: "مراجعة من A2 (درس a2-10 — المدرسة والتعلم): اختر أداة السبب:",
-      questionDe: "Ich lerne Deutsch, ___ ich in Deutschland studieren möchte.",
+      questionDe: "___ ich in Deutschland studieren möchte, lerne ich Deutsch.",
       options: ["weil", "denn ich", "wegen", "damit"],
       correctIndex: 0,
-      explanation: "weil ترسل الفعل إلى آخر الجملة التابعة: ..., weil ich studieren möchte.",
+      explanation: "weil ترسل الفعل إلى آخر الجملة التابعة: Weil ich in Deutschland studieren möchte, lerne ich Deutsch.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«denn ich» لا تبدأ الجملة التابعة في أول الجملة؛ denn تربط جملتين مستقلتين، والتمرين يطلب حرف الربط التابع weil.",
+        "«wegen» حرف جر، ولا يُربط جملة كاملة بالفعل في آخرها.",
+        "«damit» تعني لكي وتعبّر عن الغاية، لا عن السبب.",
+      ],
     },
     {
       id: "r2",
@@ -62,6 +128,12 @@ export const lessonB112: Lesson = {
       correctIndex: 0,
       explanation: "obwohl = رغم أنّ، وتبدأ جملة تابعة كاملة (فعل في النهاية).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Weil» تعبّر عن السبب، ولا تناسب الجملة التي تعبّر عن أمر رغم سببه.",
+        "«Damit» تعبّر عن الغاية، ولا تناسب الجملة.",
+        "«Trotz» حرف جر، ولا يربط جملة كاملة بالفعل.",
+      ],
     },
     {
       id: "r3",
@@ -84,7 +156,7 @@ export const lessonB112: Lesson = {
       explanationAr:
         "للتعبير عن الهدف نستخدم um … zu + Infinitiv: Ich lerne Deutsch, um in Deutschland zu studieren. (أتعلّم الألمانية لكي أدرس في ألمانيا). البنية: um + بقية الجملة + zu + المصدر في النهاية. شرط واحد لا يُكسر: الفاعل في الجملتين شخص واحد — أنا أتعلّم، وأنا أدرس. ومع الأفعال المنفصلة يدخل zu في وسط الفعل: um einzukaufen، um aufzustehen.",
       whyAr:
-        "لماذا لا فاعل في الجزء الثاني؟ لأنّ um … zu لا يحتاجه: الفاعل معروف سلفاً من الجملة الأولى. هذا الاختصار هو سبب شيوعها في الكتابة الرسمية — تقول الهدف بلا تكرار «أنا».",
+        "لماذا لا فاعل في الجزء الثاني؟ لأنّ um … zu لا يحتاجه: الفاعل معروف سلفاً من الجملة الأولى. هذا الاختصار يغني عن تكرار الفاعل: تقول الهدف دون إعادة «أنا».",
       table: {
         title: "بنية um … zu",
         columns: ["الجزء", "الوظيفة", "مثال"],
@@ -94,7 +166,6 @@ export const lessonB112: Lesson = {
           { label: "المفعول/التفاصيل", cells: ["وسط الجملة", "ein Auto"] },
           { label: "zu + Infinitiv", cells: ["في النهاية دائماً", "zu kaufen."] },
           { label: "فعل منفصل", cells: ["zu تدخل في الوسط", "um einzukaufen"] },
-          { label: "مع مودال", cells: ["لا تُستعمل um…zu مع wollen", "✗ um studieren zu wollen"] },
         ],
       },
       examples: [
@@ -134,7 +205,7 @@ export const lessonB112: Lesson = {
           { label: "الفعل", cells: ["مصدر مع zu", "مصرَّف في النهاية"] },
           { label: "ذكر الفاعل", cells: ["ممنوع", "واجب"] },
           { label: "مثال", cells: ["Ich spare, um zu reisen.", "Ich spare, damit meine Kinder reisen."] },
-          { label: "فاعل واحد + damit", cells: ["—", "جائزة لكنها ثقيلة أسلوبياً"] },
+          { label: "فاعل واحد + damit", cells: ["—", "جائزة نحوياً"] },
         ],
       },
       examples: [
@@ -145,7 +216,7 @@ export const lessonB112: Lesson = {
         { de: "Wir gehen früh los, damit wir den Zug nicht verpassen.", ar: "ننطلق باكراً لكي لا تفوتنا القطار." },
       ],
       comparisonWithArabic:
-        "العربية تستخدم «لكي» في الحالتين دون تفريق: «أعمل لكي أنجح» و«أعمل لكي ينجح ابني». الألمانية تجبرك على الاختيار حسب الفاعل — وهذا أكثر خطأ يقع فيه الناطق بالعربية في هذا الباب.",
+        "العربية تستخدم «لكي» في الحالتين دون تفريق: «أعمل لكي أنجح» و«أعمل لكي ينجح ابني». الألمانية تجبرك على الاختيار حسب الفاعل — وهذا موضع يحتاج انتباهاً خاصاً عند الناطق بالعربية.",
       eselsbruecke:
         "«damit = شخصان». احفظ الميزان: فاعل واحد ← um … zu، فاعلان ← damit. وحرف الـ d في damit يذكّرك بـ du (أنت الآخر).",
       commonMistakes: [
@@ -163,9 +234,9 @@ export const lessonB112: Lesson = {
       titleAr: "حروف الجر مع المضاف إليه: wegen وtrotz وwährend",
       titleDe: "Präpositionen mit Genitiv: wegen, trotz, während, aufgrund",
       explanationAr:
-        "بدل جملة تابعة كاملة يمكن ذكر السبب باسم واحد بعد حرف جرّ يطلب Genitiv: wegen des Regens (بسبب المطر)، trotz des Regens (رغم المطر)، während der Arbeit (أثناء العمل)، aufgrund der Krise (نتيجةً للأزمة). المذكّر والمحايد يأخذان des + s في آخر الاسم، والمؤنّث والجمع يأخذان der بلا إضافة. وفي اللغة المحكية يشيع wegen + Dativ (wegen dem Regen) — مفهومة لكنها غير معيارية في الكتابة.",
+        "بدل جملة تابعة كاملة يمكن ذكر السبب باسم واحد بعد حرف جرّ يطلب Genitiv: wegen des Regens (بسبب المطر)، trotz des Regens (رغم المطر)، während der Arbeit (أثناء العمل)، aufgrund der Krise (نتيجةً للأزمة). المذكّر والمحايد يأخذان des + s في آخر الاسم، والمؤنّث والجمع يأخذان der بلا إضافة. وفي اللغة المحكية يُسمع wegen + Dativ (wegen dem Regen)، وهي مفهومة لكنها أقل معيارية في الكتابة.",
       whyAr:
-        "لماذا نتعلّم هذه الحروف؟ لأنّها أداة الاختصار في الكتابة: «رغم أنّ الطقس كان سيئاً» تصير كلمتين trotz des Wetters. وهذا هو الأسلوب الاسمي الذي تُقاس عليه نصوص B1 وB2 — وبدونه تبقى كتابتك في مستوى A2.",
+        "لماذا نتعلّم هذه الحروف؟ لأنّها أداة الاختصار في الكتابة: «رغم أنّ الطقس كان سيئاً» تصير كلمتين trotz des Wetters. ويختصر جملة تابعة كاملة في عبارة قصيرة.",
       table: {
         title: "حروف الجر مع Genitiv",
         columns: ["الحرف", "المعنى", "مثال"],
@@ -191,7 +262,7 @@ export const lessonB112: Lesson = {
       eselsbruecke:
         "«أربعة تطلب المضاف: wegen — trotz — während — aufgrund». وللأداة: مذكّر ومحايد des مع s لاصقة، ومؤنّث وجمع der نظيفة بلا زيادة.",
       commonMistakes: [
-        { wrong: "wegen dem Regen (في نصّ مكتوب)", right: "wegen des Regens", whyAr: "الصيغة المعيارية Genitiv؛ Dativ محكية مقبولة شفهياً لا كتابياً." },
+        { wrong: "wegen dem Regen (في نصّ مكتوب)", right: "wegen des Regens", whyAr: "الصيغة المعيارية في الكتابة Genitiv؛ وDativ تُسمع في المحكية وهي أقل معيارية." },
         { wrong: "trotz der Regen", right: "trotz des Regens", whyAr: "der Regen مذكّر ⇒ des Regens مع s في آخر الاسم." },
         { wrong: "während die Arbeit", right: "während der Arbeit", whyAr: "die Arbeit مؤنّث ⇒ der Arbeit في المضاف إليه." },
       ],
@@ -239,6 +310,12 @@ export const lessonB112: Lesson = {
         correctIndex: 0,
         explanation: "قال: Ich lerne Deutsch, um hier als Ingenieur zu arbeiten.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Um zu studieren» لم يذكرها يوسف؛ قال إنه يتعلم ليعمل مهندساً.",
+          "«Wegen der Prüfung» لم يذكرها يوسف كسبب لتعلم الألمانية.",
+          "«Damit seine Frau arbeitet» لم يقلها يوسف؛ قال إن زوجته تتعلم لأجل الأطفال.",
+        ],
       },
       {
         id: "q2",
@@ -256,6 +333,12 @@ export const lessonB112: Lesson = {
         correctIndex: 0,
         explanation: "الفاعل مختلف (هي تتعلّم، الأطفال ينشأون) ⇒ damit.",
         errorType: "grammar",
+        optionExplanations: [
+          undefined,
+          "«Um selbst zu studieren» لم تذكرها زوجته كسبب لتعلم الألمانية.",
+          "«Wegen der Arbeit» لم يذكرها يوسف كسبب لتعلم زوجته.",
+          "«Trotz der Kinder» تعني رغم الأطفال، وهذا عكس ما قاله يوسف.",
+        ],
       },
       {
         id: "q3",
@@ -268,6 +351,12 @@ export const lessonB112: Lesson = {
         correctIndex: 0,
         explanation: "قالت لينا: Während der Bauarbeiten ist die Strecke gesperrt.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Wegen des Regens» لم تذكر لينا المطر كسبب للإغلاق.",
+          "«Trotz des Verkehrs» لم تذكر لينا ذلك كسبب.",
+          "«Um zu sparen» لم تذكرها لينا كسبب للإغلاق.",
+        ],
       },
     ],
   },
@@ -339,6 +428,12 @@ export const lessonB112: Lesson = {
       correctIndex: 0,
       explanation: "الفاعل واحد (أنا أوفّر، أنا أشتري) ⇒ um … zu.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«damit … zu» غير صحيحة، لأن damit يحتاج جملة كاملة مع فعل مصرّف، وليس مصدراً مع zu.",
+        "«weil … zu» غير صحيحة، لأن weil لا تُستعمل مع zu.",
+        "«trotz … zu» غير صحيحة، لأن trotz حرف جر ولا تُستعمل مع zu.",
+      ],
     },
     {
       id: "e2",
@@ -349,6 +444,12 @@ export const lessonB112: Lesson = {
       correctIndex: 0,
       explanation: "الفاعل مختلف (الأم تعمل، الأطفال يدرسون) ⇒ damit.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«um» هنا تصلح لجملة الغاية بعد الفاصلة، لكن الجواب المعتمد damit لأن الجملة تتبعها جملة كاملة بفعل مصرّف.",
+        "«wegen» تعني بسبب، ولا تناسب الغاية في الجملة.",
+        "«während» تعني أثناء، ولا تناسب الجملة.",
+      ],
     },
     {
       id: "e3",
@@ -366,7 +467,7 @@ export const lessonB112: Lesson = {
       id: "e4",
       type: "word-ordering",
       instructionAr: "رتّب الجملة:",
-      tokens: ["Ich", "früh", "auf", "stehe", "um", "pünktlich", "zu", "sein", ","],
+      tokens: ["Ich", "früh", "auf", "stehe", "um", "pünktlich", "zu", "sein", ",", "."],
       correctSentence: "Ich stehe früh auf, um pünktlich zu sein.",
       explanation: "الفعل المنفصل في الجملة الرئيسية (stehe … auf)، ثم جملة الغرض بـ um … zu.",
       errorType: "word-order",
@@ -375,7 +476,7 @@ export const lessonB112: Lesson = {
       id: "e5",
       type: "error-correction",
       instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Ich erkläre es langsam, um du mich zu verstehen.",
+      wrongSentence: "Ich erkläre es langsam, um du mich verstehst.",
       wrongWord: "um",
       correctWord: "damit",
       options: ["damit", "um", "weil", "trotz"],
@@ -403,12 +504,18 @@ export const lessonB112: Lesson = {
       correctIndex: 0,
       explanation: "الفعل المنفصل einkaufen: تدخل zu بين البادئة والجذر ⇒ einzukaufen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«zu einkaufen» ترتيب خاطئ؛ الصيغة الصحيحة einzukaufen.",
+        "«einkaufen zu» ترتيب خاطئ؛ zu يدخل داخل الفعل المتصل.",
+        "«zu kaufen ein» ترتيب خاطئ؛ الفعل المنفصل يُكتب متصلاً مع zu.",
+      ],
     },
     {
       id: "e8",
       type: "error-correction",
       instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Trotz der Regen gehen wir spazieren.",
+      wrongSentence: "Trotz der Regens gehen wir spazieren.",
       wrongWord: "der",
       correctWord: "des",
       options: ["des", "der", "dem", "den"],
@@ -424,12 +531,18 @@ export const lessonB112: Lesson = {
       correctIndex: 0,
       explanation: "weil + جملة ⇒ wegen + اسم في المضاف إليه.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Weil des Regens» غير صحيحة؛ حرف الجر wegen هو الذي يناسب هذه الجملة.",
+        "«Wegen es regnet» غير صحيحة؛ بعد wegen نستعمل اسماً بحالة الجر، لا جملة كاملة.",
+        "«Damit des Regens» غير صحيحة؛ damit تربط جملة غاية، ولا تناسب هذا التحويل.",
+      ],
     },
     {
       id: "e10",
       type: "word-ordering",
       instructionAr: "رتّب الجملة:",
-      tokens: ["Wir", "gehen", "los", "früh", "damit", "wir", "den", "Zug", "erreichen", ","],
+      tokens: ["Wir", "gehen", "los", "früh", "damit", "wir", "den", "Zug", "erreichen", ",", "."],
       correctSentence: "Wir gehen früh los, damit wir den Zug erreichen.",
       explanation: "damit جملة تابعة: الفعل المصرَّف (erreichen) في النهاية.",
       errorType: "word-order",
@@ -486,17 +599,23 @@ export const lessonB112: Lesson = {
       correctIndex: 0,
       explanation: "um … zu: بلا فاعل، وzu تسبق المصدر في النهاية.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Ich gehe früh, um ich pünktlich bin.» ترتيب خاطئ؛ مع um … zu لا نكرر الفاعل في جملة مصدرية.",
+        "«Ich gehe früh, um zu pünktlich sein.» ترتيب خاطئ؛ zu يأتي قبل الفعل sein وليس قبل الصفة.",
+        "«Ich gehe früh, damit zu pünktlich sein.» damit لا تستعمل مع zu-Infinitiv.",
+      ],
     },
     {
       id: "e15",
       type: "error-correction",
       instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Die Eltern sparen, um ihre Kinder zu studieren.",
+      wrongSentence: "Die Eltern sparen, um ihre Kinder studieren können.",
       wrongWord: "um",
       correctWord: "damit",
       options: ["damit", "um", "weil", "während"],
       explanation:
-        "الفاعل مختلف (الوالدان يوفّران، الأطفال يدرسون) ⇒ damit مع جملة تابعة: … damit ihre Kinder studieren.",
+        "الفاعل مختلف (الوالدان يوفّران، الأطفال يدرسون) ⇒ damit مع جملة تابعة: … damit ihre Kinder studieren können.",
       errorType: "grammar",
     },
   ],
@@ -511,12 +630,12 @@ export const lessonB112: Lesson = {
       {
         wrong: "Ich spreche laut, um du mich zu hören.",
         right: "Ich spreche laut, damit du mich hörst.",
-        whyAr: "اختلاف الفاعل يوجب damit؛ وهو أشيع خطأ عربي في هذا الباب لأنّ «لكي» واحدة في العربية.",
+        whyAr: "اختلاف الفاعل يوجب damit، وهذا خلط محتمل للناطق بالعربية لأنّ «لكي» واحدة في العربية.",
       },
       {
         wrong: "wegen dem Wetter (في الكتابة)",
         right: "wegen des Wetters",
-        whyAr: "المعيار المكتوب Genitiv؛ صيغة Dativ محكية شائعة لكنها تُحسب خطأً في الامتحان.",
+        whyAr: "المعيار المكتوب Genitiv؛ وصيغة Dativ أقل معيارية في الكتابة.",
       },
       {
         wrong: "während die Pause",
@@ -530,9 +649,9 @@ export const lessonB112: Lesson = {
       "مذكّر ومحايد: des + s لاصقة. مؤنّث وجمع: der نظيفة.",
     ],
     culturalNote: {
-      title: "لماذا يسألك الألمان دائماً «warum»؟",
+      title: "لماذا يُسأل المتحدث عن هدفه؟",
       content:
-        "في المقابلات الرسمية وطلبات الإقامة والدراسة يُتوقّع منك تبرير هدفك صراحةً: Warum möchten Sie hier arbeiten? الجواب المقنع يستخدم um … zu وdamit لا «لأنني أحبّ ألمانيا». صياغة الهدف بدقّة تُقرأ ثقافياً كعلامة جدّية وتخطيط — وهي مهارة تُقيَّم في امتحان B1 الشفوي.",
+        "في المحادثات الرسمية قد يُسأل المتحدث عن هدفه، مثل: Warum möchten Sie hier arbeiten؟ الإجابة الواضحة بـ um … zu أو damit تبدو أدقّ من جملة عامة مثل «لأنني أحبّ ألمانيا». ولا يقيس هذا الدرس أي أداء في مقابلة رسمية.",
     },
   },
 
@@ -546,6 +665,12 @@ export const lessonB112: Lesson = {
       correctIndex: 0,
       explanation: "الفاعل واحد ⇒ um … zu.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«damit … zu» غير صحيحة، لأن damit لا تُستعمل مع zu.",
+        "«wegen … zu» غير صحيحة، لأن wegen حرف جر ولا تربط جملة.",
+        "«trotz … zu» غير صحيحة، لأن trotz حرف جر ولا تُستعمل مع zu.",
+      ],
     },
     {
       id: "m2",
@@ -556,6 +681,12 @@ export const lessonB112: Lesson = {
       correctIndex: 0,
       explanation: "الفاعل مختلف (أنا أتصل، أنت تعلم) ⇒ damit.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«um zu» تستعمل مع مصدر بلا فاعل، ولا تناسب جملة كاملة بعد الفاصلة.",
+        "«trotz» تعني رغم، وهذا عكس المعنى المطلوب.",
+        "«aufgrund» تعني بسبب، ولا تناسب الغاية في الجملة.",
+      ],
     },
     {
       id: "m3",
@@ -572,7 +703,7 @@ export const lessonB112: Lesson = {
       id: "m4",
       type: "word-ordering",
       instructionAr: "رتّب الجملة:",
-      tokens: ["Sie", "spart", "Geld", "um", "eine", "Reise", "zu", "machen", ","],
+      tokens: ["Sie", "spart", "Geld", "um", "eine", "Reise", "zu", "machen", ",", "."],
       correctSentence: "Sie spart Geld, um eine Reise zu machen.",
       explanation: "um + المفعول + zu + المصدر في النهاية.",
       errorType: "word-order",

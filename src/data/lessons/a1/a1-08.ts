@@ -156,6 +156,40 @@ export const lessonA108: Lesson = {
     ],
   },
 
+  review: [
+    {
+      id: "r1",
+      type: "multiple-choice",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-07 — الأعداد من صفر إلى ألف): اختر الكتابة الصحيحة.",
+      questionDe: "Wie sagt man „25“ auf Deutsch?",
+      questionAr: "كيف تكتب 25 بالألمانية؟",
+      options: ["fünfundzwanzig", "fünfzig", "fünfzehn", "zweiundzwanzig"],
+      correctIndex: 0,
+      explanation: "25 = fünfundzwanzig (الوحدات أولاً ثم العشرات).",
+      errorType: "vocabulary",
+    },
+    {
+      id: "r2",
+      type: "fill-blank",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-06 — الفعل الجهازي können): أكمل الجملة.",
+      template: "Ich ___ gut schwimmen.",
+      blanks: [{ correct: "kann", options: ["kann", "kannst", "können", "konnte"] }],
+      explanation: "مع ich: Ich kann gut schwimmen.",
+      errorType: "conjugation",
+    },
+    {
+      id: "r3",
+      type: "error-correction",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-06 — تغيير حرف المد في الفعل): افحص الجملة؛ اختر التصحيح، أو «لا خطأ» إن كانت سليمة.",
+      wrongSentence: "Er essen gern Pizza.",
+      wrongWord: "essen",
+      correctWord: "isst",
+      options: ["isst", "essen", "esse", "ist"],
+      explanation: "مع er يصبح essen إلى isst.",
+      errorType: "conjugation",
+    },
+  ],
+
   theory: [
     {
       id: "t1",
@@ -271,7 +305,7 @@ export const lessonA108: Lesson = {
         },
         {
           de: "Wir tragen alle Jeans.",
-          ar: "كلّنا نرتدي جينزاً. (جمع ⇐ الجذر يعود a)",
+          ar: "كلّنا نرتدي جينزاً. (جمع ⇐ tragen بلا تغيير في الجذر)",
         },
         {
           de: "Wie findest du diese Schuhe? — Ich finde sie zu teuer.",
@@ -557,7 +591,7 @@ export const lessonA108: Lesson = {
       "تُجرّب أميرة السترة. للأسف هي صغيرة جداً. «السترة لا تناسب مقاسي» تقول أميرة حزينة. تأتي بائعة وتسأل: «ما مقاسك؟» — «مقاس 40» تجيب أميرة. تُحضِر البائعة السترة مرة أخرى، هذه المرة بمقاس 40.",
       "الآن تناسبها السترة تماماً. لكنّ السعر ما يزال مرتفعاً. «ألا تعجبك السترة؟» تسأل لينا. «بلى، تعجبني كثيراً» تقول أميرة. «لكن المبلغ أكبر مما أستطيع دفعه.»",
       "عندئذٍ ترى لينا معطفاً. لونه رماديّ. يكلّف المعطف 45 يورو فقط. «هذا المعطف دافئ وغير غالٍ» تقول. تُجرّب أميرة المعطف. يناسبها ويعجبها أيضاً. اللون رماديّ لا أزرق؛ والرماديّ يعجب أميرة أيضاً.",
-      "تأخذ أميرة المعطف. عند الصندوق تدفع خمسين يورو وتستلم خمسة يوروهات. في الخارج الجوّ بارد. ترتدي أميرة معطفها وتضحك: «المعطف يعجبني حقاً. وما زال معي مالٌ لفنجان قهوة!»",
+      "تأخذ أميرة المعطف. عند الصندوق تدفع خمسين يورو وتستلم خمسة يورو. في الخارج الجوّ بارد. ترتدي أميرة معطفها وتضحك: «المعطف يعجبني حقاً. وما زال معي مالٌ لفنجان قهوة!»",
     ],
     glossary: [
       {
@@ -744,7 +778,7 @@ export const lessonA108: Lesson = {
           {
             speaker: "Verkäuferin",
             de: "Guten Tag! Kann ich Ihnen helfen?",
-            ar: "نهارك سعيد! هل أستطيع مساعدتك؟",
+            ar: "طاب يومك! هل أستطيع مساعدتك؟",
           },
           {
             speaker: "Mona",
@@ -1137,9 +1171,9 @@ export const lessonA108: Lesson = {
       type: "multiple-choice",
       instructionAr: "أيّ فعل يناسب المعنى؟ (الحديث عن المقاس لا الذوق)",
       questionDe: "Das Hemd ist zu klein. Es ___ mir nicht.",
-      options: ["passt", "gefällt", "steht", "trägt"],
+      options: ["passt", "kostet", "trägt", "zählt"],
       correctIndex: 0,
-      explanation: "السؤال يقيّد المعنى بالمقاس، لذا الإجابة المقصودة passen. ويمكن أن تكون gefallen صحيحة في جملة أخرى إذا كان المقصود الإعجاب؛ فهي لا تصف المقاس هنا.",
+      explanation: "السؤال يتعلق بالمقاس، لذا الفعل المناسب passen (يناسب). الأفعال الأخرى لا تصف المقاس.",
       errorType: "vocabulary",
     },
     {

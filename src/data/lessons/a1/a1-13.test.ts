@@ -33,7 +33,7 @@ const practiceAnswers: Record<string, unknown> = {
   e9: "kein Auto",
   e10: "Am Wochenende war ich im Park.",
   e11: ["habe", "gesehen"],
-  e12: ["Am", "Morgen", "stehe", "ich", "um", "sieben", "auf"],
+  e12: ["Am", "Morgen", "stehe", "ich", "um", "sieben", "Uhr", "auf", "."],
   e13: "Ich hätte gern einen Kaffee, bitte.",
   e14: "war ich",
   e15: [

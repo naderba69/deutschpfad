@@ -249,10 +249,10 @@ function LessonPrevNext({ lessonId }: { lessonId: string }) {
           <ArrowRight className="h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" aria-hidden="true" />
           <div className="min-w-0">
             <p className="text-[11px] font-bold text-muted-foreground">الدرس السابق</p>
-            <p className="truncate text-sm font-bold">
+            <p className="break-words text-sm font-bold [overflow-wrap:anywhere]">
               <LangDe className="font-bold">{prev.titleDe}</LangDe>
             </p>
-            <p className="truncate text-xs text-muted-foreground">{prev.titleAr}</p>
+            <p className="break-words text-xs text-muted-foreground [overflow-wrap:anywhere]">{prev.titleAr}</p>
           </div>
         </Link>
       ) : (
@@ -266,10 +266,10 @@ function LessonPrevNext({ lessonId }: { lessonId: string }) {
         >
           <div className="min-w-0 text-end">
             <p className="text-[11px] font-bold text-primary">الدرس التالي — تابع المسار</p>
-            <p className="truncate text-sm font-bold">
+            <p className="break-words text-sm font-bold [overflow-wrap:anywhere]">
               <LangDe className="font-bold">{next.titleDe}</LangDe>
             </p>
-            <p className="truncate text-xs text-muted-foreground">{next.titleAr}</p>
+            <p className="break-words text-xs text-muted-foreground [overflow-wrap:anywhere]">{next.titleAr}</p>
           </div>
           <ArrowLeft className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
         </Link>
@@ -366,7 +366,6 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       (def.id !== "mediation" || (lesson.mediation && lesson.mediation.length > 0)) &&
       (def.id !== "interaction" || (lesson.interaction && lesson.interaction.length > 0)) &&
       /* ═══ نصّ القراءة: يُعرض فقط إن كُتب للدرس ═══ */
-      (def.id !== "lesetext" || !!lesson.reading) &&
       /* ═══ التعمّق: يُعرض فقط إن رُبطت بالدرس موارد رديفة ═══ */
       (def.id !== "vertiefung" || hasRelatedResources),
   );
@@ -501,13 +500,23 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
           />
         );
       case "lernkarten":
-        return <LernkartenSection flashcards={lesson.flashcards} />;
+        return <LernkartenSection lessonId={lesson.id} flashcards={lesson.flashcards} />;
       case "mediation":
         return <MediationSection tasks={lesson.mediation ?? []} />;
       case "interaction":
         return <InteractionSection tasks={lesson.interaction ?? []} />;
       case "lesetext":
-        return lesson.reading ? <LesetextSection reading={lesson.reading} lessonId={lesson.id} /> : null;
+        return lesson.reading ? (
+          <LesetextSection reading={lesson.reading} lessonId={lesson.id} />
+        ) : (
+          <div className="rounded-2xl border border-dashed p-5 text-sm leading-relaxed text-muted-foreground">
+            لا يحوي هذا الدرس نصّ قراءة مستقلاً. يمكنك تدريب القراءة على نصوص مستوى {lesson.level} من{" "}
+            <Link href="/reading" className="font-bold text-primary underline underline-offset-2">
+              مكتبة القراءة
+            </Link>
+            .
+          </div>
+        );
       case "vertiefung":
         return <VertiefungSection lessonId={lesson.id} />;
       default:
@@ -542,6 +551,11 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
           <Badge variant="secondary">
             {LEVEL_LABEL[lesson.level] ?? lesson.level}
           </Badge>
+          {LESSON_META.find((m) => m.id === lesson.id)?.estimatedMinutes && (
+            <Badge variant="outline" title="تقدير تقريبي للمتعلم الذاتي، وليس قياساً فعلياً">
+              ⏱ حوالي {LESSON_META.find((m) => m.id === lesson.id)?.estimatedMinutes} دقيقة (تقدير)
+            </Badge>
+          )}
         </div>
 
         <h1 className="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">

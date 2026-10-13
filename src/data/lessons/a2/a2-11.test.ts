@@ -238,7 +238,7 @@ describe("A2-11 lesson content audit", () => {
     expect(lessonA211.theory).toHaveLength(2);
     expect(lessonA211.pronunciation.items).toHaveLength(6);
     expect(lessonA211.pronunciation.shadowing).toHaveLength(4);
-    expect(lessonA211.flashcards).toHaveLength(12);
+    expect(lessonA211.flashcards).toHaveLength(15);
     expect(lessonA211.mediation).toHaveLength(1);
     expect(lessonA211.interaction?.[0]?.rounds).toHaveLength(2);
   });
@@ -506,7 +506,7 @@ describe("A2-11 lesson content audit", () => {
     ]);
     expect(lessonA211.listening.items.map(({ lines }) => lines.length)).toEqual([5, 5, 7]);
     expect(lessonA211.listening.items.flatMap(({ lines }) => lines.map(({ speaker, de, ar }) => ({ speaker, de, ar })))).toEqual([
-      { speaker: "Friseurin", de: "Guten Tag! Was möchten Sie?", ar: "نهارك سعيد! ماذا تريد؟" },
+      { speaker: "Friseurin", de: "Guten Tag! Was möchten Sie?", ar: "طاب يومك! ماذا تريد؟" },
       { speaker: "Sami", de: "Ich möchte mir die Haare schneiden lassen.", ar: "أريد قصّ شعري لدى الحلاق." },
       { speaker: "Friseurin", de: "Kurz oder mittellang?", ar: "هل تريده قصيراً أم بطول متوسط؟" },
       { speaker: "Sami", de: "Mittellang, bitte. Ich muss mich beeilen; ich habe um zwölf einen Termin.", ar: "بطول متوسط، من فضلك. عليّ أن أسرع؛ لديّ موعد في الثانية عشرة." },
@@ -516,7 +516,7 @@ describe("A2-11 lesson content audit", () => {
       { speaker: "Mona", de: "Ich habe gestern ein Handy gekauft, aber es funktioniert nicht.", ar: "اشتريت أمس هاتفاً لكنه لا يعمل." },
       { speaker: "Mitarbeiter", de: "Das tut mir leid. Bringen Sie es mit, wir reparieren es oder geben Ihnen ein neues.", ar: "آسف. أحضريه، وسنصلحه أو نعطيك هاتفاً جديداً." },
       { speaker: "Mona", de: "Danke! Ich freue mich, dass Sie helfen.", ar: "شكراً! يسعدني أنكم تساعدونني." },
-      { speaker: "Mitarbeiterin", de: "Guten Tag! Sie möchten sich anmelden. Hier ist ein Übungsformular.", ar: "نهارك سعيد! تودّين التسجيل؛ تفضّلي هذه استمارة تدريبية." },
+      { speaker: "Mitarbeiterin", de: "Guten Tag! Sie möchten sich anmelden. Hier ist ein Übungsformular.", ar: "طاب يومك! تودّين التسجيل؛ تفضّلي هذه استمارة تدريبية." },
       { speaker: "Mona", de: "Danke. Ich fülle es gleich aus. Nachname, Vorname, Geburtsdatum, Anschrift...", ar: "شكراً. سأملؤها فوراً: اسم العائلة، الاسم الأول، تاريخ الميلاد، العنوان..." },
       { speaker: "Mitarbeiterin", de: "Tragen Sie bitte auch das Land Ihrer Anschrift und Ihre Telefonnummer ein.", ar: "اكتبي من فضلك أيضاً بلد عنوانك ورقم هاتفك." },
       { speaker: "Mona", de: "Hier steht „Staatsangehörigkeit“. Was bedeutet das?", ar: "مكتوب هنا «الجنسية». ما معنى ذلك؟" },
@@ -761,7 +761,7 @@ describe("A2-11 lesson content audit", () => {
     expect(interaction?.rounds).toEqual([
       {
         speakerDe: "Guten Tag, wie kann ich Ihnen helfen?",
-        speakerAr: "نهارك سعيد، كيف يمكنني مساعدتكم؟",
+        speakerAr: "طاب يومك، كيف يمكنني مساعدتكم؟",
         options: [
           {
             de: "Ich habe vor einer Woche etwas bestellt, aber es ist noch nicht angekommen.",
@@ -822,6 +822,9 @@ describe("A2-11 lesson content audit", () => {
       { id: "fc10", de: "ausfüllen", ar: "يملأ (استمارة)", example: "Ich fülle das Formular aus.", exampleAr: "أملأ الاستمارة.", level: "A2" },
       { id: "fc11", de: "die Anmeldung", ar: "التسجيل/الانتساب بحسب السياق", example: "Die Anmeldung ist jetzt abgeschlossen.", exampleAr: "اكتمل التسجيل الآن.", level: "A2" },
       { id: "fc12", de: "unterschreiben", ar: "يوقّع", example: "Unterschreiben Sie hier.", exampleAr: "تفضّلوا بالتوقيع هنا (صيغة رسمية).", level: "A2" },
+      { id: "fc13", de: "die Bank", ar: "البنك", example: "Die Bank ist neben der Post.", exampleAr: "البنك بجانب مكتب البريد.", level: "A2" },
+      { id: "fc14", de: "das Geschäft", ar: "المتجر", example: "Das Geschäft ist geöffnet.", exampleAr: "المتجر مفتوح.", level: "A2" },
+      { id: "fc15", de: "bezahlen", ar: "يدفع", example: "Ich bezahle an der Kasse.", exampleAr: "أدفع عند الصندوق.", level: "A2" },
     ]);
   });
 

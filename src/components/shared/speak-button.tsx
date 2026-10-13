@@ -20,7 +20,12 @@ interface SpeakButtonProps {
   /** اسم وصول مستقل عند ضرورة إخفاء النص المرئي/المسموع قبل كشفه. */
   ariaLabel?: string;
   autoLabel?: boolean;
+  /** ملف صوت بشري مسجّل (مثل /audio/dialogues-a1/…mp3). إن تعذّر تشغيله يُستعمل صوت الجهاز. */
+  audioSrc?: string;
 }
+
+/** المقطع الحالي — حتى لا يتداخل صوتان */
+let currentClip: HTMLAudioElement | null = null;
 
 /**
  * زر الاستماع — يولّد Web Speech API (SpeechSynthesis) صوتاً ألمانياً بطلب de-DE.
@@ -34,6 +39,7 @@ export function SpeakButton({
   className,
   label,
   ariaLabel,
+  audioSrc,
 }: SpeakButtonProps) {
   const [speaking, setSpeaking] = React.useState(false);
   const [noVoice, setNoVoice] = React.useState(false);
@@ -42,6 +48,17 @@ export function SpeakButton({
     async (e: React.MouseEvent) => {
       e.preventDefault();
       e.stopPropagation();
+      if (audioSrc) {
+        try {
+          currentClip?.pause();
+          const clip = new Audio(audioSrc);
+          currentClip = clip;
+          await clip.play();
+          return;
+        } catch {
+          // لا يوجد ملف أو تعذّر التشغيل: نرجع إلى صوت الجهاز
+        }
+      }
       if (typeof window === "undefined" || !("speechSynthesis" in window)) {
         setNoVoice(true);
         globalThis.setTimeout(() => setNoVoice(false), 3000);
@@ -95,7 +112,7 @@ export function SpeakButton({
 
       window.speechSynthesis.speak(utterance);
     },
-    [text, rate],
+    [text, rate, audioSrc],
   );
 
   return (

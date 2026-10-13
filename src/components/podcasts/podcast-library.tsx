@@ -75,9 +75,6 @@ export function PodcastLibrary() {
                   </div>
                   <h3 className="mt-2 text-sm font-extrabold group-hover:text-primary">{ep.titleAr}</h3>
                   <p className="font-de mt-0.5 text-xs font-bold" dir="ltr">{ep.title}</p>
-                  <p className="mt-1.5 line-clamp-2 text-[11px] leading-relaxed text-muted-foreground" dir="ltr">
-                    {ep.script}
-                  </p>
                   <p className="mt-2 text-[11px] font-bold text-primary">{ep.questions.length} أسئلة فهم</p>
                 </button>
               ))}

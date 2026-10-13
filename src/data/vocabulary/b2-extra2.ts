@@ -749,7 +749,7 @@ export const B2_EXTRA2_VOCAB: VocabEntry[] = [
   { de: "den Fehler korrigieren", ar: "يصحح الخطأ", g: "v" },
   { de: "der Tippfehler", ar: "الخطأ المطبعي", g: "der" },
   { de: "die Verständlichkeit", ar: "الوضوح", g: "die" },
-  { de: "den rote Faden", ar: "الخيط الناظم", g: "der" },
+  { de: "den roten Faden", ar: "الخيط الناظم", g: "der" },
   { de: "die Gliederung", ar: "التقسيم/الخطة", g: "die" },
   { de: "gliedern", ar: "يقسم", g: "v" },
   { de: "den Absatz gliedern", ar: "يقسم الفقرات", g: "v" },

@@ -1,35 +1,82 @@
 import type { Lesson } from "@/types/lesson";
 
 /**
- * الدرس B1-11: المراجعة الشاملة B1 + التحضير لامتحان Goethe-B1
+ * الدرس B1-11: المراجعة الختامية B1
  * — خاتمة مستوى B1: دمج كل المهارات (استقبال + إنتاج + تفاعل + وساطة)
- * في مواقف امتحانية حقيقية، مع مراجعة تراكمية من A2 — إغلاق الوحدة b1-11 —
+ * في مواقف متنوعة — إغلاق الوحدة b1-11 —
  */
 export const lessonB111: Lesson = {
   id: "b1-11",
   unitId: "b1-11",
   level: "B1",
   order: 1,
-  titleDe: "B1 kompakt — Prüfungsvorbereitung",
-  titleAr: "B1 الشامل — التحضير للامتحان",
+  titleDe: "B1 kompakt — Abschlusswiederholung",
+  titleAr: "B1 الشامل — مراجعة ختامية",
   summary:
-    "المراجعة الختامية لمستوى B1: دمج الجمل الموصولة وGenitiv وPassiv وKonjunktiv II في مواقف حية، مع محاكاة أقسام Goethe-B1 الأربعة (قراءة، استماع، كتابة، تحدث) وتدريب على وساطة وتفاعل حقيقيين.",
+    "المراجعة الختامية لبعض قواعد B1: الجمل الموصولة وPassiv وKonjunktiv II وأدوات الربط، مع تمارين استماع وكتابة قصيرة، وعرض للوساطة والتفاعل بوصفهما تدريباً غير مقوّم.",
 
   lernziele: [
-    { id: "z1", de: "Ich kann alle B1-Strukturen sicher anwenden.", ar: "أن أطبق كل تراكيب B1 بثقة في مواقف متنوعة." },
-    { id: "z2", de: "Ich kann einen Prüfungsteil „Lesen“ bearbeiten.", ar: "أن أُنجز جزء القراءة من امتحان B1." },
-    { id: "z3", de: "Ich kann einen Prüfungsteil „Schreiben“ verfassen.", ar: "أن أكتب جزء الكتابة (رسالة/منتدى) وفق المطلوب." },
-    { id: "z4", de: "Ich kann über vertraute Themen diskutieren und meine Meinung begründen.", ar: "أن أناقش مواضيع مألوفة وأبرر رأيي." },
-    { id: "z5", de: "Ich kann Informationen zwischen Deutsch und Arabisch vermitteln (Mediation).", ar: "أن أنقل المعلومات بين الألمانية والعربية (وساطة)." },
+    {
+      id: "z1",
+      de: "Ich kann bei Relativsätzen, Konjunktiv II und den Konjunktionen damit, um ... zu und obwohl die richtige Form wählen.",
+      ar: "أن أختار الصيغة الصحيحة في الجمل الموصولة وجملة الشرط غير الواقعي وأدوات الربط (damit، um...zu، obwohl).",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["ex-b1-11-1", "ex-b1-11-2", "ex-b1-11-3", "ex-b1-11-4", "ex-b1-11-6", "mt-b1-11-1", "mt-b1-11-2"],
+        taskIds: [
+          "practice:b1-11:ex-b1-11-1",
+          "practice:b1-11:ex-b1-11-2",
+          "practice:b1-11:ex-b1-11-3",
+          "practice:b1-11:ex-b1-11-4",
+          "practice:b1-11:ex-b1-11-6",
+          "mini-test:b1-11:mt-b1-11-1",
+          "mini-test:b1-11:mt-b1-11-2",
+        ],
+        labelAr: "أجيب صحيحاً عن تمارين الجمل الموصولة والشرط وأدوات الربط (ex-1 إلى ex-4 وex-6 وmt-1 وmt-2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z2",
+      de: "Ich kann in einer kurzen Nachricht Termin und mitzubringende Unterlagen verstehen.",
+      ar: "أن أفهم من رسالة قصيرة الموعد والمستندات المطلوب إحضارها.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["lsq-b1-11-1", "lsq-b1-11-2"],
+        taskIds: ["listening:ls-b1-11-1:lsq-b1-11-1", "listening:ls-b1-11-1:lsq-b1-11-2"],
+        labelAr: "أجيب صحيحاً عن السؤالين بعد الاستماع إلى الرسالة، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z3",
+      de: "Ich kann einen Satz ins Passiv setzen und einen Satz mit nachdem schriftlich bilden.",
+      ar: "أن أحوّل جملة إلى المجهول، وأكوّن جملة بـ nachdem كتابةً.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["wr-b1-11-1", "wr-b1-11-2"],
+        taskIds: ["writing:b1-11:wr-b1-11-1", "writing:b1-11:wr-b1-11-2"],
+        labelAr: "أكتب التحويلين بالصيغة المقبولة (wr-1 وwr-2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+      },
+    },
+    {
+      id: "z4",
+      de: "Ich kann die Wendungen Meiner Meinung nach und einerseits ... andererseits erkennen und richtig einsetzen.",
+      ar: "أن أعرف عبارتي الرأي والموازنة (Meiner Meinung nach، einerseits... andererseits) وأستعملهما في موضعهما.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["ex-b1-11-5", "ex-b1-11-7"],
+        taskIds: ["practice:b1-11:ex-b1-11-5", "practice:b1-11:ex-b1-11-7"],
+        labelAr: "أجيب صحيحاً عن معنى العبارة (ex-5) واختيار أداة الربط (ex-7)، دون كشف الحل.",
+      },
+    },
   ],
 
   einfuehrung: {
     motivatingQuestionAr:
-      "قبل امتحان B1: هل تستطيع قراءة إعلان سكن، الرد على بريد رسمي، والمشاركة في نقاش عن العمل — في جلسة واحدة؟ هذا الدرس يجمّع كل ما تعلمته ويختبرك فعلياً.",
-    motivatingQuestionDe: "Bist du bereit für die B1-Prüfung?",
+      "قبل المراجعة الختامية: هل تستطيع قراءة إعلان سكن، الرد على بريد رسمي، والمشاركة في نقاش عن العمل — في جلسة واحدة؟ هذا الدرس يجمع ما تعلمته ويعطيك تمارين لتطبيقه.",
+    motivatingQuestionDe: "Wie sicher bist du bei den B1-Strukturen?",
     contextAr:
-      "امتحان Goethe-B1 يتكون من 4 أجزاء: القراءة (65 دقيقة)، الاستماع (~40)، الكتابة (60)، والتحدث (~15 مع تحضير). هذا الدرس يمرّ بك على كل جزء بنمط تدريبي تجريبي.",
-    contextDe: "Lesen, Hören, Schreiben, Sprechen — vier Teile, eine Prüfung.",
+      "هذا الدرس مراجعة للبنى التي درستها في B1: الجمل الموصولة، والشرط غير الواقعي، والمجهول، وأدوات الربط. يتضمن تمارين استماع وكتابة قصيرة، ولا يتضمن أي توقيت أو محاكاة لامتحان.",
+    contextDe: "Wiederholung der B1-Strukturen mit Übungen zum Hören und Schreiben.",
     connectionToPreviousAr: "تراكم كل ما تعلمته من b1-01 (الجمل الموصولة) حتى b1-10 (الجمل الشرطية) — الآن وقت الدمج.",
     activateVocabulary: [
       { de: "die Prüfung", ar: "الامتحان" },
@@ -40,17 +87,51 @@ export const lessonB111: Lesson = {
     ],
   },
 
+  review: [
+    {
+      id: "r1",
+      type: "multiple-choice",
+      instructionAr: "مراجعة منتقاة من B1 (درس b1-02 — الماضي البسيط Präteritum): اختر الشكل الصحيح.",
+      questionDe: "Gestern ___ ich nach Hause.",
+      questionAr: "أمس ذهبت إلى البيت.",
+      options: ["ging", "gehe", "gegangen", "geht"],
+      correctIndex: 0,
+      explanation: "في الماضي البسيط: ich ging.",
+      errorType: "conjugation",
+    },
+    {
+      id: "r2",
+      type: "fill-blank",
+      instructionAr: "مراجعة منتقاة من B1 (درس b1-01 — المفعول بالإضافة Genitiv): أكمل الجملة.",
+      template: "Das ist das Auto ___ Vaters.",
+      blanks: [{ correct: "meines", options: ["meines", "meins", "meinem", "meiner"] }],
+      explanation: "المذكر في الجر بالإضافة ينتهي بـ -es: meines Vaters.",
+      errorType: "case",
+    },
+    {
+      id: "r3",
+      type: "error-correction",
+      instructionAr: "مراجعة منتقاة من B1 (درس b1-07 — جملة الزمن als): افحص الجملة؛ اختر التصحيح، أو «لا خطأ» إن كانت سليمة.",
+      wrongSentence: "Als ich Kind war, spiele ich viel.",
+      wrongWord: "spiele",
+      correctWord: "spielte",
+      options: ["spielte", "spiele", "spielt", "spielen"],
+      explanation: "في جملة الزمن الماضي مع als نستخدم الماضي البسيط: spielte.",
+      errorType: "conjugation",
+    },
+  ],
+
   theory: [
     {
       id: "t1",
       titleAr: "دمج تراكيب B1 — جدول الإتقان",
       titleDe: "Alle B1-Strukturen im Überblick",
       explanationAr:
-        "امتحان B1 لا يسأل عن القاعدة بمعزل — يختبر قدرتك على استخدامها في مهمة. الجدول التالي يجمّع البنى الأساسية التي يجب أن تظهر في إنتاجك: الجمل الموصولة (der Mann, der...)، Genitiv (die Meinung des Experten)، المبني للمجهول (Das wird gemacht)، صيغة الشرط (Ich würde...)، والجمل الثانوية (weil, obwohl, nachdem, bevor, damit, um...zu).",
+        "القاعدة تُستعمل داخل الجملة والنص، لا معزولةً؛ لذلك تُدرَّب هنا في جمل كاملة. الجدول التالي يجمّع البنى الأساسية التي يجب أن تظهر في إنتاجك: الجمل الموصولة (der Mann, der...)، Genitiv (die Meinung des Experten)، المبني للمجهول (Das wird gemacht)، صيغة الشرط (Ich würde...)، والجمل الثانوية (weil, obwohl, nachdem, bevor, damit, um...zu).",
       whyAr:
-        "لماذا؟ لأن المقيّم في Goethe-B1 يبحث عن «تنوع بنيوي» (strukturelle Vielfalt): نص بدون جمل موصولة أو ثانوية يبدو مستوًى A2 مهما كانت المفردات. الدمج هو ما يرفعك إلى B1.",
+        "لماذا نجمعها؟ لأن الجمل المركبة تُظهر قدرتك على ربط الأفكار بدل سرد جمل قصيرة متتالية، وهذا ما يتدرّب عليه الدرس.",
       table: {
-        title: "البنى الأساسية + مثال امتحاني",
+        title: "البنى الأساسية + مثال تطبيقي",
         columns: ["البنية", "مثال"],
         rows: [
           { label: "جملة موصولة", cells: ["Der Mann, der mir geholfen hat, war sehr nett."] },
@@ -66,41 +147,27 @@ export const lessonB111: Lesson = {
         { de: "Die Firma, in der ich arbeite, ist international.", ar: "الشركة التي أعمل فيها دولية." },
       ],
       comparisonWithArabic:
-        "العربية تضع الصلة بـ«الذي/التي»، والألمانية بـ der/die/das حسب الجنس والحالة — والمهم أن الفعل في نهاية الجملة الثانوية الألمانية، بينما العربية تبقيه في موضعه.",
+        "في العربية يأتي الفعل بعد الاسم الموصول «الذي» مباشرة. في الألمانية يذهب الفعل إلى نهاية الجملة النسبية، والضمير (der/die/das) يتبع جنس الاسم الذي يصفه وحالته.",
       eselsbruecke:
-        "«الفعل في النهاية = جملة ثانوية» — كلما رأيت weil/obwohl/dass/der، توقع الفعل في آخر الجملة.",
+        "«الفعل في النهاية = جملة ثانوية» — بعد weil وobwohl وdass والضمير الموصول (der/die/das) يذهب الفعل إلى آخر الجملة الثانوية.",
       commonMistakes: [
         { wrong: "Der Mann, der hat mir geholfen", right: "Der Mann, der mir geholfen hat", whyAr: "في الجملة الموصولة ينقلب الفعل إلى النهاية ولا يبقى في المركز الثاني." },
       ],
     },
     {
       id: "t2",
-      titleAr: "تكتيك أقسام الامتحان الأربعة",
-      titleDe: "Prüfungstaktik für die vier Teile",
-      explanationAr:
-        "القراءة: اقرأ السؤال قبل النص وابحث عن الكلمات المفتاحية (60-70% من الإجابات تعتمد على مرادفات). الاستماع: استمع مرتين — الأولى للفكرة العامة والثانية للتفاصيل. الكتابة: خطط 3 دقائق ثم اكتب 120-150 كلمة ببنية واضحة (مقدمة، حجتان، خاتمة) مع روابط. التحدث: قدّم نفسك، صف صورة، وناقش موضوعاً — استخدم «Meiner Meinung nach» و«Einerseits...andererseits».",
-      whyAr:
-        "لماذا؟ لأن إدارة الوقت تفشل أكثر المتعلمين: من يقرأ النص كاملاً أولاً يضيع 10 دقائق. التكتيك الصحيح: السؤال أولاً، ثم المسح السريع.",
-      table: {
-        title: "الوقت الإرشادي لكل جزء",
-        columns: ["الجزء", "الوقت", "الاستراتيجية"],
-        rows: [
-          { label: "Lesen", cells: ["65 دقيقة", "سؤال ← مسح ← إجابة"] },
-          { label: "Hören", cells: ["~40 دقيقة", "مرة عامة + مرة تفاصيل"] },
-          { label: "Schreiben", cells: ["60 دقيقة", "خطط 3 د · اكتب · راجع"] },
-          { label: "Sprechen", cells: ["15+15 دقيقة", "تحدث بثقة حتى مع الأخطاء"] },
-        ],
-      },
+      titleAr: "خطوات حل تمارين الدرس",
+      titleDe: "Vorgehen bei den Übungen",
+      explanationAr: "اقرأ السؤال أولاً، ثم الجملة كاملة، ثم اختر شكل الفعل أو أداة الربط الذي يطابق المعنى. في الاستماع اقرأ السؤال قبل الحوار، ثم أجب عنه. وفي الترتيب ابحث عن الفعل المصرَّف أولاً، ثم عن نهاية الجملة الثانوية.",
+      whyAr: "لأن أكثر الأخطاء في تمارين هذا الدرس تقع في أداة الربط أو موضع الفعل، لا في المفردات.",
       examples: [
-        { de: "Zuerst lese ich die Fragen, dann den Text.", ar: "أولاً أقرأ الأسئلة ثم النص." },
-        { de: "Meiner Meinung nach ist das eine gute Lösung.", ar: "في رأيي هذا حل جيد." },
+        { de: "Zuerst lese ich die Frage, dann den Satz.", ar: "أولاً أقرأ السؤال، ثم الجملة." },
+        { de: "Ich spare Geld, damit ich ein Auto kaufen kann.", ar: "أدّخر المال لأشتري سيارة." },
       ],
-      comparisonWithArabic:
-        "امتحان العربية الرسمي قد يركّز على القواعد المعزولة، بينما Goethe-B1 يختبر المهارات في مهمات — الفرق: «ماذا تفعل باللغة» لا «ماذا تعرف عنها».",
-      eselsbruecke:
-        "«س-م-ا-ك»: سؤال ثم مسح ثم إجابة ثم كرر — القراءة الفعالة.",
+      comparisonWithArabic: "لا يوجد تقابل مباشر هنا؛ الفكرة إجرائية: تغيير أداة الربط يغيّر موضع الفعل في الجملة، فاقرأ الجملة كاملة قبل الاختيار.",
+      eselsbruecke: "«السؤال أولاً، ثم الجملة كاملة»: قاعدة واحدة تكفي لأغلب تمارين هذا الدرس.",
       commonMistakes: [
-        { wrong: "قراءة النص كاملاً قبل السؤال", right: "قراءة السؤال ثم مسح النص", whyAr: "توفير الوقت وتركيز الانتباه على المطلوب." },
+        { wrong: "قراءة النص كاملاً قبل السؤال", right: "قراءة السؤال أولاً ثم الجملة", whyAr: "تركيز الانتباه على المطلوب يوفر الوقت ويقلل الأخطاء." },
       ],
     },
   ],
@@ -111,7 +178,7 @@ export const lessonB111: Lesson = {
         id: "ls-b1-11-1",
         title: "رسالة هاتفية من مكتب العمل",
         lines: [
-          { speaker: "الموظف", de: "Guten Tag, Frau Ben Ali. Hier ist das Arbeitsamt.", ar: "نهارك سعيد سيدة بن علي. هنا مكتب العمل." },
+          { speaker: "الموظف", de: "Guten Tag, Frau Ben Ali. Hier ist das Arbeitsamt.", ar: "طاب يومك سيدة بن علي. هنا مكتب العمل." },
           { speaker: "الموظف", de: "Ihr Termin für das Beratungsgespräch wurde auf Donnerstag, den 15., um 14 Uhr verschoben.", ar: "موعد جلسة الاستشارة أُجل إلى الخميس 15 الساعة 14." },
           { speaker: "الموظف", de: "Bitte bringen Sie Ihren Lebenslauf und die Zeugnisse mit. Wir sehen uns dann!", ar: "يرجى إحضار سيرتك الذاتية والشهادات. نراك حينها!" },
         ],
@@ -129,6 +196,11 @@ export const lessonB111: Lesson = {
         correctIndex: 0,
         errorType: "grammar",
         explanation: "الموظف قال: Donnerstag, den 15., um 14 Uhr.",
+        optionExplanations: [
+          undefined,
+          "«Am Freitag um 9 Uhr» ليس الموعد الجديد؛ الموعد أُجل إلى الخميس الساعة 14.",
+          "«Am Montag» لا تذكر الموعد الجديد في الرسالة.",
+        ],
       },
       {
         type: "multiple-choice",
@@ -141,6 +213,11 @@ export const lessonB111: Lesson = {
         correctIndex: 0,
         errorType: "vocabulary",
         explanation: "bringen Sie Ihren Lebenslauf und die Zeugnisse mit.",
+        optionExplanations: [
+          undefined,
+          "«Ein Geschenk» لم تطلب الرسالة إحضار هدية.",
+          "«Nichts» تنفي ما طُلب، والرسالة تطلب إحضار أوراق.",
+        ],
       },
     ],
   },
@@ -165,7 +242,7 @@ export const lessonB111: Lesson = {
       type: "transformation",
       instructionAr: "حوّل الجملة إلى المبني للمجهول (Passiv)",
       prompt: "Man baut das neue Krankenhaus in unserer Stadt.",
-      acceptedAnswers: ["Das neue Krankenhaus wird in unserer Stadt gebaut.", "Das Krankenhaus wird in unserer Stadt gebaut."],
+      acceptedAnswers: ["Das neue Krankenhaus wird in unserer Stadt gebaut."],
       sampleAnswer: "Das neue Krankenhaus wird in unserer Stadt gebaut.",
       hint: "Passiv = werden + Partizip II. المفعول يصبح فاعلاً.",
       explanation: "Man baut → wird gebaut. «Man» يحذف في المجهول.",
@@ -176,7 +253,7 @@ export const lessonB111: Lesson = {
       type: "transformation",
       instructionAr: "حوّل إلى جملة ثانوية مع nachdem",
       prompt: "Ich habe gegessen. Dann bin ich spazieren gegangen.",
-      acceptedAnswers: ["Nachdem ich gegessen hatte, bin ich spazieren gegangen.", "Nachdem ich gegessen habe, bin ich spazieren gegangen."],
+      acceptedAnswers: ["Nachdem ich gegessen hatte, bin ich spazieren gegangen."],
       sampleAnswer: "Nachdem ich gegessen hatte, bin ich spazieren gegangen.",
       hint: "nachdem + Plusquamperfekt في الثانوية، والماضي البسيط في الرئيسية.",
       explanation: "الحدث الأسبق = Plusquamperfekt (hatte gegessen).",
@@ -225,6 +302,11 @@ export const lessonB111: Lesson = {
       correctIndex: 0,
       explanation: "في الجملة الموصولة الفعل في النهاية: der mir geholfen hat.",
       errorType: "word-order",
+      optionExplanations: [
+        undefined,
+        "«Der Mann, der hat mir geholfen, ist nett.» الفعل المساعد في غير موضعه، ولا يصح في الجملة الموصولة.",
+        "«Der Mann, der hat geholfen mir, ist nett.» ترتيب الكلمات خاطئ داخل الجملة الموصولة.",
+      ],
     },
     {
       id: "ex-b1-11-5",
@@ -235,6 +317,11 @@ export const lessonB111: Lesson = {
       correctIndex: 0,
       explanation: "Meiner Meinung nach = في رأيي (تعبير أساسي في النقاش).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«في الواقع» تقابل in Wirklichkeit، وليس Meiner Meinung nach.",
+        "«من ناحية أخرى» تقابل andererseits أو auf der anderen Seite، وليس Meiner Meinung nach.",
+      ],
     },
     {
       id: "ex-b1-11-6",
@@ -245,6 +332,26 @@ export const lessonB111: Lesson = {
       correctIndex: 0,
       explanation: "Obwohl + جملة ثانوية، والرئيسية فعلها في المركز الثاني: gingen.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«gehen» صيغة المصدر، ولا تناسب الفعل المصرّف مع wir في الماضي.",
+        "«gegangen» Partizip II، ولا تناسب الفعل المصرّف في الماضي البسيط.",
+      ],
+    },
+    {
+      id: "ex-b1-11-7",
+      type: "multiple-choice",
+      instructionAr: "اختر أداة الربط المناسبة",
+      questionDe: "Einerseits ist es teuer, ___ ist es gut.",
+      options: ["andererseits", "damit", "nachdem"],
+      correctIndex: 0,
+      explanation: "einerseits ... andererseits: من ناحية ... ومن ناحية أخرى.",
+      errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«damit» تعني لكي، ولا تناسب التقابل هنا.",
+        "«nachdem» تعني بعد أن، ولا تناسب التقابل هنا.",
+      ],
     },
   ],
 
@@ -262,18 +369,18 @@ export const lessonB111: Lesson = {
       },
       {
         wrong: "Nachdem ich gegessen habe, ich bin gegangen.",
-        right: "Nachdem ich gegessen habe, bin ich gegangen.",
+        right: "Nachdem ich gegessen hatte, bin ich gegangen.",
         whyAr: "الجملة الرئيسية بعد الثانوية تبدأ بالفعل: bin ich gegangen.",
       },
     ],
     eselsbruecken: [
       "«الفعل في نهاية الثانوية، وبداية الرئيسية» — القاعدة الذهبية لترتيب الجمل.",
-      "«حرفان = حركتان»: nachdem + Perfekt/Plusquamperfekt دائماً.",
-      "«Meiner Meinung nach» تفتح أي نقاش B1 — احفظها كوحدة واحدة.",
+      "«nachdem = الحدث الأسبق»: الفعل الأسبق يأخذ Plusquamperfekt (hatte gegessen).",
+      "«Meiner Meinung nach» تعبّر عن رأيك الشخصي — احفظها كوحدة واحدة.",
     ],
     culturalNote: {
-      title: "امتحان Goethe-B1",
-      content: "Goethe-Zertifikat B1 يتكون من 4 أجزاء ويُقيَّم إجمالاً (ناجح/راسب). لا يوجد قسم «قواعد» مستقل — القواعد تُقيَّم داخل المهارات. الحد الأدنى للنجاح عادة 60% من إجمالي النقاط، ويشترط أحياناً نسبة دنيا في التحدث. هذا الدرس تدريب تجريبي — الامتحان الرسمي لدى Goethe-Institut.",
+      title: "حدود هذا الدرس",
+      content: "هذا الدرس تدريب داخل التطبيق. لا يمنح شهادة، ولا يحل محل أي امتحان رسمي، ولا يعرض توقيتاً أو معايير نجاح. الوساطة والتفاعل فيه تدريبيان غير مقوّمين.",
     },
   },
 
@@ -291,6 +398,11 @@ export const lessonB111: Lesson = {
       correctIndex: 0,
       explanation: "die Frau مؤنث → die.",
       errorType: "article",
+      optionExplanations: [
+        undefined,
+        "«Die Frau, der dort steht» الحالة خاطئة؛ الفاعل مؤنث ويحتاج die.",
+        "«Die Frau, das dort steht» الأداة خاطئة؛ Frau مؤنث ويحتاج die.",
+      ],
     },
     {
       id: "mt-b1-11-2",
@@ -308,19 +420,51 @@ export const lessonB111: Lesson = {
       questionDe: "Was bedeutet „die Anmeldung“?",
       options: ["التسجيل", "الامتحان", "النجاح"],
       correctIndex: 0,
-      explanation: "die Anmeldung = التسجيل (مهم لامتحانات Goethe).",
+      explanation: "die Anmeldung = التسجيل.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«الامتحان» تقابل Prüfung، وليس Anmeldung.",
+        "«النجاح» تقابل Erfolg، وليس Anmeldung.",
+      ],
+    },
+    {
+      id: "mt-b1-11-4",
+      type: "multiple-choice",
+      instructionAr: "اختر الصيغة الصحيحة (تمنٍّ في الحاضر)",
+      questionDe: "Ich wünschte, ich ___ mehr Zeit.",
+      options: ["hätte", "habe", "hatte"],
+      correctIndex: 0,
+      explanation: "Konjunktiv II للتمنّي: ich hätte = لو كان لديّ.",
+      errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«habe» صيغة المضارع، ولا تناسب تمني الحال غير الواقع.",
+        "«hatte» صيغة الماضي، ولا تناسب تمني الحال غير الواقع.",
+      ],
+    },
+    {
+      id: "mt-b1-11-5",
+      type: "fill-blank",
+      instructionAr: "أكمل بصيغة المبني للمجهول في المضارع",
+      template: "Das Essen ___ gerade gekocht.",
+      blanks: [{ correct: "wird", options: ["wird", "ist", "hat"] }],
+      explanation: "المبني للمجهول في المضارع = werden + اسم المفعول (wird gekocht).",
+      errorType: "grammar",
     },
   ],
 
   flashcards: [
     { id: "fc-b1-11-1", de: "die Prüfung bestehen", ar: "ينجح في الامتحان", example: "Ich habe die Prüfung bestanden.", exampleAr: "نجحت في الامتحان.", level: "B1" },
     { id: "fc-b1-11-2", de: "die Anmeldung", ar: "التسجيل", example: "Die Anmeldung ist bis Freitag.", exampleAr: "التسجيل حتى الجمعة.", level: "B1" },
-    { id: "fc-b1-11-3", de: "die Vorbereitung", ar: "التحضير", example: "Die Vorbereitung dauert zwei Wochen.", exampleAr: "التحضير يستغرق أسبوعين.", level: "B1" },
+    { id: "fc-b1-11-3", de: "die Vorbereitung", ar: "التحضير", example: "Die Vorbereitung hilft mir sehr.", exampleAr: "التحضير يساعدني كثيراً.", level: "B1" },
     { id: "fc-b1-11-4", de: "Meiner Meinung nach", ar: "في رأيي", example: "Meiner Meinung nach ist das eine gute Idee.", exampleAr: "في رأيي هذه فكرة جيدة.", level: "B1" },
     { id: "fc-b1-11-5", de: "Einerseits ... andererseits", ar: "من ناحية ... ومن ناحية أخرى", example: "Einerseits ist es teuer, andererseits gut.", exampleAr: "من ناحية مكلف، ومن ناحية أخرى جيد.", level: "B1" },
     { id: "fc-b1-11-6", de: "das Beratungsgespräch", ar: "جلسة الاستشارة", example: "Ich habe ein Beratungsgespräch beim Arbeitsamt.", exampleAr: "لدي جلسة استشارة في مكتب العمل.", level: "B1" },
-    { id: "fc-b1-11-7", de: "der Prüfungsteil", ar: "جزء الامتحان", example: "Der Leseteil ist am längsten.", exampleAr: "جزء القراءة هو الأطول.", level: "B1" },
+    { id: "fc-b1-11-7", de: "der Prüfungsteil", ar: "جزء الامتحان", example: "Ich übe jeden Teil einzeln.", exampleAr: "أتدرّب على كل جزء على حدة.", level: "B1" },
+    { id: "fc-b1-11-8", de: "die Bewerbung", ar: "طلب التوظيف", example: "Ich schreibe eine Bewerbung.", exampleAr: "أكتب طلب توظيف.", level: "B1" },
+    { id: "fc-b1-11-9", de: "trotzdem", ar: "مع ذلك", example: "Es regnet, trotzdem gehen wir spazieren.", exampleAr: "تمطر، ومع ذلك نخرج للتنزّه.", level: "B1" },
+    { id: "fc-b1-11-10", de: "der Lebenslauf", ar: "السيرة الذاتية", example: "Mein Lebenslauf ist auf Deutsch.", exampleAr: "سيرتي الذاتية بالألمانية.", level: "B1" },
   ],
 
   /* ═══ الوساطة والتفاعل ═══ */
@@ -357,8 +501,8 @@ export const lessonB111: Lesson = {
           speakerDe: "Wie findest du die Produktivität im Homeoffice?",
           speakerAr: "كيف ترى الإنتاجية في العمل عن بُعد؟",
           options: [
-            { de: "Ich denke, die Produktivität ist höher, weil man sich besser konzentrieren kann. Obwohl die Trennung zwischen Arbeit und Freizeit schwerfällt.",
-              ar: "أعتقد أن الإنتاجية أعلى لأن التركيز أفضل. رغم أن فصل العمل عن الراحة صعب.", best: true,
+            { de: "Ich denke, die Produktivität ist höher, weil man sich besser konzentrieren kann, obwohl die Trennung zwischen Arbeit und Freizeit schwerfällt.",
+              ar: "أعتقد أن الإنتاجية أعلى لأن التركيز أفضل، رغم أن الفصل بين العمل والراحة صعب.", best: true,
               replyDe: "Interessant! Und was ist mit der Teamarbeit?", replyAr: "مثير للاهتمام! وماذا عن العمل الجماعي؟" },
             { de: "Ich weiß nicht und es ist egal.", ar: "لا أعرف ولا يهم.", best: false,
               replyDe: "Für eine Diskussion wäre eine eigene Meinung besser.", replyAr: "في النقاش الأفضل أن يكون لديك رأي خاص." },

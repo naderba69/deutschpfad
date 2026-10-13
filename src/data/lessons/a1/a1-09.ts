@@ -142,6 +142,43 @@ export const lessonA109: Lesson = {
       { de: "der Geburtstag", ar: "عيد الميلاد" },
     ],
   },
+  review: [
+    {
+      id: "r1",
+      type: "multiple-choice",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-08 — الفعل gefallen مع الضمير في الداتيف): اختر الشكل الصحيح.",
+      questionDe: "Das Kleid ___ mir sehr gut.",
+      questionAr: "هذا الفستان يعجبني كثيراً.",
+      options: ["gefällt", "gefalle", "gefallen", "gefällst"],
+      correctIndex: 0,
+      explanation: "مع das Kleid (مفرد): gefällt.",
+      errorType: "conjugation",
+    },
+    {
+      id: "r2",
+      type: "fill-blank",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-05 — الأفعال المنفصلة): أكمل الجملة.",
+      template: "Ich ___ um sieben ___.",
+      blanks: [
+        { correct: "stehe", options: ["stehe", "stehst", "steht", "aufstehe"] },
+        { correct: "auf", options: ["auf", "an", "aus", "ein"] },
+      ],
+      explanation: "الجزء الثاني من الفعل المنفصل يذهب إلى آخر الجملة: Ich stehe um sieben auf.",
+      errorType: "word-order",
+    },
+    {
+      id: "r3",
+      type: "error-correction",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-07 — صيغ الجمع والكميات): افحص الجملة؛ اختر التصحيح، أو «لا خطأ» إن كانت سليمة.",
+      wrongSentence: "Ich kaufe zwei Apfel.",
+      wrongWord: "Apfel",
+      correctWord: "Äpfel",
+      options: ["Äpfel", "Apfel", "Apfeln", "Äpfeln"],
+      explanation: "بعد zwei نستخدم صيغة الجمع: zwei Äpfel.",
+      errorType: "plural",
+    },
+  ],
+
   theory: [
     {
       id: "t1",
@@ -411,7 +448,7 @@ export const lessonA109: Lesson = {
     paragraphs: [
       "Nadia hat Zahnschmerzen. Sie sucht die Telefonnummer der Zahnarztpraxis Dr. Klein und ruft dort an. Heute ist Dienstag, der siebte April 2026. Es ist halb neun am Morgen.",
       "Praxis Dr. Klein, guten Morgen! — Guten Morgen, mein Name ist Nadia Belhadj. Ich habe Zahnschmerzen und hätte gern einen Termin. — Waren Sie schon einmal bei uns? — Nein, ich bin neu hier.",
-      "Kein Problem. Wann haben Sie Zeit? Wir sind von acht bis achtzehn Uhr für Sie da. — Montags und mittwochs arbeite ich bis sechs Uhr. Ab Donnerstag habe ich Urlaub.",
+      "Kein Problem. Wann haben Sie Zeit? Wir sind von acht bis achtzehn Uhr für Sie da. — Montags und mittwochs arbeite ich bis sechs Uhr. Ab Freitag habe ich Urlaub.",
       "Dann passt der Donnerstag gut. Geht es am neunten April um zehn Uhr? — Einen Moment, bitte ... Es tut mir leid, da kann ich leider nicht. Um zehn Uhr kommt der Techniker zu mir nach Hause.",
       "Kein Problem. Geht es um vierzehn Uhr? — Ja, das passt. Dann am neunten April um vierzehn Uhr. — Sehr gut. Wenn Sie gesetzlich versichert sind, bringen Sie bitte Ihre Gesundheitskarte mit.",
       "Vielen Dank. Und wenn ich den Termin verschieben muss? — Dann rufen Sie bitte einen Tag vorher an. Wir vereinbaren dann einen neuen Termin. Bis Donnerstag, Frau Belhadj! — Bis Donnerstag!",
@@ -419,7 +456,7 @@ export const lessonA109: Lesson = {
     paragraphsAr: [
       "نادية تشكو ألماً في أسنانها. تبحث عن رقم هاتف عيادة الدكتور كلاين وتتّصل بها. اليوم الثلاثاء، السابع من أبريل 2026. الساعة الثامنة والنصف صباحاً.",
       "عيادة الدكتور كلاين، صباح الخير! — صباح الخير، اسمي نادية بالحاج. أشكو ألماً في الأسنان وأودّ موعداً. — هل زرتِنا من قبل؟ — لا، أنا جديدة هنا.",
-      "لا مشكلة. متى يكون عندك وقت؟ نحن في خدمتك من الثامنة إلى السادسة مساءً. — أعمل حتى السادسة أيام الاثنين والأربعاء. أبدأ إجازتي يوم الخميس.",
+      "لا مشكلة. متى يكون عندك وقت؟ نحن في خدمتك من الثامنة إلى السادسة مساءً. — أعمل حتى السادسة أيام الاثنين والأربعاء. أبدأ إجازتي يوم الجمعة.",
       "إذن يناسب الخميس. هل يمكن في التاسع من أبريل الساعة العاشرة؟ — لحظة من فضلك... آسفة، لا أستطيع في ذلك الوقت للأسف. يأتي الفني إلى بيتي الساعة العاشرة.",
       "لا مشكلة. هل تناسبك الساعة الرابعة عشرة؟ — نعم، يناسبني ذلك. إذن الموعد في التاسع من أبريل الساعة الرابعة عشرة. — جيد. إن كنت مشمولةً بالتأمين الصحي القانوني في ألمانيا، فأحضري بطاقة الصحة من فضلك.",
       "شكراً جزيلاً. وماذا أفعل إن اضطررت إلى تغيير الموعد؟ — اتصلي من فضلك قبل الموعد بيوم. وسنتفق عندئذٍ على موعد جديد. إلى الخميس يا سيدة بالحاج! — إلى الخميس!",
@@ -451,8 +488,8 @@ export const lessonA109: Lesson = {
         noteAr: "بداية ونهاية مذكورتان في المثال.",
       },
       {
-        de: "ab Donnerstag",
-        ar: "ابتداءً من الخميس",
+        de: "ab Freitag",
+        ar: "ابتداءً من الجمعة",
         noteAr: "يحدد نقطة البداية؛ لا يذكر وحده نهاية الفترة.",
       },
       {

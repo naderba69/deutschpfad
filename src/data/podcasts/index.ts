@@ -492,7 +492,7 @@ export const PODCASTS: PodcastEpisode[] = [
     script: "Die Work-Life-Balance ist heute ein zentrales Thema. Viele Arbeitnehmer klagen über Überstunden und ständige Erreichbarkeit. Experten betonen, dass Erholung für die Produktivität unerlässlich ist. Unternehmen reagieren mit flexiblen Arbeitszeiten. Dennoch bleibt die Frage: Wie findet man die richtige Balance? Die Antwort ist individuell und hängt von den eigenen Werten ab.",
     scriptAr: "التوازن بين العمل والحياة موضوع محوري اليوم. يشكو موظفون كثيرون من الساعات الإضافية والاتصال الدائم. يؤكد الخبراء أن الراحة ضرورية للإنتاجية. تستجيب الشركات بساعات عمل مرنة. ومع ذلك يبقى السؤال: كيف يجد المرء التوازن الصحيح؟ الجواب فردي ويعتمد على القيم الشخصية.",
     questions: [
-      { de: "Worüber klagen viele Arbeitnehmer?", ar: "عماذا يشكو موظفون كثيرون؟", options: [
+      { de: "Worüber klagen viele Arbeitnehmer?", ar: "ممَّ يشكو كثير من الموظفين؟", options: [
         { text: "Über Überstunden und ständige Erreichbarkeit", ar: "من الساعات الإضافية والاتصال الدائم", correct: true, explanation: "نعم — الشكوى الأساسية." },
         { text: "Über zu viel Urlaub", ar: "من الإجازات الكثيرة", correct: false, explanation: "لا — عكس الواقع." },
         { text: "Über zu wenig Arbeit", ar: "من قلة العمل", correct: false, explanation: "لا — من كثرة العمل." },

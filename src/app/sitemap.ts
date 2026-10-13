@@ -67,6 +67,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/level/b1", priority: 0.9 },
     { path: "/level/b2", priority: 0.9 },
     { path: "/sound-check", priority: 0.4 },
+    { path: "/aussprache", priority: 0.5 },
     { path: "/offline", priority: 0.3 },
   ];
 

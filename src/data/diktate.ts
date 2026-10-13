@@ -21,7 +21,7 @@ export interface Diktat {
 
 export const DIKTATE: Diktat[] = [
   /* ── A1 ── */
-  { id: "dk-a1-1", level: "A1", text: "Guten Tag! Ich heiße Mona und komme aus Tunesien.", ar: "نهارك سعيد! اسمي منى وأنا من تونس.", focusWords: ["heiße", "komme"], note: "الهملة ß في heiße — تكتب ss بعدها لا ß في النسخ." },
+  { id: "dk-a1-1", level: "A1", text: "Guten Tag! Ich heiße Mona und komme aus Tunesien.", ar: "طاب يومك! اسمي منى وأنا من تونس.", focusWords: ["heiße", "komme"], note: "الهملة ß في heiße — تكتب ss بعدها لا ß في النسخ." },
   { id: "dk-a1-2", level: "A1", text: "Meine Familie ist groß und wir essen zusammen.", ar: "عائلتي كبيرة ونأكل معاً.", focusWords: ["Familie", "zusammen"], note: "Familie بحرف F كبير (اسم)." },
   { id: "dk-a1-3", level: "A1", text: "Ich wohne in Berlin und arbeite in einer Schule.", ar: "أسكن في برلين وأعمل في مدرسة.", focusWords: ["wohne", "Schule"], note: "Berlin اسم مدينة — حرف كبير." },
   { id: "dk-a1-4", level: "A1", text: "Am Montag gehe ich ins Kino und am Dienstag in die Stadt.", ar: "الاثنين أذهب للسينما والثلاثاء إلى المدينة.", focusWords: ["Montag", "Dienstag", "Kino"], note: "أيام الأسبوع بأحرف كبيرة." },

@@ -64,7 +64,7 @@ export function SequentialPath() {
                         <Badge variant="outline" className="font-de font-bold" style={{ color: level.accent, borderColor: `${level.accent}66` }}>
                           {level.code}
                         </Badge>
-                        <LangDe className="truncate text-sm font-bold">{level.titleDe}</LangDe>
+                        <LangDe className="break-words text-sm font-bold [overflow-wrap:anywhere]">{level.titleDe}</LangDe>
                         <span className="text-xs text-muted-foreground">— {level.titleAr}</span>
                       </div>
                     </div>
@@ -110,7 +110,7 @@ export function SequentialPath() {
                         </span>
 
                         <div className="min-w-0 flex-1">
-                          <p className="truncate text-sm font-bold">
+                          <p className="break-words text-sm font-bold [overflow-wrap:anywhere]">
                             <LangDe className="font-bold">{lesson.titleDe}</LangDe>
                             {isDone && (
                               <CheckCircle2 className="ms-1.5 inline h-3.5 w-3.5 text-success" aria-hidden="true" />

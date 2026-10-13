@@ -191,9 +191,9 @@ export const GRAMMAR_REFERENCE: GrammarTopic[] = [
   },
   {
     id: "a2-modal", level: "A2", category: "modal",
-    titleAr: "الأفعال الشرطية الست", titleDe: "Die Modalverben",
+    titleAr: "أفعال الإمكان والوجوب الستة (Modalverben)", titleDe: "Die Modalverben",
     summary: "können (يستطيع), müssen (يجب), wollen (يريد), sollen (ينبغي), dürfen (يُسمح), mögen (يحب). المفرد بلا نهاية غالباً: ich kann, du kannst, er kann. الفعل الأساسي في النهاية.",
-    why: "الفعل الشرطي يعدّل المعنى — والأساسي يذهب للنهاية.",
+    why: "فعل الإمكان أو الوجوب يعدّل معنى الفعل الأساسي — والأساسي يذهب للنهاية.",
     examples: [
       { de: "Ich kann Deutsch sprechen.", ar: "أستطيع التحدث بالألمانية." },
       { de: "Du sollst viel trinken.", ar: "يجب أن تشرب كثيراً." },
@@ -301,7 +301,7 @@ export const GRAMMAR_REFERENCE: GrammarTopic[] = [
   },
   {
     id: "b1-praeteritum", level: "B1", category: "tenses",
-    titleAr: "الماضي البسيط الكامل", titleDe: "Das Präteritum",
+    titleAr: "الماضي البسيط (Präteritum)", titleDe: "Das Präteritum",
     summary: "المنتظم: جذر+te (arbeitete). الشاذ: تغيير جذري (ging, kam, sah). الأفعال المساعدة: war, hatte. في الكتابة والقصص للكل.",
     why: "نصوص القراءة والقصص كلها بـ Präteritum — لا بد منه للفهم.",
     examples: [
@@ -380,7 +380,7 @@ export const GRAMMAR_REFERENCE: GrammarTopic[] = [
       { de: "Ich habe weder Zeit noch Geld.", ar: "ليس لدي وقت ولا مال." },
       { de: "Je mehr du übst, desto besser wirst du.", ar: "كلما تدربت أكثر أصبحت أفضل." },
     ],
-    eselsbruecke: "«الأربعة التوأم»: احفظها كثنائيات متلاصقة.",
+    eselsbruecke: "«روابط ثنائية التوأم»: احفظها كأزواج متلاصقة.",
     mistakeLink: "grammar",
   },
   {
@@ -538,7 +538,7 @@ export const GRAMMAR_REFERENCE: GrammarTopic[] = [
       { de: "Ich ziehe die Stelle in Betracht.", ar: "آخذ المنصب بعين الاعتبار." },
       { de: "Ich stelle meine Erfahrung zur Verfügung.", ar: "أضع خبرتي تحت التصرف." },
     ],
-    eselsbruecke: "«وصلات الخطاب الخمس» جاهزة: bewerben um, Anbei finden Sie, Wert legen auf...",
+    eselsbruecke: "«أربع عبارات جاهزة للكتابة الرسمية»: in Betracht ziehen، zur Verfügung stellen، Wert legen auf، eine Rolle spielen.",
     mistakeLink: "grammar",
   },
   {
@@ -547,7 +547,7 @@ export const GRAMMAR_REFERENCE: GrammarTopic[] = [
     summary: "كلمات صغيرة بلا ترجمة حرفية تنقل موقف المتكلم: doch = «بلى» (رداً على نفي)، ja = تأكيد حار، mal = تخفيف الطلب، denn = فضول في السؤال، eigentlich = «أصلاً/بالمناسبة»، wohl = «على الأرجح». بدونها تبدو الألمانية منطوقة «روبوطية».",
     why: "تظهر في امتحان B2 (Hören وSprechen) وفي كل محادثة ألمانية حقيقية — إتقانها علامة الطلاقة.",
     examples: [
-      { de: "Komm doch mit!", ar: "تعال معنا (بلى تعال)!" },
+      { de: "Komm doch mit!", ar: "تعال معنا، هيا!" },
       { de: "Das ist ja super!", ar: "هذا ممتاز حقاً!" },
       { de: "Kannst du mir mal helfen?", ar: "هل تساعدني فقط قليلاً؟" },
       { de: "Was machst du denn hier?", ar: "ماذا تفعل هنا إذاً (فضولاً)؟" },
@@ -571,7 +571,7 @@ export const GRAMMAR_CATEGORIES: Record<GrammarCategory, string> = {
   sentences: "الجمل",
   tenses: "الأزمنة",
   passive: "المبني للمجهول",
-  modal: "الأفعال الشرطية",
+  modal: "أفعال الإمكان والوجوب والصيغ الشرطية",
   connectives: "الروابط",
   negation: "النفي",
   "word-order": "ترتيب الكلمات",
