@@ -18,8 +18,11 @@ import { B2_HOEREN_SETS } from "@/data/exams";
 import {
   B2_HOEREN_AUDIO,
   B2_HOEREN_SET_KEYS,
+  MAX_SEGMENT_CHARS,
+  b2HoerenSegments,
+  expectedB2Files,
   maxPlaysForTeil,
-  splitHoerenSegments,
+  splitLongText,
 } from "@/data/exams/b2-hoeren-audio";
 import { buildB2AudioProductionDoc } from "@/data/exams/b2-hoeren-audio-doc";
 
@@ -44,42 +47,29 @@ describe("بيان صوت B2 — البنية والتسمية", () => {
     });
   });
 
-  it("التقسيم: الجزء 1 خمسة حوارات، الجزء 3 سبعة إعلانات، والباقي مقطع واحد", () => {
-    for (const [si, specs] of B2_HOEREN_AUDIO.entries()) {
-      expect(specs[0].segments.length, `النموذج ${si} الجزء 1`).toBe(5);
-      expect(specs[1].segments.length, `النموذج ${si} الجزء 2`).toBe(1);
-      expect(specs[2].segments.length, `النموذج ${si} الجزء 3`).toBe(7);
-      expect(specs[3].segments.length, `النموذج ${si} الجزء 4`).toBe(1);
+  it("خمسة ملفات لكل نموذج بالتسمية المتفقة مع A1–B1", () => {
+    for (const [si] of B2_HOEREN_AUDIO.entries()) {
+      expect(expectedB2Files(si), `النموذج ${si}`).toEqual([
+        "hoeren-t1.mp3",
+        "hoeren-t2.mp3",
+        "hoeren-t3.mp3",
+        "hoeren-t4-a.mp3",
+        "hoeren-t4-b.mp3",
+      ]);
+      expect(B2_HOEREN_AUDIO[si].map((s) => s.segments.length), `مقاطع النموذج ${si}`).toEqual([1, 1, 1, 2]);
     }
   });
 
-  it("تسمية الملفات مطابقة لدستور A1–B1 ولا تكرار داخل الجزء", () => {
+  it("لا مقطع أطول من حدّ محرّك النطق (ولا قسم يقطع جملة في منتصفها)", () => {
     for (const [si, specs] of B2_HOEREN_AUDIO.entries()) {
       specs.forEach((spec, ti) => {
-        const names = spec.segments.map((s) => s.file);
-        expect(new Set(names).size, `تكرار أسماء في النموذج ${si} الجزء ${ti + 1}`).toBe(names.length);
-        for (const name of names) {
-          expect(name).toMatch(/^hoeren-t[1-4](-(g|a)\d+)?\.mp3$/);
+        for (const seg of spec.segments) {
+          expect(seg.text.length, `النموذج ${si} الجزء ${ti + 1} (${seg.file})`).toBeLessThanOrEqual(MAX_SEGMENT_CHARS);
+          expect(seg.text.trim(), `مقطع فارغ ${seg.file}`).not.toBe("");
         }
       });
-      expect(specs[0].segments.map((s) => s.file)).toEqual([
-        "hoeren-t1-g1.mp3",
-        "hoeren-t1-g2.mp3",
-        "hoeren-t1-g3.mp3",
-        "hoeren-t1-g4.mp3",
-        "hoeren-t1-g5.mp3",
-      ]);
-      expect(specs[2].segments.map((s) => s.file)).toEqual([
-        "hoeren-t3-a1.mp3",
-        "hoeren-t3-a2.mp3",
-        "hoeren-t3-a3.mp3",
-        "hoeren-t3-a4.mp3",
-        "hoeren-t3-a5.mp3",
-        "hoeren-t3-a6.mp3",
-        "hoeren-t3-a7.mp3",
-      ]);
-      expect(specs[1].segments[0].file).toBe("hoeren-t2.mp3");
-      expect(specs[3].segments[0].file).toBe("hoeren-t4.mp3");
+      // قسم الجزء 4 ينتهي عند علامة نهاية جملة
+      expect(specs[3].segments[0].text.trim()).toMatch(/[.!?…]$/);
     }
   });
 
@@ -95,9 +85,10 @@ describe("بيان صوت B2 — البنية والتسمية", () => {
   });
 
   it("نص بلا فواصل مدعومة يبقى مقطعاً واحداً بدل تقسيم خاطئ", () => {
-    expect(splitHoerenSegments("Ein einzelner Text ohne Markierungen.")).toEqual([
-      "Ein einzelner Text ohne Markierungen.",
+    expect(splitLongText("Ein einzelner Text ohne Markierungen")).toEqual([
+      "Ein einzelner Text ohne Markierungen",
     ]);
+    expect(b2HoerenSegments(B2_HOEREN_SETS[0][1])).toHaveLength(1);
   });
 
   it("عدد مرات التشغيل من بيانات الامتحان (B2: مرة واحدة لكل الأجزاء)", () => {
@@ -126,10 +117,10 @@ describe("وثيقة إنتاج المقاطع — تزامن مع البيان�
     ).toBe(true);
   });
 
-  it("الوثيقة تسرد كل ملفات النماذج الثلاثة (42 ملفاً)", () => {
+  it("الوثيقة تسرد كل ملفات النماذج الثلاثة (15 ملفاً)", () => {
     const doc = buildB2AudioProductionDoc();
     const files = B2_HOEREN_AUDIO.flatMap((specs) => specs.flatMap((s) => s.segments.map((seg) => seg.file)));
-    expect(files).toHaveLength(42);
+    expect(files).toHaveLength(15);
     for (const f of new Set(files)) {
       expect(doc.includes(`#### ${f}`) || doc.includes(f), `الملف ${f} غير مذكور في الوثيقة`).toBe(true);
     }

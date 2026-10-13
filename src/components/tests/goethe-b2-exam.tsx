@@ -407,7 +407,7 @@ export function GoetheB2Exam() {
   // المجموعة المختارة (نموذج A/B/C) — تُختار عشوائياً عند بدء الامتحان
   const [lesenSet, setLesenSet] = React.useState<typeof B2_LESEN_SETS[number]>(B2_LESEN_SETS[0]);
   const [hoerenSet, setHoerenSet] = React.useState<typeof B2_HOEREN_SETS[number]>(B2_HOEREN_SETS[0]);
-  /** فهرس نموذج الاستماع (A/B/C) — يحدّد مجلد مقاطع الصوت البشرية */
+  /** فهرس نموذج الاستماع (A/B/C) — يحدّد مجلد مقاطع الصوت المسجّلة */
   const hoerenSetIdx = Math.max(0, B2_HOEREN_SETS.indexOf(hoerenSet));
   const [setName, setSetName] = React.useState("A");
 

@@ -1,12 +1,14 @@
 /**
  * ═══════════════════════════════════════════════════════════
- *  تدقيق أصول الصوت البشري — حارس انحدار دائم
+ *  تدقيق أصول الصوت — حارس انحدار دائم
  *  يتأكد أن كل ملف صوتي تشير إليه المنصة موجود فعلاً و MP3 صالح
  *  (لا ملف فارغ ولا ملف Placeholder):
  *   · حوارات الحياة اليومية A1–B2 (90 مقطعاً لكل مستوى = جولة لكل ملف)
- *   · صوت الاستماع A1/A2/B1 (14 ملفاً لكل مستوى)
+ *   · صوت الاستماع A1/A2/B1 (14 ملفاً لكل مستوى) — تسجيلات صوتية
+ *   · صوت الاستماع B2 (5 ملفات لكل نموذج) — مولَّد آلياً في هذه المرحلة،
+ *     والقاعدة: نموذج مكتمل أو فارغ، ولا استبدال جزئي
  *   · جُمل الشريك والإجابات النموذجية في التحدث A1/A2/B1
- *  أي نقص أو ملف تالف يُسقط الاختبار — فلا يمر «B2 غير مكتمل» بصمت.
+ *  أي نقص أو ملف تالف يُسقط الاختبار — فلا يمر نقص بصمت.
  * ═══════════════════════════════════════════════════════════
  */
 import fs from "node:fs";
@@ -18,7 +20,7 @@ import {A1_SPRECHEN} from "@/data/exams/a1-sprechen";
 import {A2_SPRECHEN} from "@/data/exams/a2-sprechen";
 import {B1_SPRECHEN} from "@/data/exams/b1-sprechen";
 import {DAILY_DIALOGUES, getDialoguesByLevel} from "@/data/dialogues";
-import {B2_HOEREN_AUDIO, B2_HOEREN_SET_KEYS} from "@/data/exams/b2-hoeren-audio";
+import {B2_HOEREN_SET_KEYS, expectedB2Files} from "@/data/exams/b2-hoeren-audio";
 
 const AUDIO_ROOT = path.join(process.cwd(), "public", "audio");
 
@@ -107,31 +109,29 @@ describe("أصول الصوت — نماذج الاستماع A1/A2/B1", () => {
   }
 });
 
-describe("أصول الصوت — نماذج استماع B2 (14 ملفاً لكل نموذج)", () => {
-  const expectedForSet = (si: number) => [
-    ...new Set(B2_HOEREN_AUDIO[si].flatMap((spec) => spec.segments.map((seg) => seg.file))),
-  ];
-
-  it("البيان يطلب 14 ملفاً لكل نموذج من النماذج الثلاثة", () => {
+describe("أصول الصوت — نماذج استماع B2 (5 ملفات لكل نموذج)", () => {
+  it("البيان يطلب 5 ملفات بأسماء A1–B1 لكل نموذج من الثلاثة", () => {
     B2_HOEREN_SET_KEYS.forEach((key, si) => {
-      expect(expectedForSet(si), `النموذج ${key}`).toHaveLength(14);
-      expect(B2_HOEREN_AUDIO[si][0].base).toBe(`/audio/exam-b2/${key}`);
+      const files = expectedB2Files(si);
+      expect(files, `النموذج ${key}`).toHaveLength(5);
+      expect(files).toContain("hoeren-t1.mp3");
+      expect(files).toContain("hoeren-t4-b.mp3");
     });
   });
 
   for (const [si, key] of B2_HOEREN_SET_KEYS.entries()) {
-    it(`exam-b2/${key}: إمّا مكتمل (14 ملفاً صالحاً) أو غير مُسجَّل بعد — لا أنصاف`, () => {
+    it(`exam-b2/${key}: إمّا مكتمل (5 ملفات صالحة) أو غير مُنتَج بعد — لا أنصاف`, () => {
       const dir = path.join(AUDIO_ROOT, "exam-b2", key);
-      const expected = expectedForSet(si);
+      const expected = expectedB2Files(si);
       const present = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith(".mp3")) : [];
       if (present.length === 0) {
-        // مقبول: النموذج لم يُسجَّل بعد، والامتحان يقرأ نصه آلياً (TTS) ويصرّح بذلك للمتعلم
+        // مقبول: النموذج لم يُنتَج بعد، والامتحان يقرأ نقصه آلياً ويعلن ذلك للمتعلم
         return;
       }
       const broken = expected.filter((f) => !isPlayableMp3(path.join(dir, f)));
       expect(
         broken,
-        `نموذج ${key}: مقاطع ناقصة/تالفة (${broken.length}) — إمّا تسجيل الـ14 كاملة أو إفراغ المجلد`,
+        `نموذج ${key}: مقاطع ناقصة/تالفة (${broken.length}) — إمّا 5 ملفات كاملة أو مجلد فارغ`,
       ).toEqual([]);
       const orphans = present.filter((f) => !expected.includes(f));
       expect(orphans, `نموذج ${key}: ملفات لا موضع لها في البيان`).toEqual([]);

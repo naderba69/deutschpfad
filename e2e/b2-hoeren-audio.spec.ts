@@ -42,7 +42,7 @@ test("B2 استماع: حالة الصوت تُحسم بالمحاولة — م�
   const mode = await player.getAttribute("data-audio-mode");
   expect(["files", "tts"]).toContain(mode);
   if (mode === "tts") {
-    await expect(player).toContainText(/لم تُسجَّل بصوت بشري بعد/);
+    await expect(player).toContainText(/غير متاحة بعد/);
     await expect(page.getByTestId("exam-audio-slow")).toBeVisible();
   }
 
