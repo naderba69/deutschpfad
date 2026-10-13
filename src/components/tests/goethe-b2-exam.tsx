@@ -12,6 +12,8 @@ import {Button} from "@/components/ui/button";
 import {Card, CardContent} from "@/components/ui/card";
 import {Progress} from "@/components/ui/progress";
 import {AutoGrowTextarea} from "@/components/shared/auto-grow-textarea";
+import {ExamAudioPlayer} from "@/components/tests/exam-audio-player";
+import {B2_HOEREN_AUDIO, type ExamAudioSpec} from "@/data/exams/b2-hoeren-audio";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -341,27 +343,19 @@ function LesenTeilView({
 /* ════════════ الجزء الواحد من الاستماع ════════════ */
 function HoerenTeilView({
   teil,
+  audio,
   answers,
   onAnswer,
 }: {
   teil: ExamHoerenTeil;
+  audio: ExamAudioSpec;
   answers: Record<string, unknown>;
   onAnswer: (key: string, value: unknown) => void;
 }) {
   return (
     <div className="space-y-4">
       <div className="rounded-xl border bg-muted/20 p-3 text-sm text-muted-foreground">{teil.introAr}</div>
-      <div className="flex flex-wrap items-center gap-2 rounded-xl border bg-card p-3">
-        <Volume2 className="h-4 w-4 text-primary" aria-hidden="true" />
-        <p className="text-sm font-bold">استمع إلى النص:</p>
-        <Button size="sm" className="gap-1.5" onClick={() => speakText(teil.audioText, 1)}>
-          <PlayCircle className="h-4 w-4" aria-hidden="true" />
-          تشغيل (عادي)
-        </Button>
-        <Button size="sm" variant="outline" onClick={() => speakText(teil.audioText, 0.75)}>
-          بطيء
-        </Button>
-      </div>
+      <ExamAudioPlayer spec={audio} />
       {teil.kind === "rf" && teil.statements && (
         <RichtigFalschList
           statements={teil.statements}
@@ -413,6 +407,8 @@ export function GoetheB2Exam() {
   // المجموعة المختارة (نموذج A/B/C) — تُختار عشوائياً عند بدء الامتحان
   const [lesenSet, setLesenSet] = React.useState<typeof B2_LESEN_SETS[number]>(B2_LESEN_SETS[0]);
   const [hoerenSet, setHoerenSet] = React.useState<typeof B2_HOEREN_SETS[number]>(B2_HOEREN_SETS[0]);
+  /** فهرس نموذج الاستماع (A/B/C) — يحدّد مجلد مقاطع الصوت البشرية */
+  const hoerenSetIdx = Math.max(0, B2_HOEREN_SETS.indexOf(hoerenSet));
   const [setName, setSetName] = React.useState("A");
 
   const startExam = () => {
@@ -668,8 +664,9 @@ export function GoetheB2Exam() {
           </span>
         </div>
         <HoerenTeilView
-          key={teil.teil}
+          key={`${setName}-${teil.teil}`}
           teil={teil}
+          audio={B2_HOEREN_AUDIO[hoerenSetIdx]?.[hoerenIdx] ?? B2_HOEREN_AUDIO[0][hoerenIdx]}
           answers={hoerenAnswers}
           onAnswer={(k, v) => setHoerenAnswers((prev) => ({ ...prev, [k]: v }))}
         />

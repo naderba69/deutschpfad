@@ -18,6 +18,7 @@ import {A1_SPRECHEN} from "@/data/exams/a1-sprechen";
 import {A2_SPRECHEN} from "@/data/exams/a2-sprechen";
 import {B1_SPRECHEN} from "@/data/exams/b1-sprechen";
 import {DAILY_DIALOGUES, getDialoguesByLevel} from "@/data/dialogues";
+import {B2_HOEREN_AUDIO, B2_HOEREN_SET_KEYS} from "@/data/exams/b2-hoeren-audio";
 
 const AUDIO_ROOT = path.join(process.cwd(), "public", "audio");
 
@@ -102,6 +103,38 @@ describe("أصول الصوت — نماذج الاستماع A1/A2/B1", () => {
       for (const f of FILES) assertClip(`exam-${lv}/${f}`);
       const dir = path.join(AUDIO_ROOT, `exam-${lv}`);
       expect(fs.readdirSync(dir).filter((f) => f.endsWith(".mp3")).length).toBe(FILES.length);
+    });
+  }
+});
+
+describe("أصول الصوت — نماذج استماع B2 (14 ملفاً لكل نموذج)", () => {
+  const expectedForSet = (si: number) => [
+    ...new Set(B2_HOEREN_AUDIO[si].flatMap((spec) => spec.segments.map((seg) => seg.file))),
+  ];
+
+  it("البيان يطلب 14 ملفاً لكل نموذج من النماذج الثلاثة", () => {
+    B2_HOEREN_SET_KEYS.forEach((key, si) => {
+      expect(expectedForSet(si), `النموذج ${key}`).toHaveLength(14);
+      expect(B2_HOEREN_AUDIO[si][0].base).toBe(`/audio/exam-b2/${key}`);
+    });
+  });
+
+  for (const [si, key] of B2_HOEREN_SET_KEYS.entries()) {
+    it(`exam-b2/${key}: إمّا مكتمل (14 ملفاً صالحاً) أو غير مُسجَّل بعد — لا أنصاف`, () => {
+      const dir = path.join(AUDIO_ROOT, "exam-b2", key);
+      const expected = expectedForSet(si);
+      const present = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith(".mp3")) : [];
+      if (present.length === 0) {
+        // مقبول: النموذج لم يُسجَّل بعد، والامتحان يقرأ نصه آلياً (TTS) ويصرّح بذلك للمتعلم
+        return;
+      }
+      const broken = expected.filter((f) => !isPlayableMp3(path.join(dir, f)));
+      expect(
+        broken,
+        `نموذج ${key}: مقاطع ناقصة/تالفة (${broken.length}) — إمّا تسجيل الـ14 كاملة أو إفراغ المجلد`,
+      ).toEqual([]);
+      const orphans = present.filter((f) => !expected.includes(f));
+      expect(orphans, `نموذج ${key}: ملفات لا موضع لها في البيان`).toEqual([]);
     });
   }
 });
