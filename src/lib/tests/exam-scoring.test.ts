@@ -137,14 +137,13 @@ describe("التصحيح الموحّد — كل نوع جزء", () => {
   });
 
   it("على بيانات حقيقية: B2 يحسب 30 سؤالاً في الاستماع لكل نموذج", () => {
-    const perfect = Object.fromEntries(
-      B2_HOEREN_SETS[0].flatMap((t) =>
-        (t.statements ?? []).map((s) => [s.id, s.isTrue]).concat(
-          (t.questions ?? []).map((q) => [q.id, q.correct] as [string, number]),
-          (t.items ?? []).map((i) => [i.id, i.categoryId] as [string, string]),
-        ),
-      ),
-    ) as Record<string, unknown>;
+    // الإجابات المثالية مبنية من النموذج الأول المُعلَن، ثم تُصحَّح به المحرّك نفسه
+    const perfect: Record<string, unknown> = {};
+    for (const t of B2_HOEREN_SETS[0]) {
+      for (const s of t.statements ?? []) perfect[s.id] = s.isTrue;
+      for (const q of t.questions ?? []) perfect[q.id] = q.correct;
+      for (const i of t.items ?? []) perfect[i.id] = i.categoryId;
+    }
     const g = gradeTeile(B2_HOEREN, perfect);
     expect(g.total).toBe(30);
     expect(g.correct).toBe(30);
