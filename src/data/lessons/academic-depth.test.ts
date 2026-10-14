@@ -34,6 +34,7 @@ export const ACADEMIC_LESSONS: string[] = [
   "a1-12",
   "a1-14",
   "a1-13",
+  "a1-01b",
   "a2-01",
   "a2-02",
   "a2-03",
