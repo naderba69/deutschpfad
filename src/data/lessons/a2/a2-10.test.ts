@@ -77,6 +77,7 @@ const expectedMultipleChoiceOptions: Record<string, string[]> = {
 const expectedFillBlankKeys: Record<string, string[]> = {
   r3: ["mein"],
   e6: ["meinen", "meiner"],
+  e13: ["seiner", "ihrem"],
   w2: ["weil", "Wenn", "ob"],
   m5: ["weil", "Wenn", "ob"],
 };
@@ -97,6 +98,10 @@ const expectedFillBlankOptions: Record<string, string[][]> = {
     ["Wenn", "Weil", "Ob"],
     ["ob", "weil", "wenn"],
   ],
+  e13: [
+    ["seiner", "seinem", "seine"],
+    ["ihrem", "ihrer", "ihren"],
+  ],
 };
 
 const expectedErrorCorrections: Record<
@@ -114,6 +119,12 @@ const expectedErrorCorrections: Record<
     wrongWord: "ich bleibe",
     correctWord: "bleibe ich",
     options: ["bleibe ich", "ich bleibe", "bleiben ich", "bleibst ich"],
+  },
+  e12: {
+    sentence: "Ahmed hilft seinem Schwester.",
+    wrongWord: "seinem",
+    correctWord: "seiner",
+    options: ["seiner", "seinem", "seine", "seinen"],
   },
   m4: {
     sentence: "Ich sehe meine Vater.",
@@ -257,14 +268,14 @@ describe("A2-10 lesson content audit", () => {
     ]);
     expect(taskIds(lessonA210.review ?? [])).toEqual(["r1", "r2", "r3"]);
     expect(taskIds(lessonA210.practiceBank)).toEqual(
-      Array.from({ length: 10 }, (_, index) => `e${index + 1}`).sort(),
+      Array.from({ length: 14 }, (_, index) => `e${index + 1}`).sort(),
     );
     expect(taskIds(lessonA210.miniTest)).toEqual(["m1", "m2", "m3", "m4", "m5"]);
     expect(taskIds(lessonA210.writing)).toEqual(["w1", "w2", "w3"]);
     expect(taskIds(lessonA210.reading?.questions ?? [])).toEqual(["rq1", "rq2", "rq3", "rq4"]);
     expect(taskIds(lessonA210.listening.questions)).toEqual(["q1", "q2", "q3", "q4"]);
-    expect(allTasks()).toHaveLength(29);
-    expect(new Set(allTasks().map((item) => item.id)).size).toBe(29);
+    expect(allTasks()).toHaveLength(33);
+    expect(new Set(allTasks().map((item) => item.id)).size).toBe(33);
     expect(lessonA210.theory).toHaveLength(2);
     expect(lessonA210.theory.every((block) => block.examples.length >= 5)).toBe(true);
     expect(lessonA210.flashcards.map(({ id, de, ar, example, exampleAr, level }) => ({
@@ -286,6 +297,7 @@ describe("A2-10 lesson content audit", () => {
       { id: "fc9", de: "die Anmeldung", ar: "التسجيل", example: "Die Anmeldung ist online.", exampleAr: "التسجيل إلكتروني.", level: "A2" },
       { id: "fc10", de: "der Termin", ar: "الموعد", example: "Ich habe einen Termin um zehn.", exampleAr: "لدي موعد في العاشرة.", level: "A2" },
       { id: "fc11", de: "lernen", ar: "يتعلّم / يدرس", example: "Ich lerne jeden Tag Deutsch.", exampleAr: "أتعلّم الألمانية كل يوم.", level: "A2" },
+      { id: "fc12", de: "die Bibliothek", ar: "المكتبة", example: "Wir lernen heute in der Bibliothek.", exampleAr: "نتعلم اليوم في المكتبة.", level: "A2" },
     ]);
     expect(lessonA210.pronunciation.items).toHaveLength(6);
     expect(lessonA210.pronunciation.shadowing).toHaveLength(4);
@@ -433,6 +445,7 @@ describe("A2-10 lesson content audit", () => {
 
     const correctTokenOrders: Record<string, string[]> = {
       e4: ["Ich", "lerne", ",", "weil", "ich", "die", "Prüfung", "bestehen", "will", "."],
+      e14: ["Wenn", "ich", "Zeit", "habe", ",", "lerne", "ich", "weiter", "."],
       m3: ["Ich", "weiß", "nicht", ",", "ob", "er", "kommt", "."],
     };
     expect(Object.keys(correctTokenOrders).sort()).toEqual(
@@ -457,6 +470,13 @@ describe("A2-10 lesson content audit", () => {
       w1: {
         accepted: ["Ich lerne Deutsch, weil es wichtig ist", "Ich lerne Deutsch, weil es wichtig ist."],
         sample: "Ich lerne Deutsch, weil es wichtig ist.",
+      },
+      e11: {
+        accepted: [
+          "Ich gehe heute nicht zum Kurs, weil ich krank bin.",
+          "Ich gehe nicht zum Kurs, weil ich krank bin.",
+        ],
+        sample: "Ich gehe heute nicht zum Kurs, weil ich krank bin.",
       },
       e7: {
         accepted: ["Ich weiß nicht, ob er kommt", "Ich weiß nicht, ob er kommt."],
@@ -542,6 +562,7 @@ describe("A2-10 lesson content audit", () => {
       ["Ich weiß nicht, ob die Prüfung schwer ist.", "لا أعرف ما إذا كان الامتحان صعباً."],
       ["Er lernt, weil er die Prüfung bestehen will.", "يتعلم لأنه يريد اجتياز الامتحان."],
       ["Ob du kommst, ist mir egal.", "لا يهمني إن كنت ستأتي أم لا."],
+      ["Weil ich müde war, bin ich früh ins Bett gegangen.", "لأنني كنت متعباً، ذهبت إلى الفراش مبكراً."],
     ]);
 
     expect(possessives?.titleAr).not.toContain("كل الحالات");
@@ -598,13 +619,13 @@ describe("A2-10 lesson content audit", () => {
     expect(reading?.textType).toBe("erzaehlung");
     expect(reading?.paragraphs).toHaveLength(4);
     expect(reading?.paragraphs).toEqual([
-      "Seit zwei Monaten besucht Noura einen Deutschkurs an einer Sprachschule in ihrer Stadt. Der Unterricht findet montags und mittwochs am Abend statt. Sie lernt Deutsch, weil sie später an einer Universität studieren möchte.",
+      "Seit zwei Monaten besucht Noura einen Deutschkurs an einer Sprachschule in ihrer Stadt. Der Unterricht findet montags und mittwochs am Abend statt. Sie lernt Deutsch, weil sie später an einer Universität studieren möchte. Die Anmeldung für den Kurs hat sie online gemacht.",
       "Vor der Prüfung wiederholt Noura jeden Tag neue Wörter. Wenn sie nach der Arbeit müde ist, macht sie eine kurze Pause. Danach schreibt sie einige Wörter in ihr Heft und liest sie am nächsten Morgen noch einmal.",
       "Am Freitag fragt ihr Freund Sami, ob sie am Wochenende zusammen üben kann. Noura antwortet, dass sie am Samstag Zeit hat. Sie weiß noch nicht, ob die Bibliothek geöffnet ist; deshalb prüft Sami die Öffnungszeiten auf der Webseite.",
       "Am Samstag lernen beide in der Bibliothek. Sie vergleichen ihre Notizen und erklären einander schwierige Wörter. Noura ist vor der Prüfung etwas nervös, aber sie bleibt ruhig, weil sie sich gut vorbereitet hat. Wenn beide Zeit haben, wollen sie vor der nächsten Prüfung wieder zusammen lernen.",
     ]);
     expect(reading?.paragraphsAr).toEqual([
-      "منذ شهرين تحضر نورا دورةً للألمانية في مدرسة لغات بمدينتها. تُعقد الحصص مساء يومي الاثنين والأربعاء. تتعلم الألمانية لأنها تريد لاحقاً الدراسة في جامعة.",
+      "منذ شهرين تحضر نورا دورةً للألمانية في مدرسة لغات بمدينتها. تُعقد الحصص مساء يومي الاثنين والأربعاء. تتعلم الألمانية لأنها تريد لاحقاً الدراسة في جامعة. وقد أنجزت تسجيل الدورة عبر الإنترنت.",
       "قبل الامتحان تراجع نورا كلمات جديدة كل يوم. إذا عادت متعبة من العمل تأخذ استراحة قصيرة. بعد ذلك تكتب بعض الكلمات في دفترها وتقرأها مجدداً في صباح اليوم التالي.",
       "يوم الجمعة يسألها صديقها سامي هل يمكنهما التدرّب معاً في نهاية الأسبوع. تجيب نورا بأنها متفرغة يوم السبت. وهي لا تعرف بعد إن كانت المكتبة مفتوحة؛ لذلك يتحقق سامي من مواعيد فتحها على الموقع الإلكتروني.",
       "يوم السبت يتعلم الاثنان معاً في المكتبة. يقارنان ملاحظاتهما ويشرحان لبعضهما الكلمات الصعبة. تشعر نورا ببعض التوتر قبل الامتحان، لكنها تظل هادئة لأنها استعدت جيداً. وإذا كان لدى كليهما وقت، يريدان الدراسة معاً مجدداً قبل الامتحان التالي.",
@@ -630,6 +651,7 @@ describe("A2-10 lesson content audit", () => {
     ]);
     expect(reading?.glossary).toEqual([
       { de: "die Sprachschule", ar: "مدرسة اللغات" },
+      { de: "die Anmeldung", ar: "التسجيل", noteAr: "في النص: أنجزت نورا تسجيل الدورة عبر الإنترنت." },
       { de: "der Unterricht", ar: "التعليم أو الحصة الدراسية" },
       { de: "wiederholen", ar: "يراجع أو يكرر" },
       { de: "müde", ar: "متعب" },

@@ -17,6 +17,7 @@ const expectedMultipleChoiceKeys: Record<string, string> = {
   e8: "يقدم شكوى",
   m1: "uns",
   m2: "euch",
+  e14: "mir",
   q1: "die Haare schneiden lassen",
   q2: "Das Handy funktioniert nicht",
   q3: "Wir reparieren es oder geben Ihnen ein neues",
@@ -31,6 +32,7 @@ const expectedMultipleChoiceOptions: Record<string, string[]> = {
   e8: ["يقدم شكوى", "يستعجل", "يسجل", "يغضب"],
   m1: ["uns", "euch", "sich", "mich"],
   m2: ["euch", "uns", "sich", "dich"],
+  e14: ["mir", "mich", "dich", "sich"],
   q1: ["die Haare schneiden lassen", "einen Termin absagen", "sich beschweren", "ein Handy kaufen"],
   q2: ["Das Handy funktioniert nicht", "Die Haare sind zu kurz", "Der Termin ist zu spät", "Die Post ist zu teuer"],
   q3: ["Wir reparieren es oder geben Ihnen ein neues", "Wir können nicht helfen", "Das ist nicht unser Problem", "Kommen Sie morgen"],
@@ -52,6 +54,14 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
     options: [
       ["aus", "an", "auf", "mit"],
       ["mich", "mir", "dich", "sich"],
+    ],
+  },
+  e13: {
+    correct: ["mich", "dich", "uns"],
+    options: [
+      ["mich", "mir", "dich"],
+      ["dich", "dir", "sich"],
+      ["uns", "euch", "sich"],
     ],
   },
   w2: {
@@ -170,7 +180,6 @@ describe("A2-11 lesson content audit", () => {
     });
     expect("duration" in lessonA211).toBe(false);
     expect(lessonA211.summary).not.toMatch(/\b\d+\s*دقيقة|Goethe|CEFR|معتمد|إتقان عام|يغطي جميع/i);
-    expect(lessonA211.reading).toBeUndefined();
     const lessonMeta = LESSON_META.find((item) => item.id === "a2-11");
     expect(lessonMeta).toMatchObject({
       id: "a2-11",
@@ -229,12 +238,12 @@ describe("A2-11 lesson content audit", () => {
 
   it("has a unique, complete inventory of every assessed task", () => {
     expect((lessonA211.review ?? []).map(({ id }) => id)).toEqual(["r1", "r2", "r3"]);
-    expect(lessonA211.practiceBank.map(({ id }) => id)).toEqual(Array.from({ length: 12 }, (_, i) => `e${i + 1}`));
+    expect(lessonA211.practiceBank.map(({ id }) => id)).toEqual(Array.from({ length: 14 }, (_, i) => `e${i + 1}`));
     expect(lessonA211.miniTest.map(({ id }) => id)).toEqual(["m1", "m2", "m3", "m4", "m5"]);
     expect(lessonA211.writing.map(({ id }) => id)).toEqual(["w1", "w2", "w3", "w4", "w5"]);
     expect(lessonA211.listening.questions.map(({ id }) => id)).toEqual(["q1", "q2", "q3", "q4"]);
-    expect(allTasks()).toHaveLength(29);
-    expect(new Set(allTasks().map(({ id }) => id)).size).toBe(29);
+    expect(allTasks()).toHaveLength(31);
+    expect(new Set(allTasks().map(({ id }) => id)).size).toBe(31);
     expect(lessonA211.theory).toHaveLength(2);
     expect(lessonA211.pronunciation.items).toHaveLength(6);
     expect(lessonA211.pronunciation.shadowing).toHaveLength(4);
@@ -632,6 +641,7 @@ describe("A2-11 lesson content audit", () => {
         ["Ich sehe mir das Formular an.", "أتفحّص الاستمارة."],
         ["Wir treffen uns um sieben.", "نلتقي في السابعة (قد يكون المعنى متبادلاً بحسب السياق)."],
         ["Setz dich bitte!", "اجلس من فضلك!"],
+        ["Ich putze mir die Zähne.", "أنظّف أسناني (mir Dativ، وdie Zähne Akkusativ في هذا الإطار)."],
       ],
     ]);
     expect(lessonA211.theory[0]?.commonMistakes).toEqual([
@@ -644,7 +654,7 @@ describe("A2-11 lesson content audit", () => {
       {
         wrong: "Er freut mich sich.",
         right: "Er freut sich.",
-        whyAr: "في الجملة المقصودة يُستعمل ضمير واحد يعود على er: sich.",
+        whyAr: "لا يجتمع ضميران انعكاسيان في هذا الإطار: الضمير واحد يعود على الفاعل er في صورة sich، والجملة تحتمل ضميراً واحداً فقط بعد الفعل المصرف freut.",
         classification: "error",
       },
       {
@@ -826,6 +836,52 @@ describe("A2-11 lesson content audit", () => {
       { id: "fc14", de: "das Geschäft", ar: "المتجر", example: "Das Geschäft ist geöffnet.", exampleAr: "المتجر مفتوح.", level: "A2" },
       { id: "fc15", de: "bezahlen", ar: "يدفع", example: "Ich bezahle an der Kasse.", exampleAr: "أدفع عند الصندوق.", level: "A2" },
     ]);
+  });
+
+  /**
+   * حارس نصّ القراءة الجديد (المرحلة 5): يمنع أن يُحذف النصّ أو تُفقد
+   * ترجمته أو تنفصل مفرداته عن سياقه، ويضمن أن البطاقات التي كانت بلا
+   * مرساة (die Bank · das Geschäft · bezahlen) لها الآن موضعٌ في النصّ.
+   */
+  it("checks the new bilingual reading, glossary anchors, questions, and Redemittel", () => {
+    const reading = lessonA211.reading;
+    expect(reading).toBeDefined();
+    expect(reading?.id).toBe("read-a2-11");
+    expect(reading?.textType).toBe("erzaehlung");
+    expect(reading?.titleDe).toBe("Ein Tag voller Erledigungen");
+    expect(reading?.titleAr).toBe("يوم مليء بالمشاوير");
+    expect(reading?.paragraphs).toHaveLength(4);
+    expect(reading?.paragraphsAr).toHaveLength(4);
+    const text = reading!.paragraphs.join(" ").toLowerCase();
+    const wordCount = text.split(/\s+/).filter(Boolean).length;
+    expect(wordCount).toBeGreaterThanOrEqual(150);
+
+    expect(reading?.glossary.length).toBeGreaterThanOrEqual(8);
+    for (const item of reading!.glossary) {
+      const head = item.de.replace(/^(der|die|das)\s+/i, "").split(/[\s,(/]/)[0];
+      const stem = head.slice(0, Math.max(4, head.length - 3)).toLowerCase();
+      expect(text.includes(stem), `${item.de} ليست في النصّ`).toBe(true);
+      expect(item.ar.trim().length).toBeGreaterThan(1);
+    }
+
+    expect(reading?.questions.map(({ id }) => id)).toEqual(["rq1", "rq2", "rq3", "rq4"]);
+    for (const question of reading!.questions) {
+      expect(question.options.length).toBeGreaterThanOrEqual(3);
+      expect(question.correctIndex).toBeGreaterThanOrEqual(0);
+      expect(question.correctIndex).toBeLessThan(question.options.length);
+      expect(question.explanation.trim().length).toBeGreaterThan(20);
+      expect(question.paragraph).toBeGreaterThanOrEqual(1);
+      expect(question.paragraph! <= reading!.paragraphs.length).toBe(true);
+      const answer = question.options[question.correctIndex];
+      expect(text.includes(answer.toLowerCase()) && answer.length > 45, `${question.id} منسوخ حرفياً`).toBe(false);
+    }
+
+    expect(reading?.redemittel?.length).toBeGreaterThanOrEqual(4);
+    expect(reading?.discussionAr?.trim().length).toBeGreaterThanOrEqual(40);
+
+    for (const anchor of ["bank", "geschäft", "bezahlen"]) {
+      expect(text.includes(anchor), `مرساة مفقودة: ${anchor}`).toBe(true);
+    }
   });
 
   it("keeps the cultural/legal note narrow and linked to the direct statute", () => {

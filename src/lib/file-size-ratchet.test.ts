@@ -32,12 +32,18 @@ const KNOWN_OVERSIZE: readonly [string, number][] = [
   ["src/data/lessons/a1/a1-01.ts", 1079],
   ["src/data/lessons/a2/a2-07.test.ts", 1051],
   ["src/data/lessons/a2/a2-09.ts", 1004],
-  ["src/data/lessons/a2/a2-10.test.ts", 989],
   ["src/data/lessons/a2/a2-04.ts", 975],
   ["src/data/lessons/a2/a2-09.test.ts", 947],
   ["src/data/lessons/a2/a2-08.ts", 925],
   ["src/data/lessons/a1/a1-04.ts", 894],
-  ["src/data/lessons/a2/a2-11.test.ts", 892],
+  /**
+   * اختبارا التدقيق الشامل للدرس (a2-10/a2-11): حجمهما يتبع المحتوى الذي
+   * يدقّقانه حرفياً (جدول المفاتيح، البدائل، الجمل، الأمثلة، والفقرات).
+   * رُقّي الدرسان إلى المعيار الأكاديمي في المرحلة 5 (نصّ قراءة + تدريبات
+   * + نظرية أعمق) فشمل التدقيق الجديد — وهذا النمو مقصود ومُعلَن.
+   */
+  ["src/data/lessons/a2/a2-10.test.ts", 1011],
+  ["src/data/lessons/a2/a2-11.test.ts", 948],
   ["src/data/lessons/b2/b2-05.ts", 881],
   ["src/data/lessons/b2/b2-10.ts", 877],
   ["src/data/lessons/a2/a2-05.ts", 843],
@@ -51,11 +57,9 @@ const KNOWN_OVERSIZE: readonly [string, number][] = [
   ["src/data/lessons/b1/b1-06.ts", 725],
   ["src/data/lessons/a2/a2-13.ts", 710],
   ["src/data/lessons/a2/a2-05.test.ts", 705],
-  ["src/data/lessons/a2/a2-10.ts", 700],
   ["src/data/lessons/a2/a2-08.test.ts", 695],
   ["src/data/lessons/a2/a2-03.test.ts", 682],
   ["src/data/lessons/a1/a1-11.test.ts", 680],
-  ["src/data/lessons/a2/a2-11.ts", 679],
   ["src/data/lessons/integrity.test.ts", 668],
   ["src/data/lessons/b1/b1-07.ts", 667],
   ["src/data/lessons/b1/b1-03.ts", 658],
