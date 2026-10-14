@@ -25,6 +25,14 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
+  e11: {
+    correct: ["arbeitete", "wohnte", "kam"],
+    options: [
+      ["arbeitete", "arbeitet", "gearbeitet", "arbeitete ich"],
+      ["wohnte", "wohnt", "gewohnt", "wohnet"],
+      ["kam", "kommt", "gekommen", "kame"],
+    ],
+  },
   r3: { correct: ["Lehrer"], options: [["Lehrer", "Schüler", "Tisch"]] },
   e6: {
     correct: ["hatte", "gegessen", "gearbeitet hatte"],
@@ -53,10 +61,23 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
 };
 
 const expectedErrorCorrections: Record<string, { wrongWord: string; correctWord: string; options: string[] }> = {
+  e13: { wrongWord: "beendet hat", correctWord: "beendet hatte", options: ["beendet hatte", "beendet hat", "beenden hatte", "beendet gehabt"] },
   e5: { wrongWord: "bin", correctWord: "habe", options: ["habe", "bin", "war", "hatte"] },
 };
 
+const expectedTransformations: string[] = ["e7", "e9", "e12", "m4", "w1", "w3"];
+
+const expectedTransformationAnswers: Record<string, string[]> = {
+  e12: ["Bevor ich nach Berlin kam, hatte ich in Tunis gearbeitet", "Bevor ich nach Berlin kam, hatte ich in Tunis gearbeitet."],
+};
+
 const expectedMatching: Record<string, { left: string; right: string }[]> = {
+  e14: [
+    { left: "Ich arbeitete fünf Jahre in Tunis.", right: "Präteritum (سرد مكتوب)" },
+    { left: "Ich habe gestern gearbeitet.", right: "Perfekt (كلام يومي)" },
+    { left: "Bevor ich kam, hatte ich gearbeitet.", right: "Plusquamperfekt (الأسبق)" },
+    { left: "Ich war müde und hatte Fieber.", right: "Präteritum يبقى في الكلام" },
+  ],
   e3: [
     { left: "gehen", right: "ging" },
     { left: "kommen", right: "kam" },
@@ -146,6 +167,25 @@ describe("B1-02 lesson content audit", () => {
     }
   });
 
+  it("enumerates every auditable task type so no new task escapes the guard", () => {
+    const byType = (type: Exercise["type"]) =>
+      allTasks()
+        .filter((item) => item.type === type)
+        .map(({ id }) => id)
+        .sort();
+    expect(byType("multiple-choice").filter((id) => id in expectedMultipleChoice), "MCQ مغطّاة").toEqual(
+      byType("multiple-choice"),
+    );
+    expect(byType("fill-blank").filter((id) => id in expectedFillBlanks), "فراغات مغطّاة").toEqual(byType("fill-blank"));
+    expect(
+      byType("error-correction").filter((id) => id in expectedErrorCorrections),
+      "تصحيحات مغطّاة",
+    ).toEqual(byType("error-correction"));
+    expect(byType("matching").filter((id) => id in expectedMatching), "مطابقات مغطّاة").toEqual(byType("matching"));
+    const transformations = byType("transformation");
+    expect(transformations.filter((id) => expectedTransformations.includes(id)), "تحويلات مغطّاة").toEqual(transformations);
+  });
+
   it("audits every multiple-choice key and distractor set", () => {
     for (const [id, value] of Object.entries(expectedMultipleChoice)) {
       const exercise = task(id);
@@ -229,6 +269,43 @@ describe("B1-02 lesson content audit", () => {
     const m3 = task("m3");
     if (m3.type !== "word-ordering") throw new Error("m3 is not word-ordering");
     expect(evaluateExercise(m3, ["Ich", "arbeitete", "fünf", "Jahre", "in", "einer", "Firma", "."]).isCorrect).toBe(true);
+  });
+
+  it("keeps the reading text, glossary, comprehension questions, and discourse anchors intact", () => {
+    const reading = lessonB102.reading;
+    expect(reading?.id).toBe("read-b1-02");
+    expect(reading?.textType).toBe("erzaehlung");
+    expect(reading?.titleDe).toBe("Der erste Arbeitstag");
+    expect(reading?.titleAr).toBe("أول يوم عمل");
+    expect(reading?.paragraphs).toHaveLength(4);
+    expect(reading?.paragraphsAr).toHaveLength(4);
+    const text = reading!.paragraphs.join(" ").toLowerCase();
+    expect(text.split(/\s+/).filter(Boolean).length).toBeGreaterThanOrEqual(250);
+
+    expect(reading?.glossary.length).toBeGreaterThanOrEqual(8);
+    for (const item of reading!.glossary) {
+      const head = item.de.replace(/^(der|die|das)\s+/i, "").split(/[\s,(/]/)[0];
+      const stem = head.slice(0, Math.max(4, head.length - 3)).toLowerCase();
+      expect(text.includes(stem), `${item.de} ليست في النصّ`).toBe(true);
+      expect(item.ar.trim().length).toBeGreaterThan(1);
+    }
+
+    expect(reading?.questions.map(({ id }) => id)).toEqual(["rq1", "rq2", "rq3", "rq4"]);
+    for (const question of reading!.questions) {
+      expect(question.options.length).toBeGreaterThanOrEqual(3);
+      expect(question.correctIndex).toBeGreaterThanOrEqual(0);
+      expect(question.correctIndex).toBeLessThan(question.options.length);
+      expect(question.explanation.trim().length).toBeGreaterThan(20);
+      const answer = question.options[question.correctIndex];
+      expect(text.includes(answer.toLowerCase()) && answer.length > 45, `${question.id} منسوخ حرفياً`).toBe(false);
+    }
+
+    expect(reading?.redemittel?.length).toBeGreaterThanOrEqual(4);
+    expect(reading?.discussionAr?.trim().length).toBeGreaterThanOrEqual(40);
+
+    for (const anchor of ["zeugnis", "schicht", "vorstellungsgespräch"]) {
+      expect(text.includes(anchor), `مرساة مفقودة: ${anchor}`).toBe(true);
+    }
   });
 
   it("maps listening evidence to transcript-free task IDs only", () => {
