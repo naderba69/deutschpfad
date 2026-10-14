@@ -89,12 +89,27 @@ const AUDIT_JS = `(() => {
   });
 
   // 2) نص مقصوص فعلياً (overflow hidden + scrollWidth > clientWidth)
+  //    استثناء موثّق: الفقاعات الزخرفية المطلقة (blur/absolute خارج الحدّ ثم overflow-hidden)
+  //    ترفع scrollWidth بلا أي نصّ مقصوص — فلا تُحتسب.
+  const hasTextBeyond = (el) => {
+    const box = el.getBoundingClientRect();
+    let found = false;
+    el.querySelectorAll("p, span, h1, h2, h3, h4, li, td, th, button, a").forEach((child) => {
+      if (found) return;
+      if (!(child.textContent || "").trim()) return;
+      if (getComputedStyle(child).position === "absolute") return;
+      const r = child.getBoundingClientRect();
+      if (r.width === 0) return;
+      if (r.right > box.right + 4 || r.left < box.left - 4) found = true;
+    });
+    return found;
+  };
   document.querySelectorAll("button, a, h1, h2, h3, h4, p, span, li, td, th, div").forEach((el) => {
     if (!isVisible(el)) return;
     const st = getComputedStyle(el);
     if (st.overflowX !== "hidden" && st.overflow !== "hidden") return;
     if (String(el.className).includes("truncate")) return; // قصّ مقصود بنقاط
-    if (el.scrollWidth > el.clientWidth + 4) {
+    if (el.scrollWidth > el.clientWidth + 4 && hasTextBeyond(el)) {
       const txt = (el.textContent || "").trim();
       if (txt.length > 3 && el.clientWidth > 40) {
         add(el, "text-clipped", \`scrollW:\${el.scrollWidth} clientW:\${el.clientWidth}\`);
@@ -136,13 +151,17 @@ const AUDIT_JS = `(() => {
     if (!isVisible(el) || el.children.length > 0) return;
     if ((el.textContent || "").trim().length < 2) return;
     const fs = parseFloat(getComputedStyle(el).fontSize);
-    if (fs > 0 && fs < 11) add(el, "tiny-font", \`fs:\${fs}px\`);
+    // استثناء موثّق: تسميات محاور الرسوم الكثيفة (شبكة 10px) تحمل data-dense-labels
+    if (fs > 0 && fs < 11 && !el.closest("[data-dense-labels]")) add(el, "tiny-font", \`fs:\${fs}px\`);
   });
 
   // 5) أهداف لمس صغيرة (جوال فقط)
   if (vw <= 768) {
     document.querySelectorAll("a, button").forEach((el) => {
       if (!isVisible(el)) return;
+      // رابط «تخطَّ إلى المحتوى» مخفي بـsr-only وهو غير قابل للمس أصلاً؛
+      // وعند التركيز يصبح مرئياً بأبعاد كافية — فلا يُحتسب هدف لمس صغيراً.
+      if (isSrOnly(el)) return;
       const st = getComputedStyle(el);
       if (st.position === "fixed") return;
       const r = el.getBoundingClientRect();

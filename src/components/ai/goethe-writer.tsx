@@ -133,7 +133,7 @@ export function AiGoetheWriter() {
                 type="button"
                 onClick={() => setLevel(l)}
                 className={cn(
-                  "font-de rounded-lg border px-3 py-1 text-xs font-bold transition-colors",
+                  "tap-target font-de rounded-lg border px-3 py-1 text-xs font-bold transition-colors",
                   level === l ? "border-primary bg-primary text-primary-foreground" : "text-muted-foreground hover:border-primary/50",
                 )}
               >
@@ -150,7 +150,7 @@ export function AiGoetheWriter() {
                 type="button"
                 onClick={() => setTaskType(t.id)}
                 className={cn(
-                  "rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
+                  "tap-target rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
                   taskType === t.id ? "border-primary bg-primary/10 text-primary" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
                 )}
               >

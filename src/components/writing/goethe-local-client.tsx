@@ -35,7 +35,7 @@ export function GoetheLocalClient() {
             type="button"
             onClick={() => setTaskType(t.id)}
             className={cn(
-              "rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
+              "tap-target rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
               taskType === t.id ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
             )}
           >

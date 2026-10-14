@@ -126,7 +126,7 @@ export function MasteryCertificate({ level }: { level: LevelCode }) {
                           type="button"
                           onClick={() => rate(it.id, 1)}
                           className={cn(
-                            "rounded-full px-3 py-1.5 text-[11px] font-extrabold transition-colors",
+                            "tap-target rounded-full px-3 py-1.5 text-[11px] font-extrabold transition-colors",
                             r === 1 ? "bg-success text-white" : "bg-muted text-muted-foreground hover:bg-success/20",
                           )}
                         >
@@ -136,7 +136,7 @@ export function MasteryCertificate({ level }: { level: LevelCode }) {
                           type="button"
                           onClick={() => rate(it.id, 0.5)}
                           className={cn(
-                            "rounded-full px-3 py-1.5 text-[11px] font-extrabold transition-colors",
+                            "tap-target rounded-full px-3 py-1.5 text-[11px] font-extrabold transition-colors",
                             r === 0.5 ? "bg-gold text-white" : "bg-muted text-muted-foreground hover:bg-gold/20",
                           )}
                         >
@@ -146,7 +146,7 @@ export function MasteryCertificate({ level }: { level: LevelCode }) {
                           type="button"
                           onClick={() => rate(it.id, 0)}
                           className={cn(
-                            "rounded-full px-3 py-1.5 text-[11px] font-extrabold transition-colors",
+                            "tap-target rounded-full px-3 py-1.5 text-[11px] font-extrabold transition-colors",
                             r === 0 ? "bg-destructive/15 text-destructive" : "bg-muted text-muted-foreground hover:bg-destructive/15",
                           )}
                         >

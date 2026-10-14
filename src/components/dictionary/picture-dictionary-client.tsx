@@ -163,7 +163,7 @@ export function PictureDictionaryClient() {
                 type="button"
                 onClick={() => setLevel(l)}
                 className={cn(
-                  "rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
+                  "tap-target rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
                   level === l ? "border-primary bg-primary text-primary-foreground" : "bg-background hover:border-primary/50",
                 )}
               >
@@ -179,7 +179,7 @@ export function PictureDictionaryClient() {
               type="button"
               onClick={() => setEmojiFilter(c.id)}
               className={cn(
-                "rounded-full border px-3 py-1 text-xs font-bold transition-colors",
+                "tap-target rounded-full border px-3 py-1 text-xs font-bold transition-colors",
                 emojiFilter === c.id ? "border-primary bg-primary/10 text-primary" : "bg-background hover:border-primary/40",
               )}
             >

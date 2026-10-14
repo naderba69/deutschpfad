@@ -111,7 +111,7 @@ export function ReminderSettings() {
                 type="button"
                 onClick={() => void save({ ...prefs, enabled: !prefs.enabled })}
                 className={cn(
-                  "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
+                  "inline-flex items-center gap-1.5 tap-target rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
                   prefs.enabled
                     ? "border-gold bg-gold/15 text-gold-strong"
                     : "bg-muted/40 text-muted-foreground hover:border-primary/40",

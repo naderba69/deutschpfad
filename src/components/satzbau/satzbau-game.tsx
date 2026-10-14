@@ -93,7 +93,7 @@ export function SatzbauGame() {
             type="button"
             onClick={() => loadLevel(l)}
             className={cn(
-              "font-de rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
+              "font-de tap-target rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
               level === l ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
             )}
           >

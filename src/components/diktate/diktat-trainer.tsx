@@ -91,7 +91,7 @@ export function DiktatTrainer() {
             type="button"
             onClick={() => selectLevel(l)}
             className={cn(
-              "font-de rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
+              "font-de tap-target rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
               level === l ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
             )}
           >
@@ -129,7 +129,7 @@ export function DiktatTrainer() {
                 <button
                   type="button"
                   onClick={() => setRevealed((v) => !v)}
-                  className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-muted-foreground hover:text-primary"
+                  className="tap-target mt-2 gap-1 text-xs font-bold text-muted-foreground hover:text-primary"
                 >
                   <Eye className="h-3.5 w-3.5" aria-hidden="true" />
                   {revealed ? "إخفاء النص" : "عرض النص (استسلام)"}

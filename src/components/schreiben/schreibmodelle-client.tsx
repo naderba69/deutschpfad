@@ -92,7 +92,7 @@ export function SchreibmodelleClient() {
             type="button"
             onClick={() => setLevel(l)}
             className={cn(
-              "rounded-full border px-3 py-1 text-xs font-bold transition-colors",
+              "tap-target rounded-full border px-3 py-1 text-xs font-bold transition-colors",
               level === l ? "border-gold bg-gold/15 text-gold-strong" : "bg-muted/40 text-muted-foreground",
             )}
           >

@@ -178,7 +178,7 @@ export function AiVoiceTeacher() {
           onClick={() => setMode("free")}
           disabled={!isConfigured}
           className={cn(
-            "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
+            "inline-flex items-center gap-1.5 tap-target rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
             mode === "free" ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
             !isConfigured && "cursor-not-allowed opacity-60",
           )}
@@ -191,7 +191,7 @@ export function AiVoiceTeacher() {
           type="button"
           onClick={() => setMode("guided")}
           className={cn(
-            "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
+            "inline-flex items-center gap-1.5 tap-target rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
             mode === "guided" ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
           )}
         >
@@ -209,7 +209,7 @@ export function AiVoiceTeacher() {
             type="button"
             onClick={() => setLevel(l)}
             className={cn(
-              "font-de rounded-lg border px-3 py-1 text-xs font-bold transition-colors",
+              "tap-target font-de rounded-lg border px-3 py-1 text-xs font-bold transition-colors",
               level === l ? "border-primary bg-primary text-primary-foreground" : "text-muted-foreground hover:border-primary/50",
             )}
           >

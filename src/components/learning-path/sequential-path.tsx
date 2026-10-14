@@ -72,7 +72,7 @@ export function SequentialPath() {
                   <div className="flex shrink-0 items-center gap-2">
                     <Link
                       href={`/level/${level.code.toLowerCase()}`}
-                      className="rounded-lg border border-primary/30 bg-card px-3 py-1.5 text-xs font-bold text-primary transition-colors hover:bg-primary/10"
+                      className="tap-target rounded-lg border border-primary/30 bg-card px-3 py-1.5 text-xs font-bold text-primary transition-colors hover:bg-primary/10"
                     >
                       مركز المستوى ←
                     </Link>

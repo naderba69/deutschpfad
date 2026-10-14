@@ -129,7 +129,7 @@ export function LearningPathClient() {
                 type="button"
                 onClick={() => setMapLevel(l.code)}
                 className={cn(
-                  "font-de rounded-full px-3 py-1.5 text-xs font-extrabold transition-colors",
+                  "tap-target font-de rounded-full px-3 py-1.5 text-xs font-extrabold transition-colors",
                   mapLevel === l.code ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-primary",
                 )}
               >

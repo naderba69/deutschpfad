@@ -278,7 +278,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       {/* ترويسة الدرس */}
       <div className="mb-6 space-y-3">
         <div className="flex flex-wrap items-center gap-2">
-          <Link href="/learning-path" className="rounded-lg py-1 text-sm text-muted-foreground hover:text-primary">
+          <Link href="/learning-path" className="tap-target rounded-lg py-1 text-sm text-muted-foreground hover:text-primary">
             ← مسار التعلم
           </Link>
           <span className="text-muted-foreground">/</span>

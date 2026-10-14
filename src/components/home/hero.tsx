@@ -74,7 +74,7 @@ export function Hero() {
         <div className="relative mx-auto w-full max-w-md animate-fade-up animation-delay-2000" aria-hidden="true">
           <div className="glass rounded-3xl border p-6 shadow-soft">
             <div className="mb-4 flex items-center justify-between">
-              <span className="text-sm font-bold">درس اليوم <span className="ms-1 text-[10px] font-normal text-muted-foreground">(مثال توضيحي)</span></span>
+              <span className="text-sm font-bold">درس اليوم <span className="ms-1 text-[11px] font-normal text-muted-foreground">(مثال توضيحي)</span></span>
               <Badge className="font-de font-bold">A1</Badge>
             </div>
 
