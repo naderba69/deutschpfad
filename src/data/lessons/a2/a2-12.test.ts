@@ -14,6 +14,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   e1: { options: ["aber", "deshalb", "denn", "dann"], key: "aber" },
   e2: { options: ["deshalb", "aber", "und", "oder"], key: "deshalb" },
   e8: { options: ["أولاً أتعلم ثم أشاهد التلفاز", "أتعلم وأنا أشاهد التلفاز", "لا أتعلم بل أشاهد التلفاز", "أشاهد التلفاز ثم أتعلم"], key: "أولاً أتعلم ثم أشاهد التلفاز" },
+  e11: { options: ["denn", "deshalb", "trotzdem", "weil"], key: "denn" },
   m1: { options: ["denn", "deshalb", "trotzdem", "aber"], key: "denn" },
   m2: { options: ["trotzdem", "deshalb", "und", "denn"], key: "trotzdem" },
   q1: { options: ["wegen der Prüfung", "wegen des Wetters", "wegen der Arbeit", "wegen des Verkehrs"], key: "wegen der Prüfung" },
@@ -38,6 +39,13 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
       ["deshalb", "trotzdem"],
       ["trotzdem", "dann"],
       ["dann", "deshalb"],
+    ],
+  },
+  e12: {
+    correct: ["deshalb", "trotzdem"],
+    options: [
+      ["deshalb", "trotzdem", "denn"],
+      ["deshalb", "trotzdem", "denn"],
     ],
   },
   m5: {
@@ -68,6 +76,13 @@ const expectedErrorCorrections: Record<
     options: ["gehe ich", "ich gehe", "gehen ich", "ich gehen"],
     alreadyCorrect: false,
   },
+  e13: {
+    sentence: "Obwohl es regnet, ich gehe spazieren.",
+    wrongWord: "ich gehe",
+    correctWord: "gehe ich",
+    options: ["gehe ich", "ich gehe", "gehen ich", "ich gehen"],
+    alreadyCorrect: false,
+  },
   e9: {
     sentence: "Ich bleibe zu Hause, denn es regnet.",
     wrongWord: "denn es regnet",
@@ -85,6 +100,10 @@ const expectedTransformations: Record<string, { acceptedAnswers: string[]; sampl
   e7: {
     acceptedAnswers: ["Es ist kalt, trotzdem gehe ich spazieren", "Es ist kalt, trotzdem gehe ich spazieren."],
     sampleAnswer: "Es ist kalt, trotzdem gehe ich spazieren.",
+  },
+  e14: {
+    acceptedAnswers: ["Obwohl es regnet, gehe ich spazieren", "Obwohl es regnet, gehe ich spazieren."],
+    sampleAnswer: "Obwohl es regnet, gehe ich spazieren.",
   },
   w4: {
     acceptedAnswers: ["Es tut mir leid, ich hatte einen anstrengenden Tag, deshalb habe ich dir nicht geschrieben."],
@@ -146,7 +165,6 @@ describe("A2-12 lesson content audit", () => {
     expect("duration" in lessonA212).toBe(false);
     expect(lessonA212.summary).not.toMatch(/\d+\s*دقيقة|Goethe|CEFR|معتمد|إتقان عام|خاتمة مستوى A2/i);
     expect(lessonA212.summary).toContain("A2-13");
-    expect(lessonA212.reading).toBeUndefined();
 
     const meta = LESSON_META.find((item) => item.id === "a2-12");
     expect(meta).toMatchObject({
@@ -280,7 +298,7 @@ describe("A2-12 lesson content audit", () => {
       expect(exercise.acceptedAnswers, `${id} accepted`).toEqual(expected.acceptedAnswers);
       expect(exercise.sampleAnswer, `${id} sample`).toBe(expected.sampleAnswer);
       expect(new Set(exercise.acceptedAnswers.map(normalizeText)).size, `${id} distinct after normalization`).toBe(
-        id === "w1" || id === "e7" ? 1 : exercise.acceptedAnswers.length,
+        id === "w1" || id === "e7" || id === "e14" ? 1 : exercise.acceptedAnswers.length,
       );
       for (const answer of expected.acceptedAnswers) {
         expect(evaluateExercise(exercise, answer).isCorrect, `${id}: ${answer}`).toBe(true);
@@ -289,6 +307,46 @@ describe("A2-12 lesson content audit", () => {
     expect(evaluateExercise(task("w4"), "Es tut mir leid, ich hatte einen anstrengenden Tag, deshalb ich habe dir nicht geschrieben.").isCorrect).toBe(false);
     expect(evaluateExercise(task("w5"), "Die Idee ist gut, aber sehe ich das anders.").isCorrect).toBe(false);
     expect(evaluateExercise(task("w1"), "Es regnet, deshalb ich bleibe zu Hause.").isCorrect).toBe(false);
+  });
+
+  it("keeps the reading text, glossary, comprehension questions, and discourse anchors intact", () => {
+    const reading = lessonA212.reading;
+    expect(reading?.id).toBe("read-a2-12");
+    expect(reading?.textType).toBe("erzaehlung");
+    expect(reading?.titleDe).toBe("Eine Überraschung für Nour");
+    expect(reading?.titleAr).toBe("مفاجأة لنور");
+    expect(reading?.paragraphs).toHaveLength(4);
+    expect(reading?.paragraphsAr).toHaveLength(4);
+    const text = reading!.paragraphs.join(" ").toLowerCase();
+    const wordCount = text.split(/\s+/).filter(Boolean).length;
+    expect(wordCount).toBeGreaterThanOrEqual(150);
+
+    expect(reading?.glossary.length).toBeGreaterThanOrEqual(8);
+    for (const item of reading!.glossary) {
+      const head = item.de.replace(/^(der|die|das)\s+/i, "").split(/[\s,(/]/)[0];
+      const stem = head.slice(0, Math.max(4, head.length - 3)).toLowerCase();
+      expect(text.includes(stem), `${item.de} ليست في النصّ`).toBe(true);
+      expect(item.ar.trim().length).toBeGreaterThan(1);
+    }
+
+    expect(reading?.questions.map(({ id }) => id)).toEqual(["rq1", "rq2", "rq3", "rq4"]);
+    for (const question of reading!.questions) {
+      expect(question.options.length).toBeGreaterThanOrEqual(3);
+      expect(question.correctIndex).toBeGreaterThanOrEqual(0);
+      expect(question.correctIndex).toBeLessThan(question.options.length);
+      expect(question.explanation.trim().length).toBeGreaterThan(20);
+      expect(question.paragraph).toBeGreaterThanOrEqual(1);
+      expect(question.paragraph! <= reading!.paragraphs.length).toBe(true);
+      const answer = question.options[question.correctIndex];
+      expect(text.includes(answer.toLowerCase()) && answer.length > 45, `${question.id} منسوخ حرفياً`).toBe(false);
+    }
+
+    expect(reading?.redemittel?.length).toBeGreaterThanOrEqual(4);
+    expect(reading?.discussionAr?.trim().length).toBeGreaterThanOrEqual(40);
+
+    for (const anchor of ["überraschung", "ärgerlich", "geburtstag"]) {
+      expect(text.includes(anchor), `مرساة مفقودة: ${anchor}`).toBe(true);
+    }
   });
 
   it("checks dictation keys without treating them as speech assessment", () => {

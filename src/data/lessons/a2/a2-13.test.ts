@@ -52,6 +52,13 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
       ["meinem", "meinen", "mein", "meines"],
     ],
   },
+  e14: {
+    correct: ["meinem Bruder", "meinen Bruder"],
+    options: [
+      ["meinem Bruder", "meinen Bruder", "mein Bruder", "meines Bruders"],
+      ["meinem Bruder", "meinen Bruder", "mein Bruder", "meines Bruders"],
+    ],
+  },
   m2: {
     correct: ["mir", "der"],
     options: [
@@ -103,6 +110,10 @@ const expectedTransformations: Record<string, { acceptedAnswers: string[]; sampl
   w1: {
     acceptedAnswers: ["Gestern habe ich bis 18 Uhr gearbeitet.", "Gestern habe ich bis achtzehn Uhr gearbeitet."],
     sampleAnswer: "Gestern habe ich bis 18 Uhr gearbeitet.",
+  },
+  e12: {
+    acceptedAnswers: ["Ich bleibe zu Hause, weil ich Fieber habe", "Ich bleibe zu Hause, weil ich Fieber habe."],
+    sampleAnswer: "Ich bleibe zu Hause, weil ich Fieber habe.",
   },
 };
 
@@ -171,7 +182,6 @@ describe("A2-13 lesson content audit", () => {
     });
     expect("duration" in lessonA213).toBe(false);
     expect(lessonA213.summary).not.toMatch(/\d+\s*دقيقة|Goethe|CEFR|معتمد|إتقان عام/i);
-    expect(lessonA213.reading).toBeUndefined();
 
     const meta = LESSON_META.find((item) => item.id === "a2-13");
     expect(meta).toMatchObject({
@@ -304,6 +314,52 @@ describe("A2-13 lesson content audit", () => {
       }
     }
     expect(evaluateExercise(task("w1"), "Gestern ich habe bis 18 Uhr gearbeitet.").isCorrect).toBe(false);
+  });
+
+  it("keeps the reading text, glossary, comprehension questions, and discourse anchors intact", () => {
+    const reading = lessonA213.reading;
+    expect(reading?.id).toBe("read-a2-13");
+    expect(reading?.textType).toBe("bericht");
+    expect(reading?.titleDe).toBe("Mein Weg bis A2 — und wie es weitergeht");
+    expect(reading?.titleAr).toBe("طريقي إلى A2 — وكيف يكمل بعدها");
+    expect(reading?.paragraphs).toHaveLength(4);
+    expect(reading?.paragraphsAr).toHaveLength(4);
+    const text = reading!.paragraphs.join(" ").toLowerCase();
+    const wordCount = text.split(/\s+/).filter(Boolean).length;
+    expect(wordCount).toBeGreaterThanOrEqual(150);
+
+    expect(reading?.glossary.length).toBeGreaterThanOrEqual(8);
+    for (const item of reading!.glossary) {
+      const head = item.de.replace(/^(der|die|das)\s+/i, "").split(/[\s,(/]/)[0];
+      const stem = head.slice(0, Math.max(4, head.length - 3)).toLowerCase();
+      expect(text.includes(stem), `${item.de} ليست في النصّ`).toBe(true);
+      expect(item.ar.trim().length).toBeGreaterThan(1);
+    }
+
+    expect(reading?.questions.map(({ id }) => id)).toEqual(["rq1", "rq2", "rq3", "rq4"]);
+    for (const question of reading!.questions) {
+      expect(question.options.length).toBeGreaterThanOrEqual(3);
+      expect(question.correctIndex).toBeGreaterThanOrEqual(0);
+      expect(question.correctIndex).toBeLessThan(question.options.length);
+      expect(question.explanation.trim().length).toBeGreaterThan(20);
+      expect(question.paragraph).toBeGreaterThanOrEqual(1);
+      expect(question.paragraph! <= reading!.paragraphs.length).toBe(true);
+      const answer = question.options[question.correctIndex];
+      expect(text.includes(answer.toLowerCase()) && answer.length > 45, `${question.id} منسوخ حرفياً`).toBe(false);
+    }
+
+    expect(reading?.redemittel?.length).toBeGreaterThanOrEqual(4);
+    expect(reading?.discussionAr?.trim().length).toBeGreaterThanOrEqual(40);
+
+    for (const anchor of ["dativ", "wiederhol", "fortschritt"]) {
+      expect(text.includes(anchor), `مرساة مفقودة: ${anchor}`).toBe(true);
+    }
+  });
+
+  it("checks dictation keys without treating them as speech assessment", () => {
+    const e13 = task("e13");
+    if (e13.type !== "dictation") throw new Error("e13 is not dictation");
+    expect(e13.audioText).toBe("Gestern hatte ich Fieber, deshalb bin ich zu Hause geblieben.");
   });
 
   it("keeps theory claims sourced and narrow: §5 EntgFG, §30/§9 AufenthG, §10 StAG, no unsourced superlatives", () => {
