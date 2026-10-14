@@ -73,7 +73,25 @@ jobs:
         run: npm run build
 
       - name: اختبارات المتصفح على نسخة إنتاجية
-        run: npx playwright test --reporter=line --workers=2
+        run: |
+          set -o pipefail
+          npx playwright test --reporter=line --workers=2 2>&1 | tee pw-run.log
+
+      - name: إظهار أسماء الاختبارات الفاشلة (ملخّص + لوحة الأنشطة)
+        if: failure()
+        run: |
+          # سبب الوجود: تفاصيل الفشل كانت تُقرأ من سجلّ الوظيفة فقط، وهو محجوب في
+          # بيئات لا تصل إلى تخزين GitHub. أسماء الاختبارات تُنشر هنا فيصير الفشل
+          # قابلاً للتشخيص عبر واجهة البرمجة وملخّص التشغيل.
+          {
+            echo "### ❌ اختبارات متصفح فاشلة"
+            echo '```'
+            grep -E "^[[:space:]]+[0-9]+\) " pw-run.log | head -40 || echo "(لم يُعثر على أسماء — راجع السجل الكامل)"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          grep -E "^[[:space:]]+[0-9]+\) " pw-run.log | head -10 | while IFS= read -r line; do
+            echo "::error title=Playwright::${line}"
+          done || true
 
       - name: رفع تقارير الفشل (آثار Playwright)
         if: failure()
