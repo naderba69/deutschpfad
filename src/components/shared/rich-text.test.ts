@@ -15,7 +15,8 @@ import { LESSONS } from "@/data/lessons";
  */
 const THEORY_VIEWS = [
   "src/components/lesson/sections/theorie.tsx",
-  "src/components/lesson/lesson-flow.tsx",
+  // شروح التدفق انتقلت إلى ملف المراحل في المرحلة 4 (انظر docs/REFACTOR-PLAN.md)
+  "src/components/lesson/lesson-flow-stages.tsx",
 ];
 
 describe("عرض النصّ الغنيّ في الكتل النظرية", () => {

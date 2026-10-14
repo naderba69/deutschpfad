@@ -1,21 +1,20 @@
 "use client";
 
 import * as React from "react";
-import {Award, BookOpenCheck, CheckCircle2, Headphones, Mic, PenLine, PlayCircle, RotateCcw, Timer, Volume2, XCircle} from "lucide-react";
+import {Award, BookOpenCheck, CheckCircle2, Headphones, Mic, PenLine, PlayCircle, RotateCcw, Timer, XCircle} from "lucide-react";
 
-import {B2_GRAMMATIK, B2_HOEREN_SETS, B2_LESEN_SETS, GOETHE_B2_EXAM} from "@/data/exams";
+import {B2_HOEREN_SETS, B2_LESEN_SETS, GOETHE_B2_EXAM} from "@/data/exams";
 import {SCHREIB_MODELLE} from "@/data/schreibmodelle";
-import type { ExamHoerenTeil, ExamLesenTeil } from "@/types/exam";
 import {useCountdown} from "@/lib/tests/use-countdown";
 import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent} from "@/components/ui/card";
 import {Progress} from "@/components/ui/progress";
 import {AutoGrowTextarea} from "@/components/shared/auto-grow-textarea";
-import {ExamAudioPlayer} from "@/components/tests/exam-audio-player";
-import {ExamGapList, ExamMcqList, ExamStatementsList, ExamZuordnungList} from "@/components/tests/exam-question-views";
 import {gradeTeile, scoreModule, type ModuleScore} from "@/lib/tests/exam-scoring";
-import {B2_HOEREN_AUDIO, type ExamAudioSpec} from "@/data/exams/b2-hoeren-audio";
+import {B2_HOEREN_AUDIO} from "@/data/exams/b2-hoeren-audio";
+import {SprechenSection} from "@/components/tests/goethe-b2-sprechen";
+import {HoerenTeilView, LesenTeilView, speakText} from "@/components/tests/goethe-b2-views";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -35,124 +34,6 @@ const MODULE_META: { key: Phase; icon: React.ReactNode; title: string; minutes: 
   { key: "schreiben", icon: <PenLine className="h-5 w-5" />, title: "Schreiben — الكتابة", minutes: GOETHE_B2_EXAM.schreibenMinutes },
   { key: "sprechen", icon: <Mic className="h-5 w-5" />, title: "Sprechen — التحدث", minutes: GOETHE_B2_EXAM.sprechenMinutes },
 ];
-
-/** نطق نص ألماني عبر TTS */
-function speakText(text: string, rate = 0.95) {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-  window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = "de-DE";
-  u.rate = rate;
-  window.speechSynthesis.speak(u);
-}
-
-/* ════════════ الجزء الواحد من القراءة ════════════ */
-function LesenTeilView({
-  teil,
-  answers,
-  onAnswer,
-}: {
-  teil: ExamLesenTeil;
-  answers: Record<string, unknown>;
-  onAnswer: (key: string, value: unknown) => void;
-}) {
-  return (
-    <div className="space-y-4">
-      <div className="rounded-xl border bg-muted/20 p-3 text-sm text-muted-foreground">{teil.introAr}</div>
-      {teil.kind === "mcq" && teil.text && (
-        <div className="rounded-xl border bg-card p-4">
-          <p className="mb-2 text-xs font-bold text-primary">📄 النص</p>
-          <div className="max-h-72 overflow-y-auto rounded-lg border bg-muted/20 p-3">
-            <p className="text-sm leading-relaxed" dir="ltr" lang="de">{teil.text}</p>
-          </div>
-          {teil.textAr && <p className="mt-2 text-xs text-muted-foreground" dir="rtl">{teil.textAr}</p>}
-        </div>
-      )}
-      {teil.kind === "gap" && teil.gap && (
-        <ExamGapList
-          gap={teil.gap}
-          answers={answers as Record<number, string>}
-          onAnswer={(gi, sid) => {
-            if (!sid) {
-              const next = { ...(answers as Record<number, string>) };
-              delete next[gi];
-              onAnswer("gap", next);
-            } else {
-              onAnswer("gap", { ...(answers as Record<number, string>), [gi]: sid });
-            }
-          }}
-        />
-      )}
-      {teil.kind === "zuordnung" && teil.categories && teil.items && (
-        <ExamZuordnungList
-          categories={teil.categories}
-          items={teil.items}
-          allowRepeat={teil.allowRepeat ?? false}
-          answers={answers as Record<string, string>}
-          onAnswer={(itemId, catId) => onAnswer(itemId, catId)}
-        />
-      )}
-      {teil.kind === "rf" && teil.statements && (
-        <ExamStatementsList
-          statements={teil.statements}
-          answers={answers as Record<string, boolean>}
-          onAnswer={(id, val) => onAnswer(id, val)}
-        />
-      )}
-      {teil.kind === "mcq" && teil.questions && (
-        <ExamMcqList
-          questions={teil.questions}
-          answers={answers as Record<string, number>}
-          onAnswer={(id, idx) => onAnswer(id, idx)}
-        />
-      )}
-    </div>
-  );
-}
-
-/* ════════════ الجزء الواحد من الاستماع ════════════ */
-function HoerenTeilView({
-  teil,
-  audio,
-  answers,
-  onAnswer,
-}: {
-  teil: ExamHoerenTeil;
-  audio: ExamAudioSpec;
-  answers: Record<string, unknown>;
-  onAnswer: (key: string, value: unknown) => void;
-}) {
-  return (
-    <div className="space-y-4">
-      <div className="rounded-xl border bg-muted/20 p-3 text-sm text-muted-foreground">{teil.introAr}</div>
-      <ExamAudioPlayer spec={audio} />
-      {teil.kind === "rf" && teil.statements && (
-        <ExamStatementsList
-          statements={teil.statements}
-          answers={answers as Record<string, boolean>}
-          onAnswer={(id, val) => onAnswer(id, val)}
-        />
-      )}
-      {teil.kind === "mcq" && teil.questions && (
-        <ExamMcqList
-          questions={teil.questions}
-          answers={answers as Record<string, number>}
-          onAnswer={(id, idx) => onAnswer(id, idx)}
-        />
-      )}
-      {teil.kind === "zuordnung" && teil.categories && teil.items && (
-        <ExamZuordnungList
-          categories={teil.categories}
-          items={teil.items}
-          allowRepeat={teil.allowRepeat ?? false}
-          answers={answers as Record<string, string>}
-          onAnswer={(itemId, catId) => onAnswer(itemId, catId)}
-        />
-      )}
-      {teil.audioAr && <p className="text-xs text-muted-foreground">{teil.audioAr}</p>}
-    </div>
-  );
-}
 
 export function GoetheB2Exam() {
   const [phase, setPhase] = React.useState<Phase>("intro");
@@ -570,102 +451,17 @@ export function GoetheB2Exam() {
 
   /* ════════ التحدث ════════ */
   if (phase === "sprechen") {
-    const sprechen = GOETHE_B2_EXAM.sprechen;
-    const v = sprechen.vortrag[vortragIdx % sprechen.vortrag.length];
-    const d = sprechen.diskussion[diskIdx % sprechen.diskussion.length];
     return (
-      <div key={`sprechen-${runKey}`} className="space-y-5">
-        {lowTime && (
-          <div className="rounded-xl border border-amber-500/50 bg-amber-50 p-3 text-center text-sm font-bold text-amber-900 dark:bg-amber-950/40 dark:text-amber-200" role="alert">
-            ⚠️ تبقّى أقل من 5 دقائق — اختم عرضك ونقاشك.
-          </div>
-        )}
-        {expiredNotice && (
-          <div className="rounded-xl border border-destructive/50 bg-destructive/10 p-3 text-center text-sm font-bold text-destructive" role="alert">
-            {expiredNotice}
-          </div>
-        )}
-        <div className="sticky top-16 z-30 flex items-center gap-3 rounded-xl border bg-background/95 px-4 py-2.5 shadow-sm backdrop-blur-md">
-          <span className="inline-flex items-center gap-1.5 text-sm font-bold">
-            <Mic className="h-4 w-4 text-primary" aria-hidden="true" />
-            Sprechen — Vortrag + Diskussion
-          </span>
-          <span className="font-de ms-auto text-sm font-extrabold text-primary tabular-nums">
-            ⏱ {Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, "0")}
-          </span>
-        </div>
-
-        {/* Teil 1: Vortrag */}
-        <Card className="border-primary/30">
-          <CardContent className="space-y-3 p-5">
-            <h3 className="text-base font-extrabold">🎤 Teil 1 — Vortrag (~4 دقائق)</h3>
-            <p className="text-sm text-muted-foreground">
-              اختر موضوعاً، استعد في <b>{sprechen.vorbereitungMinutes} دقيقة</b> (التحضير المخصص يُدار خارج المؤقت)،
-              ثم تحدث عن الموضوع باتباع الأسئلة الإرشادية. استخدم بنية: مقدمة ← وضع حالي ← مشاكل/أسباب ← حلول ← خاتمة.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {sprechen.vortrag.map((t, i) => (
-                <button
-                  key={t.id}
-                  type="button"
-                  onClick={() => setVortragIdx(i)}
-                  className={cn("rounded-lg border px-3 py-1.5 text-xs font-bold", i === vortragIdx % sprechen.vortrag.length ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background")}
-                >
-                  <span dir="ltr" lang="de">{t.topicDe}</span>
-                </button>
-              ))}
-            </div>
-            <div className="rounded-xl border bg-muted/20 p-3">
-              <p className="font-bold"><span dir="ltr" lang="de">{v.topicDe}</span></p>
-              <p className="text-sm text-muted-foreground">{v.topicAr}</p>
-              <ul className="mt-2 space-y-1 text-sm">
-                {v.leitfragen.map((q, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
-                    <span dir="ltr" lang="de">{q}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <Button size="sm" variant="outline" className="gap-1.5" onClick={() => speakText(v.topicDe)}>
-              <Volume2 className="h-4 w-4" aria-hidden="true" /> اسمع الموضوع
-            </Button>
-          </CardContent>
-        </Card>
-
-        {/* Teil 2: Diskussion */}
-        <Card className="border-gold/40">
-          <CardContent className="space-y-3 p-5">
-            <h3 className="text-base font-extrabold">🗣️ Teil 2 — Diskussion (~5 دقائق)</h3>
-            <p className="text-sm text-muted-foreground">{d.positionAr}</p>
-            <div className="rounded-xl border bg-muted/20 p-3">
-              <p className="font-bold"><span dir="ltr" lang="de">{d.themaDe}</span></p>
-              <p className="text-sm text-muted-foreground">{d.themaAr}</p>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              <div className="rounded-xl border border-success/30 bg-success/5 p-3">
-                <p className="mb-1.5 text-xs font-extrabold text-success">PRO — حجج مؤيدة</p>
-                <ul className="space-y-1 text-sm">
-                  {d.pro.map((p, i) => <li key={i}>✓ <span dir="ltr" lang="de">{p}</span></li>)}
-                </ul>
-              </div>
-              <div className="rounded-xl border border-destructive/30 bg-destructive/5 p-3">
-                <p className="mb-1.5 text-xs font-extrabold text-destructive">KONTRA — حجج معارضة</p>
-                <ul className="space-y-1 text-sm">
-                  {d.kontra.map((p, i) => <li key={i}>✗ <span dir="ltr" lang="de">{p}</span></li>)}
-                </ul>
-              </div>
-            </div>
-            <p className="text-xs text-muted-foreground">
-              💡 استخدم عبارات النقاش: <span dir="ltr" lang="de">Meiner Meinung nach… / Da stimme ich Ihnen zu, aber… / Ich sehe das anders, denn… / Ein wichtiger Aspekt ist…</span>
-            </p>
-          </CardContent>
-        </Card>
-
-        <Button variant="gold" size="lg" className="w-full" onClick={() => setPhase("result")}>
-          إنهاء التحدث ← عرض النتيجة
-        </Button>
-      </div>
+      <SprechenSection
+        lowTime={lowTime}
+        expiredNotice={expiredNotice}
+        remaining={remaining}
+        vortragIdx={vortragIdx}
+        setVortragIdx={setVortragIdx}
+        diskIdx={diskIdx}
+        runKey={runKey}
+        onFinish={() => setPhase("result")}
+      />
     );
   }
 

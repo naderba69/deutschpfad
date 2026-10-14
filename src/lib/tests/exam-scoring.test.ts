@@ -169,15 +169,20 @@ describe("التصحيح الموحّد — كل نوع جزء", () => {
 /* ── 2) حارس عدم التكرار ────────────────────────────────── */
 
 describe("العارضات: مصدر واحد للمحرّكات كلها", () => {
+  // المحرّك ومُساعِداته: العرض قد يُنقل إلى ملفات مرافقة (المرحلة 4) — الحارس يتتبّعها
   const engines = [
     "src/components/tests/goethe-a1-exam.tsx",
     "src/components/tests/goethe-b2-exam.tsx",
+  ];
+  const enginesWithViews = [
+    ...engines,
+    "src/components/tests/goethe-b2-views.tsx",
   ];
 
   it("لا يعرّف أي محرّك عارضات أسئلة محلياً (mcq/rf/zuordnung/gap)", () => {
     const banned = /function\s+(McqList|McqBlock|RichtigFalschList|ZuordnungList|GapList|StatementsBlock)\b/;
     const offenders: string[] = [];
-    for (const rel of engines) {
+    for (const rel of enginesWithViews) {
       const src = fs.readFileSync(path.join(process.cwd(), rel), "utf8");
       if (banned.test(src)) offenders.push(rel);
     }
@@ -188,9 +193,14 @@ describe("العارضات: مصدر واحد للمحرّكات كلها", () =
   });
 
   it("كل محرّك يستورد عارضاته من الوحدة المشتركة", () => {
+    // العرض قد يكون في ملف مرافق للمحرّك — المهم أن المحرّك نفسه لا يعرّفه ولا يهمله
+    const imports = enginesWithViews.filter((rel) =>
+      fs.readFileSync(path.join(process.cwd(), rel), "utf8").includes("@/components/tests/exam-question-views"),
+    );
+    expect(imports.length, "لا ملف في مجموعة المحرّك يستورد exam-question-views").toBeGreaterThan(0);
     for (const rel of engines) {
       const src = fs.readFileSync(path.join(process.cwd(), rel), "utf8");
-      expect(src, `${rel} لا يستورد exam-question-views`).toContain("@/components/tests/exam-question-views");
+      expect(src, `${rel} لا يستورد حاسبة التصحيح الموحّدة`).toContain("@/lib/tests/exam-scoring");
     }
   });
 
