@@ -1,0 +1,115 @@
+/**
+ * b1-06 — نصّ القراءة الممتدّ (الجزء «reading»)
+ * فُصل وأُضيف في المرحلة 5. نصّ B1 عن الثقافة والفن: تصريف الصفات المطبق في السرد.
+ */
+import type { ReadingText } from "@/types/lesson";
+
+export const readingB106: ReadingText = {
+  id: "read-b1-06",
+  titleDe: "Ein Museum für alle",
+  titleAr: "متحف للجميع",
+  textType: "artikel",
+  paragraphs: [
+    "Das kleine Museum in der Altstadt hatte lange ein Problem: Nur wenige junge Leute kamen, und die alten Besucher blieben oft nur zwanzig Minuten. Die neue Leiterin, eine junge Frau aus Leipzig, wollte das ändern. Ihr Plan war einfach: ein modernes Angebot mit kurzen, lebendigen Texten statt langer, trockener Schilder. „Ein junges Publikum braucht eine andere Sprache“, sagt sie. „Wir zeigen jetzt die gleichen Bilder, aber mit einer neuen Geschichte.“",
+    "Zuerst wurden die Texte an den Wänden neu geschrieben. Aus wissenschaftlichen Beschreibungen wurden kurze Fragen: Wer war diese Frau? Warum trägt sie ein rotes Kleid? Auf einem kleinen Tisch liegen außerdem alte Fotos, und ein freundlicher Mitarbeiter erklärt die Geschichte jeder Familie. Für Kinder gibt es einen eigenen Raum mit bunten Bildern zum Ausmalen. Die Leiterin betont, ein gutes Museum solle nicht nur schöne Gegenstände zeigen, sondern auch eine lebendige Geschichte erzählen.",
+    "Die Wirkung war deutlich. In den ersten drei Monaten kamen doppelt so viele Besucher wie im Vorjahr. Besonders beliebt ist ein Angebot am Donnerstagabend: Junge Erwachsene können bei einem kleinen Konzert durch die Ausstellung gehen. Eine Studentin sagt, sie sei früher nie in ein Museum gegangen, weil sie solche Orte langweilig gefunden habe. „Jetzt komme ich fast jede Woche“, erzählt sie.",
+    "Kritik gibt es trotzdem. Ein älterer Besucher sagte, die neuen Texte seien zu einfach und die alten Informationen gingen verloren. Die Leiterin antwortet ruhig: Die ausführlichen Texte gebe es weiterhin in einem digitalen Angebot, und interessierte Besucher könnten dort alles lesen. Für sie ist die Frage am Ende eine einfache: Soll ein Museum ein stilles Haus für wenige oder ein lebendiger Ort für viele sein?",
+  ],
+  paragraphsAr: [
+    "كان المتحف الصغير في البلدة القديمة يعاني مشكلة قديمة: لم يكن يأتي إلا قليل من الشباب، وكان الزوّار الكبار لا يبقون إلا عشرين دقيقة. وأرادت المديرة الجديدة، وهي امرأة شابة من لايبزغ، أن تُغيّر ذلك. وكانت خطتها بسيطة: عرض حديث بنصوص قصيرة حيّة بدل اللوحات الطويلة الجافة. تقول: «الجمهور الشاب يحتاج لغة أخرى. نحن نعرض الصور نفسها الآن، لكن بحكاية جديدة».",
+    "أُعيدت كتابة النصوص على الجدران أولاً. وتحوّلت الأوصاف العلمية إلى أسئلة قصيرة: من كانت هذه المرأة؟ ولماذا تلبس فستاناً أحمر؟ ويوجد أيضاً على طاولة صغيرة صور قديمة، يشرح موظف ودود تاريخ كل أسرة. وللأطفال غرفة خاصة فيها صور ملوّنة للتلوين. وتؤكد المديرة أن المتحف الجيد لا ينبغي أن يعرض أشياء جميلة فحسب، بل أن يحكي حكاية حيّة أيضاً.",
+    "وكان الأثر واضحاً. في الأشهر الثلاثة الأولى جاء ضعف عدد الزوّار في العام الماضي. والعرض الأكثر إعجاباً مساء الخميس: إذ يمكن للشباب أن يتجوّلوا في المعرض مع حفل موسيقي صغير. وتقول طالبة جامعية إنها لم تكن تذهب إلى المتحف من قبل لأنها كانت تجد أماكن كهذه مملّة. «الآن آتي كل أسبوع تقريباً»، تحكي.",
+    "لكن النقد موجود. قال زائر أكبر سناً إن النصوص الجديدة بسيطة جداً وإن المعلومات القديمة تُفقد. فردّت المديرة بهدوء: إن النصوص المفصّلة باقية في عرض رقمي، ويمكن للزوّار المهتمّين أن يقرأوا كل شيء هناك. والسؤال عندها في النهاية بسيط: هل ينبغي أن يكون المتحف بيتاً صامتاً للقلّة أم مكاناً حيّاً للكثيرين؟",
+  ],
+  glossary: [
+    { de: "das Museum", ar: "المتحف", noteAr: "محايد، وجمعه die Museen؛ ومنه das Museumspublikum (جمهور المتحف)." },
+    { de: "die Ausstellung", ar: "المعرض", noteAr: "مؤنّثة؛ ومنها ausstellen (يعرض)." },
+    { de: "der Besucher", ar: "الزائر", noteAr: "مذكّر بلاحقة -er؛ والمؤنّث die Besucherin." },
+    { de: "das Publikum", ar: "الجمهور", noteAr: "محايد، ولا يُجمع؛ ein junges Publikum (جمهور شاب)." },
+    { de: "der Gegenstand", ar: "الغرض، الشيء المعروض", noteAr: "مذكّر بلاحقة -stand؛ وجمعه die Gegenstände." },
+    { de: "trocken", ar: "جاف، مملّ", noteAr: "صفة؛ في المجاز: ein trockener Text (نصّ جاف)." },
+    { de: "lebendig", ar: "حيّ، نابض", noteAr: "صفة؛ ومنها das Leben (الحياة) وleben (يعيش)." },
+    { de: "beliebt", ar: "محبوب، مرغوب", noteAr: "صفة؛ beliebt bei + Dativ (محبوب عند فلان)." },
+    { de: "die Wirkung", ar: "الأثر، المفعول", noteAr: "مؤنّثة؛ ومنها wirken (يؤثّر) وwirksam (فعّال)." },
+    { de: "ausführlich", ar: "مفصّل", noteAr: "صفة؛ ومنها die Ausführung (الصياغة، التنفيذ)." },
+  ],
+  questions: [
+    {
+      id: "rq1",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Warum kam die neue Leiterin in das Museum?",
+      questionAr: "لماذا جاءت المديرة الجديدة إلى المتحف؟",
+      options: [
+        "Um die alten Bilder zu verkaufen.",
+        "Um das Museum zu ändern und mehr junge Besucher zu gewinnen.",
+        "Um das Museum zu schließen.",
+        "Um einen neuen Raum zu bauen, weil das alte Haus zu klein war.",
+      ],
+      correctIndex: 1,
+      paragraph: 1,
+      explanation: "الفقرة 1: المشكلة قِلّة الشباب، وخطتها «ein modernes Angebot mit kurzen, lebendigen Texten statt langer, trockener Schilder» — أي تغيير العرض لجذب جمهور شاب.",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq2",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was wurde zuerst geändert?",
+      questionAr: "ما الذي تغيّر أولاً؟",
+      options: [
+        "Die Texte an den Wänden.",
+        "Der Eintrittspreis.",
+        "Das Gebäude.",
+        "Die Öffnungszeiten am Wochenende.",
+      ],
+      correctIndex: 0,
+      paragraph: 2,
+      explanation: "الفقرة 2 تفتتح بـZuerst wurden die Texte an den Wänden neu geschrieben — ومنها تحوّلت الأوصاف العلمية إلى أسئلة قصيرة (من كانت هذه المرأة؟ لماذا تلبس فستاناً أحمر؟).",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq3",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Wie war die Wirkung in den ersten drei Monaten?",
+      questionAr: "كيف كان الأثر في الأشهر الثلاثة الأولى؟",
+      options: [
+        "Es kamen doppelt so viele Besucher wie im Vorjahr.",
+        "Es kamen weniger Besucher als vorher.",
+        "Die Besucherzahlen blieben gleich.",
+        "Es kamen nur Kinder.",
+      ],
+      correctIndex: 0,
+      paragraph: 3,
+      explanation: "الفقرة 3: «kamen doppelt so viele Besucher wie im Vorjahr» — أي ضعف زوّار العام الماضي، ويؤكّده أن العرض مساء الخميس صار الأكثر إعجاباً.",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq4",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Wie antwortet die Leiterin auf die Kritik?",
+      questionAr: "كيف ردّت المديرة على النقد؟",
+      options: [
+        "Sie nimmt die alten Texte sofort zurück.",
+        "Sie ignoriert die Kritik komplett.",
+        "Sie verweist auf ein digitales Angebot mit den ausführlichen Texten.",
+        "Sie verbietet älteren Besuchern den Eintritt.",
+      ],
+      correctIndex: 2,
+      paragraph: 4,
+      explanation: "الفقرة 4: Die ausführlichen Texte gebe es weiterhin in einem digitalen Angebot — أي جوابها ضمّ التفصيل في عرض رقمي بلا إلغاء الجديد، وهو حلّ يجمع الجمهورين.",
+      errorType: "comprehension",
+    },
+  ],
+  redemittel: [
+    { de: "ein lebendiges Angebot", ar: "عرض حيّ (صفة + اسم)" },
+    { de: "eine neue Geschichte erzählen", ar: "يحكي حكاية جديدة" },
+    { de: "bei jungen Leuten beliebt sein", ar: "محبوب عند الشباب" },
+    { de: "eine deutliche Wirkung haben", ar: "له أثر واضح" },
+    { de: "Ich finde, dass …", ar: "أرى أنّ …" },
+  ],
+  discussionAr:
+    "ناقش مع زميلك: هل ينبغي للمتحف أن يشرح بلغة بسيطة أم بلغة علمية؟ وأيّ العرضين تفضّل: النصّ القصير على الجدار أم التفصيل على الشاشة؟ ثم صف متحفاً زرته مستخدماً أربع صفات مع نهاياتها الصحيحة (ein großes Museum · die interessanten Bilder · mit einem freundlichen Führer).",
+};
