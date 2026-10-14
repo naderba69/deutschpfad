@@ -31,6 +31,10 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
+  r3: {
+    correct: ["Lehrer"],
+    options: [["Lehrer", "Student", "Koch"]],
+  },
   e6: {
     correct: ["das", "die"],
     options: [
@@ -43,6 +47,13 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
     options: [
       ["dem", "den", "der"],
       ["das", "der", "die"],
+    ],
+  },
+  e14: {
+    correct: ["des Lehrers", "der Studenten"],
+    options: [
+      ["des Lehrers", "des Lehrer", "dem Lehrer", "der Lehrer"],
+      ["der Studenten", "des Studenten", "den Studenten", "die Studenten"],
     ],
   },
   w2: {
@@ -58,6 +69,13 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
 const expectedErrorCorrections: Record<string, { wrongWord: string; correctWord: string; options: string[] }> = {
   e5: { wrongWord: "den Regen", correctWord: "des Regens", options: ["des Regens", "des Regen", "der Regen", "die Regen"] },
   m4: { wrongWord: "das Wetter", correctWord: "des Wetters", options: ["des Wetters", "den Wetter", "der Wetter", "das Wetters"] },
+  e15: { wrongWord: "der", correctWord: "dem", options: ["dem", "der", "den", "dessen"] },
+};
+
+const expectedTransformations: string[] = ["e7", "e9", "e13", "w1"];
+
+const expectedTransformationAnswers: Record<string, string[]> = {
+  e13: ["Das ist die Frau, die Deutsch unterrichtet", "Das ist die Frau, die Deutsch unterrichtet."],
 };
 
 const expectedMatching: Record<string, { left: string; right: string }[]> = {
@@ -162,6 +180,26 @@ describe("B1-01 lesson content audit", () => {
     }
   });
 
+  it("enumerates every auditable task type so no new task escapes the guard", () => {
+    const byType = (type: Exercise["type"]) =>
+      allTasks()
+        .filter((item) => item.type === type)
+        .map(({ id }) => id)
+        .sort();
+    expect(byType("multiple-choice").filter((id) => id in expectedMultipleChoice), "MCQ مغطّاة").toEqual(
+      byType("multiple-choice"),
+    );
+    expect(byType("fill-blank").filter((id) => id in expectedFillBlanks), "فراغات مغطّاة").toEqual(byType("fill-blank"));
+    expect(
+      byType("error-correction").filter((id) => id in expectedErrorCorrections),
+      "تصحيحات مغطّاة",
+    ).toEqual(byType("error-correction"));
+    expect(byType("matching").filter((id) => id in expectedMatching), "مطابقات مغطّاة").toEqual(byType("matching"));
+    const transformations = byType("transformation");
+    const covered = transformations.filter((id) => expectedTransformations.includes(id));
+    expect(covered, "تحويلات مغطّاة").toEqual(transformations);
+  });
+
   it("audits every multiple-choice key and distractor set", () => {
     for (const [id, value] of Object.entries(expectedMultipleChoice)) {
       const exercise = task(id);
@@ -225,6 +263,18 @@ describe("B1-01 lesson content audit", () => {
     }
   });
 
+  it("checks the accepted answers of every new transformation", () => {
+    for (const [id, accepted] of Object.entries(expectedTransformationAnswers)) {
+      const exercise = task(id);
+      if (exercise.type !== "transformation") throw new Error(`${id} is not transformation`);
+      expect(exercise.acceptedAnswers, `${id} accepted`).toEqual(accepted);
+      for (const answer of accepted) {
+        expect(evaluateExercise(exercise, answer).isCorrect, `${id}: ${answer}`).toBe(true);
+      }
+      expect(evaluateExercise(exercise, "Das ist die Frau, die unterrichtet Deutsch.").isCorrect, `${id} خطأ`).toBe(false);
+    }
+  });
+
   it("checks word-order and transformation answers", () => {
     const e4 = task("e4");
     if (e4.type !== "word-ordering") throw new Error("e4 is not word-ordering");
@@ -235,6 +285,43 @@ describe("B1-01 lesson content audit", () => {
     if (e7.type !== "transformation") throw new Error("e7 is not transformation");
     expect(evaluateExercise(e7, "Der Mann, der mir hilft, ist nett.").isCorrect).toBe(true);
     expect(evaluateExercise(e7, "Der Mann, den mir hilft, ist nett.").isCorrect).toBe(false);
+  });
+
+  it("keeps the reading text, glossary, comprehension questions, and discourse anchors intact", () => {
+    const reading = lessonB101.reading;
+    expect(reading?.id).toBe("read-b1-01");
+    expect(reading?.textType).toBe("artikel");
+    expect(reading?.titleDe).toBe("Zwei Wege nach der Schule");
+    expect(reading?.titleAr).toBe("طريقان بعد المدرسة");
+    expect(reading?.paragraphs).toHaveLength(4);
+    expect(reading?.paragraphsAr).toHaveLength(4);
+    const text = reading!.paragraphs.join(" ").toLowerCase();
+    expect(text.split(/\s+/).filter(Boolean).length).toBeGreaterThanOrEqual(250);
+
+    expect(reading?.glossary.length).toBeGreaterThanOrEqual(8);
+    for (const item of reading!.glossary) {
+      const head = item.de.replace(/^(der|die|das)\s+/i, "").split(/[\s,(/]/)[0];
+      const stem = head.slice(0, Math.max(4, head.length - 3)).toLowerCase();
+      expect(text.includes(stem), `${item.de} ليست في النصّ`).toBe(true);
+      expect(item.ar.trim().length).toBeGreaterThan(1);
+    }
+
+    expect(reading?.questions.map(({ id }) => id)).toEqual(["rq1", "rq2", "rq3", "rq4"]);
+    for (const question of reading!.questions) {
+      expect(question.options.length).toBeGreaterThanOrEqual(3);
+      expect(question.correctIndex).toBeGreaterThanOrEqual(0);
+      expect(question.correctIndex).toBeLessThan(question.options.length);
+      expect(question.explanation.trim().length).toBeGreaterThan(20);
+      const answer = question.options[question.correctIndex];
+      expect(text.includes(answer.toLowerCase()) && answer.length > 45, `${question.id} منسوخ حرفياً`).toBe(false);
+    }
+
+    expect(reading?.redemittel?.length).toBeGreaterThanOrEqual(4);
+    expect(reading?.discussionAr?.trim().length).toBeGreaterThanOrEqual(40);
+
+    for (const anchor of ["ausbildung", "studium", "bewerbung"]) {
+      expect(text.includes(anchor), `مرساة مفقودة: ${anchor}`).toBe(true);
+    }
   });
 
   it("maps listening evidence to transcript-free task IDs only", () => {
