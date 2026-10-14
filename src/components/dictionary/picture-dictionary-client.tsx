@@ -7,6 +7,7 @@ import {SpeakButton} from "@/components/shared/speak-button";
 import {cn} from "@/lib/utils";
 import {getLevelVocab} from "@/data/vocabulary";
 import type { VocabEntry } from "@/data/vocabulary/a1";
+import {FilterChip} from "@/components/ui/filter-chip";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -158,33 +159,25 @@ export function PictureDictionaryClient() {
           </div>
           <div className="flex gap-1.5" role="group" aria-label="المستوى">
             {(["all", "A1", "A2"] as const).map((l) => (
-              <button
+              <FilterChip
                 key={l}
-                type="button"
                 onClick={() => setLevel(l)}
-                className={cn(
-                  "tap-target rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
-                  level === l ? "border-primary bg-primary text-primary-foreground" : "bg-background hover:border-primary/50",
-                )}
+                active={level === l}
               >
                 {l === "all" ? "الكل" : l}
-              </button>
+              </FilterChip>
             ))}
           </div>
         </div>
         <div className="flex flex-wrap gap-1.5">
           {CATEGORIES.map((c) => (
-            <button
+            <FilterChip
               key={c.id}
-              type="button"
               onClick={() => setEmojiFilter(c.id)}
-              className={cn(
-                "tap-target rounded-full border px-3 py-1 text-xs font-bold transition-colors",
-                emojiFilter === c.id ? "border-primary bg-primary/10 text-primary" : "bg-background hover:border-primary/40",
-              )}
+              active={emojiFilter === c.id}
             >
               {c.id === "all" ? "🗂️ الكل" : `${c.id} ${c.label}`}
-            </button>
+            </FilterChip>
           ))}
         </div>
       </div>

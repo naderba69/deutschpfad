@@ -15,6 +15,7 @@ import {LEVELS, TOTAL_UNITS, getUnitsByLevel} from "@/lib/constants/curriculum";
 import {cn} from "@/lib/utils";
 import type { LevelCode } from "@/types/curriculum";
 import {getActiveLevel, getLevelCompletion, getOverallProgress} from "@/lib/progress-selectors";
+import {FilterChip} from "@/components/ui/filter-chip";
 
 /**
  * عميل خارطة الطريق — يحمل كل المنطق التفاعلي
@@ -124,17 +125,13 @@ export function LearningPathClient() {
           </h2>
           <div className="flex gap-1 rounded-full border bg-muted/40 p-0.5">
             {LEVELS.map((l) => (
-              <button
+              <FilterChip
                 key={l.code}
-                type="button"
                 onClick={() => setMapLevel(l.code)}
-                className={cn(
-                  "tap-target font-de rounded-full px-3 py-1.5 text-xs font-extrabold transition-colors",
-                  mapLevel === l.code ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-primary",
-                )}
+                active={mapLevel === l.code}
               >
                 {l.code}
-              </button>
+              </FilterChip>
             ))}
           </div>
         </div>

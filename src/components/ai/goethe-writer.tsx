@@ -15,6 +15,7 @@ import {SCHREIB_MODELLE} from "@/data/schreibmodelle";
 import {goetheWritingPrompt} from "@/lib/llm/prompts";
 import {Progress} from "@/components/ui/progress";
 import {cn} from "@/lib/utils";
+import {FilterChip} from "@/components/ui/filter-chip";
 
 const LEVELS = ["A2", "B1", "B2"];
 
@@ -128,34 +129,26 @@ export function AiGoetheWriter() {
           <div className="flex flex-wrap items-center gap-1.5">
             <span className="text-xs font-bold text-muted-foreground">المستوى المستهدف:</span>
             {LEVELS.map((l) => (
-              <button
+              <FilterChip
                 key={l}
-                type="button"
                 onClick={() => setLevel(l)}
-                className={cn(
-                  "tap-target font-de rounded-lg border px-3 py-1 text-xs font-bold transition-colors",
-                  level === l ? "border-primary bg-primary text-primary-foreground" : "text-muted-foreground hover:border-primary/50",
-                )}
+                active={level === l}
               >
                 {l}
-              </button>
+              </FilterChip>
             ))}
           </div>
 
           {/* نوع المهمة */}
           <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="نوع المهمة">
             {TASK_TYPES.map((t) => (
-              <button
+              <FilterChip
                 key={t.id}
-                type="button"
                 onClick={() => setTaskType(t.id)}
-                className={cn(
-                  "tap-target rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
-                  taskType === t.id ? "border-primary bg-primary/10 text-primary" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
-                )}
+                active={taskType === t.id}
               >
                 {t.label}
-              </button>
+              </FilterChip>
             ))}
           </div>
 

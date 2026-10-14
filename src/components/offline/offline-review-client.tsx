@@ -18,6 +18,7 @@ import {B1_VOCAB} from "@/data/vocabulary/b1";
 import {B2_VOCAB} from "@/data/vocabulary/b2";
 import type { VocabEntry } from "@/data/vocabulary/a1";
 import {cn} from "@/lib/utils";
+import {FilterChip} from "@/components/ui/filter-chip";
 
 const ALL: { level: string; words: VocabEntry[] }[] = [
   { level: "A1", words: Object.values(A1_VOCAB).flat() },
@@ -55,17 +56,13 @@ export function OfflineReviewClient() {
       {/* الفلترة */}
       <div className="flex flex-wrap items-center gap-2">
         {LEVELS.map((l) => (
-          <button
+          <FilterChip
             key={l}
-            type="button"
             onClick={() => setLevel(l)}
-            className={cn(
-              "font-de tap-target rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
-              level === l ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
-            )}
+            active={level === l}
           >
             {l === "all" ? "الكل" : l}
-          </button>
+          </FilterChip>
         ))}
         <div className="relative ms-auto min-w-40 flex-1 sm:max-w-xs">
           <Search className="absolute start-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />

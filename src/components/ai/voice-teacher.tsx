@@ -15,6 +15,7 @@ import {voiceTeacherSystemPrompt} from "@/lib/llm/prompts";
 import {speakGerman, stopSpeaking} from "@/lib/speech/voices";
 import {createRecognitionEngine, isRecognitionSupported, unsupportedRecognitionNote, type RecognitionEngine} from "@/lib/speech/speech-recognition";
 import {cn} from "@/lib/utils";
+import {FilterChip} from "@/components/ui/filter-chip";
 
 const LEVELS = ["A1", "A2", "B1", "B2"] as const;
 
@@ -173,48 +174,36 @@ export function AiVoiceTeacher() {
     <div className="space-y-4">
       {/* التبويبات */}
       <div className="flex gap-2">
-        <button
-          type="button"
+        <FilterChip
           onClick={() => setMode("free")}
           disabled={!isConfigured}
-          className={cn(
-            "inline-flex items-center gap-1.5 tap-target rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
-            mode === "free" ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
-            !isConfigured && "cursor-not-allowed opacity-60",
-          )}
           title={!isConfigured ? "يتطلب مفاتيح LLM" : undefined}
+          active={mode === "free"}
+          className={cn(!isConfigured && "cursor-not-allowed opacity-60")}
         >
           <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
           محادثة حرة (ذكية)
-        </button>
-        <button
-          type="button"
+        </FilterChip>
+        <FilterChip
           onClick={() => setMode("guided")}
-          className={cn(
-            "inline-flex items-center gap-1.5 tap-target rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
-            mode === "guided" ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
-          )}
+          active={mode === "guided"}
         >
           <Wand2 className="h-3.5 w-3.5" aria-hidden="true" />
           تدريب موجه (بدون مفاتيح)
-        </button>
+        </FilterChip>
       </div>
 
       {/* شريط المستوى */}
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-xs font-bold text-muted-foreground">المستوى:</span>
         {LEVELS.map((l) => (
-          <button
+          <FilterChip
             key={l}
-            type="button"
             onClick={() => setLevel(l)}
-            className={cn(
-              "tap-target font-de rounded-lg border px-3 py-1 text-xs font-bold transition-colors",
-              level === l ? "border-primary bg-primary text-primary-foreground" : "text-muted-foreground hover:border-primary/50",
-            )}
+            active={level === l}
           >
             {l}
-          </button>
+          </FilterChip>
         ))}
         {mode === "free" && (
           <>

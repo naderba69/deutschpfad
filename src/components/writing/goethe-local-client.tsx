@@ -11,6 +11,7 @@ import {SpeakButton} from "@/components/shared/speak-button";
 import {Progress} from "@/components/ui/progress";
 import {evaluateWriting} from "@/lib/writing/goethe-local";
 import {cn} from "@/lib/utils";
+import {FilterChip} from "@/components/ui/filter-chip";
 
 const TASK_TYPES = [
   { id: "Forumsbeitrag", label: "Teil 1 — Forumsbeitrag" },
@@ -30,17 +31,13 @@ export function GoetheLocalClient() {
       {/* اختيار نوع المهمة */}
       <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="نوع المهمة">
         {TASK_TYPES.map((t) => (
-          <button
+          <FilterChip
             key={t.id}
-            type="button"
             onClick={() => setTaskType(t.id)}
-            className={cn(
-              "tap-target rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
-              taskType === t.id ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
-            )}
+            active={taskType === t.id}
           >
             {t.label}
-          </button>
+          </FilterChip>
         ))}
       </div>
 

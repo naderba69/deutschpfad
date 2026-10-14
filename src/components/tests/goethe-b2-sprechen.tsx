@@ -16,6 +16,7 @@ import {GOETHE_B2_EXAM} from "@/data/exams";
 import {cn} from "@/lib/utils";
 
 import {speakText} from "./goethe-b2-views";
+import {FilterChip} from "@/components/ui/filter-chip";
 
 export function SprechenSection({
   lowTime,
@@ -71,14 +72,13 @@ export function SprechenSection({
           </p>
           <div className="flex flex-wrap gap-2">
             {sprechen.vortrag.map((t, i) => (
-              <button
+              <FilterChip
                 key={t.id}
-                type="button"
                 onClick={() => setVortragIdx(i)}
-                className={cn("tap-target rounded-lg border px-3 py-1.5 text-xs font-bold", i === vortragIdx % sprechen.vortrag.length ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background")}
+                active={i === vortragIdx % sprechen.vortrag.length}
               >
                 <span dir="ltr" lang="de">{t.topicDe}</span>
-              </button>
+              </FilterChip>
             ))}
           </div>
           <div className="rounded-xl border bg-muted/20 p-3">

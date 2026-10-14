@@ -8,6 +8,7 @@ import {Badge} from "@/components/ui/badge";
 import {Card, CardContent} from "@/components/ui/card";
 import {SCHREIB_MODELLE} from "@/data/schreibmodelle";
 import {cn} from "@/lib/utils";
+import {FilterChip} from "@/components/ui/filter-chip";
 
 /**
  * نماذج الكتابة B2 — عرض الموضوع + المهمة + النموذجين (جيد/ممتاز)
@@ -87,17 +88,13 @@ export function SchreibmodelleClient() {
       <div className="flex items-center gap-2">
         <Badge variant="outline">مستوى النموذج:</Badge>
         {(["gut", "sehr-gut"] as const).map((l) => (
-          <button
+          <FilterChip
             key={l}
-            type="button"
             onClick={() => setLevel(l)}
-            className={cn(
-              "tap-target rounded-full border px-3 py-1 text-xs font-bold transition-colors",
-              level === l ? "border-gold bg-gold/15 text-gold-strong" : "bg-muted/40 text-muted-foreground",
-            )}
+            active={level === l}
           >
             {l === "gut" ? "جيد (Gut)" : "ممتاز (Sehr gut)"}
-          </button>
+          </FilterChip>
         ))}
         <span className="text-xs text-muted-foreground">
           — قارن: الممتاز يضيف تعقيداً لغوياً وبنية أعمق

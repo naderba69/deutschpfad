@@ -14,6 +14,7 @@ import {B1_VOCAB} from "@/data/vocabulary/b1";
 import {B2_VOCAB} from "@/data/vocabulary/b2";
 import type { VocabEntry } from "@/data/vocabulary/a1";
 import {cn} from "@/lib/utils";
+import {FilterChip} from "@/components/ui/filter-chip";
 
 const LEVEL_MAP: Record<string, Record<string, VocabEntry[]>> = {
   A1: A1_VOCAB,
@@ -85,17 +86,13 @@ export function GlossarClient() {
         </div>
         <div className="flex flex-wrap gap-1.5" role="group" aria-label="الفلترة بالمستوى">
           {LEVELS.map((l) => (
-            <button
+            <FilterChip
               key={l}
-              type="button"
               onClick={() => setLevel(l)}
-              className={cn(
-                "font-de tap-target rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
-                level === l ? "border-primary bg-primary text-primary-foreground" : "bg-background hover:border-primary/50",
-              )}
+              active={level === l}
             >
               {l === "all" ? "الكل" : l}
-            </button>
+            </FilterChip>
           ))}
         </div>
         <p className="text-xs text-muted-foreground">
