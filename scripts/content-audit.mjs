@@ -4,6 +4,7 @@
  * معرفات مكررة، أسئلة بلا خيار صحيح… إلخ.
  */
 import { readFileSync, readdirSync } from "node:fs";
+import { readLessonSource } from "./lib/lesson-source.mjs";
 import { join, basename } from "node:path";
 
 const ROOT = new URL("../src/data", import.meta.url).pathname;
@@ -20,7 +21,7 @@ for (const levelDir of ["a1", "a2", "b1", "b2"]) {
   if (!readdirSync(dir).length) continue;
   for (const f of readdirSync(dir)) {
     if (!f.endsWith(".ts") || f.endsWith(".test.ts")) continue;
-    const src = readFileSync(join(dir, f), "utf8");
+    const src = readLessonSource(join(dir, f));
 
     // ترجمات عربية فارغة
     const emptyAr = src.match(/ar:\s*""/g);

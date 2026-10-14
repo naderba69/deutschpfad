@@ -11,6 +11,7 @@
  * ═══════════════════════════════════════════════════════════════════════
  */
 import { readFileSync, readdirSync, writeFileSync, mkdtempSync } from "node:fs";
+import { bundleLessonSource } from "./lib/lesson-source.mjs";
 import { tmpdir } from "node:os";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -42,12 +43,13 @@ const TMP = mkdtempSync(join(tmpdir(), "linv-"));
 
 /* ── تحميل كل الدروس ككائنات حقيقية ── */
 function loadLesson(path) {
-  const src = readFileSync(path, "utf8");
+  // بعد المرحلة 4: الدرس = ملف رئيسي + أجزاء في مجلد بنفس الاسم → نضمّها قبل التحويل
+  const src = bundleLessonSource(path);
   const js = ts
     .transpileModule(src, {
       compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020 },
     })
-    .outputText.replace(/^import .*$/gm, "");
+    .outputText;
   const tmp = join(TMP, path.split("/").pop().replace(".ts", ".cjs"));
   writeFileSync(tmp, js);
   const mod = require(tmp);

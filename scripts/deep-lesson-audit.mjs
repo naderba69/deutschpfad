@@ -3,6 +3,7 @@
  * يفحص بنية كل درس: أسئلة MCQ، خيارات، حقول مطلوبة، أخطاء ألمانية شائعة.
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
+import { readLessonSource } from "./lib/lesson-source.mjs";
 import { join } from "node:path";
 
 const ROOT = new URL("../src/data/lessons", import.meta.url).pathname;
@@ -23,7 +24,7 @@ const GERMAN_PATTERNS = [
 for (const levelDir of ["a1", "a2", "b1", "b2"]) {
   const dir = join(ROOT, levelDir);
   for (const f of readdirSync(dir).filter((x) => x.endsWith(".ts") && !x.endsWith(".test.ts"))) {
-    const src = readFileSync(join(dir, f), "utf8");
+    const src = readLessonSource(join(dir, f));
     const label = `${levelDir}/${f}`;
 
     // 1) حقول مطلوبة
@@ -47,7 +48,8 @@ for (const levelDir of ["a1", "a2", "b1", "b2"]) {
     // 4) صفر نظرية أو صفر تمارين
     const theoryCount = (src.match(/id: "t\d+"/g) ?? []).length;
     if (theoryCount === 0) warn(`${label}: لا كتل نظرية`);
-    if (!src.includes("practiceBank: [")) warn(`${label}: لا بنك تدريبات`);
+    // فحص مستقلّ عن التنسيق: الجزء يفصل القيمة عن الاسم بـ NonNullable<...> = [
+    if (!/practiceBank\s*:/.test(src)) warn(`${label}: لا بنك تدريبات`);
   }
 }
 
@@ -56,7 +58,7 @@ const levels = ["a1", "a2", "b1", "b2"];
 const orderMap = {};
 for (const l of levels) {
   for (const f of readdirSync(join(ROOT, l)).filter((x) => x.endsWith(".ts") && !x.endsWith(".test.ts"))) {
-    const src = readFileSync(join(ROOT, l, f), "utf8");
+    const src = readLessonSource(join(ROOT, l, f));
     const id = src.match(/id: "([a-z0-9-]+)"/)?.[1];
     if (id) orderMap[id] = { level: l.toUpperCase(), order: parseInt(src.match(/order: (\d+)/)?.[1] ?? "0") };
   }
@@ -64,7 +66,7 @@ for (const l of levels) {
 console.log(`\n── فحص المصادر السابقة للمراجعة ──`);
 for (const l of levels) {
   for (const f of readdirSync(join(ROOT, l)).filter((x) => x.endsWith(".ts") && !x.endsWith(".test.ts"))) {
-    const src = readFileSync(join(ROOT, l, f), "utf8");
+    const src = readLessonSource(join(ROOT, l, f));
     const id = src.match(/id: "([a-z0-9-]+)"/)?.[1];
     if (!id) continue;
     const levelIdx = levels.indexOf(l);
