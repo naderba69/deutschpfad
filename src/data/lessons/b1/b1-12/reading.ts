@@ -1,0 +1,116 @@
+/**
+ * b1-12 — نصّ القراءة الممتدّ (الجزء «reading»)
+ * فُصل وأُضيف في المرحلة 5. نصّ B1 عن الأهداف والأسباب: um … zu وdamit وحروف الجر مع المضاف إليه.
+ */
+import type { ReadingText } from "@/types/lesson";
+
+export const readingB112: ReadingText = {
+  id: "read-b1-12",
+  titleDe: "Trotz Vollzeit: Deutsch am Abend",
+  titleAr: "رغم العمل بدوام كامل: الألمانية في المساء",
+  textType: "artikel",
+  paragraphs: [
+    "In der Volkshochschule einer mittelgroßen Stadt beginnt der Deutschkurs um halb sieben, obwohl die meisten Teilnehmer schon acht Stunden gearbeitet haben. „Wegen der Arbeit konnten viele jahrelang nicht kommen“, sagt die Kursleiterin Frau Berger. „Deshalb bieten wir den Kurs am Abend an. Der Zweck ist nicht nur ein Zertifikat — die Menschen wollen hier ein Ziel erreichen: eine Ausbildung, eine Stelle, ein Studium.“",
+    "Frau Ahmadi arbeitet als Krankenschwester und sitzt trotz der Müdigkeit jeden Dienstag und Donnerstag im Kurs. Sie lernt Deutsch, um ihre Ausbildung anerkennen zu lassen. Das ist ihr Grund, nicht der Kurs selbst. Während der Pause wiederholt sie Vokabeln auf dem Handy. „Am Anfang hatte ich Angst vor dem Sprechen“, sagt sie. „Jetzt habe ich die Absicht, die Prüfung im Frühjahr zu machen, und ich lerne deshalb jeden Tag, damit ich sie sicher bestehe.“",
+    "Herr Novak ist Vater von zwei Kindern und arbeitet seit elf Jahren in einer Fabrik. Er sagt, er arbeite nicht nur wegen des Geldes: „Ich arbeite viel, damit meine Kinder später studieren können.“ Die Kinder gehen zur Schule, während er in der Nachtschicht steht. Innerhalb von zwei Jahren will er selbst einen Abschluss nachholen, und aufgrund seiner Erfahrung haben ihn seine Kollegen dazu ermutigt.",
+    "Nicht alle halten durch. Wegen der Schichtpläne fehlen manche Teilnehmer mehrere Wochen, und Frau Berger sagt offen, dass ein Kurs ohne regelmäßige Teilnahme wenig bringt. Damit die Gruppe zusammenbleibt, schickt sie kurze Aufgaben über das Handy und bietet einen Samstagskurs an. Eine Voraussetzung gibt es jedoch in jedem Fall: Wer die Prüfung machen will, muss über mehrere Monate regelmäßig üben — ein Ergebnis, das nicht von guten Absichten allein kommt.",
+  ],
+  paragraphsAr: [
+    "يبدأ كورس الألمانية في مركز تعليم الكبار في مدينة متوسطة الحجم في السادسة والنصف مساءً، رغم أن معظم المشاركين عملوا ثماني ساعات بالفعل. تقول مدرّبة الكورس السيدة برغر: «كان كثيرون لا يستطيعون الحضور سنوات بسبب العمل. ولذلك نقدّم الكورس في المساء. والهدف ليس شهادة فقط — فالناس يريدون هنا أن يبلغوا هدفاً: تأهيلاً أو وظيفة أو دراسة».",
+    "تعمل السيدة أحمدي ممرّضةً، وتجلس في الكورس كل ثلاثاء وخميس رغم التعب. تتعلّم الألمانية لكي يُعترف بتأهيلها المهني. وهذا هو دافعها لا الكورس نفسه. وأثناء الاستراحة تكرّر المفردات على هاتفها. تقول: «في البداية كنت أخاف الكلام. والآن أنوي أن أتقدّم للامتحان في الربيع؛ ولذلك أتعلّم كل يوم لكي أنجح فيه بثقة».",
+    "والسيد نوفاك أب لطفلين ويعمل منذ إحدى عشرة سنة في مصنع. يقول إنه لا يعمل من أجل المال فقط: «أعمل كثيراً لكي يستطيع الأطفال الدراسة لاحقاً». يذهب الأطفال إلى المدرسة بينما يقف هو في النوبة الليلية. وهو يريد خلال سنتين أن يحصل هو نفسه على شهادة، وقد شجّعه زملاؤه على ذلك بسبب خبرته.",
+    "ولا يصمد الجميع. فبعض المشاركين يغيبون أسابيع بسبب جداول النوبات، وتقول السيدة برغر بصراحة إن الكورس بلا مشاركة منتظمة لا يعطي كثيراً. ولكي تبقى المجموعة متماسكة ترسل مهامّ قصيرة على الهاتف وتقدّم كورساً يوم السبت. لكن ثمّة شرط واحد في كل الأحوال: من يريد الامتحان فعليه أن يتدرب بانتظام عدة أشهر — نتيجة لا تأتي من النوايا الطيبة وحدها.",
+  ],
+  glossary: [
+    { de: "die Volkshochschule", ar: "مركز تعليم الكبار", noteAr: "مؤنّثة؛ يُختصر vhs في الأسماء الرسمية." },
+    { de: "die Müdigkeit", ar: "التعب", noteAr: "مؤنّثة؛ من müde (متعب): die Müdigkeit — trotz der Müdigkeit." },
+    { de: "der Grund", ar: "السبب، الدافع", noteAr: "مذكّر؛ Gründe nennen (يذكر الأسباب)." },
+    { de: "die Absicht", ar: "النية، القصد", noteAr: "مؤنّثة؛ die Absicht haben, etwas zu tun." },
+    { de: "der Zweck", ar: "الغرض، الهدف المقصود", noteAr: "مذكّر؛ einem Zweck dienen (يخدم غرضاً)." },
+    { de: "die Voraussetzung", ar: "الشرط المسبق", noteAr: "مؤنّثة؛ Voraussetzung für etwas (شرط لشيء ما)." },
+    { de: "erreichen", ar: "يبلغ، يحقق", noteAr: "فعل متعدٍّ: ein Ziel erreichen." },
+    { de: "die Teilnahme", ar: "المشاركة", noteAr: "مؤنّثة؛ من teilnehmen an + Dativ." },
+    { de: "innerhalb", ar: "خلال (مدة)", noteAr: "تطلب المضاف إليه: innerhalb einer Woche." },
+    { de: "aufgrund", ar: "نتيجةً لـ، بناءً على", noteAr: "تطلب المضاف إليه: aufgrund der Erfahrung." },
+    { de: "die Nachtschicht", ar: "النوبة الليلية", noteAr: "مؤنّثة؛ Schichten arbeiten (يعمل بنوبات)." },
+  ],
+  questions: [
+    {
+      id: "rq1",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Warum findet der Deutschkurs am Abend statt?",
+      questionAr: "لماذا يُقام كورس الألمانية في المساء؟",
+      options: [
+        "Weil die Kursleiterin tagsüber keine Zeit hat.",
+        "Weil die meisten Teilnehmer tagsüber arbeiten und vorher nicht kommen konnten.",
+        "Weil das Gebäude am Tag geschlossen ist.",
+        "Weil die Prüfung am Abend geschrieben wird.",
+      ],
+      correctIndex: 1,
+      paragraph: 1,
+      explanation: "الفقرة 1 تصوغ السبب بحرف جر مع المضاف إليه «Wegen der Arbeit konnten viele jahrelang nicht kommen»، ثم تشرح القرار بـdeshalb. ولاحظ أن الغرض نفسه ورد بأداة اسمية: «Der Zweck ist nicht nur ein Zertifikat».",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq2",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was ist Frau Ahmadis eigentliches Ziel?",
+      questionAr: "ما هدف السيدة أحمدي الحقيقي؟",
+      options: [
+        "Sie will ihren Beruf aufgeben.",
+        "Sie will ein Zertifikat für deutsche Grammatik bekommen.",
+        "Sie will ihre Ausbildung anerkennen lassen.",
+        "Sie will Kursleiterin werden.",
+      ],
+      correctIndex: 2,
+      paragraph: 2,
+      explanation: "الفقرة 2: «Sie lernt Deutsch, um ihre Ausbildung anerkennen zu lassen. Das ist ihr Grund, nicht der Kurs selbst» — بنية um … zu مع فاعل واحد (هي تتعلّم، وهي تريد الاعتراف بشهادتها)، وهذا هو شرط البنية.",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq3",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Warum arbeitet Herr Novak nach eigener Aussage so viel?",
+      questionAr: "لماذا يعمل السيد نوفاك كثيراً كما يقول بنفسه؟",
+      options: [
+        "Weil er seinen Kindern später ein Studium ermöglichen möchte.",
+        "Weil er eine Prüfung sicher bestehen will.",
+        "Weil er allein in der Firma arbeitet.",
+        "Weil die Nachtschicht mehr Freizeit gibt.",
+      ],
+      correctIndex: 0,
+      paragraph: 3,
+      explanation: "الفقرة 3: «Ich arbeite viel, damit meine Kinder später studieren können» — فاعلان مختلفان (هو يعمل، والأطفال يدرسون)، فوجب damit لا um … zu. ويُلاحظ الفرق في الفقرة نفسها بين wegen des Geldes وinnerhalb von zwei Jahren.",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq4",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was sagt Frau Berger über die Teilnehmer, die wegen der Schichtpläne fehlen?",
+      questionAr: "ماذا تقول السيدة برغر عن المشاركين الذين يغيبون بسبب جداول النوبات؟",
+      options: [
+        "Der Kurs ohne regelmäßige Teilnahme bringt wenig.",
+        "Sie müssen den Kurs sofort abbrechen.",
+        "Sie bekommen die Prüfung ohne Üben.",
+        "Sie sollen den Kurs im nächsten Jahr wiederholen.",
+      ],
+      correctIndex: 0,
+      paragraph: 4,
+      explanation: "الفقرة 4: «ein Kurs ohne regelmäßige Teilnahme wenig bringt» حسب قول برغر، ثم تذكر ما تفعله لبقاء المجموعة: مهامّ قصيرة وكورس يوم السبت. والشرط الأخير (Voraussetzung) يربط النتيجة بالتدريب المنتظم لا بالنوايا.",
+      errorType: "comprehension",
+    },
+  ],
+  redemittel: [
+    { de: "um … zu + Infinitiv", ar: "لكي (فاعل واحد)" },
+    { de: "damit + Nebensatz", ar: "لكي (فاعل مختلف)" },
+    { de: "wegen + Genitiv", ar: "بسبب" },
+    { de: "trotz + Genitiv", ar: "رغم" },
+    { de: "die Absicht haben, … zu", ar: "ينوي أن…" },
+  ],
+  discussionAr:
+    "ناقش مع زميلك: ما هدفك من تعلّم الألمانية، وما السبب الحقيقي وراءه؟ استعمل في حديثك بنية um … zu مرة وبنية damit مرة، وحرفين من wegen وtrotz وwährend مع المضاف إليه، ثم اكتب أربعة أسطر تشرح فيها هدفاً لك: سببه، وما تفعله رغم العقبات.",
+};
