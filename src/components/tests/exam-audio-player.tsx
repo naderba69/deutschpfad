@@ -139,7 +139,11 @@ export function ExamAudioPlayer({
       setSegmentIdx(-1);
       if (counted) onPlayed?.();
     };
-    if (mode === "files" && isSpeechSynthesisSupported()) {
+    if (mode === "files" && track.files.length === 0) {
+      // جزء بلا مقاطع مسجّلة أصلاً: نعلن النطق الآلي مباشرة بدل تشغيل صامت
+      setMode("tts");
+      playTts(0, my, rate, done);
+    } else if (mode === "files" && isSpeechSynthesisSupported()) {
       playFiles(0, my, rate, done, (i) => {
         if (runIdRef.current !== my) return;
         setMode("tts");

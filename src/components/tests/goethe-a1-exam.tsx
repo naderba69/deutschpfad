@@ -1,53 +1,33 @@
 "use client";
 
 /**
- * نموذج تدريبي A1 (استماع · قراءة · كتابة) — ليس امتحاناً رسمياً.
- * الاستماع: مقاطع صوتية مسجّلة (public/audio/exam-a1). الجزآن 1 و3 يُشغَّلان مرتين،
- * وباقي الأجزاء مرة واحدة. القراءة والاستماع يُصحَّحان آلياً.
- * الكتابة تُقيَّم ذاتياً بمعايير الاختبار، ولا تُحتسب في نتيجة آلية.
+ * نماذج تدريبية A1/A2/B1 (استماع · قراءة · كتابة · تحدث) — ليست امتحانات رسمية.
+ * البيانات والنماذج من `src/data/exams/level-models.ts` (مصدر واحد)، والصوت من
+ * مشغّل واحد يعلن حالته: مقاطع مسجّلة أو نطق آلي عند غيابها. الجزآن 1 و3 من
+ * الاستماع يُشغَّلان مرتين، والباقي مرة واحدة. القراءة والاستماع يُصحَّحان آلياً،
+ * والكتابة والتحدث يُقيَّمان ذاتياً بمعايير الاختبار ولا يُحتسبان في نتيجة آلية.
  */
 
 import * as React from "react";
 
 import { Button } from "@/components/ui/button";
-import { A1_HOEREN } from "@/data/exams/a1-hoeren";
-import { A1_LESEN } from "@/data/exams/a1-lesen";
-import { A1_SCHREIBEN } from "@/data/exams/a1-schreiben";
-import { A1_SPRECHEN, type A1SpeakingPart } from "@/data/exams/a1-sprechen";
-import { A2_HOEREN } from "@/data/exams/a2-hoeren";
-import { A2_LESEN } from "@/data/exams/a2-lesen";
-import { A2_SCHREIBEN } from "@/data/exams/a2-schreiben";
-import { A2_SPRECHEN } from "@/data/exams/a2-sprechen";
-import { B1_HOEREN } from "@/data/exams/b1-hoeren";
-import { B1_LESEN } from "@/data/exams/b1-lesen";
-import { B1_SCHREIBEN } from "@/data/exams/b1-schreiben";
-import { B1_SPRECHEN } from "@/data/exams/b1-sprechen";
+import { FilterChip } from "@/components/ui/filter-chip";
 import { GoetheA1Speaking } from "@/components/tests/goethe-a1-speaking";
 import { ExamAudioPlayer } from "@/components/tests/exam-audio-player";
 import { ExamMcqListCompact, ExamStatementsListCompact } from "@/components/tests/exam-question-views";
 import { gradeTeile, scoreModule } from "@/lib/tests/exam-scoring";
-import { LEVEL_AUDIO } from "@/data/exams/level-audio";
-import type { ExamHoerenTeil, ExamLesenTeil } from "@/types/exam";
+import { LEVEL_MODELS, examModel } from "@/data/exams/level-models";
 
 export type ExamLevel = "A1" | "A2" | "B1";
-
-/** بيانات كل مستوى (مجلد الصوت في src/data/exams/level-audio.ts — مصدر واحد) */
-const EXAM_DATA: Record<ExamLevel, {
-  hoeren: ExamHoerenTeil[];
-  lesen: ExamLesenTeil[];
-  schreiben: typeof A1_SCHREIBEN;
-  sprechen: A1SpeakingPart[];
-}> = {
-  A1: { hoeren: A1_HOEREN, lesen: A1_LESEN, schreiben: A1_SCHREIBEN, sprechen: A1_SPRECHEN },
-  A2: { hoeren: A2_HOEREN, lesen: A2_LESEN, schreiben: A2_SCHREIBEN, sprechen: A2_SPRECHEN },
-  B1: { hoeren: B1_HOEREN, lesen: B1_LESEN, schreiben: B1_SCHREIBEN, sprechen: B1_SPRECHEN },
-};
 
 type Phase = "intro" | "hoeren" | "lesen" | "schreiben" | "sprechen" | "result";
 
 
 export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
-  const data = EXAM_DATA[level];
+  const models = LEVEL_MODELS[level];
+  const [modelId, setModelId] = React.useState(models[0].id);
+  const model = examModel(level, modelId);
+  const data = model;
   const [phase, setPhase] = React.useState<Phase>("intro");
   const [hAns, setHAns] = React.useState<Record<string, boolean | number>>({});
   const [lAns, setLAns] = React.useState<Record<string, boolean | number>>({});
@@ -66,12 +46,19 @@ export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
     setPhase("intro");
   };
 
+  /** تبديل النموذج يصفّر كل الإجابات (لا تختلط إجابات نموذجين) */
+  const pickModel = (id: string) => {
+    setModelId(id);
+    reset();
+  };
+
   return (
     <div className="mx-auto w-full max-w-4xl space-y-6 px-4 py-10 sm:px-6" dir="rtl">
       <header className="space-y-2">
         <h1 className="text-2xl font-extrabold">نموذج تدريبي — {level} (بنية {({ A1: "Start Deutsch 1", A2: "Goethe A2", B1: "Goethe B1" } as const)[level]})</h1>
         <p className="text-sm text-muted-foreground">
           هذا نموذج تدريبي من إعداد المنصة، وليس امتحاناً رسمياً من Goethe-Institut.
+          {models.length > 1 ? ` النموذج الحالي: ${model.label}.` : ""}
         </p>
         <nav className="flex flex-wrap gap-2 text-sm">
           {(["intro", "hoeren", "lesen", "schreiben", "sprechen", "result"] as Phase[]).map((p) => (
@@ -87,9 +74,21 @@ export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
 
       {phase === "intro" && (
         <section className="space-y-3 rounded-2xl border bg-card p-5">
+          {models.length > 1 && (
+            <div className="space-y-1.5">
+              <p className="text-sm font-bold">اختر النموذج:</p>
+              <div className="flex flex-wrap gap-2">
+                {models.map((m) => (
+                  <FilterChip key={m.id} tone="soft" active={m.id === model.id} onClick={() => pickModel(m.id)}>
+                    {m.label}
+                  </FilterChip>
+                ))}
+              </div>
+            </div>
+          )}
           <p>الاستماع: 4 أجزاء. القراءة: 4 أجزاء. الكتابة: مهمتان تقيّمهما بنفسك بالمعايير.</p>
-          <p className="text-sm text-muted-foreground">
-            الجزآن 1 و3 من الاستماع يُشغَّلان مرتين، والباقي مرة واحدة. لا يمكنك الرجوع بعد إنهاء كل قسم.
+          <p className="text-sm text-muted-foreground" data-testid="exam-audio-note">
+            {model.audioNoteAr} لا يمكنك الرجوع بعد إنهاء كل قسم.
           </p>
           <Button onClick={() => setPhase("hoeren")}>ابدأ الاستماع</Button>
         </section>
@@ -102,7 +101,7 @@ export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
               <h2 className="font-extrabold">{t.titleAr}</h2>
               <p className="text-sm text-muted-foreground">{t.introAr}</p>
               <ExamAudioPlayer
-                track={LEVEL_AUDIO[level][t.teil - 1]}
+                track={model.audio[t.teil - 1]}
                 label={null}
                 onPlayed={() => setHeard((h) => ({ ...h, [t.teil]: true }))}
               />
