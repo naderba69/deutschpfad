@@ -56,7 +56,6 @@ const KNOWN_OVERSIZE: readonly [string, number][] = [
   ["src/data/lessons/a2/a2-03.test.ts", 682],
   ["src/data/lessons/a1/a1-11.test.ts", 680],
   ["src/data/lessons/integrity.test.ts", 668],
-  ["src/data/lessons/b2/b2-02.ts", 640],
   ["src/data/lessons/b2/b2-04.ts", 625],
   ["src/data/dialogues/a1.ts", 621],
   ["src/data/lessons/b2/b2-08.ts", 616],
@@ -66,7 +65,6 @@ const KNOWN_OVERSIZE: readonly [string, number][] = [
   ["src/data/dialogues/b2.ts", 611],
   ["src/data/vocabulary/b1-extra2.ts", 609],
   ["src/data/lessons/b2/b2-07.ts", 608],
-  ["src/data/lessons/b2/b2-03.ts", 607],
 ];
 
 function walk(dir: string, acc: string[] = []): string[] {
