@@ -19,6 +19,10 @@ import { A2_HOEREN } from "@/data/exams/a2-hoeren";
 import { A2_LESEN } from "@/data/exams/a2-lesen";
 import { A2_SCHREIBEN } from "@/data/exams/a2-schreiben";
 import { A2_SPRECHEN } from "@/data/exams/a2-sprechen";
+import { A2_MODEL2_HOEREN } from "@/data/exams/a2-model2-hoeren";
+import { A2_MODEL2_LESEN } from "@/data/exams/a2-model2-lesen";
+import { A2_MODEL2_SCHREIBEN } from "@/data/exams/a2-model2-schreiben";
+import { A2_MODEL2_SPRECHEN } from "@/data/exams/a2-model2-sprechen";
 import { B1_HOEREN } from "@/data/exams/b1-hoeren";
 import { B1_LESEN } from "@/data/exams/b1-lesen";
 import { B1_SCHREIBEN } from "@/data/exams/b1-schreiben";
@@ -79,7 +83,19 @@ export const LEVEL_MODELS: Record<ExamLevel, ExamModel[]> = {
       audio: ttsTracks("/audio/exam-a1", A1_MODEL2_HOEREN),
     },
   ],
-  A2: [recordedModel("A2", { hoeren: A2_HOEREN, lesen: A2_LESEN, schreiben: A2_SCHREIBEN, sprechen: A2_SPRECHEN })],
+  A2: [
+    recordedModel("A2", { hoeren: A2_HOEREN, lesen: A2_LESEN, schreiben: A2_SCHREIBEN, sprechen: A2_SPRECHEN }),
+    {
+      id: "A2-2",
+      label: "النموذج 2 (نطق آلي)",
+      audioNoteAr: "مقاطع هذا النموذج غير مسجّلة بعد — يُقرأ نصّ الاستماع بنطق آلي معلَن، والجزآن 1 و3 مرتين.",
+      hoeren: A2_MODEL2_HOEREN,
+      lesen: A2_MODEL2_LESEN,
+      schreiben: A2_MODEL2_SCHREIBEN,
+      sprechen: A2_MODEL2_SPRECHEN,
+      audio: ttsTracks("/audio/exam-a2", A2_MODEL2_HOEREN),
+    },
+  ],
   B1: [recordedModel("B1", { hoeren: B1_HOEREN, lesen: B1_LESEN, schreiben: B1_SCHREIBEN, sprechen: B1_SPRECHEN })],
 };
 
