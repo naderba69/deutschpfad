@@ -168,6 +168,28 @@ describe("النماذج التدريبية — الصوت الصادق", () => 
     expect(missing).toEqual([]);
   });
 
+  it("تسجيلات التحدث تُستخدم فقط لجولاتها المسجّلة (لا نموذج يسمع نصّ غيره)", () => {
+    for (const level of LEVELS) {
+      const byBase = new Map<string, string[]>();
+      for (const model of LEVEL_MODELS[level]) {
+        if (!model.speakingAudioBase) continue;
+        const signature = JSON.stringify(model.sprechen);
+        const seen = byBase.get(model.speakingAudioBase) ?? [];
+        // كل نموذج يُشير إلى نفس مجلد التسجيلات يجب أن تكون جولاته مطابقة
+        if (seen.length > 0) expect(signature, `${model.id} يشير إلى تسجيلات نموذج آخر بجولات مختلفة`).toBe(seen[0]);
+        else seen.push(signature);
+        byBase.set(model.speakingAudioBase, seen);
+      }
+      // وفي المقابل: أي نموذج بجولات مختلفة **لا** يجوز أن يُشير إلى تسجيلات
+      const bases = new Set(LEVEL_MODELS[level].map((m) => m.speakingAudioBase).filter(Boolean));
+      for (const base of bases) {
+        const users = LEVEL_MODELS[level].filter((m) => m.speakingAudioBase === base);
+        const sigs = new Set(users.map((m) => JSON.stringify(m.sprechen)));
+        expect(sigs.size, `${base}: ${users.length} نماذج بجولات متباعدة`).toBe(1);
+      }
+    }
+  });
+
   it("نموذج بلا مقاطع مسجّلة يُعلن النطق الآلي في نصّه المعروض", () => {
     for (const level of LEVELS) {
       for (const model of LEVEL_MODELS[level]) {

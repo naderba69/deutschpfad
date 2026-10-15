@@ -27,6 +27,10 @@ import { B1_HOEREN } from "@/data/exams/b1-hoeren";
 import { B1_LESEN } from "@/data/exams/b1-lesen";
 import { B1_SCHREIBEN } from "@/data/exams/b1-schreiben";
 import { B1_SPRECHEN } from "@/data/exams/b1-sprechen";
+import { B1_MODEL2_HOEREN } from "@/data/exams/b1-model2-hoeren";
+import { B1_MODEL2_LESEN } from "@/data/exams/b1-model2-lesen";
+import { B1_MODEL2_SCHREIBEN } from "@/data/exams/b1-model2-schreiben";
+import { B1_MODEL2_SPRECHEN } from "@/data/exams/b1-model2-sprechen";
 import { LEVEL_AUDIO, LEVEL_EXAM_DATA, type ExamLevel } from "@/data/exams/level-audio";
 import type { ExamAudioTrack } from "@/lib/tests/exam-audio";
 import type { ExamHoerenTeil, ExamLesenTeil, ExamSchreibaufgabe } from "@/types/exam";
@@ -38,6 +42,12 @@ export interface ExamModel {
   label: string;
   /** حالة الصوت كما هي فعلاً — تُعرض للمتعلم قبل البدء */
   audioNoteAr: string;
+  /**
+   * مجلد تسجيلات التحدث — **فقط** للنماذج التي سُجِّلت جولاتها فعلاً.
+   * يُترك فارغاً لأي نموذج بجولات مختلفة، وإلا شُغِّل تسجيل نموذج آخر بنصّ آخر
+   * (المشغّل ينتقل للنطق الآلي بالنصّ الصحيح عند الغياب).
+   */
+  speakingAudioBase?: string;
   hoeren: ExamHoerenTeil[];
   lesen: ExamLesenTeil[];
   schreiben: ExamSchreibaufgabe[];
@@ -64,6 +74,7 @@ function recordedModel(
     id: `${level}-1`,
     label: "النموذج 1 (صوت مُسجَّل)",
     audioNoteAr: "مقاطع الاستماع مسجّلة صوتياً، والجزآن 1 و3 يُشغَّلان مرتين.",
+    speakingAudioBase: `/audio/speaking-${level.toLowerCase()}`,
     ...parts,
     audio: LEVEL_AUDIO[level],
   };
@@ -96,7 +107,19 @@ export const LEVEL_MODELS: Record<ExamLevel, ExamModel[]> = {
       audio: ttsTracks("/audio/exam-a2", A2_MODEL2_HOEREN),
     },
   ],
-  B1: [recordedModel("B1", { hoeren: B1_HOEREN, lesen: B1_LESEN, schreiben: B1_SCHREIBEN, sprechen: B1_SPRECHEN })],
+  B1: [
+    recordedModel("B1", { hoeren: B1_HOEREN, lesen: B1_LESEN, schreiben: B1_SCHREIBEN, sprechen: B1_SPRECHEN }),
+    {
+      id: "B1-2",
+      label: "النموذج 2 (نطق آلي)",
+      audioNoteAr: "مقاطع هذا النموذج غير مسجّلة بعد — يُقرأ نصّ الاستماع بنطق آلي معلَن، والجزآن 1 و3 مرتين.",
+      hoeren: B1_MODEL2_HOEREN,
+      lesen: B1_MODEL2_LESEN,
+      schreiben: B1_MODEL2_SCHREIBEN,
+      sprechen: B1_MODEL2_SPRECHEN,
+      audio: ttsTracks("/audio/exam-b1", B1_MODEL2_HOEREN),
+    },
+  ],
 };
 
 /** النموذج المطلوب أو الأول إن لم يوجد المعرّف */

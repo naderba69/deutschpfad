@@ -191,7 +191,7 @@ export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
 
       {phase === "sprechen" && (
         <section className="space-y-6">
-          <GoetheA1Speaking parts={data.sprechen} audioBase={`/audio/speaking-${level.toLowerCase()}`} onDone={() => setPhase("result")} />
+          <GoetheA1Speaking parts={model.sprechen} audioBase={model.speakingAudioBase} onDone={() => setPhase("result")} />
         </section>
       )}
 
