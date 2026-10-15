@@ -2,8 +2,8 @@
 
 /**
  * ═══════════════════════════════════════════════════════════
- *  مشغّل صوت جزء الاستماع في امتحانات المحاكاة
- *  1) يحاول أولاً تشغيل مقاطع mp3 المسجّلة بالتسلسل (كما في A1–B1).
+ *  مشغّل صوت جزء الاستماع في امتحانات المحاكاة (A1–B2) — مشغّل واحد للجميع
+ *  1) يحاول أولاً تشغيل مقاطع mp3 المسجّلة بالتسلسل.
  *  2) إن غاب المقطع أو فشل تحميله → ينتقل تلقائياً إلى النطق الآلي TTS
  *     من موضع الفشل — فلا ينكسر الامتحان بانتظار المقاطع، ويعلن للمتعلم
  *     أن الصوت آلي. (لا فحص مسبق للملفات: فحص HEAD تبين أنه غير موثوق مع
@@ -17,19 +17,20 @@ import * as React from "react";
 import { Volume2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import type { ExamAudioSpec } from "@/data/exams/b2-hoeren-audio";
+import type { ExamAudioTrack } from "@/lib/tests/exam-audio";
 import { isSpeechSynthesisSupported, speakGerman, stopSpeaking } from "@/lib/speech/voices";
 
 /** "files" = نجرّب المقاطع المسجّلة · "tts" = ثبت غيابها فانتقلنا للنطق الآلي */
 type AudioMode = "files" | "tts";
 
 export function ExamAudioPlayer({
-  spec,
+  track,
   label = "استمع إلى النص:",
   onPlayed,
 }: {
-  spec: ExamAudioSpec;
-  label?: string;
+  track: ExamAudioTrack;
+  /** عنوان المشغّل — null لإخفائه (نماذج A1–B1 تعرض الزر وحده) */
+  label?: string | null;
   onPlayed?: () => void;
 }) {
   const [mode, setMode] = React.useState<AudioMode>("files");
@@ -43,7 +44,12 @@ export function ExamAudioPlayer({
   /** معرّف التشغيل الحالي — أي تشغيل جديد أو مغادرة تُبطِل ما قبله */
   const runIdRef = React.useRef(0);
 
-  const max = spec.maxPlays;
+  const max = track.maxPlays;
+  /** نصوص المقاطع إن كانت متاحة (B2)، وإلا النص الكامل مقطعاً واحداً (A1–B1) */
+  const spoken: string[] =
+    track.texts && track.texts.length === track.files.length && track.files.length > 0
+      ? track.texts
+      : [track.fallbackText];
   const left = max - plays;
 
   const stopAll = React.useCallback(() => {
@@ -70,11 +76,13 @@ export function ExamAudioPlayer({
     let i = from;
     const next = () => {
       if (runIdRef.current !== my) return;
-      if (i >= spec.segments.length) return done();
-      const seg = spec.segments[i];
-      const audio = new Audio(`${spec.base}/${seg.file}`);
+      if (i >= track.files.length) return done();
+      const audio = new Audio(`${track.base}/${track.files[i]}`);
       audioRef.current = audio;
-      audio.playbackRate = rate;
+      // لا نلمس playbackRate في التشغيل العادي: بعض الاختبارات تُسرّع الصوت من
+      // خارج المكوّن (patch على Audio) لتختبر منطق «فتح الأسئلة بعد الاستماع»
+      // بسرعة — والكتابة فوقها تُبقي المقطع 20+ ثانية فتُسقط الاختبار.
+      if (rate !== 1) audio.playbackRate = rate;
       setSegmentIdx(i);
       audio.onended = () => {
         i += 1;
@@ -91,8 +99,8 @@ export function ExamAudioPlayer({
     let i = from;
     const next = () => {
       if (runIdRef.current !== my) return;
-      if (i >= spec.segments.length) return done();
-      const seg = spec.segments[i];
+      if (i >= spoken.length) return done();
+      const text = spoken[i];
       setSegmentIdx(i);
       let advanced = false;
       const advance = () => {
@@ -106,8 +114,8 @@ export function ExamAudioPlayer({
         next();
       };
       // مهلة أمان: بعض المتصفحات لا تُطلق onend إطلاقاً بلا أصوات مثبّتة
-      timerRef.current = window.setTimeout(advance, Math.max(8000, seg.text.length * 130));
-      const utterance = speakGerman(seg.text, { rate, onEnd: advance, onError: advance });
+      timerRef.current = window.setTimeout(advance, Math.max(8000, text.length * 130));
+      const utterance = speakGerman(text, { rate, onEnd: advance, onError: advance });
       if (!utterance) advance();
     };
     next();
@@ -153,7 +161,7 @@ export function ExamAudioPlayer({
   return (
     <div className="flex flex-wrap items-center gap-3 rounded-xl border bg-card p-3" data-audio-mode={mode}>
       <Volume2 className="h-4 w-4 text-primary" aria-hidden="true" />
-      <p className="text-sm font-bold">{label}</p>
+      {label ? <p className="text-sm font-bold">{label}</p> : null}
       <Button onClick={() => run(1, true)} disabled={left <= 0 || busy} data-testid="exam-audio-play">
         {buttonLabel}
       </Button>
@@ -173,7 +181,7 @@ export function ExamAudioPlayer({
       </span>
       {busy && segmentIdx >= 0 && (
         <span className="text-xs text-muted-foreground">
-          مقطع {segmentIdx + 1} من {spec.segments.length}
+          مقطع {segmentIdx + 1} من {spoken.length}
         </span>
       )}
       {mode === "tts" && (

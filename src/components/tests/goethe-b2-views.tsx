@@ -8,6 +8,7 @@
  * ═══════════════════════════════════════════════════════════
  */
 import {ExamAudioPlayer} from "@/components/tests/exam-audio-player";
+import {specToTrack} from "@/lib/tests/exam-audio";
 import {ExamGapList, ExamMcqList, ExamStatementsList, ExamZuordnungList} from "@/components/tests/exam-question-views";
 import type { ExamHoerenTeil, ExamLesenTeil } from "@/types/exam";
 import type {ExamAudioSpec} from "@/data/exams/b2-hoeren-audio";
@@ -101,7 +102,7 @@ export function HoerenTeilView({
   return (
     <div className="space-y-4">
       <div className="rounded-xl border bg-muted/20 p-3 text-sm text-muted-foreground">{teil.introAr}</div>
-      <ExamAudioPlayer spec={audio} />
+      <ExamAudioPlayer track={specToTrack(audio)} />
       {teil.kind === "rf" && teil.statements && (
         <ExamStatementsList
           statements={teil.statements}

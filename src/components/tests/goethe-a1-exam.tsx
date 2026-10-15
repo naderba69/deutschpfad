@@ -23,85 +23,28 @@ import { B1_LESEN } from "@/data/exams/b1-lesen";
 import { B1_SCHREIBEN } from "@/data/exams/b1-schreiben";
 import { B1_SPRECHEN } from "@/data/exams/b1-sprechen";
 import { GoetheA1Speaking } from "@/components/tests/goethe-a1-speaking";
+import { ExamAudioPlayer } from "@/components/tests/exam-audio-player";
 import { ExamMcqListCompact, ExamStatementsListCompact } from "@/components/tests/exam-question-views";
 import { gradeTeile, scoreModule } from "@/lib/tests/exam-scoring";
+import { LEVEL_AUDIO } from "@/data/exams/level-audio";
 import type { ExamHoerenTeil, ExamLesenTeil } from "@/types/exam";
 
 export type ExamLevel = "A1" | "A2" | "B1";
 
-/** بيانات كل مستوى ومجلد صوته */
+/** بيانات كل مستوى (مجلد الصوت في src/data/exams/level-audio.ts — مصدر واحد) */
 const EXAM_DATA: Record<ExamLevel, {
-  base: string;
   hoeren: ExamHoerenTeil[];
   lesen: ExamLesenTeil[];
   schreiben: typeof A1_SCHREIBEN;
   sprechen: A1SpeakingPart[];
 }> = {
-  A1: { base: "/audio/exam-a1", hoeren: A1_HOEREN, lesen: A1_LESEN, schreiben: A1_SCHREIBEN, sprechen: A1_SPRECHEN },
-  A2: { base: "/audio/exam-a2", hoeren: A2_HOEREN, lesen: A2_LESEN, schreiben: A2_SCHREIBEN, sprechen: A2_SPRECHEN },
-  B1: { base: "/audio/exam-b1", hoeren: B1_HOEREN, lesen: B1_LESEN, schreiben: B1_SCHREIBEN, sprechen: B1_SPRECHEN },
+  A1: { hoeren: A1_HOEREN, lesen: A1_LESEN, schreiben: A1_SCHREIBEN, sprechen: A1_SPRECHEN },
+  A2: { hoeren: A2_HOEREN, lesen: A2_LESEN, schreiben: A2_SCHREIBEN, sprechen: A2_SPRECHEN },
+  B1: { hoeren: B1_HOEREN, lesen: B1_LESEN, schreiben: B1_SCHREIBEN, sprechen: B1_SPRECHEN },
 };
 
 type Phase = "intro" | "hoeren" | "lesen" | "schreiben" | "sprechen" | "result";
 
-
-/** ملفات الصوت لكل جزء بالترتيب. الجزء 2 والجزء 4 سطراً بسطر، كل سطر بصوته. */
-const AUDIO_FILES: Record<number, string[]> = {
-  1: ["hoeren-t1.mp3"],
-  2: [
-    "hoeren-t2-g1-a.mp3", "hoeren-t2-g1-b.mp3",
-    "hoeren-t2-g2-a.mp3", "hoeren-t2-g2-b.mp3",
-    "hoeren-t2-g3-a.mp3", "hoeren-t2-g3-b.mp3",
-    "hoeren-t2-g4-a.mp3", "hoeren-t2-g4-b.mp3",
-  ],
-  3: ["hoeren-t3.mp3"],
-  4: ["hoeren-t4-a.mp3", "hoeren-t4-b.mp3", "hoeren-t4-c.mp3", "hoeren-t4-d.mp3"],
-};
-
-/** عدد مرات التشغيل المسموح بها لكل جزء */
-const MAX_PLAYS = (teil: number) => (teil === 1 || teil === 3 ? 2 : 1);
-
-/** تشغيل قائمة ملفات بالتسلسل */
-function playSequence(base: string, files: string[], onDone: () => void) {
-  let i = 0;
-  const next = () => {
-    if (i >= files.length) return onDone();
-    const audio = new Audio(`${base}/${files[i]}`);
-    i += 1;
-    audio.onended = next;
-    audio.onerror = next;
-    void audio.play().catch(next);
-  };
-  next();
-}
-
-function AudioPart({ part, base, onPlayed }: { part: ExamHoerenTeil; base: string; onPlayed?: () => void }) {
-  const [plays, setPlays] = React.useState(0);
-  const [busy, setBusy] = React.useState(false);
-  const max = MAX_PLAYS(part.teil);
-  const left = max - plays;
-
-  const play = () => {
-    if (left <= 0 || busy) return;
-    setBusy(true);
-    setPlays((p) => p + 1);
-    playSequence(base, AUDIO_FILES[part.teil] ?? [], () => {
-      setBusy(false);
-      onPlayed?.();
-    });
-  };
-
-  return (
-    <div className="flex flex-wrap items-center gap-3 rounded-xl border bg-card p-3">
-      <Button onClick={play} disabled={left <= 0 || busy}>
-        {busy ? "جارٍ التشغيل…" : "▶ استمع"}
-      </Button>
-      <span className="text-sm text-muted-foreground">
-        المتبقي من التشغيل: {left} {max === 2 ? "من 2" : "من 1"}
-      </span>
-    </div>
-  );
-}
 
 export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
   const data = EXAM_DATA[level];
@@ -158,7 +101,11 @@ export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
             <div key={t.teil} className="space-y-3 rounded-2xl border bg-card p-5">
               <h2 className="font-extrabold">{t.titleAr}</h2>
               <p className="text-sm text-muted-foreground">{t.introAr}</p>
-              <AudioPart part={t} base={data.base} onPlayed={() => setHeard((h) => ({ ...h, [t.teil]: true }))} />
+              <ExamAudioPlayer
+                track={LEVEL_AUDIO[level][t.teil - 1]}
+                label={null}
+                onPlayed={() => setHeard((h) => ({ ...h, [t.teil]: true }))}
+              />
               {t.kind === "rf" ? (
                 <ExamStatementsListCompact
                   statements={t.statements ?? []}

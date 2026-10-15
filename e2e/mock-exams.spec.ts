@@ -10,7 +10,11 @@
  */
 import {test, expect, type Page} from "@playwright/test";
 
-/** ملفات صوت كل جزء كما هي في src/components/tests/goethe-a1-exam.tsx */
+/**
+ * ملفات صوت كل جزء (14 لكل مستوى) — مطابقة لـ `LEVEL_AUDIO_FILES` في
+ * `src/data/exams/level-audio.ts`، ويحرس التطابقَ حارسُ الوحدة
+ * `level-audio.test.ts` (المكوّن نفسه لم يبقَ فيه جدول ملفات).
+ */
 const AUDIO_FILES = [
   "hoeren-t1.mp3",
   "hoeren-t2-g1-a.mp3",
