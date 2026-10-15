@@ -60,7 +60,6 @@ const KNOWN_OVERSIZE: readonly [string, number][] = [
   ["src/data/lessons/integrity.test.ts", 668],
   ["src/data/lessons/b2/b2-01.ts", 651],
   ["src/data/lessons/b2/b2-02.ts", 640],
-  ["src/data/lessons/b1/b1-08.ts", 638],
   ["src/data/lessons/b2/b2-04.ts", 625],
   ["src/data/dialogues/a1.ts", 621],
   ["src/data/lessons/b2/b2-08.ts", 616],

@@ -1,0 +1,115 @@
+/**
+ * b1-08 — نصّ القراءة الممتدّ (الجزء «reading»)
+ * فُصل وأُضيف في المرحلة 5. نصّ B1 عن التقنية والرقمنة: Futur I والروابط المزدوجة.
+ */
+import type { ReadingText } from "@/types/lesson";
+
+export const readingB108: ReadingText = {
+  id: "read-b1-08",
+  titleDe: "Arbeiten wir bald nur noch mit Computern?",
+  titleAr: "هل سنعمل قريباً بالحواسيب فقط؟",
+  textType: "artikel",
+  paragraphs: [
+    "In einem Büro in Hamburg wird seit zwei Jahren mit einem neuen System gearbeitet. Ein Programm liest die E-Mails, sortiert sie und schreibt kurze Antworten vor. Die Mitarbeiterin Sina Kaya sagt, sie werde die Arbeit nicht verlieren — aber ihre Aufgaben werden sich verändern. „Früher habe ich zwei Stunden am Tag nur für E-Mails gebraucht. Diese Zeit ist jetzt frei“, erzählt sie. Die Firma betont, die Entscheidung über jede Antwort werde weiterhin von Menschen getroffen.",
+    "Nicht nur in Büros, sondern auch in Krankenhäusern und Schulen wird diese Technik getestet. In einer Klinik liest ein Programm Röntgenbilder und markiert wichtige Stellen. Der Arzt entscheidet danach. In einer Schule korrigiert ein Programm die Rechtschreibung, aber nicht die Inhalte. Die Expertin Dr. Bauer sagt, weder die Programme noch die Lehrer könnten die Arbeit allein machen: „Je mehr Aufgaben eine Maschine übernimmt, desto wichtiger wird die Zeit, die Menschen für Menschen haben.“",
+    "Einerseits spart die Technik viel Zeit, andererseits entstehen neue Probleme. Wer die Programme bedient, muss sie auch verstehen. Ein Kollege sagte, er werde jetzt jeden Monat zwei Tage für Weiterbildung bekommen. Ein anderer Punkt bleibt der Datenschutz: Die Firmen müssten klar sagen, was mit den Daten der Kunden passiert. Andere Betriebe bieten das nicht an: Dort steht die Technik, aber niemand weiß, wie man sie richtig nutzt. Die Gewerkschaft fordert deshalb nicht nur mehr Stellen, sondern auch verbindliche Weiterbildung für alle.",
+    "Die größere Frage bleibt offen: Wird die Technik die Menschen ersetzen? Die meisten Fachleute sagen Nein — aber sie sagen auch, dass sich Berufe verändern werden, und zwar schneller als in den letzten Jahrzehnten. Wer in zehn Jahren Arbeit suchen wird, braucht vor allem eines: die Fähigkeit, Neues zu lernen. Diese Verantwortung liegt bei beiden Seiten — bei den Betrieben und bei jedem Einzelnen. Ob die Betriebe diese Zeit geben werden, entscheidet darüber, ob die Digitalisierung ein Gewinn für alle wird — oder nur für wenige.",
+  ],
+  paragraphsAr: [
+    "يُعمل في مكتب في هامبورغ بنظام جديد منذ سنتين. يقرأ برنامجٌ الرسائل، ويرتّبها، ويقترح ردوداً قصيرة. وتقول الموظفة سينا كايا إنها لن تفقد عملها — لكن مهامها سوف تتغيّر. تقول: «كنت أُضيّع ساعتين في اليوم للرسائل فقط. هذا الوقت صار الآن حرّاً». وتؤكد الشركة أن القرار في كل ردّ يبقى بيد البشر.",
+    "ولا يُجرَّب هذا الأسلوب في المكاتب فقط، بل في المستشفيات والمدارس أيضاً. ففي إحدى العيادات يقرأ برنامج صور الأشعة ويُعلّم المواضع المهمة، ثم يقرّر الطبيب بعد ذلك. وفي مدرسة يصحّح برنامج الإملاء، لكنه لا يصحّح المضامين. وتقول الخبيرة الدكتورة باور إن لا البرامج ولا المعلّمين يستطيعون إنجاز العمل وحدهم: «كلما زادت المهام التي تتولّاها الآلة، زادت أهمية الوقت الذي يملكه الناس للناس».",
+    "من ناحية تُوفّر التقنية وقتاً كثيراً، ومن ناحية أخرى تظهر مشكلات جديدة. فمن يُشغّل البرامج عليه أن يفهمها أيضاً. وقال أحد الزملاء إنه سيحصل الآن على يومين شهرياً للتدريب. ويبقى هناك أمر آخر هو حماية البيانات: فعلى الشركات أن تقول بوضوح ما يحدث ببيانات العملاء. وثمّة مؤسسات لا تقدّم ذلك: لديها التقنية، لكن لا أحد يعرف كيف يستعملها بشكل صحيح. ولذلك تطالب النقابة لا بزيادة الوظائف فقط، بل بتدريب ملزم للجميع.",
+    "ويبقى السؤال الأكبر مفتوحاً: هل ستستبدل التقنية البشر؟ يقول معظم المختصين: لا — لكنهم يقولون أيضاً إن المهن سوف تتغيّر، وبوتيرة أسرع من العقود الماضية. ومن سيبحث عن عمل بعد عشر سنوات يحتاج قبل كل شيء شيئاً واحداً: القدرة على تعلّم الجديد. وهذه المسؤولية تقع على الطرفين — على المؤسسات وعلى كل فرد. أما هل ستمنح المؤسسات هذا الوقت، فذلك ما يحدّد ما إذا كانت الرقمنة مكسباً للجميع — أم لقليل منهم فقط.",
+  ],
+  glossary: [
+    { de: "die Digitalisierung", ar: "الرقمنة", noteAr: "مؤنّثة؛ ومنها digital (رقمي)." },
+    { de: "das Programm", ar: "البرنامج", noteAr: "محايد، وجمعه die Programme؛ ومنها programmerien (يبرمج)." },
+    { de: "die Aufgabe", ar: "المهمة", noteAr: "مؤنّثة؛ ومنها aufgeben (يتخلّى / يُوكل)." },
+    { de: "bedienen", ar: "يُشغّل، يخدم", noteAr: "فعل منتظم؛ ومنها der Bediener (المُشغّل)." },
+    { de: "die Weiterbildung", ar: "التدريب المستمر", noteAr: "مؤنّثة مركّبة من weiter + Bildung؛ ومنها bilden (يُكوّن)." },
+    { de: "verbindlich", ar: "ملزم، مُلزِم", noteAr: "صفة؛ ومنها verbinden (يربط) وdie Verbindlichkeit (الإلزام)." },
+    { de: "die Gewerkschaft", ar: "النقابة", noteAr: "مؤنّثة؛ ومنها der Gewerkschafter (النقابي)." },
+    { de: "ersetzen", ar: "يستبدل", noteAr: "فعل منتظم؛ ومنها der Ersatz (البديل)." },
+    { de: "der Beruf", ar: "المهنة", noteAr: "مذكّر؛ ومنها beruflich (مهني) وdie Berufung (النداء، الاستدعاء)." },
+    { de: "der Gewinn", ar: "المكسب، الربح", noteAr: "مذكّر؛ ومنها gewinnen (يكسب) وder Gewinner (الفائز)." },
+  ],
+  questions: [
+    {
+      id: "rq1",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Wie verändert das neue Programm die Arbeit von Sina Kaya?",
+      questionAr: "كيف يغيّر البرنامج الجديد عمل سينا كايا؟",
+      options: [
+        "Sie verliert ihren Arbeitsplatz.",
+        "Ihre Aufgaben verändern sich, und sie gewinnt Zeit.",
+        "Sie muss keine E-Mails mehr lesen und arbeitet nicht mehr.",
+        "Sie arbeitet jetzt nur noch nachts.",
+      ],
+      correctIndex: 1,
+      paragraph: 1,
+      explanation: "الفقرة 1: «sie werde die Arbeit nicht verlieren — aber ihre Aufgaben werden sich verändern»، وتقول إن ساعتين صارتا حرّة الآن. ولاحظ الصيغتين: werde في الكلام المنقول، وwerden im Futur.",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq2",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was sagt Dr. Bauer über Maschinen und Menschen?",
+      questionAr: "ماذا تقول الدكتورة باور عن الآلات والبشر؟",
+      options: [
+        "Maschinen können die Arbeit allein machen.",
+        "Lehrer brauchen keine Programme.",
+        "Weder Programme noch Menschen können die Arbeit allein machen.",
+        "Nur Programme entscheiden über die Inhalte.",
+      ],
+      correctIndex: 2,
+      paragraph: 2,
+      explanation: "الفقرة 2 تنقل قولها بالرابط المزدوج: «weder die Programme noch die Lehrer könnten die Arbeit allein machen» — ثم يُظهر ذلك بالترتيب الفعلي في العيادة والمدرسة (البرنامج يقترح، والإنسان يقرّر).",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq3",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was fordert die Gewerkschaft?",
+      questionAr: "ماذا تطالب النقابة؟",
+      options: [
+        "Weniger Programme in Betrieben.",
+        "Nicht nur mehr Stellen, sondern auch verbindliche Weiterbildung.",
+        "Bessere Computer für alle.",
+        "Kürzere Arbeitszeiten ohne Weiterbildung.",
+      ],
+      correctIndex: 1,
+      paragraph: 3,
+      explanation: "الفقرة 3 تنصّ على المطلبين بالرابط المزدوج: «nicht nur mehr Stellen, sondern auch verbindliche Weiterbildung für alle» — ولاحظ أن الجزأين متوازيان (اسمان).",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq4",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was braucht man nach dem Text in zehn Jahren vor allem?",
+      questionAr: "ما الذي يحتاج إليه المرء بعد عشر سنوات قبل كل شيء حسب النصّ؟",
+      options: [
+        "Ein abgeschlossenes Studium.",
+        "Viel Geld.",
+        "Die Fähigkeit, Neues zu lernen.",
+        "Ein eigenes Büro.",
+      ],
+      correctIndex: 2,
+      paragraph: 4,
+      explanation: "الفقرة الأخيرة: «braucht vor allem eines: die Fähigkeit, Neues zu lernen» — وهي خلاصة تضع التعلّم المستمر شرطاً لتوزيع العائد، وتُظهره في جملة مستقبلية بـwerden قبلها.",
+      errorType: "comprehension",
+    },
+  ],
+  redemittel: [
+    { de: "In zehn Jahren werden wir …", ar: "بعد عشر سنوات سنكون … (Futur I)" },
+    { de: "nicht nur … sondern auch …", ar: "ليس فقط … بل أيضاً …" },
+    { de: "Je mehr …, desto …", ar: "كلما … فإنّ …" },
+    { de: "Einerseits …, andererseits …", ar: "من ناحية … ومن ناحية أخرى …" },
+    { de: "Ich denke, die Technik wird …", ar: "أعتقد أنّ التقنية سوف …" },
+  ],
+  discussionAr:
+    "ناقش مع زميلك: هل ستستبدل البرامج بعض المهن في بلدك؟ وما أفضل طريقة للاستعداد لذلك؟ استعمل في حديثك رابطاً مزدوجاً واحداً على الأقل (nicht nur … sondern auch أو einerseits … andererseits) وجملة مستقبلية واحدة بـwerden، ثم اكتب خلاصتك في سطرين على لسان موظّف يشرح ما تغيّر في عمله.",
+};
