@@ -60,6 +60,7 @@ export const ACADEMIC_LESSONS: string[] = [
   "b1-10",
   "b1-12",
   "b1-11",
+  "b2-01",
 ];
 
 const MIN_EXPLANATION = 900;
