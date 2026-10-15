@@ -1,0 +1,115 @@
+/**
+ * b1-09 — نصّ القراءة الممتدّ (الجزء «reading»)
+ * فُصل وأُضيف في المرحلة 5. نصّ B1 عن العمل التطوعي: الوصلات الاسمية وتصريف n.
+ */
+import type { ReadingText } from "@/types/lesson";
+
+export const readingB109: ReadingText = {
+  id: "read-b1-09",
+  titleDe: "Eine Stunde pro Woche für andere",
+  titleAr: "ساعة واحدة في الأسبوع للآخرين",
+  textType: "bericht",
+  paragraphs: [
+    "Der Verein „Nachbarn helfen“ in Leipzig hat im letzten Jahr eine wichtige Entscheidung getroffen: Er öffnet seine Angebote auch für Menschen, die nur eine Stunde pro Woche Zeit haben. „Früher glaubten viele, Freiwillige müssten jeden Tag kommen“, sagt die Vorsitzende Frau Aydin. „Wir haben eine Frage gestellt: Warum sollte man nicht auch in einer Stunde helfen können?“ Auch ehrenamtliche Arbeit von einer Stunde hat einen Wert, sagt sie. Heute nehmen über neunzig Personen an den Projekten teil — doppelt so viele wie zuvor.",
+    "Ein Beispiel ist Herr Weber, ein Rentner. Er kümmert sich um die Kinder in einem Haus für Flüchtlingsfamilien: Er liest mit ihnen, hilft bei den Hausaufgaben und geht mit ihnen auf den Spielplatz. Seine Frau unterstützt einen Kunden des Vereins, einen Studenten aus Syrien, der im dritten Semester Medizin studiert. „Wir danken den Nachbarn jeden Tag“, sagt der Student. „Ohne sie hätte ich die Prüfungen nicht geschafft.“",
+    "Die Arbeit bringt nicht nur den Familien etwas. Herr Weber sagt, er erinnere sich an schwierige Zeiten in seinem eigenen Leben, als er neu in der Stadt war. Diese Erinnerung sei der Grund, warum er sich engagiere. Auch für Frau Aydin spielt die Erfahrung eine Rolle: Sie selbst kam als Kind ohne Deutschkenntnisse nach Deutschland. Deshalb achtet der Verein darauf, dass sich jeder Freiwillige willkommen fühlt und dass niemand zu viel Verantwortung allein trägt.",
+    "Kritik gibt es auch. Ein Mitglied sagte, der Verein verliere an Qualität, wenn Freiwillige nur eine Stunde pro Woche helfen. Die Vorsitzende weist das nicht zurück: „Wir brauchen beides — Menschen mit viel Zeit und Menschen mit wenig Zeit.“ Voraussetzung sei eine gute Einarbeitung. Deshalb bietet der Verein jeden Monat einen Einführungskurs an, und ein erfahrenes Mitglied begleitet jeden Neuen in den ersten sechs Wochen.",
+  ],
+  paragraphsAr: [
+    "اتخذت جمعية «الجيران يساعدون» في لايبزغ قراراً مهماً في العام الماضي: أنها فتحت عروضها أيضاً لمن ليس لديه إلا ساعة واحدة أسبوعياً. تقول رئيسة الجمعية السيدة أيدين: «كان كثيرون يظنون من قبل أن على المتطوّعين أن يأتوا كل يوم. وقد طرحنا سؤالاً: لماذا لا يمكن أن يساعد المرء في ساعة واحدة أيضاً؟». وتقول إن للعمل التطوعي بساعة واحدة قيمة أيضاً. واليوم تشارك أكثر من تسعين شخصاً في المشاريع — أي ضعف العدد السابق.",
+    "ومن الأمثلة السيد فيبر، وهو متقاعد. يعتني بالأطفال في بيت لعائلات لاجئة: يقرأ معهم، ويساعدهم في الواجبات المنزلية، ويذهب معهم إلى الملعب. وتدعم زوجته أحد الوسطاء في الجمعية، وهو طالب من سوريا يدرس الطب في الفصل الثالث. يقول الطالب: «نشكر الجيران كل يوم. فلولا مساعدتهم لما نجحت في الامتحانات».",
+    "ولا يعود هذا العمل على العائلات فقط. يقول السيد فيبر إنه يتذكّر أوقاتاً صعبة في حياته الخاصة حين جاء جديداً إلى المدينة، وإن هذه الذكرى هي السبب في تطوّعه. ولدى السيدة أيدين أيضاً دورٌ للتجربة: فهي نفسها جاءت طفلةً إلى ألمانيا بلا معرفة بالألمانية. ولذلك تحرص الجمعية على أن يشعر كل متطوّع بأنه مرحّب به، وعلى ألّا يتحمّل أحد المسؤولية كاملة وحده.",
+    "وثمّة نقد أيضاً. قال أحد الأعضاء إن الجمعية تفقد جودة عملها إذا لم يساعد المتطوّعون إلا ساعة أسبوعياً. ولا تردّ الرئيسة هذا النقد: «نحتاج إلى الاثنين — أشخاصاً عندهم وقت كثير وأشخاصاً عندهم وقت قليل». والشرط هو تأهيل جيد. ولذلك تقدّم الجمعية دورة تعريفية كل شهر، ويصاحب عضوٌ متمرّس كلَّ جديد في الأسابيع الستة الأولى.",
+  ],
+  glossary: [
+    { de: "das Ehrenamt", ar: "العمل التطوعي", noteAr: "محايد مركّب من Ehre + Amt؛ ومنه ehrenamtlich (تطوّعياً)." },
+    { de: "der Verein", ar: "الجمعية", noteAr: "مذكّر؛ ومنه vereinbaren (يتفق على)." },
+    { de: "die Vorsitzende", ar: "رئيسة الجمعية", noteAr: "من فئة n-Deklination: die Vorsitzende · den Vorsitzenden." },
+    { de: "der Freiwillige", ar: "المتطوّع", noteAr: "صفة مُعرَّفة كاسم وتتبع n-Deklination: der Freiwillige · den Freiwilligen." },
+    { de: "die Verantwortung", ar: "المسؤولية", noteAr: "مؤنّثة؛ Verantwortung tragen (يتحمّل المسؤولية)." },
+    { de: "die Voraussetzung", ar: "الشرط المسبق", noteAr: "مؤنّثة؛ ومنها voraussetzen (يفترض)." },
+    { de: "die Einarbeitung", ar: "التأهيل والتدريب على العمل", noteAr: "مؤنّثة؛ ومنها einarbeiten (يُدرّب)." },
+    { de: "die Erfahrung", ar: "الخبرة، التجربة", noteAr: "مؤنّثة؛ Erfahrungen sammeln (يجمع خبرات)." },
+    { de: "sich engagieren", ar: "يتطوّع، يلتزم", noteAr: "فعل انعكاسي؛ ومنه das Engagement (الالتزام، التطوّع)." },
+    { de: "die Erinnerung", ar: "الذكرى، التذكّر", noteAr: "مؤنّثة؛ ومنها sich erinnern an + Akkusativ." },
+  ],
+  questions: [
+    {
+      id: "rq1",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Welche Entscheidung hat der Verein getroffen?",
+      questionAr: "أي قرار اتخذت الجمعية؟",
+      options: [
+        "Nur noch Berufstätige aufzunehmen.",
+        "Auch Menschen mit nur einer Stunde pro Woche aufzunehmen.",
+        "Die Projekte ganz zu schließen.",
+        "Nur an Feiertagen zu arbeiten.",
+      ],
+      correctIndex: 1,
+      paragraph: 1,
+      explanation: "الفقرة 1 تفتتح بالوصلة الاسمية نفسها: «hat … eine wichtige Entscheidung getroffen» — والقرار هو فتح العروض لمن لديه ساعة واحدة أسبوعياً، ويؤكّده تضاعف العدد إلى أكثر من تسعين.",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq2",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Worum kümmert sich Herr Weber?",
+      questionAr: "بمن يعتني السيد فيبر؟",
+      options: [
+        "Um die Kinder in einem Haus für Flüchtlingsfamilien.",
+        "Um die Kasse des Vereins.",
+        "Um die Ausbildung neuer Freiwilliger.",
+        "Um die Öffentlichkeitsarbeit.",
+      ],
+      correctIndex: 0,
+      paragraph: 2,
+      explanation: "الفقرة 2: «Er kümmert sich um die Kinder in einem Haus für Flüchtlingsfamilien» — ولاحظ الفعل الانعكاسي مع حرفه الثابت (sich kümmern um + Akkusativ) في الصيغة الواردة.",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq3",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Warum engagiert sich Herr Weber?",
+      questionAr: "لماذا يتطوّع السيد فيبر؟",
+      options: [
+        "Weil er Geld verdienen will.",
+        "Weil der Verein ihn dazu zwingt.",
+        "Weil er sich an schwierige Zeiten in seinem eigenen Leben erinnert.",
+        "Weil seine Frau ihn geschickt hat.",
+      ],
+      correctIndex: 2,
+      paragraph: 3,
+      explanation: "الفقرة 3: «er erinnere sich an schwierige Zeiten … als er neu in der Stadt war. Diese Erinnerung sei der Grund» — وفيه الكلام المنقول بصيغة Konjunktiv I مع الوصلة sich erinnern an وn-Deklination في Erinnerung.",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq4",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Wie reagiert die Vorsitzende auf die Kritik?",
+      questionAr: "كيف ردّت الرئيسة على النقد؟",
+      options: [
+        "Sie verbietet Kritik im Verein.",
+        "Sie weist die Kritik zurück und schließt die Projekte.",
+        "Sie nimmt die Kritik an und fordert beides: Zeit und Einarbeitung.",
+        "Sie ignoriert die Kritik vollständig.",
+      ],
+      correctIndex: 2,
+      paragraph: 4,
+      explanation: "الفقرة 4: «Die Vorsitzende weist das nicht zurück» — أي لم تدفع النقد، بل قالت «نحتاج إلى الاثنين»، ثم اشترطت التأهيل: Einführungskurs كل شهر ومرافقة ستة أسابيع للجديد.",
+      errorType: "comprehension",
+    },
+  ],
+  redemittel: [
+    { de: "eine Entscheidung treffen", ar: "يتخذ قراراً" },
+    { de: "eine Frage stellen", ar: "يطرح سؤالاً" },
+    { de: "sich kümmern um", ar: "يعتني بـ" },
+    { de: "teilnehmen an", ar: "يشارك في" },
+    { de: "sich erinnern an", ar: "يتذكّر" },
+  ],
+  discussionAr:
+    "ناقش مع زميلك: هل يمكن للمرء أن يتطوّع بساعة واحدة في الأسبوع في بلدك؟ وما الذي يكسبه المتطوّع نفسه؟ استعمل في حديثك وصلتين اسميتين (eine Entscheidung treffen · eine Frage stellen) وفعلين مع حرف ثابت (sich kümmern um · teilnehmen an)، ثم اكتب إعلاناً قصيراً من ثلاثة أسطر تدعو فيه الناس إلى التطوّع في جمعية خيالية.",
+};
