@@ -62,7 +62,6 @@ const KNOWN_OVERSIZE: readonly [string, number][] = [
   ["src/data/lessons/b2/b2-04.ts", 625],
   ["src/data/dialogues/a1.ts", 621],
   ["src/data/lessons/b2/b2-08.ts", 616],
-  ["src/data/lessons/b1/b1-10.ts", 614],
   ["src/data/lessons/b2/b2-09.ts", 612],
   ["src/data/dialogues/a2.ts", 611],
   ["src/data/dialogues/b1.ts", 611],

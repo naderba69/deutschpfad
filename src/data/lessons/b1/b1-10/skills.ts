@@ -1,0 +1,144 @@
+/**
+ * b1-10 — القراءة والاستماع والنطق والكتابة (الجزء «skills»)
+ * فُصل من b1-10.ts في المرحلة 5 (سقف الحجم). القيم منقولة حرفياً.
+ */
+import type { Lesson } from "@/types/lesson";
+
+export const listening: Lesson["listening"] = {
+    items: [
+      {
+        id: "l1",
+        title: "خطط سامي",
+        lines: [
+          { speaker: "Anna", de: "Was sind deine Pläne, Sami?", ar: "ما خططك يا سامي؟" },
+          { speaker: "Sami", de: "Ich werde nächstes Jahr in Deutschland studieren.", ar: "سأدرس في ألمانيا السنة القادمة." },
+          { speaker: "Anna", de: "An welcher Universität?", ar: "في أي جامعة؟" },
+          { speaker: "Sami", de: "An der Universität, die in München liegt. Ich habe mich schon beworben.", ar: "في الجامعة التي تقع في ميونخ. تقدمت بالفعل." },
+          { speaker: "Anna", de: "Wenn du angenommen wirst, wirst du umziehen.", ar: "إذا قُبلت ستنتقل." },
+          { speaker: "Sami", de: "Genau! Und ich werde eine Wohnung suchen, die nicht zu teuer ist.", ar: "بالضبط! وسأبحث عن شقة ليست غالية جداً." },
+        ],
+      },
+      {
+        id: "l2",
+        title: "أحلام وأهداف",
+        lines: [
+          { speaker: "Mona", de: "Mein größtes Ziel? Ich möchte eine eigene Firma gründen.", ar: "أكبر هدف لي؟ أريد تأسيس شركتي الخاصة." },
+          { speaker: "Karim", de: "Das ist mutig! Was brauchst du dafür?", ar: "هذا شجاع! ماذا تحتاج لذلك؟" },
+          { speaker: "Mona", de: "Ich brauche Geld, das ich noch nicht habe, und Erfahrung, die ich sammeln muss.", ar: "أحتاج مالاً ليس عندي بعد، وخبرة يجب أن أجمعها." },
+          { speaker: "Karim", de: "Ich glaube, dass du es schaffst. Du bist fleißig!", ar: "أعتقد أنك ستنجحين. أنتِ مجتهدة!" },
+        ],
+      },
+    ],
+    questions: [
+      {
+        id: "q1",
+        itemId: "l1",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Wo will Sami studieren?",
+        questionAr: "أين يريد سامي أن يدرس؟",
+        options: ["in München", "in Berlin", "in Hamburg", "in Tunis"],
+        correctIndex: 0,
+        explanation: "قال سامي: An der Universität, die in München liegt.",
+        errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«in Berlin» لم يذكرها سامي كمدينة يريد الدراسة فيها.",
+          "«in Hamburg» لم يذكرها سامي كمدينة يريد الدراسة فيها.",
+          "«in Tunis» لم يذكرها سامي كمدينة يريد الدراسة فيها.",
+        ],
+      },
+      {
+        id: "q2",
+        itemId: "l1",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Was wird Sami suchen?",
+        questionAr: "ماذا سيبحث سامي؟",
+        options: ["eine nicht zu teure Wohnung", "eine große Wohnung", "eine Wohnung am Strand", "ein Haus"],
+        correctIndex: 0,
+        explanation: "قال: Ich werde eine Wohnung suchen, die nicht zu teuer ist.",
+        errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«eine große Wohnung» لم يقلها سامي؛ قال إنه يريد شقة غير غالية.",
+          "«eine Wohnung am Strand» لم يذكرها سامي كخيار للبحث.",
+          "«ein Haus» لم يذكرها سامي كخيار للبحث.",
+        ],
+      },
+      {
+        id: "q3",
+        itemId: "l2",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Was ist Monas größtes Ziel?",
+        questionAr: "ما أكبر هدف لمنى؟",
+        options: ["eine Firma gründen", "ein Haus kaufen", "nach Deutschland gehen", "ein Buch schreiben"],
+        correctIndex: 0,
+        explanation: "قالت منى: Ich möchte eine eigene Firma gründen.",
+        errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«ein Haus kaufen» لم تذكرها منى كهدفها الأكبر.",
+          "«nach Deutschland gehen» لم تذكرها منى كهدفها الأكبر.",
+          "«ein Buch schreiben» لم تذكرها منى كهدفها الأكبر.",
+        ],
+      },
+    ],
+  };
+
+export const pronunciation: Lesson["pronunciation"] = {
+    id: "p1",
+    title: "مراجعة أصوات B1",
+    items: [
+      { de: "die Zukunft", ar: "المستقبل", note: "z = تس (لا يوجد ch) + u الأولى طويلة والثانية قصيرة: تسووكونفت" },
+      { de: "würde", ar: "كنت سأفعل", note: "w = ڤ، وü صوت بين «و» و«ي» مع تدوير الشفتين: ڤورده" },
+      { de: "das Gemälde", ar: "اللوحة", note: "g = ك (لا غ)، وä = e مفتوحة: كيمِلده" },
+      { de: "der Bürger", ar: "المواطن", note: "ü قصيرة، وg = ك: بورْكَر" },
+      { de: "die Regierung", ar: "الحكومة", note: "ie = إي، وg = ك: رِكيرونغ" },
+      { de: "während", ar: "بينما", note: "w = ڤ + ä: ڤيرِنت" },
+    ],
+    tip: "ستة أصوات B1 الصعبة — كررها يومياً: تسوكونفت، ڤورده، كيمِلده، بورْكَر، رِكيرونغ، ڤيرِنت.",
+    shadowing: [
+      { de: "Der Student, der dort steht, ist mein Freund.", ar: "الطالب الذي يقف هناك صديقي.", tip: "Relativsatz: der dort steht" },
+      { de: "Wenn ich reich wäre, würde ich reisen.", ar: "لو كنت غنياً لسافرت.", tip: "Konjunktiv II: wäre + würde" },
+      { de: "Das Haus wird gebaut.", ar: "البيت يُبنى.", tip: "Passiv: wird gebaut" },
+      { de: "Je mehr ich lerne, desto besser.", ar: "كلما تعلمت أكثر كان أفضل.", tip: "je... desto" },
+    ],
+  };
+
+export const writing: NonNullable<Lesson["writing"]> = [
+    {
+      id: "w1",
+      type: "transformation",
+      instructionAr: "اكتب خطة مستقبلية مركبة:",
+      prompt: "اكتب خطتك: «سأدرس في ألمانيا لأنني أحب الثقافة» (Futur + weil)",
+      acceptedAnswers: ["Ich werde in Deutschland studieren, weil ich die Kultur liebe", "Ich werde in Deutschland studieren, weil ich die Kultur liebe."],
+      sampleAnswer: "Ich werde in Deutschland studieren, weil ich die Kultur liebe.",
+      explanation: "Futur (werde studieren) + weil + فعل في النهاية.",
+      errorType: "grammar",
+    },
+    {
+      id: "w2",
+      type: "fill-blank",
+      instructionAr: "أكمل بجملة مركبة:",
+      template: "Der Mann, ___ dort arbeitet, ist mein Chef. (الذي) Wenn ich Zeit ___, würde ich mehr lernen. (كان عندي)",
+      blanks: [
+        { correct: "der", options: ["der", "den", "dem"] },
+        { correct: "hätte", options: ["hätte", "habe", "hatte"] },
+      ],
+      explanation: "فاعل مذكر → der. شرطية → hätte.",
+      errorType: "grammar",
+    },
+    {
+      id: "w3",
+      type: "transformation",
+      instructionAr: "كتابة إنتاجية: حوّل إلى المستقبل (Futur I) عن خططك:",
+      instructionDe: "Schreibe im Futur I:",
+      prompt: "Ich lerne Deutsch. → Nächstes Jahr ...",
+      acceptedAnswers: ["Nächstes Jahr werde ich Deutsch lernen.", "Ich werde nächstes Jahr Deutsch lernen."],
+      sampleAnswer: "Nächstes Jahr werde ich Deutsch lernen.",
+      explanation: "المستقبل: werden + مصدر في نهاية الجملة — صياغة الأهداف والخطط.",
+      errorType: "grammar",
+    },
+  ];
