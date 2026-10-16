@@ -1,12 +1,20 @@
 import type { TestQuestion } from "@/types/test";
+import { balanceTestBank } from "@/lib/tests/balance-options";
 
 /**
  * بنوك أسئلة الاختبارات — المستويات الأربعة
  * المهارات: قواعد، مفردات، قراءة، استماع، كتابة
  * (تُسحب عشوائياً في كل جلسة اختبار)
+ *
+ * ⚠️ قياس 2026-10-16: كانت **171/171** إجابة صحيحة في الموضع الأول (100%) —
+ * أي أن المتعلّم يجتاز الاختبار باختيار الخيار الأول في كل سؤال. والسبب أن
+ * Bank مكتوب بالإجابة أولاً، ومحرّكين (level-test · weekly-test) لا يخلطان.
+ * الإصلاح طبقتان: (1) موازنة البيانات هنا عند التحميل (`balanceTestBank`)،
+ * و(2) خلط الخيارات وقت بناء الجلسة في المحرّكات الثلاثة
+ * (`shuffleTestQuestions`). والحارس `src/data/tests/question-banks.test.ts`.
  */
 
-export const TEST_BANK: TestQuestion[] = [
+const RAW_TEST_BANK: TestQuestion[] = [
   /* ═══════════ A1 — قواعد ═══════════ */
   { id: "a1-g1", skill: "grammatik", level: "A1", kind: "mcq", questionDe: "Ich ___ aus Tunesien.", questionAr: "أنا من تونس.", options: ["bin", "bist", "ist", "sind"], correctIndex: 0, explanation: "مع ich: bin." },
   { id: "a1-g2", skill: "grammatik", level: "A1", kind: "mcq", questionDe: "Das ist ___ Mutter.", options: ["meine", "mein", "meinen", "meinem"], correctIndex: 0, explanation: "Mutter مؤنثة → meine." },
@@ -80,7 +88,7 @@ export const TEST_BANK: TestQuestion[] = [
 
   /* ═══════════ A2 — قواعد ═══════════ */
   { id: "a2-g1", skill: "grammatik", level: "A2", kind: "mcq", questionDe: "Ich ___ gestern nach Berlin ___.", options: ["bin ... geflogen", "habe ... geflogen", "bin ... gefliegen", "habe ... gefliegen"], correctIndex: 0, explanation: "fliegen حركة → bin geflogen." },
-  { id: "a2-g2", skill: "grammatik", level: "A2", kind: "mcq", questionDe: "Ich glaube, dass er heute ___.", options: ["kommt", "kommen", "kommst", "komme"], correctIndex: 0, explanation: "الفعل في نهاية الثانوية." },
+  { id: "a2-g2", skill: "grammatik", level: "A2", kind: "mcq", questionDe: "Ich glaube, dass er heute ___.", options: ["kommt", "kommen", "kommst", "komme"], correctIndex: 0, explanation: "بعد dass: الفعل في النهاية، والفاعل er → kommt." },
   { id: "a2-g3", skill: "grammatik", level: "A2", kind: "mcq", questionDe: "Kannst du ___ helfen? (أنا)", options: ["mir", "mich", "dich", "dir"], correctIndex: 0, explanation: "helfen يأخذ Dativ: mir." },
   { id: "a2-g4", skill: "grammatik", level: "A2", kind: "mcq", questionDe: "Es gibt ___ Park in der Stadt.", options: ["einen", "ein", "eine", "der"], correctIndex: 0, explanation: "es gibt + نصب مذكر: einen." },
   { id: "a2-g5", skill: "grammatik", level: "A2", kind: "mcq", questionDe: "Der Zug ist ___ als der Bus.", options: ["schneller", "schnell", "am schnellsten", "schnelle"], correctIndex: 0, explanation: "المقارنة: schneller als." },
@@ -163,15 +171,15 @@ export const TEST_BANK: TestQuestion[] = [
 
   /* ═══════════ B1 — مفردات ═══════════ */
   { id: "b1-v1", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "der Lebenslauf", options: ["السيرة الذاتية", "خطاب التقديم", "العقد", "الشهادة"], correctIndex: 0, explanation: "der Lebenslauf = السيرة الذاتية." },
-  { id: "b1-v2", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "der Klimawandel", options: ["تغير المناخ", "التلوث", "إعادة التدوير", "الطاقة"], correctIndex: 0, explanation: "تغير المناخ." },
-  { id: "b1-v3", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "die Bewerbung", options: ["طلب الوظيفة", "المقابلة", "الراتب", "الإجازة"], correctIndex: 0, explanation: "طلب الوظيفة." },
-  { id: "b1-v4", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "die Regierung", options: ["الحكومة", "البرلمان", "القانون", "الانتخاب"], correctIndex: 0, explanation: "الحكومة." },
-  { id: "b1-v5", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "während", options: ["بينما", "عندما (ماضٍ)", "قبل أن", "حتى"], correctIndex: 0, explanation: "بينما." },
-  { id: "b1-v6", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "das Gemälde", options: ["اللوحة", "المتحف", "الرسام", "المعرض"], correctIndex: 0, explanation: "اللوحة." },
-  { id: "b1-v7", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "die Spende", options: ["التبرع", "المساعدة", "الجمعية", "العضو"], correctIndex: 0, explanation: "التبرع." },
-  { id: "b1-v8", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "sich bewerben", options: ["يتقدم (لوظيفة)", "يستقيل", "يترشح", "يقدم شكوى"], correctIndex: 0, explanation: "يتقدم." },
-  { id: "b1-v9", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "die Wahl", options: ["الانتخاب", "الاختيار", "القرار", "الرأي"], correctIndex: 0, explanation: "الانتخاب." },
-  { id: "b1-v10", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "entweder ... oder", options: ["إما ... أو", "لا ... ولا", "ليس فقط بل أيضاً", "كلما ... كلما"], correctIndex: 0, explanation: "إما أو." },
+  { id: "b1-v2", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "der Klimawandel", options: ["تغير المناخ", "التلوث", "إعادة التدوير", "الطاقة"], correctIndex: 0, explanation: "der Klimawandel (مذكر، مركّب: Klima + Wandel) = تغير المناخ." },
+  { id: "b1-v3", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "die Bewerbung", options: ["طلب الوظيفة", "المقابلة", "الراتب", "الإجازة"], correctIndex: 0, explanation: "die Bewerbung (مؤنث) = طلب الوظيفة؛ والفعل sich bewerben." },
+  { id: "b1-v4", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "die Regierung", options: ["الحكومة", "البرلمان", "القانون", "الانتخاب"], correctIndex: 0, explanation: "die Regierung (مؤنث، من regieren) = الحكومة." },
+  { id: "b1-v5", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "während", options: ["بينما", "عندما (ماضٍ)", "قبل أن", "حتى"], correctIndex: 0, explanation: "während + Genitiv = بينما (رابط زمني)." },
+  { id: "b1-v6", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "das Gemälde", options: ["اللوحة", "المتحف", "الرسام", "المعرض"], correctIndex: 0, explanation: "das Gemälde (محايد، من malen) = اللوحة." },
+  { id: "b1-v7", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "die Spende", options: ["التبرع", "المساعدة", "الجمعية", "العضو"], correctIndex: 0, explanation: "die Spende (مؤنث) = التبرع؛ والفعل spenden." },
+  { id: "b1-v8", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "sich bewerben", options: ["يتقدم (لوظيفة)", "يستقيل", "يترشح", "يقدم شكوى"], correctIndex: 0, explanation: "sich bewerben um + Akkusativ = يتقدم لوظيفة." },
+  { id: "b1-v9", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "die Wahl", options: ["الانتخاب", "الاختيار", "القرار", "الرأي"], correctIndex: 0, explanation: "die Wahl (مؤنث، من wählen) = الانتخاب/الاختيار." },
+  { id: "b1-v10", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "entweder ... oder", options: ["إما ... أو", "لا ... ولا", "ليس فقط بل أيضاً", "كلما ... كلما"], correctIndex: 0, explanation: "entweder ... oder = إما ... أو (رابط ثنائي)." },
 
   /* ═══════════ B1 — قراءة ═══════════ */
   {
@@ -232,16 +240,16 @@ export const TEST_BANK: TestQuestion[] = [
   { id: "b2-g10", skill: "grammatik", level: "B2", kind: "mcq", questionDe: "Das Problem lässt ___ lösen.", options: ["sich", "mich", "dich", "uns"], correctIndex: 0, explanation: "sich lassen." },
 
   /* ═══════════ B2 — مفردات ═══════════ */
-  { id: "b2-v1", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "die Entdeckung", options: ["الاكتشاف", "التجربة", "الاختراع", "البحث"], correctIndex: 0, explanation: "الاكتشاف." },
-  { id: "b2-v2", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "die Inflation", options: ["التضخم", "الأسهم", "المبيعات", "الاستثمار"], correctIndex: 0, explanation: "التضخم." },
-  { id: "b2-v3", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "der Zeuge", options: ["الشاهد", "المحامي", "القاضي", "المتهم"], correctIndex: 0, explanation: "الشاهد." },
-  { id: "b2-v4", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "die Erörterung", options: ["المقال الجدلي", "الرواية", "القصيدة", "المراجعة"], correctIndex: 0, explanation: "المقال الجدلي." },
-  { id: "b2-v5", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "die Fachsprache", options: ["لغة التخصص", "لغة الأم", "اللغة الأجنبية", "اللغة الرسمية"], correctIndex: 0, explanation: "لغة التخصص." },
-  { id: "b2-v6", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "in Betracht ziehen", options: ["يأخذ بعين الاعتبار", "يضع تحت التصرف", "يولي أهمية", "يلعب دوراً"], correctIndex: 0, explanation: "يأخذ بعين الاعتبار." },
-  { id: "b2-v7", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "meiner Ansicht nach", options: ["في رأيي", "بلا شك", "إلى حد ما", "خلاصةً"], correctIndex: 0, explanation: "في رأيي." },
-  { id: "b2-v8", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "das Missverständnis", options: ["سوء الفهم", "التواصل", "السلوك", "الإنصات"], correctIndex: 0, explanation: "سوء الفهم." },
-  { id: "b2-v9", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "das Anschreiben", options: ["خطاب التقديم", "السيرة الذاتية", "العقد", "الشهادة"], correctIndex: 0, explanation: "خطاب التقديم." },
-  { id: "b2-v10", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "zusammenfassend", options: ["خلاصةً", "أولاً", "علاوة على ذلك", "مع ذلك"], correctIndex: 0, explanation: "خلاصةً." },
+  { id: "b2-v1", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "die Entdeckung", options: ["الاكتشاف", "التجربة", "الاختراع", "البحث"], correctIndex: 0, explanation: "die Entdeckung (مؤنث، من entdecken) = الاكتشاف." },
+  { id: "b2-v2", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "die Inflation", options: ["التضخم", "الأسهم", "المبيعات", "الاستثمار"], correctIndex: 0, explanation: "die Inflation (مؤنث، مصطلح اقتصادي) = التضخم." },
+  { id: "b2-v3", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "der Zeuge", options: ["الشاهد", "المحامي", "القاضي", "المتهم"], correctIndex: 0, explanation: "der Zeuge (مذكر، والجمع die Zeugen) = الشاهد." },
+  { id: "b2-v4", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "die Erörterung", options: ["المقال الجدلي", "الرواية", "القصيدة", "المراجعة"], correctIndex: 0, explanation: "die Erörterung (مؤنث، من erörtern) = المقال الجدلي — نوع كتابة في B2." },
+  { id: "b2-v5", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "die Fachsprache", options: ["لغة التخصص", "لغة الأم", "اللغة الأجنبية", "اللغة الرسمية"], correctIndex: 0, explanation: "die Fachsprache (مؤنث، مركّب: Fach + Sprache) = لغة التخصص." },
+  { id: "b2-v6", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "in Betracht ziehen", options: ["يأخذ بعين الاعتبار", "يضع تحت التصرف", "يولي أهمية", "يلعب دوراً"], correctIndex: 0, explanation: "in Betracht ziehen = يأخذ بعين الاعتبار (تعبير فعلي)." },
+  { id: "b2-v7", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "meiner Ansicht nach", options: ["في رأيي", "بلا شك", "إلى حد ما", "خلاصةً"], correctIndex: 0, explanation: "meiner Ansicht nach = في رأيي (عبارة مناقشة شائعة)." },
+  { id: "b2-v8", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "das Missverständnis", options: ["سوء الفهم", "التواصل", "السلوك", "الإنصات"], correctIndex: 0, explanation: "das Missverständnis (محايد، مركّب: miss- + Verständnis) = سوء الفهم." },
+  { id: "b2-v9", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "das Anschreiben", options: ["خطاب التقديم", "السيرة الذاتية", "العقد", "الشهادة"], correctIndex: 0, explanation: "das Anschreiben (محايد، من anschreiben) = خطاب التقديم." },
+  { id: "b2-v10", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "zusammenfassend", options: ["خلاصةً", "أولاً", "علاوة على ذلك", "مع ذلك"], correctIndex: 0, explanation: "zusammenfassend = خلاصةً (ظرف من zusammenfassen)." },
 
   /* ═══════════ B2 — قراءة ═══════════ */
   {
@@ -472,3 +480,6 @@ export const TEST_BANK: TestQuestion[] = [
     ],
   },
 ];
+
+/** البنك كما يستعمله التطبيق: المواضع مُوزَّعة (انظر ترويسة الملف) */
+export const TEST_BANK: TestQuestion[] = balanceTestBank(RAW_TEST_BANK);
