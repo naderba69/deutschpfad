@@ -15,7 +15,8 @@ import { FilterChip } from "@/components/ui/filter-chip";
 import { GoetheA1Speaking } from "@/components/tests/goethe-a1-speaking";
 import { ExamAudioPlayer } from "@/components/tests/exam-audio-player";
 import { ExamMcqListCompact, ExamStatementsListCompact } from "@/components/tests/exam-question-views";
-import { gradeTeile, scoreModule } from "@/lib/tests/exam-scoring";
+import { ExamOfficialSummary } from "@/components/tests/exam-official-summary";
+import { gradeTeile } from "@/lib/tests/exam-scoring";
 import { LEVEL_MODELS, examModel } from "@/data/exams/level-models";
 
 export type ExamLevel = "A1" | "A2" | "B1";
@@ -198,20 +199,14 @@ export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
       {phase === "result" && (
         <section className="space-y-4 rounded-2xl border bg-card p-5">
           <h2 className="text-lg font-extrabold">النتيجة</h2>
-          {(() => {
-            const h = scoreModule(hRes.correct, hRes.total);
-            const l = scoreModule(lRes.correct, lRes.total);
-            return (
-              <ul className="space-y-1 text-sm">
-                <li>الاستماع: {h.correct} من {h.total} ({h.pct}%)</li>
-                <li>القراءة: {l.correct} من {l.total} ({l.pct}%)</li>
-                <li>الكتابة والتحدث: تقيّمهما بنفسك بالنقاط المذكورة أعلاه.</li>
-              </ul>
-            );
-          })()}
-          <p className="text-xs text-muted-foreground">
-            هذه نسب تدريبية وليست درجة رسمية. الهدف معرفة نقاط الضعف قبل الامتحان الحقيقي.
-          </p>
+          <ExamOfficialSummary
+            level={level}
+            rows={[
+              { key: "hoeren", label: "الاستماع (Hören)", correct: hRes.correct, total: hRes.total },
+              { key: "lesen", label: "القراءة (Lesen)", correct: lRes.correct, total: lRes.total },
+            ]}
+            subjectiveAr="الكتابة (Schreiben) والتحدث (Sprechen): تقييمهما ذاتي بمعايير الاختبار المذكورة أعلاه — ولا يدخلان في التحويل الآلي."
+          />
           <Button variant="outline" onClick={reset}>إعادة النموذج</Button>
         </section>
       )}

@@ -12,6 +12,7 @@ import {Card, CardContent} from "@/components/ui/card";
 import {Progress} from "@/components/ui/progress";
 import {AutoGrowTextarea} from "@/components/shared/auto-grow-textarea";
 import {gradeTeile, scoreModule, type ModuleScore} from "@/lib/tests/exam-scoring";
+import {ExamOfficialSummary} from "@/components/tests/exam-official-summary";
 import {B2_HOEREN_AUDIO} from "@/data/exams/b2-hoeren-audio";
 import {SprechenSection} from "@/components/tests/goethe-b2-sprechen";
 import {HoerenTeilView, LesenTeilView, speakText} from "@/components/tests/goethe-b2-views";
@@ -523,6 +524,16 @@ export function GoetheB2Exam() {
           </div>
 
           {!anyScore && <p className="text-center text-sm text-muted-foreground">لم تكمل أي مكوّن بعد — ابدأ من جديد.</p>}
+
+          {/* النقاط الرسمية وحدّ النجاح صريحاً — مشترك مع محرّك A1–B1 */}
+          <ExamOfficialSummary
+            level="B2"
+            rows={[
+              ...(scores.lesen ? [{ key: "lesen" as const, label: "القراءة (Lesen)", correct: scores.lesen.correct, total: scores.lesen.total }] : []),
+              ...(scores["hören"] ? [{ key: "hoeren" as const, label: "الاستماع (Hören)", correct: (scores["hören"] as ModuleScore).correct, total: (scores["hören"] as ModuleScore).total }] : []),
+            ]}
+            subjectiveAr="الكتابة (Schreiben) عندنا: تقدير تدريبي من طول النصّ (ليس تصحيحاً) · التحدث (Sprechen): تقييم ذاتي بالروبرك — وكلٌّ منهما مكوّن مستقل بـ100 نقطة في الامتحان الرسمي."
+          />
 
           <div className="flex flex-col gap-2 sm:flex-row">
             <Button onClick={restart} className="flex-1 gap-2">
