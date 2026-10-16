@@ -25,6 +25,12 @@ export const B1_MODEL2_HOEREN: ExamHoerenTeil[] = [
       "Ansage 2: Weil die Kantine renoviert wird, gibt es ab Montag nur kalte Speisen im Foyer. " +
       "Ansage 3: Die Bewerbungsfrist für das Praktikum wurde bis zum 15. März verlängert. " +
       "Ansage 4: Der Fahrradkeller wird am Wochenende gereinigt; bitte stellen Sie Ihre Fahrräder bis Freitagabend ins Erdgeschoss.",
+    audioSegments: [
+      "Ansage 1: Die Weiterbildung „Präsentieren auf Deutsch“ findet ab November jeden zweiten Donnerstag statt. " +
+        "Ansage 2: Weil die Kantine renoviert wird, gibt es ab Montag nur kalte Speisen im Foyer. " +
+        "Ansage 3: Die Bewerbungsfrist für das Praktikum wurde bis zum 15. März verlängert. " +
+        "Ansage 4: Der Fahrradkeller wird am Wochenende gereinigt; bitte stellen Sie Ihre Fahrräder bis Freitagabend ins Erdgeschoss.",
+    ],
     statements: [
       { id: "m2c1-s1", de: "Die Weiterbildung findet jede Woche statt.", ar: "الدورة التدريبية تُقام كل أسبوع.", isTrue: false, whyAr: "قيل: jeden zweiten Donnerstag، أي كل أسبوعين." },
       { id: "m2c1-s2", de: "Die Kantine ist ab Montag geschlossen.", ar: "المقصف مغلق من الاثنين.", isTrue: false, whyAr: "قيل: تُرمَّم، ولهذا لا تقدّم إلا أطباقاً باردة في الرواق." },
@@ -47,6 +53,16 @@ export const B1_MODEL2_HOEREN: ExamHoerenTeil[] = [
       "Gespräch 2. Mann: Warum hat Frau Klein gekündigt? Frau: Sie hat eine Stelle bekommen, die näher an ihrem Wohnort liegt. " +
       "Gespräch 3. Frau: Können wir die Präsentation auf Donnerstag legen? Mann: Donnerstag ist schlecht, da ist die Geschäftsleitung außer Haus. " +
       "Gespräch 4. Mann: Musst du wirklich am Samstag arbeiten? Frau: Nur bis zwölf, und ich bekomme dafür einen freien Tag.",
+    audioSegments: [
+      "Nimmst du an der Fortbildung teil?",
+      "Eigentlich schon, aber ich müsste dafür zwei Kunden verschieben.",
+      "Warum hat Frau Klein gekündigt?",
+      "Sie hat eine Stelle bekommen, die näher an ihrem Wohnort liegt.",
+      "Können wir die Präsentation auf Donnerstag legen?",
+      "Donnerstag ist schlecht, da ist die Geschäftsleitung außer Haus.",
+      "Musst du wirklich am Samstag arbeiten?",
+      "Nur bis zwölf, und ich bekomme dafür einen freien Tag.",
+    ],
     questions: [
       { id: "m2c2-q1", q: "Was ist das Problem des Mannes?", qAr: "ما مشكلة الرجل؟", options: ["Er müsste Kunden verschieben", "Er hat kein Interesse", "Die Fortbildung ist zu teuer"], correct: 0, whyAr: "قال: müsste ich dafür zwei Kunden verschieben." },
       { id: "m2c2-q2", q: "Warum hat Frau Klein gekündigt?", qAr: "لماذا استقالت السيدة كلاين؟", options: ["Wegen der Arbeitszeit", "Weil die neue Stelle näher ist", "Weil sie mehr Geld bekommt"], correct: 1, whyAr: "قيل: eine Stelle … die näher an ihrem Wohnort liegt." },
@@ -70,6 +86,12 @@ export const B1_MODEL2_HOEREN: ExamHoerenTeil[] = [
       "und Taxis in die Altstadt fahren. Die Geschäfte hatten zunächst Angst vor Umsatzverlusten, doch die Bilanz war überraschend positiv — " +
       "viele Besucher blieben länger und gaben mehr Geld aus als früher. Kritiker wenden ein, dass ältere Menschen und Menschen mit Behinderung " +
       "auf das Auto angewiesen sind. Die Stadt will deshalb künftig mehr Shuttlebusse anbieten und Parkplätze am Stadtrand ausbauen.",
+    audioSegments: [
+      "Immer mehr Städte wollen Innenstädte autofrei machen. In Freiburg wurde ein Versuch durchgeführt: An drei Samstagen durften nur Busse, Fahrräder " +
+        "und Taxis in die Altstadt fahren. Die Geschäfte hatten zunächst Angst vor Umsatzverlusten, doch die Bilanz war überraschend positiv — " +
+        "viele Besucher blieben länger und gaben mehr Geld aus als früher. Kritiker wenden ein, dass ältere Menschen und Menschen mit Behinderung " +
+        "auf das Auto angewiesen sind. Die Stadt will deshalb künftig mehr Shuttlebusse anbieten und Parkplätze am Stadtrand ausbauen.",
+    ],
     questions: [
       { id: "m2c3-q1", q: "Was wurde in Freiburg getestet?", qAr: "ماذا اختُبر في فرايبورغ؟", options: ["Autofreie Altstadt an Samstagen", "Neue Buslinien am Sonntag", "Höhere Parkgebühren"], correct: 0, whyAr: "قيل: An drei Samstagen durften nur Busse, Fahrräder und Taxis in die Altstadt fahren." },
       { id: "m2c3-q2", q: "Wie war das Ergebnis für die Geschäfte?", qAr: "كيف كانت النتيجة على المتاجر؟", options: ["Besser als erwartet", "Wie erwartet schlecht", "Ohne Veränderung"], correct: 0, whyAr: "قيل: die Bilanz war überraschend positiv." },
@@ -93,6 +115,13 @@ export const B1_MODEL2_HOEREN: ExamHoerenTeil[] = [
       "Beraterin: Dann könnten Sie mit einer Teilzeitausbildung beginnen — das dauert drei Jahre statt zwei. " +
       "Teilnehmer: Bekomme ich in dieser Zeit finanzielle Unterstützung? Beraterin: Ja, wenn Ihr Einkommen niedrig genug ist. " +
       "Bitte bringen Sie zum nächsten Termin Ihre Zeugnisse und die letzten drei Gehaltsabrechnungen mit.",
+    audioSegments: [
+      "Sie interessieren sich für eine Umschulung zur Pflegekraft. Welchen Abschluss haben Sie?",
+      "Ich habe eine Ausbildung als Koch, aber ich arbeite seit zwei Jahren im Lager.",
+      "Dann könnten Sie mit einer Teilzeitausbildung beginnen — das dauert drei Jahre statt zwei.",
+      "Bekomme ich in dieser Zeit finanzielle Unterstützung?",
+      "Ja, wenn Ihr Einkommen niedrig genug ist. Bitte bringen Sie zum nächsten Termin Ihre Zeugnisse und die letzten drei Gehaltsabrechnungen mit.",
+    ],
     questions: [
       { id: "m2c4-q1", q: "Welche Ausbildung hat der Teilnehmer?", qAr: "ما مؤهل المشارك؟", options: ["Koch", "Pflegekraft", "Lagerleiter"], correct: 0, whyAr: "قال: Ich habe eine Ausbildung als Koch." },
       { id: "m2c4-q2", q: "Was schlägt die Beraterin vor?", qAr: "ماذا تقترح المستشارة؟", options: ["Eine Teilzeitausbildung", "Einen Sprachkurs", "Eine Vollzeitstelle"], correct: 0, whyAr: "قالت: könnten Sie mit einer Teilzeitausbildung beginnen." },

@@ -137,8 +137,22 @@ export const MODEL2_FILE_PLAN: Record<ExamLevel, Record<number, string[]>> = {
       "hoeren-t4-f.mp3",
     ],
   },
-  // B1 — تُملأ عند إنتاجه (14+ مقطعاً متوقّعاً حسب حواراته)
-  B1: {},
+  // 1 · 8 · 1 · 5 = 15 مقطعاً — الحوارات بطرفين، وجلسة الاستشارة خمسة أدوار
+  B1: {
+    1: ["hoeren-t1.mp3"],
+    2: [
+      "hoeren-t2-g1-a.mp3",
+      "hoeren-t2-g1-b.mp3",
+      "hoeren-t2-g2-a.mp3",
+      "hoeren-t2-g2-b.mp3",
+      "hoeren-t2-g3-a.mp3",
+      "hoeren-t2-g3-b.mp3",
+      "hoeren-t2-g4-a.mp3",
+      "hoeren-t2-g4-b.mp3",
+    ],
+    3: ["hoeren-t3.mp3"],
+    4: ["hoeren-t4-a.mp3", "hoeren-t4-b.mp3", "hoeren-t4-c.mp3", "hoeren-t4-d.mp3", "hoeren-t4-e.mp3"],
+  },
 };
 
 /** ملفات جزء من نموذج مستوى (فارغة إن لم تُخطَّط بعد) */
