@@ -10,29 +10,28 @@
 |---|---|---|
 | **A1-2** | **14/14** (الأجزاء 1 · 2 · 3 · 4) — مكتمل | — |
 | **A2-2** | **17/17** (الأجزاء 1 · 2 · 3 · 4) — مكتمل | — |
-| B1-2 | 0/15 (المقاطع مُعلَنة، والتوليد لم يبدأ) | 15 مقطعاً: 9 ثم 6 |
+| **B1-2** | **10/15** (الأجزاء 1 · 2 · 3) | الجزء 4: 5 مقاطع (جلسة الاستشارة) |
 
 ## البنية والأصوات
 
 - مجلد كل مستوى: `/audio/exam-<المستوى>/m2` — والنموذج الأول في جذر المجلد،
   فلا يُخلط صوت نموذج بآخر (وحارس يمنع مشاركة مجلد بين نموذجين مسجّلين).
 - **لكل مستوى خطته** في `MODEL2_FILE_PLAN` لأن بنية الحوار تختلف: A1 (1·9·1·3 = 14)،
-  A2 (1·8·2·6 = 17 — جزؤه الثالث راديو + رسالة هاتف بصوتين، ورابعه حوار مكتب بستة أدوار)،
-  B1 (1·8·1·5 = 15 — جلسة استشارة بخمسة أدوار).
+  A2 (1·8·2·6 = 17)، B1 (1·8·1·5 = 15 — الجزء 4 جلسة استشارة مهنية بخمسة أدوار).
 - القاعدة: **جزء مكتمل أو لا شيء** — والجزء غير المُنتَج يبقى نطقاً آلياً **معلَناً**
   في نصّ الواجهة (والحارس يفشل إن غاب الإعلان أو اختلف عدد المقاطع عن الملفات).
 - الصوتان (اختارهما المتعلم): **voice-02 رجل** · **voice-03 امرأة**. والدور يُختار
   من **نصّ المتحدث** في كل جملة، لا من موقع المقطع.
 - المدد المقيسة: A1-2 = 62.0ث (17.1 · 17.1 · 15.2 · 11.6) · A2-2 = **74.4ث**
-  (17.0 · 15.3 · 20.8 · 18.1).
+  (17.0 · 15.3 · 20.8 · 18.1) · B1-2 حتى الآن = 60.8ث (19.3 · 14.0 · 23.6).
 
 ## المتبقي
 
 | النموذج | المتبقي | التقدير |
 |---|---|---|
-| B1-2 | 15 مقطعاً (الجزء 2 + 1 و3 ثم الجزء 4) | دفعتان (9 ثم 6) |
+| B1-2 | الجزء 4: 5 مقاطع (Beraterin/Teilnehmer متبادلان) | دفعة واحدة — وبها يكتمل الملف الصوتي كله |
 
-## النموذج A1-2 — `/audio/exam-a1/m2` — مكتمل
+## النموذج A1-2 — `/audio/exam-a1/m2`
 
 
 ### الجزء 1 — Teil 1 — Kurze Ansagen (20 نقطة · يُشغَّل مرتين) — **مُنتَج**
@@ -69,7 +68,7 @@
 | 2 | `hoeren-t4-b.mp3` | رجل | Nein, am Samstag arbeite ich nicht. Ich arbeite nur von Montag bis Freitag. Am Wochenende lerne ich Deutsch. |
 | 3 | `hoeren-t4-c.mp3` | رجل | Liebe Fahrgäste, der Bus Nummer drei fährt heute nicht. Bitte nehmen Sie den Bus Nummer sieben. Er hält an der gleichen Haltestelle. |
 
-## النموذج A2-2 — `/audio/exam-a2/m2` — مكتمل
+## النموذج A2-2 — `/audio/exam-a2/m2`
 
 
 ### الجزء 1 — Teil 1 — Ansagen (20 نقطة · يُشغَّل مرتين) — **مُنتَج**
@@ -108,3 +107,41 @@
 | 4 | `hoeren-t4-d.mp3` | رجل | Soll ich die Unterlagen vorbereiten? |
 | 5 | `hoeren-t4-e.mp3` | امرأة | Ja, bitte schicken Sie mir die Folien bis Freitag. |
 | 6 | `hoeren-t4-f.mp3` | رجل | Dann reserviere ich auch einen Raum mit Beamer. |
+
+## النموذج B1-2 — `/audio/exam-b1/m2`
+
+
+### الجزء 1 — Teil 1 — Ansagen (20 نقطة · يُشغَّل مرتين) — **مُنتَج**
+
+| # | الملف | الصوت | النصّ المنطوق |
+|---|---|---|---|
+| 1 | `hoeren-t1.mp3` | رجل | Ansage 1: Die Weiterbildung „Präsentieren auf Deutsch“ findet ab November jeden zweiten Donnerstag statt. Ansage 2: Weil die Kantine renoviert wird, gibt es ab Montag nur kalte Speisen im Foyer. Ansage 3: Die Bewerbungsfrist für das Praktikum wurde bis zum 15. März verlängert. Ansage 4: Der Fahrradkeller wird am Wochenende gereinigt; bitte stellen Sie Ihre Fahrräder bis Freitagabend ins Erdgeschoss. |
+
+### الجزء 2 — Teil 2 — Gespräche (20 نقطة) — **مُنتَج**
+
+| # | الملف | الصوت | النصّ المنطوق |
+|---|---|---|---|
+| 1 | `hoeren-t2-g1-a.mp3` | امرأة | Nimmst du an der Fortbildung teil? |
+| 2 | `hoeren-t2-g1-b.mp3` | رجل | Eigentlich schon, aber ich müsste dafür zwei Kunden verschieben. |
+| 3 | `hoeren-t2-g2-a.mp3` | رجل | Warum hat Frau Klein gekündigt? |
+| 4 | `hoeren-t2-g2-b.mp3` | امرأة | Sie hat eine Stelle bekommen, die näher an ihrem Wohnort liegt. |
+| 5 | `hoeren-t2-g3-a.mp3` | امرأة | Können wir die Präsentation auf Donnerstag legen? |
+| 6 | `hoeren-t2-g3-b.mp3` | رجل | Donnerstag ist schlecht, da ist die Geschäftsleitung außer Haus. |
+| 7 | `hoeren-t2-g4-a.mp3` | رجل | Musst du wirklich am Samstag arbeiten? |
+| 8 | `hoeren-t2-g4-b.mp3` | امرأة | Nur bis zwölf, und ich bekomme dafür einen freien Tag. |
+
+### الجزء 3 — Teil 3 — Radiobeitrag (30 نقطة · يُشغَّل مرتين) — **مُنتَج**
+
+| # | الملف | الصوت | النصّ المنطوق |
+|---|---|---|---|
+| 1 | `hoeren-t3.mp3` | امرأة | Immer mehr Städte wollen Innenstädte autofrei machen. In Freiburg wurde ein Versuch durchgeführt: An drei Samstagen durften nur Busse, Fahrräder und Taxis in die Altstadt fahren. Die Geschäfte hatten zunächst Angst vor Umsatzverlusten, doch die Bilanz war überraschend positiv — viele Besucher blieben länger und gaben mehr Geld aus als früher. Kritiker wenden ein, dass ältere Menschen und Menschen mit Behinderung auf das Auto angewiesen sind. Die Stadt will deshalb künftig mehr Shuttlebusse anbieten und Parkplätze am Stadtrand ausbauen. |
+
+### الجزء 4 — Teil 4 — Beratung (30 نقطة) — بالنطق الآلي
+
+| # | الملف | الصوت | النصّ المنطوق |
+|---|---|---|---|
+| 1 | `hoeren-t4-a.mp3` | امرأة | Sie interessieren sich für eine Umschulung zur Pflegekraft. Welchen Abschluss haben Sie? |
+| 2 | `hoeren-t4-b.mp3` | رجل | Ich habe eine Ausbildung als Koch, aber ich arbeite seit zwei Jahren im Lager. |
+| 3 | `hoeren-t4-c.mp3` | امرأة | Dann könnten Sie mit einer Teilzeitausbildung beginnen — das dauert drei Jahre statt zwei. |
+| 4 | `hoeren-t4-d.mp3` | رجل | Bekomme ich in dieser Zeit finanzielle Unterstützung? |
+| 5 | `hoeren-t4-e.mp3` | امرأة | Ja, wenn Ihr Einkommen niedrig genug ist. Bitte bringen Sie zum nächsten Termin Ihre Zeugnisse und die letzten drei Gehaltsabrechnungen mit. |
