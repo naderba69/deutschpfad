@@ -183,7 +183,7 @@ test("A1: المسار الكامل حتى شاشة النتيجة ثم إعاد
   expect(pageErrors, "أخطاء JavaScript في الصفحة").toEqual([]);
 });
 
-test("النموذج الثالث: شريحة صادقة وصوت من مجلّد m3 (مسجّل · جزئي)", async ({page}) => {
+test("النموذج الثالث: شريحة صادقة وصوت من مجلّد m3 (A1 وA2 مسجّلان بالكامل)", async ({page}) => {
   const m3Reqs: {file: string; status: number}[] = [];
   page.on("response", (r) => {
     if (r.url().includes("/m3/")) m3Reqs.push({file: r.url().split("/").pop() ?? "", status: r.status()});
@@ -201,11 +201,24 @@ test("النموذج الثالث: شريحة صادقة وصوت من مجلّ�
   // 206 نجاح النطاق أيضاً (المتصفح يطلب أجزاء من الملف)
   expect(m3Reqs.every((r) => r.status === 200 || r.status === 206), "طلب صوت فاشل").toBe(true);
 
-  // ── A2-3: مسجّل جزئياً — الإعلان يذكر الجزء الذي ما زال بنطق آلي ──
+  // ── A2-3: مسجّل بالكامل — الإعلان يذكر 15 مقطعاً والجزء 2 يطلب ملفاته ──
   await page.goto("/tests/a2-exam");
-  await page.getByRole("button", {name: "النموذج 3 (مسجّل جزئياً)"}).click();
-  await expect(page.getByText(/7 مقاطع مسجّلة/)).toBeVisible();
-  await expect(page.getByText(/الجزء 2 بنطق آلي/)).toBeVisible();
+  await page.getByRole("button", {name: "النموذج 3 (مسجّل بالكامل)"}).click();
+  await expect(page.getByText(/15 مقطعاً/)).toBeVisible();
+  const t2Before = m3Reqs.length;
+  await page.getByRole("button", {name: "ابدأ الاستماع"}).click();
+  await page.locator("[data-audio-mode]").nth(1).getByRole("button", {name: /استمع/}).first().click();
+  await expect.poll(() => m3Reqs.length, {timeout: 20_000}).toBe(t2Before + 8);
+  expect(m3Reqs.slice(-8).map((r) => r.file)).toEqual([
+    "hoeren-t2-g1-a.mp3",
+    "hoeren-t2-g1-b.mp3",
+    "hoeren-t2-g2-a.mp3",
+    "hoeren-t2-g2-b.mp3",
+    "hoeren-t2-g3-a.mp3",
+    "hoeren-t2-g3-b.mp3",
+    "hoeren-t2-g4-a.mp3",
+    "hoeren-t2-g4-b.mp3",
+  ]);
 });
 
 test("محاكاة Goethe: لوحة المستويات والوضع التكيفي", async ({page}) => {
