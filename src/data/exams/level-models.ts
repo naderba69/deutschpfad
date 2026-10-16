@@ -89,16 +89,16 @@ export const LEVEL_MODELS: Record<ExamLevel, ExamModel[]> = {
     recordedModel("A1", { hoeren: A1_HOEREN, lesen: A1_LESEN, schreiben: A1_SCHREIBEN, sprechen: A1_SPRECHEN }),
     {
       id: "A1-2",
-      label: "النموذج 2 (صوت جديد)",
-      // الحالة الحقيقية لحظة العرض: ثلاثة أجزاء مسجّلة بصوتين والرابع آلي —
-      // تُحدَّث هذه الجملة في الدفعة التي تُنتَج فيها مقاطع الجزء 2
+      label: "النموذج 2 (مسجّل بالكامل)",
+      // الحالة الحقيقية: الأجزاء الأربعة مسجّلة بصوتين (14 مقطعاً) — الحارس
+      // يفشل إن بقي جزء بلا ملفات بلا إعلان نطق آلي، فلا تتقادم هذه الجملة بصمت
       audioNoteAr:
-        "مقاطع الأجزاء 1 و3 و4 مسجّلة بصوتين (رجل وامرأة)، والجزء 2 يُقرأ بنطق آلي إلى أن تُنتَج مقاطعه.",
+        "مقاطع الأجزاء الأربعة مسجّلة بصوتين (رجل وامرأة) — 14 مقطعاً — والجزآن 1 و3 يُشغَّلان مرتين.",
       hoeren: balanceTeile(A1_MODEL2_HOEREN),
       lesen: balanceTeile(A1_MODEL2_LESEN),
       schreiben: A1_MODEL2_SCHREIBEN,
       sprechen: A1_MODEL2_SPRECHEN,
-      audio: modelTracks("A1", A1_MODEL2_HOEREN, [1, 3, 4]),
+      audio: modelTracks("A1", A1_MODEL2_HOEREN, [1, 2, 3, 4]),
     },
   ],
   A2: [
