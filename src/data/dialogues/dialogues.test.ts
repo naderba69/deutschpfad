@@ -48,3 +48,70 @@ describe("مكتبة حوارات الحياة اليومية — 60 حوارا�
     expect(b2Titles.some((t) => t.includes("جواز"))).toBe(true);
   });
 });
+
+/* ═══════════════════════════════════════════════════════════
+   شروح الخيارات — مقاييس دفعة 52 (2026-10-16)
+   قياس الحوارات (60 حواراً · 182 سؤالاً · 546 خياراً):
+     · شروح الخيارات **الخاطئة** ملاحظات عربية موجزة («لا — قهوة أولاً.») — عُرف
+       مقصود لا عيب (لا تُقتبس آلياً)، فلم تُعدّل.
+     · شروح الخيارات **الصحيحة** عربية تشرح لماذا — والدليل الألماني هو نصّ
+       الخيار نفسه (182/182: صفر خيار صحيح بلا دليل في الشرح ولا في نصّه).
+   فيقفل هذا القسم القاعدتين المقاستين: دليل ألماني في الخيار الصحيح، ونصّ
+   الجولات ألماني خالص، وأي اقتباس «» في شرح موجود حرفياً في جولات الحوار.
+   ═══════════════════════════════════════════════════════════ */
+describe("شروح الحوارات — دليل ألماني واقتباس أمين", () => {
+  const GERMAN_EVIDENCE = /[A-Za-zÄÖÜäöüß]{3,}/;
+  const ARABIC = /[\u0600-\u06FF]/;
+  const SPAN = /«([^»]+)»/g;
+  const normalize = (s: string) =>
+    s
+      .replace(/[„“”]/g, '"')
+      .replace(/[–—]/g, "-")
+      .replace(/\s+/g, " ")
+      .replace(/[.\s]+$/, "")
+      .trim();
+
+  it("كل خيار صحيح: دليله الألماني في شرحه أو في نصّه (لا خيار يُصدَّق بلا دليل)", () => {
+    const problems: string[] = [];
+    for (const d of DAILY_DIALOGUES) {
+      d.questions.forEach((q, i) => {
+        q.options
+          .filter((o) => o.correct)
+          .forEach((o) => {
+            const hasEvidence = GERMAN_EVIDENCE.test(o.explanation ?? "") || GERMAN_EVIDENCE.test(o.text);
+            if (!hasEvidence) problems.push(`${d.id} سؤال ${i + 1}: «${o.text}» بلا دليل في الشرح ولا في النصّ`);
+          });
+      });
+    }
+    expect(problems).toEqual([]);
+  });
+
+  it("نصّ الجولات ألماني خالص وترجمته عربية", () => {
+    const problems: string[] = [];
+    for (const d of DAILY_DIALOGUES) {
+      d.turns.forEach((t, i) => {
+        if (ARABIC.test(t.de)) problems.push(`${d.id} جولة ${i + 1}: حرف عربي في النصّ الألماني`);
+        if (!t.ar.trim()) problems.push(`${d.id} جولة ${i + 1}: ترجمة مفقودة`);
+      });
+    }
+    expect(problems).toEqual([]);
+  });
+
+  it("كل اقتباس بين «» في شرح موجود حرفياً في جولات الحوار", () => {
+    const problems: string[] = [];
+    let spansChecked = 0;
+    for (const d of DAILY_DIALOGUES) {
+      const turns = normalize(d.turns.map((t) => t.de).join(" "));
+      for (const q of d.questions) {
+        for (const o of q.options) {
+          for (const span of [...(o.explanation ?? "").matchAll(SPAN)].map((m) => normalize(m[1])).filter((s) => GERMAN_EVIDENCE.test(s))) {
+            spansChecked += 1;
+            if (!turns.includes(span)) problems.push(`${d.id}: «${span}» ليس في الجولات`);
+          }
+        }
+      }
+    }
+    expect(problems).toEqual([]);
+    expect(spansChecked).toBeGreaterThan(30); // حارس غير فارغ
+  });
+});

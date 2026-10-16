@@ -75,12 +75,11 @@ describe("بنك أسئلة الاختبارات — سلامة بنيوية", (
 
   it("كل قطعة قراءة/استماع: نصّ عربي مقابل وأسئلة فرعية سليمة + سقّاطة شروح بلا دليل", () => {
     const problems: string[] = [];
-    /* سقّاطة مقيسة (نمط `file-size-ratchet`): 66 شرحاً فرعياً في القطع لا يقتبس
-       كلمة ألمانية (مثل «لأنها تريد السفر.» مقابل النصّ «weil sie reisen möchte»).
-       ليست عيوباً لغوية بل فقراً في قابلية التحقق — كحالة الأسباب الـ21 في
-       الدفعة 49. العدد لا يجوز أن **يزيد**، والهدف صفر في دفعة تالية. */
+    /* صفر صارم — بعد تصفير السقّاطة في الدفعة 52: كان 66 شرحاً فرعياً في القطع
+       لا يقتبس كلمة ألمانية (مثل «لأنها تريد السفر.» مقابل النصّ «weil sie reisen
+       möchte»)، فأُثريت الـ66 كلها بمقتبس حرفي من القطع. لم يبقَ سقف يُخفيه:
+       أي شرح فرعي جديد بلا دليل ألماني يُسقط الحارس فوراً. */
     const subWithoutGerman: string[] = [];
-    const SUB_WITHOUT_GERMAN_MAX = 66;
     for (const q of TEST_BANK) {
       if (!q.questions || q.questions.length === 0) continue;
       if (!q.text || q.text.trim().length === 0) problems.push(`${q.id}: نصّ ألماني مفقود`);
@@ -104,9 +103,9 @@ describe("بنك أسئلة الاختبارات — سلامة بنيوية", (
     }
     expect(problems).toEqual([]);
     expect(
-      subWithoutGerman.length,
-      `شروح فرعية بلا دليل ألماني (السقّاطة ${SUB_WITHOUT_GERMAN_MAX}): ${subWithoutGerman.slice(0, 8).join(" · ")}`,
-    ).toBeLessThanOrEqual(SUB_WITHOUT_GERMAN_MAX);
+      subWithoutGerman,
+      `شروح فرعية بلا دليل ألماني: ${subWithoutGerman.slice(0, 8).join(" · ")}`,
+    ).toEqual([]);
   });
 });
 

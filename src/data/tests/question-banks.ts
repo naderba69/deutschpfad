@@ -46,8 +46,8 @@ const RAW_TEST_BANK: TestQuestion[] = [
     textAr: "مرحباً! اسمي منى وأسكن في تونس. عائلتي كبيرة: لدي أخ وأختان. أتعلم الألمانية لأنني أريد السفر إلى ألمانيا. في نهاية الأسبوع أذهب بسرور إلى السينما.",
     questions: [
       { q: "Wie viele Schwestern hat Mona?", qAr: "كم عدد أخوات منى؟", options: ["zwei", "eine", "drei", "keine"], correct: 0, explanation: "قالت: zwei Schwestern." },
-      { q: "Warum lernt Mona Deutsch?", qAr: "لماذا تتعلم منى الألمانية؟", options: ["weil sie reisen möchte", "weil sie arbeiten will", "weil sie in Tunis bleibt", "weil sie krank ist"], correct: 0, explanation: "لأنها تريد السفر." },
-      { q: "Was macht Mona am Wochenende?", qAr: "ماذا تفعل منى في نهاية الأسبوع؟", options: ["ins Kino gehen", "arbeiten", "schlafen", "einkaufen"], correct: 0, explanation: "تذهب إلى السينما." },
+      { q: "Warum lernt Mona Deutsch?", qAr: "لماذا تتعلم منى الألمانية؟", options: ["weil sie reisen möchte", "weil sie arbeiten will", "weil sie in Tunis bleibt", "weil sie krank ist"], correct: 0, explanation: "قيل: weil ich nach Deutschland reisen möchte." },
+      { q: "Was macht Mona am Wochenende?", qAr: "ماذا تفعل منى في نهاية الأسبوع؟", options: ["ins Kino gehen", "arbeiten", "schlafen", "einkaufen"], correct: 0, explanation: "قيل: Am Wochenende gehe ich gern ins Kino." },
     ],
   },
   {
@@ -55,9 +55,9 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Sami arbeitet als Koch in einem Restaurant. Er steht um sechs Uhr auf und kocht bis vierzehn Uhr. Am Abend sieht er fern oder liest ein Buch. Am Sonntag besucht er seine Eltern.",
     textAr: "يعمل سامي طباخاً في مطعم. يستيقظ في السادسة ويطبخ حتى الثانية عشرة. مساءً يشاهد التلفاز أو يقرأ كتاباً. يوم الأحد يزور والديه.",
     questions: [
-      { q: "Was ist Sami von Beruf?", qAr: "ما مهنة سامي؟", options: ["Koch", "Lehrer", "Arzt", "Fahrer"], correct: 0, explanation: "طباخ." },
-      { q: "Wann steht Sami auf?", qAr: "متى يستيقظ سامي؟", options: ["um sechs Uhr", "um sieben Uhr", "um acht Uhr", "um zehn Uhr"], correct: 0, explanation: "في السادسة." },
-      { q: "Was macht Sami am Sonntag?", qAr: "ماذا يفعل سامي يوم الأحد؟", options: ["seine Eltern besuchen", "arbeiten", "einkaufen", "schwimmen"], correct: 0, explanation: "يزور والديه." },
+      { q: "Was ist Sami von Beruf?", qAr: "ما مهنة سامي؟", options: ["Koch", "Lehrer", "Arzt", "Fahrer"], correct: 0, explanation: "قيل: Sami arbeitet als Koch in einem Restaurant." },
+      { q: "Wann steht Sami auf?", qAr: "متى يستيقظ سامي؟", options: ["um sechs Uhr", "um sieben Uhr", "um acht Uhr", "um zehn Uhr"], correct: 0, explanation: "قيل: Er steht um sechs Uhr auf." },
+      { q: "Was macht Sami am Sonntag?", qAr: "ماذا يفعل سامي يوم الأحد؟", options: ["seine Eltern besuchen", "arbeiten", "einkaufen", "schwimmen"], correct: 0, explanation: "قيل: Am Sonntag besucht er seine Eltern." },
     ],
   },
 
@@ -67,8 +67,8 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Guten Tag! Ich heiße Karim. Ich komme aus Tunesien und wohne jetzt in Berlin. Ich lerne Deutsch in einem Kurs. Am Abend treffe ich Freunde.",
     textAr: "طاب يومك! اسمي كريم. أنا من تونس وأسكن الآن في برلين. أتعلم الألمانية في دورة. مساءً ألتقي الأصدقاء.",
     questions: [
-      { q: "Wie heißt der Mann?", qAr: "ما اسم الرجل؟", options: ["Karim", "Sami", "Anna", "Mona"], correct: 0, explanation: "اسمه كريم." },
-      { q: "Wo wohnt er jetzt?", qAr: "أين يسكن الآن؟", options: ["in Berlin", "in Tunis", "in München", "in Hamburg"], correct: 0, explanation: "في برلين." },
+      { q: "Wie heißt der Mann?", qAr: "ما اسم الرجل؟", options: ["Karim", "Sami", "Anna", "Mona"], correct: 0, explanation: "قال: Ich heiße Karim." },
+      { q: "Wo wohnt er jetzt?", qAr: "أين يسكن الآن؟", options: ["in Berlin", "in Tunis", "in München", "in Hamburg"], correct: 0, explanation: "قال: wohne jetzt in Berlin." },
     ],
   },
   {
@@ -76,8 +76,8 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Hallo Anna! Ich habe heute Geburtstag. Kommst du zu meiner Party? Sie beginnt um sieben Uhr bei mir zu Hause. Es gibt Kuchen und Musik!",
     textAr: "مرحباً آنا! عيد ميلادي اليوم. هل تأتين إلى حفلتي؟ تبدأ في السابعة عندي في البيت. يوجد كعك وموسيقى!",
     questions: [
-      { q: "Was gibt es auf der Party?", qAr: "ماذا يوجد في الحفلة؟", options: ["Kuchen und Musik", "nur Kuchen", "nur Musik", "Filme"], correct: 0, explanation: "كعك وموسيقى." },
-      { q: "Wann beginnt die Party?", qAr: "متى تبدأ الحفلة؟", options: ["um sieben Uhr", "um sechs Uhr", "um acht Uhr", "um neun Uhr"], correct: 0, explanation: "في السابعة." },
+      { q: "Was gibt es auf der Party?", qAr: "ماذا يوجد في الحفلة؟", options: ["Kuchen und Musik", "nur Kuchen", "nur Musik", "Filme"], correct: 0, explanation: "قيل: Es gibt Kuchen und Musik!" },
+      { q: "Wann beginnt die Party?", qAr: "متى تبدأ الحفلة؟", options: ["um sieben Uhr", "um sechs Uhr", "um acht Uhr", "um neun Uhr"], correct: 0, explanation: "قيل: Sie beginnt um sieben Uhr." },
     ],
   },
 
@@ -116,9 +116,9 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Letzte Woche habe ich Urlaub gemacht. Ich bin nach Berlin geflogen und habe viele Museen besucht. Das Wetter war schön, deshalb bin ich viel spazieren gegangen. Ich habe auch typisches Essen probiert: Currywurst und Brezel. Es hat mir sehr gut geschmeckt!",
     textAr: "أخذت إجازة الأسبوع الماضي. طرت إلى برلين وزرت متاحف كثيرة. كان الطقس جميلاً لذلك مشيت كثيراً. جربت أيضاً طعاماً تقليدياً: كاريورست وبريتزل. كان طعمه جيداً جداً!",
     questions: [
-      { q: "Was hat der Autor in Berlin besucht?", qAr: "ماذا زار الكاتب في برلين؟", options: ["Museen", "Parks", "Restaurants", "Kinos"], correct: 0, explanation: "زار متاحف." },
-      { q: "Was hat er probiert?", qAr: "ماذا جرب؟", options: ["Currywurst und Brezel", "Pizza und Salat", "Fisch und Reis", "Suppe und Brot"], correct: 0, explanation: "كاريورست وبريتزل." },
-      { q: "Wie war das Wetter?", qAr: "كيف كان الطقس؟", options: ["schön", "schlecht", "kalt", "regnerisch"], correct: 0, explanation: "جميل." },
+      { q: "Was hat der Autor in Berlin besucht?", qAr: "ماذا زار الكاتب في برلين؟", options: ["Museen", "Parks", "Restaurants", "Kinos"], correct: 0, explanation: "قيل: habe viele Museen besucht." },
+      { q: "Was hat er probiert?", qAr: "ماذا جرب؟", options: ["Currywurst und Brezel", "Pizza und Salat", "Fisch und Reis", "Suppe und Brot"], correct: 0, explanation: "قيل: Currywurst und Brezel." },
+      { q: "Wie war das Wetter?", qAr: "كيف كان الطقس؟", options: ["schön", "schlecht", "kalt", "regnerisch"], correct: 0, explanation: "قيل: Das Wetter war schön." },
     ],
   },
   {
@@ -126,9 +126,9 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Anna sucht eine Wohnung. Sie möchte eine Wohnung mit zwei Zimmern in der Stadtmitte. Die Miete soll nicht mehr als 700 Euro kosten. Gestern hat sie eine Anzeige gesehen: eine schöne Wohnung neben dem Park, 650 Euro warm. Sie ruft heute an.",
     textAr: "تبحث آنا عن شقة. تريد شقة بغرفتين في وسط المدينة. يجب ألا يتجاوز الإيجار 700 يورو. أمس رأت إعلاناً: شقة جميلة بجانب الحديقة، 650 يورو شاملة التدفئة. ستتصل اليوم.",
     questions: [
-      { q: "Was sucht Anna?", qAr: "ماذا تبحث آنا؟", options: ["eine Wohnung", "ein Haus", "ein Zimmer", "eine Garage"], correct: 0, explanation: "شقة." },
-      { q: "Wie viel kostet die Wohnung?", qAr: "بكم الشقة؟", options: ["650 Euro", "700 Euro", "600 Euro", "800 Euro"], correct: 0, explanation: "650 يورو." },
-      { q: "Wo liegt die Wohnung?", qAr: "أين تقع الشقة؟", options: ["neben dem Park", "neben der Schule", "im Zentrum", "am Bahnhof"], correct: 0, explanation: "بجانب الحديقة." },
+      { q: "Was sucht Anna?", qAr: "ماذا تبحث آنا؟", options: ["eine Wohnung", "ein Haus", "ein Zimmer", "eine Garage"], correct: 0, explanation: "قيل: Anna sucht eine Wohnung." },
+      { q: "Wie viel kostet die Wohnung?", qAr: "بكم الشقة؟", options: ["650 Euro", "700 Euro", "600 Euro", "800 Euro"], correct: 0, explanation: "قيل: 650 Euro warm." },
+      { q: "Wo liegt die Wohnung?", qAr: "أين تقع الشقة؟", options: ["neben dem Park", "neben der Schule", "im Zentrum", "am Bahnhof"], correct: 0, explanation: "قيل: eine schöne Wohnung neben dem Park." },
     ],
   },
 
@@ -138,8 +138,8 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Entschuldigung, ich möchte mich beschweren. Ich habe gestern ein Handy gekauft, aber es funktioniert nicht. Können Sie es reparieren oder mir ein neues geben?",
     textAr: "عذراً، أريد تقديم شكوى. اشتريت أمس هاتفاً لكنه لا يعمل. هل يمكنكم إصلاحه أو إعطائي جديداً؟",
     questions: [
-      { q: "Was hat der Kunde gekauft?", qAr: "ماذا اشترى الزبون؟", options: ["ein Handy", "einen Computer", "eine Kamera", "einen Fernseher"], correct: 0, explanation: "هاتفاً." },
-      { q: "Was ist das Problem?", qAr: "ما المشكلة؟", options: ["Es funktioniert nicht", "Es ist teuer", "Es ist klein", "Es ist kaputt nur außen"], correct: 0, explanation: "لا يعمل." },
+      { q: "Was hat der Kunde gekauft?", qAr: "ماذا اشترى الزبون؟", options: ["ein Handy", "einen Computer", "eine Kamera", "einen Fernseher"], correct: 0, explanation: "قال: Ich habe gestern ein Handy gekauft." },
+      { q: "Was ist das Problem?", qAr: "ما المشكلة؟", options: ["Es funktioniert nicht", "Es ist teuer", "Es ist klein", "Es ist kaputt nur außen"], correct: 0, explanation: "قال: aber es funktioniert nicht." },
     ],
   },
   {
@@ -147,8 +147,8 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Guten Tag, ich möchte eine Fahrkarte nach München, bitte. Hin und zurück. Wann fährt der nächste Zug ab? Um zehn Uhr fünfundzwanzig von Gleis drei.",
     textAr: "طاب يومك، أريد تذكرة إلى ميونخ من فضلك. ذهاب وعودة. متى ينطلق القطار التالي؟ في العاشرة وخمس وعشرين دقيقة من الرصيف الثالث.",
     questions: [
-      { q: "Wohin fährt der Kunde?", qAr: "إلى أين يسافر الزبون؟", options: ["nach München", "nach Berlin", "nach Hamburg", "nach Köln"], correct: 0, explanation: "إلى ميونخ." },
-      { q: "Wann fährt der Zug ab?", qAr: "متى ينطلق القطار؟", options: ["um 10:25", "um 10:05", "um 11:25", "um 9:25"], correct: 0, explanation: "في 10:25." },
+      { q: "Wohin fährt der Kunde?", qAr: "إلى أين يسافر الزبون؟", options: ["nach München", "nach Berlin", "nach Hamburg", "nach Köln"], correct: 0, explanation: "قال: eine Fahrkarte nach München." },
+      { q: "Wann fährt der Zug ab?", qAr: "متى ينطلق القطار؟", options: ["um 10:25", "um 10:05", "um 11:25", "um 9:25"], correct: 0, explanation: "قيل: Um zehn Uhr fünfundzwanzig von Gleis drei." },
     ],
   },
 
@@ -187,9 +187,9 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Der Student, der Informatik studiert, möchte später in Deutschland arbeiten. Er interessiert sich für künstliche Intelligenz, weil sie viele Bereiche verändert. Wenn er genug Erfahrung hätte, würde er sich sofort bewerben. Sein Traum ist eine Stelle bei einem großen Technologieunternehmen.",
     textAr: "الطالب الذي يدرس المعلوماتية يريد العمل لاحقاً في ألمانيا. يهتم بالذكاء الاصطناعي لأنه يغير مجالات كثيرة. لو كان لديه خبرة كافية لتقدم فوراً. حلمه منصب في شركة تقنية كبيرة.",
     questions: [
-      { q: "Was studiert der Student?", qAr: "ماذا يدرس الطالب؟", options: ["Informatik", "Medizin", "Jura", "Wirtschaft"], correct: 0, explanation: "المعلوماتية." },
-      { q: "Warum interessiert er sich für KI?", qAr: "لماذا يهتم بالذكاء الاصطناعي؟", options: ["weil sie viele Bereiche verändert", "weil sie neu ist", "weil sie billig ist", "weil sie einfach ist"], correct: 0, explanation: "لأنه يغير مجالات كثيرة." },
-      { q: "Was würde er mit genug Erfahrung machen?", qAr: "ماذا كان سيفعل بخبرة كافية؟", options: ["sich sofort bewerben", "eine Firma gründen", "studieren", "reisen"], correct: 0, explanation: "التقدم فوراً." },
+      { q: "Was studiert der Student?", qAr: "ماذا يدرس الطالب؟", options: ["Informatik", "Medizin", "Jura", "Wirtschaft"], correct: 0, explanation: "قيل: Der Student, der Informatik studiert." },
+      { q: "Warum interessiert er sich für KI?", qAr: "لماذا يهتم بالذكاء الاصطناعي؟", options: ["weil sie viele Bereiche verändert", "weil sie neu ist", "weil sie billig ist", "weil sie einfach ist"], correct: 0, explanation: "قيل: weil sie viele Bereiche verändert." },
+      { q: "Was würde er mit genug Erfahrung machen?", qAr: "ماذا كان سيفعل بخبرة كافية؟", options: ["sich sofort bewerben", "eine Firma gründen", "studieren", "reisen"], correct: 0, explanation: "قيل: würde er sich sofort bewerben." },
     ],
   },
   {
@@ -197,8 +197,8 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Die Umwelt wird immer wichtiger. Der Müll wird getrennt und recycelt, aber es wird noch zu wenig getan. Man kann die Umwelt schützen, indem man mit dem Fahrrad fährt und Energie spart. Je mehr Menschen mitmachen, desto besser wird die Situation.",
     textAr: "تصبح البيئة أكثر أهمية. تُفصل النفايات وتُعاد تدويرها لكن يُفعل القليل. يمكن حماية البيئة بركوب الدراجة وتوفير الطاقة. كلما شارك الناس أكثر كانت الحالة أفضل.",
     questions: [
-      { q: "Was wird mit dem Müll gemacht?", qAr: "ماذا يُفعل بالنفايات؟", options: ["getrennt und recycelt", "verbrannt", "vergraben", "ins Meer geworfen"], correct: 0, explanation: "تُفصل وتُعاد تدويرها." },
-      { q: "Wie kann man die Umwelt schützen?", qAr: "كيف يمكن حماية البيئة؟", options: ["mit dem Fahrrad fahren", "mit dem Auto fahren", "viel kaufen", "wenig schlafen"], correct: 0, explanation: "بركوب الدراجة." },
+      { q: "Was wird mit dem Müll gemacht?", qAr: "ماذا يُفعل بالنفايات؟", options: ["getrennt und recycelt", "verbrannt", "vergraben", "ins Meer geworfen"], correct: 0, explanation: "قيل: Der Müll wird getrennt und recycelt." },
+      { q: "Wie kann man die Umwelt schützen?", qAr: "كيف يمكن حماية البيئة؟", options: ["mit dem Fahrrad fahren", "mit dem Auto fahren", "viel kaufen", "wenig schlafen"], correct: 0, explanation: "قيل: indem man mit dem Fahrrad fährt." },
     ],
   },
 
@@ -208,8 +208,8 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Als ich in Deutschland ankam, hatte ich keine Erfahrung. Ich lernte Deutsch, weil ich studieren wollte. Wenn ich damals mehr geübt hätte, wäre die Prüfung leichter gewesen. Aber jetzt bin ich froh, dass ich durchgehalten habe.",
     textAr: "عندما وصلت إلى ألمانيا لم تكن لدي خبرة. تعلمت الألمانية لأنني أردت الدراسة. لو تدربت أكثر حينها لكان الامتحان أسهل. لكنني الآن سعيد أنني صمدت.",
     questions: [
-      { q: "Warum lernte er Deutsch?", qAr: "لماذا تعلم الألمانية؟", options: ["weil er studieren wollte", "weil er arbeiten wollte", "weil er reisen wollte", "weil er heiraten wollte"], correct: 0, explanation: "لأنه أراد الدراسة." },
-      { q: "Was wäre mit mehr Übung passiert?", qAr: "ماذا كان سيحدث بمزيد من التدريب؟", options: ["Die Prüfung wäre leichter gewesen", "Die Prüfung wäre schwerer gewesen", "Nichts", "Er wäre gegangen"], correct: 0, explanation: "كان الامتحان أسهل." },
+      { q: "Warum lernte er Deutsch?", qAr: "لماذا تعلم الألمانية؟", options: ["weil er studieren wollte", "weil er arbeiten wollte", "weil er reisen wollte", "weil er heiraten wollte"], correct: 0, explanation: "قيل: Ich lernte Deutsch, weil ich studieren wollte." },
+      { q: "Was wäre mit mehr Übung passiert?", qAr: "ماذا كان سيحدث بمزيد من التدريب؟", options: ["Die Prüfung wäre leichter gewesen", "Die Prüfung wäre schwerer gewesen", "Nichts", "Er wäre gegangen"], correct: 0, explanation: "قيل: wäre die Prüfung leichter gewesen (Konjunktiv II)." },
     ],
   },
   {
@@ -217,8 +217,8 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Mein Plan für die Zukunft: Ich werde nächstes Jahr in Deutschland studieren, weil ich die Kultur liebe. Die Universität, die ich gewählt habe, liegt in München. Wenn ich angenommen werde, werde ich umziehen und eine Wohnung suchen.",
     textAr: "خطتي للمستقبل: سأدرس في ألمانيا السنة القادمة لأنني أحب الثقافة. الجامعة التي اخترتها في ميونخ. إذا قُبلت سأنتقل وأبحث عن شقة.",
     questions: [
-      { q: "Wo liegt die Universität?", qAr: "أين تقع الجامعة؟", options: ["in München", "in Berlin", "in Hamburg", "in Köln"], correct: 0, explanation: "في ميونخ." },
-      { q: "Was wird er nach der Zulassung machen?", qAr: "ماذا سيفعل بعد القبول؟", options: ["umziehen", "arbeiten", "reisen", "bleiben"], correct: 0, explanation: "ينتقل." },
+      { q: "Wo liegt die Universität?", qAr: "أين تقع الجامعة؟", options: ["in München", "in Berlin", "in Hamburg", "in Köln"], correct: 0, explanation: "قيل: Die Universität liegt in München." },
+      { q: "Was wird er nach der Zulassung machen?", qAr: "ماذا سيفعل بعد القبول؟", options: ["umziehen", "arbeiten", "reisen", "bleiben"], correct: 0, explanation: "قيل: Wenn ich angenommen werde, werde ich umziehen." },
     ],
   },
 
@@ -257,9 +257,9 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Es ist erwiesen, dass die Digitalisierung die Arbeitswelt grundlegend verändert. Einerseits schafft sie neue Berufe, andererseits macht sie viele alte überflüssig. Die Forscher, mit denen wir gesprochen haben, betonen, dass die Weiterbildung entscheidend sei. Meiner Ansicht nach brauchen wir ein Gleichgewicht zwischen Technologie und menschlicher Arbeit.",
     textAr: "ثابت أن الرقمنة تغير عالم العمل جذرياً. من ناحية تخلق مهناً جديدة، ومن ناحية أخرى تجعل مهناً قديمة زائدة. يؤكد الباحثون الذين تحدثنا معهم أن التدريب المستمر حاسم. في رأيي نحتاج توازناً بين التقنية والعمل البشري.",
     questions: [
-      { q: "Was verändert die Digitalisierung?", qAr: "ماذا تغير الرقمنة؟", options: ["die Arbeitswelt", "das Wetter", "die Politik", "die Schule"], correct: 0, explanation: "عالم العمل." },
-      { q: "Was betonen die Forscher?", qAr: "ماذا يؤكد الباحثون؟", options: ["die Weiterbildung sei entscheidend", "die Technik sei nutzlos", "die Arbeit sei unnötig", "die Schule sei alt"], correct: 0, explanation: "أن التدريب حاسم." },
-      { q: "Was brauchen wir laut Autor?", qAr: "ماذا نحتاج حسب الكاتب؟", options: ["ein Gleichgewicht", "mehr Technik", "keine Arbeit", "weniger Bildung"], correct: 0, explanation: "توازناً." },
+      { q: "Was verändert die Digitalisierung?", qAr: "ماذا تغير الرقمنة؟", options: ["die Arbeitswelt", "das Wetter", "die Politik", "die Schule"], correct: 0, explanation: "قيل: die Digitalisierung die Arbeitswelt grundlegend verändert." },
+      { q: "Was betonen die Forscher?", qAr: "ماذا يؤكد الباحثون؟", options: ["die Weiterbildung sei entscheidend", "die Technik sei nutzlos", "die Arbeit sei unnötig", "die Schule sei alt"], correct: 0, explanation: "قيل: dass die Weiterbildung entscheidend sei (Konjunktiv I)." },
+      { q: "Was brauchen wir laut Autor?", qAr: "ماذا نحتاج حسب الكاتب؟", options: ["ein Gleichgewicht", "mehr Technik", "keine Arbeit", "weniger Bildung"], correct: 0, explanation: "قيل: brauchen wir ein Gleichgewicht zwischen Technologie und menschlicher Arbeit." },
     ],
   },
   {
@@ -267,9 +267,9 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Der Wissenschaftler, dessen Studie wir gelesen haben, behauptet, die Entdeckung könne die Medizin revolutionieren. Er sagt, die Ergebnisse seien sehr vielversprechend. Trotzdem warnt er, man dürfe nicht zu schnell jubeln, denn weitere Experimente seien nötig. Die Geduld, so betont er, sei der Schlüssel des Erfolgs.",
     textAr: "يزعم العالم الذي قرأنا دراسته أن الاكتشاف قد يحدث ثورة في الطب. يقول إن النتائج واعدة جداً. ومع ذلك يحذر من الاحتفال المبكر لأن تجارب أخرى ضرورية. الصبر، كما يؤكد، مفتاح النجاح.",
     questions: [
-      { q: "Was behauptet der Wissenschaftler?", qAr: "ماذا يزعم العالم؟", options: ["Die Entdeckung könne die Medizin revolutionieren", "Die Entdeckung sei nutzlos", "Die Medizin sei alt", "Nichts"], correct: 0, explanation: "أن الاكتشاف قد يحدث ثورة." },
-      { q: "Wovor warnt er?", qAr: "ماذا يحذر منه؟", options: ["zu schnellen Jubel", "zu viel Forschung", "zu viel Geld", "zu wenig Arbeit"], correct: 0, explanation: "من الاحتفال المبكر." },
-      { q: "Was ist der Schlüssel des Erfolgs?", qAr: "ما مفتاح النجاح؟", options: ["die Geduld", "das Geld", "die Zeit", "die Kraft"], correct: 0, explanation: "الصبر." },
+      { q: "Was behauptet der Wissenschaftler?", qAr: "ماذا يزعم العالم؟", options: ["Die Entdeckung könne die Medizin revolutionieren", "Die Entdeckung sei nutzlos", "Die Medizin sei alt", "Nichts"], correct: 0, explanation: "قيل: die Entdeckung könne die Medizin revolutionieren (Konjunktiv I)." },
+      { q: "Wovor warnt er?", qAr: "ماذا يحذر منه؟", options: ["zu schnellen Jubel", "zu viel Forschung", "zu viel Geld", "zu wenig Arbeit"], correct: 0, explanation: "قيل: man dürfe nicht zu schnell jubeln." },
+      { q: "Was ist der Schlüssel des Erfolgs?", qAr: "ما مفتاح النجاح؟", options: ["die Geduld", "das Geld", "die Zeit", "die Kraft"], correct: 0, explanation: "قيل: Die Geduld sei der Schlüssel des Erfolgs." },
     ],
   },
 
@@ -279,8 +279,8 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Der Professor sagt, die Ergebnisse der Studie seien sehr positiv. Er behauptet, die neue Methode könne Zeit und Kosten sparen. Allerdings betont er, dass weitere Tests notwendig seien, bevor man die Methode überall anwenden könne.",
     textAr: "يقول الأستاذ إن نتائج الدراسة إيجابية جداً. يزعم أن الطريقة الجديدة قد توفر الوقت والتكاليف. ومع ذلك يؤكد أن اختبارات أخرى ضرورية قبل تطبيق الطريقة في كل مكان.",
     questions: [
-      { q: "Wie sind die Ergebnisse laut Professor?", qAr: "كيف النتائج حسب الأستاذ؟", options: ["sehr positiv", "sehr schlecht", "unbekannt", "alt"], correct: 0, explanation: "إيجابية جداً." },
-      { q: "Was kann die neue Methode sparen?", qAr: "ماذا يمكن للطريقة الجديدة أن توفر؟", options: ["Zeit und Kosten", "nur Zeit", "nur Kosten", "nichts"], correct: 0, explanation: "الوقت والتكاليف." },
+      { q: "Wie sind die Ergebnisse laut Professor?", qAr: "كيف النتائج حسب الأستاذ؟", options: ["sehr positiv", "sehr schlecht", "unbekannt", "alt"], correct: 0, explanation: "قال: die Ergebnisse der Studie seien sehr positiv." },
+      { q: "Was kann die neue Methode sparen?", qAr: "ماذا يمكن للطريقة الجديدة أن توفر؟", options: ["Zeit und Kosten", "nur Zeit", "nur Kosten", "nichts"], correct: 0, explanation: "قال: die neue Methode könne Zeit und Kosten sparen." },
     ],
   },
   {
@@ -288,8 +288,8 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "In der Besprechung wurde beschlossen, dass der Vertrag nächste Woche unterschrieben werde. Die Lieferung, so sagte die Chefin, könne erfolgen, sobald die Zahlung eingegangen sei. Man sei zuversichtlich, dass alles pünktlich klappe.",
     textAr: "في الاجتماع تقرر أن يُوقَّع العقد الأسبوع القادم. التسليم، كما قالت المديرة، يمكن أن يتم بمجرد وصول الدفعة. الجميع واثق أن كل شيء سيسير في موعده.",
     questions: [
-      { q: "Was wurde beschlossen?", qAr: "ماذا تقرر؟", options: ["Der Vertrag wird nächste Woche unterschrieben", "Der Vertrag wird nicht unterschrieben", "Die Lieferung stoppt", "Die Firma schließt"], correct: 0, explanation: "يُوقَّع العقد الأسبوع القادم." },
-      { q: "Wann kann die Lieferung erfolgen?", qAr: "متى يمكن أن يتم التسليم؟", options: ["wenn die Zahlung eingegangen ist", "sofort", "nie", "nächstes Jahr"], correct: 0, explanation: "بمجرد وصول الدفعة." },
+      { q: "Was wurde beschlossen?", qAr: "ماذا تقرر؟", options: ["Der Vertrag wird nächste Woche unterschrieben", "Der Vertrag wird nicht unterschrieben", "Die Lieferung stoppt", "Die Firma schließt"], correct: 0, explanation: "قيل: der Vertrag nächste Woche unterschrieben werde." },
+      { q: "Wann kann die Lieferung erfolgen?", qAr: "متى يمكن أن يتم التسليم؟", options: ["wenn die Zahlung eingegangen ist", "sofort", "nie", "nächstes Jahr"], correct: 0, explanation: "قيل: sobald die Zahlung eingegangen sei." },
     ],
   },
 
@@ -304,9 +304,9 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Anna ist Studentin. Sie wohnt in München und studiert Medizin. Am Morgen geht sie in die Universität, am Nachmittag arbeitet sie im Krankenhaus. Am Wochenende besucht sie ihre Eltern oder trifft Freunde. Sie lernt auch Spanisch, weil sie später in Spanien arbeiten möchte.",
     textAr: "آنا طالبة. تسكن في ميونخ وتدرس الطب. صباحاً تذهب إلى الجامعة وبعد الظهر تعمل في المستشفى. في نهاية الأسبوع تزور والديها أو تلتقي أصدقاء. تتعلم أيضاً الإسبانية لأنها تريد العمل في إسبانيا لاحقاً.",
     questions: [
-      { q: "Was studiert Anna?", qAr: "ماذا تدرس آنا؟", options: ["Medizin", "Spanisch", "Jura", "Musik"], correct: 0, explanation: "تدرس الطب." },
-      { q: "Wo arbeitet Anna am Nachmittag?", qAr: "أين تعمل آنا بعد الظهر؟", options: ["im Krankenhaus", "im Büro", "in der Schule", "im Geschäft"], correct: 0, explanation: "في المستشفى." },
-      { q: "Warum lernt Anna Spanisch?", qAr: "لماذا تتعلم آنا الإسبانية؟", options: ["weil sie in Spanien arbeiten möchte", "weil es einfach ist", "weil ihr Vater Spanier ist", "weil sie in Spanien lebt"], correct: 0, explanation: "لأنها تريد العمل في إسبانيا." },
+      { q: "Was studiert Anna?", qAr: "ماذا تدرس آنا؟", options: ["Medizin", "Spanisch", "Jura", "Musik"], correct: 0, explanation: "قيل: studiert Medizin." },
+      { q: "Wo arbeitet Anna am Nachmittag?", qAr: "أين تعمل آنا بعد الظهر؟", options: ["im Krankenhaus", "im Büro", "in der Schule", "im Geschäft"], correct: 0, explanation: "قيل: am Nachmittag arbeitet sie im Krankenhaus." },
+      { q: "Warum lernt Anna Spanisch?", qAr: "لماذا تتعلم آنا الإسبانية؟", options: ["weil sie in Spanien arbeiten möchte", "weil es einfach ist", "weil ihr Vater Spanier ist", "weil sie in Spanien lebt"], correct: 0, explanation: "قيل: weil sie später in Spanien arbeiten möchte." },
     ],
   },
   {
@@ -314,9 +314,9 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Guten Tag! Ich suche eine Wohnung. Ich möchte eine kleine Wohnung mit zwei Zimmern. Sie soll nicht weit vom Zentrum sein. Die Miete darf höchstens sechshundert Euro sein. Ich habe am Freitag Zeit für einen Termin.",
     textAr: "طاب يومك! أبحث عن شقة. أريد شقة صغيرة بغرفتين. يجب ألا تكون بعيدة عن المركز. الإيجار بحد أقصى ستمائة يورو. لدي وقت يوم الجمعة لموعد.",
     questions: [
-      { q: "Wie viele Zimmer soll die Wohnung haben?", qAr: "كم غرفة تريد؟", options: ["zwei", "drei", "eins", "vier"], correct: 0, explanation: "بغرفتين." },
-      { q: "Was darf die Miete höchstens kosten?", qAr: "ما الحد الأقصى للإيجار؟", options: ["600 Euro", "900 Euro", "300 Euro", "1200 Euro"], correct: 0, explanation: "ستمائة يورو." },
-      { q: "Wann hat er Zeit?", qAr: "متى لديه وقت؟", options: ["am Freitag", "am Montag", "am Samstag", "am Dienstag"], correct: 0, explanation: "يوم الجمعة." },
+      { q: "Wie viele Zimmer soll die Wohnung haben?", qAr: "كم غرفة تريد؟", options: ["zwei", "drei", "eins", "vier"], correct: 0, explanation: "قال: eine kleine Wohnung mit zwei Zimmern." },
+      { q: "Was darf die Miete höchstens kosten?", qAr: "ما الحد الأقصى للإيجار؟", options: ["600 Euro", "900 Euro", "300 Euro", "1200 Euro"], correct: 0, explanation: "قال: höchstens sechshundert Euro." },
+      { q: "Wann hat er Zeit?", qAr: "متى لديه وقت؟", options: ["am Freitag", "am Montag", "am Samstag", "am Dienstag"], correct: 0, explanation: "قال: Ich habe am Freitag Zeit für einen Termin." },
     ],
   },
 
@@ -326,9 +326,9 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Letzten Monat habe ich mich für einen Deutschkurs angemeldet. Der Kurs dauert drei Monate und findet zweimal pro Woche statt. Am Anfang war es schwer, aber jetzt verstehe ich fast alles. Mein Lehrer erklärt die Grammatik sehr gut und wir üben viel mit Dialogen. Nächste Woche haben wir einen kleinen Test. Ich hoffe, dass ich gut abschneide.",
     textAr: "سجلت الشهر الماضي في دورة ألمانية. الدورة تستمر ثلاثة أشهر وتقام مرتين أسبوعياً. في البداية كان الأمر صعباً لكن الآن أفهم كل شيء تقريباً. معلمي يشرح القواعد جيداً ونتمرن كثيراً على الحوارات. الأسبوع القادم عندنا اختبار صغير. أتمنى أن أؤدي جيداً.",
     questions: [
-      { q: "Wie oft findet der Kurs statt?", qAr: "كم مرة تقام الدورة؟", options: ["zweimal pro Woche", "einmal pro Monat", "jeden Tag", "einmal pro Woche"], correct: 0, explanation: "مرتين أسبوعياً." },
-      { q: "Was macht der Lehrer gut?", qAr: "ماذا يفعل المعلم جيداً؟", options: ["die Grammatik erklären", "kochen", "singen", "zeichnen"], correct: 0, explanation: "يشرح القواعد جيداً." },
-      { q: "Was ist nächste Woche?", qAr: "ماذا يحدث الأسبوع القادم؟", options: ["ein kleiner Test", "ein Fest", "eine Reise", "ein Konzert"], correct: 0, explanation: "اختبار صغير." },
+      { q: "Wie oft findet der Kurs statt?", qAr: "كم مرة تقام الدورة؟", options: ["zweimal pro Woche", "einmal pro Monat", "jeden Tag", "einmal pro Woche"], correct: 0, explanation: "قيل: findet zweimal pro Woche statt." },
+      { q: "Was macht der Lehrer gut?", qAr: "ماذا يفعل المعلم جيداً؟", options: ["die Grammatik erklären", "kochen", "singen", "zeichnen"], correct: 0, explanation: "قيل: Mein Lehrer erklärt die Grammatik sehr gut." },
+      { q: "Was ist nächste Woche?", qAr: "ماذا يحدث الأسبوع القادم؟", options: ["ein kleiner Test", "ein Fest", "eine Reise", "ein Konzert"], correct: 0, explanation: "قيل: Nächste Woche haben wir einen kleinen Test." },
     ],
   },
   {
@@ -336,9 +336,9 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Hallo Papa, ich bin es, Leila. Ich bin gerade in der Stadt und habe den Bus verpasst. Kannst du mich um sechs Uhr am Bahnhof abholen? Wenn nicht, rufe ich ein Taxi. Ach ja, kannst du auch mein Buch mitbringen? Es liegt auf dem Tisch im Wohnzimmer.",
     textAr: "أبي، أنا ليلى. أنا الآن في المدينة وفاتتني الحافلة. هل يمكنك أن تأتي لأخذي الساعة السادسة من المحطة؟ إن لم يكن فسأستدعي تاكسياً. آه نعم، هل يمكنك إحضار كتابي أيضاً؟ إنه على الطاولة في غرفة الجلوس.",
     questions: [
-      { q: "Warum ruft Leila an?", qAr: "لماذا تتصل ليلى؟", options: ["Sie hat den Bus verpasst", "Sie ist krank", "Sie hat Geld verloren", "Sie will essen"], correct: 0, explanation: "فاتتها الحافلة." },
-      { q: "Wann soll der Vater sie abholen?", qAr: "متى يريد الأب أن يأخذها؟", options: ["um sechs Uhr", "um sieben Uhr", "um acht Uhr", "um fünf Uhr"], correct: 0, explanation: "الساعة السادسة." },
-      { q: "Was soll er mitbringen?", qAr: "ماذا يجب أن يحضر؟", options: ["ihr Buch", "ihre Tasche", "ihren Computer", "ihren Regenschirm"], correct: 0, explanation: "كتابها." },
+      { q: "Warum ruft Leila an?", qAr: "لماذا تتصل ليلى؟", options: ["Sie hat den Bus verpasst", "Sie ist krank", "Sie hat Geld verloren", "Sie will essen"], correct: 0, explanation: "قالت: habe den Bus verpasst." },
+      { q: "Wann soll der Vater sie abholen?", qAr: "متى يريد الأب أن يأخذها؟", options: ["um sechs Uhr", "um sieben Uhr", "um acht Uhr", "um fünf Uhr"], correct: 0, explanation: "قالت: Kannst du mich um sechs Uhr am Bahnhof abholen?" },
+      { q: "Was soll er mitbringen?", qAr: "ماذا يجب أن يحضر؟", options: ["ihr Buch", "ihre Tasche", "ihren Computer", "ihren Regenschirm"], correct: 0, explanation: "قالت: kannst du auch mein Buch mitbringen?" },
     ],
   },
 
@@ -348,9 +348,9 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Viele Arbeitnehmer klagen über zu viel Stress. Eine Umfrage zeigt, dass mehr als die Hälfte der Befragten nach der Arbeit nicht abschalten kann. Die Gründe sind unterschiedlich: hoher Leistungsdruck, ständige Erreichbarkeit durch das Handy und zu wenig Pausen. Experten empfehlen, klare Grenzen zu setzen und regelmäßig Sport zu treiben. Einige Firmen bieten mittlerweile flexible Arbeitszeiten an, um den Druck zu verringern. Ob das reicht, ist allerdings fraglich.",
     textAr: "يشكو كثير من الموظفين من التوتر الزائد. يُظهر استطلاع أن أكثر من نصف المشاركين لا يستطيعون الابتعاد عن العمل بعد الدوام. الأسباب مختلفة: ضغط الأداء العالي، والاتصال الدائم عبر الهاتف، وقلة الاستراحات. يوصي الخبراء بوضع حدود واضحة وممارسة الرياضة بانتظام. بعض الشركات تقدم الآن ساعات عمل مرنة لتخفيف الضغط. لكن ما إذا كان ذلك كافياً أمر محل شك.",
     questions: [
-      { q: "Was zeigt die Umfrage?", qAr: "ماذا يُظهر الاستطلاع؟", options: ["Mehr als die Hälfte kann nach der Arbeit nicht abschalten", "Die meisten sind zufrieden", "Die Arbeit ist leicht", "Die Hälfte arbeitet nicht"], correct: 0, explanation: "أكثر من النصف لا يستطيعون الابتعاد عن العمل." },
-      { q: "Was empfehlen die Experten?", qAr: "ماذا يوصي الخبراء؟", options: ["klare Grenzen und Sport", "mehr Überstunden", "kein Handy mehr", "mehr Kaffee"], correct: 0, explanation: "حدود واضحة ورياضة." },
-      { q: "Was bieten einige Firmen an?", qAr: "ماذا تقدم بعض الشركات؟", options: ["flexible Arbeitszeiten", "höhere Gehälter", "längere Pausen", "Urlaub"], correct: 0, explanation: "ساعات عمل مرنة." },
+      { q: "Was zeigt die Umfrage?", qAr: "ماذا يُظهر الاستطلاع؟", options: ["Mehr als die Hälfte kann nach der Arbeit nicht abschalten", "Die meisten sind zufrieden", "Die Arbeit ist leicht", "Die Hälfte arbeitet nicht"], correct: 0, explanation: "قيل: mehr als die Hälfte der Befragten kann nach der Arbeit nicht abschalten." },
+      { q: "Was empfehlen die Experten?", qAr: "ماذا يوصي الخبراء؟", options: ["klare Grenzen und Sport", "mehr Überstunden", "kein Handy mehr", "mehr Kaffee"], correct: 0, explanation: "قيل: klare Grenzen zu setzen und regelmäßig Sport zu treiben." },
+      { q: "Was bieten einige Firmen an?", qAr: "ماذا تقدم بعض الشركات؟", options: ["flexible Arbeitszeiten", "höhere Gehälter", "längere Pausen", "Urlaub"], correct: 0, explanation: "قيل: Einige Firmen bieten flexible Arbeitszeiten an." },
     ],
   },
   {
@@ -358,9 +358,9 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Hier ist die Verkehrsmeldung für Mittwoch. Auf der Autobahn A3 zwischen Köln und Bonn gibt es wegen eines Unfalls einen Stau von etwa drei Kilometern. Der Unfall ist bereits abgeräumt, aber der Verkehr braucht noch Zeit. Wenn Sie können, fahren Sie über die Landstraße. In der Innenstadt ist am Nachmittag mit Behinderungen zu rechnen, weil eine Demonstration stattfindet.",
     textAr: "هنا نشرة المرور ليوم الأربعاء. على الطريق السريع A3 بين كولونيا وبون ازدحام بنحو ثلاثة كيلومترات بسبب حادث. تم إزالة الحادث لكن حركة المرور تحتاج وقتاً. إن أمكن فخذوا الطريق الجانبي. في وسط المدينة يُتوقع اختناقات بعد الظهر بسبب مظاهرة.",
     questions: [
-      { q: "Warum gibt es einen Stau?", qAr: "لماذا يوجد ازدحام؟", options: ["wegen eines Unfalls", "wegen des Wetters", "wegen Bauarbeiten", "wegen einer Messe"], correct: 0, explanation: "بسبب حادث." },
-      { q: "Was empfiehlt der Sprecher?", qAr: "ماذا يوصي المتحدث؟", options: ["die Landstraße zu fahren", "zu Hause zu bleiben", "den Zug zu nehmen", "schneller zu fahren"], correct: 0, explanation: "الطريق الجانبي." },
-      { q: "Warum gibt es in der Innenstadt Behinderungen?", qAr: "لماذا توجد اختناقات في المدينة؟", options: ["wegen einer Demonstration", "wegen eines Festes", "wegen Schnee", "wegen eines Konzerts"], correct: 0, explanation: "بسبب مظاهرة." },
+      { q: "Warum gibt es einen Stau?", qAr: "لماذا يوجد ازدحام؟", options: ["wegen eines Unfalls", "wegen des Wetters", "wegen Bauarbeiten", "wegen einer Messe"], correct: 0, explanation: "قيل: wegen eines Unfalls einen Stau von etwa drei Kilometern." },
+      { q: "Was empfiehlt der Sprecher?", qAr: "ماذا يوصي المتحدث؟", options: ["die Landstraße zu fahren", "zu Hause zu bleiben", "den Zug zu nehmen", "schneller zu fahren"], correct: 0, explanation: "قيل: Wenn Sie können, fahren Sie über die Landstraße." },
+      { q: "Warum gibt es in der Innenstadt Behinderungen?", qAr: "لماذا توجد اختناقات في المدينة؟", options: ["wegen einer Demonstration", "wegen eines Festes", "wegen Schnee", "wegen eines Konzerts"], correct: 0, explanation: "قيل: weil eine Demonstration stattfindet." },
     ],
   },
 
@@ -370,9 +370,9 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Die Diskussion über die Vier-Tage-Woche gewinnt an Bedeutung. Befürworter argumentieren, dass kürzere Arbeitszeiten die Produktivität steigern und die Gesundheit der Beschäftigten verbessern. Sie verweisen auf Pilotprojekte, in denen die Leistung sogar zunahm. Kritiker halten dagegen, dass nicht alle Branchen davon profitieren könnten und dass die Kosten für die Unternehmen steigen würden. Ökonomen fordern daher, die Ergebnisse der Pilotprojekte genau zu analysieren, bevor man allgemeine Schlüsse zieht. Es bleibt abzuwarten, ob die Vier-Tage-Woche zum Standard wird oder eine Ausnahme bleibt.",
     textAr: "يزداد النقاش حول أسبوع العمل بأربعة أيام أهمية. يرى المؤيدون أن ساعات العمل الأقصر ترفع الإنتاجية وتحسّن صحة الموظفين. ويشيرون إلى مشاريع تجريبية زاد فيها الأداء فعلاً. ويعترض النقاد بأنه ليست كل القطاعات قادرة على الاستفادة وأن التكاليف على الشركات سترتفع. لذلك يطالب الاقتصاديون بتحليل دقيق لنتائج المشاريع قبل استخلاص استنتاجات عامة. ويبقى أن نرى ما إذا كان أسبوع الأربعة أيام سيصبح المعيار أم يبقى استثناءً.",
     questions: [
-      { q: "Was behaupten die Befürworter?", qAr: "ماذا يدّعي المؤيدون؟", options: ["kürzere Arbeitszeiten steigern die Produktivität", "kürzere Arbeitszeiten senken das Gehalt", "die Gesundheit wird schlechter", "die Firmen sparen Geld"], correct: 0, explanation: "ساعات أقصر ترفع الإنتاجية." },
-      { q: "Was kritisieren die Gegner?", qAr: "ماذا ينتقد المعارضون؟", options: ["nicht alle Branchen profitieren", "die Mitarbeiter arbeiten zu viel", "die Produkte werden schlechter", "der Urlaub wird kürzer"], correct: 0, explanation: "ليست كل القطاعات تستفيد." },
-      { q: "Was fordern die Ökonomen?", qAr: "ماذا يطالب الاقتصاديون؟", options: ["die Ergebnisse genau zu analysieren", "sofort umzustellen", "keine Experimente", "mehr Urlaub"], correct: 0, explanation: "تحليل دقيق للنتائج." },
+      { q: "Was behaupten die Befürworter?", qAr: "ماذا يدّعي المؤيدون؟", options: ["kürzere Arbeitszeiten steigern die Produktivität", "kürzere Arbeitszeiten senken das Gehalt", "die Gesundheit wird schlechter", "die Firmen sparen Geld"], correct: 0, explanation: "قيل: kürzere Arbeitszeiten die Produktivität steigern." },
+      { q: "Was kritisieren die Gegner?", qAr: "ماذا ينتقد المعارضون؟", options: ["nicht alle Branchen profitieren", "die Mitarbeiter arbeiten zu viel", "die Produkte werden schlechter", "der Urlaub wird kürzer"], correct: 0, explanation: "قيل: nicht alle Branchen davon profitieren könnten." },
+      { q: "Was fordern die Ökonomen?", qAr: "ماذا يطالب الاقتصاديون؟", options: ["die Ergebnisse genau zu analysieren", "sofort umzustellen", "keine Experimente", "mehr Urlaub"], correct: 0, explanation: "قيل: die Ergebnisse der Pilotprojekte genau zu analysieren." },
       { q: "Der Ton des Autors ist ...", qAr: "نبرة الكاتب ...", options: ["neutral und abwartend", "sehr kritisch", "begeistert", "ironisch"], correct: 0, explanation: "محايدة وانتظارية (es bleibt abzuwarten)." },
     ],
   },
@@ -381,9 +381,9 @@ const RAW_TEST_BANK: TestQuestion[] = [
     text: "Im Interview erklärt die Sprachwissenschaftlerin Dr. Berger, dass Sprachkenntnisse die beruflichen Chancen deutlich verbesserten. Sie weist darauf hin, dass Arbeitgeber zunehmend mehrsprachige Bewerber bevorzugten. Gleichzeitig betont sie, dass das Sprachenlernen Disziplin erfordere und nicht über Nacht geschehe. Auf die Frage nach der besten Methode antwortet sie, dass der regelmäßige Kontakt mit der Sprache wichtiger sei als perfekte Grammatik. Man solle keine Angst vor Fehlern haben, denn aus Fehlern lerne man am meisten.",
     textAr: "في المقابلة تشرح اللغوية د. بيرغر أن معرفة اللغات تحسّن الفرص المهنية بشكل ملحوظ. وتشير إلى أن أصحاب العمل يفضلون بشكل متزايد المرشحين متعددي اللغات. وفي الوقت نفسه تؤكد أن تعلم اللغات يتطلب انضباطاً ولا يحدث بين ليلة وضحاها. وعند سؤالها عن أفضل طريقة تجيب أن الاتصال المنتظم باللغة أهم من القواعد المثالية. ويجب ألا يخاف المرء من الأخطاء لأننا نتعلم منها أكثر.",
     questions: [
-      { q: "Was verbessern Sprachkenntnisse laut Dr. Berger?", qAr: "ماذا تحسّن معرفة اللغات حسب د. بيرغر؟", options: ["die beruflichen Chancen", "das Gehalt automatisch", "die Gesundheit", "die Reisezeit"], correct: 0, explanation: "الفرص المهنية." },
-      { q: "Was ist wichtiger als perfekte Grammatik?", qAr: "ما الأهم من القواعد المثالية؟", options: ["der regelmäßige Kontakt mit der Sprache", "teure Kurse", "das Auswendiglernen", "die Grammatik"], correct: 0, explanation: "الاتصال المنتظم باللغة." },
-      { q: "Was soll man laut Dr. Berger nicht haben?", qAr: "ماذا يجب ألا يملك المرء حسب د. بيرغر؟", options: ["Angst vor Fehlern", "zu viel Motivation", "gute Lehrer", "viele Bücher"], correct: 0, explanation: "خوفاً من الأخطاء." },
+      { q: "Was verbessern Sprachkenntnisse laut Dr. Berger?", qAr: "ماذا تحسّن معرفة اللغات حسب د. بيرغر؟", options: ["die beruflichen Chancen", "das Gehalt automatisch", "die Gesundheit", "die Reisezeit"], correct: 0, explanation: "قالت: Sprachkenntnisse die beruflichen Chancen deutlich verbesserten." },
+      { q: "Was ist wichtiger als perfekte Grammatik?", qAr: "ما الأهم من القواعد المثالية؟", options: ["der regelmäßige Kontakt mit der Sprache", "teure Kurse", "das Auswendiglernen", "die Grammatik"], correct: 0, explanation: "قالت: der regelmäßige Kontakt mit der Sprache wichtiger sei als perfekte Grammatik." },
+      { q: "Was soll man laut Dr. Berger nicht haben?", qAr: "ماذا يجب ألا يملك المرء حسب د. بيرغر؟", options: ["Angst vor Fehlern", "zu viel Motivation", "gute Lehrer", "viele Bücher"], correct: 0, explanation: "قالت: Man solle keine Angst vor Fehlern haben." },
     ],
   },
 
@@ -419,7 +419,7 @@ const RAW_TEST_BANK: TestQuestion[] = [
     questions: [
       { q: "Wo liegt die Wohnung?", qAr: "أين تقع الشقة؟", options: ["im dritten Stock", "im ersten Stock", "im Erdgeschoss", "im Keller"], correct: 0, explanation: "في الطابق الثالث (im dritten Stock)." },
       { q: "Was bedeutet „warm“ bei der Miete?", qAr: "ماذا يعني «warm» في الإيجار؟", options: ["mit Heizung und Wasser", "mit Möbeln", "mit Parkplatz", "mit Balkon nur"], correct: 0, explanation: "مع التدفئة والماء (mit Heizung und Wasser)." },
-      { q: "Warum ist der Bruder zufrieden?", qAr: "لماذا الرجل راضٍ؟", options: ["Die Wohnung ist nah am Büro", "Die Miete ist billig", "Die Wohnung ist groß", "Er hat einen Garten"], correct: 0, explanation: "لأن الشقة قريبة من المكتب." },
+      { q: "Warum ist der Bruder zufrieden?", qAr: "لماذا الرجل راضٍ؟", options: ["Die Wohnung ist nah am Büro", "Die Miete ist billig", "Die Wohnung ist groß", "Er hat einen Garten"], correct: 0, explanation: "قيل: weil die Wohnung nicht weit von seinem Büro liegt." },
     ],
   },
   {
@@ -442,7 +442,7 @@ const RAW_TEST_BANK: TestQuestion[] = [
       { q: "Was ist ein Vorteil des Lebens auf dem Land?", qAr: "ما ميزة الحياة في الريف؟", options: ["mehr Platz und frische Luft", "kürzere Arbeitswege", "mehr Geschäfte", "bessere Schulen"], correct: 0, explanation: "مساحة أكبر وهواء نقي (mehr Platz und frische Luft)." },
       { q: "Was ist ein Nachteil laut dem Text?", qAr: "ما العيب حسب النص؟", options: ["längere Wege zur Arbeit", "zu viel Lärm", "zu wenig Natur", "hohe Mieten"], correct: 0, explanation: "طرق العمل أطول (länger)." },
       { q: "Was raten die Experten?", qAr: "بماذا ينصح الخبراء؟", options: ["die Entscheidung gut zu überlegen", "sofort umzuziehen", "nie aufs Land zu ziehen", "eine größere Stadt zu wählen"], correct: 0, explanation: "التفكير الجيد في القرار (gut zu überlegen)." },
-      { q: "Der Text ist insgesamt ...", qAr: "النص إجمالاً ...", options: ["ausgewogen (متوازن)", "nur positiv", "nur negativ", "ironisch"], correct: 0, explanation: "متوازن: يذكر مزايا وعيوباً ونصيحة." },
+      { q: "Der Text ist insgesamt ...", qAr: "النص إجمالاً ...", options: ["ausgewogen (متوازن)", "nur positiv", "nur negativ", "ironisch"], correct: 0, explanation: "النص: Die Vorteile … Doch die Nachteile … — عرض متوازن ثم نصيحة." },
     ],
   },
   {
@@ -452,7 +452,7 @@ const RAW_TEST_BANK: TestQuestion[] = [
     questions: [
       { q: "Wann findet die Besprechung jetzt statt?", qAr: "متى يقام الاجتماع الآن؟", options: ["am Freitag um zehn Uhr", "am Donnerstag um zehn Uhr", "am Freitag um neun Uhr", "am Montag"], correct: 0, explanation: "الجمعة الساعة العاشرة (am Freitag um zehn Uhr)." },
       { q: "Was soll Tom machen?", qAr: "ماذا يجب أن يفعل توم؟", options: ["die Statistik übernehmen", "die Folien vorbereiten", "das Büro buchen", "den Kunden anrufen"], correct: 0, explanation: "تولي الإحصائيات (die Statistik übernehmen)." },
-      { q: "Was möchte der Chef?", qAr: "ماذا يريد المدير؟", options: ["eine Präsentation vorbereiten", "den Termin absagen", "mehr Urlaub", "ein neues Büro"], correct: 0, explanation: "تحضير عرض تقديمي." },
+      { q: "Was möchte der Chef?", qAr: "ماذا يريد المدير؟", options: ["eine Präsentation vorbereiten", "den Termin absagen", "mehr Urlaub", "ein neues Büro"], correct: 0, explanation: "قيل: möchte der Chef, dass wir die Präsentation vorbereiten." },
     ],
   },
 
@@ -475,7 +475,7 @@ const RAW_TEST_BANK: TestQuestion[] = [
     questions: [
       { q: "Was betont die erste Gastgeberin?", qAr: "ماذا تؤكد المذيعة الأولى؟", options: ["Nur wer sich weiterbildet, hat langfristig Chancen", "Erfahrung ist unwichtig", "Zertifikate sind nutzlos", "Der Arbeitsmarkt ist stabil"], correct: 0, explanation: "من يطور نفسه فقط له فرص (نقل كلام: verändere, habe)." },
       { q: "Was hält der zweite Gast für wichtig?", qAr: "ماذا يرى الضيف الثاني مهماً؟", options: ["Erfahrung und soziale Kompetenzen", "nur neue Zertifikate", "nur digitale Fähigkeiten", "nichts davon"], correct: 0, explanation: "الخبرة والمهارات الاجتماعية (soziale Kompetenzen)." },
-      { q: "Worin sind sich beide einig?", qAr: "على ماذا يتفقان؟", options: ["flexible Weiterbildungszeiten durch Arbeitgeber", "höhere Gehälter", "weniger Kurse", "keine Weiterbildung"], correct: 0, explanation: "أوقات تدريب مرنة من أصحاب العمل." },
+      { q: "Worin sind sich beide einig?", qAr: "على ماذا يتفقان؟", options: ["flexible Weiterbildungszeiten durch Arbeitgeber", "höhere Gehälter", "weniger Kurse", "keine Weiterbildung"], correct: 0, explanation: "قيل: Beide sind sich einig, dass Arbeitgeber mehr flexible Weiterbildungszeiten anbieten sollten." },
       { q: "Welche Frage bleibt offen?", qAr: "أي سؤال يبقى مفتوحاً؟", options: ["Wer zahlt die Weiterbildung?", "Wer leitet die Kurse?", "Wie lange dauert die Ausbildung?", "Wo finden die Kurse statt?"], correct: 0, explanation: "من يتحمل تكاليف التدريب (wer die Kosten tragen solle)." },
     ],
   },
