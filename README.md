@@ -359,8 +359,8 @@ deutschpfad/
 ## ✅ التحقق قبل أي دفعة
 
 ```bash
-npm run verify       # أنواع + ESLint + 752 اختبار وحدة + بناء إنتاجي
-npx playwright test  # 217 اختبار متصفح على نسخة إنتاجية (npm run build && npm run start أولاً)
+npm run verify       # أنواع + ESLint + 1119 اختبار وحدة + بناء إنتاجي
+npx playwright test  # 218 اختبار متصفح على نسخة إنتاجية (npm run build && npm run start أولاً)
 ```
 
 هذان الأمران نفسهما يشغّلهما CI في `.github/workflows/ci.yml` على كل دفعة — فلا يُكتشف

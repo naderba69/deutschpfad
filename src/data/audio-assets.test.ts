@@ -5,8 +5,9 @@
  *  (لا ملف فارغ ولا ملف Placeholder):
  *   · حوارات الحياة اليومية A1–B2 (90 مقطعاً لكل مستوى = جولة لكل ملف)
  *   · صوت الاستماع A1/A2/B1 (14 ملفاً لكل مستوى) — تسجيلات صوتية
- *   · صوت الاستماع B2 (5 ملفات لكل نموذج) — مولَّد آلياً في هذه المرحلة،
- *     والقاعدة: نموذج مكتمل أو فارغ، ولا استبدال جزئي
+ *   · صوت الاستماع B2 (5 ملفات mp3 لكل نموذج a/b/c في public/audio/exam-b2/)
+ *   · وترويسات مصادر الاستماع تعلن **حالة الصوت الحقيقية** المُقاسة على القرص
+ *     (مسجّل بعدده أو آلي) — فلا تتقادم جملة «غير مسجّلة بعد» بصمت
  *   · جُمل الشريك والإجابات النموذجية في التحدث A1/A2/B1
  *  أي نقص أو ملف تالف يُسقط الاختبار — فلا يمر نقص بصمت.
  * ═══════════════════════════════════════════════════════════
@@ -21,6 +22,7 @@ import {A2_SPRECHEN} from "@/data/exams/a2-sprechen";
 import {B1_SPRECHEN} from "@/data/exams/b1-sprechen";
 import {DAILY_DIALOGUES, getDialoguesByLevel} from "@/data/dialogues";
 import {B2_HOEREN_SET_KEYS, expectedB2Files} from "@/data/exams/b2-hoeren-audio";
+import {LEVEL_MODELS} from "@/data/exams/level-models";
 
 const AUDIO_ROOT = path.join(process.cwd(), "public", "audio");
 
@@ -160,4 +162,81 @@ describe("أصول الصوت — التحدث (جُمل الشريك + الإج
       expect(missing, `ملفات تحدث ناقصة/تالفة (${missing.length})`).toEqual([]);
     });
   }
+});
+
+/* ═══════════════════════════════════════════════════════════
+   ادعاءات الصوت في ترويسات المصادر — مطابقة القرص
+   الدافع (تدقيق 2026-10-16): سبع ترويسات كانت تدّعي النطق الآلي أو «غير مسجّلة
+   بعد» والنموذج مسجّل بالكامل على القرص (وأخرى بلا إعلان أصلاً) — فلا أحد
+   يمسك تقادم الجملة. هذا الحارس يقرأ الترويسة ويقارنها ببيان المقاطع وبالقرص.
+   ═══════════════════════════════════════════════════════════ */
+describe("أصول الصوت — ترويسات المصادر تعلن الحالة الحقيقية", () => {
+  /** ادعاء نطق آلي حصراً — الكلمة «آلي» مسموحة في سياق «احتياط» فقط */
+  const TTS_ONLY_CLAIM = /غير مسجّلة|بنطق آلي|عبر TTS|عبر المحرك/;
+
+  function headerOf(relFile: string): string {
+    const src = fs.readFileSync(path.join(process.cwd(), "src", "data", "exams", relFile), "utf8");
+    const end = src.indexOf("*/");
+    expect(end, `${relFile}: ترويسة غير موجودة`).toBeGreaterThan(0);
+    return src.slice(0, end);
+  }
+
+  function filesOnDisk(relBase: string): string[] {
+    const dir = path.join(AUDIO_ROOT, relBase.replace(/^\/audio\//, ""));
+    return fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith(".mp3")).sort() : [];
+  }
+
+  function checkClaim(label: string, relFile: string, base: string, declared: string[]) {
+    const header = headerOf(relFile);
+    const disk = filesOnDisk(base);
+    const problems: string[] = [];
+    if (declared.length === 0) {
+      problems.push(`${label}: لا مقاطع في البيان`);
+    } else {
+      if (TTS_ONLY_CLAIM.test(header)) {
+        problems.push(`${label} (${relFile}): الترويسة تدّعي نطقاً آلياً والبيان فيه ${declared.length} مقطعاً`);
+      }
+      if (!/مسجّل/.test(header)) problems.push(`${label} (${relFile}): الترويسة لا تعلن التسجيل`);
+      if (!header.includes(String(declared.length))) {
+        problems.push(`${label} (${relFile}): الترويسة لا تذكر العدد ${declared.length}`);
+      }
+      for (const f of declared) {
+        if (!disk.includes(f)) problems.push(`${label}: ملف مفقود على القرص ${base}/${f}`);
+      }
+      for (const f of disk) {
+        if (!declared.includes(f)) problems.push(`${label}: ملف يتيم بلا موضع في البيان ${base}/${f}`);
+      }
+    }
+    return problems;
+  }
+
+  it("A1–B1: كل نموذج استماع مطابق لترويسته (العدد والملفات)", () => {
+    const problems: string[] = [];
+    for (const level of ["A1", "A2", "B1"] as const) {
+      const models = LEVEL_MODELS[level];
+      for (let mi = 0; mi < models.length; mi++) {
+        const model = models[mi];
+        const relFile = mi === 0 ? `${level.toLowerCase()}-hoeren.ts` : `${level.toLowerCase()}-model${mi + 1}-hoeren.ts`;
+        const bases = [...new Set(model.audio.filter((t) => t.files.length > 0).map((t) => t.base))];
+        if (bases.length === 0) {
+          problems.push(`${model.id}: نموذج بلا مقاطع — يجب حذفه أو تسجيله`);
+          continue;
+        }
+        for (const base of bases) {
+          const declared = model.audio.filter((t) => t.base === base).flatMap((t) => t.files).sort();
+          problems.push(...checkClaim(model.id, relFile, base, declared));
+        }
+      }
+    }
+    expect(problems).toEqual([]);
+  });
+
+  it("B2: النماذج a/b/c مطابقة لترويساتها", () => {
+    const problems: string[] = [];
+    B2_HOEREN_SET_KEYS.forEach((key, si) => {
+      const relFile = key === "a" ? "b2-hoeren.ts" : `b2-hoeren-${key}.ts`;
+      problems.push(...checkClaim(`B2-${key.toUpperCase()}`, relFile, `exam-b2/${key}`, expectedB2Files(si).sort()));
+    });
+    expect(problems).toEqual([]);
+  });
 });
