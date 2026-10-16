@@ -139,6 +139,11 @@ export interface ExamSprechenVortrag {
   topicAr: string;
   /** الأسئلة الإرشادية الرسمية (Leitfragen) */
   leitfragen: string[];
+  /**
+   * إجابة نموذجية للمراجعة بعد المحاولة: توجيه عربي + جمل ألمانية بين «...»
+   * تُقرأ كما تُقال. تُعرض مطوية (details) فلا تكشف نفسها قبل أن يتحدث المتعلم.
+   */
+  modelAr?: string;
 }
 
 export interface ExamSprechenDiskussion {
@@ -149,6 +154,8 @@ export interface ExamSprechenDiskussion {
   positionAr: string;
   pro: string[];
   kontra: string[];
+  /** إجابة نموذجية للمراجعة (نفس نمط `modelAr` في العرض) */
+  modelAr?: string;
 }
 
 export interface ExamSprechen {

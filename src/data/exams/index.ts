@@ -16,7 +16,9 @@ import { B2_HOEREN } from "@/data/exams/b2-hoeren";
 import { B2_HOEREN_B } from "@/data/exams/b2-hoeren-b";
 import { B2_HOEREN_C } from "@/data/exams/b2-hoeren-c";
 import { B2_SCHREIBEN } from "@/data/exams/b2-schreiben";
+import { B2_SCHREIBEN_B } from "@/data/exams/b2-schreiben-b";
 import { B2_SPRECHEN } from "@/data/exams/b2-sprechen";
+import { B2_SPRECHEN_B } from "@/data/exams/b2-sprechen-b";
 import { B2_GRAMMATIK } from "@/data/exams/b2-grammatik";
 
 /**
@@ -32,6 +34,14 @@ const BALANCED_HOEREN_SETS = [B2_HOEREN, B2_HOEREN_B, B2_HOEREN_C].map((set) => 
 export const B2_LESEN_SETS = BALANCED_LESEN_SETS;
 export const B2_HOEREN_SETS = BALANCED_HOEREN_SETS;
 
+/**
+ * طقمان كاملان للكتابة والتحدث (الطقم الثاني أُضيف 2026-10-16 لسدّ فجوة:
+ * كانت القراءة والاستماع بثلاثة أطقم والكتابة والتحدث بطقم واحد، فيحفظ
+ * مَن يُعيد الامتحان النصّين نفسهما). الدرجة الرسمية والمدد والحدود واحدة.
+ */
+export const B2_SCHREIBEN_SETS = [B2_SCHREIBEN, B2_SCHREIBEN_B];
+export const B2_SPRECHEN_SETS = [B2_SPRECHEN, B2_SPRECHEN_B];
+
 export const GOETHE_B2_EXAM: GoetheB2Exam = {
   id: "goethe-b2",
   title: "Goethe-Zertifikat B2",
@@ -42,8 +52,8 @@ export const GOETHE_B2_EXAM: GoetheB2Exam = {
   sprechenMinutes: 15,
   lesen: BALANCED_LESEN_SETS[0],
   hoeren: BALANCED_HOEREN_SETS[0],
-  schreiben: B2_SCHREIBEN,
-  sprechen: B2_SPRECHEN,
+  schreiben: B2_SCHREIBEN_SETS[0],
+  sprechen: B2_SPRECHEN_SETS[0],
   passThreshold: 60,
 };
 
@@ -70,4 +80,4 @@ export function countHoerenQuestions(exam: GoetheB2Exam): number {
   return total;
 }
 
-export { B2_LESEN, B2_LESEN_B, B2_LESEN_C, B2_HOEREN, B2_HOEREN_B, B2_HOEREN_C, B2_SCHREIBEN, B2_SPRECHEN, B2_GRAMMATIK };
+export { B2_LESEN, B2_LESEN_B, B2_LESEN_C, B2_HOEREN, B2_HOEREN_B, B2_HOEREN_C, B2_SCHREIBEN, B2_SCHREIBEN_B, B2_SPRECHEN, B2_SPRECHEN_B, B2_GRAMMATIK };

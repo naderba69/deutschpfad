@@ -25,6 +25,7 @@ export function SprechenSection({
   vortragIdx,
   setVortragIdx,
   diskIdx,
+  sprechen: sprechenProp,
   runKey,
   onFinish,
 }: {
@@ -34,10 +35,12 @@ export function SprechenSection({
   vortragIdx: number;
   setVortragIdx: React.Dispatch<React.SetStateAction<number>>;
   diskIdx: number;
+  /** طقم التحدث المختار (افتراضياً الطقم الأول) — المدد والبنية من الطقم نفسه */
+  sprechen?: typeof GOETHE_B2_EXAM.sprechen;
   runKey: number;
   onFinish: () => void;
 }) {
-  const sprechen = GOETHE_B2_EXAM.sprechen;
+  const sprechen = sprechenProp ?? GOETHE_B2_EXAM.sprechen;
   const v = sprechen.vortrag[vortragIdx % sprechen.vortrag.length];
   const d = sprechen.diskussion[diskIdx % sprechen.diskussion.length];
   return (
@@ -96,6 +99,14 @@ export function SprechenSection({
           <Button size="sm" variant="outline" className="gap-1.5" onClick={() => speakText(v.topicDe)}>
             <Volume2 className="h-4 w-4" aria-hidden="true" /> اسمع الموضوع
           </Button>
+          {v.modelAr && (
+            <details className="rounded-xl border border-primary/30 bg-primary/5 p-3" data-testid="vortrag-model">
+              <summary className="cursor-pointer text-sm font-extrabold text-primary">
+                💡 إجابة نموذجية — افتحها بعد محاولتك
+              </summary>
+              <div className="mt-2 space-y-1.5 whitespace-pre-line text-sm leading-relaxed">{v.modelAr}</div>
+            </details>
+          )}
         </CardContent>
       </Card>
 
@@ -125,6 +136,14 @@ export function SprechenSection({
           <p className="text-xs text-muted-foreground">
             💡 استخدم عبارات النقاش: <span dir="ltr" lang="de">Meiner Meinung nach… / Da stimme ich Ihnen zu, aber… / Ich sehe das anders, denn… / Ein wichtiger Aspekt ist…</span>
           </p>
+          {d.modelAr && (
+            <details className="rounded-xl border border-gold/40 bg-gold/5 p-3" data-testid="diskussion-model">
+              <summary className="cursor-pointer text-sm font-extrabold text-gold-foreground">
+                💡 إجابة نموذجية — افتحها بعد محاولتك
+              </summary>
+              <div className="mt-2 space-y-1.5 whitespace-pre-line text-sm leading-relaxed">{d.modelAr}</div>
+            </details>
+          )}
         </CardContent>
       </Card>
 

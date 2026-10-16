@@ -3,7 +3,7 @@
 import * as React from "react";
 import {Award, BookOpenCheck, CheckCircle2, Headphones, Mic, PenLine, PlayCircle, RotateCcw, Timer, XCircle} from "lucide-react";
 
-import {B2_HOEREN_SETS, B2_LESEN_SETS, GOETHE_B2_EXAM} from "@/data/exams";
+import {B2_HOEREN_SETS, B2_LESEN_SETS, B2_SCHREIBEN_SETS, B2_SPRECHEN_SETS, GOETHE_B2_EXAM} from "@/data/exams";
 import {SCHREIB_MODELLE} from "@/data/schreibmodelle";
 import {useCountdown} from "@/lib/tests/use-countdown";
 import {cn} from "@/lib/utils";
@@ -54,15 +54,25 @@ export function GoetheB2Exam() {
   const [hoerenSet, setHoerenSet] = React.useState<typeof B2_HOEREN_SETS[number]>(B2_HOEREN_SETS[0]);
   /** فهرس نموذج الاستماع (A/B/C) — يحدّد مجلد مقاطع الصوت المسجّلة */
   const hoerenSetIdx = Math.max(0, B2_HOEREN_SETS.indexOf(hoerenSet));
+  // طقم الكتابة وطقم التحدث — يُختاران عشوائياً مع القراءة والاستماع عند البدء
+  const [schreibenSet, setSchreibenSet] = React.useState<typeof B2_SCHREIBEN_SETS[number]>(B2_SCHREIBEN_SETS[0]);
+  const [sprechenSet, setSprechenSet] = React.useState<typeof B2_SPRECHEN_SETS[number]>(B2_SPRECHEN_SETS[0]);
   const [setName, setSetName] = React.useState("A");
 
   const startExam = () => {
     setExpiredNotice(null);
     const li = Math.floor(Math.random() * B2_LESEN_SETS.length);
     const hi = Math.floor(Math.random() * B2_HOEREN_SETS.length);
+    const si = Math.floor(Math.random() * B2_SCHREIBEN_SETS.length);
+    const pi = Math.floor(Math.random() * B2_SPRECHEN_SETS.length);
     setLesenSet(B2_LESEN_SETS[li]);
     setHoerenSet(B2_HOEREN_SETS[hi]);
-    setSetName(li === hi ? String.fromCharCode(65 + li) : `${String.fromCharCode(65 + li)}/${String.fromCharCode(65 + hi)}`);
+    setSchreibenSet(B2_SCHREIBEN_SETS[si]);
+    setSprechenSet(B2_SPRECHEN_SETS[pi]);
+    setSetName(
+      `${li === hi ? String.fromCharCode(65 + li) : `${String.fromCharCode(65 + li)}/${String.fromCharCode(65 + hi)}`}` +
+        ` · كتابة ${si + 1} · تحدث ${pi + 1}`,
+    );
     setPhase("lesen");
   };
 
@@ -112,8 +122,8 @@ export function GoetheB2Exam() {
     // الكتابة: تقييم ذاتي بالروبرك (المتعلم يقيّم نفسه + طول النص)
     const w1words = writing1.trim().split(/\s+/).filter(Boolean).length;
     const w2words = writing2.trim().split(/\s+/).filter(Boolean).length;
-    const minW1 = GOETHE_B2_EXAM.schreiben[0].minWords;
-    const minW2 = GOETHE_B2_EXAM.schreiben[1].minWords;
+    const minW1 = schreibenSet[0].minWords;
+    const minW2 = schreibenSet[1].minWords;
     let pct = 50;
     if (w1words >= minW1 && w2words >= minW2) pct = 60; // الحد الأدنى
     if (w1words >= minW1 + 30 && w2words >= minW2 + 20) pct = 75;
@@ -285,8 +295,8 @@ export function GoetheB2Exam() {
 
   /* ════════ الكتابة ════════ */
   if (phase === "schreiben") {
-    const w1 = GOETHE_B2_EXAM.schreiben[0];
-    const w2 = GOETHE_B2_EXAM.schreiben[1];
+    const w1 = schreibenSet[0];
+    const w2 = schreibenSet[1];
     const w1words = writing1.trim().split(/\s+/).filter(Boolean).length;
     const w2words = writing2.trim().split(/\s+/).filter(Boolean).length;
     return (
@@ -459,6 +469,7 @@ export function GoetheB2Exam() {
         vortragIdx={vortragIdx}
         setVortragIdx={setVortragIdx}
         diskIdx={diskIdx}
+        sprechen={sprechenSet}
         runKey={runKey}
         onFinish={() => setPhase("result")}
       />
