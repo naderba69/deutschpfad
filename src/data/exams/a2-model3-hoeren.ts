@@ -87,12 +87,12 @@ export const A2_MODEL3_HOEREN: ExamHoerenTeil[] = [
     allowRepeat: true,
     audioText:
       "Verkehrsmeldung: Auf der A3 Richtung Frankfurt gibt es zwischen der Ausfahrt Waldau und dem Kreuz Ost einen Stau von acht Kilometern. " +
-      "Ortskundige sollten über die B eight fahren. " +
+      "Ortskundige sollten über die Bundesstraße acht fahren. " +
       "Anrufbeantworter: Guten Tag, hier ist die Sprachschule Lingua. Ihr Kurs A2 am Montag fällt leider aus. " +
       "Der Kurs beginnt wieder am Mittwoch um achtzehn Uhr in Raum drei. Bitte bringen Sie Ihr neues Kursbuch mit. " +
       "Für Fragen rufen Sie uns bitte zwischen neun und zwölf Uhr an.",
     audioSegments: [
-      "Verkehrsmeldung: Auf der A3 Richtung Frankfurt gibt es zwischen der Ausfahrt Waldau und dem Kreuz Ost einen Stau von acht Kilometern. Ortskundige sollten über die B eight fahren.",
+      "Verkehrsmeldung: Auf der A3 Richtung Frankfurt gibt es zwischen der Ausfahrt Waldau und dem Kreuz Ost einen Stau von acht Kilometern. Ortskundige sollten über die Bundesstraße acht fahren.",
       "Anrufbeantworter: Guten Tag, hier ist die Sprachschule Lingua. Ihr Kurs A2 am Montag fällt leider aus. Der Kurs beginnt wieder am Mittwoch um achtzehn Uhr in Raum drei. Bitte bringen Sie Ihr neues Kursbuch mit. Für Fragen rufen Sie uns bitte zwischen neun und zwölf Uhr an.",
     ],
     questions: [
