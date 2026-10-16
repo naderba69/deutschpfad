@@ -15,6 +15,10 @@ import { A1_MODEL2_HOEREN } from "@/data/exams/a1-model2-hoeren";
 import { A1_MODEL2_LESEN } from "@/data/exams/a1-model2-lesen";
 import { A1_MODEL2_SCHREIBEN } from "@/data/exams/a1-model2-schreiben";
 import { A1_MODEL2_SPRECHEN } from "@/data/exams/a1-model2-sprechen";
+import { A1_MODEL3_HOEREN } from "@/data/exams/a1-model3-hoeren";
+import { A1_MODEL3_LESEN } from "@/data/exams/a1-model3-lesen";
+import { A1_MODEL3_SCHREIBEN } from "@/data/exams/a1-model3-schreiben";
+import { A1_MODEL3_SPRECHEN } from "@/data/exams/a1-model3-sprechen";
 import { A2_HOEREN } from "@/data/exams/a2-hoeren";
 import { A2_LESEN } from "@/data/exams/a2-lesen";
 import { A2_SCHREIBEN } from "@/data/exams/a2-schreiben";
@@ -23,6 +27,10 @@ import { A2_MODEL2_HOEREN } from "@/data/exams/a2-model2-hoeren";
 import { A2_MODEL2_LESEN } from "@/data/exams/a2-model2-lesen";
 import { A2_MODEL2_SCHREIBEN } from "@/data/exams/a2-model2-schreiben";
 import { A2_MODEL2_SPRECHEN } from "@/data/exams/a2-model2-sprechen";
+import { A2_MODEL3_HOEREN } from "@/data/exams/a2-model3-hoeren";
+import { A2_MODEL3_LESEN } from "@/data/exams/a2-model3-lesen";
+import { A2_MODEL3_SCHREIBEN } from "@/data/exams/a2-model3-schreiben";
+import { A2_MODEL3_SPRECHEN } from "@/data/exams/a2-model3-sprechen";
 import { B1_HOEREN } from "@/data/exams/b1-hoeren";
 import { B1_LESEN } from "@/data/exams/b1-lesen";
 import { B1_SCHREIBEN } from "@/data/exams/b1-schreiben";
@@ -31,7 +39,11 @@ import { B1_MODEL2_HOEREN } from "@/data/exams/b1-model2-hoeren";
 import { B1_MODEL2_LESEN } from "@/data/exams/b1-model2-lesen";
 import { B1_MODEL2_SCHREIBEN } from "@/data/exams/b1-model2-schreiben";
 import { B1_MODEL2_SPRECHEN } from "@/data/exams/b1-model2-sprechen";
-import { LEVEL_AUDIO, LEVEL_EXAM_DATA, modelTracks, type ExamLevel } from "@/data/exams/level-audio";
+import { B1_MODEL3_HOEREN } from "@/data/exams/b1-model3-hoeren";
+import { B1_MODEL3_LESEN } from "@/data/exams/b1-model3-lesen";
+import { B1_MODEL3_SCHREIBEN } from "@/data/exams/b1-model3-schreiben";
+import { B1_MODEL3_SPRECHEN } from "@/data/exams/b1-model3-sprechen";
+import { LEVEL_AUDIO, LEVEL_EXAM_DATA, model3Tracks, modelTracks, type ExamLevel } from "@/data/exams/level-audio";
 import { balanceTeile } from "@/lib/tests/balance-options";
 import type { ExamAudioTrack } from "@/lib/tests/exam-audio";
 import type { ExamHoerenTeil, ExamLesenTeil, ExamSchreibaufgabe } from "@/types/exam";
@@ -100,6 +112,19 @@ export const LEVEL_MODELS: Record<ExamLevel, ExamModel[]> = {
       sprechen: A1_MODEL2_SPRECHEN,
       audio: modelTracks("A1", A1_MODEL2_HOEREN, [1, 2, 3, 4]),
     },
+    {
+      id: "A1-3",
+      label: "النموذج 3 (نطق آلي)",
+      // الحالة الحقيقية: لا مقاطع مسجّلة لهذا النموذج بعد — والمشغّل ينطق نصّه
+      // آلياً ويعلن ذلك؛ الحارس يفشل إن اختفى إعلان النطق الآلي من هذه الجملة
+      audioNoteAr:
+        "10 مقاطع مسجّلة بصوتين (رجل وامرأة) في الأجزاء 1–3، والجزء 4 بنطق آلي — والجزآن 1 و3 يُشغَّلان مرتين.",
+      hoeren: balanceTeile(A1_MODEL3_HOEREN),
+      lesen: balanceTeile(A1_MODEL3_LESEN),
+      schreiben: A1_MODEL3_SCHREIBEN,
+      sprechen: A1_MODEL3_SPRECHEN,
+      audio: model3Tracks("A1", A1_MODEL3_HOEREN, [1, 2, 3]),
+    },
   ],
   A2: [
     recordedModel("A2", { hoeren: A2_HOEREN, lesen: A2_LESEN, schreiben: A2_SCHREIBEN, sprechen: A2_SPRECHEN }),
@@ -116,6 +141,19 @@ export const LEVEL_MODELS: Record<ExamLevel, ExamModel[]> = {
       sprechen: A2_MODEL2_SPRECHEN,
       audio: modelTracks("A2", A2_MODEL2_HOEREN, [1, 2, 3, 4]),
     },
+    {
+      id: "A2-3",
+      label: "النموذج 3 (نطق آلي)",
+      // الحالة الحقيقية: لا مقاطع مسجّلة لهذا النموذج بعد — والمشغّل ينطق نصّه
+      // آلياً ويعلن ذلك؛ الحارس يفشل إن اختفى إعلان النطق الآلي من هذه الجملة
+      audioNoteAr:
+        "نطق آلي من نصّ النموذج نفسه (لا تسجيلات بشرية بعد) — والجزآن 1 و3 يُشغَّلان مرتين.",
+      hoeren: balanceTeile(A2_MODEL3_HOEREN),
+      lesen: balanceTeile(A2_MODEL3_LESEN),
+      schreiben: A2_MODEL3_SCHREIBEN,
+      sprechen: A2_MODEL3_SPRECHEN,
+      audio: ttsTracks("/audio/exam-a2/m3", A2_MODEL3_HOEREN),
+    },
   ],
   B1: [
     recordedModel("B1", { hoeren: B1_HOEREN, lesen: B1_LESEN, schreiben: B1_SCHREIBEN, sprechen: B1_SPRECHEN }),
@@ -131,6 +169,19 @@ export const LEVEL_MODELS: Record<ExamLevel, ExamModel[]> = {
       schreiben: B1_MODEL2_SCHREIBEN,
       sprechen: B1_MODEL2_SPRECHEN,
       audio: modelTracks("B1", B1_MODEL2_HOEREN, [1, 2, 3, 4]),
+    },
+    {
+      id: "B1-3",
+      label: "النموذج 3 (نطق آلي)",
+      // الحالة الحقيقية: لا مقاطع مسجّلة لهذا النموذج بعد — والمشغّل ينطق نصّه
+      // آلياً ويعلن ذلك؛ الحارس يفشل إن اختفى إعلان النطق الآلي من هذه الجملة
+      audioNoteAr:
+        "نطق آلي من نصّ النموذج نفسه (لا تسجيلات بشرية بعد) — والجزآن 1 و3 يُشغَّلان مرتين.",
+      hoeren: balanceTeile(B1_MODEL3_HOEREN),
+      lesen: balanceTeile(B1_MODEL3_LESEN),
+      schreiben: B1_MODEL3_SCHREIBEN,
+      sprechen: B1_MODEL3_SPRECHEN,
+      audio: ttsTracks("/audio/exam-b1/m3", B1_MODEL3_HOEREN),
     },
   ],
 };

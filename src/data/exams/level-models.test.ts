@@ -179,8 +179,9 @@ describe("النماذج التدريبية — الصوت الصادق", () => 
         byBase.set(base, files);
       }
       for (const [base, used] of byBase) {
-        // مجلد الجذر يخصّ النموذج الأول ويُفحَص في level-audio.test.ts؛ هنا المجلدات الفرعية
-        if (!base.includes("/m2")) continue;
+        // مجلد الجذر يخصّ النموذج الأول ويُفحَص في level-audio.test.ts؛ هنا المجلدات
+        // الفرعية لكل نموذج مرقّم (m2، m3، …) — فلا يبقى ملف يتيم في أي منها
+        if (!/\/m\d+$/.test(base)) continue;
         const dir = path.join(PUBLIC_DIR, base);
         const onDisk = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith(".mp3")) : [];
         for (const file of onDisk) if (!used.has(file)) problems.push(`يتيم: ${base}/${file}`);

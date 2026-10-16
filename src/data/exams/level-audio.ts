@@ -168,19 +168,119 @@ export function model2Files(level: ExamLevel, teil: number): string[] {
  * هذا يجعل الإنتاج التدريجي ممكناً بلا وعود كاذبة: كل جزء إمّا مسجَّل بالكامل
  * أو نطق آلي بالكامل — ولا جزء مسجَّل نصفه.
  */
-export function modelTracks(
+/**
+ * بناء مسارات نموذج مرقّم (2، 3، …) — جسم مشترك بلا تكرار:
+ *   · جزء ضمن `recordedTeile` → ملفاته من الخطة، ونصّ كل مقطع بديلاً آلياً.
+ *   · جزء لم تُنتَج مقاطعه بعد → بلا ملفات، فيقرؤه المشغّل بنطق آلي معلَن.
+ * الإنتاج التدريجي يبقى صادقاً: كل جزء إمّا مسجَّل بالكامل أو آلي بالكامل.
+ */
+function numberedModelTracks(
+  base: string,
   level: ExamLevel,
   parts: ExamHoerenTeil[],
   recordedTeile: number[],
+  filesFor: (level: ExamLevel, teil: number) => string[],
 ): ExamAudioTrack[] {
   return parts.map((part) => {
     const recorded = recordedTeile.includes(part.teil);
     return {
-      base: MODEL2_AUDIO_BASE[level],
-      files: recorded ? model2Files(level, part.teil) : [],
+      base,
+      files: recorded ? filesFor(level, part.teil) : [],
       texts: recorded ? part.audioSegments : undefined,
       fallbackText: part.audioText,
       maxPlays: maxPlaysFor(part),
     };
   });
+}
+
+export function modelTracks(
+  level: ExamLevel,
+  parts: ExamHoerenTeil[],
+  recordedTeile: number[],
+): ExamAudioTrack[] {
+  return numberedModelTracks(MODEL2_AUDIO_BASE[level], level, parts, recordedTeile, model2Files);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   صوت النموذج الثالث — مجلد فرعي `/m3` لكل مستوى
+   نفس قاعدة النموذج الثاني: لا يُشار إلى ملف قبل وجوده، والجزء إمّا مسجَّل
+   بالكامل أو بنطق آلي بالكامل. الخطط أدناه مطابقة لعدد `audioSegments`
+   المُعلَن في بيانات كل مستوى، والحارس يفشل إن اختلف العدد.
+   ═══════════════════════════════════════════════════════════ */
+export const MODEL3_AUDIO_BASE: Record<ExamLevel, string> = {
+  A1: "/audio/exam-a1/m3",
+  A2: "/audio/exam-a2/m3",
+  B1: "/audio/exam-b1/m3",
+};
+
+export const MODEL3_FILE_PLAN: Record<ExamLevel, Record<number, string[]>> = {
+  // 1 · 8 · 1 · 3 = 13 مقطعاً — T2 أربعة حوارات ثنائية، وT4 حوار + إعلانان
+  A1: {
+    1: ["hoeren-t1.mp3"],
+    2: [
+      "hoeren-t2-g1-a.mp3",
+      "hoeren-t2-g1-b.mp3",
+      "hoeren-t2-g2-a.mp3",
+      "hoeren-t2-g2-b.mp3",
+      "hoeren-t2-g3-a.mp3",
+      "hoeren-t2-g3-b.mp3",
+      "hoeren-t2-g4-a.mp3",
+      "hoeren-t2-g4-b.mp3",
+    ],
+    3: ["hoeren-t3.mp3"],
+    4: ["hoeren-t4-a.mp3", "hoeren-t4-b.mp3", "hoeren-t4-c.mp3"],
+  },
+  // 1 · 8 · 2 · 4 = 15 مقطعاً — T3 راديو وهاتف بصوتين، وT4 حوار + إعلان
+  A2: {
+    1: ["hoeren-t1.mp3"],
+    2: [
+      "hoeren-t2-g1-a.mp3",
+      "hoeren-t2-g1-b.mp3",
+      "hoeren-t2-g2-a.mp3",
+      "hoeren-t2-g2-b.mp3",
+      "hoeren-t2-g3-a.mp3",
+      "hoeren-t2-g3-b.mp3",
+      "hoeren-t2-g4-a.mp3",
+      "hoeren-t2-g4-b.mp3",
+    ],
+    3: ["hoeren-t3-a.mp3", "hoeren-t3-b.mp3"],
+    4: ["hoeren-t4-a.mp3", "hoeren-t4-b.mp3", "hoeren-t4-c.mp3", "hoeren-t4-d.mp3"],
+  },
+  // 1 · 8 · 1 · 6 = 16 مقطعاً — T4 مشاورة بستة أدوار متبادلة
+  B1: {
+    1: ["hoeren-t1.mp3"],
+    2: [
+      "hoeren-t2-g1-a.mp3",
+      "hoeren-t2-g1-b.mp3",
+      "hoeren-t2-g2-a.mp3",
+      "hoeren-t2-g2-b.mp3",
+      "hoeren-t2-g3-a.mp3",
+      "hoeren-t2-g3-b.mp3",
+      "hoeren-t2-g4-a.mp3",
+      "hoeren-t2-g4-b.mp3",
+    ],
+    3: ["hoeren-t3.mp3"],
+    4: [
+      "hoeren-t4-a.mp3",
+      "hoeren-t4-b.mp3",
+      "hoeren-t4-c.mp3",
+      "hoeren-t4-d.mp3",
+      "hoeren-t4-e.mp3",
+      "hoeren-t4-f.mp3",
+    ],
+  },
+};
+
+/** ملفات جزء من النموذج الثالث (فارغة إن لم تُخطَّط بعد) */
+export function model3Files(level: ExamLevel, teil: number): string[] {
+  return MODEL3_FILE_PLAN[level][teil] ?? [];
+}
+
+/** مسارات صوت النموذج الثالث (نفس دلالات `modelTracks` بمجلد آخر) */
+export function model3Tracks(
+  level: ExamLevel,
+  parts: ExamHoerenTeil[],
+  recordedTeile: number[],
+): ExamAudioTrack[] {
+  return numberedModelTracks(MODEL3_AUDIO_BASE[level], level, parts, recordedTeile, model3Files);
 }

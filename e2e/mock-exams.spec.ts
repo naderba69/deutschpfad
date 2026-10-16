@@ -160,10 +160,20 @@ test("A1: المسار الكامل حتى شاشة النتيجة ثم إعاد
     break;
   }
 
-  // النتيجة (شاشة النموذج نفسها)
+  // النتيجة (شاشة النموذج نفسها) — الصفّان يحملان اسم المكوّن الألماني أيضاً
   await expect(page.getByRole("heading", {name: "النتيجة"})).toBeVisible({timeout: 15_000});
-  await expect(page.getByText(/الاستماع: \d+ من \d+/)).toBeVisible();
-  await expect(page.getByText(/القراءة: \d+ من \d+/)).toBeVisible();
+  await expect(page.getByText(/الاستماع \(Hören\): \d+ من \d+/)).toBeVisible();
+  await expect(page.getByText(/القراءة \(Lesen\): \d+ من \d+/)).toBeVisible();
+
+  // صدق الشاشة: النقاط الرسمية · قيمة السؤال الدقيقة · حدّ النجاح صريحاً ·
+  // وتحويل تناسبي معلَن لقراءتنا (12 سؤالاً مقابل 15 رسمياً)
+  const official = page.getByTestId("official-summary");
+  await expect(official).toBeVisible();
+  await expect(official).toContainText(/النقاط الرسمية: \d+ من 25/);
+  await expect(official).toContainText("≈ 1.67");
+  await expect(official).toContainText("النجاح الرسمي: 60 من 100");
+  await expect(official).toContainText("مقابل 15 في النموذج الرسمي");
+  await expect(official).toContainText("محاكاة تدريبية لا امتحان رسمي");
 
   // إعادة النموذج تعود للمقدمة
   await page.getByRole("button", {name: "إعادة النموذج"}).click();
