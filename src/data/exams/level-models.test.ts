@@ -230,7 +230,9 @@ describe("النماذج التدريبية — الصوت الصادق", () => 
         if (withFiles === 0) {
           expect(model.audioNoteAr, `${model.id} يجب أن يعلن النطق الآلي`).toContain("نطق آلي");
         } else {
-          expect(model.audioNoteAr, `${model.id} يعلن المقاطع المسجّلة`).toContain("مسجّلة");
+          // الصيغتان مقبولتان: «مقطع مسجّل» للمفرد و«مقاطع مسجّلة» للجمع —
+          // الشرط إعلان حالة التسجيل صراحةً، لا صيغة اللفظ
+          expect(model.audioNoteAr, `${model.id} يعلن المقاطع المسجّلة`).toMatch(/مسجّلة|مسجّل/);
           // نموذج جزئي التسجيل لا يجوز أن يمرّ بلا إعلان الجزء الآلي
           if (withFiles < model.audio.length) {
             expect(model.audioNoteAr, `${model.id} جزئي التسجيل فعليه إعلان النطق الآلي`).toContain("نطق آلي");

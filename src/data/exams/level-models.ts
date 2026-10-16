@@ -68,16 +68,6 @@ export interface ExamModel {
   audio: ExamAudioTrack[];
 }
 
-/** مقاطع بنطق آلي فقط (لا ملفات مُنتَجة بعد) — النص نفسه ينطقه المشغّل */
-function ttsTracks(base: string, parts: ExamHoerenTeil[]): ExamAudioTrack[] {
-  return parts.map((part) => ({
-    base,
-    files: [],
-    fallbackText: part.audioText,
-    maxPlays: part.allowRepeat ? 2 : 1,
-  }));
-}
-
 /** النموذج الأول لكل مستوى — صوته مسجّل (LEVEL_AUDIO) */
 function recordedModel(
   level: ExamLevel,
@@ -172,16 +162,16 @@ export const LEVEL_MODELS: Record<ExamLevel, ExamModel[]> = {
     },
     {
       id: "B1-3",
-      label: "النموذج 3 (نطق آلي)",
-      // الحالة الحقيقية: لا مقاطع مسجّلة لهذا النموذج بعد — والمشغّل ينطق نصّه
-      // آلياً ويعلن ذلك؛ الحارس يفشل إن اختفى إعلان النطق الآلي من هذه الجملة
+      label: "النموذج 3 (مسجّل جزئياً)",
+      // الحالة الحقيقية: الجزء 1 مسجّل بمقطع واحد، والبقية بنطق آلي معلَن —
+      // والحارس يفشل إن اختفى إعلان النطق الآلي أو نقص ملف مُشار إليه
       audioNoteAr:
-        "نطق آلي من نصّ النموذج نفسه (لا تسجيلات بشرية بعد) — والجزآن 1 و3 يُشغَّلان مرتين.",
+        "الجزء 1 مسجّل بمقطع واحد (4 إعلانات)، والجزآن 2 و3 و4 بنطق آلي — والجزآن 1 و3 يُشغَّلان مرتين.",
       hoeren: balanceTeile(B1_MODEL3_HOEREN),
       lesen: balanceTeile(B1_MODEL3_LESEN),
       schreiben: B1_MODEL3_SCHREIBEN,
       sprechen: B1_MODEL3_SPRECHEN,
-      audio: ttsTracks("/audio/exam-b1/m3", B1_MODEL3_HOEREN),
+      audio: model3Tracks("B1", B1_MODEL3_HOEREN, [1]),
     },
   ],
 };

@@ -90,10 +90,14 @@ export const B1_MODEL3_HOEREN: ExamHoerenTeil[] = [
       "Frau Reuter: Wir haben im letzten Jahr dreihundert Freiwillige vermittelt, vor allem in der Kinderbetreuung und in der Pflege. " +
       "Am häufigsten scheitern Einsätze nicht am Engagement, sondern an der Zeit: Viele können nur am Wochenende helfen. " +
       "Deshalb bieten wir seit diesem Jahr auch kurze Einsätze von drei Stunden an. " +
-      "Moderatorin: Und was wünschen Sie sich für die Zukunft?" +
+      "Moderatorin: Und was wünschen Sie sich für die Zukunft? " +
       "Frau Reuter: Wir möchten mehr junge Leute gewinnen. An den Schulen fehlt oft die Information, nicht das Interesse.",
+    // أربعة أدوار متبادلة (مذيعة/خبيرة) — وسم المتحدث يبقى في النص المعروض ولا يُنطق
     audioSegments: [
-      "Moderatorin: Freiwilligenarbeit ist in vielen Städten gefragt. Frau Reuter koordiniert die Einsätze in unserer Region. Frau Reuter: Wir haben im letzten Jahr dreihundert Freiwillige vermittelt, vor allem in der Kinderbetreuung und in der Pflege. Am häufigsten scheitern Einsätze nicht am Engagement, sondern an der Zeit: Viele können nur am Wochenende helfen. Deshalb bieten wir seit diesem Jahr auch kurze Einsätze von drei Stunden an. Moderatorin: Und was wünschen Sie sich für die Zukunft? Frau Reuter: Wir möchten mehr junge Leute gewinnen. An den Schulen fehlt oft die Information, nicht das Interesse.",
+      "Freiwilligenarbeit ist in vielen Städten gefragt. Frau Reuter koordiniert die Einsätze in unserer Region.",
+      "Wir haben im letzten Jahr dreihundert Freiwillige vermittelt, vor allem in der Kinderbetreuung und in der Pflege. Am häufigsten scheitern Einsätze nicht am Engagement, sondern an der Zeit: Viele können nur am Wochenende helfen. Deshalb bieten wir seit diesem Jahr auch kurze Einsätze von drei Stunden an.",
+      "Und was wünschen Sie sich für die Zukunft?",
+      "Wir möchten mehr junge Leute gewinnen. An den Schulen fehlt oft die Information, nicht das Interesse.",
     ],
     questions: [
       { id: "m3h3-q1", q: "In welchen Bereichen wurden die meisten Freiwilligen vermittelt?", qAr: "في أي مجالين جرى توظيف أغلب المتطوعين؟", options: ["Kinderbetreuung und Pflege", "Gartenarbeit und Bau", "Sport und Musik"], correct: 0, whyAr: "قيل: vor allem in der Kinderbetreuung und in der Pflege." },
