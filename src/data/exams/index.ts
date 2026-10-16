@@ -7,6 +7,7 @@
  *  النجاح: ≥ 60 من 100 في كل مكوّن على حدة.
  * ═══════════════════════════════════════════════════════════
  */
+import { balanceTeile } from "@/lib/tests/balance-options";
 import type { GoetheB2Exam } from "@/types/exam";
 import { B2_LESEN } from "@/data/exams/b2-lesen";
 import { B2_LESEN_B } from "@/data/exams/b2-lesen-b";
@@ -18,11 +19,18 @@ import { B2_SCHREIBEN } from "@/data/exams/b2-schreiben";
 import { B2_SPRECHEN } from "@/data/exams/b2-sprechen";
 import { B2_GRAMMATIK } from "@/data/exams/b2-grammatik";
 
-/** ثلاث مجموعات كاملة للقراءة (30 سؤالاً لكل مجموعة) */
-export const B2_LESEN_SETS = [B2_LESEN, B2_LESEN_B, B2_LESEN_C];
+/**
+ * ثلاث مجموعات كاملة للقراءة (30 سؤالاً لكل مجموعة)
+ * موازنة موضع الإجابة الصحيحة تطبَّق هنا مرة واحدة على كل مجموعة —
+ * قياس 2026-10-16: كانت 59% من الإجابات في الخيار الثاني، ومجموعتان
+ * كاملتان إجاباتهما «B» في الجزء الخامس. الكائن المفرد يقرأ من المجموعة
+ * الأولى الموازَنة حتى لا يختلف مسار `/tests/b2` عن مسار المجموعات.
+ */
+const BALANCED_LESEN_SETS = [B2_LESEN, B2_LESEN_B, B2_LESEN_C].map((set) => balanceTeile(set));
+const BALANCED_HOEREN_SETS = [B2_HOEREN, B2_HOEREN_B, B2_HOEREN_C].map((set) => balanceTeile(set));
 
-/** ثلاث مجموعات كاملة للاستماع (30 سؤالاً لكل مجموعة) */
-export const B2_HOEREN_SETS = [B2_HOEREN, B2_HOEREN_B, B2_HOEREN_C];
+export const B2_LESEN_SETS = BALANCED_LESEN_SETS;
+export const B2_HOEREN_SETS = BALANCED_HOEREN_SETS;
 
 export const GOETHE_B2_EXAM: GoetheB2Exam = {
   id: "goethe-b2",
@@ -32,8 +40,8 @@ export const GOETHE_B2_EXAM: GoetheB2Exam = {
   hoerenMinutes: 40,
   schreibenMinutes: 75,
   sprechenMinutes: 15,
-  lesen: B2_LESEN,
-  hoeren: B2_HOEREN,
+  lesen: BALANCED_LESEN_SETS[0],
+  hoeren: BALANCED_HOEREN_SETS[0],
   schreiben: B2_SCHREIBEN,
   sprechen: B2_SPRECHEN,
   passThreshold: 60,

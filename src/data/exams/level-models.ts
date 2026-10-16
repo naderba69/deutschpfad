@@ -32,6 +32,7 @@ import { B1_MODEL2_LESEN } from "@/data/exams/b1-model2-lesen";
 import { B1_MODEL2_SCHREIBEN } from "@/data/exams/b1-model2-schreiben";
 import { B1_MODEL2_SPRECHEN } from "@/data/exams/b1-model2-sprechen";
 import { LEVEL_AUDIO, LEVEL_EXAM_DATA, type ExamLevel } from "@/data/exams/level-audio";
+import { balanceTeile } from "@/lib/tests/balance-options";
 import type { ExamAudioTrack } from "@/lib/tests/exam-audio";
 import type { ExamHoerenTeil, ExamLesenTeil, ExamSchreibaufgabe } from "@/types/exam";
 
@@ -76,6 +77,9 @@ function recordedModel(
     audioNoteAr: "مقاطع الاستماع مسجّلة صوتياً، والجزآن 1 و3 يُشغَّلان مرتين.",
     speakingAudioBase: `/audio/speaking-${level.toLowerCase()}`,
     ...parts,
+    // موازنة موضع الإجابة الصحيحة (تدقيق 2026-10-16: 59% منها في الخيار الثاني)
+    hoeren: balanceTeile(parts.hoeren),
+    lesen: balanceTeile(parts.lesen),
     audio: LEVEL_AUDIO[level],
   };
 }
@@ -87,8 +91,8 @@ export const LEVEL_MODELS: Record<ExamLevel, ExamModel[]> = {
       id: "A1-2",
       label: "النموذج 2 (نطق آلي)",
       audioNoteAr: "مقاطع هذا النموذج غير مسجّلة بعد — يُقرأ نصّ الاستماع بنطق آلي معلَن، والجزآن 1 و3 مرتين.",
-      hoeren: A1_MODEL2_HOEREN,
-      lesen: A1_MODEL2_LESEN,
+      hoeren: balanceTeile(A1_MODEL2_HOEREN),
+      lesen: balanceTeile(A1_MODEL2_LESEN),
       schreiben: A1_MODEL2_SCHREIBEN,
       sprechen: A1_MODEL2_SPRECHEN,
       audio: ttsTracks("/audio/exam-a1", A1_MODEL2_HOEREN),
@@ -100,8 +104,8 @@ export const LEVEL_MODELS: Record<ExamLevel, ExamModel[]> = {
       id: "A2-2",
       label: "النموذج 2 (نطق آلي)",
       audioNoteAr: "مقاطع هذا النموذج غير مسجّلة بعد — يُقرأ نصّ الاستماع بنطق آلي معلَن، والجزآن 1 و3 مرتين.",
-      hoeren: A2_MODEL2_HOEREN,
-      lesen: A2_MODEL2_LESEN,
+      hoeren: balanceTeile(A2_MODEL2_HOEREN),
+      lesen: balanceTeile(A2_MODEL2_LESEN),
       schreiben: A2_MODEL2_SCHREIBEN,
       sprechen: A2_MODEL2_SPRECHEN,
       audio: ttsTracks("/audio/exam-a2", A2_MODEL2_HOEREN),
@@ -113,8 +117,8 @@ export const LEVEL_MODELS: Record<ExamLevel, ExamModel[]> = {
       id: "B1-2",
       label: "النموذج 2 (نطق آلي)",
       audioNoteAr: "مقاطع هذا النموذج غير مسجّلة بعد — يُقرأ نصّ الاستماع بنطق آلي معلَن، والجزآن 1 و3 مرتين.",
-      hoeren: B1_MODEL2_HOEREN,
-      lesen: B1_MODEL2_LESEN,
+      hoeren: balanceTeile(B1_MODEL2_HOEREN),
+      lesen: balanceTeile(B1_MODEL2_LESEN),
       schreiben: B1_MODEL2_SCHREIBEN,
       sprechen: B1_MODEL2_SPRECHEN,
       audio: ttsTracks("/audio/exam-b1", B1_MODEL2_HOEREN),

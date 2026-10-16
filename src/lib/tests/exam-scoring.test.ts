@@ -15,7 +15,7 @@ import { describe, expect, it } from "vitest";
 
 import { gradeTeil, gradeTeile, percent, scoreModule } from "@/lib/tests/exam-scoring";
 import type { ExamHoerenTeil, ExamLesenTeil } from "@/types/exam";
-import { B2_HOEREN, B2_HOEREN_SETS } from "@/data/exams";
+import { B2_HOEREN_SETS, GOETHE_B2_EXAM } from "@/data/exams";
 import { A1_HOEREN } from "@/data/exams/a1-hoeren";
 import { A1_LESEN } from "@/data/exams/a1-lesen";
 
@@ -144,7 +144,9 @@ describe("التصحيح الموحّد — كل نوع جزء", () => {
       for (const q of t.questions ?? []) perfect[q.id] = q.correct;
       for (const i of t.items ?? []) perfect[i.id] = i.categoryId;
     }
-    const g = gradeTeile(B2_HOEREN, perfect);
+    // الكائن المفرد يقرأ من المجموعة الأولى بعينها (بعد موازنة موضع الإجابة)
+    expect(GOETHE_B2_EXAM.hoeren).toBe(B2_HOEREN_SETS[0]);
+    const g = gradeTeile(GOETHE_B2_EXAM.hoeren, perfect);
     expect(g.total).toBe(30);
     expect(g.correct).toBe(30);
     expect(scoreModule(g.correct, g.total, 60).passed).toBe(true);
