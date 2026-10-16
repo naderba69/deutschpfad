@@ -84,6 +84,13 @@ export interface ExamHoerenTeil {
   kind: "rf" | "mcq" | "zuordnung";
   /** نص يُقرأ صوتياً (TTS) */
   audioText: string;
+  /**
+   * مقاطع الملفات المسجّلة بالترتيب (واحد لكل ملف في مسار صوت الجزء) — النص
+   * **المنطوق** في المقطع بلا وسوم المتحدثين (Frau/Mann/Ansage). تُعلَن قبل
+   * توليد الملفات لتكون خطة الإنتاج موثّقة في البيانات نفسها، ويحرس الاختبار
+   * أن كلمات كل مقطع واردة في `audioText` وبالترتيب (فلا يخالف التسجيل النصّ).
+   */
+  audioSegments?: string[];
   audioAr?: string;
   /** Richtig/Falsch (Teil 1) */
   statements?: ExamStatement[];

@@ -31,7 +31,7 @@ import { B1_MODEL2_HOEREN } from "@/data/exams/b1-model2-hoeren";
 import { B1_MODEL2_LESEN } from "@/data/exams/b1-model2-lesen";
 import { B1_MODEL2_SCHREIBEN } from "@/data/exams/b1-model2-schreiben";
 import { B1_MODEL2_SPRECHEN } from "@/data/exams/b1-model2-sprechen";
-import { LEVEL_AUDIO, LEVEL_EXAM_DATA, type ExamLevel } from "@/data/exams/level-audio";
+import { LEVEL_AUDIO, LEVEL_EXAM_DATA, modelTracks, type ExamLevel } from "@/data/exams/level-audio";
 import { balanceTeile } from "@/lib/tests/balance-options";
 import type { ExamAudioTrack } from "@/lib/tests/exam-audio";
 import type { ExamHoerenTeil, ExamLesenTeil, ExamSchreibaufgabe } from "@/types/exam";
@@ -89,13 +89,16 @@ export const LEVEL_MODELS: Record<ExamLevel, ExamModel[]> = {
     recordedModel("A1", { hoeren: A1_HOEREN, lesen: A1_LESEN, schreiben: A1_SCHREIBEN, sprechen: A1_SPRECHEN }),
     {
       id: "A1-2",
-      label: "النموذج 2 (نطق آلي)",
-      audioNoteAr: "مقاطع هذا النموذج غير مسجّلة بعد — يُقرأ نصّ الاستماع بنطق آلي معلَن، والجزآن 1 و3 مرتين.",
+      label: "النموذج 2 (صوت جديد)",
+      // الحالة الحقيقية لحظة العرض: ثلاثة أجزاء مسجّلة بصوتين والرابع آلي —
+      // تُحدَّث هذه الجملة في الدفعة التي تُنتَج فيها مقاطع الجزء 2
+      audioNoteAr:
+        "مقاطع الأجزاء 1 و3 و4 مسجّلة بصوتين (رجل وامرأة)، والجزء 2 يُقرأ بنطق آلي إلى أن تُنتَج مقاطعه.",
       hoeren: balanceTeile(A1_MODEL2_HOEREN),
       lesen: balanceTeile(A1_MODEL2_LESEN),
       schreiben: A1_MODEL2_SCHREIBEN,
       sprechen: A1_MODEL2_SPRECHEN,
-      audio: ttsTracks("/audio/exam-a1", A1_MODEL2_HOEREN),
+      audio: modelTracks("A1", A1_MODEL2_HOEREN, [1, 3, 4]),
     },
   ],
   A2: [

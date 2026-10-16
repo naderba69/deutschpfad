@@ -153,19 +153,41 @@ describe("النماذج التدريبية — الصوت الصادق", () => 
     }
   });
 
-  it("كل ملف صوت مُشار إليه موجود على القرص", () => {
+  it("كل ملف صوت مُشار إليه موجود على القرص وبحجم غير صفري", () => {
     const missing: string[] = [];
     for (const level of LEVELS) {
       for (const model of LEVEL_MODELS[level]) {
         for (const track of model.audio) {
           for (const file of track.files) {
             const full = path.join(PUBLIC_DIR, track.base, file);
-            if (!fs.existsSync(full)) missing.push(`${model.id} → ${track.base}/${file}`);
+            if (!fs.existsSync(full) || fs.statSync(full).size < 2000) missing.push(`${model.id} → ${track.base}/${file}`);
           }
         }
       }
     }
     expect(missing).toEqual([]);
+  });
+
+  it("لا ملف صوتي في مجلدات النماذج الثانية خارج المُشار إليه (ولا ملف مفقود)", () => {
+    const problems: string[] = [];
+    for (const level of LEVELS) {
+      const byBase = new Map<string, Set<string>>();
+      for (const model of LEVEL_MODELS[level]) {
+        const base = model.audio[0].base;
+        const files = byBase.get(base) ?? new Set<string>();
+        for (const track of model.audio) for (const file of track.files) files.add(file);
+        byBase.set(base, files);
+      }
+      for (const [base, used] of byBase) {
+        // مجلد الجذر يخصّ النموذج الأول ويُفحَص في level-audio.test.ts؛ هنا المجلدات الفرعية
+        if (!base.includes("/m2")) continue;
+        const dir = path.join(PUBLIC_DIR, base);
+        const onDisk = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith(".mp3")) : [];
+        for (const file of onDisk) if (!used.has(file)) problems.push(`يتيم: ${base}/${file}`);
+        for (const file of used) if (!onDisk.includes(file)) problems.push(`مفقود: ${base}/${file}`);
+      }
+    }
+    expect(problems).toEqual([]);
   });
 
   it("تسجيلات التحدث تُستخدم فقط لجولاتها المسجّلة (لا نموذج يسمع نصّ غيره)", () => {
@@ -190,16 +212,87 @@ describe("النماذج التدريبية — الصوت الصادق", () => 
     }
   });
 
-  it("نموذج بلا مقاطع مسجّلة يُعلن النطق الآلي في نصّه المعروض", () => {
+  it("النصّ المعروض يعلن حالة الصوت الحقيقية (مُسجَّل · آلي · أو الاثنان معاً)", () => {
     for (const level of LEVELS) {
       for (const model of LEVEL_MODELS[level]) {
-        const hasFiles = model.audio.some((t) => t.files.length > 0);
-        if (!hasFiles) {
+        const withFiles = model.audio.filter((t) => t.files.length > 0).length;
+        if (withFiles === 0) {
           expect(model.audioNoteAr, `${model.id} يجب أن يعلن النطق الآلي`).toContain("نطق آلي");
         } else {
           expect(model.audioNoteAr, `${model.id} يعلن المقاطع المسجّلة`).toContain("مسجّلة");
+          // نموذج جزئي التسجيل لا يجوز أن يمرّ بلا إعلان الجزء الآلي
+          if (withFiles < model.audio.length) {
+            expect(model.audioNoteAr, `${model.id} جزئي التسجيل فعليه إعلان النطق الآلي`).toContain("نطق آلي");
+          }
         }
       }
+    }
+  });
+
+  it("كل جزء مسجَّل: نصّ لكل ملف (عددها واحد) وصيغة المقاطع مألوفة", () => {
+    const problems: string[] = [];
+    for (const level of LEVELS) {
+      for (const model of LEVEL_MODELS[level]) {
+        model.hoeren.forEach((part, i) => {
+          const track = model.audio[i];
+          if (track.files.length === 0) {
+            if (track.texts && track.texts.length > 0) problems.push(`${model.id} جزء ${part.teil}: مقاطع نصّية بلا ملفات`);
+            return;
+          }
+          // التصريح بالمقاطع (`audioSegments`) هو الشرط: من صرّح بها يجب أن تطابق
+          // ملفاته عدداً ونصّاً؛ والنموذج الأول لم يعلن تقسيمه النصّي أصلاً
+          // (يجمع البديل الآلي نصّ الجزء كاملاً) فيُترك على حاله بلا إنكار.
+          if (part.audioSegments) {
+            if (part.audioSegments.length !== track.files.length) {
+              problems.push(`${model.id} جزء ${part.teil}: ${track.files.length} ملفاً مقابل ${part.audioSegments.length} نصّ مقطع`);
+            }
+            if (!track.texts || track.texts.join("\u0001") !== part.audioSegments.join("\u0001")) {
+              problems.push(`${model.id} جزء ${part.teil}: البديل الآلي لكل ملف لا يطابق المقاطع المُعلَنة`);
+            }
+          }
+        });
+      }
+    }
+    expect(problems).toEqual([]);
+  });
+
+  /** تطبيع للمقارنة: حروف صغيرة، ووسوم المتحدثين وعلامات الترقيم لا تُحتسب */
+  const normalize = (text: string) =>
+    text
+      .toLowerCase()
+      .replace(/[^\p{L}\p{N}ß\s]/gu, " ")
+      .split(/\s+/)
+      .filter(Boolean);
+
+  it("كلمات كل مقطع مأخوذة من نصّ الجزء نفسه وبالترتيب (لا تسجيل يخالف النصّ)", () => {
+    const problems: string[] = [];
+    for (const level of LEVELS) {
+      for (const model of LEVEL_MODELS[level]) {
+        for (const part of model.hoeren) {
+          if (!part.audioSegments) continue;
+          const full = normalize(part.audioText);
+          let cursor = 0;
+          for (const segment of part.audioSegments) {
+            const words = normalize(segment);
+            const start = full.indexOf(words[0], cursor);
+            if (start === -1) { problems.push(`${model.id} جزء ${part.teil}: «${words[0]}» ليست في النص`); break; }
+            const slice = full.slice(start, start + words.length).join(" ");
+            if (slice !== words.join(" ")) problems.push(`${model.id} جزء ${part.teil}: مقطع مختلف عن النص: «${segment.slice(0, 40)}…»`);
+            cursor = start + words.length;
+          }
+        }
+      }
+    }
+    expect(problems).toEqual([]);
+  });
+
+  it("لا نموذجان يشغّلان ملفات مسجّلة من مجلد واحد (لا يُسمع صوت نموذج في غيره)", () => {
+    for (const level of LEVELS) {
+      // الحارس على من **يشغّل ملفات** فعلاً: النموذج الذي لا ملفات له يقرأ بنطق
+      // آلي فلا يهمّ مجلده المحتمل — ويهمّ ألا تتقاسم نماذج مسجّلة مجلداً واحداً.
+      const playing = LEVEL_MODELS[level].filter((m) => m.audio.some((t) => t.files.length > 0));
+      const bases = playing.map((m) => m.audio[0].base);
+      expect(new Set(bases).size, `${level}: ${playing.map((m) => m.id).join(" · ")} → ${bases.join(" · ")}`).toBe(bases.length);
     }
   });
 });

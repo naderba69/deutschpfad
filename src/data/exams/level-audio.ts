@@ -71,3 +71,61 @@ export const LEVEL_EXAM_DATA: Record<ExamLevel, ExamHoerenTeil[]> = {
   A2: A2_HOEREN,
   B1: B1_HOEREN,
 };
+
+/* ═══════════════════════════════════════════════════════════
+   صوت النموذج الثاني — مجلد فرعي لكل مستوى
+   النموذج الأول في جذر المجلد (`/audio/exam-a1`)، والنموذج الثاني في
+   `/audio/exam-a1/m2`. التقسيم يتبع **بنية الحوار في النص** لا بنية النموذج
+   الأول: الجزء 2 فيه حوارات متبادلة (Frau/Mann) فيحتاج مقطعاً لكل جملة كي
+   يسمع المتعلم صوتين مختلفين، والجزء 4 حوار + إعلان.
+   ═══════════════════════════════════════════════════════════ */
+
+/** مجلد مقاطع النموذج الثاني لكل مستوى */
+export const MODEL2_AUDIO_BASE: Record<ExamLevel, string> = {
+  A1: "/audio/exam-a1/m2",
+  A2: "/audio/exam-a2/m2",
+  B1: "/audio/exam-b1/m2",
+};
+
+/** ملفات النموذج الثاني بالبنية المُنتَجة: 1 · 9 · 1 · 3 = 14 مقطعاً لكل مستوى */
+export const MODEL2_AUDIO_FILES: Record<number, string[]> = {
+  1: ["hoeren-t1.mp3"],
+  2: [
+    "hoeren-t2-g1-a.mp3",
+    "hoeren-t2-g1-b.mp3",
+    "hoeren-t2-g1-c.mp3",
+    "hoeren-t2-g2-a.mp3",
+    "hoeren-t2-g2-b.mp3",
+    "hoeren-t2-g3-a.mp3",
+    "hoeren-t2-g3-b.mp3",
+    "hoeren-t2-g4-a.mp3",
+    "hoeren-t2-g4-b.mp3",
+  ],
+  3: ["hoeren-t3.mp3"],
+  4: ["hoeren-t4-a.mp3", "hoeren-t4-b.mp3", "hoeren-t4-c.mp3"],
+};
+
+/**
+ * مسارات استماع نموذج تُنتَج مقاطعه جزءاً جزءاً:
+ *   · جزء ضمن `recordedTeile` → ملفاته المسجّلة، ونصّ كل مقطع بديلاً آلياً
+ *     مطابقاً له إن فشل تحميله (لا يُقرأ نصّ الجزء كاملاً في محلّ مقطع واحد).
+ *   · جزء لم تُنتَج مقاطعه بعد → بلا ملفات، فيقرؤه المشغّل بنطق آلي معلَن.
+ * هذا يجعل الإنتاج التدريجي ممكناً بلا وعود كاذبة: كل جزء إمّا مسجَّل بالكامل
+ * أو نطق آلي بالكامل — ولا جزء مسجَّل نصفه.
+ */
+export function modelTracks(
+  level: ExamLevel,
+  parts: ExamHoerenTeil[],
+  recordedTeile: number[],
+): ExamAudioTrack[] {
+  return parts.map((part) => {
+    const recorded = recordedTeile.includes(part.teil);
+    return {
+      base: MODEL2_AUDIO_BASE[level],
+      files: recorded ? (MODEL2_AUDIO_FILES[part.teil] ?? []) : [],
+      texts: recorded ? part.audioSegments : undefined,
+      fallbackText: part.audioText,
+      maxPlays: maxPlaysFor(part),
+    };
+  });
+}

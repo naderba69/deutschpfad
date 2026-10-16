@@ -25,6 +25,12 @@ export const A1_MODEL2_HOEREN: ExamHoerenTeil[] = [
       "Ansage 2: Die Bibliothek ist am Mittwoch geschlossen. Am Donnerstag ist sie wieder offen. " +
       "Ansage 3: Frau Klein bittet alle Patienten, im Wartezimmer zu warten. " +
       "Ansage 4: Die Bäckerei in der Marktstraße ist am Samstag bis sechzehn Uhr offen.",
+    audioSegments: [
+      "Ansage 1: Der Zug nach Hamburg fährt heute um acht Uhr von Gleis vier. " +
+        "Ansage 2: Die Bibliothek ist am Mittwoch geschlossen. Am Donnerstag ist sie wieder offen. " +
+        "Ansage 3: Frau Klein bittet alle Patienten, im Wartezimmer zu warten. " +
+        "Ansage 4: Die Bäckerei in der Marktstraße ist am Samstag bis sechzehn Uhr offen.",
+    ],
     statements: [
       { id: "m2h1-s1", de: "Der Zug fährt um acht Uhr.", ar: "القطار ينطلق الساعة الثامنة.", isTrue: true, whyAr: "قيل: fährt heute um acht Uhr." },
       { id: "m2h1-s2", de: "Die Bibliothek ist am Donnerstag geschlossen.", ar: "المكتبة مغلقة يوم الخميس.", isTrue: false, whyAr: "المغلقة يوم الأربعاء، والخميس تعود للعمل." },
@@ -47,6 +53,17 @@ export const A1_MODEL2_HOEREN: ExamHoerenTeil[] = [
       "Gespräch 2. Mann: Wann öffnet die Apotheke? Frau: Um neun Uhr. Vorher ist sie zu. " +
       "Gespräch 3. Frau: Hast du am Freitag Zeit? Mann: Am Freitag arbeite ich. Am Samstag ist besser. " +
       "Gespräch 4. Mann: Wie viel kostet das Brot? Frau: Zwei Euro fünfzig.",
+    audioSegments: [
+      "Guten Tag, ich möchte eine Fahrkarte nach Bonn.",
+      "Einfach oder hin und zurück?",
+      "Nur einfach, bitte.",
+      "Wann öffnet die Apotheke?",
+      "Um neun Uhr. Vorher ist sie zu.",
+      "Hast du am Freitag Zeit?",
+      "Am Freitag arbeite ich. Am Samstag ist besser.",
+      "Wie viel kostet das Brot?",
+      "Zwei Euro fünfzig.",
+    ],
     questions: [
       { id: "m2h2-q1", q: "Was möchte die Frau?", qAr: "ماذا تريد المرأة؟", options: ["Eine Fahrkarte nach Bonn", "Eine Fahrkarte nach Berlin", "Ein Buch"], correct: 0, whyAr: "قالت: ich möchte eine Fahrkarte nach Bonn." },
       { id: "m2h2-q2", q: "Wann öffnet die Apotheke?", qAr: "متى تفتح الصيدلية؟", options: ["Um sieben Uhr", "Um neun Uhr", "Um elf Uhr"], correct: 1, whyAr: "قالت: Um neun Uhr." },
@@ -69,6 +86,11 @@ export const A1_MODEL2_HOEREN: ExamHoerenTeil[] = [
       "Guten Tag, hier ist die Praxis Doktor Berger. Ihr Termin am Dienstag um neun Uhr muss leider verschoben werden. " +
       "Der neue Termin ist am Donnerstag um elf Uhr. Bitte bringen Sie Ihre Versichertenkarte mit. " +
       "Wenn Sie nicht kommen können, rufen Sie uns bitte bis Montag an. Vielen Dank.",
+    audioSegments: [
+      "Guten Tag, hier ist die Praxis Doktor Berger. Ihr Termin am Dienstag um neun Uhr muss leider verschoben werden. " +
+        "Der neue Termin ist am Donnerstag um elf Uhr. Bitte bringen Sie Ihre Versichertenkarte mit. " +
+        "Wenn Sie nicht kommen können, rufen Sie uns bitte bis Montag an. Vielen Dank.",
+    ],
     questions: [
       { id: "m2h3-q1", q: "Warum ruft die Praxis an?", qAr: "لماذا تتصل العيادة؟", options: ["Um den Termin zu verschieben", "Um die Rechnung zu schicken", "Um die Öffnungszeiten zu erklären"], correct: 0, whyAr: "قيل: Ihr Termin muss leider verschoben werden." },
       { id: "m2h3-q2", q: "Wann ist der neue Termin?", qAr: "متى الموعد الجديد؟", options: ["Dienstag um neun Uhr", "Donnerstag um elf Uhr", "Montag um neun Uhr"], correct: 1, whyAr: "قيل: Der neue Termin ist am Donnerstag um elf Uhr." },
@@ -91,6 +113,12 @@ export const A1_MODEL2_HOEREN: ExamHoerenTeil[] = [
       "Ich arbeite nur von Montag bis Freitag. Am Wochenende lerne ich Deutsch. " +
       "Ansage. Liebe Fahrgäste, der Bus Nummer drei fährt heute nicht. Bitte nehmen Sie den Bus Nummer sieben. " +
       "Er hält an der gleichen Haltestelle.",
+    audioSegments: [
+      "Hallo Nabil, arbeitest du am Samstag im Café?",
+      "Nein, am Samstag arbeite ich nicht. Ich arbeite nur von Montag bis Freitag. Am Wochenende lerne ich Deutsch.",
+      "Liebe Fahrgäste, der Bus Nummer drei fährt heute nicht. Bitte nehmen Sie den Bus Nummer sieben. " +
+        "Er hält an der gleichen Haltestelle.",
+    ],
     questions: [
       { id: "m2h4-q1", q: "Wann arbeitet Nabil im Café?", qAr: "متى يعمل نبيل في المقهى؟", options: ["Von Montag bis Freitag", "Am Samstag", "Am Sonntag"], correct: 0, whyAr: "قال: Ich arbeite nur von Montag bis Freitag." },
       { id: "m2h4-q2", q: "Was macht Nabil am Wochenende?", qAr: "ماذا يفعل نبيل في عطلة نهاية الأسبوع؟", options: ["Er arbeitet im Café", "Er lernt Deutsch", "Er fährt nach Bonn"], correct: 1, whyAr: "قال: Am Wochenende lerne ich Deutsch." },
