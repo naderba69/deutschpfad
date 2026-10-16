@@ -48,7 +48,7 @@ export const B1_MODEL3_SPRECHEN: A1SpeakingPart[] = [
       {
         partnerDe: "Welche Möglichkeit würden Sie wählen und warum?",
         partnerAr: "أي خيار تختار ولماذا؟",
-        modelDe: "Ich würde die Intensivdose in Berlin wählen — die Intensivkurse dort dauern vier Wochen und ich lerne am schnellsten, wenn ich ständig Deutsch höre.",
+        modelDe: "Ich würde den Intensivkurs in Berlin wählen — er dauert vier Wochen und ich lerne am schnellsten, wenn ich ständig Deutsch höre.",
         modelAr: "سأختار الدورة المكثفة في برلين — مدتها أربعة أسابيع وأتعلّم أسرع حين أسمع الألمانية باستمرار.",
       },
       {

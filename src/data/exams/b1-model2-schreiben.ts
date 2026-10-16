@@ -18,7 +18,7 @@ export const B1_MODEL2_SCHREIBEN: ExamSchreibaufgabe[] = [
       "Sie haben einen Online-Deutschkurs gebucht, aber die Tonqualität ist bei den Live-Stunden schlecht, und die Aufnahmen werden nicht hochgeladen. " +
       "Schreiben Sie eine E-Mail an die Sprachschule Lingua: Beschreiben Sie das Problem, sagen Sie, was Sie erwarten, und fragen Sie nach einer Lösung oder Rückerstattung.",
     aufgabeAr:
-      "حجزت دورة ألمانية عبر الإنترنت، لكن جودة الصوت في الحصص المباشرة سيئة، والتسجيلات لا تُرفع. " +
+      "حجزت دورة ألمانية عبر الإنترنت، لكن جودة الصوت في الحصص المباشرة سيئة، والتسجيلات لا تُرفع." +
       "اكتب بريداً إلكترونياً إلى مدرسة اللغات «لينغوا»: صف المشكلة، واذكر ما تتوقعه، واسأل عن حل أو إعادة المبلغ.",
     minWords: 80,
     requires: [

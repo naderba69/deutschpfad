@@ -26,7 +26,7 @@ export const A1_HOEREN: ExamHoerenTeil[] = [
       "Ansage 4: Der Supermarkt in der Hauptstraße hat am Sonntag geöffnet.",
     statements: [
       { id: "h1-s1", de: "Der Bus fährt um zehn Uhr.", ar: "الحافلة تنطلق الساعة العاشرة.", isTrue: true, whyAr: "قيل: fährt um zehn Uhr." },
-      { id: "h1-s2", de: "Das Schwimmbad ist am Dienstag geschlossen.", ar: "المسبح مغلق يوم الثلاثاء.", isTrue: false, whyAr: "قيل إن المسبح مغلق يوم الاثنين، ويفتح يوم الثلاثاء." },
+      { id: "h1-s2", de: "Das Schwimmbad ist am Dienstag geschlossen.", ar: "المسبح مغلق يوم الثلاثاء.", isTrue: false, whyAr: "قيل: Das Schwimmbad ist am Montag geschlossen، ويفتح يوم الثلاثاء." },
       { id: "h1-s3", de: "Herr Müller bittet die Kunden zu warten.", ar: "السيد مولر يطلب من الزبائن الانتظار.", isTrue: true, whyAr: "قيل: bittet alle Kunden, an der Kasse zu warten." },
       { id: "h1-s4", de: "Der Supermarkt ist am Sonntag geöffnet.", ar: "السوبرماركت مفتوح يوم الأحد.", isTrue: true, whyAr: "قيل: hat am Sonntag geöffnet." },
     ],
@@ -53,7 +53,7 @@ export const A1_HOEREN: ExamHoerenTeil[] = [
         qAr: "إلى أين تذهب المرأة؟",
         options: ["Zum Bahnhof", "Zur Schule", "Ins Kino"],
         correct: 0,
-        whyAr: "سألت: أين المحطة؟",
+        whyAr: "سألت: Wo ist der Bahnhof، فالجواب Zum Bahnhof.",
       },
       {
         id: "h2-q2",

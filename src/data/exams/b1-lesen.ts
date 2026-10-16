@@ -66,7 +66,7 @@ export const B1_LESEN: ExamLesenTeil[] = [
       "Deshalb werden viele Gärten mit Hochbeeten angelegt, die mit neuer Erde gefüllt sind.",
     statements: [
       { id: "b1l2-s1", de: "Die Gärten werden immer beliebter.", ar: "الحدائق تزداد شعبية.", isTrue: true, whyAr: "قيل: werden immer beliebter." },
-      { id: "b1l2-s2", de: "Die Stadt verbietet, dass Fremde mitmachen.", ar: "المدينة تمنع مشاركة الغرباء.", isTrue: false, whyAr: "قيل إن الحدائق يجب أن تبقى متاحة لكل السكان." },
+      { id: "b1l2-s2", de: "Die Stadt verbietet, dass Fremde mitmachen.", ar: "المدينة تمنع مشاركة الغرباء.", isTrue: false, whyAr: "قيل: die Gärten für alle Bewohner zugänglich bleiben، أي متاحة لكل السكان." },
       { id: "b1l2-s3", de: "Die Ernte ist manchmal wegen der Erde gering.", ar: "المحصول قليل أحياناً بسبب التربة.", isTrue: true, whyAr: "قيل: die Ernte oft klein ausfällt, weil die Erde ... belastet sein kann." },
       { id: "b1l2-s4", de: "Viele Gärten benutzen Hochbeete mit neuer Erde.", ar: "كثير من الحدائق تستعمل أحواضاً مرتفعة بتربة جديدة.", isTrue: true, whyAr: "قيل: viele Gärten mit Hochbeeten angelegt, die mit neuer Erde gefüllt sind." },
     ],
@@ -129,7 +129,7 @@ export const B1_LESEN: ExamLesenTeil[] = [
     statements: [
       { id: "b1l4-s1", de: "Jonas meint, Sport hilft beim Lernen.", ar: "جوناس يرى أن الرياضة تساعد على التعلّم.", isTrue: true, whyAr: "قال: Wer sich bewegt, kann sich besser konzentrieren." },
       { id: "b1l4-s2", de: "Jonas findet, der Sportunterricht fällt zu oft aus.", ar: "جوناس يرى أن حصص الرياضة تُلغى كثيراً.", isTrue: true, whyAr: "قال: ist der Sportunterricht zu oft ausgefallen." },
-      { id: "b1l4-s3", de: "Greta möchte mehr Zeit für Sport.", ar: "غريتا تريد وقتاً أكبر للرياضة.", isTrue: false, whyAr: "قالت إن المزيد من الرياضة يعني وقتاً أقل للغات والرياضيات." },
+      { id: "b1l4-s3", de: "Greta möchte mehr Zeit für Sport.", ar: "غريتا تريد وقتاً أكبر للرياضة.", isTrue: false, whyAr: "قالت: mehr Sport bedeutet weniger Zeit für Sprachen und Mathematik." },
       { id: "b1l4-s4", de: "Greta schlägt längere Pausen vor.", ar: "غريتا تقترح فسحات أطول.", isTrue: true, whyAr: "قالت: Ich würde eher die Pausen verlängern." },
     ],
   },

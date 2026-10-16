@@ -25,7 +25,7 @@ export const B1_HOEREN: ExamHoerenTeil[] = [
       "Durchsage 3: Wer an dem Sprachkurs teilnehmen möchte, sollte sich bis Ende des Monats bei der Personalabteilung melden. " +
       "Durchsage 4: Der Parkplatz hinter dem Gebäude wird im Sommer neu asphaltiert, deshalb dürfen Autos dort nicht parken.",
     statements: [
-      { id: "b1h1-s1", de: "Der Aufzug funktioniert wieder ab Freitag.", ar: "المصعد يعمل مجدداً ابتداءً من الجمعة.", isTrue: true, whyAr: "قيل إنه خارج الخدمة حتى الجمعة، أي يعمل من السبت." },
+      { id: "b1h1-s1", de: "Der Aufzug funktioniert wieder ab Freitag.", ar: "المصعد يعمل مجدداً ابتداءً من الجمعة.", isTrue: false, whyAr: "قيل: bis Freitag außer Betrieb، أي يعمل من السبت لا من الجمعة." },
       { id: "b1h1-s2", de: "Die Betriebsversammlung findet am Donnerstag statt.", ar: "اجتماع الموظفين يُعقد يوم الخميس.", isTrue: false, whyAr: "قيل: findet nun eine Woche später statt، أي تأجل أسبوعاً." },
       { id: "b1h1-s3", de: "Man muss sich bei der Personalabteilung anmelden.", ar: "يجب التسجيل لدى قسم شؤون الموظفين.", isTrue: true, whyAr: "قيل: sollte sich bei der Personalabteilung melden." },
       { id: "b1h1-s4", de: "Auf dem Parkplatz darf man im Sommer parken.", ar: "يُسمح بالوقوف في المواقف صيفاً.", isTrue: false, whyAr: "قيل: deshalb dürfen Autos dort nicht parken." },

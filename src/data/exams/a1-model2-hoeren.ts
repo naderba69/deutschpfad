@@ -33,7 +33,7 @@ export const A1_MODEL2_HOEREN: ExamHoerenTeil[] = [
     ],
     statements: [
       { id: "m2h1-s1", de: "Der Zug fährt um acht Uhr.", ar: "القطار ينطلق الساعة الثامنة.", isTrue: true, whyAr: "قيل: fährt heute um acht Uhr." },
-      { id: "m2h1-s2", de: "Die Bibliothek ist am Donnerstag geschlossen.", ar: "المكتبة مغلقة يوم الخميس.", isTrue: false, whyAr: "المغلقة يوم الأربعاء، والخميس تعود للعمل." },
+      { id: "m2h1-s2", de: "Die Bibliothek ist am Donnerstag geschlossen.", ar: "المكتبة مغلقة يوم الخميس.", isTrue: false, whyAr: "قيل: am Mittwoch geschlossen، والخميس تعود للعمل." },
       { id: "m2h1-s3", de: "Die Patienten sollen im Wartezimmer warten.", ar: "على المرضى الانتظار في غرفة الانتظار.", isTrue: true, whyAr: "قيل: bittet alle Patienten, im Wartezimmer zu warten." },
       { id: "m2h1-s4", de: "Die Bäckerei ist am Samstag bis sechzehn Uhr offen.", ar: "المخبز مفتوح السبت حتى الرابعة عصراً.", isTrue: true, whyAr: "قيل: bis sechzehn Uhr offen." },
     ],

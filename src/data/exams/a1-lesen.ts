@@ -65,7 +65,7 @@ export const A1_LESEN: ExamLesenTeil[] = [
       "Kostenlose Luft für die Reifen!",
     statements: [
       { id: "l2-s1", de: "Die Werkstatt repariert Fahrräder.", ar: "الورشة تصلح الدراجات.", isTrue: true, whyAr: "قيل: Wir reparieren Fahrräder." },
-      { id: "l2-s2", de: "Am Samstag ist die Werkstatt bis 18 Uhr offen.", ar: "الورشة مفتوحة يوم السبت حتى السادسة.", isTrue: false, whyAr: "يوم السبت من 9 إلى 13 فقط." },
+      { id: "l2-s2", de: "Am Samstag ist die Werkstatt bis 18 Uhr offen.", ar: "الورشة مفتوحة يوم السبت حتى السادسة.", isTrue: false, whyAr: "قيل: Samstag 9 bis 13 Uhr فقط." },
       { id: "l2-s3", de: "Am Sonntag ist die Werkstatt geschlossen.", ar: "الورشة مغلقة يوم الأحد.", isTrue: true, whyAr: "قيل: Sonntag geschlossen." },
       { id: "l2-s4", de: "Die Luft für die Reifen kostet Geld.", ar: "الهواء للإطارات يكلف مالاً.", isTrue: false, whyAr: "قيل: Kostenlose Luft، أي مجاني." },
     ],

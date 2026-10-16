@@ -45,8 +45,8 @@ export const A2_MODEL2_LESEN: ExamLesenTeil[] = [
       "Wir sind täglich von 9 bis 19 Uhr geöffnet. Bei Regen bleibt der Verleih geschlossen.\n" +
       "Helme sind im Preis enthalten.",
     statements: [
-      { id: "m2b2-s1", de: "Ein E-Bike kostet mehr als ein City-Fahrrad.", ar: "الدراجة الكهربائية أغلى من العادية.", isTrue: true, whyAr: "18 يورو مقابل 8 يورو." },
-      { id: "m2b2-s2", de: "Kinderfahrräder kosten immer extra.", ar: "دراجات الأطفال بمقابل دائماً.", isTrue: false, whyAr: "قيل: بدون رسم إن استأجر شخص بالغ." },
+      { id: "m2b2-s1", de: "Ein E-Bike kostet mehr als ein City-Fahrrad.", ar: "الدراجة الكهربائية أغلى من العادية.", isTrue: true, whyAr: "قيل: E-Bike 18 Euro مقابل City-Fahrrad 8 Euro." },
+      { id: "m2b2-s2", de: "Kinderfahrräder kosten immer extra.", ar: "دراجات الأطفال بمقابل دائماً.", isTrue: false, whyAr: "قيل: ohne Gebühr، إن استأجر شخص بالغ." },
       { id: "m2b2-s3", de: "Der Verleih ist auch bei Regen offen.", ar: "التأجير مفتوح حتى في المطر.", isTrue: false, whyAr: "قيل: Bei Regen bleibt der Verleih geschlossen." },
       { id: "m2b2-s4", de: "Die Helme muss man nicht extra bezahlen.", ar: "لا يُدفع للخوذة مبلغ إضافي.", isTrue: true, whyAr: "قيل: Helme sind im Preis enthalten." },
     ],

@@ -33,7 +33,7 @@ export const B1_MODEL2_HOEREN: ExamHoerenTeil[] = [
     ],
     statements: [
       { id: "m2c1-s1", de: "Die Weiterbildung findet jede Woche statt.", ar: "الدورة التدريبية تُقام كل أسبوع.", isTrue: false, whyAr: "قيل: jeden zweiten Donnerstag، أي كل أسبوعين." },
-      { id: "m2c1-s2", de: "Die Kantine ist ab Montag geschlossen.", ar: "المقصف مغلق من الاثنين.", isTrue: false, whyAr: "قيل: تُرمَّم، ولهذا لا تقدّم إلا أطباقاً باردة في الرواق." },
+      { id: "m2c1-s2", de: "Die Kantine ist ab Montag geschlossen.", ar: "المقصف مغلق من الاثنين.", isTrue: false, whyAr: "قيل: Weil die Kantine renoviert wird، لا تقدّم إلا أطباقاً باردة في الرواق." },
       { id: "m2c1-s3", de: "Man kann sich länger um das Praktikum bewerben.", ar: "يمكن التقدم للتدريب لمدة أطول.", isTrue: true, whyAr: "قيل: wurde bis zum 15. März verlängert — مُدّد الموعد." },
       { id: "m2c1-s4", de: "Die Fahrräder sollen bis Freitagabend weggebracht werden.", ar: "يجب نقل الدراجات قبل مساء الجمعة.", isTrue: true, whyAr: "قيل: bitte stellen Sie Ihre Fahrräder bis Freitagabend ins Erdgeschoss." },
     ],

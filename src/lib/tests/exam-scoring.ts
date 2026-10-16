@@ -89,7 +89,14 @@ export function percent(correct: number, total: number): number {
 
 /**
  * نتيجة مكوّن مع حدّ النجاح.
- * درجة امتحانات Goethe: من 100، والنجاح من 60 في كل مكوّن على حدة.
+ *
+ * ⚠️ ليست قاعدة كل المستويات: «60 من 100 لكل مكوّن على حدة» هي قاعدة
+ * الامتحانات **المعيارية المستقلة** (B1/B2) — ولهذا يستدعيها محرّك B2 بـ
+ * `GOETHE_B2_EXAM.passThreshold` (60). أما A1 فامتحانه **غير معياري**
+ * (النجاح 60 من 100 للإجمالي)، وA2 فيه **عتبتان** (45 من 75 للكتابي ·
+ * 15 من 25 للشفوي) — والمصدر الواحد لقواعد المستويات هو
+ * `src/lib/tests/official-points.ts` (يُعرض في `exam-official-summary`).
+ * القيمة الافتراضية 60 هنا للتدريب، وليست نتيجة رسمية.
  */
 export function scoreModule(correct: number, total: number, passThreshold = 60): ModuleScore {
   const pct = percent(correct, total);
