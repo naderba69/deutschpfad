@@ -183,6 +183,31 @@ test("A1: المسار الكامل حتى شاشة النتيجة ثم إعاد
   expect(pageErrors, "أخطاء JavaScript في الصفحة").toEqual([]);
 });
 
+test("النموذج الثالث: شريحة صادقة وصوت من مجلّد m3 (مسجّل · جزئي)", async ({page}) => {
+  const m3Reqs: {file: string; status: number}[] = [];
+  page.on("response", (r) => {
+    if (r.url().includes("/m3/")) m3Reqs.push({file: r.url().split("/").pop() ?? "", status: r.status()});
+  });
+  await fastAudio(page);
+
+  // ── A1-3: مسجّل بالكامل — الإعلان يذكر 13 مقطعاً، والجزء 4 يطلب مقاطعه الثلاثة ──
+  await page.goto("/tests/a1-exam");
+  await page.getByRole("button", {name: "النموذج 3 (مسجّل بالكامل)"}).click();
+  await expect(page.getByText(/13 مقطعاً/)).toBeVisible();
+  await page.getByRole("button", {name: "ابدأ الاستماع"}).click();
+  await page.locator("[data-audio-mode]").nth(3).getByRole("button", {name: /استمع/}).first().click();
+  await expect.poll(() => m3Reqs.length, {timeout: 20_000}).toBe(3);
+  expect(m3Reqs.map((r) => r.file)).toEqual(["hoeren-t4-a.mp3", "hoeren-t4-b.mp3", "hoeren-t4-c.mp3"]);
+  // 206 نجاح النطاق أيضاً (المتصفح يطلب أجزاء من الملف)
+  expect(m3Reqs.every((r) => r.status === 200 || r.status === 206), "طلب صوت فاشل").toBe(true);
+
+  // ── A2-3: مسجّل جزئياً — الإعلان يذكر الجزء الذي ما زال بنطق آلي ──
+  await page.goto("/tests/a2-exam");
+  await page.getByRole("button", {name: "النموذج 3 (مسجّل جزئياً)"}).click();
+  await expect(page.getByText(/7 مقاطع مسجّلة/)).toBeVisible();
+  await expect(page.getByText(/الجزء 2 بنطق آلي/)).toBeVisible();
+});
+
 test("محاكاة Goethe: لوحة المستويات والوضع التكيفي", async ({page}) => {
   const {pageErrors} = watchPage(page);
 
