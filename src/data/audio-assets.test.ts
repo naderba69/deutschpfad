@@ -17,6 +17,8 @@ import path from "node:path";
 
 import {describe, expect, it} from "vitest";
 
+import {isPlayableMp3} from "@/lib/audio/mp3-file";
+
 import {A1_SPRECHEN} from "@/data/exams/a1-sprechen";
 import {A2_SPRECHEN} from "@/data/exams/a2-sprechen";
 import {B1_SPRECHEN} from "@/data/exams/b1-sprechen";
@@ -27,15 +29,6 @@ import {LEVEL_MODELS} from "@/data/exams/level-models";
 const AUDIO_ROOT = path.join(process.cwd(), "public", "audio");
 
 /** MP3 صالح: حجم معقول + رأس ID3 أو تزامن إطار MPEG */
-function isPlayableMp3(file: string): boolean {
-  if (!fs.existsSync(file)) return false;
-  const buf = fs.readFileSync(file);
-  if (buf.length < 2000) return false;
-  const hasId3 = buf.subarray(0, 3).toString("latin1") === "ID3";
-  const hasSync = buf[0] === 0xff && (buf[1] & 0xe0) === 0xe0;
-  return hasId3 || hasSync;
-}
-
 function assertClip(relPath: string) {
   const abs = path.join(AUDIO_ROOT, relPath);
   expect(fs.existsSync(abs), `ملف صوت مفقود: ${relPath}`).toBe(true);

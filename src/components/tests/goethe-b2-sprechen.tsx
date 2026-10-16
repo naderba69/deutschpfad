@@ -10,9 +10,11 @@
 import * as React from "react";
 import {Mic, Volume2} from "lucide-react";
 
+import {SpeakButton} from "@/components/shared/speak-button";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent} from "@/components/ui/card";
 import {GOETHE_B2_EXAM} from "@/data/exams";
+import {b2SprechenAudioPath, modelSpeechText} from "@/data/exams/b2-sprechen-audio";
 import {cn} from "@/lib/utils";
 
 import {speakText} from "./goethe-b2-views";
@@ -105,6 +107,17 @@ export function SprechenSection({
                 💡 إجابة نموذجية — افتحها بعد محاولتك
               </summary>
               <div className="mt-2 space-y-1.5 whitespace-pre-line text-sm leading-relaxed">{v.modelAr}</div>
+              <div className="mt-2 flex flex-wrap items-center gap-2 border-t border-primary/20 pt-2">
+                <SpeakButton
+                  text={modelSpeechText(v.modelAr)}
+                  audioSrc={b2SprechenAudioPath(v.id)}
+                  size="sm"
+                  variant="outline"
+                  label="اسمع النموذج"
+                  ariaLabel={`اسمع الإجابة النموذجية: ${v.topicDe}`}
+                />
+                <span className="text-xs text-muted-foreground">الجمل الألمانية فقط — إن لم يتوفر التسجيل قُرئت بصوت الجهاز.</span>
+              </div>
             </details>
           )}
         </CardContent>
@@ -142,6 +155,17 @@ export function SprechenSection({
                 💡 إجابة نموذجية — افتحها بعد محاولتك
               </summary>
               <div className="mt-2 space-y-1.5 whitespace-pre-line text-sm leading-relaxed">{d.modelAr}</div>
+              <div className="mt-2 flex flex-wrap items-center gap-2 border-t border-gold/30 pt-2">
+                <SpeakButton
+                  text={modelSpeechText(d.modelAr)}
+                  audioSrc={b2SprechenAudioPath(d.id)}
+                  size="sm"
+                  variant="outline"
+                  label="اسمع النموذج"
+                  ariaLabel={`اسمع الإجابة النموذجية: ${d.themaDe}`}
+                />
+                <span className="text-xs text-muted-foreground">الجمل الألمانية فقط — إن لم يتوفر التسجيل قُرئت بصوت الجهاز.</span>
+              </div>
             </details>
           )}
         </CardContent>

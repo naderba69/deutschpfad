@@ -359,7 +359,7 @@ deutschpfad/
 ## ✅ التحقق قبل أي دفعة
 
 ```bash
-npm run verify       # أنواع + ESLint + 1149 اختبار وحدة + بناء إنتاجي
+npm run verify       # أنواع + ESLint + 1156 اختبار وحدة + بناء إنتاجي
 npx playwright test  # 218 اختبار متصفح على نسخة إنتاجية (npm run build && npm run start أولاً)
 ```
 

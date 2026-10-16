@@ -10,8 +10,9 @@
  *   2) كل طقم تحدث: 4 عروض + 4 مناقشات، و3 أسئلة إرشادية لكل عرض، و3 حجج
  *      لكل طرف في كل مناقشة، والمدد الرسمية (15 تحضير · 4 + 5).
  *   3) لا تكرار بين الأطقم (لا طقم منسوخ ليملأ العدد).
- *   4) الإجابة النموذجية: كل موضوع في الطقم الثاني يحملها، وفيها توجيه عربي
- *      وجملتان ألمانيتان على الأقل بين «...» — فلا يبقى حقل عرض فارغ.
+ *   4) الإجابة النموذجية: **كل** موضوع في **كل** طقم يحملها (16/16)، وفيها
+ *      توجيه عربي وجملتان ألمانيتان على الأقل بين «...» — القاعدة كانت مقيّدة
+ *      بالطقم الثاني وحده فمرّ الطقم الأول بلا نماذج أصلاً (تدقيق 2026-10-16).
  *   5) الامتحان الكامل يقرأ من الأطقم (الطقم الأول افتراضاً).
  * ═══════════════════════════════════════════════════════════
  */
@@ -116,26 +117,29 @@ describe("أطقم B2 — التحدث", () => {
 });
 
 describe("أطقم B2 — الإجابات النموذجية", () => {
-  it("كل موضوع في الطقم الثاني يحمل إجابة نموذجية", () => {
-    for (const v of B2_SPRECHEN_B.vortrag) expect(v.modelAr, v.id).toBeTruthy();
-    for (const d of B2_SPRECHEN_B.diskussion) expect(d.modelAr, d.id).toBeTruthy();
+  /** كل موضوع في كل طقم — لا استثناء للطقم الأول */
+  const topics: { id: string; set: number; kind: string; modelAr?: string }[] = B2_SPRECHEN_SETS.flatMap(
+    (set, si) => [
+      ...set.vortrag.map((v) => ({ id: v.id, set: si + 1, kind: "عرض", modelAr: v.modelAr })),
+      ...set.diskussion.map((d) => ({ id: d.id, set: si + 1, kind: "مناقشة", modelAr: d.modelAr })),
+    ],
+  );
+
+  it("كل موضوع في كل طقم يحمل إجابة نموذجية — صفر استثناء (16/16)", () => {
+    expect(topics.length).toBeGreaterThanOrEqual(16); // 2 طقم × (4 + 4)
+    const missing = topics.filter((t) => !t.modelAr).map((t) => `طقم ${t.set} · ${t.kind} ${t.id}`);
+    expect(missing, `مواضيع بلا إجابة نموذجية: ${missing.join(" · ")}`).toEqual([]);
   });
 
-  it("كل إجابة نموذجية: توجيه عربي + جملتان ألمانيتان على الأقل", () => {
-    const sets: ExamSprechen[] = B2_SPRECHEN_SETS;
-    const models: { id: string; modelAr?: string }[] = sets.flatMap((set) => [
-      ...set.vortrag.map((v) => ({ id: v.id, modelAr: v.modelAr })),
-      ...set.diskussion.map((d) => ({ id: d.id, modelAr: d.modelAr })),
-    ]);
-    const withModel = models.filter((m) => m.modelAr);
-    expect(withModel.length).toBeGreaterThanOrEqual(8); // 8 مواضيع الطقم الثاني كلها + ما قد يُضاف في الطقم الأول
-    for (const m of withModel) {
-      const text = m.modelAr as string;
-      expect(text.length, m.id).toBeGreaterThan(250);
+  it("كل إجابة نموذجية: توجيه عربي + 5 جمل ألمانية على الأقل", () => {
+    const withModel = topics.filter((t) => t.modelAr);
+    expect(withModel.length).toBeGreaterThanOrEqual(16); // بوابة حراسة الحارس
+    for (const t of withModel) {
+      const text = t.modelAr as string;
+      expect(text.length, `${t.set}/${t.id}`).toBeGreaterThan(250);
       const german = quotedGerman(text);
-      expect(german.length, `${m.id}: جمل ألمانية مقتبسة`).toBeGreaterThanOrEqual(2);
-      // التوجيه العربي موجود: حرف عربي في النص
-      expect(/[\u0600-\u06FF]/.test(text), m.id).toBe(true);
+      expect(german.length, `طقم ${t.set}/${t.id}: جمل ألمانية مقتبسة`).toBeGreaterThanOrEqual(5);
+      expect(/[\u0600-\u06FF]/.test(text), `طقم ${t.set}/${t.id}: توجيه عربي`).toBe(true);
     }
   });
 });
