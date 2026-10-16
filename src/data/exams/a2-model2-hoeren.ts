@@ -25,6 +25,12 @@ export const A2_MODEL2_HOEREN: ExamHoerenTeil[] = [
       "Ansage 2: Wegen einer Reparatur bleibt das Schwimmbad bis Freitag geschlossen. " +
       "Ansage 3: Der Schnellzug nach Wien hat heute zwanzig Minuten Verspätung. " +
       "Ansage 4: Die Praxis Doktor Wolf ist am Mittwochnachmittag geschlossen und am Donnerstag wieder geöffnet.",
+    audioSegments: [
+      "Ansage 1: Der Kurs für Anfänger beginnt am Montag um neun Uhr im Raum zwei. " +
+        "Ansage 2: Wegen einer Reparatur bleibt das Schwimmbad bis Freitag geschlossen. " +
+        "Ansage 3: Der Schnellzug nach Wien hat heute zwanzig Minuten Verspätung. " +
+        "Ansage 4: Die Praxis Doktor Wolf ist am Mittwochnachmittag geschlossen und am Donnerstag wieder geöffnet.",
+    ],
     statements: [
       { id: "m2a1-s1", de: "Der Kurs beginnt am Montag.", ar: "الدورة تبدأ يوم الاثنين.", isTrue: true, whyAr: "قيل: Der Kurs beginnt am Montag um neun Uhr." },
       { id: "m2a1-s2", de: "Das Schwimmbad ist am Donnerstag geöffnet.", ar: "المسبح مفتوح يوم الخميس.", isTrue: false, whyAr: "قيل: bleibt bis Freitag geschlossen، أي إنه مغلق حتى الجمعة." },
@@ -47,6 +53,16 @@ export const A2_MODEL2_HOEREN: ExamHoerenTeil[] = [
       "Gespräch 2. Mann: Wie bist du heute zur Arbeit gekommen? Frau: Mit dem Fahrrad, weil der Bus zu voll war. " +
       "Gespräch 3. Frau: Hast du schon für die Prüfung gelernt? Mann: Nur wenig. Ich lerne lieber morgens, nicht abends. " +
       "Gespräch 4. Mann: Warum ist die Heizung aus? Frau: Der Hausmeister hat sie gestern repariert, aber heute funktioniert sie wieder nicht.",
+    audioSegments: [
+      "Können wir das Treffen auf Donnerstag verschieben?",
+      "Donnerstag habe ich leider einen Termin. Wie wäre es am Freitag?",
+      "Wie bist du heute zur Arbeit gekommen?",
+      "Mit dem Fahrrad, weil der Bus zu voll war.",
+      "Hast du schon für die Prüfung gelernt?",
+      "Nur wenig. Ich lerne lieber morgens, nicht abends.",
+      "Warum ist die Heizung aus?",
+      "Der Hausmeister hat sie gestern repariert, aber heute funktioniert sie wieder nicht.",
+    ],
     questions: [
       { id: "m2a2-q1", q: "Wann treffen sich die beiden?", qAr: "متى يلتقي الاثنان؟", options: ["Am Donnerstag", "Am Freitag", "Am Montag"], correct: 1, whyAr: "قال: Donnerstag habe ich einen Termin. Wie wäre es am Freitag?" },
       { id: "m2a2-q2", q: "Warum ist die Frau mit dem Fahrrad gefahren?", qAr: "لماذا ركبت المرأة الدراجة؟", options: ["Weil das Wetter schön war", "Weil der Bus zu voll war", "Weil ihr Auto kaputt ist"], correct: 1, whyAr: "قالت: weil der Bus zu voll war." },
@@ -70,6 +86,13 @@ export const A2_MODEL2_HOEREN: ExamHoerenTeil[] = [
       "Die Haltestelle Marktplatz wird nicht angefahren. Fahrgäste können die Haltestelle Rathaus benutzen, sie liegt fünf Minuten zu Fuß entfernt. " +
       "Die Bauarbeiten dauern bis Ende Oktober. " +
       "Anruf: Guten Tag, hier ist Familie Weber. Wir haben Ihr Inserat für die Wohnung gelesen. Ist die Wohnung noch frei? Bitte rufen Sie uns bis achtzehn Uhr an.",
+    audioSegments: [
+      "Sie hören das Stadtradio. Wegen der Bauarbeiten in der Goethestraße fährt die Linie vier seit Montag eine andere Route. " +
+        "Die Haltestelle Marktplatz wird nicht angefahren. Fahrgäste können die Haltestelle Rathaus benutzen, sie liegt fünf Minuten zu Fuß entfernt. " +
+        "Die Bauarbeiten dauern bis Ende Oktober.",
+      "Guten Tag, hier ist Familie Weber. Wir haben Ihr Inserat für die Wohnung gelesen. Ist die Wohnung noch frei? " +
+        "Bitte rufen Sie uns bis achtzehn Uhr an.",
+    ],
     questions: [
       { id: "m2a3-q1", q: "Warum fährt die Linie vier anders?", qAr: "لماذا تسير الحافلة رقم 4 في مسار آخر؟", options: ["Wegen Bauarbeiten", "Wegen eines Unfalls", "Wegen eines Festes"], correct: 0, whyAr: "قيل: Wegen der Bauarbeiten in der Goethestraße." },
       { id: "m2a3-q2", q: "Welche Haltestelle können die Fahrgäste benutzen?", qAr: "أي موقف يمكن للركاب استخدامه؟", options: ["Marktplatz", "Rathaus", "Goethestraße"], correct: 1, whyAr: "قيل: können die Haltestelle Rathaus benutzen، وMarktplatz لا يُخدَم." },
@@ -92,6 +115,14 @@ export const A2_MODEL2_HOEREN: ExamHoerenTeil[] = [
       "Frau Berg: Gut, dann plane ich Sie für Dienstag ein. Die Teilnehmer kommen aus der Produktion. " +
       "Herr Novak: Soll ich die Unterlagen vorbereiten? Frau Berg: Ja, bitte schicken Sie mir die Folien bis Freitag. " +
       "Herr Novak: Dann reserviere ich auch einen Raum mit Beamer.",
+    audioSegments: [
+      "Herr Novak, könnten Sie nächste Woche die Schulung übernehmen?",
+      "Nächste Woche habe ich Urlaub, aber in der Woche danach ist es möglich.",
+      "Gut, dann plane ich Sie für Dienstag ein. Die Teilnehmer kommen aus der Produktion.",
+      "Soll ich die Unterlagen vorbereiten?",
+      "Ja, bitte schicken Sie mir die Folien bis Freitag.",
+      "Dann reserviere ich auch einen Raum mit Beamer.",
+    ],
     questions: [
       { id: "m2a4-q1", q: "Warum kann Herr Novak nächste Woche nicht?", qAr: "لماذا لا يستطيع السيد نوفاك الأسبوع القادم؟", options: ["Er hat Urlaub", "Er ist krank", "Er hat eine Schulung"], correct: 0, whyAr: "قال: Nächste Woche habe ich Urlaub." },
       { id: "m2a4-q2", q: "Bis wann soll er die Folien schicken?", qAr: "حتى متى يجب أن يرسل الشرائح؟", options: ["Bis Dienstag", "Bis Freitag", "Bis Montag"], correct: 1, whyAr: "قالت: schicken Sie mir die Folien bis Freitag." },

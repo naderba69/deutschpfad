@@ -105,13 +105,16 @@ export const LEVEL_MODELS: Record<ExamLevel, ExamModel[]> = {
     recordedModel("A2", { hoeren: A2_HOEREN, lesen: A2_LESEN, schreiben: A2_SCHREIBEN, sprechen: A2_SPRECHEN }),
     {
       id: "A2-2",
-      label: "النموذج 2 (نطق آلي)",
-      audioNoteAr: "مقاطع هذا النموذج غير مسجّلة بعد — يُقرأ نصّ الاستماع بنطق آلي معلَن، والجزآن 1 و3 مرتين.",
+      label: "النموذج 2 (صوت جديد)",
+      // الحالة الحقيقية: الأجزاء 1 و3 و4 مسجّلة بصوتين (9 مقاطع)، والجزء 2
+      // يُنتَج في الدفعة التالية — والمقاطع مُعلَنة مسبقاً في `audioSegments`
+      audioNoteAr:
+        "مقاطع الأجزاء 1 و3 و4 مسجّلة بصوتين (رجل وامرأة)، والجزء 2 يُقرأ بنطق آلي إلى أن تُنتَج مقاطعه.",
       hoeren: balanceTeile(A2_MODEL2_HOEREN),
       lesen: balanceTeile(A2_MODEL2_LESEN),
       schreiben: A2_MODEL2_SCHREIBEN,
       sprechen: A2_MODEL2_SPRECHEN,
-      audio: ttsTracks("/audio/exam-a2", A2_MODEL2_HOEREN),
+      audio: modelTracks("A2", A2_MODEL2_HOEREN, [1, 3, 4]),
     },
   ],
   B1: [
