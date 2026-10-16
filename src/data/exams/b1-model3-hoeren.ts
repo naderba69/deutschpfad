@@ -86,15 +86,15 @@ export const B1_MODEL3_HOEREN: ExamHoerenTeil[] = [
     introAr: "تسمع تقريراً إذاعياً عن العمل التطوعي. أجب عن 4 أسئلة. الجزء يُشغَّل مرتين.",
     allowRepeat: true,
     audioText:
-      "Moderatorin: Freiwilligenarbeit ist in vielen Städten gefragt. Frau Reuter koordiniert die Einsätze in unserer Region. " +
-      "Frau Reuter: Wir haben im letzten Jahr dreihundert Freiwillige vermittelt, vor allem in der Kinderbetreuung und in der Pflege. " +
+      "Moderatorin: Freiwilligenarbeit ist in vielen Städten gefragt. Herr Reuter koordiniert die Einsätze in unserer Region. " +
+      "Herr Reuter: Wir haben im letzten Jahr dreihundert Freiwillige vermittelt, vor allem in der Kinderbetreuung und in der Pflege. " +
       "Am häufigsten scheitern Einsätze nicht am Engagement, sondern an der Zeit: Viele können nur am Wochenende helfen. " +
       "Deshalb bieten wir seit diesem Jahr auch kurze Einsätze von drei Stunden an. " +
       "Moderatorin: Und was wünschen Sie sich für die Zukunft? " +
-      "Frau Reuter: Wir möchten mehr junge Leute gewinnen. An den Schulen fehlt oft die Information, nicht das Interesse.",
+      "Herr Reuter: Wir möchten mehr junge Leute gewinnen. An den Schulen fehlt oft die Information, nicht das Interesse.",
     // أربعة أدوار متبادلة (مذيعة/خبيرة) — وسم المتحدث يبقى في النص المعروض ولا يُنطق
     audioSegments: [
-      "Freiwilligenarbeit ist in vielen Städten gefragt. Frau Reuter koordiniert die Einsätze in unserer Region.",
+      "Freiwilligenarbeit ist in vielen Städten gefragt. Herr Reuter koordiniert die Einsätze in unserer Region.",
       "Wir haben im letzten Jahr dreihundert Freiwillige vermittelt, vor allem in der Kinderbetreuung und in der Pflege. Am häufigsten scheitern Einsätze nicht am Engagement, sondern an der Zeit: Viele können nur am Wochenende helfen. Deshalb bieten wir seit diesem Jahr auch kurze Einsätze von drei Stunden an.",
       "Und was wünschen Sie sich für die Zukunft?",
       "Wir möchten mehr junge Leute gewinnen. An den Schulen fehlt oft die Information, nicht das Interesse.",
@@ -103,7 +103,7 @@ export const B1_MODEL3_HOEREN: ExamHoerenTeil[] = [
       { id: "m3h3-q1", q: "In welchen Bereichen wurden die meisten Freiwilligen vermittelt?", qAr: "في أي مجالين جرى توظيف أغلب المتطوعين؟", options: ["Kinderbetreuung und Pflege", "Gartenarbeit und Bau", "Sport und Musik"], correct: 0, whyAr: "قيل: vor allem in der Kinderbetreuung und in der Pflege." },
       { id: "m3h3-q2", q: "Warum scheitern viele Einsätze?", qAr: "لماذا يفشل كثير من المهام التطوعية؟", options: ["Wegen fehlender Zeit", "Wegen fehlenden Engagements", "Wegen zu geringer Bezahlung"], correct: 0, whyAr: "قيل: scheitern nicht am Engagement, sondern an der Zeit." },
       { id: "m3h3-q3", q: "Was bietet die Organisation neu an?", qAr: "ما الذي تقدّمه المنظمة حديثاً؟", options: ["Kurze Einsätze von drei Stunden", "Bezahlte Stellen", "Kurse für Pflegekräfte"], correct: 0, whyAr: "قيل: bieten wir seit diesem Jahr auch kurze Einsätze von drei Stunden an." },
-      { id: "m3h3-q4", q: "Was wünscht sich Frau Reuter?", qAr: "ماذا تتمنى السيدة روتر؟", options: ["Mehr junge Freiwillige", "Weniger Einsätze am Wochenende", "Mehr Geld für die Schulen"], correct: 0, whyAr: "قيل: Wir möchten mehr junge Leute gewinnen." },
+      { id: "m3h3-q4", q: "Was wünscht sich Herr Reuter?", qAr: "ماذا يتمنى السيد روتر؟", options: ["Mehr junge Freiwillige", "Weniger Einsätze am Wochenende", "Mehr Geld für die Schulen"], correct: 0, whyAr: "قيل: Wir möchten mehr junge Leute gewinnen." },
     ],
   },
 
