@@ -183,7 +183,7 @@ test("A1: المسار الكامل حتى شاشة النتيجة ثم إعاد
   expect(pageErrors, "أخطاء JavaScript في الصفحة").toEqual([]);
 });
 
-test("النموذج الثالث: شرائح صادقة وصوت من مجلّد m3 (A1 وA2 كاملان · B1 جزئي)", async ({page}) => {
+test("النموذج الثالث: النماذج الثلاثة مسجّلة بالكامل من مجلّد m3", async ({page}) => {
   const m3Reqs: {file: string; status: number}[] = [];
   page.on("response", (r) => {
     if (r.url().includes("/m3/")) m3Reqs.push({file: r.url().split("/").pop() ?? "", status: r.status()});
@@ -220,21 +220,23 @@ test("النموذج الثالث: شرائح صادقة وصوت من مجلّ�
     "hoeren-t2-g4-b.mp3",
   ]);
 
-  // ── B1-3: مسجّل جزئياً — 11 مقطعاً، والجزء 2 يبقى بنطق آلي معلَن ──
+  // ── B1-3: مسجّل بالكامل — 19 مقطعاً، والجزء 2 يطلب حواراته الثمانية ──
   await page.goto("/tests/b1-exam");
-  await page.getByRole("button", {name: "النموذج 3 (مسجّل جزئياً)"}).click();
-  await expect(page.getByText(/11 مقطعاً/)).toBeVisible();
-  await expect(page.getByText(/الجزء 2 بنطق آلي/)).toBeVisible();
-  const t3Before = m3Reqs.length;
+  await page.getByRole("button", {name: "النموذج 3 (مسجّل بالكامل)"}).click();
+  await expect(page.getByText(/19 مقطعاً/)).toBeVisible();
+  const b1T2Before = m3Reqs.length;
   await page.getByRole("button", {name: "ابدأ الاستماع"}).click();
-  // الجزء 3 (تقرير إذاعي بأربعة أدوار) يطلب مقاطعه الأربعة بالترتيب
-  await page.locator("[data-audio-mode]").nth(2).getByRole("button", {name: /استمع/}).first().click();
-  await expect.poll(() => m3Reqs.length, {timeout: 20_000}).toBe(t3Before + 4);
-  expect(m3Reqs.slice(-4).map((r) => r.file)).toEqual([
-    "hoeren-t3-a.mp3",
-    "hoeren-t3-b.mp3",
-    "hoeren-t3-c.mp3",
-    "hoeren-t3-d.mp3",
+  await page.locator("[data-audio-mode]").nth(1).getByRole("button", {name: /استمع/}).first().click();
+  await expect.poll(() => m3Reqs.length, {timeout: 20_000}).toBe(b1T2Before + 8);
+  expect(m3Reqs.slice(-8).map((r) => r.file)).toEqual([
+    "hoeren-t2-g1-a.mp3",
+    "hoeren-t2-g1-b.mp3",
+    "hoeren-t2-g2-a.mp3",
+    "hoeren-t2-g2-b.mp3",
+    "hoeren-t2-g3-a.mp3",
+    "hoeren-t2-g3-b.mp3",
+    "hoeren-t2-g4-a.mp3",
+    "hoeren-t2-g4-b.mp3",
   ]);
 });
 
