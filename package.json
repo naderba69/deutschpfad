@@ -18,7 +18,8 @@
     "audit:inventory": "node scripts/lessons-inventory.mjs",
     "audit:dom": "node scripts/dom-audit.mjs",
     "shots": "node scripts/screenshots.mjs",
-    "verify": "npm run typecheck && npm run lint && npx vitest run && npm run build"
+    "verify": "npm run typecheck && npm run lint && npx vitest run && npm run build",
+    "audit:first-option": "node scripts/probe-first-option.mjs"
   },
   "dependencies": {
     "@ducanh2912/next-pwa": "^10.2.9",
