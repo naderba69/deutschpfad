@@ -153,19 +153,29 @@ describe("النماذج التدريبية — الصوت الصادق", () => 
     }
   });
 
-  it("كل ملف صوت مُشار إليه موجود على القرص وبحجم غير صفري", () => {
-    const missing: string[] = [];
+  it("كل ملف صوت مُشار إليه موجود على القرص وحجمه معقول وترويسته MP3", () => {
+    const problems: string[] = [];
     for (const level of LEVELS) {
       for (const model of LEVEL_MODELS[level]) {
         for (const track of model.audio) {
           for (const file of track.files) {
             const full = path.join(PUBLIC_DIR, track.base, file);
-            if (!fs.existsSync(full) || fs.statSync(full).size < 2000) missing.push(`${model.id} → ${track.base}/${file}`);
+            const label = `${model.id} → ${track.base}/${file}`;
+            if (!fs.existsSync(full)) {
+              problems.push(`مفقود: ${label}`);
+              continue;
+            }
+            const buf = fs.readFileSync(full);
+            if (buf.length < 2000) problems.push(`صغير (${buf.length} B): ${label}`);
+            // ترويسة MP3: وسم ID3 أو تزامن إطار MPEG (0xFF 0xEx) — نفس ما يفحصه mp3check
+            const hasId3 = buf.subarray(0, 3).toString("latin1") === "ID3";
+            const hasSync = buf[0] === 0xff && (buf[1] & 0xe0) === 0xe0;
+            if (!hasId3 && !hasSync) problems.push(`ليست MP3: ${label}`);
           }
         }
       }
     }
-    expect(missing).toEqual([]);
+    expect(problems).toEqual([]);
   });
 
   it("لا ملف صوتي في مجلدات النماذج الثانية خارج المُشار إليه (ولا ملف مفقود)", () => {
