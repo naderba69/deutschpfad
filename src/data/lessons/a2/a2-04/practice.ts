@@ -11,6 +11,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "Das Buch liegt auf ___ Tisch. (Wo?)",
       options: ["dem", "den", "der", "das"], correctIndex: 0,
       explanation: "الجملة تحدد مكان الكتاب؛ auf dem Tisch.", errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«den» منصوب؛ و«Wo?» مع «auf» تأخذ Dativ ⇒ «auf dem Tisch».",
+        "«der» مرفوع أو مؤنث؛ و«der Tisch» هنا في Dativ ⇒ «dem».",
+        "«das» محايد؛ و«der Tisch» مذكّر. ",
+      ],
     },
     {
       id: "e2", type: "multiple-choice",
@@ -18,6 +24,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "Ich lege das Buch auf ___ Tisch. (Wohin?)",
       options: ["den", "dem", "der", "das"], correctIndex: 0,
       explanation: "الطاولة وجهة وضع الكتاب؛ على الطاولة = auf den Tisch.", errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«dem» Dativ للموضع «Wo?»؛ والسؤال هنا «Wohin?» ⇒ Akkusativ.",
+        "«der» مرفوع أو مؤنث؛ و«der Tisch» منصوب بعد «auf» مع الوجهة.",
+        "«das» محايد؛ و«Tisch» مذكّر ⇒ «auf den Tisch». ",
+      ],
     },
     {
       id: "e3", type: "matching",
@@ -70,6 +82,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "Ich ziehe in eine neue Wohnung um.", questionAr: "ما معنى الجملة؟",
       options: ["أنتقل إلى شقة جديدة", "أبحث عن شقة جديدة", "أبيع شقتي", "أشتري شقة"], correctIndex: 0,
       explanation: "umziehen هنا يعني تغيير السكن؛ ويأتي الجزء um في نهاية الجملة الرئيسية.", errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "البحث «suchen»: «Ich suche eine neue Wohnung»، لا «umziehen».",
+        "البيع «verkaufen»: «Ich verkaufe meine Wohnung».",
+        "الشراء «kaufen»: «Ich kaufe eine Wohnung». ",
+      ],
     },
     {
       id: "e9", type: "error-correction",
@@ -122,6 +140,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "Ich ___ die Vase auf den Tisch. (أضعها قائمة على قاعدتها)",
       options: ["stelle", "lege", "setze", "liege"], correctIndex: 0,
       explanation: "في المشهد المحدد تكون المزهرية قائمة؛ لذلك stelle. ولو وُضعت على جانبها فقد يلائم legen؛ والوجهة هنا auf den Tisch.", errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«legen» لما يوضع منبسطاً أو على جانبه؛ والمزهرية قائمة على قاعدتها ⇒ «stellen».",
+        "«setzen» لكائنٍ يجلس أو يُجلَس («sich setzen»)، لا لمزهرية على طاولة.",
+        "«liegen» يصف الموضع بلا فاعلٍ يضع شيئاً؛ وهنا فاعلٌ يضع المزهرية ⇒ «stelle». ",
+      ],
     },
     {
       id: "e15", type: "error-correction",
@@ -155,6 +179,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "Ich möchte die Wohnung gern ___ . Können wir einen Termin vereinbaren?",
       options: ["besichtigen", "aussehen", "anschauen lassen", "besuchen"], correctIndex: 0,
       explanation: "besichtigen هو الفعل الأدقّ لمعاينة الشقة بنفس المتكلم. anschauen lassen قد يعني أن يطلب من شخص آخر النظر إليها؛ وbesuchen وaussehen لا يؤديان المعنى المقصود هنا.", errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«aussehen» يصف المظهر («Die Wohnung sieht hell aus») ولا يفيد المعاينة هنا.",
+        "«anschauen lassen» يعني أن يُطلع غيره عليها؛ والمعاينة الذاتية «besichtigen».",
+        "«besuchen» زيارة شخصٍ أو مكان اجتماعياً، لا معاينة شقة بغرض الاستئجار. ",
+      ],
     },
     {
       id: "e19", type: "fill-blank",

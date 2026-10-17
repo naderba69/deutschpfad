@@ -44,6 +44,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         correctIndex: 0,
         explanation: "النص يقول إن غرفته في السكن الجامعي صغيرة جداً؛ لا يذكر انتقاله إلى مدينة أخرى أو خلافاً مع الجار.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم يذكر النص انتقالاً إلى مدينة أخرى؛ السبب «Sein Zimmer im Wohnheim ist zu klein».",
+          "لم تُذكر إيجارةٌ صارت أغلى «zu teuer geworden» سبباً للبحث.",
+          "لا خلاف مع جارٍ «Streit mit seinem Nachbarn» في النص؛ الدافع ضيق الغرفة. ",
+        ],
       },
       {
         id: "rq2", type: "multiple-choice", paragraph: 1,
@@ -53,6 +59,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         correctIndex: 0,
         explanation: "في هذا المثال يشرح أنها تجمع الإيجار الأساسي والتكاليف الجانبية المتفق عليها؛ ويذكر النص أن الكهرباء والإنترنت قد يكونان منفصلين.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Nur die Kaltmiete» ينقصه «die Nebenkosten» التي يضمّها تعريف النص.",
+          "التأمين «die Kaution» وعمولة السمسار «die Maklergebühr» ليستا من الإيجار الشهري.",
+          "النص يذكر أن الكهرباء والإنترنت «können separat sein»، لا أنهما وحدهما Warmmiete. ",
+        ],
       },
       {
         id: "rq3", type: "multiple-choice", paragraph: 3,
@@ -62,6 +74,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         correctIndex: 2,
         explanation: "تقول السيدة كروغر في هذا المثال: Die Kaution beträgt zwei Kaltmieten. هذه إجابة عن القصة لا قاعدة لكل عقد.",
         errorType: "vocabulary",
+        optionExplanations: [
+          "ثلاثة إيجارات باردة لم تُذكر؛ قولها «Die Kaution beträgt zwei Kaltmieten».",
+          "الوحدة المذكورة «Kaltmieten» لا «eine Warmmiete».",
+          undefined,
+          "190 يورو رقمٌ آخر في القصة، لا مبلغ التأمين «zwei Kaltmieten». ",
+        ],
       },
       {
         id: "rq4", type: "multiple-choice", paragraph: 3,
@@ -71,6 +89,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         correctIndex: 1,
         explanation: "ورد في الفقرة أن المرآة في الحمّام فوق المغسلة؛ التركيب يصف موضعاً (Wo?).",
         errorType: "vocabulary",
+        optionExplanations: [
+          "المطبخ «die Küche» موضع أشياء أخرى في الشقة، لا موضع المرآة.",
+          undefined,
+          "لم تُذكر المرآة بين الغرفتين «zwischen den beiden Zimmern»؛ النص «im Bad über dem Waschbecken».",
+          "درج البناية «das Treppenhaus» ليس موضع المرآة. ",
+        ],
       },
       {
         id: "rq5", type: "multiple-choice", paragraph: 4,
@@ -80,6 +104,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         correctIndex: 0,
         explanation: "يضع المصباح بجانب الأريكة؛ هي الوجهة في جملة stellen، لذا جاء Akkusativ: neben das Sofa.",
         errorType: "case",
+        optionExplanations: [
+          undefined,
+          "«Neben dem Sofa» في Dativ يجيب عن «Wo?»؛ والسؤال «Wohin stellt …?» ⇒ Akkusativ.",
+          "لم يُذكر تعليق المصباح على الجدار «an die Wand».",
+          "السجادة «der Teppich» ليست موضع المصباح في النص. ",
+        ],
       },
       {
         id: "rq6", type: "multiple-choice", paragraph: 4,
@@ -89,6 +119,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         correctIndex: 2,
         explanation: "يمتلئ المحضر عند تسليم المفاتيح لتدوين حالة الشقة؛ وتقول المؤجّرة إن التوثيق قد يساعد لاحقاً، لا إنه يضمن نتيجة قانونية.",
         errorType: "vocabulary",
+        optionExplanations: [
+          "العقد «der Mietvertrag» وثيقة أخرى؛ المحضر «das Übergabeprotokoll» لتدوين الحالة.",
+          "لا يُدفع بالتوثيق؛ التكاليف الجانبية «die Nebenkosten» أمرٌ مالي منفصل.",
+          undefined,
+          "أوقات الهدوء «die Ruhezeiten» في نظام البناية «die Hausordnung»، لا في محضر التسليم. ",
+        ],
       },
       {
         id: "rq7", type: "multiple-choice", paragraph: 1,
@@ -98,6 +134,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         correctIndex: 0,
         explanation: "في اختصار الإعلان هنا، Z تعني Zimmer، وK Küche، وB Bad.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "الحرف K في الاختصار هو «Küche»، فوجود المطبخ مثبَتٌ لا منفيّ.",
+          "العدد 3 يخصّ الغرف «Zimmer» لا المطابخ «Küchen».",
+          "لا حرف في «3-ZKB» يدلّ على الشرفة «der Balkon». ",
+        ],
       },
     ],
     redemittel: [
@@ -154,24 +196,48 @@ export const listening: NonNullable<Lesson["listening"]> = {
         instructionAr: "اختر الإجابة بعد الاستماع:", questionDe: "Wo ist das Bad?", questionAr: "أين الحمّام؟",
         options: ["neben dem Schlafzimmer", "neben der Küche", "hinter dem Wohnzimmer", "unter dem Bett"], correctIndex: 0,
         explanation: "قال المؤجّر إن الحمّام بجانب غرفة النوم.", errorType: "preposition",
+        optionExplanations: [
+          undefined,
+          "المطبخ «die Küche» ليس ما ذُكر؛ الحمام «neben dem Schlafzimmer».",
+          "لم يُذكر «hinter dem Wohnzimmer» في الحوار.",
+          "«unter dem Bett» مستحيل المعنى هنا؛ الحمام غرفةٌ لا موضعٌ تحت سرير. ",
+        ],
       },
       {
         id: "q2", itemId: "l1", type: "multiple-choice",
         instructionAr: "اختر ما سمعته:", questionDe: "Wie hoch ist die Miete laut dem Gespräch?", questionAr: "كم الإيجار المذكور في الحوار؟",
         options: ["600 Euro warm", "600 Euro kalt", "300 Euro", "700 Euro warm"], correctIndex: 0,
         explanation: "قال المتحدث: Sechshundert Euro warm. هذه معلومة عن هذا العرض فقط؛ تحقق مما يشمله السعر فعلياً.", errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "القول «Sechshundert Euro warm» لا «600 Euro kalt».",
+          "لم يُذكر «300 Euro» سعراً للإيجار في الحوار؛ القول «Sechshundert Euro warm».",
+          "الرقم المذكور 600 لا 700 يورو «warm». ",
+        ],
       },
       {
         id: "q3", itemId: "l2", type: "multiple-choice",
         instructionAr: "اختر الإجابة بعد الاستماع:", questionDe: "Wohin legt Karim den Teppich?", questionAr: "إلى أين يضع كريم السجادة؟",
         options: ["neben das Sofa", "unter das Sofa", "auf den Tisch", "an die Wand"], correctIndex: 0,
         explanation: "قال: Ich lege ihn neben das Sofa؛ الجملة تحدد الوجهة المقصودة.", errorType: "preposition",
+        optionExplanations: [
+          undefined,
+          "لم يقل «unter das Sofa»؛ قال «Ich lege ihn neben das Sofa».",
+          "الطاولة «der Tisch» ليست موضع السجادة في الحوار.",
+          "السجادة لا تُعلَّق على الجدار «an die Wand» هنا. ",
+        ],
       },
       {
         id: "q4", itemId: "l3", type: "multiple-choice",
         instructionAr: "اختر الوقت الذي ذكرته الجارة في هذا الحوار:", questionDe: "Wann sind die Ruhezeiten laut der Hausordnung?", questionAr: "متى أوقات الهدوء بحسب نظام هذا المبنى؟",
         options: ["von 13 bis 15 Uhr und nach 22 Uhr", "von 8 bis 12 Uhr am Vormittag", "nur nachts zwischen zwei und vier", "am Wochenende und an Feiertagen"], correctIndex: 0,
         explanation: "في الحوار تذكر الجارة القواعد الخاصة بمبناها: من 13 إلى 15 وبعد 22؛ لا يُعمّم ذلك على المباني الأخرى.", errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "الفترة المذكورة «von 13 bis 15 Uhr» لا «von 8 bis 12 Uhr am Vormittag».",
+          "لم تُذكر فترة «nachts zwischen zwei und vier».",
+          "القاعدة ساعاتٌ يومية، لا أيام عطلة «am Wochenende und an Feiertagen». ",
+        ],
       },
     ],
   };

@@ -11,6 +11,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       questionDe: "Ich stelle die Vase auf ___ Tisch. (Wohin?)",
       options: ["den", "dem", "der", "das"], correctIndex: 0,
       explanation: "الطاولة وجهة وضع المزهرية: auf den Tisch.", errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«dem» Dativ للموضع؛ والسؤال «Wohin?» ⇒ Akkusativ «auf den Tisch».",
+        "«der» مرفوع أو مؤنث؛ و«Tisch» مذكّر منصوب هنا.",
+        "«das» محايد؛ و«der Tisch» مذكّر. ",
+      ],
     },
     {
       id: "m2", type: "multiple-choice",
@@ -18,6 +24,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       questionDe: "Die Vase steht auf ___ Tisch. (Wo?)",
       options: ["dem", "den", "der", "das"], correctIndex: 0,
       explanation: "الجملة تصف موضع المزهرية: auf dem Tisch.", errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«den» منصوبٌ للوجهة؛ و«Wo steht die Vase?» موضعٌ ⇒ Dativ.",
+        "«der» مرفوع أو مؤنث؛ و«der Tisch» مذكّر في Dativ ⇒ «dem».",
+        "«das» محايد؛ والاسم «der Tisch» مذكّر. ",
+      ],
     },
     {
       id: "m3", type: "word-ordering",

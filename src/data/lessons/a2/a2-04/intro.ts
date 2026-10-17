@@ -59,6 +59,12 @@ export const review: NonNullable<Lesson["review"]> = [
       questionDe: "Das Buch liegt ___ Tisch.",
       options: ["auf dem", "auf den", "auf der", "auf das"], correctIndex: 0,
       explanation: "السؤال هنا عن موضع الكتاب (Wo liegt es?)، لذلك نقول auf dem Tisch.", errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«auf den» منصوبٌ للوجهة (Wohin?)؛ والسؤال «Wo liegt das Buch?» عن الموضع ⇒ Dativ.",
+        "«auf der» للمؤنث؛ و«der Tisch» مذكّر.",
+        "«auf das» محايدٌ منصوب؛ و«der Tisch» مذكّر في Dativ هنا. ",
+      ],
     },
     {
       id: "r2", type: "multiple-choice",
@@ -66,6 +72,12 @@ export const review: NonNullable<Lesson["review"]> = [
       questionDe: "Ich gehe ___ die Stadt.",
       options: ["in", "nach", "zu", "aus"], correctIndex: 0,
       explanation: "مع in + الوجهة نقول in die Stadt؛ هنا المدينة هي الوجهة المقصودة.", errorType: "preposition",
+      optionExplanations: [
+        undefined,
+        "«nach» لأسماء المدن والبلدان بلا أداة: «nach Berlin»؛ وهنا «die Stadt» بأداة.",
+        "«zu» تأخذ Dativ: «zu dem Platz»؛ و«die Stadt» هنا منصوبة بعد «in».",
+        "«aus» خروجٌ من المكان لا دخولٌ إليه: «aus der Stadt kommen». ",
+      ],
     },
     {
       id: "r3", type: "fill-blank",
