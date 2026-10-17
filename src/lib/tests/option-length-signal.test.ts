@@ -326,7 +326,7 @@ describe("حوارات وبودكاست — الشكل البوليني داخل
  * للذهن، والدروس (864) تُركت. القاعدة: **لا تزيد هذه الأرقام أبداً**، وتنقص مع كل دفعة
  * إصلاح، وكل خفض يُسجَّل هنا بتاريخه.
  */
-const LESSON_RATCHETS: Record<string, number> = { A1: 0, A2: 0, B1: 0, B2: 24 };
+const LESSON_RATCHETS: Record<string, number> = { A1: 0, A2: 0, B1: 0, B2: 0 };
 
 /**
  * استثناءات **جوهرية** في دروس A1–B2 — مُسمّاة بمسار السؤال وبسببها، لا رقماً مجمّعاً.
@@ -387,6 +387,24 @@ describe("دروس المنهج — أكبر كوربوس داخل القياس"
           .join(" · ")}`,
       ).toBeLessThanOrEqual(LESSON_RATCHETS[lvl]);
     }
+  });
+
+  /**
+   * سقف مجمّع لكل مستوى — الأصفار أعلاه تمنع **الفروقات الكبيرة** وحدها، لكنها لا تمنع
+   * تراكم فروق صغيرة (كلٌّ منها تحت `GAP_LIMIT`) في اتجاه واحد حتى يصير الطول إشارة
+   * قابلة للاستغلال إحصائياً. القياس الحالي (الدفعة 68): A1 24% · A2 30% · B1 36% ·
+   * B2 40% · المجموع 31%، والسقوف مضبوطة فوقها بهامش ضيّق لا يسمح بالانجراف.
+   */
+  it("نسبة «الأطول وحيداً» في دروس كل مستوى ≤ سقفها المجمّع", () => {
+    const AGGREGATE_CAPS: Record<string, number> = { A1: 30, A2: 35, B1: 40, B2: 45 };
+    for (const lvl of levels) {
+      const pct = uniqueLongestPct(collectChoiceQuestions(byLevel(lvl)));
+      expect(pct, `${lvl}: «الأطول وحيداً» ${pct.toFixed(1)}% (السقف ${AGGREGATE_CAPS[lvl]}%)`).toBeLessThanOrEqual(
+        AGGREGATE_CAPS[lvl],
+      );
+    }
+    const all = uniqueLongestPct(collectChoiceQuestions(LESSONS));
+    expect(all, `مجمّع كل الدروس ${all.toFixed(1)}% (السقف 40%)`).toBeLessThanOrEqual(40);
   });
 
   it("لا استثناء تقادم: كل اسم في القائمة ما زال مخالفة فعلاً", () => {

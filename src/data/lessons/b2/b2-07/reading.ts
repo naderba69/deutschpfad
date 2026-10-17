@@ -48,9 +48,9 @@ export const readingB207: ReadingText = {
       questionAr: "لماذا يصبح النقاش أصعب بعد الانطباع الأول؟",
       options: [
         "Weil die künftigen Generationen keine Forderungen stellen können.",
-        "Weil niemand den Planeten zerstören will.",
-        "Weil die Verträge mit dem Ausland fehlen.",
-        "Weil die Medikamente zu teuer sind.",
+        "Weil niemand von ihnen den Planeten zerstören will.",
+        "Weil die notwendigen Verträge mit dem Ausland fehlen.",
+        "Weil die Medikamente für viele Menschen zu teuer sind.",
       ],
       correctIndex: 0,
       paragraph: 1,

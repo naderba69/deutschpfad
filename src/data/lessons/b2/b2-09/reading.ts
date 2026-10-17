@@ -49,9 +49,9 @@ export const readingB209: ReadingText = {
       questionAr: "كيف بنت سارة رسالتها المرافقة؟",
       options: [
         "Kurz, mit Erfahrung und Nachweisen, die sie auf Anfrage zur Verfügung stellte.",
-        "Lang, mit allen Zeugnissen seit der Schulzeit.",
-        "Ohne Hinweis auf ihre Erfahrung.",
-        "Als Liste von Gehaltsforderungen.",
+        "Sehr lang, mit allen Zeugnissen, Noten und Referenzen seit der Schulzeit.",
+        "Ohne jeden Hinweis auf ihre bisherige berufliche Erfahrung im Ausland.",
+        "Als lange Liste von Gehaltsforderungen und persönlichen Wünschen.",
       ],
       correctIndex: 0,
       paragraph: 1,

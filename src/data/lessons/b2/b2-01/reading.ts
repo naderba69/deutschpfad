@@ -79,9 +79,9 @@ export const readingB201: ReadingText = {
       questionAr: "أي اعتراضات تُذكر ضد الدراسة؟",
       options: [
         "Die Zahl der Teilnehmer sei klein gewesen, und es könnten nur besonders motivierte Personen mitgemacht haben.",
-        "Die Studie sei zu teuer gewesen.",
-        "Die Forscherin habe falsch gerechnet.",
-        "Die Aufgabe sei verboten gewesen.",
+        "Die Studie sei zu teuer gewesen und habe deshalb vorzeitig abgebrochen werden müssen.",
+        "Die Forscherin habe die Ergebnisse falsch gerechnet und die Zahlen nachträglich korrigiert.",
+        "Die Aufgabe sei in dieser Form verboten gewesen und dürfe nicht mehr gestellt werden.",
       ],
       correctIndex: 0,
       paragraph: 3,
