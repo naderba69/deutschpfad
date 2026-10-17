@@ -211,6 +211,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "مع wir: sind.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«bin» للمتكلّم المفرد «Ich bin»؛ والفاعل «Wir».",
+        "«ist» للغائب المفرد «er/sie/es ist»؛ و«Wir» جمع.",
+        "«seid» للجمع المخاطب «ihr seid»؛ و«Wir» تأخذ «sind».",
+      ],
     },
     {
       id: "r2",
@@ -233,5 +239,11 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "التاريخ يُكتب بالعدد الترتيبي: der erste Mai.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«ersten» نهاية منسوبة بعد أداة في حالات أخرى؛ والتاريخ «der erste Mai».",
+        "«erster» نهاية مرفوع بلا أداة («erster Mai»)؛ والأداة «der» موجودة.",
+        "«erstes» نهاية المحايد؛ و«der Mai» مذكر.",
+      ],
     },
   ];

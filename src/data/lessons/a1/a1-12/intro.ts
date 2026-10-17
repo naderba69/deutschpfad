@@ -182,6 +182,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "السعر: Es kostet / Das macht + مبلغ — من درس a1-07.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "الثمن يُجاب بـ«Es kostet …» أو «Das macht …»، لا بـ«Es ist zwei Euro».",
+        "«Ich bin» إسنادٌ لشخص؛ والثمن لا يُقال بهذه الصيغة.",
+        "«Das macht» صحيحة لكن المكمّل وقتٌ «zwei Uhr» لا مبلغ.",
+      ],
     },
     {
       id: "r2",

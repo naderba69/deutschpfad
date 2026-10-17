@@ -129,6 +129,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         paragraph: 0,
         explanation:
           "يذكر النص أن Karim Ingenieur von Beruf ist؛ ويذكر في الوقت نفسه أنه يؤدي حالياً تدريباً عملياً.",
+        optionExplanations: [
+          undefined,
+          "لم يُذكر «Techniker» في النصّ؛ والمذكور «Karim ist Ingenieur von Beruf».",
+          "لم تُذكر مهنة التعليم «Lehrer» عن كريم في النصّ.",
+          "لم يُذكر «Arzt» مهنةً لكريم؛ والتدريب لدى شركة تقنية شمسية.",
+        ],
       },
       {
         id: "rq2",
@@ -146,6 +152,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         paragraph: 0,
         explanation:
           "يقول النص إنه يؤدي تدريباً لدى شركة صغيرة لتقنية الطاقة الشمسية: bei einer kleinen Firma für Solartechnik.",
+        optionExplanations: [
+          undefined,
+          "لم يُذكر مستشفى «Krankenhaus» ولا برلين؛ والتدريب «bei einer kleinen Firma für Solartechnik».",
+          "لم يُذكر محامٍ «Anwalt» في النصّ.",
+          "لم تُذكر مدرسة «Schule» مكاناً لتدريبه.",
+        ],
       },
       {
         id: "rq3",
@@ -162,6 +174,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         correctIndex: 0,
         paragraph: 3,
         explanation: "تقول زميلتها إن Lena مريضة اليوم وإنها ستعود غداً.",
+        optionExplanations: [
+          undefined,
+          "لم تُذكر عطلة «Urlaub»؛ والسبب المرض «krank».",
+          "لم يُذكر عملٌ من البيت «zu Hause» في النصّ.",
+          "المديرة «die Chefin» شخصٌ آخر في النصّ، لا سبب غياب لينا.",
+        ],
       },
       {
         id: "rq4",
@@ -179,6 +197,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         paragraph: 4,
         explanation:
           "تجيب السيدة غرون: Nein, am Samstag arbeiten wir nicht؛ ثم تحدد أيام العمل من الاثنين إلى الجمعة.",
+        optionExplanations: [
+          undefined,
+          "عكس الجواب المنطوق: «Nein, am Samstag arbeiten wir nicht».",
+          "النفي صحيح لكن التعليل مقلوب؛ وأيام العمل «von Montag bis Freitag».",
+          "الكافتيريا «die Kantine» ليست جواباً عن العمل يوم السبت.",
+        ],
       },
       {
         id: "rq5",
@@ -191,6 +215,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         paragraph: 5,
         explanation:
           "يصف كريم يومه بأنه Sehr gut، ويقول إن مديرته لطيفة وإن التدريب ليس مشكلة.",
+        optionExplanations: [
+          undefined,
+          "لم يصفه بالصعوبة «Sehr schwer»؛ بل قال «Sehr gut» وإن التدريب ليس مشكلة.",
+          "لم يقل «Langweilig»؛ والتقييم المذكور «Sehr gut».",
+          "لم يُذكر طول اليوم «zu lang» في وصفه لليوم الأول.",
+        ],
       },
     ],
     redemittel: [
@@ -313,6 +343,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "تقول السيدة منصور: Ich bin Ärztin.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم تقل «Ich bin Lehrerin»؛ بل «Ich bin Ärztin».",
+          "لم تُذكر الهندسة «Ingenieurin» في كلام السيدة منصور.",
+          "لم تُذكر مهنة البيع «Verkäuferin» في الحوار؛ والجواب المنطوق «Ärztin».",
+        ],
       },
       {
         id: "q2",
@@ -330,6 +366,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "تقول السيدة منصور إنها لا تعمل في نهاية الأسبوع.",
         errorType: "grammar",
+        optionExplanations: [
+          undefined,
+          "عكس قولها إنها لا تعمل في نهاية الأسبوع «am Wochenende nicht».",
+          "لم تُذكر استثناءات «Nur am Samstag»؛ والنفي يشمل نهاية الأسبوع كلها.",
+          "لم تُجب باحتمال «Vielleicht»؛ والجواب نفيٌ صريح.",
+        ],
       },
       {
         id: "q3",
@@ -342,6 +384,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "تقول آنا إن أخاها طالب، ثم تضيف أنه يدرس في الجامعة.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم تقل إن أخاها طبيب «Er ist Arzt».",
+          "لم يُذكر طاهٍ «Koch»؛ بل هو طالبٌ يدرس في الجامعة.",
+          "لم يُذكر «Lehrer» في كلام آنا عن أخيها.",
+        ],
       },
     ],
   };

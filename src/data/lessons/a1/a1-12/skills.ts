@@ -104,6 +104,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         paragraph: 0,
         explanation:
           "يذكر النص Seit einem Jahr wohne ich in Hamburg. يختبر السؤال استخراج المدة المصرّح بها، لا ترجمةً حرفية لحالة نحوية ألمانية إلى العربية.",
+        optionExplanations: [
+          undefined,
+          "لم يُذكر أسبوع «eine Woche»؛ والمدة «Seit einem Jahr».",
+          "خمس سنوات «fünf Jahren» غير مذكورة في النصّ.",
+          "لم يُذكر شهر «ein Monat» مدةً لإقامته في هامبورغ.",
+        ],
       },
       {
         id: "rq2",
@@ -121,6 +127,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         paragraph: 1,
         explanation:
           "يذكر أن الشمس تشرق والأيام طويلة، ثم يقيّد وصفه الشخصي بعبارة Für mich ist der Sommer hier kurz.",
+        optionExplanations: [
+          undefined,
+          "عكس قوله «Für mich ist der Sommer hier kurz».",
+          "لم يقل إن المطر لا ينزل «Es regnet nie» في صيف هامبورغ.",
+          "لم تُذكر أربعون درجة «vierzig Grad» عن الصيف هناك.",
+        ],
       },
       {
         id: "rq3",
@@ -138,6 +150,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         paragraph: 2,
         explanation:
           "يذكر النص أن الطقس يتغير بسرعة؛ وفي هذا المثال تربط denn جملتين رئيسيتين ويبقى الفعل ist في موضعه المعتاد بعد الفاعل.",
+        optionExplanations: [
+          undefined,
+          "الثلج «es schneit … im Winter» عن الشتاء، لا سبب المظلة في الخريف.",
+          "لم يُذكر غياب سترة «keine warme Jacke» سبباً لحمل المظلة.",
+          "الحرّ «viel zu heiß» يناقض سبب حمل المظلة «Regenschirm».",
+        ],
       },
       {
         id: "rq4",
@@ -150,6 +168,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         paragraph: 3,
         explanation:
           "يذكر النص in der Nacht sind es minus fünf Grad؛ والإجابة تنقل قيمة الحرارة المكتوبة فيه.",
+        optionExplanations: [
+          undefined,
+          "القيمة في النصّ سالبة: «in der Nacht sind es minus fünf Grad».",
+          "خمس عشرة درجة «fünfzehn Grad» غير مذكورة في النصّ.",
+          "الصفر «Null Grad» ليس الرقم المذكور؛ بل «minus fünf Grad».",
+        ],
       },
       {
         id: "rq5",
@@ -162,6 +186,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         paragraph: 4,
         explanation:
           "Das ist meine Lieblingsjahreszeit — يقولها عن الربيع، لأنّ كلّ يوم مشمس بعد الشتاء عيدٌ صغير.",
+        optionExplanations: [
+          undefined,
+          "الشتاء «der Winter» فصلٌ يصف قسوته؛ والربيع هو «meine Lieblingsjahreszeit».",
+          "الخريف «der Herbst» فصل المظلة، لا الفصل الأحبّ إليه.",
+          "الصيف «der Sommer» وصفه بالجمال والقِصر، لا بالتفضيل.",
+        ],
       },
     ],
     redemittel: [
@@ -266,6 +296,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "قالت المذيعة: Am Morgen ist es kalt und windig.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "عكس المذيعة: «Am Morgen ist es kalt und windig».",
+          "لم تُذكر الحرارة «heiß» لصباح ذلك اليوم.",
+          "لم يُذكر تساقط الثلج «Es schneit» في نشرة الصباح.",
+        ],
       },
       {
         id: "q2",
@@ -283,6 +319,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "قالت: Am Abend regnet es in Berlin — تمطر.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم يُذكر ثلج «Es schneit»؛ بل «Am Abend regnet es in Berlin».",
+          "الشمس «Die Sonne scheint» لم تُذكر لمساء برلين.",
+          "لم تُذكر حرارة «heiß» في النشرة المسائية.",
+        ],
       },
       {
         id: "q3",
@@ -301,6 +343,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         explanation:
           "أجاب سامي عن سؤال الطقس في تونس بقوله Bei uns in Tunesien ist es im Sommer oft sehr heiß und sonnig؛ ينقل البند هذه المعلومة المنطوقة ولا يعمّمها على كل مكان أو وقت.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "عكس قول سامي: «Bei uns in Tunesien ist es im Sommer oft sehr heiß und sonnig».",
+          "الرياح «windig» ذُكرت عن صباح النشرة، لا عن صيف تونس.",
+          "لم يُذكر ثلج «Es schneit» في الصيف التونسي.",
+        ],
       },
     ],
   };

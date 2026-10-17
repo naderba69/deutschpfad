@@ -18,7 +18,13 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       "correctIndex": 0,
       "explanation": "في هذا المعنى يشيع nach Deutschland لأن اسم البلد هنا بلا أداة. لبعض أسماء البلدان التي تأتي بأداة نمط آخر، مثل in die Schweiz.",
-      "errorType": "preposition"
+      "errorType": "preposition",
+      "optionExplanations": [
+        undefined,
+        "«zu» لأشخاص وأماكن محدّدة («zum Bahnhof»)؛ والبلدان بلا أداة تأخذ «nach».",
+        "«in» مع Akkusativ لبلدٍ بأداة («in die Schweiz»)؛ و«Deutschland» بلا أداة.",
+        "«aus» خروجٌ من البلد («Ich komme aus Deutschland»)، لا وجهةً إليه.",
+      ],
     },
     {
       "id": "e2",
@@ -33,7 +39,13 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       "correctIndex": 0,
       "explanation": "zum Supermarkt تعبر هنا عن الوجهة دون أن تصرّح بالدخول. وقد تستعمل in den Supermarkt إذا كان المقصود التوجه إلى الداخل.",
-      "errorType": "preposition"
+      "errorType": "preposition",
+      "optionExplanations": [
+        undefined,
+        "«nach» للمدن والبلدان («nach Berlin»)، لا للمباني.",
+        "«ins» = in + das تصرّح بالدخول إلى الداخل؛ والمطلوب الوجهة دون تأكيد الدخول.",
+        "«zur» = zu + der للمؤنث؛ و«der Supermarkt» مذكر ⇒ «zum».",
+      ],
     },
     {
       "id": "e3",
@@ -152,7 +164,13 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       "correctIndex": 0,
       "explanation": "Wohin? يسأل عن الوجهة أو الاتجاه المقصود في هذا السياق.",
-      "errorType": "vocabulary"
+      "errorType": "vocabulary",
+      "optionExplanations": [
+        undefined,
+        "السكن «Wo wohnst du؟»؛ و«Wohin» عن الوجهة.",
+        "الوقت «Wann gehst du؟»؛ و«Wohin» عن الاتجاه المقصود.",
+        "الأصل «Woher kommst du؟»؛ و«Wohin» عن المقصد.",
+      ],
     },
     {
       "id": "e9",
@@ -296,7 +314,13 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       "correctIndex": 0,
       "explanation": "der Bahnhof مذكر بالألمانية؛ بوصفه مفعولاً مباشراً يعود عليه الضمير ihn.",
-      "errorType": "pronoun"
+      "errorType": "pronoun",
+      "optionExplanations": [
+        undefined,
+        "«es» ضمير المحايد؛ و«der Bahnhof» مذكر.",
+        "«sie» للمؤنث أو الجمع؛ و«der Bahnhof» مذكر مفرد.",
+        "«er» ضمير مرفوع للفاعل؛ والموضع هنا مفعول به منصوب ⇒ «ihn».",
+      ],
     },
     {
       "id": "e17",
@@ -311,7 +335,13 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       "correctIndex": 0,
       "explanation": "Apotheke مؤنث، ويأتي ضميرها sie في هذا المفعول المباشر بعد kennen.",
-      "errorType": "pronoun"
+      "errorType": "pronoun",
+      "optionExplanations": [
+        undefined,
+        "«ihn» للمذكر؛ و«die Apotheke» مؤنث.",
+        "«es» ضمير المحايد («das Krankenhaus»)، و«die Apotheke» مؤنث ⇒ «sie».",
+        "«ihr» ضمير Dativ؛ و«kennen» يأخذ Akkusativ ⇒ «sie».",
+      ],
     },
     {
       "id": "e18",
@@ -466,7 +496,13 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       "correctIndex": 0,
       "explanation": "في جواب يذكر وسيلة النقل نقول mit dem Bus؛ mit يحكم Dativ، وBus مفرد مذكر.",
-      "errorType": "case"
+      "errorType": "case",
+      "optionExplanations": [
+        undefined,
+        "«den» منصوب؛ و«mit» تحكم Dativ ⇒ «mit dem Bus».",
+        "«die» مرفوع أو منصوب؛ وبعد «mit» تأتي «dem».",
+        "«bei» للملاصقة أو جهة العمل؛ ووسيلة النقل تُطلب بـ«mit».",
+      ],
     },
     {
       "id": "e26",

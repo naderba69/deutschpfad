@@ -18,7 +18,13 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       ],
       "correctIndex": 0,
       "explanation": "المقصود التوجه إلى محيط الصيدلية والبقاء خارجها؛ لذلك نختار zur Apotheke. لو كان المقصود الدخول إلى الداخل، أمكن in die Apotheke.",
-      "errorType": "preposition"
+      "errorType": "preposition",
+      "optionExplanations": [
+        undefined,
+        "«zum» = zu + dem للمذكر والمحايد؛ و«die Apotheke» مؤنث ⇒ «zur».",
+        "«nach» للمدن والبلدان بلا أداة («nach Berlin»)، لا للمباني.",
+        "«ins» = in + das للدخول إلى مكان محايد؛ والصيدلية مؤنث وهي تنتظر خارجها.",
+      ],
     },
     {
       "id": "m2",
@@ -34,7 +40,13 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       ],
       "correctIndex": 0,
       "explanation": "الترجمة المعطاة تبدأ بـ«مباشرةً»، ومقابلها geradeaus.",
-      "errorType": "vocabulary"
+      "errorType": "vocabulary",
+      "optionExplanations": [
+        undefined,
+        "اليمين «rechts» خطوةٌ تالية بعد الكنيسة، لا قبل «dann links».",
+        "«zurück» رجوعٌ إلى الخلف؛ والترجمة تبدأ بـ«مباشرةً».",
+        "«an der Ampel» تحديد موقع لا اتجاه حركة؛ ومقابل «مباشرةً» هو «geradeaus».",
+      ],
     },
     {
       "id": "m3",

@@ -14,6 +14,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "Verkäufer → Verkäuferin (إضافة -in).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«Verkäufer» صيغة المذكّر؛ والمطلوب المؤنث بإضافة «-in».",
+        "لا يُحذف حرف «e» من الجذر «Verkäufer» قبل اللاحقة ⇒ «Verkäuferin».",
+        "اللاحقة «-in» لا تُمدّ بـ«e»؛ فلا وجود لكلمة «Verkäuferine».",
+      ],
     },
     {
       id: "m2",
@@ -25,6 +31,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "في مثال الصفة Das ist nicht teuer نستخدم nicht قبل teuer.",
       errorType: "negation",
+      optionExplanations: [
+        undefined,
+        "«kein» تنفي اسماً بنكرة؛ والمنفيّ هنا الصفة «teuer» ⇒ «nicht».",
+        "«keine» لمؤنث أو جمع؛ والمنفيّ صفةٌ لا اسم.",
+        "«keinen» منصوب مذكر؛ ولا اسم منصوب في «Das ist … teuer».",
+      ],
     },
     {
       id: "m3",

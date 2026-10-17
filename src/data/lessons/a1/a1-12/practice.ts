@@ -16,6 +16,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "في هذا الجواب عن الطقس نستخدم Es ist kalt. هنا es صوريّ في المثال، وليس اسماً لشخص؛ لا يعني ذلك أن كل ظهور لـes له الوظيفة نفسها.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Ich ist» خطأٌ في التصريف والإسناد؛ والجواب عن الجو «Es ist kalt».",
+        "«Er ist kalt» عن شخصٍ أو شيء مذكر؛ والسؤال عن الطقس ⇒ «Es».",
+        "«Sie ist kalt» لمؤنث؛ والطقس يُوصف بـ«Es ist kalt».",
+      ],
     },
     {
       id: "e2",
@@ -28,6 +34,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "في جملة التغيّر Es wird kalt نستخدم صيغة المضارع الإخباري wird مع es.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«werde» للمتكلّم «Ich werde»؛ والفاعل «Es».",
+        "«wirst» للمخاطب المفرد «du wirst».",
+        "«werden» للجمع أو المصدر؛ و«Es» مفرد ⇒ «wird».",
+      ],
     },
     {
       id: "e3",
@@ -65,6 +77,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "Mir ist kalt تعبير ألماني مألوف عن الإحساس بالبرد. Ich bin kalt ليست خطأً نحوياً مطلقاً، لكن السياق هنا يطلب العبارة المحايدة للإحساس؛ أما Es ist kalt فيصف الجو.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«Ich bin kalt» تصف الجسد بارداً؛ والإحساس بالبرد «Mir ist kalt».",
+        "«Es ist kalt» وصفٌ للجو؛ والجملة عن إحساس المتكلم بعد «Ich friere».",
+        "«Mich» منصوب؛ والفعل «sein» هنا يطلب Dativ ⇒ «Mir ist kalt».",
+      ],
     },
     {
       id: "e6",
@@ -108,6 +126,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "schneien = تثلج. (regnen = تمطر).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "المطر «Es regnet»؛ و«schneien» تساقط الثلج.",
+        "الريح «Es ist windig» أو «Der Wind weht».",
+        "الشمس «Die Sonne scheint»، لا «Es schneit».",
+      ],
     },
     {
       id: "e9",
@@ -217,6 +241,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       errorType: "case",
       explanation:
         "Mir ist warm تعبير مألوف عن إحساس الشخص بالدفء. Ich bin warm ليست العبارة المحايدة المقصودة هنا، وEs ist warm يصف الجو؛ لا نحكم على هذه الصيغ خارج السياق نفسه.",
+      optionExplanations: [
+        undefined,
+        "«Ich bin warm» ليست العبارة المحايدة للإحساس؛ والمألوف «Mir ist warm».",
+        "«Es ist warm» وصفٌ للجو؛ والجملة عن إحساس المتكلم بعد الجري.",
+        "«Mich» منصوب؛ والمطلوب Dativ ⇒ «Mir ist warm».",
+      ],
     },
     {
       id: "e17",
@@ -304,6 +334,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       errorType: "preposition",
       explanation:
         "في هذه الأمثلة نقول im Winter وam Montag؛ أما um فتظهر مع الساعة، مثل um acht Uhr. احفظ التراكيب المحددة دون تعليلها بسُلّم لحجم الوقت.",
+      optionExplanations: [
+        undefined,
+        "معكوس: الفصول «im Winter» والأيام «am Montag».",
+        "«in» و«an» بلا إدغام مع الأداة؛ والصحيح «im» = in + dem و«am» = an + dem.",
+        "«um» للساعة («um acht Uhr»)، لا للفصول.",
+      ],
     },
     {
       id: "e22",

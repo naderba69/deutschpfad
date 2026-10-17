@@ -16,6 +16,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       explanation:
         "في مثال الطقس الكامل هنا يأتي es الصوريّ مع الفعل regnen المصرف: Es regnet heute.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Ich regnet» خطأٌ في الإسناد؛ و«regnen» فعلٌ جويّ يطلب «es» الصوريّ.",
+        "«Er regnet» يجعل الفاعل شخصاً؛ والفعل الجويّ يُسند إلى «es».",
+        "«Das regnet» غير مستعمل في تقرير الطقس؛ والصيغة «Es regnet heute».",
+      ],
     },
     {
       id: "m2",
@@ -26,6 +32,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "مع wir: werden.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«werdet» للجمع المخاطب «ihr werdet»؛ والفاعل «Wir».",
+        "«wird» للغائب المفرد «er/sie/es wird».",
+        "«wirst» للمخاطب المفرد «du wirst».",
+      ],
     },
     {
       id: "m3",

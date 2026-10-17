@@ -97,7 +97,13 @@ export const reading: NonNullable<Lesson["reading"]> = {
         ],
         "correctIndex": 0,
         "paragraph": 0,
-        "explanation": "تذكر الفقرة الأولى وسيلة واحدة تستقلها ياسمين إلى المحطة المركزية؛ أما الحافلة فتظهر لاحقاً كخيار آخر."
+        "explanation": "تذكر الفقرة الأولى وسيلة واحدة تستقلها ياسمين إلى المحطة المركزية؛ أما الحافلة فتظهر لاحقاً كخيار آخر.",
+        "optionExplanations": [
+          undefined,
+          "الحافلة ذُكرت خياراً لاحقاً «Sie können auch mit dem Bus fahren»؛ لكنها استقلت المترو أولاً.",
+          "لم تُذكر سيارة «Auto» في النصّ؛ والفقرة الأولى «Sie fährt zuerst mit der U-Bahn».",
+          "المشي مقترحٌ لبقية الطريق «zu Fuß ist es heute schneller»، لا للوصول إلى المحطة المركزية.",
+        ],
       },
       {
         "id": "rq2",
@@ -113,7 +119,13 @@ export const reading: NonNullable<Lesson["reading"]> = {
         ],
         "correctIndex": 0,
         "paragraph": 2,
-        "explanation": "بعد الوصول إلى الإشارة، تطلب المرأة منها الاتجاه يساراً؛ ثم يأتي شارع يميناً بعد الكنيسة."
+        "explanation": "بعد الوصول إلى الإشارة، تطلب المرأة منها الاتجاه يساراً؛ ثم يأتي شارع يميناً بعد الكنيسة.",
+        "optionExplanations": [
+          undefined,
+          "اليمين يأتي بعد الكنيسة «die erste Straße rechts»، لا عند الإشارة أولاً.",
+          "«geradeaus» قبل الوصول إلى الإشارة «bis zur Ampel»، لا الاتجاه عندها.",
+          "لم يُطلب منها الرجوع «zurück» في أيّ خطوة من الطريق.",
+        ],
       },
       {
         "id": "rq3",
@@ -129,7 +141,13 @@ export const reading: NonNullable<Lesson["reading"]> = {
         ],
         "correctIndex": 0,
         "paragraph": 3,
-        "explanation": "تحدد المرأة موقع المدرسة بالنسبة إلى الصيدلية؛ الصياغة هنا gegenüber + Dativ."
+        "explanation": "تحدد المرأة موقع المدرسة بالنسبة إلى الصيدلية؛ الصياغة هنا gegenüber + Dativ.",
+        "optionExplanations": [
+          undefined,
+          "لم يُذكر أن المدرسة بجانب المحطة «neben dem Bahnhof».",
+          "الكنيسة علامة طريق «Dann sehen Sie eine Kirche»، لا موقع المدرسة.",
+          "الإشارة نقطة انطلاق «An der Ampel gehen Sie links»؛ والموقع «gegenüber der Apotheke».",
+        ],
       },
       {
         "id": "rq4",
@@ -145,7 +163,13 @@ export const reading: NonNullable<Lesson["reading"]> = {
         ],
         "correctIndex": 0,
         "paragraph": 4,
-        "explanation": "المشي يستغرق نحو عشر دقائق، والحافلة لن تصل إلا بعد ربع ساعة؛ لذلك تتوقع أن تصل مشياً قبلها."
+        "explanation": "المشي يستغرق نحو عشر دقائق، والحافلة لن تصل إلا بعد ربع ساعة؛ لذلك تتوقع أن تصل مشياً قبلها.",
+        "optionExplanations": [
+          undefined,
+          "لم يُذكر مالٌ ولا تذكرة «kein Geld für ein Ticket»؛ والسبب الوقت.",
+          "لم يُذكر أن الخط غير مباشر؛ بل «Der Bus kommt erst in einer Viertelstunde».",
+          "لم تُذكر تفضيلات شخصية؛ والقرينتان زمنيتان: «Ungefähr zehn Minuten» و«in einer Viertelstunde».",
+        ],
       },
       {
         "id": "rq5",
@@ -161,7 +185,13 @@ export const reading: NonNullable<Lesson["reading"]> = {
         ],
         "correctIndex": 0,
         "paragraph": 5,
-        "explanation": "في هذا الحوار تحديداً تختار المرأة Nichts zu danken؛ توجد ردود أخرى ممكنة في مواقف أخرى."
+        "explanation": "في هذا الحوار تحديداً تختار المرأة Nichts zu danken؛ توجد ردود أخرى ممكنة في مواقف أخرى.",
+        "optionExplanations": [
+          undefined,
+          "«Auf Wiedersehen» وداعٌ، لا ردّاً على الشكر في هذا الحوار.",
+          "«Eine Fahrkarte» طلب تذكرة في موقف شراء، لا جواباً عن الشكر.",
+          "«Wo ist der Bahnhof؟» سؤال استعلام، لا ردّاً على Dank.",
+        ],
       }
     ],
     "redemittel": [
@@ -278,7 +308,13 @@ export const listening: NonNullable<Lesson["listening"]> = {
         ],
         "correctIndex": 0,
         "explanation": "في الحوار يحدد المارّ موقع المحطة بجانب الحديقة.",
-        "errorType": "preposition"
+        "errorType": "preposition",
+        "optionExplanations": [
+          undefined,
+          "«die Bank» (المقعد أو المصرف) لم تُذكر في الحوار؛ والمذكور الحديقة «neben dem Park».",
+          "«um die Ecke» وصفٌ آخر لم يُقل في هذا الحوار.",
+          "لم يُذكر مركز المدينة «Stadtmitte» موقعاً للمحطة.",
+        ],
       },
       {
         "id": "q2",
@@ -295,7 +331,13 @@ export const listening: NonNullable<Lesson["listening"]> = {
         ],
         "correctIndex": 0,
         "explanation": "يقول كريم إنه ذاهب إلى المدينة لشراء هدية.",
-        "errorType": "preposition"
+        "errorType": "preposition",
+        "optionExplanations": [
+          undefined,
+          "«nach Hause» عودةٌ إلى البيت؛ وكريم ذاهب إلى المدينة لشراء هدية.",
+          "المحطة «zum Bahnhof» ليست وجهته في الحوار الثاني.",
+          "الصيدلية «zur Apotheke» لم تُذكر وجهةً لكريم.",
+        ],
       },
       {
         "id": "q3",
@@ -312,7 +354,13 @@ export const listening: NonNullable<Lesson["listening"]> = {
         ],
         "correctIndex": 0,
         "explanation": "يذكر كريم الموعد عند الثامنة؛ لا يحدد الحوار تاريخاً أو مدة أخرى.",
-        "errorType": "vocabulary"
+        "errorType": "vocabulary",
+        "optionExplanations": [
+          undefined,
+          "التاسعة «neun Uhr» غير مذكورة؛ والموعد «um acht Uhr».",
+          "العاشرة «zehn» لم تُذكر في الحوار.",
+          "السابعة «sieben Uhr» ليست الموعد المذكور للسينما.",
+        ],
       }
     ]
   };

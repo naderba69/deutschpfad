@@ -243,6 +243,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "عند النفي للاسم بعد habe نستخدم kein: kein Auto.",
       errorType: "negation",
+      optionExplanations: [
+        undefined,
+        "«nicht» تنفي الصفة أو الفعل؛ والمنفيّ اسم بنكرة «Auto» ⇒ «kein».",
+        "«keine» لمؤنث أو جمع؛ و«das Auto» محايد.",
+        "«keinen» منصوب مذكر؛ و«das Auto» محايد ⇒ «kein Auto».",
+      ],
     },
     {
       id: "r2",

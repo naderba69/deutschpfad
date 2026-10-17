@@ -14,6 +14,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "Arzt → Ärztin (مع Umlaut).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "الجذر «Arzt» يأخذ Umlaut في المؤنث ⇒ «Ärztin» لا «Arztin».",
+        "اللاحقة «-in» لا تُمدّ بـ«e»؛ فلا وجود لكلمة «Ärztine».",
+        "«Arzt» صيغة المذكّر؛ والمطلوب المؤنث «die Ärztin».",
+      ],
     },
     {
       id: "e2",
@@ -25,6 +31,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "Geld محايد (das Geld) → kein Geld.",
       errorType: "negation",
+      optionExplanations: [
+        undefined,
+        "«nicht» تنفي الصفة أو الجملة؛ والمنفيّ هنا اسم بنكرة «Geld» ⇒ «kein».",
+        "«keine» لمؤنث أو جمع؛ و«das Geld» محايد.",
+        "«keinen» منصوب مذكر؛ و«das Geld» محايد ⇒ «kein Geld».",
+      ],
     },
     {
       id: "e3",
@@ -96,6 +108,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "السؤال يسأل عن المهنة: ما مهنتك؟ أو ماذا تعمل؟",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "الاسم يُسأل بـ«Wie heißt du؟»؛ و«von Beruf» عن المهنة.",
+        "مكان العمل «Wo arbeitest du؟»؛ والسؤال عن نوع المهنة لا موضعه.",
+        "العمر «Wie alt bist du؟»؛ ولا ذكر للعمر في «Was bist du von Beruf؟».",
+      ],
     },
     {
       id: "e9",
@@ -273,6 +291,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       errorType: "preposition",
       explanation:
         "في هذا المثال يذكر اسم الشركة بوصفها جهة العمل: bei Siemens.",
+      optionExplanations: [
+        undefined,
+        "«in» للدخول داخل مكان؛ وجهةُ العمل باسم الشركة تُطلب بـ«bei Siemens».",
+        "«an» للملاصقة («an der Haltestelle»)؛ لا لجهة العمل.",
+        "«zu» للوجهة إلى شخص أو مكان محدّد («zum Bahnhof»)؛ و«arbeiten» هنا مع «bei».",
+      ],
     },
     {
       id: "e21",
