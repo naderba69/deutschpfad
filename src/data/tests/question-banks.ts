@@ -14,7 +14,12 @@ import { balanceTestBank } from "@/lib/tests/balance-options";
  * (`shuffleTestQuestions`). والحارس `src/data/tests/question-banks.test.ts`.
  */
 
-const RAW_TEST_BANK: TestQuestion[] = [
+/**
+ * المصدر **قبل الموازنة**: `balanceTestBank` يعيد ترتيب الخيارات و`correctIndex`
+ * معاً في `TEST_BANK` (وهو ما يراه المتعلم)، فأي قياس سطحي (طول الخيار، موضع
+ * الإجابة) على النسخة الموازَنة يقيس شيئاً آخر غير ما كُتب. الحراس تقرأ من هنا.
+ */
+export const RAW_TEST_BANK: TestQuestion[] = [
   /* ═══════════ A1 — قواعد ═══════════ */
   { id: "a1-g1", skill: "grammatik", level: "A1", kind: "mcq", questionDe: "Ich ___ aus Tunesien.", questionAr: "أنا من تونس.", options: ["bin", "bist", "ist", "sind"], correctIndex: 0, explanation: "مع ich: bin." },
   { id: "a1-g2", skill: "grammatik", level: "A1", kind: "mcq", questionDe: "Das ist ___ Mutter.", options: ["meine", "mein", "meinen", "meinem"], correctIndex: 0, explanation: "Mutter مؤنثة → meine." },

@@ -24,7 +24,7 @@ export const B1_MODEL3_LESEN: ExamLesenTeil[] = [
     questions: [
       { id: "m3l1-q1", q: "Was ändert sich ab Montag?", qAr: "ما الذي سيتغير من الاثنين؟", options: ["Der Eingang B wird renoviert", "Die Tiefgarage ist geschlossen", "Die Firma wechselt die Lage"], correct: 0, whyAr: "في (a): ab Montag wird der Eingang B renoviert." },
       { id: "m3l1-q2", q: "Was passiert, wenn Herr Yilmaz nicht kündigt?", qAr: "ماذا يحدث إن لم يُنهِ السيد يلماز العقد؟", options: ["Die Police passt sich automatisch an", "Der Vertrag endet im November", "Die Beiträge sinken"], correct: 0, whyAr: "في (b): Ihre Police passt sich sonst automatisch an." },
-      { id: "m3l1-q3", q: "Was soll Meryem zum Termin mitbringen?", qAr: "ماذا يجب أن تُحضر مريم إلى الموعد؟", options: ["Die Rechnungen des ersten Quartals", "Die Kontoauszüge", "Den Terminkalender"], correct: 0, whyAr: "في (c): Bitte bring die Rechnungen vom ersten Quartal mit — والكشوف تُرسَل بالبريد مقدماً." },
+      { id: "m3l1-q3", q: "Was soll Meryem zum Termin mitbringen?", qAr: "ماذا يجب أن تُحضر مريم إلى الموعد؟", options: ["Die Rechnungen des ersten Quartals", "Die Kontoauszüge der Hausbank", "Den Terminkalender der Chefin"], correct: 0, whyAr: "في (c): Bitte bring die Rechnungen vom ersten Quartal mit — والكشوف تُرسَل بالبريد مقدماً." },
     ],
   },
 

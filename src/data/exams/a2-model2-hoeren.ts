@@ -67,7 +67,7 @@ export const A2_MODEL2_HOEREN: ExamHoerenTeil[] = [
       { id: "m2a2-q1", q: "Wann treffen sich die beiden?", qAr: "متى يلتقي الاثنان؟", options: ["Am Donnerstag", "Am Freitag", "Am Montag"], correct: 1, whyAr: "قال: Donnerstag habe ich einen Termin. Wie wäre es am Freitag?" },
       { id: "m2a2-q2", q: "Warum ist die Frau mit dem Fahrrad gefahren?", qAr: "لماذا ركبت المرأة الدراجة؟", options: ["Weil das Wetter schön war", "Weil der Bus zu voll war", "Weil ihr Auto kaputt ist"], correct: 1, whyAr: "قالت: weil der Bus zu voll war." },
       { id: "m2a2-q3", q: "Wann lernt der Mann lieber?", qAr: "متى يفضّل الرجل الدراسة؟", options: ["Morgens", "Abends", "Nachts"], correct: 0, whyAr: "قال: Ich lerne lieber morgens, nicht abends." },
-      { id: "m2a2-q4", q: "Was ist mit der Heizung?", qAr: "ما مشكلة التدفئة؟", options: ["Sie funktioniert wieder nicht", "Sie ist neu", "Sie ist zu warm"], correct: 0, whyAr: "قالت: heute funktioniert sie wieder nicht." },
+      { id: "m2a2-q4", q: "Was ist mit der Heizung?", qAr: "ما مشكلة التدفئة؟", options: ["Sie funktioniert wieder nicht", "Sie ist ganz neu gekauft", "Sie ist zu warm eingestellt"], correct: 0, whyAr: "قالت: heute funktioniert sie wieder nicht." },
     ],
   },
 
@@ -95,7 +95,7 @@ export const A2_MODEL2_HOEREN: ExamHoerenTeil[] = [
     ],
     questions: [
       { id: "m2a3-q1", q: "Warum fährt die Linie vier anders?", qAr: "لماذا تسير الحافلة رقم 4 في مسار آخر؟", options: ["Wegen Bauarbeiten", "Wegen eines Unfalls", "Wegen eines Festes"], correct: 0, whyAr: "قيل: Wegen der Bauarbeiten in der Goethestraße." },
-      { id: "m2a3-q2", q: "Welche Haltestelle können die Fahrgäste benutzen?", qAr: "أي موقف يمكن للركاب استخدامه؟", options: ["Marktplatz", "Rathaus", "Goethestraße"], correct: 1, whyAr: "قيل: können die Haltestelle Rathaus benutzen، وMarktplatz لا يُخدَم." },
+      { id: "m2a3-q2", q: "Welche Haltestelle können die Fahrgäste benutzen?", qAr: "أي موقف يمكن للركاب استخدامه؟", options: ["Der Marktplatz", "Das Rathaus", "Die Goethestraße"], correct: 1, whyAr: "قيل: können die Haltestelle Rathaus benutzen، وMarktplatz لا يُخدَم." },
       { id: "m2a3-q3", q: "Wie lange dauern die Bauarbeiten?", qAr: "كم تستمر أشغال البناء؟", options: ["Bis Ende Oktober", "Bis Ende September", "Eine Woche"], correct: 0, whyAr: "قيل: dauern bis Ende Oktober." },
       { id: "m2a3-q4", q: "Warum ruft Familie Weber an?", qAr: "لماذا تتصل عائلة فيبر؟", options: ["Um sich für die Wohnung zu interessieren", "Um sich zu beschweren", "Um einen Termin beim Arzt zu machen"], correct: 0, whyAr: "قالت: Ist die Wohnung noch frei?" },
     ],

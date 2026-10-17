@@ -18,6 +18,15 @@
  */
 import { describe, expect, it } from "vitest";
 
+import {
+  collectChoiceQuestions,
+  describeOffender,
+  GAP_LIMIT,
+  longestGap,
+  MAX_UNIQUE_LONGEST_PCT,
+  shortestGap,
+  uniqueLongestPct,
+} from "@/lib/tests/option-length-signal";
 import { B2_HOEREN } from "@/data/exams/b2-hoeren";
 import { B2_HOEREN_B } from "@/data/exams/b2-hoeren-b";
 import { B2_HOEREN_C } from "@/data/exams/b2-hoeren-c";
@@ -150,67 +159,56 @@ describe("أطقم B2 — الإجابات النموذجية", () => {
   });
 });
 
-describe("أطقم B2 — تسرّب «الخيار الأطول» (تدقيق 2026-10-16)", () => {
+describe("أطقم B2 — تسرّب «الخيار الأطول» لكل جزء (تدقيق 2026-10-16)", () => {
   /**
-   * القياس: في 584 سؤال اختيار كانت 70% من الإجابات الصحيحة هي «الخيار الأطول
-   * وحيداً» (والاحتمال العادل 25–33%) — إشارة تُغري بالحلّ بلا فهم. أُصلحت
-   * المشتّتات (بلا مساس بمفتاح الإجابة) وبقيت أجزاء قيد الإصلاح في القائمة أدناه.
+   * القاعدة **لكل جزء** (أدقّ من قاعدة النموذج الكامل في
+   * `src/lib/tests/option-length-signal.test.ts`) — القياس والحدود من الوحدة
+   * المشتركة نفسها فلا يتكرر المنطق ولا يختلف الحدّ بين الحارسين.
+   *
+   * نقرأ من **بيانات المصدر** لا من `B2_*_SETS`: تلك تُمرَّر عبر `balanceTeile`
+   * الذي يعيد ترتيب الخيارات، فيختلط القياس ويصبح الحارس أعمى (اكتُشف بطفرة
+   * لم تُسقطه). المصدر هو الحقيقة التي يُحرَّر فيها المحتوى.
    */
-  const KNOWN_OVERSIZE: Record<string, { teil: number; max: number }> = {
-    // فارغة عمداً: سُدِّد كل الدين المقيس (كانت 63% · 75% · 63% · 100%).
-    // أي سطر يُضاف هنا يجب أن يكون قراراً واعياً موثّقاً — لا مهرباً.
-  };
+  const SETS: { kind: string; set: unknown }[] = [
+    ...([B2_HOEREN, B2_HOEREN_B, B2_HOEREN_C] as unknown[]).map((set, i) => ({ kind: `H${i + 1}`, set })),
+    ...([B2_LESEN, B2_LESEN_B, B2_LESEN_C] as unknown[]).map((set, i) => ({ kind: `L${i + 1}`, set })),
+  ];
 
-  type Opt = string | { text?: string; de?: string };
-  interface Row { opts: string[]; correct: number }
-  function walk(node: unknown, out: Row[], depth = 0) {
-    if (!node || depth > 9) return;
-    if (Array.isArray(node)) { node.forEach((n) => walk(n, out, depth + 1)); return; }
-    if (typeof node !== "object") return;
-    const o = node as Record<string, unknown>;
-    const ci = typeof o.correct === "number" ? o.correct : typeof o.correctIndex === "number" ? o.correctIndex : -1;
-    if (Array.isArray(o.options) && o.options.length >= 2 && ci >= 0 && ci < o.options.length) {
-      out.push({ opts: (o.options as Opt[]).map((x) => (typeof x === "string" ? x : x.text ?? x.de ?? "")), correct: ci });
-    }
-    for (const v of Object.values(o)) walk(v, out, depth + 1);
-  }
-  const uniqueLongest = (r: Row) => {
-    const lens = r.opts.map((t) => t.trim().length);
-    const max = Math.max(...lens);
-    return lens[r.correct] === max && lens.filter((l) => l === max).length === 1;
-  };
-
-  it("لا جزء ≥4 أسئلة تتجاوز إجاباته الأطول 60% (خارج القائمة المعروفة)", () => {
-    const offenders: string[] = [];
-    let checked = 0;
-    /**
-     * نقرأ من **بيانات المصدر** لا من `B2_*_SETS`: تلك تُمرَّر عبر `balanceTeile`
-     * الذي يعيد ترتيب الخيارات، فيختلط القياس ويصبح الحارس أعمى (اكتُشف بطفرة
-     * لم تُسقطه). المصدر هو الحقيقة التي يُحرَّر فيها المحتوى.
-     */
+  it(`لا جزء ≥4 أسئلة تتجاوز فيه نسبة «الأطول وحيداً» ${MAX_UNIQUE_LONGEST_PCT}%`, () => {
     void B2_HOEREN_SETS;
     void B2_LESEN_SETS;
-    const sets: { kind: string; set: unknown }[] = [
-      ...([B2_HOEREN, B2_HOEREN_B, B2_HOEREN_C] as unknown[]).map((set, i) => ({ kind: `H${i + 1}`, set })),
-      ...([B2_LESEN, B2_LESEN_B, B2_LESEN_C] as unknown[]).map((set, i) => ({ kind: `L${i + 1}`, set })),
-    ];
-    sets.forEach(({ kind, set }) => {
-      (set as { teil: number }[]).forEach((part) => {
-        const rows: Row[] = [];
-        walk(part, rows);
-        if (rows.length < 4) return;
-        checked += rows.length;
-        const pctv = Math.round((rows.filter(uniqueLongest).length / rows.length) * 100);
-        const key = `B2${kind}-T${part.teil}`;
-        const known = KNOWN_OVERSIZE[key];
-        if (pctv > 60) {
-          if (!known) offenders.push(`${key}: ${pctv}%`);
-          else expect(pctv, `${key} تجاوز سقفه المعروف`).toBeLessThanOrEqual(known.max);
-        }
-      });
-    });
-    expect(checked).toBeGreaterThan(55); // بوابة حراسة الحارس — 69 سؤال اختيار فعلاً
+    const offenders: string[] = [];
+    let checked = 0;
+    let parts = 0;
+    for (const { kind, set } of SETS) {
+      for (const part of set as { teil: number }[]) {
+        const qs = collectChoiceQuestions(part);
+        if (qs.length < 4) continue;
+        parts += 1;
+        checked += qs.length;
+        const pctv = uniqueLongestPct(qs);
+        if (pctv > MAX_UNIQUE_LONGEST_PCT) offenders.push(`B2${kind}-T${part.teil}: ${pctv}%`);
+      }
+    }
+    // بوابة حراسة الحارس: 69 سؤال اختيار في 12 جزءاً فعلاً — لولاه لمرّ الحارس
+    // صامتاً على بنية لم تُجمع (وقع هذا الخطأ مرتين في أول محاولة قياس).
+    expect(checked).toBeGreaterThan(55);
+    expect(parts).toBeGreaterThan(8);
     expect(offenders, `أجزاء تتسرّب فيها الإجابة الأطول: ${offenders.join(" · ")}`).toEqual([]);
+  });
+
+  it("لا سؤال في أي جزء تكون إجابته وحدها الأطول/الأقصر بفارق ≥ 1.3×", () => {
+    const offenders: string[] = [];
+    for (const { kind, set } of SETS) {
+      for (const part of set as { teil: number }[]) {
+        for (const q of collectChoiceQuestions(part)) {
+          if (longestGap(q) >= GAP_LIMIT || shortestGap(q) >= GAP_LIMIT) {
+            offenders.push(describeOffender(q, `B2${kind}-T${part.teil}`));
+          }
+        }
+      }
+    }
+    expect(offenders, `تسرّب لكل سؤال: ${offenders.slice(0, 6).join(" · ")}`).toEqual([]);
   });
 });
 

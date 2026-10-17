@@ -173,12 +173,34 @@ describe("بنك أسئلة الاختبارات — المحرّكات تخلط
     expect(problems).toEqual([]);
   });
 
-  it("البنك المُصدَّر هو المُوازَن (لا نسخة خام ثانية تُستهلك)", () => {
+  it("البنك المُستهلك هو المُوازَن — والنسخة الخام للتدقيق فقط", () => {
     const rel = "src/data/tests/question-banks.ts";
     const src = fs.readFileSync(path.join(process.cwd(), rel), "utf8");
     expect(src).toContain("balanceTestBank(RAW_TEST_BANK)");
-    // التصدير الوحيد للبنك هو المُوازَن — فلا يستهلك مكوّنٌ نسخةً غير موازَنة
     const exports = src.match(/export const \w+/g) ?? [];
-    expect(exports).toEqual(["export const TEST_BANK"]);
+    expect(exports).toEqual(["export const RAW_TEST_BANK", "export const TEST_BANK"]);
+
+    /**
+     * نيّة القاعدة الأصلية: **لا يستهلك مكوّنٌ نسخة غير موازَنة**. صيغتها الأولى
+     * منعت التصدير منعاً باتاً، فصارت تمنع أيضاً التدقيق المقيس — لأن أي قياس
+     * سطحي (طول الخيار، موضع الإجابة) على النسخة المُوازَنة يقيس إعادة الترتيب لا
+     * ما كُتب. ففُتح التصدير للحرّاس وحدها، وبقي المنع على كل ملف إنتاجي.
+     */
+    const offenders: string[] = [];
+    const stack = ["src"];
+    while (stack.length) {
+      const dir = stack.pop() as string;
+      for (const entry of fs.readdirSync(path.join(process.cwd(), dir), { withFileTypes: true })) {
+        const rel2 = path.join(dir, entry.name);
+        if (entry.isDirectory()) stack.push(rel2);
+        else if (/\.tsx?$/.test(entry.name) && !entry.name.endsWith(".test.ts")) {
+          const body = fs.readFileSync(path.join(process.cwd(), rel2), "utf8");
+          if (/RAW_TEST_BANK/.test(body) && !rel2.endsWith("src/data/tests/question-banks.ts")) {
+            offenders.push(rel2);
+          }
+        }
+      }
+    }
+    expect(offenders, `ملفات إنتاجية تستهلك النسخة الخام: ${offenders.join(" · ")}`).toEqual([]);
   });
 });

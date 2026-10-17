@@ -22,7 +22,7 @@ export const A1_MODEL2_LESEN: ExamLesenTeil[] = [
       "(b) Achtung: Der Aufzug ist heute kaputt. Bitte nehmen Sie die Treppe.\n" +
       "(c) Guten Morgen Frau Roth, Ihr Paket ist im Haus Nummer fünf. Sie können es ab neun Uhr abholen.",
     questions: [
-      { id: "m2l1-q1", q: "Wo wartet Aylin?", qAr: "أين تنتظر أيلين؟", options: ["Vor der Bibliothek", "Im Café", "Zu Hause"], correct: 0, whyAr: "في (a): ich warte vor der Bibliothek." },
+      { id: "m2l1-q1", q: "Wo wartet Aylin?", qAr: "أين تنتظر أيلين؟", options: ["Vor der Bibliothek", "Im Café am Markt", "Zu Hause bei ihrer Mutter"], correct: 0, whyAr: "في (a): ich warte vor der Bibliothek." },
       { id: "m2l1-q2", q: "Was ist kaputt?", qAr: "ما المعطّل؟", options: ["Die Treppe", "Der Aufzug", "Die Tür"], correct: 1, whyAr: "في (b): Der Aufzug ist heute kaputt." },
       { id: "m2l1-q3", q: "Wo ist das Paket?", qAr: "أين الطرد؟", options: ["Im Haus Nummer fünf", "In der Bibliothek", "Bei Sara"], correct: 0, whyAr: "في (c): Ihr Paket ist im Haus Nummer fünf." },
     ],
@@ -67,7 +67,7 @@ export const A1_MODEL2_LESEN: ExamLesenTeil[] = [
     questions: [
       { id: "m2l3-q1", q: "Wo arbeitet Yara?", qAr: "أين تعمل يارا؟", options: ["In einem Supermarkt", "In einer Schule", "In Frankfurt"], correct: 0, whyAr: "قالت: Ich arbeite in einem Supermarkt." },
       { id: "m2l3-q2", q: "Wann beginnt Yara?", qAr: "متى تبدأ يارا عملها؟", options: ["Um sieben Uhr", "Um fünfzehn Uhr", "Um neun Uhr"], correct: 0, whyAr: "قالت: Ich beginne um sieben Uhr." },
-      { id: "m2l3-q3", q: "Was macht Yara am Sonntag?", qAr: "ماذا تفعل يارا يوم الأحد؟", options: ["Sie arbeitet", "Sie geht schwimmen", "Sie besucht ihre Familie"], correct: 2, whyAr: "قالت: Am Sonntag besuche ich meine Familie." },
+      { id: "m2l3-q3", q: "Was macht Yara am Sonntag?", qAr: "ماذا تفعل يارا يوم الأحد؟", options: ["Sie arbeitet im Büro", "Sie geht schwimmen", "Sie besucht ihre Familie"], correct: 2, whyAr: "قالت: Am Sonntag besuche ich meine Familie." },
     ],
   },
 
@@ -85,7 +85,7 @@ export const A1_MODEL2_LESEN: ExamLesenTeil[] = [
       "Kannst du mich zum Bahnhof bringen? Ich warte um sieben Uhr vor deiner Tür. Viele Grüße, Jamal",
     questions: [
       { id: "m2l4-q1", q: "Wohin fährt Jamal?", qAr: "إلى أين يسافر جمال؟", options: ["Nach Köln", "Nach Kassel", "Nach Frankfurt"], correct: 0, whyAr: "قال: morgen fahre ich nach Köln." },
-      { id: "m2l4-q2", q: "Wo wartet Jamal?", qAr: "أين ينتظر جمال؟", options: ["Vor dem Bahnhof", "Vor der Tür von Ahmed", "Im Zug"], correct: 1, whyAr: "قال: Ich warte um sieben Uhr vor deiner Tür." },
+      { id: "m2l4-q2", q: "Wo wartet Jamal?", qAr: "أين ينتظر جمال؟", options: ["Vor dem Bahnhof", "Vor der Tür von Ahmed", "Im Zug nach Berlin"], correct: 1, whyAr: "قال: Ich warte um sieben Uhr vor deiner Tür." },
     ],
   },
 ];

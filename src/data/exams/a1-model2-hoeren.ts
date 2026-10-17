@@ -94,7 +94,7 @@ export const A1_MODEL2_HOEREN: ExamHoerenTeil[] = [
     questions: [
       { id: "m2h3-q1", q: "Warum ruft die Praxis an?", qAr: "لماذا تتصل العيادة؟", options: ["Um den Termin zu verschieben", "Um die Rechnung zu schicken", "Um die Öffnungszeiten zu erklären"], correct: 0, whyAr: "قيل: Ihr Termin muss leider verschoben werden." },
       { id: "m2h3-q2", q: "Wann ist der neue Termin?", qAr: "متى الموعد الجديد؟", options: ["Dienstag um neun Uhr", "Donnerstag um elf Uhr", "Montag um neun Uhr"], correct: 1, whyAr: "قيل: Der neue Termin ist am Donnerstag um elf Uhr." },
-      { id: "m2h3-q3", q: "Was soll der Patient mitbringen?", qAr: "ماذا يجب أن يُحضر المريض؟", options: ["Die Versichertenkarte", "Einen Pass", "Ein Rezept"], correct: 0, whyAr: "قيل: Bitte bringen Sie Ihre Versichertenkarte mit." },
+      { id: "m2h3-q3", q: "Was soll der Patient mitbringen?", qAr: "ماذا يجب أن يُحضر المريض؟", options: ["Die Versichertenkarte", "Einen gültigen Pass", "Ein Rezept vom Arzt"], correct: 0, whyAr: "قيل: Bitte bringen Sie Ihre Versichertenkarte mit." },
       { id: "m2h3-q4", q: "Bis wann soll man anrufen, wenn man nicht kommen kann?", qAr: "حتى متى يجب الاتصال إذا لم يستطع الحضور؟", options: ["Bis Montag", "Bis Dienstag", "Bis Donnerstag"], correct: 0, whyAr: "قيل: rufen Sie uns bitte bis Montag an." },
     ],
   },
@@ -120,7 +120,7 @@ export const A1_MODEL2_HOEREN: ExamHoerenTeil[] = [
         "Er hält an der gleichen Haltestelle.",
     ],
     questions: [
-      { id: "m2h4-q1", q: "Wann arbeitet Nabil im Café?", qAr: "متى يعمل نبيل في المقهى؟", options: ["Von Montag bis Freitag", "Am Samstag", "Am Sonntag"], correct: 0, whyAr: "قال: Ich arbeite nur von Montag bis Freitag." },
+      { id: "m2h4-q1", q: "Wann arbeitet Nabil im Café?", qAr: "متى يعمل نبيل في المقهى؟", options: ["Von Montag bis Freitag", "Nur am Samstag", "Nur am Sonntag und Montag"], correct: 0, whyAr: "قال: Ich arbeite nur von Montag bis Freitag." },
       { id: "m2h4-q2", q: "Was macht Nabil am Wochenende?", qAr: "ماذا يفعل نبيل في عطلة نهاية الأسبوع؟", options: ["Er arbeitet im Café", "Er lernt Deutsch", "Er fährt nach Bonn"], correct: 1, whyAr: "قال: Am Wochenende lerne ich Deutsch." },
       { id: "m2h4-q3", q: "Welchen Bus soll man nehmen?", qAr: "أي حافلة يجب أن يستقل المرء؟", options: ["Bus Nummer drei", "Bus Nummer sieben", "Bus Nummer elf"], correct: 1, whyAr: "قيل: Bitte nehmen Sie den Bus Nummer sieben." },
     ],

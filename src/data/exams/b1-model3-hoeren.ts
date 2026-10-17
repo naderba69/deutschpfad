@@ -70,7 +70,7 @@ export const B1_MODEL3_HOEREN: ExamHoerenTeil[] = [
     questions: [
       { id: "m3h2-q1", q: "Warum ist die Person gestresst?", qAr: "لماذا الشخص متوتر؟", options: ["Sie besucht einen Kurs neben der Arbeit", "Sie hat die Prüfung nicht bestanden", "Sie sucht eine neue Wohnung"], correct: 0, whyAr: "قال: weil ich neben der Arbeit noch einen Kurs besuche. Ich muss meine Zeit besser einteilen." },
       { id: "m3h2-q2", q: "Warum bleibt die Person in der Wohnung?", qAr: "لماذا يبقى الشخص في الشقة؟", options: ["Die Mieten sind gestiegen", "Der Vermieter hat gekündigt", "Die Heizung ist neu"], correct: 0, whyAr: "قال: die Mieten sind so gestiegen, dass ich bleibe." },
-      { id: "m3h2-q3", q: "Was macht die Person, wenn das Radfahren zu gefährlich wird?", qAr: "ماذا سيفعل الشخص إن صار ركوب الدراجة خطراً؟", options: ["Sie nimmt wieder die Bahn", "Sie kauft ein Auto", "Sie fährt langsamer"], correct: 0, whyAr: "قال: nehme ich wieder die Bahn." },
+      { id: "m3h2-q3", q: "Was macht die Person, wenn das Radfahren zu gefährlich wird?", qAr: "ماذا سيفعل الشخص إن صار ركوب الدراجة خطراً؟", options: ["Sie nimmt wieder die Bahn", "Sie kauft ein eigenes Auto", "Sie fährt langsamer als früher"], correct: 0, whyAr: "قال: nehme ich wieder die Bahn." },
       { id: "m3h2-q4", q: "Wann kann die Person beim Umzug helfen?", qAr: "متى يستطيع الشخص المساعدة في الانتقال؟", options: ["Ab Mittag", "Den ganzen Samstag", "Am Abend"], correct: 0, whyAr: "قال: aber erst ab Mittag, vorher habe ich einen Termin." },
     ],
   },
@@ -100,9 +100,9 @@ export const B1_MODEL3_HOEREN: ExamHoerenTeil[] = [
       "Wir möchten mehr junge Leute gewinnen. An den Schulen fehlt oft die Information, nicht das Interesse.",
     ],
     questions: [
-      { id: "m3h3-q1", q: "In welchen Bereichen wurden die meisten Freiwilligen vermittelt?", qAr: "في أي مجالين جرى توظيف أغلب المتطوعين؟", options: ["Kinderbetreuung und Pflege", "Gartenarbeit und Bau", "Sport und Musik"], correct: 0, whyAr: "قيل: vor allem in der Kinderbetreuung und in der Pflege." },
-      { id: "m3h3-q2", q: "Warum scheitern viele Einsätze?", qAr: "لماذا يفشل كثير من المهام التطوعية؟", options: ["Wegen fehlender Zeit", "Wegen fehlenden Engagements", "Wegen zu geringer Bezahlung"], correct: 0, whyAr: "قيل: scheitern nicht am Engagement, sondern an der Zeit." },
-      { id: "m3h3-q3", q: "Was bietet die Organisation neu an?", qAr: "ما الذي تقدّمه المنظمة حديثاً؟", options: ["Kurze Einsätze von drei Stunden", "Bezahlte Stellen", "Kurse für Pflegekräfte"], correct: 0, whyAr: "قيل: bieten wir seit diesem Jahr auch kurze Einsätze von drei Stunden an." },
+      { id: "m3h3-q1", q: "In welchen Bereichen wurden die meisten Freiwilligen vermittelt?", qAr: "في أي مجالين جرى توظيف أغلب المتطوعين؟", options: ["Kinderbetreuung und Pflege", "Gartenarbeit und der Bau", "Sport und Musik für Jugendliche"], correct: 0, whyAr: "قيل: vor allem in der Kinderbetreuung und in der Pflege." },
+      { id: "m3h3-q2", q: "Warum scheitern viele Einsätze?", qAr: "لماذا يفشل كثير من المهام التطوعية؟", options: ["Wegen fehlender Zeit im Beruf", "Wegen fehlenden Engagements", "Wegen zu geringer Bezahlung"], correct: 0, whyAr: "قيل: scheitern nicht am Engagement, sondern an der Zeit." },
+      { id: "m3h3-q3", q: "Was bietet die Organisation neu an?", qAr: "ما الذي تقدّمه المنظمة حديثاً؟", options: ["Kurze Einsätze von drei Stunden", "Bezahlte Stellen in der Stadt", "Kurse für neue Pflegekräfte"], correct: 0, whyAr: "قيل: bieten wir seit diesem Jahr auch kurze Einsätze von drei Stunden an." },
       { id: "m3h3-q4", q: "Was wünscht sich Herr Reuter?", qAr: "ماذا يتمنى السيد روتر؟", options: ["Mehr junge Freiwillige", "Weniger Einsätze am Wochenende", "Mehr Geld für die Schulen"], correct: 0, whyAr: "قيل: Wir möchten mehr junge Leute gewinnen." },
     ],
   },

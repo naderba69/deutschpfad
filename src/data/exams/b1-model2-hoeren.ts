@@ -66,7 +66,7 @@ export const B1_MODEL2_HOEREN: ExamHoerenTeil[] = [
     questions: [
       { id: "m2c2-q1", q: "Was ist das Problem des Mannes?", qAr: "ما مشكلة الرجل؟", options: ["Er müsste Kunden verschieben", "Er hat kein Interesse", "Die Fortbildung ist zu teuer"], correct: 0, whyAr: "قال: müsste ich dafür zwei Kunden verschieben." },
       { id: "m2c2-q2", q: "Warum hat Frau Klein gekündigt?", qAr: "لماذا استقالت السيدة كلاين؟", options: ["Wegen der Arbeitszeit", "Weil die neue Stelle näher ist", "Weil sie mehr Geld bekommt"], correct: 1, whyAr: "قيل: eine Stelle … die näher an ihrem Wohnort liegt." },
-      { id: "m2c2-q3", q: "Warum passt Donnerstag nicht?", qAr: "لماذا لا يناسب الخميس؟", options: ["Die Geschäftsleitung ist außer Haus", "Der Raum ist besetzt", "Ein Kollege fehlt"], correct: 0, whyAr: "قال: da ist die Geschäftsleitung außer Haus." },
+      { id: "m2c2-q3", q: "Warum passt Donnerstag nicht?", qAr: "لماذا لا يناسب الخميس؟", options: ["Die Geschäftsleitung ist außer Haus", "Der Raum ist heute besetzt", "Ein Kollege fehlt krankheitshalber"], correct: 0, whyAr: "قال: da ist die Geschäftsleitung außer Haus." },
       { id: "m2c2-q4", q: "Was bekommt die Frau für die Samstagsarbeit?", qAr: "ماذا تحصل عليه المرأة مقابل عمل السبت؟", options: ["Einen freien Tag", "Mehr Urlaubstage", "Eine Prämie"], correct: 0, whyAr: "قالت: und ich bekomme dafür einen freien Tag." },
     ],
   },
@@ -95,8 +95,8 @@ export const B1_MODEL2_HOEREN: ExamHoerenTeil[] = [
     questions: [
       { id: "m2c3-q1", q: "Was wurde in Freiburg getestet?", qAr: "ماذا اختُبر في فرايبورغ؟", options: ["Autofreie Altstadt an Samstagen", "Neue Buslinien am Sonntag", "Höhere Parkgebühren"], correct: 0, whyAr: "قيل: An drei Samstagen durften nur Busse, Fahrräder und Taxis in die Altstadt fahren." },
       { id: "m2c3-q2", q: "Wie war das Ergebnis für die Geschäfte?", qAr: "كيف كانت النتيجة على المتاجر؟", options: ["Besser als erwartet", "Wie erwartet schlecht", "Ohne Veränderung"], correct: 0, whyAr: "قيل: die Bilanz war überraschend positiv." },
-      { id: "m2c3-q3", q: "Was kritisieren Gegner?", qAr: "ما الذي ينتقده المعارضون؟", options: ["Ältere Menschen sind auf das Auto angewiesen", "Die Busse sind zu teuer", "Die Innenstadt ist zu laut"], correct: 0, whyAr: "قيل: ältere Menschen … sind auf das Auto angewiesen." },
-      { id: "m2c3-q4", q: "Wie will die Stadt reagieren?", qAr: "كيف سترد المدينة؟", options: ["Mehr Shuttlebusse und Parkplätze am Rand", "Den Versuch sofort beenden", "Die Altstadt für alle sperren"], correct: 0, whyAr: "قيل: mehr Shuttlebusse anbieten und Parkplätze am Stadtrand ausbauen." },
+      { id: "m2c3-q3", q: "Was kritisieren Gegner?", qAr: "ما الذي ينتقده المعارضون؟", options: ["Ältere Menschen sind auf das Auto angewiesen", "Die Busse sind für viele zu teuer geworden", "Die Innenstadt ist viel zu laut und voll"], correct: 0, whyAr: "قيل: ältere Menschen … sind auf das Auto angewiesen." },
+      { id: "m2c3-q4", q: "Wie will die Stadt reagieren?", qAr: "كيف سترد المدينة؟", options: ["Mehr Shuttlebusse und Parkplätze am Rand", "Den Versuch sofort beenden und zurückbauen", "Die Altstadt für alle Autos sperren"], correct: 0, whyAr: "قيل: mehr Shuttlebusse anbieten und Parkplätze am Stadtrand ausbauen." },
     ],
   },
 
@@ -123,7 +123,7 @@ export const B1_MODEL2_HOEREN: ExamHoerenTeil[] = [
       "Ja, wenn Ihr Einkommen niedrig genug ist. Bitte bringen Sie zum nächsten Termin Ihre Zeugnisse und die letzten drei Gehaltsabrechnungen mit.",
     ],
     questions: [
-      { id: "m2c4-q1", q: "Welche Ausbildung hat der Teilnehmer?", qAr: "ما مؤهل المشارك؟", options: ["Koch", "Pflegekraft", "Lagerleiter"], correct: 0, whyAr: "قال: Ich habe eine Ausbildung als Koch." },
+      { id: "m2c4-q1", q: "Welche Ausbildung hat der Teilnehmer?", qAr: "ما مؤهل المشارك؟", options: ["Ein gelernter Koch", "Eine Pflegekraft", "Ein Lagerleiter"], correct: 0, whyAr: "قال: Ich habe eine Ausbildung als Koch." },
       { id: "m2c4-q2", q: "Was schlägt die Beraterin vor?", qAr: "ماذا تقترح المستشارة؟", options: ["Eine Teilzeitausbildung", "Einen Sprachkurs", "Eine Vollzeitstelle"], correct: 0, whyAr: "قالت: könnten Sie mit einer Teilzeitausbildung beginnen." },
       { id: "m2c4-q3", q: "Was soll er zum nächsten Termin mitbringen?", qAr: "ماذا يجب أن يُحضر في الموعد القادم؟", options: ["Zeugnisse und Gehaltsabrechnungen", "Einen Arbeitsvertrag und ein Foto", "Nur den Ausweis"], correct: 0, whyAr: "قالت: Ihre Zeugnisse und die letzten drei Gehaltsabrechnungen." },
     ],

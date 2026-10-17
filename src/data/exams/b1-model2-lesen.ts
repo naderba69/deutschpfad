@@ -73,8 +73,8 @@ export const B1_MODEL2_LESEN: ExamLesenTeil[] = [
       "Heute arbeitet er in einem Pflegeheim und verdient weniger als früher, „aber ich gehe morgens gern zur Arbeit — das war vorher nicht so“. " +
       "Sein Rat an andere: erst Praktika machen, dann entscheiden. Rund ein Drittel seiner Klasse hat den Kurs abgebrochen, weil sie sich die Arbeit anders vorgestellt hatten.",
     questions: [
-      { id: "m2d3-q1", q: "Warum begann Sandro die Umschulung?", qAr: "لماذا بدأ ساندرو إعادة التأهيل المهني؟", options: ["Er verlor seine Stelle bei einer Umstrukturierung", "Sein Gehalt war zu niedrig", "Er wollte mehr Freizeit"], correct: 0, whyAr: "قيل: Als die Firma umstrukturierte, verlor er seine Stelle." },
-      { id: "m2d3-q2", q: "Wie beschreibt er den Kurs?", qAr: "كيف يصف الدورة؟", options: ["Viel praktische Übung", "Zu viel Theorie", "Zu schnell"], correct: 0, whyAr: "قال: im Kurs haben wir viel praktisch geübt, und das liegt mir." },
+      { id: "m2d3-q1", q: "Warum begann Sandro die Umschulung?", qAr: "لماذا بدأ ساندرو إعادة التأهيل المهني؟", options: ["Er verlor seine Stelle bei einer Umstrukturierung", "Sein Gehalt war zu niedrig für die Familie", "Er wollte mehr Freizeit für die Kinder"], correct: 0, whyAr: "قيل: Als die Firma umstrukturierte, verlor er seine Stelle." },
+      { id: "m2d3-q2", q: "Wie beschreibt er den Kurs?", qAr: "كيف يصف الدورة؟", options: ["Viel praktische Übung", "Zu viel Theorie im Kurs", "Zu schnell für Anfänger"], correct: 0, whyAr: "قال: im Kurs haben wir viel praktisch geübt, und das liegt mir." },
       { id: "m2d3-q3", q: "Wie verdient er heute?", qAr: "كيف وضعه المالي اليوم؟", options: ["Weniger als früher", "Mehr als früher", "Genauso viel"], correct: 0, whyAr: "قيل: verdient weniger als früher." },
     ],
   },

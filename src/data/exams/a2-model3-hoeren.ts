@@ -125,9 +125,9 @@ export const A2_MODEL3_HOEREN: ExamHoerenTeil[] = [
       "Liebe Kolleginnen und Kollegen, ab nächster Woche gilt im zweiten Stock eine neue Regel: Bitte benutzen Sie den Aufzug nur für schwere Sachen. Treppensteigen ist gesünder und der Aufzug ist oft überlastet.",
     ],
     questions: [
-      { id: "m3h4-q1", q: "Warum sprechen die Kollegen?", qAr: "لماذا يتحدث الزميلان؟", options: ["Sie verschieben eine Besprechung", "Sie planen einen Urlaub", "Sie suchen einen Raum"], correct: 0, whyAr: "قيل: die Besprechung am Donnerstag muss leider verschoben werden." },
+      { id: "m3h4-q1", q: "Warum sprechen die Kollegen?", qAr: "لماذا يتحدث الزميلان؟", options: ["Sie verschieben eine Besprechung", "Sie planen einen Urlaub zusammen", "Sie suchen einen Raum für die Party"], correct: 0, whyAr: "قيل: die Besprechung am Donnerstag muss leider verschoben werden." },
       { id: "m3h4-q2", q: "Wann ist die neue Besprechung?", qAr: "متى الاجتماع الجديد؟", options: ["Donnerstag um zehn Uhr", "Dienstag um zehn Uhr", "Dienstag um zwölf Uhr"], correct: 1, whyAr: "قيل: Wäre Dienstag um zehn Uhr besser? Da ist der große Raum frei." },
-      { id: "m3h4-q3", q: "Wofür soll man den Aufzug benutzen?", qAr: "لماذا يُستخدم المصعد؟", options: ["Nur für schwere Sachen", "Für alle Wege", "Nur morgens"], correct: 0, whyAr: "قيل: benutzen Sie den Aufzug nur für schwere Sachen." },
+      { id: "m3h4-q3", q: "Wofür soll man den Aufzug benutzen?", qAr: "لماذا يُستخدم المصعد؟", options: ["Nur für schwere Sachen", "Für alle Wege zur Arbeit", "Nur morgens in der Stadt"], correct: 0, whyAr: "قيل: benutzen Sie den Aufzug nur für schwere Sachen." },
     ],
   },
 ];

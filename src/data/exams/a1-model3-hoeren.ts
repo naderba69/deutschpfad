@@ -90,7 +90,7 @@ export const A1_MODEL3_HOEREN: ExamHoerenTeil[] = [
         "Ich wohne in der Blumenstraße acht. Ruf mich an, wenn du nicht kommen kannst.",
     ],
     questions: [
-      { id: "m3h3-q1", q: "Warum ruft Lena an?", qAr: "لماذا تتصل لينا؟", options: ["Um einzuladen", "Um sich zu entschuldigen", "Um nach dem Weg zu fragen"], correct: 0, whyAr: "قالت: Am Samstag mache ich eine Party — فهي تدعو." },
+      { id: "m3h3-q1", q: "Warum ruft Lena an?", qAr: "لماذا تتصل لينا؟", options: ["Um jemanden einzuladen", "Um sich zu entschuldigen", "Um nach dem Weg zu fragen"], correct: 0, whyAr: "قالت: Am Samstag mache ich eine Party — فهي تدعو." },
       { id: "m3h3-q2", q: "Wann beginnt die Party?", qAr: "متى تبدأ الحفلة؟", options: ["Um sechs Uhr", "Um sieben Uhr", "Um acht Uhr"], correct: 1, whyAr: "قالت: Sie beginnt um sieben Uhr." },
       { id: "m3h3-q3", q: "Was soll Omar mitbringen?", qAr: "ماذا يجب أن يُحضر عمر؟", options: ["Einen Kuchen", "Einen Salat", "Getränke"], correct: 1, whyAr: "قالت: Bitte bring einen Salat mit." },
       { id: "m3h3-q4", q: "Wo wohnt Lena?", qAr: "أين تسكن لينا؟", options: ["In der Blumenstraße acht", "In der Bahnhofstraße acht", "Bei Omar"], correct: 0, whyAr: "قالت: Ich wohne in der Blumenstraße acht." },
@@ -117,7 +117,7 @@ export const A1_MODEL3_HOEREN: ExamHoerenTeil[] = [
     ],
     questions: [
       { id: "m3h4-q1", q: "Wo arbeitet die Frau morgen?", qAr: "أين تعمل المرأة غداً؟", options: ["Im Büro", "Zu Hause", "In Bremen"], correct: 1, whyAr: "قالت: morgen arbeite ich zu Hause." },
-      { id: "m3h4-q2", q: "Wann ist sie im Büro?", qAr: "متى تكون في المكتب؟", options: ["Am Donnerstag", "Am Freitag", "Morgen"], correct: 0, whyAr: "قالت: Im Büro bin ich am Donnerstag." },
+      { id: "m3h4-q2", q: "Wann ist sie im Büro?", qAr: "متى تكون في المكتب؟", options: ["Am Donnerstag", "Am Freitag", "Schon morgen früh"], correct: 0, whyAr: "قالت: Im Büro bin ich am Donnerstag." },
       { id: "m3h4-q3", q: "Wie viel Verspätung hat der Zug?", qAr: "كم تأخير القطار؟", options: ["Zehn Minuten", "Zwanzig Minuten", "Dreißig Minuten"], correct: 1, whyAr: "قيل: hat heute zwanzig Minuten Verspätung." },
     ],
   },

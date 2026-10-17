@@ -22,7 +22,7 @@ export const A2_MODEL3_LESEN: ExamLesenTeil[] = [
       "(b) Sehr geehrte Familie Omar, ab dem ersten Oktober steigen die Nebenkosten um 30 Euro monatlich. Der Grund sind höhere Heizkosten.\n" +
       "(c) Liebe Mitglieder, das Training am Mittwoch findet diesmal in der Halle zwei statt, weil die große Halle renoviert wird. Bitte bringt Hallenschuhe mit.",
     questions: [
-      { id: "m3l1-q1", q: "Warum schreibt Alina?", qAr: "لماذا تكتب ألينا؟", options: ["Sie möchte die Schicht tauschen", "Sie sucht einen Arzt", "Sie hat am Samstag frei"], correct: 0, whyAr: "في (a): kann meine Schicht nicht machen. Könntest du tauschen?" },
+      { id: "m3l1-q1", q: "Warum schreibt Alina?", qAr: "لماذا تكتب ألينا؟", options: ["Sie möchte die Schicht tauschen", "Sie sucht einen Arzt für ihren Sohn", "Sie hat am Samstag frei"], correct: 0, whyAr: "في (a): kann meine Schicht nicht machen. Könntest du tauschen?" },
       { id: "m3l1-q2", q: "Warum steigen die Nebenkosten?", qAr: "لماذا ترتفع المصاريف الإضافية؟", options: ["Wegen höherer Heizkosten", "Wegen neuer Möbel", "Wegen der Reinigung"], correct: 0, whyAr: "في (b): Der Grund sind höhere Heizkosten." },
       { id: "m3l1-q3", q: "Wo ist das Training am Mittwoch?", qAr: "أين التدريب يوم الأربعاء؟", options: ["In der großen Halle", "In der Halle zwei", "Draußen"], correct: 1, whyAr: "في (c): findet diesmal in der Halle zwei statt." },
     ],
@@ -70,7 +70,7 @@ export const A2_MODEL3_LESEN: ExamLesenTeil[] = [
     questions: [
       { id: "m3l3-q1", q: "Wie lange arbeitet Karim in der Firma?", qAr: "كم مضى على عمل كريم في الشركة؟", options: ["Vier Wochen", "Sechs Monate", "Einen Monat im Lager zwei"], correct: 0, whyAr: "قال: Ich arbeite seit vier Wochen als Lagermitarbeiter." },
       { id: "m3l3-q2", q: "Was war am schwierigsten?", qAr: "ما كان الأصعب؟", options: ["Der frühe Arbeitsbeginn", "Die Kollegen", "Die Kaffeemaschine"], correct: 0, whyAr: "قال: Am schwierigsten war der frühe Beginn um sechs Uhr." },
-      { id: "m3l3-q3", q: "Was macht Karim im nächsten Monat?", qAr: "ما سيفعله كريم الشهر القادم؟", options: ["Einen Kurs für den Staplerführerschein", "Urlaub im Ausland", "Er wechselt die Firma"], correct: 0, whyAr: "قال: mache ich einen Kurs für den Staplerführerschein." },
+      { id: "m3l3-q3", q: "Was macht Karim im nächsten Monat?", qAr: "ما سيفعله كريم الشهر القادم؟", options: ["Einen Kurs für den Staplerführerschein", "Urlaub im Ausland mit der Familie", "Er wechselt die Firma im nächsten Monat"], correct: 0, whyAr: "قال: mache ich einen Kurs für den Staplerführerschein." },
     ],
   },
 

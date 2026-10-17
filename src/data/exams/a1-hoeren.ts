@@ -60,7 +60,7 @@ export const A1_HOEREN: ExamHoerenTeil[] = [
         id: "h2-q2",
         q: "Was trinkt die Frau?",
         qAr: "ماذا تشرب المرأة؟",
-        options: ["Tee", "Kaffee mit Milch", "Wasser"],
+        options: ["Ein warmer Tee", "Kaffee mit Milch", "Ein Glas Wasser"],
         correct: 1,
         whyAr: "قالت: Einen Kaffee, bitte, mit Milch.",
       },
