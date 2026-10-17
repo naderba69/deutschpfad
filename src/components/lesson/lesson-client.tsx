@@ -1,0 +1,551 @@
+"use client";
+
+import * as React from "react";
+import Link from "next/link";
+import {ArrowLeft, ArrowRight, CheckCircle2, ListChecks, Printer, Sparkles, TableProperties, Trophy} from "lucide-react";
+
+import {LESSON_SECTIONS} from "@/components/lesson/lesson-sections";
+import {DailyGoalBar, LessonCompletion, LessonPosition, LessonPrevNext} from "@/components/lesson/lesson-client-sections";
+import {LESSON_META} from "@/data/lessons/meta";
+import {getRelatedResources} from "@/data/lessons/related-resources";
+import {useProgress} from "@/components/providers/progress-provider";
+import {InterleavingReview} from "@/components/lesson/sections/interleaving-review";
+import {buildInterleavedReview, reviewLevelLabel} from "@/lib/lesson/review-generator";
+import {AusspracheSection} from "@/components/lesson/sections/aussprache";
+import {EinfuehrungSection} from "@/components/lesson/sections/einfuehrung";
+import {FehlerUndTippsSection} from "@/components/lesson/sections/fehler-und-tipps";
+import {HoerverstehenSection} from "@/components/lesson/sections/hoerverstehen";
+import {InteraktiveUebungenSection} from "@/components/lesson/sections/interaktive-uebungen";
+import {InteractionSection, MediationSection} from "@/components/lesson/sections/mediation-interaction";
+import {LernkartenSection} from "@/components/lesson/sections/lernkarten";
+import {LernzieleSection} from "@/components/lesson/sections/lernziele";
+import {MiniTestSection} from "@/components/lesson/sections/mini-test";
+import {LessonSummary} from "@/components/lesson/sections/lesson-summary";
+import {SchreibenSection} from "@/components/lesson/sections/schreiben";
+import {TheorieSection} from "@/components/lesson/sections/theorie";
+import {VertiefungSection} from "@/components/lesson/sections/vertiefung";
+import {LesetextSection} from "@/components/lesson/sections/lesetext";
+import {LangDe} from "@/components/shared/lang-de";
+import {Badge} from "@/components/ui/badge";
+import {Button} from "@/components/ui/button";
+import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
+import {Progress} from "@/components/ui/progress";
+import {StarkeVerbenTable} from "@/components/verbs/starke-verben-table";
+import {cn} from "@/lib/utils";
+import type { Exercise, Lesson } from "@/types/lesson";
+
+const LEVEL_LABEL: Record<string, string> = {
+  A1: "المبتدئ",
+  A2: "ما قبل المتوسط",
+  B1: "المتوسط",
+  B2: "المتقدم",
+};
+
+export function LessonClient({ lesson }: { lesson: Lesson }) {
+  // سياق التقدم: لتصحيح الإكمال عند «أكمل الدرس» في وضع التدفق
+  const { completedLessonsSet, completeLesson } = useProgress();
+  const [visited, setVisited] = React.useState<Set<string>>(new Set(["lernziele"]));
+  const [focusMode, setFocusMode] = React.useState(false);
+  // إشعار الانتقال بعد إتمام الدرس (شريط لاصق أعلى الصفحة)
+  const [completionNotice, setCompletionNotice] = React.useState<{ title: string; sub: string; href: string } | null>(null);
+
+  // تتبع «آخر درس» تلقائياً — يعيدك إليه عند العودة (لوحة الرحلة)
+  // + تسجيل نشاط اليوم (يُفعّل السلسلة اليومية 🔥)
+  React.useEffect(() => {
+    void import("@/lib/storage/learner").then(({saveLearnerProfile}) =>
+      saveLearnerProfile({ lastLessonId: lesson.id }),
+    );
+    void import("@/lib/analytics/events").then(({recordEvent}) =>
+      recordEvent({ type: "lesson-view", lessonId: lesson.id, ts: Date.now() }),
+    );
+  }, [lesson.id]);
+  const [currentSection, setCurrentSection] = React.useState(0);
+  // وضع الخطوات التفاعلي: قسم واحد في كل مرة (الافتراضي) أم عرض الكل
+  const [stepMode, setStepMode] = React.useState<boolean>(true);
+
+  // ═══ المراجعة التراكمية: يدوية أو مولّدة من الدروس السابقة (تغطي كل الدروس) ═══
+  const [reviewQuestions, setReviewQuestions] = React.useState<Exercise[]>([]);
+  const [reviewLoaded, setReviewLoaded] = React.useState(false);
+  React.useEffect(() => {
+    let cancelled = false;
+    void buildInterleavedReview(lesson).then((q) => {
+      if (cancelled) return;
+      setReviewQuestions(q);
+      setReviewLoaded(true);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [lesson]);
+
+  // استرجاع الخطوة المحفوظة لكل درس (يستأنف من حيث توقف)
+  React.useEffect(() => {
+    try {
+      const saved = window.localStorage.getItem(`lesson-step:${lesson.id}`);
+      if (saved) {
+        const n = Number(saved);
+        if (Number.isFinite(n) && n > 0) setCurrentSection(Math.min(n, sectionDefs.length - 1));
+      }
+    } catch {
+      /* تجاهل */
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lesson.id]);
+
+  // حفظ الخطوة الحالية
+  React.useEffect(() => {
+    try {
+      window.localStorage.setItem(`lesson-step:${lesson.id}`, String(currentSection));
+    } catch {
+      /* تجاهل */
+    }
+  }, [currentSection, lesson.id]);
+
+  // هل لهذا الدرس موارد رديفة مربوطة؟ (يحدد ظهور قسم «التعمّق»)
+  const hasRelatedResources = React.useMemo(
+    () => getRelatedResources(lesson.id).length > 0,
+    [lesson.id],
+  );
+
+  const sectionDefs = LESSON_SECTIONS.filter(
+    (def) =>
+      (def.id !== "review" || (reviewLoaded && reviewQuestions.length > 0)) &&
+      (def.id !== "verben" || lesson.level === "B1" || lesson.level === "B2") &&
+      /* ═══ الوساطة والتفاعل: تُعرضان فقط إذا كان الدرس يحتويهما ═══ */
+      (def.id !== "mediation" || (lesson.mediation && lesson.mediation.length > 0)) &&
+      (def.id !== "interaction" || (lesson.interaction && lesson.interaction.length > 0)) &&
+      /* ═══ نصّ القراءة: يُعرض فقط إن كُتب للدرس ═══ */
+      /* ═══ التعمّق: يُعرض فقط إن رُبطت بالدرس موارد رديفة ═══ */
+      (def.id !== "vertiefung" || hasRelatedResources),
+  );
+  const total = sectionDefs.length;
+  const progressPct = Math.round((visited.size / total) * 100);
+
+  const markVisited = (id: string) => {
+    setVisited((prev) => {
+      if (prev.has(id)) return prev;
+      const next = new Set(prev);
+      next.add(id);
+      return next;
+    });
+  };
+
+  const goTo = (index: number) => {
+    const clamped = Math.max(0, Math.min(total - 1, index));
+    const def = sectionDefs[clamped];
+    // ═══ تسلسل صارم: في وضع «خطوة بخطوة» يُسمح بالخطوة التالية مباشرة،
+    // ويمنع القفز لخطوتين أو أكثر للأمام (لا تخطي في المسار) ═══
+    if (stepMode && clamped > currentSection + 1) return;
+    setCurrentSection(clamped);
+    markVisited(def.id);
+    // التمرير لأول المحتوى يتم في useEffect أدناه (بعد اكتمال الرندر)
+  };
+
+  // ═══ إصلاح السكرول: عند تغيير القسم ننتقل تلقائياً «لأول المحتوى» ═══
+  // يُنفَّذ بعد اكتمال الرندر (useEffect) لا قبله (requestAnimationFrame)
+  // حتى يجد العنصر الجديد موجوداً فعلاً ويمرّر لأعلى بطاقته دائماً.
+  const firstSectionRender = React.useRef(true);
+  React.useEffect(() => {
+    if (firstSectionRender.current) {
+      firstSectionRender.current = false;
+      return;
+    }
+    const targetId = stepMode
+      ? "lesson-step-content"
+      : `lesson-section-${sectionDefs[currentSection]?.id}`;
+    if (!targetId) return;
+    const el = document.getElementById(targetId);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentSection, stepMode]);
+
+  /** ═══ إتمام الدرس: يسجّل الإنجاز + انتقال تلقائي للدرس التالي ═══
+      (بعد إتمام كل المكونات الـ12 في وضع الخطوات) */
+  const handleCompleteLesson = () => {
+    if (!completedLessonsSet.has(lesson.id)) {
+      completeLesson(lesson.id);
+      void import("@/lib/analytics/events").then(({recordEvent}) =>
+        recordEvent({ type: "lesson-completed", lessonId: lesson.id, unitId: lesson.unitId, ts: Date.now() }),
+      );
+      void import("@/lib/gamification/gems").then(({addGems, GEM_REWARDS}) =>
+        addGems(GEM_REWARDS.LESSON_COMPLETED),
+      );
+    }
+    // انتقال تسلسلي: الدرس التالي تلقائياً
+    const idx = LESSON_META.findIndex((l) => l.id === lesson.id);
+    const nextL = idx >= 0 && idx < LESSON_META.length - 1 ? LESSON_META[idx + 1] : undefined;
+    if (nextL) {
+      setCompletionNotice({
+        title: "🎉 أُنجز الدرس بنجاح!",
+        sub: `جارٍ الانتقال إلى الدرس التالي: «${nextL.titleAr}»…`,
+        href: `/lesson/${nextL.id}`,
+      });
+      window.setTimeout(() => {
+        window.location.href = `/lesson/${nextL.id}`;
+      }, 2500);
+    } else {
+      setCompletionNotice({
+        title: "🏆 أتممت المسار كاملاً!",
+        sub: "أنت جاهز لامتحانات الختم ومحاكاة Goethe الكاملة.",
+        href: "/tests/seal/b2",
+      });
+      document.getElementById("lesson-complete")?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
+  const renderSection = (id: string) => {
+    switch (id) {
+      case "lernziele":
+        return <LernzieleSection lernziele={lesson.lernziele} lessonId={lesson.id} />;
+      case "einfuehrung":
+        return <EinfuehrungSection einfuehrung={lesson.einfuehrung} />;
+      case "review":
+        return (
+          <InterleavingReview
+            review={reviewQuestions}
+            levelLabel={reviewLevelLabel(reviewQuestions, lesson.level)}
+          />
+        );
+      case "theorie":
+        return <TheorieSection blocks={lesson.theory} lessonId={lesson.id} />;
+      case "verben":
+        return (
+          <Card className="overflow-hidden">
+            <CardHeader className="border-b bg-muted/20">
+              <CardTitle className="flex items-center gap-2 text-lg">
+                <TableProperties className="h-5 w-5 text-primary" aria-hidden="true" />
+                جدول الأفعال الشاذة (مرجع سريع)
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-5">
+              <StarkeVerbenTable compact />
+            </CardContent>
+          </Card>
+        );
+      case "hoerverstehen":
+        return (
+          <HoerverstehenSection
+            items={lesson.listening.items}
+            questions={lesson.listening.questions}
+            lessonId={lesson.id}
+          />
+        );
+      case "aussprache":
+        return <AusspracheSection focus={lesson.pronunciation} />;
+      case "schreiben":
+        return <SchreibenSection exercises={lesson.writing} lesson={lesson} />;
+      case "uebungen":
+        return <InteraktiveUebungenSection bank={lesson.practiceBank} lessonId={lesson.id} />;
+      case "fehler":
+        return <FehlerUndTippsSection data={lesson.fehlerUndTipps} />;
+      case "minitest":
+        return (
+          <MiniTestSection
+            questions={lesson.miniTest}
+            unitId={lesson.unitId}
+            lessonId={lesson.id}
+            flashcards={lesson.flashcards}
+            lessonDone={completedLessonsSet.has(lesson.id)}
+          />
+        );
+      case "lernkarten":
+        return <LernkartenSection lessonId={lesson.id} flashcards={lesson.flashcards} />;
+      case "mediation":
+        return <MediationSection tasks={lesson.mediation ?? []} />;
+      case "interaction":
+        return <InteractionSection tasks={lesson.interaction ?? []} />;
+      case "lesetext":
+        return lesson.reading ? (
+          <LesetextSection reading={lesson.reading} lessonId={lesson.id} />
+        ) : (
+          <div className="rounded-2xl border border-dashed p-5 text-sm leading-relaxed text-muted-foreground">
+            لا يحوي هذا الدرس نصّ قراءة مستقلاً. يمكنك تدريب القراءة على نصوص مستوى {lesson.level} من{" "}
+            <Link href="/reading" className="font-bold text-primary underline underline-offset-2">
+              مكتبة القراءة
+            </Link>
+            .
+          </div>
+        );
+      case "vertiefung":
+        return <VertiefungSection lessonId={lesson.id} />;
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div className="mx-auto w-full max-w-4xl px-4 py-8 sm:px-6">
+      {/* ترويسة الدرس */}
+      <div className="mb-6 space-y-3">
+        <div className="flex flex-wrap items-center gap-2">
+          <Link href="/learning-path" className="tap-target rounded-lg py-1 text-sm text-muted-foreground hover:text-primary">
+            ← مسار التعلم
+          </Link>
+          <span className="text-muted-foreground">/</span>
+          <Badge variant="outline" className="font-de font-bold">
+            {lesson.level}
+          </Badge>
+          <LessonPosition lessonId={lesson.id} />
+          <Button
+            variant={focusMode ? "default" : "ghost"}
+            size="sm"
+            onClick={() => setFocusMode((v) => !v)}
+            className="gap-1.5 text-xs"
+            aria-pressed={focusMode}
+            aria-label="وضع التركيز: إخفاء التنقل الداخلي"
+          >
+            <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+            {focusMode ? "خروج من التركيز" : "وضع التركيز"}
+          </Button>
+          <Badge variant="secondary">
+            {LEVEL_LABEL[lesson.level] ?? lesson.level}
+          </Badge>
+          {LESSON_META.find((m) => m.id === lesson.id)?.estimatedMinutes && (
+            <Badge variant="outline" title="تقدير تقريبي للمتعلم الذاتي، وليس قياساً فعلياً">
+              ⏱ حوالي {LESSON_META.find((m) => m.id === lesson.id)?.estimatedMinutes} دقيقة (تقدير)
+            </Badge>
+          )}
+        </div>
+
+        <h1 className="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <LangDe className="font-extrabold">{lesson.titleDe}</LangDe>
+        </h1>
+        <p className="text-base text-muted-foreground">{lesson.titleAr}</p>
+        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">{lesson.summary}</p>
+
+        {/* ربط المعلّم الافتراضي بسياق الدرس */}
+        <div className="flex flex-wrap items-center gap-2">
+          <Button asChild variant="outline" size="sm" className="gap-1.5 text-primary">
+            <Link href={`/assistant?lesson=${lesson.id}`}>
+              <Sparkles className="h-4 w-4" aria-hidden="true" />
+              اسأل المعلّم عن هذا الدرس
+            </Link>
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            className="gap-1.5 print:hidden"
+            onClick={() => window.print()}
+            title={'احفظ الدرس كملف PDF (اختر "حفظ كـ PDF" من نافذة الطباعة)'}
+          >
+            <Printer className="h-4 w-4" aria-hidden="true" />
+            طباعة / PDF
+          </Button>
+        </div>
+
+        {/* شريط التقدم */}
+        <div className="flex items-center gap-3">
+          <Progress value={progressPct} className="h-2" aria-label={`تقدم الدرس ${progressPct}%`} />
+          <span className="font-de shrink-0 text-sm font-bold text-primary">{progressPct}%</span>
+        </div>
+      </div>
+
+      {/* ═══ شريط الانتقال بعد الإتمام — يظهر عند ضغط «أكمل الدرس» ═══ */}
+      {completionNotice && (
+        <div className="sticky top-16 z-40 -mx-4 mb-4 border-y-2 border-success/40 bg-success/95 px-4 py-3 text-center shadow-lg backdrop-blur-md sm:mx-0 sm:rounded-2xl sm:border-2">
+          <p className="text-base font-extrabold text-white">{completionNotice.title}</p>
+          <p className="mt-0.5 text-sm font-semibold text-white/90">{completionNotice.sub}</p>
+          <div className="mx-auto mt-2 h-1.5 w-full max-w-xs overflow-hidden rounded-full bg-white/25">
+            <div className="h-full animate-[progressbar_2.5s_linear_forwards] rounded-full bg-white" />
+          </div>
+        </div>
+      )}
+
+      {/* متصفح الأقسام العشرة — شريط علوي (لاصق في وضع «عرض الكل» فقط؛
+          في وضع «خطوة بخطوة» يبقى عادياً كي لا يتكدس فوق شريط التقدم اللاصق) */}
+      {!focusMode && (
+      <div
+        className={`${
+          stepMode ? "" : "sticky top-16 z-30"
+        } -mx-4 mb-6 border-y bg-background/90 px-4 py-2 backdrop-blur-md sm:mx-0 sm:rounded-xl sm:border`}
+      >
+        <div className="flex gap-1.5 overflow-x-auto pb-1 sm:flex-wrap">
+          {sectionDefs.map((def, i) => {
+            const isVisited = visited.has(def.id);
+            const isCurrent = i === currentSection;
+            return (
+              <button
+                key={def.id}
+                type="button"
+                onClick={() => goTo(i)}
+                disabled={stepMode && !isVisited && !isCurrent}
+                aria-current={isCurrent ? "step" : undefined}
+                title={
+                  stepMode && !isVisited && !isCurrent
+                    ? "أتمّ القسم الحالي لفتح هذا القسم — لا تخطي في المسار"
+                    : undefined
+                }
+                className={cn(
+                  "flex shrink-0 items-center gap-1.5 rounded-lg border px-3 py-2 text-xs font-semibold transition-colors",
+                  isCurrent
+                    ? "border-primary bg-primary text-primary-foreground"
+                    : isVisited
+                      ? "border-success/40 bg-success/10 text-success hover:border-success/60"
+                      : stepMode
+                        ? "cursor-not-allowed bg-muted/20 text-muted-foreground/50"
+                        : "bg-muted/40 text-muted-foreground hover:border-primary/40",
+                )}
+              >
+                <def.icon className="h-3.5 w-3.5" aria-hidden="true" />
+                {def.short}
+                {isVisited && !isCurrent && <CheckCircle2 className="h-3 w-3" aria-hidden="true" />}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+      )}
+
+      {/* ═══ هدف اليوم + مراجعة قبل النسيان ═══ */}
+      <DailyGoalBar />
+
+      {/* ═══ وضع العرض: خطوة بخطوة (تفاعلي) أم عرض الكل ═══ */}
+      <div className="mb-4 flex items-center justify-between gap-3">
+        <p className="text-xs font-bold text-muted-foreground">
+          {stepMode
+            ? `الخطوة ${currentSection + 1} من ${total} — ${sectionDefs[currentSection]?.label ?? ""}`
+            : "جميع خطوات الدرس معاً"}
+        </p>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => setStepMode((v) => !v)}
+          className="gap-1.5 text-xs"
+          aria-pressed={stepMode}
+        >
+          <ListChecks className="h-3.5 w-3.5" aria-hidden="true" />
+          {stepMode ? "عرض الكل" : "خطوة بخطوة"}
+        </Button>
+      </div>
+
+      {stepMode ? (
+        /* ═══ وضع «خطوة بخطوة» الكامل: كل الأقسام البيداغوجية بالترتيب ═══
+           (الأهداف ← التمهيد ← المراجعة ← الشرح ← الاستماع ← النطق ←
+            الكتابة ← التدريبات ← الأخطاء والحيل ← التقييم ← البطاقات) */
+        <div className="space-y-4">
+          {/* شريط التقدم اللاصق — يبقى مرئياً دائماً حتى في السكرول الطويل */}
+          <div className="sticky top-16 z-30 flex items-center gap-3 rounded-xl border bg-background/95 px-4 py-2.5 shadow-sm backdrop-blur-md">
+            <Progress value={progressPct} className="h-2.5 flex-1" aria-label={`الخطوة ${currentSection + 1} من ${total}`} />
+            <span className="font-de shrink-0 text-sm font-extrabold text-primary">{currentSection + 1}/{total}</span>
+            <span className="max-w-24 shrink-0 truncate rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-bold text-primary">
+              {sectionDefs[currentSection].short}
+            </span>
+          </div>
+
+          {/* القسم الحالي — كل مكوّن كامل لا مختصر */}
+          <div key={currentSection} id="lesson-step-content" className="lesson-step-enter fade-up scroll-mt-32 rounded-2xl border bg-card p-5 shadow-soft sm:p-6">
+            <div className="mb-4 flex items-center gap-3 border-b pb-3">
+              <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 font-de text-sm font-extrabold text-primary">
+                {currentSection + 1}
+              </span>
+              <div className="min-w-0">
+                <h2 className="text-lg font-extrabold">{sectionDefs[currentSection].label}</h2>
+                <p className="text-[11px] text-muted-foreground">
+                  الخطوة {currentSection + 1} من {total} — أتمّها لتنتقل للتالية
+                </p>
+              </div>
+              {completedLessonsSet.has(lesson.id) && (
+                <CheckCircle2 className="ms-auto h-5 w-5 shrink-0 text-success" aria-hidden="true" />
+              )}
+            </div>
+            {renderSection(sectionDefs[currentSection].id)}
+
+            {/* زر «التالي» في نهاية القسم — لا حاجة للتمرير للأعلى بعد إنهاء قسم طويل */}
+            <div className="mt-6 flex flex-wrap justify-end gap-2 border-t pt-4">
+              {currentSection < total - 1 ? (
+                <Button size="lg" className="btn-glow gap-2 px-6 whitespace-normal text-center leading-snug" onClick={() => goTo(currentSection + 1)}>
+                  أتممت هذا القسم — التالي: {sectionDefs[currentSection + 1].short}
+                  <ArrowLeft className="h-5 w-5" aria-hidden="true" />
+                </Button>
+              ) : (
+                <Button size="lg" variant="gold" className="btn-glow gap-2 px-6" onClick={handleCompleteLesson}>
+                  <Trophy className="h-5 w-5" aria-hidden="true" />
+                  إنهاء الدرس
+                </Button>
+              )}
+            </div>
+          </div>
+
+          {/* أزرار التنقل السفلية اللاصقة — على الجوال ترتفع فوق شريط التنقل
+              السفلي (MobileBottomNav) فلا يغطيها، وعلى الشاشات الكبيرة تلتصق بأسفل الشاشة */}
+          <div className="sticky bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-30 -mx-4 border-t bg-background/95 px-4 py-3 backdrop-blur-md sm:mx-0 sm:rounded-t-2xl sm:border md:bottom-0">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <Button variant="outline" onClick={() => goTo(currentSection - 1)} disabled={currentSection === 0} className="gap-1.5">
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                السابق
+              </Button>
+              {currentSection < total - 1 ? (
+                <Button size="lg" className="btn-glow gap-2 px-6 whitespace-normal text-center leading-snug" onClick={() => goTo(currentSection + 1)}>
+                  التالي: {sectionDefs[currentSection + 1].short}
+                  <ArrowLeft className="h-5 w-5" aria-hidden="true" />
+                </Button>
+              ) : (
+                <Button size="lg" variant="gold" className="btn-glow gap-2 px-6" onClick={handleCompleteLesson}>
+                  <Trophy className="h-5 w-5" aria-hidden="true" />
+                  إنهاء الدرس
+                </Button>
+              )}
+            </div>
+          </div>
+        </div>
+      ) : (
+        /* ═══ الوضع البديل: عرض كل الخطوات معاً ═══ */
+        <>
+          <div className="space-y-8">
+            {sectionDefs.map((def) => (
+              <section
+                key={def.id}
+                id={`lesson-section-${def.id}`}
+                className="scroll-mt-36"
+                aria-label={def.label}
+              >
+                <h2 className="mb-3 flex items-center gap-2 text-xl font-bold">
+                  <def.icon className="h-5 w-5 text-primary" aria-hidden="true" />
+                  {def.label}
+                </h2>
+                {renderSection(def.id)}
+              </section>
+            ))}
+          </div>
+
+          {/* أزرار التنقل السفلية (وضع الكل) */}
+          <div className="mt-10 flex items-center justify-between gap-3 border-t pt-6">
+            <Button
+              variant="outline"
+              onClick={() => goTo(currentSection - 1)}
+              disabled={currentSection === 0}
+              className="gap-1.5"
+            >
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              السابق
+            </Button>
+            {currentSection < total - 1 ? (
+              <Button onClick={() => goTo(currentSection + 1)} className="gap-1.5">
+                {sectionDefs[currentSection + 1].short}
+                <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+              </Button>
+            ) : (
+              <Button asChild variant="gold">
+                <Link href="/learning-path">
+                  العودة لمسار التعلم
+                  <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </Button>
+            )}
+          </div>
+        </>
+      )}
+
+      {/* ═══ ملخص الدرس (قابل للحفظ PDF) ═══ */}
+      <div id="lesson-complete" className="scroll-mt-24">
+        <LessonSummary lesson={lesson} />
+      </div>
+
+      {/* ═══ إكمال الدرس + اقتراح امتحان الختم ═══ */}
+      <LessonCompletion lesson={lesson} />
+
+      {/* ═══ التنقل بين الدروس: السابق / التالي (المسار المتسلسل) ═══ */}
+      <LessonPrevNext lessonId={lesson.id} />
+    </div>
+  );
+}

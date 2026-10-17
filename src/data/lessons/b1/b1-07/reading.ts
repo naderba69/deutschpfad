@@ -1,0 +1,115 @@
+/**
+ * b1-07 — نصّ القراءة الممتدّ (الجزء «reading»)
+ * فُصل وأُضيف في المرحلة 5. نصّ B1 عن السياسة والمجتمع (مقال رأي): الجمل الزمنية والتخالفية.
+ */
+import type { ReadingText } from "@/types/lesson";
+
+export const readingB107: ReadingText = {
+  id: "read-b1-07",
+  titleDe: "Wählen mit sechzehn?",
+  titleAr: "الانتخاب في السادسة عشرة؟",
+  textType: "artikel",
+  paragraphs: [
+    "In mehreren Bundesländern dürfen Jugendliche schon mit sechzehn Jahren wählen — bisher aber nur bei Kommunalwahlen. Seitdem diskutiert das ganze Land über eine wichtige Frage: Soll das auch bei Bundestagswahlen möglich sein? Die Befürworter sagen, man solle junge Menschen früher einbeziehen. Solange Jugendliche in der Schule über Politik sprechen, interessieren sie sich auch mehr dafür. Als in einem Bundesland die Grenze gesenkt wurde, stieg die Beteiligung junger Wähler deutlich.",
+    "Die Gegner argumentieren anders. Nachdem sie die Zahlen geprüft hatten, stellten sie fest, dass viele Jugendliche mit sechzehn noch nicht genug Informationen haben. Sie verweisen auf Studien: Wer mit sechzehn entscheide, bereue die Entscheidung später häufiger. Außerdem sei die Politik für diese Altersgruppe zu kompliziert — während Erwachsene Steuererklärungen lesen, müssten Jugendliche erst lernen, wie ein Haushalt funktioniert. Bevor man das Wahlalter ändert, solle man den Politikunterricht verbessern.",
+    "Für beide Seiten gilt: Es geht am Ende nicht nur um Zahlen. Wenn junge Menschen früh Verantwortung übernehmen, wächst ihre Verbindung zur Gesellschaft — das sagen zumindest die Befürworter. Aber obwohl diese Verbindung wichtig ist, bleibt die Frage nach der Reife offen. Obgleich viele Studien vorliegen, kennen wir die langfristigen Folgen noch nicht. Bis es solche Langzeitdaten gibt, bleibt die Diskussion ein Ringen um Vermutungen auf beiden Seiten.",
+    "Wer in einer Demokratie über solche Fragen entscheiden will, muss zuerst wählen gehen. Deshalb ist die alte Regel so beliebt: Erst wenn man informiert ist, soll man wählen — und wer wählen darf, informiert sich meistens freiwillig. Die Diskussion über das Wahlalter zeigt also ein Paradoxon: Wer früh wählen darf, lernt früher; wer nichts über Politik weiß, bleibt eher zu Hause.",
+  ],
+  paragraphsAr: [
+    "في عدد من الولايات يجوز للشباب أن ينتخبوا في السادسة عشرة — لكن في انتخابات البلديات فقط حتى الآن. ومنذ ذلك الحين يناقش البلد كله سؤالاً مهماً: هل ينبغي أن يكون هذا ممكناً في انتخابات البرلمان الاتحادي أيضاً؟ يقول المؤيدون إنه ينبغي إشراك الشباب مبكراً. فطالما تحدّث الشباب في المدرسة عن السياسة، اهتموا بها أكثر. وعندما خُفِّضت السنّ في إحدى الولايات، ارتفعت مشاركة الناخبين الشباب بوضوح.",
+    "ويحتجّ المعارضون بحجّة أخرى. فبعد أن فحصوا الأرقام، تبيّن لهم أن كثيراً من الشباب في السادسة عشرة ليست لديهم معلومات كافية. ويستشهدون بدراسات: من يقرّر في السادسة عشرة يندم على قراره لاحقاً أكثر من غيره. ويرون أن السياسة معقّدة أكثر من اللازم لهذه الفئة العمرية — فبينما يقرأ الكبار الإقرارات الضريبية، على الشباب أولاً أن يتعلّموا كيف تعمل ميزانية. وقبل أن يُغيَّر سنّ الانتخاب، ينبغي تحسين تعليم السياسة.",
+    "ويصدق على الطرفين: الأمر في النهاية ليس عن الأرقام فقط. فعندما يتحمّل الشباب المسؤولية مبكراً، تنمو صلتهم بالمجتمع — هذا ما يقوله المؤيدون على الأقل. لكن رغم أن هذه الصلة مهمة، يبقى سؤال النضج مفتوحاً. ومع أن دراسات كثيرة متوفّرة، فإننا لا نعرف بعد الآثار الطويلة الأمد. وحتى تتوفّر بيانات على المدى الطويل، تبقى المناقشة صراع تخمينات من الطرفين.",
+    "ومن يريد في ديمقراطية أن يقرّر في مسائل كهذه فعليه أولاً أن يذهب إلى الانتخاب. لذلك صارت القاعدة القديمة محبوبة: أولاً يُعلَم المرء، ثم ينتخب — ومن يحقّ له الانتخاب يعلّم نفسه بنفسه في الغالب. فالمناقشة حول سنّ الانتخاب تكشف مفارقة: من يُسمح له بالانتخاب مبكراً يتعلّم أبكر؛ ومن لا يعرف شيئاً عن السياسة يبقى في البيت أكثر.",
+  ],
+  glossary: [
+    { de: "die Wahl", ar: "الانتخاب", noteAr: "مؤنّثة؛ ومنها wählen (ينتخب) وdas Wahlalter (سنّ الانتخاب)." },
+    { de: "das Wahlalter", ar: "سنّ الانتخاب", noteAr: "محايد مركّب؛ das Alter = العمر." },
+    { de: "die Beteiligung", ar: "المشاركة", noteAr: "مؤنّثة؛ ومنها sich beteiligen (يشارك)." },
+    { de: "der Befürworter", ar: "المؤيّد", noteAr: "مذكّر بلاحقة -er؛ والمؤنّث die Befürworterin." },
+    { de: "der Gegner", ar: "المعارض", noteAr: "مذكّر؛ ومنه die Gegenpartei (الطرف المقابل)." },
+    { de: "einbeziehen", ar: "يُشرك، يُدرج", noteAr: "فعل منفصل شاذّ: bezog ein · hat einbezogen." },
+    { de: "die Reife", ar: "النضج", noteAr: "مؤنّثة؛ ومنها reif (ناضج) وreifen (ينضج)." },
+    { de: "die Folge", ar: "النتيجة، التبعة", noteAr: "مؤنّثة؛ والجمع die Folgen؛ ومنها in der Folge = نتيجةً لذلك." },
+    { de: "die Studie", ar: "الدراسة", noteAr: "مؤنّثة، وجمعها die Studien؛ ومنها studieren (يدرس)." },
+    { de: "der Haushalt", ar: "الميزانية، البيت", noteAr: "مذكّر؛ يُستعمل للبيت وللميزانية العامة معاً." },
+  ],
+  questions: [
+    {
+      id: "rq1",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was sagen die Befürworter des Wahlalters mit sechzehn?",
+      questionAr: "ماذا يقول المؤيدون لسنّ الانتخاب في السادسة عشرة؟",
+      options: [
+        "Junge Menschen sollten früher einbezogen werden.",
+        "Nur Erwachsene sollten wählen.",
+        "Der Politikunterricht sollte abgeschafft werden.",
+        "Das Wahlalter sollte überall gleich bleiben.",
+      ],
+      correctIndex: 0,
+      paragraph: 1,
+      explanation: "الفقرة 1: «man solle junge Menschen früher einbeziehen» — وهو رأي المؤيدين كما تلخّصهم الفقرة، ويستندون إلى التجربة في الولاية التي ارتفعت فيها المشاركة. ولاحظ الكلام المنقول هنا بـKonjunktiv I (solle).",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq2",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was fordern die Gegner?",
+      questionAr: "ماذا يطالب المعارضون؟",
+      options: [
+        "Das Wahlalter sofort und in allen Ländern zu senken, ohne zu warten.",
+        "Den Politikunterricht zu verbessern, bevor das Wahlalter geändert wird.",
+        "Wahlen in dieser Form ganz abzuschaffen und durch Umfragen zu ersetzen.",
+        "Jugendliche vollständig von den Studien auszuschließen.",
+      ],
+      correctIndex: 1,
+      paragraph: 2,
+      explanation: "الفقرة 2 تختم بحرف الجملة الزمنية: «Bevor man das Wahlalter ändert, solle man den Politikunterricht verbessern» — أي ترتيب التغيير لا رفضه.",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq3",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was sagt der Text über die langfristigen Folgen?",
+      questionAr: "ماذا يقول النصّ عن الآثار الطويلة الأمد؟",
+      options: [
+        "Sie sind heute schon vollständig bekannt und belegt.",
+        "Sie sind für die politische Debatte völlig unwichtig.",
+        "Die Studien widersprechen sich, und die Langzeitdaten fehlen noch.",
+        "Sie werden seit einigen Jahren nicht mehr untersucht.",
+      ],
+      correctIndex: 2,
+      paragraph: 3,
+      explanation: "الفقرة 3 تنصّ على أن الدراسات متوفّرة لكن الآثار الطويلة الأمد غير معروفة بعد، ويُظهر النصّ هذا على شكل جملة تخالفية: «Obgleich viele Studien vorliegen, kennen wir die langfristigen Folgen noch nicht».",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq4",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Welches Paradoxon beschreibt der Text am Ende?",
+      questionAr: "أي مفارقة يصفها النصّ في الختام؟",
+      options: [
+        "Wer am Wahltag schläft, wählt nicht und ändert nichts.",
+        "Wer früh wählen darf, lernt früher; wer nichts weiß, bleibt zu Hause.",
+        "Wer viel über die Politik weiß, wählt gerade deshalb nicht.",
+        "Politik ist für alle Menschen gleich einfach zu verstehen.",
+      ],
+      correctIndex: 1,
+      paragraph: 4,
+      explanation: "الفقرة الأخيرة تصوغ المفارقة صريحة: من يُسمح له بالانتخاب مبكراً يتعلّم أبكر، ومن لا يعرف شيئاً عن السياسة يبقى في البيت — وهي خلاصة تُبرز دور الانتخاب بوصفه مدرسة لا حقّاً فقط.",
+      errorType: "comprehension",
+    },
+  ],
+  redemittel: [
+    { de: "Die Befürworter sagen, ...", ar: "يقول المؤيدون إنّ …" },
+    { de: "Als ich zum ersten Mal wählte, ...", ar: "عندما انتخبتُ أول مرة … (حادثة ماضية واحدة)" },
+    { de: "Obwohl die Mehrheit dagegen ist, ...", ar: "رغم أن الأغلبية ضدّ ذلك …" },
+    { de: "Bevor man etwas ändert, sollte man ...", ar: "قبل أن يُغيَّر شيء ينبغي المرء أن …" },
+    { de: "Ich finde es wichtig, dass ...", ar: "أرى من المهم أنّ …" },
+  ],
+  discussionAr:
+    "ناقش مع زميلك: هل تنبغي المساواة بين أعمار الانتخاب في كل الاستحقاقات؟ ثم قدّم مطلاعين: واحد بصيغة الزمن (Als … / Wenn …) وآخر بصيغة التخالف (Obwohl …, …). واختم بجملة نقاش واحدة تبدأ بـ«Bevor man … sollte man …».",
+};

@@ -1,0 +1,102 @@
+# ═══════════════════════════════════════════════════════════
+#  CI — DeutschPfad
+#  شبكة الأمان: لا تصل أي دفعة إلى main أو فرع عمل دون أن تمرّ
+#  فحوص الأنواع + ESLint + اختبارات الوحدة + البناء + اختبارات المتصفح.
+#  محلياً نفس الشيء: npm run verify ثم npx playwright test
+#
+#  ملاحظتان تصميميتان (من واقع أول تشغيل حقيقي):
+#  1) كل وظيفة تبني نسختها بنفسها — لا نقل مجلد `.next` بين الوظائف
+#     (actions/upload-artifact يستبعد الملفات المخفية افتراضياً، فأخفقت أول تجربة).
+#  2) الوظيفتان بلا `needs` فتعملان بالتوازي — زمن الجدار = أطول وظيفة لا مجموعهما.
+# ═══════════════════════════════════════════════════════════
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  # لنفس الالتزام يشغّل GitHub مرتين (push + pull_request) — مجموعة واحدة تُلغي الأقدم
+  group: ci-${{ github.event.pull_request.head.sha || github.sha }}
+  cancel-in-progress: true
+
+env:
+  NEXT_TELEMETRY_DISABLED: "1"
+
+jobs:
+  static-and-unit:
+    name: أنواع + ESLint + اختبارات الوحدة
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: تثبيت الاعتماديات
+        run: npm ci
+
+      - name: فحص الأنواع (TypeScript)
+        run: npm run typecheck
+
+      - name: فحص ESLint
+        run: npm run lint
+
+      - name: اختبارات الوحدة (vitest)
+        run: npx vitest run --reporter=dot
+
+  e2e:
+    name: بناء + اختبارات المتصفح (Playwright)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: تثبيت الاعتماديات
+        run: npm ci
+
+      - name: تثبيت متصفح Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: البناء الإنتاجي (next build)
+        run: npm run build
+
+      - name: اختبارات المتصفح على نسخة إنتاجية
+        run: |
+          set -o pipefail
+          npx playwright test --reporter=line --workers=2 2>&1 | tee pw-run.log
+
+      - name: إظهار أسماء الاختبارات الفاشلة (ملخّص + لوحة الأنشطة)
+        if: failure()
+        run: |
+          # سبب الوجود: تفاصيل الفشل كانت تُقرأ من سجلّ الوظيفة فقط، وهو محجوب في
+          # بيئات لا تصل إلى تخزين GitHub. أسماء الاختبارات تُنشر هنا فيصير الفشل
+          # قابلاً للتشخيص عبر واجهة البرمجة وملخّص التشغيل.
+          {
+            echo "### ❌ اختبارات متصفح فاشلة"
+            echo '```'
+            grep -E "^[[:space:]]+[0-9]+\) " pw-run.log | head -40 || echo "(لم يُعثر على أسماء — راجع السجل الكامل)"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          grep -E "^[[:space:]]+[0-9]+\) " pw-run.log | head -10 | while IFS= read -r line; do
+            echo "::error title=Playwright::${line}"
+          done || true
+
+      - name: رفع تقارير الفشل (آثار Playwright)
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-traces
+          path: test-results
+          retention-days: 7

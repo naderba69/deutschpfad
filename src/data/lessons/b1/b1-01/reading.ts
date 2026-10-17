@@ -1,0 +1,91 @@
+/**
+ * b1-01 — نصّ القراءة الممتدّ (الجزء «reading»)
+ * فُصل في المرحلة 5. نصّ B1 عن التعليم والدراسة: Genitiv والجمل النسبية في سياق حقيقي.
+ */
+import type { ReadingText } from "@/types/lesson";
+
+export const readingB101: ReadingText = {
+  id: "read-b1-01",
+  titleDe: "Zwei Wege nach der Schule",
+  titleAr: "طريقان بعد المدرسة",
+  textType: "artikel",
+  paragraphs: [
+    "In Deutschland gibt es nach der Schule zwei Wege, die zu einem Beruf führen. Der erste Weg ist die Ausbildung: Sie dauert meistens drei Jahre, und die Hälfte der Zeit arbeitet man in einem Betrieb. Der zweite Weg ist das Studium an einer Universität oder Fachhochschule, das mindestens drei Jahre dauert und mit einer wissenschaftlichen Arbeit endet.",
+    "Lena hat sich für eine Ausbildung entschieden. Sie lernt in einem Krankenhaus und besucht zweimal pro Woche die Berufsschule. „Der Vorteil der Ausbildung ist das Geld“, sagt sie. „Ich verdiene von Anfang an, und nach drei Jahren habe ich einen Abschluss, den viele Betriebe suchen. Außerdem kenne ich am Ende des dritten Jahres schon die Abläufe im Krankenhaus.“ Ihre Schwester dagegen studiert Medizin. Das Studium der Medizin dauert länger, aber die Möglichkeiten danach sind größer. „Ich wollte schon in der Schule Ärztin werden“, erzählt sie.",
+    "Welcher Weg ist besser? Das hängt von der Person und vom Ziel ab. Wer praktisch arbeiten möchte, wählt oft die Ausbildung; wer forschen oder in einem akademischen Beruf arbeiten möchte, braucht meistens ein Studium. Wichtig ist, dass man während der Ausbildung oder des Studiums Erfahrungen sammelt: Praktika, Projekte und Nebenjobs helfen später bei jeder Bewerbung.",
+    "In beiden Wegen gilt dieselbe Regel: Wer früh anfängt, sich zu informieren, trifft später eine bessere Entscheidung. Die Berufsberatung der Agentur für Arbeit ist kostenlos, und viele Schulen laden ehemalige Schüler ein, die von ihrem Weg erzählen. Ein Gespräch mit jemandem, der den Weg schon gegangen ist, ersetzt oft viele Stunden im Internet. Deshalb sollte man solche Gespräche nicht aufschieben, sondern schon in der zehnten Klasse damit anfangen.",
+  ],
+  paragraphsAr: [
+    "في ألمانيا يوجد بعد المدرسة طريقان يؤدّيان إلى مهنة. الطريق الأول هو التدريب المهني Ausbildung: يستغرق عادةً ثلاث سنوات، ويعمل المتدرّب نصف الوقت في مؤسسة. والطريق الثاني هو الدراسة الجامعية في جامعة أو معهد تقني عالٍ، وتستغرق ثلاث سنوات على الأقل وتنتهي بعمل علمي.",
+    "اختارت لينا التدريب المهني. تتعلّم في مستشفى وترتاد مدرسة المهنة مرّتين كل أسبوع. تقول: «ميزة التدريب المهني هي المال. أُتقاضى راتباً من البداية، وبعد ثلاث سنوات أحصل على شهادة يبحث عنها كثير من الشركات. وزيادةً على ذلك أكون في نهاية السنة الثالثة قد عرفت مجرى العمل في المستشفى». أمّا أختها فتدرس الطب. دراسة الطب تستغرق وقتاً أطول، لكن الفرص بعدها أوسع. تقول: «أردتُ أن أصبح طبيبة منذ أيام المدرسة».",
+    "أيّ الطريقين أفضل؟ الأمر يتوقف على الشخص والهدف. من يريد عملاً عملياً يختار غالباً التدريب المهني؛ ومن يريد البحث أو مهنة أكاديمية يحتاج عادةً إلى دراسة جامعية. والمهم أن يجمع المرء خبرات أثناء التدريب أو الدراسة: التدريبات العملية والمشاريع والأعمال الجانبية تساعد لاحقاً في كل تقديم طلب.",
+    "وفي الطريقين تسري القاعدة نفسها: من يبدأ في الاستعلام مبكّراً يتّخذ قراراً أفضل. والإرشاد المهني في وكالة العمل مجاني، وكثير من المدارس تستدعي طلاباً سابقين يحدّثون عن طريقهم. والحديث مع شخص سلك الطريق قبلك كثيراً ما يعوّض ساعات في الإنترنت. ولهذا لا ينبغي تأجيل هذه الأحاديث، بل البدء بها منذ الصف العاشر.",
+  ],
+  glossary: [
+    { de: "die Ausbildung", ar: "التدريب المهني (المزدوج)", noteAr: "مؤنّثة؛ تعني التأهيل المهني في مؤسسة ومدرسة معاً، وهي غير das Studium." },
+    { de: "das Studium", ar: "الدراسة الجامعية", noteAr: "محايد؛ والجمع die Studien بمعنى دراسات." },
+    { de: "der Betrieb", ar: "المؤسسة، الشركة", noteAr: "مذكّر؛ وقد تُستعمل أيضاً بمعنى التشغيل والحركة." },
+    { de: "der Vorteil", ar: "الميزة", noteAr: "مذكّر؛ وعكسها der Nachteil (العيب)." },
+    { de: "der Abschluss", ar: "الشهادة، الإنهاء", noteAr: "مذكّر؛ ومنه abschließen (يُنهي، يُبرم)." },
+    { de: "sich entscheiden", ar: "يقرّر", noteAr: "فعل انعكاسي مع für: sich für etwas entscheiden — ich entscheide mich für eine Ausbildung." },
+    { de: "das Praktikum", ar: "التدريب العملي", noteAr: "محايد؛ والجمع die Praktika (يوناني الأصل)." },
+    { de: "die Bewerbung", ar: "طلب التوظيف، الترشّح", noteAr: "مؤنّثة؛ ومنه sich bewerben um/bei (يتقدّم بطلب إلى)." },
+    { de: "die Berufsberatung", ar: "الإرشاد المهني", noteAr: "مركّب مؤنّث: der Beruf + die Beratung." },
+    { de: "die Erfahrung", ar: "الخبرة", noteAr: "مؤنّثة؛ والجمع die Erfahrungen." },
+  ],
+  questions: [
+    {
+      id: "rq1",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Wie lange dauert die Ausbildung meistens?",
+      options: ["Zwei Jahre", "Sechs Monate", "Drei Jahre", "Vier Jahre"],
+      correctIndex: 2,
+      explanation: "الفقرة 1: Sie dauert meistens drei Jahre — ويعمل المتدرّب نصف الوقت في مؤسسة.",
+      paragraph: 1,
+      errorType: "comprehension",
+    },
+    {
+      id: "rq2",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Welchen Vorteil nennt Lena an der Ausbildung?",
+      options: ["Das Geld", "Die kurze Dauer", "Die Freizeit", "Die Note"],
+      correctIndex: 0,
+      explanation: "الفقرة 2: «Der Vorteil der Ausbildung ist das Geld» — تُتقاضى راتباً من البداية وتحصل على شهادة مطلوبة.",
+      paragraph: 2,
+      errorType: "comprehension",
+    },
+    {
+      id: "rq3",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was hilft laut Text bei jeder Bewerbung?",
+      options: ["Ein langes Studium an der Universität", "Erfahrungen aus Praktika und Projekten", "Ein Nebenjob im Ausland für ein Jahr", "Eine Empfehlung von der alten Schule"],
+      correctIndex: 1,
+      explanation: "الفقرة 3: Praktika, Projekte und Nebenjobs helfen später bei jeder Bewerbung — أي أنّ الخبرة العملية هي الرصيد المعتبر.",
+      paragraph: 3,
+      errorType: "comprehension",
+    },
+    {
+      id: "rq4",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was empfiehlt der Text am Ende?",
+      options: ["Nur im Internet nach Informationen zu lesen", "Sofort zu studieren ohne Erfahrung", "Zu warten, bis die Schule von selbst hilft", "Mit Menschen zu sprechen, die den Weg kennen"],
+      correctIndex: 3,
+      explanation: "الفقرة 4: Ein Gespräch mit jemandem, der den Weg schon gegangen ist, ersetzt oft viele Stunden im Internet.",
+      paragraph: 4,
+      errorType: "comprehension",
+    },
+  ],
+  redemittel: [
+    { de: "Ich habe mich für eine Ausbildung entschieden.", ar: "قرّرتُ أن أسلك التدريب المهني." },
+    { de: "Der Vorteil ist … / Der Nachteil ist …", ar: "الميزة هي … / العيب هو …" },
+    { de: "Das hängt von der Person und vom Ziel ab.", ar: "هذا يتوقف على الشخص والهدف." },
+    { de: "Ich sammle Erfahrungen während des Studiums.", ar: "أجمع خبرات خلال الدراسة." },
+    { de: "Wer früh anfängt, entscheidet besser.", ar: "من يبدأ مبكّراً يقرّر أفضل." },
+  ],
+  discussionAr:
+    "أيّ الطريقين أقرب إلى وضعك: التدريب المهني أم الدراسة الجامعية؟ اكتب أربعة أسطر تشرح اختيارك، واستعمل فيه تركيب Genitiv مرّة على الأقل (مثل «Der Vorteil der Ausbildung …») وجملة نسبية مرّة على الأقل (مثل «… , der/die …»)، ثم اذكر خطوة واحدة ستبدأ بها هذا الشهر لتعرف أكثر عن الطريق الذي تريده.",
+};

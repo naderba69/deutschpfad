@@ -1,0 +1,116 @@
+/**
+ * b1-10 — نصّ القراءة الممتدّ (الجزء «reading»)
+ * فُصل وأُضيف في المرحلة 5. نصّ B1 عن خطط المستقبل: مراجعة قواعد B1 داخل نصّ متماسك.
+ */
+import type { ReadingText } from "@/types/lesson";
+
+export const readingB110: ReadingText = {
+  id: "read-b1-10",
+  titleDe: "Ein Plan für die Zukunft",
+  titleAr: "خطة للمستقبل",
+  textType: "bericht",
+  paragraphs: [
+    "Lena ist 27 Jahre alt und arbeitet seit vier Jahren als Verkäuferin in einem Möbelhaus in Dortmund. Sie sagt, der Beruf gefalle ihr, aber sie wolle mehr Verantwortung. Deshalb hat sie im Januar eine Entscheidung getroffen: Bis zum nächsten Sommer will sie ihre Ausbildung zur Einrichtungsberaterin abschließen. Der Kurs, den sie dafür besucht, findet an zwei Abenden pro Woche statt und dauert achtzehn Monate.",
+    "Ihre Zukunftsplanung hängt eng mit ihrer Familie zusammen. „Ich wünsche mir nicht mehr Geld, sondern mehr Zeit“, sagt sie. Wenn sie mehr verdienen würde, könnte ihr Mann seine Stelle auf Teilzeit wechseln, weil er sich um die beiden Kinder kümmern möchte. „Hätte ich vor fünf Jahren gewusst, wie viel so ein Kurs bringt, hätte ich früher angefangen“, sagt sie. Ihre Freundin Rana ist denselben Weg gegangen und arbeitet heute in einer großen Kette. Vorher hatte sie einen Integrationskurs besucht, der ihr den Einstieg erleichtert hatte. Rana sagt, die wichtigste Erfahrung sei gewesen, dass sie sich nach jeder Prüfung hingesetzt und ihre Bewerbung verbessert habe.",
+    "Nicht jeder Plan geht auf. Lenas Kollege Tobias wollte eine Ausbildung zum Schreiner beginnen, aber die Werkstatt, in der er arbeiten wollte, wurde geschlossen. Er hat sich deshalb neu entschieden: Er bleibt im Möbelhaus und lässt sich in drei Monaten zum Lagerleiter weiterbilden. „Ein Plan ist wie eine Landkarte“, sagt er, „wenn eine Straße gesperrt wird, sucht man die nächste.“",
+    "Auch die Beratung der Arbeitsagentur spielt eine Rolle. Wer sich in Dortmund weiterbilden lassen will, bekommt dort Informationen zu Kosten und Terminen, und in bestimmten Fällen wird ein Kurs sogar bezahlt. Voraussetzung dafür ist, dass die Maßnahme zu einer konkreten Stelle passt. Frau Weber, die Beraterin, sagt, sie erlebe jeden Monat, dass Menschen an ihren Zielen festhielten, auch wenn die Umstände sich änderten — und dass genau das die wichtigste Voraussetzung für das Erreichen eines Ziels sei.",
+  ],
+  paragraphsAr: [
+    "لينا في السابعة والعشرين من عمرها، وتعمل منذ أربع سنوات بائعةً في بيت للأثاث في دورتموند. تقول إن المهنة تعجبها لكنها تريد مسؤولية أكبر. ولذلك اتخذت قراراً في يناير: أنها تريد أن تُكمل بحلول الصيف القادم تأهيلها المهني مستشارةً في تأثيث البيوت. والكورس الذي تحضره لهذا الغرض يُقام في مساء يومين من الأسبوع ويدوم ثمانية عشر شهراً.",
+    "ويرتبط تخطيطها للمستقبل ارتباطاً وثيقاً بأسرتها. وتقول: «لا أتمنّى مالاً أكثر، بل وقتاً أكثر». لو كانت تكسب أكثر لأمكن لزوجها أن ينتقل إلى العمل الجزئي، لأنه يريد أن يعتني بالطفلين. تقول لينا: «لو كنت أعلم قبل خمس سنوات ما الذي يقدّمه كورس كهذا، لكنت بدأت من זמן أبكر». وقد سارت صديقتها رنا الطريق نفسه وتعمل اليوم في سلسلة كبيرة. وقبل ذلك كانت قد حضرت كورس الاندماج (Integrationskurs) الذي سهّل عليها البداية. وتقول رنا إن أهم خبرة كانت أنها جلست بعد كل امتحان وحسّنت طلب تقديمها.",
+    "ولا تنجح كل خطة. فقد أراد زميل لينا توبياس أن يبدأ تأهيلاً في مهنة النجارة، لكن الورشة التي كان يريد العمل فيها أُغلقت. ولذلك قرّر من جديد: يبقى في بيت الأثاث ويتدرّب خلال ثلاثة أشهر ليصير مسؤول مستودع. يقول: «الخطة كالخريطة؛ إذا أُغلق طريق تبحث عن الذي يليه».",
+    "ولاستشارة مكتب العمل دورٌ أيضاً. فمن يريد التأهيل في دورتموند يجد هناك معلومات عن التكاليف والمواعيد، وفي حالات معيّنة يُدفع للكورس أيضاً. والشرط في ذلك أن يكون الإجراء ملائماً لوظيفة محدّدة. وتقول السيدة فيبر، المستشارة، إنها ترى كل شهر أشخاصاً يتمسّكون بأهدافهم حتى عندما تتغيّر الظروف — وإن ذلك تحديداً هو أهم شرط للوصول إلى الهدف.",
+  ],
+  glossary: [
+    { de: "die Verantwortung", ar: "المسؤولية", noteAr: "مؤنّثة؛ Verantwortung tragen (يتحمّل المسؤولية)." },
+    { de: "die Ausbildung", ar: "التأهيل المهني", noteAr: "مؤنّثة؛ eine Ausbildung machen (يتابع تأهيلاً)." },
+    { de: "die Weiterbildung", ar: "التدريب المستمر", noteAr: "مؤنّثة؛ sich weiterbilden (يتابع تدريباً)." },
+    { de: "die Bewerbung", ar: "طلب التقديم", noteAr: "مؤنّثة؛ eine Bewerbung schreiben (يكتب طلب تقديم)." },
+    { de: "das Ziel", ar: "الهدف", noteAr: "محايد؛ ein Ziel erreichen (يبلغ هدفاً)." },
+    { de: "erreichen", ar: "يبلغ، يحقق", noteAr: "فعل؛ مع Akkusativ: ein Ziel erreichen." },
+    { de: "die Voraussetzung", ar: "الشرط المسبق", noteAr: "مؤنّثة؛ Voraussetzung für etwas sein." },
+    { de: "die Stelle", ar: "الوظيفة", noteAr: "مؤنّثة؛ eine Stelle wechseln (يغيّر وظيفة)." },
+    { de: "die Maßnahme", ar: "الإجراء، البرنامج التدريبي", noteAr: "مؤنّثة؛ في لغة الإدارة والتأهيل." },
+    { de: "sich entscheiden", ar: "يقرّر", noteAr: "انعكاسي؛ sich für etwas entscheiden + Akkusativ." },
+    { de: "der Integrationskurs", ar: "كورس الاندماج", noteAr: "يُقدَّم في ألمانيا للمهاجرين وينتهي باختبار B1؛ مذكّر." },
+  ],
+  questions: [
+    {
+      id: "rq1",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was will Lena bis zum nächsten Sommer erreichen?",
+      questionAr: "ماذا تريد لينا أن تحقق بحلول الصيف القادم؟",
+      options: [
+        "Sie will ihre alte Stelle im Möbelhaus kündigen.",
+        "Sie will die Prüfung zur Einrichtungsberaterin abschließen.",
+        "Sie will bald von Dortmund nach Berlin ziehen.",
+        "Sie will künftig zu Hause Vollzeit Hausfrau werden.",
+      ],
+      correctIndex: 1,
+      paragraph: 1,
+      explanation: "الفقرة 1: «Bis zum nächsten Sommer will sie ihre Ausbildung zur Einrichtungsberaterin abschließen» — لاحظ موضع الفعل الأوّل (will في المرتبة الثانية) والثاني في النهاية، وهو نمط الجملة المركبة نفسه.",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq2",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was würde passieren, wenn Lena mehr verdienen würde?",
+      questionAr: "ماذا سيحدث لو كانت لينا تكسب أكثر؟",
+      options: [
+        "Ihr Mann würde seine Stelle auf Teilzeit wechseln.",
+        "Ihr Mann würde mehr arbeiten müssen.",
+        "Sie würden zusammen ein Haus kaufen.",
+        "Die Kinder würden in eine andere Schule gehen.",
+      ],
+      correctIndex: 0,
+      paragraph: 2,
+      explanation: "الفقرة 2 تصوغ الشرط غير الواقعي كاملاً: «Wenn sie mehr verdienen würde, könnte ihr Mann seine Stelle auf Teilzeit wechseln» — الشطران معاً في صيغة غير واقعية، وهذا هو موضع التقنية المطلوبة في هذا الدرس.",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq3",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Warum hat Tobias seinen ersten Plan geändert?",
+      questionAr: "لماذا غيّر توبياس خطته الأولى؟",
+      options: [
+        "Weil der Kurs am Abend für ihn deutlich zu teuer war.",
+        "Weil er keine Lust mehr auf die ganze Arbeit hatte.",
+        "Weil die Werkstatt geschlossen wurde, in der er arbeiten wollte.",
+        "Weil seine Familie das auf gar keinen Fall wollte.",
+      ],
+      correctIndex: 2,
+      paragraph: 3,
+      explanation: "الفقرة 3: «die Werkstatt, in der er arbeiten wollte, wurde geschlossen» — جملة نسبية داخل جملة رئيسية في صيغة Passiv، ثم استخدم الصورة المجازية «الخطة كالخريطة» ليقول إن تغيير الخطة جزء من التخطيط نفسه.",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq4",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Wann wird ein Kurs von der Arbeitsagentur bezahlt?",
+      questionAr: "متى يُدفع للكورس من مكتب العمل؟",
+      options: [
+        "Immer, ganz unabhängig von den Umständen.",
+        "Nur für junge Studenten an einer Hochschule.",
+        "Wenn die Maßnahme zu einer konkreten Stelle passt.",
+        "Nur im Januar und im Juli eines Jahres.",
+      ],
+      correctIndex: 2,
+      paragraph: 4,
+      explanation: "الفقرة 4: «Voraussetzung dafür ist, dass die Maßnahme zu einer konkreten Stelle passt» — جملة مصدرية بـdass بعد Voraussetzung، وفيها ينتقل الفعلان إلى النهاية: zu einer Stelle passt.",
+      errorType: "comprehension",
+    },
+  ],
+  redemittel: [
+    { de: "eine Entscheidung treffen", ar: "يتخذ قراراً" },
+    { de: "ein Ziel erreichen", ar: "يبلغ هدفاً" },
+    { de: "sich weiterbilden lassen", ar: "يتابع تدريباً مستمراً" },
+    { de: "eine Stelle wechseln", ar: "يغيّر وظيفة" },
+    { de: "Voraussetzung dafür ist, dass …", ar: "الشرط في ذلك أن…" },
+  ],
+  discussionAr:
+    "ناقش مع زميلك: هل وُضعت لك خطة مهنية واضحة لخمس سنوات قادمة، وما أول خطوة فيها؟ استعمل في حديثك جملة نسبية واحدة، وجملة تعليل بـweil، وشرطاً غير واقعي بصيغة Konjunktiv II («لو كان… ل…»)، ثم اكتب فقرة من أربعة أسطر تجمع الثلاثة كما في نصّ القراءة.",
+};
