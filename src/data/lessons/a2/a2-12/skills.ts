@@ -44,6 +44,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "الفقرة 1: Sara und Jonas planen eine Überraschung für ihre Freundin Nour.",
         paragraph: 1,
         errorType: "comprehension",
+        optionExplanations: [
+          "الحفلة لجارةٍ منزعجة في الفقرة الرابعة؛ النص يقول «planen eine Überraschung für ihre Freundin Nour».",
+          undefined,
+          "لم يُذكر درس طبخ «Einen Kochkurs» في النص.",
+          "لا ذكر لرحلة «Eine Reise»؛ الخطة مفاجأة في الحديقة.",
+        ],
       },
       {
         id: "rq2",
@@ -55,6 +61,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "الفقرة 2: Jonas ist gestresst, weil er wenig Zeit hat — ومع ذلك يقول إنه يساعد بسرور.",
         paragraph: 2,
         errorType: "comprehension",
+        optionExplanations: [
+          "ضجيج الموسيقى «die Musik zu laut» سبب غضب الجار في الفقرة الرابعة لا توتّر Jonas.",
+          "لم يُذكر أن Sara لا تطبخ «Weil Sara nicht kocht» سبباً لتوتره.",
+          undefined,
+          "Nour جاءت ودخلت الحديقة؛ فغيابها «Weil Nour nicht kommt» غير مذكور.",
+        ],
       },
       {
         id: "rq3",
@@ -66,6 +78,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "الفقرة 3: Nour ist total überrascht und freut sich sehr؛ وتدمع عيناها من الفرح.",
         paragraph: 3,
         errorType: "comprehension",
+        optionExplanations: [
+          "لم تتصل بسارة «Sie ruft sofort Sara an»؛ كانت سارة أمامها في الحديقة.",
+          "لم تسأل عن الكعكة «Sie fragt nach dem Kuchen»؛ النص يذكر دهشتها وفرحها.",
+          "عكس النص «Sie ist total überrascht und freut sich sehr»، بل دمعت عيناها فرحاً.",
+          undefined,
+        ],
       },
       {
         id: "rq4",
@@ -77,6 +95,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "الفقرة 4: Der Nachbar ist ärgerlich, weil die Musik zu laut ist؛ ثم يهدأ الأمر ويأتي بهدية.",
         paragraph: 4,
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "لم يُذكر استبعاده سبباً؛ الغضب من «die Musik zu laut» ثم جاء بهدية.",
+          "لم يقل النص إنه مضطر للعمل «Weil er arbeiten muss».",
+          "لم تُذكر تحية ناقصة من Nour سبباً لانزعاجه. ",
+        ],
       },
     ],
     redemittel: [
@@ -128,6 +152,12 @@ export const listening: Lesson["listening"] = {
         correctIndex: 0,
         explanation: "قالت: Ich hatte eine wichtige Prüfung. Deshalb war ich nervös.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم يُذكر الطقس «wegen des Wetters» سبباً لتوترها.",
+          "السبب «Ich hatte eine wichtige Prüfung» لا العمل «wegen der Arbeit».",
+          "لا ذكر للزحام «wegen des Verkehrs» في حوارها. ",
+        ],
       },
       {
         id: "q2",
@@ -140,6 +170,12 @@ export const listening: Lesson["listening"] = {
         correctIndex: 0,
         explanation: "قال كريم: Dann feiern wir heute Abend!",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "التعلّم انقضى؛ قال كريم «Dann feiern wir heute Abend!».",
+          "لا ذكر للعمل «arbeiten» في سهرة اليوم.",
+          "السهرة للاحتفال «feiern» لا للنوم «schlafen». ",
+        ],
       },
       {
         id: "q3",
@@ -152,6 +188,12 @@ export const listening: Lesson["listening"] = {
         correctIndex: 0,
         explanation: "قالت آنا: Der Bus kam nicht, deshalb war ich spät.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم تقل إنها نامت متأخرة «Sie hat verschlafen»؛ السبب «Der Bus kam nicht».",
+          "لم يُذكر موعد «Sie hatte einen Termin» سبباً لتأخرها.",
+          "لا ذكر لمرض «Sie war krank» في جوابها. ",
+        ],
       },
     ],
   };

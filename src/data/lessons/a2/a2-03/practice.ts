@@ -14,6 +14,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "مع ich: möchte.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«möchtest» تصريف du، والفاعل هنا «Ich».",
+        "«möchten» مع wir/sie/Sie، لا مع ich.",
+        "«möchtet» مع ihr؛ لا يطابق «Ich». ",
+      ],
     },
     {
       id: "e2",
@@ -25,6 +31,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "مع Sie الرسمية، سواء خاطبتَ شخصاً واحداً أو أكثر، نستخدم können. لا تدلّ صيغة المخاطبة الرسمية وحدها على أن المخاطَبين جمع.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«Kann» تصريف ich أو er/sie/es؛ مع «Sie» الرسمية تبقى صيغة المصدر «können».",
+        "«Kannst» مع du، و«Sie» ليست du.",
+        "«Könnt» مع ihr؛ أما Sie فتأخذ «können» بلا تغيير. ",
+      ],
     },
     {
       id: "e3",
@@ -107,6 +119,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "Wie + schmeckt es = كيف طعمه؟",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "السؤال عن السعر هو «Was kostet das?» لا «Wie schmeckt es?».",
+        "«ماذا تريد؟» تقابلها «Was möchten Sie?».",
+        "سؤال المكان «Wo ist das Restaurant?» لا علاقة له بـ«schmecken». ",
+      ],
     },
     {
       id: "e9",
@@ -167,6 +185,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "Die Suppe schmeckt mir sehr gut تصف المذاق بالنسبة إلى الشخص. أمّا Ich schmecke die Suppe فيمكن أن تعني «أتذوق الشوربة»، وهي جملة صحيحة بمعنى آخر.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "ذلك معنى «Ich schmecke die Suppe» بفاعل أنا، لا بنية «Die Suppe schmeckt mir».",
+        "ترجمة حرفية خاطئة: «mir» في Dativ تدلّ على من يستطيب الطعم لا على مفعول به.",
+        "«schmeckt» عن الطعم لا عن الشكل؛ الشكل يوصف بـ«sieht gut aus». ",
+      ],
     },
     {
       id: "e13",
@@ -226,6 +250,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "الأولى تستعمل الصيغة المطلوبة. möchte وnehme بديلان صحيحان في سياقات مناسبة، وmag يعبّر هنا عن الميل لا عن طلب واضح؛ لا يعني ذلك أن البدائل الأخرى ممنوعة أو وقحة دائماً.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "صياغة صحيحة ومهذّبة لكنها تستعمل «möchte» لا الصيغة المطلوبة «Ich hätte gern».",
+        "«Ich nehme einen Kaffee» صيغة طلب معتادة، لكنها ليست «Ich hätte gern».",
+        "«Ich mag einen Kaffee» يعبّر عن الميل لا عن تركيب «hätte gern». ",
+      ],
     },
     {
       id: "e17",
@@ -283,6 +313,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "heiß يصف الحرارة العالية هنا؛ أما scharf فيصف الطعم الحارّ/اللاذع.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«scharf» للطعم اللاذع/الحارّ، أما درجة الحرارة فهي «heiß».",
+        "«warm» دافئ، و«sehr hoch» في السؤال تستدعي «heiß».",
+        "«trocken» للجفاف (كسمك القصة «zu trocken»)، لا للحرارة. ",
+      ],
     },
     {
       id: "e21",
@@ -419,6 +455,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "Der Termin فاعل مفرد، لذا نقول passt؛ وmir متمّم Dativ لا يغيّر تصريف الفعل. هنا passen بمعنى يناسب/يلائم في هذا السياق.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«passen» صيغة الجمع، والفاعل «Der Termin» مفرد ⇒ «passt».",
+        "«passe» مع ich، والفاعل «Der Termin» من الغائب.",
+        "«gefallen» يعطي ترتيباً آخر «Der Termin gefällt mir» بمعنى يعجب، لا بمعنى يناسب الموعد. ",
+      ],
     },
   ];
 

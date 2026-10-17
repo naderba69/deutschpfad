@@ -43,26 +43,15 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
   r3: { correct: ["einen"], options: [["einen", "ein", "eine"]] },
   e6: {
     correct: ["mich", "sich", "uns"],
-    options: [
-      ["mich", "dich", "sich"],
-      ["mich", "dich", "sich"],
-      ["uns", "euch", "sich"],
-    ],
+    options: [ ["mich", "dich", "sich"], ["mich", "dich", "sich"], ["uns", "euch", "sich"], ],
   },
   e12: {
     correct: ["aus", "mich"],
-    options: [
-      ["aus", "an", "auf", "mit"],
-      ["mich", "mir", "dich", "sich"],
-    ],
+    options: [ ["aus", "an", "auf", "mit"], ["mich", "mir", "dich", "sich"], ],
   },
   e13: {
     correct: ["mich", "dich", "uns"],
-    options: [
-      ["mich", "mir", "dich"],
-      ["dich", "dir", "sich"],
-      ["uns", "euch", "sich"],
-    ],
+    options: [ ["mich", "mir", "dich"], ["dich", "dir", "sich"], ["uns", "euch", "sich"], ],
   },
   w2: {
     correct: ["mich", "dich", "sich", "uns", "euch", "sich"],
@@ -77,11 +66,7 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
   },
   m5: {
     correct: ["sich", "uns", "mich"],
-    options: [
-      ["sich", "mich", "uns"],
-      ["sich", "mich", "uns"],
-      ["sich", "mich", "uns"],
-    ],
+    options: [ ["sich", "mich", "uns"], ["sich", "mich", "uns"], ["sich", "mich", "uns"], ],
   },
 };
 
@@ -263,6 +248,12 @@ describe("A2-11 lesson content audit", () => {
         correctIndex: 0,
         explanation: "في معنى الرؤية هنا، يأخذ sehen مكمّلاً في Akkusativ: dich. لا تطابق تسمية الحالة الألمانية الإعراب العربي حرفياً.",
         errorType: "case",
+        optionExplanations: [
+          undefined,
+          "«dir» في Dativ؛ و«sehen» يأخذ مفعولاً في Akkusativ ⇒ «Ich sehe dich».",
+          "«mich» ضمير المتكلم؛ والمقصود هنا «أنتَ» ⇒ «dich».",
+          "«mir» Dativ للمتكلم؛ فالخطأ في الحالة وفي الشخص معاً. ",
+        ],
       },
       {
         id: "r2",
@@ -274,6 +265,12 @@ describe("A2-11 lesson content audit", () => {
         correctIndex: 0,
         explanation: "zur Post هنا = إلى مكتب البريد؛ وقد تعني die Post خدمة البريد أيضاً بحسب السياق.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "البنك «die Bank»: «Ich gehe zur Bank» لا «zur Post».",
+          "المحطة «der Bahnhof»: «Ich gehe zum Bahnhof».",
+          "الصيدلية «die Apotheke»: «Ich gehe zur Apotheke». ",
+        ],
       },
       {
         id: "r3",
@@ -367,10 +364,7 @@ describe("A2-11 lesson content audit", () => {
         expect(evaluateExercise(exercise, NO_ERROR_OPTION).isCorrect, `${id} must not allow no-error`).toBe(false);
       }
       if (expected.alreadyCorrect) {
-        const visibleOptions = [
-          ...exercise.options.filter((option) => option !== NO_ERROR_OPTION && option !== exercise.correctWord),
-          NO_ERROR_OPTION,
-        ];
+        const visibleOptions = [ ...exercise.options.filter((option) => option !== NO_ERROR_OPTION && option !== exercise.correctWord), NO_ERROR_OPTION, ];
         expect(visibleOptions).not.toContain(expected.correctWord);
         expect(visibleOptions).toContain(NO_ERROR_OPTION);
         expect(evaluateExercise(exercise, NO_ERROR_OPTION).isCorrect).toBe(true);

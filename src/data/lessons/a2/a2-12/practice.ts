@@ -14,6 +14,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "لكن = aber (عادية، الفعل بعد الفاعل).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«deshalb» نتيجة وتقلب الترتيب؛ والتضاد هنا «aber» مع بقاء «ich bin».",
+        "«denn» تعليل؛ والجملة الثانية تضادّ لا سبب.",
+        "«dann» تعاقب زمني؛ والمقصود استدراك «aber». ",
+      ],
     },
     {
       id: "e2",
@@ -24,6 +30,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "لذلك = deshalb — ولاحظ الفعل bleibe بعده مباشرة (مقلوبة).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«aber» استدراك بلا قلب للترتيب؛ وهنا جاء الفعل «bleibe» أولاً ⇒ «deshalb».",
+        "«und» جمعٌ بسيط لا يبيّن النتيجة ولا يقلب الترتيب.",
+        "«oder» اختيار بين بديلين، لا نتيجة لسبب. ",
+      ],
     },
     {
       id: "e3",
@@ -91,6 +103,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "erst = أولاً، dann = ثم: أتعلم أولاً ثم أشاهد.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "ذلك التزامن «während ich fernsehe»؛ أما «erst … dann» فترتيب متعاقب.",
+        "ذلك إضرابٌ بمعنى «بل»؛ والجملة هنا تثبت الفعلين معاً بترتيب «Erst … dann».",
+        "عكس الترتيب المذكور «Erst lerne ich, dann sehe ich fern». ",
+      ],
     },
     {
       id: "e9",
@@ -121,6 +139,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "denn تعطي السبب ولا تقلب الترتيب، فيبقى الفاعل ich قبل الفعل bin. أما weil فتنقل الفعل إلى النهاية (…, weil ich krank bin)، وdeshalb فتعطي النتيجة لا السبب.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«deshalb» نتيجة وتقلب الترتيب؛ والمطلوب سبب مع بقاء «ich bin krank».",
+        "«trotzdem» تنازل مع قلب الترتيب؛ والجملة تعلّل البقاء في البيت.",
+        "«weil» تعلّل لكنها تنقل الفعل إلى الآخر: «…, weil ich krank bin» لا «ich bin krank». ",
+      ],
     },
     {
       id: "e12",

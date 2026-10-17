@@ -103,6 +103,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "مع ich: lerne (درس التعارف).",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«lernst» تصريف du؛ والفاعل هنا «Ich» ⇒ «Ich lerne».",
+        "«lernt» مع er/sie/es أو ihr، لا مع «Ich».",
+        "«lernen» مصدر أو صيغة wir/sie؛ مع «Ich» نقول «lerne». ",
+      ],
     },
     {
       id: "r2",
@@ -113,6 +119,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "في هذا السياق، يقدّم dass مضمون الاعتقاد: «أعتقد أن ذلك صحيح». أما weil فيقدّم سبباً، وwenn شرطاً أو زمناً، وob سؤالاً غير مباشر بنعم/لا.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«weil» يقدّم سبباً ويصرف الفعل إلى آخر الجملة؛ هنا مضمون اعتقاد لا سبب.",
+        "«wenn» شرط أو زمن متكرر؛ «Ich glaube, wenn das stimmt» يغيّر المعنى.",
+        "«ob» سؤال غير مباشر بنعم/لا، و«glauben» يقرر مضموناً خبرياً لا يستفهم عنه. ",
+      ],
     },
     {
       id: "r3",

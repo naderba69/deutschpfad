@@ -14,6 +14,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "مع ich: möchte.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«möchtest» مع du، والفاعل هنا «Ich».",
+        "«möchten» مع wir/sie/Sie، لا مع ich.",
+        "«möchtet» مع ihr؛ لا يطابق «Ich». ",
+      ],
     },
     {
       id: "m2",
@@ -24,6 +30,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "مع du: kannst.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«Kann» مع ich أو er/sie/es؛ مع «du» تُضاف «-st» ⇒ «kannst».",
+        "«Können» مصدر أو صيغة wir/sie/Sie؛ و«du» تأخذ «kannst».",
+        "«Könnt» مع ihr؛ و«du» تأخذ «kannst». ",
+      ],
     },
     {
       id: "m3",

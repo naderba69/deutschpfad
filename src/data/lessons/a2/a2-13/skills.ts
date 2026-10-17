@@ -44,6 +44,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "الفقرة 1: Gestern habe ich die A2-Prüfung gemacht — والنتيجة لم تصل بعد.",
         paragraph: 1,
         errorType: "comprehension",
+        optionExplanations: [
+          "بدأت دورة A1 قديماً؛ النص يقول «Gestern habe ich die A2-Prüfung gemacht».",
+          undefined,
+          "كتابة القائمة «eine Liste geschrieben» خطوة في خطتها، لا ما فعلته أمس.",
+          "لم يُذكر اتصال بالمعلم «ihren Lehrer angerufen» في الفقرة الأولى. ",
+        ],
       },
       {
         id: "rq2",
@@ -55,6 +61,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "الفقرة 2: Als ich im Winter krank war, habe ich trotzdem zwanzig Minuten gelernt — لأنّ الوحدات القصيرة أفضل من لا شيء.",
         paragraph: 2,
         errorType: "comprehension",
+        optionExplanations: [
+          "يناقض النص «habe ich trotzdem zwanzig Minuten gelernt».",
+          "المذكور عشرون دقيقة «zwanzig Minuten» لا ثلاث ساعات يومياً.",
+          undefined,
+          "لم يُذكر تغيير الدورة «den Kurs gewechselt» في الفقرة. ",
+        ],
       },
       {
         id: "rq3",
@@ -66,6 +78,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "الفقرة 3: die Regel war plötzlich im Satz und nicht mehr nur im Heft — أي أنّ الفرق كان في استعمال القاعدة داخل جملة.",
         paragraph: 3,
         errorType: "comprehension",
+        optionExplanations: [
+          "لم يقل النص إن القواعد غائبة من الكتاب؛ الفرق «im Satz und nicht mehr nur im Heft».",
+          undefined,
+          "لم يُذكر تقصير المعلم في الشرح «nicht erklärt» سبباً.",
+          "لم تنفِ التمرين مطلقاً «nie geübt»؛ المشكلة توظيف القاعدة داخل جملة. ",
+        ],
       },
       {
         id: "rq4",
@@ -77,6 +95,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "الفقرة 4: jeden Tag wiederholen, jeden Fehler aufschreiben und einmal pro Woche mit der Nachbarin sprechen.",
         paragraph: 4,
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "لم يُذكر دورة في الخارج «Einen Deutschkurs im Ausland machen».",
+          "الخطة «jeden Tag wiederholen» لا «Nur am Wochenende lernen».",
+          "عكس الخطة؛ الاستمرار يومياً والتحدث أسبوعياً مع الجارة، لا «Mit dem Lernen aufhören». ",
+        ],
       },
     ],
     redemittel: [
@@ -129,6 +153,12 @@ export const listening: Lesson["listening"] = {
         correctIndex: 0,
         explanation: "قال سامي: Ich kann heute leider nicht kommen — ثم علّل بالحمّى.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم يقل إنه يتأخر «Er kommt später zur Arbeit»؛ قال «Ich kann heute leider nicht kommen».",
+          "لم يبحث عن أحد «Er sucht Herrn Weber im Büro»؛ المكالمة لإبلاغ الغياب.",
+          "لا ذكر لإجازة أو سفر «Urlaub nehmen und reisen»؛ السبب الحمّى. ",
+        ],
       },
       {
         id: "q2",
@@ -141,6 +171,12 @@ export const listening: Lesson["listening"] = {
         correctIndex: 0,
         explanation: "نقل سامي نصيحة الطبيب: ich soll drei Tage zu Hause bleiben.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "عكس نصيحة الطبيب «ich soll drei Tage zu Hause bleiben».",
+          "لم يُطلب منه الاتصال بالعيادة «am Freitag in der Praxis anrufen».",
+          "الطبيب منعه من العمل ثلاثة أيام، لا دعاه إلى «ins Büro kommen und arbeiten». ",
+        ],
       },
       {
         id: "q3",
@@ -153,6 +189,12 @@ export const listening: Lesson["listening"] = {
         correctIndex: 0,
         explanation: "قالت ياسمين: Der Dativ. Aber jetzt ist er leichter als am Anfang.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "الماضي التام «das Perfekt» لم تذكره الأصعب؛ قالت «Der Dativ».",
+          "لم تذكر النطق «die Aussprache» أصعب ما واجهها.",
+          "لا ذكر للأعداد «die Zahlen» في جوابها. ",
+        ],
       },
       {
         id: "q4",
@@ -165,6 +207,12 @@ export const listening: Lesson["listening"] = {
         correctIndex: 0,
         explanation: "قالت: Ich habe jeden Abend zwei Stunden gelernt.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "مرة أسبوعياً «einmal pro Woche» تخصّ الحديث مع الجارة في خطتها، لا تعلّمها اليومي.",
+          "قالت «jeden Abend» لا «nur am Wochenende».",
+          "المذكور ساعتان مساءً «jeden Abend zwei Stunden» لا ثلاث ساعات صباحاً. ",
+        ],
       },
     ],
   };

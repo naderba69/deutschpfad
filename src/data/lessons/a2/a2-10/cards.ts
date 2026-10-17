@@ -14,6 +14,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "شرط → wenn: إذا كان عندك وقت.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Weil» يقدّم سبباً؛ والطلب هنا مشروط بتوفّر الوقت.",
+        "«Ob» (كما في «Ich weiß nicht, ob …») سؤال بنعم/لا؛ والجملة هنا شرطية لا استفهامية.",
+        "«Dass» مضمون خبري؛ المطلوب رابط الشرط «Wenn». ",
+      ],
     },
     {
       id: "m2",
@@ -24,6 +30,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "الفعل helfen يأخذ Dativ هنا؛ Bruder مذكر مفرد، لذلك نستخدم meinem Bruder.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«meinen» منصوب؛ و«helfen» يأخذ Dativ ⇒ «meinem Bruder».",
+        "«mein» صيغة المرفوع أو المحايد؛ المطلوب «meinem» في Dativ.",
+        "«meine» للمؤنث أو الجمع؛ و«der Bruder» مذكّر مفرد. ",
+      ],
     },
     {
       id: "m3",

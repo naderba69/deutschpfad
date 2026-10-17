@@ -50,6 +50,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         correctIndex: 0,
         explanation: "تذكر الفقرة أن مكتب البريد يُغلق في الثانية عشرة، ولذلك تستعجل؛ أما جارتها فتقابلها عارضاً لا موعداً، ولا يذكر النص عملها صباحاً.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "الجارة التقتها لينا عارضاً في الطريق؛ السبب المذكور «Weil die Post um zwölf Uhr schließt».",
+          "البنك ورد لحاجتها إلى نقود سائلة، لا لأن «die Bank bald öffnet» سبباً للاستعجال.",
+          "لا يذكر النص تأخراً عن العمل «zu spät zur Arbeit». ",
+        ],
       },
       {
         id: "rq2",
@@ -67,6 +73,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         correctIndex: 0,
         explanation: "تذهب إلى البنك لأنها تحتاج نقوداً سائلة لدفع الفاتورة نقداً في المتجر؛ واستلام الطرد يحدث في البريد، وإصلاح الهاتف في فقرة لاحقة.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "استلام الطرد «Ein Paket abholen» يكون في مكتب البريد لا في المتجر.",
+          "إصلاح الهاتف «Ein Handy reparieren lassen» موضوع فقرة لاحقة.",
+          "تسليم الاستمارة «Das Formular abgeben» معاملة أخرى غير الدفع «bar bezahlen». ",
+        ],
       },
       {
         id: "rq3",
@@ -84,6 +96,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         correctIndex: 0,
         explanation: "تصف الفقرة أنها تنزعج لكنها تبقى لطيفة وتقدّم شكوى هادئة وتسأل عن جهاز بديل؛ ولا يذكر النص مغادرة الغرفة أو الصياح أو السخرية.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "«verlässt sofort das Geschäft» يناقض بقاءها وتقديمها شكوى هادئة.",
+          "لم تنادِ الشرطة «ruft laut nach der Polizei»؛ النص يذكر لطافةً وشكوى هادئة.",
+          "لم تسخر «lacht laut über den jungen Verkäufer»؛ انزعجت وبقيت لطيفة «obwohl sie sich ärgert». ",
+        ],
       },
       {
         id: "rq4",
@@ -101,6 +119,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         correctIndex: 0,
         explanation: "تقول الفقرة إنها متعبة لكن راضية لأنها أنجزت كل شيء تقريباً، وتنتظر نهاية الأسبوع؛ أما الغضب واللامبالاة والمرض فغير مذكورة هنا.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "الغضب «wütend und unruhig» لا يوافق الرضا المذكور في نهاية اليوم.",
+          "ليست لامبالية «gleichgültig»؛ النص يقول إنها راضية «zufrieden».",
+          "لم تُذكر مريضة «krank»؛ التعب «müde» وحده مع الرضا. ",
+        ],
       },
     ],
     redemittel: [
@@ -164,6 +188,12 @@ export const listening: Lesson["listening"] = {
         correctIndex: 0,
         explanation: "قال سامي: Ich möchte mir die Haare schneiden lassen.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "هو يطلب موعداً للحلاقة، لا إلغاءه «einen Termin absagen».",
+          "لم يشتكِ «sich beschweren und gehen»؛ طلبه «Ich möchte mir die Haare schneiden lassen».",
+          "شراء هاتف جديد «ein neues Handy kaufen» موضوع حوار منى لا طلب سامي. ",
+        ],
       },
       {
         id: "q2",
@@ -176,6 +206,12 @@ export const listening: Lesson["listening"] = {
         correctIndex: 0,
         explanation: "قالت منى: Ich habe ein Handy gekauft, aber es funktioniert nicht.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "قِصَر الشعر «Die Haare sind zu kurz» مشكلة عند الحلاق، لا مشكلة منى.",
+          "لم تشكُ من موعد متأخر «Der Termin ist zu spät».",
+          "لا ذكر لتكلفة البريد «Die Post ist zu teuer» في حوارها. ",
+        ],
       },
       {
         id: "q3",
@@ -188,6 +224,12 @@ export const listening: Lesson["listening"] = {
         correctIndex: 0,
         explanation: "قال الموظف: Wir reparieren es oder geben Ihnen ein neues.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "عكس ما قاله: قدّم حلّين «Wir reparieren es oder geben Ihnen ein neues».",
+          "الموظف تحمّل المسؤولية بعرض الإصلاح، لا بقول «Das ist leider nicht unser Problem».",
+          "لم يؤجّل إلى الغد «Kommen Sie bitte morgen noch einmal»؛ الحل قُدّم فوراً. ",
+        ],
       },
       {
         id: "q4",
@@ -200,6 +242,12 @@ export const listening: Lesson["listening"] = {
         correctIndex: 0,
         explanation: "ذكرت الموظفة مثالاً: Schreiben Sie zum Beispiel „tunesisch“.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "المثال المذكور «Schreiben Sie zum Beispiel „tunesisch“» لا «deutsch».",
+          "لم تُذكر «französisch» مثالاً في الحوار.",
+          "الموظفة أعطت مثالاً صريحاً، لا أن تُترك الخانة «nichts». ",
+        ],
       },
     ],
   };

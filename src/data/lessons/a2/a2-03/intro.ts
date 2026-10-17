@@ -87,6 +87,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "بعد essen المذكر ein → einen (درس الطعام).",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«ein» صيغة المرفوع أو المحايد؛ «Ich esse ein Apfel» خطأ لأن «der Apfel» مذكّر في منصوب.",
+        "«eine» للمؤنث، والاسم هنا «der Apfel» مذكّر فلا تظهر علامة «-e».",
+        "«der» أداة تعريف للمرفوع؛ الجملة عن تفاحة غير معيّنة فتحتاج تنكيراً في المنصوب: «einen». ",
+      ],
     },
     {
       id: "r2",
@@ -103,6 +109,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "الأمر الرسمي مع Sie: Kommen Sie bitte herein!",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Komm bitte herein!» أمر مع du، والمطلوب صيغة Sie الرسمية.",
+        "«Kommt bitte herein!» أمر مع ihr (جمع غير رسمي)، لا مع Sie.",
+        "«Kommen bitte herein!» بلا ضمير؛ أمر Sie يحتفظ بالفاعل: «Kommen Sie …!». ",
+      ],
     },
     {
       id: "r3",

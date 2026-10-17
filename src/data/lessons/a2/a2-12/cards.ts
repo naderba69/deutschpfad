@@ -14,6 +14,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "السبب: denn (عادية).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«deshalb» نتيجة لا سبب، وتقلب الترتيب.",
+        "«trotzdem» بمعنى رغم ذلك؛ والمطلوب تعليل.",
+        "«aber» استدراك؛ والسبب يُصاغ بـ«denn». ",
+      ],
     },
     {
       id: "m2",
@@ -24,6 +30,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "رغم ذلك: trotzdem (مقلوبة — الفعل arbeite بعده).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«deshalb» نتيجة متوقعة؛ والمطلوب «رغم ذلك» مع الفعل «arbeite» في المقدمة.",
+        "«und» لا تقلب الترتيب ولا تفيد التنازل.",
+        "«denn» تعليل بترتيب عادي؛ وهنا الفعل بعد الأداة مباشرة. ",
+      ],
     },
     {
       id: "m3",

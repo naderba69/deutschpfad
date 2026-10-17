@@ -80,6 +80,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "أفعال الحركة وتغيّر المكان (fliegen, fahren, gehen, kommen) تأخذ sein: ich bin geflogen.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«habe» لأفعال بلا انتقال مكاني؛ و«fliegen» حركة ⇒ «ich bin geflogen».",
+        "«war» ماضي sein البسيط، لا مساعد الماضي التام مع «geflogen».",
+        "«hatte» ماضي haben البسيط؛ والمطلوب مساعد «bin». ",
+      ],
     },
     {
       id: "r2",

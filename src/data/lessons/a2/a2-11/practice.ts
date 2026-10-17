@@ -14,6 +14,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "في الإطار `sich freuen auf` بمعنى التطلع إلى شيء، الصيغة مع ich هي `mich`.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«dich» ضمير المخاطب؛ والفاعل «Ich» ⇒ «mich».",
+        "«sich» مع الغائب (er/sie/es/sie)؛ ومع «Ich» نقول «mich».",
+        "«mir» في Dativ، وإطار «sich freuen auf» يأخذ Akkusativ ⇒ «mich». ",
+      ],
     },
     {
       id: "e2",
@@ -24,6 +30,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "في المعنى الانعكاسي المقصود `sich über etwas ärgern` نقول `Er ärgert sich über den Lärm`; لا تُعمم الصيغة على الاستعمال المتعدي لأفعال أخرى.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«mich» للمتكلم؛ والفاعل «Er» من الغائب ⇒ «sich».",
+        "«dich» للمخاطب؛ لا يطابق فاعلاً «Er».",
+        "«uns» مع wir؛ و«Er» مفرد غائب. ",
+      ],
     },
     {
       id: "e3",
@@ -91,6 +103,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "sich beschweren = يشتكي/يقدم شكوى.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "الاستعجال «sich beeilen»، لا «sich beschweren».",
+        "تسجيل الاسم «sich anmelden»، ومعناه غير الشكوى.",
+        "الغضب «sich ärgern»؛ أما «sich beschweren» فتقديم شكوى. ",
+      ],
     },
     {
       id: "e9",
@@ -163,6 +181,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "في هذا الإطار يكون الضمير Dativ (mir) لأن die Hände هي المفعول في Akkusativ؛ أما mich فيكون صحيحاً في Ich wasche mich. حيث لا يوجد مفعول آخر. القاعدة هنا إطار الفعل لا تعميم «مفعول آخر يعني Dativ».",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«mich» صحيحة في «Ich wasche mich» وحدها؛ هنا المفعول «die Hände» في Akkusativ فالضمير Dativ.",
+        "«dich» للمخاطب؛ والفاعل «Ich» يغسل يديه لنفسه.",
+        "«sich» مع الغائب أو الجمع؛ ومع «Ich» نقول «mir». ",
+      ],
     },
 ];
 

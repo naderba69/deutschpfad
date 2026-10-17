@@ -46,6 +46,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "تنص الفقرة الأولى على أن الحصص مساء الاثنين والأربعاء؛ أما لقاء المكتبة يوم السبت فليس موعد الحصة.",
         errorType: "comprehension",
         paragraph: 1,
+        optionExplanations: [
+          undefined,
+          "لا يذكر النص «jeden Morgen früh um sechs»؛ الحصص «Montags und mittwochs am Abend».",
+          "الجمعة ورد للتحقق من مواعيد المكتبة، لا لموعد الحصة «am Nachmittag».",
+          "لقاء المكتبة «am Samstag» ليس موعد الحصة، ولا ذكر لـ«an Feiertagen». ",
+        ],
       },
       {
         id: "rq2",
@@ -63,6 +69,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "تذكر نورا أنها تريد لاحقاً الدراسة في جامعة. بقية الأسباب غير واردة في النص.",
         errorType: "comprehension",
         paragraph: 1,
+        optionExplanations: [
+          undefined,
+          "لا ذكر لصديق «ihr Freund» في النص سبباً لتعلّمها.",
+          "عكس النص: الامتحان أمامها وتستعدّ له لا «schon vorbei».",
+          "لم تذكر فتح مدرسة «eine Sprachschule eröffnen»؛ الهدف «an einer Universität studieren». ",
+        ],
       },
       {
         id: "rq3",
@@ -80,6 +92,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "يتحقق سامي من مواعيد فتح المكتبة على موقعها؛ ولا يذكر النص أنه يفحص موعد الامتحان أو الرسوم أو الجدول.",
         errorType: "comprehension",
         paragraph: 3,
+        optionExplanations: [
+          undefined,
+          "موعد الامتحان «der Termin der Prüfung» معلوم؛ ما تحقّق منه «die Öffnungszeiten».",
+          "رسوم الدورة «die Kursgebühr» غير مذكورة في الفقرة.",
+          "جدول المدرسة «der Stundenplan» ليس موضوع التحقق على موقع المكتبة. ",
+        ],
       },
       {
         id: "rq4",
@@ -97,6 +115,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "تقول الفقرة إنها تظل هادئة لأنها استعدت جيداً؛ ولا يذكر النص إلغاء الامتحان أو غياب الامتحان أو قيام سامي به عنها.",
         errorType: "comprehension",
         paragraph: 4,
+        optionExplanations: [
+          undefined,
+          "الامتحان لم يُلغَ «abgesagt»؛ النص يذكر «Weil sie sich gut vorbereitet hat».",
+          "لديها «die Prüfung» فعلاً؛ هدوؤها سببه «sich gut vorbereitet» لا غياب الامتحان.",
+          "لم يكتب سامي الامتحان عنها «für sie geschrieben»؛ لا ذكر لذلك في النص. ",
+        ],
       },
     ],
     redemittel: [
@@ -150,6 +174,12 @@ export const listening: Lesson["listening"] = {
         correctIndex: 0,
         explanation: "يقول Sami إنه يتعلم الألمانية لأنه يريد لاحقاً الدراسة في ألمانيا؛ أما موعد الامتحان فيخص حوار Karim.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "امتحان الغد «morgen eine Prüfung» يخصّ حوار Karim لا سبب تعلّم Sami.",
+          "سكن Anna في ألمانيا ليس السبب المذكور في الحوار.",
+          "هو يكرر المفردات «neue Wörter wiederholen» لا يدرّسها «unterrichten». ",
+        ],
       },
       {
         id: "q2",
@@ -167,6 +197,12 @@ export const listening: Lesson["listening"] = {
         correctIndex: 0,
         explanation: "يقول Sami: Wenn ich am Morgen Zeit habe, wiederhole ich sie. لا يحدد الحوار وقتاً يومياً ثابتاً.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "الحوار يقول «Wenn ich am Morgen Zeit habe» لا «jeden Abend nach dem Unterricht».",
+          "لا ذكر لاتصال Anna «Wenn Anna ihn anruft» شرطاً للتكرار.",
+          "الشرط «am Morgen» لا «nur am Wochenende». ",
+        ],
       },
       {
         id: "q3",
@@ -184,6 +220,12 @@ export const listening: Lesson["listening"] = {
         correctIndex: 0,
         explanation: "يقول Karim: Ich weiß nicht, ob die Prüfung schwierig wird. ولا يذكر النص عدم معرفته بالمواعيد أو بعدد الكلمات.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "موعد بدء الحصص «Wann der Unterricht beginnt» معلوم؛ الشكّ كان في صعوبة الامتحان.",
+          "أن Mona تتعلم الألمانية معلوم في الحوار، لا موضع شكّه.",
+          "لم يشكّ في عدد المفردات «Wie viele Wörter»؛ عبارته «Ich weiß nicht, ob die Prüfung schwierig wird». ",
+        ],
       },
       {
         id: "q4",
@@ -196,6 +238,12 @@ export const listening: Lesson["listening"] = {
         correctIndex: 0,
         explanation: "يجيب Karim: Ja, ein bisschen، رداً على سؤال Mona عما إذا كان متوتراً.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "عكس جوابه «Ja, ein bisschen» عن التوتر «nervös».",
+          "لا ذكر للغضب «wütend» في الحوار.",
+          "لم يقل إنه متعب أو مريض «müde und krank»؛ شعوره «nervös». ",
+        ],
       },
     ],
   };

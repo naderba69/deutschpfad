@@ -79,6 +79,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "في معنى الرؤية هنا، يأخذ sehen مكمّلاً في Akkusativ: dich. لا تطابق تسمية الحالة الألمانية الإعراب العربي حرفياً.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«dir» في Dativ؛ و«sehen» يأخذ مفعولاً في Akkusativ ⇒ «Ich sehe dich».",
+        "«mich» ضمير المتكلم؛ والمقصود هنا «أنتَ» ⇒ «dich».",
+        "«mir» Dativ للمتكلم؛ فالخطأ في الحالة وفي الشخص معاً. ",
+      ],
     },
     {
       id: "r2",
@@ -90,6 +96,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "zur Post هنا = إلى مكتب البريد؛ وقد تعني die Post خدمة البريد أيضاً بحسب السياق.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "البنك «die Bank»: «Ich gehe zur Bank» لا «zur Post».",
+        "المحطة «der Bahnhof»: «Ich gehe zum Bahnhof».",
+        "الصيدلية «die Apotheke»: «Ich gehe zur Apotheke». ",
+      ],
     },
     {
       id: "r3",

@@ -14,6 +14,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "في `sich freuen auf` بمعنى التطلّع إلى شيء، الصيغة مع wir هي `uns`.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«euch» مع ihr؛ والفاعل «Wir» ⇒ «uns».",
+        "«sich» مع الغائب؛ و«wir» تأخذ «uns».",
+        "«mich» مع ich؛ لا تطابق «Wir». ",
+      ],
     },
     {
       id: "m2",
@@ -24,6 +30,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "مع ihr: euch.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«uns» مع wir؛ والفاعل «Ihr» ⇒ «euch».",
+        "«sich» مع الغائب؛ و«ihr» تأخذ «euch».",
+        "«dich» مع du مفرداً؛ و«Ihr» جمع مخاطب. ",
+      ],
     },
     {
       id: "m3",

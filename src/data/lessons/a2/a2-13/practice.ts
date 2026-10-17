@@ -15,6 +15,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "gehen فعل حركة ⇒ sein: wir sind gegangen.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«haben» مع أفعال بلا انتقال؛ و«gehen» حركة ⇒ «wir sind gegangen».",
+        "«waren» ماضي sein بلا اسم مفعول؛ لا تبني الماضي التام مع «gegangen».",
+        "«hatten» ماضي haben البسيط؛ والمطلوب «sind». ",
+      ],
     },
     {
       id: "e2",
@@ -39,6 +45,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "المقارنة بين شيئين: صفة + er + als ⇒ schneller als.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«schnell» صفة بلا درجة مقارنة؛ و«als» تستدعي «schneller».",
+        "«am schnellsten» تفضيل مطلق لا يقارن بين طرفين بـ«als».",
+        "«schnellere» صيغة منسوبة تحتاج اسماً بعدها؛ وهنا الوصف خبرٌ مع «bin». ",
+      ],
     },
     {
       id: "e4",

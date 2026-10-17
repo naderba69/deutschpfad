@@ -107,6 +107,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         correctIndex: 0,
         explanation: "«denn das Gasthaus Löwen war am Abend komplett voll».",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "النص لا يذكر سعراً أرخص؛ يذكر وحده «denn das Gasthaus Löwen war am Abend komplett voll».",
+          "طاولة عند النافذة «am Fenster» لم تُذكر سبباً للحجز؛ النص يذكر وحده «komplett voll».",
+          "لا معرفة سابقة في النص: لا «Der Kellner kannte sie» ولا إشارة إلى لقاء سابق.",
+        ],
       },
       {
         id: "rq2",
@@ -124,6 +130,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "في هذه القصة توجّه اللافتة الزبائن إلى الانتظار، ثمّ يأتي النادل ويقود المجموعة إلى طاولة.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "عكس المعنى: «Sie werden platziert» مبني للمجهول ⇒ يُقادون إلى طاولة ولا يختارونها بأنفسهم.",
+          "المطعم مفتوح؛ النص يقول «war am Abend komplett voll».",
+          "الدفع في النهاية؛ «die Rechnung» (21,40 يورو) جاءت بعد الطعام لا قبله. ",
+        ],
       },
       {
         id: "rq3",
@@ -141,6 +153,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "هذا ما حدث في القصة: يذكر النص المشروبات أولاً ثمّ قائمة الطعام؛ لا يقرر ترتيباً عاماً للخدمة.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "القائمة «die Speisekarte» جاءت بعد المشروبات في النص، لا أولاً.",
+          "لم تُطلب مقبّلات «die Vorspeise» في القصة؛ الطلب طبق رئيسي.",
+          "«die Rechnung» آخر المشهد (21,40 يورو)، لا أول ما يُحضر. ",
+        ],
       },
       {
         id: "rq4",
@@ -158,6 +176,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "يذكر النص أنه نادى النادل بأدب، واستعمل Entschuldigung وKönnten Sie … bitte لطلب نقل الملاحظة إلى المطبخ.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "النص يذكر «Entschuldigung» و«Könnten Sie … bitte» ⇒ أدبٌ لا إهانة أمام الضيوف.",
+          "لم يغادر بعد الحساب؛ طلب نقل الملاحظة إلى المطبخ «an die Küche weitergeben».",
+          "عكس النص: السمك كان «zu trocken» لا ممتازاً، ولم يُذكر إكرام كبير هنا. ",
+        ],
       },
       {
         id: "rq5",
@@ -171,6 +195,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "Das Essen هو الفاعل المفرد، لذلك نستخدم hat؛ وallen ضمير جمع في Dativ. جملة Alle haben das Essen geschmeckt ممكنة في معنى «تذوّق الجميع الطعام»، لكنها تعني شيئاً آخر وليست تصحيحاً لهذه الجملة.",
         errorType: "conjugation",
+        optionExplanations: [
+          undefined,
+          "«haben» للجمع، والفاعل «Das Essen» مفرد محايد ⇒ «hat … geschmeckt».",
+          "«habe» مع ich، والفاعل هنا «Das Essen».",
+          "«hast» مع du؛ لا يطابق فاعلاً من الغائب مثل «Das Essen». ",
+        ],
       },
       {
         id: "rq6",
@@ -183,6 +213,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "في القصة الحساب 21,40 يورو والمجموع بعد التقريب 23؛ أي إكرامية قدرها 1,60 يورو في هذا المثال.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "هو المبلغ المدفوع بعد التقريب لا «das Trinkgeld»؛ الفرق 23 − 21,40 = 1,60 يورو.",
+          "قيمة «die Rechnung» نفسها كما يذكرها النص، لا الإكرامية «das Trinkgeld».",
+          "النص يذكر التقريب إلى 23 ⇒ دُفعت إكرامية فعلاً لا «Gar nichts». ",
+        ],
       },
     ],
     redemittel: [
@@ -305,6 +341,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         explanation:
           "طلب سامي Spaghetti وسلطةً وماءً؛ الإجابة تجمع الطعام والشراب المذكورين.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "ينقصها الشراب: طلب سامي «ein Wasser» أيضاً، ولم يُذكر حجم «großen».",
+          "«Pizza» غير مطلوبة؛ الطلب كان «Spaghetti».",
+          "«Ein Gemüseteller mit Reis» لم يُذكر في الحوار. ",
+        ],
       },
       {
         id: "q2",
@@ -317,6 +359,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "قال سامي: Die Spaghetti waren lecker — لذيذة.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "عكس قول سامي «Die Spaghetti waren lecker».",
+          "لم يُذكر طعم حادّ «scharf»؛ الوصف الوحيد «lecker».",
+          "لم توصف بالبرودة «kalt»؛ الجملة «Die Spaghetti waren lecker». ",
+        ],
       },
       {
         id: "q3",
@@ -329,6 +377,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "قالت منى: Ich kann kein Fleisch essen — لا تستطيع اللحم.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "الخضار «das Gemüse» ليس ممنوعاً عليها؛ قالت «Ich kann kein Fleisch essen».",
+          "السلطة «der Salat» جزء من الطلب في الحوار، لا ما تعجز عن أكله.",
+          "المستثنى المذكور هو «Fleisch»، ولم يُستثن «der Fisch» صراحة. ",
+        ],
       },
     ],
   };

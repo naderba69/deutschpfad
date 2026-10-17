@@ -15,6 +15,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "fahren حركة ⇒ sein: sie sind gefahren.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«haben» لا تصلح مع فعل الحركة «fahren» ⇒ «sie sind gefahren».",
+        "«waren» ماضي sein بلا اسم مفعول؛ والمطلوب مساعد «sind».",
+        "«hatten» ماضي haben البسيط؛ لا يبني الماضي التام هنا. ",
+      ],
     },
     {
       id: "m2",
@@ -38,6 +44,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "التعليل مع فعل في النهاية (habe) ⇒ weil. (denn تعلّل أيضاً، لكنها تترك الترتيب عادياً: denn ich habe kein Geld، فلا تناسب هذا الفراغ.)",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«und» جمعٌ لا تعليل؛ والفعل «habe» في النهاية يدلّ على جملة تابعة.",
+        "«deshalb» نتيجة وتقلب الترتيب؛ وهنا الفعل في آخر الجملة ⇒ «weil».",
+        "«obwohl» تنازل بمعنى رغم أنّ؛ والسبب يُصاغ بـ«weil». ",
+      ],
     },
     {
       id: "m4",
@@ -58,6 +70,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "مع wir: freuen uns — الفعل الانعكاسي يوافق الفاعل في التصريف والضمير معاً.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«freut» مع er/sie/es أو ihr؛ و«Wir» تأخذ «freuen».",
+        "«freust» مع du؛ لا تطابق «Wir».",
+        "«freue» مع ich؛ والفاعل «Wir». ",
+      ],
     },
   ];
 

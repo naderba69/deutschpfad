@@ -85,6 +85,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "سبب → weil (درس المدرسة).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«dass» يقدّم مضموناً خبرياً لا سبباً؛ والمطلوب «لأنّ».",
+        "«wenn» شرط أو زمن متكرر؛ و«weil» تعلّل.",
+        "«ob» سؤال بنعم/لا كما في «Ich weiß nicht, ob das stimmt»؛ والجملة هنا تعلّل الرغبة. ",
+      ],
     },
     {
       id: "r2",
@@ -95,6 +101,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "مع ich: mich (درس الخدمات).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«dich» للمخاطب؛ والفاعل «Ich» ⇒ «mich».",
+        "«sich» مع الغائب؛ ومع «Ich» نقول «mich».",
+        "«uns» مع wir؛ لا تطابق «Ich». ",
+      ],
     },
     {
       id: "r3",

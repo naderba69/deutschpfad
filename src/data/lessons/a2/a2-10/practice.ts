@@ -14,6 +14,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "المطلوب هنا بيان سبب مواصلة التعلم، لذلك نختار weil. يأتي الفعل المصرف will في نهاية الجملة التابعة بعد bestehen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«wenn» رابط شرط؛ والمطلوب هنا بيان السبب «لأنّ».",
+        "«ob» (كما في «Ich weiß nicht, ob du Zeit hast») سؤال بنعم/لا، والجملة هنا تقرر سبباً لا تستفهم.",
+        "«dass» يقدّم مضموناً خبرياً؛ السبب يُصاغ بـ«weil». ",
+      ],
     },
     {
       id: "e2",
@@ -24,6 +30,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "المطلوب سؤال غير مباشر بنعم/لا بمعنى «لا أعرف ما إذا كان لديك وقت اليوم»؛ هنا نستخدم ob. ويمكن أن تأتي dass بعد wissen في سياق يقرر مضموناً خبرياً بمعنى مختلف، لكنها لا تحقق السؤال المحدد هنا.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«weil» سبب؛ و«Ich weiß nicht» تستدعي استفهاماً غير مباشر.",
+        "«wenn» شرط أو زمن متكرر، لا سؤالاً بنعم أو لا.",
+        "«dass» تقرر مضموناً معلوماً؛ مع «weiß nicht» عن توفّر الوقت نحتاج «ob». ",
+      ],
     },
     {
       id: "e3",
@@ -90,6 +102,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "bestehen = يجتاز: die Prüfung bestehen.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "الرسوب «durchfallen»: «Ich bin durch die Prüfung gefallen».",
+        "الاستعداد «sich auf die Prüfung vorbereiten»، لا «bestehen».",
+        "التأجيل «die Prüfung verschieben»، ومعناه غير «bestehen». ",
+      ],
     },
     {
       id: "e9",
