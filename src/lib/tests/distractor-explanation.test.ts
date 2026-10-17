@@ -138,7 +138,8 @@ const COVERAGE_FLOORS: Record<string, number> = { A1: 144, A2: 230, B1: 129, B2:
 const EVIDENCE_FLOORS: Record<string, number> = { A1: 432, A2: 690, B1: 364, B2: 390 };
 
 /** الحوارات: التغطية مكتملة (صفر صارم)، والدليل الألماني 5 شروح فقط — أرضية تُرفع */
-const DIALOGUE_EVIDENCE_FLOOR = 5;
+// الدفعة 82: حوارات A1 مكتملة الدليل (94/94) فارتفع المجموع 5 → 97.
+const DIALOGUE_EVIDENCE_FLOOR = 97;
 /** البودكاست: التغطية مكتملة، والدليل الألماني 50 شرحاً */
 const PODCAST_EVIDENCE_FLOOR = 50;
 

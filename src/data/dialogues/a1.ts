@@ -25,23 +25,23 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Wie heißt der Mann?", ar: "ما اسم الرجل؟", options: [
         { text: "Thomas", ar: "توماس", correct: true, explanation: "نعم — «Ich heiße Thomas»." },
-        { text: "Sara", ar: "سارة", correct: false, explanation: "لا — سارة هي الفتاة." },
-        { text: "Berlin", ar: "برلين", correct: false, explanation: "لا — برلين مدينة." },
+        { text: "Sara", ar: "سارة", correct: false, explanation: "لا — «Sara» اسم الفتاة في الحوار: «Ich heiße Sara»." },
+        { text: "Berlin", ar: "برلين", correct: false, explanation: "لا — «Berlin» مدينة لا اسم شخص: «Ich komme aus Deutschland, aus Berlin»." },
       ]},
       { de: "Woher kommt Sara?", ar: "من أين سارة؟", options: [
         { text: "Aus Tunesien", ar: "من تونس", correct: true, explanation: "صحيح — «Ich komme aus Tunesien»." },
-        { text: "Aus Berlin", ar: "من برلين", correct: false, explanation: "لا — برلين من توماس." },
-        { text: "Aus Frankreich", ar: "من فرنسا", correct: false, explanation: "لا — تونس." },
+        { text: "Aus Berlin", ar: "من برلين", correct: false, explanation: "لا — برلين مدينة توماس: «Ich komme aus Deutschland, aus Berlin»." },
+        { text: "Aus Frankreich", ar: "من فرنسا", correct: false, explanation: "لا — لم تُذكر فرنسا Frankreich؛ وسارة قالت «Ich komme aus Tunesien»." },
       ]},
       { de: "Wer sagt „Freut mich auch“?", ar: "من يقول «وأنا أيضاً»؟", options: [
         { text: "Thomas", ar: "توماس", correct: true, explanation: "نعم — توماس يرد بالمجاملة." },
-        { text: "Sara", ar: "سارة", correct: false, explanation: "لا — سارة قالتها أولاً." },
-        { text: "Der Kellner", ar: "النادل", correct: false, explanation: "لا نادل في الحوار." },
+        { text: "Sara", ar: "سارة", correct: false, explanation: "لا — سارة قالت «Freut mich!» أولاً، وردّ توماس بـ«Freut mich auch»." },
+        { text: "Der Kellner", ar: "النادل", correct: false, explanation: "لا نادل Der Kellner في هذا الحوار؛ والمتحدثان توماس وسارة." },
       ]},
       { de: "Woher kommt Thomas?", ar: "من أين توماس؟", options: [
-        { text: "Aus Tunesien", ar: "من تونس", correct: false, explanation: "لا — هذا بلد سارة." },
+        { text: "Aus Tunesien", ar: "من تونس", correct: false, explanation: "لا — تونس بلد سارة: «Ich komme aus Tunesien»." },
         { text: "Aus Berlin", ar: "من برلين", correct: true, explanation: "نعم — «Ich komme aus Deutschland, aus Berlin»." },
-        { text: "Aus Wien", ar: "من فيينا", correct: false, explanation: "لا — لم تذكر المدينة النمساوية." },
+        { text: "Aus Wien", ar: "من فيينا", correct: false, explanation: "لا — لم تُذكر فيينا Wien؛ وتوماس قال «aus Berlin»." },
       ]},
     ],
     keyVocab: [
@@ -70,22 +70,22 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Was bestellt der Gast zuerst?", ar: "ماذا يطلب الزبون أولاً؟", options: [
         { text: "Einen Kaffee", ar: "قهوة", correct: true, explanation: "نعم — «Ich möchte einen Kaffee»." },
-        { text: "Einen Tee", ar: "شاياً", correct: false, explanation: "لا — قهوة أولاً." },
-        { text: "Einen Saft", ar: "عصيراً", correct: false, explanation: "لا — القهوة." },
+        { text: "Einen Tee", ar: "شاياً", correct: false, explanation: "لا — لم يُطلب شاي Einen Tee؛ وأول الطلب «Ich möchte einen Kaffee, bitte»." },
+        { text: "Einen Saft", ar: "عصيراً", correct: false, explanation: "لا — لم يُذكر عصير Einen Saft في الحوار." },
       ]},
       { de: "Wie viel kostet alles?", ar: "كم يكلف كل شيء؟", options: [
         { text: "5 Euro", ar: "5 يورو", correct: true, explanation: "صحيح — «Das macht zusammen 5 Euro»." },
-        { text: "10 Euro", ar: "10 يورو", correct: false, explanation: "لا — 5 يورو." },
-        { text: "3 Euro", ar: "3 يورو", correct: false, explanation: "لا — 5 يورو." },
+        { text: "10 Euro", ar: "10 يورو", correct: false, explanation: "لا — المبلغ المنطوق «Das macht zusammen 5 Euro»." },
+        { text: "3 Euro", ar: "3 يورو", correct: false, explanation: "لا — الحساب «5 Euro» لا ثلاثة." },
       ]},
       { de: "Was sagt der Gast am Ende?", ar: "ماذا يقول الزبون في النهاية؟", options: [
         { text: "Danke schön", ar: "شكراً جزيلاً", correct: true, explanation: "نعم — «Danke schön» شكر جميل." },
-        { text: "Guten Morgen", ar: "صباح الخير", correct: false, explanation: "لا — هذه تحية صباحية." },
-        { text: "Auf Wiedersehen", ar: "إلى اللقاء", correct: false, explanation: "لا — قال شكراً." },
+        { text: "Guten Morgen", ar: "صباح الخير", correct: false, explanation: "لا — Guten Morgen تحية صباحية؛ وخاتمة الزبون «Danke schön!»." },
+        { text: "Auf Wiedersehen", ar: "إلى اللقاء", correct: false, explanation: "لا — لم يقل Auf Wiedersehen؛ بل شكر: «Danke schön!»." },
       ]},
       { de: "Was isst der Gast?", ar: "ماذا يأكل الزبون؟", options: [
-        { text: "Eine Pizza Margherita", ar: "بيتزا", correct: false, explanation: "لا — لم يطلب بيتزا." },
-        { text: "Ein Brötchen mit Käse", ar: "لفافة خبز", correct: false, explanation: "لا — طلب كعكة." },
+        { text: "Eine Pizza Margherita", ar: "بيتزا", correct: false, explanation: "لا — لم تُطلب بيتزا Eine Pizza Margherita؛ بل «ein Stück Kuchen»." },
+        { text: "Ein Brötchen mit Käse", ar: "لفافة خبز", correct: false, explanation: "لا — لم يُذكر لفّاف خبز Ein Brötchen؛ والمأكول «ein Stück Kuchen»." },
         { text: "Ein Stück Apfelkuchen", ar: "قطعة كعك", correct: true, explanation: "نعم — «ein Stück Kuchen»." },
       ]},
     ],
@@ -115,18 +115,18 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Was kostet das Brot?", ar: "كم يكلف الخبز؟", options: [
         { text: "2 Euro", ar: "2 يورو", correct: true, explanation: "نعم — «Das Brot kostet 2 Euro»." },
-        { text: "1,50 Euro", ar: "1,50 يورو", correct: false, explanation: "لا — هذا سعر الحليب." },
-        { text: "5 Euro", ar: "5 يورو", correct: false, explanation: "لا — 2 يورو." },
+        { text: "1,50 Euro", ar: "1,50 يورو", correct: false, explanation: "لا — هذا سعر الحليب: «Die Milch kostet 1,50 Euro»." },
+        { text: "5 Euro", ar: "5 يورو", correct: false, explanation: "لا — الخبز «Das Brot kostet 2 Euro»." },
       ]},
       { de: "Was nimmt der Kunde?", ar: "ماذا يأخذ الزبون؟", options: [
         { text: "Brot und Milch", ar: "خبزاً وحليباً", correct: true, explanation: "صحيح — الاثنان معاً." },
-        { text: "Nur ein Brot", ar: "خبزاً فقط", correct: false, explanation: "لا — أخذ الاثنين." },
-        { text: "Nur die frische Milch", ar: "حليباً فقط", correct: false, explanation: "لا — أخذ الاثنين." },
+        { text: "Nur ein Brot", ar: "خبزاً فقط", correct: false, explanation: "لا — أخذ الاثنين: «Ich nehme das Brot und die Milch»." },
+        { text: "Nur die frische Milch", ar: "حليباً فقط", correct: false, explanation: "لا — لم يقتصر على الحليب؛ بل «das Brot und die Milch»." },
       ]},
       { de: "Was nimmt der Kunde?", ar: "ماذا يأخذ الزبون؟", options: [
         { text: "Das Brot und die Milch", ar: "الخبز والحليب", correct: true, explanation: "نعم — «Ich nehme das Brot und die Milch»." },
-        { text: "Nur die frische Milch", ar: "الحليب فقط", correct: false, explanation: "لا — أخذ الخبز أيضاً." },
-        { text: "Ein Kilo rote Äpfel", ar: "كيلوغراماً من التفاح", correct: false, explanation: "لا — لم يذكر التفاح." },
+        { text: "Nur die frische Milch", ar: "الحليب فقط", correct: false, explanation: "لا — أخذ الخبز أيضاً: «Ich nehme das Brot und die Milch»." },
+        { text: "Ein Kilo rote Äpfel", ar: "كيلوغراماً من التفاح", correct: false, explanation: "لا — لم يُذكر تفاح Äpfel في هذا الحوار." },
       ]},
     ],
     keyVocab: [
@@ -155,18 +155,18 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Wie viele Geschwister hat Paul?", ar: "كم أخاً لدى باول؟", options: [
         { text: "Einen Bruder und eine Schwester", ar: "أخاً وأختاً", correct: true, explanation: "نعم — «einen Bruder und eine Schwester»." },
-        { text: "Nur einen älteren Bruder", ar: "أخوين", correct: false, explanation: "لا — أخ وأخت." },
-        { text: "Zwei Schwestern, keinen Bruder", ar: "لا أحد", correct: false, explanation: "لا — لديه إخوة." },
+        { text: "Nur einen älteren Bruder", ar: "أخوين", correct: false, explanation: "لا — الأخ الأكبر älter لم يُذكر؛ بل «einen Bruder und eine Schwester»." },
+        { text: "Zwei Schwestern, keinen Bruder", ar: "لا أحد", correct: false, explanation: "لا — له أخٌ صراحةً: «ich habe einen Bruder und eine Schwester»." },
       ]},
       { de: "Was ist Pauls Mutter von Beruf?", ar: "ما مهنة أم باول؟", options: [
         { text: "Ärztin", ar: "طبيبة", correct: true, explanation: "صحيح — «Meine Mutter ist Ärztin»." },
-        { text: "Lehrerin", ar: "معلمة", correct: false, explanation: "لا — الأب معلم." },
-        { text: "Köchin", ar: "لا، طباخة", correct: false, explanation: "لا — طبيبة." },
+        { text: "Lehrerin", ar: "معلمة", correct: false, explanation: "لا — التعليم مهنة الأب: «Mein Vater ist Lehrer»." },
+        { text: "Köchin", ar: "لا، طباخة", correct: false, explanation: "لا — لم تُذكر طباخة Köchin؛ والأمّ «Meine Mutter ist Ärztin»." },
       ]},
       { de: "Wie viele Brüder hat Paul?", ar: "كم أخاً لبول؟", options: [
-        { text: "Keinen Bruder", ar: "لا أخ", correct: false, explanation: "لا — قال إن لديه أخاً." },
+        { text: "Keinen Bruder", ar: "لا أخ", correct: false, explanation: "لا — قال إن له أخاً: «ich habe einen Bruder»." },
         { text: "Einen Bruder", ar: "أخ واحد", correct: true, explanation: "نعم — «einen Bruder und eine Schwester»." },
-        { text: "Nur einen älteren Bruder", ar: "أخوان", correct: false, explanation: "لا — ذكر أخاً واحداً فقط." },
+        { text: "Nur einen älteren Bruder", ar: "أخوان", correct: false, explanation: "لا — ذُكر أخٌ واحد بلا وصف älter؛ والصيغة «einen Bruder und eine Schwester»." },
       ]},
     ],
     keyVocab: [
@@ -195,18 +195,18 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Wie spät ist es?", ar: "كم الساعة؟", options: [
         { text: "Halb drei", ar: "الثانية والنصف", correct: true, explanation: "نعم — «Es ist halb drei»." },
-        { text: "Drei Uhr", ar: "الثالثة", correct: false, explanation: "لا — الثالثة موعد الحافلة." },
-        { text: "Zwei Uhr", ar: "الثانية", correct: false, explanation: "لا — الثانية والنصف." },
+        { text: "Drei Uhr", ar: "الثالثة", correct: false, explanation: "لا — الثالثة موعد الحافلة: «Der Bus fährt um drei Uhr»." },
+        { text: "Zwei Uhr", ar: "الثانية", correct: false, explanation: "لا — الساعة «Es ist halb drei» أي 2:30 لا 2:00." },
       ]},
       { de: "Wann fährt der Bus?", ar: "متى تنطلق الحافلة؟", options: [
         { text: "Um drei Uhr", ar: "في الثالثة", correct: true, explanation: "صحيح — «um drei Uhr»." },
-        { text: "Um zwei Uhr", ar: "في الثانية", correct: false, explanation: "لا — الثالثة." },
-        { text: "Um vier Uhr", ar: "في الرابعة", correct: false, explanation: "لا — الثالثة." },
+        { text: "Um zwei Uhr", ar: "في الثانية", correct: false, explanation: "لا — الانطلاق «Der Bus fährt um drei Uhr» لا في الثانية." },
+        { text: "Um vier Uhr", ar: "في الرابعة", correct: false, explanation: "لا — لم تُذكر الرابعة vier Uhr؛ والحافلة «fährt um drei Uhr»." },
       ]},
       { de: "Was sagt die Person, als sie noch Zeit hat?", ar: "ماذا يقول الشخص عندما يكون لديه وقت؟", options: [
-        { text: "Ich habe keine Zeit.", ar: "ليس لدي وقت.", correct: false, explanation: "لا — قال العكس." },
+        { text: "Ich habe keine Zeit.", ar: "ليس لدي وقت.", correct: false, explanation: "لا — قال العكس: «Perfekt, ich habe noch Zeit»." },
         { text: "Perfekt, ich habe noch Zeit.", ar: "ممتاز، ما زال لدي وقت.", correct: true, explanation: "نعم — هذه جملته." },
-        { text: "Es ist schon drei Uhr.", ar: "الساعة الثالثة بالفعل.", correct: false, explanation: "لا — هذه معلومة وليست رأيه في وقته." },
+        { text: "Es ist schon drei Uhr.", ar: "الساعة الثالثة بالفعل.", correct: false, explanation: "لا — لم يقل Es ist schon drei Uhr؛ والساعة كانت «halb drei»." },
       ]},
     ],
     keyVocab: [
@@ -235,18 +235,18 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Welche Größe hat der Kunde?", ar: "ما مقاس الزبون؟", options: [
         { text: "Größe M", ar: "المقاس M", correct: true, explanation: "نعم — «Größe M, bitte»." },
-        { text: "Größe S", ar: "المقاس S", correct: false, explanation: "لا — M." },
-        { text: "Größe L", ar: "المقاس L", correct: false, explanation: "لا — M." },
+        { text: "Größe S", ar: "المقاس S", correct: false, explanation: "لا — المقاس المطلوب «Größe M, bitte»." },
+        { text: "Größe L", ar: "المقاس L", correct: false, explanation: "لا — لم يطلب Größe L؛ بل «Größe M»." },
       ]},
       { de: "Wie viel kostet das T-Shirt?", ar: "كم يكلف القميص؟", options: [
         { text: "15 Euro", ar: "15 يورو", correct: true, explanation: "صحيح — «Es kostet 15 Euro»." },
-        { text: "10 Euro", ar: "10 يورو", correct: false, explanation: "لا — 15." },
-        { text: "20 Euro", ar: "20 يورو", correct: false, explanation: "لا — 15." },
+        { text: "10 Euro", ar: "10 يورو", correct: false, explanation: "لا — الثمن المنطوق «Es kostet 15 Euro»." },
+        { text: "20 Euro", ar: "20 يورو", correct: false, explanation: "لا — العشرون 20 Euro غير مذكورة؛ والثمن 15." },
       ]},
       { de: "Was sagt der Kunde am Ende?", ar: "ماذا يقول الزبون في النهاية؟", options: [
-        { text: "Das ist zu teuer.", ar: "هذا غالٍ جداً.", correct: false, explanation: "لا — لم يقل ذلك." },
+        { text: "Das ist zu teuer.", ar: "هذا غالٍ جداً.", correct: false, explanation: "لا — لم يشتكِ الغلاء zu teuer؛ بل قال «Das passt. Ich nehme es!»." },
         { text: "Das passt. Ich nehme es!", ar: "يناسبني. سآخذه!", correct: true, explanation: "نعم — قال ذلك عند الشراء." },
-        { text: "Ich suche eine Hose.", ar: "أبحث عن بنطال.", correct: false, explanation: "لا — كان يبحث عن قميص." },
+        { text: "Ich suche eine Hose.", ar: "أبحث عن بنطال.", correct: false, explanation: "لا — بحثه عن قميص: «ich suche ein T-Shirt»." },
       ]},
     ],
     keyVocab: [
@@ -275,13 +275,13 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Wie viele Zimmer hat die Wohnung?", ar: "كم غرفة في الشقة؟", options: [
         { text: "Drei Zimmer", ar: "ثلاث غرف", correct: true, explanation: "نعم — «Drei Zimmer»." },
-        { text: "Zwei Zimmer", ar: "غرفتين", correct: false, explanation: "لا — ثلاث." },
-        { text: "Vier Zimmer", ar: "أربع غرف", correct: false, explanation: "لا — ثلاث." },
+        { text: "Zwei Zimmer", ar: "غرفتين", correct: false, explanation: "لا — العدد «Drei Zimmer: ein Schlafzimmer, ein Wohnzimmer und eine Küche»." },
+        { text: "Vier Zimmer", ar: "أربع غرف", correct: false, explanation: "لا — لم تُذكر أربع غرف Vier Zimmer؛ بل ثلاث." },
       ]},
       { de: "Wo liegt die Wohnung?", ar: "أين تقع الشقة؟", options: [
         { text: "Im Stadtzentrum", ar: "في وسط المدينة", correct: true, explanation: "صحيح — «Im Stadtzentrum»." },
-        { text: "Am Stadtrand", ar: "في الضواحي", correct: false, explanation: "لا — الوسط." },
-        { text: "Im Dorf", ar: "في القرية", correct: false, explanation: "لا — وسط المدينة." },
+        { text: "Am Stadtrand", ar: "في الضواحي", correct: false, explanation: "لا — الضواحي Am Stadtrand عكس المذكور «Im Stadtzentrum»." },
+        { text: "Im Dorf", ar: "في القرية", correct: false, explanation: "لا — لم تُذكر قرية Im Dorf؛ والموقع «Im Stadtzentrum, neben dem Park»." },
       ]},
       { de: "Ist die Wohnung dunkel?", ar: "هل الشقة مظلمة؟", options: [
         { text: "Ja, sie ist dunkel.", ar: "نعم، إنها مظلمة.", correct: false, explanation: "لا — قال إنها hell." },
@@ -315,18 +315,18 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Wann ist der Geburtstag?", ar: "متى عيد الميلاد؟", options: [
         { text: "Am Samstag", ar: "يوم السبت", correct: true, explanation: "نعم — «am Samstag Geburtstag»." },
-        { text: "Am Sonntag", ar: "يوم الأحد", correct: false, explanation: "لا — السبت." },
-        { text: "Am Montag", ar: "يوم الاثنين", correct: false, explanation: "لا — السبت." },
+        { text: "Am Sonntag", ar: "يوم الأحد", correct: false, explanation: "لا — لم يُذكر الأحد Am Sonntag؛ بل «Ich habe am Samstag Geburtstag!»." },
+        { text: "Am Montag", ar: "يوم الاثنين", correct: false, explanation: "لا — الاثنين Am Montag غير مذكور في الحوار." },
       ]},
       { de: "Was bringt der Gast mit?", ar: "ماذا يحضر الضيف؟", options: [
         { text: "Einen Kuchen", ar: "كعكة", correct: true, explanation: "صحيح — «Ich bringe einen Kuchen mit»." },
-        { text: "Blumen", ar: "زهوراً", correct: false, explanation: "لا — كعكة." },
-        { text: "Ein Geschenk", ar: "هدية", correct: false, explanation: "لا — كعكة." },
+        { text: "Blumen", ar: "زهوراً", correct: false, explanation: "لا — لم تُذكر زهور Blumen؛ بل «Ich bringe einen Kuchen mit!»." },
+        { text: "Ein Geschenk", ar: "هدية", correct: false, explanation: "لا — لم تُذكر هدية Ein Geschenk؛ والمحمول كعكة «einen Kuchen»." },
       ]},
       { de: "Wer hat am Samstag Geburtstag?", ar: "من لديه عيد ميلاد يوم السبت؟", options: [
-        { text: "Der Gast", ar: "الضيف", correct: false, explanation: "لا — الضيف يسأل عن الحفل." },
+        { text: "Der Gast", ar: "الضيف", correct: false, explanation: "لا — الضيف يسأل «Wann beginnt die Party?»؛ وصاحب العيد قال «Ich habe am Samstag Geburtstag!»." },
         { text: "Der Freund", ar: "الصديق", correct: true, explanation: "نعم — «Ich habe am Samstag Geburtstag!»." },
-        { text: "Die Mutter", ar: "الأم", correct: false, explanation: "لا — لم تذكر الأم في الحوار." },
+        { text: "Die Mutter", ar: "الأم", correct: false, explanation: "لا — لم تُذكر الأمّ Die Mutter في الحوار." },
       ]},
     ],
     keyVocab: [
@@ -355,18 +355,18 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Wohin möchte die Person?", ar: "إلى أين تريد الشخص؟", options: [
         { text: "Zum Bahnhof", ar: "إلى المحطة", correct: true, explanation: "نعم — «wo ist der Bahnhof»." },
-        { text: "Zum Supermarkt", ar: "إلى السوبرماركت", correct: false, explanation: "لا — المحطة." },
-        { text: "Zum Krankenhaus", ar: "إلى المستشفى", correct: false, explanation: "لا — المحطة." },
+        { text: "Zum Supermarkt", ar: "إلى السوبرماركت", correct: false, explanation: "لا — لم يُذكر سوبرماركت Supermarkt؛ والسؤال wo ist der Bahnhof؟." },
+        { text: "Zum Krankenhaus", ar: "إلى المستشفى", correct: false, explanation: "لا — لم يُذكر مستشفى Krankenhaus في الحوار." },
       ]},
       { de: "Wie weit ist es?", ar: "كم تبعد؟", options: [
         { text: "Fünf Minuten zu Fuß", ar: "خمس دقائق مشياً", correct: true, explanation: "صحيح — «nur fünf Minuten zu Fuß»." },
-        { text: "Zehn Minuten mit dem Auto", ar: "عشر دقائق بالسيارة", correct: false, explanation: "لا — مشياً." },
-        { text: "Dreißig Minuten", ar: "ثلاثين دقيقة", correct: false, explanation: "لا — خمس دقائق." },
+        { text: "Zehn Minuten mit dem Auto", ar: "عشر دقائق بالسيارة", correct: false, explanation: "لا — المسافة «nur fünf Minuten zu Fuß» لا عشر دقائق بالسيارة mit dem Auto." },
+        { text: "Dreißig Minuten", ar: "ثلاثين دقيقة", correct: false, explanation: "لا — لم تُذكر ثلاثون دقيقة Dreißig Minuten؛ بل «fünf Minuten zu Fuß»." },
       ]},
       { de: "Welcher Weg führt zum Bahnhof?", ar: "ما الطريق إلى المحطة؟", options: [
-        { text: "Links, dann geradeaus", ar: "يساراً ثم مستقيماً", correct: false, explanation: "لا — الاتجاه الصحيح مستقيماً ثم يميناً." },
+        { text: "Links, dann geradeaus", ar: "يساراً ثم مستقيماً", correct: false, explanation: "لا — الترتيب معكوس؛ والطريق «Gehen Sie geradeaus, dann rechts»." },
         { text: "Geradeaus, dann rechts", ar: "مستقيماً ثم يميناً", correct: true, explanation: "نعم — «Gehen Sie geradeaus, dann rechts»." },
-        { text: "Nach Hause", ar: "إلى البيت", correct: false, explanation: "لا — الوجهة المطلوبة المحطة." },
+        { text: "Nach Hause", ar: "إلى البيت", correct: false, explanation: "لا — Nach Hause عودةٌ إلى البيت؛ والوجهة «der Bahnhof»." },
       ]},
     ],
     keyVocab: [
@@ -395,18 +395,18 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Was bestellt der Kunde?", ar: "ماذا يطلب الزبون؟", options: [
         { text: "Eine Pizza und eine Cola", ar: "بيتزا وكولا", correct: true, explanation: "نعم — الوجبة الكاملة." },
-        { text: "Nur eine kleine Pizza", ar: "بيتزا فقط", correct: false, explanation: "لا — مع الكولا." },
-        { text: "Einen Salat mit Brot", ar: "سلطة", correct: false, explanation: "لا — بيتزا وكولا." },
+        { text: "Nur eine kleine Pizza", ar: "بيتزا فقط", correct: false, explanation: "لا — الطلب شامل: «Ich möchte eine Pizza und eine Cola, bitte»." },
+        { text: "Einen Salat mit Brot", ar: "سلطة", correct: false, explanation: "لا — لم تُذكر سلطة Einen Salat في الحوار." },
       ]},
       { de: "Was kostet alles?", ar: "كم يكلف كل شيء؟", options: [
         { text: "9 Euro", ar: "9 يورو", correct: true, explanation: "صحيح — «Das macht 9 Euro»." },
-        { text: "5 Euro", ar: "5 يورو", correct: false, explanation: "لا — 9." },
-        { text: "12 Euro", ar: "12 يورو", correct: false, explanation: "لا — 9." },
+        { text: "5 Euro", ar: "5 يورو", correct: false, explanation: "لا — الحساب «Das macht 9 Euro»." },
+        { text: "12 Euro", ar: "12 يورو", correct: false, explanation: "لا — لم يُذكر 12 Euro؛ والمبلغ تسعة." },
       ]},
       { de: "Mit welchem Belag ist die Pizza?", ar: "ما الإضافة على البيتزا؟", options: [
-        { text: "Mit Salami", ar: "بسلامي", correct: false, explanation: "لا — طلبها بالجبن." },
+        { text: "Mit Salami", ar: "بسلامي", correct: false, explanation: "لا — السلامي Mit Salami كان خيار الموظفة؛ والطلب «Mit Käse, bitte»." },
         { text: "Mit Käse", ar: "بالجبن", correct: true, explanation: "نعم — «Mit Käse, bitte»." },
-        { text: "Ohne Käse", ar: "بدون جبن", correct: false, explanation: "لا — طلب الجبن صراحة." },
+        { text: "Ohne Käse", ar: "بدون جبن", correct: false, explanation: "لا — الجبن مطلوب صراحةً: «Mit Käse, bitte»." },
       ]},
     ],
     keyVocab: [
@@ -435,18 +435,18 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Was hat der Kunde?", ar: "ماذا يعاني الزبون؟", options: [
         { text: "Kopfschmerzen", ar: "صداعاً", correct: true, explanation: "نعم — «Ich habe Kopfschmerzen»." },
-        { text: "Zahnschmerzen", ar: "ألم أسنان", correct: false, explanation: "لا — صداع." },
-        { text: "Bauchschmerzen", ar: "ألم بطن", correct: false, explanation: "لا — صداع." },
+        { text: "Zahnschmerzen", ar: "ألم أسنان", correct: false, explanation: "لا — لم يُذكر ألم أسنان Zahnschmerzen؛ بل «Ich habe Kopfschmerzen»." },
+        { text: "Bauchschmerzen", ar: "ألم بطن", correct: false, explanation: "لا — لم يُذكر ألم بطن Bauchschmerzen في الحوار." },
       ]},
       { de: "Was sagt die Apothekerin am Ende?", ar: "ماذا تقول الصيدلية في النهاية؟", options: [
         { text: "Gute Besserung!", ar: "الشفاء العاجل!", correct: true, explanation: "صحيح — تمني الشفاء." },
-        { text: "Guten Appetit!", ar: "بالهناء!", correct: false, explanation: "لا — هذا قبل الأكل." },
-        { text: "Auf Wiedersehen!", ar: "إلى اللقاء!", correct: false, explanation: "لا — الشفاء العاجل." },
+        { text: "Guten Appetit!", ar: "بالهناء!", correct: false, explanation: "لا — Guten Appetit! تُقال قبل الأكل؛ وخاتمة الصيدلية «Gute Besserung!»." },
+        { text: "Auf Wiedersehen!", ar: "إلى اللقاء!", correct: false, explanation: "لا — لم تقل Auf Wiedersehen!؛ بل تمنت الشفاء «Gute Besserung!»." },
       ]},
       { de: "Was soll die Person tun?", ar: "ماذا يجب أن يفعل الشخص؟", options: [
-        { text: "In die Schule gehen", ar: "أن يذهب إلى المدرسة", correct: false, explanation: "لا — لم يُذكر ذلك." },
+        { text: "In die Schule gehen", ar: "أن يذهب إلى المدرسة", correct: false, explanation: "لا — لم تُذكر مدرسة In die Schule gehen؛ والتوجيه «Nehmen Sie eine Tablette mit Wasser»." },
         { text: "Eine Tablette mit Wasser nehmen", ar: "أن يأخذ حبة دواء مع الماء", correct: true, explanation: "نعم — «Nehmen Sie eine Tablette mit Wasser»." },
-        { text: "Das Medikament zurückgeben", ar: "أن يعيد الدواء", correct: false, explanation: "لا — اشترى الدواء." },
+        { text: "Das Medikament zurückgeben", ar: "أن يعيد الدواء", correct: false, explanation: "لا — لم يُطلب إرجاع الدواء zurückgeben؛ بل أخذه «Nehmen Sie eine Tablette»." },
       ]},
     ],
     keyVocab: [
@@ -475,18 +475,18 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Was macht Lena in ihrer Freizeit?", ar: "ماذا تفعل لينا في وقت فراغها؟", options: [
         { text: "Fußball spielen und Bücher lesen", ar: "تلعب كرة وتقرأ", correct: true, explanation: "نعم — الهوايتان معاً." },
-        { text: "Nur fernsehen und schlafen", ar: "تشاهد التلفاز فقط", correct: false, explanation: "لا — كرة وقراءة." },
-        { text: "Klavier spielen und singen", ar: "تعزف البيانو", correct: false, explanation: "لا — كرة وقراءة." },
+        { text: "Nur fernsehen und schlafen", ar: "تشاهد التلفاز فقط", correct: false, explanation: "لا — لم يُذكر تلفاز fernsehen؛ وهوايتاها «Ich spiele Fußball und lese Bücher»." },
+        { text: "Klavier spielen und singen", ar: "تعزف البيانو", correct: false, explanation: "لا — لم يُذكر بيانو Klavier spielen ولا غناء singen في الحوار." },
       ]},
       { de: "Welche Mannschaft mag Lena?", ar: "أي فريق تحب لينا؟", options: [
         { text: "Bayern München", ar: "بايرن ميونخ", correct: true, explanation: "صحيح — «Ich mag Bayern München»." },
-        { text: "Borussia Dortmund", ar: "بوروسيا دورتموند", correct: false, explanation: "لا — بايرن." },
-        { text: "Real Madrid", ar: "ريال مدريد", correct: false, explanation: "لا — بايرن ميونخ." },
+        { text: "Borussia Dortmund", ar: "بوروسيا دورتموند", correct: false, explanation: "لا — لم يُذكر دورتموند Borussia Dortmund؛ بل «Ich mag Bayern München»." },
+        { text: "Real Madrid", ar: "ريال مدريد", correct: false, explanation: "لا — Real Madrid غير مذكور؛ والفريق «Bayern München»." },
       ]},
       { de: "Wann spielen die beiden zusammen?", ar: "متى يلعبان معاً؟", options: [
-        { text: "Am Montag", ar: "يوم الاثنين", correct: false, explanation: "لا — اقترحت لينا السبت." },
+        { text: "Am Montag", ar: "يوم الاثنين", correct: false, explanation: "لا — لم يُذكر الاثنين Am Montag؛ واقتراح لينا «Am Samstag?»." },
         { text: "Am Samstag", ar: "يوم السبت", correct: true, explanation: "نعم — «Am Samstag?»." },
-        { text: "Gar nicht", ar: "لا يلعبان", correct: false, explanation: "لا — وافقت لينا على اللعب." },
+        { text: "Gar nicht", ar: "لا يلعبان", correct: false, explanation: "لا — وافقت لينا على اللعب: «Gerne! Am Samstag?»." },
       ]},
     ],
     keyVocab: [
@@ -515,18 +515,18 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Wie viele Personen?", ar: "كم شخصاً؟", options: [
         { text: "Eine Person", ar: "شخص واحد", correct: true, explanation: "نعم — «Für eine Person»." },
-        { text: "Zwei Personen", ar: "شخصان", correct: false, explanation: "لا — شخص واحد." },
-        { text: "Drei Personen", ar: "ثلاثة أشخاص", correct: false, explanation: "لا — شخص واحد." },
+        { text: "Zwei Personen", ar: "شخصان", correct: false, explanation: "لا — الحجز «Für eine Person, bitte»." },
+        { text: "Drei Personen", ar: "ثلاثة أشخاص", correct: false, explanation: "لا — لم يُذكر ثلاثة أشخاص Drei Personen في الحوار." },
       ]},
       { de: "Für wie viele Nächte?", ar: "لكم ليلة؟", options: [
         { text: "Zwei Nächte", ar: "ليلتين", correct: true, explanation: "صحيح — «Zwei Nächte, bitte»." },
-        { text: "Eine Nacht", ar: "ليلة", correct: false, explanation: "لا — ليلتين." },
-        { text: "Fünf Nächte", ar: "خمس ليالٍ", correct: false, explanation: "لا — ليلتين." },
+        { text: "Eine Nacht", ar: "ليلة", correct: false, explanation: "لا — المطلوب ليلتان: «Zwei Nächte, bitte»." },
+        { text: "Fünf Nächte", ar: "خمس ليالٍ", correct: false, explanation: "لا — لم تُذكر خمس ليالٍ Fünf Nächte؛ بل «Zwei Nächte»." },
       ]},
       { de: "Was möchte die Person?", ar: "ماذا يريد الشخص؟", options: [
-        { text: "Ein Taxi bestellen", ar: "أن يطلب سيارة أجرة", correct: false, explanation: "لا — تحدث عن الحجز." },
+        { text: "Ein Taxi bestellen", ar: "أن يطلب سيارة أجرة", correct: false, explanation: "لا — لم يُذكر طلب سيارة Ein Taxi bestellen؛ بل «Ich möchte ein Zimmer reservieren»." },
         { text: "Ein Zimmer reservieren", ar: "أن يحجز غرفة", correct: true, explanation: "نعم — «Ich möchte ein Zimmer reservieren»." },
-        { text: "Eine Pizza bestellen", ar: "أن يطلب بيتزا", correct: false, explanation: "لا — لم يُذكر ذلك." },
+        { text: "Eine Pizza bestellen", ar: "أن يطلب بيتزا", correct: false, explanation: "لا — لم تُذكر بيتزا Eine Pizza bestellen في حوار الفندق." },
       ]},
     ],
     keyVocab: [
@@ -555,18 +555,18 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Wie ist das Wetter heute?", ar: "كيف الطقس اليوم؟", options: [
         { text: "Die Sonne scheint", ar: "الشمس مشرقة", correct: true, explanation: "نعم — «die Sonne scheint»." },
-        { text: "Es regnet stark", ar: "تمطر", correct: false, explanation: "لا — المطر غداً." },
-        { text: "Es schneit viel", ar: "تثلج", correct: false, explanation: "لا — مشمسة." },
+        { text: "Es regnet stark", ar: "تمطر", correct: false, explanation: "لا — المطر غداً: «Aber morgen regnet es»؛ واليوم «die Sonne scheint»." },
+        { text: "Es schneit viel", ar: "تثلج", correct: false, explanation: "لا — لم يُذكر ثلج Es schneit؛ واليوم مشمس «die Sonne scheint»." },
       ]},
       { de: "Was passiert morgen?", ar: "ماذا سيحدث غداً؟", options: [
         { text: "Es regnet und wird kälter", ar: "ستمطر ويبرد", correct: true, explanation: "صحيح — الاثنان معاً." },
-        { text: "Die Sonne scheint den ganzen Tag", ar: "الشمس مشرقة", correct: false, explanation: "لا — غداً مطر." },
-        { text: "Es schneit viel", ar: "تثلج", correct: false, explanation: "لا — مطر وبرودة." },
+        { text: "Die Sonne scheint den ganzen Tag", ar: "الشمس مشرقة", correct: false, explanation: "لا — الشمس اليوم؛ وغداً «Aber morgen regnet es. Leider»." },
+        { text: "Es schneit viel", ar: "تثلج", correct: false, explanation: "لا — لم يُذكر ثلج Es schneit؛ وغداً مطرٌ و«es wird kälter»." },
       ]},
       { de: "Was braucht die Person wegen der Kälte?", ar: "ماذا يحتاج الشخص بسبب البرد؟", options: [
-        { text: "Einen Badeanzug", ar: "مايوه", correct: false, explanation: "لا — الجو بارد." },
+        { text: "Einen Badeanzug", ar: "مايوه", correct: false, explanation: "لا — لباس السباحة Einen Badeanzug يناسب الحرّ؛ والجو «es wird kälter»." },
         { text: "Eine Jacke", ar: "سترة", correct: true, explanation: "نعم — «Dann brauche ich eine Jacke»." },
-        { text: "Ein Eis", ar: "آيس كريم", correct: false, explanation: "لا — لم يذكر ذلك." },
+        { text: "Ein Eis", ar: "آيس كريم", correct: false, explanation: "لا — لم تُذكر مثلجات Ein Eis؛ والحاجة «Dann brauche ich eine Jacke»." },
       ]},
     ],
     keyVocab: [
@@ -595,18 +595,18 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Was kauft die Person?", ar: "ماذا تشتري الشخص؟", options: [
         { text: "Ein Ticket nach Hamburg", ar: "تذكرة إلى هامبورغ", correct: true, explanation: "نعم — الوجهة هامبورغ." },
-        { text: "Ein Ticket nach Berlin", ar: "تذكرة إلى برلين", correct: false, explanation: "لا — هامبورغ." },
-        { text: "Ein Ticket nach München", ar: "تذكرة إلى ميونخ", correct: false, explanation: "لا — هامبورغ." },
+        { text: "Ein Ticket nach Berlin", ar: "تذكرة إلى برلين", correct: false, explanation: "لا — الوجهة «Ein Ticket nach Hamburg, bitte»." },
+        { text: "Ein Ticket nach München", ar: "تذكرة إلى ميونخ", correct: false, explanation: "لا — لم تُذكر ميونخ München؛ والتذكرة إلى هامبورغ." },
       ]},
       { de: "Wann fährt der Zug?", ar: "متى ينطلق القطار؟", options: [
         { text: "Um zehn Uhr", ar: "في العاشرة", correct: true, explanation: "صحيح — «Um zehn Uhr, Gleis 3»." },
-        { text: "Um neun Uhr", ar: "في التاسعة", correct: false, explanation: "لا — العاشرة." },
-        { text: "Um elf Uhr", ar: "في الحادية عشرة", correct: false, explanation: "لا — العاشرة." },
+        { text: "Um neun Uhr", ar: "في التاسعة", correct: false, explanation: "لا — الانطلاق «Um zehn Uhr, Gleis 3»." },
+        { text: "Um elf Uhr", ar: "في الحادية عشرة", correct: false, explanation: "لا — لم تُذكر الحادية عشرة elf Uhr؛ والموعد العاشرة." },
       ]},
       { de: "Wohin fährt die Person?", ar: "إلى أين يسافر الشخص؟", options: [
-        { text: "Nach Berlin", ar: "إلى برلين", correct: false, explanation: "لا — الوجهة هامبورغ." },
+        { text: "Nach Berlin", ar: "إلى برلين", correct: false, explanation: "لا — لم تُذكر برلين Nach Berlin؛ والطلب «Ein Ticket nach Hamburg»." },
         { text: "Nach Hamburg", ar: "إلى هامبورغ", correct: true, explanation: "نعم — «Ein Ticket nach Hamburg»." },
-        { text: "Nach Tunis", ar: "إلى تونس", correct: false, explanation: "لا — الوجهة هامبورغ." },
+        { text: "Nach Tunis", ar: "إلى تونس", correct: false, explanation: "لا — لم تُذكر تونس Nach Tunis؛ والوجهة هامبورغ." },
       ]},
     ],
     keyVocab: [
