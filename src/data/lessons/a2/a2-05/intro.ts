@@ -95,6 +95,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "مع ich في المضارع نقول arbeite؛ هذا استرجاع لتصريف الفعل في درس المهن.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«arbeitest» تصريف du؛ والفاعل هنا «Ich» ⇒ «Ich arbeite».",
+        "«arbeitet» مع er/sie/es أو ihr، لا مع «Ich».",
+        "«arbeiten» مصدرٌ أو صيغة wir/sie؛ ومع «Ich» نقول «arbeite». ",
+      ],
     },
     {
       id: "r2",
@@ -105,6 +111,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "هنا ننفي الفعل arbeite؛ لذلك نستخدم nicht.",
       errorType: "negation",
+      optionExplanations: [
+        undefined,
+        "«kein» ينفي اسماً بنكرة («kein Auto»)؛ والمنفيّ هنا الفعل «arbeite» ⇒ «nicht».",
+        "«keine» للمؤنث أو الجمع مع اسمٍ منفيّ؛ ولا اسم منصوبٌ هنا.",
+        "«keinen» منصوبٌ مذكر لاسم منفيّ («keinen Termin»)؛ والنفي هنا للفعل. ",
+      ],
     },
     {
       id: "r3",

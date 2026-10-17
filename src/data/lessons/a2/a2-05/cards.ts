@@ -14,6 +14,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "Anna مفرد غائب، لذا نستخدم war.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«warst» مع du؛ و«Anna» غائبٌ مفرد ⇒ «war».",
+        "«waren» مع الجمع؛ و«Anna» مفرد.",
+        "«wart» مع ihr؛ لا يطابق «Anna». ",
+      ],
     },
     {
       id: "m2",
@@ -24,6 +30,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "مع ihr نستخدم hattet؛ hatten مع wir وsie/Sie.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«hatte» مع ich أو er/sie/es؛ والفاعل «ihr» ⇒ «hattet».",
+        "«hatten» مع wir/sie/Sie؛ و«ihr» تأخذ «hattet».",
+        "«hattest» مع du مفرداً؛ و«ihr» جمع مخاطب. ",
+      ],
     },
     {
       id: "m3",

@@ -45,6 +45,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         correctIndex: 0,
         explanation: "يذكر سامي أنه كان مريضاً وكانت لديه حمى؛ لا يقول إنه كان في إجازة أو خارج البلد.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم يذكر إجازة «Urlaub»؛ قوله «Ich war krank und hatte Fieber».",
+          "الموعد «ein Termin» ورد للاجتماع لا لسبب غيابه عن المكتب.",
+          "لم يذكر أنه كان خارج البلد «im Ausland». ",
+        ],
       },
       {
         id: "rq2",
@@ -57,6 +63,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         correctIndex: 0,
         explanation: "يذكر الرد أن الاجتماع كان أمس الساعة العاشرة في الغرفة 3؛ أما الحادية عشرة غداً فهي موعد مقترح لمحادثة قصيرة.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم يُذكر «heute um 16 Uhr»؛ الاجتماع «gestern um 10 Uhr im Raum 3».",
+          "«morgen um 11 Uhr» موعد المحادثة القصيرة المقترحة، والغرفة المذكورة «Raum 3» لا «Raum 1».",
+          "لم يُذكر الاثنين «am Montag» ولا الغرفة 2 في البريد. ",
+        ],
       },
       {
         id: "rq3",
@@ -69,6 +81,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         correctIndex: 0,
         explanation: "يطلب سامي الملاحظات والملف الحالي عبر البريد الإلكتروني ليكمل التقرير.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم يطلب رقم هاتف «eine Telefonnummer des Teams» بل الملفات لإكمال التقرير.",
+          "العرض «die Präsentation für nächste Woche» غير مطلوب في هذه الرسالة.",
+          "لم تُذكر فاتورة «die Rechnung»؛ المطلوب «die Notizen und die aktuelle Datei». ",
+        ],
       },
       {
         id: "rq4",
@@ -81,6 +99,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         correctIndex: 0,
         explanation: "يقترح سامي الغد الساعة الحادية عشرة، ويسأل إن كان الموعد مناسباً.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "العاشرة «10 Uhr» كانت وقت اجتماع الأمس، لا وقت الاقتراح.",
+          "لم تُذكر السادسة عشرة «16 Uhr» في اقتراح المحادثة.",
+          "لم يُذكر الجمعة «am Freitag» في الرسالة. ",
+        ],
       },
     ],
     redemittel: [
@@ -130,6 +154,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "تقول السيدة فيبر إن السيد شولتس في اجتماع حالياً.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "السيدة فيبر هي المتحدثة، وقالت إن «Herr Schulz» في اجتماع الآن.",
+          "سامي هو المتصل «Sami ruft an» في الحوار، لا من هو «in einer Besprechung».",
+          "كريم من حوارٍ آخر، ولم يُذكر هنا أنه في اجتماع «in einer Besprechung». ",
+        ],
       },
       {
         id: "q2",
@@ -142,6 +172,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "يطلب سامي إبلاغ السيد شولتس بأنه سيتصل مجدداً بعد ظهر اليوم.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم يعد بإرسال تقرير فوراً «sofort einen Bericht schicken».",
+          "لم يقل إنه سيأتي غداً «morgen ins Büro kommen»؛ وعده «Ich rufe heute Nachmittag zurück».",
+          "لم يذكر الحديث مع كريم «mit Karim sprechen» في هذا الحوار. ",
+        ],
       },
       {
         id: "q3",
@@ -154,6 +190,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "يقول كريم Ich war krank؛ ولا يذكر أنه كان في إجازة.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم يذكر إجازة «Er hatte Urlaub»؛ قوله «Ich war krank».",
+          "لم يذكر موعداً آخر «einen anderen Termin» سبباً لغيابه.",
+          "لم يذكر أنه اضطر للعمل أطول «länger arbeiten». ",
+        ],
       },
       {
         id: "q4",
@@ -166,6 +208,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "يطلب كريم eine E-Mail mit den Details، أي بريداً إلكترونياً بالتفاصيل.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم يطلب قائمة المشاركين «eine Liste mit den Teilnehmern».",
+          "لم يُذكر محضر الشهر الماضي «ein Protokoll vom letzten Monat».",
+          "تقريره «sein Bericht für das Projekt» ليس ما طلبه من آنا؛ المطلوب «eine E-Mail mit den Details». ",
+        ],
       },
     ],
   };

@@ -14,6 +14,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "مع ich نستخدم war في Präteritum من sein.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«warst» مع du؛ والفاعل هنا «Ich» ⇒ «Ich war».",
+        "«waren» مع wir/sie/Sie، لا مع «Ich».",
+        "«wart» مع ihr؛ لا يطابق «Ich». ",
+      ],
     },
     {
       id: "e2",
@@ -24,6 +30,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "مع wir نستخدم hatten؛ أما hatte للمفرد وhattet مع ihr.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«hatte» مع ich أو er/sie/es؛ والفاعل «Wir» ⇒ «hatten».",
+        "«hattest» مع du؛ لا يطابق «Wir».",
+        "«hattet» مع ihr؛ و«Wir» تأخذ «hatten». ",
+      ],
     },
     {
       id: "e3",
@@ -91,6 +103,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "هذه تحية افتتاحية رسمية لرجل يُخاطَب بلقب Herr واسم عائلته.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«مرحباً» تقابلها «Hallo!» وهي صيغة غير رسمية، لا «Sehr geehrter Herr …».",
+        "ذلك ختام «Auf Wiedersehen»؛ و«Sehr geehrter …» تحية افتتاحية.",
+        "«طاب يومك» تقابلها «Schönen Tag!» وتخاطب زميلاً بلا لقب رسمي «Herr». ",
+      ],
     },
     {
       id: "e9",
@@ -125,6 +143,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "مع الفاعل الجمع Die Kollegen نستخدم waren؛ الخيارات الأخرى لا توافق أفعالها فواعلها.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«Die Kollegen» جمع ⇒ «waren» لا «war».",
+        "«Frau Weber» مفرد ⇒ «hatte» لا «hatten».",
+        "مع «Ich» نقول «war» لا «waren». ",
+      ],
     },
     {
       id: "e12",
@@ -135,6 +159,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "Mit freundlichen Grüßen خاتمة شائعة في المراسلات المهنية الرسمية؛ الخيارات الأخرى غير رسمية أو لا تناسب هذا القالب.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«Tschüss» وداعٌ يوميّ غير رسمي، لا خاتمة بريدٍ لعميلة.",
+        "«Bis dann, dein Sami» صيغة ألفة («dein»)؛ والمراسلة المهنية تختم بـ«Mit freundlichen Grüßen».",
+        "«Mach's gut» وداعٌ بين أصدقاء، لا خاتمة رسمية «formell». ",
+      ],
     },
     {
       id: "e13",
