@@ -8,19 +8,27 @@ import {Progress} from "@/components/ui/progress";
 import {playCorrect, playWrong} from "@/lib/audio/sfx";
 import {addGems, GEM_REWARDS} from "@/lib/gamification/gems";
 import {recordEvent} from "@/lib/analytics/events";
+import {getPreferredRate} from "@/lib/preferences/audio";
 import {speakGerman, speakSequence, stopSpeaking} from "@/lib/speech/voices";
+import {podcastAudioPath} from "@/data/podcasts/audio";
 import {cn} from "@/lib/utils";
 import type { PodcastEpisode } from "@/data/podcasts";
 
 /**
  * ═══════════════════════════════════════════════════════════
  *  مشغّل البودكاست التعليمي — استماع ممتد:
- *  1) استمع للحلقة (TTS ألماني بسرعة مناسبة)
+ *  1) استمع للحلقة: **تسجيل مُنتَج** إن وُجد، وإلا نطق الجهاز (مُعلَن)
  *  2) اقرأ النص للفهم (مع الترجمة عند الحاجة)
  *  3) أجب عن أسئلة الفهم
  *  — تدريب الاستماع الممتد يبني الفهم الطبيعي للغة —
+ *
+ *  المسار من `podcastAudioPath` وحده (مصدر واحد مع الحارس) — لا يُكتب هنا.
  * ═══════════════════════════════════════════════════════════
  */
+
+/** مقطع واحد في كل لحظة: بدء حلقة يوقف ما قبلها (لا تراكب أصوات) */
+let currentClip: HTMLAudioElement | null = null;
+
 export function PodcastPlayer({ episode, onBack }: { episode: PodcastEpisode; onBack: () => void }) {
   const [playing, setPlaying] = React.useState(false);
   const [showScriptAr, setShowScriptAr] = React.useState(false);
@@ -28,12 +36,24 @@ export function PodcastPlayer({ episode, onBack }: { episode: PodcastEpisode; on
   const [correct, setCorrect] = React.useState(0);
   const [done, setDone] = React.useState(false);
   const [gems, setGems] = React.useState(0);
+  /**
+   * هل فشل التسجيل فسقطنا إلى نطق الجهاز؟ الحالة تُعرض للمتعلم — فلا يظنّ
+   * أن ما يسمعه تسجيل بشري وهو ليس كذلك.
+   */
+  const [clipFailed, setClipFailed] = React.useState(false);
 
-  const play = () => {
-    stopSpeaking();
-    // تقطيع النص جملة جملة عبر التسلسل (onend) — النص الطويل المُلحق
-    // دفعة واحدة بعد cancel يجعل المتصفح يبتلع أجزاء منه، فيُسمع
-    // «أول جملة فقط ثم صمت». بالتسلسل تُنطق الحلقة كاملة حتماً.
+  /** مسار التسجيل المُنتَج (undefined ⇒ الحلقة غير مُنتَجة بعد) */
+  const audioSrc = podcastAudioPath(episode.id);
+
+  const stopClip = () => {
+    if (currentClip) {
+      currentClip.pause();
+      currentClip = null;
+    }
+  };
+
+  /** نطق الجهاز — التقطيع جملة جملة عبر التسلسل (onend) */
+  const speakScript = () => {
     const sentences = episode.script
       .split(/(?<=[.!?])\s+/)
       .map((s) => s.trim())
@@ -50,11 +70,39 @@ export function PodcastPlayer({ episode, onBack }: { episode: PodcastEpisode; on
         { rate: 0.85, onEnd: () => setPlaying(false) },
       );
     }
+  };
+
+  const play = () => {
+    stopSpeaking();
+    stopClip();
     setPlaying(true);
+    if (audioSrc) {
+      const clip = new Audio(audioSrc);
+      currentClip = clip;
+      clip.playbackRate = getPreferredRate();
+      clip.onended = () => {
+        setPlaying(false);
+        currentClip = null;
+      };
+      // إن تعذّر التشغيل (ملف ناقص/متصفح مانع) نسقط إلى نطق الجهاز ونعلنه
+      clip.onerror = () => {
+        setClipFailed(true);
+        currentClip = null;
+        speakScript();
+      };
+      void clip.play().catch(() => {
+        setClipFailed(true);
+        currentClip = null;
+        speakScript();
+      });
+      return;
+    }
+    speakScript();
   };
 
   const stop = () => {
     stopSpeaking();
+    stopClip();
     setPlaying(false);
   };
 
@@ -75,7 +123,14 @@ export function PodcastPlayer({ episode, onBack }: { episode: PodcastEpisode; on
     setDone(true);
     setGems(addGems(GEM_REWARDS.DAILY_CHALLENGE));
     stopSpeaking();
+    stopClip();
   };
+
+  /** مغادرة الحلقة تُوقف الصوت — فلا يتكلّم مشغّل مهجور فوق الصفحة التالية */
+  React.useEffect(() => () => {
+    stopSpeaking();
+    stopClip();
+  }, []);
 
   if (done) {
     return (
@@ -124,6 +179,13 @@ export function PodcastPlayer({ episode, onBack }: { episode: PodcastEpisode; on
             {showScriptAr ? "إخفاء الترجمة" : "أظهر الترجمة"}
           </Button>
         </div>
+        <p className="mt-3 text-[11px] font-bold text-muted-foreground">
+          {audioSrc && !clipFailed
+            ? "🎙️ تسجيل مُنتَج لهذه الحلقة."
+            : audioSrc
+              ? "⚠️ تعذّر تشغيل التسجيل — تُقرأ الحلقة بصوت الجهاز."
+              : "🔊 لم يُنتَج تسجيل لهذه الحلقة بعد — تُقرأ بصوت الجهاز الألماني."}
+        </p>
         <div className="mt-3 flex items-center gap-2">
           <Headphones className="h-3.5 w-3.5 shrink-0 text-muted-foreground" aria-hidden="true" />
           <p className="font-de text-start text-xs leading-relaxed text-muted-foreground" dir="ltr">
