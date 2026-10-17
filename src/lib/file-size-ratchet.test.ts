@@ -23,17 +23,12 @@ const KNOWN_OVERSIZE: readonly [string, number][] = [
   ["src/data/lessons/a1/a1-09.ts", 1416],
   ["src/data/lessons/a1/a1-02.ts", 1354],
   ["src/data/lessons/a1/a1-00.ts", 1289],
-  ["src/data/lessons/a2/a2-06.ts", 1238],
   ["src/data/lessons/a1/a1-14.ts", 1222],
-  ["src/data/lessons/a2/a2-07.ts", 1178],
   ["src/data/lessons/a1/a1-06.ts", 1160],
   ["src/data/lessons/a1/a1-07.ts", 1150],
   ["src/data/lessons/a1/a1-13.ts", 1081],
   ["src/data/lessons/a2/a2-07.test.ts", 1051],
-  ["src/data/lessons/a2/a2-09.ts", 1004],
-  ["src/data/lessons/a2/a2-04.ts", 975],
   ["src/data/lessons/a2/a2-09.test.ts", 947],
-  ["src/data/lessons/a2/a2-08.ts", 925],
   ["src/data/lessons/a1/a1-04.ts", 894],
   /**
    * اختبارا التدقيق الشامل للدرس (a2-10/a2-11): حجمهما يتبع المحتوى الذي
@@ -43,7 +38,6 @@ const KNOWN_OVERSIZE: readonly [string, number][] = [
    */
   ["src/data/lessons/a2/a2-10.test.ts", 1011],
   ["src/data/lessons/a2/a2-11.test.ts", 942],
-  ["src/data/lessons/a2/a2-05.ts", 843],
   ["src/data/lessons/a1/a1-03.ts", 831],
   ["src/data/lessons/a2/a2-06.test.ts", 790],
   ["src/data/lessons/a1/a1-12.test.ts", 765],
