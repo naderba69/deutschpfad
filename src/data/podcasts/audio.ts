@@ -37,9 +37,12 @@ export const MAX_PODCAST_CLIP_CHARS = 1500;
  * وكل A2 المعلّق («Ein Sonntag in der Familie» · «Mit dem Zug reisen» · «Der Wochenmarkt» ·
  * «Ein Kinoabend» · «Die neue Wohnung»)، وB1 («umweltfreundlicher leben» · «Homeoffice» ·
  * «Reisen oder zu Hause bleiben»). المجموع 12 مقطعاً / 213.5 ث / ALL_VALID.
- * الإنتاج على دفعات لأن سقف التوليد **10 مقاطع في الرد الواحدة**، فالبقية (8 حلقات:
- * B1 «Gesund leben» و«Sprachen lernen» وستّ حلقات B2) تبقى على نطق الجهاز
- * **مُعلَنة كذلك** في المشغّل — لا ادّعاء.
+ * الدفعة 76 (2026-10-17): المقاطع الثمانية الأخيرة (196.0 ث) — B1 «Gesund leben»
+ * و«Sprachen lernen» وستّ حلقات B2 («Digitalisierung» · «Globalisierung» · «Künstliche
+ * Intelligenz» · «Gesunde Ernährung» · «Work-Life-Balance» · «Migration») بصوت `voice-03`.
+ * المجموع **20 مقطعاً / 409.5 ثانية — ولا حلقة على نطق الجهاز بعد الآن**.
+ * الإنتاج كان على دفعات لأن سقف التوليد **10 مقاطع في الرد الواحدة**، وما لم يكن
+ * مُنتَجاً كان **مُعلَناً كذلك** في المشغّل — لا ادّعاء.
  *
  * القاعدة الصوتية: مستوى واحد بصوت واحد، ليثبت المتعلم على نبرة مألوفة —
  * A1 وA2 بصوت `voice-02` (سرد يومي بسيط) وB1 وB2 بصوت `voice-03` (نصّ رأي أطول).
@@ -60,16 +63,9 @@ export const PRODUCED_PODCAST_AUDIO: readonly string[] = [
   "p-b1-umwelt",
   "p-b1-homeoffice",
   "p-b1-reisen",
-];
-
-/**
- * الحلقات المتبقية بلا تسجيل (8) — تُقرأ بصوت الجهاز وتُعلن ذلك. موضوعة هنا
- * صراحةً ليكون «ما لم يُنتَج» معلوماً بالاسم لا ضمنيّاً، وليحرس الاختبار أن
- * مجموع المُنتَج والمتبقّي هو كل الحلقات بلا فجوة ولا تكرار.
- */
-export const PENDING_PODCAST_AUDIO: readonly string[] = [
   "p-b1-gesundheit",
   "p-b1-lernen",
+  /* B2 — مُنتَج (voice-03) */
   "p-b2-digitalisierung",
   "p-b2-globalisierung",
   "p-b2-kuenstliche-intelligenz",
@@ -77,6 +73,14 @@ export const PENDING_PODCAST_AUDIO: readonly string[] = [
   "p-b2-work-life-balance",
   "p-b2-migration",
 ];
+
+/**
+ * الحلقات المتبقية بلا تسجيل — **صفر منذ الدفعة 76 (2026-10-17)**: كل الحلقات
+ * العشرين لها تسجيل. تبقى القائمة (فارغة) لأن الاختبار يحرس أن مجموع المُنتَج
+ * والمتبقّي هو كل الحلقات بلا فجوة ولا تكرار، ولتبقى الآلية جاهزة إن أُضيفت حلقة
+ * جديدة قبل إنتاج صوتها — فحينها تُسمّى هنا صراحةً بدل أن تُقرأ بصوت الجهاز ضمنيّاً.
+ */
+export const PENDING_PODCAST_AUDIO: readonly string[] = [];
 
 export interface PodcastAudioClip {
   /** معرّف الحلقة كما في `PODCASTS` */
