@@ -15,7 +15,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   r2: { options: ["wurde", "wird", "ist", "war"], key: "wurde" },
   e1: { options: ["ist", "wird", "kann", "wurde"], key: "ist" },
   e2: { options: ["kann", "ist", "wird", "wurde"], key: "kann" },
-  e8: { options: ["الدورة الاقتصادية", "الأسهم", "المبيعات", "الاستثمار"], key: "الدورة الاقتصادية" },
+  e8: { options: ["الدورة الاقتصادية", "الأسهم في البورصة", "المبيعات السنوية", "الاستثمار المباشر"], key: "الدورة الاقتصادية" },
   e14: { options: ["الانتعاش", "الركود", "التضخم", "الميزانية"], key: "الانتعاش" },
   m1: { options: ["ist", "wird", "hat", "wurde"], key: "ist" },
   m2: { options: ["sich", "mich", "dich", "uns"], key: "sich" },

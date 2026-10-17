@@ -169,7 +169,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       type: "multiple-choice",
       instructionAr: "اختر المعنى الصحيح للجملة:",
       questionDe: "„Er wird den Zug verpasst haben.“ bedeutet:",
-      options: ["لا بدّ أنه فاته القطار (تخمين)", "سيفوته القطار حتماً", "فوّت القطار أمامنا", "كان سيفوته القطار"],
+      options: ["لا بدّ أنه فاته القطار", "سيفوته القطار حتماً", "فوّت القطار أمامنا", "كان سيفوته القطار"],
       correctIndex: 0,
       explanation: "هذه هي وظيفة التخمين في Futur II: ترجيح حدثٍ ماضٍ بلا كلمة ترجيح إضافية (wohl).",
       errorType: "vocabulary",
@@ -177,7 +177,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         undefined,
         "«سيفوته القطار حتماً» توقّع مستقبلي، وليست ترجيحاً لحدث ماضٍ.",
         "«فوّت القطار أمامنا» خبر مباشر عن الماضي (Präteritum/Perfekt)، لا تخمين.",
-        "«كان سيفوته» صيغة شرطية لا Futur II.",
+        "«كان سيفوته القطار» صيغة شرطية لا Futur II.",
       ],
     },
   ];

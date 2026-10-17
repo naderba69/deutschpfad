@@ -17,13 +17,13 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   e2: { options: ["... sein", "... haben", "... gehabt", "... worden"], key: "... sein" },
   e8: { options: ["خلاصةً/ختاماً", "أولاً", "علاوة على ذلك", "مع ذلك"], key: "خلاصةً/ختاماً" },
   e14: {
-    options: ["لا بدّ أنه فاته القطار (تخمين)", "سيفوته القطار حتماً", "فوّت القطار أمامنا", "كان سيفوته القطار"],
-    key: "لا بدّ أنه فاته القطار (تخمين)",
+    options: ["لا بدّ أنه فاته القطار", "سيفوته القطار حتماً", "فوّت القطار أمامنا", "كان سيفوته القطار"],
+    key: "لا بدّ أنه فاته القطار",
   },
   m1: { options: ["werde ... haben", "werde ... sein", "wird ... haben", "habe ... worden"], key: "werde ... haben" },
   m2: { options: ["... sein", "... haben", "... gehabt", "... worden"], key: "... sein" },
-  q1: { options: ["Freiheit und Freundschaft", "nur Geld", "nur Arbeit", "nichts"], key: "Freiheit und Freundschaft" },
-  q2: { options: ["Sie schadet der Umwelt", "Sie ist schnell", "Sie ist billig", "Sie hilft"], key: "Sie schadet der Umwelt" },
+  q1: { options: ["Freiheit und Freundschaft", "nur Geld und ein großes Haus", "nur Arbeit und viel Pflicht", "nichts, das wirklich zählt"], key: "Freiheit und Freundschaft" },
+  q2: { options: ["Sie schadet der Umwelt", "Sie ist schnell und bequem", "Sie ist billig im Unterhalt", "Sie hilft vielen Menschen"], key: "Sie schadet der Umwelt" },
   q3: {
     options: ["Wir brauchen nachhaltige Technik", "Wir brauchen keine Technik", "Technik ist nutzlos", "Wir brauchen mehr Geld"],
     key: "Wir brauchen nachhaltige Technik",
@@ -313,7 +313,14 @@ describe("B2-07 lesson content audit", () => {
     const e14 = task("e14");
     if (e14.type !== "multiple-choice") throw new Error("e14 is not multiple-choice");
     expect(e14.questionDe, "جملة التخمين").toBe("„Er wird den Zug verpasst haben.“ bedeutet:");
-    expect(e14.options[e14.correctIndex], "المفتاح = تخمين عن الماضي").toContain("تخمين");
+    // العقد الأصلي كان يشترط كلمة «تخمين» **داخل نصّ الخيار**، أي أنه هو ما يفرض التسريب:
+    // الحاشية تسمّي وظيفة الصيغة للمتعلم فتُغني عن الفهم، وتجعل الصحيحة الأطول بفارق 1.58×.
+    // النيّة محفوظة بأدقّ مما كانت: المفتاح هو صيغة الترجيح نفسها («لا بدّ أنه …»)، ووظيفة
+    // التخمين مُسمّاة في الشرح (مكانها الصحيح)، وقراءة المستقبل باقية مشتّتاً مرفوضاً.
+    expect(e14.options[e14.correctIndex], "المفتاح = ترجيح عن الماضي").toBe("لا بدّ أنه فاته القطار");
+    expect(e14.options[e14.correctIndex], "بلا حاشية تسرّب الوظيفة").not.toContain("(");
+    expect(e14.explanation, "الشرح يسمّي وظيفة التخمين").toContain("التخمين");
+    expect(e14.options, "قراءة المستقبل مشتّت لا مفتاح").toContain("سيفوته القطار حتماً");
     for (const option of e14.options.filter((value) => value !== e14.options[e14.correctIndex])) {
       expect(evaluateExercise(e14, option).isCorrect, `مشتّت مقبول: ${option}`).toBe(false);
     }

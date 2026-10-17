@@ -19,8 +19,8 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   e14: { options: ["تعوّدت على المناخ", "تخلّت عن المناخ", "سئمت المناخ", "انتقلت من المناخ"], key: "تعوّدت على المناخ" },
   m1: { options: ["für", "auf", "von", "um"], key: "für" },
   m2: { options: ["von", "für", "auf", "an"], key: "von" },
-  q1: { options: ["von einem Job in Deutschland", "von einem Haus", "von einer Reise", "von einem Auto"], key: "von einem Job in Deutschland" },
-  q2: { options: ["auf einen Austausch", "auf eine Reise", "auf eine Party", "auf ein Buch"], key: "auf einen Austausch" },
+  q1: { options: ["von einem Job in Deutschland", "von einem Haus mit Garten", "von einer Reise nach Spanien", "von einem Auto mit vier Türen"], key: "von einem Job in Deutschland" },
+  q2: { options: ["auf einen Austausch", "auf eine lange Reise", "auf eine große Party", "auf ein neues Buch"], key: "auf einen Austausch" },
   q3: {
     options: ["daran, dass man anfragt", "daran, dass man isst", "daran, dass man schläft", "daran, dass man arbeitet"],
     key: "daran, dass man anfragt",

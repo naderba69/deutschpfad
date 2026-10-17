@@ -19,7 +19,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   e14: { options: ["Anbei finden Sie ...", "Hier ist ...", "Ich gebe dir ...", "Das ist ..."], key: "Anbei finden Sie ..." },
   m1: { options: ["treffe", "mache", "nehme", "gebe"], key: "treffe" },
   m2: { options: ["lege", "stelle", "ziehe", "mache"], key: "lege" },
-  q1: { options: ["auf Innovation", "auf Geld", "auf Urlaub", "auf Essen"], key: "auf Innovation" },
+  q1: { options: ["auf Innovation", "auf viel Geld", "auf den Urlaub", "auf gutes Essen"], key: "auf Innovation" },
   q2: { options: ["seine Erfahrung", "sein Auto", "sein Büro", "seine Zeit nur"], key: "seine Erfahrung" },
   q3: { options: ["sofort", "nächste Woche", "im nächsten Monat", "nie"], key: "sofort" },
 };

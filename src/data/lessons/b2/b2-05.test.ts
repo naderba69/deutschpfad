@@ -17,7 +17,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   e2: { options: ["Anstatt", "Indem", "Ohne", "Damit"], key: "Anstatt" },
   e8: { options: ["سوء الفهم", "التواصل", "السلوك", "الإنصات"], key: "سوء الفهم" },
   e12: { options: ["mal", "ja", "denn", "wohl"], key: "mal" },
-  e16: { options: ["brachte ... zum Ausdruck", "machte ... aus", "stellte ... vor", "gab ... auf"], key: "brachte ... zum Ausdruck" },
+  e16: { options: ["brachte ... zum Ausdruck", "machte ... sofort aus", "stellte ... kurz vor", "gab ... schließlich auf"], key: "brachte ... zum Ausdruck" },
   e17: { options: ["الشركة توفّر أجهزة جديدة", "الشركة تبيع أجهزة جديدة", "الشركة تصلح أجهزة جديدة", "الشركة ترفض الأجهزة"], key: "الشركة توفّر أجهزة جديدة" },
   e18: { options: ["tritt ... in Kraft", "kommt ... zu Ende", "steht ... zur Rede", "nimmt ... Teil"], key: "tritt ... in Kraft" },
   e20: { options: ["يشككون في النتائج", "يؤكدون النتائج", "ينشرون النتائج", "يعدلون النتائج"], key: "يشككون في النتائج" },
@@ -25,8 +25,8 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   m2: { options: ["es sei denn", "indem", "ohne", "damit"], key: "es sei denn" },
   m6: { options: ["Doch", "Ja", "Mal", "Wohl"], key: "Doch" },
   q1: { options: ["indem man aktiv zuhört", "indem man spricht", "indem man schweigt", "indem man schreibt"], key: "indem man aktiv zuhört" },
-  q2: { options: ["morgen, es sei denn, es regnet stark", "heute", "übermorgen", "nie"], key: "morgen, es sei denn, es regnet stark" },
-  q3: { options: ["je nachdem, wie das Wetter wird", "sofort", "morgen früh", "gar nicht"], key: "je nachdem, wie das Wetter wird" },
+  q2: { options: ["morgen, es sei denn, es regnet stark", "heute Abend, gleich nach der Arbeit", "übermorgen, wenn alle Zeit haben", "nie, das Treffen wurde abgesagt"], key: "morgen, es sei denn, es regnet stark" },
+  q3: { options: ["je nachdem, wie das Wetter wird", "sofort, noch in dieser Stunde", "morgen früh, noch vor der Arbeit", "gar nicht, sie entscheiden später"], key: "je nachdem, wie das Wetter wird" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {

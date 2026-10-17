@@ -22,9 +22,9 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   },
   m1: { options: ["Verhandlung", "Verhandeln", "Handlung", "Verhandelt"], key: "Verhandlung" },
   m2: { options: ["Beim Schreiben übt man.", "Man schreibt und übt.", "Das Schreiben man übt.", "Schreiben ist üben."], key: "Beim Schreiben übt man." },
-  q1: { options: ["die Verbesserung der Qualifikationen", "die Entscheidung", "die Bewerbung", "die Arbeit"], key: "die Verbesserung der Qualifikationen" },
+  q1: { options: ["die Verbesserung der Qualifikationen", "die Entscheidung der Personalabteilung", "die Bewerbung um eine neue Stelle", "die Arbeit im bisherigen Team"], key: "die Verbesserung der Qualifikationen" },
   q2: { options: ["nach der Probezeit", "sofort", "nie", "im nächsten Jahr"], key: "nach der Probezeit" },
-  q3: { options: ["die Flexibilität", "das Büro", "die Kollegen", "der Urlaub"], key: "die Flexibilität" },
+  q3: { options: ["die Flexibilität", "das Büro zu Hause", "die neuen Kollegen", "der Urlaub im Sommer"], key: "die Flexibilität" },
   q4: {
     options: ["die Trennung von Arbeit und Freizeit", "das Sparen von Zeit", "die Videokonferenzen am Morgen", "die Gleitzeit"],
     key: "die Trennung von Arbeit und Freizeit",

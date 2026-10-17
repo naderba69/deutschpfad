@@ -13,12 +13,12 @@ const lessonMetaList = LESSON_META;
 
 /** [الخيارات, المفتاح] — كل MCQ في المصغّر والمراجعة والبنك والقراءة */
 const expectedMultipleChoice: Record<string, [string[], string]> = {
-  e1: [["Es ist erwiesen, dass", "Vielleicht", "In gewissem Maße", "Unter Umständen"], "Es ist erwiesen, dass"],
+  e1: [["Es ist erwiesen, dass", "Es könnte sein, dass", "In einem gewissen Maße", "Unter bestimmten Umständen"], "Es ist erwiesen, dass"],
   e2: [["In gewissem Maße", "Zweifellos", "Eindeutig", "Es ist erwiesen"], "In gewissem Maße"],
   e8: [["ربما", "بلا شك", "إلى حد ما", "بوضوح"], "ربما"],
   "e13-nominal": [["Wegen der Einsparung", "Wegen die Einsparung", "Weil der Einsparung", "Wegen sparen"], "Wegen der Einsparung"],
   "e17-b2": [["indem", "obwohl", "damit", "trotzdem"], "indem"],
-  m1: [["Es ist erwiesen, dass", "Vielleicht", "Unter Umständen", "In gewissem Maße"], "Es ist erwiesen, dass"],
+  m1: [["Es ist erwiesen, dass", "Es könnte sein, dass", "Unter bestimmten Umständen", "In einem gewissen Maße"], "Es ist erwiesen, dass"],
   m2: [["Möglicherweise", "Zweifellos", "Eindeutig", "Es ist erwiesen"], "Möglicherweise"],
   m6: [["beginne", "beginnt", "begänne", "begann"], "beginne"],
   m7: [["lassen", "können", "werden", "sind"], "lassen"],
