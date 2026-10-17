@@ -18,9 +18,15 @@
  */
 import { describe, expect, it } from "vitest";
 
+import { B2_HOEREN } from "@/data/exams/b2-hoeren";
+import { B2_HOEREN_B } from "@/data/exams/b2-hoeren-b";
+import { B2_HOEREN_C } from "@/data/exams/b2-hoeren-c";
+import { B2_LESEN } from "@/data/exams/b2-lesen";
+import { B2_LESEN_B } from "@/data/exams/b2-lesen-b";
+import { B2_LESEN_C } from "@/data/exams/b2-lesen-c";
 import { B2_SCHREIBEN_B } from "@/data/exams/b2-schreiben-b";
 import { B2_SPRECHEN_B } from "@/data/exams/b2-sprechen-b";
-import { B2_SCHREIBEN_SETS, B2_SPRECHEN_SETS, GOETHE_B2_EXAM } from "@/data/exams";
+import { B2_HOEREN_SETS, B2_LESEN_SETS, B2_SCHREIBEN_SETS, B2_SPRECHEN_SETS, GOETHE_B2_EXAM } from "@/data/exams";
 import type { ExamSprechen } from "@/types/exam";
 
 /** جمل ألمانية مقتبسة بين «...» — النمط المتَّبع في الإجابات النموذجية */
@@ -141,6 +147,70 @@ describe("أطقم B2 — الإجابات النموذجية", () => {
       expect(german.length, `طقم ${t.set}/${t.id}: جمل ألمانية مقتبسة`).toBeGreaterThanOrEqual(5);
       expect(/[\u0600-\u06FF]/.test(text), `طقم ${t.set}/${t.id}: توجيه عربي`).toBe(true);
     }
+  });
+});
+
+describe("أطقم B2 — تسرّب «الخيار الأطول» (تدقيق 2026-10-16)", () => {
+  /**
+   * القياس: في 584 سؤال اختيار كانت 70% من الإجابات الصحيحة هي «الخيار الأطول
+   * وحيداً» (والاحتمال العادل 25–33%) — إشارة تُغري بالحلّ بلا فهم. أُصلحت
+   * المشتّتات (بلا مساس بمفتاح الإجابة) وبقيت أجزاء قيد الإصلاح في القائمة أدناه.
+   */
+  const KNOWN_OVERSIZE: Record<string, { teil: number; max: number }> = {
+    // فارغة عمداً: سُدِّد كل الدين المقيس (كانت 63% · 75% · 63% · 100%).
+    // أي سطر يُضاف هنا يجب أن يكون قراراً واعياً موثّقاً — لا مهرباً.
+  };
+
+  type Opt = string | { text?: string; de?: string };
+  interface Row { opts: string[]; correct: number }
+  function walk(node: unknown, out: Row[], depth = 0) {
+    if (!node || depth > 9) return;
+    if (Array.isArray(node)) { node.forEach((n) => walk(n, out, depth + 1)); return; }
+    if (typeof node !== "object") return;
+    const o = node as Record<string, unknown>;
+    const ci = typeof o.correct === "number" ? o.correct : typeof o.correctIndex === "number" ? o.correctIndex : -1;
+    if (Array.isArray(o.options) && o.options.length >= 2 && ci >= 0 && ci < o.options.length) {
+      out.push({ opts: (o.options as Opt[]).map((x) => (typeof x === "string" ? x : x.text ?? x.de ?? "")), correct: ci });
+    }
+    for (const v of Object.values(o)) walk(v, out, depth + 1);
+  }
+  const uniqueLongest = (r: Row) => {
+    const lens = r.opts.map((t) => t.trim().length);
+    const max = Math.max(...lens);
+    return lens[r.correct] === max && lens.filter((l) => l === max).length === 1;
+  };
+
+  it("لا جزء ≥4 أسئلة تتجاوز إجاباته الأطول 60% (خارج القائمة المعروفة)", () => {
+    const offenders: string[] = [];
+    let checked = 0;
+    /**
+     * نقرأ من **بيانات المصدر** لا من `B2_*_SETS`: تلك تُمرَّر عبر `balanceTeile`
+     * الذي يعيد ترتيب الخيارات، فيختلط القياس ويصبح الحارس أعمى (اكتُشف بطفرة
+     * لم تُسقطه). المصدر هو الحقيقة التي يُحرَّر فيها المحتوى.
+     */
+    void B2_HOEREN_SETS;
+    void B2_LESEN_SETS;
+    const sets: { kind: string; set: unknown }[] = [
+      ...([B2_HOEREN, B2_HOEREN_B, B2_HOEREN_C] as unknown[]).map((set, i) => ({ kind: `H${i + 1}`, set })),
+      ...([B2_LESEN, B2_LESEN_B, B2_LESEN_C] as unknown[]).map((set, i) => ({ kind: `L${i + 1}`, set })),
+    ];
+    sets.forEach(({ kind, set }) => {
+      (set as { teil: number }[]).forEach((part) => {
+        const rows: Row[] = [];
+        walk(part, rows);
+        if (rows.length < 4) return;
+        checked += rows.length;
+        const pctv = Math.round((rows.filter(uniqueLongest).length / rows.length) * 100);
+        const key = `B2${kind}-T${part.teil}`;
+        const known = KNOWN_OVERSIZE[key];
+        if (pctv > 60) {
+          if (!known) offenders.push(`${key}: ${pctv}%`);
+          else expect(pctv, `${key} تجاوز سقفه المعروف`).toBeLessThanOrEqual(known.max);
+        }
+      });
+    });
+    expect(checked).toBeGreaterThan(55); // بوابة حراسة الحارس — 69 سؤال اختيار فعلاً
+    expect(offenders, `أجزاء تتسرّب فيها الإجابة الأطول: ${offenders.join(" · ")}`).toEqual([]);
   });
 });
 
