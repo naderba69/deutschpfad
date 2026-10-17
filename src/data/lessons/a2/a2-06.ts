@@ -491,7 +491,7 @@ export const lessonA206: Lesson = {
         questionDe: "Was macht Leyla zuerst mit jeder Nachricht?",
         questionAr: "ماذا تفعل ليلى أولاً بكل خبر؟",
         options: [
-          "Sie prüft jede Nachricht.",
+          "Sie prüft jede Nachricht genau.",
           "Sie löscht jede Nachricht sofort.",
           "Sie schickt jede Nachricht an die Stadt.",
           "Sie liest jede Nachricht im Radio vor.",
@@ -841,7 +841,7 @@ export const lessonA206: Lesson = {
       instructionAr: "اختر المعنى الشائع للكلمة:",
       questionDe: "die Werbung",
       questionAr: "ما معنى Werbung في سياق وسائل الإعلام؟",
-      options: ["الدعاية / الإعلان", "الأخبار", "الصحيفة", "الرأي"],
+      options: ["الدعاية / الإعلان", "الأخبار اليومية", "الصحيفة الأسبوعية", "الرأي الشخصي"],
       correctIndex: 0,
       explanation:
         "تعني Werbung الدعاية أو الإعلان في هذا السياق، وغالباً تستعمل اسماً غير معدود.",

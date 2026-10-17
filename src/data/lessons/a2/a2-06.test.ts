@@ -19,7 +19,7 @@ const expectedMultipleChoiceKeys: Record<string, string> = {
   rq1: "Jeden Freitag.",
   rq2: "Sie finden, dass der Weg sicher ist.",
   rq3: "Man kann sie kostenlos herunterladen.",
-  rq4: "Sie prüft jede Nachricht.",
+  rq4: "Sie prüft jede Nachricht genau.",
   q1: "Im Fernsehen läuft zu viel Werbung.",
   q2: "im Internet",
   q3: "interessant",
@@ -35,7 +35,7 @@ const expectedMultipleChoiceOptions: Record<string, string[]> = {
   ],
   e1: ["kommt", "kommen", "kommst", "komme"],
   e2: ["dass", "das", "weil", "wenn"],
-  e8: ["الدعاية / الإعلان", "الأخبار", "الصحيفة", "الرأي"],
+  e8: ["الدعاية / الإعلان", "الأخبار اليومية", "الصحيفة الأسبوعية", "الرأي الشخصي"],
   e11: [
     "فريق إعداد مواد الصحيفة ومراجعتها",
     "جمهور القراء في المقهى",
@@ -58,7 +58,7 @@ const expectedMultipleChoiceOptions: Record<string, string[]> = {
     "Sie ist nur im Café erhältlich.",
   ],
   rq4: [
-    "Sie prüft jede Nachricht.",
+    "Sie prüft jede Nachricht genau.",
     "Sie löscht jede Nachricht sofort.",
     "Sie schickt jede Nachricht an die Stadt.",
     "Sie liest jede Nachricht im Radio vor.",

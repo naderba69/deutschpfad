@@ -41,7 +41,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         instructionAr: "أجب عن السؤال اعتماداً على الفقرة الأولى:",
         questionDe: "Wann findet der Unterricht statt?",
         questionAr: "متى تُعقد الحصص؟",
-        options: ["Montags und mittwochs am Abend.", "Jeden Morgen.", "Nur am Freitag.", "Am Wochenende."],
+        options: ["Montags und mittwochs am Abend.", "Jeden Morgen früh um sechs.", "Nur am Freitag am Nachmittag.", "Am Wochenende und an Feiertagen."],
         correctIndex: 0,
         explanation: "تنص الفقرة الأولى على أن الحصص مساء الاثنين والأربعاء؛ أما لقاء المكتبة يوم السبت فليس موعد الحصة.",
         errorType: "comprehension",

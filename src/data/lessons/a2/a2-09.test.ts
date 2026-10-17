@@ -28,7 +28,7 @@ const expectedMultipleChoiceKeys: Record<string, string> = {
 
 const expectedMultipleChoiceOptions: Record<string, string[]> = {
   r1: ["meinem", "meinen", "mein", "meine"],
-  r2: ["عيد ميلاد شخص", "رأس السنة", "عيد زواج", "عطلة رسمية"],
+  r2: ["عيد ميلاد شخص", "رأس السنة الميلادية", "عيد زواج والديها", "عطلة رسمية في البلد"],
   e1: ["dem", "den", "der", "das"],
   e2: ["der", "dem", "den", "die"],
   e8: ["الدعوة", "الهدية", "المناسبة", "التهنئة"],

@@ -164,7 +164,7 @@ export const lessonA209: Lesson = {
       type: "multiple-choice",
       instructionAr: "مراجعة تراكمية من A1 (درس a1-09 — المواعيد والتقويم): اختر المعنى:",
       questionDe: "der Geburtstag",
-      options: ["عيد ميلاد شخص", "رأس السنة", "عيد زواج", "عطلة رسمية"],
+      options: ["عيد ميلاد شخص", "رأس السنة الميلادية", "عيد زواج والديها", "عطلة رسمية في البلد"],
       correctIndex: 0,
       explanation: "Geburtstag هو يوم ذكرى ولادة الشخص؛ لا يعني رأس السنة أو عطلة رسمية.",
       errorType: "vocabulary",

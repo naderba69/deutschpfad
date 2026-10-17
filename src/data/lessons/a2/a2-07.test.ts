@@ -37,9 +37,9 @@ const expectedMultipleChoiceOptions: Record<string, string[]> = {
   e8: ["يدفع نقداً", "يدفع بالبطاقة", "يحوّل مالاً", "يسحب نقوداً"],
   e11: [
     "Einen Geldbetrag von einem Konto auf ein anderes Konto übertragen.",
-    "Am Automaten Bargeld aus dem eigenen Konto holen.",
-    "Eine Karte an der Kasse zum Bezahlen benutzen.",
-    "Münzen in einen Briefumschlag legen.",
+    "Am Automaten Bargeld aus dem eigenen Konto holen und einzahlen.",
+    "Eine Karte an der Kasse zum Bezahlen von Waren benutzen.",
+    "Münzen in einen Briefumschlag legen und per Post schicken.",
   ],
   e12: ["hebe", "abhebe", "hebst", "heben"],
   e13: ["gab", "gibt", "geben", "gebe"],
@@ -79,9 +79,9 @@ const expectedMultipleChoiceOptions: Record<string, string[]> = {
   q3: ["neben dem Eingang", "im Bahnhof", "hinter dem Café", "im Büro von Karim"],
   q4: [
     "Er versteht die Anzeige am Automaten nicht.",
-    "Er hat seine Bankkarte verloren.",
-    "Er möchte sein Konto schließen.",
-    "Er findet den Eingang nicht.",
+    "Er hat seine Bankkarte am Schalter verloren.",
+    "Er möchte sein Konto ganz schließen.",
+    "Er findet den Eingang zur Bank nicht.",
   ],
 };
 

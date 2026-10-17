@@ -86,9 +86,9 @@ export const reading: NonNullable<Lesson["reading"]> = {
         instructionAr: "اقرأ الفقرة الأولى: كيف استعدّا للرحلة؟",
         options: [
           "Sie haben Tickets und Hotel im Voraus gebucht",
-          "Sie sind ohne Plan gefahren",
-          "Sie haben erst am Bahnhof gebucht",
-          "Sie sind mit dem Auto gefahren",
+          "Sie sind ganz ohne Plan losgefahren",
+          "Sie haben erst am Bahnhof alles gebucht",
+          "Sie sind mit dem Auto nach Italien gefahren",
         ],
         correctIndex: 0,
         explanation:
@@ -120,9 +120,9 @@ export const reading: NonNullable<Lesson["reading"]> = {
         instructionAr: "اقرأ الفقرة الثالثة: ماذا حدث في درسدن؟",
         options: [
           "Die Schwester hat ihren Rucksack im Zug vergessen",
-          "Sie haben den Anschlusszug verpasst",
-          "Sie haben sich verlaufen",
-          "Der Zug ist nicht gekommen",
+          "Sie haben den Anschlusszug in München verpasst",
+          "Sie haben sich in der Stadt verlaufen",
+          "Der Zug ist gar nicht gekommen",
         ],
         correctIndex: 0,
         explanation:
@@ -171,9 +171,9 @@ export const reading: NonNullable<Lesson["reading"]> = {
         instructionAr: "اقرأ الفقرة الخامسة: كيف انتهت القصّة؟",
         options: [
           "Sie fanden ein anderes Hotel, das billiger und schöner war.",
-          "Sie fuhren wieder nach Hause",
-          "Sie schliefen am Bahnhof",
-          "Sie fanden den Rucksack nie",
+          "Sie fuhren am selben Abend enttäuscht wieder nach Hause zurück",
+          "Sie schliefen die ganze Nacht lang am Bahnhof",
+          "Sie fanden den Rucksack auch später niemals wieder",
         ],
         correctIndex: 0,
         explanation:

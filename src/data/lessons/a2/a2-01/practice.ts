@@ -286,9 +286,9 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "Ich habe nicht den Film gesehen, sondern die Serie.",
       options: [
         "النفي يقع على «الفيلم» وحده لا على المشاهدة",
-        "النفي يقع على الجملة كلّها",
-        "الجملتان بمعنى واحد",
-        "الجملة خاطئة نحوياً",
+        "النفي يقع على الجملة كلّها لا على كلمة",
+        "الجملتان بمعنى واحد تماماً ولا فرق",
+        "الجملة الثانية خاطئة نحوياً",
       ],
       correctIndex: 0,
       explanation:
@@ -340,9 +340,9 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "Sie sind im Hotelzimmer: Das Zimmer ist nicht sauber. Welche Bitte nennt das Problem klar und höflich?",
       options: [
         "Entschuldigung, das Zimmer ist leider nicht sauber. Könnten Sie mir bitte ein anderes Zimmer geben?",
-        "Das Zimmer ist schlecht! Geben Sie mir ein anderes!",
-        "Vielleicht stimmt etwas mit dem Zimmer nicht; ich bin mir nicht sicher.",
-        "Kein Problem, das ist in Ordnung.",
+        "Das Zimmer ist schlecht! Geben Sie mir sofort ein anderes Zimmer!",
+        "Vielleicht stimmt etwas mit dem Zimmer nicht; ich bin mir da nicht ganz sicher.",
+        "Kein Problem, das Zimmer ist in Ordnung und ich möchte nichts ändern.",
       ],
       correctIndex: 0,
       explanation:

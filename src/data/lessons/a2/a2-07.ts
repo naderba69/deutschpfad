@@ -603,9 +603,9 @@ export const lessonA207: Lesson = {
         questionAr: "فيمَ يحتاج كريم إلى المساعدة؟",
         options: [
           "Er versteht die Anzeige am Automaten nicht.",
-          "Er hat seine Bankkarte verloren.",
-          "Er möchte sein Konto schließen.",
-          "Er findet den Eingang nicht.",
+          "Er hat seine Bankkarte am Schalter verloren.",
+          "Er möchte sein Konto ganz schließen.",
+          "Er findet den Eingang zur Bank nicht.",
         ],
         correctIndex: 0,
         explanation:
@@ -846,9 +846,9 @@ export const lessonA207: Lesson = {
       questionDe: "Was bedeutet „Geld auf ein anderes Konto überweisen“?",
       options: [
           "Einen Geldbetrag von einem Konto auf ein anderes Konto übertragen.",
-        "Am Automaten Bargeld aus dem eigenen Konto holen.",
-        "Eine Karte an der Kasse zum Bezahlen benutzen.",
-        "Münzen in einen Briefumschlag legen.",
+        "Am Automaten Bargeld aus dem eigenen Konto holen und einzahlen.",
+        "Eine Karte an der Kasse zum Bezahlen von Waren benutzen.",
+        "Münzen in einen Briefumschlag legen und per Post schicken.",
       ],
       correctIndex: 0,
       explanation:

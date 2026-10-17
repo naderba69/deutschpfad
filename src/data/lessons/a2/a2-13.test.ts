@@ -15,8 +15,8 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   m1: { options: ["sind", "haben", "waren", "hatten"], key: "sind" },
   m3: { options: ["weil", "und", "deshalb", "obwohl"], key: "weil" },
   m5: { options: ["freuen", "freut", "freust", "freue"], key: "freuen" },
-  q1: { options: ["Er ist krank und kommt nicht.", "Er kommt später.", "Er sucht Herrn Weber.", "Er will Urlaub nehmen."], key: "Er ist krank und kommt nicht." },
-  q2: { options: ["drei Tage zu Hause bleiben", "sofort arbeiten", "am Freitag anrufen", "ins Büro kommen"], key: "drei Tage zu Hause bleiben" },
+  q1: { options: ["Er ist krank und kommt nicht.", "Er kommt später zur Arbeit.", "Er sucht Herrn Weber im Büro.", "Er will Urlaub nehmen und reisen."], key: "Er ist krank und kommt nicht." },
+  q2: { options: ["drei Tage zu Hause bleiben", "sofort wieder arbeiten gehen", "am Freitag in der Praxis anrufen", "ins Büro kommen und arbeiten"], key: "drei Tage zu Hause bleiben" },
   q3: { options: ["der Dativ", "das Perfekt", "die Aussprache", "die Zahlen"], key: "der Dativ" },
   q4: { options: ["jeden Abend zwei Stunden", "einmal pro Woche", "nur am Wochenende", "drei Stunden am Morgen"], key: "jeden Abend zwei Stunden" },
 };

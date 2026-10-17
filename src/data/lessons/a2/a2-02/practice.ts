@@ -179,9 +179,9 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "Was bedeutet „Sie müssen nicht wiederkommen“?",
       options: [
         "ليس ضرورياً أن تعود (لكن يجوز)",
-        "ممنوعٌ عليك العودة",
-        "يجب أن تعود غداً",
-        "عليك العودة حتماً",
+        "ممنوعٌ عليك العودة إلى العمل",
+        "يجب أن تعود غداً صباحاً",
+        "عليك العودة حتماً في الصباح",
       ],
       correctIndex: 0,
       explanation:

@@ -29,13 +29,13 @@ const expectedMultipleChoiceOptions: Record<string, string[]> = {
   r2: ["إلى مكتب البريد", "إلى البنك", "إلى المحطة", "إلى الصيدلية"],
   e1: ["mich", "dich", "sich", "mir"],
   e2: ["sich", "mich", "dich", "uns"],
-  e8: ["يقدم شكوى", "يستعجل", "يسجل", "يغضب"],
+  e8: ["يقدم شكوى", "يستعجل الأمر", "يسجل اسمه", "يغضب كثيراً"],
   m1: ["uns", "euch", "sich", "mich"],
   m2: ["euch", "uns", "sich", "dich"],
   e14: ["mir", "mich", "dich", "sich"],
-  q1: ["die Haare schneiden lassen", "einen Termin absagen", "sich beschweren", "ein Handy kaufen"],
+  q1: ["die Haare schneiden lassen", "einen Termin beim Friseur absagen", "sich beschweren und gehen", "ein neues Handy kaufen"],
   q2: ["Das Handy funktioniert nicht", "Die Haare sind zu kurz", "Der Termin ist zu spät", "Die Post ist zu teuer"],
-  q3: ["Wir reparieren es oder geben Ihnen ein neues", "Wir können nicht helfen", "Das ist nicht unser Problem", "Kommen Sie morgen"],
+  q3: ["Wir reparieren es oder geben Ihnen ein neues", "Wir können Ihnen dabei leider nicht helfen", "Das ist leider nicht unser Problem.", "Kommen Sie bitte morgen noch einmal."],
   q4: ["tunesisch", "deutsch", "französisch", "nichts"],
 };
 

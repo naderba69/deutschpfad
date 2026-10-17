@@ -453,7 +453,7 @@ Kaution مبلغ ضمان للسكن، لا رسم معاينة ولا إيجا�
       {
         id: "q4", itemId: "l3", type: "multiple-choice",
         instructionAr: "اختر الوقت الذي ذكرته الجارة في هذا الحوار:", questionDe: "Wann sind die Ruhezeiten laut der Hausordnung?", questionAr: "متى أوقات الهدوء بحسب نظام هذا المبنى؟",
-        options: ["von 13 bis 15 Uhr und nach 22 Uhr", "von 8 bis 12 Uhr", "nur nachts", "am Wochenende"], correctIndex: 0,
+        options: ["von 13 bis 15 Uhr und nach 22 Uhr", "von 8 bis 12 Uhr am Vormittag", "nur nachts zwischen zwei und vier", "am Wochenende und an Feiertagen"], correctIndex: 0,
         explanation: "في الحوار تذكر الجارة القواعد الخاصة بمبناها: من 13 إلى 15 وبعد 22؛ لا يُعمّم ذلك على المباني الأخرى.", errorType: "vocabulary",
       },
     ],

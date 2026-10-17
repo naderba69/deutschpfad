@@ -87,7 +87,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       instructionAr: "اختر الترجمة الصحيحة:",
       questionDe: "sich beschweren",
       questionAr: "ما معنى الفعل؟",
-      options: ["يقدم شكوى", "يستعجل", "يسجل", "يغضب"],
+      options: ["يقدم شكوى", "يستعجل الأمر", "يسجل اسمه", "يغضب كثيراً"],
       correctIndex: 0,
       explanation: "sich beschweren = يشتكي/يقدم شكوى.",
       errorType: "vocabulary",

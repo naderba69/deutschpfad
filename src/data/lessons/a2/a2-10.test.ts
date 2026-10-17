@@ -34,7 +34,7 @@ const expectedMultipleChoiceOptions: Record<string, string[]> = {
   e8: ["يجتاز الامتحان", "يرسب في الامتحان", "يستعد للامتحان", "يؤجل الامتحان"],
   m1: ["Wenn", "Weil", "Ob", "Dass"],
   m2: ["meinem", "meinen", "mein", "meine"],
-  rq1: ["Montags und mittwochs am Abend.", "Jeden Morgen.", "Nur am Freitag.", "Am Wochenende."],
+  rq1: ["Montags und mittwochs am Abend.", "Jeden Morgen früh um sechs.", "Nur am Freitag am Nachmittag.", "Am Wochenende und an Feiertagen."],
   rq2: [
     "Weil sie später an einer Universität studieren möchte.",
     "Weil ihr Freund in Deutschland wohnt.",

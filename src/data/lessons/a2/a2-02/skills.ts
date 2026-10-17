@@ -100,9 +100,9 @@ export const reading: NonNullable<Lesson["reading"]> = {
         instructionAr: "اقرأ الفقرة الأولى: ما الأعراض؟",
         options: [
           "Die Person hatte Halsschmerzen und Fieber, ihr war heiß und kalt, und sie fühlte sich sehr schwach.",
-          "Die Person hatte nur Kopfschmerzen und fühlte sich sonst gut.",
-          "Die Person hatte Bauchschmerzen und kein Fieber.",
-          "Die Person hatte Rückenschmerzen, aber keine weiteren Beschwerden.",
+          "Die Person hatte nur leichte Kopfschmerzen und fühlte sich sonst ganz gut und arbeitsfähig.",
+          "Die Person hatte starke Bauchschmerzen und Übelkeit, aber ganz sicher kein Fieber.",
+          "Die Person hatte starke Rückenschmerzen, aber sonst keine weiteren Beschwerden.",
         ],
         correctIndex: 0,
         explanation:
@@ -117,9 +117,9 @@ export const reading: NonNullable<Lesson["reading"]> = {
         instructionAr: "اقرأ الفقرة الثانية: بماذا نصحت الزميلة؟",
         options: [
           "Zum Arzt gehen; bei Bedarf nach einer Krankschreibung fragen und den Chef informieren",
-          "Zu Hause bleiben, ohne die Praxis anzurufen",
-          "Zur Arbeit gehen, obwohl man nicht arbeiten kann",
-          "Den Termin absagen und weiterarbeiten",
+          "Zu Hause bleiben und gar nicht erst in der Praxis anrufen oder Bescheid sagen",
+          "Zur Arbeit gehen, obwohl man ganz offensichtlich nicht arbeiten kann",
+          "Den Termin in der Praxis einfach absagen und trotzdem weiterarbeiten",
         ],
         correctIndex: 0,
         explanation:
@@ -151,9 +151,9 @@ export const reading: NonNullable<Lesson["reading"]> = {
         instructionAr: "اقرأ الفقرة الرابعة: ما الممنوع؟",
         options: [
           "Sport machen, solange die Person Fieber hat",
-          "Tee trinken",
-          "Zu Hause bleiben",
-          "Zur Apotheke gehen",
+          "Tee trinken und viel schlafen",
+          "Zu Hause bleiben und ausruhen",
+          "Zur Apotheke gehen und Medizin holen",
         ],
         correctIndex: 0,
         explanation:
@@ -292,9 +292,9 @@ export const listening: NonNullable<Lesson["listening"]> = {
         questionAr: "ما العرضان اللذان ذكرهما سامي أولاً؟",
         options: [
           "Kopfschmerzen und Fieber",
-          "Bauchschmerzen",
-          "Nur Husten",
-          "Rückenschmerzen",
+          "Bauchschmerzen und Übelkeit",
+          "Nur Husten ohne Fieber",
+          "Rückenschmerzen am Morgen",
         ],
         correctIndex: 0,
         explanation: "قال: starke Kopfschmerzen und Fieber — صداع وحمى.",
@@ -310,8 +310,8 @@ export const listening: NonNullable<Lesson["listening"]> = {
         options: [
           "sich ausruhen und zu Hause bleiben",
           "arbeiten",
-          "Sport machen",
-          "kalt baden",
+          "Sport machen im Fitnessstudio",
+          "kalt baden am frühen Morgen",
         ],
         correctIndex: 0,
         explanation: "قال الطبيب: Sie sollen sich ausruhen und zu Hause bleiben.",

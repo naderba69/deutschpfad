@@ -150,9 +150,9 @@ export const reading: NonNullable<Lesson["reading"]> = {
         instructionAr: "اقرأ الفقرة الرابعة: كيف أشار الأخ إلى جفاف السمك؟",
         options: [
           "Höflich: „Entschuldigung … Könnten Sie das bitte an die Küche weitergeben?“",
-          "Er hat den Kellner beschimpft.",
-          "Er hat nur nach der Rechnung gefragt.",
-          "Er hat den Fisch als ausgezeichnet gelobt.",
+          "Er hat den Kellner vor allen anderen Gästen laut beschimpft.",
+          "Er hat nur nach der Rechnung gefragt und ist dann gegangen.",
+          "Er hat den Fisch als ausgezeichnet gelobt und viel Trinkgeld gegeben.",
         ],
         correctIndex: 0,
         explanation:
@@ -297,9 +297,9 @@ export const listening: NonNullable<Lesson["listening"]> = {
         questionAr: "ماذا طلب سامي؟",
         options: [
           "Spaghetti, einen Salat und ein Wasser",
-          "Spaghetti und einen Salat",
-          "Pizza und Wasser",
-          "Gemüseteller",
+          "Spaghetti und einen großen Salat",
+          "Pizza und ein stilles Wasser",
+          "Ein Gemüseteller mit Reis",
         ],
         correctIndex: 0,
         explanation:
