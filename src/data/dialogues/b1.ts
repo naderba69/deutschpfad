@@ -25,18 +25,18 @@ export const B1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Was ist die Meinung der Person über Homeoffice?", ar: "ما رأي الشخص في العمل عن بُعد؟", options: [
         { text: "Praktisch, aber nicht für jeden", ar: "عملي لكن ليس للجميع", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Völlig nutzlos", ar: "عديم الفائدة تماماً", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Perfekt für alle", ar: "مثالي للجميع", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Völlig nutzlos und überflüssig", ar: "عديم الفائدة تماماً", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Perfekt für alle ohne Ausnahme", ar: "مثالي للجميع", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Was ist vielleicht die beste Lösung?", ar: "ما الحل الأفضل ربما؟", options: [
         { text: "Ein hybrides Modell", ar: "نموذج هجين", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Nur im Büro", ar: "في المكتب فقط", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Nur zu Hause", ar: "في البيت فقط", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Nur im Büro arbeiten", ar: "في المكتب فقط", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Nur zu Hause bleiben", ar: "في البيت فقط", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Warum ist Homeoffice nicht für jeden gut?", ar: "لماذا ليس العمل عن بُعد جيداً للجميع؟", options: [
         { text: "Manche brauchen die Trennung zwischen Arbeit und Freizeit", ar: "بعض الناس يحتاجون الفصل بين العمل والفراغ", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Das Internet ist immer teuer", ar: "الإنترنت دائماً غالٍ", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Im Büro kann man nichts lernen", ar: "في المكتب لا يمكن التعلم", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Das Internet ist immer teuer und deshalb unbrauchbar", ar: "الإنترنت دائماً غالٍ", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Im Büro kann man nichts lernen und nichts erreichen", ar: "في المكتب لا يمكن التعلم", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
     ],
     keyVocab: [
@@ -70,8 +70,8 @@ export const B1_DIALOGUES: DailyDialogue[] = [
       ]},
       { de: "Was schlägt die Person für den Urlaub vor?", ar: "ماذا يقترح الشخص للإجازة؟", options: [
         { text: "Zwei Wochen: eine in den Bergen, eine am Meer", ar: "أسبوعان: واحد في الجبال وواحد في البحر", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Nur einen Tag", ar: "يوم واحد فقط", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Drei Monate im Winter", ar: "ثلاثة أشهر في الشتاء", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Nur einen Tag am Wochenende", ar: "يوم واحد فقط", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Drei Monate im Winter, weit weg in den Bergen", ar: "ثلاثة أشهر في الشتاء", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Wie kann man beim Buchen sparen?", ar: "كيف يمكن التوفير عند الحجز؟", options: [
         { text: "Früh buchen", ar: "الحجز مبكراً", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
@@ -105,18 +105,18 @@ export const B1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Worüber beschwert sich die Person?", ar: "ممَّ يشتكي الشخص؟", options: [
         { text: "Über ein schmutziges Zimmer", ar: "من غرفة متسخة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Über das Essen", ar: "من الطعام", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Über die Parkplätze", ar: "من مواقف السيارات", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Über das Essen im Restaurant", ar: "من الطعام", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Über die Parkplätze vor dem Haus", ar: "من مواقف السيارات", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Wann war die Person im Hotel?", ar: "متى كان الشخص في الفندق؟", options: [
         { text: "Vom 3. bis 5. August", ar: "من 3 إلى 5 أغسطس", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Im Mai", ar: "في مايو", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Im Winter", ar: "في الشتاء", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Im Mai vergangenen Jahres", ar: "في مايو", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Im Winter vor Weihnachten", ar: "في الشتاء", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Was erwartet die Person?", ar: "ماذا يتوقع الشخص؟", options: [
         { text: "Eine Entschädigung, zum Beispiel Geld zurück", ar: "تعويضاً، مثلاً استرداد المال", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Nichts", ar: "لا شيء", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Ein neues Hotel gratis", ar: "فندقاً جديداً مجاناً", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Nichts, sie erwartet gar keine Reaktion", ar: "لا شيء", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Ein neues Hotelzimmer komplett gratis", ar: "فندقاً جديداً مجاناً", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
     ],
     keyVocab: [
@@ -155,8 +155,8 @@ export const B1_DIALOGUES: DailyDialogue[] = [
       ]},
       { de: "Wo ruft die Person an?", ar: "أين يتصل الشخص؟", options: [
         { text: "Bei einer Arztpraxis", ar: "بعيادة طبيب", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Bei einer Bank", ar: "ببنك", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Bei einem Hotel", ar: "بفندق", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Bei einer großen Bank", ar: "ببنك", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Bei einem Hotel am Platz", ar: "بفندق", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
     ],
     keyVocab: [
@@ -190,13 +190,13 @@ export const B1_DIALOGUES: DailyDialogue[] = [
       ]},
       { de: "Was schlägt die Person vor?", ar: "ماذا يقترح الشخص؟", options: [
         { text: "Den Support anrufen und das Problem melden", ar: "الاتصال بالدعم والإبلاغ عن المشكلة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Das System abschaffen", ar: "إلغاء النظام", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Nichts tun", ar: "عدم فعل أي شيء", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Das System ganz abschaffen und ersetzen", ar: "إلغاء النظام", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Nichts tun und einfach abwarten", ar: "عدم فعل أي شيء", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Was macht die Person am Ende?", ar: "ماذا سيفعل الشخص في النهاية؟", options: [
         { text: "Sie kümmert sich um das Problem und meldet sich später", ar: "سيتولى الأمر ويتصل لاحقاً", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Sie fährt nach Hause", ar: "ستعود إلى البيت", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Sie kündigt", ar: "ستستقيل", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Sie fährt nach Hause und ruht sich erst einmal aus", ar: "ستعود إلى البيت", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Sie kündigt noch am selben Tag fristlos", ar: "ستستقيل", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
     ],
     keyVocab: [
@@ -225,8 +225,8 @@ export const B1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Was ist das Thema der Diskussion?", ar: "ما موضوع النقاش؟", options: [
         { text: "Plastikverbrauch und Umwelt", ar: "استهلاك البلاستيك والبيئة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Reisen ins Ausland", ar: "السفر إلى الخارج", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Sport im Verein", ar: "الرياضة في النادي", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Reisen ins Ausland mit dem Flugzeug", ar: "السفر إلى الخارج", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Sport im Verein am Wochenende", ar: "الرياضة في النادي", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Was schlägt die Person vor?", ar: "ماذا يقترح الشخص؟", options: [
         { text: "Eine eigene Tasche mitnehmen", ar: "حمل حقيبة خاصة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
@@ -305,8 +305,8 @@ export const B1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Warum ruft die Person an?", ar: "لماذا يتصل الشخص؟", options: [
         { text: "Sie ist krank und kommt nicht zur Arbeit", ar: "هو مريض ولا يستطيع الحضور للعمل", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Sie möchte Urlaub buchen", ar: "تريد حجز إجازة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Sie hat eine Frage zum Gehalt", ar: "لديها سؤال عن الراتب", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Sie möchte gern einen Urlaub buchen", ar: "تريد حجز إجازة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Sie hat eine wichtige Frage zum Gehalt", ar: "لديها سؤال عن الراتب", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Wohin geht die Person am Nachmittag?", ar: "إلى أين يذهب الشخص بعد الظهر؟", options: [
         { text: "Zum Arzt", ar: "إلى الطبيب", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
@@ -355,8 +355,8 @@ export const B1_DIALOGUES: DailyDialogue[] = [
       ]},
       { de: "Was braucht man für den Studentenrabatt?", ar: "ماذا يحتاج المرء للحصول على خصم الطلاب؟", options: [
         { text: "Einen Studentenausweis", ar: "بطاقة طالب", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Eine Kreditkarte", ar: "بطاقة ائتمان", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Einen Reisepass", ar: "جواز سفر", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Eine gültige Kreditkarte", ar: "بطاقة ائتمان", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Einen Reisepass mit Foto", ar: "جواز سفر", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
     ],
     keyVocab: [
@@ -425,18 +425,18 @@ export const B1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Wo befindet sich die Person?", ar: "أين يوجد الشخص؟", options: [
         { text: "Auf der A8 bei Kilometer 45", ar: "على الطريق A8 عند الكيلومتر 45", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "In der Stadt", ar: "في المدينة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Am Flughafen", ar: "في المطار", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "In der Stadt neben dem Markt", ar: "في المدينة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Am Flughafen vor dem Terminal", ar: "في المطار", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Was hat die Person zur Sicherheit angezogen?", ar: "ماذا ارتدى الشخص للسلامة؟", options: [
         { text: "Eine Warnweste", ar: "سترة عاكسة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Einen Helm", ar: "خوذة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Eine Jacke", ar: "سترة عادية", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Einen festen Helm", ar: "خوذة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Eine warme Jacke", ar: "سترة عادية", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Wer kommt in 20 Minuten?", ar: "من سيصل خلال 20 دقيقة؟", options: [
         { text: "Der Abschleppdienst", ar: "خدمة السحب", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Die Polizei", ar: "الشرطة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Ein Taxi", ar: "سيارة أجرة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Die Polizei aus der Stadt", ar: "الشرطة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Ein Taxi vom Bahnhof", ar: "سيارة أجرة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
     ],
     keyVocab: [
@@ -465,13 +465,13 @@ export const B1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Wie spart die Person Geld?", ar: "كيف يدخر الشخص المال؟", options: [
         { text: "Sie legt jeden Monat einen festen Betrag beiseite", ar: "يضع مبلغاً ثابتاً جانباً كل شهر", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Sie kauft nichts mehr", ar: "لا يشتري أي شيء", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Sie verdient jeden Tag mehr", ar: "يكسب أكثر كل يوم", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Sie kauft nichts mehr ein und spart so", ar: "لا يشتري أي شيء", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Sie verdient jeden Tag ein bisschen mehr", ar: "يكسب أكثر كل يوم", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Wofür spart die Person?", ar: "لماذا يدخر الشخص؟", options: [
         { text: "Für eine Reise nach Japan", ar: "لرحلة إلى اليابان", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Für ein Auto", ar: "لسيارة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Für eine Wohnung", ar: "لشقة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Für ein eigenes Auto", ar: "لسيارة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Für eine größere Wohnung", ar: "لشقة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Wie lange spart die Person schon?", ar: "منذ متى يدخر الشخص؟", options: [
         { text: "Seit zwei Jahren", ar: "منذ سنتين", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
@@ -510,11 +510,11 @@ export const B1_DIALOGUES: DailyDialogue[] = [
       ]},
       { de: "Was ist in der Mitgliedschaft inklusive?", ar: "ماذا تشمل العضوية؟", options: [
         { text: "Kurse, Sauna und Fitnessgeräte", ar: "الدورات والساونا وأجهزة اللياقة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Nur Getränke", ar: "المشروبات فقط", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Ein Auto", ar: "سيارة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Nur Getränke und Snacks", ar: "المشروبات فقط", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Ein Auto für die Anfahrt", ar: "سيارة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Was möchte die Person ausprobieren?", ar: "ماذا يريد الشخص أن يجرب؟", options: [
-        { text: "Eine Probestunde", ar: "حصة تجريبية", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
+        { text: "Eine kurze Probestunde", ar: "حصة تجريبية", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
         { text: "Einen Vertrag für ein Jahr", ar: "عقداً لمدة سنة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
         { text: "Einen Personal Trainer", ar: "مدرباً شخصياً", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
@@ -545,8 +545,8 @@ export const B1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Was kocht die Person?", ar: "ماذا يطبخ الشخص؟", options: [
         { text: "Couscous mit Gemüse", ar: "كسكس بالخضار", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Pizza", ar: "بيتزا", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Suppe", ar: "شوربة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Eine Pizza aus dem Ofen", ar: "بيتزا", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Eine Suppe mit Brot", ar: "شوربة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Wie lange dauert die Zubereitung?", ar: "كم يستغرق التحضير؟", options: [
         { text: "Ungefähr eine Stunde", ar: "حوالي ساعة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
@@ -555,8 +555,8 @@ export const B1_DIALOGUES: DailyDialogue[] = [
       ]},
       { de: "Welche Gewürze werden genannt?", ar: "ما التوابل المذكورة؟", options: [
         { text: "Kreuzkümmel, Kurkuma und Pfeffer", ar: "كمون وكركم وفلفل", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Zimt und Vanille", ar: "قرفة وفانيليا", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Salz und Zucker", ar: "ملح وسكر", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Zimt und Vanille zum Backen", ar: "قرفة وفانيليا", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Salz und Zucker aus dem Regal", ar: "ملح وسكر", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
     ],
     keyVocab: [
@@ -586,12 +586,12 @@ export const B1_DIALOGUES: DailyDialogue[] = [
       { de: "Wann zieht die Person um?", ar: "متى ينتقل الشخص؟", options: [
         { text: "Im September", ar: "في سبتمبر", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
         { text: "Im Januar", ar: "في يناير", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Im Juli", ar: "في يوليو", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Im Juli nächsten Jahres", ar: "في يوليو", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Warum zieht die Person um?", ar: "لماذا ينتقل الشخص؟", options: [
         { text: "Sie braucht ein eigenes Büro für die Arbeit", ar: "يحتاج مكتباً خاصاً للعمل", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Sie will näher am Meer wohnen", ar: "يريد السكن قرب البحر", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Sie hat Streit mit den Nachbarn", ar: "لديه خلاف مع الجيران", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Sie will viel näher am Meer wohnen", ar: "يريد السكن قرب البحر", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Sie hat leider Streit mit den Nachbarn", ar: "لديه خلاف مع الجيران", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Was bietet die Person dem Freund nach dem Umzug an?", ar: "ماذا يعرض الشخص على صديقه بعد الانتقال؟", options: [
         { text: "Ein Essen einzuladen", ar: "دعوته إلى العشاء", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },

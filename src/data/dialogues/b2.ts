@@ -35,8 +35,8 @@ export const B2_DIALOGUES: DailyDialogue[] = [
       ]},
       { de: "Was bietet der Arbeitgeber am Ende an?", ar: "ماذا يعرض صاحب العمل في النهاية؟", options: [
         { text: "Sieben Prozent und eine Zusatzleistung", ar: "سبعة بالمئة وميزة إضافية", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Zwölf Prozent", ar: "اثنا عشر بالمئة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Gar nichts", ar: "لا شيء", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Zwölf Prozent ohne weitere Leistung", ar: "اثنا عشر بالمئة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Gar nichts, das Gespräch endet", ar: "لا شيء", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
     ],
     keyVocab: [
@@ -65,8 +65,8 @@ export const B2_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Welches Problem gibt es?", ar: "ما المشكلة؟", options: [
         { text: "Die Deadline am Freitag wird nicht eingehalten", ar: "الموعد النهائي يوم الجمعة لن يُلتزم به", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Der Server ist ausgefallen", ar: "الخادم تعطل", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Ein Kunde hat gekündigt", ar: "أنهى عميل التعاقد", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Der Server ist am Morgen ausgefallen", ar: "الخادم تعطل", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Ein Kunde hat gestern gekündigt", ar: "أنهى عميل التعاقد", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Wie viele zusätzliche Tage braucht das Team für die Tests?", ar: "كم يوماً إضافياً يحتاج الفريق للاختبارات؟", options: [
         { text: "Zwei Tage", ar: "يومان", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
@@ -75,8 +75,8 @@ export const B2_DIALOGUES: DailyDialogue[] = [
       ]},
       { de: "Wer übernimmt die Kommunikation mit dem Kunden?", ar: "من يتولى التواصل مع العميل؟", options: [
         { text: "Die sprechende Person selbst, mit einem neuen Termin", ar: "الشخص المتحدث نفسه، مع موعد جديد", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Der Chef allein", ar: "المدير وحده", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Niemand", ar: "لا أحد", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Der Chef allein entscheidet das ohne das Team", ar: "المدير وحده", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Niemand kümmert sich darum im Büro", ar: "لا أحد", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
     ],
     keyVocab: [
@@ -105,13 +105,13 @@ export const B2_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Warum ist die Person enttäuscht?", ar: "لماذا الشخص محبط؟", options: [
         { text: "Ihre Ideen wurden im Meeting nicht erwähnt", ar: "لم تُذكر أفكاره في الاجتماع", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Das Gehalt ist zu niedrig", ar: "الراتب منخفض", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Das Gehalt ist zu niedrig für die Arbeit", ar: "الراتب منخفض", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
         { text: "Der Kollege ist zu spät gekommen", ar: "الزميل تأخر", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Warum fühlte sich die Person übergangen?", ar: "لماذا شعر الشخص بالتجاهل؟", options: [
         { text: "Es wirkte, als wäre ihre Arbeit nichts wert", ar: "بدا وكأن عمله بلا قيمة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Weil sie zu spät kam", ar: "لأنه تأخر", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Weil sie krank war", ar: "لأنه كان مريضاً", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Weil sie zu spät zum wichtigen Termin kam", ar: "لأنه تأخر", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Weil sie krank war und deshalb fehlte", ar: "لأنه كان مريضاً", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Was wird für das nächste Meeting vorgeschlagen?", ar: "ماذا يُقترح للاجتماع القادم؟", options: [
         { text: "Gemeinsam präsentieren", ar: "العرض معاً", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
@@ -150,8 +150,8 @@ export const B2_DIALOGUES: DailyDialogue[] = [
       ]},
       { de: "Was ist mit dem Radfahrer passiert?", ar: "ماذا حدث لراكب الدراجة؟", options: [
         { text: "Er ist gestürzt und sein Bein blutet", ar: "سقط وساقه تنزف", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Er ist weitergefahren", ar: "واصل طريقه", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Er hat ein Auto gerammt", ar: "صدم سيارة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Er ist einfach weitergefahren", ar: "واصل طريقه", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Er hat ein parkendes Auto gerammt", ar: "صدم سيارة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Was soll der Anrufer tun?", ar: "ماذا يجب أن يفعل المتصل؟", options: [
         { text: "Druck auf die Wunde ausüben", ar: "الضغط على الجرح", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
@@ -230,13 +230,13 @@ export const B2_DIALOGUES: DailyDialogue[] = [
       ]},
       { de: "Welche Risiken werden genannt?", ar: "ما المخاطر المذكورة؟", options: [
         { text: "Abhängigkeit von Technologie und Datenschutzfragen", ar: "الاعتماد على التقنية وقضايا حماية البيانات", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Höhere Steuern und Mieten", ar: "ارتفاع الضرائب والإيجارات", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Lange Reisen", ar: "رحلات طويلة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Höhere Steuern und Mieten in den Städten", ar: "ارتفاع الضرائب والإيجارات", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Lange Reisen ins Ausland mit dem Flugzeug", ar: "رحلات طويلة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Wie kann man die Risiken verringern?", ar: "كيف يمكن تقليل المخاطر؟", options: [
         { text: "Mit klaren Richtlinien und Medienkompetenz im Lehrplan", ar: "بسياسات واضحة وثقافة إعلامية في المناهج", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Indem man die Schulen schließt", ar: "بإغلاق المدارس", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Indem man das Internet abschaltet", ar: "بقطع الإنترنت", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Indem man alle Schulen für immer schließt", ar: "بإغلاق المدارس", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Indem man das Internet komplett abschaltet", ar: "بقطع الإنترنت", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
     ],
     keyVocab: [
@@ -275,8 +275,8 @@ export const B2_DIALOGUES: DailyDialogue[] = [
       ]},
       { de: "Was wird als lang empfunden?", ar: "ما الذي يُعتبر طويلاً؟", options: [
         { text: "Die Kündigungsfrist von drei Monaten", ar: "مهلة الإنهاء وهي ثلاثة أشهر", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Die Probezeit", ar: "فترة التجربة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Das Gehalt", ar: "الراتب", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Die Probezeit von sechs Monaten", ar: "فترة التجربة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Das Gehalt im ersten Jahr", ar: "الراتب", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
     ],
     keyVocab: [
@@ -350,8 +350,8 @@ export const B2_DIALOGUES: DailyDialogue[] = [
       ]},
       { de: "Was verlangt der Mieter?", ar: "ماذا يطالب المستأجر؟", options: [
         { text: "Eine schnelle Lösung oder eine Mietminderung", ar: "حل سريع أو تخفيض الإيجار", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Einen Umzug", ar: "الانتقال إلى مكان آخر", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Eine Kündigung des Vertrags", ar: "إنهاء العقد", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Einen Umzug in eine andere Stadt", ar: "الانتقال إلى مكان آخر", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Eine Kündigung des Vertrags ohne Frist", ar: "إنهاء العقد", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Wann soll der Handwerker kommen?", ar: "متى يجب أن يأتي الحرفي؟", options: [
         { text: "Übermorgen", ar: "بعد غد", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
@@ -425,8 +425,8 @@ export const B2_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Warum ist der Kunde unzufrieden?", ar: "لماذا العميل غير راضٍ؟", options: [
         { text: "Der Preis ist im Vergleich zum Markt zu hoch", ar: "السعر مرتفع مقارنة بالسوق", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Die Lieferung ist zu spät", ar: "التوصيل متأخر", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Die Qualität ist schlecht", ar: "الجودة سيئة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Die Lieferung ist deutlich zu spät gekommen", ar: "التوصيل متأخر", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Die Qualität ist schlecht und unzureichend", ar: "الجودة سيئة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Welchen Rabatt verlangt der Kunde zuerst?", ar: "ما الخصم الذي يطلبه العميل أولاً؟", options: [
         { text: "Zehn Prozent", ar: "عشرة بالمئة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
@@ -470,8 +470,8 @@ export const B2_DIALOGUES: DailyDialogue[] = [
       ]},
       { de: "Wann treten die Schmerzen besonders auf?", ar: "متى تظهر الآلام خصوصاً؟", options: [
         { text: "Nach langem Sitzen am Schreibtisch", ar: "بعد الجلوس الطويل على المكتب", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Beim Schwimmen", ar: "أثناء السباحة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Beim Schlafen", ar: "أثناء النوم", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Beim Schwimmen im kalten Wasser", ar: "أثناء السباحة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Beim Schlafen in der Nacht", ar: "أثناء النوم", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Was macht die Person laut eigener Aussage nicht?", ar: "ماذا لا يفعل الشخص حسب قوله؟", options: [
         { text: "Regelmäßig Pausen machen", ar: "أخذ فترات راحة منتظمة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
@@ -514,7 +514,7 @@ export const B2_DIALOGUES: DailyDialogue[] = [
         { text: "In einer Woche", ar: "بعد أسبوع", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Was muss die Person am Serviceschalter mitbringen?", ar: "ماذا يجب أن يحضر الشخص عند مكتب الخدمة؟", options: [
-        { text: "Die Bordkarte", ar: "بطاقة الصعود", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
+        { text: "Die Bordkarte fürs Gate", ar: "بطاقة الصعود", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
         { text: "Den Personalausweis allein", ar: "الهوية وحدها", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
         { text: "Einen Reiseführer", ar: "دليل سياحي", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
@@ -544,7 +544,7 @@ export const B2_DIALOGUES: DailyDialogue[] = [
     ],
     questions: [
       { de: "Vertraut die Person den Fernsehnachrichten?", ar: "هل يثق الشخص بأخبار التلفاز؟", options: [
-        { text: "Zum Teil", ar: "جزئياً", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
+        { text: "Teilweise", ar: "جزئياً", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
         { text: "Vollständig", ar: "تماماً", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
         { text: "Überhaupt nicht", ar: "إطلاقاً", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
@@ -554,7 +554,7 @@ export const B2_DIALOGUES: DailyDialogue[] = [
         { text: "Sie liest keine Nachrichten", ar: "لا تقرأ أي أخبار", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Was sollte man laut Gespräch tun, bevor man etwas teilt?", ar: "ماذا يجب فعله قبل مشاركة أي شيء حسب الحوار؟", options: [
-        { text: "Fakten prüfen", ar: "التحقق من الحقائق", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
+        { text: "Fakten genau prüfen", ar: "التحقق من الحقائق", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
         { text: "Die Quelle löschen", ar: "حذف المصدر", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
         { text: "Schnell reagieren", ar: "الرد بسرعة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
@@ -590,8 +590,8 @@ export const B2_DIALOGUES: DailyDialogue[] = [
       ]},
       { de: "Was ist noch nicht fertig?", ar: "ما الذي لم يُنجز بعد؟", options: [
         { text: "Die Server der IT-Abteilung", ar: "خوادم قسم تقنية المعلومات", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Die Möbel", ar: "الأثاث", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
-        { text: "Die Verpackung", ar: "التغليف", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Die Möbel aus den Büros", ar: "الأثاث", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
+        { text: "Die Verpackung der Geräte", ar: "التغليف", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Wann kommt die Umzugsfirma?", ar: "متى تأتي شركة النقل؟", options: [
         { text: "Freitag um acht Uhr", ar: "الجمعة في الثامنة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
