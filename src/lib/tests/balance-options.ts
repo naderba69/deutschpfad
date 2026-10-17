@@ -110,3 +110,84 @@ export function balanceTestBank(bank: readonly TestQuestion[]): TestQuestion[] {
     return next;
   });
 }
+
+/* ═══════════════════════════════════════════════════════════
+   موازنة شجرة بيانات كاملة (دروس · حوارات · بودكاست) — الدفعة 70
+
+   القياس (2026-10-17) قبل هذه الطبقة: الإجابة الصحيحة في الموضع الأول في
+     · الدروس 762/864 = **88%** (A1 81% · A2 95% · B1 81% · B2 **99%**)
+     · الحوارات 153/182 = 84% (B1 وB2 **100%**)
+     · البودكاست 40/40 = **100%**
+   أي أن أكبر كوربوس على المنصة (1086 سؤالاً) كان يُجتاز باختيار الخيار الأول،
+   بينما الامتحانات والبنك موزونان منذ 2026-10-16 (25% لكل موضع).
+
+   لماذا تحويل عند التصدير لا إعادة كتابة 1086 سؤالاً؟
+     · الملفات تبقى بترتيبها التحريري الطبيعي (الصحيح أولاً لأنه يُكتب أولاً)،
+     · كل درس/حوار/حلقة جديدة تُوازن تلقائياً بلا انضباط تأليف،
+     · والمثبّتات التي تستورد الوحدات الخام (مثل `lessonB207`) تبقى صادقة
+       لما كُتب، بينما ما يراه المتعلم هو النسخة الموزّعة.
+
+   الشكلان المدعومان (وكلاهما موجود فعلاً في البيانات):
+     1) `options: string[]` + `correctIndex`/`correct` رقمي + `optionExplanations?`
+        المرتبطة بالمواضع — تُدار بالتزامن مع الخيارات (دروس).
+     2) `options: {text, correct: boolean, explanation?}[]` — يُدار ترتيب الكائنات
+        نفسها فيسافر شرح كل خيار معه (حوارات · بودكاست).
+   ما لا يُمسّ: خيارات الفراغات (`options: string[][]` أو `correct` نصّي) لأن
+   موضعها ليس إشارة قابلة للاستغلال بالطريقة نفسها وليست داخل القياس.
+   ═══════════════════════════════════════════════════════════ */
+
+/** نقل عنصر من موضع إلى آخر مع حفظ الترتيب النسبي لباقي العناصر */
+function rotateArray<T>(arr: readonly T[], from: number, to: number): T[] {
+  const next = [...arr];
+  const [moved] = next.splice(from, 1);
+  next.splice(to, 0, moved);
+  return next;
+}
+
+/**
+ * يوزّع مواضع الإجابات الصحيحة في شجرة بيانات (درس/حوار/حلقة) — **بلا تغيير
+ * أي نصّ**: مجموعة الخيارات، ونصّ الصحيحة، وشرح كل خيار، كلها كما هي.
+ * `seed` يزيح بداية التسلسل لكل حاوية حتى لا تصطفّ الحاويات المتجاورة.
+ */
+export function balanceChoiceTree<T>(root: T, seed = 0): T {
+  let seq = 0;
+  const walk = (node: unknown): unknown => {
+    if (Array.isArray(node)) return node.map(walk);
+    if (node === null || typeof node !== "object") return node;
+    const source = node as Record<string, unknown>;
+    const out: Record<string, unknown> = {};
+    for (const [key, value] of Object.entries(source)) out[key] = walk(value);
+
+    const opts = out.options;
+    if (!Array.isArray(opts) || opts.length < 2) return out;
+    const count = opts.length;
+    const target = (seed + seq) % count;
+
+    /* الشكل 1: نصوص + فهرس رقمي */
+    const indexField =
+      typeof out.correctIndex === "number" ? "correctIndex" : typeof out.correct === "number" ? "correct" : null;
+    if (indexField !== null && opts.every((x) => typeof x === "string")) {
+      seq += 1;
+      const current = out[indexField] as number;
+      if (current < 0 || current >= count || current === target) return out;
+      out.options = rotateArray(opts as string[], current, target);
+      out[indexField] = target;
+      const explanations = out.optionExplanations;
+      if (Array.isArray(explanations) && explanations.length === count) {
+        out.optionExplanations = rotateArray(explanations as unknown[], current, target);
+      }
+      return out;
+    }
+
+    /* الشكل 2: كائنات فيها `correct` منطقي */
+    if (opts.every((x) => !!x && typeof x === "object" && typeof (x as Record<string, unknown>).correct === "boolean")) {
+      seq += 1;
+      const current = (opts as Record<string, unknown>[]).findIndex((x) => x.correct === true);
+      if (current < 0 || current === target) return out;
+      out.options = rotateArray(opts as Record<string, unknown>[], current, target);
+      return out;
+    }
+    return out;
+  };
+  return walk(root) as T;
+}

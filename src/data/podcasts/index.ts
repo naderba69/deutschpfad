@@ -1,4 +1,5 @@
 import type { LevelCode } from "@/types/curriculum";
+import { balanceChoiceTree } from "@/lib/tests/balance-options";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -29,7 +30,7 @@ export interface PodcastEpisode {
   questions: PodcastQuestion[];
 }
 
-export const PODCASTS: PodcastEpisode[] = [
+export const RAW_PODCASTS: PodcastEpisode[] = [
   /* ─── A1 ─── */
   {
     id: "p-a1-markt",
@@ -571,6 +572,13 @@ export const PODCASTS: PodcastEpisode[] = [
     ],
   },
 ];
+/**
+ * الحلقات كما تُعرض: مواضع الإجابات موزّعة (كانت 40/40 = 100% في الأول).
+ * النصّ المسموع `script` لا يُمسّ — التحويل على أسئلة الفهم فقط.
+ * `RAW_PODCASTS` نسخة التدقيق للحرّاس فقط — بلا مستهلك إنتاجي.
+ */
+export const PODCASTS: PodcastEpisode[] = RAW_PODCASTS.map((item, index) => balanceChoiceTree(item, index + 1));
+
 
 /** بودكاستات مستوى معيّن */
 export function getPodcastsByLevel(level: LevelCode): PodcastEpisode[] {
