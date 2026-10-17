@@ -27,6 +27,7 @@ import { B2_LESEN_C } from "@/data/exams/b2-lesen-c";
 import { RAW_TEST_BANK } from "@/data/tests/question-banks";
 import { PODCASTS } from "@/data/podcasts";
 import { DAILY_DIALOGUES } from "@/data/dialogues";
+import { LESSONS } from "@/data/lessons";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -313,6 +314,50 @@ describe("حوارات وبودكاست — الشكل البوليني داخل
           .join(" · ")}`,
       ).toBeLessThanOrEqual(DIALOGUE_RATCHETS[lvl]);
     }
+  });
+});
+
+/**
+ * سقّاطات **دروس المنهج** لكل مستوى (قياس 2026-10-17):
+ * 864 سؤال اختيار (579 داخل نطاق القياس) · 159 مخالفة · A1 37 · A2 33 · B1 48 · B2 41.
+ *
+ * هذا أكبر كوربوس في المنصة وكان **خارج كل قياس** — وهو الصنف الثالث من ثغرة
+ * «الحارس يقيس ما يسهل لا ما يهم»: الامتحانات قِيست أولاً (228 سؤالاً) لأنها الأقرب
+ * للذهن، والدروس (864) تُركت. القاعدة: **لا تزيد هذه الأرقام أبداً**، وتنقص مع كل دفعة
+ * إصلاح، وكل خفض يُسجَّل هنا بتاريخه.
+ */
+const LESSON_RATCHETS: Record<string, number> = { A1: 37, A2: 33, B1: 48, B2: 41 };
+
+describe("دروس المنهج — أكبر كوربوس داخل القياس", () => {
+  const levels = ["A1", "A2", "B1", "B2"] as const;
+  const byLevel = (lvl: string) => LESSONS.filter((l) => String(l.level) === lvl);
+
+  it("بوابة حراسة الحارس: 52 درساً و≥800 سؤال اختيار تُجمع فعلاً", () => {
+    expect(LESSONS.length).toBeGreaterThanOrEqual(52);
+    expect(collectChoiceQuestions(LESSONS).length).toBeGreaterThanOrEqual(800);
+    for (const lvl of levels) {
+      expect(byLevel(lvl).length, `دروس ${lvl}`).toBeGreaterThanOrEqual(10);
+      expect(collectChoiceQuestions(byLevel(lvl)).length, `أسئلة دروس ${lvl}`).toBeGreaterThanOrEqual(150);
+    }
+  });
+
+  it(`مخالفات دروس كل مستوى ≤ سقّاطتها ${JSON.stringify(LESSON_RATCHETS)}`, () => {
+    for (const lvl of levels) {
+      const qs = collectChoiceQuestions(byLevel(lvl));
+      const offenders = lengthSignalOffenders(qs);
+      expect(
+        offenders.length,
+        `${lvl}: مخالفات الطول ${offenders.length} (السقف ${LESSON_RATCHETS[lvl]}) — أمثلة: ${offenders
+          .slice(0, 4)
+          .map((q) => describeOffender(q, `درس ${lvl}`))
+          .join(" · ")}`,
+      ).toBeLessThanOrEqual(LESSON_RATCHETS[lvl]);
+    }
+  });
+
+  it("نسبة «الأطول وحيداً» في الدروس ≤ 55% (قياس: 50%)", () => {
+    const qs = collectChoiceQuestions(LESSONS).filter(isMeasurable);
+    expect(uniqueLongestPct(qs)).toBeLessThanOrEqual(55);
   });
 });
 
