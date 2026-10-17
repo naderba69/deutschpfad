@@ -157,6 +157,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "تذكر: Ich habe Hunger (الجوع اسم مع haben).",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«hungrig» صفة لا اسم، فتركيبها «Ich bin hungrig» لا «Ich habe …».",
+        "«der Hunger» — التعبير المعتاد اسمٌ بلا أداة: «Ich habe Hunger».",
+        "«hungrig sein» يحتاج sein: «Ich bin hungrig»، ولا يدخل في «Ich habe …».",
+      ],
     },
     {
       id: "r2",
@@ -168,6 +174,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "المهن: Arzt → Ärztin (مع Umlaut).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«Arztin» بلا Umlaut؛ القاعدة «der Arzt → die Ärztin».",
+        "«Ärzte» جمعُ مذكر (أطباء)، والمطلوب مفردُ المهنة المؤنث.",
+        "«Ärztinnen» جمع مؤنث، والمطلوب مفرد: «die Ärztin».",
+      ],
     },
     {
       id: "r3",

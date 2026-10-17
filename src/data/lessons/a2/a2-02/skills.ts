@@ -108,6 +108,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "«Mein Hals tat weh, ich hatte Fieber, mir war heiß und kalt, und ich fühlte mich sehr schwach.»",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«nur leichte Kopfschmerzen … arbeitsfähig» يناقض «Mein Hals tat weh, ich hatte Fieber … sehr schwach».",
+          "«starke Bauchschmerzen und Übelkeit, aber kein Fieber» يناقض ذكر «ich hatte Fieber» صراحةً.",
+          "«starke Rückenschmerzen» لم تُذكر؛ الشكوى كانت الحلقَ والحمّى والضعف.",
+        ],
       },
       {
         id: "rq2",
@@ -125,6 +131,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "«Du solltest zum Arzt gehen. Wenn du nicht arbeiten kannst, frag nach einer Krankschreibung und informiere deinen Chef.»",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«zu Hause bleiben und gar nicht erst anrufen» يناقض «frag nach einer Krankschreibung und informiere deinen Chef».",
+          "«zur Arbeit gehen, obwohl man nicht arbeiten kann» يخالف شرط النصّ «Wenn du nicht arbeiten kannst …».",
+          "«den Termin einfach absagen und trotzdem weiterarbeiten» يخالف الأمرين معاً: الذهاب للطبيب وإبلاغ الرئيس.",
+        ],
       },
       {
         id: "rq3",
@@ -142,6 +154,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "في هذه القراءة، müssen nicht ينفي الوجوب؛ أما dürfen nicht فيعبّر عن عدم الإذن/المنع.",
         errorType: "grammar",
+        optionExplanations: [
+          undefined,
+          "«Es ist verboten, zurückzukommen» — المنع يُصاغ بـ«dürfen nicht» لا بـ«müssen nicht».",
+          "«Sie sollen morgen kommen» — الجملة لا تحدّد موعداً ولا تأمر بالحضور.",
+          "«Sie müssen unbedingt kommen» عكس النفي؛ «müssen nicht» إعفاءٌ لا إلزام.",
+        ],
       },
       {
         id: "rq4",
@@ -159,6 +177,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "«Solange Sie Fieber haben, dürfen Sie keinen Sport machen»؛ يذكر النص المنع مع شرط الحمى.",
         errorType: "grammar",
+        optionExplanations: [
+          undefined,
+          "«Tee trinken und viel schlafen» موصىً به في النصّ لا محظور.",
+          "«Zu Hause bleiben und ausruhen» هو المطلوب لا الممنوع.",
+          "«Zur Apotheke gehen und Medizin holen» فعله الشخص فعلاً بلا منع.",
+        ],
       },
       {
         id: "rq5",
@@ -176,6 +200,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "«Auf dem Weg nach Hause bin ich in die Apotheke gegangen.»",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«In ein Restaurant» لم يُذكر في طريق العودة.",
+          "«Zur Arbeit» — عاد إليها «am Freitag» فقط، لا في طريقه إلى البيت.",
+          "«In eine Schule» لا ذكر لها في النصّ.",
+        ],
       },
       {
         id: "rq6",
@@ -187,6 +217,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         correctIndex: 0,
         explanation: "«bin am Freitag wieder zur Arbeit gegangen».",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Am Montag» يومُ المرض لا يومُ العودة.",
+          "«Am Mittwoch» — النصّ يقول «bin am Freitag wieder zur Arbeit gegangen».",
+          "«Am Sonntag» غير مذكور في النصّ.",
+        ],
       },
     ],
     redemittel: [
@@ -299,6 +335,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "قال: starke Kopfschmerzen und Fieber — صداع وحمى.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Bauchschmerzen und Übelkeit» لم يذكرهما سامي.",
+          "«Nur Husten ohne Fieber» ينفي الحمّى التي ذكرها سامي.",
+          "«Rückenschmerzen am Morgen» شكوى كريم لا سامي.",
+        ],
       },
       {
         id: "q2",
@@ -316,6 +358,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "قال الطبيب: Sie sollen sich ausruhen und zu Hause bleiben.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«arbeiten» عكس نصيحة الطبيب: «Sie sollen sich ausruhen».",
+          "«Sport machen im Fitnessstudio» يناقض لزوم البقاء في البيت.",
+          "«kalt baden am frühen Morgen» لم يُنصح به في الحوار.",
+        ],
       },
       {
         id: "q3",
@@ -333,6 +381,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "قال كريم: Ich habe zu viel gearbeitet — عمل كثيراً.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«Er hat geschwommen» سببٌ مختلقٌ لم يقله كريم.",
+          "«Er ist geflogen» لا صلة له بآلام الظهر في الحوار.",
+          "«Er hat Fußball gespielt» غير مذكور؛ قوله «Ich habe zu viel gearbeitet».",
+        ],
       },
     ],
   };

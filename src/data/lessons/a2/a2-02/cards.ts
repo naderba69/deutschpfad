@@ -14,6 +14,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "Husten اسم مع haben: Ich habe Husten.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«hustet» صيغةٌ فعلية (هو يسعل) لا اسمٌ بعد «habe».",
+        "«der Husten» — التعبير المعتاد بلا أداة: «Ich habe Husten».",
+        "«hust» جذرٌ/صيغة أمرٍ لا تصلح اسماً في هذا الموضع.",
+      ],
     },
     {
       id: "m2",
@@ -24,6 +30,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "مع er: soll.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«sollst» تصريف du لا er.",
+        "«sollt» تصريف ihr لا er.",
+        "«sollen» صيغة الجمع: «sie sollen».",
+      ],
     },
     {
       id: "m3",

@@ -94,6 +94,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "«Wir haben die Zugtickets schon im Mai gebucht, ein kleines Hotel … reserviert» — حجزٌ مسبق في مايو.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«ganz ohne Plan losgefahren» يناقض النصّ: «Wir haben die Zugtickets schon im Mai gebucht».",
+          "«erst am Bahnhof alles gebucht» يناقض «schon im Mai» — الحجز قبل الرحلة لا في المحطة.",
+          "«mit dem Auto nach Italien gefahren» يبدّل الوسيلة؛ النصّ يقول «Zugtickets».",
+        ],
       },
       {
         id: "rq2",
@@ -111,6 +117,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "الإعلان قال: «Der Zug nach Prag hat heute zwei Stunden Verspätung».",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«verschlafen» لم يُذكر؛ سبب التأخّر القطارُ لا المسافران.",
+          "«Der Zug ist ausgefallen» (إلغاء) أشدّ مما قاله الإعلان: «hat heute zwei Stunden Verspätung».",
+          "«das Ticket verloren» لا ذكر له؛ الضائع كان «Rucksack» في Dresden.",
+        ],
       },
       {
         id: "rq3",
@@ -128,6 +140,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "«Meine Schwester hat ihren Rucksack im ersten Zug vergessen — mit ihrem Pass und ihrem Geld.»",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«den Anschlusszug in München verpasst» يبدّل المدينة والحدث؛ النصّ: «ihren Rucksack im ersten Zug vergessen».",
+          "«sich in der Stadt verlaufen» لم يرد في النصّ إطلاقاً.",
+          "«Der Zug ist gar nicht gekommen» يناقض وصولهم بعد تأخّر ساعتين.",
+        ],
       },
       {
         id: "rq4",
@@ -145,6 +163,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "النص يجمع wollten في Präteritum وhaben … gebucht في Perfekt. وجود الصيغتين هنا مثال سياقي، لا قاعدة تلزم كل نص سردي بزمن واحد.",
         errorType: "grammar",
+        optionExplanations: [
+          undefined,
+          "«Beide Formen stehen im Präteritum» — لكن «haben … gebucht» مركّبة من Hilfsverb وPartizip II فهي Perfekt.",
+          "«Beide Formen stehen im Perfekt» — «wollten» ماضٍ بسيط (Präteritum من wollen) بلا مساعد.",
+          "«jedes Verb muss im Präteritum stehen» قاعدة غير صحيحة؛ النصّ نفسه يجمع الزمنين.",
+        ],
       },
       {
         id: "rq5",
@@ -162,6 +186,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "في معنى انطلاق القطار اللازم، يرد Perfekt مع sein: sind abgefahren. البادئة المنفصلة تحدد موضع ge-، ولا تحدد المساعد وحدها؛ وتختلف استعمالات أفعال أخرى بحسب المعنى.",
         errorType: "grammar",
+        optionExplanations: [
+          undefined,
+          "«weil jedes trennbare Verb haben nimmt» — البادئة المنفصلة تحدّد موضع ge- لا اختيار المساعد.",
+          "«weil jedes Bewegungsverb immer sein nimmt» تعميمٌ زائد؛ «Ich habe das Auto gefahren» مع haben.",
+          "«weil abfahren ein starkes Verb ist» — القوة الصرفية تحدّد شكل «abgefahren» لا المساعد.",
+        ],
       },
       {
         id: "rq6",
@@ -179,6 +209,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "«Die Rezeption eines anderen Hotels zwei Straßen weiter war noch geöffnet. Die Mitarbeiterin dort hat ein Zimmer für uns gefunden. Das Hotel war sogar billiger und schöner.»",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«enttäuscht wieder nach Hause zurück» يناقض «Die Rezeption eines anderen Hotels … war noch geöffnet».",
+          "«die ganze Nacht am Bahnhof geschlafen» لم يحدث؛ وُجدت غرفة في فندق آخر.",
+          "«den Rucksack niemals wieder gefunden» لا ذكر له في نهاية النصّ.",
+        ],
       },
     ],
     redemittel: [
@@ -285,6 +321,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "قال: habe viele Museen besucht — زار متاحف كثيرة.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«geschwommen» لم يقله سامي؛ قوله «habe viele Museen besucht».",
+          "«gearbeitet» يبدّل النشاط: زيارة سياحية لا عمل.",
+          "«eingekauft» غير مذكور في كلام سامي.",
+        ],
       },
       {
         id: "q2",
@@ -297,6 +339,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "قالت منى: Wir sind nach Sousse gefahren.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«nach Berlin» مدينة سامي، لا وجهة منى وكريم.",
+          "«nach München» لم تُذكر وجهةً لهما في الحوار.",
+          "«nach Hamburg» غير مذكورة في الحوار.",
+        ],
       },
       {
         id: "q3",
@@ -309,6 +357,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "قالت: Das Hotel war super! — كان رائعاً.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«schlecht» نقيض قولها «Das Hotel war super!».",
+          "«teuer» حكمٌ على السعر ولم تذكر منى السعر.",
+          "«klein» حكمٌ على الحجم ولم تذكر الحجم.",
+        ],
       },
       {
         id: "q4",
@@ -322,6 +376,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         explanation:
           "قال سامي: Ich habe typisches Essen probiert — جربت طعاماً تقليدياً.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "«typisches Bier» يبدّل ما جُرّب؛ قوله «typisches Essen probiert».",
+          "«nur Kaffee» حصرٌ لم يقله سامي.",
+          "«nichts» ينفي التجربة المذكورة صراحةً في الحوار.",
+        ],
       },
     ],
   };

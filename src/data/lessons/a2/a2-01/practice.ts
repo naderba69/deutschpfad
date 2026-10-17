@@ -19,6 +19,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "kaufen عادي → habe gekauft.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«bin ... gekauft» — «kaufen» متعدٍّ بمفعول («ein Buch») فيأخذ haben لا sein.",
+        "«habe ... kaufen» — بعد Hilfsverb يأتي Partizip II («gekauft») لا المصدر.",
+        "«bin ... gekaufen» — خطأان: مساعد خاطئ و«gekaufen» غير موجود.",
+      ],
     },
     {
       id: "e2",
@@ -34,6 +40,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "هنا fliegen يعني السفر بالطائرة إلى Deutschland، فيأتي Perfekt مع sein: sind geflogen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«haben ... geflogen» — الطيران إلى وجهة («nach Deutschland») حركةٌ باتجاه فتأخذ sein.",
+        "«sind ... gefliegt» — Partizip II لـ«fliegen» هو «geflogen».",
+        "«haben ... gefliegen» — خطأان: مساعد ومصدرٌ بدل Partizip II.",
+      ],
     },
     {
       id: "e3",
@@ -113,6 +125,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "aufstehen يعني هنا النهوض/مغادرة السرير، وصيغته aufgestanden مع sein في هذا المعنى.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«أستيقظ في السابعة» حاضرٌ (Präsens) بينما الجملة ماضٍ: «bin … aufgestanden».",
+        "«سأستيقظ في السابعة» مستقبل، والجملة Perfekt عن ماضٍ.",
+        "«كنت نائماً في السابعة» عكس المعنى؛ «aufstehen» قيامٌ من السرير.",
+      ],
     },
     {
       id: "e9",
@@ -129,6 +147,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "يذكر Duden أن نشاط السباحة للمتعة/الرياضة يقبل hat/ist geschwommen؛ أما الانتقال سباحةً إلى مكان مثل zur Insel فيأخذ sein. لذلك لا يصح تصحيح Ich habe geschwommen بلا سياق.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«الصيغة خطأ دائماً» — Duden يقبل «hat/ist geschwommen» لنشاط السباحة.",
+        "«Partizip II هو geschwimmt» — الشكل الصحيح «geschwommen».",
+        "«صحيحة فقط في الحاضر» — Perfekt زمنُ ماضٍ، فلا قيدَ حاضرٍ.",
+      ],
     },
     {
       id: "e10",
@@ -202,6 +226,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "war هي صيغة Präteritum المطلوبة. Ich bin gestern sehr müde gewesen صيغة Perfekt سليمة أيضاً؛ السؤال يطلب زمناً بعينه، لا يقرر أن البديل غير مستعمل.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«Ich bin gestern sehr müde gewesen» هي Perfekt (مثال السؤال نفسه) لا Präteritum.",
+        "«Ich habe gestern sehr müde gewesen» — «sein» يبني ماضيه بـ«sein» لا بـ«haben».",
+        "«Ich gewesen gestern sehr müde» — Hilfsverb ناقص وترتيبٌ خاطئ.",
+      ],
     },
     {
       id: "e15",
@@ -262,6 +292,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "في هذا المثال، es (Akkusativ) قبل ihm (Dativ) هو الترتيب المحايد المألوف. تتأثر الترتيبات بالبؤرة والسياق؛ لا نصف كل ترتيب آخر بأنه مستحيل في كل مقام.",
       errorType: "word-order",
+      optionExplanations: [
+        undefined,
+        "«ihm es» — الترتيب المحايد يقدّم Akkusativ («es») على Dativ («ihm»).",
+        "«ihn es» — المطلوب Dativ («ihm») لا Akkusativ («ihn»).",
+        "«es ihn» — «ihn» حالةٌ خاطئة؛ الصحيح «ihm».",
+      ],
     },
     {
       id: "e18",
@@ -278,6 +314,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "في الترتيب المحايد، يسبق المفعول einen Apfel Partizip II. وقد توجد عناصر مؤجلة أو بؤرة خاصة في سياقات أخرى؛ السؤال يحدد الترتيب المحايد.",
       errorType: "word-order",
+      optionExplanations: [
+        undefined,
+        "«gegessen einen Apfel» — في الترتيب المحايد يسبق المفعولُ Partizip II.",
+        "«ein Apfel» — المفعول به Accusativ: «einen Apfel».",
+        "«einen Apfel essen» — يتكرّر الفعل، والمطلوب مفعولٌ وحسب.",
+      ],
     },
     {
       id: "e19",
@@ -294,6 +336,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "nicht قبل جزءٍ بعينه ينفيه وحده. ولنفي الجملة كلّها يوضع قبل Partizip II: «Ich habe den Film nicht gesehen».",
       errorType: "negation",
+      optionExplanations: [
+        undefined,
+        "«النفي على الجملة كلها» — لنفي الجملة يوضع «nicht» قبل Partizip II: «den Film nicht gesehen».",
+        "«الجملتان بمعنى واحد» — موضع «nicht» يحدّد ما يُنفى.",
+        "«الجملة الثانية خاطئة نحوياً» — «sondern die Serie» صحيحة بعد نفي.",
+      ],
     },
     {
       id: "e20",
@@ -332,6 +380,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "في هذا السياق عند شباك التذاكر تعني einfache Fahrt رحلةً باتجاه واحد؛ أما hin und zurück فتعني ذهاباً وإياباً. وخارج سياق التذاكر قد تعني einfach «بسيط».",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«الأمر بسيط» ترجمةٌ حرفية لـ«einfach» خارج سياق التذاكر.",
+        "«الدرجة الاقتصادية» لا علاقة لها بـ«einfache Fahrt».",
+        "«بدون حجز مقعد» ليس معنى «Einfach oder hin und zurück?» عند شباك التذاكر.",
+      ],
     },
     {
       id: "e22",
@@ -348,6 +402,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "الخيار يجمع وصف المشكلة بوضوح وطلباً مهذباً بصيغة Könnten Sie …? إنه نموذج مناسب للموقف المحدد، لا قاعدة ثقافية عن كل شكوى بالألمانية.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«Geben Sie mir sofort ein anderes Zimmer!» أمرٌ حادّ بـ«sofort» بلا صيغة تهذيب.",
+        "«Vielleicht stimmt etwas mit dem Zimmer nicht» تلميحٌ غامض لا يسمّي المشكلة ولا يطلب.",
+        "«Kein Problem, das Zimmer ist in Ordnung» يناقض المعطى أن الغرفة غير نظيفة.",
+      ],
     },
     {
       id: "e23",
@@ -421,6 +481,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "الخيار الأول يحافظ على نوع الغرفة (Doppelzimmer) والتاريخ، ويستخدم reservieren في طلب حجز واضح. العبارات الأخرى تغيّر نوع الغرفة أو تستعمل فعلاً/اسماً لا يطابق المقصود.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«Einzelzimmer» يبدّل نوع الغرفة المطلوبة («Doppelzimmer»).",
+        "«abholen» فعلٌ خاطئ: استلامٌ لا حجز («reservieren»).",
+        "«eine Fahrkarte» يبدّل الموضوع من غرفةٍ إلى تذكرة.",
+      ],
     },
   ];
 

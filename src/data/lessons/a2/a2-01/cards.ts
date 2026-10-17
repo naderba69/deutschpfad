@@ -19,6 +19,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "sehen فعل قوي: sehen – sah – gesehen؛ وفي معنى مشاهدة فيلم مع مفعول، Perfekt هنا: habe gesehen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«bin ... gesehen» — مشاهدة فيلمٍ فعلٌ متعدٍّ بمفعول («einen Film») فيأخذ haben.",
+        "«habe ... geseht» — Partizip II لـ«sehen» هو «gesehen».",
+        "«bin ... geseht» — خطأان معاً: مساعدٌ خاطئ وPartizip غير موجود.",
+      ],
     },
     {
       id: "m2",
@@ -34,6 +40,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "gehen حركة → ist gegangen.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«hat ... gegangen» — «gehen» حركةٌ باتجاه («nach Hause») فتأخذ sein.",
+        "«ist ... gegeht» — Partizip II لـ«gehen» هو «gegangen».",
+        "«hat ... gegeht» — خطأان معاً: مساعدٌ خاطئ وPartizip غير موجود.",
+      ],
     },
     {
       id: "m3",

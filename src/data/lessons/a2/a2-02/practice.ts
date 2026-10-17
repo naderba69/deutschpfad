@@ -20,6 +20,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "Kopfschmerzen هي الصيغة المعتادة في هذا التعبير؛ يذكر Duden أن المفرد Kopfschmerz موجود أيضاً، لذا لا نقول إن الجمع هو الصورة الوحيدة.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«Kopfschmerzern» صيغةٌ غير موجودة في الألمانية.",
+        "«Kopfschmerzenen» تركيبٌ مصطنعٌ بلا أساس صرفي.",
+        "«Kopfschmerzten» صيغةٌ فعلية ماضية لا اسمٌ في هذا التعبير.",
+      ],
     },
     {
       id: "e2",
@@ -30,6 +36,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "مع du: sollst.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«soll» تصريف er/sie/es لا du.",
+        "«sollt» تصريف ihr لا du.",
+        "«sollen» صيغة الجمع والمصدر: «wir/sie sollen».",
+      ],
     },
     {
       id: "e3",
@@ -99,6 +111,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "Was fehlt Ihnen? سؤال عن الشكوى؛ الترجمة الوظيفية «ما شكواك؟» أنسب من بناء المعنى على الترجمة الحرفية.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«كم عمرك؟» يقابلها «Wie alt sind Sie?» لا سؤال الشكوى.",
+        "«ما اسمك؟» يقابلها «Wie heißen Sie?».",
+        "«أين يؤلمك؟» يقابلها «Wo tut es weh؟» — سؤالٌ عن الموضع لا عن الشكوى.",
+      ],
     },
     {
       id: "e9",
@@ -134,6 +152,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "Mir ist schlecht صيغة شائعة للغثيان؛ mir هنا Dativ ألمانية. Ich bin schlecht جملة سليمة في معانٍ أخرى بحسب السياق، لكنها ليست الصيغة المحايدة لهذا الإحساس.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«Ich bin schlecht» تعني «أنا سيّئ» في صفة الشخص، لا الغثيان.",
+        "«Ich habe schlecht» تركيبٌ خاطئ؛ «schlecht» هنا صفةٌ لا مفعول.",
+        "«Mich ist schlecht» حالةٌ خاطئة: المطلوب Dativ («mir») لا Akkusativ («mich»).",
+      ],
     },
     {
       id: "e12",
@@ -171,6 +195,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "dürfen nicht يعبّر عن منع/عدم إذن في هذا السياق. müssen nicht يعني أن الفعل غير لازم، وsollten nicht نصيحةً لا حظراً بذاتها.",
       errorType: "negation",
+      optionExplanations: [
+        undefined,
+        "«Sie müssen nicht rauchen» نفيُ وجوبٍ لا منع.",
+        "«Sie dürfen rauchen» عكس المنع تماماً.",
+        "«Sie sollten nicht rauchen» نصيحةٌ لا حظرٌ صادرٌ عن الإدارة.",
+      ],
     },
     {
       id: "e14",
@@ -187,6 +217,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "نفي الوجوب إعفاء لا منع. والمنع بـnicht dürfen: «Sie dürfen nicht wiederkommen».",
       errorType: "negation",
+      optionExplanations: [
+        undefined,
+        "«ممنوعٌ عليك العودة» — المنع يُصاغ بـ«Sie dürfen nicht wiederkommen».",
+        "«يجب أن تعود غداً صباحاً» يحوّل «müssen nicht» (إعفاء) إلى إلزام.",
+        "«عليك العودة حتماً» عكس «müssen nicht».",
+      ],
     },
     {
       id: "e15",
@@ -242,6 +278,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "في هذا السياق، sollten مع mal صيغة شائعة لاقتراح أقل مباشرة؛ Du sollst جملة صحيحة لكنها توجيه أكثر مباشرة هنا، لا خطأ نحوي.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«Du sollst zum Arzt gehen» توجيهٌ مباشرٌ أقوى من المطلوب في هذا السياق.",
+        "«Du musst zum Arzt gehen wollen» تركيبٌ فاسد: «wollen» بعد «müssen» تُفسد المعنى.",
+        "«Du darfst zum Arzt gehen» إذنٌ لا نصيحة.",
+      ],
     },
     {
       id: "e18",
@@ -385,6 +427,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "Gute Besserung عبارة شائعة لتمني التحسن في هذا السياق؛ يختلف اختيار عبارات الوداع بحسب العلاقة والموقف، ولا يلزم استعمالها في كل مرة.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«Viel Glück!» للحظّ في مهمةٍ أو اختبار، لا لوداع مريض.",
+        "«Herzlichen Glückwunsch!» للتهنئة بمناسبةٍ سعيدة.",
+        "«Gute Reise!» لوداع مسافر.",
+      ],
     },
   ];
 

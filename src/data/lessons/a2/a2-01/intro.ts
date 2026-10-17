@@ -115,6 +115,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "تذكر: Ich bin + بلد — sein مع ich = bin.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«habe» تحتاج مفعولاً أو Partizip II («Ich habe einen Pass»), ولا تفيد الانتماء إلى بلد.",
+        "«werde» تبني مستقبلاً أو مجهولاً («Ich werde reisen»), والجملة خبرٌ عن حالٍ قائمة.",
+        "«ist» تصريف الغائب («Er ist aus Tunesien») ولا توافق المتكلم ich.",
+      ],
     },
     {
       id: "r2",
@@ -126,6 +132,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "في هذا المثال Deutschland اسم بلد بلا أداة مع معنى الوجهة، لذا نقول nach Deutschland. وتوجد أسماء بلدان تأخذ أداة وتأتي معها تراكيب أخرى.",
       errorType: "preposition",
+      optionExplanations: [
+        undefined,
+        "«zu» تأخذ Dativ وتُستعمل مع أشخاص ومبانٍ («zu Frau Huber», «zum Bahnhof») لا مع بلدٍ بلا أداة.",
+        "«in» للوجهة تحتاج Accusativ مع أداة («in die Schweiz»)، وDeutschland هنا بلا أداة.",
+        "«aus» للأصل والخروج («Ich komme aus Tunesien») أي عكس الاتجاه المطلوب.",
+      ],
     },
     {
       id: "r3",
