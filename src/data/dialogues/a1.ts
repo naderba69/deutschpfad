@@ -84,9 +84,9 @@ export const A1_DIALOGUES: DailyDialogue[] = [
         { text: "Auf Wiedersehen", ar: "إلى اللقاء", correct: false, explanation: "لا — قال شكراً." },
       ]},
       { de: "Was isst der Gast?", ar: "ماذا يأكل الزبون؟", options: [
-        { text: "Eine Pizza", ar: "بيتزا", correct: false, explanation: "لا — لم يطلب بيتزا." },
-        { text: "Ein Brötchen", ar: "لفافة خبز", correct: false, explanation: "لا — طلب كعكة." },
-        { text: "Ein Stück Kuchen", ar: "قطعة كعك", correct: true, explanation: "نعم — «ein Stück Kuchen»." },
+        { text: "Eine Pizza Margherita", ar: "بيتزا", correct: false, explanation: "لا — لم يطلب بيتزا." },
+        { text: "Ein Brötchen mit Käse", ar: "لفافة خبز", correct: false, explanation: "لا — طلب كعكة." },
+        { text: "Ein Stück Apfelkuchen", ar: "قطعة كعك", correct: true, explanation: "نعم — «ein Stück Kuchen»." },
       ]},
     ],
     keyVocab: [
@@ -120,13 +120,13 @@ export const A1_DIALOGUES: DailyDialogue[] = [
       ]},
       { de: "Was nimmt der Kunde?", ar: "ماذا يأخذ الزبون؟", options: [
         { text: "Brot und Milch", ar: "خبزاً وحليباً", correct: true, explanation: "صحيح — الاثنان معاً." },
-        { text: "Nur Brot", ar: "خبزاً فقط", correct: false, explanation: "لا — أخذ الاثنين." },
-        { text: "Nur Milch", ar: "حليباً فقط", correct: false, explanation: "لا — أخذ الاثنين." },
+        { text: "Nur ein Brot", ar: "خبزاً فقط", correct: false, explanation: "لا — أخذ الاثنين." },
+        { text: "Nur die frische Milch", ar: "حليباً فقط", correct: false, explanation: "لا — أخذ الاثنين." },
       ]},
       { de: "Was nimmt der Kunde?", ar: "ماذا يأخذ الزبون؟", options: [
         { text: "Das Brot und die Milch", ar: "الخبز والحليب", correct: true, explanation: "نعم — «Ich nehme das Brot und die Milch»." },
-        { text: "Nur die Milch", ar: "الحليب فقط", correct: false, explanation: "لا — أخذ الخبز أيضاً." },
-        { text: "Ein Kilo Äpfel", ar: "كيلوغراماً من التفاح", correct: false, explanation: "لا — لم يذكر التفاح." },
+        { text: "Nur die frische Milch", ar: "الحليب فقط", correct: false, explanation: "لا — أخذ الخبز أيضاً." },
+        { text: "Ein Kilo rote Äpfel", ar: "كيلوغراماً من التفاح", correct: false, explanation: "لا — لم يذكر التفاح." },
       ]},
     ],
     keyVocab: [
@@ -155,18 +155,18 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Wie viele Geschwister hat Paul?", ar: "كم أخاً لدى باول؟", options: [
         { text: "Einen Bruder und eine Schwester", ar: "أخاً وأختاً", correct: true, explanation: "نعم — «einen Bruder und eine Schwester»." },
-        { text: "Zwei Brüder", ar: "أخوين", correct: false, explanation: "لا — أخ وأخت." },
-        { text: "Keine", ar: "لا أحد", correct: false, explanation: "لا — لديه إخوة." },
+        { text: "Nur einen älteren Bruder", ar: "أخوين", correct: false, explanation: "لا — أخ وأخت." },
+        { text: "Zwei Schwestern, keinen Bruder", ar: "لا أحد", correct: false, explanation: "لا — لديه إخوة." },
       ]},
       { de: "Was ist Pauls Mutter von Beruf?", ar: "ما مهنة أم باول؟", options: [
         { text: "Ärztin", ar: "طبيبة", correct: true, explanation: "صحيح — «Meine Mutter ist Ärztin»." },
         { text: "Lehrerin", ar: "معلمة", correct: false, explanation: "لا — الأب معلم." },
-        { text: "Ärztin? Nein, Köchin", ar: "لا، طباخة", correct: false, explanation: "لا — طبيبة." },
+        { text: "Köchin", ar: "لا، طباخة", correct: false, explanation: "لا — طبيبة." },
       ]},
       { de: "Wie viele Brüder hat Paul?", ar: "كم أخاً لبول؟", options: [
         { text: "Keinen Bruder", ar: "لا أخ", correct: false, explanation: "لا — قال إن لديه أخاً." },
         { text: "Einen Bruder", ar: "أخ واحد", correct: true, explanation: "نعم — «einen Bruder und eine Schwester»." },
-        { text: "Zwei Brüder", ar: "أخوان", correct: false, explanation: "لا — ذكر أخاً واحداً فقط." },
+        { text: "Nur einen älteren Bruder", ar: "أخوان", correct: false, explanation: "لا — ذكر أخاً واحداً فقط." },
       ]},
     ],
     keyVocab: [
@@ -395,8 +395,8 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Was bestellt der Kunde?", ar: "ماذا يطلب الزبون؟", options: [
         { text: "Eine Pizza und eine Cola", ar: "بيتزا وكولا", correct: true, explanation: "نعم — الوجبة الكاملة." },
-        { text: "Nur eine Pizza", ar: "بيتزا فقط", correct: false, explanation: "لا — مع الكولا." },
-        { text: "Einen Salat", ar: "سلطة", correct: false, explanation: "لا — بيتزا وكولا." },
+        { text: "Nur eine kleine Pizza", ar: "بيتزا فقط", correct: false, explanation: "لا — مع الكولا." },
+        { text: "Einen Salat mit Brot", ar: "سلطة", correct: false, explanation: "لا — بيتزا وكولا." },
       ]},
       { de: "Was kostet alles?", ar: "كم يكلف كل شيء؟", options: [
         { text: "9 Euro", ar: "9 يورو", correct: true, explanation: "صحيح — «Das macht 9 Euro»." },
@@ -475,8 +475,8 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Was macht Lena in ihrer Freizeit?", ar: "ماذا تفعل لينا في وقت فراغها؟", options: [
         { text: "Fußball spielen und Bücher lesen", ar: "تلعب كرة وتقرأ", correct: true, explanation: "نعم — الهوايتان معاً." },
-        { text: "Nur Fernsehen", ar: "تشاهد التلفاز فقط", correct: false, explanation: "لا — كرة وقراءة." },
-        { text: "Klavier spielen", ar: "تعزف البيانو", correct: false, explanation: "لا — كرة وقراءة." },
+        { text: "Nur fernsehen und schlafen", ar: "تشاهد التلفاز فقط", correct: false, explanation: "لا — كرة وقراءة." },
+        { text: "Klavier spielen und singen", ar: "تعزف البيانو", correct: false, explanation: "لا — كرة وقراءة." },
       ]},
       { de: "Welche Mannschaft mag Lena?", ar: "أي فريق تحب لينا؟", options: [
         { text: "Bayern München", ar: "بايرن ميونخ", correct: true, explanation: "صحيح — «Ich mag Bayern München»." },
@@ -555,13 +555,13 @@ export const A1_DIALOGUES: DailyDialogue[] = [
     questions: [
       { de: "Wie ist das Wetter heute?", ar: "كيف الطقس اليوم؟", options: [
         { text: "Die Sonne scheint", ar: "الشمس مشرقة", correct: true, explanation: "نعم — «die Sonne scheint»." },
-        { text: "Es regnet", ar: "تمطر", correct: false, explanation: "لا — المطر غداً." },
-        { text: "Es schneit", ar: "تثلج", correct: false, explanation: "لا — مشمسة." },
+        { text: "Es regnet stark", ar: "تمطر", correct: false, explanation: "لا — المطر غداً." },
+        { text: "Es schneit viel", ar: "تثلج", correct: false, explanation: "لا — مشمسة." },
       ]},
       { de: "Was passiert morgen?", ar: "ماذا سيحدث غداً؟", options: [
         { text: "Es regnet und wird kälter", ar: "ستمطر ويبرد", correct: true, explanation: "صحيح — الاثنان معاً." },
-        { text: "Die Sonne scheint", ar: "الشمس مشرقة", correct: false, explanation: "لا — غداً مطر." },
-        { text: "Es schneit", ar: "تثلج", correct: false, explanation: "لا — مطر وبرودة." },
+        { text: "Die Sonne scheint den ganzen Tag", ar: "الشمس مشرقة", correct: false, explanation: "لا — غداً مطر." },
+        { text: "Es schneit viel", ar: "تثلج", correct: false, explanation: "لا — مطر وبرودة." },
       ]},
       { de: "Was braucht die Person wegen der Kälte?", ar: "ماذا يحتاج الشخص بسبب البرد؟", options: [
         { text: "Einen Badeanzug", ar: "مايوه", correct: false, explanation: "لا — الجو بارد." },

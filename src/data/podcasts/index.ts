@@ -54,8 +54,8 @@ export const PODCASTS: PodcastEpisode[] = [
         ar: "ماذا تشتري آنا؟",
         options: [
           { text: "Äpfel, Tomaten und Brot", ar: "تفاحاً وطماطم وخبزاً", correct: true, explanation: "نعم — الحلقة تقول: «Sie kauft Äpfel, Tomaten und Brot.»." },
-          { text: "Milch und Käse", ar: "حليباً وجبناً", correct: false, explanation: "لا — الحلقة تقول: «Sie kauft Äpfel, Tomaten und Brot.»." },
-          { text: "Fisch und Fleisch", ar: "سمكاً ولحماً", correct: false, explanation: "لا — الحلقة تقول: «Sie kauft Äpfel, Tomaten und Brot.»." },
+          { text: "Milch und Käse aus dem Kühlregal", ar: "حليباً وجبناً", correct: false, explanation: "لا — الحلقة تقول: «Sie kauft Äpfel, Tomaten und Brot.»." },
+          { text: "Fisch und Fleisch vom Markt", ar: "سمكاً ولحماً", correct: false, explanation: "لا — الحلقة تقول: «Sie kauft Äpfel, Tomaten und Brot.»." },
         ],
       },
     ],
@@ -104,8 +104,8 @@ export const PODCASTS: PodcastEpisode[] = [
         ar: "ماذا فعلوا بعد الظهر؟",
         options: [
           { text: "Kuchen gebacken und Filme geschaut", ar: "خبزوا كعكة وشاهدوا أفلاماً", correct: true, explanation: "نعم — الحلقة تقول: «Am Nachmittag haben wir einen Kuchen gebacken und Filme geschaut.»." },
-          { text: "Gearbeitet", ar: "عملوا", correct: false, explanation: "لا — الحلقة تقول: «Am Nachmittag haben wir einen Kuchen gebacken und Filme geschaut.»." },
-          { text: "Geschlafen", ar: "ناموا", correct: false, explanation: "لا — الحلقة تقول: «Am Nachmittag haben wir einen Kuchen gebacken und Filme geschaut.»." },
+          { text: "Gearbeitet und E-Mails beantwortet", ar: "عملوا", correct: false, explanation: "لا — الحلقة تقول: «Am Nachmittag haben wir einen Kuchen gebacken und Filme geschaut.»." },
+          { text: "Geschlafen bis zum späten Abend", ar: "ناموا", correct: false, explanation: "لا — الحلقة تقول: «Am Nachmittag haben wir einen Kuchen gebacken und Filme geschaut.»." },
         ],
       },
       {
@@ -113,8 +113,8 @@ export const PODCASTS: PodcastEpisode[] = [
         ar: "ماذا فعلوا يوم الأحد؟",
         options: [
           { text: "Zusammen gefrühstückt und spazieren gegangen", ar: "تناولوا الفطور معاً وتمشوا", correct: true, explanation: "نعم — الحلقة تقول: «Wir haben zusammen gefrühstückt. Danach sind wir spazieren gegangen.»." },
-          { text: "Gearbeitet", ar: "عملوا", correct: false, explanation: "لا — الحلقة تقول: «Wir haben zusammen gefrühstückt. Danach sind wir spazieren gegangen.»." },
-          { text: "Geschlafen", ar: "ناموا", correct: false, explanation: "لا — الحلقة تقول: «Wir haben zusammen gefrühstückt. Danach sind wir spazieren gegangen.»." },
+          { text: "Gearbeitet und E-Mails beantwortet", ar: "عملوا", correct: false, explanation: "لا — الحلقة تقول: «Wir haben zusammen gefrühstückt. Danach sind wir spazieren gegangen.»." },
+          { text: "Geschlafen bis zum späten Abend", ar: "ناموا", correct: false, explanation: "لا — الحلقة تقول: «Wir haben zusammen gefrühstückt. Danach sind wir spazieren gegangen.»." },
         ],
       }
     ],
@@ -172,8 +172,8 @@ export const PODCASTS: PodcastEpisode[] = [
         ar: "ماذا يعتقد الآخرون؟",
         options: [
           { text: "Die Politik muss etwas ändern", ar: "السياسة يجب أن تغيّر شيئاً", correct: true, explanation: "نعم — الحلقة تقول: «Die Politik muss etwas ändern.»." },
-          { text: "Man muss nichts ändern", ar: "لا يجب تغيير أي شيء", correct: false, explanation: "لا — الحلقة تقول: «Die Politik muss etwas ändern.»." },
-          { text: "Autos sind besser", ar: "السيارات أفضل", correct: false, explanation: "لا — الحلقة تقول: «Die Politik muss etwas ändern.»." },
+          { text: "Man muss gar nichts ändern", ar: "لا يجب تغيير أي شيء", correct: false, explanation: "لا — الحلقة تقول: «Die Politik muss etwas ändern.»." },
+          { text: "Autos sind viel besser als die Bahn", ar: "السيارات أفضل", correct: false, explanation: "لا — الحلقة تقول: «Die Politik muss etwas ändern.»." },
         ],
       },
     ],
@@ -192,8 +192,8 @@ export const PODCASTS: PodcastEpisode[] = [
         ar: "ما ميزة العمل من المنزل؟",
         options: [
           { text: "Keine Zeit im Verkehr verlieren", ar: "عدم إضاعة وقت في الزحام", correct: true, explanation: "نعم — الحلقة تقول: «Ein Vorteil ist, dass man keine Zeit im Verkehr verliert.»." },
-          { text: "Mehr Kollegen sehen", ar: "رؤية زملاء أكثر", correct: false, explanation: "لا — الحلقة تقول: «Ein Vorteil ist, dass man keine Zeit im Verkehr verliert.»." },
-          { text: "Weniger arbeiten", ar: "عمل أقل", correct: false, explanation: "لا — الحلقة تقول: «Ein Vorteil ist, dass man keine Zeit im Verkehr verliert.»." },
+          { text: "Mehr Kollegen persönlich sehen", ar: "رؤية زملاء أكثر", correct: false, explanation: "لا — الحلقة تقول: «Ein Vorteil ist, dass man keine Zeit im Verkehr verliert.»." },
+          { text: "Weniger arbeiten bei gleichem Lohn", ar: "عمل أقل", correct: false, explanation: "لا — الحلقة تقول: «Ein Vorteil ist, dass man keine Zeit im Verkehr verliert.»." },
         ],
       },
       {
@@ -201,8 +201,8 @@ export const PODCASTS: PodcastEpisode[] = [
         ar: "ما الذي قد يصعب في العمل من المنزل؟",
         options: [
           { text: "Die Grenze zwischen Arbeit und Freizeit", ar: "الحد بين العمل والفراغ", correct: true, explanation: "نعم — الحلقة تقول: «Und die Grenze zwischen Arbeit und Freizeit wird schwer.»." },
-          { text: "Der Weg zur Arbeit", ar: "الطريق إلى العمل", correct: false, explanation: "لا — الحلقة تقول: «Und die Grenze zwischen Arbeit und Freizeit wird schwer.»." },
-          { text: "Die Kollegen", ar: "الزملاء", correct: false, explanation: "لا — الحلقة تقول: «Und die Grenze zwischen Arbeit und Freizeit wird schwer.»." },
+          { text: "Der tägliche Weg zur Arbeit im Stau", ar: "الطريق إلى العمل", correct: false, explanation: "لا — الحلقة تقول: «Und die Grenze zwischen Arbeit und Freizeit wird schwer.»." },
+          { text: "Die Kollegen im eigenen Team", ar: "الزملاء", correct: false, explanation: "لا — الحلقة تقول: «Und die Grenze zwischen Arbeit und Freizeit wird schwer.»." },
         ],
       }
     ],
@@ -231,8 +231,8 @@ export const PODCASTS: PodcastEpisode[] = [
         ar: "مماذا يحذر النقاد؟",
         options: [
           { text: "Vor Datenschutzproblemen und Isolation", ar: "من مشاكل حماية البيانات والعزلة", correct: true, explanation: "نعم — الحلقة تقول: «Kritiker hingegen warnen vor Datenschutzproblemen und sozialer Isolation.»." },
-          { text: "Vor zu viel Bewegung", ar: "من الحركة الزائدة", correct: false, explanation: "لا — الحلقة تقول: «Kritiker hingegen warnen vor Datenschutzproblemen und sozialer Isolation.»." },
-          { text: "Vor schlechtem Wetter", ar: "من سوء الطقس", correct: false, explanation: "لا — الحلقة تقول: «Kritiker hingegen warnen vor Datenschutzproblemen und sozialer Isolation.»." },
+          { text: "Vor zu viel Bewegung im Alltag", ar: "من الحركة الزائدة", correct: false, explanation: "لا — الحلقة تقول: «Kritiker hingegen warnen vor Datenschutzproblemen und sozialer Isolation.»." },
+          { text: "Vor schlechtem Wetter im Winter", ar: "من سوء الطقس", correct: false, explanation: "لا — الحلقة تقول: «Kritiker hingegen warnen vor Datenschutzproblemen und sozialer Isolation.»." },
         ],
       },
     ],
@@ -251,8 +251,8 @@ export const PODCASTS: PodcastEpisode[] = [
         ar: "ما الفرصة التي تقدمها العولمة؟",
         options: [
           { text: "Freieren Handel und kulturellen Austausch", ar: "تجارة حرة وتبادلاً ثقافياً", correct: true, explanation: "نعم — الحلقة تقول: «Die Globalisierung bietet zweifellos wirtschaftliche Chancen: freieren Handel und kulturellen Austausch.»." },
-          { text: "Weniger Reisen", ar: "سفراً أقل", correct: false, explanation: "لا — الحلقة تقول: «Die Globalisierung bietet zweifellos wirtschaftliche Chancen: freieren Handel und kulturellen Austausch.»." },
-          { text: "Keine Veränderungen", ar: "لا تغييرات", correct: false, explanation: "لا — الحلقة تقول: «Die Globalisierung bietet zweifellos wirtschaftliche Chancen: freieren Handel und kulturellen Austausch.»." },
+          { text: "Weniger Reisen und weniger Kontakt", ar: "سفراً أقل", correct: false, explanation: "لا — الحلقة تقول: «Die Globalisierung bietet zweifellos wirtschaftliche Chancen: freieren Handel und kulturellen Austausch.»." },
+          { text: "Keine Veränderungen im Alltag", ar: "لا تغييرات", correct: false, explanation: "لا — الحلقة تقول: «Die Globalisierung bietet zweifellos wirtschaftliche Chancen: freieren Handel und kulturellen Austausch.»." },
         ],
       },
       {
@@ -260,8 +260,8 @@ export const PODCASTS: PodcastEpisode[] = [
         ar: "في ماذا يختلف الخبراء؟",
         options: [
           { text: "Ob die Vorteile die Nachteile überwiegen", ar: "هل تفوق المزايا العيوب", correct: true, explanation: "نعم — الحلقة تقول: «Experten sind sich uneinig, ob die Vorteile die Nachteile überwiegen.»." },
-          { text: "Ob es Globalisierung gibt", ar: "هل توجد عولمة", correct: false, explanation: "لا — الحلقة تقول: «Experten sind sich uneinig, ob die Vorteile die Nachteile überwiegen.»." },
-          { text: "Ob Handel legal ist", ar: "هل التجارة قانونية", correct: false, explanation: "لا — الحلقة تقول: «Experten sind sich uneinig, ob die Vorteile die Nachteile überwiegen.»." },
+          { text: "Ob es die Globalisierung überhaupt gibt", ar: "هل توجد عولمة", correct: false, explanation: "لا — الحلقة تقول: «Experten sind sich uneinig, ob die Vorteile die Nachteile überwiegen.»." },
+          { text: "Ob der internationale Handel legal ist", ar: "هل التجارة قانونية", correct: false, explanation: "لا — الحلقة تقول: «Experten sind sich uneinig, ob die Vorteile die Nachteile überwiegen.»." },
         ],
       }
     ],
@@ -290,8 +290,8 @@ export const PODCASTS: PodcastEpisode[] = [
         ar: "ماذا يفعل الأصدقاء بعد الظهر؟",
         options: [
           { text: "Sie essen Kuchen und spielen", ar: "يأكلون الكعك ويلعبون", correct: true, explanation: "نعم — الحلقة تقول: «Sie essen Kuchen und spielen im Garten.»." },
-          { text: "Sie schlafen", ar: "ينامون", correct: false, explanation: "لا — الحلقة تقول: «Sie essen Kuchen und spielen im Garten.»." },
-          { text: "Sie lernen Deutsch", ar: "يتعلمون الألمانية", correct: false, explanation: "لا — الحلقة تقول: «Sie essen Kuchen und spielen im Garten.»." },
+          { text: "Sie schlafen lange und ruhen sich aus", ar: "ينامون", correct: false, explanation: "لا — الحلقة تقول: «Sie essen Kuchen und spielen im Garten.»." },
+          { text: "Sie lernen zusammen Deutsch", ar: "يتعلمون الألمانية", correct: false, explanation: "لا — الحلقة تقول: «Sie essen Kuchen und spielen im Garten.»." },
         ],
       },
     ],
@@ -341,8 +341,8 @@ export const PODCASTS: PodcastEpisode[] = [
         ar: "ما ميزة السفر؟",
         options: [
           { text: "Man lernt neue Kulturen kennen", ar: "تتعرف على ثقافات جديدة", correct: true, explanation: "نعم — الحلقة تقول: «Reisen hat viele Vorteile: Man lernt neue Kulturen kennen und erholt sich.»." },
-          { text: "Man spart Geld", ar: "توفر المال", correct: false, explanation: "لا — الحلقة تقول: «Reisen hat viele Vorteile: Man lernt neue Kulturen kennen und erholt sich.»." },
-          { text: "Man schont die Umwelt", ar: "تحمي البيئة", correct: false, explanation: "لا — الحلقة تقول: «Reisen hat viele Vorteile: Man lernt neue Kulturen kennen und erholt sich.»." },
+          { text: "Man spart dabei viel Geld", ar: "توفر المال", correct: false, explanation: "لا — الحلقة تقول: «Reisen hat viele Vorteile: Man lernt neue Kulturen kennen und erholt sich.»." },
+          { text: "Man schont die Umwelt sehr", ar: "تحمي البيئة", correct: false, explanation: "لا — الحلقة تقول: «Reisen hat viele Vorteile: Man lernt neue Kulturen kennen und erholt sich.»." },
         ],
       },
       {
@@ -350,8 +350,8 @@ export const PODCASTS: PodcastEpisode[] = [
         ar: "لماذا يفضل البعض البقاء في البيت؟",
         options: [
           { text: "Reisen ist teuer und anstrengend", ar: "السفر مكلف ومتعب", correct: true, explanation: "نعم — الحلقة تقول: «Aber Reisen ist auch teuer und anstrengend.»." },
-          { text: "Sie mögen keine Ausflüge", ar: "لا يحبون الرحلات", correct: false, explanation: "لا — الحلقة تقول: «Aber Reisen ist auch teuer und anstrengend.»." },
-          { text: "Sie haben keine Freunde", ar: "ليس لديهم أصدقاء", correct: false, explanation: "لا — الحلقة تقول: «Aber Reisen ist auch teuer und anstrengend.»." },
+          { text: "Sie mögen keine langen Ausflüge", ar: "لا يحبون الرحلات", correct: false, explanation: "لا — الحلقة تقول: «Aber Reisen ist auch teuer und anstrengend.»." },
+          { text: "Sie haben keine Zeit für Freunde", ar: "ليس لديهم أصدقاء", correct: false, explanation: "لا — الحلقة تقول: «Aber Reisen ist auch teuer und anstrengend.»." },
         ],
       },
     ],
@@ -371,8 +371,8 @@ export const PODCASTS: PodcastEpisode[] = [
         ar: "بماذا يؤكد المؤيدون؟",
         options: [
           { text: "KI übernimmt Routineaufgaben", ar: "الذكاء الاصطناعي يتولى المهام الروتينية", correct: true, explanation: "نعم — الحلقة تقول: «KI Routineaufgaben übernimmt und die Produktivität steigert.»." },
-          { text: "KI ist zu gefährlich", ar: "الذكاء الاصطناعي خطير جداً", correct: false, explanation: "لا — الحلقة تقول: «KI Routineaufgaben übernimmt und die Produktivität steigert.»." },
-          { text: "Man soll KI verbieten", ar: "يجب منع الذكاء الاصطناعي", correct: false, explanation: "لا — الحلقة تقول: «KI Routineaufgaben übernimmt und die Produktivität steigert.»." },
+          { text: "KI ist viel zu gefährlich für alle", ar: "الذكاء الاصطناعي خطير جداً", correct: false, explanation: "لا — الحلقة تقول: «KI Routineaufgaben übernimmt und die Produktivität steigert.»." },
+          { text: "Man sollte KI ganz verbieten", ar: "يجب منع الذكاء الاصطناعي", correct: false, explanation: "لا — الحلقة تقول: «KI Routineaufgaben übernimmt und die Produktivität steigert.»." },
         ],
       },
       {
@@ -380,8 +380,8 @@ export const PODCASTS: PodcastEpisode[] = [
         ar: "بماذا يوصي الخبراء؟",
         options: [
           { text: "KI nutzen und menschliche Kontrolle behalten", ar: "استخدام الذكاء الاصطناعي مع الحفاظ على السيطرة البشرية", correct: true, explanation: "نعم — الحلقة تقول: «Man sollte die Technologie nutzen, ohne die menschliche Kontrolle aufzugeben.»." },
-          { text: "Alle Arbeit der KI überlassen", ar: "ترك كل العمل للذكاء الاصطناعي", correct: false, explanation: "لا — الحلقة تقول: «Man sollte die Technologie nutzen, ohne die menschliche Kontrolle aufzugeben.»." },
-          { text: "Keine Technologie benutzen", ar: "عدم استخدام أي تقنية", correct: false, explanation: "لا — الحلقة تقول: «Man sollte die Technologie nutzen, ohne die menschliche Kontrolle aufzugeben.»." },
+          { text: "Alle Arbeit der KI vollständig überlassen", ar: "ترك كل العمل للذكاء الاصطناعي", correct: false, explanation: "لا — الحلقة تقول: «Man sollte die Technologie nutzen, ohne die menschliche Kontrolle aufzugeben.»." },
+          { text: "Gar keine Technologie mehr benutzen", ar: "عدم استخدام أي تقنية", correct: false, explanation: "لا — الحلقة تقول: «Man sollte die Technologie nutzen, ohne die menschliche Kontrolle aufzugeben.»." },
         ],
       },
     ],
@@ -410,8 +410,8 @@ export const PODCASTS: PodcastEpisode[] = [
         ar: "بماذا يطالب الخبراء؟",
         options: [
           { text: "Günstigere gesunde Alternativen", ar: "بدائل صحية أرخص", correct: true, explanation: "نعم — الحلقة تقول: «Deshalb fordern Experten günstigere gesunde Alternativen in Supermärkten.»." },
-          { text: "Teurere Produkte", ar: "منتجات أغلى", correct: false, explanation: "لا — الحلقة تقول: «Deshalb fordern Experten günstigere gesunde Alternativen in Supermärkten.»." },
-          { text: "Weniger frische Zutaten", ar: "مكونات طازجة أقل", correct: false, explanation: "لا — الحلقة تقول: «Deshalb fordern Experten günstigere gesunde Alternativen in Supermärkten.»." },
+          { text: "Teurere Produkte in allen Läden", ar: "منتجات أغلى", correct: false, explanation: "لا — الحلقة تقول: «Deshalb fordern Experten günstigere gesunde Alternativen in Supermärkten.»." },
+          { text: "Weniger frische Zutaten im Angebot", ar: "مكونات طازجة أقل", correct: false, explanation: "لا — الحلقة تقول: «Deshalb fordern Experten günstigere gesunde Alternativen in Supermärkten.»." },
         ],
       },
     ],
@@ -428,13 +428,13 @@ export const PODCASTS: PodcastEpisode[] = [
     questions: [
       { de: "Wie viele Geschwister hat der Sprecher?", ar: "كم أخاً وأختاً للمتحدث؟", options: [
         { text: "Einen Bruder und eine Schwester", ar: "أخاً وأختاً", correct: true, explanation: "نعم — «Ich habe einen Bruder und eine Schwester»." },
-        { text: "Zwei Brüder", ar: "أخوين", correct: false, explanation: "لا — أخ واحد وأخت واحدة." },
-        { text: "Keine Geschwister", ar: "لا إخوة", correct: false, explanation: "لا — لديه أخ وأخت." },
+        { text: "Zwei Brüder, aber keine Schwester", ar: "أخوين", correct: false, explanation: "لا — أخ واحد وأخت واحدة." },
+        { text: "Keine Geschwister in der Familie", ar: "لا إخوة", correct: false, explanation: "لا — لديه أخ وأخت." },
       ]},
       { de: "Wo wohnt die Familie?", ar: "أين تسكن العائلة؟", options: [
         { text: "In einem Haus mit Garten", ar: "في بيت فيه حديقة", correct: true, explanation: "نعم — الحلقة تقول: «Wir wohnen in einem Haus mit Garten.»." },
-        { text: "In einer Wohnung", ar: "في شقة", correct: false, explanation: "لا — بيت مع حديقة." },
-        { text: "In einem Hotel", ar: "في فندق", correct: false, explanation: "لا — بيت العائلة." },
+        { text: "In einer kleinen Wohnung", ar: "في شقة", correct: false, explanation: "لا — بيت مع حديقة." },
+        { text: "In einem Hotel am Meer", ar: "في فندق", correct: false, explanation: "لا — بيت العائلة." },
       ]},
     ],
   },
@@ -477,8 +477,8 @@ export const PODCASTS: PodcastEpisode[] = [
       ]},
       { de: "Was ist ein Beispiel für eine kleine Änderung?", ar: "ما مثال على تغيير صغير؟", options: [
         { text: "Die Treppe statt des Aufzugs nehmen", ar: "أخذ الدرج بدل المصعد", correct: true, explanation: "نعم — الحلقة تقول: «Zum Beispiel die Treppe statt des Aufzugs zu nehmen.»." },
-        { text: "Mehr Auto fahren", ar: "قيادة السيارة أكثر", correct: false, explanation: "لا — عكس النصيحة." },
-        { text: "Mehr Fastfood essen", ar: "أكل وجبات سريعة أكثر", correct: false, explanation: "لا — عكس النصيحة." },
+        { text: "Öfter mit dem Auto fahren", ar: "قيادة السيارة أكثر", correct: false, explanation: "لا — عكس النصيحة." },
+        { text: "Mehr Fastfood am Abend essen", ar: "أكل وجبات سريعة أكثر", correct: false, explanation: "لا — عكس النصيحة." },
       ]},
     ],
   },
@@ -494,13 +494,13 @@ export const PODCASTS: PodcastEpisode[] = [
     questions: [
       { de: "Worüber klagen viele Arbeitnehmer?", ar: "ممَّ يشكو كثير من الموظفين؟", options: [
         { text: "Über Überstunden und ständige Erreichbarkeit", ar: "من الساعات الإضافية والاتصال الدائم", correct: true, explanation: "نعم — الحلقة تقول: «Viele Arbeitnehmer klagen über Überstunden und ständige Erreichbarkeit.»." },
-        { text: "Über zu viel Urlaub", ar: "من الإجازات الكثيرة", correct: false, explanation: "لا — عكس الواقع." },
-        { text: "Über zu wenig Arbeit", ar: "من قلة العمل", correct: false, explanation: "لا — من كثرة العمل." },
+        { text: "Über zu viel Urlaub und zu freie Tage", ar: "من الإجازات الكثيرة", correct: false, explanation: "لا — عكس الواقع." },
+        { text: "Über zu wenig Arbeit und Langeweile", ar: "من قلة العمل", correct: false, explanation: "لا — من كثرة العمل." },
       ]},
       { de: "Wie reagieren Unternehmen?", ar: "كيف تستجيب الشركات؟", options: [
         { text: "Mit flexiblen Arbeitszeiten", ar: "بساعات عمل مرنة", correct: true, explanation: "نعم — الحلقة تقول: «Unternehmen reagieren mit flexiblen Arbeitszeiten.»." },
-        { text: "Mit mehr Überstunden", ar: "بمزيد من الساعات الإضافية", correct: false, explanation: "لا — العكس." },
-        { text: "Mit weniger Lohn", ar: "برواتب أقل", correct: false, explanation: "لا — لا علاقة." },
+        { text: "Mit noch mehr Überstunden", ar: "بمزيد من الساعات الإضافية", correct: false, explanation: "لا — العكس." },
+        { text: "Mit deutlich weniger Lohn", ar: "برواتب أقل", correct: false, explanation: "لا — لا علاقة." },
       ]},
     ],
   },
@@ -542,7 +542,7 @@ export const PODCASTS: PodcastEpisode[] = [
         { text: "Es ist unmöglich", ar: "إنه مستحيل", correct: false, explanation: "لا — ممكن بالتدرب." },
       ]},
       { de: "Was ist der beste Weg?", ar: "ما أفضل طريقة؟", options: [
-        { text: "Regelmäßig üben", ar: "التدرب بانتظام", correct: true, explanation: "نعم — الحلقة تقول: «Der beste Weg ist, regelmäßig zu üben.»." },
+        { text: "Regelmäßig und viel üben", ar: "التدرب بانتظام", correct: true, explanation: "نعم — الحلقة تقول: «Der beste Weg ist, regelmäßig zu üben.»." },
         { text: "Nur Grammatik lernen", ar: "تعلم القواعد فقط", correct: false, explanation: "لا — التدرب والاستخدام." },
         { text: "Keine Fehler machen wollen", ar: "عدم الرغبة في الخطأ", correct: false, explanation: "لا — الأخطاء جزء من التعلم." },
       ]},

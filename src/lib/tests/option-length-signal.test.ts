@@ -11,6 +11,7 @@ import {
   longestGap,
   MAX_UNIQUE_LONGEST_PCT,
   MIN_SIGNAL_LENGTH,
+  resolveChoice,
   optionLengths,
   shortestGap,
   uniqueLongestPct,
@@ -24,6 +25,8 @@ import { B2_LESEN } from "@/data/exams/b2-lesen";
 import { B2_LESEN_B } from "@/data/exams/b2-lesen-b";
 import { B2_LESEN_C } from "@/data/exams/b2-lesen-c";
 import { RAW_TEST_BANK } from "@/data/tests/question-banks";
+import { PODCASTS } from "@/data/podcasts";
+import { DAILY_DIALOGUES } from "@/data/dialogues";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -139,6 +142,38 @@ describe("وحدة قياس إشارة الطول — سلوك الدوال نف
     expect(describeOffender(qs[1], "bank")).toContain("a1-l2");
   });
 
+  it("resolveChoice يفهم شكليّ الخيارات: فهرس رقمي ووسم بوليني", () => {
+    // الشكل 1 — امتحانات وبنك الأسئلة
+    expect(resolveChoice(["a", "bb", "ccc"], { correct: 2 })).toEqual({ options: ["a", "bb", "ccc"], correct: 2 });
+    expect(resolveChoice(["a", "bb"], { correctIndex: 0 })?.correct).toBe(0);
+    // الشكل 2 — حوارات وبودكاست: الوسم داخل الخيار
+    const flagged = [
+      { text: "Thomas", correct: false },
+      { text: "Berlin", correct: true },
+    ];
+    expect(resolveChoice(flagged)).toEqual({ options: ["Thomas", "Berlin"], correct: 1 });
+    // أشكال غير صالحة ⇒ null (لا تخمين)
+    expect(resolveChoice(["a"], { correct: 0 })).toBeNull(); // خيار واحد
+    expect(resolveChoice(["a", "b"], {})).toBeNull(); // لا مفتاح
+    expect(resolveChoice(["a", ""], { correct: 0 })).toBeNull(); // خيار فارغ
+    expect(resolveChoice([{ de: "x" }, { de: "y" }], { correct: 1 })?.options).toEqual(["x", "y"]);
+  });
+
+  it("الماشي يجمع الشكل البوليني المتداخل (كان خارج القياس تماماً)", () => {
+    const corpus = [
+      { id: "dlg-1", questions: [{ de: "Woher kommt Sara?", options: [
+        { text: "Aus Tunesien", correct: true }, { text: "Aus Frankreich", correct: false },
+      ] }] },
+    ];
+    const qs = collectChoiceQuestions(corpus);
+    expect(qs).toHaveLength(1);
+    expect(qs[0].id).toBe("dlg-1");
+    expect(qs[0].correct).toBe(0);
+    // «Aus Frankreich» (المشتّتة) أطول ⇒ الصحيحة وحدها **الأقصر** — الإشارة المعاكسة
+    expect(isUniqueLongest(qs[0])).toBe(false);
+    expect(isUniqueShortest(qs[0])).toBe(true);
+  });
+
   it("optionLengths تقيس ما يراه المتعلم (بلا مسافات زائدة)", () => {
     expect(optionLengths(q(["  ab  ", "abc"], 0))).toEqual([2, 3]);
     expect(uniqueLongestPct([])).toBe(0);
@@ -188,6 +223,91 @@ describe("امتحانات A1/A2/B1/B2 — صفر تسرّب بطول الخيا
     const shortestPct = Math.round((qs.filter(isUniqueShortest).length / qs.length) * 100);
     expect(shortestPct, `الأطول ${longestPct}% مقابل الأقصر ${shortestPct}%`).toBeLessThanOrEqual(longestPct);
     expect(shortestPct).toBeLessThanOrEqual(MAX_UNIQUE_LONGEST_PCT);
+  });
+});
+
+/**
+ * سقّاطات الحوارات لكل مستوى (قياس 2026-10-17 بعد إصلاح A1 والبودكاست):
+ * A1 صُفّرت (كانت 9)، والبقية مؤجّلة بأرقامها — **لا تزيد أبداً** وتنقص كلما أُصلح.
+ * سبب التأجيل حجمي لا منهجي: 56 سؤالاً تحتاج تحرير مشتّتات دقيقة المعنى
+ * (كل مشتّت يجب أن يبقى خاطئاً وممكن التصديق في سياق الحوار).
+ */
+const DIALOGUE_RATCHETS: Record<string, number> = { A1: 0, A2: 16, B1: 24, B2: 16 };
+
+describe("حوارات وبودكاست — الشكل البوليني داخل القياس", () => {
+  const dialogueLevels = ["A1", "A2", "B1", "B2"] as const;
+
+  it("بوابة حراسة الحارس: كل كوربوس يُجمع فعلاً (لا صفر صامت)", () => {
+    // درس هذه الدفعة: مسبار استورد `DIALOGUES_A1` (اسم غير موجود) فأبلغ
+    // «0 سؤالاً · 0 مخالفة» ومرّ — صفرٌ صامت على 182 سؤالاً. لذلك يُشترط
+    // عدد غير صفري لكل كوربوس ولكل مستوى.
+    expect(PODCASTS.length).toBeGreaterThanOrEqual(20);
+    expect(collectChoiceQuestions(PODCASTS).length).toBeGreaterThanOrEqual(40);
+    expect(DAILY_DIALOGUES.length).toBeGreaterThanOrEqual(60);
+    for (const lvl of dialogueLevels) {
+      const ds = DAILY_DIALOGUES.filter((d) => String(d.level) === lvl);
+      expect(ds.length, `حوارات ${lvl}`).toBeGreaterThanOrEqual(15);
+      expect(collectChoiceQuestions(ds).length, `أسئلة حوارات ${lvl}`).toBeGreaterThanOrEqual(40);
+    }
+  });
+
+  it("البودكاست: صفر مخالفات (كان 21/40 و74% «الأطول وحيداً»)", () => {
+    const qs = collectChoiceQuestions(PODCASTS);
+    const offenders = lengthSignalOffenders(qs).map((q) => describeOffender(q, "podcasts"));
+    expect(offenders, `تسرّب في أسئلة البودكاست: ${offenders.slice(0, 6).join(" · ")}`).toEqual([]);
+    expect(uniqueLongestPct(qs.filter(isMeasurable))).toBeLessThanOrEqual(55);
+  });
+
+  it("لا خيار فيه علامة استفهام، ولا خيار يحوي خياراً آخر", () => {
+    /**
+     * عيبان كشفهما هذا التدقيق في `a1-04-familie`: خيار «Ärztin? Nein, Köchin» —
+     * تعليق يحمل السؤال وجوابين معاً (يسرّب الصحيحة ويكسر شكل القائمة).
+     *
+     * قاعدتان، والثانية **بحرفية وحدود كلمة** عن قصد: المطابقة غير الحرفية
+     * (case-insensitive) أعطت إيجابية كاذبة — «Keinen Bruder» «يحوي» «einen Bruder»
+     * بالصرف الألماني لا بالتسريب. حدود الكلمة تمنع ذلك وتُبقي العيب الحقيقي.
+     */
+    const nested = (texts: string[]): string[] => {
+      const bad: string[] = [];
+      texts.forEach((outer, i) => {
+        if (!outer) return;
+        if (/[?؟]/.test(outer)) bad.push(`«${outer}» فيه علامة استفهام`);
+        texts.forEach((inner, j) => {
+          if (i === j || !inner) return;
+          const re = new RegExp(`(^|\\W)${inner.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(\\W|$)`);
+          if (re.test(outer)) bad.push(`«${outer}» يحوي «${inner}»`);
+        });
+      });
+      return bad;
+    };
+
+    const bad: string[] = [];
+    for (const d of DAILY_DIALOGUES) {
+      for (const q of (d.questions ?? []) as { options?: { text?: string }[] }[]) {
+        nested((q.options ?? []).map((o) => o.text ?? "")).forEach((m) => bad.push(`${d.id}: ${m}`));
+      }
+    }
+    for (const ep of PODCASTS) {
+      for (const q of ep.questions) {
+        nested(q.options.map((o) => o.text)).forEach((m) => bad.push(`${ep.id}: ${m}`));
+      }
+    }
+    expect(bad, `خيارات معيبة: ${bad.slice(0, 6).join(" · ")}`).toEqual([]);
+  });
+
+  it(`مخالفات الحوارات لكل مستوى ≤ سقّاطتها ${JSON.stringify(DIALOGUE_RATCHETS)}`, () => {
+    for (const lvl of dialogueLevels) {
+      const ds = DAILY_DIALOGUES.filter((d) => String(d.level) === lvl);
+      const qs = collectChoiceQuestions(ds);
+      const offenders = lengthSignalOffenders(qs);
+      expect(
+        offenders.length,
+        `${lvl}: زادت مخالفات الطول إلى ${offenders.length} (السقف ${DIALOGUE_RATCHETS[lvl]}) — أمثلة: ${offenders
+          .slice(0, 4)
+          .map((q) => describeOffender(q, lvl))
+          .join(" · ")}`,
+      ).toBeLessThanOrEqual(DIALOGUE_RATCHETS[lvl]);
+    }
   });
 });
 

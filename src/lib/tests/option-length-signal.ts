@@ -74,18 +74,50 @@ function walk(node: unknown, out: ChoiceQuestion[], depth: number, ancestors: st
    * السؤال معرّفات أسلافه — فتصير «a1-l2/q3» بدل «?».
    */
   const path = typeof o.id === "string" && o.id ? [...ancestors, o.id] : ancestors;
-  const ci =
-    typeof o.correct === "number" ? o.correct : typeof o.correctIndex === "number" ? o.correctIndex : -1;
-  if (Array.isArray(o.options) && o.options.length >= 2 && ci >= 0 && ci < o.options.length) {
-    out.push({
-      id: path.length ? path.join("/") : "?",
-      options: (o.options as Array<string | { text?: string; de?: string }>).map((x) =>
-        typeof x === "string" ? x : (x.text ?? x.de ?? ""),
-      ),
-      correct: ci,
-    });
+  if (Array.isArray(o.options) && o.options.length >= 2) {
+    const resolved = resolveChoice(o.options, o);
+    if (resolved) {
+      out.push({ id: path.length ? path.join("/") : "?", options: resolved.options, correct: resolved.correct });
+    }
   }
   for (const value of Object.values(o)) walk(value, out, depth + 1, path);
+}
+
+/**
+ * يحلّ **شكليّ الخيارات** المستعملين في المستودع:
+ *  1) فهرس رقمي على السؤال: `options: string[]` + `correct`/`correctIndex`.
+ *  2) وسم داخل الخيار: `options: {text|de, correct: boolean}[]` (الحوارات والبودكاست).
+ *
+ * الشكل الثاني كان **خارج القياس تماماً** — ماشٍ يعتمد الفهرس الرقمي وحده يتخطّاه
+ * بصمت، فيمرّ تدقيق «تسرّب الطول» على 4 مستويات حوارات و20 حلقة بودكاست (40 سؤالاً)
+ * بلا سؤال واحد مقيس. أي حارس يقرأ شكلاً واحداً يخدع نفسه بعدد ما يقيسه.
+ */
+export function resolveChoice(
+  options: unknown[],
+  question?: Record<string, unknown>,
+): { options: string[]; correct: number } | null {
+  if (options.length < 2) return null; // «اختيار» بخيار واحد ليس اختياراً
+  const texts = options.map((x) =>
+    typeof x === "string" ? x : String(((x as { text?: string; de?: string })?.text ?? (x as { de?: string })?.de ?? "") || ""),
+  );
+  if (texts.some((t) => !t)) return null;
+
+  // الشكل 2: وسم `correct: true` داخل الخيار نفسه
+  const flagged = options.findIndex(
+    (x) => typeof x === "object" && x !== null && (x as { correct?: unknown }).correct === true,
+  );
+  if (flagged >= 0) return { options: texts, correct: flagged };
+
+  // الشكل 1: فهرس رقمي على السؤال
+  const ci = question
+    ? typeof question.correct === "number"
+      ? question.correct
+      : typeof question.correctIndex === "number"
+        ? question.correctIndex
+        : -1
+    : -1;
+  if (ci >= 0 && ci < texts.length) return { options: texts, correct: ci };
+  return null;
 }
 
 /** أطوال الخيارات بعد trim (الطول الظاهر للمتعلم) */
