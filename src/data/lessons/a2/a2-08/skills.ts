@@ -48,6 +48,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "يذكر النص سببين مرتبطين بالخطة: القطار أسرع في هذا المثال، ويريدان الوصول مبكراً إلى الشاطئ. لا يقول إن التذكرة مجانية أو إن الحافلة لا تعمل.",
         errorType: "comprehension",
         paragraph: 1,
+        optionExplanations: [
+          undefined,
+          "لم تُذكر مجانية التذكرة «für alle Studenten kostenlos»؛ السببان السرعة والوصول المبكر.",
+          "لم يقل النص إن الحافلة تتوقف «fährt am ganzen Wochenende überhaupt nicht».",
+          "بريمن «Bremen» محطة تبديل في الرحلة، لا مكاناً للبقاء والاستراحة. ",
+        ],
       },
       {
         id: "rq2",
@@ -60,6 +66,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "يصرّح النص بأن التذكرة أغلى بخمسة يورو في المثال الخيالي؛ لا تستنتج من ذلك أسعاراً حقيقية.",
         errorType: "comprehension",
         paragraph: 1,
+        optionExplanations: [
+          undefined,
+          "ليست يوروَين «Zwei Euro»؛ الفرق المذكور في القصة خمسة.",
+          "عشرة يورو «Zehn Euro» ضعف المذكور في النص.",
+          "عشرون يورو «Zwanzig Euro» لا سند لها في القصة. ",
+        ],
       },
       {
         id: "rq3",
@@ -72,6 +84,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "تذكر الفقرة الثانية أن التبديل مرة واحدة يكون في بريمن. المدن الأخرى غير مذكورة كمحطة تبديل.",
         errorType: "comprehension",
         paragraph: 2,
+        optionExplanations: [
+          undefined,
+          "برلين «In Berlin» لم تُذكر محطة تبديل في الفقرة.",
+          "لم يُذكر التبديل في هامبورغ «In Hamburg».",
+          "ميونخ «In München» ليست في خطة هذه الرحلة. ",
+        ],
       },
       {
         id: "rq4",
@@ -89,6 +107,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "نفدت تذاكر القطار لرحلة العودة، لذلك يستقلان آخر حافلة؛ لا يقول النص إنهما استقلا سيارة أجرة أو بقيا هناك.",
         errorType: "comprehension",
         paragraph: 3,
+        optionExplanations: [
+          undefined,
+          "تذاكر القطار نفدت في رحلة العودة، فلم يرجعا «Mit dem ersten Zug».",
+          "لم تُذكر سيارة أجرة «Mit einem Taxi» في النص.",
+          "لم يبقيا عند البحر «Sie bleiben am Meer»؛ عادا مساءً. ",
+        ],
       },
       {
         id: "rq5",
@@ -106,6 +130,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "في الخاتمة يتفقان على مقارنة الجداول ثم اتخاذ القرار معاً؛ لا يحددان وسيلة الرحلة القادمة قبل المقارنة.",
         errorType: "comprehension",
         paragraph: 4,
+        optionExplanations: [
+          undefined,
+          "عكس الخاتمة: الاتفاق على «Fahrpläne vergleichen und dann gemeinsam entscheiden».",
+          "الحجز الفوري «sofort buchen, ohne die Fahrpläne anzusehen» يخالف ما اتفقا عليه.",
+          "لم يُذكر سفرٌ بالطائرة «mit dem Flugzeug in den Süden» في الخاتمة. ",
+        ],
       },
     ],
     redemittel: [
@@ -160,6 +190,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "يطلب سامي تذكرة ذهاب وعودة إلى ميونخ؛ لا يطلب تذكرة ذهاب فقط أو إلى مدينة أخرى.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "طلب «hin und zurück» لا تذكرةً باتجاه واحد «Eine einfache Fahrkarte».",
+          "الوجهة ميونخ «München» لا برلين «Berlin»، والنوع «hin und zurück».",
+          "النوع صحيح لكن المدينة خطأ: هامبورغ «Hamburg» لا ميونخ. ",
+        ],
       },
       {
         id: "q2",
@@ -172,6 +208,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "تقول الموظفة: *zehn Uhr fünfundzwanzig*، أي 10:25. الأوقات هنا أمثلة خيالية وليست موعداً حالياً.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "«zehn Uhr fünf» تعني 10:05، والمنطوق «zehn Uhr fünfundzwanzig» = 10:25.",
+          "الساعة المذكورة عشر «zehn» لا إحدى عشرة «elf».",
+          "ليست التاسعة «neun Uhr»؛ الدقيقة صحيحة والساعة لا. ",
+        ],
       },
       {
         id: "q3",
@@ -184,6 +226,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "يذكر كريم رأيه في المقارنة الحوارية ويقول إن الدراجة النارية هي الأسرع؛ لا يعمم النص ذلك على كل طريق.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "لم يقل كريم إن قطار الأنفاق «Die U-Bahn» الأسرع في هذه المقارنة.",
+          "الدراجة «Das Fahrrad» أبطأ في مقارنة كريم الحوارية.",
+          "الحافلة «Der Bus» ليست الأسرع في كلامه. ",
+        ],
       },
     ],
   };

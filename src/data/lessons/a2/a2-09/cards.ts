@@ -14,6 +14,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "Kind محايد مفرد، لذلك تكون أداة Dativ هي dem. في هذا المثال Das Geschenk هو الفاعل النحوي، وdem Kind هو الشخص الذي تعجبه الهدية.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«den» منصوب مذكر؛ و«gefallen» يأخذ Dativ، و«das Kind» محايد ⇒ «dem».",
+        "«der» مؤنث أو مرفوع؛ و«das Kind» محايد.",
+        "«die» مؤنث أو جمع؛ ولا تطابق «das Kind» في Dativ. ",
+      ],
     },
     {
       id: "m2",
@@ -24,6 +30,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "الشخص بعد danken في هذا التركيب يأتي في Dativ: dir؛ وfür die Blumen مجموعة أخرى في Akkusativ.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«dich» منصوب؛ و«danken» يأخذ Dativ ⇒ «dir».",
+        "«mir» للمتكلم؛ والمقصود هنا المخاطب «أنتَ».",
+        "«mich» منصوب للمتكلم؛ فالخطأ في الحالة وفي الشخص معاً. ",
+      ],
     },
     {
       id: "m3",

@@ -14,6 +14,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "مع مقارنة غير متساوية بين اللغتين نقول *schwerer als*. عبارة *Ich finde* تبيّن أن الصعوبة هنا رأي المتكلم.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«schwer» درجة أصلية؛ و«als» تستدعي «schwerer».",
+        "«am schwersten» أعلى درجة بين جماعة، لا مقارنة لغتين بـ«als».",
+        "«schwerste» صيغة منسوبة تحتاج تعريفاً («die schwerste Sprache»). ",
+      ],
     },
     {
       id: "m2",
@@ -24,6 +30,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "للتعبير عن أعلى درجة مع الفعل *rechnen* نستعمل الظرف التفضيلي *am besten*، وهو الشكل غير المنتظم من *gut*.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«besser» مقارنة بين طرفين؛ و«von allen in der Klasse» تستدعي «am besten».",
+        "«gut» بلا درجة؛ والمطلوب التفضيل من «gut → besser → am besten».",
+        "«beste» صيغة منسوبة («die beste Schülerin»)؛ والظرف هنا «am besten». ",
+      ],
     },
     {
       id: "m3",

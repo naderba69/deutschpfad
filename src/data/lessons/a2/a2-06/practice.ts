@@ -15,6 +15,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "الفاعل er مفرد غائب، لذلك تأتي صيغة الفعل kommt في نهاية الجملة التابعة.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«kommen» مصدرٌ أو صيغة جمع؛ والفاعل «er» ⇒ «kommt» في نهاية الجملة التابعة.",
+        "«kommst» مع du؛ والفاعل هنا «er».",
+        "«komme» مع ich؛ و«dass er heute …» يقتضي «kommt». ",
+      ],
     },
     {
       id: "e2",
@@ -28,6 +34,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "يقدّم dass هنا مضمون الرأي. أما das فليس أداة ربط، وweil يقدّم سبباً، وwenn يقدّم شرطاً أو زمناً بحسب السياق.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«das» اسم إشارة أو أداة تعريف، لا رابطٌ للجمل؛ والمطلوب «dass».",
+        "«weil» يقدّم سبباً؛ و«denken» يقدّم مضمون الرأي نفسه.",
+        "«wenn» شرطٌ أو زمن؛ والرأي هنا مضمونٌ خبري. ",
+      ],
     },
     {
       id: "e3",
@@ -109,6 +121,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "تعني Werbung الدعاية أو الإعلان في هذا السياق، وغالباً تستعمل اسماً غير معدود.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "الأخبار «die Nachrichten»، لا «die Werbung».",
+        "الصحيفة «die Zeitung»؛ و«die Werbung» ما يُنشر داخلها من إعلانات.",
+        "الرأي «die Meinung»، لا الإعلان. ",
+      ],
     },
     {
       id: "e9",
@@ -152,6 +170,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "Redaktion هي هيئة أو فريق التحرير؛ وفي نص القراءة تراجع Leyla الرسائل قبل نشرها.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "القراء «die Leser» جمهورٌ؛ و«die Redaktion» من يعدّ المواد ويراجعها.",
+        "البلدية «das Rathaus» مبنىً آخر غير هيئة التحرير.",
+        "مسار الدراجات «der Fahrradweg» خبرٌ في الصحيفة، لا جزءٌ من هيكلها. ",
+      ],
     },
     {
       id: "e12",

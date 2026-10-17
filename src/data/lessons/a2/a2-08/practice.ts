@@ -14,6 +14,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "الجملة تقارن بين وسيلتين ضمن مسار تدريبي، لذا تستعمل *schneller als*؛ لا تصف سرعة القطار على كل طريق.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«schnell» درجة أصلية؛ و«als» تستدعي المقارنة «schneller».",
+        "«am schnellsten» تفضيلٌ مطلق لا يقارن طرفين بـ«als».",
+        "«schnellen» صيغة منسوبة تحتاج اسماً بعدها؛ وهنا الخبر مع «ist». ",
+      ],
     },
     {
       id: "e2",
@@ -24,6 +30,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "في الصيغة الخبرية نقول *am schnellsten*. يحدد السؤال أنه مثال، لا ترتيب واقعي لكل وسائل النقل.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«schneller» مقارنة بين طرفين؛ والجملة تُفيد أعلى درجة بلا «als».",
+        "«schnell» بلا درجة؛ والمطلوب التفضيل «am schnellsten».",
+        "«schnellste» صيغة منسوبة («das schnellste Flugzeug»)؛ والخبر هنا «am schnellsten». ",
+      ],
     },
     {
       id: "e3",
@@ -97,6 +109,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "تستعمل العبارة *hin und zurück* بمعنى الذهاب والعودة؛ أما *einfach* فتدل على تذكرة باتجاه واحد في سؤال التذاكر هنا.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "الاتجاه الواحد «einfach» أو «nur Hinfahrt»، لا «hin und zurück».",
+        "المسار «die Strecke»؛ والعبارة نوع تذكرة لا مسار.",
+        "الوصول «die Ankunft»؛ والعبارة لا تدلّ على وقت. ",
+      ],
     },
     {
       id: "e9",
@@ -127,6 +145,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "يفصل السطر بين *Abfahrt* (08:15) و*Ankunft* (11:00). كل البيانات في جدول التدريب خيالية.",
       errorType: "comprehension",
+      optionExplanations: [
+        undefined,
+        "08:15 هي الانطلاق «Abfahrt»، لا الوصول «Ankunft».",
+        "لم يُذكر 10:30 في السطر؛ الوصول «11:00 Uhr».",
+        "الرقم المذكور في السطر «Ankunft 11:00 Uhr» لا «11:20 Uhr». ",
+      ],
     },
     {
       id: "e12",
@@ -147,6 +171,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "يأتي قالب المساواة *so + Positiv + wie*: *so schnell wie*. أما *schneller als* فهو نمط المقارنة غير المتساوية.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«als» يأتي بعد المقارنة غير المتساوية «schneller als»، لا بعد «so + Positiv».",
+        "«denn» تعليلٌ بترتيبٍ عادي؛ وقالب المساواة «so schnell wie».",
+        "«dann» تعاقبٌ زمني، لا أداة مساواة. ",
+      ],
     },
     {
       id: "e14",
@@ -163,6 +193,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "الفرق بين 17 و12 هو خمسة يورو؛ في هذا المثال وحده تكون رحلة الحافلة أقل كلفة. لا تمثل الأسعار تعرفة حقيقية.",
       errorType: "comprehension",
+      optionExplanations: [
+        undefined,
+        "عكس الحساب: 12 < 17 فالحافلة «billiger» لا «teurer».",
+        "ليستا متساويتين «kosten gleich viel»؛ الفرق 17 − 12 = fünf Euro.",
+        "القطار أغلى «teurer» لا أرخص «billiger»، والفرق «fünf Euro» لا اثنا عشر. ",
+      ],
     },
   ];
 

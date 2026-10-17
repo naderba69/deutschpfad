@@ -53,6 +53,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
           "في بداية القصة تريد لينا فتح حساب كي تدفع الإيجار كل شهر عن طريق التحويل؛ الخيارات الأخرى لا يذكرها النص.",
         errorType: "comprehension",
         paragraph: 1,
+        optionExplanations: [
+          undefined,
+          "لم تطلب العمل في البنك «bei der Bank als Mitarbeiterin arbeiten».",
+          "لم تُذكر رغبتها في صرف النقود يومياً «jeden Tag Geld … wechseln».",
+          "لم تُذكر بيع بطاقات مصرفية «Bankkarten … verkaufen». ",
+        ],
       },
       {
         id: "rq2",
@@ -71,6 +77,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
           "في الفقرة الثانية، النموذج B يتضمن بطاقة مصرفية ويكلف ثلاثة يورو شهرياً في المثال الخيالي فقط.",
         errorType: "comprehension",
         paragraph: 2,
+        optionExplanations: [
+          undefined,
+          "النموذج B **ببطاقة** «mit Bankkarte» والمبلغ شهري «pro Monat» لا سنوي «pro Jahr».",
+          "البطاقة المذكورة «Bankkarte» لا «Kreditkarte»، والمثال الخيالي ليس مجانياً «kostenlos».",
+          "بطاقةٌ واحدة لا اثنتان، والثمن مذكورٌ في النص «drei Euro pro Monat». ",
+        ],
       },
       {
         id: "rq3",
@@ -89,6 +101,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
           "تذكر الورقة رسماً محتملاً لخدمة أخرى من دون تحديد المبلغ؛ لذلك تضع لينا علامة على السطر كي تسأل لاحقاً عن المبلغ.",
         errorType: "comprehension",
         paragraph: 2,
+        optionExplanations: [
+          undefined,
+          "لم تُنتزع الورقة منها «die Übersicht weggenommen».",
+          "لم يُغلق الحساب «Das Konto ist schon geschlossen»؛ هي في طور فتحه.",
+          "لم تنسَ بطاقةً في الصراف «die Bankkarte im Geldautomaten vergessen». ",
+        ],
       },
       {
         id: "rq4",
@@ -107,6 +125,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
           "تقول لينا إنها ستقرر لاحقاً بعد قراءة المعلومات؛ الأسعار تخص القصة الخيالية فقط.",
         errorType: "comprehension",
         paragraph: 4,
+        optionExplanations: [
+          undefined,
+          "لم تفتح حسابين معاً «eröffnet sofort beide Konten zusammen».",
+          "لم تختر النموذج B، ولم يقل النص إنه مجاني «überall kostenlos».",
+          "لم يُذكر أخٌ ولا إغلاق حساب «ihr Bruder … das Konto schließen». ",
+        ],
       },
     ],
     redemittel: [
@@ -207,6 +231,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         explanation:
           "يقول سامي: Ich möchte ein Konto eröffnen؛ أي إنه يريد فتح حساب.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "لم يذكر شراء بيت «ein Haus kaufen».",
+          "دفع فاتورة نقداً «eine Rechnung bar bezahlen» طلبٌ آخر غير فتح الحساب.",
+          "السحب من الصراف «Geld am Automaten abheben» ليس طلبه؛ طلبه «ein Konto eröffnen». ",
+        ],
       },
       {
         id: "q2",
@@ -225,6 +255,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         explanation:
           "تقول الموظفة إن الرسوم واردة في ملخص المعلومات: Die Gebühren stehen in der Übersicht.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "ليست مطبوعة على البطاقة «auf seiner Bankkarte».",
+          "جواز السفر «der Pass» لا علاقة له بالرسوم «die Gebühren».",
+          "لم تُذكر على الصراف «am Geldautomaten»؛ قولها «Die Gebühren stehen in der Übersicht». ",
+        ],
       },
       {
         id: "q3",
@@ -243,6 +279,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         explanation:
           "يقول كريم: neben dem Eingang، أي بجانب المدخل.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "لم تُذكر المحطة «im Bahnhof» موقعاً للصراف.",
+          "ليس خلف المقهى «hinter dem Café»؛ قال كريم «neben dem Eingang».",
+          "ليس في مكتب كريم «im Büro von Karim». ",
+        ],
       },
       {
         id: "q4",
@@ -261,6 +303,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         explanation:
           "يطلب كريم المساعدة لأنه لا يفهم ما يظهر على شاشة الصراف.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "لم يفقد بطاقةً «seine Bankkarte am Schalter verloren».",
+          "لم يطلب إغلاق الحساب «sein Konto ganz schließen».",
+          "لم يضلّ عن المدخل «den Eingang zur Bank nicht finden»؛ مشكلته «die Anzeige am Automaten». ",
+        ],
       },
     ],
   };

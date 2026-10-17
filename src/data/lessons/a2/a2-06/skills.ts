@@ -91,6 +91,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "تذكر الجملة الأولى أن الصحيفة الصغيرة تصدر كل يوم جمعة، لا مرة واحدة في الشهر أو في فصل الصيف فقط.",
         errorType: "vocabulary",
+        optionExplanations: [
+          "لم يُذكر الاثنين «jeden Montag»؛ الصحيفة تصدر «jeden Freitag».",
+          undefined,
+          "ليست شهرية «einmal im Monat»؛ صدورها أسبوعي كل جمعة.",
+          "لم تُذكر موسمية «nur im Sommer» في النص. ",
+        ],
       },
       {
         id: "rq2",
@@ -109,6 +115,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "يرى بعض سكان المنطقة أن المسار آمن؛ ويقول النص إن آخرين يعتقدون أن هناك حاجة إلى مصابيح أكثر.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم يُذكر الثمن «zu teuer»؛ رأي بعضهم أن المسار «sicher».",
+          "لم يطالبوا بإغلاقه «dass der Weg geschlossen wird»؛ والنص يذكر طلب مصابيح أكثر.",
+          "بيع الصحيفة «eine Zeitung verkaufen» عمل ليلا، لا رأيٌ في مسار الدراجات. ",
+        ],
       },
       {
         id: "rq3",
@@ -127,6 +139,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "يمكن قراءة الصحيفة في المقهى أو تنزيلها مجاناً من الموقع الإلكتروني.",
         errorType: "vocabulary",
+        optionExplanations: [
+          "عكس النص: التنزيل «kostenlos herunterladen» لا شراءٌ غالٍ «teuer kaufen».",
+          undefined,
+          "لم يُذكر اتصالٌ بليلا «Leyla anrufen» شرطاً للحصول على الصحيفة.",
+          "ليست حصرية للمقهى «nur im Café erhältlich»؛ تُقرأ هناك وتُنزَّل من الموقع. ",
+        ],
       },
       {
         id: "rq4",
@@ -145,6 +163,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "يذكر النص أن ليلى تراجع كل خبر أولاً، ثم يظهر الخبر في الصحيفة؛ ولا يقول إنها تحذفه أو ترسله إلى المدينة أو تقرأه في الراديو.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم تحذف الأخبار «löscht jede Nachricht sofort»؛ تراجعها قبل النشر.",
+          "لم تُرسل الأخبار إلى المدينة «schickt … an die Stadt».",
+          "لم تُقرأ في الراديو «im Radio vorlesen»؛ العمل في صحيفة الحيّ. ",
+        ],
       },
     ],
     redemittel: [
@@ -248,6 +272,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         explanation:
           "يقول كريم إنه يعتقد أن في التلفاز إعلانات كثيرة جداً؛ ولا يذكر أن المسلسلات مملة أو أن الإنترنت بطيء.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم يصف المسلسلات بالملل «Die Serien sind langweilig»؛ شكواه «zu viel Werbung».",
+          "لم يذكر ثمن الصحيفة «Die Zeitung ist zu teuer» في كلامه عن التلفاز.",
+          "لم يشتكِ من بطء الإنترنت «Das Internet ist zu langsam». ",
+        ],
       },
       {
         id: "q2",
@@ -261,6 +291,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         explanation:
           "يقول كريم: Ich lese lieber Nachrichten im Internet، أي إنه يقرأ الأخبار على الإنترنت؛ ولا يقول إنه يقرأها في الصحيفة أو يشاهدها في التلفاز.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "عكس قوله «Ich lese lieber Nachrichten im Internet».",
+          "التلفاز للمشاهدة «fernsehen»؛ وهو قال إنه يقرأ في الإنترنت.",
+          "الراديو «Radio hören» استماعٌ لا قراءة «lesen». ",
+        ],
       },
       {
         id: "q3",
@@ -274,6 +310,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         explanation:
           "الصفة التي تستعملها آنا فعلاً هي interessant؛ ولا يذكر الحوار الصفات الأخرى.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم تقل آنا «langweilig»؛ الصفة التي استعملتها «interessant».",
+          "لم تُذكر الصفة «kurz» في الحوار.",
+          "لم تصف المقالات بـ«teuer». ",
+        ],
       },
     ],
   };

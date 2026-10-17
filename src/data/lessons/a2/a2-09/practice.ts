@@ -14,6 +14,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "helfen يطلب متمماً في Dativ؛ Vater مذكر مفرد، لذلك نقول dem Vater.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«den» منصوب؛ و«helfen» يأخذ Dativ ⇒ «dem Vater».",
+        "«der» مرفوع أو مؤنث؛ و«der Vater» مذكر في Dativ.",
+        "«das» محايد؛ و«der Vater» مذكر. ",
+      ],
     },
     {
       id: "e2",
@@ -24,6 +30,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "صاحبة الكتاب تأتي بعد gehören في Dativ؛ Mutter مؤنث، لذا die → der.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«dem» للمذكّر أو المحايد؛ و«die Mutter» مؤنث ⇒ «der Mutter».",
+        "«den» منصوب مذكر؛ و«gehören» يأخذ Dativ مؤنثاً هنا.",
+        "«die» مرفوع أو منصوب مؤنث؛ وفي Dativ تصير «der». ",
+      ],
     },
     {
       id: "e3",
@@ -94,6 +106,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "die Einladung هي الدعوة إلى زيارة أو مشاركة في مناسبة.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "الهدية «das Geschenk»، لا «die Einladung».",
+        "المناسبة «die Feier» أو «der Anlass».",
+        "التهنئة «die Glückwünsche»، لا الدعوة. ",
+      ],
     },
     {
       id: "e9",
@@ -138,6 +156,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "للتعبير عن وسيلة النقل نقول mit dem Zug؛ mit يحكم Dativ. أما für وohne وgegen فتطلب Akkusativ في تراكيبها المعتادة، فلا تلائم dem هنا.",
       errorType: "preposition",
+      optionExplanations: [
+        undefined,
+        "«für» تأخذ Akkusativ («für den Zug»)، فلا تلائم «dem Zug».",
+        "«ohne» تأخذ Akkusativ بمعنى بدون («ohne den Zug»).",
+        "«gegen» تأخذ Akkusativ («gegen den Baum») ولا تفيد الوسيلة «mit dem Zug». ",
+      ],
     },
     {
       id: "e13",

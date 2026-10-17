@@ -166,6 +166,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "2 + 3 = 5 = fünf (درس التسوق).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«vier» = 4؛ و«zwei plus drei» = 5 ⇒ «fünf».",
+        "«sechs» = 6؛ والمجموع «fünf».",
+        "«drei» = 3 وهو أحد حدَّي الجمع لا المجموع. ",
+      ],
     },
     {
       id: "r2",
@@ -176,6 +182,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "في هذا النمط، إذا كانت مدينة مثل Berlin هي الوجهة نقول عادةً *nach Berlin*. لا تعني الإجابة أن كل اسم جغرافي يأخذ *nach*؛ فالبلدان التي تأتي مع أداة لها تراكيب أخرى.",
       errorType: "preposition",
+      optionExplanations: [
+        undefined,
+        "«zu» تأخذ Dativ وتُستعمل لأشخاص وأماكن محدّدة («zum Bahnhof»)؛ والمدن تُدخل «nach».",
+        "«in» مع Akkusativ لدخول مكانٍ مغلق أو بلدٍ بأداة («in die Schweiz»)؛ و«Berlin» بلا أداة ⇒ «nach».",
+        "«aus» خروجٌ من المكان: «aus Berlin kommen»، لا وجهةً إليه. ",
+      ],
     },
     {
       id: "r3",

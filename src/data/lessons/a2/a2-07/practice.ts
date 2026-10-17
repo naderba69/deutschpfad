@@ -15,6 +15,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "Bank مؤنث، وبعد es gibt نستخدم صيغة Akkusativ: eine Bank. أما ein/einen فليسا صيغة هذا الاسم، وder لا يطابق التركيب.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«ein» للمحايد أو المرفوع؛ و«die Bank» مؤنث منصوب ⇒ «eine Bank».",
+        "«einen» للمذكر؛ و«die Bank» مؤنث.",
+        "«der» مرفوع مذكر؛ وبعد «es gibt» يأتي Akkusativ. ",
+      ],
     },
     {
       id: "e2",
@@ -26,6 +32,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "Park اسم مذكر مفرد؛ النفي غير المحدد في Akkusativ هو keinen Park. keine تلائم مثلاً جمعاً أو مؤنثاً، وnicht لا تحل محل أداة النفي هنا.",
       errorType: "negation",
+      optionExplanations: [
+        undefined,
+        "«kein» صيغة المرفوع أو المحايد؛ و«der Park» مذكر منصوب ⇒ «keinen Park».",
+        "«keine» للمؤنث أو الجمع؛ و«der Park» مذكر مفرد.",
+        "«nicht» ينفي الفعل أو الجملة، لا اسماً بأداة تنكير؛ والمطلوب «keinen Park». ",
+      ],
     },
     {
       id: "e3",
@@ -101,6 +113,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "bar zahlen أو bar bezahlen تعني الدفع بالنقود الورقية أو المعدنية، لا الدفع بالبطاقة أو تحويل المال.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "الدفع بالبطاقة «mit der Karte zahlen»، لا «bar zahlen».",
+        "تحويل المال «Geld überweisen» غير الدفع النقدي.",
+        "سحب النقود «Geld abheben»؛ و«bar zahlen» دفعٌ لا سحب. ",
+      ],
     },
     {
       id: "e9",
@@ -139,6 +157,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "في السياق المصرفي يعني überweisen تحويل مبلغ من حساب إلى آخر. أما الخيارات الأخرى فتصف سحب النقد، أو الدفع بالبطاقة، أو وضع العملات في ظرف.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "ذلك سحبٌ وإيداع «Bargeld am Automaten holen und einzahlen»، لا «überweisen».",
+        "ذلك دفعٌ بالبطاقة عند الصندوق «Eine Karte an der Kasse benutzen».",
+        "ذلك إرسال نقودٍ بالبريد «Münzen … per Post schicken»، لا تحويلٌ مصرفي. ",
+      ],
     },
     {
       id: "e12",
@@ -150,6 +174,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "abheben فعل منفصل في الحاضر: Ich hebe Geld ab. يثبت Duden ترتيب hebt … ab؛ أما überweisen في تمرين e10 فغير منفصل.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "الجزء «ab» يذهب إلى آخر الجملة الرئيسية «Ich hebe … ab»، فلا يبقى ملتصقاً بالفعل.",
+        "«hebst» مع du؛ والفاعل هنا «Ich».",
+        "«heben» مصدرٌ أو صيغة جمع؛ ومع «Ich» نقول «hebe». ",
+      ],
     },
     {
       id: "e13",
@@ -161,6 +191,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "Präteritum من geben هو gab؛ لذلك نقول Früher gab es hier eine Bank. هذا مثال إضافي على أن صيغة الحاضر es gibt ليست ثابتة في جميع الأزمنة.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«gibt» حاضر «es gibt»؛ و«Früher» تستدعي الماضي «gab».",
+        "«geben» مصدر؛ والجملة تحتاج صيغةً مصرفة «gab».",
+        "«gebe» مع ich؛ والتركيب «es gab» بلا فاعلٍ متكلم. ",
+      ],
     },
     {
       id: "e14",

@@ -108,6 +108,12 @@ export const review: NonNullable<Lesson["review"]> = [
       explanation:
         "الفاعل ich، لذلك نستخدم finde. يراجع السؤال صيغة الرأي من درس الملابس.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«findest» تصريف du؛ والفاعل هنا «Ich» ⇒ «Ich finde».",
+        "«findet» مع er/sie/es أو ihr، لا مع «Ich».",
+        "«finden» مصدرٌ أو صيغة wir/sie؛ ومع «Ich» نقول «finde». ",
+      ],
     },
     {
       id: "r2",
@@ -124,6 +130,12 @@ export const review: NonNullable<Lesson["review"]> = [
       explanation:
         "الفعل المنفصل fernsehen يعني مشاهدة التلفاز؛ وفي هذه الجملة يأتي الجزء fern في النهاية.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "قراءة الصحيفة «die Zeitung lesen»؛ والجملة فيها الفعل المنفصل «fernsehen».",
+        "الراديو «Radio hören» فعلٌ آخر غير «fernsehen».",
+        "كتابة البريد «eine E-Mail schreiben» لا علاقة لها بـ«fernsehen». ",
+      ],
     },
     {
       id: "r3",

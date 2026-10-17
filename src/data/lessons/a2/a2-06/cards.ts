@@ -15,6 +15,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       explanation:
         "der Film مفرد غائب؛ تصريف sein معه في الحاضر ist، ويوضع في نهاية الجملة التابعة.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«bin» مع ich؛ والفاعل «der Film» غائبٌ مفرد.",
+        "«bist» مع du؛ لا يطابق «der Film».",
+        "«sind» مع الجمع أو Sie؛ و«der Film» مفرد ⇒ «ist». ",
+      ],
     },
     {
       id: "m2",
@@ -28,6 +34,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       explanation:
         "dass يقدّم هنا مضمون الرأي؛ das ليست أداة ربط، وob يقدّم سؤالاً غير مباشر، وdenn يربط جملتين رئيسيتين عادةً.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«das» ليست أداة ربط؛ فلا تصلح لبدء جملة تابعة بعد «Ich finde».",
+        "«ob» سؤالٌ غير مباشر بنعم/لا؛ و«finden» يقدّم مضموناً لا استفهاماً.",
+        "«denn» يربط جملتين رئيسيتين بترتيبٍ عادي، ولا يأتي قبل «die Zeitung … ist». ",
+      ],
     },
     {
       id: "m3",

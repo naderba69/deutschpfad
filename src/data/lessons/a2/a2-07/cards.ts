@@ -15,6 +15,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       explanation:
         "Park مذكر مفرد؛ الصيغة المطلوبة في Akkusativ هي einen Park.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«ein» مرفوع أو محايد؛ و«der Park» مذكر منصوب بعد «es gibt».",
+        "«eine» للمؤنث؛ و«der Park» مذكر.",
+        "«der» أداة تعريف مرفوعة؛ والمطلوب «einen» في Akkusativ. ",
+      ],
     },
     {
       id: "m2",
@@ -26,6 +32,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       explanation:
         "helfen يطلب Dativ؛ الصيغة المقصودة للمتكلم هي mir.",
       errorType: "pronoun",
+      optionExplanations: [
+        undefined,
+        "«mich» منصوب؛ و«helfen» يأخذ Dativ ⇒ «mir».",
+        "«dich» ضمير المخاطب منصوباً؛ والمقصود هنا المتكلم «ich».",
+        "«dir» Dativ لكنه للمخاطب؛ والمطلوب للمتكلم «mir». ",
+      ],
     },
     {
       id: "m3",

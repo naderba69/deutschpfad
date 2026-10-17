@@ -149,6 +149,12 @@ export const review: NonNullable<Lesson["review"]> = [
       explanation:
         "Kaffee مذكر هنا، وkaufen يأخذ مفعولاً في Akkusativ: einen Kaffee. لا تصلح ein أو eine لمطابقة الجنس، وder صيغة Nominativ.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«ein» صيغة المرفوع أو المحايد؛ و«kaufen» ينصب المذكر ⇒ «einen Kaffee».",
+        "«eine» للمؤنث؛ و«der Kaffee» مذكر.",
+        "«der» أداة تعريف مرفوعة؛ والمطلوب تنكيرٌ في Akkusativ. ",
+      ],
     },
     {
       id: "r2",
@@ -160,6 +166,12 @@ export const review: NonNullable<Lesson["review"]> = [
       explanation:
         "das Geld تعني المال. الذهب هو Gold، والبطاقة Karte، والحساب Konto.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "الذهب «das Gold» بحرف G، وهو كلمةٌ أخرى.",
+        "البطاقة «die Karte»، لا «das Geld».",
+        "الحساب «das Konto»، لا المال نفسه. ",
+      ],
     },
     {
       id: "r3",

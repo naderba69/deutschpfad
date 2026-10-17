@@ -53,6 +53,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "تذكر الفقرة الأولى أن الدعوة إلى الساحة الداخلية للمبنى.",
         errorType: "comprehension",
         paragraph: 1,
+        optionExplanations: [
+          undefined,
+          "لم تُذكر الدعوة إلى مقهى «In ein Café»؛ المكان الساحة الداخلية.",
+          "المكتب «In ihr Büro» ليس مكان الاحتفال في الفقرة.",
+          "لم تُذكر صالة رياضية «In eine Turnhalle». ",
+        ],
       },
       {
         id: "rq2",
@@ -66,6 +72,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
           "أعجبها ألبوم الصور الذي صنعه الأطفال؛ الزهور والكعكة مذكورتان أيضاً لكنهما ليستا الهدية المقصودة.",
         errorType: "comprehension",
         paragraph: 2,
+        optionExplanations: [
+          undefined,
+          "الزهور «Ein Blumenstrauß» مذكورة لكنها ليست ما أعجبها خصوصاً.",
+          "الكعكة «Ein Kuchen mit Schokolade» قُدِّمت في الاحتفال، لا الهدية التي أعجبتها.",
+          "لم يُذكر فستانٌ جديد «Ein neues Kleid» في النص. ",
+        ],
       },
       {
         id: "rq3",
@@ -83,6 +95,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "تقول الفقرة إن الضيوف يساعدون في ترتيب المكان قبل مغادرتهم.",
         errorType: "comprehension",
         paragraph: 3,
+        optionExplanations: [
+          undefined,
+          "لم تبدأ رحلة «Sie beginnen einen Ausflug» بعد الاحتفال.",
+          "لم يُذكر إحضار كعكة إضافية «Sie holen noch einen Kuchen».",
+          "لم يُذكر انصرافٌ مبكر «früher am Nachmittag nach Hause». ",
+        ],
       },
       {
         id: "rq4",
@@ -100,6 +118,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "يربط النص بين عدم الإعداد وحدها ومساعدة الجيران لها.",
         errorType: "comprehension",
         paragraph: 4,
+        optionExplanations: [
+          undefined,
+          "الاحتفال أُقيم فعلاً «Die Feier fand nicht statt» نفيٌ يناقض النص؛ والسبب مساعدة الجيران.",
+          "لم يُذكر أخٌ ولا إلغاء «Ihr Bruder hat die Feier abgesagt».",
+          "عكس السؤال نفسه: لم تُعدّ كل شيء وحدها «alles allein vorbereitet» هذه المرة. ",
+        ],
       },
     ],
     redemittel: [
@@ -150,6 +174,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "تقول Mona في بداية الحوار إن عيد ميلادها يوم السبت.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "قالت منى «am Samstag» لا «am Sonntag».",
+          "لم يُذكر الجمعة «am Freitag» موعداً لميلادها.",
+          "الاثنين «am Montag» ليس في الحوار. ",
+        ],
       },
       {
         id: "q2",
@@ -162,6 +192,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "تذكر Mona أن المناسبة تبدأ عند الساعة السابعة في منزلها.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "الثامنة «um acht Uhr» غير المذكورة؛ البدء «um sieben Uhr».",
+          "ليست السادسة «um sechs Uhr».",
+          "ليست التاسعة «um neun Uhr». ",
+        ],
       },
       {
         id: "q3",
@@ -174,6 +210,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "يقول Karim إن أمه هي التي خبزت التورتة، لا Anna ولا هو.",
         errorType: "comprehension",
+        optionExplanations: [
+          undefined,
+          "لم تخبز آنا التورتة «die Torte backen» بحسب الحوار.",
+          "كريم نقل الخبر عن أمه «Meine Mutter hat die Torte gebacken»، لا أنه خبزها بنفسه.",
+          "أم منى «Monas Mutter» غير مذكورة في هذا السياق. ",
+        ],
       },
     ],
   };

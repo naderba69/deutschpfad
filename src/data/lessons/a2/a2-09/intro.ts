@@ -148,6 +148,12 @@ export const review: NonNullable<Lesson["review"]> = [
       explanation:
         "في هذا التركيب يأخذ helfen متمماً في Dativ؛ وضمير الملكية مع Bruder المذكر في Dativ هو meinem.",
       errorType: "case",
+      optionExplanations: [
+        undefined,
+        "«meinen» منصوب؛ و«helfen» يأخذ Dativ ⇒ «meinem Bruder».",
+        "«mein» مرفوع أو محايد؛ والمطلوب Dativ مذكر.",
+        "«meine» للمؤنث أو الجمع؛ و«der Bruder» مذكر مفرد. ",
+      ],
     },
     {
       id: "r2",
@@ -158,6 +164,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "Geburtstag هو يوم ذكرى ولادة الشخص؛ لا يعني رأس السنة أو عطلة رسمية.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "رأس السنة «Neujahr» أو «Silvester»، لا «der Geburtstag».",
+        "عيد الزواج «der Hochzeitstag» مناسبةٌ أخرى.",
+        "العطلة الرسمية «der Feiertag»، لا يوم ميلاد شخص. ",
+      ],
     },
     {
       id: "r3",
