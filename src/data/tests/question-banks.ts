@@ -39,8 +39,8 @@ export const RAW_TEST_BANK: TestQuestion[] = [
   { id: "a1-v4", skill: "wortschatz", level: "A1", kind: "mcq", questionDe: "die Uhr", options: ["الساعة", "الطاولة", "الكرسي", "النافذة"], correctIndex: 0, explanation: "die Uhr = الساعة." },
   { id: "a1-v5", skill: "wortschatz", level: "A1", kind: "mcq", questionDe: "billig", options: ["رخيص", "غالٍ", "جديد", "قديم"], correctIndex: 0, explanation: "billig = رخيص." },
   { id: "a1-v6", skill: "wortschatz", level: "A1", kind: "mcq", questionDe: "die Schwester", options: ["الأخت", "الأخ", "الابنة", "العمّة"], correctIndex: 0, explanation: "die Schwester = الأخت." },
-  { id: "a1-v7", skill: "wortschatz", level: "A1", kind: "mcq", questionDe: "der Bahnhof", options: ["محطة القطار", "المطار", "البنك", "المستشفى"], correctIndex: 0, explanation: "der Bahnhof = محطة القطار." },
-  { id: "a1-v8", skill: "wortschatz", level: "A1", kind: "mcq", questionDe: "gern", options: ["بسرور/يحب أن", "غاضب", "متعب", "سريع"], correctIndex: 0, explanation: "gern = بسرور." },
+  { id: "a1-v7", skill: "wortschatz", level: "A1", kind: "mcq", questionDe: "der Bahnhof", options: ["محطة القطار", "صالة المطار", "فرع البنك", "مبنى المستشفى"], correctIndex: 0, explanation: "der Bahnhof = محطة القطار." },
+  { id: "a1-v8", skill: "wortschatz", level: "A1", kind: "mcq", questionDe: "gern", options: ["بسرور", "غاضب", "متعب", "سريع"], correctIndex: 0, explanation: "gern = بسرور." },
   { id: "a1-v9", skill: "wortschatz", level: "A1", kind: "mcq", questionDe: "der Regen", options: ["المطر", "الثلج", "الرياح", "الشمس"], correctIndex: 0, explanation: "der Regen = المطر." },
   { id: "a1-v10", skill: "wortschatz", level: "A1", kind: "mcq", questionDe: "kaufen", options: ["يشتري", "يبيع", "يدفع", "يحسب"], correctIndex: 0, explanation: "kaufen = يشتري." },
 
@@ -52,7 +52,7 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     questions: [
       { q: "Wie viele Schwestern hat Mona?", qAr: "كم عدد أخوات منى؟", options: ["zwei", "eine", "drei", "keine"], correct: 0, explanation: "قالت: zwei Schwestern." },
       { q: "Warum lernt Mona Deutsch?", qAr: "لماذا تتعلم منى الألمانية؟", options: ["weil sie reisen möchte", "weil sie arbeiten will", "weil sie in Tunis bleibt", "weil sie krank ist"], correct: 0, explanation: "قيل: weil ich nach Deutschland reisen möchte." },
-      { q: "Was macht Mona am Wochenende?", qAr: "ماذا تفعل منى في نهاية الأسبوع؟", options: ["ins Kino gehen", "arbeiten", "schlafen", "einkaufen"], correct: 0, explanation: "قيل: Am Wochenende gehe ich gern ins Kino." },
+      { q: "Was macht Mona am Wochenende?", qAr: "ماذا تفعل منى في نهاية الأسبوع؟", options: ["ins Kino gehen", "zu Hause arbeiten", "lange schlafen", "einkaufen gehen"], correct: 0, explanation: "قيل: Am Wochenende gehe ich gern ins Kino." },
     ],
   },
   {
@@ -62,7 +62,7 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     questions: [
       { q: "Was ist Sami von Beruf?", qAr: "ما مهنة سامي؟", options: ["Koch", "Lehrer", "Arzt", "Fahrer"], correct: 0, explanation: "قيل: Sami arbeitet als Koch in einem Restaurant." },
       { q: "Wann steht Sami auf?", qAr: "متى يستيقظ سامي؟", options: ["um sechs Uhr", "um sieben Uhr", "um acht Uhr", "um zehn Uhr"], correct: 0, explanation: "قيل: Er steht um sechs Uhr auf." },
-      { q: "Was macht Sami am Sonntag?", qAr: "ماذا يفعل سامي يوم الأحد؟", options: ["seine Eltern besuchen", "arbeiten", "einkaufen", "schwimmen"], correct: 0, explanation: "قيل: Am Sonntag besucht er seine Eltern." },
+      { q: "Was macht Sami am Sonntag?", qAr: "ماذا يفعل سامي يوم الأحد؟", options: ["seine Eltern besuchen", "zu Hause arbeiten", "einkaufen gehen", "schwimmen gehen"], correct: 0, explanation: "قيل: Am Sonntag besucht er seine Eltern." },
     ],
   },
 
@@ -81,7 +81,7 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     text: "Hallo Anna! Ich habe heute Geburtstag. Kommst du zu meiner Party? Sie beginnt um sieben Uhr bei mir zu Hause. Es gibt Kuchen und Musik!",
     textAr: "مرحباً آنا! عيد ميلادي اليوم. هل تأتين إلى حفلتي؟ تبدأ في السابعة عندي في البيت. يوجد كعك وموسيقى!",
     questions: [
-      { q: "Was gibt es auf der Party?", qAr: "ماذا يوجد في الحفلة؟", options: ["Kuchen und Musik", "nur Kuchen", "nur Musik", "Filme"], correct: 0, explanation: "قيل: Es gibt Kuchen und Musik!" },
+      { q: "Was gibt es auf der Party?", qAr: "ماذا يوجد في الحفلة؟", options: ["Kuchen und Musik", "nur Kuchen und Tee", "nur Musik ohne Essen", "Filme und Popcorn"], correct: 0, explanation: "قيل: Es gibt Kuchen und Musik!" },
       { q: "Wann beginnt die Party?", qAr: "متى تبدأ الحفلة؟", options: ["um sieben Uhr", "um sechs Uhr", "um acht Uhr", "um neun Uhr"], correct: 0, explanation: "قيل: Sie beginnt um sieben Uhr." },
     ],
   },
@@ -105,13 +105,13 @@ export const RAW_TEST_BANK: TestQuestion[] = [
 
   /* ═══════════ A2 — مفردات ═══════════ */
   { id: "a2-v1", skill: "wortschatz", level: "A2", kind: "mcq", questionDe: "die Prüfung", options: ["الامتحان", "الدورة", "الدرس", "الواجب"], correctIndex: 0, explanation: "die Prüfung = الامتحان." },
-  { id: "a2-v2", skill: "wortschatz", level: "A2", kind: "mcq", questionDe: "die Rechnung", options: ["الحساب/الفاتورة", "الطلب", "القائمة", "الإكرامية"], correctIndex: 0, explanation: "die Rechnung = الحساب." },
+  { id: "a2-v2", skill: "wortschatz", level: "A2", kind: "mcq", questionDe: "die Rechnung", options: ["الفاتورة", "الطلب", "القائمة", "الإكرامية"], correctIndex: 0, explanation: "die Rechnung = الحساب." },
   { id: "a2-v3", skill: "wortschatz", level: "A2", kind: "mcq", questionDe: "lecker", options: ["لذيذ", "غالٍ", "بارد", "سريع"], correctIndex: 0, explanation: "lecker = لذيذ." },
   { id: "a2-v4", skill: "wortschatz", level: "A2", kind: "mcq", questionDe: "die Miete", options: ["الإيجار", "الضمان", "الراتب", "الفاتورة"], correctIndex: 0, explanation: "die Miete = الإيجار." },
-  { id: "a2-v5", skill: "wortschatz", level: "A2", kind: "mcq", questionDe: "umsteigen", options: ["يغيّر وسيلة", "ينتظر", "يصل", "ينطلق"], correctIndex: 0, explanation: "umsteigen = يغيّر وسيلة." },
+  { id: "a2-v5", skill: "wortschatz", level: "A2", kind: "mcq", questionDe: "umsteigen", options: ["يغيّر وسيلة", "ينتظر القطار", "يصل متأخراً", "ينطلق مبكراً"], correctIndex: 0, explanation: "umsteigen = يغيّر وسيلة." },
   { id: "a2-v6", skill: "wortschatz", level: "A2", kind: "mcq", questionDe: "die Werbung", options: ["الإعلانات", "الأخبار", "الصحيفة", "الرأي"], correctIndex: 0, explanation: "die Werbung = الإعلانات." },
-  { id: "a2-v7", skill: "wortschatz", level: "A2", kind: "mcq", questionDe: "das Konto", options: ["الحساب البنكي", "المال", "البطاقة", "الدفتر"], correctIndex: 0, explanation: "das Konto = الحساب البنكي." },
-  { id: "a2-v8", skill: "wortschatz", level: "A2", kind: "mcq", questionDe: "sich beschweren", options: ["يقدم شكوى", "يستعجل", "يسجل", "يغضب"], correctIndex: 0, explanation: "sich beschweren = يقدم شكوى." },
+  { id: "a2-v7", skill: "wortschatz", level: "A2", kind: "mcq", questionDe: "das Konto", options: ["الحساب البنكي", "المال النقدي", "البطاقة البنكية", "الدفتر الصغير"], correctIndex: 0, explanation: "das Konto = الحساب البنكي." },
+  { id: "a2-v8", skill: "wortschatz", level: "A2", kind: "mcq", questionDe: "sich beschweren", options: ["يقدم شكوى", "يستعجل الأمر", "يسجل اسمه", "يغضب كثيراً"], correctIndex: 0, explanation: "sich beschweren = يقدم شكوى." },
   { id: "a2-v9", skill: "wortschatz", level: "A2", kind: "mcq", questionDe: "trotzdem", options: ["رغم ذلك", "لذلك", "لكن", "ثم"], correctIndex: 0, explanation: "trotzdem = رغم ذلك." },
   { id: "a2-v10", skill: "wortschatz", level: "A2", kind: "mcq", questionDe: "der Termin", options: ["الموعد", "التأخير", "الاجتماع", "الرحلة"], correctIndex: 0, explanation: "der Termin = الموعد." },
 
@@ -122,7 +122,7 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     textAr: "أخذت إجازة الأسبوع الماضي. طرت إلى برلين وزرت متاحف كثيرة. كان الطقس جميلاً لذلك مشيت كثيراً. جربت أيضاً طعاماً تقليدياً: كاريورست وبريتزل. كان طعمه جيداً جداً!",
     questions: [
       { q: "Was hat der Autor in Berlin besucht?", qAr: "ماذا زار الكاتب في برلين؟", options: ["Museen", "Parks", "Restaurants", "Kinos"], correct: 0, explanation: "قيل: habe viele Museen besucht." },
-      { q: "Was hat er probiert?", qAr: "ماذا جرب؟", options: ["Currywurst und Brezel", "Pizza und Salat", "Fisch und Reis", "Suppe und Brot"], correct: 0, explanation: "قيل: Currywurst und Brezel." },
+      { q: "Was hat er probiert?", qAr: "ماذا جرب؟", options: ["Currywurst und Brezel", "Pizza und gemischter Salat", "Fisch und Reis mit Gemüse", "Suppe und Brot"], correct: 0, explanation: "قيل: Currywurst und Brezel." },
       { q: "Wie war das Wetter?", qAr: "كيف كان الطقس؟", options: ["schön", "schlecht", "kalt", "regnerisch"], correct: 0, explanation: "قيل: Das Wetter war schön." },
     ],
   },
@@ -177,12 +177,12 @@ export const RAW_TEST_BANK: TestQuestion[] = [
   /* ═══════════ B1 — مفردات ═══════════ */
   { id: "b1-v1", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "der Lebenslauf", options: ["السيرة الذاتية", "خطاب التقديم", "العقد", "الشهادة"], correctIndex: 0, explanation: "der Lebenslauf = السيرة الذاتية." },
   { id: "b1-v2", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "der Klimawandel", options: ["تغير المناخ", "التلوث", "إعادة التدوير", "الطاقة"], correctIndex: 0, explanation: "der Klimawandel (مذكر، مركّب: Klima + Wandel) = تغير المناخ." },
-  { id: "b1-v3", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "die Bewerbung", options: ["طلب الوظيفة", "المقابلة", "الراتب", "الإجازة"], correctIndex: 0, explanation: "die Bewerbung (مؤنث) = طلب الوظيفة؛ والفعل sich bewerben." },
+  { id: "b1-v3", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "die Bewerbung", options: ["طلب الوظيفة", "المقابلة الشخصية", "الراتب الشهري", "الإجازة السنوية"], correctIndex: 0, explanation: "die Bewerbung (مؤنث) = طلب الوظيفة؛ والفعل sich bewerben." },
   { id: "b1-v4", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "die Regierung", options: ["الحكومة", "البرلمان", "القانون", "الانتخاب"], correctIndex: 0, explanation: "die Regierung (مؤنث، من regieren) = الحكومة." },
   { id: "b1-v5", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "während", options: ["بينما", "عندما (ماضٍ)", "قبل أن", "حتى"], correctIndex: 0, explanation: "während + Genitiv = بينما (رابط زمني)." },
   { id: "b1-v6", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "das Gemälde", options: ["اللوحة", "المتحف", "الرسام", "المعرض"], correctIndex: 0, explanation: "das Gemälde (محايد، من malen) = اللوحة." },
   { id: "b1-v7", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "die Spende", options: ["التبرع", "المساعدة", "الجمعية", "العضو"], correctIndex: 0, explanation: "die Spende (مؤنث) = التبرع؛ والفعل spenden." },
-  { id: "b1-v8", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "sich bewerben", options: ["يتقدم (لوظيفة)", "يستقيل", "يترشح", "يقدم شكوى"], correctIndex: 0, explanation: "sich bewerben um + Akkusativ = يتقدم لوظيفة." },
+  { id: "b1-v8", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "sich bewerben", options: ["يتقدم لوظيفة", "يستقيل من العمل", "يترشح للانتخابات", "يقدم شكوى رسمية"], correctIndex: 0, explanation: "sich bewerben um + Akkusativ = يتقدم لوظيفة." },
   { id: "b1-v9", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "die Wahl", options: ["الانتخاب", "الاختيار", "القرار", "الرأي"], correctIndex: 0, explanation: "die Wahl (مؤنث، من wählen) = الانتخاب/الاختيار." },
   { id: "b1-v10", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "entweder ... oder", options: ["إما ... أو", "لا ... ولا", "ليس فقط بل أيضاً", "كلما ... كلما"], correctIndex: 0, explanation: "entweder ... oder = إما ... أو (رابط ثنائي)." },
 
@@ -193,7 +193,7 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     textAr: "الطالب الذي يدرس المعلوماتية يريد العمل لاحقاً في ألمانيا. يهتم بالذكاء الاصطناعي لأنه يغير مجالات كثيرة. لو كان لديه خبرة كافية لتقدم فوراً. حلمه منصب في شركة تقنية كبيرة.",
     questions: [
       { q: "Was studiert der Student?", qAr: "ماذا يدرس الطالب؟", options: ["Informatik", "Medizin", "Jura", "Wirtschaft"], correct: 0, explanation: "قيل: Der Student, der Informatik studiert." },
-      { q: "Warum interessiert er sich für KI?", qAr: "لماذا يهتم بالذكاء الاصطناعي؟", options: ["weil sie viele Bereiche verändert", "weil sie neu ist", "weil sie billig ist", "weil sie einfach ist"], correct: 0, explanation: "قيل: weil sie viele Bereiche verändert." },
+      { q: "Warum interessiert er sich für KI?", qAr: "لماذا يهتم بالذكاء الاصطناعي؟", options: ["weil sie viele Bereiche verändert", "weil sie ein ganz neues Thema ist", "weil sie billig und einfach ist", "weil sie einfach zu erklären ist"], correct: 0, explanation: "قيل: weil sie viele Bereiche verändert." },
       { q: "Was würde er mit genug Erfahrung machen?", qAr: "ماذا كان سيفعل بخبرة كافية؟", options: ["sich sofort bewerben", "eine Firma gründen", "studieren", "reisen"], correct: 0, explanation: "قيل: würde er sich sofort bewerben." },
     ],
   },
@@ -248,7 +248,7 @@ export const RAW_TEST_BANK: TestQuestion[] = [
   { id: "b2-v1", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "die Entdeckung", options: ["الاكتشاف", "التجربة", "الاختراع", "البحث"], correctIndex: 0, explanation: "die Entdeckung (مؤنث، من entdecken) = الاكتشاف." },
   { id: "b2-v2", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "die Inflation", options: ["التضخم", "الأسهم", "المبيعات", "الاستثمار"], correctIndex: 0, explanation: "die Inflation (مؤنث، مصطلح اقتصادي) = التضخم." },
   { id: "b2-v3", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "der Zeuge", options: ["الشاهد", "المحامي", "القاضي", "المتهم"], correctIndex: 0, explanation: "der Zeuge (مذكر، والجمع die Zeugen) = الشاهد." },
-  { id: "b2-v4", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "die Erörterung", options: ["المقال الجدلي", "الرواية", "القصيدة", "المراجعة"], correctIndex: 0, explanation: "die Erörterung (مؤنث، من erörtern) = المقال الجدلي — نوع كتابة في B2." },
+  { id: "b2-v4", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "die Erörterung", options: ["المقال الجدلي", "الرواية الأدبية", "القصيدة الشعرية", "المراجعة النقدية"], correctIndex: 0, explanation: "die Erörterung (مؤنث، من erörtern) = المقال الجدلي — نوع كتابة في B2." },
   { id: "b2-v5", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "die Fachsprache", options: ["لغة التخصص", "لغة الأم", "اللغة الأجنبية", "اللغة الرسمية"], correctIndex: 0, explanation: "die Fachsprache (مؤنث، مركّب: Fach + Sprache) = لغة التخصص." },
   { id: "b2-v6", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "in Betracht ziehen", options: ["يأخذ بعين الاعتبار", "يضع تحت التصرف", "يولي أهمية", "يلعب دوراً"], correctIndex: 0, explanation: "in Betracht ziehen = يأخذ بعين الاعتبار (تعبير فعلي)." },
   { id: "b2-v7", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "meiner Ansicht nach", options: ["في رأيي", "بلا شك", "إلى حد ما", "خلاصةً"], correctIndex: 0, explanation: "meiner Ansicht nach = في رأيي (عبارة مناقشة شائعة)." },
@@ -262,8 +262,8 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     text: "Es ist erwiesen, dass die Digitalisierung die Arbeitswelt grundlegend verändert. Einerseits schafft sie neue Berufe, andererseits macht sie viele alte überflüssig. Die Forscher, mit denen wir gesprochen haben, betonen, dass die Weiterbildung entscheidend sei. Meiner Ansicht nach brauchen wir ein Gleichgewicht zwischen Technologie und menschlicher Arbeit.",
     textAr: "ثابت أن الرقمنة تغير عالم العمل جذرياً. من ناحية تخلق مهناً جديدة، ومن ناحية أخرى تجعل مهناً قديمة زائدة. يؤكد الباحثون الذين تحدثنا معهم أن التدريب المستمر حاسم. في رأيي نحتاج توازناً بين التقنية والعمل البشري.",
     questions: [
-      { q: "Was verändert die Digitalisierung?", qAr: "ماذا تغير الرقمنة؟", options: ["die Arbeitswelt", "das Wetter", "die Politik", "die Schule"], correct: 0, explanation: "قيل: die Digitalisierung die Arbeitswelt grundlegend verändert." },
-      { q: "Was betonen die Forscher?", qAr: "ماذا يؤكد الباحثون؟", options: ["die Weiterbildung sei entscheidend", "die Technik sei nutzlos", "die Arbeit sei unnötig", "die Schule sei alt"], correct: 0, explanation: "قيل: dass die Weiterbildung entscheidend sei (Konjunktiv I)." },
+      { q: "Was verändert die Digitalisierung?", qAr: "ماذا تغير الرقمنة؟", options: ["die Arbeitswelt", "das Wetter und Klima", "die Politik des Landes", "die Schule"], correct: 0, explanation: "قيل: die Digitalisierung die Arbeitswelt grundlegend verändert." },
+      { q: "Was betonen die Forscher?", qAr: "ماذا يؤكد الباحثون؟", options: ["die Weiterbildung sei entscheidend", "die Technik sei in diesem Fall nutzlos", "die Arbeit sei künftig unnötig", "die Schule sei alt und überholt"], correct: 0, explanation: "قيل: dass die Weiterbildung entscheidend sei (Konjunktiv I)." },
       { q: "Was brauchen wir laut Autor?", qAr: "ماذا نحتاج حسب الكاتب؟", options: ["ein Gleichgewicht", "mehr Technik", "keine Arbeit", "weniger Bildung"], correct: 0, explanation: "قيل: brauchen wir ein Gleichgewicht zwischen Technologie und menschlicher Arbeit." },
     ],
   },
@@ -272,7 +272,7 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     text: "Der Wissenschaftler, dessen Studie wir gelesen haben, behauptet, die Entdeckung könne die Medizin revolutionieren. Er sagt, die Ergebnisse seien sehr vielversprechend. Trotzdem warnt er, man dürfe nicht zu schnell jubeln, denn weitere Experimente seien nötig. Die Geduld, so betont er, sei der Schlüssel des Erfolgs.",
     textAr: "يزعم العالم الذي قرأنا دراسته أن الاكتشاف قد يحدث ثورة في الطب. يقول إن النتائج واعدة جداً. ومع ذلك يحذر من الاحتفال المبكر لأن تجارب أخرى ضرورية. الصبر، كما يؤكد، مفتاح النجاح.",
     questions: [
-      { q: "Was behauptet der Wissenschaftler?", qAr: "ماذا يزعم العالم؟", options: ["Die Entdeckung könne die Medizin revolutionieren", "Die Entdeckung sei nutzlos", "Die Medizin sei alt", "Nichts"], correct: 0, explanation: "قيل: die Entdeckung könne die Medizin revolutionieren (Konjunktiv I)." },
+      { q: "Was behauptet der Wissenschaftler?", qAr: "ماذا يزعم العالم؟", options: ["Die Entdeckung könne die Medizin revolutionieren", "Die Entdeckung sei für ihn völlig nutzlos", "Die Medizin sei alt und überholt", "Er nannte dazu nichts"], correct: 0, explanation: "قيل: die Entdeckung könne die Medizin revolutionieren (Konjunktiv I)." },
       { q: "Wovor warnt er?", qAr: "ماذا يحذر منه؟", options: ["zu schnellen Jubel", "zu viel Forschung", "zu viel Geld", "zu wenig Arbeit"], correct: 0, explanation: "قيل: man dürfe nicht zu schnell jubeln." },
       { q: "Was ist der Schlüssel des Erfolgs?", qAr: "ما مفتاح النجاح؟", options: ["die Geduld", "das Geld", "die Zeit", "die Kraft"], correct: 0, explanation: "قيل: Die Geduld sei der Schlüssel des Erfolgs." },
     ],
@@ -285,7 +285,7 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     textAr: "يقول الأستاذ إن نتائج الدراسة إيجابية جداً. يزعم أن الطريقة الجديدة قد توفر الوقت والتكاليف. ومع ذلك يؤكد أن اختبارات أخرى ضرورية قبل تطبيق الطريقة في كل مكان.",
     questions: [
       { q: "Wie sind die Ergebnisse laut Professor?", qAr: "كيف النتائج حسب الأستاذ؟", options: ["sehr positiv", "sehr schlecht", "unbekannt", "alt"], correct: 0, explanation: "قال: die Ergebnisse der Studie seien sehr positiv." },
-      { q: "Was kann die neue Methode sparen?", qAr: "ماذا يمكن للطريقة الجديدة أن توفر؟", options: ["Zeit und Kosten", "nur Zeit", "nur Kosten", "nichts"], correct: 0, explanation: "قال: die neue Methode könne Zeit und Kosten sparen." },
+      { q: "Was kann die neue Methode sparen?", qAr: "ماذا يمكن للطريقة الجديدة أن توفر؟", options: ["Zeit und Kosten", "nur Zeit beim Warten", "nur Kosten im Labor", "nichts davon"], correct: 0, explanation: "قال: die neue Methode könne Zeit und Kosten sparen." },
     ],
   },
   {
@@ -294,7 +294,7 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     textAr: "في الاجتماع تقرر أن يُوقَّع العقد الأسبوع القادم. التسليم، كما قالت المديرة، يمكن أن يتم بمجرد وصول الدفعة. الجميع واثق أن كل شيء سيسير في موعده.",
     questions: [
       { q: "Was wurde beschlossen?", qAr: "ماذا تقرر؟", options: ["Der Vertrag wird nächste Woche unterschrieben", "Der Vertrag wird nicht unterschrieben", "Die Lieferung stoppt", "Die Firma schließt"], correct: 0, explanation: "قيل: der Vertrag nächste Woche unterschrieben werde." },
-      { q: "Wann kann die Lieferung erfolgen?", qAr: "متى يمكن أن يتم التسليم؟", options: ["wenn die Zahlung eingegangen ist", "sofort", "nie", "nächstes Jahr"], correct: 0, explanation: "قيل: sobald die Zahlung eingegangen sei." },
+      { q: "Wann kann die Lieferung erfolgen?", qAr: "متى يمكن أن يتم التسليم؟", options: ["wenn die Zahlung eingegangen ist", "sofort nach der Bestellung", "nie in diesem Jahr", "nächstes Jahr im Sommer"], correct: 0, explanation: "قيل: sobald die Zahlung eingegangen sei." },
     ],
   },
 
@@ -311,7 +311,7 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     questions: [
       { q: "Was studiert Anna?", qAr: "ماذا تدرس آنا؟", options: ["Medizin", "Spanisch", "Jura", "Musik"], correct: 0, explanation: "قيل: studiert Medizin." },
       { q: "Wo arbeitet Anna am Nachmittag?", qAr: "أين تعمل آنا بعد الظهر؟", options: ["im Krankenhaus", "im Büro", "in der Schule", "im Geschäft"], correct: 0, explanation: "قيل: am Nachmittag arbeitet sie im Krankenhaus." },
-      { q: "Warum lernt Anna Spanisch?", qAr: "لماذا تتعلم آنا الإسبانية؟", options: ["weil sie in Spanien arbeiten möchte", "weil es einfach ist", "weil ihr Vater Spanier ist", "weil sie in Spanien lebt"], correct: 0, explanation: "قيل: weil sie später in Spanien arbeiten möchte." },
+      { q: "Warum lernt Anna Spanisch?", qAr: "لماذا تتعلم آنا الإسبانية؟", options: ["weil sie in Spanien arbeiten möchte", "weil es für sie sehr einfach ist", "weil ihr Vater Spanier ist", "weil sie in Spanien lebt"], correct: 0, explanation: "قيل: weil sie später in Spanien arbeiten möchte." },
     ],
   },
   {
@@ -332,8 +332,8 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     textAr: "سجلت الشهر الماضي في دورة ألمانية. الدورة تستمر ثلاثة أشهر وتقام مرتين أسبوعياً. في البداية كان الأمر صعباً لكن الآن أفهم كل شيء تقريباً. معلمي يشرح القواعد جيداً ونتمرن كثيراً على الحوارات. الأسبوع القادم عندنا اختبار صغير. أتمنى أن أؤدي جيداً.",
     questions: [
       { q: "Wie oft findet der Kurs statt?", qAr: "كم مرة تقام الدورة؟", options: ["zweimal pro Woche", "einmal pro Monat", "jeden Tag", "einmal pro Woche"], correct: 0, explanation: "قيل: findet zweimal pro Woche statt." },
-      { q: "Was macht der Lehrer gut?", qAr: "ماذا يفعل المعلم جيداً؟", options: ["die Grammatik erklären", "kochen", "singen", "zeichnen"], correct: 0, explanation: "قيل: Mein Lehrer erklärt die Grammatik sehr gut." },
-      { q: "Was ist nächste Woche?", qAr: "ماذا يحدث الأسبوع القادم؟", options: ["ein kleiner Test", "ein Fest", "eine Reise", "ein Konzert"], correct: 0, explanation: "قيل: Nächste Woche haben wir einen kleinen Test." },
+      { q: "Was macht der Lehrer gut?", qAr: "ماذا يفعل المعلم جيداً؟", options: ["die Grammatik erklären", "gut kochen können", "schön singen", "sehr gut zeichnen"], correct: 0, explanation: "قيل: Mein Lehrer erklärt die Grammatik sehr gut." },
+      { q: "Was ist nächste Woche?", qAr: "ماذا يحدث الأسبوع القادم؟", options: ["ein kleiner Test", "ein großes Fest", "eine lange Reise", "ein Konzert"], correct: 0, explanation: "قيل: Nächste Woche haben wir einen kleinen Test." },
     ],
   },
   {
@@ -343,7 +343,7 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     questions: [
       { q: "Warum ruft Leila an?", qAr: "لماذا تتصل ليلى؟", options: ["Sie hat den Bus verpasst", "Sie ist krank", "Sie hat Geld verloren", "Sie will essen"], correct: 0, explanation: "قالت: habe den Bus verpasst." },
       { q: "Wann soll der Vater sie abholen?", qAr: "متى يريد الأب أن يأخذها؟", options: ["um sechs Uhr", "um sieben Uhr", "um acht Uhr", "um fünf Uhr"], correct: 0, explanation: "قالت: Kannst du mich um sechs Uhr am Bahnhof abholen?" },
-      { q: "Was soll er mitbringen?", qAr: "ماذا يجب أن يحضر؟", options: ["ihr Buch", "ihre Tasche", "ihren Computer", "ihren Regenschirm"], correct: 0, explanation: "قالت: kannst du auch mein Buch mitbringen?" },
+      { q: "Was soll er mitbringen?", qAr: "ماذا يجب أن يحضر؟", options: ["ihr altes Buch", "ihre Tasche", "ihren Computer", "ihren Regenschirm"], correct: 0, explanation: "قالت: kannst du auch mein Buch mitbringen?" },
     ],
   },
 
@@ -353,9 +353,9 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     text: "Viele Arbeitnehmer klagen über zu viel Stress. Eine Umfrage zeigt, dass mehr als die Hälfte der Befragten nach der Arbeit nicht abschalten kann. Die Gründe sind unterschiedlich: hoher Leistungsdruck, ständige Erreichbarkeit durch das Handy und zu wenig Pausen. Experten empfehlen, klare Grenzen zu setzen und regelmäßig Sport zu treiben. Einige Firmen bieten mittlerweile flexible Arbeitszeiten an, um den Druck zu verringern. Ob das reicht, ist allerdings fraglich.",
     textAr: "يشكو كثير من الموظفين من التوتر الزائد. يُظهر استطلاع أن أكثر من نصف المشاركين لا يستطيعون الابتعاد عن العمل بعد الدوام. الأسباب مختلفة: ضغط الأداء العالي، والاتصال الدائم عبر الهاتف، وقلة الاستراحات. يوصي الخبراء بوضع حدود واضحة وممارسة الرياضة بانتظام. بعض الشركات تقدم الآن ساعات عمل مرنة لتخفيف الضغط. لكن ما إذا كان ذلك كافياً أمر محل شك.",
     questions: [
-      { q: "Was zeigt die Umfrage?", qAr: "ماذا يُظهر الاستطلاع؟", options: ["Mehr als die Hälfte kann nach der Arbeit nicht abschalten", "Die meisten sind zufrieden", "Die Arbeit ist leicht", "Die Hälfte arbeitet nicht"], correct: 0, explanation: "قيل: mehr als die Hälfte der Befragten kann nach der Arbeit nicht abschalten." },
-      { q: "Was empfehlen die Experten?", qAr: "ماذا يوصي الخبراء؟", options: ["klare Grenzen und Sport", "mehr Überstunden", "kein Handy mehr", "mehr Kaffee"], correct: 0, explanation: "قيل: klare Grenzen zu setzen und regelmäßig Sport zu treiben." },
-      { q: "Was bieten einige Firmen an?", qAr: "ماذا تقدم بعض الشركات؟", options: ["flexible Arbeitszeiten", "höhere Gehälter", "längere Pausen", "Urlaub"], correct: 0, explanation: "قيل: Einige Firmen bieten flexible Arbeitszeiten an." },
+      { q: "Was zeigt die Umfrage?", qAr: "ماذا يُظهر الاستطلاع؟", options: ["Mehr als die Hälfte kann nach der Arbeit nicht abschalten", "Die meisten sind mit ihrer Arbeit sehr zufrieden", "Die Arbeit ist für alle sehr leicht", "Die Hälfte der Befragten arbeitet gar nicht"], correct: 0, explanation: "قيل: mehr als die Hälfte der Befragten kann nach der Arbeit nicht abschalten." },
+      { q: "Was empfehlen die Experten?", qAr: "ماذا يوصي الخبراء؟", options: ["klare Grenzen und Sport", "mehr Überstunden am Abend", "gar kein Handy mehr", "deutlich mehr Kaffee"], correct: 0, explanation: "قيل: klare Grenzen zu setzen und regelmäßig Sport zu treiben." },
+      { q: "Was bieten einige Firmen an?", qAr: "ماذا تقدم بعض الشركات؟", options: ["flexible Arbeitszeiten", "höhere Gehälter für alle", "deutlich längere Pausen", "mehr Urlaub im Jahr"], correct: 0, explanation: "قيل: Einige Firmen bieten flexible Arbeitszeiten an." },
     ],
   },
   {
@@ -377,8 +377,8 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     questions: [
       { q: "Was behaupten die Befürworter?", qAr: "ماذا يدّعي المؤيدون؟", options: ["kürzere Arbeitszeiten steigern die Produktivität", "kürzere Arbeitszeiten senken das Gehalt", "die Gesundheit wird schlechter", "die Firmen sparen Geld"], correct: 0, explanation: "قيل: kürzere Arbeitszeiten die Produktivität steigern." },
       { q: "Was kritisieren die Gegner?", qAr: "ماذا ينتقد المعارضون؟", options: ["nicht alle Branchen profitieren", "die Mitarbeiter arbeiten zu viel", "die Produkte werden schlechter", "der Urlaub wird kürzer"], correct: 0, explanation: "قيل: nicht alle Branchen davon profitieren könnten." },
-      { q: "Was fordern die Ökonomen?", qAr: "ماذا يطالب الاقتصاديون؟", options: ["die Ergebnisse genau zu analysieren", "sofort umzustellen", "keine Experimente", "mehr Urlaub"], correct: 0, explanation: "قيل: die Ergebnisse der Pilotprojekte genau zu analysieren." },
-      { q: "Der Ton des Autors ist ...", qAr: "نبرة الكاتب ...", options: ["neutral und abwartend", "sehr kritisch", "begeistert", "ironisch"], correct: 0, explanation: "محايدة وانتظارية (es bleibt abzuwarten)." },
+      { q: "Was fordern die Ökonomen?", qAr: "ماذا يطالب الاقتصاديون؟", options: ["die Ergebnisse genau zu analysieren", "die Produktion sofort umzustellen", "gar keine Experimente zu machen", "den Mitarbeitern mehr Urlaub zu geben"], correct: 0, explanation: "قيل: die Ergebnisse der Pilotprojekte genau zu analysieren." },
+      { q: "Der Ton des Autors ist ...", qAr: "نبرة الكاتب ...", options: ["neutral und abwartend", "sehr kritisch und streng", "begeistert und lobend", "ironisch und spöttisch"], correct: 0, explanation: "محايدة وانتظارية (es bleibt abzuwarten)." },
     ],
   },
   {
@@ -387,7 +387,7 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     textAr: "في المقابلة تشرح اللغوية د. بيرغر أن معرفة اللغات تحسّن الفرص المهنية بشكل ملحوظ. وتشير إلى أن أصحاب العمل يفضلون بشكل متزايد المرشحين متعددي اللغات. وفي الوقت نفسه تؤكد أن تعلم اللغات يتطلب انضباطاً ولا يحدث بين ليلة وضحاها. وعند سؤالها عن أفضل طريقة تجيب أن الاتصال المنتظم باللغة أهم من القواعد المثالية. ويجب ألا يخاف المرء من الأخطاء لأننا نتعلم منها أكثر.",
     questions: [
       { q: "Was verbessern Sprachkenntnisse laut Dr. Berger?", qAr: "ماذا تحسّن معرفة اللغات حسب د. بيرغر؟", options: ["die beruflichen Chancen", "das Gehalt automatisch", "die Gesundheit", "die Reisezeit"], correct: 0, explanation: "قالت: Sprachkenntnisse die beruflichen Chancen deutlich verbesserten." },
-      { q: "Was ist wichtiger als perfekte Grammatik?", qAr: "ما الأهم من القواعد المثالية؟", options: ["der regelmäßige Kontakt mit der Sprache", "teure Kurse", "das Auswendiglernen", "die Grammatik"], correct: 0, explanation: "قالت: der regelmäßige Kontakt mit der Sprache wichtiger sei als perfekte Grammatik." },
+      { q: "Was ist wichtiger als perfekte Grammatik?", qAr: "ما الأهم من القواعد المثالية؟", options: ["der regelmäßige Kontakt mit der Sprache", "teure Kurse mit vielen Stunden", "das reine Auswendiglernen von Regeln", "die Grammatik ohne jede Übung"], correct: 0, explanation: "قالت: der regelmäßige Kontakt mit der Sprache wichtiger sei als perfekte Grammatik." },
       { q: "Was soll man laut Dr. Berger nicht haben?", qAr: "ماذا يجب ألا يملك المرء حسب د. بيرغر؟", options: ["Angst vor Fehlern", "zu viel Motivation", "gute Lehrer", "viele Bücher"], correct: 0, explanation: "قالت: Man solle keine Angst vor Fehlern haben." },
     ],
   },
@@ -423,8 +423,8 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     textAr: "وجد أخي الأسبوع الماضي شقة جديدة. تقع في الطابق الثالث وتتكون من ثلاث غرف. الإيجار سبعمائة يورو شامل، أي مع التدفئة والماء. الشقة لها شرفة ومطبخ حديث. أخي راضٍ جداً لأن الشقة ليست بعيدة عن مكتبه. يستطيع الآن الذهاب للعمل مشياً.",
     questions: [
       { q: "Wo liegt die Wohnung?", qAr: "أين تقع الشقة؟", options: ["im dritten Stock", "im ersten Stock", "im Erdgeschoss", "im Keller"], correct: 0, explanation: "في الطابق الثالث (im dritten Stock)." },
-      { q: "Was bedeutet „warm“ bei der Miete?", qAr: "ماذا يعني «warm» في الإيجار؟", options: ["mit Heizung und Wasser", "mit Möbeln", "mit Parkplatz", "mit Balkon nur"], correct: 0, explanation: "مع التدفئة والماء (mit Heizung und Wasser)." },
-      { q: "Warum ist der Bruder zufrieden?", qAr: "لماذا الرجل راضٍ؟", options: ["Die Wohnung ist nah am Büro", "Die Miete ist billig", "Die Wohnung ist groß", "Er hat einen Garten"], correct: 0, explanation: "قيل: weil die Wohnung nicht weit von seinem Büro liegt." },
+      { q: "Was bedeutet „warm“ bei der Miete?", qAr: "ماذا يعني «warm» في الإيجار؟", options: ["mit Heizung und Wasser", "mit Möbeln im Zimmer", "mit Parkplatz vor dem Haus", "mit Balkon nur im Sommer"], correct: 0, explanation: "مع التدفئة والماء (mit Heizung und Wasser)." },
+      { q: "Warum ist der Bruder zufrieden?", qAr: "لماذا الرجل راضٍ؟", options: ["Die Wohnung ist nah am Büro", "Die Miete ist sehr billig", "Die Wohnung ist groß und hell", "Er hat einen eigenen Garten"], correct: 0, explanation: "قيل: weil die Wohnung nicht weit von seinem Büro liegt." },
     ],
   },
   {
@@ -444,10 +444,10 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     text: "Immer mehr Menschen entscheiden sich für ein Leben auf dem Land. Die Vorteile liegen auf der Hand: frische Luft, mehr Platz und weniger Lärm. Doch die Nachteile sind nicht zu unterschätzen: Der Weg zur Arbeit ist länger, und die Auswahl an Geschäften und Schulen ist kleiner. Außerdem fühlen sich manche Menschen auf dem Land isoliert, besonders junge Leute. Experten raten daher, die Entscheidung gut zu überlegen und sich vorher zu informieren. Wer jedoch Ruhe und Natur schätzt, findet auf dem Land oft genau das, was er sucht.",
     textAr: "يتزايد عدد من يختارون الحياة في الريف. المزايا واضحة: هواء نقي ومساحة أكبر وضوضاء أقل. لكن لا ينبغي الاستهانة بالعيوب: طريق العمل أطول واختيار المتاجر والمدارس أقل. كما يشعر بعض الناس بالعزلة في الريف، خاصة الشباب. لذلك ينصح الخبراء بالتفكير الجيد في القرار والاطلاع أولاً. أما من يقدّر الهدوء والطبيعة فيجد في الريف غالباً ما يبحث عنه.",
     questions: [
-      { q: "Was ist ein Vorteil des Lebens auf dem Land?", qAr: "ما ميزة الحياة في الريف؟", options: ["mehr Platz und frische Luft", "kürzere Arbeitswege", "mehr Geschäfte", "bessere Schulen"], correct: 0, explanation: "مساحة أكبر وهواء نقي (mehr Platz und frische Luft)." },
-      { q: "Was ist ein Nachteil laut dem Text?", qAr: "ما العيب حسب النص؟", options: ["längere Wege zur Arbeit", "zu viel Lärm", "zu wenig Natur", "hohe Mieten"], correct: 0, explanation: "طرق العمل أطول (länger)." },
+      { q: "Was ist ein Vorteil des Lebens auf dem Land?", qAr: "ما ميزة الحياة في الريف؟", options: ["mehr Platz und frische Luft", "kürzere Wege zur Arbeit", "mehr Geschäfte in der Nähe", "bessere Schulen für Kinder"], correct: 0, explanation: "مساحة أكبر وهواء نقي (mehr Platz und frische Luft)." },
+      { q: "Was ist ein Nachteil laut dem Text?", qAr: "ما العيب حسب النص؟", options: ["längere Wege zur Arbeit", "zu viel Lärm in der Nacht", "zu wenig Natur im Ort", "zu hohe Mieten für alle"], correct: 0, explanation: "طرق العمل أطول (länger)." },
       { q: "Was raten die Experten?", qAr: "بماذا ينصح الخبراء؟", options: ["die Entscheidung gut zu überlegen", "sofort umzuziehen", "nie aufs Land zu ziehen", "eine größere Stadt zu wählen"], correct: 0, explanation: "التفكير الجيد في القرار (gut zu überlegen)." },
-      { q: "Der Text ist insgesamt ...", qAr: "النص إجمالاً ...", options: ["ausgewogen (متوازن)", "nur positiv", "nur negativ", "ironisch"], correct: 0, explanation: "النص: Die Vorteile … Doch die Nachteile … — عرض متوازن ثم نصيحة." },
+      { q: "Der Text ist insgesamt ...", qAr: "النص إجمالاً ...", options: ["ausgewogen", "nur positiv", "nur negativ", "ironisch"], correct: 0, explanation: "النص: Die Vorteile … Doch die Nachteile … — عرض متوازن ثم نصيحة." },
     ],
   },
   {
@@ -457,7 +457,7 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     questions: [
       { q: "Wann findet die Besprechung jetzt statt?", qAr: "متى يقام الاجتماع الآن؟", options: ["am Freitag um zehn Uhr", "am Donnerstag um zehn Uhr", "am Freitag um neun Uhr", "am Montag"], correct: 0, explanation: "الجمعة الساعة العاشرة (am Freitag um zehn Uhr)." },
       { q: "Was soll Tom machen?", qAr: "ماذا يجب أن يفعل توم؟", options: ["die Statistik übernehmen", "die Folien vorbereiten", "das Büro buchen", "den Kunden anrufen"], correct: 0, explanation: "تولي الإحصائيات (die Statistik übernehmen)." },
-      { q: "Was möchte der Chef?", qAr: "ماذا يريد المدير؟", options: ["eine Präsentation vorbereiten", "den Termin absagen", "mehr Urlaub", "ein neues Büro"], correct: 0, explanation: "قيل: möchte der Chef, dass wir die Präsentation vorbereiten." },
+      { q: "Was möchte der Chef?", qAr: "ماذا يريد المدير؟", options: ["eine Präsentation vorbereiten", "den Termin ganz absagen", "mehr Urlaub im Sommer", "ein neues Büro im Haus"], correct: 0, explanation: "قيل: möchte der Chef, dass wir die Präsentation vorbereiten." },
     ],
   },
 
@@ -467,10 +467,10 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     text: "Die Debatte um den Mindestlohn wird in vielen Ländern kontrovers geführt. Befürworter argumentieren, dass ein gesetzlicher Mindestlohn die Kaufkraft der Arbeitnehmer stärke und Armut reduziere. Sie verweisen auf Studien, die einen positiven Effekt auf die Wirtschaft belegen. Kritiker dagegen warnen, dass höhere Lohnkosten zu Stellenabbau führen könnten, insbesondere in kleinen Betrieben. Ökonomen betonen, dass die Wirkung stark vom jeweiligen Arbeitsmarkt abhänge. Eine pauschale Antwort sei daher nicht möglich. Entscheidend sei letztlich, dass der Mindestlohn im Verhältnis zu den Lebenshaltungskosten stehe.",
     textAr: "يُدار النقاش حول الحد الأدنى للأجور في بلدان كثيرة بشكل مثير للجدل. يرى المؤيدون أن الحد الأدنى القانوني يقوّي القوة الشرائية للعمال ويحد من الفقر. ويشيرون إلى دراسات تثبت أثراً إيجابياً على الاقتصاد. بينما يحذر النقاد من أن ارتفاع تكاليف الأجور قد يؤدي إلى خفض الوظائف، خاصة في المؤسسات الصغيرة. يؤكد الاقتصاديون أن الأثر يعتمد كثيراً على سوق العمل المعني. لذلك لا يمكن إجابة واحدة شاملة. المهم في النهاية أن يكون الحد الأدنى متناسباً مع تكاليف المعيشة.",
     questions: [
-      { q: "Was behaupten die Befürworter des Mindestlohns?", qAr: "ماذا يدّعي مؤيدو الحد الأدنى؟", options: ["Er stärkt die Kaufkraft und reduziert Armut", "Er führt zu Stellenabbau", "Er schadet der Wirtschaft", "Er erhöht die Preise"], correct: 0, explanation: "يقوّي القوة الشرائية ويحد من الفقر (نقل كلام: stärke, reduziere)." },
-      { q: "Wovor warnen die Kritiker?", qAr: "ماذا يحذر النقاد؟", options: ["Stellenabbau in kleinen Betrieben", "zu viel Kaufkraft", "mehr Armut", "höhere Steuern"], correct: 0, explanation: "خفض الوظائف في المؤسسات الصغيرة (Stellenabbau)." },
+      { q: "Was behaupten die Befürworter des Mindestlohns?", qAr: "ماذا يدّعي مؤيدو الحد الأدنى؟", options: ["Er stärkt die Kaufkraft und reduziert Armut", "Er führt in vielen Branchen zu Stellenabbau", "Er schadet der Wirtschaft insgesamt", "Er erhöht die Preise für alle Kunden"], correct: 0, explanation: "يقوّي القوة الشرائية ويحد من الفقر (نقل كلام: stärke, reduziere)." },
+      { q: "Wovor warnen die Kritiker?", qAr: "ماذا يحذر النقاد؟", options: ["Stellenabbau in kleinen Betrieben", "zu viel Kaufkraft in der Bevölkerung", "deutlich mehr Armut", "höhere Steuern für alle"], correct: 0, explanation: "خفض الوظائف في المؤسسات الصغيرة (Stellenabbau)." },
       { q: "Was betonen die Ökonomen?", qAr: "ماذا يؤكد الاقتصاديون؟", options: ["Die Wirkung hängt vom Arbeitsmarkt ab", "Der Mindestlohn ist immer gut", "Der Mindestlohn ist immer schlecht", "Es gibt keine Studien"], correct: 0, explanation: "الأثر يعتمد على سوق العمل (abgehängt vom Arbeitsmarkt)." },
-      { q: "Worauf kommt es letztlich an?", qAr: "على ماذا يعتمد الأمر في النهاية؟", options: ["das Verhältnis zu den Lebenshaltungskosten", "die Höhe der Steuern", "die Anzahl der Betriebe", "das Alter der Arbeitnehmer"], correct: 0, explanation: "التناسب مع تكاليف المعيشة (im Verhältnis zu den Lebenshaltungskosten)." },
+      { q: "Worauf kommt es letztlich an?", qAr: "على ماذا يعتمد الأمر في النهاية؟", options: ["das Verhältnis zu den Lebenshaltungskosten", "die Höhe der Steuern im Land", "die Anzahl der Betriebe in der Region", "das Alter der Arbeitnehmer im Betrieb"], correct: 0, explanation: "التناسب مع تكاليف المعيشة (im Verhältnis zu den Lebenshaltungskosten)." },
     ],
   },
   {
@@ -478,9 +478,9 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     text: "In der Radiosendung „Beruf und Karriere“ diskutieren zwei Gäste über lebenslanges Lernen. Die erste Gastgeberin betont, dass sich der Arbeitsmarkt rasant verändere und dass nur wer sich weiterbilde, langfristig Chancen habe. Der zweite Gast widerspricht teilweise: Er argumentiert, dass Erfahrung und soziale Kompetenzen mindestens so wichtig seien wie neue Zertifikate. Er räumt aber ein, dass digitale Fähigkeiten inzwischen unverzichtbar seien. Beide sind sich einig, dass Arbeitgeber mehr flexible Weiterbildungszeiten anbieten sollten. Zum Schluss wird die Frage gestellt, wer die Kosten der Weiterbildung tragen solle – ein Thema, das nach Ansicht der Moderatorin noch offen sei.",
     textAr: "في البرنامج الإذاعي «المهنة والمسيرة» يناقش ضيفان التعلم مدى الحياة. تؤكد المذيعة الأولى أن سوق العمل يتغير بسرعة وأن من لا يطوّر نفسه يفقد فرصه على المدى الطويل. يعترض الضيف الثاني جزئياً: يرى أن الخبرة والمهارات الاجتماعية لا تقل أهمية عن الشهادات الجديدة. لكنه يعترف بأن المهارات الرقمية أصبحت لا غنى عنها. يتفق الاثنان على أن على أصحاب العمل تقديم أوقات مرنة للتدريب. وفي الختام يطرح سؤال من يتحمل تكاليف التدريب – موضوع ما زال مفتوحاً برأي المذيعة.",
     questions: [
-      { q: "Was betont die erste Gastgeberin?", qAr: "ماذا تؤكد المذيعة الأولى؟", options: ["Nur wer sich weiterbildet, hat langfristig Chancen", "Erfahrung ist unwichtig", "Zertifikate sind nutzlos", "Der Arbeitsmarkt ist stabil"], correct: 0, explanation: "من يطور نفسه فقط له فرص (نقل كلام: verändere, habe)." },
-      { q: "Was hält der zweite Gast für wichtig?", qAr: "ماذا يرى الضيف الثاني مهماً؟", options: ["Erfahrung und soziale Kompetenzen", "nur neue Zertifikate", "nur digitale Fähigkeiten", "nichts davon"], correct: 0, explanation: "الخبرة والمهارات الاجتماعية (soziale Kompetenzen)." },
-      { q: "Worin sind sich beide einig?", qAr: "على ماذا يتفقان؟", options: ["flexible Weiterbildungszeiten durch Arbeitgeber", "höhere Gehälter", "weniger Kurse", "keine Weiterbildung"], correct: 0, explanation: "قيل: Beide sind sich einig, dass Arbeitgeber mehr flexible Weiterbildungszeiten anbieten sollten." },
+      { q: "Was betont die erste Gastgeberin?", qAr: "ماذا تؤكد المذيعة الأولى؟", options: ["Nur wer sich weiterbildet, hat langfristig Chancen", "Erfahrung ist für sie völlig unwichtig", "Zertifikate sind heute nutzlos geworden", "Der Arbeitsmarkt bleibt langfristig stabil"], correct: 0, explanation: "من يطور نفسه فقط له فرص (نقل كلام: verändere, habe)." },
+      { q: "Was hält der zweite Gast für wichtig?", qAr: "ماذا يرى الضيف الثاني مهماً؟", options: ["Erfahrung und soziale Kompetenzen", "nur neue Zertifikate und Abschlüsse", "nur digitale Fähigkeiten im Beruf", "nichts von alledem"], correct: 0, explanation: "الخبرة والمهارات الاجتماعية (soziale Kompetenzen)." },
+      { q: "Worin sind sich beide einig?", qAr: "على ماذا يتفقان؟", options: ["flexible Weiterbildungszeiten durch Arbeitgeber", "deutlich höhere Gehälter für alle Beschäftigten", "weniger Kurse und mehr Freizeit pro Jahr", "gar keine Weiterbildung mehr im Betrieb"], correct: 0, explanation: "قيل: Beide sind sich einig, dass Arbeitgeber mehr flexible Weiterbildungszeiten anbieten sollten." },
       { q: "Welche Frage bleibt offen?", qAr: "أي سؤال يبقى مفتوحاً؟", options: ["Wer zahlt die Weiterbildung?", "Wer leitet die Kurse?", "Wie lange dauert die Ausbildung?", "Wo finden die Kurse statt?"], correct: 0, explanation: "من يتحمل تكاليف التدريب (wer die Kosten tragen solle)." },
     ],
   },
