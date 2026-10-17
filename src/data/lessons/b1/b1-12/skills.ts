@@ -57,9 +57,9 @@ export const listening: Lesson["listening"] = {
         questionAr: "لماذا تتعلّم زوجته الألمانية؟",
         options: [
           "Damit die Kinder zweisprachig aufwachsen",
-          "Um selbst zu studieren",
-          "Wegen der Arbeit",
-          "Trotz der Kinder",
+          "Um selbst noch zu studieren und zu lernen",
+          "Wegen der Arbeit und des langen Weges",
+          "Trotz der Kinder und der Schule",
         ],
         correctIndex: 0,
         explanation: "الفاعل مختلف (هي تتعلّم، الأطفال ينشأون) ⇒ damit.",

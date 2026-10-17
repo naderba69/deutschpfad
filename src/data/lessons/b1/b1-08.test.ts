@@ -24,7 +24,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   },
   q1: { options: ["viele Jobs", "das Wetter", "die Politik nur", "nichts"], key: "viele Jobs" },
   q2: {
-    options: ["Je mehr Abhängigkeit, desto verletzlicher", "Es ist kein Problem", "Die Abhängigkeit hilft", "Wir sind sicher"],
+    options: ["Je mehr Abhängigkeit, desto verletzlicher", "Es ist für die Betriebe kein Problem", "Die Abhängigkeit hilft sogar beim Sparen", "Wir sind dadurch sicherer geworden"],
     key: "Je mehr Abhängigkeit, desto verletzlicher",
   },
   q3: { options: ["Die Kamera ist schlecht", "Das Handy ist kaputt", "Es ist zu alt", "Er hat es verloren"], key: "Die Kamera ist schlecht" },

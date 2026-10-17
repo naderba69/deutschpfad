@@ -98,7 +98,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       instructionAr: "اختر الترجمة الصحيحة:",
       questionDe: "Bescheid sagen",
       questionAr: "ما معنى العبارة؟",
-      options: ["يعطي خبراً/يبلغ", "يقول وداعاً", "يأخذ قراراً", "يقدم مساعدة"],
+      options: ["يُبلغ خبراً", "يقول وداعاً", "يأخذ قراراً", "يقدم مساعدة"],
       correctIndex: 0,
       explanation: "Bescheid sagen = يبلغ/يعطي خبراً.",
       errorType: "vocabulary",

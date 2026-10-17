@@ -16,7 +16,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   e8: { options: ["طلب الوظيفة", "السيرة الذاتية", "مقابلة العمل", "الراتب"], key: "طلب الوظيفة" },
   m1: { options: ["kam", "kommt", "gekommen", "komme"], key: "kam" },
   m2: { options: ["hatte ... gegessen", "hat ... gegessen", "hatte ... geessen", "war ... gegessen"], key: "hatte ... gegessen" },
-  q1: { options: ["Programmierer", "Lehrer", "Verkäufer", "Ingenieur"], key: "Programmierer" },
+  q1: { options: ["Programmierer", "Lehrer", "Verkäufer im Supermarkt", "Ingenieur für Maschinen"], key: "Programmierer" },
   q2: {
     options: ["viel recherchiert", "Deutsch gelernt", "ein Buch geschrieben", "ein Praktikum gemacht"],
     key: "viel recherchiert",

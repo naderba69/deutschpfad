@@ -102,7 +102,7 @@ export const listening: Lesson["listening"] = {
         instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
         questionDe: "Was war am Anfang schwer für Karim?",
         questionAr: "ماذا كان صعباً في البداية على كريم؟",
-        options: ["der Kulturschock", "das Essen", "das Wetter", "die Musik"],
+        options: ["der Kulturschock", "das Essen im Land", "das Wetter im Herbst", "die Musik der Stadt"],
         correctIndex: 0,
         explanation: "قال كريم: Am Anfang war der Kulturschock schwer — صدمة الثقافة كانت صعبة.",
         errorType: "vocabulary",

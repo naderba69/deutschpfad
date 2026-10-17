@@ -10,12 +10,12 @@ import type { Exercise } from "@/types/lesson";
 
 const expectedMultipleChoice: Record<string, { options: string[]; key: string }> = {
   r1: { options: ["meinem", "meinen", "mein", "meine"], key: "meinem" },
-  r2: { options: ["الجمعية/النادي", "الشركة", "المدرسة", "المستشفى"], key: "الجمعية/النادي" },
+  r2: { options: ["النادي", "الشركة", "المدرسة", "المستشفى"], key: "النادي" },
   e1: { options: ["stellen", "geben", "sagen", "nehmen"], key: "stellen" },
   e2: { options: ["Studenten", "Student", "Studentes", "Studentin"], key: "Studenten" },
   e8: {
-    options: ["يعطي خبراً/يبلغ", "يقول وداعاً", "يأخذ قراراً", "يقدم مساعدة"],
-    key: "يعطي خبراً/يبلغ",
+    options: ["يُبلغ خبراً", "يقول وداعاً", "يأخذ قراراً", "يقدم مساعدة"],
+    key: "يُبلغ خبراً",
   },
   e11: { options: ["auf", "für", "an", "über"], key: "auf" },
   m1: { options: ["treffen", "stellen", "sagen", "machen"], key: "treffen" },
@@ -27,7 +27,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     key: "mit dem Kollegen",
   },
   q3: {
-    options: ["eine Entscheidung", "eine Frage", "einen Fehler", "eine Pause"],
+    options: ["eine Entscheidung", "eine schwierige Frage", "einen kleinen Fehler", "eine lange Pause"],
     key: "eine Entscheidung",
   },
 };

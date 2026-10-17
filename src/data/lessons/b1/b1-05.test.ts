@@ -23,11 +23,11 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   m2: { options: ["hätte ... gemacht", "wäre ... gemacht", "hätte ... machen", "hat ... gemacht"], key: "hätte ... gemacht" },
   q1: { options: ["mehr Sport", "weniger schlafen", "mehr essen", "weniger arbeiten"], key: "mehr Sport" },
   q2: {
-    options: ["Wasser trinken und Bewegung", "Tabletten nur", "Bettruhe", "wenig essen"],
+    options: ["Wasser trinken und Bewegung", "nur Tabletten einnehmen", "viel Bettruhe zu Hause", "wenig essen und fast nichts trinken"],
     key: "Wasser trinken und Bewegung",
   },
   q3: {
-    options: ["Ich hätte früher kommen sollen", "Ich bin gesund", "Ich gehe jetzt", "Ich brauche Tabletten"],
+    options: ["Ich hätte früher kommen sollen", "Ich bin wieder ganz gesund", "Ich gehe jetzt nach Hause", "Ich brauche heute Tabletten"],
     key: "Ich hätte früher kommen sollen",
   },
 };

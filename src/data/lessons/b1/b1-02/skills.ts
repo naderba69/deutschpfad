@@ -38,7 +38,7 @@ export const listening: Lesson["listening"] = {
         instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
         questionDe: "Was arbeitete Sami in Tunis?",
         questionAr: "ماذا عمل سامي في تونس؟",
-        options: ["Programmierer", "Lehrer", "Verkäufer", "Ingenieur"],
+        options: ["Programmierer", "Lehrer", "Verkäufer im Supermarkt", "Ingenieur für Maschinen"],
         correctIndex: 0,
         explanation: "قال: Ich arbeitete drei Jahre als Programmierer.",
         errorType: "vocabulary",

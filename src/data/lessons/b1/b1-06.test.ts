@@ -23,7 +23,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   q2: { options: ["Couscous", "Schnitzel", "Käsespätzle", "Currywurst"], key: "Couscous" },
   q3: { options: ["gute Orchester", "gute Strände", "gute Wüsten", "gute Berge"], key: "gute Orchester" },
   q4: {
-    options: ["der Kulturschock", "das Essen", "das Wetter", "die Musik"],
+    options: ["der Kulturschock", "das Essen im Land", "das Wetter im Herbst", "die Musik der Stadt"],
     key: "der Kulturschock",
   },
   q5: { options: ["ihre Heimat", "das Wetter", "die Arbeit", "das Essen"], key: "ihre Heimat" },

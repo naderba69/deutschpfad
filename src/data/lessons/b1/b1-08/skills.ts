@@ -54,7 +54,7 @@ export const listening: Lesson["listening"] = {
         instructionAr: "اختر الإجابة الصحيحة:",
         questionDe: "Was sagt Sami über die Abhängigkeit?",
         questionAr: "ماذا يقول سامي عن الاعتماد؟",
-        options: ["Je mehr Abhängigkeit, desto verletzlicher", "Es ist kein Problem", "Die Abhängigkeit hilft", "Wir sind sicher"],
+        options: ["Je mehr Abhängigkeit, desto verletzlicher", "Es ist für die Betriebe kein Problem", "Die Abhängigkeit hilft sogar beim Sparen", "Wir sind dadurch sicherer geworden"],
         correctIndex: 0,
         explanation: "قال: Je mehr wir abhängen, desto verletzlicher werden wir.",
         errorType: "vocabulary",

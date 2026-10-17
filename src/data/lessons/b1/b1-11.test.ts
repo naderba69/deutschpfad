@@ -35,11 +35,11 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   "mt-b1-11-3": { options: ["التسجيل", "الامتحان", "النجاح"], key: "التسجيل" },
   "mt-b1-11-4": { options: ["hätte", "habe", "hatte"], key: "hätte" },
   "lsq-b1-11-1": {
-    options: ["Am Donnerstag, den 15., um 14 Uhr", "Am Freitag um 9 Uhr", "Am Montag"],
+    options: ["Am Donnerstag, den 15., um 14 Uhr", "Am Freitag schon um 9 Uhr früh", "Am Montag um dieselbe Zeit"],
     key: "Am Donnerstag, den 15., um 14 Uhr",
   },
   "lsq-b1-11-2": {
-    options: ["Den Lebenslauf und die Zeugnisse", "Ein Geschenk", "Nichts"],
+    options: ["Den Lebenslauf und die Zeugnisse", "Ein kleines Geschenk für den Chef", "Nichts, er braucht gar keine Unterlagen"],
     key: "Den Lebenslauf und die Zeugnisse",
   },
 };

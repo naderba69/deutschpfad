@@ -74,7 +74,7 @@ export const listening: Lesson["listening"] = {
         instructionAr: "اختر الإجابة الصحيحة:",
         questionDe: "Was treffen sie heute?",
         questionAr: "ماذا يتخذون اليوم؟",
-        options: ["eine Entscheidung", "eine Frage", "einen Fehler", "eine Pause"],
+        options: ["eine Entscheidung", "eine schwierige Frage", "einen kleinen Fehler", "eine lange Pause"],
         correctIndex: 0,
         explanation: "قالت منى: Wir treffen eine wichtige Entscheidung heute.",
         errorType: "vocabulary",

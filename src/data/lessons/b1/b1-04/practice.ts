@@ -99,7 +99,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       instructionAr: "اختر الترجمة الصحيحة:",
       questionDe: "Könnten Sie das wiederholen?",
       questionAr: "ما معنى السؤال؟",
-      options: ["هل يمكنكم التكرار؟ (تهذيب)", "هل تريدون التكرار؟", "لماذا تكررون؟", "متى تكررون؟"],
+      options: ["هل يمكنكم التكرار؟", "هل تريدون أن تكرروا ذلك؟", "لماذا تكررون السؤال؟", "متى تكررون الكلام؟"],
       correctIndex: 0,
       explanation: "Könnten = صيغة مهذبة من können.",
       errorType: "vocabulary",

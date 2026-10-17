@@ -123,7 +123,7 @@ export const review: NonNullable<Lesson["review"]> = [
       type: "multiple-choice",
       instructionAr: "مراجعة من A1 (درس a1-06 — أوقات الفراغ والهوايات): اختر المعنى:",
       questionDe: "der Verein",
-      options: ["الجمعية/النادي", "الشركة", "المدرسة", "المستشفى"],
+      options: ["النادي", "الشركة", "المدرسة", "المستشفى"],
       correctIndex: 0,
       explanation: "der Verein = الجمعية/النادي.",
       errorType: "vocabulary",

@@ -14,8 +14,8 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   e1: { options: ["hätte", "habe", "hatte", "haben"], key: "hätte" },
   e2: { options: ["würde reisen", "werde reisen", "reise würde", "würde gereist"], key: "würde reisen" },
   e8: {
-    options: ["هل يمكنكم التكرار؟ (تهذيب)", "هل تريدون التكرار؟", "لماذا تكررون؟", "متى تكررون؟"],
-    key: "هل يمكنكم التكرار؟ (تهذيب)",
+    options: ["هل يمكنكم التكرار؟", "هل تريدون أن تكرروا ذلك؟", "لماذا تكررون السؤال؟", "متى تكررون الكلام؟"],
+    key: "هل يمكنكم التكرار؟",
   },
   m1: { options: ["wäre", "bin", "war", "werde"], key: "wäre" },
   m2: {
@@ -23,15 +23,15 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     key: "würde ... lesen",
   },
   q1: {
-    options: ["ein Haus kaufen und reisen", "eine Firma gründen", "ein Auto kaufen", "spenden"],
+    options: ["ein Haus kaufen und reisen", "eine Firma gründen", "ein neues Auto kaufen", "Geld spenden"],
     key: "ein Haus kaufen und reisen",
   },
   q2: {
-    options: ["eine Stiftung für Bildung", "eine Firma", "einen Verein", "eine Schule"],
+    options: ["eine Stiftung für Bildung", "eine eigene kleine Firma", "einen Verein in seiner Stadt", "eine Schule für Kinder"],
     key: "eine Stiftung für Bildung",
   },
   q3: {
-    options: ["ein Wochenende ohne Handy", "mehr arbeiten", "Urlaub machen", "sportlich werden"],
+    options: ["ein Wochenende ohne Handy", "mehr arbeiten und sparen", "Urlaub am Meer machen", "wieder sportlich werden"],
     key: "ein Wochenende ohne Handy",
   },
 };

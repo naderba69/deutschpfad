@@ -75,10 +75,10 @@ export const readingB111: ReadingText = {
       questionDe: "Warum wird der Übungsteil besonders gelobt?",
       questionAr: "لماذا يُثنى على قسم التدريب خاصة؟",
       options: [
-        "Weil er am Samstag stattfindet.",
+        "Weil er regelmäßig am Samstag stattfindet.",
         "Weil dort Aufgaben aus der Prüfung bearbeitet werden.",
-        "Weil er billiger als der Kurs ist.",
-        "Weil dort keine Grammatik vorkommt.",
+        "Weil er deutlich billiger als der Kurs ist.",
+        "Weil dort überhaupt keine Grammatik vorkommt.",
       ],
       correctIndex: 1,
       paragraph: 3,

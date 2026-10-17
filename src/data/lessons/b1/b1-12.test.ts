@@ -34,12 +34,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     key: "Um als Ingenieur zu arbeiten",
   },
   q2: {
-    options: [
-      "Damit die Kinder zweisprachig aufwachsen",
-      "Um selbst zu studieren",
-      "Wegen der Arbeit",
-      "Trotz der Kinder",
-    ],
+    options: ["Damit die Kinder zweisprachig aufwachsen", "Um selbst noch zu studieren und zu lernen", "Wegen der Arbeit und des langen Weges", "Trotz der Kinder und der Schule"],
     key: "Damit die Kinder zweisprachig aufwachsen",
   },
   q3: {

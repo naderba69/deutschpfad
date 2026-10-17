@@ -17,12 +17,12 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   m1: { options: ["Als", "Wenn", "Während", "Bis"], key: "Als" },
   m2: { options: ["Während", "Als", "Bis", "Nachdem"], key: "Während" },
   q1: {
-    options: ["seitdem er in Deutschland wohnt", "seit der Mauerfall", "seit er zehn war", "seit kurzem"],
+    options: ["seitdem er in Deutschland wohnt", "seit dem Mauerfall damals", "seit er zehn Jahre alt war", "seit ganz kurzer Zeit erst"],
     key: "seitdem er in Deutschland wohnt",
   },
-  q2: { options: ["die Programme lesen", "Werbung machen", "demonstrieren", "arbeiten"], key: "die Programme lesen" },
+  q2: { options: ["die Programme lesen", "Werbung dafür machen", "demonstrieren gehen", "weiter arbeiten"], key: "die Programme lesen" },
   q3: {
-    options: ["nachdem sie die Programme gelesen hat", "vor der Wahl", "während des Wahlkampfs", "morgen"],
+    options: ["nachdem sie die Programme gelesen hat", "schon lange vor der eigentlichen Wahl", "während des ganzen Wahlkampfs", "morgen früh um acht Uhr im Büro"],
     key: "nachdem sie die Programme gelesen hat",
   },
 };
