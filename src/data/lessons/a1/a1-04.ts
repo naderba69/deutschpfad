@@ -306,9 +306,9 @@ export const lessonA104: Lesson = {
         "correctIndex": 1,
         "explanation": "النصّ: «in der Gartenstraße 14, im dritten Stock». وانتبه إلى أنّ اسم الشارع Gartenstraße فيه كلمة «حديقة» لكنّه لا يعني أنّ للشقّة حديقة.",
         "optionExplanations": [
-          "الطابق الأرضي لم يُذكر.",
+          "الطابق الأرضي «Im Erdgeschoss» لم يُذكر؛ والسكن «im dritten Stock».",
           undefined,
-          "الطابق الثالث لا الأوّل.",
+          "النصّ يقول «im dritten Stock» أي الثالث، لا «im ersten Stock».",
           "اسم الشارع Gartenstraße مضلّل؛ الشقّة في عمارة."
         ],
         "errorType": "vocabulary",
@@ -332,7 +332,7 @@ export const lessonA104: Lesson = {
           "die Wand مؤنّثة، و der هنا علامة جرّ المؤنّث لا مذكّر.",
           undefined,
           "hängen يعمل في الحالتين بحسب المعنى، لا دائماً بالجرّ.",
-          "حجم الصورة لا أثر له في الإعراب."
+          "حجم الصورة «klein und leicht» لا أثر له في الإعراب؛ والحالة يحدّدها سؤال «Wo؟»."
         ],
         "errorType": "case",
         "paragraph": 1
@@ -354,8 +354,8 @@ export const lessonA104: Lesson = {
         "optionExplanations": [
           "فرز النفايات واجب لا ممنوع: ich muss den Müll trennen.",
           undefined,
-          "الجلوس في الشرفة لم يُمنع.",
-          "الزيارة مرحّب بها في آخر الرسالة."
+          "الجلوس في الشرفة «Auf dem Balkon sitzen» لم يُمنع؛ والمنع «keine Wäsche waschen».",
+          "زيارة الجيران «Nachbarn besuchen» مرحَّب بها في آخر الرسالة، لا ممنوعة «verboten»."
         ],
         "errorType": "negation",
         "paragraph": 3
@@ -377,8 +377,8 @@ export const lessonA104: Lesson = {
         "optionExplanations": [
           "المنع يُصاغ بـ darf nicht لا musst nicht.",
           undefined,
-          "لم تُذكر مشكلة في السمع.",
-          "لم يُذكر عطب في الجرس، بل أنّ الباب مفتوح."
+          "لم تُذكر مشكلة سمع «Sie hört die Klingel nicht»؛ بل «nicht müssen» ترفع الإلزام.",
+          "لم يُذكر عطب «Die Klingel ist kaputt»؛ والمعنى أن الباب مفتوح فلا حاجة إلى «klingeln»."
         ],
         "errorType": "negation",
         "paragraph": 4
@@ -398,10 +398,10 @@ export const lessonA104: Lesson = {
         "correctIndex": 2,
         "explanation": "الرفّ والثلّاجة والخزانة مذكورة صراحةً. أمّا وجود طاولة أو غرفة طعام فلم يذكره النص؛ لذا فالإجابة هي الشيء غير المذكور، لا الجزم بأنه غير موجود في الشقة.",
         "optionExplanations": [
-          "الرفّ مذكور في غرفة المعيشة.",
-          "الثلّاجة مذكورة بجانب النافذة.",
+          "الرفّ «Ein Regal an der Wand» مذكور في غرفة المعيشة، فهو وارد في النصّ.",
+          "الثلّاجة «Ein großer Kühlschrank» مذكورة بجانب النافذة في النصّ.",
           undefined,
-          "الخزانة مذكورة في غرفة النوم."
+          "الخزانة «Ein Schrank im Schlafzimmer» مذكورة في النصّ."
         ],
         "errorType": "vocabulary",
         "paragraph": 2
@@ -698,7 +698,7 @@ export const lessonA104: Lesson = {
         undefined,
         "هذا معنى nicht müssen لا nicht dürfen — والفرق بينهما هو بيت القصيد.",
         "müssen تعني الإلزام، ولا وجود لها في الجملة.",
-        "الجملة منعٌ صريح لا خيار مطروح.",
+        "«Nach 22 Uhr darf man nicht laut sein» منعٌ صريح، لا خيارٌ «wenn man will».",
       ],
       errorType: "grammar",
     },
@@ -749,7 +749,7 @@ export const lessonA104: Lesson = {
       errorType: "grammar",
     },
     {"id": "e16", "type": "fill-blank", "instructionAr": "أكمل بأداة الجرّ الصحيحة:", "template": "Das Bild hängt an ___ Wand und die Lampe steht auf ___ Tisch.", "blanks": [{"correct": "der", "options": ["der", "dem", "die", "den"]}, {"correct": "dem", "options": ["dem", "der", "den", "das"]}], "explanation": "كلتا الجملتين تجيبان عن Wo? ⟵ جرّ. و die Wand مؤنّثة ⟵ der (وهي علامة جرّ المؤنّث لا المذكّر!)، و der Tisch مذكّر ⟵ dem.", "errorType": "case"},
-    {"id": "e17", "type": "multiple-choice", "instructionAr": "أيّ جملة تعني «التدخين ممنوع هنا»؟", "questionDe": "Welcher Satz bedeutet ein Verbot?", "questionAr": "أيّ جملة تفيد المنع؟", "options": ["Man muss hier nicht rauchen", "Man darf hier nicht rauchen", "Man muss hier rauchen", "Man kann hier nicht rauchen"], "correctIndex": 1, "explanation": "من بين الخيارات، nicht dürfen تعني عدم السماح. أمّا nicht müssen فترفع الإلزام («لستَ مضطرّاً»)، و nicht können تفيد عدم القدرة أو الإمكان لا المنع في هذا السياق.", "optionExplanations": ["ترفع الإلزام فحسب: لستَ مضطرّاً إلى التدخين.", undefined, "إلزامٌ بالتدخين، وهو عكس المراد.", "تفيد عدم القدرة أو الإمكان لا المنع."], "errorType": "negation"},
+    {"id": "e17", "type": "multiple-choice", "instructionAr": "أيّ جملة تعني «التدخين ممنوع هنا»؟", "questionDe": "Welcher Satz bedeutet ein Verbot?", "questionAr": "أيّ جملة تفيد المنع؟", "options": ["Man muss hier nicht rauchen", "Man darf hier nicht rauchen", "Man muss hier rauchen", "Man kann hier nicht rauchen"], "correctIndex": 1, "explanation": "من بين الخيارات، nicht dürfen تعني عدم السماح. أمّا nicht müssen فترفع الإلزام («لستَ مضطرّاً»)، و nicht können تفيد عدم القدرة أو الإمكان لا المنع في هذا السياق.", "optionExplanations": ["«Man muss hier nicht rauchen» ترفع الإلزام فحسب؛ والمنع «darf nicht rauchen».", undefined, "«Man muss hier rauchen» إلزامٌ بالتدخين، عكس المنع «darf nicht rauchen».", "«Man kann hier nicht rauchen» تفيد عدم القدرة أو الإمكان، لا المنع «darf nicht»."], "errorType": "negation"},
     {"id": "e18", "type": "word-ordering", "instructionAr": "رتّب الكلمات مراعياً قوس الجملة:", "tokens": ["Ich", "muss", "morgen", "die", "Miete", "bezahlen", "."], "correctSentence": "Ich muss morgen die Miete bezahlen.", "explanation": "الفعل الناقص muss في المركز الثاني، والفعل الأصلي bezahlen مصدراً في آخر الجملة، وبينهما ظرف الزمان ثمّ المفعول به. هذا هو قوس الجملة (Satzklammer).", "errorType": "word-order"},
     {"id": "e19", "type": "error-correction", "instructionAr": "صحّح الخطأ في تصريف الفعل الناقص:", "wrongSentence": "Er musst die Tür schließen.", "wrongWord": "musst", "correctWord": "muss", "options": ["muss", "müssen", "müsst", "musse"], "explanation": "الأفعال الناقصة بلا نهاية في خانتي ich و er: er muss لا er musst. وهذا نمطٌ يشترك فيه كلّ الأفعال الناقصة الستّة.", "errorType": "conjugation"},
     {"id": "e20", "type": "transformation", "instructionAr": "حوّل الجملة من وصف الموقع إلى وصف الحركة:", "prompt": "Das Buch liegt auf dem Tisch. (Ich lege es …)", "acceptedAnswers": ["Ich lege es auf den Tisch.", "Ich lege es auf den Tisch"], "sampleAnswer": "Ich lege es auf den Tisch.", "explanation": "انتقلنا من Wo? إلى Wohin? ⟵ فالحرف auf يتحوّل من الجرّ إلى النصب: auf dem Tisch ⟵ auf den Tisch. والمذكّر وحده يُظهر الفرق بوضوح.", "errorType": "case"},

@@ -426,10 +426,10 @@ export const lessonA100: Lesson = {
         explanation:
           "الجملة الأولى تنصّ: «Frau Weber arbeitet im Sprachenzentrum in Leipzig». وانتبه إلى أنّ Leipzig هي المدينة، أما مكان العمل الأدقّ فهو Sprachenzentrum.",
         optionExplanations: [
-          "لم تُذكر مدرسة؛ المكان مركز لغات.",
+          "لم تُذكر مدرسة «eine Schule»؛ والنصّ «arbeitet im Sprachenzentrum in Leipzig».",
           undefined,
-          "تونس بلد الطالب لا مكان عملها.",
-          "لم تُذكر جامعة في النصّ.",
+          "تونس بلد يوسف «Youssef» لا مكان عملها؛ ومكتبها ليس «in einem Büro in Tunesien».",
+          "لم تُذكر جامعة «an der Universität» في النصّ؛ والمكان «Sprachenzentrum».",
         ],
         errorType: "vocabulary",
         paragraph: 0,
@@ -450,10 +450,10 @@ export const lessonA100: Lesson = {
         explanation:
           "الألمان يتهجّون بأسماء علمٍ معيارية (Anton, Berta, Emil…) تماماً كما يقول الطيّارون Alpha‑Bravo. والغرض تفادي الخلط بين الحروف المتشابهة صوتياً في الهاتف، لا ذكر أشخاص بأعيانهم.",
         optionExplanations: [
-          "أنطون ليس شخصاً في النصّ.",
+          "«Anton» اسمٌ في جدول التهجّي «die Buchstabiertafel»، لا شخصٌ في النصّ.",
           undefined,
-          "بل يتهجّى بدقّة وببطء.",
-          "لا وجود لشخصٍ بهذا الاسم في الدورة.",
+          "لم ينسَ الحرف «den Buchstaben vergessen»؛ بل يتهجّى بدقّة: «A wie Anton».",
+          "لا وجود لشخصٍ اسمه «Anton» في الدورة؛ والاسم جزء من «Buchstabiertafel».",
         ],
         errorType: "vocabulary",
         paragraph: 1,
@@ -474,10 +474,10 @@ export const lessonA100: Lesson = {
         explanation:
           "النصّ يصرّح: «Sie schreiben das mit ß, nicht mit ss». والقاعدة تؤيّده: حرف a في Straße طويل، والعلّة الطويلة يليها ß لا ss. أمّا Goethe فتُكتب oe لأنّه اسم علم تاريخي حُفظ رسمه القديم.",
         optionExplanations: [
-          "هذه الكتابة السويسرية؛ والنصّ ينصّ على ß.",
+          "الكتابة بـ«ss» سويسرية؛ والنصّ ينصّ «Sie schreiben das mit ß, nicht mit ss».",
           undefined,
-          "لا إمالة في اسم غوته؛ يُكتب oe.",
-          "فيها خطآن: نقص h وss بدل ß.",
+          "لا إمالة في اسم غوته؛ بل يُكتب «oe» كما في «Goethestraße».",
+          "خطآن معاً: نقص «h» في «Goetestrasse» و«ss» بدل «ß».",
         ],
         errorType: "spelling",
         paragraph: 2,
@@ -499,9 +499,9 @@ export const lessonA100: Lesson = {
           "النصّ: «Ihr Kurs beginnt am Montag um neun Uhr, Raum vier». والفخّ أنّ العدد أربعة وردَ فعلاً لكنّه رقم القاعة لا الساعة، والعدد اثنا عشر ورد لكنّه رقم البيت — فقراءة العدد وحده دون سياقه تُوقع في الخطأ.",
         optionExplanations: [
           undefined,
-          "لم يُذكر الأحد؛ وأربعة رقم القاعة.",
-          "اثنا عشر رقم البيت في الفقرة الثالثة.",
-          "الدورة تبدأ الاثنين لا اليوم.",
+          "لم يُذكر الأحد «am Sonntag»؛ و«vier» في النصّ رقم القاعة «Raum vier».",
+          "اليوم صحيح لكن الساعة لا؛ و«zwölf» في النصّ رقم البيت لا الساعة «neun Uhr».",
+          "الساعة صحيحة لكن اليوم لا؛ والبداية «am Montag» لا «heute».",
         ],
         errorType: "vocabulary",
         paragraph: 3,
@@ -517,10 +517,10 @@ export const lessonA100: Lesson = {
         explanation:
           "الخاء الغليظة تأتي بعد a و o و u و au. وفي Buchstabe يسبق ch حرف u فتُنطق خاءً. أمّا nicht وich فقبلهما i، وlächelt قبلها ä — وكلّها تُنطق شيناً ناعمة.",
         optionExplanations: [
-          "قبلها i فهي شين ناعمة.",
-          "قبلها i فهي شين ناعمة.",
+          "في «nicht» يسبق «ch» حرفُ «i» ⇒ شين ناعمة (ich-Laut)، لا خاء غليظة.",
+          "في «ich» يسبق «ch» حرفُ «i» ⇒ شين ناعمة؛ والخاء الغليظة بعد a/o/u/au كما في «Buch».",
           undefined,
-          "قبلها ä فهي شين ناعمة.",
+          "في «lächelt» يسبق «ch» حرفُ «ä» ⇒ شين ناعمة؛ والخاء الغليظة بعد a/o/u/au.",
         ],
         errorType: "spelling",
         paragraph: 1,
@@ -744,9 +744,9 @@ export const lessonA100: Lesson = {
       explanation: "W الألمانية تُنطق ڤ دائماً: Wasser = ڤاسّر.",
       optionExplanations: [
         undefined,
-        "صوت w الإنجليزي غير موجود في الألمانية إطلاقاً.",
+        "قيمة «W» الإنجليزية غير موجودة في الألمانية؛ فـ«Wasser» تُنطق بڤ.",
         "ف تُنطق بـ V الألمانية في كلمات مثل Vater.",
-        "ب هو حرف B.",
+        "صوت الباء يقابله الحرف «B» كما في «Buch»، لا «W».",
       ],
       errorType: "spelling",
     },
@@ -869,10 +869,10 @@ export const lessonA100: Lesson = {
       explanation:
         "حرف W الألماني يُنطق «ڤ» دائماً. وss هنا مهموسة «س» حادّة لأنّها مضاعفة، وهي تدلّ في الوقت نفسه على أنّ a قبلها قصيرة.",
       optionExplanations: [
-        "هذه قيمة W الإنجليزية لا الألمانية.",
+        "هذه قيمة «W» الإنجليزية؛ والألمانية تنطقه ڤ كما في «Wasser».",
         undefined,
-        "«ف» قيمة V لا W.",
-        "ss المضاعفة مهموسة دائماً، فلا تُنطق «ز».",
+        "صوت الفاء يقابله الحرف «V» كما في «Vater»، لا «W».",
+        "الـ«ss» المضاعفة مهموسة دائماً؛ والمجهور «s» يأتي قبل حرف علّة كما في «Sonne».",
       ],
       errorType: "spelling",
     },
@@ -887,10 +887,10 @@ export const lessonA100: Lesson = {
       explanation:
         "الخاء الغليظة (ach-Laut) تأتي حصراً بعد a و o و u و au. وفي Buch يسبقها u. أمّا Milch فقبلها l، وnicht قبلها i، وKirche قبلها r — وكلّها شين ناعمة.",
       optionExplanations: [
-        "بعد الصامت l تكون شيناً ناعمة.",
+        "في «die Milch» مقطع «ch» بعد «i» ⇒ شين ناعمة لا خاء غليظة.",
         undefined,
-        "بعد i تكون شيناً ناعمة.",
-        "بعد r تكون شيناً ناعمة.",
+        "في «nicht» يسبق «ch» حرفُ «i» ⇒ شين ناعمة (ich-Laut).",
+        "في «die Kirche» تُنطق «ch» شيناً ناعمة لأن مقطعها بعد «i»؛ والخاء الغليظة بعد a/o/u/au كما في «Buch».",
       ],
       errorType: "spelling",
     },

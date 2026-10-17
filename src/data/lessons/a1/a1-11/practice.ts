@@ -264,7 +264,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       "optionExplanations": [
         undefined,
         "die ليست صيغة Dativ بعد mit؛ نقول der Bahn.",
-        "zu للوجهة لا للوسيلة، والأداة هنا غير صحيحة.",
+        "«zu» للوجهة لا للوسيلة، و«die» بعدها خطأ؛ فالوسيلة «mit der Bahn» بـDativ.",
         "nach لا يقدّم وسيلة التنقل في هذا الجواب."
       ],
       "errorType": "case"

@@ -497,10 +497,10 @@ export const lessonA102: Lesson = {
         explanation:
           "النصّ: «meine Mutter Leila. Sie ist Ärztin». والفخّ أنّ مهنة المعلّم ذُكرت في الجملة السابقة مباشرةً لكنّها للأب كريم، والعمل في الحديقة للجدّ. فتتبّع الضمير sie لا الكلمة الأقرب.",
         optionExplanations: [
-          "المعلّم هو الأب كريم.",
+          "التعليم مهنة الأب كريم «Er ist Lehrer»؛ والأمّ «Sie ist Ärztin».",
           undefined,
-          "الطالبان هما يوسف وسنية.",
-          "العمل في الحديقة للجدّ في الفقرة الرابعة.",
+          "الطالبان هما يوسف وسنية «studieren an der Universität»؛ والأمّ طبيبة.",
+          "العمل في الحديقة «im Garten» للجدّ في الفقرة الرابعة، لا للأمّ «Sie ist Ärztin».",
         ],
         errorType: "vocabulary",
         paragraph: 1,
@@ -524,7 +524,7 @@ export const lessonA102: Lesson = {
         optionExplanations: [
           "تأنيث Freundin يفسّر النهاية ‑e لا الجذر sein.",
           undefined,
-          "دراستها لا علاقة لها بالأداة.",
+          "دراسة سونيا «an der Universität studiert» لا أثر لها في اختيار الأداة «sein».",
           "مجرد كون أميرة هي المتكلمة لا يحدد الجذر هنا؛ المالك المذكور في النص هو Youssef، لذلك يُستعمل sein.",
         ],
         errorType: "pronoun",
@@ -541,10 +541,10 @@ export const lessonA102: Lesson = {
         explanation:
           "النصّ يقول: «Ihr Mann ist nicht auf dem Foto, denn er fotografiert». في هذا السياق، ihr أداة ملكية قبل الاسم Mann وتعود على الخالة؛ ويؤكد السياق أنه هو المصوّر. لا تجعل الكلمة التالية وحدها قاعدةً عامة لتحديد كل استعمالات ihr.",
         optionExplanations: [
-          "الجدّة حاضرة وتطبخ الكسكسي.",
+          "الجدّة حاضرة وتطبخ الكسكسي «Couscous»؛ والغائب «Ihr Mann ist nicht auf dem Foto».",
           "الخالة حاضرة صراحةً: Auch meine Tante ist da.",
           undefined,
-          "الجدّ حاضر وعمره ثمانون.",
+          "الجدّ حاضر في الصورة «der Opa»؛ والغائب زوج الخالة «denn er fotografiert».",
         ],
         errorType: "vocabulary",
         paragraph: 3,
@@ -565,10 +565,10 @@ export const lessonA102: Lesson = {
         explanation:
           "النصّ: «Ich habe zwei Geschwister: einen Bruder und eine Schwester». في الاستعمال اليومي الشائع يُستعمل Geschwister جمعاً؛ أما ein Geschwister فصيغة مفردة نادرة أو تخصصية. وفي كل الأحوال يذكر النص اثنين.",
         optionExplanations: [
-          "هذه صيغة مفردة نادرة/تخصصية، لكنها لا تطابق العدد المذكور في النص.",
+          "صيغة مفردة نادرة، والنصّ يذكر عدداً صريحاً: «Ich habe zwei Geschwister».",
           undefined,
-          "الثلاثة تشمل أميرة نفسها، وهي ليست من إخوتها.",
-          "لها أخ وأخت صراحةً.",
+          "الثلاثة تشمل أميرة نفسها؛ والنصّ «einen Bruder und eine Schwester» = اثنان.",
+          "لها أخٌ وأخت صراحةً: «einen Bruder und eine Schwester»، لا «keine Geschwister».",
         ],
         errorType: "plural",
         paragraph: 2,
@@ -590,9 +590,9 @@ export const lessonA102: Lesson = {
           "النصّ يقول: «jeden Sonntag telefoniere ich mit meinen Eltern»؛ ومنه نعرف أنها تتصل بوالديها كل يوم أحد. هذا بند فهم قرائي؛ وورود ترتيب الكلمات في الجملة ليس ما يقيسه السؤال.",
         optionExplanations: [
           "لم تُذكر زيارات؛ العائلة weit weg.",
-          "لم تُذكر رسائل بل مكالمات.",
+          "لم تُذكر رسائل «Briefe schreiben»؛ بل «jeden Sonntag telefoniere ich mit meinen Eltern».",
           undefined,
-          "كانت تلك الصورة قديمة؛ أميرة تسكن اليوم في ألمانيا.",
+          "أميرة تسكن اليوم في ألمانيا؛ فلا يصحّ «Sie wohnt bei ihren Großeltern in Tunis».",
         ],
         errorType: "vocabulary",
         paragraph: 4,
@@ -883,7 +883,7 @@ export const lessonA102: Lesson = {
         undefined,
         "الجذر صحيح لكنّ الـ ـe زائدة: Vater مذكر لا مؤنث. النهاية تتبع المملوك لا المالكة.",
         "sein تعني «له»، والمالكة هنا لينا.",
-        "خطآن معاً: الجذر للمذكر والنهاية للمؤنث.",
+        "خطآن معاً: الجذر «sein» للملك المذكّر، والنهاية «-e» للمملوك المؤنث؛ والمالك «Lena» والمملوك «der Vater».",
       ],
       errorType: "pronoun",
     },

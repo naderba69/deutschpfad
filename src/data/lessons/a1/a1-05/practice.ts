@@ -183,7 +183,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         "الصياغة المحايدة هنا: Ich stehe immer um sechs auf. والفعل المصرف في المركز الثاني، والبادئة في نهاية الجملة.",
       optionExplanations: [
         undefined,
-        "في الجملة الخبرية الرئيسية يأتي الفعل المصرف في المركز الثاني.",
+        "الفعل المصرف «stehe» يجب أن يكون في المركز الثاني؛ و«immer» لا تزاحمه هناك.",
         "إذا بدأنا بـ Immer نقول Immer stehe ich … ليبقى الفعل في المركز الثاني.",
         "لا تأتي immer داخل تركيب الساعة um sechs في هذا المثال.",
       ],
@@ -260,7 +260,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "في halb acht يُسمّى الوقت باسم الساعة التالية: المقصود 7:30، أي منتصف الطريق من السابعة إلى الثامنة.",
       optionExplanations: [
-        "هذا هو الخطأ الشائع: العدّ من الساعة الماضية على الطريقة العربية.",
+        "«halb acht» يُسمّى بالساعة التالية؛ و8:30 تكون «halb neun».",
         undefined,
         "الثامنة تماماً تُقال acht Uhr.",
         "السابعة تماماً تُقال sieben Uhr.",

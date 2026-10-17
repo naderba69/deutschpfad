@@ -526,10 +526,10 @@ export const lessonA106: Lesson = {
         "correctIndex": 1,
         "explanation": "قال: «Am liebsten koche ich für Freunde». وصيغة am liebsten هي أعلى درجات التفضيل، فوق gern و lieber.",
         "optionExplanations": [
-          "الكرة الطائرة هواية لينا لا يوسف.",
+          "الكرة الطائرة «Volleyball spielen» هواية لينا؛ ويوسف قال «Am liebsten koche ich für Freunde».",
           undefined,
-          "ذهب إلى المتحف مرّةً في عطلة، وليست هوايته المفضّلة.",
-          "يُحسن السباحة، لكنّه لم يقل إنّها المفضّلة."
+          "ذهب إلى المتحف «im Museum» مرّةً يوم السبت، وليست هوايته «am liebsten».",
+          "السباحة «Schwimmen» مما يُحسنه، لكنه لم يجعلها «am liebsten»."
         ],
         "errorType": "vocabulary",
         "paragraph": 1
@@ -549,10 +549,10 @@ export const lessonA106: Lesson = {
         "correctIndex": 2,
         "explanation": "قالت: «ich kann leider nicht schwimmen». ولاحظ البنية: können مصرَّفاً ثانياً، و nicht قبل المصدر، والمصدر في الآخر.",
         "optionExplanations": [
-          "بل تلعبها مرّتين أسبوعياً.",
-          "الطبخ لم يُذكر عنها شيء.",
+          "بل تلعبها «Volleyball» مرتين أسبوعياً؛ والعجز عن «nicht schwimmen».",
+          "لم يُذكر عجزها عن الطبخ «Kochen»؛ والمنفيّ في النصّ «ich kann leider nicht schwimmen».",
           undefined,
-          "هي تتحدّث الألمانية في الحوار نفسه."
+          "هي تتحدّث الألمانية «Deutsch sprechen» في الحوار نفسه، فلا ينطبق عليها النفي."
         ],
         "errorType": "vocabulary",
         "paragraph": 2
@@ -572,10 +572,10 @@ export const lessonA106: Lesson = {
         "correctIndex": 1,
         "explanation": "قال: «am Samstag war ich im Museum». ولاحظ ترتيب V2: ظرف الزمان أوّلاً ثمّ الفعل war ثمّ الفاعل ich.",
         "optionExplanations": [
-          "المسبح دعوةٌ للمستقبل لا حدثاً ماضياً.",
+          "المسبح «Schwimmbad» دعوةٌ للمستقبل؛ والماضي «am Samstag war ich im Museum».",
           undefined,
           "بل نفى ذلك صراحةً بقوله Nein.",
-          "القهوة اقتراحٌ في نهاية الحوار."
+          "القهوة «Café» اقتراحٌ في نهاية الحوار، لا حدثاً وقع السبت «am Samstag war ich»."
         ],
         "errorType": "vocabulary",
         "paragraph": 5
@@ -595,10 +595,10 @@ export const lessonA106: Lesson = {
         "correctIndex": 1,
         "explanation": "anfangen فعل منفصل، وفي صيغة الأمر Fang einfach an! تأتي البادئة an في نهاية الجملة بعد بقية الكلمات.",
         "optionExplanations": [
-          "البادئة ليست قبل الفعل في هذا المثال.",
+          "في «Fang einfach an!» تأتي «an» في الآخر، لا قبل الفعل في أول الجملة.",
           undefined,
-          "هذا ليس موضع البادئة في الجملة.",
-          "الفعل المنفصل ينفصل في الجملة المصرفة؛ لا يبقى ملتصقاً بالمصدر هنا."
+          "لا موضع للبادئة بين الفعل والفاعل؛ وفي الأمر «Fang einfach an!» تسبقها «einfach».",
+          "«anfangen» ينفصل في الجملة المصرفة ⇒ «Fang … an»؛ ولا يبقى ملتصقاً بالمصدر «Infinitiv»."
         ],
         "errorType": "word-order",
         "paragraph": 3
@@ -618,9 +618,9 @@ export const lessonA106: Lesson = {
         "correctIndex": 1,
         "explanation": "قال: «Ich möchte aber lieber einen Tee»؛ أي إنه يفضّل الشاي على القهوة في هذا السياق.",
         "optionExplanations": [
-          "القهوة اقتراح لينا، ويوسف لا يشربها إلا صباحاً.",
+          "القهوة «Einen Kaffee» اقتراح لينا؛ ويوسف قال «Ich möchte aber lieber einen Tee».",
           undefined,
-          "الماء لم يُذكر.",
+          "لم يُذكر ماء «Ein Wasser» في هذا الحوار.",
           "بل قَبِل الدعوة بقوله Sehr gern."
         ],
         "errorType": "vocabulary",
@@ -958,7 +958,7 @@ export const lessonA106: Lesson = {
       errorType: "conjugation",
       points: 2,
     },
-    {"id": "e14", "type": "multiple-choice", "instructionAr": "اختر الصيغة الطبيعية للطلب في مقهى:", "questionDe": "Im Café: «___ einen Tee, bitte.»", "questionAr": "في المقهى: ما الصيغة المهذّبة؟", "options": ["Ich will", "Ich möchte", "Ich mag", "Ich kann"], "correctIndex": 1, "explanation": "möchte صيغة شائعة ولطيفة للطلب في المقهى. وwill صحيحة نحوياً لكنها قد تبدو أكثر مباشرة في هذا المقام؛ ويتأثر وقعها بالنبرة والسياق.", "optionExplanations": ["صحيحة نحواً، لكنها أكثر مباشرة وقد تبدو حادة في هذا السياق.", undefined, "تعبّر غالباً عن ميل أو تفضيل، لا عن طلب مباشر هنا.", "تتعلق بالقدرة أو الإمكان، لا بطلب الشاي."], "errorType": "vocabulary"},
+    {"id": "e14", "type": "multiple-choice", "instructionAr": "اختر الصيغة الطبيعية للطلب في مقهى:", "questionDe": "Im Café: «___ einen Tee, bitte.»", "questionAr": "في المقهى: ما الصيغة المهذّبة؟", "options": ["Ich will", "Ich möchte", "Ich mag", "Ich kann"], "correctIndex": 1, "explanation": "möchte صيغة شائعة ولطيفة للطلب في المقهى. وwill صحيحة نحوياً لكنها قد تبدو أكثر مباشرة في هذا المقام؛ ويتأثر وقعها بالنبرة والسياق.", "optionExplanations": ["«Ich will einen Tee» صحيحة نحوياً لكنها مباشرةٌ حدّة؛ والمهذّب في المقهى «Ich möchte».", undefined, "«Ich mag einen Tee» ميلٌ عام لا طلب؛ والطلب «Ich möchte einen Tee, bitte».", "«Ich kann einen Tee» قدرةٌ لا طلب؛ والمطلوب صيغة الطلب «Ich möchte»."], "errorType": "vocabulary"},
     {"id": "e15", "type": "fill-blank", "instructionAr": "أكمل تغيّر الصائت:", "template": "Ich ___ gern Obst, aber mein Bruder ___ lieber Fleisch. (essen)", "blanks": [{"correct": "esse", "options": ["esse", "isst", "esst", "isse"]}, {"correct": "isst", "options": ["isst", "esst", "esse", "essst"]}], "explanation": "في essen يتغير e إلى i مع du وer/sie/es: du isst وer isst؛ أما ich فتحافظ على e: ich esse.", "errorType": "conjugation"},
     {"id": "e16", "type": "word-ordering", "instructionAr": "رتّب جملة الفعل الناقص:", "tokens": ["Wir", "möchten", "am", "Samstag", "Fußball", "spielen", "."], "correctSentence": "Wir möchten am Samstag Fußball spielen.", "explanation": "في الجملة الخبرية البسيطة يأتي الفعل الناقص المصرف في المركز الثاني، والمصدر المجرد في نهاية الجملة.", "errorType": "word-order"},
     {"id": "e17", "type": "error-correction", "instructionAr": "صحّح صيغة الأمر:", "wrongSentence": "Fähr bitte langsam!", "wrongWord": "Fähr", "correctWord": "Fahr", "options": ["Fahr", "Fährst", "Fahre Sie", "Fahren"], "explanation": "في هذا الفعل نقول «Fahr!» من دون ä. وتبقى e→i/ie في أوامر أفعال معيّنة مثل «Iss!» و«Lies!» و«Nimm!»؛ احفظ صيغة كل فعل.", "errorType": "conjugation"},

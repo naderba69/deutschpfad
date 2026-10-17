@@ -754,7 +754,7 @@ export const lessonA107: Lesson = {
       correctIndex: 0,
       optionExplanations: [
         undefined,
-        "لا تكمل هذه الصياغة مع الاسم كما ورد في الجملة.",
+        "«zwei Kilo von Äpfel» تركيبٌ لا يكتمل؛ والصحيح «zwei Kilo Äpfel» بلا «von».",
         "لا تلائم von den تركيب الجملة هنا؛ والمطلوب الصيغة المحايدة للكمية.",
         "لا توضع أداة eine بعد كمية Kilo بهذه الصورة.",
       ],

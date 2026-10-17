@@ -309,10 +309,10 @@ export const lessonA103: Lesson = {
         "correctIndex": 1,
         "explanation": "النصّ: «Ich möchte einen Kaffee, bitte. Mit Milch, aber ohne Zucker». والشاي والماء المعدني طلبهما يوسف، والشوربة طعام لا شراب.",
         "optionExplanations": [
-          "الشاي ليوسف.",
+          "الشاي «einen Tee» طلبه يوسف؛ وأميرة قالت «Ich möchte einen Kaffee, bitte».",
           undefined,
-          "الماء المعدني سأل عنه يوسف.",
-          "الشوربة طعام، والسؤال عن الشراب."
+          "الماء المعدني «Ein Mineralwasser mit Zitrone» سأل عنه يوسف، لا أميرة.",
+          "الشوربة «Eine warme Suppe mit Brot» طعام؛ والسؤال عن الشراب «zum Trinken»."
         ],
         "errorType": "vocabulary",
         "paragraph": 0
@@ -332,10 +332,10 @@ export const lessonA103: Lesson = {
         "correctIndex": 1,
         "explanation": "النصّ: «Ich bin nicht sehr hungrig». ولاحظ البناء: hungrig **صفة** فتُبنى بـsein وتُنفى بـnicht — لا بـkein. ولو قال الاسم لقال: Ich habe keinen Hunger.",
         "optionExplanations": [
-          "السعر لم يُذكر عند الطلب.",
+          "السعر «billig» لم يُذكر عند الطلب؛ والسبب «Ich bin nicht sehr hungrig».",
           undefined,
-          "المال لم يُذكر، وأميرة دفعت في النهاية.",
-          "حرارة الشوربة ذُكرت لاحقاً وتخصّ أميرة."
+          "لم يُذكر مال «kein Geld»؛ وأميرة دفعت الحساب في النهاية.",
+          "حرارة الشوربة «zu heiß» ذُكرت لاحقاً وتخصّ أميرة، لا سبب طلب يوسف «nur einen Salat»."
         ],
         "errorType": "grammar",
         "paragraph": 1
@@ -379,9 +379,9 @@ export const lessonA103: Lesson = {
         "explanation": "الحساب ٢٠٫٥٠ يورو، وأعطت أميرة ٢٥ يورو وقالت Stimmt so (احتفظ بالباقي)؛ فالفرق بين المبلغين ٤٫٥٠ يورو.",
         "optionExplanations": [
           "Stimmt so تعني صراحةً ترك الباقي.",
-          "هذا مبلغ الفاتورة نفسه لا البقشيش.",
+          "هذا مبلغ الفاتورة «20,50 Euro» نفسه، لا البقشيش «Trinkgeld».",
           undefined,
-          "هذا ما دفعته إجمالاً لا البقشيش."
+          "هذا ما دفعته إجمالاً مع قولها «Stimmt so»؛ والفرق «Vier Euro fünfzig»."
         ],
         "errorType": "vocabulary",
         "paragraph": 4

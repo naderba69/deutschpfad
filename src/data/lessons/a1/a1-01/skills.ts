@@ -99,10 +99,10 @@ export const reading: NonNullable<Lesson["reading"]> = {
         "correctIndex": 1,
         "explanation": "في الفقرة الأولى: «Ich komme aus Tunesien». انتبه للفرق بين مكان الأصل (Tunesien) ومكان السكن الحالي (Leipzig) — كلاهما مذكور، والسؤال بـ woher يطلب الأصل.",
         "optionExplanations": [
-          "بولندا بلد لينا لا أمير.",
+          "بولندا «Aus Polen» بلد لينا لا أمير؛ وهو قال «Ich komme aus Tunesien».",
           undefined,
-          "ألمانيا بلد إقامته لا أصله.",
-          "لايبتسيغ مدينة سكنه الآن، والسؤال عن الأصل."
+          "ألمانيا بلد إقامته الآن؛ والسؤال «woher» عن الأصل «aus Tunesien».",
+          "«Leipzig» مدينة سكنه الحالي؛ و«woher» تسأل عن الأصل لا عن السكن «wo wohnst du»."
         ],
         "errorType": "vocabulary",
         "paragraph": 0
@@ -123,9 +123,9 @@ export const reading: NonNullable<Lesson["reading"]> = {
         "explanation": "«Meine Mitbewohnerin heißt Lena» — أي شريكته في السكن. أمّا المعلّمة فاسمها Frau Weber، والأمّ ذُكرت في الفقرة الأخيرة بلا اسم.",
         "optionExplanations": [
           "المعلّمة هي Frau Weber في الفقرة الثالثة.",
-          "الأمّ وردت في الفقرة الرابعة.",
+          "الأمّ وردت في الفقرة الرابعة؛ ولينا «Meine Mitbewohnerin heißt Lena».",
           undefined,
-          "لم تُذكر أخت في النصّ إطلاقاً."
+          "لم تُذكر أخت «die Schwester» في النصّ إطلاقاً."
         ],
         "errorType": "vocabulary",
         "paragraph": 1
@@ -145,10 +145,10 @@ export const reading: NonNullable<Lesson["reading"]> = {
         "correctIndex": 1,
         "explanation": "«Am Montag beginnt mein Deutschkurs». لاحظ ترتيب الكلمات: الظرف Am Montag في المركز الأوّل، فانزاح الفاعل بعد الفعل beginnt — وهذه قاعدة المركز الثاني نفسها التي درستَها.",
         "optionExplanations": [
-          "المساء وقت المكالمة العائلية.",
+          "المساء «Am Abend» وقت المكالمة العائلية؛ والدورة «Am Montag beginnt mein Deutschkurs».",
           undefined,
-          "الصباح وقت تحية لينا.",
-          "لم تُذكر عطلة نهاية الأسبوع."
+          "الصباح «Am Morgen» لم يُذكر موعداً للدورة؛ والمذكور «Am Montag».",
+          "لم تُذكر عطلة نهاية الأسبوع «Am Wochenende» موعداً لبدء الدورة."
         ],
         "errorType": "word-order",
         "paragraph": 2
@@ -171,7 +171,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
           "frag بلا نهاية = صيغة الأمر لا الإخبار.",
           undefined,
           "‑en للجمع wir/sie أو للصيغة الرسمية Sie.",
-          "‑st نهاية du وحدها."
+          "النهاية «-st» خاصة بـ«du fragst»؛ والفاعل «sie» يأخذ «sie fragt»."
         ],
         "errorType": "conjugation",
         "paragraph": 2
@@ -191,10 +191,10 @@ export const reading: NonNullable<Lesson["reading"]> = {
         "correctIndex": 2,
         "explanation": "يجمع النصّ حالين معاً: «Es geht mir gut, aber ich vermisse euch». الأداة aber هي مفتاح الفهم — فهي تربط شعورين متضادّين، ومَن قرأ نصفَ الجملة فقط أخطأ.",
         "optionExplanations": [
-          "لم يُذكر مرض.",
-          "يشتاق لأهله لكنّه لم يقل إنّه يريد العودة.",
+          "لم يُذكر مرض «krank» ولا بقاءٌ في السرير؛ بل «Es geht mir gut».",
+          "لم يقل إنه يريد العودة «zurück nach Sfax fahren»؛ بل «ich vermisse euch».",
           undefined,
-          "بل يتعلّم كلّ يوم شيئاً جديداً."
+          "عكس النصّ: يتعلّم كل يوم شيئاً جديداً، لا «seit Wochen kein Deutsch mehr»."
         ],
         "errorType": "vocabulary",
         "paragraph": 3

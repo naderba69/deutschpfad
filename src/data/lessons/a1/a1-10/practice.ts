@@ -177,8 +177,8 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       optionExplanations: [
         undefined,
         "يمكن أن يشير in إلى مؤسسة أو موقع بحسب السياق؛ لكن einem Zahnarzt هنا شخصٌ هو جهة العمل، لا اسم المؤسسة أو مكانها.",
-        "an لا يلائم علاقة العمل بهذا الشخص في الجملة المعطاة.",
-        "zu يدل غالباً على اتجاه في هذا السياق، لا على جهة العمل المذكورة.",
+        "«an» للملاصقة («an der Haltestelle»)؛ وجهةُ العمل لدى شخص «bei einem Zahnarzt».",
+        "«zu» اتجاهٌ إلى مكان («zum Bahnhof»)؛ والعمل لدى الطبيب «bei einem Zahnarzt».",
       ],
       errorType: "preposition",
     },

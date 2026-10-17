@@ -111,8 +111,8 @@ export const reading: NonNullable<Lesson["reading"]> = {
         optionExplanations: [
           "هذا خطأ halb الشهير: العدّ نحو الأمام لا الخلف.",
           undefined,
-          "السابعة موعد بدء النوبة لا الاستيقاظ.",
-          "الخامسة والنصف لا ٥:٤٥؛ و٥:٤٥ هو موعد الفطور.",
+          "السابعة «7:00» موعد بدء النوبة؛ والنهوض «Ich stehe … um halb sechs auf» = 5:30.",
+          "«halb sechs» تعني 5:30 لا 5:45؛ والفطور «Um Viertel vor sechs frühstücke ich».",
         ],
         errorType: "vocabulary",
         paragraph: 0,
@@ -133,10 +133,10 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "النصّ: «wir telefonieren fast jeden Tag». وكلمة fast (تقريباً) تخفّف المطلق، فليست كلّ يوم حرفياً بل قريباً من ذلك.",
         optionExplanations: [
-          "مرّتان أسبوعياً تخصّان النادي الرياضي لا المكالمات.",
+          "«zweimal pro Woche» تخصّ النادي الرياضي؛ والمكالمات «wir telefonieren fast jeden Tag».",
           undefined,
-          "بل يتّصل يومياً تقريباً.",
-          "لم يُذكر شيء شهري.",
+          "عكس النصّ: «wir telefonieren fast jeden Tag»، لا «nie».",
+          "لم يُذكر ترددٌ شهري «Zweimal im Monat»؛ والمذكور «fast jeden Tag».",
         ],
         errorType: "vocabulary",
         paragraph: 2,
@@ -157,10 +157,10 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "النصّ: «aber montags bin ich immer zu müde». ولاحظ الصيغة montags بحرفٍ صغير و‑s: تعني «كلّ اثنين» عادةً، لا «الاثنين القادم» الذي يُقال له am Montag.",
         optionExplanations: [
-          "لم يُذكر إغلاق.",
+          "لم يُذكر إغلاق «das Studio ist geschlossen»؛ والسبب «montags bin ich immer zu müde».",
           undefined,
-          "لا يذكر النص أن العمل يوم الاثنين هو السبب؛ بل يذكر أن طارق متعب يوم الاثنين.",
-          "المال لم يُذكر إطلاقاً.",
+          "النصّ لا يجعل العمل سبباً؛ بل «aber montags bin ich immer zu müde».",
+          "لم يُذكر مال «kein Geld» إطلاقاً في هذه الفقرة.",
         ],
         errorType: "vocabulary",
         paragraph: 3,
@@ -183,7 +183,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         optionExplanations: [
           "frühstücken فعل غير منفصل أصلاً.",
           undefined,
-          "الجملة خبرية لا استفهامية.",
+          "الجملة خبرية «frühstücke ich» لا استفهامية؛ والسؤال يكون «Wann frühstückst du؟».",
           "ich مفرد، لذلك لا يطابق وصف الخيار للفاعل الجمع.",
         ],
         errorType: "word-order",
@@ -205,10 +205,10 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation:
           "الجملة الأخيرة: «anstrengend, aber ich mag meinen Beruf». والرابط aber يقيم توازناً بين الجهد والرضا — وهو نمطٌ تعبيري مفيد لوصف أيّ عمل.",
         optionExplanations: [
-          "وصفها بالمتعبة لا المملّة.",
+          "وصفه بالمتعب «anstrengend» لا بالرتيب «langweilig und viel zu einfach».",
           undefined,
-          "لم يذكر رغبةً في التغيير بل حبّاً للمهنة.",
-          "يومه مزدحم من ٥:٣٠ إلى ما بعد العاشرة.",
+          "لم يذكر تغيير المهنة «den Beruf wechseln»؛ بل «ich mag meinen Beruf».",
+          "لم يشتكِ قلّة وقت الفراغ «zu wenig Freizeit»؛ والتقييم «anstrengend, aber ich mag meinen Beruf».",
         ],
         errorType: "vocabulary",
         paragraph: 4,
