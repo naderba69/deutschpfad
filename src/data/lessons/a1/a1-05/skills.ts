@@ -319,6 +319,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         explanation:
           "قال: Ich stehe am Morgen um sechs Uhr auf — السادسة صباحاً.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "السابعة غير مذكورة؛ والفطور «um halb sieben» = 6:30، والنهوض «um sechs Uhr».",
+          "الثامنة بداية العمل: «Um acht Uhr fange ich mit der Arbeit an»، لا وقت النهوض.",
+          "الثانية عشرة وقت الغداء: «Um zwölf Uhr esse ich zu Mittag».",
+        ],
       },
       {
         id: "q2",
@@ -336,6 +342,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "قال: Am Abend sehe ich fern oder lese ein Buch.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "العمل صباحاً: «Um acht Uhr fange ich mit der Arbeit an»، لا مساءً.",
+          "الفطور في الصباح: «Dann frühstücke ich um halb sieben».",
+          "لم يُذكر النوم حتى الظهر «schlafen bis zum Mittag»؛ بل قال «Am Abend sehe ich fern oder lese ein Buch».",
+        ],
       },
       {
         id: "q3",
@@ -353,6 +365,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "قال كريم: Ich stehe um sieben Uhr auf.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "السادسة وقت سامي «Ich stehe … um sechs Uhr auf»، لا وقت كريم.",
+          "لم تُذكر التاسعة «um neun Uhr» في الحوار.",
+          "«halb acht» = 7:30، وكريم قال «um sieben Uhr» أي 7:00 بالضبط.",
+        ],
       },
     ],
   };

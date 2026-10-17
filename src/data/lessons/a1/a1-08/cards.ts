@@ -15,6 +15,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "الصفة الخبرية: ist blau.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«blaue» منسوب يحتاج اسماً («die blaue Hose»)؛ والخبر هنا «ist blau».",
+        "«blauen» نهاية منسوب بعد أداة؛ ولا أداة في الجملة.",
+        "«blaues» منسوب للمحايد مع اسمٍ لاحق؛ والجملة خبرية.",
+      ],
     },
     {
       id: "m2",
@@ -25,6 +31,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "du → trägst (a→ä).",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«trage» للمتكلّم «Ich trage»؛ والفاعل «du».",
+        "«trägt» للغائب المفرد «er/sie/es trägt».",
+        "«tragt» للجمع المخاطب «ihr tragt».",
+      ],
     },
     {
       id: "m3",

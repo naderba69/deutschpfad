@@ -118,6 +118,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "Ich hätte gern + نصب (من درس a1-03): الطلب المهذب.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«bin» فعل الكون لا يأخذ مفعولاً كهذا؛ والطلب يُصاغ بـ«Ich hätte gern …».",
+        "فعلان مسندان في جملة واحدة («möchte» و«bin» في الآخر)؛ والترتيب يقتضي مسنداً واحداً في المركز الثاني.",
+        "«sein» في الآخر بلا مسند صحيح؛ و«Ich habe gern» ميلٌ لا طلبٌ مهذّب في المقهى.",
+      ],
     },
     {
       id: "r2",
@@ -130,6 +136,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "das Schlafzimmer = غرفة النوم (من درس a1-04 السكن).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "المطبخ «die Küche» للطبخ؛ والسرير في غرفة النوم.",
+        "الحمام «das Bad» للاستحمام؛ ولا يوضع السرير فيه.",
+        "غرفة المعيشة «das Wohnzimmer» للجلوس، لا للنوم.",
+      ],
     },
     {
       id: "r3",

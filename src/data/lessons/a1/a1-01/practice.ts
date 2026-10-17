@@ -32,6 +32,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 1,
       explanation: "Woher تعني «من أين» و kommst du تعني «تأتي أنت» — أي من أين أنت؟",
       errorType: "vocabulary",
+      optionExplanations: [
+        "السكن يُسأل بـ«Wo wohnst du?»؛ و«Woher kommst du?» عن الأصل والبلد.",
+        undefined,
+        "الاسم يُسأل بـ«Wie heißt du؟» لا بـ«Woher kommst du؟».",
+        "العمر يُسأل بـ«Wie alt bist du؟»؛ ولا ذكر للعمر في السؤال.",
+      ],
     },
     {
       id: "e3",
@@ -147,6 +153,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "السؤال عن الاسم: Wie heißt du؟ — مع du تأخذ heißen النهاية -t وحدها.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«heiße» للمتكلّم «Ich heiße»؛ والفاعل هنا «du» ⇒ «heißt».",
+        "«heißen» للمصدر أو للجمع «sie heißen»؛ و«du» مفرد.",
+        "«hießt» ماضٍ (Präteritum)؛ والسؤال حاضر عن الاسم الآن.",
+      ],
     },
     {
       id: "e17",
@@ -158,6 +170,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "Guten Morgen للصباح. Gute Nacht تُقال عند النوم، وGuten Abend للمساء.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«Gute Nacht» تُقال عند النوم ليلاً، لا في الصباح.",
+        "«Guten Abend» تحية المساء؛ والمطلوب تحية الصباح.",
+        "«Auf Wiedersehen» وداعٌ عند الفراق، لا تحيةً عند اللقاء صباحاً.",
+      ],
     },
     {
       id: "e18",

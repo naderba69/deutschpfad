@@ -15,6 +15,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "الصفة الخبرية بعد sein لا تتغير: ist rot.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«rote» صيغة منسوبة تحتاج اسماً بعدها («die rote Hose»)؛ والخبر هنا غير منسوب.",
+        "«rotes» نهاية منسوبة للمحايد مع اسمٍ لاحق؛ ولا اسم بعد «ist».",
+        "«roten» نهاية المنسوب بعد أداة؛ والتركيب الخبري «ist rot».",
+      ],
     },
     {
       id: "e2",
@@ -25,6 +31,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "مع du: trägst (a→ä).",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«trage» للمتكلّم «Ich trage»؛ والفاعل هنا «du».",
+        "«trägt» للغائب المفرد «er/sie trägt».",
+        "«tragt» للجمع المخاطب «ihr tragt».",
+      ],
     },
     {
       id: "e3",
@@ -101,6 +113,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "tragen هنا بمعنى ارتداء النظارة على الجسم، لا البحث عنها أو شرائها أو حملها باليد فقط.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "البحث «Ich suche eine Brille»؛ و«trage» ارتداءٌ حاصل الآن.",
+        "الشراء «Ich kaufe eine Brille».",
+        "«tragen» للملبوس والموضوع على الجسم، لا للحمل باليد «in der Hand».",
+      ],
     },
     {
       id: "e9",
@@ -200,6 +218,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "die Schuhe جمع، والفعل يتبع الملبوس لا الشخص ⇒ gefallen. وmir لا تتغيّر.",
       errorType: "conjugation",
+      optionExplanations: [
+        undefined,
+        "«gefällt» للمفرد («Das Hemd gefällt mir»)؛ و«Die Schuhe» جمع ⇒ «gefallen».",
+        "«gefalle» للمتكلّم «Ich gefalle»؛ والفاعل الأحذية.",
+        "«gefällst» للمخاطب المفرد «du»؛ والفاعل جمع.",
+      ],
     },
     {
       id: "e17",
@@ -210,6 +234,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "السؤال يتعلق بالمقاس، لذا الفعل المناسب passen (يناسب). الأفعال الأخرى لا تصف المقاس.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«kostet» عن الثمن؛ والجملة عن المقاس «zu klein».",
+        "«trägt» للارتداء ويأخذ مفعولاً منصوباً، لا «mir» في Dativ.",
+        "«zählt» يعدّ؛ ولا علاقة له بالمقاس.",
+      ],
     },
     {
       id: "e18",
@@ -316,6 +346,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "الجواب يعبّر عن الإعجاب بـgefallen وعن المقاس بـpassen؛ في المعنيين المعروضين يأتي الشخص في الداتيف.",
       errorType: "grammar",
+      optionExplanations: [
+        undefined,
+        "«gefallen» يجعل الشيء فاعلاً والشخص في Dativ: «Die Hose gefällt mir»؛ فلا يقال «Ich gefalle die Hose».",
+        "«mich» منصوب؛ والفعل يطلب «mir» في Dativ ⇒ «gefällt mir».",
+        "خطأ مزدوج: «Mich» بدل «Mir»، وفعلان مسندان بلا رابط («gefällt … passt»).",
+      ],
     },
     {
       id: "e26",
@@ -343,6 +379,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "Doch يرفض النفي في السؤال ويؤكد أن السترة تعجب المتكلم؛ Nein سيؤكد أنها لا تعجبه.",
       errorType: "negation",
+      optionExplanations: [
+        undefined,
+        "«Nein» يؤكّد النفي؛ والجواب التالي «sie gefällt mir» إثبات ⇒ «Doch».",
+        "«Nicht» أداة نفي لا جوابٌ يناقض سؤالاً منفياً.",
+        "«Kein» تنكيرٌ منفيّ يسبق اسماً («kein Geld»)، لا جوابٌ مستقل.",
+      ],
     },
   ];
 

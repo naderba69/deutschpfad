@@ -21,6 +21,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "الفعل المتصرف stehe في المركز الثاني، والبادئة auf في النهاية: Ich stehe ... auf.",
       errorType: "word-order",
+      optionExplanations: [
+        undefined,
+        "الفعل المنفصل «aufstehen» يفصل بادئته إلى آخر الجملة الرئيسية: «Ich stehe … auf».",
+        "البادئة لا تلصق بالجذر مباشرة إذا بقيت مكمّلات؛ موضعها في الآخر بعد «um sieben Uhr».",
+        "عكس القاعدة: الجذر «stehe» يبقى في المركز الثاني، لا في الآخر.",
+      ],
     },
     {
       id: "e2",
@@ -32,6 +38,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "halb neun = نصف الطريق إلى التاسعة = 8:30.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«halb neun» تعني الثامنة والنصف؛ والتاسعة والنصف تكون «halb zehn».",
+        "التاسعة تماماً «neun Uhr»؛ و«halb» تُنقص ساعة وتضيف نصفاً.",
+        "الثامنة تماماً «acht Uhr»؛ والمطلوب «halb neun» = 8:30.",
+      ],
     },
     {
       id: "e3",
@@ -108,6 +120,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       explanation: "Wann = متى، وaufstehen هنا تعني النهوض من الفراش.",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "مكان العمل يُسأل بـ«Wo arbeitest du؟»؛ و«Wann» عن الوقت.",
+        "الأكل يُسأل بـ«Was isst du؟»؛ والفعل هنا «aufstehen».",
+        "الساعة تُسأل بـ«Wie spät ist es؟»؛ والسؤال عن وقت نهوضك أنت.",
+      ],
     },
     {
       id: "e9",

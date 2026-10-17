@@ -159,6 +159,12 @@ export const review: NonNullable<Lesson["review"]> = [
       correctIndex: 0,
       explanation: "25 = fünfundzwanzig (الوحدات أولاً ثم العشرات).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«fünfzig» = 50؛ والمطلوب 25.",
+        "«fünfzehn» = 15؛ والـ25 تُبنى «fünf + und + zwanzig».",
+        "«zweiundzwanzig» = 22؛ والمطلوب 25 = «fünfundzwanzig».",
+      ],
     },
     {
       id: "r2",

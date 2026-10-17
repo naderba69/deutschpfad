@@ -104,6 +104,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
           "أعجبتها السترة وناسبها مقاسها بعد التبديل، لكن المبلغ أكبر مما تستطيع دفعه: Aber 89 Euro sind zu viel für mich.",
         errorType: "vocabulary",
         paragraph: 4,
+        optionExplanations: [
+          undefined,
+          "عكس النص: «Doch, sie gefällt mir sehr» — أعجبتها جداً.",
+          "اللون أعجبها: «Die Farbe gefällt mir sehr» و«Blau steht dir gut».",
+          "المقاس توفّر: «Die Verkäuferin bringt die Jacke noch einmal, jetzt in Größe 40».",
+        ],
       },
       {
         id: "rq2",
@@ -121,6 +127,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
           "Leider ist sie zu klein ثمّ Die Jacke passt mir nicht — مشكلة مقاس لا ذوق.",
         errorType: "vocabulary",
         paragraph: 3,
+        optionExplanations: [
+          undefined,
+          "النص يقول «Leider ist sie zu klein» أي صغيرة، لا كبيرة.",
+          "لم تُذكر وساخة «schmutzig» في النص؛ المشكلة المقاس.",
+          "الرمادي لون المعطف لاحقاً «Er ist grau»؛ والسترة الأولى «Sie ist blau».",
+        ],
       },
       {
         id: "rq3",
@@ -138,6 +150,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
           "في هذا السياق يرفض Doch النفي في السؤال ويؤكد أن السترة تعجب أميرة؛ لا نعمّم هذا التمييز على كل سؤال منفي أو على كل استعمال لـja.",
         errorType: "grammar",
         paragraph: 4,
+        optionExplanations: [
+          undefined,
+          "«Doch» تناقض النفي بالإيجاب؛ وهي قالت «sie gefällt mir sehr».",
+          "المال ليس سبب «Doch»؛ والسبب أن سؤال لينا منفيّ: «Gefällt dir die Jacke nicht؟».",
+          "لينا لم تشترِ السترة الزرقاء؛ وأميرة أخذت المعطف الرمادي «Amira nimmt den Mantel».",
+        ],
       },
       {
         id: "rq4",
@@ -149,6 +167,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         explanation: "bekommt fünf Euro zurück — دفعت خمسين وثمن المعطف 45.",
         errorType: "vocabulary",
         paragraph: 6,
+        optionExplanations: [
+          undefined,
+          "الخمسون ما دفعته «bezahlt sie fünfzig Euro»، لا ما استردّته.",
+          "لم يُذكر أربعون يورو؛ والثمن «45 Euro» والدفع 50 ⇒ الباقي خمسة.",
+          "النص صريح: «bekommt fünf Euro zurück»، فاستردّت مبلغاً.",
+        ],
       },
       {
         id: "rq5",
@@ -161,6 +185,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
           "Die Jacke passt mir nicht — passen للمقاس، وgefallen للذوق، وstehen للّياقة.",
         errorType: "vocabulary",
         paragraph: 3,
+        optionExplanations: [
+          undefined,
+          "«gefallen» للذوق («Die Farbe gefällt mir»)، لا للمقاس.",
+          "«stehen» للّياقة والشكل («Blau steht dir gut»).",
+          "«tragen» للارتداء («Amira trägt ihren Mantel»).",
+        ],
       },
     ],
     redemittel: [
@@ -294,6 +324,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "أجابت Mona: Blau, bitte، ثم عرضت البائعة eine Jacke in Blau.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "القميص «ein Hemd» ظهر في كلام الطرف الآخر، لا في طلبها «ich suche eine Jacke».",
+          "الفستان «ein Kleid» في الجملة الأخيرة عن آنا، لا عن بحث منى.",
+          "لم تُذكر أحذية جلدية «Schuhe aus Leder» في الحوار.",
+        ],
       },
       {
         id: "q2",
@@ -306,6 +342,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "قالت البائعة: Neununddreißig Euro = 39.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "الثلاثون «dreißig» غير منطوق؛ والجواب «Neununddreißig Euro» = 39.",
+          "«dreiunddreißig» = 33؛ والمنطوق «neununddreißig» = 39.",
+          "التسعون «neunzig»؛ والرقم المسموع تسعةٌ وثلاثون.",
+        ],
       },
       {
         id: "q3",
@@ -323,6 +365,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "قالت آنا: Ich trage heute ein Kleid. Das Kleid ist blau.",
         errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "القميص «Ich habe ein Hemd» قاله المتحدث الآخر؛ وآنا قالت «ich trage heute ein Kleid».",
+          "السترة ما بحثت عنه منى «ich suche eine Jacke»، لا ما ترتديه آنا.",
+          "لم تُذكر قبعة «eine Mütze» في الحوار.",
+        ],
       },
     ],
   };

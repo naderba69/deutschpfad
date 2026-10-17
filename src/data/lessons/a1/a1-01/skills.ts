@@ -265,6 +265,12 @@ export const listening: Lesson["listening"] = {
         correctIndex: 1,
         explanation: "قالت الفتاة: Ich heiße Anna — اسمها آنا.",
         errorType: "vocabulary",
+        optionExplanations: [
+          "سامي هو الرجل في الحوار: «Ich heiße Sami»؛ والسؤال عن اسم المرأة.",
+          undefined,
+          "برلين مدينة لا اسم شخص: «Ich komme aus Deutschland, aus Berlin».",
+          "لم يقل أحد «Ich heiße Tunis»؛ والمرأة قالت «Ich heiße Anna».",
+        ],
       },
       {
         id: "q2",
@@ -277,6 +283,12 @@ export const listening: Lesson["listening"] = {
         correctIndex: 2,
         explanation: "قال سامي: Ich komme aus Tunesien — هو من تونس.",
         errorType: "vocabulary",
+        optionExplanations: [
+          "ألمانيا بلد آنا: «Ich komme aus Deutschland»؛ والسؤال عن سامي.",
+          "برلين مدينة آنا «aus Berlin»؛ وسامي قال «Ich komme aus Tunesien».",
+          undefined,
+          "لم تُذكر النمسا «Österreich» في الحوار؛ والموطن المذكور تونس.",
+        ],
       },
       {
         id: "q3",
@@ -289,6 +301,12 @@ export const listening: Lesson["listening"] = {
         correctIndex: 1,
         explanation: "قالت السيدة: Ich heiße Leila Mansour — اسمها ليلى منصور.",
         errorType: "vocabulary",
+        optionExplanations: [
+          "فيبر هو الرجل المُحاور: «Guten Tag! Wie heißen Sie?» قالها Herr Weber؛ والمرأة أجابت باسمها.",
+          undefined,
+          "آنا من الحوار الأول غير الرسمي «Ich heiße Anna»، لا من هذا الرسمي.",
+          "سامي رجلٌ في الحوار الأول؛ والمتحدثة هنا «Ich heiße Leila Mansour».",
+        ],
       },
     ],
   };

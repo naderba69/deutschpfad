@@ -19,6 +19,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "Wir sehen am Abend fern — الفعل sehen + fern في النهاية.",
       errorType: "word-order",
+      optionExplanations: [
+        undefined,
+        "«fernsehen» مصدرٌ لا يُصرَّف؛ و«Wir» تحتاج «sehen … fern».",
+        "البادئة «fern» لا تأتي بعد الجذر مباشرة إذا بقيت مكمّلات («am Abend»)؛ موضعها في الآخر.",
+        "«seht» للجمع المخاطب «ihr»؛ والفاعل «Wir» ⇒ «sehen».",
+      ],
     },
     {
       id: "m2",
@@ -29,6 +35,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 0,
       explanation: "halb acht = 7:30 (نصف الطريق إلى الثامنة).",
       errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«halb acht» = السابعة والنصف؛ والثامنة والنصف تكون «halb neun».",
+        "الثامنة تماماً «acht Uhr»؛ والمطلوب «halb acht» = 7:30.",
+        "السابعة تماماً «sieben Uhr»؛ و«halb» تضيف النصف.",
+      ],
     },
     {
       id: "m3",

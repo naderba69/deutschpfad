@@ -14,6 +14,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 1,
       explanation: "السؤال عن الاسم يستخدم Wie: Wie heißt du? — ما اسمك؟",
       errorType: "vocabulary",
+      optionExplanations: [
+        "«Was heißt du؟» تركيبٌ غير مستعمل للسؤال عن الاسم؛ والصحيح «Wie heißt du؟».",
+        undefined,
+        "«Wo» للسؤال عن المكان؛ والجواب «Ich heiße Karim» اسمٌ لا مكان.",
+        "«Wer heißt du؟» يسأل عن الشخص لا عن اسمه؛ والجواب «Ich heiße …» يستدعي «Wie».",
+      ],
     },
     {
       id: "m2",
@@ -24,6 +30,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       correctIndex: 2,
       explanation: "مع wir نستخدم sind: Wir sind Studenten — نحن طلاب.",
       errorType: "conjugation",
+      optionExplanations: [
+        "«bin» للمتكلّم المفرد «Ich bin»؛ و«Wir» جمع.",
+        "«bist» للمخاطب المفرد «du bist»؛ والفاعل «Wir».",
+        undefined,
+        "«ist» للغائب المفرد «er/sie/es ist»؛ والجمع «Wir sind».",
+      ],
     },
     {
       id: "m3",
