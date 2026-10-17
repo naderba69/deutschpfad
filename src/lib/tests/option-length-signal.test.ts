@@ -5,10 +5,12 @@ import {
   describeOffender,
   GAP_LIMIT,
   isUniqueLongest,
+  isMeasurable,
   isUniqueShortest,
   lengthSignalOffenders,
   longestGap,
   MAX_UNIQUE_LONGEST_PCT,
+  MIN_SIGNAL_LENGTH,
   optionLengths,
   shortestGap,
   uniqueLongestPct,
@@ -45,12 +47,20 @@ import { RAW_TEST_BANK } from "@/data/tests/question-banks";
  */
 
 /**
- * سقّاطة بنك الأسئلة: 46 مخالفة قائمة (2026-10-16)، معظمها مفردات/ترجمات يكون فيها
- * الترجمة الصحيحة أطول بطبيعتها («بسرور/يحب أن» مقابل «غاضب»). إصلاحها يتطلب تحرير
- * الترجمات نفسها (لا حشو المشتّتات) — عمل لغوي دقيق مؤجَّل للدفعة القادمة.
- * **القاعدة: هذا الرقم لا يزيد أبداً، وينقص كلما أُصلح.**
+ * سقّاطة بنك الأسئلة: **41 مخالفة** (2026-10-16) من 171 سؤالاً — نزلت من 46 بإخراج
+ * أسئلة الكلمات الوظيفية القصيرة من القياس (`MIN_SIGNAL_LENGTH`)، لا بإخفاء شيء.
+ *
+ * الباقي ثلاثة أصناف، كلٌّ يحتاج تحرير نصّ الخيار نفسه (لا حشواً):
+ *  · **مفردات/ترجمات** (a1-v7, a2-v2, b1-v8…): الترجمة الصحيحة أطول بطبيعتها
+ *    («بسرور/يحب أن»، «الحساب/الفاتورة») — الإصلاح تطبيع المترادف المزدوج.
+ *  · **فهم مقروء** (b1-r3, b2-r2…): الإجابة الصحيحة جملة كاملة والمشتّتات كلمات
+ *    («Ja, weil…» مقابل «Nein») — الإصلاح جعل المشتّتات جملاً متكافئة.
+ *  · **فهم مسموع** (b2-h2, a2-h3): النمط نفسه.
+ *
+ * **القاعدة: هذا الرقم لا يزيد أبداً، وينقص كلما أُصلح** — والمسارات في رسالة الفشل
+ * (`bank/b2-h2/…`) تجعل كل مخالفة قابلة للتعيين والإصلاح.
  */
-const BANK_LENGTH_SIGNAL_RATCHET = 46;
+const BANK_LENGTH_SIGNAL_RATCHET = 41;
 
 /** امتحانات المستويات: 9 نماذج (A1/A2/B1 × 3) — المصدر لا المُوازَن */
 const LEVEL_CORPORA: [string, unknown][] = (["A1", "A2", "B1"] as const).flatMap((lvl) =>
@@ -92,15 +102,40 @@ describe("وحدة قياس إشارة الطول — سلوك الدوال نف
   });
 
   it("قائمة المخالفات تطبّق حدّ الفارق في الاتجاهين", () => {
+    // العبارات ≥ 9 أحرف كي تكون داخل نطاق القياس (`MIN_SIGNAL_LENGTH`)
     const rows = [
-      q(["aaaaaa", "ab", "abc"], 0), // 3.0× ⇒ مخالفة
-      q(["aaaaa", "abcd", "abc"], 0), // 1.25× ⇒ تحت الحد
-      q(["ab", "aaaaaa", "abc"], 0), // الأقصر 3.0× ⇒ مخالفة
+      q(["aaaaaaaaaaaa", "abcd", "abcdef"], 0), // 12 ÷ 6 = 2.0× ⇒ مخالفة
+      q(["aaaaaaaaaa", "abcdefgh", "abcdefg"], 0), // 10 ÷ 8 = 1.25× ⇒ تحت الحد
+      q(["ab", "aaaaaaaaaaaa", "abcdef"], 0), // الأقصر: 6 ÷ 2 = 3.0× ⇒ مخالفة
     ];
     expect(lengthSignalOffenders(rows)).toHaveLength(2);
     expect(GAP_LIMIT).toBe(1.3);
     expect(describeOffender(rows[0], "X")).toContain("الأطول");
     expect(describeOffender(rows[2], "X")).toContain("الأقصر");
+  });
+
+  it("الكلمات الوظيفية القصيرة خارج نطاق القياس (الفارق صرفي لا إسهابي)", () => {
+    // «ist» لا تُطال، و«deshalb / aber / und» فروقها حرف أو حرفان من الصرف نفسه.
+    expect(isMeasurable(q(["ist", "wird", "kann"], 0))).toBe(false); // أطول = 4
+    expect(isMeasurable(q(["deshalb", "aber", "und"], 0))).toBe(false); // أطول = 7
+    expect(isMeasurable(q(["Die Rechnung", "Das Formular", "Der Termin"], 0))).toBe(true); // أطول = 12
+    expect(MIN_SIGNAL_LENGTH).toBe(9);
+    // ⇒ لا تُحتسب مخالفة وإن كان الفارق كبيراً
+    expect(lengthSignalOffenders([q(["ist", "wurde", "kann"], 0)])).toHaveLength(0);
+  });
+
+  it("أسئلة الأجزاء المتداخلة ترث معرّف سلفها (لا «?» بلا عنوان)", () => {
+    const nested = {
+      id: "a1-l2",
+      questions: [
+        { id: "q3", options: ["a very long correct answer here", "kurz", "auch kurz"], correct: 0 },
+        { options: ["ein sehr langer Satz hier", "mittel", "und kurz"], correct: 0 },
+      ],
+    };
+    const qs = collectChoiceQuestions(nested);
+    expect(qs.map((x) => x.id)).toEqual(["a1-l2/q3", "a1-l2"]);
+    // المخالفة تُسمّى بمسار قابل للإصلاح
+    expect(describeOffender(qs[1], "bank")).toContain("a1-l2");
   });
 
   it("optionLengths تقيس ما يراه المتعلم (بلا مسافات زائدة)", () => {
@@ -126,8 +161,10 @@ describe("امتحانات A1/A2/B1/B2 — صفر تسرّب بطول الخيا
 
   it("لا سؤال تكون إجابته وحدها الأطول/الأقصر بفارق ≥ 1.3×", () => {
     const offenders = all
-      .filter(({ question }) => longestGap(question) >= GAP_LIMIT || shortestGap(question) >= GAP_LIMIT)
+      .filter(({ question }) => lengthSignalOffenders([question]).length > 0)
       .map(({ where, question }) => describeOffender(question, where));
+    void longestGap;
+    void shortestGap;
     expect(offenders, `تسرّب بطول الخيار: ${offenders.slice(0, 8).join(" · ")}`).toEqual([]);
   });
 
@@ -160,7 +197,7 @@ describe("بنك الأسئلة — سقّاطة إشارة الطول (لا ت�
     expect(qs.length).toBeGreaterThan(150);
   });
 
-  it(`المخالفات ≤ ${BANK_LENGTH_SIGNAL_RATCHET} (قياس 2026-10-16: 46/171)`, () => {
+  it(`المخالفات ≤ ${BANK_LENGTH_SIGNAL_RATCHET} (قياس 2026-10-16: 41/171 بعد إخراج القصير)`, () => {
     const offenders = lengthSignalOffenders(qs);
     expect(
       offenders.length,

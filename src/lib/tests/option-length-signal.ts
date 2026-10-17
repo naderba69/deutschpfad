@@ -27,6 +27,17 @@ export const GAP_LIMIT = 1.3;
 /** أقصى نسبة «الأطول وحيداً» مسموحة في نموذج/جزء */
 export const MAX_UNIQUE_LONGEST_PCT = 60;
 
+/**
+ * أدنى طول لأطول خيار كي يُقاس السؤال أصلاً.
+ *
+ * لماذا: إشارة الطول تستغلّ **الإطناب** (جملة كاملة مقابل كلمة). أما في أسئلة
+ * الكلمات الوظيفية القصيرة — «ist / wird / kann / wurde» أو «deshalb / aber / und» —
+ * فالفارق حرف أو حرفان ناتج عن الصرف نفسه، لا عن الإسهاب، ولا يمكن إطالة خيار منها
+ * بلا تغيير معناه («ist» لا تُطال). قياس 2026-10-16: 12 مخالفة من هذا النوع في بنك
+ * الأسئلة، أطول خيار فيها ≤ 8 أحرف. الحدّ 9 يُخرجها من القياس ويُبقى كل جملة/عبارة.
+ */
+export const MIN_SIGNAL_LENGTH = 9;
+
 export interface ChoiceQuestion {
   /** معرّف السؤال إن وُجد (لتسمية المخالفة) */
   id: string;
@@ -45,30 +56,36 @@ export interface ChoiceQuestion {
  */
 export function collectChoiceQuestions(node: unknown, depth = 0): ChoiceQuestion[] {
   const out: ChoiceQuestion[] = [];
-  walk(node, out, depth);
+  walk(node, out, depth, []);
   return out;
 }
 
-function walk(node: unknown, out: ChoiceQuestion[], depth: number): void {
+function walk(node: unknown, out: ChoiceQuestion[], depth: number, ancestors: string[]): void {
   if (!node || depth > 9) return;
   if (Array.isArray(node)) {
-    for (const child of node) walk(child, out, depth + 1);
+    for (const child of node) walk(child, out, depth + 1, ancestors);
     return;
   }
   if (typeof node !== "object") return;
   const o = node as Record<string, unknown>;
+  /**
+   * مسار المعرّفات: أسئلة الأجزاء المتداخلة (بداخل مهام قراءة/استماع/كتابة) كثيراً ما
+   * بلا `id` خاص، فتظهر المخالفة «bank/?» بلا عنوان ولا يمكن إصلاحها. لذلك يرث
+   * السؤال معرّفات أسلافه — فتصير «a1-l2/q3» بدل «?».
+   */
+  const path = typeof o.id === "string" && o.id ? [...ancestors, o.id] : ancestors;
   const ci =
     typeof o.correct === "number" ? o.correct : typeof o.correctIndex === "number" ? o.correctIndex : -1;
   if (Array.isArray(o.options) && o.options.length >= 2 && ci >= 0 && ci < o.options.length) {
     out.push({
-      id: String(o.id ?? "?"),
+      id: path.length ? path.join("/") : "?",
       options: (o.options as Array<string | { text?: string; de?: string }>).map((x) =>
         typeof x === "string" ? x : (x.text ?? x.de ?? ""),
       ),
       correct: ci,
     });
   }
-  for (const value of Object.values(o)) walk(value, out, depth + 1);
+  for (const value of Object.values(o)) walk(value, out, depth + 1, path);
 }
 
 /** أطوال الخيارات بعد trim (الطول الظاهر للمتعلم) */
@@ -112,9 +129,17 @@ export function shortestGap(q: ChoiceQuestion): number {
   return Math.min(...others) / Math.min(...l);
 }
 
+/**
+ * هل السؤال داخل نطاق القياس؟ (أطول خيار ≥ `MIN_SIGNAL_LENGTH`)
+ * خارج النطاق = كل الخيارات كلمات قصيرة فالفارق صرفي لا إسهابي.
+ */
+export function isMeasurable(q: ChoiceQuestion): boolean {
+  return Math.max(...optionLengths(q)) >= MIN_SIGNAL_LENGTH;
+}
+
 /** الأسئلة التي فيها إشارة طول قابلة للاستغلال (بالأطول أو بالأقصر) */
 export function lengthSignalOffenders(qs: ChoiceQuestion[]): ChoiceQuestion[] {
-  return qs.filter((q) => longestGap(q) >= GAP_LIMIT || shortestGap(q) >= GAP_LIMIT);
+  return qs.filter((q) => isMeasurable(q) && (longestGap(q) >= GAP_LIMIT || shortestGap(q) >= GAP_LIMIT));
 }
 
 /** وصف مخالفة واحد للقراءة في رسالة الاختبار */
