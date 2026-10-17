@@ -326,7 +326,32 @@ describe("حوارات وبودكاست — الشكل البوليني داخل
  * للذهن، والدروس (864) تُركت. القاعدة: **لا تزيد هذه الأرقام أبداً**، وتنقص مع كل دفعة
  * إصلاح، وكل خفض يُسجَّل هنا بتاريخه.
  */
-const LESSON_RATCHETS: Record<string, number> = { A1: 37, A2: 33, B1: 48, B2: 41 };
+const LESSON_RATCHETS: Record<string, number> = { A1: 0, A2: 33, B1: 48, B2: 41 };
+
+/**
+ * استثناءات **جوهرية** في دروس A1 — مُسمّاة بمسار السؤال وبسببها، لا رقماً مجمّعاً.
+ *
+ * معيار الاستثناء: الفارق في الطول ناتج عن **الصرف أو طبيعة المفردة** لا عن إسهاب
+ * المؤلِّف، و«إصلاحه» يعني تشويه المحتوى:
+ *  · اسم علم/مهنة/حرف جر/فعل مفرد — الطول صفة الكلمة لا إشارة مؤلَّفَة.
+ *  · سؤال «أيّ صيغة صحيحة؟» — الخطأ النحوي مُطنب بطبعه والصحيح موجز.
+ *  · شرح من شقين — الصحيحة تحتاج شقين وكل مشتّتة ادعاء واحد.
+ *
+ * والحارس يفحص الاتجاهين: لا مخالفة خارج الاستثناءات، **ولا استثناء تقادم**
+ * (إن أُصلح السؤال وجب حذف استثنائه — وإلا تحوّلت القائمة إلى مكبّ نفايات).
+ */
+const LESSON_LENGTH_SIGNAL_EXCEPTIONS: Record<string, string> = {
+  "a1-01/q3": "أسماء أعلام: «Leila Mansour» أطول من «Anna» بطبيعة الاسم لا بإسهاب المؤلّف",
+  "a1-03/r1": "صيغ التعريف بالنفس: الصحيح «Ich heiße Sami.» موجز والمشتّتات أخطاء مركّبة أطول بطبعها",
+  "a1-03/read-a1-03/r5": "شرح من شقين (مذكر ← einen · مؤنث ← die) مقابل مشتّتات بادّعاء واحد خاطئ",
+  "a1-04/m1": "حروف جرّ مندمجة: «im» أقصر من «unter dem» بالصرف",
+  "a1-06/m2": "صيغ الأمر: «Kommen Sie» أطول من «Komm» بحكم الصيغة الرسمية",
+  "a1-07/e13": "الصحيح «zwei Kilo» موجز والمشتّتات تراكيب خاطئة أطول بطبعها",
+  "a1-10/q1": "مهن بلا أداة: «Ärztin» أقصر من «Verkäuferin» بطول المفردة، وإضافة أداة تُفسد الجواب («von Beruf ist sie Ärztin»)",
+  "a1-10/e16": "أفعال الكون والعمل: «bin» مقابل «arbeite ein» — الفارق صرفي",
+  "a1-14/mt-a1-14-3": "أفعال مفردة: «reparieren» أطول من «kaufen» بطول المفردة",
+  "a1-06/read-a1-06/r4": "نصّ الصحيحة («Am Satzende») مثبَّت في عقد `goal-evidence.test.ts` لإجابات A1-06 المقبولة — إطالتها لكسر الإشارة تُعدّل عقداً مقاساً، والصحيحة موجزة بطبعها مقابل مشتّتات جمل كاملة (جُرب الإصلاح فسقط العقد)",
+};
 
 describe("دروس المنهج — أكبر كوربوس داخل القياس", () => {
   const levels = ["A1", "A2", "B1", "B2"] as const;
@@ -341,10 +366,10 @@ describe("دروس المنهج — أكبر كوربوس داخل القياس"
     }
   });
 
-  it(`مخالفات دروس كل مستوى ≤ سقّاطتها ${JSON.stringify(LESSON_RATCHETS)}`, () => {
+  it(`مخالفات دروس كل مستوى ≤ سقّاطتها (خارج الاستثناءات المُسمّاة)`, () => {
     for (const lvl of levels) {
       const qs = collectChoiceQuestions(byLevel(lvl));
-      const offenders = lengthSignalOffenders(qs);
+      const offenders = lengthSignalOffenders(qs).filter((q) => !LESSON_LENGTH_SIGNAL_EXCEPTIONS[q.id]);
       expect(
         offenders.length,
         `${lvl}: مخالفات الطول ${offenders.length} (السقف ${LESSON_RATCHETS[lvl]}) — أمثلة: ${offenders
@@ -353,6 +378,16 @@ describe("دروس المنهج — أكبر كوربوس داخل القياس"
           .join(" · ")}`,
       ).toBeLessThanOrEqual(LESSON_RATCHETS[lvl]);
     }
+  });
+
+  it("لا استثناء تقادم: كل اسم في القائمة ما زال مخالفة فعلاً", () => {
+    const offenders = new Set(lengthSignalOffenders(collectChoiceQuestions(LESSONS)).map((q) => q.id));
+    const stale = Object.keys(LESSON_LENGTH_SIGNAL_EXCEPTIONS).filter((id) => !offenders.has(id));
+    expect(
+      stale,
+      `استثناءات لم تعد تنطبق — احذفها: ${stale.join(" · ")}`,
+    ).toEqual([]);
+    expect(Object.keys(LESSON_LENGTH_SIGNAL_EXCEPTIONS).length).toBe(10); // عدّاد غير هامشي
   });
 
   it("نسبة «الأطول وحيداً» في الدروس ≤ 55% (قياس: 50%)", () => {

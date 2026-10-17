@@ -129,9 +129,9 @@ export const reading: NonNullable<Lesson["reading"]> = {
         questionDe: "Warum antwortet Amira mit Doch?",
         options: [
           "Weil die Frage negativ war und die Jacke ihr gefällt.",
-          "Weil sie die Jacke nicht mag.",
-          "Weil sie kein Geld hat.",
-          "Weil Lena die Jacke kauft.",
+          "Weil sie die Jacke überhaupt nicht mag.",
+          "Weil sie heute kein Geld dabei hat.",
+          "Weil Lena die blaue Jacke sofort kauft und bezahlt.",
         ],
         correctIndex: 0,
         explanation:
@@ -289,7 +289,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
           "eine Jacke in Blau",
           "ein Hemd",
           "ein Kleid",
-          "Schuhe",
+          "Schuhe aus Leder",
         ],
         correctIndex: 0,
         explanation: "أجابت Mona: Blau, bitte، ثم عرضت البائعة eine Jacke in Blau.",

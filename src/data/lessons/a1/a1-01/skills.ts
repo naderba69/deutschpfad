@@ -183,10 +183,10 @@ export const reading: NonNullable<Lesson["reading"]> = {
         "questionDe": "Wie geht es Amir in Deutschland?",
         "questionAr": "كيف حال أمير في ألمانيا؟",
         "options": [
-          "Er ist krank",
-          "Er möchte zurück nach Sfax",
+          "Er ist krank und liegt seit Montag im Bett",
+          "Er möchte bald zurück nach Sfax fahren",
           "Es geht ihm gut, aber er vermisst die Familie",
-          "Er lernt kein Deutsch mehr"
+          "Er lernt seit Wochen kein Deutsch mehr"
         ],
         "correctIndex": 2,
         "explanation": "يجمع النصّ حالين معاً: «Es geht mir gut, aber ich vermisse euch». الأداة aber هي مفتاح الفهم — فهي تربط شعورين متضادّين، ومَن قرأ نصفَ الجملة فقط أخطأ.",

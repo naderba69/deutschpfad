@@ -884,7 +884,7 @@ export const lessonA106: Lesson = {
       instructionAr: "اختر الترجمة الصحيحة:",
       questionDe: "Hast du Lust, mitzukommen?",
       questionAr: "ما معنى السؤال؟",
-      options: ["هل لديك رغبة في المجيء معنا؟", "هل تحب الطعام؟", "متى تأتي؟", "هل تحب الموسيقى؟"],
+      options: ["هل لديك رغبة في المجيء معنا؟", "هل تحب الطعام الألماني؟", "متى بالضبط تأتي؟", "هل تحب الموسيقى الكلاسيكية؟"],
       correctIndex: 0,
       explanation: "مع الاسم نقول Lust auf + Akkusativ؛ ومع الفعل نقول Lust haben, etwas zu tun: mitzukommen = أن يأتي معنا.",
       errorType: "vocabulary",

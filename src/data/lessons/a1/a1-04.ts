@@ -321,10 +321,10 @@ export const lessonA104: Lesson = {
         "questionDe": "Warum heißt es «an der Wand» und nicht «an die Wand»?",
         "questionAr": "لماذا an der Wand لا an die Wand؟",
         "options": [
-          "Weil Wand maskulin ist",
+          "Weil das Wort Wand maskulin ist und bleibt",
           "Weil die Frage Wo? ist und es keine Bewegung gibt",
-          "Weil hängen immer Dativ braucht",
-          "Weil das Bild klein ist"
+          "Weil das Verb hängen immer den Dativ braucht",
+          "Weil das Bild klein und leicht ist"
         ],
         "correctIndex": 1,
         "explanation": "الجملة تصف موقعاً ثابتاً وتجيب عن Wo? ⟵ فالجرّ واجب، و die Wand مؤنّثة فتصير der. ولو كانت حركةً لقلنا: Ich hänge das Bild an die Wand (نصب).",
@@ -390,10 +390,10 @@ export const lessonA104: Lesson = {
         "questionDe": "Was wird im Text nicht erwähnt?",
         "questionAr": "ما الشيء الذي لم يُذكر في النص؟",
         "options": [
-          "Ein Regal",
-          "Ein Kühlschrank",
+          "Ein Regal an der Wand",
+          "Ein großer Kühlschrank",
           "Ein Esstisch im Esszimmer",
-          "Ein Schrank"
+          "Ein Schrank im Schlafzimmer"
         ],
         "correctIndex": 2,
         "explanation": "الرفّ والثلّاجة والخزانة مذكورة صراحةً. أمّا وجود طاولة أو غرفة طعام فلم يذكره النص؛ لذا فالإجابة هي الشيء غير المذكور، لا الجزم بأنه غير موجود في الشقة.",

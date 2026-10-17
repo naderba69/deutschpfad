@@ -130,9 +130,9 @@ export const reading: NonNullable<Lesson["reading"]> = {
         errorType: "vocabulary",
         options: [
           "Denn das Wetter ändert sich schnell.",
-          "Denn es schneit immer.",
-          "Denn er hat keine Jacke.",
-          "Denn es ist zu heiß.",
+          "Denn es schneit dort immer im Winter.",
+          "Denn er hat keine warme Jacke.",
+          "Denn es ist viel zu heiß draußen.",
         ],
         correctIndex: 0,
         paragraph: 2,

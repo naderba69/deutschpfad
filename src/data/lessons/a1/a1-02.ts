@@ -513,10 +513,10 @@ export const lessonA102: Lesson = {
           "Warum heißt es «seine Freundin» und nicht «ihre Freundin»?",
         questionAr: "لماذا قيل seine Freundin لا ihre Freundin؟",
         options: [
-          "Weil Freundin feminin ist",
+          "Weil das Wort Freundin feminin ist",
           "Weil der Besitzer Youssef ist, also maskulin",
-          "Weil Sonia studiert",
-          "Weil Amira das sagt",
+          "Weil Sonia an der Universität studiert",
+          "Weil Amira das in der Stunde sagt",
         ],
         correctIndex: 1,
         explanation:
@@ -536,7 +536,7 @@ export const lessonA102: Lesson = {
         instructionAr: "الفقرة الرابعة — من غير موجود في الصورة؟",
         questionDe: "Wer ist nicht auf dem Foto?",
         questionAr: "من ليس في الصورة؟",
-        options: ["Die Oma", "Die Tante", "Der Mann der Tante", "Der Opa"],
+        options: ["Die Oma aus Sfax", "Die Tante von Youssef", "Der Mann der Tante", "Der Opa aus Tunis"],
         correctIndex: 2,
         explanation:
           "النصّ يقول: «Ihr Mann ist nicht auf dem Foto, denn er fotografiert». في هذا السياق، ihr أداة ملكية قبل الاسم Mann وتعود على الخالة؛ ويؤكد السياق أنه هو المصوّر. لا تجعل الكلمة التالية وحدها قاعدةً عامة لتحديد كل استعمالات ihr.",
@@ -580,10 +580,10 @@ export const lessonA102: Lesson = {
         questionDe: "Wie hält Amira Kontakt zu ihrer Familie?",
         questionAr: "كيف تبقى أميرة على تواصل مع عائلتها؟",
         options: [
-          "Sie besucht sie jeden Monat",
-          "Sie schreibt jeden Tag Briefe",
+          "Sie besucht sie jeden Monat in Tunis",
+          "Sie schreibt jeden Tag lange Briefe",
           "Sie telefoniert jeden Sonntag mit ihren Eltern",
-          "Sie wohnt bei ihren Großeltern",
+          "Sie wohnt bei ihren Großeltern in Tunis",
         ],
         correctIndex: 2,
         explanation:
@@ -669,9 +669,9 @@ export const lessonA102: Lesson = {
         questionAr: "كم أخاً وأختاً لدى كريم؟",
         options: [
           "einen Bruder und eine Schwester",
-          "zwei Brüder",
-          "eine Schwester",
-          "keine Geschwister",
+          "zwei ältere Brüder und keine Schwester",
+          "eine kleine Schwester, aber keinen Bruder",
+          "gar keine Geschwister, er ist allein",
         ],
         correctIndex: 0,
         explanation:
@@ -793,7 +793,7 @@ export const lessonA102: Lesson = {
       instructionAr: "اختر الترجمة الصحيحة:",
       questionDe: "Hast du Geschwister?",
       questionAr: "ما معنى السؤال؟",
-      options: ["هل لديك إخوة أو أخوات؟", "هل تحب عائلتك؟", "كم عمرك؟", "أين والدك؟"],
+      options: ["هل لديك إخوة أو أخوات؟", "هل تحب عائلتك الكبيرة؟", "كم عمرك؟", "أين والدك الآن؟"],
       correctIndex: 0,
       explanation: "Hast du = هل لديك، وGeschwister = الإخوة والأخوات (جمع).",
       errorType: "vocabulary",

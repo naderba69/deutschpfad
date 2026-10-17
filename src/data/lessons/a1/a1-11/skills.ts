@@ -139,9 +139,9 @@ export const reading: NonNullable<Lesson["reading"]> = {
         "errorType": "vocabulary",
         "options": [
           "Zu Fuß kommt sie eher an; der Bus fährt erst später.",
-          "Sie hat kein Geld für ein Ticket.",
-          "Der Bus fährt nicht zur Sprachschule.",
-          "Sie mag den Bus nicht."
+          "Sie hat heute kein Geld für ein Ticket.",
+          "Der Bus fährt nicht direkt zur Sprachschule.",
+          "Sie mag den Bus nicht und fährt lieber zu Fuß."
         ],
         "correctIndex": 0,
         "paragraph": 4,

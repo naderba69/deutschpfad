@@ -138,8 +138,8 @@ export const reading: NonNullable<Lesson["reading"]> = {
         errorType: "preposition",
         options: [
           "Bei einer kleinen Firma für Solartechnik",
-          "In einem Krankenhaus",
-          "Bei einem Anwalt",
+          "In einem großen Krankenhaus in Berlin",
+          "Bei einem Anwalt in der Stadt",
           "In einer Schule",
         ],
         correctIndex: 0,

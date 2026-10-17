@@ -696,7 +696,7 @@ export const lessonA107: Lesson = {
       instructionAr: "اختر المعنى الأقرب لكلمة günstig في سياق السعر.",
       questionDe: "Das Angebot ist günstig.",
       questionAr: "ما المعنى الأقرب للجملة؟",
-      options: ["العرض سعره مناسب أو منخفض", "العرض طازج", "العرض بعيد", "العرض ثقيل"],
+      options: ["العرض سعره مناسب أو منخفض", "العرض طازج ووصل اليوم", "العرض بعيد عن وسط المدينة", "العرض ثقيل للحمل"],
       correctIndex: 0,
       explanation: "günstig تعني مناسب السعر أو غير مرتفع الكلفة في هذا السياق.",
       errorType: "vocabulary",

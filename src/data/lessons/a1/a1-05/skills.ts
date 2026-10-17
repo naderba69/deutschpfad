@@ -196,10 +196,10 @@ export const reading: NonNullable<Lesson["reading"]> = {
         questionDe: "Wie findet Tarek sein Leben?",
         questionAr: "كيف يرى طارق حياته؟",
         options: [
-          "Langweilig und einfach",
+          "Langweilig und viel zu einfach",
           "Anstrengend, aber er mag seinen Beruf",
-          "Er möchte den Beruf wechseln",
-          "Er hat zu viel Freizeit",
+          "Er möchte bald den Beruf wechseln",
+          "Er hat viel zu wenig Freizeit",
         ],
         correctIndex: 1,
         explanation:
@@ -331,7 +331,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
           "fernsehen oder lesen",
           "arbeiten",
           "frühstücken",
-          "schlafen",
+          "schlafen bis zum Mittag",
         ],
         correctIndex: 0,
         explanation: "قال: Am Abend sehe ich fern oder lese ein Buch.",

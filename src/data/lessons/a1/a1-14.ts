@@ -520,9 +520,9 @@ export const lessonA114: Lesson = {
         "instructionAr": "اقرأ الفقرة الثالثة واختر الإجابة الصحيحة",
         "options": [
           "Sie sind durch die Stadt gelaufen und haben gegessen",
-          "Sie sind ins Museum gegangen",
-          "Sie sind zu Hause geblieben",
-          "Sie haben nur telefoniert"
+          "Sie sind zusammen ins Museum gegangen",
+          "Sie sind den ganzen Tag zu Hause geblieben",
+          "Sie haben nur lange miteinander telefoniert"
         ],
         "correctIndex": 0,
         "explanation": "تذكر الفقرة: «Wir sind zusammen durch die Stadt gelaufen» و«Danach haben wir … gegessen». أمّا الذهاب إلى المتحف فورد في الفقرة التالية عن يوم السبت.",
@@ -584,9 +584,9 @@ export const lessonA114: Lesson = {
         "instructionAr": "اقرأ الفقرة الخامسة: كيف كان شعوره؟",
         "options": [
           "Müde, aber glücklich",
-          "Nur müde",
-          "Traurig",
-          "Krank"
+          "Nur sehr müde",
+          "Traurig und enttäuscht",
+          "Krank und erschöpft"
         ],
         "correctIndex": 0,
         "explanation": "«Ich bin sehr müde gewesen, aber auch sehr glücklich.»",
@@ -644,7 +644,7 @@ export const lessonA114: Lesson = {
         itemId: "ls-a1-14-1",
         questionDe: "Was hat Amine am Samstag gemacht?",
         questionAr: "ماذا فعل أمين يوم السبت؟",
-        options: ["Er hat gelernt und seine Familie angerufen", "Er ist zum See gefahren", "Er ist zu Hause geblieben"],
+        options: ["Er hat gelernt und seine Familie angerufen", "Er ist mit Freunden zum See gefahren", "Er ist den Tag über zu Hause geblieben"],
         correctIndex: 0,
         errorType: "vocabulary",
         explanation: "يوم السبت: «habe für die Prüfung gelernt» و«habe meine Familie angerufen». أمّا البحيرة فكانت يوم الأحد.",
@@ -919,8 +919,8 @@ export const lessonA114: Lesson = {
       options: [
         "Ich möchte bitte einen Kaffee.",
         "Ich will einen Kaffee.",
-        "Ich soll einen Kaffee.",
-        "Ich muss einen Kaffee.",
+        "Ich soll heute einen Kaffee.",
+        "Ich muss sofort einen Kaffee.",
       ],
       correctIndex: 0,
       explanation: "المطلوب هنا صيغة شائعة مهذّبة للطلب، لذلك تناسب möchte. جملة Ich will einen Kaffee صحيحة نحوياً وقد تكون مباشرة أكثر بحسب السياق، لا خطأ مطلقاً.",

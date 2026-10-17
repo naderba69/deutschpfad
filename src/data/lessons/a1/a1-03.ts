@@ -301,10 +301,10 @@ export const lessonA103: Lesson = {
         "questionDe": "Was bestellt Amira zum Trinken?",
         "questionAr": "ماذا طلبت أميرة لتشربه؟",
         "options": [
-          "Einen Tee ohne Milch",
+          "Einen Tee ohne Milch und Zucker",
           "Einen Kaffee mit Milch und ohne Zucker",
-          "Ein Mineralwasser",
-          "Eine Suppe"
+          "Ein Mineralwasser mit Zitrone",
+          "Eine warme Suppe mit Brot"
         ],
         "correctIndex": 1,
         "explanation": "النصّ: «Ich möchte einen Kaffee, bitte. Mit Milch, aber ohne Zucker». والشاي والماء المعدني طلبهما يوسف، والشوربة طعام لا شراب.",
