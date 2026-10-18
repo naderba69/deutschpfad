@@ -175,6 +175,17 @@ test("A1: المسار الكامل حتى شاشة النتيجة ثم إعاد
   await expect(official).toContainText("مقابل 15 في النموذج الرسمي");
   await expect(official).toContainText("محاكاة تدريبية لا امتحان رسمي");
 
+  // مراجعة الأدلة (الدفعة 117): كل سؤالٍ يعرض جوابَه والصحيح وشاهدَه الألماني —
+  // فكانت 414 شاهداً مكتوبةً في البيانات ولا تُعرض في أي مسار
+  const review = page.getByTestId("exam-review");
+  await expect(review).toBeVisible();
+  await expect(review).toContainText("مراجعة الأدلة");
+  await expect(page.getByTestId("exam-review-item").first()).toBeVisible();
+  const evidence = page.getByTestId("exam-review-evidence").first();
+  await expect(evidence).toBeVisible();
+  // الشاهد اقتباسٌ ألماني حقيقي (القاعدة نفسها المستعملة في حارس البيانات)
+  await expect(evidence).toContainText(/[A-Za-zÄÖÜäöüß]{3,}/);
+
   // إعادة النموذج تعود للمقدمة
   await page.getByRole("button", {name: "إعادة النموذج"}).click();
   await expect(page.getByRole("button", {name: "ابدأ الاستماع"})).toBeVisible();

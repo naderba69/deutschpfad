@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import { FilterChip } from "@/components/ui/filter-chip";
 import { GoetheA1Speaking } from "@/components/tests/goethe-a1-speaking";
 import { ExamAudioPlayer } from "@/components/tests/exam-audio-player";
-import { ExamMcqListCompact, ExamStatementsListCompact } from "@/components/tests/exam-question-views";
+import { ExamMcqListCompact, ExamStatementsListCompact, ExamReviewList } from "@/components/tests/exam-question-views";
 import { ExamOfficialSummary } from "@/components/tests/exam-official-summary";
 import { gradeTeile } from "@/lib/tests/exam-scoring";
 import { LEVEL_MODELS, examModel } from "@/data/exams/level-models";
@@ -207,6 +207,15 @@ export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
             ]}
             subjectiveAr="الكتابة (Schreiben) والتحدث (Sprechen): تقييمهما ذاتي بمعايير الاختبار المذكورة أعلاه — ولا يدخلان في التحويل الآلي."
           />
+          {/* مراجعة الأدلة (الدفعة 117): لكل سؤالٍ جوابُك والصحيح وشاهدُه الألماني */}
+          <div className="space-y-3" data-testid="exam-review">
+            <h3 className="text-base font-extrabold">مراجعة الأدلة — لماذا هذا الجواب</h3>
+            <p className="text-xs text-muted-foreground">
+              لكل سؤالٍ في الاستماع والقراءة: جوابُك، والإجابةُ الصحيحة، والشاهدُ الألماني من نصّ الجزء.
+            </p>
+            <ExamReviewList teile={data.hoeren} answers={hAns} label="hoeren" />
+            <ExamReviewList teile={data.lesen} answers={lAns} label="lesen" />
+          </div>
           <Button variant="outline" onClick={reset}>إعادة النموذج</Button>
         </section>
       )}

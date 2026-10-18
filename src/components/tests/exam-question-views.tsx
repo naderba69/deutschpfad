@@ -21,7 +21,7 @@
 
 import * as React from "react";
 
-import type { ExamMcq, ExamStatement } from "@/types/exam";
+import type { ExamHoerenTeil, ExamLesenTeil, ExamMcq, ExamStatement } from "@/types/exam";
 import { cn } from "@/lib/utils";
 
 /* ═══════════════════════════════════════════════════════════
@@ -298,6 +298,83 @@ export function ExamStatementsListCompact({
   );
 }
 
+
+/* ═══════════════════════════════════════════════════════════
+ *  مراجعة الأدلة (الدفعة 117) — شاشة النتيجة تُظهر لكل سؤالٍ
+ *  جوابَ المتعلّم والصحيح وشاهدَه `whyAr` — فكانت 414 شاهداً
+ *  مكتوبةً في البيانات ولا يراها أحد. يُقاس الحضور بحارس
+ *  `src/data/exams/evidence.test.ts` (أرضية 414 شاهداً).
+ * ═══════════════════════════════════════════════════════════ */
+export function ExamReviewList({
+  teile,
+  answers,
+  label,
+}: {
+  teile: (ExamHoerenTeil | ExamLesenTeil)[];
+  answers: Record<string, boolean | number>;
+  label: string;
+}) {
+  return (
+    <div className="space-y-3" data-testid={`exam-review-${label}`}>
+      {teile.map((t) => (
+        <div key={t.teil} className="rounded-xl border bg-card p-4">
+          <h4 className="text-sm font-extrabold">{t.titleAr}</h4>
+          <div className="mt-2 space-y-2">
+            {t.kind === "rf" &&
+              (t.statements ?? []).map((s) => {
+                const chosen = answers[s.id];
+                const answered = chosen === true || chosen === false;
+                const ok = answered && chosen === s.isTrue;
+                return (
+                  <div key={s.id} data-testid="exam-review-item" className="rounded-lg border p-2.5">
+                    <p className="flex flex-wrap items-center gap-2 text-sm">
+                      <span aria-hidden className={ok ? "text-success" : "text-destructive"}>{ok ? "✓" : "✗"}</span>
+                      <span dir="ltr" lang="de" className="font-de">{s.de}</span>
+                    </p>
+                    <p className="mt-1 text-xs">
+                      جوابك: {answered ? (chosen ? "Richtig / صحيح" : "Falsch / خطأ") : "— لم تُجب"} ·
+                      الصحيح: {s.isTrue ? "Richtig / صحيح" : "Falsch / خطأ"}
+                    </p>
+                    {s.whyAr && (
+                      <p className="mt-1 rounded-md bg-muted/40 p-2 text-xs leading-relaxed">
+                        <span className="font-bold">الدليل: </span>
+                        <span data-testid="exam-review-evidence">{s.whyAr}</span>
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
+            {t.kind === "mcq" &&
+              (t.questions ?? []).map((q) => {
+                const chosen = answers[q.id];
+                const answered = typeof chosen === "number";
+                const ok = answered && chosen === q.correct;
+                return (
+                  <div key={q.id} data-testid="exam-review-item" className="rounded-lg border p-2.5">
+                    <p className="text-sm">
+                      <span aria-hidden className={ok ? "text-success" : "text-destructive"}>{ok ? "✓" : "✗"}</span>{" "}
+                      <span dir="ltr" lang="de" className="font-de">{q.q}</span>
+                    </p>
+                    {q.qAr && <p className="mt-0.5 text-xs text-muted-foreground">{q.qAr}</p>}
+                    <p className="mt-1 text-xs">
+                      جوابك: <span dir="ltr" lang="de" className="font-de">{answered ? q.options[chosen] : "— لم تُجب"}</span> ·
+                      الصحيح: <span dir="ltr" lang="de" className="font-de">{q.options[q.correct]}</span>
+                    </p>
+                    {q.whyAr && (
+                      <p className="mt-1 rounded-md bg-muted/40 p-2 text-xs leading-relaxed">
+                        <span className="font-bold">الدليل: </span>
+                        <span data-testid="exam-review-evidence">{q.whyAr}</span>
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export function ExamMcqListCompact({
   questions,
