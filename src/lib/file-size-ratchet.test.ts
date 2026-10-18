@@ -27,7 +27,6 @@ const KNOWN_OVERSIZE: readonly [string, number][] = [
    * رُقّي الدرسان إلى المعيار الأكاديمي في المرحلة 5 (نصّ قراءة + تدريبات
    * + نظرية أعمق) فشمل التدقيق الجديد — وهذا النمو مقصود ومُعلَن.
    */
-  ["src/data/lessons/a2/a2-10.test.ts", 1011],
   ["src/data/lessons/a2/a2-11.test.ts", 942],
   ["src/data/lessons/a2/a2-06.test.ts", 790],
   ["src/data/lessons/a1/a1-12.test.ts", 765],
