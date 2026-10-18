@@ -79,25 +79,54 @@ if CLOSE is None:
     print("؟ لا سطر إغلاق «];» بعد الإعلان")
     raise SystemExit(1)
 
-# ── العناصر (ضمان 1) ──────────────────────────────────────────────────────
-starts = [i for i in range(D + 1, CLOSE) if re.match(r"^  \{$", lines[i])]
-if not starts:
-    print("؟ لا عنصر على عمقٍ واحد («  {») بين الإعلان والإغلاق")
-    raise SystemExit(1)
+# ── العناصر (ضمان 1) — مشتقّة بالمشي لا بعدّاد الأقواس ────────────────────
+# شكلان للعنصر: متعدّد الأسطر («  {» … «  },») كالحوارات، وسطرٌ واحد
+# («  { … },») كالمفردات. وتعليقاتُ الأقسام تُرفق كأوائلَ للعنصر التالي (ضمان 5).
 elems = []
-for s in starts:
-    e = s
-    while e < CLOSE and not re.match(r"^  \},?$", lines[e]):
-        e += 1
-    if e >= CLOSE:
-        print("؟ عنصر بلا نهاية عند السطر %d" % (s + 1))
+i = D + 1
+lead = None
+while i < CLOSE:
+    l = lines[i]
+    if not l.strip():
+        i += 1
+        continue
+    if COMMENT.match(l):
+        if lead is None:
+            lead = i
+        i += 1
+        continue
+    if re.match(r"^  \{$", l):                              # عنصر متعدّد الأسطر
+        e = i
+        while e < CLOSE and not re.match(r"^  \},?$", lines[e]):
+            e += 1
+        if e >= CLOSE:
+            print("؟ عنصر بلا نهاية عند السطر %d" % (i + 1))
+            raise SystemExit(1)
+    elif re.match(r"^  \{.*\},?$", l):                      # عنصر السطر الواحد
+        e = i
+    else:
+        print("؟ سطرٌ لا يُشتقّ كعنصر عند %d: %r" % (i + 1, l[:60]))
         raise SystemExit(1)
-    # ضمان 5: التعليق السابق للعنصر جزءٌ منه
-    lead = s
-    while lead - 1 > D and COMMENT.match(lines[lead - 1]):
-        lead -= 1
-    elems.append((lead, e))                      # 0-based شامل الطرفين
+    elems.append((lead if lead is not None else i, e))       # 0-based شامل الطرفين
+    lead = None
+    i = e + 1
+if lead is not None:
+    print("؟ تعليقٌ عند السطر %d بلا عنصرٍ يتبعه قبل الإغلاق" % (lead + 1))
+    raise SystemExit(1)
 bodies = ["\n".join(lines[a:b + 1]) for a, b in elems]
+
+# الذيل بعد الإغلاق (تصديرات مشتقة مثل «TOTAL_B1_EXTRA2 = ….length») يُحفظ حرفياً
+TAIL = "\n".join(lines[CLOSE + 1:]).strip("\n")
+# تعليقُ رأس الملف الأصلي يُحفظ في المجمِّع (يشرح المدوّنة لا التقسيم)
+HEAD_COMMENT = []
+for l in lines:
+    if COMMENT.match(l):
+        HEAD_COMMENT.append(l)
+    elif l.strip():
+        break
+    else:
+        break
+HEAD_COMMENT = "\n".join(HEAD_COMMENT)
 
 # ضمان 2: لا سطر شارد
 cov = set()
@@ -177,9 +206,14 @@ if flat != list(range(len(elems))):
     raise SystemExit(1)
 
 stem = os.path.basename(SRC).replace(".ts", "")
-print("الملف: %s (%d سطراً) · export const %s: %s · %d عنصراً · الإغلاق عند %d"
-      % (SRC, len(lines), NAME, TYPE, len(elems), CLOSE + 1))
-print("أحجام العناصر:", [b - a + 1 for a, b in elems])
+print("الملف: %s (%d سطراً) · export const %s: %s · %d عنصراً · الإغلاق عند %d%s"
+      % (SRC, len(lines), NAME, TYPE, len(elems), CLOSE + 1,
+         " · ذيلٌ محفوظ (%d سطراً)" % len(TAIL.split("\n")) if TAIL else ""))
+print("أحجام العناصر:", [b - a + 1 for a, b in elems][:20],
+      "…" if len(elems) > 20 else "")
+# بداياتُ الأقسام (عنصرٌ يسبقه تعليق) — تُستعمل لمحاذاة حدود المجموعات عليها
+secs = [k for k, (a, _) in enumerate(elems) if COMMENT.match(lines[a])]
+print("بدايات الأقسام (فهارس العناصر):", secs)
 if DRY:
     for k, (fname, desc, ids) in enumerate(groups, 1):
         body = "\n".join(bodies[i] for i in ids)
@@ -217,15 +251,18 @@ for k, (fname, desc, ids) in enumerate(groups, 1):
 imp_parts = ["import { %s } from \"./%s\";" % (e, p) for e, p in part_exports]
 # النوع يبقى مطلوباً في توقيع المجمِّع، فواردته تُترك كما هي (نسبُها إلى مجلد الأصل)
 type_imports = [l for l in imports if re.search(r"\b%s\b" % re.escape(TYPE.replace("[]", "")), l)]
-asm = ("/**\n * %s — مجمِّع: يبسط أجزاء المصفوفة في %s/ بترتيبها الأصلي.\n"
+asm = ("%s/**\n * %s — مجمِّع: يبسط أجزاء المصفوفة في %s/ بترتيبها الأصلي.\n"
        " * قُسِّم في الدفعة %s (سقف الحجم: لا ملف فوق %d سطراً). القيم في الأجزاء\n"
        " * منقولة حرفياً، والترتيب محفوظ لأن الموازنة تُجرى بالقرينة.\n */\n"
        "%s%s\n\n"
-       "export const %s: %s = [\n%s\n];\n"
-       % (os.path.basename(SRC), os.path.basename(OUT), BATCH, CAP,
+       "export const %s: %s = [\n%s\n];\n%s"
+       % ((HEAD_COMMENT + "\n\n") if HEAD_COMMENT else "",
+          os.path.basename(SRC), os.path.basename(OUT), BATCH, CAP,
           ("\n".join(type_imports) + "\n\n") if type_imports else "",
           "\n".join(imp_parts),
-          NAME, TYPE, "\n".join("  ...%s," % e for e, _ in part_exports)))
+          NAME, TYPE, "\n".join("  ...%s," % e for e, _ in part_exports),
+          ("\n" + TAIL + "\n") if TAIL else ""))
+assert not TAIL or TAIL in asm, "الذيل لم يُحفظ حرفياً في المجمِّع"
 io.open(SRC, "w", encoding="utf-8").write(asm)
 n = len(asm.split("\n"))
 print("المجمِّع %s: %d سطراً · %d جزءاً%s" % (SRC, n, len(groups),
