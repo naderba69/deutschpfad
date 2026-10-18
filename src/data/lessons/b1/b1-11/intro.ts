@@ -85,6 +85,7 @@ export const review: NonNullable<Lesson["review"]> = [
       questionAr: "أمس ذهبت إلى البيت.",
       options: ["ging", "gehe", "gegangen", "geht"],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — «gehe» مضارع؛ و«Gestern» تفرض الماضي البسيط: «ich ging nach Hause».", "لا — التصريف الثالث لا يقف وحده بلا فعل مساعد؛ فلو قيل «bin gegangen» لصحّ، والمطلوب هنا «ging».", "لا — «geht» للغائب المفرد أو للجمع في المضارع؛ والفاعل «ich» مع «Gestern» فيلزم «ging»."],
       explanation: "في الماضي البسيط: ich ging.",
       errorType: "conjugation",
     },

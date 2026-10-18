@@ -141,6 +141,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         "Der Plan, den wir haben besprochen, wird nächste Woche umgesetzt, weil alle zustimmen.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — «weil» تستدعي جملةً جانبية فيذهب الفعل المتصرّف إلى آخرها: «weil alle zustimmen» لا «weil alle stimmen zu».", "لا — الجملة النسبية تحتاج اسماً موصولاً في حالة النصب يعود على «Der Plan»: «den wir besprochen haben».", "لا — في الجملة الجانبية يقف التصريف الثالث «besprochen» في النهاية مع الفعل المساعد: «den wir besprochen haben»."],
       explanation: "الجملة النسبية تُغلق بفعلها (haben … besprochen معاً في النهاية)، وجملة weil تُغلق بفعلها المصرّف (zustimmen في النهاية). الخياران 2 و4 يخطئان في الوصل الماضي (haben besprochen)، والخيار 3 يخطئ في بنية الجملة النسبية كلها.",
       errorType: "grammar",
       points: 2,

@@ -157,6 +157,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "___ Sie den Kurs im Oktober besuchen? (نية مؤكَّدة)",
       options: ["Werden", "Wird", "Wirst", "Werdet"],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — «wird» للغائب المفرد؛ وسؤال المستقبل مع «Sie» يحتاج «Werden Sie … besuchen؟».", "لا — «wirst» للمخاطب المفرد «du wirst»؛ ومع صيغة الاحترام «Sie» يلزم «Werden».", "لا — «werdet» للمخاطب الجمع «ihr»؛ والسؤال موجّهٌ إلى «Sie» فيلزم «Werden Sie … besuchen؟»."],
       explanation: "مع صيغة الاحترام Sie يبقى الفعل werden في صيغة الجمع: Werden Sie …? ولا يستعمل wird مع Sie أبداً.",
       errorType: "conjugation",
     },
