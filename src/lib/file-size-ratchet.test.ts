@@ -26,7 +26,6 @@ const KNOWN_OVERSIZE: readonly [string, number][] = [
    * رُقّي الدرسان إلى المعيار الأكاديمي في المرحلة 5 (نصّ قراءة + تدريبات
    * + نظرية أعمق) فشمل التدقيق الجديد — وهذا النمو مقصود ومُعلَن.
    */
-  ["src/data/dialogues/a2.ts", 611],
   ["src/data/dialogues/b1.ts", 611],
   ["src/data/dialogues/b2.ts", 611],
   ["src/data/vocabulary/b1-extra2.ts", 609],
