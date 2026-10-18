@@ -84,8 +84,8 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
         ar: "متى تنام القطة؟",
         options: [
           { text: "Am Tag", ar: "في النهار", correct: true, explanation: "نعم — «Sie schläft am Tag und spielt in der Nacht»." },
-          { text: "In der Nacht", ar: "في الليل", correct: false, explanation: "لا — في الليل تلعب لا تنام." },
-          { text: "Immer", ar: "دائماً", correct: false, explanation: "لا — تنام نهاراً وتلعب ليلاً." },
+          { text: "In der Nacht", ar: "في الليل", correct: false, explanation: "لا — الليل للّعب لا للنوم: «Sie schläft am Tag und spielt in der Nacht»." },
+          { text: "Immer", ar: "دائماً", correct: false, explanation: "لا — ليس دائماً؛ فالنهار للنوم والليل للّعب: «Sie schläft am Tag und spielt in der Nacht»." },
         ],
       },
     ],
@@ -429,13 +429,13 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     questions: [
       { de: "Wie viele Geschwister hat der Sprecher?", ar: "كم أخاً وأختاً للمتحدث؟", options: [
         { text: "Einen Bruder und eine Schwester", ar: "أخاً وأختاً", correct: true, explanation: "نعم — «Ich habe einen Bruder und eine Schwester»." },
-        { text: "Zwei Brüder, aber keine Schwester", ar: "أخوين", correct: false, explanation: "لا — أخ واحد وأخت واحدة." },
-        { text: "Keine Geschwister in der Familie", ar: "لا إخوة", correct: false, explanation: "لا — لديه أخ وأخت." },
+        { text: "Zwei Brüder, aber keine Schwester", ar: "أخوين", correct: false, explanation: "لا — ليس أخوين بلا أخت؛ بل «Ich habe einen Bruder und eine Schwester»." },
+        { text: "Keine Geschwister in der Familie", ar: "لا إخوة", correct: false, explanation: "لا — له إخوةٌ صراحةً: «Ich habe einen Bruder und eine Schwester»." },
       ]},
       { de: "Wo wohnt die Familie?", ar: "أين تسكن العائلة؟", options: [
         { text: "In einem Haus mit Garten", ar: "في بيت فيه حديقة", correct: true, explanation: "نعم — الحلقة تقول: «Wir wohnen in einem Haus mit Garten.»." },
-        { text: "In einer kleinen Wohnung", ar: "في شقة", correct: false, explanation: "لا — بيت مع حديقة." },
-        { text: "In einem Hotel am Meer", ar: "في فندق", correct: false, explanation: "لا — بيت العائلة." },
+        { text: "In einer kleinen Wohnung", ar: "في شقة", correct: false, explanation: "لا — ليست شقة Wohnung؛ بل «Wir wohnen in einem Haus mit Garten»." },
+        { text: "In einem Hotel am Meer", ar: "في فندق", correct: false, explanation: "لا — لم يُذكر فندق Hotel ولا بحر؛ والمسكن «in einem Haus mit Garten»." },
       ]},
     ],
   },
@@ -451,13 +451,13 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     questions: [
       { de: "Wann sind sie ins Kino gegangen?", ar: "متى ذهبوا إلى السينما؟", options: [
         { text: "Am Freitagabend", ar: "مساء الجمعة", correct: true, explanation: "نعم — «Am Freitagabend sind wir ins Kino gegangen»." },
-        { text: "Am Montagmorgen", ar: "صباح الاثنين", correct: false, explanation: "لا — مساء الجمعة." },
-        { text: "Am Sonntag", ar: "يوم الأحد", correct: false, explanation: "لا — الجمعة." },
+        { text: "Am Montagmorgen", ar: "صباح الاثنين", correct: false, explanation: "لا — ليس صباح الاثنين Montagmorgen؛ بل «Am Freitagabend sind wir ins Kino gegangen»." },
+        { text: "Am Sonntag", ar: "يوم الأحد", correct: false, explanation: "لا — لم يُذكر الأحد Sonntag؛ والخروج كان «Am Freitagabend»." },
       ]},
       { de: "Wie lange hat der Film gedauert?", ar: "كم استمر الفيلم؟", options: [
         { text: "Zwei Stunden", ar: "ساعتين", correct: true, explanation: "نعم — الحلقة تقول: «Der Film hat zwei Stunden gedauert.»." },
-        { text: "Eine Stunde", ar: "ساعة", correct: false, explanation: "لا — ساعتان." },
-        { text: "Drei Stunden", ar: "ثلاث ساعات", correct: false, explanation: "لا — ساعتان." },
+        { text: "Eine Stunde", ar: "ساعة", correct: false, explanation: "لا — ليست ساعة واحدة؛ بل «Der Film hat zwei Stunden gedauert»." },
+        { text: "Drei Stunden", ar: "ثلاث ساعات", correct: false, explanation: "لا — لم تُذكر ثلاث Stunden؛ والمدة «zwei Stunden gedauert»." },
       ]},
     ],
   },
@@ -473,13 +473,13 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     questions: [
       { de: "Was empfehlen Ärzte?", ar: "بماذا يوصي الأطباء؟", options: [
         { text: "Mindestens 30 Minuten aktiv pro Tag", ar: "النشاط 30 دقيقة يومياً على الأقل", correct: true, explanation: "نعم — الحلقة تقول: «Ärzte empfehlen, mindestens 30 Minuten pro Tag aktiv zu sein.»." },
-        { text: "Weniger als 10 Minuten pro Tag", ar: "أقل من 10 دقائق يومياً", correct: false, explanation: "لا — 30 دقيقة على الأقل." },
-        { text: "Kein Sport", ar: "لا رياضة", correct: false, explanation: "لا — الرياضة موصى بها." },
+        { text: "Weniger als 10 Minuten pro Tag", ar: "أقل من 10 دقائق يومياً", correct: false, explanation: "لا — ليست أقلّ من عشر دقائق؛ والتوصية «mindestens 30 Minuten pro Tag aktiv zu sein»." },
+        { text: "Kein Sport", ar: "لا رياضة", correct: false, explanation: "لا — لم يُنهَ عن الرياضة؛ فالنصّ يقول «Sie essen mehr Gemüse und treiben regelmäßig Sport»." },
       ]},
       { de: "Was ist ein Beispiel für eine kleine Änderung?", ar: "ما مثال على تغيير صغير؟", options: [
         { text: "Die Treppe statt des Aufzugs nehmen", ar: "أخذ الدرج بدل المصعد", correct: true, explanation: "نعم — الحلقة تقول: «Zum Beispiel die Treppe statt des Aufzugs zu nehmen.»." },
-        { text: "Öfter mit dem Auto fahren", ar: "قيادة السيارة أكثر", correct: false, explanation: "لا — عكس النصيحة." },
-        { text: "Mehr Fastfood am Abend essen", ar: "أكل وجبات سريعة أكثر", correct: false, explanation: "لا — عكس النصيحة." },
+        { text: "Öfter mit dem Auto fahren", ar: "قيادة السيارة أكثر", correct: false, explanation: "لا — السيارة عكس المثال المذكور؛ والتغيير الصغير «die Treppe statt des Aufzugs zu nehmen»." },
+        { text: "Mehr Fastfood am Abend essen", ar: "أكل وجبات سريعة أكثر", correct: false, explanation: "لا — لم تُذكر وجبات سريعة Fastfood؛ والاتجاه «Sie essen mehr Gemüse»." },
       ]},
     ],
   },
@@ -495,13 +495,13 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     questions: [
       { de: "Worüber klagen viele Arbeitnehmer?", ar: "ممَّ يشكو كثير من الموظفين؟", options: [
         { text: "Über Überstunden und ständige Erreichbarkeit", ar: "من الساعات الإضافية والاتصال الدائم", correct: true, explanation: "نعم — الحلقة تقول: «Viele Arbeitnehmer klagen über Überstunden und ständige Erreichbarkeit.»." },
-        { text: "Über zu viel Urlaub und zu freie Tage", ar: "من الإجازات الكثيرة", correct: false, explanation: "لا — عكس الواقع." },
-        { text: "Über zu wenig Arbeit und Langeweile", ar: "من قلة العمل", correct: false, explanation: "لا — من كثرة العمل." },
+        { text: "Über zu viel Urlaub und zu freie Tage", ar: "من الإجازات الكثيرة", correct: false, explanation: "لا — ليست الإجازات الكثيرة Urlaub؛ والشكوى «über Überstunden und ständige Erreichbarkeit»." },
+        { text: "Über zu wenig Arbeit und Langeweile", ar: "من قلة العمل", correct: false, explanation: "لا — ليست قلّة العمل ولا الملل Langeweile؛ بل «Viele Arbeitnehmer klagen über Überstunden»." },
       ]},
       { de: "Wie reagieren Unternehmen?", ar: "كيف تستجيب الشركات؟", options: [
         { text: "Mit flexiblen Arbeitszeiten", ar: "بساعات عمل مرنة", correct: true, explanation: "نعم — الحلقة تقول: «Unternehmen reagieren mit flexiblen Arbeitszeiten.»." },
-        { text: "Mit noch mehr Überstunden", ar: "بمزيد من الساعات الإضافية", correct: false, explanation: "لا — العكس." },
-        { text: "Mit deutlich weniger Lohn", ar: "برواتب أقل", correct: false, explanation: "لا — لا علاقة." },
+        { text: "Mit noch mehr Überstunden", ar: "بمزيد من الساعات الإضافية", correct: false, explanation: "لا — ليس بمزيد من الساعات الإضافية؛ بل «Unternehmen reagieren mit flexiblen Arbeitszeiten»." },
+        { text: "Mit deutlich weniger Lohn", ar: "برواتب أقل", correct: false, explanation: "لا — لم يُذكر أجر Lohn؛ والاستجابة «mit flexiblen Arbeitszeiten»." },
       ]},
     ],
   },
@@ -517,13 +517,13 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     questions: [
       { de: "Was bringen Menschen mit Migrationshintergrund?", ar: "ماذا يقدم ذوو الخلفية الهجرية؟", options: [
         { text: "Neue Perspektiven", ar: "منظورات جديدة", correct: true, explanation: "نعم — الحلقة تقول: «Menschen mit Migrationshintergrund bringen neue Perspektiven in Wirtschaft und Kultur.»." },
-        { text: "Nur Probleme", ar: "مشاكل فقط", correct: false, explanation: "لا — منظورات جديدة في الاقتصاد والثقافة." },
-        { text: "Weniger Vielfalt", ar: "تنوعاً أقل", correct: false, explanation: "لا — العكس." },
+        { text: "Nur Probleme", ar: "مشاكل فقط", correct: false, explanation: "لا — ليست مشاكل فقط Probleme؛ بل «neue Perspektiven in Wirtschaft und Kultur»." },
+        { text: "Weniger Vielfalt", ar: "تنوعاً أقل", correct: false, explanation: "لا — ليس تنوّعاً أقلّ؛ فالمجتمع يستفيد منه: «Die Gesellschaft profitiert von Vielfalt»." },
       ]},
       { de: "Was betonen Experten über hybride Identitäten?", ar: "ماذا يؤكد الخبراء عن الهويات الهجينة؟", options: [
         { text: "Sie sind eine Bereicherung", ar: "إنها إثراء", correct: true, explanation: "نعم — الحلقة تقول: «hybride Identitäten keine Schwäche sind, sondern eine Bereicherung.»." },
-        { text: "Sie sind eine Schwäche", ar: "إنها ضعف", correct: false, explanation: "لا — العكس." },
-        { text: "Sie sind selten", ar: "إنها نادرة", correct: false, explanation: "لا — شائعة بين المهاجرين." },
+        { text: "Sie sind eine Schwäche", ar: "إنها ضعف", correct: false, explanation: "لا — ليست ضعفاً؛ فالنصّ ينفي ذلك صراحةً: «hybride Identitäten keine Schwäche sind, sondern eine Bereicherung»." },
+        { text: "Sie sind selten", ar: "إنها نادرة", correct: false, explanation: "لا — لم تُوصف بالندرة selten؛ والتركيز على أنها «eine Bereicherung»." },
       ]},
     ],
   },
@@ -539,13 +539,13 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     questions: [
       { de: "Was sagen Wissenschaftler über Sprachenlernen?", ar: "ماذا يقول العلماء عن تعلم اللغات؟", options: [
         { text: "Es trainiert das Gehirn", ar: "إنه يدرب الدماغ", correct: true, explanation: "نعم — الحلقة تقول: «Wissenschaftler sagen, dass Sprachenlernen das Gehirn trainiert.»." },
-        { text: "Es ist nur für Kinder", ar: "إنه للأطفال فقط", correct: false, explanation: "لا — للجميع." },
-        { text: "Es ist unmöglich", ar: "إنه مستحيل", correct: false, explanation: "لا — ممكن بالتدرب." },
+        { text: "Es ist nur für Kinder", ar: "إنه للأطفال فقط", correct: false, explanation: "لا — لم يُخصَّص للأطفال Kinder؛ والأسباب عامّة: «Reisen, Beruf oder Kultur»." },
+        { text: "Es ist unmöglich", ar: "إنه مستحيل", correct: false, explanation: "لا — لم يُوصف بالاستحالة unmöglich؛ بل «Sprachenlernen das Gehirn trainiert»." },
       ]},
       { de: "Was ist der beste Weg?", ar: "ما أفضل طريقة؟", options: [
         { text: "Regelmäßig und viel üben", ar: "التدرب بانتظام", correct: true, explanation: "نعم — الحلقة تقول: «Der beste Weg ist, regelmäßig zu üben.»." },
-        { text: "Nur Grammatik lernen", ar: "تعلم القواعد فقط", correct: false, explanation: "لا — التدرب والاستخدام." },
-        { text: "Keine Fehler machen wollen", ar: "عدم الرغبة في الخطأ", correct: false, explanation: "لا — الأخطاء جزء من التعلم." },
+        { text: "Nur Grammatik lernen", ar: "تعلم القواعد فقط", correct: false, explanation: "لا — لم تُذكر قواعد Grammatik؛ والطريق «regelmäßig zu üben» مع «die Sprache aktiv zu benutzen»." },
+        { text: "Keine Fehler machen wollen", ar: "عدم الرغبة في الخطأ", correct: false, explanation: "لا — الخوف من الخطأ منهيٌّ عنه: «Man sollte nicht Angst vor Fehlern haben»." },
       ]},
     ],
   },
@@ -561,13 +561,13 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     questions: [
       { de: "In welchem Stock liegt die Wohnung?", ar: "في أي طابق تقع الشقة؟", options: [
         { text: "Im dritten Stock", ar: "في الطابق الثالث", correct: true, explanation: "نعم — الحلقة تقول: «Sie liegt im dritten Stock.»." },
-        { text: "Im ersten Stock", ar: "في الطابق الأول", correct: false, explanation: "لا — الثالث." },
-        { text: "Im fünften Stock", ar: "في الطابق الخامس", correct: false, explanation: "لا — الثالث." },
+        { text: "Im ersten Stock", ar: "في الطابق الأول", correct: false, explanation: "لا — ليس الطابق الأول؛ بل «Sie liegt im dritten Stock»." },
+        { text: "Im fünften Stock", ar: "في الطابق الخامس", correct: false, explanation: "لا — لم يُذكر الطابق الخامس fünften؛ والشقة «im dritten Stock»." },
       ]},
       { de: "Wie weit ist die U-Bahn?", ar: "كم تبعد محطة المترو؟", options: [
         { text: "Fünf Minuten", ar: "خمس دقائق", correct: true, explanation: "نعم — الحلقة تقول: «Die U-Bahn ist nur fünf Minuten entfernt.»." },
-        { text: "Dreißig Minuten", ar: "ثلاثين دقيقة", correct: false, explanation: "لا — خمس دقائق." },
-        { text: "Eine Stunde", ar: "ساعة", correct: false, explanation: "لا — خمس دقائق." },
+        { text: "Dreißig Minuten", ar: "ثلاثين دقيقة", correct: false, explanation: "لا — ليست ثلاثين دقيقة؛ بل «Die U-Bahn ist nur fünf Minuten entfernt»." },
+        { text: "Eine Stunde", ar: "ساعة", correct: false, explanation: "لا — لم تُذكر ساعة Stunde؛ والمسافة «nur fünf Minuten entfernt»." },
       ]},
     ],
   },
