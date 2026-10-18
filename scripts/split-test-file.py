@@ -42,6 +42,27 @@
     أيضاً فيصير `../fixtures` (لأنه يحسب بالنسبة إلى مجلد الأصل)، فسقط tsc
     بـ«Cannot find module '../fixtures'». والقاعدة: `fix_mod` للواردات المنقولة من
     الأصل فقط، وأما `extra_names` فنسبُها إلى مجلد الأجزاء أصلاً.
+ 4) **التعليق السابق لإعلانٍ على المستوى الأعلى كان يُفقد**: `first_decl` كان يقف
+    عند أول `const/function/let/type` فلا يدخل السطر الشارح فوقه (`/** كل التمارين
+    في كل الدروس، مع معرّف يسهل تتبّعه */` فوق `allExercises`) إلى `fixtures.ts`،
+    والاستدارة الحرفية لا تكشفه لأن مرشّحها يستثني أسطر التعليقات. وهو نظير الضمان
+    6 على مستوى الكتل، فعولج بالمشي فوق أسطر التعليقات المتلاصقة قبل الإعلان.
+ 5) **نطاقُ الضمان 3 في الوضع المفرد**: توسيعُه إلى `DESC` (بدل `DESC + 1`) عند
+    إضافة الوضع المتعدّد جعل رأس `describe` نفسه «سطراً خارج الكتل» لأن الكتلَ هناك
+    `it` — فانكسر الوضع المفرد. كشفه فحصُ انحدارٍ على نسخة a1-11 الاحتياطية قبل أي
+    تشغيلٍ حقيقي. القاعدة: النطاقُ يبدأ من أول كتلة، وأولُ كتلة في الوضع المفرد
+    بعد رأس `describe` لا فيه.
+ 6) **مرشّحُ الاستدارة كان يقارن على السطر المجرّد**: `l.strip().startswith(" *")`
+    لا يطابق تعليقاً صار `* حرّاس…` بعد التجريد، فبقي رأسُ الملف التعليقيّ كلّه
+    «بقايا» ورفضت الأداة الكتابة. والعلاج قياسُ التعليق على السطر الخامّ بـ
+    `^\s*(/\*\*?|\*|//)`. ولم تظهر العلّة قبل `integrity.test.ts` لأن كل الملفات
+    السابقة تبدأ بالواردات مباشرةً بلا تعليقٍ أعلى الملف.
+
+الوضع الثاني (تلقائيّ): إذا كان في الملف **أكثر من `describe(` على المستوى الأعلى**
+(كما في `src/data/lessons/integrity.test.ts` — تسعة `describe` مستقلة) فكل `describe`
+كتلةٌ قائمة، لأن الإعداد المشترك يسكن داخله (`const fillBlanks = allExercises()…`)
+ولا يجوز فصله عنه. عندها يتغيّر معنى الضمان 3: المطلوبُ ألا يبقى سطرٌ غير فارغ
+خارج الكتل (لا «لا إعداد داخل describe»)، ويُكتب الجزء بوصفاته كاملة دون غلاف.
 
 `--dry` يطبع الخطة (النطاقات · الأسماء المشتركة · أحجام الأجزاء) بلا كتابة.
 """
@@ -126,12 +147,20 @@ def prune_imports(text, extra_names=()):
 
 
 # ── المستوى الأعلى و describe ──────────────────────────────────────────────
-DESC = next((i for i, l in enumerate(lines) if l.startswith("describe(")), None)
-if DESC is None:
+COMMENT = re.compile(r"^\s*(/\*\*|/\*|\*|\*/|//)")
+DESC_STARTS = [i for i, l in enumerate(lines) if l.startswith("describe(")]
+if not DESC_STARTS:
     print("؟ لا `describe(` على المستوى الأعلى — الملف خارج نطاق الأداة")
     raise SystemExit(1)
+# الوضع: `describe` واحد ⇒ الكتلُ `it` داخله؛ وأكثر من واحد ⇒ كل `describe` كتلة،
+# لأن الإعداد المشترك (`const fillBlanks = …`) يسكن داخله ولا يجوز فصله عنه.
+MULTI = len(DESC_STARTS) > 1
+DESC = DESC_STARTS[0]
 DESC_TITLE = re.match(r'^describe\("((?:[^"\\]|\\.)*)"', lines[DESC]).group(1)
 first_decl = next(i for i, l in enumerate(lines) if re.match(r"^(const|function|let|type)\b", l))
+# إصلاح 4: التعليق السابق للإعلان جزءٌ منه (كان يُفقد لأن الاستدارة تستثني التعليقات)
+while first_decl - 1 >= 0 and COMMENT.match(lines[first_decl - 1]):
+    first_decl -= 1
 DECL_LINES = lines[first_decl:DESC - 1]
 DECL = "\n".join(DECL_LINES)
 if not DECL.strip():
@@ -139,19 +168,23 @@ if not DECL.strip():
     raise SystemExit(1)
 NAMES = re.findall(r"^(?:const|function|let|type)\s+(\w+)", DECL, re.M)
 
-# ── كتل it ────────────────────────────────────────────────────────────────
-COMMENT = re.compile(r"^\s*(/\*\*|/\*|\*|\*/|//)")
-starts = [i for i in range(DESC, len(lines)) if re.match(r"^  it\(", lines[i])]
+# ── الكتل: `it` داخل describe واحد، أو كل describe على حدة ────────────────
+if MULTI:
+    starts, FLOOR = DESC_STARTS, first_decl
+    END, HEAD, TAIL = re.compile(r"^\}\);"), "describe(", "});"
+else:
+    starts = [i for i in range(DESC, len(lines)) if re.match(r"^  it\(", lines[i])]
+    FLOOR, END, HEAD, TAIL = DESC, re.compile(r"^  \}\);"), "  it(", "  });"
 blocks = []
 for s in starts:
-    # ضمان 3ب: التعليق السابق للكتلة جزءٌ منها (لا يُترك في فجوةٍ تُفقد)
+    # ضمان 3ب/6: التعليق السابق للكتلة جزءٌ منها (لا يُترك في فجوةٍ تُفقد)
     lead = s
-    while lead - 1 > DESC and COMMENT.match(lines[lead - 1]) and lines[lead - 2].strip() != "":
+    while lead - 1 > FLOOR and COMMENT.match(lines[lead - 1]) and lines[lead - 2].strip() != "":
         lead -= 1
-    while lead - 1 > DESC and COMMENT.match(lines[lead - 1]):
+    while lead - 1 > FLOOR and COMMENT.match(lines[lead - 1]):
         lead -= 1
     e = s
-    while e < len(lines) and not re.match(r"^  \}\);", lines[e]):
+    while e < len(lines) and not END.match(lines[e]):
         e += 1
     if e >= len(lines):
         print("؟ كتلة بلا نهاية عند السطر %d" % (s + 1))
@@ -160,16 +193,19 @@ for s in starts:
 bodies = ["\n".join(lines[a - 1:b]) for a, b in blocks]
 for b in bodies:
     first_code = next(l for l in b.split("\n") if not COMMENT.match(l) and l.strip())
-    assert first_code.startswith("  it(") and b.endswith("  });"), b[:60]
+    assert first_code.startswith(HEAD) and b.endswith(TAIL), b[:60]
 
-# ضمان 3: لا إعداد مشترك داخل describe
+# ضمان 3: لا سطر غير فارغ خارج الكتل (في الوضع المفرد: لا إعداد مشترك داخل describe)
 cov = set()
 for a, b in blocks:
     cov.update(range(a, b + 1))
-extra = [i + 1 for i in range(DESC + 1, len(lines))
-         if (i + 1) not in cov and lines[i].strip() and lines[i] != "});"]
+# في الوضع المفرد رأسُ `describe` نفسه خارج الكتل (الكتلُ `it`) فلا يُفحص؛
+# وتوسيعُ النطاق إليه كان انحداراً كشفه فحصُ الوضع المفرد على نسخة a1-11 الاحتياطية.
+extra = [i + 1 for i in range(DESC if MULTI else DESC + 1, len(lines))
+         if (i + 1) not in cov and lines[i].strip()
+         and (MULTI or lines[i] != "});")]
 if extra:
-    print("؟ أسطر داخل describe خارج كتل it (لن تُنقل):", extra[:8])
+    print("؟ أسطر خارج الكتل (لن تُنقل):", extra[:8])
     raise SystemExit(1)
 
 # ضمان 2: الاستدارة الحرفية
@@ -179,8 +215,23 @@ for chunk in [DECL] + bodies:
         print("؟ مقطع غير موجود في الأصل:", chunk[:60])
         raise SystemExit(1)
     rest = rest.replace(chunk, "", 1)
-leftover = [l.strip() for l in rest.split("\n")
-            if l.strip() and not l.strip().startswith(("import ", "/**", " *", " */", "describe(", "});"))]
+# مرشّح الاستدارة: التعليقُ يُقاس على السطر الخامّ لا المجرّد — لأن `l.strip()`
+# يحوّل « * حرّاس…» إلى «* حرّاس…» فتسقط بادئةُ « * » ويبقى رأسُ الملف التعليقيّ
+# كلّه «بقايا» (علّةٌ كشفها integrity.test.ts، وهو أول ملفٍ له تعليقٌ أعلى الملف).
+# وفي الوضع المتعدّد الكتلُ هي `describe` نفسها فلا يُستثنى رأسها ولا قوسها.
+COMMENT_LINE = re.compile(r"^\s*(/\*\*?|\*|//)")
+
+
+def skippable(line):
+    if COMMENT_LINE.match(line):
+        return True
+    s = line.strip()
+    if s.startswith("import "):
+        return True
+    return not MULTI and (s.startswith("describe(") or s == "});")
+
+
+leftover = [l.strip() for l in rest.split("\n") if l.strip() and not skippable(l)]
 if leftover:
     print("؟ الاستدارة الحرفية فشلت — بقايا:", leftover[:6])
     raise SystemExit(1)
@@ -199,8 +250,11 @@ if seen != list(range(len(bodies))):
     print("؟ المجموعات لا تغطّي الكتل كلها مرة واحدة:", seen, "من", len(bodies))
     raise SystemExit(1)
 
-print("الملف: %s (%d سطراً) · describe «%s» · %d كتلة · %d مشتركاً على المستوى الأعلى"
-      % (SRC, len(lines), DESC_TITLE, len(bodies), len(NAMES)))
+print("الملف: %s (%d سطراً) · %s · %d كتلة · %d مشتركاً على المستوى الأعلى"
+      % (SRC, len(lines),
+         ("%d كتل describe مستقلة (وضع الكتل الكاملة)" % len(DESC_STARTS)) if MULTI
+         else ("describe «%s»" % DESC_TITLE),
+         len(bodies), len(NAMES)))
 print("نطاقات الكتل:", blocks)
 print("المشتركات:", NAMES)
 if DRY:
@@ -234,11 +288,18 @@ for fname, desc, ids in groups:
     body = "\n\n".join(bodies[i] for i in ids)
     fxs = [n for n in NAMES if used(body, n)]
     ph = prune_imports(body, extra_names=[(n, "./fixtures") for n in fxs])
-    t = ("/**\n * %s — %s (جزء من تدقيق الدرس)\n"
-         " * فُصل من %s في الدفعة %s (سقف الحجم: لا ملف فوق 600 سطر).\n"
-         " * كتل `it` منقولة حرفياً؛ والثوابت والدوال المشتركة في `./fixtures.ts`.\n */\n\n%s\n\n"
-         'describe("%s", () => {\n%s\n});\n'
-         % (stem, desc, os.path.basename(SRC), BATCH, "\n".join(ph), DESC_TITLE, body))
+    if MULTI:
+        # الكتلُ وصفاتٌ كاملة بإعدادها الداخلي ⇒ تُكتب كما هي بلا غلاف جديد
+        t = ("/**\n * %s — %s\n"
+             " * فُصل من %s في الدفعة %s (سقف الحجم: لا ملف فوق 600 سطر).\n"
+             " * كتل `describe` منقولة حرفياً بإعدادها الداخلي؛ والمشتركات في `./fixtures.ts`.\n */\n\n%s\n\n%s\n"
+             % (stem, desc, os.path.basename(SRC), BATCH, "\n".join(ph), body))
+    else:
+        t = ("/**\n * %s — %s (جزء من تدقيق الدرس)\n"
+             " * فُصل من %s في الدفعة %s (سقف الحجم: لا ملف فوق 600 سطر).\n"
+             " * كتل `it` منقولة حرفياً؛ والثوابت والدوال المشتركة في `./fixtures.ts`.\n */\n\n%s\n\n"
+             'describe("%s", () => {\n%s\n});\n'
+             % (stem, desc, os.path.basename(SRC), BATCH, "\n".join(ph), DESC_TITLE, body))
     io.open(os.path.join(OUT, fname), "w", encoding="utf-8").write(t)
     n = len(t.split("\n"))
     print("%-30s %4d سطراً · %2d كتلة · %2d مشتركاً من fixtures%s"
