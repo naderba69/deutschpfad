@@ -135,7 +135,8 @@ const lessonStats = (level: string) => measureExplanationCoverage(LESSONS.filter
 const COVERAGE_FLOORS: Record<string, number> = { A1: 144, A2: 230, B1: 129, B2: 132 };
 
 /** أرضية الدليل الألماني في شروح المشتّتات المكتوبة (قياس 2026-10-17) */
-const EVIDENCE_FLOORS: Record<string, number> = { A1: 432, A2: 690, B1: 364, B2: 390 };
+// الدفعة 87: دروس B1 (378/378) وB2 (396/396) مكتملتا الدليل ⇒ كل مستويات الدروس 100%.
+const EVIDENCE_FLOORS: Record<string, number> = { A1: 432, A2: 690, B1: 378, B2: 396 };
 
 /** الحوارات: التغطية مكتملة (صفر صارم)، والدليل الألماني 5 شروح فقط — أرضية تُرفع */
 // الدفعة 82: حوارات A1 مكتملة الدليل (94/94) فارتفع المجموع 5 → 97.

@@ -175,7 +175,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       errorType: "vocabulary",
       optionExplanations: [
         undefined,
-        "«سيفوته القطار حتماً» توقّع مستقبلي، وليست ترجيحاً لحدث ماضٍ.",
+        "لا — «سيفوته حتماً» مستقبل؛ و«Er wird den Zug verpasst haben» (Futur II) ترجيحٌ لحدثٍ ماضٍ.",
         "«فوّت القطار أمامنا» خبر مباشر عن الماضي (Präteritum/Perfekt)، لا تخمين.",
         "«كان سيفوته القطار» صيغة شرطية لا Futur II.",
       ],

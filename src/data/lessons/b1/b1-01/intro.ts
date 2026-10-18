@@ -98,7 +98,7 @@ export const review: NonNullable<Lesson["review"]> = [
         undefined,
         "«dass» تقدّم مضموناً أو قولاً، ولا تعبّر عن السبب.",
         "«obwohl» تعبّر عن التناقض، والجملة لا تحمل تناقضاً.",
-        "«ob» تقدّم سؤالاً غير مباشر، ولا معنى للسؤال هنا.",
+        "لا — «ob» تربط سؤالاً غير مباشر كـ«Ich weiß nicht, ob er kommt»؛ والجملة «Ich lerne Deutsch, … ich will» تعلّل سبباً فتطلب «weil».",
       ],
     },
     {

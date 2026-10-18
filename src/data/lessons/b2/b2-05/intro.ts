@@ -108,7 +108,7 @@ export const review: NonNullable<Lesson["review"]> = [
         undefined,
         "«dass» تقدّم مضموناً، ولا تعبّر عن السبب هنا.",
         "«wenn» شرط، ولا تعبّر عن السبب.",
-        "«ob» تقدّم سؤالاً غير مباشر، ولا تناسب الجملة.",
+        "لا — «ob» تصلح لسؤالٍ غير مباشر («Ich frage mich, ob …»)؛ والجملة «Ich lerne, … ich will» تعلّل فتحتاج «weil».",
       ],
     },
     {

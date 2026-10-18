@@ -32,7 +32,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«um zu» تستعمل مع مصدر بلا فاعل، ولا تناسب جملة كاملة بعد الفاصلة.",
+        "لا — «um zu» تحتاج مصدراً بلا فاعل؛ والجملة «Ich rufe dich an, … du Bescheid weißt» كاملةٌ بفاعل فتطلب «damit».",
         "«trotz» تعني رغم، وهذا عكس المعنى المطلوب.",
         "«aufgrund» تعني بسبب، ولا تناسب الغاية في الجملة.",
       ],

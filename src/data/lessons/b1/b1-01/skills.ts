@@ -103,9 +103,9 @@ export const listening: Lesson["listening"] = {
         errorType: "vocabulary",
         optionExplanations: [
           undefined,
-          "الخيار الثاني يصف التكاليف بأنها عالية، وهو عكس ما قالته المستشارة.",
-          "الخيار الثالث يقول إن الدراسة بلا أي رسوم، وهذا غير ما ورد.",
-          "الخيار الرابع يربط التكاليف بمدينة واحدة، والنص لا يذكر ذلك.",
+          "لا — المستشارة وصفت التكاليف بالانخفاض «Die Kosten sind niedrig»؛ فـ«sehr hoch» عكسُ ما قالت.",
+          "لا — النصّ يذكر مساهمةً فصلية «nur der Semesterbeitrag»؛ فليست الدراسة «ohne jeden Beitrag».",
+          "لا — لم يُربط الدفع بمدينة Berlin؛ والصيغة «Die Kosten sind niedrig, nur der Semesterbeitrag».",
         ],
       },
     ],

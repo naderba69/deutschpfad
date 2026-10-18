@@ -107,7 +107,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         undefined,
         "«الاجتماع» يقابل Treffen أو Sitzung، وليس Zusammenarbeit.",
         "«الشراكة» تقابل Partnerschaft، وليس Zusammenarbeit.",
-        "«العمل المشترك فقط» تقييد للمعنى، وليس الترجمة الكاملة.",
+        "لا — «العمل المشترك فقط» تقييد؛ و«die Zusammenarbeit» اسمٌ عام للتعاون بلا قيد «nur».",
       ],
     },
     {

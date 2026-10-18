@@ -155,7 +155,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«ja» تعني نعم، ولا تعطي الطلب الودي المطلوب.",
+        "لا — «ja» جوابٌ بنعم ولا تليّن الأمر؛ و«Komm mal her!» تستعمل «mal» للتوديد.",
         "«denn» تستعمل في الأسئلة، ولا تناسب الأمر هنا.",
         "«wohl» تعبّر عن الاحتمال، ولا تناسب الأمر.",
       ],

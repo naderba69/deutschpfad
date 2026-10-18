@@ -105,7 +105,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       optionExplanations: [
         undefined,
         "«أقول أن...» تقابل ich sage، وليس Man sagt.",
-        "«قالوا لي أن...» تنقل معنى مختلفاً، فيها متحدث محدد.",
+        "لا — «قالوا لي» تحدّد فاعلاً معلوماً؛ أما «Man sagt» ففاعلها «man» المجهول العام.",
         "«يجب أن أقول...» تقابل ich muss sagen، وليس Man sagt.",
       ],
     },

@@ -179,7 +179,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       optionExplanations: [
         undefined,
         "«تخلّت عن» معناها aufgeben، ولا علاقة لها بالفعل بحرفه.",
-        "«سئمت» تختلف — السأم نتيجة، لا عملية تعوّد.",
+        "لا — السأم نتيجة؛ و«Sie gewöhnt sich an das Klima» تصف عمليةَ تعوّدٍ بـ«sich gewöhnen an».",
         "«انتقلت من» فعل حركة، وليس gewöhnen.",
       ],
     },

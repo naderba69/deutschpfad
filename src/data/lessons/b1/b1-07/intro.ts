@@ -89,7 +89,7 @@ export const review: NonNullable<Lesson["review"]> = [
       optionExplanations: [
         undefined,
         "«wenn» شرط، والجملة تحتاج سبباً أو إرادة، لذلك weil.",
-        "«ob» تقدّم سؤالاً غير مباشر، ولا تناسب الجملة.",
+        "لا — «ob» تصلح لسؤالٍ غير مباشر («Ich frage mich, ob …»)؛ والجملة «Ich lerne, … ich will» تعلّل فتحتاج «weil».",
         "«dass» تقدّم مضموناً، ولا تعبّر عن السبب.",
       ],
     },
@@ -105,7 +105,7 @@ export const review: NonNullable<Lesson["review"]> = [
       optionExplanations: [
         undefined,
         "«Weil» تعبّر عن السبب، ولا يناسب الشرط هنا.",
-        "«Ob» تقدّم سؤالاً غير مباشر، ولا تناسب الجملة.",
+        "لا — «Ob» تبدأ سؤالاً غير مباشر («Ob er Zeit hat, weiß ich nicht»)؛ والجملة شرطيةٌ بـ«Wenn du Zeit hast, hilf mir».",
         "«Dass» تقدّم مضموناً، ولا تناسب بداية الجملة الشرطية.",
       ],
     },

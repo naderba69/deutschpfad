@@ -105,8 +105,8 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       optionExplanations: [
         undefined,
         "«سأقدم لاحقاً» تعني مستقبلاً، ولا تطابق الماضي المركّب habe ... beworben.",
-        "«لم أتقدم بعد» تنفي التقديم، وهذا عكس المعنى.",
-        "«أريد أن أتقدم» تعني رغبة مستقبلية، ولا تطابق الفعل الماضي.",
+        "لا — النفي يعاكس «Ich habe mich schon beworben»؛ فـ«schon» تؤكد وقوع التقديم.",
+        "لا — الرغبة المستقبلية لا تطابق «habe … beworben»؛ فـPerfekt يدلّ على ما تمّ فعلاً.",
       ],
     },
     {

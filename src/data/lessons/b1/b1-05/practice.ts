@@ -110,8 +110,8 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       optionExplanations: [
         undefined,
         "«كنت أملك قهوة» تفهم hätte كماضٍ، وليس هذا الاستعمال.",
-        "«أشرب قهوة الآن» لا تعبّر عن الطلب المهذب.",
-        "«شربت قهوة أمس» تستعمل الماضي، ولا تعبّر عن الطلب.",
+        "لا — «أشرب الآن» خبرٌ حاضر؛ و«Ich hätte gern einen Kaffee» طلبٌ مهذب بصيغة Konjunktiv II.",
+        "لا — «شربتُ أمس» ماضٍ؛ و«Ich hätte gern» لا تحكي ما مضى بل تطلب مهذباً.",
       ],
     },
     {

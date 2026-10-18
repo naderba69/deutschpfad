@@ -68,7 +68,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«Ja» تعني نعم، ولا تناسب النفي في السؤال.",
+        "لا — «Ja» توافق النفي؛ و«Doch» تردّ عليه فتُبطله في «Du kommst nicht? Doch, ich komme!».",
         "«Mal» تعني مرة أو لطفاً، ولا تناسب الرد على النفي.",
         "«Wohl» تعبّر عن الاحتمال، ولا تناسب الرد.",
       ],

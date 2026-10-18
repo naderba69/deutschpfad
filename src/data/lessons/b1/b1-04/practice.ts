@@ -106,8 +106,8 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       optionExplanations: [
         undefined,
         "«هل تريدون التكرار؟» تقابل Wollen Sie...، وليست المعنى المطلوب.",
-        "«لماذا تكررون؟» تسأل عن السبب، وليس طلب التكرار.",
-        "«متى تكررون؟» تسأل عن الوقت، وليس طلب التكرار.",
+        "لا — السؤال بـ«Warum» يطلب سبباً؛ و«Könnten Sie das wiederholen?» طلبُ تكرارٍ مهذب.",
+        "لا — «Wann» تسأل عن الوقت؛ و«Könnten Sie das wiederholen?» لا تحمل سؤالاً زمنياً.",
       ],
     },
     {
