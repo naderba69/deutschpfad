@@ -54,6 +54,7 @@ export const readingB208: ReadingText = {
         "Für die Politik der Universität.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — مطبخُ البلد لم يُذكر اهتماماً أول؛ والاهتمامُ الأوّل اللغة: «interessierte sie sich vor allem für die Sprache. Sie wollte Arabisch lernen».", "لا — العملُ في مكتب الترجمة نتيجةٌ لاحقة لا اهتمامٌ سابق: «Heute arbeitet Lena in einem Übersetzungsbüro».", "لا — سياسةُ الجامعة لم تُذكر؛ والسياسةُ كانت موضوع نقاشٍ مع زملاء الدراسة: «mit denen sie über Politik und Religion diskutierte»."],
       paragraph: 1,
       explanation:
         "الفقرة الأولى تنصّ صراحةً: «interessierte sie sich vor allem für die Sprache. Sie wollte Arabisch lernen». والخيارات الأخرى أمور تظهر في فقرات لاحقة، لكنها ليست سبب التقدّم الأول.",
@@ -72,6 +73,7 @@ export const readingB208: ReadingText = {
         "An die Arbeit im Übersetzungsbüro.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — شتاءُ تونس البارد لم يُذكر إطلاقاً؛ والمعتادُ قاعدةٌ لم تجدها مكتوبة: «eine Regel … die sie nicht geschrieben fand».", "لا — نظامُ الامتحانات الجامعي لم يُذكر؛ والقاعدةُ عن مكانة السؤال: «Fragen ist hier kein Angriff, sondern eine Form von Respekt».", "لا — مكتبُ الترجمة عملُها الحاليّ لا ما اعتادت عليه في تونس: «Heute arbeitet Lena in einem Übersetzungsbüro und wartet weiter auf den nächsten Aufenthalt»."],
       paragraph: 5,
       explanation:
         "الفقرة الخامسة تصف القاعدة غير المكتوبة: «Fragen ist hier kein Angriff, sondern eine Form von Respekt» — وهي المثال الذي يعلّم الفعل sich gewöhnen an.",
@@ -90,6 +92,7 @@ export const readingB208: ReadingText = {
         "Der Zeitpunkt des Rückflugs.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — درجةُ الامتحان الختامي لم تُذكر؛ والمعلَّقُ على الاستعداد هو التفكيرُ في نظامٍ غريب: «Wovon das Nachdenken über eine fremde Ordnung abhängt … Es hängt von der Bereitschaft ab».", "لا — مقدارُ المنحة لم يُذكر في النصّ إطلاقاً؛ والمذكورُ تعليقُ «das Nachdenken über eine fremde Ordnung» على «der Bereitschaft, sich wirklich dafür zu interessieren».", "لا — موعدُ رحلة العودة لم يُذكر؛ والطيرانُ ذُكر في الذهاب: «Zwei Wochen später saß sie im Flugzeug»."],
       paragraph: 3,
       explanation:
         "الفقرة الثالثة تقول: «Das Nachdenken darüber hängt … von der Bereitschaft ab», وهو التركيب المعلَّم نفسه (abhängen von + Dativ).",
@@ -108,6 +111,7 @@ export const readingB208: ReadingText = {
         "Ihre Muttersprache.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — السكنُ ذُكر في سياق التفاصيل الصغيرة: «Wer sich um das Abendessen kümmerte»؛ وأما المتغيّرُ فـ«dass der Austausch vor allem ihre Fragen verändert hat».", "لا — رغبتُها المهنية لم تُذكر متغيّرة؛ والتغييرُ في أسئلتها: «vor allem ihre Fragen verändert hat».", "لا — لغتُها الأمّ لم تتغيّر؛ بل تعلّمت عن ثقافتها هي أكثر: «Auf diese Art lernte sie mehr über ihre eigene Kultur als über die fremde»."],
       paragraph: 6,
       explanation:
         "الفقرة الأخيرة تُصرّح: «der Austausch vor allem ihre Fragen verändert hat»، ثم تُفتح الخاتمة بسؤال جديد — وهو بنية الخاتمة الاستنتاجية التي يعلّمها الدرس.",

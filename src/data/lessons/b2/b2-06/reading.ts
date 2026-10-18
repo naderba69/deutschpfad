@@ -53,6 +53,7 @@ export const readingB206: ReadingText = {
         "Weil die Sitzungen abgeschafft wurden.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — ضياعُ الأوراق لم يُذكر سبباً؛ والسببُ كثرةُ الطلبات: «Da die Zahl der Bewerbungen steigt, achten viele Firmen zuerst auf das Anschreiben».", "لا — «لا وقتَ للبرنامج» تعبيرٌ مقلوب؛ فالبرنامج يفحص المكتوب قبل الإنسان: «Was darin steht, wird inzwischen von einer Software geprüft, bevor ein Mensch es überhaupt sieht».", "لا — إلغاءُ الجلسات لم يُذكر؛ ومقابلةُ التعارف قائمة: «Im Vorstellungsgespräch geht es dann nicht mehr um die Unterlagen»."],
       paragraph: 1,
       explanation:
         "الفقرة الأولى تربط السبب: «Da die Zahl der Bewerbungen steigt, achten viele Firmen zuerst auf das Anschreiben» — أي بنية da التي يعلّمها الدرس. والخيارات الأخرى لا يذكرها النصّ.",
@@ -71,6 +72,7 @@ export const readingB206: ReadingText = {
         "Um die Prüfung der mitgebrachten Unterlagen.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — الدرجاتُ في الدراسة والختام لم تُذكر موضوعاً للمقابلة؛ فموضوعُها الانسجامُ مع الفريق: «ob die Person ins Team passt».", "لا — الدوامُ المرن ذُكر في سياق تغيّر شروط العمل لا في المقابلة: «Homeoffice und Gleitzeit haben die Bedingungen verändert».", "لا — العكسُ صريح: «Im Vorstellungsgespräch geht es dann nicht mehr um die Unterlagen, sondern um die Frage, ob die Person ins Team passt»."],
       paragraph: 2,
       explanation:
         "الفقرة الثانية تنقل التركيز من الأوراق إلى الانسجام مع الفريق («ob die Person ins Team passt») ثم تشرح التعاون والصراحة.",
@@ -89,6 +91,7 @@ export const readingB206: ReadingText = {
         "Die Einarbeitung neuer Leute dauert keine ganze Woche mehr.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — العكس؛ فالطلباتُ في ازدياد: «Da die Zahl der Bewerbungen steigt».", "لا — إلغاءُ المقابلة لم يُذكر؛ بل هي باقيةٌ بموضوعٍ آخر: «geht es dann nicht mehr um die Unterlagen».", "لا — النصّ يقول العكس عن التعلّم في أسبوع: «Beim Wechsel in ein neues Team lernt niemand alles in einer Woche»."],
       paragraph: 4,
       explanation:
         "الفقرة الرابعة تقول إن النتيجة هي التي تُقيَّم وأن ساعات العمل صارت ثانوية. والخيارات الأخرى تقلب المعنى أو تذكر أموراً لم تحدث.",
@@ -107,6 +110,7 @@ export const readingB206: ReadingText = {
         "Die Karriere wird dadurch automatisch schneller.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — العكس؛ فالقواعدُ كثيراً ما لا تُكتب في أيّ مكان: «zumal die Regeln oft nirgends geschrieben stehen».", "لا — قِدَمُ تجهيز المكتب لم يُذكر؛ والنقدُ عن دوام الاستعداد: «Kritiker sehen darin aber eine neue Belastung: Wer immer erreichbar ist, hat nie Feierabend».", "لا — تسارعُ المسار تلقائيّاً ليس نقداً ولم يُذكر؛ والمذكورُ تحوّلُ الميزة إلى عبءٍ دائم: «ohne klare Grenzen entsteht aus einem Vorteil eine Dauerbelastung»."],
       paragraph: 4,
       explanation:
         "النصّ يسمّي الإتاحة الدائمة عبئاً جديداً («Wer immer erreichbar ist, hat nie Feierabend»)، ثم تطالب الفقرة الخامسة بتحديد هذه الإتاحة.",

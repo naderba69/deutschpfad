@@ -53,6 +53,7 @@ export const readingB210: ReadingText = {
         "Ein zusätzlicher Beitrag nur für internationale Studierende.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — العكسُ نصّاً: «der Beitrag von 340 Euro sei keine Studiengebühr, sondern ein Ticket für Mensa, Bibliothek und Bus».", "لا — غرامةُ التسجيل المتأخّر لم تُذكر؛ والتسجيلُ استغرق ساعتين: «Die Einschreibung dauerte dann zwei Stunden».", "لا — الحصرُ في الطلبة الدوليين لم يُذكر؛ فالمبلغُ تذكرةُ خدمات: «ein Ticket für Mensa, Bibliothek und Bus»."],
       paragraph: 1,
       explanation:
         "الفقرة الأولى تنقل تفسير المرشد صراحةً: المساهمة ليست رسماً دراسياً، بل تذكرة للمطعم والمكتبة والباص، ولذلك يلزم إثبات الدفع.",
@@ -71,6 +72,7 @@ export const readingB210: ReadingText = {
         "Ein kurzes Referat vor der eigentlichen Abgabe der Arbeit.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — صفحةُ العنوان والفهرسُ المفصّل لم يُطلبا؛ والمطلوبُ دليلٌ لكل دعوى: «Jede Behauptung brauche einen Beleg, jede Quelle eine genaue Angabe».", "لا — حدٌّ أدنى من الصفحات لكل فصل لم يُذكر؛ وأما التعميمُ فيُقيَّد: «wer verallgemeinere, solle seine Aussage begrenzen».", "لا — العرضُ القصير مهمّةٌ أخرى في الحلقة الدراسية: «Im Seminar musste sie außerdem ein Referat halten»؛ لا شرطٌ في الورقة."],
       paragraph: 2,
       explanation:
         "الفقرة الثانية تسمّي الشرط الثلاثي: دليل لكل ادعاء، وإحالة دقيقة لكل مصدر، وتضييق للنطاق بدل التعميم — وهذا جوهر أسلوب التأكيد والتلطيف والتحفظ.",
@@ -89,6 +91,7 @@ export const readingB210: ReadingText = {
         "Beginnend mit dem Dank an das Publikum.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — العكسُ في الترتيب؛ فالأطروحةُ في الآخر: «zum Schluss bündelte sie ihre These»؛ وخمسُ صفحاتٍ من الأرقام لم تُذكر.", "لا — فيديو بلا شرح لم يُذكر؛ والبناءُ «Zunächst nannte sie das Problem, anschließend zeigte sie Beispiele, zum Schluss bündelte sie ihre These».", "لا — البدءُ بالشكر للجمهور لم يُذكر؛ والبدايةُ بالمشكلة: «Zunächst nannte sie das Problem»."],
       paragraph: 4,
       explanation:
         "الفقرة الرابعة تذكر الترتيب المعلن: المشكلة أولاً، ثم الأمثلة، ثم جمع الأطروحة في النهاية، مع عبارات الانتقال zunächst · anschließend · zum Schluss.",
@@ -107,6 +110,7 @@ export const readingB210: ReadingText = {
         "Die Note der Sprachprüfung.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — النصّ ينفيها صريحاً: «Nicht die zehn Regeln hatten ihr geholfen, sondern drei Werkzeuge: behaupten, belegen, einschränken».", "لا — العكس؛ فنصُّها صار أقصر وأهدأ: «Plötzlich klang der Text kürzer und ruhiger, und die Dozentin strich weniger an».", "لا — درجةُ امتحان اللغة لم تكن العون؛ فالشهادةُ اللغويةُ وحدها ما كفت: «Ein Sprachnachweis auf dem erforderlichen Niveau hatte gereicht, doch die erste Hausarbeit war schwerer als jede Prüfung»."],
       paragraph: 5,
       explanation:
         "الفقرة الخامسة صريحة في نفي القواعد وحدها وإثبات الأدوات الثلاث؛ والفقرة السادسة تلخّصها أربع خطوات عملية للمذاكرة.",

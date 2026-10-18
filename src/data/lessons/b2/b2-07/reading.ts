@@ -53,6 +53,7 @@ export const readingB207: ReadingText = {
         "Weil die Medikamente für viele Menschen zu teuer sind.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — عدمُ الرغبة في تدمير الكوكب هو الجوابُ البسيط في النظرة الأولى: «Natürlich sollen wir den Planeten nicht zerstören»؛ والصعوبةُ أن الأجيال الآتية «können keine Forderungen stellen».", "لا — العقودُ مع الخارج لم تُذكر؛ والمفقودُ أن الأجيال الآتية «keine Verträge unterschreiben und uns nicht zur Rede stellen».", "لا — ثمنُ الدواء لم يُذكر؛ والدواءُ مثالٌ على إيصال الضرر بلا لقاء: «Man kann einem Menschen schaden, ohne ihm zu begegnen, etwa wenn man ein Medikament falsch herstellt»."],
       paragraph: 1,
       explanation:
         "الفقرة الأولى تعرض المفارقة: الإجابة الظاهرة سهلة، لكن الأجيال القادمة لا تطالب ولا توقّع ولا تحاسب — وهذا هو موضع الإشكال. والخيارات الأخرى إما مسلّمات لا يذكرها النصّ أو تفاصيل من فقرة لاحقة.",
@@ -71,6 +72,7 @@ export const readingB207: ReadingText = {
         "Man soll Verträge mit der Zukunft schreiben.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — العكس؛ فإعادةُ الغرس هي شرطُ الجواز: «Man darf Wälder roden, wenn man sie später wieder anpflanzen kann».", "لا — إيقافُ التقدّم فوراً رفضه الكاتب: «die Frage nicht «Fortschritt oder Stillstand» lautet, sondern «wann wäre welcher Preis zu hoch?»».", "لا — كتابةُ عقودٍ مع المستقبل غير ممكنةٍ أصلاً بحسب النصّ؛ والقاعدةُ «Was unwiderruflich ist, muss man vermeiden»."],
       paragraph: 4,
       explanation:
         "الفقرة الرابعة تُصيغ المبدأ صريحاً: اجتناب ما لا رجعة فيه، ويُوضّحه المثالان (الغابة القابلة لإعادة الزرع مقابل النفايات المشعة).",
@@ -89,6 +91,7 @@ export const readingB207: ReadingText = {
         "Bewusstsein und Bußgeld.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — هذان طرفا السؤال لا ما يجتمع: «die Frage nicht «Fortschritt oder Stillstand» lautet»؛ والمجتمِعان «Begründung und Verhältnismäßigkeit».", "لا — المعرفةُ والتقنيةُ وردتا في سياق جهلنا بحياة الناس بعد مئة عام: «welche Technik sie nutzen und welche Werte sie teilen».", "لا — الغرامةُ لم تُذكر؛ والوعيُ ذُكر في الخاتمة: «dass sie heute schon im Bewusstsein vieler Bürger existiert»؛ وأما المجتمِعان فـ«Begründung und Verhältnismäßigkeit»."],
       paragraph: 5,
       explanation:
         "الفقرة الخامسة تردّ على اعتراض «تعطيل التقدّم» وتجيب بأن السؤال هو «أي ثمن باهظ؟» ثم تجمع صراحةً بين التعليل والتناسب.",
@@ -107,6 +110,7 @@ export const readingB207: ReadingText = {
         "Vom Untergang des aktuellen Jahrhunderts.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — العددُ الدقيق لتدابير سياسة المناخ لم يُذكر في الخاتمة؛ فهي عن وجود المسؤولية اليوم: «dass sie heute schon im Bewusstsein vieler Bürger existiert».", "لا — الخاتمةُ تنفي المسؤولية الشخصية عن حال العالم في 2100 ثم تُثبت الواجب: «niemand von uns … persönlich haftet. Wohl aber tragen wir eine Pflicht, über die Folgen zu sprechen».", "لا — زوالُ القرن الحالي لم يُذكر؛ والموضوعُ «dass sie heute schon im Bewusstsein vieler Bürger existiert» و«hat sich in den Debatten der letzten Jahre allerdings bereits gezeigt»."],
       paragraph: 6,
       explanation:
         "الفقرة الأخيرة استنتاجية: لا حقد شخصي على الحال في 2100، لكن إلزام قائم اليوم؛ ووجود هذا الإلزام في الوعي ظهر فعلاً في النقاشات الأخيرة.",

@@ -54,6 +54,7 @@ export const readingB209: ReadingText = {
         "Als lange Liste von Gehaltsforderungen und persönlichen Wünschen.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — العكس؛ فالإيجازُ مقصود: «Sie legte Wert auf ein knappes Anschreiben».", "لا — خبرتُها حاضرةٌ لا محذوفة: «brachte zwei Jahre Erfahrung im Bereich Logistik mit».", "لا — قائمةُ مطالب الأجر والرغبات الشخصية لم تُذكر؛ والبناءُ «ein knappes Anschreiben» مع شواهدَ عند الطلب: «stellte auf Anfrage gern Arbeitsproben zur Verfügung»."],
       paragraph: 1,
       explanation:
         "الفقرة الأولى تجمع العناصر الثلاثة: رسالة موجزة، وخبرة سنتين، وعيّنات تضعها تحت التصرف عند الطلب — وهي التراكيب الوظيفية التي يعلّمها الدرس.",
@@ -72,6 +73,7 @@ export const readingB209: ReadingText = {
         "Die Dauer des Gesprächs.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — هذا هو الأهمّ لا الأقلّ: «Wichtiger war, wie sie auf Rückfragen reagierte und ob sie Kritik annehmen konnte».", "لا — عددُ الطلبات يخصّ ضيق السوق في البداية: «war der Arbeitsmarkt eng und die Konkurrenz groß»؛ وأما في الحديث فالصغيرُ دورُه خبرةُ سارة.", "لا — مدّةُ الحديث لم تُذكر؛ والمذكورُ أن خبرتها «nur eine kleine Rolle spielte»."],
       paragraph: 2,
       explanation:
         "الفقرة الثانية تفصل بين ما استعدّت له (الأسئلة الفنية) وما رُصد فعلاً (ردّها على الأسئلة وتقبّلها للنقد)، وتقول إن الخبرة لم تلعب إلا دوراً صغيراً.",
@@ -90,6 +92,7 @@ export const readingB209: ReadingText = {
         "Sie reichte eine schriftliche Beschwerde ein.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — النصّ يذكر الممكن لا الواقع: «Sie hätte widersprechen können; stattdessen fragte sie nach den Gründen und nahm den Einwand auf».", "لا — الصمتُ حتى الجلسة التالية لم يقع؛ بل سألت عن الأسباب: «fragte sie nach den Gründen».", "لا — شكوى كتابية لم تُذكر؛ والمذكورُ أنها أخذت الاعتراض في الحسبان ثم «wurde eine Frist gesetzt und ein Plan entworfen, der beiden Seiten half»."],
       paragraph: 3,
       explanation:
         "الفقرة الثالثة تذكر صراحةً أنها كانت تستطيع الاعتراض، لكنها سألت عن الأسباب وتلقّت الاعتراض — وهذا هو الفرق بين «Kritik üben» و«Critik erleiden» الذي يشرحه النصّ.",
@@ -108,6 +111,7 @@ export const readingB209: ReadingText = {
         "Weil sie den Paten nicht mochte.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — سوءُ فهم العرض الأول لم يُذكر؛ والسببُ أن خبرتها ظهرت هناك أفضل: «eine andere Position an, in der ihre Erfahrung besser zur Geltung kam».", "لا — ارتفاعُ الراتب سبباً للقبول لم يُذكر؛ وقد قارنته بالمسافات: «verglich Gehalt und Wege und entschied sich nach zwei Tagen».", "لا — المرشدُ جاء بعد القبول في أول يوم عمل: «Am ersten Arbeitstag wurde ihr ein Pate zugeteilt, der sie durch die ersten Wochen brachte»."],
       paragraph: 4,
       explanation:
         "الفقرة الرابعة تقول إن الشركة عرضت منصباً آخر «in der ihre Erfahrung besser zur Geltung kam»، ثم تشرح أنها قارنت الراتب والمسافة وأخذت العرض بعين الاعتبار.",
