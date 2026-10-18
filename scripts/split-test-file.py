@@ -27,6 +27,22 @@
  7) **حذفُ سطر الدين:** يُحذف سطر الملف من `src/lib/file-size-ratchet.test.ts` مع
     حذف الملف، لأن الراتشيت يعدّ الملف المحذوف «سطراً يجب حذفه».
 
+العيوب التي عُولجت (موثّقة كسابقتها في `scripts/add-option-explanations.py`):
+ 1) **الواردة النسبية** (`import { lessonA112 } from "./a1-12";`) كانت تُنقل كما هي
+    إلى مجلدٍ أعمق فتسقط: «Cannot find module './a1-12'»، ويتتابع بعدها
+    «implicitly has an 'any' type» لأن الدرس يعود بلا نوع. والعلاج `fix_mod()` الذي
+    يعيد حساب المسار بالنسبة إلى مجلد الأجزاء (`../a1-12`).
+ 2) **`expect` داخل دالةٍ مساعدة في المستوى الأعلى** (`expectListedAlternativesRejected`)
+    كانت تُنقل إلى `fixtures.ts` بلا استيراد vitest (لأن الأداة كانت تستثني سطره
+    دائماً) ⇒ «Cannot find name 'expect'» عشرون مرة. والعلاج استيرادُ ما تستخدمه
+    `fixtures` فعلاً من `describe/expect/it`.
+ وكلا العيبين لم يظهر في a2-07/a2-10/a2-09 لأن وارداتها كلها `@/…` ولا دوالها
+ تستخدم `expect` — فالتعميمُ يُختبر على أوسع ملفٍّ لا على أيسره.
+ 3) وعلاجُ العيب الأول تولّد عنه ثالث: `fix_mod()` كان يُطبَّق على `./fixtures`
+    أيضاً فيصير `../fixtures` (لأنه يحسب بالنسبة إلى مجلد الأصل)، فسقط tsc
+    بـ«Cannot find module '../fixtures'». والقاعدة: `fix_mod` للواردات المنقولة من
+    الأصل فقط، وأما `extra_names` فنسبُها إلى مجلد الأجزاء أصلاً.
+
 `--dry` يطبع الخطة (النطاقات · الأسماء المشتركة · أحجام الأجزاء) بلا كتابة.
 """
 import io
@@ -64,6 +80,26 @@ def used(text, name):
     return re.search(r"\b" + re.escape(name) + r"\b", text) is not None
 
 
+SRC_DIR = os.path.dirname(SRC) or "."
+
+
+def fix_mod(mod):
+    """الواردة النسبية تُعاد كتابتها بحسب عمق مجلد الأجزاء.
+
+    الأصل `src/…/a1/a1-12.test.ts` يستورد `./a1-12`؛ فإذا انتقل الجزء إلى
+    `src/…/a1/a1-12-test/` صار المسار `../a1-12`. وإهمالُ هذا كان يُسقط tsc
+    بـ«Cannot find module './a1-12'» ثم يتتابع `implicitly has an 'any' type`
+    لأن الدرس يعود بلا نوع.
+    """
+    if not mod.startswith("."):
+        return mod
+    target = os.path.normpath(os.path.join(SRC_DIR, mod))
+    rel = os.path.relpath(target, OUT)
+    if not rel.startswith("."):
+        rel = "./" + rel
+    return rel.replace(os.sep, "/")
+
+
 def prune_imports(text, extra_names=()):
     """يعيد سطور الواردات التي يُستخدم اسمٌ منها في `text`."""
     keep = ['import { describe, expect, it } from "vitest";']
@@ -72,17 +108,19 @@ def prune_imports(text, extra_names=()):
             continue
         parsed = named_ids(line)
         if parsed is None:                                   # import X from …
-            m = re.match(r'^import\s+(\w+)\s+from', line)
+            m = re.match(r'^import\s+(\w+)\s+from\s+"([^"]+)"', line)
             if m and used(text, m.group(1)):
-                keep.append(line)
+                keep.append('import %s from "%s";' % (m.group(1), fix_mod(m.group(2))))
             continue
         raw, mod, is_type = parsed
         ids = [x.strip() for x in raw.split(",") if x.strip()]
         hit = [x for x in ids if used(text, x.split(" as ")[-1].strip())]
         if hit:
-            keep.append('import %s{ %s } from "%s";' % ("type " if is_type else "", ", ".join(hit), mod))
+            keep.append('import %s{ %s } from "%s";'
+                        % ("type " if is_type else "", ", ".join(hit), fix_mod(mod)))
     for name, mod in extra_names:
         if used(text, name):
+            # `mod` هنا (`./fixtures`) نسبٌ إلى مجلد الأجزاء أصلاً فلا يُعاد حسابه
             keep.append('import { %s } from "%s";' % (name, mod))
     return keep
 
@@ -182,8 +220,9 @@ for name in NAMES:
     pat = re.compile(r"^(const %s\b|function %s\b|let %s\b|type %s\b)" % ((name,) * 4), re.M)
     assert len(pat.findall(fx)) == 1, name
     fx = pat.sub(lambda m: "export " + m.group(0), fx, count=1)
-head = prune_imports(fx)
-head = [h for h in head if '"vitest"' not in h]
+vitest_names = [n for n in ("describe", "expect", "it") if used(fx, n)]
+head = ([('import { %s } from "vitest";' % ", ".join(vitest_names))] if vitest_names else [])
+head += [h for h in prune_imports(fx) if '"vitest"' not in h]
 text = ("/**\n * %s — ثوابت التدقيق المتوقَّعة ودواله المساعدة\n"
         " * فُصلت من %s في الدفعة %s (سقف الحجم: لا ملف فوق 600 سطر).\n"
         " * القيم والأجسام منقولة حرفياً.\n */\n\n%s\n\n%s\n"
