@@ -3763,3 +3763,78 @@ src/lib/file-size-ratchet.test.ts` = **6 ملفات/21 اختباراً** (19 ك
 `dialogues/b1.ts` 611 · `dialogues/b2.ts` 611 · `vocabulary/b1-extra2.ts` 609. وما
 بقي من ملفات الاختبار يُسدد الآن بأمرٍ واحد؛ وأما الحوارات والمفردات فتحتاج
 مقسِّماً آخر لأنها بياناتٌ لا كتلُ اختبار (ويصلح لها `scripts/split-lesson.py`).
+
+## الدفعة 105 (2026-10-18) — خامس دينٍ يُسدد بالأداة: `a2-06.test.ts` (789 سطراً) + استعادةُ البيئة بعد إعادة تعيين الـsandbox
+
+**أولاً — إعادة تعيين الـsandbox وكيف عولجت بأمانة.** تراجع HEAD محلياً إلى الأساس
+`5ff54b0` بينما العملُ كلُّه مثبّتٌ على الخادم في `fa8de08` (CI له success)، وظهرت
+عشرات الملفات «معدَّلة» لأن المقارنة صارت مع الأساس لا مع الفرع. فالاستعادة كانت:
+`git fetch -q origin arena/4f90a8a5-deutschpfad` ← `git reset --mixed FETCH_HEAD` ←
+`git branch --set-upstream-to=…` ⇒ **HEAD = origin = `fa8de08` · الشجرة نظيفة (0
+ملفات معدَّلة)**، ولم يُستخدم `git checkout .` ولا `git reset --hard` إطلاقاً لأنهما
+يمحوان عملاً غير مثبَّت. وأُعيد بناء `node_modules` بـ`npm install`.
+
+**ثانياً — أمرُ الدمج أُوقف ولم يُنفَّذ.** طُلب دمجُ الـPR ثم أُوقف الطلب وصدر
+«واصل دون عمل pr»، فتحقّقنا من الحالة بدل الافتراض: `gh pr view 3` ⇒ **OPEN ·
+mergedAt=لا شيء · UNSTABLE** — فالـPR ما زال مفتوحاً ولم يُدمج، ولا عملَ عليه
+بعد ذلك. و`UNSTABLE` ليست إشارة فشل: تشغيلاتُ `pull_request` كلها **success**
+والمُلغاة هي تشغيلاتُ `push` المقابلة لها.
+
+**ثالثاً — المتصفح أُعيد بناؤه من مصدره الموثّق لا بالتخمين.** إعادةُ التعيين محت
+`/tmp` و`~/.cache/ms-playwright` معاً، فبواباتُ E2E كانت ستتعطّل. والحلّ أن الحزمة
+`@sparticuz/chromium` تحمل **أربعة أرشيفات** في `bin/`: `chromium.br` (المتصفح) ·
+`al2023.tar.br` (مكتبات Amazon Linux 2023) · `swiftshader.tar.br` (الإظهار البرمجي) ·
+`fonts.tar.br`. فكُّ ضغط brotli بـ`zlib.brotliDecompressSync` أعاد:
+`/tmp/pw/chrome.bin` (209022176 بايتاً) · `/tmp/al2023/lib` · `/tmp/sw` · `/tmp/fonts`،
+ثم `ldd` بـ`LD_LIBRARY_PATH=/tmp/al2023/lib:/tmp/sw:/tmp` ⇒ **صفر مكتبةٍ ناقصة**
+و`--version` ⇒ **Chromium 153.0.8010.0**. وبُنيت مداخلُ السجلّ لـrevision **1234**
+(`chromium-1234/chrome-linux/chrome` و
+`chromium_headless_shell-1234/chrome-headless-shell-linux64/chrome-headless-shell`
+روابطَ إلى المتصفح نفسه + علامتا `INSTALLATION_COMPLETE` و`DEPENDENCIES_VALIDATED`) ⇒
+`npx playwright --version` = **1.62.1**. فالمساران مطلوبان معاً لأن
+`e2e/aussprache-mic.spec.ts` يُقلع متصفحه بنفسه.
+
+**رابعاً — التقسيم بالأداة المعمَّمة (أول استخدامٍ بعد تعميمها).**
+`python3 scripts/split-test-file.py src/data/lessons/a2/a2-06.test.ts
+src/data/lessons/a2/a2-06-test --batch=105 --groups=…` — و`--dry` طبع الخطة قبل
+الكتابة (9 كتل · 6 مشتركات · النطاقات 124–246 · 248–272 · 274–328 · 330–461 ·
+463–545 · 547–600 · 602–689 · 691–729 · 731–788). والمجلّد
+`src/data/lessons/a2/a2-06-test/`:
+· `fixtures.ts` **122** — ستّةُ مشتركات (`expectedMultipleChoiceKeys` ·
+  `expectedMultipleChoiceOptions` · `allTasks()` · `task(id)` · `ids(values)` ·
+  `goalEvent(...)`).
+· `identity-evidence.test.ts` **200** — كتلتان: الترتيبُ والجردُ الكامل وأدلّةُ
+  الأهداف القابلة للقياس · وعدُّ أحداثِ الواجهة المُقيَّمة وحدها دليلاً.
+· `exercises.test.ts` **229** — ثلاث كتل: الاختيارُ من متعدّد في المراجعة والتدريب
+  والقراءة والاستماع · الفراغاتُ وبدائلُها · المطابقةُ ورموزُ الترتيب وبدائلُ
+  التصحيح والتحويلُ والإملاء.
+· `reading-listening.test.ts` **150** — كتلتان: نصُّ القراءة الكامل وترجمتُه المصطفّة
+  ومسردُه ومفاتيحُه الأربعة · أسطرُ الاستماع وترجماتُها ومعرّفاتُها قبل النصّ المكتوب.
+· `theory-cards.test.ts` **141** — كتلتان: ادّعاءاتُ النظرية وتصنيفاتُها وأمثلةُها
+  ونطقُها بـIPA وبطاقاتُها · الملاحظةُ الثقافية والوساطةُ وفروعُ التفاعل بلا ادّعاء
+  دليلٍ في الكلام.
+ومجموعها 842 مقابل 790: الفرقُ **52 سطراً** رؤوسُ الأجزاء الأربعة ووارداتها — وهي
+أدنى كلفةِ تقسيمٍ حتى الآن (68 في a2-11 · 62 في a2-09 · 64 في a2-10 · 47 في a2-07).
+
+**خامساً — توزيعُ المشتركة يؤكّد الحدود مرة رابعة.** `identity-evidence` و`exercises`
+تستوردان **أربعة** مشتركات من الستة، بينما `reading-listening` تستورد **واحداً**
+و`theory-cards` **اثنين** — فالنمط ثابت عبر أربعة ملفات: كتلُ الأدلة والتمارين تعيش
+على الثوابت المتوقَّعة، وكتلُ النصوص تقرأ الدرس مباشرة.
+
+**سادساً — طفرةُ الثوابت المشتركة.** قُلِّب `r1: "finde"` إلى `r1: "findest"` في
+`fixtures.ts` ⇒ سقط **`exercises.test.ts`** وحده برسالة **«r1: expected 'finde' to be
+'findest'»** وبقيت ثماني كتلٍ خضراء، ثم أُعيد الملف ⇒ 11/11.
+
+**سابعاً — البوابات (مخرجات مُلتقطة):** `--dry` EXIT=0 · التقسيمُ EXIT=0 ·
+`npx tsc --noEmit` EXIT=0 · `npx vitest run src/data/lessons/a2/a2-06-test
+src/lib/file-size-ratchet.test.ts` = **5 ملفات/11 اختباراً** (9 كتل + حرَسا الراتشيت) ·
+`npm run verify` = **EXIT=0 · 128 ملفاً (−1 +4) · 1204 اختبارات (بلا تغيّر) ·
+Compiled successfully** (`/home/user/verify-b105.log`) · `/lesson/a2-06` **HTTP 200 /
+188823 بايتاً** («finde» ×61) · E2E الكامل (`/home/user/e2e-b105.log`).
+
+**ثامناً — الديون الباقية (11).** `a1-12.test.ts` 765 · `a2-05.test.ts` 705 ·
+`a2-08.test.ts` 695 · `a2-03.test.ts` 682 · `a1-11.test.ts` 680 · `integrity.test.ts`
+668 · `dialogues/a1.ts` 621 · `dialogues/a2.ts` 611 · `dialogues/b1.ts` 611 ·
+`dialogues/b2.ts` 611 · `vocabulary/b1-extra2.ts` 609. وستّةٌ منها ملفاتُ اختبارٍ
+تُعالج بأمرٍ واحد الآن؛ وأما الحوارات والمفردات فبياناتٌ تحتاج
+`scripts/split-lesson.py` أو مقسِّماً للبيانات.
