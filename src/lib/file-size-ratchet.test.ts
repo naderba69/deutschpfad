@@ -20,7 +20,6 @@ const ROOT = path.join(process.cwd(), "src");
 
 /** [مسار, عدد الأسطر المسجَّل] — الفرق بين الجرد القديم والسقف */
 const KNOWN_OVERSIZE: readonly [string, number][] = [
-  ["src/data/lessons/a1/a1-02.ts", 1354],
   ["src/data/lessons/a2/a2-07.test.ts", 1051],
   ["src/data/lessons/a2/a2-09.test.ts", 947],
   /**
