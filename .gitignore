@@ -59,3 +59,7 @@ test-results/
 # مخرجات أدوات المتصفح (scripts/README.md)
 audit-report/
 screenshots/
+
+# مُخرَجات بايثون (أدوات scripts/*.py)
+__pycache__/
+*.pyc
