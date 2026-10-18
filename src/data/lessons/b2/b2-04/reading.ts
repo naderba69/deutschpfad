@@ -52,6 +52,7 @@ export const readingB204: ReadingText = {
         "Sie wurde von der Autorin selbst gedruckt und verkauft.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — بقاءُها في المخزن بلا بيعٍ خلافُ المذكور؛ فالنسخة الأولى نفدت: «die inzwischen vergriffene Erstausgabe wird zu hohen Preisen gehandelt».", "لا — الربيعُ موعدُ عودتها إلى القوائم لا موعدُ صدورها: «Ein vor drei Jahren erschienener Roman steht seit dem Frühling wieder auf den Listen».", "لا — طباعةُ المؤلّفة لها بنفسها لم تُذكر؛ والمذكور تداولُها بأسعارٍ مرتفعة: «wird zu hohen Preisen gehandelt»."],
       paragraph: 1,
       explanation:
         "الفقرة الأولى تقول إن الطبعة الأولى «inzwischen vergriffene Erstausgabe» تُتداول بأسعار مرتفعة. وبقية الخيارات تناقض النصّ أو تضيف ما ليس فيه.",
@@ -70,6 +71,7 @@ export const readingB204: ReadingText = {
         "Eine Übersetzerin aus Wien, die die Autorin persönlich nicht kennt.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — ناقدةُ فرانكفورت خارج الحكاية؛ فهي من كتّاب المراجعات: «Ein in Frankfurt arbeitender Kritiker nannte das viel gelobte Buch».", "لا — رفضُ الناشر المخطوطةَ بعد فحصٍ طويل لم يُذكر؛ ومحورُ السرد «ein zwischen zwei Sprachen zerrissener Erzähler, der seine Erinnerungen ordnen will».", "لا — مترجمةٌ من فيينا لم تُذكر إطلاقاً؛ والمذكور ترجمةُ العمل: «Die in viele Sprachen übersetzte Erzählung»."],
       paragraph: 2,
       explanation:
         "الفقرة الثانية تصف المركز: «ein zwischen zwei Sprachen zerrissener Erzähler, der seine Erinnerungen ordnen will und dabei scheitert» — وهي بنية صفة مشتقة مع جملة موصولة.",
@@ -88,6 +90,7 @@ export const readingB204: ReadingText = {
         "Es sei ohne jedes Ende geschrieben worden und wirke daher völlig unfertig.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — الثمنُ وسوءُ الطباعة لم يُذكرا؛ والنقدُ «sprachlich schön, aber inhaltlich dünn» مع التشكيك في «die dargestellte Nähe zur Wirklichkeit».", "لا — كثرةُ البلدان واللغات لم تُنتقد؛ والانتقادُ الضعفُ المضمونيّ: «inhaltlich dünn».", "لا — غيابُ النهاية لم يُذكر؛ وأما الرواية الثانية فهي التي «liegt nach Angaben des Verlags halb fertig vor»."],
       paragraph: 4,
       explanation:
         "الفقرة الرابعة تنقل عبارة الناقد المباشرة: «sprachlich schön, aber inhaltlich dünn» مع تشكيكه في القرب من الواقع، ثم تذكر ردّ المراجعين الآخرين عليه.",
@@ -106,6 +109,7 @@ export const readingB204: ReadingText = {
         "Die erste war sofort ausgebucht, die zweite wurde verschoben.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — الأولى وحدَها كانت شبه خالية؛ والثانية امتلأت فوراً: «die zweite … war binnen einer Stunde ausgebucht».", "لا — الإلغاءُ لأسباب تنظيمية لم يُذكر؛ فالأولى «war kaum besucht» والثانية محجوزةٌ بالكامل.", "لا — هذا قلبُ المذكور: «Die erste Lesung in einer kleinen Buchhandlung war kaum besucht; die zweite … war binnen einer Stunde ausgebucht»."],
       paragraph: 5,
       explanation:
         "الفقرة الخامسة تقابل التجربتين: «Die erste Lesung … war kaum besucht; die zweite … war binnen einer Stunde ausgebucht». والخيارات الأخرى تعكس الحقيقة أو تختلق أحداثاً.",

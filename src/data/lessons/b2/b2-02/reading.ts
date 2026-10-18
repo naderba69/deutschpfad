@@ -52,6 +52,7 @@ export const readingB202: ReadingText = {
         "Sie habe sich verschlechtert, und die Exporte seien gefallen.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — النموّ القويّ وهبوطُ الأسعار مبالغةٌ في الاتجاهين؛ والمذكور تعافٍ بطيءٌ وأسعارٌ غير مستقرة: «habe sich … langsam erholt» و«dass die Preise noch nicht stabil sind».", "لا — الثبات والاستقرار خلافُ النصّ؛ فالتقرير «betont, dass die Preise noch nicht stabil sind».", "لا — العكس في الشقّين معاً: التعافي «langsam erholt» والصادرات «Die Exporte sind im dritten Quartal gestiegen»."],
       paragraph: 1,
       explanation:
         "الفقرة الأولى تحمل الوصف مباشرة: «die Konjunktur habe sich in den letzten Monaten langsam erholt» مع «die Preise noch nicht stabil». والخيارات الأخرى تناقض النصّ (ارتفاع قوي، استقرار كامل، تدهور).",
@@ -70,6 +71,7 @@ export const readingB202: ReadingText = {
         "Die Investitionen werden im Bericht an keiner einzigen Stelle auch nur erwähnt.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — التعميمُ يخالف النصّ: «Einige Firmen haben ihre Pläne verschoben, andere haben sie schon umgesetzt».", "لا — الإيقافُ الكامل في كل القطاعات غير مذكور؛ فالصورة غير واضحةٍ لأن «andere haben sie schon umgesetzt».", "لا — ذُكرت صريحاً في موضعها: «Bei den Investitionen lässt sich dagegen kein klares Bild erkennen»."],
       paragraph: 3,
       explanation:
         "الفقرة الثالثة تبدأ بصورة مختلطة ثم تقول: «Bei den Investitionen lässt sich dagegen kein klares Bild erkennen» — وهي صيغة lassen بديلة المجهول نفسها التي يعلّمها الدرس.",
@@ -88,6 +90,7 @@ export const readingB202: ReadingText = {
         "Beide lehnen den Bericht vollständig ab und verlangen eine ganz neue Erhebung.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — الاختلاقَ لم يقله أحد؛ والخلاف على درجة الحذر: «die Prognose sei zu vorsichtig formuliert» مقابل «sehe eher ein Risiko als eine Chance».", "لا — مطلبٌ ضريبيّ لم يُذكر عنهما؛ والضرائب في التقرير مشروطة: «können im kommenden Jahr gesenkt werden, wenn die Einnahmen weiter steigen».", "لا — الرفضُ الكامل لم يحدث؛ فأحدهما يراه قابلاً للتحقّق: «Die Zahlen seien überprüfbar»."],
       paragraph: 4,
       explanation:
         "الفقرة الرابعة تعرض الموقفين: «die Prognose sei zu vorsichtig formuliert» مقابل «Die Zahlen seien überprüfbar … sehe eher ein Risiko als eine Chance». والباقي غير مذكور أو مبالغ فيه.",
@@ -106,6 +109,7 @@ export const readingB202: ReadingText = {
         "Er solle den Bericht gar nicht erst lesen, weil er nur Verwirrung stifte.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — الاقتصارُ على ملخّصات الصحف عكسُ النصيحة؛ فالمطلوب السؤال عن المصدر وما غاب: «sollte zuerst fragen, wer sie erhoben hat und was in dem Bericht nicht steht».", "لا — التصديقُ بلا سؤالٍ نقيضُ القاعدة المذكورة: «Wer die Zahlen liest, sollte zuerst fragen …».", "لا — تركُ القراءة لم يُنصح به؛ فالسؤال «ist erlaubt — sie ist sogar ausdrücklich erwünscht»."],
       paragraph: 5,
       explanation:
         "الفقرة الأخيرة تنصح بالسؤال المزدوج: «wer die Zahlen erhoben hat und was in dem Bericht nicht steht»، وتضيف أن السؤال مسموح بل مرغوب. والخيارات الأخرى تناقض النصّ.",

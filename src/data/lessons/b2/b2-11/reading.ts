@@ -55,6 +55,7 @@ export const readingB211: ReadingText = {
         "Zwölf Angestellten, deren Räder dort stehen.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — المدينةُ عرضت قاعةً ثانية ولم تبنِ الورشة: «Die Stadt bot der Werkstatt eine zweite Halle an»؛ والملكيةُ للأسرتين: «gehört seit vierzig Jahren zwei Familien».", "لا — المهندسُ كلّف برسم الخطط فقط: «Einen Architekten haben sie die Pläne zeichnen lassen».", "لا — الاثنا عشر هم من يُصلح الدرّاجات: «Heute reparieren dort zwölf Menschen Fahrräder»؛ وأما أصحابُ الدرّاجات الواقفة فهم الزبائن: «die Kundschaft, deren Räder hier stehen»."],
       paragraph: 1,
       explanation:
         "الفقرة الأولى تفتح بالملكية المشتركة: الورشة تنتمي إلى عائلتين، ثم تسمّي المؤسسة ومؤسِّسها وتشرح أن الانتماء ينشأ من مهامّ متقاسمة — وهذا محور الدرس (الإسناد والملكية).",
@@ -73,6 +74,7 @@ export const readingB211: ReadingText = {
         "Sie hat in all den Jahren nie ein Protokoll geschrieben.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — القاعةُ الثانية جاءتهم عرضاً بعد عقود: «Vor zwei Jahren kam eine Zusage, die alles veränderte».", "لا — التسليمُ كان إلى ابنتها لا إلى أخيها: «Ihre Tochter, deren Ausbildung die Familie bezahlt hat, leitet heute den Betrieb».", "لا — المحضرُ ورد في سياق المتدرّبين: «dessen Protokoll bleibt leer»؛ وأما هي فقد «hat die Bücher selbst geführt»."],
       paragraph: 2,
       explanation:
         "الفقرة الثانية تنقل كلامها بصيغة المصدر المزدوج: «Ich habe drei Jahre lang jeden Abend sitzen bleiben müssen» — وقد أمسكت الدفاتر بنفسها قبل أن تنجح.",
@@ -91,6 +93,7 @@ export const readingB211: ReadingText = {
         "Sie haben die Halle an die Kundschaft verkauft.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — الرفضُ بلا تردّد لم يحدث؛ فقد قبلوا بعد تفكير: «die beiden Familien haben lange überlegen müssen. Am Ende haben sie zugesagt».", "لا — المتدرّبون يأتون اليوم من مدرستين: «Heute kommen Praktikanten aus zwei Schulen»؛ وأما الطلبُ فتولّته الابنة: «hat in sechs Monaten alles gelernt, was sie dafür wissen musste».", "لا — بيعُ القاعة للزبائن لم يُذكر؛ والقاعةُ ملكُ الأسرتين: «Die Halle gehört beiden Familien, deren Kinder zusammen aufgewachsen sind»."],
       paragraph: 4,
       explanation:
         "الفقرة الرابعة تسرد القرار: عرض المدينة، ثم «haben lange überlegen müssen»، ثم الموافقة رغم غياب الخبرة، ثم تكليف المعماري بالرسم — ثلاث بنيات من الدرس في فقرة واحدة.",
@@ -109,6 +112,7 @@ export const readingB211: ReadingText = {
         "Ein Protokoll, das am Ende niemand unterschrieben hat.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — الضميرُ النسبيّ هنا لا يستقيم ومضمونُه لغير الرفّ: مؤسّسُ الورشة هو الذي «kam aus Sizilien»؛ وأما الرفّ فـ«dessen Bretter die Kunden selbst gestrichen haben».", "لا — الصندوقُ ذُكر في تقسيم العمل: «die anderen bedienen die Kasse»؛ وأما المراقبةُ فلعمل المبتدئ أسبوعين: «dessen Arbeit wird zwei Wochen lang kontrolliert».", "لا — المحضرُ يخصّ المتدرّبين: «Wer eine Woche nichts gefragt hat, dessen Protokoll bleibt leer»؛ وفي الزاوية «ein Regal»."],
       paragraph: 5,
       explanation:
         "الفقرة الخامسة تصف القاعة: الرفّ في الزاوية، وخشبُه دهنه العملاء بأنفسهم — وهي جملة نسبية بـdessen تحقّق مِلكية المذكّر المحايد.",

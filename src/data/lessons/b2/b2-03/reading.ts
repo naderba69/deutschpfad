@@ -52,6 +52,7 @@ export const readingB203: ReadingText = {
         "Sie habe das Gericht bewusst falsch über die Höhe der Mieten informiert.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — العكس؛ فالعقد وقّعه الطرفان: «den Vertrag, den beide Seiten vor zwölf Jahren unterschrieben haben».", "لا — لم تُترك التكاليف بلا تسوية؛ واتّهامُه أنه دفع أكثر: «er habe in den vergangenen drei Jahren zu viel bezahlt».", "لا — التضليلُ المتعمّد للمحكمة لم يُذكر؛ وموضوع الدعوى «die Abrechnung … nach derselben Formel berechnet worden sei»."],
       paragraph: 1,
       explanation:
         "الفقرة الأولى تذكر ادعاء المستأجر: «er habe in den vergangenen drei Jahren zu viel bezahlt» مع سبب يعود إلى التسوية السنوية بالمعادلة نفسها. أما بقية الخيارات فليست في النصّ.",
@@ -70,6 +71,7 @@ export const readingB203: ReadingText = {
         "Um den Namen des Anwalts, der die Vermieterin vertritt.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — لونُ البيت وحالُ الواجهة لم يُذكرا؛ ومحلّ النزاع «eine Klausel, mit der die jährliche Abrechnung geregelt wird».", "لا — عددُ الغرف وإعادةُ تقسيمها لم يُذكر؛ والخلاف على بند التسوية السنوية: «Im Mittelpunkt steht eine Klausel».", "لا — اسمُ المحامي ليس موضوع النزاع؛ فالخلاف على «Klausel … die jährliche Abrechnung»."],
       paragraph: 2,
       explanation:
         "الفقرة الثانية تسمّي محلّ الخلاف: «eine Klausel, mit der die jährliche Abrechnung geregelt wird» — وهي جملة موصولة بحرف جر، البنية نفسها التي يعلّمها الدرس.",
@@ -88,6 +90,7 @@ export const readingB203: ReadingText = {
         "Das Urteil sei schon vor Monaten gefallen und nicht änderbar.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — خسارةُ الجمعية دعوى في الدرجة الأولى لم تُذكر؛ ونقدُها عمليّ: «die Regelung lasse sich in der Praxis kaum überprüfen, weil die Unterlagen oft fehlten».", "لا — انخفاضُ الإيجارات في المدينة لم يُذكر؛ ومطلبُ الجمعية «dass die Abrechnung künftig verständlich zu gestalten ist».", "لا — الحكمُ لم يصدر بعد: «Ein Urteil wird im Herbst erwartet»."],
       paragraph: 4,
       explanation:
         "الفقرة الرابعة: «die Regelung lasse sich in der Praxis kaum überprüfen, weil die Unterlagen oft fehlten» — لاحظ «sich lassen» بديلاً عن المجهول، و«überprüfen» مع صفة القابلية في المسرد.",
@@ -106,6 +109,7 @@ export const readingB203: ReadingText = {
         "Ob die Vermieterin die Stadt in diesem Jahr verlässt.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — الفصلُ القضائيّ محسوم: «der Betrag nun gerichtlich festzustellen»؛ والمفتوح «wer die Kosten des Verfahrens tragen muss».", "لا — توقيعُ عقدٍ جديد لم يُطرح؛ والمفتوح الحكمُ في الخريف «Ein Urteil wird im Herbst erwartet» وتكاليفُ الإجراءات «wer die Kosten des Verfahrens tragen muss».", "لا — مغادرةُ المدينة لم تُذكر إطلاقاً؛ والمفتوح «Offen bleibt nur die Frage, wer die Kosten des Verfahrens tragen muss»."],
       paragraph: 6,
       explanation:
         "الفقرة الأخيرة تُبقي مسألتين معلّقتين: الحكم المرتقب في الخريف، ومن يحمل تكاليف الإجراءات. وهي تتضمّن بدورها جملة موصولة بـ«was» بعد الشمول ضمن ما يُنتظر.",

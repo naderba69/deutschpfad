@@ -53,6 +53,7 @@ export const readingB205: ReadingText = {
         "Sie wurde nur ein einziges Mal ganz kurz in der Kaffeepause am Rande erwähnt.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — العكس؛ فالجوّ ساء إلى حدّ الصمت: «Die Stimmung wurde so schlecht, sodass am Ende kaum noch jemand etwas sagte, wenn ein Kollege den Raum betrat».", "لا — التحسّنُ لم يكن ذاتيّاً؛ فقد احتاج وسيطاً من الخارج: «Sie stellte einen externen Vermittler zur Verfügung».", "لا — استراحةُ القهوة لم تُذكر؛ والاضطرابُ تراكم شهوراً: «hatte sich über Monate ein Streit zwischen zwei Gruppen einer Abteilung aufgebaut»."],
       paragraph: 1,
       explanation:
         "الفقرة الأولى تصف التدهور بجملة نتيجة: «Die Stimmung wurde so schlecht, sodass …». والخيارات الأخرى تناقض النصّ، ومنها ما يزعم تحسّناً تلقائياً لم يحدث.",
@@ -71,6 +72,7 @@ export const readingB205: ReadingText = {
         "Für den Einsatz einer ganz neuen Abteilungsleitung im Betrieb.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — الفصلُ الفوريّ لم يُذكر؛ بل إن القائدَين يعملان معاً اليوم: «die beiden Wortführer arbeiten heute wieder in derselben Runde zusammen».", "لا — هذا ما استُبعد صريحاً: «Anstatt die beiden Gruppen räumlich zu trennen, entschied sich die Geschäftsleitung für eine andere Möglichkeit».", "لا — تعيينُ إدارةٍ جديدة للقسم لم يُذكر؛ والحلّ «ein moderiertes Gespräch, statt die beiden Gruppen zu trennen»."],
       paragraph: 2,
       explanation:
         "الفقرة الثانية تفتح بـ«Anstatt die beiden Gruppen räumlich zu trennen, entschied sich die Geschäftsleitung für eine andere Möglichkeit» — وهو البناء الذي يعلّمه الدرس (anstatt … zu).",
@@ -89,6 +91,7 @@ export const readingB205: ReadingText = {
         "Er ließ in den Sitzungen nur die Abteilungsleitung sprechen.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — الحُكمُ المنفرد خلافُ منهجه؛ فقد كان يكتب ولا يعلّق: «indem er selbst nur mitschrieb und nichts kommentierte».", "لا — المنعُ المطلق للكلام لم يُذكر؛ والقاعدةُ منعُ المقاطعة والتقييم لا منعُ الحديث: «ohne Unterbrechung, ohne Bewertung und ohne Zwischenrufe».", "لا — حصرُ الكلام في إدارة القسم لم يُذكر؛ بل كتب كلُّ طرفٍ نقاطه: «Zuerst ließ er jede Seite drei Punkte aufschreiben»."],
       paragraph: 4,
       explanation:
         "الفقرة الرابعة تصف الإجراء: الكتابة بلا تعليق، ثم المقارنة، والتأجيل عند الاختلاف. والخيارات الأخرى تصف إجراءات لم تُذكر، ومنها ما يخالف القاعدة الأساسية (بلا مقاطعة لا بلا كلام).",
@@ -107,6 +110,7 @@ export const readingB205: ReadingText = {
         "Dass die Beschwerden der Teams gemessen wurden.",
       ],
       correctIndex: 0,
+      optionExplanations: [undefined, "لا — وقوعُ الحديث في الجلسات لم يُشكَّك فيه؛ وشكُّها في أثره: «dass es nicht die Ursachen beseitigt, sondern nur die Folgen ordnet».", "لا — طباعةُ القواعد لم تُذكر أصلاً؛ والمذكور إقرارُها ونفاذُها: «wurden neue Regeln beschlossen, die im darauf folgenden Monat in Kraft traten».", "لا — قياسُ الشكاوى لم يُشكَّك فيه؛ فقد تراجعت فعلاً: «Die Zahl der Beschwerden ging danach langsam zurück»."],
       paragraph: 6,
       explanation:
         "الفقرة الأخيرة تنقل اعتراضها: الحوار ينظّم النتائج ولا يزيل الأسباب، ومن لا يأخذ الأسباب بعين الاعتبار تتكرّر مشكلته. وهي الصيغة نفسها التي يستعملها النصّ (in Betracht ziehen · in Frage stellen).",
