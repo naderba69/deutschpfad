@@ -20,6 +20,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { TEST_BANK } from "@/data/tests/question-banks";
+import { PLACEMENT_BANK } from "@/data/tests/placement-questions";
 
 /** دليل ألماني في الشرح: كلمة من ثلاثة أحرف لاتينية على الأقل */
 const GERMAN_EVIDENCE = /[A-Za-zÄÖÜäöüß]{3,}/;
@@ -202,5 +203,32 @@ describe("بنك أسئلة الاختبارات — المحرّكات تخلط
       }
     }
     expect(offenders, `ملفات إنتاجية تستهلك النسخة الخام: ${offenders.join(" · ")}`).toEqual([]);
+  });
+});
+
+describe("بنك تحديد المستوى — كل شرحٍ بدليل ألماني (الدفعة 122)", () => {
+  const GERMAN = /[A-Za-zÄÖÜäöüß]{3,}/;
+
+  it("15 سؤالاً (5 لكل مستوى) ولكلٍّ شرحٌ غير فارغ", () => {
+    expect(PLACEMENT_BANK).toHaveLength(15);
+    for (const level of ["pl-a1", "pl-a2", "pl-b1"]) {
+      expect(PLACEMENT_BANK.filter((q) => q.id.startsWith(level)), level).toHaveLength(5);
+    }
+    const empty = PLACEMENT_BANK.filter((q) => !(q.explanation ?? "").trim()).map((q) => q.id);
+    expect(empty, "شروح فارغة").toEqual([]);
+  });
+
+  it("كل شرح يحوي شاهداً ألمانياً (لا شرح عربي بلا دليل)", () => {
+    const weak = PLACEMENT_BANK.filter((q) => !GERMAN.test(q.explanation ?? "")).map(
+      (q) => `${q.id} → «${(q.explanation ?? "").slice(0, 40)}»`,
+    );
+    expect(weak, "شروح بلا لاتينية — الميزان نفسه المستعمل في بنك الاختبارات").toEqual([]);
+  });
+
+  it("الصحيح دائماً في الموضع الأول (يوازنه المحرّك عند العرض)", () => {
+    for (const q of PLACEMENT_BANK) {
+      expect(q.correctIndex, q.id).toBe(0);
+      expect(q.options.length, q.id).toBeGreaterThanOrEqual(3);
+    }
   });
 });

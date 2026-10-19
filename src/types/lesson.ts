@@ -212,6 +212,8 @@ export type Exercise =
 
 export interface FeedbackResult {
   isCorrect: boolean;
+  /** الخيار الذي اختاره المتعلّم (نصّه) — لمراجعة النتيجة (الدفعة 122) */
+  chosen?: string;
   /** هل كانت الإجابة صحيحة جزئياً؟ (مثل ترتيب الكلمات صحيح لكن نقص) */
   partial?: boolean;
   pointsEarned: number;

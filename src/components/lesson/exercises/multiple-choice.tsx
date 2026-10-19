@@ -33,7 +33,7 @@ export function MultipleChoiceExercise({
     setSelected(option);
     const feedback = evaluateMcq(exercise, option);
     state.submit(feedback);
-    onResult?.(feedback);
+    onResult?.({ ...feedback, chosen: option });
   };
 
   const handleRetry = () => {
