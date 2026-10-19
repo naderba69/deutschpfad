@@ -42,6 +42,8 @@ const LEVEL_LABEL: Record<string, string> = {
 };
 
 export function LessonClient({ lesson }: { lesson: Lesson }) {
+  /** مصطلحات الدرس الألمانية (الدفعة 123) — تُعرض في رأس الدرس */
+  const lessonKeyWords = LESSON_META.find((m) => m.id === lesson.id)?.keyWords ?? [];
   // سياق التقدم: لتصحيح الإكمال عند «أكمل الدرس» في وضع التدفق
   const { completedLessonsSet, completeLesson } = useProgress();
   const [visited, setVisited] = React.useState<Set<string>>(new Set(["lernziele"]));
@@ -312,6 +314,15 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
         </h1>
         <p className="text-base text-muted-foreground">{lesson.titleAr}</p>
         <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">{lesson.summary}</p>
+        {lessonKeyWords.length > 0 && (
+          <div className="mt-2 flex flex-wrap gap-1.5" data-testid="lesson-keywords">
+            {lessonKeyWords.map((w) => (
+              <span key={w} className="font-de rounded-full border bg-muted/30 px-2 py-0.5 text-[11px] font-semibold text-muted-foreground" dir="ltr" lang="de">
+                {w}
+              </span>
+            ))}
+          </div>
+        )}
 
         {/* ربط المعلّم الافتراضي بسياق الدرس */}
         <div className="flex flex-wrap items-center gap-2">

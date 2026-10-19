@@ -111,7 +111,12 @@ export function MultipleChoiceExercise({
         onRevealSolution={state.revealSolution}
       />
       {!state.result && !state.revealedSolution && (
-        <p className="text-xs text-muted-foreground">{exercise.instructionAr}</p>
+        <>
+          <p className="text-xs text-muted-foreground">{exercise.instructionAr}</p>
+          {exercise.instructionDe && (
+            <p className="font-de text-xs text-muted-foreground" dir="ltr" lang="de" data-testid="exercise-instruction-de">{exercise.instructionDe}</p>
+          )}
+        </>
       )}
     </div>
   );

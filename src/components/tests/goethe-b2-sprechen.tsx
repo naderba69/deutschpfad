@@ -49,7 +49,7 @@ export function SprechenSection({
     <div key={`sprechen-${runKey}`} className="space-y-5">
       {lowTime && (
         <div className="rounded-xl border border-amber-500/50 bg-amber-50 p-3 text-center text-sm font-bold text-amber-900 dark:bg-amber-950/40 dark:text-amber-200" role="alert">
-          ⚠️ تبقّى أقل من 5 دقائق — اختم عرضك ونقاشك.
+          ⚠️ تبقّى أقل من {sprechen.teil2Minutes} دقائق — اختم عرضك ونقاشك.
         </div>
       )}
       {expiredNotice && (
@@ -70,7 +70,7 @@ export function SprechenSection({
       {/* Teil 1: Vortrag */}
       <Card className="border-primary/30">
         <CardContent className="space-y-3 p-5">
-          <h3 className="text-base font-extrabold">🎤 Teil 1 — Vortrag (~4 دقائق)</h3>
+          <h3 className="text-base font-extrabold">🎤 Teil 1 — Vortrag (~{sprechen.teil1Minutes} دقائق)</h3>
           <p className="text-sm text-muted-foreground">
             اختر موضوعاً، استعد في <b>{sprechen.vorbereitungMinutes} دقيقة</b> (التحضير المخصص يُدار خارج المؤقت)،
             ثم تحدث عن الموضوع باتباع الأسئلة الإرشادية. استخدم بنية: مقدمة ← وضع حالي ← مشاكل/أسباب ← حلول ← خاتمة.
@@ -126,7 +126,7 @@ export function SprechenSection({
       {/* Teil 2: Diskussion */}
       <Card className="border-gold/40">
         <CardContent className="space-y-3 p-5">
-          <h3 className="text-base font-extrabold">🗣️ Teil 2 — Diskussion (~5 دقائق)</h3>
+          <h3 className="text-base font-extrabold">🗣️ Teil 2 — Diskussion (~{sprechen.teil2Minutes} دقائق)</h3>
           <p className="text-sm text-muted-foreground">{d.positionAr}</p>
           <div className="rounded-xl border bg-muted/20 p-3">
             <p className="font-bold"><span dir="ltr" lang="de">{d.themaDe}</span></p>
