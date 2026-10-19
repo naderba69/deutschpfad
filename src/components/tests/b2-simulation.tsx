@@ -11,7 +11,8 @@ import {playCorrect, playWrong} from "@/lib/audio/sfx";
 import {shuffleChoiceItems} from "@/lib/tests/shuffle-questions";
 import {cn} from "@/lib/utils";
 import {ExamReviewList, type ExamReviewTeil} from "@/components/tests/exam-question-views";
-import {LISTENING, READING} from "@/data/exams/b2-simulation-data";
+import {B2_SIM_AUDIO_BASE, LISTENING, READING} from "@/data/exams/b2-simulation-data";
+import {ExamAudioPlayer} from "@/components/tests/exam-audio-player";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -256,7 +257,13 @@ export function B2SimulationClient() {
         <Progress value={(listeningIdx / 4) * 100} className="mt-2 h-2" />
         <div className="mt-4 rounded-xl border bg-card p-5">
           <h2 className="font-de font-bold" dir="ltr">{listening.title}</h2>
-          <p className="mt-2 text-xs text-muted-foreground">اقرأ الأسئلة أولاً ثم استمع (نصياً هنا للتدريب) — في الامتحان يُشغَّل الصوت.</p>
+          <div className="mt-3">
+            <ExamAudioPlayer
+              track={{ base: B2_SIM_AUDIO_BASE, files: [listening.audioFile], texts: [listening.spokenText], fallbackText: listening.spokenText, maxPlays: listening.maxPlays }}
+              label="استمع إلى النص:"
+            />
+          </div>
+          <p className="mt-2 text-xs text-muted-foreground">اقرأ الأسئلة أولاً ثم استمع — النص ظاهر للتدريب، والتسجيلات مُولَّدة (TTS) لتدريب الاستماع وليست امتحاناً رسمياً.</p>
           <div className="mt-3 space-y-2 rounded-lg bg-muted/30 p-3">
             {listening.lines.map((l, i) => (
               <div key={i}>

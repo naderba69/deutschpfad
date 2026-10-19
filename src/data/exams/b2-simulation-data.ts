@@ -32,11 +32,20 @@ export interface B2SimReadingTask {
   questions: B2SimQuestion[];
 }
 
+/** مجلد تسجيلات المحاكاة (توليد TTS — الدفعة 120) */
+export const B2_SIM_AUDIO_BASE = "/audio/exam-b2-sim";
+
 export interface B2SimListeningTask {
   id: string;
   title: string;
   lines: { speaker: string; de: string; ar: string }[];
   questions: B2SimQuestion[];
+  /** النص المنطوق في التسجيل (بلا أسماء المتحدثين) — نصّ التوليد نفسه */
+  spokenText: string;
+  /** اسم الملف داخل `B2_SIM_AUDIO_BASE` */
+  audioFile: string;
+  /** مرات التشغيل المسموحة (مرتان كامتحان Goethe-B2) */
+  maxPlays: number;
 }
 
 /** بنك القراءة B2 (نماذج تدريبية بأسلوب Goethe) — 5 نصوص × سؤالان */
@@ -98,6 +107,9 @@ export const LISTENING: B2SimListeningTask[] = [
   {
     id: "h1",
     title: "Radiobeitrag: Homeoffice",
+    spokenText: "Viele Unternehmen führen Homeoffice-Regelungen ein. Eine Umfrage zeigt, dass 60 Prozent der Angestellten mindestens zwei Tage pro Woche von zu Hause arbeiten möchten. Die Vorteile sind klar: weniger Fahrtzeit, mehr Flexibilität. Aber soziale Kontakte fehlen. Wichtig ist eine gute Kommunikationskultur.",
+    audioFile: "h1.mp3",
+    maxPlays: 2,
     lines: [
       { speaker: "Moderatorin", de: "Viele Unternehmen führen Homeoffice-Regelungen ein. Eine Umfrage zeigt, dass 60 Prozent der Angestellten mindestens zwei Tage pro Woche von zu Hause arbeiten möchten.", ar: "العديد من الشركات تقدم قواعد العمل عن بُعد. يُظهر استطلاع أن 60% من الموظفين يريدون العمل من المنزل يومين أسبوعياً على الأقل." },
       { speaker: "Expertin", de: "Die Vorteile sind klar: weniger Fahrtzeit, mehr Flexibilität. Aber soziale Kontakte fehlen. Wichtig ist eine gute Kommunikationskultur.", ar: "المزايا واضحة: وقت تنقل أقل، مرونة أكثر. لكن التواصل الاجتماعي ينقص. المهم ثقافة تواصل جيدة." },
@@ -110,6 +122,9 @@ export const LISTENING: B2SimListeningTask[] = [
   {
     id: "h2",
     title: "Nachrichten: Umweltschutz",
+    spokenText: "Die Stadt Berlin plant, bis 2030 die Hälfte aller Autofahrten auf Fahrrad und öffentliche Verkehrsmittel zu verlagern. Kritiker warnen vor langen Bauzeiten.",
+    audioFile: "h2.mp3",
+    maxPlays: 2,
     lines: [
       { speaker: "Sprecher", de: "Die Stadt Berlin plant, bis 2030 die Hälfte aller Autofahrten auf Fahrrad und öffentliche Verkehrsmittel zu verlagern. Kritiker warnen vor langen Bauzeiten.", ar: "تخطط مدينة برلين لنقل نصف رحلات السيارات إلى الدراجات والنقل العام بحلول 2030. يحذر النقاد من فترات بناء طويلة." },
     ],
@@ -121,6 +136,9 @@ export const LISTENING: B2SimListeningTask[] = [
   {
     id: "h3",
     title: "Interview: Studium im Ausland",
+    spokenText: "Immer mehr Studierende verbringen ein Semester im Ausland. Der Student Karim berichtet: Die Sprachkenntnisse verbessern sich schnell, und man lernt eine neue Kultur kennen. Am Anfang war es schwierig, aber nach drei Monaten habe ich mich eingelebt. Ich empfehle jedem diese Erfahrung.",
+    audioFile: "h3.mp3",
+    maxPlays: 2,
     lines: [
       { speaker: "Reporter", de: "Immer mehr Studierende verbringen ein Semester im Ausland. Der Student Karim berichtet: Die Sprachkenntnisse verbessern sich schnell, und man lernt eine neue Kultur kennen.", ar: "المزيد من الطلاب يقضون فصلاً في الخارج. الطالب كريم يقول: تتحسن مهارات اللغة بسرعة ويتعرف المرء على ثقافة جديدة." },
       { speaker: "Karim", de: "Am Anfang war es schwierig, aber nach drei Monaten habe ich mich eingelebt. Ich empfehle jedem diese Erfahrung.", ar: "كان صعباً في البداية، لكن بعد ثلاثة أشهر تأقلمت. أنصح الجميع بهذه التجربة." },
@@ -133,6 +151,9 @@ export const LISTENING: B2SimListeningTask[] = [
   {
     id: "h4",
     title: "Tipps: Bewerbungsgespräch",
+    spokenText: "Für ein erfolgreiches Bewerbungsgespräch sollten Sie sich gut vorbereiten: Informieren Sie sich über die Firma, bereiten Sie Beispiele für Ihre Stärken vor und stellen Sie eigene Fragen. Pünktlichkeit ist selbstverständlich.",
+    audioFile: "h4.mp3",
+    maxPlays: 2,
     lines: [
       { speaker: "Beraterin", de: "Für ein erfolgreiches Bewerbungsgespräch sollten Sie sich gut vorbereiten: Informieren Sie sich über die Firma, bereiten Sie Beispiele für Ihre Stärken vor und stellen Sie eigene Fragen. Pünktlichkeit ist selbstverständlich.", ar: "لمقابلة عمل ناجحة يجب التحضير جيداً: تعرف على الشركة، جهّز أمثلة على نقاط قوتك، واطرح أسئلتك الخاصة. الالتزام بالمواعيد بديهي." },
     ],
