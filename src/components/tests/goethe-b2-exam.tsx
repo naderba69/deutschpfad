@@ -13,6 +13,7 @@ import {Progress} from "@/components/ui/progress";
 import {AutoGrowTextarea} from "@/components/shared/auto-grow-textarea";
 import {gradeTeile, scoreModule, type ModuleScore} from "@/lib/tests/exam-scoring";
 import {ExamOfficialSummary} from "@/components/tests/exam-official-summary";
+import {ExamReviewList} from "@/components/tests/exam-question-views";
 import {B2_HOEREN_AUDIO} from "@/data/exams/b2-hoeren-audio";
 import {SprechenSection} from "@/components/tests/goethe-b2-sprechen";
 import {HoerenTeilView, LesenTeilView, speakText} from "@/components/tests/goethe-b2-views";
@@ -534,6 +535,18 @@ export function GoetheB2Exam() {
             ]}
             subjectiveAr="الكتابة (Schreiben) عندنا: تقدير تدريبي من طول النصّ (ليس تصحيحاً) · التحدث (Sprechen): تقييم ذاتي بالروبرك — وكلٌّ منهما مكوّن مستقل بـ100 نقطة في الامتحان الرسمي."
           />
+
+          {/* مراجعة الأدلة (الدفعة 118): لكل سؤالٍ جوابُك والصحيح وشاهدُه الألماني */}
+          {(scores.lesen || scores["hören"]) && (
+            <div className="space-y-3" data-testid="exam-review">
+              <h3 className="text-base font-extrabold">مراجعة الأدلة — لماذا هذا الجواب</h3>
+              <p className="text-xs text-muted-foreground">
+                لكل سؤالٍ في القراءة والاستماع: جوابُك، والإجابةُ الصحيحة، والشاهدُ الألماني حيث يوجد.
+              </p>
+              {scores.lesen && <ExamReviewList teile={lesenSet} answers={lesenAnswers} label="lesen" />}
+              {scores["hören"] && <ExamReviewList teile={hoerenSet} answers={hoerenAnswers} label="hoeren" />}
+            </div>
+          )}
 
           <div className="flex flex-col gap-2 sm:flex-row">
             <Button onClick={restart} className="flex-1 gap-2">

@@ -311,9 +311,11 @@ export function ExamReviewList({
   label,
 }: {
   teile: (ExamHoerenTeil | ExamLesenTeil)[];
-  answers: Record<string, boolean | number>;
+  answers: Record<string, unknown>;
   label: string;
 }) {
+  // إجابات الفراغات تُخزَّن تحت مفتاح "gap" كما في exam-scoring.ts
+  const gapAnswers = (answers["gap"] as Record<number, string> | undefined) ?? {};
   return (
     <div className="space-y-3" data-testid={`exam-review-${label}`}>
       {teile.map((t) => (
@@ -366,6 +368,44 @@ export function ExamReviewList({
                         <span data-testid="exam-review-evidence">{q.whyAr}</span>
                       </p>
                     )}
+                  </div>
+                );
+              })}
+            {t.kind === "zuordnung" &&
+              (t.items ?? []).map((it) => {
+                const chosen = typeof answers[it.id] === "string" ? (answers[it.id] as string) : undefined;
+                const ok = Boolean(chosen) && chosen === it.categoryId;
+                const catDe = (catId: string) => (t.categories ?? []).find((c) => c.id === catId)?.de ?? catId;
+                return (
+                  <div key={it.id} data-testid="exam-review-item" className="rounded-lg border p-2.5">
+                    <p className="text-sm">
+                      <span aria-hidden className={ok ? "text-success" : "text-destructive"}>{ok ? "✓" : "✗"}</span>{" "}
+                      <span dir="ltr" lang="de" className="font-de">{it.de}</span>
+                    </p>
+                    {it.ar && <p className="mt-0.5 text-xs text-muted-foreground">{it.ar}</p>}
+                    <p className="mt-1 text-xs">
+                      جوابك: <span dir="ltr" lang="de" className="font-de">{chosen ? catDe(chosen) : "— لم تُجب"}</span> ·
+                      الصحيح: <span dir="ltr" lang="de" className="font-de">{catDe(it.categoryId)}</span>
+                    </p>
+                  </div>
+                );
+              })}
+            {t.kind === "gap" &&
+              t.gap &&
+              t.gap.gapOrder.map((sid, i) => {
+                const chosen = gapAnswers[i];
+                const ok = Boolean(chosen) && chosen === sid;
+                const sentenceDe = (sId: string) => t.gap!.sentenceBank.find((b) => b.id === sId)?.de ?? sId;
+                return (
+                  <div key={i} data-testid="exam-review-item" className="rounded-lg border p-2.5">
+                    <p className="text-sm">
+                      <span aria-hidden className={ok ? "text-success" : "text-destructive"}>{ok ? "✓" : "✗"}</span>
+                      الفراغ {i + 1}
+                    </p>
+                    <p className="mt-1 text-xs">
+                      جوابك: <span dir="ltr" lang="de" className="font-de">{chosen ? sentenceDe(chosen) : "— لم تُجب"}</span> ·
+                      الصحيح: <span dir="ltr" lang="de" className="font-de">{sentenceDe(sid)}</span>
+                    </p>
                   </div>
                 );
               })}
