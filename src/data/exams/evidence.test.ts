@@ -29,10 +29,11 @@ import { B2_HOEREN_B } from "@/data/exams/b2-hoeren-b";
 import { B2_HOEREN_C } from "@/data/exams/b2-hoeren-c";
 import { B2_GRAMMATIK } from "@/data/exams/b2-grammatik";
 import { FALLSTRICKE } from "@/data/exams/fallstricke";
+import { LISTENING, READING } from "@/data/exams/b2-simulation-data";
 import type { ExamHoerenTeil, ExamLesenTeil, ExamMcq, ExamStatement } from "@/types/exam";
 
-/** أرضية الدفعة 117 — عدد الشواهد المكتوبة وقت القياس */
-const EXAM_EVIDENCE_FLOOR = 414;
+/** أرضية الدفعة 117 (414) + بنكا المحاكاة 18 (الدفعة 119) */
+const EXAM_EVIDENCE_FLOOR = 432;
 /** أرضية شواهد الفخاخ (12 تمريناً × 3 حقول ألمانية: الاسم · لماذا الفخ · لماذا الصحيح) */
 const EXAM_TRAP_EVIDENCE_FLOOR = 12;
 
@@ -79,6 +80,13 @@ function allEvidence(): WhyItem[] {
   for (const g of B2_GRAMMATIK) {
     out.push({ id: g.id, source: "b2/grammatik", whyAr: g.whyAr ?? "" });
   }
+  // بنكا محاكاة B2 (الدفعة 119): 10 أسئلة قراءة + 8 استماع
+  for (const t of READING) {
+    for (const q of t.questions) out.push({ id: q.id, source: "b2-sim/lesen", whyAr: q.whyAr ?? "" });
+  }
+  for (const t of LISTENING) {
+    for (const q of t.questions) out.push({ id: q.id, source: "b2-sim/hoeren", whyAr: q.whyAr ?? "" });
+  }
   return out;
 }
 
@@ -101,9 +109,15 @@ describe("أدلة الامتحانات — كل جوابٍ مصحوبٍ بشا�
     expect(weak, "شواهد بلا لاتينية — القاعدة نفسها المستعملة في شروح الدروس").toEqual([]);
   });
 
-  it("العتبة المُقاسة: عدد الشواهد لا ينحسر عن أرضية الدفعة 117", () => {
+  it("العتبة المُقاسة: عدد الشواهد لا ينحسر عن أرضية الدفعة 119", () => {
     expect(items.length, `شواهد=${items.length} · الأرضية=${EXAM_EVIDENCE_FLOOR}`)
       .toBeGreaterThanOrEqual(EXAM_EVIDENCE_FLOOR);
+  });
+
+  it("محاكاة B2: بنكا القراءة والاستماع (18 سؤالاً) كلها مشهودة", () => {
+    const sim = items.filter((x) => x.source.startsWith("b2-sim/"));
+    expect(sim.filter((x) => x.source === "b2-sim/lesen").length, "10 أسئلة قراءة").toBe(10);
+    expect(sim.filter((x) => x.source === "b2-sim/hoeren").length, "8 أسئلة استماع").toBe(8);
   });
 
   it("كل تمرين فخّ يحمل الاسم الألماني ولماذا الفخ ولماذا الصحيح", () => {

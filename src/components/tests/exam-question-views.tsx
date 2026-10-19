@@ -21,7 +21,7 @@
 
 import * as React from "react";
 
-import type { ExamHoerenTeil, ExamLesenTeil, ExamMcq, ExamStatement } from "@/types/exam";
+import type { ExamGapText, ExamHoerenTeil, ExamLesenTeil, ExamMcq, ExamStatement, ExamZuordnungCategory, ExamZuordnungItem } from "@/types/exam";
 import { cn } from "@/lib/utils";
 
 /* ═══════════════════════════════════════════════════════════
@@ -303,14 +303,29 @@ export function ExamStatementsListCompact({
  *  مراجعة الأدلة (الدفعة 117) — شاشة النتيجة تُظهر لكل سؤالٍ
  *  جوابَ المتعلّم والصحيح وشاهدَه `whyAr` — فكانت 414 شاهداً
  *  مكتوبةً في البيانات ولا يراها أحد. يُقاس الحضور بحارس
- *  `src/data/exams/evidence.test.ts` (أرضية 414 شاهداً).
+ *  `src/data/exams/evidence.test.ts` (أرضية 432 شاهداً منذ 119).
  * ═══════════════════════════════════════════════════════════ */
+/**
+ * بنية المراجعة — تقبل أجزاء الامتحان الرسمية (ExamLesenTeil/ExamHoerenTeil)
+ * وأي بنك أسئلة مكافئ بنيوياً (مثل محاكاة B2 — الدفعة 119).
+ */
+export interface ExamReviewTeil {
+  teil: string | number;
+  titleAr: string;
+  kind: "mcq" | "rf" | "zuordnung" | "gap";
+  questions?: ExamMcq[];
+  statements?: ExamStatement[];
+  items?: ExamZuordnungItem[];
+  categories?: ExamZuordnungCategory[];
+  gap?: ExamGapText;
+}
+
 export function ExamReviewList({
   teile,
   answers,
   label,
 }: {
-  teile: (ExamHoerenTeil | ExamLesenTeil)[];
+  teile: ExamReviewTeil[];
   answers: Record<string, unknown>;
   label: string;
 }) {
