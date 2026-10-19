@@ -75,7 +75,6 @@ export const STARK_VERBEN: StarkeVerb[] = [
   { infinitiv: "genießen", präsens3: "genießt", präteritum: "genoss", partizip2: "genossen", ar: "يستمتع", hilfsverb: "haben", level: "B1" },
   { infinitiv: "scheinen", präsens3: "scheint", präteritum: "schien", partizip2: "geschienen", ar: "يبدو/يشرق", hilfsverb: "haben", level: "B1" },
   { infinitiv: "hängen", präsens3: "hängt", präteritum: "hing", partizip2: "gehangen", ar: "يكون معلقاً", hilfsverb: "haben", level: "B1" },
-  { infinitiv: "ziehen", präsens3: "zieht", präteritum: "zog", partizip2: "gezogen", ar: "يسحب", hilfsverb: "sein", level: "B1" },
   { infinitiv: "tragen", präsens3: "trägt", präteritum: "trug", partizip2: "getragen", ar: "يحمل", hilfsverb: "haben", level: "B1" },
   { infinitiv: "scheißen", präsens3: "scheißt", präteritum: "schiss", partizip2: "geschissen", ar: "(خارج الأدب — للتوعية)", hilfsverb: "haben", level: "B1", note: "كلمة نابية — تجنبها" },
   { infinitiv: "betreten", präsens3: "betritt", präteritum: "betrat", partizip2: "betreten", ar: "يدخل (مكاناً)", hilfsverb: "haben", level: "B1" },
