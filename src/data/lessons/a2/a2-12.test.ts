@@ -191,9 +191,7 @@ describe("A2-12 lesson content audit", () => {
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e2", "w1", "w2"]);
     expect(goal("z2").evidence?.taskIds).toEqual([
       "practice:a2-12:e1",
-      "flow-practice:a2-12:e1",
       "practice:a2-12:e2",
-      "flow-practice:a2-12:e2",
       "writing:a2-12:w1",
       "writing:a2-12:w2",
     ]);
@@ -394,7 +392,5 @@ describe("A2-12 lesson content audit", () => {
     }
     // Opening/viewing the lesson produces no exercise-result event, so the goal stays pending.
     expect(getGoalEvidenceStatus(goal("z1"), lessonA212.id, [])).toBe("pending");
-    // The practice-only task for e6 must not be satisfied by a flow-practice id.
-    expect(getGoalEvidenceStatus(goal("z1"), lessonA212.id, [goalEvent("z1", "e6", true, "flow-practice:a2-12:e6")])).toBe("pending");
   });
 });

@@ -179,10 +179,10 @@ function expectListedAlternativesRejected(task: Exercise) {
 
 function validTaskIds(): Set<string> {
   // The standard practice UI samples five unique tasks from the entire bank (with a reshuffle action);
-  // lesson-flow is separate and reveals only the first four bank entries progressively.
+  // the progressive reveal is separate and reveals only the first four bank entries progressively.
   const practiceTaskIds = lessonA113.practiceBank.flatMap((task, index) => [
     `practice:${lessonA113.id}:${task.id}`,
-    ...(index < 4 ? [`flow-practice:${lessonA113.id}:${task.id}`] : []),
+    ...(index < 4 ? [`practice:${lessonA113.id}:${task.id}`] : []),
   ]);
   return new Set([
     ...practiceTaskIds,

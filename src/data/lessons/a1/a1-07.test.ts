@@ -257,7 +257,6 @@ describe("A1-07 reviewed lesson content", () => {
     const taskIds = new Set([
       ...lessonA107.practiceBank.flatMap((task) => [
         `practice:${lessonA107.id}:${task.id}`,
-        `flow-practice:${lessonA107.id}:${task.id}`,
       ]),
       ...lessonA107.writing.map((task) => `writing:${lessonA107.id}:${task.id}`),
       ...reading.questions.map((task) => `reading:${reading.id}:${task.id}`),

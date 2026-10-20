@@ -33,7 +33,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أرتّب جملة خبرية بسيطة في Perfekt داخل القوسين، مع تطبيق تفضيلات محايدة محددة لترتيب المساحة الوسطى.",
       evidence: {
         exerciseIds: ["e4", "e16", "e17", "e18", "e19"],
-        taskIds: ["practice:a2-01:e4", "flow-practice:a2-01:e4", "practice:a2-01:e16", "practice:a2-01:e17", "practice:a2-01:e18", "practice:a2-01:e19"],
+        taskIds: ["practice:a2-01:e4", "practice:a2-01:e16", "practice:a2-01:e17", "practice:a2-01:e18", "practice:a2-01:e19"],
         labelAr: "ترتيب جملة Perfekt، والتدرب على TeKaMoLo وترتيب الضمائر والمفعول والنفي في أمثلة محددة.",
         completion: "all-correct",
       },

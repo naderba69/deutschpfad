@@ -173,7 +173,6 @@ function validTaskIds() {
   return new Set([
     ...lessonA110.practiceBank.flatMap((task) => [
       `practice:${lessonA110.id}:${task.id}`,
-      `flow-practice:${lessonA110.id}:${task.id}`,
     ]),
     ...lessonA110.miniTest.map((task) => `mini-test:${lessonA110.id}:${task.id}`),
     ...lessonA110.writing.map((task) => `writing:${lessonA110.id}:${task.id}`),

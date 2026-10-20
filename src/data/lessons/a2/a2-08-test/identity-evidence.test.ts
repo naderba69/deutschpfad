@@ -90,12 +90,12 @@ describe("A2-08 reviewed lesson", () => {
     }
     // The practice flow reveals only the first min(4, practiceBank.length) tasks.
     for (const exercise of lessonA208.practiceBank.slice(0, Math.min(4, lessonA208.practiceBank.length))) {
-      validTaskIds.add(`flow-practice:${lessonA208.id}:${exercise.id}`);
+      validTaskIds.add(`practice:${lessonA208.id}:${exercise.id}`);
     }
     for (const exercise of lessonA208.miniTest) {
       validTaskIds.add(`mini-test:${lessonA208.id}:${exercise.id}`);
     }
-    // lesson-flow mini-test filters for multiple-choice and reveals at most the first three.
+    // the-progressive-reveal mini-test filters for multiple-choice and reveals at most the first three.
     for (const exercise of lessonA208.miniTest
       .filter((item) => item.type === "multiple-choice")
       .slice(0, 3)) {
@@ -131,13 +131,6 @@ describe("A2-08 reviewed lesson", () => {
         const parts = taskId.split(":");
         const exerciseId = parts[parts.length - 1];
         expect(exerciseIds).toContain(exerciseId);
-        if (taskId.startsWith("flow-practice:")) {
-          expect(
-            lessonA208.practiceBank
-              .slice(0, Math.min(4, lessonA208.practiceBank.length))
-              .some((exercise) => exercise.id === exerciseId),
-          ).toBe(true);
-        }
       }
       for (const exerciseId of exerciseIds) {
         expect(taskIds.some((taskId) => taskId.endsWith(`:${exerciseId}`))).toBe(true);
@@ -153,8 +146,6 @@ describe("A2-08 reviewed lesson", () => {
         getListeningQuestionTaskId(lessonA208.id, question.itemId, question.id, true),
       ).toBe(`listening-transcript:${lessonA208.id}:${question.itemId}:${question.id}`);
     }
-    expect(validTaskIds.has("flow-practice:a2-08:e4")).toBe(true);
-    expect(validTaskIds.has("flow-practice:a2-08:e5")).toBe(false);
     expect(validTaskIds.has("flow-mini-test:a2-08:m1")).toBe(true);
     expect(validTaskIds.has("flow-mini-test:a2-08:m2")).toBe(true);
     expect(validTaskIds.has("flow-mini-test:a2-08:m3")).toBe(false);

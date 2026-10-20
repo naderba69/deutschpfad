@@ -11,7 +11,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أطابق أسماء أيام الأسبوع والشهور الاثني عشر بمعانيها العربية.",
       evidence: {
         exerciseIds: ["e3", "e6"],
-        taskIds: ["practice:a1-09:e3", "flow-practice:a1-09:e3", "practice:a1-09:e6", "flow-practice:a1-09:e6"],
+        taskIds: ["practice:a1-09:e3", "practice:a1-09:e6"],
         labelAr: "طابق أيام الأسبوع السبعة في e3 وأسماء الشهور الاثني عشر في e6؛ لا يكفي فتح النشاط أو مراجعة البطاقات.",
         completion: "all-correct",
       },
@@ -22,7 +22,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أتعرف إلى أسماء الفصول الأربعة وأرتبها في المهمة المحددة.",
       evidence: {
         exerciseIds: ["e8", "m5"],
-        taskIds: ["practice:a1-09:e8", "flow-practice:a1-09:e8", "mini-test:a1-09:m5"],
+        taskIds: ["practice:a1-09:e8", "mini-test:a1-09:m5"],
         labelAr: "اختر الفصل في سياق تقويمي في e8، ثم أكمل ترتيب الفصول الأربعة في m5؛ يلزم الأداء الصحيح في المهمتين.",
         completion: "all-correct",
       },
@@ -33,7 +33,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أتعرف إلى صيغ مختارة من الأعداد الترتيبية في التواريخ وأستعملها في جمل محددة.",
       evidence: {
         exerciseIds: ["e2", "e7", "e11", "e12", "e15", "e18", "m2"],
-        taskIds: ["practice:a1-09:e2", "flow-practice:a1-09:e2", "practice:a1-09:e7", "flow-practice:a1-09:e7", "practice:a1-09:e11", "flow-practice:a1-09:e11", "practice:a1-09:e12", "flow-practice:a1-09:e12", "practice:a1-09:e15", "flow-practice:a1-09:e15", "practice:a1-09:e18", "flow-practice:a1-09:e18", "mini-test:a1-09:m2"],
+        taskIds: ["practice:a1-09:e2", "practice:a1-09:e7", "practice:a1-09:e11", "practice:a1-09:e12", "practice:a1-09:e15", "practice:a1-09:e18", "mini-test:a1-09:m2"],
         labelAr: "أجب عن صيغ الترتيبي في e2 وe7 وe11 وe12 وe15 وe18، ثم أعد الصيغة في m2؛ يجب أن تكون كل الإجابات صحيحة.",
         completion: "all-correct",
       },
@@ -44,7 +44,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أقرأ تاريخاً مكتوباً بالكلمات أو بالأرقام، وأسأل عن تاريخ اليوم في أمثلة الدرس.",
       evidence: {
         exerciseIds: ["e9", "e13", "e14"],
-        taskIds: ["practice:a1-09:e9", "flow-practice:a1-09:e9", "practice:a1-09:e13", "flow-practice:a1-09:e13", "practice:a1-09:e14", "flow-practice:a1-09:e14"],
+        taskIds: ["practice:a1-09:e9", "practice:a1-09:e13", "practice:a1-09:e14"],
         labelAr: "ميّز صيغة التاريخ الصحيحة في e9، واقرأ 5.9. في e13، ورتّب سؤال التاريخ في e14؛ يلزم الصواب في المهمات الثلاث.",
         completion: "all-correct",
       },
@@ -55,7 +55,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أختار am وim وum في أمثلة مختارة لليوم والشهر والفصل والساعة.",
       evidence: {
         exerciseIds: ["e1", "e4", "e5", "e10", "w1", "w2", "m1", "m3", "m4"],
-        taskIds: ["practice:a1-09:e1", "flow-practice:a1-09:e1", "practice:a1-09:e4", "flow-practice:a1-09:e4", "practice:a1-09:e5", "flow-practice:a1-09:e5", "practice:a1-09:e10", "flow-practice:a1-09:e10", "writing:a1-09:w1", "writing:a1-09:w2", "mini-test:a1-09:m1", "mini-test:a1-09:m3", "mini-test:a1-09:m4"],
+        taskIds: ["practice:a1-09:e1", "practice:a1-09:e4", "practice:a1-09:e5", "practice:a1-09:e10", "writing:a1-09:w1", "writing:a1-09:w2", "mini-test:a1-09:m1", "mini-test:a1-09:m3", "mini-test:a1-09:m4"],
         labelAr: "طبّق حروف الجر في e1 وe4 وe5 وe10 وw1 وw2 وm1 وm3 وm4؛ فتح قسم الكتابة أو الاستماع لا يسجّل هذا الهدف.",
         completion: "all-correct",
       },
@@ -66,7 +66,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أميز في أمثلة محددة بين بداية المدى ونهايته والمدى المحدد والوقت التقريبي والتكرار الأسبوعي.",
       evidence: {
         exerciseIds: ["e16", "e17", "e19", "e22", "e23", "e25"],
-        taskIds: ["practice:a1-09:e16", "flow-practice:a1-09:e16", "practice:a1-09:e17", "flow-practice:a1-09:e17", "practice:a1-09:e19", "flow-practice:a1-09:e19", "practice:a1-09:e22", "flow-practice:a1-09:e22", "practice:a1-09:e23", "flow-practice:a1-09:e23", "practice:a1-09:e25", "flow-practice:a1-09:e25"],
+        taskIds: ["practice:a1-09:e16", "practice:a1-09:e17", "practice:a1-09:e19", "practice:a1-09:e22", "practice:a1-09:e23", "practice:a1-09:e25"],
         labelAr: "أكمل أسئلة von … bis وab وgegen والتكرار montags وصيغة التاريخ في e16 وe17 وe19 وe22 وe23 وe25؛ يلزم الصواب في كلها.",
         completion: "all-correct",
       },
@@ -110,7 +110,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أرتب كلمات طلب موعد شائع مهذب، وأتعرف إلى رد يؤكد قبول وقت مقترح.",
       evidence: {
         exerciseIds: ["e21", "e26", "e27"],
-        taskIds: ["practice:a1-09:e21", "flow-practice:a1-09:e21", "practice:a1-09:e26", "flow-practice:a1-09:e26", "practice:a1-09:e27", "flow-practice:a1-09:e27"],
+        taskIds: ["practice:a1-09:e21", "practice:a1-09:e26", "practice:a1-09:e27"],
         labelAr: "رتّب الطلب في e21، واختر صيغة طلب مناسبة في e26، ثم اختر قبول الوقت المقترح في e27؛ هذه مهام نصية ولا تقيس الكلام الشفهي.",
         completion: "all-correct",
       },

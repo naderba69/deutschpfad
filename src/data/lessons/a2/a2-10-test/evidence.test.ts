@@ -17,7 +17,7 @@ describe("A2-10 lesson content audit", () => {
       ...lessonA210.practiceBank.map((item) => `practice:${lessonA210.id}:${item.id}`),
       ...lessonA210.practiceBank
         .slice(0, Math.min(4, lessonA210.practiceBank.length))
-        .map((item) => `flow-practice:${lessonA210.id}:${item.id}`),
+        .map((item) => `practice:${lessonA210.id}:${item.id}`),
       ...lessonA210.miniTest.map((item) => `mini-test:${lessonA210.id}:${item.id}`),
       ...lessonA210.miniTest
         .filter((item) => item.type === "multiple-choice")
@@ -27,8 +27,6 @@ describe("A2-10 lesson content audit", () => {
       ...reading.questions.map((item) => `reading:${reading.id}:${item.id}`),
       ...lessonA210.listening.questions.map((item) => `listening:${item.itemId}:${item.id}`),
     ]);
-    expect(validTaskIds.has("flow-practice:a2-10:e4")).toBe(true);
-    expect(validTaskIds.has("flow-practice:a2-10:e5")).toBe(false);
     expect(validTaskIds.has("flow-mini-test:a2-10:m1")).toBe(true);
     expect(validTaskIds.has("flow-mini-test:a2-10:m2")).toBe(true);
     expect(validTaskIds.has("flow-mini-test:a2-10:m3")).toBe(false);
@@ -100,7 +98,7 @@ describe("A2-10 lesson content audit", () => {
 
     const wrongTaskContext = allCorrectFor("z1").map((event) =>
       event.type === "exercise-result" && event.exerciseId === "e1"
-        ? { ...event, taskId: "flow-practice:a2-10:e5" }
+        ? { ...event, taskId: "practice:a2-10:e5" }
         : event,
     );
     expect(getGoalEvidenceStatus(goal("z1"), lessonA210.id, wrongTaskContext)).toBe("pending");

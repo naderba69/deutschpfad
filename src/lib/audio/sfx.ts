@@ -6,10 +6,6 @@
 let ctx: AudioContext | null = null;
 let enabled = true;
 
-/** هل المؤثرات مفعّلة؟ */
-export function isSfxEnabled(): boolean {
-  return enabled;
-}
 
 /** تفعيل/إيقاف المؤثرات (يُحفظ في localStorage) */
 export function setSfxEnabled(value: boolean): void {
@@ -81,12 +77,4 @@ export function playAchievement(): void {
   tone(1046.5, 0.32, 0.35, "triangle", 0.18);
 }
 
-/** 👆 نقرة خفيفة */
-export function playClick(): void {
-  tone(880, 0, 0.05, "sine", 0.06);
-}
 
-/** ⏱️ تكتكة العد التنازلي (آخر 3 ثوانٍ) */
-export function playTick(final = false): void {
-  tone(final ? 1046.5 : 660, 0, final ? 0.25 : 0.08, "square", 0.07);
-}

@@ -62,12 +62,12 @@ describe("A2-09 lesson audit", () => {
     }
     // The practice flow reveals only the first min(4, practiceBank.length) tasks.
     for (const exercise of lessonA209.practiceBank.slice(0, Math.min(4, lessonA209.practiceBank.length))) {
-      validTaskIds.add(`flow-practice:${lessonA209.id}:${exercise.id}`);
+      validTaskIds.add(`practice:${lessonA209.id}:${exercise.id}`);
     }
     for (const exercise of lessonA209.miniTest) {
       validTaskIds.add(`mini-test:${lessonA209.id}:${exercise.id}`);
     }
-    // The lesson-flow mini-test shows at most the first three multiple-choice tasks.
+    // The the-progressive-reveal mini-test shows at most the first three multiple-choice tasks.
     for (const exercise of lessonA209.miniTest
       .filter((item) => item.type === "multiple-choice")
       .slice(0, 3)) {
@@ -107,13 +107,6 @@ describe("A2-09 lesson audit", () => {
         expect(validTaskIds.has(taskId), `${goal.id}: ${taskId}`).toBe(true);
         const exerciseId = taskId.split(":").at(-1);
         expect(evidence.exerciseIds).toContain(exerciseId);
-        if (taskId.startsWith("flow-practice:")) {
-          expect(
-            lessonA209.practiceBank
-              .slice(0, Math.min(4, lessonA209.practiceBank.length))
-              .some((exercise) => exercise.id === exerciseId),
-          ).toBe(true);
-        }
       }
       for (const exerciseId of evidence.exerciseIds) {
         expect(taskIds.some((taskId) => taskId.endsWith(`:${exerciseId}`))).toBe(true);
@@ -139,9 +132,6 @@ describe("A2-09 lesson audit", () => {
       ).toBe("evidenced");
     }
 
-    expect(validTaskIds.has("flow-practice:a2-09:e1")).toBe(true);
-    expect(validTaskIds.has("flow-practice:a2-09:e4")).toBe(true);
-    expect(validTaskIds.has("flow-practice:a2-09:e5")).toBe(false);
     expect(validTaskIds.has("flow-mini-test:a2-09:m1")).toBe(true);
     expect(validTaskIds.has("flow-mini-test:a2-09:m2")).toBe(true);
     expect(validTaskIds.has("flow-mini-test:a2-09:m4")).toBe(false);

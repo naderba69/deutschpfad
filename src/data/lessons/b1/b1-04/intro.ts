@@ -11,7 +11,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أميّز بين الواقع والافتراض: habe (عندي) وhätte (لو كان عندي).",
       evidence: {
         exerciseIds: ["e1", "e5", "e7"],
-        taskIds: ["practice:b1-04:e1", "flow-practice:b1-04:e1", "practice:b1-04:e5", "practice:b1-04:e7"],
+        taskIds: ["practice:b1-04:e1", "practice:b1-04:e5", "practice:b1-04:e7"],
         labelAr: "أجب صحيحاً عن e1 (ويظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق)، وصحّح e5، وحوّل e7 إلى جملة شرطية صحيحة. الشرح والأمثلة لا تُحتسب أداءً.",
         completion: "all-correct",
       },
@@ -22,7 +22,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أستخدم würde مع المصدر في آخر الجملة: كنت سأسافر.",
       evidence: {
         exerciseIds: ["e2", "m2", "w1"],
-        taskIds: ["practice:b1-04:e2", "flow-practice:b1-04:e2", "mini-test:b1-04:m2", "writing:b1-04:w1"],
+        taskIds: ["practice:b1-04:e2", "mini-test:b1-04:m2", "writing:b1-04:w1"],
         labelAr: "أجب صحيحاً عن e2 (ويظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق)، وعن m2، واكتب w1 بصيغة würde + مصدر في آخر الجملة.",
         completion: "all-correct",
       },

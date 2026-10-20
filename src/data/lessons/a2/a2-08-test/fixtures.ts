@@ -142,9 +142,7 @@ export const expectedEvidence = {
     exerciseIds: ["e1", "e4", "e5", "e12", "e13", "m1", "m3", "w1", "w2"],
     taskIds: [
       "practice:a2-08:e1",
-      "flow-practice:a2-08:e1",
       "practice:a2-08:e4",
-      "flow-practice:a2-08:e4",
       "practice:a2-08:e5",
       "practice:a2-08:e12",
       "practice:a2-08:e13",
@@ -159,7 +157,6 @@ export const expectedEvidence = {
     exerciseIds: ["e2", "e7", "m2", "q3"],
     taskIds: [
       "practice:a2-08:e2",
-      "flow-practice:a2-08:e2",
       "practice:a2-08:e7",
       "mini-test:a2-08:m2",
       "flow-mini-test:a2-08:m2",

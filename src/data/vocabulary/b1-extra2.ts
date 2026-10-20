@@ -21,5 +21,3 @@ export const B1_EXTRA2_VOCAB: VocabEntry[] = [
   ...B1_EXTRA2_VOCAB_2,
   ...B1_EXTRA2_VOCAB_3,
 ];
-
-export const TOTAL_B1_EXTRA2 = B1_EXTRA2_VOCAB.length;

@@ -167,12 +167,6 @@ export interface ExamSprechen {
   teil2Minutes: number;
 }
 
-export const EXAM_SPRECHEN_RUBRIC = [
-  { name: "Aussprache", ar: "النطق والتنغيم (مفهوم للمتحدث الأصلي)", max: 25 },
-  { name: "Wortschatz", ar: "المفردات (دقة ومرونة وملاءمة للموضوع)", max: 25 },
-  { name: "Flüssigkeit", ar: "الطلاقة (تدفق طبيعي بلا توقفات طويلة)", max: 25 },
-  { name: "Interaktion", ar: "التفاعل (الرد على الأسئلة والبناء على كلام الآخر)", max: 25 },
-] as const;
 
 /* ═══════════ الامتحان الكامل ═══════════ */
 

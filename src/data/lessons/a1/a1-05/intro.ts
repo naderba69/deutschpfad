@@ -24,7 +24,6 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         exerciseIds: ["e1", "w2"],
         taskIds: [
           "practice:a1-05:e1",
-          "flow-practice:a1-05:e1",
           "writing:a1-05:w2",
         ],
         labelAr: "أجب عن e1 وأكمل بادئات الأفعال الأربع في w2 إجابة صحيحة.",
@@ -39,7 +38,6 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         exerciseIds: ["e2", "w4"],
         taskIds: [
           "practice:a1-05:e2",
-          "flow-practice:a1-05:e2",
           "writing:a1-05:w4",
         ],
         labelAr: "اختر الوقت الموافق لـ halb neun في e2 وأكمل صيغتي الوقت في w4.",

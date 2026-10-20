@@ -11,7 +11,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أسمّي أنشطة وقت الفراغ وأكتب جملة قصيرة عن هواية أختارها.",
       evidence: {
         exerciseIds: ["e3", "w1"],
-        taskIds: ["practice:a1-06:e3", "flow-practice:a1-06:e3", "writing:a1-06:w1"],
+        taskIds: ["practice:a1-06:e3", "writing:a1-06:w1"],
         labelAr: "صِلْ الأنشطة بمعانيها في e3، ثم اكتب جملة من القائمة المحددة في w1.",
         completion: "all-correct",
       },
@@ -22,7 +22,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أعبّر عن نشاط أحبّه بـgern وشيء أفضّله بـmögen، وأن أفهم سؤالاً بسيطاً عن الرغبة.",
       evidence: {
         exerciseIds: ["e1", "e4", "e8", "e19", "e20", "w1"],
-        taskIds: ["practice:a1-06:e1", "flow-practice:a1-06:e1", "practice:a1-06:e4", "flow-practice:a1-06:e4", "practice:a1-06:e8", "flow-practice:a1-06:e8", "practice:a1-06:e19", "flow-practice:a1-06:e19", "practice:a1-06:e20", "flow-practice:a1-06:e20", "writing:a1-06:w1"],
+        taskIds: ["practice:a1-06:e1", "practice:a1-06:e4", "practice:a1-06:e8", "practice:a1-06:e19", "practice:a1-06:e20", "writing:a1-06:w1"],
         labelAr: "أكمل gern في e1 ورتّب جملته في e4، وافهم سؤال Lust في e8، ثم أجب عن mögen وLust في e19–e20 واكتب جملة في w1.",
         completion: "all-correct",
       },
@@ -33,7 +33,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أصوغ أمراً بسيطاً بصيغ du وihr وSie، وأن أميّز بادئة الفعل المنفصل في الأمر.",
       evidence: {
         exerciseIds: ["w2", "e6"],
-        taskIds: ["writing:a1-06:w2", "practice:a1-06:e6", "flow-practice:a1-06:e6"],
+        taskIds: ["writing:a1-06:w2", "practice:a1-06:e6"],
         labelAr: "أكمل صيغ الأمر الثلاث في w2، ثم اختر الأوامر المنفصلة المناسبة في e6.",
         completion: "all-correct",
       },
@@ -55,7 +55,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أستخدم تغيّر الصائت في أفعال شائعة مع du وer/sie/es، مثل essen–isst وlesen–liest وfahren–fährt.",
       evidence: {
         exerciseIds: ["e11"],
-        taskIds: ["practice:a1-06:e11", "flow-practice:a1-06:e11"],
+        taskIds: ["practice:a1-06:e11"],
         labelAr: "أكمل صيغ الأفعال الثلاثة في e11 إجابة صحيحة.",
         completion: "all-correct",
       },
@@ -66,7 +66,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أستخدم können وmöchte(n) في جمل بسيطة، مع المصدر المناسب بعد الفعل الناقص.",
       evidence: {
         exerciseIds: ["e12", "e16"],
-        taskIds: ["practice:a1-06:e12", "flow-practice:a1-06:e12", "practice:a1-06:e16", "flow-practice:a1-06:e16"],
+        taskIds: ["practice:a1-06:e12", "practice:a1-06:e16"],
         labelAr: "أكمل تصريفات können/möchten في e12، ورتّب جملة الفعل الناقص في e16.",
         completion: "all-correct",
       },
@@ -77,7 +77,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أستخدم war وhatte في جمل قصيرة عن حالة أو تجربة سابقة.",
       evidence: {
         exerciseIds: ["e13", "e18", "w5"],
-        taskIds: ["practice:a1-06:e13", "flow-practice:a1-06:e13", "practice:a1-06:e18", "flow-practice:a1-06:e18", "writing:a1-06:w5"],
+        taskIds: ["practice:a1-06:e13", "practice:a1-06:e18", "writing:a1-06:w5"],
         labelAr: "أكمل تصريف الماضي في e13، وحوّل الجملة في e18، ثم أكمل الرسالة القصيرة في w5.",
         completion: "all-correct",
       },

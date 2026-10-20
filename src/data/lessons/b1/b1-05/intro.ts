@@ -22,7 +22,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أصوغ الشرطية في الماضي: كنت سأفعل (hätte/wäre + تصريف ثالث).",
       evidence: {
         exerciseIds: ["e1", "m2", "w1"],
-        taskIds: ["practice:b1-05:e1", "flow-practice:b1-05:e1", "mini-test:b1-05:m2", "writing:b1-05:w1"],
+        taskIds: ["practice:b1-05:e1", "mini-test:b1-05:m2", "writing:b1-05:w1"],
         labelAr: "أجب صحيحاً عن e1 (ويظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق)، وعن m2، واكتب w1 بصيغة hätte + تصريف ثالث. الشرح لا يُحتسب أداءً.",
         completion: "all-correct",
       },

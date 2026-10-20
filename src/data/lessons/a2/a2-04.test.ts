@@ -131,9 +131,9 @@ describe("A2-04 audited lesson", () => {
     for (const exercise of lessonA204.practiceBank) {
       validTaskIds.add(`practice:${lessonA204.id}:${exercise.id}`);
     }
-    // lesson-flow progressively reveals only the first min(4, bank size); its IDs are not used as the objective evidence here.
+    // the progressive reveal shows only the first min(4, bank size); its IDs are not used as the objective evidence here.
     for (const exercise of lessonA204.practiceBank.slice(0, Math.min(4, lessonA204.practiceBank.length))) {
-      validTaskIds.add(`flow-practice:${lessonA204.id}:${exercise.id}`);
+      validTaskIds.add(`practice:${lessonA204.id}:${exercise.id}`);
     }
     for (const exercise of lessonA204.miniTest) validTaskIds.add(`mini-test:${lessonA204.id}:${exercise.id}`);
     for (const exercise of lessonA204.writing) validTaskIds.add(`writing:${lessonA204.id}:${exercise.id}`);
@@ -152,9 +152,6 @@ describe("A2-04 audited lesson", () => {
         expect(validTaskIds.has(taskId), `${goal.id}: ${taskId}`).toBe(true);
         const exerciseId = taskId.split(":").at(-1);
         expect(evidence?.exerciseIds).toContain(exerciseId);
-        if (taskId.startsWith("flow-practice:")) {
-          expect(lessonA204.practiceBank.slice(0, Math.min(4, lessonA204.practiceBank.length)).some((exercise) => exercise.id === exerciseId)).toBe(true);
-        }
       }
       for (const exerciseId of evidence?.exerciseIds ?? []) {
         expect(evidence?.taskIds?.some((taskId) => taskId.endsWith(`:${exerciseId}`))).toBe(true);
@@ -165,7 +162,7 @@ describe("A2-04 audited lesson", () => {
       "reading:read-a2-04:rq2", "reading:read-a2-04:rq3", "reading:read-a2-04:rq7",
     ]);
     expect(lessonA204.lernziele.find((goal) => goal.id === "z2")?.evidence?.taskIds).toEqual([
-      "practice:a2-04:e3", "flow-practice:a2-04:e3",
+      "practice:a2-04:e3",
     ]);
     expect(lessonA204.lernziele.find((goal) => goal.id === "z4")?.evidence?.taskIds).toEqual(["listening:l3:q4"]);
     expect(getListeningQuestionTaskId(lessonA204.id, "l3", "q4", false)).toBe("listening:l3:q4");
@@ -481,7 +478,7 @@ describe("A2-04 audited lesson", () => {
     }
     const practiceGoal = lessonA204.lernziele.find((goal) => goal.id === "z2");
     if (!practiceGoal) throw new Error("z2 must be present");
-    const flowPracticeEvent = goalEvent("z2", "e3", true, "flow-practice:a2-04:e3");
+    const flowPracticeEvent = goalEvent("z2", "e3", true, "practice:a2-04:e3");
     expect(getGoalEvidenceStatus(practiceGoal, lessonA204.id, [flowPracticeEvent])).toBe("evidenced");
 
     const readingGoal = lessonA204.lernziele.find((goal) => goal.id === "z1");

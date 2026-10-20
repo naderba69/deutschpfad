@@ -11,9 +11,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أطابق أسماء أربع وسائل إعلام بمعانيها الأساسية.",
       evidence: {
         exerciseIds: ["e3"],
-        taskIds: ["practice:a2-06:e3", "flow-practice:a2-06:e3"],
+        taskIds: ["practice:a2-06:e3"],
         labelAr:
-          "أكمل المطابقة e3 كاملة؛ يظهر التمرين ضمن أول أربعة في lesson-flow وقد يظهر في عينة practice العشوائية.",
+          "أكمل المطابقة e3 كاملة؛ يظهر التمرين ضمن أول أربعة في العرض التدريجي وقد يظهر في عينة practice العشوائية.",
         completion: "all-correct",
       },
     },

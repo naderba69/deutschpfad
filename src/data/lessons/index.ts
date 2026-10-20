@@ -95,14 +95,4 @@ export function getLessonsByUnit(unitId: string): Lesson[] {
   return LESSONS.filter((l) => l.unitId === unitId).sort((a, b) => a.order - b.order);
 }
 
-/** خريطة: معرف الوحدة ← الدرس الأول المتاح فيها (لروابط خارطة الطريق) */
-export function getFirstLessonForUnit(unitId: string): Lesson | undefined {
-  return getLessonsByUnit(unitId)[0];
-}
 
-/** كل دروس مستوى */
-export function getLessonsByLevel(level: string): Lesson[] {
-  return LESSONS.filter((l) => l.level === level).sort((a, b) => a.order - b.order);
-}
-
-export const TOTAL_LESSONS_AVAILABLE = LESSONS.length;

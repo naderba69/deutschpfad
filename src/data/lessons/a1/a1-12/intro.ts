@@ -13,7 +13,6 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         exerciseIds: ["e3", "e8"],
         taskIds: [
           "practice:a1-12:e3",
-          "flow-practice:a1-12:e3",
           "practice:a1-12:e8",
         ],
         labelAr: "مطابقة أربعة أسماء للطقس بمعانيها، وتمييز معنى جملة قصيرة عن الثلج.",
@@ -28,9 +27,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         exerciseIds: ["e1", "e4"],
         taskIds: [
           "practice:a1-12:e1",
-          "flow-practice:a1-12:e1",
           "practice:a1-12:e4",
-          "flow-practice:a1-12:e4",
         ],
         labelAr: "اختيار es في وصف الطقس، وترتيب جملة regnen؛ ولا يُحتسب فتح التمرين دليلاً.",
         completion: "all-correct",
@@ -44,7 +41,6 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         exerciseIds: ["e2", "e18", "m2", "m5", "w2"],
         taskIds: [
           "practice:a1-12:e2",
-          "flow-practice:a1-12:e2",
           "practice:a1-12:e18",
           "mini-test:a1-12:m2",
           "mini-test:a1-12:m5",

@@ -38,10 +38,6 @@ export const GRAMMAR_CATEGORIES: Record<GrammarCategory, string> = {
   particles: "الجسيمات المشدِّدة",
 };
 
-/** إيجاد قاعدة بالمعرّف (لربط قاموس الأخطاء) */
-export function getGrammarTopicById(id: string): GrammarTopic | undefined {
-  return GRAMMAR_REFERENCE.find((t) => t.id === id);
-}
 
 /** قواعد نوع خطأ معين (لربط قاموس الأخطاء بالمرجع — اقتراح 1) */
 export function getTopicsByMistakeType(type: ErrorTypeCode): GrammarTopic[] {

@@ -12,10 +12,10 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e1", "e19", "e22", "e26", "w1"],
         taskIds: [
-          "practice:a1-07:e1", "flow-practice:a1-07:e1",
-          "practice:a1-07:e19", "flow-practice:a1-07:e19",
-          "practice:a1-07:e22", "flow-practice:a1-07:e22",
-          "practice:a1-07:e26", "flow-practice:a1-07:e26",
+          "practice:a1-07:e1",
+          "practice:a1-07:e19",
+          "practice:a1-07:e22",
+          "practice:a1-07:e26",
           "writing:a1-07:w1",
         ],
         labelAr:
@@ -30,13 +30,13 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e2", "e3", "e5", "e6", "e9", "e11", "e14"],
         taskIds: [
-          "practice:a1-07:e2", "flow-practice:a1-07:e2",
-          "practice:a1-07:e3", "flow-practice:a1-07:e3",
-          "practice:a1-07:e5", "flow-practice:a1-07:e5",
-          "practice:a1-07:e6", "flow-practice:a1-07:e6",
-          "practice:a1-07:e9", "flow-practice:a1-07:e9",
-          "practice:a1-07:e11", "flow-practice:a1-07:e11",
-          "practice:a1-07:e14", "flow-practice:a1-07:e14",
+          "practice:a1-07:e2",
+          "practice:a1-07:e3",
+          "practice:a1-07:e5",
+          "practice:a1-07:e6",
+          "practice:a1-07:e9",
+          "practice:a1-07:e11",
+          "practice:a1-07:e14",
         ],
         labelAr:
           "أكمل مفردات الجمع في e2–e3 وe14، وصحّح أو اختر توافق الفعل مع المفرد والجمع في e5–e6 وe9 وe11.",
@@ -50,13 +50,13 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e4", "e7", "e10", "e13", "e15", "e16", "e18"],
         taskIds: [
-          "practice:a1-07:e4", "flow-practice:a1-07:e4",
-          "practice:a1-07:e7", "flow-practice:a1-07:e7",
-          "practice:a1-07:e10", "flow-practice:a1-07:e10",
-          "practice:a1-07:e13", "flow-practice:a1-07:e13",
-          "practice:a1-07:e15", "flow-practice:a1-07:e15",
-          "practice:a1-07:e16", "flow-practice:a1-07:e16",
-          "practice:a1-07:e18", "flow-practice:a1-07:e18",
+          "practice:a1-07:e4",
+          "practice:a1-07:e7",
+          "practice:a1-07:e10",
+          "practice:a1-07:e13",
+          "practice:a1-07:e15",
+          "practice:a1-07:e16",
+          "practice:a1-07:e18",
         ],
         labelAr:
           "رتّب سؤال السعر في e4 وe7، واكتب/أكمل عبارات الطلب والكمية في e10 وe13 وe15 وe16 وe18؛ يجب أن تكون كل النتائج صحيحة.",
@@ -112,8 +112,8 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e20", "e29"],
         taskIds: [
-          "practice:a1-07:e20", "flow-practice:a1-07:e20",
-          "practice:a1-07:e29", "flow-practice:a1-07:e29",
+          "practice:a1-07:e20",
+          "practice:a1-07:e29",
         ],
         labelAr:
           "افهم الحوار المكتوب في e20 واختر صيغة الطلب المناسبة في e29. هذا يقيس الفهم والاختيار الكتابي، لا نطقك الشفهي.",
@@ -127,12 +127,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e21", "e23", "e24", "e25", "e27", "e28"],
         taskIds: [
-          "practice:a1-07:e21", "flow-practice:a1-07:e21",
-          "practice:a1-07:e23", "flow-practice:a1-07:e23",
-          "practice:a1-07:e24", "flow-practice:a1-07:e24",
-          "practice:a1-07:e25", "flow-practice:a1-07:e25",
-          "practice:a1-07:e27", "flow-practice:a1-07:e27",
-          "practice:a1-07:e28", "flow-practice:a1-07:e28",
+          "practice:a1-07:e21",
+          "practice:a1-07:e23",
+          "practice:a1-07:e24",
+          "practice:a1-07:e25",
+          "practice:a1-07:e27",
+          "practice:a1-07:e28",
         ],
         labelAr:
           "اختر ترتيب العنوان في e21، وصحّح جملة الشارع في e23، واختر طلب التهجئة في e24، ورتّب سؤال الهاتف في e25، ثم أجب عن الرمز البريدي وبداية الرقم في e27–e28.",

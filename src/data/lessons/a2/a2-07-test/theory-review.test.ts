@@ -334,7 +334,7 @@ describe("A2-07 audited lesson", () => {
     const allEsGibtEvents = (esGibtGoal.evidence?.exerciseIds ?? []).map((exerciseId) =>
       goalEvent("z1", exerciseId, true),
     );
-    const flowEvent = goalEvent("z1", "e1", true, "flow-practice:a2-07:e1");
+    const flowEvent = goalEvent("z1", "e1", true, "practice:a2-07:e1");
     expect(
       getGoalEvidenceStatus(
         esGibtGoal,

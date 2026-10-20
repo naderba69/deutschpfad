@@ -14,8 +14,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "e3"
         ],
         "taskIds": [
-          "practice:a1-11:e3",
-          "flow-practice:a1-11:e3"
+          "practice:a1-11:e3"
         ],
         "labelAr": "أنجز مطابقة الأماكن في e3 إجابة صحيحة؛ مشاهدة الكلمات أو فتح التمرين لا تسجل دليلاً.",
         "completion": "all-correct"
@@ -50,7 +49,6 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         ],
         "taskIds": [
           "practice:a1-11:e4",
-          "flow-practice:a1-11:e4",
           "practice:a1-11:e6",
           "reading:read-a1-11:rq2"
         ],
@@ -79,9 +77,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         ],
         "taskIds": [
           "practice:a1-11:e1",
-          "flow-practice:a1-11:e1",
           "practice:a1-11:e2",
-          "flow-practice:a1-11:e2",
           "practice:a1-11:e5",
           "practice:a1-11:e9",
           "practice:a1-11:e19",

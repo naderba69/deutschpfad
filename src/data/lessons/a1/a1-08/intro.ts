@@ -11,7 +11,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أسمّي مفردات أساسية للملابس والألوان مع أداة الاسم الألماني.",
       evidence: {
         exerciseIds: ["e3", "e26"],
-        taskIds: ["practice:a1-08:e3", "flow-practice:a1-08:e3", "practice:a1-08:e26", "flow-practice:a1-08:e26"],
+        taskIds: ["practice:a1-08:e3", "practice:a1-08:e26"],
         labelAr: "صِل الألوان في e3 وقطع الملابس في e26 بمعانيها؛ يلزم إكمال المهمتين بإجابات صحيحة.",
         completion: "all-correct",
       },
@@ -22,7 +22,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أكتب وصفاً بسيطاً لقطعة ملابس باستعمال sein وصفة خبرية بلا نهاية، مثل: Das Hemd ist rot.",
       evidence: {
         exerciseIds: ["e1", "e4", "e9", "w1"],
-        taskIds: ["practice:a1-08:e1", "flow-practice:a1-08:e1", "practice:a1-08:e4", "flow-practice:a1-08:e4", "practice:a1-08:e9", "flow-practice:a1-08:e9", "writing:a1-08:w1"],
+        taskIds: ["practice:a1-08:e1", "practice:a1-08:e4", "practice:a1-08:e9", "writing:a1-08:w1"],
         labelAr: "اختر الصفة الخبرية الصحيحة في e1 وe9، رتّب جملة الوصف في e4، ثم اكتب الجملتين في w1؛ يجب أن تصحّ كل النتائج.",
         completion: "all-correct",
       },
@@ -33,7 +33,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أصرّف tragen في المضارع مع الفاعل في أمثلة مختارة.",
       evidence: {
         exerciseIds: ["e2", "e6", "m2"],
-        taskIds: ["practice:a1-08:e2", "flow-practice:a1-08:e2", "practice:a1-08:e6", "flow-practice:a1-08:e6", "mini-test:a1-08:m2"],
+        taskIds: ["practice:a1-08:e2", "practice:a1-08:e6", "mini-test:a1-08:m2"],
         labelAr: "أجب عن تصريف du في e2، وصيغ الفاعل في e6، ثم أعده في سؤال الاختبار m2؛ يلزم الصواب في المهمات الثلاث.",
         completion: "all-correct",
       },
@@ -44,7 +44,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أصوغ كتابةً سؤالاً بسيطاً عن الرأي باستعمال Wie findest du …?",
       evidence: {
         exerciseIds: ["e7"],
-        taskIds: ["practice:a1-08:e7", "flow-practice:a1-08:e7"],
+        taskIds: ["practice:a1-08:e7"],
         labelAr: "حوّل العبارة إلى سؤال رأي في e7 واكتب صيغة مقبولة كاملة.",
         completion: "all-correct",
       },
@@ -55,7 +55,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أستعمل صيغاً مختارة من welcher- وdieser- مع أسماء الملابس في الرفع والنصب.",
       evidence: {
         exerciseIds: ["e11", "e12", "e13", "e14", "e15"],
-        taskIds: ["practice:a1-08:e11", "flow-practice:a1-08:e11", "practice:a1-08:e12", "flow-practice:a1-08:e12", "practice:a1-08:e13", "flow-practice:a1-08:e13", "practice:a1-08:e14", "flow-practice:a1-08:e14", "practice:a1-08:e15", "flow-practice:a1-08:e15"],
+        taskIds: ["practice:a1-08:e11", "practice:a1-08:e12", "practice:a1-08:e13", "practice:a1-08:e14", "practice:a1-08:e15"],
         labelAr: "أكمل صيغ الإشارة والسؤال في e11–e14، وطابق اسم القطعة مع dies- في e15؛ يلزم الصواب في كل مهمة.",
         completion: "all-correct",
       },
@@ -66,7 +66,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أبني جملاً بسيطة بـ gefallen، وأختار ضمير الداتيف وأطابق الفعل مع فاعله.",
       evidence: {
         exerciseIds: ["e16", "e18", "e19", "e20", "e22", "e23", "e25"],
-        taskIds: ["practice:a1-08:e16", "flow-practice:a1-08:e16", "practice:a1-08:e18", "flow-practice:a1-08:e18", "practice:a1-08:e19", "flow-practice:a1-08:e19", "practice:a1-08:e20", "flow-practice:a1-08:e20", "practice:a1-08:e22", "flow-practice:a1-08:e22", "practice:a1-08:e23", "flow-practice:a1-08:e23", "practice:a1-08:e25", "flow-practice:a1-08:e25"],
+        taskIds: ["practice:a1-08:e16", "practice:a1-08:e18", "practice:a1-08:e19", "practice:a1-08:e20", "practice:a1-08:e22", "practice:a1-08:e23", "practice:a1-08:e25"],
         labelAr: "أجب عن توافق الفعل والضمير في e16 وe19 وe20 وe23، وصحّح/حوّل الجملة في e18 وe22، ثم اختر الرد المناسب في e25؛ كل النتائج مطلوبة.",
         completion: "all-correct",
       },
@@ -77,7 +77,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أميّز في أمثلة الملابس بين ملاءمة المقاس بـpassen وملاءمة المظهر بـstehen.",
       evidence: {
         exerciseIds: ["e17", "e24", "e25"],
-        taskIds: ["practice:a1-08:e17", "flow-practice:a1-08:e17", "practice:a1-08:e24", "flow-practice:a1-08:e24", "practice:a1-08:e25", "flow-practice:a1-08:e25"],
+        taskIds: ["practice:a1-08:e17", "practice:a1-08:e24", "practice:a1-08:e25"],
         labelAr: "اختر فعل المقاس في سياقه في e17، وطابق الأفعال بمعانيها في e24، ثم اختر جواباً يفصل المقاس عن الإعجاب في e25.",
         completion: "all-correct",
       },
@@ -88,7 +88,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أختار doch عندما أرفض مضمون سؤال منفي وأجيب بالإيجاب في الأمثلة المعطاة.",
       evidence: {
         exerciseIds: ["e27", "rq3"],
-        taskIds: ["practice:a1-08:e27", "flow-practice:a1-08:e27", "reading:r1:rq3"],
+        taskIds: ["practice:a1-08:e27", "reading:r1:rq3"],
         labelAr: "أكمل جواب السؤال المنفي في e27، ثم حدّد سبب جواب أميرة بـDoch في سؤال فهم القراءة rq3؛ يلزم الصواب في كليهما.",
         completion: "all-correct",
       },

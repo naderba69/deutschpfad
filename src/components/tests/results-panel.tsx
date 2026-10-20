@@ -192,16 +192,4 @@ function ReviewLessonsLink({ level }: { level: string }) {
   );
 }
 
-/** شريط مهارة لطيف (للمعالجة البصرية) */
-export function SkillBadge({ skill }: { skill: TestSkill }) {
-  return (
-    <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">
-      {SKILL_LABEL[skill] ?? skill}
-    </span>
-  );
-}
 
-/** مساعد: مستوى من نسبة (للعرض السريع) */
-export function levelFromPctLabel(pct: number) {
-  return levelFromPct(pct);
-}

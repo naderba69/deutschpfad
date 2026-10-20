@@ -149,7 +149,6 @@ function validTaskIds() {
   return new Set([
     ...lessonA108.practiceBank.flatMap((task) => [
       `practice:${lessonA108.id}:${task.id}`,
-      `flow-practice:${lessonA108.id}:${task.id}`,
     ]),
     ...lessonA108.miniTest.map((task) => `mini-test:${lessonA108.id}:${task.id}`),
     ...lessonA108.writing.map((task) => `writing:${lessonA108.id}:${task.id}`),
@@ -284,7 +283,7 @@ describe("A1-08 audited lesson content", () => {
 
     const z4 = lessonA108.lernziele.find((goal) => goal.id === "z4");
     expect(z4?.de).toContain("schriftlich");
-    expect(z4?.evidence?.taskIds).toEqual(["practice:a1-08:e7", "flow-practice:a1-08:e7"]);
+    expect(z4?.evidence?.taskIds).toEqual(["practice:a1-08:e7"]);
   });
 
   it("keeps Dativ corrections distinct from context-dependent wording and avoids a false first-exposure claim", () => {

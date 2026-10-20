@@ -43,12 +43,12 @@ describe("A2-06 audited lesson", () => {
     for (const exercise of lessonA206.practiceBank) {
       validTaskIds.add(`practice:${lessonA206.id}:${exercise.id}`);
     }
-    // ordinary practice samples five random items; lesson-flow reveals only its first min(4, bank size).
+    // ordinary practice samples five random items; the progressive reveal shows only its first min(4, bank size).
     for (const exercise of lessonA206.practiceBank.slice(
       0,
       Math.min(4, lessonA206.practiceBank.length),
     )) {
-      validTaskIds.add(`flow-practice:${lessonA206.id}:${exercise.id}`);
+      validTaskIds.add(`practice:${lessonA206.id}:${exercise.id}`);
     }
     for (const exercise of lessonA206.miniTest) {
       validTaskIds.add(`mini-test:${lessonA206.id}:${exercise.id}`);
@@ -76,13 +76,6 @@ describe("A2-06 audited lesson", () => {
         expect(validTaskIds.has(taskId), `${goal.id}: ${taskId}`).toBe(true);
         const exerciseId = taskId.split(":").at(-1);
         expect(evidence?.exerciseIds).toContain(exerciseId);
-        if (taskId.startsWith("flow-practice:")) {
-          expect(
-            lessonA206.practiceBank
-              .slice(0, Math.min(4, lessonA206.practiceBank.length))
-              .some((exercise) => exercise.id === exerciseId),
-          ).toBe(true);
-        }
       }
       for (const exerciseId of evidence?.exerciseIds ?? []) {
         expect(evidence?.taskIds?.some((taskId) => taskId.endsWith(`:${exerciseId}`))).toBe(
@@ -93,7 +86,6 @@ describe("A2-06 audited lesson", () => {
 
     expect(lessonA206.lernziele.find((goal) => goal.id === "z1")?.evidence?.taskIds).toEqual([
       "practice:a2-06:e3",
-      "flow-practice:a2-06:e3",
     ]);
     expect(lessonA206.lernziele.find((goal) => goal.id === "z3")?.evidence?.taskIds).toEqual([
       "mini-test:a2-06:m1",
@@ -169,7 +161,7 @@ describe("A2-06 audited lesson", () => {
       getGoalEvidenceStatus(
         vocabularyGoal,
         lessonA206.id,
-        [goalEvent("z1", "e3", true, "flow-practice:a2-06:e3")],
+        [goalEvent("z1", "e3", true, "practice:a2-06:e3")],
       ),
     ).toBe("evidenced");
     expect(

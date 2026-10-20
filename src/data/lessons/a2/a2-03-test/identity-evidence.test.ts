@@ -33,7 +33,7 @@ describe("A2-03 audited lesson", () => {
       validTaskIds.add(`practice:${lessonA203.id}:${exercise.id}`);
     }
     for (const exercise of lessonA203.practiceBank.slice(0, Math.min(4, lessonA203.practiceBank.length))) {
-      validTaskIds.add(`flow-practice:${lessonA203.id}:${exercise.id}`);
+      validTaskIds.add(`practice:${lessonA203.id}:${exercise.id}`);
     }
     for (const exercise of lessonA203.writing) {
       validTaskIds.add(`writing:${lessonA203.id}:${exercise.id}`);
@@ -52,7 +52,6 @@ describe("A2-03 audited lesson", () => {
       expect(evidence, `${goal.id} must have evidence`).toBeDefined();
       expect(evidence?.exerciseIds.length).toBeGreaterThan(0);
       expect(evidence?.taskIds?.length).toBeGreaterThan(0);
-      expect(evidence?.taskIds?.some((taskId) => taskId.startsWith("flow-practice:"))).toBe(false);
       for (const taskId of evidence?.taskIds ?? []) {
         expect(validTaskIds.has(taskId), `${goal.id}: ${taskId}`).toBe(true);
         const exerciseId = taskId.split(":").at(-1);

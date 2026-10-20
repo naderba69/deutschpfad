@@ -140,11 +140,8 @@ export const expectedEvidence = {
     exerciseIds: ["e1", "e2", "e4", "e7", "e9", "m1", "m3", "m5"],
     taskIds: [
       "practice:a2-10:e1",
-      "flow-practice:a2-10:e1",
       "practice:a2-10:e2",
-      "flow-practice:a2-10:e2",
       "practice:a2-10:e4",
-      "flow-practice:a2-10:e4",
       "practice:a2-10:e7",
       "practice:a2-10:e9",
       "mini-test:a2-10:m1",

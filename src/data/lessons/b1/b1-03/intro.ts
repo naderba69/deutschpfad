@@ -22,7 +22,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أبني المبني للمجهول: يُبنى / بُني.",
       evidence: {
         exerciseIds: ["e1", "e7", "m1"],
-        taskIds: ["practice:b1-03:e1", "flow-practice:b1-03:e1", "practice:b1-03:e7", "mini-test:b1-03:m1"],
+        taskIds: ["practice:b1-03:e1", "practice:b1-03:e7", "mini-test:b1-03:m1"],
         labelAr: "أجب صحيحاً عن e1 (يظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق)، وحوّل e7 من النشط إلى المجهول بصحة، وأجب عن m1 في الاختبار المصغّر. قراءة جدول t1 لا تُحتسب أداءً.",
         completion: "all-correct",
       },

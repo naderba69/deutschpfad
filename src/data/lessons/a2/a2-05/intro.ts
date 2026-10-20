@@ -11,8 +11,8 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أطابق عبارات هاتفية أساسية بوظائفها ومعانيها.",
       evidence: {
         exerciseIds: ["e3"],
-        taskIds: ["practice:a2-05:e3", "flow-practice:a2-05:e3"],
-        labelAr: "أكمل تمرين المطابقة e3؛ يظهر ضمن أول أربعة في lesson-flow، وقد يظهر في عينة practice العشوائية.",
+        taskIds: ["practice:a2-05:e3"],
+        labelAr: "أكمل تمرين المطابقة e3؛ يظهر ضمن أول أربعة في العرض التدريجي، وقد يظهر في عينة practice العشوائية.",
         completion: "all-correct",
       },
     },

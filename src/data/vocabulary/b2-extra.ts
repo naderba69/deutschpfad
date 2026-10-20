@@ -490,5 +490,3 @@ export const B2_EXTRA_VOCAB: VocabEntry[] = [
   { de: "derjenige / diejenige", ar: "ذلك الذي", g: "pron" },
   { de: "derselbe / dieselbe", ar: "نفسه", g: "pron" },
 ];
-
-export const TOTAL_B2_EXTRA = B2_EXTRA_VOCAB.length;

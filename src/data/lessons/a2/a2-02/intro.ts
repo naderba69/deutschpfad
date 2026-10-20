@@ -13,7 +13,6 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         exerciseIds: ["e1", "e12", "w1"],
         taskIds: [
           "practice:a2-02:e1",
-          "flow-practice:a2-02:e1",
           "practice:a2-02:e12",
           "writing:a2-02:w1",
         ],

@@ -153,7 +153,7 @@ function recordedTaskIds(): Set<string> {
     ...lessonA114.practiceBank.flatMap((task, index) => [
       `practice:${lessonA114.id}:${task.id}`,
       ...(index < Math.min(4, lessonA114.practiceBank.length)
-        ? [`flow-practice:${lessonA114.id}:${task.id}`]
+        ? [`practice:${lessonA114.id}:${task.id}`]
         : []),
     ]),
     ...lessonA114.miniTest.map((task) => `mini-test:${lessonA114.id}:${task.id}`),
@@ -234,8 +234,6 @@ describe("A1-14 audited lesson content", () => {
       }
     }
 
-    expect(validTaskIds.has("flow-practice:a1-14:e4")).toBe(true);
-    expect(validTaskIds.has("flow-practice:a1-14:e5")).toBe(false);
     expect(validTaskIds.has("practice:a1-14:e26")).toBe(true);
     expect(validTaskIds.has("flow-mini-test:a1-14:mt-a1-14-5")).toBe(true);
     expect(validTaskIds.has("flow-mini-test:a1-14:mt-a1-14-2")).toBe(false);

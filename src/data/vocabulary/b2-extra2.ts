@@ -13,5 +13,3 @@ import {B2_EXTRA2_PART4} from "./b2-extra2/part4";
 
 export const B2_EXTRA2_VOCAB: VocabEntry[] = [...B2_EXTRA2_PART1, ...B2_EXTRA2_PART2, ...B2_EXTRA2_PART3, ...B2_EXTRA2_PART4];
 ;
-
-export const TOTAL_B2_EXTRA2 = B2_EXTRA2_VOCAB.length;

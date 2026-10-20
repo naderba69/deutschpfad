@@ -251,7 +251,3 @@ export const READING_LIBRARY: ReadingText[] = [
     ],
   },
 ];
-/** نصوص مستوى معين */
-export function getReadingByLevel(level: ReadingText["level"]): ReadingText[] {
-  return READING_LIBRARY.filter((r) => r.level === level);
-}

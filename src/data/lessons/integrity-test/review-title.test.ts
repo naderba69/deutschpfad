@@ -39,8 +39,6 @@ describe("عنوان المراجعة التراكمية", () => {
 
   it("مكوّنات الدرس تشتقّ العنوان ولا تستعمل الوسم الثابت", () => {
     for (const file of [
-      // عنوان المراجعة التراكمية في التدفق انتقل إلى ملف المراحل (المرحلة 4)
-      "src/components/lesson/lesson-flow-stages.tsx",
       "src/components/lesson/lesson-client.tsx",
     ]) {
       const src = readFileSync(resolve(process.cwd(), file), "utf8");

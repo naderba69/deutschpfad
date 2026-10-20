@@ -56,7 +56,7 @@ describe("A2-11 lesson content audit", () => {
 
     expect(goal("z2").evidence).toEqual({
       exerciseIds: ["e1", "e6", "w2"],
-      taskIds: ["practice:a2-11:e1", "flow-practice:a2-11:e1", "practice:a2-11:e6", "writing:a2-11:w2"],
+      taskIds: ["practice:a2-11:e1", "practice:a2-11:e6", "writing:a2-11:w2"],
       labelAr: "أجب صحيحاً عن e1 وe6 في التدريب (ويظهر e1 أيضاً ضمن أول أربعة تمارين في مسار التدفق)، ثم اختر الضمائر المناسبة لفراغات w2؛ هذه مهام اختيار موجّه لا كتابة حرة.",
       completion: "all-correct",
     });
@@ -189,18 +189,11 @@ describe("A2-11 lesson content audit", () => {
       getGoalEvidenceStatus(goal("z3"), lessonA211.id, [goalEvent("z3", "w4", true, "interaction-round:int-a2-11-1")]),
     ).toBe("pending");
 
-    const z2WithFlowPractice = [
-      goalEvent("z2", "e1", true, "flow-practice:a2-11:e1"),
+    const z2Events = [
+      goalEvent("z2", "e1", true, "practice:a2-11:e1"),
       goalEvent("z2", "e6"),
       goalEvent("z2", "w2"),
     ];
-    expect(getGoalEvidenceStatus(goal("z2"), lessonA211.id, z2WithFlowPractice)).toBe("evidenced");
-    expect(
-      getGoalEvidenceStatus(goal("z2"), lessonA211.id, [
-        ...z2WithFlowPractice.slice(0, 1),
-        goalEvent("z2", "e6", true, "flow-practice:a2-11:e6"),
-        z2WithFlowPractice[2]!,
-      ]),
-    ).toBe("pending");
+    expect(getGoalEvidenceStatus(goal("z2"), lessonA211.id, z2Events)).toBe("evidenced");
   });
 });

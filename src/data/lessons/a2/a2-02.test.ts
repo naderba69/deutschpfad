@@ -145,7 +145,7 @@ describe("A2-02 audited lesson", () => {
       validTaskIds.add(`practice:${lessonA202.id}:${exercise.id}`);
     }
     for (const exercise of lessonA202.practiceBank.slice(0, Math.min(4, lessonA202.practiceBank.length))) {
-      validTaskIds.add(`flow-practice:${lessonA202.id}:${exercise.id}`);
+      validTaskIds.add(`practice:${lessonA202.id}:${exercise.id}`);
     }
     for (const exercise of lessonA202.writing) {
       validTaskIds.add(`writing:${lessonA202.id}:${exercise.id}`);
@@ -556,7 +556,7 @@ describe("A2-02 audited lesson", () => {
         firstGoal.id,
         exerciseId,
         true,
-        exerciseId === "e1" ? "flow-practice:a2-02:e1" : undefined,
+        exerciseId === "e1" ? "practice:a2-02:e1" : undefined,
       ),
     );
     expect(getGoalEvidenceStatus(firstGoal, lessonA202.id, flowEvents)).toBe("evidenced");

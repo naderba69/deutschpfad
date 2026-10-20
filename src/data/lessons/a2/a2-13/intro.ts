@@ -22,7 +22,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أختار الفعل المساعد الصحيح (haben أو sein) في الماضي التام، وأستعمل war/hatte في جمل موجّهة.",
       evidence: {
         exerciseIds: ["e1", "e5", "e6"],
-        taskIds: ["practice:a2-13:e1", "flow-practice:a2-13:e1", "practice:a2-13:e5", "practice:a2-13:e6"],
+        taskIds: ["practice:a2-13:e1", "practice:a2-13:e5", "practice:a2-13:e6"],
         labelAr: "أجب صحيحاً عن e1 (يظهر ضمن أول أربعة تمارين في مسار التدفق أيضاً) وe5 (war/hatte) وe6 (تصحيح الفعل المساعد) عند ظهورها في جلسة التدريب العشوائية. اختيار الفعل المساعد وحده لا يثبت إنتاج الجملة.",
         completion: "all-correct",
       },
@@ -33,7 +33,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أرتّب جملة weil وجملة dass في جمل موجّهة، مع الفعل المصرّف في آخر الجملة الثانوية؛ هذا ترتيب موجّه لا تعليل حر.",
       evidence: {
         exerciseIds: ["e4", "e8", "m3"],
-        taskIds: ["practice:a2-13:e4", "flow-practice:a2-13:e4", "practice:a2-13:e8", "mini-test:a2-13:m3"],
+        taskIds: ["practice:a2-13:e4", "practice:a2-13:e8", "mini-test:a2-13:m3"],
         labelAr: "رتّب e4 (يظهر ضمن أول أربعة تمارين في مسار التدفق أيضاً)، وأجب صحيحاً عن e8 (تصحيح ترتيب dass)، وm3 (اختيار weil) في الاختبار المصغّر. لا يُحتسب كشف الحل أو قراءة الجدول أداءً.",
         completion: "all-correct",
       },

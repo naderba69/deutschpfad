@@ -11,7 +11,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أصوغ الماضي البسيط (Präteritum) للأفعال المنتظمة والشاذة.",
       evidence: {
         exerciseIds: ["e1", "m1", "w2"],
-        taskIds: ["practice:b1-02:e1", "flow-practice:b1-02:e1", "mini-test:b1-02:m1", "writing:b1-02:w2"],
+        taskIds: ["practice:b1-02:e1", "mini-test:b1-02:m1", "writing:b1-02:w2"],
         labelAr: "أجب صحيحاً عن e1 (يظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق) وm1 (kam) في الاختبار المصغّر، وأكمل w2 بالأشكال الثلاثة. قراءة جدول t1 أو كشف الحل لا يُحتسبان أداءً.",
         completion: "all-correct",
       },
@@ -22,7 +22,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أصوغ الماضي التام المركب (Plusquamperfekt) للحدث الذي وقع قبل حدث ماضٍ آخر.",
       evidence: {
         exerciseIds: ["e4", "e6", "m2"],
-        taskIds: ["practice:b1-02:e4", "flow-practice:b1-02:e4", "practice:b1-02:e6", "mini-test:b1-02:m2"],
+        taskIds: ["practice:b1-02:e4", "practice:b1-02:e6", "mini-test:b1-02:m2"],
         labelAr: "رتّب e4 بصحة (يظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق)، وأكمل e6 (الفراغات الثلاثة)، وأجب صحيحاً عن m2 (hatte … gegessen) في الاختبار المصغّر. الجدول والشرح لا يُحتسبان أداءً.",
         completion: "all-correct",
       },

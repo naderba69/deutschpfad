@@ -52,9 +52,7 @@ describe("A2-07 audited lesson", () => {
         exerciseIds: ["e1", "e2", "e7", "e13", "e14", "m1", "m3", "w1"],
         taskIds: [
           "practice:a2-07:e1",
-          "flow-practice:a2-07:e1",
           "practice:a2-07:e2",
-          "flow-practice:a2-07:e2",
           "practice:a2-07:e7",
           "practice:a2-07:e13",
           "practice:a2-07:e14",
@@ -67,7 +65,6 @@ describe("A2-07 audited lesson", () => {
         exerciseIds: ["e3", "e5", "e6", "e9", "m2", "m4", "m5", "w2", "w3"],
         taskIds: [
           "practice:a2-07:e3",
-          "flow-practice:a2-07:e3",
           "practice:a2-07:e5",
           "practice:a2-07:e6",
           "practice:a2-07:e9",
@@ -110,12 +107,12 @@ describe("A2-07 audited lesson", () => {
     for (const exercise of lessonA207.practiceBank) {
       validTaskIds.add(`practice:${lessonA207.id}:${exercise.id}`);
     }
-    // ordinary practice samples five random items; lesson-flow reveals only its first min(4, bank size).
+    // ordinary practice samples five random items; the progressive reveal shows only its first min(4, bank size).
     for (const exercise of lessonA207.practiceBank.slice(
       0,
       Math.min(4, lessonA207.practiceBank.length),
     )) {
-      validTaskIds.add(`flow-practice:${lessonA207.id}:${exercise.id}`);
+      validTaskIds.add(`practice:${lessonA207.id}:${exercise.id}`);
     }
     for (const exercise of lessonA207.miniTest) {
       validTaskIds.add(`mini-test:${lessonA207.id}:${exercise.id}`);
@@ -145,13 +142,6 @@ describe("A2-07 audited lesson", () => {
         expect(validTaskIds.has(taskId), `${goal.id}: ${taskId}`).toBe(true);
         const exerciseId = taskId.split(":").at(-1);
         expect(evidence?.exerciseIds).toContain(exerciseId);
-        if (taskId.startsWith("flow-practice:")) {
-          expect(
-            lessonA207.practiceBank
-              .slice(0, Math.min(4, lessonA207.practiceBank.length))
-              .some((exercise) => exercise.id === exerciseId),
-          ).toBe(true);
-        }
       }
       for (const exerciseId of evidence?.exerciseIds ?? []) {
         expect(evidence?.taskIds?.some((taskId) => taskId.endsWith(`:${exerciseId}`))).toBe(true);

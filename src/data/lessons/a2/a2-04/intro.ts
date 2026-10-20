@@ -15,7 +15,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       id: "z2",
       de: "Ich kann die neun Wechselpräpositionen ihren einfachen räumlichen Bedeutungen zuordnen.",
       ar: "أن أوصل حروف الجر المكانية التسعة بمعانيها التقريبية، من دون تعميم معنى واحد على كل استعمالاتها.",
-      evidence: { exerciseIds: ["e3"], taskIds: ["practice:a2-04:e3", "flow-practice:a2-04:e3"], labelAr: "طابق الحروف التسعة بمعانيها المكانية في e3؛ يظهر ضمن أول أربعة في lesson-flow وقد يظهر في عينة practice العشوائية.", completion: "all-correct" },
+      evidence: { exerciseIds: ["e3"], taskIds: ["practice:a2-04:e3"], labelAr: "طابق الحروف التسعة بمعانيها المكانية في e3؛ يظهر ضمن أول أربعة في العرض التدريجي وقد يظهر في عينة practice العشوائية.", completion: "all-correct" },
     },
     {
       id: "z3",

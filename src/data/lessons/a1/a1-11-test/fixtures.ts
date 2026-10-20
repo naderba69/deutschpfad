@@ -204,7 +204,7 @@ export function expectListedAlternativesRejected(task: Exercise) {
 export function validTaskIds(): Set<string> {
   const renderedPractice = lessonA111.practiceBank.flatMap((task, index) => [
     `practice:${lessonA111.id}:${task.id}`,
-    ...(index < 4 ? [`flow-practice:${lessonA111.id}:${task.id}`] : []),
+    ...(index < 4 ? [`practice:${lessonA111.id}:${task.id}`] : []),
   ]);
   return new Set([
     ...renderedPractice,

@@ -22,7 +22,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أُكمل صيغ Partizip II شائعة في جمل معطاة.",
       evidence: {
         exerciseIds: ["e1", "e2", "e7", "e8", "e9"],
-        taskIds: ["practice:a1-14:e1", "flow-practice:a1-14:e1", "practice:a1-14:e2", "flow-practice:a1-14:e2", "practice:a1-14:e7", "practice:a1-14:e8", "practice:a1-14:e9"],
+        taskIds: ["practice:a1-14:e1", "practice:a1-14:e2", "practice:a1-14:e7", "practice:a1-14:e8", "practice:a1-14:e9"],
         labelAr: "إكمال خمس صيغ في جمل: فعل ضعيف، قوي، منفصل، غير منفصل، وفعل منتهٍ بـ-ieren.",
         completion: "all-correct",
       },
@@ -33,7 +33,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أختار الفعل المساعد المناسب في أمثلة شائعة مع مراعاة معنى الفعل وسياقه.",
       evidence: {
         exerciseIds: ["e3", "e4", "e12", "e21", "e24", "mt-a1-14-1"],
-        taskIds: ["practice:a1-14:e3", "flow-practice:a1-14:e3", "practice:a1-14:e4", "flow-practice:a1-14:e4", "practice:a1-14:e12", "practice:a1-14:e21", "practice:a1-14:e24", "mini-test:a1-14:mt-a1-14-1", "flow-mini-test:a1-14:mt-a1-14-1"],
+        taskIds: ["practice:a1-14:e3", "practice:a1-14:e4", "practice:a1-14:e12", "practice:a1-14:e21", "practice:a1-14:e24", "mini-test:a1-14:mt-a1-14-1", "flow-mini-test:a1-14:mt-a1-14-1"],
         labelAr: "اختيار/تصحيح haben وsein في جمل انتقالية ونشاطية وأمثلة متقابلة، بما فيها فعل يتغير مساعده بحسب المعنى.",
         completion: "all-correct",
       },

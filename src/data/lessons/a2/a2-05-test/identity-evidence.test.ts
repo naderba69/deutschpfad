@@ -40,9 +40,9 @@ describe("A2-05 audited lesson", () => {
     for (const exercise of lessonA205.practiceBank) {
       validTaskIds.add(`practice:${lessonA205.id}:${exercise.id}`);
     }
-    // ordinary practice takes a five-item random sample; lesson-flow reveals only its first min(4, bank size).
+    // ordinary practice takes a five-item random sample; the progressive reveal shows only its first min(4, bank size).
     for (const exercise of lessonA205.practiceBank.slice(0, Math.min(4, lessonA205.practiceBank.length))) {
-      validTaskIds.add(`flow-practice:${lessonA205.id}:${exercise.id}`);
+      validTaskIds.add(`practice:${lessonA205.id}:${exercise.id}`);
     }
     for (const exercise of lessonA205.miniTest) validTaskIds.add(`mini-test:${lessonA205.id}:${exercise.id}`);
     for (const exercise of lessonA205.writing) validTaskIds.add(`writing:${lessonA205.id}:${exercise.id}`);
@@ -62,9 +62,6 @@ describe("A2-05 audited lesson", () => {
         expect(validTaskIds.has(taskId), `${goal.id}: ${taskId}`).toBe(true);
         const exerciseId = taskId.split(":").at(-1);
         expect(evidence?.exerciseIds).toContain(exerciseId);
-        if (taskId.startsWith("flow-practice:")) {
-          expect(lessonA205.practiceBank.slice(0, Math.min(4, lessonA205.practiceBank.length)).some((exercise) => exercise.id === exerciseId)).toBe(true);
-        }
       }
       for (const exerciseId of evidence?.exerciseIds ?? []) {
         expect(evidence?.taskIds?.some((taskId) => taskId.endsWith(`:${exerciseId}`))).toBe(true);
@@ -73,7 +70,6 @@ describe("A2-05 audited lesson", () => {
 
     expect(lessonA205.lernziele.find((goal) => goal.id === "z1")?.evidence?.taskIds).toEqual([
       "practice:a2-05:e3",
-      "flow-practice:a2-05:e3",
     ]);
     expect(lessonA205.lernziele.find((goal) => goal.id === "z2")?.evidence?.taskIds).toEqual([
       "listening:l1:q1",
@@ -120,7 +116,7 @@ describe("A2-05 audited lesson", () => {
 
     const phoneGoal = lessonA205.lernziele.find((goal) => goal.id === "z1");
     if (!phoneGoal) throw new Error("z1 must be present");
-    const flowEvent = goalEvent("z1", "e3", true, "flow-practice:a2-05:e3");
+    const flowEvent = goalEvent("z1", "e3", true, "practice:a2-05:e3");
     expect(getGoalEvidenceStatus(phoneGoal, lessonA205.id, [flowEvent])).toBe("evidenced");
     const wrongInterfaceEvent = goalEvent("z1", "e3", true, "mini-test:a2-05:e3");
     expect(getGoalEvidenceStatus(phoneGoal, lessonA205.id, [wrongInterfaceEvent])).toBe("pending");

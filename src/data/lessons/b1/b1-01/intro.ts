@@ -22,7 +22,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أستخدم حالة المضاف إليه (Genitiv) في عبارات بسيطة: كتاب المعلّم.",
       evidence: {
         exerciseIds: ["e1", "e5", "w1"],
-        taskIds: ["practice:b1-01:e1", "flow-practice:b1-01:e1", "practice:b1-01:e5", "writing:b1-01:w1"],
+        taskIds: ["practice:b1-01:e1", "practice:b1-01:e5", "writing:b1-01:w1"],
         labelAr: "أجب صحيحاً عن e1 (يظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق) وe5 (تصحيح wegen + Genitiv)، واكتب w1 بصحة (جملة كاملة مع des). قراءة جدول t1 لا تُحتسب أداءً.",
         completion: "all-correct",
       },
@@ -33,7 +33,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أكوّن الجمل النسبية بـ der وdie وdas وdem حسب دور الاسم في الجملة.",
       evidence: {
         exerciseIds: ["e4", "e6", "m5"],
-        taskIds: ["practice:b1-01:e4", "flow-practice:b1-01:e4", "practice:b1-01:e6", "mini-test:b1-01:m5"],
+        taskIds: ["practice:b1-01:e4", "practice:b1-01:e6", "mini-test:b1-01:m5"],
         labelAr: "رتّب e4 بصحة (يظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق)، وأكمل e6 (الضمير النسبي في النصب)، وأجب صحيحاً عن m5 (dem بعد helfen وdas فاعلاً) في الاختبار المصغّر. لا يُحتسب قراءة t2 أداءً.",
         completion: "all-correct",
       },
