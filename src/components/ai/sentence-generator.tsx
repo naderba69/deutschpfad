@@ -48,6 +48,7 @@ export function AiSentenceGenerator() {
           <div className="flex items-center gap-2">
             <input
               type="text"
+              aria-label="الكلمة الألمانية لتوليد الجمل"
               value={word}
               onChange={(e) => setWord(e.target.value)}
               placeholder="أدخل كلمة ألمانية… (مثال: die Freundschaft)"

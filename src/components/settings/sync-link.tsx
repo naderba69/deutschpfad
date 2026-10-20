@@ -168,6 +168,7 @@ export function SyncLink() {
 function AutoTextarea({value, onChange, placeholder}: { value: string; onChange: (v: string) => void; placeholder: string }) {
   return (
     <textarea
+      aria-label="رابط أو نص المزامنة"
       value={value}
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
