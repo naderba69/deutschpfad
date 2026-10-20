@@ -1,0 +1,342 @@
+import type {
+  ErrorCorrectionExercise,
+  Exercise,
+  FeedbackResult,
+  FillBlankExercise,
+  MatchingExercise,
+  McqExercise,
+  OrderingExercise,
+  TransformationExercise,
+  DictationExercise,
+  SentenceGapExercise,
+  TrueFalseExercise,
+  ZuordnungExercise,
+} from "@/types/lesson";
+
+import { NO_ERROR_OPTION } from "@/lib/lesson/error-correction-highlight";
+
+/**
+ * ═══════════════════════════════════════════════════════
+ *  محرك التصحيح الفوري — يقيّم أي تمرين ويعيد:
+ *  • هل الإجابة صحيحة؟
+ *  • شرح «لماذا» بالعربية
+ *  • تصنيف نوع الخطأ
+ *  • الإجابة الصحيحة للعرض
+ * ═══════════════════════════════════════════════════════
+ */
+
+/** تطبيع النص للمقارنة: أحرف صغيرة + إزالة علامات الترقيم + مسافات متعددة */
+export function normalizeText(s: string): string {
+  return s
+    .toLowerCase()
+    .trim()
+    .replace(/[.,!?;:«»„“”()"'،؟؛]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/**
+ * تطبيع يحافظ على علامات الترقيم — لتمارين الترقيم نفسها.
+ * `normalizeText` يمسح كل علامة ترقيم، فتصير «.» و«?» و«» كلها نصاً فارغاً
+ * وتُقبل أي إجابة. هنا نُبقي العلامة ونُطبّع المسافات وحدها.
+ */
+export function normalizePunctuation(s: string): string {
+  return s.toLowerCase().replace(/\s+/g, " ").trim();
+}
+
+/** هل يقيس هذا التمرين علامات الترقيم نفسها؟ */
+function isPunctuationExercise(errorType?: string): boolean {
+  return errorType === "punctuation";
+}
+
+/** تطبيع النص مع الحفاظ على حالة الأحرف الألمانية. */
+function normalizeTextCaseSensitive(s: string): string {
+  return s
+    .trim()
+    .replace(/[.,!?;:«»„“”()\"'،؟؛]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/** المقارنة المناسبة بحسب كون المهمة تقيس الترقيم أو حالة الأحرف. */
+function answersMatch(
+  given: string,
+  expected: string,
+  errorType?: string,
+  caseSensitive = false,
+): boolean {
+  if (isPunctuationExercise(errorType)) {
+    return normalizePunctuation(given) === normalizePunctuation(expected);
+  }
+  return caseSensitive
+    ? normalizeTextCaseSensitive(given) === normalizeTextCaseSensitive(expected)
+    : normalizeText(given) === normalizeText(expected);
+}
+
+/** مجموع نقاط تمرين */
+export function exercisePoints(exercise: Exercise): number {
+  return exercise.points ?? 10;
+}
+
+export function evaluateMcq(exercise: McqExercise, selected: string): FeedbackResult {
+  const isCorrect = normalizeText(selected) === normalizeText(exercise.options[exercise.correctIndex]);
+  const selectedOptionExplanation =
+    !isCorrect && exercise.optionExplanations
+      ? exercise.optionExplanations[exercise.options.indexOf(selected)]
+      : undefined;
+
+  return {
+    isCorrect,
+    pointsEarned: isCorrect ? exercisePoints(exercise) : 0,
+    explanation:
+      isCorrect
+        ? exercise.explanation
+        : selectedOptionExplanation ?? exercise.explanation,
+    errorType: exercise.errorType,
+    correctAnswer: exercise.options[exercise.correctIndex],
+  };
+}
+
+export function evaluateOrdering(exercise: OrderingExercise, answerTokens: string[]): FeedbackResult {
+  // تمارين بناء الكلمة من حروف مفردة (H A U S → HAUS): الوصل بمسافات
+  // يجعلها مستحيلة الحل، لذا نصلها بلا فاصل عندما تكون كل الرموز حرفاً واحداً.
+  const isLetterBuilding =
+    exercise.tokens.length > 1 && exercise.tokens.every((t) => t.trim().length === 1);
+  const joined = isLetterBuilding
+    ? answerTokens.join("").trim()
+    : answerTokens.join(" ").trim();
+  const acceptedSentences = [exercise.correctSentence, ...(exercise.acceptedSentences ?? [])];
+  const isCorrect = acceptedSentences.some(
+    (sentence) => normalizeText(joined) === normalizeText(sentence),
+  );
+
+  // حالة جزئية: نفس الكلمات لكن بترتيب خاطئ
+  const splitUnits = (s: string) =>
+    (isLetterBuilding ? normalizeText(s).replace(/\s+/g, "").split("") : normalizeText(s).split(" "))
+      .filter(Boolean)
+      .sort()
+      .join(" ");
+  const sameWords = !isCorrect && splitUnits(joined) === splitUnits(exercise.correctSentence);
+
+  return {
+    isCorrect,
+    partial: sameWords,
+    pointsEarned: isCorrect ? exercisePoints(exercise) : 0,
+    explanation: sameWords
+      ? isLetterBuilding
+        ? "الحروف صحيحة لكن ترتيبها خاطئ — أعد ترتيبها لتكوين الكلمة."
+        : "الكلمات صحيحة لكن الترتيب خاطئ! تذكّر القاعدة: الفعل في المركز الثاني (V2)."
+      : exercise.explanation,
+    errorType: sameWords ? "word-order" : exercise.errorType,
+    correctAnswer: exercise.correctSentence,
+  };
+}
+
+export function evaluateFillBlank(exercise: FillBlankExercise, answers: string[]): FeedbackResult {
+  const allCorrect = exercise.blanks.every((blank, i) =>
+    answersMatch(answers[i] ?? "", blank.correct, exercise.errorType, exercise.caseSensitive),
+  );
+  const filledCount = answers.filter((a) => a.trim() !== "").length;
+  const isComplete = filledCount === exercise.blanks.length;
+
+  let explanation = exercise.explanation;
+  if (!allCorrect) {
+    const wrongIndices = exercise.blanks
+      .map((blank, i) => ({ blank, i }))
+      .filter(({ blank, i }) =>
+        !answersMatch(answers[i] ?? "", blank.correct, exercise.errorType, exercise.caseSensitive),
+      );
+    if (wrongIndices.length > 0) {
+      const first = wrongIndices[0];
+      explanation = `الفراغ رقم ${first.i + 1}: الصواب «${first.blank.correct}» — ${exercise.explanation}`;
+    }
+  }
+
+  return {
+    isCorrect: allCorrect,
+    partial: !allCorrect && isComplete,
+    pointsEarned: allCorrect ? exercisePoints(exercise) : 0,
+    explanation,
+    errorType: exercise.errorType,
+    correctAnswer: exercise.blanks.map((b) => b.correct).join(" · "),
+  };
+}
+
+export function evaluateMatching(
+  exercise: MatchingExercise,
+  selectedPairs: { left: string; right: string }[],
+): FeedbackResult {
+  const correctPairs = new Set(
+    exercise.pairs.map((p) => `${normalizeText(p.left)}|${normalizeText(p.right)}`),
+  );
+  const matched = selectedPairs.filter((p) =>
+    correctPairs.has(`${normalizeText(p.left)}|${normalizeText(p.right)}`),
+  ).length;
+  const allCorrect = matched === exercise.pairs.length;
+
+  return {
+    isCorrect: allCorrect,
+    partial: !allCorrect && matched > 0,
+    pointsEarned: allCorrect ? exercisePoints(exercise) : 0,
+    explanation: allCorrect
+      ? exercise.explanation
+      : `وصلت ${matched} من ${exercise.pairs.length} بشكل صحيح. ${exercise.explanation}`,
+    errorType: exercise.errorType,
+    correctAnswer: exercise.pairs.map((p) => `${p.left} = ${p.right}`).join("؛ "),
+  };
+}
+
+export function evaluateErrorCorrection(
+  exercise: ErrorCorrectionExercise,
+  selected: string,
+): FeedbackResult {
+  // تمرين تصحيح الخطأ يُجاب بالنقر على خيار جاهز، لا بالكتابة الحرة.
+  // لذلك تجب المقارنة الحرفية: الفرق بين "lesen" و"Lesen" أو بين
+  // "stehe auf" و"stehe ... auf" هو جوهر التمرين نفسه، و normalizeText
+  // (تصغير الحروف + إزالة الترقيم) كان يمحوه ويقبل خيارات خاطئة.
+  // بند «خدعة»: الجملة سليمة، والإجابة الصحيحة هي اختيار «لا خطأ»
+  const expected = exercise.isAlreadyCorrect ? NO_ERROR_OPTION : exercise.correctWord;
+  const isCorrect = selected.trim() === expected.trim();
+  return {
+    isCorrect,
+    pointsEarned: isCorrect ? exercisePoints(exercise) : 0,
+    explanation: exercise.explanation,
+    errorType: exercise.errorType,
+    correctAnswer: expected,
+  };
+}
+
+export function evaluateTransformation(
+  exercise: TransformationExercise,
+  answer: string,
+): FeedbackResult {
+  const normalizeAnswer = exercise.caseSensitive ? normalizeTextCaseSensitive : normalizeText;
+  const normalized = normalizeAnswer(answer);
+  const accepted = exercise.acceptedAnswers.map(normalizeAnswer);
+  const isCorrect = accepted.includes(normalized);
+
+  return {
+    isCorrect,
+    pointsEarned: isCorrect ? exercisePoints(exercise) : 0,
+    explanation: isCorrect ? exercise.explanation : exercise.explanation,
+    errorType: exercise.errorType,
+    correctAnswer: exercise.sampleAnswer,
+  };
+}
+
+export function evaluateDictation(exercise: DictationExercise, answer: string): FeedbackResult {
+  const normalizeAnswer = exercise.caseSensitive ? normalizeTextCaseSensitive : normalizeText;
+  const normalizedAnswer = normalizeAnswer(answer);
+  const variants = [exercise.audioText, ...(exercise.acceptedVariants ?? [])].map(normalizeAnswer);
+  const isCorrect = variants.includes(normalizedAnswer);
+
+  // تحليل الخطأ: هل الكلمات نفسها لكن بترتيب مختلف؟
+  const answerWords = normalizedAnswer.split(" ").filter(Boolean).sort();
+  const audioWords = normalizeAnswer(exercise.audioText).split(" ").filter(Boolean).sort();
+  const sameWordsDifferentOrder =
+    !isCorrect && answerWords.length === audioWords.length &&
+    answerWords.join(" ") === audioWords.join(" ");
+
+  return {
+    isCorrect,
+    partial: sameWordsDifferentOrder,
+    pointsEarned: isCorrect ? exercisePoints(exercise) : 0,
+    explanation: sameWordsDifferentOrder
+      ? "سمعت الكلمات صحيحة لكن الترتيب مختلف! استمع مرة أخرى ببطء ورتب الجملة كما تُلفظ."
+      : isCorrect
+        ? exercise.explanation
+        : "انتبه: قد يكون الخطأ في التهجئة (ß بدل ss مثلاً) أو في نهايات الكلمات. استمع ببطء وحاول مجدداً.",
+    errorType: sameWordsDifferentOrder ? "word-order" : isCorrect ? exercise.errorType : "spelling",
+    correctAnswer: exercise.audioText,
+  };
+}
+
+/** Richtig/Falsch — كل عبارة تُصحح على حدة (نقطة مستقلة في الامتحان) */
+export function evaluateTrueFalse(exercise: TrueFalseExercise, answer: Record<string, boolean>): FeedbackResult {
+  let correct = 0;
+  for (const s of exercise.statements) {
+    if (answer[s.id] === s.isTrue) correct++;
+  }
+  const isCorrect = correct === exercise.statements.length;
+  return {
+    isCorrect,
+    partial: !isCorrect && correct > 0,
+    pointsEarned: isCorrect ? exercisePoints(exercise) : Math.round((exercisePoints(exercise) * correct) / exercise.statements.length),
+    explanation: isCorrect
+      ? exercise.explanation
+      : `أصبت ${correct} من ${exercise.statements.length} — تذكر: «Richtig» تعني تطابق المعنى لا اللفظ.`,
+    errorType: exercise.errorType,
+    correctAnswer: exercise.statements.map((s) => (s.isTrue ? "Richtig" : "Falsch")).join("، "),
+  };
+}
+
+/** Lückentext بجمل — كل فتحة نقطة مستقلة */
+export function evaluateSentenceGap(exercise: SentenceGapExercise, answer: Record<number, string>): FeedbackResult {
+  let correct = 0;
+  for (let i = 0; i < exercise.gapOrder.length; i++) {
+    if (answer[i] === exercise.gapOrder[i]) correct++;
+  }
+  const isCorrect = correct === exercise.gapOrder.length;
+  return {
+    isCorrect,
+    partial: !isCorrect && correct > 0,
+    pointsEarned: isCorrect ? exercisePoints(exercise) : Math.round((exercisePoints(exercise) * correct) / exercise.gapOrder.length),
+    explanation: isCorrect
+      ? exercise.explanation
+      : `وضعت ${correct} من ${exercise.gapOrder.length} جملة صحيحة — راقب الروابط (deshalb, außerdem, während…).`,
+    errorType: exercise.errorType,
+    correctAnswer: exercise.gapOrder.map((id) => exercise.sentenceBank.find((b) => b.id === id)?.de ?? "").join(" | "),
+  };
+}
+
+/** Zuordnung — كل مطابقة نقطة مستقلة */
+export function evaluateZuordnung(exercise: ZuordnungExercise, answer: Record<string, string>): FeedbackResult {
+  let correct = 0;
+  for (const it of exercise.items) {
+    if (answer[it.id] === exercise.correctMap[it.id]) correct++;
+  }
+  const isCorrect = correct === exercise.items.length;
+  return {
+    isCorrect,
+    partial: !isCorrect && correct > 0,
+    pointsEarned: isCorrect ? exercisePoints(exercise) : Math.round((exercisePoints(exercise) * correct) / exercise.items.length),
+    explanation: isCorrect
+      ? exercise.explanation
+      : `طابقت ${correct} من ${exercise.items.length} — اقرأ كل الفئات أولاً ثم انسب.`,
+    errorType: exercise.errorType,
+    correctAnswer: exercise.items.map((it) => exercise.correctMap[it.id]).join("، "),
+  };
+}
+
+/** الدالة الرئيسية — توزّع التمرين على مقيّمه */
+export function evaluateExercise(exercise: Exercise, answer: unknown): FeedbackResult {
+  switch (exercise.type) {
+    case "multiple-choice":
+      return evaluateMcq(exercise, answer as string);
+    case "word-ordering":
+      return evaluateOrdering(exercise, answer as string[]);
+    case "fill-blank":
+      return evaluateFillBlank(exercise, answer as string[]);
+    case "matching":
+      return evaluateMatching(exercise, answer as { left: string; right: string }[]);
+    case "error-correction":
+      return evaluateErrorCorrection(exercise, answer as string);
+    case "transformation":
+      return evaluateTransformation(exercise, answer as string);
+    case "dictation":
+      return evaluateDictation(exercise, answer as string);
+    case "true-false":
+      return evaluateTrueFalse(exercise, answer as Record<string, boolean>);
+    case "sentence-gap":
+      return evaluateSentenceGap(exercise, answer as Record<number, string>);
+    case "zuordnung":
+      return evaluateZuordnung(exercise, answer as Record<string, string>);
+    default:
+      return {
+        isCorrect: false,
+        pointsEarned: 0,
+        explanation: "نوع التمرين غير مدعوم بعد.",
+        errorType: "grammar",
+      };
+  }
+}
