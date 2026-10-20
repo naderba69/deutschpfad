@@ -4,8 +4,6 @@
  * المدة والدرجات من وثائق Goethe-Institut الرسمية.
  */
 
-export type ExamModule = "lesen" | "hören" | "schreiben" | "sprechen";
-
 /* ═══════════ أسئلة القراءة ═══════════ */
 
 /** Zuordnung (Teil 1/4): نص ← فئة/عنوان */
@@ -166,7 +164,6 @@ export interface ExamSprechen {
   teil1Minutes: number;
   teil2Minutes: number;
 }
-
 
 /* ═══════════ الامتحان الكامل ═══════════ */
 

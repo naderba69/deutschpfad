@@ -8,6 +8,7 @@ import {Badge} from "@/components/ui/badge";
 import {Card, CardContent} from "@/components/ui/card";
 import {Input} from "@/components/ui/input";
 import {getAllCards} from "@/lib/srs/flashcard-service";
+import {VocabKindBadge} from "@/components/shared/vocab-kind";
 import {A1_VOCAB} from "@/data/vocabulary/a1";
 import {A2_VOCAB} from "@/data/vocabulary/a2";
 import {B1_VOCAB} from "@/data/vocabulary/b1";
@@ -113,11 +114,7 @@ export function GlossarClient() {
                     <SpeakButton text={entry.de} size="sm" className="h-8 w-8 shrink-0" />
                     <div className="min-w-0">
                       <div className="flex flex-wrap items-center gap-2">
-                        {entry.g === "der" || entry.g === "die" || entry.g === "das" ? (
-                          <span className={cn("font-de text-xs font-bold", entry.g === "der" ? "text-sky-600 dark:text-sky-400" : entry.g === "die" ? "text-rose-600 dark:text-rose-400" : "text-emerald-600 dark:text-emerald-400")}>
-                            {entry.g}
-                          </span>
-                        ) : null}
+                        <VocabKindBadge g={entry.g} />
                         <span className="font-de font-bold" dir="ltr" lang="de">
                           {entry.de}
                         </span>

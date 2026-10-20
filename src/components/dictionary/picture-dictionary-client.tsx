@@ -4,6 +4,7 @@ import * as React from "react";
 import {Search} from "lucide-react";
 
 import {SpeakButton} from "@/components/shared/speak-button";
+import {VocabKindBadge} from "@/components/shared/vocab-kind";
 import {cn} from "@/lib/utils";
 import {getLevelVocab} from "@/data/vocabulary";
 import type { VocabEntry } from "@/data/vocabulary/a1";
@@ -89,18 +90,11 @@ function emojiFor(word: string): string {
 }
 
 /** دمج مفردات A1/A2 مع الإيموجي التلقائي */
-function buildVisual(): { de: string; ar: string; emoji: string; level: string }[] {
-  const out: { de: string; ar: string; emoji: string; level: string }[] = [];
+function buildVisual(): { de: string; ar: string; g?: string; ex?: string; emoji: string; level: string }[] {
+  const out: { de: string; ar: string; g?: string; ex?: string; emoji: string; level: string }[] = [];
   for (const lvl of ["A1", "A2"] as const) {
-    try {
-      const vocab = getLevelVocab(lvl);
-      for (const unit of Object.values(vocab) as unknown as VocabEntry[][]) {
-        for (const entry of unit) {
-          out.push({ de: entry.de, ar: entry.ar, emoji: emojiFor(entry.de), level: lvl });
-        }
-      }
-    } catch {
-      /* تجاهل */
+    for (const entry of getLevelVocab(lvl) as VocabEntry[]) {
+      out.push({ de: entry.de, ar: entry.ar, g: entry.g, ex: entry.ex, emoji: emojiFor(entry.de), level: lvl });
     }
   }
   // أضف البنك البصري اليدوي (لا يكرر الموجود)
@@ -200,9 +194,15 @@ export function PictureDictionaryClient() {
                 <span className="font-de truncate text-sm font-bold" dir="ltr" lang="de">
                   {v.de}
                 </span>
+                <VocabKindBadge g={v.g} />
                 <SpeakButton text={v.de} size="icon" className="h-6 w-6" />
               </div>
               <p className="truncate text-xs text-muted-foreground">{v.ar}</p>
+              {v.ex && (
+                <p className="font-de truncate text-[11px] text-muted-foreground" dir="ltr" lang="de">
+                  {v.ex}
+                </p>
+              )}
             </div>
           </div>
         ))}

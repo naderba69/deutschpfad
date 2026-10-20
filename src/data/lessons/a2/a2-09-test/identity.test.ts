@@ -67,7 +67,7 @@ describe("A2-09 lesson audit", () => {
     for (const exercise of lessonA209.miniTest) {
       validTaskIds.add(`mini-test:${lessonA209.id}:${exercise.id}`);
     }
-    // The the-progressive-reveal mini-test shows at most the first three multiple-choice tasks.
+    // The mini-test shows at most the first three multiple-choice tasks (progressive reveal).
     for (const exercise of lessonA209.miniTest
       .filter((item) => item.type === "multiple-choice")
       .slice(0, 3)) {
