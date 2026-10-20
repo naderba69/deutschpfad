@@ -207,4 +207,46 @@ export const A1_DIALOGUES_3: DailyDialogue[] = [
       { de: "Was kostet das?", ar: "كم يكلف؟" },
     ],
   },
+
+  {
+    id: "a1-16-bahnhof",
+    level: "A1",
+    title: "في محطة القطار",
+    titleDe: "Am Bahnhof",
+    emoji: "🚆",
+    situation: "تسأل عن القطار المتجه إلى برلين ومقعدك",
+    audioNoteAr: "الصوت مولّد آلياً (TTS) وليس تسجيلاً بشرياً.",
+    turns: [
+      { speaker: "توماس", role: "a", de: "Guten Morgen! Ist das der Zug nach Berlin?", ar: "صباح الخير! هل هذا القطار المتجه إلى برلين؟" },
+      { speaker: "سارة", role: "b", de: "Ja. Er fährt um zehn Uhr ab.", ar: "نعم. ينطلق في العاشرة." },
+      { speaker: "توماس", role: "a", de: "Wie lange dauert die Fahrt?", ar: "كم تستغرق الرحلة؟" },
+      { speaker: "سارة", role: "b", de: "Zwei Stunden. Wir sind um zwölf Uhr da.", ar: "ساعتان. سنصل في الثانية عشرة." },
+      { speaker: "توماس", role: "a", de: "Danke. Wo ist mein Platz?", ar: "شكراً. أين مقعدي؟" },
+      { speaker: "سارة", role: "b", de: "Wagen drei, Platz zwölf. Gute Reise!", ar: "العربة الثالثة، المقعد الثاني عشر. رحلة سعيدة!" },
+    ],
+    questions: [
+      { de: "Wohin fährt der Zug?", ar: "إلى أين يتجه القطار؟", options: [
+        { text: "Nach Berlin", ar: "إلى برلين", correct: true, explanation: "نعم — السؤال الأول هو «Ist das der Zug nach Berlin?»" },
+        { text: "Nach Hamburg", ar: "إلى هامبورغ", correct: false, explanation: "لا — لم تُذكر هامبورغ؛ الوجهة في الحوار «nach Berlin»." },
+        { text: "Nach München", ar: "إلى ميونخ", correct: false, explanation: "لا — لم تُذكر ميونخ؛ الوجهة هي برلين." },
+      ]},
+      { de: "Um wie viel Uhr fährt der Zug ab?", ar: "في أي ساعة ينطلق القطار؟", options: [
+        { text: "Um zehn Uhr", ar: "في العاشرة", correct: true, explanation: "صحيح — «Er fährt um zehn Uhr ab»." },
+        { text: "Um zwölf Uhr", ar: "في الثانية عشرة", correct: false, explanation: "لا — الثانية عشرة وقت الوصول، أما الانطلاق ففي العاشرة." },
+        { text: "Um acht Uhr", ar: "في الثامنة", correct: false, explanation: "لا — لم تُذكر الثامنة؛ الانطلاق في العاشرة." },
+      ]},
+      { de: "Wo sitzt Thomas?", ar: "أين يجلس توماس؟", options: [
+        { text: "Im Wagen drei, auf Platz zwölf", ar: "في العربة الثالثة، المقعد الثاني عشر", correct: true, explanation: "نعم — سارة تقول: «Wagen drei, Platz zwölf»." },
+        { text: "Im Wagen zwei, auf Platz drei", ar: "في العربة الثانية، المقعد الثالث", correct: false, explanation: "لا — رقم العربة ثلاثة والمقعد اثنا عشر." },
+        { text: "Im Wagen zwölf, auf Platz drei", ar: "في العربة الثانية عشرة، المقعد الثالث", correct: false, explanation: "لا — «Wagen drei» و«Platz zwölf»؛ لا نعكس الرقمين." },
+      ]},
+    ],
+    keyVocab: [
+      { de: "der Zug", ar: "القطار" },
+      { de: "abfahren", ar: "ينطلق" },
+      { de: "die Fahrt", ar: "الرحلة" },
+      { de: "der Wagen", ar: "العربة" },
+      { de: "der Platz", ar: "المقعد" },
+    ],
+  },
 ];

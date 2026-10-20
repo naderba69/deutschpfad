@@ -36,7 +36,7 @@ function assertClip(relPath: string) {
 }
 
 describe("أصول الصوت — حوارات الحياة اليومية", () => {
-  it("كل جولة في كل حوار لها مقطع صوتي بشري", () => {
+  it("كل جولة في كل حوار لها مقطع صوتي صالح (بشري أو مولّد ومُعلَن)", () => {
     const missing: string[] = [];
     for (const d of DAILY_DIALOGUES) {
       const dir = `dialogues-${d.level.toLowerCase()}`;
@@ -48,10 +48,10 @@ describe("أصول الصوت — حوارات الحياة اليومية", () 
     expect(missing, `مقاطع ناقصة/تالفة (${missing.length})`).toEqual([]);
   });
 
-  it("كل المستويات الأربعة مكتملة — بما فيها B2 (15 حواراً × 90 مقطعاً)", () => {
+  it("كل المستويات الأربعة مكتملة — A1 (16 حواراً/96 مقطعاً) وB2 (15/90)", () => {
     for (const lv of ["A1", "A2", "B1", "B2"] as const) {
       const dialogues = getDialoguesByLevel(lv);
-      expect(dialogues.length, `حوارات ${lv}`).toBe(15);
+      expect(dialogues.length, `حوارات ${lv}`).toBe(lv === "A1" ? 16 : 15);
       const expected = dialogues.reduce((n, d) => n + d.turns.length, 0);
       const dir = path.join(AUDIO_ROOT, `dialogues-${lv.toLowerCase()}`);
       const files = fs.readdirSync(dir).filter((f) => f.endsWith(".mp3"));

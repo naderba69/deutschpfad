@@ -2,13 +2,21 @@ import {describe, expect, it} from "vitest";
 
 import {DAILY_DIALOGUES, DIALOGUE_LEVEL_COUNTS, getDialoguesByLevel} from "@/data/dialogues";
 
-describe("مكتبة حوارات الحياة اليومية — 60 حواراً (تفوق Menschen)", () => {
-  it("تحتوي 60 حواراً موزعة 15 لكل مستوى", () => {
-    expect(DAILY_DIALOGUES.length).toBe(60);
+describe("مكتبة حوارات الحياة اليومية — 61 حواراً (تفوق Menschen)", () => {
+  it("تحتوي 61 حواراً: 16 في A1 و15 في كل مستوى آخر", () => {
+    expect(DAILY_DIALOGUES.length).toBe(61);
     for (const lv of ["A1", "A2", "B1", "B2"] as const) {
-      expect(getDialoguesByLevel(lv).length).toBe(15);
-      expect(DIALOGUE_LEVEL_COUNTS[lv]).toBe(15);
+      expect(getDialoguesByLevel(lv).length).toBe(lv === "A1" ? 16 : 15);
+      expect(DIALOGUE_LEVEL_COUNTS[lv]).toBe(lv === "A1" ? 16 : 15);
     }
+  });
+
+  it("حوار المحطة الجديد يضم 6 جولات و3 أسئلة فهم", () => {
+    const dialogue = DAILY_DIALOGUES.find((item) => item.id === "a1-16-bahnhof");
+    expect(dialogue).toMatchObject({ id: "a1-16-bahnhof", level: "A1", titleDe: "Am Bahnhof" });
+    expect(dialogue?.turns).toHaveLength(6);
+    expect(dialogue?.questions).toHaveLength(3);
+    expect(dialogue?.keyVocab.map((item) => item.de)).toContain("der Zug");
   });
 
   it("كل حوار مكتمل: جولات + أسئلة + مفردات", () => {
@@ -51,7 +59,7 @@ describe("مكتبة حوارات الحياة اليومية — 60 حوارا�
 
 /* ═══════════════════════════════════════════════════════════
    شروح الخيارات — مقاييس دفعة 52 (2026-10-16)
-   قياس الحوارات (60 حواراً · 182 سؤالاً · 546 خياراً):
+   قياس الحوارات بعد إضافة A1-16 (61 حواراً · 185 سؤالاً · 555 خياراً):
      · شروح الخيارات **الخاطئة** ملاحظات عربية موجزة («لا — قهوة أولاً.») — عُرف
        مقصود لا عيب (لا تُقتبس آلياً)، فلم تُعدّل.
      · شروح الخيارات **الصحيحة** عربية تشرح لماذا — والدليل الألماني هو نصّ

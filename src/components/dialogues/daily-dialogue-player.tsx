@@ -174,6 +174,11 @@ export function DailyDialoguePlayer({ dialogue, onBack }: { dialogue: DailyDialo
           <p className="mt-2 text-xs text-muted-foreground">
             {total} جولة حوار · نطق صوتي · ترجمة · أسئلة فهم · وضع «دورك» 🎭
           </p>
+          {dialogue.audioNoteAr && (
+            <p data-testid="dialogue-audio-disclosure" className="mt-2 rounded-lg border border-primary/20 bg-primary/5 px-3 py-2 text-xs font-semibold text-primary">
+              🔊 {dialogue.audioNoteAr}
+            </p>
+          )}
           <Button onClick={next} className="btn-glow mt-5 gap-2">
             <Play className="h-4 w-4" aria-hidden="true" />
             ابدأ الحوار
