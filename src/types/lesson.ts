@@ -361,11 +361,15 @@ export interface ListeningLine {
   speaker: string;
   de: string;
   ar: string;
+  /** مسار ملف صوتي مرفق لهذا السطر عند توفره، بجانب الصوت النطقي في المتصفح */
+  audioSrc?: string;
 }
 
 export interface ListeningItem {
   id: string;
   title: string;
+  /** إفصاح مصدر الصوت للمقاطع المولّدة آلياً */
+  audioNoteAr?: string;
   lines: ListeningLine[];
 }
 

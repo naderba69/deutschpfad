@@ -1,5 +1,7 @@
+import path from "node:path";
 import {describe, expect, it} from "vitest";
 
+import {isPlayableMp3} from "@/lib/audio/mp3-file";
 import {getLessonMeta, LESSON_META} from "@/data/lessons/meta";
 import {NO_ERROR_OPTION} from "@/lib/lesson/error-correction-highlight";
 import {evaluateExercise, normalizeText} from "@/lib/lesson/exercise-engine";
@@ -296,6 +298,20 @@ describe("A1-14 audited lesson content", () => {
     expect(evidence.exerciseIds).not.toContain("int-a1-14-1");
   });
 
+  it("adds a second disclosed TTS listening scene with six playable audio lines", () => {
+    expect(lessonA114.listening.items).toHaveLength(2);
+    const item = lessonA114.listening.items.find((candidate) => candidate.id === "ls-a1-14-2");
+    expect(item?.audioNoteAr).toContain("مولّدة آلياً (TTS)");
+    expect(item?.lines).toHaveLength(6);
+    for (const line of item?.lines ?? []) {
+      expect(line.audioSrc).toContain("/audio/lessons/a1-14/ls-a1-14-2-");
+      expect(line.audioSrc?.endsWith(".mp3")).toBe(true);
+      const file = path.join(process.cwd(), "public", line.audioSrc!.slice(1));
+      expect(isPlayableMp3(file), line.audioSrc).toBe(true);
+    }
+    expect(lessonA114.listening.questions.filter((question) => question.itemId === "ls-a1-14-2")).toHaveLength(3);
+  });
+
   it("keeps reading/audio references, flashcards, and open activities internally consistent", () => {
     const passage = reading();
     expect(passage.paragraphsAr).toHaveLength(passage.paragraphs.length);
@@ -345,8 +361,8 @@ describe("A1-14 audited lesson content", () => {
     expect(lessonA114.miniTest).toHaveLength(5);
     expect(lessonA114.writing).toHaveLength(3);
     expect(reading().questions).toHaveLength(6);
-    expect(lessonA114.listening.questions).toHaveLength(3);
-    expect(allTasks()).toHaveLength(46);
+    expect(lessonA114.listening.questions).toHaveLength(6);
+    expect(allTasks()).toHaveLength(49);
 
     const ids = allTasks().map((task) => task.id);
     expect(new Set(ids).size).toBe(ids.length);
