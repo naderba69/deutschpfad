@@ -27,6 +27,9 @@ export const expectedMultipleChoiceKeys: Record<string, string> = {
   q1: "Eine Fahrkarte hin und zurück nach München.",
   q2: "Um 10:25 Uhr.",
   q3: "Das Motorrad.",
+  q4: "Von Gleis fünf.",
+  q5: "In Bonn.",
+  q6: "Um 15:05 Uhr.",
 };
 
 export const expectedMultipleChoiceOptions: Record<string, string[]> = {
@@ -68,6 +71,9 @@ export const expectedMultipleChoiceOptions: Record<string, string[]> = {
   ],
   q2: ["Um 10:25 Uhr.", "Um 10:05 Uhr.", "Um 11:25 Uhr.", "Um 9:25 Uhr."],
   q3: ["Das Motorrad.", "Die U-Bahn.", "Das Fahrrad.", "Der Bus."],
+  q4: ["Von Gleis drei.", "Von Gleis fünf.", "Von Gleis sieben.", "Von Gleis zwei."],
+  q5: ["In Bonn.", "In Berlin.", "In Bremen.", "In Köln."],
+  q6: ["Um 14:05 Uhr.", "Um 15:05 Uhr.", "Um 15:50 Uhr.", "Um 16:05 Uhr."],
 };
 
 export function allTasks(): Exercise[] {
@@ -120,12 +126,15 @@ export function goalEvent(
 
 export const expectedEvidence = {
   z1: {
-    exerciseIds: ["e11", "e14", "q1", "q2"],
+    exerciseIds: ["e11", "e14", "q1", "q2", "q4", "q5", "q6"],
     taskIds: [
       "practice:a2-08:e11",
       "practice:a2-08:e14",
       "listening:l1:q1",
       "listening:l1:q2",
+      "listening:l3:q4",
+      "listening:l3:q5",
+      "listening:l3:q6",
     ],
   },
   "z-reading": {

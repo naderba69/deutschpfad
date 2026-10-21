@@ -10,15 +10,19 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       de: "Ich kann einfache Angaben zu Fahrkarten, Abfahrtszeiten und Ankünften aus einem kurzen Dialog und einem Übungsfahrplan entnehmen.",
       ar: "أستخرج معلومات بسيطة عن التذكرة ووقت المغادرة والوصول من حوار وجدول تدريب قصيرين.",
       evidence: {
-        exerciseIds: ["e11", "e14", "q1", "q2"],
+        exerciseIds: ["e11", "e14", "q1", "q2", "q4", "q5", "q6"],
         taskIds: [
           "practice:a2-08:e11",
           "practice:a2-08:e14",
           "listening:l1:q1",
           "listening:l1:q2",
+          "listening:l3:q4",
+          "listening:l3:q5",
+          "listening:l3:q6",
         ],
         labelAr:
-          "أجب عن e11 وe14 اعتماداً على جدول التدريب، وعن q1 وq2 من حوار التذكرة؛ فتح الجدول أو إظهار التفريغ وحده لا يثبت استخراج المعلومات.",
+          "أجب عن e11 وe14 من جدول التدريب، وعن q1 وq2 وq4–q6 من حواري التذكرة والمسار؛ فتح الجدول أو إظهار التفريغ وحده لا يثبت استخراج المعلومات.",
+
         completion: "all-correct",
       },
     },

@@ -10,7 +10,7 @@ import { ids } from "./fixtures";
 
 describe("A2-08 reviewed lesson", () => {
   it("preserves the individual dialogue, pronunciation, table, interaction, and card details", () => {
-    expect(lessonA208.listening.items.map((item) => item.id)).toEqual(["l1", "l2"]);
+    expect(lessonA208.listening.items.map((item) => item.id)).toEqual(["l1", "l2", "l3"]);
     expect(lessonA208.listening.items[0].lines).toEqual([
       { speaker: "Sami", de: "Guten Tag! Ich hätte gern eine Fahrkarte nach München.", ar: "مرحباً! أودّ تذكرة إلى ميونخ." },
       { speaker: "Mitarbeiterin", de: "Einfach oder hin und zurück?", ar: "ذهاب فقط أم ذهاب وعودة؟" },
@@ -25,10 +25,23 @@ describe("A2-08 reviewed lesson", () => {
       { speaker: "Anna", de: "Und ich fahre mit dem Fahrrad. Ich finde Radfahren gesünder.", ar: "وأنا أذهب بالدراجة. أرى أن ركوبها أفضل للصحة." },
       { speaker: "Karim", de: "In diesem Vergleich ist das Motorrad am schnellsten.", ar: "في هذه المقارنة، الدراجة النارية هي الأسرع." },
     ]);
+    expect(lessonA208.listening.items[2].audioNoteAr).toContain("مولّدة آلياً (TTS)");
+    expect(lessonA208.listening.items[2].audioNoteAr).toContain("ليست تسجيلاً بشرياً");
+    expect(lessonA208.listening.items[2].lines).toEqual([
+      { speaker: "Lea", de: "Entschuldigung, ich suche den Zug nach Köln. Von welchem Gleis fährt er?", ar: "عذراً، أبحث عن القطار إلى كولونيا. من أي رصيف ينطلق؟", audioSrc: "/audio/lessons/a2-08/ls-a2-08-3-1.mp3" },
+      { speaker: "Mitarbeiter", de: "Im Übungsfahrplan fährt er um vierzehn Uhr zwanzig von Gleis fünf.", ar: "في جدول التدريب، ينطلق في الساعة 14:20 من الرصيف الخامس.", audioSrc: "/audio/lessons/a2-08/ls-a2-08-3-2.mp3" },
+      { speaker: "Lea", de: "Muss ich in Bonn umsteigen?", ar: "هل يجب أن أبدّل القطار في بون؟", audioSrc: "/audio/lessons/a2-08/ls-a2-08-3-3.mp3" },
+      { speaker: "Mitarbeiter", de: "Ja, in Bonn steigen Sie in den Zug nach Köln um.", ar: "نعم، في بون عليكِ تبديل القطار إلى كولونيا.", audioSrc: "/audio/lessons/a2-08/ls-a2-08-3-4.mp3" },
+      { speaker: "Lea", de: "Wann fährt der Zug in Bonn ab?", ar: "متى ينطلق القطار في بون؟", audioSrc: "/audio/lessons/a2-08/ls-a2-08-3-5.mp3" },
+      { speaker: "Mitarbeiter", de: "Der Zug nach Köln fährt um fünfzehn Uhr fünf ab. Prüfen Sie die Anzeige vor der Fahrt.", ar: "ينطلق قطار كولونيا في الساعة 15:05. تحقّقوا من الشاشة قبل الرحلة.", audioSrc: "/audio/lessons/a2-08/ls-a2-08-3-6.mp3" },
+    ]);
     expect(lessonA208.listening.questions.map((question) => question.itemId)).toEqual([
       "l1",
       "l1",
       "l2",
+      "l3",
+      "l3",
+      "l3",
     ]);
 
     expect(lessonA208.pronunciation.items.map((item) => item.de)).toEqual([
