@@ -169,6 +169,19 @@ export const listening: Lesson["listening"] = {
           { speaker: "Amir", de: "In einer kleinen Gruppe, weil wir zusammen sprechen können.", ar: "في مجموعة صغيرة، لأننا نستطيع التحدث معاً.", audioSrc: "/audio/lessons/a2-10/ls-a2-10-3-6.mp3" },
         ],
       },
+      {
+        id: "l4",
+        title: "مراجعة في المكتبة",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً.",
+        lines: [
+          { speaker: "Nora", de: "Lernst du am Wochenende für die Prüfung?", ar: "هل تدرس للامتحان في عطلة نهاية الأسبوع؟", audioSrc: "/audio/lessons/a2-10/ls-a2-10-4-1.mp3" },
+          { speaker: "Amir", de: "Ja, wenn die Bibliothek geöffnet ist, lerne ich dort.", ar: "نعم، إذا كانت المكتبة مفتوحة، أدرس هناك.", audioSrc: "/audio/lessons/a2-10/ls-a2-10-4-2.mp3" },
+          { speaker: "Nora", de: "Weißt du, ob sie am Samstag bis sechs geöffnet ist?", ar: "هل تعرف إن كانت مفتوحة يوم السبت حتى السادسة؟", audioSrc: "/audio/lessons/a2-10/ls-a2-10-4-3.mp3" },
+          { speaker: "Amir", de: "Das weiß ich nicht. Ich schaue auf der Webseite nach.", ar: "لا أعرف ذلك. سأتحقق من الموقع الإلكتروني.", audioSrc: "/audio/lessons/a2-10/ls-a2-10-4-4.mp3" },
+          { speaker: "Nora", de: "Wenn du möchtest, können wir zusammen lernen.", ar: "إذا أردت، يمكننا أن ندرس معاً.", audioSrc: "/audio/lessons/a2-10/ls-a2-10-4-5.mp3" },
+          { speaker: "Amir", de: "Gute Idee, weil ich mit einem Partner besser üben kann.", ar: "فكرة جيدة، لأنني أستطيع التدرب بشكل أفضل مع شريك.", audioSrc: "/audio/lessons/a2-10/ls-a2-10-4-6.mp3" },
+        ],
+      },
     ],
     questions: [
       {
@@ -316,6 +329,27 @@ export const listening: Lesson["listening"] = {
           "يقول Amir إنها مجموعة صغيرة يتحدث أفرادها معاً، لا دورة كبيرة.",
           undefined,
         ],
+      },
+      {
+        id: "q8", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:",
+        questionDe: "Wo lernt Amir, wenn die Bibliothek geöffnet ist?", questionAr: "أين يدرس أمير إذا كانت المكتبة مفتوحة؟",
+        options: ["In der Bibliothek", "Zu Hause", "Im Deutschkurs", "In einem Café"], correctIndex: 0,
+        explanation: "يقول أمير إنه يدرس في المكتبة إذا كانت مفتوحة.", errorType: "comprehension",
+      },
+      {
+        id: "q9", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:",
+        questionDe: "Was weiß Amir noch nicht?", questionAr: "ما الأمر الذي لا يعرفه أمير بعد؟",
+        options: ["Ob die Bibliothek am Samstag bis sechs geöffnet ist", "Ob Nora die Prüfung am Samstag schreibt", "Ob der Kurs in der Bibliothek stattfindet", "Ob die Webseite einen neuen Deutschkurs zeigt"], correctIndex: 0,
+        explanation: "تسأل نورا إن كان يعرف ساعات فتح المكتبة، فيجيب بأنه لا يعرف وسيتحقق من الموقع.", errorType: "comprehension",
+      },
+      {
+        id: "q10", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:",
+        questionDe: "Was schlagen Nora und Amir vor?", questionAr: "ما الذي تقترحه نورا وأمير؟",
+        options: ["Dass sie zusammen lernen können", "Dass sie einen Kurs besuchen", "Dass sie am Samstag Prüfung schreiben", "Dass sie gemeinsam Bücher kaufen"], correctIndex: 0,
+        explanation: "تقترح نورا أن يدرسا معاً، ويوافق أمير لأن التدرب مع شريك يساعده.", errorType: "comprehension",
       },
     ],
   };

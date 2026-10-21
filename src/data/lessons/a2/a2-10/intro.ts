@@ -53,12 +53,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z-listening",
-      de: "Ich kann ausgewählte Gründe, Lernzeiten, indirekte Fragen, Gefühle und Kurszeiten aus drei kurzen Dialogen heraushören.",
-      ar: "ألتقط أسباب التعلم وأوقاته، ومضمون سؤال غير مباشر، ومشاعر المتحدثين وموعد الدورة من ثلاثة حوارات قصيرة قبل كشف التفريغ.",
+      de: "Ich kann ausgewählte Gründe, Lernzeiten, indirekte Fragen, Gefühle, Kurszeiten und Bibliotheksangaben aus kurzen Dialogen heraushören.",
+      ar: "ألتقط أسباب التعلم وأوقاته، ومضمون سؤال غير مباشر، ومشاعر المتحدثين ومعلومات عن الدورة والمكتبة من حوارات قصيرة قبل كشف التفريغ.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l2:q4", "listening:l3:q5", "listening:l3:q6", "listening:l3:q7"],
-        labelAr: "أجب عن أسئلة سبب التعلم ووقته، وشك Karim وشعوره، وموعد الدورة ووصول Amir وطريقة تعلمه؛ لا تُحتسب إجابة ما بعد كشف النص.",
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l2:q4", "listening:l3:q5", "listening:l3:q6", "listening:l3:q7", "listening:l4:q8", "listening:l4:q9", "listening:l4:q10"],
+        labelAr: "أجب عن أسئلة أسباب التعلم وأوقاته، والاستعداد للدورة والامتحان، والمكتبة والدراسة المشتركة قبل كشف التفريغ؛ لا تُحتسب إجابة ما بعد كشف النص.",
         completion: "all-correct",
       },
     },

@@ -160,9 +160,9 @@ describe("A2-10 lesson content audit", () => {
     expect(reading?.discussionAr).toMatch(/لا يقيس وحده.*الكتابة الحرة أو التحدث/);
   });
 
-  it("checks all three listening dialogues and every transcript-free comprehension question", () => {
-    expect(lessonA210.listening.items.map((item) => item.id)).toEqual(["l1", "l2", "l3"]);
-    expect(lessonA210.listening.items.map((item) => item.lines.length)).toEqual([4, 5, 6]);
+  it("checks all four listening dialogues and every transcript-free comprehension question", () => {
+    expect(lessonA210.listening.items.map((item) => item.id)).toEqual(["l1", "l2", "l3", "l4"]);
+    expect(lessonA210.listening.items.map((item) => item.lines.length)).toEqual([4, 5, 6, 6]);
     expect(lessonA210.listening.items.flatMap((item) => item.lines.map(({ speaker, de, ar }) => ({ speaker, de, ar })))).toEqual([
       { speaker: "Anna", de: "Warum lernst du Deutsch, Sami?", ar: "لماذا تتعلم الألمانية يا سامي؟" },
       { speaker: "Sami", de: "Ich lerne Deutsch, weil ich später in Deutschland studieren möchte.", ar: "أتعلم الألمانية لأنني أريد لاحقاً الدراسة في ألمانيا." },
@@ -179,6 +179,12 @@ describe("A2-10 lesson content audit", () => {
       { speaker: "Amir", de: "Dann passt es. Wenn mein Bus pünktlich ist, bin ich um sechs da.", ar: "إذن يناسبني الموعد. إذا وصلت الحافلة في موعدها، سأكون هناك عند السادسة." },
       { speaker: "Lisa", de: "Lernst du lieber allein oder in einer Gruppe?", ar: "هل تفضل الدراسة وحدك أم ضمن مجموعة؟" },
       { speaker: "Amir", de: "In einer kleinen Gruppe, weil wir zusammen sprechen können.", ar: "في مجموعة صغيرة، لأننا نستطيع التحدث معاً." },
+      { speaker: "Nora", de: "Lernst du am Wochenende für die Prüfung?", ar: "هل تدرس للامتحان في عطلة نهاية الأسبوع؟" },
+      { speaker: "Amir", de: "Ja, wenn die Bibliothek geöffnet ist, lerne ich dort.", ar: "نعم، إذا كانت المكتبة مفتوحة، أدرس هناك." },
+      { speaker: "Nora", de: "Weißt du, ob sie am Samstag bis sechs geöffnet ist?", ar: "هل تعرف إن كانت مفتوحة يوم السبت حتى السادسة؟" },
+      { speaker: "Amir", de: "Das weiß ich nicht. Ich schaue auf der Webseite nach.", ar: "لا أعرف ذلك. سأتحقق من الموقع الإلكتروني." },
+      { speaker: "Nora", de: "Wenn du möchtest, können wir zusammen lernen.", ar: "إذا أردت، يمكننا أن ندرس معاً." },
+      { speaker: "Amir", de: "Gute Idee, weil ich mit einem Partner besser üben kann.", ar: "فكرة جيدة، لأنني أستطيع التدرب بشكل أفضل مع شريك." },
     ]);
     expect(
       lessonA210.listening.items.flatMap((item) => item.lines).every((line) => line.de.trim() && line.ar.trim()),
@@ -203,6 +209,9 @@ describe("A2-10 lesson content audit", () => {
       "l3",
       "l3",
       "l3",
+      "l4",
+      "l4",
+      "l4",
     ]);
     expect(lessonA210.listening.questions.map((question) => question.questionAr)).toEqual([
       "لماذا يتعلم سامي الألمانية؟",
@@ -212,6 +221,9 @@ describe("A2-10 lesson content audit", () => {
       "متى تبدأ الدورة؟",
       "متى يكون أمير هناك إذا وصلت الحافلة في موعدها؟",
       "كيف يفضل أمير أن يتعلم؟",
+      "أين يدرس أمير إذا كانت المكتبة مفتوحة؟",
+      "ما الأمر الذي لا يعرفه أمير بعد؟",
+      "ما الذي تقترحه نورا وأمير؟",
     ]);
     expect(lessonA210.listening.questions.map((question) => question.explanation)).toEqual([
       "يقول Sami إنه يتعلم الألمانية لأنه يريد لاحقاً الدراسة في ألمانيا؛ أما موعد الامتحان فيخص حوار Karim.",
@@ -221,6 +233,9 @@ describe("A2-10 lesson content audit", () => {
       "تقول Lisa إن الدورة تبدأ عند halb sieben، أي السادسة والنصف؛ أما السادسة فهو وقت وصول Amir إذا كانت الحافلة في موعدها.",
       "يقول Amir: Wenn mein Bus pünktlich ist, bin ich um sechs da؛ السادسة والنصف بداية الدورة لا وقت وصوله.",
       "يفضل Amir مجموعة صغيرة لأنهم يستطيعون التحدث معاً؛ لا يقول إنه يريد الدراسة وحده أو مع Lisa صباحاً.",
+      "يقول أمير إنه يدرس في المكتبة إذا كانت مفتوحة.",
+      "تسأل نورا إن كان يعرف ساعات فتح المكتبة، فيجيب بأنه لا يعرف وسيتحقق من الموقع.",
+      "تقترح نورا أن يدرسا معاً، ويوافق أمير لأن التدرب مع شريك يساعده.",
     ]);
     for (const question of lessonA210.listening.questions) {
       expect(getListeningQuestionTaskId(lessonA210.id, question.itemId, question.id, false)).toBe(

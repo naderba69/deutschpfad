@@ -49,9 +49,9 @@ describe("A2-10 lesson content audit", () => {
     expect(taskIds(lessonA210.miniTest)).toEqual(["m1", "m2", "m3", "m4", "m5"]);
     expect(taskIds(lessonA210.writing)).toEqual(["w1", "w2", "w3"]);
     expect(taskIds(lessonA210.reading?.questions ?? [])).toEqual(["rq1", "rq2", "rq3", "rq4"]);
-    expect(taskIds(lessonA210.listening.questions)).toEqual(["q1", "q2", "q3", "q4", "q5", "q6", "q7"]);
-    expect(allTasks()).toHaveLength(36);
-    expect(new Set(allTasks().map((item) => item.id)).size).toBe(36);
+    expect(taskIds(lessonA210.listening.questions)).toEqual(["q1", "q10", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9"]);
+    expect(allTasks()).toHaveLength(39);
+    expect(new Set(allTasks().map((item) => item.id)).size).toBe(39);
     expect(lessonA210.theory).toHaveLength(2);
     expect(lessonA210.theory.every((block) => block.examples.length >= 5)).toBe(true);
     expect(lessonA210.flashcards.map(({ id, de, ar, example, exampleAr, level }) => ({
@@ -78,7 +78,7 @@ describe("A2-10 lesson content audit", () => {
     expect(lessonA210.pronunciation.items).toHaveLength(6);
     expect(lessonA210.pronunciation.shadowing).toHaveLength(4);
     expect(lessonA210.reading?.paragraphs).toHaveLength(4);
-    expect(lessonA210.listening.items).toHaveLength(3);
+    expect(lessonA210.listening.items).toHaveLength(4);
     expect(lessonA210.mediation).toHaveLength(1);
     expect(lessonA210.interaction?.[0]?.rounds).toHaveLength(2);
   });

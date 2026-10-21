@@ -28,6 +28,9 @@ export const expectedMultipleChoiceKeys: Record<string, string> = {
   q5: "Um halb sieben.",
   q6: "Um sechs Uhr.",
   q7: "In einer kleinen Gruppe, weil wir zusammen sprechen können.",
+  q8: "In der Bibliothek",
+  q9: "Ob die Bibliothek am Samstag bis sechs geöffnet ist",
+  q10: "Dass sie zusammen lernen können",
 };
 
 export const expectedMultipleChoiceOptions: Record<string, string[]> = {
@@ -84,6 +87,9 @@ export const expectedMultipleChoiceOptions: Record<string, string[]> = {
     "In einem großen Kurs, weil viele Lehrer helfen.",
     "In einer kleinen Gruppe, weil wir zusammen sprechen können.",
   ],
+  q8: ["In der Bibliothek", "Zu Hause", "Im Deutschkurs", "In einem Café"],
+  q9: ["Ob die Bibliothek am Samstag bis sechs geöffnet ist", "Ob Nora die Prüfung am Samstag schreibt", "Ob der Kurs in der Bibliothek stattfindet", "Ob die Webseite einen neuen Deutschkurs zeigt"],
+  q10: ["Dass sie zusammen lernen können", "Dass sie einen Kurs besuchen", "Dass sie am Samstag Prüfung schreiben", "Dass sie gemeinsam Bücher kaufen"],
 };
 
 export const expectedFillBlankKeys: Record<string, string[]> = {
@@ -181,7 +187,7 @@ export const expectedEvidence = {
     ],
   },
   "z-listening": {
-    exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
+    exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"],
     taskIds: [
       "listening:l1:q1",
       "listening:l1:q2",
@@ -190,6 +196,9 @@ export const expectedEvidence = {
       "listening:l3:q5",
       "listening:l3:q6",
       "listening:l3:q7",
+      "listening:l4:q8",
+      "listening:l4:q9",
+      "listening:l4:q10",
     ],
   },
   "z-writing": {
