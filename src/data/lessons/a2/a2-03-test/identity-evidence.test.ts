@@ -25,7 +25,7 @@ describe("A2-03 audited lesson", () => {
     expect(ids(lessonA203.miniTest)).toEqual(["m1", "m2", "m3", "m4", "m5"]);
     expect(ids(lessonA203.writing)).toEqual(["w1", "w2", "w3"]);
     expect(ids(reading().questions)).toEqual(["rq1", "rq2", "rq3", "rq4", "rq5", "rq6"]);
-    expect(ids(lessonA203.listening.questions)).toEqual(["q1", "q2", "q3"]);
+    expect(ids(lessonA203.listening.questions)).toEqual(["q1", "q2", "q3", "q4", "q5", "q6"]);
     expect("duration" in lessonA203).toBe(false);
 
     const validTaskIds = new Set<string>();

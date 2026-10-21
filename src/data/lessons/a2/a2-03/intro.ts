@@ -32,11 +32,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       de: "Ich kann ausdrücklich genannte Einzelheiten im Restaurant-Lesetext und in den Hördialogen finden.",
       ar: "أن أستخرج تفاصيل مذكورة صراحةً في نص المطعم وحوارات الاستماع، من دون تعميمها على كل زيارة.",
       evidence: {
-        exerciseIds: ["rq1", "rq2", "rq3", "rq4", "rq5", "rq6", "q1", "q2", "q3"],
+        exerciseIds: ["rq1", "rq2", "rq3", "rq4", "rq5", "rq6", "q1", "q2", "q3", "q4", "q5", "q6"],
         taskIds: [
           "reading:read-a2-03:rq1", "reading:read-a2-03:rq2", "reading:read-a2-03:rq3",
           "reading:read-a2-03:rq4", "reading:read-a2-03:rq5", "reading:read-a2-03:rq6",
           "listening:l1:q1", "listening:l1:q2", "listening:l2:q3",
+          "listening:l3:q4", "listening:l3:q5", "listening:l3:q6",
         ],
         labelAr: "أجب عن أسئلة النص والحوارات؛ لا تُحتسب مشاهدة النص أو إجابات أسئلة الاستماع بعد كشف التفريغ.",
         completion: "all-correct",
