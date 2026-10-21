@@ -99,7 +99,7 @@ describe("A2-09 lesson audit", () => {
     const reading = lessonA209.reading;
     if (!reading) throw new Error("A2-09 reading is required");
     expect(reading.questions.map((question) => question.id)).toEqual(["rq1", "rq2", "rq3", "rq4"]);
-    expect(lessonA209.listening.questions.map((question) => question.id)).toEqual(["q1", "q2", "q3", "q4", "q5", "q6"]);
+    expect(lessonA209.listening.questions.map((question) => question.id)).toEqual(["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9"]);
     expect(lessonA209.listening.questions.every((question) => question.errorType === "comprehension")).toBe(
       true,
     );
@@ -141,8 +141,21 @@ describe("A2-09 lesson audit", () => {
           { speaker: "Sami", de: "Bring einen Salat mit. Ich bringe die Getränke.", ar: "أحضري سلطة. سأحضر المشروبات.", audioSrc: "/audio/lessons/a2-09/ls-a2-09-3-6.mp3" },
         ],
       },
+      {
+        id: "l4",
+        title: "هدية للسيدة يلماز",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً. تفاصيل المناسبة خيالية للتدريب.",
+        lines: [
+          { speaker: "Mona", de: "Weißt du schon, was wir Frau Yilmaz schenken?", ar: "هل تعرف ماذا سنهدي السيدة يلماز؟", audioSrc: "/audio/lessons/a2-09/ls-a2-09-4-1.mp3" },
+          { speaker: "Sami", de: "Ja, wir schenken ihr ein Kochbuch.", ar: "نعم، سنهديها كتاباً للطهي.", audioSrc: "/audio/lessons/a2-09/ls-a2-09-4-2.mp3" },
+          { speaker: "Mona", de: "Liest sie gern Kochbücher?", ar: "هل تحب قراءة كتب الطهي؟", audioSrc: "/audio/lessons/a2-09/ls-a2-09-4-3.mp3" },
+          { speaker: "Sami", de: "Ja, sie probiert oft neue Rezepte aus.", ar: "نعم، كثيراً ما تجرب وصفات جديدة.", audioSrc: "/audio/lessons/a2-09/ls-a2-09-4-4.mp3" },
+          { speaker: "Mona", de: "Dann kaufen wir das Buch zusammen.", ar: "إذن سنشتري الكتاب معاً.", audioSrc: "/audio/lessons/a2-09/ls-a2-09-4-5.mp3" },
+          { speaker: "Sami", de: "Gute Idee. Ich gratuliere ihr am Samstag.", ar: "فكرة جيدة. سأهنئها يوم السبت.", audioSrc: "/audio/lessons/a2-09/ls-a2-09-4-6.mp3" },
+        ],
+      },
     ]);
-    expect(lessonA209.listening.items.map((item) => item.lines.length)).toEqual([7, 4, 6]);
+    expect(lessonA209.listening.items.map((item) => item.lines.length)).toEqual([7, 4, 6, 6]);
     expect(lessonA209.listening.questions.map((question) => [question.questionDe, question.questionAr])).toEqual([
       ["An welchem Tag hat Mona Geburtstag?", "في أي يوم عيد ميلاد منى؟"],
       ["Um wie viel Uhr beginnt die Feier?", "في أي ساعة تبدأ المناسبة؟"],
@@ -150,6 +163,9 @@ describe("A2-09 lesson audit", () => {
       ["Wo feiert Frau Yilmaz?", "أين تحتفل السيدة يلماز؟"],
       ["Was soll Mona mitbringen?", "ماذا ينبغي لمنى أن تحضر معها؟"],
       ["Was bringt Sami mit?", "ماذا سيحضر سامي معه؟"],
+      ["Was schenken Mona und Sami Frau Yilmaz?", "ماذا سيهدي منى وسامي السيدة يلماز؟"],
+      ["Was macht Frau Yilmaz oft?", "ماذا تفعل السيدة يلماز كثيراً؟"],
+      ["Wann gratuliert Sami Frau Yilmaz?", "متى سيهنئ سامي السيدة يلماز؟"],
     ]);
 
     for (const question of [...reading.questions, ...lessonA209.listening.questions]) {

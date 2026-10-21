@@ -174,6 +174,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
           { speaker: "Sami", de: "Bring einen Salat mit. Ich bringe die Getränke.", ar: "أحضري سلطة. سأحضر المشروبات.", audioSrc: "/audio/lessons/a2-09/ls-a2-09-3-6.mp3" },
         ],
       },
+      {
+        id: "l4",
+        title: "هدية للسيدة يلماز",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً. تفاصيل المناسبة خيالية للتدريب.",
+        lines: [
+          { speaker: "Mona", de: "Weißt du schon, was wir Frau Yilmaz schenken?", ar: "هل تعرف ماذا سنهدي السيدة يلماز؟", audioSrc: "/audio/lessons/a2-09/ls-a2-09-4-1.mp3" },
+          { speaker: "Sami", de: "Ja, wir schenken ihr ein Kochbuch.", ar: "نعم، سنهديها كتاباً للطهي.", audioSrc: "/audio/lessons/a2-09/ls-a2-09-4-2.mp3" },
+          { speaker: "Mona", de: "Liest sie gern Kochbücher?", ar: "هل تحب قراءة كتب الطهي؟", audioSrc: "/audio/lessons/a2-09/ls-a2-09-4-3.mp3" },
+          { speaker: "Sami", de: "Ja, sie probiert oft neue Rezepte aus.", ar: "نعم، كثيراً ما تجرب وصفات جديدة.", audioSrc: "/audio/lessons/a2-09/ls-a2-09-4-4.mp3" },
+          { speaker: "Mona", de: "Dann kaufen wir das Buch zusammen.", ar: "إذن سنشتري الكتاب معاً.", audioSrc: "/audio/lessons/a2-09/ls-a2-09-4-5.mp3" },
+          { speaker: "Sami", de: "Gute Idee. Ich gratuliere ihr am Samstag.", ar: "فكرة جيدة. سأهنئها يوم السبت.", audioSrc: "/audio/lessons/a2-09/ls-a2-09-4-6.mp3" },
+        ],
+      },
     ],
     questions: [
       {
@@ -265,6 +278,27 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         explanation: "يقول سامي: Ich bringe die Getränke؛ أي إنه سيحضر المشروبات.",
         errorType: "comprehension",
+      },
+      {
+        id: "q7", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:",
+        questionDe: "Was schenken Mona und Sami Frau Yilmaz?", questionAr: "ماذا سيهدي منى وسامي السيدة يلماز؟",
+        options: ["Ein Kochbuch", "Eine Torte", "Blumen", "Ein Fotoalbum"], correctIndex: 0,
+        explanation: "يقول سامي إنهما سيهديانها كتاباً للطهي.", errorType: "comprehension",
+      },
+      {
+        id: "q8", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:",
+        questionDe: "Was macht Frau Yilmaz oft?", questionAr: "ماذا تفعل السيدة يلماز كثيراً؟",
+        options: ["Sie probiert neue Rezepte aus", "Sie backt jeden Tag eine Torte", "Sie liest die Zeitung im Café", "Sie kauft Blumen für die Gäste"], correctIndex: 0,
+        explanation: "يذكر سامي أنها كثيراً ما تجرب وصفات جديدة.", errorType: "comprehension",
+      },
+      {
+        id: "q9", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:",
+        questionDe: "Wann gratuliert Sami Frau Yilmaz?", questionAr: "متى سيهنئ سامي السيدة يلماز؟",
+        options: ["Am Samstag", "Am Freitag", "Am Sonntag", "Am Montag"], correctIndex: 0,
+        explanation: "يقول سامي إنه سيهنئها يوم السبت.", errorType: "comprehension",
       },
     ],
   };
