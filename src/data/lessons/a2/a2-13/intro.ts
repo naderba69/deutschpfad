@@ -39,6 +39,17 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       },
     },
     {
+      id: "z-listening",
+      de: "Ich kann ausgewählte Angaben zu Krankheit, Prüfungsvorbereitung und Lernplänen aus kurzen Gesprächen heraushören.",
+      ar: "أن أستخرج معلومات محددة عن المرض والاستعداد للامتحان وخطط التعلم من الحوارات القصيرة بالإجابة الصحيحة عن أسئلة الاستماع السبعة؛ تشغيل الصوت وحده لا يثبت الفهم.",
+      evidence: {
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l2:q4", "listening:l3:q5", "listening:l3:q6", "listening:l3:q7"],
+        labelAr: "أجب صحيحاً عن أسئلة الاستماع q1–q7 قبل كشف التفريغ؛ كل إجابة صحيحة دليل مستقل، وتشغيل الصوت أو عرض النص وحده لا يُحتسب.",
+        completion: "all-correct",
+      },
+    },
+    {
       id: "z4",
       de: "Ich kann fünf Erweiterungen von A2 nach B1 den passenden Beispielen zuordnen.",
       ar: "أن أطابق خمس توسعات من A2 إلى B1 بأمثلتها؛ هذا تعرّف على الشكل وليس إتقان B1.",
