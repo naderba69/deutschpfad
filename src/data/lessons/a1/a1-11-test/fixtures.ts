@@ -84,6 +84,9 @@ export const listeningAnswers: Record<string, string> = {
   q1: "neben dem Park",
   q2: "in die Stadt",
   q3: "um acht Uhr",
+  q4: "zum Museum",
+  q5: "vor der Apotheke",
+  q6: "an der dritten Haltestelle",
 };
 
 export function reading() {

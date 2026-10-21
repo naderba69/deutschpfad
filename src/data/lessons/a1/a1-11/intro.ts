@@ -170,20 +170,26 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       "id": "z8",
-      "de": "Ich kann ausgewählte Angaben aus den zwei bereitgestellten, vorgelesenen Dialogen wiedererkennen.",
-      "ar": "أحدد المعلومات التي تسأل عنها الأسئلة الثلاثة في حوارين قصيرين يُنطقان عبر TTS؛ يُسجّل الدليل عند الإجابة قبل كشف النص، ولا يثبت إتقاناً عاماً للاستماع.",
+      "de": "Ich kann ausgewählte Angaben aus drei bereitgestellten, vorgelesenen Dialogen wiedererkennen.",
+      "ar": "أحدد المعلومات التي تسأل عنها الأسئلة الستة في ثلاثة حوارات قصيرة تُنطق عبر TTS؛ يُسجّل الدليل عند الإجابة قبل كشف النص، ولا يثبت إتقاناً عاماً للاستماع.",
       "evidence": {
         "exerciseIds": [
           "q1",
           "q2",
-          "q3"
+          "q3",
+          "q4",
+          "q5",
+          "q6"
         ],
         "taskIds": [
           "listening:l1:q1",
           "listening:l2:q2",
-          "listening:l2:q3"
+          "listening:l2:q3",
+          "listening:l3:q4",
+          "listening:l3:q5",
+          "listening:l3:q6"
         ],
-        "labelAr": "أجب عن q1–q3 بعد الاستماع وقبل كشف النص؛ كشفه، حتى إن أخفيته لاحقاً، يجعل الإجابات خارج دليل الاستماع. ولا تُحتسب إجابات المسار المرحلي الذي يعرض النص.",
+        "labelAr": "أجب عن q1–q6 بعد الاستماع وقبل كشف النص؛ كشفه، حتى إن أخفيته لاحقاً، يجعل الإجابات خارج دليل الاستماع. ولا تُحتسب إجابات المسار المرحلي الذي يعرض النص.",
         "completion": "all-correct"
       }
     },

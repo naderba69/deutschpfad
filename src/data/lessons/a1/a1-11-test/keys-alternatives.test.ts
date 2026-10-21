@@ -23,8 +23,8 @@ describe("A1-11 audited lesson content", () => {
     expect(actualIds).toEqual(Object.keys(practiceAnswers).sort());
     expect(actualIds).toHaveLength(27);
     expect(new Set(actualIds).size).toBe(actualIds.length);
-    expect(allTasks()).toHaveLength(43);
-    expect(new Set(allTasks().map((task) => task.id)).size).toBe(43);
+    expect(allTasks()).toHaveLength(46);
+    expect(new Set(allTasks().map((task) => task.id)).size).toBe(46);
 
     for (const [id, answer] of Object.entries(practiceAnswers)) {
       const task = findTask(id);
