@@ -10,7 +10,7 @@ import { ids } from "./fixtures";
 
 describe("A2-08 reviewed lesson", () => {
   it("preserves the individual dialogue, pronunciation, table, interaction, and card details", () => {
-    expect(lessonA208.listening.items.map((item) => item.id)).toEqual(["l1", "l2", "l3"]);
+    expect(lessonA208.listening.items.map((item) => item.id)).toEqual(["l1", "l2", "l3", "l4"]);
     expect(lessonA208.listening.items[0].lines).toEqual([
       { speaker: "Sami", de: "Guten Tag! Ich hätte gern eine Fahrkarte nach München.", ar: "مرحباً! أودّ تذكرة إلى ميونخ." },
       { speaker: "Mitarbeiterin", de: "Einfach oder hin und zurück?", ar: "ذهاب فقط أم ذهاب وعودة؟" },
@@ -35,6 +35,16 @@ describe("A2-08 reviewed lesson", () => {
       { speaker: "Lea", de: "Wann fährt der Zug in Bonn ab?", ar: "متى ينطلق القطار في بون؟", audioSrc: "/audio/lessons/a2-08/ls-a2-08-3-5.mp3" },
       { speaker: "Mitarbeiter", de: "Der Zug nach Köln fährt um fünfzehn Uhr fünf ab. Prüfen Sie die Anzeige vor der Fahrt.", ar: "ينطلق قطار كولونيا في الساعة 15:05. تحقّقوا من الشاشة قبل الرحلة.", audioSrc: "/audio/lessons/a2-08/ls-a2-08-3-6.mp3" },
     ]);
+    expect(lessonA208.listening.items[3].audioNoteAr).toContain("مولّدة آلياً (TTS)");
+    expect(lessonA208.listening.items[3].audioNoteAr).toContain("خيالية");
+    expect(lessonA208.listening.items[3].lines).toEqual([
+      { speaker: "Lea", de: "Entschuldigung, der Zug nach Köln hat zehn Minuten Verspätung?", ar: "عذراً، هل تأخر قطار كولونيا عشر دقائق؟", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-1.mp3" },
+      { speaker: "Mitarbeiter", de: "Ja. Laut Anzeige fährt er jetzt um fünfzehn Uhr fünfzehn ab.", ar: "نعم. بحسب الشاشة، ينطلق الآن الساعة 15:15.", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-2.mp3" },
+      { speaker: "Lea", de: "Verpasse ich dadurch den Anschluss in Bonn?", ar: "هل سأفوت بذلك قطار المتابعة في بون؟", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-3.mp3" },
+      { speaker: "Mitarbeiter", de: "Das weiß ich nicht. Bitte fragen Sie am Schalter nach.", ar: "لا أعرف. يُرجى السؤال عند شباك الخدمة.", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-4.mp3" },
+      { speaker: "Lea", de: "Wo ist der Schalter?", ar: "أين شباك الخدمة؟", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-5.mp3" },
+      { speaker: "Mitarbeiter", de: "Gleich links neben dem Fahrkartenautomaten.", ar: "إلى اليسار مباشرة بجانب آلة بيع التذاكر.", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-6.mp3" },
+    ]);
     expect(lessonA208.listening.questions.map((question) => question.itemId)).toEqual([
       "l1",
       "l1",
@@ -42,6 +52,9 @@ describe("A2-08 reviewed lesson", () => {
       "l3",
       "l3",
       "l3",
+      "l4",
+      "l4",
+      "l4",
     ]);
 
     expect(lessonA208.pronunciation.items.map((item) => item.de)).toEqual([

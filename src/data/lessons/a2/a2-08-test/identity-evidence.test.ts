@@ -43,9 +43,9 @@ describe("A2-08 reviewed lesson", () => {
     expect(ids(lessonA208.miniTest)).toEqual(["m1", "m2", "m3", "m4", "m5"]);
     expect(ids(lessonA208.writing)).toEqual(["w1", "w2", "w3", "w4"]);
     expect(ids(lessonA208.reading?.questions ?? [])).toEqual(["rq1", "rq2", "rq3", "rq4", "rq5"]);
-    expect(ids(lessonA208.listening.questions)).toEqual(["q1", "q2", "q3", "q4", "q5", "q6"]);
-    expect(allTasks()).toHaveLength(37);
-    expect(new Set(allTasks().map((item) => item.id)).size).toBe(37);
+    expect(ids(lessonA208.listening.questions)).toEqual(["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9"]);
+    expect(allTasks()).toHaveLength(40);
+    expect(new Set(allTasks().map((item) => item.id)).size).toBe(40);
     expect("duration" in lessonA208).toBe(false);
     expect(lessonA208.summary).not.toMatch(/Goethe|CEFR|اعتماد|جاهزية|إتقان|\b\d+\s*دقيقة/i);
     expect(lessonA208.einfuehrung.contextAr).toContain("خيالية");
@@ -163,7 +163,7 @@ describe("A2-08 reviewed lesson", () => {
     }
     const transitGoal = lessonA208.lernziele.find((goal) => goal.id === "z1");
     if (!transitGoal) throw new Error("A2-08 z1 is required");
-    const transitEvidenceWithoutQ1 = ["e11", "e14", "q2", "q4", "q5", "q6"].map((exerciseId) =>
+    const transitEvidenceWithoutQ1 = ["e11", "e14", "q2", "q4", "q5", "q6", "q7", "q8", "q9"].map((exerciseId) =>
       goalEvent("z1", exerciseId, true),
     );
     expect(

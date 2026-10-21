@@ -185,6 +185,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
           { speaker: "Mitarbeiter", de: "Der Zug nach Köln fährt um fünfzehn Uhr fünf ab. Prüfen Sie die Anzeige vor der Fahrt.", ar: "ينطلق قطار كولونيا في الساعة 15:05. تحقّقوا من الشاشة قبل الرحلة.", audioSrc: "/audio/lessons/a2-08/ls-a2-08-3-6.mp3" },
         ],
       },
+      {
+        id: "l4",
+        title: "Verspätung und Anschluss",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً. الأوقات في الحوار تدريبية وخيالية.",
+        lines: [
+          { speaker: "Lea", de: "Entschuldigung, der Zug nach Köln hat zehn Minuten Verspätung?", ar: "عذراً، هل تأخر قطار كولونيا عشر دقائق؟", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-1.mp3" },
+          { speaker: "Mitarbeiter", de: "Ja. Laut Anzeige fährt er jetzt um fünfzehn Uhr fünfzehn ab.", ar: "نعم. بحسب الشاشة، ينطلق الآن الساعة 15:15.", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-2.mp3" },
+          { speaker: "Lea", de: "Verpasse ich dadurch den Anschluss in Bonn?", ar: "هل سأفوت بذلك قطار المتابعة في بون؟", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-3.mp3" },
+          { speaker: "Mitarbeiter", de: "Das weiß ich nicht. Bitte fragen Sie am Schalter nach.", ar: "لا أعرف. يُرجى السؤال عند شباك الخدمة.", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-4.mp3" },
+          { speaker: "Lea", de: "Wo ist der Schalter?", ar: "أين شباك الخدمة؟", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-5.mp3" },
+          { speaker: "Mitarbeiter", de: "Gleich links neben dem Fahrkartenautomaten.", ar: "إلى اليسار مباشرة بجانب آلة بيع التذاكر.", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-6.mp3" },
+        ],
+      },
     ],
     questions: [
       {
@@ -281,6 +294,27 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 1,
         explanation: "يقول الموظف: fünfzehn Uhr fünf؛ أي الساعة 15:05. الوقت جزء من جدول تدريب خيالي.",
         errorType: "comprehension",
+      },
+      {
+        id: "q7", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ؛ الوقت خيالي:",
+        questionDe: "Wann fährt der Zug nach Köln laut Anzeige jetzt ab?", questionAr: "متى ينطلق قطار كولونيا الآن بحسب الشاشة؟",
+        options: ["Um 15:15 Uhr.", "Um 15:05 Uhr.", "Um 14:15 Uhr.", "Um 16:15 Uhr."], correctIndex: 0,
+        explanation: "يوضح الموظف أن الشاشة تعرض الآن الساعة 15:15؛ هذا وقت تدريبي لا موعد حقيقي.", errorType: "comprehension",
+      },
+      {
+        id: "q8", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:",
+        questionDe: "Wo soll Lea nach dem Anschluss fragen?", questionAr: "أين ينبغي لليا أن تسأل عن قطار المتابعة؟",
+        options: ["Am Schalter", "Am Fahrkartenautomaten", "Auf Gleis fünf", "Im Zug nach Köln"], correctIndex: 0,
+        explanation: "يطلب منها الموظف أن تسأل عند شباك الخدمة.", errorType: "comprehension",
+      },
+      {
+        id: "q9", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:",
+        questionDe: "Wo ist der Schalter?", questionAr: "أين يوجد شباك الخدمة؟",
+        options: ["Links neben dem Fahrkartenautomaten", "Rechts neben dem Eingang", "Gegenüber von Gleis drei", "Hinter dem Informationsbüro"], correctIndex: 0,
+        explanation: "يقول الموظف إن الشباك إلى اليسار مباشرة بجانب آلة بيع التذاكر.", errorType: "comprehension",
       },
     ],
   };
