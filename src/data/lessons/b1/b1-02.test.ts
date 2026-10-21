@@ -22,6 +22,9 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     key: "viel recherchiert",
   },
   q3: { options: ["Sie wurde sicherer", "Sie hörte auf", "Sie wechselte die Firma", "Sie ging in Rente"], key: "Sie wurde sicherer" },
+  q4: { options: ["Zunächst nervös, aber das Team war freundlich", "Von Anfang an gelangweilt, weil die Aufgaben einfach waren", "Sehr ärgerlich, denn niemand half ihm bei der Arbeit", "Unsicher, weil er das Hotel nicht finden konnte"], key: "Zunächst nervös, aber das Team war freundlich" },
+  q5: { options: ["Einen Deutschkurs besucht und ein Praktikum gemacht", "Ein Studium abgeschlossen und im Büro gearbeitet", "Eine Prüfung bestanden und Urlaub genommen", "Ein Hotel gesucht und eine Bewerbung geschrieben"], key: "Einen Deutschkurs besucht und ein Praktikum gemacht" },
+  q6: { options: ["Mit Gästen sprechen und Probleme ruhig lösen", "Briefe schreiben und neue Zimmer reservieren", "Deutsch lernen und Prüfungen vorbereiten", "Das Hotel leiten und das Team organisieren"], key: "Mit Gästen sprechen und Probleme ruhig lösen" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -145,7 +148,7 @@ describe("B1-02 lesson content audit", () => {
     expect(lessonB102.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
     expect(goal("z1").evidence?.exerciseIds).toEqual(["e1", "m1", "w2"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e4", "e6", "m2"]);
-    expect(goal("z3").evidence?.exerciseIds).toEqual(["q1", "q2", "q3"]);
+    expect(goal("z3").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4", "q5", "q6"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["w1", "w3"]);
     expect(JSON.stringify(lessonB102.lernziele)).not.toMatch(/Goethe|CEFR|erzählen|berichten/);
 
@@ -311,7 +314,22 @@ describe("B1-02 lesson content audit", () => {
   it("maps listening evidence to transcript-free task IDs only", () => {
     expect(getListeningQuestionTaskId("b1-02", "l1", "q1", false)).toBe("listening:l1:q1");
     expect(getListeningQuestionTaskId("b1-02", "l2", "q3", true)).toBe("listening-transcript:b1-02:l2:q3");
-    expect(lessonB102.listening.questions.map(({ id, itemId }) => `${itemId}:${id}`)).toEqual(["l1:q1", "l1:q2", "l2:q3"]);
+    expect(lessonB102.listening.questions.map(({ id, itemId }) => `${itemId}:${id}`)).toEqual([
+      "l1:q1", "l1:q2", "l2:q3", "l3:q4", "l3:q5", "l3:q6",
+    ]);
+    const scene = lessonB102.listening.items.find(({ id }) => id === "l3")!;
+    expect(scene.lines.map(({ de }) => de)).toEqual([
+      "Wie war dein erster Arbeitstag im Hotel?",
+      "Am Anfang war ich nervös, aber mein Team war freundlich.",
+      "Was hattest du gemacht, bevor du dort anfingst?",
+      "Ich hatte einen Deutschkurs besucht und ein Praktikum gemacht.",
+      "Und was lernst du jetzt bei der Arbeit?",
+      "Ich lerne, mit Gästen zu sprechen und Probleme ruhig zu lösen.",
+    ]);
+    expect(scene.audioNoteAr).toMatch(/مولّدة آلياً \(TTS\)، وليست تسجيلاً بشرياً/);
+    expect(scene.lines.map(({ audioSrc }) => audioSrc)).toEqual(
+      [1, 2, 3, 4, 5, 6].map((line) => `/audio/lessons/b1-02/ls-b1-02-3-${line}.mp3`),
+    );
   });
 
   it("counts only correct, mapped exercise results toward goals", () => {
@@ -320,7 +338,7 @@ describe("B1-02 lesson content audit", () => {
     expect(getGoalEvidenceStatus(goal("z1"), lessonB102.id, z1Events)).toBe("evidenced");
     expect(getGoalEvidenceStatus(goal("z1"), lessonB102.id, z1Events.slice(0, 2))).toBe("pending");
     expect(getGoalEvidenceStatus(goal("z3"), lessonB102.id, [goalEvent("z3", "q3", false)])).toBe("pending");
-    const z3Events = [goalEvent("z3", "q1"), goalEvent("z3", "q2"), goalEvent("z3", "q3")];
+    const z3Events = [goalEvent("z3", "q1"), goalEvent("z3", "q2"), goalEvent("z3", "q3"), goalEvent("z3", "q4"), goalEvent("z3", "q5"), goalEvent("z3", "q6")];
     expect(getGoalEvidenceStatus(goal("z3"), lessonB102.id, z3Events)).toBe("evidenced");
   });
 });
