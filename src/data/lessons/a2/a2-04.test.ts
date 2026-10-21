@@ -29,6 +29,9 @@ const expectedMultipleChoiceKeys: Record<string, string> = {
   q2: "600 Euro warm",
   q3: "neben das Sofa",
   q4: "von 13 bis 15 Uhr und nach 22 Uhr",
+  q5: "In den Hausflur",
+  q6: "Im Fahrradkeller",
+  q7: "Gegenüber der Waschküche",
 };
 
 const expectedFillBlankKeys: Record<string, string[]> = {
@@ -117,14 +120,14 @@ describe("A2-04 audited lesson", () => {
     expect(ids(lessonA204.miniTest)).toEqual(["m1", "m2", "m3", "m4", "m5"]);
     expect(ids(lessonA204.writing)).toEqual(["w1", "w2", "w3"]);
     expect(ids(reading().questions)).toEqual(["rq1", "rq2", "rq3", "rq4", "rq5", "rq6", "rq7"]);
-    expect(ids(lessonA204.listening.questions)).toEqual(["q1", "q2", "q3", "q4"]);
+    expect(ids(lessonA204.listening.questions)).toEqual(["q1", "q2", "q3", "q4", "q5", "q6", "q7"]);
     const reviewInstructions = new Map((lessonA204.review ?? []).map((exercise) => [exercise.id, exercise.instructionAr]));
     expect(reviewInstructions.get("r1")).toContain("مستوى A1");
     expect(reviewInstructions.get("r1")).toContain("a1-04");
     expect(reviewInstructions.get("r2")).toContain("a1-11");
     expect(reviewInstructions.get("r3")).toContain("a1-04");
-    expect(allTasks()).toHaveLength(42);
-    expect(new Set(allTasks().map((item) => item.id)).size).toBe(42);
+    expect(allTasks()).toHaveLength(45);
+    expect(new Set(allTasks().map((item) => item.id)).size).toBe(45);
     expect("duration" in lessonA204).toBe(false);
 
     const validTaskIds = new Set<string>();
@@ -164,7 +167,9 @@ describe("A2-04 audited lesson", () => {
     expect(lessonA204.lernziele.find((goal) => goal.id === "z2")?.evidence?.taskIds).toEqual([
       "practice:a2-04:e3",
     ]);
-    expect(lessonA204.lernziele.find((goal) => goal.id === "z4")?.evidence?.taskIds).toEqual(["listening:l3:q4"]);
+    expect(lessonA204.lernziele.find((goal) => goal.id === "z4")?.evidence?.taskIds).toEqual([
+      "listening:l3:q4", "listening:l4:q5", "listening:l4:q6", "listening:l4:q7",
+    ]);
     expect(getListeningQuestionTaskId(lessonA204.id, "l3", "q4", false)).toBe("listening:l3:q4");
     expect(getListeningQuestionTaskId(lessonA204.id, "l3", "q4", true)).toBe(
       "listening-transcript:a2-04:l3:q4",
@@ -355,8 +360,8 @@ describe("A2-04 audited lesson", () => {
   });
 
   it("checks every listening dialogue line, translation, question mapping, and transcript gate", () => {
-    expect(lessonA204.listening.items.map((item) => item.id)).toEqual(["l1", "l2", "l3"]);
-    expect(lessonA204.listening.items.map((item) => item.lines.length)).toEqual([7, 5, 7]);
+    expect(lessonA204.listening.items.map((item) => item.id)).toEqual(["l1", "l2", "l3", "l4"]);
+    expect(lessonA204.listening.items.map((item) => item.lines.length)).toEqual([7, 5, 7, 6]);
     expect(lessonA204.listening.items.every((item) => item.lines.every((line) => line.de.trim() && line.ar.trim() && line.speaker.trim()))).toBe(true);
     const expectedDialogues = [
       ["l1", [
@@ -384,17 +389,30 @@ describe("A2-04 audited lesson", () => {
         ["Mona", "Verstanden. Kann ich meine Schuhe in den Hausflur stellen?", "فهمت. هل أستطيع وضع حذائي في مدخل المبنى؟"],
         ["Nachbarin", "Bitte nicht. Bei uns soll der Hausflur frei bleiben. Im Sommer treffen wir uns manchmal im Hof.", "من فضلك لا؛ ينبغي في مبنانا أن يبقى المدخل خالياً. نجتمع أحياناً في الصيف في الفناء."],
       ]],
+      ["l4", [
+        ["Mona", "Wohin soll ich den Karton stellen?", "أين أضع الصندوق؟"],
+        ["Frau Weber", "Bitte nicht in den Hausflur. Der muss frei bleiben.", "من فضلك ليس في مدخل المبنى. يجب أن يبقى خالياً."],
+        ["Mona", "Und wo kann ich mein Fahrrad abstellen?", "وأين يمكنني وضع دراجتي؟"],
+        ["Frau Weber", "Im Fahrradkeller, neben der Waschküche.", "في قبو الدراجات، بجانب غرفة الغسيل."],
+        ["Mona", "Ist der Keller gegenüber der Waschküche?", "هل القبو مقابل غرفة الغسيل؟"],
+        ["Frau Weber", "Ja, genau. Die Tür ist gleich gegenüber.", "نعم، تماماً. الباب مقابلها مباشرة."],
+      ]],
     ] as const;
     expect(lessonA204.listening.items.map((item) => [item.id, item.lines.map((line) => [line.speaker, line.de, line.ar])])).toEqual(expectedDialogues);
     expect(lessonA204.listening.questions.map((question) => [question.id, question.itemId])).toEqual([
       ["q1", "l1"], ["q2", "l1"], ["q3", "l2"], ["q4", "l3"],
+      ["q5", "l4"], ["q6", "l4"], ["q7", "l4"],
     ]);
     const allLines = lessonA204.listening.items.flatMap((item) => item.lines);
     expect(allLines.find((line) => line.de.includes("aus Wohnung 3"))?.ar).toContain("من الشقة 3");
     expect(allLines.find((line) => line.de.includes("Bioabfall"))?.de).toBe("Wir trennen Papier, Plastik und Bioabfall. Die Tonnen stehen draußen.");
     expect(allLines.find((line) => line.de.includes("Ruhezeiten"))?.de).toContain("In unserer Hausordnung");
     expect(lessonA204.listening.questions.find((question) => question.id === "q4")?.explanation).toContain("لا يُعمّم");
-    expect(lessonA204.lernziele.find((goal) => goal.id === "z4")?.evidence?.taskIds).toEqual(["listening:l3:q4"]);
+    expect(lessonA204.listening.questions.filter((question) => question.itemId === "l4").every((question) => question.instructionAr.includes("قبل فتح التفريغ"))).toBe(true);
+    expect(lessonA204.listening.items.find((item) => item.id === "l4")?.audioNoteAr).toContain("TTS");
+    expect(lessonA204.lernziele.find((goal) => goal.id === "z4")?.evidence?.taskIds).toEqual([
+      "listening:l3:q4", "listening:l4:q5", "listening:l4:q6", "listening:l4:q7",
+    ]);
     expect(getListeningQuestionTaskId(lessonA204.id, "l3", "q4", true)).not.toBe("listening:l3:q4");
   });
 

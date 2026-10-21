@@ -189,6 +189,18 @@ export const listening: NonNullable<Lesson["listening"]> = {
           { speaker: "Nachbarin", de: "Bitte nicht. Bei uns soll der Hausflur frei bleiben. Im Sommer treffen wir uns manchmal im Hof.", ar: "من فضلك لا؛ ينبغي في مبنانا أن يبقى المدخل خالياً. نجتمع أحياناً في الصيف في الفناء." },
         ],
       },
+      {
+        id: "l4", title: "مكان الصندوق والدراجة",
+        audioNoteAr: "هذا المقطع يحتوي على أصوات مولّدة آلياً (TTS)، وليس تسجيلاً بشرياً.",
+        lines: [
+          { speaker: "Mona", de: "Wohin soll ich den Karton stellen?", ar: "أين أضع الصندوق؟", audioSrc: "/audio/lessons/a2-04/ls-a2-04-4-1.mp3" },
+          { speaker: "Frau Weber", de: "Bitte nicht in den Hausflur. Der muss frei bleiben.", ar: "من فضلك ليس في مدخل المبنى. يجب أن يبقى خالياً.", audioSrc: "/audio/lessons/a2-04/ls-a2-04-4-2.mp3" },
+          { speaker: "Mona", de: "Und wo kann ich mein Fahrrad abstellen?", ar: "وأين يمكنني وضع دراجتي؟", audioSrc: "/audio/lessons/a2-04/ls-a2-04-4-3.mp3" },
+          { speaker: "Frau Weber", de: "Im Fahrradkeller, neben der Waschküche.", ar: "في قبو الدراجات، بجانب غرفة الغسيل.", audioSrc: "/audio/lessons/a2-04/ls-a2-04-4-4.mp3" },
+          { speaker: "Mona", de: "Ist der Keller gegenüber der Waschküche?", ar: "هل القبو مقابل غرفة الغسيل؟", audioSrc: "/audio/lessons/a2-04/ls-a2-04-4-5.mp3" },
+          { speaker: "Frau Weber", de: "Ja, genau. Die Tür ist gleich gegenüber.", ar: "نعم، تماماً. الباب مقابلها مباشرة.", audioSrc: "/audio/lessons/a2-04/ls-a2-04-4-6.mp3" },
+        ],
+      },
     ],
     questions: [
       {
@@ -238,6 +250,24 @@ export const listening: NonNullable<Lesson["listening"]> = {
           "لم تُذكر فترة «nachts zwischen zwei und vier».",
           "القاعدة ساعاتٌ يومية، لا أيام عطلة «am Wochenende und an Feiertagen». ",
         ],
+      },
+      {
+        id: "q5", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:", questionDe: "Wo soll Mona den Karton nicht hinstellen?", questionAr: "أين لا ينبغي لمنى أن تضع الصندوق؟",
+        options: ["In den Hausflur", "In den Fahrradkeller", "Neben die Waschküche", "In die Wohnung"], correctIndex: 0,
+        explanation: "تطلب الجارة ألا تضع الصندوق في مدخل المبنى، كي يبقى خالياً.", errorType: "vocabulary",
+      },
+      {
+        id: "q6", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:", questionDe: "Wo kann Mona ihr Fahrrad abstellen?", questionAr: "أين يمكن لمنى أن تضع دراجتها؟",
+        options: ["Im Fahrradkeller", "Im Hausflur", "Im Schlafzimmer", "Auf dem Balkon"], correctIndex: 0,
+        explanation: "تقول الجارة إن الدراجة يمكن أن تكون في قبو الدراجات.", errorType: "vocabulary",
+      },
+      {
+        id: "q7", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:", questionDe: "Wo ist die Tür zum Keller?", questionAr: "أين باب القبو؟",
+        options: ["Gegenüber der Waschküche", "Neben dem Schlafzimmer", "Hinter dem Sofa", "Über dem Waschbecken"], correctIndex: 0,
+        explanation: "تؤكد الجارة أن الباب يقع مقابل غرفة الغسيل.", errorType: "preposition",
       },
     ],
   };
