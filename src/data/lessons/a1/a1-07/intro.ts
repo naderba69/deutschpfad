@@ -80,16 +80,17 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z5",
-      de: "Ich kann in kurzen Gesprächen Preise und Mengen verstehen, eine Ziffernfolge heraushören und eine einfache Rückfrage erkennen.",
-      ar: "أفهم السعر والكمية في حوارات قصيرة، وألتقط تسلسلاً رقمياً وأتعرف على طلب استيضاح بسيط.",
+      de: "Ich kann in kurzen Gesprächen Preise, Mengen und einfache Rückgeldangaben verstehen sowie eine Ziffernfolge heraushören.",
+      ar: "أفهم الأسعار والكميات والباقي في حوارات قصيرة، وألتقط تسلسلاً رقمياً وأتعرف على طلب استيضاح بسيط.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3", "q4"],
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
         taskIds: [
           "listening:listen-a1-07-market:q1", "listening:listen-a1-07-market:q2",
           "listening:listen-a1-07-phone:q3", "listening:listen-a1-07-phone:q4",
+          "listening:listen-a1-07-kiosk:q5", "listening:listen-a1-07-kiosk:q6", "listening:listen-a1-07-kiosk:q7",
         ],
         labelAr:
-          "أجب إجابة صحيحة عن أسئلة الاستماع الأربعة q1–q4، بما فيها رقم الهاتف والسعر.",
+          "أجب إجابة صحيحة عن أسئلة الاستماع q1–q7 حول أسعار السوق ورقم الهاتف والشراء عند الكشك والباقي؛ تشغيل الصوت وحده لا يثبت الفهم.",
         completion: "all-correct",
       },
     },
