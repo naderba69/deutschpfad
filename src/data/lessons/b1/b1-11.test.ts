@@ -1,5 +1,7 @@
+import path from "node:path";
 import { describe, expect, it } from "vitest";
 
+import { isPlayableMp3 } from "@/lib/audio/mp3-file";
 import { lessonB111 } from "@/data/lessons/b1/b1-11";
 import { LESSON_META } from "@/data/lessons/meta";
 import { evaluateExercise } from "@/lib/lesson/exercise-engine";
@@ -41,6 +43,18 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   "lsq-b1-11-2": {
     options: ["Den Lebenslauf und die Zeugnisse", "Ein kleines Geschenk für den Chef", "Nichts, er braucht gar keine Unterlagen"],
     key: "Den Lebenslauf und die Zeugnisse",
+  },
+  "lsq-b1-11-3": {
+    options: ["Die Busse fahren häufiger", "Die Tickets sind billiger", "Die Busse fahren nur am Wochenende"],
+    key: "Die Busse fahren häufiger",
+  },
+  "lsq-b1-11-4": {
+    options: ["Weil er kürzer warten muss", "Weil er keine Fahrkarte braucht", "Weil er am Wochenende arbeitet"],
+    key: "Weil er kürzer warten muss",
+  },
+  "lsq-b1-11-5": {
+    options: ["Ein günstigeres Monatsticket", "Einen neuen Zug nach Berlin", "Kostenlose Fahrräder für alle"],
+    key: "Ein günstigeres Monatsticket",
   },
 };
 
@@ -152,6 +166,21 @@ describe("B1-11 lesson content audit", () => {
     expect(meta && "duration" in meta).toBe(false);
   });
 
+  it("adds a second disclosed TTS listening scene with six playable MP3 lines", () => {
+    expect(lessonB111.listening.items).toHaveLength(2);
+    const item = lessonB111.listening.items.find((candidate) => candidate.id === "ls-b1-11-2");
+    expect(item?.title).toBe("حوار: خطة الحافلات الجديدة");
+    expect(item?.audioNoteAr).toContain("مولّدة آلياً (TTS)");
+    expect(item?.lines).toHaveLength(6);
+    for (const line of item?.lines ?? []) {
+      expect(line.audioSrc).toContain("/audio/lessons/b1-11/ls-b1-11-2-");
+      expect(line.audioSrc?.endsWith(".mp3")).toBe(true);
+      expect(isPlayableMp3(path.join(process.cwd(), "public", line.audioSrc!.slice(1))), line.audioSrc).toBe(true);
+    }
+    expect(lessonB111.listening.questions).toHaveLength(5);
+    expect(lessonB111.listening.questions.filter((question) => question.itemId === "ls-b1-11-2")).toHaveLength(3);
+  });
+
   it("uses only evaluable performances as goals, each all-correct", () => {
     expect(lessonB111.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
     expect(goal("z1").evidence?.exerciseIds).toEqual([
@@ -163,7 +192,13 @@ describe("B1-11 lesson content audit", () => {
       "mt-b1-11-1",
       "mt-b1-11-2",
     ]);
-    expect(goal("z2").evidence?.exerciseIds).toEqual(["lsq-b1-11-1", "lsq-b1-11-2"]);
+    expect(goal("z2").evidence?.exerciseIds).toEqual([
+      "lsq-b1-11-1",
+      "lsq-b1-11-2",
+      "lsq-b1-11-3",
+      "lsq-b1-11-4",
+      "lsq-b1-11-5",
+    ]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["wr-b1-11-1", "wr-b1-11-2"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["ex-b1-11-5", "ex-b1-11-7"]);
     for (const item of lessonB111.lernziele) {
@@ -197,7 +232,13 @@ describe("B1-11 lesson content audit", () => {
       lessonB111.listening.questions.map(({ id, itemId }) =>
         getListeningQuestionTaskId("b1-11", itemId, id, false),
       ),
-    ).toEqual(["listening:ls-b1-11-1:lsq-b1-11-1", "listening:ls-b1-11-1:lsq-b1-11-2"]);
+    ).toEqual([
+      "listening:ls-b1-11-1:lsq-b1-11-1",
+      "listening:ls-b1-11-1:lsq-b1-11-2",
+      "listening:ls-b1-11-2:lsq-b1-11-3",
+      "listening:ls-b1-11-2:lsq-b1-11-4",
+      "listening:ls-b1-11-2:lsq-b1-11-5",
+    ]);
     expect(getListeningQuestionTaskId("b1-11", "ls-b1-11-1", "lsq-b1-11-1", true)).toBe(
       "listening-transcript:b1-11:ls-b1-11-1:lsq-b1-11-1",
     );

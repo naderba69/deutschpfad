@@ -26,13 +26,19 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z2",
-      de: "Ich kann in einer kurzen Nachricht Termin und mitzubringende Unterlagen verstehen.",
-      ar: "أن أفهم من رسالة قصيرة الموعد والمستندات المطلوب إحضارها.",
+      de: "Ich kann wichtige Details aus einer kurzen Nachricht und einem Gespräch über Änderungen im Alltag verstehen.",
+      ar: "أن أفهم معلومات مهمة من رسالة قصيرة وحوار عن تغييرات في الحياة اليومية.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["lsq-b1-11-1", "lsq-b1-11-2"],
-        taskIds: ["listening:ls-b1-11-1:lsq-b1-11-1", "listening:ls-b1-11-1:lsq-b1-11-2"],
-        labelAr: "أجيب صحيحاً عن السؤالين بعد الاستماع إلى الرسالة، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        exerciseIds: ["lsq-b1-11-1", "lsq-b1-11-2", "lsq-b1-11-3", "lsq-b1-11-4", "lsq-b1-11-5"],
+        taskIds: [
+          "listening:ls-b1-11-1:lsq-b1-11-1",
+          "listening:ls-b1-11-1:lsq-b1-11-2",
+          "listening:ls-b1-11-2:lsq-b1-11-3",
+          "listening:ls-b1-11-2:lsq-b1-11-4",
+          "listening:ls-b1-11-2:lsq-b1-11-5",
+        ],
+        labelAr: "أجيب صحيحاً عن أسئلة المشهدين بعد الاستماع دون كشف النص؛ كشف النص لا يُحتسب أداءً.",
       },
     },
     {
