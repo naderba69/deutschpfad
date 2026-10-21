@@ -84,12 +84,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z8",
-      de: "Ich kann nach zwei kurzen Dialogen Fragen zu Uhrzeiten und Geburtstagen beantworten.",
+      de: "Ich kann nach drei kurzen Dialogen Fragen zu Terminen, Uhrzeiten und Geburtstagen beantworten.",
       ar: "أجيب عن أسئلة فهم تتعلق بالأوقات وأعياد الميلاد بعد حوارين قصيرين.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3"],
-        labelAr: "أجب عن q1–q3 إجابة صحيحة؛ فتح المقطع أو تشغيله وحده لا يكفي. ولأن النص قابل للإظهار، فالنتيجة دليل على إجابات الفهم لا على الاستماع المستقل دون نص.",
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6"],
+        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4", "listening:l3:q5", "listening:l3:q6"],
+        labelAr: "أجب عن q1–q6 إجابة صحيحة؛ فتح المقطع أو تشغيله وحده لا يكفي. ولأن النص قابل للإظهار، فالنتيجة دليل على إجابات الفهم لا على الاستماع المستقل دون نص.",
         completion: "all-correct",
       },
     },
