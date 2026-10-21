@@ -152,6 +152,19 @@ export const listening: Lesson["listening"] = {
           { speaker: "Karim", de: "Gern. Ich freue mich darauf.", ar: "بكل سرور. أنا متحمس لذلك.", audioSrc: "/audio/lessons/a2-12/ls-a2-12-3-6.mp3" },
         ],
       },
+      {
+        id: "l4",
+        title: "اعتذار بعد تأخّر",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً. الحوار مثال تدريبي خيالي.",
+        lines: [
+          { speaker: "Sami", de: "Anna, bist du noch böse? Gestern hast du lange gewartet.", ar: "آنا، هل ما زلت غاضبة؟ انتظرتِ طويلاً أمس.", audioSrc: "/audio/lessons/a2-12/ls-a2-12-4-1.mp3" },
+          { speaker: "Anna", de: "Ich war enttäuscht, aber ich bin nicht mehr böse.", ar: "كنت محبطة، لكنني لم أعد غاضبة.", audioSrc: "/audio/lessons/a2-12/ls-a2-12-4-2.mp3" },
+          { speaker: "Sami", de: "Der Bus ist ausgefallen. Deshalb konnte ich nicht anrufen.", ar: "تعطّلت الحافلة. لذلك لم أستطع الاتصال.", audioSrc: "/audio/lessons/a2-12/ls-a2-12-4-3.mp3" },
+          { speaker: "Anna", de: "Ich verstehe, trotzdem war ich allein im Café.", ar: "أتفهم ذلك، ومع هذا كنت وحدي في المقهى.", audioSrc: "/audio/lessons/a2-12/ls-a2-12-4-4.mp3" },
+          { speaker: "Sami", de: "Es tut mir leid. Morgen lade ich dich zum Kaffee ein.", ar: "أنا آسف. سأدعوك غداً لشرب القهوة.", audioSrc: "/audio/lessons/a2-12/ls-a2-12-4-5.mp3" },
+          { speaker: "Anna", de: "Danke. Dann ist alles wieder gut.", ar: "شكراً. إذن عاد كل شيء بخير.", audioSrc: "/audio/lessons/a2-12/ls-a2-12-4-6.mp3" },
+        ],
+      },
     ],
     questions: [
       {
@@ -261,6 +274,27 @@ export const listening: Lesson["listening"] = {
           "لم يُذكر لقاء في الحديقة.",
           "لم يقترحا اللقاء في منزل منى.",
         ],
+      },
+      {
+        id: "q7", itemId: "l4", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع إلى الحوار الرابع:",
+        questionDe: "Warum konnte Sami gestern nicht anrufen?", questionAr: "لماذا لم يستطع سامي الاتصال أمس؟",
+        options: ["Der Bus ist ausgefallen", "Er hatte sein Handy verloren", "Er musste länger arbeiten", "Er war bei seiner Schwester"], correctIndex: 0,
+        explanation: "يقول سامي إن الحافلة تعطلت، ولذلك لم يستطع الاتصال.", errorType: "comprehension",
+      },
+      {
+        id: "q8", itemId: "l4", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Wie fühlt sich Anna jetzt?", questionAr: "كيف تشعر آنا الآن؟",
+        options: ["Enttäuscht, aber nicht mehr böse", "Verärgert und noch immer sehr böse", "Erleichtert, aber ein wenig müde", "Überrascht und heute ziemlich nervös"], correctIndex: 0,
+        explanation: "تقول آنا إنها كانت محبطة، لكنها لم تعد غاضبة.", errorType: "comprehension",
+      },
+      {
+        id: "q9", itemId: "l4", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Was planen Sami und Anna für morgen?", questionAr: "ماذا يخطط سامي وآنا للغد؟",
+        options: ["Morgen zusammen Kaffee trinken", "Heute Abend gemeinsam ins Kino gehen", "Morgen im Café über den Bus sprechen", "Anna am Wochenende zu Hause besuchen"], correctIndex: 0,
+        explanation: "يعتذر سامي ويدعو آنا غداً لشرب القهوة، فتقبل الدعوة.", errorType: "comprehension",
       },
     ],
   };
