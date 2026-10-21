@@ -45,8 +45,8 @@ describe("A2-11 lesson content audit", () => {
     expect(lessonA211.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
     expect(goal("z1")).toMatchObject({
       evidence: {
-        exerciseIds: ["q1", "q2", "q3", "q4"],
-        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4"],
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
+        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4", "listening:l4:q5", "listening:l4:q6", "listening:l4:q7"],
         completion: "all-correct",
       },
     });
@@ -89,9 +89,9 @@ describe("A2-11 lesson content audit", () => {
     expect(lessonA211.practiceBank.map(({ id }) => id)).toEqual(Array.from({ length: 14 }, (_, i) => `e${i + 1}`));
     expect(lessonA211.miniTest.map(({ id }) => id)).toEqual(["m1", "m2", "m3", "m4", "m5"]);
     expect(lessonA211.writing.map(({ id }) => id)).toEqual(["w1", "w2", "w3", "w4", "w5"]);
-    expect(lessonA211.listening.questions.map(({ id }) => id)).toEqual(["q1", "q2", "q3", "q4"]);
-    expect(allTasks()).toHaveLength(31);
-    expect(new Set(allTasks().map(({ id }) => id)).size).toBe(31);
+    expect(lessonA211.listening.questions.map(({ id }) => id)).toEqual(["q1", "q2", "q3", "q4", "q5", "q6", "q7"]);
+    expect(allTasks()).toHaveLength(34);
+    expect(new Set(allTasks().map(({ id }) => id)).size).toBe(34);
     expect(lessonA211.theory).toHaveLength(2);
     expect(lessonA211.pronunciation.items).toHaveLength(6);
     expect(lessonA211.pronunciation.shadowing).toHaveLength(4);
@@ -156,7 +156,7 @@ describe("A2-11 lesson content audit", () => {
 
   it("derives all-correct goal states only from the exact lesson/task performances", () => {
     const idsByGoal: Record<string, string[]> = {
-      z1: ["q1", "q2", "q3", "q4"],
+      z1: ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
       z2: ["e1", "e6", "w2"],
       z3: ["w4"],
       z4: ["e11", "w5"],

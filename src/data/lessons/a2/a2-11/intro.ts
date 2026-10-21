@@ -7,12 +7,12 @@ import type { Lesson } from "@/types/lesson";
 export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z1",
-      de: "Ich kann ausgewählte Verständnisfragen zu drei kurzen Dialogen bei ausgeblendetem Transkript richtig beantworten.",
-      ar: "أن أجيب إجابة صحيحة عن أسئلة فهم محددة للحوارات الثلاثة مع بقاء تفريغها مخفياً؛ ويسجل النظام صحة الإجابة لا تشغيل الصوت.",
+      de: "Ich kann ausgewählte Verständnisfragen zu vier kurzen Dialogen bei ausgeblendetem Transkript richtig beantworten.",
+      ar: "أن أجيب إجابة صحيحة عن أسئلة فهم محددة للحوارات الأربعة مع بقاء تفريغها مخفياً؛ ويسجل النظام صحة الإجابة لا تشغيل الصوت.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3", "q4"],
-        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4"],
-        labelAr: "أجب صحيحاً عن الأسئلة الأربعة في تبويب الفهم مع بقاء تفريغ الحوار المرتبط بكل سؤال مخفياً. لا يسجل النظام تشغيل الصوت؛ الإجابات بعد كشف التفريغ لا تُحتسب لهذا الهدف، وفتح المقطع وحده ليس دليلاً.",
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
+        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4", "listening:l4:q5", "listening:l4:q6", "listening:l4:q7"],
+        labelAr: "أجب صحيحاً عن الأسئلة السبعة في تبويب الفهم مع بقاء تفريغ الحوار المرتبط بكل سؤال مخفياً. لا يسجل النظام تشغيل الصوت؛ الإجابات بعد كشف التفريغ لا تُحتسب لهذا الهدف، وفتح المقطع وحده ليس دليلاً.",
         completion: "all-correct",
       },
     },
