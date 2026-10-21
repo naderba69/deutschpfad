@@ -29,6 +29,9 @@ const expectedMultipleChoiceKeys: Record<string, string> = {
   q1: "Kopfschmerzen und Fieber",
   q2: "sich ausruhen und zu Hause bleiben",
   q3: "Er hat zu viel gearbeitet.",
+  q4: "Ein Rezept vom Arzt",
+  q5: "In der Packungsbeilage",
+  q6: "An seine Ärztin oder seinen Arzt",
 };
 
 const expectedFillBlankKeys: Record<string, string[]> = {
@@ -137,7 +140,7 @@ describe("A2-02 audited lesson", () => {
     expect(ids(lessonA202.miniTest)).toEqual(["m1", "m2", "m3", "m4", "m5"]);
     expect(ids(lessonA202.writing)).toEqual(["w1", "w2", "w3"]);
     expect(ids(reading().questions)).toEqual(["rq1", "rq2", "rq3", "rq4", "rq5", "rq6"]);
-    expect(ids(lessonA202.listening.questions)).toEqual(["q1", "q2", "q3"]);
+    expect(ids(lessonA202.listening.questions)).toEqual(["q1", "q2", "q3", "q4", "q5", "q6"]);
     expect("duration" in lessonA202).toBe(false);
 
     const validTaskIds = new Set<string>();
@@ -408,19 +411,25 @@ describe("A2-02 audited lesson", () => {
     );
   });
 
-  it("keeps the two listening dialogs distinct and asks for answers before transcript reveal", () => {
-    expect(lessonA202.listening.items.map((item) => item.id)).toEqual(["l1", "l2"]);
-    expect(lessonA202.listening.items.map((item) => item.lines.length)).toEqual([7, 4]);
+  it("keeps the three listening dialogues distinct and asks for answers before transcript reveal", () => {
+    expect(lessonA202.listening.items.map((item) => item.id)).toEqual(["l1", "l2", "l3"]);
+    expect(lessonA202.listening.items.map((item) => item.lines.length)).toEqual([7, 4, 6]);
     expect(lessonA202.listening.items[0].lines[0].ar).toBe("طاب يومك! ما شكواك؟");
+    const pharmacy = lessonA202.listening.items.find((item) => item.id === "l3");
+    expect(pharmacy?.lines.map((line) => line.de)).toEqual([
+      "Guten Tag, ich habe ein Rezept vom Arzt.", "Guten Tag. Ich bereite das Medikament vor.",
+      "Wo finde ich die Informationen zur Einnahme?", "Bitte lesen Sie die Packungsbeilage.",
+      "Und wenn es mir nicht besser geht?", "Dann wenden Sie sich bitte an Ihre Ärztin oder Ihren Arzt.",
+    ]);
+    expect(pharmacy?.audioNoteAr).toContain("مولّدة آلياً (TTS)");
     expect(
       lessonA202.listening.items.every((item) =>
         item.lines.every((line) => line.de.trim() && line.ar.trim() && line.speaker.trim()),
       ),
     ).toBe(true);
     expect(lessonA202.listening.questions.map((question) => [question.id, question.itemId])).toEqual([
-      ["q1", "l1"],
-      ["q2", "l1"],
-      ["q3", "l2"],
+      ["q1", "l1"], ["q2", "l1"], ["q3", "l2"],
+      ["q4", "l3"], ["q5", "l3"], ["q6", "l3"],
     ]);
     expect(
       lessonA202.listening.questions.every(

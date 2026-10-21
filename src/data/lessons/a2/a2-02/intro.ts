@@ -70,16 +70,19 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z5",
-      de: "Ich kann bestimmte Informationen aus den zwei bereitgestellten Hörtexten entnehmen, bevor ich das Transkript öffne.",
-      ar: "أن أستخرج معلومات محددة من تمريني الاستماع قبل كشف أيٍّ من نصيهما.",
+      de: "Ich kann bestimmte Informationen aus den drei bereitgestellten Hörtexten entnehmen, bevor ich die Transkripte öffne.",
+      ar: "أن أستخرج معلومات محددة من نصوص الاستماع الثلاثة قبل كشف أيٍّ منها.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3"],
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6"],
         taskIds: [
           "listening:l1:q1",
           "listening:l1:q2",
           "listening:l2:q3",
+          "listening:l3:q4",
+          "listening:l3:q5",
+          "listening:l3:q6",
         ],
-        labelAr: "الإجابة الصحيحة عن الأسئلة الثلاثة قبل كشف التفريغ؛ إجابات ما بعد الكشف لا تدخل في الدليل.",
+        labelAr: "الإجابة الصحيحة عن الأسئلة الستة قبل كشف التفريغ؛ إجابات ما بعد الكشف لا تدخل في الدليل.",
         completion: "all-correct",
       },
     },
