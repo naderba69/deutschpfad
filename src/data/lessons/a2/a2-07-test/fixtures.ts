@@ -30,6 +30,9 @@ export const expectedMultipleChoiceKeys: Record<string, string> = {
   q5: "Fünfzig Euro.",
   q6: "Sie soll das Tastenfeld mit der Hand abdecken.",
   q7: "Wenn sie den Betrag kontrollieren möchte.",
+  q8: "Zu seinem Kontoauszug",
+  q9: "Zwölf Euro",
+  q10: "Das Datum und den Namen auf dem Beleg",
 };
 
 export const expectedMultipleChoiceOptions: Record<string, string[]> = {
@@ -99,6 +102,9 @@ export const expectedMultipleChoiceOptions: Record<string, string[]> = {
     "Wenn sie eine neue Karte bestellen möchte.",
     "Wenn sie den Betrag kontrollieren möchte.",
   ],
+  q8: ["Zu seinem Kontoauszug", "Zu seiner Bankkarte", "Zu einer Überweisung", "Zu einem neuen Konto"],
+  q9: ["Zwölf Euro", "Zehn Euro", "Zwanzig Euro", "Fünfzig Euro"],
+  q10: ["Das Datum und den Namen auf dem Beleg", "Die PIN und die Kartennummer", "Den Kontostand und die Gebühren", "Die Öffnungszeiten der Bank"],
 };
 
 export function allTasks(): Exercise[] {

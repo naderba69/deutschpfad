@@ -41,9 +41,9 @@ describe("A2-07 audited lesson", () => {
     expect(ids(lessonA207.miniTest)).toEqual(["m1", "m2", "m3", "m4", "m5"]);
     expect(ids(lessonA207.writing)).toEqual(["w1", "w2", "w3"]);
     expect(ids(lessonA207.reading?.questions ?? [])).toEqual(["rq1", "rq2", "rq3", "rq4"]);
-    expect(ids(lessonA207.listening.questions)).toEqual(["q1", "q2", "q3", "q4", "q5", "q6", "q7"]);
-    expect(allTasks()).toHaveLength(36);
-    expect(new Set(allTasks().map((item) => item.id)).size).toBe(36);
+    expect(ids(lessonA207.listening.questions)).toEqual(["q1", "q10", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9"]);
+    expect(allTasks()).toHaveLength(39);
+    expect(new Set(allTasks().map((item) => item.id)).size).toBe(39);
     expect("duration" in lessonA207).toBe(false);
     expect(lessonA207.summary).not.toMatch(/Goethe|CEFR|اعتماد|جاهزية|\b\d+\s*دقيقة/i);
 
@@ -85,8 +85,8 @@ describe("A2-07 audited lesson", () => {
         ],
       },
       z3: {
-        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l2:q4", "listening:l3:q5", "listening:l3:q6", "listening:l3:q7"],
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l2:q4", "listening:l3:q5", "listening:l3:q6", "listening:l3:q7", "listening:l4:q8", "listening:l4:q9", "listening:l4:q10"],
       },
       "z-reading": {
         exerciseIds: ["rq1", "rq2", "rq3", "rq4"],

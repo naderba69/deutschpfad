@@ -225,6 +225,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
           { speaker: "Karim", de: "Nimm sie mit, wenn du den Betrag kontrollieren möchtest.", ar: "خذيها معك إذا أردت التحقق من المبلغ.", audioSrc: "/audio/lessons/a2-07/ls-a2-07-3-6.mp3" },
         ],
       },
+      {
+        id: "l4",
+        title: "مراجعة كشف الحساب",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً.",
+        lines: [
+          { speaker: "Sami", de: "Guten Tag. Ich habe eine Frage zu meinem Kontoauszug.", ar: "مرحباً. لدي سؤال عن كشف حسابي.", audioSrc: "/audio/lessons/a2-07/ls-a2-07-4-1.mp3" },
+          { speaker: "Bankangestellte", de: "Gern. Welche Buchung ist unklar?", ar: "بكل سرور. أي حركة غير واضحة؟", audioSrc: "/audio/lessons/a2-07/ls-a2-07-4-2.mp3" },
+          { speaker: "Sami", de: "Hier steht eine Zahlung von zwölf Euro. Ich kenne den Laden nicht.", ar: "هنا دفعة بقيمة اثني عشر يورو. لا أعرف هذا المتجر.", audioSrc: "/audio/lessons/a2-07/ls-a2-07-4-3.mp3" },
+          { speaker: "Bankangestellte", de: "Prüfen Sie zuerst das Datum und den Namen auf dem Beleg.", ar: "تحقق أولاً من التاريخ والاسم على الإيصال.", audioSrc: "/audio/lessons/a2-07/ls-a2-07-4-4.mp3" },
+          { speaker: "Sami", de: "Ich sehe nach. Der Name ist jetzt bekannt.", ar: "سأتحقق. الاسم أصبح معروفاً الآن.", audioSrc: "/audio/lessons/a2-07/ls-a2-07-4-5.mp3" },
+          { speaker: "Bankangestellte", de: "Gut. Wenn eine Buchung unklar bleibt, melden Sie sich bitte wieder.", ar: "جيد. إذا بقيت حركة غير واضحة، فيُرجى التواصل معنا مجدداً.", audioSrc: "/audio/lessons/a2-07/ls-a2-07-4-6.mp3" },
+        ],
+      },
     ],
     questions: [
       {
@@ -368,6 +381,27 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 3,
         explanation: "تقول منى إنها ستأخذ الإيصال إذا أرادت التحقق من المبلغ.",
         errorType: "comprehension",
+      },
+      {
+        id: "q8", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:",
+        questionDe: "Wozu hat Sami eine Frage?", questionAr: "عن ماذا لدى سامي سؤال؟",
+        options: ["Zu seinem Kontoauszug", "Zu seiner Bankkarte", "Zu einer Überweisung", "Zu einem neuen Konto"], correctIndex: 0,
+        explanation: "يقول سامي إن لديه سؤالاً عن كشف حسابه.", errorType: "comprehension",
+      },
+      {
+        id: "q9", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:",
+        questionDe: "Wie viel kostet die unklare Zahlung?", questionAr: "كم قيمة الدفعة غير الواضحة؟",
+        options: ["Zwölf Euro", "Zehn Euro", "Zwanzig Euro", "Fünfzig Euro"], correctIndex: 0,
+        explanation: "يقرأ سامي في الكشف دفعة بقيمة اثني عشر يورو.", errorType: "comprehension",
+      },
+      {
+        id: "q10", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:",
+        questionDe: "Was soll Sami zuerst prüfen?", questionAr: "ماذا ينبغي لسامي أن يتحقق منه أولاً؟",
+        options: ["Das Datum und den Namen auf dem Beleg", "Die PIN und die Kartennummer", "Den Kontostand und die Gebühren", "Die Öffnungszeiten der Bank"], correctIndex: 0,
+        explanation: "تنصحه الموظفة بالتحقق من التاريخ والاسم على الإيصال أولاً.", errorType: "comprehension",
       },
     ],
   };
