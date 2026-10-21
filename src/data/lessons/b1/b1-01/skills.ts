@@ -29,6 +29,19 @@ export const listening: Lesson["listening"] = {
           { speaker: "Lehrer", de: "Interessant! In Deutschland beträgt die Regelstudienzeit für Medizin ebenfalls sechs Jahre.", ar: "مثير! في ألمانيا مدة الدراسة النظامية للطب ست سنوات أيضاً." },
         ],
       },
+      {
+        id: "l3",
+        title: "خطة ياسمين لبداية B1",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً. الحوار مثال تدريبي خيالي.",
+        lines: [
+          { speaker: "Lena", de: "Die A2-Prüfung ist vorbei. Wie fühlst du dich?", ar: "انتهى امتحان A2. كيف تشعرين؟", audioSrc: "/audio/lessons/b1-01/ls-b1-01-3-1.mp3" },
+          { speaker: "Yasmin", de: "Erleichtert, aber ich weiß noch nicht, ob ich bestanden habe.", ar: "أشعر بالارتياح، لكنني لا أعرف بعد إن كنت قد اجتزت الامتحان.", audioSrc: "/audio/lessons/b1-01/ls-b1-01-3-2.mp3" },
+          { speaker: "Lena", de: "Was möchtest du in B1 verbessern?", ar: "ما الذي تريدين تحسينه في B1؟", audioSrc: "/audio/lessons/b1-01/ls-b1-01-3-3.mp3" },
+          { speaker: "Yasmin", de: "Ich will jede Woche einen kurzen Text schreiben.", ar: "أريد أن أكتب نصاً قصيراً كل أسبوع.", audioSrc: "/audio/lessons/b1-01/ls-b1-01-3-4.mp3" },
+          { speaker: "Lena", de: "Mit wem übst du dann das Sprechen?", ar: "مع من ستتدربين على التحدث حينها؟", audioSrc: "/audio/lessons/b1-01/ls-b1-01-3-5.mp3" },
+          { speaker: "Yasmin", de: "Mit meiner Nachbarin. So mache ich kleine Schritte.", ar: "مع جارتي. هكذا أحرز خطوات صغيرة.", audioSrc: "/audio/lessons/b1-01/ls-b1-01-3-6.mp3" },
+        ],
+      },
     ],
     questions: [
       {
@@ -107,6 +120,27 @@ export const listening: Lesson["listening"] = {
           "لا — النصّ يذكر مساهمةً فصلية «nur der Semesterbeitrag»؛ فليست الدراسة «ohne jeden Beitrag».",
           "لا — لم يُربط الدفع بمدينة Berlin؛ والصيغة «Die Kosten sind niedrig, nur der Semesterbeitrag».",
         ],
+      },
+      {
+        id: "q5", itemId: "l3", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع إلى الحوار الثالث:",
+        questionDe: "Wie fühlt sich Yasmin, und was weiß sie noch nicht?", questionAr: "كيف تشعر ياسمين، وما الذي لا تعرفه بعد؟",
+        options: ["Sie ist erleichtert, kennt das Ergebnis aber noch nicht.", "Sie ist sehr enttäuscht, weil sie die Prüfung nicht bestanden hat.", "Sie ist krank und wartet auf den nächsten Prüfungstermin.", "Sie ist nervös, denn sie hat die Prüfung noch nicht gemacht."], correctIndex: 0,
+        explanation: "تقول ياسمين إنها مرتاحة، لكنها لا تعرف بعد إن كانت قد اجتازت الامتحان.", errorType: "comprehension",
+      },
+      {
+        id: "q6", itemId: "l3", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Was möchte Yasmin jede Woche machen?", questionAr: "ماذا تريد ياسمين أن تفعل كل أسبوع؟",
+        options: ["Einen kurzen Text schreiben", "Zwei Stunden lang Deutsch lernen", "Fünf Sätze zum Dativ schreiben", "Eine Geschichte für Lena schreiben"], correctIndex: 0,
+        explanation: "تريد ياسمين كتابة نص قصير كل أسبوع كخطة للمرحلة التالية.", errorType: "comprehension",
+      },
+      {
+        id: "q7", itemId: "l3", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Mit wem möchte Yasmin das Sprechen üben?", questionAr: "مع من تريد ياسمين أن تتدرب على التحدث؟",
+        options: ["Mit ihrer Nachbarin", "Mit ihrer Lehrerin", "Allein zu Hause", "Mit Lena am Telefon"], correctIndex: 0,
+        explanation: "تقول ياسمين إنها ستتدرب على التحدث مع جارتها.", errorType: "comprehension",
       },
     ],
   };

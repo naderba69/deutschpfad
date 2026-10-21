@@ -10,9 +10,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       de: "Ich kann Bildungsbegriffe und Angaben aus einem kurzen Gespräch verstehen.",
       ar: "أن أفهم مصطلحات التعليم والتخصصات من حوار قصير وأجيب عنها.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q4"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l1:q4"],
-        labelAr: "أجب صحيحاً عن q1 وq2 وq4 بعد الاستماع إلى الحوار l1 دون كشف النص. كشف التفريغ (listening-transcript) لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q2", "q4", "q5", "q6", "q7"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l1:q4", "listening:l3:q5", "listening:l3:q6", "listening:l3:q7"],
+        labelAr: "أجب صحيحاً عن أسئلة التخصص وتكاليف الدراسة وخطة ياسمين للانتقال إلى B1 قبل كشف التفريغ. كشف النص لا يُحتسب أداءً.",
         completion: "all-correct",
       },
     },

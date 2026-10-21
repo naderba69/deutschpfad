@@ -28,6 +28,9 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     ],
     key: "Die Kosten sind niedrig, nur der Semesterbeitrag.",
   },
+  q5: { options: ["Sie ist erleichtert, kennt das Ergebnis aber noch nicht.", "Sie ist sehr enttäuscht, weil sie die Prüfung nicht bestanden hat.", "Sie ist krank und wartet auf den nächsten Prüfungstermin.", "Sie ist nervös, denn sie hat die Prüfung noch nicht gemacht."], key: "Sie ist erleichtert, kennt das Ergebnis aber noch nicht." },
+  q6: { options: ["Einen kurzen Text schreiben", "Zwei Stunden lang Deutsch lernen", "Fünf Sätze zum Dativ schreiben", "Eine Geschichte für Lena schreiben"], key: "Einen kurzen Text schreiben" },
+  q7: { options: ["Mit ihrer Nachbarin", "Mit ihrer Lehrerin", "Allein zu Hause", "Mit Lena am Telefon"], key: "Mit ihrer Nachbarin" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -150,7 +153,7 @@ describe("B1-01 lesson content audit", () => {
 
   it("limits goals to evidenced performances and avoids readiness or certification claims", () => {
     expect(lessonB101.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q4"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q4", "q5", "q6", "q7"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e5", "w1"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e4", "e6", "m5"]);
     expect(goal("z4").evidence).toMatchObject({ exerciseIds: ["e12"], taskIds: ["practice:b1-01:e12"], completion: "all-correct" });
@@ -332,6 +335,9 @@ describe("B1-01 lesson content audit", () => {
       "l1:q2",
       "l2:q3",
       "l1:q4",
+      "l3:q5",
+      "l3:q6",
+      "l3:q7",
     ]);
   });
 
