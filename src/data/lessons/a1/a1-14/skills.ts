@@ -242,6 +242,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
           { speaker: "Nadia", de: "Danach haben wir Kaffee getrunken. Am Abend bin ich früh nach Hause gegangen. Ich war sehr müde.", ar: "بعد ذلك شربنا القهوة. وفي المساء عدتُ إلى البيت مبكراً. كنتُ متعبة جداً.", audioSrc: "/audio/lessons/a1-14/ls-a1-14-2-6.mp3" },
         ],
       },
+      {
+        id: "ls-a1-14-3",
+        title: "حوار صوتي: رحلة يوم السبت",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً.",
+        lines: [
+          { speaker: "Nadia", de: "Was hast du letzten Samstag gemacht?", ar: "ماذا فعلتَ يوم السبت الماضي؟", audioSrc: "/audio/lessons/a1-14/ls-a1-14-3-1.mp3" },
+          { speaker: "Amine", de: "Ich bin mit dem Zug nach Sousse gefahren.", ar: "ذهبتُ بالقطار إلى سوسة.", audioSrc: "/audio/lessons/a1-14/ls-a1-14-3-2.mp3" },
+          { speaker: "Nadia", de: "Was hast du dort gesehen?", ar: "ماذا رأيتَ هناك؟", audioSrc: "/audio/lessons/a1-14/ls-a1-14-3-3.mp3" },
+          { speaker: "Amine", de: "Ich habe den Hafen und den Markt besucht.", ar: "زرتُ الميناء والسوق.", audioSrc: "/audio/lessons/a1-14/ls-a1-14-3-4.mp3" },
+          { speaker: "Nadia", de: "Wo habt ihr zu Mittag gegessen?", ar: "أين تناولتما الغداء؟", audioSrc: "/audio/lessons/a1-14/ls-a1-14-3-5.mp3" },
+          { speaker: "Amine", de: "Wir haben in einem kleinen Café gegessen.", ar: "أكلنا في مقهى صغير.", audioSrc: "/audio/lessons/a1-14/ls-a1-14-3-6.mp3" },
+        ],
+      },
     ],
     questions: [
       {
@@ -321,6 +334,27 @@ export const listening: NonNullable<Lesson["listening"]> = {
         optionExplanations: [undefined, "لا — المتحف كان نشاطاً سابقاً؛ وعادت مبكراً لأنها قالت: «Ich war sehr müde». ", "لا — شربتا القهوة بعد زيارة المتحف؛ سبب العودة المبكرة أنها كانت متعبة."],
         errorType: "vocabulary",
         explanation: "في آخر الحوار تقول نادية: «Ich war sehr müde» بعد أن تذكر عودتها المبكرة إلى البيت.",
+      },
+      {
+        type: "multiple-choice", id: "lsq-a1-14-7", instructionAr: "استمع واختر الإجابة الصحيحة",
+        itemId: "ls-a1-14-3", questionDe: "Wie ist Amine nach Sousse gefahren?", questionAr: "كيف ذهب أمين إلى سوسة؟",
+        options: ["Mit dem Zug", "Mit dem Fahrrad", "Mit dem Bus"], correctIndex: 0,
+        optionExplanations: [undefined, "لا — الدراجة كانت في قصة نهاية الأسبوع السابقة؛ هنا يقول أمين: «Ich bin mit dem Zug … gefahren».", "لا — الحافلة لم تُذكر؛ ووسيلة السفر المسموعة هي القطار: «mit dem Zug»."],
+        errorType: "vocabulary", explanation: "يقول أمين إنه ذهب إلى سوسة بالقطار: «Ich bin mit dem Zug nach Sousse gefahren».",
+      },
+      {
+        type: "multiple-choice", id: "lsq-a1-14-8", instructionAr: "استمع واختر ما زاره أمين",
+        itemId: "ls-a1-14-3", questionDe: "Was hat Amine in Sousse besucht?", questionAr: "ماذا زار أمين في سوسة؟",
+        options: ["Den Hafen und den Markt", "Ein Museum und einen Park", "Eine Schule und ein Café"], correctIndex: 0,
+        optionExplanations: [undefined, "لا — المتحف ورد في الحوار السابق عن نادية، لا في زيارة أمين لسوسة.", "لا — المدرسة لم تُذكر؛ وقد ذكر أمين الميناء والسوق."],
+        errorType: "vocabulary", explanation: "يقول أمين: «Ich habe den Hafen und den Markt besucht».",
+      },
+      {
+        type: "multiple-choice", id: "lsq-a1-14-9", instructionAr: "استمع واختر الإجابة الصحيحة",
+        itemId: "ls-a1-14-3", questionDe: "Wo haben sie zu Mittag gegessen?", questionAr: "أين تناولا الغداء؟",
+        options: ["In einem kleinen Café", "In einem Restaurant am Hafen", "In einem Café am Bahnhof"], correctIndex: 0,
+        optionExplanations: [undefined, "لا — الميناء كان مكان زيارة، وليس مكان الغداء في الحوار.", "لا — لم يذكرا العودة إلى البيت لتناول الطعام؛ بل أكلا في مقهى صغير."],
+        errorType: "vocabulary", explanation: "يقول أمين: «Wir haben in einem kleinen Café gegessen».",
       },
     ],
   };
