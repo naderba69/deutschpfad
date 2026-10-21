@@ -87,13 +87,20 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z-listening",
-      de: "Ich kann ausgewählte Angaben zu Tag, Uhrzeit und Person aus zwei kurzen Dialogen heraushören.",
-      ar: "ألتقط اليوم والوقت والشخص من حوارين قصيرين قبل كشف التفريغ.",
+      de: "Ich kann ausgewählte Angaben zu Tag, Uhrzeit, Person, Ort und Mitbringseln aus drei kurzen Dialogen heraushören.",
+      ar: "ألتقط اليوم والوقت والشخص والمكان وما سيحضره الضيوف من ثلاثة حوارات قصيرة قبل كشف التفريغ.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6"],
+        taskIds: [
+          "listening:l1:q1",
+          "listening:l1:q2",
+          "listening:l2:q3",
+          "listening:l3:q4",
+          "listening:l3:q5",
+          "listening:l3:q6",
+        ],
         labelAr:
-          "أجب عن أسئلة اليوم والساعة وهوية من خبز التورتة أثناء الاستماع؛ نتيجة transcript بعد كشف النص ليست دليلاً على الاستماع.",
+          "أجب عن أسئلة اليوم والساعة وهوية من خبز التورتة، ثم مكان المناسبة وما ستحضره منى وسامي من الحوارات قبل كشف التفريغ؛ نتيجة transcript بعد كشف النص ليست دليلاً على الاستماع.",
         completion: "all-correct",
       },
     },

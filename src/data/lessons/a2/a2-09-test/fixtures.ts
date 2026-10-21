@@ -25,6 +25,9 @@ export const expectedMultipleChoiceKeys: Record<string, string> = {
   q1: "am Samstag",
   q2: "um sieben Uhr",
   q3: "Karims Mutter",
+  q4: "Im Innenhof.",
+  q5: "Einen Salat.",
+  q6: "Die Getränke.",
 };
 
 export const expectedMultipleChoiceOptions: Record<string, string[]> = {
@@ -53,6 +56,9 @@ export const expectedMultipleChoiceOptions: Record<string, string[]> = {
   q1: ["am Samstag", "am Sonntag", "am Freitag", "am Montag"],
   q2: ["um sieben Uhr", "um acht Uhr", "um sechs Uhr", "um neun Uhr"],
   q3: ["Karims Mutter", "Anna", "Karim", "Monas Mutter"],
+  q4: ["Im Innenhof.", "In einem Café.", "In ihrer Wohnung.", "Im Büro."],
+  q5: ["Einen Salat.", "Eine Torte.", "Blumen.", "Ein Fotoalbum."],
+  q6: ["Die Getränke.", "Einen Salat.", "Die Einladung.", "Das Geschenk."],
 };
 
 export const expectedPronunciationIpa: Record<string, string> = {
@@ -148,8 +154,15 @@ export const expectedEvidence = {
     taskIds: ["practice:a2-09:e12", "practice:a2-09:e14"],
   },
   "z-listening": {
-    exerciseIds: ["q1", "q2", "q3"],
-    taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
+    exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6"],
+    taskIds: [
+      "listening:l1:q1",
+      "listening:l1:q2",
+      "listening:l2:q3",
+      "listening:l3:q4",
+      "listening:l3:q5",
+      "listening:l3:q6",
+    ],
   },
   "z-writing": {
     exerciseIds: ["w1", "w2", "w3", "w4"],

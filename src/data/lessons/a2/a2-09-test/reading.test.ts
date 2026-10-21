@@ -99,7 +99,7 @@ describe("A2-09 lesson audit", () => {
     const reading = lessonA209.reading;
     if (!reading) throw new Error("A2-09 reading is required");
     expect(reading.questions.map((question) => question.id)).toEqual(["rq1", "rq2", "rq3", "rq4"]);
-    expect(lessonA209.listening.questions.map((question) => question.id)).toEqual(["q1", "q2", "q3"]);
+    expect(lessonA209.listening.questions.map((question) => question.id)).toEqual(["q1", "q2", "q3", "q4", "q5", "q6"]);
     expect(lessonA209.listening.questions.every((question) => question.errorType === "comprehension")).toBe(
       true,
     );
@@ -128,12 +128,28 @@ describe("A2-09 lesson audit", () => {
           { speaker: "Karim", de: "Meine Mutter hat sie gebacken. Ich helfe ihr in der Küche.", ar: "خبزتها أمي. أساعدها في المطبخ." },
         ],
       },
+      {
+        id: "l3",
+        title: "تفاصيل الدعوة وما سيحضره الضيوف",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً. المناسبة والتفاصيل في الحوار تدريبية وخيالية.",
+        lines: [
+          { speaker: "Mona", de: "Hast du die Einladung von Frau Yilmaz bekommen?", ar: "هل وصلتك دعوة السيدة يلماز؟", audioSrc: "/audio/lessons/a2-09/ls-a2-09-3-1.mp3" },
+          { speaker: "Sami", de: "Ja. Sie feiert am Samstag im Innenhof.", ar: "نعم. ستحتفل يوم السبت في الساحة الداخلية.", audioSrc: "/audio/lessons/a2-09/ls-a2-09-3-2.mp3" },
+          { speaker: "Mona", de: "Um wie viel Uhr beginnt das Fest?", ar: "في أي ساعة تبدأ المناسبة؟", audioSrc: "/audio/lessons/a2-09/ls-a2-09-3-3.mp3" },
+          { speaker: "Sami", de: "Um fünf Uhr. Das steht auf der Einladung.", ar: "في الخامسة. هذا ما ورد في الدعوة.", audioSrc: "/audio/lessons/a2-09/ls-a2-09-3-4.mp3" },
+          { speaker: "Mona", de: "Was soll ich mitbringen?", ar: "ماذا ينبغي أن أحضر معي؟", audioSrc: "/audio/lessons/a2-09/ls-a2-09-3-5.mp3" },
+          { speaker: "Sami", de: "Bring einen Salat mit. Ich bringe die Getränke.", ar: "أحضري سلطة. سأحضر المشروبات.", audioSrc: "/audio/lessons/a2-09/ls-a2-09-3-6.mp3" },
+        ],
+      },
     ]);
-    expect(lessonA209.listening.items.map((item) => item.lines.length)).toEqual([7, 4]);
+    expect(lessonA209.listening.items.map((item) => item.lines.length)).toEqual([7, 4, 6]);
     expect(lessonA209.listening.questions.map((question) => [question.questionDe, question.questionAr])).toEqual([
       ["An welchem Tag hat Mona Geburtstag?", "في أي يوم عيد ميلاد منى؟"],
       ["Um wie viel Uhr beginnt die Feier?", "في أي ساعة تبدأ المناسبة؟"],
       ["Wer hat die Torte gebacken?", "من خبز التورتة؟"],
+      ["Wo feiert Frau Yilmaz?", "أين تحتفل السيدة يلماز؟"],
+      ["Was soll Mona mitbringen?", "ماذا ينبغي لمنى أن تحضر معها؟"],
+      ["Was bringt Sami mit?", "ماذا سيحضر سامي معه؟"],
     ]);
 
     for (const question of [...reading.questions, ...lessonA209.listening.questions]) {
