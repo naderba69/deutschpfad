@@ -19,11 +19,11 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z2",
       de: "Ich kann wichtige Angaben aus kurzen Telefongesprächen heraushören.",
-      ar: "أن أستخرج معلومات محددة من حواري هاتف قصيرين بعد الاستماع، لا بعد كشف التفريغ.",
+      ar: "أن أستخرج معلومات محددة من حوارات هاتف قصيرة بعد الاستماع، لا بعد كشف التفريغ.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3", "q4"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l2:q4"],
-        labelAr: "أجب عن أسئلة الاستماع الأربعة قبل كشف التفريغ؛ لا يثبت فتح الحوار أو إجابته بعد كشفه الاستماع.",
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l2:q4", "listening:l3:q5", "listening:l3:q6", "listening:l3:q7"],
+        labelAr: "أجب عن أسئلة الاستماع السبعة قبل كشف التفريغ؛ لا يثبت فتح الحوار أو إجابته بعد كشفه الاستماع.",
         completion: "all-correct",
       },
     },

@@ -24,9 +24,9 @@ describe("A2-05 audited lesson", () => {
     expect(ids(lessonA205.miniTest)).toEqual(["m1", "m2", "m3", "m4", "m5"]);
     expect(ids(lessonA205.writing)).toEqual(["w1", "w2", "w3", "w4"]);
     expect(ids(reading().questions)).toEqual(["rq1", "rq2", "rq3", "rq4"]);
-    expect(ids(lessonA205.listening.questions)).toEqual(["q1", "q2", "q3", "q4"]);
-    expect(allTasks()).toHaveLength(34);
-    expect(new Set(allTasks().map((item) => item.id)).size).toBe(34);
+    expect(ids(lessonA205.listening.questions)).toEqual(["q1", "q2", "q3", "q4", "q5", "q6", "q7"]);
+    expect(allTasks()).toHaveLength(37);
+    expect(new Set(allTasks().map((item) => item.id)).size).toBe(37);
     expect("duration" in lessonA205).toBe(false);
 
     const reviewInstructions = new Map((lessonA205.review ?? []).map((exercise) => [exercise.id, exercise.instructionAr]));
@@ -76,6 +76,9 @@ describe("A2-05 audited lesson", () => {
       "listening:l1:q2",
       "listening:l2:q3",
       "listening:l2:q4",
+      "listening:l3:q5",
+      "listening:l3:q6",
+      "listening:l3:q7",
     ]);
     expect(lessonA205.lernziele.find((goal) => goal.id === "z3")?.evidence?.taskIds).toEqual([
       "mini-test:a2-05:m1",

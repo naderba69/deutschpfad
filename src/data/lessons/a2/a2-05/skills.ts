@@ -141,6 +141,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
           { speaker: "Anna", de: "Mache ich sofort.", ar: "سأفعل ذلك فوراً." },
         ],
       },
+      {
+        id: "l3",
+        title: "Telefonat zur Besprechung",
+        audioNoteAr: "هذا المقطع يحتوي على أصوات مولّدة آلياً (TTS)، وليس تسجيلاً بشرياً.",
+        lines: [
+          { speaker: "Anna", de: "Hallo Karim, hier ist Anna. Hast du kurz Zeit?", ar: "مرحباً كريم، معك آنا. هل لديك وقت قصير؟", audioSrc: "/audio/lessons/a2-05/ls-a2-05-3-1.mp3" },
+          { speaker: "Karim", de: "Ja, worum geht's?", ar: "نعم، ما الأمر؟", audioSrc: "/audio/lessons/a2-05/ls-a2-05-3-2.mp3" },
+          { speaker: "Anna", de: "Wir treffen uns am Donnerstag um zehn im kleinen Konferenzraum.", ar: "سنلتقي يوم الخميس الساعة العاشرة في غرفة الاجتماعات الصغيرة.", audioSrc: "/audio/lessons/a2-05/ls-a2-05-3-3.mp3" },
+          { speaker: "Karim", de: "Soll ich die Unterlagen mitbringen?", ar: "هل أحضر المستندات معي؟", audioSrc: "/audio/lessons/a2-05/ls-a2-05-3-4.mp3" },
+          { speaker: "Anna", de: "Bitte bring nur deinen Laptop mit. Die Unterlagen schicke ich per E-Mail.", ar: "أحضر حاسوبك المحمول فقط من فضلك. سأرسل المستندات بالبريد الإلكتروني.", audioSrc: "/audio/lessons/a2-05/ls-a2-05-3-5.mp3" },
+          { speaker: "Karim", de: "Alles klar. Bis Donnerstag!", ar: "حسناً. أراك يوم الخميس!", audioSrc: "/audio/lessons/a2-05/ls-a2-05-3-6.mp3" },
+        ],
+      },
     ],
     questions: [
       {
@@ -214,6 +227,27 @@ export const listening: NonNullable<Lesson["listening"]> = {
           "لم يُذكر محضر الشهر الماضي «ein Protokoll vom letzten Monat».",
           "تقريره «sein Bericht für das Projekt» ليس ما طلبه من آنا؛ المطلوب «eine E-Mail mit den Details». ",
         ],
+      },
+      {
+        id: "q5", itemId: "l3", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى المكالمة الثالثة وقبل فتح التفريغ:",
+        questionDe: "Wann treffen sich Anna und Karim?", questionAr: "متى سيلتقي آنا وكريم؟",
+        options: ["Am Donnerstag um zehn", "Am Mittwoch um neun", "Am Freitag um elf", "Am Donnerstag um zwölf"], correctIndex: 0,
+        explanation: "تحدد آنا موعد اللقاء يوم الخميس الساعة العاشرة.", errorType: "vocabulary",
+      },
+      {
+        id: "q6", itemId: "l3", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى المكالمة الثالثة وقبل فتح التفريغ:",
+        questionDe: "Wo treffen sie sich?", questionAr: "أين سيلتقيان؟",
+        options: ["Im kleinen Konferenzraum", "Im großen Besprechungsraum", "Im Büro von Frau Weber", "Am Empfang im Erdgeschoss"], correctIndex: 0,
+        explanation: "سيجتمعان في غرفة الاجتماعات الصغيرة.", errorType: "vocabulary",
+      },
+      {
+        id: "q7", itemId: "l3", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى المكالمة الثالثة وقبل فتح التفريغ:",
+        questionDe: "Was soll Karim mitbringen?", questionAr: "ماذا ينبغي لكريم أن يحضر؟",
+        options: ["Seinen Laptop", "Die Unterlagen", "Einen Bericht", "Eine Präsentation"], correctIndex: 0,
+        explanation: "تطلب آنا منه إحضار حاسوبه المحمول فقط؛ سترسل المستندات بالبريد.", errorType: "vocabulary",
       },
     ],
   };
