@@ -118,12 +118,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z8",
-      de: "Ich kann ausdrücklich genannte Angaben aus zwei geübten Wetter-Hörtexten heraushören.",
-      ar: "أن أستخرج معلومات مصرحاً بها من نصّي استماع قصيرين عن الطقس قبل كشف أيٍّ منهما.",
+      de: "Ich kann ausdrücklich genannte Angaben aus drei geübten Wetter-Hörtexten heraushören.",
+      ar: "أن أستخرج معلومات مصرحاً بها من ثلاثة نصوص استماع قصيرة عن الطقس قبل كشف أيٍّ منها.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
-        labelAr: "الإجابة الصحيحة عن الأسئلة الثلاثة قبل كشف أيٍّ من نصّي الاستماع؛ لا يثبت ذلك إتقان الاستماع العام.",
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4", "listening:l3:q5", "listening:l3:q6"],
+        labelAr: "الإجابة الصحيحة عن الأسئلة الستة قبل كشف أيٍّ من نصوص الاستماع؛ لا يثبت ذلك إتقان الاستماع العام.",
         completion: "all-correct",
       },
     },

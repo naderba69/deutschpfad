@@ -94,6 +94,9 @@ export const listeningAnswers: Record<string, string> = {
   q1: "kalt und windig",
   q2: "Es regnet.",
   q3: "oft sehr heiß und sonnig",
+  q4: "bewölkt und kühl",
+  q5: "Nein, es bleibt trocken.",
+  q6: "Die Sonne scheint, es wird wärmer.",
 };
 
 export function reading() {

@@ -283,6 +283,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
           },
         ],
       },
+      {
+        id: "l3",
+        title: "Wetter am Wochenende",
+        lines: [
+          { speaker: "Moderatorin", de: "Wie wird das Wetter am Samstag?", ar: "كيف سيكون الطقس يوم السبت؟", audioSrc: "/audio/lessons/a1-12/ls-a1-12-3-1.mp3" },
+          { speaker: "Meteorologe", de: "Am Morgen ist es bewölkt und kühl.", ar: "صباحاً سيكون الجو غائماً وبارداً قليلاً.", audioSrc: "/audio/lessons/a1-12/ls-a1-12-3-2.mp3" },
+          { speaker: "Moderatorin", de: "Regnet es auch?", ar: "وهل ستمطر أيضاً؟", audioSrc: "/audio/lessons/a1-12/ls-a1-12-3-3.mp3" },
+          { speaker: "Meteorologe", de: "Nein, es bleibt trocken.", ar: "لا، سيبقى الجو جافاً.", audioSrc: "/audio/lessons/a1-12/ls-a1-12-3-4.mp3" },
+          { speaker: "Moderatorin", de: "Und wie wird es am Nachmittag?", ar: "وكيف سيكون بعد الظهر؟", audioSrc: "/audio/lessons/a1-12/ls-a1-12-3-5.mp3" },
+          { speaker: "Meteorologe", de: "Dann scheint die Sonne und es wird wärmer.", ar: "عندئذ ستشرق الشمس وسيصبح الجو أدفأ.", audioSrc: "/audio/lessons/a1-12/ls-a1-12-3-6.mp3" },
+        ],
+        audioNoteAr: "هذا المقطع يحتوي على أصوات مولّدة آلياً (TTS)، وليس تسجيلاً بشرياً. استُخدمت أصوات نسائية ورجالية ثابتة ومتكررة بين الدروس.",
+      },
     ],
     questions: [
       {
@@ -349,6 +362,27 @@ export const listening: NonNullable<Lesson["listening"]> = {
           "الرياح «windig» ذُكرت عن صباح النشرة، لا عن صيف تونس.",
           "لم يُذكر ثلج «Es schneit» في الصيف التونسي.",
         ],
+      },
+      {
+        id: "q4", itemId: "l3", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Wie ist das Wetter am Samstagmorgen?", questionAr: "كيف سيكون الطقس صباح السبت؟",
+        options: ["bewölkt und kühl", "heiß und sonnig", "windig und regnerisch", "es schneit"], correctIndex: 0,
+        explanation: "تذكر النشرة أن الصباح غائم وبارد قليلاً.", errorType: "vocabulary",
+      },
+      {
+        id: "q5", itemId: "l3", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Regnet es am Samstag?", questionAr: "هل ستمطر يوم السبت؟",
+        options: ["Nein, es bleibt trocken.", "Ja, am Morgen regnet es.", "Ja, am Nachmittag regnet es.", "Nein, später schneit es."], correctIndex: 0,
+        explanation: "يقول خبير الطقس إن الجو سيبقى جافاً.", errorType: "vocabulary",
+      },
+      {
+        id: "q6", itemId: "l3", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Was passiert am Nachmittag?", questionAr: "ماذا يحدث بعد الظهر؟",
+        options: ["Die Sonne scheint, es wird wärmer.", "Der Himmel bleibt grau, es wird kälter.", "Es regnet weiter, und es bleibt kühl.", "Der Wind wird stärker, es bleibt kalt."], correctIndex: 0,
+        explanation: "بعد الظهر تشرق الشمس وتصبح الحرارة أدفأ.", errorType: "vocabulary",
       },
     ],
   };
