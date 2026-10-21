@@ -27,6 +27,9 @@ export const expectedMultipleChoiceKeys: Record<string, string> = {
   q4: "Im Mai, sagt die Zeitung.",
   q5: "Ein Foto, das schon drei Jahre alt ist.",
   q6: "Er prüft zuerst die Quelle und teilt dann vielleicht.",
+  q7: "Um den Wochenmarkt",
+  q8: "Am Samstag um acht",
+  q9: "Wichtige Angaben",
 };
 
 export const expectedMultipleChoiceOptions: Record<string, string[]> = {
@@ -93,6 +96,9 @@ export const expectedMultipleChoiceOptions: Record<string, string[]> = {
     "Er löscht die Nachricht und vergisst den Park.",
     "Er prüft zuerst die Quelle und teilt dann vielleicht.",
   ],
+  q7: ["Um den Wochenmarkt", "Um einen neuen Park", "Um eine Zeitung", "Um ein Sommerfest"],
+  q8: ["Am Samstag um acht", "Am Freitag um acht", "Am Samstag um zehn", "Am Sonntag um neun"],
+  q9: ["Wichtige Angaben", "Die Kommentare", "Die Preise im Café", "Die Fotos von Anna"],
 };
 
 export function allTasks(): Exercise[] {

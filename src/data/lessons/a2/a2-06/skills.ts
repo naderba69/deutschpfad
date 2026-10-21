@@ -266,6 +266,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
           { speaker: "Karim", de: "Dann prüfe ich zuerst die Quelle. Vielleicht teile ich die Nachricht danach.", ar: "إذن سأتحقق أولاً من المصدر. وربما أشارك الخبر بعد ذلك.", audioSrc: "/audio/lessons/a2-06/ls-a2-06-3-6.mp3" },
         ],
       },
+      {
+        id: "l4",
+        title: "مقال عن سوق الحي",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً.",
+        lines: [
+          { speaker: "Anna", de: "Hast du den Artikel über den Wochenmarkt gelesen?", ar: "هل قرأت المقال عن سوق الحي؟", audioSrc: "/audio/lessons/a2-06/ls-a2-06-4-1.mp3" },
+          { speaker: "Sami", de: "Ja, er sagt, dass der Markt am Samstag um acht beginnt.", ar: "نعم، يقول إن السوق يبدأ يوم السبت الساعة الثامنة.", audioSrc: "/audio/lessons/a2-06/ls-a2-06-4-2.mp3" },
+          { speaker: "Anna", de: "In den Kommentaren steht, dass die Preise zu hoch sind.", ar: "ورد في التعليقات أن الأسعار مرتفعة جداً.", audioSrc: "/audio/lessons/a2-06/ls-a2-06-4-3.mp3" },
+          { speaker: "Sami", de: "Das ist eine Meinung. Die Öffnungszeit ist eine Information aus dem Artikel.", ar: "هذا رأي. أما وقت الافتتاح فهو معلومة من المقال.", audioSrc: "/audio/lessons/a2-06/ls-a2-06-4-4.mp3" },
+          { speaker: "Anna", de: "Ich finde, dass der Artikel klar geschrieben ist.", ar: "أرى أن المقال مكتوب بوضوح.", audioSrc: "/audio/lessons/a2-06/ls-a2-06-4-5.mp3" },
+          { speaker: "Sami", de: "Ich prüfe wichtige Angaben trotzdem auf der Webseite der Stadt.", ar: "مع ذلك أتحقق من المعلومات المهمة على موقع المدينة.", audioSrc: "/audio/lessons/a2-06/ls-a2-06-4-6.mp3" },
+        ],
+      },
     ],
     questions: [
       {
@@ -398,6 +411,27 @@ export const listening: NonNullable<Lesson["listening"]> = {
           "لا يقول إنه سيحذف الخبر أو ينسى الحديقة.",
           undefined,
         ],
+      },
+      {
+        id: "q7", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:",
+        questionDe: "Worum geht es in dem Artikel?", questionAr: "عمّ يتحدث المقال؟",
+        options: ["Um den Wochenmarkt", "Um einen neuen Park", "Um eine Zeitung", "Um ein Sommerfest"], correctIndex: 0,
+        explanation: "تسأل آنا عن المقال المتعلق بسوق الحي.", errorType: "comprehension",
+      },
+      {
+        id: "q8", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:",
+        questionDe: "Wann beginnt der Markt laut dem Artikel?", questionAr: "متى يبدأ السوق بحسب المقال؟",
+        options: ["Am Samstag um acht", "Am Freitag um acht", "Am Samstag um zehn", "Am Sonntag um neun"], correctIndex: 0,
+        explanation: "يذكر المقال كما نقله سامي أن السوق يبدأ السبت الساعة الثامنة.", errorType: "comprehension",
+      },
+      {
+        id: "q9", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:",
+        questionDe: "Was prüft Sami auf der Webseite der Stadt?", questionAr: "ماذا يتحقق سامي منه على موقع المدينة؟",
+        options: ["Wichtige Angaben", "Die Kommentare", "Die Preise im Café", "Die Fotos von Anna"], correctIndex: 0,
+        explanation: "يقول سامي إنه يتحقق من المعلومات المهمة على موقع المدينة.", errorType: "comprehension",
       },
     ],
   };

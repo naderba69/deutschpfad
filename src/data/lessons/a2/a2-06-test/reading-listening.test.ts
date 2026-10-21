@@ -98,6 +98,7 @@ describe("A2-06 audited lesson", () => {
       ["l1", "آراء عن وسائل الإعلام", 7],
       ["l2", "اختيارات للقراءة", 4],
       ["l3", "التحقق من خبر متداول", 6],
+      ["l4", "مقال عن سوق الحي", 6],
     ]);
     const expectedLines = [
       [
@@ -132,6 +133,17 @@ describe("A2-06 audited lesson", () => {
           ["Karim", "Dann prüfe ich zuerst die Quelle. Vielleicht teile ich die Nachricht danach.", "إذن سأتحقق أولاً من المصدر. وربما أشارك الخبر بعد ذلك."],
         ],
       ],
+      [
+        "l4",
+        [
+          ["Anna", "Hast du den Artikel über den Wochenmarkt gelesen?", "هل قرأت المقال عن سوق الحي؟"],
+          ["Sami", "Ja, er sagt, dass der Markt am Samstag um acht beginnt.", "نعم، يقول إن السوق يبدأ يوم السبت الساعة الثامنة."],
+          ["Anna", "In den Kommentaren steht, dass die Preise zu hoch sind.", "ورد في التعليقات أن الأسعار مرتفعة جداً."],
+          ["Sami", "Das ist eine Meinung. Die Öffnungszeit ist eine Information aus dem Artikel.", "هذا رأي. أما وقت الافتتاح فهو معلومة من المقال."],
+          ["Anna", "Ich finde, dass der Artikel klar geschrieben ist.", "أرى أن المقال مكتوب بوضوح."],
+          ["Sami", "Ich prüfe wichtige Angaben trotzdem auf der Webseite der Stadt.", "مع ذلك أتحقق من المعلومات المهمة على موقع المدينة."],
+        ],
+      ],
     ] as const;
     expect(
       lessonA206.listening.items.map((item) => [
@@ -151,7 +163,12 @@ describe("A2-06 audited lesson", () => {
       ["q4", "l3"],
       ["q5", "l3"],
       ["q6", "l3"],
+      ["q7", "l4"],
+      ["q8", "l4"],
+      ["q9", "l4"],
     ]);
+    expect(lessonA206.listening.questions.find((question) => question.id === "q7")?.questionDe).toBe("Worum geht es in dem Artikel?");
+    expect(lessonA206.listening.questions.find((question) => question.id === "q9")?.explanation).toContain("موقع المدينة");
     expect(lessonA206.listening.questions.find((question) => question.id === "q2")?.questionDe).toBe(
       "Wo liest Karim lieber Nachrichten?",
     );
