@@ -160,9 +160,9 @@ describe("A2-10 lesson content audit", () => {
     expect(reading?.discussionAr).toMatch(/لا يقيس وحده.*الكتابة الحرة أو التحدث/);
   });
 
-  it("checks both listening dialogues and every transcript-free comprehension question", () => {
-    expect(lessonA210.listening.items.map((item) => item.id)).toEqual(["l1", "l2"]);
-    expect(lessonA210.listening.items.map((item) => item.lines.length)).toEqual([4, 5]);
+  it("checks all three listening dialogues and every transcript-free comprehension question", () => {
+    expect(lessonA210.listening.items.map((item) => item.id)).toEqual(["l1", "l2", "l3"]);
+    expect(lessonA210.listening.items.map((item) => item.lines.length)).toEqual([4, 5, 6]);
     expect(lessonA210.listening.items.flatMap((item) => item.lines.map(({ speaker, de, ar }) => ({ speaker, de, ar })))).toEqual([
       { speaker: "Anna", de: "Warum lernst du Deutsch, Sami?", ar: "لماذا تتعلم الألمانية يا سامي؟" },
       { speaker: "Sami", de: "Ich lerne Deutsch, weil ich später in Deutschland studieren möchte.", ar: "أتعلم الألمانية لأنني أريد لاحقاً الدراسة في ألمانيا." },
@@ -173,6 +173,12 @@ describe("A2-10 lesson content audit", () => {
       { speaker: "Karim", de: "Morgen. Ich lerne heute noch, weil ich gut vorbereitet sein möchte.", ar: "غداً. سأدرس اليوم أيضاً لأنني أريد أن أكون مستعداً جيداً." },
       { speaker: "Mona", de: "Bist du nervös?", ar: "هل أنت متوتر؟" },
       { speaker: "Karim", de: "Ja, ein bisschen. Ich hoffe, dass alles gut geht.", ar: "نعم، قليلاً. آمل أن تسير الأمور على ما يرام." },
+      { speaker: "Lisa", de: "Hast du dich für den Deutschkurs am Abend angemeldet?", ar: "هل سجلت في دورة الألمانية المسائية؟" },
+      { speaker: "Amir", de: "Noch nicht. Ich weiß nicht, ob ich nach der Arbeit pünktlich komme.", ar: "ليس بعد. لا أعرف إن كنت سأصل في الوقت المحدد بعد العمل." },
+      { speaker: "Lisa", de: "Der Kurs beginnt erst um halb sieben.", ar: "تبدأ الدورة عند السادسة والنصف." },
+      { speaker: "Amir", de: "Dann passt es. Wenn mein Bus pünktlich ist, bin ich um sechs da.", ar: "إذن يناسبني الموعد. إذا وصلت الحافلة في موعدها، سأكون هناك عند السادسة." },
+      { speaker: "Lisa", de: "Lernst du lieber allein oder in einer Gruppe?", ar: "هل تفضل الدراسة وحدك أم ضمن مجموعة؟" },
+      { speaker: "Amir", de: "In einer kleinen Gruppe, weil wir zusammen sprechen können.", ar: "في مجموعة صغيرة، لأننا نستطيع التحدث معاً." },
     ]);
     expect(
       lessonA210.listening.items.flatMap((item) => item.lines).every((line) => line.de.trim() && line.ar.trim()),
@@ -194,18 +200,27 @@ describe("A2-10 lesson content audit", () => {
       "l1",
       "l2",
       "l2",
+      "l3",
+      "l3",
+      "l3",
     ]);
     expect(lessonA210.listening.questions.map((question) => question.questionAr)).toEqual([
       "لماذا يتعلم سامي الألمانية؟",
       "متى يراجع سامي الكلمات الجديدة؟",
       "ما الأمر الذي لا يعرفه كريم؟",
       "كيف يشعر كريم؟",
+      "متى تبدأ الدورة؟",
+      "متى يكون أمير هناك إذا وصلت الحافلة في موعدها؟",
+      "كيف يفضل أمير أن يتعلم؟",
     ]);
     expect(lessonA210.listening.questions.map((question) => question.explanation)).toEqual([
       "يقول Sami إنه يتعلم الألمانية لأنه يريد لاحقاً الدراسة في ألمانيا؛ أما موعد الامتحان فيخص حوار Karim.",
       "يقول Sami: Wenn ich am Morgen Zeit habe, wiederhole ich sie. لا يحدد الحوار وقتاً يومياً ثابتاً.",
       "يقول Karim: Ich weiß nicht, ob die Prüfung schwierig wird. ولا يذكر النص عدم معرفته بالمواعيد أو بعدد الكلمات.",
       "يجيب Karim: Ja, ein bisschen، رداً على سؤال Mona عما إذا كان متوتراً.",
+      "تقول Lisa إن الدورة تبدأ عند halb sieben، أي السادسة والنصف؛ أما السادسة فهو وقت وصول Amir إذا كانت الحافلة في موعدها.",
+      "يقول Amir: Wenn mein Bus pünktlich ist, bin ich um sechs da؛ السادسة والنصف بداية الدورة لا وقت وصوله.",
+      "يفضل Amir مجموعة صغيرة لأنهم يستطيعون التحدث معاً؛ لا يقول إنه يريد الدراسة وحده أو مع Lisa صباحاً.",
     ]);
     for (const question of lessonA210.listening.questions) {
       expect(getListeningQuestionTaskId(lessonA210.id, question.itemId, question.id, false)).toBe(

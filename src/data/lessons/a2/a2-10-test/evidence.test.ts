@@ -61,6 +61,9 @@ describe("A2-10 lesson content audit", () => {
       "listening:l1:q2",
       "listening:l2:q3",
       "listening:l2:q4",
+      "listening:l3:q5",
+      "listening:l3:q6",
+      "listening:l3:q7",
     ]);
   });
 
