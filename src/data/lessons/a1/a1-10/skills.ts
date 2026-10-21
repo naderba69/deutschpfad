@@ -330,6 +330,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
           },
         ],
       },
+      {
+        id: "l3",
+        title: "Ein neuer Arbeitsplatz",
+        lines: [
+          { speaker: "Mona", de: "Guten Tag, ich suche eine Arbeit.", ar: "مرحباً، أبحث عن عمل.", audioSrc: "/audio/lessons/a1-10/ls-a1-10-3-1.mp3" },
+          { speaker: "Berater", de: "Was sind Sie von Beruf?", ar: "ما مهنتك؟", audioSrc: "/audio/lessons/a1-10/ls-a1-10-3-2.mp3" },
+          { speaker: "Mona", de: "Ich bin Köchin und habe Erfahrung.", ar: "أنا طاهية ولدي خبرة.", audioSrc: "/audio/lessons/a1-10/ls-a1-10-3-3.mp3" },
+          { speaker: "Berater", de: "Möchten Sie in einem Hotel arbeiten?", ar: "هل تودين العمل في فندق؟", audioSrc: "/audio/lessons/a1-10/ls-a1-10-3-4.mp3" },
+          { speaker: "Mona", de: "Ja, gern. Wann kann ich anfangen?", ar: "نعم، بكل سرور. متى يمكنني أن أبدأ؟", audioSrc: "/audio/lessons/a1-10/ls-a1-10-3-5.mp3" },
+          { speaker: "Berater", de: "Am Montag um neun Uhr.", ar: "يوم الاثنين الساعة التاسعة.", audioSrc: "/audio/lessons/a1-10/ls-a1-10-3-6.mp3" },
+        ],
+        audioNoteAr: "هذا المقطع يحتوي على أصوات مولّدة آلياً (TTS)، وليس تسجيلاً بشرياً. استُخدمت أصوات نسائية ورجالية ثابتة ومتكررة بين الدروس.",
+      },
     ],
     questions: [
       {
@@ -390,6 +403,27 @@ export const listening: NonNullable<Lesson["listening"]> = {
           "لم يُذكر طاهٍ «Koch»؛ بل هو طالبٌ يدرس في الجامعة.",
           "لم يُذكر «Lehrer» في كلام آنا عن أخيها.",
         ],
+      },
+      {
+        id: "q4", itemId: "l3", type: "multiple-choice",
+        instructionAr: "استمع إلى الحوار ثم اختر الإجابة:",
+        questionDe: "Was ist Mona von Beruf?", questionAr: "ما مهنة مونا؟",
+        options: ["Köchin", "Ärztin", "Lehrerin", "Ingenieurin"], correctIndex: 0,
+        explanation: "تقول مونا: Ich bin Köchin.", errorType: "vocabulary",
+      },
+      {
+        id: "q5", itemId: "l3", type: "multiple-choice",
+        instructionAr: "استمع إلى الحوار ثم اختر الإجابة:",
+        questionDe: "Wo möchte Mona arbeiten?", questionAr: "أين تود مونا العمل؟",
+        options: ["In einem Hotel", "In einem Krankenhaus", "Bei einer Firma", "An einer Universität"], correctIndex: 0,
+        explanation: "يسأل المستشار إن كانت تود العمل في فندق، فتوافق مونا.", errorType: "vocabulary",
+      },
+      {
+        id: "q6", itemId: "l3", type: "multiple-choice",
+        instructionAr: "استمع إلى الحوار ثم اختر الإجابة:",
+        questionDe: "Wann kann Mona anfangen?", questionAr: "متى يمكن لمونا أن تبدأ؟",
+        options: ["Am Montag um neun Uhr", "Am Dienstag um zehn Uhr", "Am Freitag um neun Uhr", "Am Mittwoch um acht Uhr"], correctIndex: 0,
+        explanation: "يحدد المستشار يوم الاثنين الساعة التاسعة موعداً للبدء.", errorType: "vocabulary",
       },
     ],
   };

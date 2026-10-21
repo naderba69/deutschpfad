@@ -74,6 +74,9 @@ const listeningAnswers: Record<string, string> = {
   q1: "Ärztin",
   q2: "Nein, sie arbeitet am Wochenende nicht.",
   q3: "Er ist Student.",
+  q4: "Köchin",
+  q5: "In einem Hotel",
+  q6: "Am Montag um neun Uhr",
 };
 
 function reading() {
@@ -374,8 +377,8 @@ describe("A1-10 audited lesson content", () => {
       expect(question.correctIndex).toBeLessThan(question.options.length);
     }
 
-    expect(lessonA110.listening.items).toHaveLength(2);
-    expect(lessonA110.listening.items.map((item) => item.lines.length)).toEqual([6, 4]);
+    expect(lessonA110.listening.items).toHaveLength(3);
+    expect(lessonA110.listening.items.map((item) => item.lines.length)).toEqual([6, 4, 6]);
     const listeningIds = new Set(lessonA110.listening.items.map((item) => item.id));
     for (const item of lessonA110.listening.items) {
       expect(item.title.trim()).toBeTruthy();
