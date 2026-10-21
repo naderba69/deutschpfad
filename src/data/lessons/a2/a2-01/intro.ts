@@ -73,12 +73,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z7",
-      de: "Ich kann explizite Informationen aus einer vorgelesenen Reiseunterhaltung entnehmen, solange das Transkript nicht geöffnet wurde.",
-      ar: "أن ألتقط معلومات صريحة من حوار سفر يُقرأ بصوت اصطناعي، ما دام نصه غير مكشوف.",
+      de: "Ich kann explizite Informationen aus drei vorgelesenen Reiseunterhaltungen entnehmen, solange die Transkripte nicht geöffnet wurden.",
+      ar: "أن ألتقط معلومات صريحة من ثلاثة حوارات سفر مسموعة ما دامت نصوصها غير مكشوفة.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3", "q4"],
-        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l1:q4"],
-        labelAr: "الإجابة عن أسئلة الحوار بعد الاستماع إلى TTS مع إخفاء التفريغ؛ الإجابات بعد كشف النص لا تدخل الدليل.",
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
+        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l1:q4", "listening:l3:q5", "listening:l3:q6", "listening:l3:q7"],
+        labelAr: "الإجابة عن الأسئلة السبعة بعد الاستماع إلى الحوارات وقبل كشف التفريغ؛ الإجابات بعد كشف النص لا تدخل الدليل.",
         completion: "all-correct",
       },
     },

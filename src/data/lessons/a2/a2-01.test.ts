@@ -34,6 +34,9 @@ const expectedMultipleChoiceKeys: Record<string, string> = {
   q2: "nach Sousse",
   q3: "super",
   q4: "typisches Essen",
+  q5: "In München",
+  q6: "Es war nicht sauber.",
+  q7: "Er hat die Rezeption angerufen.",
   m1: "habe ... gesehen",
   m2: "ist ... gegangen",
 };
@@ -79,6 +82,17 @@ const expectedDialogueContent = [
       ["Mona", "Das Hotel war super! Wir haben im Meer geschwommen und am Strand in der Sonne gelegen.", "كان الفندق رائعاً! سبحنا في البحر واستلقينا على الشاطئ في الشمس."],
       ["Karim", "Habt ihr Fotos gemacht?", "هل التقطتم صوراً؟"],
       ["Mona", "Ja, viele! Ich zeige sie dir später.", "نعم، كثيراً! سأريكها لاحقاً."],
+    ],
+  },
+  {
+    id: "l3",
+    lines: [
+      ["Anna", "Wie war euer Hotel in München?", "كيف كان فندقكم في ميونيخ؟"],
+      ["Sami", "Wir sind gestern spät angekommen.", "وصلنا متأخرين أمس."],
+      ["Anna", "Gab es ein Problem mit dem Zimmer?", "هل كانت هناك مشكلة في الغرفة؟"],
+      ["Sami", "Ja, das Zimmer war nicht sauber.", "نعم، لم تكن الغرفة نظيفة."],
+      ["Anna", "Was hast du dann gemacht?", "ماذا فعلتَ بعد ذلك؟"],
+      ["Sami", "Ich habe die Rezeption angerufen und ein anderes Zimmer bekommen.", "اتصلتُ بالاستقبال وحصلتُ على غرفة أخرى."],
     ],
   },
 ];
@@ -161,7 +175,7 @@ describe("A2-01 audited lesson", () => {
     expect(ids(lessonA201.miniTest)).toEqual(["m1", "m2", "m3", "m4", "m5"]);
     expect(ids(lessonA201.writing)).toEqual(["w1", "w2", "w3"]);
     expect(ids(reading().questions)).toEqual(["rq1", "rq2", "rq3", "rq4", "rq5", "rq6"]);
-    expect(ids(lessonA201.listening.questions)).toEqual(["q1", "q2", "q3", "q4"]);
+    expect(ids(lessonA201.listening.questions)).toEqual(["q1", "q2", "q3", "q4", "q5", "q6", "q7"]);
     expect(new Set(allTasks().map((exercise) => exercise.id)).size).toBe(allTasks().length);
 
     expect(lessonA201.theory.map((section) => section.id)).toEqual(["t1", "t2", "t3", "t4"]);
@@ -196,7 +210,7 @@ describe("A2-01 audited lesson", () => {
     expect(task("e20").instructionAr).toContain("Perfekt");
 
     const dialogueIds = new Set(lessonA201.listening.items.map((item) => item.id));
-    expect(dialogueIds).toEqual(new Set(["l1", "l2"]));
+    expect(dialogueIds).toEqual(new Set(["l1", "l2", "l3"]));
     expect(
       lessonA201.listening.items.map((item) => ({
         id: item.id,
@@ -366,6 +380,9 @@ describe("A2-01 audited lesson", () => {
       "listening:l2:q2",
       "listening:l2:q3",
       "listening:l1:q4",
+      "listening:l3:q5",
+      "listening:l3:q6",
+      "listening:l3:q7",
     ]);
     for (const question of lessonA201.listening.questions) {
       expect(getListeningQuestionTaskId(lessonA201.id, question.itemId, question.id, false)).toBe(
@@ -378,6 +395,8 @@ describe("A2-01 audited lesson", () => {
     expect(isDialogueOrderingUnlocked({}, "l1")).toBe(false);
     expect(isDialogueOrderingUnlocked({l1: true}, "l1")).toBe(true);
     expect(isDialogueOrderingUnlocked({l1: true}, "l2")).toBe(false);
+    expect(isDialogueOrderingUnlocked({}, "l3")).toBe(false);
+    expect(isDialogueOrderingUnlocked({l3: true}, "l3")).toBe(true);
   });
 
   it("keeps theory classifications and vocabulary/audio materials individually populated", () => {
