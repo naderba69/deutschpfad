@@ -9,6 +9,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     { id: "z2", de: "Ich kann meine Wohnung beschreiben.", ar: "أن أصف منزلي بجمل بسيطة (Das Zimmer ist groß).", evidence: { exerciseIds: ["w1"], labelAr: "اختر اسماً وصفةً من الكلمات المعطاة، ثم كوّن جملة قصيرة تصف المكان.", completion: "any-correct" } },
     { id: "z3", de: "Ich kann sagen, wo etwas ist: im, in der, auf dem.", ar: "أن أحدد مكان الأشياء بحروف الجر المكانية مع Dativ.", evidence: { exerciseIds: ["w2"], labelAr: "أكمل جمل المكان الثلاث باستعمال im وin der وauf dem.", completion: "any-correct" } },
     { id: "z4", de: "Ich kann fragen: Wo wohnst du? und mit Ich wohne in ... antworten.", ar: "أن أسأل: أين تسكن؟ وأجيب بجملة بسيطة عن مكان سكني.", evidence: { exerciseIds: ["w4"], labelAr: "اكتب سؤالاً عن مكان السكن ثم أجب عنه.", completion: "any-correct" } },
+    { id: "z5", de: "Ich kann wichtige Angaben zur Lage von Räumen und Gegenständen aus kurzen Gesprächen verstehen.", ar: "أن أفهم معلومات أساسية عن مواقع الغرف والأشياء من حوارات قصيرة مسموعة.", evidence: { exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6"], taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4", "listening:l3:q5", "listening:l3:q6"], labelAr: "أجب صحيحاً عن أسئلة الاستماع q1–q6 في حوار وصف الشقة ومواقع الأشياء وجولة الشقة الجديدة؛ تشغيل الصوت وحده لا يثبت الفهم.", completion: "all-correct" } },
   ];
 
 export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
