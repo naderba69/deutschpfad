@@ -11,7 +11,8 @@
  *    1) الأمانة: الموازنة **لا تغيّر** مجموعة خيارات أي سؤال ولا نصّ إجابته
  *       الصحيحة — يُقارَن كل سؤال مُوازَن بنسخته الأصلية بالمعرّف نفسه.
  *    2) منع الغش بالحرف: لا جزء (3 أسئلة فأكثر) كل إجاباته في موضع واحد.
- *    3) توازن التوزيع: حصة كل موضع ≥ 20% على مجموع الامتحانات.
+ *    3) توازن التوزيع: داخل كل مجموعة بحسب عدد الخيارات (3 أو 4)، حصة كل موضع ≥ 20%.
+ *       التوسعة (الدفعة 135): شمل التدقيق النماذج الثالثة A1/A2/B1، فصار 228 سؤالاً.
  * ═══════════════════════════════════════════════════════════
  */
 import { describe, expect, it } from "vitest";
@@ -28,6 +29,12 @@ import { A2_MODEL2_HOEREN } from "@/data/exams/a2-model2-hoeren";
 import { A2_MODEL2_LESEN } from "@/data/exams/a2-model2-lesen";
 import { B1_MODEL2_HOEREN } from "@/data/exams/b1-model2-hoeren";
 import { B1_MODEL2_LESEN } from "@/data/exams/b1-model2-lesen";
+import { A1_MODEL3_HOEREN } from "@/data/exams/a1-model3-hoeren";
+import { A1_MODEL3_LESEN } from "@/data/exams/a1-model3-lesen";
+import { A2_MODEL3_HOEREN } from "@/data/exams/a2-model3-hoeren";
+import { A2_MODEL3_LESEN } from "@/data/exams/a2-model3-lesen";
+import { B1_MODEL3_HOEREN } from "@/data/exams/b1-model3-hoeren";
+import { B1_MODEL3_LESEN } from "@/data/exams/b1-model3-lesen";
 import { B2_HOEREN, B2_HOEREN_B, B2_HOEREN_C, B2_HOEREN_SETS, B2_LESEN, B2_LESEN_B, B2_LESEN_C, B2_LESEN_SETS } from "@/data/exams";
 import { LEVEL_MODELS } from "@/data/exams/level-models";
 import type { ExamHoerenTeil, ExamLesenTeil } from "@/types/exam";
@@ -42,6 +49,9 @@ const PAIRS: { name: string; raw: Teil[]; balanced: Teil[] }[] = [
   { name: "A1-2", raw: [...A1_MODEL2_HOEREN, ...A1_MODEL2_LESEN] as Teil[], balanced: [...LEVEL_MODELS.A1[1].hoeren, ...LEVEL_MODELS.A1[1].lesen] as Teil[] },
   { name: "A2-2", raw: [...A2_MODEL2_HOEREN, ...A2_MODEL2_LESEN] as Teil[], balanced: [...LEVEL_MODELS.A2[1].hoeren, ...LEVEL_MODELS.A2[1].lesen] as Teil[] },
   { name: "B1-2", raw: [...B1_MODEL2_HOEREN, ...B1_MODEL2_LESEN] as Teil[], balanced: [...LEVEL_MODELS.B1[1].hoeren, ...LEVEL_MODELS.B1[1].lesen] as Teil[] },
+  { name: "A1-3", raw: [...A1_MODEL3_HOEREN, ...A1_MODEL3_LESEN] as Teil[], balanced: [...LEVEL_MODELS.A1[2].hoeren, ...LEVEL_MODELS.A1[2].lesen] as Teil[] },
+  { name: "A2-3", raw: [...A2_MODEL3_HOEREN, ...A2_MODEL3_LESEN] as Teil[], balanced: [...LEVEL_MODELS.A2[2].hoeren, ...LEVEL_MODELS.A2[2].lesen] as Teil[] },
+  { name: "B1-3", raw: [...B1_MODEL3_HOEREN, ...B1_MODEL3_LESEN] as Teil[], balanced: [...LEVEL_MODELS.B1[2].hoeren, ...LEVEL_MODELS.B1[2].lesen] as Teil[] },
   { name: "B2-a", raw: [...B2_HOEREN, ...B2_LESEN] as Teil[], balanced: [...B2_HOEREN_SETS[0], ...B2_LESEN_SETS[0]] as Teil[] },
   { name: "B2-b", raw: [...B2_HOEREN_B, ...B2_LESEN_B] as Teil[], balanced: [...B2_HOEREN_SETS[1], ...B2_LESEN_SETS[1]] as Teil[] },
   { name: "B2-c", raw: [...B2_HOEREN_C, ...B2_LESEN_C] as Teil[], balanced: [...B2_HOEREN_SETS[2], ...B2_LESEN_SETS[2]] as Teil[] },
@@ -58,6 +68,13 @@ for (const pair of PAIRS) {
 }
 
 describe("موازنة موضع الإجابة — الأمانة", () => {
+  it("يشمل التدقيق النماذج الثالثة المنشورة في A1 وA2 وB1", () => {
+    const audited = new Set(PAIRS.map((pair) => pair.name));
+    expect(audited.has("A1-3")).toBe(true);
+    expect(audited.has("A2-3")).toBe(true);
+    expect(audited.has("B1-3")).toBe(true);
+  });
+
   it("لا سؤال تغيّرت خياراته أو نصّ إجابته الصحيحة", () => {
     const problems: string[] = [];
     for (const pair of PAIRS) {
@@ -149,27 +166,46 @@ describe("موازنة موضع الإجابة — منع الغش بالحرف"
 });
 
 describe("موازنة موضع الإجابة — توازن التوزيع", () => {
-  it("حجم العيّنة المفحوصة كامل (175 سؤال اختيار)", () => {
-    expect(balancedRows.length).toBe(175);
+  it("حجم العيّنة المفحوصة كامل (228 سؤال اختيار مع النماذج 3)", () => {
+    expect(balancedRows.length).toBe(228);
   });
 
-  it("حصة كل موضع من الثلاثة لا تقل عن 20%", () => {
-    const dist = [0, 1, 2].map((i) => balancedRows.filter((r) => r.correct === i).length);
-    const pct = dist.map((d) => Math.round((d / balancedRows.length) * 100));
-    expect(Math.min(...pct), `التوزيع: ${pct.join("% / ")}%`).toBeGreaterThanOrEqual(20);
-    // ويُسجَّل الرقم المقيس ليبقى في السجلّ عند أي انحراف
-    expect(dist.reduce((a, b) => a + b, 0)).toBeLessThanOrEqual(balancedRows.length);
-  });
-
-  it("كل امتحان على حدة: المواضع الثلاثة مستعملة في كل نموذج كامل", () => {
-    const perModel = new Map<string, Set<number>>();
-    for (const r of balancedRows) {
-      const model = r.scope.split(" T")[0];
-      const set = perModel.get(model) ?? new Set<number>();
-      set.add(r.correct);
-      perModel.set(model, set);
+  it("يوزّع الإجابات داخل كل مجموعة بحسب عدد الخيارات (قياس 228 سؤالاً)", () => {
+    const byArity = new Map<number, number[]>();
+    for (const row of balancedRows) {
+      const counts = byArity.get(row.options.length) ?? Array(row.options.length).fill(0);
+      counts[row.correct] += 1;
+      byArity.set(row.options.length, counts);
     }
-    const missing = [...perModel.entries()].filter(([, set]) => set.size < 3).map(([model, set]) => `${model}: ${[...set].join(",")}`);
+    // جميع نماذج A1–B1 خياراتها ثلاثية، ونماذج B2 رباعية.
+    expect(Object.fromEntries(byArity)).toEqual({
+      3: [48, 57, 54],
+      4: [15, 21, 18, 15],
+    });
+    for (const [arity, counts] of byArity) {
+      const total = counts.reduce((sum, count) => sum + count, 0);
+      for (const count of counts) {
+        expect(count / total, `${arity} خيارات: ${counts.join("/")}`).toBeGreaterThanOrEqual(0.2);
+      }
+    }
+  });
+
+  it("كل نموذج يستخدم كل موضع إجابة ممكن وفق عدد خياراته", () => {
+    const perModel = new Map<string, Map<number, Set<number>>>();
+    for (const row of balancedRows) {
+      const model = row.scope.split(" T")[0];
+      const byArity = perModel.get(model) ?? new Map<number, Set<number>>();
+      const positions = byArity.get(row.options.length) ?? new Set<number>();
+      positions.add(row.correct);
+      byArity.set(row.options.length, positions);
+      perModel.set(model, byArity);
+    }
+    const missing: string[] = [];
+    for (const [model, byArity] of perModel) {
+      for (const [arity, positions] of byArity) {
+        if (positions.size !== arity) missing.push(`${model}/${arity} خيارات: ${[...positions].join(",")}`);
+      }
+    }
     expect(missing).toEqual([]);
   });
 });
