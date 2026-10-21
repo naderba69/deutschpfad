@@ -97,6 +97,7 @@ describe("A2-06 audited lesson", () => {
     expect(lessonA206.listening.items.map((item) => [item.id, item.title, item.lines.length])).toEqual([
       ["l1", "آراء عن وسائل الإعلام", 7],
       ["l2", "اختيارات للقراءة", 4],
+      ["l3", "التحقق من خبر متداول", 6],
     ]);
     const expectedLines = [
       [
@@ -120,6 +121,17 @@ describe("A2-06 audited lesson", () => {
           ["Sami", "Ich lese Nachrichten im Internet. Ich finde, dass das praktisch ist.", "أقرأ الأخبار على الإنترنت. وأجد ذلك عملياً."],
         ],
       ],
+      [
+        "l3",
+        [
+          ["Mona", "Hast du die Nachricht über den neuen Park gelesen?", "هل قرأت الخبر عن الحديقة الجديدة؟"],
+          ["Karim", "Ja, aber ich weiß nicht, ob sie wirklich stimmt.", "نعم، لكنني لا أعرف إن كان صحيحاً فعلاً."],
+          ["Mona", "In der Zeitung steht, dass die Stadt den Park im Mai öffnet.", "ورد في الصحيفة أن المدينة ستفتح الحديقة في مايو."],
+          ["Karim", "Im Internet habe ich auch ein Foto gesehen.", "رأيت أيضاً صورة على الإنترنت."],
+          ["Mona", "Das Foto ist aber schon drei Jahre alt.", "لكن عمر هذه الصورة ثلاث سنوات بالفعل."],
+          ["Karim", "Dann prüfe ich zuerst die Quelle. Vielleicht teile ich die Nachricht danach.", "إذن سأتحقق أولاً من المصدر. وربما أشارك الخبر بعد ذلك."],
+        ],
+      ],
     ] as const;
     expect(
       lessonA206.listening.items.map((item) => [
@@ -136,6 +148,9 @@ describe("A2-06 audited lesson", () => {
       ["q1", "l1"],
       ["q2", "l1"],
       ["q3", "l2"],
+      ["q4", "l3"],
+      ["q5", "l3"],
+      ["q6", "l3"],
     ]);
     expect(lessonA206.listening.questions.find((question) => question.id === "q2")?.questionDe).toBe(
       "Wo liest Karim lieber Nachrichten?",

@@ -33,9 +33,9 @@ describe("A2-06 audited lesson", () => {
     expect(ids(lessonA206.miniTest)).toEqual(["m1", "m2", "m3", "m4", "m5"]);
     expect(ids(lessonA206.writing)).toEqual(["w1", "w2", "w3"]);
     expect(ids(lessonA206.reading?.questions ?? [])).toEqual(["rq1", "rq2", "rq3", "rq4"]);
-    expect(ids(lessonA206.listening.questions)).toEqual(["q1", "q2", "q3"]);
-    expect(allTasks()).toHaveLength(32);
-    expect(new Set(allTasks().map((item) => item.id)).size).toBe(32);
+    expect(ids(lessonA206.listening.questions)).toEqual(["q1", "q2", "q3", "q4", "q5", "q6"]);
+    expect(allTasks()).toHaveLength(35);
+    expect(new Set(allTasks().map((item) => item.id)).size).toBe(35);
     expect("duration" in lessonA206).toBe(false);
     expect(lessonA206.summary).not.toMatch(/Goethe|CEFR|اعتماد|جاهزية|\b\d+\s*دقيقة/i);
 
@@ -98,6 +98,9 @@ describe("A2-06 audited lesson", () => {
       "listening:l1:q1",
       "listening:l1:q2",
       "listening:l2:q3",
+      "listening:l3:q4",
+      "listening:l3:q5",
+      "listening:l3:q6",
     ]);
     expect(
       lessonA206.lernziele.find((goal) => goal.id === "z-reading")?.evidence?.taskIds,
