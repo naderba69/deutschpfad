@@ -12,7 +12,9 @@
  *       الصحيحة — يُقارَن كل سؤال مُوازَن بنسخته الأصلية بالمعرّف نفسه.
  *    2) منع الغش بالحرف: لا جزء (3 أسئلة فأكثر) كل إجاباته في موضع واحد.
  *    3) توازن التوزيع: داخل كل مجموعة بحسب عدد الخيارات (3 أو 4)، حصة كل موضع ≥ 20%.
- *       التوسعة (الدفعة 135): شمل التدقيق النماذج الثالثة A1/A2/B1، فصار 228 سؤالاً.
+ *    4) التوازن المحلي: 57 مجموعة مؤهلة مميّزة بين الاستماع والقراءة وTeil.
+ *       الدفعة 135 وسّعت العينة للنماذج الثالثة A1/A2/B1 (228 سؤالاً)؛ والدفعة 136
+ *       فصلت استماع/قراءة B2 ذات ترقيم Teil المتكرر، وتتحقق من أقصى فرق ممكن (1).
  * ═══════════════════════════════════════════════════════════
  */
 import { describe, expect, it } from "vitest";
@@ -42,7 +44,7 @@ import type { ExamHoerenTeil, ExamLesenTeil } from "@/types/exam";
 type Teil = Pick<ExamHoerenTeil, "teil" | "questions"> | Pick<ExamLesenTeil, "teil" | "questions">;
 
 /** أزواج (أصلي ← مُوازَن) لكل مكوّن امتحاني */
-const PAIRS: { name: string; raw: Teil[]; balanced: Teil[] }[] = [
+const PAIRS: { name: string; raw: Teil[]; balanced: Teil[]; listeningParts?: number }[] = [
   { name: "A1-1", raw: [...A1_HOEREN, ...A1_LESEN] as Teil[], balanced: [...LEVEL_MODELS.A1[0].hoeren, ...LEVEL_MODELS.A1[0].lesen] as Teil[] },
   { name: "A2-1", raw: [...A2_HOEREN, ...A2_LESEN] as Teil[], balanced: [...LEVEL_MODELS.A2[0].hoeren, ...LEVEL_MODELS.A2[0].lesen] as Teil[] },
   { name: "B1-1", raw: [...B1_HOEREN, ...B1_LESEN] as Teil[], balanced: [...LEVEL_MODELS.B1[0].hoeren, ...LEVEL_MODELS.B1[0].lesen] as Teil[] },
@@ -52,19 +54,20 @@ const PAIRS: { name: string; raw: Teil[]; balanced: Teil[] }[] = [
   { name: "A1-3", raw: [...A1_MODEL3_HOEREN, ...A1_MODEL3_LESEN] as Teil[], balanced: [...LEVEL_MODELS.A1[2].hoeren, ...LEVEL_MODELS.A1[2].lesen] as Teil[] },
   { name: "A2-3", raw: [...A2_MODEL3_HOEREN, ...A2_MODEL3_LESEN] as Teil[], balanced: [...LEVEL_MODELS.A2[2].hoeren, ...LEVEL_MODELS.A2[2].lesen] as Teil[] },
   { name: "B1-3", raw: [...B1_MODEL3_HOEREN, ...B1_MODEL3_LESEN] as Teil[], balanced: [...LEVEL_MODELS.B1[2].hoeren, ...LEVEL_MODELS.B1[2].lesen] as Teil[] },
-  { name: "B2-a", raw: [...B2_HOEREN, ...B2_LESEN] as Teil[], balanced: [...B2_HOEREN_SETS[0], ...B2_LESEN_SETS[0]] as Teil[] },
-  { name: "B2-b", raw: [...B2_HOEREN_B, ...B2_LESEN_B] as Teil[], balanced: [...B2_HOEREN_SETS[1], ...B2_LESEN_SETS[1]] as Teil[] },
-  { name: "B2-c", raw: [...B2_HOEREN_C, ...B2_LESEN_C] as Teil[], balanced: [...B2_HOEREN_SETS[2], ...B2_LESEN_SETS[2]] as Teil[] },
+  { name: "B2-a", raw: [...B2_HOEREN, ...B2_LESEN] as Teil[], balanced: [...B2_HOEREN_SETS[0], ...B2_LESEN_SETS[0]] as Teil[], listeningParts: B2_HOEREN_SETS[0].length },
+  { name: "B2-b", raw: [...B2_HOEREN_B, ...B2_LESEN_B] as Teil[], balanced: [...B2_HOEREN_SETS[1], ...B2_LESEN_SETS[1]] as Teil[], listeningParts: B2_HOEREN_SETS[1].length },
+  { name: "B2-c", raw: [...B2_HOEREN_C, ...B2_LESEN_C] as Teil[], balanced: [...B2_HOEREN_SETS[2], ...B2_LESEN_SETS[2]] as Teil[], listeningParts: B2_HOEREN_SETS[2].length },
 ];
 
-/** كل أسئلة الاختيار المُوازَنة مع نطاقها (المستوى + الجزء) */
-const balancedRows: { scope: string; id: string; correct: number; options: string[] }[] = [];
+/** كل أسئلة الاختيار المُوازَنة مع نطاقها (النموذج + مهارة الاستماع/القراءة + الجزء) */
+const balancedRows: { model: string; scope: string; id: string; correct: number; options: string[] }[] = [];
 for (const pair of PAIRS) {
-  for (const teil of pair.balanced) {
+  pair.balanced.forEach((teil, index) => {
+    const skill = index < (pair.listeningParts ?? 4) ? "Hören" : "Lesen";
     for (const q of teil.questions ?? []) {
-      balancedRows.push({ scope: `${pair.name} T${teil.teil}`, id: q.id, correct: q.correct, options: q.options });
+      balancedRows.push({ model: pair.name, scope: `${pair.name} ${skill} T${teil.teil}`, id: q.id, correct: q.correct, options: q.options });
     }
-  }
+  });
 }
 
 describe("موازنة موضع الإجابة — الأمانة", () => {
@@ -170,6 +173,32 @@ describe("موازنة موضع الإجابة — توازن التوزيع", (
     expect(balancedRows.length).toBe(228);
   });
 
+  it("كل جزء استماع/قراءة يوازن مواضع الخيارات في كل مجموعة مؤهلة (57 مجموعة)", () => {
+    const byPart = new Map<string, Map<number, number[]>>();
+    for (const row of balancedRows) {
+      const byArity = byPart.get(row.scope) ?? new Map<number, number[]>();
+      const counts = byArity.get(row.options.length) ?? Array(row.options.length).fill(0);
+      counts[row.correct] += 1;
+      byArity.set(row.options.length, counts);
+      byPart.set(row.scope, byArity);
+    }
+
+    const groups: { scope: string; arity: number; counts: number[]; total: number }[] = [];
+    for (const [scope, byArity] of byPart) {
+      for (const [arity, counts] of byArity) {
+        const total = counts.reduce((sum, count) => sum + count, 0);
+        if (total >= Math.max(3, arity)) groups.push({ scope, arity, counts, total });
+      }
+    }
+    expect(groups).toHaveLength(57);
+    for (const { scope, arity, counts } of groups) {
+      expect(counts.every((count) => count > 0), `${scope}: ${counts.join("/")}`).toBe(true);
+      // عندما لا يقبل العدد القسمة بالتساوي (مثلاً 6 أسئلة/4 خيارات)، فإن
+      // الفرق الأمثل بين المواضع لا يتجاوز إجابة واحدة.
+      expect(Math.max(...counts) - Math.min(...counts), `${scope} (${arity} خيارات): ${counts.join("/")}`).toBeLessThanOrEqual(1);
+    }
+  });
+
   it("يوزّع الإجابات داخل كل مجموعة بحسب عدد الخيارات (قياس 228 سؤالاً)", () => {
     const byArity = new Map<number, number[]>();
     for (const row of balancedRows) {
@@ -193,7 +222,7 @@ describe("موازنة موضع الإجابة — توازن التوزيع", (
   it("كل نموذج يستخدم كل موضع إجابة ممكن وفق عدد خياراته", () => {
     const perModel = new Map<string, Map<number, Set<number>>>();
     for (const row of balancedRows) {
-      const model = row.scope.split(" T")[0];
+      const model = row.model;
       const byArity = perModel.get(model) ?? new Map<number, Set<number>>();
       const positions = byArity.get(row.options.length) ?? new Set<number>();
       positions.add(row.correct);
