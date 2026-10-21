@@ -20,6 +20,9 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   q1: { options: ["wegen der Prüfung", "wegen des Wetters", "wegen der Arbeit", "wegen des Verkehrs"], key: "wegen der Prüfung" },
   q2: { options: ["feiern", "lernen", "arbeiten", "schlafen"], key: "feiern" },
   q3: { options: ["Der Bus kam nicht", "Sie hat verschlafen", "Sie hatte einen Termin", "Sie war krank"], key: "Der Bus kam nicht" },
+  q4: { options: ["Er hilft seiner Schwester", "Er arbeitet noch heute", "Er fühlt sich nicht gut", "Er findet das Kino teuer"], key: "Er hilft seiner Schwester" },
+  q5: { options: ["Ein bisschen enttäuscht", "Sehr verärgert darüber", "Ein wenig erleichtert", "Ziemlich müde heute"], key: "Ein bisschen enttäuscht" },
+  q6: { options: ["Im Café", "Im Kino", "Im Park", "Bei Mona zu Hause"], key: "Im Café" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -180,8 +183,8 @@ describe("A2-12 lesson content audit", () => {
     expect(meta && "duration" in meta).toBe(false);
   });
 
-  it("limits goals to evidenced, selection/writing performances and removes unsupported claims", () => {
-    expect(lessonA212.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
+  it("limits goals to evidenced, assessed performances and removes unsupported claims", () => {
+    expect(lessonA212.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4", "z-listening"]);
     expect(goal("z1").evidence).toMatchObject({
       exerciseIds: ["e6"],
       taskIds: ["practice:a2-12:e6"],
@@ -197,6 +200,11 @@ describe("A2-12 lesson content audit", () => {
     ]);
     expect(goal("z3").evidence).toMatchObject({ exerciseIds: ["w4"], taskIds: ["writing:a2-12:w4"], completion: "all-correct" });
     expect(goal("z4").evidence).toMatchObject({ exerciseIds: ["w5"], taskIds: ["writing:a2-12:w5"], completion: "all-correct" });
+    expect(goal("z-listening").evidence).toMatchObject({
+      exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6"],
+      taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4", "listening:l3:q5", "listening:l3:q6"],
+      completion: "all-correct",
+    });
 
     const mapped = lessonA212.lernziele.map(({ evidence }) => evidence?.exerciseIds ?? []).flat();
     for (const forbidden of ["int-a2-12-1", "med-a2-12-1", "p1"]) {
@@ -205,6 +213,27 @@ describe("A2-12 lesson content audit", () => {
     expect(JSON.stringify(lessonA212)).not.toContain("sondern");
     expect(lessonA212.lernziele.every((goalItem) => !/Kompromiss|Konflikte höflich ansprechen/.test(goalItem.de))).toBe(true);
     expect(lessonA212.practiceBank.findIndex(({ id }) => id === "e6")).toBeGreaterThanOrEqual(4);
+  });
+
+  it("keeps listening scenes, question mappings, and the added dialogue aligned", () => {
+    expect(lessonA212.listening.items.map(({ id }) => id)).toEqual(["l1", "l2", "l3"]);
+    expect(lessonA212.listening.questions.map(({ id, itemId }) => [id, itemId])).toEqual([
+      ["q1", "l1"], ["q2", "l1"], ["q3", "l2"],
+      ["q4", "l3"], ["q5", "l3"], ["q6", "l3"],
+    ]);
+    const addedScene = lessonA212.listening.items.find(({ id }) => id === "l3")!;
+    expect(addedScene.lines.map(({ de }) => de)).toEqual([
+      "Möchtest du heute mit ins Kino kommen?",
+      "Leider kann ich nicht, denn ich muss meiner Schwester helfen.",
+      "Schade. Ich bin ein bisschen enttäuscht.",
+      "Das verstehe ich, aber morgen habe ich Zeit.",
+      "Dann treffen wir uns morgen im Café?",
+      "Gern. Ich freue mich darauf.",
+    ]);
+    expect(addedScene.audioNoteAr).toMatch(/مولّدة آلياً \(TTS\)، وليست تسجيلاً بشرياً/);
+    expect(addedScene.lines.map(({ audioSrc }) => audioSrc)).toEqual(
+      [1, 2, 3, 4, 5, 6].map((line) => `/audio/lessons/a2-12/ls-a2-12-3-${line}.mp3`),
+    );
   });
 
   it("audits every multiple-choice key and each distractor", () => {
@@ -373,6 +402,7 @@ describe("A2-12 lesson content audit", () => {
       z2: ["e1", "e2", "w1", "w2"],
       z3: ["w4"],
       z4: ["w5"],
+      "z-listening": ["q1", "q2", "q3", "q4", "q5", "q6"],
     };
     for (const [goalId, exerciseIds] of Object.entries(idsByGoal)) {
       const allCorrect = exerciseIds.map((exerciseId) => goalEvent(goalId, exerciseId));

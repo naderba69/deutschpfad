@@ -54,6 +54,24 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
       },
     },
+    {
+      id: "z-listening",
+      de: "Ich kann wichtige Angaben aus drei kurzen Gesprächen über Gefühle und gemeinsame Pläne heraushören.",
+      ar: "أن أستخرج معلومات واضحة من ثلاثة حوارات قصيرة عن المشاعر والخطط المشتركة من خلال الإجابة الصحيحة عن أسئلة الاستماع الستة؛ تشغيل الصوت وحده لا يثبت الفهم.",
+      evidence: {
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6"],
+        taskIds: [
+          "listening:l1:q1",
+          "listening:l1:q2",
+          "listening:l2:q3",
+          "listening:l3:q4",
+          "listening:l3:q5",
+          "listening:l3:q6",
+        ],
+        labelAr: "أجب صحيحاً عن أسئلة الاستماع q1–q6 من الحوارات الثلاثة. كل إجابة صحيحة دليل مستقل، والاستماع أو عرض النص وحده لا يُحتسب.",
+        completion: "all-correct",
+      },
+    },
   ];
 
 export const einfuehrung: Lesson["einfuehrung"] = {
