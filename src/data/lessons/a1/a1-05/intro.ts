@@ -68,12 +68,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z6",
-      de: "Ich kann wichtige Uhrzeiten und Aktivitäten in einem kurzen Dialog verstehen.",
-      ar: "أن ألتقط الأوقات والأنشطة الأساسية في حوار قصير عن اليوم.",
+      de: "Ich kann wichtige Uhrzeiten und Aktivitäten in kurzen Dialogen über den Alltag verstehen.",
+      ar: "أن ألتقط الأوقات والأنشطة الأساسية في حوارات قصيرة عن الروتين اليومي.",
       evidence: {
-        exerciseIds: ["q1", "q2"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2"],
-        labelAr: "أجب عن سؤالي الاستماع q1 وq2 إجابة صحيحة بعد الاستماع.",
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4", "listening:l3:q5", "listening:l3:q6"],
+        labelAr: "أجب إجابة صحيحة عن أسئلة الاستماع q1–q6 حول يوم سامي وأسئلة اليوم وروتين السبت؛ تشغيل الصوت وحده لا يثبت الفهم.",
         completion: "all-correct",
       },
     },
