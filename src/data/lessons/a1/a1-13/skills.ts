@@ -162,6 +162,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
           { speaker: "Mona", de: "Super! Wir sehen uns um acht Uhr im Kino.", ar: "رائع! نلتقي في السينما الساعة الثامنة." },
         ],
       },
+      {
+        id: "l3",
+        title: "Vorbereitung auf den Deutschtest",
+        lines: [
+          { speaker: "Anna", de: "Wie bereitest du dich auf den Deutschtest vor?", ar: "كيف تستعد لاختبار الألمانية؟", audioSrc: "/audio/lessons/a1-13/ls-a1-13-3-1.mp3" },
+          { speaker: "Sami", de: "Ich wiederhole jeden Tag neue Wörter.", ar: "أراجع كلمات جديدة كل يوم.", audioSrc: "/audio/lessons/a1-13/ls-a1-13-3-2.mp3" },
+          { speaker: "Anna", de: "Übst du auch das Hören?", ar: "وهل تتدرب على الاستماع أيضاً؟", audioSrc: "/audio/lessons/a1-13/ls-a1-13-3-3.mp3" },
+          { speaker: "Sami", de: "Ja, ich höre kurze Dialoge und mache Notizen.", ar: "نعم، أستمع إلى حوارات قصيرة وأدوّن ملاحظات.", audioSrc: "/audio/lessons/a1-13/ls-a1-13-3-4.mp3" },
+          { speaker: "Anna", de: "Wann schreibst du den Übungstest?", ar: "متى ستكتب الاختبار التدريبي؟", audioSrc: "/audio/lessons/a1-13/ls-a1-13-3-5.mp3" },
+          { speaker: "Sami", de: "Am Samstag. Danach bin ich hoffentlich ruhiger.", ar: "يوم السبت. بعده سأكون أهدأ على أمل.", audioSrc: "/audio/lessons/a1-13/ls-a1-13-3-6.mp3" },
+        ],
+        audioNoteAr: "هذا المقطع يحتوي على أصوات مولّدة آلياً (TTS)، وليس تسجيلاً بشرياً. استُخدمت أصوات نسائية ورجالية ثابتة ومتكررة بين الدروس.",
+      },
     ],
     questions: [
       {
@@ -215,6 +228,27 @@ export const listening: NonNullable<Lesson["listening"]> = {
         optionExplanations: [undefined, "لا — لم تكن في السينما Kino؛ فمنى قالت «Letztes Wochenende war ich zu Hause».", "لا — لم تُذكر حديقة Park؛ والمكان «zu Hause».", "لا — لم تقل «in Tunis»؛ والجواب «war ich zu Hause»."],
         explanation: "قالت منى: Letztes Wochenende war ich zu Hause.",
         errorType: "vocabulary",
+      },
+      {
+        id: "q5", itemId: "l3", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Was wiederholt Sami jeden Tag?", questionAr: "ماذا يراجع سامي كل يوم؟",
+        options: ["neue Wörter", "lange Texte", "Grammatikregeln", "alte Briefe"], correctIndex: 0,
+        explanation: "يقول سامي إنه يراجع كلمات جديدة كل يوم.", errorType: "vocabulary",
+      },
+      {
+        id: "q6", itemId: "l3", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Was macht Sami beim Hören?", questionAr: "ماذا يفعل سامي أثناء الاستماع؟",
+        options: ["Er macht Notizen.", "Er liest ein Buch.", "Er spricht mit dem Lehrer.", "Er sieht einen Film."], correctIndex: 0,
+        explanation: "يستمع سامي إلى حوارات قصيرة ويدوّن ملاحظات.", errorType: "vocabulary",
+      },
+      {
+        id: "q7", itemId: "l3", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Wann schreibt Sami den Übungstest?", questionAr: "متى سيكتب سامي الاختبار التدريبي؟",
+        options: ["Am Samstag", "Am Montag", "Am Mittwoch", "Am Freitag"], correctIndex: 0,
+        explanation: "يذكر سامي أنه سيكتب الاختبار التدريبي يوم السبت.", errorType: "vocabulary",
       },
     ],
   };

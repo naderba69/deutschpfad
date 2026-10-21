@@ -83,6 +83,9 @@ const listeningAnswers: Record<string, string> = {
   q2: "ein Brot mit Käse",
   q3: "ins Kino gehen",
   q4: "zu Hause",
+  q5: "neue Wörter",
+  q6: "Er macht Notizen.",
+  q7: "Am Samstag",
 };
 
 function reading() {
@@ -239,14 +242,14 @@ describe("A1-13 audited lesson content", () => {
     };
     const taskIds = allTasks().map((task) => task.id).sort();
     expect(taskIds).toEqual(Object.keys(answerKey).sort());
-    expect(taskIds).toHaveLength(40);
+    expect(taskIds).toHaveLength(43);
     expect(new Set(taskIds).size).toBe(taskIds.length);
     expect(lessonA113.review).toHaveLength(3);
     expect(lessonA113.practiceBank).toHaveLength(18);
     expect(lessonA113.miniTest).toHaveLength(6);
     expect(lessonA113.writing).toHaveLength(3);
     expect(reading().questions).toHaveLength(6);
-    expect(lessonA113.listening.questions).toHaveLength(4);
+    expect(lessonA113.listening.questions).toHaveLength(7);
 
     for (const [id, answer] of Object.entries(answerKey)) {
       const task = findTask(id);
@@ -340,9 +343,9 @@ describe("A1-13 audited lesson content", () => {
     expect(text.paragraphs.join(" ")).not.toContain("Der Kellner hat gelacht");
   });
 
-  it("checks every line and answer in both listening dialogues and separates pre-transcript evidence", () => {
-    expect(lessonA113.listening.items).toHaveLength(2);
-    expect(lessonA113.listening.items.map((item) => item.lines.length)).toEqual([6, 5]);
+  it("checks every line and answer in all listening dialogues and separates pre-transcript evidence", () => {
+    expect(lessonA113.listening.items).toHaveLength(3);
+    expect(lessonA113.listening.items.map((item) => item.lines.length)).toEqual([6, 5, 6]);
     const itemsById = new Map(lessonA113.listening.items.map((item) => [item.id, item]));
     for (const item of lessonA113.listening.items) {
       expect(item.title.trim()).toBeTruthy();
@@ -358,6 +361,9 @@ describe("A1-13 audited lesson content", () => {
       q2: "Brot mit Käse",
       q3: "ins Kino gehen",
       q4: "zu Hause",
+      q5: "neue Wörter",
+      q6: "mache Notizen",
+      q7: "Am Samstag",
     };
     for (const question of lessonA113.listening.questions) {
       const item = itemsById.get(question.itemId);
@@ -382,6 +388,9 @@ describe("A1-13 audited lesson content", () => {
       "listening:l1:q2",
       "listening:l2:q3",
       "listening:l2:q4",
+      "listening:l3:q5",
+      "listening:l3:q6",
+      "listening:l3:q7",
     ]);
     expect(listeningGoal?.evidence?.labelAr).toContain("قبل كشف النص");
   });
