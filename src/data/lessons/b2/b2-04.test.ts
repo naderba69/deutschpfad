@@ -23,6 +23,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   q2: { options: ["seine Herkunft", "seinen Beruf", "seinen Freund", "seine Stadt"], key: "seine Herkunft" },
   q3: { options: ["sehr emotional", "sehr langweilig", "sehr kurz", "sehr lustig"], key: "sehr emotional" },
   q4: { options: ["drei Jahre", "drei Monate", "ein Jahr", "fünf Jahre"], key: "drei Jahre" },
+  q5: { options: ["Am Donnerstag um 18 Uhr", "Am Mittwoch um 18 Uhr", "Am Donnerstag um 16 Uhr", "Am Freitag um 20 Uhr"], key: "Am Donnerstag um 18 Uhr" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -160,7 +161,7 @@ describe("B2-04 lesson content audit", () => {
 
   it("uses only evaluable performances as goals, each all-correct", () => {
     expect(lessonB204.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4", "q5"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e2", "e6", "m1", "m2", "w1", "w2"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e7", "w3"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["e5", "e9", "m4"]);
@@ -190,12 +191,14 @@ describe("B2-04 lesson content audit", () => {
   it("maps listening evidence to transcript-free task IDs only", () => {
     expect(getListeningQuestionTaskId("b2-04", "l1", "q1", false)).toBe("listening:l1:q1");
     expect(getListeningQuestionTaskId("b2-04", "l2", "q2", false)).toBe("listening:l2:q2");
+    expect(getListeningQuestionTaskId("b2-04", "l3", "q5", false)).toBe("listening:l3:q5");
     expect(getListeningQuestionTaskId("b2-04", "l1", "q4", true)).toBe("listening-transcript:b2-04:l1:q4");
     expect(goal("z1").evidence?.taskIds).toEqual([
       "listening:l1:q1",
       "listening:l2:q2",
       "listening:l2:q3",
       "listening:l1:q4",
+      "listening:l3:q5",
     ]);
     const transcriptIds = lessonB204.lernziele.flatMap(
       (item) => item.evidence?.taskIds?.filter((taskId) => taskId.startsWith("listening-transcript:")) ?? [],

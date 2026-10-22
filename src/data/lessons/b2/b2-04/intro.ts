@@ -11,9 +11,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أفهم حوارات وتعليقات أدبية قصيرة عن كتاب أو كاتب.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["q1", "q2", "q3", "q4"],
-        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l1:q4"],
-        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 وl2 في q1 إلى q4، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5"],
+        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l1:q4", "listening:l3:q5"],
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 وl2 في q1 إلى q5، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
