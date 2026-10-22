@@ -25,6 +25,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     options: ["daran, dass man anfragt", "daran, dass man isst", "daran, dass man schläft", "daran, dass man arbeitet"],
     key: "daran, dass man anfragt",
   },
+  q4: { options: ["Zeit und offene Fragen", "eine schnelle Entscheidung", "eine gemeinsame Sprache allein", "gleiche Familienfeste"], key: "Zeit und offene Fragen" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -164,7 +165,7 @@ describe("B2-08 lesson content audit", () => {
 
   it("uses only evaluable performances as goals, each all-correct", () => {
     expect(lessonB208.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e2", "e3", "e5", "e6", "e9", "m1", "m2", "m4", "w1", "w2"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["q3", "e7"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["w1", "w2"]);
@@ -192,8 +193,9 @@ describe("B2-08 lesson content audit", () => {
   it("maps listening evidence to transcript-free task IDs only", () => {
     expect(getListeningQuestionTaskId("b2-08", "l1", "q1", false)).toBe("listening:l1:q1");
     expect(getListeningQuestionTaskId("b2-08", "l1", "q2", false)).toBe("listening:l1:q2");
+    expect(getListeningQuestionTaskId("b2-08", "l3", "q4", false)).toBe("listening:l3:q4");
     expect(getListeningQuestionTaskId("b2-08", "l2", "q3", true)).toBe("listening-transcript:b2-08:l2:q3");
-    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"]);
+    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"]);
     const transcriptIds = lessonB208.lernziele.flatMap(
       (item) => item.evidence?.taskIds?.filter((taskId) => taskId.startsWith("listening-transcript:")) ?? [],
     );
