@@ -27,6 +27,7 @@ const expectedMultipleChoice: Record<string, [string[], string]> = {
   q1: [["mit der Linguistik", "mit der Geschichte", "mit der Kunst", "mit der Wirtschaft"], "mit der Linguistik"],
   q2: [["die mündliche Prüfung", "die schriftliche Prüfung", "die Hausarbeit", "das Seminar"], "die mündliche Prüfung"],
   q3: [["indem sie sprechen", "indem sie schreiben", "indem sie lesen", "indem sie schlafen"], "indem sie sprechen"],
+  q4: [["Kurze Pausen verbessern die Konzentration", "Ein Wochenplan verbessert die Konzentration", "Längere Lernphasen verbessern die Konzentration", "Mehr Lernstoff verbessert die Konzentration"], "Kurze Pausen verbessern die Konzentration"],
 };
 
 /** [المفاتيح, بدائل كل فراغ] — كل تمارين الفراغات */
@@ -141,7 +142,7 @@ describe("B2-10 lesson content audit", () => {
 
   it("uses only evaluable performances as goals, each all-correct", () => {
     expect(lessonB210.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["w1", "e4", "e7"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["w1", "e4", "e7", "q4"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e2", "e6", "e8", "m1", "m2", "w2"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e15-nominal", "e16-b2", "e17-b2", "m6", "m7", "m8"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["e3", "w3"]);
@@ -171,13 +172,14 @@ describe("B2-10 lesson content audit", () => {
 
   it("maps listening evidence to transcript-free task IDs only", () => {
     expect(getListeningQuestionTaskId("b2-10", "l1", "q1", false)).toBe("listening:l1:q1");
+    expect(getListeningQuestionTaskId("b2-10", "l3", "q4", false)).toBe("listening:l3:q4");
     expect(getListeningQuestionTaskId("b2-10", "l2", "q2", true)).toBe("listening-transcript:b2-10:l2:q2");
     const transcriptIds = lessonB210.lernziele.flatMap(
       (item) => item.evidence?.taskIds?.filter((taskId) => taskId.startsWith("listening-transcript:")) ?? [],
     );
     expect(transcriptIds, "كشف النصّ لا يُحتسب أداءً").toEqual([]);
-    expect(lessonB210.listening.questions.map(({ id }) => id)).toEqual(["q1", "q2", "q3"]);
-    expect(lessonB210.listening.questions.map(({ itemId }) => itemId)).toEqual(["l1", "l2", "l2"]);
+    expect(lessonB210.listening.questions.map(({ id }) => id)).toEqual(["q1", "q2", "q3", "q4"]);
+    expect(lessonB210.listening.questions.map(({ itemId }) => itemId)).toEqual(["l1", "l2", "l2", "l3"]);
   });
 
   it("enumerates every auditable task type so no new task escapes the guard", () => {
@@ -583,6 +585,7 @@ describe("B2-10 lesson content audit", () => {
         goalEvent("z1", "w1"),
         goalEvent("z1", "e4"),
         goalEvent("z1", "e7"),
+        goalEvent("z1", "q4"),
       ]),
     ).toBe("evidenced");
     expect(
