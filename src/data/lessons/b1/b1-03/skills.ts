@@ -40,6 +40,19 @@ export const listening: Lesson["listening"] = {
           { speaker: "Sami", de: "Das ist schwer, aber wir schaffen das!", ar: "هذا صعب، لكننا سننجح!" },
         ],
       },
+      {
+        id: "l4",
+        title: "توفير الكهرباء في المدرسة",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً. الحوار مثال تدريبي خيالي.",
+        lines: [
+          { speaker: "Nora", de: "Unsere Schule will weniger Strom verbrauchen. Was können wir tun?", ar: "تريد مدرستنا استهلاك كهرباء أقل. ماذا يمكننا أن نفعل؟", audioSrc: "/audio/lessons/b1-03/ls-b1-03-4-1.mp3" },
+          { speaker: "Amir", de: "Wir schalten das Licht aus, wenn wir den Raum verlassen.", ar: "نطفئ الضوء عندما نغادر الغرفة.", audioSrc: "/audio/lessons/b1-03/ls-b1-03-4-2.mp3" },
+          { speaker: "Nora", de: "Und was passiert mit alten Laptops?", ar: "وماذا يحدث للحواسيب المحمولة القديمة؟", audioSrc: "/audio/lessons/b1-03/ls-b1-03-4-3.mp3" },
+          { speaker: "Amir", de: "Sie werden repariert. Funktionierende Geräte werden an eine andere Schule gespendet.", ar: "تُصلح، وتُمنح الأجهزة الصالحة للاستعمال لمدرسة أخرى.", audioSrc: "/audio/lessons/b1-03/ls-b1-03-4-4.mp3" },
+          { speaker: "Nora", de: "Wer bezahlt einen Teil der Kosten?", ar: "من يدفع جزءاً من التكاليف؟", audioSrc: "/audio/lessons/b1-03/ls-b1-03-4-5.mp3" },
+          { speaker: "Amir", de: "Die Stadt übernimmt einen Teil. So wird weniger Energie verbraucht.", ar: "تتكفل المدينة بجزء منها. وهكذا يُستهلك قدر أقل من الطاقة.", audioSrc: "/audio/lessons/b1-03/ls-b1-03-4-6.mp3" },
+        ],
+      },
     ],
     questions: [
       {
@@ -113,6 +126,27 @@ export const listening: Lesson["listening"] = {
           "«weniger zu schlafen» لم يذكرها سامي.",
           "«mehr Zucker zu essen» عكس الهدف الصحي الذي ذكره سامي.",
         ],
+      },
+      {
+        id: "q5", itemId: "l4", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع إلى الحوار الرابع:",
+        questionDe: "Was können die Schüler tun, um Strom zu sparen?", questionAr: "ماذا يمكن للتلاميذ أن يفعلوا لتوفير الكهرباء؟",
+        options: ["Das Licht ausschalten, wenn man den Raum verlässt", "Die Fenster öffnen und die Heizung höher stellen", "Die Computer jeden Abend eingeschaltet lassen", "Alte Laptops in einem anderen Raum lagern"], correctIndex: 0,
+        explanation: "يقترح أمير إطفاء الضوء عند مغادرة الغرفة.", errorType: "comprehension",
+      },
+      {
+        id: "q6", itemId: "l4", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Was geschieht mit den alten Laptops?", questionAr: "ماذا يحدث للحواسيب المحمولة القديمة؟",
+        options: ["Sie werden repariert; funktionierende Geräte werden gespendet.", "Sie werden verkauft und durch neue Geräte ersetzt.", "Sie werden weggeworfen, weil sie nicht mehr gebraucht werden.", "Sie werden an die Stadt zurückgeschickt und geprüft."], correctIndex: 0,
+        explanation: "يقول أمير إن الحواسيب تُصلح، والأجهزة التي تعمل تُمنح لمدرسة أخرى.", errorType: "comprehension",
+      },
+      {
+        id: "q7", itemId: "l4", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Wer übernimmt einen Teil der Kosten?", questionAr: "من يتكفل بجزء من التكاليف؟",
+        options: ["Die Stadt übernimmt einen Teil der Kosten.", "Die Schule bezahlt alle Rechnungen selbst.", "Die Eltern sammeln Geld für die Reparatur.", "Ein Unternehmen spendet alle neuen Geräte."], correctIndex: 0,
+        explanation: "تتكفل المدينة بجزء من التكاليف، ولا يُذكر أن المدرسة أو الأهالي أو شركة تدفعها كاملة.", errorType: "comprehension",
       },
     ],
   };

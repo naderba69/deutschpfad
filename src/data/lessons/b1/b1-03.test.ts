@@ -48,6 +48,9 @@ const expectedMultipleChoice: Record<
     ],
     key: "weniger Plastik zu kaufen",
   },
+  q5: { options: ["Das Licht ausschalten, wenn man den Raum verlässt", "Die Fenster öffnen und die Heizung höher stellen", "Die Computer jeden Abend eingeschaltet lassen", "Alte Laptops in einem anderen Raum lagern"], key: "Das Licht ausschalten, wenn man den Raum verlässt" },
+  q6: { options: ["Sie werden repariert; funktionierende Geräte werden gespendet.", "Sie werden verkauft und durch neue Geräte ersetzt.", "Sie werden weggeworfen, weil sie nicht mehr gebraucht werden.", "Sie werden an die Stadt zurückgeschickt und geprüft."], key: "Sie werden repariert; funktionierende Geräte werden gespendet." },
+  q7: { options: ["Die Stadt übernimmt einen Teil der Kosten.", "Die Schule bezahlt alle Rechnungen selbst.", "Die Eltern sammeln Geld für die Reparatur.", "Ein Unternehmen spendet alle neuen Geräte."], key: "Die Stadt übernimmt einen Teil der Kosten." },
 };
 
 const expectedTransformations: string[] = ["e7", "e13", "w1"];
@@ -216,11 +219,15 @@ describe("B1-03 lesson content audit", () => {
       "z3",
       "z4",
     ]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4", "q5", "q6", "q7"]);
     expect(goal("z1").evidence?.taskIds).toEqual([
       "listening:l1:q1",
       "listening:l1:q2",
       "listening:l2:q3",
+      "listening:l3:q4",
+      "listening:l4:q5",
+      "listening:l4:q6",
+      "listening:l4:q7",
     ]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e7", "m1"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e6", "m5"]);
@@ -497,7 +504,20 @@ describe("B1-03 lesson content audit", () => {
     );
     expect(
       lessonB103.listening.questions.map(({ id, itemId }) => `${itemId}:${id}`),
-    ).toEqual(["l1:q1", "l1:q2", "l2:q3", "l3:q4"]);
+    ).toEqual(["l1:q1", "l1:q2", "l2:q3", "l3:q4", "l4:q5", "l4:q6", "l4:q7"]);
+    const scene = lessonB103.listening.items.find(({ id }) => id === "l4")!;
+    expect(scene.lines.map(({ de }) => de)).toEqual([
+      "Unsere Schule will weniger Strom verbrauchen. Was können wir tun?",
+      "Wir schalten das Licht aus, wenn wir den Raum verlassen.",
+      "Und was passiert mit alten Laptops?",
+      "Sie werden repariert. Funktionierende Geräte werden an eine andere Schule gespendet.",
+      "Wer bezahlt einen Teil der Kosten?",
+      "Die Stadt übernimmt einen Teil. So wird weniger Energie verbraucht.",
+    ]);
+    expect(scene.audioNoteAr).toMatch(/مولّدة آلياً \(TTS\)، وليست تسجيلاً بشرياً/);
+    expect(scene.lines.map(({ audioSrc }) => audioSrc)).toEqual(
+      [1, 2, 3, 4, 5, 6].map((line) => `/audio/lessons/b1-03/ls-b1-03-4-${line}.mp3`),
+    );
   });
 
   it("counts only correct, mapped exercise results toward goals", () => {
@@ -508,6 +528,10 @@ describe("B1-03 lesson content audit", () => {
       goalEvent("z1", "q1"),
       goalEvent("z1", "q2"),
       goalEvent("z1", "q3"),
+      goalEvent("z1", "q4"),
+      goalEvent("z1", "q5"),
+      goalEvent("z1", "q6"),
+      goalEvent("z1", "q7"),
     ];
     expect(getGoalEvidenceStatus(goal("z1"), lessonB103.id, z1Events)).toBe(
       "evidenced",
