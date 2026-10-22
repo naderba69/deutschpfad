@@ -3,7 +3,8 @@
  */
 import {describe, expect, it} from "vitest";
 
-import {evaluateWriting} from "@/lib/writing/goethe-local";
+import {computeKnownWordRatio, evaluateWriting} from "@/lib/writing/goethe-local";
+import {germanCorpus} from "@/lib/writing/__fixtures__/german-corpus";
 
 describe("evaluateWriting — نص ممتاز", () => {
   const good = `Meiner Meinung nach ist das Thema sehr wichtig. Einerseits bringt es Vorteile, andererseits gibt es auch Nachteile. Zum Beispiel hilft es den Menschen im Alltag. Darüber hinaus spielt die Technik eine große Rolle. Zusammenfassend lässt sich sagen, dass wir eine gute Lösung finden müssen.`;
@@ -96,5 +97,71 @@ describe("C-03 — الاختبار العدائي: كلمات وهمية لا �
     const repeated = Array.from({ length: 60 }, () => "Deutsch").join(" ");
     const r = await evaluateWriting(repeated, "Forumsbeitrag");
     expect(r.pct).toBeLessThan(90);
+  });
+});
+
+/**
+ * ═══ حراسة الإيجابيات الكاذبة (تدقيق 2026-10-15) ═══
+ * الكوربوس = كل جملة ألمانية سليمة في دروس المنصة (4152 جملة: أمثلة النظرية،
+ * نصوص القراءة، تصحيح الأخطاء، البطاقات، الاستماع، الإملاء، الترتيب، الفراغات).
+ * القاعدة الذهبية: أي نمط في COMMON_RULES لا يجوز أن يُرصد في جملة سليمة — وإلا
+ * خسر المتعلم نقطة Struktur على كتابة صحيحة.
+ */
+describe("الكوربوس — لا إيجابيات كاذبة في جمل سليمة", () => {
+  it("لا قاعدة شائعة تُرصد في أي جملة من الدروس", async () => {
+    const corpus = germanCorpus();
+    const falsePositives: string[] = [];
+    for (const sentence of corpus) {
+      const result = await evaluateWriting(sentence.text);
+      if (result.errors.length > 0) {
+        falsePositives.push(`${sentence.source} | ${result.errors.map((e) => e.wrong).join(" + ")} | ${sentence.text.slice(0, 90)}`);
+      }
+    }
+    expect(falsePositives).toEqual([]);
+    // حجم الكوربوس نفسه محروس — انهياره يعني فقدان التغطية
+    expect(corpus.length).toBeGreaterThan(3000);
+  }, 120000);
+
+  it("كل مثال خطأ مصمَّم لا يزال يُرصد (لا تراجع في التغطية)", async () => {
+    const cases: { label: string; text: string }[] = [
+      { label: "«dass» بعد صيغة مقارنة", text: "Ich bin besser dass du denkst." },
+      { label: "«dass» بعد صيغة مقارنة", text: "Ich bin besser das du denkst." },
+      { label: "أداة خاطئة", text: "Das Mann arbeitet hier." },
+      { label: "أداة خاطئة", text: "Der Haus ist groß." },
+      { label: "kein في موضع خاطئ", text: "Ich habe kein Schwester." },
+      { label: "kein في موضع خاطئ", text: "Ich habe keinen Schwester gesehen." },
+      { label: "حالة الجر بعد nach", text: "Nach die Prüfung fahren wir nach Hause." },
+      { label: "حالة الجر بعد nach", text: "Ich gehe nach das Essen spazieren." },
+      { label: "حالة الجر بعد mit", text: "Ich fahre mit der Auto." },
+      { label: "حالة الجر بعد mit", text: "Er kommt mit die Schwester." },
+      { label: "«zu... um» غير مكتملة", text: "Ich war zu spät um den Bus zu nehmen." },
+      { label: "كتابة الأحرف الألمانية بدون umlaut", text: "Ich moechte fuer dich etwas kaufen." },
+      { label: "الفعل ليس في المرتبة الثانية", text: "Danach ich zeige die Lösungen." },
+      { label: "الفعل مبكّر في الجملة التابعة", text: "Ich bleibe zu Hause, weil ich bin krank." },
+      { label: "seid بدل seit", text: "Ich lerne Deutsch seid zwei Jahren." },
+      { label: "بداية الجملة بحرف صغير", text: "Ich gehe heute. morgen komme ich zurück." },
+      { label: "اسم مكتوب بحرف صغير", text: "Ich habe ein auto." },
+    ];
+    const missed: string[] = [];
+    for (const c of cases) {
+      const result = await evaluateWriting(c.text);
+      if (!result.errors.some((e) => e.wrong === c.label)) missed.push(`${c.label} | ${c.text}`);
+    }
+    expect(missed).toEqual([]);
+  }, 60000);
+});
+
+describe("C-03 — قاموس الكلمات المعروفة يقرأ بنوك مفردات المنصة", () => {
+  it("جملة من مفردات الدروس تُحسب معروفة", async () => {
+    // قبل إصلاح 2026-10-15 كان بناء القاموس يفشل صامتاً (مصفوفة مسطّحة تُعامل ككائن
+    // وحدات) فتُحسب 0.4 لهذه الجملة — أي عقوبة كاذبة على نص سليم.
+    const r = await computeKnownWordRatio("Die Werkstatt repariert das Auto.");
+    expect(r.knownRatio).toBeGreaterThan(0.7);
+  });
+
+  it("النص الوهمي يبقى غير معروف", async () => {
+    const gibberish = Array.from({ length: 40 }, (_, i) => `grumpl${i} blarx${i}`).join(" ");
+    const r = await computeKnownWordRatio(gibberish);
+    expect(r.knownRatio).toBeLessThan(0.2);
   });
 });

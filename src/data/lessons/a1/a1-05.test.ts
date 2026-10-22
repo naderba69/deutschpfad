@@ -7,7 +7,6 @@ const lesson = lessonA105;
 function knownTaskIds(): Set<string> {
   const ids = new Set<string>();
   for (const task of lesson.practiceBank) ids.add(`practice:${lesson.id}:${task.id}`);
-  for (const task of lesson.practiceBank) ids.add(`flow-practice:${lesson.id}:${task.id}`);
   for (const task of lesson.miniTest) ids.add(`mini-test:${lesson.id}:${task.id}`);
   for (const task of lesson.writing) ids.add(`writing:${lesson.id}:${task.id}`);
   if (lesson.reading) {

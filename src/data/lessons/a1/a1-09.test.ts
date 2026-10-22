@@ -90,6 +90,9 @@ const listeningAnswers: Record<string, string> = {
   q1: "am Montag um neun Uhr",
   q2: "am dritten August",
   q3: "am fünfzehnten Dezember",
+  q4: "Sie hat Zahnschmerzen.",
+  q5: "um vierzehn Uhr",
+  q6: "am Donnerstag",
 };
 
 function reading() {
@@ -181,7 +184,6 @@ function validTaskIds() {
   return new Set([
     ...lessonA109.practiceBank.flatMap((task) => [
       `practice:${lessonA109.id}:${task.id}`,
-      `flow-practice:${lessonA109.id}:${task.id}`,
     ]),
     ...lessonA109.miniTest.map((task) => `mini-test:${lessonA109.id}:${task.id}`),
     ...lessonA109.writing.map((task) => `writing:${lessonA109.id}:${task.id}`),
@@ -355,7 +357,7 @@ describe("A1-09 audited lesson content", () => {
 
   it("checks theory, vocabulary cards, dates, dialogue consistency, and all displayed text fields", () => {
     const tasks = allTasks();
-    expect(tasks).toHaveLength(43);
+    expect(tasks).toHaveLength(46);
     expect(new Set(tasks.map((task) => task.id)).size).toBe(tasks.length);
     for (const task of tasks) {
       expect(task.instructionAr.trim(), `${task.id} instruction`).toBeTruthy();
@@ -431,8 +433,8 @@ describe("A1-09 audited lesson content", () => {
     expect(new Date(Date.UTC(2026, 3, 7)).getUTCDay()).toBe(2); // Dienstag
     expect(new Date(Date.UTC(2026, 3, 9)).getUTCDay()).toBe(4); // Donnerstag
 
-    expect(lessonA109.listening.items.map((item) => item.id)).toEqual(["l1", "l2"]);
-    expect(lessonA109.listening.items.map((item) => item.lines.length)).toEqual([6, 4]);
+    expect(lessonA109.listening.items.map((item) => item.id)).toEqual(["l1", "l2", "l3"]);
+    expect(lessonA109.listening.items.map((item) => item.lines.length)).toEqual([6, 4, 6]);
     const listeningLines = lessonA109.listening.items.flatMap((item) => item.lines);
     for (const line of listeningLines) {
       expect(line.speaker.trim()).toBeTruthy();

@@ -53,7 +53,7 @@ describe("lesson goal evidence", () => {
       ...goal,
       evidence: {
         exerciseIds: ["e3"],
-        taskIds: ["practice:a1-04:e3", "flow-practice:a1-04:e3"],
+        taskIds: ["practice:a1-04:e3"],
         labelAr: "أكمل تمرين المطابقة في الدرس.",
         completion: "any-correct",
       },
@@ -66,7 +66,7 @@ describe("lesson goal evidence", () => {
     ).toBe("pending");
     expect(
       getGoalEvidenceStatus(taskScopedGoal, "a1-04", [
-        exerciseResult("e3", true, "a1-04", "flow-practice:a1-04:e3"),
+        exerciseResult("e3", true, "a1-04", "practice:a1-04:e3"),
       ]),
     ).toBe("evidenced");
   });
@@ -128,7 +128,6 @@ describe("lesson goal evidence", () => {
     const taskIds = new Set([
       ...lessonA105.practiceBank.flatMap((task) => [
         `practice:${lessonA105.id}:${task.id}`,
-        `flow-practice:${lessonA105.id}:${task.id}`,
       ]),
       ...lessonA105.writing.map((task) => `writing:${lessonA105.id}:${task.id}`),
       ...reading.questions.map((task) => `reading:${reading.id}:${task.id}`),
@@ -211,12 +210,12 @@ describe("lesson goal evidence", () => {
 
     expect(
       getGoalEvidenceStatus(ziel, lessonA105.id, [
-        exerciseResult("e1", true, lessonA105.id, "flow-practice:a1-05:e1"),
+        exerciseResult("e1", true, lessonA105.id, "practice:a1-05:e1"),
       ]),
     ).toBe("pending");
     expect(
       getGoalEvidenceStatus(ziel, lessonA105.id, [
-        exerciseResult("e1", true, lessonA105.id, "flow-practice:a1-05:e1"),
+        exerciseResult("e1", true, lessonA105.id, "practice:a1-05:e1"),
         exerciseResult("w2", true, lessonA105.id, "writing:a1-05:w2"),
       ]),
     ).toBe("evidenced");
@@ -229,7 +228,7 @@ describe("lesson goal evidence", () => {
     expect(
       getGoalEvidenceStatus(ziel, lessonA105.id, [
         exerciseResult("e1", true, lessonA105.id, "writing:a1-05:w2"),
-        exerciseResult("w2", true, lessonA105.id, "flow-practice:a1-05:e1"),
+        exerciseResult("w2", true, lessonA105.id, "practice:a1-05:e1"),
       ]),
     ).toBe("pending");
   });
@@ -265,7 +264,6 @@ describe("lesson goal evidence", () => {
     const taskIds = new Set([
       ...lessonA106.practiceBank.flatMap((task) => [
         `practice:${lessonA106.id}:${task.id}`,
-        `flow-practice:${lessonA106.id}:${task.id}`,
       ]),
       ...lessonA106.writing.map((task) => `writing:${lessonA106.id}:${task.id}`),
       ...reading.questions.map((task) => `reading:${reading.id}:${task.id}`),
@@ -403,19 +401,19 @@ describe("lesson goal evidence", () => {
     expect(
       getGoalEvidenceStatus(ziel, lessonA106.id, [
         exerciseResult("e12", true, lessonA106.id, "practice:a1-06:e12"),
-        exerciseResult("e16", true, lessonA106.id, "flow-practice:a1-06:e16"),
+        exerciseResult("e16", true, lessonA106.id, "practice:a1-06:e16"),
       ]),
     ).toBe("evidenced");
     expect(
       getGoalEvidenceStatus(ziel, lessonA106.id, [
         exerciseResult("e12", true, lessonA106.id, "practice:a1-06:e12"),
-        exerciseResult("e16", true, "a1-05", "flow-practice:a1-06:e16"),
+        exerciseResult("e16", true, "a1-05", "practice:a1-06:e16"),
       ]),
     ).toBe("pending");
     expect(
       getGoalEvidenceStatus(ziel, lessonA106.id, [
         exerciseResult("e12", true, lessonA106.id, "practice:a1-06:e12"),
-        exerciseResult("e16", false, lessonA106.id, "flow-practice:a1-06:e16"),
+        exerciseResult("e16", false, lessonA106.id, "practice:a1-06:e16"),
       ]),
     ).toBe("pending");
   });

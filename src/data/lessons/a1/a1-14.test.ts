@@ -1,5 +1,7 @@
+import path from "node:path";
 import {describe, expect, it} from "vitest";
 
+import {isPlayableMp3} from "@/lib/audio/mp3-file";
 import {getLessonMeta, LESSON_META} from "@/data/lessons/meta";
 import {NO_ERROR_OPTION} from "@/lib/lesson/error-correction-highlight";
 import {evaluateExercise, normalizeText} from "@/lib/lesson/exercise-engine";
@@ -153,7 +155,7 @@ function recordedTaskIds(): Set<string> {
     ...lessonA114.practiceBank.flatMap((task, index) => [
       `practice:${lessonA114.id}:${task.id}`,
       ...(index < Math.min(4, lessonA114.practiceBank.length)
-        ? [`flow-practice:${lessonA114.id}:${task.id}`]
+        ? [`practice:${lessonA114.id}:${task.id}`]
         : []),
     ]),
     ...lessonA114.miniTest.map((task) => `mini-test:${lessonA114.id}:${task.id}`),
@@ -234,8 +236,6 @@ describe("A1-14 audited lesson content", () => {
       }
     }
 
-    expect(validTaskIds.has("flow-practice:a1-14:e4")).toBe(true);
-    expect(validTaskIds.has("flow-practice:a1-14:e5")).toBe(false);
     expect(validTaskIds.has("practice:a1-14:e26")).toBe(true);
     expect(validTaskIds.has("flow-mini-test:a1-14:mt-a1-14-5")).toBe(true);
     expect(validTaskIds.has("flow-mini-test:a1-14:mt-a1-14-2")).toBe(false);
@@ -281,21 +281,53 @@ describe("A1-14 audited lesson content", () => {
     const evidence = goal?.evidence;
     if (!evidence) throw new Error("A1-14 z7 evidence is required");
 
-    for (const questionId of ["lsq-a1-14-1", "lsq-a1-14-3"]) {
-      expect(getListeningQuestionTaskId(lessonA114.id, "ls-a1-14-1", questionId, false)).toBe(
-        `listening:ls-a1-14-1:${questionId}`,
-      );
-      expect(getListeningQuestionTaskId(lessonA114.id, "ls-a1-14-1", questionId, true)).toBe(
-        `listening-transcript:${lessonA114.id}:ls-a1-14-1:${questionId}`,
-      );
-      expect(evidence.taskIds).toContain(`listening:ls-a1-14-1:${questionId}`);
-      expect(evidence.taskIds).not.toContain(`listening-transcript:${lessonA114.id}:ls-a1-14-1:${questionId}`);
+    const mappedListeningQuestions: Array<[string, string[]]> = [
+      ["ls-a1-14-1", ["lsq-a1-14-1", "lsq-a1-14-3"]],
+      ["ls-a1-14-2", ["lsq-a1-14-4", "lsq-a1-14-5", "lsq-a1-14-6"]],
+      ["ls-a1-14-3", ["lsq-a1-14-7", "lsq-a1-14-8", "lsq-a1-14-9"]],
+    ];
+    for (const [itemId, questionIds] of mappedListeningQuestions) {
+      for (const questionId of questionIds) {
+        expect(getListeningQuestionTaskId(lessonA114.id, itemId, questionId, false)).toBe(
+          `listening:${itemId}:${questionId}`,
+        );
+        expect(getListeningQuestionTaskId(lessonA114.id, itemId, questionId, true)).toBe(
+          `listening-transcript:${lessonA114.id}:${itemId}:${questionId}`,
+        );
+        expect(evidence.taskIds).toContain(`listening:${itemId}:${questionId}`);
+        expect(evidence.taskIds).not.toContain(`listening-transcript:${lessonA114.id}:${itemId}:${questionId}`);
+      }
     }
     const interaction = lessonA114.interaction ?? [];
     expect(interaction).toHaveLength(1);
     expect(interaction[0]?.rounds).toHaveLength(4);
     expect(lessonA114.pronunciation.items).toHaveLength(8);
     expect(evidence.exerciseIds).not.toContain("int-a1-14-1");
+  });
+
+  it("adds a third disclosed TTS listening scene with six playable audio lines", () => {
+    expect(lessonA114.listening.items).toHaveLength(3);
+    const item = lessonA114.listening.items.find((candidate) => candidate.id === "ls-a1-14-2");
+    expect(item?.audioNoteAr).toContain("مولّدة آلياً (TTS)");
+    expect(item?.lines).toHaveLength(6);
+    for (const line of item?.lines ?? []) {
+      expect(line.audioSrc).toContain("/audio/lessons/a1-14/ls-a1-14-2-");
+      expect(line.audioSrc?.endsWith(".mp3")).toBe(true);
+      const file = path.join(process.cwd(), "public", line.audioSrc!.slice(1));
+      expect(isPlayableMp3(file), line.audioSrc).toBe(true);
+    }
+    expect(lessonA114.listening.questions.filter((question) => question.itemId === "ls-a1-14-2")).toHaveLength(3);
+    const newItem = lessonA114.listening.items.find((candidate) => candidate.id === "ls-a1-14-3");
+    expect(newItem?.audioNoteAr).toContain("مولّدة آلياً (TTS)");
+    expect(newItem?.audioNoteAr).toContain("ليست تسجيلاً بشرياً");
+    expect(newItem?.lines).toHaveLength(6);
+    for (const line of newItem?.lines ?? []) {
+      expect(line.audioSrc).toContain("/audio/lessons/a1-14/ls-a1-14-3-");
+      expect(line.audioSrc?.endsWith(".mp3")).toBe(true);
+      const file = path.join(process.cwd(), "public", line.audioSrc!.slice(1));
+      expect(isPlayableMp3(file), line.audioSrc).toBe(true);
+    }
+    expect(lessonA114.listening.questions.filter((question) => question.itemId === "ls-a1-14-3")).toHaveLength(3);
   });
 
   it("keeps reading/audio references, flashcards, and open activities internally consistent", () => {
@@ -347,8 +379,8 @@ describe("A1-14 audited lesson content", () => {
     expect(lessonA114.miniTest).toHaveLength(5);
     expect(lessonA114.writing).toHaveLength(3);
     expect(reading().questions).toHaveLength(6);
-    expect(lessonA114.listening.questions).toHaveLength(3);
-    expect(allTasks()).toHaveLength(46);
+    expect(lessonA114.listening.questions).toHaveLength(9);
+    expect(allTasks()).toHaveLength(52);
 
     const ids = allTasks().map((task) => task.id);
     expect(new Set(ids).size).toBe(ids.length);

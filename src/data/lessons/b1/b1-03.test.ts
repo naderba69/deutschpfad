@@ -12,6 +12,8 @@ const expectedMultipleChoice: Record<
   string,
   { options: string[]; key: string }
 > = {
+  r1: { options: ["wird", "werde", "wirst", "werden"], key: "wird" },
+  r2: { options: ["des", "der", "dem", "den"], key: "des" },
   e1: { options: ["wird", "wurde", "wirst", "werden"], key: "wird" },
   e2: { options: ["wurde", "wird", "wirst", "werden"], key: "wurde" },
   e8: {
@@ -46,6 +48,26 @@ const expectedMultipleChoice: Record<
     ],
     key: "weniger Plastik zu kaufen",
   },
+  q5: { options: ["Das Licht ausschalten, wenn man den Raum verlässt", "Die Fenster öffnen und die Heizung höher stellen", "Die Computer jeden Abend eingeschaltet lassen", "Alte Laptops in einem anderen Raum lagern"], key: "Das Licht ausschalten, wenn man den Raum verlässt" },
+  q6: { options: ["Sie werden repariert; funktionierende Geräte werden gespendet.", "Sie werden verkauft und durch neue Geräte ersetzt.", "Sie werden weggeworfen, weil sie nicht mehr gebraucht werden.", "Sie werden an die Stadt zurückgeschickt und geprüft."], key: "Sie werden repariert; funktionierende Geräte werden gespendet." },
+  q7: { options: ["Die Stadt übernimmt einen Teil der Kosten.", "Die Schule bezahlt alle Rechnungen selbst.", "Die Eltern sammeln Geld für die Reparatur.", "Ein Unternehmen spendet alle neuen Geräte."], key: "Die Stadt übernimmt einen Teil der Kosten." },
+};
+
+const expectedTransformations: string[] = ["e7", "e13", "w1"];
+
+const expectedReviewFill: Record<string, { correct: string[]; options: string[][] }> = {
+  r3: {
+    correct: ["gegessen"],
+    options: [["gegessen", "geessen", "gegesst"]],
+  },
+};
+const expectedTransformationAnswers: Record<string, string[]> = {
+  e13: [
+    "Ein neuer Laden wird gebaut",
+    "Ein neuer Laden wird gebaut.",
+    "Ein neuer Laden wird von der Gemeinde gebaut",
+    "Ein neuer Laden wird von der Gemeinde gebaut.",
+  ],
 };
 
 const expectedFillBlanks: Record<
@@ -76,6 +98,17 @@ const expectedFillBlanks: Record<
   e11: {
     correct: ["zu schützen"],
     options: [["zu schützen", "schützen", "schützten", "zu geschützt"]],
+  },
+};
+
+const expectedFillBlanksExtra: Record<string, { correct: string[]; options: string[][] }> = {
+  e14: {
+    correct: ["zu", "", "zu"],
+    options: [
+      ["zu", "", "um"],
+      ["zu", "", "um"],
+      ["zu", "", "um"],
+    ],
   },
 };
 
@@ -186,11 +219,15 @@ describe("B1-03 lesson content audit", () => {
       "z3",
       "z4",
     ]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4", "q5", "q6", "q7"]);
     expect(goal("z1").evidence?.taskIds).toEqual([
       "listening:l1:q1",
       "listening:l1:q2",
       "listening:l2:q3",
+      "listening:l3:q4",
+      "listening:l4:q5",
+      "listening:l4:q6",
+      "listening:l4:q7",
     ]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e7", "m1"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e6", "m5"]);
@@ -215,6 +252,57 @@ describe("B1-03 lesson content audit", () => {
           `${taskId} maps to a goal exercise`,
         ).toContain(exerciseId);
       }
+    }
+  });
+
+  it("enumerates every auditable task type so no new task escapes the guard", () => {
+    const byType = (type: Exercise["type"]) =>
+      allTasks()
+        .filter((item) => item.type === type)
+        .map(({ id }) => id)
+        .sort();
+    expect(byType("multiple-choice").filter((id) => id in expectedMultipleChoice), "MCQ مغطّاة").toEqual(
+      byType("multiple-choice"),
+    );
+    const fills = { ...expectedFillBlanks, ...expectedFillBlanksExtra, ...expectedReviewFill };
+    expect(byType("fill-blank").filter((id) => id in fills), "فراغات مغطّاة").toEqual(byType("fill-blank"));
+    expect(
+      byType("error-correction").filter((id) => id in expectedErrorCorrections),
+      "تصحيحات مغطّاة",
+    ).toEqual(byType("error-correction"));
+    expect(byType("matching").filter((id) => id in expectedMatching), "مطابقات مغطّاة").toEqual(byType("matching"));
+    const transformations = byType("transformation");
+    expect(transformations.filter((id) => expectedTransformations.includes(id)), "تحويلات مغطّاة").toEqual(transformations);
+  });
+
+  it("checks the accepted answers of every new transformation", () => {
+    for (const [id, accepted] of Object.entries(expectedTransformationAnswers)) {
+      const exercise = task(id);
+      if (exercise.type !== "transformation") throw new Error(`${id} is not transformation`);
+      expect(exercise.acceptedAnswers, `${id} accepted`).toEqual(accepted);
+      for (const answer of accepted) {
+        expect(evaluateExercise(exercise, answer).isCorrect, `${id}: ${answer}`).toBe(true);
+      }
+    }
+  });
+
+  it("checks the review fill-blank against the engine", () => {
+    for (const [id, expected] of Object.entries(expectedReviewFill)) {
+      const exercise = task(id);
+      if (exercise.type !== "fill-blank") throw new Error(`${id} is not fill-blank`);
+      expect(exercise.blanks.map(({ correct }) => correct), `${id} keys`).toEqual(expected.correct);
+      expect(exercise.blanks.map(({ options }) => options), `${id} options`).toEqual(expected.options);
+      expect(evaluateExercise(exercise, expected.correct).isCorrect, `${id} keys`).toBe(true);
+    }
+  });
+
+  it("checks the zu-infinitive fill-blank against the engine", () => {
+    for (const [id, expected] of Object.entries(expectedFillBlanksExtra)) {
+      const exercise = task(id);
+      if (exercise.type !== "fill-blank") throw new Error(`${id} is not fill-blank`);
+      expect(exercise.blanks.map(({ correct }) => correct), `${id} keys`).toEqual(expected.correct);
+      expect(exercise.blanks.map(({ options }) => options), `${id} options`).toEqual(expected.options);
+      expect(evaluateExercise(exercise, expected.correct).isCorrect, `${id} all keys`).toBe(true);
     }
   });
 
@@ -416,16 +504,20 @@ describe("B1-03 lesson content audit", () => {
     );
     expect(
       lessonB103.listening.questions.map(({ id, itemId }) => `${itemId}:${id}`),
-    ).toEqual(["l1:q1", "l1:q2", "l2:q3", "l3:q4"]);
-  });
-
-  it("removes the false table claim and the wrong pronunciation note", () => {
-    const text = JSON.stringify(lessonB103);
-    expect(text).not.toMatch(/الجدول التفاعلي|جدول الأفعال الشاذة/);
-    expect(text).not.toContain("cy = سي");
-    expect(text).toContain("مضارع: wird/werden");
-    expect(text).toContain("ماضٍ مركب (Perfekt)");
-    expect(text).toContain("Kreislaufwirtschaftsgesetz");
+    ).toEqual(["l1:q1", "l1:q2", "l2:q3", "l3:q4", "l4:q5", "l4:q6", "l4:q7"]);
+    const scene = lessonB103.listening.items.find(({ id }) => id === "l4")!;
+    expect(scene.lines.map(({ de }) => de)).toEqual([
+      "Unsere Schule will weniger Strom verbrauchen. Was können wir tun?",
+      "Wir schalten das Licht aus, wenn wir den Raum verlassen.",
+      "Und was passiert mit alten Laptops?",
+      "Sie werden repariert. Funktionierende Geräte werden an eine andere Schule gespendet.",
+      "Wer bezahlt einen Teil der Kosten?",
+      "Die Stadt übernimmt einen Teil. So wird weniger Energie verbraucht.",
+    ]);
+    expect(scene.audioNoteAr).toMatch(/مولّدة آلياً \(TTS\)، وليست تسجيلاً بشرياً/);
+    expect(scene.lines.map(({ audioSrc }) => audioSrc)).toEqual(
+      [1, 2, 3, 4, 5, 6].map((line) => `/audio/lessons/b1-03/ls-b1-03-4-${line}.mp3`),
+    );
   });
 
   it("counts only correct, mapped exercise results toward goals", () => {
@@ -436,6 +528,10 @@ describe("B1-03 lesson content audit", () => {
       goalEvent("z1", "q1"),
       goalEvent("z1", "q2"),
       goalEvent("z1", "q3"),
+      goalEvent("z1", "q4"),
+      goalEvent("z1", "q5"),
+      goalEvent("z1", "q6"),
+      goalEvent("z1", "q7"),
     ];
     expect(getGoalEvidenceStatus(goal("z1"), lessonB103.id, z1Events)).toBe(
       "evidenced",

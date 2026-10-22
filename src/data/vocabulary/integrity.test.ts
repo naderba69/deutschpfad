@@ -64,3 +64,15 @@ describe("جرد المفردات — اتساق الجنس (تدقيق §15)", 
     expect(bad, `تراكيب حالة خاطئة: ${bad.slice(0, 10).join(" | ")}`).toEqual([]);
   });
 });
+
+describe("جرد المفردات — حقل النوع g (الدفعة 127: يُعرض في كل موضع)", () => {
+  const KINDS = new Set(["der", "die", "das", "v", "adj", "adv", "pron", "other"]);
+
+  it("كل بند يحمل نوعاً من المفردات الثمانية غير الفارغ", () => {
+    const bad: string[] = [];
+    for (const { level, entry } of allEntries()) {
+      if (!entry.g || !KINDS.has(entry.g)) bad.push(`${level}: «${entry.de}» g=${entry.g}`);
+    }
+    expect(bad, "أنواع خارج المفردات أو فارغة").toEqual([]);
+  });
+});

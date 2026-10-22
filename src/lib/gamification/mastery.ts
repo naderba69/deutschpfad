@@ -17,15 +17,6 @@ export function getLessonStars(lessonId: string): number {
   }
 }
 
-export function setLessonStars(lessonId: string, stars: number): void {
-  try {
-    const current = getLessonStars(lessonId);
-    const next = Math.max(current, Math.min(3, stars)); // لا تنقص أبداً
-    localStorage.setItem(PREFIX + lessonId, String(next));
-  } catch {
-    /* تجاهل */
-  }
-}
 
 /** نجوم كل مستوى (للعرض في مراكز المستويات) */
 export function getLevelStars(levelLessonIds: string[]): { total: number; earned: number } {

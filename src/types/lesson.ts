@@ -212,6 +212,8 @@ export type Exercise =
 
 export interface FeedbackResult {
   isCorrect: boolean;
+  /** الخيار الذي اختاره المتعلّم (نصّه) — لمراجعة النتيجة (الدفعة 122) */
+  chosen?: string;
   /** هل كانت الإجابة صحيحة جزئياً؟ (مثل ترتيب الكلمات صحيح لكن نقص) */
   partial?: boolean;
   pointsEarned: number;
@@ -359,11 +361,15 @@ export interface ListeningLine {
   speaker: string;
   de: string;
   ar: string;
+  /** مسار ملف صوتي مرفق لهذا السطر عند توفره، بجانب الصوت النطقي في المتصفح */
+  audioSrc?: string;
 }
 
 export interface ListeningItem {
   id: string;
   title: string;
+  /** إفصاح مصدر الصوت للمقاطع المولّدة آلياً */
+  audioNoteAr?: string;
   lines: ListeningLine[];
 }
 

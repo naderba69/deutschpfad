@@ -50,6 +50,7 @@ import { lessonB207 } from "@/data/lessons/b2/b2-07";
 import { lessonB208 } from "@/data/lessons/b2/b2-08";
 import { lessonB209 } from "@/data/lessons/b2/b2-09";
 import { lessonB210 } from "@/data/lessons/b2/b2-10";
+import { balanceChoiceTree } from "@/lib/tests/balance-options";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -60,7 +61,7 @@ import { lessonB210 } from "@/data/lessons/b2/b2-10";
  * ═══════════════════════════════════════════════════════════
  */
 
-export const LESSONS: Lesson[] = [
+export const RAW_LESSONS: Lesson[] = [
   /* A1 — 16 */
   lessonA100, lessonA101, lessonA101b, lessonA102, lessonA103, lessonA104, lessonA105,
   lessonA106, lessonA107, lessonA108, lessonA109, lessonA110, lessonA111, lessonA112, lessonA113, lessonA114,
@@ -74,6 +75,15 @@ export const LESSONS: Lesson[] = [
   lessonB201, lessonB202, lessonB203, lessonB204, lessonB211, lessonB205,
   lessonB206, lessonB207, lessonB208, lessonB209, lessonB210,
 ];
+/**
+ * الدروس كما يراها المتعلم: **مواضع الإجابات موزّعة** (الدفعة 70).
+ * كان 88% من الإجابات الصحيحة في الخيار الأول (B2 99%)، فيُجتاز الدرس
+ * باختيار الأول دائماً. `RAW_LESSONS` هو ما كُتب (ترتيب تحريري طبيعي،
+ * تستورده الحرّاس للقياس والمقارنة) ولا يستهلكه أي مكوّن إنتاجي.
+ * التحويل لا يغيّر نصّ خيار ولا نصّ الصحيحة ولا شرحها — فقط الموضع.
+ */
+export const LESSONS: Lesson[] = RAW_LESSONS.map((item, index) => balanceChoiceTree(item, index + 1));
+
 
 /** إيجاد درس بمعرّفه */
 export function getLesson(id: string): Lesson | undefined {
@@ -85,14 +95,4 @@ export function getLessonsByUnit(unitId: string): Lesson[] {
   return LESSONS.filter((l) => l.unitId === unitId).sort((a, b) => a.order - b.order);
 }
 
-/** خريطة: معرف الوحدة ← الدرس الأول المتاح فيها (لروابط خارطة الطريق) */
-export function getFirstLessonForUnit(unitId: string): Lesson | undefined {
-  return getLessonsByUnit(unitId)[0];
-}
 
-/** كل دروس مستوى */
-export function getLessonsByLevel(level: string): Lesson[] {
-  return LESSONS.filter((l) => l.level === level).sort((a, b) => a.order - b.order);
-}
-
-export const TOTAL_LESSONS_AVAILABLE = LESSONS.length;

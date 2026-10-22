@@ -14,8 +14,8 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   e1: { options: ["hätte", "habe", "hatte", "haben"], key: "hätte" },
   e2: { options: ["würde reisen", "werde reisen", "reise würde", "würde gereist"], key: "würde reisen" },
   e8: {
-    options: ["هل يمكنكم التكرار؟ (تهذيب)", "هل تريدون التكرار؟", "لماذا تكررون؟", "متى تكررون؟"],
-    key: "هل يمكنكم التكرار؟ (تهذيب)",
+    options: ["هل يمكنكم التكرار؟", "هل تريدون أن تكرروا ذلك؟", "لماذا تكررون السؤال؟", "متى تكررون الكلام؟"],
+    key: "هل يمكنكم التكرار؟",
   },
   m1: { options: ["wäre", "bin", "war", "werde"], key: "wäre" },
   m2: {
@@ -23,17 +23,20 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     key: "würde ... lesen",
   },
   q1: {
-    options: ["ein Haus kaufen und reisen", "eine Firma gründen", "ein Auto kaufen", "spenden"],
+    options: ["ein Haus kaufen und reisen", "eine Firma gründen", "ein neues Auto kaufen", "Geld spenden"],
     key: "ein Haus kaufen und reisen",
   },
   q2: {
-    options: ["eine Stiftung für Bildung", "eine Firma", "einen Verein", "eine Schule"],
+    options: ["eine Stiftung für Bildung", "eine eigene kleine Firma", "einen Verein in seiner Stadt", "eine Schule für Kinder"],
     key: "eine Stiftung für Bildung",
   },
   q3: {
-    options: ["ein Wochenende ohne Handy", "mehr arbeiten", "Urlaub machen", "sportlich werden"],
+    options: ["ein Wochenende ohne Handy", "mehr arbeiten und sparen", "Urlaub am Meer machen", "wieder sportlich werden"],
     key: "ein Wochenende ohne Handy",
   },
+  q4: { options: ["jeden Abend", "am Wochenende", "vor der Schule", "in der Mittagspause"], key: "jeden Abend" },
+  q5: { options: ["das Handy weglegen", "mehr Nachrichten lesen", "mit Freunden telefonieren", "Musik lauter machen"], key: "das Handy weglegen" },
+  q6: { options: ["Jugendliche entscheiden bewusster", "alle bekommen ein neues Handy", "die Schule wird früher beendet", "soziale Medien verschwinden"], key: "Jugendliche entscheiden bewusster" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -65,6 +68,34 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
   },
 };
 
+const expectedTransformations: string[] = ["e7", "e13", "w1"];
+
+const expectedTransformationAnswers: Record<string, string[]> = {
+  e7: ["Wenn ich Geld hätte, würde ich reisen", "Wenn ich Geld hätte, würde ich reisen."],
+  e13: [
+    "Könnten Sie bitte das Fenster schließen",
+    "Könnten Sie bitte das Fenster schließen.",
+    "Würden Sie bitte das Fenster schließen",
+    "Würden Sie bitte das Fenster schließen.",
+  ],
+  w1: ["Ich würde gern nach Deutschland reisen", "Ich würde nach Deutschland reisen"],
+};
+
+const expectedFillBlanksExtra: Record<string, { correct: string[]; options: string[][] }> = {
+  e11: {
+    correct: ["wäre", "gründete", "Könntest"],
+    options: [
+      ["wäre", "war", "werde"],
+      ["gründete", "gründen", "gründet"],
+      ["Könntest", "Kannst", "Konntest"],
+    ],
+  },
+};
+
+const expectedErrorCorrectionsExtra: Record<string, { wrongWord: string; correctWord: string; options: string[] }> = {
+  e12: { wrongWord: "habe", correctWord: "hätte", options: ["hätte", "habe", "hatte", "haben"] },
+};
+
 const expectedErrorCorrections: Record<string, { wrongWord: string; correctWord: string; options: string[] }> = {
   e5: { wrongWord: "habe", correctWord: "hätte", options: ["hätte", "habe", "hatte", "hat"] },
   e9: { wrongWord: "gegangen", correctWord: "gehen", options: ["gehen", "gegangen", "geht", "ging"] },
@@ -77,6 +108,15 @@ const expectedMatching: Record<string, { left: string; right: string }[]> = {
     { left: "haben", right: "hätte" },
     { left: "können", right: "könnte" },
     { left: "werden", right: "würde" },
+  ],
+};
+
+const expectedMatchingExtra: Record<string, { left: string; right: string }[]> = {
+  e14: [
+    { left: "Wirklichkeit: Ich habe kein Auto.", right: "Annahme: Ich hätte gern ein Auto." },
+    { left: "Befehl: Öffne die Tür!", right: "Bitte: Könntest du die Tür öffnen?" },
+    { left: "Frage: Was machst du morgen?", right: "Hypothese: Was würdest du morgen machen?" },
+    { left: "Rat: Arbeite weniger!", right: "Ratschlag: Du solltest weniger arbeiten." },
   ],
 };
 
@@ -140,8 +180,8 @@ describe("B1-04 lesson content audit", () => {
     expect(goal("z1").evidence?.exerciseIds).toEqual(["e1", "e5", "e7"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e2", "m2", "w1"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e3", "m1", "w2"]);
-    expect(goal("z4").evidence?.exerciseIds).toEqual(["q1", "q2", "q3"]);
-    expect(goal("z4").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"]);
+    expect(goal("z4").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4", "q5", "q6"]);
+    expect(goal("z4").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4", "listening:l3:q5", "listening:l3:q6"]);
     expect(JSON.stringify(lessonB104.lernziele)).not.toMatch(/Goethe|CEFR|sprechen|erzählen|Medien kritisch/);
   });
 
@@ -153,6 +193,102 @@ describe("B1-04 lesson content audit", () => {
         const exerciseId = taskId.split(":").at(-1) ?? "";
         expect(evidence.exerciseIds, `${taskId} maps to a goal exercise`).toContain(exerciseId);
       }
+    }
+  });
+
+  it("enumerates every auditable task type so no new task escapes the guard", () => {
+    const byType = (type: Exercise["type"]) =>
+      allTasks()
+        .filter((item) => item.type === type)
+        .map(({ id }) => id)
+        .sort();
+    expect(byType("multiple-choice").filter((id) => id in expectedMultipleChoice), "MCQ مغطّاة").toEqual(
+      byType("multiple-choice"),
+    );
+    const fills = { ...expectedFillBlanks, ...expectedFillBlanksExtra };
+    expect(byType("fill-blank").filter((id) => id in fills), "فراغات مغطّاة").toEqual(byType("fill-blank"));
+    const corrections = { ...expectedErrorCorrections, ...expectedErrorCorrectionsExtra };
+    expect(
+      byType("error-correction").filter((id) => id in corrections),
+      "تصحيحات مغطّاة",
+    ).toEqual(byType("error-correction"));
+    const matchings = { ...expectedMatching, ...expectedMatchingExtra };
+    expect(byType("matching").filter((id) => id in matchings), "مطابقات مغطّاة").toEqual(byType("matching"));
+    const transformations = byType("transformation");
+    expect(transformations.filter((id) => expectedTransformations.includes(id)), "تحويلات مغطّاة").toEqual(
+      transformations,
+    );
+  });
+
+  it("checks the accepted answers of every transformation", () => {
+    for (const [id, accepted] of Object.entries(expectedTransformationAnswers)) {
+      const exercise = task(id);
+      if (exercise.type !== "transformation") throw new Error(`${id} is not transformation`);
+      expect(exercise.acceptedAnswers, `${id} accepted`).toEqual(accepted);
+      for (const answer of accepted) {
+        expect(evaluateExercise(exercise, answer).isCorrect, `${id}: ${answer}`).toBe(true);
+      }
+    }
+  });
+
+  it("checks the new fill-blank, error-correction, and matching keys against the engine", () => {
+    for (const [id, expected] of Object.entries(expectedFillBlanksExtra)) {
+      const exercise = task(id);
+      if (exercise.type !== "fill-blank") throw new Error(`${id} is not fill-blank`);
+      expect(exercise.blanks.map(({ correct }) => correct), `${id} keys`).toEqual(expected.correct);
+      expect(exercise.blanks.map(({ options }) => options), `${id} options`).toEqual(expected.options);
+      expect(evaluateExercise(exercise, expected.correct).isCorrect, `${id} all keys`).toBe(true);
+    }
+    for (const [id, expected] of Object.entries(expectedErrorCorrectionsExtra)) {
+      const exercise = task(id);
+      if (exercise.type !== "error-correction") throw new Error(`${id} is not error-correction`);
+      expect(exercise.wrongWord, `${id} wrong`).toBe(expected.wrongWord);
+      expect(exercise.correctWord, `${id} correct`).toBe(expected.correctWord);
+      expect(exercise.options, `${id} options`).toEqual(expected.options);
+      expect(evaluateExercise(exercise, expected.correctWord).isCorrect, `${id} answer`).toBe(true);
+    }
+    for (const [id, pairs] of Object.entries(expectedMatchingExtra)) {
+      const exercise = task(id);
+      if (exercise.type !== "matching") throw new Error(`${id} is not matching`);
+      expect(exercise.pairs.map(({ left, right }) => ({ left, right })), `${id} pairs`).toEqual(pairs);
+      expect(evaluateExercise(exercise, pairs).isCorrect, `${id} answer`).toBe(true);
+    }
+  });
+
+  it("keeps the reading text, glossary, comprehension questions, and discourse anchors intact", () => {
+    const reading = lessonB104.reading;
+    expect(reading?.id).toBe("read-b1-04");
+    expect(reading?.textType).toBe("artikel");
+    expect(reading?.titleDe).toBe("Eine Woche ohne Nachrichten");
+    expect(reading?.titleAr).toBe("أسبوع بلا أخبار");
+    expect(reading?.paragraphs).toHaveLength(4);
+    expect(reading?.paragraphsAr).toHaveLength(4);
+    const text = reading!.paragraphs.join(" ").toLowerCase();
+    expect(text.split(/\s+/).filter(Boolean).length).toBeGreaterThanOrEqual(250);
+
+    expect(reading?.glossary.length).toBeGreaterThanOrEqual(8);
+    for (const item of reading!.glossary) {
+      const head = item.de.replace(/^(der|die|das)\s+/i, "").split(/[\s,(/]/)[0];
+      const stem = head.slice(0, Math.max(4, head.length - 3)).toLowerCase();
+      expect(text.includes(stem), `${item.de} ليست في النصّ`).toBe(true);
+      expect(item.ar.trim().length).toBeGreaterThan(1);
+    }
+
+    expect(reading?.questions.map(({ id }) => id)).toEqual(["rq1", "rq2", "rq3", "rq4"]);
+    for (const question of reading!.questions) {
+      expect(question.options.length).toBeGreaterThanOrEqual(3);
+      expect(question.correctIndex).toBeGreaterThanOrEqual(0);
+      expect(question.correctIndex).toBeLessThan(question.options.length);
+      expect(question.explanation.trim().length).toBeGreaterThan(20);
+      const answer = question.options[question.correctIndex];
+      expect(text.includes(answer.toLowerCase()) && answer.length > 45, `${question.id} منسوخ حرفياً`).toBe(false);
+    }
+
+    expect(reading?.redemittel?.length).toBeGreaterThanOrEqual(4);
+    expect(reading?.discussionAr?.trim().length).toBeGreaterThanOrEqual(40);
+
+    for (const anchor of ["nachricht", "journalist", "medien"]) {
+      expect(text.includes(anchor), `مرساة مفقودة: ${anchor}`).toBe(true);
     }
   });
 
@@ -251,6 +387,9 @@ describe("B1-04 lesson content audit", () => {
       "l1:q1",
       "l1:q2",
       "l2:q3",
+      "l3:q4",
+      "l3:q5",
+      "l3:q6",
     ]);
   });
 
@@ -274,7 +413,7 @@ describe("B1-04 lesson content audit", () => {
       "pending",
     );
     expect(
-      getGoalEvidenceStatus(goal("z4"), lessonB104.id, [goalEvent("z4", "q1"), goalEvent("z4", "q2"), goalEvent("z4", "q3")]),
+      getGoalEvidenceStatus(goal("z4"), lessonB104.id, [goalEvent("z4", "q1"), goalEvent("z4", "q2"), goalEvent("z4", "q3"), goalEvent("z4", "q4"), goalEvent("z4", "q5"), goalEvent("z4", "q6")]),
     ).toBe("evidenced");
   });
 });

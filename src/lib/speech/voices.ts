@@ -51,10 +51,6 @@ export function getBestGermanVoice(): SpeechSynthesisVoice | null {
   return german[0].voice;
 }
 
-/** هل يوجد صوت ألماني مثبت؟ */
-export function hasGermanVoice(): boolean {
-  return getGermanVoices().length > 0;
-}
 
 /** هل يدعم المتصفح النطق؟ */
 export function isSpeechSynthesisSupported(): boolean {

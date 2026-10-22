@@ -178,8 +178,6 @@ export const siteConfig = {
   },
 } as const;
 
-export type SiteConfig = typeof siteConfig;
-
 /** حلّ رابط الموقع الموثوق (P1-06) */
 function resolveSiteUrl(): string {
   const explicit = process.env.NEXT_PUBLIC_APP_URL?.trim();

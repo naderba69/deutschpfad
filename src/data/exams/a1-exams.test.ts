@@ -1,17 +1,24 @@
+/**
+ * حراسة نماذج A1 التدريبية — تمرّ على **كل** نماذج المستوى من السجلّ
+ * (`level-models.ts`) لا على النموذج الأول وحده، فأي نموذج جديد يُختبر
+ * تلقائياً بالمعايير نفسها.
+ */
 import { describe, expect, it } from "vitest";
-import { A1_HOEREN } from "./a1-hoeren";
-import { A1_LESEN } from "./a1-lesen";
-import { A1_SCHREIBEN } from "./a1-schreiben";
-import { A1_SPRECHEN } from "./a1-sprechen";
+import { LEVEL_MODELS } from "./level-models";
+import type { ExamModel } from "./level-models";
 
-describe("نموذج A1 التدريبي — الاستماع", () => {
+const MODELS: ExamModel[] = LEVEL_MODELS.A1;
+
+describe("نماذج A1 التدريبية — الاستماع", () => {
   it("مجموع النقاط 100 والأجزاء مرقّمة 1..4", () => {
-    expect(A1_HOEREN.map((t) => t.teil)).toEqual([1, 2, 3, 4]);
-    expect(A1_HOEREN.reduce((s, t) => s + t.points, 0)).toBe(100);
+    for (const model of MODELS) {
+      expect(model.hoeren.map((t) => t.teil), model.id).toEqual([1, 2, 3, 4]);
+      expect(model.hoeren.reduce((s, t) => s + t.points, 0), model.id).toBe(100);
+    }
   });
 
   it("كل جزء يحمل نصاً صوتياً وعناصر صحيحة", () => {
-    for (const t of A1_HOEREN) {
+    for (const model of MODELS) for (const t of model.hoeren) {
       expect(t.audioText.length).toBeGreaterThan(40);
       if (t.kind === "rf") {
         expect(t.statements?.length ?? 0).toBeGreaterThan(0);
@@ -27,14 +34,16 @@ describe("نموذج A1 التدريبي — الاستماع", () => {
   });
 });
 
-describe("نموذج A1 التدريبي — القراءة", () => {
+describe("نماذج A1 التدريبية — القراءة", () => {
   it("مجموع النقاط 100 والأجزاء مرقّمة 1..4", () => {
-    expect(A1_LESEN.map((t) => t.teil)).toEqual([1, 2, 3, 4]);
-    expect(A1_LESEN.reduce((s, t) => s + t.points, 0)).toBe(100);
+    for (const model of MODELS) {
+      expect(model.lesen.map((t) => t.teil), model.id).toEqual([1, 2, 3, 4]);
+      expect(model.lesen.reduce((s, t) => s + t.points, 0), model.id).toBe(100);
+    }
   });
 
   it("كل إجابة صحيحة ضمن الخيارات، ولكل عبارة سبب بالعربية", () => {
-    for (const t of A1_LESEN) {
+    for (const model of MODELS) for (const t of model.lesen) {
       if (t.kind === "rf") {
         for (const s of t.statements ?? []) expect(s.whyAr.length).toBeGreaterThan(5);
       } else {
@@ -47,10 +56,12 @@ describe("نموذج A1 التدريبي — القراءة", () => {
   });
 });
 
-describe("نموذج A1 التدريبي — الكتابة", () => {
+describe("نماذج A1 التدريبية — الكتابة", () => {
   it("مهمتان مرقّمتان، ولكل مهمة حد أدنى للكلمات ونقاط مطلوبة", () => {
-    expect(A1_SCHREIBEN.map((t) => t.teil)).toEqual([1, 2]);
-    for (const t of A1_SCHREIBEN) {
+    for (const model of MODELS) {
+      expect(model.schreiben.map((t) => t.teil), model.id).toEqual([1, 2]);
+    }
+    for (const model of MODELS) for (const t of model.schreiben) {
       expect(t.minWords).toBeGreaterThan(0);
       expect(t.requires.length).toBeGreaterThanOrEqual(2);
       expect(t.aufgabeDe.length).toBeGreaterThan(40);
@@ -58,10 +69,12 @@ describe("نموذج A1 التدريبي — الكتابة", () => {
   });
 });
 
-describe("نموذج A1 التدريبي — التحدث", () => {
+describe("نماذج A1 التدريبية — التحدث", () => {
   it("ثلاثة أجزاء مرقّمة، ولكل جزء جمل للشريك وعبارات نموذجية وقائمة فحص", () => {
-    expect(A1_SPRECHEN.map((t) => t.teil)).toEqual([1, 2, 3]);
-    for (const part of A1_SPRECHEN) {
+    for (const model of MODELS) {
+      expect(model.sprechen.map((t) => t.teil), model.id).toEqual([1, 2, 3]);
+    }
+    for (const model of MODELS) for (const part of model.sprechen) {
       expect(part.turns.length).toBeGreaterThan(0);
       expect(part.checklistAr.length).toBeGreaterThanOrEqual(2);
       for (const turn of part.turns) {

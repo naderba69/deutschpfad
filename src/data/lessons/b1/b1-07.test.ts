@@ -17,12 +17,12 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   m1: { options: ["Als", "Wenn", "Während", "Bis"], key: "Als" },
   m2: { options: ["Während", "Als", "Bis", "Nachdem"], key: "Während" },
   q1: {
-    options: ["seitdem er in Deutschland wohnt", "seit der Mauerfall", "seit er zehn war", "seit kurzem"],
+    options: ["seitdem er in Deutschland wohnt", "seit dem Mauerfall damals", "seit er zehn Jahre alt war", "seit ganz kurzer Zeit erst"],
     key: "seitdem er in Deutschland wohnt",
   },
-  q2: { options: ["die Programme lesen", "Werbung machen", "demonstrieren", "arbeiten"], key: "die Programme lesen" },
+  q2: { options: ["die Programme lesen", "Werbung dafür machen", "demonstrieren gehen", "weiter arbeiten"], key: "die Programme lesen" },
   q3: {
-    options: ["nachdem sie die Programme gelesen hat", "vor der Wahl", "während des Wahlkampfs", "morgen"],
+    options: ["nachdem sie die Programme gelesen hat", "schon lange vor der eigentlichen Wahl", "während des ganzen Wahlkampfs", "morgen früh um acht Uhr im Büro"],
     key: "nachdem sie die Programme gelesen hat",
   },
 };
@@ -77,6 +77,13 @@ const expectedMatching: Record<string, { left: string; right: string }[]> = {
     { left: "nachdem", right: "بعد أن" },
     { left: "bis", right: "حتى" },
   ],
+};
+
+const expectedTransformations: string[] = ["e7", "w1", "w3"];
+
+const expectedTransformationAnswers: Record<string, string[]> = {
+  w1: ["Als ich jung war, war alles anders", "Als ich klein war, war alles anders"],
+  w3: ["Obwohl es regnet, gehe ich spazieren.", "Ich gehe spazieren, obwohl es regnet."],
 };
 
 function allTasks(): Exercise[] {
@@ -154,6 +161,79 @@ describe("B1-07 lesson content audit", () => {
         const exerciseId = taskId.split(":").at(-1) ?? "";
         expect(evidence.exerciseIds, `${taskId} maps to a goal exercise`).toContain(exerciseId);
       }
+    }
+  });
+
+  it("enumerates every auditable task type so no new task escapes the guard", () => {
+    const byType = (type: Exercise["type"]) =>
+      allTasks()
+        .filter((item) => item.type === type)
+        .map(({ id }) => id)
+        .sort();
+    expect(byType("multiple-choice").filter((id) => id in expectedMultipleChoice), "MCQ مغطّاة").toEqual(
+      byType("multiple-choice"),
+    );
+    expect(byType("fill-blank").filter((id) => id in expectedFillBlanks), "فراغات مغطّاة").toEqual(
+      byType("fill-blank"),
+    );
+    expect(
+      byType("error-correction").filter((id) => id in expectedErrorCorrections),
+      "تصحيحات مغطّاة",
+    ).toEqual(byType("error-correction"));
+    expect(byType("matching").filter((id) => id in expectedMatching), "مطابقات مغطّاة").toEqual(
+      byType("matching"),
+    );
+    const transformations = byType("transformation");
+    expect(transformations.filter((id) => expectedTransformations.includes(id)), "تحويلات مغطّاة").toEqual(
+      transformations,
+    );
+  });
+
+  it("checks the accepted answers of every transformation", () => {
+    for (const [id, accepted] of Object.entries(expectedTransformationAnswers)) {
+      const exercise = task(id);
+      if (exercise.type !== "transformation") throw new Error(`${id} is not transformation`);
+      expect(exercise.acceptedAnswers, `${id} accepted`).toEqual(accepted);
+      for (const answer of accepted) {
+        expect(evaluateExercise(exercise, answer).isCorrect, `${id}: ${answer}`).toBe(true);
+      }
+    }
+  });
+
+  it("keeps the reading text, glossary, comprehension questions, and discourse anchors intact", () => {
+    const reading = lessonB107.reading;
+    expect(reading?.id).toBe("read-b1-07");
+    expect(reading?.textType).toBe("artikel");
+    expect(reading?.titleDe).toBe("Wählen mit sechzehn?");
+    expect(reading?.titleAr).toBe("الانتخاب في السادسة عشرة؟");
+    expect(reading?.paragraphs).toHaveLength(4);
+    expect(reading?.paragraphsAr).toHaveLength(4);
+    const text = reading!.paragraphs.join(" ").toLowerCase();
+    expect(text.split(/\s+/).filter(Boolean).length).toBeGreaterThanOrEqual(250);
+
+    expect(reading?.glossary.length).toBeGreaterThanOrEqual(8);
+    for (const item of reading!.glossary) {
+      const head = item.de.replace(/^(der|die|das)\s+/i, "").split(/[\s,(/]/)[0];
+      const stem = head.slice(0, Math.max(4, head.length - 3)).toLowerCase();
+      expect(text.includes(stem), `${item.de} ليست في النصّ`).toBe(true);
+      expect(item.ar.trim().length).toBeGreaterThan(1);
+    }
+
+    expect(reading?.questions.map(({ id }) => id)).toEqual(["rq1", "rq2", "rq3", "rq4"]);
+    for (const question of reading!.questions) {
+      expect(question.options.length).toBeGreaterThanOrEqual(3);
+      expect(question.correctIndex).toBeGreaterThanOrEqual(0);
+      expect(question.correctIndex).toBeLessThan(question.options.length);
+      expect(question.explanation.trim().length).toBeGreaterThan(20);
+      const answer = question.options[question.correctIndex];
+      expect(text.includes(answer.toLowerCase()) && answer.length > 45, `${question.id} منسوخ حرفياً`).toBe(false);
+    }
+
+    expect(reading?.redemittel?.length).toBeGreaterThanOrEqual(4);
+    expect(reading?.discussionAr?.trim().length).toBeGreaterThanOrEqual(40);
+
+    for (const anchor of ["wahlalter", "obwohl", "bevor"]) {
+      expect(text.includes(anchor), `مرساة مفقودة: ${anchor}`).toBe(true);
     }
   });
 

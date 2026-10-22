@@ -60,6 +60,9 @@ export function DictationExerciseView({
   return (
     <div className="space-y-4">
       <p className="text-sm font-medium text-muted-foreground">{exercise.instructionAr}</p>
+      {exercise.instructionDe && (
+        <p className="font-de text-xs text-muted-foreground" dir="ltr" lang="de" data-testid="exercise-instruction-de">{exercise.instructionDe}</p>
+      )}
 
       {/* لوحة التحكم الصوتي */}
       <div className="flex flex-wrap items-center gap-3 rounded-xl border bg-muted/30 p-4">

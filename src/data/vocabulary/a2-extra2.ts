@@ -238,5 +238,3 @@ export const A2_EXTRA2_VOCAB: VocabEntry[] = [
   { de: "schwierig", ar: "صعب", g: "adj" },
   { de: "leicht", ar: "سهل", g: "adj" },
 ];
-
-export const TOTAL_A2_EXTRA2 = A2_EXTRA2_VOCAB.length;

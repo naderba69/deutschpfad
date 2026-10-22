@@ -5,9 +5,11 @@ import {
   getUnitKeyWords,
   getUnitLessonCount,
   TOTAL_LESSONS,
+  TOTAL_WORDS,
   UNITS,
   TOTAL_UNITS,
 } from "@/lib/constants/curriculum";
+import {STATS} from "@/lib/constants/site-content";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -124,3 +126,24 @@ describe("عدد الوحدات المعلن (المرحلة 4)", () => {
     }
   });
 });
+
+/**
+ * شريط إحصائيات الصفحة الرئيسية (STATS) كان مكتوباً يدوياً فتعفّن:
+ * «44 وحدة» (والفعلية 47) و«240+ درس تفاعلي» (والفعلية 52). صار مشتقّاً،
+ * وهذا يمنع عودة الرقم المضلِّل من أول شاشة يراها الزائر.
+ */
+describe("اتساق إحصائيات الصفحة الرئيسية (STATS)", () => {
+  it("أرقام الشريط مطابقة للأرقام المشتقّة من المنهج", () => {
+    const byLabel = new Map(STATS.map((s) => [s.label, s.value]));
+    expect(byLabel.get("وحدة دراسية"), "عدد الوحدات في الرئيسية").toBe(String(TOTAL_UNITS));
+    expect(byLabel.get("درس تفاعلي"), "عدد الدروس في الرئيسية").toBe(String(TOTAL_LESSONS));
+    expect(byLabel.get("كلمة ومصطلح"), "عدد الكلمات في الرئيسية").toBe(`${TOTAL_WORDS}+`);
+  });
+
+  it("لا رقم مضلِّل في الشريط (لا 44 وحدة ولا 240+ درساً)", () => {
+    const values = STATS.map((s) => s.value);
+    expect(values).not.toContain("44");
+    expect(values).not.toContain("240+");
+  });
+});
+

@@ -1,5 +1,7 @@
+import path from "node:path";
 import {describe, expect, it} from "vitest";
 
+import {isPlayableMp3} from "@/lib/audio/mp3-file";
 import {lessonA102} from "./a1-02";
 
 const lesson = lessonA102;
@@ -24,6 +26,20 @@ describe("A1-02 — العائلة والأصدقاء", () => {
   it("عنوان الاستماع لا يكشف تفاصيل تقنية عن الصوت", () => {
     const titles = lesson.listening.items.map((item) => item.title).join(" ");
     expect(titles).not.toMatch(/المتصفح|اصطناعي/);
+  });
+
+  it("adds a second disclosed TTS listening scene with six playable MP3s and three questions", () => {
+    expect(lesson.listening.items).toHaveLength(2);
+    const item = lesson.listening.items.find((candidate) => candidate.id === "l2");
+    expect(item?.title).toBe("حوار صوتي: أختي لينا");
+    expect(item?.audioNoteAr).toContain("مولّدة آلياً (TTS)");
+    expect(item?.lines).toHaveLength(6);
+    for (const line of item?.lines ?? []) {
+      expect(line.audioSrc).toContain("/audio/lessons/a1-02/ls-a1-02-2-");
+      expect(line.audioSrc?.endsWith(".mp3")).toBe(true);
+      expect(isPlayableMp3(path.join(process.cwd(), "public", line.audioSrc!.slice(1))), line.audioSrc).toBe(true);
+    }
+    expect(lesson.listening.questions.filter((question) => question.itemId === "l2")).toHaveLength(3);
   });
 
   it("نطق w في Schwester صحيح، وعنوان النطق لا يعد بصوت v غير موجود في الدرس", () => {

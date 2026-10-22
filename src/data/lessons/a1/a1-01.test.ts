@@ -34,6 +34,15 @@ describe("A1-01 — التعارف والتحيات", () => {
     expect(JSON_TEXT).not.toMatch(/حروف W السبعة/);
   });
 
+  it("يتضمن مراجعة تراكمية قصيرة لما سبق تعلّمه في A1-00", () => {
+    expect(lesson.review).toHaveLength(3);
+    expect(lesson.review?.map((task) => task.id)).toEqual(["r1", "r2", "r3"]);
+    expect(lesson.review?.every((task) => task.instructionAr.includes("a1-00"))).toBe(true);
+    expect(lesson.review?.[0]).toMatchObject({ type: "multiple-choice", correctIndex: 0 });
+    expect(lesson.review?.[1]).toMatchObject({ type: "fill-blank", blanks: [{ correct: "ü" }] });
+    expect(lesson.review?.[2]).toMatchObject({ type: "multiple-choice", options: ["Zeit", "Ziet", "Zeid", "Zeitt"] });
+  });
+
   it("كل هدف مرتبط بمهام موجودة فعلاً ويحمل وصف أداء", () => {
     const known = knownTaskIds();
     for (const goal of lesson.lernziele) {
@@ -46,7 +55,7 @@ describe("A1-01 — التعارف والتحيات", () => {
   });
 
   it("خيارات الاختيار من متعدد فريدة وإجابتها الصحيحة ضمن المدى", () => {
-    for (const task of [...lesson.practiceBank, ...lesson.miniTest]) {
+    for (const task of [...lesson.practiceBank, ...lesson.miniTest, ...(lesson.review ?? [])]) {
       if (task.type !== "multiple-choice") continue;
       expect(new Set(task.options).size, `${task.id} duplicate options`).toBe(task.options.length);
       expect(task.correctIndex).toBeGreaterThanOrEqual(0);

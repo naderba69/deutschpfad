@@ -10,7 +10,8 @@
  *  — حماية دائمة ضد الانحدار: أي نقص مستقبلي يظهر فوراً في التقرير.
  * ═══════════════════════════════════════════════════════════════════════
  */
-import { readFileSync, readdirSync } from "node:fs";
+import { readdirSync } from "node:fs";
+import { readLessonSource } from "./lib/lesson-source.mjs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -22,7 +23,7 @@ for (const level of ["a1", "a2", "b1", "b2"]) {
   for (const f of readdirSync(join(ROOT, "src/data/lessons", level))) {
     // ملفات الاختبار (*.test.ts) تحوي معرّفات دروس مكرّرة نصّياً فتفسد البحث
     if (!f.endsWith(".ts") || f.endsWith(".test.ts")) continue;
-    const text = readFileSync(join(ROOT, "src/data/lessons", level, f), "utf8");
+    const text = readLessonSource(join(ROOT, "src/data/lessons", level, f));
     const id = (text.match(/id: "([^"]+)"/) || [])[1] ?? f.replace(".ts", "");
     LESSONS.push({ level, id, text });
   }

@@ -76,6 +76,7 @@ export function ByokCard() {
       <div className="flex flex-col gap-2 sm:flex-row">
         <input
           type="password"
+          aria-label="مفتاح Gemini API الخاص بك"
           value={key}
           onChange={(e) => {
             setKey(e.target.value);

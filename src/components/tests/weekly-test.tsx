@@ -6,6 +6,7 @@ import {CalendarDays, Sparkles} from "lucide-react";
 import {TestRunner} from "@/components/tests/test-runner";
 import {TEST_BANK} from "@/data/tests/question-banks";
 import {sample} from "@/lib/lesson/shuffle";
+import {shuffleTestQuestions} from "@/lib/tests/shuffle-questions";
 
 const SKILLS: ("grammatik" | "wortschatz" | "lesen" | "hören" | "schreiben")[] = [
   "grammatik",
@@ -32,13 +33,17 @@ export function WeeklyTest() {
   const levelPool: ("A1" | "A2" | "B1" | "B2")[] = ["A1", "A2", "B1", "B2"];
   const focusLevel = levelPool[seed % 4];
 
-  // أسئلة: 60% من مستوى التركيز + 40% من بقية المستويات (خلط)
-  const focusQs = TEST_BANK.filter((q) => q.level === focusLevel);
-  const otherQs = TEST_BANK.filter((q) => q.level !== focusLevel);
-  const questions = [
-    ...sample(focusQs, Math.min(8, focusQs.length)),
-    ...sample(otherQs, 6),
-  ];
+  /* أسئلة: 60% من مستوى التركيز + 40% من بقية المستويات (خلط)، وخيارات كل سؤال
+     مخلوطة أيضاً — التصحيح بالفهرس، فالسحب والخلط يُثبَّتان لكل بذرة (useMemo)
+     حتى لا يتغيّر معنى إجابة سابقة عند إعادة التصيير. */
+  const questions = React.useMemo(() => {
+    const focusQs = TEST_BANK.filter((q) => q.level === focusLevel);
+    const otherQs = TEST_BANK.filter((q) => q.level !== focusLevel);
+    return shuffleTestQuestions([
+      ...sample(focusQs, Math.min(8, focusQs.length)),
+      ...sample(otherQs, 6),
+    ]);
+  }, [seed, focusLevel]);
 
   return (
     <div className="space-y-4">

@@ -47,12 +47,3 @@ export function saveProgress(state: ProgressState): void {
   }
 }
 
-/** مسح كل التقدم */
-export function clearProgress(): void {
-  if (typeof window === "undefined") return;
-  try {
-    window.localStorage.removeItem(STORAGE_KEY);
-  } catch {
-    // تجاهل
-  }
-}

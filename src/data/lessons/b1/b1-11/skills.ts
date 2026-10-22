@@ -1,0 +1,146 @@
+/**
+ * b1-11 — القراءة والاستماع والنطق والكتابة (الجزء «skills»)
+ * فُصل من b1-11.ts في المرحلة 5 (سقف الحجم). القيم منقولة حرفياً.
+ */
+import type { Lesson } from "@/types/lesson";
+
+export const listening: Lesson["listening"] = {
+    items: [
+      {
+        id: "ls-b1-11-1",
+        title: "رسالة هاتفية من مكتب العمل",
+        lines: [
+          { speaker: "الموظف", de: "Guten Tag, Frau Ben Ali. Hier ist das Arbeitsamt.", ar: "طاب يومك سيدة بن علي. هنا مكتب العمل." },
+          { speaker: "الموظف", de: "Ihr Termin für das Beratungsgespräch wurde auf Donnerstag, den 15., um 14 Uhr verschoben.", ar: "موعد جلسة الاستشارة أُجل إلى الخميس 15 الساعة 14." },
+          { speaker: "الموظف", de: "Bitte bringen Sie Ihren Lebenslauf und die Zeugnisse mit. Wir sehen uns dann!", ar: "يرجى إحضار سيرتك الذاتية والشهادات. نراك حينها!" },
+        ],
+      },
+      {
+        id: "ls-b1-11-2",
+        title: "حوار: خطة الحافلات الجديدة",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً.",
+        lines: [
+          { speaker: "Mira", de: "Wie findest du den neuen Busfahrplan?", ar: "ما رأيك في جدول الحافلات الجديد؟", audioSrc: "/audio/lessons/b1-11/ls-b1-11-2-1.mp3" },
+          { speaker: "Jonas", de: "Einerseits fahren die Busse jetzt häufiger, andererseits sind die Tickets teurer.", ar: "من ناحية، صارت الحافلات تسير بوتيرة أكبر؛ ومن ناحية أخرى، أصبحت التذاكر أغلى.", audioSrc: "/audio/lessons/b1-11/ls-b1-11-2-2.mp3" },
+          { speaker: "Mira", de: "Das stimmt. Was ist dir wichtiger?", ar: "هذا صحيح. أيّ الأمرين أهم بالنسبة إليك؟", audioSrc: "/audio/lessons/b1-11/ls-b1-11-2-3.mp3" },
+          { speaker: "Jonas", de: "Die häufigere Verbindung ist für mich wichtiger, weil ich dann kürzer warten muss.", ar: "زيادة الرحلات أهم بالنسبة إليّ، لأنني سأنتظر وقتاً أقصر.", audioSrc: "/audio/lessons/b1-11/ls-b1-11-2-4.mp3" },
+          { speaker: "Mira", de: "Aber viele Familien müssen auf ihr Geld achten.", ar: "لكن على عائلات كثيرة أن تنتبه إلى مصروفها.", audioSrc: "/audio/lessons/b1-11/ls-b1-11-2-5.mp3" },
+          { speaker: "Jonas", de: "Dann könnte die Stadt ein günstigeres Monatsticket anbieten.", ar: "عندها يمكن للمدينة أن تعرض تذكرة شهرية أرخص.", audioSrc: "/audio/lessons/b1-11/ls-b1-11-2-6.mp3" },
+        ],
+      },
+    ],
+    questions: [
+      {
+        type: "multiple-choice",
+        id: "lsq-b1-11-1",
+        instructionAr: "استمع واختر",
+        itemId: "ls-b1-11-1",
+        questionDe: "Wann ist der neue Termin?",
+        questionAr: "متى الموعد الجديد؟",
+        options: ["Am Donnerstag, den 15., um 14 Uhr", "Am Freitag schon um 9 Uhr früh", "Am Montag um dieselbe Zeit"],
+        correctIndex: 0,
+        errorType: "grammar",
+        explanation: "الموظف قال: Donnerstag, den 15., um 14 Uhr.",
+        optionExplanations: [
+          undefined,
+          "«Am Freitag um 9 Uhr» ليس الموعد الجديد؛ الموعد أُجل إلى الخميس الساعة 14.",
+          "«Am Montag» لا تذكر الموعد الجديد في الرسالة.",
+        ],
+      },
+      {
+        type: "multiple-choice",
+        id: "lsq-b1-11-2",
+        instructionAr: "استمع واختر",
+        itemId: "ls-b1-11-1",
+        questionDe: "Was soll Frau Ben Ali mitbringen?",
+        questionAr: "ماذا يجب أن تحضر السيدة بن علي؟",
+        options: ["Den Lebenslauf und die Zeugnisse", "Ein kleines Geschenk für den Chef", "Nichts, er braucht gar keine Unterlagen"],
+        correctIndex: 0,
+        errorType: "vocabulary",
+        explanation: "bringen Sie Ihren Lebenslauf und die Zeugnisse mit.",
+        optionExplanations: [
+          undefined,
+          "«Ein Geschenk» لم تطلب الرسالة إحضار هدية.",
+          "«Nichts» تنفي ما طُلب، والرسالة تطلب إحضار أوراق.",
+        ],
+      },
+      {
+        type: "multiple-choice",
+        id: "lsq-b1-11-3",
+        instructionAr: "استمع إلى الحوار عن خطة الحافلات:",
+        itemId: "ls-b1-11-2",
+        questionDe: "Was ist ein Vorteil des neuen Busfahrplans?",
+        questionAr: "ما إحدى ميزات جدول الحافلات الجديد؟",
+        options: ["Die Busse fahren häufiger", "Die Tickets sind billiger", "Die Busse fahren nur am Wochenende"],
+        correctIndex: 0,
+        errorType: "vocabulary",
+        explanation: "يقول يوناس: «Einerseits fahren die Busse jetzt häufiger»؛ زيادة التواتر هي الميزة المذكورة.",
+        optionExplanations: [undefined, "لا — التذاكر صارت أغلى، لا أرخص: «die Tickets teurer».", "لا — لم يذكر الحوار أن الحافلات تعمل في عطلة نهاية الأسبوع فقط."],
+      },
+      {
+        type: "multiple-choice",
+        id: "lsq-b1-11-4",
+        instructionAr: "استمع إلى سبب تفضيل يوناس:",
+        itemId: "ls-b1-11-2",
+        questionDe: "Warum ist die häufigere Verbindung für Jonas wichtig?",
+        questionAr: "لماذا تهمّ يوناس زيادة الرحلات؟",
+        options: ["Weil er kürzer warten muss", "Weil er keine Fahrkarte braucht", "Weil er am Wochenende arbeitet"],
+        correctIndex: 0,
+        errorType: "vocabulary",
+        explanation: "يربط يوناس تفضيله بالانتظار الأقصر: «weil ich dann kürzer warten muss».",
+        optionExplanations: [undefined, "لا — لا يقول إنه لا يحتاج إلى تذكرة؛ هذا تفصيل غير وارد.", "لا — لم يذكر عمله في عطلة الأسبوع؛ السبب المسموع هو الانتظار مدة أقصر."],
+      },
+      {
+        type: "multiple-choice",
+        id: "lsq-b1-11-5",
+        instructionAr: "استمع إلى اقتراح يوناس في نهاية الحوار:",
+        itemId: "ls-b1-11-2",
+        questionDe: "Was könnte die Stadt anbieten?",
+        questionAr: "ماذا يمكن أن تعرض المدينة؟",
+        options: ["Ein günstigeres Monatsticket", "Einen neuen Zug nach Berlin", "Kostenlose Fahrräder für alle"],
+        correctIndex: 0,
+        errorType: "vocabulary",
+        explanation: "يختم يوناس باقتراح: «ein günstigeres Monatsticket anbieten».",
+        optionExplanations: [undefined, "لا — قطار برلين لم يُذكر؛ الاقتراح تذكرة شهرية أرخص.", "لا — الدراجات المجانية لم تُذكر؛ والاقتراح واضح في آخر جملة."],
+      },
+    ],
+  };
+
+export const pronunciation: Lesson["pronunciation"] = {
+    id: "pron-b1-11",
+    title: "نبرة الجملة في النقاش — التنغيم التصاعدي والتنازلي",
+    items: [
+      { de: "Meiner Meinung nach ist das richtig.", ar: "في رأيي هذا صحيح.", note: "نبرة مستقرة على المعلومة." },
+      { de: "Findest du das wirklich?", ar: "هل تجد ذلك حقاً؟", note: "نبرة تصاعدية في نهاية السؤال." },
+      { de: "Einerseits stimmt das, andererseits …", ar: "من ناحية هذا صحيح، ومن ناحية أخرى…", note: "توقف ونبرة معلّقة بعد andererseits." },
+      { de: "Ich bin überzeugt, dass …", ar: "أنا مقتنع بأن…", note: "تركيز على überzeugt." },
+      { de: "Das sehe ich anders.", ar: "أرى ذلك بشكل مختلف.", note: "نبرة حازمة تنازلية." },
+      { de: "Darf ich etwas dazu sagen?", ar: "هل أستطيع أن أضيف شيئاً؟", note: "نبرة مهذبة تصاعدية." },
+    ],
+    tip: "في النقاش: السؤال يرتفع في النهاية، والجملة الحازمة تهبط. التدرج الصوتي يعطي انطباع الطلاقة أكثر من الكلمات نفسها.",
+  };
+
+export const writing: NonNullable<Lesson["writing"]> = [
+    {
+      id: "wr-b1-11-1",
+      type: "transformation",
+      instructionAr: "حوّل الجملة إلى المبني للمجهول (Passiv)",
+      prompt: "Man baut das neue Krankenhaus in unserer Stadt.",
+      acceptedAnswers: ["Das neue Krankenhaus wird in unserer Stadt gebaut."],
+      sampleAnswer: "Das neue Krankenhaus wird in unserer Stadt gebaut.",
+      hint: "Passiv = werden + Partizip II. المفعول يصبح فاعلاً.",
+      explanation: "Man baut → wird gebaut. «Man» يحذف في المجهول.",
+      errorType: "grammar",
+    },
+    {
+      id: "wr-b1-11-2",
+      type: "transformation",
+      instructionAr: "حوّل إلى جملة ثانوية مع nachdem",
+      prompt: "Ich habe gegessen. Dann bin ich spazieren gegangen.",
+      acceptedAnswers: ["Nachdem ich gegessen hatte, bin ich spazieren gegangen."],
+      sampleAnswer: "Nachdem ich gegessen hatte, bin ich spazieren gegangen.",
+      hint: "nachdem + Plusquamperfekt في الثانوية، والماضي البسيط في الرئيسية.",
+      explanation: "الحدث الأسبق = Plusquamperfekt (hatte gegessen).",
+      errorType: "word-order",
+    },
+  ];

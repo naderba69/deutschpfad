@@ -73,9 +73,34 @@ export function getDb(): Promise<IDBPDatabase<DeutschPfadDB>> {
           db.createObjectStore("llm-usage", { keyPath: "key" });
         }
       },
+      /**
+       * اتصال خارجي (تبويب آخر، أو أداة اختبار/تدقيق) يريد ترقية القاعدة أو حذفها
+       * وهو محجوب بنا → نُغلق اتصالنا بدل حجبه إلى الأبد، ونُصفّر الوعد ليُعاد
+       * الفتح عند أول استخدام لاحق. هذه هي الممارسة الموصى بها في IndexedDB
+       * (versionchange/blocking) وكان غيابها يُجمّد أي عملية حذف/ترقية خارجية.
+       */
+      blocking() {
+        void closeDb();
+      },
+      /** أُغلق الاتصال من الخارج (ترقية/تصفير المتصفح) → أعِد الفتح عند الحاجة */
+      terminated() {
+        dbPromise = null;
+      },
     });
   }
   return dbPromise;
+}
+
+/** إغلاق الاتصال والسماح لعملية خارجية (ترقية/حذف) بالمتابعة */
+export async function closeDb(): Promise<void> {
+  const pending = dbPromise;
+  dbPromise = null;
+  if (!pending) return;
+  try {
+    (await pending).close();
+  } catch {
+    // الاتصال أُغلق مسبقاً أو لم يُفتح — لا شيء نفعله
+  }
 }
 
 /** قراءة سجل من مخزن progress/settings */

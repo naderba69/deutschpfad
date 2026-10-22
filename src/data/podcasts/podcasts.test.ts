@@ -26,3 +26,71 @@ describe("مكتبة البودكاست التعليمي", () => {
     }
   });
 });
+
+/* ═══════════════════════════════════════════════════════════
+   شروح الخيارات — مقاييس دفعة 52 (2026-10-16)
+   قبل الإصلاح: **50 شرحاً دائرياً** كان نصّها «لا — الصواب هو ما ذُكر في
+   الحلقة» (لا يقول شيئاً للمتعلم)، و**12 خياراً صحيحاً** بشرح عربي بلا دليل
+   ألماني. أُصلحت الـ37 سؤالاً كلها بمقتبس حرفي من الحلقة، ويقفل هذا القسم:
+     · كل خيار له شرح غير فارغ.
+     · كل خيار **صحيح** يحمل دليلاً ألمانياً (كلمة ≥3 أحرف).
+     · لا شرح دائري (الصيغة القديمة ممنوعة نصّاً).
+     · **كل اقتباس بين «» موجود حرفياً في نصّ الحلقة** — مانع الاقتباس المُفبرك.
+   ═══════════════════════════════════════════════════════════ */
+describe("شروح البودكاست — دليل ألماني واقتباس أمين", () => {
+  const GERMAN_EVIDENCE = /[A-Za-zÄÖÜäöüß]{3,}/;
+  const SPAN = /«([^»]+)»/g;
+  const normalize = (s: string) =>
+    s
+      .replace(/[„“”]/g, '"')
+      .replace(/[–—]/g, "-")
+      .replace(/\s+/g, " ")
+      .replace(/[.\s]+$/, "")
+      .trim();
+
+  it("كل خيار له شرح، وكل خيار صحيح بشرح يحمل دليلاً ألمانياً", () => {
+    const problems: string[] = [];
+    for (const p of PODCASTS) {
+      p.questions.forEach((q, i) => {
+        q.options.forEach((o, j) => {
+          const at = `${p.id} سؤال ${i + 1} خيار ${j + 1}`;
+          if (!o.explanation?.trim()) problems.push(`${at}: شرح مفقود`);
+          else if (o.correct && !GERMAN_EVIDENCE.test(o.explanation)) {
+            problems.push(`${at}: خيار صحيح بشرح بلا دليل ألماني «${o.explanation}»`);
+          }
+        });
+      });
+    }
+    expect(problems).toEqual([]);
+  });
+
+  it("لا شرح دائري («الصواب هو ما ذُكر في الحلقة»)", () => {
+    const circular: string[] = [];
+    for (const p of PODCASTS) {
+      p.questions.forEach((q, i) => {
+        q.options.forEach((o, j) => {
+          if (/الصواب هو ما ذُكر/.test(o.explanation ?? "")) circular.push(`${p.id} سؤال ${i + 1} خيار ${j + 1}`);
+        });
+      });
+    }
+    expect(circular).toEqual([]);
+  });
+
+  it("كل اقتباس بين «» موجود حرفياً في نصّ الحلقة", () => {
+    const problems: string[] = [];
+    let spansChecked = 0;
+    for (const p of PODCASTS) {
+      const script = normalize(p.script);
+      for (const q of p.questions) {
+        for (const o of q.options) {
+          for (const span of [...(o.explanation ?? "").matchAll(SPAN)].map((m) => normalize(m[1])).filter((s) => GERMAN_EVIDENCE.test(s))) {
+            spansChecked += 1;
+            if (!script.includes(span)) problems.push(`${p.id}: «${span}» ليس في الحلقة`);
+          }
+        }
+      }
+    }
+    expect(problems).toEqual([]);
+    expect(spansChecked).toBeGreaterThan(40); // حارس غير فارغ
+  });
+});
