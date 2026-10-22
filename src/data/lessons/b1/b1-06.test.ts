@@ -27,6 +27,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     key: "der Kulturschock",
   },
   q5: { options: ["ihre Heimat", "das Wetter", "die Arbeit", "das Essen"], key: "ihre Heimat" },
+  q6: { options: ["Zeit und Offenheit", "Mut und neue Kontakte", "Arbeit und viele Reisen", "Sprache und gute Noten"], key: "Zeit und Offenheit" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -165,7 +166,8 @@ describe("B1-06 lesson content audit", () => {
     expect(goal("z1").evidence?.exerciseIds).toEqual(["w1", "e7"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e6", "e9", "m2", "m4", "m6", "w2"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["q2", "q3", "w4"]);
-    expect(goal("z4").evidence?.exerciseIds).toEqual(["q4", "q5", "e11", "e12", "e13"]);
+    expect(goal("z4").evidence?.exerciseIds).toEqual(["q4", "q5", "q6", "e11", "e12", "e13"]);
+    expect(goal("z4").evidence?.taskIds).toEqual(["listening:l3:q4", "listening:l3:q5", "listening:l3:q6", "practice:b1-06:e11", "practice:b1-06:e12", "practice:b1-06:e13"]);
     for (const item of lessonB106.lernziele) {
       expect(item.evidence?.completion, `${item.id} completion`).toBe("all-correct");
     }
@@ -358,6 +360,7 @@ describe("B1-06 lesson content audit", () => {
       "l2:q3",
       "l3:q4",
       "l3:q5",
+      "l3:q6",
     ]);
   });
 

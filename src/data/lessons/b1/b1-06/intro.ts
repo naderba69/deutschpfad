@@ -52,15 +52,16 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أفهم حديثاً عن الوطن والحنين وصدمة الثقافة، وأستخدم عباراتها في جمل مرتبة وصحيحة.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["q4", "q5", "e11", "e12", "e13"],
+        exerciseIds: ["q4", "q5", "q6", "e11", "e12", "e13"],
         taskIds: [
           "listening:l3:q4",
           "listening:l3:q5",
+          "listening:l3:q6",
           "practice:b1-06:e11",
           "practice:b1-06:e12",
           "practice:b1-06:e13",
         ],
-        labelAr: "أجيب صحيحاً عن q4 وq5 بعد الاستماع إلى l3، وأرتب وأكمل e11 وe12 وe13 بالفعل والكلمات الصحيحة. كشف النص لا يُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن q4 وq5 وq6 بعد الاستماع إلى l3، وأرتب وأكمل e11 وe12 وe13 بالفعل والكلمات الصحيحة. كشف النص لا يُحتسب أداءً.",
       },
     },
   ];
