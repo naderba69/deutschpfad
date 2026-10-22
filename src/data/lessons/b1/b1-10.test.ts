@@ -37,6 +37,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     options: ["eine Firma gründen", "ein Haus kaufen", "nach Deutschland gehen", "ein Buch schreiben"],
     key: "eine Firma gründen",
   },
+  q4: { options: ["Mitte September vor Kursbeginn", "Anfang August in den Ferien", "Ende Oktober nach dem Start", "Erst im nächsten Frühjahr"], key: "Mitte September vor Kursbeginn" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -178,7 +179,7 @@ describe("B1-10 lesson content audit", () => {
 
   it("uses only evaluable performances as goals, each all-correct", () => {
     expect(lessonB110.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e4", "e6", "e7", "m1", "m5", "w1"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e2", "e10", "m3", "w2"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["m2", "w1", "w3"]);
@@ -213,7 +214,7 @@ describe("B1-10 lesson content audit", () => {
       lessonB110.listening.questions.map(({ id, itemId }) =>
         getListeningQuestionTaskId("b1-10", itemId, id, false),
       ),
-    ).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"]);
+    ).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"]);
     expect(getListeningQuestionTaskId("b1-10", "l1", "q1", true)).toBe("listening-transcript:b1-10:l1:q1");
   });
 
