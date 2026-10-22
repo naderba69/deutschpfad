@@ -25,6 +25,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     options: ["nachdem sie die Programme gelesen hat", "schon lange vor der eigentlichen Wahl", "während des ganzen Wahlkampfs", "morgen früh um acht Uhr im Büro"],
     key: "nachdem sie die Programme gelesen hat",
   },
+  q4: { options: ["gute Verbindungen mit dem Bus", "mehr Parkplätze im Stadtzentrum", "eine neue Bahn zum Flughafen", "günstige Fahrräder für alle"], key: "gute Verbindungen mit dem Bus" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -143,7 +144,7 @@ describe("B1-07 lesson content audit", () => {
 
   it("uses only evaluable performances as goals, each all-correct", () => {
     expect(lessonB107.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
-    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l2:q2", "listening:l2:q3"]);
+    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e2", "e7", "m1", "m3", "m5", "w2"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e13", "e14"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["e11", "e12", "w3"]);
@@ -349,6 +350,7 @@ describe("B1-07 lesson content audit", () => {
       "l1:q1",
       "l2:q2",
       "l2:q3",
+      "l3:q4",
     ]);
   });
 
