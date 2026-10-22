@@ -56,6 +56,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     options: ["Ein günstigeres Monatsticket", "Einen neuen Zug nach Berlin", "Kostenlose Fahrräder für alle"],
     key: "Ein günstigeres Monatsticket",
   },
+  "lsq-b1-11-6": { options: ["An der Haltestelle Rathaus", "Am Bahnhof gegenüber", "Auf dem Platz am Markt"], key: "An der Haltestelle Rathaus" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -167,7 +168,7 @@ describe("B1-11 lesson content audit", () => {
   });
 
   it("adds a second disclosed TTS listening scene with six playable MP3 lines", () => {
-    expect(lessonB111.listening.items).toHaveLength(2);
+    expect(lessonB111.listening.items).toHaveLength(3);
     const item = lessonB111.listening.items.find((candidate) => candidate.id === "ls-b1-11-2");
     expect(item?.title).toBe("حوار: خطة الحافلات الجديدة");
     expect(item?.audioNoteAr).toContain("مولّدة آلياً (TTS)");
@@ -177,8 +178,17 @@ describe("B1-11 lesson content audit", () => {
       expect(line.audioSrc?.endsWith(".mp3")).toBe(true);
       expect(isPlayableMp3(path.join(process.cwd(), "public", line.audioSrc!.slice(1))), line.audioSrc).toBe(true);
     }
-    expect(lessonB111.listening.questions).toHaveLength(5);
+    expect(lessonB111.listening.questions).toHaveLength(6);
     expect(lessonB111.listening.questions.filter((question) => question.itemId === "ls-b1-11-2")).toHaveLength(3);
+    const newItem = lessonB111.listening.items.find((candidate) => candidate.id === "ls-b1-11-3");
+    expect(newItem?.audioNoteAr).toContain("مولّدة آلياً (TTS)");
+    expect(newItem?.lines).toHaveLength(6);
+    for (const line of newItem?.lines ?? []) {
+      expect(line.audioSrc).toContain("/audio/lessons/b1-11/ls-b1-11-3-");
+      expect(line.audioSrc?.endsWith(".mp3")).toBe(true);
+      expect(isPlayableMp3(path.join(process.cwd(), "public", line.audioSrc!.slice(1))), line.audioSrc).toBe(true);
+    }
+    expect(lessonB111.listening.questions.filter((question) => question.itemId === "ls-b1-11-3")).toHaveLength(1);
   });
 
   it("uses only evaluable performances as goals, each all-correct", () => {
@@ -198,6 +208,7 @@ describe("B1-11 lesson content audit", () => {
       "lsq-b1-11-3",
       "lsq-b1-11-4",
       "lsq-b1-11-5",
+      "lsq-b1-11-6",
     ]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["wr-b1-11-1", "wr-b1-11-2"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["ex-b1-11-5", "ex-b1-11-7"]);
@@ -238,6 +249,7 @@ describe("B1-11 lesson content audit", () => {
       "listening:ls-b1-11-2:lsq-b1-11-3",
       "listening:ls-b1-11-2:lsq-b1-11-4",
       "listening:ls-b1-11-2:lsq-b1-11-5",
+      "listening:ls-b1-11-3:lsq-b1-11-6",
     ]);
     expect(getListeningQuestionTaskId("b1-11", "ls-b1-11-1", "lsq-b1-11-1", true)).toBe(
       "listening-transcript:b1-11:ls-b1-11-1:lsq-b1-11-1",

@@ -28,6 +28,19 @@ export const listening: Lesson["listening"] = {
           { speaker: "Jonas", de: "Dann könnte die Stadt ein günstigeres Monatsticket anbieten.", ar: "عندها يمكن للمدينة أن تعرض تذكرة شهرية أرخص.", audioSrc: "/audio/lessons/b1-11/ls-b1-11-2-6.mp3" },
         ],
       },
+      {
+        id: "ls-b1-11-3",
+        title: "تحويل مسار الحافلة",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً.",
+        lines: [
+          { speaker: "Mira", de: "Hast du gehört, dass die Linie vier nächste Woche wegen Bauarbeiten anders fährt?", ar: "هل سمعت أن خط الحافلة رقم أربعة سيسلك مساراً مختلفاً الأسبوع المقبل بسبب أعمال البناء؟", audioSrc: "/audio/lessons/b1-11/ls-b1-11-3-1.mp3" },
+          { speaker: "Jonas", de: "Ja. Die Haltestelle Markt wird vorübergehend nicht bedient.", ar: "نعم. لن تخدم الحافلة محطة السوق مؤقتاً.", audioSrc: "/audio/lessons/b1-11/ls-b1-11-3-2.mp3" },
+          { speaker: "Mira", de: "Wo soll ich dann in den Bus einsteigen?", ar: "أين ينبغي أن أستقل الحافلة إذاً؟", audioSrc: "/audio/lessons/b1-11/ls-b1-11-3-3.mp3" },
+          { speaker: "Jonas", de: "An der Haltestelle Rathaus, zwei Straßen weiter.", ar: "من محطة البلدية، على بُعد شارعين.", audioSrc: "/audio/lessons/b1-11/ls-b1-11-3-4.mp3" },
+          { speaker: "Mira", de: "Und wie lange dauert die Umleitung?", ar: "وإلى متى سيستمر تحويل المسار؟", audioSrc: "/audio/lessons/b1-11/ls-b1-11-3-5.mp3" },
+          { speaker: "Jonas", de: "Bis Freitag. Die Stadt informiert auf ihrer Internetseite über alle Änderungen.", ar: "حتى يوم الجمعة. تنشر المدينة جميع التغييرات على موقعها الإلكتروني.", audioSrc: "/audio/lessons/b1-11/ls-b1-11-3-6.mp3" },
+        ],
+      },
     ],
     questions: [
       {
@@ -102,6 +115,19 @@ export const listening: Lesson["listening"] = {
         errorType: "vocabulary",
         explanation: "يختم يوناس باقتراح: «ein günstigeres Monatsticket anbieten».",
         optionExplanations: [undefined, "لا — قطار برلين لم يُذكر؛ الاقتراح تذكرة شهرية أرخص.", "لا — الدراجات المجانية لم تُذكر؛ والاقتراح واضح في آخر جملة."],
+      },
+      {
+        type: "multiple-choice",
+        id: "lsq-b1-11-6",
+        instructionAr: "استمع إلى الحوار عن تحويل مسار الحافلة:",
+        itemId: "ls-b1-11-3",
+        questionDe: "Wo soll Mira in den Bus einsteigen?",
+        questionAr: "أين ينبغي أن تستقل ميرا الحافلة؟",
+        options: ["An der Haltestelle Rathaus", "Am Bahnhof gegenüber", "Auf dem Platz am Markt"],
+        correctIndex: 0,
+        errorType: "vocabulary",
+        explanation: "يقول يوناس: «An der Haltestelle Rathaus, zwei Straßen weiter».",
+        optionExplanations: [undefined, "المحطة المقابلة لمحطة القطار لم ترد في الحوار؛ ذُكرت محطة البلدية.", "محطة السوق هي التي لن يخدمها الخط مؤقتاً؛ البديل هو محطة البلدية."],
       },
     ],
   };

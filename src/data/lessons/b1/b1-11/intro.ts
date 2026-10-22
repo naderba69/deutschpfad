@@ -30,13 +30,14 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أفهم معلومات مهمة من رسالة قصيرة وحوار عن تغييرات في الحياة اليومية.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["lsq-b1-11-1", "lsq-b1-11-2", "lsq-b1-11-3", "lsq-b1-11-4", "lsq-b1-11-5"],
+        exerciseIds: ["lsq-b1-11-1", "lsq-b1-11-2", "lsq-b1-11-3", "lsq-b1-11-4", "lsq-b1-11-5", "lsq-b1-11-6"],
         taskIds: [
           "listening:ls-b1-11-1:lsq-b1-11-1",
           "listening:ls-b1-11-1:lsq-b1-11-2",
           "listening:ls-b1-11-2:lsq-b1-11-3",
           "listening:ls-b1-11-2:lsq-b1-11-4",
           "listening:ls-b1-11-2:lsq-b1-11-5",
+          "listening:ls-b1-11-3:lsq-b1-11-6",
         ],
         labelAr: "أجيب صحيحاً عن أسئلة المشهدين بعد الاستماع دون كشف النص؛ كشف النص لا يُحتسب أداءً.",
       },
