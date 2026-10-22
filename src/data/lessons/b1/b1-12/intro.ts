@@ -65,9 +65,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أفهم الأهداف والأسباب في حوار قصير.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
-        labelAr: "أجيب صحيحاً عن الأسئلة الثلاثة بعد الاستماع إلى الحوارين، دون كشف النص.",
+        exerciseIds: ["q1", "q2", "q3", "q4"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"],
+        labelAr: "أجيب صحيحاً عن الأسئلة الأربعة بعد الاستماع إلى الحوارات الثلاثة، دون كشف النص.",
       },
     },
   ];
