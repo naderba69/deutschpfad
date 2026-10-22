@@ -10,9 +10,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       de: "Ich kann Wünsche, Reue und Ratschläge in einem kurzen Gespräch verstehen.",
       ar: "أن أفهم الأمنيات والندم والنصيحة في حوار قصير عن الصحة.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3"],
-        labelAr: "أجب صحيحاً عن q1 بعد الاستماع إلى l1، وعن q2 وq3 بعد الاستماع إلى l2، دون كشف التفريغ. كشف النص لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6"],
+        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4", "listening:l3:q5", "listening:l3:q6"],
+        labelAr: "أجب صحيحاً عن q1–q6 بعد الاستماع إلى الحوارات l1–l3 دون كشف التفريغ. كشف النص لا يُحتسب أداءً.",
         completion: "all-correct",
       },
     },
