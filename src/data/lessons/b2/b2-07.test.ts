@@ -28,6 +28,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     options: ["Wir brauchen nachhaltige Technik", "Wir brauchen keine Technik", "Technik ist nutzlos", "Wir brauchen mehr Geld"],
     key: "Wir brauchen nachhaltige Technik",
   },
+  q4: { options: ["die Formen des Zusammenlebens", "die Grundfragen des Lebens", "die Bedeutung von Freundschaft", "die menschlichen Bedürfnisse"], key: "die Formen des Zusammenlebens" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -157,7 +158,7 @@ describe("B2-07 lesson content audit", () => {
 
   it("uses only evaluable performances as goals, each all-correct", () => {
     expect(lessonB207.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q4"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e2", "e4", "e5", "m1", "m2", "w1", "w2"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e6", "e7", "m5"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["q2", "q3"]);
@@ -185,8 +186,9 @@ describe("B2-07 lesson content audit", () => {
   it("maps listening evidence to transcript-free task IDs only", () => {
     expect(getListeningQuestionTaskId("b2-07", "l1", "q1", false)).toBe("listening:l1:q1");
     expect(getListeningQuestionTaskId("b2-07", "l2", "q2", false)).toBe("listening:l2:q2");
+    expect(getListeningQuestionTaskId("b2-07", "l3", "q4", false)).toBe("listening:l3:q4");
     expect(getListeningQuestionTaskId("b2-07", "l2", "q3", true)).toBe("listening-transcript:b2-07:l2:q3");
-    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1"]);
+    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l3:q4"]);
     expect(goal("z4").evidence?.taskIds).toEqual(["listening:l2:q2", "listening:l2:q3"]);
     const transcriptIds = lessonB207.lernziele.flatMap(
       (item) => item.evidence?.taskIds?.filter((taskId) => taskId.startsWith("listening-transcript:")) ?? [],

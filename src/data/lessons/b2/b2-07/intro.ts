@@ -11,9 +11,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أفهم حديثاً عن موضوع فلسفي مجرد: ماذا يعني حياة جيدة.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["q1"],
-        taskIds: ["listening:l1:q1"],
-        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q4"],
+        taskIds: ["listening:l1:q1", "listening:l3:q4"],
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 وl3 في q4، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
