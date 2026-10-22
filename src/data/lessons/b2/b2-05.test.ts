@@ -27,6 +27,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   q1: { options: ["indem man aktiv zuhört", "indem man spricht", "indem man schweigt", "indem man schreibt"], key: "indem man aktiv zuhört" },
   q2: { options: ["morgen, es sei denn, es regnet stark", "heute Abend, gleich nach der Arbeit", "übermorgen, wenn alle Zeit haben", "nie, das Treffen wurde abgesagt"], key: "morgen, es sei denn, es regnet stark" },
   q3: { options: ["je nachdem, wie das Wetter wird", "sofort, noch in dieser Stunde", "morgen früh, noch vor der Arbeit", "gar nicht, sie entscheiden später"], key: "je nachdem, wie das Wetter wird" },
+  q4: { options: ["indem sie alles klar und respektvoll besprechen", "indem sie sofort neue Aufgaben verteilen", "indem sie das Gespräch beenden", "indem sie ohne Rückfragen entscheiden"], key: "indem sie alles klar und respektvoll besprechen" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -180,7 +181,7 @@ describe("B2-05 lesson content audit", () => {
 
   it("uses only evaluable performances as goals, each all-correct", () => {
     expect(lessonB205.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4", "z5"]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q4"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e2", "e4", "e7", "m1", "m3", "w1", "w2"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e6", "m2", "q2", "q3"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["e11", "e12", "e13", "m6", "m7"]);
@@ -210,8 +211,9 @@ describe("B2-05 lesson content audit", () => {
     expect(getListeningQuestionTaskId("b2-05", "l1", "q1", false)).toBe("listening:l1:q1");
     expect(getListeningQuestionTaskId("b2-05", "l2", "q2", false)).toBe("listening:l2:q2");
     expect(getListeningQuestionTaskId("b2-05", "l2", "q3", false)).toBe("listening:l2:q3");
+    expect(getListeningQuestionTaskId("b2-05", "l3", "q4", false)).toBe("listening:l3:q4");
     expect(getListeningQuestionTaskId("b2-05", "l1", "q1", true)).toBe("listening-transcript:b2-05:l1:q1");
-    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1"]);
+    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l3:q4"]);
     expect(goal("z3").evidence?.taskIds?.slice(2)).toEqual(["listening:l2:q2", "listening:l2:q3"]);
     const transcriptIds = lessonB205.lernziele.flatMap(
       (item) => item.evidence?.taskIds?.filter((taskId) => taskId.startsWith("listening-transcript:")) ?? [],
