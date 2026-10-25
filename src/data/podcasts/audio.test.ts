@@ -89,13 +89,17 @@ describe("صوت البودكاست — القرص يطابق البيان", () 
     expect(missing, `مُعلَن في البيان ولا ملف له: ${missing.join(" · ")}`).toEqual([]);
   });
 
-  it("لا ملف يتيم على القرص خارج البيان", () => {
+  it("لا ملف يتيم على القرص خارج البيان أو قائمة الحلقات المعلّقة", () => {
     if (!fs.existsSync(AUDIO_DIR)) return; // لم يُنتَج شيء بعد — حالة صادقة
     const declared = new Set(clips.map((c) => `${c.id}.mp3`));
+    const pending = new Set(PENDING_PODCAST_AUDIO.map((id) => `${id}.mp3`));
     const onDisk = fs.readdirSync(AUDIO_DIR).filter((f) => f.endsWith(".mp3"));
-    const orphans = onDisk.filter((f) => !declared.has(f));
+    const unservedPending = onDisk.filter((f) => pending.has(f));
+    const orphans = onDisk.filter((f) => !declared.has(f) && !pending.has(f));
     expect(orphans, `ملفات بلا بيان: ${orphans.join(" · ")}`).toEqual([]);
-    expect(onDisk.length, "عدد الملفات على القرص").toBe(clips.length);
+    // تسجيل p-b1-gesundheit موجود لكنه غير مُقدَّم بعد تغيير نص الحلقة؛ لا يُربط بالمشغّل.
+    expect(unservedPending).toEqual(["p-b1-gesundheit.mp3"]);
+    expect(onDisk.length, "الملفات المُعلنة مع أصول الحلقات المعلّقة").toBe(clips.length + unservedPending.length);
   });
 
   it("عدّاد الإنتاج غير هامشي: ≥ 2 مقطعين، والمتبقّي مُسمّى بلا فجوة", () => {

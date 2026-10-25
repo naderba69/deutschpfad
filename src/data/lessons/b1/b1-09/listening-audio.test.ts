@@ -26,9 +26,15 @@ describe("B1-09 listening audio", () => {
       Array.from({ length: 5 }, (_, index) => `/audio/lessons/b1-09/ls-b1-09-3-${index + 2}.mp3`),
     );
     const audioDir = path.join(process.cwd(), "public", "audio", "lessons", "b1-09");
-    expect(fs.readdirSync(audioDir).filter((file) => file.endsWith(".mp3")).sort()).toEqual(
-      paths?.map((audioSrc) => path.basename(audioSrc ?? "")).sort(),
-    );
+    const onDisk = fs.readdirSync(audioDir).filter((file) => file.endsWith(".mp3")).sort();
+    const retiredFirstClip = "ls-b1-09-3-1.mp3";
+    expect(onDisk).toEqual([
+      ...(paths?.map((audioSrc) => path.basename(audioSrc ?? "")) ?? []),
+      retiredFirstClip,
+    ].sort());
+    // The first dialogue line intentionally uses browser TTS; an old MP3 on disk is not linked.
+    expect(item?.lines[0].audioSrc).toBeUndefined();
+    expect(isPlayableMp3(path.join(audioDir, retiredFirstClip))).toBe(true);
     for (const audioSrc of paths ?? []) {
       if (!audioSrc) throw new Error("B1-09 l3 has an audio-less turn");
       const file = path.join(process.cwd(), "public", audioSrc.slice(1));
