@@ -49,9 +49,10 @@ test("زرّ «استمع للحلقة» يجلب mp3 فعلياً — لعين�
     if (res.url().includes("/audio/podcasts/")) clips.push({ url: res.url(), status: res.status() });
   });
 
-  // عينة عبر المستويات: A1 وA2 بصوت voice-02، وB1 وB2 بصوت voice-03
-  const sample = ["p-a1-markt", "p-a2-zug", "p-b1-gesundheit", "p-b2-migration"];
-  const titles = ["في السوق", "السفر بالقطار", "العيش بصحة", "الهجرة والهوية"];
+  // عينة عبر المستويات: A1 وA2 بصوت voice-02، وB1 وB2 بصوت voice-03.
+  // استُبعدت «العيش بصحة» لأن تسجيلها معلّق بعد تحديث النص المرجعي.
+  const sample = ["p-a1-markt", "p-a2-zug", "p-b1-umwelt", "p-b2-migration"];
+  const titles = ["في السوق", "السفر بالقطار", "هل يجب أن نعيش بطريقة صديقة للبيئة؟", "الهجرة والهوية"];
   for (const title of titles) {
     await page.goto("/podcasts");
     const card = page.locator("section button", { hasText: title }).first();
