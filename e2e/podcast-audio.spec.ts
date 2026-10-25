@@ -16,9 +16,6 @@ const ARABIC_TITLES = {
   failed: "تعذّر تشغيل التسجيل",
 };
 
-// تسجيل هذه الحلقة معلّق لأن نصها تغيّر؛ لا نعرض الملف القديم على أنه مطابق.
-const PENDING_TITLES = new Set(["العيش بصحة"]);
-
 test("كل حلقة بودكاست تعلن حالة التسجيل الصحيحة — منتج أو معلّق", async ({ page }) => {
   await page.goto("/podcasts");
   const cards = page.locator("section button h3");
@@ -32,13 +29,8 @@ test("كل حلقة بودكاست تعلن حالة التسجيل الصحيح
   for (const title of titles) {
     await page.goto("/podcasts");
     await page.locator("section button", { hasText: title }).first().click();
-    if (PENDING_TITLES.has(title)) {
-      await expect(page.getByText(ARABIC_TITLES.notProduced), `${title}: يجب أن يعلن بوضوح أن التسجيل غير متاح`).toBeVisible();
-      expect(await page.getByText(ARABIC_TITLES.produced).count(), `${title}: لا يُعرض الملف القديم على أنه مطابق للنص`).toBe(0);
-    } else {
-      await expect(page.getByText(ARABIC_TITLES.produced), `${title}: لا يعلن تسجيل TTS منتجاً`).toBeVisible();
-      expect(await page.getByText(ARABIC_TITLES.notProduced).count(), `${title}: يعلن حلقة غير مُنتَجة`).toBe(0);
-    }
+    await expect(page.getByText(ARABIC_TITLES.produced), `${title}: لا يعلن تسجيل TTS منتجاً`).toBeVisible();
+    expect(await page.getByText(ARABIC_TITLES.notProduced).count(), `${title}: يعلن حلقة غير مُنتَجة`).toBe(0);
     expect(await page.getByText(ARABIC_TITLES.failed).count(), `${title}: التسجيل فشل فسقط إلى صوت الجهاز`).toBe(0);
   }
 });
@@ -49,10 +41,9 @@ test("زرّ «استمع للحلقة» يجلب mp3 فعلياً — لعين�
     if (res.url().includes("/audio/podcasts/")) clips.push({ url: res.url(), status: res.status() });
   });
 
-  // عينة عبر المستويات: A1 وA2 بصوت voice-02، وB1 وB2 بصوت voice-03.
-  // استُبعدت «العيش بصحة» لأن تسجيلها معلّق بعد تحديث النص المرجعي.
-  const sample = ["p-a1-markt", "p-a2-zug", "p-b1-umwelt", "p-b2-migration"];
-  const titles = ["في السوق", "السفر بالقطار", "هل يجب أن نعيش بطريقة صديقة للبيئة؟", "الهجرة والهوية"];
+  // عينة عبر المستويات؛ تشمل تسجيل B1 الصحي الذي أُعيد إنتاجه بالنص المرجعي المحدّث.
+  const sample = ["p-a1-markt", "p-a2-zug", "p-b1-gesundheit", "p-b2-migration"];
+  const titles = ["في السوق", "السفر بالقطار", "العيش بصحة", "الهجرة والهوية"];
   for (const title of titles) {
     await page.goto("/podcasts");
     const card = page.locator("section button", { hasText: title }).first();

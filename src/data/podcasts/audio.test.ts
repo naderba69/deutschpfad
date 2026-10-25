@@ -47,11 +47,11 @@ describe("صوت البودكاست — البيان مشتقّ من بيانا�
     }
   });
 
-  it("does not serve the old health recording after its script changed", () => {
-    expect(PENDING_PODCAST_AUDIO).toContain("p-b1-gesundheit");
-    expect(PRODUCED_PODCAST_AUDIO).not.toContain("p-b1-gesundheit");
-    expect(podcastAudioPath("p-b1-gesundheit")).toBeUndefined();
-    expect(clips.some(({ id }) => id === "p-b1-gesundheit")).toBe(false);
+  it("serves the regenerated health recording against the current script", () => {
+    expect(PENDING_PODCAST_AUDIO).not.toContain("p-b1-gesundheit");
+    expect(PRODUCED_PODCAST_AUDIO).toContain("p-b1-gesundheit");
+    expect(podcastAudioPath("p-b1-gesundheit")).toBe("/audio/podcasts/p-b1-gesundheit.mp3");
+    expect(clips.some(({ id, text }) => id === "p-b1-gesundheit" && text === PODCASTS.find((ep) => ep.id === id)?.script)).toBe(true);
   });
 
   it("كل معرّف مُعلَن موجود في `PODCASTS` ولا تكرار في البيان", () => {
@@ -97,9 +97,8 @@ describe("صوت البودكاست — القرص يطابق البيان", () 
     const unservedPending = onDisk.filter((f) => pending.has(f));
     const orphans = onDisk.filter((f) => !declared.has(f) && !pending.has(f));
     expect(orphans, `ملفات بلا بيان: ${orphans.join(" · ")}`).toEqual([]);
-    // تسجيل p-b1-gesundheit موجود لكنه غير مُقدَّم بعد تغيير نص الحلقة؛ لا يُربط بالمشغّل.
-    expect(unservedPending).toEqual(["p-b1-gesundheit.mp3"]);
-    expect(onDisk.length, "الملفات المُعلنة مع أصول الحلقات المعلّقة").toBe(clips.length + unservedPending.length);
+    expect(unservedPending, "لا ملفات معلّقة بعد إعادة توليد تسجيل الصحة").toEqual([]);
+    expect(onDisk.length, "كل ملفات الصوت على القرص لها بيان").toBe(clips.length);
   });
 
   it("عدّاد الإنتاج غير هامشي: ≥ 2 مقطعين، والمتبقّي مُسمّى بلا فجوة", () => {
