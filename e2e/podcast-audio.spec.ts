@@ -3,10 +3,9 @@ import { expect, test } from "@playwright/test";
 /**
  * صوت البودكاست في المتصفح — لا في البيان وحده.
  *
- * الدفعة 76 (2026-10-17) أتتمت الإنتاج: 20 حلقة / 20 تسجيلاً، وصفر حلقة على نطق
- * الجهاز. هذا الحارس يقفل تلك الحالة من جهة المتعلم: كل بطاقة حلقة تفتح على
- * «تسجيل مُنتَج لهذه الحلقة»، ولا واحدة تعلن «لم يُنتَج تسجيل لهذه الحلقة بعد»،
- * وزرّ «استمع للحلقة» يجلب ملف mp3 فعلاً بحالة 200.
+ * الحارس يقفل صدق ما يُعلَن من جهة المتعلم: الحلقات ذات التسجيل المنتج تعلن
+ * أنه TTS لا بشري، والحلقة التي عُلّق تسجيلها بعد تحديث النص تبقى معلنة بوضوح
+ * على أنها غير منتجة بعد. كما يتحقق اختبار مستقل من جلب ملفات MP3 للعينة.
  *
  * لماذا هنا وليس في اختبار وحدة فقط: `audio.test.ts` يحرس البيان مقابل القرص،
  * لكن الصدق المعلَن في الواجهة (وهو موضع هذه الدفعة) لا يُرى إلا في المتصفح.
@@ -17,7 +16,10 @@ const ARABIC_TITLES = {
   failed: "تعذّر تشغيل التسجيل",
 };
 
-test("كل حلقات البودكاست تعلن تسجيلاً مُنتَجاً — لا نطق جهاز بعد إتمام الإنتاج", async ({ page }) => {
+// تسجيل هذه الحلقة معلّق لأن نصها تغيّر؛ لا نعرض الملف القديم على أنه مطابق.
+const PENDING_TITLES = new Set(["العيش بصحة"]);
+
+test("كل حلقة بودكاست تعلن حالة التسجيل الصحيحة — منتج أو معلّق", async ({ page }) => {
   await page.goto("/podcasts");
   const cards = page.locator("section button h3");
   const total = await cards.count();
@@ -30,8 +32,13 @@ test("كل حلقات البودكاست تعلن تسجيلاً مُنتَجا�
   for (const title of titles) {
     await page.goto("/podcasts");
     await page.locator("section button", { hasText: title }).first().click();
-    await expect(page.getByText(ARABIC_TITLES.produced), `${title}: لا يعلن تسجيلاً مُنتَجاً`).toBeVisible();
-    expect(await page.getByText(ARABIC_TITLES.notProduced).count(), `${title}: يعلن حلقة غير مُنتَجة`).toBe(0);
+    if (PENDING_TITLES.has(title)) {
+      await expect(page.getByText(ARABIC_TITLES.notProduced), `${title}: يجب أن يعلن بوضوح أن التسجيل غير متاح`).toBeVisible();
+      expect(await page.getByText(ARABIC_TITLES.produced).count(), `${title}: لا يُعرض الملف القديم على أنه مطابق للنص`).toBe(0);
+    } else {
+      await expect(page.getByText(ARABIC_TITLES.produced), `${title}: لا يعلن تسجيل TTS منتجاً`).toBeVisible();
+      expect(await page.getByText(ARABIC_TITLES.notProduced).count(), `${title}: يعلن حلقة غير مُنتَجة`).toBe(0);
+    }
     expect(await page.getByText(ARABIC_TITLES.failed).count(), `${title}: التسجيل فشل فسقط إلى صوت الجهاز`).toBe(0);
   }
 });
