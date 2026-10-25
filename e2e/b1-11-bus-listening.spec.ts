@@ -7,7 +7,7 @@ test("B1-11: حوار النقل يعلن TTS ويشغّل MP3", async ({ page }
 
   const section = page.locator("#lesson-section-hoerverstehen");
   await section.scrollIntoViewIfNeeded();
-  await section.getByRole("tab", { name: "حوار: خطة الحافلات الجديدة" }).click();
+  await section.getByRole("tab", { name: "حوار خيالي: خطة الحافلات الجديدة" }).click();
   await expect(section.getByTestId("listening-audio-disclosure")).toContainText("مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً");
 
   const responsePromise = page.waitForResponse((response) =>
