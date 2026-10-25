@@ -77,7 +77,7 @@ test("التفاعل: اختيار الرد في a1-01 ينتج ردّ المح�
   // انتقل عبر الخطوات بالتسلسل (الوساطة ثم التفاعل — آخر قسمين)
   for (let i = 0; i < 20; i++) {
     const h2 = await page.evaluate(() => document.querySelector("#lesson-step-content h2")?.textContent ?? "");
-    if (h2.includes("تفاعل حي")) break;
+    if (h2.includes("تفاعل موجّه")) break;
     const nextBtn = page.getByRole("button", { name: /التالي:|أتممت هذا القسم/ }).last();
     if (await nextBtn.isVisible().catch(() => false)) {
       await nextBtn.click().catch(() => {});
