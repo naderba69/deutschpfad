@@ -14,6 +14,7 @@ import {Input} from "@/components/ui/input";
 import {B2_EXAM_TOPICS, B2_TOPIC_VOCAB, getB2TopicWords, type B2ExamTopic} from "@/data/vocabulary/b2-topics";
 import type { VocabEntry } from "@/data/vocabulary/a1";
 import {addManualCard} from "@/lib/srs/flashcard-service";
+import {VocabKindBadge} from "@/components/shared/vocab-kind";
 import {cn} from "@/lib/utils";
 
 export function B2TopicsClient() {
@@ -105,21 +106,7 @@ export function B2TopicsClient() {
                   <span className="font-de text-sm font-bold" dir="ltr" lang="de">
                     {w.de}
                   </span>
-                  {w.g && (w.g === "der" || w.g === "die" || w.g === "das") && (
-                    <span
-                      className={cn(
-                        "rounded px-1 py-0.5 text-[11px] font-bold",
-                        w.g === "der"
-                          ? "bg-sky-100 text-sky-700 dark:bg-sky-900/50 dark:text-sky-300"
-                          : w.g === "die"
-                            ? "bg-rose-100 text-rose-700 dark:bg-rose-900/50 dark:text-rose-300"
-                            : "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300",
-                      )}
-                      dir="ltr"
-                    >
-                      {w.g}
-                    </span>
-                  )}
+                  <VocabKindBadge g={w.g} />
                 </p>
                 <p className="mt-0.5 text-sm font-semibold text-primary">{w.ar}</p>
                 {w.ex && (

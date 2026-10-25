@@ -2,10 +2,6 @@ import {LEVELS, getUnitsByLevel} from "@/lib/constants/curriculum";
 import {LESSON_META} from "@/data/lessons/meta";
 import type { LevelCode, LevelCompletion, Unit } from "@/types/curriculum";
 
-/** عدد الدروس في مستوى معيّن (من الفهرس الخفيف) */
-export function getLessonCountForLevel(level: LevelCode): number {
-  return LESSON_META.filter((l) => l.level === level).length;
-}
 
 /** نسبة إكمال الدروس في مستوى معيّن (0-100) */
 export function getLessonLevelCompletion(

@@ -81,15 +81,15 @@ export const LESSON_RELATED_RESOURCES: Record<string, RelatedResource[]> = {
   "a1-07": [
     { kind: "dialogue", id: "a1-03-supermarkt", reasonAr: "شراء الطعام والسؤال عن الأسعار — Was kostet das? بالأرقام." },
     { kind: "story", id: "a1-anna-einkaufen", reasonAr: "آنا في السوق: مفردات الطعام + الأثمان + صيغة الأمر." },
-    { kind: "podcast", id: "p-a1-markt", reasonAr: "حلقة «في السوق» — الأرقام والأثمان مسموعةً بالنطق الطبيعي." },
+    { kind: "podcast", id: "p-a1-markt", reasonAr: "حلقة «في السوق» — مفردات المنتجات في نص مسموع مولّد آلياً؛ لا تتضمن أسعاراً، وعبارة «ein Kilo» لا تحدد المنتج، فلا تغني عن تدريب الكميات والأسعار في الدرس." },
   ],
   "a1-08": [
-    { kind: "dialogue", id: "a1-06-kleidung", reasonAr: "في متجر ملابس تريد قميصاً — الملابس والألوان مع Wie findest du…?" },
-    { kind: "story", id: "a1-geschenk", reasonAr: "سارة تشتري هدية: الألوان والتسوق وكلمات المجاملة." },
+    { kind: "dialogue", id: "a1-06-kleidung", reasonAr: "شراء قميص في متجر: السؤال عن المقاس والسعر، ثم قبول القطعة؛ تدريب مكمّل على مفردات الشراء والملابس." },
+    { kind: "story", id: "a1-geschenk", reasonAr: "سارة تشتري هدية: الألوان والتسوق والتعبير عن الامتنان والمحبة." },
   ],
   "a1-09": [
     { kind: "dialogue", id: "a1-08-einladung", reasonAr: "دعوة لحفلة عيد ميلاد — تحديد يوم وساعة مع am/um." },
-    { kind: "podcast", id: "p-a1-geburstag", reasonAr: "حلقة «عيد الميلاد» — التواريخ والمناسبات في نص مسموع." },
+    { kind: "podcast", id: "p-a1-geburstag", reasonAr: "حلقة «عيد الميلاد» — مفردات الاحتفال وأوقات اليوم في نص مسموع؛ لا تتضمن تاريخاً تقويمياً محدداً." },
   ],
   "a1-10": [
     { kind: "story", id: "a1-max-hund", reasonAr: "ماكس يجد كلباً: الأفعال الشائعة والنفي — تدريب على nicht/kein بعد درس المهن." },
@@ -102,9 +102,9 @@ export const LESSON_RELATED_RESOURCES: Record<string, RelatedResource[]> = {
     { kind: "dialogue", id: "a1-11-apotheke", reasonAr: "شراء دواء للصداع من الصيدلية — die Apotheke من مفردات هذا الدرس نفسه." },
   ],
   "a1-12": [
-    { kind: "dialogue", id: "a1-14-wetter", reasonAr: "حديث مع الجار عن طقس اليوم — es ist … في أبسط صوره." },
+    { kind: "dialogue", id: "a1-14-wetter", reasonAr: "حوار مع الجار عن طقس اليوم والغد: الشمس والمطر وبرودة الجو والمظلّة." },
     { kind: "story", id: "a1-picknick", reasonAr: "نزهة عائلة مولر: الطقس والطعام والألوان مجتمعة." },
-    { kind: "story", id: "a1-am-strand", reasonAr: "يوم على الشاطئ: الطقس الحار ومفردات الطبيعة." },
+    { kind: "story", id: "a1-am-strand", reasonAr: "مشهد عائلي على الشاطئ ومفردات الطبيعة؛ سياق خارجي داعم لا تدريب مباشر على تراكيب الطقس." },
   ],
   "a1-14": [
     { kind: "dialogue", id: "a1-13-hotel", reasonAr: "حجز غرفة فندق هاتفياً — أرقام الهاتف والتواريخ رقماً رقماً." },
@@ -133,15 +133,15 @@ export const LESSON_RELATED_RESOURCES: Record<string, RelatedResource[]> = {
   ],
   "a2-05": [
     { kind: "dialogue", id: "a2-10-bewerbung", reasonAr: "مكالمة استفسار عن وظيفة معلنة — لغة المكتب الرسمية المبسّطة." },
-    { kind: "dialogue", id: "a2-12-verspaetet", reasonAr: "الاعتذار عن التأخير — عبارات الاعتذار في سياق العمل." },
+    { kind: "dialogue", id: "a2-12-verspaetet", reasonAr: "الاعتذار عن التأخير لصديق — عبارات اعتذار في حوار غير رسمي، لا نموذج لمكالمة عمل." },
   ],
   "a2-06": [
-    { kind: "dialogue", id: "a2-08-handy", reasonAr: "مكالمة مع شركة الاتصالات — وصف عطل تقني وطلب حل." },
+    { kind: "dialogue", id: "a2-08-handy", reasonAr: "امتداد اختياري لمفردة الإنترنت عبر مكالمة خدمة؛ لا يتناول مباشرةً قراءة الأخبار أو بناء dass." },
     { kind: "podcast", id: "p-a2-kinoabend", reasonAr: "حلقة «أمسية سينما» — الإعلام والترفيه في نص مسموع بسيط." },
   ],
   "a2-07": [
-    { kind: "dialogue", id: "a2-07-bank", reasonAr: "فتح حساب في بنك — الأرقام والمبالغ والإجراءات." },
-    { kind: "story", id: "a2-fahrrad", reasonAr: "شراء دراجة: المقارنة (billiger, teurer) وقرار الشراء." },
+    { kind: "dialogue", id: "a2-07-bank", reasonAr: "محاكاة افتراضية للسؤال عن فتح حساب؛ للتدرّب على المفردات والأسئلة، لا لعرض متطلبات مصرفية عامة." },
+    { kind: "story", id: "a2-fahrrad", reasonAr: "قصة اختيار دراجة بين أسعار مختلفة؛ امتداد اختياري لمفردات السعر والاختيار، لا لقاعدة المصرف." },
   ],
   "a2-08": [
     { kind: "dialogue", id: "a2-03-zug", reasonAr: "في القطار: السؤال عن المقعد ومحادثة مع راكب." },
@@ -161,7 +161,7 @@ export const LESSON_RELATED_RESOURCES: Record<string, RelatedResource[]> = {
   "a2-11": [
     { kind: "dialogue", id: "a2-06-post", reasonAr: "إرسال طرد إلى الخارج — لغة الخدمات والإجراءات." },
     { kind: "dialogue", id: "a2-11-friseur", reasonAr: "عند الحلاق: التعبير عن الرغبة في موقف خدمي." },
-    { kind: "dialogue", id: "a2-13-einkaufen-kleidung", reasonAr: "إرجاع بنطال لا يناسبك — الشكوى المهذّبة وحقّ الإرجاع." },
+    { kind: "dialogue", id: "a2-13-einkaufen-kleidung", reasonAr: "إرجاع بنطال في مثال حواري: الشكوى المهذّبة والاستفسار عن إجراء الإرجاع." },
     { kind: "story", id: "a2-postamt", reasonAr: "ياسمين ترسل طرداً إلى تونس: الخدمات والتعليمات." },
     { kind: "story", id: "a2-friseur", reasonAr: "لوكاس عند الحلاق: höflich fragen والأوصاف (kürzer)." },
   ],
@@ -178,76 +178,76 @@ export const LESSON_RELATED_RESOURCES: Record<string, RelatedResource[]> = {
     { kind: "podcast", id: "p-b1-lernen", reasonAr: "حلقة «تعلم اللغات» — آراء وأسباب، تمرين على الاستماع الحجاجي." },
   ],
   "b1-02": [
-    { kind: "dialogue", id: "b1-07-interview", reasonAr: "مقابلة عمل تفصيلية: أسئلة وأجوبة حقيقية بلغة العمل." },
+    { kind: "dialogue", id: "b1-07-interview", reasonAr: "محاكاة تدريبية لمقابلة عمل، مع أسئلة وأجوبة بلغة العمل؛ الأجر الوارد مثال لشخصية خيالية لا معيار سوق." },
     { kind: "story", id: "b1-neuer-job", reasonAr: "دانيال يبدأ في بنك: Präteritum + الأفعال المنفصلة في السرد." },
-    { kind: "story", id: "b1-nebenjob", reasonAr: "طالبة توازن بين العمل والدراسة: Präteritum في سياق يومي." },
+    { kind: "story", id: "b1-nebenjob", reasonAr: "قصة تدريبية عن طالبة توازن بين العمل والدراسة: Präteritum في سياق يومي، وليست مرجعاً للأجور أو شروط العمل." },
     { kind: "dialogue", id: "b1-08-krankmeldung", reasonAr: "إبلاغ العمل بالمرض — مكالمة رسمية قصيرة." },
   ],
   "b1-03": [
     { kind: "dialogue", id: "b1-06-umwelt", reasonAr: "نقاش عن البلاستيك — التعبير عن الرأي بالحجّة." },
-    { kind: "story", id: "b1-umweltgruppe", reasonAr: "طلاب يؤسسون مجموعة بيئية: المبني للمجهول (wird/wurden) و man." },
-    { kind: "story", id: "b1-energiesparen", reasonAr: "عائلة توفّر الطاقة: Passiv في وصف العادات." },
-    { kind: "podcast", id: "p-b1-umwelt", reasonAr: "حلقة «هل يجب أن نعيش بطريقة صديقة للبيئة؟» — مؤيد ومعارض." },
+    { kind: "story", id: "b1-umweltgruppe", reasonAr: "قصة تدريبية خيالية عن مجموعة طلابية؛ للمجهول (wird/wurde) والعمل التطوعي، لا لإثبات مبادرة محلية بعينها." },
+    { kind: "story", id: "b1-energiesparen", reasonAr: "قصة تدريبية خيالية تصف عادات لتوفير الطاقة؛ ليست دليلاً على مقدار توفير فعلي." },
+    { kind: "podcast", id: "p-b1-umwelt", reasonAr: "نموذج قصير لعرض رأيين وممارسة الاستماع؛ ليس مسحاً لآراء الناس أو تقريراً علمياً." },
   ],
   "b1-04": [
-    { kind: "story", id: "b1-digital-detox", reasonAr: "شاب يبتعد عن هاتفه: dass/weil + الحديث عن أثر الإعلام." },
+    { kind: "story", id: "b1-digital-detox", reasonAr: "قصة تدريبية خيالية عن تقليل استخدام الهاتف (لا تشخّص إدماناً): dass/weil." },
     { kind: "dialogue", id: "b1-01-meinung", reasonAr: "التعبير عن الرأي في العمل عن بُعد — عبارات إبداء الرأي." },
   ],
   "b1-05": [
-    { kind: "dialogue", id: "b1-13-sport", reasonAr: "الاستفسار عن اشتراك في صالة رياضية — الصحة والوقاية عملياً." },
-    { kind: "dialogue", id: "b1-04-terminal", reasonAr: "تأكيد موعد طبيب — مكالمة قصيرة بلغة مهذّبة." },
-    { kind: "podcast", id: "p-b1-gesundheit", reasonAr: "حلقة «العيش بصحة» — نصائح وآراء مسموعة." },
+    { kind: "dialogue", id: "b1-13-sport", reasonAr: "حوار تدريبي خيالي للاستفسار عن اشتراك؛ السعر والمزايا ليست عرضاً حقيقياً. امتداد لغوي اختياري، لا معلومة صحية." },
+    { kind: "dialogue", id: "b1-04-terminal", reasonAr: "محاكاة خيالية لتأكيد موعد طبيب؛ اسأل العيادة الفعلية عن الوثائق المطلوبة، فبطاقة التأمين ليست قاعدة عامة. امتداد لغوي اختياري." },
+    { kind: "podcast", id: "p-b1-gesundheit", reasonAr: "حلقة مسموعة تنسب توصية البالغين الأسبوعية بوضوح إلى منظمة الصحة العالمية؛ لا تقدّم نصيحة طبية فردية." },
   ],
   "b1-06": [
-    { kind: "dialogue", id: "b1-09-ticket-kaufen", reasonAr: "شراء تذكرتَي حفلة موسيقية — الثقافة والفن في موقف عملي." },
-    { kind: "story", id: "b1-familienfest", reasonAr: "احتفال عائلي: التقاليد + الروابط الزمنية (bevor, nachdem)." },
-    { kind: "dialogue", id: "b1-14-kochen", reasonAr: "شرح وصفة طعام — الثقافة اليومية بترتيب خطوات." },
+    { kind: "dialogue", id: "b1-09-ticket-kaufen", reasonAr: "حوار تدريبي خيالي عن شراء تذكرتَي حفلة؛ السعر والخصم افتراضيان، مع مفردات ثقافية عملية." },
+    { kind: "story", id: "b1-familienfest", reasonAr: "قصة تدريبية خيالية لا تمثل ثقافة بعينها: احتفال عائلي وروابط زمنية (bevor, nachdem)." },
+    { kind: "dialogue", id: "b1-14-kochen", reasonAr: "حوار تمثيلي عن وصفة يفضّلها متحدث خيالي؛ لا يعمم وصفة أو عادة على ثقافة كاملة." },
   ],
   "b1-07": [
-    { kind: "dialogue", id: "b1-03-beschwerde", reasonAr: "شكوى رسمية لخدمة عملاء — لغة المطالبة المهذّبة الحازمة." },
-    { kind: "story", id: "b1-verein", reasonAr: "يوسف ينضم لنادٍ: الاندماج والعمل الجماعي مع seit." },
+    { kind: "dialogue", id: "b1-03-beschwerde", reasonAr: "امتداد اختياري للتدرّب على عرض اعتراض مهذّب؛ الحوار عن شكوى فندقية خيالية، وليس مادة عن السياسة أو الانتخابات." },
+    { kind: "story", id: "b1-verein", reasonAr: "قصة تدريبية خيالية عن الانضمام إلى نادٍ رياضي؛ امتداد للمفردات الاجتماعية ومراجعة seit وobwohl، لا مصدر لمعلومات سياسية." },
   ],
   "b1-08": [
-    { kind: "dialogue", id: "b1-05-probleme-loesen", reasonAr: "حل مشكلة مع زميل — الروابط الثنائية في حجاج حقيقي." },
-    { kind: "story", id: "b1-umzug-ins-buero", reasonAr: "نقل مكاتب شركة: Passiv + تنظيم رقمي." },
-    { kind: "podcast", id: "p-b1-homeoffice", reasonAr: "حلقة «العمل من المنزل: إيجابيات وسلبيات» — بنية zwar … aber مسموعة." },
+    { kind: "dialogue", id: "b1-05-probleme-loesen", reasonAr: "حوار تدريبي خيالي لحل مشكلة مع زميل؛ يتيح ممارسة الروابط الثنائية والحجاج، وليس شهادة عن واقعة حقيقية." },
+    { kind: "story", id: "b1-umzug-ins-buero", reasonAr: "قصة تدريبية خيالية عن نقل مكتب؛ لممارسة Passiv ومفردات التنظيم الرقمي، لا تقريراً عن شركة حقيقية." },
+    { kind: "podcast", id: "p-b1-homeoffice", reasonAr: "حلقة تدريبية خيالية عن العمل من المنزل تعرض رأيين شخصيين، لا مسحاً لسوق العمل؛ فيها zwar … aber ومفردات التواصل والفصل بين العمل ووقت الفراغ." }
   ],
   "b1-09": [
-    { kind: "dialogue", id: "b1-10-nachhilfe", reasonAr: "تنظيم دروس خصوصية — طلب المساعدة وتقديمها." },
-    { kind: "dialogue", id: "b1-11-panne", reasonAr: "تعطّل سيارة واستدعاء المساعدة — لغة الطوارئ اليومية." },
+    { kind: "dialogue", id: "b1-10-nachhilfe", reasonAr: "حوار تدريبي خيالي عن طلب المساعدة الدراسية؛ السعر الوارد افتراضي." },
+    { kind: "dialogue", id: "b1-11-panne", reasonAr: "محاكاة خيالية لتعطّل سيارة — لغة الاستغاثة؛ موعد السحب ليس ضماناً زمنياً." },
   ],
   "b1-10": [
     { kind: "story", id: "b1-wochenendausflug", reasonAr: "التخطيط لعطلة: Futur I (werden + Infinitiv) وجمل wenn الشرطية." },
     { kind: "dialogue", id: "b1-02-urlaub-planen", reasonAr: "التخطيط لإجازة الصيف — لغة الخطط والاتفاق." },
     { kind: "dialogue", id: "b1-15-wohnungswechsel", reasonAr: "إخبار صديق أنك ستنتقل — الحديث عن قرار مستقبلي." },
-    { kind: "podcast", id: "p-b1-reisen", reasonAr: "حلقة «السفر أم البقاء في البيت؟» — موازنة خيارات مستقبلية." },
+    { kind: "podcast", id: "p-b1-reisen", reasonAr: "حلقة تدريبية بعنوان «السفر أم البقاء في البيت؟»؛ آراء النص أمثلة وليست حقائق عامة أو نصائح بيئية موثقة." },
   ],
   "b1-12": [
     { kind: "story", id: "b1-neue-wohnung", reasonAr: "البحث عن شقة: weil/dass/wenn مع أسباب القرار — نفس منطق «لماذا؟» في الدرس." },
-    { kind: "dialogue", id: "b1-12-geld", reasonAr: "نقاش عن الادخار — التبرير بالأسباب والأهداف (um … zu)." },
-    { kind: "story", id: "b1-verlorene-zeit", reasonAr: "مارك يتأمل ماضيه: الندم والغاية من القرارات — قراءة تكميلية للنوايا." },
-    { kind: "story", id: "b1-lange-zugreise", reasonAr: "رحلة لينا إلى فيينا: الجمل الزمنية (bevor, während, nachdem) بجوار جمل الغرض." },
+    { kind: "dialogue", id: "b1-12-geld", reasonAr: "حوار تدريبي خيالي عن الادخار والهدف من توفير المال؛ الحوار الحالي لا يتضمن تركيب um … zu صراحةً." },
+    { kind: "story", id: "b1-verlorene-zeit", reasonAr: "قصة تعليمية خيالية عن الندم والتعلّم؛ صلة موضوعية بالأهداف، من دون تقديمها كشرح مباشر لـum … zu." },
+    { kind: "story", id: "b1-lange-zugreise", reasonAr: "قصة تعليمية خيالية عن رحلة لينا والجمل الزمنية. تميّز während فيها بوصفها رابطاً لجملة زمنية عن حرف الجر während + Genitiv في هذا الدرس." },
   ],
   "b1-11": [
-    { kind: "story", id: "b1-vorstellungsgespraech", reasonAr: "التحضير لمقابلة عمل: Konjunktiv II المهذّب — تدريب امتحاني على المحادثة." },
+    { kind: "story", id: "b1-vorstellungsgespraech", reasonAr: "قصة خيالية عن مقابلة عمل، مع أمثلة على Konjunktiv II المهذّب؛ ليست محاكاة لامتحان رسمي." },
   ],
 
   /* ─────────────────────────── B2 ─────────────────────────── */
   "b2-01": [
     { kind: "story", id: "b2-forschungsprojekt", reasonAr: "بحث في الطاقة الشمسية: اللغة الأكاديمية والاشتقاق الاسمي." },
     { kind: "story", id: "b2-verhandlung", reasonAr: "مفاوضات بين شركتين: Konjunktiv I في نقل الكلام — جوهر هذا الدرس." },
-    { kind: "dialogue", id: "b2-06-akademisch", reasonAr: "ندوة عن الذكاء الاصطناعي — نقل آراء الآخرين شفهياً." },
+    { kind: "dialogue", id: "b2-06-akademisch", reasonAr: "ندوة تمثيلية عن الذكاء الاصطناعي — عرض الرأي ومناقشة المخاطر والحلول." },
   ],
   "b2-02": [
-    { kind: "story", id: "b2-startup", reasonAr: "تأسيس شركة تقنية: لغة الأعمال والمخاطرة والجمل الشرطية." },
-    { kind: "dialogue", id: "b2-11-verhandlung-kunde", reasonAr: "التفاوض مع عميل على شروط عقد — لغة اقتصادية تطبيقية." },
-    { kind: "podcast", id: "p-b2-globalisierung", reasonAr: "حلقة «فرص ومخاطر العولمة» — بنية الموازنة الاقتصادية." },
+    { kind: "story", id: "b2-startup", reasonAr: "قصة خيالية للتدرب على لغة الأعمال والمخاطرة والجمل الشرطية؛ أرقام النجاح فيها افتراضية." },
+    { kind: "dialogue", id: "b2-11-verhandlung-kunde", reasonAr: "حوار تفاوضي خيالي للتدرب على لغة الأعمال؛ النسب والكمية ليست عرضاً تجارياً حقيقياً." },
+    { kind: "podcast", id: "p-b2-globalisierung", reasonAr: "نقاش عام يدرّب على موازنة الرأي؛ ليس تقريراً اقتصادياً أو مصدراً لبيانات فعلية." },
   ],
   "b2-03": [
-    { kind: "dialogue", id: "b2-07-bewerbung-vertrag", reasonAr: "مراجعة بنود عقد عمل — لغة قانونية بجمل موصولة مركّبة." },
-    { kind: "dialogue", id: "b2-09-wohnungsvertrag", reasonAr: "مشكلة تدفئة مع المالك — الحقوق والالتزامات في الحياة اليومية." },
-    { kind: "dialogue", id: "b2-05-pass-verloren", reasonAr: "فقدان جواز السفر ومراجعة السفارة — إجراءات رسمية." },
-    { kind: "dialogue", id: "b2-13-flug", reasonAr: "إلغاء رحلة والمطالبة بالتعويض — المطالبة بالحق بلغة رسمية." },
+    { kind: "dialogue", id: "b2-07-bewerbung-vertrag", reasonAr: "محاكاة خيالية لمراجعة مسودة عقد عمل؛ مدد التجربة والإنهاء في الحوار ليست قاعدة عامة أو استشارة قانونية." },
+    { kind: "dialogue", id: "b2-09-wohnungsvertrag", reasonAr: "موقف تدريبي خيالي عن عطل تدفئة؛ استحقاق تخفيض الإيجار أو غيره يعتمد على الوقائع والقواعد المطبقة، وليس الحوار نصيحة قانونية." },
+    { kind: "dialogue", id: "b2-05-pass-verloren", reasonAr: "محاكاة خيالية لفقدان جواز؛ إجراءات البلاغ والبديل تختلف باختلاف جهة الإصدار والبلد والبعثة، ويجب التحقق من الجهة المختصة." },
+    { kind: "dialogue", id: "b2-13-flug", reasonAr: "محاكاة خيالية لإلغاء رحلة؛ إعادة الحجز والتعويض والحقوق الأخرى تتوقف على المسار ووقت الإبلاغ وسبب الإلغاء والقواعد المنطبقة." },
   ],
   "b2-04": [
     { kind: "story", id: "b2-kunstausstellung", reasonAr: "ناقد يحلّل معرضاً: أوصاف الفنون والصفات الوصفية الطويلة." },
@@ -269,15 +269,16 @@ export const LESSON_RELATED_RESOURCES: Record<string, RelatedResource[]> = {
     { kind: "dialogue", id: "b2-08-praesentation", reasonAr: "التحضير لعرض تقديمي — بناء خطاب منظّم." },
   ],
   "b2-07": [
-    { kind: "story", id: "b2-zukunft-arbeit", reasonAr: "خبراء يتوقعون مستقبل العمل: Futur II — بنية هذا الدرس بعينها." },
+    { kind: "story", id: "b2-zukunft-arbeit", reasonAr: "قصة تدريبية متخيّلة تعرض آراءً عن مستقبل العمل، وتتضمن Futur II دون ادعاء أنها توقعات خبراء موثقة." },
     { kind: "podcast", id: "p-b2-digitalisierung", reasonAr: "حلقة «الرقمنة في الحياة اليومية» — توقّعات وتحليل." },
     { kind: "podcast", id: "p-b2-kuenstliche-intelligenz", reasonAr: "حلقة «الذكاء الاصطناعي في العمل» — مادة خام لمقال الإرشتيرونغ." },
   ],
   "b2-08": [
-    { kind: "story", id: "b2-integration", reasonAr: "مهاجر يروي اندماجه: أفعال بحروف جر ثابتة في سرد شخصي." },
-    { kind: "story", id: "b2-umzug-muenchen", reasonAr: "ياسمين تنتقل للدراسة: sich gewöhnen an وأخواته." },
-    { kind: "dialogue", id: "b2-10-international", reasonAr: "اجتماع دولي عبر الفيديو — التواصل بين الثقافات." },
-    { kind: "podcast", id: "p-b2-migration", reasonAr: "حلقة «الهجرة والهوية» — موضوع مجرّد بلغة مركّبة." },
+    { kind: "story", id: "b2-integration", reasonAr: "حكاية تدريبية خيالية عن تجربة فردية؛ تعرض أفعال حروف الجر ولا تقدم نصيحة عامة للمهاجرين." },
+    { kind: "story", id: "b2-umzug-muenchen", reasonAr: "حكاية خيالية محددة عن ياسمين؛ أمثلتها عن اللهجة والاستمارات تخص تجربتها ولا تعمم على ميونخ أو بافاريا." },
+    { kind: "dialogue", id: "b2-10-international", reasonAr: "محاكاة خيالية لاجتماع فريق؛ عُدلت لتتناول خبرة الزميلة المهنية لا أن تمثل ثقافة بلدها." },
+
+    { kind: "podcast", id: "p-b2-migration", reasonAr: "مشهد خيالي عن تجربة سميرة الفردية مع الهوية والانتماء؛ لا يمثل نتائج بحثية أو تجارب الجميع. التسجيل لم يُحدّث أو يُطابق بالنص." },
   ],
   "b2-09": [
     { kind: "story", id: "b2-bewerbung", reasonAr: "ألبرشت يتقدّم لمنصب: المراسلات الرسمية والسيرة الذاتية." },

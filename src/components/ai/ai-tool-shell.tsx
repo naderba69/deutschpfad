@@ -110,13 +110,3 @@ export function AiToolShell({
     </Card>
   );
 }
-
-/** زر تشغيل موحد */
-export function AiRunButton({ loading, label, disabled }: { loading: boolean; label: string; disabled?: boolean }) {
-  return (
-    <Button type="button" disabled={disabled || loading} className="gap-1.5">
-      {loading ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" /> : <Sparkles className="h-4 w-4" aria-hidden="true" />}
-      {loading ? "جارٍ التوليد…" : label}
-    </Button>
-  );
-}

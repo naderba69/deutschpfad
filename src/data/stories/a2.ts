@@ -134,7 +134,7 @@ const A2_3: InteractiveStory = {
   title: "Beim Arzt",
   titleAr: "عند الطبيب",
   emoji: "🩺",
-  description: "بيتر يشعر بتعب — أجزاء الجسم والنصائح الطبية.",
+  description: "حكاية تعليمية خيالية عن بيتر وأعراضه؛ نصائحها أمثلة لغوية وليست إرشاداً طبياً.",
   grammar: "أجزاء الجسم • الأعراض • sollen (للنصيحة)",
   segments: [
     {
@@ -158,8 +158,8 @@ const A2_3: InteractiveStory = {
     },
     {
       id: 3,
-      de: "Der Arzt untersucht Peter und sagt: „Sie sollen viel trinken und sich ausruhen.“",
-      ar: "يفحص الطبيب بيتر ويقول: «يجب أن تشرب كثيراً وتستريح».",
+      de: "Der Arzt untersucht Peter und sagt: „Sie sollen sich ausruhen und zu Hause bleiben.“",
+      ar: "يفحص الطبيب بيتر ويقول: «ينبغي أن تستريح وتبقى في البيت».",
     },
     {
       id: 4,
@@ -169,7 +169,7 @@ const A2_3: InteractiveStory = {
         de: "Was soll Peter tun?",
         ar: "ماذا يجب أن يفعل بيتر؟",
         options: [
-          { text: "Viel trinken und ruhen", ar: "يشرب كثيراً ويستريح", correct: true, explanation: "نعم — هذا ما ورد في القصة: «Viel trinken und ruhen» (يشرب كثيراً ويستريح)." },
+          { text: "Sich ausruhen und zu Hause bleiben", ar: "يستريح ويبقى في البيت", correct: true, explanation: "نعم — هذا ما ورد في القصة: «sich ausruhen und zu Hause bleiben» (يستريح ويبقى في البيت)." },
           { text: "Sport machen", ar: "يمارس الرياضة", correct: false, explanation: "لا — الصواب هو الخيار المذكور في القصة." },
           { text: "Arbeiten", ar: "يعمل", correct: false, explanation: "لا — الصواب هو الخيار المذكور في القصة." },
         ],
@@ -314,7 +314,7 @@ const A2_6: InteractiveStory = {
   title: "Im Restaurant",
   titleAr: "في المطعم",
   emoji: "🍽️",
-  description: "جوليا ومارك في مطعم — الطلب بأدب والطعام.",
+  description: "حكاية تدريبية خيالية عن جوليا ومارك في مطعم؛ تُستخدم للتدرّب على الطلب ووصف الطعام، ولا تصف سياسةً عامة للمطاعم.",
   grammar: "الطلب (möchten) • وصف الطعام (schmecken) • الأكلات",
   segments: [
     {
@@ -360,11 +360,11 @@ const A2_6: InteractiveStory = {
       de: "Am Ende fragt der Kellner: „Möchten Sie noch einen Nachtisch?“",
       ar: "في النهاية يسأل النادل: «هل تريدان حلوى بعد؟»",
       choices: [
-        { text: "Ja, zwei Eis, bitte!", ar: "نعم، آيس كريم اثنان من فضلك!", next: 6, feedback: "اختيار لذيذ!" },
+        { text: "Ja, zwei Portionen Eis, bitte!", ar: "نعم، حصتان من المثلجات من فضلك!", next: 6, feedback: "اختيار لذيذ!" },
         { text: "Nein, danke. Die Rechnung, bitte!", ar: "لا شكراً. الفاتورة من فضلك!", next: 6, feedback: "رد مهذب!" },
       ],
     },
-    { id: 6, de: "Sie zahlen und geben Trinkgeld. Ende.", ar: "يدفعان ويتركان إكرامية. النهاية." },
+    { id: 6, de: "Sie zahlen. Mark gibt in dieser Szene freiwillig Trinkgeld. Ende.", ar: "يدفعان. ويعطي مارك إكراميةً طوعاً في هذا المشهد. النهاية." },
   ],
 };
 

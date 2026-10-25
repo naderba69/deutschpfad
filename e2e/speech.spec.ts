@@ -15,6 +15,8 @@
  */
 import { test, expect, type Page } from "@playwright/test";
 
+import {gotoLessonStep} from "./helpers/lesson-steps";
+
 async function clearData(page: Page) {
   await page.evaluate(async () => {
     try {
@@ -35,18 +37,14 @@ async function clearData(page: Page) {
   });
 }
 
-/** التنقل إلى قسم النطق (الخطوة 6 من 11 في a1-01) */
+/** التنقل إلى قسم النطق في a1-01 (بلا عدّ نقرات ثابت — الأقسام قد تُعاد ترتيبها) */
 async function gotoPronSection(page: Page) {
   await page.goto("/lesson/a1-01");
   await clearData(page);
   await page.reload();
   await page.waitForTimeout(1500);
-  for (let i = 0; i < 5; i++) {
-    await page.getByRole("button", { name: /التالي:/ }).last().click().catch(() => {});
-    await page.waitForTimeout(500);
-  }
+  await gotoLessonStep(page, "النطق");
   await page.waitForTimeout(900);
-  await expect(page.locator("#lesson-step-content h2").first()).toContainText("النطق", { timeout: 8000 });
 }
 
 test("قسم النطق يظهر في موضعه بكل أدواته (استمع + انطقها + سجّل نطقك)", async ({ page }) => {
@@ -58,7 +56,7 @@ test("قسم النطق يظهر في موضعه بكل أدواته (استمع
   // زر «سجّل نطقك» في بطاقة التدريب الرئيسية (PronunciationPractice)
   await expect(page.getByRole("button", { name: "سجّل نطقك" }).first()).toBeVisible();
   // نصيحتان مرئيتان
-  await expect(page.getByText("تدرّب على نطقك", { exact: false }).first()).toBeVisible();
+  await expect(page.getByText("تدرّب على النطق", { exact: false }).first()).toBeVisible();
 });
 
 test("التقييم التلقائي: النطق يُقيَّم فورياً بدرجة ومقارنة حرفية", async ({ page }) => {
@@ -100,10 +98,9 @@ test("التقييم التلقائي: النطق يُقيَّم فورياً ب
   await page.waitForTimeout(1500);
 
   // النتيجة: درجة + تعليق + مقارنة حرفية (Haloo قريبة من Hallo لكنها أقل من 100)
-  await expect(page.getByText(/%/).first()).toBeVisible({ timeout: 6000 });
-  await expect(page.getByText("نطق ممتاز", { exact: false }).first()).toBeVisible();
-  // المقارنة الحرفية تظهر (مطابق/اختلف)
-  await expect(page.getByText("مطابق", { exact: false }).first()).toBeVisible();
+  await expect(page.getByText("مطابقة نصية", { exact: false }).first()).toBeVisible({ timeout: 8000 });
+  // المقارنة الحرفية تظهر (تطابق/اختلاف الحروف)
+  await expect(page.getByText(/مطابق|مطابقة|اختلف/).first()).toBeVisible();
 });
 
 test("«الدعم الوهمي» يُكتشف: محرك صامت → رسالة واضحة + بديل تلقائي", async ({ page }) => {

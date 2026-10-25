@@ -131,5 +131,3 @@ export const A1_EXTRA_VOCAB: VocabEntry[] = [
   { de: "dort", ar: "هناك", g: "adv", ex: "Das Buch ist dort." },
   { de: "links / rechts", ar: "يسار / يمين", g: "other" },
 ];
-
-export const TOTAL_A1_EXTRA = A1_EXTRA_VOCAB.length;

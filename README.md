@@ -1,5 +1,7 @@
 # 🎓 درب الألمانية — DeutschPfad
 
+[![CI](https://github.com/naderba69/deutschpfad/actions/workflows/ci.yml/badge.svg)](https://github.com/naderba69/deutschpfad/actions/workflows/ci.yml)
+
 منصة تعليمية عربية متكاملة لتعليم **اللغة الألمانية من الصفر (A1) حتى الاحتراف (B2)**
 وفق منهجية معهد غوته (Goethe-Institut) ومعايير الإطار الأوروبي المرجعي المشترك للغات (CEFR)،
 بتصميم يحاكي الأستاذ الخصوصي بالكامل — تعمل **كبديل كامل** عنه.
@@ -308,11 +310,11 @@ cp .env.example .env.local
 | واجهات برمجية | `/api/llm` · `/api/llm/status` |
 | ملفات | `manifest.webmanifest` · `robots.txt` · `sitemap.xml` · `icon.png` |
 
-### 📦 حزمة التثبيت الذاتي (ملف واحد = المشروع كاملاً)
+### 📦 التثبيت
 
-بدل نسخ ولصق الملفات، حمّل **`deutschpfad-bundle.sh`** من مساحة العمل ونفّذه على أي جهاز:
-`bash deutschpfad-bundle.sh` → يولّد مجلد المشروع كاملاً جاهزاً للإنتاج (مضغوط tar.gz + base64).
-يولَّد عبر `bash scripts/bundle.sh` ويُعاد توليده تلقائياً بعد كل مرحلة ليبقى محدّثاً.
+الاستنساخ المعتاد: `git clone` ثم `npm ci` ثم `npm run build && npm run start`.
+(حزمة `deutschpfad-bundle.sh` أداة محلية للمطوّر — مُستبعَدة من المستودع بـ`.gitignore`
+ولا تُسلَّم معه، فلا يُبنى عليها في التوثيق العام.)
 
 ---
 
@@ -320,13 +322,11 @@ cp .env.example .env.local
 
 ```
 deutschpfad/
-├── public/               # أيقونات PWA + sw.js (مولّد آلياً) + logo.svg
-├── scripts/
-│   ├── generate-icons.py # مولّد الأيقونات (PIL)
-│   ├── gen-lesson-meta.py# مولّد فهرس الدروس الخفيف (أداء)
-│   └── bundle.sh         # مولّد حزمة التثبيت الذاتي
-├── .github/workflows/ci.yml  # CI: npm ci → typecheck → build
-├── vercel.json / render.yaml / DEPLOYMENT.md
+├── public/               # أيقونات PWA + sw.js (مولّد آلياً) + logo.svg + audio/
+├── scripts/              # أدوات تدقيق تُشغَّل يدوياً (الجرد في scripts/README.md)
+├── .github/workflows/ci.yml  # CI: npm ci → typecheck → lint → vitest → build → Playwright
+├── docs/                 # وثائق نشطة + أرشيف (الفهرس: docs/README.md)
+├── vercel.json / DEPLOYMENT.md
 └── src/
     ├── app/              # 86 مساراً (App Router) — راجع خارطة المسار أعلاه
     ├── components/
@@ -340,8 +340,8 @@ deutschpfad/
     │   ├── grammar/ glossar/ reading/ verbs/ speaking/
     │   └── daily/ alltag/ redewendungen/ dialogues/ forms/ strategies/
     ├── data/
-    │   ├── lessons/      # 45 درساً (a1/a2/b1/b2) + index.ts + meta.ts
-    │   ├── vocabulary/   # ~950 مفردة (a1/a2/b1/b2)
+    │   ├── lessons/      # 52 درساً (a1/a2/b1/b2) + index.ts + meta.ts
+    │   ├── vocabulary/   # 4319 مدخلاً (a1/a2/b1/b2)
     │   ├── grammar/      # 50 موضوعاً نحوياً مرجعياً
     │   ├── reading/ tests/ verbs/ supplemental/
     ├── lib/
@@ -355,6 +355,16 @@ deutschpfad/
 ```
 
 **مبدأ أساسي:** فصل تام بين **المحتوى** (بيانات TS في `src/data`) و**المكونات** (JSX في `src/components`) و**المنطق** (في `src/lib`).
+
+## ✅ التحقق قبل أي دفعة
+
+```bash
+npm run verify       # أنواع + ESLint + 1204 اختبارات وحدة + بناء إنتاجي
+npx playwright test  # 218 اختبار متصفح على نسخة إنتاجية (npm run build && npm run start أولاً)
+```
+
+هذان الأمران نفسهما يشغّلهما CI في `.github/workflows/ci.yml` على كل دفعة — فلا يُكتشف
+عيب بعد أسابيع. وخطة إعادة الهيكلة المرحلية في `docs/REFACTOR-PLAN.md`.
 
 ---
 

@@ -2,15 +2,15 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
  *  curriculum-audit.mjs — الجرد الآلي لمنهاج Goethe/CEFR (A1→B2)
- *  يقارن كل نقطة نحوية (Grammatik) وتواصلية (Kommunikation) من الجرد
- *  الأكاديمي المرجعي بمحتوى دروس المنصة الفعلي، ويطبع جدول تغطية
- *  (✓ موجود / ⚠️ في مستوى آخر / ✗ مفقود) مع اسم الملف الدال.
+ *  يبحث عن كلمات/عبارات مفتاحية مرشحة في ملفات الدروس ويعرض مواضع العثور.
+ *  هذا فحص نصّي استكشافي فقط: لا يحكم على تدريس المفهوم أو صحته أو ملاءمته
+ *  للمستوى، ولا يثبت هدف CEFR/Goethe أو اكتساب المتعلم.
  *
- *  التشغيل:  node scripts/curriculum-audit.mjs
- *  — حماية دائمة ضد الانحدار: أي نقص مستقبلي يظهر فوراً في التقرير.
+ *  التشغيل: node scripts/curriculum-audit.mjs
  * ═══════════════════════════════════════════════════════════════════════
  */
-import { readFileSync, readdirSync } from "node:fs";
+import { readdirSync } from "node:fs";
+import { readLessonSource } from "./lib/lesson-source.mjs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -22,7 +22,7 @@ for (const level of ["a1", "a2", "b1", "b2"]) {
   for (const f of readdirSync(join(ROOT, "src/data/lessons", level))) {
     // ملفات الاختبار (*.test.ts) تحوي معرّفات دروس مكرّرة نصّياً فتفسد البحث
     if (!f.endsWith(".ts") || f.endsWith(".test.ts")) continue;
-    const text = readFileSync(join(ROOT, "src/data/lessons", level, f), "utf8");
+    const text = readLessonSource(join(ROOT, "src/data/lessons", level, f));
     const id = (text.match(/id: "([^"]+)"/) || [])[1] ?? f.replace(".ts", "");
     LESSONS.push({ level, id, text });
   }
@@ -136,7 +136,7 @@ for (const item of ITEMS) {
   const foundAny = hits.length > 0;
   const expected = item.keywords.length;
   const partial = foundAny && hits.length < expected;
-  const status = foundAny ? (partial ? "⚠️" : "✓") : "✗";
+  const status = foundAny ? (partial ? "◐" : "🔎") : "∅";
   const scope = item.lessons.length ? item.lessons.join(", ") : `كل ${item.level}`;
   rows.push({
     level: item.level.toUpperCase(),
@@ -149,9 +149,9 @@ for (const item of ITEMS) {
 }
 
 /* ═══ الطباعة ═══ */
-const ok = rows.filter((r) => r.status === "✓").length;
-const warn = rows.filter((r) => r.status === "⚠️").length;
-const miss = rows.filter((r) => r.status === "✗").length;
+const allKeywordsFound = rows.filter((r) => r.status === "🔎").length;
+const someKeywordsFound = rows.filter((r) => r.status === "◐").length;
+const noKeywordsFound = rows.filter((r) => r.status === "∅").length;
 console.log("\n══════════════════════════════════════════════════════════════");
 console.log("  الجرد الآلي لمنهاج Goethe/CEFR — تغطية الدروس (A1→B2)");
 console.log("══════════════════════════════════════════════════════════════\n");
@@ -163,6 +163,7 @@ for (const level of ["A1", "A2", "B1", "B2"]) {
   console.log("");
 }
 console.log("──────────────────────────────────────────────────────────────");
-console.log(`  الملخص: ${ok} ✓ كامل | ${warn} ⚠️ جزئي/مستوى آخر | ${miss} ✗ مفقود  (الإجمالي ${rows.length})`);
-console.log("  ✓=الموضوع مُدرَّس بدقة في الدروس المشار إليها | ⚠️=جزئي أو محتوى في مستوى آخر | ✗=نقص حقيقي");
+console.log(`  الملخص النصّي: ${allKeywordsFound} بنداً ظهرت كل كلمات البحث فيه | ${someKeywordsFound} ظهرت بعض كلمات البحث | ${noKeywordsFound} لم تظهر كلمات البحث (الإجمالي ${rows.length})`);
+console.log("  🔎/◐/∅ نتائج بحث نصّي فقط؛ لا تثبت التدريس أو الجودة أو المطابقة أو إتقان المتعلم.");
+console.log("  الكلمات المفتاحية مؤشرات أولية لمراجعة بشرية، وقد تفوّت المرادفات أو تعثر على ذكر عابر.");
 console.log("══════════════════════════════════════════════════════════════\n");

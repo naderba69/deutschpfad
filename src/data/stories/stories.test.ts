@@ -3,7 +3,7 @@ import {describe, expect, it} from "vitest";
 import {INTERACTIVE_STORIES, getStoriesByLevel} from "@/data/stories";
 
 describe("مكتبة القصص التفاعلية — سلامة البنية لكل المستويات", () => {
-  it("تحتوي على 48 قصة موزعة على المستويات الأربعة", () => {
+  it("تحتوي على 60 قصة موزعة على المستويات الأربعة", () => {
     expect(INTERACTIVE_STORIES.length).toBe(60);
     expect(getStoriesByLevel("A1").length).toBe(15);
     expect(getStoriesByLevel("A2").length).toBe(15);
@@ -52,6 +52,36 @@ describe("مكتبة القصص التفاعلية — سلامة البنية �
         }
       }
     }
+  });
+
+  it("يعرض قصتي الطبيب والأسنان كخيال تدريبي لا كنصيحة طبية", () => {
+    const doctorStory = INTERACTIVE_STORIES.find(({ id }) => id === "a2-beim-arzt");
+    const dentistStory = INTERACTIVE_STORIES.find(({ id }) => id === "a2-zahnarzt");
+    expect(doctorStory?.description).toContain("خيالية");
+    expect(doctorStory?.description).toContain("ليست إرشاداً طبياً");
+    expect(doctorStory?.segments[2]?.de).toContain("sich ausruhen und zu Hause bleiben");
+    expect(doctorStory?.segments[2]?.de).not.toContain("viel trinken");
+    expect(dentistStory?.description).toContain("خيالية");
+    expect(dentistStory?.description).toContain("ليست إرشاداً طبياً أو تشخيصاً");
+  });
+
+  it("يصرّح بأن قصة المطعم خيالية ولا يعرض الإكرامية كقاعدة عامة", () => {
+    const restaurantStory = INTERACTIVE_STORIES.find(({ id }) => id === "a2-im-restaurant");
+    expect(restaurantStory?.description).toContain("خيالية");
+    expect(restaurantStory?.segments[5]?.de).toContain("freiwillig Trinkgeld");
+    expect(restaurantStory?.segments[5]?.ar).toContain("طوعاً");
+    expect(restaurantStory?.segments[4]?.choices?.[0]?.text).toContain("zwei Portionen Eis");
+  });
+
+  it("يحافظ حوار كلب ماكس على سؤال وجواب واضحين عن النفي، وينتظر مع أمه صاحب الكلب", () => {
+    const story = INTERACTIVE_STORIES.find(({ id }) => id === "a1-max-hund");
+    const question = story?.segments.find(({ id }) => id === 4)?.question;
+    expect(story?.segments[2]?.de).toContain("bleibt mit dem Hund im Park");
+    expect(story?.segments[2]?.ar).toContain("يبقى ماكس مع الكلب في الحديقة");
+    expect(question?.de).toBe("Kennt Max den Hund?");
+    expect(question?.options.filter(({ correct }) => correct)).toEqual([
+      expect.objectContaining({ text: "Nein, er kennt ihn nicht." }),
+    ]);
   });
 
   it("كل اختيار يشير إلى مقطع موجود داخل القصة نفسها", () => {

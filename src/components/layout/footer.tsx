@@ -50,7 +50,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="inline-block py-1 text-muted-foreground transition-colors hover:text-foreground"
+                    className="tap-target py-1 text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {link.title}
                   </Link>
@@ -67,7 +67,7 @@ export function Footer() {
                 <li key={lvl.code}>
                   <Link
                     href={lvl.href}
-                    className="inline-block py-1 text-muted-foreground transition-colors hover:text-foreground"
+                    className="tap-target py-1 text-muted-foreground transition-colors hover:text-foreground"
                   >
                     <span className="font-de font-bold">{lvl.code}</span>
                     {" — "}
@@ -92,7 +92,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="inline-block py-1 text-muted-foreground transition-colors hover:text-foreground"
+                    className="tap-target py-1 text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {link.title}
                   </Link>

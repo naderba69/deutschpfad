@@ -5,6 +5,7 @@ import {Brain} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
+import {VocabKindBadge} from "@/components/shared/vocab-kind";
 import {Progress} from "@/components/ui/progress";
 import {getA1VocabAll} from "@/data/vocabulary/a1";
 import {getA2VocabAll} from "@/data/vocabulary/a2";
@@ -19,7 +20,7 @@ const ROUNDS = 8;
  */
 export function MemoryChallenge() {
   const [phase, setPhase] = React.useState<"intro" | "running" | "done">("intro");
-  const [rounds, setRounds] = React.useState<{ de: string; ar: string }[]>([]);
+  const [rounds, setRounds] = React.useState<{ de: string; ar: string; g?: string; ex?: string }[]>([]);
   const [index, setIndex] = React.useState(0);
   const [score, setScore] = React.useState(0);
   const [options, setOptions] = React.useState<string[]>([]);
@@ -103,9 +104,17 @@ export function MemoryChallenge() {
         </div>
         <Progress value={((index + 1) / ROUNDS) * 100} aria-label="التقدم في تحدي الذاكرة" />
         <div className="rounded-xl border bg-muted/20 p-6 text-center">
-          <p className="font-de text-2xl font-extrabold" dir="ltr" lang="de">
-            {current?.de}
+          <p className="flex items-center justify-center gap-2">
+            <span className="font-de text-2xl font-extrabold" dir="ltr" lang="de">
+              {current?.de}
+            </span>
+            <VocabKindBadge g={current?.g} />
           </p>
+          {current?.ex && (
+            <p className="font-de mt-2 text-xs text-muted-foreground" dir="ltr" lang="de">
+              {current.ex}
+            </p>
+          )}
         </div>
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
           {options.map((opt, i) => (

@@ -73,7 +73,7 @@ export function CefrCompetencies() {
                     </div>
                     <span className="font-de text-xs font-extrabold" style={{ color }}>{s.pct}%</span>
                   </div>
-                  <p className="mt-1 text-[9px] font-bold text-muted-foreground">
+                  <p className="mt-1 text-[11px] font-bold text-muted-foreground">
                     {s.total === 0 ? "لم يُمارس بعد" : `${s.correct}/${s.total} إجابات صحيحة`}
                   </p>
                 </div>
@@ -113,7 +113,7 @@ export function CefrCompetencies() {
                   <span className="flex items-center gap-1.5">
                     <span
                       className={cn(
-                        "rounded-full px-2 py-0.5 text-[9px] font-extrabold",
+                        "rounded-full px-2 py-0.5 text-[11px] font-extrabold",
                         c.mastered ? "bg-success/15 text-success" : "bg-destructive/10 text-destructive",
                       )}
                     >
@@ -122,7 +122,7 @@ export function CefrCompetencies() {
                     {CONCEPT_TO_LESSON[c.concept] && !c.mastered && (
                       <Link
                         href={`/lesson/${CONCEPT_TO_LESSON[c.concept]}`}
-                        className="rounded-full bg-primary/10 px-2 py-0.5 text-[9px] font-extrabold text-primary transition-colors hover:bg-primary/20"
+                        className="rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-extrabold text-primary transition-colors hover:bg-primary/20"
                       >
                         راجع المفهوم ←
                       </Link>

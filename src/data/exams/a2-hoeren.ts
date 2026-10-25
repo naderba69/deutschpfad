@@ -4,6 +4,8 @@
  *  ⚠️ نموذج تدريبي من إعداد المنصة، وليس نصاً رسمياً من Goethe-Institut.
  *  Hören: 4 أجزاء · ~25 دقيقة · 15 عنصراً
  *  الجزآن 1 و3 يُشغَّلان مرتين، والباقي مرة واحدة.
+ *  الصوت: 14 مقطعاً مسجّلاً في `public/audio/exam-a2/` (الجذر)،
+ *  والنطق الآلي في المتصفح احتياط معلَن عند غياب أي ملف.
  * ═══════════════════════════════════════════════════════════
  */
 import type { ExamHoerenTeil } from "@/types/exam";
@@ -25,7 +27,7 @@ export const A2_HOEREN: ExamHoerenTeil[] = [
       "Ansage 3: Das Fundbüro finden Sie neben dem Ausgang Süd. " +
       "Ansage 4: Der Zug nach Leipzig hat fünf Minuten Verspätung, er fährt von Gleis sieben.",
     statements: [
-      { id: "a2h1-s1", de: "Der Zug nach Hamburg fährt heute.", ar: "القطار إلى هامبورغ يسير اليوم.", isTrue: false, whyAr: "قيل إن القطار يلغى، ويُستبدل بحافلة." },
+      { id: "a2h1-s1", de: "Der Zug nach Hamburg fährt heute.", ar: "القطار إلى هامبورغ يسير اليوم.", isTrue: false, whyAr: "قيل: Der Zug nach Hamburg fällt heute aus، ويُستبدل بحافلة." },
       { id: "a2h1-s2", de: "Die Bäckerei öffnet am Montag um acht Uhr.", ar: "المخبز يفتح يوم الاثنين الساعة الثامنة.", isTrue: false, whyAr: "قيل: ab Montag bis acht Uhr geöffnet، أي حتى الثامنة وليس منها." },
       { id: "a2h1-s3", de: "Das Fundbüro ist beim Ausgang Süd.", ar: "مكتب المفقودات عند مخرج الجنوب.", isTrue: true, whyAr: "قيل: neben dem Ausgang Süd." },
       { id: "a2h1-s4", de: "Der Zug nach Leipzig fährt von Gleis sieben.", ar: "القطار إلى لايبزيغ ينطلق من الرصيف السابع.", isTrue: true, whyAr: "قيل: er fährt von Gleis sieben." },
@@ -59,7 +61,7 @@ export const A2_HOEREN: ExamHoerenTeil[] = [
         id: "a2h2-q2",
         q: "Wann ist der Termin jetzt?",
         qAr: "متى الموعد الآن؟",
-        options: ["Am Montag", "Am Donnerstag", "Am Freitag"],
+        options: ["Am Montag früh", "Am Donnerstag", "Am Freitag Abend"],
         correct: 1,
         whyAr: "قالت: am Donnerstag habe ich Zeit.",
       },
@@ -110,7 +112,7 @@ export const A2_HOEREN: ExamHoerenTeil[] = [
         id: "a2h3-q2",
         q: "Warum kann Daniel nicht kommen?",
         qAr: "لماذا لا يستطيع دانيال الحضور؟",
-        options: ["Er muss arbeiten.", "Er ist krank.", "Er hat kein Geld."],
+        options: ["Er muss arbeiten.", "Er ist leider krank.", "Er hat kein Geld."],
         correct: 1,
         whyAr: "قال: weil ich krank bin.",
       },
@@ -168,7 +170,7 @@ export const A2_HOEREN: ExamHoerenTeil[] = [
         id: "a2h4-q3",
         q: "Was soll Frau Weber mitbringen?",
         qAr: "ماذا يجب أن تحضر السيدة فيبر؟",
-        options: ["Ihren Pass", "Ihre Versicherungskarte", "Ein Foto"],
+        options: ["Ihren Reisepass", "Ihre Versicherungskarte", "Ein aktuelles Passfoto"],
         correct: 1,
         whyAr: "قالت السكرتيرة: Bringen Sie bitte Ihre Versicherungskarte mit.",
       },

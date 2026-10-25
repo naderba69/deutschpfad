@@ -68,6 +68,9 @@ const listeningAnswers: Record<string, string> = {
   q2: "zwei",
   q3: "0176 24 83 591",
   q4: "Die Nummer zu wiederholen",
+  q5: "einen Euro",
+  q6: "zwei Flaschen",
+  q7: "drei Euro",
 };
 
 function allTasks() {
@@ -257,7 +260,6 @@ describe("A1-07 reviewed lesson content", () => {
     const taskIds = new Set([
       ...lessonA107.practiceBank.flatMap((task) => [
         `practice:${lessonA107.id}:${task.id}`,
-        `flow-practice:${lessonA107.id}:${task.id}`,
       ]),
       ...lessonA107.writing.map((task) => `writing:${lessonA107.id}:${task.id}`),
       ...reading.questions.map((task) => `reading:${reading.id}:${task.id}`),

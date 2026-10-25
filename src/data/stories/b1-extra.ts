@@ -8,7 +8,7 @@ const B1_8: InteractiveStory = {
   title: "Der Sprachkurs",
   titleAr: "دورة اللغة",
   emoji: "📚",
-  description: "أحمد يتعلم الألمانية في دورة — التقدم والجمل الثانوية.",
+  description: "قصة تدريبية خيالية عن أحمد في دورة ألمانية — التقدم والجمل الثانوية.",
   grammar: "الجمل الثانوية (dass, weil) • التقدم • الأهداف",
   segments: [
     { id: 1, de: "Ahmed besucht einen Deutschkurs, weil er in Deutschland arbeiten möchte.", ar: "يحضر أحمد دورة ألمانية لأنه يريد العمل في ألمانيا." },
@@ -29,8 +29,8 @@ const B1_8: InteractiveStory = {
     },
     {
       id: 4,
-      de: "Nach drei Monaten kann er sich gut verständigen.",
-      ar: "بعد ثلاثة أشهر يستطيع التواصل جيداً.",
+      de: "Nach drei Monaten merkt er, dass ihm kurze Alltagsgespräche leichter fallen.",
+      ar: "بعد ثلاثة أشهر يلاحظ أن المحادثات اليومية القصيرة أصبحت أسهل عليه.",
       question: {
         de: "Was sagt der Lehrer über Ahmed?",
         ar: "ماذا يقول المعلم عن أحمد؟",
@@ -51,8 +51,8 @@ const B1_9: InteractiveStory = {
   title: "Der Fußballverein",
   titleAr: "نادي كرة القدم",
   emoji: "⚽",
-  description: "يوسف ينضم لنادٍ رياضي — العمل التطوعي والاندماج.",
-  grammar: "العمل التطوعي • الاندماج • منذ (seit)",
+  description: "قصة تدريبية خيالية عن يوسف الذي ينضم إلى نادٍ لكرة القدم؛ لا تصف شخصاً أو تجربة موثقة.",
+  grammar: "الانضمام إلى نادٍ • منذ (seit) • obwohl",
   segments: [
     { id: 1, de: "Seit einem Monat ist Yusuf Mitglied in einem Fußballverein.", ar: "منذ شهر ويوسف عضو في نادٍ لكرة القدم." },
     { id: 2, de: "Er trainiert zweimal pro Woche, obwohl er anfangs müde war.", ar: "يتدرب مرتين أسبوعياً رغم أنه كان متعباً في البداية." },
@@ -94,7 +94,7 @@ const B1_10: InteractiveStory = {
   title: "Das Familienfest",
   titleAr: "احتفال العائلة",
   emoji: "🎉",
-  description: "احتفال عائلي كبير — التقاليد والروابط الزمنية.",
+  description: "قصة تدريبية خيالية عن احتفال عائلي غير منسوب إلى ثقافة بعينها — التقاليد والروابط الزمنية.",
   grammar: "الروابط الزمنية (bevor, nachdem) • التقاليد",
   segments: [
     { id: 1, de: "Bevor das Familienfest begann, haben alle beim Kochen geholfen.", ar: "قبل أن يبدأ الاحتفال العائلي، ساعد الجميع في الطبخ." },
@@ -137,10 +137,10 @@ const B1_11: InteractiveStory = {
   title: "Der Umzug ins Büro",
   titleAr: "نقل المكتب",
   emoji: "🏢",
-  description: "شركة تنقل مكاتبها — التنظيم والعمل الجماعي.",
+  description: "قصة تدريبية خيالية عن انتقال شركة إلى مبنى جديد؛ للتدرّب على التنظيم والعمل الجماعي، وليست تقريراً عن شركة حقيقية.",
   grammar: "المبني للمجهول (wurde, wird) • العمل الجماعي",
   segments: [
-    { id: 1, de: "Die Firma zieht in ein neues Gebäude. Alles wird umgezogen.", ar: "تنتقل الشركة إلى مبنى جديد. كل شيء يُنقل." },
+    { id: 1, de: "Die Firma zieht in ein neues Gebäude. Alles wird transportiert.", ar: "تنتقل الشركة إلى مبنى جديد. تُنقل الأغراض كلها." },
     { id: 2, de: "Am Montag wurden die Computer und Schreibtische transportiert.", ar: "يوم الاثنين نُقلت الحواسيب والمكاتب." },
     {
       id: 3,

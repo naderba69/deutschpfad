@@ -293,12 +293,6 @@ export const A2_VOCAB: Record<string, VocabEntry[]> = {
   ],
 };
 
-/** عدد كلمات A2 */
-export const A2_VOCAB_COUNT = Object.values(A2_VOCAB).reduce(
-  (sum, list) => sum + list.length,
-  0,
-);
-
 /** كل مفردات A2 (مصفوفة مسطحة) */
 export function getA2VocabAll(): VocabEntry[] {
   /* عدّاد فريد عبر المستويات: كل كلمة تُحسب في أدنى مستوى لها (تدقيق نهائي 2026-08-12) */
