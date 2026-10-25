@@ -115,8 +115,8 @@ export const B1_DIALOGUES_2: DailyDialogue[] = [
       ]},
       { de: "Was soll die Person morgen tun, falls sie noch krank ist?", ar: "ماذا ينبغي للشخص أن يفعل غداً إذا بقي مريضاً؟", options: [
         { text: "Sich noch einmal melden", ar: "الاتصال مجدداً", correct: true, explanation: "صحيح — طلبت السكرتيرة منها أن تبلغ الشركة مجدداً إذا بقيت مريضة." },
-        { text: "Eine Krankmeldung auf Papier mitbringen", ar: "إحضار شهادة مرض ورقية", correct: false, explanation: "لا — لم يطلب الحوار إحضار شهادة أو مستند." },
-        { text: "Den Laptop zur Arbeit bringen", ar: "إحضار الحاسوب المحمول إلى العمل", correct: false, explanation: "لا — لم يرد ذكر الحاسوب أو الحضور إلى العمل غداً." },
+        { text: "Eine Krankmeldung auf Papier mitbringen", ar: "إحضار شهادة مرض ورقية", correct: false, explanation: "لا — طلبت السكرتيرة «Bitte melden Sie sich morgen noch einmal» إذا استمر المرض؛ ولم تطلب إحضار مستند." },
+        { text: "Den Laptop zur Arbeit bringen", ar: "إحضار الحاسوب المحمول إلى العمل", correct: false, explanation: "لا — قالت السكرتيرة «falls Sie dann noch krank sind» وطلبت الإبلاغ مجدداً، ولم تذكر Laptop أو العودة إلى العمل." },
       ]},
     ],
     keyVocab: [

@@ -86,14 +86,14 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       type: "multiple-choice",
       instructionAr: "اختر أداة الربط المناسبة",
       questionDe: "Einerseits ist es teuer, ___ ist es gut.",
-      options: ["andererseits", "damit", "nachdem"],
+      options: ["andererseits", "unterdessen", "anschließend"],
       correctIndex: 0,
       explanation: "einerseits ... andererseits: من ناحية ... ومن ناحية أخرى.",
       errorType: "vocabulary",
       optionExplanations: [
         undefined,
-        "«damit» تعني لكي، ولا تناسب التقابل هنا.",
-        "«nachdem» تعني بعد أن، ولا تناسب التقابل هنا.",
+        "«unterdessen» تعني في أثناء ذلك، ولا تناسب التقابل هنا.",
+        "«anschließend» تعني بعد ذلك، ولا تناسب التقابل هنا.",
       ],
     },
     {

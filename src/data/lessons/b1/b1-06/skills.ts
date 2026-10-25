@@ -146,9 +146,9 @@ export const listening: Lesson["listening"] = {
         errorType: "vocabulary",
         optionExplanations: [
           undefined,
-          "التواصل مهم، لكن كريم قال صراحةً إن الاندماج يحتاج وقتاً وانفتاحاً.",
-          "لم يذكر كريم العمل أو السفر.",
-          "لم يذكر كريم العلامات الدراسية.",
+          "التواصل مهم، لكن كريم قال: «Integration braucht Zeit und Offenheit»؛ ولم يقل إن العمل والسفر هما المطلوبان.",
+          "لم يذكر كريم العمل أو السفر؛ قال: «Integration braucht Zeit und Offenheit». ",
+          "لم يذكر العلامات؛ قال: «Integration braucht Zeit und Offenheit». ",
         ],
       },
     ],

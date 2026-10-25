@@ -26,7 +26,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   },
   "ex-b1-11-5": { options: ["في رأيي", "في الواقع", "من ناحية أخرى"], key: "في رأيي" },
   "ex-b1-11-6": { options: ["gingen", "gehen", "gegangen"], key: "gingen" },
-  "ex-b1-11-7": { options: ["andererseits", "damit", "nachdem"], key: "andererseits" },
+  "ex-b1-11-7": { options: ["andererseits", "unterdessen", "anschließend"], key: "andererseits" },
   "ex-b1-11-13": { options: ["Werden", "Wird", "Wirst", "Werdet"], key: "Werden" },
   "mt-b1-11-1": {
     options: [

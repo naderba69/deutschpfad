@@ -21,12 +21,12 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   q3: { options: ["Sie machen das Baccalauréat", "Sie beginnen die Grundschule", "Sie machen eine Sprachprüfung in Deutsch", "Sie erhalten automatisch einen Studienplatz"], key: "Sie machen das Baccalauréat" },
   q4: {
     options: [
-      "Viele staatliche Unis verlangen keine allgemeinen Studiengebühren; Studierende zahlen aber einen Semesterbeitrag.",
+      "Viele staatliche Unis ohne Studiengebühren, aber mit Semesterbeitrag.",
       "An allen Universitäten sind die Kosten immer sehr hoch.",
       "Das Studium ist überall ganz ohne jeden Beitrag.",
       "Studiengebühren gibt es ausschließlich in Berlin.",
     ],
-    key: "Viele staatliche Unis verlangen keine allgemeinen Studiengebühren; Studierende zahlen aber einen Semesterbeitrag.",
+    key: "Viele staatliche Unis ohne Studiengebühren, aber mit Semesterbeitrag.",
   },
   q5: { options: ["Sie ist erleichtert, kennt das Ergebnis aber noch nicht.", "Sie ist sehr enttäuscht, weil sie die Prüfung nicht bestanden hat.", "Sie ist krank und wartet auf den nächsten Prüfungstermin.", "Sie ist nervös, denn sie hat die Prüfung noch nicht gemacht."], key: "Sie ist erleichtert, kennt das Ergebnis aber noch nicht." },
   q6: { options: ["Einen kurzen Text schreiben", "Zwei Stunden lang Deutsch lernen", "Fünf Sätze zum Dativ schreiben", "Eine Geschichte für Lena schreiben"], key: "Einen kurzen Text schreiben" },

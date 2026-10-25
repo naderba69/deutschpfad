@@ -56,8 +56,8 @@ export const listening: Lesson["listening"] = {
       optionExplanations: [
         undefined,
         "«seit dem Mauerfall» تركيب صحيح، لكنه لا يطابق ما قاله سامي عن بداية اهتمامه.",
-        "لم يقل سامي إنه يهتم بالسياسة منذ أن كان في العاشرة.",
-        "لم يقل إنه بدأ الاهتمام منذ وقت قصير؛ بل ربطه بالإقامة في ألمانيا.",
+        "لم يقل سامي إنه يهتم منذ العاشرة؛ بل قال: «Seitdem ich in Deutschland wohne, interessiere ich mich dafür».",
+        "لم يقل إنه بدأ منذ وقت قصير؛ بل حدد البداية بعبارة «Seitdem ich in Deutschland wohne, interessiere ich mich dafür».",
       ],
     },
     {

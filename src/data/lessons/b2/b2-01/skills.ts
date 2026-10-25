@@ -110,9 +110,9 @@ export const listening: Lesson["listening"] = {
         errorType: "vocabulary",
         optionExplanations: [
           undefined,
-          "لم يرد في التصريح أن عدد المشاركين مئة وعشرون؛ العدد المذكور مئتان.",
-          "لم يرد أن الدراسة شملت ثلاثمئة شخص؛ العدد المسموع مئتان.",
-          "لم يرد أن الدراسة شملت خمسمئة شخص؛ العدد المسموع مئتان.",
+          "لم يرد ذلك؛ تقول الأستاذة: «Die Studie habe zweihundert Personen einbezogen».",
+          "لم يرد ذلك؛ العدد المسموع هو «zweihundert Personen» لا dreihundert.",
+          "لم يرد ذلك؛ قال فريق البحث إن الدراسة شملت «zweihundert Personen»، لا fünfhundert.",
         ],
       },
     ],

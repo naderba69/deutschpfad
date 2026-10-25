@@ -109,9 +109,9 @@ export const listening: Lesson["listening"] = {
         errorType: "vocabulary",
         optionExplanations: [
           undefined,
-          "لم يقل الحوار إنهما سيوزعان المهام فوراً؛ بل سيعيدان توزيعها بحسب ما يعرفانه.",
-          "لم يقترحا إنهاء النقاش، بل التحدث بوضوح واحترام.",
-          "على العكس، اقترحت ميرا الاستفسار والاستماع إلى وجهات النظر.",
+          "لم يقل الحوار إنهما سيوزعانها فوراً؛ قالت ميرا «Ich frage nach»، ثم قال يوناس: «Je nachdem, was wir dabei erfahren, teilen wir die Aufgaben neu auf». ",
+          "لم يقترحا إنهاءه؛ قالت ميرا: «So vermeiden wir weitere Missverständnisse, indem wir alles klar und respektvoll besprechen». ",
+          "على العكس، قالت ميرا: «Ich frage nach, es sei denn, jemand möchte zuerst seine Sicht erklären». ",
         ],
       },
     ],

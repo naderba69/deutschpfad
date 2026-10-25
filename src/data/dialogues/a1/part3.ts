@@ -228,16 +228,16 @@ export const A1_DIALOGUES_3: DailyDialogue[] = [
       { de: "Wohin fährt der Zug?", ar: "إلى أين يتجه القطار؟", options: [
         { text: "Nach Berlin", ar: "إلى برلين", correct: true, explanation: "نعم — السؤال الأول هو «Ist das der Zug nach Berlin?»" },
         { text: "Nach Hamburg", ar: "إلى هامبورغ", correct: false, explanation: "لا — لم تُذكر هامبورغ؛ الوجهة في الحوار «nach Berlin»." },
-        { text: "Nach München", ar: "إلى ميونخ", correct: false, explanation: "لا — لم تُذكر ميونخ؛ الوجهة هي برلين." },
+        { text: "Nach München", ar: "إلى ميونخ", correct: false, explanation: "لا — في السؤال ورد «der Zug nach Berlin»، ولم تُذكر München." },
       ]},
       { de: "Um wie viel Uhr fährt der Zug ab?", ar: "في أي ساعة ينطلق القطار؟", options: [
         { text: "Um zehn Uhr", ar: "في العاشرة", correct: true, explanation: "صحيح — «Er fährt um zehn Uhr ab»." },
-        { text: "Um zwölf Uhr", ar: "في الثانية عشرة", correct: false, explanation: "لا — الثانية عشرة وقت الوصول، أما الانطلاق ففي العاشرة." },
-        { text: "Um acht Uhr", ar: "في الثامنة", correct: false, explanation: "لا — لم تُذكر الثامنة؛ الانطلاق في العاشرة." },
+        { text: "Um zwölf Uhr", ar: "في الثانية عشرة", correct: false, explanation: "لا — «Wir sind um zwölf Uhr da» وقت الوصول؛ أما الانطلاق «Er fährt um zehn Uhr ab»." },
+        { text: "Um acht Uhr", ar: "في الثامنة", correct: false, explanation: "لا — الحوار يقول «Er fährt um zehn Uhr ab»؛ ولم يذكر acht Uhr." },
       ]},
       { de: "Wo sitzt Thomas?", ar: "أين يجلس توماس؟", options: [
         { text: "Im Wagen drei, auf Platz zwölf", ar: "في العربة الثالثة، المقعد الثاني عشر", correct: true, explanation: "نعم — سارة تقول: «Wagen drei, Platz zwölf»." },
-        { text: "Im Wagen zwei, auf Platz drei", ar: "في العربة الثانية، المقعد الثالث", correct: false, explanation: "لا — رقم العربة ثلاثة والمقعد اثنا عشر." },
+        { text: "Im Wagen zwei, auf Platz drei", ar: "في العربة الثانية، المقعد الثالث", correct: false, explanation: "لا — قالت سارة «Wagen drei, Platz zwölf»؛ فلا نعكس الرقمين إلى Wagen zwei وPlatz drei." },
         { text: "Im Wagen zwölf, auf Platz drei", ar: "في العربة الثانية عشرة، المقعد الثالث", correct: false, explanation: "لا — «Wagen drei» و«Platz zwölf»؛ لا نعكس الرقمين." },
       ]},
     ],

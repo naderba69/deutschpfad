@@ -94,9 +94,9 @@ export const listening: Lesson["listening"] = {
         errorType: "vocabulary",
         optionExplanations: [
           undefined,
-          "لا — الحوار يذكر أن المرحلة الابتدائية تسبق الثانوية، لا أنها تبدأ في نهايتها.",
-          "لا — لم يذكر الحوار امتحاناً للغة الألمانية.",
-          "لا — يوضح الحوار أن البكالوريا تتيح التقدّم، ولا تمنح مقعداً جامعياً تلقائياً.",
+          "لا — يوضح الحوار: «Danach können die Schüler eine vierjährige Sekundarschule besuchen»؛ فالابتدائية تسبقها.",
+          "لا — يذكر الحوار أن الثانوية «mit dem Baccalauréat endet»؛ لا امتحان لغة ألمانية.",
+          "لا — تقول منى: «Damit können sie sich um einen Studienplatz bewerben»؛ أي يمكنهم التقدّم، لا الحصول تلقائياً على مقعد.",
         ],
       },
       {
@@ -107,7 +107,7 @@ export const listening: Lesson["listening"] = {
         questionDe: "Was sagt die Beraterin über die Kosten des Studiums?",
         questionAr: "ماذا تقول المستشارة عن تكاليف الدراسة؟",
         options: [
-          "Viele staatliche Unis verlangen keine allgemeinen Studiengebühren; Studierende zahlen aber einen Semesterbeitrag.",
+          "Viele staatliche Unis ohne Studiengebühren, aber mit Semesterbeitrag.",
           "An allen Universitäten sind die Kosten immer sehr hoch.",
           "Das Studium ist überall ganz ohne jeden Beitrag.",
           "Studiengebühren gibt es ausschließlich in Berlin.",
@@ -117,9 +117,9 @@ export const listening: Lesson["listening"] = {
         errorType: "vocabulary",
         optionExplanations: [
           undefined,
-          "لا — المستشارة تذكر أن كثيراً من الجامعات الحكومية لا تفرض رسوماً دراسية عامة، لا أن التكاليف مرتفعة جداً.",
-          "لا — يذكر الحوار مساهمةً فصلية (Semesterbeitrag)، فلا يقول إن الدراسة بلا أي مساهمة.",
-          "لا — لم يقل الحوار إن الرسوم تُدفع في برلين وحدها؛ بل ذكر احتمال اختلاف الرسوم حسب المكان والبرنامج والحالة.",
+          "لا — توضح المستشارة: «Bei vielen staatlichen Universitäten gibt es keine allgemeinen Studiengebühren»؛ فلا تقول إن التكاليف دائماً مرتفعة.",
+          "لا — بعد ذلك مباشرةً تقول المستشارة: «Studierende zahlen aber einen Semesterbeitrag»؛ لذلك ليست الدراسة بلا أي مساهمة.",
+          "لا — تذكر المستشارة أن الرسوم قد تختلف: «Je nach Bundesland, Hochschule, Studiengang und persönlicher Situation»؛ ولا تحصرها في Berlin.",
         ],
       },
       {

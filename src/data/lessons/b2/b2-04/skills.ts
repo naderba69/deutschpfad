@@ -128,9 +128,9 @@ export const listening: Lesson["listening"] = {
         errorType: "vocabulary",
         optionExplanations: [
           undefined,
-          "اليوم المسموع هو الخميس، وليس الأربعاء.",
-          "التوقيت المذكور هو الساعة 18، لا 16.",
-          "لم يذكر يوم الجمعة أو الساعة 20؛ الموعد الخميس الساعة 18.",
+          "يقول يوناس: «Die Lesung mit der Übersetzerin findet am Donnerstag um achtzehn Uhr statt»؛ وليس الأربعاء.",
+          "حدّد يوناس الموعد «am Donnerstag um achtzehn Uhr»؛ وليس الساعة 16.",
+          "الموعد في الحوار «am Donnerstag um achtzehn Uhr»؛ لا الجمعة ولا الساعة 20.",
         ],
       },
     ],

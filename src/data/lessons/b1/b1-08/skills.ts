@@ -68,7 +68,7 @@ export const listening: Lesson["listening"] = {
         instructionAr: "اختر الإجابة الصحيحة:",
         questionDe: "Was kann laut Sami bei größerer Abhängigkeit passieren?",
         questionAr: "ما الذي قد يحدث بحسب سامي عند زيادة الاعتماد؟",
-        options: ["Ein Ausfall kann dann stärkere Folgen haben.", "Ein System kann nie ausfallen.", "Alle Aufgaben werden einfacher.", "Technik verändert keine Aufgaben."],
+        options: ["Ein Ausfall kann größere Folgen haben.", "Ein System kann nie ausfallen.", "Alle Aufgaben werden einfacher.", "Technik verändert keine Aufgaben."],
         correctIndex: 0,
         explanation: "يرى سامي أنه كلما زاد اعتمادنا على نظام، قد تترتب على تعطّله عواقب أكبر.",
         errorType: "vocabulary",

@@ -42,13 +42,13 @@ export const readingB203: ReadingText = {
       questionDe: "Was beanstandet der Mieter an der Abrechnung?",
       questionAr: "ما الذي يعترض عليه المستأجر في التسوية؟",
       options: [
-        "Mehrere Positionen seien seiner Ansicht nach nicht verständlich erklärt.",
+        "Er meint, mehrere Positionen seien unverständlich erklärt.",
         "Die Vermieterin habe den Vertrag nie unterschrieben.",
         "Das Gericht habe bereits ein Urteil verkündet.",
         "Die Abrechnung enthalte überhaupt keine Betriebskosten.",
       ],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — النص يقول إن الطرفين وقّعا العقد قبل سنوات.", "لا — لم يصدر حكم بعد في الحالة التدريبية.", "لا — النزاع حول وضوح بنود في التسوية، لا غياب تكاليف التشغيل كلها."],
+      optionExplanations: [undefined, "لا — يذكر النص أن العقد «den beide Seiten vor einigen Jahren unterschrieben haben». ", "لا — الحالة ما زالت مفتوحة: «ein Ergebnis steht noch nicht fest»؛ كما أن المحكمة «hat noch kein Urteil verkündet». ", "لا — النزاع حول «mehrere Positionen» في «einer Nebenkostenabrechnung»؛ لا غياب كل التكاليف."],
       paragraph: 1,
       explanation:
         "في الفقرة الأولى يعترض المستأجر على بنود لا تبدو له مشروحة بوضوح: «mehrere Positionen, die … nicht verständlich erklärt sind».",
@@ -67,7 +67,7 @@ export const readingB203: ReadingText = {
         "Das Gericht muss jede Abrechnung sofort genehmigen.",
       ],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — النص يميّز بين الدفعات المقدّمة والمبلغ المقطوع.", "لا — يذكر النص أن الاتفاق على دفعات مقدّمة ممكن.", "لا — لم يقل النص إن المحكمة توافق فوراً على كل تسوية."],
+      optionExplanations: [undefined, "لا — ينص النص على أن «Das Bürgerliche Gesetzbuch unterscheidet solche Vorauszahlungen von einer Pauschale». ", "لا — يذكر النص بنداً «nach der der Mieter monatliche Vorauszahlungen auf Betriebskosten leistet». ", "لا — لا يقول النص ذلك؛ بل يذكر أن «Das Gericht ... kann Vertrag, Abrechnung und Belege prüfen». "],
       paragraph: 2,
       explanation:
         "تذكر الفقرة الثانية أن الدفعات المقدّمة تُسوّى سنوياً، وفق الوصف العام الوارد في § 556 من القانون المدني الألماني.",
@@ -86,7 +86,7 @@ export const readingB203: ReadingText = {
         "Die Daten anderer Mieter im Haus.",
       ],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — الحديث عن مستندات التسوية، لا الأوراق الخاصة للمالكة.", "لا — لا يذكر النص الاطلاع على مداولات المحكمة.", "لا — لا يذكر النص بيانات مستأجرين آخرين."],
+      optionExplanations: [undefined, "لا — يقتصر النص على «Einsicht in die Belege», لا الأوراق الخاصة للمالكة.", "لا — النص يتحدث عن «Belege, auf denen eine Betriebskostenabrechnung beruht»؛ لا مداولات المحكمة.", "لا — حق الاطلاع المذكور هو «Einsicht in die Belege» المرتبطة بالتسوية، لا بيانات مستأجرين آخرين."],
       paragraph: 4,
       explanation:
         "تذكر الفقرة الرابعة أن للمستأجر، عند الطلب، الاطلاع على مستندات التسوية التي تستند إليها، من دون تعميم حق الاطلاع على أوراق أخرى.",
@@ -105,7 +105,7 @@ export const readingB203: ReadingText = {
         "Ob das Gericht die Unterlagen erhalten hat.",
       ],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — النص يذكر أن الطرفين وقّعا العقد قبل سنوات.", "لا — النص يقول إن المستأجر دفع دفعات مقدّمة.", "لا — لا يقول النص إن المحكمة تسلمت جميع المستندات."],
+      optionExplanations: [undefined, "لا — يذكر النص أن الطرفين «den Mietvertrag ... vor einigen Jahren unterschrieben haben». ", "لا — ينص النص على أن المستأجر «monatliche Vorauszahlungen auf Betriebskosten leistet». ", "لا — يذكر النص أن «einige Unterlagen noch fehlen» وأنها «nachgereicht» werden sollen؛ ولا يقول إنها تسلمت كلها."],
       paragraph: 6,
       explanation:
         "توضح الفقرة الأخيرة أن المحكمة لم تعلن حكماً بعد، وأن تكاليف الإجراءات لم تُحسم في هذا المثال الخيالي.",

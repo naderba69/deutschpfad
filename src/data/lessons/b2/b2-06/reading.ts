@@ -46,7 +46,7 @@ export const readingB206: ReadingText = {
       questionDe: "Warum achtet die Personalabteilung in der Beispiel-Firma zuerst auf das Anschreiben?",
       questionAr: "ما السبب الذي يورده النص لنظر قسم الموارد البشرية أولاً إلى الرسالة المرافقة؟",
       options: [
-        "Weil die Personalabteilung viele Unterlagen sichtet.",
+        "Weil die Personalabteilung Unterlagen prüft.",
         "Weil die Unterlagen oft verloren gehen.",
         "Weil die Software keine Zeit hat.",
         "Weil die Sitzungen abgeschafft wurden.",
@@ -84,7 +84,7 @@ export const readingB206: ReadingText = {
       questionDe: "Welche Aussage gilt in der Beispiel-Firma für die Bewertung der Arbeit?",
       questionAr: "ما العبارة التي تصف تقييم العمل في الشركة الافتراضية؟",
       options: [
-        "In dieser Firma ist das Ergebnis wichtig; Anwesenheit ist nicht das einzige Kriterium.",
+        "Das Ergebnis zählt; Anwesenheit ist nicht allein entscheidend.",
         "Die Zahl der eingegangenen Bewerbungen ist deutlich gesunken.",
         "Das Vorstellungsgespräch ist vollständig abgeschafft worden.",
         "Die Einarbeitung neuer Leute dauert keine ganze Woche mehr.",

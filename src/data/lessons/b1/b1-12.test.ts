@@ -27,7 +27,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     ],
     key: "Ich gehe früh, um pünktlich zu sein.",
   },
-  m1: { options: ["um … zu", "damit … zu", "wegen … zu", "trotz … zu"], key: "um … zu" },
+  m1: { options: ["um … zu", "damit zu", "wegen zu", "trotz zu"], key: "um … zu" },
   m2: { options: ["damit", "um zu", "trotz", "aufgrund"], key: "damit" },
   q1: {
     options: ["Um als Ingenieur zu arbeiten", "Um zu studieren", "Wegen der Prüfung", "Damit seine Frau arbeitet"],

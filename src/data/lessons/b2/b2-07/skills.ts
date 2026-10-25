@@ -109,9 +109,9 @@ export const listening: Lesson["listening"] = {
         errorType: "vocabulary",
         optionExplanations: [
           undefined,
-          "قال سامي إن الأسئلة الأساسية ستبقى، لا أنها ستتغير.",
-          "لم يقل الحوار إن قيمة الصداقة ستتغير؛ بل أكد بقاءها مهمة.",
-          "لم يذكر سامي أن احتياجات الناس ستتغير؛ ركز على أشكال العيش المشترك.",
+          "قال سامي: «Die Formen des Zusammenlebens werden sich ändern, aber die Grundfragen bleiben». ",
+          "تقول آنا: «Freundschaft und Freiheit wichtig» حتى مع تطور التقنية؛ ولم تقل إن الصداقة ستتغير.",
+          "خلاصة سامي: «Die Formen des Zusammenlebens werden sich ändern»؛ ولم يذكر تغير الاحتياجات البشرية.",
         ],
       },
     ],

@@ -66,8 +66,8 @@ export const A1_DIALOGUES_2: DailyDialogue[] = [
     questions: [
       { de: "Wie viele Zimmer hat die Wohnung?", ar: "كم غرفة في الشقة؟", options: [
         { text: "Zwei Zimmer", ar: "غرفتان", correct: true, explanation: "نعم — «Zwei Zimmer»؛ والمطبخ إضافي ولا يُحسب هنا." },
-        { text: "Drei Zimmer", ar: "ثلاث غرف", correct: false, explanation: "لا — ذُكرت غرفتان، وقال المتحدث إن المطبخ إضافي." },
-        { text: "Vier Zimmer", ar: "أربع غرف", correct: false, explanation: "لا — ذُكرت غرفتان فقط، والمطبخ إضافي." }
+        { text: "Drei Zimmer", ar: "ثلاث غرف", correct: false, explanation: "لا — قال «Zwei Zimmer: ein Schlafzimmer und ein Wohnzimmer»؛ وأضاف «Die Küche ist extra»، فلا تُحسب غرفة ثالثة." },
+        { text: "Vier Zimmer", ar: "أربع غرف", correct: false, explanation: "لا — الحوار يحدد «Zwei Zimmer» ثم يوضح «Die Küche ist extra»، فلا يذكر أربع غرف." }
       ]},
       { de: "Wo liegt die Wohnung?", ar: "أين تقع الشقة؟", options: [
         { text: "Im Stadtzentrum", ar: "في وسط المدينة", correct: true, explanation: "صحيح — «Im Stadtzentrum»." },

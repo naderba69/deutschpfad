@@ -42,7 +42,7 @@ export const readingB109: ReadingText = {
       questionAr: "أي قرار اتخذت الجمعية؟",
       options: [
         "Nur noch Berufstätige mit Erfahrung aufzunehmen.",
-        "Auch Menschen mit nur einer Stunde pro Woche die Teilnahme an seinen Angeboten zu ermöglichen.",
+        "Auch Menschen mit wenig Zeit teilnehmen zu lassen.",
         "Die laufenden Projekte im Ort ganz zu schließen.",
         "Nur an Feiertagen und am Wochenende zu arbeiten.",
       ],
@@ -97,7 +97,7 @@ export const readingB109: ReadingText = {
       options: [
         "Sie weist die Kritik zurück und beendet Angebote für Menschen mit wenig Zeit.",
         "Sie nimmt die Kritik an und will nur Menschen mit viel Zeit beschäftigen.",
-        "Sie weist die Kritik nicht zurück: Der Verein braucht Menschen mit viel und wenig Zeit und eine gute Einarbeitung.",
+        "Sie braucht Freiwillige mit viel und wenig Zeit; wichtig ist gute Einarbeitung.",
         "Sie ignoriert die Kritik und ändert weder Angebote noch Einarbeitung.",
       ],
       correctIndex: 2,

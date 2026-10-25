@@ -83,7 +83,7 @@ export const readingB106: ReadingText = {
         "Das Museum wird wegen eines Umbaus geschlossen.",
       ],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — النصّ لا يقول إن الجميع رفض العرض؛ بل يذكر أن بعض الزوار أعجبهم.", "لا — لا يذكر النص تضاعف أعداد الزوار؛ يذكر آراء بعض الشخصيات الخيالية فقط.", "لا — لا يذكر النص إغلاقاً بسبب أعمال؛ يذكر مساحة مخصصة للأطفال، ويصف تغييرات في النصوص."],
+      optionExplanations: [undefined, "لا — النص يقول «Einige Besucherinnen und Besucher mögen das neue Angebot»؛ وليس إن الجميع رفضه.", "لا — يذكر النص أن «Einige Besucherinnen und Besucher mögen das neue Angebot»، ولا يورد أرقاماً عن تضاعف الزوار.", "لا — التغيير الموصوف هو «Zuerst wurden die Texte an den Wänden neu geschrieben»؛ ولا يذكر النص إغلاق المتحف."],
       paragraph: 3,
       explanation: "الفقرة 3: بعض الزوار الخياليين يقولون إن العرض الجديد أعجبهم؛ ولا يورد النص أرقاماً فعلية عن أعداد الزوار.",
       errorType: "comprehension",

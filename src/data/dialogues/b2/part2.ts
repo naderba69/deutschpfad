@@ -188,8 +188,8 @@ export const B2_DIALOGUES_2: DailyDialogue[] = [
     questions: [
       { de: "In welchem Bereich hat die Kollegin gearbeitet?", ar: "في أي مجال عملت الزميلة؟", options: [
         { text: "Im Exportbereich", ar: "في قطاع التصدير", correct: true, explanation: "صحيح — تذكر الزميلة أنها عملت خمس سنوات في قطاع التصدير." },
-        { text: "Im Rechnungswesen", ar: "في المحاسبة والتخطيط المالي", correct: false, explanation: "لا — لم يرد ذكر المحاسبة؛ بل قطاع التصدير." },
-        { text: "Im Personalwesen", ar: "في الموارد البشرية والتوظيف الدولي", correct: false, explanation: "لا — لم يرد ذكر الموارد البشرية؛ بل قطاع التصدير." },
+        { text: "Im Rechnungswesen", ar: "في المحاسبة والتخطيط المالي", correct: false, explanation: "لا — قالت الزميلة «Ich habe fünf Jahre im Exportbereich gearbeitet»؛ ولم تذكر Rechnungswesen." },
+        { text: "Im Personalwesen", ar: "في الموارد البشرية والتوظيف الدولي", correct: false, explanation: "لا — الدليل هو «Ich habe fünf Jahre im Exportbereich gearbeitet»؛ لا Personalwesen." },
       ]},
       { de: "Wie lange hat sie im Exportbereich gearbeitet?", ar: "كم سنة عملت في قطاع التصدير؟", options: [
         { text: "Fünf Jahre", ar: "خمس سنوات", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
@@ -198,8 +198,8 @@ export const B2_DIALOGUES_2: DailyDialogue[] = [
       ]},
       { de: "Wozu passt ihre Erfahrung laut der Teamleiterin?", ar: "بمَ تتناسب خبرتها حسب مديرة الفريق؟", options: [
         { text: "Zur Vorbereitung des geplanten Eintritts in einen internationalen Markt", ar: "للتحضير لدخول سوق دولية مخططة", correct: true, explanation: "صحيح — تقول المديرة إن خبرتها تناسب دخول السوق المخطط للفريق." },
-        { text: "Zu den Aufgaben der internationalen Buchhaltung und Finanzplanung", ar: "لمهام المحاسبة الدولية والتخطيط المالي", correct: false, explanation: "لا — لم يرد ذكر المحاسبة؛ بل دخول السوق المخطط." },
-        { text: "Zu den Aufgaben der Gebäudereinigung im internationalen Büro", ar: "لمهام تنظيف المبنى في المكتب الدولي", correct: false, explanation: "لا — لم يرد ذكر التنظيف؛ بل دخول السوق المخطط." },
+        { text: "Zu den Aufgaben der internationalen Buchhaltung und Finanzplanung", ar: "لمهام المحاسبة الدولية والتخطيط المالي", correct: false, explanation: "لا — قالت المديرة «Das passt zu unserem geplanten Markteintritt»؛ ولم تذكر Buchhaltung." },
+        { text: "Zu den Aufgaben der Gebäudereinigung im internationalen Büro", ar: "لمهام تنظيف المبنى في المكتب الدولي", correct: false, explanation: "لا — المديرة ربطت الخبرة بـ«unserem geplanten Markteintritt»، ولم تذكر Gebäudereinigung." },
       ]},
     ],
     keyVocab: [

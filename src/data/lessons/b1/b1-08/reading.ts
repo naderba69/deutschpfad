@@ -60,7 +60,7 @@ export const readingB108: ReadingText = {
       questionAr: "كيف يُستخدم البرنامج في المدرسة الخيالية؟",
       options: [
         "Es entscheidet allein über die Inhalte.",
-        "Es markiert mögliche Rechtschreibfehler; die Lehrkraft prüft die Vorschläge.",
+        "Es markiert Fehler; die Lehrkraft prüft sie.",
         "Es ersetzt die Lehrkraft vollständig.",
         "Es bewertet die Schülerinnen und Schüler automatisch.",
       ],
@@ -78,7 +78,7 @@ export const readingB108: ReadingText = {
       questionAr: "بماذا تطالب ممثلية العاملين الخيالية؟",
       options: [
         "Weniger Personal und keine Weiterbildung.",
-        "Ausreichendes Personal und verbindliche Fortbildung für die Beschäftigten.",
+        "Genug Personal und regelmäßige Fortbildungen.",
         "Bessere Computer für alle Beschäftigten.",
         "Kürzere Arbeitszeiten ohne Unterstützung.",
       ],

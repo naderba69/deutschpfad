@@ -195,8 +195,8 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
         ar: "ما الذي توفره ليا بحسب قولها؟",
         options: [
           { text: "Den Arbeitsweg", ar: "مشوار الذهاب إلى العمل", correct: true, explanation: "نعم — تقول ليا: «Ich spare mir den Arbeitsweg»." },
-          { text: "Das Mittagessen", ar: "الغداء", correct: false, explanation: "لا — لم تذكر ليا الغداء أو وقت تناوله." },
-          { text: "Den Teamkontakt", ar: "التواصل مع الفريق", correct: false, explanation: "لا — يقول زميلها إنه يفتقد التواصل مع الفريق، لا إن ليا توفر وقته." },
+          { text: "Das Mittagessen", ar: "الغداء", correct: false, explanation: "لا — لم تذكر ليا الغداء؛ بل قالت «Ich spare mir den Arbeitsweg»." },
+          { text: "Den Teamkontakt", ar: "التواصل مع الفريق", correct: false, explanation: "لا — يقول الزميل «Mir fehlt der Austausch im Team»؛ لا إن ليا توفر المحادثات." },
         ],
       },
       {
@@ -204,8 +204,8 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
         ar: "ما الأمر الذي يجده الزميل صعباً؟",
         options: [
           { text: "Arbeit und Freizeit zu trennen", ar: "الفصل بين العمل ووقت الفراغ", correct: true, explanation: "نعم — يقول: «Arbeit und Freizeit zu trennen ist nicht immer leicht»." },
-          { text: "Mit dem Zug täglich zur Arbeit fahren", ar: "الذهاب يومياً إلى العمل بالقطار", correct: false, explanation: "لا — لا يتحدث عن قطار أو تنقّل يومي." },
-          { text: "Neue Programme im Büro einrichten", ar: "إعداد برامج جديدة في المكتب", correct: false, explanation: "لا — لا يذكر الحوار تثبيت برامج في المكتب." },
+          { text: "Mit dem Zug täglich zur Arbeit fahren", ar: "الذهاب يومياً إلى العمل بالقطار", correct: false, explanation: "لا — يصف الزميل صعوبة «Arbeit und Freizeit zu trennen»؛ ولا يذكر قطاراً أو تنقلاً." },
+          { text: "Neue Programme im Büro einrichten", ar: "إعداد برامج جديدة في المكتب", correct: false, explanation: "لا — الحوار يذكر أن «Arbeit und Freizeit zu trennen ist nicht immer leicht»؛ ولا يذكر برامج مكتب." },
         ],
       }
     ],
@@ -478,9 +478,9 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     scriptAr: "توصي منظمة الصحة العالمية البالغين 150 إلى 300 دقيقة أسبوعياً من الحركة متوسطة الشدة، أو 75 إلى 150 دقيقة من الحركة الشديدة. وتُحسب الحركة اليومية أيضاً، مثل صعود الدرج. ويمكن توزيع الوقت على أيام الأسبوع. هذه توصية عامة وليست بديلاً عن المشورة الطبية الشخصية.",
     questions: [
       { de: "Was empfiehlt die WHO Erwachsenen?", ar: "بماذا توصي منظمة الصحة العالمية للبالغين؟", options: [
-        { text: "150–300 Min. moderat oder 75–150 Min. intensiv", ar: "أسبوعياً 150–300 دقيقة متوسطة الشدة أو 75–150 دقيقة شديدة الشدة", correct: true, explanation: "نعم — يذكر النص: «150 bis 300 Minuten Bewegung mit mittlerer Intensität oder 75 bis 150 Minuten mit hoher Intensität»." },
-        { text: "Nur Bewegung im Fitnessstudio", ar: "الحركة في النادي الرياضي فقط", correct: false, explanation: "لا — لا يحصر النص النشاط في النادي الرياضي؛ يذكر حركة الحياة اليومية أيضاً." },
-        { text: "Treppensteigen zählt nicht als Bewegung", ar: "صعود الدرج لا يُعد حركة", correct: false, explanation: "لا — يقول النص: «Auch Bewegung im Alltag zählt, zum Beispiel Treppensteigen»." },
+        { text: "150 bis 300 Minuten moderat oder 75 bis 150 Minuten intensiv pro Woche", ar: "أسبوعياً 150 إلى 300 دقيقة متوسطة الشدة أو 75 إلى 150 دقيقة شديدة الشدة", correct: true, explanation: "نعم — يذكر النص: «150 bis 300 Minuten Bewegung mit mittlerer Intensität oder 75 bis 150 Minuten mit hoher Intensität»." },
+        { text: "Nur Bewegung im Fitnessstudio, nicht als Alltagstätigkeit", ar: "الحركة في النادي الرياضي فقط، لا النشاط اليومي", correct: false, explanation: "لا — يقول النص «Auch Bewegung im Alltag zählt, zum Beispiel Treppensteigen»؛ فلا يحصر الحركة في Fitnessstudio." },
+        { text: "Treppensteigen zählt nicht als körperliche Bewegung im Alltag", ar: "صعود الدرج لا يُعد حركة بدنية يومية", correct: false, explanation: "لا — يقول النص: «Auch Bewegung im Alltag zählt, zum Beispiel Treppensteigen»." },
       ]},
       { de: "Was zählt laut WHO als Bewegung im Alltag?", ar: "ما الذي يُحسب حركةً في الحياة اليومية وفقاً لمنظمة الصحة العالمية؟", options: [
         { text: "Treppensteigen", ar: "صعود الدرج", correct: true, explanation: "نعم — يقول النص: «Auch Bewegung im Alltag zählt, zum Beispiel Treppensteigen.»" },
@@ -525,13 +525,13 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     questions: [
       { de: "Wie fühlte sich Samira am Anfang?", ar: "كيف شعرت سميرة في البداية؟", options: [
         { text: "Oft unsicher", ar: "بعدم الأمان كثيراً", correct: true, explanation: "نعم — يقول النص: «Am Anfang fühlte sie sich oft unsicher»." },
-        { text: "Immer gelangweilt", ar: "بالملل دائماً", correct: false, explanation: "لا — لم يذكر النص الملل؛ بل أنها شعرت بعدم الأمان كثيراً في البداية." },
-        { text: "Sofort zu Hause", ar: "بأنها في بيتها فوراً", correct: false, explanation: "لا — تساءلت في البداية أين تشعر بأنها في بيتها." },
+        { text: "Immer gelangweilt", ar: "بالملل دائماً", correct: false, explanation: "لا — النص يقول «Am Anfang fühlte sie sich oft unsicher»؛ ولا يذكر Langeweile." },
+        { text: "Sofort zu Hause", ar: "بأنها في بيتها فوراً", correct: false, explanation: "لا — النص يقول إنها «fragte sich, wo sie sich zu Hause fühlte»؛ فلا يقول إنها شعرت فوراً بأنها في بيتها." },
       ]},
       { de: "Was gehört für Samira zu ihrer Identität?", ar: "ما الذي يشكل هوية سميرة بحسب تجربتها؟", options: [
         { text: "Frühere Erinnerungen und ihr heutiges Leben", ar: "ذكريات الماضي وحياتها اليوم", correct: true, explanation: "نعم — يقول النص: «Für Samira gehört beides zu ihrer Identität: Erinnerungen an früher und ihr Leben heute»." },
-        { text: "Ihr Team und ihr Beruf im neuen Umfeld", ar: "فريقها وعملها في محيطها الجديد", correct: false, explanation: "لا — لا يحصر النص الهوية في الفريق أو العمل؛ بل يذكر الذكريات والحياة الحالية." },
-        { text: "Nur ihr früherer Wohnort und ihre Sprache", ar: "مكان إقامتها السابق ولغتها فقط", correct: false, explanation: "لا — النص لا يحصر هويتها في مكان أو لغة؛ بل يذكر ذكريات الماضي وحياتها اليوم." },
+        { text: "Ihr Team und ihr Beruf im neuen Umfeld", ar: "فريقها وعملها في محيطها الجديد", correct: false, explanation: "لا — خلاصة النص هي «Erinnerungen an früher und ihr Leben heute»؛ ولا يحصر الهوية في Team أو Beruf." },
+        { text: "Nur ihr früherer Wohnort und ihre Sprache", ar: "مكان إقامتها السابق ولغتها فقط", correct: false, explanation: "لا — يقول النص «Erinnerungen an früher und ihr Leben heute»؛ ولا يحصر الهوية في Wohnort أو Sprache." },
       ]},
     ],
   },

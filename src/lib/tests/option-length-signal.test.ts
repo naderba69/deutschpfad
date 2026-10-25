@@ -357,8 +357,6 @@ const LESSON_LENGTH_SIGNAL_EXCEPTIONS: Record<string, string> = {
   "a2-08/e2": "درجات المقارنة: «am schnellsten / schneller / schnell / schnellste» — الأطوال من الصرف لا من الإسهاب",
   "a2-08/m2": "درجات المقارنة: «am besten / besser / gut / beste» — الصنف نفسه",
   /* ── B1 (الدفعة 66): 48 → 0 مُصلَحة + 2 جوهرية ── */
-  "b1-12/m1": "أدوات ربط ثابتة: «um … zu / damit … zu / wegen … zu / trotz … zu» — الأطوال من بنية الأداة نفسها ولا تُطال «um … zu» بلا كسر القاعدة",
-  "b1-11/ex-b1-11-7": "أدوات ربط مفردة: «andererseits / damit / nachdem» — الصنف نفسه",
   "b2-05/m2": "أدوات ربط مفردة في فراغ واحد: «es sei denn / indem / ohne / damit» — أطوالها من الصرف، وإطالة مشتّتٍ منها («ohne dass») تُخرجه من صنف الحرف الذي يدرّسه الدرس",
 };
 
@@ -414,7 +412,7 @@ describe("دروس المنهج — أكبر كوربوس داخل القياس"
       stale,
       `استثناءات لم تعد تنطبق — احذفها: ${stale.join(" · ")}`,
     ).toEqual([]);
-    expect(Object.keys(LESSON_LENGTH_SIGNAL_EXCEPTIONS).length).toBe(17); // عدّاد غير هامشي
+    expect(Object.keys(LESSON_LENGTH_SIGNAL_EXCEPTIONS).length).toBe(15); // عدّاد غير هامشي
   });
 
   it("نسبة «الأطول وحيداً» في الدروس ≤ 55% (قياس: 50%)", () => {

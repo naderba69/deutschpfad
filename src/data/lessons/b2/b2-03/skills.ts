@@ -108,9 +108,9 @@ export const listening: Lesson["listening"] = {
         errorType: "vocabulary",
         optionExplanations: [
           undefined,
-          "قال المستشار إن البائع يتحمل تكاليف الشحن عند صحة الشكوى، لا المشتري.",
-          "لم يذكر الحوار أن البنك يتحمل تكاليف الشحن.",
-          "لم يتحدث الحوار عن مصاريف المحكمة أو الشركة المصنّعة.",
+          "قال المستشار: «Wenn die Reklamation berechtigt ist, muss der Händler die Versandkosten übernehmen»؛ وليس على نور.",
+          "لم يذكر الحوار البنك؛ بل قال المستشار: «muss der Händler die Versandkosten übernehmen». ",
+          "لم يذكر الحوار مصاريف محكمة؛ بل حدد المسؤول عن الشحن: «der Händler». ",
         ],
       },
     ],

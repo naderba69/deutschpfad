@@ -69,7 +69,7 @@ export const readingB208: ReadingText = {
       questionDe: "Woran musste sich Lena gewöhnen?",
       questionAr: "بمَ اضطرت لينا أن تعتاد؟",
       options: [
-        "Daran, in dieser Seminargruppe bei Unklarheiten nachzufragen.",
+        "Daran, bei Unklarheiten in der Gruppe zu fragen.",
         "An den kalten Winter in Tunis.",
         "An die Prüfungsordnung der Universität.",
         "An die Arbeit im Übersetzungsbüro.",

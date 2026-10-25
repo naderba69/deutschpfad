@@ -109,9 +109,9 @@ export const listening: Lesson["listening"] = {
         errorType: "vocabulary",
         optionExplanations: [
           undefined,
-          "«das Sparen von Zeit» ذكره سامي كشيء رائع، لا كشيء صعب.",
-          "«die Videokonferenzen am Morgen» لم يقل سامي إنها صعبة في الصباح.",
-          "«die Gleitzeit» ذكرتها آنا كشيء يساعد، لا كشيء صعب.",
+          "«Das Sparen von Fahrzeit ist super»؛ أما الصعب فهو «die Trennung von Arbeit und Freizeit». ",
+          "قال سامي إن مؤتمرات الفيديو «manche sind effizient, manche dauern zu lang»؛ ولم يقل إنها صعبة صباحاً.",
+          "قالت آنا عن المرونة: «Wir haben Gleitzeit, das hilft»؛ أي إنها تساعد.",
         ],
       },
     ],

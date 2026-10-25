@@ -51,7 +51,7 @@ export const readingB207: ReadingText = {
         "Weil die Medikamente für viele Menschen zu teuer sind.",
       ],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — حماية الكوكب وردت في النقاش، لكن السؤال الإضافي هو كيف نأخذ مصالح من لا يشاركون مباشرة في القرارات الحالية في الحسبان.", "لا — لا يتحدث النص عن عقود خارجية؛ بل عن المشاركة غير المباشرة لمن سيعيشون لاحقاً في قرارات الحاضر.", "لا — لا يتحدث السؤال عن أسعار الدواء؛ بل يذكر النص الدواء في مثال ذهني عن إمكانية إلحاق الضرر من دون لقاء مباشر."],
+      optionExplanations: [undefined, "لا — السؤال في النص هو: «Wie lassen sich ihre möglichen Interessen trotzdem berücksichtigen?»؛ لأن الأجيال اللاحقة «können an heutigen Entscheidungen nicht direkt teilnehmen». ", "لا — يذكر النص «künftigen Generationen» و«heutigen Entscheidungen»؛ ولا يذكر عقوداً خارجية.", "لا — الدواء ورد لاحقاً في مثال: «Man kann jemandem schaden, ohne der Person zu begegnen»؛ وليس جواب السؤال الإضافي."],
       paragraph: 1,
       explanation:
         "الفقرة الأولى تعرض المفارقة: الإجابة الظاهرة سهلة، لكن الأجيال القادمة لا تطالب ولا توقّع ولا تحاسب — وهذا هو موضع الإشكال. والخيارات الأخرى إما مسلّمات لا يذكرها النصّ أو تفاصيل من فقرة لاحقة.",
@@ -64,13 +64,13 @@ export const readingB207: ReadingText = {
       questionDe: "Welchen Vorschlag macht der Text für die Praxis?",
       questionAr: "ما الاقتراح العملي الذي يقدمه النص؟",
       options: [
-        "Entscheidungen mit schwer umkehrbaren Folgen sollte man besonders sorgfältig prüfen.",
+        "Schwer umkehrbare Entscheidungen genau prüfen.",
         "Man darf nie Bäume pflanzen.",
         "Man soll den Fortschritt sofort stoppen.",
         "Man soll Verträge mit der Zukunft schreiben.",
       ],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — لا يقترح النص حظراً عاماً للتغيير؛ بل يدعو الصوت الافتراضي إلى فحص القرارات ذات الآثار صعبة الرجوع بعناية.", "لا — لا يدعو النص إلى إيقاف التقدم فوراً؛ بل يورد هذا بوصفه طرفاً في السؤال المطروح.", "لا — العقود مع المستقبل لم ترد في النص؛ والاقتراح يتناول فحص القرارات ذات الآثار صعبة التراجع."],
+      optionExplanations: [undefined, "لا — الاقتراح هو «Entscheidungen mit schwer umkehrbaren ... Folgen besonders sorgfältig prüfen»؛ وليس حظراً عاماً.", "لا — يقول النص «nicht jede Veränderung automatisch Fortschritt bedeutet»؛ ويدعو إلى فحص القرار لا إيقاف التقدم.", "لا — النص يقترح «Entscheidungen mit schwer umkehrbaren ... Folgen besonders sorgfältig prüfen»؛ ولا يذكر عقوداً مع المستقبل."],
       paragraph: 4,
       explanation:
         "الفقرة الرابعة تعرض اقتراحاً في النقاش الافتراضي: فحص القرارات ذات الآثار التي يصعب التراجع عنها؛ وتورد التخزين الطويل للنفايات مثالاً للنقاش لا توقعاً رقمياً.",
@@ -89,7 +89,7 @@ export const readingB207: ReadingText = {
         "Bewusstsein und Bußgeld.",
       ],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — التقدم والجمود طُرحا كطرفي سؤال، لا كعنصرين يجمعهما النص؛ أما التعليل والتناسب فذُكرا كسؤالين للفحص.", "لا — المعرفة والتقنية وردتا في فقرة عدم اليقين، لا في اقتراح الفحص العملي.", "لا — الغرامة لم تُذكر، والخاتمة تتحدث عن اختلاف المواقف؛ العنصران الواردان معاً في الفقرة السابقة هما التعليل والتناسب."],
+      optionExplanations: [undefined, "لا — النص يقول: «Begründung und Verhältnismäßigkeit als Prüffragen dienen»؛ لا Fortschritt und Stillstand.", "لا — وردت «Technik» في فقرة عدم اليقين؛ أما الفحص فيتعلق بـ«Begründung und Verhältnismäßigkeit». ", "لا — عبارة النص هي «Begründung und Verhältnismäßigkeit als Prüffragen»؛ ولم يذكر Bußgeld."],
       paragraph: 5,
       explanation:
         "الفقرة الخامسة تعرض اعتراضاً ورداً في النص المتخيّل، وتقترح التعليل والتناسب كسؤالين لفحص القرارات طويلة الأمد.",
@@ -102,13 +102,13 @@ export const readingB207: ReadingText = {
       questionDe: "Wovon handelt der letzte Absatz?",
       questionAr: "عمّ تتحدث الفقرة الأخيرة؟",
       options: [
-        "Von einem Vorschlag, Folgen für künftige Generationen zu berücksichtigen.",
+        "Von einem Vorschlag, Folgen für künftige Generationen einzubeziehen.",
         "Von der genauen Zahl der klimapolitischen Massnahmen.",
         "Von der Befreiung aller Menschen von jeglicher Schuld.",
         "Vom Untergang des aktuellen Jahrhunderts.",
       ],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — لا تذكر الخاتمة عدداً لتدابير مناخية؛ بل تلخص اقتراح مراعاة العواقب المحتملة على الأجيال اللاحقة.", "لا — لا تعفي الخاتمة الجميع من كل مسؤولية؛ بل تعرض موقفاً افتراضياً يوصي بمراعاة العواقب المحتملة.", "لا — لا يتحدث النص عن نهاية القرن؛ بل يعرض خلاصة موقفه الافتراضي بشأن قرارات الحاضر وآثارها المحتملة."],
+      optionExplanations: [undefined, "لا — تلخّص الخاتمة أن القرارات ينبغي أن «mögliche Folgen für künftige Menschen berücksichtigen»؛ ولا تورد عدداً لتدابير مناخية.", "لا — خلاصة الصوت هي «heutige Entscheidungen sollten mögliche Folgen für künftige Menschen berücksichtigen»؛ لا إعفاء الجميع من المسؤولية.", "لا — يركز النص على «heutige Entscheidungen» و«künftige Menschen»؛ ولا يتحدث عن نهاية القرن."],
       paragraph: 6,
       explanation:
         "تلخص الفقرة الأخيرة موقف الصوت المتخيّل، وتقول صراحةً إن النموذج لا يعطي جواباً ملزماً.",

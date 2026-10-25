@@ -27,8 +27,8 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     key: "Sie könnten manche Aufgaben verändern.",
   },
   q2: {
-    options: ["Ein Ausfall kann dann stärkere Folgen haben.", "Ein System kann nie ausfallen.", "Alle Aufgaben werden einfacher.", "Technik verändert keine Aufgaben."],
-    key: "Ein Ausfall kann dann stärkere Folgen haben.",
+    options: ["Ein Ausfall kann größere Folgen haben.", "Ein System kann nie ausfallen.", "Alle Aufgaben werden einfacher.", "Technik verändert keine Aufgaben."],
+    key: "Ein Ausfall kann größere Folgen haben.",
   },
   q3: { options: ["Die Kamera ist schlecht", "Das Handy ist kaputt", "Es ist zu alt", "Er hat es verloren"], key: "Die Kamera ist schlecht" },
   q4: { options: ["den Zugriff auf Standort und Kontakte", "die Speicherung von Fotos vollständig", "die Weitergabe der Daten an Firmen", "die Benachrichtigungen für die App"], key: "den Zugriff auf Standort und Kontakte" },

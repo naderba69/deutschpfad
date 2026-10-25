@@ -109,7 +109,7 @@ export const listening: Lesson["listening"] = {
         correctIndex: 0,
         explanation: "تقول ليا إنها تنام بشكل سيئ وتشعر بالتعب كثيراً.",
         errorType: "vocabulary",
-        optionExplanations: [undefined, "لم تذكر ليا صداعاً بعد الرياضة.", "لم تتحدث عن ضيق وقت العمل.", "لم تقل إنها مصابة بنزلة برد منذ الأمس."],
+        optionExplanations: [undefined, "لم تذكر ليا صداعاً؛ قالت: «Seit einigen Wochen schlafe ich schlecht und bin oft müde». ", "لم تتحدث عن العمل؛ بل قالت: «Seit einigen Wochen schlafe ich schlecht und bin oft müde». ", "لم تقل إنها مصابة بنزلة برد؛ قالت: «Seit einigen Wochen schlafe ich schlecht und bin oft müde». "],
       },
       {
         id: "q5",
@@ -122,7 +122,7 @@ export const listening: Lesson["listening"] = {
         correctIndex: 0,
         explanation: "يقترح الطبيب نزهة قصيرة يومياً ومواعيد نوم ثابتة.",
         errorType: "vocabulary",
-        optionExplanations: [undefined, "لم ينصح الطبيب بالجري الطويل أو الاستيقاظ المتأخر.", "لم يذكر الطبيب أدوية جديدة.", "هذا عكس النصيحة المتعلقة بالنوم والقهوة."],
+        optionExplanations: [undefined, "لم ينصح بذلك؛ بل قال: «Ein kurzer Spaziergang am Tag und feste Schlafzeiten wären ein guter Anfang». ", "لم يذكر أدوية؛ نصيحته كانت «Ein kurzer Spaziergang am Tag und feste Schlafzeiten». ", "هذا يخالف ما قاله الطبيب: «feste Schlafzeiten»، كما سألت ليا عن «abends weniger Kaffee». "],
       },
       {
         id: "q6",
@@ -135,7 +135,7 @@ export const listening: Lesson["listening"] = {
         correctIndex: 0,
         explanation: "يطلب الطبيب منها العودة إذا استمرت الأعراض.",
         errorType: "vocabulary",
-        optionExplanations: [undefined, "لم يطلب منها التوقف عن الرياضة.", "لم يقترح الاكتفاء بشرب القهوة.", "لم يذكر حجز عطلة."],
+        optionExplanations: [undefined, "لم يطلب ذلك؛ قال: «Wenn die Beschwerden bleiben, kommen Sie bitte wieder». ", "لم يقترح ذلك؛ بل قال: «Wenn die Beschwerden bleiben, kommen Sie bitte wieder». ", "لم يذكر عطلة؛ طلب منها: «Wenn die Beschwerden bleiben, kommen Sie bitte wieder». "],
       },
     ],
   };
