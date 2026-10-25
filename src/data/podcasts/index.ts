@@ -195,8 +195,8 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
         ar: "ما الذي توفره ليا بحسب قولها؟",
         options: [
           { text: "Den Arbeitsweg", ar: "مشوار الذهاب إلى العمل", correct: true, explanation: "نعم — تقول ليا: «Ich spare mir den Arbeitsweg»." },
-          { text: "Die Zeit für das Mittagessen", ar: "وقت تناول الغداء", correct: false, explanation: "لا — لم تذكر ليا الغداء أو وقت تناوله." },
-          { text: "Die Gespräche mit ihrem Team", ar: "المحادثات مع فريقها", correct: false, explanation: "لا — يقول زميلها إنه يفتقد التواصل مع الفريق، لا إن ليا توفر وقته." },
+          { text: "Das Mittagessen", ar: "الغداء", correct: false, explanation: "لا — لم تذكر ليا الغداء أو وقت تناوله." },
+          { text: "Den Teamkontakt", ar: "التواصل مع الفريق", correct: false, explanation: "لا — يقول زميلها إنه يفتقد التواصل مع الفريق، لا إن ليا توفر وقته." },
         ],
       },
       {
@@ -204,8 +204,8 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
         ar: "ما الأمر الذي يجده الزميل صعباً؟",
         options: [
           { text: "Arbeit und Freizeit zu trennen", ar: "الفصل بين العمل ووقت الفراغ", correct: true, explanation: "نعم — يقول: «Arbeit und Freizeit zu trennen ist nicht immer leicht»." },
-          { text: "Jeden Morgen mit dem Zug zur Arbeit zu fahren", ar: "الذهاب إلى العمل بالقطار كل صباح", correct: false, explanation: "لا — لا يتحدث عن قطار أو تنقّل يومي." },
-          { text: "Neue Programme im Büro zu installieren", ar: "تثبيت برامج جديدة في المكتب", correct: false, explanation: "لا — لا يذكر الحوار تثبيت برامج في المكتب." },
+          { text: "Mit dem Zug täglich zur Arbeit fahren", ar: "الذهاب يومياً إلى العمل بالقطار", correct: false, explanation: "لا — لا يتحدث عن قطار أو تنقّل يومي." },
+          { text: "Neue Programme im Büro einrichten", ar: "إعداد برامج جديدة في المكتب", correct: false, explanation: "لا — لا يذكر الحوار تثبيت برامج في المكتب." },
         ],
       }
     ],
@@ -478,14 +478,14 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     scriptAr: "توصي منظمة الصحة العالمية البالغين 150 إلى 300 دقيقة أسبوعياً من الحركة متوسطة الشدة، أو 75 إلى 150 دقيقة من الحركة الشديدة. وتُحسب الحركة اليومية أيضاً، مثل صعود الدرج. ويمكن توزيع الوقت على أيام الأسبوع. هذه توصية عامة وليست بديلاً عن المشورة الطبية الشخصية.",
     questions: [
       { de: "Was empfiehlt die WHO Erwachsenen?", ar: "بماذا توصي منظمة الصحة العالمية للبالغين؟", options: [
-        { text: "Wöchentlich 150 bis 300 Minuten mit mittlerer oder 75 bis 150 Minuten mit hoher Intensität", ar: "أسبوعياً 150–300 دقيقة متوسطة الشدة أو 75–150 دقيقة شديدة الشدة", correct: true, explanation: "نعم — يذكر النص: «150 bis 300 Minuten Bewegung mit mittlerer Intensität oder 75 bis 150 Minuten mit hoher Intensität»." },
+        { text: "150–300 Min. moderat oder 75–150 Min. intensiv", ar: "أسبوعياً 150–300 دقيقة متوسطة الشدة أو 75–150 دقيقة شديدة الشدة", correct: true, explanation: "نعم — يذكر النص: «150 bis 300 Minuten Bewegung mit mittlerer Intensität oder 75 bis 150 Minuten mit hoher Intensität»." },
         { text: "Nur Bewegung im Fitnessstudio", ar: "الحركة في النادي الرياضي فقط", correct: false, explanation: "لا — لا يحصر النص النشاط في النادي الرياضي؛ يذكر حركة الحياة اليومية أيضاً." },
         { text: "Treppensteigen zählt nicht als Bewegung", ar: "صعود الدرج لا يُعد حركة", correct: false, explanation: "لا — يقول النص: «Auch Bewegung im Alltag zählt, zum Beispiel Treppensteigen»." },
       ]},
       { de: "Was zählt laut WHO als Bewegung im Alltag?", ar: "ما الذي يُحسب حركةً في الحياة اليومية وفقاً لمنظمة الصحة العالمية؟", options: [
         { text: "Treppensteigen", ar: "صعود الدرج", correct: true, explanation: "نعم — يقول النص: «Auch Bewegung im Alltag zählt, zum Beispiel Treppensteigen.»" },
-        { text: "Öfter mit dem Auto fahren", ar: "قيادة السيارة أكثر", correct: false, explanation: "لا — لا يذكر النص السيارة؛ بل يقول: «Auch Bewegung im Alltag zählt, zum Beispiel Treppensteigen.»" },
-        { text: "Mehr Fastfood am Abend essen", ar: "أكل وجبات سريعة أكثر", correct: false, explanation: "لا — لا يتناول النص الطعام؛ بل يقول: «Auch Bewegung im Alltag zählt, zum Beispiel Treppensteigen.»" },
+        { text: "Mit dem Auto fahren", ar: "قيادة السيارة", correct: false, explanation: "لا — لا يذكر النص السيارة؛ بل يقول: «Auch Bewegung im Alltag zählt, zum Beispiel Treppensteigen.»" },
+        { text: "Fastfood am Abend", ar: "وجبات سريعة مساءً", correct: false, explanation: "لا — لا يتناول النص الطعام؛ بل يقول: «Auch Bewegung im Alltag zählt, zum Beispiel Treppensteigen.»" },
       ]},
     ],
   },

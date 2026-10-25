@@ -29,6 +29,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
         { de: "Ich wäre gestern gekommen, aber ich war krank.", ar: "كنت سآتي أمس لكنني كنت مريضاً." },
         { de: "Er hätte das Buch gelesen, wenn er Zeit gehabt hätte.", ar: "كان سيقرأ الكتاب لو كان عنده وقت." },
         { de: "Sie tut so, als ob sie alles wüsste.", ar: "تتصرف كما لو أنها تعرف كل شيء." },
+        { de: "Die Ursache wäre wichtig gewesen.", ar: "كان السبب مهماً." },
         { de: "Wenn ich früher Sport gemacht hätte, wäre ich heute fitter.", ar: "لو كنت مارست الرياضة مبكراً لكنت اليوم أكثر لياقة." },
       ],
       comparisonWithArabic:

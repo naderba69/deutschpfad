@@ -74,9 +74,9 @@ export const A2_DIALOGUES_2: DailyDialogue[] = [
         { text: "Nach dem Schlüssel", ar: "عن المفتاح", correct: false, explanation: "لا — لم تسأل عن مفتاح Schlüssel؛ بل عن den Pass." },
       ]},
       { de: "Welche zusätzliche Karte möchte die Person?", ar: "ما البطاقة الإضافية التي يريدها الشخص؟", options: [
-        { text: "Eine Versicherungskarte", ar: "بطاقة تأمين", correct: false, explanation: "لا — لم تُذكر بطاقة تأمين Versicherungskarte؛ والعرض «Möchten Sie auch eine Kreditkarte?»." },
+        { text: "Eine Kundenkarte", ar: "بطاقة زبون", correct: false, explanation: "لا — لم تُذكر بطاقة تأمين Versicherungskarte؛ والعرض «Möchten Sie auch eine Kreditkarte?»." },
         { text: "Eine Kreditkarte", ar: "بطاقة ائتمان", correct: true, explanation: "نعم — عُرضت «eine Kreditkarte» وقال الشخص: «Ja, das wäre gut». لم يحدد الحوار حداً ائتمانياً." },
-        { text: "Eine Bibliothekskarte", ar: "بطاقة مكتبة", correct: false, explanation: "لا — لم تُذكر بطاقة مكتبة Bibliothekskarte؛ والبطاقة المطلوبة Kreditkarte." },
+        { text: "Eine Bankkarte", ar: "بطاقة مصرفية", correct: false, explanation: "لا — لم تُذكر بطاقة مكتبة Bibliothekskarte؛ والبطاقة المطلوبة Kreditkarte." },
       ]},
     ],
     keyVocab: [

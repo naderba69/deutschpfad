@@ -152,9 +152,9 @@ export const B2_DIALOGUES_2: DailyDialogue[] = [
         { text: "Seit einem Monat", ar: "منذ شهر", correct: false, explanation: "لا — لم يُذكر شهر Monat؛ والعطل «seit zwei Wochen»." },
       ]},
       { de: "Was verlangt der Mieter?", ar: "ماذا يطالب المستأجر؟", options: [
-        { text: "Eine schnelle Reparatur und eine Prüfung der möglichen Mietminderung", ar: "إصلاح سريع والتحقق من احتمال تخفيض الإيجار", correct: true, explanation: "صحيح — يطلب إصلاحاً سريعاً ويريد التحقق من انطباق تخفيض الإيجار على حالته." },
-        { text: "Einen Umzug in eine andere Stadt", ar: "الانتقال إلى مكان آخر", correct: false, explanation: "لا — لم يُذكر انتقال Stadt؛ والمطلب «Ich bitte um eine schnelle Reparatur. Ob eine Mietminderung in Betracht kommt, möchte ich für meinen Fall prüfen lassen»." },
-        { text: "Eine Kündigung des Vertrags ohne Frist", ar: "إنهاء العقد", correct: false, explanation: "لا — لم يُطلب إنهاء العقد؛ بل إصلاح سريع والتحقق من احتمال Mietminderung." },
+        { text: "Schnelle Reparatur und Prüfung einer Mietminderung im Einzelfall", ar: "إصلاح سريع والتحقق من احتمال تخفيض الإيجار في حالته", correct: true, explanation: "صحيح — يطلب إصلاحاً سريعاً ويريد التحقق من انطباق تخفيض الإيجار على حالته." },
+        { text: "Den Mietvertrag kündigen und in eine andere Stadt umziehen", ar: "إنهاء عقد الإيجار والانتقال إلى مدينة أخرى", correct: false, explanation: "لا — لم يُذكر انتقال Stadt؛ والمطلب «Ich bitte um eine schnelle Reparatur. Ob eine Mietminderung in Betracht kommt, möchte ich für meinen Fall prüfen lassen»." },
+        { text: "Den Vertrag fristlos kündigen und sofort aus der Wohnung ausziehen", ar: "إنهاء العقد فوراً ومغادرة الشقة", correct: false, explanation: "لا — لم يُطلب إنهاء العقد؛ بل إصلاح سريع والتحقق من احتمال Mietminderung." },
       ]},
       { de: "Wann soll der Handwerker kommen?", ar: "متى يجب أن يأتي الحرفي؟", options: [
         { text: "Übermorgen", ar: "بعد غد", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
@@ -188,8 +188,8 @@ export const B2_DIALOGUES_2: DailyDialogue[] = [
     questions: [
       { de: "In welchem Bereich hat die Kollegin gearbeitet?", ar: "في أي مجال عملت الزميلة؟", options: [
         { text: "Im Exportbereich", ar: "في قطاع التصدير", correct: true, explanation: "صحيح — تذكر الزميلة أنها عملت خمس سنوات في قطاع التصدير." },
-        { text: "In der Buchhaltung", ar: "في المحاسبة", correct: false, explanation: "لا — لم يرد ذكر المحاسبة؛ بل قطاع التصدير." },
-        { text: "In der Personalabteilung", ar: "في قسم الموارد البشرية", correct: false, explanation: "لا — لم يرد ذكر الموارد البشرية؛ بل قطاع التصدير." },
+        { text: "Im Rechnungswesen", ar: "في المحاسبة والتخطيط المالي", correct: false, explanation: "لا — لم يرد ذكر المحاسبة؛ بل قطاع التصدير." },
+        { text: "Im Personalwesen", ar: "في الموارد البشرية والتوظيف الدولي", correct: false, explanation: "لا — لم يرد ذكر الموارد البشرية؛ بل قطاع التصدير." },
       ]},
       { de: "Wie lange hat sie im Exportbereich gearbeitet?", ar: "كم سنة عملت في قطاع التصدير؟", options: [
         { text: "Fünf Jahre", ar: "خمس سنوات", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
@@ -197,9 +197,9 @@ export const B2_DIALOGUES_2: DailyDialogue[] = [
         { text: "Zehn Jahre", ar: "عشر سنوات", correct: false, explanation: "لا — لم تُذكر عشر Jahre؛ والخبرة «fünf Jahre im Exportbereich»." },
       ]},
       { de: "Wozu passt ihre Erfahrung laut der Teamleiterin?", ar: "بمَ تتناسب خبرتها حسب مديرة الفريق؟", options: [
-        { text: "Zum geplanten Markteintritt", ar: "لدخول السوق المخطط", correct: true, explanation: "صحيح — تقول المديرة إن خبرتها تناسب دخول السوق المخطط للفريق." },
-        { text: "Zur Buchhaltung", ar: "للمحاسبة", correct: false, explanation: "لا — لم يرد ذكر المحاسبة؛ بل دخول السوق المخطط." },
-        { text: "Zur Reinigung", ar: "للتنظيف", correct: false, explanation: "لا — لم يرد ذكر التنظيف؛ بل دخول السوق المخطط." },
+        { text: "Zur Vorbereitung des geplanten Eintritts in einen internationalen Markt", ar: "للتحضير لدخول سوق دولية مخططة", correct: true, explanation: "صحيح — تقول المديرة إن خبرتها تناسب دخول السوق المخطط للفريق." },
+        { text: "Zu den Aufgaben der internationalen Buchhaltung und Finanzplanung", ar: "لمهام المحاسبة الدولية والتخطيط المالي", correct: false, explanation: "لا — لم يرد ذكر المحاسبة؛ بل دخول السوق المخطط." },
+        { text: "Zu den Aufgaben der Gebäudereinigung im internationalen Büro", ar: "لمهام تنظيف المبنى في المكتب الدولي", correct: false, explanation: "لا — لم يرد ذكر التنظيف؛ بل دخول السوق المخطط." },
       ]},
     ],
     keyVocab: [
