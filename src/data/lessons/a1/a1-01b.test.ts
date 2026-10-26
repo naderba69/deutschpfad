@@ -1,6 +1,6 @@
 import {describe, expect, it} from "vitest";
 
-import {lessonA101b} from "./a1-01";
+import {lessonA101, lessonA101b} from "./a1-01";
 
 const lesson = lessonA101b;
 const SERIALIZED = JSON.stringify(lesson);
@@ -25,6 +25,12 @@ describe("A1-01b — أسئلة W وتصريف الأفعال المنتظمة",
     expect(lesson.miniTest.map((task) => task.id)).toEqual(["m3", "m4", "m5"]);
     expect(lesson.writing.map((task) => task.id)).toEqual(["w2"]);
     expect(lesson.theory.map((block) => block.id)).toEqual(["t2", "t3"]);
+  });
+
+  it("يحتفظ بمراجعة تراكمية من الدرس السابق A1-00", () => {
+    expect(lesson.review).toEqual(lessonA101.review);
+    expect(lesson.review).toHaveLength(3);
+    expect(lesson.review?.every((task) => task.instructionAr.includes("a1-00"))).toBe(true);
   });
 
   it("كل هدف له دليل يشير إلى مهمة موجودة في هذا الجزء", () => {

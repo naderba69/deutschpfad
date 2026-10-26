@@ -81,7 +81,9 @@ function flags(L) {
   const f = [];
   if (!L.review?.length) f.push("لا مراجعة تراكمية");
   if ((L.theory?.length ?? 0) < 2 && L.level !== "A1") f.push("كتلة نظرية واحدة فقط");
-  if ((L.listening?.items?.length ?? 0) < 2) f.push("مشهد استماع واحد فقط");
+  const listeningScenes = L.listening?.items?.length ?? 0;
+  if (listeningScenes === 0) f.push("لا يوجد مشهد استماع");
+  else if (listeningScenes === 1) f.push("مشهد استماع واحد فقط");
   if ((L.practiceBank?.length ?? 0) < 8) f.push("بنك تمارين صغير");
   if ((L.flashcards?.length ?? 0) < 6) f.push("بطاقات قليلة");
   return f.length ? f.join("؛ ") : "—";

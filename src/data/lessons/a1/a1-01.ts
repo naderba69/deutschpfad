@@ -104,6 +104,7 @@ export const lessonA101b: Lesson = {
       { de: "lernen", ar: "يتعلم" },
     ],
   },
+  review: masterA101.review,
   theory: masterA101.theory.filter((t) => PART2_THEORY.has(t.id)),
   reading: readingA1B,
   listening: { items: [], questions: [] },
