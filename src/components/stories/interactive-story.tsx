@@ -143,6 +143,10 @@ export function InteractiveStoryPlayer({ story, onExit }: { story: InteractiveSt
             {showTranslation ? "إخفاء الترجمة" : "أظهر الترجمة"}
           </Button>
         </div>
+        <p className="mt-2 text-xs text-muted-foreground">
+          النطق عبر TTS المدمج في المتصفح، لا عبر تسجيل بشري؛ وقد يختلف باختلاف الجهاز والمتصفح.
+          لم يُتحقق من وضوح النطق أو مطابقته للنص.
+        </p>
       </div>
 
       {/* سؤال الفهم (إن وُجد) */}

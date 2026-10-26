@@ -176,5 +176,3 @@ export const A2_EXTRA_VOCAB: VocabEntry[] = [
   { de: "bis", ar: "حتى", g: "other" },
   { de: "seit", ar: "منذ", g: "other" },
 ];
-
-export const TOTAL_A2_EXTRA = A2_EXTRA_VOCAB.length;

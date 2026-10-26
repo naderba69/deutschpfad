@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * ═══════════════════════════════════════════════════════════════════════
- *  lessons-inventory.mjs — الجرد التفصيلي لكل درس (45 درساً)
+ *  lessons-inventory.mjs — الجرد التفصيلي لكل كائن درس في ملفات المستوى
  *  يحمّل ملفات الدروس كمترجم TypeScript، ويطبع لكل درس: مكوناته العشرة،
  *  عدد الكتل النظرية، المشاهد، التمارين (بأنواعها)، البطاقات، إلخ —
  *  مع أعلام الجودة (نقص مكوّن، ثراء نظري ضعيف، حجم منخفض).
@@ -11,6 +11,7 @@
  * ═══════════════════════════════════════════════════════════════════════
  */
 import { readFileSync, readdirSync, writeFileSync, mkdtempSync } from "node:fs";
+import { bundleLessonSource } from "./lib/lesson-source.mjs";
 import { tmpdir } from "node:os";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -41,26 +42,35 @@ const require = createRequire(import.meta.url);
 const TMP = mkdtempSync(join(tmpdir(), "linv-"));
 
 /* ── تحميل كل الدروس ككائنات حقيقية ── */
-function loadLesson(path) {
-  const src = readFileSync(path, "utf8");
+function loadLessons(path) {
+  // ملف التجميع قد يصدّر أكثر من درس واحد (مثل a1-01 وa1-01b)،
+  // لذا نجمع كل الكائنات التعليمية بدلاً من أخذ أول تصدير فقط.
+  const src = bundleLessonSource(path);
   const js = ts
     .transpileModule(src, {
       compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020 },
     })
-    .outputText.replace(/^import .*$/gm, "");
+    .outputText;
   const tmp = join(TMP, path.split("/").pop().replace(".ts", ".cjs"));
   writeFileSync(tmp, js);
   const mod = require(tmp);
-  return Object.values(mod).find((v) => v && typeof v === "object" && v.id && v.lernziele);
+  return Object.values(mod).filter(
+    (v) => v && typeof v === "object" && v.id && Array.isArray(v.lernziele),
+  );
 }
 
 const LESSONS = [];
 for (const level of ["a1", "a2", "b1", "b2"]) {
   for (const f of readdirSync(join(ROOT, "src/data/lessons", level))) {
     if (!f.endsWith(".ts") || f.endsWith(".test.ts")) continue;
-    const L = loadLesson(join(ROOT, "src/data/lessons", level, f));
-    if (L) LESSONS.push(L);
+    LESSONS.push(...loadLessons(join(ROOT, "src/data/lessons", level, f)));
   }
+}
+const duplicateIds = LESSONS.map((lesson) => lesson.id).filter(
+  (id, index, ids) => ids.indexOf(id) !== index,
+);
+if (duplicateIds.length) {
+  throw new Error(`معرّفات دروس مكررة في الجرد: ${[...new Set(duplicateIds)].join(", ")}`);
 }
 LESSONS.sort((a, b) => a.id.localeCompare(b.id));
 
@@ -78,7 +88,7 @@ function flags(L) {
 }
 
 console.log("════════════════════════════════════════════════════════════════");
-console.log("  جرد الدروس التفصيلي — DeutschPfad (A1→B2) — 45 درساً");
+console.log(`  جرد الدروس التفصيلي — DeutschPfad (A1→B2) — ${LESSONS.length} درساً`);
 console.log("════════════════════════════════════════════════════════════════\n");
 for (const level of ["a1", "a2", "b1", "b2"]) {
   const list = LESSONS.filter((l) => l.level.toLowerCase() === level);

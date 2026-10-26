@@ -5,8 +5,6 @@
 
 export type LevelCode = "A1" | "A2" | "B1" | "B2";
 
-export type UnitStatus = "locked" | "current" | "completed";
-
 export interface LevelMeta {
   code: LevelCode;
   /** الاسم الألماني للمستوى */

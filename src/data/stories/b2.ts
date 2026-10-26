@@ -74,7 +74,7 @@ const B2_2: InteractiveStory = {
   title: "Die Geschäftsverhandlung",
   titleAr: "المفاوضات التجارية",
   emoji: "📊",
-  description: "مفاوضات بين شركتين — نقل الكلام (Konjunktiv I) واللغة الرسمية.",
+  description: "قصة خيالية للتدريب: مفاوضات بين شركتين — نقل الكلام (Konjunktiv I) واللغة الرسمية.",
   grammar: "Konjunktiv I (نقل الكلام) • المفاوضات • لغة رسمية",
   segments: [
     {
@@ -134,7 +134,7 @@ const B2_3: InteractiveStory = {
   title: "Das Forschungsprojekt",
   titleAr: "مشروع البحث",
   emoji: "🔬",
-  description: "علماء يبحثون في الطاقة الشمسية — اللغة الأكاديمية والاشتقاق الاسمي.",
+  description: "قصة خيالية للتدريب، وليست تقريراً علمياً: فريق يبحث في الطاقة الشمسية — اللغة الأكاديمية والاشتقاق الاسمي.",
   grammar: "الاشتقاق الاسمي (Nominalisierung) • اللغة الأكاديمية • النشر العلمي",
   segments: [
     {
@@ -194,7 +194,7 @@ const B2_4: InteractiveStory = {
   title: "Der Umzug nach München",
   titleAr: "الانتقال إلى ميونخ",
   emoji: "🌆",
-  description: "ياسمين تنتقل للدراسة — صدمة الثقافة والتأقلم.",
+  description: "حكاية تدريبية خيالية عن تجربة ياسمين الفردية؛ لا تعممها على ميونخ أو بافاريا.",
   grammar: "صدمة الثقافة • التعبير عن الصعوبات • التعود (sich gewöhnen an)",
   segments: [
     {
@@ -218,8 +218,8 @@ const B2_4: InteractiveStory = {
     },
     {
       id: 3,
-      de: "Die Menschen sprachen schnell, und die Bürokratie war kompliziert.",
-      ar: "كان الناس يتحدثون بسرعة، وكانت الروتين الإداري معقداً.",
+      de: "In einigen Gesprächen sprachen ihre Gesprächspartner für sie ungewohnt schnell. Bei den ersten Behördengängen waren Formulare schwer zu verstehen.",
+      ar: "في بعض الأحاديث بدا لها أن محاوريها يتكلمون بسرعة غير مألوفة. وفي مراجعاتها الأولى للدوائر، صعب عليها فهم الاستمارات.",
     },
     {
       id: 4,
@@ -240,7 +240,7 @@ const B2_4: InteractiveStory = {
       de: "Heute fühlt sie sich zu Hause, hat viele Freunde und spricht fließend Deutsch.",
       ar: "اليوم تشعر بأنها في بيتها، لديها أصدقاء كثيرون وتتحدث الألمانية بطلاقة.",
       choices: [
-        { text: "Kulturschock ist normal — Geduld hilft.", ar: "صدمة الثقافة أمر طبيعي — الصبر يساعد.", next: 6, feedback: "رؤية ناضجة!" },
+        { text: "Am Anfang war manches ungewohnt — sie gab sich Zeit.", ar: "كان بعض الأمور غير مألوف في البداية — فأعطت نفسها وقتاً.", next: 6, feedback: "تلخيص يحافظ على تجربة ياسمين الفردية." },
         { text: "Sie wollte sofort zurückfliegen.", ar: "أرادت العودة فوراً.", next: 6, feedback: "لا — تأقلمت!" },
       ],
     },

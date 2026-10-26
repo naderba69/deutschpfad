@@ -18,6 +18,8 @@ import {B1_VOCAB} from "@/data/vocabulary/b1";
 import {B2_VOCAB} from "@/data/vocabulary/b2";
 import type { VocabEntry } from "@/data/vocabulary/a1";
 import {cn} from "@/lib/utils";
+import {FilterChip} from "@/components/ui/filter-chip";
+import {VocabKindBadge} from "@/components/shared/vocab-kind";
 
 const ALL: { level: string; words: VocabEntry[] }[] = [
   { level: "A1", words: Object.values(A1_VOCAB).flat() },
@@ -55,17 +57,13 @@ export function OfflineReviewClient() {
       {/* الفلترة */}
       <div className="flex flex-wrap items-center gap-2">
         {LEVELS.map((l) => (
-          <button
+          <FilterChip
             key={l}
-            type="button"
             onClick={() => setLevel(l)}
-            className={cn(
-              "font-de rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
-              level === l ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
-            )}
+            active={level === l}
           >
             {l === "all" ? "الكل" : l}
-          </button>
+          </FilterChip>
         ))}
         <div className="relative ms-auto min-w-40 flex-1 sm:max-w-xs">
           <Search className="absolute start-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
@@ -90,14 +88,14 @@ export function OfflineReviewClient() {
               <div className="min-w-0">
                 <p className="flex flex-wrap items-center gap-1.5">
                   <span className="font-de text-sm font-bold" dir="ltr" lang="de">{w.de}</span>
-                  {w.g && (w.g === "der" || w.g === "die" || w.g === "das") && (
-                    <span className={cn(
-                      "rounded px-1 py-0.5 text-[11px] font-bold",
-                      w.g === "der" ? "bg-sky-100 text-sky-700 dark:bg-sky-900/50 dark:text-sky-300" : w.g === "die" ? "bg-rose-100 text-rose-700 dark:bg-rose-900/50 dark:text-rose-300" : "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300",
-                    )} dir="ltr">{w.g}</span>
-                  )}
+                  <VocabKindBadge g={w.g} />
                 </p>
                 <p className="mt-0.5 text-sm font-semibold text-primary">{w.ar}</p>
+                {w.ex && (
+                  <p className="font-de mt-0.5 truncate text-xs text-muted-foreground" dir="ltr" lang="de">
+                    {w.ex}
+                  </p>
+                )}
               </div>
               <SpeakButton text={w.de} variant="ghost" size="sm" />
             </CardContent>

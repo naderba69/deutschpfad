@@ -10,6 +10,7 @@ import { Check, Flame, RotateCcw, Volume2 } from "lucide-react";
 import { SpeakButton } from "@/components/shared/speak-button";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { VocabKindBadge } from "@/components/shared/vocab-kind";
 import { Progress } from "@/components/ui/progress";
 import { B2_EXAM_TOPICS, B2_TOPIC_VOCAB, type B2ExamTopic } from "@/data/vocabulary/b2-topics";
 import type { VocabEntry } from "@/data/vocabulary/a1";
@@ -107,11 +108,21 @@ export function DailyVocabChallenge() {
                   <span className="text-[11px] font-bold text-muted-foreground">{topic.titleAr}</span>
                 </span>
                 {!flipped.has(i) ? (
-                  <span className="font-de mt-1 block text-lg font-bold" dir="ltr" lang="de">
-                    {word.de}
+                  <span className="mt-1 flex items-center gap-1.5">
+                    <span className="font-de text-lg font-bold" dir="ltr" lang="de">
+                      {word.de}
+                    </span>
+                    <VocabKindBadge g={word.g} />
                   </span>
                 ) : (
-                  <span className="mt-1 block text-lg font-semibold text-primary">{word.ar}</span>
+                  <span className="mt-1 block">
+                    <span className="block text-lg font-semibold text-primary">{word.ar}</span>
+                    {word.ex && (
+                      <span className="font-de mt-1 block truncate text-xs text-muted-foreground" dir="ltr" lang="de">
+                        {word.ex}
+                      </span>
+                    )}
+                  </span>
                 )}
               </button>
             </div>

@@ -119,7 +119,7 @@ const A2_14: InteractiveStory = {
         ],
       },
     },
-    { id: 3, de: "Das Paket wiegt zwei Kilo. Es kostet 25 Euro.", ar: "يزن الطرد كيلوين. يكلف 25 يورو." },
+    { id: 3, de: "Das Paket wiegt zwei Kilo. Im Übungsbeispiel kostet der Versand 25 Euro.", ar: "يزن الطرد كيلوين. في المثال التدريبي، تكلف عملية الإرسال 25 يورو." },
     {
       id: 4,
       de: "Yasmin füllt das Formular aus und bezahlt.",
@@ -128,13 +128,13 @@ const A2_14: InteractiveStory = {
         de: "Wie viel kostet das Paket?",
         ar: "كم يكلف الطرد؟",
         options: [
-          { text: "25 Euro", ar: "25 يورو", correct: true, explanation: "صحيح — السعر 25 يورو." },
+          { text: "25 Euro", ar: "25 يورو", correct: true, explanation: "صحيح — هذا هو السعر المذكور في المثال التدريبي، لا تعرفة شحن فعلية." },
           { text: "15 Euro", ar: "15 يورو", correct: false, explanation: "لا — السعر 25." },
           { text: "30 Euro", ar: "30 يورو", correct: false, explanation: "لا — السعر 25." },
         ],
       },
     },
-    { id: 5, de: "„Das Paket kommt in zehn Tagen an“, sagt die Mitarbeiterin. Ende.", ar: "«يصل الطرد خلال عشرة أيام» تقول الموظفة. النهاية." },
+    { id: 5, de: "„Im Beispiel kommt das Paket in zehn Tagen an“, sagt die Mitarbeiterin. Ende.", ar: "«في المثال، يصل الطرد خلال عشرة أيام» تقول الموظفة. النهاية." },
   ],
 };
 
@@ -186,9 +186,9 @@ const B1_12: InteractiveStory = {
   id: "b1-digital-detox",
   level: "B1",
   title: "Digital Detox",
-  titleAr: "التخلص من الإدمان الرقمي",
+  titleAr: "أسبوع للابتعاد عن الهاتف",
   emoji: "📵",
-  description: "شاب يقرر الابتعاد عن هاتفه — الجمل الثانوية والتغيير.",
+  description: "قصة تدريبية خيالية عن شاب يقلّل وقت الهاتف — الجمل الثانوية والتغيير؛ لا تشخّص إدماناً.",
   grammar: "الجمل الثانوية (dass, weil) • التغيير الشخصي",
   segments: [
     { id: 1, de: "Jonas hat gemerkt, dass er zu viel Zeit mit dem Handy verbringt.", ar: "أدرك يوناس أنه يقضي وقتاً كثيراً مع الهاتف." },
@@ -231,13 +231,13 @@ const B1_13: InteractiveStory = {
   title: "Der Nebenjob",
   titleAr: "العمل الإضافي",
   emoji: "🛍️",
-  description: "طالبة تعمل في متجر — العمل والدراسة والتوازن.",
+  description: "قصة تدريبية خيالية عن طالبة تعمل في متجر وتوازن بين العمل والدراسة؛ ليست مرجعاً للأجور أو شروط العمل.",
   grammar: "الماضي البسيط (Präteritum) • التوازن بين العمل والدراسة",
   segments: [
     { id: 1, de: "Clara studiert Medizin und arbeitet am Wochenende in einem Supermarkt.", ar: "تدرس كلارا الطب وتعمل في نهاية الأسبوع في سوبرماركت." },
     {
       id: 2,
-      de: "Sie arbeitet acht Stunden und verdient 12 Euro pro Stunde.",
+      de: "Sie arbeitet acht Stunden am Wochenende und verdient damit eigenes Geld.",
       ar: "تعمل ثماني ساعات وتكسب 12 يورو في الساعة.",
       question: {
         de: "Wo arbeitet Clara?",
@@ -252,15 +252,15 @@ const B1_13: InteractiveStory = {
     { id: 3, de: "Am Anfang war es anstrengend, aber sie hat sich daran gewöhnt.", ar: "في البداية كان متعباً لكنها اعتادت عليه." },
     {
       id: 4,
-      de: "Der Chef war zufrieden und hat ihr mehr Stunden gegeben.",
+      de: "Der Chef war zufrieden und hat ihr mehr Arbeitsstunden gegeben.",
       ar: "كان المدير راضياً وأعطاها ساعات أكثر.",
       question: {
-        de: "Wie viel verdient Clara pro Stunde?",
-        ar: "كم تكسب كلارا في الساعة؟",
+        de: "Was gab der Chef Clara, nachdem er zufrieden war?",
+        ar: "ماذا منح المدير كلارا بعد أن رضي عن عملها؟",
         options: [
-          { text: "12 Euro", ar: "12 يورو", correct: true, explanation: "صحيح — الأجر 12 يورو." },
-          { text: "8 Euro", ar: "8 يورو", correct: false, explanation: "لا — 12 يورو." },
-          { text: "20 Euro", ar: "20 يورو", correct: false, explanation: "لا — 12 يورو." },
+          { text: "Mehr Arbeitsstunden", ar: "ساعات عمل إضافية", correct: true, explanation: "صحيح — يذكر النص أن المدير منحها ساعات عمل أكثر." },
+          { text: "Eine Gehaltserhöhung", ar: "زيادة في الراتب", correct: false, explanation: "لا — لم يذكر النص زيادة الأجر، بل ساعات عمل أكثر." },
+          { text: "Eine Woche Urlaub", ar: "أسبوع إجازة", correct: false, explanation: "لا — لم يذكر النص إجازة؛ بل ساعات عمل أكثر." },
         ],
       },
     },
@@ -274,7 +274,7 @@ const B1_14: InteractiveStory = {
   title: "Die Sprachreise",
   titleAr: "رحلة اللغة",
   emoji: "✈️",
-  description: "مجموعة تسافر لتعلم الألمانية في فيينا — التجربة والاندماج.",
+  description: "قصة تدريبية خيالية عن مجموعة تتعلم الألمانية في فيينا — التجربة والاندماج.",
   grammar: "الجمل الزمنية • التجربة الثقافية",
   segments: [
     { id: 1, de: "Im Sommer ist eine Gruppe aus Tunesien nach Wien gefahren.", ar: "في الصيف سافرت مجموعة من تونس إلى فيينا." },
@@ -317,14 +317,14 @@ const B1_15: InteractiveStory = {
   title: "Energie sparen",
   titleAr: "توفير الطاقة",
   emoji: "💡",
-  description: "عائلة تقرر توفير الطاقة — المبني للمجهول والعادات.",
+  description: "قصة تدريبية خيالية عن عائلة تحاول توفير الطاقة — المبني للمجهول والعادات.",
   grammar: "المبني للمجهول (wird, werden) • البيئة",
   segments: [
     { id: 1, de: "Die Familie möchte Energie sparen, weil die Preise steigen.", ar: "تريد العائلة توفير الطاقة لأن الأسعار ترتفع." },
     {
       id: 2,
       de: "Die Heizung wird niedriger gestellt und das Licht wird ausgeschaltet.",
-      ar: "يُخفض التدفئة وتُطفأ الأنوار.",
+      ar: "تُخفَّض درجة التدفئة وتُطفأ الأنوار.",
       question: {
         de: "Warum möchte die Familie Energie sparen?",
         ar: "لماذا تريد العائلة توفير الطاقة؟",
@@ -404,14 +404,14 @@ const B2_13: InteractiveStory = {
   title: "Medienkritik",
   titleAr: "نقد الإعلام",
   emoji: "📰",
-  description: "نقاش حول موثوقية الأخبار — الجدل والتحليل النقدي.",
+  description: "مشهد تدريبي متخيّل في ندوة عن موثوقية الأخبار — الجدل والتحليل النقدي.",
   grammar: "اللغة النقدية • نقل الآراء • الروابط المتقدمة",
   segments: [
     { id: 1, de: "Im Seminar wird die Rolle der Medien in der Demokratie analysiert.", ar: "في الندوة يُحلل دور الإعلام في الديمقراطية." },
     {
       id: 2,
-      de: "Eine Studentin argumentiert, dass soziale Medien Falschinformationen verbreiten.",
-      ar: "تجادل طالبة أن وسائل التواصل تنشر معلومات مضللة.",
+      de: "Eine Studentin argumentiert, dass in sozialen Medien auch Falschinformationen verbreitet werden können.",
+      ar: "تجادل طالبة أن معلومات مضللة قد تُنشر أيضاً على وسائل التواصل.",
       question: {
         de: "Was wird im Seminar analysiert?",
         ar: "ماذا يُحلل في الندوة؟",
@@ -431,7 +431,7 @@ const B2_13: InteractiveStory = {
         de: "Was argumentiert die Studentin?",
         ar: "بماذا تجادل الطالبة؟",
         options: [
-          { text: "Soziale Medien verbreiten Falschinformationen", ar: "وسائل التواصل تنشر معلومات مضللة", correct: true, explanation: "صحيح — هذه حجتها." },
+          { text: "In sozialen Medien können Falschinformationen verbreitet werden", ar: "قد تُنشر معلومات مضللة على وسائل التواصل", correct: true, explanation: "صحيح — هذه حجتها." },
           { text: "Soziale Medien sind perfekt", ar: "وسائل التواصل مثالية", correct: false, explanation: "لا — حجتها نقدية." },
           { text: "Man soll keine Nachrichten lesen", ar: "يجب عدم قراءة الأخبار", correct: false, explanation: "لا — نقد الحلقة المفرغة." },
         ],
@@ -447,7 +447,7 @@ const B2_14: InteractiveStory = {
   title: "Kulturelle Differenzen im Beruf",
   titleAr: "الاختلافات الثقافية في العمل",
   emoji: "🌍",
-  description: "موظفة دولية تواجه اختلافات ثقافية — التأقلم والتفاهم.",
+  description: "مشهد تدريبي متخيّل عن Fatma في فريق عمل دولي؛ حالة فردية لا تعمّم على ثقافة أو مجتمع.",
   grammar: "صدمة الثقافة • الجمل الثانوية المتقدمة • الحوار",
   segments: [
     { id: 1, de: "Fatma arbeitet in einem internationalen Team in Frankfurt.", ar: "تعمل فاطمة في فريق دولي في فرانكفورت." },
@@ -465,7 +465,7 @@ const B2_14: InteractiveStory = {
         ],
       },
     },
-    { id: 3, de: "Mit der Zeit verstand sie, dass Direktheit hier Effizienz bedeutet.", ar: "مع الوقت فهمت أن المباشرة هنا تعني الكفاءة." },
+    { id: 3, de: "In diesem Team merkte sie mit der Zeit, dass direkte Kommunikation für sie hilfreich war.", ar: "مع الوقت وجدت أن التواصل المباشر مفيد لها في هذا الفريق." },
     {
       id: 4,
       de: "Sie lernte, ihre Meinung klarer zu äußern, ohne unhöflich zu wirken.",
@@ -490,40 +490,40 @@ const B2_15: InteractiveStory = {
   title: "Die Zukunft der Arbeit",
   titleAr: "مستقبل العمل",
   emoji: "🤖",
-  description: "خبراء يتوقعون مستقبل العمل — المستقبل التام والتحليل.",
-  grammar: "المستقبل التام (Futur II) • التحليل • لغة الخبراء",
+  description: "قصة تدريبية متخيّلة عن آراء في مستقبل العمل؛ لا تعرض توقعات خبراء موثقة.",
+  grammar: "المستقبل التام (Futur II) • التحليل • عرض الافتراضات والآراء",
   segments: [
-    { id: 1, de: "Experten prognostizieren, dass künstliche Intelligenz viele Berufe verändern wird.", ar: "يتوقع الخبراء أن الذكاء الاصطناعي سيغيّر مهناً كثيرة." },
+    { id: 1, de: "In einer fiktiven Gesprächsrunde diskutieren drei Personen, wie künstliche Intelligenz die Arbeit verändern könnte.", ar: "في نقاش متخيّل يتحدث ثلاثة أشخاص عن كيفية إمكان تغيّر العمل بالذكاء الاصطناعي." },
     {
       id: 2,
-      de: "Manche glauben, dass Routineaufgaben in zehn Jahren automatisiert sein werden.",
-      ar: "يعتقد البعض أن المهام الروتينية ستكون مؤتمتة خلال عشر سنوات.",
+      de: "Eine Teilnehmerin vermutet, dass künstliche Intelligenz bis 2040 einige Routineaufgaben übernommen haben wird. Das ist ihre Annahme, keine Prognose aus einer Studie.",
+      ar: "تظن إحدى المشاركات أن الذكاء الاصطناعي سيكون قد تولى بعض المهام الروتينية بحلول 2040. هذا افتراضها، لا توقع مستند إلى دراسة.",
       question: {
-        de: "Was prognostizieren die Experten?",
-        ar: "ماذا يتوقع الخبراء؟",
+        de: "Was vermutet die Teilnehmerin?",
+        ar: "ماذا تفترض المشاركة؟",
         options: [
-          { text: "KI wird viele Berufe verändern", ar: "الذكاء الاصطناعي سيغيّر مهناً كثيرة", correct: true, explanation: "نعم — التوقع الرئيسي." },
-          { text: "KI wird verschwinden", ar: "الذكاء الاصطناعي سيختفي", correct: false, explanation: "لا — سيزداد تأثيره." },
-          { text: "Die Arbeit bleibt unverändert", ar: "العمل سيبقى دون تغيير", correct: false, explanation: "لا — تغيير كبير متوقع." },
+          { text: "KI wird einige Routineaufgaben übernommen haben", ar: "سيكون الذكاء الاصطناعي قد تولى بعض المهام الروتينية", correct: true, explanation: "نعم — هذا افتراض المشاركة في القصة، لا تنبؤ موثق." },
+          { text: "KI wird bis 2040 keine Rolle mehr spielen", ar: "لن يكون للذكاء الاصطناعي أي دور بحلول 2040", correct: false, explanation: "لا — المشاركة تفترض أنه سيتولى بعض المهام الروتينية." },
+          { text: "Alle Berufe werden vollständig automatisiert", ar: "ستتم أتمتة جميع المهن بالكامل", correct: false, explanation: "لا — الافتراض يقتصر على بعض المهام الروتينية." },
         ],
       },
     },
-    { id: 3, de: "Andere warnen, dass soziale Berufe wichtiger werden.", ar: "يحذر آخرون أن المهن الاجتماعية ستصبح أهم." },
+    { id: 3, de: "Ein anderer Teilnehmer meint, soziale Berufe könnten wichtig bleiben und an Bedeutung gewinnen.", ar: "ويرى مشارك آخر أن المهن الاجتماعية قد تظل مهمة وتزداد أهميتها." },
     {
       id: 4,
       de: "Die Diskussion zeigt: lebenslanges Lernen wird unvermeidlich sein.",
       ar: "يظهر النقاش: التعلم مدى الحياة سيكون حتمياً.",
       question: {
-        de: "Was wird in zehn Jahren automatisiert sein?",
-        ar: "ماذا سيكون مؤتمتاً خلال عشر سنوات؟",
+        de: "Was soll laut der Teilnehmerin bis 2040 von KI übernommen worden sein?",
+        ar: "ما الذي تفترض المشاركة أن الذكاء الاصطناعي سيكون قد تولاه بحلول 2040؟",
         options: [
-          { text: "Routineaufgaben", ar: "المهام الروتينية", correct: true, explanation: "صحيح — حسب المعتقد المذكور." },
-          { text: "Soziale Berufe", ar: "المهن الاجتماعية", correct: false, explanation: "لا — ستزداد أهمية لا تؤتمت." },
-          { text: "Alle Berufe", ar: "كل المهن", correct: false, explanation: "لا — المهام الروتينية فقط." },
+          { text: "Routineaufgaben", ar: "المهام الروتينية", correct: true, explanation: "صحيح — هذا افتراض المشاركة في القصة لا حقيقة متوقعة أو مثبتة." },
+          { text: "Soziale Berufe", ar: "المهن الاجتماعية", correct: false, explanation: "لا — المشاركة تتحدث عن بعض المهام الروتينية، لا عن أتمتة المهن الاجتماعية." },
+          { text: "Alle Berufe", ar: "كل المهن", correct: false, explanation: "لا — لم يقل النص إن جميع المهن ستتم أتمتتها." },
         ],
       },
     },
-    { id: 5, de: "Fazit: Anpassungsfähigkeit ist die wichtigste Kompetenz der Zukunft. Ende.", ar: "الخلاصة: القدرة على التكيف أهم كفاءة في المستقبل. النهاية." },
+    { id: 5, de: "Fazit der Runde: Anpassungsfähigkeit kann in manchen Tätigkeiten hilfreich sein. Ende.", ar: "خلاصة النقاش: قد تفيد القدرة على التكيف في بعض الأعمال. النهاية.", },
   ],
 };
 

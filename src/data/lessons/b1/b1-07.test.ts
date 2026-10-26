@@ -17,14 +17,15 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   m1: { options: ["Als", "Wenn", "Während", "Bis"], key: "Als" },
   m2: { options: ["Während", "Als", "Bis", "Nachdem"], key: "Während" },
   q1: {
-    options: ["seitdem er in Deutschland wohnt", "seit der Mauerfall", "seit er zehn war", "seit kurzem"],
+    options: ["seitdem er in Deutschland wohnt", "seit dem Mauerfall", "seit er zehn Jahre alt war", "seit ganz kurzer Zeit erst"],
     key: "seitdem er in Deutschland wohnt",
   },
-  q2: { options: ["die Programme lesen", "Werbung machen", "demonstrieren", "arbeiten"], key: "die Programme lesen" },
+  q2: { options: ["die Programme lesen", "Werbung dafür machen", "demonstrieren gehen", "weiterarbeiten"], key: "die Programme lesen" },
   q3: {
-    options: ["nachdem sie die Programme gelesen hat", "vor der Wahl", "während des Wahlkampfs", "morgen"],
+    options: ["nachdem sie die Programme gelesen hat", "schon lange vor der eigentlichen Wahl", "während des ganzen Wahlkampfs", "morgen früh um acht Uhr im Büro"],
     key: "nachdem sie die Programme gelesen hat",
   },
+  q4: { options: ["gute Verbindungen mit dem Bus", "mehr Parkplätze im Stadtzentrum", "eine neue Bahn zum Flughafen", "günstige Fahrräder für alle"], key: "gute Verbindungen mit dem Bus" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -77,6 +78,13 @@ const expectedMatching: Record<string, { left: string; right: string }[]> = {
     { left: "nachdem", right: "بعد أن" },
     { left: "bis", right: "حتى" },
   ],
+};
+
+const expectedTransformations: string[] = ["e7", "w1", "w3"];
+
+const expectedTransformationAnswers: Record<string, string[]> = {
+  w1: ["Als ich jung war, war vieles anders", "Als ich klein war, war vieles anders"],
+  w3: ["Obwohl es regnet, gehe ich spazieren.", "Ich gehe spazieren, obwohl es regnet."],
 };
 
 function allTasks(): Exercise[] {
@@ -136,7 +144,7 @@ describe("B1-07 lesson content audit", () => {
 
   it("uses only evaluable performances as goals, each all-correct", () => {
     expect(lessonB107.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
-    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l2:q2", "listening:l2:q3"]);
+    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e2", "e7", "m1", "m3", "m5", "w2"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e13", "e14"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["e11", "e12", "w3"]);
@@ -153,6 +161,87 @@ describe("B1-07 lesson content audit", () => {
       for (const taskId of evidence.taskIds ?? []) {
         const exerciseId = taskId.split(":").at(-1) ?? "";
         expect(evidence.exerciseIds, `${taskId} maps to a goal exercise`).toContain(exerciseId);
+      }
+    }
+  });
+
+  it("enumerates every auditable task type so no new task escapes the guard", () => {
+    const byType = (type: Exercise["type"]) =>
+      allTasks()
+        .filter((item) => item.type === type)
+        .map(({ id }) => id)
+        .sort();
+    expect(byType("multiple-choice").filter((id) => id in expectedMultipleChoice), "MCQ مغطّاة").toEqual(
+      byType("multiple-choice"),
+    );
+    expect(byType("fill-blank").filter((id) => id in expectedFillBlanks), "فراغات مغطّاة").toEqual(
+      byType("fill-blank"),
+    );
+    expect(
+      byType("error-correction").filter((id) => id in expectedErrorCorrections),
+      "تصحيحات مغطّاة",
+    ).toEqual(byType("error-correction"));
+    expect(byType("matching").filter((id) => id in expectedMatching), "مطابقات مغطّاة").toEqual(
+      byType("matching"),
+    );
+    const transformations = byType("transformation");
+    expect(transformations.filter((id) => expectedTransformations.includes(id)), "تحويلات مغطّاة").toEqual(
+      transformations,
+    );
+  });
+
+  it("checks the accepted answers of every transformation", () => {
+    for (const [id, accepted] of Object.entries(expectedTransformationAnswers)) {
+      const exercise = task(id);
+      if (exercise.type !== "transformation") throw new Error(`${id} is not transformation`);
+      expect(exercise.acceptedAnswers, `${id} accepted`).toEqual(accepted);
+      for (const answer of accepted) {
+        expect(evaluateExercise(exercise, answer).isCorrect, `${id}: ${answer}`).toBe(true);
+      }
+    }
+  });
+
+  it("keeps the reading text, glossary, comprehension questions, and discourse anchors intact", () => {
+    const reading = lessonB107.reading;
+    expect(reading?.id).toBe("read-b1-07");
+    expect(reading?.textType).toBe("artikel");
+    expect(reading?.titleDe).toBe("Wählen mit sechzehn? (fiktiver Übungstext)");
+    expect(reading?.titleAr).toBe("نص تدريبي خيالي: الانتخاب في السادسة عشرة؟");
+    expect(reading?.paragraphs).toHaveLength(4);
+    expect(reading?.paragraphsAr).toHaveLength(4);
+    const text = reading!.paragraphs.join(" ").toLowerCase();
+    expect(text.split(/\s+/).filter(Boolean).length).toBeGreaterThanOrEqual(250);
+
+    expect(reading?.glossary.length).toBeGreaterThanOrEqual(8);
+    for (const item of reading!.glossary) {
+      const head = item.de.replace(/^(der|die|das)\s+/i, "").split(/[\s,(/]/)[0];
+      const stem = head.slice(0, Math.max(4, head.length - 3)).toLowerCase();
+      expect(text.includes(stem), `${item.de} ليست في النصّ`).toBe(true);
+      expect(item.ar.trim().length).toBeGreaterThan(1);
+    }
+
+    expect(reading?.questions.map(({ id }) => id)).toEqual(["rq1", "rq2", "rq3", "rq4"]);
+    for (const question of reading!.questions) {
+      expect(question.options.length).toBeGreaterThanOrEqual(3);
+      expect(question.correctIndex).toBeGreaterThanOrEqual(0);
+      expect(question.correctIndex).toBeLessThan(question.options.length);
+      expect(question.explanation.trim().length).toBeGreaterThan(20);
+      const answer = question.options[question.correctIndex];
+      expect(text.includes(answer.toLowerCase()) && answer.length > 45, `${question.id} منسوخ حرفياً`).toBe(false);
+    }
+
+    expect(reading?.redemittel?.length).toBeGreaterThanOrEqual(4);
+    expect(reading?.discussionAr?.trim().length).toBeGreaterThanOrEqual(40);
+
+    for (const anchor of ["wahlalter", "obwohl", "bevor", "18 jahren", "fiktive", "keine umfragewerte"]) {
+      expect(text.includes(anchor), `مرساة مفقودة: ${anchor}`).toBe(true);
+    }
+    expect(text).not.toMatch(/bereue die entscheidung|stieg die beteiligung|viele studien vorliegen/);
+    for (const question of reading!.questions) {
+      expect(question.optionExplanations).toHaveLength(question.options.length);
+      expect(question.optionExplanations?.[question.correctIndex]).toBeUndefined();
+      for (const [index, explanation] of (question.optionExplanations ?? []).entries()) {
+        if (index !== question.correctIndex) expect(explanation?.trim().length, `${question.id} distractor ${index}`).toBeGreaterThan(12);
       }
     }
   });
@@ -212,7 +301,7 @@ describe("B1-07 lesson content audit", () => {
   it("checks transformation keys for als, während, and obwohl", () => {
     const w1 = task("w1");
     if (w1.type !== "transformation") throw new Error("w1 is not transformation");
-    expect(evaluateExercise(w1, "Als ich jung war, war alles anders.").isCorrect).toBe(true);
+    expect(evaluateExercise(w1, "Als ich jung war, war vieles anders.").isCorrect).toBe(true);
     expect(evaluateExercise(w1, "Als ich jung bin, war alles anders.").isCorrect).toBe(false);
 
     const e7 = task("e7");
@@ -269,14 +358,19 @@ describe("B1-07 lesson content audit", () => {
       "l1:q1",
       "l2:q2",
       "l2:q3",
+      "l3:q4",
     ]);
   });
 
   it("keeps the culture note to a sourced fact and removes unsupported claims", () => {
     const note = lessonB107.fehlerUndTipps.culturalNote.content;
     expect(note).toContain("Bundestag");
-    expect(note).toContain("كل أربع سنوات");
-    expect(JSON.stringify(lessonB107)).not.toMatch(/شعار شائع|يتعلمها الأطفال/);
+    expect(note).toContain("أربع سنوات");
+    expect(note).toContain("انتخابات مبكرة");
+    expect(note).toContain("https://www.bundeswahlleiterin.de/service/glossar/w/wahlperiode.html");
+    expect(note).toContain("https://www.bundesregierung.de/breg-de/aktuelles/die-wahl-des-bundeskanzlers-346690");
+    expect(lessonB107.reading?.paragraphs.join(" ")).toContain("ab 18 Jahren");
+    expect(JSON.stringify(lessonB107)).not.toMatch(/شعار شائع|يتعلمها الأطفال|obschon.{0,20}(قديم|لا يُستعمل)/);
   });
 
   it("counts only correct, mapped exercise results toward goals", () => {

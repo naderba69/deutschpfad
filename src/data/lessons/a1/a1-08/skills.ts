@@ -1,0 +1,507 @@
+/**
+ * a1-08 — المهارات: قراءة واستماع ونطق وكتابة (الجزء «skills»)
+ * فُصل من a1-08.ts في المرحلة 4 (سقف الحجم). القيم منقولة حرفياً.
+ */
+import type { Lesson } from "@/types/lesson";
+
+export const reading: NonNullable<Lesson["reading"]> = {
+    id: "r1",
+    titleDe: "Ein Nachmittag im Kaufhaus",
+    titleAr: "عصرٌ في المتجر الكبير",
+    textType: "erzaehlung",
+    paragraphs: [
+      "Es ist Samstagnachmittag. Amira und ihre Freundin Lena gehen zusammen ins Kaufhaus. Amira sucht eine Jacke für den Herbst. Lena braucht nichts, aber sie kommt gern mit. Das Kaufhaus ist groß und voll. Im ersten Stock ist die Damenabteilung.",
+      "Amira sieht eine Jacke. Sie ist blau. Die Jacke ist schön, aber sie ist teuer: 89 Euro. „Wie findest du diese Jacke?“, fragt Amira. „Die Farbe gefällt mir sehr“, sagt Lena. „Blau steht dir gut.“",
+      "Amira probiert die Jacke an. Leider ist sie zu klein. „Die Jacke passt mir nicht“, sagt Amira traurig. Eine Verkäuferin kommt und fragt: „Welche Größe haben Sie?“ — „Größe 40“, antwortet Amira. Die Verkäuferin bringt die Jacke noch einmal, jetzt in Größe 40.",
+      "Jetzt passt die Jacke perfekt. Aber der Preis ist immer noch hoch. „Gefällt dir die Jacke nicht?“, fragt Lena. „Doch, sie gefällt mir sehr“, sagt Amira. „Aber 89 Euro sind zu viel für mich.“",
+      "Da sieht Lena einen Mantel. Er ist grau. Der Mantel kostet nur 45 Euro. „Dieser Mantel ist warm und nicht teuer“, sagt sie. Amira probiert den Mantel an. Er passt ihr gut und gefällt ihr auch. Die Farbe ist grau, nicht blau; Grau gefällt Amira auch.",
+      "Amira nimmt den Mantel. An der Kasse bezahlt sie fünfzig Euro und bekommt fünf Euro zurück. Draußen ist es kalt. Amira trägt ihren Mantel und lacht: „Der Mantel gefällt mir wirklich. Und ich habe noch Geld für einen Kaffee!“",
+    ],
+    paragraphsAr: [
+      "إنّه بعد ظهر السبت. تذهب أميرة وصديقتها لينا معاً إلى المتجر الكبير. أميرة تبحث عن سترة للخريف. لينا لا تحتاج شيئاً، لكنّها تأتي معها بسرور. المتجر كبير ومزدحم. في الطابق الأوّل قسم النساء.",
+      "ترى أميرة سترة. لونها أزرق. السترة جميلة لكنّها غالية: 89 يورو. «ما رأيك في هذه السترة؟» تسأل أميرة. «اللون يعجبني كثيراً» تقول لينا. «الأزرق يليق بك.»",
+      "تُجرّب أميرة السترة. للأسف هي صغيرة جداً. «السترة لا تناسب مقاسي» تقول أميرة حزينة. تأتي بائعة وتسأل: «ما مقاسك؟» — «مقاس 40» تجيب أميرة. تُحضِر البائعة السترة مرة أخرى، هذه المرة بمقاس 40.",
+      "الآن تناسبها السترة تماماً. لكنّ السعر ما يزال مرتفعاً. «ألا تعجبك السترة؟» تسأل لينا. «بلى، تعجبني كثيراً» تقول أميرة. «لكن المبلغ أكبر مما أستطيع دفعه.»",
+      "عندئذٍ ترى لينا معطفاً. لونه رماديّ. يكلّف المعطف 45 يورو فقط. «هذا المعطف دافئ وغير غالٍ» تقول. تُجرّب أميرة المعطف. يناسبها ويعجبها أيضاً. اللون رماديّ لا أزرق؛ والرماديّ يعجب أميرة أيضاً.",
+      "تأخذ أميرة المعطف. عند الصندوق تدفع خمسين يورو وتستلم خمسة يورو. في الخارج الجوّ بارد. ترتدي أميرة معطفها وتضحك: «المعطف يعجبني حقاً. وما زال معي مالٌ لفنجان قهوة!»",
+    ],
+    glossary: [
+      {
+        de: "das Kaufhaus",
+        ar: "المتجر الكبير (متعدّد الأقسام)",
+        noteAr: "مركّب من kaufen (يشتري) + Haus (بيت).",
+      },
+      {
+        de: "die Damenabteilung",
+        ar: "قسم النساء",
+        noteAr: "Damen (سيّدات) + Abteilung (قسم) — كلمة تراها على اللافتات.",
+      },
+      {
+        de: "probiert … an (anprobieren)",
+        ar: "يُجرّب (ملابس)",
+        noteAr: "فعل منفصل: sie probiert die Jacke an.",
+      },
+      {
+        de: "die Verkäuferin",
+        ar: "البائعة",
+        noteAr: "المذكّر der Verkäufer؛ اللاحقة -in تصنع المؤنّث.",
+      },
+      {
+        de: "die Größe",
+        ar: "المقاس",
+        noteAr: "Welche Größe haben Sie? طريقة مهذبة شائعة للسؤال عن المقاس.",
+      },
+      {
+        de: "passt (passen)",
+        ar: "يناسب (مقاساً)",
+        noteAr: "مع الدّاتيف: Die Jacke passt mir.",
+      },
+      {
+        de: "gefällt (gefallen)",
+        ar: "يعجب",
+        noteAr: "مع الدّاتيف: Der Mantel gefällt mir.",
+      },
+      {
+        de: "steht (stehen)",
+        ar: "يليق بـ",
+        noteAr: "Blau steht dir gut — ليس معناه هنا «يقف».",
+      },
+      {
+        de: "der Preis",
+        ar: "السعر",
+        noteAr: "Der Preis ist hoch — نقول عن السعر hoch وعن السلعة teuer.",
+      },
+      {
+        de: "die Kasse",
+        ar: "الصندوق (مكان الدفع)",
+        noteAr: "an der Kasse bezahlen — يدفع عند الصندوق.",
+      },
+      {
+        de: "bekommt … zurück (zurückbekommen)",
+        ar: "يستلم الباقي",
+        noteAr: "فعل منفصل: sie bekommt fünf Euro zurück.",
+      },
+      {
+        de: "doch",
+        ar: "بلى",
+        noteAr: "تُستعمل هنا لرفض النفي والإجابة بالإيجاب؛ أما nein فيؤكد النفي.",
+      },
+    ],
+    questions: [
+      {
+        id: "rq1",
+        type: "multiple-choice",
+        instructionAr: "لماذا لا تشتري أميرة السترة؟",
+        questionDe: "Warum kauft Amira die Jacke nicht?",
+        options: [
+          "Sie ist zu teuer.",
+          "Sie gefällt ihr nicht.",
+          "Die Farbe ist hässlich.",
+          "Es gibt keine Größe 40.",
+        ],
+        correctIndex: 0,
+        explanation:
+          "أعجبتها السترة وناسبها مقاسها بعد التبديل، لكن المبلغ أكبر مما تستطيع دفعه: Aber 89 Euro sind zu viel für mich.",
+        errorType: "vocabulary",
+        paragraph: 4,
+        optionExplanations: [
+          undefined,
+          "عكس النص: «Doch, sie gefällt mir sehr» — أعجبتها جداً.",
+          "اللون أعجبها: «Die Farbe gefällt mir sehr» و«Blau steht dir gut».",
+          "المقاس توفّر: «Die Verkäuferin bringt die Jacke noch einmal, jetzt in Größe 40».",
+        ],
+      },
+      {
+        id: "rq2",
+        type: "multiple-choice",
+        instructionAr: "ما مشكلة السترة أوّل مرّة؟",
+        questionDe: "Was ist das Problem mit der ersten Jacke?",
+        options: [
+          "Sie ist zu klein.",
+          "Sie ist zu groß.",
+          "Sie ist schmutzig.",
+          "Sie ist grau.",
+        ],
+        correctIndex: 0,
+        explanation:
+          "Leider ist sie zu klein ثمّ Die Jacke passt mir nicht — مشكلة مقاس لا ذوق.",
+        errorType: "vocabulary",
+        paragraph: 3,
+        optionExplanations: [
+          undefined,
+          "النص يقول «Leider ist sie zu klein» أي صغيرة، لا كبيرة.",
+          "لم تُذكر وساخة «schmutzig» في النص؛ المشكلة المقاس.",
+          "الرمادي لون المعطف لاحقاً «Er ist grau»؛ والسترة الأولى «Sie ist blau».",
+        ],
+      },
+      {
+        id: "rq3",
+        type: "multiple-choice",
+        instructionAr: "لماذا أجابت أميرة بـ Doch؟",
+        questionDe: "Warum antwortet Amira mit Doch?",
+        options: [
+          "Weil die Frage negativ war und die Jacke ihr gefällt.",
+          "Weil sie die Jacke überhaupt nicht mag.",
+          "Weil sie heute kein Geld dabei hat.",
+          "Weil Lena die blaue Jacke sofort kauft und bezahlt.",
+        ],
+        correctIndex: 0,
+        explanation:
+          "في هذا السياق يرفض Doch النفي في السؤال ويؤكد أن السترة تعجب أميرة؛ لا نعمّم هذا التمييز على كل سؤال منفي أو على كل استعمال لـja.",
+        errorType: "grammar",
+        paragraph: 4,
+        optionExplanations: [
+          undefined,
+          "«Doch» تناقض النفي بالإيجاب؛ وهي قالت «sie gefällt mir sehr».",
+          "المال ليس سبب «Doch»؛ والسبب أن سؤال لينا منفيّ: «Gefällt dir die Jacke nicht؟».",
+          "لينا لم تشترِ السترة الزرقاء؛ وأميرة أخذت المعطف الرمادي «Amira nimmt den Mantel».",
+        ],
+      },
+      {
+        id: "rq4",
+        type: "multiple-choice",
+        instructionAr: "كم استلمت أميرة عند الصندوق؟",
+        questionDe: "Wie viel Geld bekommt Amira an der Kasse zurück?",
+        options: ["Fünf Euro", "Fünfzig Euro", "Vierzig Euro", "Nichts"],
+        correctIndex: 0,
+        explanation: "bekommt fünf Euro zurück — دفعت خمسين وثمن المعطف 45.",
+        errorType: "vocabulary",
+        paragraph: 6,
+        optionExplanations: [
+          undefined,
+          "الخمسون ما دفعته «bezahlt sie fünfzig Euro»، لا ما استردّته.",
+          "لم يُذكر أربعون يورو؛ والثمن «45 Euro» والدفع 50 ⇒ الباقي خمسة.",
+          "النص صريح: «bekommt fünf Euro zurück»، فاستردّت مبلغاً.",
+        ],
+      },
+      {
+        id: "rq5",
+        type: "multiple-choice",
+        instructionAr: "أيّ فعل استعملته أميرة للحديث عن المقاس؟",
+        questionDe: "Welches Verb benutzt Amira für die Größe?",
+        options: ["passen", "gefallen", "stehen", "tragen"],
+        correctIndex: 0,
+        explanation:
+          "Die Jacke passt mir nicht — passen للمقاس، وgefallen للذوق، وstehen للّياقة.",
+        errorType: "vocabulary",
+        paragraph: 3,
+        optionExplanations: [
+          undefined,
+          "«gefallen» للذوق («Die Farbe gefällt mir»)، لا للمقاس.",
+          "«stehen» للّياقة والشكل («Blau steht dir gut»).",
+          "«tragen» للارتداء («Amira trägt ihren Mantel»).",
+        ],
+      },
+    ],
+    redemittel: [
+      {
+        de: "Wie findest du …? / Wie gefällt Ihnen …?",
+        ar: "ما رأيك في …؟ / كيف يعجبك …؟",
+      },
+      {
+        de: "Das gefällt mir (nicht).",
+        ar: "هذا يعجبني / لا يعجبني.",
+      },
+      {
+        de: "Es passt mir nicht. Haben Sie Größe …?",
+        ar: "لا يناسب مقاسي. هل عندكم مقاس …؟",
+      },
+      {
+        de: "Welche Größe haben Sie?",
+        ar: "ما مقاسك؟ (سؤال البائع بأدب)",
+      },
+      {
+        de: "Das ist zu teuer.",
+        ar: "هذا غالٍ جداً.",
+      },
+      {
+        de: "Ich nehme diesen Mantel.",
+        ar: "آخذ هذا المعطف.",
+      },
+      {
+        de: "Kann ich das anprobieren?",
+        ar: "هل يمكنني تجريب هذا؟",
+      },
+      {
+        de: "Doch, … (auf eine negative Frage)",
+        ar: "بلى، … (جواباً على سؤال منفيّ)",
+      },
+    ],
+    discussionAr:
+      "لو كنتَ مكان أميرة، اكتب أو جرّب أن تقول جملتين: الأولى تعبّر عن الإعجاب بـgefallen، والثانية عن المقاس بـpassen أو السعر. هذا السؤال مفتوح للتدريب ولا يُسجَّل دليلاً على أداء شفهي أو نطق.",
+  };
+
+
+export const listening: NonNullable<Lesson["listening"]> = {
+    items: [
+      {
+        id: "l1",
+        title: "في متجر الملابس",
+        audioNoteAr: "يُنطق الحوار عبر TTS المدمج في المتصفح، لا عبر تسجيل بشري؛ وقد يختلف الصوت باختلاف الجهاز والمتصفح. لم يُختبر وضوح النطق أو مطابقته للنص.",
+        lines: [
+          {
+            speaker: "Verkäuferin",
+            de: "Guten Tag! Kann ich Ihnen helfen?",
+            ar: "طاب يومك! هل أستطيع مساعدتك؟",
+          },
+          {
+            speaker: "Mona",
+            de: "Ja, ich suche eine Jacke.",
+            ar: "نعم، أبحث عن سترة.",
+          },
+          {
+            speaker: "Verkäuferin",
+            de: "Welche Farbe möchten Sie?",
+            ar: "أي لون تريدين؟",
+          },
+          {
+            speaker: "Mona",
+            de: "Blau, bitte.",
+            ar: "باللون الأزرق، من فضلك.",
+          },
+          {
+            speaker: "Verkäuferin",
+            de: "Hier ist eine Jacke in Blau. Wie finden Sie sie?",
+            ar: "هذه سترة باللون الأزرق. ما رأيك بها؟",
+          },
+          {
+            speaker: "Mona",
+            de: "Ich finde sie sehr schön! Was kostet sie?",
+            ar: "أجدها جميلة جداً! بكم؟",
+          },
+          {
+            speaker: "Verkäuferin",
+            de: "Neununddreißig Euro.",
+            ar: "تسعة وثلاثون يورو.",
+          },
+        ],
+      },
+      {
+        id: "l2",
+        title: "وصف ما يرتديه الأصدقاء",
+        audioNoteAr: "يُنطق الحوار عبر TTS المدمج في المتصفح، لا عبر تسجيل بشري؛ وقد يختلف الصوت باختلاف الجهاز والمتصفح. لم يُختبر وضوح النطق أو مطابقته للنص.",
+        lines: [
+          {
+            speaker: "Karim",
+            de: "Schau mal! Ich habe ein Hemd.",
+            ar: "انظر! لدي قميص.",
+          },
+          {
+            speaker: "Anna",
+            de: "Oh, sehr schön! Es ist rot, oder?",
+            ar: "أوه، جميل جداً! إنه أحمر، صحيح؟",
+          },
+          {
+            speaker: "Karim",
+            de: "Ja, Rot ist meine Lieblingsfarbe.",
+            ar: "نعم، الأحمر لوني المفضل.",
+          },
+          {
+            speaker: "Anna",
+            de: "Und ich trage heute ein Kleid. Das Kleid ist blau.",
+            ar: "وأنا أرتدي اليوم فستاناً. الفستان أزرق.",
+          },
+          {
+            speaker: "Karim",
+            de: "Das Kleid finde ich sehr elegant!",
+            ar: "أجد الفستان أنيقاً جداً!",
+          },
+        ],
+      },
+      {
+        id: "l3",
+        title: "Ein schwarzes T-Shirt kaufen",
+        audioNoteAr: "بحسب بيانات المشروع، هذه المقاطع مولّدة آلياً (TTS) وليست تسجيلاً بشرياً. لا توجد بيانات موثقة عن هوية الأصوات، ولم تُتحقق مطابقة المقاطع للنص أو جودة النطق.",
+        lines: [
+          { speaker: "Verkäuferin", de: "Guten Tag! Kann ich Ihnen helfen?", ar: "طاب يومك! هل أستطيع مساعدتك؟", audioSrc: "/audio/lessons/a1-08/ls-a1-08-3-1.mp3" },
+          { speaker: "Karim", de: "Ja, ich suche ein T-Shirt.", ar: "نعم، أبحث عن قميص قصير الأكمام.", audioSrc: "/audio/lessons/a1-08/ls-a1-08-3-2.mp3" },
+          { speaker: "Verkäuferin", de: "Welche Farbe möchten Sie?", ar: "أي لون تريد؟", audioSrc: "/audio/lessons/a1-08/ls-a1-08-3-3.mp3" },
+          { speaker: "Karim", de: "Ich möchte ein schwarzes T-Shirt, bitte.", ar: "أريد قميصاً أسود، من فضلك.", audioSrc: "/audio/lessons/a1-08/ls-a1-08-3-4.mp3" },
+          { speaker: "Verkäuferin", de: "Hier ist ein schwarzes T-Shirt. Es kostet fünfzehn Euro.", ar: "هذا قميص أسود. ثمنه خمسة عشر يورو.", audioSrc: "/audio/lessons/a1-08/ls-a1-08-3-5.mp3" },
+          { speaker: "Karim", de: "Das gefällt mir. Ich nehme es.", ar: "هذا يعجبني. سآخذه.", audioSrc: "/audio/lessons/a1-08/ls-a1-08-3-6.mp3" },
+        ],
+      },
+    ],
+    questions: [
+      {
+        id: "q1",
+        itemId: "l1",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Was sucht Mona?",
+        questionAr: "ماذا تبحث منى؟",
+        options: [
+          "eine Jacke in Blau",
+          "ein Hemd",
+          "ein Kleid",
+          "Schuhe aus Leder",
+        ],
+        correctIndex: 0,
+        explanation: "أجابت Mona: Blau, bitte، ثم عرضت البائعة eine Jacke in Blau.",
+        errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "القميص «ein Hemd» ظهر في كلام الطرف الآخر، لا في طلبها «ich suche eine Jacke».",
+          "الفستان «ein Kleid» في الجملة الأخيرة عن آنا، لا عن بحث منى.",
+          "لم تُذكر أحذية جلدية «Schuhe aus Leder» في الحوار.",
+        ],
+      },
+      {
+        id: "q2",
+        itemId: "l1",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Was kostet die Jacke?",
+        questionAr: "بكم السترة؟",
+        options: ["39 Euro", "30 Euro", "33 Euro", "90 Euro"],
+        correctIndex: 0,
+        explanation: "قالت البائعة: Neununddreißig Euro = 39.",
+        errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "الثلاثون «dreißig» غير منطوق؛ والجواب «Neununddreißig Euro» = 39.",
+          "«dreiunddreißig» = 33؛ والمنطوق «neununddreißig» = 39.",
+          "التسعون «neunzig»؛ والرقم المسموع تسعةٌ وثلاثون.",
+        ],
+      },
+      {
+        id: "q3",
+        itemId: "l2",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Was trägt Anna?",
+        questionAr: "ماذا ترتدي آنا؟",
+        options: [
+          "ein Kleid",
+          "ein Hemd",
+          "eine Jacke",
+          "eine Mütze",
+        ],
+        correctIndex: 0,
+        explanation: "قالت آنا: Ich trage heute ein Kleid. Das Kleid ist blau.",
+        errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "القميص «Ich habe ein Hemd» قاله المتحدث الآخر؛ وآنا قالت «ich trage heute ein Kleid».",
+          "السترة ما بحثت عنه منى «ich suche eine Jacke»، لا ما ترتديه آنا.",
+          "لم تُذكر قبعة «eine Mütze» في الحوار.",
+        ],
+      },
+      {
+        id: "q4",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Was sucht Karim?",
+        questionAr: "عمّ يبحث كريم؟",
+        options: ["Er sucht ein T-Shirt", "Er sucht eine Jacke", "Er sucht ein Hemd", "Er sucht ein Kleid"],
+        correctIndex: 0,
+        explanation: "قال كريم: Ja, ich suche ein T-Shirt.",
+        errorType: "vocabulary",
+        optionExplanations: [undefined, "السترة ظهرت في الحوار الآخر؛ كريم يبحث عن ein T-Shirt.", "القميص ذُكر في وصف ملابس كريم، لا في طلبه هنا.", "الفستان في حوار آنا؛ أما كريم فيبحث عن قميص قصير الأكمام."],
+      },
+      {
+        id: "q5",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Welche Farbe möchte Karim?",
+        questionAr: "أي لون يريد كريم؟",
+        options: ["Die Farbe ist schwarz", "Die Farbe ist blau", "Die Farbe ist rot", "Die Farbe ist grün"],
+        correctIndex: 0,
+        explanation: "قال كريم: Ich möchte ein schwarzes T-Shirt, bitte.",
+        errorType: "vocabulary",
+        optionExplanations: [undefined, "الأزرق لون السترة في حوار منى والفستان في الحوار الآخر، لا طلب كريم.", "الأحمر لون قميص كريم المذكور في حوار الأصدقاء، لا لون ما يشتريه هنا.", "الأخضر لم يُذكر؛ طلب كريم اللون الأسود."],
+      },
+      {
+        id: "q6",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Wie viel kostet das schwarze T-Shirt?",
+        questionAr: "كم ثمن القميص الأسود؟",
+        options: ["fünfzehn Euro", "zwanzig Euro", "zwölf Euro", "fünf Euro"],
+        correctIndex: 0,
+        explanation: "قالت البائعة: Es kostet fünfzehn Euro.",
+        errorType: "vocabulary",
+        optionExplanations: [undefined, "عشرون يورو لم تُذكر؛ السعر المسموع fünfzehn Euro.", "اثنا عشر يورو ليس السعر الذي قالته البائعة.", "خمسة يورو لم تُذكر؛ ثمن القميص خمسة عشر يورو."],
+      },
+    ],
+  };
+
+
+export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
+    id: "p1",
+    title: "نطق الألوان والملابس: ei، au، ü، sch وطول الصوت",
+    items: [
+      { de: "weiß", ar: "أبيض", note: "تقريباً /vaɪ̯s/: ei مثل /aɪ̯/، وß صوت /s/ واحد، لا سّ مشددة؛ ڤايس تقريب كتابي." },
+      { de: "blau", ar: "أزرق", note: "au يقترب من /aʊ̯/؛ «بلاو» تقريب كتابي للصوت." },
+      { de: "grün", ar: "أخضر", note: "ü هو /yː/: اجعل اللسان قريباً من وضع /i/ مع تدوير الشفتين كما في /u/؛ لا يطابق ياءً عربية تماماً." },
+      { de: "gelb", ar: "أصفر", note: "g في البداية /g/ (گ)، لا غ؛ e قصيرة، وb في آخر الكلمة تُنطق قريباً من p." },
+      { de: "schwarz", ar: "أسود", note: "sch = /ʃ/ (ش)، w = /v/ (ڤ)، وz = /t͡s/؛ «شڤارتس» تقريب كتابي." },
+      { de: "die Schuhe", ar: "الأحذية", note: "Schuh: /ʃuː/؛ h لا يُنطق ويشير هنا إلى طول u، وe الأخيرة في Schuhe صوت ضعيف /ə/." },
+    ],
+    tip: "أزرار الاستماع تستخدم TTS في المتصفح لا تسجيلاً بشرياً، وقد يختلف الصوت بحسب الجهاز. تدرّب على فروق واضحة: ei في weiß، au في blau، ü في grün، وsch/w/z في schwarz. التقريب العربي لا يطابق الصوت تماماً؛ استمع إلى النطق الآلي بوصفه نموذجاً مساعداً فقط.",
+    shadowing: [
+      {
+        de: "Das Hemd ist rot.",
+        ar: "القميص أحمر.",
+        tip: "rot = /roːt/: o طويلة، لا قصيرة.",
+      },
+      {
+        de: "Meine Jacke ist blau.",
+        ar: "سترتي زرقاء.",
+        tip: "blau = بلاو (au = آو)",
+      },
+      {
+        de: "Wie findest du das Kleid?",
+        ar: "ما رأيك في الفستان؟",
+        tip: "Kleid = كلايت (ei = آي)",
+      },
+      {
+        de: "Die Schuhe sind schwarz.",
+        ar: "الأحذية سوداء.",
+        tip: "schwarz = /ʃvaʁt͡s/؛ sch=/ʃ/، w=/v/، z=/t͡s/.",
+      },
+    ],
+  };
+
+
+export const writing: NonNullable<Lesson["writing"]> = [
+    {
+      id: "w1",
+      type: "transformation",
+      instructionAr: "ترجم إلى الألمانية بجملتين كاملتين:",
+      prompt: "أرتدي سترة. السترة زرقاء.",
+      acceptedAnswers: [
+        "Ich trage eine Jacke. Die Jacke ist blau.",
+        "Ich trage eine Jacke. Sie ist blau.",
+      ],
+      sampleAnswer: "Ich trage eine Jacke. Die Jacke ist blau.",
+      explanation:
+        "اكتب جملة عن اللباس بـIch trage، ثم جملة خبرية عن اللون بـsein. الصفة الخبرية بعد sein تبقى بلا نهاية.",
+      errorType: "grammar",
+    },
+    {
+      id: "w2",
+      type: "fill-blank",
+      instructionAr: "أكمل بالألوان الصحيحة (rot/blau/grün):",
+      template:
+        "Der Himmel ist ___ (أزرق). Das Gras ist ___ (أخضر). Blut ist ___ (أحمر).",
+      blanks: [
+        { correct: "blau", options: ["blau", "grün", "rot"] },
+        { correct: "grün", options: ["blau", "grün", "rot"] },
+        { correct: "rot", options: ["blau", "grün", "rot"] },
+      ],
+      explanation: "السماء زرقاء (blau)، العشب أخضر (grün)، الدم أحمر (rot).",
+      errorType: "vocabulary",
+    },
+    {
+      id: "w3",
+      type: "dictation",
+      instructionAr: "استمع واكتب الجملة:",
+      audioText: "Ich finde das Kleid sehr schön.",
+      explanation: "أجد الفستان جميلاً جداً — Ich finde + الاسم + صفة الرأي.",
+      errorType: "spelling",
+    },
+  ];

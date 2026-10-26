@@ -42,5 +42,5 @@ test("الشرح يعرض التبويبات التفصيلية (لا سكرول
   // التنقل بين التبويبات يعمل
   await page.getByRole("tab", { name: /تريك الحفظ/ }).first().click();
   await page.waitForTimeout(300);
-  await expect(page.getByText("تريك حفظ (Eselsbrücke):", { exact: false }).first()).toBeVisible({ timeout: 4000 });
+  await expect(page.getByText("تريك حفظ (Eselsbrücke)", { exact: false }).first()).toBeVisible({ timeout: 4000 });
 });

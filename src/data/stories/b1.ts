@@ -14,7 +14,7 @@ const B1_1: InteractiveStory = {
   title: "Die neue Wohnung",
   titleAr: "الشقة الجديدة",
   emoji: "🏠",
-  description: "عائلة تبحث عن شقة جديدة — السبب والنتيجة والمقارنات.",
+  description: "قصة تعليمية خيالية عن عائلة تبحث عن شقة — السبب والنتيجة والمقارنات.",
   grammar: "الجمل الثانوية (weil, dass, wenn) • مقارنات الصفات",
   segments: [
     {
@@ -98,20 +98,20 @@ const B1_2: InteractiveStory = {
     },
     {
       id: 3,
-      de: "Die Arbeit gefiel ihm, aber er musste am Anfang viel lernen.",
-      ar: "أعجبه العمل، لكنه كان عليه أن يتعلم الكثير في البداية.",
+      de: "Am Anfang war alles neu und schwierig, und er musste viel lernen.",
+      ar: "في البداية كان كل شيء جديداً وصعباً، وكان عليه أن يتعلم الكثير.",
     },
     {
       id: 4,
       de: "Nach einer Woche verstand er die Abläufe besser. Sein Chef war zufrieden.",
       ar: "بعد أسبوع فهم سير العمل بشكل أفضل. كان رئيسه راضياً.",
       question: {
-        de: "Wie war die erste Woche?",
-        ar: "كيف كان الأسبوع الأول؟",
+        de: "Was musste Daniel am Anfang tun?",
+        ar: "ماذا كان على دانيال أن يفعل في البداية؟",
         options: [
-          { text: "Schwierig, aber er lernte viel", ar: "صعب، لكنه تعلم الكثير", correct: true, explanation: "نعم — هذا ما ورد في القصة: «Schwierig, aber er lernte viel» (صعب، لكنه تعلم الكثير)." },
-          { text: "Sehr langweilig", ar: "ممل جداً", correct: false, explanation: "لا — الصواب هو الخيار المذكور في القصة." },
-          { text: "Ohne Aufgaben", ar: "بلا مهام", correct: false, explanation: "لا — الصواب هو الخيار المذكور في القصة." },
+          { text: "Viel lernen", ar: "أن يتعلم الكثير", correct: true, explanation: "نعم — يذكر النص أنه كان عليه أن يتعلم الكثير." },
+          { text: "Die Firma verlassen", ar: "مغادرة الشركة", correct: false, explanation: "لا — لم يغادر الشركة؛ بل تعلم العمل." },
+          { text: "Eine Prüfung machen", ar: "اجتياز امتحان", correct: false, explanation: "لا — لم يذكر النص امتحاناً." },
         ],
       },
     },
@@ -134,8 +134,8 @@ const B1_3: InteractiveStory = {
   title: "Die Umweltgruppe",
   titleAr: "مجموعة البيئة",
   emoji: "🌱",
-  description: "طلاب يؤسسون مجموعة بيئية — المبني للمجهول والعمل التطوعي.",
-  grammar: "المبني للمجهول (Passiv: wird, wurden) • البيئة • man",
+  description: "قصة تدريبية خيالية عن طلاب يؤسسون مجموعة بيئية — المبني للمجهول والعمل التطوعي.",
+  grammar: "مجهول الحدث (wird, werden, wurde) • البيئة • man",
   segments: [
     {
       id: 1,
@@ -145,12 +145,12 @@ const B1_3: InteractiveStory = {
     {
       id: 2,
       de: "Jeden Samstag wird Müll im Park gesammelt und der Müll getrennt.",
-      ar: "كل سبت يُجمع القمامة في الحديقة وتُفرز.",
+      ar: "كل سبت تُجمع القمامة في الحديقة وتُفرز.",
       question: {
         de: "Was wird jeden Samstag gemacht?",
         ar: "ماذا يُفعل كل سبت؟",
         options: [
-          { text: "Müll wird gesammelt", ar: "يُجمع القمامة", correct: true, explanation: "نعم — هذا ما ورد في القصة: «Müll wird gesammelt» (يُجمع القمامة)." },
+          { text: "Müll wird gesammelt", ar: "تُجمع القمامة", correct: true, explanation: "نعم — هذا ما ورد في القصة: «Müll wird gesammelt» (تُجمع القمامة)." },
           { text: "Es wird geschlafen", ar: "يُنام", correct: false, explanation: "لا — الصواب هو الخيار المذكور في القصة." },
           { text: "Es wird gekocht", ar: "يُطبخ", correct: false, explanation: "لا — الصواب هو الخيار المذكور في القصة." },
         ],
@@ -159,7 +159,7 @@ const B1_3: InteractiveStory = {
     {
       id: 3,
       de: "Die Schüler pflanzen auch Bäume im Park. Die Bäume werden gepflegt.",
-      ar: "يزرع الطلاب أيضاً أشجاراً في الحديقة. تُعتني بالأشجار.",
+      ar: "يزرع الطلاب أيضاً أشجاراً في الحديقة. يُعتنى بالأشجار.",
     },
     {
       id: 4,
@@ -178,7 +178,7 @@ const B1_3: InteractiveStory = {
     {
       id: 5,
       de: "Die Stadtverwaltung hat die Gruppe für ihren Einsatz belohnt.",
-      ar: "كأفت إدارة المدينة المجموعة على جهودها.",
+      ar: "كافأت إدارة المدينة المجموعة على جهودها.",
       choices: [
         { text: "Umweltschutz ist wichtig.", ar: "حماية البيئة مهمة.", next: 6, feedback: "متفق تماماً!" },
         { text: "Man kann nichts ändern.", ar: "لا يمكن تغيير أي شيء.", next: 6, feedback: "خطأ — لقد غيّروا الحديقة!" },
@@ -194,7 +194,7 @@ const B1_4: InteractiveStory = {
   title: "Die lange Zugreise",
   titleAr: "رحلة القطار الطويلة",
   emoji: "🚄",
-  description: "لينا تسافر إلى فيينا — الروابط الزمنية (bevor, während, nachdem).",
+  description: "قصة تعليمية خيالية: لينا تسافر إلى فيينا — الروابط الزمنية (bevor, während, nachdem).",
   grammar: "الجمل الزمنية (bevor, während, nachdem) • السفر",
   segments: [
     {
@@ -218,13 +218,13 @@ const B1_4: InteractiveStory = {
     },
     {
       id: 3,
-      de: "Nachdem sie zwei Stunden gefahren waren, kamen sie in Wien an.",
+      de: "Nachdem Lena zwei Stunden gefahren war, kam sie in Wien an.",
       ar: "بعد أن قطعوا ساعتين، وصلوا إلى فيينا.",
     },
     {
       id: 4,
-      de: "Im Hotel angekommen, ruhten sie sich kurz aus und gingen dann spazieren.",
-      ar: "عند وصولهم إلى الفندق، استراحوا قليلاً ثم ذهبوا في نزهة.",
+      de: "Im Hotel angekommen, ruhte sie sich kurz aus und ging dann spazieren.",
+      ar: "عند وصولها إلى الفندق، استراحت قليلاً ثم ذهبت في نزهة.",
       question: {
         de: "Wann kamen sie in Wien an?",
         ar: "متى وصلوا إلى فيينا؟",
@@ -237,8 +237,8 @@ const B1_4: InteractiveStory = {
     },
     {
       id: 5,
-      de: "Am Abend besuchten sie das berühmte Schloss Schönbrunn. Die Stadt war voller Leben.",
-      ar: "في المساء زاروا قصر شونبرون الشهير. كانت المدينة مليئة بالحياة.",
+      de: "Am Abend besuchte sie das berühmte Schloss Schönbrunn. Die Stadt war voller Leben.",
+      ar: "في المساء زارت قصر شونبرون الشهير. كانت المدينة مليئة بالحياة.",
       choices: [
         { text: "Wien ist eine Reise wert.", ar: "فيينا تستحق الزيارة.", next: 6, feedback: "بالتأكيد!" },
         { text: "Die Reise war zu anstrengend.", ar: "كانت الرحلة متعبة جداً.", next: 6, feedback: "لكنها جميلة!" },
@@ -254,7 +254,7 @@ const B1_5: InteractiveStory = {
   title: "Das Vorstellungsgespräch",
   titleAr: "مقابلة العمل",
   emoji: "🤝",
-  description: "ليزا تستعد لمقابلة عمل — صيغة الشرط (Konjunktiv II) المهذبة.",
+  description: "قصة تدريبية خيالية: ليزا تستعد لمقابلة عمل — مع أمثلة على Konjunktiv II المهذب.",
   grammar: "Konjunktiv II (würde, könnte) • مقابلة العمل • التهذيب",
   segments: [
     {
@@ -314,7 +314,7 @@ const B1_6: InteractiveStory = {
   title: "Die verlorene Zeit",
   titleAr: "الوقت الضائع",
   emoji: "⏳",
-  description: "مارك يتأمل ماضيه — hätte/wäre والندم والتعلم من التجربة.",
+  description: "قصة تعليمية خيالية: مارك يتأمل ماضيه — hätte/wäre والندم والتعلم من التجربة.",
   grammar: "Konjunktiv II الماضي (hätte, wäre) • الندم • التعلم",
   segments: [
     {
@@ -374,7 +374,7 @@ const B1_7: InteractiveStory = {
   title: "Der Wochenendausflug",
   titleAr: "رحلة نهاية الأسبوع",
   emoji: "🎒",
-  description: "خطط عائلة لعطلة نهاية الأسبوع — المستقبل (Futur I) والخطط.",
+  description: "موقف قصصي تدريبي خيالي عن خطة عائلة لعطلة نهاية الأسبوع — المستقبل (Futur I) والخطط.",
   grammar: "المستقبل (werden + Infinitiv) • الخطط • الجمل الشرطية (wenn)",
   segments: [
     {

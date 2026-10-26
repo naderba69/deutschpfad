@@ -1,0 +1,118 @@
+/**
+ * b1-05 — نصّ القراءة الممتدّ (الجزء «reading»)
+ * فُصل وأُضيف في المرحلة 5. نصّ B1 عن الصحة والوقاية: الشرطية الماضية والكلام المنقول.
+ */
+import type { ReadingText } from "@/types/lesson";
+
+export const readingB105: ReadingText = {
+  id: "read-b1-05",
+  titleDe: "Ein fiktiver Bericht: Arbeit und Erholung",
+  titleAr: "تقرير تدريبي خيالي: العمل والراحة",
+  textType: "bericht",
+  paragraphs: [
+    "Dieser fiktive Übungsbericht beschreibt die Gesundheit bei der Arbeit. Einige Beschäftigte berichten von kurzen Nächten, wenig Erholung und vielen Aufgaben. Die fiktive Gesprächspartnerin Mira Meier sagt, das sei belastend. Sie erklärt, manche hätten wegen ihrer Arbeit oft wenig Zeit für Pausen. Der Text stellt keine echten Beschäftigten vor und nennt keine erhobenen Daten. Er dient dazu, über Alltag und Konjunktiv zu sprechen.",
+    "Ein Mitarbeiter erzählt, er habe früher jeden Abend noch E-Mails beantwortet; heute bereue er das. Wenn er damals klare Regeln gehabt hätte, hätte er vielleicht mehr Pausen gemacht. Seit er sein Handy nach acht Uhr ausschaltet, sagt er, schlafe er besser. Eine Kollegin berichtet, sie nehme sich mittags Zeit für einen kurzen Spaziergang. Ob diese Veränderung anderen helfen würde, könne sie nicht sagen. Ihre Beispiele beschreiben nur persönliche Erfahrungen in der erfundenen Situation.",
+    "Die fiktive Gesprächspartnerin empfiehlt, feste Pausen einzuplanen und am Abend eine ruhige Gewohnheit auszuprobieren. Welche Gewohnheit hilfreich sei, sei von Person zu Person verschieden. Sie gibt keine medizinische Empfehlung und verspricht keine Wirkung. Ein Leser fragt, ob er besser schlafen würde, wenn er abends weniger Kaffee tränke. Mira antwortet, das müsse jeder selbst beobachten; bei länger anhaltenden Beschwerden solle man ärztlichen Rat suchen.",
+    "Zum Schluss sagt ein Sprecher der fiktiven Redaktion, alle Personen und Aussagen seien erfunden. Der Text sei kein Forschungsbericht und keine Statistik. Damit sind die Beispiele nicht als Nachweis für gesundheitliche Wirkungen zu verstehen. Die Lernenden können trotzdem Grammatik prüfen: Ein Mitarbeiter habe etwas berichtet; andere hätten anders gehandelt, wenn sie mehr Zeit gehabt hätten. Eine abschließende Frage lautet: Wäre ich heute ausgeruhter, wenn ich in den letzten Wochen öfter Pausen gemacht hätte?",
+  ],
+  paragraphsAr: [
+    "يصف هذا التقرير التدريبي الخيالي الصحة في العمل. يذكر بعض الموظفين الخياليين قِصر ساعات النوم وقلة الراحة وكثرة المهام. وتقول الشخصية التدريبية الخيالية ميرا ماير إن ذلك قد يكون مرهقاً. وتوضح أن بعضهم لا يجد وقتاً كافياً للاستراحات بسبب عمله. لا يعرض النص موظفين حقيقيين ولا يذكر بيانات جُمعت فعلاً؛ بل يُستخدم للتدرب على اللغة والشرطية.",
+    "يروي موظف خيالي أنه كان يجيب عن رسائل البريد كل مساء، وأنه يندم على ذلك اليوم. ولو كانت لديه آنذاك قواعد واضحة، لربما أخذ استراحات أكثر. ويقول إنه منذ أن يطفئ هاتفه بعد الثامنة ينام أفضل. وتذكر زميلة أنها تخصص وقتاً ظهراً لنزهة قصيرة. ولا تستطيع أن تقول إن كان هذا التغيير سيساعد أشخاصاً آخرين؛ فهذه أمثلة على تجارب شخصية ضمن موقف متخيّل.",
+    "تنصح الشخصية التدريبية الخيالية بتخصيص أوقات ثابتة للاستراحة وتجربة عادة هادئة في المساء. وتقول إن العادة المفيدة تختلف من شخص إلى آخر. لا تقدم توصية طبية ولا تعد بنتيجة. ويسأل قارئ خيالي إن كان سينام أفضل لو شرب قهوة أقل مساءً. وتجيب ميرا بأن على كل شخص ملاحظة ما يناسبه؛ وإذا استمرت الأعراض مدة طويلة، فليطلب المشورة الطبية.",
+    "وفي الختام يقول متحدث عن التحرير الخيالي إن جميع الشخصيات والأقوال مختلقة. والنص ليس تقريراً بحثياً ولا إحصاءً. لذلك لا تُعد الأمثلة دليلاً على آثار صحية. ومع ذلك يمكن للمتعلمين مراجعة القواعد: أفاد موظف بشيء، وكان آخرون سيتصرفون بشكل مختلف لو توفر لهم وقت أكثر. ويُختتم النص بسؤال: هل كنت سأكون اليوم أكثر راحة لو أخذت استراحات أكثر في الأسابيع الماضية؟",
+  ],
+  glossary: [
+    { de: "der Bericht", ar: "التقرير", noteAr: "مذكّر؛ هنا ضمن نصّ تدريبي خيالي." },
+    { de: "der Beschäftigte", ar: "العامل، الموظّف", noteAr: "يُصرَّف كصفة: der Beschäftigte · die Beschäftigte · die Beschäftigten." },
+    { de: "die Erholung", ar: "الراحة، الاستجمام", noteAr: "مؤنّثة؛ ومنها sich erholen (يستريح)." },
+    { de: "die Pause", ar: "الاستراحة", noteAr: "مؤنّثة؛ eine Pause einplanen (يخصّص وقتاً لاستراحة)." },
+    { de: "die Aufgabe", ar: "المهمّة", noteAr: "مؤنّثة؛ جمعها Aufgaben." },
+    { de: "bereuen", ar: "يندم على", noteAr: "فعل منتظم؛ Ich bereue es, dass ... (أندم على أنّ)." },
+    { de: "die Gewohnheit", ar: "العادة", noteAr: "مؤنّثة، والجمع Gewohnheiten." },
+    { de: "die Wirkung", ar: "الأثر، النتيجة", noteAr: "مؤنّثة؛ مفردها die Wirkung وجمعها die Wirkungen." },
+    { de: "die Aussage", ar: "القول، العبارة", noteAr: "مؤنّثة؛ Aussagen = أقوال." },
+  ],
+  questions: [
+    {
+      id: "rq1",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Wovon berichten die Beschäftigten im Übungstext?",
+      questionAr: "عن ماذا يروي الموظفون في النص التدريبي؟",
+      options: [
+        "Kurze Nächte, wenig Erholung und viele Aufgaben.",
+        "Von einer echten medizinischen Diagnose.",
+        "Davon, dass alle genau acht Stunden schlafen.",
+        "Von einer echten Umfrage unter deutschen Beschäftigten.",
+      ],
+      correctIndex: 0,
+      optionExplanations: [undefined, "لا يذكر النص أي تشخيص طبي؛ بل يوضح: «Der Text stellt keine echten Beschäftigten vor und nennt keine erhobenen Daten». فهو مثال تدريبي خيالي.", "لا يورد النص عدداً لساعات النوم؛ بل يذكر «kurze Nächte» بصورة عامة.", "لا توجد استطلاعات حقيقية؛ يقول النص: «Der Text stellt keine echten Beschäftigten vor und nennt keine erhobenen Daten». "],
+      paragraph: 1,
+      explanation: "تذكر الفقرة الأولى «kurze Nächte, wenig Erholung und vielen Aufgaben» في سياق تدريبي خيالي، لا نتيجة إحصائية.",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq2",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was bereut der Mitarbeiter aus dem zweiten Absatz?",
+      questionAr: "على ماذا يندم الموظّف في الفقرة الثانية؟",
+      options: [
+        "Dass er in letzter Zeit zu viel geschlafen hat.",
+        "Dass er früher jeden Abend E-Mails beantwortet hat.",
+        "Dass er den ganzen Bericht nicht gelesen hat.",
+        "Dass er die Arbeitgeber scharf kritisiert hat.",
+      ],
+      correctIndex: 1,
+      optionExplanations: ["لا — العكس هو المذكور؛ فهو يندم على العمل مساءً: «er habe früher jeden Abend noch E-Mails beantwortet; heute bereue er das».", undefined, "لا — قراءة التقرير لم تُذكر في كلامه؛ وموضع الندم رسائل المساء «E-Mails».", "لا يذكر النص انتقاد أصحاب العمل؛ بل يقول: «Ein Mitarbeiter erzählt, er habe früher jeden Abend noch E-Mails beantwortet; heute bereue er das». "],
+      paragraph: 2,
+      explanation: "يقول الموظّف إنه كان يجيب على الرسائل كل مساء، وإنه يندم على ذلك اليوم — ثم يذكر افتراضاً عن أثر وجود قواعد واضحة واستراحات أكثر؛ وهذا مثال على الشرطية الماضية.",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq3",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was empfiehlt die fiktive Gesprächspartnerin?",
+      questionAr: "بماذا تنصح الشخصية التدريبية الخيالية؟",
+      options: [
+        "Regelmäßige Pausen und ruhige Abende einplanen.",
+        "Jeden Abend anstrengend trainieren.",
+        "Keine Pausen machen und mehr Kaffee trinken.",
+        "Eine bestimmte Methode als sicher wirksam ansehen.",
+      ],
+      correctIndex: 0,
+      optionExplanations: [undefined, "لا يوصي النص بتدريب مكثف؛ بل تقول الشخصية: «feste Pausen einzuplanen und am Abend eine ruhige Gewohnheit auszuprobieren». ", "لا يدعو النص إلى ذلك؛ بل يقترح «feste Pausen einzuplanen»، ويذكر سؤالاً عن شرب قهوة أقل مساءً.", "لا يعد النص بنتيجة؛ بل يقول: «Welche Gewohnheit hilfreich sei, sei von Person zu Person verschieden». "],
+      paragraph: 3,
+      explanation: "تذكر الفقرة الثالثة أن الشخصية الخيالية تقترح أوقاتاً ثابتة للاستراحة وعادة هادئة؛ ولا تقدم توصية طبية أو تعد بنتيجة.",
+      errorType: "comprehension",
+    },
+    {
+      id: "rq4",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was stellt die Redaktion am Ende klar?",
+      questionAr: "ماذا يوضح التحرير في نهاية النص؟",
+      options: [
+        "Alle Personen und Aussagen sind für den Übungstext erfunden.",
+        "Die Zahlen stammen aus einer großen medizinischen Studie.",
+        "Der Text gibt verbindliche ärztliche Empfehlungen.",
+        "Die Umfrage wurde von einer Krankenkasse durchgeführt.",
+      ],
+      correctIndex: 0,
+      optionExplanations: [undefined, "لا؛ يوضح النص: «Der Text sei kein Forschungsbericht und keine Statistik»، وأنه لا يعرض بيانات جُمعت فعلاً.", "لا؛ يقول النص: «Sie gibt keine medizinische Empfehlung und verspricht keine Wirkung». ", "لا؛ يصرح النص: «alle Personen und Aussagen seien erfunden»؛ ولا يذكر استطلاعاً حقيقياً."],
+      paragraph: 4,
+      explanation: "في الفقرة الأخيرة يصرّح المتحدث بأن الشخصيات والأقوال مختلقة وأن النص ليس بحثاً أو إحصاءً؛ لذا لا تُعامل أمثلته كبيانات واقعية.",
+      errorType: "comprehension",
+    },
+  ],
+  redemittel: [
+    { de: "Ich hätte damals …", ar: "كنت آنذاك … (شرطية ماضية)" },
+    { de: "Wenn ich damals … gehabt hätte, wäre ich heute …", ar: "لو كان عندي آنذاك … لكنت اليوم …" },
+    { de: "Die fiktive Redaktion sagt, … sei …", ar: "يقول التحرير الخيالي إنّ … (كلام منقول)" },
+    { de: "Ich bereue, dass …", ar: "أندم على أنّ …" },
+    { de: "Man sollte …", ar: "ينبغي للمرء أن …" },
+  ],
+  discussionAr:
+    "ناقش مع زميلك، من دون تقديم تشخيص أو نصيحة طبية شخصية: ما العادة التي قد تغيّرها؟ لخّص قول إحدى الشخصيات الخيالية بصيغة النقل، ثم أنشئ افتراضاً ماضياً مثل Wenn ich damals mehr Pausen gemacht hätte, wäre ich vielleicht ausgeruhter gewesen. تذكّر أن النص مثال لغوي خيالي لا تقرير بحثي.",
+};

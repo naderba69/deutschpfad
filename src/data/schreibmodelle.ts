@@ -188,7 +188,3 @@ export const SCHREIB_MODELLE: SchreibModell[] = [
     ],
   },
 ];
-
-/** كل المواضيع كعنوان للعرض */
-export const SCHREIB_TOPICS = SCHREIB_MODELLE.map((m) => m.topicDe);
-export const TOTAL_SCHREIB_MODELLE = SCHREIB_MODELLE.length;

@@ -198,6 +198,17 @@
   .progress-indicator {
     left: 0;
   }
+
+  /* ═══ هدف اللمس (المرحلة 5) ═══
+     أزرار وروابط الرقائق (فلاتر المستوى، روابط التذييل، أزرار التقييم) كانت
+     أقصر من العتبة المريحة على الجوال (16–30px). هذه الأداة تضمن ارتفاعاً
+     لا يقلّ عن 36px مع توسيط أفقي/رأسي — وتُستعمل بدل تكرار py-* في كل ملف. */
+  .tap-target {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.25rem;
+  }
   [dir="rtl"] .progress-indicator {
     left: auto;
     right: 0;

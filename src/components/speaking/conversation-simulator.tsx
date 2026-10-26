@@ -262,7 +262,7 @@ export function ConversationSimulator() {
                 <button
                   type="button"
                   onClick={() => setRate((r) => (r === 0.75 ? 0.85 : 0.75))}
-                  className="rounded-full border px-2 py-0.5 text-[11px] font-bold text-muted-foreground"
+                  className="tap-target rounded-full border px-2 text-[11px] font-bold text-muted-foreground"
                   aria-label="تغيير سرعة النطق"
                 >
                   {rate === 0.75 ? "بطيء" : "عادي"}

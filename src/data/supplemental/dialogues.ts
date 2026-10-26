@@ -84,7 +84,7 @@ export const DIALOGUES: Dialogue[] = [
     title: "عند الطبيب",
     titleDe: "Beim Arzt",
     level: "A2",
-    situation: "تشعر بمرض وتزور الطبيب",
+    situation: "سيناريو لغوي افتراضي لا تشخيصاً أو نصيحة طبية؛ لا يحدد جرعات أدوية.",
     start: "n1",
     nodes: {
       n1: {
@@ -110,21 +110,21 @@ export const DIALOGUES: Dialogue[] = [
       n3: {
         id: "n3",
         speaker: "الطبيبة",
-        de: "Sie haben eine Erkältung. Sie sollen viel trinken und sich ausruhen. Nehmen Sie dreimal täglich eine Tablette.",
-        ar: "عندك زكام. يجب أن تشرب كثيراً وتستريح. خذ قرصاً ثلاث مرات يومياً.",
+        de: "In diesem Übungsbeispiel geht es um eine Erkältung. Ruhen Sie sich aus. Lesen Sie bei einem Medikament die Packungsbeilage oder fragen Sie eine Ärztin, einen Arzt oder eine Apotheke.",
+        ar: "في هذا المثال التدريبي نتحدث عن نزلة برد. استرح. وإذا تناولت دواءً فاقرأ نشرته أو اسأل طبيبة أو طبيباً أو صيدلية.",
         choices: [
-          { id: "c1", de: "Vielen Dank! Wie lange soll ich die Tabletten nehmen?", ar: "شكراً! كم يوماً آخذ الأقراص؟", next: "end", feedback: "سؤال متابعة ذكي — تماماً كالمريض المحترف!" },
+          { id: "c1", de: "Vielen Dank! Was soll ich tun, wenn es nicht besser geht?", ar: "شكراً! ماذا أفعل إن لم أتحسن؟", next: "end", feedback: "سؤال متابعة واضح من دون افتراض جرعة أو مدة علاج." },
           { id: "c2", de: "Okay, danke.", ar: "حسناً، شكراً.", next: "end" },
         ],
       },
       end: {
         id: "end",
         speaker: "الطبيبة",
-        de: "Fünf Tage, und dann kommen Sie wieder, wenn es nicht besser ist. Gute Besserung!",
-        ar: "خمسة أيام، ثم عد إذا لم تتحسن. الشفاء العاجل!",
+        de: "Wenn es Ihnen nicht besser geht, wenden Sie sich bitte an Ihre Ärztin oder Ihren Arzt. Gute Besserung!",
+        ar: "إذا لم تتحسن، فتواصل من فضلك مع طبيبتك أو طبيبك. الشفاء العاجل!",
         choices: [],
         isEnd: true,
-        endMessage: "أتقنت سيناريو الطبيب! 🩺 — نصيحة: احفظ «Was fehlt Ihnen?» و«Gute Besserung».",
+        endMessage: "أكملت حوار التدريب. راجع «Was fehlt Ihnen?» و«Gute Besserung»؛ ولا تستنتج تشخيصاً أو جرعةً من هذا المثال.",
       },
     },
   },

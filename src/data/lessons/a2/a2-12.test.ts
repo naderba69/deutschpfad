@@ -14,11 +14,18 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   e1: { options: ["aber", "deshalb", "denn", "dann"], key: "aber" },
   e2: { options: ["deshalb", "aber", "und", "oder"], key: "deshalb" },
   e8: { options: ["أولاً أتعلم ثم أشاهد التلفاز", "أتعلم وأنا أشاهد التلفاز", "لا أتعلم بل أشاهد التلفاز", "أشاهد التلفاز ثم أتعلم"], key: "أولاً أتعلم ثم أشاهد التلفاز" },
+  e11: { options: ["denn", "deshalb", "trotzdem", "weil"], key: "denn" },
   m1: { options: ["denn", "deshalb", "trotzdem", "aber"], key: "denn" },
   m2: { options: ["trotzdem", "deshalb", "und", "denn"], key: "trotzdem" },
   q1: { options: ["wegen der Prüfung", "wegen des Wetters", "wegen der Arbeit", "wegen des Verkehrs"], key: "wegen der Prüfung" },
   q2: { options: ["feiern", "lernen", "arbeiten", "schlafen"], key: "feiern" },
   q3: { options: ["Der Bus kam nicht", "Sie hat verschlafen", "Sie hatte einen Termin", "Sie war krank"], key: "Der Bus kam nicht" },
+  q4: { options: ["Er hilft seiner Schwester", "Er arbeitet noch heute", "Er fühlt sich nicht gut", "Er findet das Kino teuer"], key: "Er hilft seiner Schwester" },
+  q5: { options: ["Ein bisschen enttäuscht", "Sehr verärgert darüber", "Ein wenig erleichtert", "Ziemlich müde heute"], key: "Ein bisschen enttäuscht" },
+  q6: { options: ["Im Café", "Im Kino", "Im Park", "Bei Mona zu Hause"], key: "Im Café" },
+  q7: { options: ["Der Bus ist ausgefallen", "Er hatte sein Handy verloren", "Er musste länger arbeiten", "Er war bei seiner Schwester"], key: "Der Bus ist ausgefallen" },
+  q8: { options: ["Enttäuscht, aber nicht mehr böse", "Verärgert und noch immer sehr böse", "Erleichtert, aber ein wenig müde", "Überrascht und heute ziemlich nervös"], key: "Enttäuscht, aber nicht mehr böse" },
+  q9: { options: ["Morgen zusammen Kaffee trinken", "Heute Abend gemeinsam ins Kino gehen", "Morgen im Café über den Bus sprechen", "Anna am Wochenende zu Hause besuchen"], key: "Morgen zusammen Kaffee trinken" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -38,6 +45,13 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
       ["deshalb", "trotzdem"],
       ["trotzdem", "dann"],
       ["dann", "deshalb"],
+    ],
+  },
+  e12: {
+    correct: ["deshalb", "trotzdem"],
+    options: [
+      ["deshalb", "trotzdem", "denn"],
+      ["deshalb", "trotzdem", "denn"],
     ],
   },
   m5: {
@@ -68,6 +82,13 @@ const expectedErrorCorrections: Record<
     options: ["gehe ich", "ich gehe", "gehen ich", "ich gehen"],
     alreadyCorrect: false,
   },
+  e13: {
+    sentence: "Obwohl es regnet, ich gehe spazieren.",
+    wrongWord: "ich gehe",
+    correctWord: "gehe ich",
+    options: ["gehe ich", "ich gehe", "gehen ich", "ich gehen"],
+    alreadyCorrect: false,
+  },
   e9: {
     sentence: "Ich bleibe zu Hause, denn es regnet.",
     wrongWord: "denn es regnet",
@@ -85,6 +106,10 @@ const expectedTransformations: Record<string, { acceptedAnswers: string[]; sampl
   e7: {
     acceptedAnswers: ["Es ist kalt, trotzdem gehe ich spazieren", "Es ist kalt, trotzdem gehe ich spazieren."],
     sampleAnswer: "Es ist kalt, trotzdem gehe ich spazieren.",
+  },
+  e14: {
+    acceptedAnswers: ["Obwohl es regnet, gehe ich spazieren", "Obwohl es regnet, gehe ich spazieren."],
+    sampleAnswer: "Obwohl es regnet, gehe ich spazieren.",
   },
   w4: {
     acceptedAnswers: ["Es tut mir leid, ich hatte einen anstrengenden Tag, deshalb habe ich dir nicht geschrieben."],
@@ -146,7 +171,6 @@ describe("A2-12 lesson content audit", () => {
     expect("duration" in lessonA212).toBe(false);
     expect(lessonA212.summary).not.toMatch(/\d+\s*دقيقة|Goethe|CEFR|معتمد|إتقان عام|خاتمة مستوى A2/i);
     expect(lessonA212.summary).toContain("A2-13");
-    expect(lessonA212.reading).toBeUndefined();
 
     const meta = LESSON_META.find((item) => item.id === "a2-12");
     expect(meta).toMatchObject({
@@ -162,8 +186,8 @@ describe("A2-12 lesson content audit", () => {
     expect(meta && "duration" in meta).toBe(false);
   });
 
-  it("limits goals to evidenced, selection/writing performances and removes unsupported claims", () => {
-    expect(lessonA212.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
+  it("limits goals to evidenced, assessed performances and removes unsupported claims", () => {
+    expect(lessonA212.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4", "z-listening"]);
     expect(goal("z1").evidence).toMatchObject({
       exerciseIds: ["e6"],
       taskIds: ["practice:a2-12:e6"],
@@ -173,14 +197,17 @@ describe("A2-12 lesson content audit", () => {
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e2", "w1", "w2"]);
     expect(goal("z2").evidence?.taskIds).toEqual([
       "practice:a2-12:e1",
-      "flow-practice:a2-12:e1",
       "practice:a2-12:e2",
-      "flow-practice:a2-12:e2",
       "writing:a2-12:w1",
       "writing:a2-12:w2",
     ]);
     expect(goal("z3").evidence).toMatchObject({ exerciseIds: ["w4"], taskIds: ["writing:a2-12:w4"], completion: "all-correct" });
     expect(goal("z4").evidence).toMatchObject({ exerciseIds: ["w5"], taskIds: ["writing:a2-12:w5"], completion: "all-correct" });
+    expect(goal("z-listening").evidence).toMatchObject({
+      exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9"],
+      taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4", "listening:l3:q5", "listening:l3:q6", "listening:l4:q7", "listening:l4:q8", "listening:l4:q9"],
+      completion: "all-correct",
+    });
 
     const mapped = lessonA212.lernziele.map(({ evidence }) => evidence?.exerciseIds ?? []).flat();
     for (const forbidden of ["int-a2-12-1", "med-a2-12-1", "p1"]) {
@@ -189,6 +216,50 @@ describe("A2-12 lesson content audit", () => {
     expect(JSON.stringify(lessonA212)).not.toContain("sondern");
     expect(lessonA212.lernziele.every((goalItem) => !/Kompromiss|Konflikte höflich ansprechen/.test(goalItem.de))).toBe(true);
     expect(lessonA212.practiceBank.findIndex(({ id }) => id === "e6")).toBeGreaterThanOrEqual(4);
+  });
+
+  it("keeps listening scenes, question mappings, and the added dialogue aligned", () => {
+    expect(lessonA212.listening.items.map(({ id }) => id)).toEqual(["l1", "l2", "l3", "l4"]);
+    for (const item of lessonA212.listening.items.slice(0, 2)) {
+      expect(item.audioNoteAr).toContain("النطق الآلي في المتصفح");
+      expect(item.audioNoteAr).toContain("ليس تسجيلاً بشرياً");
+      expect(item.lines.every((line) => !line.audioSrc)).toBe(true);
+    }
+    const latenessScene = lessonA212.listening.items.find(({ id }) => id === "l2")!;
+    expect(latenessScene.lines[0]?.de).toContain("zu spät gekommen");
+    expect(latenessScene.lines[1]?.de).toContain("deshalb bin ich zu spät gekommen");
+    expect(lessonA212.listening.questions.find(({ id }) => id === "q3")?.questionDe).toBe("Warum kam Anna zu spät?");
+    expect(lessonA212.listening.questions.map(({ id, itemId }) => [id, itemId])).toEqual([
+      ["q1", "l1"], ["q2", "l1"], ["q3", "l2"],
+      ["q4", "l3"], ["q5", "l3"], ["q6", "l3"],
+      ["q7", "l4"], ["q8", "l4"], ["q9", "l4"],
+    ]);
+    const addedScene = lessonA212.listening.items.find(({ id }) => id === "l3")!;
+    expect(addedScene.lines.map(({ de }) => de)).toEqual([
+      "Möchtest du heute mit ins Kino kommen?",
+      "Leider kann ich nicht, denn ich muss meiner Schwester helfen.",
+      "Schade. Ich bin ein bisschen enttäuscht.",
+      "Das verstehe ich, aber morgen habe ich Zeit.",
+      "Dann treffen wir uns morgen im Café?",
+      "Gern. Ich freue mich darauf.",
+    ]);
+    expect(addedScene.audioNoteAr).toMatch(/مولّدة آلياً \(TTS\)، وليست تسجيلاً بشرياً/);
+    expect(addedScene.lines.map(({ audioSrc }) => audioSrc)).toEqual(
+      [1, 2, 3, 4, 5, 6].map((line) => `/audio/lessons/a2-12/ls-a2-12-3-${line}.mp3`),
+    );
+    const reconciliationScene = lessonA212.listening.items.find(({ id }) => id === "l4")!;
+    expect(reconciliationScene.lines.map(({ de }) => de)).toEqual([
+      "Anna, bist du noch böse? Gestern hast du lange gewartet.",
+      "Ich war enttäuscht, aber ich bin nicht mehr böse.",
+      "Der Bus ist ausgefallen. Deshalb konnte ich nicht anrufen.",
+      "Ich verstehe, trotzdem war ich allein im Café.",
+      "Es tut mir leid. Morgen lade ich dich zum Kaffee ein.",
+      "Danke. Dann ist alles wieder gut.",
+    ]);
+    expect(reconciliationScene.audioNoteAr).toMatch(/مولّدة آلياً \(TTS\)، وليست تسجيلاً بشرياً/);
+    expect(reconciliationScene.lines.map(({ audioSrc }) => audioSrc)).toEqual(
+      [1, 2, 3, 4, 5, 6].map((line) => `/audio/lessons/a2-12/ls-a2-12-4-${line}.mp3`),
+    );
   });
 
   it("audits every multiple-choice key and each distractor", () => {
@@ -280,7 +351,7 @@ describe("A2-12 lesson content audit", () => {
       expect(exercise.acceptedAnswers, `${id} accepted`).toEqual(expected.acceptedAnswers);
       expect(exercise.sampleAnswer, `${id} sample`).toBe(expected.sampleAnswer);
       expect(new Set(exercise.acceptedAnswers.map(normalizeText)).size, `${id} distinct after normalization`).toBe(
-        id === "w1" || id === "e7" ? 1 : exercise.acceptedAnswers.length,
+        id === "w1" || id === "e7" || id === "e14" ? 1 : exercise.acceptedAnswers.length,
       );
       for (const answer of expected.acceptedAnswers) {
         expect(evaluateExercise(exercise, answer).isCorrect, `${id}: ${answer}`).toBe(true);
@@ -289,6 +360,46 @@ describe("A2-12 lesson content audit", () => {
     expect(evaluateExercise(task("w4"), "Es tut mir leid, ich hatte einen anstrengenden Tag, deshalb ich habe dir nicht geschrieben.").isCorrect).toBe(false);
     expect(evaluateExercise(task("w5"), "Die Idee ist gut, aber sehe ich das anders.").isCorrect).toBe(false);
     expect(evaluateExercise(task("w1"), "Es regnet, deshalb ich bleibe zu Hause.").isCorrect).toBe(false);
+  });
+
+  it("keeps the reading text, glossary, comprehension questions, and discourse anchors intact", () => {
+    const reading = lessonA212.reading;
+    expect(reading?.id).toBe("read-a2-12");
+    expect(reading?.textType).toBe("erzaehlung");
+    expect(reading?.titleDe).toBe("Eine Überraschung für Nour");
+    expect(reading?.titleAr).toBe("مفاجأة لنور");
+    expect(reading?.paragraphs).toHaveLength(4);
+    expect(reading?.paragraphsAr).toHaveLength(4);
+    const text = reading!.paragraphs.join(" ").toLowerCase();
+    const wordCount = text.split(/\s+/).filter(Boolean).length;
+    expect(wordCount).toBeGreaterThanOrEqual(150);
+
+    expect(reading?.glossary.length).toBeGreaterThanOrEqual(8);
+    for (const item of reading!.glossary) {
+      const head = item.de.replace(/^(der|die|das)\s+/i, "").split(/[\s,(/]/)[0];
+      const stem = head.slice(0, Math.max(4, head.length - 3)).toLowerCase();
+      expect(text.includes(stem), `${item.de} ليست في النصّ`).toBe(true);
+      expect(item.ar.trim().length).toBeGreaterThan(1);
+    }
+
+    expect(reading?.questions.map(({ id }) => id)).toEqual(["rq1", "rq2", "rq3", "rq4"]);
+    for (const question of reading!.questions) {
+      expect(question.options.length).toBeGreaterThanOrEqual(3);
+      expect(question.correctIndex).toBeGreaterThanOrEqual(0);
+      expect(question.correctIndex).toBeLessThan(question.options.length);
+      expect(question.explanation.trim().length).toBeGreaterThan(20);
+      expect(question.paragraph).toBeGreaterThanOrEqual(1);
+      expect(question.paragraph! <= reading!.paragraphs.length).toBe(true);
+      const answer = question.options[question.correctIndex];
+      expect(text.includes(answer.toLowerCase()) && answer.length > 45, `${question.id} منسوخ حرفياً`).toBe(false);
+    }
+
+    expect(reading?.redemittel?.length).toBeGreaterThanOrEqual(4);
+    expect(reading?.discussionAr?.trim().length).toBeGreaterThanOrEqual(40);
+
+    for (const anchor of ["überraschung", "ärgerlich", "geburtstag"]) {
+      expect(text.includes(anchor), `مرساة مفقودة: ${anchor}`).toBe(true);
+    }
   });
 
   it("checks dictation keys without treating them as speech assessment", () => {
@@ -306,9 +417,22 @@ describe("A2-12 lesson content audit", () => {
     expect(t1.whyAr).not.toContain("معنى الجملة السابقة");
     expect(t1.commonMistakes.map((item) => item.right)).toContain("Ich bin müde, aber ich bin glücklich.");
     expect(t1.commonMistakes.map((item) => item.right)).toContain("Ich bleibe, denn es regnet.");
+    expect(t1.explanationAr).toContain("لا تجعل الجملة التالية جملةً ثانوية");
+    expect(t1.explanationAr).not.toContain("وهذه لا تحتلّ المكان الأول ولا تغيّر شيئاً");
+    expect(t2.explanationAr).toContain("توجد استعمالات أخرى مع Dativ");
     expect(t2.whyAr).toContain("توسعة");
     expect(t2.whyAr).not.toContain("من أكثر أدوات الربط استخداماً في B1");
     expect(JSON.stringify(lessonA212.fehlerUndTipps)).not.toContain("كلاهما صحيح");
+    expect(lessonA212.fehlerUndTipps?.culturalNote?.title).not.toContain("الألماني");
+    expect(lessonA212.fehlerUndTipps?.culturalNote?.content).toContain("لا تصف هذه العبارات سمةً ثابتة");
+    expect(lessonA212.pronunciation.items.every(({ note }) => note.includes("IPA:"))).toBe(true);
+    expect(lessonA212.pronunciation.tip).toContain("تقريب للتذكّر فقط");
+    expect(lessonA212.flashcards.find(({ id }) => id === "fc11")).toMatchObject({
+      ar: "يتطلّع إلى (شيء قادم)",
+      exampleAr: "أتطلّع إلى الاحتفال.",
+    });
+    const m5 = task("m5");
+    expect(m5.type === "fill-blank" ? m5.template : "").not.toContain("Ich bin krank");
   });
 
   it("derives goal states only from exact correct task performances", () => {
@@ -317,6 +441,7 @@ describe("A2-12 lesson content audit", () => {
       z2: ["e1", "e2", "w1", "w2"],
       z3: ["w4"],
       z4: ["w5"],
+      "z-listening": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9"],
     };
     for (const [goalId, exerciseIds] of Object.entries(idsByGoal)) {
       const allCorrect = exerciseIds.map((exerciseId) => goalEvent(goalId, exerciseId));
@@ -336,7 +461,5 @@ describe("A2-12 lesson content audit", () => {
     }
     // Opening/viewing the lesson produces no exercise-result event, so the goal stays pending.
     expect(getGoalEvidenceStatus(goal("z1"), lessonA212.id, [])).toBe("pending");
-    // The practice-only task for e6 must not be satisfied by a flow-practice id.
-    expect(getGoalEvidenceStatus(goal("z1"), lessonA212.id, [goalEvent("z1", "e6", true, "flow-practice:a2-12:e6")])).toBe("pending");
   });
 });

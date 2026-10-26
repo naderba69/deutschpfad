@@ -8,7 +8,7 @@ const B2_7: InteractiveStory = {
   title: "Integration im Alltag",
   titleAr: "الاندماج في الحياة اليومية",
   emoji: "🤝",
-  description: "مهاجر يتحدث عن اندماجه — صدمة الثقافة والتأقلم.",
+  description: "حكاية تدريبية خيالية عن تجربة فردية؛ لا تعممها على المهاجرين أو على ألمانيا.",
   grammar: "الجمل الثانوية المتقدمة • الندم والتأقلم",
   segments: [
     { id: 1, de: "Herr Demir berichtet, dass die ersten Jahre in Deutschland schwierig waren.", ar: "يذكر السيد دمير أن السنوات الأولى في ألمانيا كانت صعبة." },
@@ -41,7 +41,7 @@ const B2_7: InteractiveStory = {
         ],
       },
     },
-    { id: 5, de: "Er empfiehlt jedem Neuling: „Geduld und Offenheit sind der Schlüssel.“ Ende.", ar: "ينصح كل قادم جديد: «الصبر والانفتاح هما المفتاح». النهاية." },
+    { id: 5, de: "Für ihn persönlich waren Geduld und Offenheit hilfreich. Ende.", ar: "وبالنسبة إليه شخصياً، أفاده الصبر والانفتاح. النهاية." },
   ],
 };
 
@@ -94,11 +94,11 @@ const B2_9: InteractiveStory = {
   title: "Das erfolgreiche Bewerbungsgespräch",
   titleAr: "مقابلة التقديم الناجحة",
   emoji: "📈",
-  description: "أوليفيا تحصل على الوظيفة — لغة المقابلة المتقدمة.",
+  description: "قصة تدريبية متخيّلة عن أوليفيا ومقابلة عمل؛ لا تصف نتائج توظيف متوقعة أو قاعدة عامة.",
   grammar: "Konjunktiv II الماضي (hätte, wäre) • لغة مقابلة",
   segments: [
     { id: 1, de: "Olivia hatte sich bei drei Firmen beworben und wurde zu zwei Gesprächen eingeladen.", ar: "تقدمت أوليفيا لثلاث شركات ودُعيت لمقابلتين." },
-    { id: 2, de: "Im Gespräch betonte sie, sie hätte bereits fünf Jahre Erfahrung im Marketing.", ar: "في المقابلة أكدت أن لديها خمس سنوات خبرة في التسويق." },
+    { id: 2, de: "Im Gespräch betonte sie, sie habe bereits fünf Jahre Erfahrung im Marketing.", ar: "في المقابلة أكدت أن لديها خمس سنوات خبرة في التسويق." },
     {
       id: 3,
       de: "Auf die Frage nach Gehaltsvorstellungen antwortete sie diplomatisch.",
@@ -137,7 +137,7 @@ const B2_10: InteractiveStory = {
   title: "Die Kunstausstellung",
   titleAr: "معرض الفن",
   emoji: "🎨",
-  description: "ناقد يتحدث عن معرض — وصف الفن وتحليل الرأي.",
+  description: "مشهد تدريبي متخيّل عن ناقد ومعرض — وصف الفن وتحليل الرأي.",
   grammar: "وصف الأعمال • نقل الآراء • لغة نقدية",
   segments: [
     { id: 1, de: "In der neuen Ausstellung werden Werke junger Künstler gezeigt.", ar: "في المعرض الجديد تُعرض أعمال فنانين شباب." },
@@ -150,7 +150,7 @@ const B2_10: InteractiveStory = {
         de: "Wessen Werke werden gezeigt?",
         ar: "أعمال من تُعرض؟",
         options: [
-          { text: "Junger Künstler", ar: "فنانين شباب", correct: true, explanation: "نعم — «Werke junger Künstler»." },
+          { text: "Werke junger Künstler", ar: "أعمال فنانين شباب", correct: true, explanation: "نعم — «Werke junger Künstler»." },
           { text: "Alter Meister", ar: "أساتذة قدماء", correct: false, explanation: "لا — المعرض لفنانين شباب." },
           { text: "Kinder", ar: "أطفال", correct: false, explanation: "لا — الفنانون شباب وليسوا أطفالاً." },
         ],
@@ -180,7 +180,7 @@ const B2_11: InteractiveStory = {
   title: "Das Startup",
   titleAr: "الشركة الناشئة",
   emoji: "🚀",
-  description: "شابان يؤسسان شركة تقنية — الريادة والمخاطر.",
+  description: "قصة خيالية عن تأسيس شركة تقنية؛ نجاح التطبيق وعدد المستخدمين تفاصيل افتراضية للتدريب.",
   grammar: "لغة الأعمال • الشرطية (wenn) • الريادة",
   segments: [
     { id: 1, de: "Zwei Freunde gründeten ein Startup für Sprachlern-Apps.", ar: "أسس صديقان شركة ناشئة لتطبيقات تعلم اللغات." },

@@ -29,10 +29,11 @@ test("تدريب القواعد والمفردات B2: السؤال الأول �
 test("تدريب القواعد: اختيار إجابة وتحقق يعرض الشرح", async ({ page }) => {
   await page.goto("/tests/b2-grammatik", { waitUntil: "networkidle" });
   await page.waitForTimeout(500);
-  // اختر الخيار الصحيح (A: habe)
-  await page.getByRole("button", { name: "A habe" }).click();
+  // الخيارات تُخلط في كل محاولة (لم يعد الصحيح في الموضع الأول دائمًا)
+  await page.getByRole("button", { name: /^[A-D] / }).first().click();
   await page.getByRole("button", { name: "تحقق" }).click();
-  await expect(page.getByText(/✓ إجابة صحيحة/)).toBeVisible();
+  // التحقق يعرض إما «إجابة صحيحة» أو «الصحيح: …» مع الشرح في الحالتين
+  await expect(page.getByText(/✓ إجابة صحيحة|✗ الصحيح:/)).toBeVisible();
 });
 
 test("استراتيجيات الامتحان: الأجزاء الثلاثة عشر ظاهرة", async ({ page }) => {
@@ -50,10 +51,10 @@ test("استراتيجيات الامتحان: الأجزاء الثلاثة ع�
 test("خطة 12 شهراً: المراحل الست ظاهرة", async ({ page }) => {
   await page.goto("/tests/plan-b2", { waitUntil: "networkidle" });
   await page.waitForTimeout(600);
-  await expect(page.getByRole("heading", { name: /خطة 12 شهراً/ })).toBeVisible();
-  await expect(page.getByText("الشهران 1-2")).toBeVisible();
-  await expect(page.getByText("الشهران 11-12")).toBeVisible();
-  await expect(page.getByText("محاكاة B2 كاملة")).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("خطة");
+  for (const stage of ["الشهران 1-2", "الشهران 3-4", "الشهران 5-6", "الشهران 7-8", "الشهران 9-10", "الشهران 11-12"]) {
+    await expect(page.getByText(stage).first(), `المرحلة «${stage}» مفقودة`).toBeVisible();
+  }
 });
 
 test("محرك B2: يعرض تنويهاً عن النماذج الثلاثة", async ({ page }) => {
