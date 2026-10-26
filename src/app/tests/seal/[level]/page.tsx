@@ -17,14 +17,15 @@ export function generateStaticParams() {
 }
 
 interface Props {
-  params: { level: string };
-  searchParams: { mode?: string };
+  params: Promise<{ level: string }>;
+  searchParams: Promise<{ mode?: string }>;
 }
 
-export default function SealExamPage({ params, searchParams }: Props) {
-  const level = params.level.toUpperCase();
+export default async function SealExamPage({ params, searchParams }: Props) {
+  const [{ level: rawLevel }, { mode }] = await Promise.all([params, searchParams]);
+  const level = rawLevel.toUpperCase();
   if (!["A1", "A2", "B1", "B2"].includes(level)) notFound();
-  const quick = searchParams?.mode === "quick";
+  const quick = mode === "quick";
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6">
@@ -66,7 +67,7 @@ export default function SealExamPage({ params, searchParams }: Props) {
                   بوقت أقصر — لمن يريد تجاوز المستوى بسرعة.
                 </p>
                 <Link
-                  href={`/tests/seal/${params.level}?mode=quick`}
+                  href={`/tests/seal/${rawLevel}?mode=quick`}
                   className="mt-2 inline-block rounded-lg bg-gold px-3 py-1 text-xs font-bold text-gold-foreground transition-colors hover:bg-gold/90"
                 >
                   اختر الختم السريع
@@ -81,7 +82,7 @@ export default function SealExamPage({ params, searchParams }: Props) {
         <p className="mb-4 rounded-xl border border-gold/40 bg-gold/10 p-3 text-sm">
           ⚡ <span className="font-bold">الوضع السريع:</span> 20 سؤالاً بوقت مخفّض — النجاح
           من 60% يختم المستوى كما في النسخة الكاملة.{" "}
-          <Link href={`/tests/seal/${params.level}`} className="font-bold text-primary underline underline-offset-2">
+          <Link href={`/tests/seal/${rawLevel}`} className="font-bold text-primary underline underline-offset-2">
             عُد للنسخة الكاملة
           </Link>
         </p>

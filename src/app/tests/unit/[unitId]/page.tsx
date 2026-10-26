@@ -5,7 +5,7 @@ import {LazyUnitTest} from "@/components/tests/lazy/lazy-unit-test";
 import {getLessonCountForUnit} from "@/data/lessons/meta";
 
 interface Props {
-  params: { unitId: string };
+  params: Promise<{ unitId: string }>;
 }
 
 export function generateStaticParams() {
@@ -15,15 +15,16 @@ export function generateStaticParams() {
 
 export const dynamicParams = true;
 
-export function generateMetadata({ params }: Props): Metadata {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { unitId } = await params;
   return {
-    title: `اختبار الوحدة ${params.unitId}`,
+    title: `اختبار الوحدة ${unitId}`,
     description: "اختبار قصير لنهاية الوحدة: قواعد ومفردات من دروس الوحدة نفسها.",
   };
 }
 
-export default function UnitTestPage({ params }: Props) {
-  const { unitId } = params;
+export default async function UnitTestPage({ params }: Props) {
+  const { unitId } = await params;
   if (getLessonCountForUnit(unitId) === 0) notFound();
 
   return (
