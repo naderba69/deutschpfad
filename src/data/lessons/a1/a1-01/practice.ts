@@ -79,13 +79,13 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { left: "Gute Nacht", right: "تصبح على خير" },
         { left: "Auf Wiedersehen", right: "إلى اللقاء" },
       ],
-      explanation: "هذه أكثر التحيات استخداماً: Morgen (صباح)، Abend (مساء)، Nacht (ليل).",
+      explanation: "Guten Morgen وGuten Abend للتحية عند اللقاء، وGute Nacht وAuf Wiedersehen من عبارات الوداع؛ تُقال Gute Nacht عادةً عند نهاية اليوم أو قبل النوم.",
       errorType: "vocabulary",
     },
     {
       id: "e7",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "اختر التصحيح المناسب للجزء المحدد من الجملة.",
       wrongSentence: "Ich habe aus Tunesien.",
       wrongWord: "habe",
       correctWord: "bin",
@@ -96,7 +96,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e8",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "اختر التصحيح المناسب للجزء المحدد من الجملة.",
       wrongSentence: "Wie du heißt?",
       wrongWord: "du heißt",
       correctWord: "heißt du",
@@ -199,12 +199,23 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       errorType: "word-order",
     },
     {
+      id: "e29",
+      type: "matching",
+      instructionAr: "صِل كل موقف بصيغة السؤال المناسبة للتعارف:",
+      pairs: [
+        { left: "Im Gespräch mit einem Freund (غير رسمي)", right: "Wie heißt du?" },
+        { left: "Bei einem formellen Termin (رسمي)", right: "Wie heißen Sie?" },
+      ],
+      explanation: "du للمخاطبة غير الرسمية، وSie للمخاطبة الرسمية؛ ويتغير تصريف heißen معها. تختلف الأعراف، لكن المثالين يوضحان السياقين المقصودين.",
+      errorType: "vocabulary",
+    },
+    {
       id: "e20",
       type: "fill-blank",
       instructionAr: "صرّف الفعل بين قوسين:",
-      template: "Sie ___ in Tunis. (wohnen)",
+      template: "Lena ___ in Tunis. (wohnen)",
       blanks: [{ correct: "wohnt", options: ["wohne", "wohnst", "wohnt", "wohnen"] }],
-      explanation: "مع er/sie/es تأخذ الأفعال المنتظمة النهاية -t: sie wohnt.",
+      explanation: "مع الفاعل المفرد Lena يأخذ الفعل المنتظم النهاية -t: Lena wohnt.",
       errorType: "conjugation",
     },
     {
@@ -275,12 +286,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e27",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "اختر التصحيح المناسب لترتيب السؤال المستقل.",
       wrongSentence: "Woher du kommst?",
       wrongWord: "du kommst",
       correctWord: "kommst du",
       options: ["kommst du", "du kommst", "kommen du", "du kommen"],
-      explanation: "في سؤال W يأتي الفعل المصرَّف مباشرة بعد الأداة ثم الفاعل: Woher kommst du؟ لا «Woher du kommst؟».",
+      explanation: "في سؤال W مستقل يأتي الفعل المصرَّف بعد الأداة مباشرة: Woher kommst du? أما Woher du kommst فترتيب صحيح في جملة فرعية مثل Ich weiß, woher du kommst.",
       errorType: "word-order",
     },
     {
@@ -304,7 +315,7 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
       {
         wrong: "Wo du wohnst?",
         right: "Wo wohnst du?",
-        whyAr: "الفعل يجب أن يأتي في المركز الثاني مباشرة بعد كلمة السؤال.",
+        whyAr: "في سؤال W مستقل يأتي الفعل المصرف مباشرة بعد كلمة السؤال: Wo wohnst du? أما Wo du wohnst فتصلح داخل جملة فرعية مثل Ich weiß, wo du wohnst.",
       },
       {
         wrong: "نطق heißen كـ«هيسّن»",
@@ -319,6 +330,6 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     culturalNote: {
       title: "du أم Sie؟",
       content:
-        "في ألمانيا: مع الأصدقاء والأطفال والزملاء القريبين نستخدم du. مع الغرباء والموظفين وكبار السن نستخدم Sie (حضرتك) — وقرينة الصيغة الرسمية في السؤال: Wie heißen Sie?",
+        "في الألمانية تُستعمل du عادةً في العلاقات غير الرسمية، وSie في كثير من المواقف الرسمية أو المهنية. تختلف الأعراف بحسب السياق والمنطقة ومكان العمل؛ عند الشك في لقاء رسمي جديد يكون Sie خياراً حذراً. مثال: Wie heißen Sie?",
     },
   };

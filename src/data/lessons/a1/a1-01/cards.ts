@@ -61,7 +61,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
     {
       id: "m5",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "اختر التصحيح المناسب لترتيب السؤال المستقل.",
       wrongSentence: "Warum du lernst Deutsch?",
       wrongWord: "du lernst",
       correctWord: "lernst du",
@@ -72,7 +72,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
   ];
 
 export const flashcards: NonNullable<Lesson["flashcards"]> = [
-    { id: "fc1", de: "der Name", ar: "الاسم", example: "Wie ist dein Name?", exampleAr: "ما اسمك؟", level: "A1" },
+    { id: "fc1", de: "der Name", ar: "الاسم", example: "Wie heißt du?", exampleAr: "ما اسمك؟", level: "A1" },
     { id: "fc2", de: "heißen", ar: "يُدعى / اسمه", example: "Ich heiße Anna.", exampleAr: "اسمي آنا.", level: "A1" },
     { id: "fc3", de: "kommen", ar: "يأتي", example: "Ich komme aus Tunesien.", exampleAr: "أنا من تونس.", level: "A1" },
     { id: "fc4", de: "wohnen", ar: "يسكن", example: "Ich wohne in Tunis.", exampleAr: "أسكن في تونس.", level: "A1" },
@@ -99,7 +99,7 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     { id: "fc24", de: "arbeiten", ar: "يعمل", example: "Milan arbeitet in einem Café.", exampleAr: "يعمل ميلان في مقهى.", level: "A1" },
     { id: "fc25", de: "die Nachricht", ar: "الرسالة", example: "Sara schreibt eine Nachricht an ihre Freundin.", exampleAr: "تكتب سارة رسالة إلى صديقتها.", level: "A1" },
     { id: "fc26", de: "die Freundin", ar: "الصديقة", example: "Sie schreibt an ihre Freundin.", exampleAr: "تكتب إلى صديقتها.", level: "A1" },
-    { id: "fc27", de: "die Frage", ar: "السؤال", example: "Ich habe viele Fragen gestellt.", exampleAr: "طرحت أسئلة كثيرة.", level: "A1" },
+    { id: "fc27", de: "die Frage", ar: "السؤال", example: "Ich stelle viele Fragen.", exampleAr: "أطرح أسئلة كثيرة.", level: "A1" },
   ];
 
 export const mediation: NonNullable<Lesson["mediation"]> = [

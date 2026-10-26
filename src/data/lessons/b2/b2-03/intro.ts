@@ -11,9 +11,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أفهم المفاهيم القانونية الأساسية في حوار قصير.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3"],
-        labelAr: "أجيب صحيحاً عن q1 بعد الاستماع إلى l1، وعن q2 وq3 بعد الاستماع إلى l2، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q2", "q3", "q4"],
+        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4"],
+        labelAr: "أجيب صحيحاً عن q1 بعد الاستماع إلى l1، وعن q2 وq3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -36,19 +36,21 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z3",
-      de: "Ich kann was und wo als Relativpronomen benutzen.",
-      ar: "أن أستخدم was وwo كضمائر وصل.",
+      de: "Ich kann was und wo als Relativ-Elemente benutzen.",
+      ar: "أن أستخدم was وwo كعنصري وصل في الجملة النسبية.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["e2", "e7", "e9", "m2", "m3"],
+        exerciseIds: ["e2", "e6", "e7", "e9", "m2", "m3", "m5"],
         taskIds: [
           "practice:b2-03:e2",
+          "practice:b2-03:e6",
           "practice:b2-03:e7",
           "practice:b2-03:e9",
           "mini-test:b2-03:m2",
           "mini-test:b2-03:m3",
+          "mini-test:b2-03:m5",
         ],
-        labelAr: "أجيب صحيحاً عن تمارين was وwo وترتيبهما (e2 وe7 وe9 وm2 وm3)، دون كشف الحل.",
+        labelAr: "أجيب صحيحاً عن تمارين was وwo وعناصر الوصل wofür (e2 وe6 وe7 وe9 وm2 وm3 وm5)، دون كشف الحل.",
       },
     },
     {
@@ -62,14 +64,30 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         labelAr: "أربط الكلمات بمعانيها (e3) وأختار معنى der Zeuge (e8)، دون كشف الحل.",
       },
     },
-  ];
+
+    {
+      id: "z5",
+      de: "Ich kann einem fiktiven Text Informationen zum Mietnebenkostenstreit entnehmen.",
+      ar: "أن أستخرج معلومات أساسية من حالة تدريبية افتراضية عن نزاع في تكاليف السكن.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["rq1", "rq2", "rq3", "rq4"],
+        taskIds: [
+          "reading:read-b2-03:rq1",
+          "reading:read-b2-03:rq2",
+          "reading:read-b2-03:rq3",
+          "reading:read-b2-03:rq4",
+        ],
+        labelAr: "أجيب صحيحاً عن أسئلة الفهم الأربعة للنص التدريبي الخيالي؛ وهذا يثبت أداء هذه المهام المحددة فقط، لا إتقاناً عاماً.",
+      },
+    },  ];
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "في B1: Der Mann, der dort steht. اليوم نرقّي: الجملة النسبية مع حرف جر: Der Mann, auf den ich warte, ist mein Anwalt. (الرجل الذي أنتظره...). ولاحظ: حرف الجر يبقى والضمير يأخذ حالته: auf + den! وأيضاً wo/was للجمل الكاملة.",
+      "في B1: Der Mann, der dort steht. اليوم نتدرّب على الجملة النسبية مع حرف جر: Der Mann, auf den ich warte, ist mein Anwalt. لاحظ أن حرف الجر يسبق الضمير النسبي وأن حالته تتحدد بحسب حرف الجر. ونتعرّف أيضاً على wo للإحالة إلى مكان، وعلى was بعد alles.",
     motivatingQuestionDe: "Was steht im Vertrag?",
     contextAr:
-      "القانون يحيط بنا: عقود، شروط، حقوق. نتعلم مفرداته والجمل النسبية المتقدمة — أهم أداة لفهم النصوص القانونية.",
+      "تظهر الجمل النسبية في نصوص ومواقف كثيرة، ومنها موضوعات الحياة اليومية والقانون. نتدرّب على حروف الجر مع الضمائر النسبية، وعلى wo المكانية وwas بعد ألفاظ مثل alles.",
     contextDe: "Das Gesetz, auf das sich alle berufen, ist alt.",
     connectionToPreviousAr: "تتذكر Relativsätze الأساسية (der/die/das) من B1. اليوم: مع حروف الجر + wo/was — القفزة إلى B2.",
     activateVocabulary: [

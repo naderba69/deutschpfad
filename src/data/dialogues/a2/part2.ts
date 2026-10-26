@@ -13,14 +13,14 @@ export const A2_DIALOGUES_2: DailyDialogue[] = [
     title: "في مكتب البريد",
     titleDe: "Auf der Post",
     emoji: "📦",
-    situation: "ترسل طرداً إلى الخارج",
+    situation: "محاكاة تدريبية لإرسال طرد إلى تونس؛ السعر المذكور افتراضي وليس تعرفة فعلية.",
     turns: [
       { speaker: "أنت", role: "a", de: "Guten Tag! Ich möchte ein Paket nach Tunesien schicken.", ar: "طاب يومك! أريد إرسال طرد إلى تونس." },
       { speaker: "الموظفة", role: "b", de: "Gut. Was ist im Paket?", ar: "جيد. ماذا يوجد في الطرد؟" },
       { speaker: "أنت", role: "a", de: "Kleidung und ein Buch.", ar: "ملابس وكتاب." },
       { speaker: "الموظفة", role: "b", de: "Wie schwer ist es?", ar: "كم وزنه؟" },
       { speaker: "أنت", role: "a", de: "Zwei Kilo, glaube ich.", ar: "كيلوان، أعتقد." },
-      { speaker: "الموظفة", role: "b", de: "Dann kostet es 20 Euro. Bitte füllen Sie das Formular aus.", ar: "إذن يكلف 20 يورو. من فضلك املأ الاستمارة." },
+      { speaker: "الموظفة", role: "b", de: "Im Übungsbeispiel kostet der Versand 20 Euro. Bitte füllen Sie das Formular aus.", ar: "في المثال التدريبي، تكلف عملية الإرسال 20 يورو. من فضلك املأ الاستمارة." },
     ],
     questions: [
       { de: "Was schickt die Person?", ar: "ماذا ترسل الشخص؟", options: [
@@ -29,9 +29,9 @@ export const A2_DIALOGUES_2: DailyDialogue[] = [
         { text: "Ein Paket nach Frankreich", ar: "طرداً إلى فرنسا", correct: false, explanation: "لا — الوجهة تونس لا فرنسا Frankreich: «ein Paket nach Tunesien schicken»." },
       ]},
       { de: "Wie viel kostet das Paket?", ar: "كم يكلف الطرد؟", options: [
-        { text: "20 Euro", ar: "20 يورو", correct: true, explanation: "صحيح — «kostet es 20 Euro»." },
-        { text: "10 Euro", ar: "10 يورو", correct: false, explanation: "لا — الكلفة «Dann kostet es 20 Euro»." },
-        { text: "30 Euro", ar: "30 يورو", correct: false, explanation: "لا — لم يُذكر 30؛ والمبلغ «20 Euro»." },
+        { text: "20 Euro", ar: "20 يورو", correct: true, explanation: "صحيح — السعر المذكور في هذا المثال التدريبي هو 20 يورو، وليس تعرفة فعلية." },
+        { text: "10 Euro", ar: "10 يورو", correct: false, explanation: "لا — السعر الافتراضي في المثال «20 Euro»." },
+        { text: "30 Euro", ar: "30 يورو", correct: false, explanation: "لا — السعر الافتراضي المذكور «20 Euro»." },
       ]},
       { de: "Was ist im Paket?", ar: "ماذا في الطرد؟", options: [
         { text: "Essen und Wasser für die Reise", ar: "طعام وماء", correct: false, explanation: "لا — لم يُذكر طعام Essen ولا ماء؛ والمحتوى «Kleidung und ein Buch»." },
@@ -53,7 +53,7 @@ export const A2_DIALOGUES_2: DailyDialogue[] = [
     title: "في البنك",
     titleDe: "In der Bank",
     emoji: "🏦",
-    situation: "تفتح حساباً في البنك",
+    situation: "محاكاة افتراضية لفتح حساب؛ جواز السفر وعرض بطاقة الائتمان جزء من هذا الحوار، لا قائمة متطلبات مصرفية عامة. تختلف إجراءات البنك بحسب نوع الحساب والحالة.",
     turns: [
       { speaker: "الموظفة", role: "a", de: "Guten Tag! Was kann ich für Sie tun?", ar: "طاب يومك! ماذا أفعل لك؟" },
       { speaker: "أنت", role: "b", de: "Ich möchte ein Konto eröffnen.", ar: "أريد فتح حساب." },
@@ -68,15 +68,15 @@ export const A2_DIALOGUES_2: DailyDialogue[] = [
         { text: "Geld in Euro wechseln", ar: "صرف عملة", correct: false, explanation: "لا — لم يُطلب صرف عملة wechseln؛ والغرض «ein Konto eröffnen»." },
         { text: "Ein Darlehen aufnehmen", ar: "قرضاً", correct: false, explanation: "لا — لم يُذكر قرض Darlehen؛ والطلب «Ich möchte ein Konto eröffnen»." },
       ]},
-      { de: "Was muss die Person dabei haben?", ar: "ماذا يجب أن يكون مع الشخص؟", options: [
-        { text: "Den Pass", ar: "جواز السفر", correct: true, explanation: "صحيح — «Haben Sie Ihren Pass dabei?»." },
-        { text: "Das Ticket", ar: "التذكرة", correct: false, explanation: "لا — لم تُذكر تذكرة Ticket؛ والمطلوب «Haben Sie Ihren Pass dabei?»." },
-        { text: "Den Schlüssel", ar: "المفتاح", correct: false, explanation: "لا — لم يُذكر مفتاح Schlüssel؛ والموظفة سألت عن den Pass." },
+      { de: "Wonach fragt die Mitarbeiterin?", ar: "عمّ سألت الموظفة؟", options: [
+        { text: "Nach dem Pass", ar: "عن جواز السفر", correct: true, explanation: "صحيح — سألت: «Haben Sie Ihren Pass dabei?». وهذا سؤال في المحاكاة، لا تقرير بأن كل بنك يشترطه." },
+        { text: "Nach dem Ticket", ar: "عن التذكرة", correct: false, explanation: "لا — لم تسأل عن تذكرة Ticket؛ بل قالت «Haben Sie Ihren Pass dabei?»." },
+        { text: "Nach dem Schlüssel", ar: "عن المفتاح", correct: false, explanation: "لا — لم تسأل عن مفتاح Schlüssel؛ بل عن den Pass." },
       ]},
       { de: "Welche zusätzliche Karte möchte die Person?", ar: "ما البطاقة الإضافية التي يريدها الشخص؟", options: [
-        { text: "Eine Versicherungskarte", ar: "بطاقة تأمين", correct: false, explanation: "لا — لم تُذكر بطاقة تأمين Versicherungskarte؛ والعرض «Möchten Sie auch eine Kreditkarte?»." },
-        { text: "Eine Kreditkarte mit Limit", ar: "بطاقة ائتمان", correct: true, explanation: "نعم — «Ja, das wäre gut»." },
-        { text: "Eine Bibliothekskarte", ar: "بطاقة مكتبة", correct: false, explanation: "لا — لم تُذكر بطاقة مكتبة Bibliothekskarte؛ والبطاقة المطلوبة Kreditkarte." },
+        { text: "Eine Kundenkarte", ar: "بطاقة زبون", correct: false, explanation: "لا — لم تُذكر بطاقة تأمين Versicherungskarte؛ والعرض «Möchten Sie auch eine Kreditkarte?»." },
+        { text: "Eine Kreditkarte", ar: "بطاقة ائتمان", correct: true, explanation: "نعم — عُرضت «eine Kreditkarte» وقال الشخص: «Ja, das wäre gut». لم يحدد الحوار حداً ائتمانياً." },
+        { text: "Eine Bankkarte", ar: "بطاقة مصرفية", correct: false, explanation: "لا — لم تُذكر بطاقة مكتبة Bibliothekskarte؛ والبطاقة المطلوبة Kreditkarte." },
       ]},
     ],
     keyVocab: [
@@ -100,7 +100,7 @@ export const A2_DIALOGUES_2: DailyDialogue[] = [
       { speaker: "الموظف", role: "a", de: "Haben Sie es neu gestartet?", ar: "هل أعدت تشغيله؟" },
       { speaker: "أنت", role: "b", de: "Ja, aber es hilft nicht.", ar: "نعم، لكن لا ينفع." },
       { speaker: "الموظف", role: "a", de: "Okay. Warten Sie einen Moment, ich prüfe Ihre Leitung.", ar: "حسناً. انتظر لحظة، أفحص خطك." },
-      { speaker: "الموظف", role: "b", de: "Es gibt ein Problem in Ihrer Gegend. In zwei Stunden ist es wieder da.", ar: "يوجد مشكلة في منطقتك. بعد ساعتين سيعود." },
+      { speaker: "الموظف", role: "a", de: "Es gibt ein Problem in Ihrer Gegend. In zwei Stunden ist es wieder da.", ar: "يوجد مشكلة في منطقتك. بعد ساعتين سيعود." },
     ],
     questions: [
       { de: "Was ist das Problem?", ar: "ما المشكلة؟", options: [

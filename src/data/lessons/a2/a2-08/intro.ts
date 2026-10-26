@@ -7,18 +7,25 @@ import type { Lesson } from "@/types/lesson";
 export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z1",
-      de: "Ich kann einfache Angaben zu Fahrkarten, Abfahrtszeiten und Ankünften aus einem kurzen Dialog und einem Übungsfahrplan entnehmen.",
-      ar: "أستخرج معلومات بسيطة عن التذكرة ووقت المغادرة والوصول من حوار وجدول تدريب قصيرين.",
+      de: "Ich kann einfache Angaben zu Fahrkarten, Abfahrtszeiten und Anschlussfragen aus kurzen Dialogen und einem Übungsfahrplan entnehmen.",
+      ar: "أستخرج معلومات بسيطة عن التذاكر ومواعيد المغادرة وقطار المتابعة من حوارات قصيرة وجدول تدريب.",
       evidence: {
-        exerciseIds: ["e11", "e14", "q1", "q2"],
+        exerciseIds: ["e11", "e14", "q1", "q2", "q4", "q5", "q6", "q7", "q8", "q9"],
         taskIds: [
           "practice:a2-08:e11",
           "practice:a2-08:e14",
           "listening:l1:q1",
           "listening:l1:q2",
+          "listening:l3:q4",
+          "listening:l3:q5",
+          "listening:l3:q6",
+          "listening:l4:q7",
+          "listening:l4:q8",
+          "listening:l4:q9",
         ],
         labelAr:
-          "أجب عن e11 وe14 اعتماداً على جدول التدريب، وعن q1 وq2 من حوار التذكرة؛ فتح الجدول أو إظهار التفريغ وحده لا يثبت استخراج المعلومات.",
+          "أجب عن e11 وe14 من جدول التدريب، وعن أسئلة حوارات التذكرة والمسار والتأخير؛ فتح الجدول أو إظهار التفريغ وحده لا يثبت استخراج المعلومات.",
+
         completion: "all-correct",
       },
     },

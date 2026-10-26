@@ -31,7 +31,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "Im Perfekt: Ich ___ gestern nach Hamburg gefahren.",
       options: ["bin", "habe", "war", "werde"],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — «fahren» من أفعال الحركة فيأخذ «sein»؛ فيُقال «Ich bin … gefahren» لا «Ich habe … gefahren».", "لا — «war» ماضٍ بسيط ولا يبني التصريف الثالث «gefahren»؛ والمطلوب «bin».", "لا — «werde» تبني المستقبل؛ والجملة عن الأمس («gestern») فتحتاج «bin»."],
+      optionExplanations: [undefined, "لا — هنا يعني «fahren» السفر إلى وجهة، فيأخذ «sein»: «Ich bin … nach Hamburg gefahren». وقد يأتي «haben» في معنى قيادة مركبة، مثل «Ich habe das Auto gefahren».", "لا — «war» ماضٍ بسيط ولا يبني التصريف الثالث «gefahren»؛ والمطلوب «bin».", "لا — «werde» تبني المستقبل؛ والجملة عن الأمس («gestern») فتحتاج «bin»."],
       explanation: "في هذا الاستعمال يعني fahren السفر إلى وجهة، ويأخذ sein: Ich bin nach Hamburg gefahren.",
       errorType: "grammar",
     },
@@ -186,8 +186,8 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e17",
       type: "multiple-choice",
-      instructionAr: "أنت في مقهى. ما الصيغة المهذّبة؟",
-      questionDe: "Im Café: Was sagen Sie?",
+      instructionAr: "في مقهى، أيّ عبارة صيغة شائعة للطلب المهذّب؟",
+      questionDe: "Im Café: Welche Formulierung ist eine häufige höfliche Bitte?",
       options: [
         "Ich möchte bitte einen Kaffee.",
         "Ich will einen Kaffee.",
@@ -195,7 +195,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         "Ich muss sofort einen Kaffee.",
       ],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — «Ich will» مباشرة وقد تبدو فظة؛ والألطف في المقهى: «Ich möchte bitte einen Kaffee».", "لا — «soll» تنقل توجيه شخص آخر ولا تُستعمل لطلبٍ في المقهى؛ والمطلوب «Ich möchte bitte …».", "لا — «muss» تعني الاضطرار؛ وطلب القهوة يكون بـ«möchte»: «Ich möchte bitte einen Kaffee»."],
+      optionExplanations: [undefined, "لا — «Ich will einen Kaffee» صحيحة نحوياً وقد تبدو أكثر مباشرة بحسب السياق؛ المطلوب هنا صيغة شائعة واضحة لطلب مهذّب: «Ich möchte bitte einen Kaffee».", "لا — «soll» تنقل توجيه شخص آخر ولا تُستعمل لطلبٍ في المقهى؛ والمطلوب «Ich möchte bitte …».", "لا — «muss» تعني الاضطرار؛ وطلب القهوة يكون بـ«möchte»: «Ich möchte bitte einen Kaffee»."],
       explanation: "المطلوب هنا صيغة شائعة مهذّبة للطلب، لذلك تناسب möchte. جملة Ich will einen Kaffee صحيحة نحوياً وقد تكون مباشرة أكثر بحسب السياق، لا خطأ مطلقاً.",
       errorType: "vocabulary",
     },

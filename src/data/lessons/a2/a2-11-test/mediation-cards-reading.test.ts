@@ -112,6 +112,14 @@ describe("A2-11 lesson content audit", () => {
     expect(reading?.titleAr).toBe("يوم مليء بالمشاوير");
     expect(reading?.paragraphs).toHaveLength(4);
     expect(reading?.paragraphsAr).toHaveLength(4);
+    expect(reading?.paragraphs[2]).toContain("bringt Lina ihr Handy zur Reparatur");
+    expect(reading?.paragraphs[2]).not.toContain("holt Lina ihr Handy aus der Reparatur ab");
+    expect(reading?.paragraphsAr?.[2]).toContain("تسلّم لينا هاتفها للإصلاح");
+    expect(reading?.paragraphsAr?.[1]).toContain("ولكي تستخدم تطبيق البنك الجديد، عليها التسجيل فيه");
+    expect(reading?.questions[2]).toMatchObject({
+      questionDe: "Wie reagiert Lina, als sie hört, dass die Reparatur noch eine Woche dauert?",
+      questionAr: "كيف تتصرف لينا حين تعلم أن الإصلاح سيستغرق أسبوعاً آخر؟",
+    });
     const text = reading!.paragraphs.join(" ").toLowerCase();
     const wordCount = text.split(/\s+/).filter(Boolean).length;
     expect(wordCount).toBeGreaterThanOrEqual(150);

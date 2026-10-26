@@ -12,4 +12,3 @@ export function getLevelVocab(level: "A1" | "A2" | "B1" | "B2") {
   if (level === "B2") return getB2VocabAll();
   return [];
 }
-

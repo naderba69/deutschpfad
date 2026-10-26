@@ -36,8 +36,8 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z3",
-      de: "Ich kann formelle Sätze bilden: Beim Lesen lernt man.",
-      ar: "أن أبني جملاً رسمية: بالقراءة يتعلم المرء.",
+      de: "Ich kann nominale Formulierungen bilden: Beim Lesen lernt man.",
+      ar: "أن أبني صياغة اسمية بسيطة: بالقراءة يتعلم المرء.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["e2", "e4", "m2", "m3", "w3"],
@@ -48,7 +48,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b2-06:m3",
           "writing:b2-06:w3",
         ],
-        labelAr: "أختار الصيغة الرسمية وأرتب الجملة وأكتبها بالإملاء (e2 وe4 وm2 وm3 وw3)، دون كشف الحل.",
+        labelAr: "أختار الصياغة الاسمية وأرتب الجملة وأكتبها بالإملاء (e2 وe4 وm2 وm3 وw3)، دون كشف الحل.",
       },
     },
     {
@@ -82,12 +82,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "قل: «أنا أتعلم بالقراءة» — لاحظت «بالقراءة» (اسم من فعل)! الألمانية تفعل هذا بكثرة في الرسمية: Beim Lesen lernt man. تحويل الفعل إلى اسم: lesen → das Lesen، lernen → das Lernen. هذا «الاشتقاق الاسمي» — أسلوب الإدارة والتقارير.",
+      "قل: «أنا أتعلم بالقراءة» — لاحظت «بالقراءة» (اسم من فعل)! وتشيع هذه البنية في بعض النصوص التقنية والإدارية: Beim Lesen lernt man. تحويل الفعل إلى اسم: lesen → das Lesen، lernen → das Lernen. وهذا مثال على الاشتقاق الاسمي، الذي يظهر في بعض أساليب الإدارة والتقارير.",
     motivatingQuestionDe: "Wie sieht deine Karriere aus?",
     contextAr:
-      "المسار المهني والتفاوض: نتعلم الاشتقاق الاسمي — أهم أداة للكتابة الرسمية والتقارير. وبه تتحول جملتك من عامية إلى رسمية.",
+      "المسار المهني والتفاوض: نتعلم الاشتقاق الاسمي، إحدى الصيغ التي تظهر في بعض الكتابات التقنية والإدارية. استعمالها لا يجعل الجملة الفعلية عامية أو أقل صحة.",
     contextDe: "Die Verbesserung der Arbeitsbedingungen ist wichtig.",
-    connectionToPreviousAr: "تتذكر الأسماء المركبة والعمل. اليوم: تحويل الأفعال إلى أسماء — وتقصير الجمل الرسمية. أسلوب الإدارة الألمانية.",
+    connectionToPreviousAr: "تتذكر الأسماء المركبة والعمل. اليوم: نتعلم كيف تُستعمل المصادر والأسماء المشتقة في تراكيب الجملة، وكيف نوازن بين الصياغة الاسمية والفعلية.",
     activateVocabulary: [
       { de: "die Karriere", ar: "المسار المهني" },
       { de: "verhandeln", ar: "يتفاوض" },

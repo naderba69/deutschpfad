@@ -7,8 +7,8 @@ import type { Lesson } from "@/types/lesson";
 export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z1",
-      de: "Ich kann das Präteritum komplett bilden.",
-      ar: "أن أصوغ الماضي البسيط (Präteritum) للأفعال المنتظمة والشاذة.",
+      de: "Ich kann die geübten Präteritumformen ausgewählter Verben bilden.",
+      ar: "أن أصوغ صيغ Präteritum التي تدربت عليها لأفعال منتقاة منتظمة وشاذة.",
       evidence: {
         exerciseIds: ["e1", "m1", "w2"],
         taskIds: ["practice:b1-02:e1", "mini-test:b1-02:m1", "writing:b1-02:w2"],
@@ -32,20 +32,20 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       de: "Ich kann Berufserfahrungen in einem kurzen Gespräch verstehen und die Reihenfolge der Ereignisse erkennen.",
       ar: "أن أفهم خبرات مهنية في حوار قصير وأحدد ترتيب الأحداث فيه.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
-        labelAr: "أجب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، دون كشف التفريغ. كشف النص (listening-transcript) لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4", "listening:l3:q5", "listening:l3:q6"],
+        labelAr: "أجب صحيحاً عن أسئلة الخبرة المهنية والاستعداد ليوم العمل الأول وما يتعلمه كريم في الفندق، دون كشف التفريغ. كشف النص (listening-transcript) لا يُحتسب أداءً.",
         completion: "all-correct",
       },
     },
     {
       id: "z4",
-      de: "Ich kann meine Berufserfahrung in der Vergangenheit schriftlich beschreiben.",
-      ar: "أن أكتب عن خبرتي المهنية الماضية بالزمن المناسب.",
+      de: "Ich kann kurze geübte Sätze über vergangene Arbeitserfahrung ins Präteritum umformen.",
+      ar: "أن أحوّل جملتين تدريبيتين قصيرتين عن خبرة العمل إلى Präteritum.",
       evidence: {
         exerciseIds: ["w1", "w3"],
         taskIds: ["writing:b1-02:w1", "writing:b1-02:w3"],
-        labelAr: "أكمل w1 (جملة عن خبرة بالـPräteritum) وw3 (تحويل جملة إلى Präteritum) بصحة. الكتابة الحرة وشرح الجدول لا يُحتسبان ضمن هذا الدليل.",
+        labelAr: "أجب عن w1 (جملة قصيرة عن خبرة عمل) وw3 (تحويل جملة قصيرة إلى Präteritum) بصحة. هذا الدليل لا يثبت القدرة على كتابة سيرة مهنية كاملة أو نص حر.",
         completion: "all-correct",
       },
     },
@@ -53,12 +53,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "في A2 تعلمت war/hatte (ماضي sein/haben). اليوم نعمم: كل الأفعال لها Präteritum! المنتظم: arbeitete (عمل). والشاذ: ging (ذهب)، kam (جاء). وهناك طبقة زمنية أعمق: Plusquamperfekt — «ما قبل الماضي» — مثل العربية: «كان قد عمل». ثلاث طبقات زمنية!",
+      "في A2 تعلمت war/hatte (ماضي sein/haben). هنا تتدرب على صيغ Präteritum لأفعال منتقاة: المنتظم arbeitete، والشاذ ging وkam. وهناك Plusquamperfekt لبيان حدث سبق مرجعاً ماضياً: «كان قد عمل».",
     motivatingQuestionDe: "Wo haben Sie früher gearbeitet?",
     contextAr:
-      "ندخل عالم العمل الاحترافي: نروي تجاربنا بالماضي الكامل، ونستخدم Plusquamperfekt للحديث عن «ما سبق» — مفيدة في مقابلات العمل وكتابة السيرة الذاتية.",
+      "ندخل عالم العمل من خلال أمثلة تدريبية على سرد الخبرة: صيغ Präteritum منتقاة وPlusquamperfekt لإبراز حدث سبق مرجعاً ماضياً.",
     contextDe: "Bevor ich studierte, hatte ich als Verkäufer gearbeitet.",
-    connectionToPreviousAr: "تتذكر Perfekt (habe gegessen) وPräteritum للأفعال المساعدة (war). اليوم: Präteritum للكل + Plusquamperfekt — اكتمال منظومة الأزمنة الماضية الثلاثة.",
+    connectionToPreviousAr: "تتذكر Perfekt (habe gegessen) وPräteritum للأفعال المساعدة (war). هنا تتدرب على صيغ Präteritum منتقاة وPlusquamperfekt للحدث الأسبق.",
     activateVocabulary: [
       { de: "die Bewerbung", ar: "طلب الوظيفة" },
       { de: "der Arbeitgeber", ar: "صاحب العمل" },

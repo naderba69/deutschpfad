@@ -7,8 +7,8 @@ import type { Lesson } from "@/types/lesson";
 export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z1",
-      de: "Ich kann ausgewählte Zahlen bis 1000 als Zahlwörter schreiben und einfache Preise verstehen.",
-      ar: "أكتب أعداداً مختارة حتى 1000 بالحروف، وأفهم كتابة السعر وقراءته.",
+      de: "Ich kann die Schreibung ausgewählter Zahlen bis 1000 erkennen, einzelne Zahlen als Zahlwörter schreiben und einfache Preise verstehen.",
+      ar: "أميّز كتابة أعداد مختارة حتى 1000، وأكتب بعض الأعداد بالحروف، وأفهم أسعاراً بسيطة.",
       evidence: {
         exerciseIds: ["e1", "e19", "e22", "e26", "w1"],
         taskIds: [
@@ -19,7 +19,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "writing:a1-07:w1",
         ],
         labelAr:
-          "اختر كتابة 21 في e1 و365 في e19، واكتب 1000 بالحروف في e22، واقرأ 23 يورو في e26، ثم اكتب 15 يورو بالحروف في w1.",
+          "ميّز التهجئة الصحيحة للعددين 21 في e1 و365 في e19، واكتب 1000 بالحروف في e22، واقرأ 23 يورو في e26، ثم اكتب 15 يورو بالحروف في w1.",
         completion: "all-correct",
       },
     },
@@ -48,18 +48,17 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       de: "Ich kann einfache Preisfragen und Bestellungen mit Mengenangaben schriftlich bilden.",
       ar: "أصوغ كتابةً سؤالاً بسيطاً عن السعر وطلب شراء يتضمن كمية.",
       evidence: {
-        exerciseIds: ["e4", "e7", "e10", "e13", "e15", "e16", "e18"],
+        exerciseIds: ["e4", "e7", "e13", "e15", "e16", "e18"],
         taskIds: [
           "practice:a1-07:e4",
           "practice:a1-07:e7",
-          "practice:a1-07:e10",
           "practice:a1-07:e13",
           "practice:a1-07:e15",
           "practice:a1-07:e16",
           "practice:a1-07:e18",
         ],
         labelAr:
-          "رتّب سؤال السعر في e4 وe7، واكتب/أكمل عبارات الطلب والكمية في e10 وe13 وe15 وe16 وe18؛ يجب أن تكون كل النتائج صحيحة.",
+          "رتّب سؤالَي السعر في e4 وe7، وأكمل/اكتب عبارات الطلب والكمية في e13 وe15 وe16 وe18؛ يجب أن تكون كل النتائج صحيحة. الإملاء e10 تدريب على نسخ جملة مسموعة ولا يُحتسب دليلاً على إنشاء طلب من عندك.",
         completion: "all-correct",
       },
     },
@@ -80,16 +79,17 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z5",
-      de: "Ich kann in kurzen Gesprächen Preise und Mengen verstehen, eine Ziffernfolge heraushören und eine einfache Rückfrage erkennen.",
-      ar: "أفهم السعر والكمية في حوارات قصيرة، وألتقط تسلسلاً رقمياً وأتعرف على طلب استيضاح بسيط.",
+      de: "Ich kann in kurzen Gesprächen Preise, Mengen und einfache Rückgeldangaben verstehen sowie eine Ziffernfolge heraushören.",
+      ar: "أفهم الأسعار والكميات والباقي في حوارات قصيرة، وألتقط تسلسلاً رقمياً وأتعرف على طلب استيضاح بسيط.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3", "q4"],
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
         taskIds: [
           "listening:listen-a1-07-market:q1", "listening:listen-a1-07-market:q2",
           "listening:listen-a1-07-phone:q3", "listening:listen-a1-07-phone:q4",
+          "listening:listen-a1-07-kiosk:q5", "listening:listen-a1-07-kiosk:q6", "listening:listen-a1-07-kiosk:q7",
         ],
         labelAr:
-          "أجب إجابة صحيحة عن أسئلة الاستماع الأربعة q1–q4، بما فيها رقم الهاتف والسعر.",
+          "أجب إجابة صحيحة عن أسئلة الاستماع q1–q7 حول أسعار السوق ورقم الهاتف والشراء عند الكشك والباقي؛ تشغيل الصوت وحده لا يثبت الفهم.",
         completion: "all-correct",
       },
     },

@@ -18,7 +18,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         undefined,
         "«schöne» تناسب الاسم المؤنث، وBild محايد هنا.",
         "«schönen» تناسب الجر أو المذكر، وBild محايد هنا.",
-        "«schöner» صيغة مقارنة، ولا تناسب الصفة بعد ein.",
+        "«schöner» لا توافق الاسم المحايد Bild في هذه العبارة؛ وليست هنا نهاية التصريف المطلوبة.",
       ],
     },
     {
@@ -34,7 +34,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         undefined,
         "«berühmtes» نهاية محايد، لكن بعد الأداة المعرّفة das تبقى الصفة بنهاية -e.",
         "«berühmten» نهاية جر أو جمع، لا تناسب الأداة المعرّفة هنا.",
-        "«berühmter» صيغة مقارنة، ولا تناسب الصفة هنا.",
+        "«berühmter» لا توافق Museum المحايد بعد das؛ فهي نهاية ممكنة في سياق آخر مثل ein berühmter Maler.",
       ],
     },
     {
@@ -117,7 +117,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       wrongWord: "gute",
       correctWord: "guten",
       options: ["guten", "gute", "guter", "gutes"],
-      explanation: "Dativ بعد einem: -en دائماً.",
+      explanation: "بعد einem في Dativ: -en في هذا النمط (einem guten Freund).",
       errorType: "grammar",
     },
     {
@@ -183,9 +183,9 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
 
 export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     mistakes: [
-      { wrong: "ein gut Mann (بدون نهاية)", right: "ein guter Mann", whyAr: "الصفة قبل الاسم تحتاج نهاية دائماً." },
-      { wrong: "das schönes Bild (بعد das)", right: "das schöne Bild", whyAr: "بعد der/die/das: -e." },
-      { wrong: "mit einem gute Freund", right: "mit einem guten Freund", whyAr: "Dativ: -en." },
+      { wrong: "ein gut Mann (بدون نهاية)", right: "ein guter Mann", whyAr: "الصفة النعتية في هذه الأمثلة تأخذ نهاية مناسبة بحسب الأداة والجنس والحالة." },
+      { wrong: "das schönes Bild (بعد das)", right: "das schöne Bild", whyAr: "بعد الأداة المعرّفة تتغير النهاية بحسب الجنس والحالة؛ هنا بعد das: -e." },
+      { wrong: "mit einem gute Freund", right: "mit einem guten Freund", whyAr: "بعد einem في Dativ: -en في هذا النمط (einem guten Freund)." },
       { wrong: "Ich bin Heimweh.", right: "Ich habe Heimweh.", whyAr: "Heimweh اسم يُبنى مع haben (مثل Hunger وDurst): Ich habe Heimweh — أحِنّ إلى وطني." },
     ],
     eselsbruecken: [
@@ -195,6 +195,6 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     culturalNote: {
       title: "الثقافة في ألمانيا",
       content:
-        "«Die Museumsinsel» (جزيرة المتاحف) في برلين تضم خمسة مبانٍ متحفية بُنيت بين 1830 و1930، وهي مسجّلة تراثاً عالمياً لدى UNESCO منذ 4 ديسمبر 1999.",
+        "«جزيرة المتاحف» في برلين تضم خمسة متاحف بُنيت مبانيها بين 1824 و1930، وأُدرجت في قائمة التراث العالمي لليونسكو (UNESCO) سنة 1999. المصدر: https://whc.unesco.org/en/list/896/ .",
     },
   };

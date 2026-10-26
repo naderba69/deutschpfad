@@ -22,12 +22,16 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     options: ["Entweder ... oder", "Weder ... noch", "Nicht nur ... sondern auch", "Sowohl ... als auch"],
     key: "Entweder ... oder",
   },
-  q1: { options: ["viele Jobs", "das Wetter", "die Politik nur", "nichts"], key: "viele Jobs" },
+  q1: {
+    options: ["Sie könnten manche Aufgaben verändern.", "Sie werden alle Berufe abschaffen.", "Sie haben keinen Einfluss auf Aufgaben.", "Sie können nicht ausfallen."],
+    key: "Sie könnten manche Aufgaben verändern.",
+  },
   q2: {
-    options: ["Je mehr Abhängigkeit, desto verletzlicher", "Es ist für die Betriebe kein Problem", "Die Abhängigkeit hilft sogar beim Sparen", "Wir sind dadurch sicherer geworden"],
-    key: "Je mehr Abhängigkeit, desto verletzlicher",
+    options: ["Ein Ausfall kann größere Folgen haben.", "Ein System kann nie ausfallen.", "Alle Aufgaben werden einfacher.", "Technik verändert keine Aufgaben."],
+    key: "Ein Ausfall kann größere Folgen haben.",
   },
   q3: { options: ["Die Kamera ist schlecht", "Das Handy ist kaputt", "Es ist zu alt", "Er hat es verloren"], key: "Die Kamera ist schlecht" },
+  q4: { options: ["den Zugriff auf Standort und Kontakte", "die Speicherung von Fotos vollständig", "die Weitergabe der Daten an Firmen", "die Benachrichtigungen für die App"], key: "den Zugriff auf Standort und Kontakte" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -164,7 +168,7 @@ describe("B1-08 lesson content audit", () => {
 
   it("uses only evaluable performances as goals, each all-correct", () => {
     expect(lessonB108.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q3"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q3", "q4"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e2", "e6", "e9", "m2", "m5", "w2"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e1", "e4", "e5", "e7", "m1", "m4", "w1"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["q2", "e11"]);
@@ -196,8 +200,16 @@ describe("B1-08 lesson content audit", () => {
       lessonB108.listening.questions.map(({ id, itemId }) =>
         getListeningQuestionTaskId("b1-08", itemId, id, false),
       ),
-    ).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"]);
+    ).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"]);
     expect(getListeningQuestionTaskId("b1-08", "l1", "q1", true)).toBe("listening-transcript:b1-08:l1:q1");
+  });
+
+  it("labels the l1 technology discussion as fictional opinion rather than evidence", () => {
+    const item = lessonB108.listening.items.find(({ id }) => id === "l1");
+    expect(item?.title).toContain("خيالي");
+    expect(item?.audioNoteAr).toContain("ليست توقعات موثقة");
+    expect(item?.lines[1]?.de).toContain("Vielleicht");
+    expect(item?.lines[4]?.de).toContain("desto größere Folgen kann ein Ausfall haben");
   });
 
   it("enumerates every auditable task type so no new task escapes the guard", () => {
@@ -341,6 +353,9 @@ describe("B1-08 lesson content audit", () => {
     expect(reading?.paragraphsAr).toHaveLength(4);
     const text = reading!.paragraphs.join(" ").toLowerCase();
     expect(text.split(/\s+/).filter(Boolean).length).toBeGreaterThanOrEqual(250);
+    expect(text).toContain("ausdrücklich ein erfundenes beispiel");
+    expect(text).toContain("keine vorhersage von fachleuten und kein ergebnis einer studie");
+    expect(text).not.toMatch(/hamburg|sina kaya|dr\. bauer|die meisten fachleute|seit zwei jahren/);
 
     expect(reading?.glossary.length).toBeGreaterThanOrEqual(8);
     for (const item of reading!.glossary) {
@@ -368,10 +383,21 @@ describe("B1-08 lesson content audit", () => {
     }
   });
 
-  it("keeps the culture note to a sourced statement about GDPR and administrative digitalisation", () => {
+  it("uses IPA for the pronunciation notes instead of misleading Arabic sound spellings", () => {
+    const items = lessonB108.pronunciation.items;
+    expect(items.find(({ de }) => de === "digital")?.note).toContain("وليس k");
+    expect(items.find(({ de }) => de === "die Intelligenz")?.note).toContain("g يظل [ɡ]");
+    expect(items.find(({ de }) => de === "die Technik")?.note).toContain("[ˈtɛçnɪk]");
+    expect(items.find(({ de }) => de === "die Zukunft")?.note).toContain("[ˈtsuːkʊnft]");
+    expect(items.every(({ note }) => !/تيشنيك|ديكيتال|إنتِليكِنتس|تسووكونفت/.test(note ?? ""))).toBe(true);
+  });
+
+  it("limits the culture note to the dated GDPR fact", () => {
     const note = lessonB108.fehlerUndTipps.culturalNote.content;
     expect(note).toContain("DSGVO");
-    expect(note).toContain("2022");
+    expect(note).toContain("25 مايو 2018");
+    expect(note).not.toContain("2022");
+    expect(note).not.toMatch(/بالـفاكس|الورقية|متأخرة عن أهدافها/);
     expect(note).not.toContain("مقدسة");
   });
 

@@ -74,7 +74,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
           { label: "قائم في المشهد", cells: ["stellen", "stehen", "stellte / stand; gestellt / gestanden", "Ich stelle die Vase auf den Tisch."] },
           { label: "ممدّد في المشهد", cells: ["legen", "liegen", "legte / lag; gelegt / gelegen", "Der Teppich liegt auf dem Boden."] },
           { label: "جلوس", cells: ["setzen", "sitzen", "setzte / saß; gesetzt / gesessen", "Ich setze das Kind auf den Stuhl."] },
-          { label: "تعليق", cells: ["hängen (Handlung)", "hängen (Zustand)", "hängte / hing; gehängt / gehangen", "Der Mantel hängt an der Garderobe."] },
+          { label: "تعليق", cells: ["hängen (Handlung)", "hängen (Zustand)", "Präteritum: hängte / hing; Partizip II: gehängt / gehangen", "Der Mantel hängt an der Garderobe."] },
           { label: "إدخال/وجود داخل موضع", cells: ["stecken", "stecken", "steckte; gesteckt", "Der Schlüssel steckt im Schloss."] },
         ],
       },

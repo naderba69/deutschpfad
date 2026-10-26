@@ -16,9 +16,9 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«klein» نهاية الصفة بعد ein محايد هي -es، لا -e.",
-        "«kleine» نهاية مؤنث أو جمع، ولا تناسب Haus المحايد بعد ein.",
-        "«kleinen» نهاية جر أو مذكر، لا تناسب Haus المحايد.",
+        "في هذا الاسم المحايد نقول ein kleines Haus؛ أما kleine فلا توافق هذا التركيب.",
+        "«kleine» لا توافق Haus المحايد بعد ein؛ نقول ein kleines Haus.",
+        "«kleinen» لا تناسب الرفع المحايد بعد ein في هذا المثال.",
       ],
     },
     {
@@ -95,7 +95,7 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     { id: "fc9", de: "die Heimat", ar: "الوطن", example: "Ich vermisse meine Heimat.", exampleAr: "أشتاق إلى وطني.", level: "B1" },
     { id: "fc10", de: "das Heimweh", ar: "الحنين إلى الوطن", example: "Ich habe Heimweh.", exampleAr: "أحِنّ إلى وطني.", level: "B1" },
     { id: "fc11", de: "der Kulturschock", ar: "صدمة الثقافة", example: "Der Kulturschock war schwer.", exampleAr: "كانت صدمة الثقافة صعبة.", level: "B1" },
-    { id: "fc12", de: "die Integration", ar: "الاندماج", example: "Integration braucht Zeit.", exampleAr: "الاندماج يحتاج وقتاً.", level: "B1" },
+    { id: "fc12", de: "die Integration", ar: "الاندماج", example: "Integration kann Zeit brauchen.", exampleAr: "قد يحتاج الاندماج إلى وقت.", level: "B1" },
     { id: "fc13", de: "vermissen", ar: "يشتاق إلى", example: "Ich vermisse meine Familie.", exampleAr: "أشتاق إلى عائلتي.", level: "B1" },
   ];
 
@@ -103,9 +103,9 @@ export const mediation: NonNullable<Lesson["mediation"]> = [
         {
       id: "med-b1-06-1", type: "summarize-de-to-ar",
       titleAr: "لخّص مراجعة فيلم ألمانية بالعربية",
-      sourceDe: "Der neue Film ist visuell beeindruckend, aber die Geschichte ist schwach. Die Schauspieler leisten gute Arbeit, insgesamt ein mittelmäßiger Film.",
+      sourceDe: "Fiktiver Übungstext, keine echte Rezension: Der neue Film ist visuell beeindruckend, aber die Geschichte ist schwach. Die Schauspieler leisten gute Arbeit, insgesamt ein mittelmäßiger Film.",
       taskAr: "لخّص المراجعة مع نقل التقييم النهائي دون رأيك.",
-      modelAnswerAr: "«الفيلم الجديد مبهر بصرياً لكن قصته ضعيفة. الممثلون يؤدون عملاً جيداً، إجمالاً فيلم متوسط.»",
+      modelAnswerAr: "«هذا نص تدريبي خيالي لا مراجعة حقيقية: الفيلم الجديد مبهر بصرياً لكن قصته ضعيفة. الممثلون يؤدون عملاً جيداً، وإجمالاً هو فيلم متوسط.»",
       keyPointsAr: ["نقلت الجانب البصري", "ذكرت ضعف القصة", "نقلت التقييم النهائي (متوسط)"],
     },
   ];

@@ -142,7 +142,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e13",
       type: "multiple-choice",
       instructionAr: "في هذا السياق، أي صيغة طلب تبدو ألطف؟",
-      questionDe: "Im Café: Welcher Satz ist höflich?",
+      questionDe: "Im Café: Welche Formulierung ist hier besonders höflich?",
       options: [
         "Ich hätte gern einen Kaffee, bitte.",
         "Ich will einen Kaffee.",

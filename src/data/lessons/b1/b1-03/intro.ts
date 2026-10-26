@@ -10,27 +10,27 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       de: "Ich kann Umweltprobleme und Maßnahmen aus einem kurzen Gespräch verstehen.",
       ar: "أن أفهم مشكلات البيئة والإجراءات المذكورة في حوار قصير.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
-        labelAr: "أجب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، دون كشف التفريغ. كشف النص (listening-transcript) لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4", "listening:l4:q5", "listening:l4:q6", "listening:l4:q7"],
+        labelAr: "أجب صحيحاً عن أسئلة النقاش البيئي والممارسات اليومية وتوفير الكهرباء وإعادة استخدام الأجهزة، دون كشف التفريغ. كشف النص لا يُحتسب أداءً.",
         completion: "all-correct",
       },
     },
     {
       id: "z2",
-      de: "Ich kann das Passiv bilden: wird/wurde + Partizip II.",
+      de: "Ich kann das Vorgangspassiv im Präsens und Präteritum bilden: wird/wurde + Partizip II.",
       ar: "أن أبني المبني للمجهول: يُبنى / بُني.",
       evidence: {
-        exerciseIds: ["e1", "e7", "m1"],
-        taskIds: ["practice:b1-03:e1", "practice:b1-03:e7", "mini-test:b1-03:m1"],
-        labelAr: "أجب صحيحاً عن e1 (يظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق)، وحوّل e7 من النشط إلى المجهول بصحة، وأجب عن m1 في الاختبار المصغّر. قراءة جدول t1 لا تُحتسب أداءً.",
+        exerciseIds: ["e1", "e2", "e7", "m1"],
+        taskIds: ["practice:b1-03:e1", "practice:b1-03:e2", "practice:b1-03:e7", "mini-test:b1-03:m1"],
+        labelAr: "أجب صحيحاً عن e1 (المضارع) وe2 (الماضي البسيط)، وحوّل e7 من النشط إلى المجهول، وأجب عن m1. هذه المهام تختبر صيغتي الحاضر والماضي البسيط؛ قراءة الجدول لا تُحتسب أداءً.",
         completion: "all-correct",
       },
     },
     {
       id: "z3",
-      de: "Ich kann man als Passiv-Ersatz benutzen.",
-      ar: "أن أستخدم man كبديل للمجهول.",
+      de: "Ich kann mit man eine Alternative zum Passiv formulieren.",
+      ar: "أن أصوغ بفاعل عام man بديلاً تعبيرياً عن المبني للمجهول.",
       evidence: {
         exerciseIds: ["e6", "m5"],
         taskIds: ["practice:b1-03:e6", "mini-test:b1-03:m5"],
@@ -40,12 +40,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z4",
-      de: "Ich kann den Infinitiv mit zu benutzen: Es ist wichtig, die Umwelt zu schützen.",
+      de: "Ich kann den Infinitiv mit zu in einfachen Sätzen benutzen.",
       ar: "أن أستخدم التركيب المصدري zu + مصدر في جمل النصح البيئي.",
       evidence: {
         exerciseIds: ["e11", "e12"],
         taskIds: ["practice:b1-03:e11", "practice:b1-03:e12"],
-        labelAr: "أكمل e11 (zu schützen) وأجب صحيحاً عن ترتيب e12 (Ich versuche, das Fahrrad zu nehmen) ضمن تمارين practice. الجدول والشرح لا يُحتسبان أداءً.",
+        labelAr: "أكمل e11 (zu schützen) ورتّب e12 (Ich versuche, mit dem Fahrrad zu fahren) ضمن تمارين practice. الجدول والشرح لا يُحتسبان أداءً.",
         completion: "all-correct",
       },
     },
@@ -53,12 +53,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "في العربية نقول «يُبنى البيت» (مجهول) — نغير حركة الفعل. الألمانية تبني المجهول بفعلين: werden + تصريف ثالث: Das Haus wird gebaut (البيت يُبنى). ولاحظ: werden تعمل هنا «علامة المجهول» وليست «يصبح»!",
+      "في هذا الدرس نركّز على Vorgangspassiv: werden مصرّفاً + Partizip II، مثل Das Haus wird gebaut. أمّا werden مع صفة فيمكن أن تعني «يصبح» (Das Klima wird wärmer)، ومع المصدر تدخل في Futur (Das Klima wird sich verändern). يحدد التركيب المعنى.",
     motivatingQuestionDe: "Was kann man für die Umwelt tun?",
     contextAr:
-      "البيئة موضوع نقاش دائم في ألمانيا: نتعلم مفرداتها، ثم نضيف المبني للمجهول — أداة النقاش الرسمي والنصوص الإخبارية. وبمناسبة B1 نربط المجهول بالتركيب المصدري (zu + مصدر).",
-    contextDe: "Das Klima wird immer wärmer.",
-    connectionToPreviousAr: "تتذكر werden (يصبح) من A1. اليوم: werden ثانية بمعنى آخر — علامة المجهول. نفس الفعل، وظيفة جديدة.",
+      "نتدرب على مفردات البيئة، وVorgangspassiv في الحاضر والماضي البسيط، وعلى zu + مصدر في أمثلة قصيرة.",
+    contextDe: "Die Temperaturen steigen.",
+    connectionToPreviousAr: "تتذكر werden في معنى «يصبح»؛ هنا نميّز هذا الاستعمال عن Vorgangspassiv وFutur من بنية الجملة.",
     activateVocabulary: [
       { de: "die Umwelt", ar: "البيئة" },
       { de: "das Klima", ar: "المناخ" },

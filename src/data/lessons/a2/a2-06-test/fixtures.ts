@@ -24,6 +24,12 @@ export const expectedMultipleChoiceKeys: Record<string, string> = {
   q1: "Im Fernsehen läuft zu viel Werbung.",
   q2: "im Internet",
   q3: "interessant",
+  q4: "Im Mai, sagt die Zeitung.",
+  q5: "Ein Foto, das schon drei Jahre alt ist.",
+  q6: "Er prüft zuerst die Quelle und teilt dann vielleicht.",
+  q7: "Um den Wochenmarkt",
+  q8: "Am Samstag um acht",
+  q9: "Wichtige Angaben",
 };
 
 export const expectedMultipleChoiceOptions: Record<string, string[]> = {
@@ -72,6 +78,27 @@ export const expectedMultipleChoiceOptions: Record<string, string[]> = {
   ],
   q2: ["im Internet", "in der Zeitung", "im Fernsehen", "im Radio"],
   q3: ["interessant", "langweilig", "kurz", "teuer"],
+  q4: [
+    "Schon im April, sagt die Zeitung.",
+    "Im Mai, sagt die Zeitung.",
+    "Erst im Juni, sagt die Zeitung.",
+    "Im Herbst, sagt die Zeitung.",
+  ],
+  q5: [
+    "Ein Interview mit dem Bürgermeister.",
+    "Eine Karte mit dem geplanten Weg.",
+    "Ein Foto, das schon drei Jahre alt ist.",
+    "Einen neuen Bericht über die Zeitung.",
+  ],
+  q6: [
+    "Er teilt die Nachricht sofort mit allen.",
+    "Er fragt Mona nach einem anderen Foto.",
+    "Er löscht die Nachricht und vergisst den Park.",
+    "Er prüft zuerst die Quelle und teilt dann vielleicht.",
+  ],
+  q7: ["Um den Wochenmarkt", "Um einen neuen Park", "Um eine Zeitung", "Um ein Sommerfest"],
+  q8: ["Am Samstag um acht", "Am Freitag um acht", "Am Samstag um zehn", "Am Sonntag um neun"],
+  q9: ["Wichtige Angaben", "Die Kommentare", "Die Preise im Café", "Die Fotos von Anna"],
 };
 
 export function allTasks(): Exercise[] {

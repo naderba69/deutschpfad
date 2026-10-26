@@ -77,7 +77,7 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     { id: "fc3", de: "das Ziel", ar: "الهدف", example: "Ich habe ein Ziel.", exampleAr: "لدي هدف.", level: "B1" },
     { id: "fc4", de: "sich bewerben", ar: "يتقدم (لوظيفة/دراسة)", example: "Ich habe mich beworben.", exampleAr: "تقدمت.", level: "B1" },
     { id: "fc5", de: "die B1-Grammatik", ar: "قواعد B1", example: "Genitiv, Relativsatz, Passiv...", exampleAr: "مضاف، نسبية، مجهول...", level: "B1" },
-    { id: "fc6", de: "der Integrationskurs", ar: "دورة الاندماج", example: "Der Integrationskurs endet mit B1.", exampleAr: "تنتهي دورة الاندماج بـ B1.", level: "B1" },
+    { id: "fc6", de: "der Integrationskurs", ar: "دورة الاندماج", example: "Der Deutsch-Test für Zuwanderer bescheinigt A2 oder B1.", exampleAr: "يمنح اختبار Deutsch-Test für Zuwanderer نتيجة A2 أو B1.", level: "B1" },
     { id: "fc7", de: "sich wünschen", ar: "يتمنى", example: "Ich wünsche mir Erfolg.", exampleAr: "أتمنى لنفسي النجاح.", level: "B1" },
     { id: "fc8", de: "die Chance", ar: "الفرصة", example: "Ich habe eine Chance.", exampleAr: "لدي فرصة.", level: "B1" },
     { id: "fc9", de: "die Zukunftsplanung", ar: "تخطيط المستقبل", example: "Die Zukunftsplanung hilft ihr, ruhiger zu arbeiten.", exampleAr: "يساعدها تخطيط المستقبل على العمل بهدوء أكبر.", level: "B1" },
@@ -89,11 +89,11 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
 export const mediation: NonNullable<Lesson["mediation"]> = [
         {
       id: "med-b1-10-1", type: "summarize-de-to-ar",
-      titleAr: "لخّص نصاً عن مستقبل العمل بالعربية",
-      sourceDe: "Experten glauben, dass flexible Arbeitsmodelle die Zukunft sind. Homeoffice und Teilzeit werden immer beliebter, besonders bei jungen Menschen.",
-      taskAr: "لخّص النص: ما الذي يراه الخبراء كمستقبل، وما الذي يزداد شعبية.",
-      modelAnswerAr: "«يعتقد الخبراء أن نماذج العمل المرنة هي المستقبل. العمل عن بُعد والدوام الجزئي يزدادان شعبية، خاصة بين الشباب.»",
-      keyPointsAr: ["نقلت توقع الخبراء (العمل المرن)", "ذكرت العمل عن بُعد والدوام الجزئي", "نقلت توجه الشباب"],
+      titleAr: "لخّص حواراً تدريبياً خيالياً عن خطط العمل",
+      sourceDe: "Mina sagt: „Für mich ist Homeoffice praktisch. Ich möchte nächstes Jahr zwei Tage pro Woche von zu Hause arbeiten.“ Ihr Kollege Paul bevorzugt Teilzeit, weil er mehr Zeit für seine Familie haben möchte. In ihrem Team werden im kommenden Jahr beide Möglichkeiten besprochen.",
+      taskAr: "لخّص رأي مينا وبول، وما الذي سيناقشه فريقهما العام القادم.",
+      modelAnswerAr: "«ترى مينا أن العمل عن بُعد عملي، وتريد العمل من البيت يومين أسبوعياً. ويفضّل بول الدوام الجزئي ليقضي وقتاً أكثر مع أسرته. وسيناقش فريقهما الخيارين في العام المقبل.»",
+      keyPointsAr: ["نقلت تفضيل مينا للعمل عن بُعد", "ذكرت سبب تفضيل بول للدوام الجزئي", "ذكرت أن الفريق سيناقش الخيارين العام القادم"],
     },
   ];
 
@@ -109,14 +109,14 @@ export const interaction: NonNullable<Lesson["interaction"]> = [
           speakerAr: "ما خططك المستقبلية؟",
           options: [
             { de: "Ich möchte nächstes Jahr einen Master machen und dann im Ausland arbeiten. Wenn alles klappt, starte ich in zwei Jahren.", ar: "أريد إكمال الماجستير العام القادم ثم العمل في الخارج. إذا سار كل شيء، أبدأ بعد سنتين.", best: true, replyDe: "Klingt nach einem guten Plan! Was ist dein Traumberuf?", replyAr: "يبدو خطة جيدة! ما مهنتك المثالية؟" },
-            { de: "Ich habe keine Pläne, ich lebe nur in den Tag.", ar: "لا خطط لدي، أعيش يومي فقط.", best: false, replyDe: "Ein bisschen Planung hilft immer.", replyAr: "القليل من التخطيط يساعد دائماً." },
+            { de: "Ich habe keine Pläne, ich lebe nur in den Tag.", ar: "لا خطط لدي، أعيش يومي فقط.", best: false, replyDe: "Das ist okay. Gibt es etwas, worauf du dich in den nächsten Monaten freust?", replyAr: "لا بأس. هل هناك شيء تتطلع إليه في الأشهر القادمة؟" },
           ],
         },
         {
           speakerDe: "Was ist dein Traumberuf?",
           speakerAr: "ما مهنتك المثالية؟",
           options: [
-            { de: "Ich träume davon, als Übersetzer zu arbeiten, weil ich Sprachen liebe und zwischen Kulturen vermitteln möchte.", ar: "أحلم بالعمل مترجماً لأنني أحب اللغات وأريد التوسط بين الثقافات.", best: true, replyDe: "Ein schöner Beruf mit Zukunft!", replyAr: "مهنة جميلة ولها مستقبل!" },
+            { de: "Ich träume davon, als Übersetzer zu arbeiten, weil ich Sprachen liebe und zwischen Kulturen vermitteln möchte.", ar: "أحلم بالعمل مترجماً لأنني أحب اللغات وأريد التوسط بين الثقافات.", best: true, replyDe: "Das klingt nach einem passenden Beruf für dich!", replyAr: "تبدو مهنة مناسبة لك!" },
             { de: "Mein Traumberuf ist, nichts zu tun.", ar: "مهنتي المثالية ألا أفعل شيئاً.", best: false, replyDe: "Hm, das klingt eher nach einer Pause als nach einem Beruf.", replyAr: "هذا يبدو استراحة أكثر منه مهنة." },
           ],
         },

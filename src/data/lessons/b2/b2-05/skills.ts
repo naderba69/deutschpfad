@@ -27,6 +27,19 @@ export const listening: Lesson["listening"] = {
           { speaker: "Karim", de: "Ja, natürlich!", ar: "نعم طبعاً!" },
         ],
       },
+      {
+        id: "l3",
+        title: "سوء فهم في فريق العمل",
+        audioNoteAr: "الصوت مولّد آلياً (TTS)، وليس تسجيلاً بشرياً.",
+        lines: [
+          { speaker: "Mira", de: "Unser Team hat das Projekt fast abgeschlossen, aber im letzten Gespräch gab es ein Missverständnis.", ar: "أوشك فريقنا على إنهاء المشروع، لكن حدث سوء فهم في الاجتماع الأخير.", audioSrc: "/audio/lessons/b2-05/ls-b2-05-3-1.mp3" },
+          { speaker: "Jonas", de: "Was ist passiert? Mira: Ich habe einen Vorschlag gemacht, ohne die Erwartungen der anderen genau zu kennen.", ar: "ماذا حدث؟ ميرا: قدمت اقتراحاً دون أن أعرف توقعات الآخرين بدقة.", audioSrc: "/audio/lessons/b2-05/ls-b2-05-3-2.mp3" },
+          { speaker: "Jonas", de: "Dann sollten wir zuerst aktiv zuhören, anstatt sofort zu antworten. Vielleicht klären wir die Aufgaben dadurch besser.", ar: "إذاً ينبغي أن نصغي أولاً بدلاً من الرد فوراً. ربما نوضح المهام بهذه الطريقة.", audioSrc: "/audio/lessons/b2-05/ls-b2-05-3-3.mp3" },
+          { speaker: "Mira", de: "Einverstanden. Ich frage nach, es sei denn, jemand möchte zuerst seine Sicht erklären.", ar: "موافقة. سأستفسر، إلا إذا أراد أحدهم أن يشرح وجهة نظره أولاً.", audioSrc: "/audio/lessons/b2-05/ls-b2-05-3-4.mp3" },
+          { speaker: "Jonas", de: "Je nachdem, was wir dabei erfahren, teilen wir die Aufgaben neu auf.", ar: "بحسب ما نعرفه، سنعيد توزيع المهام.", audioSrc: "/audio/lessons/b2-05/ls-b2-05-3-5.mp3" },
+          { speaker: "Mira", de: "Gut. So vermeiden wir weitere Missverständnisse, indem wir alles klar und respektvoll besprechen.", ar: "جيد. هكذا نتجنب مزيداً من سوء الفهم بأن نناقش كل شيء بوضوح واحترام.", audioSrc: "/audio/lessons/b2-05/ls-b2-05-3-6.mp3" },
+        ],
+      },
     ],
     questions: [
       {
@@ -83,6 +96,24 @@ export const listening: Lesson["listening"] = {
           "«gar nicht, sie entscheiden später» تنفي القرار، ولم يقلها كريم.",
         ],
       },
+      {
+        id: "q4",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Wie wollen Mira und Jonas weitere Missverständnisse vermeiden?",
+        questionAr: "كيف تريد ميرا ويوناس تجنب مزيد من سوء الفهم؟",
+        options: ["indem sie alles klar und respektvoll besprechen", "indem sie sofort neue Aufgaben verteilen", "indem sie das Gespräch beenden", "indem sie ohne Rückfragen entscheiden"],
+        correctIndex: 0,
+        explanation: "قالت ميرا: So vermeiden wir weitere Missverständnisse, indem wir alles klar und respektvoll besprechen.",
+        errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم يقل الحوار إنهما سيوزعانها فوراً؛ قالت ميرا «Ich frage nach»، ثم قال يوناس: «Je nachdem, was wir dabei erfahren, teilen wir die Aufgaben neu auf». ",
+          "لم يقترحا إنهاءه؛ قالت ميرا: «So vermeiden wir weitere Missverständnisse, indem wir alles klar und respektvoll besprechen». ",
+          "على العكس، قالت ميرا: «Ich frage nach, es sei denn, jemand möchte zuerst seine Sicht erklären». ",
+        ],
+      },
     ],
   };
 
@@ -92,12 +123,12 @@ export const pronunciation: Lesson["pronunciation"] = {
     items: [
       { de: "die Kommunikation", ar: "التواصل", note: "tion = تسيون: كومونيكاتسيون" },
       { de: "das Missverständnis", ar: "سوء الفهم", note: "شديدة: ميس-فِر-شتندنيس" },
-      { de: "zuhören", ar: "يصغي", note: "z = تس + ö: تسوهورِن" },
+      { de: "zuhören", ar: "يصغي", note: "z = /ts/، وzu = /tsuː/ تقريباً" },
       { de: "das Verhalten", ar: "السلوك", note: "v = ف + h: فِر-هالتن" },
       { de: "vermeiden", ar: "يتجنب", note: "ei = آي: فِرمايدن" },
-      { de: "das Gefühl", ar: "الشعور", note: "ü طويل: غِفول" },
+      { de: "das Gefühl", ar: "الشعور", note: "ü طويل بصوت أمامي مستدير، لا مقابل دقيقاً له في العربية" },
     ],
-    tip: "Missverständnis = ميس-فِر-شتندنيس — كلمة طويلة فيها sch. قسّمها: Miss + ver + ständ + nis.",
+    tip: "التهجئة العربية تقريبية ولا تنقل الأصوات الألمانية بدقة؛ في Missverständnis يظهر المقطع المشدّد في ständ. استمع إلى النموذج ولا تعتبر النقل العربي تقييماً للنطق.",
     shadowing: [
       { de: "Man lernt, indem man übt.", ar: "يتعلم المرء بالممارسة.", tip: "indem man übt" },
       { de: "Anstatt zu schlafen, arbeitete er.", ar: "بدلاً من النوم عمل.", tip: "anstatt zu schlafen" },

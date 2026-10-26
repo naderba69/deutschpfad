@@ -130,12 +130,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z8",
-      de: "Ich kann ausgewählte Informationen aus zwei kurzen, bereitgestellten Dialogen identifizieren.",
-      ar: "أحدد معلومات مختارة عن المهنة ويوم العمل في الحوارين المقدمين عبر الإجابة عن أسئلتهما.",
+      de: "Ich kann ausgewählte Informationen aus drei kurzen, bereitgestellten Dialogen identifizieren.",
+      ar: "أحدد معلومات مختارة عن المهنة ويوم العمل وبدء وظيفة في الحوارات المقدمة عبر الإجابة عن أسئلتها.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
-        labelAr: "استمع إلى الحوارين ثم أجب عن q1–q3؛ النص قابل للإظهار في الواجهة، لذلك لا تدعي النتيجة استماعاً مستقلاً موثقاً أو إتقاناً عاماً.",
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4", "listening:l3:q5", "listening:l3:q6"],
+        labelAr: "استمع إلى الحوارات ثم أجب عن q1–q6؛ النص قابل للإظهار في الواجهة، لذلك لا تدعي النتيجة استماعاً مستقلاً موثقاً أو إتقاناً عاماً.",
         completion: "all-correct",
       },
     },

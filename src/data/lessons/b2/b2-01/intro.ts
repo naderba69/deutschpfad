@@ -11,9 +11,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أفهم ما يقوله باحث في حوار قصير.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
-        labelAr: "أجيب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q2", "q3", "q4"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"],
+        labelAr: "أجيب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -63,7 +63,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "في الإخبار: «قال الباحث: النتيجة مهمة» (مباشر) مقابل «قال الباحث إن النتيجة مهمة» (غير مباشر). الألمانية تملك صيغة كاملة للنقل غير المباشر اسمها Konjunktiv I: Er sagt, die Forschung sei wichtig. لاحظ: sei بدل ist! هذا يبين أنك «تنقل» وليس «تؤكد».",
+      "في الإخبار: «قال الباحث: النتيجة مهمة» (مباشر) مقابل «قال الباحث إن النتيجة مهمة» (غير مباشر). تستخدم الألمانية كثيراً صيغة Konjunktiv I لنقل الكلام: Er sagt, die Forschung sei wichtig. لاحظ sei؛ إنها علامة شائعة على النقل، لا برهان وحدها على صدق الخبر أو موقف الناقل.",
     motivatingQuestionDe: "Was hat der Forscher gesagt?",
     contextAr:
       "ندخل قمة المستويات: نتعلم كيف ننقل الأقوال في الأخبار والتقارير العلمية — بتمييز واضح بين «ما قاله» و«ما نقله هو». هذه مهارة الصحفيين والأكاديميين.",

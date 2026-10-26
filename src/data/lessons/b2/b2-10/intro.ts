@@ -11,9 +11,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أصوغ جملاً أكاديمية بعبارات ثابتة.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["w1", "e4", "e7"],
-        taskIds: ["writing:b2-10:w1", "practice:b2-10:e4", "practice:b2-10:e7"],
-        labelAr: "أكتب جملة أكاديمية بعبارة ثابتة وأرتب جملة (w1 وe4 وe7)، دون كشف الحل. لا يقيس هذا كتابة بحث جامعي كامل.",
+        exerciseIds: ["w1", "e4", "e7", "q4"],
+        taskIds: ["writing:b2-10:w1", "practice:b2-10:e4", "practice:b2-10:e7", "listening:l3:q4"],
+        labelAr: "أكتب جملة أكاديمية بعبارة ثابتة وأرتب جملة (w1 وe4 وe7)، وأفهم عبارة es ist erwiesen في الاستماع (q4)، دون كشف الحل. لا يقيس هذا كتابة بحث جامعي كامل.",
       },
     },
     {

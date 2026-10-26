@@ -90,9 +90,9 @@ export const mediation: NonNullable<Lesson["mediation"]> = [
     {
       id: "med-b1-02-1",
       type: "relay-instructions",
-      titleAr: "انقل تعليمات مقابلة عمل ألمانية بالعربية لصديق",
+      titleAr: "انقل لصديق تعليمات دعوة تدريبية افتراضية لمقابلة عمل",
       sourceDe: "Bitte kommen Sie pünktlich zum Vorstellungsgespräch. Bringen Sie Ihren Lebenslauf und Ihre Zeugnisse mit. Das Gespräch dauert etwa 30 Minuten.",
-      taskAr: "أخبر صديقك بالعربية بموعد المقابلة وكل ما يجب إحضاره ومدتها، بدقة كاملة.",
+      taskAr: "انقل لصديقك تفاصيل هذا النموذج الافتراضي وحده: الموعد وما يطلب إحضاره والمدة الواردة في الدعوة؛ لا تعممها على كل مقابلات العمل.",
       modelAnswerAr: "«المقابلة — كن في الموعد. أحضر سيرتك الذاتية وشهاداتك. المقابلة تستغرق حوالي 30 دقيقة.»",
       keyPointsAr: ["نقلت شرط الحضور في الموعد", "ذكرت إحضار السيرة والشهادات", "نقلت المدة (30 دقيقة)"],
     },
@@ -101,7 +101,7 @@ export const mediation: NonNullable<Lesson["mediation"]> = [
 export const interaction: NonNullable<Lesson["interaction"]> = [
     {
       id: "int-b1-02-1",
-      scenarioAr: "مقابلة عمل لوظيفة في شركة ألمانية.",
+      scenarioAr: "محاكاة تدريبية افتراضية لمقابلة عمل في شركة ألمانية.",
       scenarioDe: "Ein Vorstellungsgespräch bei einer deutschen Firma.",
       strategyAr: "الاستراتيجية: وصف الخبرات بالماضي (Perfekt في الكلام، وPlusquamperfekt للحدث الأقدم) والرد بثقة مهنية.",
       rounds: [

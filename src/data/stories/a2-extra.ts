@@ -94,7 +94,7 @@ const A2_11: InteractiveStory = {
   title: "Der Zahnarztbesuch",
   titleAr: "زيارة طبيب الأسنان",
   emoji: "🦷",
-  description: "فيل يعاني من ألم الأسنان — الألم والنصائح.",
+  description: "حكاية تعليمية خيالية عن ألم الأسنان؛ النصيحة فيها مثال لغوي وليست إرشاداً طبياً أو تشخيصاً.",
   grammar: "الألم (Zahnschmerzen) • النصائح (sollen) • الخوف",
   segments: [
     { id: 1, de: "Felix hat starke Zahnschmerzen. Er muss zum Zahnarzt.", ar: "فيلكس يعاني من ألم أسنان شديد. يجب أن يذهب لطبيب الأسنان." },

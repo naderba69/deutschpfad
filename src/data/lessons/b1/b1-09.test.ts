@@ -30,6 +30,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     options: ["eine Entscheidung", "eine schwierige Frage", "einen kleinen Fehler", "eine lange Pause"],
     key: "eine Entscheidung",
   },
+  q4: { options: ["ihren Personalausweis", "einen warmen Mantel", "eine Liste mit Namen", "ein eigenes Fahrrad"], key: "ihren Personalausweis" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -164,7 +165,7 @@ describe("B1-09 lesson content audit", () => {
 
   it("uses only evaluable performances as goals, each all-correct", () => {
     expect(lessonB109.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4", "z5"]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e4", "e7", "m1", "m3", "m5", "w1", "w2"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e2", "e5", "e6", "e9", "m2", "m4", "w3"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["e3", "e8"]);
@@ -200,7 +201,7 @@ describe("B1-09 lesson content audit", () => {
       lessonB109.listening.questions.map(({ id, itemId }) =>
         getListeningQuestionTaskId("b1-09", itemId, id, false),
       ),
-    ).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"]);
+    ).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"]);
     expect(getListeningQuestionTaskId("b1-09", "l1", "q1", true)).toBe("listening-transcript:b1-09:l1:q1");
   });
 
@@ -406,8 +407,8 @@ describe("B1-09 lesson content audit", () => {
     const reading = lessonB109.reading;
     expect(reading?.id).toBe("read-b1-09");
     expect(reading?.textType).toBe("bericht");
-    expect(reading?.titleDe).toBe("Eine Stunde pro Woche für andere");
-    expect(reading?.titleAr).toBe("ساعة واحدة في الأسبوع للآخرين");
+    expect(reading?.titleDe).toBe("Fiktiver Übungsbericht: Eine Stunde pro Woche für andere");
+    expect(reading?.titleAr).toBe("نص تدريبي خيالي: ساعة واحدة في الأسبوع للآخرين");
     expect(reading?.paragraphs).toHaveLength(4);
     expect(reading?.paragraphsAr).toHaveLength(4);
     const text = reading!.paragraphs.join(" ").toLowerCase();
@@ -443,8 +444,10 @@ describe("B1-09 lesson content audit", () => {
 
   it("keeps the culture note to a sourced survey statistic", () => {
     const note = lessonB109.fehlerUndTipps.culturalNote.content;
-    expect(note).toContain("39.7%");
-    expect(note).toContain("Freiwilligensurvey 2019");
+    expect(note).toContain("36.7%");
+    expect(note).toContain("Freiwilligensurvey 2024");
+    expect(note).toContain("26.97 مليون");
+    expect(note).toContain("bundesregierung.de");
     expect(note).not.toContain("600");
   });
 

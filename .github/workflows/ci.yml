@@ -81,15 +81,15 @@ jobs:
         if: failure()
         run: |
           # سبب الوجود: تفاصيل الفشل كانت تُقرأ من سجلّ الوظيفة فقط، وهو محجوب في
-          # بيئات لا تصل إلى تخزين GitHub. أسماء الاختبارات تُنشر هنا فيصير الفشل
-          # قابلاً للتشخيص عبر واجهة البرمجة وملخّص التشغيل.
+          # بيئات لا تصل إلى تخزين GitHub. أسماء الاختبارات وأبرز رسائل الخطأ
+          # تُنشر هنا لتسهيل التشخيص عبر واجهة البرمجة وملخّص التشغيل.
           {
-            echo "### ❌ اختبارات متصفح فاشلة"
+            echo "### ❌ اختبارات متصفح فاشلة — الاسم وسبب الفشل"
             echo '```'
-            grep -E "^[[:space:]]+[0-9]+\) " pw-run.log | head -40 || echo "(لم يُعثر على أسماء — راجع السجل الكامل)"
+            grep -E "^[[:space:]]+[0-9]+\\) |^[[:space:]]+Error:|^[[:space:]]+Expected:|^[[:space:]]+Received:|^[[:space:]]+Timeout|Test timeout|^[[:space:]]+Locator:|^[[:space:]]+Call log:|waiting for locator|^[[:space:]]+Error Context:" pw-run.log | head -120 || echo "(لم يُعثر على أسماء — راجع السجل الكامل)"
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
-          grep -E "^[[:space:]]+[0-9]+\) " pw-run.log | head -10 | while IFS= read -r line; do
+          grep -E "^[[:space:]]+[0-9]+\\) |^[[:space:]]+Error:|^[[:space:]]+Expected:|^[[:space:]]+Received:|^[[:space:]]+Timeout|Test timeout|^[[:space:]]+Locator:|^[[:space:]]+Call log:|waiting for locator" pw-run.log | head -40 | while IFS= read -r line; do
             echo "::error title=Playwright::${line}"
           done || true
 

@@ -6,16 +6,16 @@ import type { ReadingText } from "@/types/lesson";
 
 export const readingB204: ReadingText = {
   id: "read-b2-04",
-  titleDe: "Die spät entdeckte Erzählerin",
-  titleAr: "الكاتبة التي اكتُشفت متأخّرةً",
+  titleDe: "Fiktives Porträt: Die spät entdeckte Autorin",
+  titleAr: "بورتريه أدبي متخيّل: الكاتبة التي اكتُشفت متأخّرةً",
   textType: "artikel",
   paragraphs: [
-    "Ein vor drei Jahren erschienener Roman steht seit dem Frühling wieder auf den Listen der Buchhandlungen. Geschrieben wurde er von einer in Leipzig lebenden Autorin, die bis dahin nur einem kleinen Publikum bekannt war. Der damals kaum beachtete Text gilt heute als eine der wichtigsten Erzählungen der letzten Jahre, und die inzwischen vergriffene Erstausgabe wird zu hohen Preisen gehandelt.",
+    "Fiktives Beispiel: Ein vor drei Jahren erschienener Roman steht seit dem Frühling wieder auf den Listen der Buchhandlungen. Geschrieben wurde er von einer in Leipzig lebenden Autorin, die bis dahin nur einem kleinen Publikum bekannt war. Der damals kaum beachtete Text gilt heute als eine der wichtigsten Erzählungen der letzten Jahre, und die inzwischen vergriffene Erstausgabe wird zu hohen Preisen gehandelt.",
     "Erzählt wird die Geschichte einer in den neunziger Jahren ausgewanderten Familie, die nach zwanzig Jahren in ihre alte Stadt zurückkehrt. Im Mittelpunkt steht ein zwischen zwei Sprachen zerrissener Erzähler, der seine Erinnerungen ordnen will und dabei scheitert. Die immer wieder auftauchende Frage nach der eigenen Herkunft trägt das ganze Buch, und die von vielen Kritikern gerühmte Sprache bleibt dabei leise und genau.",
     "Auffällig sind die kurzen, hart geschnittenen Sätze und die wiederkehrenden Bilder: ein leerer Bahnhof, ein nicht abgeschickter Brief, eine nie beantwortete Frage. Diese Technik verlangt vom Lesenden Aufmerksamkeit, denn die zu entschlüsselnden Zusammenhänge werden nicht erklärt, sondern nur angedeutet. Wer die Geduld aufbringt, wird mit einem dichten, aber nie überladenen Text belohnt.",
     "Nicht alle Besprechungen waren positiv. Ein in Frankfurt arbeitender Kritiker nannte das viel gelobte Buch „sprachlich schön, aber inhaltlich dünn“ und bezweifelte die dargestellte Nähe zur Wirklichkeit. Andere Rezensenten widersprachen scharf: Die in viele Sprachen übersetzte Erzählung werde, so heißt es, gerade wegen ihrer Zurückhaltung der Wirklichkeit gerecht.",
     "Das Medienecho überrascht die Autorin selbst. Die erste Lesung in einer kleinen Buchhandlung war kaum besucht; die zweite, zwei Jahre später angesetzte Veranstaltung war binnen einer Stunde ausgebucht. Einige der anwesenden Hörerinnen und Hörer erzählten danach, sie hätten das Buch nach der ersten Seite weggelegt und erst nach der zweiten Lesung wirklich verstanden.",
-    "Wie es weitergeht, ist offen. Ein seit Langem geplanter zweiter Roman liegt nach Angaben des Verlags halb fertig vor, und eine erwartete Übersetzung ins Englische soll im nächsten Jahr erscheinen. Ein Film nach dem Buch ist im Gespräch, aber noch nicht beschlossen. Sicher ist nur, dass die spät entdeckte Erzählerin jetzt zu den meistgelesenen Stimmen ihrer Generation gezählt wird — ein Urteil, das sie selbst in Interviews bescheiden zurückweist.",
+    "Wie es weitergeht, ist offen. Ein seit Langem geplanter zweiter Roman liegt nach Angaben des Verlags halb fertig vor, und eine erwartete Übersetzung ins Englische soll im nächsten Jahr erscheinen. Ein Film nach dem Buch ist im Gespräch, aber noch nicht beschlossen. Sicher ist nur, dass die spät entdeckte Autorin jetzt zu den meistgelesenen Stimmen ihrer Generation gezählt wird — ein Urteil, das sie selbst in Interviews bescheiden zurückweist.",
   ],
   paragraphsAr: [
     "رواية صدرت قبل ثلاث سنوات تعود منذ الربيع إلى قوائم المكتبات. كتبتها مؤلفة تقيم في لايبزغ وكانت حتى ذلك الحين معروفة لجمهور صغير فقط. أما النصّ الذي لم يلقَ اهتماماً يُذكر حينها فيُعدّ اليوم من أهمّ السرديات في السنوات الأخيرة، والطبعة الأولى التي لم تبقَ منها نسخ تُتداول اليوم بأسعار مرتفعة.",
@@ -26,7 +26,7 @@ export const readingB204: ReadingText = {
     "وأما ما سيحدث بعد ذلك فغير محسوم. فثمة رواية ثانية مخطّط لها منذ زمن طويل يقال إنها شبه مكتملة بحسب دار النشر، وترجمة إنجليزية متوقّعة يُفترض أن تصدر في العام القادم. وثمّة حديث عن فيلم مقتبس من الكتاب لم يُحسم بعد. والمؤكد فقط أن الكاتبة المكتشفة متأخّرةً تُعدّ الآن من أكثر الأصوات قراءةً في جيلها — وهو حكم تردّه هي نفسها بتواضع في المقابلات.",
   ],
   glossary: [
-    { de: "die Erzählerin", ar: "الكاتبة الساردة (المؤلفة)", noteAr: "مؤنّثة؛ der Erzähler للمذكّر." },
+    { de: "die Autorin", ar: "المؤلّفة/الكاتبة", noteAr: "مؤنّثة؛ der Autor للمذكّر. Erzählerin تعني عادةً الراوية داخل النص، لا مؤلفة الكتاب بالضرورة." },
     { de: "der Roman", ar: "الرواية", noteAr: "مذكّر؛ einen Roman veröffentlichen (ينشر رواية)." },
     { de: "vergriffen", ar: "نفدت نسخه", noteAr: "صفة من Partizip II؛ die vergriffene Erstausgabe (الطبعة الأولى النافدة)." },
     { de: "erscheinen", ar: "يصدر، يظهر", noteAr: "فعل قوي؛ ist erschienen (صدر)." },
@@ -36,7 +36,7 @@ export const readingB204: ReadingText = {
     { de: "die Sprache", ar: "اللغة (الأسلوب)", noteAr: "مؤنّثة؛ eine leise Sprache (أسلوب هادئ)." },
     { de: "übersetzen", ar: "يترجم", noteAr: "فعل؛ in viele Sprachen übersetzt (مترجم إلى لغات كثيرة)." },
     { de: "die Lesung", ar: "قراءة أدبية (أمسية)", noteAr: "مؤنّثة؛ eine Lesung veranstalten (يقيم أمسية قراءة)." },
-    { de: "die Erstausgabe", ar: "الطبعة الأولى", noteAr: "مؤنّثة؛ die Erstausgabe von 1998." },
+    { de: "die Erstausgabe", ar: "الطبعة الأولى", noteAr: "مؤنّثة؛ die Erstausgabe eines Werks." },
   ],
   questions: [
     {

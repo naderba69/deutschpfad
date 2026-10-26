@@ -94,5 +94,3 @@ export function getLesson(id: string): Lesson | undefined {
 export function getLessonsByUnit(unitId: string): Lesson[] {
   return LESSONS.filter((l) => l.unitId === unitId).sort((a, b) => a.order - b.order);
 }
-
-

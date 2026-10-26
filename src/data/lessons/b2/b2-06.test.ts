@@ -494,26 +494,30 @@ describe("B2-06 lesson content audit", () => {
     expect(reading?.discussionAr?.trim().length).toBeGreaterThanOrEqual(40);
 
     for (const anchor of [
-      "beim bewerben entscheiden oft nur dreißig sekunden",
-      "da die zahl der bewerbungen steigt",
-      "was darin steht, wird inzwischen von einer software geprüft",
-      "deshalb bereiten sich erfolgreiche bewerber",
-      "beim wechsel in ein neues team",
-      "zumal die regeln oft nirgends geschrieben stehen",
-      "eine gründliche einarbeitung die übernahme erleichtert",
-      "homeoffice und gleitzeit haben die bedingungen verändert",
-      "sodass die arbeitszeit zweitrangig erscheint",
+      "die folgende fallgeschichte ist erfunden",
+      "in der beispiel-firma steigt die zahl der bewerbungen",
+      "da die personalabteilung viele unterlagen sichtet",
+      "eine software beim prüfen",
+      "im vorstellungsgespräch geht es in dieser geschichte",
+      "beim wechsel in das neue team",
+      "zumal dort einige regeln nicht aufgeschrieben sind",
+      "eine gründliche einarbeitung erleichtert ihr die übernahme",
+      "in der beispiel-firma sind homeoffice und gleitzeit möglich",
+      "sodass die arbeitszeit flexibel geplant werden kann",
       "wer immer erreichbar ist, hat nie feierabend",
-      "die erreichbarkeit muss begrenzt werden, denn ohne klare grenzen",
-      "zumal in kleinen firmen können diese regeln nur gemeinsam ausgehandelt werden",
+      "die erreichbarkeit zu begrenzen, denn ohne klare grenzen",
+      "da das team klein ist, können die beteiligten",
       "deshalb gehört zum nachdenken über die karriere",
       "so entsteht aus einer stelle",
     ]) {
       expect(text.includes(anchor), `مرساة مفقودة: ${anchor}`).toBe(true);
     }
 
+    expect(text).not.toContain("dreißig sekunden");
+    expect(reading!.paragraphsAr[0]).toContain("افتراضية");
+
     const readingText = JSON.stringify(reading).toLowerCase();
-    for (const marker of ["beim bewerben", "das anschreiben", "einarbeitung", "zumal", "denn", "deshalb", "sodass", "die übernahme"]) {
+    for (const marker of ["fallgeschichte ist erfunden", "das anschreiben", "einarbeitung", "zumal", "denn", "deshalb", "sodass", "die übernahme"]) {
       expect(readingText, `رابط متقدّم مفقود: ${marker}`).toContain(marker);
     }
   });
@@ -521,8 +525,8 @@ describe("B2-06 lesson content audit", () => {
   it("keeps the interaction best replies as complete sentences", () => {
     const rounds = (lessonB206.interaction ?? [])[0].rounds as unknown as { options: { de: string; best?: boolean }[] }[];
     expect(rounds.map((round) => round.options.find((option) => option.best)?.de)).toEqual([
-      "Meiner Ansicht nach profitieren sowohl Arbeitnehmer als auch Arbeitgeber. Während die Mitarbeiter mehr Flexibilität gewinnen, steigt oft auch die Motivation und damit die Produktivität.",
-      "Man könnte Kernzeiten festlegen, in denen alle erreichbar sind, und den Rest flexibel gestalten. So bleibt beides gewährleistet.",
+      "Meiner Ansicht nach können beide Seiten profitieren. Arbeitnehmer gewinnen Flexibilität; Arbeitgeber können mit klaren Absprachen die Zusammenarbeit planbar gestalten.",
+      "Man könnte Kernzeiten festlegen, in denen alle erreichbar sind, und den Rest flexibel gestalten. So lassen sich gemeinsame Abstimmung und flexible Zeiten verbinden.",
     ]);
     for (const round of rounds) {
       expect(round.options.filter((option) => option.best)).toHaveLength(1);
@@ -534,6 +538,9 @@ describe("B2-06 lesson content audit", () => {
     expect(mediation?.id).toBe("med-b2-06-1");
     expect(mediation?.type).toBe("summarize-de-to-ar");
     expect((mediation?.sourceDe ?? "").trim().length, "نصّ المصدر").toBeGreaterThan(100);
+    expect(mediation?.sourceDe).toContain("Fiktiver Fall, keine Studie");
+    expect(mediation?.sourceDe).not.toContain("Studien zeigen");
+    expect(mediation?.taskAr).toContain("الحالة الافتراضية");
   });
 
   it("keeps the meta row aligned with the lesson title", () => {

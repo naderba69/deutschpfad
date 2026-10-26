@@ -7,24 +7,24 @@ import type { Lesson } from "@/types/lesson";
 export const theory: NonNullable<Lesson["theory"]> = [
     {
       id: "t1",
-      titleAr: "حالة المضاف إليه (Genitiv) — الملكية الرسمية",
+      titleAr: "حالة المضاف إليه (Genitiv) — الملكية والعلاقات",
       titleDe: "Der Genitiv: das Buch des Lehrers",
       explanationAr:
-        `Genitiv حالة الملكية: تُجيب عن السؤال wessen? (لمن؟)، وتُربط بها أدوات مختلفة عن بقية الحالات: المذكر والمحايد يأخذان des مع إضافة s أو es إلى الاسم نفسه (das Buch des Lehrers · das Ende des Films)، والمؤنث والجمع يأخذان der بلا تغيير على الاسم (das Haus der Mutter · die Bücher der Studenten).
+        `Genitiv حالة تُستخدم للملكية والعلاقة، وتجيب غالباً عن السؤال wessen? (لمن؟). المذكر والمحايد يأخذان des، ويضاف إلى الاسم غالباً -s أو -es بحسب الكلمة (das Buch des Lehrers · das Ende des Films)، والمؤنث والجمع يأخذان der، وعادةً لا تتغير صيغة الاسم هنا (das Haus der Mutter · die Bücher der Studenten).
 
 والميزة البنيوية أنّ Genitiv يُغني عن جملة كاملة: «الكتاب الذي يملكه المعلّم» تصير في الألمانية كلمتين متلاصقتين «das Buch des Lehrers»، فالاسم الثاني يحمل الأداة التي تُعلن الملكية. ولهذا لا تحتاج الألمانية إلى تركيب إضافي كما في «كتابٌ للمعلّم».
 
-وأربعة حروف جرّ تأخذ Genitiv وحدها: wegen (بسبب) · trotz (رغم) · während (خلال) · statt (بدلاً من). وهي شائعة في النصوص الرسمية والكتابة، ويقابلها في الكلام اليومي ميلٌ إلى Dativ (wegen dem Regen) لا تقبله الصيغة الرسمية.
+تأتي حروف الجرّ wegen (بسبب) · trotz (رغم) · während (خلال) · statt (بدلاً من) غالباً مع Genitiv في الأسلوب المعياري، ولا سيما في الكتابة الرسمية. لكن Dativ بعد بعض هذه الحروف، مثل wegen، شائع في الكلام والاستعمال؛ لذلك لا نصفه بأنه مستحيل، بل نختار Genitiv حين يكون المطلوب أسلوباً رسمياً مكتوباً.
 
-وموضع Genitiv من مسارك: هو المفتاح الذي يُغلق دائرتين معاً، الأول Genitiv الملكية الحقيقية، والثاني حروف الجر المتغيّرة التي درستها في a2-04، حيث كانت تسعة حروف تأخذ Akkusativ أو Dativ. فإن سُئلت عن الجنس والحالة معاً فالطريق واحد: حدّد الجنس أولاً، ثمّ حدّد ما يطلبه الموضع (Genitiv بعد wegen أو ملكية)، ثمّ اكتب الأداة مع الزيادة إن لزمت.`,
+وموضع Genitiv من مسارك: هو حالة الملكية، ويأتي أيضاً بعد حروف جر مثل الأمثلة أعلاه في الأسلوب المعياري. فإن سُئلت عن الجنس والحالة معاً، حدّد الجنس أولاً، ثمّ ما يطلبه الموضع (ملكية أو حرف جرّ)، ثمّ اكتب الأداة واللاحقة المناسبة للاسم.`,
       whyAr:
-        "لماذا نتعلّمها؟ لأنّها شائعة في النصّ المكتوب والرسمي، ولأنّ القارئ يحتاجها لفهم الجمل المعقّدة: جملةٌ مثل «die Ergebnisse der Studie» تحمل معنى كاملاً بلا فعل، فمن لا يعرف Genitiv يتوقف عندها. والفائدة الثانية أنّها تُقصّر التعبير: «der Bruder meines Freundes» أخصر من «der Bruder von meinem Freund»، والكتابة الرسمية تفضّلها. أمّا الكلام اليومي فيستبدلها كثيراً بـvon + Dativ، فلا تصحّح للناس في الشارع، لكن اكتب في الامتحان بالصيغة الرسمية.",
+        "لماذا نتعلّمها؟ لأنّها شائعة في النصّ المكتوب والرسمي، ولأنّ القارئ يحتاجها لفهم الجمل المعقّدة: جملةٌ مثل «die Ergebnisse der Studie» تحمل معنى كاملاً بلا فعل، فمن لا يعرف Genitiv يتوقف عندها. والفائدة الثانية أنّها تُقصّر التعبير: «der Bruder meines Freundes» أخصر من «der Bruder von meinem Freund»، وتكون مناسبة في الكتابة الرسمية. أمّا von + Dativ فهو تركيب صحيح في استعمالات كثيرة، وغالباً ما يبدو أكثر شيوعاً في الكلام اليومي؛ فاختر الصيغة بحسب السياق وتعليمات التمرين.",
       table: {
         title: "أدوات Genitiv",
         columns: ["الجنس", "Nominativ", "Genitiv", "مثال"],
         rows: [
-          { label: "مذكر", cells: ["der", "des (+s)", "das Buch des Lehrers"] },
-          { label: "محايد", cells: ["das", "des (+s)", "das Ende des Films"] },
+          { label: "مذكر", cells: ["der", "des (+s/-es)", "das Buch des Lehrers"] },
+          { label: "محايد", cells: ["das", "des (+s/-es)", "das Ende des Films"] },
           { label: "مؤنث", cells: ["die", "der", "das Haus der Mutter"] },
           { label: "جمع", cells: ["die", "der", "die Bücher der Studenten"] },
         ],
@@ -38,17 +38,17 @@ export const theory: NonNullable<Lesson["theory"]> = [
         { de: "Während der Ausbildung wohnt sie bei ihren Eltern.", ar: "خلال التدريب المهني تسكن عند والديها." },
       ],
       comparisonWithArabic:
-        "«كتاب المعلّم» = das Buch des Lehrers. العربية تلحق المضاف إليه مباشرةً بالتنوين أو بالكسرة («كتابُ المعلّمِ»)، فالملكية معنى يُفهم من المجاورة وحدها بلا أداة. والألمانية تفعل شيئاً آخر: تُعلن الملكية بأداة (des · der) وتزيد الاسم المذكر والمحايد s، حتى أنّه قد يتغيّر شكل الاسم نفسه (das Buch des Lehrers). والسؤال المقابل لـ«لمن؟» هو wessen?، والجواب يأتي في حالة Genitiv. وأقرب ترجمة عربية للتركيب الألماني هي «كتابٌ للمعلّم»، لأنّ اللام فيها هي التي تُعلن الملكية كما تفعل des.",
+        "«كتاب المعلّم» = das Buch des Lehrers. العربية تلحق المضاف إليه مباشرةً بالتنوين أو بالكسرة («كتابُ المعلّمِ»)، فالملكية معنى يُفهم من المجاورة وحدها بلا أداة. والألمانية تفعل شيئاً آخر: تُعلن الملكية بأداة (des · der) وقد تزيد -s أو -es على الاسم المذكر والمحايد، حتى أنّه قد يتغيّر شكل الاسم نفسه (das Buch des Lehrers). والسؤال المقابل لـ«لمن؟» هو wessen?، والجواب يأتي في حالة Genitiv. وأقرب ترجمة عربية للتركيب الألماني هي «كتابٌ للمعلّم»، لأنّ اللام فيها هي التي تُعلن الملكية كما تفعل des.",
       eselsbruecke:
         "«Genitiv = لمن؟ (wessen)» — اسأل: لمن هذا الكتاب؟ الجواب: des Lehrers. وتذكّر حروف الجر الأربعة: wegen-trotz-während-statt (سبب-رغم-خلال-بدلاً من).",
       commonMistakes: [
-        { wrong: "das Buch von dem Lehrer (عامية بدل Genitiv)", right: "das Buch des Lehrers", whyAr: "von + Dativ مقبولة في الكلام اليومي لكنها غير مناسبة في الكتابة الرسمية التي تنتظر Genitiv، والفرق هنا في المستوى اللغوي لا في الصواب النحوي." },
+        { wrong: "das Buch von dem Lehrer (في تمرين يطلب Genitiv)", right: "das Buch des Lehrers", whyAr: "von + Dativ تركيب صحيح في سياقات كثيرة؛ لكن إذا طُلب Genitiv صراحةً فاستعمله في الإجابة." },
         { wrong: "des Lehrer (بدون s)", right: "des Lehrers", whyAr: "الاسم المذكر أو المحايد يضيف s (أو es إذا انتهى بحرف ساكن ثقيل) في Genitiv، فالصواب des Lehrers لا des Lehrer؛ وهي الزيادة التي تُعلن الحالة حتى لو شككت في الأداة." },
-        { wrong: "wegen den Regen", right: "wegen des Regens", whyAr: "wegen من حروف الجرّ التي تأخذ Genitiv وحدها، فيصير der Regen في حالة الجرّ: wegen des Regens، وليس wegen den Regen كما يقع في الاستعمال اليومي المتسامح." },
+        { wrong: "wegen dem Regen (في تمرين يطلب الأسلوب المعياري المكتوب)", right: "wegen des Regens", whyAr: "Genitiv هو الاختيار المعياري الشائع في الكتابة؛ أما Dativ بعد wegen فشائع في الكلام، فلا نصفه بخطأ مطلق خارج سياق التمرين." },
       ],
       relatedRuleComparison: {
         title: "Genitiv أم von؟",
-        content: "في الكلام اليومي: von + Dativ (das Buch von dem Lehrer). في الرسمية والكتابة: Genitiv. أتقن الاثنين: تفهم الاثنين، وتكتب بالرسمي. وقد يُستعمل Dativ بعد بعض حروف الجر مثل wegen وtrotz في الاستعمال اليومي (wegen dem Regen)، وهو ما لا تقبله الصيغة الرسمية هنا.",
+        content: "يمكن التعبير عن الملكية بـGenitiv (das Buch des Lehrers) أو بـvon + Dativ (das Buch von dem Lehrer)، مع اختلاف الأسلوب والسياق. وفي الكتابة الرسمية يكون Genitiv خياراً مناسباً. ويشيع Dativ بعد بعض حروف الجر مثل wegen في الكلام والاستعمال؛ لذا لا نصفه بأنه خطأ مطلق، لكن نستخدم Genitiv إذا طلب التمرين الأسلوب الرسمي.",
       },
     },
     {
@@ -64,7 +64,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
 
 وموضع هذه القاعدة من مسارك: الجملة النسبية جملةٌ ثانوية، فهي تخضع للقانون نفسه الذي عرفته في weil وdass وobwohl — الفعل المصرَّف في النهاية — والفرق أنّ فيها ضميراً يعود على اسمٍ قبلها.`,
       whyAr:
-        "لماذا يتغيّر الضمير؟ لأنّه نائبٌ عن الاسم: يعود عليه بالجنس والعدد، أمّا حالته فيحدّدها دوره داخل الجملة النسبية. هذه أهمّ فكرة في B1، وبها تتحدّث عن أيّ شيء بدقّة بدل أن تُقطّع الكلام جملتين قصيرتين. وأثرها الأدائي مباشر: من يكتب «Das ist mein Bruder. Er wohnt in Bonn» يبدو مبتدئاً، ومن يكتب «Das ist mein Bruder, der in Bonn wohnt» يكتب بلغة مستوى B1، والمعنى واحد والفرق في البناء.",
+        "لماذا يتغيّر الضمير؟ لأنّه يعود على الاسم بالجنس والعدد، أمّا حالته فيحدّدها دوره داخل الجملة النسبية. بهذه القاعدة تربط فكرتين في جملة واحدة: «Das ist mein Bruder. Er wohnt in Bonn» تصبح «Das ist mein Bruder, der in Bonn wohnt». المعنى الأساسي واحد، لكن الصيغة الثانية تستخدم جملة نسبية أكثر تركيباً.",
       table: {
         title: "الضمائر النسبية",
         columns: ["الجنس", "Nominativ", "Akkusativ", "Dativ"],
@@ -81,15 +81,15 @@ export const theory: NonNullable<Lesson["theory"]> = [
         { de: "Die Frau, die du kennst, ist Ärztin.", ar: "المرأة التي تعرفها طبيبة." },
         { de: "Der Student, dem ich helfe, ist aus Tunis.", ar: "الطالب الذي أساعده من تونس." },
         { de: "Die Universität, in der ich studiere, ist groß.", ar: "الجامعة التي أدرس فيها كبيرة." },
-        { de: "Die Ausbildung, die sie macht, dauert drei Jahre.", ar: "التدريب المهني الذي تتدرّب فيه يستغرق ثلاث سنوات." },
+        { de: "Die Dauer der Ausbildung, die sie macht, hängt vom Beruf ab.", ar: "تتوقف مدة التدريب المهني الذي تتدرب فيه على المهنة." },
       ],
       comparisonWithArabic:
         "«الرجل الذي يقف...» — العربية تستعمل اسم الموصول «الذي/التي/الذين» وهو مبنيّ لا يتغيّر مع الحالة، فيقول المتعلّم العربي «الرجل الذي يقف» و«الكتاب الذي أقرؤه» بالأداة نفسها. والألمانية تختار الضمير بحسب الجنس والحالة معاً، فالمذكر يظهر بثلاث صور (der · den · dem) بحسب وظيفته. وهذا فرقٌ تقابليّ يفسّر أشهر خطأ في الباب: أن يُبقى der في كل المواضع لأنّه ما يقابل «الذي» في الذهن. والفعل أيضاً ينقلب: العربية تُبقي الفعل تابعاً للفاعل («الذي هناك يقف» مقبولة لكن قليلة)، والألمانية تُلزم النهاية إلزاماً.",
       eselsbruecke:
         "«الضمير النسبي = بوصلة الجنس + مؤشر الحالة»: اسأل أولاً: الاسم مذكر/مؤنث/محايد؟ ثم: دوره في الجملة النسبية (فاعل/مفعول/بعد حرف جر)؟ الجمع بينهما يعطيك der/den/dem...",
       commonMistakes: [
-        { wrong: "Der Mann, der dort steht, er ist mein Lehrer. (ضمير زائد)", right: "Der Mann, der dort steht, ist mein Lehrer.", whyAr: "لا نكرر الضمير بعد الجملة النسبية: الضمير النسبي der يؤدي وظيفة الفاعل كاملةً، فإعادته في صورة er تُنتج فاعلين لجملة واحدة." },
-        { wrong: "Das Buch, das ich lese es, ... (تكرار)", right: "Das Buch, das ich lese, ...", whyAr: "الضمير النسبي das يقوم مقام المفعول به في الجملة النسبية، فإعادة الضمير es بعده تُنتج مفعولاً ثانياً بلا فعل يستدعيه." },
+        { wrong: "Der Mann, den dort steht, ist mein Lehrer.", right: "Der Mann, der dort steht, ist mein Lehrer.", whyAr: "الفعل steht يحتاج فاعلاً؛ لذلك يكون الضمير النسبي في Nominativ: der، لا den في Akkusativ." },
+        { wrong: "Das Buch, dem ich lese, ist spannend.", right: "Das Buch, das ich lese, ist spannend.", whyAr: "الفعل lesen يأخذ مفعولاً به في Akkusativ؛ لذلك نستخدم das، لا dem في Dativ." },
         { wrong: "الفعل في منتصف الجملة النسبية", right: "الفعل في النهاية: Der Mann, der dort steht", whyAr: "الجملة النسبية جملة ثانوية مثلها مثل weil وdass، فتنتقل الصيغة المصرَّفة إلى نهايتها: Der Mann, der dort steht — لا der dort steht في المنتصف كما في الجملة الرئيسية." },
       ],
       relatedRuleComparison: {

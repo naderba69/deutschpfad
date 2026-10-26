@@ -14,6 +14,7 @@ export const A1_DIALOGUES_2: DailyDialogue[] = [
     titleDe: "Kleidung kaufen",
     emoji: "👕",
     situation: "في متجر ملابس — تريد قميصاً",
+    audioNoteAr: "مصدر ملفات الصوت المرتبطة بهذا الحوار غير موثّق؛ لذلك لا أجزم بأنها تسجيلات بشرية أو مولّدة آلياً. لم تُتحقق مطابقتها للنص أو جودة النطق.",
     turns: [
       { speaker: "البائع", role: "a", de: "Guten Tag! Suchen Sie etwas?", ar: "طاب يومك! تبحث عن شيء؟" },
       { speaker: "أنت", role: "b", de: "Ja, ich suche ein T-Shirt.", ar: "نعم، أبحث عن قميص." },
@@ -58,15 +59,15 @@ export const A1_DIALOGUES_2: DailyDialogue[] = [
       { speaker: "صديق", role: "a", de: "Du hast eine neue Wohnung, oder?", ar: "لديك شقة جديدة، أليس كذلك؟" },
       { speaker: "أنت", role: "b", de: "Ja! Sie ist schön und hell.", ar: "نعم! إنها جميلة ومضيئة." },
       { speaker: "صديق", role: "a", de: "Wie viele Zimmer hat sie?", ar: "كم غرفة فيها؟" },
-      { speaker: "أنت", role: "b", de: "Drei Zimmer: ein Schlafzimmer, ein Wohnzimmer und eine Küche.", ar: "ثلاث غرف: غرفة نوم وغرفة معيشة ومطبخ." },
+      { speaker: "أنت", role: "b", de: "Zwei Zimmer: ein Schlafzimmer und ein Wohnzimmer. Die Küche ist extra.", ar: "غرفتان: غرفة نوم وغرفة معيشة. والمطبخ منفصل عن عدد الغرف." },
       { speaker: "صديق", role: "a", de: "Und wo ist die Wohnung?", ar: "وأين الشقة؟" },
       { speaker: "أنت", role: "b", de: "Im Stadtzentrum, neben dem Park.", ar: "في وسط المدينة، بجانب الحديقة." },
     ],
     questions: [
       { de: "Wie viele Zimmer hat die Wohnung?", ar: "كم غرفة في الشقة؟", options: [
-        { text: "Drei Zimmer", ar: "ثلاث غرف", correct: true, explanation: "نعم — «Drei Zimmer»." },
-        { text: "Zwei Zimmer", ar: "غرفتين", correct: false, explanation: "لا — العدد «Drei Zimmer: ein Schlafzimmer, ein Wohnzimmer und eine Küche»." },
-        { text: "Vier Zimmer", ar: "أربع غرف", correct: false, explanation: "لا — لم تُذكر أربع غرف Vier Zimmer؛ بل ثلاث." },
+        { text: "Zwei Zimmer", ar: "غرفتان", correct: true, explanation: "نعم — «Zwei Zimmer»؛ والمطبخ إضافي ولا يُحسب هنا." },
+        { text: "Drei Zimmer", ar: "ثلاث غرف", correct: false, explanation: "لا — قال «Zwei Zimmer: ein Schlafzimmer und ein Wohnzimmer»؛ وأضاف «Die Küche ist extra»، فلا تُحسب غرفة ثالثة." },
+        { text: "Vier Zimmer", ar: "أربع غرف", correct: false, explanation: "لا — الحوار يحدد «Zwei Zimmer» ثم يوضح «Die Küche ist extra»، فلا يذكر أربع غرف." }
       ]},
       { de: "Wo liegt die Wohnung?", ar: "أين تقع الشقة؟", options: [
         { text: "Im Stadtzentrum", ar: "في وسط المدينة", correct: true, explanation: "صحيح — «Im Stadtzentrum»." },
@@ -83,6 +84,7 @@ export const A1_DIALOGUES_2: DailyDialogue[] = [
       { de: "die Wohnung", ar: "الشقة" },
       { de: "das Schlafzimmer", ar: "غرفة النوم" },
       { de: "das Wohnzimmer", ar: "غرفة المعيشة" },
+      { de: "die Küche", ar: "المطبخ" },
       { de: "im Stadtzentrum", ar: "في وسط المدينة" },
       { de: "neben dem Park", ar: "بجانب الحديقة" },
     ],
@@ -94,6 +96,7 @@ export const A1_DIALOGUES_2: DailyDialogue[] = [
     titleDe: "Einladung zur Party",
     emoji: "🎉",
     situation: "صديق يدعوك إلى حفلة عيد ميلاده",
+    audioNoteAr: "ملفات MP3 المرتبطة بهذا الحوار موجودة، لكن مصدرها غير موثّق في بيانات المشروع؛ لذلك لا أجزم بأنها تسجيلات بشرية أو مولّدة آلياً. لم تُتحقق مطابقتها للنص أو جودة النطق؛ فُحصت تقنياً فقط.",
     turns: [
       { speaker: "صديق", role: "a", de: "Ich habe am Samstag Geburtstag!", ar: "عندي عيد ميلاد يوم السبت!" },
       { speaker: "أنت", role: "b", de: "Herzlichen Glückwunsch! Und was machst du?", ar: "مبروك! وماذا ستفعل؟" },
@@ -140,10 +143,10 @@ export const A1_DIALOGUES_2: DailyDialogue[] = [
       { speaker: "أنت", role: "a", de: "Geradeaus und dann rechts. Ist es weit?", ar: "إلى الأمام ثم يميناً. هل هي بعيدة؟" },
       { speaker: "الرجل", role: "b", de: "Nein, nur fünf Minuten zu Fuß.", ar: "لا، خمس دقائق فقط مشياً." },
       { speaker: "أنت", role: "a", de: "Vielen Dank!", ar: "شكراً جزيلاً!" },
-      { speaker: "الرجل", role: "b", de: "Kein Problem. Viel Glück!", ar: "لا مشكلة. بالتوفيق!" },
+      { speaker: "الرجل", role: "b", de: "Gern geschehen!", ar: "على الرحب والسعة!" },
     ],
     questions: [
-      { de: "Wohin möchte die Person?", ar: "إلى أين تريد الشخص؟", options: [
+      { de: "Wohin möchte die Person?", ar: "إلى أين يريد هذا الشخص الذهاب؟", options: [
         { text: "Zum Bahnhof", ar: "إلى المحطة", correct: true, explanation: "نعم — «wo ist der Bahnhof»." },
         { text: "Zum Supermarkt", ar: "إلى السوبرماركت", correct: false, explanation: "لا — لم يُذكر سوبرماركت Supermarkt؛ والسؤال wo ist der Bahnhof؟." },
         { text: "Zum Krankenhaus", ar: "إلى المستشفى", correct: false, explanation: "لا — لم يُذكر مستشفى Krankenhaus في الحوار." },
@@ -164,7 +167,7 @@ export const A1_DIALOGUES_2: DailyDialogue[] = [
       { de: "geradeaus", ar: "إلى الأمام" },
       { de: "rechts / links", ar: "يميناً / يساراً" },
       { de: "zu Fuß", ar: "مشياً" },
-      { de: "Viel Glück!", ar: "بالتوفيق!" },
+      { de: "Gern geschehen!", ar: "على الرحب والسعة!" },
     ],
   },
   {

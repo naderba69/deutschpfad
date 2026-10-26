@@ -181,6 +181,7 @@ export function WritingPathClient() {
           </span>
         </div>
         <textarea
+          aria-label="نص التدريب الكتابي بالألمانية"
           value={text}
           onChange={(e) => {
             setText(e.target.value);

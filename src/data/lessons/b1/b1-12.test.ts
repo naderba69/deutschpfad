@@ -27,7 +27,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     ],
     key: "Ich gehe früh, um pünktlich zu sein.",
   },
-  m1: { options: ["um … zu", "damit … zu", "wegen … zu", "trotz … zu"], key: "um … zu" },
+  m1: { options: ["um … zu", "damit zu", "wegen zu", "trotz zu"], key: "um … zu" },
   m2: { options: ["damit", "um zu", "trotz", "aufgrund"], key: "damit" },
   q1: {
     options: ["Um als Ingenieur zu arbeiten", "Um zu studieren", "Wegen der Prüfung", "Damit seine Frau arbeitet"],
@@ -41,6 +41,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     options: ["Während der Bauarbeiten", "Wegen des Regens", "Trotz des Verkehrs", "Um zu sparen"],
     key: "Während der Bauarbeiten",
   },
+  q4: { options: ["Wegen seiner langen Arbeitszeiten", "Trotz seiner täglichen Pausen", "Damit sein Chef ihn unterstützt", "Um am Wochenende mehr zu reisen"], key: "Wegen seiner langen Arbeitszeiten" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -187,7 +188,7 @@ describe("B1-12 lesson content audit", () => {
     expect(goal("z1").evidence?.exerciseIds).toEqual(["e1", "e4", "e7", "e14", "m1", "m4", "w1"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e2", "e5", "e10", "e11", "m2"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e3", "e6", "e9", "e12", "m3", "w3"]);
-    expect(goal("z4").evidence?.exerciseIds).toEqual(["q1", "q2", "q3"]);
+    expect(goal("z4").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4"]);
     for (const item of lessonB112.lernziele) {
       expect(item.evidence?.completion, `${item.id} completion`).toBe("all-correct");
       for (const exerciseId of item.evidence?.exerciseIds ?? []) {
@@ -220,7 +221,7 @@ describe("B1-12 lesson content audit", () => {
       lessonB112.listening.questions.map(({ id, itemId }) =>
         getListeningQuestionTaskId("b1-12", itemId, id, false),
       ),
-    ).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"]);
+    ).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"]);
     expect(getListeningQuestionTaskId("b1-12", "l1", "q1", true)).toBe("listening-transcript:b1-12:l1:q1");
   });
 
@@ -411,12 +412,20 @@ describe("B1-12 lesson content audit", () => {
     const reading = lessonB112.reading;
     expect(reading?.id).toBe("read-b1-12");
     expect(reading?.textType).toBe("artikel");
-    expect(reading?.titleDe).toBe("Trotz Vollzeit: Deutsch am Abend");
-    expect(reading?.titleAr).toBe("رغم العمل بدوام كامل: الألمانية في المساء");
+    expect(reading?.titleDe).toContain("Trotz Vollzeit: Deutsch am Abend");
+    expect(reading?.titleDe.toLowerCase()).toContain("fiktiv");
+    expect(reading?.titleAr).toContain("رغم العمل بدوام كامل: الألمانية في المساء");
+    expect(reading?.titleAr).toContain("خيالي");
     expect(reading?.paragraphs).toHaveLength(4);
     expect(reading?.paragraphsAr).toHaveLength(4);
     const text = reading!.paragraphs.join(" ").toLowerCase();
     expect(text.split(/\s+/).filter(Boolean).length).toBeGreaterThanOrEqual(250);
+    expect(text).toContain("keine verlässliche auskunft zu prüfungsanforderungen");
+    expect(JSON.stringify(lessonB112.theory)).toContain("Es ist wichtig, regelmäßig zu üben");
+    expect(JSON.stringify(lessonB112.theory)).toContain("يمكن أن تأتي damit مع الفاعل نفسه أيضاً");
+    expect(JSON.stringify(lessonB112.theory)).toContain("Ich trage einen Pullover, damit ich nicht friere");
+    expect(lessonB112.mediation?.[0]?.taskAr.toLowerCase()).toContain("خيالي");
+    expect(lessonB112.interaction?.[0]?.scenarioAr.toLowerCase()).toContain("خيالية");
 
     expect(reading?.glossary.length).toBeGreaterThanOrEqual(8);
     for (const item of reading!.glossary) {

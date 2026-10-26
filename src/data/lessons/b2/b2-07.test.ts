@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { lessonB207 } from "@/data/lessons/b2/b2-07";
+import { PODCASTS } from "@/data/podcasts";
 import { LESSON_META } from "@/data/lessons/meta";
 import { evaluateExercise } from "@/lib/lesson/exercise-engine";
 import { getGoalEvidenceStatus } from "@/lib/lesson/goal-evidence";
@@ -28,6 +29,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     options: ["Wir brauchen nachhaltige Technik", "Wir brauchen keine Technik", "Technik ist nutzlos", "Wir brauchen mehr Geld"],
     key: "Wir brauchen nachhaltige Technik",
   },
+  q4: { options: ["die Formen des Zusammenlebens", "die Grundfragen des Lebens", "die Bedeutung von Freundschaft", "die menschlichen Bedürfnisse"], key: "die Formen des Zusammenlebens" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -83,8 +85,8 @@ const expectedTransformations: string[] = ["e7", "e13", "w1"];
 const expectedTransformationAnswers: Record<string, string[]> = {
   e7: ["Meiner Meinung nach ist ein Gleichgewicht wichtig", "Meiner Meinung nach ist Balance wichtig"],
   e13: [
-    "Bis 2050 wird sich die Zahl der Rentner verdoppelt haben.",
-    "Bis 2050 wird sich die Zahl der Rentner verdoppelt haben",
+    "Bis 2050 wird sich die Stadt stark verändert haben.",
+    "Bis 2050 wird sich die Stadt stark verändert haben",
   ],
   w1: ["Bis morgen werde ich das Buch beendet haben", "Bis morgen werde ich das Buch gelesen haben"],
 };
@@ -157,7 +159,7 @@ describe("B2-07 lesson content audit", () => {
 
   it("uses only evaluable performances as goals, each all-correct", () => {
     expect(lessonB207.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q4"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e2", "e4", "e5", "m1", "m2", "w1", "w2"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e6", "e7", "m5"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["q2", "q3"]);
@@ -185,8 +187,9 @@ describe("B2-07 lesson content audit", () => {
   it("maps listening evidence to transcript-free task IDs only", () => {
     expect(getListeningQuestionTaskId("b2-07", "l1", "q1", false)).toBe("listening:l1:q1");
     expect(getListeningQuestionTaskId("b2-07", "l2", "q2", false)).toBe("listening:l2:q2");
+    expect(getListeningQuestionTaskId("b2-07", "l3", "q4", false)).toBe("listening:l3:q4");
     expect(getListeningQuestionTaskId("b2-07", "l2", "q3", true)).toBe("listening-transcript:b2-07:l2:q3");
-    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1"]);
+    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l3:q4"]);
     expect(goal("z4").evidence?.taskIds).toEqual(["listening:l2:q2", "listening:l2:q3"]);
     const transcriptIds = lessonB207.lernziele.flatMap(
       (item) => item.evidence?.taskIds?.filter((taskId) => taskId.startsWith("listening-transcript:")) ?? [],
@@ -328,7 +331,7 @@ describe("B2-07 lesson content audit", () => {
     if (e13.type !== "transformation") throw new Error("e13 is not transformation");
     expect(e13.prompt, "نقطة التشابه في المستقبل").toContain("Bis 2050");
     for (const answer of e13.acceptedAnswers ?? []) {
-      expect(answer, "تركيب Futur II").toMatch(/wird sich .+ verdoppelt haben/);
+      expect(answer, "تركيب Futur II").toMatch(/wird sich .+ verändert haben/);
     }
   });
 
@@ -427,7 +430,7 @@ describe("B2-07 lesson content audit", () => {
       }
     }
     const theoryText = JSON.stringify(lessonB207.theory);
-    for (const marker of ["Partizip II", "gegangen sein", "bis", "Erörterung", "Behauptung", "Begründung", "Sanduhr", "Schluss"]) {
+    for (const marker of ["Partizip II", "gegangen sein", "geworden sein", "bis", "Erörterung", "Behauptung", "Begründung", "Schluss"]) {
       expect(theoryText, `بنية مفقودة: ${marker}`).toContain(marker);
     }
   });
@@ -489,6 +492,8 @@ describe("B2-07 lesson content audit", () => {
       expect(item.noteAr?.trim().length ?? 0, `${item.de} ملاحظة`).toBeGreaterThan(5);
     }
 
+    expect(text).toContain("keine prognose über die abfallmenge bis 2050");
+    expect(text).not.toContain("verdoppelt haben");
     expect(reading?.questions.map(({ id }) => id)).toEqual(["rq1", "rq2", "rq3", "rq4"]);
     for (const question of reading!.questions) {
       expect(question.options.length).toBeGreaterThanOrEqual(3);
@@ -505,24 +510,33 @@ describe("B2-07 lesson content audit", () => {
     expect(reading?.discussionAr?.trim().length).toBeGreaterThanOrEqual(40);
 
     for (const anchor of [
-      "die frage, ob wir für menschen verantwortlich sind, die noch nicht geboren wurden",
-      "die künftigen generationen können keine forderungen stellen",
-      "man kann einem menschen schaden, ohne ihm zu begegnen",
-      "dagegen spricht ein einfacher vergleich",
-      "dass wir aufpassen müssen, ihre möglichkeiten nicht zu verkleinern",
-      "was unwiderruflich ist, muss man vermeiden",
-      "bis zum jahr 2050 wird sich die menge dieses abfalls verdoppelt haben",
-      "dass solche regeln den fortschritt bremsen",
-      "dem möchte ich entgegenhalten",
+      "der folgende text ist ein fiktives erörterungsmodell",
+      "welche verantwortung heutige menschen gegenüber künftigen generationen haben könnten",
+      "an heutigen entscheidungen nicht direkt teilnehmen",
+      "man kann jemandem schaden, ohne der person zu begegnen",
+      "dagegen spricht ein gedankenbeispiel",
+      "künftige handlungsmöglichkeiten möglichst offenzuhalten",
+      "entscheidungen mit schwer umkehrbaren, womöglich unwiderruflichen folgen besonders sorgfältig prüfen",
+      "keine prognose über die abfallmenge bis 2050",
+      "dem möchte ich entgegenhalten, dass nicht jede veränderung automatisch fortschritt bedeutet",
       "begründung und verhältnismäßigkeit",
-      "zusammenfassend lässt sich sagen",
+      "zusammenfassend vertritt die fiktive stimme die position",
     ]) {
       expect(text.includes(anchor), `مرساة مفقودة: ${anchor}`).toBe(true);
     }
 
     const readingText = JSON.stringify(reading).toLowerCase();
-    for (const marker of ["wird sich", "haben", "folglich", "zumal", "demnach", "these", "begründung", "fortschritt"]) {
+    for (const marker of ["wird sich", "haben", "daraus folgt", "zumal", "fiktives erörterungsmodell", "these", "begründung", "fortschritt"]) {
       expect(readingText, `بنية مفقودة في القراءة: ${marker}`).toContain(marker);
+    }
+  });
+
+  it("discloses that related podcast claims are illustrative, not sourced findings", () => {
+    for (const id of ["p-b2-digitalisierung", "p-b2-kuenstliche-intelligenz"]) {
+      const episode = PODCASTS.find((candidate) => candidate.id === id);
+      expect(episode, id).toBeDefined();
+      expect(episode?.contentNoteAr?.trim().length ?? 0, `${id} note`).toBeGreaterThan(40);
+      expect(episode?.contentNoteAr).toContain("تدريبي");
     }
   });
 

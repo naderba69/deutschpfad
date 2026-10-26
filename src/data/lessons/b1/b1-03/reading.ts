@@ -6,18 +6,18 @@ import type { ReadingText } from "@/types/lesson";
 
 export const readingB103: ReadingText = {
   id: "read-b1-03",
-  titleDe: "Ein Dorf ohne Müll",
-  titleAr: "قرية بلا نفايات",
+  titleDe: "Ein fiktives Dorf ohne Müll",
+  titleAr: "قرية خيالية بلا نفايات",
   textType: "artikel",
   paragraphs: [
-    "In einem kleinen Dorf in Norddeutschland wird seit fünf Jahren fast kein Müll mehr produziert. Die Idee wurde von einer Gruppe von Nachbarn entwickelt, und heute wird sie in vielen anderen Dörfern nachgeahmt. Am Anfang war es nicht leicht: Die Menschen mussten ihre Gewohnheiten ändern, und viele hatten Angst vor Veränderungen. Zwei Jahre später war die Mehrheit im Dorf zufrieden, und die Zahl der Besucher aus anderen Städten wurde immer größer.",
-    "Zuerst wurde ein kleiner Laden gebaut, in dem Lebensmittel ohne Verpackung verkauft werden. Wer einkaufen will, bringt eigene Gläser und Taschen mit. Der Biomüll wird gesammelt und im Garten der Gemeinde zu Erde verarbeitet. Papier und Glas werden getrennt, und Metall wird einmal pro Monat abgeholt. Auch alte Kleidung wird gesammelt: Zweimal im Jahr wird ein Basar organisiert, und der Erlös wird für neue Bäume im Dorf verwendet.",
+    "In diesem fiktiven Beispiel aus einem kleinen Dorf in Norddeutschland wird seit fünf Jahren fast kein Müll mehr produziert. Die Idee wurde von einer Gruppe von Nachbarn entwickelt, und heute wird sie in vielen anderen Dörfern nachgeahmt. Am Anfang war es nicht leicht: Die Menschen mussten ihre Gewohnheiten ändern, und viele hatten Angst vor Veränderungen. Zwei Jahre später war die Mehrheit im Dorf zufrieden, und die Zahl der Besucher aus anderen Städten wurde immer größer.",
+    "Zuerst wurde ein kleiner Laden gebaut, in dem Lebensmittel ohne Verpackung verkauft werden. Wer einkaufen will, bringt eigene Gläser und Taschen mit. Der Biomüll wird gesammelt und im Garten der Gemeinde zu Kompost verarbeitet. Papier und Glas werden getrennt, und Metall wird einmal pro Monat abgeholt. Auch alte Kleidung wird gesammelt: Zweimal im Jahr wird ein Basar organisiert, und der Erlös wird für neue Bäume im Dorf verwendet.",
     "Die Gemeinde hat viel getan, um die Menschen zu überzeugen. Es gab Vorträge, Filme und gemeinsame Projekte in der Schule. „Es ist wichtig, dass Kinder früh lernen, wie man Müll vermeidet“, sagt die Bürgermeisterin. Die Kinder haben angefangen, den Müll in der Schule zu wiegen, und sie versuchen, jede Woche weniger zu produzieren.",
     "Natürlich gibt es auch Probleme. Manche Familien sagen, dass das Einkaufen ohne Verpackung zu viel Zeit kostet. Andere meinen, dass die Regeln streng sind. Trotzdem wurde entschieden, das Projekt weiterzumachen, weil es sich lohnt: Die Gemeinde spart Geld, die Straßen sind sauberer, und die Menschen sind stolzer auf ihr Dorf. Inzwischen kommt die Idee auch in größere Städte: Dort wird geprüft, ob sich verpackungsfreie Läden auch in großen Vierteln lohnen.",
   ],
   paragraphsAr: [
-    "في قرية صغيرة شمال ألمانيا لم تُنتَج نفايات تقريباً منذ خمس سنوات. الفكرة طوّرتها مجموعة من الجيران، وهي تُقلَّد اليوم في قرى أخرى كثيرة. وفي البداية لم يكن الأمر سهلاً: كان على الناس تغيير عاداتهم، وكان كثيرون يخافون التغيير. وبعد سنتين كانت أغلبية القرية راضية، وعدد الزائرين من مدن أخرى يزداد باستمرار.",
-    "أوّلاً بُني متجر صغير تُباع فيه المواد الغذائية بلا تغليف. ومن يريد التسوّق يحمل معه برطماناته وأكياسه. وتُجمع النفايات العضوية وتُحوّل في حديقة البلدة إلى تراب. ويُفصل الورق عن الزجاج، ويُجمع المعدن مرة كل شهر. وتُجمع الملابس القديمة أيضاً: يُنظَّم مرتين في السنة بازار، ويُخصَّص ريعُه لأشجار جديدة في القرية.",
+    "في هذا المثال الخيالي من قرية صغيرة شمال ألمانيا لم تُنتَج نفايات تقريباً منذ خمس سنوات. الفكرة طوّرتها مجموعة من الجيران، وهي تُقلَّد اليوم في قرى أخرى كثيرة. وفي البداية لم يكن الأمر سهلاً: كان على الناس تغيير عاداتهم، وكان كثيرون يخافون التغيير. وبعد سنتين كانت أغلبية القرية راضية، وعدد الزائرين من مدن أخرى يزداد باستمرار.",
+    "أوّلاً بُني متجر صغير تُباع فيه المواد الغذائية بلا تغليف. ومن يريد التسوّق يحمل معه برطماناته وأكياسه. وتُجمع النفايات العضوية وتُحوّل إلى سماد في حديقة البلدة. ويُفصل الورق عن الزجاج، ويُجمع المعدن مرة كل شهر. وتُجمع الملابس القديمة أيضاً: يُنظَّم مرتين في السنة بازار، ويُخصَّص ريعُه لأشجار جديدة في القرية.",
     "فعلت البلدة كثيراً لإقناع الناس. كانت هناك محاضرات وأفلام ومشاريع مشتركة في المدرسة. تقول رئيسة البلدة: «من المهم أن يتعلّم الأطفال مبكّراً كيف يتجنّبون النفايات». وقد بدأ الأطفال بوزن النفايات في المدرسة، وهم يحاولون إنتاج أقلّ كل أسبوع.",
     "وبالطبع هناك مشكلات أيضاً. بعض العائلات تقول إنّ التسوّق بلا تغليف يكلّف وقتاً كثيراً. وآخرون يرون القواعد صارمة. ومع ذلك تقّرر مواصلة المشروع لأنّه يستحقّ: توفّر البلدة مالاً، والشوارع أنظف، والناس أكثر اعتزازاً ببلدتهم. وصارت الفكرة تصل الآن إلى مدن أكبر: هناك يُدرس ما إذا كانت المتاجر بلا تغليف تستحقّ أيضاً في الأحياء الكبيرة.",
   ],
@@ -28,7 +28,7 @@ export const readingB103: ReadingText = {
     { de: "vermeiden", ar: "يتجنّب", noteAr: "فعل شاذّ: ich vermeide · ich vermied · ich habe vermieden." },
     { de: "trennen", ar: "يفصل", noteAr: "فعل منتظم؛ ومنه die Mülltrennung." },
     { de: "sammeln", ar: "يجمع", noteAr: "فعل منتظم؛ ويُستعمل أيضاً في sammeln Erfahrungen (يجمع خبرات)." },
-    { de: "überzeugen", ar: "يقنع", noteAr: "بلا حرف جرّ مع الشخص: Ich überzeuge ihn — لا «überzeugen zu» إلا بمعنى الإقناع بفعل." },
+    { de: "überzeugen", ar: "يقنع", noteAr: "يأتي الشخص مفعولاً به في Akkusativ: Ich überzeuge ihn. ويشيع von + Dativ لذكر الرأي أو الشيء الذي أقنعه به." },
     { de: "die Bürgermeisterin", ar: "رئيسة البلدة", noteAr: "مؤنّثة بلاحقة -in؛ والمذكّر der Bürgermeister." },
     { de: "sich lohnen", ar: "يستحقّ، يُجدي", noteAr: "فعل انعكاسي: Es lohnt sich — والفاعل es." },
     { de: "die Veränderung", ar: "التغيير", noteAr: "مؤنّثة؛ ومن الفعل ändern، وتُستعمل أيضاً في Veränderungen im Klima." },
@@ -85,7 +85,7 @@ export const readingB103: ReadingText = {
   ],
   redemittel: [
     { de: "Fast kein Müll wird mehr produziert.", ar: "لم تبقَ نفايات تُنتج تقريباً." },
-    { de: "Die Idee wurde von Nachbarn entwickelt.", ar: "طوّر الفكرة جيران." },
+    { de: "Die Idee wurde von Nachbarn entwickelt.", ar: "طوّر الجيران الفكرة." },
     { de: "Es ist wichtig, Müll zu vermeiden.", ar: "من المهم تجنّب النفايات." },
     { de: "Die Kinder haben angefangen, den Müll zu wiegen.", ar: "بدأ الأطفال بوزن النفايات." },
     { de: "Trotzdem wurde entschieden, das Projekt weiterzumachen.", ar: "ومع ذلك تقرّر مواصلة المشروع." },

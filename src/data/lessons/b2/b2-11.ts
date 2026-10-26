@@ -34,4 +34,3 @@ export const lessonB211: Lesson = {
   mediation,
   interaction,
 };
-

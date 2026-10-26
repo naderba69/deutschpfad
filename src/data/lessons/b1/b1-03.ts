@@ -18,7 +18,7 @@ export const lessonB103: Lesson = {
   order: 1,
   titleDe: "Umwelt und Klima",
   titleAr: "البيئة والمناخ",
-  summary: "مشاكل البيئة والحلول، المبني للمجهول (Passiv): werden + Partizip II في المضارع والماضي، وبدائله (man)، والتركيب المصدري (Infinitiv mit zu): Es ist wichtig, die Umwelt zu schützen.",
+  summary: "مفردات البيئة، ومجهول الحدث (Vorgangspassiv: werden + Partizip II) في الحاضر والماضي البسيط، وman بفاعل عام بوصفه تعبيراً بديلاً، وzu + مصدر في أمثلة قصيرة.",
   lernziele,
   einfuehrung,
   review,

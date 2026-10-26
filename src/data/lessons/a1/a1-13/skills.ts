@@ -142,6 +142,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         id: "l1",
         title: "يوم سامي",
+        audioNoteAr: "يستخدم هذا المقطع نطق المتصفح الاصطناعي (TTS)، لا تسجيلاً بشرياً؛ الصوت المتاح قد يختلف باختلاف الجهاز والمتصفح.",
         lines: [
           { speaker: "Anna", de: "Erzähl mal, wie ist dein Tag?", ar: "احكِ لي، كيف يومك؟" },
           { speaker: "Sami", de: "Am Morgen stehe ich um sieben Uhr auf.", ar: "صباحاً أستيقظ في السابعة." },
@@ -154,6 +155,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         id: "l2",
         title: "خطط نهاية الأسبوع",
+        audioNoteAr: "يستخدم هذا المقطع نطق المتصفح الاصطناعي (TTS)، لا تسجيلاً بشرياً؛ الصوت المتاح قد يختلف باختلاف الجهاز والمتصفح.",
         lines: [
           { speaker: "Mona", de: "Was machst du am Wochenende?", ar: "ماذا تفعل في نهاية الأسبوع؟" },
           { speaker: "Karim", de: "Ich möchte ins Kino gehen. Kommst du mit?", ar: "أود الذهاب إلى السينما. هل تأتي معي؟" },
@@ -161,6 +163,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
           { speaker: "Karim", de: "Ich hatte gestern keine Zeit, aber heute bin ich frei.", ar: "لم يكن لدي وقت أمس، لكنني اليوم حر." },
           { speaker: "Mona", de: "Super! Wir sehen uns um acht Uhr im Kino.", ar: "رائع! نلتقي في السينما الساعة الثامنة." },
         ],
+      },
+      {
+        id: "l3",
+        title: "Vorbereitung auf den Deutschtest",
+        lines: [
+          { speaker: "Anna", de: "Wie bereitest du dich auf den Deutschtest vor?", ar: "كيف تستعد لاختبار الألمانية؟", audioSrc: "/audio/lessons/a1-13/ls-a1-13-3-1.mp3" },
+          { speaker: "Sami", de: "Ich wiederhole jeden Tag neue Wörter.", ar: "أراجع كلمات جديدة كل يوم.", audioSrc: "/audio/lessons/a1-13/ls-a1-13-3-2.mp3" },
+          { speaker: "Anna", de: "Übst du auch das Hören?", ar: "وهل تتدرب على الاستماع أيضاً؟", audioSrc: "/audio/lessons/a1-13/ls-a1-13-3-3.mp3" },
+          { speaker: "Sami", de: "Ja, ich höre kurze Dialoge und mache Notizen.", ar: "نعم، أستمع إلى حوارات قصيرة وأدوّن ملاحظات.", audioSrc: "/audio/lessons/a1-13/ls-a1-13-3-4.mp3" },
+          { speaker: "Anna", de: "Wann schreibst du den Übungstest?", ar: "متى ستكتب الاختبار التدريبي؟", audioSrc: "/audio/lessons/a1-13/ls-a1-13-3-5.mp3" },
+          { speaker: "Sami", de: "Am Samstag. Danach bin ich hoffentlich ruhiger.", ar: "يوم السبت. بعده سأكون أهدأ على أمل.", audioSrc: "/audio/lessons/a1-13/ls-a1-13-3-6.mp3" },
+        ],
+        audioNoteAr: "ملفات هذا المشهد مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً. لم نتحقق من مطابقتها للنص أو وضوح النطق وطبيعته، ولا نفترض ثبات هوية الأصوات بين المقاطع أو الدروس.",
       },
     ],
     questions: [
@@ -215,6 +230,27 @@ export const listening: NonNullable<Lesson["listening"]> = {
         optionExplanations: [undefined, "لا — لم تكن في السينما Kino؛ فمنى قالت «Letztes Wochenende war ich zu Hause».", "لا — لم تُذكر حديقة Park؛ والمكان «zu Hause».", "لا — لم تقل «in Tunis»؛ والجواب «war ich zu Hause»."],
         explanation: "قالت منى: Letztes Wochenende war ich zu Hause.",
         errorType: "vocabulary",
+      },
+      {
+        id: "q5", itemId: "l3", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Was wiederholt Sami jeden Tag?", questionAr: "ماذا يراجع سامي كل يوم؟",
+        options: ["neue Wörter", "lange Texte", "Grammatikregeln", "alte Briefe"], correctIndex: 0,
+        explanation: "يقول سامي إنه يراجع كلمات جديدة كل يوم.", errorType: "vocabulary",
+      },
+      {
+        id: "q6", itemId: "l3", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Was macht Sami beim Hören?", questionAr: "ماذا يفعل سامي أثناء الاستماع؟",
+        options: ["Er macht Notizen.", "Er liest ein Buch.", "Er spricht mit dem Lehrer.", "Er sieht einen Film."], correctIndex: 0,
+        explanation: "يستمع سامي إلى حوارات قصيرة ويدوّن ملاحظات.", errorType: "vocabulary",
+      },
+      {
+        id: "q7", itemId: "l3", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Wann schreibt Sami den Übungstest?", questionAr: "متى سيكتب سامي الاختبار التدريبي؟",
+        options: ["Am Samstag", "Am Montag", "Am Mittwoch", "Am Freitag"], correctIndex: 0,
+        explanation: "يذكر سامي أنه سيكتب الاختبار التدريبي يوم السبت.", errorType: "vocabulary",
       },
     ],
   };

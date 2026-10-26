@@ -8,6 +8,7 @@ import {LESSON_SECTIONS} from "@/components/lesson/lesson-sections";
 import {DailyGoalBar, LessonCompletion, LessonPosition, LessonPrevNext} from "@/components/lesson/lesson-client-sections";
 import {LESSON_META} from "@/data/lessons/meta";
 import {getRelatedResources} from "@/data/lessons/related-resources";
+import {buildDefaultOralProductionTask} from "@/lib/lesson/oral-production";
 import {useProgress} from "@/components/providers/progress-provider";
 import {InterleavingReview} from "@/components/lesson/sections/interleaving-review";
 import {buildInterleavedReview, reviewLevelLabel} from "@/lib/lesson/review-generator";
@@ -17,6 +18,7 @@ import {FehlerUndTippsSection} from "@/components/lesson/sections/fehler-und-tip
 import {HoerverstehenSection} from "@/components/lesson/sections/hoerverstehen";
 import {InteraktiveUebungenSection} from "@/components/lesson/sections/interaktive-uebungen";
 import {InteractionSection, MediationSection} from "@/components/lesson/sections/mediation-interaction";
+import {OralProductionSection} from "@/components/lesson/sections/oral-production";
 import {LernkartenSection} from "@/components/lesson/sections/lernkarten";
 import {LernzieleSection} from "@/components/lesson/sections/lernziele";
 import {MiniTestSection} from "@/components/lesson/sections/mini-test";
@@ -103,6 +105,11 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
     }
   }, [currentSection, lesson.id]);
 
+  // يوجد تدريب شفهي مفتوح في كل درس؛ المهام المحررة خصيصاً تتقدم على القالب العام.
+  const oralProductionTasks = lesson.oralProduction?.length
+    ? lesson.oralProduction
+    : [buildDefaultOralProductionTask(lesson)];
+
   // هل لهذا الدرس موارد رديفة مربوطة؟ (يحدد ظهور قسم «التعمّق»)
   const hasRelatedResources = React.useMemo(
     () => getRelatedResources(lesson.id).length > 0,
@@ -116,6 +123,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       /* ═══ الوساطة والتفاعل: تُعرضان فقط إذا كان الدرس يحتويهما ═══ */
       (def.id !== "mediation" || (lesson.mediation && lesson.mediation.length > 0)) &&
       (def.id !== "interaction" || (lesson.interaction && lesson.interaction.length > 0)) &&
+      (def.id !== "oral-production" || oralProductionTasks.length > 0) &&
       /* ═══ نصّ القراءة: يُعرض فقط إن كُتب للدرس ═══ */
       /* ═══ التعمّق: يُعرض فقط إن رُبطت بالدرس موارد رديفة ═══ */
       (def.id !== "vertiefung" || hasRelatedResources),
@@ -256,6 +264,8 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
         return <MediationSection tasks={lesson.mediation ?? []} />;
       case "interaction":
         return <InteractionSection tasks={lesson.interaction ?? []} />;
+      case "oral-production":
+        return <OralProductionSection tasks={oralProductionTasks} />;
       case "lesetext":
         return lesson.reading ? (
           <LesetextSection reading={lesson.reading} lessonId={lesson.id} />

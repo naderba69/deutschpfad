@@ -1,85 +1,116 @@
 /**
  * b1-06 — الشرح النظري (الجزء «theorie»)
- * فُصل من b1-06.ts في المرحلة 5 (سقف الحجم). القيم منقولة حرفياً.
+ * فُصل من b1-06.ts في المرحلة 5 (سقف الحجم).
  */
 import type { Lesson } from "@/types/lesson";
 
 export const theory: NonNullable<Lesson["theory"]> = [
-    {
-      id: "t1",
-      titleAr: "تصريف الصفات (Adjektivdeklination) — الأنماط الثلاثة",
-      titleDe: "Die Adjektivdeklination",
-      explanationAr:
-        "عندما تقف الصفة قبل الاسم (das schöne Bild) فإنها تنال نهاية متغيرة، وليست ثابتة كما في العربية. والنهاية تُختار بثلاثة عوامل مجتمعة: الأداة التي قبلها + جنس الاسم + الحالة الإعرابية. ولذلك يُقال إن هذا الموضوع يحتاج ثلاث معلومات لا واحدة، وأي سهو في أحدها يُنتج نهاية خاطئة.\n\nوالأنماط ثلاثة: (1) بعد الأداة المعرفة der/die/das تكون النهاية ضعيفة، -e أو -en (das schöne Bild · mit dem schönen Bild · die schönen Bilder). (2) بعد أداة الملكية أو النكرة ein/eine/kein/mein تكون النهاية مختلطة: قوية حيث لا تُظهر الأداة الجنس (ein schönes Bild · ein guter Mann) وضعيفة -en حيث تُظهره أو في الجر (mit einem schönen Bild · einen guten Mann). (3) بلا أداة أصلاً تكون النهاية قوية كاملة تحمل وحدها علامة الجنس (schöne Bilder · guter Wein · frische Milch).\n\nوالقاعدة الحاكمة في الباب كله أن المعلومة تُذكر مرة واحدة فقط: هيئة الاسم (جنسه وحالته) يجب أن تظهر مرة واحدة على الأقل، فإذا أظهرتها الأداة أخذت الصفة النهاية الخفيفة، وإذا لم تُظهرها الأداة حملت الصفة العلامة الكاملة بنفسها. وهذه ليست زخرفة بل شرط في التطابق: غياب العلامة تماماً يجعل الاسم غامضاً في السمع، ولذلك لا تُقبل عبارة مثل «ein gute Mann».",
-      whyAr:
-        "لماذا هذا التوزيع العجيب بين النهايات؟ لأن الألمانية ورثت نظاماً قديماً كانت فيه كل كلمة (الأداة والصفة والاسم) تحمل العلامة نفسها، ثم تقلّص النظام تدريجياً واكتفى بعلامة واحدة على الأقل في المجموعة. ومن ثمة صار الحرف الأخير في «das schöne Bild» و»ein schönes Bild» علامتين لا لشيء آخر: هي علامة الدلالة نفسها ولكن على كلمة واحدة فقط بدل ثلاث.\n\nويفيدك هذا الفهم في مكانين: (1) التذكّر بلا استرجاع جداول — يكفي أن تسأل نفسك: هل ظهرت علامة الجنس والحالة في الأداة؟ فردّ على السؤال يعطيك النهاية بلا حفظ. (2) تجنّب الخطأ الشائع «ein gute Mann»: هنا ein لا تُظهر أن الاسم مذكر، فعلينا أن نُظهر ذلك على الصفة، فتصير guter.\n\nوهذا التوزيع يعمل مع الحالات كذلك: لأنه في Dativ الجمع (mit den guten Leuten) يظهر الحرف -n مرتين متقاربين، وقد يُسأل: هل هذا تكرار؟ الجواب: لا، مرة في الأداة den ومرة في الاسم Leuten، والصفة لا تكلف سوى -en المعتادة. أي أن النظام يوزّع المعلومة ولا يكرّرها في موضع واحد مرتين.",
-      table: {
-        title: "نهايات الصفات — النمط مع ein (الأهم)",
-        columns: ["الحالة", "مذكر", "مؤنث", "محايد", "جمع"],
-        rows: [
-          { label: "Nominativ", cells: ["ein guter Mann", "eine gute Frau", "ein gutes Kind", "gute Leute"] },
-          { label: "Akkusativ", cells: ["einen guten Mann", "eine gute Frau", "ein gutes Kind", "gute Leute"] },
-          { label: "Dativ", cells: ["einem guten Mann", "einer guten Frau", "einem guten Kind", "guten Leuten"] },
-        ],
-      },
-      examples: [
-        { de: "Das ist ein wunderschönes Gemälde.", ar: "هذه لوحة رائعة الجمال." },
-        { de: "Ich sehe einen interessanten Film.", ar: "أشاهد فيلماً مثيراً." },
-        { de: "Wir besuchen das berühmte Museum.", ar: "نزور المتحف الشهير." },
-        { de: "Sie wohnt in einer kleinen Stadt.", ar: "تسكن في مدينة صغيرة." },
-        { de: "Mit einem guten Freund ist alles besser.", ar: "مع صديق جيد كل شيء أفضل." },
-        { de: "Ich habe eine interessante Ausstellung gesehen.", ar: "شاهدت معرضاً فنياً مثيراً للاهتمام." },
+  {
+    id: "t1",
+    titleAr: "تصريف الصفات (Adjektivdeklination) — الأنماط الثلاثة",
+    titleDe: "Die Adjektivdeklination",
+    explanationAr:
+      "عندما تأتي الصفة قبل الاسم تتغير نهايتها بحسب الجنس والعدد والحالة، وبحسب الأداة السابقة. وللتعلّم نميز ثلاثة أنماط: الضعيف بعد أداة مصرفة مثل der gute Mann؛ والمختلط مع ein وأشباهها، إذ تأتي نهاية قوية حين لا تحمل صيغة الأداة نهاية ظاهرة (ein guter Mann، ein gutes Bild)، ونهاية ضعيفة بعد الصيغ ذات النهاية (einem guten Mann، einen guten Mann، eine gute Frau)؛ والقوي بلا أداة (guter Wein، frische Milch، mit gutem Wein). هذه طريقة عملية لتنظيم النهايات، وليست قاعدة تقول إن علامة الجنس والحالة تظهر مرة واحدة فقط. مثال: das schöne Bild · mit dem schönen Bild · die schönen Bilder.\n\nاقرأ النهاية ضمن تركيبها، لا منفصلةً عن الاسم: في «ein gutes Bild» لا تحمل الأداة ein علامةً ظاهرة للمحايد، فتظهر النهاية القوية -es على الصفة؛ أما «das gute Bild» فتحمل الأداة das علامة الجنس والحالة، فتأتي الصفة بـ -e. وفي «mit einem guten Bild» يدل حرف الجر mit على Dativ، وتحمل الأداة einem علامة الحالة، فتأخذ الصفة -en. هذه المقارنة الثلاثية تشرح سبب اختلاف النهاية في أمثلة متقاربة المعنى. وعند التصحيح سجّل الأداة والحالة مع المثال، ثم جرّب النمط على اسم جديد مثل Tisch أو Stadt بدلاً من ترديد الصيغة المحفوظة.",
+    whyAr:
+      "تساعدك هذه الأنماط على اختيار النهاية من الصيغة كاملة: قارن ein guter Mann (الأداة ein بلا نهاية ظاهرة في الرفع المذكر) بـ einem guten Mann (الأداة ذات نهاية ظاهرة، والصفة ضعيفة). واحفظ أمثلة متقابلة مع الحالة والجنس، لا تعميم «تظهر المعلومة مرة واحدة». وفي Dativ الجمع نقول mit den guten Leuten: تنتهي الأداة بـ -n، وللاسم جمع Dativ هنا نهاية -n أيضاً، وللصفة -en؛ لكل جزء تصريفه.\n\nعند تحليل مثال جديد، حدّد أولاً الحالة من وظيفة الاسم في الجملة: الفاعل غالباً في Nominativ، والمفعول المباشر في Akkusativ، وما يأتي بعد mit في Dativ. ثم افحص الأداة قبل أن تختار نهاية الصفة. قارن مثلاً: Ein freundlicher Nachbar hilft dem alten Mann. الأولى صفة قبل اسم مذكر مع ein في الرفع، والثانية بعد dem في الجر. لا تستنتج النهاية من معنى الصفة أو من الترجمة وحدهما؛ أداة الاسم وموقعه هما ما يوجهان الاختيار.",
+    table: {
+      title: "نهايات الصفات — النمط المختلط مع ein وأشباهها",
+      columns: ["الحالة", "مذكر", "مؤنث", "محايد", "الجمع"],
+      rows: [
+        { label: "Nominativ", cells: ["ein guter Mann", "eine gute Frau", "ein gutes Kind", "keine guten Leute (kein لا ein)"] },
+        { label: "Akkusativ", cells: ["einen guten Mann", "eine gute Frau", "ein gutes Kind", "keine guten Leute"] },
+        { label: "Dativ", cells: ["einem guten Mann", "einer guten Frau", "einem guten Kind", "keinen guten Leuten"] },
       ],
-      comparisonWithArabic:
-        "العربية تصف بلا تغيير على الصفة نفسها: «قميص أحمر» و»القميص الأحمر» — الصفة ثابتة، والفرق بين التعريف والتنكير يظهر على الاسم لا عليها. ولذلك ينتقل المتعلّم العربي إلى الألمانية بميل طبيعي إلى تجميد الصفة، ثم يظهر الخطأ: ein gute Mann.\n\nلكن الفكرة موجودة في العربية بشكل آخر: في «رجلٌ طويل» التنوين يدل على التنكير، وفي «الرجل الطويل» الألف واللام تدل على التعريف. أي أن العربية تُوزّع الدلالة أيضاً، لكن على الأداة (أل والتنوين) لا على الصفة. الألمانية حشرت العلامة في حرفٍ في آخر الصفة.\n\nوالفرق العملي أن العربية تُطابق الصفة مع الموصوف في أربعة أشياء (التعريف، الجنس، العدد، الإعراب) ولكنها تُظهر ذلك في موضع واحد (الأداة). أما الألمانية فتُطبّق مبدأ المطابقة نفسه وتوزّعه على ثلاثة مواضع: الأداة، والصفة، والاسم — وهذا ما يجعل الباب ثقيلاً عند المتعلّم العربي وعليه أن يتقبّل تغيّر الصفة قبل أن يستسيغه.",
-      eselsbruecke:
-        "«مع ein: الصفة تتحمل الأداة» — الرفع: ein guter (ر-هـ مثل der)، ein gutes (س مثل das). ومع der/die/das: -e للرفع والنصب المفرد و-en للباقي. القاعدة: بعد der تكون -e في المفرد الرفع (كل الأجناس) وفي النصب المؤنث والمحايد، وفي غير ذلك -en (بما فيها الجمع).",
-      commonMistakes: [
-        { wrong: "ein gute Mann", right: "ein guter Mann (بـ -er)", whyAr: "هذا الخطأ الأشهر في الباب كله، وهو خطأ «المعلومة المفقودة»: أداة التنكير ein لا تُبيّن هل الاسم مذكر أم محايد، فلو بقيت الصفة على شكلها الأساسي (gut) أو بنهاية ضعيفة (gute) لما عرف السامع جنس الاسم ولا حالته. والقاعدة أن المعلومة لا بد أن تظهر في مكان ما من المجموعة، فتحمل الصفة العلامة القوية -er التي تساوي علامة der في المذكر الرفع." },
-        { wrong: "Das schönes Bild (بعد das مباشرة)", right: "Das schöne Bild", whyAr: "الخطأ هنا في منهج الاختيار لا في معرفة النهاية: صاحبه حفظ قاعدة الجمع في المذكر (ein schönes Bild) وطبّقها بعد الأداة المعرفة. والصواب أن بعد der/die/das تكتفي الصفة بنهاية ضعيفة لأن الأداة تكفّلت بالدلالة كلها: -e في المفرد رفعاً وفي نصب المؤنث والمحايد، و-en في غير ذلك. والعملية بلا حفظ: كلما كانت الأداة معرفة امتلأت بهذه الدلالة فرجع للصفة القليل." },
-        { wrong: "mit einem gute Freund أم mit einem guten Freund؟", right: "mit einem guten Freund (بـ -en)", whyAr: "بعد حرف الجرّ mit يدخل الاسم في حالة Dativ، وصيغة Dativ في المذكر هي einem. وفي Dativ المذكر تصير نهاية الصفة -en دائماً في هذا النمط. والقاعدة العامة التي تُطبّق هنا وفي غيره: Dativ مفرداً وجمعاً يجلب -en، فمن شكّ في اسم مفرد مذكر بعد حرف جرّ فليجرّب -en أولاً؛ وهذا يندرج في صيغة التحيات المعروفة: Mit freundlichen Grüßen." },
-      ],
-      relatedRuleComparison: {
-        title: "الخبرية أم النعتية؟",
-        content: "بعد sein: خبرية بلا نهاية (Das Bild ist schön). قبل الاسم: نعتية بنهاية (ein schönes Bild). الاختيار الأول: أين الصفة؟ بعد الفعل أم قبل الاسم؟",
-      },
     },
-    {
-      id: "t2",
-      titleAr: "تصريف الصفة بعد أدوات مختلفة",
-      titleDe: "Adjektivdeklination nach verschiedenen Artikeln",
-      explanationAr:
-        "هذا الدرس يقارن الأداة بالأداة، ويُعين على رؤية النمط بدل حفظ ستة جداول منعزلة. الأداة المعرفة تُظهر الجنس والحالة بوضوح (der · die · das · den · dem)، فتنال الصفة بعدها نهاية ضعيفة: -e في المفرد رفعاً وفي نصب المؤنث والمحايد، و-en في غير ذلك (der gute Mann · die gute Frau · das gute Kind · die guten Leute).\n\nوأدوات النكرة والملكية (ein · eine · kein · mein · dein) تُظهر الجنس في موضع واحد فقط وتُخفيه في غيره: في الرفع يقول المذكر ein فتبقى علامة التذكير على الصفة (ein guter Mann)، وفي المؤنث والمحايد تُظهر الأداة العلامة (eine gute Frau · ein gutes Kind)، أما في نصب المؤنث والمحايد فتبقى -e (eine gute Frau · ein gutes Kind) لأن الأداة لم تتغيّر أصلاً. وفي Dativ تكثر -en (einem guten Mann · einer guten Frau · einem guten Kind) لأن الأداة غيّرت هيئتها بنفسها.\n\nويستقر النمط الجامع لما بعد كميات وكلمات مثل alle وmanche وviele وeinige: كلها تحمل علامة الجمع في الأداة، فتأخذ الصفة بعدها -en دائماً (alle guten Männer · viele junge Leute). ومثلها توزيع الأداة، وبهذا تكون أدوات الشمول أخفّ على المتعلّم من ein لأنها كالمعرفة في سلوكها.",
-      whyAr:
-        "لماذا يعتمد الحرف الأخير للصفة على الأداة التي قبلها، لا على الاسم والصفة وحدهما؟ لأن الألمانية تبني التطابق على مبدأ «علامة واحدة ظاهرة على الأقل»، والعلامة التي تظهر توزّع المسؤولية على الجميع. وهذا مبدأ بنائي في اللغة لا شذوذ في هذا الجدول، ومن ثمة يجد المتعلّم بعد قليل أن النهاية تتبع نمطاً ثابتاً في كل جدول من الجداول السبعة.\n\nوعملياً يُعيدك هذا إلى سؤال واحد مفيد: إذا ظهرت في الأداة العلامة القوية لا تحتاجها في الصفة، وإذا لم تظهر فهي على الصفة، فتصير الحرفة «أعرف أين أضع المعلومة» بدل «أذكر النهايات». وأكثر من ذلك: نفس المنطق يُفسّر الجمع، إذ تقول die guten Leute (die المعرفة تظهر الجمعية) مقابل gute Leute (بلا أداة، فالصفة تحمل العلامة).\n\nوهذا الفهم يُختبر مرة واحدة في القراءة: يراه المتعلّم في لافتات الإعلان والمطارات والرسائل الألمانية؛ وحين يتعوّد القراءة بالقاعدة تعود النهاية الصحيحة تلقائية بلا توقف ولا تحليل — وهذا هدف هذا الباب: أن يصير الشيء عادة لا حساباً.",
-      table: {
-        title: "نهايات الصفة حسب الأداة",
-        columns: ["الأداة", "مذكر", "مؤنث/محايد", "الجمع"],
-        rows: [
-          { label: "der/die/das (Nom.)", cells: ["der gute Mann", "die gute Frau / das gute Kind", "die guten Leute"] },
-          { label: "den/die/das (Akk.)", cells: ["den guten Mann", "die gute Frau / das gute Kind", "die guten Leute"] },
-          { label: "dem/der (Dat.)", cells: ["dem guten Mann", "der guten Frau / dem guten Kind", "den guten Leuten"] },
-          { label: "ein/eine (Nom.)", cells: ["ein guter Mann", "eine gute Frau / ein gutes Kind", "—"] },
-          { label: "einen/eine (Akk.)", cells: ["einen guten Mann", "eine gute Frau / ein gutes Kind", "—"] },
-          { label: "einem/einer (Dat.)", cells: ["einem guten Mann", "einer guten Frau / einem guten Kind", "—"] },
-          { label: "بلا أداة (Nom.)", cells: ["guter Wein", "gute Milch / gutes Brot", "gute Leute"] },
-        ],
+    examples: [
+      { de: "Das ist ein wunderschönes Gemälde.", ar: "هذه لوحة رائعة الجمال." },
+      { de: "Ich sehe einen interessanten Film.", ar: "أشاهد فيلماً مثيراً." },
+      { de: "Wir besuchen das berühmte Museum.", ar: "نزور المتحف الشهير." },
+      { de: "Sie wohnt in einer kleinen Stadt.", ar: "تسكن في مدينة صغيرة." },
+      { de: "Mit einem guten Freund ist alles besser.", ar: "مع صديق جيد كل شيء أفضل." },
+      { de: "Ich habe eine interessante Ausstellung gesehen.", ar: "شاهدت معرضاً فنياً مثيراً للاهتمام." },
+    ],
+    comparisonWithArabic:
+      "في العربية الفصحى تتغير الصفة وتطابق الموصوف في وجوه منها الجنس والعدد والتعريف والإعراب: «الرجلُ الطويلُ» و«الرجلَ الطويلَ». لذلك لا يصح القول إن الصفة العربية ثابتة أو إن المطابقة تظهر في الأداة وحدها. لكن أشكال المطابقة في العربية ليست هي نهايات الصفات الألمانية؛ فلا تنقل نهايةً من لغة إلى الأخرى حرفياً. قارن أمثلة كاملة: «رجل طويل» وein großer Mann؛ فالصيغة الألمانية تعتمد على الأداة والحالة والجنس والعدد.",
+    eselsbruecke:
+      "بعد أداة معرّفة مصرفة: نهايات ضعيفة مثل der gute Mann. مع ein: قارن ein guter Mann / einem guten Mann. بلا أداة: guter Wein / mit gutem Wein. وبعد أدوات الكمية راجع المثال المحدد؛ فـ alle guten Leute وviele gute Leute يختلفان.",
+    commonMistakes: [
+      {
+        wrong: "ein gute Mann",
+        right: "ein guter Mann",
+        whyAr: "في الرفع المذكر تأتي صيغة ein بلا نهاية ظاهرة، ولذلك نقول ein guter Mann. قارن ein gutes Kind؛ النهايتان -er و-es جزء من نمط التصريف القوي في هذين المثالين.",
       },
-      examples: [
-        { de: "Der neue Lehrer ist sehr nett.", ar: "المعلم الجديد لطيف جداً." }, { de: "Ein guter Freund hilft immer.", ar: "الصديق الجيد يساعد دائماً." }, { de: "Ich suche eine günstige Wohnung im Zentrum.", ar: "أبحث عن شقة رخيصة في المركز." }, { de: "Der neue Kollege kommt aus Tunesien.", ar: "الزميل الجديد من تونس." }, { de: "Mit freundlichen Grüßen.", ar: "مع تحياتي الودية." },
-        { de: "Alle neuen Schüler bekommen einen guten Platz.", ar: "كل الطلاب الجدد يحصلون على مكان جيد." }
-      ],
-      comparisonWithArabic:
-        "العربية تُطابق الصفة موصوفها في التعريف والجنس والعدد والإعراب: «المعلمُ الجديد» مرفوعٌ ومعه الأداة، و»المعلمَ الجديدَ» منصوب. لكن العلامة الأكثر ظهوراً في العربية هي علامة الإعراب على آخر الكلمة، والصورة الأصلية للصفة لا تتغيّر داخلياً. وأما في الألمانية فنهاية الصفة هنا ليست إعراباً فقط، بل مسؤولية دلالية: تُبيّن جنس الاسم إن لم تُبيّنه الأداة.\n\nوهنا فائدة عملية كبرى للمتعلّم العربي: إذا رأى الفرق بعين «من يحمل العلامة» استطاع أن يتذكّره بلا حفظ. فالسؤال في الألمانية ليس «ما هو إعراب الصفة»، بل «من يحمل العلامة اليوم: الأداة أم الصفة؟». وفي العربية لا يظهر هذا السؤال لأن العلامة يحملها التنوين أو أل دائماً.\n\nومثال يبين الخسارة من عدم الانتباه: «ein guter Freund» صحيح، ولو قيلت خطأً «ein gute Freund» لما ظهر في الترجمة العربية أي خطأ لأن الصفة لا تتحرّك في العربية. ومن ثمة ينبغي أن تكون العين على الأداة أولاً، ثم على الصفة، ثم على الاسم: هذا هو ترتيب القراءة الصحيح لهذا الباب.",
-      eselsbruecke: "قاعدة واحدة تكفي: إن أظهرت الأداة الجنس والحالة (der، die، das) فالصفة ضعيفة بـ e أو en. وإن غابت الأداة أو كانت غامضة (ein) فالصفة هي التي تحمل العلامة القوية: ein guter Mann.",
-      commonMistakes: [
-        { wrong: "ein gute Mann", right: "ein guter Mann", whyAr: "هذا هو الخطأ رقم واحد في هذا الباب: تثبيت الصفة على شكلها الأساسي حيث يجب أن تتغيّر. والسبب أنه في العربية لا تتغيّر الصفة أبداً، فينتقل المتعلّم إلى الألمانية بميل إلى ترك ما لا يتغيّر. والقاعدة العملية: إن كانت الأداة لا تُظهر الجنس (ein) فالصفة تُظهره بقوة: ein guter Mann · ein gutes Kind. ومن ثمة نهايات الصفة ليست إعراباً زائداً بل إعلان جنس." },
-        { wrong: "der gute Männer", right: "die guten Männer", whyAr: "خطأ مزدوج: أداة الجمع في الرفع die لا der، والصفة بعدها -en دائماً. والسبب الثاني هو الأهم: في الجمع يختفي فاصل الأجناس اللغوية وتختفي صيغة الاسم، فالعلامة الوحيدة الباقية هي -en. ولهذا ينبغي أن تحفظ أن الجمع المعرّف يُنتج تلقائياً: die + ‑en + اسم (die guten Männer · die jungen Leute)." },
-        { wrong: "mit freundliche Grüße", right: "mit freundlichen Grüßen", whyAr: "خطأ يظهر في الرسائل الرسمية تحديداً. بعد حرف الجر mit يدخل الاسم في حالة Dativ، وجمع Dativ يأخذ كما معروف نوناً في الاسم (Grüßen) و-en في الصفة (freundlichen) — ومن ثمة تحمل الصيغة الجاهزة «Mit freundlichen Grüßen» علامتين لنفس الوظيفة: مرة على الصفة ومرة على نهاية الاسم." },
-      ],
-      relatedRuleComparison: {
-        title: "الصفة قبل الاسم أم بعد الفعل؟",
-        content: "الصفة الخبرية لا تُصرَّف أبداً: Der Mann ist gut. أما الصفة الوصفية التي تسبق الاسم فتُصرَّف دائماً: der gute Mann. هذا أول ما ينبغي فحصه قبل اختيار النهاية.",
+      {
+        wrong: "Das schönes Bild (بعد das مباشرة)",
+        right: "Das schöne Bild",
+        whyAr: "بعد أداة التعريف المصرفة نقول das schöne Bild. لا تنقل نهاية -es من مثال مثل ein schönes Bild إلى تركيب مختلف.",
       },
+      {
+        wrong: "mit einem gute Freund",
+        right: "mit einem guten Freund",
+        whyAr: "بعد mit يأتي Dativ، وهنا الأداة einem تقتضي النمط الضعيف: einem guten Freund. لا تعمم -en على كل Dativ؛ بلا أداة نقول mit gutem Wein. وفي التحية mit freundlichen Grüßen تأخذ الصفة -en، والاسم جمع Dativ نهاية -n.",
+      },
+    ],
+    relatedRuleComparison: {
+      title: "الخبرية أم النعتية؟",
+      content:
+        "بعد sein لا تأخذ الصفة نهاية تصريفية: Das Bild ist schön. قبل الاسم تأخذ نهاية مناسبة للأداة والجنس والحالة: ein schönes Bild.",
     },
-  ];
+  },
+  {
+    id: "t2",
+    titleAr: "تصريف الصفة بعد أدوات مختلفة",
+    titleDe: "Adjektivdeklination nach verschiedenen Artikeln",
+    explanationAr:
+      "بعد الأداة المعرّفة المصرفة تأتي الصفة غالباً بالنمط الضعيف: -e في بعض مواضع المفرد، و-en في مواضع أخرى، مثل der gute Mann، die gute Frau، das gute Kind، die guten Leute. وتتغير صيغ ein وأدوات الملكية بحسب الجنس والحالة؛ وفي الرفع لا تحمل ein نهاية ظاهرة مع المذكر والمحايد، فنقول ein guter Mann وein gutes Kind، بينما نقول einem guten Mann وeiner guten Frau في Dativ. أما الكلمات الكمية فليست على نهاية واحدة: بعد alle تأتي الصفة غالباً بـ -en (alle guten Männer)، بينما بعد viele وmanche وeinige قد تأتي نهاية قوية مثل -e في الجمع (viele junge Leute، manche interessante Bücher، einige gute Orchester). احفظ المثال مع الكلمة والحالة، ولا تعمم -en على جميعها.\n\nفي التطبيق لا تبدأ بحفظ جدول النهايات كله دفعة واحدة؛ خذ زوجاً من الجمل يختلف في الأداة مع بقاء الاسم والحالة: die jungen Leute مقابل junge Leute. في الأولى تظهر علامة الجمع في die، فتأخذ الصفة النهاية الضعيفة -en؛ وفي الثانية لا توجد أداة، فتظهر علامة الجمع على الصفة -e. ثم بدّل الحالة: mit den jungen Leuten، مع ملاحظة أن Dativ الجمع يضيف -n إلى الاسم إن لم يكن منتهياً به. هذه المقارنة تساعد على رؤية ما يتغير فعلاً في كل تركيب.",
+    whyAr:
+      "الأداة تساعد في اختيار نهاية الصفة، لكن لا تختزل النظام في فكرة «علامة واحدة ظاهرة». قارن die guten Leute (صفة ضعيفة بعد أداة مصرفة) بـ gute Leute (تصريف قوي بلا أداة)، ثم قارن alle guten Leute بـ viele gute Leute. هذه أمثلة تعليمية على أنماط مختلفة، لا قاعدة واحدة تنطبق على كل أداة كمية. التدريب المتكرر على أمثلة متنوعة يساعد على ترسيخ الاختيار، لكنه لا يضمن أن تصبح النهاية تلقائية لدى كل متعلم.",
+    table: {
+      title: "نهايات الصفة حسب الأداة",
+      columns: ["الأداة", "مذكر", "مؤنث/محايد", "الجمع"],
+      rows: [
+        { label: "der/die/das (Nom.)", cells: ["der gute Mann", "die gute Frau / das gute Kind", "die guten Leute"] },
+        { label: "den/die/das (Akk.)", cells: ["den guten Mann", "die gute Frau / das gute Kind", "die guten Leute"] },
+        { label: "dem/der (Dat.)", cells: ["dem guten Mann", "der guten Frau / dem guten Kind", "den guten Leuten"] },
+        { label: "ein/eine (Nom.)", cells: ["ein guter Mann", "eine gute Frau / ein gutes Kind", "—"] },
+        { label: "einen/eine (Akk.)", cells: ["einen guten Mann", "eine gute Frau / ein gutes Kind", "—"] },
+        { label: "einem/einer (Dat.)", cells: ["einem guten Mann", "einer guten Frau / einem guten Kind", "—"] },
+        { label: "بلا أداة (Nom.)", cells: ["guter Wein", "gute Milch / gutes Brot", "gute Leute"] },
+      ],
+    },
+    examples: [
+      { de: "Der neue Lehrer ist sehr nett.", ar: "المعلم الجديد لطيف جداً." },
+      { de: "Ein guter Freund hilft immer.", ar: "الصديق الجيد يساعد دائماً." },
+      { de: "Ich suche eine günstige Wohnung im Zentrum.", ar: "أبحث عن شقة رخيصة في المركز." },
+      { de: "Der neue Kollege kommt aus Tunesien.", ar: "الزميل الجديد من تونس." },
+      { de: "Mit freundlichen Grüßen.", ar: "مع تحياتي الودية." },
+      { de: "Alle neuen Schüler bekommen einen guten Platz.", ar: "كل الطلاب الجدد يحصلون على مكان جيد." },
+    ],
+    comparisonWithArabic:
+      "في العربية الفصحى تطابق الصفة موصوفها في وجوه منها التعريف والجنس والعدد والإعراب، مثل «المعلمُ الجديدُ» و«المعلمَ الجديدَ». وتظهر المطابقة في الصفة أيضاً، لا في الأداة وحدها. أما الألمانية فلها نهاياتها الخاصة المرتبطة بالأداة والجنس والعدد والحالة؛ لذلك تفيد مقارنة أمثلة كاملة، لا افتراض أن إحدى اللغتين تخلو من تصريف الصفة.",
+    eselsbruecke:
+      "بعد أداة معرّفة مصرفة: der gute Mann. مع ein: ein guter Mann / einem guten Mann. بلا أداة: guter Wein / mit gutem Wein. وتذكّر الفرق بين alle guten Leute وviele gute Leute.",
+    commonMistakes: [
+      {
+        wrong: "ein gute Mann",
+        right: "ein guter Mann",
+        whyAr: "في هذا المثال نقول ein guter Mann؛ فالنهاية -er ترافق صيغة ein غير المنتهية في الرفع المذكر. وبعد أداة ذات نهاية نقول einem guten Mann.",
+      },
+      {
+        wrong: "der gute Männer",
+        right: "die guten Männer",
+        whyAr: "أداة الجمع في الرفع هي die، وبعدها تأتي الصفة الضعيفة -en: die guten Männer.",
+      },
+      {
+        wrong: "mit freundliche Grüße",
+        right: "mit freundlichen Grüßen",
+        whyAr: "بعد mit يأتي Dativ: الصفة هنا freundlichen والاسم الجمع Grüßen. احفظ تركيب التحية كما هو، ولا تعمم نهاية حالة واحدة على كل التراكيب.",
+      },
+    ],
+    relatedRuleComparison: {
+      title: "الصفة قبل الاسم أم بعد الفعل؟",
+      content:
+        "الصفة الخبرية لا تأخذ نهاية تصريفية هنا: Der Mann ist gut. أما الصفة الوصفية التي تسبق الاسم فتأخذ نهاية مناسبة: der gute Mann. افحص موضع الصفة ثم الأداة والجنس والحالة.",
+    },
+  },
+];

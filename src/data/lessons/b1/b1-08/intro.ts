@@ -7,13 +7,13 @@ import type { Lesson } from "@/types/lesson";
 export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z1",
-      de: "Ich kann zwei Gespräche über Technik und technische Entscheidungen verstehen und die Fragen dazu beantworten.",
-      ar: "أن أفهم حوارين عن التقنية والقرارات التقنية وأجيب عن تفاصيلهما.",
+      de: "Ich kann drei kurze Gespräche über Technik, Entscheidungen und Datenschutz verstehen und Fragen dazu beantworten.",
+      ar: "أن أفهم ثلاثة حوارات قصيرة عن التقنية والقرارات وحماية البيانات وأجيب عن أسئلة حولها.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["q1", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l2:q3"],
-        labelAr: "أجيب صحيحاً عن q1 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q3", "q4"],
+        taskIds: ["listening:l1:q1", "listening:l2:q3", "listening:l3:q4"],
+        labelAr: "أجيب صحيحاً عن q1 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -68,11 +68,11 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "في A1 تعلمت werden (يصبح) وفي B1 تعلمته (مجهول). واليوم الاستخدام الثالث: المستقبل! Ich werde lernen = سأتعلم. هل لاحظت؟ werden يتغير معناها حسب ما يليها: صفة (يصبح) / تصريف ثالث (مجهول) / مصدر (مستقبل)!",
+      "تذكّر أن werden يأتي في تراكيب مختلفة: مع صفة قد يعني «يصبح» (Das Wetter wird kalt)، ومع Partizip II يشارك في بناء المبني للمجهول (Das Haus wird gebaut)، ومع المصدر يكوّن Futur I (Ich werde lernen). هذه أنماط للتعلّم، ويُحدّد التركيب معنى werden.",
     motivatingQuestionDe: "Wie wird die Zukunft aussehen?",
     contextAr:
       "نناقش التقنية: مزايا وعيوب، ثم نضيف الروابط المزدوجة للتعبير المتوازن، والمستقبل للتحدث عن الغد.",
-    contextDe: "Die Technik wird sich weiter entwickeln.",
+    contextDe: "Wie könnte die Technik unseren Alltag verändern?",
     connectionToPreviousAr: "تتذكر werden الثلاثية (يصبح/مجهول). اليوم: المستقبل — يكتمل مثلث werden. والروابط المزدوجة تضيف عمقاً لتعبيرك.",
     activateVocabulary: [
       { de: "die Technik", ar: "التقنية" },

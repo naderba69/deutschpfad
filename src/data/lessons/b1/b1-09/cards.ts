@@ -32,7 +32,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«Kunde» مفرد بلا نهاية، والسياق يتطلب الجمع أو الجر هنا.",
+        "«Kunde» هو الرفع المفرد؛ بعد dem نستخدم الداتيف المفرد Kunden.",
         "«Kundes» نهاية مضاف إليه، ولا تناسب الجر بعد dem.",
         "«Kundem» نهاية خاطئة لهذا الاسم.",
       ],
@@ -88,18 +88,18 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
   ];
 
 export const flashcards: NonNullable<Lesson["flashcards"]> = [
-    { id: "fc1", de: "das Ehrenamt", ar: "العمل التطوعي", example: "Ehrenamt ist wichtig.", exampleAr: "العمل التطوعي مهم.", level: "B1" },
+    { id: "fc1", de: "das Ehrenamt", ar: "العمل التطوعي", example: "Er übernimmt ein Ehrenamt.", exampleAr: "يتولى عملاً تطوعياً.", level: "B1" },
     { id: "fc2", de: "der Verein", ar: "الجمعية", example: "Der Verein hilft Kindern.", exampleAr: "الجمعية تساعد الأطفال.", level: "B1" },
     { id: "fc3", de: "die Spende", ar: "التبرع", example: "Die Spende ist großzügig.", exampleAr: "التبرع سخي.", level: "B1" },
     { id: "fc4", de: "eine Frage stellen", ar: "يطرح سؤالاً", example: "Darf ich eine Frage stellen?", exampleAr: "هل أستطيع طرح سؤال؟", level: "B1" },
     { id: "fc5", de: "eine Entscheidung treffen", ar: "يتخذ قراراً", example: "Wir treffen eine Entscheidung.", exampleAr: "نتخذ قراراً.", level: "B1" },
     { id: "fc6", de: "Bescheid sagen", ar: "يبلغ", example: "Sag mir Bescheid!", exampleAr: "أبلغني!", level: "B1" },
-    { id: "fc7", de: "die n-Deklination", ar: "تصريف n", example: "den Studenten", exampleAr: "الطالب (نصب)", level: "B1" },
+    { id: "fc7", de: "die n-Deklination", ar: "تصريف n", example: "Ich kenne den Studenten.", exampleAr: "أعرف الطالبَ.", level: "B1" },
     { id: "fc8", de: "das Mitglied", ar: "العضو", example: "Ich bin Mitglied im Verein.", exampleAr: "أنا عضو في الجمعية.", level: "B1" },
     { id: "fc9", de: "der Freiwillige", ar: "المتطوّع", example: "Viele Freiwillige helfen in der Gemeinde.", exampleAr: "متطوّعون كثيرون يساعدون في البلدة.", level: "B1" },
     { id: "fc10", de: "teilnehmen an", ar: "يشارك في", example: "Sie nimmt an einem Projekt teil.", exampleAr: "تشارك في مشروع.", level: "B1" },
     { id: "fc11", de: "sich kümmern um", ar: "يعتني بـ", example: "Er kümmert sich um die Kinder.", exampleAr: "يعتني بالأطفال.", level: "B1" },
-    { id: "fc12", de: "die Einarbeitung", ar: "التأهيل والتدريب على العمل", example: "Gute Einarbeitung ist die Voraussetzung für neue Freiwillige.", exampleAr: "التأهيل الجيد شرط للمتطوّعين الجدد.", level: "B1" },
+    { id: "fc12", de: "die Einarbeitung", ar: "التأهيل والتدريب على العمل", example: "Die Einarbeitung für neue Freiwillige beginnt nächste Woche.", exampleAr: "يبدأ تدريب المتطوعين الجدد الأسبوع المقبل.", level: "B1" },
   ];
 
 export const mediation: NonNullable<Lesson["mediation"]> = [
@@ -125,7 +125,7 @@ export const interaction: NonNullable<Lesson["interaction"]> = [
           speakerAr: "لماذا تتطوع؟",
           options: [
             { de: "Weil ich der Gesellschaft etwas zurückgeben möchte. Außerdem lerne ich neue Menschen und Fähigkeiten kennen.", ar: "لأنني أريد رد الجميل للمجتمع. كما أتعرف على أشخاص ومهارات جديدة.", best: true, replyDe: "Das ist edel. Aber es kostet viel Zeit.", replyAr: "هذا نبيل. لكنه يكلف وقتاً كثيراً." },
-            { de: "Ich habe keine Zeit für andere.", ar: "ليس لدي وقت للآخرين.", best: false, replyDe: "Jeder hat ein bisschen Zeit für gute Zwecke.", replyAr: "كل شخص لديه القليل من الوقت للأعمال الخيرية." },
+            { de: "Ich habe keine Zeit für andere.", ar: "ليس لدي وقت للآخرين.", best: false, replyDe: "Das verstehe ich. Vielleicht finden wir eine kleinere Aufgabe, die zu deiner Zeit passt.", replyAr: "أتفهم ذلك. ربما نجد مهمة أصغر تناسب وقتك." },
           ],
         },
         {

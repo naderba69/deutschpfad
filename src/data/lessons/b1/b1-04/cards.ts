@@ -73,16 +73,16 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
   ];
 
 export const flashcards: NonNullable<Lesson["flashcards"]> = [
-    { id: "fc1", de: "der Konjunktiv II", ar: "صيغة الشرط", example: "Ich würde reisen.", exampleAr: "كنت سأسافر.", level: "B1" },
+    { id: "fc1", de: "der Konjunktiv II", ar: "صيغة الافتراض والشرط", example: "Ich würde reisen.", exampleAr: "كنت سأسافر.", level: "B1" },
     { id: "fc2", de: "würde + Infinitiv", ar: "كنت سأفعل", example: "Ich würde lesen.", exampleAr: "كنت سأقرأ.", level: "B1" },
     { id: "fc3", de: "wäre", ar: "كان سيكون", example: "Wenn ich reich wäre...", exampleAr: "لو كنت غنياً...", level: "B1" },
-    { id: "fc4", de: "hätte", ar: "كان سيملك", example: "Ich hätte gern Zeit.", exampleAr: "كنت أود وقتاً.", level: "B1" },
+    { id: "fc4", de: "hätte", ar: "أودّ أن يكون لديّ", example: "Ich hätte gern Zeit.", exampleAr: "أودّ أن يكون لديّ وقت.", level: "B1" },
     { id: "fc5", de: "könnte", ar: "كان يستطيع", example: "Könnten Sie helfen?", exampleAr: "هل يمكنكم المساعدة؟", level: "B1" },
     { id: "fc6", de: "solltest", ar: "ينبغي (نصيحة)", example: "Du solltest schlafen.", exampleAr: "ينبغي أن تنام.", level: "B1" },
     { id: "fc7", de: "die Gesellschaft", ar: "المجتمع", example: "Die Gesellschaft ändert sich.", exampleAr: "المجتمع يتغير.", level: "B1" },
     { id: "fc8", de: "kritisch", ar: "نقدي", example: "Sei kritisch mit den Medien.", exampleAr: "كن نقدياً مع الإعلام.", level: "B1" },
     { id: "fc9", de: "die Nachricht", ar: "الخبر", example: "Ich lese morgens keine Nachrichten.", exampleAr: "لا أقرأ الأخبار في الصباح.", level: "B1" },
-    { id: "fc10", de: "der Einfluss", ar: "التأثير", example: "Die Medien haben großen Einfluss auf die Meinung.", exampleAr: "للإعلام تأثير كبير على الرأي.", level: "B1" },
+    { id: "fc10", de: "der Einfluss", ar: "التأثير", example: "Der Einfluss der Medien ist ein Thema.", exampleAr: "تأثير الإعلام موضوع للنقاش.", level: "B1" },
     { id: "fc11", de: "empfehlen", ar: "ينصح بـ", example: "Ich würde dir ein Wochenende ohne Nachrichten empfehlen.", exampleAr: "كنت سأنصحك بنهاية أسبوع بلا أخبار.", level: "B1" },
     { id: "fc12", de: "verzichten auf", ar: "يستغني عن", example: "Auf Nachrichten möchte ich nicht verzichten.", exampleAr: "لا أريد أن أستغني عن الأخبار.", level: "B1" },
   ];
@@ -91,9 +91,9 @@ export const mediation: NonNullable<Lesson["mediation"]> = [
         {
       id: "med-b1-04-1", type: "summarize-de-to-ar",
       titleAr: "لخّص خبراً إعلامياً مع نقل موقف الكاتب",
-      sourceDe: "Die neue Ausstellung im Museum zeigt moderne Kunst. Der Kritiker findet sie mutig, aber einige Besucher sind enttäuscht.",
+      sourceDe: "Fiktives Übungsbeispiel: Die neue Ausstellung im Museum zeigt moderne Kunst. Der Kritiker findet sie mutig, aber einige Besucher sind enttäuscht.",
       taskAr: "لخّص الخبر ونقل وجهتي نظر الناقد والزوار دون رأيك.",
-      modelAnswerAr: "«المعرض الجديد في المتحف يعرض الفن الحديث. يجد الناقد أنه جريء، لكن بعض الزوار خاب أملهم.»",
+      modelAnswerAr: "«في هذا المثال الخيالي، يعرض المعرض الجديد في المتحف فناً حديثاً. يرى الناقد أنه جريء، لكن بعض الزوار خاب أملهم.»",
       keyPointsAr: ["نقلت موضوع المعرض", "ذكرت رأي الناقد (جريء)", "نقلت خيبة أمل بعض الزوار"],
     },
   ];
@@ -101,15 +101,15 @@ export const mediation: NonNullable<Lesson["mediation"]> = [
 export const interaction: NonNullable<Lesson["interaction"]> = [
     {
       id: "int-b1-04-1",
-      scenarioAr: "نقاش عن تأثير وسائل التواصل الاجتماعي.",
-      scenarioDe: "Diskussion über soziale Medien.",
+      scenarioAr: "نقاش تدريبي افتراضي عن وسائل التواصل؛ العبارات نماذج لآراء وليست نتائج بحثية.",
+      scenarioDe: "Fiktive Übungsdiskussion über soziale Medien.",
       strategyAr: "الاستراتيجية: إبداء رأي متوازن مع أمثلة.",
       rounds: [
         {
           speakerDe: "Sind soziale Medien eher positiv oder negativ?",
           speakerAr: "هل وسائل التواصل إيجابية أم سلبية أكثر؟",
           options: [
-            { de: "Einerseits verbinden sie Menschen weltweit. Andererseits verbreiten sie viele falsche Informationen.", ar: "من ناحية تربط الناس عالمياً. ومن ناحية أخرى تنشر معلومات خاطئة كثيرة.", best: true, replyDe: "Ein ausgewogenes Urteil. Was ist wichtiger?", replyAr: "حكم متوازن. ما الأهم؟" },
+            { de: "Einerseits verbinden sie Menschen weltweit. Andererseits finde ich, dass man dort auch auf falsche Informationen stößt.", ar: "من ناحية تربط الناس عالمياً. ومن ناحية أخرى أرى أن المرء قد يصادف فيها معلومات خاطئة أيضاً.", best: true, replyDe: "Ein ausgewogenes Urteil. Was ist wichtiger?", replyAr: "حكم متوازن. ما الأهم؟" },
             { de: "Sie sind nur positiv, alles andere ist Lüge.", ar: "إنها إيجابية فقط، وكل شيء آخر كذب.", best: false, replyDe: "Das ist zu einseitig. Es gibt klare Nachteile.", replyAr: "هذا منحاز جداً. توجد عيوب واضحة." },
           ],
         },
@@ -118,7 +118,7 @@ export const interaction: NonNullable<Lesson["interaction"]> = [
           speakerAr: "ما الأهم: التواصل أم الحقيقة؟",
           options: [
             { de: "Beides ist wichtig, aber ohne Wahrheit nützt die Verbindung wenig. Deshalb sollten Nutzer kritisch denken.", ar: "كلاهما مهم، لكن بدون الحقيقة يقل نفع التواصل. لذلك يجب على المستخدمين التفكير النقدي.", best: true, replyDe: "Da stimme ich dir vollkommen zu.", replyAr: "أوافقك تماماً." },
-            { de: "Nur die Verbindung zählt, Wahrheit ist egal.", ar: "التواصل فقط يهم، الحقيقة غير مهمة.", best: false, replyDe: "Das ist gefährlich. Falschinformationen schaden der Gesellschaft.", replyAr: "هذا خطير. المعلومات الخاطئة تضر المجتمع." },
+            { de: "Nur die Verbindung zählt, Wahrheit ist egal.", ar: "التواصل فقط يهم، الحقيقة غير مهمة.", best: false, replyDe: "Das ist sehr pauschal. Wie kann man Informationen prüfen?", replyAr: "هذا تعميم واسع جداً. كيف يمكن التحقق من المعلومات؟" },
           ],
         },
       ],

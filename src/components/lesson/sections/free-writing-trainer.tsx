@@ -5,6 +5,7 @@ import {PenLine, RotateCcw} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
 import {AutoGrowTextarea} from "@/components/shared/auto-grow-textarea";
+import {SelfReviewRatings} from "@/components/lesson/sections/self-review-ratings";
 import type {Lesson} from "@/types/lesson";
 
 /**
@@ -14,31 +15,45 @@ import type {Lesson} from "@/types/lesson";
 export function FreeWritingTrainer({lesson}: {lesson: Lesson}) {
   const [text, setText] = React.useState("");
 
-  const task = React.useMemo(() => {
+  const writingGuide = React.useMemo(() => {
     if (lesson.id === "a1-14") {
-      return "اكتب مسودة قصيرة عن عطلة سابقة: اذكر نشاطاً مع haben وآخر مع sein، ثم راجع اختيارك للمساعد وترتيب Partizip II.";
+      return {
+        task: "اكتب 3–4 جمل قصيرة عن عطلة سابقة: اذكر نشاطاً مع haben وآخر مع sein، ثم راجع اختيار المساعد وترتيب Partizip II.",
+        target: "نحو 25–45 كلمة (دليل تقريبي، وليس شرط نجاح)",
+        checklist: [
+          "هل اخترت haben أو sein بحسب الفعل ومعناه في المثال، لا اعتماداً على Akkusativ وحده؟",
+          "هل وضعت الفعل المساعد المصرف في V2 في الجملة الرئيسية الخبرية؟",
+          "هل وضعت Partizip II في نهاية المجال الفعلي في الجملة الرئيسية؟",
+        ],
+      };
     }
 
-    const prompts: Record<string, string> = {
-      A1: "اكتب 2–3 جمل قصيرة عن موضوع الدرس مستخدماً كلمة أو قاعدة منه.",
-      A2: "اكتب 3–4 جمل مترابطة عن موضوع الدرس مستخدماً مفرداته وتراكيبه.",
-      B1: "اكتب فقرة قصيرة عن موضوع الدرس، ثم راجع تسلسل الأفكار والتراكيب.",
-      B2: "اكتب نصاً موجزاً عن موضوع الدرس، ثم راجع وضوح الحجة والترابط والسجل اللغوي.",
-    };
-    return prompts[lesson.level] ?? `اكتب مسودة قصيرة عن موضوع الدرس: «${lesson.titleAr}».`;
+    const guides = {
+      A1: {
+        task: `اكتب رسالة قصيرة أو 3–4 جمل عن «${lesson.titleAr}». اذكر معلومة أساسية عن نفسك أو موقفاً يومياً، واستخدم كلمات مألوفة من الدرس.`,
+        target: "نحو 20–40 كلمة أو 3–4 جمل قصيرة",
+        checklist: ["هل كتبت جُملاً بسيطة مفهومة؟", "هل ذكرت المعلومة المطلوبة عن الموضوع؟", "هل راجعت الكلمات والأحرف الكبيرة والنقطة؟"],
+      },
+      A2: {
+        task: `اكتب رسالة شخصية قصيرة عن «${lesson.titleAr}»: صف موقفاً مألوفاً، واذكر ما تحتاجه أو تفضّله وسبباً بسيطاً.`,
+        target: "نحو 40–60 كلمة",
+        checklist: ["هل أوضحت غرض الرسالة أو الموقف؟", "هل أضفت تفصيلاً وسبباً بسيطاً؟", "هل رتبت الجمل واستعملت تحية/خاتمة إذا ناسبت الرسالة؟"],
+      },
+      B1: {
+        task: `اكتب بريداً أو مساهمة قصيرة في منتدى عن «${lesson.titleAr}»: اشرح موقفاً أو تجربة، واذكر رأيك مع سبب أو مثال، ثم قدّم اقتراحاً أو خلاصة.`,
+        target: "نحو 80–100 كلمة",
+        checklist: ["هل لبّيت كل نقاط المهمة؟", "هل دعمت رأيك بسبب أو مثال؟", "هل رتبت النص إلى بداية ومتن وخاتمة مناسبة؟", "هل راجعت الروابط والتصريف والترقيم؟"],
+      },
+      B2: {
+        task: `اكتب نصاً منظماً عن «${lesson.titleAr}»: وضّح موقفك، وادعمه بحجج وأمثلة، ثم ناقش جانباً مقابلاً واختم باستنتاج.`,
+        target: "نحو 120–150 كلمة (تدريب عام، وليس محاكاة امتحان)",
+        checklist: ["هل حددت القضية وموقفك بوضوح؟", "هل دعمت الحجج بأمثلة أو تفسير؟", "هل عرضت جانباً مقابلاً أو قيداً؟", "هل كان الترابط والسجل اللغوي مناسبين؟", "هل راجعت البنية والإملاء وعلامات الترقيم؟"],
+      },
+    } satisfies Record<Lesson["level"], {task: string; target: string; checklist: string[]}>;
+    return guides[lesson.level];
   }, [lesson.id, lesson.level, lesson.titleAr]);
 
-  const checklist = lesson.id === "a1-14"
-    ? [
-        "هل اخترت haben أو sein بحسب الفعل ومعناه في المثال، لا اعتماداً على Akkusativ وحده؟",
-        "هل وضعت الفعل المساعد المصرف في V2 في الجملة الرئيسية الخبرية؟",
-        "هل وضعت Partizip II في نهاية المجال الفعلي في الجملة الرئيسية؟",
-      ]
-    : [
-        "هل أجبت عن كل أجزاء المهمة؟",
-        "هل استعملت مفردة أو تركيباً من الدرس في سياق مفهوم؟",
-        "هل راجعت ترتيب الكلمات والنهايات وعلامات الترقيم؟",
-      ];
+  const wordCount = text.trim() ? text.trim().split(/\s+/).length : 0;
 
   return (
     <div className="space-y-4 rounded-2xl border border-primary/20 bg-primary/[0.03] p-4 sm:p-5">
@@ -48,7 +63,8 @@ export function FreeWritingTrainer({lesson}: {lesson: Lesson}) {
         </span>
         <div>
           <h4 className="text-sm font-extrabold">مسودة كتابة للمراجعة الذاتية</h4>
-          <p className="mt-1 text-sm text-muted-foreground">{task}</p>
+          <p className="mt-1 text-sm text-muted-foreground">{writingGuide.task}</p>
+          <p className="mt-1 text-xs font-semibold text-primary">حجم مقترح: {writingGuide.target}</p>
         </div>
       </div>
 
@@ -63,12 +79,16 @@ export function FreeWritingTrainer({lesson}: {lesson: Lesson}) {
         className="text-sm"
       />
 
-      <div className="rounded-xl border bg-background/70 p-3">
-        <h5 className="text-xs font-bold">قائمة مراجعة ذاتية</h5>
-        <ul className="mt-2 list-disc space-y-1 ps-5 text-xs text-muted-foreground">
-          {checklist.map((item) => <li key={item}>{item}</li>)}
-        </ul>
+      <div className="flex items-center justify-between text-xs text-muted-foreground" aria-live="polite">
+        <span>عدد الكلمات التقريبي:</span>
+        <strong>{wordCount}</strong>
       </div>
+
+      <SelfReviewRatings
+        id={`writing-review-${lesson.id}`}
+        title="قائمة مراجعة ذاتية"
+        items={writingGuide.checklist}
+      />
 
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="max-w-2xl text-xs leading-relaxed text-muted-foreground">

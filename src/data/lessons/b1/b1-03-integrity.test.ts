@@ -8,8 +8,8 @@ describe("b1-03 — سلامة القراءة والادّعاءات المثب�
     const reading = lessonB103.reading;
     expect(reading?.id).toBe("read-b1-03");
     expect(reading?.textType).toBe("artikel");
-    expect(reading?.titleDe).toBe("Ein Dorf ohne Müll");
-    expect(reading?.titleAr).toBe("قرية بلا نفايات");
+    expect(reading?.titleDe).toBe("Ein fiktives Dorf ohne Müll");
+    expect(reading?.titleAr).toBe("قرية خيالية بلا نفايات");
     expect(reading?.paragraphs).toHaveLength(4);
     expect(reading?.paragraphsAr).toHaveLength(4);
     const text = reading!.paragraphs.join(" ").toLowerCase();
@@ -47,11 +47,20 @@ describe("b1-03 — سلامة القراءة والادّعاءات المثب�
     expect(text).not.toContain("cy = سي");
     // الشرح المُرقّى (المرحلة 5) يثبّت الصيغ الثلاث بدل صيغة واحدة قديمة،
     // ويُبقي الفروق التي كانت مثبّتة: von + Dativ · worden بلا ge.
-    for (const claim of ["wird/werden", "worden", "von + Dativ", "durch + Akkusativ"]) {
+    for (const claim of ["wird + Partizip II", "worden", "von + Dativ", "durch + Akkusativ"]) {
       expect(text, `الادّعاء المثبَّت: ${claim}`).toContain(claim);
     }
     expect(text).toContain("ماضٍ مركب (Perfekt)");
-    expect(text).toContain("Kreislaufwirtschaftsgesetz");
+    expect(text).toContain("تعليمات البلدية");
+    expect(text).not.toMatch(/2500|§\s*11|§\s*14|Kreislaufwirtschaftsgesetz/);
+    expect(lessonB103.theory?.[0].explanationAr).toContain("هذه صيغة نشطة بفاعل عام");
+    expect(lessonB103.einfuehrung?.motivatingQuestionAr).toContain("Das Klima wird wärmer");
+    expect(lessonB103.einfuehrung?.motivatingQuestionAr).toContain("Futur");
+    expect(lessonB103.miniTest?.find(({ id }) => id === "m6")).toMatchObject({ type: "multiple-choice", correctIndex: 0 });
+    expect(lessonB103.reading?.paragraphs[0]).toContain("fiktiven Beispiel");
+    expect(lessonB103.reading?.paragraphs[1]).toContain("zu Kompost verarbeitet");
+    expect(lessonB103.pronunciation?.items.find(({ de }) => de === "recyceln")?.note).toContain("/riˈsaɪ̯kl̩n/");
+    expect(lessonB103.pronunciation?.tip).toContain("speechSynthesis");
+    expect(lessonB103.pronunciation?.tip).toContain("ليس تسجيلاً بشرياً");
   });
-
 });

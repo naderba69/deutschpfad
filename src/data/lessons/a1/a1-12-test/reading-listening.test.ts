@@ -57,9 +57,9 @@ describe("A1-12 audited lesson content", () => {
     expect(text.discussionAr).toContain("غير مسجّل كدليل");
   });
 
-  it("checks every line and question in both listening texts without treating transcript reveal as performance", () => {
-    expect(lessonA112.listening.items).toHaveLength(2);
-    expect(lessonA112.listening.items.map((item) => item.lines.length)).toEqual([4, 4]);
+  it("checks every line and question in all three listening texts without treating transcript reveal as performance", () => {
+    expect(lessonA112.listening.items).toHaveLength(3);
+    expect(lessonA112.listening.items.map((item) => item.lines.length)).toEqual([4, 4, 6]);
     const itemsById = new Map(lessonA112.listening.items.map((item) => [item.id, item]));
     for (const item of lessonA112.listening.items) {
       expect(item.title.trim()).toBeTruthy();
@@ -72,6 +72,7 @@ describe("A1-12 audited lesson content", () => {
     expect(itemsById.get("l1")?.lines[0]?.de).toContain("heute in Berlin");
     expect(itemsById.get("l2")?.lines[1]?.de).toContain("Bei uns in Tunesien");
     expect(itemsById.get("l2")?.lines[1]?.de).toContain("oft sehr heiß");
+    expect(itemsById.get("l3")?.lines[1]?.de).toContain("bewölkt und kühl");
     expect(lessonA112.listening.questions.find((question) => question.id === "q3")?.questionDe).toBe(
       "Wie ist das Wetter im Sommer in Tunesien?",
     );
@@ -93,6 +94,9 @@ describe("A1-12 audited lesson content", () => {
       "listening:l1:q1",
       "listening:l1:q2",
       "listening:l2:q3",
+      "listening:l3:q4",
+      "listening:l3:q5",
+      "listening:l3:q6",
     ]);
     expect(listeningGoal?.evidence?.labelAr).toContain("قبل كشف");
     expect(

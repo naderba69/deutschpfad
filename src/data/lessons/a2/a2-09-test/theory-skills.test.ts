@@ -6,6 +6,7 @@
 import { describe, expect, it } from "vitest";
 
 import { lessonA209 } from "@/data/lessons/a2/a2-09";
+import { LESSON_META } from "@/data/lessons/meta";
 import { expectedPronunciationIpa } from "./fixtures";
 
 describe("A2-09 lesson audit", () => {
@@ -99,6 +100,10 @@ describe("A2-09 lesson audit", () => {
       ["شيء نشكر عليه", ["für + Akkusativ", "für die Blumen", "على الزهور"]],
     ]);
     expect(lessonA209.summary).not.toContain("Dativ الكاملة");
+    const metaSummary = LESSON_META.find((item) => item.id === "a2-09")?.summary ?? "";
+    expect(metaSummary).toContain("تطبيقات منتقاة على صيغ Dativ");
+    expect(metaSummary).toContain("لا يغطي الدرس جميع وظائف Dativ");
+    expect(metaSummary).not.toMatch(/Dativ[^.؛]*كامل(?:ة|اً)|كل وظائف Dativ/i);
     expect(lessonA209.theory[0]?.explanationAr).toContain("لا يعني ذلك أن كل كلمة تعبّر عن شخص تأتي في Dativ");
     expect(lessonA209.theory[1]?.explanationAr).toContain("لا تجعل «وجود حركة جسدية» وحده قاعدة");
   });
@@ -131,9 +136,11 @@ describe("A2-09 lesson audit", () => {
     const helfeShadowing = lessonA209.pronunciation.shadowing?.find((item) => item.de === "Ich helfe dir gern.");
     expect(helfeShadowing?.tip).toContain("المقطع الأول من helfe /ɛ/");
     expect(helfeShadowing?.tip).toContain("النهاية -e إلى /ə/");
-    expect(lessonA209.pronunciation.tip).toContain("تقييم النطق هنا آلي");
-    expect(lessonA209.pronunciation.tip).toContain("لا يعد حكماً بشرياً");
-    expect(lessonA209.pronunciation.tip).toContain("لا يثبت وحده الإتقان");
+    expect(lessonA209.pronunciation.tip).toContain("مقارنة نصية تقريبية");
+    expect(lessonA209.pronunciation.tip).toContain("لا يحلل الإشارة الصوتية");
+    expect(lessonA209.pronunciation.tip).toContain("لا يقيس مخارج الحروف أو النبر أو جودة النطق");
+    expect(lessonA209.pronunciation.tip).toContain("ولا يثبت إتقاناً أو مستوى CEFR");
+    expect(lessonA209.pronunciation.tip).not.toContain("تقييم النطق هنا آلي");
     expect(lessonA209.lernziele.some((goal) => /Sprechen|التحدث|كلاماً مقوّماً/i.test(`${goal.de} ${goal.ar}`))).toBe(
       false,
     );

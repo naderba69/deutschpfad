@@ -62,12 +62,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "في الجملة خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
-      wrongSentence: "Wegen den Regen bleiben wir.",
-      wrongWord: "den Regen",
+      instructionAr: "حوّل الجزء المظلّل إلى Genitiv كما يقتضي الأسلوب الرسمي المكتوب في هذا التمرين.",
+      wrongSentence: "Wegen dem Regen bleiben wir.",
+      wrongWord: "dem Regen",
       correctWord: "des Regens",
-      options: ["des Regens", "des Regen", "der Regen", "die Regen"],
-      explanation: "wegen يأخذ Genitiv: des Regens. den هنا حالة نصب، وهي خطأ.",
+      options: ["des Regens", "des Regen", "dem Regen", "der Regen"],
+      explanation: "اختر صيغة Genitiv المناسبة للأسلوب الرسمي المكتوب: wegen des Regens. ويشيع Dativ بعد wegen في الكلام، لذلك فالمطلوب هنا تحديد مستوى الأسلوب لا الادعاء بأن الصيغة الأخرى مستحيلة.",
       errorType: "case",
     },
     {
@@ -133,9 +133,9 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       instructionAr: "صل كل مصطلح بالشرح المناسب له:",
       pairs: [
         { left: "das Gymnasium", right: "مدرسة ثانوية تؤدي إلى الأبيتور" },
-        { left: "das Abitur", right: "شهادة تؤهل للدراسة الجامعية" },
+        { left: "das Abitur", right: "شهادة تمنح مؤهلاً عاماً لدخول الجامعة، مع شروط إضافية لبعض البرامج" },
         { left: "die Grundschule", right: "المرحلة الابتدائية الأولى" },
-        { left: "der Bachelor", right: "أول شهادة جامعية (عادةً ثلاث سنوات)" },
+        { left: "der Bachelor", right: "شهادة جامعية أولى بعد إنهاء برنامج بكالوريوس" },
       ],
       explanation: "أنواع المدارس والشهادات الأساسية في النظام الألماني.",
       errorType: "vocabulary",
@@ -166,7 +166,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e15",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+      instructionAr: "صحّح الضمير النسبي في الجملة واختر الصيغة المناسبة.",
       wrongSentence: "Das ist der Mann, der ich gestern geholfen habe.",
       wrongWord: "der",
       correctWord: "dem",
@@ -178,17 +178,17 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
 
 export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     mistakes: [
-      { wrong: "das Buch von dem Lehrer (عامية في الكتابة)", right: "das Buch des Lehrers", whyAr: "الرسمية تحتاج Genitiv." },
+      { wrong: "اختيار von + Dativ في تمرين يطلب Genitiv رسميّاً", right: "das Buch des Lehrers", whyAr: "التركيب بـvon + Dativ ليس خطأً مطلقاً؛ لكن إذا طلب التمرين أسلوباً رسمياً مكتوباً فصيغة Genitiv هي المقصودة." },
       { wrong: "des Lehrer (بدون s)", right: "des Lehrers", whyAr: "المذكر/المحايد يضيف s في Genitiv." },
-      { wrong: "Der Mann, der dort steht, er ist mein Lehrer. (ضمير زائد)", right: "Der Mann, der dort steht, ist mein Lehrer.", whyAr: "لا نكرر الضمير بعد النسبية." },
+      { wrong: "Der Mann, den dort steht, ist mein Lehrer.", right: "Der Mann, der dort steht, ist mein Lehrer.", whyAr: "الفعل steht يحتاج فاعلاً؛ لذلك نستخدم der في حالة Nominativ، لا den في Akkusativ." },
     ],
     eselsbruecken: [
-      "«Genitiv = لمن؟ (wessen)» — وحروفه الأربعة: wegen-trotz-während-statt.",
+      "«Genitiv = لمن؟ (wessen)» — ومن حروف الجر التي تأتي معه غالباً: wegen, trotz, während, statt.",
       "«الضمير النسبي: جنس الاسم + دور الكلمة داخل النسبية».",
     ],
     culturalNote: {
       title: "الدراسة في ألمانيا",
       content:
-                "الجامعات الحكومية في ألمانيا لا تفرض عموماً رسوم دراسة عامة على الطلاب الألمان ومواطني الاتحاد الأوروبي، لكن كل طالب يدفع Semesterbeitrag في كل فصل، وهو عادةً بين 150 و400 يورو تقريباً، ويغطي غالباً تذكرة المواصلات (Semesterticket) وخدمات مؤسسة الطلاب (Studierendenwerk). استثناء معروف: الطلاب من خارج الاتحاد الأوروبي في بادن-فورتمبرغ يدفعون 1500 يورو للفصل. ومن جهات المنح: DAAD (الهيئة الألمانية للتبادل الأكاديمي). وعبارة مفيدة: «Bewerbung um einen Studienplatz» (طلب مقعد دراسي).",
+                "لا تفرض معظم الجامعات الحكومية رسوماً دراسية عامة على برامج كثيرة، لكن يدفع الطلاب Semesterbeitrag (مساهمة فصلية) منفصلةً عن الرسوم الدراسية، وتختلف قيمتها وخدماتها من جامعة إلى أخرى. وقد توجد رسوم دراسية إضافية بحسب الولاية والجامعة والبرنامج ووضع الطالب؛ فمثلاً تفرض ولاية بادن-فورتمبرغ وبعض جامعات بافاريا رسوماً على بعض الطلاب من خارج الاتحاد الأوروبي، مع اختلاف القواعد والاستثناءات. تحقّق دائماً من صفحة الجامعة والبرنامج؛ فالمساهمة الفصلية ليست هي الرسوم الدراسية. وDAAD (الهيئة الألمانية للتبادل الأكاديمي) مصدر معلومات ومنح، لا إعفاء عام من الرسوم. عبارة مفيدة: «Bewerbung um einen Studienplatz» (طلب مقعد دراسي).",
     },
   };

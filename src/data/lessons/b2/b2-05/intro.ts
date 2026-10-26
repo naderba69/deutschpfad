@@ -11,15 +11,15 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أفهم حديثاً عن الإنصات والتواصل ونماذجه.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["q1"],
-        taskIds: ["listening:l1:q1"],
-        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q4"],
+        taskIds: ["listening:l1:q1", "listening:l3:q4"],
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 وl3 في q4، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
       id: "z2",
       de: "Ich kann die fortgeschrittenen Konnektoren benutzen.",
-      ar: "أن أستخدم الروابط المتقدمة: indem, anstatt...zu, ohne...zu, es sei denn.",
+      ar: "أن أستخدم بعض الروابط المتقدمة في الجمل والتمارين، ومنها indem وanstatt...zu وohne...zu وes sei denn.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["e1", "e2", "e4", "e7", "m1", "m3", "w1", "w2"],
@@ -49,8 +49,8 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z4",
-      de: "Ich kann Modalpartikeln natürlich benutzen.",
-      ar: "أن أستخدم الجسيمات المشدِّدة (doch, ja, mal, denn, eigentlich) لنطق ألماني طبيعي.",
+      de: "Ich kann die ungefähre Funktion ausgewählter Modalpartikeln in Beispielsätzen erkennen.",
+      ar: "أن أتعرف على الوظيفة التقريبية لبعض الجسيمات الحوارية في الجمل المعروضة.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["e11", "e12", "e13", "m6", "m7"],
@@ -61,7 +61,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b2-05:m6",
           "mini-test:b2-05:m7",
         ],
-        labelAr: "أربط الجسيم بوظيفته وأختاره في الجملة (e11 وe12 وe13 وm6 وm7)، دون كشف الحل.",
+        labelAr: "أطابق بعض الجسيمات بوظائفها التقريبية وأختارها في الجمل المعروضة (e11 وe12 وe13 وm6 وm7)، دون كشف الحل؛ هذا لا يقيس استعمالاً تلقائياً أو نطقاً طبيعياً.",
       },
     },
     {
@@ -75,16 +75,27 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         labelAr: "أكمل جملة النتيجة بـ folglich/demnach وأرتب الفعل بعدهما (e14 وe15)، دون كشف الحل.",
       },
     },
+    {
+      id: "z6",
+      de: "Ich kann zentrale Informationen aus dem Lesetext entnehmen.",
+      ar: "أن أستخرج معلومات محددة من نص القراءة وأجيب عن أسئلته الأربعة.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["rq1", "rq2", "rq3", "rq4"],
+        taskIds: ["reading:read-b2-05:rq1", "reading:read-b2-05:rq2", "reading:read-b2-05:rq3", "reading:read-b2-05:rq4"],
+        labelAr: "أجيب صحيحاً عن أسئلة فهم نص القراءة الأربعة، دون كشف الإجابات.",
+      },
+    },
   ];
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "في B1 تعلمت weil/obwohl. اليوم روابط B2 الدقيقة: indem (بأن/بواسطة)، anstatt...zu (بدلاً من أن)، ohne...zu (دون أن)، es sei denn (إلا إذا)، je nachdem (حسبما). لاحظ: anstatt...zu وohne...zu تبنيان بلا فاعل: «بدلاً من أن أنام، عملت» = Anstatt zu schlafen, arbeitete ich.",
+      "في B1 تعلمت weil/obwohl. اليوم روابط B2 الدقيقة: indem (بأن/بواسطة)، anstatt...zu (بدلاً من أن)، ohne...zu (دون أن)، es sei denn (إلا إذا)، je nachdem (حسبما). لاحظ: anstatt...zu وohne...zu تبنيان بلا فاعل: «بدلاً من أن أنام، عملت» = Anstatt zu schlafen, arbeitete ich؛ ويُفهم الفاعل هنا من الجملة الرئيسية.",
     motivatingQuestionDe: "Wie kommunizieren wir besser?",
     contextAr:
       "علم النفس والتواصل: كيف نفهم بعضنا؟ نضيف الروابط المتقدمة — أدوات التعبير الدقيق عن النوايا والتحفظات.",
     contextDe: "Man kann Missverständnisse vermeiden, indem man aktiv zuhört.",
-    connectionToPreviousAr: "تتذكر الروابط المزدوجة (nicht nur...) من B1. اليوم: جيل جديد من الروابط — بلا فاعل (zu + مصدر) وشرطية (es sei denn).",
+    connectionToPreviousAr: "تتذكر الروابط المزدوجة (nicht nur...) من B1. اليوم تتدرّب على indem وanstatt/ohne + zu، حيث يُفهم فاعل المصدر غالباً من فاعل الجملة الرئيسية، وعلى تراكيب الشرط والتحفّظ.",
     activateVocabulary: [
       { de: "die Psychologie", ar: "علم النفس" },
       { de: "die Kommunikation", ar: "التواصل" },

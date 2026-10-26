@@ -24,15 +24,15 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
     {
       id: "m2",
       type: "multiple-choice",
-      instructionAr: "اختر الرسمية:",
+      instructionAr: "اختر الصياغة الاسمية:",
       questionDe: "Wenn man schreibt, übt man. →",
       options: ["Beim Schreiben übt man.", "Man schreibt und übt.", "Das Schreiben man übt.", "Schreiben ist üben."],
       correctIndex: 0,
-      explanation: "الرسمية: beim Schreiben.",
+      explanation: "صياغة اسمية: beim + مصدر مستعمل اسماً.",
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«Man schreibt und übt.» لا تعبّر عن الصيغة الرسمية المطلوبة.",
+        "«Man schreibt und übt.» لا تستخدم المصدر اسماً كما يطلب السؤال.",
         "«Das Schreiben man übt.» ترتيب خاطئ، ولا تعبّر عن الجملة.",
         "«Schreiben ist üben.» تغيّر المعنى، ولا تعبّر عن الجملة.",
       ],
@@ -90,11 +90,11 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
 export const mediation: NonNullable<Lesson["mediation"]> = [
         {
       id: "med-b2-06-1", type: "summarize-de-to-ar",
-      titleAr: "لخّص نصاً عن التوازن بين العمل والحياة بالعربية",
-      sourceDe: "Die Work-Life-Balance ist in modernen Arbeitswelten zentral geworden. Studien zeigen, dass Überstunden die Produktivität langfristig senken.",
-      taskAr: "لخّص النص: أهمية التوازن، وما الذي تظهره الدراسات عن ساعات العمل الإضافية.",
-      modelAnswerAr: "«أصبح التوازن بين العمل والحياة محورياً في بيئات العمل الحديثة. تُظهر الدراسات أن ساعات العمل الإضافية تخفض الإنتاجية طويل الأمد.»",
-      keyPointsAr: ["نقلت مركزية التوازن", "ذكرت نتيجة الدراسة (انخفاض الإنتاجية)"],
+      titleAr: "لخّص حالة افتراضية عن ساعات العمل بالعربية",
+      sourceDe: "Fiktiver Fall, keine Studie: In einem erfundenen Betrieb sammeln sich Überstunden. In einer ebenfalls erfundenen internen Befragung berichten Beschäftigte von wenig Erholungszeit. Die Geschäftsführung möchte deshalb Arbeitsabläufe und Produktivität prüfen.",
+      taskAr: "لخّص الحالة الافتراضية، وميّز بوضوح بين ما يذكره السيناريو وما لا يمكن تعميمه على بيئات العمل.",
+      modelAnswerAr: "«في الحالة الافتراضية تتراكم ساعات العمل الإضافية، ويذكر بعض الموظفين في استبيان متخيّل قلة وقت الراحة. لذلك تريد الإدارة مراجعة سير العمل والإنتاجية. ولا تمثّل هذه الحالة دراسة أو قاعدة عامة.»",
+      keyPointsAr: ["أوضح أن السيناريو افتراضي وليس دراسة", "ذكر تراكم الساعات الإضافية وقلة الراحة كما وردا في الحالة", "ذكر رغبة الإدارة في مراجعة سير العمل والإنتاجية"],
     },
   ];
 
@@ -109,7 +109,7 @@ export const interaction: NonNullable<Lesson["interaction"]> = [
           speakerDe: "Sollten Unternehmen flexible Arbeitszeiten anbieten?",
           speakerAr: "هل يجب أن تقدم الشركات ساعات عمل مرنة؟",
           options: [
-            { de: "Meiner Ansicht nach profitieren sowohl Arbeitnehmer als auch Arbeitgeber. Während die Mitarbeiter mehr Flexibilität gewinnen, steigt oft auch die Motivation und damit die Produktivität.", ar: "في رأيي يستفيد الموظفون وأصحاب العمل معاً. بينما يكسب الموظفون مرونة أكبر، يرتفع غالباً الدافع وبالتالي الإنتاجية.", best: true, replyDe: "Ein überzeugendes Argument. Aber wie steht es mit der Teamkoordination?", replyAr: "حجة مقنعة. لكن ماذا عن تنسيق الفريق؟" },
+            { de: "Meiner Ansicht nach können beide Seiten profitieren. Arbeitnehmer gewinnen Flexibilität; Arbeitgeber können mit klaren Absprachen die Zusammenarbeit planbar gestalten.", ar: "في رأيي يمكن أن يستفيد الطرفان. يكسب الموظفون مرونة أكبر، ويستطيع أصحاب العمل تنظيم التعاون بتفاهمات واضحة.", best: true, replyDe: "Ein überzeugendes Argument. Aber wie steht es mit der Teamkoordination?", replyAr: "حجة مقنعة. لكن ماذا عن تنسيق الفريق؟" },
             { de: "Flexible Zeiten zerstören die Teamarbeit völlig.", ar: "الأوقات المرنة تدمر العمل الجماعي تماماً.", best: false, replyDe: "Das ist zu pauschal. Viele Teams funktionieren sehr gut damit.", replyAr: "هذا تعميم مفرط. فرق كثيرة تعمل جيداً بها." },
           ],
         },
@@ -117,7 +117,7 @@ export const interaction: NonNullable<Lesson["interaction"]> = [
           speakerDe: "Wie kann man Teamarbeit mit flexiblen Zeiten vereinbaren?",
           speakerAr: "كيف يمكن التوفيق بين العمل الجماعي والأوقات المرنة؟",
           options: [
-            { de: "Man könnte Kernzeiten festlegen, in denen alle erreichbar sind, und den Rest flexibel gestalten. So bleibt beides gewährleistet.", ar: "يمكن تحديد ساعات أساسية يكون فيها الجميع متاحين، وجعل الباقي مرناً. هكذا يضمن الاثنان.", best: true, replyDe: "Eine pragmatische Lösung, die beide Seiten berücksichtigt.", replyAr: "حل عملي يراعي الطرفين." },
+            { de: "Man könnte Kernzeiten festlegen, in denen alle erreichbar sind, und den Rest flexibel gestalten. So lassen sich gemeinsame Abstimmung und flexible Zeiten verbinden.", ar: "يمكن تحديد ساعات أساسية يكون فيها الجميع متاحين، وجعل الباقي مرناً. وهكذا يمكن الجمع بين التنسيق المشترك والمرونة في الوقت.", best: true, replyDe: "Eine pragmatische Lösung, die beide Seiten berücksichtigt.", replyAr: "حل عملي يراعي الطرفين." },
             { de: "Das ist unmöglich, man muss sich entscheiden.", ar: "هذا مستحيل، يجب الاختيار.", best: false, replyDe: "Mit guter Planung ist beides durchaus möglich.", replyAr: "بالتخطيط الجيد كلاهما ممكن تماماً." },
           ],
         },

@@ -104,6 +104,7 @@ export const A1_DIALOGUES_1: DailyDialogue[] = [
     titleDe: "Im Supermarkt",
     emoji: "🛒",
     situation: "تشتري الطعام وتسأل عن الأسعار",
+    audioNoteAr: "ملفات MP3 المرتبطة بهذا الحوار موجودة، لكن مصدرها غير موثّق في بيانات المشروع؛ لذلك لا أوصفها بأنها تسجيل بشري أو صوت مولّد، ولم تُتحقق مطابقتها للنص. فُحصت تقنياً فقط.",
     turns: [
       { speaker: "البائعة", role: "a", de: "Kann ich Ihnen helfen?", ar: "هل أستطيع مساعدتك؟" },
       { speaker: "أنت", role: "b", de: "Ja, bitte. Was kostet das Brot?", ar: "نعم من فضلك. كم يكلف الخبز؟" },
@@ -118,10 +119,10 @@ export const A1_DIALOGUES_1: DailyDialogue[] = [
         { text: "1,50 Euro", ar: "1,50 يورو", correct: false, explanation: "لا — هذا سعر الحليب: «Die Milch kostet 1,50 Euro»." },
         { text: "5 Euro", ar: "5 يورو", correct: false, explanation: "لا — الخبز «Das Brot kostet 2 Euro»." },
       ]},
-      { de: "Was nimmt der Kunde?", ar: "ماذا يأخذ الزبون؟", options: [
-        { text: "Brot und Milch", ar: "خبزاً وحليباً", correct: true, explanation: "صحيح — الاثنان معاً." },
-        { text: "Nur ein Brot", ar: "خبزاً فقط", correct: false, explanation: "لا — أخذ الاثنين: «Ich nehme das Brot und die Milch»." },
-        { text: "Nur die frische Milch", ar: "حليباً فقط", correct: false, explanation: "لا — لم يقتصر على الحليب؛ بل «das Brot und die Milch»." },
+      { de: "Was kostet die Milch?", ar: "كم ثمن الحليب؟", options: [
+        { text: "1,50 Euro", ar: "1,50 يورو", correct: true, explanation: "نعم — تقول البائعة: «Die Milch kostet 1,50 Euro»." },
+        { text: "2,00 Euro", ar: "2,00 يورو", correct: false, explanation: "لا — هذا ليس السعر المذكور؛ تقول البائعة: «Die Milch kostet 1,50 Euro»." },
+        { text: "5,00 Euro", ar: "5,00 يورو", correct: false, explanation: "لا — هذا المبلغ غير وارد؛ تقول البائعة: «Die Milch kostet 1,50 Euro»." },
       ]},
       { de: "Was nimmt der Kunde?", ar: "ماذا يأخذ الزبون؟", options: [
         { text: "Das Brot und die Milch", ar: "الخبز والحليب", correct: true, explanation: "نعم — «Ich nehme das Brot und die Milch»." },
@@ -184,6 +185,7 @@ export const A1_DIALOGUES_1: DailyDialogue[] = [
     titleDe: "Nach der Uhrzeit fragen",
     emoji: "🕐",
     situation: "تسأل أحد المارة عن الوقت",
+    audioNoteAr: "الجولات ملفات MP3 مرفقة، لكن مصدر الصوت غير موثّق في بيانات هذا الحوار؛ لذلك لا نصفه كتسجيل بشري أو مولّد.",
     turns: [
       { speaker: "أنت", role: "a", de: "Entschuldigung, wie spät ist es?", ar: "عذراً، كم الساعة؟" },
       { speaker: "المرأة", role: "b", de: "Es ist halb drei.", ar: "إنها الثانية والنصف." },

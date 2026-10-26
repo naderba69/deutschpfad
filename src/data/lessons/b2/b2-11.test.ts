@@ -1,5 +1,4 @@
 import { describe, expect, it } from "vitest";
-
 import { lessonB211 } from "@/data/lessons/b2/b2-11";
 import { LESSON_META } from "@/data/lessons/meta";
 import { evaluateExercise } from "@/lib/lesson/exercise-engine";
@@ -34,6 +33,7 @@ const expectedMultipleChoice: Record<string, [string[], string]> = {
   ],
   q2: [["Sie hat absagen müssen", "Sie hat abgesagt gemusst", "Sie ist absagen müssen", "Sie hat absagen gemusst"], "Sie hat absagen müssen"],
   q3: [["Der Mechaniker", "Nora selbst", "Jonas", "Niemand"], "Der Mechaniker"],
+  q4: [["die Bücher des Autors", "die Romane der Übersetzerin", "die Texte der Redakteurin", "die Werke des Mechanikers"], "die Bücher des Autors"],
 };
 
 /** [المفاتيح, بدائل كل فراغ] */
@@ -145,7 +145,7 @@ describe("B2-11 lesson content audit", () => {
 
   it("uses only evaluable performances as goals, each all-correct", () => {
     expect(lessonB211.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["e1", "e2", "e3", "e4", "e5", "e6", "e7", "m1", "m3", "m5", "w1", "w3"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["e1", "e2", "e3", "e4", "e5", "e6", "e7", "m1", "m3", "m5", "w1", "w3", "q4"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e8", "e9", "e10", "e14", "m2"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e11", "e12", "e13", "m4", "w2", "q3"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["q1", "q2"]);
@@ -175,6 +175,7 @@ describe("B2-11 lesson content audit", () => {
 
   it("maps listening evidence to transcript-free task IDs only", () => {
     expect(getListeningQuestionTaskId("b2-11", "l1", "q1", false)).toBe("listening:l1:q1");
+    expect(getListeningQuestionTaskId("b2-11", "l3", "q4", false)).toBe("listening:l3:q4");
     expect(getListeningQuestionTaskId("b2-11", "l2", "q3", true)).toBe("listening-transcript:b2-11:l2:q3");
     expect(goal("z3").evidence?.taskIds).toContain("listening:l2:q3");
     expect(goal("z4").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l1:q2"]);
@@ -182,7 +183,7 @@ describe("B2-11 lesson content audit", () => {
       (item) => item.evidence?.taskIds?.filter((taskId) => taskId.startsWith("listening-transcript:")) ?? [],
     );
     expect(transcriptIds, "كشف النصّ لا يُحتسب أداءً").toEqual([]);
-    expect(lessonB211.listening.questions.map(({ id, itemId }) => `${id}@${itemId}`)).toEqual(["q1@l1", "q2@l1", "q3@l2"]);
+    expect(lessonB211.listening.questions.map(({ id, itemId }) => `${id}@${itemId}`)).toEqual(["q1@l1", "q2@l1", "q3@l2", "q4@l3"]);
   });
 
   it("enumerates every auditable task type so no new task escapes the guard", () => {

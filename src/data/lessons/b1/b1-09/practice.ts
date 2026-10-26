@@ -192,12 +192,12 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
       { wrong: "mit dem Kollege", right: "mit dem Kollegen", whyAr: "n-Deklination مع الجر." },
     ],
     eselsbruecken: [
-      "«الوصلات = أسلوب رسمي»: fragen → eine Frage stellen.",
-      "«n-Deklination = مذكر حي + n»: Student, Kunde, Herr, Polizist, Kollege, Junge.",
+      "احفظ الوصلة كما تستعمل: fragen → eine Frage stellen؛ لا تفترض أن كل وصلة رسمية.",
+      "احفظ أشكال n المختارة مع الأداة: der Student → den Studenten؛ der Nachbar → dem Nachbarn.",
     ],
     culturalNote: {
-      title: "ثقافة التطوع (Ehrenamt)",
+      title: "بيانات عن التطوع في ألمانيا (Ehrenamt)",
       content:
-        "وفق المسح الألماني للتطوع (Freiwilligensurvey 2019) كان 39.7% من الأشخاص من سن 14 فما فوق يمارسون نشاطاً تطوعياً، أي نحو 28.8 مليون شخص. ومع ذلك، كان نحو نصف المتطوعين (51.7%) يعملون في جمعية أو اتحاد، وهذه النسبة تراجعت منذ 1999 (57.2%).",
+        "بحسب المسح الألماني السادس للتطوع (Freiwilligensurvey 2024)، كان 36.7% من سكان ألمانيا بعمر 14 سنة فأكثر منخرطين في نشاط تطوعي، أي نحو 26.97 مليون شخص. هذه أرقام ألمانيا لعام 2024، ولا تصف كل بلد أو كل سنة. المصدر: التقرير الرسمي، ص. 8 وما بعدها: https://www.bundesregierung.de/resource/blob/2348674/2451626/16111cfdf152d3ed813de8a7da700f13/hauptbericht-freiwilliges-engagement-in-deutschland-data.pdf",
     },
   };

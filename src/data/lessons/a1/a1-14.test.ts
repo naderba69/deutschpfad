@@ -1,5 +1,7 @@
+import path from "node:path";
 import {describe, expect, it} from "vitest";
 
+import {isPlayableMp3} from "@/lib/audio/mp3-file";
 import {getLessonMeta, LESSON_META} from "@/data/lessons/meta";
 import {NO_ERROR_OPTION} from "@/lib/lesson/error-correction-highlight";
 import {evaluateExercise, normalizeText} from "@/lib/lesson/exercise-engine";
@@ -279,21 +281,61 @@ describe("A1-14 audited lesson content", () => {
     const evidence = goal?.evidence;
     if (!evidence) throw new Error("A1-14 z7 evidence is required");
 
-    for (const questionId of ["lsq-a1-14-1", "lsq-a1-14-3"]) {
-      expect(getListeningQuestionTaskId(lessonA114.id, "ls-a1-14-1", questionId, false)).toBe(
-        `listening:ls-a1-14-1:${questionId}`,
-      );
-      expect(getListeningQuestionTaskId(lessonA114.id, "ls-a1-14-1", questionId, true)).toBe(
-        `listening-transcript:${lessonA114.id}:ls-a1-14-1:${questionId}`,
-      );
-      expect(evidence.taskIds).toContain(`listening:ls-a1-14-1:${questionId}`);
-      expect(evidence.taskIds).not.toContain(`listening-transcript:${lessonA114.id}:ls-a1-14-1:${questionId}`);
+    const mappedListeningQuestions: Array<[string, string[]]> = [
+      ["ls-a1-14-1", ["lsq-a1-14-1", "lsq-a1-14-3"]],
+      ["ls-a1-14-2", ["lsq-a1-14-4", "lsq-a1-14-5", "lsq-a1-14-6"]],
+      ["ls-a1-14-3", ["lsq-a1-14-7", "lsq-a1-14-8", "lsq-a1-14-9"]],
+    ];
+    for (const [itemId, questionIds] of mappedListeningQuestions) {
+      for (const questionId of questionIds) {
+        expect(getListeningQuestionTaskId(lessonA114.id, itemId, questionId, false)).toBe(
+          `listening:${itemId}:${questionId}`,
+        );
+        expect(getListeningQuestionTaskId(lessonA114.id, itemId, questionId, true)).toBe(
+          `listening-transcript:${lessonA114.id}:${itemId}:${questionId}`,
+        );
+        expect(evidence.taskIds).toContain(`listening:${itemId}:${questionId}`);
+        expect(evidence.taskIds).not.toContain(`listening-transcript:${lessonA114.id}:${itemId}:${questionId}`);
+      }
     }
     const interaction = lessonA114.interaction ?? [];
     expect(interaction).toHaveLength(1);
     expect(interaction[0]?.rounds).toHaveLength(4);
     expect(lessonA114.pronunciation.items).toHaveLength(8);
     expect(evidence.exerciseIds).not.toContain("int-a1-14-1");
+  });
+
+  it("discloses TTS across listening and pronunciation and checks generated audio assets structurally", () => {
+    expect(lessonA114.listening.items).toHaveLength(3);
+    for (const item of lessonA114.listening.items) {
+      expect(item.audioNoteAr).toContain("TTS");
+      expect(item.audioNoteAr).toContain("تسجيلاً بشرياً");
+    }
+    const browserTtsItem = lessonA114.listening.items.find((item) => item.id === "ls-a1-14-1");
+    expect(browserTtsItem?.audioNoteAr).toContain("نطق المتصفح الاصطناعي");
+    expect(browserTtsItem?.lines.every((line) => !line.audioSrc)).toBe(true);
+    expect(lessonA114.pronunciation.tip).toContain("زر الاستماع يستخدم TTS المتصفح");
+    const item = lessonA114.listening.items.find((candidate) => candidate.id === "ls-a1-14-2");
+    expect(item?.audioNoteAr).toContain("مولّدة آلياً (TTS)");
+    expect(item?.lines).toHaveLength(6);
+    for (const line of item?.lines ?? []) {
+      expect(line.audioSrc).toContain("/audio/lessons/a1-14/ls-a1-14-2-");
+      expect(line.audioSrc?.endsWith(".mp3")).toBe(true);
+      const file = path.join(process.cwd(), "public", line.audioSrc!.slice(1));
+      expect(isPlayableMp3(file), line.audioSrc).toBe(true);
+    }
+    expect(lessonA114.listening.questions.filter((question) => question.itemId === "ls-a1-14-2")).toHaveLength(3);
+    const newItem = lessonA114.listening.items.find((candidate) => candidate.id === "ls-a1-14-3");
+    expect(newItem?.audioNoteAr).toContain("مولّدة آلياً (TTS)");
+    expect(newItem?.audioNoteAr).toContain("ليست تسجيلاً بشرياً");
+    expect(newItem?.lines).toHaveLength(6);
+    for (const line of newItem?.lines ?? []) {
+      expect(line.audioSrc).toContain("/audio/lessons/a1-14/ls-a1-14-3-");
+      expect(line.audioSrc?.endsWith(".mp3")).toBe(true);
+      const file = path.join(process.cwd(), "public", line.audioSrc!.slice(1));
+      expect(isPlayableMp3(file), line.audioSrc).toBe(true);
+    }
+    expect(lessonA114.listening.questions.filter((question) => question.itemId === "ls-a1-14-3")).toHaveLength(3);
   });
 
   it("keeps reading/audio references, flashcards, and open activities internally consistent", () => {
@@ -345,8 +387,8 @@ describe("A1-14 audited lesson content", () => {
     expect(lessonA114.miniTest).toHaveLength(5);
     expect(lessonA114.writing).toHaveLength(3);
     expect(reading().questions).toHaveLength(6);
-    expect(lessonA114.listening.questions).toHaveLength(3);
-    expect(allTasks()).toHaveLength(46);
+    expect(lessonA114.listening.questions).toHaveLength(9);
+    expect(allTasks()).toHaveLength(52);
 
     const ids = allTasks().map((task) => task.id);
     expect(new Set(ids).size).toBe(ids.length);
@@ -395,7 +437,15 @@ describe("A1-14 audited lesson content", () => {
     expect(e12.options).not.toContain("war");
     expect(e16.options[e16.correctIndex]).toBe("sollst");
     expect(e17.options[e17.correctIndex]).toBe("Ich möchte bitte einen Kaffee.");
+    expect(e17.instructionAr).toContain("صيغة شائعة للطلب المهذّب");
     expect(e17.options).toContain("Ich will einen Kaffee.");
+    const willExplanation = e17.optionExplanations?.[e17.options.indexOf("Ich will einen Kaffee.")];
+    expect(willExplanation).toContain("صحيحة نحوياً");
+    expect(willExplanation).not.toContain("فظة");
+    const fahrenTask = taskById("e3");
+    expect(fahrenTask.type).toBe("multiple-choice");
+    if (fahrenTask.type === "multiple-choice")
+      expect(fahrenTask.optionExplanations?.[1]).toContain("Ich habe das Auto gefahren");
     expect(e23.options[e23.correctIndex]).toBe("Ich fahre morgen nach Berlin.");
     expect(e5.instructionAr).toContain("gestern قبل المفعول");
     expect(e19.instructionAr).toContain("ضع heute Abend قبل ins Kino");
@@ -409,6 +459,11 @@ describe("A1-14 audited lesson content", () => {
     expect(wr3.blanks.map((blank) => blank.correct)).toEqual([
       "bin", "gefahren", "habe", "getroffen", "sind", "gelaufen", "haben", "gegessen",
     ]);
+    const rq6 = reading().questions.find((question) => question.id === "rq6");
+    expect(rq6?.optionExplanations?.[3]).toContain("المرض والإنهاك لم يردا في هذا النص");
+    expect(rq6?.optionExplanations?.[3]).not.toContain("Ich war krank");
+    expect(lessonA114.listening.questions.find((question) => question.id === "lsq-a1-14-6")?.questionDe)
+      .toContain("Wie hat sich Nadia");
 
     const noError = taskById("e25");
     expect(noError.type).toBe("error-correction");

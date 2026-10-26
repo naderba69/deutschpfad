@@ -25,9 +25,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z4",
-      de: "Ich kann eine ausdrücklich genannte Ruhezeit aus einem kurzen Hörtext entnehmen.",
-      ar: "أن أستخرج وقت الهدوء المذكور صراحةً في حوار عن Hausordnung معيّن، لا أن أعمّمه على كل المباني.",
-      evidence: { exerciseIds: ["q4"], taskIds: ["listening:l3:q4"], labelAr: "أجب عن q4 قبل كشف تفريغ الحوار؛ الإجابة بعد الكشف لا تثبت الاستماع.", completion: "all-correct" },
+      de: "Ich kann ausdrücklich genannte Ruhezeiten und Regeln im Haus aus kurzen Hördialogen entnehmen.",
+      ar: "أن أستخرج أوقات الهدوء وقواعد المكان المذكورة صراحةً في حوارات قصيرة، من دون تعميمها على مبانٍ أخرى.",
+      evidence: { exerciseIds: ["q4", "q5", "q6", "q7"], taskIds: ["listening:l3:q4", "listening:l4:q5", "listening:l4:q6", "listening:l4:q7"], labelAr: "أجب عن أسئلة القواعد والمرافق قبل كشف التفريغ؛ الإجابة بعد الكشف لا تثبت الاستماع.", completion: "all-correct" },
     },
     {
       id: "z5",

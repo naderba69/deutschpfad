@@ -11,15 +11,15 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أفهم حديثاً عن تعدد اللغات والثقافات.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
-        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 وq2، وإلى l2 في q3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q2", "q3", "q4"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"],
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 وq2، وإلى l2 في q3 وl3 في q4، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
       id: "z2",
-      de: "Ich kann Verben mit festen Präpositionen richtig verwenden.",
-      ar: "أن أستخدم الأفعال مع حروف الجر الثابتة استخداماً صحيحاً.",
+      de: "Ich kann ausgewählte Verben mit passenden Präpositionen verwenden.",
+      ar: "أن أستخدم أفعالاً منتقاة مع حروف جرها المناسبة.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["e1", "e2", "e3", "e5", "e6", "e9", "m1", "m2", "m4", "w1", "w2"],
@@ -68,12 +68,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "كل فعل ألماني «يلتصق» بحرف جر ثابت: sich interessieren FÜR (يهتم بـ)، warten AUF (ينتظر)، sich freuen ÜBER/AUF (يفرح بـ/على). وحرف الجر يحدد الحالة: für + نصب، auf + نصب (مع هذه الأفعال). احفظ الفعل مع حرفه — مثل حفظ الكلمة مع جنسها!",
+      "بعض الأفعال الألمانية تقترن بحرف جر تختاره المعاجم مع الفعل: sich interessieren für وwarten auf. وقد يتغيّر الحرف أو المعنى مع فعل مثل sich freuen auf/über. تعلّم التركيب مع مثاله وحالته، لا بالترجمة الحرفية وحدها.",
     motivatingQuestionDe: "Wie lernt man Sprachen am besten?",
     contextAr:
-      "تعدد اللغات والثقافات: موضوع جميل. نضيف أهم قائمة في B2: الأفعال مع حروف الجر الثابتة — أكثر ما يخطئ فيه المتعلمون.",
+      "يتناول الدرس أمثلة على التعدد اللغوي والتبادل، ثم يتدرّب على أفعال تُستعمل مع حروف جر محددة في معانٍ معينة. احفظ كل فعل مع مثاله وسياقه.",
     contextDe: "Ich interessiere mich sehr für andere Kulturen.",
-    connectionToPreviousAr: "تتذكر حروف الجر المكانية (auf dem Tisch) والزمنية (am Montag). اليوم: حروف الجر «الملتصقة بالأفعال» — قائمة تحفظ مع كل فعل.",
+    connectionToPreviousAr: "تتذكر حروف الجر المكانية (auf dem Tisch) والزمنية (am Montag). اليوم تتدرّب على تراكيب مختارة تربط أفعالاً بحروف جر في معانٍ محددة؛ احفظ كل فعل مع حرفه في السياق المقصود.",
     activateVocabulary: [
       { de: "die Sprache", ar: "اللغة" },
       { de: "die Kultur", ar: "الثقافة" },

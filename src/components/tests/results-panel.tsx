@@ -191,5 +191,3 @@ function ReviewLessonsLink({ level }: { level: string }) {
     </a>
   );
 }
-
-

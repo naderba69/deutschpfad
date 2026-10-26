@@ -237,6 +237,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         id: "l1",
         title: "في متجر الملابس",
+        audioNoteAr: "يُنطق الحوار عبر TTS المدمج في المتصفح، لا عبر تسجيل بشري؛ وقد يختلف الصوت باختلاف الجهاز والمتصفح. لم يُختبر وضوح النطق أو مطابقته للنص.",
         lines: [
           {
             speaker: "Verkäuferin",
@@ -278,6 +279,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         id: "l2",
         title: "وصف ما يرتديه الأصدقاء",
+        audioNoteAr: "يُنطق الحوار عبر TTS المدمج في المتصفح، لا عبر تسجيل بشري؛ وقد يختلف الصوت باختلاف الجهاز والمتصفح. لم يُختبر وضوح النطق أو مطابقته للنص.",
         lines: [
           {
             speaker: "Karim",
@@ -304,6 +306,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
             de: "Das Kleid finde ich sehr elegant!",
             ar: "أجد الفستان أنيقاً جداً!",
           },
+        ],
+      },
+      {
+        id: "l3",
+        title: "Ein schwarzes T-Shirt kaufen",
+        audioNoteAr: "بحسب بيانات المشروع، هذه المقاطع مولّدة آلياً (TTS) وليست تسجيلاً بشرياً. لا توجد بيانات موثقة عن هوية الأصوات، ولم تُتحقق مطابقة المقاطع للنص أو جودة النطق.",
+        lines: [
+          { speaker: "Verkäuferin", de: "Guten Tag! Kann ich Ihnen helfen?", ar: "طاب يومك! هل أستطيع مساعدتك؟", audioSrc: "/audio/lessons/a1-08/ls-a1-08-3-1.mp3" },
+          { speaker: "Karim", de: "Ja, ich suche ein T-Shirt.", ar: "نعم، أبحث عن قميص قصير الأكمام.", audioSrc: "/audio/lessons/a1-08/ls-a1-08-3-2.mp3" },
+          { speaker: "Verkäuferin", de: "Welche Farbe möchten Sie?", ar: "أي لون تريد؟", audioSrc: "/audio/lessons/a1-08/ls-a1-08-3-3.mp3" },
+          { speaker: "Karim", de: "Ich möchte ein schwarzes T-Shirt, bitte.", ar: "أريد قميصاً أسود، من فضلك.", audioSrc: "/audio/lessons/a1-08/ls-a1-08-3-4.mp3" },
+          { speaker: "Verkäuferin", de: "Hier ist ein schwarzes T-Shirt. Es kostet fünfzehn Euro.", ar: "هذا قميص أسود. ثمنه خمسة عشر يورو.", audioSrc: "/audio/lessons/a1-08/ls-a1-08-3-5.mp3" },
+          { speaker: "Karim", de: "Das gefällt mir. Ich nehme es.", ar: "هذا يعجبني. سآخذه.", audioSrc: "/audio/lessons/a1-08/ls-a1-08-3-6.mp3" },
         ],
       },
     ],
@@ -372,6 +387,45 @@ export const listening: NonNullable<Lesson["listening"]> = {
           "لم تُذكر قبعة «eine Mütze» في الحوار.",
         ],
       },
+      {
+        id: "q4",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Was sucht Karim?",
+        questionAr: "عمّ يبحث كريم؟",
+        options: ["Er sucht ein T-Shirt", "Er sucht eine Jacke", "Er sucht ein Hemd", "Er sucht ein Kleid"],
+        correctIndex: 0,
+        explanation: "قال كريم: Ja, ich suche ein T-Shirt.",
+        errorType: "vocabulary",
+        optionExplanations: [undefined, "السترة ظهرت في الحوار الآخر؛ كريم يبحث عن ein T-Shirt.", "القميص ذُكر في وصف ملابس كريم، لا في طلبه هنا.", "الفستان في حوار آنا؛ أما كريم فيبحث عن قميص قصير الأكمام."],
+      },
+      {
+        id: "q5",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Welche Farbe möchte Karim?",
+        questionAr: "أي لون يريد كريم؟",
+        options: ["Die Farbe ist schwarz", "Die Farbe ist blau", "Die Farbe ist rot", "Die Farbe ist grün"],
+        correctIndex: 0,
+        explanation: "قال كريم: Ich möchte ein schwarzes T-Shirt, bitte.",
+        errorType: "vocabulary",
+        optionExplanations: [undefined, "الأزرق لون السترة في حوار منى والفستان في الحوار الآخر، لا طلب كريم.", "الأحمر لون قميص كريم المذكور في حوار الأصدقاء، لا لون ما يشتريه هنا.", "الأخضر لم يُذكر؛ طلب كريم اللون الأسود."],
+      },
+      {
+        id: "q6",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Wie viel kostet das schwarze T-Shirt?",
+        questionAr: "كم ثمن القميص الأسود؟",
+        options: ["fünfzehn Euro", "zwanzig Euro", "zwölf Euro", "fünf Euro"],
+        correctIndex: 0,
+        explanation: "قالت البائعة: Es kostet fünfzehn Euro.",
+        errorType: "vocabulary",
+        optionExplanations: [undefined, "عشرون يورو لم تُذكر؛ السعر المسموع fünfzehn Euro.", "اثنا عشر يورو ليس السعر الذي قالته البائعة.", "خمسة يورو لم تُذكر؛ ثمن القميص خمسة عشر يورو."],
+      },
     ],
   };
 
@@ -387,7 +441,7 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       { de: "schwarz", ar: "أسود", note: "sch = /ʃ/ (ش)، w = /v/ (ڤ)، وz = /t͡s/؛ «شڤارتس» تقريب كتابي." },
       { de: "die Schuhe", ar: "الأحذية", note: "Schuh: /ʃuː/؛ h لا يُنطق ويشير هنا إلى طول u، وe الأخيرة في Schuhe صوت ضعيف /ə/." },
     ],
-    tip: "تدرّب على فروق واضحة: ei في weiß، au في blau، ü في grün، وsch/w/z في schwarz. التقريب العربي غير مطابق للصوت؛ استمع إلى التسجيل ولا تعتمد عليه وحده.",
+    tip: "أزرار الاستماع تستخدم TTS في المتصفح لا تسجيلاً بشرياً، وقد يختلف الصوت بحسب الجهاز. تدرّب على فروق واضحة: ei في weiß، au في blau، ü في grün، وsch/w/z في schwarz. التقريب العربي لا يطابق الصوت تماماً؛ استمع إلى النطق الآلي بوصفه نموذجاً مساعداً فقط.",
     shadowing: [
       {
         de: "Das Hemd ist rot.",

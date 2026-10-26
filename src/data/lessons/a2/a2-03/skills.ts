@@ -257,6 +257,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         id: "l1",
         title: "طلب الطعام",
+        audioNoteAr: "يُنطق هذا الحوار عبر TTS المدمج في المتصفح عند التشغيل، لا عبر تسجيل بشري؛ وقد تختلف الأصوات المتاحة بحسب الجهاز والمتصفح.",
         lines: [
           {
             speaker: "Kellner",
@@ -294,6 +295,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         id: "l2",
         title: "لا أستطيع أكل...",
+        audioNoteAr: "يُنطق هذا الحوار عبر TTS المدمج في المتصفح عند التشغيل، لا عبر تسجيل بشري؛ وقد تختلف الأصوات المتاحة بحسب الجهاز والمتصفح.",
         lines: [
           {
             speaker: "Mona",
@@ -320,6 +322,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
             de: "Gut, ich nehme den Gemüseteller.",
             ar: "حسناً، سآخذ طبق الخضار.",
           },
+        ],
+      },
+      {
+        id: "l3",
+        title: "سؤال عن الشوربة",
+        audioNoteAr: "ملفات هذا المقطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً. لم تُتحقق مطابقتها للنص جملةً جملة أو جودة النطق.",
+        lines: [
+          { speaker: "Lina", de: "Guten Abend. Ist die Gemüsesuppe vegetarisch?", ar: "مساء الخير. هل شوربة الخضار نباتية؟", audioSrc: "/audio/lessons/a2-03/ls-a2-03-3-1.mp3" },
+          { speaker: "Kellner", de: "Ja, sie wird mit Gemüsebrühe zubereitet.", ar: "نعم، تُحضّر بمرق الخضار.", audioSrc: "/audio/lessons/a2-03/ls-a2-03-3-2.mp3" },
+          { speaker: "Lina", de: "Gut. Ich esse kein Fleisch.", ar: "جيد. أنا لا آكل اللحم.", audioSrc: "/audio/lessons/a2-03/ls-a2-03-3-3.mp3" },
+          { speaker: "Kellner", de: "Dann passt die Suppe. Sie enthält kein Fleisch.", ar: "إذن الشوربة مناسبة. لا تحتوي على لحم.", audioSrc: "/audio/lessons/a2-03/ls-a2-03-3-4.mp3" },
+          { speaker: "Lina", de: "Dann nehme ich die Suppe, bitte.", ar: "إذن سآخذ الشوربة، من فضلك.", audioSrc: "/audio/lessons/a2-03/ls-a2-03-3-5.mp3" },
+          { speaker: "Kellner", de: "Sehr gern. Möchten Sie noch etwas trinken?", ar: "بكل سرور. هل ترغبين في شيء للشرب أيضاً؟", audioSrc: "/audio/lessons/a2-03/ls-a2-03-3-6.mp3" },
         ],
       },
     ],
@@ -383,6 +398,27 @@ export const listening: NonNullable<Lesson["listening"]> = {
           "السلطة «der Salat» جزء من الطلب في الحوار، لا ما تعجز عن أكله.",
           "المستثنى المذكور هو «Fleisch»، ولم يُستثن «der Fisch» صراحة. ",
         ],
+      },
+      {
+        id: "q4", itemId: "l3", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الثالث وقبل فتح التفريغ:",
+        questionDe: "Worüber möchte Lina etwas wissen?", questionAr: "عن ماذا تريد لينا أن تعرف؟",
+        options: ["Ob die Gemüsesuppe vegetarisch ist", "Wie teuer der Salat ist", "Wann das Restaurant schließt", "Wo die Speisekarte liegt"], correctIndex: 0,
+        explanation: "تسأل لينا إن كانت شوربة الخضار نباتية.", errorType: "vocabulary",
+      },
+      {
+        id: "q5", itemId: "l3", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الثالث وقبل فتح التفريغ:",
+        questionDe: "Womit wird die Suppe zubereitet?", questionAr: "بماذا تُحضّر الشوربة؟",
+        options: ["Mit Gemüsebrühe", "Mit Fleischbrühe", "Mit Sahne", "Mit Tomatensaft"], correctIndex: 0,
+        explanation: "يذكر النادل أنها تُحضّر بمرق الخضار.", errorType: "vocabulary",
+      },
+      {
+        id: "q6", itemId: "l3", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الثالث وقبل فتح التفريغ:",
+        questionDe: "Was bestellt Lina?", questionAr: "ماذا تطلب لينا؟",
+        options: ["Die Gemüsesuppe", "Den Salat", "Das Schnitzel", "Den Fisch"], correctIndex: 0,
+        explanation: "تقول لينا: Dann nehme ich die Suppe, bitte.", errorType: "vocabulary",
       },
     ],
   };

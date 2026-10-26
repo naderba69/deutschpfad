@@ -18,12 +18,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z2",
-      de: "Ich kann wichtige Angaben aus kurzen Telefongesprächen heraushören.",
-      ar: "أن أستخرج معلومات محددة من حواري هاتف قصيرين بعد الاستماع، لا بعد كشف التفريغ.",
+      de: "Ich kann wichtige Angaben aus kurzen Gesprächen heraushören.",
+      ar: "أن أستخرج معلومات محددة من حوارات قصيرة بعد الاستماع، لا بعد كشف التفريغ.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3", "q4"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l2:q4"],
-        labelAr: "أجب عن أسئلة الاستماع الأربعة قبل كشف التفريغ؛ لا يثبت فتح الحوار أو إجابته بعد كشفه الاستماع.",
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l2:q4", "listening:l3:q5", "listening:l3:q6", "listening:l3:q7"],
+        labelAr: "أجب عن أسئلة الاستماع السبعة قبل كشف التفريغ؛ لا يثبت فتح الحوار أو إجابته بعد كشفه الاستماع.",
         completion: "all-correct",
       },
     },
@@ -72,7 +72,7 @@ export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
       "للتعبير عن الأمس، يمكن أن تقول Ich war gestern krank أو Ich bin gestern krank gewesen. كلاهما تركيب صحيح؛ فما الصيغة البسيطة التي ستتدرّب عليها في رسالة المكتب؟",
     motivatingQuestionDe: "Warst du gestern im Büro oder warst du krank?",
     contextAr:
-      "في المكتب، نقرأ بريداً عن غياب موظف ونستمع إلى مكالمات قصيرة. نراجع صيغ Präteritum من sein وhaben، ونتمرّن على عبارات هاتف وبريد مناسبة للسياق من غير تعميم صيغة واحدة على كل منطقة أو علاقة مهنية.",
+      "في المكتب، نقرأ بريداً عن غياب موظف ونستمع إلى حوارات قصيرة، بينها مكالمات هاتفية. نراجع صيغ Präteritum من sein وhaben، ونتمرّن على عبارات هاتف وبريد مناسبة للسياق من غير تعميم صيغة واحدة على كل منطقة أو علاقة مهنية.",
     contextDe: "Ich war gestern krank und hatte Fieber.",
     connectionToPreviousAr:
       "في A2-01 راجعت Perfekt. يشيع Perfekt في الحديث عن الماضي، بينما يظهر Präteritum كثيراً في الكتابة؛ وتشيع صيغ مثل war وhatte أيضاً في الكلام. هذه اتجاهات استعمال لا قاعدة تمنع إحدى الصيغتين.",

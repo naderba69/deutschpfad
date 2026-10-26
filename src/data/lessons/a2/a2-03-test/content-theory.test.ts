@@ -111,7 +111,7 @@ describe("A2-03 audited lesson", () => {
     expect(lessonA203.theory.find((theory) => theory.id === "t4")?.explanationAr).toContain(
       "لا شرح كامل لتصريف الصفات",
     );
-    expect(lessonA203.fehlerUndTipps?.culturalNote?.content).toContain("اختيارية");
-    expect(lessonA203.fehlerUndTipps?.culturalNote?.content).toContain("برلين");
+    expect(lessonA203.fehlerUndTipps?.culturalNote?.content).toContain("طوعية");
+    expect(lessonA203.fehlerUndTipps?.culturalNote?.content).toContain("Berlin.de");
   });
 });

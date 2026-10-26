@@ -73,12 +73,12 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
 
 export const flashcards: NonNullable<Lesson["flashcards"]> = [
     { id: "fc1", de: "die Wirtschaft", ar: "الاقتصاد", example: "Die Wirtschaft wächst.", exampleAr: "ينمو الاقتصاد.", level: "B2" },
-    { id: "fc2", de: "der Umsatz", ar: "المبيعات", example: "Der Umsatz steigt.", exampleAr: "ترتفع المبيعات.", level: "B2" },
+    { id: "fc2", de: "der Umsatz", ar: "الإيراد/حجم المبيعات", example: "Der Umsatz steigt.", exampleAr: "ترتفع الإيرادات.", level: "B2" },
     { id: "fc3", de: "die Inflation", ar: "التضخم", example: "Die Inflation ist hoch.", exampleAr: "التضخم مرتفع.", level: "B2" },
     { id: "fc4", de: "der Vertrag", ar: "العقد", example: "Der Vertrag ist unterschrieben.", exampleAr: "العقد موقع.", level: "B2" },
     { id: "fc5", de: "das Zustandspassiv", ar: "مجهول الحالة", example: "ist geöffnet", exampleAr: "مفتوح", level: "B2" },
-    { id: "fc6", de: "sich lassen", ar: "يمكن/يُحل بسهولة", example: "Das Problem lässt sich lösen.", exampleAr: "المشكلة قابلة للحل.", level: "B2" },
-    { id: "fc7", de: "-bar", ar: "قابل للـ", example: "trinkbar, öffenbar", exampleAr: "قابل للشرب/للفتح", level: "B2" },
+    { id: "fc6", de: "sich lassen", ar: "يمكن (بحسب السياق)", example: "Das Problem lässt sich lösen.", exampleAr: "يمكن حل المشكلة.", level: "B2" },
+    { id: "fc7", de: "-bar", ar: "قابل للـ", example: "trinkbar, durchführbar", exampleAr: "صالح للشرب/قابل للتنفيذ", level: "B2" },
     { id: "fc8", de: "die Lieferung", ar: "التسليم", example: "Die Lieferung kommt morgen.", exampleAr: "يأتي التسليم غداً.", level: "B2" },
     { id: "fc9", de: "Passiv + Modalverb", ar: "المجهول مع الناقصة", example: "Die Ware kann geliefert werden.", exampleAr: "يمكن تسليم البضاعة.", level: "B2" },
     { id: "fc10", de: "sein + zu + Infinitiv", ar: "يجب/يمكن (رسمي)", example: "Das Problem ist zu lösen.", exampleAr: "المشكلة يجب حلها.", level: "B2" },
@@ -89,9 +89,9 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
 export const mediation: NonNullable<Lesson["mediation"]> = [
         {
       id: "med-b2-02-1", type: "summarize-de-to-ar",
-      titleAr: "لخّص تقريراً اقتصادياً بالعربية مع نقل النتائج",
-      sourceDe: "Die Inflation ist im letzten Quartal auf 2,5 Prozent gesunken. Die Zentralbank sieht darin ein Zeichen der Erholung, warnt aber vor steigenden Energiekosten.",
-      taskAr: "لخّص النص: الانخفاض، تفسير البنك المركزي، والتحذير.",
+      titleAr: "لخّص مثالاً اقتصادياً خيالياً بالعربية",
+      sourceDe: "Fiktives Übungsbeispiel: Die Inflation ist im letzten Quartal auf 2,5 Prozent gesunken. Die Zentralbank sieht darin ein Zeichen der Erholung, warnt aber vor steigenden Energiekosten.",
+      taskAr: "لخّص المثال التدريبي الخيالي: الانخفاض المفترض، تفسير البنك المركزي الافتراضي، والتحذير.",
       modelAnswerAr: "«انخفض التضخم في الربع الأخير إلى 2.5%. يراه البنك المركزي علامة تعافٍ، لكنه يحذر من ارتفاع تكاليف الطاقة.»",
       keyPointsAr: ["نقلت نسبة التضخم (2.5%)", "ذكرت تفسير البنك (تعافٍ)", "نقلت التحذير من الطاقة"],
     },
@@ -100,24 +100,24 @@ export const mediation: NonNullable<Lesson["mediation"]> = [
 export const interaction: NonNullable<Lesson["interaction"]> = [
     {
       id: "int-b2-02-1",
-      scenarioAr: "نقاش أكاديمي عن العولمة وتأثيرها الاقتصادي.",
+      scenarioAr: "نقاش تدريبي عام عن أثر العولمة في الاقتصاد.",
       scenarioDe: "Diskussion über die Globalisierung.",
-      strategyAr: "الاستراتيجية: تحليل معقد متعدد الأبعاد بأدوات ربط متقدمة.",
+      strategyAr: "وازن الرأي، واستعمل المجهول مع فعل ناقص لعرض الإمكان أو الضرورة عند ملاءمتهما.",
       rounds: [
         {
           speakerDe: "Hat die Globalisierung mehr Vorteile oder Nachteile?",
           speakerAr: "هل للعولمة مزايا أكثر أم عيوب؟",
           options: [
-            { de: "Während die Globalisierung den Handel und den Austausch fördert, vergrößert sie gleichzeitig die Ungleichheit zwischen Ländern.", ar: "بينما تعزز العولمة التجارة والتبادل، تزيد في الوقت نفسه التفاوت بين الدول.", best: true, replyDe: "Eine differenzierte Antwort. Wie könnte man die Nachteile reduzieren?", replyAr: "إجابة متوازنة. كيف يمكن تقليل العيوب؟" },
-            { de: "Die Globalisierung ist nur schlecht und muss gestoppt werden.", ar: "العولمة سيئة فقط ويجب إيقافها.", best: false, replyDe: "Das ist zu einseitig. Man muss auch die Vorteile sehen.", replyAr: "هذا منحاز جداً. يجب رؤية المزايا أيضاً." },
+            { de: "Während der Handel durch klare Regeln gefördert werden kann, müssen soziale Folgen berücksichtigt werden.", ar: "في حين يمكن تشجيع التجارة بقواعد واضحة، يجب أخذ الآثار الاجتماعية في الاعتبار.", best: true, replyDe: "Eine differenzierte Antwort. Wie lassen sich die Nachteile verringern?", replyAr: "إجابة متوازنة. كيف يمكن الحد من العيوب؟" },
+            { de: "Alle Grenzen müssen sofort geschlossen werden.", ar: "يجب إغلاق كل الحدود فوراً.", best: false, replyDe: "Das ist zu pauschal. Die Folgen einer solchen Maßnahme müssten geprüft werden.", replyAr: "هذا تعميم واسع. ينبغي تقييم عواقب إجراء كهذا." },
           ],
         },
         {
-          speakerDe: "Wie könnte man die Nachteile der Globalisierung reduzieren?",
-          speakerAr: "كيف يمكن تقليل عيوب العولمة؟",
+          speakerDe: "Wie lassen sich die Nachteile der Globalisierung verringern?",
+          speakerAr: "كيف يمكن الحد من عيوب العولمة؟",
           options: [
-            { de: "Meiner Ansicht nach brauchen wir faire Handelsregeln und Investitionen in Bildung. Je mehr Chancengleichheit, desto gerechter die Globalisierung.", ar: "في رأيي نحتاج قواعد تجارة عادلة واستثماراً في التعليم. كلما زادت تكافؤ الفرص، زادت عدالة العولمة.", best: true, replyDe: "Ein konstruktiver Vorschlag. Allerdings ist die Umsetzung komplex.", replyAr: "اقتراح بناء. لكن التنفيذ معقد." },
-            { de: "Man sollte einfach alle Grenzen schließen.", ar: "يجب ببساطة إغلاق كل الحدود.", best: false, replyDe: "Das würde die Wirtschaft weltweit schädigen.", replyAr: "هذا سيضر الاقتصاد عالمياً." },
+            { de: "Meiner Ansicht nach müssen faire Handelsregeln ausgearbeitet werden; außerdem kann in Bildung investiert werden. Das könnte Chancen gerechter verteilen.", ar: "في رأيي، يجب وضع قواعد تجارية عادلة؛ ويمكن أيضاً الاستثمار في التعليم. وقد يساعد ذلك على توزيع الفرص بعدالة أكبر.", best: true, replyDe: "Ein konstruktiver Vorschlag. Allerdings ist die Umsetzung komplex.", replyAr: "اقتراح بناء. لكن التنفيذ معقد." },
+            { de: "Alle Grenzen müssen geschlossen werden.", ar: "يجب إغلاق كل الحدود.", best: false, replyDe: "Das ist zu pauschal. Die Folgen einer solchen Maßnahme müssten geprüft werden.", replyAr: "هذا تعميم واسع. ينبغي تقييم عواقب إجراء كهذا." },
           ],
         },
       ],

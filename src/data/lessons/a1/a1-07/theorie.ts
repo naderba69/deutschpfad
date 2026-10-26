@@ -64,7 +64,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
         rows: [
           {label: "Umlaut", cells: ["der Apfel", "die Äpfel"]},
           {label: "-n", cells: ["die Banane", "die Bananen"]},
-          {label: "-en", cells: ["die Flasche", "die Flaschen"]},
+          {label: "-n (بعد -e)", cells: ["die Flasche", "die Flaschen"]},
           {label: "بلا نهاية ظاهرة", cells: ["das Brötchen", "die Brötchen"]},
           {label: "قياس", cells: ["ein Kilo Tomaten", "zwei Kilo Tomaten"]},
         ],

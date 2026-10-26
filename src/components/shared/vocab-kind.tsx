@@ -40,7 +40,7 @@ export function VocabKindBadge({ g, className }: { g?: string; className?: strin
     <span
       data-testid="vocab-kind-type"
       className={cn(
-        "rounded px-1 py-0.5 text-[10px] font-semibold text-muted-foreground ring-1 ring-inset ring-border",
+        "rounded px-1 py-0.5 text-[11px] font-semibold text-muted-foreground ring-1 ring-inset ring-border",
         className,
       )}
     >

@@ -19,6 +19,9 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   q2: { options: ["drei Tage zu Hause bleiben", "sofort wieder arbeiten gehen", "am Freitag in der Praxis anrufen", "ins Büro kommen und arbeiten"], key: "drei Tage zu Hause bleiben" },
   q3: { options: ["der Dativ", "das Perfekt", "die Aussprache", "die Zahlen"], key: "der Dativ" },
   q4: { options: ["jeden Abend zwei Stunden", "einmal pro Woche", "nur am Wochenende", "drei Stunden am Morgen"], key: "jeden Abend zwei Stunden" },
+  q5: { options: ["Sie ist erleichtert, kennt das Ergebnis aber noch nicht.", "Sie ist sehr enttäuscht, weil sie die Prüfung nicht bestanden hat.", "Sie ist krank und wartet auf den nächsten Prüfungstermin.", "Sie ist nervös, denn sie hat die Prüfung noch nicht gemacht."], key: "Sie ist erleichtert, kennt das Ergebnis aber noch nicht." },
+  q6: { options: ["Einen kurzen Text schreiben", "Zwei Stunden lang Deutsch lernen", "Fünf Sätze zum Dativ schreiben", "Eine Geschichte für Lena schreiben"], key: "Einen kurzen Text schreiben" },
+  q7: { options: ["Mit ihrer Nachbarin", "Mit ihrer Lehrerin", "Allein zu Hause", "Mit Lena am Telefon"], key: "Mit ihrer Nachbarin" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -129,7 +132,7 @@ const expectedMatching: Record<string, { left: string; right: string }[]> = {
     { left: "Das ist der Bruder meines Freundes.", right: "المضاف إليه بحالة الإضافة (Genitiv)" },
     { left: "Ich hätte gern einen Kaffee.", right: "تمنٍّ مهذّب (Konjunktiv II)" },
     { left: "Das ist mein Bruder, der in Bonn wohnt.", right: "جملة موصولة (Relativsatz)" },
-    { left: "Ich arbeitete gestern lange.", right: "الماضي البسيط في الكتابة (Präteritum)" },
+    { left: "Ich arbeitete gestern lange.", right: "Präteritum في مثال سردي" },
   ],
 };
 
@@ -197,13 +200,18 @@ describe("A2-13 lesson content audit", () => {
     expect(meta && "duration" in meta).toBe(false);
   });
 
-  it("limits goals to evidenced performances; z4 is recognition of B1 expansions, not readiness", () => {
-    expect(lessonA213.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
+  it("limits goals to evidenced performances; z4 is recognition of selected examples, not B1 readiness", () => {
+    expect(lessonA213.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z-listening", "z4"]);
     expect(goal("z1").evidence).toMatchObject({ exerciseIds: ["w1", "w2"], completion: "all-correct" });
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e5", "e6"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e4", "e8", "m3"]);
     expect(goal("z3").evidence?.taskIds).toContain("mini-test:a2-13:m3");
     expect(goal("z4").evidence).toMatchObject({ exerciseIds: ["e11"], taskIds: ["practice:a2-13:e11"], completion: "all-correct" });
+    expect(goal("z-listening").evidence).toMatchObject({
+      exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
+      taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l2:q4", "listening:l3:q5", "listening:l3:q6", "listening:l3:q7"],
+      completion: "all-correct",
+    });
     expect(goal("z4").de).not.toMatch(/bereit/);
     expect(JSON.stringify(lessonA213.lernziele)).not.toMatch(/B1-Grammatik|bereit für/);
 
@@ -212,6 +220,24 @@ describe("A2-13 lesson content audit", () => {
       expect(mapped).not.toContain(forbidden);
     }
     expect(lessonA213.practiceBank.findIndex(({ id }) => id === "e11")).toBeGreaterThanOrEqual(4);
+    expect(lessonA213.listening.items.map(({ id }) => id)).toEqual(["l1", "l2", "l3"]);
+    expect(lessonA213.listening.questions.map(({ id, itemId }) => [id, itemId])).toEqual([
+      ["q1", "l1"], ["q2", "l1"], ["q3", "l2"], ["q4", "l2"],
+      ["q5", "l3"], ["q6", "l3"], ["q7", "l3"],
+    ]);
+    const transitionDialogue = lessonA213.listening.items.find(({ id }) => id === "l3")!;
+    expect(transitionDialogue.lines.map(({ de }) => de)).toEqual([
+      "Die A2-Prüfung ist vorbei. Wie fühlst du dich?",
+      "Erleichtert, aber ich weiß noch nicht, ob ich bestanden habe.",
+      "Was möchtest du in B1 verbessern?",
+      "Ich will jede Woche einen kurzen Text schreiben.",
+      "Mit wem übst du dann das Sprechen?",
+      "Mit meiner Nachbarin. So mache ich kleine Schritte.",
+    ]);
+    expect(transitionDialogue.audioNoteAr).toMatch(/مولّدة آلياً \(TTS\)، وليست تسجيلاً بشرياً/);
+    expect(transitionDialogue.lines.map(({ audioSrc }) => audioSrc)).toEqual(
+      [1, 2, 3, 4, 5, 6].map((line) => `/audio/lessons/a2-13/ls-a2-13-3-${line}.mp3`),
+    );
   });
 
   it("audits every multiple-choice key and each distractor", () => {
@@ -291,7 +317,7 @@ describe("A2-13 lesson content audit", () => {
     }
   });
 
-  it("validates matching pairs exactly, including the new B1-expansion recognition task", () => {
+  it("validates matching pairs exactly, including the selected-structure recognition task", () => {
     for (const [id, pairs] of Object.entries(expectedMatching)) {
       const exercise = task(id);
       if (exercise.type !== "matching") throw new Error(`${id} is not matching`);
@@ -321,7 +347,7 @@ describe("A2-13 lesson content audit", () => {
     expect(reading?.id).toBe("read-a2-13");
     expect(reading?.textType).toBe("bericht");
     expect(reading?.titleDe).toBe("Mein Weg bis A2 — und wie es weitergeht");
-    expect(reading?.titleAr).toBe("طريقي إلى A2 — وكيف يكمل بعدها");
+    expect(reading?.titleAr).toBe("طريقي إلى A2 — وكيف أواصل بعده");
     expect(reading?.paragraphs).toHaveLength(4);
     expect(reading?.paragraphsAr).toHaveLength(4);
     const text = reading!.paragraphs.join(" ").toLowerCase();
@@ -368,9 +394,14 @@ describe("A2-13 lesson content audit", () => {
     const t3 = lessonA213.theory[2]!;
     expect(JSON.stringify(t1.eselsbruecke)).not.toContain("PMW");
     expect(t1.explanationAr).toContain("أدوات الربط (وobwohl توسعةً)");
+    expect(t2.explanationAr).toContain("Krankmeldung");
+    expect(t2.explanationAr).toContain("AU");
+    expect(t2.explanationAr).toContain("لا نصّاً إلزامياً");
     expect(t2.relatedRuleComparison?.content).toContain("§ 5 EntgFG");
     expect(t2.relatedRuleComparison?.content).toContain("unverzüglich");
     expect(t2.relatedRuleComparison?.content).not.toMatch(/قبل بداية الدوام هاتفياً|بعض العقود تشترطها/);
+    expect(t3.explanationAr).toContain("لا تحولات آلية");
+    expect(JSON.stringify(t3.examples)).not.toMatch(/\b(?:A2|B1):/);
     expect(t3.whyAr).not.toContain("يخفّض الحمل المعرفي");
     const culture = lessonA213.fehlerUndTipps.culturalNote.content;
     expect(culture).toContain("§ 30 AufenthG");
@@ -392,6 +423,7 @@ describe("A2-13 lesson content audit", () => {
       z2: ["e1", "e5", "e6"],
       z3: ["e4", "e8", "m3"],
       z4: ["e11"],
+      "z-listening": ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
     };
     for (const [goalId, exerciseIds] of Object.entries(idsByGoal)) {
       const allCorrect = exerciseIds.map((exerciseId) => goalEvent(goalId, exerciseId));

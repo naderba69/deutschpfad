@@ -50,7 +50,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       id: "m4",
       type: "error-correction",
       instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Ich warte für dich.",
+      wrongSentence: "Ich warte für den Bus.",
       wrongWord: "für",
       correctWord: "auf",
       options: ["auf", "für", "von", "an"],
@@ -73,7 +73,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
 
 export const flashcards: NonNullable<Lesson["flashcards"]> = [
     { id: "fc1", de: "die Sprache", ar: "اللغة", example: "Die Sprache verbindet.", exampleAr: "اللغة تربط.", level: "B2" },
-    { id: "fc2", de: "die Kultur", ar: "الثقافة", example: "Jede Kultur ist einzigartig.", exampleAr: "كل ثقافة فريدة.", level: "B2" },
+    { id: "fc2", de: "die Kultur", ar: "الثقافة", example: "Wir lernen in diesem Kurs verschiedene Kulturen kennen.", exampleAr: "نتعرّف في هذه الدورة إلى ثقافات متنوعة.", level: "B2" },
     { id: "fc3", de: "der Austausch", ar: "التبادل", example: "Der Austausch ist lehrreich.", exampleAr: "التبادل مفيد.", level: "B2" },
     { id: "fc4", de: "interkulturell", ar: "بين الثقافات", example: "Interkulturelles Lernen.", exampleAr: "تعلم بين الثقافات.", level: "B2" },
     { id: "fc5", de: "sich interessieren für", ar: "يهتم بـ", example: "Ich interessiere mich für Musik.", exampleAr: "أهتم بالموسيقى.", level: "B2" },
@@ -83,41 +83,41 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     { id: "fc9", de: "die Bereitschaft", ar: "الاستعداد", example: "Es hängt von der Bereitschaft ab, sich wirklich dafür zu interessieren.", exampleAr: "الأمر يتوقف على الاستعداد للاهتمام به فعلاً.", level: "B2" },
     { id: "fc10", de: "sich gewöhnen an", ar: "يعتاد على", example: "Über die Wochen gewöhnte sie sich an neue Rhythmen.", exampleAr: "وعلى مدى الأسابيع اعتادت إيقاعاً جديداً.", level: "B2" },
     { id: "fc11", de: "die Übersetzung", ar: "الترجمة", example: "Heute arbeitet Lena in einem Übersetzungsbüro.", exampleAr: "تعمل لينا اليوم في مكتب ترجمة.", level: "B2" },
-    { id: "fc12", de: "die Reibung", ar: "الاحتكاك", example: "Natürlich gab es auch Reibung.", exampleAr: "وبالطبع كان هناك احتكاك أيضاً.", level: "B2" },
+    { id: "fc12", de: "die Reibung", ar: "الاحتكاك", example: "Gelegentlich gab es Reibung.", exampleAr: "حدث بعض الاحتكاك أحياناً.", level: "B2" },
   ];
 
 export const mediation: NonNullable<Lesson["mediation"]> = [
         {
       id: "med-b2-08-1", type: "relay-instructions",
-      titleAr: "اشرح سلوكاً ثقافياً ألمانياً لشخص عربي",
-      sourceDe: "In Deutschland ist es üblich, bei Geschäftstreffen pünktlich zu erscheinen. Verspätungen gelten als unhöflich und werden selten entschuldigt.",
-      taskAr: "اشرح بالعربية القاعدة الثقافية: الالتزام بالمواعيد، وكيف يُنظر إلى التأخير — مع مقارنة موجزة بعادات بلدك.",
-      modelAnswerAr: "«في ألمانيا من المعتاد الحضور في الموعد في اللقاءات التجارية. يُعد التأخير غير مهذب ونادراً ما يُغتفر. في بلدنا الوضع مختلف غالباً.»",
-      keyPointsAr: ["شرحت قاعدة الالتزام بالمواعيد", "نقلت نظرة التأخير", "أضفت مقارنة مع بلدك"],
+      titleAr: "انقل تعليمات اجتماع فريق محدد",
+      sourceDe: "Für unser Teammeeting steht in der Einladung 9 Uhr. Wegen einer Zugverspätung komme ich heute voraussichtlich zehn Minuten später. Bitte gib der Gruppe kurz Bescheid, sobald du es weißt.",
+      taskAr: "انقل لزميلك بالعربية ما تقوله الرسالة عن موعد هذا الاجتماع وكيفية الإبلاغ عن التأخير. وضّح أن هذه اتفاقات فريق محدد، لا قاعدة عن بلد أو ثقافة كاملة.",
+      modelAnswerAr: "«موعد اجتماع فريقنا التاسعة بحسب الدعوة. بسبب تأخر القطار سأصل اليوم بعد الموعد بنحو عشر دقائق. أرجو إبلاغ المجموعة فور معرفة ذلك. هذه تعليمات هذا الفريق في المثال، وليست قاعدة عامة عن بلد أو ثقافة.»",
+      keyPointsAr: ["نقلت موعد الاجتماع", "شرحت سبب التأخير والوقت المتوقع", "ذكرت طلب إبلاغ المجموعة", "ميّزت اتفاق الفريق عن التعميم الثقافي"],
     },
   ];
 
 export const interaction: NonNullable<Lesson["interaction"]> = [
     {
       id: "int-b2-08-1",
-      scenarioAr: "موقف عمل بين الثقافات — سوء فهم ثقافي.",
-      scenarioDe: "Interkulturelle Missverständnisse im Beruf.",
-      strategyAr: "الاستراتيجية: التعامل بحساسية ثقافية وحل سوء الفهم.",
+      scenarioAr: "تأخر شخص عن اجتماع فريق بسبب القطار؛ يوضح الطرفان ما يناسب هذا الفريق من دون تعميم على ثقافة أو بلد.",
+      scenarioDe: "Eine Verspätung bei einem Teammeeting klären und eine konkrete Absprache treffen.",
+      strategyAr: "اسأل عن الاتفاق الخاص بالفريق، واذكر الوقائع والحل الممكن من دون نسب عادة إلى ثقافة كاملة.",
       rounds: [
         {
-          speakerDe: "Warum bist du gestern zu spät zum Meeting gekommen?",
-          speakerAr: "لماذا تأخرت أمس عن الاجتماع؟",
+          speakerDe: "Das Meeting begann um neun. Du bist heute zehn Minuten später gekommen. Was ist passiert?",
+          speakerAr: "بدأ الاجتماع في التاسعة، ووصلت اليوم بعد الموعد بعشر دقائق. ماذا حدث؟",
           options: [
-            { de: "Es tut mir leid. In meiner Kultur ist zehn Minuten Verspätung normal. Ich wusste nicht, dass es hier so streng ist. Ich werde mich anpassen.", ar: "آسف. في ثقافتي التأخر عشر دقائق طبيعي. لم أعلم أنه صارم هنا. سأتأقلم.", best: true, replyDe: "Danke für die Erklärung. Verständnis ist der erste Schritt. Pünktlichkeit ist hier wirklich wichtig.", replyAr: "شكراً للتوضيح. الفهم أول خطوة. الالتزام بالمواعيد مهم حقاً هنا." },
-            { de: "Zehn Minuten sind doch nichts! Ihr seid zu streng.", ar: "عشر دقائق ليست شيئاً! أنتم صارمون جداً.", best: false, replyDe: "Für uns ist Pünktlichkeit Respekt. Wir können einen Kompromiss finden.", replyAr: "بالنسبة لنا الالتزام احترام. يمكننا إيجاد حل وسط." },
+            { de: "Es tut mir leid. Mein Zug hatte Verspätung. Ich hätte kurz Bescheid geben sollen. Welche Absprache gilt in unserem Team?", ar: "أعتذر. تأخر قطاري، وكان ينبغي أن أبلغكم باختصار. ما الاتفاق المعمول به في فريقنا؟", best: true, replyDe: "Danke für die Erklärung. Für dieses Meeting hilft es uns, wenn du die Gruppe kurz informierst.", replyAr: "شكراً للتوضيح. يفيد هذا الاجتماع أن تبلغ المجموعة باختصار.", },
+            { de: "Zehn Minuten sind doch nichts! Ihr seid zu streng.", ar: "عشر دقائق لا تعني شيئاً! أنتم صارمون جداً.", best: false, replyDe: "Ich verstehe, dass du die Verspätung anders bewertest. Lass uns trotzdem eine passende Absprache für unser Team finden.", replyAr: "أفهم أنك تقيّم التأخير على نحو مختلف. ومع ذلك فلنجد اتفاقاً مناسباً لفريقنا." },
           ],
         },
         {
-          speakerDe: "Wie können wir einen Kompromiss finden?",
-          speakerAr: "كيف يمكننا إيجاد حل وسط؟",
+          speakerDe: "Wie können wir eine klare Absprache treffen?",
+          speakerAr: "كيف نتفق على إجراء واضح؟",
           options: [
-            { de: "Ich verspreche, ab jetzt fünf Minuten früher zu kommen. Vielleicht könnt ihr mir bei dringenden Fällen etwas Toleranz geben.", ar: "أعدك بالحضور قبل الموعد بخمس دقائق من الآن. ربما تمنحونني بعض التسامح في الحالات العاجلة.", best: true, replyDe: "Das ist ein fairer Kompromiss. Willkommen im Team!", replyAr: "هذا حل وسط عادل. مرحباً بك في الفريق!" },
-            { de: "Ich kann keine Kompromisse machen, ich komme wann ich will.", ar: "لا أستطيع تقديم تنازلات، سآتي متى شئت.", best: false, replyDe: "Dann wird die Zusammenarbeit schwierig. Pünktlichkeit ist nicht verhandelbar.", replyAr: "إذن سيصعب التعاون. الالتزام غير قابل للتفاوض." },
+            { de: "Ich informiere die Gruppe, sobald ich merke, dass ich mich verspäte. Wenn ich niemanden erreiche, schreibe ich nach meiner Ankunft.", ar: "سأبلغ المجموعة فور أن أعرف أنني سأتأخر. وإذا تعذر عليّ الوصول إلى أحد فسأكتب بعد وصولي.", best: true, replyDe: "Das ist eine klare Vereinbarung. Wir probieren sie beim nächsten Meeting aus.", replyAr: "هذا اتفاق واضح. سنجربه في الاجتماع القادم." },
+            { de: "Ich komme, wann ich will; eine Absprache brauche ich nicht.", ar: "سآتي متى شئت؛ ولا أحتاج إلى اتفاق.", best: false, replyDe: "Dann können die anderen schwer planen. Welche Lösung wäre für beide Seiten praktikabel?", replyAr: "عندئذ يصعب على الآخرين التخطيط. ما الحل العملي للطرفين؟" },
           ],
         },
       ],

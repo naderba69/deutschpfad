@@ -232,7 +232,7 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     {
       id: "fc19",
       de: "das Trinkgeld",
-      ar: "الإكرامية (تختلف أعرافها؛ يذكر دليل برلين المحلي أنها اختيارية)",
+      ar: "الإكرامية (طوعية بحسب دليل زوار برلين؛ وتختلف الإرشادات المحلية)",
       example: "Der Kellner bekommt ein Trinkgeld von zwei Euro.",
       exampleAr: "يحصل النادل على إكرامية قدرها يورويْن.",
       level: "A2",

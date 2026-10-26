@@ -65,7 +65,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
           "right": "المستشفى"
         },
         {
-          "left": "die Bank",
+          "left": "die Bank (Geldinstitut)",
           "right": "البنك"
         }
       ],
@@ -106,7 +106,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       "id": "e6",
       "type": "fill-blank",
-      "instructionAr": "أكمل بوصف اتجاهات الطريق، ثم استعمل التعبير الذي يعني أن البنك حول الزاوية:",
+      "instructionAr": "أكمل الاتجاهات المذكورة: إلى الأمام ثم يساراً؛ والبنك هنا مؤسسة مالية حول الزاوية:",
       "template": "Gehen Sie ___, dann ___, und die Bank ist ___ Ecke.",
       "blanks": [
         {

@@ -183,7 +183,7 @@ export const A2_DIALOGUES_3: DailyDialogue[] = [
       { speaker: "أنت", role: "b", de: "Das ist perfekt! Ich nehme es. Können Sie es einpacken?", ar: "هذا مثالي! سآخذه. هل تستطيعين تغليفه؟" },
     ],
     questions: [
-      { de: "Was sucht die Person?", ar: "ماذا تبحث الشخص؟", options: [
+      { de: "Was sucht die Person?", ar: "ماذا يبحث الشخص؟", options: [
         { text: "Ein Geschenk für einen Freund", ar: "هدية لصديق", correct: true, explanation: "نعم — الغرض من الزيارة." },
         { text: "Ein Buch für sich selbst", ar: "كتاباً لنفسه", correct: false, explanation: "لا — الكتاب ليس لنفسه؛ بل «Ich suche ein Geschenk für einen Freund»." },
         { text: "Musik für sich zu Hause", ar: "موسيقى لنفسه", correct: false, explanation: "لا — الموسيقى ذوقُ الصديق لا طلبُ الزبون؛ والغرض «ein Geschenk für einen Freund»." },

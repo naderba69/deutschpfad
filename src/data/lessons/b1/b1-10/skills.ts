@@ -28,6 +28,19 @@ export const listening: Lesson["listening"] = {
           { speaker: "Karim", de: "Ich glaube, dass du es schaffst. Du bist fleißig!", ar: "أعتقد أنك ستنجحين. أنتِ مجتهدة!" },
         ],
       },
+      {
+        id: "l3",
+        title: "الانتقال إلى ميونخ",
+        audioNoteAr: "الصوت مولّد آلياً (TTS)، وليس تسجيلاً بشرياً. فُحص فك الترميز ومؤشرات الإشارة بالسكريبت؛ لا يثبت ذلك وضوح النطق أو طبيعة الأداء أو مطابقة الصوت للنص. والملف 3-3 يتجاوز حد الصمت الطرفي الافتراضي بقليل.",
+        lines: [
+          { speaker: "Anna", de: "Sami, du hast eine Zusage aus München bekommen. Wann beginnt dein Studium?", ar: "يا سامي، وصلتك موافقة من ميونخ. متى تبدأ دراستك؟", audioSrc: "/audio/lessons/b1-10/ls-b1-10-3-1.mp3" },
+          { speaker: "Sami", de: "Am ersten Oktober. Deshalb möchte ich schon Mitte September umziehen.", ar: "في الأول من أكتوبر. لذلك أود الانتقال في منتصف سبتمبر.", audioSrc: "/audio/lessons/b1-10/ls-b1-10-3-2.mp3" },
+          { speaker: "Anna", de: "Hast du für die ersten Wochen schon eine Unterkunft gefunden?", ar: "هل وجدت مكاناً للإقامة في الأسابيع الأولى؟", audioSrc: "/audio/lessons/b1-10/ls-b1-10-3-3.mp3" },
+          { speaker: "Sami", de: "Mein Cousin, der in München wohnt, hat ein freies Zimmer für mich.", ar: "لدى ابن عمي الذي يسكن في ميونخ غرفة شاغرة لي.", audioSrc: "/audio/lessons/b1-10/ls-b1-10-3-4.mp3" },
+          { speaker: "Anna", de: "Das hilft sehr. Suchst du dann später eine eigene Wohnung?", ar: "هذا مفيد جداً. هل ستبحث لاحقاً عن شقة خاصة بك؟", audioSrc: "/audio/lessons/b1-10/ls-b1-10-3-5.mp3" },
+          { speaker: "Sami", de: "Ja, ich werde eine Wohnung suchen, die nicht zu teuer ist. Mein Cousin hilft mir dabei.", ar: "نعم، سأبحث عن شقة ليست باهظة، وسيساعدني ابن عمي في ذلك.", audioSrc: "/audio/lessons/b1-10/ls-b1-10-3-6.mp3" },
+        ],
+      },
     ],
     questions: [
       {
@@ -84,6 +97,24 @@ export const listening: Lesson["listening"] = {
           "«ein Buch schreiben» لم تذكرها منى كهدفها الأكبر.",
         ],
       },
+      {
+        id: "q4",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Wann möchte Sami nach München umziehen?",
+        questionAr: "متى يريد سامي الانتقال إلى ميونخ؟",
+        options: ["Mitte September vor Studienbeginn", "Anfang August in den Ferien", "Ende Oktober nach dem Start", "Erst im nächsten Frühjahr"],
+        correctIndex: 0,
+        explanation: "قال سامي: Ich möchte schon Mitte September umziehen.",
+        errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "أغسطس لم يرد في الحوار؛ حدّد سامي منتصف سبتمبر.",
+          "قال سامي إنه سينتقل قبل بدء الدراسة في أكتوبر، لا في نهاية الشهر.",
+          "لم يؤجل سامي الانتقال إلى الربيع؛ خطته منتصف سبتمبر.",
+        ],
+      },
     ],
   };
 
@@ -91,14 +122,14 @@ export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
     title: "مراجعة أصوات B1",
     items: [
-      { de: "die Zukunft", ar: "المستقبل", note: "z = تس (لا يوجد ch) + u الأولى طويلة والثانية قصيرة: تسووكونفت" },
-      { de: "würde", ar: "كنت سأفعل", note: "w = ڤ، وü صوت بين «و» و«ي» مع تدوير الشفتين: ڤورده" },
-      { de: "das Gemälde", ar: "اللوحة", note: "g = ك (لا غ)، وä = e مفتوحة: كيمِلده" },
-      { de: "der Bürger", ar: "المواطن", note: "ü قصيرة، وg = ك: بورْكَر" },
-      { de: "die Regierung", ar: "الحكومة", note: "ie = إي، وg = ك: رِكيرونغ" },
-      { de: "während", ar: "بينما", note: "w = ڤ + ä: ڤيرِنت" },
+      { de: "die Zukunft", ar: "المستقبل", note: "IPA: [ˈtsuːkʊnft]؛ u الأولى طويلة والثانية قصيرة." },
+      { de: "würde", ar: "كنت سأفعل", note: "IPA: [ˈvʏʁdə]؛ انتبه إلى ü القصيرة وإلى r الألمانية." },
+      { de: "das Gemälde", ar: "اللوحة", note: "IPA: [ɡəˈmɛːldə]؛ g هنا [ɡ] مجهور، وä طويلة." },
+      { de: "der Bürger", ar: "المواطن", note: "IPA: [ˈbʏʁɡɐ]؛ g هنا [ɡ] مجهور، وü قصيرة." },
+      { de: "die Regierung", ar: "الحكومة", note: "IPA: [ʁeˈɡiːʁʊŋ]؛ g هنا [ɡ] مجهور، وie تمثل [iː]." },
+      { de: "während", ar: "بينما", note: "IPA: [ˈvɛːʀənt]؛ w تمثل [v] وä طويلة." },
     ],
-    tip: "ستة أصوات B1 الصعبة — كررها يومياً: تسوكونفت، ڤورده، كيمِلده، بورْكَر، رِكيرونغ، ڤيرِنت.",
+    tip: "تدريب استماع وترديد باستخدام IPA في الملاحظات. زر النطق يعتمد على صوت الجهاز (TTS) ولا يقيس دقة نطقك.",
     shadowing: [
       { de: "Der Student, der dort steht, ist mein Freund.", ar: "الطالب الذي يقف هناك صديقي.", tip: "Relativsatz: der dort steht" },
       { de: "Wenn ich reich wäre, würde ich reisen.", ar: "لو كنت غنياً لسافرت.", tip: "Konjunktiv II: wäre + würde" },

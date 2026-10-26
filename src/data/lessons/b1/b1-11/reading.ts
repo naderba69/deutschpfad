@@ -1,24 +1,24 @@
 /**
  * b1-11 — نصّ القراءة الممتدّ (الجزء «reading»)
- * فُصل وأُضيف في المرحلة 5. رسالة رسمية: تستعمل بنى B1 (موصول، مجهول، شرط، أدوات ربط) في نصّ واحد.
+ * رسالة تدريبية خيالية تستخدم تراكيب مختارة (الموصول والمجهول والشرط وروابط الجمل) في سياق واحد.
  */
 import type { ReadingText } from "@/types/lesson";
 
 export const readingB111: ReadingText = {
   id: "read-b1-11",
-  titleDe: "Ein Brief vom Bildungszentrum",
-  titleAr: "رسالة من مركز التعليم",
+  titleDe: "Ein fiktiver Übungsbrief vom Bildungszentrum",
+  titleAr: "رسالة تدريبية خيالية من مركز التعليم (كل المواعيد والرسوم افتراضية)",
   textType: "brief",
   paragraphs: [
-    "Sehr geehrte Frau Haddad, vielen Dank für Ihre Nachricht. Sie hatten sich für den Kurs „Deutsch B1 – Abschlusskurs“ angemeldet, der ab September jeden Dienstag und Donnerstag stattfindet. Ihre Anmeldung ist eingegangen und wird gerade bearbeitet. Damit die Anmeldung gültig bleibt, müssen die Unterlagen, die wir für die Kursaufnahme brauchen, bis zum 20. August bei uns eingehen: das Formular, das Sie unterschrieben haben, und eine Kopie Ihres Ausweises oder Ihrer Aufenthaltsgenehmigung. Leider können wir diese Frist nicht verlängern, weil die Gruppen danach fest eingeteilt werden.",
+    "Sehr geehrte Frau Haddad, vielen Dank für Ihre Nachricht. Sie hatten sich für den Kurs „Deutsch B1 – Abschlusskurs“ angemeldet, der ab September jeden Dienstag und Donnerstag stattfindet. Ihre Anmeldung ist eingegangen und wird gerade bearbeitet. Damit die Anmeldung gültig bleibt, müssen die Unterlagen, die wir für die Kursaufnahme brauchen, spätestens am 20. August bei uns eingehen: das Formular, das Sie unterschrieben haben, und eine Kopie Ihres Ausweises oder Ihrer Aufenthaltsgenehmigung. Leider können wir diese Frist nicht verlängern, weil die Gruppen danach fest eingeteilt werden.",
     "Zu Ihrem Beratungsgespräch: Sie hatten gefragt, ob ein Gespräch auch am Samstag möglich ist. Das ist es — allerdings erst im Oktober. Wenn Sie den früheren Termin brauchen, würden wir Ihnen einen Termin am Freitag anbieten. Trotzdem bitten wir Sie, Ihre Fragen vorher kurz per E-Mail zu schicken, damit sich das Gespräch auf Ihre Ziele konzentrieren kann. Nachdem wir Ihre Antwort erhalten haben, bekommen Sie eine Terminbestätigung.",
-    "Ein Hinweis zum Kurs selbst: Der Unterricht ist in zwei Teile geteilt. Im ersten Teil werden Grammatik und Wortschatz wiederholt, im zweiten Teil wird geschrieben und gesprochen. Von den Teilnehmern der letzten Gruppen wurde besonders der Übungsteil gelobt, weil dort Aufgaben aus der Prüfung bearbeitet werden. Wenn Sie die Prüfung im November ablegen möchten, sollten Sie sich bis Ende September anmelden, weil die Zahl der Plätze begrenzt ist. Zur Vorbereitung empfehlen wir außerdem, dass Sie zweimal pro Woche eine halbe Stunde laut lesen. Der schriftliche Prüfungsteil wird im November geschrieben, der mündliche Prüfungsteil findet einige Wochen später statt.",
+    "Ein Hinweis zum Kurs selbst: Der Unterricht ist in zwei Teile geteilt. Im ersten Teil werden Grammatik und Wortschatz wiederholt, im zweiten Teil werden schriftliche und mündliche Prüfungsteile geübt. Von den Teilnehmern der letzten Gruppen wurde besonders der Übungsteil gelobt, weil dort Aufgaben aus der internen Übungsprüfung bearbeitet werden. Wenn Sie an der internen Übungsprüfung im November teilnehmen möchten, sollten Sie sich bis Ende September anmelden, weil die Zahl der Plätze begrenzt ist. Zur Vorbereitung empfehlen wir außerdem, dass Sie zweimal pro Woche eine halbe Stunde laut lesen. Die Termine für die schriftlichen und mündlichen Übungen erhalten Sie später vom Zentrum.",
     "Bitte beachten Sie auch, dass die Anmeldung erst dann abgeschlossen ist, wenn die Kursgebühr bezahlt wurde. Die Höhe der Gebühr hängt davon ab, ob Sie berufstätig sind; für Arbeitssuchende gilt ein ermäßigter Preis. Falls Sie einen Nachweis über die Zahlung brauchen, schicken wir Ihnen die Bestätigung sofort nach Eingang. Für Ihre Bewerbungen und alles, was damit zusammenhängt, können Sie übrigens unsere Sprechstunde nutzen — sie findet während des Kurses jeden Mittwoch von 16 bis 18 Uhr statt, und eine Anmeldung ist dafür nicht nötig.",
   ],
   paragraphsAr: [
-    "سيدة هداّد المحترمة، شكراً جزيلاً على رسالتك. كنت قد سجّلتِ في كورس «الألمانية B1 — كورس ختامي» الذي يبدأ في سبتمبر ويُقام كل ثلاثاء وخميس. وقد وصل تسجيلك ويجري العمل عليه الآن. ولكي يبقى التسجيل صالحاً، يجب أن تصل إلينا المستندات التي نحتاجها للالتحاق بالكورس قبل 20 أغسطس: الاستمارة التي وقّعتها، ونسخة من بطاقة هويتك أو تصريح إقامتك. ولا يمكننا للأسف تمديد هذه المهلة، لأن المجموعات تُقسَّم بعدها تقسيمًا نهائياً.",
+    "سيدة هداّد المحترمة، شكراً جزيلاً على رسالتك. كنت قد سجّلتِ في كورس «الألمانية B1 — كورس ختامي» الذي يبدأ في سبتمبر ويُقام كل ثلاثاء وخميس. وقد وصل تسجيلك ويجري العمل عليه الآن. ولكي يبقى التسجيل صالحاً، يجب أن تصل إلينا المستندات التي نحتاجها للالتحاق بالكورس في موعد أقصاه 20 أغسطس: الاستمارة التي وقّعتها، ونسخة من بطاقة هويتك أو تصريح إقامتك. ولا يمكننا للأسف تمديد هذه المهلة، لأن المجموعات تُقسَّم بعدها تقسيمًا نهائياً.",
     "وفي شأن جلسة الاستشارة: كنت قد سألتِ هل يمكن إجراء جلسة يوم السبت أيضاً. نعم يمكن — لكن في أكتوبر فقط. وإذا كنتِ تحتاجين الموعد الأبكر فسنقدّم لك موعداً يوم الجمعة. ورغم ذلك نرجو أن ترسلي أسئلتك مسبقاً في بريد موجز لكي تركّز الجلسة على أهدافك. وبعد أن نتلقّى جوابك ستأتيك رسالة تأكيد الموعد.",
-    "وتنبيه بشأن الكورس نفسه: الدرس مقسوم إلى جزأين. في الجزء الأول تُراجَع القواعد والمفردات، وفي الثاني يُكتَب ويُتحدَّث. وقد أثنى المشاركون في المجموعات الأخيرة على قسم التدريب خاصة، لأنه تُعالَج فيه مهامّ من الامتحان. وإذا أردتِ التقدّم للامتحان في نوفمبر فعليك التسجيل قبل نهاية سبتمبر، لأن عدد المقاعد محدود. وللتحضير ننصح أيضاً بأن تقرئي بصوت مسموع نصف ساعة مرتين في الأسبوع. ويُكتب الجزء الكتابي من الامتحان في نوفمبر، أما الجزء الشفهي فيكون بعد أسابيع قليلة.",
+    "وتنبيه بشأن الكورس نفسه: الدرس مقسوم إلى جزأين. في الجزء الأول تُراجَع القواعد والمفردات، وفي الثاني تُتدرَّب الأجزاء الكتابية والشفهية. وقد أثنى المشاركون في المجموعات الأخيرة على قسم التدريب خاصة، لأنه تُعالَج فيه مهامّ من الاختبار التدريبي الداخلي. وإذا أردتِ المشاركة في الاختبار التدريبي الداخلي في نوفمبر فعليك التسجيل قبل نهاية سبتمبر، لأن عدد المقاعد محدود. وللتحضير ننصح أيضاً بأن تقرئي بصوت مسموع نصف ساعة مرتين في الأسبوع. وسيرسل المركز لاحقاً مواعيد التدريبات الكتابية والشفهية.",
     "ونرجو أن تُلاحظي أيضاً أن التسجيل لا يكتمل إلا بعد دفع رسوم الكورس. ويعتمد مقدار الرسوم على ما إذا كنتِ عاملة أم لا؛ ولمن يبحث عن عمل سعرٌ مخفّض. وإن احتجتِ إثباتاً عن الدفع أرسلنا لك التأكيد فور الوصول. وللرسائل المتعلقة بطلبات التقديم وكل ما يتصل بها يمكنك الاستفادة من ساعة الاستشارة المفتوحة، وهي تُقام أثناء الكورس كل أربعاء من الرابعة إلى السادسة مساءً، ولا تحتاج إلى تسجيل مسبق.",
   ],
   glossary: [
@@ -41,10 +41,10 @@ export const readingB111: ReadingText = {
       questionDe: "Was muss bis zum 20. August beim Bildungszentrum eingehen?",
       questionAr: "ما الذي يجب أن يصل إلى مركز التعليم حتى 20 أغسطس؟",
       options: [
-        "Nur die Kursgebühr.",
-        "Das unterschriebene Formular und eine Ausweiskopie.",
-        "Eine Zusage für die Prüfung im November.",
-        "Ein Empfehlungsbrief des Arbeitgebers.",
+        "Nur die Kursgebühr für die Teilnahme bezahlen.",
+        "Das unterschriebene Formular und eine Ausweis- oder Aufenthaltstitelkopie.",
+        "Eine verbindliche Zusage für die Prüfung im November erhalten.",
+        "Ein Empfehlungsbrief vom Arbeitgeber für die Prüfung.",
       ],
       correctIndex: 1,
       optionExplanations: ["لا — الرسوم تُدفع لإتمام التسجيل لا قبل هذه المهلة: «die Anmeldung erst dann abgeschlossen ist, wenn die Kursgebühr bezahlt wurde»؛ والمطلوب «das Formular … und eine Kopie Ihres Ausweises».", undefined, "لا — قبولٌ للامتحان ليس من أوراق المهلة؛ والمطلوب «das Formular, das Sie unterschrieben haben, und eine Kopie Ihres Ausweises».", "لا — خطاب توصية من صاحب العمل لم يُذكر إطلاقاً؛ والأوراق محصورةٌ في «das Formular» و«eine Kopie Ihres Ausweises oder Ihrer Aufenthaltsgenehmigung»."],
@@ -67,7 +67,7 @@ export const readingB111: ReadingText = {
       correctIndex: 1,
       optionExplanations: ["لا — الإطلاق يخالف الردّ: «Das ist es — allerdings erst im Oktober».", undefined, "لا — ليس مستبعداً إطلاقاً؛ بل ممكنٌ مع قيدٍ زمنيّ: «allerdings erst im Oktober».", "لا — الهاتف ذُكر لإرسال الأسئلة مسبقاً لا لعقد اللقاء: «Ihre Fragen vorher kurz per E-Mail zu schicken»."],
       paragraph: 2,
-      explanation: "الفقرة الثانية تُجيب بالبنية الشرطية غير الواقعية أولاً ثم تُصلح: «Wenn Sie den früheren Termin brauchen, würden wir Ihnen einen Termin am Freitag anbieten» — والجواب على سؤال السبت هو «Das ist es — allerdings erst im Oktober».",
+      explanation: "الفقرة الثانية تجيب عن موعد السبت: «Das ist es — allerdings erst im Oktober». ثم تعرض شرطاً مفتوحاً مع صيغة مهذبة: «Wenn Sie den früheren Termin brauchen, würden wir Ihnen … anbieten»؛ ولا تعني صيغة würden وحدها أن الشرط مستحيل أو مخالف للواقع.",
       errorType: "comprehension",
     },
     {
@@ -78,14 +78,14 @@ export const readingB111: ReadingText = {
       questionAr: "لماذا يُثنى على قسم التدريب خاصة؟",
       options: [
         "Weil er regelmäßig am Samstag stattfindet.",
-        "Weil dort Aufgaben aus der Prüfung bearbeitet werden.",
+        "Weil dort interne Prüfungsaufgaben bearbeitet werden.",
         "Weil er deutlich billiger als der Kurs ist.",
         "Weil dort überhaupt keine Grammatik vorkommt.",
       ],
       correctIndex: 1,
-      optionExplanations: ["لا — السبت ورد لموعد الاستشارة لا لقسم التمارين: «ob ein Gespräch auch am Samstag möglich ist»؛ وسببُ المدح «weil dort Aufgaben aus der Prüfung bearbeitet werden».", undefined, "لا — السعر لم يُذكر في المدح؛ وتخفيض السعر موضوعٌ آخر: «für Arbeitssuchende gilt ein ermäßigter Preis».", "لا — القواعد تُدرّس في الجزء الأول: «Im ersten Teil werden Grammatik und Wortschatz wiederholt»؛ ومدحُ الجزء الثاني سببُه أسئلة الامتحان."],
+      optionExplanations: ["لا — السبت ورد لموعد الاستشارة لا لقسم التمارين: «ob ein Gespräch auch am Samstag möglich ist»؛ وسببُ المدح «weil dort Aufgaben aus der internen Übungsprüfung bearbeitet werden».", undefined, "لا — السعر لم يُذكر في المدح؛ وتخفيض السعر موضوعٌ آخر: «für Arbeitssuchende gilt ein ermäßigter Preis».", "لا — القواعد تُدرّس في الجزء الأول: «Im ersten Teil werden Grammatik und Wortschatz wiederholt»؛ ومدحُ الجزء الثاني سببه مهامّ الاختبار التدريبي الداخلي."],
       paragraph: 3,
-      explanation: "الفقرة الثالثة تستعمل المبني للمجهول في وصف الكورس: «Der Unterricht ist in zwei Teile geteilt» و»Von den Teilnehmern der letzten Gruppen wurde besonders der Übungsteil gelobt» — وسبب الثناء مذكور في جملة weil: «weil dort Aufgaben aus der Prüfung bearbeitet werden».",
+      explanation: "الفقرة الثالثة تستعمل المبني للمجهول في وصف الكورس: «Der Unterricht ist in zwei Teile geteilt» و»Von den Teilnehmern der letzten Gruppen wurde besonders der Übungsteil gelobt» — وسبب الثناء مذكور في جملة weil: «weil dort Aufgaben aus der internen Übungsprüfung bearbeitet werden».",
       errorType: "comprehension",
     },
     {
@@ -115,5 +115,5 @@ export const readingB111: ReadingText = {
     { de: "Die Terminbestätigung bekommen Sie nach der Antwort.", ar: "تأتيك رسالة تأكيد الموعد بعد الجواب." },
   ],
   discussionAr:
-    "تخيّل أنك تريد التسجيل في كورس أو تقديم طلب إلى مكتب رسمي: اكتب رسالة من ستة أسطر بالبنية نفسها — التحية الرسمية، ثم سبب الرسالة، ثم شرطٌ بصيغة wenn، ثم مطلوبٌ بصيغة müssen أو Passiv، ثم خاتمة رسمية. واستعمل في رسالتك جملة موصولة واحدة على الأقل وأداة ربط واحدة (damit أو trotzdem أو nachdem)، ثم اقرأ الرسالة على زميلك ليسأل عن أي غموض فيها.",
+    "في هذا السيناريو التدريبي الخيالي، تخيّل أنك تريد التسجيل في كورس أو تقديم طلب إلى جهة رسمية. المواعيد والرسوم والشروط الواردة في نص القراءة مختلقة ولا تمثل قاعدة عامة.  اكتب رسالة من ستة أسطر بالبنية نفسها — التحية الرسمية، ثم سبب الرسالة، ثم شرطٌ بصيغة wenn، ثم مطلوبٌ بصيغة müssen أو Passiv، ثم خاتمة رسمية. واستعمل في رسالتك جملة موصولة واحدة على الأقل وأداة ربط واحدة (damit أو trotzdem أو nachdem)، ثم اقرأ الرسالة على زميلك ليسأل عن أي غموض فيها.",
 };

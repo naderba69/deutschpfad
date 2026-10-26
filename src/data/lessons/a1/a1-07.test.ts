@@ -68,6 +68,9 @@ const listeningAnswers: Record<string, string> = {
   q2: "zwei",
   q3: "0176 24 83 591",
   q4: "Die Nummer zu wiederholen",
+  q5: "einen Euro",
+  q6: "zwei Flaschen",
+  q7: "drei Euro",
 };
 
 function allTasks() {

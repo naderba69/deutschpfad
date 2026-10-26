@@ -55,17 +55,17 @@ export const reading: NonNullable<Lesson["reading"]> = {
       {
         "de": "beginnen",
         "ar": "يبدأ",
-        "noteAr": "منتظم: der Kurs beginnt. مرادفه anfangen (فعل بسابقة منفصلة، لاحقاً)."
+        "noteAr": "في الحاضر: der Kurs beginnt. وله صيغ ماضية قوية: begann، begonnen؛ هنا نركّز على صيغة الحاضر."
       },
       {
         "de": "fragen",
         "ar": "يسأل",
-        "noteAr": "منتظم تماماً: sie fragt. ضدّه antworten (وجذعه ينتهي بـ t فيأخذ وصلة ‑e‑: du antwortest)."
+        "noteAr": "في الحاضر: sie fragt. يرتبط به في الحوار antworten (يجيب)، وجذعه المنتهي بـ t يأخذ وصلة ‑e‑: du antwortest."
       },
       {
         "de": "die Lehrerin",
         "ar": "المعلّمة",
-        "noteAr": "المذكّر der Lehrer، والمؤنّث بإضافة ‑in مع مدّ الحرف أحياناً."
+        "noteAr": "المذكّر der Lehrer، وتُشتقّ الصيغة المؤنّثة غالباً بإضافة ‑in: die Lehrerin."
       },
       {
         "de": "leicht",
@@ -223,7 +223,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
       },
       {
         "de": "Auf Wiedersehen und bis bald!",
-        "ar": "إلى اللقاء وإلى القريب!"
+        "ar": "إلى اللقاء، أراك قريباً!"
       }
     ],
     "discussionAr": "قدّم نفسك أنت الآن على منوال أمير: اسمك، بلدك، مدينتك، عمرك، مهنتك أو دراستك، وسببُ تعلّمك الألمانية. اكتب خمس جملٍ على الأقلّ مستعملاً sein مرّةً والأفعال المنتظمة مرّتين، ثم اقرأها بصوتٍ عالٍ."
@@ -247,7 +247,7 @@ export const listening: Lesson["listening"] = {
         title: "لقاء رسمي (formell)",
         lines: [
           { speaker: "Herr Weber", de: "Guten Tag! Wie heißen Sie?", ar: "طاب يومك! ما اسم حضرتك؟" },
-          { speaker: "Frau Leila", de: "Guten Tag! Ich heiße Leila Mansour.", ar: "طاب يومك! اسمي ليلى منصور." },
+          { speaker: "Frau Mansour", de: "Guten Tag! Ich heiße Leila Mansour.", ar: "طاب يومك! اسمي ليلى منصور." },
           { speaker: "Herr Weber", de: "Woher kommen Sie, Frau Mansour?", ar: "من أين أنتِ يا سيدة منصور؟" },
           { speaker: "Frau Leila", de: "Ich komme aus Tunesien.", ar: "أنا من تونس." },
         ],
@@ -321,11 +321,11 @@ export const pronunciation: Lesson["pronunciation"] = {
       { de: "woher", ar: "من أين", note: "ڤوهير — مع h بارزة في المنتصف" },
       { de: "Guten Tag", ar: "طاب يومك", note: "غوتن تاك — الـ g في آخر الكلمة تُهمس فتُنطق «ك»" },
     ],
-    tip: "كرّر كل كلمة ثلاث مرات بصوت عالٍ قبل الانتقال — النطق الصحيح من اليوم الأول يمنع العادات الخاطئة.",
+    tip: "استمع إلى نموذج الكلمة ثم كررها بالسرعة التي تناسبك. التسجيل الذاتي قد يساعدك على ملاحظة محاولاتك، لكنه لا يقيس دقة النطق آلياً.",
     shadowing: [
       { de: "Hallo! Ich heiße Anna.", ar: "مرحباً! اسمي آنا.", tip: "انتبه: heiße تُنطق «هاي-سِه» وليس «هيسّه»" },
-      { de: "Wie heißt du?", ar: "ما اسمك؟", tip: "ارفع نبرة صوتك في نهاية السؤال" },
-      { de: "Ich komme aus Tunesien.", ar: "أنا من تونس.", tip: "komme = كومّه (حرف o قصير)" },
+      { de: "Wie heißt du?", ar: "ما اسمك؟", tip: "هذا سؤال W؛ تكون نبرته في النمط المعتاد هابطة غالباً، بخلاف كثير من أسئلة نعم/لا. قد تتغير النبرة بحسب السياق." },
+      { de: "Ich komme aus Tunesien.", ar: "أنا من تونس.", tip: "في komme تُنطق o قصيرة؛ لا تطِل الحركة، وe الأخيرة خفيفة." },
       { de: "Freut mich!", ar: "يسعدني لقاؤك!", tip: "مقطعان فقط: فرويت ميش" },
     ],
   };
@@ -334,10 +334,10 @@ export const writing: NonNullable<Lesson["writing"]> = [
     {
       id: "w1",
       type: "transformation",
-      instructionAr: "أجب كتابةً بالجملة الكاملة: من أين أنت؟",
-      instructionDe: "Antworte: Woher kommst du?",
-      prompt: "Woher kommst du? (أجب بجملة كاملة تبدأ بـ Ich)",
-      acceptedAnswers: ["Ich komme aus Tunesien", "Ich komme aus Tunis", "Ich komme aus Tunesien."],
+      instructionAr: "تدرّب على الإجابة كما لو كنت من تونس، بجملة كاملة تبدأ بـ Ich.",
+      instructionDe: "Antworte mit Tunesien oder Tunis: Woher kommst du?",
+      prompt: "Woher kommst du? (استخدم Tunesien أو Tunis في إجابتك)",
+      acceptedAnswers: ["Ich komme aus Tunesien", "Ich komme aus Tunesien.", "Ich komme aus Tunis", "Ich komme aus Tunis."],
       sampleAnswer: "Ich komme aus Tunesien.",
       explanation: "الصيغة الصحيحة: Ich komme aus + البلد. انتبه إلى الفعل komme بعد ich.",
       errorType: "grammar",
@@ -356,7 +356,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
     {
       id: "w3",
       type: "fill-blank",
-      instructionAr: "أكمل الفراغات بالضمير الصحيح (ich/du/er/sie):",
+      instructionAr: "أكمل الفراغات بالضمير المناسب من الخيارات:",
       template: "___ bin Anna. Und wie heißt ___? ___ heißt Sami.",
       blanks: [
         { correct: "Ich", options: ["Ich", "Du", "Er"] },

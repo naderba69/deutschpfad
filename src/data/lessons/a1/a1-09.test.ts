@@ -90,6 +90,9 @@ const listeningAnswers: Record<string, string> = {
   q1: "am Montag um neun Uhr",
   q2: "am dritten August",
   q3: "am fünfzehnten Dezember",
+  q4: "Sie hat Zahnschmerzen.",
+  q5: "um vierzehn Uhr",
+  q6: "am Donnerstag",
 };
 
 function reading() {
@@ -354,7 +357,7 @@ describe("A1-09 audited lesson content", () => {
 
   it("checks theory, vocabulary cards, dates, dialogue consistency, and all displayed text fields", () => {
     const tasks = allTasks();
-    expect(tasks).toHaveLength(43);
+    expect(tasks).toHaveLength(46);
     expect(new Set(tasks.map((task) => task.id)).size).toBe(tasks.length);
     for (const task of tasks) {
       expect(task.instructionAr.trim(), `${task.id} instruction`).toBeTruthy();
@@ -430,8 +433,8 @@ describe("A1-09 audited lesson content", () => {
     expect(new Date(Date.UTC(2026, 3, 7)).getUTCDay()).toBe(2); // Dienstag
     expect(new Date(Date.UTC(2026, 3, 9)).getUTCDay()).toBe(4); // Donnerstag
 
-    expect(lessonA109.listening.items.map((item) => item.id)).toEqual(["l1", "l2"]);
-    expect(lessonA109.listening.items.map((item) => item.lines.length)).toEqual([6, 4]);
+    expect(lessonA109.listening.items.map((item) => item.id)).toEqual(["l1", "l2", "l3"]);
+    expect(lessonA109.listening.items.map((item) => item.lines.length)).toEqual([6, 4, 6]);
     const listeningLines = lessonA109.listening.items.flatMap((item) => item.lines);
     for (const line of listeningLines) {
       expect(line.speaker.trim()).toBeTruthy();
@@ -496,6 +499,32 @@ describe("A1-09 audited lesson content", () => {
       expect(mistake.whyAr.trim()).toBeTruthy();
     }
     expect(lessonA109.fehlerUndTipps.culturalNote.content).toContain("التأمين القانوني");
+
+    const correctDateCheck = lessonA109.practiceBank.find(({ id }) => id === "e9");
+    expect(correctDateCheck?.type).toBe("error-correction");
+    if (correctDateCheck?.type === "error-correction") {
+      expect(correctDateCheck.isAlreadyCorrect).toBe(true);
+      expect(correctDateCheck.instructionAr).toContain("لا خطأ");
+    }
+    const sinceVsRange = lessonA109.practiceBank.find(({ id }) => id === "e16");
+    expect(sinceVsRange?.type).toBe("multiple-choice");
+    if (sinceVsRange?.type === "multiple-choice") {
+      expect(sinceVsRange.optionExplanations?.[1]).toContain("لا حكم بأن الكلمتين لا تجتمعان");
+      expect(sinceVsRange.optionExplanations?.[1]).not.toContain("فلا تُجمع مع");
+    }
+    const yearChoice = lessonA109.practiceBank.find(({ id }) => id === "e24");
+    expect(yearChoice?.type).toBe("multiple-choice");
+    if (yearChoice?.type === "multiple-choice") {
+      expect(yearChoice.optionExplanations?.[3]).toContain("ليست صيغة معيارية مقبولة على نطاق عام");
+      expect(yearChoice.optionExplanations?.[3]).not.toContain("لا يُستعمل في الألمانية");
+    }
+    const politenessChoice = lessonA109.practiceBank.find(({ id }) => id === "e26");
+    expect(politenessChoice?.type).toBe("multiple-choice");
+    if (politenessChoice?.type === "multiple-choice") {
+      expect(politenessChoice.optionExplanations?.[1]).toContain("أكثر مباشرة");
+      expect(politenessChoice.optionExplanations?.[1]).not.toContain("فظة");
+    }
+    expect(lessonA109.pronunciation.tip).toContain("TTS في المتصفح لا تسجيلاً بشرياً");
 
     const interactions = lessonA109.interaction ?? [];
     expect(interactions).toHaveLength(1);

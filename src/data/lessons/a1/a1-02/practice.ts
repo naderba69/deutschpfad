@@ -73,7 +73,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e6",
       type: "error-correction",
       instructionAr:
-        "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+        "اختر التصحيح المناسب للكلمة الخاطئة في الجملة.",
       wrongSentence: "Mein Mutter heißt Leila.",
       wrongWord: "Mein",
       correctWord: "Meine",
@@ -144,7 +144,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e11",
       type: "error-correction",
       instructionAr:
-        "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+        "اختر التصحيح المناسب للكلمة الخاطئة في الجملة.",
       wrongSentence: "Fatma wohnt in Sousse. Ihre Bruder studiert in Tunis.",
       wrongWord: "Ihre",
       correctWord: "Ihr",
@@ -233,6 +233,23 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation:
         "أربع كلماتٍ تُجمع بالإمالة وحدها (Väter, Mütter, Brüder, Töchter)، وواحدة بالنهاية وحدها (Schwestern)، وواحدة بالاثنتين معاً (Söhne). فثلاثة أنماط جمعٍ في ستّ كلمات.",
       errorType: "plural",
+    },
+    {
+      id: "e18",
+      type: "multiple-choice",
+      instructionAr: "أكمل أداة الملكية للمخاطَبين بصيغة الجمع:",
+      questionDe: "Ihr seid neu in der Stadt. ___ Eltern wohnen auch hier.",
+      questionAr: "أنتم جدد في المدينة. والداكم يسكنان هنا أيضاً.",
+      options: ["Eure", "Ihre", "Unsere", "Seine"],
+      correctIndex: 0,
+      optionExplanations: [
+        undefined,
+        "Ihre قد تكون للحديث الرسمي عن والدي المخاطَب، لكن السياق هنا يخاطب مجموعة بصيغة ihr/seid؛ أداة ملكيتها eure.",
+        "Unsere تعني والدينا نحن المتكلمين، لا والدي المخاطَبين.",
+        "Seine تعني والديه هو، ولا يوجد مالك مفرد مذكر في السياق.",
+      ],
+      explanation: "يحدد ihr + seid المخاطَبين بصيغة الجمع؛ لذلك الجذر euer، ومع الاسم الجمع Eltern تظهر صيغة eure: eure Eltern.",
+      errorType: "pronoun",
     },
   ];
 

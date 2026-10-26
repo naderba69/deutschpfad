@@ -38,4 +38,3 @@ export function getStoryProgress(levelCounts: Record<string, number>): Record<st
   }
   return out;
 }
-

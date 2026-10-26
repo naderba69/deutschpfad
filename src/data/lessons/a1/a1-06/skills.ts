@@ -21,12 +21,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
     ],
     "paragraphsAr": [
       "لينا: أهلاً يوسف! قل لي، ماذا تحبّ أن تفعل في وقت فراغك؟",
-      "يوسف: أحبّ الطبخ كثيراً. وأحبّ أكثر شيء أن أطبخ للأصدقاء. وأقرأ كثيراً — نصف ساعة كلّ مساء. وأنتِ؟ ألديك هواية؟",
+      "يوسف: أحبّ الطبخ كثيراً. وأكثر ما أحبّه أن أطبخ للأصدقاء. وأقرأ كثيراً — نصف ساعة كلّ مساء. وأنتِ؟ ألديك هواية؟",
       "لينا: ألعب الكرة الطائرة مرّتين أسبوعياً. أحبّ الرياضات الجماعية. لكنّني للأسف لا أستطيع السباحة. أجد ذلك مؤسفاً.",
       "يوسف: حقّاً؟ أُحسن السباحة. تعالي معي إلى المسبح! أستطيع مساعدتك في السباحة. ابدئي فقط، فالأمر ليس صعباً.",
       "لينا: ربّما. وماذا فعلتَ في نهاية الأسبوع؟ أكنتَ في البيت؟",
-      "يوسف: لا، يوم السبت كنت في المتحف. كان ممتعاً، لكن لم يكن لديّ وقت كافٍ. ويوم الأحد كان الجوّ سيّئاً، فطبختُ وشاهدت التلفاز.",
-      "لينا: يبدو جميلاً! ألديك رغبة في قهوة؟ فتحكي لي المزيد.",
+      "يوسف: لا، يوم السبت كنت في المتحف. كان مثيراً للاهتمام، لكن لم يكن لديّ وقت كافٍ. ويوم الأحد كان الجوّ سيّئاً، فطبختُ وشاهدت التلفاز.",
+      "لينا: هذا يبدو جيداً! ألديك رغبة في قهوة؟ فتحكي لي المزيد.",
       "يوسف: بكلّ سرور! لكنّني أفضّل شاياً. القهوة لا أشربها إلا صباحاً."
     ],
     "glossary": [
@@ -82,7 +82,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
       },
       {
         "de": "Klingt gut!",
-        "ar": "يبدو جميلاً!",
+        "ar": "هذا يبدو جيداً!",
         "noteAr": "تعبير محكيّ شائع من الفعل klingen (يبدو صوتُه). والفاعل «das» محذوف اختصاراً."
       },
       {
@@ -220,7 +220,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
       },
       {
         "de": "Ich koche gern, am liebsten für Freunde.",
-        "ar": "أحبّ الطبخ، وأكثر ما أحبّ أن أطبخ للأصدقاء."
+        "ar": "أحبّ الطبخ، وأكثر ما أحبّه أن أطبخ للأصدقاء."
       },
       {
         "de": "Ich kann leider nicht schwimmen. Das finde ich schade.",
@@ -247,6 +247,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         id: "l1",
         title: "دعوة إلى المباراة",
+        audioNoteAr: "يُنطق النص آلياً عبر أصوات المتصفح (TTS)، وليس تسجيلاً بشرياً؛ وقد تختلف الأصوات حسب الجهاز.",
         lines: [
           { speaker: "Karim", de: "Hallo Mona! Was machst du am Samstag?", ar: "مرحباً منى! ماذا تفعلين السبت؟" },
           { speaker: "Mona", de: "Am Samstag? Ich weiß nicht. Warum?", ar: "السبت؟ لا أعرف. لماذا؟" },
@@ -258,11 +259,25 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         id: "l2",
         title: "الهوايات المفضلة",
+        audioNoteAr: "يُنطق النص آلياً عبر أصوات المتصفح (TTS)، وليس تسجيلاً بشرياً؛ وقد تختلف الأصوات حسب الجهاز.",
         lines: [
           { speaker: "Lehrer", de: "Was machst du gern in deiner Freizeit?", ar: "ماذا تحب أن تفعل في وقت فراغك؟" },
           { speaker: "Sami", de: "Ich lese gern und höre gern Musik.", ar: "أحب القراءة والاستماع للموسيقى." },
           { speaker: "Lehrer", de: "Und du, Anna?", ar: "وأنتِ يا آنا؟" },
           { speaker: "Anna", de: "Ich tanze gern und fotografiere.", ar: "أحب الرقص والتصوير." },
+        ],
+      },
+      {
+        id: "l3",
+        title: "هوايات يوم الأحد",
+        audioNoteAr: "مصدر ملفات الصوت المرفقة غير موثّق في بيانات الدرس؛ لذلك لا أجزم بأنها مولّدة آلياً أو تسجيلات بشرية، ولا أؤكد هوية الصوتين. الحوار مثال تدريبي خيالي.",
+        lines: [
+          { speaker: "Mona", de: "Was machst du am Sonntag gern?", ar: "ماذا تحب أن تفعل يوم الأحد؟", audioSrc: "/audio/lessons/a1-06/ls-a1-06-3-1.mp3" },
+          { speaker: "Karim", de: "Ich fahre gern Rad und gehe gern schwimmen.", ar: "أحب ركوب الدراجة والذهاب للسباحة.", audioSrc: "/audio/lessons/a1-06/ls-a1-06-3-2.mp3" },
+          { speaker: "Mona", de: "Wo fährst du gern Rad?", ar: "أين تحب ركوب الدراجة؟", audioSrc: "/audio/lessons/a1-06/ls-a1-06-3-3.mp3" },
+          { speaker: "Karim", de: "Ich fahre gern im Park Rad.", ar: "أحب ركوب الدراجة في الحديقة.", audioSrc: "/audio/lessons/a1-06/ls-a1-06-3-4.mp3" },
+          { speaker: "Mona", de: "Und was machst du am Abend?", ar: "وماذا تفعل مساءً؟", audioSrc: "/audio/lessons/a1-06/ls-a1-06-3-5.mp3" },
+          { speaker: "Karim", de: "Am Abend spiele ich Gitarre.", ar: "أعزف الغيتار مساءً.", audioSrc: "/audio/lessons/a1-06/ls-a1-06-3-6.mp3" },
         ],
       },
     ],
@@ -304,6 +319,45 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         optionExplanations: [undefined, "لا — هذه هواية سامي لا آنا: «Ich lese gern und höre gern Musik».", "لا — كرة القدم من حوار الدعوة (كريم ومنى)؛ وآنا قالت: «Ich tanze gern und fotografiere».", "لا — مشاهدة التلفاز لم تُذكر في الحوار؛ والمسموع من آنا: «Ich tanze gern und fotografiere»."],
         explanation: "قالت آنا: Ich tanze gern und fotografiere.",
+        errorType: "vocabulary",
+      },
+      {
+        id: "q4",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Was macht Karim am Sonntag gern?",
+        questionAr: "ماذا يحب كريم أن يفعل يوم الأحد؟",
+        options: ["Rad fahren und schwimmen", "tanzen und fotografieren", "Fußball spielen und lesen", "Musik hören und kochen"],
+        correctIndex: 0,
+        optionExplanations: [undefined, "الرقص والتصوير من هوايتي آنا في الحوار الآخر.", "لم يقل كريم إنه يلعب كرة القدم أو يقرأ يوم الأحد.", "الاستماع للموسيقى والطبخ لم يردا في هذا الحوار."],
+        explanation: "قال كريم: Ich fahre gern Rad und gehe gern schwimmen.",
+        errorType: "vocabulary",
+      },
+      {
+        id: "q5",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Wo fährt Karim gern Rad?",
+        questionAr: "أين يحب كريم ركوب الدراجة؟",
+        options: ["In einem Park", "In einem Garten", "Auf dem Platz", "Beim Schwimmbad"],
+        correctIndex: 0,
+        optionExplanations: [undefined, "قال إنه يركب الدراجة في متنزّه (Park)، لا في حديقة (Garten).", "لم يذكر ساحةً أو ملعباً؛ بل قال «im Park».", "المسبح مرتبط بالسباحة؛ أما ركوب الدراجة ففي الحديقة."],
+        explanation: "قال: Ich fahre gern im Park Rad.",
+        errorType: "vocabulary",
+      },
+      {
+        id: "q6",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Was macht Karim am Abend?",
+        questionAr: "ماذا يفعل كريم مساءً؟",
+        options: ["Er spielt am Abend Gitarre", "Er hört am Abend Musik", "Er liest am Abend ein Buch", "Er sieht am Abend fern"],
+        correctIndex: 0,
+        optionExplanations: [undefined, "لم يذكر الاستماع للموسيقى مساءً؛ قال إنه يعزف الغيتار.", "لم يقل إنه يقرأ كتاباً مساءً في هذا الحوار.", "مشاهدة التلفاز ليست النشاط المذكور؛ إنه يعزف الغيتار."],
+        explanation: "أجاب: Am Abend spiele ich Gitarre.",
         errorType: "vocabulary",
       },
     ],
@@ -364,14 +418,14 @@ export const writing: NonNullable<Lesson["writing"]> = [
     {
       id: "w4",
       type: "fill-blank",
-      instructionAr: "أكمل الحوار المكتوب باختيار العبارة المناسبة في كل فراغ. افترض أن موعد السبت المحدد لا يناسبك، فاعتذر بأدب واقترح الأسبوع القادم.",
+      instructionAr: "أكمل الحوار المكتوب. افترض أن الساعة 15:00 لا تناسبك (مع أن السبت متاح): اقبل الدعوة أولاً واسأل عن الوقت، ثم اعتذر عن الساعة واقترح الأسبوع القادم.",
       template: "A: Hast du am Samstag Zeit? Wir spielen Fußball. · B: ___ · A: Um 15 Uhr im Park. Kommst du mit? · B: ___ · A: ___",
       blanks: [
         { correct: "Ja, gern! Um wie viel Uhr?", options: ["Ja, gern! Um wie viel Uhr?", "Leider habe ich keine Zeit.", "Ich spiele Fußball?"] },
-        { correct: "Leider habe ich keine Zeit. Vielleicht nächste Woche?", options: ["Leider habe ich keine Zeit. Vielleicht nächste Woche?", "Ja, gern! Um wie viel Uhr?", "Leider bin ich keine Zeit. Vielleicht nächste Woche?"] },
+        { correct: "Leider passt mir 15 Uhr nicht. Vielleicht nächste Woche?", options: ["Leider passt mir 15 Uhr nicht. Vielleicht nächste Woche?", "Ja, gern! Um wie viel Uhr?", "Leider bin ich keine Zeit. Vielleicht nächste Woche?"] },
         { correct: "Ja, gern! Nächste Woche passt es mir gut.", options: ["Ja, gern! Nächste Woche passt es mir gut.", "Nein, ich habe am Samstag Zeit.", "Ich möchte keine Zeit."] },
       ],
-      explanation: "العبارات الصحيحة تكوّن حواراً متماسكاً: قبول مع سؤال عن الساعة، ثم اعتذار مهذب مع اقتراح أسبوع بديل، ثم قبول البديل.",
+      explanation: "القبول الأولي يسبق معرفة الساعة؛ وبعد تحديد 15:00 يوضح المتحدث أن الوقت لا يناسبه، ثم يقترح الأسبوع القادم ويقبل الطرف الآخر. هكذا لا يتعارض الاعتذار مع القبول الأول.",
       errorType: "vocabulary",
     },
     {

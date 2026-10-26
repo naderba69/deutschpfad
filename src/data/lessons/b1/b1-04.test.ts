@@ -12,7 +12,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   r1: { options: ["werde", "wirst", "wird", "werden"], key: "werde" },
   r2: { options: ["wird", "wurde", "wirst", "werden"], key: "wird" },
   e1: { options: ["hätte", "habe", "hatte", "haben"], key: "hätte" },
-  e2: { options: ["würde reisen", "werde reisen", "reise würde", "würde gereist"], key: "würde reisen" },
+  e2: { options: ["würde gern reisen", "werde gern reisen", "reise gern würde", "würde gern gereist"], key: "würde gern reisen" },
   e8: {
     options: ["هل يمكنكم التكرار؟", "هل تريدون أن تكرروا ذلك؟", "لماذا تكررون السؤال؟", "متى تكررون الكلام؟"],
     key: "هل يمكنكم التكرار؟",
@@ -27,13 +27,16 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     key: "ein Haus kaufen und reisen",
   },
   q2: {
-    options: ["eine Stiftung für Bildung", "eine eigene kleine Firma", "einen Verein in seiner Stadt", "eine Schule für Kinder"],
+    options: ["eine Stiftung für Bildung", "eine eigene kleine Firma", "einen Verein in ihrer Stadt", "eine Schule für Kinder"],
     key: "eine Stiftung für Bildung",
   },
   q3: {
     options: ["ein Wochenende ohne Handy", "mehr arbeiten und sparen", "Urlaub am Meer machen", "wieder sportlich werden"],
     key: "ein Wochenende ohne Handy",
   },
+  q4: { options: ["jeden Abend", "am Wochenende", "vor der Schule", "in der Mittagspause"], key: "jeden Abend" },
+  q5: { options: ["das Handy weglegen", "mehr Nachrichten lesen", "mit Freunden telefonieren", "Musik lauter machen"], key: "das Handy weglegen" },
+  q6: { options: ["Jugendliche entscheiden bewusster", "alle bekommen ein neues Handy", "die Schule wird früher beendet", "soziale Medien verschwinden"], key: "Jugendliche entscheiden bewusster" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -71,19 +74,20 @@ const expectedTransformationAnswers: Record<string, string[]> = {
   e7: ["Wenn ich Geld hätte, würde ich reisen", "Wenn ich Geld hätte, würde ich reisen."],
   e13: [
     "Könnten Sie bitte das Fenster schließen",
-    "Könnten Sie bitte das Fenster schließen.",
+    "Könnten Sie bitte das Fenster schließen?",
     "Würden Sie bitte das Fenster schließen",
     "Würden Sie bitte das Fenster schließen.",
+    "Würden Sie bitte das Fenster schließen?",
   ],
-  w1: ["Ich würde gern nach Deutschland reisen", "Ich würde nach Deutschland reisen"],
+  w1: ["Ich würde gern nach Deutschland reisen"],
 };
 
 const expectedFillBlanksExtra: Record<string, { correct: string[]; options: string[][] }> = {
   e11: {
-    correct: ["wäre", "gründete", "Könntest"],
+    correct: ["wäre", "würde", "Könntest"],
     options: [
       ["wäre", "war", "werde"],
-      ["gründete", "gründen", "gründet"],
+      ["würde", "wäre", "hätte"],
       ["Könntest", "Kannst", "Konntest"],
     ],
   },
@@ -177,8 +181,8 @@ describe("B1-04 lesson content audit", () => {
     expect(goal("z1").evidence?.exerciseIds).toEqual(["e1", "e5", "e7"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e2", "m2", "w1"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e3", "m1", "w2"]);
-    expect(goal("z4").evidence?.exerciseIds).toEqual(["q1", "q2", "q3"]);
-    expect(goal("z4").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"]);
+    expect(goal("z4").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4", "q5", "q6"]);
+    expect(goal("z4").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4", "listening:l3:q5", "listening:l3:q6"]);
     expect(JSON.stringify(lessonB104.lernziele)).not.toMatch(/Goethe|CEFR|sprechen|erzählen|Medien kritisch/);
   });
 
@@ -252,16 +256,29 @@ describe("B1-04 lesson content audit", () => {
     }
   });
 
+  it("frames the interaction and mediation as examples, not research findings", () => {
+    const discussion = lessonB104.interaction?.[0];
+    expect(discussion?.scenarioDe).toContain("Fiktive Übungsdiskussion");
+    expect(discussion?.scenarioAr).toContain("ليست نتائج بحثية");
+    expect(discussion?.rounds[0]?.options[0]?.de).toContain("finde ich");
+    expect(discussion?.rounds[0]?.options[0]?.ar).toContain("أرى");
+    expect(discussion?.rounds[1]?.options[1]?.replyAr).toContain("كيف يمكن التحقق");
+    expect(lessonB104.mediation?.[0]?.sourceDe).toContain("Fiktives Übungsbeispiel");
+  });
+
   it("keeps the reading text, glossary, comprehension questions, and discourse anchors intact", () => {
     const reading = lessonB104.reading;
     expect(reading?.id).toBe("read-b1-04");
     expect(reading?.textType).toBe("artikel");
-    expect(reading?.titleDe).toBe("Eine Woche ohne Nachrichten");
-    expect(reading?.titleAr).toBe("أسبوع بلا أخبار");
+    expect(reading?.titleDe).toBe("Fiktiver Erfahrungsbericht: Eine Woche ohne Nachrichten");
+    expect(reading?.titleAr).toBe("تقرير تجربة خيالي: أسبوع بلا أخبار");
+    expect(reading?.titleDe).toContain("Fiktiver Erfahrungsbericht");
     expect(reading?.paragraphs).toHaveLength(4);
     expect(reading?.paragraphsAr).toHaveLength(4);
     const text = reading!.paragraphs.join(" ").toLowerCase();
     expect(text.split(/\s+/).filter(Boolean).length).toBeGreaterThanOrEqual(250);
+    expect(text).not.toContain("drei Stunden Nachrichten lese");
+    expect(reading!.paragraphs[2]).toContain("eine sehr große Nachrichtenmenge könne ermüden");
 
     expect(reading?.glossary.length).toBeGreaterThanOrEqual(8);
     for (const item of reading!.glossary) {
@@ -384,6 +401,9 @@ describe("B1-04 lesson content audit", () => {
       "l1:q1",
       "l1:q2",
       "l2:q3",
+      "l3:q4",
+      "l3:q5",
+      "l3:q6",
     ]);
   });
 
@@ -407,7 +427,7 @@ describe("B1-04 lesson content audit", () => {
       "pending",
     );
     expect(
-      getGoalEvidenceStatus(goal("z4"), lessonB104.id, [goalEvent("z4", "q1"), goalEvent("z4", "q2"), goalEvent("z4", "q3")]),
+      getGoalEvidenceStatus(goal("z4"), lessonB104.id, [goalEvent("z4", "q1"), goalEvent("z4", "q2"), goalEvent("z4", "q3"), goalEvent("z4", "q4"), goalEvent("z4", "q5"), goalEvent("z4", "q6")]),
     ).toBe("evidenced");
   });
 });

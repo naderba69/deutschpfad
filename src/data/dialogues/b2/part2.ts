@@ -13,7 +13,7 @@ export const B2_DIALOGUES_2: DailyDialogue[] = [
     title: "نقاش أكاديمي",
     titleDe: "Akademische Diskussion",
     emoji: "🎓",
-    situation: "تناقش في ندوة موضوع الذكاء الاصطناعي",
+    situation: "حوار تمثيلي في ندوة تدريبية عن الذكاء الاصطناعي؛ الآراء الواردة ليست نتائج بحث أو توصية",
     turns: [
       { speaker: "الأستاذة", role: "a", de: "Was denken Sie über die Rolle der KI in der Bildung?", ar: "ما رأيك في دور الذكاء الاصطناعي في التعليم؟" },
       { speaker: "أنت", role: "b", de: "Meiner Ansicht nach bietet KI enorme Chancen, birgt aber auch Risiken.", ar: "في رأيي أن الذكاء الاصطناعي يقدم فرصاً هائلة لكنه يحمل مخاطر." },
@@ -53,13 +53,14 @@ export const B2_DIALOGUES_2: DailyDialogue[] = [
     title: "مراجعة عقد عمل",
     titleDe: "Arbeitsvertrag prüfen",
     emoji: "📄",
-    situation: "تستشير زميلاً حول بنود عقد عمل جديد",
+    situation: "محاكاة تدريبية خيالية لمراجعة مسودة عقد عمل؛ الشروط والأرقام ليست قواعد عامة أو استشارة قانونية.",
+    audioNoteAr: "ملفات MP3 لهذا الحوار موجودة، لكن مصدرها غير موثق؛ لا أجزم بأنها بشرية أو مولّدة، ولم تُتحقق مطابقتها للنص أو جودة النطق. شروط العقد في الحوار افتراضية وليست معياراً قانونياً.",
     turns: [
       { speaker: "الصديق", role: "a", de: "Wie läuft die neue Stelle? Hast du den Vertrag unterschrieben?", ar: "كيف الوظيفة الجديدة؟ هل وقعت العقد؟" },
       { speaker: "أنت", role: "b", de: "Noch nicht. Ich möchte die Bedingungen genau prüfen.", ar: "ليس بعد. أريد فحص الشروط بدقة." },
       { speaker: "الصديق", role: "a", de: "Was steht denn drin?", ar: "ماذا يوجد فيه؟" },
-      { speaker: "أنت", role: "b", de: "Sechs Monate Probezeit und eine Kündigungsfrist von drei Monaten.", ar: "فترة تجربة ستة أشهر ومهلة إنهاء ثلاثة أشهر." },
-      { speaker: "الصديق", role: "a", de: "Die Probezeit ist üblich. Aber die Kündigungsfrist ist lang.", ar: "فترة التجربة معتادة. لكن مهلة الإنهاء طويلة." },
+      { speaker: "أنت", role: "b", de: "Im Vertragsentwurf stehen sechs Monate Probezeit und eine Kündigungsfrist von drei Monaten.", ar: "ترد في مسودة العقد فترة تجربة ستة أشهر ومهلة إنهاء ثلاثة أشهر." },
+      { speaker: "الصديق", role: "a", de: "Die Kündigungsfrist von drei Monaten kommt mir lang vor. Ob sie im konkreten Fall gilt, sollte man prüfen.", ar: "تبدو لي مهلة الإنهاء البالغة ثلاثة أشهر طويلة. وينبغي التحقق من انطباقها في الحالة المحددة." },
       { speaker: "أنت", role: "b", de: "Genau. Vielleicht sollte ich verhandeln oder einen Anwalt konsultieren.", ar: "بالضبط. ربما يجب التفاوض أو استشارة محامٍ." },
     ],
     questions: [
@@ -70,13 +71,13 @@ export const B2_DIALOGUES_2: DailyDialogue[] = [
       ]},
       { de: "Wie lange ist die Probezeit?", ar: "كم مدة فترة التجربة؟", options: [
         { text: "Sechs Monate", ar: "ستة أشهر", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Drei Monate", ar: "ثلاثة أشهر", correct: false, explanation: "لا — الثلاثة أشهر مهلةُ الإنهاء لا التجربة: «Sechs Monate Probezeit und eine Kündigungsfrist von drei Monaten»." },
-        { text: "Ein Jahr", ar: "سنة", correct: false, explanation: "لا — لم تُذكر سنة Jahr؛ والتجربة «Sechs Monate Probezeit»." },
+        { text: "Drei Monate", ar: "ثلاثة أشهر", correct: false, explanation: "لا — الثلاثة أشهر مهلةُ الإنهاء لا التجربة: «Im Vertragsentwurf stehen sechs Monate Probezeit und eine Kündigungsfrist von drei Monaten»." },
+        { text: "Ein Jahr", ar: "سنة", correct: false, explanation: "لا — لم تُذكر سنة Jahr؛ والتجربة «sechs Monate Probezeit»." },
       ]},
-      { de: "Was wird als lang empfunden?", ar: "ما الذي يُعتبر طويلاً؟", options: [
-        { text: "Die Kündigungsfrist von drei Monaten", ar: "مهلة الإنهاء وهي ثلاثة أشهر", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Die Probezeit von sechs Monaten", ar: "فترة التجربة", correct: false, explanation: "لا — التجربة اعتُبرت معتادة: «Die Probezeit ist üblich»؛ والطويل «die Kündigungsfrist ist lang»." },
-        { text: "Das Gehalt im ersten Jahr", ar: "الراتب", correct: false, explanation: "لا — لم يُذكر راتب Gehalt؛ والملاحظة على Kündigungsfrist («Aber die Kündigungsfrist ist lang»)." },
+      { de: "Was empfindet die Person als lang?", ar: "ما الذي تراه الشخصية طويلاً؟", options: [
+        { text: "Die Kündigungsfrist von drei Monaten", ar: "مهلة الإنهاء وهي ثلاثة أشهر", correct: true, explanation: "صحيح — المتحدث يقول إنها تبدو له طويلة؛ هذا انطباع الشخصية لا قاعدة عامة." },
+        { text: "Die Probezeit von sechs Monaten", ar: "فترة التجربة", correct: false, explanation: "لا — المتحدث لا يصف «sechs Monate Probezeit» بأنها معتادة؛ بل يقول «Die Kündigungsfrist von drei Monaten kommt mir lang vor» عن المسودة." },
+        { text: "Das Gehalt im ersten Jahr", ar: "الراتب", correct: false, explanation: "لا — لم يُذكر راتب Gehalt؛ والملاحظة على Kündigungsfrist («Die Kündigungsfrist von drei Monaten kommt mir lang vor»)." },
       ]},
     ],
     keyVocab: [
@@ -93,7 +94,8 @@ export const B2_DIALOGUES_2: DailyDialogue[] = [
     title: "التحضير لعرض تقديمي",
     titleDe: "Präsentation vorbereiten",
     emoji: "📊",
-    situation: "تستعد مع زميلة لعرض أمام المديرية",
+    situation: "محاكاة تدريبية خيالية للتحضير لعرض أمام المديرية.",
+    audioNoteAr: "ملفات MP3 لهذا الحوار موجودة، لكن مصدرها غير موثق؛ لا أجزم بأنها بشرية أو مولّدة، ولم تُتحقق مطابقتها للنص أو جودة النطق. الحوار محاكاة افتراضية.",
     turns: [
       { speaker: "الزميلة", role: "a", de: "Sind wir bereit für die Präsentation morgen?", ar: "هل نحن جاهزان للعرض غداً؟" },
       { speaker: "أنت", role: "b", de: "Fast. Ich habe die Folien fertig, aber ich bin beim Zeitplan unsicher.", ar: "تقريباً. أنهيت الشرائح لكني غير متأكد من خطة الوقت." },
@@ -133,13 +135,14 @@ export const B2_DIALOGUES_2: DailyDialogue[] = [
     title: "مشكلة في عقد الإيجار",
     titleDe: "Mietvertrag-Problem",
     emoji: "🏠",
-    situation: "تناقش مشكلة تدفئة مع المالك",
+    situation: "محاكاة خيالية لعطل تدفئة؛ لا يحدد الحوار وحده استحقاق تخفيض الإيجار أو أي حق قانوني.",
+    audioNoteAr: "ملفات MP3 لهذا الحوار موجودة، لكن مصدرها غير موثق؛ لا أجزم بأنها بشرية أو مولّدة، ولم تُتحقق مطابقتها للنص أو جودة النطق. السيناريو افتراضي وليس استشارة قانونية.",
     turns: [
       { speaker: "أنت", role: "a", de: "Guten Tag! Ich muss mit Ihnen über die Heizung sprechen. Sie funktioniert seit zwei Wochen nicht.", ar: "طاب يومك! يجب التحدث عن التدفئة. لا تعمل منذ أسبوعين." },
       { speaker: "المالك", role: "b", de: "Das ist ärgerlich. Haben Sie den Handwerker angerufen?", ar: "هذا مزعج. هل اتصلت بالسباك؟" },
-      { speaker: "أنت", role: "a", de: "Ja, aber er sagt, es braucht ein neues Teil und das dauert.", ar: "نعم، لكنه يقول إنه يحتاج قطعة جديدة ويستغرق ذلك وقتاً." },
+      { speaker: "أنت", role: "a", de: "Ja, aber er sagt, dass ein neues Teil nötig ist und die Reparatur deshalb länger dauert.", ar: "نعم، لكنه يقول إنه يحتاج قطعة جديدة ويستغرق ذلك وقتاً." },
       { speaker: "المالك", role: "b", de: "Ich werde mich darum kümmern. Können Sie bis nächste Woche warten?", ar: "سأتولى الأمر. هل تستطيع الانتظار حتى الأسبوع القادم؟" },
-      { speaker: "أنت", role: "a", de: "Das ist zu lang. Ich verlange eine schnelle Lösung oder eine Mietminderung.", ar: "هذا طويل. أطالب بحل سريع أو تخفيض الإيجار." },
+      { speaker: "أنت", role: "a", de: "Das ist mir zu lang. Ich bitte um eine schnelle Reparatur. Ob eine Mietminderung in Betracht kommt, möchte ich für meinen Fall prüfen lassen.", ar: "هذا طويل بالنسبة إليّ. أطلب إصلاحاً سريعاً، وأريد التحقق مما إذا كان تخفيض الإيجار ينطبق على حالتي." },
       { speaker: "المالك", role: "b", de: "Ich verstehe. Ich verspreche, dass der Handwerker übermorgen kommt.", ar: "أفهم. أعدك أن السباك سيأتي بعد غد." },
     ],
     questions: [
@@ -149,14 +152,14 @@ export const B2_DIALOGUES_2: DailyDialogue[] = [
         { text: "Seit einem Monat", ar: "منذ شهر", correct: false, explanation: "لا — لم يُذكر شهر Monat؛ والعطل «seit zwei Wochen»." },
       ]},
       { de: "Was verlangt der Mieter?", ar: "ماذا يطالب المستأجر؟", options: [
-        { text: "Eine schnelle Lösung oder eine Mietminderung", ar: "حل سريع أو تخفيض الإيجار", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Einen Umzug in eine andere Stadt", ar: "الانتقال إلى مكان آخر", correct: false, explanation: "لا — لم يُذكر انتقال Stadt؛ والمطلب «Ich verlange eine schnelle Lösung oder eine Mietminderung»." },
-        { text: "Eine Kündigung des Vertrags ohne Frist", ar: "إنهاء العقد", correct: false, explanation: "لا — لم يُطلب إنهاء عقد Kündigung؛ بل حلٌّ سريع أو Mietminderung." },
+        { text: "Schnelle Reparatur und Prüfung einer Mietminderung im Einzelfall", ar: "إصلاح سريع والتحقق من احتمال تخفيض الإيجار في حالته", correct: true, explanation: "صحيح — يطلب إصلاحاً سريعاً ويريد التحقق من انطباق تخفيض الإيجار على حالته." },
+        { text: "Den Mietvertrag kündigen und in eine andere Stadt umziehen", ar: "إنهاء عقد الإيجار والانتقال إلى مدينة أخرى", correct: false, explanation: "لا — لم يُذكر انتقال Stadt؛ والمطلب «Ich bitte um eine schnelle Reparatur. Ob eine Mietminderung in Betracht kommt, möchte ich für meinen Fall prüfen lassen»." },
+        { text: "Den Vertrag fristlos kündigen und sofort aus der Wohnung ausziehen", ar: "إنهاء العقد فوراً ومغادرة الشقة", correct: false, explanation: "لا — لم يُطلب إنهاء العقد؛ بل إصلاح سريع والتحقق من احتمال Mietminderung." },
       ]},
       { de: "Wann soll der Handwerker kommen?", ar: "متى يجب أن يأتي الحرفي؟", options: [
         { text: "Übermorgen", ar: "بعد غد", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
         { text: "Heute", ar: "اليوم", correct: false, explanation: "لا — ليس اليوم؛ والوعد «dass der Handwerker übermorgen kommt»." },
-        { text: "Nächste Woche", ar: "الأسبوع القادم", correct: false, explanation: "لا — الأسبوع القادم رفضه المستأجر «Das ist zu lang»؛ والموعد «übermorgen»." },
+        { text: "Nächste Woche", ar: "الأسبوع القادم", correct: false, explanation: "لا — الأسبوع القادم رفضه المستأجر «Das ist mir zu lang»؛ والموعد «übermorgen»." },
       ]},
     ],
     keyVocab: [
@@ -173,30 +176,30 @@ export const B2_DIALOGUES_2: DailyDialogue[] = [
     title: "اجتماع دولي",
     titleDe: "Internationales Meeting",
     emoji: "🌐",
-    situation: "في اجتماع عبر الفيديو مع شركاء دوليين",
+    situation: "محاكاة خيالية لاجتماع عبر الفيديو مع فريق دولي.",
     turns: [
-      { speaker: "المديرة", role: "a", de: "Willkommen alle! Zunächst möchte ich die neue Kollegin aus Tunesien vorstellen.", ar: "مرحباً بالجميع! أريد أولاً تقديم الزميلة الجديدة من تونس." },
-      { speaker: "أنت", role: "b", de: "Vielen Dank. Ich freue mich sehr auf die Zusammenarbeit mit dem internationalen Team.", ar: "شكراً جزيلاً. يسعدني جداً التعاون مع الفريق الدولي." },
-      { speaker: "المديرة", role: "a", de: "Können Sie uns etwas über Ihren Hintergrund erzählen?", ar: "هل تستطيع إخبارنا عن خلفيتك؟" },
-      { speaker: "أنت", role: "b", de: "Gerne. Ich habe fünf Jahre im Exportbereich gearbeitet und bin mit mehreren Kulturen vertraut.", ar: "بكل سرور. عملت خمس سنوات في قطاع التصدير وأنا ملم بثقافات متعددة." },
-      { speaker: "المديرة", role: "a", de: "Ausgezeichnet. Das wird uns bei der Expansion helfen.", ar: "ممتاز. سيساعدنا هذا في التوسع." },
-      { speaker: "أنت", role: "b", de: "Ich bin überzeugt, dass wir viel erreichen können.", ar: "أنا واثق أننا نستطيع تحقيق الكثير." },
+      { speaker: "المديرة", role: "a", de: "Willkommen im Team. Ich möchte unsere neue Kollegin vorstellen.", ar: "مرحباً بك في الفريق. أود أن أقدم زميلتنا الجديدة." },
+      { speaker: "أنت", role: "b", de: "Vielen Dank. Ich freue mich auf die Zusammenarbeit mit dem Team.", ar: "شكراً جزيلاً. يسعدني التعاون مع الفريق." },
+      { speaker: "المديرة", role: "a", de: "Können Sie uns etwas über Ihre Erfahrung im Export erzählen?", ar: "هل تخبريننا شيئاً عن خبرتك في التصدير؟" },
+      { speaker: "أنت", role: "b", de: "Gerne. Ich habe fünf Jahre im Exportbereich gearbeitet und an Markteintritten in mehreren Ländern mitgewirkt.", ar: "بكل سرور. عملت خمس سنوات في قطاع التصدير وأسهمت في دخول أسواق عدة بلدان." },
+      { speaker: "المديرة", role: "a", de: "Das passt zu unserem geplanten Markteintritt. Vielen Dank für den Einblick.", ar: "هذا مناسب لدخولنا المخطط إلى السوق. شكراً على هذه المعلومات." },
+      { speaker: "أنت", role: "b", de: "Gern. Ich bin gespannt auf die nächsten Schritte.", ar: "بكل سرور. أتطلع إلى الخطوات التالية." },
     ],
     questions: [
-      { de: "Woher kommt die neue Kollegin?", ar: "من أين تأتي الزميلة الجديدة؟", options: [
-        { text: "Aus Tunesien", ar: "من تونس", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Aus Marokko", ar: "من المغرب", correct: false, explanation: "لا — لم يُذكر المغرب Marokko؛ والتعريف «die neue Kollegin aus Tunesien»." },
-        { text: "Aus Ägypten", ar: "من مصر", correct: false, explanation: "لا — لم تُذكر مصر Ägypten؛ والزميلة «die neue Kollegin aus Tunesien vorstellen»." },
+      { de: "In welchem Bereich hat die Kollegin gearbeitet?", ar: "في أي مجال عملت الزميلة؟", options: [
+        { text: "Im Exportbereich", ar: "في قطاع التصدير", correct: true, explanation: "صحيح — تذكر الزميلة أنها عملت خمس سنوات في قطاع التصدير." },
+        { text: "Im Rechnungswesen", ar: "في المحاسبة والتخطيط المالي", correct: false, explanation: "لا — قالت الزميلة «Ich habe fünf Jahre im Exportbereich gearbeitet»؛ ولم تذكر Rechnungswesen." },
+        { text: "Im Personalwesen", ar: "في الموارد البشرية والتوظيف الدولي", correct: false, explanation: "لا — الدليل هو «Ich habe fünf Jahre im Exportbereich gearbeitet»؛ لا Personalwesen." },
       ]},
       { de: "Wie lange hat sie im Exportbereich gearbeitet?", ar: "كم سنة عملت في قطاع التصدير؟", options: [
         { text: "Fünf Jahre", ar: "خمس سنوات", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
         { text: "Drei Jahre", ar: "ثلاث سنوات", correct: false, explanation: "لا — ليست ثلاث سنوات؛ بل «Ich habe fünf Jahre im Exportbereich gearbeitet»." },
         { text: "Zehn Jahre", ar: "عشر سنوات", correct: false, explanation: "لا — لم تُذكر عشر Jahre؛ والخبرة «fünf Jahre im Exportbereich»." },
       ]},
-      { de: "Wobei wird ihre Erfahrung laut Team helfen?", ar: "في أي أمر ستساعد خبرتها الفريق حسب الحوار؟", options: [
-        { text: "Bei der Expansion", ar: "في التوسع", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Bei der Buchhaltung", ar: "في المحاسبة", correct: false, explanation: "لا — لم تُذكر محاسبة Buchhaltung؛ والفائدة «bei der Expansion helfen»." },
-        { text: "Bei der Reinigung", ar: "في التنظيف", correct: false, explanation: "لا — لم يُذكر تنظيف Reinigung؛ والمجال Expansion («Das wird uns bei der Expansion helfen»)." },
+      { de: "Wozu passt ihre Erfahrung laut der Teamleiterin?", ar: "بمَ تتناسب خبرتها حسب مديرة الفريق؟", options: [
+        { text: "Zur Vorbereitung des geplanten Eintritts in einen internationalen Markt", ar: "للتحضير لدخول سوق دولية مخططة", correct: true, explanation: "صحيح — تقول المديرة إن خبرتها تناسب دخول السوق المخطط للفريق." },
+        { text: "Zu den Aufgaben der internationalen Buchhaltung und Finanzplanung", ar: "لمهام المحاسبة الدولية والتخطيط المالي", correct: false, explanation: "لا — قالت المديرة «Das passt zu unserem geplanten Markteintritt»؛ ولم تذكر Buchhaltung." },
+        { text: "Zu den Aufgaben der Gebäudereinigung im internationalen Büro", ar: "لمهام تنظيف المبنى في المكتب الدولي", correct: false, explanation: "لا — المديرة ربطت الخبرة بـ«unserem geplanten Markteintritt»، ولم تذكر Gebäudereinigung." },
       ]},
     ],
     keyVocab: [

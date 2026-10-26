@@ -67,7 +67,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       wrongWord: "bin",
       correctWord: "habe",
       options: ["habe", "bin", "war", "hatte"],
-      explanation: "arbeiten يأخذ haben في Perfekt: Ich habe gestern im Büro gearbeitet. sein للأفعال التي تدل على حركة أو تغيّر.",
+      explanation: "arbeiten يأخذ haben هنا: Ich habe gestern im Büro gearbeitet. ويأتي sein مع أفعال معيّنة للانتقال أو تغيّر الحالة؛ لكن اختيار المساعد يتبع الفعل واستعماله ولا تختزله هذه العلامة وحدها.",
       errorType: "grammar",
     },
     {
@@ -153,13 +153,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     },
     {
       id: "e13",
-      type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Nachdem er die Ausbildung beendet hat, bekam er eine Stelle.",
-      wrongWord: "beendet hat",
-      correctWord: "beendet hatte",
-      options: ["beendet hatte", "beendet hat", "beenden hatte", "beendet gehabt"],
-      explanation: "بعد nachdem في السرد الماضي يأتي الحدث الأسبق في Plusquamperfekt: beendet hatte — لا beendet hat، لأنّ الجملة الأخرى في الماضي (bekam).",
+      type: "transformation",
+      instructionAr: "حوّل الصيغة إلى أسلوب السرد المكتوب باستعمال Plusquamperfekt؛ لا يعني ذلك أن صيغة Perfekt الأصلية خطأ في كل سياق:",
+      prompt: "في سرد مكتوب: Nachdem er die Ausbildung beendet hat, bekam er eine Stelle. → اجعل الحدث الأسبق في Plusquamperfekt.",
+      acceptedAnswers: ["Nachdem er die Ausbildung beendet hatte, bekam er eine Stelle", "Nachdem er die Ausbildung beendet hatte, bekam er eine Stelle."],
+      sampleAnswer: "Nachdem er die Ausbildung beendet hatte, bekam er eine Stelle.",
+      explanation: "هذا تحويل أسلوبي إلى سرد مكتوب، حيث يُستعمل Plusquamperfekt كثيراً للحدث الأسبق. Perfekt في الجملة الأصلية قد يلائم سياقاً كلامياً، فلا يُعد خطأً مطلقاً لمجرد وجود nachdem.",
       errorType: "grammar",
     },
     {
@@ -185,7 +184,7 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     ],
     eselsbruecken: [
       "«المنتظم +te، الشاذ غيّر الجذر» — واعتمد جدول الأفعال الشاذة في المشروع.",
-      "«Plusquamperfekt = كان قد» — مع bevor/nachdem/als.",
+      "«Plusquamperfekt = كان قد» — لبيان حدث سابق لمرجع ماضٍ؛ ولا تفرضه أدوات bevor/nachdem/als وحدها.",
     ],
     culturalNote: {
       title: "التقديم للوظائف في ألمانيا",

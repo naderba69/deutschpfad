@@ -6,6 +6,7 @@ import type { Lesson } from "@/types/lesson";
  */
 
 import {lernziele, einfuehrung} from "./a1-01/intro";
+import {review} from "./a1-01/review";
 import {theory} from "./a1-01/theorie";
 import {reading, listening, pronunciation, writing} from "./a1-01/skills";
 import {practiceBank, fehlerUndTipps} from "./a1-01/practice";
@@ -22,6 +23,7 @@ const masterA101: Lesson = {
   summary: "التحيات والوداع، تقديم النفس، تصريف sein وheißen وkommen، والفرق بين du وSie، مع أسئلة التعارف الأساسية (Wie heißt du؟ Woher kommst du؟).",
   lernziele,
   einfuehrung,
+  review,
   theory,
   reading,
   listening,
@@ -102,6 +104,7 @@ export const lessonA101b: Lesson = {
       { de: "lernen", ar: "يتعلم" },
     ],
   },
+  review: masterA101.review,
   theory: masterA101.theory.filter((t) => PART2_THEORY.has(t.id)),
   reading: readingA1B,
   listening: { items: [], questions: [] },

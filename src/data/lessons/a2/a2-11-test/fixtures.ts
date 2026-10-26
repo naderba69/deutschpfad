@@ -21,6 +21,9 @@ export const expectedMultipleChoiceKeys: Record<string, string> = {
   q2: "Das Handy funktioniert nicht",
   q3: "Wir reparieren es oder geben Ihnen ein neues",
   q4: "tunesisch",
+  q5: "Nach Hamburg.",
+  q6: "Zwei Tage.",
+  q7: "Den Beleg.",
 };
 
 export const expectedMultipleChoiceOptions: Record<string, string[]> = {
@@ -36,6 +39,9 @@ export const expectedMultipleChoiceOptions: Record<string, string[]> = {
   q2: ["Das Handy funktioniert nicht", "Die Haare sind zu kurz", "Der Termin ist zu spät", "Die Post ist zu teuer"],
   q3: ["Wir reparieren es oder geben Ihnen ein neues", "Wir können Ihnen dabei leider nicht helfen", "Das ist leider nicht unser Problem.", "Kommen Sie bitte morgen noch einmal."],
   q4: ["tunesisch", "deutsch", "französisch", "nichts"],
+  q5: ["Nach Hamburg.", "Nach Berlin.", "Nach Bremen.", "Nach Bonn."],
+  q6: ["Einen Tag.", "Zwei Tage.", "Drei Tage.", "Eine Woche."],
+  q7: ["Den Beleg.", "Das Paket.", "Die Verpackung.", "Die Briefmarke."],
 };
 
 export const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {

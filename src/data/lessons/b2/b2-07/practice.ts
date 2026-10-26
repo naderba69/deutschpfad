@@ -32,7 +32,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«... haben» تستعمل مع أفعال الحركة مثل gehen، والمطلوب sein.",
+        "«... haben» ليست المساعد المستعمل هنا؛ في Perfekt نقول «Er ist gegangen»، ولذلك Futur II هو «Er wird gegangen sein».",
         "«... gehabt» صيغة غير صحيحة هنا.",
         "«... worden» تستعمل مع المبني للمجهول، ولا تناسب الفعل gehen.",
       ],
@@ -155,13 +155,13 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e13",
       type: "transformation",
       instructionAr: "حوّل الجملة إلى توقّع مكتمل في المستقبل (Futur II):",
-      prompt: "Bis 2050 (sich verdoppeln) die Zahl der Rentner. →",
+      prompt: "Annahme: Bis 2050 (sich stark verändern) die Stadt. →",
       acceptedAnswers: [
-        "Bis 2050 wird sich die Zahl der Rentner verdoppelt haben.",
-        "Bis 2050 wird sich die Zahl der Rentner verdoppelt haben",
+        "Bis 2050 wird sich die Stadt stark verändert haben.",
+        "Bis 2050 wird sich die Stadt stark verändert haben",
       ],
-      sampleAnswer: "Bis 2050 wird sich die Zahl der Rentner verdoppelt haben.",
-      explanation: "الحدث مكتمل قبل نقطة في المستقبل: wird … verdoppelt haben، مع تقديم sich بعد الفعل المصرّف.",
+      sampleAnswer: "Bis 2050 wird sich die Stadt stark verändert haben.",
+      explanation: "مثال افتراضي على Futur II: wird sich … verändert haben؛ لا يورد النص توقعاً سكانياً أو ديموغرافياً.",
       errorType: "grammar",
     },
     {

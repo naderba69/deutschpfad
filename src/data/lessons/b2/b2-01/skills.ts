@@ -8,7 +8,8 @@ export const listening: Lesson["listening"] = {
     items: [
       {
         id: "l1",
-        title: "مؤتمر علمي",
+        title: "مؤتمر علمي (حوار تمثيلي للتدريب)",
+        audioNoteAr: "حوار تدريبي تمثيلي؛ لا يُقدَّم بوصفه تقريراً عن دراسة أو نتيجة علمية حقيقية.",
         lines: [
           { speaker: "Professorin", de: "Die Forschung zeigt, dass das Experiment erfolgreich war.", ar: "يبين البحث أن التجربة كانت ناجحة." },
           { speaker: "Reporter", de: "Die Professorin sagt, die Ergebnisse seien sehr wichtig.", ar: "تقول الأستاذة إن النتائج مهمة جداً." },
@@ -18,12 +19,26 @@ export const listening: Lesson["listening"] = {
       },
       {
         id: "l2",
-        title: "حوار بعد المؤتمر",
+        title: "حوار بعد المؤتمر (سيناريو تدريبي)",
+        audioNoteAr: "حوار تمثيلي لتدريب نقل الكلام، وليس نقلاً عن مؤتمر حقيقي.",
         lines: [
           { speaker: "Sami", de: "Was hat die Professorin gesagt?", ar: "ماذا قالت الأستاذة؟" },
           { speaker: "Anna", de: "Sie sagte, die Ergebnisse seien positiv.", ar: "قالت إن النتائج إيجابية." },
           { speaker: "Sami", de: "Und über die Zukunft?", ar: "وعن المستقبل؟" },
           { speaker: "Anna", de: "Sie meinte, die Forschung werde weitergehen.", ar: "رأت أن البحث سيستمر." },
+        ],
+      },
+      {
+        id: "l3",
+        title: "نتائج دراسة طبية أولية (سيناريو خيالي)",
+        audioNoteAr: "هذا سيناريو تدريبي خيالي؛ رقم المشاركين وادعاء العلاج مختلقان، وليسا دليلاً علمياً أو توصية طبية. الصوت مولّد آلياً (TTS)، وليس تسجيلاً بشرياً.",
+        lines: [
+          { speaker: "Reporter", de: "Wie viele Personen haben an der Studie teilgenommen?", ar: "كم شخصاً شارك في الدراسة؟", audioSrc: "/audio/lessons/b2-01/ls-b2-01-3-1.mp3" },
+          { speaker: "Professorin", de: "Die Studie habe zweihundert Personen einbezogen, erklärt das Forschungsteam.", ar: "أوضح فريق البحث أن الدراسة شملت مئتي شخص.", audioSrc: "/audio/lessons/b2-01/ls-b2-01-3-2.mp3" },
+          { speaker: "Reporter", de: "Und was zeigen die ersten Ergebnisse?", ar: "وماذا تظهر النتائج الأولية؟", audioSrc: "/audio/lessons/b2-01/ls-b2-01-3-3.mp3" },
+          { speaker: "Professorin", de: "Die Behandlung könne die Beschwerden deutlich verringern.", ar: "قد يقلل العلاج الأعراض بوضوح.", audioSrc: "/audio/lessons/b2-01/ls-b2-01-3-4.mp3" },
+          { speaker: "Reporter", de: "Ist die Methode schon vollständig geprüft?", ar: "هل اختُبرت الطريقة بالكامل بالفعل؟", audioSrc: "/audio/lessons/b2-01/ls-b2-01-3-5.mp3" },
+          { speaker: "Professorin", de: "Nein, weitere Untersuchungen seien nötig, bevor man eine Empfehlung geben könne.", ar: "لا، قالت إن هناك حاجة إلى مزيد من الأبحاث قبل تقديم توصية.", audioSrc: "/audio/lessons/b2-01/ls-b2-01-3-6.mp3" },
         ],
       },
     ],
@@ -82,6 +97,24 @@ export const listening: Lesson["listening"] = {
           "«Die Forschung sei langweilig» لم تقلها الأستاذة.",
         ],
       },
+      {
+        id: "q4",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Wie viele Personen hat die Studie einbezogen?",
+        questionAr: "كم شخصاً شملت الدراسة؟",
+        options: ["Die Studie habe zweihundert Personen einbezogen", "Die Studie habe hundertzwanzig Personen einbezogen", "Die Studie habe dreihundert Personen einbezogen", "Die Studie habe fünfhundert Personen einbezogen"],
+        correctIndex: 0,
+        explanation: "قالت الأستاذة: Die Studie habe zweihundert Personen einbezogen.",
+        errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم يرد ذلك؛ تقول الأستاذة: «Die Studie habe zweihundert Personen einbezogen».",
+          "لم يرد ذلك؛ العدد المسموع هو «zweihundert Personen» لا dreihundert.",
+          "لم يرد ذلك؛ قال فريق البحث إن الدراسة شملت «zweihundert Personen»، لا fünfhundert.",
+        ],
+      },
     ],
   };
 
@@ -98,9 +131,9 @@ export const pronunciation: Lesson["pronunciation"] = {
     ],
     tip: "النهاية -tion تُنطق «تسيون» دائماً — انتبه في الكلمات العلمية: Revolution, Information, Nation.",
     shadowing: [
-      { de: "Er sagt, er habe Zeit.", ar: "يقول إنه وقت عنده.", tip: "habe — Konjunktiv I" },
+      { de: "Er sagt, er habe Zeit.", ar: "يقول إن لديه وقتاً.", tip: "habe — Konjunktiv I" },
       { de: "Sie sagt, sie sei müde.", ar: "تقول إنها متعبة.", tip: "sei — Konjunktiv I" },
-      { de: "Er behauptet, er habe den Beweis.", ar: "يزعم أنه وجد البرهان.", tip: "behauptet = بِهاوبتِت (au=آو)" },
+      { de: "Er behauptet, er habe den Beweis.", ar: "يزعم أن لديه البرهان.", tip: "behauptet = بِهاوبتِت (au=آو)" },
       { de: "Man sagt, die Forschung werde wichtiger.", ar: "يقال إن البحث سيصبح أهم.", tip: "werde — Konjunktiv I" },
     ],
   };
@@ -109,7 +142,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
     {
       id: "w1",
       type: "transformation",
-      instructionAr: "انقل كلاماً غير مباشر:",
+      instructionAr: "انقل الكلام مستخدماً Konjunktiv I:",
       prompt: "«Ich habe Zeit» → (هو يقول إنه وقت عنده)",
       acceptedAnswers: ["Er sagt, er habe Zeit", "Er sagt, er habe Zeit."],
       sampleAnswer: "Er sagt, er habe Zeit.",

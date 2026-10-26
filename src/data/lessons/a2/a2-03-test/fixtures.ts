@@ -30,6 +30,9 @@ export const expectedMultipleChoiceKeys: Record<string, string> = {
   q1: "Spaghetti, einen Salat und ein Wasser",
   q2: "lecker",
   q3: "Fleisch",
+  q4: "Ob die Gemüsesuppe vegetarisch ist",
+  q5: "Mit Gemüsebrühe",
+  q6: "Die Gemüsesuppe",
 };
 
 export const expectedFillBlankKeys: Record<string, string[]> = {

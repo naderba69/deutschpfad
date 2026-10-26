@@ -142,7 +142,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       correctIndex: 0,
       optionExplanations: [undefined, "لا — «weil» تستدعي جملةً جانبية فيذهب الفعل المتصرّف إلى آخرها: «weil alle zustimmen» لا «weil alle stimmen zu».", "لا — الجملة النسبية تحتاج اسماً موصولاً في حالة النصب يعود على «Der Plan»: «den wir besprochen haben».", "لا — في الجملة الجانبية يقف التصريف الثالث «besprochen» في النهاية مع الفعل المساعد: «den wir besprochen haben»."],
-      explanation: "الجملة النسبية تُغلق بفعلها (haben … besprochen معاً في النهاية)، وجملة weil تُغلق بفعلها المصرّف (zustimmen في النهاية). الخياران 2 و4 يخطئان في الوصل الماضي (haben besprochen)، والخيار 3 يخطئ في بنية الجملة النسبية كلها.",
+      explanation: "في الجملة النسبية يأتي Partizip II أولاً ثم الفعل المساعد المصرف في النهاية: «den wir besprochen haben». وفي جملة weil يأتي الفعل المصرف في النهاية: «weil alle zustimmen». الخياران 2 و4 يخطئان في ترتيب الجملة الثانوية، والخيار 3 يفتقد الضمير النسبي.",
       errorType: "grammar",
       points: 2,
     },
@@ -167,7 +167,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       options: ["lernen muss", "muss lernen", "lernen müsste", "lerne muss"],
       wrongWord: "muss lernen",
       correctWord: "lernen muss",
-      explanation: "في الجملة الثانوية ينتقل الفعل المصرّف إلى النهاية: weil ich lernen muss. ترتيب الجملة الرئيسية (muss lernen) غير جائز بعد weil.",
+      explanation: "في الجملة الثانوية ينتقل الفعل المصرّف إلى النهاية: weil ich lernen muss. في معيار الترتيب المستهدف في الكتابة هنا نقول «weil ich lernen muss»؛ وقد يظهر ترتيب الفعل الثاني بعد weil في بعض الاستعمال المحكي، لذلك نعرض الصيغة القياسية المتعلمة.",
       errorType: "word-order",
       points: 2,
     },
@@ -200,6 +200,6 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     culturalNote: {
       title: "ماذا بعد B1؟",
       content:
-        "في ألمانيا تُطلب شهادة B1 في مسارين رسميين: دورة الاندماج (Integrationskurs) تنتهي باختبار لغة بمستوى B1، والتجنّس (Einbürgerung) يشترط مستوى B1 على الأقل بحسب قانون الجنسية (§ 10 StAG). أما B2 فليست شرطاً للتجنّس.",
+        "لدورة الاندماج: اختبار DTZ قد يثبت المستوى A2 oder B1؛ وللحصول على Zertifikat Integrationskurs يلزم B1 في DTZ واجتياز Leben in Deutschland، وفق BAMF: https://www.bamf.de/DE/Themen/Integration/ZugewanderteTeilnehmende/Integrationskurse/Abschlusspruefung/abschlusspruefung-node.html. وبالقاعدة العامة للتجنّس، ينص § 10 Abs. 4 StAG على إثبات متطلبات B1، مع أحكام خاصة واستثناءات في القانون: https://www.gesetze-im-internet.de/stag/__10.html. هذا ملخص تعليمي وليس نصيحة قانونية.",
     },
   };

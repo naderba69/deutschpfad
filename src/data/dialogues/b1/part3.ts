@@ -13,7 +13,7 @@ export const B1_DIALOGUES_3: DailyDialogue[] = [
     title: "تعطل السيارة",
     titleDe: "Autopanne",
     emoji: "🚗",
-    situation: "تعطلت سيارتك وتستدعي المساعدة",
+    situation: "محاكاة تدريبية خيالية لتعطل سيارة؛ موقع الطريق وموعد وصول خدمة السحب المذكوران أمثلة وليسا معلومات آنية أو ضماناً زمنياً.",
     turns: [
       { speaker: "أنت", role: "a", de: "Hallo! Mein Auto ist auf der Autobahn liegen geblieben.", ar: "مرحباً! سيارتي تعطلت على الطريق السريع." },
       { speaker: "الموظف", role: "b", de: "Wo genau befinden Sie sich?", ar: "أين أنت بالضبط؟" },
@@ -53,7 +53,8 @@ export const B1_DIALOGUES_3: DailyDialogue[] = [
     title: "نقاش عن المال",
     titleDe: "Über Geld sprechen",
     emoji: "💰",
-    situation: "تتحدث مع صديق عن الادخار",
+    situation: "حوار تدريبي خيالي بين صديقين عن الادخار؛ الأسماء والتفاصيل أمثلة وليست قصة واقعية.",
+    audioNoteAr: "اجتازت ملفات الحوار فحص فك الترميز ومؤشرات الإشارة التقنية فقط؛ لا يثبت ذلك مطابقة الصوت لهذا النص أو وضوح النطق وطبيعته.",
     turns: [
       { speaker: "الصديق", role: "a", de: "Wie schaffst du es, Geld zu sparen?", ar: "كيف تنجح في ادخار المال؟" },
       { speaker: "أنت", role: "b", de: "Ich lege jeden Monat einen festen Betrag beiseite.", ar: "أضع جانباً مبلغاً ثابتاً كل شهر." },
@@ -93,7 +94,8 @@ export const B1_DIALOGUES_3: DailyDialogue[] = [
     title: "في النادي الرياضي",
     titleDe: "Im Fitnessstudio",
     emoji: "🏋️",
-    situation: "تسأل عن اشتراك في صالة رياضية",
+    situation: "موقف تدريبي خيالي؛ السعر والمزايا وشروط العقد مختلقة وليست عرضاً حقيقياً.",
+    audioNoteAr: "يُقرأ الحوار بصوت الجهاز (TTS). السعر والشروط أرقام خيالية للتدرب على الاستفسار؛ تحقّق من النادي الفعلي قبل الاشتراك.",
     turns: [
       { speaker: "الموظف", role: "a", de: "Willkommen! Interessieren Sie sich für eine Mitgliedschaft?", ar: "مرحباً! هل تهتم بعضوية؟" },
       { speaker: "أنت", role: "b", de: "Ja, wie viel kostet die Mitgliedschaft im Monat?", ar: "نعم، كم تكلف العضوية شهرياً؟" },
@@ -133,10 +135,11 @@ export const B1_DIALOGUES_3: DailyDialogue[] = [
     title: "وصفة طعام",
     titleDe: "Ein Rezept erklären",
     emoji: "🍳",
-    situation: "تشرح لصديق طريقة تحضير طبق",
+    situation: "حوار تدريبي خيالي عن وصفة يفضّلها المتحدث؛ ليس وصفة موثقة أو قاعدة عن المطبخ التونسي.",
+    audioNoteAr: "حوار تمثيلي عن تفضيل شخصي؛ المقادير والمدة والتوابل أمثلة خيالية قابلة للتغيير.",
     turns: [
       { speaker: "الصديق", role: "a", de: "Das Essen riecht fantastisch! Was kochst du?", ar: "الطعام رائحته رائعة! ماذا تطبخ؟" },
-      { speaker: "أنت", role: "b", de: "Ich mache Couscous mit Gemüse. Es ist ein traditionelles Gericht.", ar: "أحضّر كسكساً بالخضار. إنه طبق تقليدي." },
+      { speaker: "أنت", role: "b", de: "Ich mache Couscous mit Gemüse. Das esse ich besonders gern.", ar: "أحضّر كسكساً بالخضار. أحبّ هذا الطبق كثيراً." },
       { speaker: "الصديق", role: "a", de: "Wie lange dauert die Zubereitung?", ar: "كم يستغرق التحضير؟" },
       { speaker: "أنت", role: "b", de: "Ungefähr eine Stunde. Zuerst koche ich das Gemüse, dann den Couscous.", ar: "حوالي ساعة. أولاً أطبخ الخضار ثم الكسكس." },
       { speaker: "الصديق", role: "a", de: "Und welche Gewürze benutzt du?", ar: "وأي توابل تستخدم؟" },
@@ -146,7 +149,7 @@ export const B1_DIALOGUES_3: DailyDialogue[] = [
       { de: "Was kocht die Person?", ar: "ماذا يطبخ الشخص؟", options: [
         { text: "Couscous mit Gemüse", ar: "كسكس بالخضار", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
         { text: "Eine Pizza aus dem Ofen", ar: "بيتزا", correct: false, explanation: "لا — لم تُذكر بيتزا Pizza ولا فرن؛ والطبق «Ich mache Couscous mit Gemüse»." },
-        { text: "Eine Suppe mit Brot", ar: "شوربة", correct: false, explanation: "لا — لم تُذكر شوربة Suppe ولا خبز؛ والمطبوخ Couscous mit Gemüse («Es ist ein traditionelles Gericht»)." },
+        { text: "Eine Suppe mit Brot", ar: "شوربة", correct: false, explanation: "لا — لم تُذكر شوربة Suppe ولا خبز؛ والمطبوخ Couscous mit Gemüse («Das esse ich besonders gern»)." },
       ]},
       { de: "Wie lange dauert die Zubereitung?", ar: "كم يستغرق التحضير؟", options: [
         { text: "Ungefähr eine Stunde", ar: "حوالي ساعة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
@@ -174,13 +177,14 @@ export const B1_DIALOGUES_3: DailyDialogue[] = [
     titleDe: "Über einen Umzug sprechen",
     emoji: "📦",
     situation: "تخبر صديقك أنك ستنتقل",
+    audioNoteAr: "ملفات MP3 لهذا الحوار موجودة، لكن مصدرها ومطابقتها الدقيقة للنص غير موثقين؛ اجتازت فحص الإشارة التقني فقط، وهو لا يقيّم وضوح النطق أو طبيعية الأداء.",
     turns: [
       { speaker: "الصديق", role: "a", de: "Ich habe gehört, du ziehst um. Stimmt das?", ar: "سمعت أنك ستنتقل. صحيح؟" },
       { speaker: "أنت", role: "b", de: "Ja, im September ziehe ich in eine größere Wohnung.", ar: "نعم، في سبتمبر سأنتقل إلى شقة أكبر." },
       { speaker: "الصديق", role: "a", de: "Warum möchtest du umziehen?", ar: "لماذا تريد الانتقال؟" },
       { speaker: "أنت", role: "b", de: "Weil ich ein eigenes Büro für die Arbeit brauche.", ar: "لأنني أحتاج مكتباً خاصاً للعمل." },
       { speaker: "الصديق", role: "a", de: "Das ist verständlich. Brauchst du Hilfe beim Umzug?", ar: "هذا مفهوم. هل تحتاج مساعدة في النقل؟" },
-      { speaker: "أنت", role: "b", de: "Das wäre super! Ich lade dich danach zum Essen ein.", ar: "سيكون رائعاً! سأدعوك للعشاء بعدها." },
+      { speaker: "أنت", role: "b", de: "Das wäre super! Ich lade dich danach zum Essen ein.", ar: "سيكون رائعاً! سأدعوك إلى وجبة بعدها." },
     ],
     questions: [
       { de: "Wann zieht die Person um?", ar: "متى ينتقل الشخص؟", options: [

@@ -11,9 +11,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أفهم حديثاً عن موضوع فلسفي مجرد: ماذا يعني حياة جيدة.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["q1"],
-        taskIds: ["listening:l1:q1"],
-        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q4"],
+        taskIds: ["listening:l1:q1", "listening:l3:q4"],
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 وl3 في q4، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -66,8 +66,8 @@ export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionDe: "Was bedeutet ein gutes Leben?",
     contextAr:
       "الفلسفة: أسئلة كبرى. نضيف المستقبل التام للتعبير عن «الانتهاء في المستقبل»، ثم نتعلم هيكل المقال الجدلي (Erörterung) — مهارة مهمة في الكتابة الأكاديمية.",
-    contextDe: "Bis 2030 wird die Gesellschaft sich verändert haben.",
-    connectionToPreviousAr: "تتذكر Futur I (werde lernen) وPerfekt (habe gelernt). اليوم: دمجهما — Futur II. ومعه الكتابة الجدلية التي تجمع كل قواعد B2.",
+    contextDe: "Vermutlich wird sich die Gesellschaft bis 2030 verändert haben.",
+    connectionToPreviousAr: "تتذكر Futur I (werde lernen) وPerfekt (habe gelernt). اليوم: دمجهما — Futur II. ومعه التدريب على بناء حجة وترتيبها؛ وليس ذلك جمعاً لكل قواعد B2.",
     activateVocabulary: [
       { de: "die Philosophie", ar: "الفلسفة" },
       { de: "argumentieren", ar: "يبني حجة" },

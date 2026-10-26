@@ -149,9 +149,9 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     {
       id: "fc12",
       de: "der Hausflur",
-      ar: "مدخل المبنى",
+      ar: "ممر المبنى",
       example: "Der Hausflur ist sauber.",
-      exampleAr: "مدخل المبنى نظيف.",
+      exampleAr: "ممر المبنى نظيف.",
       level: "A2",
     },
     {

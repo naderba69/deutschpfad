@@ -22,6 +22,10 @@ const expectedMultipleChoice: Record<
   },
   m1: { options: ["wird", "wurde", "wirst", "werden"], key: "wird" },
   m2: { options: ["wurde", "wird", "wirst", "werden"], key: "wurde" },
+  m6: {
+    options: ["Das Klima wird immer wärmer.", "Der Müll wird getrennt.", "Die Bäume werden gepflanzt.", "Das Haus wird gebaut."],
+    key: "Das Klima wird immer wärmer.",
+  },
   q1: {
     options: ["mehr Bäume", "mehr Blumen", "mehr Gemüse", "mehr Obst"],
     key: "mehr Bäume",
@@ -42,12 +46,15 @@ const expectedMultipleChoice: Record<
   q4: {
     options: [
       "weniger Plastik zu kaufen",
-      "mehr Auto zu fahren",
+      "öfter mit dem Auto zu fahren",
       "weniger zu schlafen",
       "mehr Zucker zu essen",
     ],
     key: "weniger Plastik zu kaufen",
   },
+  q5: { options: ["Das Licht ausschalten, wenn man den Raum verlässt", "Die Fenster öffnen und die Heizung höher stellen", "Die Computer jeden Abend eingeschaltet lassen", "Alte Laptops in einem anderen Raum lagern"], key: "Das Licht ausschalten, wenn man den Raum verlässt" },
+  q6: { options: ["Sie werden repariert; funktionierende Geräte werden gespendet.", "Sie werden verkauft und durch neue Geräte ersetzt.", "Sie werden weggeworfen, weil sie nicht mehr gebraucht werden.", "Sie werden an die Stadt zurückgeschickt und geprüft."], key: "Sie werden repariert; funktionierende Geräte werden gespendet." },
+  q7: { options: ["Die Stadt übernimmt einen Teil der Kosten.", "Die Schule bezahlt alle Rechnungen selbst.", "Die Eltern sammeln Geld für die Reparatur.", "Ein Unternehmen spendet alle neuen Geräte."], key: "Die Stadt übernimmt einen Teil der Kosten." },
 };
 
 const expectedTransformations: string[] = ["e7", "e13", "w1"];
@@ -216,13 +223,17 @@ describe("B1-03 lesson content audit", () => {
       "z3",
       "z4",
     ]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4", "q5", "q6", "q7"]);
     expect(goal("z1").evidence?.taskIds).toEqual([
       "listening:l1:q1",
       "listening:l1:q2",
       "listening:l2:q3",
+      "listening:l3:q4",
+      "listening:l4:q5",
+      "listening:l4:q6",
+      "listening:l4:q7",
     ]);
-    expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e7", "m1"]);
+    expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e2", "e7", "m1"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e6", "m5"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["e11", "e12"]);
     expect(goal("z4").evidence?.taskIds).toEqual([
@@ -441,10 +452,11 @@ describe("B1-03 lesson content audit", () => {
       evaluateExercise(e12, [
         "Ich",
         "versuche,",
-        "das",
+        "mit",
+        "dem",
         "Fahrrad",
         "zu",
-        "nehmen.",
+        "fahren.",
       ]).isCorrect,
     ).toBe(true);
     expect(
@@ -452,9 +464,10 @@ describe("B1-03 lesson content audit", () => {
         "Ich",
         "versuche,",
         "zu",
-        "das",
+        "mit",
+        "dem",
         "Fahrrad",
-        "nehmen.",
+        "fahren.",
       ]).isCorrect,
     ).toBe(false);
 
@@ -488,6 +501,20 @@ describe("B1-03 lesson content audit", () => {
     }
   });
 
+  it("explains every distractor in the school-energy listening questions with a German cue", () => {
+    for (const id of ["q5", "q6", "q7"]) {
+      const exercise = task(id);
+      if (exercise.type !== "multiple-choice") throw new Error(`${id} is not multiple-choice`);
+      const explanations = exercise.optionExplanations;
+      expect(explanations, `${id} explanations`).toHaveLength(exercise.options.length);
+      if (!explanations) throw new Error(`${id} has no option explanations`);
+      explanations.forEach((explanation, index) => {
+        if (index === exercise.correctIndex) return;
+        expect(explanation, `${id} option ${index + 1}`).toContain("«");
+      });
+    }
+  });
+
   it("maps listening evidence to transcript-free task IDs only", () => {
     expect(getListeningQuestionTaskId("b1-03", "l1", "q1", false)).toBe(
       "listening:l1:q1",
@@ -497,7 +524,20 @@ describe("B1-03 lesson content audit", () => {
     );
     expect(
       lessonB103.listening.questions.map(({ id, itemId }) => `${itemId}:${id}`),
-    ).toEqual(["l1:q1", "l1:q2", "l2:q3", "l3:q4"]);
+    ).toEqual(["l1:q1", "l1:q2", "l2:q3", "l3:q4", "l4:q5", "l4:q6", "l4:q7"]);
+    const scene = lessonB103.listening.items.find(({ id }) => id === "l4")!;
+    expect(scene.lines.map(({ de }) => de)).toEqual([
+      "Unsere Schule will weniger Strom verbrauchen. Was können wir tun?",
+      "Wir schalten das Licht aus, wenn wir den Raum verlassen.",
+      "Und was passiert mit alten Laptops?",
+      "Sie werden repariert. Funktionierende Geräte werden an eine andere Schule gespendet.",
+      "Wer bezahlt einen Teil der Kosten?",
+      "Die Stadt übernimmt einen Teil. So wird weniger Energie verbraucht.",
+    ]);
+    expect(scene.audioNoteAr).toMatch(/مولّدة آلياً \(TTS\)، وليست تسجيلاً بشرياً/);
+    expect(scene.lines.map(({ audioSrc }) => audioSrc)).toEqual(
+      [1, 2, 3, 4, 5, 6].map((line) => `/audio/lessons/b1-03/ls-b1-03-4-${line}.mp3`),
+    );
   });
 
   it("counts only correct, mapped exercise results toward goals", () => {
@@ -508,6 +548,10 @@ describe("B1-03 lesson content audit", () => {
       goalEvent("z1", "q1"),
       goalEvent("z1", "q2"),
       goalEvent("z1", "q3"),
+      goalEvent("z1", "q4"),
+      goalEvent("z1", "q5"),
+      goalEvent("z1", "q6"),
+      goalEvent("z1", "q7"),
     ];
     expect(getGoalEvidenceStatus(goal("z1"), lessonB103.id, z1Events)).toBe(
       "evidenced",
@@ -524,6 +568,7 @@ describe("B1-03 lesson content audit", () => {
     expect(
       getGoalEvidenceStatus(goal("z2"), lessonB103.id, [
         goalEvent("z2", "e1"),
+        goalEvent("z2", "e2"),
         goalEvent("z2", "e7"),
         goalEvent("z2", "m1"),
       ]),

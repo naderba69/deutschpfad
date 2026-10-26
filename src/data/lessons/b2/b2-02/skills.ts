@@ -8,7 +8,7 @@ export const listening: Lesson["listening"] = {
     items: [
       {
         id: "l1",
-        title: "نشرة اقتصادية",
+        title: "نشرة اقتصادية تدريبية (مثال افتراضي)",
         lines: [
           { speaker: "Sprecherin", de: "Der Umsatz ist im letzten Quartal gestiegen.", ar: "ارتفعت المبيعات في الربع الأخير." },
           { speaker: "Sprecherin", de: "Die neuen Produkte können jetzt geliefert werden.", ar: "يمكن الآن تسليم المنتجات الجديدة." },
@@ -24,6 +24,19 @@ export const listening: Lesson["listening"] = {
           { speaker: "Sami", de: "Und die Lieferung?", ar: "والتسليم؟" },
           { speaker: "Chefin", de: "Die Lieferung kann nächste Woche erfolgen. Die Waren sind schon vorbereitet.", ar: "يمكن أن يتم التسليم الأسبوع القادم. البضائع جاهزة." },
           { speaker: "Sami", de: "Perfekt. Das Projekt ist gut gelaufen.", ar: "ممتاز. سار المشروع جيداً." },
+        ],
+      },
+      {
+        id: "l3",
+        title: "تأخّر التوريد وتوقعات السوق (حوار تدريبي خيالي)",
+        audioNoteAr: "الصوت معلن بأنه مولّد آلياً (TTS)، وليس تسجيلاً بشرياً. الحوار مثال خيالي للتدريب؛ لم يُتحقق سمعياً من مطابقة كل ملف للنص أو من وضوح النطق أو طبيعته.",
+        lines: [
+          { speaker: "Moderatorin", de: "Viele Unternehmen melden derzeit Probleme bei der Lieferung ihrer Waren.", ar: "تبلغ شركات كثيرة حالياً عن مشكلات في تسليم بضائعها.", audioSrc: "/audio/lessons/b2-02/ls-b2-02-3-1.mp3" },
+          { speaker: "Analyst", de: "Wegen eines längeren Streiks in einem großen Hafen verzögere sich der Wareneingang.", ar: "قال إن وصول البضائع يتأخر بسبب إضراب طويل في ميناء كبير.", audioSrc: "/audio/lessons/b2-02/ls-b2-02-3-2.mp3" },
+          { speaker: "Moderatorin", de: "Wie reagieren die Firmen auf diese Verzögerungen?", ar: "كيف تتعامل الشركات مع هذه التأخيرات؟", audioSrc: "/audio/lessons/b2-02/ls-b2-02-3-3.mp3" },
+          { speaker: "Analyst", de: "Die Bestellungen könnten jetzt online verfolgt werden, berichtet der Verband.", ar: "أفادت الرابطة بأنه يمكن الآن تتبّع الطلبات عبر الإنترنت.", audioSrc: "/audio/lessons/b2-02/ls-b2-02-3-4.mp3" },
+          { speaker: "Moderatorin", de: "Wann soll sich die Lage wieder verbessern?", ar: "متى يُتوقع أن يتحسن الوضع؟", audioSrc: "/audio/lessons/b2-02/ls-b2-02-3-5.mp3" },
+          { speaker: "Analyst", de: "Der Verband erwartet, die Lieferungen würden sich im nächsten Monat normalisieren.", ar: "تتوقع الرابطة أن تعود عمليات التسليم إلى طبيعتها الشهر المقبل.", audioSrc: "/audio/lessons/b2-02/ls-b2-02-3-6.mp3" },
         ],
       },
     ],
@@ -82,6 +95,24 @@ export const listening: Lesson["listening"] = {
           "«der Bericht» لم يُذكر كشيء وُقّع.",
         ],
       },
+      {
+        id: "q4",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Was verursachte die Lieferverzögerungen?",
+        questionAr: "ما سبب التأخير في التوريد؟",
+        options: ["Ein längerer Streik im großen Hafen", "Ein erheblicher Engpass bei Rohstoffen", "Ein technischer Ausfall der Computersysteme", "Eine kurzfristige Änderung der Zollregeln"],
+        correctIndex: 0,
+        explanation: "قال المحلل إن وصول البضائع تأخر بسبب إضراب طويل في ميناء كبير.",
+        errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم يذكر المحلل نقص المواد الخام؛ بل ذكر إضراباً في ميناء.",
+          "لم يتحدث الحوار عن عطل تقني في أنظمة الحاسوب.",
+          "لم يذكر الحوار تغييراً في قواعد الجمارك؛ السبب المسموع هو الإضراب.",
+        ],
+      },
     ],
   };
 
@@ -90,7 +121,7 @@ export const pronunciation: Lesson["pronunciation"] = {
     title: "أصوات الاقتصاد: tion، sch، وtz",
     items: [
       { de: "die Wirtschaft", ar: "الاقتصاد", note: "sch = ش: ڤيرت-شافَت" },
-      { de: "der Umsatz", ar: "المبيعات", note: "tz = تس: أوم-زاتس" },
+      { de: "der Umsatz", ar: "الإيراد/حجم المبيعات", note: "tz = تس: أوم-زاتس" },
       { de: "die Inflation", ar: "التضخم", note: "tion = تسيون: إنفلاتسيون" },
       { de: "der Vertrag", ar: "العقد", note: "v = ف + tr: فِرتراغ" },
       { de: "die Lieferung", ar: "التسليم", note: "ie = إي: ليفِرونغ" },

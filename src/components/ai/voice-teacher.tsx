@@ -338,6 +338,7 @@ export function AiVoiceTeacher() {
             <div className="flex flex-1 items-center gap-2 rounded-xl border bg-background px-3 focus-within:border-primary">
               <MessageCircle className="h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />
               <input
+                aria-label="اكتب رسالتك بالألمانية للمعلّم الصوتي"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && void send()}

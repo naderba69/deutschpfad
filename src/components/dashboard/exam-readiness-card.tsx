@@ -8,6 +8,7 @@
  * 3) انتظام المراجعة (البطاقات/المراجعات — 20%)
  */
 import * as React from "react";
+import Link from "next/link";
 import {Award, BookOpenCheck, GraduationCap, Headphones, Mic, PenLine} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
@@ -132,13 +133,13 @@ export function ExamReadinessCard({ completedUnits, totalUnits, reviewsCount, go
 
         <div className="flex flex-wrap gap-2">
           <Button asChild size="sm" variant="outline">
-            <a href="/tests/level/b2">اختبر B2 الآن</a>
+            <Link href="/tests/level/b2">اختبر B2 الآن</Link>
           </Button>
           <Button asChild size="sm" variant="outline">
-            <a href="/tests/sprechen">الامتحان الشفهي</a>
+            <Link href="/tests/sprechen">الامتحان الشفهي</Link>
           </Button>
           <Button asChild size="sm" variant="outline">
-            <a href="/dashboard/report">📄 تقرير PDF</a>
+            <Link href="/dashboard/report">📄 تقرير PDF</Link>
           </Button>
         </div>
       </CardContent>

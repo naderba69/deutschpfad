@@ -24,15 +24,15 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e2",
       type: "multiple-choice",
-      instructionAr: "اختر الصيغة الرسمية:",
-      questionDe: "Wenn man liest, lernt man. → (رسمية)",
+      instructionAr: "اختر الصياغة الاسمية:",
+      questionDe: "Wenn man liest, lernt man. → (Nominalstil)",
       options: ["Beim Lesen lernt man.", "Man liest und lernt.", "Das Lesen man lernt.", "Lesen ist lernen."],
       correctIndex: 0,
-      explanation: "الرسمية: beim + اسم.",
+      explanation: "صياغة اسمية: beim + مصدر مستعمل اسماً.",
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«Man liest und lernt.» لا تعبّر عن الصيغة الرسمية المطلوبة.",
+        "«Man liest und lernt.» لا تستخدم المصدر اسماً كما يطلب السؤال.",
         "«Das Lesen man lernt.» ترتيب خاطئ، ولا تعبّر عن الجملة.",
         "«Lesen ist lernen.» تغيّر المعنى، ولا تعبّر عن الجملة.",
       ],
@@ -86,8 +86,8 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e7",
       type: "transformation",
-      instructionAr: "حوّل الجملة إلى رسمية:",
-      prompt: "«عندما يتحسن الوضع، نعمل أفضل» → (رسمية، بالاشتقاق الاسمي)",
+      instructionAr: "أعد صياغة الجملة مستخدماً اسماً مشتقاً، مع الحفاظ على العلاقة السببية:",
+      prompt: "«عندما يتحسن الوضع، نعمل أفضل» → (صياغة اسمية تحافظ على السبب والنتيجة)",
       acceptedAnswers: ["Durch die Verbesserung der Situation arbeiten wir besser.", "Durch die Verbesserung der Situation arbeiten wir besser"],
       sampleAnswer: "Durch die Verbesserung der Situation arbeiten wir besser.",
       explanation: "الاشتقاق: Durch die Verbesserung + Genitiv (der Situation) = بتحسن الوضع.",
@@ -182,7 +182,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       type: "fill-blank",
       instructionAr: "أكمل بأداة الربط المناسبة (انتبه لموضع الفعل):",
       template:
-        "___ die Kosten steigen, müssen wir sparen. (بما أن — رسمية) · Ich bleibe zu Hause, ___ es regnet. (لأن — ربط متساوٍ) · Der Umsatz war so gering, ___ die Filiale schloss. (بحيث)",
+        "___ die Kosten steigen, müssen wir sparen. (بما أن — تقديم السبب) · Ich bleibe zu Hause, ___ es regnet. (لأن — ربط متساوٍ) · Der Umsatz war so gering, ___ die Filiale schloss. (بحيث)",
       blanks: [
         { correct: "Da", options: ["Da", "Denn", "Deshalb"], errorType: "grammar" },
         { correct: "denn", options: ["denn", "und", "deshalb"], errorType: "grammar" },
@@ -226,11 +226,11 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     ],
     eselsbruecken: [
       "«الفعل → das + مصدر كبير»: lesen → das Lesen.",
-      "«beim = عند + اسم، zum = للـ + اسم» — صيغتا الرسمية.",
+      "«beim = عند + اسم، zum = للـ + اسم» — حرف الجر متبوع بمصدر مستعمل اسماً.",
     ],
     culturalNote: {
       title: "العمل في ألمانيا",
       content:
-        "«Work-Life-Balance» (التوازن بين العمل والحياة) مصطلح شائع في النقاش المهني. والتفاوض على الراتب ممكن في كثير من الحالات، وعرض وجهة نظرك بوضوح مفيد: «Verhandeln Sie Ihr Gehalt». وعبارة شائعة في التقديم: «Ich suche eine neue Herausforderung» (أبحث عن تحدٍّ جديد).",
+        "«Work-Life-Balance» تعبير عن التوازن بين العمل والحياة. العبارات هنا أمثلة لغوية لا وصفٌ لقواعد التفاوض أو عادات جميع جهات العمل: «Ich würde gern über mein Gehalt sprechen» (أودّ التحدث عن راتبي)، و«Ich suche eine neue Herausforderung» (أبحث عن تحدٍّ جديد). تختلف إمكانات التفاوض والشروط باختلاف العقد والجهة والبلد.",
     },
   };

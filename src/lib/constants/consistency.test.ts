@@ -146,4 +146,3 @@ describe("اتساق إحصائيات الصفحة الرئيسية (STATS)", ()
     expect(values).not.toContain("240+");
   });
 });
-

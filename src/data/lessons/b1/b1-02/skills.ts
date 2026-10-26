@@ -8,7 +8,7 @@ export const listening: Lesson["listening"] = {
     items: [
       {
         id: "l1",
-        title: "مقابلة عمل",
+        title: "مقابلة عمل تدريبية (مثال خيالي)",
         lines: [
           { speaker: "Interviewer", de: "Erzählen Sie mir von Ihrer Erfahrung.", ar: "حدثني عن خبرتك." },
           { speaker: "Sami", de: "Ich arbeitete drei Jahre als Programmierer in Tunis.", ar: "عملت ثلاث سنوات مبرمجاً في تونس." },
@@ -20,13 +20,26 @@ export const listening: Lesson["listening"] = {
       },
       {
         id: "l2",
-        title: "سرد قصة عمل",
+        title: "سرد قصة عمل (مثال تدريبي خيالي)",
         lines: [
           { speaker: "Anna", de: "Als ich anfing, hatte ich keine Erfahrung.", ar: "عندما بدأت، لم يكن لدي خبرة." },
           { speaker: "Karim", de: "Und was machtest du zuerst?", ar: "وماذا فعلت أولاً؟" },
           { speaker: "Anna", de: "Ich lernte von meinen Kollegen und machte Fehler.", ar: "تعلمت من زملائي وارتكبت أخطاء." },
           { speaker: "Karim", de: "Ich glaube, jeder beginnt so.", ar: "أعتقد أن الجميع يبدأ هكذا." },
           { speaker: "Anna", de: "Ja, aber nachdem ich ein Jahr gearbeitet hatte, wurde ich sicherer.", ar: "نعم، لكن بعد أن عملت سنة، أصبحت أكثر ثقة." },
+        ],
+      },
+      {
+        id: "l3",
+        title: "أول يوم عمل في الفندق",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً. الحوار مثال تدريبي خيالي.",
+        lines: [
+          { speaker: "Nina", de: "Wie war dein erster Arbeitstag im Hotel?", ar: "كيف كان أول يوم عمل لك في الفندق؟", audioSrc: "/audio/lessons/b1-02/ls-b1-02-3-1.mp3" },
+          { speaker: "Karim", de: "Am Anfang war ich nervös, aber mein Team war freundlich.", ar: "كنت متوتراً في البداية، لكن فريقي كان ودوداً.", audioSrc: "/audio/lessons/b1-02/ls-b1-02-3-2.mp3" },
+          { speaker: "Nina", de: "Was hattest du gemacht, bevor du dort anfingst?", ar: "ماذا كنت قد فعلت قبل أن تبدأ هناك؟", audioSrc: "/audio/lessons/b1-02/ls-b1-02-3-3.mp3" },
+          { speaker: "Karim", de: "Ich hatte einen Deutschkurs besucht und ein Praktikum gemacht.", ar: "كنت قد حضرت دورة ألمانية وأتممت تدريباً عملياً.", audioSrc: "/audio/lessons/b1-02/ls-b1-02-3-4.mp3" },
+          { speaker: "Nina", de: "Und was lernst du jetzt bei der Arbeit?", ar: "وماذا تتعلم الآن في العمل؟", audioSrc: "/audio/lessons/b1-02/ls-b1-02-3-5.mp3" },
+          { speaker: "Karim", de: "Ich lerne, mit Gästen zu sprechen und Probleme ruhig zu lösen.", ar: "أتعلم التحدث مع الضيوف وحل المشكلات بهدوء.", audioSrc: "/audio/lessons/b1-02/ls-b1-02-3-6.mp3" },
         ],
       },
     ],
@@ -84,6 +97,27 @@ export const listening: Lesson["listening"] = {
           "«Sie wechselte die Firma» لم يذكره النص.",
           "«Sie ging in Rente» تعني تقاعدت، ولم يحدث ذلك في النص.",
         ],
+      },
+      {
+        id: "q4", itemId: "l3", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع إلى الحوار الثالث:",
+        questionDe: "Wie war Karims erster Arbeitstag?", questionAr: "كيف كان أول يوم عمل لكريم؟",
+        options: ["Zunächst nervös, aber das Team war freundlich", "Von Anfang an gelangweilt, weil die Aufgaben einfach waren", "Sehr ärgerlich, denn niemand half ihm bei der Arbeit", "Unsicher, weil er das Hotel nicht finden konnte"], correctIndex: 0,
+        explanation: "يقول كريم إنه كان متوتراً في البداية، لكن فريقه كان ودوداً.", errorType: "comprehension",
+      },
+      {
+        id: "q5", itemId: "l3", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Was hatte Karim vor seinem Arbeitsbeginn gemacht?", questionAr: "ماذا كان كريم قد فعل قبل بدء العمل؟",
+        options: ["Einen Deutschkurs besucht und ein Praktikum gemacht", "Ein Studium abgeschlossen und im Büro gearbeitet", "Eine Prüfung bestanden und Urlaub genommen", "Ein Hotel gesucht und eine Bewerbung geschrieben"], correctIndex: 0,
+        explanation: "يذكر كريم أنه حضر دورة ألمانية وأتم تدريباً عملياً قبل بدء العمل.", errorType: "comprehension",
+      },
+      {
+        id: "q6", itemId: "l3", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Was lernt Karim jetzt bei der Arbeit?", questionAr: "ماذا يتعلم كريم الآن في العمل؟",
+        options: ["Mit Gästen sprechen und Probleme ruhig lösen", "Briefe schreiben und neue Zimmer reservieren", "Deutsch lernen und Prüfungen vorbereiten", "Das Hotel leiten und das Team organisieren"], correctIndex: 0,
+        explanation: "يقول كريم إنه يتعلم التحدث مع الضيوف وحل المشكلات بهدوء.", errorType: "comprehension",
       },
     ],
   };

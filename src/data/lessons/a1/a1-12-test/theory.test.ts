@@ -50,7 +50,7 @@ describe("A1-12 audited lesson content", () => {
 
     const hearingGoal = lessonA112.lernziele.find((goal) => goal.id === "z8");
     expect(hearingGoal?.de).toContain("Wetter-Hörtexte");
-    expect(hearingGoal?.ar).toContain("نصّي استماع");
+    expect(hearingGoal?.ar).toContain("ثلاثة نصوص استماع");
     const readingGoal = lessonA112.lernziele.find((goal) => goal.id === "z7");
     expect(readingGoal?.de).not.toContain("kurzen");
     expect(findTask("rq3").errorType).toBe("vocabulary");
@@ -128,5 +128,9 @@ describe("A1-12 audited lesson content", () => {
     expect(lessonA112.fehlerUndTipps.culturalNote.content).toContain(
       "لا تثبت هذه الأمثلة تفضيلاً ثقافياً عاماً",
     );
+    expect(lessonA112.fehlerUndTipps.culturalNote.content).toContain(
+      "ليست بيانات أرصاد فعلية",
+    );
+    expect(lessonA112.mediation?.[0]?.taskAr).toContain("نشرة افتراضية");
   });
 });

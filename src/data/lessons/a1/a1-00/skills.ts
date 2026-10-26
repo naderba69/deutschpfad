@@ -39,7 +39,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         de: "das Formular",
         ar: "الاستمارة",
         noteAr:
-          "كلمة ستقابلك في كلّ دائرة رسمية ألمانية. الجمع: die Formulare.",
+          "كلمة شائعة في الاستمارات والمعاملات. الجمع: die Formulare."
       },
       {
         de: "wie schreibt man das?",
@@ -63,7 +63,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         de: "die Telefonnummer",
         ar: "رقم الهاتف",
         noteAr:
-          "مركّبة أيضاً، وجنسها من die Nummer. وتُقال أرقامها فرادى لا مجتمعة.",
+          "مركّبة أيضاً، وجنسها من die Nummer. يمكن قراءة أرقام الهاتف فرادى أو في مجموعات بحسب العرف والموقف؛ يعرضها هذا الحوار فرادى للتدريب."
       },
       {
         de: "der Raum",
@@ -80,19 +80,19 @@ export const reading: NonNullable<Lesson["reading"]> = {
         de: "lächeln",
         ar: "يبتسم",
         noteAr:
-          "لاحظ ä فيه. ولا تخلطه بـ lachen (يضحك): فيه ch غليظة بعد a، أما lächeln ففيه ch ناعمة بعد ä.",
+          "لاحظ ä فيه. ولا تخلطه بـ lachen (يضحك): في lachen يأتي ach-Laut [x] بعد a، وفي lächeln يظهر ich-Laut [ç] بعد ä؛ لا يطابقه حرف عربي تماماً."
       },
       {
         de: "kennen",
         ar: "يعرف (شخصاً أو مكاناً)",
         noteAr:
-          "يخصّ المعرفة بالمعايشة والتجربة. ويقابله wissen للمعرفة بالمعلومة؛ وفي العربية يشبه ذلك التمييز بين «عرف» و«علم» تقريباً.",
+          "يُستعمل kennen غالباً لمعرفة شخص أو مكان أو شيء، وwissen لمعرفة معلومة أو حقيقة. هذا فرق إرشادي بين الفعلين، ولا يطابق تقسيماً عربياً ثابتاً في كل السياقات."
       },
       {
         de: "Vielen Dank!",
         ar: "شكراً جزيلاً!",
         noteAr:
-          "أدفأ من Danke المجرّدة. والردّ عليها: Bitte schön! أو Gern geschehen!",
+          "تعبير شائع للشكر. من الردود المناسبة بحسب السياق: Bitte schön! أو Gern geschehen!",
       },
     ],
     questions: [
@@ -127,19 +127,19 @@ export const reading: NonNullable<Lesson["reading"]> = {
         questionDe: "Warum sagt Youssef: A wie Anton?",
         questionAr: "لماذا يقول يوسف: A كما في أنطون؟",
         options: [
-          "Weil Anton sein Freund ist",
-          "Weil das die deutsche Buchstabiertafel ist",
-          "Weil er den Buchstaben vergessen hat",
-          "Weil Anton auch im Kurs ist",
+          "Weil Anton sein Freund ist und sie sich kennen",
+          "Weil er die traditionelle Buchstabiertafel benutzt",
+          "Weil er den Buchstaben vergessen hat und nachfragt",
+          "Weil Anton auch im Kurs ist und dort wartet",
         ],
         correctIndex: 1,
         explanation:
-          "الألمان يتهجّون بأسماء علمٍ معيارية (Anton, Berta, Emil…) تماماً كما يقول الطيّارون Alpha‑Bravo. والغرض تفادي الخلط بين الحروف المتشابهة صوتياً في الهاتف، لا ذكر أشخاص بأعيانهم.",
+          "تُستخدم كلمات وأسماء توضيحية لتمييز الحروف عند التهجّي. Anton وBerta وEmil من جدول تهجٍّ ألماني تقليدي؛ لا نقدّم هذه القائمة على أنها معيار DIN 5009 الحالي، الذي يعتمد أسماء مدن. الغرض توضيح الحرف لا ذكر أشخاص بأعيانهم.",
         optionExplanations: [
-          "«Anton» اسمٌ في جدول التهجّي «die Buchstabiertafel»، لا شخصٌ في النصّ.",
+          "Anton كلمة توضيحية من جدول تهجٍّ تقليدي، وليس صديقاً مذكوراً في النصّ.",
           undefined,
           "لم ينسَ الحرف «den Buchstaben vergessen»؛ بل يتهجّى بدقّة: «A wie Anton».",
-          "لا وجود لشخصٍ اسمه «Anton» في الدورة؛ والاسم جزء من «Buchstabiertafel».",
+          "لا يذكر النصّ صديقاً اسمه Anton؛ هو اسمٌ توضيحي من جدول تهجٍّ تقليدي.",
         ],
         errorType: "vocabulary",
         paragraph: 1,
@@ -201,12 +201,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
         options: ["nicht", "ich", "Buchstabe", "lächelt"],
         correctIndex: 2,
         explanation:
-          "الخاء الغليظة تأتي بعد a و o و u و au. وفي Buchstabe يسبق ch حرف u فتُنطق خاءً. أمّا nicht وich فقبلهما i، وlächelt قبلها ä — وكلّها تُنطق شيناً ناعمة.",
+          "في Buchstabe يأتي ch بعد u، فيظهر ach-Laut [x]. أمّا nicht وich وlächelt ففيها ich-Laut [ç]، وهو ليس الشين العربية؛ التقريب الكتابي لا يعلّم النطق وحده، فاستمع إلى أمثلة موثوقة.",
         optionExplanations: [
-          "في «nicht» يسبق «ch» حرفُ «i» ⇒ شين ناعمة (ich-Laut)، لا خاء غليظة.",
-          "في «ich» يسبق «ch» حرفُ «i» ⇒ شين ناعمة؛ والخاء الغليظة بعد a/o/u/au كما في «Buch».",
+          "في «nicht» يظهر ich-Laut [ç]، وهو ليس الشين العربية ولا الخاء الغليظة.",
+          "في «ich» يظهر ich-Laut [ç]؛ لا يطابق الشين العربية. أمّا ach-Laut [x] فيظهر في «Buch».",
           undefined,
-          "في «lächelt» يسبق «ch» حرفُ «ä» ⇒ شين ناعمة؛ والخاء الغليظة بعد a/o/u/au.",
+          "في «lächelt» يظهر ich-Laut [ç]، لا ach-Laut [x]؛ ولا تمثل «ش» العربية الصوتين بدقة.",
         ],
         errorType: "spelling",
         paragraph: 1,
@@ -223,7 +223,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
       },
       {
         de: "A wie Anton, B wie Berta, E wie Emil.",
-        ar: "أ كما في أنطون، ب كما في بيرتا… (جدول التهجّي المعياري)",
+        ar: "أ كما في أنطون، ب كما في بيرتا… (أمثلة تقليدية؛ أما جدول DIN 5009 الحالي فيستخدم أسماء مدن)"
       },
       {
         de: "Können Sie das bitte langsam wiederholen?",
@@ -262,7 +262,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
           {
             speaker: "Sami",
             de: "Ja, natürlich. S-A-M-I. B-E-N. A-L-I.",
-            ar: "نعم بالطبع. إس-آ-إم-آي. بيه-إيه-إن. آ-إل-آي.",
+            ar: "نعم بالطبع. إس-آه-إم-إي. بيه-إيه-إن. آه-إل-إي.",
           },
           {
             speaker: "Frau Weber",
@@ -288,8 +288,8 @@ export const listening: NonNullable<Lesson["listening"]> = {
           },
           {
             speaker: "Mona",
-            de: "S-T-R-A-ß-E.",
-            ar: "إس-تيه-إر-آ-إسّتِت-إيه.",
+            de: "S-T-R-A-Eszett-E.",
+            ar: "إس-تيه-إر-آ-إس-تسِت-إيه.",
           },
           { speaker: "Lehrer", de: "Perfekt!", ar: "مثالي!" },
         ],
@@ -342,12 +342,12 @@ export const listening: NonNullable<Lesson["listening"]> = {
 /* 6) النطق */
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "p1",
-    title: "أهم 10 أصوات للمتعلم العربي: sch وsp وpf — استمع وكرر",
+    title: "10 أمثلة على أصوات وأنماط ألمانية: sch وsp وpf — استمع وكرر",
     items: [
       {
         de: "ich",
         ar: "أنا",
-        note: "ch ناعمة بعد i: أقرب إلى «ش» هامسة من «خ»",
+        note: "في ich يظهر ich-Laut [ç]؛ لا يطابق الشين العربية. استمع إلى الصوت وتمرّن عليه."
       },
       { de: "Buch", ar: "كتاب", note: "ch خاء غليظة بعد u" },
       { de: "schön", ar: "جميل", note: "sch = ش + ö بشفتين مستديرتين" },
@@ -356,10 +356,10 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       { de: "neu", ar: "جديد", note: "eu = أُوي: نُوي" },
       { de: "Sport", ar: "رياضة", note: "sp في البداية = شپورت" },
       { de: "Stadt", ar: "مدينة", note: "st في البداية = شتات" },
-      { de: "Apfel", ar: "تفاحة", note: "pf معاً: آپفِل" },
+      { de: "Apfel", ar: "تفاحة", note: "تتابع /p/ ثم /f/ من دون حركة فاصلة" },
       { de: "Vater", ar: "أب", note: "V = ف: فاتر" },
     ],
-    tip: "اختر صوتاً واحداً يومياً من هذه القائمة وكرره في 5 كلمات مختلفة — صوت واحد يومياً أسرع من مراجعة كل شيء مرة واحدة.",
+    tip: "اختر صوتاً واحداً من هذه القائمة، واستمع إلى أمثلته ثم كرره في كلمات الدرس. يمكنك تسجيل نفسك ومقارنة محاولاتك؛ هذا تدريب ذاتي وليس تقييماً آلياً للنطق.",
     shadowing: [
       { de: "Mein Name ist Anna.", ar: "اسمي آنا.", tip: "ei في Mein = آي" },
       {
@@ -385,10 +385,10 @@ export const writing: NonNullable<Lesson["writing"]> = [
     {
       id: "w1",
       type: "transformation",
-      instructionAr: "اكتب تهجئة الاسم حرفاً حرفاً بالألمانية (بفاصلة بين الحروف):",
-      instructionDe: "Buchstabiere deinen Namen!",
+      instructionAr: "اكتب تهجئة الاسم Sami حرفاً حرفاً بالألمانية (ضع شرطة بين الحروف):",
+      instructionDe: "Schreibe die Buchstabenfolge des Namens Sami auf.",
       prompt:
-        "اكتب تهجئة الاسم Sami حرفاً حرفاً بالألمانية (مثال للتدريب)",
+        "تهجئة الاسم Sami حرفاً حرفاً بالألمانية (مثال للتدريب)",
       acceptedAnswers: ["S-A-M-I", "S A M I"],
       sampleAnswer: "S-A-M-I",
       explanation:

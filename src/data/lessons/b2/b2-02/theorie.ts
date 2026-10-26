@@ -7,53 +7,53 @@ import type { Lesson } from "@/types/lesson";
 export const theory: NonNullable<Lesson["theory"]> = [
     {
       id: "t1",
-      titleAr: "المبني للمجهول المتقدم: الحالة والشرطي والبدائل",
+      titleAr: "المبني للمجهول المتقدم: الحالة والأفعال الناقصة والبدائل",
       titleDe: "Zustandspassiv, Passiv mit Modalverben, Ersatzformen",
       explanationAr:
-        "أول ما يجب ضبطه هو الفرق بين العملية والحالة. «Die Tür wird geöffnet» تصف حدثاً يجري الآن: هناك من يفتح الباب، والجملة تجيب عن سؤال «ماذا يحدث؟». أما «Die Tür ist geöffnet» فتصف نتيجة قائمة: الباب مفتوح، والسؤال المطابق هو «ما هي الحال؟». في التقارير الاقتصادية يظهر الفرق بوضوح: «Der Umsatz wird gesteigert» (جارٍ رفع المبيعات) مقابل «Der Umsatz ist gesteigert» (المبيعات مرفوعة أصلاً). ومع الأفعال التي تصف تغيّراً، تكون الحالة عادةً هي ما يهمّ القارئ: نتيجة متحققة لا عملية مؤقتة.\n\nوالصيغة الثانية هي المجهول مع الأفعال الناقصة: können/müssen/sollen/dürfen + Partizip II + werden، ويكون «werden» في نهاية الجملة بعد اسم المفعول. هكذا: «Die Ware kann geliefert werden» (يمكن تسليم البضاعة)، و«Die Entscheidung muss getroffen werden» (يجب اتخاذ القرار). وفي الماضي يصبح الناقص وحده ماضياً ويبقى البناء كما هو: «Die Lieferung konnte bestätigt werden» (أمكن تأكيد التسليم). القاعدة العملية: الفعل الناقص في المركز الثاني، واسم المفعول وwerden في النهاية، ولا شيء يفصل بينهما.\n\nوالصيغة الثالثة هي البدائل التي تختصر الجملة وتمنحها سجلاً لغوياً مختلفاً. «sich lassen + مصدر» تعني إمكانية عملية سلسة: «Das Problem lässt sich lösen» (المشكلة تُحل بسهولة). وصفة «-bar» تختصر الجملة إلى نعت واحد: «Die Lösung ist durchführbar» (الحل قابل للتنفيذ)، و«trinkbar» (قابل للشرب). و«man» تحافظ على الفاعل العام في صيغة المبني للمعلوم: «Man kann die Kosten senken». و«sein + zu + مصدر» صيغة رسمية تفيد الإلزام أو الإمكانية: «Das Problem ist zu lösen» (ينبغي حلّ المشكلة). وأخيراً «lassen + مفعول + مصدر» تعني التسبيب لا الإمكانية: «Ich lasse das Auto reparieren» أي أُوكل الإصلاح لغيري.\n\nوللاختيار بينها ثلاثة أسئلة فقط: هل الجملة تصف حدثاً جارياً (wird + PII) أم نتيجة قائمة (ist + PII)؟ وهل نريد إمكانية أم إلزاماً أم تسبيباً؟ وما سجلّ النص: تقرير رسمي (sein + zu + مصدر · muss + PII + werden)، أم خبر صحفي (kann/lässt sich)، أم كلام يومي (man)؟ ثم انتبه إلى الأزمنة: «waren geöffnet» حالة في الماضي، و«sind geöffnet worden» عملية منتهية في الماضي — كلمة «worden» وحدها هي التي تفصل بينهما.",
+        "في الأمثلة المعتادة، «Die Tür wird geöffnet» تعرض الحدث أو العملية، بينما «Die Tür ist geöffnet» تصف الحالة الناتجة: الباب مفتوح. لا يعني Präsens مع «wird» بالضرورة أن الحدث يقع في هذه اللحظة؛ فكلمة «gerade» في «Die Tür wird gerade geöffnet» هي التي توضّح ذلك هنا. وفي سياق اقتصادي يمكن مقارنة «Der Vertrag wird unterschrieben» (يجري توقيع العقد) بـ«Der Vertrag ist unterschrieben» (العقد موقّع). وقد يعتمد الفرق بين الحدث والحالة على الفعل والسياق.\n\nفي الجملة الرئيسية، يأتي الفعل الناقص المصرف في المرتبة الثانية: «Die Ware kann geliefert werden» (يمكن تسليم البضاعة). وفي الجملة الثانوية يتغير ترتيب الأفعال: «..., weil die Ware geliefert werden kann». صيغة المجهول هي Modalverb + Partizip II + werden، لكن لا يصح تعميم موضع المرتبة الثانية خارج الجملة الرئيسية. وفي الماضي: «Die Lieferung konnte bestätigt werden»؛ وفي الماضي التام مع الناقص: «Die Ware hat geliefert werden können».\n\nمن البدائل: «sich lassen + Infinitiv»، بترتيب واضح مثل «Das Problem lässt sich lösen»، وتعبّر غالباً عن إمكان وقوع الفعل من دون تسمية فاعله؛ لا تعني «بسهولة» بذاتها. و«-bar» تصوغ صفةً مثل «durchführbar» (قابل للتنفيذ) و«trinkbar» (صالح للشرب). أما «man» فيجعل الفاعل عاماً مع بقاء الجملة في المعلوم: «Man kann die Kosten senken». و«sein + zu + Infinitiv» قد يدل على الإمكان أو المطلوب بحسب السياق: «Das Problem ist zu lösen». أما «lassen + مفعول + Infinitiv» فقد يفيد التسبب أو التكليف، مثل «Ich lasse das Auto reparieren».\n\nاختر الصيغة بحسب المعنى والسياق، لا بحسب قاعدة جامدة عن الأسلوب وحده. قارن «waren geöffnet» (حالة في الماضي) بـ«sind geöffnet worden» (مجهول الحدث في Perfekt). وتختلف البدائل في تركيبها ودلالتها؛ فلا تكون قابلة للاستبدال دائماً، حتى إن تقاربت ترجماتها العربية.",
       whyAr:
-        "لماذا كل هذه الطرق بدل صيغة واحدة؟ لأن الألمانية تعشق الدقة في تحديد نوع المعلومة: «يُفتح الآن» (wird geöffnet) خبر عن حدث، و«مفتوح» (ist geöffnet) خبر عن نتيجة، و«يمكن فتحه» (kann geöffnet werden / lässt sich öffnen / ist öffenbar) خبر عن إمكانية. القارئ الألماني يقرأ الفعل المساعد أولاً فيعرف نوع الخبر قبل أن يُكمل الجملة: ist = وصف حال، wird = سرد حدث، kann + werden = تقييم إمكانية. وهذا بالضبط ما يطلبه الاقتصاد: تقرير يقول «الأسعار ارتفعت» يختلف عن تقرير يقول «الأسعار مرتفعة» — الأول يبحث عن سبب، والثاني يصف واقعاً. وإتقان الاختيار بين الصيغ الأربع هو ما يفصل مستوى B1 عن B2 في الكتابة الرسمية، لأن الخطأ هنا لا يُفهم كخطأ نحوي بل كخطأ في المعنى: قد تقول إن شيئاً «مفتوح» وأنت تريد أن تقول إنه «يُفتح الآن».",
+        "يساعد التمييز بين الحدث والحالة والإمكان والإلزام على نقل المعنى بدقة في نصوص الاقتصاد وغيرها. لكنه يعتمد على الفعل والسياق، ولا تكفي صيغة المساعد وحدها دائماً لتحديد زمن وقوع الحدث أو غرض الكاتب. كما أن الأمثلة هنا تشرح تراكيب شائعة، ولا تمثل اختباراً أو حكماً على مستوى CEFR.",
       table: {
-        title: "أنواع المجهول",
+        title: "المجهول وبدائله",
         columns: ["النوع", "التركيب", "مثال", "المعنى"],
         rows: [
           { label: "Vorgangspassiv", cells: ["werden + PII", "Die Tür wird geöffnet.", "تُفتح (عملية)"] },
           { label: "Zustandspassiv", cells: ["sein + PII", "Die Tür ist geöffnet.", "مفتوحة (حالة)"] },
           { label: "Passiv + Modalverb", cells: ["können + PII + werden", "Die Tür kann geöffnet werden.", "يمكن فتحها"] },
-          { label: "sich lassen", cells: ["sich + lassen + Inf", "Die Tür lässt sich öffnen.", "تُفتح بسهولة"] },
-          { label: "صفة -bar", cells: ["جذر + bar", "Die Tür ist öffenbar.", "قابلة للفتح"] },
+          { label: "sich lassen", cells: ["lassen (مصرف) + sich + Infinitiv", "Die Tür lässt sich öffnen.", "يمكن فتحها"] },
+          { label: "صفة -bar", cells: ["فعل + -bar", "Die Lösung ist durchführbar.", "قابلة للتنفيذ"] },
         ],
       },
       examples: [
         { de: "Die Ware ist geliefert worden.", ar: "تم تسليم البضاعة (عملية منتهية)." },
         { de: "Die Ware ist geliefert.", ar: "البضاعة مسلَّمة (حالة)." },
         { de: "Der Preis kann verhandelt werden.", ar: "يمكن التفاوض على السعر." },
-        { de: "Das Problem lässt sich lösen.", ar: "المشكلة قابلة للحل (تُحل بسهولة)." },
+        { de: "Das Problem lässt sich lösen.", ar: "يمكن حل المشكلة." },
         { de: "Die Lösung ist durchführbar.", ar: "الحل قابل للتنفيذ." },
         { de: "Die Entscheidung ist bis Freitag zu treffen.", ar: "يجب اتخاذ القرار حتى الجمعة (رسمي)." },
       ],
       comparisonWithArabic:
-        "«تُفتح» تقابل wird geöffnet، و«مفتوحة» تقابل ist geöffnet، و«قابلة للفتح» تقابل ist öffenbar. التقابل تقريبي فقط، لأن الألمانية تفرّق بين العملية والحالة بتغيير الفعل المساعد، بينما العربية تستعمل الفعل نفسه («تُفتح» لوحده) أو اسم المفعول («مفتوحة») بحسب السياق. الفرق الحقيقي أن العربية تُعبّر عن الإمكانية بأدوات قبل الفعل — «يمكن فتحه»، «يُفتح بسهولة»، «قابل للفتح» — والألمانية تفعل ذلك ثلاث طرق مختلفة (kann geöffnet werden · lässt sich öffnen · ist öffenbar) لكل منها تلوين دلالي. وكذلك الإلزام: العربية تقول «يجب حلّ المشكلة»، والألمانية تقوله بصيغة رسمية قصيرة (Das Problem ist zu lösen) لا نظير حرفي لها في العربية. والمتعلّم العربي يميل إلى ترجمة «يجب» دائماً بـ muss، فيخسر الفرق بين الرسمي والمحايد؛ والحل أن يتعلّم الصيغ الثلاث كعبارات جاهزة، لا كقاعدة تُترجم كلمة بكلمة.",
+        "يمكن ترجمة «Die Tür wird geöffnet» بـ«يُفتح الباب» و«Die Tür ist geöffnet» بـ«الباب مفتوح»، لكن المقابلات تقريبية ويحدد السياق المعنى. وتستعمل العربية، مثل الألمانية، وسائل متعددة للإمكان والإلزام، كـ«يمكن فتحه» و«قابل للفتح» و«يجب حل المشكلة». لا تقابل الصيغ الألمانية بعضها بعضاً حرفياً دائماً؛ لذا يُستحسن فهم تركيبها وسياقها بدلاً من افتراض تطابق ثابت بين اللغتين.",
       eselsbruecke:
-        "«ist + PII = حالة، wird + PII = عملية» — اسأل: هل النتيجة قائمة (ist) أم الحدث جارٍ (wird)؟ و«-bar = قابل للـ»: öffenbar = قابل للفتح.",
+        "في المثال المعتاد: sein + PII تصف حالة، وwerden + PII يبرز الحدث؛ و«-bar» في «durchführbar» تعني قابل للتنفيذ.",
       commonMistakes: [
-        { wrong: "Die Tür ist gerade geöffnet. (تقصد: تُفتح الآن)", right: "Die Tür wird gerade geöffnet.", whyAr: "«ist geöffnet» حالة قائمة تصف نتيجة، أما الحدث الجاري فحده الأدنى هو wird + اسم المفعول؛ وكلمة «gerade» هنا علامة على الحدث الجاري لا على الحالة." },
-        { wrong: "Die Tür wird geöffnet. (عملية بدل حالة)", right: "Die Tür ist geöffnet.", whyAr: "السياق هو الفيصل: إن كان المهم أن العملية جرت وأنتجت أثراً، فـ sein + Partizip II هو الصحيح، وwird يخبرنا أن العملية لا تزال في طريقها أو تتكرر." },
-        { wrong: "لا فرق بين lässt sich öffnen و kann geöffnet werden في أي سياق", right: "فرق في المعنى: lässt sich öffnen = يمكن فتحه بسهولة، kann geöffnet werden = إمكانية عامة", whyAr: "قد تتشابه الترجمتان في العربية («يمكن فتحه»)، لكن الألمانية تُفرّق بين إمكانية عملية سلسة تصفها lässt sich وإمكانية عامة نظرية تصفها kann ... werden؛ والاستعمال هو الذي يحكم." },
+        { wrong: "فهم «Die Tür ist geöffnet» بمعنى أن الباب يُفتح الآن", right: "تعني عادةً أن الباب مفتوح؛ وللحدث الجاري: «Die Tür wird gerade geöffnet».", whyAr: "sein + Partizip II يصف الحالة عادةً في هذا المثال، بينما يبرز werden + Partizip II الحدث. لا يكفي Präsens وحده لإثبات أن الحدث يجري لحظة الكلام." },
+        { wrong: "اعتبار «Die Tür wird geöffnet» و«Die Tür ist geöffnet» مترادفتين دائماً", right: "الأولى تبرز الحدث، والثانية تصف الحالة في المثال المعتاد.", whyAr: "هما بنيتان مختلفتان، لكن تفسيرهما الدقيق يتأثر بالفعل والسياق؛ لا تستبدل إحداهما بالأخرى من دون مراعاة المقصود." },
+        { wrong: "القول إن «lässt sich öffnen» تعني دائماً «يفتح بسهولة» أو إن لها فرقاً ثابتاً عن «kann geöffnet werden»", right: "كلتاهما قد تعبّران عن الإمكان، والاختيار يتحدد بالسياق والاستعمال.", whyAr: "سهولة الفعل قد تُذكر صراحةً مثل «lässt sich leicht öffnen»؛ أما «sich lassen» وحدها فلا تضمن السهولة، ولا توجد مقابلة قطعية واحدة تصلح لكل سياق." },
       ],
       relatedRuleComparison: {
         title: "Vorgangs- أم Zustandspassiv؟",
-        content: "Vorgang = العملية (wird geöffnet — يُفتح). Zustand = النتيجة (ist geöffnet — مفتوح). السؤال: حدث جارٍ أم حالة قائمة؟",
+        content: "في المثال المعتاد: werden + Partizip II يبرز الحدث، وsein + Partizip II يصف الحالة؛ لا يعني المضارع وحده أن الحدث يجري الآن.",
       },
     },
     {
       id: "t2",
-      titleAr: "المجهول مع الأفعال الناقصة والبدائل الدقيقة — المعالجة الكاملة",
+      titleAr: "المجهول مع الأفعال الناقصة والبدائل",
       titleDe: "Passiv mit Modalverben im Detail + Ersatzformen (lassen, -bar, sein + zu + Infinitiv)",
       explanationAr:
-        "المجهول مع الأفعال الناقصة هو صيغة التقارير الرسمية بامتياز. البناء ثابت: الفعل الناقص في المرتبة الثانية، ثم بقية الجملة، ثم Partizip II ثم werden في النهاية. «Die Entscheidung muss getroffen werden» (يجب اتخاذ القرار)، و«Die Kosten können gesenkt werden» (يمكن خفض التكاليف)، و«Der Vertrag soll verlängert werden» (يُقال إن العقد سيُمدَّد). وما يجب حفظه أن «werden» لا يسقط أبداً، وأن ترتيب الكتلة الأخيرة (PII + werden) غير قابل للتبديل.\n\nوفي الأزمنة يتصرّف الناقص وحده: الماضي «konnte + PII + werden» (Die Lieferung konnte bestätigt werden)، والماضي التام «hat + PII + werden können» بصيغة «hat geliefert werden können» (أمكن تسليمها). والزمن يحمل فرقاً دلالياً: «konnte nicht bestätigt werden» = لم يكن ممكناً تأكيده في تلك اللحظة، أما «kann nicht bestätigt werden» = لا يمكن تأكيده الآن، قراره ما زال مفتوحاً.\n\nأما البدائل الدقيقة فتخدم مستويات مختلفة من الرسمية. «sein + zu + مصدر» أقصر وأكثر رسمية، وتفيد الإلزام أو الإمكانية بحسب السياق: «Das Problem ist zu lösen» (المشكلة يجب حلها). و«sich lassen + مصدر» صيغة محايدة طبيعية تفيد الإمكانية العملية: «Die Kosten lassen sich senken». وصفة «-bar» تُدمج في النعت فتُقصّر الجملة: «durchführbar» (قابل للتنفيذ)، «machbar» (قابل للعمل)، «senkbar» (قابل للخفض). و«man» تحافظ على المبني للمعلوم بإزالة الفاعل الحقيقي: «Man kann die Kosten senken».\n\nوأخيراً يجب التفريق بين «lassen» بسببية و«sich lassen» كبديل. في «Ich lasse das Auto reparieren» أنا المُوكِل، والفاعل الحقيقي شخص آخر؛ وفي «Das Auto lässt sich reparieren» لا أحد يُوكل شيئاً، بل الجملة تقول إن الإصلاح ممكن. وجود «sich» هو العلامة الفارقة، ومعه يصبح الفاعل شيئاً لا شخصاً.",
+        "في الجملة الرئيسية يظهر الفعل الناقص المصرف عادةً في المرتبة الثانية، ثم تأتي بقية الجملة وكتلة الفعل: «Die Entscheidung muss getroffen werden». أما في الجملة الثانوية فيأتي الفعل المصرف أخيراً: «..., weil die Entscheidung getroffen werden muss». يتكون المجهول هنا من Modalverb + Partizip II + werden؛ وفي صيغة Perfekt مع الناقص مثالها «Die Ware hat geliefert werden können».\n\nتتغير دلالة الزمن والسياق: «konnte nicht bestätigt werden» تتحدث عن عدم الإمكان في زمن ماضٍ، أما «kann nicht bestätigt werden» فتسند عدم الإمكان إلى الحاضر أو الوضع الحالي، لا إلى استنتاج واحد عن سبب القرار.\n\nمن البدائل «sein + zu + Infinitiv»، التي قد تدل على الإلزام أو الإمكان بحسب السياق، مثل «Das Problem ist zu lösen». و«Das Problem lässt sich lösen» تعبّر غالباً عن إمكان الحل، من دون أن تعني سهولة الحل بذاتها؛ وهاتان الصيغتان بديلان تعبيريّان، وليستا بالضرورة جملة مبنية للمجهول من حيث التحليل النحوي. وتحوّل اللاحقة «-bar» الفعل إلى صفة مثل «durchführbar»، بينما يبقى «man» فاعلاً عاماً في جملة المعلوم: «Man kann die Kosten senken».\n\nميّز «lassen» السببية عن «sich lassen»: في «Ich lasse das Auto reparieren» يكلّف المتكلم شخصاً بإصلاح السيارة؛ وفي «Das Auto lässt sich reparieren» توصف إمكانية الإصلاح. «sich» علامة مفيدة في هذا الاستعمال، لكن الحكم النهائي يبقى لتركيب الجملة ومعناها. وهذه بدائل للتعبير عن معنى قريب من المجهول، لا صيغة Vorgangspassiv نفسها: «sich lassen» تركيب فعّال، و«-bar» صفة، و«sein + zu» تركيب بديل.",
       whyAr:
-        "لماذا هذا العمق بالذات؟ لأن التقارير الاقتصادية والسياسية مليئة بهذه الصيغ: «يجب أن يُحسم»، «يمكن تنفيذه»، «لا يمكن إيقافه»، «ينبغي تمديده». والسبب أن المتحدث لا يريد أن يسمّي الفاعل: لا في تحليل السوق (من الذي خفض الأسعار؟)، ولا في البروتوكول الرسمي (من الذي يقرّر؟)، ولا في الأخبار (المصدر غير معلوم أو غير مهم). وفي هذه الصيغ يُخفى الفاعل لغةً لا جهلاً، وهذا ما يجعل ترجمتها إلى العربية مباشرة تحتاج مهارة: العربية تُلزمك غالباً بفاعل صريح («قرّرت الحكومة»)، فتصير الترجمة الحرفية مضلِّلة. ومن أتقن البدائل، استطاع أن يضبط مستوى الرسمية في تقريره: «muss getroffen werden» صارمة، و«ist zu treffen» أكثر رسمية، و«lässt sich treffen» ألطف، و«man trifft» محايدة. ولهذا يكثر هذا الباب في الكتابة المهنية أكثر من أي باب آخر.",
+        "تظهر هذه التراكيب في نصوص الاقتصاد وغيرها لأنها تسمح بتحويل التركيز بين الحدث والنتيجة والإمكان والإلزام، أو بعدم تسمية الفاعل حين لا يكون محور الكلام. لكن المبني للمجهول لا يعني دائماً أن الفاعل مجهول أو متعمّد الإخفاء، كما أن المعلوم والمبني للمجهول موجودان في العربية والألمانية. افهم الوظيفة من الجملة والسياق، ولا تفترض ترتيباً ثابتاً للرسمية أو فرقاً واحداً بين البدائل.",
       table: {
         title: "المجهول + الناقصة والبدائل (تفصيل)",
         columns: ["التركيب", "المعنى", "مثال اقتصادي"],
@@ -61,8 +61,8 @@ export const theory: NonNullable<Lesson["theory"]> = [
           { label: "kann + PII + werden", cells: ["يمكن أن يُفعل", "Der Preis kann verhandelt werden."] },
           { label: "muss + PII + werden", cells: ["يجب أن يُفعل", "Die Entscheidung muss getroffen werden."] },
           { label: "konnte + PII + werden", cells: ["أمكن أن يُفعل (ماضٍ)", "Die Lieferung konnte bestätigt werden."] },
-          { label: "sein + zu + Infinitiv", cells: ["يجب/يمكن (رسمي)", "Das Problem ist zu lösen."] },
-          { label: "lassen + sich", cells: ["يمكن بسهولة", "Die Kosten lassen sich senken."] },
+          { label: "sein + zu + Infinitiv", cells: ["إلزام أو إمكان بحسب السياق", "Das Problem ist zu lösen."] },
+          { label: "sich lassen", cells: ["إمكان بحسب السياق", "Die Kosten lassen sich senken."] },
           { label: "صفة -bar", cells: ["قابل للـ", "Die Investition ist durchführbar."] },
         ],
       },
@@ -75,17 +75,17 @@ export const theory: NonNullable<Lesson["theory"]> = [
         { de: "Die Kosten sind in diesem Jahr zu senken.", ar: "يجب خفض التكاليف في هذا العام (رسمي)." },
       ],
       comparisonWithArabic:
-        "«يجب أن يُتخذ القرار» = Die Entscheidung muss getroffen werden. «تعذّر التأكيد» = konnte nicht bestätigt werden. «قابل للتنفيذ» = durchführbar — تقابل تقريبي، لأن العربية تصوغ الإمكانية بأداة مستقلة («يمكن» و«قابل») بينما تدمجها الألمانية في النعت نفسه. والفرق الأهم أن العربية تسمح بحذف الفاعل في جملة المبني للمجهول بلا خسارة («سُلّمت البضاعة»)، لكنها لا تستطيع بناء طابق ثانٍ من الإمكانية فوق المجهول بلا أداة إضافية: «يمكن أن تُسلَّم البضاعة». الألمانية تفعل ذلك بكتلة واحدة: «Die Ware kann geliefert werden» — أي الناقص + اسم المفعول + werden، وبقاؤها في النهاية هو ما يحفظ لها وضوحها. ولذلك يخطئ المتعلّم العربي بترجمتين: يحذف werden (لأنه لا يقابله شيء في «يمكن تسليمها»)، أو يضع «يجب» في أول الجملة فيقلب ترتيب الألمانية. الأفضل أن يتعلّم الكتلة كوحدة: الناقص في المركز الثاني، وPII + werden في النهاية.",
+        "«يجب اتخاذ القرار» = Die Entscheidung muss getroffen werden، و«قابل للتنفيذ» = durchführbar. هذه مقابلات تقريبية: فكل لغة تملك أكثر من وسيلة للتعبير عن الإمكان والإلزام والمجهول. في «Die Ware kann geliefert werden» يعبّر الفعل الناقص عن الإمكان، وتظهر بنية المجهول في Partizip II + werden. احفظ ترتيب الجملة الرئيسية، وقارنه بترتيب الجملة الثانوية «..., weil die Ware geliefert werden kann»؛ ولا تفترض مقابلة كلمة بكلمة بين اللغتين.",
       eselsbruecke:
-        "ثلاثية الاحتراف: «muss/kann + PII + werden» (رسمي)، «lässt sich» (طبيعي)، «-bar» (قصير). ابدأ بـ kann + PII + werden لأنها الأسهل في البداية.",
+        "اختر بين «muss/kann + PII + werden» و«sich lassen» و«-bar» بحسب المعنى والتركيب؛ لا يجعل الاختصارُ صيغةً ما أنسبَ في كل سياق.",
       commonMistakes: [
         { wrong: "Die Ware kann geliefert. (نقص werden)", right: "Die Ware kann geliefert werden.", whyAr: "المجهول مع الناقصة يتطلب وجود werden مهما طال الفعل الناقص؛ وحذفه لا يجعل الجملة «أقصر» بل يفسد البناء، لأن الناقص بدونه لا يدلّ على مجهول." },
-        { wrong: "Die Tür muss geöffnet werden بدل ist geöffnet", right: "muss geöffnet werden = يجب فتحها. ist geöffnet = مفتوحة (حالة)", whyAr: "السياق هو الذي يحدّد: إن أردت إلزاماً على أحدهم فاستعمل muss + PII + werden، وإن كنت تصف واقعاً قائماً بعد عملية انتهت فاستعمل ist + PII. الخلط بينهما يغيّر معنى التقرير كله." },
-        { wrong: "Das Problem ist zu lösen. (تظنه خطأً)", right: "صحيحة! sein + zu + مصدر = يجب/يمكن", whyAr: "sein + zu + مصدر صيغة رسمية سليمة تماماً في اللغة المكتوبة والتقارير، ومعناها يجب/يمكن. لا تصحّحها إلى مجهول بالناقص، إلا إذا أردت سجلاً أقل رسمية." },
+        { wrong: "اعتبار «Die Tür muss geöffnet werden» و«Die Tür ist geöffnet» متطابقتين", right: "muss geöffnet werden = يجب فتحها؛ ist geöffnet = الباب مفتوح (حالة)", whyAr: "الأولى تعبّر عن إلزام بوقوع الفعل، والثانية تصف الحالة في المثال المعتاد؛ اختلاف المعنى يمنع استبدالهما آلياً." },
+        { wrong: "Das Problem ist zu lösen. (تظنه خطأً)", right: "صحيحة! sein + zu + مصدر = يجب/يمكن", whyAr: "تشيع sein + zu + Infinitiv في الكتابة الرسمية وتظهر أيضاً في سياقات أخرى؛ ومعناها إلزام أو إمكان بحسب السياق. لا تصحّحها آلياً إلى مجهول مع فعل ناقص." },
       ],
       relatedRuleComparison: {
         title: "lassen للسببية أم لبديل المجهول؟",
-        content: "lassen + مفعول + مصدر = سبب: Ich lasse das Auto reparieren (أجعل السيارة تُصلح). sich lassen + مصدر = بديل مجهول: Das lässt sich reparieren (يمكن إصلاحه). انتبه لوجود sich.",
+        content: "lassen + مفعول + مصدر قد يفيد التسبب أو التكليف: Ich lasse das Auto reparieren. أما Das Auto lässt sich reparieren فيصف إمكان الإصلاح. انتبه إلى تركيب الجملة ومعناها، لا إلى كلمة منفردة فقط.",
       },
     },
   ];

@@ -179,7 +179,7 @@ describe("lesson goal evidence", () => {
     const readingAnswers: Record<string, string> = {
       r1: "Um 5:30 Uhr",
       r2: "Fast jeden Tag",
-      r3: "Weil er dann immer zu müde ist",
+      r3: "Er ist immer zu müde.",
       r4: "Weil die Zeitangabe auf Position 1 steht",
       r5: "Anstrengend, aber er mag seinen Beruf",
     };
@@ -349,7 +349,7 @@ describe("lesson goal evidence", () => {
     expect(evaluateFillBlank(w2, ["Komm", "Kommt", "Kommen"]).isCorrect).toBe(false);
     expect(evaluateFillBlank(w4, [
       "Ja, gern! Um wie viel Uhr?",
-      "Leider habe ich keine Zeit. Vielleicht nächste Woche?",
+      "Leider passt mir 15 Uhr nicht. Vielleicht nächste Woche?",
       "Ja, gern! Nächste Woche passt es mir gut.",
     ]).isCorrect).toBe(true);
     expect(evaluateFillBlank(w4, [

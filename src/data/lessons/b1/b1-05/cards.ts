@@ -12,7 +12,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       questionDe: "Ich ___ gestern ___. (ذهاب)",
       options: ["wäre ... gegangen", "hätte ... gegangen", "wäre ... gegeht", "habe ... gegangen"],
       correctIndex: 0,
-      explanation: "gehen حركة → wäre gegangen.",
+      explanation: "gehen يأخذ sein في Perfekt → wäre gegangen.",
       errorType: "grammar",
       optionExplanations: [
         undefined,
@@ -54,13 +54,13 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       wrongWord: "hätte",
       correctWord: "wäre",
       options: ["wäre", "hätte", "würde", "sei"],
-      explanation: "gehen فعل حركة ⇒ Konjunktiv II بـ wäre: Ich wäre gestern gegangen.",
+      explanation: "gehen يأخذ sein في Perfekt، لذا Konjunktiv II هنا بـ wäre: Ich wäre gestern gegangen.",
       errorType: "grammar",
     },
     {
       id: "m5",
       type: "fill-blank",
-      instructionAr: "أكمل:",
+      instructionAr: "أكمل بالصيغة المستهدفة في الدرس؛ وفي الجملة الثانية استخدم Konjunktiv II:",
       template: "Wenn ich ___ (لو كنت قد عرفت), hätte ich anders gehandelt. Er tut so, als ob er alles ___.",
       blanks: [
         { correct: "gewusst hätte", options: ["gewusst hätte", "weiß", "gewusst"] },
@@ -77,13 +77,13 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     { id: "fc3", de: "fit", ar: "لائق", example: "Ich bin fit.", exampleAr: "أنا لائق.", level: "B1" },
     { id: "fc4", de: "trainieren", ar: "يتدرب", example: "Ich trainiere dreimal pro Woche.", exampleAr: "أتدرب ثلاث مرات أسبوعياً.", level: "B1" },
     { id: "fc5", de: "hätte + Partizip II", ar: "كنت سأفعل (ماضٍ شرطي)", example: "Ich hätte gemacht.", exampleAr: "كنت سأفعل.", level: "B1" },
-    { id: "fc6", de: "wäre + Partizip II", ar: "كنت سأذهب (ماضٍ شرطي حركة)", example: "Ich wäre gegangen.", exampleAr: "كنت سأذهب.", level: "B1" },
+    { id: "fc6", de: "wäre + Partizip II", ar: "صيغة ماضٍ شرطي بفعل يأخذ sein في Perfekt", example: "Ich wäre gegangen.", exampleAr: "كنت سأذهب.", level: "B1" },
     { id: "fc7", de: "als ob", ar: "كما لو", example: "als ob er alles wüsste", exampleAr: "كما لو أنه يعرف كل شيء", level: "B1" },
-    { id: "fc8", de: "die Bewegung", ar: "الحركة/النشاط", example: "Bewegung ist gesund.", exampleAr: "الحركة صحية.", level: "B1" },
-    { id: "fc9", de: "der Bericht", ar: "التقرير", example: "Der Bericht zeigt ein klares Problem.", exampleAr: "يُظهر التقرير مشكلة واضحة.", level: "B1" },
-    { id: "fc10", de: "die Ursache", ar: "السبب", example: "Die häufigste Ursache ist Stress.", exampleAr: "السبب الأكثر شيوعاً هو التوتر.", level: "B1" },
+    { id: "fc8", de: "die Bewegung", ar: "الحركة/النشاط", example: "Bewegung kann gesundheitsfördernd sein.", exampleAr: "قد تدعم الحركة الصحة.", level: "B1" },
+    { id: "fc9", de: "der Bericht", ar: "التقرير", example: "Der Bericht nennt ein Beispiel.", exampleAr: "يذكر التقرير مثالاً.", level: "B1" },
+    { id: "fc10", de: "die Ursache", ar: "السبب", example: "Die Ursache ist noch unklar.", exampleAr: "السبب لا يزال غير واضح.", level: "B1" },
     { id: "fc11", de: "bereuen", ar: "يندم على", example: "Ich bereue, dass ich so viel gearbeitet habe.", exampleAr: "أندم على أنني عملت كثيراً.", level: "B1" },
-    { id: "fc12", de: "die Gewohnheit", ar: "العادة", example: "Kleine Gewohnheiten wirken besser als große Vorsätze.", exampleAr: "العادات الصغيرة أنفع من القرارات الكبيرة.", level: "B1" },
+    { id: "fc12", de: "die Gewohnheit", ar: "العادة", example: "Ich möchte eine Gewohnheit ändern.", exampleAr: "أودّ تغيير عادة.", level: "B1" },
   ];
 
 export const mediation: NonNullable<Lesson["mediation"]> = [
@@ -91,9 +91,9 @@ export const mediation: NonNullable<Lesson["mediation"]> = [
       id: "med-b1-05-1",
       type: "summarize-de-to-ar",
       titleAr: "لخّص خبراً ونقل موقف الكاتب بالعربية",
-      sourceDe: "Viele Städte planen, mehr Fahrradwege zu bauen. Die Politiker sagen, dass das gut für die Umwelt ist. Einige Bürger sind aber dagegen, weil sie Parkplätze verlieren.",
+      sourceDe: "Fiktives Übungsbeispiel: Eine Stadt plant, mehr Fahrradwege zu bauen. Befürworter sagen, das sei gut für die Umwelt. Einige Anwohner sind dagegen, weil Parkplätze wegfallen könnten. Die Situation und die Personen sind erfunden.",
       taskAr: "انقل الخبر بالعربية مع ذكر وجهتي النظر (المؤيدون والمعارضون) دون إبداء رأيك الخاص.",
-      modelAnswerAr: "«مدن كثيرة تخطط لبناء المزيد من مسارات الدراجات. يقول السياسيون إن ذلك مفيد للبيئة. لكن بعض المواطنين يعارضون لأنهم سيفقدون مواقف السيارات.»",
+      modelAnswerAr: "«مثال تدريبي خيالي: تخطط مدينة لبناء مسارات إضافية للدراجات. ويرى المؤيدون أن ذلك مفيد للبيئة، بينما يعارض بعض السكان لاحتمال زوال مواقف سيارات. الموقف والشخصيات مختلقة.»",
       keyPointsAr: ["نقلت الفكرة الرئيسية (مسارات دراجات)", "ذكرت موقف المؤيدين", "ذكرت موقف المعارضين (مواقف السيارات)"],
     },
   ];
@@ -101,23 +101,23 @@ export const mediation: NonNullable<Lesson["mediation"]> = [
 export const interaction: NonNullable<Lesson["interaction"]> = [
     {
       id: "int-b1-05-1",
-      scenarioAr: "نقاش مع زميل عن الأخبار المزيفة (Fake News).",
-      scenarioDe: "Diskussion über Fake News mit einem Kollegen.",
+      scenarioAr: "نقاش تدريبي خيالي عن الأخبار المزيفة؛ الأمثلة المختلقة ليست أخباراً أو بيانات حقيقية.",
+      scenarioDe: "Fiktive Übungsdiskussion über Fake News; die Beispiele sind erfunden und keine realen Nachrichten oder Daten.",
       strategyAr: "الاستراتيجية: إبداء رأي مبرر، الاستشهاد بأمثلة، والاعتراض بلطف.",
       rounds: [
         {
           speakerDe: "Findest du, dass Fake News ein großes Problem sind?",
           speakerAr: "هل تجد أن الأخبار المزيفة مشكلة كبيرة؟",
           options: [
-            { de: "Ja, meiner Meinung nach sind sie sehr gefährlich, weil viele Menschen sie nicht erkennen.", ar: "نعم، في رأيي إنها خطيرة جداً لأن كثيراً من الناس لا يكتشفونها.", best: true, replyDe: "Das stimmt. Hast du ein Beispiel?", replyAr: "هذا صحيح. هل لديك مثال؟" },
-            { de: "Nein, das Problem ist übertrieben.", ar: "لا، المشكلة مبالغ فيها.", best: false, replyDe: "Interessant. Aber Studien zeigen das Gegenteil.", replyAr: "مثير للاهتمام. لكن الدراسات تظهر العكس." },
+            { de: "Ja, meiner Meinung nach können sie problematisch sein, wenn Menschen sie für wahr halten.", ar: "نعم، في رأيي قد تكون مشكلة إذا اعتقد الناس أنها صحيحة.", best: true, replyDe: "Das kann passieren. Hast du ein konkretes Beispiel?", replyAr: "قد يحدث ذلك. هل لديك مثال محدد؟" },
+            { de: "Nein, das Problem ist übertrieben.", ar: "لا، المشكلة مبالغ فيها.", best: false, replyDe: "Wie kommst du zu dieser Einschätzung?", replyAr: "ما الذي يجعلك ترى الأمر بهذه الطريقة؟" },
           ],
         },
         {
           speakerDe: "Hast du ein Beispiel für Fake News?",
           speakerAr: "هل لديك مثال على الأخبار المزيفة؟",
           options: [
-            { de: "Ja, letztes Jahr gab es falsche Meldungen über Impfstoffe. Viele Menschen haben ihnen geglaubt.", ar: "نعم، العام الماضي كانت هناك أخبار كاذبة عن اللقاحات. كثيرون صدقوها.", best: true, replyDe: "Das ist ein gutes Beispiel. Wie kann man sie erkennen?", replyAr: "هذا مثال جيد. كيف يمكن اكتشافها؟" },
+            { de: "Ein erfundenes Beispiel: Ein Beitrag behauptet, die Stadtbibliothek sei dauerhaft geschlossen, obwohl sie geöffnet ist.", ar: "مثال مختلق: منشور يزعم أن مكتبة المدينة أُغلقت نهائياً، مع أنها ما زالت مفتوحة.", best: true, replyDe: "Das ist ein gutes Beispiel. Wie kann man sie erkennen?", replyAr: "هذا مثال جيد. كيف يمكن اكتشافها؟" },
             { de: "Nein, ich habe kein Beispiel.", ar: "لا، ليس لدي مثال.", best: false, replyDe: "Ohne Beispiel ist die Diskussion schwierig.", replyAr: "بدون مثال يصعب النقاش." },
           ],
         },

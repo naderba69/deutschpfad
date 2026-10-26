@@ -13,7 +13,8 @@ export const B2_DIALOGUES_1: DailyDialogue[] = [
     title: "مفاوضة الراتب",
     titleDe: "Gehaltsverhandlung",
     emoji: "💶",
-    situation: "تتفاوض مع مديرك على راتب أعلى",
+    situation: "محاكاة تدريبية خيالية للتفاوض على الراتب؛ لا تصف قاعدة عامة أو نتيجة متوقعة.",
+    audioNoteAr: "ملفات MP3 لهذا الحوار موجودة، لكن مصدرها غير موثق؛ لا أجزم بأنها بشرية أو مولّدة، ولم تُتحقق مطابقتها للنص أو جودة النطق. الحوار محاكاة افتراضية.",
     turns: [
       { speaker: "المدير", role: "a", de: "Sie haben um dieses Gespräch gebeten. Worum geht es?", ar: "طلبت هذا اللقاء. عن ماذا يدور الحديث؟" },
       { speaker: "أنت", role: "b", de: "Ich möchte über mein Gehalt sprechen. Meine Leistungen haben sich deutlich verbessert.", ar: "أريد التحدث عن راتبي. أدائي تحسن بشكل ملحوظ." },
@@ -93,14 +94,15 @@ export const B2_DIALOGUES_1: DailyDialogue[] = [
     title: "إدارة صراع مع زميل",
     titleDe: "Konflikt lösen",
     emoji: "⚖️",
-    situation: "لديك خلاف مع زميل حول مشروع مشترك",
+    situation: "محاكاة حوارية تدريبية لخلاف عمل؛ لا تدّعي تمثيل جميع الخلافات المهنية.",
+    audioNoteAr: "مصدر ملفات MP3 غير موثق؛ لم يُتحقق من مطابقتها للنص أو من طبيعية الأداء. فحص فك الترميز ومستوى الإشارة لا يثبت وضوح النطق أو مطابقته.",
     turns: [
       { speaker: "الزميل", role: "a", de: "Ich bin enttäuscht. Du hast meine Ideen im Meeting nicht erwähnt.", ar: "أنا محبط. لم تذكر أفكاري في الاجتماع." },
       { speaker: "أنت", role: "b", de: "Das tut mir leid. Das war nicht meine Absicht.", ar: "آسف. لم يكن ذلك قصدي." },
       { speaker: "الزميل", role: "a", de: "Es hat sich so angefühlt, als ob meine Arbeit nichts wert wäre.", ar: "شعرت أن عملي بلا قيمة." },
       { speaker: "أنت", role: "b", de: "Ich verstehe deine Perspektive. Ich schlage vor, dass wir im nächsten Meeting gemeinsam präsentieren.", ar: "أفهم منظورك. أقترح أن نقدم معاً في الاجتماع القادم." },
       { speaker: "الزميل", role: "a", de: "Das wäre fair. Danke für das Angebot.", ar: "سيكون هذا عادلاً. شكراً للعرض." },
-      { speaker: "أنت", role: "b", de: "Gern. Ich möchte, dass unsere Zusammenarbeit besser wird.", ar: "بكل سرور. أريد أن تتحسن تعاوننا." },
+      { speaker: "أنت", role: "b", de: "Gern. Ich möchte, dass unsere Zusammenarbeit besser wird.", ar: "بكل سرور. أريد أن يتحسن تعاوننا." },
     ],
     questions: [
       { de: "Warum ist die Person enttäuscht?", ar: "لماذا الشخص محبط؟", options: [
@@ -173,13 +175,14 @@ export const B2_DIALOGUES_1: DailyDialogue[] = [
     title: "فقدان جواز السفر",
     titleDe: "Pass verloren",
     emoji: "🛂",
-    situation: "فقدت جواز سفرك في الخارج وتذهب للسفارة",
+    situation: "محاكاة تدريبية خيالية لفقدان جواز في الخارج؛ الخطوات تختلف حسب جهة الإصدار والبلد والبعثة.",
+    audioNoteAr: "ملفات MP3 لهذا الحوار موجودة، لكن مصدرها غير موثق؛ لا أجزم بأنها بشرية أو مولّدة، ولم تُتحقق مطابقتها للنص أو جودة النطق. إجراءات الجواز يجب التحقق منها لدى الجهة المختصة.",
     turns: [
       { speaker: "الموظف", role: "a", de: "Guten Tag! Wie kann ich Ihnen helfen?", ar: "طاب يومك! كيف أساعدك؟" },
       { speaker: "أنت", role: "b", de: "Ich habe meinen Pass verloren. Ich brauche einen Ersatz.", ar: "فقدت جواز سفري. أحتاج بديلاً." },
-      { speaker: "الموظف", role: "a", de: "Das tut mir leid. Haben Sie eine Anzeige bei der Polizei gemacht?", ar: "يؤسفني. هل قدمت بلاغاً للشرطة؟" },
-      { speaker: "أنت", role: "b", de: "Noch nicht. Was muss ich zuerst tun?", ar: "ليس بعد. ماذا أفعل أولاً؟" },
-      { speaker: "الموظف", role: "a", de: "Zuerst zur Polizei gehen und den Verlust melden. Dann mit der Anzeige hierherkommen.", ar: "أولاً اذهب للشرطة وأبلغ عن الفقدان. ثم تعال بهذا البلاغ." },
+      { speaker: "الموظف", role: "a", de: "Das tut mir leid. Haben Sie den Verlust bei der örtlichen Polizei gemeldet?", ar: "يؤسفني. هل قدمت بلاغاً للشرطة؟" },
+      { speaker: "أنت", role: "b", de: "Noch nicht. Welche Schritte gelten in meinem Fall?", ar: "ليس بعد. ماذا أفعل أولاً؟" },
+      { speaker: "الموظف", role: "a", de: "In diesem Beispiel melden Sie den Verlust zuerst bei der örtlichen Polizei und bringen Sie die Anzeige mit. Bitte prüfen Sie die Anforderungen Ihrer zuständigen Botschaft, denn sie können abweichen.", ar: "في هذا المثال، أبلغ الشرطة المحلية أولاً وأحضر البلاغ. وتحقق من متطلبات سفارتك المختصة لأنها قد تختلف." },
       { speaker: "أنت", role: "b", de: "Alles klar. Wie lange dauert der Ersatzpass?", ar: "حسناً. كم يستغرق إصدار الجواز البديل؟" },
     ],
     questions: [
@@ -188,15 +191,15 @@ export const B2_DIALOGUES_1: DailyDialogue[] = [
         { text: "Der Pass ist abgelaufen", ar: "انتهت صلاحية الجواز", correct: false, explanation: "لا — ليست صلاحية منتهية abgelaufen؛ بل «Ich habe meinen Pass verloren»." },
         { text: "Der Ausweis wurde beschädigt", ar: "تضرّرت الهوية", correct: false, explanation: "لا — لم يُذكر تلف beschädigt؛ والفقدان «Ich brauche einen Ersatz»." },
       ]},
-      { de: "Wohin muss die Person zuerst?", ar: "إلى أين يجب أن يذهب الشخص أولاً؟", options: [
-        { text: "Zur Polizei", ar: "إلى الشرطة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Zur Bank", ar: "إلى البنك", correct: false, explanation: "لا — لم يُذكر بنك Bank؛ والخطوة الأولى «Zuerst zur Polizei gehen und den Verlust melden»." },
+      { de: "Wohin soll die Person im Beispiel zuerst gehen?", ar: "إلى أين يوجّه الحوار الشخص أولاً في هذا المثال؟", options: [
+        { text: "Zur Polizei", ar: "إلى الشرطة", correct: true, explanation: "صحيح — هذه خطوة في المثال التدريبي، وليست شرطاً عاماً لكل جواز أو بلد." },
+        { text: "Zur Bank", ar: "إلى البنك", correct: false, explanation: "لا — لم يُذكر بنك Bank؛ والخطوة الأولى «In diesem Beispiel melden Sie den Verlust zuerst bei der örtlichen Polizei»." },
         { text: "Zum Flughafen", ar: "إلى المطار", correct: false, explanation: "لا — لم يُذكر مطار Flughafen؛ بل إلى Polizei أولاً." },
       ]},
-      { de: "Was braucht die Person, um den Ersatzpass zu bekommen?", ar: "ماذا يحتاج الشخص للحصول على الجواز البديل؟", options: [
-        { text: "Die Anzeige von der Polizei", ar: "بلاغ الشرطة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Einen Pass aus dem Ausland", ar: "جواز من الخارج", correct: false, explanation: "لا — لم يُذكر جوازٌ أجنبي Ausland؛ والمطلوب «Dann mit der Anzeige hierherkommen»." },
-        { text: "Ein Foto allein", ar: "صورة فقط", correct: false, explanation: "لا — لم تُذكر صورة Foto؛ والشرط Anzeige من الشرطة («den Verlust melden»)." },
+      { de: "Was soll die Person im Beispiel zur Botschaft mitbringen?", ar: "ماذا ينبغي للشخص أن يحضر إلى السفارة في هذا المثال؟", options: [
+        { text: "Die Anzeige von der Polizei", ar: "بلاغ الشرطة", correct: true, explanation: "صحيح — هذا ما تطلبه الموظفة في المثال الافتراضي؛ وقد تختلف المتطلبات الفعلية." },
+        { text: "Einen Pass aus dem Ausland", ar: "جواز من الخارج", correct: false, explanation: "لا — لم يُذكر جوازٌ أجنبي Ausland؛ والمطلوب «bringen Sie die Anzeige mit»." },
+        { text: "Ein Foto allein", ar: "صورة فقط", correct: false, explanation: "لا — لم تُذكر صورة Foto؛ والشرط Anzeige من الشرطة («Haben Sie den Verlust bei der örtlichen Polizei gemeldet?»)." },
       ]},
     ],
     keyVocab: [

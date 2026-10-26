@@ -237,6 +237,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         "id": "l1",
         "title": "السؤال عن محطة القطار",
+        "audioNoteAr": "يُقرأ هذا الحوار عبر تحويل النص إلى كلام (TTS) في المتصفح؛ وقد يختلف الصوت المتاح بحسب الجهاز والمتصفح.",
         "lines": [
           {
             "speaker": "Sami",
@@ -268,6 +269,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         "id": "l2",
         "title": "الوجهة والموعد",
+        "audioNoteAr": "يُقرأ هذا الحوار عبر تحويل النص إلى كلام (TTS) في المتصفح؛ وقد يختلف الصوت المتاح بحسب الجهاز والمتصفح.",
         "lines": [
           {
             "speaker": "Mona",
@@ -290,6 +292,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
             "ar": "إلى اللقاء! نلتقي في السينما عند الثامنة."
           }
         ]
+      },
+      {
+        "id": "l3",
+        "title": "Mit dem Bus zum Museum",
+        "lines": [
+          { "speaker": "Mona", "de": "Entschuldigung, wie komme ich zum Museum?", "ar": "عذراً، كيف أصل إلى المتحف؟", "audioSrc": "/audio/lessons/a1-11/ls-a1-11-3-1.mp3" },
+          { "speaker": "Passant", "de": "Gehen Sie geradeaus bis zur Ampel.", "ar": "اتجه مباشرةً حتى إشارة المرور.", "audioSrc": "/audio/lessons/a1-11/ls-a1-11-3-2.mp3" },
+          { "speaker": "Mona", "de": "Und dann?", "ar": "ثم ماذا؟", "audioSrc": "/audio/lessons/a1-11/ls-a1-11-3-3.mp3" },
+          { "speaker": "Passant", "de": "Biegen Sie rechts ab. Die Bushaltestelle ist vor der Apotheke.", "ar": "انعطف يميناً. محطة الحافلة أمام الصيدلية.", "audioSrc": "/audio/lessons/a1-11/ls-a1-11-3-4.mp3" },
+          { "speaker": "Mona", "de": "Fährt der Bus direkt zum Museum?", "ar": "هل تصل الحافلة مباشرةً إلى المتحف؟", "audioSrc": "/audio/lessons/a1-11/ls-a1-11-3-5.mp3" },
+          { "speaker": "Passant", "de": "Ja, steigen Sie an der dritten Haltestelle aus.", "ar": "نعم، انزل في المحطة الثالثة.", "audioSrc": "/audio/lessons/a1-11/ls-a1-11-3-6.mp3" }
+        ],
+        "audioNoteAr": "هذه المقاطع الصوتية مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً. لم يُتحقق هنا من مطابقتها للنص أو من وضوح النطق وطبيعيته."
       }
     ],
     "questions": [
@@ -361,6 +376,27 @@ export const listening: NonNullable<Lesson["listening"]> = {
           "العاشرة «zehn» لم تُذكر في الحوار.",
           "السابعة «sieben Uhr» ليست الموعد المذكور للسينما.",
         ],
+      },
+      {
+        "id": "q4", "itemId": "l3", "type": "multiple-choice",
+        "instructionAr": "استمع إلى الحوار الثالث ثم اختر الإجابة:",
+        "questionDe": "Wohin möchte Mona?", "questionAr": "إلى أين تريد مونا الذهاب؟",
+        "options": ["zum Museum", "zum Bahnhof", "zur Apotheke", "nach Hause"], "correctIndex": 0,
+        "explanation": "تسأل مونا عن الطريق إلى المتحف.", "errorType": "vocabulary"
+      },
+      {
+        "id": "q5", "itemId": "l3", "type": "multiple-choice",
+        "instructionAr": "استمع إلى الحوار الثالث ثم اختر الإجابة:",
+        "questionDe": "Wo ist die Bushaltestelle?", "questionAr": "أين محطة الحافلة؟",
+        "options": ["vor der Apotheke", "neben dem Park", "hinter dem Bahnhof", "in der Stadtmitte"], "correctIndex": 0,
+        "explanation": "يقول المار إن محطة الحافلة أمام الصيدلية.", "errorType": "preposition"
+      },
+      {
+        "id": "q6", "itemId": "l3", "type": "multiple-choice",
+        "instructionAr": "استمع إلى الحوار الثالث ثم اختر الإجابة:",
+        "questionDe": "An welcher Haltestelle steigt Mona aus?", "questionAr": "في أي محطة تنزل مونا؟",
+        "options": ["an der dritten Haltestelle", "an der ersten Haltestelle", "an der zweiten Haltestelle", "an der fünften Haltestelle"], "correctIndex": 0,
+        "explanation": "يوجهها المار إلى النزول في المحطة الثالثة.", "errorType": "vocabulary"
       }
     ]
   };

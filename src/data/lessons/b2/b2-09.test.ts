@@ -22,6 +22,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   q1: { options: ["auf Innovation", "auf viel Geld", "auf den Urlaub", "auf gutes Essen"], key: "auf Innovation" },
   q2: { options: ["seine Erfahrung", "sein Auto", "sein Büro", "seine Zeit nur"], key: "seine Erfahrung" },
   q3: { options: ["sofort", "nächste Woche", "im nächsten Monat", "nie"], key: "sofort" },
+  q4: { options: ["auf klare Kommunikation", "auf kurze Arbeitstage", "auf ein eigenes Büro", "auf häufige Dienstreisen"], key: "auf klare Kommunikation" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -182,7 +183,7 @@ describe("B2-09 lesson content audit", () => {
       "m5",
       "w2",
     ]);
-    expect(goal("z3").evidence?.exerciseIds).toEqual(["q1", "q2", "q3"]);
+    expect(goal("z3").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["e8", "e10", "m4"]);
     for (const item of lessonB209.lernziele) {
       expect(item.evidence?.completion, `${item.id} completion`).toBe("all-correct");
@@ -208,8 +209,9 @@ describe("B2-09 lesson content audit", () => {
   it("maps listening evidence to transcript-free task IDs only", () => {
     expect(getListeningQuestionTaskId("b2-09", "l1", "q1", false)).toBe("listening:l1:q1");
     expect(getListeningQuestionTaskId("b2-09", "l1", "q2", false)).toBe("listening:l1:q2");
+    expect(getListeningQuestionTaskId("b2-09", "l3", "q4", false)).toBe("listening:l3:q4");
     expect(getListeningQuestionTaskId("b2-09", "l2", "q3", true)).toBe("listening-transcript:b2-09:l2:q3");
-    expect(goal("z3").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"]);
+    expect(goal("z3").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"]);
     const transcriptIds = lessonB209.lernziele.flatMap(
       (item) => item.evidence?.taskIds?.filter((taskId) => taskId.startsWith("listening-transcript:")) ?? [],
     );

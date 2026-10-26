@@ -12,13 +12,13 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "Ich ___ früher ___ (kommen).",
       options: ["wäre ... gekommen", "hätte ... gekommen", "wäre ... gekommt", "habe ... gekommen"],
       correctIndex: 0,
-      explanation: "kommen حركة → wäre gekommen.",
+      explanation: "يستعمل kommen المساعد sein في Perfekt، لذا: wäre gekommen.",
       errorType: "grammar",
       optionExplanations: [
         undefined,
         "«hätte ... gekommen» لا تناسب kommen الذي يأخذ sein في الماضي التام.",
         "«wäre ... gekommt» صيغة Partizip II خاطئة؛ الصحيح gekommen.",
-        "«habe ... gekommen» مضارع، ولا تناسب الشرط غير الواقعي.",
+        "«habe ... gekommen» لا تكوّن الصيغة الماضية المطلوبة؛ الفعل kommen يأخذ sein، فنقول wäre gekommen.",
       ],
     },
     {
@@ -28,7 +28,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "Er ___ das Buch ___. (قراءة)",
       options: ["hätte ... gelesen", "wäre ... gelesen", "hätte ... lesen", "würde ... gelesen"],
       correctIndex: 0,
-      explanation: "lesen عادي → hätte gelesen.",
+      explanation: "يأخذ lesen المساعد haben في Perfekt: hätte gelesen.",
       errorType: "grammar",
       optionExplanations: [
         undefined,
@@ -74,13 +74,13 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e6",
       type: "fill-blank",
       instructionAr: "أكمل بـ hätte أو wäre:",
-      template: "Ich ___ gegangen (حركة). Sie ___ es gemacht (فعل). Wir ___ gekommen (حركة).",
+      template: "Ich ___ gegangen (gehen: sein). Sie ___ es gemacht (machen: haben). Wir ___ gekommen (kommen: sein).",
       blanks: [
         { correct: "wäre", options: ["wäre", "hätte"] },
         { correct: "hätte", options: ["wäre", "hätte"] },
         { correct: "wären", options: ["wären", "hätten"] },
       ],
-      explanation: "الحركة → wäre. الفعل العادي → hätte.",
+      explanation: "اختر المساعد الذي يستعمله الفعل في Perfekt: gehen/kommen مع sein، وmachen مع haben.",
       errorType: "grammar",
     },
     {
@@ -117,7 +117,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e9",
       type: "error-correction",
-      instructionAr: "في الجملة خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
+      instructionAr: "في مثال هذا الدرس، اختر صيغة Konjunktiv II المناسبة مع er:",
       wrongSentence: "Er tut so, als ob er alles wüssten.",
       wrongWord: "wüssten",
       correctWord: "wüsste",
@@ -145,9 +145,9 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«sind» جمع، والفاعل هنا مفرد، والجملة نقل في Konjunktiv I.",
-        "«seid» صيغة du-Form جمع، ولا تناسب الفاعل.",
-        "«bist» مع du، ولا تناسب الفاعل.",
+        "«sind» لا توافق الفاعل المفرد؛ وبما أن المطلوب Konjunktiv I فالصيغة هي «sei». وفي نقل الكلام قد يظهر Indikativ أيضاً، لكن مع الفاعل المفرد تكون صيغته «ist».",
+        "«seid» صيغة مخاطبة الجمع ihr، ولا تناسب الفاعل المذكور.",
+        "«bist» صيغة مخاطب مفرد، ولا تناسب الفاعل المذكور.",
       ],
     },
     {
@@ -162,9 +162,9 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«sind» مضارع، والجملة نقل في Konjunktiv I للجمع.",
-        "«seid» صيغة du-Form جمع، ولا تناسب الفاعل.",
-        "«bist» مع du، ولا تناسب الفاعل.",
+        "في هذا السؤال نختار Konjunktiv I «seien». وقد يظهر Indikativ «sind» في نقل الكلام أيضاً؛ لذا لا يعني اختيار K I هنا أن Indikativ خطأ مطلقاً.",
+        "«seid» صيغة مخاطبة الجمع ihr، ولا تناسب الفاعل المذكور.",
+        "«bist» صيغة مخاطب مفرد، ولا تناسب الفاعل المذكور.",
       ],
     },
     {
@@ -184,11 +184,11 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e14",
       type: "error-correction",
       instructionAr: "في الجملة خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
-      wrongSentence: "Der Sprecher sagte, die Zahlen sind übertrieben.",
-      wrongWord: "sind",
+      wrongSentence: "Der Sprecher sagte, die Zahlen sei übertrieben.",
+      wrongWord: "sei",
       correctWord: "seien",
-      options: ["seien", "sind", "wären", "sein"],
-      explanation: "في النقل غير المباشر للجمع يأتي Konjunktiv I: sie seien. أما «sind» فهي صيغة الإخبار العادية، ومعها لا يُعرف أيّ الكلام كلام المتحدث وأيّه كلام الناقل — وهو بالضبط ما تمنعه هذه الصيغة.",
+      options: ["seien", "sei", "ist", "wäre"],
+      explanation: "في هذا التمرين نصلح المطابقة ونستخدم Konjunktiv I للجمع: die Zahlen seien. صيغة sie seien مطلوبة هنا في التدريب؛ لكنها ليست الصيغة الوحيدة الممكنة في نقل الكلام عموماً، إذ قد يأتي Indikativ أيضاً.",
       errorType: "grammar",
     },
   ];
@@ -196,16 +196,16 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
 export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     mistakes: [
       { wrong: "Wenn ich Zeit gehabt hätte, ich wäre gekommen.", right: "Wenn ich Zeit gehabt hätte, wäre ich gekommen.", whyAr: "الفعل الرئيسي يأتي مباشرة بعد الجملة الثانوية." },
-      { wrong: "Ich hätte gegangen (haben بدل sein)", right: "Ich wäre gegangen.", whyAr: "gehen حركة → wäre." },
-      { wrong: "Er tut so, als ob er alles wüssten.", right: "Er tut so, als ob er alles wüsste.", whyAr: "الفاعل er مفرد: wüsste. و«als ob» تُتبع في الكتابة الفصيحة بـ Konjunktiv II." },
+      { wrong: "Ich hätte gegangen (مساعد غير صحيح)", right: "Ich wäre gegangen.", whyAr: "gehen يأخذ sein في Perfekt: wäre gegangen." },
+      { wrong: "Er tut so, als ob er alles wüssten.", right: "Er tut so, als ob er alles wüsste.", whyAr: "الفاعل er مفرد، لذا الصيغة المطلوبة في هذا المثال wüsste. وقد ترد صيغ أخرى في سياقات als ob مختلفة؛ ليس المقصود أن K II إلزامي في كل استعمال." },
     ],
     eselsbruecken: [
-      "«الندم: hätte/wäre + Partizip II» — تستعملها عادةً مع «لو كنت...» عن الماضي.",
-      "«als ob = كما لو» — يأتي بعدها Konjunktiv II في الكتابة الفصيحة، ويُسمع Indikativ أحياناً في الكلام اليومي.",
+      "«افتراض عن الماضي: hätte/wäre + Partizip II»؛ والسياق يوضح إن كان ندمًا أو افتراضًا آخر.",
+      "«als ob = كما لو»؛ يأتي الفعل المصرف في نهاية الجملة التابعة، وتُختار الصيغة وفق المعنى والسياق.",
     ],
     culturalNote: {
       title: "الصحة في ألمانيا",
       content:
-        "عبارة «Sport ist Mord» (الرياضة قتل) تُقال مازحةً، وغالباً ما يستعملها من لا يريد ممارسة الرياضة كعذر (DWDS). وفحص Check-up 35 ضمن التأمين الصحي القانوني: مرة واحدة بين 18 و34 عاماً، ثم كل ثلاث سنوات بعد 35 (meine-krankenkasse؛ Helios). وفحص سرطان الجلد: كل سنتين بعد 35 (Helios).",
+        "«Sport ist Mord» عبارة ساخرة ومبالغ فيها قد تُقال عن الرياضة، وليست معلومة صحية (DWDS: https://www.dwds.de/wb/Sport%20ist%20Mord). في ألمانيا، وللمؤمَّن عليهم بالتأمين الصحي القانوني: الفحص الصحي العام مرة بين 18 و34 عاماً، ثم مرة كل ثلاث سنوات ابتداءً من 35 عاماً. ويُتاح فحص جلد للكشف المبكر عن السرطان للبالغين ابتداءً من 35 عاماً كل سنتين ضمن التغطية القانونية. تحقّق من التفاصيل مع شركة التأمين أو العيادة؛ فهذه معلومات عامة وليست نصيحة شخصية. المصادر الرسمية: https://gesund.bund.de/en/gesundheits-check-up-fuer-erwachsene وhttps://gesund.bund.de/en/krebsfrueherkennung",
     },
   };

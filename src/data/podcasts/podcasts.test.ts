@@ -20,6 +20,24 @@ describe("مكتبة البودكاست التعليمي", () => {
     }
   });
 
+  it("يوافق وصف ميمي بالعربية صيغة الصداقة المؤنثة في نص الحلقة الألماني", () => {
+    const episode = PODCASTS.find(({ id }) => id === "p-a1-haustier");
+    expect(episode?.script).toContain("Mimi ist meine beste Freundin.");
+    expect(episode?.script).not.toContain("Mimi ist mein bester Freund.");
+    expect(episode?.scriptAr).toContain("ميمي أفضل صديقة لي.");
+  });
+
+  it("attributes the B1 health recommendation to the WHO and uses the weekly adult guideline", () => {
+    const episode = PODCASTS.find(({ id }) => id === "p-b1-gesundheit");
+    expect(episode).toBeDefined();
+    expect(episode?.script).toContain("Die Weltgesundheitsorganisation empfiehlt Erwachsenen");
+    expect(episode?.script).toContain("150 bis 300 Minuten Bewegung mit mittlerer Intensität");
+    expect(episode?.script).toContain("75 bis 150 Minuten mit hoher Intensität");
+    expect(episode?.script).not.toMatch(/30 Minuten pro Tag|Ärzte empfehlen/);
+    expect(episode?.scriptAr).toContain("ليست بديلاً عن المشورة الطبية الشخصية");
+    expect(episode?.questions[0]?.options.some((option) => option.correct && option.text.includes("150 bis 300 Minuten"))).toBe(true);
+  });
+
   it("كل مستوى لديه على الأقل حلقة واحدة", () => {
     for (const lv of ["A1", "A2", "B1", "B2"] as const) {
       expect(getPodcastsByLevel(lv).length).toBeGreaterThanOrEqual(1);

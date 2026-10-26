@@ -27,6 +27,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     key: "der Kulturschock",
   },
   q5: { options: ["ihre Heimat", "das Wetter", "die Arbeit", "das Essen"], key: "ihre Heimat" },
+  q6: { options: ["Zeit und Offenheit", "Mut und neue Kontakte", "Arbeit und viele Reisen", "Sprache und gute Noten"], key: "Zeit und Offenheit" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -165,7 +166,8 @@ describe("B1-06 lesson content audit", () => {
     expect(goal("z1").evidence?.exerciseIds).toEqual(["w1", "e7"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e6", "e9", "m2", "m4", "m6", "w2"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["q2", "q3", "w4"]);
-    expect(goal("z4").evidence?.exerciseIds).toEqual(["q4", "q5", "e11", "e12", "e13"]);
+    expect(goal("z4").evidence?.exerciseIds).toEqual(["q4", "q5", "q6", "e11", "e12", "e13"]);
+    expect(goal("z4").evidence?.taskIds).toEqual(["listening:l3:q4", "listening:l3:q5", "listening:l3:q6", "practice:b1-06:e11", "practice:b1-06:e12", "practice:b1-06:e13"]);
     for (const item of lessonB106.lernziele) {
       expect(item.evidence?.completion, `${item.id} completion`).toBe("all-correct");
     }
@@ -223,8 +225,8 @@ describe("B1-06 lesson content audit", () => {
     const reading = lessonB106.reading;
     expect(reading?.id).toBe("read-b1-06");
     expect(reading?.textType).toBe("artikel");
-    expect(reading?.titleDe).toBe("Ein Museum für alle");
-    expect(reading?.titleAr).toBe("متحف للجميع");
+    expect(reading?.titleDe).toBe("Ein fiktives Museum für alle");
+    expect(reading?.titleAr).toBe("مقال تدريبي خيالي: متحف للجميع");
     expect(reading?.paragraphs).toHaveLength(4);
     expect(reading?.paragraphsAr).toHaveLength(4);
     const text = reading!.paragraphs.join(" ").toLowerCase();
@@ -358,7 +360,51 @@ describe("B1-06 lesson content audit", () => {
       "l2:q3",
       "l3:q4",
       "l3:q5",
+      "l3:q6",
     ]);
+  });
+
+  it("keeps the adjective rule, Arabic comparison, and quantifier examples within accurate scope", () => {
+    const theory = lessonB106.theory ?? [];
+    const theoryText = JSON.stringify(theory);
+    expect(theoryText).not.toContain("المعلومة تُذكر مرة واحدة فقط");
+    expect(theoryText).not.toContain("العربية تصف بلا تغيير");
+    expect(theoryText).not.toContain("تأخذ الصفة بعدها -en دائماً");
+    expect(theoryText).toContain("alle guten Leute");
+    expect(theoryText).toContain("viele gute Leute");
+    expect(theoryText).toContain("mit gutem Wein");
+    expect(theoryText).toContain("mit einem guten Freund");
+  });
+
+  it("frames listening culture examples as personal experiences, not national rules", () => {
+    const l2 = lessonB106.listening.items.find(({ id }) => id === "l2");
+    expect(l2?.audioNoteAr).toContain("لا وصفاً عاماً");
+    const transcript = l2?.lines.map(({ de }) => de).join(" ") ?? "";
+    expect(transcript).toContain("In meiner Familie");
+    expect(transcript).toContain("In meiner Stadt");
+    expect(transcript).not.toMatch(/In Tunesien ist die Musik|In Deutschland.*Orchester/);
+    const l3 = lessonB106.listening.items.find(({ id }) => id === "l3");
+    expect(l3?.audioNoteAr).toContain("رأي للشخصية لا قاعدة عامة");
+  });
+
+  it("labels the museum reading as fiction and avoids inventing visitor statistics", () => {
+    const reading = lessonB106.reading;
+    const text = reading?.paragraphs.join(" ") ?? "";
+    expect(text).toContain("fiktiv");
+    expect(text).toContain("erfunden");
+    expect(text).not.toMatch(/doppelt so viele|zwanzig Minuten|im Vorjahr/);
+    const rq3 = reading?.questions.find(({ id }) => id === "rq3");
+    expect(rq3?.options[rq3.correctIndex]).toBe("Einige Gäste mögen das neue Angebot.");
+    expect(rq3?.explanation).not.toMatch(/doppelt|Vorjahr|Zahlen/);
+  });
+
+  it("frames the fictional film review as an exercise and keeps the real-film synopsis identifiable as content", () => {
+    const review = lessonB106.mediation?.[0];
+    expect(review?.sourceDe).toContain("Fiktiver Übungstext");
+    expect(review?.sourceDe).toContain("keine echte Rezension");
+    const filmSuggestion = JSON.stringify(lessonB106.interaction);
+    expect(filmSuggestion).toContain("Das Leben der Anderen");
+    expect(filmSuggestion).toContain("Stasi-Offizier");
   });
 
   it("keeps the culture note to a sourced fact and removes unsupported claims", () => {

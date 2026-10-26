@@ -37,13 +37,13 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z3",
-      de: "Ich kann einen kulturellen Vergleich in einem kurzen Gespräch verstehen und einen Satz dazu ergänzen.",
-      ar: "أن أفهم مقارنة ثقافية قصيرة في حوار، وأكمل جملة مقارنة بين تونس وألمانيا بصفة صحيحة.",
+      de: "Ich kann persönliche kulturelle Erfahrungen in einem kurzen Gespräch verstehen und einen passenden Satz ergänzen.",
+      ar: "أن أفهم تجارب شخصية مرتبطة بالثقافة في حوار، وأكمل جملة تدريبية بنهاية الصفة الصحيحة.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["q2", "q3", "w4"],
         taskIds: ["listening:l2:q2", "listening:l2:q3", "writing:b1-06:w4"],
-        labelAr: "أجيب صحيحاً عن q2 وq3 بعد الاستماع إلى l2، وأكمل w4 بالنهاية الصحيحة. كشف النص لا يُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن q2 وq3 بعد الاستماع إلى حوار التجارب الشخصية l2، وأكمل w4 بالنهاية الصحيحة. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -52,15 +52,16 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أفهم حديثاً عن الوطن والحنين وصدمة الثقافة، وأستخدم عباراتها في جمل مرتبة وصحيحة.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["q4", "q5", "e11", "e12", "e13"],
+        exerciseIds: ["q4", "q5", "q6", "e11", "e12", "e13"],
         taskIds: [
           "listening:l3:q4",
           "listening:l3:q5",
+          "listening:l3:q6",
           "practice:b1-06:e11",
           "practice:b1-06:e12",
           "practice:b1-06:e13",
         ],
-        labelAr: "أجيب صحيحاً عن q4 وq5 بعد الاستماع إلى l3، وأرتب وأكمل e11 وe12 وe13 بالفعل والكلمات الصحيحة. كشف النص لا يُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن q4 وq5 وq6 بعد الاستماع إلى l3، وأرتب وأكمل e11 وe12 وe13 بالفعل والكلمات الصحيحة. كشف النص لا يُحتسب أداءً.",
       },
     },
   ];
@@ -95,7 +96,7 @@ export const review: NonNullable<Lesson["review"]> = [
       optionExplanations: [
         undefined,
         "«rote» صفة بنهاية مؤنث/جمع، وبعد sein تبقى بلا نهاية.",
-        "«rotes» نهاية محايد، والاسم Hemd مذكّر.",
+        "«rotes» قد تأتي مع اسم محايد في استعمال نعتي مثل ein rotes Hemd، لكن هنا الصفة خبرية بعد ist ولا تأخذ نهاية.",
         "«roten» نهاية جر أو جمع، لا تناسب الصفة الخبرية بعد sein.",
       ],
     },

@@ -80,7 +80,7 @@ describe("سلامة الصوت الشاملة — كل ملفٍ صالح للت
 
   it("أرضيات الجرد لكل مجلد (لا يُفقد ملف دون قرار)", () => {
     const FLOORS: Record<string, number> = {
-      "dialogues-a1": 90,
+      "dialogues-a1": 96,
       "dialogues-a2": 90,
       "dialogues-b1": 90,
       "dialogues-b2": 90,
@@ -104,10 +104,10 @@ describe("سلامة الصوت الشاملة — كل ملفٍ صالح للت
   });
 });
 
-describe("سلامة الصوت الشاملة — الحوارات (360 ملفاً تُحرس أخيراً)", () => {
+describe("سلامة الصوت الشاملة — الحوارات (366 ملفاً بعد حوار A1-16)", () => {
   const ALL: DailyDialogue[] = [...A1_DIALOGUES, ...A2_DIALOGUES, ...B1_DIALOGUES, ...B2_DIALOGUES];
 
-  it("كل سطرٍ في كل حوارٍ له ملف مسجّل صالح", () => {
+  it("كل سطرٍ في كل حوارٍ له ملف صوتي صالح", () => {
     const missing: string[] = [];
     let expected = 0;
     for (const d of ALL) {
@@ -118,8 +118,8 @@ describe("سلامة الصوت الشاملة — الحوارات (360 ملف�
         if (!isPlayableMp3(file)) missing.push(`${d.id}-${i + 1}`);
       });
     }
-    expect(missing, "حوارات بلا تسجيل").toEqual([]);
-    expect(expected, `سطور=${expected} · الأرضية=360`).toBeGreaterThanOrEqual(360);
+    expect(missing, "حوارات بلا ملف صوتي").toEqual([]);
+    expect(expected, `سطور=${expected} · الأرضية=366`).toBeGreaterThanOrEqual(366);
   });
 
   it("لا ملف يتيم في مجلدات الحوارات", () => {

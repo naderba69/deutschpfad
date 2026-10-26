@@ -76,5 +76,3 @@ export function playAchievement(): void {
   tone(783.99, 0.2, 0.2, "triangle");
   tone(1046.5, 0.32, 0.35, "triangle", 0.18);
 }
-
-

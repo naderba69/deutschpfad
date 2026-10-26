@@ -103,7 +103,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       examples: [
         { de: "Eine Fahrkarte nach München, bitte.", ar: "تذكرة إلى ميونخ من فضلك." },
         { de: "Einfach oder hin und zurück?", ar: "ذهاب فقط أم ذهاب وعودة؟" },
-        { de: "Der Zug fährt um 10:25 Uhr von Gleis 3 ab.", ar: "ينطلق القطار الساعة 10:25 من المسار 3 (رقم الرصيف على لوحة المحطة)." },
+        { de: "Der Zug A fährt um 08:00 Uhr ab.", ar: "ينطلق القطار A الساعة 08:00." },
         { de: "In Bremen müssen wir umsteigen.", ar: "علينا تبديل القطار في بريمن." },
         { de: "Der Bus kommt um 11:00 Uhr an.", ar: "تصل الحافلة الساعة 11:00." },
         { de: "Wo finde ich den Bahnsteig?", ar: "أين أجد الرصيف؟" },

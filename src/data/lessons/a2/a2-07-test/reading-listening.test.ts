@@ -103,6 +103,8 @@ describe("A2-07 audited lesson", () => {
     expect(lessonA207.listening.items.map((item) => [item.id, item.title, item.lines.length])).toEqual([
       ["l1", "حوار تدريبي متخيّل عن نموذج حساب", 6],
       ["l2", "طلب مساعدة عند الصراف الآلي", 5],
+      ["l3", "سحب مبلغ والتحقق من الإيصال", 6],
+      ["l4", "مراجعة كشف الحساب", 6],
     ]);
     const expectedLines = [
       [
@@ -126,6 +128,28 @@ describe("A2-07 audited lesson", () => {
           ["Mona", "Klar. Ich helfe dir.", "طبعاً. سأساعدك."],
         ],
       ],
+      [
+        "l3",
+        [
+          ["Mona", "Ich möchte am Automaten fünfzig Euro abheben. Was soll ich zuerst tun?", "أريد سحب خمسين يورو من الصراف. ماذا أفعل أولاً؟"],
+          ["Karim", "Steck die Karte ein und wähle am Bildschirm Deutsch.", "أدخل البطاقة واختر الألمانية على الشاشة."],
+          ["Mona", "Jetzt fragt der Automat nach meiner PIN. Soll ich sie einfach eingeben?", "الآن يطلب الصراف الرقم السري. هل أدخله هكذا فقط؟"],
+          ["Karim", "Ja, aber deck das Tastenfeld mit der Hand ab.", "نعم، لكن غطّي لوحة الأزرار بيدك."],
+          ["Mona", "Der Automat druckt auch eine Quittung. Brauche ich sie?", "يطبع الصراف إيصالاً أيضاً. هل أحتاج إليه؟"],
+          ["Karim", "Nimm sie mit, wenn du den Betrag kontrollieren möchtest.", "خذيها معك إذا أردت التحقق من المبلغ."],
+        ],
+      ],
+      [
+        "l4",
+        [
+          ["Sami", "Guten Tag. Ich habe eine Frage zu meinem Kontoauszug.", "مرحباً. لدي سؤال عن كشف حسابي."],
+          ["Bankangestellte", "Gern. Welche Buchung ist unklar?", "بكل سرور. أي حركة غير واضحة؟"],
+          ["Sami", "Hier steht eine Zahlung von zwölf Euro. Ich kenne den Laden nicht.", "هنا دفعة بقيمة اثني عشر يورو. لا أعرف هذا المتجر."],
+          ["Bankangestellte", "Prüfen Sie zuerst das Datum und den Namen auf dem Beleg.", "تحقق أولاً من التاريخ والاسم على الإيصال."],
+          ["Sami", "Ich sehe nach. Der Name ist jetzt bekannt.", "سأتحقق. الاسم أصبح معروفاً الآن."],
+          ["Bankangestellte", "Gut. Wenn eine Buchung unklar bleibt, melden Sie sich bitte wieder.", "جيد. إذا بقيت حركة غير واضحة، فيُرجى التواصل معنا مجدداً."],
+        ],
+      ],
     ] as const;
     expect(
       lessonA207.listening.items.map((item) => [
@@ -143,12 +167,17 @@ describe("A2-07 audited lesson", () => {
       ["q2", "l1"],
       ["q3", "l2"],
       ["q4", "l2"],
+      ["q5", "l3"],
+      ["q6", "l3"],
+      ["q7", "l3"],
+      ["q8", "l4"],
+      ["q9", "l4"],
+      ["q10", "l4"],
     ]);
     expect(lessonA207.lernziele.find((goal) => goal.id === "z3")?.evidence?.taskIds).toEqual([
-      "listening:l1:q1",
-      "listening:l1:q2",
-      "listening:l2:q3",
-      "listening:l2:q4",
+      "listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l2:q4",
+      "listening:l3:q5", "listening:l3:q6", "listening:l3:q7",
+      "listening:l4:q8", "listening:l4:q9", "listening:l4:q10",
     ]);
     for (const question of lessonA207.listening.questions) {
       expect(question.errorType).toBe("comprehension");
@@ -160,7 +189,7 @@ describe("A2-07 audited lesson", () => {
       ).toBe(`listening-transcript:${lessonA207.id}:${question.itemId}:${question.id}`);
     }
     expect(lessonA207.lernziele.find((goal) => goal.id === "z3")?.ar).toContain(
-      "قبل إظهار نصيهما",
+      "قبل إظهار نصوصها",
     );
   });
 });

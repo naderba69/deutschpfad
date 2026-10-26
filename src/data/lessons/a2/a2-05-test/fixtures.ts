@@ -26,6 +26,9 @@ export const expectedMultipleChoiceKeys: Record<string, string> = {
   q2: "Er ruft heute Nachmittag zurück.",
   q3: "Er war krank.",
   q4: "Eine E-Mail mit den Details.",
+  q5: "Am Donnerstag um zehn",
+  q6: "Im kleinen Konferenzraum",
+  q7: "Seinen Laptop",
 };
 
 export const expectedMultipleChoiceOptions: Record<string, string[]> = {
@@ -66,6 +69,9 @@ export const expectedMultipleChoiceOptions: Record<string, string[]> = {
     "Ein Protokoll vom letzten Monat.",
     "Seinen Bericht für das Projekt.",
   ],
+  q5: ["Am Donnerstag um zehn", "Am Mittwoch um neun", "Am Freitag um elf", "Am Donnerstag um zwölf"],
+  q6: ["Im kleinen Konferenzraum", "Im großen Besprechungsraum", "Im Büro von Frau Weber", "Am Empfang im Erdgeschoss"],
+  q7: ["Seinen Laptop", "Die Unterlagen", "Einen Bericht", "Eine Präsentation"],
 };
 
 export const expectedFillBlankOptions: Record<string, string[][]> = {

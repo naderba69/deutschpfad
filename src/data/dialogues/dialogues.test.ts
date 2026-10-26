@@ -1,14 +1,106 @@
+import fs from "node:fs";
+import path from "node:path";
+
 import {describe, expect, it} from "vitest";
 
 import {DAILY_DIALOGUES, DIALOGUE_LEVEL_COUNTS, getDialoguesByLevel} from "@/data/dialogues";
+import {isPlayableMp3} from "@/lib/audio/mp3-file";
 
-describe("مكتبة حوارات الحياة اليومية — 60 حواراً (تفوق Menschen)", () => {
-  it("تحتوي 60 حواراً موزعة 15 لكل مستوى", () => {
-    expect(DAILY_DIALOGUES.length).toBe(60);
+describe("مكتبة حوارات الحياة اليومية — 61 حواراً (تفوق Menschen)", () => {
+  it("تحتوي 61 حواراً: 16 في A1 و15 في كل مستوى آخر", () => {
+    expect(DAILY_DIALOGUES.length).toBe(61);
     for (const lv of ["A1", "A2", "B1", "B2"] as const) {
-      expect(getDialoguesByLevel(lv).length).toBe(15);
-      expect(DIALOGUE_LEVEL_COUNTS[lv]).toBe(15);
+      expect(getDialoguesByLevel(lv).length).toBe(lv === "A1" ? 16 : 15);
+      expect(DIALOGUE_LEVEL_COUNTS[lv]).toBe(lv === "A1" ? 16 : 15);
     }
+  });
+
+  it("حوار شراء الملابس يطابق أسئلته نصّ الحوار ويصرّح بحدود مصدر الصوت", () => {
+    const dialogue = DAILY_DIALOGUES.find((item) => item.id === "a1-06-kleidung");
+    expect(dialogue).toBeDefined();
+    expect(dialogue?.turns).toHaveLength(6);
+    expect(dialogue?.audioNoteAr).toMatch(/مصدر ملفات الصوت.*غير موثّق/);
+    expect(dialogue?.turns.map((turn) => turn.de).join(" ")).toContain("Größe M");
+    expect(dialogue?.turns.map((turn) => turn.de).join(" ")).toContain("15 Euro");
+    expect(dialogue?.turns.map((turn) => turn.de).join(" ")).toContain("Das passt. Ich nehme es!");
+    expect(dialogue?.questions[0].options.find((option) => option.correct)?.text).toBe("Größe M");
+    expect(dialogue?.questions[1].options.find((option) => option.correct)?.text).toBe("15 Euro");
+    expect(dialogue?.questions[2].options.find((option) => option.correct)?.text).toBe("Das passt. Ich nehme es!");
+  });
+
+  it("حوار مكتب السفر يصرّح بحدود مصدر ملفات MP3", () => {
+    const dialogue = DAILY_DIALOGUES.find((item) => item.id === "a2-05-reisebuero");
+    expect(dialogue?.turns).toHaveLength(6);
+    expect(dialogue?.situation).toContain("السعر والتاريخ المذكوران مثالان لا عرض سفر حقيقي");
+    expect(dialogue?.audioNoteAr).toContain("مصدرها غير موثّق");
+    expect(dialogue?.audioNoteAr).toContain("لا أجزم بأنها تسجيلات بشرية أو مولّدة آلياً");
+    expect(dialogue?.audioNoteAr).toContain("لم تُتحقق مطابقتها للنص أو جودة النطق");
+  });
+
+  it("حوار السكن يصرّح بأنه خيالي وبحدود مصدر الصوت ويستخدم موعداً طبيعياً", () => {
+    const dialogue = DAILY_DIALOGUES.find((item) => item.id === "a2-04-wohnungssuche");
+    expect(dialogue?.situation).toContain("حوار تدريبي خيالي");
+    expect(dialogue?.situation).toContain("ليست عرضاً حقيقياً");
+    expect(dialogue?.audioNoteAr).toContain("مصدرها غير موثّق");
+    expect(dialogue?.audioNoteAr).toContain("لم تُتحقق مطابقتها للنص أو جودة النطق");
+    expect(dialogue?.turns[5].de).toContain("Passt es Ihnen morgen um 16 Uhr?");
+    expect(dialogue?.keyVocab.find((item) => item.de === "warm / Warmmiete")?.ar).toContain("التكاليف المدرجة");
+    expect(dialogue?.questions[0].options.find((option) => option.correct)?.text).toBe("700 Euro warm");
+  });
+
+  it("حوار المطعم التدريبي يصرّح بحدود مصدر الصوت ولا يعمم إجراءات المطاعم", () => {
+    const dialogue = DAILY_DIALOGUES.find((item) => item.id === "a2-02-restaurant");
+    expect(dialogue?.turns).toHaveLength(6);
+    expect(dialogue?.situation).toContain("حوار تدريبي خيالي");
+    expect(dialogue?.audioNoteAr).toContain("مصدر ملفات MP3 غير موثّق");
+    expect(dialogue?.audioNoteAr).toContain("لم يُتحقق مما إذا كانت بشرية أو مولّدة");
+    expect(dialogue?.audioNoteAr).toContain("مطابقتها للنص أو جودة النطق");
+    expect(dialogue?.turns.map((turn) => turn.de).join(" ")).toContain("Ich nehme das Schnitzel mit Pommes");
+  });
+
+  it("حوار البنك يوسم المحاكاة ولا يضيف شروطاً أو حدود ائتمان غير مذكورة", () => {
+    const dialogue = DAILY_DIALOGUES.find((item) => item.id === "a2-07-bank");
+    expect(dialogue).toBeDefined();
+    expect(dialogue?.situation).toContain("محاكاة افتراضية");
+    expect(dialogue?.situation).toContain("لا قائمة متطلبات مصرفية عامة");
+    expect(dialogue?.questions[1].de).toBe("Wonach fragt die Mitarbeiterin?");
+    expect(dialogue?.questions[1].options.find((option) => option.correct)?.text).toBe("Nach dem Pass");
+    expect(dialogue?.questions[2].options.find((option) => option.correct)?.text).toBe("Eine Kreditkarte");
+    expect(dialogue?.questions[2].options.some((option) => option.text.includes("Limit"))).toBe(false);
+  });
+
+  it("حوار B2-11 يوسم الأرقام الافتراضية ويضم ستة ملفات MP3 معروفة الحدود", () => {
+    const dialogue = DAILY_DIALOGUES.find((item) => item.id === "b2-11-verhandlung-kunde");
+    expect(dialogue?.situation).toContain("خيالي");
+    expect(dialogue?.situation).toContain("ليست عرضاً تجارياً");
+    expect(dialogue?.audioNoteAr).toContain("مصدر ملفات MP3");
+    expect(dialogue?.audioNoteAr).toContain("لا أجزم بأنها تسجيلات بشرية أو مولّدة آلياً");
+    expect(dialogue?.audioNoteAr).toContain("لم تُتحقق مطابقتها للنص أو جودة النطق");
+
+    const audioDir = path.join(process.cwd(), "public", "audio", "dialogues-b2");
+    const files = fs.readdirSync(audioDir)
+      .filter((file) => file.startsWith("b2-11-verhandlung-kunde-") && file.endsWith(".mp3"))
+      .sort();
+    expect(files).toHaveLength(6);
+    for (const file of files) expect(isPlayableMp3(path.join(audioDir, file)), file).toBe(true);
+  });
+
+  it("حوار المحطة الجديد يضم 6 جولات و3 أسئلة فهم", () => {
+    const dialogue = DAILY_DIALOGUES.find((item) => item.id === "a1-16-bahnhof");
+    expect(dialogue).toMatchObject({ id: "a1-16-bahnhof", level: "A1", titleDe: "Am Bahnhof" });
+    expect(dialogue?.turns).toHaveLength(6);
+    expect(dialogue?.questions).toHaveLength(3);
+    expect(dialogue?.keyVocab.map((item) => item.de)).toContain("der Zug");
+  });
+
+  it("حوار الطبيب الافتراضي يصرّح بحدود مصدر MP3 ويحافظ على دور الطبيب", () => {
+    const dialogue = DAILY_DIALOGUES.find((item) => item.id === "a2-01-arzt");
+    expect(dialogue?.turns).toHaveLength(6);
+    expect(dialogue?.situation).toContain("حوار تدريبي افتراضي");
+    expect(dialogue?.situation).toContain("لا تشخيص أو نصيحة طبية");
+    expect(dialogue?.audioNoteAr).toContain("مصدر ملفات MP3 غير موثّق");
+    expect(dialogue?.audioNoteAr).toContain("لم تُتحقق مطابقتها للنص أو جودة النطق");
+    expect(dialogue?.turns[5]).toMatchObject({ speaker: "الطبيب", role: "a" });
   });
 
   it("كل حوار مكتمل: جولات + أسئلة + مفردات", () => {
@@ -51,7 +143,7 @@ describe("مكتبة حوارات الحياة اليومية — 60 حوارا�
 
 /* ═══════════════════════════════════════════════════════════
    شروح الخيارات — مقاييس دفعة 52 (2026-10-16)
-   قياس الحوارات (60 حواراً · 182 سؤالاً · 546 خياراً):
+   قياس الحوارات بعد إضافة A1-16 (61 حواراً · 185 سؤالاً · 555 خياراً):
      · شروح الخيارات **الخاطئة** ملاحظات عربية موجزة («لا — قهوة أولاً.») — عُرف
        مقصود لا عيب (لا تُقتبس آلياً)، فلم تُعدّل.
      · شروح الخيارات **الصحيحة** عربية تشرح لماذا — والدليل الألماني هو نصّ

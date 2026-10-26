@@ -26,8 +26,8 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z2",
-      de: "Ich kann „damit“ benutzen, wenn zwei Personen beteiligt sind.",
-      ar: "أن أستخدم damit عندما يختلف فاعل الجملتين.",
+      de: "Ich kann einen Finalsatz mit „damit“ und einem konjugierten Verb bilden.",
+      ar: "أن أركّب جملة غرض بـdamit، يتبعها فعل مصرّف في نهاية الجملة التابعة.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["e2", "e5", "e10", "e11", "m2"],
@@ -65,16 +65,16 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أفهم الأهداف والأسباب في حوار قصير.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
-        labelAr: "أجيب صحيحاً عن الأسئلة الثلاثة بعد الاستماع إلى الحوارين، دون كشف النص.",
+        exerciseIds: ["q1", "q2", "q3", "q4"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"],
+        labelAr: "أجيب صحيحاً عن الأسئلة الأربعة بعد الاستماع إلى الحوارات الثلاثة، دون كشف النص.",
       },
     },
   ];
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "لماذا تتعلّم الألمانية؟ في العربية تقول «أتعلّم الألمانية لكي أدرس في ألمانيا» و«أتعلّمها لكي يفهمني الأطباء». الجملتان تبدأان بـ«لكي» — لكن الألمانية تفرّق بينهما تفريقاً صارماً: الأولى um … zu والثانية damit. الفرق كله في سؤال واحد: من يفعل الفعل الثاني؟",
+      "لماذا تتعلّم الألمانية؟ في العربية تقول «أتعلّم الألمانية لكي أدرس في ألمانيا» و«أتعلّمها لكي يفهمني الأطباء». في أمثلة الدرس تساعدك مقارنة الفاعلين: um … zu صيغة موجزة حين يتحد الفاعل، وdamit جملة واضحة حين يختلف؛ ويمكن أن تأتي damit مع الفاعل نفسه أيضاً.",
     motivatingQuestionDe: "Warum lernen Sie Deutsch?",
     contextAr:
       "نتعلّم اليوم كيف نربط الفعل بهدفه، ثم كيف نذكر السبب باختصار عبر حرف جرّ واحد بدل جملة كاملة — وهما من أدوات الكتابة المترابطة في B1.",

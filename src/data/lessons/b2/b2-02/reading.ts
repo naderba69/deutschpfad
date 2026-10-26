@@ -6,11 +6,11 @@ import type { ReadingText } from "@/types/lesson";
 
 export const readingB202: ReadingText = {
   id: "read-b2-02",
-  titleDe: "Ein vorsichtiger Herbst: Der Bericht der Notenbank",
-  titleAr: "خريف حذر: تقرير البنك المركزي",
+  titleDe: "Ein vorsichtiger Herbst: Ein fiktiver Zentralbankbericht",
+  titleAr: "خريف حذر: تقرير خيالي لبنك مركزي",
   textType: "bericht",
   paragraphs: [
-    "Die Notenbank hat am Dienstag ihren Herbstbericht veröffentlicht. Darin heißt es, die Konjunktur habe sich in den letzten Monaten langsam erholt, und die Zahl der offenen Stellen sei leicht gestiegen. Gleichzeitig wird betont, dass die Preise noch nicht stabil sind. Der Bericht ist von den meisten Zeitungen kurz zusammengefasst worden; die vollständige Fassung kann auf der Internetseite der Notenbank gelesen werden.",
+    "Dieser fiktive Übungstext samt Institution, Personen, Zahlen und Prognosen ist kein aktueller Wirtschaftsbericht. Die Notenbank hat am Dienstag ihren Herbstbericht veröffentlicht. Darin heißt es, die Konjunktur habe sich in den letzten Monaten langsam erholt, und die Zahl der offenen Stellen sei leicht gestiegen. Gleichzeitig wird betont, dass die Preise noch nicht stabil sind. Der Bericht ist von den meisten Zeitungen kurz zusammengefasst worden; die vollständige Fassung kann auf der Internetseite der Notenbank gelesen werden.",
     "Im Mittelpunkt steht die Frage, was jetzt zu tun ist. Die Zinsen sind seit dem Frühjahr nicht verändert worden, und sie sollen nach Einschätzung der Notenbank auch im Winter nicht erhöht werden. Die Steuern dagegen können im kommenden Jahr gesenkt werden, wenn die Einnahmen weiter steigen. Eine Entscheidung darüber muss aber bis zum Ende des Jahres getroffen werden, weil der Haushalt dann beschlossen wird.",
     "Für die Unternehmen ist die Lage gemischt. Die Exporte sind im dritten Quartal gestiegen, und die Lager sind gut gefüllt. Bei den Investitionen lässt sich dagegen kein klares Bild erkennen: Einige Firmen haben ihre Pläne verschoben, andere haben sie schon umgesetzt. Die Schulden der größeren Unternehmen sind in diesem Jahr deutlich zurückgegangen, während kleinere Betriebe weiter auf Kredite warten.",
     "Kritik an dem Bericht gibt es auch. Ein Wirtschaftsforscher sagt, die Prognose sei zu vorsichtig formuliert, und die Nachfrage im Inland werde unterschätzt. Ein Kollege widerspricht: Die Zahlen seien überprüfbar, und wer sie sorgfältig lese, sehe eher ein Risiko als eine Chance. Der Unterschied zwischen beiden Positionen lässt sich leicht erklären — die eine Seite rechnet mit einem Aufschwung, die andere mit einer längeren Pause.",
@@ -18,7 +18,7 @@ export const readingB202: ReadingText = {
     "Auch für die privaten Haushalte hat der Bericht Folgen. Die Mieten in den großen Städten sind weiter gestiegen, und die Energiekosten werden in diesem Winter wohl nicht sinken. Wer einen Kredit aufnehmen will, sollte deshalb genau prüfen, wie lange die Zinsen noch niedrig bleiben. Einige Banken haben ihre Bedingungen schon geändert; andere werden folgen, sobald die Notenbank ihre Linie wechselt. Klar ist nur eines: Die Entscheidung wird nicht in Berlin getroffen, sondern dort, wo über die Zinsen entschieden wird.",
   ],
   paragraphsAr: [
-    "نشر البنك المركزي يوم الثلاثاء تقريره الخريفي. وجاء فيه أن الدورة الاقتصادية تعافت ببطء في الأشهر الأخيرة، وأن عدد الوظائف الشاغرة ارتفع قليلاً. وفي الوقت نفسه يُشدَّد على أن الأسعار لم تستقر بعد. وقد اختصرت معظم الصحف التقرير اختصاراً سريعاً؛ أما النسخة الكاملة فيمكن قراءتها على موقع البنك المركزي.",
+    "هذا نص تدريبي خيالي؛ المؤسسة والأشخاص والأرقام والتوقعات فيه افتراضية، وليس تقريراً اقتصادياً راهناً. نشر البنك المركزي يوم الثلاثاء تقريره الخريفي. وجاء فيه أن الدورة الاقتصادية تعافت ببطء في الأشهر الأخيرة، وأن عدد الوظائف الشاغرة ارتفع قليلاً. وفي الوقت نفسه يُشدَّد على أن الأسعار لم تستقر بعد. وقد اختصرت معظم الصحف التقرير اختصاراً سريعاً؛ أما النسخة الكاملة فيمكن قراءتها على موقع البنك المركزي.",
     "وفي المركز يقف السؤال: ما الذي ينبغي فعله الآن؟ لم تتغيّر أسعار الفائدة منذ الربيع، ولا يُفترض أن تُرفع في الشتاء أيضاً بحسب تقدير البنك المركزي. أما الضرائب فيمكن خفضها في العام القادم إذا استمرت الإيرادات في الارتفاع. ولكن يجب اتخاذ قرار في هذا الشأن قبل نهاية العام، لأن الميزانية تُقرّ حينذاك.",
     "وبالنسبة للشركات، الوضع مختلط. فقد ارتفعت الصادرات في الربع الثالث، والمخازن ممتلئة جيداً. أما في الاستثمارات فلا يمكن رؤية صورة واضحة: بعض الشركات أجّلت خططها، وأخرى نفّذتها بالفعل. وقد انخفضت ديون الشركات الكبرى انخفاضاً واضحاً هذا العام، بينما لا تزال الشركات الأصغر تنتظر القروض.",
     "وثمّة نقد للتقرير أيضاً. يقول أحد الباحثين الاقتصاديين إن التوقّع صيغ بحذر زائد، وإن الطلب المحلي يُقلَّل من تقديره. ويردّ زميله على ذلك: الأرقام قابلة للتحقق، ومن يقرؤها بتمعّن يرى خطراً أكثر مما يرى فرصة. ويمكن تفسير الفرق بين الموقفين بسهولة — طرف يحسب حساب انتعاش، والآخر يحسب حساب توقّف أطول.",
@@ -30,7 +30,7 @@ export const readingB202: ReadingText = {
     { de: "der Bericht", ar: "التقرير", noteAr: "مذكّر؛ einen Bericht veröffentlichen (ينشر تقريراً)." },
     { de: "die Zinsen", ar: "أسعار الفائدة", noteAr: "جمع؛ die Zinsen erhöhen/senken (يرفع/يخفض الفائدة)." },
     { de: "die Steuern", ar: "الضرائب", noteAr: "جمع؛ die Steuern senken (يخفض الضرائب)." },
-    { de: "der Haushalt", ar: "الميزانية", noteAr: "مذكّر؛ der Haushalt wird beschlossen (تُقرّ الميزانية)." },
+    { de: "der Haushalt", ar: "الميزانية؛ وقد يعني الأسرة بحسب السياق", noteAr: "مذكّر؛ في فقرة الميزانية يعني الموازنة العامة (der Haushalt wird beschlossen)، وفي «Haushalte» بالفقرة الخامسة يعني الأسر." },
     { de: "die Investitionen", ar: "الاستثمارات", noteAr: "جمع؛ Investitionen verschieben (يؤجّل استثمارات)." },
     { de: "die Schulden", ar: "الديون", noteAr: "جمع؛ Schulden zurückzahlen (يسدّد الديون)." },
     { de: "die Prognose", ar: "التوقّع، التقدير المستقبلي", noteAr: "مؤنّثة؛ eine vorsichtige Prognose (توقّع حذر)." },

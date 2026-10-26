@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { lessonB208 } from "@/data/lessons/b2/b2-08";
+import { PODCASTS } from "@/data/podcasts";
 import { LESSON_META } from "@/data/lessons/meta";
 import { evaluateExercise } from "@/lib/lesson/exercise-engine";
 import { getGoalEvidenceStatus } from "@/lib/lesson/goal-evidence";
@@ -22,9 +23,10 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   q1: { options: ["von einem Job in Deutschland", "von einem Haus mit Garten", "von einer Reise nach Spanien", "von einem Auto mit vier Türen"], key: "von einem Job in Deutschland" },
   q2: { options: ["auf einen Austausch", "auf eine lange Reise", "auf eine große Party", "auf ein neues Buch"], key: "auf einen Austausch" },
   q3: {
-    options: ["daran, dass man anfragt", "daran, dass man isst", "daran, dass man schläft", "daran, dass man arbeitet"],
-    key: "daran, dass man anfragt",
+    options: ["daran, vorher nachzufragen", "daran, früher zu essen", "daran, länger zu schlafen", "daran, allein zu arbeiten"],
+    key: "daran, vorher nachzufragen",
   },
+  q4: { options: ["Zeit und offene Fragen", "eine schnelle Entscheidung", "eine gemeinsame Sprache allein", "gleiche Familienfeste"], key: "Zeit und offene Fragen" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -164,7 +166,7 @@ describe("B2-08 lesson content audit", () => {
 
   it("uses only evaluable performances as goals, each all-correct", () => {
     expect(lessonB208.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e2", "e3", "e5", "e6", "e9", "m1", "m2", "m4", "w1", "w2"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["q3", "e7"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["w1", "w2"]);
@@ -192,8 +194,9 @@ describe("B2-08 lesson content audit", () => {
   it("maps listening evidence to transcript-free task IDs only", () => {
     expect(getListeningQuestionTaskId("b2-08", "l1", "q1", false)).toBe("listening:l1:q1");
     expect(getListeningQuestionTaskId("b2-08", "l1", "q2", false)).toBe("listening:l1:q2");
+    expect(getListeningQuestionTaskId("b2-08", "l3", "q4", false)).toBe("listening:l3:q4");
     expect(getListeningQuestionTaskId("b2-08", "l2", "q3", true)).toBe("listening-transcript:b2-08:l2:q3");
-    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"]);
+    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"]);
     const transcriptIds = lessonB208.lernziele.flatMap(
       (item) => item.evidence?.taskIds?.filter((taskId) => taskId.startsWith("listening-transcript:")) ?? [],
     );
@@ -289,8 +292,8 @@ describe("B2-08 lesson content audit", () => {
     const m4 = task("m4");
     for (const [exercise, expectedFix] of [
       [e5, "Ich interessiere mich für Musik."],
-      [e9, "Ich freue mich auf den Urlaub."],
-      [m4, "Ich warte auf dich."],
+      [e9, "Ich freue mich auf Berlin."],
+      [m4, "Ich warte auf den Bus."],
     ] as const) {
       if (exercise.type !== "error-correction") throw new Error(`${exercise.id} is not error-correction`);
       expect(exercise.wrongSentence.replace(exercise.wrongWord, exercise.correctWord), exercise.id).toBe(expectedFix);
@@ -427,6 +430,10 @@ describe("B2-08 lesson content audit", () => {
     for (const marker of ["sich interessieren", "warten auf", "träumen von", "sich kümmern um", "sich freuen auf", "sich freuen über", "Worauf", "Darauf", "doch", "eben"]) {
       expect(theoryText, `بنية مفقودة: ${marker}`).toContain(marker);
     }
+    expect(lessonB208.theory[0].table?.rows).toEqual(expect.arrayContaining([
+      { label: "sich beschweren über", cells: ["über", "Akk", "Ich beschwere mich über den Lärm."] },
+      { label: "sich beschweren bei", cells: ["bei", "Dat", "Ich beschwere mich bei der Verwaltung."] },
+    ]));
   });
 
   it("checks the flashcards: count, unique German headwords, and teaching anchors", () => {
@@ -465,9 +472,9 @@ describe("B2-08 lesson content audit", () => {
   it("keeps the reading text, glossary, comprehension questions, and discourse anchors intact", () => {
     const reading = lessonB208.reading;
     expect(reading?.id).toBe("read-b2-08");
-    expect(reading?.textType).toBe("bericht");
-    expect(reading?.titleDe).toBe("Zwei Semester, die alles verändert haben");
-    expect(reading?.titleAr).toBe("فصلان دراسيان غيّرا كل شيء");
+    expect(reading?.textType).toBe("erzaehlung");
+    expect(reading?.titleDe).toBe("Ein Austausch in Tunis");
+    expect(reading?.titleAr).toBe("تجربة تبادل في تونس");
     expect(reading?.paragraphs).toHaveLength(6);
     expect(reading?.paragraphsAr).toHaveLength(6);
     const text = reading!.paragraphs.join(" ").toLowerCase();
@@ -500,22 +507,28 @@ describe("B2-08 lesson content audit", () => {
 
     expect(reading?.redemittel?.length).toBeGreaterThanOrEqual(4);
     expect(reading?.discussionAr?.trim().length).toBeGreaterThanOrEqual(40);
+    expect(text).toContain("sie beschreibt nicht, wie alle menschen in tunis, deutschland oder einer anderen gesellschaft leben");
+    expect(text).not.toContain("sie fragte nach dingen, die man in deutschland nicht fragt");
+    expect(text).not.toContain("in meiner kultur wartet man nicht auf eine einladung");
 
     for (const anchor of [
       "als lena sich für einen austausch in tunis bewarb, interessierte sie sich vor allem für die sprache",
-      "sie wollte arabisch lernen und warten nicht, bis ein kurs",
-      "frag doch einfach mal nach, die leute hier freuen sich über fragen",
+      "sie wollte arabisch lernen und nicht warten, bis ein kurs",
+      "in unserer lerngruppe fragen wir gern nach",
       "erst als sie selbst etwas kochte und dazu einlud",
       "über die wochen gewöhnte sie sich an rhythmen",
       "sie erinnerte sich an das, was ihre großmutter über geduld gesagt hatte",
-      "und sie ärgerte sich darüber",
-      "wovon das nachdenken über eine fremde ordnung abhängt, lehrt niemand",
-      "sie fragte nach dingen, die man in deutschland nicht fragt",
-      "worauf wartest du in deinem leben",
-      "das ist ja interessant, aber wer fragt denn eigentlich die seite, die hier fehlt",
-      "sie merkte, dass sie sich an eine regel gewöhnen musste",
-      "sie freut sich über jede antwort",
+      "ärgerte sich darüber, wie schnell sie am anfang geurteilt hatte",
+      "wovon das nachdenken über neue abläufe abhängt",
+      "diese bereitschaft, zuzuhören und nachzufragen, wuchs",
+      "worauf freust du dich? woran glaubst du? worüber diskutierst du gern?",
+      "das ist ja interessant, aber welche perspektive fehlt uns noch",
+      "nicht jede diskussion verlief reibungslos; gelegentlich gab es reibung",
+      "eine feste regel gab es nicht",
+      "als zeichen von respekt",
+      "sie gewöhnte sich daran, bei unklarheiten nachzufragen",
       "heute arbeitet lena in einem übersetzungsbüro",
+      "sie beschreibt nicht, wie alle menschen in tunis",
     ]) {
       expect(text.includes(anchor), `مرساة مفقودة: ${anchor}`).toBe(true);
     }
@@ -526,11 +539,21 @@ describe("B2-08 lesson content audit", () => {
     }
   });
 
+  it("discloses the limits of claims in the linked migration podcast", () => {
+    const episode = PODCASTS.find((candidate) => candidate.id === "p-b2-migration");
+    expect(episode).toBeDefined();
+    expect(episode?.contentNoteAr).toContain("خيالي");
+    expect(episode?.contentNoteAr).toContain("لم يُحدّث");
+    expect(episode?.script).not.toContain("Experten betonen");
+    expect(episode?.script).toContain("Andere Menschen erleben Zugehörigkeit anders.");
+    expect(episode?.scriptAr).toContain("وقد يختبر أشخاص آخرون الانتماء على نحو مختلف.");
+  });
+
   it("keeps the interaction best replies as complete sentences", () => {
     const rounds = (lessonB208.interaction ?? [])[0].rounds as unknown as { options: { de: string; best?: boolean }[] }[];
     expect(rounds.map((round) => round.options.find((option) => option.best)?.de)).toEqual([
-      "Es tut mir leid. In meiner Kultur ist zehn Minuten Verspätung normal. Ich wusste nicht, dass es hier so streng ist. Ich werde mich anpassen.",
-      "Ich verspreche, ab jetzt fünf Minuten früher zu kommen. Vielleicht könnt ihr mir bei dringenden Fällen etwas Toleranz geben.",
+      "Es tut mir leid. Mein Zug hatte Verspätung. Ich hätte kurz Bescheid geben sollen. Welche Absprache gilt in unserem Team?",
+      "Ich informiere die Gruppe, sobald ich merke, dass ich mich verspäte. Wenn ich niemanden erreiche, schreibe ich nach meiner Ankunft.",
     ]);
     for (const round of rounds) {
       expect(round.options.filter((option) => option.best)).toHaveLength(1);

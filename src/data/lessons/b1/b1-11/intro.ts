@@ -26,13 +26,20 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z2",
-      de: "Ich kann in einer kurzen Nachricht Termin und mitzubringende Unterlagen verstehen.",
-      ar: "أن أفهم من رسالة قصيرة الموعد والمستندات المطلوب إحضارها.",
+      de: "Ich kann wichtige Details aus einer kurzen Nachricht und einem Gespräch über Änderungen im Alltag verstehen.",
+      ar: "أن أفهم معلومات مهمة من رسالة قصيرة وحوار عن تغييرات في الحياة اليومية.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["lsq-b1-11-1", "lsq-b1-11-2"],
-        taskIds: ["listening:ls-b1-11-1:lsq-b1-11-1", "listening:ls-b1-11-1:lsq-b1-11-2"],
-        labelAr: "أجيب صحيحاً عن السؤالين بعد الاستماع إلى الرسالة، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        exerciseIds: ["lsq-b1-11-1", "lsq-b1-11-2", "lsq-b1-11-3", "lsq-b1-11-4", "lsq-b1-11-5", "lsq-b1-11-6"],
+        taskIds: [
+          "listening:ls-b1-11-1:lsq-b1-11-1",
+          "listening:ls-b1-11-1:lsq-b1-11-2",
+          "listening:ls-b1-11-2:lsq-b1-11-3",
+          "listening:ls-b1-11-2:lsq-b1-11-4",
+          "listening:ls-b1-11-2:lsq-b1-11-5",
+          "listening:ls-b1-11-3:lsq-b1-11-6",
+        ],
+        labelAr: "أجيب صحيحاً عن أسئلة المشهدين بعد الاستماع دون كشف النص؛ كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -48,8 +55,8 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z4",
-      de: "Ich kann die Wendungen Meiner Meinung nach und einerseits ... andererseits erkennen und richtig einsetzen.",
-      ar: "أن أعرف عبارتي الرأي والموازنة (Meiner Meinung nach، einerseits... andererseits) وأستعملهما في موضعهما.",
+      de: "Ich kann die Wendungen Meiner Meinung nach und einerseits ... andererseits erkennen und die passende Ergänzung auswählen.",
+      ar: "أن أتعرف عبارتي الرأي والموازنة (Meiner Meinung nach، einerseits... andererseits) وأختار الإكمال المناسب لهما.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["ex-b1-11-5", "ex-b1-11-7"],
@@ -61,12 +68,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "قبل المراجعة الختامية: هل تستطيع قراءة إعلان سكن، الرد على بريد رسمي، والمشاركة في نقاش عن العمل — في جلسة واحدة؟ هذا الدرس يجمع ما تعلمته ويعطيك تمارين لتطبيقه.",
+      "هل تستطيع قراءة رسالة رسمية، وفهم رسالة هاتفية وحوارين قصيرين، ثم مراجعة بعض التراكيب التي درستها؟ يتيح هذا الدرس تدريباً على هذه المهام من دون ادعاء أنه يغطي كل مستوى B1.",
     motivatingQuestionDe: "Wie sicher bist du bei den B1-Strukturen?",
     contextAr:
       "هذا الدرس مراجعة للبنى التي درستها في B1: الجمل الموصولة، والشرط غير الواقعي، والمجهول، وأدوات الربط. يتضمن تمارين استماع وكتابة قصيرة، ولا يتضمن أي توقيت أو محاكاة لامتحان.",
     contextDe: "Wiederholung der B1-Strukturen mit Übungen zum Hören und Schreiben.",
-    connectionToPreviousAr: "تراكم كل ما تعلمته من b1-01 (الجمل الموصولة) حتى b1-10 (الجمل الشرطية) — الآن وقت الدمج.",
+    connectionToPreviousAr: "تستعيد هذه الوحدة بعض التراكيب التي ظهرت في دروس B1 السابقة، وتجمعها في تمارين قراءة واستماع وكتابة قصيرة.",
     activateVocabulary: [
       { de: "die Prüfung", ar: "الامتحان" },
       { de: "der Prüfungsteil", ar: "جزء الامتحان" },
@@ -85,8 +92,8 @@ export const review: NonNullable<Lesson["review"]> = [
       questionAr: "أمس ذهبت إلى البيت.",
       options: ["ging", "gehe", "gegangen", "geht"],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — «gehe» مضارع؛ و«Gestern» تفرض الماضي البسيط: «ich ging nach Hause».", "لا — التصريف الثالث لا يقف وحده بلا فعل مساعد؛ فلو قيل «bin gegangen» لصحّ، والمطلوب هنا «ging».", "لا — «geht» للغائب المفرد أو للجمع في المضارع؛ والفاعل «ich» مع «Gestern» فيلزم «ging»."],
-      explanation: "في الماضي البسيط: ich ging.",
+      optionExplanations: [undefined, "لا — «gehe» مضارع، بينما المطلوب هنا ماضٍ؛ ومن الخيارات المعروضة يناسبه «ging».", "لا — التصريف الثالث لا يقف وحده بلا فعل مساعد؛ فلو قيل «bin gegangen» لصحّ، والمطلوب هنا «ging».", "لا — «geht» لا يطابق الفاعل «ich»؛ وفي هذا السؤال تشير «Gestern» إلى الماضي، ومن الخيارات المعروضة يناسبه «ging»."],
+      explanation: "من الخيارات المعروضة، «ging» هي صيغة Präteritum المناسبة؛ ويمكن التعبير عن الماضي بصيغ أخرى في سياقات مختلفة.",
       errorType: "conjugation",
     },
     {

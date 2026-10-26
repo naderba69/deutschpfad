@@ -18,7 +18,7 @@ export const lessonB102: Lesson = {
   order: 1,
   titleDe: "Arbeitswelt",
   titleAr: "عالم العمل",
-  summary: "الماضي البسيط (Präteritum) لكل الأفعال المنتظمة والشاذة، الماضي التام المركب (Plusquamperfekt)، وسرد تجربة العمل: Ich arbeitete, ich hatte gearbeitet.",
+  summary: "صيغ Präteritum لأفعال منتقاة منتظمة وشاذة، وPlusquamperfekt لبيان حدث سابق لمرجع ماضٍ، ضمن أمثلة عن الخبرة والعمل.",
   lernziele,
   einfuehrung,
   review,
@@ -34,4 +34,3 @@ export const lessonB102: Lesson = {
   mediation,
   interaction,
 };
-

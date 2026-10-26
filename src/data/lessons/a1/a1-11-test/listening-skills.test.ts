@@ -9,10 +9,22 @@ import { lessonA111 } from "../a1-11";
 
 describe("A1-11 audited lesson content", () => {
   it("checks both TTS dialogues, every listening question, and the optional interaction boundary", () => {
-    expect(lessonA111.listening.items).toHaveLength(2);
+    expect(lessonA111.listening.items).toHaveLength(3);
     expect(lessonA111.listening.items.map((item) => item.lines.length)).toEqual(
-      [5, 4],
+      [5, 4, 6],
     );
+    const newScene = lessonA111.listening.items.find((item) => item.id === "l3");
+    expect(newScene?.lines.map((line) => line.de)).toEqual([
+      "Entschuldigung, wie komme ich zum Museum?",
+      "Gehen Sie geradeaus bis zur Ampel.",
+      "Und dann?",
+      "Biegen Sie rechts ab. Die Bushaltestelle ist vor der Apotheke.",
+      "Fährt der Bus direkt zum Museum?",
+      "Ja, steigen Sie an der dritten Haltestelle aus.",
+    ]);
+    expect(lessonA111.listening.questions.filter((question) => question.itemId === "l3").map((question) => question.options[question.correctIndex])).toEqual([
+      "zum Museum", "vor der Apotheke", "an der dritten Haltestelle",
+    ]);
     const itemIds = new Set(lessonA111.listening.items.map((item) => item.id));
     for (const item of lessonA111.listening.items) {
       expect(item.title.trim()).toBeTruthy();
@@ -40,6 +52,9 @@ describe("A1-11 audited lesson content", () => {
       "listening:l1:q1",
       "listening:l2:q2",
       "listening:l2:q3",
+      "listening:l3:q4",
+      "listening:l3:q5",
+      "listening:l3:q6",
     ]);
     expect(listeningGoal?.evidence?.labelAr).toContain("قبل كشف النص");
   });

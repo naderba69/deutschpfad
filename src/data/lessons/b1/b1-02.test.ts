@@ -22,6 +22,9 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     key: "viel recherchiert",
   },
   q3: { options: ["Sie wurde sicherer", "Sie hörte auf", "Sie wechselte die Firma", "Sie ging in Rente"], key: "Sie wurde sicherer" },
+  q4: { options: ["Zunächst nervös, aber das Team war freundlich", "Von Anfang an gelangweilt, weil die Aufgaben einfach waren", "Sehr ärgerlich, denn niemand half ihm bei der Arbeit", "Unsicher, weil er das Hotel nicht finden konnte"], key: "Zunächst nervös, aber das Team war freundlich" },
+  q5: { options: ["Einen Deutschkurs besucht und ein Praktikum gemacht", "Ein Studium abgeschlossen und im Büro gearbeitet", "Eine Prüfung bestanden und Urlaub genommen", "Ein Hotel gesucht und eine Bewerbung geschrieben"], key: "Einen Deutschkurs besucht und ein Praktikum gemacht" },
+  q6: { options: ["Mit Gästen sprechen und Probleme ruhig lösen", "Briefe schreiben und neue Zimmer reservieren", "Deutsch lernen und Prüfungen vorbereiten", "Das Hotel leiten und das Team organisieren"], key: "Mit Gästen sprechen und Probleme ruhig lösen" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -61,14 +64,14 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
 };
 
 const expectedErrorCorrections: Record<string, { wrongWord: string; correctWord: string; options: string[] }> = {
-  e13: { wrongWord: "beendet hat", correctWord: "beendet hatte", options: ["beendet hatte", "beendet hat", "beenden hatte", "beendet gehabt"] },
   e5: { wrongWord: "bin", correctWord: "habe", options: ["habe", "bin", "war", "hatte"] },
 };
 
-const expectedTransformations: string[] = ["e7", "e9", "e12", "m4", "w1", "w3"];
+const expectedTransformations: string[] = ["e7", "e9", "e12", "e13", "m4", "w1", "w3"];
 
 const expectedTransformationAnswers: Record<string, string[]> = {
   e12: ["Bevor ich nach Berlin kam, hatte ich in Tunis gearbeitet", "Bevor ich nach Berlin kam, hatte ich in Tunis gearbeitet."],
+  e13: ["Nachdem er die Ausbildung beendet hatte, bekam er eine Stelle", "Nachdem er die Ausbildung beendet hatte, bekam er eine Stelle."],
 };
 
 const expectedMatching: Record<string, { left: string; right: string }[]> = {
@@ -144,8 +147,11 @@ describe("B1-02 lesson content audit", () => {
   it("limits goals to evidenced performances and separates reading-speaking claims from writing/listening", () => {
     expect(lessonB102.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
     expect(goal("z1").evidence?.exerciseIds).toEqual(["e1", "m1", "w2"]);
+    expect(goal("z1").de).toContain("ausgewählter Verben");
+    expect(goal("z4").de).toContain("kurze geübte Sätze");
+    expect(goal("z4").evidence?.labelAr).toContain("لا يثبت القدرة على كتابة سيرة مهنية كاملة");
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e4", "e6", "m2"]);
-    expect(goal("z3").evidence?.exerciseIds).toEqual(["q1", "q2", "q3"]);
+    expect(goal("z3").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4", "q5", "q6"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["w1", "w3"]);
     expect(JSON.stringify(lessonB102.lernziele)).not.toMatch(/Goethe|CEFR|erzählen|berichten/);
 
@@ -184,6 +190,13 @@ describe("B1-02 lesson content audit", () => {
     expect(byType("matching").filter((id) => id in expectedMatching), "مطابقات مغطّاة").toEqual(byType("matching"));
     const transformations = byType("transformation");
     expect(transformations.filter((id) => expectedTransformations.includes(id)), "تحويلات مغطّاة").toEqual(transformations);
+    for (const [id, answers] of Object.entries(expectedTransformationAnswers)) {
+      const exercise = task(id);
+      if (exercise.type !== "transformation") throw new Error(`${id} is not a transformation`);
+      for (const answer of answers) {
+        expect(evaluateExercise(exercise, answer).isCorrect, `${id}: ${answer}`).toBe(true);
+      }
+    }
   });
 
   it("audits every multiple-choice key and distractor set", () => {
@@ -230,11 +243,21 @@ describe("B1-02 lesson content audit", () => {
     }
   });
 
-  it("treats the Perfekt in nachdem-clauses as acceptable speech, so e9 is a transformation not an error", () => {
+  it("treats the Perfekt in nachdem-clauses as acceptable in context, while e9 requests a style transformation", () => {
     const e9 = task("e9");
     if (e9.type !== "transformation") throw new Error("e9 is not transformation");
     expect(evaluateExercise(e9, "Nachdem er gegessen hatte, ging er.").isCorrect).toBe(true);
     expect(evaluateExercise(e9, "Nachdem er gegessen hat, ging er.").isCorrect).toBe(false);
+  });
+
+  it("converts e13 to written narration without claiming the source Perfekt is universally wrong", () => {
+    const e13 = task("e13");
+    if (e13.type !== "transformation") throw new Error("e13 is not a transformation");
+    expect(e13.instructionAr).toContain("لا يعني ذلك أن صيغة Perfekt الأصلية خطأ في كل سياق");
+    expect(evaluateExercise(e13, "Nachdem er die Ausbildung beendet hatte, bekam er eine Stelle.").isCorrect).toBe(true);
+    // The source form is intentionally not the requested written-narration answer;
+    // this is not a grammar judgment about its acceptability in speech.
+    expect(evaluateExercise(e13, "Nachdem er die Ausbildung beendet hat, bekam er eine Stelle.").isCorrect).toBe(false);
   });
 
   it("requires Präteritum where the prompt asks for it, and rejects the Perfekt", () => {
@@ -275,10 +298,14 @@ describe("B1-02 lesson content audit", () => {
     const reading = lessonB102.reading;
     expect(reading?.id).toBe("read-b1-02");
     expect(reading?.textType).toBe("erzaehlung");
-    expect(reading?.titleDe).toBe("Der erste Arbeitstag");
-    expect(reading?.titleAr).toBe("أول يوم عمل");
+    expect(reading?.titleDe).toBe("Der erste Arbeitstag — eine fiktive Geschichte");
+    expect(reading?.titleAr).toBe("أول يوم عمل (قصة تدريبية خيالية)");
     expect(reading?.paragraphs).toHaveLength(4);
     expect(reading?.paragraphsAr).toHaveLength(4);
+    expect(reading?.paragraphs[0]).toContain("zwei Jahre");
+    expect(reading?.paragraphs[1]).toContain("Ich arbeitete zwei Jahre");
+    expect(reading?.paragraphsAr[0]).toContain("سنتين");
+    expect(reading?.paragraphsAr[1]).toContain("سنتين");
     const text = reading!.paragraphs.join(" ").toLowerCase();
     expect(text.split(/\s+/).filter(Boolean).length).toBeGreaterThanOrEqual(250);
 
@@ -311,7 +338,22 @@ describe("B1-02 lesson content audit", () => {
   it("maps listening evidence to transcript-free task IDs only", () => {
     expect(getListeningQuestionTaskId("b1-02", "l1", "q1", false)).toBe("listening:l1:q1");
     expect(getListeningQuestionTaskId("b1-02", "l2", "q3", true)).toBe("listening-transcript:b1-02:l2:q3");
-    expect(lessonB102.listening.questions.map(({ id, itemId }) => `${itemId}:${id}`)).toEqual(["l1:q1", "l1:q2", "l2:q3"]);
+    expect(lessonB102.listening.questions.map(({ id, itemId }) => `${itemId}:${id}`)).toEqual([
+      "l1:q1", "l1:q2", "l2:q3", "l3:q4", "l3:q5", "l3:q6",
+    ]);
+    const scene = lessonB102.listening.items.find(({ id }) => id === "l3")!;
+    expect(scene.lines.map(({ de }) => de)).toEqual([
+      "Wie war dein erster Arbeitstag im Hotel?",
+      "Am Anfang war ich nervös, aber mein Team war freundlich.",
+      "Was hattest du gemacht, bevor du dort anfingst?",
+      "Ich hatte einen Deutschkurs besucht und ein Praktikum gemacht.",
+      "Und was lernst du jetzt bei der Arbeit?",
+      "Ich lerne, mit Gästen zu sprechen und Probleme ruhig zu lösen.",
+    ]);
+    expect(scene.audioNoteAr).toMatch(/مولّدة آلياً \(TTS\)، وليست تسجيلاً بشرياً/);
+    expect(scene.lines.map(({ audioSrc }) => audioSrc)).toEqual(
+      [1, 2, 3, 4, 5, 6].map((line) => `/audio/lessons/b1-02/ls-b1-02-3-${line}.mp3`),
+    );
   });
 
   it("counts only correct, mapped exercise results toward goals", () => {
@@ -320,7 +362,7 @@ describe("B1-02 lesson content audit", () => {
     expect(getGoalEvidenceStatus(goal("z1"), lessonB102.id, z1Events)).toBe("evidenced");
     expect(getGoalEvidenceStatus(goal("z1"), lessonB102.id, z1Events.slice(0, 2))).toBe("pending");
     expect(getGoalEvidenceStatus(goal("z3"), lessonB102.id, [goalEvent("z3", "q3", false)])).toBe("pending");
-    const z3Events = [goalEvent("z3", "q1"), goalEvent("z3", "q2"), goalEvent("z3", "q3")];
+    const z3Events = [goalEvent("z3", "q1"), goalEvent("z3", "q2"), goalEvent("z3", "q3"), goalEvent("z3", "q4"), goalEvent("z3", "q5"), goalEvent("z3", "q6")];
     expect(getGoalEvidenceStatus(goal("z3"), lessonB102.id, z3Events)).toBe("evidenced");
   });
 });

@@ -54,7 +54,7 @@ export function getBestGermanVoice(): SpeechSynthesisVoice | null {
 
 /** هل يدعم المتصفح النطق؟ */
 export function isSpeechSynthesisSupported(): boolean {
-  return typeof window !== "undefined" && "speechSynthesis" in window;
+  return typeof window !== "undefined" && typeof window.speechSynthesis?.speak === "function";
 }
 
 /**

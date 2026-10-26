@@ -145,10 +145,10 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       type: "word-ordering",
       instructionAr: "رتّب الكلمات لتكوّن جملة صحيحة (zu + مصدر):",
       instructionDe: "Ordne die Wörter: Infinitiv mit zu",
-      tokens: ["Ich", "versuche,", "das", "Fahrrad", "zu", "nehmen."],
-      correctSentence: "Ich versuche, das Fahrrad zu nehmen.",
+      tokens: ["Ich", "versuche,", "mit", "dem", "Fahrrad", "zu", "fahren."],
+      correctSentence: "Ich versuche, mit dem Fahrrad zu fahren.",
       hint: "بعد versuche فاصلة، ثم zu + مصدر في نهاية الجملة.",
-      explanation: "Ich versuche, das Fahrrad zu nehmen — أحاول ركوب الدراجة.",
+      explanation: "Ich versuche, mit dem Fahrrad zu fahren — أحاول الذهاب بالدراجة.",
       errorType: "word-order",
       points: 2,
     },
@@ -159,7 +159,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       prompt: "Die Gemeinde baut einen neuen Laden. → (Passiv في المضارع)",
       acceptedAnswers: ["Ein neuer Laden wird gebaut", "Ein neuer Laden wird gebaut.", "Ein neuer Laden wird von der Gemeinde gebaut", "Ein neuer Laden wird von der Gemeinde gebaut."],
       sampleAnswer: "Ein neuer Laden wird gebaut.",
-      explanation: "في المجهول يُقدَّم المفعول In den Platz الأول (كفاعل نحوي) ثم werden مصرَّفاً (wird) والـPartizip II في النهاية (gebaut)؛ وإظهار المنفّذ اختياريّ بـvon + Dativ: von der Gemeinde.",
+      explanation: "في المجهول يُقدَّم المفعول في الموضع الأول (كفاعل نحوي) ثم werden مصرَّفاً (wird) والـPartizip II في النهاية (gebaut)؛ وإظهار المنفّذ اختياريّ بـvon + Dativ: von der Gemeinde.",
       errorType: "grammar",
     },
     {
@@ -185,11 +185,11 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     ],
     eselsbruecken: [
       "«werden + Partizip II = مجهول»: wird gebaut (يُبنى) / wurde gebaut (بُني).",
-      "«man = المرء»: Man sagt = يقال. بديل سهل للمجهول.",
+      "man فاعل عام في جملة نشطة: Man sagt. وقد يؤدي أحياناً معنى قريباً من المجهول، لكنه ليس مجهولاً صرفياً.",
     ],
     culturalNote: {
-      title: "الألمان والبيئة",
+      title: "فرز النفايات في ألمانيا",
       content:
-                "في ألمانيا يفرض قانون إدارة المخلفات (Kreislaufwirtschaftsgesetz، المادتان 11 و14) فصل النفايات حيث يكون ذلك ممكناً تقنياً واقتصادياً: البيولوجية والورق والمعادن والبلاستيك والزجاج. أما الحاويات وألوانها فتحددها كل بلدية وقد تختلف من مكان إلى آخر. وقد تُفرض غرامات على المخالفة حتى 2500 يورو في بعض الحالات، ويختلف ذلك بحسب الولاية.",
+                "في ألمانيا تُفصل أصناف منزلية مختلفة، مثل الورق والزجاج والتغليف والنفايات العضوية، وتختلف بعض تفاصيل الجمع والتخلّص بحسب نوع النفاية وتعليمات البلدية. عند الشك، يُرجع إلى موقع البلدية أو الجهة المحلية المختصة بالنفايات؛ ولا يتناول هذا المقتطف الغرامات؛ وللتفاصيل المحلية يُرجع إلى المصدر الرسمي المختص.",
     },
   };

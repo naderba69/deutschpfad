@@ -20,7 +20,7 @@ import type { PodcastEpisode } from "@/data/podcasts";
  *  1) استمع للحلقة: **تسجيل مُنتَج** إن وُجد، وإلا نطق الجهاز (مُعلَن)
  *  2) اقرأ النص للفهم (مع الترجمة عند الحاجة)
  *  3) أجب عن أسئلة الفهم
- *  — تدريب الاستماع الممتد يبني الفهم الطبيعي للغة —
+ *  — تدريب الاستماع الممتد يتيح التدرّب على فهم نصوص أطول —
  *
  *  المسار من `podcastAudioPath` وحده (مصدر واحد مع الحارس) — لا يُكتب هنا.
  * ═══════════════════════════════════════════════════════════
@@ -181,11 +181,16 @@ export function PodcastPlayer({ episode, onBack }: { episode: PodcastEpisode; on
         </div>
         <p className="mt-3 text-[11px] font-bold text-muted-foreground">
           {audioSrc && !clipFailed
-            ? "🎙️ تسجيل مُنتَج لهذه الحلقة."
+            ? "🎙️ تسجيل مولّد آلياً (TTS)، وليس تسجيلاً بشرياً."
             : audioSrc
               ? "⚠️ تعذّر تشغيل التسجيل — تُقرأ الحلقة بصوت الجهاز."
               : "🔊 لم يُنتَج تسجيل لهذه الحلقة بعد — تُقرأ بصوت الجهاز الألماني."}
         </p>
+        {episode.contentNoteAr && (
+          <p className="mt-3 rounded-lg border border-amber-500/30 bg-amber-500/5 px-3 py-2 text-start text-xs leading-relaxed text-muted-foreground">
+            {episode.contentNoteAr}
+          </p>
+        )}
         <div className="mt-3 flex items-center gap-2">
           <Headphones className="h-3.5 w-3.5 shrink-0 text-muted-foreground" aria-hidden="true" />
           <p className="font-de text-start text-xs leading-relaxed text-muted-foreground" dir="ltr">

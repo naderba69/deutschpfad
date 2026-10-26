@@ -11,9 +11,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أفهم حواراً عن العمل التطوعي وأجيب عن أسئلته.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
-        labelAr: "أجيب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q2", "q3", "q4"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"],
+        labelAr: "أجيب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -39,7 +39,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z3",
       de: "Ich kann die n-Deklination im Akkusativ, Dativ und Genitiv richtig bilden.",
-      ar: "أن أصوغ تصريف n للأسماء المذكرة الحية (den Studenten، dem Kunden، des Herrn) في موضعه.",
+      ar: "أن أصوغ تصريف n للأسماء التي تتبع هذا النمط (den Studenten، dem Kunden، des Herrn) في موضعه.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["e2", "e5", "e6", "e9", "m2", "m4", "w3"],
@@ -86,12 +86,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "لاحظ بالعربية: «يطرح سؤالاً» — فعل + اسم معاً. الألمانية تفعل هذا كثيراً: eine Frage stellen (يطرح سؤالاً) بدل fragen (يسأل). هذه «الوصلات» تعطي كلامك نكهة رسمية.",
+      "لاحظ التعبير «يطرح سؤالاً»: اسم مع فعل. في الألمانية نقول eine Frage stellen. هذه وصلة شائعة، لكن لا يلزم أن تكون أكثر رسمية من الفعل fragen في كل سياق.",
     motivatingQuestionDe: "Machst du ehrenamtliche Arbeit?",
     contextAr:
-      "العمل التطوعي جزء كبير من الثقافة الألمانية. نتعلم مفرداته، ثم الوصلات الاسمية-الفعلية (الأسلوب الرسمي)، ونهاية n-Deklination الغريبة.",
+      "نستكشف مفردات التطوع والمشاركة الاجتماعية، ثم نتدرّب على وصلات الاسم والفعل وتصريف n في مجموعة من الأسماء الألمانية.",
     contextDe: "Ich helfe ehrenamtlich im Verein.",
-    connectionToPreviousAr: "تتذكر الأفعال المركبة والحالات. اليوم: الوصلات (فعل + اسم) وتصريف n — وهو تصريف يخص عدداً محدوداً من الأسماء المذكرة الحية.",
+    connectionToPreviousAr: "تتذكر الأفعال المركبة والحالات. اليوم: وصلات الاسم والفعل، وتصريف n في أسماء مختارة؛ أكثر أمثلته الشائعة مذكر، لكن النمط ليس محصوراً دلالياً في أسماء الأحياء.",
     activateVocabulary: [
       { de: "das Ehrenamt", ar: "العمل التطوعي" },
       { de: "der Verein", ar: "الجمعية/النادي" },

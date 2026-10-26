@@ -9,7 +9,7 @@ import {useExerciseState} from "@/components/lesson/exercises/use-exercise-state
 import {Button} from "@/components/ui/button";
 import {evaluateDictation} from "@/lib/lesson/exercise-engine";
 import {normalizeGermanText} from "@/lib/speech/scoring";
-import {speakRepeated} from "@/lib/speech/voices";
+import {isSpeechSynthesisSupported, speakRepeated} from "@/lib/speech/voices";
 import {cn} from "@/lib/utils";
 import type { DictationExercise, FeedbackResult } from "@/types/lesson";
 
@@ -30,7 +30,12 @@ export function DictationExerciseView({
     missed: string[];
   } | null>(null);
   const state = useExerciseState(exercise);
+  const [speechSupported, setSpeechSupported] = React.useState(false);
   const locked = state.result?.isCorrect === true || state.revealedSolution;
+
+  React.useEffect(() => {
+    setSpeechSupported(isSpeechSynthesisSupported());
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -72,14 +77,20 @@ export function DictationExerciseView({
         <div className="flex-1">
           <p className="text-sm font-semibold">استمع بتركيز ثم اكتب ما سمعت</p>
           <p className="text-xs text-muted-foreground">
-            ابدأ بالبطيء، ثم جرّب العادي — ويمكنك تشغيل الجملة مرتين متتاليتين
+            الصوت مولّد آلياً بواسطة المتصفح أو الجهاز، وليس تسجيلاً بشرياً؛ وقد تختلف جودته بحسب الأصوات المتاحة. ابدأ بالبطيء ثم جرّب السرعة العادية.
           </p>
+          {!speechSupported && (
+            <p role="status" className="mt-2 text-xs font-medium text-destructive">
+              النطق غير متاح في هذا المتصفح؛ لن يختبر هذا النشاط الاستماع هنا. يمكنك كشف الحل وتجاوز المهمة.
+            </p>
+          )}
         </div>
         <div className="flex flex-wrap gap-1.5">
           <Button
             type="button"
             variant="outline"
             size="sm"
+            disabled={!speechSupported}
             onClick={() => speakRepeated(exercise.audioText, 1, { rate: 0.75 })}
           >
             <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
@@ -89,6 +100,7 @@ export function DictationExerciseView({
             type="button"
             variant="default"
             size="sm"
+            disabled={!speechSupported}
             onClick={() => speakRepeated(exercise.audioText, 1, { rate: 1 })}
           >
             عادي
@@ -97,6 +109,7 @@ export function DictationExerciseView({
             type="button"
             variant="outline"
             size="sm"
+            disabled={!speechSupported}
             onClick={() => speakRepeated(exercise.audioText, 2, { rate: 1 })}
           >
             <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
@@ -112,7 +125,7 @@ export function DictationExerciseView({
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
             onEnter={() => handleSubmit({ preventDefault: () => {} } as React.FormEvent)}
-            disabled={locked || state.revealedSolution}
+            disabled={!speechSupported || locked || state.revealedSolution}
             placeholder="اكتب الجملة التي سمعتها…"
             aria-label="النص المسموع"
             autoComplete="off"
@@ -120,7 +133,7 @@ export function DictationExerciseView({
             lang="de"
             className="font-de flex-1"
           />
-          <Button type="submit" disabled={answer.trim() === "" || locked} className="shrink-0 gap-1.5">
+          <Button type="submit" disabled={!speechSupported || answer.trim() === "" || locked} className="shrink-0 gap-1.5">
             <Send className="h-4 w-4" aria-hidden="true" />
             تحقق
           </Button>

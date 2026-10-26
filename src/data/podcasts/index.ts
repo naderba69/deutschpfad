@@ -27,6 +27,8 @@ export interface PodcastEpisode {
   /** النص المسموع (يُقرأ بـ TTS) */
   script: string;
   scriptAr: string;
+  /** تنبيه تحريري عربي عند الحاجة إلى بيان حدود الادعاءات أو خيالها */
+  contentNoteAr?: string;
   questions: PodcastQuestion[];
 }
 
@@ -67,8 +69,8 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     title: "Mein Haustier",
     titleAr: "حيواني الأليف",
     emoji: "🐱",
-    script: "Ich habe eine Katze. Sie heißt Mimi. Mimi ist klein und grau. Sie schläft am Tag und spielt in der Nacht. Ich mag meine Katze. Mimi ist mein bester Freund.",
-    scriptAr: "عندي قطة. اسمها ميمي. ميمي صغيرة ورمادية. تنام نهاراً وتلعب ليلاً. أحب قطتي. ميمي أفضل صديق لي.",
+    script: "Ich habe eine Katze. Sie heißt Mimi. Mimi ist klein und grau. Sie schläft am Tag und spielt in der Nacht. Ich mag meine Katze. Mimi ist meine beste Freundin.",
+    scriptAr: "عندي قطة. اسمها ميمي. ميمي صغيرة ورمادية. تنام نهاراً وتلعب ليلاً. أحب قطتي. ميمي أفضل صديقة لي.",
     questions: [
       {
         de: "Wie heißt die Katze?",
@@ -164,7 +166,7 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
         ar: "ماذا يمكن للمرء أن يفعل حسب النص؟",
         options: [
           { text: "Mit dem Fahrrad fahren", ar: "ركوب الدراجة", correct: true, explanation: "نعم — الحلقة تقول: «Man kann zum Beispiel mit dem Fahrrad fahren statt mit dem Auto.»." },
-          { text: "Mehr Auto fahren", ar: "قيادة السيارة أكثر", correct: false, explanation: "لا — الحلقة تقول: «Man kann zum Beispiel mit dem Fahrrad fahren statt mit dem Auto.»." },
+          { text: "Öfter mit dem Auto fahren", ar: "الذهاب بالسيارة بوتيرة أكبر", correct: false, explanation: "لا — الحلقة تقول: «Man kann zum Beispiel mit dem Fahrrad fahren statt mit dem Auto.»." },
           { text: "Mehr Plastik benutzen", ar: "استخدام بلاستيك أكثر", correct: false, explanation: "لا — الحلقة تقول: «Man kann zum Beispiel mit dem Fahrrad fahren statt mit dem Auto.»." },
         ],
       },
@@ -174,7 +176,7 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
         options: [
           { text: "Die Politik muss etwas ändern", ar: "السياسة يجب أن تغيّر شيئاً", correct: true, explanation: "نعم — الحلقة تقول: «Die Politik muss etwas ändern.»." },
           { text: "Man muss gar nichts ändern", ar: "لا يجب تغيير أي شيء", correct: false, explanation: "لا — الحلقة تقول: «Die Politik muss etwas ändern.»." },
-          { text: "Autos sind viel besser als die Bahn", ar: "السيارات أفضل", correct: false, explanation: "لا — الحلقة تقول: «Die Politik muss etwas ändern.»." },
+          { text: "Autos sind viel besser als die Bahn", ar: "السيارات أفضل بكثير من القطار", correct: false, explanation: "لا — الحلقة تقول: «Die Politik muss etwas ändern.»." },
         ],
       },
     ],
@@ -185,25 +187,25 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     title: "Homeoffice: Vor- und Nachteile",
     titleAr: "العمل من المنزل: الإيجابيات والسلبيات",
     emoji: "🏠",
-    script: "Immer mehr Leute arbeiten im Homeoffice. Ein Vorteil ist, dass man keine Zeit im Verkehr verliert. Man kann besser konzentrieren. Aber es gibt auch Nachteile. Man sieht seine Kollegen nicht so oft. Das kann einsam machen. Und die Grenze zwischen Arbeit und Freizeit wird schwer.",
-    scriptAr: "المزيد والمزيد من الناس يعملون من المنزل. من المزايا أنك لا تضيّع وقتاً في الزحام. يمكنك التركيز بشكل أفضل. لكن هناك أيضاً عيوباً. لا ترى زملاءك كثيراً. هذا قد يسبب الوحدة. ويصبح الحد بين العمل والفراغ صعباً.",
+    script: "Fiktive Szene: Lea arbeitet zu Hause. Sie sagt: „Ich spare mir den Arbeitsweg und kann mich gut konzentrieren.“ Ihr Kollege meint: „Mir fehlt der Austausch im Team. Arbeit und Freizeit zu trennen ist nicht immer leicht.“ Homeoffice hat zwar Vorteile, passt aber nicht immer.",
+    scriptAr: "مشهد خيالي: تعمل ليا من المنزل. تقول: «أوفّر مشوار الذهاب إلى العمل وأستطيع التركيز جيداً». ويرى زميلها: «أفتقد التواصل مع الفريق. وليس الفصل بين العمل ووقت الفراغ سهلاً دائماً». وللعمل من المنزل مزايا، لكنه لا يلائم كل الحالات.",
     questions: [
       {
-        de: "Was ist ein Vorteil von Homeoffice?",
-        ar: "ما ميزة العمل من المنزل؟",
+        de: "Was spart Lea laut eigener Aussage?",
+        ar: "ما الذي توفره ليا بحسب قولها؟",
         options: [
-          { text: "Keine Zeit im Verkehr verlieren", ar: "عدم إضاعة وقت في الزحام", correct: true, explanation: "نعم — الحلقة تقول: «Ein Vorteil ist, dass man keine Zeit im Verkehr verliert.»." },
-          { text: "Mehr Kollegen persönlich sehen", ar: "رؤية زملاء أكثر", correct: false, explanation: "لا — الحلقة تقول: «Ein Vorteil ist, dass man keine Zeit im Verkehr verliert.»." },
-          { text: "Weniger arbeiten bei gleichem Lohn", ar: "عمل أقل", correct: false, explanation: "لا — الحلقة تقول: «Ein Vorteil ist, dass man keine Zeit im Verkehr verliert.»." },
+          { text: "Den Arbeitsweg", ar: "مشوار الذهاب إلى العمل", correct: true, explanation: "نعم — تقول ليا: «Ich spare mir den Arbeitsweg»." },
+          { text: "Das Mittagessen", ar: "الغداء", correct: false, explanation: "لا — لم تذكر ليا الغداء؛ بل قالت «Ich spare mir den Arbeitsweg»." },
+          { text: "Den Teamkontakt", ar: "التواصل مع الفريق", correct: false, explanation: "لا — يقول الزميل «Mir fehlt der Austausch im Team»؛ لا إن ليا توفر المحادثات." },
         ],
       },
       {
-        de: "Was kann im Homeoffice schwer sein?",
-        ar: "ما الذي قد يصعب في العمل من المنزل؟",
+        de: "Was findet der Kollege schwierig?",
+        ar: "ما الأمر الذي يجده الزميل صعباً؟",
         options: [
-          { text: "Die Grenze zwischen Arbeit und Freizeit", ar: "الحد بين العمل والفراغ", correct: true, explanation: "نعم — الحلقة تقول: «Und die Grenze zwischen Arbeit und Freizeit wird schwer.»." },
-          { text: "Der tägliche Weg zur Arbeit im Stau", ar: "الطريق إلى العمل", correct: false, explanation: "لا — الحلقة تقول: «Und die Grenze zwischen Arbeit und Freizeit wird schwer.»." },
-          { text: "Die Kollegen im eigenen Team", ar: "الزملاء", correct: false, explanation: "لا — الحلقة تقول: «Und die Grenze zwischen Arbeit und Freizeit wird schwer.»." },
+          { text: "Arbeit und Freizeit zu trennen", ar: "الفصل بين العمل ووقت الفراغ", correct: true, explanation: "نعم — يقول: «Arbeit und Freizeit zu trennen ist nicht immer leicht»." },
+          { text: "Mit dem Zug täglich zur Arbeit fahren", ar: "الذهاب يومياً إلى العمل بالقطار", correct: false, explanation: "لا — يصف الزميل صعوبة «Arbeit und Freizeit zu trennen»؛ ولا يذكر قطاراً أو تنقلاً." },
+          { text: "Neue Programme im Büro einrichten", ar: "إعداد برامج جديدة في المكتب", correct: false, explanation: "لا — الحوار يذكر أن «Arbeit und Freizeit zu trennen ist nicht immer leicht»؛ ولا يذكر برامج مكتب." },
         ],
       }
     ],
@@ -212,6 +214,7 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
   {
     id: "p-b2-digitalisierung",
     level: "B2",
+    contentNoteAr: "نص تدريبي يعرض مواقف افتراضية عن الرقمنة؛ عبارات المؤيدين والنقاد عن المنافع والمخاطر والتقنية محاور للنقاش، وليست نتائج بحث أو وصفاً شاملاً للواقع.",
     title: "Digitalisierung im Alltag",
     titleAr: "الرقمنة في الحياة اليومية",
     emoji: "📱",
@@ -361,6 +364,7 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
   {
     id: "p-b2-kuenstliche-intelligenz",
     level: "B2",
+    contentNoteAr: "نص تدريبي يعرض مواقف افتراضية عن الذكاء الاصطناعي والعمل؛ لا يوثق مقدار أثره في الإنتاجية أو الوظائف ولا ينقل توصيات خبراء بمصدر محدد.",
     title: "Künstliche Intelligenz im Beruf",
     titleAr: "الذكاء الاصطناعي في العمل",
     emoji: "🤖",
@@ -468,18 +472,20 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     title: "Gesund leben",
     titleAr: "العيش بصحة",
     emoji: "🥗",
-    script: "Immer mehr Menschen achten auf ihre Gesundheit. Sie essen mehr Gemüse und treiben regelmäßig Sport. Ärzte empfehlen, mindestens 30 Minuten pro Tag aktiv zu sein. Natürlich ist das nicht immer einfach. Aber kleine Änderungen können viel bewirken. Zum Beispiel die Treppe statt des Aufzugs zu nehmen.",
-    scriptAr: "المزيد والمزيد من الناس يهتمون بصحتهم. يأكلون خضروات أكثر ويمارسون الرياضة بانتظام. يوصي الأطباء بالنشاط 30 دقيقة على الأقل يومياً. طبعاً هذا ليس سهلاً دائماً. لكن التغييرات الصغيرة يمكن أن تفعل الكثير. مثلاً أخذ الدرج بدل المصعد.",
+    // WHO adult guideline: 150–300 min moderate or 75–150 min vigorous activity weekly; stairs count as everyday physical activity.
+    // https://www.who.int/europe/news-room/fact-sheets/item/physical-activity
+    script: "Die Weltgesundheitsorganisation empfiehlt Erwachsenen pro Woche 150 bis 300 Minuten Bewegung mit mittlerer Intensität oder 75 bis 150 Minuten mit hoher Intensität. Auch Bewegung im Alltag zählt, zum Beispiel Treppensteigen. Die Zeit kann über die Woche verteilt werden. Die Empfehlung ist allgemein und ersetzt keine persönliche medizinische Beratung.",
+    scriptAr: "توصي منظمة الصحة العالمية البالغين 150 إلى 300 دقيقة أسبوعياً من الحركة متوسطة الشدة، أو 75 إلى 150 دقيقة من الحركة الشديدة. وتُحسب الحركة اليومية أيضاً، مثل صعود الدرج. ويمكن توزيع الوقت على أيام الأسبوع. هذه توصية عامة وليست بديلاً عن المشورة الطبية الشخصية.",
     questions: [
-      { de: "Was empfehlen Ärzte?", ar: "بماذا يوصي الأطباء؟", options: [
-        { text: "Mindestens 30 Minuten aktiv pro Tag", ar: "النشاط 30 دقيقة يومياً على الأقل", correct: true, explanation: "نعم — الحلقة تقول: «Ärzte empfehlen, mindestens 30 Minuten pro Tag aktiv zu sein.»." },
-        { text: "Weniger als 10 Minuten pro Tag", ar: "أقل من 10 دقائق يومياً", correct: false, explanation: "لا — ليست أقلّ من عشر دقائق؛ والتوصية «mindestens 30 Minuten pro Tag aktiv zu sein»." },
-        { text: "Kein Sport", ar: "لا رياضة", correct: false, explanation: "لا — لم يُنهَ عن الرياضة؛ فالنصّ يقول «Sie essen mehr Gemüse und treiben regelmäßig Sport»." },
+      { de: "Was empfiehlt die WHO Erwachsenen?", ar: "بماذا توصي منظمة الصحة العالمية للبالغين؟", options: [
+        { text: "150 bis 300 Minuten moderat oder 75 bis 150 Minuten intensiv pro Woche", ar: "أسبوعياً 150 إلى 300 دقيقة متوسطة الشدة أو 75 إلى 150 دقيقة شديدة الشدة", correct: true, explanation: "نعم — يذكر النص: «150 bis 300 Minuten Bewegung mit mittlerer Intensität oder 75 bis 150 Minuten mit hoher Intensität»." },
+        { text: "Nur Bewegung im Fitnessstudio, nicht als Alltagstätigkeit", ar: "الحركة في النادي الرياضي فقط، لا النشاط اليومي", correct: false, explanation: "لا — يقول النص «Auch Bewegung im Alltag zählt, zum Beispiel Treppensteigen»؛ فلا يحصر الحركة في Fitnessstudio." },
+        { text: "Treppensteigen zählt nicht als körperliche Bewegung im Alltag", ar: "صعود الدرج لا يُعد حركة بدنية يومية", correct: false, explanation: "لا — يقول النص: «Auch Bewegung im Alltag zählt, zum Beispiel Treppensteigen»." },
       ]},
-      { de: "Was ist ein Beispiel für eine kleine Änderung?", ar: "ما مثال على تغيير صغير؟", options: [
-        { text: "Die Treppe statt des Aufzugs nehmen", ar: "أخذ الدرج بدل المصعد", correct: true, explanation: "نعم — الحلقة تقول: «Zum Beispiel die Treppe statt des Aufzugs zu nehmen.»." },
-        { text: "Öfter mit dem Auto fahren", ar: "قيادة السيارة أكثر", correct: false, explanation: "لا — السيارة عكس المثال المذكور؛ والتغيير الصغير «die Treppe statt des Aufzugs zu nehmen»." },
-        { text: "Mehr Fastfood am Abend essen", ar: "أكل وجبات سريعة أكثر", correct: false, explanation: "لا — لم تُذكر وجبات سريعة Fastfood؛ والاتجاه «Sie essen mehr Gemüse»." },
+      { de: "Was zählt laut WHO als Bewegung im Alltag?", ar: "ما الذي يُحسب حركةً في الحياة اليومية وفقاً لمنظمة الصحة العالمية؟", options: [
+        { text: "Treppensteigen", ar: "صعود الدرج", correct: true, explanation: "نعم — يقول النص: «Auch Bewegung im Alltag zählt, zum Beispiel Treppensteigen.»" },
+        { text: "Mit dem Auto fahren", ar: "قيادة السيارة", correct: false, explanation: "لا — لا يذكر النص السيارة؛ بل يقول: «Auch Bewegung im Alltag zählt, zum Beispiel Treppensteigen.»" },
+        { text: "Fastfood am Abend", ar: "وجبات سريعة مساءً", correct: false, explanation: "لا — لا يتناول النص الطعام؛ بل يقول: «Auch Bewegung im Alltag zählt, zum Beispiel Treppensteigen.»" },
       ]},
     ],
   },
@@ -492,6 +498,7 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     emoji: "⚖️",
     script: "Die Work-Life-Balance ist heute ein zentrales Thema. Viele Arbeitnehmer klagen über Überstunden und ständige Erreichbarkeit. Experten betonen, dass Erholung für die Produktivität unerlässlich ist. Unternehmen reagieren mit flexiblen Arbeitszeiten. Dennoch bleibt die Frage: Wie findet man die richtige Balance? Die Antwort ist individuell und hängt von den eigenen Werten ab.",
     scriptAr: "التوازن بين العمل والحياة موضوع محوري اليوم. يشكو موظفون كثيرون من الساعات الإضافية والاتصال الدائم. يؤكد الخبراء أن الراحة ضرورية للإنتاجية. تستجيب الشركات بساعات عمل مرنة. ومع ذلك يبقى السؤال: كيف يجد المرء التوازن الصحيح؟ الجواب فردي ويعتمد على القيم الشخصية.",
+    contentNoteAr: "هذا نص تدريبي مبسّط، لا تقرير إحصائي. عبارتا «موظفون كثيرون» و«يؤكد الخبراء» تعميمان غير منسوبين في الحلقة إلى مصدر محدد، ولا تثبت المصادر المشار إليها جميع ادعاءاتها.",
     questions: [
       { de: "Worüber klagen viele Arbeitnehmer?", ar: "ممَّ يشكو كثير من الموظفين؟", options: [
         { text: "Über Überstunden und ständige Erreichbarkeit", ar: "من الساعات الإضافية والاتصال الدائم", correct: true, explanation: "نعم — الحلقة تقول: «Viele Arbeitnehmer klagen über Überstunden und ständige Erreichbarkeit.»." },
@@ -512,18 +519,19 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     title: "Migration und Identität",
     titleAr: "الهجرة والهوية",
     emoji: "🪪",
-    script: "Migration prägt die deutsche Gesellschaft seit Jahrzehnten. Menschen mit Migrationshintergrund bringen neue Perspektiven in Wirtschaft und Kultur. Gleichzeitig kämpfen viele mit Identitätsfragen: Wo gehören sie hin? Experten betonen, dass hybride Identitäten keine Schwäche sind, sondern eine Bereicherung. Die Gesellschaft profitiert von Vielfalt, wenn sie Offenheit und Respekt praktiziert.",
-    scriptAr: "تشكل الهجرة المجتمع الألماني منذ عقود. يقدم ذوو الخلفية الهجرية منظورات جديدة في الاقتصاد والثقافة. في نفس الوقت يكافح كثيرون مع أسئلة الهوية: إلى أين ينتمون؟ يؤكد الخبراء أن الهويات الهجينة ليست ضعفاً بل إثراءً. يستفيد المجتمع من التنوع عندما يمارس الانفتاح والاحترام.",
+    script: "In dieser Übungsfolge erzählt Samira von ihrem Umzug nach Bremen. Am Anfang fühlte sie sich oft unsicher und fragte sich, wo sie sich zu Hause fühlte. In ihrem neuen Team brachte sie ihre Erfahrungen ein. Mit der Zeit fand sie Menschen, bei denen sie sich wohlfühlte. Für Samira gehört beides zu ihrer Identität: Erinnerungen an früher und ihr Leben heute. Andere Menschen erleben Zugehörigkeit anders.",
+    scriptAr: "تحكي سميرة في هذه الحلقة التدريبية عن انتقالها إلى بريمن. في البداية شعرت بعدم الأمان كثيراً وتساءلت أين شعرت بأنها في بيتها. وفي فريقها الجديد شاركت خبراتها. ومع الوقت وجدت أشخاصاً ارتاحت إليهم. وبالنسبة إلى سميرة، تتألف هويتها من الأمرين: ذكريات الماضي وحياتها اليوم. وقد يختبر أشخاص آخرون الانتماء على نحو مختلف.",
+    contentNoteAr: "مشهد تدريبي خيالي عن تجربة سميرة الفردية، وليس وصفاً إحصائياً أو بحثاً عن الهجرة والهوية. التسجيل الصوتي لم يُحدّث أو يُطابق مع النص في هذه المراجعة؛ ففحص الإشارة لا يثبت التطابق.",
     questions: [
-      { de: "Was bringen Menschen mit Migrationshintergrund?", ar: "ماذا يقدم ذوو الخلفية الهجرية؟", options: [
-        { text: "Neue Perspektiven", ar: "منظورات جديدة", correct: true, explanation: "نعم — الحلقة تقول: «Menschen mit Migrationshintergrund bringen neue Perspektiven in Wirtschaft und Kultur.»." },
-        { text: "Nur Probleme", ar: "مشاكل فقط", correct: false, explanation: "لا — ليست مشاكل فقط Probleme؛ بل «neue Perspektiven in Wirtschaft und Kultur»." },
-        { text: "Weniger Vielfalt", ar: "تنوعاً أقل", correct: false, explanation: "لا — ليس تنوّعاً أقلّ؛ فالمجتمع يستفيد منه: «Die Gesellschaft profitiert von Vielfalt»." },
+      { de: "Wie fühlte sich Samira am Anfang?", ar: "كيف شعرت سميرة في البداية؟", options: [
+        { text: "Oft unsicher", ar: "بعدم الأمان كثيراً", correct: true, explanation: "نعم — يقول النص: «Am Anfang fühlte sie sich oft unsicher»." },
+        { text: "Immer gelangweilt", ar: "بالملل دائماً", correct: false, explanation: "لا — النص يقول «Am Anfang fühlte sie sich oft unsicher»؛ ولا يذكر Langeweile." },
+        { text: "Sofort zu Hause", ar: "بأنها في بيتها فوراً", correct: false, explanation: "لا — النص يقول إنها «fragte sich, wo sie sich zu Hause fühlte»؛ فلا يقول إنها شعرت فوراً بأنها في بيتها." },
       ]},
-      { de: "Was betonen Experten über hybride Identitäten?", ar: "ماذا يؤكد الخبراء عن الهويات الهجينة؟", options: [
-        { text: "Sie sind eine Bereicherung", ar: "إنها إثراء", correct: true, explanation: "نعم — الحلقة تقول: «hybride Identitäten keine Schwäche sind, sondern eine Bereicherung.»." },
-        { text: "Sie sind eine Schwäche", ar: "إنها ضعف", correct: false, explanation: "لا — ليست ضعفاً؛ فالنصّ ينفي ذلك صراحةً: «hybride Identitäten keine Schwäche sind, sondern eine Bereicherung»." },
-        { text: "Sie sind selten", ar: "إنها نادرة", correct: false, explanation: "لا — لم تُوصف بالندرة selten؛ والتركيز على أنها «eine Bereicherung»." },
+      { de: "Was gehört für Samira zu ihrer Identität?", ar: "ما الذي يشكل هوية سميرة بحسب تجربتها؟", options: [
+        { text: "Frühere Erinnerungen und ihr heutiges Leben", ar: "ذكريات الماضي وحياتها اليوم", correct: true, explanation: "نعم — يقول النص: «Für Samira gehört beides zu ihrer Identität: Erinnerungen an früher und ihr Leben heute»." },
+        { text: "Ihr Team und ihr Beruf im neuen Umfeld", ar: "فريقها وعملها في محيطها الجديد", correct: false, explanation: "لا — خلاصة النص هي «Erinnerungen an früher und ihr Leben heute»؛ ولا يحصر الهوية في Team أو Beruf." },
+        { text: "Nur ihr früherer Wohnort und ihre Sprache", ar: "مكان إقامتها السابق ولغتها فقط", correct: false, explanation: "لا — يقول النص «Erinnerungen an früher und ihr Leben heute»؛ ولا يحصر الهوية في Wohnort أو Sprache." },
       ]},
     ],
   },
@@ -557,12 +565,12 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     titleAr: "الشقة الجديدة",
     emoji: "🏠",
     script: "Meine Familie hat eine neue Wohnung gefunden. Sie liegt im dritten Stock und hat drei Zimmer. Die Küche ist modern und das Bad ist neu. Die Miete ist ein bisschen hoch, aber die Lage ist perfekt: Die U-Bahn ist nur fünf Minuten entfernt. Wir sind sehr zufrieden.",
-    scriptAr: "وجدت عائلتي شقة جديدة. تقع في الطابق الثالث وتحتوي ثلاث غرف. المطبخ حديث والحمام جديد. الإيجار مرتفع قليلاً لكن الموقع مثالي: مترو الأنفاق على بعد خمس دقائق فقط. نحن راضون جداً.",
+    scriptAr: "وجدت عائلتي شقة جديدة. تقع في الطابق الثالث فوق الأرضي وتحتوي على ثلاث غرف. المطبخ حديث والحمام جديد. الإيجار مرتفع قليلاً لكن الموقع مثالي: محطة المترو تبعد خمس دقائق فقط. نحن راضون جداً.",
     questions: [
       { de: "In welchem Stock liegt die Wohnung?", ar: "في أي طابق تقع الشقة؟", options: [
-        { text: "Im dritten Stock", ar: "في الطابق الثالث", correct: true, explanation: "نعم — الحلقة تقول: «Sie liegt im dritten Stock.»." },
-        { text: "Im ersten Stock", ar: "في الطابق الأول", correct: false, explanation: "لا — ليس الطابق الأول؛ بل «Sie liegt im dritten Stock»." },
-        { text: "Im fünften Stock", ar: "في الطابق الخامس", correct: false, explanation: "لا — لم يُذكر الطابق الخامس fünften؛ والشقة «im dritten Stock»." },
+        { text: "Im dritten Stock", ar: "في الطابق الثالث فوق الأرضي", correct: true, explanation: "نعم — الحلقة تقول: «Sie liegt im dritten Stock.»." },
+        { text: "Im ersten Stock", ar: "في الطابق الأول فوق الأرضي", correct: false, explanation: "لا — ليس الطابق الأول؛ بل «Sie liegt im dritten Stock»." },
+        { text: "Im fünften Stock", ar: "في الطابق الخامس فوق الأرضي", correct: false, explanation: "لا — لم يُذكر الطابق الخامس fünften؛ والشقة «im dritten Stock»." },
       ]},
       { de: "Wie weit ist die U-Bahn?", ar: "كم تبعد محطة المترو؟", options: [
         { text: "Fünf Minuten", ar: "خمس دقائق", correct: true, explanation: "نعم — الحلقة تقول: «Die U-Bahn ist nur fünf Minuten entfernt.»." },

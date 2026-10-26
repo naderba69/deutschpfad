@@ -15,7 +15,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   r2: { options: ["wurde", "wird", "ist", "war"], key: "wurde" },
   e1: { options: ["ist", "wird", "kann", "wurde"], key: "ist" },
   e2: { options: ["kann", "ist", "wird", "wurde"], key: "kann" },
-  e8: { options: ["الدورة الاقتصادية", "الأسهم في البورصة", "المبيعات السنوية", "الاستثمار المباشر"], key: "الدورة الاقتصادية" },
+  e8: { options: ["الدورة الاقتصادية", "الأسهم في البورصة", "حجم المبيعات/الإيرادات", "الاستثمار المباشر"], key: "الدورة الاقتصادية" },
   e14: { options: ["الانتعاش", "الركود", "التضخم", "الميزانية"], key: "الانتعاش" },
   m1: { options: ["ist", "wird", "hat", "wurde"], key: "ist" },
   m2: { options: ["sich", "mich", "dich", "uns"], key: "sich" },
@@ -25,6 +25,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     key: "das Problem der Inflation",
   },
   q3: { options: ["der Vertrag", "der Brief", "die Rechnung", "der Bericht"], key: "der Vertrag" },
+  q4: { options: ["Ein längerer Streik im großen Hafen", "Ein erheblicher Engpass bei Rohstoffen", "Ein technischer Ausfall der Computersysteme", "Eine kurzfristige Änderung der Zollregeln"], key: "Ein längerer Streik im großen Hafen" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -69,7 +70,7 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
 
 const expectedErrorCorrections: Record<string, { wrongWord: string; correctWord: string; options: string[] }> = {
   e5: { wrongWord: "öffnen", correctWord: "geöffnet", options: ["geöffnet", "öffnen", "worden", "wird"] },
-  e9: { wrongWord: "öffnenbar", correctWord: "öffenbar", options: ["öffenbar", "öffnenbar", "öffnbar", "geöffnetbar"] },
+  e9: { wrongWord: "durchfühbar", correctWord: "durchführbar", options: ["durchführbar", "durchfühbar", "durchführenbar", "durchführlich"] },
   e11: {
     wrongWord: "gesenkt",
     correctWord: "gesenkt werden",
@@ -81,7 +82,7 @@ const expectedErrorCorrections: Record<string, { wrongWord: string; correctWord:
 const expectedMatching: Record<string, { left: string; right: string }[]> = {
   e3: [
     { left: "die Wirtschaft", right: "الاقتصاد" },
-    { left: "der Umsatz", right: "المبيعات" },
+    { left: "der Umsatz", right: "حجم المبيعات/الإيرادات" },
     { left: "die Inflation", right: "التضخم" },
     { left: "die Aktien", right: "الأسهم" },
   ],
@@ -118,7 +119,8 @@ function allTasks(): Exercise[] {
 }
 
 function task(id: string): Exercise {
-  const value = allTasks().find((item) => item.id === id);
+  const value = allTasks().find((item) => item.id === id)
+    ?? lessonB202.reading?.questions.find((item) => item.id === id);
   if (!value) throw new Error(`B2-02 task ${id} is missing`);
   return value;
 }
@@ -163,11 +165,16 @@ describe("B2-02 lesson content audit", () => {
   });
 
   it("uses only evaluable performances as goals, each all-correct", () => {
-    expect(lessonB202.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3"]);
+    expect(lessonB202.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4", "z5"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e5", "w1", "w2", "m1", "m4"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e2", "e6", "e7", "e9", "w3", "w4", "m2", "m3", "m5"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["e3", "e8"]);
+    expect(goal("z5").evidence?.exerciseIds).toEqual(["rq1", "rq2", "rq3", "rq4"]);
+    expect(goal("z5").evidence?.taskIds).toEqual([
+      "reading:read-b2-02:rq1", "reading:read-b2-02:rq2",
+      "reading:read-b2-02:rq3", "reading:read-b2-02:rq4",
+    ]);
     for (const item of lessonB202.lernziele) {
       expect(item.evidence?.completion, `${item.id} completion`).toBe("all-correct");
       for (const exerciseId of item.evidence?.exerciseIds ?? []) {
@@ -194,8 +201,9 @@ describe("B2-02 lesson content audit", () => {
   it("maps listening evidence to transcript-free task IDs only", () => {
     expect(getListeningQuestionTaskId("b2-02", "l1", "q1", false)).toBe("listening:l1:q1");
     expect(getListeningQuestionTaskId("b2-02", "l2", "q3", false)).toBe("listening:l2:q3");
+    expect(getListeningQuestionTaskId("b2-02", "l3", "q4", false)).toBe("listening:l3:q4");
     expect(getListeningQuestionTaskId("b2-02", "l2", "q3", true)).toBe("listening-transcript:b2-02:l2:q3");
-    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"]);
+    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"]);
     const transcriptIds = lessonB202.lernziele.flatMap(
       (item) => item.evidence?.taskIds?.filter((taskId) => taskId.startsWith("listening-transcript:")) ?? [],
     );
@@ -401,10 +409,10 @@ describe("B2-02 lesson content audit", () => {
   it("does not present correct passive sentences as mistakes, and spells -bar adjectives per the dictionary", () => {
     const t1 = lessonB202.theory.find((block) => block.id === "t1");
     const wrongs = (t1?.commonMistakes ?? []).map((mistake) => mistake.wrong);
-    expect(wrongs).not.toContain("Die Tür ist geöffnet worden. (عملية بدل حالة)");
+    expect(wrongs).not.toContain("اعتبار ist geöffnet worden صيغةً للحالة فقط");
     const { mediation: _mediation, ...rest } = lessonB202;
     const text = JSON.stringify(rest);
-    expect(text).not.toMatch(/öffnbar(?!")/);
+    expect(text).not.toMatch(/öffenbar|öffnenbar|öffnbar/);
     expect(text).not.toMatch(/\d+\s*%|99%|رابع أكبر/);
     expect(text).not.toMatch(/Goethe|Prüfungsteil|نسبة النجاح|mock|امتحان B2/);
   });
@@ -412,7 +420,9 @@ describe("B2-02 lesson content audit", () => {
   it("keeps the economic register honest in the mediation task", () => {
     const mediation = lessonB202.mediation?.[0];
     expect(mediation?.type).toBe("summarize-de-to-ar");
+    expect(mediation?.sourceDe).toContain("Fiktives Übungsbeispiel");
     expect(mediation?.sourceDe).toContain("2,5 Prozent");
+    expect(mediation?.titleAr).toContain("خيالياً");
     expect(mediation?.keyPointsAr?.length ?? 0).toBeGreaterThanOrEqual(3);
     const otherMediations = (lessonB202.mediation ?? []).slice(1).map((item) => item.type);
     expect(otherMediations).toEqual([]);
@@ -455,8 +465,10 @@ describe("B2-02 lesson content audit", () => {
     const reading = lessonB202.reading;
     expect(reading?.id).toBe("read-b2-02");
     expect(reading?.textType).toBe("bericht");
-    expect(reading?.titleDe).toBe("Ein vorsichtiger Herbst: Der Bericht der Notenbank");
-    expect(reading?.titleAr).toBe("خريف حذر: تقرير البنك المركزي");
+    expect(reading?.titleDe).toBe("Ein vorsichtiger Herbst: Ein fiktiver Zentralbankbericht");
+    expect(reading?.titleAr).toBe("خريف حذر: تقرير خيالي لبنك مركزي");
+    expect(reading?.paragraphs[0]).toContain("Dieser fiktive Übungstext");
+    expect(reading?.paragraphsAr[0]).toContain("هذا نص تدريبي خيالي");
     expect(reading?.paragraphs).toHaveLength(6);
     expect(reading?.paragraphsAr).toHaveLength(6);
     const text = reading!.paragraphs.join(" ").toLowerCase();
@@ -510,8 +522,8 @@ describe("B2-02 lesson content audit", () => {
   it("keeps the interaction best reply as one complete sentence", () => {
     const rounds = lessonB202.interaction?.[0].rounds as unknown as { options: { de: string; best?: boolean }[] }[];
     expect(rounds.map((round) => round.options.find((option) => option.best)?.de)).toEqual([
-      "Während die Globalisierung den Handel und den Austausch fördert, vergrößert sie gleichzeitig die Ungleichheit zwischen Ländern.",
-      "Meiner Ansicht nach brauchen wir faire Handelsregeln und Investitionen in Bildung. Je mehr Chancengleichheit, desto gerechter die Globalisierung.",
+      "Während der Handel durch klare Regeln gefördert werden kann, müssen soziale Folgen berücksichtigt werden.",
+      "Meiner Ansicht nach müssen faire Handelsregeln ausgearbeitet werden; außerdem kann in Bildung investiert werden. Das könnte Chancen gerechter verteilen.",
     ]);
     for (const round of rounds) {
       expect(round.options.filter((option) => option.best)).toHaveLength(1);
@@ -519,10 +531,21 @@ describe("B2-02 lesson content audit", () => {
     }
   });
 
+  it("counts each reading question toward the explicit reading goal only before revealing the text", () => {
+    const events = ["rq1", "rq2", "rq3", "rq4"].map((id) => goalEvent("z5", id));
+    expect(getGoalEvidenceStatus(goal("z5"), lessonB202.id, [])).toBe("pending");
+    expect(getGoalEvidenceStatus(goal("z5"), lessonB202.id, events)).toBe("evidenced");
+    expect(goal("z5").evidence?.taskIds?.every((id) => id.startsWith("reading:read-b2-02:"))).toBe(true);
+  });
+
   it("keeps the meta row aligned with the lesson title", () => {
     const meta = lessonMetaList.find((candidate) => candidate.id === "b2-02");
     expect(meta?.titleAr).toBe(lessonB202.titleAr);
     expect(meta?.titleDe).toBe(lessonB202.titleDe);
+    expect(meta?.summary).toBe(lessonB202.summary);
+    expect(meta?.summary).toContain("الأفعال الناقصة");
+    expect(meta?.summary).not.toContain("الأفعال الشرطية");
+    expect(goal("z1").ar).toContain("تدريبية قصيرة");
   });
 
   it("counts only correct, mapped exercise results toward goals", () => {

@@ -45,9 +45,9 @@ describe("A2-09 lesson audit", () => {
     expect(ids(lessonA209.miniTest)).toEqual(["m1", "m2", "m3", "m4", "m5"]);
     expect(ids(lessonA209.writing)).toEqual(["w1", "w2", "w3", "w4"]);
     expect(ids(lessonA209.reading?.questions ?? [])).toEqual(["rq1", "rq2", "rq3", "rq4"]);
-    expect(ids(lessonA209.listening.questions)).toEqual(["q1", "q2", "q3"]);
-    expect(allTasks()).toHaveLength(33);
-    expect(new Set(allTasks().map((item) => item.id)).size).toBe(33);
+    expect(ids(lessonA209.listening.questions)).toEqual(["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9"]);
+    expect(allTasks()).toHaveLength(39);
+    expect(new Set(allTasks().map((item) => item.id)).size).toBe(39);
     expect(lessonA209.flashcards).toHaveLength(15);
     expect(lessonA209.pronunciation.items).toHaveLength(6);
     expect(lessonA209.pronunciation.shadowing).toHaveLength(4);

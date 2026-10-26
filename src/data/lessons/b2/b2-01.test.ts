@@ -1,7 +1,10 @@
 import { describe, expect, it } from "vitest";
 
+import { DAILY_DIALOGUES } from "@/data/dialogues";
 import { lessonB201 } from "@/data/lessons/b2/b2-01";
 import { LESSON_META } from "@/data/lessons/meta";
+import { LESSON_RELATED_RESOURCES } from "@/data/lessons/related-resources";
+import { INTERACTIVE_STORIES } from "@/data/stories";
 import { evaluateExercise } from "@/lib/lesson/exercise-engine";
 import { getGoalEvidenceStatus } from "@/lib/lesson/goal-evidence";
 import { getListeningQuestionTaskId } from "@/lib/lesson/listening-evidence";
@@ -32,6 +35,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     ],
     key: "Die Forschung werde weitergehen",
   },
+  q4: { options: ["Die Studie habe zweihundert Personen einbezogen", "Die Studie habe hundertzwanzig Personen einbezogen", "Die Studie habe dreihundert Personen einbezogen", "Die Studie habe fünfhundert Personen einbezogen"], key: "Die Studie habe zweihundert Personen einbezogen" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -43,6 +47,7 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
       ["werde", "wird", "würde"],
     ],
   },
+  e9: { correct: ["seien"], options: [["seien", "sind", "ist", "wären"]] },
   e11: {
     correct: ["muss", "dürfte", "könnte"],
     options: [
@@ -76,10 +81,9 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
 };
 
 const expectedErrorCorrections: Record<string, { wrongWord: string; correctWord: string; options: string[] }> = {
-  e5: { wrongWord: "hat", correctWord: "habe", options: ["habe", "hat", "hätte", "haben"] },
-  e9: { wrongWord: "ist", correctWord: "seien", options: ["seien", "ist", "sind", "wären"] },
-  e13: { wrongWord: "hätte", correctWord: "habe", options: ["habe", "hätte", "hat", "haben"] },
-  m4: { wrongWord: "ist", correctWord: "sei", options: ["sei", "ist", "wäre", "seid"] },
+  e5: { wrongWord: "hab", correctWord: "habe", options: ["habe", "hat", "hätte", "haben"] },
+  e13: { wrongWord: "hab", correctWord: "habe", options: ["habe", "hätte", "hat", "haben"] },
+  m4: { wrongWord: "bist", correctWord: "sei", options: ["sei", "bist", "wäre", "seid"] },
 };
 
 const expectedMatching: Record<string, { left: string; right: string }[]> = {
@@ -176,7 +180,7 @@ describe("B2-01 lesson content audit", () => {
 
   it("uses only evaluable performances as goals, each all-correct", () => {
     expect(lessonB201.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e2", "e5", "e6", "e7", "m1", "m2", "m4", "m5"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["w1", "w2"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["e11", "e12"]);
@@ -206,8 +210,9 @@ describe("B2-01 lesson content audit", () => {
   it("maps listening evidence to transcript-free task IDs only", () => {
     expect(getListeningQuestionTaskId("b2-01", "l1", "q1", false)).toBe("listening:l1:q1");
     expect(getListeningQuestionTaskId("b2-01", "l2", "q3", false)).toBe("listening:l2:q3");
+    expect(getListeningQuestionTaskId("b2-01", "l3", "q4", false)).toBe("listening:l3:q4");
     expect(getListeningQuestionTaskId("b2-01", "l1", "q1", true)).toBe("listening-transcript:b2-01:l1:q1");
-    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"]);
+    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"]);
     const transcriptIds = lessonB201.lernziele.flatMap(
       (item) => item.evidence?.taskIds?.filter((taskId) => taskId.startsWith("listening-transcript:")) ?? [],
     );
@@ -291,7 +296,7 @@ describe("B2-01 lesson content audit", () => {
     }
   });
 
-  it("rejects the present tense wherever the indirect speech demands Konjunktiv I", () => {
+  it("uses clearly non-standard verb forms as error-correction targets", () => {
     for (const [id, expected] of Object.entries(expectedErrorCorrections)) {
       const exercise = task(id);
       if (exercise.type !== "error-correction") throw new Error(`${id} is not error-correction`);
@@ -302,6 +307,21 @@ describe("B2-01 lesson content audit", () => {
       expect(exercise.wrongSentence, `${id}`).not.toMatch(/habe|sei|seien|könne|werde/);
       expect(expected.correctWord, `${id} ليس خطأ`).not.toBe(expected.wrongWord);
     }
+  });
+
+  it("does not teach contextually possible reported-speech forms as universally wrong", () => {
+    const mistakes = JSON.stringify([
+      lessonB201.theory,
+      lessonB201.practiceBank,
+      lessonB201.miniTest,
+      lessonB201.fehlerUndTipps,
+    ]);
+    expect(mistakes).not.toContain("Er sagt, er hat keine Zeit. (مضارع بدل Konjunktiv I)");
+    expect(mistakes).not.toContain("Sie sagt, sie hätte morgen Zeit.");
+    expect(JSON.stringify(lessonB201.theory[0])).toContain("Indikativ");
+    expect(JSON.stringify(lessonB201.theory[0])).toContain("dass");
+    expect(JSON.stringify(lessonB201.theory[0])).toContain("er habe keine Zeit");
+    expect(JSON.stringify(lessonB201.theory[0])).toContain("er keine Zeit habe");
   });
 
   it("checks the accepted answers of every transformation", () => {
@@ -315,10 +335,11 @@ describe("B2-01 lesson content audit", () => {
     }
   });
 
-  it("demands Konjunktiv I — not Konjunktiv II — in every indirect-speech transformation", () => {
+  it("explicitly requests Konjunktiv I in each focused transformation task", () => {
     for (const id of expectedTransformations) {
       const exercise = task(id);
       if (exercise.type !== "transformation") throw new Error(`${id} is not transformation`);
+      expect(exercise.instructionAr).toMatch(/Konjunktiv I/);
       for (const answer of exercise.acceptedAnswers ?? []) {
         expect(answer, `${id} صيغة النقل`).toMatch(/habe|sei/);
         expect(answer, `${id} لا تُقبل صيغة الشرط`).not.toMatch(/hätte|wäre/);
@@ -456,6 +477,8 @@ describe("B2-01 lesson content audit", () => {
     expect(reading?.titleDe).toBe("Zwölf Wochen für ein Experiment");
     expect(reading?.titleAr).toBe("اثنا عشر أسبوعاً من أجل تجربة");
     expect(reading?.paragraphs).toHaveLength(5);
+    expect(reading?.paragraphs[0]).toMatch(/fiktives Übungsbeispiel/i);
+    expect(reading?.paragraphsAr[0]).toMatch(/خيالي/);
     expect(reading?.paragraphsAr).toHaveLength(5);
     const text = reading!.paragraphs.join(" ").toLowerCase();
     expect(text.split(/\s+/).filter(Boolean).length, "كلمات القراءة").toBeGreaterThanOrEqual(320);
@@ -505,6 +528,26 @@ describe("B2-01 lesson content audit", () => {
     }
   });
 
+  it("keeps linked B2-01 resources fictional and correctly scoped", () => {
+    const linked = LESSON_RELATED_RESOURCES["b2-01"];
+    expect(linked.map(({ id }) => id)).toEqual(["b2-forschungsprojekt", "b2-verhandlung", "b2-06-akademisch"]);
+    for (const id of ["b2-forschungsprojekt", "b2-verhandlung"]) {
+      const story = INTERACTIVE_STORIES.find((candidate) => candidate.id === id);
+      expect(story?.description, `${id} fiction label`).toMatch(/خيالية للتدريب/);
+    }
+    const academicDialogue = DAILY_DIALOGUES.find(({ id }) => id === "b2-06-akademisch");
+    expect(academicDialogue?.situation).toMatch(/تمثيلي/);
+    expect(LESSON_RELATED_RESOURCES["b2-01"].some(({ id }) => id === "b2-01-gehaltsverhandlung")).toBe(false);
+    expect(LESSON_RELATED_RESOURCES["b2-06"].some(({ id }) => id === "b2-01-gehaltsverhandlung")).toBe(true);
+  });
+
+  it("labels the medical listening scenario as fictional and not medical advice", () => {
+    const item = lessonB201.listening?.items.find(({ id }) => id === "l3");
+    expect(item?.audioNoteAr).toMatch(/خيالي/);
+    expect(item?.audioNoteAr).toMatch(/دليلاً علمياً أو توصية طبية/);
+    expect(item?.audioNoteAr).toMatch(/TTS/);
+  });
+
   it("uses no invented probability percentages or unsourced statistics", () => {
     const text = JSON.stringify(lessonB201) + JSON.stringify(lessonMetaList.find((meta) => meta.id === "b2-01"));
     expect(text).not.toMatch(/\d+\s*%/);
@@ -515,9 +558,9 @@ describe("B2-01 lesson content audit", () => {
   it("keeps the interaction best reply as one complete sentence", () => {
     const rounds = lessonB201.interaction?.[0].rounds as unknown as { options: { de: string; best?: boolean }[] }[];
     expect(rounds.map((round) => round.options.find((option) => option.best)?.de)).toEqual([
-      "Das stimmt zwar, aber gleichzeitig entstehen völlig neue Berufe, die mehr Qualifikation verlangen.",
-      "Zum Beispiel im Bereich künstliche Intelligenz und Datenschutz. Je mehr Technologie, desto mehr Fachkräfte werden gebraucht.",
-      "Meiner Ansicht nach sollte der Staat in Umschulungen investieren, obwohl das kurzfristig teuer ist. Langfristig lohnt es sich für die ganze Gesellschaft.",
+      "Eine einzelne Untersuchung ist noch kein allgemeiner Beweis, deshalb sollten andere Gruppen die Ergebnisse überprüfen.",
+      "Das Forschungsteam berichtet, die kurzen Einheiten hätten der Gruppe geholfen, während die Ursache noch nicht vollständig geklärt sei.",
+      "Meiner Ansicht nach sollten wir weitere Untersuchungen abwarten, obwohl die ersten Hinweise interessant sind, bevor wir eine Empfehlung formulieren.",
     ]);
     for (const round of rounds) {
       expect(round.options.filter((option) => option.best)).toHaveLength(1);

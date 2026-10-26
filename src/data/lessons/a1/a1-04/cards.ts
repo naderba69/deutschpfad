@@ -90,19 +90,19 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
 export const mediation: NonNullable<Lesson["mediation"]> = [
         {
       id: "med-a1-04-1", type: "simplify-announcement",
-      titleAr: "بسّط إعلان شقة بالعربية لصديق",
-      sourceDe: "Wohnung zu vermieten: 2 Zimmer, 60 m², Küche und Bad, zentral gelegen. Miete: 600 Euro warm.",
+      titleAr: "بسّط إعلاناً تدريبياً افتراضياً لشقة بالعربية لصديق",
+      sourceDe: "Beispielanzeige: Wohnung zu vermieten: 2 Zimmer, 60 m², Küche und Bad, zentral gelegen. Miete: 600 Euro warm.",
       taskAr: "انقل الإعلان بالعربية لصديق يبحث عن سكن: عدد الغرف، المساحة، الموقع، والإيجار.",
-      modelAnswerAr: "«شقة للإيجار: غرفتان، 60 متراً مربعاً، مطبخ وحمام، في موقع مركزي. الإيجار 600 يورو شاملاً التدفئة والتكاليف الجانبية المذكورة في الإعلان.»",
-      keyPointsAr: ["نقلت عدد الغرف (2) والمساحة (60م²)", "ذكرت المطبخ والحمام والموقع المركزي", "نقلت الإيجار (600 يورو) ووضحت أن warm يشير إلى التدفئة وتكاليف جانبية بحسب الإعلان"],
+      modelAnswerAr: "«إعلان تدريبي افتراضي: شقة للإيجار، غرفتان، 60 متراً مربعاً، مطبخ وحمام، في موقع مركزي. الإيجار 600 يورو شاملاً التكاليف التي يحددها الإعلان؛ وهذا مبلغ المثال لا متوسط أسعار السوق.»",
+      keyPointsAr: ["نقلت عدد الغرف (2) والمساحة (60م²)", "ذكرت المطبخ والحمام والموقع المركزي", "نقلت الإيجار (600 يورو) مع توضيح أن معنى warm وتفاصيل التكاليف تتبع الإعلان؛ والسعر مثال لا متوسط سوق"],
     },
   ];
 
 export const interaction: NonNullable<Lesson["interaction"]> = [
     {
       id: "int-a1-04-1",
-      scenarioAr: "تتصل بصاحب شقة للاستفسار.",
-      scenarioDe: "Du rufst wegen einer Wohnung an.",
+      scenarioAr: "تتصل للاستفسار عن إعلان شقة تدريبي افتراضي.",
+      scenarioDe: "Du rufst wegen einer Beispielanzeige für eine Wohnung an.",
       strategyAr: "الاستراتيجية: السؤال عن تفاصيل الشقة والرد على الأسئلة.",
       rounds: [
         {

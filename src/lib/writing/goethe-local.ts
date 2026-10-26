@@ -475,4 +475,3 @@ async function getKnownWordDictionary(): Promise<Set<string>> {
   }
   return dictionary;
 }
-

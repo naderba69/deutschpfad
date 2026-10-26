@@ -12,11 +12,11 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "das ___ Kind (يلعب)",
       options: ["spielende", "gespielte", "spielend", "spielt"],
       correctIndex: 0,
-      explanation: "نشط مضارع → Partizip I: spielende.",
+      explanation: "فاعل الفعل spielen في المثال → Partizip I: spielende.",
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«gespielte» تعني معنى مفعولاً، والطفل هنا يلعب بنفسه.",
+        "«gespielte» تصف هنا شيئاً جرى لعبه، لا طفلاً يلعب بنفسه.",
         "«spielend» صيغة غير مستعملة هنا لوصف الطفل.",
         "«spielt» صيغة فعل مصرّف، ولا تناسب الصفة.",
       ],
@@ -28,7 +28,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "der ___ Brief (مكتوب)",
       options: ["geschriebene", "schreibende", "geschrieben", "schreibt"],
       correctIndex: 0,
-      explanation: "منتهي → Partizip II: geschriebene.",
+      explanation: "الرسالة هنا نتيجة الكتابة → Partizip II: geschriebene.",
       errorType: "grammar",
       optionExplanations: [
         undefined,
@@ -74,7 +74,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e6",
       type: "fill-blank",
       instructionAr: "اختر I أو II:",
-      template: "das ___ (kochen) Wasser [الماء الغالي] · das ___ (kochen) Wasser [الماء المغلي]",
+      template: "das ___ (kochen) Wasser [الماء الذي يغلي الآن] · das ___ (kochen) Wasser [الماء المغلي]",
       blanks: [
         { correct: "kochende", options: ["kochende", "gekochte"] },
         { correct: "gekochte", options: ["kochende", "gekochte"] },
@@ -89,7 +89,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       prompt: "Der Mann, der arbeitet → (بصفة)",
       acceptedAnswers: ["der arbeitende Mann", "der arbeitende Mann."],
       sampleAnswer: "der arbeitende Mann.",
-      explanation: "النسبية النشطة → Partizip I.",
+      explanation: "في الجملة الموصولة، الاسم هو فاعل lesen → Partizip I.",
       errorType: "grammar",
     },
     {
@@ -131,7 +131,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e11",
       type: "error-correction",
-      instructionAr: "افحص الصفة المشتقة: إن وجدت خطأً فاختر تصحيحه، وإلا فاخر «لا خطأ».",
+      instructionAr: "افحص الصفة المشتقة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Der viel gelesen Autor kommt morgen.",
       wrongWord: "gelesen Autor",
       correctWord: "gelesene Autor",
@@ -194,16 +194,16 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
 export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     mistakes: [
       { wrong: "das spielend Kind", right: "das spielende Kind", whyAr: "نهاية الصفة إلزامية." },
-      { wrong: "kochendes أم gekochtes؟", right: "kochendes = يغلي الآن. gekochtes = مغلي", whyAr: "الفرق: نشط/منتهي." },
+      { wrong: "kochendes أم gekochtes؟", right: "kochendes = يغلي الآن. gekochtes = مغلي", whyAr: "الفرق في هذا المثال بين فعل جارٍ ونتيجة/حالة." },
       { wrong: "المشارك لا يتصرف", right: "يتصرف كصفة كاملة: ein spielendes Kind", whyAr: "تصريف الصفات ينطبق." },
     ],
     eselsbruecken: [
-      "«-end = فاعل (يلعب)، ge-...t/en = مفعول (مكتوب)».",
+      "«-end» يظهر في Partizip I، و«ge-...t/en» شائع في Partizip II؛ يحدد الفعل والسياق المعنى المقصود.",
       "«المشارك صفة كاملة»: نفس نهايات الصفات.",
     ],
     culturalNote: {
       title: "الأدب الألماني",
       content:
-        "من غوته وشيلر إلى توماس مان وغراس — الأدب الألماني غني. «die Buchmesse» في فرانكفورت من أكبر معارض الكتب في العالم. ويقرأ كثير من الناس في القطار أو في الحديقة.",
+        "من غوته وشيلر إلى توماس مان وغراس — تضمّ التقاليد الأدبية الألمانية كتّاباً وشعراء معروفين. و«Frankfurter Buchmesse» معرض دولي للكتاب والنشر يُقام في فرانكفورت. لا تعني هذه المعلومة أن عادات القراءة واحدة لدى الجميع.",
     },
   };

@@ -15,6 +15,7 @@
     "audit:curriculum": "node scripts/curriculum-audit.mjs",
     "audit:content": "node scripts/content-audit.mjs",
     "audit:lessons": "node scripts/deep-lesson-audit.mjs",
+    "audit:exercises": "node scripts/exercise-integrity-audit.mjs",
     "audit:inventory": "node scripts/lessons-inventory.mjs",
     "audit:dom": "node scripts/dom-audit.mjs",
     "shots": "node scripts/screenshots.mjs",
@@ -36,7 +37,7 @@
     "clsx": "^2.1.1",
     "idb": "^8.0.3",
     "lucide-react": "^0.428.0",
-    "next": "^14.2.35",
+    "next": "^15.5.28",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -50,13 +51,25 @@
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
-    "eslint-config-next": "^14.2.35",
-    "postcss": "^8.4.39",
+    "eslint-config-next": "^15.5.28",
+    "postcss": "^8.5.26",
     "tailwindcss": "^3.4.6",
     "typescript": "^5.5.3",
     "vitest": "^4.1.10"
   },
   "engines": {
     "node": ">=18.17.0"
+  },
+  "overrides": {
+    "@rollup/plugin-terser": {
+      "serialize-javascript": "^7.1.4"
+    },
+    "next": {
+      "postcss": "8.5.26"
+    },
+    "tailwindcss": {
+      "postcss-nested": "7.0.2"
+    },
+    "postcss-selector-parser": "7.1.7"
   }
 }

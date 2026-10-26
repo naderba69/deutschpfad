@@ -33,9 +33,9 @@ export function WeeklyTest() {
   const levelPool: ("A1" | "A2" | "B1" | "B2")[] = ["A1", "A2", "B1", "B2"];
   const focusLevel = levelPool[seed % 4];
 
-  /* أسئلة: 60% من مستوى التركيز + 40% من بقية المستويات (خلط)، وخيارات كل سؤال
-     مخلوطة أيضاً — التصحيح بالفهرس، فالسحب والخلط يُثبَّتان لكل بذرة (useMemo)
-     حتى لا يتغيّر معنى إجابة سابقة عند إعادة التصيير. */
+  /* أسئلة: 60% من مستوى التركيز + 40% من بقية المستويات، مع خلط الخيارات.
+     نحسب العينة مرة لكل مستوى تركيز؛ useMemo يمنع تغيّرها عند إعادة التصيير
+     أثناء الإجابة، بينما يؤدي تغيّر المستوى الأسبوعي إلى اختيار عينة جديدة. */
   const questions = React.useMemo(() => {
     const focusQs = TEST_BANK.filter((q) => q.level === focusLevel);
     const otherQs = TEST_BANK.filter((q) => q.level !== focusLevel);
@@ -43,7 +43,7 @@ export function WeeklyTest() {
       ...sample(focusQs, Math.min(8, focusQs.length)),
       ...sample(otherQs, 6),
     ]);
-  }, [seed, focusLevel]);
+  }, [focusLevel]);
 
   return (
     <div className="space-y-4">

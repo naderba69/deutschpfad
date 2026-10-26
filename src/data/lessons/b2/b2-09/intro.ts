@@ -46,9 +46,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أفهم حديثاً في مقابلة عمل.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
-        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 وq2، وإلى l2 في q3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q2", "q3", "q4"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"],
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 وq2، وإلى l2 في q3 وl3 في q4، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {

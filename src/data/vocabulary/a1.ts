@@ -366,4 +366,3 @@ export function getA1VocabAll(): VocabEntry[] {
 export function getUnitVocab(unitId: string): VocabEntry[] {
   return A1_VOCAB[unitId] ?? [];
 }
-

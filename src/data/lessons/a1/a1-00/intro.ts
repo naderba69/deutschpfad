@@ -8,12 +8,12 @@ import type { Lesson } from "@/types/lesson";
 export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z1",
-      de: "Ich kann Wörter Buchstabe für Buchstabe mit dem deutschen Alphabet wiedergeben.",
-      ar: "أن أتهجّى كلمات حرفاً حرفاً بأسماء الحروف الألمانية.",
+      de: "Ich kann die Buchstabenfolge eines bekannten Namens wie Sami korrekt aufschreiben.",
+      ar: "أن أكتب تهجئة اسم مألوف مثل Sami بالحروف الصحيحة.",
       evidence: {
         exerciseIds: ["e10", "m3", "w1"],
         taskIds: ["practice:a1-00:e10", "mini-test:a1-00:m3", "writing:a1-00:w1"],
-        labelAr: "ترتيب حروف كلمتين (e10 وm3) وكتابة تهجئة مطلوبة حرفاً حرفاً (w1)، دون كشف الحل.",
+        labelAr: "ترتيب الحروف لتكوين كلمتين مألوفتين (e10 وm3)، وكتابة تسلسل حروف الاسم Sami كما يطلب w1؛ هذا يختبر معرفة التسلسل المكتوب ولا يقيس نطق أسماء الحروف شفهياً.",
         completion: "all-correct",
       },
     },
@@ -22,31 +22,31 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       de: "Ich kann die Umlaute ä, ö, ü in geschriebenen Wörtern erkennen und einsetzen.",
       ar: "أن أميّز الحروف المعلمة ä وö وü في الكلمات المكتوبة وأستعملها في موضعها.",
       evidence: {
-        exerciseIds: ["e5", "e14"],
-        taskIds: ["practice:a1-00:e5", "practice:a1-00:e14"],
-        labelAr: "إكمال الحرف المعلم في زوج الجمع (e5) وتصحيح جمع Mutter بالإمالة (e14). هذا قياس كتابي للتمييز، لا قياس لنطق الحرف.",
+        exerciseIds: ["e5", "e14", "e16"],
+        taskIds: ["practice:a1-00:e5", "practice:a1-00:e14", "practice:a1-00:e16"],
+        labelAr: "تمييز ü من u (e5)، وكتابة ä في جمع Mutter (e14)، والتمييز بين schön وschon لقياس ö (e16). هذا قياس كتابي للتمييز، لا قياس لنطق الحرف.",
         completion: "all-correct",
       },
     },
     {
       id: "z3",
-      de: "Ich kenne die wichtigsten Laute: ch, sch, ei, ie, eu, äu, sp, st, pf, tz, ß.",
-      ar: "أن أميّز الأصوات المركبة الأساسية (ei وie وeu وsch وpf وtz وß) في الكتابة.",
+      de: "Ich kann häufige Laut-Schreibungs-Muster in deutschen Wörtern erkennen: ch, sch, ei, ie, eu, äu, sp, st, pf, tz und ß.",
+      ar: "أن أتعرف أنماط الكتابة والنطق الشائعة في كلمات ألمانية: ch وsch وei وie وeu وäu وsp وst وpf وtz وß.",
       evidence: {
-        exerciseIds: ["e3", "e13", "e15", "m4"],
-        taskIds: ["practice:a1-00:e3", "practice:a1-00:e13", "practice:a1-00:e15", "mini-test:a1-00:m4"],
-        labelAr: "مطابقة المجموعات بأصواتها (e3 وe15)، وكتابة ß في موضعها (e13)، وتمييز ei من ie (m4). قياس للتمييز الكتابي وقراءة الأصوات، لا لنطقها بصوت المتعلم.",
+        exerciseIds: ["e3", "e12", "e13", "e15", "m4"],
+        taskIds: ["practice:a1-00:e3", "practice:a1-00:e12", "practice:a1-00:e13", "practice:a1-00:e15", "mini-test:a1-00:m4"],
+        labelAr: "مطابقة مجموعات الحروف وأمثلتها (e3 وe15)، والتمييز بين نطقي ch في مثال (e12)، وكتابة ß (e13)، وتمييز ei من ie (m4). يقيس التعرّف والكتابة، لا قدرة المتعلم على إنتاج النطق.",
         completion: "all-correct",
       },
     },
     {
       id: "z4",
-      de: "Ich kann ein kurzes Wort nach Diktat Buchstabe für Buchstabe schreiben.",
-      ar: "أن أكتب كلمة قصيرة تُملى عليّ حرفاً حرفاً.",
+      de: "Ich kann ein kurzes bekanntes Wort nach dem Hören korrekt schreiben.",
+      ar: "أن أكتب كلمة قصيرة مألوفة بعد سماعها.",
       evidence: {
-        exerciseIds: ["e8", "w1"],
-        taskIds: ["practice:a1-00:e8", "writing:a1-00:w1"],
-        labelAr: "كتابة كلمة مُملاة (e8) وكتابة تهجئة مطلوبة (w1)، دون كشف الحل.",
+        exerciseIds: ["e8"],
+        taskIds: ["practice:a1-00:e8"],
+        labelAr: "كتابة كلمة Katze بعد سماعها ككلمة كاملة في e8. هذه عيّنة إملاء واحدة ولا تقيس سماع أسماء الحروف متتابعة.",
         completion: "all-correct",
       },
     },
@@ -55,11 +55,11 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 /* 2) التمهيد */
 export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
     motivatingQuestionAr:
-      "هل تعلم أن الحرف V في الألمانية يُنطق مثل حرف F أحياناً؟ وأن W ليست كما في الإنجليزية؟ وأن الحرف S بين حرفين علة يُنطق Z؟ خمّن: كيف تنطق كلمة «Vogel» (طائر)؟",
+      "هل تعلم أن الحرف V في كلمة «Vogel» يُنطق مثل F، بينما W في «Wasser» يُنطق قريباً من V؟ وفي كلمات كثيرة مثل «lesen» يُنطق s بصوت قريب من z. خمّن: كيف تنطق كلمة «Vogel» (طائر)؟",
     motivatingQuestionDe: "Wie spricht man „Vogel“ aus?",
     contextAr:
-      "الألمانية لغة «صوتية جداً»: كل حرف تقريباً يُنطق دائماً بنفس الصوت (عكس الإنجليزية). لهذا إذا أتقنت الأبجدية والأصوات المركبة في هذا الدرس، ستستطيع قراءة أي كلمة ألمانية تراها لأول مرة — حتى لو لم تعرف معناها!",
-    contextDe: "Wer das Alphabet kann, kann fast alles lesen!",
+      "لكتابة الألمانية علاقة واضحة بالنطق، لكنّها ليست صوتية تماماً: قد يتغيّر نطق الحرف بحسب موضعه والكلمة واللهجة. تعلّم الأبجدية والأصوات المركبة هنا يساعدك على قراءة كلمات كثيرة جديدة، لكنه لا يضمن النطق الصحيح لكل كلمة؛ استمع إلى أمثلة موثوقة وتدرّب على الفروق الصوتية.",
+    contextDe: "Das Alphabet hilft beim Lesen neuer Wörter.",
     connectionToPreviousAr:
       "هذا درسك التأسيسي الأول — بعده مباشرة تتعلم التحيات والتعارف في الدرس A1-01.",
     activateVocabulary: [
@@ -83,7 +83,7 @@ export const review: NonNullable<Lesson["review"]> = [
       options: ["Deutsch", "Englisch", "Spanisch", "Französisch"],
       correctIndex: 0,
       optionExplanations: [undefined, "لا — «Englisch» لغةٌ أخرى؛ والمنصة هنا لتعليم الألمانية فجواب «Welche Sprache lernst du hier؟» هو «Deutsch».", "لا — «Spanisch» ليست لغة هذه المنصة؛ والجواب «Ich lerne Deutsch».", "لا — «Französisch» لغةٌ أخرى؛ والسؤال عمّا تتعلّمه هنا والجواب «Deutsch»."],
-      explanation: "Deutsch = الألمانية — هذه منصتك لإتقانها من A1 حتى B2.",
+      explanation: "Deutsch = الألمانية — هذه منصة لتعلّمها عبر مستويات A1 إلى B2.",
       errorType: "vocabulary",
     },
     {

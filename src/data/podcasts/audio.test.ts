@@ -27,6 +27,15 @@ const PUBLIC = path.join(process.cwd(), "public");
 const AUDIO_DIR = path.join(PUBLIC, PODCAST_AUDIO_BASE.replace(/^\//, ""));
 const clips = podcastAudioClips();
 
+describe("حلقة الشقة المرتبطة بـA2-04", () => {
+  it("توضح ترجمتها ترتيب الطابق الألماني وتتكلم عن محطة المترو لا نظام النقل", () => {
+    const episode = PODCASTS.find((item) => item.id === "p-a2-wohnung");
+    expect(episode?.script).toContain("im dritten Stock");
+    expect(episode?.scriptAr).toContain("الطابق الثالث فوق الأرضي");
+    expect(episode?.scriptAr).toContain("محطة المترو");
+  });
+});
+
 describe("صوت البودكاست — البيان مشتقّ من بيانات الحلقات", () => {
   it("نصّ كل مقطع هو `script` الحلقة نفسها حرفياً (لا نصّ موازٍ)", () => {
     expect(clips.length).toBeGreaterThan(0);
@@ -36,6 +45,13 @@ describe("صوت البودكاست — البيان مشتقّ من بيانا�
       expect(clip.text, `${clip.id}: النص لا يطابق script`).toBe(ep?.script);
       expect(clip.level).toBe(String(ep?.level));
     }
+  });
+
+  it("serves the regenerated health recording against the current script", () => {
+    expect(PENDING_PODCAST_AUDIO).not.toContain("p-b1-gesundheit");
+    expect(PRODUCED_PODCAST_AUDIO).toContain("p-b1-gesundheit");
+    expect(podcastAudioPath("p-b1-gesundheit")).toBe("/audio/podcasts/p-b1-gesundheit.mp3");
+    expect(clips.some(({ id, text }) => id === "p-b1-gesundheit" && text === PODCASTS.find((ep) => ep.id === id)?.script)).toBe(true);
   });
 
   it("كل معرّف مُعلَن موجود في `PODCASTS` ولا تكرار في البيان", () => {
@@ -73,13 +89,16 @@ describe("صوت البودكاست — القرص يطابق البيان", () 
     expect(missing, `مُعلَن في البيان ولا ملف له: ${missing.join(" · ")}`).toEqual([]);
   });
 
-  it("لا ملف يتيم على القرص خارج البيان", () => {
+  it("لا ملف يتيم على القرص خارج البيان أو قائمة الحلقات المعلّقة", () => {
     if (!fs.existsSync(AUDIO_DIR)) return; // لم يُنتَج شيء بعد — حالة صادقة
     const declared = new Set(clips.map((c) => `${c.id}.mp3`));
+    const pending = new Set(PENDING_PODCAST_AUDIO.map((id) => `${id}.mp3`));
     const onDisk = fs.readdirSync(AUDIO_DIR).filter((f) => f.endsWith(".mp3"));
-    const orphans = onDisk.filter((f) => !declared.has(f));
+    const unservedPending = onDisk.filter((f) => pending.has(f));
+    const orphans = onDisk.filter((f) => !declared.has(f) && !pending.has(f));
     expect(orphans, `ملفات بلا بيان: ${orphans.join(" · ")}`).toEqual([]);
-    expect(onDisk.length, "عدد الملفات على القرص").toBe(clips.length);
+    expect(unservedPending, "لا ملفات معلّقة بعد إعادة توليد تسجيل الصحة").toEqual([]);
+    expect(onDisk.length, "كل ملفات الصوت على القرص لها بيان").toBe(clips.length);
   });
 
   it("عدّاد الإنتاج غير هامشي: ≥ 2 مقطعين، والمتبقّي مُسمّى بلا فجوة", () => {

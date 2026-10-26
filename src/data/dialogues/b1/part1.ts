@@ -14,11 +14,12 @@ export const B1_DIALOGUES_1: DailyDialogue[] = [
     titleDe: "Die eigene Meinung sagen",
     emoji: "💬",
     situation: "تتحدث مع زميل عن العمل عن بُعد",
+    audioNoteAr: "مصدر ملفات MP3 لهذا الحوار غير موثّق؛ لا أجزم بأنها تسجيلات بشرية أو مولّدة آلياً. لم تُتحقق مطابقتها للنص أو جودة النطق.",
     turns: [
       { speaker: "الزميل", role: "a", de: "Was denkst du über Homeoffice?", ar: "ما رأيك في العمل عن بُعد؟" },
       { speaker: "أنت", role: "b", de: "Meiner Meinung nach ist es praktisch, aber nicht für jeden.", ar: "في رأيي أنه عملي، لكن ليس للجميع." },
       { speaker: "الزميل", role: "a", de: "Warum nicht für jeden?", ar: "لماذا ليس للجميع؟" },
-      { speaker: "أنت", role: "b", de: "Weil manche Leute die Trennung zwischen Arbeit und Freizeit brauchen.", ar: "لأن بعض الناس يحتاجون الفصل بين العمل والفراغ." },
+      { speaker: "أنت", role: "b", de: "Weil manche Leute die Trennung zwischen Arbeit und Freizeit brauchen.", ar: "لأن بعض الناس يحتاجون إلى الفصل بين العمل ووقت الفراغ." },
       { speaker: "الزميل", role: "a", de: "Das stimmt. Ich finde es auch schwer, motiviert zu bleiben.", ar: "هذا صحيح. أجد صعوبة أيضاً في البقاء متحفزاً." },
       { speaker: "أنت", role: "b", de: "Genau. Deshalb ist ein hybrides Modell vielleicht die beste Lösung.", ar: "بالضبط. لذلك النموذج الهجين ربما أفضل حل." },
     ],
@@ -54,6 +55,7 @@ export const B1_DIALOGUES_1: DailyDialogue[] = [
     titleDe: "Den Urlaub planen",
     emoji: "🏖️",
     situation: "تخطط مع شريكك لإجازة الصيف",
+    audioNoteAr: "ملفات MP3 لهذا الحوار موجودة، لكن مصدرها ومطابقتها الدقيقة للنص غير موثقين؛ اجتازت فحص الإشارة التقني فقط، وهو لا يقيّم وضوح النطق أو طبيعية الأداء.",
     turns: [
       { speaker: "الشريك", role: "a", de: "Wo sollen wir diesen Sommer Urlaub machen?", ar: "أين يجب أن نقضي إجازة هذا الصيف؟" },
       { speaker: "أنت", role: "b", de: "Ich würde gern nach Österreich fahren. Die Berge sind wunderschön.", ar: "أود السفر إلى النمسا. الجبال رائعة." },
@@ -93,7 +95,8 @@ export const B1_DIALOGUES_1: DailyDialogue[] = [
     title: "تقديم شكوى رسمية",
     titleDe: "Eine Beschwerde schreiben",
     emoji: "📝",
-    situation: "تشتكي من فندق لخدمة العملاء",
+    situation: "محاكاة خيالية لتقديم شكوى عن فندق إلى خدمة العملاء؛ التاريخ والمطالبة مثالان تدريبيان لا يقرران حقاً قانونياً.",
+    audioNoteAr: "الأسماء والتواريخ والموقف افتراضية للتدريب، ولا يقدّم الحوار حكماً على استحقاق تعويض قانوني.",
     turns: [
       { speaker: "الموظف", role: "a", de: "Guten Tag, Service. Wie kann ich helfen?", ar: "طاب يومك، الخدمة. كيف أساعد؟" },
       { speaker: "أنت", role: "b", de: "Ich möchte mich über das Hotel beschweren. Das Zimmer war schmutzig.", ar: "أريد تقديم شكوى عن الفندق. الغرفة كانت متسخة." },
@@ -133,7 +136,8 @@ export const B1_DIALOGUES_1: DailyDialogue[] = [
     title: "تأكيد موعد",
     titleDe: "Einen Termin bestätigen",
     emoji: "📅",
-    situation: "تتصل لتأكيد موعد طبيب",
+    situation: "محاكاة تدريبية خيالية لمكالمة موعد؛ تعليمات الحضور وبطاقة التأمين في المثال ليست قاعدة تنطبق على كل عيادة.",
+    audioNoteAr: "يُقرأ الحوار بصوت الجهاز (TTS). الأسماء والموعد موقف تدريبي خيالي؛ اسأل العيادة الفعلية عن متطلباتها.",
     turns: [
       { speaker: "السكرتيرة", role: "a", de: "Praxis Dr. Müller, guten Tag!", ar: "عيادة الدكتور مولر، طاب يومك!" },
       { speaker: "أنت", role: "b", de: "Guten Tag! Ich möchte meinen Termin am Donnerstag bestätigen.", ar: "طاب يومك! أريد تأكيد موعدي يوم الخميس." },
@@ -173,7 +177,7 @@ export const B1_DIALOGUES_1: DailyDialogue[] = [
     title: "حل مشكلة في العمل",
     titleDe: "Ein Problem lösen",
     emoji: "🔧",
-    situation: "تناقش مشكلة مع زميل في العمل",
+    situation: "حوار تدريبي خيالي: تناقش مشكلة افتراضية مع زميل في العمل؛ وليس شهادة عن نظام أو شركة حقيقية.",
     turns: [
       { speaker: "الزميل", role: "a", de: "Wir haben ein Problem mit dem neuen System.", ar: "عندنا مشكلة مع النظام الجديد." },
       { speaker: "أنت", role: "b", de: "Was ist passiert? Funktioniert es nicht?", ar: "ماذا حدث؟ ألا يعمل؟" },

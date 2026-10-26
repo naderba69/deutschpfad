@@ -3,21 +3,20 @@ import { expect, test } from "@playwright/test";
 /**
  * صوت البودكاست في المتصفح — لا في البيان وحده.
  *
- * الدفعة 76 (2026-10-17) أتتمت الإنتاج: 20 حلقة / 20 تسجيلاً، وصفر حلقة على نطق
- * الجهاز. هذا الحارس يقفل تلك الحالة من جهة المتعلم: كل بطاقة حلقة تفتح على
- * «تسجيل مُنتَج لهذه الحلقة»، ولا واحدة تعلن «لم يُنتَج تسجيل لهذه الحلقة بعد»،
- * وزرّ «استمع للحلقة» يجلب ملف mp3 فعلاً بحالة 200.
+ * الحارس يقفل صدق ما يُعلَن من جهة المتعلم: الحلقات ذات التسجيل المنتج تعلن
+ * أنه TTS لا بشري، والحلقة التي عُلّق تسجيلها بعد تحديث النص تبقى معلنة بوضوح
+ * على أنها غير منتجة بعد. كما يتحقق اختبار مستقل من جلب ملفات MP3 للعينة.
  *
  * لماذا هنا وليس في اختبار وحدة فقط: `audio.test.ts` يحرس البيان مقابل القرص،
  * لكن الصدق المعلَن في الواجهة (وهو موضع هذه الدفعة) لا يُرى إلا في المتصفح.
  */
 const ARABIC_TITLES = {
-  produced: "تسجيل مُنتَج لهذه الحلقة",
+  produced: "تسجيل مولّد آلياً (TTS)، وليس تسجيلاً بشرياً.",
   notProduced: "لم يُنتَج تسجيل لهذه الحلقة بعد",
   failed: "تعذّر تشغيل التسجيل",
 };
 
-test("كل حلقات البودكاست تعلن تسجيلاً مُنتَجاً — لا نطق جهاز بعد إتمام الإنتاج", async ({ page }) => {
+test("كل حلقة بودكاست تعلن حالة التسجيل الصحيحة — منتج أو معلّق", async ({ page }) => {
   await page.goto("/podcasts");
   const cards = page.locator("section button h3");
   const total = await cards.count();
@@ -30,7 +29,7 @@ test("كل حلقات البودكاست تعلن تسجيلاً مُنتَجا�
   for (const title of titles) {
     await page.goto("/podcasts");
     await page.locator("section button", { hasText: title }).first().click();
-    await expect(page.getByText(ARABIC_TITLES.produced), `${title}: لا يعلن تسجيلاً مُنتَجاً`).toBeVisible();
+    await expect(page.getByText(ARABIC_TITLES.produced), `${title}: لا يعلن تسجيل TTS منتجاً`).toBeVisible();
     expect(await page.getByText(ARABIC_TITLES.notProduced).count(), `${title}: يعلن حلقة غير مُنتَجة`).toBe(0);
     expect(await page.getByText(ARABIC_TITLES.failed).count(), `${title}: التسجيل فشل فسقط إلى صوت الجهاز`).toBe(0);
   }
@@ -42,7 +41,7 @@ test("زرّ «استمع للحلقة» يجلب mp3 فعلياً — لعين�
     if (res.url().includes("/audio/podcasts/")) clips.push({ url: res.url(), status: res.status() });
   });
 
-  // عينة عبر المستويات: A1 وA2 بصوت voice-02، وB1 وB2 بصوت voice-03
+  // عينة عبر المستويات؛ تشمل تسجيل B1 الصحي الذي أُعيد إنتاجه بالنص المرجعي المحدّث.
   const sample = ["p-a1-markt", "p-a2-zug", "p-b1-gesundheit", "p-b2-migration"];
   const titles = ["في السوق", "السفر بالقطار", "العيش بصحة", "الهجرة والهوية"];
   for (const title of titles) {

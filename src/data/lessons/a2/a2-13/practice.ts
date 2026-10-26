@@ -135,15 +135,15 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e11",
       type: "matching",
-      instructionAr: "صِل كل جملة من B1 بالتوسعة التي تمثّلها (من خريطة الجسر):",
+      instructionAr: "صِل كل مثال من الخريطة بالتسمية النحوية المناسبة:",
       pairs: [
         { left: "Das Auto wird repariert.", right: "المبني للمجهول (Passiv)" },
         { left: "Das ist der Bruder meines Freundes.", right: "المضاف إليه بحالة الإضافة (Genitiv)" },
         { left: "Ich hätte gern einen Kaffee.", right: "تمنٍّ مهذّب (Konjunktiv II)" },
         { left: "Das ist mein Bruder, der in Bonn wohnt.", right: "جملة موصولة (Relativsatz)" },
-        { left: "Ich arbeitete gestern lange.", right: "الماضي البسيط في الكتابة (Präteritum)" },
+        { left: "Ich arbeitete gestern lange.", right: "Präteritum في مثال سردي" },
       ],
-      explanation: "هذه توسعات B1 تُعرض للتعرّف عليها فقط؛ لا تُعد مهارة مكتسبة في هذا الدرس.",
+      explanation: "هذه أمثلة مختارة لتراكيب إضافية، نطلب هنا التعرّف على أسمائها فقط. لا يحدد هذا التمرين المستوى الرسمي لكل تركيب ولا يثبت إتقانه.",
       errorType: "grammar",
     },
     {
@@ -193,6 +193,6 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     culturalNote: {
       title: "شهادات اللغة والإقامة: A1 وA2 وB1",
       content:
-        "شهادة A1 هي الشرط المعتاد لتأشيرة لمّ شمل الزوج أو الزوجة (§ 30 AufenthG)، ولا يُطلب فيها A2. أما الإقامة الدائمة (Niederlassungserlaubnis، § 9 AufenthG) فتشترط «ausreichende Kenntnisse» في الألمانية، وتعدّها التطبيقات العملية عادةً B1، وكذلك التجنيس (B1 بحسب § 10 StAG). لذا A2 محطة مفيدة وليست الشرط القانوني لهذه المراحل. الأنظمة تتغيّر، فراجع المصدر الرسمي قبل أي قرار.",
+        "في بعض مسارات لمّ شمل الزوج أو الزوجة وفق § 30 AufenthG يُطلب إثبات معرفة بسيطة بالألمانية، ويعرّف § 2(9) هذه المعرفة بمستوى A1؛ لكن القانون يذكر استثناءات بحسب الحالة ونوع إقامة الطرف المقيم. وتشترط § 9(2) في المسار العام للإقامة الدائمة معرفة كافية، ويعرّف § 2(11) هذا الوصف بمستوى B1، مع استثناءات ومسارات خاصة. أما § 10 StAG فيحدد B1 للتجنيس مع أحكام استثناء. هذه خلاصة تعليمية غير شاملة ولا تحدد أهلية شخص بعينه؛ راجع النص الرسمي والجهة المختصة قبل أي قرار.",
     },
   };

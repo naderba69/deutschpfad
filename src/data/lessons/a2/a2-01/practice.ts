@@ -50,7 +50,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e3",
       type: "matching",
-      instructionAr: "صل الفعل بتصريفه في Perfekt:",
+      instructionAr: "صِل كل فعل بصيغة Partizip II التي يستعملها في Perfekt:",
       pairs: [
         { left: "kaufen", right: "gekauft" },
         { left: "sehen", right: "gesehen" },
@@ -63,7 +63,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e4",
       type: "word-ordering",
-      instructionAr: "رتّب الجملة (انتبه: التصريف في النهاية):",
+      instructionAr: "رتّب الجملة: المساعد في الموضع الثاني وPartizip II في النهاية:",
       tokens: ["habe", "Ich", "gestern", "Pizza", "gegessen", "."],
       correctSentence: "Ich habe gestern Pizza gegessen.",
       explanation: "الإطار: Ich habe + التفاصيل + gegessen في النهاية.",

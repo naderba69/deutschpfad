@@ -48,13 +48,17 @@ describe("A2-03 audited lesson", () => {
   });
 
   it("keeps listening question coverage complete and the transcript reveal separate", () => {
-    expect(lessonA203.listening.items.map((item) => item.id)).toEqual(["l1", "l2"]);
-    expect(lessonA203.listening.items.map((item) => item.lines.length)).toEqual([7, 5]);
+    expect(lessonA203.listening.items.map((item) => item.id)).toEqual(["l1", "l2", "l3"]);
+    expect(lessonA203.listening.items.map((item) => item.lines.length)).toEqual([7, 5, 6]);
     expect(
       lessonA203.listening.items.every((item) =>
         item.lines.every((line) => line.de.trim() && line.ar.trim() && line.speaker.trim()),
       ),
     ).toBe(true);
+    for (const item of lessonA203.listening.items.slice(0, 2)) {
+      expect(item.audioNoteAr).toContain("TTS المدمج في المتصفح");
+      expect(item.audioNoteAr).toContain("قد تختلف الأصوات");
+    }
     const firstDialogue = lessonA203.listening.items[0].lines;
     expect(firstDialogue.find((line) => line.de === "Wie hat es Ihnen geschmeckt?")?.speaker).toContain(
       "nach dem Essen",
@@ -62,10 +66,12 @@ describe("A2-03 audited lesson", () => {
     expect(firstDialogue.find((line) => line.de === "Wie hat es Ihnen geschmeckt?")?.de).toContain(
       "Ihnen",
     );
+    const soupDialogue = lessonA203.listening.items.find(({ id }) => id === "l3");
+    expect(soupDialogue?.lines.map(({ de }) => de)).toContain("Dann nehme ich die Suppe, bitte.");
+    expect(soupDialogue?.audioNoteAr).toContain("مولّدة آلياً (TTS)");
     expect(lessonA203.listening.questions.map((question) => [question.id, question.itemId])).toEqual([
-      ["q1", "l1"],
-      ["q2", "l1"],
-      ["q3", "l2"],
+      ["q1", "l1"], ["q2", "l1"], ["q3", "l2"],
+      ["q4", "l3"], ["q5", "l3"], ["q6", "l3"],
     ]);
     expect(
       lessonA203.listening.questions.every((question) =>

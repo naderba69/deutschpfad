@@ -43,7 +43,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       instructionAr: "صل كلمة الاقتصاد بمعناها:",
       pairs: [
         { left: "die Wirtschaft", right: "الاقتصاد" },
-        { left: "der Umsatz", right: "المبيعات" },
+        { left: "der Umsatz", right: "حجم المبيعات/الإيرادات" },
         { left: "die Inflation", right: "التضخم" },
         { left: "die Aktien", right: "الأسهم" },
       ],
@@ -86,7 +86,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e7",
       type: "transformation",
       instructionAr: "حوّل إلى sich lassen:",
-      prompt: "Man kann das Problem lösen. → (المشكلة تُحل بسهولة)",
+      prompt: "Man kann das Problem lösen. → (يمكن حل المشكلة)",
       acceptedAnswers: ["Das Problem lässt sich lösen", "Das Problem lässt sich lösen."],
       sampleAnswer: "Das Problem lässt sich lösen.",
       explanation: "sich lassen + مصدر في النهاية.",
@@ -98,14 +98,14 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       instructionAr: "اختر الترجمة الصحيحة:",
       questionDe: "die Konjunktur",
       questionAr: "ما معنى الكلمة؟",
-      options: ["الدورة الاقتصادية", "الأسهم في البورصة", "المبيعات السنوية", "الاستثمار المباشر"],
+      options: ["الدورة الاقتصادية", "الأسهم في البورصة", "حجم المبيعات/الإيرادات", "الاستثمار المباشر"],
       correctIndex: 0,
       explanation: "die Konjunktur = الدورة الاقتصادية.",
       errorType: "vocabulary",
       optionExplanations: [
         undefined,
         "«الأسهم في البورصة» تقابل Aktien، وليس Konjunktur.",
-        "«المبيعات السنوية» تقابل Umsatz، وليس Konjunktur.",
+        "«حجم المبيعات/الإيرادات» يقابل Umsatz، وليس Konjunktur.",
         "«الاستثمار المباشر» تقابل Investition، وليس Konjunktur.",
       ],
     },
@@ -113,12 +113,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e9",
       type: "error-correction",
       instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Die Tür ist öffnenbar.",
-      wrongWord: "öffnenbar",
-      correctWord: "öffenbar",
-      options: ["öffenbar", "öffnenbar", "öffnbar", "geöffnetbar"],
-      explanation: "الصيغة الواردة في القواميس هي öffenbar بمعنى «قابل للفتح». أما öffnenbar فليست صيغة مقبولة.",
-      errorType: "grammar",
+      wrongSentence: "Die Lösung ist durchfühbar.",
+      wrongWord: "durchfühbar",
+      correctWord: "durchführbar",
+      options: ["durchführbar", "durchfühbar", "durchführenbar", "durchführlich"],
+      explanation: "الصيغة الشائعة هي durchführbar، من durchführen واللاحقة -bar؛ الخطأ هنا إملائي في جذر الفعل.",
+      errorType: "spelling",
     },
     {
       id: "e10",
@@ -193,17 +193,17 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
 
 export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     mistakes: [
-      { wrong: "ist geöffnet worden (لحالة — خاطئ)", right: "ist geöffnet (حالة) / ist geöffnet worden (عملية منتهية)", whyAr: "الفرق: worden = عملية." },
-      { wrong: "kann geliefert werden أم kann geliefert؟", right: "kann + PII + werden (للمجهول الشرطي)", whyAr: "Passiv مع شرطي يحتاج werden." },
-      { wrong: "-bar أم -lich؟", right: "-bar = قابل للفعل (trinkbar). -lich = صفة عامة (freundlich)", whyAr: "نهايتان مختلفتان لوظيفتين." },
+      { wrong: "اعتبار ist geöffnet worden صيغةً للحالة فقط", right: "ist geöffnet تصف الحالة عادةً؛ ist geöffnet worden يصوغ Perfekt للمجهول الحدثي", whyAr: "worden جزء من Perfekt للمجهول الحدثي، بينما sein + Partizip II من دون worden يصف الحالة في المثال المعتاد." },
+      { wrong: "kann geliefert werden أم kann geliefert؟", right: "kann + PII + werden (للمجهول مع فعل ناقص)", whyAr: "المجهول مع Modalverb يحتاج werden في صيغة المجهول الحدثي." },
+      { wrong: "افتراض أن -lich تعني دائماً قابلية الفعل مثل -bar", right: "trinkbar = صالح للشرب؛ freundlich = ودود، لا قابل للفعل", whyAr: "لا تدل كل صفة منتهية بـ-lich على إمكانية وقوع الفعل؛ تعلّم معنى المفردة وسياقها." },
     ],
     eselsbruecken: [
       "«ist = حالة، wird = عملية، kann werden = إمكانية».",
-      "«-bar = قابل للـ»: öffenbar، trinkbar، machbar.",
+      "«-bar = قابل للـ»: durchführbar، trinkbar، machbar.",
     ],
     culturalNote: {
       title: "الاقتصاد الألماني",
       content:
-        "يُعدّ الاقتصاد الألماني من أكبر الاقتصادات في العالم. «die soziale Marktwirtschaft» (اقتصاد السوق الاجتماعي) يجمع بين المنافسة في السوق والضمان الاجتماعي. والبنك المركزي الأوروبي مقرّه في فرانكفورت. و«der Mittelstand» (الشركات المتوسطة) قطاع مهم في الاقتصاد الألماني.",
+        "يُوصف النموذج الاقتصادي في ألمانيا بأنه «اقتصاد السوق الاجتماعي»، أي سوق ومنافسة ضمن إطار من السياسات الاجتماعية. يقع مقر البنك المركزي الأوروبي في فرانكفورت. أما «Mittelstand» فيُستخدم كثيراً عند الحديث عن الشركات الصغيرة والمتوسطة، لكنه ليس تصنيفاً موحّداً أو تعريفاً قانونياً دقيقاً؛ لذلك لا ينبغي مساواته دائماً بفئة إحصائية واحدة.",
     },
   };

@@ -43,9 +43,9 @@ describe("A2-08 reviewed lesson", () => {
     expect(ids(lessonA208.miniTest)).toEqual(["m1", "m2", "m3", "m4", "m5"]);
     expect(ids(lessonA208.writing)).toEqual(["w1", "w2", "w3", "w4"]);
     expect(ids(lessonA208.reading?.questions ?? [])).toEqual(["rq1", "rq2", "rq3", "rq4", "rq5"]);
-    expect(ids(lessonA208.listening.questions)).toEqual(["q1", "q2", "q3"]);
-    expect(allTasks()).toHaveLength(34);
-    expect(new Set(allTasks().map((item) => item.id)).size).toBe(34);
+    expect(ids(lessonA208.listening.questions)).toEqual(["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9"]);
+    expect(allTasks()).toHaveLength(40);
+    expect(new Set(allTasks().map((item) => item.id)).size).toBe(40);
     expect("duration" in lessonA208).toBe(false);
     expect(lessonA208.summary).not.toMatch(/Goethe|CEFR|اعتماد|جاهزية|إتقان|\b\d+\s*دقيقة/i);
     expect(lessonA208.einfuehrung.contextAr).toContain("خيالية");
@@ -59,13 +59,13 @@ describe("A2-08 reviewed lesson", () => {
     expect(reading.questions.every((question) => question.paragraph !== undefined)).toBe(true);
     expect(reading.paragraphs).toEqual([
       "Jana und Karim fahren am Samstag ans Meer. Sie möchten früh am Strand sein. Im Internet vergleichen sie zwei Fahrpläne. Der Zug fährt um acht Uhr ab und ist schneller als der Bus. Die Fahrkarte für den Zug kostet in diesem Beispiel fünf Euro mehr als die Fahrkarte für den Bus. Alle Fahrzeiten und Preise in der Geschichte sind erfunden.",
-      "Sie kaufen ihre Fahrkarten am Automaten. Ihre Reise beginnt am Hauptbahnhof und dauert zweieinhalb Stunden. In Bremen müssen sie einmal umsteigen. Jana prüft die Gleisnummer, und Karim kauft einen Snack. Dann fährt der Zug weiter.",
+      "Sie kaufen die Fahrkarten für die Hinfahrt am Automaten. Ihre Reise beginnt am Hauptbahnhof und dauert zweieinhalb Stunden. In Bremen müssen sie einmal umsteigen. Jana prüft die Gleisnummer, und Karim kauft einen Snack. Dann fährt der Zug weiter.",
       "Der Zug kommt pünktlich an. Das Wetter ist besser als in der Stadt, und das Wasser ist warm. Am Abend möchten sie zurückfahren. Aber die Zugfahrkarten für die Rückfahrt sind ausverkauft. Deshalb nehmen sie den letzten Bus zurück.",
       "Karim fotografiert die Wellen am Strand. Jana schwimmt im Wasser. Sie sprechen über die Reise. Jana findet die Zugfahrt bequemer, weil sie unterwegs lesen konnte. Karim sagt: „Der Bus ist günstiger, aber langsamer.“ Bei ihrer nächsten Reise wollen sie die Fahrpläne wieder vergleichen. Dann entscheiden sie gemeinsam.",
     ]);
     expect(reading.paragraphsAr).toEqual([
       "يذهب يانا وكريم يوم السبت إلى البحر. يريدان الوصول مبكراً إلى الشاطئ. يقارنان جدولَي رحلات على الإنترنت. ينطلق القطار في الثامنة وهو أسرع من الحافلة. في هذا المثال، تزيد كلفة تذكرة القطار خمسة يورو على تذكرة الحافلة. جميع مواعيد الرحلات والأسعار في القصة خيالية.",
-      "يشتريان تذكرتَي السفر من آلة البيع. تبدأ رحلتهما في المحطة الرئيسية وتستغرق ساعتين ونصفاً. عليهما تبديل القطار مرة واحدة في بريمن. تتحقق يانا من رقم المسار/الرصيف، ويشتري كريم وجبة خفيفة. ثم يواصل القطار طريقه.",
+      "يشتريان تذكرتَي الذهاب من آلة البيع. تبدأ رحلتهما في المحطة الرئيسية وتستغرق ساعتين ونصفاً. عليهما تبديل القطار مرة واحدة في بريمن. تتحقق يانا من رقم المسار/الرصيف، ويشتري كريم وجبة خفيفة. ثم يواصل القطار طريقه.",
       "يصل القطار في موعده. الطقس أفضل مما هو في المدينة، والماء دافئ. يريدان العودة مساءً، لكن تذاكر القطار لرحلة العودة نفدت. لذلك يستقلان آخر حافلة للعودة.",
       "يصوّر كريم الأمواج على الشاطئ، وتسبح يانا في الماء. يتحدثان عن الرحلة. ترى يانا أن رحلة القطار كانت أكثر راحة لأنها استطاعت القراءة في الطريق. يقول كريم إن الحافلة أقل كلفة، لكنها أبطأ. في رحلتهما القادمة يريدان مقارنة جدولي الرحلات من جديد، ثم يقرران معاً.",
     ]);
@@ -163,7 +163,7 @@ describe("A2-08 reviewed lesson", () => {
     }
     const transitGoal = lessonA208.lernziele.find((goal) => goal.id === "z1");
     if (!transitGoal) throw new Error("A2-08 z1 is required");
-    const transitEvidenceWithoutQ1 = ["e11", "e14", "q2"].map((exerciseId) =>
+    const transitEvidenceWithoutQ1 = ["e11", "e14", "q2", "q4", "q5", "q6", "q7", "q8", "q9"].map((exerciseId) =>
       goalEvent("z1", exerciseId, true),
     );
     expect(

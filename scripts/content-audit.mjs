@@ -1,7 +1,7 @@
 /**
- * فحص جودة المحتوى الشامل — يُشغَّل بـ: node scripts/content-audit.mjs
- * يكتشف: جمل ألمانية مكررة، ترجمات فارغة، خيارات مكررة، أخطاء نحوية شائعة،
- * معرفات مكررة، أسئلة بلا خيار صحيح… إلخ.
+ * فحص أنماط سطحية مختارة في المحتوى — node scripts/content-audit.mjs
+ * لا يمثل مراجعة لغوية/تربوية شاملة، ولا يتحقق من كل مفاتيح الأسئلة أو المعرفات.
+ * يعثر فقط على الأنماط المحددة أدناه؛ النتيجة النظيفة لا تثبت خلو المحتوى من العيوب.
  */
 import { readFileSync, readdirSync } from "node:fs";
 import { readLessonSource } from "./lib/lesson-source.mjs";
@@ -26,10 +26,6 @@ for (const levelDir of ["a1", "a2", "b1", "b2"]) {
     // ترجمات عربية فارغة
     const emptyAr = src.match(/ar:\s*""/g);
     if (emptyAr) report("⚠️", `${levelDir}/${f}: ${emptyAr.length} ترجمة عربية فارغة`);
-
-    // أسئلة MCQ بلا خيارات
-    const mcqWithoutOptions = src.match(/type:\s*"multiple-choice"[\s\S]{0,300}?correctIndex/g);
-    // (فحص سطحي — لا يُطبق)
 
     // جمل de فارغة
     const emptyDe = src.match(/de:\s*""/g);
@@ -86,5 +82,6 @@ for (const f of readdirSync(join(ROOT, "vocabulary"))) {
 }
 
 console.log(`\n═══════════════════════════════════`);
-console.log(`النتيجة: ${issues} ملاحظة`);
-console.log(`🔴=خطأ محتمل | ⚠️=جودة | ℹ️=معلومة`);
+console.log(`النتيجة: ${issues} نمطاً مطابقاً لقواعد هذا الفحص المحدودة`);
+console.log(`🔴=مؤشر يحتاج مراجعة | ⚠️=تنبيه | ℹ️=معلومة`);
+console.log("عدم ظهور ملاحظات لا يعني اكتمال التدقيق؛ لا يفحص هذا السكربت دلالات الأهداف أو كل مفاتيح التمارين.");

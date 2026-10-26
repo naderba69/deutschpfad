@@ -13,21 +13,21 @@ export const reading: NonNullable<Lesson["reading"]> = {
       "Liebe Sonia,\nwie geht es dir? Ich habe endlich eine Wohnung gefunden! Sie ist nicht sehr groß, aber sie ist hell und ruhig. Ich wohne jetzt in der Gartenstraße 14, im dritten Stock. Die Miete ist nicht billig, aber die Lage ist sehr gut.",
       "Die Wohnung hat zwei Zimmer, eine Küche und ein Bad. Das Wohnzimmer ist mein Lieblingsraum. Dort stehen ein Sofa, ein kleiner Tisch und ein Regal mit meinen Büchern. An der Wand hängt ein Bild aus Tunesien. Auf dem Balkon habe ich drei Pflanzen.",
       "Die Küche ist sehr klein, aber praktisch. Der Kühlschrank steht neben dem Fenster und der Herd ist ziemlich neu. Im Schlafzimmer gibt es nur ein Bett und einen Schrank. Das ist genug für mich. Unter dem Bett habe ich meine Koffer.",
-      "Es gibt aber auch Regeln. In unserem Haus darf man nach 22 Uhr nicht laut sein, denn dann beginnt die Ruhezeit. Laut Hausordnung darf ich am Sonntag keine Wäsche waschen. Und ich muss den Müll trennen: Papier, Glas, Plastik und Biomüll. Am Anfang war das kompliziert!",
+      "Es gibt aber auch Regeln. In unserem Haus darf man nach 22 Uhr nicht laut sein, denn dann beginnt die Ruhezeit. Laut Hausordnung darf ich am Sonntag keine Wäsche waschen. Und ich muss den Müll trennen: Papier, Glas, Verpackungen, Bio- und Restmüll. Am Anfang war das kompliziert!",
       "Meine Nachbarn sind sehr freundlich. Frau Berger wohnt unter mir und sie hat einen kleinen Hund. Sie sagt immer: Du musst nicht klingeln, die Tür ist offen. Kommst du mich bald besuchen? Du darfst gern eine Woche bleiben.\nViele Grüße,\ndeine Amira"
     ],
     "paragraphsAr": [
-      "عزيزتي سنية،\nكيف حالك؟ وجدتُ أخيراً شقّة! ليست كبيرة جداً لكنّها مضيئة وهادئة. أسكن الآن في شارع الحديقة رقم ١٤، في الطابق الثالث فوق الطابق الأرضي. الإيجار ليس رخيصاً لكنّ الموقع جيد جداً.",
+      "عزيزتي سونيا،\nكيف حالك؟ وجدتُ أخيراً شقّة! ليست كبيرة جداً لكنّها مضيئة وهادئة. أسكن الآن في شارع غارتن شتراسه رقم ١٤، في الطابق الثالث فوق الطابق الأرضي. الإيجار ليس رخيصاً لكنّ الموقع جيد جداً.",
       "الشقّة فيها غرفتان ومطبخ وحمّام. غرفة المعيشة هي غرفتي المفضّلة. فيها أريكة وطاولة صغيرة ورفّ عليه كتبي. وعلى الجدار صورة معلّقة من تونس. وعلى الشرفة عندي ثلاث نبتات.",
       "المطبخ صغير جداً لكنّه عمليّ. الثلّاجة بجانب النافذة والموقد جديد نسبياً. وفي غرفة النوم سرير وخزانة فقط. وهذا يكفيني. وتحت السرير حقائبي.",
-      "لكن هناك قواعد أيضاً. في مبنانا لا يُسمح بإحداث الضجيج بعد العاشرة مساءً، إذ يبدأ حينها وقت الهدوء. ووفق لائحة المبنى لا يُسمح لي بغسل الملابس يوم الأحد. وعليّ أن أفرز النفايات: ورق وزجاج وبلاستيك ونفايات عضوية. كان ذلك معقّداً في البداية!",
+      "لكن هناك قواعد أيضاً. في مبنانا لا يُسمح بإحداث الضجيج بعد العاشرة مساءً، إذ يبدأ حينها وقت الهدوء. ووفق لائحة المبنى لا يُسمح لي بغسل الملابس يوم الأحد. وعليّ أن أفرز النفايات: الورق والزجاج ومواد التغليف والنفايات العضوية والمتبقية. كان ذلك معقّداً في البداية!",
       "جيراني ودودون جداً. السيّدة بيرغر تسكن تحتي ولها كلب صغير. تقول لي دائماً: لستِ مضطرّة إلى قرع الجرس، الباب مفتوح. أتأتين لزيارتي قريباً؟ يسعدني أن تبقي أسبوعاً كاملاً.\nتحيّاتي،\nأميرة"
     ],
     "glossary": [
       {
         "de": "die Miete",
         "ar": "الإيجار",
-        "noteAr": "مؤنّثة. ومنها der Mieter (المستأجر) و der Vermieter (المؤجّر) و der Mietvertrag (عقد الإيجار). وتُستعمل Kaltmiete للإيجار دون تكاليف التدفئة والتكاليف الجانبية، وWarmmiete لمبلغ يشملها وفق تفاصيل الإعلان؛ تحقّق مما يدخل في السعر."
+        "noteAr": "مؤنّثة. ومنها der Mieter (المستأجر) وder Vermieter (المؤجّر) وder Mietvertrag (عقد الإيجار). يُستعمل Kaltmiete عادةً للإيجار الأساسي قبل التكاليف الجانبية، وWarmmiete للمبلغ الذي يضمّ تكاليف تشغيلية وتدفئة بحسب تفاصيل العرض؛ وقد تُحسب بعض التكاليف، مثل الكهرباء المنزلية أو التدفئة المنفصلة، خارجها. تحقّق من الإعلان والعقد."
       },
       {
         "de": "die Lage",
@@ -67,12 +67,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
       {
         "de": "den Müll trennen",
         "ar": "يفرز النفايات",
-        "noteAr": "فرز النفايات من الممارسات المعتادة، لكن فئات الجمع وألوان الحاويات تختلف بحسب البلدية؛ راجع الإرشادات المحلية."
+        "noteAr": "يستعمل النص فئات تدريبية شائعة: الورق والزجاج ومواد التغليف والنفايات العضوية والمتبقية. تختلف تفاصيل ما يُجمع وكيفية فرزه بين البلديات؛ راجع إرشادات الجهة المحلية، ولا تضع كل أنواع البلاستيك في حاوية واحدة تلقائياً."
       },
       {
         "de": "die Wäsche waschen",
         "ar": "يغسل الملابس",
-        "noteAr": "die Wäsche اسمٌ جمعيّ للملابس المعدّة للغسل أو المغسولة. وقد تحدّ بعض Hausordnungen من تشغيل الغسالة في أوقات معيّنة بسبب الضجيج؛ تحقّق من اللائحة المحلية."
+        "noteAr": "die Wäsche اسمٌ جمعيّ للملابس المعدّة للغسل أو المغسولة. وقاعدة الغسل يوم الأحد في الرسالة تخصّ Hausordnung هذا المبنى؛ لا تُفهم منها قاعدة عامة على ألمانيا."
       },
       {
         "de": "der Nachbar",
@@ -82,7 +82,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
       {
         "de": "klingeln",
         "ar": "يقرع الجرس",
-        "noteAr": "فعل منتظم. ومنه die Klingel (الجرس). قد يظهر اسم الساكن بجانب زرّ الجرس في بعض المباني؛ وتختلف طريقة الدخول من مكان إلى آخر."
+        "noteAr": "فعل منتظم؛ ومنه die Klingel (الجرس). طريقة الدخول إلى المبنى تختلف بحسب المكان."
       }
     ],
     "questions": [
@@ -181,25 +181,25 @@ export const reading: NonNullable<Lesson["reading"]> = {
       {
         "id": "r5",
         "type": "multiple-choice",
-        "instructionAr": "انظر في النصّ كلّه:",
-        "questionDe": "Was wird im Text nicht erwähnt?",
-        "questionAr": "ما الشيء الذي لم يُذكر في النص؟",
+        "instructionAr": "الفقرة الثانية — أين عُلّقت الصورة؟",
+        "questionDe": "Was hängt an der Wand?",
+        "questionAr": "ماذا عُلّق على الجدار؟",
         "options": [
-          "Ein Regal an der Wand",
-          "Ein großer Kühlschrank",
-          "Ein Esstisch im Esszimmer",
-          "Ein Schrank im Schlafzimmer"
+          "Ein Bild aus Tunesien",
+          "Ein Regal mit Büchern",
+          "Ein großer Spiegel",
+          "Eine Lampe"
         ],
-        "correctIndex": 2,
-        "explanation": "الرفّ والثلّاجة والخزانة مذكورة صراحةً. أمّا وجود طاولة أو غرفة طعام فلم يذكره النص؛ لذا فالإجابة هي الشيء غير المذكور، لا الجزم بأنه غير موجود في الشقة.",
+        "correctIndex": 0,
+        "explanation": "يقول النص: «An der Wand hängt ein Bild aus Tunesien». الرفّ موجود في غرفة المعيشة، لكنه لم يُذكر على أنه معلّق على الجدار.",
         "optionExplanations": [
-          "الرفّ «Ein Regal an der Wand» مذكور في غرفة المعيشة، فهو وارد في النصّ.",
-          "الثلّاجة «Ein großer Kühlschrank» مذكورة بجانب النافذة في النصّ.",
           undefined,
-          "الخزانة «Ein Schrank im Schlafzimmer» مذكورة في النصّ."
+          "الرفّ مع الكتب مذكور في غرفة المعيشة، لكن النص لا يقول إنه معلّق على الجدار.",
+          "لم يذكر النص مرآة كبيرة؛ بل صورة من تونس.",
+          "لم يذكر مصباحاً معلّقاً؛ والشيء المعلّق صورة من تونس."
         ],
         "errorType": "vocabulary",
-        "paragraph": 2
+        "paragraph": 1
       }
     ],
     "redemittel": [
@@ -209,7 +209,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
       },
       {
         "de": "Ich wohne in der Gartenstraße 14, im dritten Stock.",
-        "ar": "أسكن في شارع الحديقة ١٤، في الطابق الثالث فوق الأرضي."
+        "ar": "أسكن في شارع غارتن شتراسه ١٤، في الطابق الثالث فوق الأرضي."
       },
       {
         "de": "Die Wohnung ist hell und ruhig, aber nicht billig.",
@@ -236,6 +236,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         id: "l1",
         title: "وصف الشقة",
+        audioNoteAr: "تُشغَّل هذه الجمل بصوت المتصفح الآلي (TTS)، وليست تسجيلاً بشرياً؛ وقد يختلف الصوت حسب الجهاز.",
         lines: [
           { speaker: "Mona", de: "Meine Wohnung ist in Tunis. Sie hat zwei Zimmer, eine Küche und ein Bad.", ar: "شقتي في تونس. فيها غرفتان ومطبخ وحمام." },
           { speaker: "Sami", de: "Welche Zimmer?", ar: "أي غرف؟" },
@@ -247,6 +248,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         id: "l2",
         title: "أين الأشياء؟",
+        audioNoteAr: "تُشغَّل هذه الجمل بصوت المتصفح الآلي (TTS)، وليست تسجيلاً بشرياً؛ وقد يختلف الصوت حسب الجهاز.",
         lines: [
           { speaker: "Karim", de: "Wo ist das Buch?", ar: "أين الكتاب؟" },
           { speaker: "Leila", de: "Das Buch ist auf dem Tisch.", ar: "الكتاب على الطاولة." },
@@ -254,6 +256,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
           { speaker: "Leila", de: "Die Lampe ist in der Küche.", ar: "المصباح في المطبخ." },
           { speaker: "Karim", de: "Wo schläfst du?", ar: "أين تنام؟" },
           { speaker: "Leila", de: "Ich schlafe im Schlafzimmer.", ar: "أنام في غرفة النوم." },
+        ],
+      },
+      {
+        id: "l3",
+        title: "جولة في شقة جديدة",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً. الحوار مثال تدريبي خيالي.",
+        lines: [
+          { speaker: "Nora", de: "Wo ist das Schlafzimmer?", ar: "أين غرفة النوم؟", audioSrc: "/audio/lessons/a1-04/ls-a1-04-3-1.mp3" },
+          { speaker: "Herr Maier", de: "Das Schlafzimmer ist neben dem Bad.", ar: "غرفة النوم بجانب الحمّام.", audioSrc: "/audio/lessons/a1-04/ls-a1-04-3-2.mp3" },
+          { speaker: "Nora", de: "Und wo ist die Küche?", ar: "وأين المطبخ؟", audioSrc: "/audio/lessons/a1-04/ls-a1-04-3-3.mp3" },
+          { speaker: "Herr Maier", de: "Die Küche ist neben dem Wohnzimmer.", ar: "المطبخ بجانب غرفة المعيشة.", audioSrc: "/audio/lessons/a1-04/ls-a1-04-3-4.mp3" },
+          { speaker: "Nora", de: "Gibt es auch einen Balkon?", ar: "هل توجد شرفة أيضاً؟", audioSrc: "/audio/lessons/a1-04/ls-a1-04-3-5.mp3" },
+          { speaker: "Herr Maier", de: "Ja, der Balkon ist vor dem Wohnzimmer.", ar: "نعم، الشرفة أمام غرفة المعيشة.", audioSrc: "/audio/lessons/a1-04/ls-a1-04-3-6.mp3" },
         ],
       },
     ],
@@ -297,6 +312,45 @@ export const listening: NonNullable<Lesson["listening"]> = {
         explanation: "قالت: Die Lampe ist in der Küche — في المطبخ (die→der).",
         errorType: "preposition",
       },
+      {
+        id: "q4",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Wo ist das Schlafzimmer?",
+        questionAr: "أين غرفة النوم؟",
+        options: ["Neben dem Bad", "Vor dem Balkon", "Im Wohnzimmer", "In der Küche"],
+        correctIndex: 0,
+        optionExplanations: [undefined, "لم يقل إنها أمام الشرفة؛ قال إنها بجانب الحمّام.", "غرفة النوم ليست غرفة المعيشة؛ هي بجانب الحمّام.", "لم يقل إنها في المطبخ؛ ذكر «neben dem Bad»."],
+        explanation: "قال Herr Maier: Das Schlafzimmer ist neben dem Bad.",
+        errorType: "preposition",
+      },
+      {
+        id: "q5",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Wo ist die Küche?",
+        questionAr: "أين المطبخ؟",
+        options: ["Neben dem Wohnzimmer", "Vor dem Schlafzimmer", "Neben dem Balkon", "Im Erdgeschoss"],
+        correctIndex: 0,
+        optionExplanations: [undefined, "لم يذكر أنها أمام غرفة النوم؛ قال إنها بجانب غرفة المعيشة.", "لم يحدد الشرفة مكاناً للمطبخ؛ بل ذكر غرفة المعيشة.", "لم يذكر الطابق الأرضي؛ المعلومة المسموعة أنها بجانب غرفة المعيشة."],
+        explanation: "قال Herr Maier: Die Küche ist neben dem Wohnzimmer.",
+        errorType: "preposition",
+      },
+      {
+        id: "q6",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Wo ist der Balkon?",
+        questionAr: "أين الشرفة؟",
+        options: ["Vor dem Wohnzimmer", "Hinter der Küche", "Neben dem Bad", "Auf dem Balkon"],
+        correctIndex: 0,
+        optionExplanations: [undefined, "لم يذكر أنها خلف المطبخ؛ قال إنها أمام غرفة المعيشة.", "مكان غرفة النوم بجانب الحمّام، لا الشرفة.", "لم يقل إن الشرفة على نفسها؛ بل إنها أمام غرفة المعيشة."],
+        explanation: "قال Herr Maier: Der Balkon ist vor dem Wohnzimmer.",
+        errorType: "preposition",
+      },
     ],
   };
 
@@ -317,7 +371,7 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       { de: "Das Wohnzimmer ist groß.", ar: "غرفة المعيشة كبيرة.", tip: "groß فيها o طويلة، وß تُنطق /s/؛ يختلف r بحسب المتحدث والمنطقة." },
       { de: "Das Bett ist im Schlafzimmer.", ar: "السرير في غرفة النوم.", tip: "im = in+dem" },
       { de: "Die Küche ist modern.", ar: "المطبخ حديث.", tip: "ü صوتٌ مدوّر قريب من [ʏ] وch هنا [ç]؛ لا يوجد مقابل عربي مطابق تماماً." },
-      { de: "Wo wohnst du?", ar: "أين تسكن؟", tip: "w = ڤ؛ ركّز على st في wohnst." },
+      { de: "Wo wohnst du?", ar: "أين تسكن؟", tip: "w = /v/ في هذه الكلمة؛ والنهاية -st هنا /st/، بخلاف st في بداية Straße التي تُنطق غالباً /ʃt/." },
     ],
   };
 
@@ -352,7 +406,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
     {
       id: "w3",
       type: "dictation",
-      instructionAr: "استمع واكتب الجملة:",
+      instructionAr: "استمع إلى النطق الآلي في المتصفح واكتب الجملة:",
       audioText: "Das Sofa ist im Wohnzimmer.",
       explanation: "Das Sofa ist im Wohnzimmer — im = in + dem (Wohnzimmer محايد).",
       errorType: "spelling",

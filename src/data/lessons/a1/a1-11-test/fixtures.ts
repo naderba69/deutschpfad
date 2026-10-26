@@ -18,7 +18,7 @@ export const practiceAnswers: Record<string, unknown> = {
     { left: "der Bahnhof", right: "محطة القطار" },
     { left: "die Apotheke", right: "الصيدلية" },
     { left: "das Krankenhaus", right: "المستشفى" },
-    { left: "die Bank", right: "البنك" },
+    { left: "die Bank (Geldinstitut)", right: "البنك" },
   ],
   e4: ["Gehen", "Sie", "bitte", "geradeaus", "!"],
   e5: "nach",
@@ -84,6 +84,9 @@ export const listeningAnswers: Record<string, string> = {
   q1: "neben dem Park",
   q2: "in die Stadt",
   q3: "um acht Uhr",
+  q4: "zum Museum",
+  q5: "vor der Apotheke",
+  q6: "an der dritten Haltestelle",
 };
 
 export function reading() {

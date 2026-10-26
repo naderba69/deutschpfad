@@ -27,6 +27,36 @@ describe("A1-03 — الطعام والشراب", () => {
     }
   });
 
+  it("يفصح عن الصوت الآلي في المشهدين اللذين يستخدمان صوت المتصفح", () => {
+    for (const id of ["l1", "l2"]) {
+      const item = lesson.listening.items.find((candidate) => candidate.id === id);
+      expect(item?.lines.every((line) => !line.audioSrc), `${id} browser TTS`).toBe(true);
+      expect(item?.audioNoteAr).toContain("النطق الآلي في المتصفح (TTS)");
+      expect(item?.audioNoteAr).toContain("ليس تسجيلاً بشرياً");
+    }
+  });
+
+  it("لا يصف هدف z7 تفاعلاً شفهياً لا تقيسه مهمة الكتابة المرتبطة به", () => {
+    const goal = lesson.lernziele.find((candidate) => candidate.id === "z7");
+    expect(goal?.de).toContain("schriftlich");
+    expect(goal?.de).not.toContain("Rückfrage");
+    expect(goal?.evidence?.taskIds).toEqual(["writing:a1-03:w4"]);
+  });
+
+  it("reading mirrors paragraph count and the tip amount matches the dialogue arithmetic", () => {
+    const reading = lesson.reading;
+    expect(reading).toBeDefined();
+    if (!reading) return;
+    expect(reading.paragraphsAr).toHaveLength(reading.paragraphs.length);
+    for (const question of reading.questions) {
+      expect(question.paragraph).toBeGreaterThanOrEqual(0);
+      expect(question.paragraph).toBeLessThan(reading.paragraphs.length);
+    }
+    const tipQuestion = reading.questions.find((question) => question.id === "r4");
+    expect(tipQuestion?.options[tipQuestion.correctIndex]).toBe("Zwei Euro");
+    expect(reading.paragraphs[4]).toContain("zweiundzwanzig Euro fünfzig");
+  });
+
   it("كل هدف مرتبط بمهام موجودة فعلاً ويحمل وصف أداء", () => {
     const known = knownTaskIds();
     for (const goal of lesson.lernziele) {
@@ -37,8 +67,15 @@ describe("A1-03 — الطعام والشراب", () => {
     }
   });
 
-  it("خيارات الاختيار من متعدد فريدة وإجابتها الصحيحة ضمن المدى", () => {
-    for (const task of [...lesson.practiceBank, ...lesson.miniTest]) {
+  it("خيارات الاختيار من متعدد فريدة وإجابتها الصحيحة ضمن المدى ومحاذاة تفسيراتها", () => {
+    const tasks = [
+      ...lesson.practiceBank,
+      ...lesson.miniTest,
+      ...(lesson.review ?? []),
+      ...(lesson.reading?.questions ?? []),
+      ...(lesson.listening?.questions ?? []),
+    ];
+    for (const task of tasks) {
       if (task.type !== "multiple-choice") continue;
       expect(new Set(task.options).size, `${task.id} duplicate options`).toBe(task.options.length);
       expect(task.correctIndex).toBeGreaterThanOrEqual(0);

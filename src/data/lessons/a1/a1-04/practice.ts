@@ -13,7 +13,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionAr: "الكتاب على الطاولة.",
       options: ["auf dem", "auf der", "auf das", "auf den"],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — «der» أداة المؤنث؛ و«Tisch» مذكر مع Dativ: «auf dem Tisch».", "لا — «das» أداة المحايد؛ و«Tisch» مذكر: «auf dem Tisch».", "لا — «auf den» منصوب (Accusativ) يدلّ على حركة؛ وهنا سكون «ist» فيُستعمل Dativ: «auf dem»."],
+      optionExplanations: [undefined, "لا — «der» أداة المؤنث؛ و«Tisch» مذكر مع Dativ: «auf dem Tisch».", "لا — «das» أداة المحايد؛ و«Tisch» مذكر: «auf dem Tisch».", "لا — «auf den» هنا Akkusativ للوجهة «على الطاولة/إليها»؛ أما الجملة فتصف موضع الكتاب وتجيب عن Wo?، لذا تستعمل Dativ: «auf dem». لا تكفي الحركة الجسدية وحدها لتحديد الحالة."],
       explanation: "المذكر der→dem مع Dativ بعد auf: auf dem Tisch.",
       errorType: "preposition",
     },
@@ -111,7 +111,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e10",
       type: "dictation",
-      instructionAr: "استمع واكتب الجملة:",
+      instructionAr: "استمع إلى النطق الآلي في المتصفح واكتب الجملة:",
       audioText: "Die Katze ist unter dem Tisch.",
       explanation: "القطة تحت الطاولة: unter + dem (Dativ للمذكر).",
       errorType: "spelling",
@@ -195,7 +195,7 @@ export const fehlerUndTipps: NonNullable<Lesson["fehlerUndTipps"]> = {
     mistakes: [
       { wrong: "auf der Tisch", right: "auf dem Tisch", whyAr: "مع auf عند وصف الموقع (Wo?) نستخدم Dativ: der Tisch تصير dem Tisch في auf dem Tisch." },
       { wrong: "im die Küche", right: "in der Küche", whyAr: "im = in+dem للمذكر/المحايد فقط؛ المؤنث يبقى in der." },
-      { wrong: "نطق Wohnzimmer كـ«وُهن»", right: "ڤوهن-تسِمّر (w=ڤ)", whyAr: "تذكر قاعدة الأبجدية: W=ڤ دائماً." },
+      { wrong: "نطق Wohnzimmer كـ«وُهن»", right: "ڤوهن-تسِمّر (w الألمانية غالباً /v/)", whyAr: "في الكلمات الألمانية الشائعة يُنطق W غالباً /v/؛ وقد تختلف بعض الأسماء الدخيلة أو الاختصارات." },
     ],
     eselsbruecken: [
       "«السكون Dativ»: wo? (أين؟ المكان الساكن) → Dativ: im, in der, auf dem.",
@@ -204,6 +204,6 @@ export const fehlerUndTipps: NonNullable<Lesson["fehlerUndTipps"]> = {
     culturalNote: {
       title: "الشقة في ألمانيا",
       content:
-        "في إعلان السكن قد ترى Kaltmiete (الإيجار دون تكاليف التدفئة وسائر التكاليف الجانبية) وWarmmiete (الإيجار شاملاً التدفئة وتكاليف جانبية أخرى). افحص تفاصيل ما يشمله المبلغ في الإعلان والعقد. وقد تُعرض شقق غير مفروشة؛ لا تفترض تجهيز المطبخ أو الأثاث من دون قراءة الوصف. ستعود مفردات البحث عن سكن في درس A2.",
+        "في إعلان السكن قد ترى Kaltmiete (الإيجار الأساسي قبل التكاليف التشغيلية) وWarmmiete (مبلغ يضم عادةً التدفئة وبعض التكاليف التشغيلية المتفق عليها). قد تبقى الكهرباء أو بعض التكاليف خارج المبلغ، فافحص التفاصيل في الإعلان والعقد. وقد تُعرض شقق غير مفروشة؛ لا تفترض تجهيز المطبخ أو الأثاث من دون قراءة الوصف. ستعود مفردات البحث عن سكن في درس A2.",
     },
   };

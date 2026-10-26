@@ -281,7 +281,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       optionExplanations: [
         undefined,
         "«Du sollst zum Arzt gehen» توجيهٌ مباشرٌ أقوى من المطلوب في هذا السياق.",
-        "«Du musst zum Arzt gehen wollen» تركيبٌ فاسد: «wollen» بعد «müssen» تُفسد المعنى.",
+        "«Du musst zum Arzt gehen wollen» جملة ممكنة نحوياً بمعنى أنك ملزم بأن تريد الذهاب؛ لكنها لا تعني «ينبغي أن تذهب» وتغيّر المقصود هنا.",
         "«Du darfst zum Arzt gehen» إذنٌ لا نصيحة.",
       ],
     },

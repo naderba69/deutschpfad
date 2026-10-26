@@ -137,6 +137,7 @@ export function SmartGoalsCard() {
           <div className="flex items-center gap-2">
             <input
               type="text"
+              aria-label="هدف تعلم جديد"
               value={suggested}
               onChange={(e) => setSuggested(e.target.value)}
               onKeyDown={(e) => {

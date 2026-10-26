@@ -11,9 +11,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أفهم حواراً عن خطط المستقبل وأجيب عن أسئلته.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
-        labelAr: "أجيب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q2", "q3", "q4"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"],
+        labelAr: "أجيب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -22,16 +22,17 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أكوّن جملة تجمع جملة نسبية وجملة بـ weil في موضعيهما.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["e4", "e6", "e7", "m1", "m5", "w1"],
+        exerciseIds: ["e4", "e6", "e7", "e11", "m1", "m5", "w1"],
         taskIds: [
           "practice:b1-10:e4",
           "practice:b1-10:e6",
           "practice:b1-10:e7",
+          "practice:b1-10:e11",
           "mini-test:b1-10:m1",
           "mini-test:b1-10:m5",
           "writing:b1-10:w1",
         ],
-        labelAr: "أجيب صحيحاً عن تمارين الجمل المركبة (e4 وe6 وe7 وm1 وm5 وw1)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن تمارين الجمل المركبة (e4 وe6 وe7 وe11 وm1 وm5 وw1)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
       },
     },
     {
@@ -65,12 +66,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "هذا الدرس الأخير يجمّع كل ما تعلمته في هذا المستوى: Genitiv، Relativsätze، Konjunktiv II، Passiv، Adjektivdeklination، الروابط المزدوجة. هل تستطيع كتابة جملة تجمع أكثر من قاعدة؟ هذه مهارة مهمة في هذا المستوى.",
+      "في هذا الدرس نتحدث عن خطط المستقبل، ونعيد توظيف بعض التراكيب التي تعلمتها، مثل الجمل النسبية والشرطية وجمل التعليل. هل تستطيع جمع أكثر من تركيب في جملة واحدة؟",
     motivatingQuestionDe: "Was sind deine Pläne für die Zukunft?",
     contextAr:
-      "نخطط للمستقبل ونراجع المستوى كله: في هذا الدرس سترى كيف تتداخل القواعد — وستشعر بقفزة مستواك.",
+      "نخطط للمستقبل ونتدرّب على ربط الأفكار بجمل أطول، مع الانتباه إلى موضع الفعل.",
     contextDe: "Ich werde in Deutschland studieren, was ich mir schon lange gewünscht habe.",
-    connectionToPreviousAr: "هذا ختام B1: من Genitiv (درس 1) إلى الروابط المزدوجة (درس 8) — كل شيء يجتمع في درس الخطط.",
+    connectionToPreviousAr: "يربط هذا الدرس بين موضوع الخطط المستقبلية وبعض التراكيب التي ظهرت في دروس سابقة، ولا يمثّل مراجعة شاملة لكل قواعد B1.",
     activateVocabulary: [
       { de: "die Zukunft", ar: "المستقبل" },
       { de: "der Plan", ar: "الخطة" },

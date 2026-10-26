@@ -1,6 +1,10 @@
 import { describe, expect, it } from "vitest";
 
 import { lessonB204 } from "@/data/lessons/b2/b2-04";
+import { B2_DIALOGUES_3 } from "@/data/dialogues/b2/part3";
+import { B2_EXTRA_STORIES } from "@/data/stories/b2-extra";
+import { STORIES_WAVE2 } from "@/data/stories/wave2";
+import { getRelatedResources } from "@/data/lessons/related-resources";
 import { LESSON_META } from "@/data/lessons/meta";
 import { evaluateExercise } from "@/lib/lesson/exercise-engine";
 import { getGoalEvidenceStatus } from "@/lib/lesson/goal-evidence";
@@ -23,6 +27,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   q2: { options: ["seine Herkunft", "seinen Beruf", "seinen Freund", "seine Stadt"], key: "seine Herkunft" },
   q3: { options: ["sehr emotional", "sehr langweilig", "sehr kurz", "sehr lustig"], key: "sehr emotional" },
   q4: { options: ["drei Jahre", "drei Monate", "ein Jahr", "fünf Jahre"], key: "drei Jahre" },
+  q5: { options: ["Am Donnerstag um 18 Uhr", "Am Mittwoch um 18 Uhr", "Am Donnerstag um 16 Uhr", "Am Freitag um 20 Uhr"], key: "Am Donnerstag um 18 Uhr" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -159,15 +164,20 @@ describe("B2-04 lesson content audit", () => {
   });
 
   it("uses only evaluable performances as goals, each all-correct", () => {
-    expect(lessonB204.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4"]);
+    expect(lessonB204.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4", "z5"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4", "q5"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e2", "e6", "m1", "m2", "w1", "w2"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e7", "w3"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["e5", "e9", "m4"]);
+    expect(goal("z5").evidence?.exerciseIds).toEqual(["rq1", "rq2", "rq3", "rq4"]);
     for (const item of lessonB204.lernziele) {
       expect(item.evidence?.completion, `${item.id} completion`).toBe("all-correct");
       for (const exerciseId of item.evidence?.exerciseIds ?? []) {
-        expect(() => task(exerciseId), `${item.id}:${exerciseId}`).not.toThrow();
+        if (item.id === "z5") {
+          expect(lessonB204.reading?.questions.some(({ id }) => id === exerciseId), `${item.id}:${exerciseId}`).toBe(true);
+        } else {
+          expect(() => task(exerciseId), `${item.id}:${exerciseId}`).not.toThrow();
+        }
       }
     }
     const goalsText = JSON.stringify(lessonB204.lernziele);
@@ -190,12 +200,14 @@ describe("B2-04 lesson content audit", () => {
   it("maps listening evidence to transcript-free task IDs only", () => {
     expect(getListeningQuestionTaskId("b2-04", "l1", "q1", false)).toBe("listening:l1:q1");
     expect(getListeningQuestionTaskId("b2-04", "l2", "q2", false)).toBe("listening:l2:q2");
+    expect(getListeningQuestionTaskId("b2-04", "l3", "q5", false)).toBe("listening:l3:q5");
     expect(getListeningQuestionTaskId("b2-04", "l1", "q4", true)).toBe("listening-transcript:b2-04:l1:q4");
     expect(goal("z1").evidence?.taskIds).toEqual([
       "listening:l1:q1",
       "listening:l2:q2",
       "listening:l2:q3",
       "listening:l1:q4",
+      "listening:l3:q5",
     ]);
     const transcriptIds = lessonB204.lernziele.flatMap(
       (item) => item.evidence?.taskIds?.filter((taskId) => taskId.startsWith("listening-transcript:")) ?? [],
@@ -442,8 +454,8 @@ describe("B2-04 lesson content audit", () => {
     const reading = lessonB204.reading;
     expect(reading?.id).toBe("read-b2-04");
     expect(reading?.textType).toBe("artikel");
-    expect(reading?.titleDe).toBe("Die spät entdeckte Erzählerin");
-    expect(reading?.titleAr).toBe("الكاتبة التي اكتُشفت متأخّرةً");
+    expect(reading?.titleDe).toBe("Fiktives Porträt: Die spät entdeckte Autorin");
+    expect(reading?.titleAr).toBe("بورتريه أدبي متخيّل: الكاتبة التي اكتُشفت متأخّرةً");
     expect(reading?.paragraphs).toHaveLength(6);
     expect(reading?.paragraphsAr).toHaveLength(6);
     const text = reading!.paragraphs.join(" ").toLowerCase();
@@ -486,7 +498,7 @@ describe("B2-04 lesson content audit", () => {
       "die von vielen kritikern gerühmte sprache",
       "das viel gelobte buch",
       "die in viele sprachen übersetzte erzählung",
-      "die spät entdeckte erzählerin",
+      "die spät entdeckte autorin",
     ]) {
       expect(text.includes(anchor), `مرساة مفقودة: ${anchor}`).toBe(true);
     }
@@ -501,11 +513,28 @@ describe("B2-04 lesson content audit", () => {
     const rounds = lessonB204.interaction?.[0].rounds as unknown as { options: { de: string; best?: boolean }[] }[];
     expect(rounds.map((round) => round.options.find((option) => option.best)?.de)).toEqual([
       "Obwohl die Handlung langsam beginnt, entwickelt sich der Roman zu einem tiefgründigen Werk über Identität und Heimat.",
-      "Die Art, wie der Autor die innere Welt der Figuren beschreibt. Gleichzeitig schafft er eine kritische Reflexion über die Gesellschaft.",
+      "Am meisten beeindruckt mich, wie der Autor die innere Welt der Figuren beschreibt und zugleich die Gesellschaft kritisch reflektiert.",
     ]);
     for (const round of rounds) {
       expect(round.options.filter((option) => option.best)).toHaveLength(1);
     }
+  });
+
+  it("labels the fictional reading and linked story scenarios, and maps reading comprehension to its own goal", () => {
+    expect(lessonB204.reading?.titleDe).toContain("Fiktives Porträt");
+    expect(lessonB204.reading?.titleAr).toContain("متخيّل");
+    expect(getRelatedResources("b2-04").map(({ kind, id }) => `${kind}:${id}`)).toEqual([
+      "story:b2-kunstausstellung", "story:b2-medienkritik", "dialogue:b2-14-medien",
+    ]);
+    expect(B2_EXTRA_STORIES.find(({ id }) => id === "b2-kunstausstellung")?.description).toContain("متخيّل");
+    expect(STORIES_WAVE2.find(({ id }) => id === "b2-medienkritik")?.description).toContain("متخيّل");
+    expect(goal("z5").evidence?.taskIds).toEqual([
+      "reading:read-b2-04:rq1", "reading:read-b2-04:rq2", "reading:read-b2-04:rq3", "reading:read-b2-04:rq4",
+    ]);
+    const dialogue = B2_DIALOGUES_3.find(({ id }) => id === "b2-14-medien");
+    expect(dialogue?.audioNoteAr).toContain("مصدر ملفات MP3 لهذا الحوار غير موثّق");
+    expect(dialogue?.situation).toContain("حوار تدريبي متخيّل");
+    expect(dialogue?.turns.map(({ de }) => de).join(" ")).toContain("Viele verbreiten nur noch Falschinformationen");
   });
 
   it("keeps the meta row aligned with the lesson title", () => {

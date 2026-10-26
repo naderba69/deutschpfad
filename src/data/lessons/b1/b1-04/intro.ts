@@ -43,9 +43,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       de: "Ich kann Wünsche und Ratschläge in einem kurzen Gespräch verstehen.",
       ar: "أن أفهم الأمنيات والنصيحة في حوار قصير.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
-        labelAr: "أجب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، دون كشف التفريغ. كشف النص لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4", "listening:l3:q5", "listening:l3:q6"],
+        labelAr: "أجب صحيحاً عن أسئلة q1–q6 بعد الاستماع إلى حوارات l1–l3 دون كشف التفريغ. كشف النص لا يُحتسب أداءً.",
         completion: "all-correct",
       },
     },
@@ -56,7 +56,7 @@ export const einfuehrung: Lesson["einfuehrung"] = {
       "قل بالعربية: «لو كنت غنياً، لسافرت». لاحظت «لو... لـ»؟ الألمانية تملك صيغة كاملة لذلك اسمها Konjunktiv II. وأهم أداتها: würde (معناها «كنت سأ...») + المصدر. خمّن: كيف نقول «كنت سأسافر»؟",
     motivatingQuestionDe: "Was würdest du machen, wenn du reich wärst?",
     contextAr:
-      "ندخل صيغة مهمة في B1: الشرطية. بها نعبر عن الأحلام والافتراضات والنصائح المهذبة — وكل شيء غير واقعي.",
+      "ندخل صيغة مهمة في B1: الشرطية. بها نعبر عن الأحلام والافتراضات والنصائح المهذبة — والطلبات المهذبة، بحسب السياق.",
     contextDe: "Ich würde gern mehr Nachrichten lesen, wenn ich Zeit hätte.",
     connectionToPreviousAr: "تتذكر werden (يصبح + مجهول). اليوم: würde — صيغة شرطية من werden: Ich würde = كنت سأفعل. ثلاثة استخدامات لwerden في مستوى واحد!",
     activateVocabulary: [

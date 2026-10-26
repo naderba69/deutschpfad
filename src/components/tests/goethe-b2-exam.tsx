@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import {Award, BookOpenCheck, CheckCircle2, Headphones, Mic, PenLine, PlayCircle, RotateCcw, Timer, XCircle} from "lucide-react";
 
 import {B2_HOEREN_SETS, B2_LESEN_SETS, B2_SCHREIBEN_SETS, B2_SPRECHEN_SETS, GOETHE_B2_EXAM} from "@/data/exams";
@@ -554,7 +555,7 @@ export function GoetheB2Exam() {
               إعادة المحاكاة
             </Button>
             <Button asChild variant="outline" className="flex-1">
-              <a href="/tests/level/b2">اختبار مستوى B2 السريع</a>
+              <Link href="/tests/level/b2">اختبار مستوى B2 السريع</Link>
             </Button>
           </div>
         </CardContent>

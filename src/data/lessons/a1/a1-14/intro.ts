@@ -73,12 +73,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z7",
-      de: "Ich kann zentrale Angaben aus einer kurzen Sprachnachricht entnehmen.",
-      ar: "أن أستخرج معلومات أساسية من رسالة صوتية قصيرة.",
+      de: "Ich kann zentrale Angaben aus drei kurzen Hörtexten entnehmen.",
+      ar: "أن أستخرج معلومات أساسية من ثلاثة نصوص استماع قصيرة.",
       evidence: {
-        exerciseIds: ["lsq-a1-14-1", "lsq-a1-14-3"],
-        taskIds: ["listening:ls-a1-14-1:lsq-a1-14-1", "listening:ls-a1-14-1:lsq-a1-14-3"],
-        labelAr: "الإجابة قبل كشف نص الرسالة عن نشاط يوم السبت ووسيلة الوصول إلى البحيرة يوم الأحد.",
+        exerciseIds: ["lsq-a1-14-1", "lsq-a1-14-3", "lsq-a1-14-4", "lsq-a1-14-5", "lsq-a1-14-6", "lsq-a1-14-7", "lsq-a1-14-8", "lsq-a1-14-9"],
+        taskIds: ["listening:ls-a1-14-1:lsq-a1-14-1", "listening:ls-a1-14-1:lsq-a1-14-3", "listening:ls-a1-14-2:lsq-a1-14-4", "listening:ls-a1-14-2:lsq-a1-14-5", "listening:ls-a1-14-2:lsq-a1-14-6", "listening:ls-a1-14-3:lsq-a1-14-7", "listening:ls-a1-14-3:lsq-a1-14-8", "listening:ls-a1-14-3:lsq-a1-14-9"],
+        labelAr: "الإجابة الصحيحة عن أسئلة المشاهد الثلاثة قبل كشف النصوص؛ هذا دليل محدود على التفاصيل المستهدفة ولا يثبت إتقان الاستماع العام.",
         completion: "all-correct",
       },
     },

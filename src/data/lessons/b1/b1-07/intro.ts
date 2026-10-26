@@ -11,9 +11,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أفهم حواراً عن السياسة والانتخابات وأجيب عن تفاصيله بدقة.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3"],
-        labelAr: "أجيب صحيحاً عن q1 بعد الاستماع إلى l1، وعن q2 وq3 بعد الاستماع إلى l2، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q2", "q3", "q4"],
+        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4"],
+        labelAr: "أجيب صحيحاً عن q1 بعد الاستماع إلى l1، وعن q2 وq3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -61,12 +61,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "في A2 تعلمت weil وwenn. اليوم نكمل الخريطة: als (عندما — لماضٍ مرة واحدة)، während (بينما)، bevor (قبل أن)، nachdem (بعد أن)، bis (حتى). وجميعها ترسل الفعل للنهاية — لكن الفرق بين als وwenn دقيق جداً!",
+      "في A2 تعلمت weil وwenn. اليوم نراجع أدوات زمنية منها als لوقت أو حالة ماضية محددة، وwenn للحاضر والمستقبل والشرط والتكرار في الماضي، إلى جانب während وbevor وnachdem وbis. وتأتي الجملة الرئيسية بالفعل المصرف في الموقع الثاني بعد التابعة المتقدمة.",
     motivatingQuestionDe: "Was denkst du über Politik?",
     contextAr:
       "المجتمع والسياسة: مفردات أساسية + الجمل الزمنية والسببية والتخالفية — مهمة لفهم النصوص الإخبارية والرأي.",
     contextDe: "Als ich jung war, war die Politik anders.",
-    connectionToPreviousAr: "تتذكر weil/wenn/ob من A2 وdass من درس الإعلام. اليوم: بقية الجمل الثانوية — وخاصة التمييز الصعب: als (ماضٍ مرة) مقابل wenn (متكرر/مضارع).",
+    connectionToPreviousAr: "تتذكر weil/wenn/ob من A2 وdass من درس الإعلام. اليوم: بقية الجمل الثانوية — وخاصة التمييز بين als لوقت ماضٍ محدد وwenn للشرط أو التكرار في الماضي، فضلاً عن استعمالها للحاضر والمستقبل.",
     activateVocabulary: [
       { de: "die Politik", ar: "السياسة" },
       { de: "die Gesellschaft", ar: "المجتمع" },
@@ -80,17 +80,17 @@ export const review: NonNullable<Lesson["review"]> = [
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة من A2 (درس a2-10 — المدرسة والتعلم): اختر حرف الربط (لأنّ):",
-      questionDe: "Ich lerne, ___ ich will.",
+      instructionAr: "مراجعة من A2 (درس a2-10 — المدرسة والتعلم): اختر الأداة التي تبدأ جملة سببية (لأنّ):",
+      questionDe: "Welche Konjunktion leitet einen Grundsatz ein?",
       options: ["weil", "wenn", "ob", "dass"],
       correctIndex: 0,
       explanation: "سبب → weil (درس المدرسة A2).",
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«wenn» شرط، والجملة تحتاج سبباً أو إرادة، لذلك weil.",
-        "لا — «ob» تصلح لسؤالٍ غير مباشر («Ich frage mich, ob …»)؛ والجملة «Ich lerne, … ich will» تعلّل فتحتاج «weil».",
-        "«dass» تقدّم مضموناً، ولا تعبّر عن السبب.",
+        "«wenn» تبدأ شرطاً أو جملة زمنية، لا جملة السبب المقصودة هنا.",
+        "لا — «ob» تبدأ سؤالاً غير مباشر؛ والسؤال هنا عن أداة التعليل.",
+        "«dass» تقدّم مضموناً، لا سبباً.",
       ],
     },
     {

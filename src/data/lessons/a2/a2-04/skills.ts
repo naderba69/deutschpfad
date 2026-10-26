@@ -19,7 +19,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
       "منذ ثلاثة أسابيع يبحث أمير عن شقة جديدة. غرفته في السكن الجامعي صغيرة جداً: المكتب بجانب السرير، والكتب على الأرض، والسترة معلّقة على الباب. يجد على الإنترنت إعلاناً: «ثلاث غرف ومطبخ وحمّام، 78 م²، الطابق الثاني فوق الأرضي، إيجار أساسي 640 يورو زائد 190 يورو تكاليف جانبية». يشرح له جاره: «الإيجار الشامل يجمع الإيجار الأساسي والتكاليف الجانبية المتفق عليها. تحقّق من الإعلان مما يشمله السعر؛ فقد تُدفع الكهرباء والإنترنت منفصلين».",
       "أمس تلقّى أمير رداً. اقترحت المؤجّرة، السيدة كروغر، موعداً لمعاينة الشقة. تقع الشقة في الطابق الثاني فوق الأرضي في مبنى على أطراف المدينة. وعندما يصل أمير تستقبله السيدة كروغر وتريه الشقة.",
       "الشقة مضيئة. في المطبخ موقد قديم، وفي الحمّام مرآة معلّقة فوق المغسلة، وبين الغرفتين باب زجاجي. يسأل أمير: «هل التكاليف الجانبية داخلة في الإيجار الشامل؟ وكم مبلغ التأمين؟» تجيب السيدة كروغر: «التأمين يساوي إيجارين أساسيين. بعد انتقالك من الشقة نفحصها ونسوّي التكاليف التي لم تُسوَّ بعد؛ ثم نردّ إليك المبلغ المتبقي». ثم تريه نظام هذا المبنى، وتذكر أن أوقات الهدوء فيه تبدأ بعد العاشرة مساءً وتشمل يوم الأحد.",
-      "بعد أسبوع يحصل أمير على الموافقة. يوقّع عقد الإيجار قبل الانتقال. يوم السبت يحمل صناديقه عبر بيت الدرج إلى الطابق العلوي. يضعها في مدخل المبنى بجانب المصعد، ثم يدخلها إلى الشقة. في الشقة يضع المصباح بجانب الأريكة، ويفرش السجادة على الأرض، ويعلّق الصور على الجدار. وعند تسليم المفاتيح يملأ الطرفان محضر التسليم. تقول السيدة كروغر: «دوّن كل ضرر موجود والتقط صوراً؛ فقد يساعد ذلك لاحقاً».",
+      "بعد أسبوع يحصل أمير على الموافقة. يوقّع عقد الإيجار قبل الانتقال. يوم السبت يحمل صناديقه عبر بيت الدرج إلى الطابق العلوي. يضعها في ممر المبنى بجانب المصعد، ثم يدخلها إلى الشقة. في الشقة يضع المصباح بجانب الأريكة، ويفرش السجادة على الأرض، ويعلّق الصور على الجدار. وعند تسليم المفاتيح يملأ الطرفان محضر التسليم. تقول السيدة كروغر: «دوّن كل ضرر موجود والتقط صوراً؛ فقد يساعد ذلك لاحقاً».",
     ],
     glossary: [
       { de: "die Anzeige", ar: "الإعلان", noteAr: "في هذا النص: إعلان سكن." },
@@ -157,6 +157,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
     items: [
       {
         id: "l1", title: "معاينة شقة",
+        audioNoteAr: "النطق هنا مولّد آلياً بواسطة تحويل النص إلى كلام في الجهاز/المتصفح، وليس تسجيلاً بشرياً؛ وقد تختلف الأصوات المتاحة بحسب النظام.",
         lines: [
           { speaker: "Vermieter", de: "Das ist die Wohnung. Sie hat drei Zimmer und eine Küche.", ar: "هذه هي الشقة. فيها ثلاث غرف ومطبخ." },
           { speaker: "Mona", de: "Schön! Wo ist das Bad?", ar: "جميلة! أين الحمّام؟" },
@@ -169,6 +170,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       },
       {
         id: "l2", title: "أين نضع الأثاث؟",
+        audioNoteAr: "النطق هنا مولّد آلياً بواسطة تحويل النص إلى كلام في الجهاز/المتصفح، وليس تسجيلاً بشرياً؛ وقد تختلف الأصوات المتاحة بحسب النظام.",
         lines: [
           { speaker: "Karim", de: "Ich hänge das Bild an die Wand.", ar: "أعلّق الصورة على الجدار." },
           { speaker: "Anna", de: "Gut! Und die Lampe?", ar: "جيد! وماذا عن المصباح؟" },
@@ -179,14 +181,27 @@ export const listening: NonNullable<Lesson["listening"]> = {
       },
       {
         id: "l3", title: "الجيران وقواعد هذا المبنى",
+        audioNoteAr: "النطق هنا مولّد آلياً بواسطة تحويل النص إلى كلام في الجهاز/المتصفح، وليس تسجيلاً بشرياً؛ وقد تختلف الأصوات المتاحة بحسب النظام.",
         lines: [
           { speaker: "Nachbarin", de: "Willkommen in der neuen Wohnung! Ich bin Frau Weber aus Wohnung 3.", ar: "مرحباً في الشقة الجديدة! أنا السيدة فيبر من الشقة 3." },
           { speaker: "Mona", de: "Danke! Ich bin Mona. Wie sind die Regeln hier?", ar: "شكراً! أنا منى. ما القواعد هنا؟" },
           { speaker: "Nachbarin", de: "In unserer Hausordnung stehen Ruhezeiten: von 13 bis 15 Uhr und nach 22 Uhr.", ar: "يتضمن نظام مبنانا أوقات هدوء: من 13 إلى 15، وبعد الساعة 22." },
           { speaker: "Mona", de: "Kein Problem. Und der Müll?", ar: "لا مشكلة. وماذا عن النفايات؟" },
           { speaker: "Nachbarin", de: "Wir trennen Papier, Plastik und Bioabfall. Die Tonnen stehen draußen.", ar: "نفرز الورق والبلاستيك والنفايات العضوية. الحاويات في الخارج." },
-          { speaker: "Mona", de: "Verstanden. Kann ich meine Schuhe in den Hausflur stellen?", ar: "فهمت. هل أستطيع وضع حذائي في مدخل المبنى؟" },
-          { speaker: "Nachbarin", de: "Bitte nicht. Bei uns soll der Hausflur frei bleiben. Im Sommer treffen wir uns manchmal im Hof.", ar: "من فضلك لا؛ ينبغي في مبنانا أن يبقى المدخل خالياً. نجتمع أحياناً في الصيف في الفناء." },
+          { speaker: "Mona", de: "Verstanden. Kann ich meine Schuhe in den Hausflur stellen?", ar: "فهمت. هل أستطيع وضع حذائي في ممر المبنى؟" },
+          { speaker: "Nachbarin", de: "Bitte nicht. Bei uns soll der Hausflur frei bleiben. Im Sommer treffen wir uns manchmal im Hof.", ar: "من فضلك لا؛ ينبغي في مبنانا أن يبقى الممر المشترك خالياً. نجتمع أحياناً في الصيف في الفناء." },
+        ],
+      },
+      {
+        id: "l4", title: "مكان الصندوق والدراجة",
+        audioNoteAr: "هذا المقطع يحتوي على أصوات مولّدة آلياً (TTS)، وليس تسجيلاً بشرياً.",
+        lines: [
+          { speaker: "Mona", de: "Wohin soll ich den Karton stellen?", ar: "أين أضع الصندوق؟", audioSrc: "/audio/lessons/a2-04/ls-a2-04-4-1.mp3" },
+          { speaker: "Frau Weber", de: "Bitte nicht in den Hausflur. Der muss frei bleiben.", ar: "من فضلك ليس في ممر المبنى. يجب أن يبقى خالياً.", audioSrc: "/audio/lessons/a2-04/ls-a2-04-4-2.mp3" },
+          { speaker: "Mona", de: "Und wo kann ich mein Fahrrad abstellen?", ar: "وأين يمكنني وضع دراجتي؟", audioSrc: "/audio/lessons/a2-04/ls-a2-04-4-3.mp3" },
+          { speaker: "Frau Weber", de: "Im Fahrradkeller, neben der Waschküche.", ar: "في قبو الدراجات، بجانب غرفة الغسيل.", audioSrc: "/audio/lessons/a2-04/ls-a2-04-4-4.mp3" },
+          { speaker: "Mona", de: "Ist der Keller gegenüber der Waschküche?", ar: "هل القبو مقابل غرفة الغسيل؟", audioSrc: "/audio/lessons/a2-04/ls-a2-04-4-5.mp3" },
+          { speaker: "Frau Weber", de: "Ja, genau. Die Tür ist gleich gegenüber.", ar: "نعم، تماماً. الباب مقابلها مباشرة.", audioSrc: "/audio/lessons/a2-04/ls-a2-04-4-6.mp3" },
         ],
       },
     ],
@@ -238,6 +253,24 @@ export const listening: NonNullable<Lesson["listening"]> = {
           "لم تُذكر فترة «nachts zwischen zwei und vier».",
           "القاعدة ساعاتٌ يومية، لا أيام عطلة «am Wochenende und an Feiertagen». ",
         ],
+      },
+      {
+        id: "q5", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:", questionDe: "Wo soll Mona den Karton nicht hinstellen?", questionAr: "أين لا ينبغي لمنى أن تضع الصندوق؟",
+        options: ["In den Hausflur", "In den Fahrradkeller", "Neben die Waschküche", "In die Wohnung"], correctIndex: 0,
+        explanation: "تطلب الجارة ألا تضع الصندوق في ممر المبنى، كي يبقى خالياً.", errorType: "vocabulary",
+      },
+      {
+        id: "q6", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:", questionDe: "Wo kann Mona ihr Fahrrad abstellen?", questionAr: "أين يمكن لمنى أن تضع دراجتها؟",
+        options: ["Im Fahrradkeller", "Im Hausflur", "Im Schlafzimmer", "Auf dem Balkon"], correctIndex: 0,
+        explanation: "تقول الجارة إن الدراجة يمكن أن تكون في قبو الدراجات.", errorType: "vocabulary",
+      },
+      {
+        id: "q7", itemId: "l4", type: "multiple-choice",
+        instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:", questionDe: "Wo ist die Tür zum Keller?", questionAr: "أين باب القبو؟",
+        options: ["Gegenüber der Waschküche", "Neben dem Schlafzimmer", "Hinter dem Sofa", "Über dem Waschbecken"], correctIndex: 0,
+        explanation: "تؤكد الجارة أن الباب يقع مقابل غرفة الغسيل.", errorType: "preposition",
       },
     ],
   };

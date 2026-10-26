@@ -107,11 +107,11 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z10",
       de: "Ich kann in kurzen Einkaufsdialogen Kleidungsstück, Farbe und Preis heraushören.",
-      ar: "ألتقط اسم قطعة الملابس واللون والسعر من حوارين قصيرين.",
+      ar: "ألتقط اسم قطعة الملابس واللون والسعر من ثلاثة حوارات قصيرة.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
-        labelAr: "أجب عن أسئلة الاستماع الثلاثة q1–q3 كلها إجابة صحيحة، بما فيها السعر والقطعة التي ترتديها آنا.",
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4", "listening:l3:q5", "listening:l3:q6"],
+        labelAr: "أجب إجابة صحيحة عن أسئلة الاستماع q1–q6 حول البحث عن الملابس وألوانها وأسعارها؛ تشغيل الصوت وحده لا يثبت الفهم.",
         completion: "all-correct",
       },
     },

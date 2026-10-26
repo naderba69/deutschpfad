@@ -38,4 +38,12 @@ export const lessonA213: Lesson = {
   flashcards,
   mediation,
   interaction,
+  oralProduction: [{
+    id: "oral-a2-13-routine",
+    titleAr: "احكِ عن موقف يومي وخطتك",
+    promptAr: "تحدث بالألمانية عن رحلة أو مناسبة قريبة: أين تريد الذهاب؟ مع من؟ ماذا تحتاج أن تفعل أو تحضر؟",
+    promptDe: "Erzähl von einem Ausflug oder einer Feier, die du planst. Wohin möchtest du gehen und was musst du vorbereiten?",
+    prompts: ["ابدأ بجمل قصيرة عن المكان والوقت.", "اذكر سبباً أو تفضيلاً واحداً.", "اختم بخطة أو اقتراح."],
+    selfReview: ["ذكرت المكان أو الوقت.", "أضفت سبباً أو تفضيلاً.", "ربطت أكثر من جملة بطريقة مفهومة."],
+  }],
 };

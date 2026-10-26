@@ -11,7 +11,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       titleAr: "أدوات الملكية mein / meine",
       titleDe: "Possessivartikel: mein und meine",
       explanationAr:
-        "أداة الملكية (Possessivartikel) تسبق الاسم، وتتكوّن من جذر ونهاية يؤديان وظيفتين مختلفتين:\n\n**الجذر يحدّد المالك**: ich ⟵ mein، du ⟵ dein، er ⟵ sein، sie ⟵ ihr.\n**النهاية تتبع الاسم المملوك** من حيث الجنس والعدد والحالة الإعرابية.\n\nفي هذه الكتلة نتمرّن أساساً على حالة الرفع (Nominativ):\n• مع الاسم المذكّر (der): mein Vater, mein Bruder, mein Sohn\n• مع الاسم المحايد (das): mein Kind, mein Haus\n• مع الاسم المؤنّث (die): meine Mutter, meine Schwester\n• مع الجمع: meine Eltern, meine Geschwister\n\nفي أمثلة الرفع هذه تظهر النهاية ‑e مع المؤنث والجمع، ولا تظهر مع المذكر والمحايد. لا تعمّم هذا الجدول على حالات أخرى؛ فالنهاية تتغيّر في Akkusativ وDativ أيضاً.\n\nقارن في الرفع: ein Vater / mein Vater، eine Mutter / meine Mutter، ein Kind / mein Kind. تتشابه أدوات الملكية والنفي مع نمط تصريف ein‑، مع اختلاف الجذور، ولا توجد صيغة جمع للأداة النكرة ein.\n\nالتركيز النحوي في هذا الدرس هو أدوات الملكية في الرفع. ستصادف في القراءة تراكيب سياقية من حالات أخرى، مثل einen Bruder (Akkusativ)، وmit meinen Eltern أو neben ihm (Dativ). ورودها في النص لا يعني أن تصريف تلك الحالات هو هدف هذه الكتلة.",
+        "أداة الملكية (Possessivartikel) تسبق الاسم، وتتكوّن من جذر ونهاية يؤديان وظيفتين مختلفتين:\n\n**الجذر يحدّد الشخص أو المجموعة المنسوبة إليها العلاقة (ويُسمّى ذلك اختصاراً المالك، لا الملكية المادية فقط)**: ich ⟵ mein، du ⟵ dein، er/es ⟵ sein، sie ⟵ ihr.\n**النهاية تتبع الاسم الموصوف** من حيث الجنس والعدد والحالة الإعرابية.\n\nفي هذه الكتلة نتمرّن أساساً على حالة الرفع (Nominativ):\n• مع الاسم المذكّر (der): mein Vater, mein Bruder, mein Sohn\n• مع الاسم المحايد (das): mein Kind, mein Haus\n• مع الاسم المؤنّث (die): meine Mutter, meine Schwester\n• مع الجمع: meine Eltern, meine Geschwister\n\nفي أمثلة الرفع هذه تظهر النهاية ‑e مع المؤنث والجمع، ولا تظهر مع المذكر والمحايد. لا تعمّم هذا الجدول على حالات أخرى؛ فالنهاية تتغيّر في Akkusativ وDativ أيضاً.\n\nقارن في الرفع: ein Vater / mein Vater، eine Mutter / meine Mutter، ein Kind / mein Kind. تتشابه أدوات الملكية والنفي مع نمط تصريف ein‑، مع اختلاف الجذور، ولا توجد صيغة جمع للأداة النكرة ein.\n\nالتركيز النحوي في هذا الدرس هو أدوات الملكية في الرفع. ستصادف في القراءة تراكيب سياقية من حالات أخرى، مثل von meiner Familie وbei meinen Großeltern وin einem Krankenhaus وseit fünfundzwanzig Jahren وmit meinen Eltern (Dativ)، وeinen Bruder وjeden Sonntag (Akkusativ)، وneben ihm وdir في Wie geht es dir? (Dativ). ورودها في النص لا يعني أن تصريف تلك الحالات هو هدف هذه الكتلة؛ المطلوب هنا ملاحظة السياق فقط.",
       whyAr:
         "تساعد أدوات الملكية المتعلّم على تسمية أفراد الأسرة ووصفهم، وهي مفردات مألوفة في بدايات التعلم. ركّز هنا على فصل معلومتين: الجذر يبيّن المالك، والنهاية توافق الاسم المملوك والحالة المستخدمة. أما التراكيب التي تظهر بحالات أخرى في النص فتُقرأ في سياقها، ولا يُفترض إتقان تصريفها من هذا الدرس وحده.",
       table: {
@@ -82,7 +82,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
           wrong: "Meine Eltern ist nett.",
           right: "Meine Eltern sind nett.",
           whyAr:
-            "Eltern اسم جمع في معنى الوالدين، ولذلك يأتي معه الفعل بصيغة الجمع sind. لا تخلط هذا بجمع الأسماء غير العاقلة في العربية؛ المقصود هنا أشخاص، والمطابقة في المثال جمع أيضاً.",
+            "Eltern تُستعمل في هذا المعنى بصيغة الجمع، لذلك يأتي الفعل معها بصيغة الجمع: Meine Eltern sind nett.",
         },
       ],
       relatedRuleComparison: {
@@ -189,20 +189,24 @@ export const theory: NonNullable<Lesson["theory"]> = [
       titleAr: "عائلة غيرك: dein / sein / ihr",
       titleDe: "Wem gehört es? dein, sein und ihr",
       explanationAr:
-        "تعلّمتَ mein عند الحديث عن نفسك. وعند الحديث عن عائلة شخص آخر، تذكّر القاعدتين معاً:\n\n**الجذر بحسب المالك:** أنا ⟵ mein‑؛ أنت (du) ⟵ dein‑؛ هو ⟵ sein‑؛ هي أو هم ⟵ ihr‑؛ نحن ⟵ unser‑؛ أنتم (ihr) ⟵ euer‑؛ والصيغة الرسمية للملكية ⟵ Ihr‑.\n\n**النهاية بحسب الاسم المملوك والحالة:** في الرفع نقول sein Bruder / seine Mutter، وihr Vater / ihre Schwester. الجذر يعرّف المالك، والنهاية تتبع الاسم الذي تسبقه الأداة.\n\nانتبه إلى وظائف ihr في الأمثلة:\n• ihr Vater = أبوها أو أبوهم، بحسب السياق؛ هنا ihr أداة ملكية تسبق الاسم.\n• Ihr seid nett = أنتم لطفاء؛ هنا ihr ضمير فاعل. إذا جاءت الكلمة في أول الجملة تُكتب بحرف كبير بسبب موقعها، فلا تكفي الكتابة الكبيرة وحدها لتحديد المعنى.\n• في صيغة الاحترام تُكتب أداة الملكية Ihr بحرف كبير أيضاً، حتى في وسط الجملة؛ ويُحدّد السياق هل المقصود «حضرتك» أم معنى آخر.\n• توجد كذلك صيغة ihr بوصفها ضمير داتيف بمعنى «لها»، مثل Ich helfe ihr. ستُشرح الحالة لاحقاً؛ لذلك لا تعتمد قاعدة آلية من نوع «انظر إلى الكلمة التالية» للفصل بين كل استعمالات ihr.",
+        "تعلّمتَ mein عند الحديث عن نفسك. وعند الحديث عن عائلة شخص آخر، تذكّر القاعدتين معاً:\n\n**الجذر بحسب المالك:** أنا ⟵ mein‑؛ أنت (du) ⟵ dein‑؛ هو ⟵ sein‑؛ هي أو هم ⟵ ihr‑؛ نحن ⟵ unser‑؛ أنتم (ihr) ⟵ euer‑؛ والصيغة الرسمية للملكية ⟵ Ihr‑.\n\n**النهاية بحسب الاسم المملوك والحالة:** في الرفع نقول sein Bruder / seine Mutter، وihr Vater / ihre Schwester. الجذر يعرّف المالك، والنهاية تتبع الاسم الذي تسبقه الأداة.\n\nانتبه إلى وظائف ihr في الأمثلة:\n• ihr Vater = أبوها أو أبوهم، بحسب السياق؛ هنا ihr أداة ملكية تسبق الاسم.\n• Ihr seid nett = أنتم لطفاء؛ هنا ihr ضمير فاعل. إذا جاءت الكلمة في أول الجملة تُكتب بحرف كبير بسبب موقعها، فلا تكفي الكتابة الكبيرة وحدها لتحديد المعنى.\n• صيغة الاحترام Sie وأداة ملكيتها Ihr تُكتبان بحرف كبير دائماً. أما ihr بمعنى «هي/هم» فتُكتب صغيرة وسط الجملة؛ وقد تظهر كبيرة فقط لأنها في أول الجملة، وعندها يحسم السياق المرجع.\n• توجد كذلك صيغة ihr بوصفها ضمير داتيف بمعنى «لها»، مثل Ich helfe ihr. ستُشرح الحالة لاحقاً؛ لذلك لا تعتمد قاعدة آلية من نوع «انظر إلى الكلمة التالية» للفصل بين كل استعمالات ihr.",
       whyAr:
         "يساعد التفريق بين المالك والاسم المملوك على وصف أشخاص آخرين، لا الأسرة الذاتية فقط. تدرّب على تعيين المرجع من الجملة والسياق، ثم اختر الجذر والنهاية كلّاً على حدة. قد تتناول اختبارات A1 موضوع العائلة، لكن صيغة السؤال ومحتواه يتغيران؛ وهذه الأمثلة تدريب تعليمي وليست وعداً بسؤال امتحاني محدد.",
       table: {
-        title: "الجذر حسب المالك، والنهاية حسب المملوك",
-        columns: ["المالك", "مع der/das", "مع die (مؤنث/جمع)"],
+        title: "في الرفع: الجذر بحسب مرجع العلاقة، والنهاية بحسب الاسم",
+        columns: ["الشخص/المجموعة", "مع der/das", "مع die (مؤنث/جمع)"],
         rows: [
           { label: "أنا (ich)", cells: ["mein Bruder", "meine Schwester"] },
           {
             label: "أنتَ/أنتِ (du)",
             cells: ["dein Bruder", "deine Schwester"],
           },
-          { label: "هو (er)", cells: ["sein Bruder", "seine Schwester"] },
+          { label: "هو/مرجع محايد (er/es)", cells: ["sein Bruder", "seine Schwester"] },
           { label: "هي (sie)", cells: ["ihr Bruder", "ihre Schwester"] },
+          { label: "هم/هنّ (sie)", cells: ["ihr Bruder", "ihre Schwester"] },
+          { label: "نحن (wir)", cells: ["unser Bruder", "unsere Schwester"] },
+          { label: "أنتم (ihr)", cells: ["euer Bruder", "eure Schwester"] },
+          { label: "صيغة الاحترام (Sie)", cells: ["Ihr Bruder", "Ihre Schwester"] },
         ],
       },
       examples: [

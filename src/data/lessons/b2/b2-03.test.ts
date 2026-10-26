@@ -22,6 +22,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   q1: { options: ["die Kündigungsfrist", "den Preis", "die Lieferung", "die Unterschrift"], key: "die Kündigungsfrist" },
   q2: { options: ["der Zeuge", "der Anwalt", "der Richter", "die Polizei"], key: "der Zeuge" },
   q3: { options: ["dem Gericht", "dem Parlament", "dem Rathaus", "dem Verein"], key: "dem Gericht" },
+  q4: { options: ["Der Händler muss die Versandkosten übernehmen", "Noor muss die Versandkosten selbst übernehmen", "Die Bank muss die Versandkosten übernehmen", "Der Hersteller trägt alle Gerichtskosten"], key: "Der Händler muss die Versandkosten übernehmen" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -122,7 +123,8 @@ function allTasks(): Exercise[] {
 }
 
 function task(id: string): Exercise {
-  const value = allTasks().find((item) => item.id === id);
+  const value = allTasks().find((item) => item.id === id)
+    ?? lessonB203.reading?.questions.find((item) => item.id === id);
   if (!value) throw new Error(`B2-03 task ${id} is missing`);
   return value;
 }
@@ -167,10 +169,15 @@ describe("B2-03 lesson content audit", () => {
   });
 
   it("uses only evaluable performances as goals, each all-correct", () => {
-    expect(lessonB203.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3"]);
+    expect(lessonB203.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4", "z5"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e4", "e5", "m1", "w1", "w2"]);
-    expect(goal("z3").evidence?.exerciseIds).toEqual(["e2", "e7", "e9", "m2", "m3"]);
+    expect(goal("z3").evidence?.exerciseIds).toEqual(["e2", "e6", "e7", "e9", "m2", "m3", "m5"]);
+    expect(goal("z5").evidence?.exerciseIds).toEqual(["rq1", "rq2", "rq3", "rq4"]);
+    expect(goal("z5").evidence?.taskIds).toEqual([
+      "reading:read-b2-03:rq1", "reading:read-b2-03:rq2",
+      "reading:read-b2-03:rq3", "reading:read-b2-03:rq4",
+    ]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["e3", "e8"]);
     for (const item of lessonB203.lernziele) {
       expect(item.evidence?.completion, `${item.id} completion`).toBe("all-correct");
@@ -197,9 +204,10 @@ describe("B2-03 lesson content audit", () => {
 
   it("maps listening evidence to transcript-free task IDs only", () => {
     expect(getListeningQuestionTaskId("b2-03", "l1", "q1", false)).toBe("listening:l1:q1");
+    expect(getListeningQuestionTaskId("b2-03", "l3", "q4", false)).toBe("listening:l3:q4");
     expect(getListeningQuestionTaskId("b2-03", "l2", "q2", false)).toBe("listening:l2:q2");
     expect(getListeningQuestionTaskId("b2-03", "l2", "q3", true)).toBe("listening-transcript:b2-03:l2:q3");
-    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l2:q2", "listening:l2:q3"]);
+    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4"]);
     const transcriptIds = lessonB203.lernziele.flatMap(
       (item) => item.evidence?.taskIds?.filter((taskId) => taskId.startsWith("listening-transcript:")) ?? [],
     );
@@ -450,8 +458,8 @@ describe("B2-03 lesson content audit", () => {
     const reading = lessonB203.reading;
     expect(reading?.id).toBe("read-b2-03");
     expect(reading?.textType).toBe("artikel");
-    expect(reading?.titleDe).toBe("Der Streit um die Nebenkosten");
-    expect(reading?.titleAr).toBe("النزاع حول التكاليف الإضافية");
+    expect(reading?.titleDe).toBe("Ein fiktiver Streit um die Nebenkosten");
+    expect(reading?.titleAr).toBe("حالة تدريبية افتراضية حول تكاليف السكن");
     expect(reading?.paragraphs).toHaveLength(6);
     expect(reading?.paragraphsAr).toHaveLength(6);
     const text = reading!.paragraphs.join(" ").toLowerCase();
@@ -486,19 +494,19 @@ describe("B2-03 lesson content audit", () => {
     expect(reading?.discussionAr?.trim().length).toBeGreaterThanOrEqual(40);
 
     for (const anchor of [
-      "der streit dreht sich um die nebenkosten",
-      "eine klausel, mit der die jährliche abrechnung geregelt wird",
-      "alles, was der vertrag nicht ausdrücklich nennt",
+      "es geht um eine nebenkostenabrechnung für die wohnung",
+      "eine klausel im vertrag, nach der der mieter monatliche vorauszahlungen auf betriebskosten leistet",
+      "alles, was für die prüfung der einzelnen positionen wichtig ist",
       "das gericht, vor dem der fall verhandelt wird",
-      "die regelung lasse sich in der praxis kaum überprüfen",
-      "das gesetz, an das sich alle halten müssten",
-      "ein urteil wird im herbst erwartet",
+      "die berechnung lasse sich anhand der unterlagen nachvollziehen",
+      "das gesetz, auf das sich beide seiten beziehen",
+      "das gericht hat noch kein urteil verkündet",
     ]) {
       expect(text.includes(anchor), `مرساة مفقودة: ${anchor}`).toBe(true);
     }
 
     const readingText = JSON.stringify(reading);
-    for (const marker of ["wo solche", "wofür", "überprüfbar", "ist zu", "lässt sich", "Nebenkosten"]) {
+    for (const marker of ["wofür", "überprüfbar", "lässt sich", "Nebenkosten", "Vorauszahlungen", "Pauschale", "fiktiv"]) {
       expect(readingText, `بنية مفقودة في القراءة: ${marker}`).toContain(marker);
     }
   });
@@ -513,6 +521,13 @@ describe("B2-03 lesson content audit", () => {
     }
   });
 
+  it("counts each reading question toward the explicit reading goal", () => {
+    const events = ["rq1", "rq2", "rq3", "rq4"].map((id) => goalEvent("z5", id));
+    expect(getGoalEvidenceStatus(goal("z5"), lessonB203.id, [])).toBe("pending");
+    expect(getGoalEvidenceStatus(goal("z5"), lessonB203.id, events)).toBe("evidenced");
+    expect(goal("z5").evidence?.taskIds?.every((id) => id.startsWith("reading:read-b2-03:"))).toBe(true);
+  });
+
   it("keeps the meta row aligned with the lesson title", () => {
     const meta = lessonMetaList.find((candidate) => candidate.id === "b2-03");
     expect(meta?.titleAr).toBe(lessonB203.titleAr);
@@ -525,19 +540,23 @@ describe("B2-03 lesson content audit", () => {
     expect(
       getGoalEvidenceStatus(goal("z3"), lessonB203.id, [
         goalEvent("z3", "e2"),
+        goalEvent("z3", "e6"),
         goalEvent("z3", "e7"),
         goalEvent("z3", "e9"),
         goalEvent("z3", "m2"),
         goalEvent("z3", "m3"),
+        goalEvent("z3", "m5"),
       ]),
     ).toBe("evidenced");
     expect(
       getGoalEvidenceStatus(goal("z3"), lessonB203.id, [
         goalEvent("z3", "e2"),
+        goalEvent("z3", "e6"),
         goalEvent("z3", "e7"),
         goalEvent("z3", "e9", false),
         goalEvent("z3", "m2"),
         goalEvent("z3", "m3"),
+        goalEvent("z3", "m5"),
       ]),
     ).toBe("pending");
   });

@@ -33,5 +33,12 @@ export const lessonB111: Lesson = {
   flashcards,
   mediation,
   interaction,
+  oralProduction: [{
+    id: "oral-b1-11-experience",
+    titleAr: "ارْوِ تجربة وأبدِ رأياً",
+    promptAr: "تحدث بالألمانية عن تجربة تعلم أو عمل مررت بها، ثم قل ما الذي كان جيداً أو صعباً وما الذي تنصح به شخصاً آخر.",
+    promptDe: "Berichte von einer Lern- oder Arbeitserfahrung. Was war gut oder schwierig, und was würdest du anderen empfehlen?",
+    prompts: ["رتّب كلامك: متى وأين؟ ماذا حدث؟", "اذكر شعوراً أو رأياً مع سبب.", "قدّم نصيحة قصيرة أو نتيجة."],
+    selfReview: ["رويت حدثاً أو تجربة بترتيب مفهوم.", "أوضحت رأيي أو شعوري وذكرت سبباً.", "أنهيت الكلام بخلاصة أو نصيحة."],
+  }],
 };
-

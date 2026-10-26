@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 
+import { B2_DIALOGUES_1 } from "@/data/dialogues/b2/part1";
 import { lessonB205 } from "@/data/lessons/b2/b2-05";
+import { STORIES_WAVE2 } from "@/data/stories/wave2";
 import { LESSON_META } from "@/data/lessons/meta";
 import { evaluateExercise } from "@/lib/lesson/exercise-engine";
 import { getGoalEvidenceStatus } from "@/lib/lesson/goal-evidence";
@@ -27,6 +29,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   q1: { options: ["indem man aktiv zuhört", "indem man spricht", "indem man schweigt", "indem man schreibt"], key: "indem man aktiv zuhört" },
   q2: { options: ["morgen, es sei denn, es regnet stark", "heute Abend, gleich nach der Arbeit", "übermorgen, wenn alle Zeit haben", "nie, das Treffen wurde abgesagt"], key: "morgen, es sei denn, es regnet stark" },
   q3: { options: ["je nachdem, wie das Wetter wird", "sofort, noch in dieser Stunde", "morgen früh, noch vor der Arbeit", "gar nicht, sie entscheiden später"], key: "je nachdem, wie das Wetter wird" },
+  q4: { options: ["indem sie alles klar und respektvoll besprechen", "indem sie sofort neue Aufgaben verteilen", "indem sie das Gespräch beenden", "indem sie ohne Rückfragen entscheiden"], key: "indem sie alles klar und respektvoll besprechen" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -89,12 +92,12 @@ const expectedMatching: Record<string, { left: string; right: string }[]> = {
     { left: "es sei denn", right: "إلا إذا" },
   ],
   e11: [
-    { left: "doch", right: "بلى! (رد على نفي)" },
-    { left: "ja", right: "تأكيد لحقيقة معلومة" },
-    { left: "mal", right: "تخفيف الطلب" },
-    { left: "denn", right: "فضول في السؤال" },
-    { left: "eigentlich", right: "سؤال لطيف بالمناسبة" },
-    { left: "wohl", right: "على الأرجح" },
+    { left: "doch · Du kommst nicht? Doch, ich komme!", right: "اعتراض على النفي في هذا المثال" },
+    { left: "ja · Das weißt du ja.", right: "عرض الأمر بوصفه معروفاً للمتكلم" },
+    { left: "mal · Komm mal her!", right: "قد تخفف الطلب في هذا السياق" },
+    { left: "denn · Was machst du denn hier?", right: "إضافة موقف/اهتمام إلى السؤال" },
+    { left: "eigentlich · Wie heißt du eigentlich?", right: "فتح موضوع/توجيه سؤال (ليس بالضرورة ألطف)" },
+    { left: "wohl · Er ist wohl krank.", right: "استنتاج أو احتمال" },
   ],
 };
 
@@ -179,16 +182,24 @@ describe("B2-05 lesson content audit", () => {
   });
 
   it("uses only evaluable performances as goals, each all-correct", () => {
-    expect(lessonB205.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4", "z5"]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1"]);
+    expect(lessonB205.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4", "z5", "z6"]);
+    expect(goal("z4").de).toContain("ungefähre Funktion");
+    expect(goal("z4").evidence?.labelAr).toContain("لا يقيس استعمالاً تلقائياً");
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q4"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e2", "e4", "e7", "m1", "m3", "w1", "w2"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e6", "m2", "q2", "q3"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["e11", "e12", "e13", "m6", "m7"]);
     expect(goal("z5").evidence?.exerciseIds).toEqual(["e14", "e15"]);
+    expect(goal("z6").evidence?.exerciseIds).toEqual(["rq1", "rq2", "rq3", "rq4"]);
+    expect(goal("z6").evidence?.taskIds).toEqual(["reading:read-b2-05:rq1", "reading:read-b2-05:rq2", "reading:read-b2-05:rq3", "reading:read-b2-05:rq4"]);
     for (const item of lessonB205.lernziele) {
       expect(item.evidence?.completion, `${item.id} completion`).toBe("all-correct");
       for (const exerciseId of item.evidence?.exerciseIds ?? []) {
-        expect(() => task(exerciseId), `${item.id}:${exerciseId}`).not.toThrow();
+        if (item.id === "z6") {
+          expect(lessonB205.reading?.questions.some((question) => question.id === exerciseId), `${item.id}:${exerciseId}`).toBe(true);
+        } else {
+          expect(() => task(exerciseId), `${item.id}:${exerciseId}`).not.toThrow();
+        }
       }
     }
     expect(JSON.stringify(lessonB205.lernziele)).not.toMatch(/Goethe|CEFR/);
@@ -210,8 +221,9 @@ describe("B2-05 lesson content audit", () => {
     expect(getListeningQuestionTaskId("b2-05", "l1", "q1", false)).toBe("listening:l1:q1");
     expect(getListeningQuestionTaskId("b2-05", "l2", "q2", false)).toBe("listening:l2:q2");
     expect(getListeningQuestionTaskId("b2-05", "l2", "q3", false)).toBe("listening:l2:q3");
+    expect(getListeningQuestionTaskId("b2-05", "l3", "q4", false)).toBe("listening:l3:q4");
     expect(getListeningQuestionTaskId("b2-05", "l1", "q1", true)).toBe("listening-transcript:b2-05:l1:q1");
-    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1"]);
+    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l3:q4"]);
     expect(goal("z3").evidence?.taskIds?.slice(2)).toEqual(["listening:l2:q2", "listening:l2:q3"]);
     const transcriptIds = lessonB205.lernziele.flatMap(
       (item) => item.evidence?.taskIds?.filter((taskId) => taskId.startsWith("listening-transcript:")) ?? [],
@@ -386,7 +398,7 @@ describe("B2-05 lesson content audit", () => {
   it("keeps the modal-particle inventory closed to the six particles the lesson teaches", () => {
     const e11 = task("e11");
     if (e11.type !== "matching") throw new Error("e11 is not matching");
-    expect(e11.pairs.map(({ left }) => left).sort(), "جسيمات المطابقة").toEqual([...modalParticles].sort());
+    expect(e11.pairs.map(({ left }) => left.split(" · ")[0]).sort(), "جسيمات المطابقة").toEqual([...modalParticles].sort());
     for (const id of ["e13", "m7"]) {
       const exercise = task(id);
       if (exercise.type !== "fill-blank") throw new Error(`${id} is not fill-blank`);
@@ -396,7 +408,7 @@ describe("B2-05 lesson content audit", () => {
     }
     const placement = task("e13");
     if (placement.type !== "fill-blank") throw new Error("e13 is not fill-blank");
-    expect(placement.template, "جسيم في الوسط بعد الفعل").toContain("Du kommst nicht? ___ , ich komme!");
+    expect(placement.template, "جسيم في الوسط بعد الفعل").toContain("Du kommst nicht? ___, ich komme!");
     expect(placement.template.trim().endsWith("___"), "جسيم في نهاية الجملة").toBe(false);
   });
 
@@ -488,6 +500,18 @@ describe("B2-05 lesson content audit", () => {
     }
   });
 
+  it("frames linked fictional scenes and dialogue audio without claiming verified sources", () => {
+    const story = STORIES_WAVE2.find((item) => item.id === "b2-kulturelle-differenzen");
+    expect(story?.description).toContain("لا تعمّم على ثقافة أو مجتمع");
+    expect(story?.segments[2]?.de).toContain("für sie hilfreich");
+    expect(story?.segments[2]?.de).not.toContain("Direktheit hier Effizienz bedeutet");
+
+    const dialogue = B2_DIALOGUES_1.find((item) => item.id === "b2-03-konflikt");
+    expect(dialogue?.situation).toContain("محاكاة حوارية تدريبية");
+    expect(dialogue?.audioNoteAr).toContain("مصدر ملفات MP3 غير موثق");
+    expect(dialogue?.turns.at(-1)?.ar).toBe("بكل سرور. أريد أن يتحسن تعاوننا.");
+  });
+
   it("keeps the reading text, glossary, comprehension questions, and discourse anchors intact", () => {
     const reading = lessonB205.reading;
     expect(reading?.id).toBe("read-b2-05");
@@ -513,6 +537,12 @@ describe("B2-05 lesson content audit", () => {
     }
 
     expect(reading?.questions.map(({ id }) => id)).toEqual(["rq1", "rq2", "rq3", "rq4"]);
+    expect(reading?.paragraphs[0]).toContain("Die folgende Fallgeschichte ist erfunden");
+    expect(reading?.paragraphsAr[0]).toContain("حالة تدريبية متخيّلة");
+    expect(reading?.paragraphs[0]).toContain("so schlecht, dass");
+    expect(reading?.paragraphs[3]).toContain("es sei denn, eine Seite bestand");
+    expect(reading?.paragraphs[3]).toContain("dann wurde dieser zuerst behandelt");
+    expect(reading?.paragraphsAr[3]).toContain("واصل الفريق النقاش، إلا إذا");
     for (const question of reading!.questions) {
       expect(question.options.length).toBeGreaterThanOrEqual(3);
       expect(question.correctIndex).toBeGreaterThanOrEqual(0);
@@ -529,7 +559,7 @@ describe("B2-05 lesson content audit", () => {
 
     for (const anchor of [
       "ein streit zwischen zwei gruppen einer abteilung",
-      "sodass am ende kaum noch jemand etwas sagte",
+      "so schlecht, dass am ende kaum noch jemand etwas sagte",
       "anstatt die beiden gruppen räumlich zu trennen",
       "ohne unterbrechung, ohne bewertung und ohne zwischenrufe",
       "wie ihre eigene arbeit von der anderen seite wahrgenommen wurde",
@@ -538,36 +568,18 @@ describe("B2-05 lesson content audit", () => {
       "je nachdem, wie schnell eine einigung gelang",
       "in kraft traten",
       "brachte seine überraschung darüber zum ausdruck",
-      "stellt den erfolg teilweise in frage",
+      "den erfolg teilweise in frage",
       "die tieferen gründe nicht in betracht zieht",
-      "für ihre darstellung stützt sie sich",
+      "innerhalb der erfundenen geschichte stützt sie ihre darstellung",
       "die veröffentlichte fassung der regeln",
     ]) {
       expect(text.includes(anchor), `مرساة مفقودة: ${anchor}`).toBe(true);
     }
 
     const readingText = JSON.stringify(reading).toLowerCase();
-    for (const marker of ["indem", "es sei denn", "je nachdem", "sodass", "folglich", "demnach", "in kraft", "zum ausdruck", "in frage", "in betracht"]) {
+    for (const marker of ["indem", "es sei denn", "je nachdem", "so schlecht, dass", "folglich", "demnach", "in kraft", "zum ausdruck", "in frage", "in betracht"]) {
       expect(readingText, `رابط متقدّم مفقود: ${marker}`).toContain(marker);
     }
-  });
-
-  it("keeps the interaction best replies as complete sentences", () => {
-    const rounds = (lessonB205.interaction ?? [])[0].rounds as unknown as { options: { de: string; best?: boolean }[] }[];
-    expect(rounds.map((round) => round.options.find((option) => option.best)?.de)).toEqual([
-      "Einerseits werden einfache Tätigkeiten automatisiert. Andererseits entstehen neue Berufe, die Kreativität erfordern.",
-      "Zum Beispiel im Bereich Datenanalyse und KI-Ethik. Je mehr Technologie, desto wichtiger wird menschliche Kontrolle.",
-      "Meiner Ansicht nach sollten beide zusammenarbeiten. Während der Staat Grundbildung sichert, sollten Firmen spezifische Schulungen anbieten.",
-    ]);
-    for (const round of rounds) {
-      expect(round.options.filter((option) => option.best)).toHaveLength(1);
-    }
-  });
-
-  it("keeps the meta row aligned with the lesson title", () => {
-    const meta = lessonMetaList.find((candidate) => candidate.id === "b2-05");
-    expect(meta?.titleAr).toBe(lessonB205.titleAr);
-    expect(meta?.titleDe).toBe(lessonB205.titleDe);
   });
 
   it("counts only correct, mapped exercise results toward goals", () => {

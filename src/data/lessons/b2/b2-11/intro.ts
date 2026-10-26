@@ -11,14 +11,14 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أبني جملة نسبية تعبّر عن المِلكية بـ dessen وderen.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["e1", "e2", "e3", "e4", "e5", "e6", "e7", "m1", "m3", "m5", "w1", "w3"],
+        exerciseIds: ["e1", "e2", "e3", "e4", "e5", "e6", "e7", "m1", "m3", "m5", "w1", "w3", "q4"],
         taskIds: [
           "practice:b2-11:e1", "practice:b2-11:e2", "practice:b2-11:e3", "practice:b2-11:e4",
           "practice:b2-11:e5", "practice:b2-11:e6", "practice:b2-11:e7",
           "mini-test:b2-11:m1", "mini-test:b2-11:m3", "mini-test:b2-11:m5",
-          "writing:b2-11:w1", "writing:b2-11:w3",
+          "writing:b2-11:w1", "writing:b2-11:w3", "listening:l3:q4",
         ],
-        labelAr: "أختار dessen أو deren وأصحح الخطأ فيهما وأرتب جملة نسبية (e1 إلى e7 وm1 وm3 وm5 وw1 وw3)، دون كشف الحل.",
+        labelAr: "أختار dessen أو deren وأصحح الخطأ فيهما وأرتب جملة نسبية (e1 إلى e7 وm1 وm3 وm5 وw1 وw3)، وأفهم الإسناد بـ dessen في q4، دون كشف الحل.",
       },
     },
     {

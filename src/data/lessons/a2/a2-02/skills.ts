@@ -261,6 +261,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         id: "l1",
         title: "زيارة الطبيب",
+        audioNoteAr: "يُنطق هذا الحوار عبر TTS المدمج في المتصفح عند التشغيل، لا عبر تسجيل بشري؛ وقد تختلف الأصوات المتاحة بحسب الجهاز والمتصفح.",
         lines: [
           {
             speaker: "Arzt",
@@ -294,6 +295,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         id: "l2",
         title: "نصائح من صديق",
+        audioNoteAr: "يُنطق هذا الحوار عبر TTS المدمج في المتصفح عند التشغيل، لا عبر تسجيل بشري؛ وقد تختلف الأصوات المتاحة بحسب الجهاز والمتصفح.",
         lines: [
           {
             speaker: "Anna",
@@ -315,6 +317,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
             de: "Du hast recht. Dann sollte ich zum Arzt gehen.",
             ar: "معك حق. ينبغي أن أذهب إلى الطبيب إذن.",
           },
+        ],
+      },
+      {
+        id: "l3",
+        title: "في الصيدلية",
+        audioNoteAr: "ملفات هذا المقطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً. لا تضمن البيانات المتاحة ثبات هوية الصوت بين المقاطع أو الدروس.",
+        lines: [
+          { speaker: "Karim", de: "Guten Tag, ich habe ein Rezept vom Arzt.", ar: "مرحباً، لدي وصفة من الطبيب.", audioSrc: "/audio/lessons/a2-02/ls-a2-02-3-1.mp3" },
+          { speaker: "Apothekerin", de: "Guten Tag. Ich bereite das Medikament vor.", ar: "مرحباً. سأجهز الدواء.", audioSrc: "/audio/lessons/a2-02/ls-a2-02-3-2.mp3" },
+          { speaker: "Karim", de: "Wo finde ich die Informationen zur Einnahme?", ar: "أين أجد معلومات طريقة التناول؟", audioSrc: "/audio/lessons/a2-02/ls-a2-02-3-3.mp3" },
+          { speaker: "Apothekerin", de: "Bitte lesen Sie die Packungsbeilage.", ar: "يرجى قراءة النشرة المرفقة.", audioSrc: "/audio/lessons/a2-02/ls-a2-02-3-4.mp3" },
+          { speaker: "Karim", de: "Und wenn es mir nicht besser geht?", ar: "وماذا أفعل إن لم أتحسن؟", audioSrc: "/audio/lessons/a2-02/ls-a2-02-3-5.mp3" },
+          { speaker: "Apothekerin", de: "Dann wenden Sie sich bitte an Ihre Ärztin oder Ihren Arzt.", ar: "عندئذ يُرجى التواصل مع طبيبتك أو طبيبك.", audioSrc: "/audio/lessons/a2-02/ls-a2-02-3-6.mp3" },
         ],
       },
     ],
@@ -387,6 +402,27 @@ export const listening: NonNullable<Lesson["listening"]> = {
           "«Er ist geflogen» لا صلة له بآلام الظهر في الحوار.",
           "«Er hat Fußball gespielt» غير مذكور؛ قوله «Ich habe zu viel gearbeitet».",
         ],
+      },
+      {
+        id: "q4", itemId: "l3", type: "multiple-choice",
+        instructionAr: "استمع إلى الحوار الثالث وأجب قبل فتح التفريغ:",
+        questionDe: "Was hat Karim dabei?", questionAr: "ماذا أحضر كريم معه؟",
+        options: ["Ein Rezept vom Arzt", "Eine Krankmeldung", "Eine Überweisung", "Seine Versicherungskarte"], correctIndex: 0,
+        explanation: "يقول كريم إنه يحمل وصفة من الطبيب.", errorType: "vocabulary",
+      },
+      {
+        id: "q5", itemId: "l3", type: "multiple-choice",
+        instructionAr: "استمع إلى الحوار الثالث وأجب قبل فتح التفريغ:",
+        questionDe: "Wo soll Karim die Informationen zur Einnahme lesen?", questionAr: "أين يقرأ كريم معلومات طريقة تناول الدواء؟",
+        options: ["In der Packungsbeilage", "Auf der Fahrkarte", "Im Terminkalender", "Auf dem Rezeptumschlag"], correctIndex: 0,
+        explanation: "تطلب الصيدلانية قراءة النشرة المرفقة.", errorType: "vocabulary",
+      },
+      {
+        id: "q6", itemId: "l3", type: "multiple-choice",
+        instructionAr: "استمع إلى الحوار الثالث وأجب قبل فتح التفريغ:",
+        questionDe: "An wen soll Karim sich wenden, wenn es ihm nicht besser geht?", questionAr: "بمن يتواصل كريم إن لم يتحسن؟",
+        options: ["An seine Ärztin oder seinen Arzt", "An die Apothekerin in der Filiale", "An den behandelnden Arzt im Krankenhaus", "An eine medizinische Beratungsstelle"], correctIndex: 0,
+        explanation: "تنصحه الصيدلانية بالتواصل مع طبيبه أو طبيبته.", errorType: "vocabulary",
       },
     ],
   };

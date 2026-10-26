@@ -70,16 +70,19 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z5",
-      de: "Ich kann bestimmte Informationen aus den zwei bereitgestellten Hörtexten entnehmen, bevor ich das Transkript öffne.",
-      ar: "أن أستخرج معلومات محددة من تمريني الاستماع قبل كشف أيٍّ من نصيهما.",
+      de: "Ich kann bestimmte Informationen aus den drei bereitgestellten Hörtexten entnehmen, bevor ich die Transkripte öffne.",
+      ar: "أن أستخرج معلومات محددة من نصوص الاستماع الثلاثة قبل كشف أيٍّ منها.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3"],
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6"],
         taskIds: [
           "listening:l1:q1",
           "listening:l1:q2",
           "listening:l2:q3",
+          "listening:l3:q4",
+          "listening:l3:q5",
+          "listening:l3:q6",
         ],
-        labelAr: "الإجابة الصحيحة عن الأسئلة الثلاثة قبل كشف التفريغ؛ إجابات ما بعد الكشف لا تدخل في الدليل.",
+        labelAr: "الإجابة الصحيحة عن الأسئلة الستة قبل كشف التفريغ؛ إجابات ما بعد الكشف لا تدخل في الدليل.",
         completion: "all-correct",
       },
     },
@@ -130,7 +133,7 @@ export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
       "في المثال التدريبي، Sie sollten sich ausruhen اقتراحٌ، وSie dürfen nicht rauchen منعٌ. يساعدك الفعل الناقص على فهم المعنى، لكن السياق يظل مهماً. نراجع اليوم صيغاً سبق أن قابلت بعضها في دروس A1.",
     motivatingQuestionDe: "Was fehlt Ihnen?",
     contextAr:
-      "موضوعات لغوية مختارة في الجسم والأعراض، وصيغ sollen/sollten وdürfen/müssen، وبعض عبارات العيادة والوثائق، ثم أفعال انعكاسية شائعة. المحادثة والنصوص أمثلة تدريبية وليست وصفاً كاملاً للرعاية الصحية أو لامتحان رسمي.",
+      "موضوعات لغوية مختارة في الجسم والأعراض، وصيغ sollen/sollten وdürfen/müssen، وبعض عبارات العيادة والوثائق، ثم أفعال انعكاسية شائعة. المواقف الصحية خيالية ومخصصة لتعلّم اللغة؛ ليست تشخيصاً أو نصيحة طبية ولا وصفاً كاملاً للرعاية الصحية أو لامتحان رسمي.",
     contextDe: "Ich habe Kopfschmerzen und Fieber.",
     connectionToPreviousAr:
       "تتذكر من A1: Ich habe Hunger (عندي جوع). اليوم نعمم: Ich habe Kopfschmerzen (عندي صداع) — نفس البنية مع haben + اسم.",

@@ -25,7 +25,7 @@ describe("A2-05 audited lesson", () => {
       "الموضوع: معلومات عن الاجتماع\nالسيدة فيبر المحترمة،\nلم أكن أمس في المكتب. كنت مريضاً وكانت لدي حمى، لذلك لم أستطع الحضور إلى الاجتماع. أرسلت إلى السيد شولتس رسالة مساءً. أنا اليوم في المكتب مجدداً.",
       "أجابني السيد شولتس: كان الاجتماع أمس الساعة العاشرة في الغرفة 3. كانت آنا قد أعدّت الأرقام الخاصة بالتقرير، وكان كريم قد أعدّ الشرائح الأولى للعرض. كانت لدى الفريق فكرة جيدة للمشروع الجديد، لكن النسخة الحالية من الملف بقيت على حاسوب السيد شولتس.",
       "أودّ إنهاء التقرير اليوم. من فضلك أرسل إليّ الملاحظات والملف الحالي بالبريد الإلكتروني. كتبت الجزء الأول بالفعل، وأحتاج إلى أرقام الاجتماع للجزء الثاني. إذا كان هناك شيء ناقص فسأتصل بك.",
-      "هل لديك وقت غداً الساعة الحادية عشرة لاجتماع قصير؟ إذا لم يناسبك الموعد، فاذكري لي وقتاً آخر من فضلك. سأكون في المكتب اليوم حتى الرابعة، ويمكنني التحدث هاتفياً بعد ذلك أيضاً.\nشكراً جزيلاً على مساعدتك.\nمع خالص التحيات\nسامي بن علي",
+      "هل لديك وقت غداً الساعة الحادية عشرة لمحادثة قصيرة؟ إذا لم يناسبك الموعد، فاذكري لي وقتاً آخر من فضلك. سأكون في المكتب اليوم حتى الرابعة، ويمكنني التحدث هاتفياً بعد ذلك أيضاً.\nشكراً جزيلاً على مساعدتك.\nمع خالص التحيات\nسامي بن علي",
     ]);
     expect(text.paragraphs.length).toBe(4);
     expect(text.paragraphsAr).toHaveLength(text.paragraphs.length);
@@ -76,6 +76,7 @@ describe("A2-05 audited lesson", () => {
     expect(lessonA205.listening.items.map((item) => [item.id, item.title, item.lines.length])).toEqual([
       ["l1", "ترك رسالة هاتفية", 5],
       ["l2", "Besprechung und E-Mail", 5],
+      ["l3", "Telefonat zur Besprechung", 6],
     ]);
     const expectedDialogues = [
       ["l1", [
@@ -92,16 +93,27 @@ describe("A2-05 audited lesson", () => {
         ["Karim", "Super! Schick mir bitte eine E-Mail mit den Details.", "رائع! أرسلي لي بريداً إلكترونياً بالتفاصيل من فضلك."],
         ["Anna", "Mache ich sofort.", "سأفعل ذلك فوراً."],
       ]],
+      ["l3", [
+        ["Anna", "Hallo Karim, hier ist Anna. Hast du kurz Zeit?", "مرحباً كريم، معك آنا. هل لديك وقت قصير؟"],
+        ["Karim", "Ja, worum geht's?", "نعم، ما الأمر؟"],
+        ["Anna", "Wir treffen uns am Donnerstag um zehn im kleinen Konferenzraum.", "سنلتقي يوم الخميس الساعة العاشرة في غرفة الاجتماعات الصغيرة."],
+        ["Karim", "Soll ich die Unterlagen mitbringen?", "هل أحضر المستندات معي؟"],
+        ["Anna", "Bitte bring nur deinen Laptop mit. Die Unterlagen schicke ich per E-Mail.", "أحضر حاسوبك المحمول فقط من فضلك. سأرسل المستندات بالبريد الإلكتروني."],
+        ["Karim", "Alles klar. Bis Donnerstag!", "حسناً. أراك يوم الخميس!"],
+      ]],
     ] as const;
     expect(lessonA205.listening.items.map((item) => [item.id, item.lines.map((line) => [line.speaker, line.de, line.ar])])).toEqual(expectedDialogues);
     expect(lessonA205.listening.items.every((item) => item.lines.every((line) => line.de.trim() && line.ar.trim() && line.speaker.trim()))).toBe(true);
     expect(lessonA205.listening.questions.map((question) => [question.id, question.itemId])).toEqual([
       ["q1", "l1"], ["q2", "l1"], ["q3", "l2"], ["q4", "l2"],
+      ["q5", "l3"], ["q6", "l3"], ["q7", "l3"],
     ]);
     expect(lessonA205.listening.questions.find((question) => question.id === "q1")?.questionDe).toBe("Wer ist gerade in einer Besprechung?");
     expect(lessonA205.listening.questions.find((question) => question.id === "q2")?.explanation).toContain("بعد ظهر اليوم");
     expect(lessonA205.listening.questions.find((question) => question.id === "q3")?.questionDe).toBe("Warum konnte Karim nicht kommen?");
     expect(lessonA205.listening.questions.find((question) => question.id === "q4")?.questionDe).toBe("Was soll Anna Karim schicken?");
+    expect(lessonA205.listening.questions.filter((question) => question.itemId === "l3").every((question) => question.instructionAr.includes("قبل فتح التفريغ"))).toBe(true);
+    expect(lessonA205.listening.items.find((item) => item.id === "l3")?.audioNoteAr).toContain("TTS");
     expect(getListeningQuestionTaskId(lessonA205.id, "l1", "q1", true)).not.toBe("listening:l1:q1");
     expect(lessonA205.lernziele.find((goal) => goal.id === "z2")?.evidence?.taskIds).not.toContain("listening-transcript:a2-05:l1:q1");
   });

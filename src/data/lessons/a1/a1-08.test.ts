@@ -82,6 +82,9 @@ const listeningAnswers: Record<string, string> = {
   q1: "eine Jacke in Blau",
   q2: "39 Euro",
   q3: "ein Kleid",
+  q4: "Er sucht ein T-Shirt",
+  q5: "Die Farbe ist schwarz",
+  q6: "fünfzehn Euro",
 };
 
 const writingAnswers: Record<string, unknown> = {
@@ -323,7 +326,7 @@ describe("A1-08 audited lesson content", () => {
 
   it("checks every lesson text, dialogue, instruction, card, and non-test task field", () => {
     const tasks = allTasks();
-    expect(tasks).toHaveLength(43);
+    expect(tasks).toHaveLength(46);
     for (const task of tasks) {
       expect(task.instructionAr.trim(), `${task.id} instruction`).toBeTruthy();
       expect(task.explanation.trim(), `${task.id} explanation`).toBeTruthy();
@@ -401,8 +404,8 @@ describe("A1-08 audited lesson content", () => {
       expect(reading.paragraphs[paragraph - 1], `${question.id} source text`).toBeTruthy();
     }
 
-    expect(lessonA108.listening.items.map((item) => item.id)).toEqual(["l1", "l2"]);
-    expect(lessonA108.listening.items.map((item) => item.lines.length)).toEqual([7, 5]);
+    expect(lessonA108.listening.items.map((item) => item.id)).toEqual(["l1", "l2", "l3"]);
+    expect(lessonA108.listening.items.map((item) => item.lines.length)).toEqual([7, 5, 6]);
     const listeningText = lessonA108.listening.items.flatMap((item) => item.lines);
     for (const line of listeningText) {
       expect(line.speaker.trim()).toBeTruthy();

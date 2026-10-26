@@ -54,7 +54,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       wrongWord: "das Wetter",
       correctWord: "des Wetters",
       options: ["des Wetters", "den Wetter", "der Wetter", "das Wetters"],
-      explanation: "trotz يأخذ Genitiv: trotz des Wetters. das هنا محايد غير مناسب لأي حالة مطلوبة.",
+      explanation: "في الأسلوب المعياري المكتوب نختار Genitiv: trotz des Wetters. وتوجد صيغ Dativ بعد trotz في الاستعمال؛ أما «trotz das Wetter» فليست الصيغة الصحيحة هنا.",
       errorType: "case",
     },
     {
@@ -72,18 +72,18 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
   ];
 
 export const flashcards: NonNullable<Lesson["flashcards"]> = [
-    { id: "fc1", de: "das Studium", ar: "الدراسة الجامعية", example: "Das Studium dauert vier Jahre.", exampleAr: "الدراسة تستغرق أربع سنوات.", level: "B1" },
-    { id: "fc2", de: "die Ausbildung", ar: "التدريب المهني", example: "Die Ausbildung dauert drei Jahre.", exampleAr: "التدريب يستغرق ثلاث سنوات.", level: "B1" },
+    { id: "fc1", de: "das Studium", ar: "الدراسة الجامعية", example: "Die Dauer des Studiums hängt vom Fach ab.", exampleAr: "تختلف مدة الدراسة بحسب التخصص.", level: "B1" },
+    { id: "fc2", de: "die Ausbildung", ar: "التدريب المهني", example: "Eine duale Ausbildung dauert je nach Beruf unterschiedlich lang.", exampleAr: "تختلف مدة التدريب المزدوج بحسب المهنة.", level: "B1" },
     { id: "fc3", de: "das Fach", ar: "التخصص", example: "Mein Fach ist Informatik.", exampleAr: "تخصصي المعلوماتية.", level: "B1" },
     { id: "fc4", de: "der Genitiv", ar: "المضاف إليه", example: "das Buch des Lehrers", exampleAr: "كتاب المعلّم", level: "B1" },
-    { id: "fc5", de: "wegen / trotz / während / statt", ar: "بسبب / رغم / خلال / بدلاً من (Genitiv)", example: "Wegen des Regens.", exampleAr: "بسبب المطر.", level: "B1" },
+    { id: "fc5", de: "wegen / trotz / während / statt", ar: "بسبب / رغم / خلال / بدلاً من (غالباً مع Genitiv في الأسلوب المعياري)", example: "Wegen des Regens.", exampleAr: "بسبب المطر.", level: "B1" },
     { id: "fc6", de: "der Relativsatz", ar: "الجملة النسبية", example: "Der Mann, der dort steht.", exampleAr: "الرجل الذي يقف هناك.", level: "B1" },
     { id: "fc7", de: "wessen?", ar: "لمن؟", example: "Wessen Buch ist das?", exampleAr: "لمن هذا الكتاب؟", level: "B1" },
     { id: "fc8", de: "das Stipendium", ar: "المنحة", example: "Ich habe ein Stipendium bekommen.", exampleAr: "حصلت على منحة.", level: "B1" },
 
     { id: "fc9", de: "sich entscheiden", ar: "يقرّر", example: "Lena entscheidet sich für eine Ausbildung.", exampleAr: "تقرّر لينا أن تسلك التدريب المهني.", level: "B1" },
-    { id: "fc10", de: "der Vorteil", ar: "الميزة", example: "Der Vorteil der Ausbildung ist das Geld.", exampleAr: "ميزة التدريب المهني هي المال.", level: "B1" },
-    { id: "fc11", de: "die Bewerbung", ar: "طلب التوظيف", example: "Praktika helfen bei jeder Bewerbung.", exampleAr: "التدريبات العملية تساعد في كل طلب توظيف.", level: "B1" },
+    { id: "fc10", de: "der Vorteil", ar: "الميزة", example: "Ein Vorteil ihrer Ausbildung ist die Vergütung.", exampleAr: "من مزايا تدريبها المهني الأجر.", level: "B1" },
+    { id: "fc11", de: "die Bewerbung", ar: "طلب التوظيف", example: "Praktika können bei einer Bewerbung helfen.", exampleAr: "قد تساعد التدريبات العملية في طلب التوظيف.", level: "B1" },
     { id: "fc12", de: "die Erfahrung", ar: "الخبرة", example: "Sie sammelt Erfahrungen während des Studiums.", exampleAr: "تجمع خبرات خلال الدراسة.", level: "B1" },
   ];
 
@@ -91,9 +91,9 @@ export const mediation: NonNullable<Lesson["mediation"]> = [
         {
       id: "med-b1-01-1", type: "summarize-de-to-ar",
       titleAr: "لخّص نصاً عن نظام التعليم الألماني بالعربية",
-      sourceDe: "In Deutschland gehen die Kinder nach der Grundschule auf verschiedene Schularten. Das Gymnasium führt zum Abitur, das zum Studium berechtigt.",
+      sourceDe: "In Deutschland wechseln Kinder nach der Grundschule auf verschiedene Schularten. Das Gymnasium führt zum Abitur, das in der Regel den Zugang zu einem Hochschulstudium ermöglicht. Für manche Studiengänge gelten zusätzliche Zulassungsbedingungen.",
       taskAr: "لخّص النص بالعربية: المرحلة بعد الابتدائية، ودور المدرسة الثانوية الأكاديمية (Gymnasium).",
-      modelAnswerAr: "«في ألمانيا ينتقل الأطفال بعد الابتدائية إلى مدارس مختلفة. المدرسة الثانوية الأكاديمية (Gymnasium) تؤدي إلى الأبيتور الذي يؤهل للدراسة الجامعية.»",
+      modelAnswerAr: "«في ألمانيا ينتقل الأطفال بعد الابتدائية إلى أنواع مختلفة من المدارس. ويؤدي Gymnasium إلى شهادة Abitur التي تتيح عادةً الدراسة الجامعية، مع شروط قبول إضافية لبعض التخصصات.»",
       keyPointsAr: ["نقلت تعدد المدارس بعد الابتدائية", "شرحت دور Gymnasium", "ربطت الأبيتور بالجامعة"],
     },
   ];
@@ -110,15 +110,15 @@ export const interaction: NonNullable<Lesson["interaction"]> = [
           speakerAr: "كيف نظام الجامعة في بلدك؟",
           options: [
             { de: "In meinem Land studieren viele nach der Sekundarschule, ähnlich wie in Deutschland. Allerdings hängt die Auswahl oft von den Noten ab.", ar: "في بلدي يدرس كثيرون بعد الثانوية، مشابه لألمانيا. لكن اختيار التخصص يعتمد غالباً على الدرجات.", best: true, replyDe: "Interessant. Und ist das Studium teuer?", replyAr: "مثير للاهتمام. وهل الدراسة مكلفة؟" },
-            { de: "In meinem Land gibt es keine Universitäten.", ar: "في بلدي لا توجد جامعات.", best: false, replyDe: "Das kann nicht stimmen, jedes Land hat Universitäten.", replyAr: "هذا غير صحيح، كل بلد له جامعات." },
+            { de: "In meinem Land gibt es keine einzige Universität.", ar: "لا توجد جامعة واحدة في بلدي.", best: false, replyDe: "Das ist eine sehr allgemeine Aussage. Weißt du, ob das für das ganze Land gilt?", replyAr: "هذا تعميم واسع. هل تعرف إن كان ينطبق على البلد كله؟" },
           ],
         },
         {
           speakerDe: "Ist das Studium in deinem Land teuer?",
           speakerAr: "هل الدراسة مكلفة في بلدك؟",
           options: [
-            { de: "Ich glaube, die staatlichen Universitäten sind eher günstig. Man zahlt meist nur einen kleinen Beitrag.", ar: "أظن أن الجامعات الحكومية أرخص نسبياً. عادةً يدفع المرء رسماً صغيراً فقط.", best: true, replyDe: "Das ist ähnlich wie in Deutschland. Ein gutes System.", replyAr: "هذا مشابه لألمانيا. نظام جيد." },
-            { de: "Sehr teuer, nur reiche Leute studieren.", ar: "مكلفة جداً، الأغنياء فقط يدرسون.", best: false, replyDe: "Das ist schade. Bildung sollte für alle zugänglich sein.", replyAr: "هذا مؤسف. التعليم يجب أن يكون متاحاً للجميع." },
+            { de: "Ich glaube, das hängt von der Hochschule und dem Studiengang ab. An manchen staatlichen Hochschulen sind die Beiträge niedrig; anderswo können zusätzliche Gebühren anfallen.", ar: "أظن أن الأمر يتوقف على الجامعة والتخصص. تكون المساهمات منخفضة في بعض الجامعات الحكومية، وقد توجد رسوم إضافية في أماكن أخرى.", best: true, replyDe: "Ja, die Kosten sind nicht überall gleich. Auch in Deutschland sollte man die Angaben der jeweiligen Hochschule prüfen.", replyAr: "نعم، التكاليف ليست متساوية في كل مكان. وفي ألمانيا أيضاً ينبغي التحقق من معلومات الجامعة المعنية." },
+            { de: "Das Studium ist immer kostenlos.", ar: "الدراسة مجانية دائماً.", best: false, replyDe: "Das ist zu allgemein. Studiengebühren und Beiträge können sich je nach Hochschule und Studiengang unterscheiden.", replyAr: "هذا تعميم واسع؛ فقد تختلف الرسوم والمساهمات بحسب الجامعة والتخصص." },
           ],
         },
       ],

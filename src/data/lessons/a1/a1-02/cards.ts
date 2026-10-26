@@ -42,7 +42,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       id: "m4",
       type: "fill-blank",
       instructionAr: "أكمل بـ mein/meine:",
-      template: "___ Opa wohnt in Kairouan. ___ Oma wohnt in Tunis.",
+      template: "___ Opa wohnt in Kairouan. ___ Oma wohnt auch in Kairouan.",
       blanks: [
         { correct: "Mein", options: ["Mein", "Meine"] },
         { correct: "Meine", options: ["Mein", "Meine"] },
@@ -54,7 +54,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       id: "m5",
       type: "error-correction",
       instructionAr:
-        "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+        "اختر التصحيح المناسب للكلمة الخاطئة في الجملة.",
       wrongSentence: "Meine Vater heißt Ahmed.",
       wrongWord: "Meine",
       correctWord: "Mein",
@@ -133,7 +133,7 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     {
       id: "fc9",
       de: "dein / deine",
-      ar: "ملكية المخاطَب المفرد غير الرسمي؛ النهاية بحسب الاسم المملوك",
+      ar: "ملكية المخاطَب المفرد غير الرسمي؛ في الرفع تتبع النهاية جنس الاسم وعدده",
       example: "Ist das dein Bruder?",
       exampleAr: "هل هذا أخوك؟",
       level: "A1",
@@ -164,8 +164,8 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     },
     {
       id: "fc13",
-      de: "unser / euer / Ihr",
-      ar: "لنا / لكم / لحضرتك (رسمي)",
+      de: "unser / unsere",
+      ar: "ملكية المتكلم الجمع؛ النهاية بحسب الاسم في الرفع",
       example: "Unsere Familie ist groß.",
       exampleAr: "عائلتنا كبيرة.",
       level: "A1",
@@ -232,6 +232,22 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
       ar: "المستشفى",
       example: "Meine Mutter arbeitet im Krankenhaus.",
       exampleAr: "أمّي تعمل في المستشفى.",
+      level: "A1",
+    },
+    {
+      id: "fc22",
+      de: "euer / eure",
+      ar: "ملكية المخاطَبين بصيغة الجمع غير الرسمية؛ في الرفع تتبع النهاية الاسم",
+      example: "Eure Eltern wohnen in Tunis.",
+      exampleAr: "والداكم يسكنان في تونس.",
+      level: "A1",
+    },
+    {
+      id: "fc23",
+      de: "Ihr / Ihre (مخاطبة رسمية)",
+      ar: "ملكية المخاطَب بصيغة الاحترام؛ تُكتب بحرف كبير",
+      example: "Herr Weber, ist Ihre Tochter hier?",
+      exampleAr: "سيد فيبر، هل ابنتك هنا؟",
       level: "A1",
     },
   ];

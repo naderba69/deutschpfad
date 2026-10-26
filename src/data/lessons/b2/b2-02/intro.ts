@@ -7,13 +7,13 @@ import type { Lesson } from "@/types/lesson";
 export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z1",
-      de: "Ich kann Wirtschaftsnachrichten verstehen.",
-      ar: "أن أفهم الأخبار الاقتصادية الواردة في الاستماع القصير.",
+      de: "Ich kann wichtige Informationen aus kurzen wirtschaftlichen Hörtexten entnehmen.",
+      ar: "أن أستخرج معلومات أساسية من نصوص استماع اقتصادية تدريبية قصيرة.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3"],
-        labelAr: "أجيب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q2", "q3", "q4"],
+        taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"],
+        labelAr: "أجيب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -58,7 +58,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z4",
       de: "Ich kann Fachwörter der Wirtschaft erkennen: Umsatz, Inflation, Konjunktur.",
-      ar: "أن أتعرّف على مفردات اقتصادية أساسية: المبيعات والتضخم والدورة الاقتصادية.",
+      ar: "أن أتعرّف على مفردات اقتصادية أساسية: حجم المبيعات، والتضخم، والدورة الاقتصادية.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["e3", "e8"],
@@ -66,21 +66,37 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         labelAr: "أربط الكلمات بمعانيها (e3) وأختار معنى die Konjunktur (e8)، دون كشف الحل.",
       },
     },
+    {
+      id: "z5",
+      de: "Ich kann Informationen und unterschiedliche Positionen in einem fiktiven Wirtschaftsbericht finden.",
+      ar: "أن أستخرج معلومات صريحة وأميّز بين موقفين في تقرير اقتصادي تدريبي خيالي.",
+      evidence: {
+        completion: "all-correct",
+        exerciseIds: ["rq1", "rq2", "rq3", "rq4"],
+        taskIds: [
+          "reading:read-b2-02:rq1",
+          "reading:read-b2-02:rq2",
+          "reading:read-b2-02:rq3",
+          "reading:read-b2-02:rq4",
+        ],
+        labelAr: "أجيب عن أسئلة فهم التقرير التدريبي (rq1–rq4)؛ كشف النص لا يُحتسب أداءً.",
+      },
+    },
   ];
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "في B1 تعلمت: Das Haus wird gebaut (Vorgangspassiv — يُبنى). ماذا لو أردت «البيت مبني» (حالة منتهية)؟ الجملة الألمانية: Das Haus ist gebaut (Zustandspassiv)! الفرق بين «يُبنى» (عملية) و«مبني» (نتيجة) — دقة B2.",
+      "في B1 تعرّفت إلى Vorgangspassiv، مثل «Die Tür wird geschlossen» (يجري إغلاق الباب). وإذا أردت وصف الحالة الناتجة، تقول «Die Tür ist geschlossen» (الباب مغلق). السياق يوضّح هل نتحدث عن الحدث أم الحالة.",
     motivatingQuestionDe: "Wie entwickelt sich der Markt?",
     contextAr:
-      "الاقتصاد: أخبار الأسواق والتقارير المالية. نضيف المجهول المتقدم: حالة (ist geliefert)، مع شرطي (kann geliefert werden)، وبدائل (sich lassen, -bar).",
+      "الاقتصاد: أخبار الأسواق والتقارير المالية. نضيف المجهول المتقدم: حالة (ist geliefert)، مع فعل ناقص (kann geliefert werden)، وبدائل (sich lassen, -bar).",
     contextDe: "Die Ware ist geliefert worden.",
-    connectionToPreviousAr: "تتذكر Passiv الأساسي (wird/wurde gebaut) من B1. اليوم: التوسع الكامل — حالة + شرطي + بدائل — الأداة الإخبارية الكاملة.",
+    connectionToPreviousAr: "تتذكر Passiv الأساسي (wird/wurde gebaut) من B1. اليوم: التوسع الكامل — حالة + أفعال ناقصة + بدائل — مجموعة صيغ للمواقف المختلفة.",
     activateVocabulary: [
       { de: "die Wirtschaft", ar: "الاقتصاد" },
       { de: "der Markt", ar: "السوق" },
       { de: "die Firma", ar: "الشركة" },
-      { de: "der Umsatz", ar: "المبيعات" },
+      { de: "der Umsatz", ar: "حجم المبيعات/الإيرادات" },
       { de: "die Konjunktur", ar: "الدورة الاقتصادية" },
     ],
   };

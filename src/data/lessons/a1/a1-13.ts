@@ -35,4 +35,12 @@ export const lessonA113: Lesson = {
   flashcards,
   mediation,
   interaction,
+  oralProduction: [{
+    id: "oral-a1-13-intro",
+    titleAr: "قدّم نفسك شفهياً",
+    promptAr: "قل بالألمانية اسمك وبلدك ومكان سكنك، ثم اذكر شيئاً واحداً تحبه.",
+    promptDe: "Wie heißt du? Woher kommst du? Wo wohnst du? Was machst du gern?",
+    prompts: ["قل جملة أو جملتين قصيرتين عن نفسك.", "يمكنك الاستعانة بكلمات الدرس، لكن حاول ألا تقرأ الإجابة كاملة."],
+    selfReview: ["ذكرت اسمي أو بلدي أو مكان سكني.", "استخدمت جملة ألمانية مفهومة.", "تحدثت بصوت مسموع وأعدت الاستماع إلى التسجيل إذا سجلته."],
+  }],
 };

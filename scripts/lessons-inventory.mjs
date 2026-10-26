@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * ═══════════════════════════════════════════════════════════════════════
- *  lessons-inventory.mjs — الجرد التفصيلي لكل درس (45 درساً)
+ *  lessons-inventory.mjs — الجرد التفصيلي لكل كائن درس في ملفات المستوى
  *  يحمّل ملفات الدروس كمترجم TypeScript، ويطبع لكل درس: مكوناته العشرة،
  *  عدد الكتل النظرية، المشاهد، التمارين (بأنواعها)، البطاقات، إلخ —
  *  مع أعلام الجودة (نقص مكوّن، ثراء نظري ضعيف، حجم منخفض).
@@ -42,8 +42,9 @@ const require = createRequire(import.meta.url);
 const TMP = mkdtempSync(join(tmpdir(), "linv-"));
 
 /* ── تحميل كل الدروس ككائنات حقيقية ── */
-function loadLesson(path) {
-  // بعد المرحلة 4: الدرس = ملف رئيسي + أجزاء في مجلد بنفس الاسم → نضمّها قبل التحويل
+function loadLessons(path) {
+  // ملف التجميع قد يصدّر أكثر من درس واحد (مثل a1-01 وa1-01b)،
+  // لذا نجمع كل الكائنات التعليمية بدلاً من أخذ أول تصدير فقط.
   const src = bundleLessonSource(path);
   const js = ts
     .transpileModule(src, {
@@ -53,16 +54,23 @@ function loadLesson(path) {
   const tmp = join(TMP, path.split("/").pop().replace(".ts", ".cjs"));
   writeFileSync(tmp, js);
   const mod = require(tmp);
-  return Object.values(mod).find((v) => v && typeof v === "object" && v.id && v.lernziele);
+  return Object.values(mod).filter(
+    (v) => v && typeof v === "object" && v.id && Array.isArray(v.lernziele),
+  );
 }
 
 const LESSONS = [];
 for (const level of ["a1", "a2", "b1", "b2"]) {
   for (const f of readdirSync(join(ROOT, "src/data/lessons", level))) {
     if (!f.endsWith(".ts") || f.endsWith(".test.ts")) continue;
-    const L = loadLesson(join(ROOT, "src/data/lessons", level, f));
-    if (L) LESSONS.push(L);
+    LESSONS.push(...loadLessons(join(ROOT, "src/data/lessons", level, f)));
   }
+}
+const duplicateIds = LESSONS.map((lesson) => lesson.id).filter(
+  (id, index, ids) => ids.indexOf(id) !== index,
+);
+if (duplicateIds.length) {
+  throw new Error(`معرّفات دروس مكررة في الجرد: ${[...new Set(duplicateIds)].join(", ")}`);
 }
 LESSONS.sort((a, b) => a.id.localeCompare(b.id));
 
@@ -73,14 +81,16 @@ function flags(L) {
   const f = [];
   if (!L.review?.length) f.push("لا مراجعة تراكمية");
   if ((L.theory?.length ?? 0) < 2 && L.level !== "A1") f.push("كتلة نظرية واحدة فقط");
-  if ((L.listening?.items?.length ?? 0) < 2) f.push("مشهد استماع واحد فقط");
+  const listeningScenes = L.listening?.items?.length ?? 0;
+  if (listeningScenes === 0) f.push("لا يوجد مشهد استماع");
+  else if (listeningScenes === 1) f.push("مشهد استماع واحد فقط");
   if ((L.practiceBank?.length ?? 0) < 8) f.push("بنك تمارين صغير");
   if ((L.flashcards?.length ?? 0) < 6) f.push("بطاقات قليلة");
   return f.length ? f.join("؛ ") : "—";
 }
 
 console.log("════════════════════════════════════════════════════════════════");
-console.log("  جرد الدروس التفصيلي — DeutschPfad (A1→B2) — 45 درساً");
+console.log(`  جرد الدروس التفصيلي — DeutschPfad (A1→B2) — ${LESSONS.length} درساً`);
 console.log("════════════════════════════════════════════════════════════════\n");
 for (const level of ["a1", "a2", "b1", "b2"]) {
   const list = LESSONS.filter((l) => l.level.toLowerCase() === level);

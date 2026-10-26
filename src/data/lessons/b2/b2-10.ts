@@ -33,5 +33,12 @@ export const lessonB210: Lesson = {
   flashcards,
   mediation,
   interaction,
+  oralProduction: [{
+    id: "oral-b2-10-argument",
+    titleAr: "قدّم رأياً مدعوماً بحجج",
+    promptAr: "اختر موضوعاً يهمك من الدراسة أو المجتمع. قدّم موقفك بوضوح، واذكر حجتين أو مثالين، ثم ناقش فائدة محتملة واعتراضاً أو عيباً واحداً واختم باستنتاج.",
+    promptDe: "Wähle ein aktuelles Thema aus Studium oder Gesellschaft. Erkläre deinen Standpunkt mit Argumenten und Beispielen, nenne einen möglichen Nachteil und ziehe ein kurzes Fazit.",
+    prompts: ["مقدمة قصيرة تحدد القضية وموقفك.", "حجتان مع مثال أو تفسير.", "اعتراض/عيب وردّ أو موازنة.", "خاتمة تلخص رأيك."],
+    selfReview: ["كان موقفي واضحاً منذ البداية.", "دعمت رأيي بأسباب أو أمثلة.", "ذكرت جانباً مخالفاً أو عيباً ولم أكتفِ بعرض جانب واحد.", "كان كلامي منظماً وله خاتمة."],
+  }],
 };
-

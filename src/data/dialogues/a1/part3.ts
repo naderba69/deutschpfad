@@ -16,11 +16,11 @@ export const A1_DIALOGUES_3: DailyDialogue[] = [
     situation: "عندك صداع وتشتري دواء",
     turns: [
       { speaker: "أنت", role: "a", de: "Guten Tag! Ich habe Kopfschmerzen.", ar: "طاب يومك! عندي صداع." },
-      { speaker: "الصيدلية", role: "b", de: "Oh, das tut mir leid. Möchten Sie Medikamente?", ar: "أوه، يؤسفني. هل تريد أدوية؟" },
-      { speaker: "أنت", role: "a", de: "Ja, bitte. Gibt es etwas für Kopfschmerzen?", ar: "نعم من فضلك. هل يوجد شيء للصداع؟" },
-      { speaker: "الصيدلية", role: "b", de: "Ja, hier. Nehmen Sie eine Tablette mit Wasser.", ar: "نعم، تفضل. خذ قرصاً مع الماء." },
+      { speaker: "الصيدلانية", role: "b", de: "Oh, das tut mir leid. Möchten Sie ein Medikament?", ar: "أوه، يؤسفني. هل تريد دواءً؟" },
+      { speaker: "أنت", role: "a", de: "Ja, bitte. Gibt es etwas gegen Kopfschmerzen?", ar: "نعم، من فضلك. هل يوجد شيء لعلاج الصداع؟" },
+      { speaker: "الصيدلانية", role: "b", de: "Ja, hier. Bitte lesen Sie die Packungsbeilage.", ar: "نعم، تفضل. يُرجى قراءة النشرة المرفقة." },
       { speaker: "أنت", role: "a", de: "Vielen Dank! Was kostet das?", ar: "شكراً جزيلاً! كم يكلف؟" },
-      { speaker: "الصيدلية", role: "b", de: "5 Euro. Gute Besserung!", ar: "5 يورو. الشفاء العاجل!" },
+      { speaker: "الصيدلانية", role: "b", de: "5 Euro. Gute Besserung!", ar: "5 يورو. الشفاء العاجل!" },
     ],
     questions: [
       { de: "Was hat der Kunde?", ar: "ماذا يعاني الزبون؟", options: [
@@ -33,17 +33,17 @@ export const A1_DIALOGUES_3: DailyDialogue[] = [
         { text: "Guten Appetit!", ar: "بالهناء!", correct: false, explanation: "لا — Guten Appetit! تُقال قبل الأكل؛ وخاتمة الصيدلية «Gute Besserung!»." },
         { text: "Auf Wiedersehen!", ar: "إلى اللقاء!", correct: false, explanation: "لا — لم تقل Auf Wiedersehen!؛ بل تمنت الشفاء «Gute Besserung!»." },
       ]},
-      { de: "Was soll die Person tun?", ar: "ماذا يجب أن يفعل الشخص؟", options: [
-        { text: "In die Schule gehen", ar: "أن يذهب إلى المدرسة", correct: false, explanation: "لا — لم تُذكر مدرسة In die Schule gehen؛ والتوجيه «Nehmen Sie eine Tablette mit Wasser»." },
-        { text: "Eine Tablette mit Wasser nehmen", ar: "أن يأخذ حبة دواء مع الماء", correct: true, explanation: "نعم — «Nehmen Sie eine Tablette mit Wasser»." },
-        { text: "Das Medikament zurückgeben", ar: "أن يعيد الدواء", correct: false, explanation: "لا — لم يُطلب إرجاع الدواء zurückgeben؛ بل أخذه «Nehmen Sie eine Tablette»." },
+      { de: "Was soll die Person tun?", ar: "ماذا ينبغي للشخص أن يفعل؟", options: [
+        { text: "In die Schule gehen", ar: "أن يذهب إلى المدرسة", correct: false, explanation: "لا — لم تُذكر مدرسة In die Schule gehen؛ والتوجيه قراءة النشرة «Bitte lesen Sie die Packungsbeilage»." },
+        { text: "Die Packungsbeilage lesen", ar: "أن يقرأ النشرة المرفقة", correct: true, explanation: "نعم — تقول الصيدلانية: «Bitte lesen Sie die Packungsbeilage»." },
+        { text: "Das Medikament zurückgeben", ar: "أن يعيد الدواء", correct: false, explanation: "لا — لم يُطلب إرجاع الدواء؛ بل قالت الصيدلانية: «Bitte lesen Sie die Packungsbeilage»." },
       ]},
     ],
     keyVocab: [
       { de: "Ich habe Kopfschmerzen", ar: "عندي صداع" },
       { de: "das Medikament", ar: "الدواء" },
       { de: "die Tablette", ar: "القرص" },
-      { de: "mit Wasser", ar: "مع الماء" },
+      { de: "die Packungsbeilage", ar: "النشرة المرفقة بالدواء" },
       { de: "Gute Besserung!", ar: "الشفاء العاجل!" },
     ],
   },
@@ -180,7 +180,7 @@ export const A1_DIALOGUES_3: DailyDialogue[] = [
       { speaker: "أنت", role: "a", de: "Hin und zurück, bitte.", ar: "ذهاب وإياب من فضلك." },
       { speaker: "الموظف", role: "b", de: "Das kostet 40 Euro.", ar: "يكلف 40 يورو." },
       { speaker: "أنت", role: "a", de: "Okay, hier bitte. Wann fährt der Zug?", ar: "حسناً، تفضل. متى ينطلق القطار؟" },
-      { speaker: "الموظف", role: "b", de: "Um zehn Uhr, Gleis 3.", ar: "في العاشرة، الرصيف 3." },
+      { speaker: "الموظف", role: "b", de: "Um zehn Uhr, Gleis 3.", ar: "في العاشرة، على المسار رقم 3." },
     ],
     questions: [
       { de: "Was kauft die Person?", ar: "ماذا تشتري الشخص؟", options: [
@@ -203,8 +203,50 @@ export const A1_DIALOGUES_3: DailyDialogue[] = [
       { de: "das Ticket", ar: "التذكرة" },
       { de: "hin und zurück", ar: "ذهاب وإياب" },
       { de: "der Zug fährt um …", ar: "القطار ينطلق في …" },
-      { de: "das Gleis", ar: "الرصيف" },
+      { de: "das Gleis", ar: "مسار السكة؛ ويُذكر رقمه على لوحة القطارات" },
       { de: "Was kostet das?", ar: "كم يكلف؟" },
+    ],
+  },
+
+  {
+    id: "a1-16-bahnhof",
+    level: "A1",
+    title: "في محطة القطار",
+    titleDe: "Am Bahnhof",
+    emoji: "🚆",
+    situation: "تسأل عن القطار المتجه إلى برلين ومقعدك",
+    audioNoteAr: "الصوت مولّد آلياً (TTS) وليس تسجيلاً بشرياً.",
+    turns: [
+      { speaker: "توماس", role: "a", de: "Guten Morgen! Ist das der Zug nach Berlin?", ar: "صباح الخير! هل هذا القطار المتجه إلى برلين؟" },
+      { speaker: "سارة", role: "b", de: "Ja. Er fährt um zehn Uhr ab.", ar: "نعم. ينطلق في العاشرة." },
+      { speaker: "توماس", role: "a", de: "Wie lange dauert die Fahrt?", ar: "كم تستغرق الرحلة؟" },
+      { speaker: "سارة", role: "b", de: "Zwei Stunden. Wir sind um zwölf Uhr da.", ar: "ساعتان. سنصل في الثانية عشرة." },
+      { speaker: "توماس", role: "a", de: "Danke. Wo ist mein Platz?", ar: "شكراً. أين مقعدي؟" },
+      { speaker: "سارة", role: "b", de: "Wagen drei, Platz zwölf. Gute Reise!", ar: "العربة الثالثة، المقعد الثاني عشر. رحلة سعيدة!" },
+    ],
+    questions: [
+      { de: "Wohin fährt der Zug?", ar: "إلى أين يتجه القطار؟", options: [
+        { text: "Nach Berlin", ar: "إلى برلين", correct: true, explanation: "نعم — السؤال الأول هو «Ist das der Zug nach Berlin?»" },
+        { text: "Nach Hamburg", ar: "إلى هامبورغ", correct: false, explanation: "لا — لم تُذكر هامبورغ؛ الوجهة في الحوار «nach Berlin»." },
+        { text: "Nach München", ar: "إلى ميونخ", correct: false, explanation: "لا — في السؤال ورد «der Zug nach Berlin»، ولم تُذكر München." },
+      ]},
+      { de: "Um wie viel Uhr fährt der Zug ab?", ar: "في أي ساعة ينطلق القطار؟", options: [
+        { text: "Um zehn Uhr", ar: "في العاشرة", correct: true, explanation: "صحيح — «Er fährt um zehn Uhr ab»." },
+        { text: "Um zwölf Uhr", ar: "في الثانية عشرة", correct: false, explanation: "لا — «Wir sind um zwölf Uhr da» وقت الوصول؛ أما الانطلاق «Er fährt um zehn Uhr ab»." },
+        { text: "Um acht Uhr", ar: "في الثامنة", correct: false, explanation: "لا — الحوار يقول «Er fährt um zehn Uhr ab»؛ ولم يذكر acht Uhr." },
+      ]},
+      { de: "Wo sitzt Thomas?", ar: "أين يجلس توماس؟", options: [
+        { text: "Im Wagen drei, auf Platz zwölf", ar: "في العربة الثالثة، المقعد الثاني عشر", correct: true, explanation: "نعم — سارة تقول: «Wagen drei, Platz zwölf»." },
+        { text: "Im Wagen zwei, auf Platz drei", ar: "في العربة الثانية، المقعد الثالث", correct: false, explanation: "لا — قالت سارة «Wagen drei, Platz zwölf»؛ فلا نعكس الرقمين إلى Wagen zwei وPlatz drei." },
+        { text: "Im Wagen zwölf, auf Platz drei", ar: "في العربة الثانية عشرة، المقعد الثالث", correct: false, explanation: "لا — «Wagen drei» و«Platz zwölf»؛ لا نعكس الرقمين." },
+      ]},
+    ],
+    keyVocab: [
+      { de: "der Zug", ar: "القطار" },
+      { de: "abfahren", ar: "ينطلق" },
+      { de: "die Fahrt", ar: "الرحلة" },
+      { de: "der Wagen", ar: "العربة" },
+      { de: "der Platz", ar: "المقعد" },
     ],
   },
 ];

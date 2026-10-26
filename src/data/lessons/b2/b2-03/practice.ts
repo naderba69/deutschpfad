@@ -16,7 +16,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«den auf» ترتيب خاطئ؛ حرف الجر يسبق الضمير الموصول دائماً.",
+        "«den auf» ترتيب غير معياري في هذا التركيب؛ يوضع حرف الجر قبل الضمير النسبي.",
         "«auf dem» حالة جر، ولا تناسب الفعل warten على مفعول مذكر.",
         "«auf der» حالة جر مؤنث، ولا تناسب المذكر.",
       ],
@@ -28,11 +28,11 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "Alles, ___ du sagst, ist wichtig.",
       options: ["was", "das", "wo", "der"],
       correctIndex: 0,
-      explanation: "بعد alles: was.",
+      explanation: "بعد alles يُستعمل was عادةً في الألمانية المعيارية.",
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«das» تستعمل لشيء محدد محايد، ولا تناسب alles.",
+        "المعياري الشائع بعد «alles» هو «was»؛ أما «das» فيظهر مع مرجع اسمي محدد مثل «das Buch, das …».",
         "«wo» تستعمل للمكان أو الزمان، ولا تناسب alles.",
         "«der» مذكّر، ولا تناسب alles.",
       ],
@@ -74,13 +74,13 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e6",
       type: "fill-blank",
       instructionAr: "أكمل بـ wo/was/wofür:",
-      template: "Das Haus, ___ ich wohne. Alles, ___ ich brauche. Ich weiß, ___ er sich interessiert.",
+      template: "Das Haus, ___ ich wohne. Alles, ___ ich brauche. Das Thema, ___ er sich interessiert, ist spannend.",
       blanks: [
         { correct: "wo", options: ["wo", "was", "wofür"] },
         { correct: "was", options: ["wo", "was", "wofür"] },
         { correct: "wofür", options: ["wo", "was", "wofür"] },
       ],
-      explanation: "مكان → wo. كل شيء → was. يهتم بـ → wofür.",
+      explanation: "المكان → wo. بعد alles → was. ومع das Thema + sich interessieren für → wofür.",
       errorType: "grammar",
     },
     {
@@ -90,7 +90,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       prompt: "Das Land, in dem ich lebe → (بـ wo)",
       acceptedAnswers: ["Das Land, wo ich lebe", "Das Land, wo ich lebe."],
       sampleAnswer: "Das Land, wo ich lebe.",
-      explanation: "in dem → wo (أشيع).",
+      explanation: "يمكن أن يعود wo على اسم مكان: Das Land, wo ich lebe. ويمكن أيضاً قول in dem في هذا المثال.",
       errorType: "grammar",
     },
     {
@@ -118,7 +118,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       wrongWord: "das",
       correctWord: "was",
       options: ["was", "das", "wo", "der"],
-      explanation: "بعد alles: was.",
+      explanation: "بعد alles يُستعمل was عادةً في الألمانية المعيارية.",
       errorType: "grammar",
     },
     {
@@ -168,13 +168,13 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       type: "fill-blank",
       instructionAr: "أكمل ببدائل المجهول (sein + zu · lassen sich):",
       instructionDe: "Ergänze: ist … zu / lässt sich.",
-      template: "Der Betrag ___ bis Freitag zu zahlen. (يجب — رسمي) · Die Rechnung ___ sich leicht nachrechnen. (يمكن)",
+      template: "Der Betrag ___ bis Freitag zu zahlen. (يجب في هذا السياق) · Die Rechnung ___ sich leicht nachrechnen. (يمكن إعادة حسابها بسهولة)",
       blanks: [
         { correct: "ist", options: ["ist", "wird", "hat"] },
         { correct: "lässt", options: ["lässt", "wird", "hat"] },
       ],
-      hint: "sein + zu + مصدر للإلزام الرسمي، وlassen sich للإمكانية العملية.",
-      explanation: "ist … zu zahlen = يجب دفعه (رسمي)، وlässt sich nachrechnen = يمكن إعادة حسابه بسهولة.",
+      hint: "sein + zu قد يدل على الوجوب أو الإمكان بحسب السياق؛ وlassen sich يعبّر غالباً عن الإمكان أو القابلية.",
+      explanation: "ist … zu zahlen يفيد هنا الوجوب في سياق الموعد؛ وlässt sich leicht nachrechnen تفيد إمكان إعادة الحساب، وتأتي السهولة من leicht.",
       errorType: "grammar",
       points: 2,
     },
@@ -200,8 +200,8 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
 export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     mistakes: [
       { wrong: "Der Mann, den ich warte auf.", right: "Der Mann, auf den ich warte.", whyAr: "حرف الجر قبل الضمير." },
-      { wrong: "Alles, das du sagst.", right: "Alles, was du sagst.", whyAr: "بعد alles: was." },
-      { wrong: "wo أم woher؟", right: "wo = حيث. woher = من حيث", whyAr: "اتجاه مختلف." },
+      { wrong: "Alles, das du sagst.", right: "Alles, was du sagst.", whyAr: "بعد alles يُستعمل was عادةً في الألمانية المعيارية." },
+      { wrong: "wo أم woher أم wohin؟", right: "wo = أين/حيث؛ woher = من أين؛ wohin = إلى أين", whyAr: "تُستعمل wo للمكان، وwoher لمصدر الحركة، وwohin للاتجاه إليها." },
     ],
     eselsbruecken: [
       "«حرف الجر قبل الضمير النسبي»: auf den, mit dem, für das.",
@@ -210,6 +210,6 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     culturalNote: {
       title: "النظام القضائي الألماني",
       content:
-        "ألمانيا دولة قانون: «Rechtsstaat». القضاء مستقل، والمحكمة الدستورية (Bundesverfassungsgericht) في كارلسروه تحمي الدستور. والمحامي: «Rechtsanwalt». وعبارة شائعة: «Ich kenne meine Rechte» (أعرف حقوقي).",
+        "ألمانيا دولة قانون (Rechtsstaat). المحكمة الدستورية الاتحادية (Bundesverfassungsgericht) محكمة وجهاز دستوري مستقل، ومقرها كارلسروه؛ ومن مهامها ضمان احترام القانون الأساسي وحماية الحقوق الأساسية. والمحامي هو «Rechtsanwalt».",
     },
   };

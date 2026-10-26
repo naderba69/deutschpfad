@@ -75,7 +75,11 @@ for (const l of levels) {
       v.level === l.toUpperCase() ? v.order < order : levels.indexOf(v.level.toLowerCase()) < levelIdx,
     );
     if (!hasPrev && !src.includes("review: [")) {
-      warn(`${l}/${f}: لا دروس سابقة للمراجعة المولّدة (قد تكون أول درس) — مقبول`);
+      if (l === "a1" && id === "a1-00") {
+        console.log(`ℹ️ ${l}/${f}: أول درس في المسار؛ عدم وجود دروس سابقة للمراجعة متوقع`);
+      } else {
+        warn(`${l}/${f}: لا توجد دروس سابقة أو مراجعة مهيأة`);
+      }
     }
   }
 }

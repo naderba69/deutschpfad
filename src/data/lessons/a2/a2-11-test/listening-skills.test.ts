@@ -1,5 +1,5 @@
 /**
- * a2-11 — الاستماع بحواراته الثلاثة وأدلّتُه بلا نصّ مكتوب · النطقُ ورموزُه وملاحظاتُ التكرار (جزء من تدقيق الدرس)
+ * a2-11 — الاستماع بحواراته الأربعة وأدلّتُه بلا نصّ مكتوب · النطقُ ورموزُه وملاحظاتُ التكرار (جزء من تدقيق الدرس)
  * فُصل من a2-11.test.ts في الدفعة 104 (سقف الحجم: لا ملف فوق 600 سطر).
  * كتل `it` منقولة حرفياً؛ والثوابت والدوال المشتركة في `./fixtures.ts`.
  */
@@ -10,13 +10,14 @@ import { getListeningQuestionTaskId } from "@/lib/lesson/listening-evidence";
 import { goal } from "./fixtures";
 
 describe("A2-11 lesson content audit", () => {
-  it("audits all three listening dialogues, line translations, questions, and transcript evidence IDs", () => {
+  it("audits all four listening dialogues, line translations, questions, and transcript evidence IDs", () => {
     expect(lessonA211.listening.items.map(({ id, title }) => [id, title])).toEqual([
       ["l1", "عند الحلاق"],
       ["l2", "شكوى مهذبة"],
       ["l3", "ملء استمارة تدريبية افتراضية"],
+      ["l4", "إرسال طرد في مثال تدريبي خيالي"],
     ]);
-    expect(lessonA211.listening.items.map(({ lines }) => lines.length)).toEqual([5, 5, 7]);
+    expect(lessonA211.listening.items.map(({ lines }) => lines.length)).toEqual([5, 5, 7, 6]);
     expect(lessonA211.listening.items.flatMap(({ lines }) => lines.map(({ speaker, de, ar }) => ({ speaker, de, ar })))).toEqual([
       { speaker: "Friseurin", de: "Guten Tag! Was möchten Sie?", ar: "طاب يومك! ماذا تريد؟" },
       { speaker: "Sami", de: "Ich möchte mir die Haare schneiden lassen.", ar: "أريد قصّ شعري لدى الحلاق." },
@@ -35,6 +36,12 @@ describe("A2-11 lesson content audit", () => {
       { speaker: "Mitarbeiterin", de: "Hier schreiben Sie, welche Staatsangehörigkeit Sie haben. Zum Beispiel: „tunesisch“.", ar: "اكتبي هنا جنسيتك. مثلاً: «tunesisch»." },
       { speaker: "Mona", de: "Fertig! Ich unterschreibe hier unten. So?", ar: "انتهيت! أوقّع في الأسفل. هكذا؟" },
       { speaker: "Mitarbeiterin", de: "Perfekt! Das Übungsformular ist jetzt vollständig ausgefüllt.", ar: "ممتاز! اكتمل ملء الاستمارة التدريبية الآن." },
+      { speaker: "Lina", de: "Guten Tag. Ich möchte dieses Paket nach Hamburg schicken.", ar: "مرحباً. أريد إرسال هذا الطرد إلى هامبورغ." },
+      { speaker: "Postmitarbeiter", de: "Gern. Im Übungsbeispiel kostet der Versand fünf Euro.", ar: "بكل سرور. في المثال التدريبي، كلفة الإرسال خمسة يورو." },
+      { speaker: "Lina", de: "Wie lange dauert es?", ar: "كم يستغرق ذلك؟" },
+      { speaker: "Postmitarbeiter", de: "Im Beispiel kommt das Paket in zwei Tagen an.", ar: "في المثال، يصل الطرد خلال يومين." },
+      { speaker: "Lina", de: "Bekomme ich eine Sendungsnummer?", ar: "هل أحصل على رقم تتبّع؟" },
+      { speaker: "Postmitarbeiter", de: "Ja. Sie steht auf dem Beleg. Heben Sie ihn bitte auf.", ar: "نعم. إنه مكتوب على الإيصال. احتفظي به من فضلك." },
     ]);
 
     expect(lessonA211.listening.questions.map(({ id, itemId, questionDe, questionAr, explanation, errorType }) => ({
@@ -75,6 +82,30 @@ describe("A2-11 lesson content audit", () => {
         questionDe: "Welches Beispiel nennt die Mitarbeiterin für die Staatsangehörigkeit?",
         questionAr: "ما المثال الذي تذكره الموظفة لخانة الجنسية؟",
         explanation: "ذكرت الموظفة مثالاً: Schreiben Sie zum Beispiel „tunesisch“.",
+        errorType: "comprehension",
+      },
+      {
+        id: "q5",
+        itemId: "l4",
+        questionDe: "Wohin möchte Lina das Paket schicken?",
+        questionAr: "إلى أين تريد لينا إرسال الطرد؟",
+        explanation: "تقول لينا إنها تريد إرسال الطرد إلى هامبورغ؛ تفاصيل الحوار افتراضية للتدريب.",
+        errorType: "comprehension",
+      },
+      {
+        id: "q6",
+        itemId: "l4",
+        questionDe: "Wie lange dauert der Versand im Beispiel?",
+        questionAr: "كم تستغرق عملية الإرسال في المثال؟",
+        explanation: "يقول الموظف إن الطرد يصل في المثال خلال يومين؛ هذه ليست مدة شحن حقيقية أو مضمونة.",
+        errorType: "comprehension",
+      },
+      {
+        id: "q7",
+        itemId: "l4",
+        questionDe: "Was soll Lina aufheben?",
+        questionAr: "ما الذي ينبغي للينا الاحتفاظ به؟",
+        explanation: "يطلب الموظف منها الاحتفاظ بالإيصال الذي يظهر عليه رقم التتبع.",
         errorType: "comprehension",
       },
     ]);

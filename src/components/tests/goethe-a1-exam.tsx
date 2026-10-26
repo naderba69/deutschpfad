@@ -168,6 +168,7 @@ export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
                 <p className="text-sm text-muted-foreground">{t.aufgabeAr}</p>
                 <p className="text-xs text-muted-foreground">الحد الأدنى: {t.minWords} كلمة · كتبت: {words}</p>
                 <textarea
+                  aria-label={`إجابة الكتابة: ${t.titleAr}`}
                   value={writing[i]}
                   onChange={(e) => setWriting((w) => w.map((x, j) => (j === i ? e.target.value : x)))}
                   rows={5}

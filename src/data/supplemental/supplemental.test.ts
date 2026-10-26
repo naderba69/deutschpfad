@@ -70,6 +70,18 @@ describe("مكمّلات — الحوارات المتفرعة: لا طريق م
     expect(bad, "بدايات معطوبة").toEqual([]);
   });
 
+  it("حوار الطبيب التدريبي لا يضع تشخيصاً أو جرعة أو مدة دواء عامة", () => {
+    const doctorDialogue = DIALOGUES.find(({ id }) => id === "dl-arzt");
+    expect(doctorDialogue?.situation).toContain("لا تشخيصاً أو نصيحة طبية");
+    expect(doctorDialogue?.situation).toContain("لا يحدد جرعات أدوية");
+    const advice = doctorDialogue?.nodes.n3;
+    expect(advice?.de).toContain("Packungsbeilage");
+    expect(advice?.de).not.toMatch(/dreimal täglich|Tablette|viel trinken/i);
+    expect(doctorDialogue?.nodes.end.de).not.toMatch(/Fünf Tage|Tabletten nehmen/i);
+    expect(doctorDialogue?.nodes.end.de).toContain("wenden Sie sich bitte an Ihre Ärztin");
+    expect(doctorDialogue?.nodes.end.endMessage).toContain("لا تستنتج تشخيصاً أو جرعة");
+  });
+
   it("كل اختيار يشير لعقدة موجودة أو لنهاية `endMessage`", () => {
     const dead: string[] = [];
     for (const d of DIALOGUES) {

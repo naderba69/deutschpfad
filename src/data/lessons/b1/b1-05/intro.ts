@@ -10,9 +10,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       de: "Ich kann Wünsche, Reue und Ratschläge in einem kurzen Gespräch verstehen.",
       ar: "أن أفهم الأمنيات والندم والنصيحة في حوار قصير عن الصحة.",
       evidence: {
-        exerciseIds: ["q1", "q2", "q3"],
-        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3"],
-        labelAr: "أجب صحيحاً عن q1 بعد الاستماع إلى l1، وعن q2 وq3 بعد الاستماع إلى l2، دون كشف التفريغ. كشف النص لا يُحتسب أداءً.",
+        exerciseIds: ["q1", "q2", "q3", "q4", "q5", "q6"],
+        taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4", "listening:l3:q5", "listening:l3:q6"],
+        labelAr: "أجب صحيحاً عن q1–q6 بعد الاستماع إلى الحوارات l1–l3 دون كشف التفريغ. كشف النص لا يُحتسب أداءً.",
         completion: "all-correct",
       },
     },
@@ -56,7 +56,7 @@ export const einfuehrung: Lesson["einfuehrung"] = {
       "في الدرس السابق: Ich würde reisen (كنت سأسافر — الآن). ماذا لو أردت الماضي: «كنت سأسافر أمس لو كان الطقس جيداً»؟ هنا نحتاج hätte/wäre + Partizip II! قارن: würde + Infinitiv (الآن) مقابل hätte + Partizip II (الماضي).",
     motivatingQuestionDe: "Was hättest du anders gemacht?",
     contextAr:
-      "نستكمل صيغة الشرط ببعدها الزمني: الماضي الشرطي (كان قد كان سيفعل...). ونربطها بالجمل الشرطية الكاملة — بنية مهمة في B1.",
+      "نستكمل صيغة الشرط بافتراضات عن الماضي (hätte/wäre + Partizip II)، ونراجع ترتيب جمل Wenn الشرطية.",
     contextDe: "Wenn ich früher Sport gemacht hätte, wäre ich jetzt fitter.",
     connectionToPreviousAr: "تتذكر würde/wäre/hätte من درس الإعلام. اليوم: بعد الماضي — hätte/wäre + Partizip II — ونظام الجمل الشرطية الكامل.",
     activateVocabulary: [
@@ -80,8 +80,8 @@ export const review: NonNullable<Lesson["review"]> = [
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«habe» مضارع، ولا يناسب الشرط غير الواقعي في الماضي.",
-        "«hatte» ماضٍ، ولا يناسب الشرط غير الواقعي هنا.",
+        "«habe» هنا صيغة Indikativ Präsens؛ المطلوب في هذا المثال Konjunktiv II hätte لافتراض غير واقعي عن الحاضر.",
+        "«hatte» Präteritum Indikativ؛ المطلوب في هذا المثال صيغة Konjunktiv II hätte.",
         "«haben» مصدر، ولا يناسب الجملة.",
       ],
     },

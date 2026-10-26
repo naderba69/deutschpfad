@@ -174,7 +174,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         id: "rq5",
         type: "multiple-choice",
         paragraph: 2,
-        questionDe: "Welches Hilfsverb steht im Satz „Nach drei Stunden sind wir endlich abgefahren“?",
+        questionDe: "Welches Hilfsverb steht im Satz „Nach zwei Stunden sind wir endlich abgefahren“?",
         instructionAr: "سؤال قواعد: اختر المساعد في استعمال abfahren الوارد في القصة.",
         options: [
           "sein — im intransitiven Sinn «der Zug fährt ab»",
@@ -200,7 +200,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         questionDe: "Wie endete die Geschichte?",
         instructionAr: "اقرأ الفقرة الخامسة: كيف انتهت القصّة؟",
         options: [
-          "Sie fanden ein anderes Hotel, das billiger und schöner war.",
+          "Sie bekamen ein Zimmer in einem anderen Hotel, das billiger und schöner war.",
           "Sie fuhren am selben Abend enttäuscht wieder nach Hause zurück",
           "Sie schliefen die ganze Nacht lang am Bahnhof",
           "Sie fanden den Rucksack auch später niemals wieder",
@@ -253,6 +253,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         id: "l1",
         title: "عطلة في برلين",
+        audioNoteAr: "يستخدم هذا المشهد نطق المتصفح الاصطناعي (TTS)، لا تسجيلاً بشرياً؛ وقد يختلف الصوت حسب الجهاز والمتصفح.",
         lines: [
           {
             speaker: "Sami",
@@ -284,6 +285,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         id: "l2",
         title: "عطلة على الشاطئ",
+        audioNoteAr: "يستخدم هذا المشهد نطق المتصفح الاصطناعي (TTS)، لا تسجيلاً بشرياً؛ وقد يختلف الصوت حسب الجهاز والمتصفح.",
         lines: [
           {
             speaker: "Mona",
@@ -306,6 +308,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
             de: "Ja, viele! Ich zeige sie dir später.",
             ar: "نعم، كثيراً! سأريكها لاحقاً.",
           },
+        ],
+      },
+      {
+        id: "l3",
+        title: "مشكلة في الفندق",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً. لم تُوثّق هوية الأصوات المستخدمة، ولم تُتحقق مطابقة التسجيل للنص أو جودة النطق.",
+        lines: [
+          { speaker: "Anna", de: "Wie war euer Hotel in München?", ar: "كيف كان فندقكم في ميونيخ؟", audioSrc: "/audio/lessons/a2-01/ls-a2-01-3-1.mp3" },
+          { speaker: "Sami", de: "Wir sind gestern spät angekommen.", ar: "وصلنا متأخرين أمس.", audioSrc: "/audio/lessons/a2-01/ls-a2-01-3-2.mp3" },
+          { speaker: "Anna", de: "Gab es ein Problem mit dem Zimmer?", ar: "هل كانت هناك مشكلة في الغرفة؟", audioSrc: "/audio/lessons/a2-01/ls-a2-01-3-3.mp3" },
+          { speaker: "Sami", de: "Ja, das Zimmer war nicht sauber.", ar: "نعم، لم تكن الغرفة نظيفة.", audioSrc: "/audio/lessons/a2-01/ls-a2-01-3-4.mp3" },
+          { speaker: "Anna", de: "Was hast du dann gemacht?", ar: "ماذا فعلتَ بعد ذلك؟", audioSrc: "/audio/lessons/a2-01/ls-a2-01-3-5.mp3" },
+          { speaker: "Sami", de: "Ich habe die Rezeption angerufen und ein anderes Zimmer bekommen.", ar: "اتصلتُ بالاستقبال وحصلتُ على غرفة أخرى.", audioSrc: "/audio/lessons/a2-01/ls-a2-01-3-6.mp3" },
         ],
       },
     ],
@@ -383,6 +398,45 @@ export const listening: NonNullable<Lesson["listening"]> = {
           "«nichts» ينفي التجربة المذكورة صراحةً في الحوار.",
         ],
       },
+      {
+        id: "q5", itemId: "l3", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "In welcher Stadt ist das Hotel?", questionAr: "في أي مدينة يقع الفندق؟",
+        options: ["In München", "In Berlin", "In Hamburg", "In Sousse"], correctIndex: 0,
+        explanation: "تسأل آنا عن الفندق في ميونيخ، ما يحدد مكان إقامتهما.", errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "برلين لم ترد في هذا الحوار؛ السؤال يحدد الفندق في ميونيخ.",
+          "هامبورغ لم ترد في هذا الحوار؛ المكان المذكور ميونيخ.",
+          "سوسة وجهة الحوار الآخر، لا الفندق المذكور هنا.",
+        ],
+      },
+      {
+        id: "q6", itemId: "l3", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Was war mit dem Zimmer?", questionAr: "ما المشكلة في الغرفة؟",
+        options: ["Es war nicht sauber.", "Es war zu klein.", "Das Fenster war kaputt.", "Es gab kein Bett."], correctIndex: 0,
+        explanation: "يقول سامي إن الغرفة لم تكن نظيفة.", errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم يذكر سامي صغر الغرفة؛ قال إنها لم تكن نظيفة.",
+          "لم يذكر نافذة معطوبة؛ المشكلة المصرح بها أن الغرفة لم تكن نظيفة.",
+          "لم يذكر غياب السرير؛ الشكوى كانت من النظافة.",
+        ],
+      },
+      {
+        id: "q7", itemId: "l3", type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Was hat Sami danach gemacht?", questionAr: "ماذا فعل سامي بعد ذلك؟",
+        options: ["Er hat die Rezeption angerufen.", "Er hat das Hotel verlassen.", "Er hat ein Taxi bestellt.", "Er hat das Zimmer selbst geputzt."], correctIndex: 0,
+        explanation: "اتصل سامي باستقبال الفندق، ثم حصل على غرفة أخرى.", errorType: "vocabulary",
+        optionExplanations: [
+          undefined,
+          "لم يقل سامي إنه غادر الفندق؛ بل اتصل بالاستقبال وحصل على غرفة أخرى.",
+          "لا يذكر الحوار طلب سيارة أجرة؛ ما فعله أنه اتصل بالاستقبال.",
+          "لم ينظف الغرفة بنفسه؛ اتصل بالاستقبال.",
+        ],
+      },
     ],
   };
 
@@ -410,7 +464,7 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       },
       { de: "der Strand", ar: "الشاطئ", note: "st في البداية = شت: شترانت" },
     ],
-    tip: "يورد Duden أن Flugzeug صيغ على غرار Fahrzeug؛ لا تحلّل الكلمة على أنها fliegen + Zeug. استمع إلى /ɔʏ̯/ في المقطع الأخير.",
+    tip: "يورد Duden أن Flugzeug صيغ على غرار Fahrzeug؛ لا تحلّل الكلمة على أنها fliegen + Zeug. استمع إلى /ɔʏ̯/ في المقطع الأخير. أزرار الاستماع تستخدم TTS المتصفح لا تسجيلاً بشرياً؛ وقد يختلف الصوت حسب الجهاز والمتصفح، والكتابة العربية تقريبية لا تمثيل صوتي دقيق للألمانية.",
     shadowing: [
       {
         de: "Ich bin nach Berlin geflogen.",

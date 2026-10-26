@@ -46,4 +46,3 @@ export function saveProgress(state: ProgressState): void {
     // تجاهل أخطاء التخزين (وضع التصفح الخاص مثلاً)
   }
 }
-

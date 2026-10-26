@@ -16,7 +16,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
         "Die Frau, das dort steht, ist meine Lehrerin.",
       ],
       correctIndex: 0,
-      explanation: "die Frau مؤنث → die.",
+      explanation: "الاسم Frau مؤنث، والضمير هنا فاعل الفعل steht؛ لذلك تأتي صيغة الرفع die.",
       errorType: "article",
       optionExplanations: [
         undefined,
@@ -80,7 +80,7 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     { id: "fc-b1-11-3", de: "die Vorbereitung", ar: "التحضير", example: "Die Vorbereitung hilft mir sehr.", exampleAr: "التحضير يساعدني كثيراً.", level: "B1" },
     { id: "fc-b1-11-4", de: "Meiner Meinung nach", ar: "في رأيي", example: "Meiner Meinung nach ist das eine gute Idee.", exampleAr: "في رأيي هذه فكرة جيدة.", level: "B1" },
     { id: "fc-b1-11-5", de: "Einerseits ... andererseits", ar: "من ناحية ... ومن ناحية أخرى", example: "Einerseits ist es teuer, andererseits gut.", exampleAr: "من ناحية مكلف، ومن ناحية أخرى جيد.", level: "B1" },
-    { id: "fc-b1-11-6", de: "das Beratungsgespräch", ar: "جلسة الاستشارة", example: "Ich habe ein Beratungsgespräch beim Arbeitsamt.", exampleAr: "لدي جلسة استشارة في مكتب العمل.", level: "B1" },
+    { id: "fc-b1-11-6", de: "das Beratungsgespräch", ar: "جلسة الاستشارة", example: "Ich habe ein Beratungsgespräch bei der Agentur für Arbeit.", exampleAr: "لدي جلسة استشارة في وكالة العمل.", level: "B1" },
     { id: "fc-b1-11-7", de: "der Prüfungsteil", ar: "جزء الامتحان", example: "Ich übe jeden Teil einzeln.", exampleAr: "أتدرّب على كل جزء على حدة.", level: "B1" },
     { id: "fc-b1-11-8", de: "die Bewerbung", ar: "طلب التوظيف", example: "Ich schreibe eine Bewerbung.", exampleAr: "أكتب طلب توظيف.", level: "B1" },
     { id: "fc-b1-11-9", de: "trotzdem", ar: "مع ذلك", example: "Es regnet, trotzdem gehen wir spazieren.", exampleAr: "تمطر، ومع ذلك نخرج للتنزّه.", level: "B1" },
@@ -93,9 +93,9 @@ export const mediation: NonNullable<Lesson["mediation"]> = [
     {
       id: "med-b1-11-1",
       type: "summarize-de-to-ar",
-      titleAr: "لخّص رسالة رسمية عن تأجيل موعد بالعربية",
+      titleAr: "لخّص رسالة تدريبية خيالية عن تأجيل موعد بالعربية",
       sourceDe: "Sehr geehrte Frau Ben Ali, wir müssen Ihren Termin für das Beratungsgespräch leider verschieben. Der neue Termin ist am Donnerstag, den 15., um 14 Uhr. Bitte bringen Sie Ihren Lebenslauf und Ihre Zeugnisse mit.",
-      taskAr: "انقل الرسالة بالعربية إلى شخص لا يفهم الألمانية: الموعد الجديد، المستندات المطلوبة، مع الحفاظ على النبرة الرسمية.",
+      taskAr: "هذا مثال تدريبي خيالي لا يصف موعداً أو جهة حقيقية. انقل الرسالة بالعربية إلى شخص لا يفهم الألمانية: الموعد الجديد والمستندات المطلوبة، مع الحفاظ على النبرة الرسمية.",
       modelAnswerAr: "«عزيزتي السيدة بن علي، نأسف لتأجيل موعد جلسة الاستشارة. الموعد الجديد الخميس 15 الساعة 14. يرجى إحضار السيرة الذاتية والشهادات.»",
       keyPointsAr: ["نقلت الاعتذار عن التأجيل", "ذكرت الموعد الجديد بدقة (الخميس 15، 14:00)", "ذكرت المستندات المطلوبة"],
     },
@@ -104,7 +104,7 @@ export const mediation: NonNullable<Lesson["mediation"]> = [
 export const interaction: NonNullable<Lesson["interaction"]> = [
     {
       id: "int-b1-11-1",
-      scenarioAr: "نقاش مع زميل عن العمل عن بُعد (Homeoffice) — جزء التحدث من B1.",
+      scenarioAr: "تدريب تفاعلي خيالي على نقاش مع زميل عن العمل عن بُعد (Homeoffice)، وليس تقييماً رسمياً.",
       scenarioDe: "Diskussion über Homeoffice mit einem Kollegen.",
       strategyAr: "الاستراتيجية: إبداء الرأي المبرر، الموافقة/الاعتراض بلطف، وطلب رأي الآخر.",
       rounds: [

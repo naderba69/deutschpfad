@@ -107,7 +107,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       instructionAr: "صِل مفردات المبنى بمعانيها:",
       pairs: [
         { left: "der Nachbar", right: "الجار" }, { left: "die Hausordnung", right: "نظام هذا المبنى" },
-        { left: "die Ruhezeiten", right: "أوقات الهدوء المحددة" }, { left: "der Hausflur", right: "مدخل/ممر المبنى" },
+        { left: "die Ruhezeiten", right: "أوقات الهدوء المحددة" }, { left: "der Hausflur", right: "الممر المشترك في المبنى" },
         { left: "die Nebenkosten", right: "التكاليف الجانبية" },
       ],
       hint: "تختلف قواعد Hausordnung من مبنى إلى آخر؛ لا تفترض ساعات موحّدة.",
@@ -178,12 +178,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       instructionAr: "اختر الفعل الأدقّ حين يريد المتكلم معاينة الشقة بنفسه:",
       questionDe: "Ich möchte die Wohnung gern ___ . Können wir einen Termin vereinbaren?",
       options: ["besichtigen", "aussehen", "anschauen lassen", "besuchen"], correctIndex: 0,
-      explanation: "besichtigen هو الفعل الأدقّ لمعاينة الشقة بنفس المتكلم. anschauen lassen قد يعني أن يطلب من شخص آخر النظر إليها؛ وbesuchen وaussehen لا يؤديان المعنى المقصود هنا.", errorType: "vocabulary",
+      explanation: "besichtigen هو الفعل الأدقّ لمعاينة الشقة بنفس المتكلم. anschauen lassen قد يعني أن يطلب من شخص آخر النظر إليها؛ وbesuchen قد يفيد زيارة المكان، لكنه لا يحدد غرض المعاينة بوضوح. أما aussehen فيصف المظهر.", errorType: "vocabulary",
       optionExplanations: [
         undefined,
         "«aussehen» يصف المظهر («Die Wohnung sieht hell aus») ولا يفيد المعاينة هنا.",
         "«anschauen lassen» يعني أن يُطلع غيره عليها؛ والمعاينة الذاتية «besichtigen».",
-        "«besuchen» زيارة شخصٍ أو مكان اجتماعياً، لا معاينة شقة بغرض الاستئجار. ",
+        "«besuchen» يمكن أن يعني زيارة مكان أو شخص، لكنه لا يحدد هنا غرض فحص الشقة مثل «besichtigen».  ",
       ],
     },
     {

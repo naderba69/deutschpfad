@@ -25,7 +25,7 @@ export const B1_DIALOGUES_2: DailyDialogue[] = [
     questions: [
       { de: "Was ist das Thema der Diskussion?", ar: "ما موضوع النقاش؟", options: [
         { text: "Plastikverbrauch und Umwelt", ar: "استهلاك البلاستيك والبيئة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Reisen ins Ausland mit dem Flugzeug", ar: "السفر إلى الخارج", correct: false, explanation: "لا — لم يُذكر سفرٌ أو طيران Flugzeug؛ وافتتاحية النقاش «Wir benutzen zu viel Plastik, findest du nicht?»." },
+        { text: "Reisen ins Ausland mit dem Flugzeug", ar: "السفر إلى الخارج بالطائرة", correct: false, explanation: "لا — لم يُذكر سفرٌ أو طيران Flugzeug؛ وافتتاحية النقاش «Wir benutzen zu viel Plastik, findest du nicht?»." },
         { text: "Sport im Verein am Wochenende", ar: "الرياضة في النادي", correct: false, explanation: "لا — لم تُذكر رياضة Sport ولا نادي Verein؛ والموضوع Plastik und Umwelt." },
       ]},
       { de: "Was schlägt die Person vor?", ar: "ماذا يقترح الشخص؟", options: [
@@ -51,16 +51,16 @@ export const B1_DIALOGUES_2: DailyDialogue[] = [
     id: "b1-07-interview",
     level: "B1",
     title: "مقابلة عمل (تفصيلية)",
-    titleDe: "Vorstellungsgespräch (detailiert)",
+    titleDe: "Vorstellungsgespräch (detailliert)",
     emoji: "🤝",
-    situation: "مقابلة عمل حقيقية — أسئلة وأجوبة",
+    situation: "محاكاة تدريبية لمقابلة عمل — والأجر المذكور مثال خيالي لا معيار للأجور",
     turns: [
       { speaker: "المدير", role: "a", de: "Erzählen Sie mir etwas über Ihre Erfahrung.", ar: "حدثني عن خبرتك." },
       { speaker: "أنت", role: "b", de: "Ich habe fünf Jahre als Projektassistent gearbeitet und viele Projekte organisiert.", ar: "عملت خمس سنوات كمساعد مشاريع ونظمت مشاريع كثيرة." },
       { speaker: "المدير", role: "a", de: "Warum möchten Sie die Stelle wechseln?", ar: "لماذا تريد تغيير الوظيفة؟" },
       { speaker: "أنت", role: "b", de: "Ich möchte mehr Verantwortung übernehmen und mich weiterentwickeln.", ar: "أريد تحمل مسؤولية أكبر والتطور." },
       { speaker: "المدير", role: "a", de: "Welche Gehaltsvorstellungen haben Sie?", ar: "ما توقعاتك المالية؟" },
-      { speaker: "أنت", role: "b", de: "Ich denke, 3000 Euro pro Monat wäre angemessen.", ar: "أعتقد أن 3000 يورو شهرياً سيكون مناسباً." },
+      { speaker: "أنت", role: "b", de: "Meine Vorstellung liegt bei 3000 Euro brutto im Monat.", ar: "أتوقع راتباً إجمالياً قدره 3000 يورو شهرياً." },
     ],
     questions: [
       { de: "Wie lange hat die Person als Projektassistent gearbeitet?", ar: "كم سنة عمل الشخص مساعد مشاريع؟", options: [
@@ -75,8 +75,8 @@ export const B1_DIALOGUES_2: DailyDialogue[] = [
       ]},
       { de: "Welche Gehaltsvorstellung hat die Person?", ar: "ما توقع الشخص المالي؟", options: [
         { text: "3000 Euro im Monat", ar: "3000 يورو شهرياً", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "300 Euro im Monat", ar: "300 يورو شهرياً", correct: false, explanation: "لا — الرقم «Ich denke, 3000 Euro pro Monat wäre angemessen»." },
-        { text: "30000 Euro im Monat", ar: "30000 يورو شهرياً", correct: false, explanation: "لا — لم يُذكر 30000؛ والتوقّع «3000 Euro pro Monat»." },
+        { text: "300 Euro im Monat", ar: "300 يورو شهرياً", correct: false, explanation: "لا — الرقم «Meine Vorstellung liegt bei 3000 Euro brutto im Monat»." },
+        { text: "30000 Euro im Monat", ar: "30000 يورو شهرياً", correct: false, explanation: "لا — لم يُذكر 30000؛ والتوقّع «3000 Euro brutto im Monat»." },
       ]},
     ],
     keyVocab: [
@@ -93,13 +93,13 @@ export const B1_DIALOGUES_2: DailyDialogue[] = [
     title: "إبلاغ العمل بالمرض",
     titleDe: "Krankmeldung",
     emoji: "🤒",
-    situation: "تتصل بعملك لأنك مريض",
+    situation: "محاكاة افتراضية للتدرب على إبلاغ العمل بالمرض؛ الإجراءات قد تختلف حسب جهة العمل",
     turns: [
       { speaker: "السكرتيرة", role: "a", de: "Guten Morgen, Firma Schmidt. Was kann ich für Sie tun?", ar: "صباح الخير، شركة شميت. ماذا أفعل لك؟" },
       { speaker: "أنت", role: "b", de: "Guten Morgen! Ich bin heute krank und kann nicht zur Arbeit kommen.", ar: "صباح الخير! أنا مريض اليوم ولا أستطيع الحضور." },
       { speaker: "السكرتيرة", role: "a", de: "Oh, gute Besserung! Haben Sie einen Arzttermin?", ar: "أوه، الشفاء العاجل! هل لديك موعد طبيب؟" },
       { speaker: "أنت", role: "b", de: "Ja, ich gehe heute Nachmittag zum Arzt.", ar: "نعم، سأذهب للطبيب بعد الظهر." },
-      { speaker: "السكرتيرة", role: "a", de: "Gut. Bringen Sie morgen die Krankmeldung mit.", ar: "جيد. أحضر غداً شهادة المرض." },
+      { speaker: "السكرتيرة", role: "a", de: "Gut. Bitte melden Sie sich morgen noch einmal, falls Sie dann noch krank sind.", ar: "حسناً. يرجى الاتصال بنا غداً مجدداً إذا بقيت مريضاً." },
       { speaker: "أنت", role: "b", de: "Mache ich. Danke für Ihr Verständnis!", ar: "سأفعل. شكراً لتفهمك!" },
     ],
     questions: [
@@ -113,15 +113,15 @@ export const B1_DIALOGUES_2: DailyDialogue[] = [
         { text: "Ins Büro", ar: "إلى المكتب", correct: false, explanation: "لا — لا مكتب Büro اليوم؛ بل «ich gehe heute Nachmittag zum Arzt»." },
         { text: "Ins Kino", ar: "إلى السينما", correct: false, explanation: "لا — لم تُذكر سينما Kino؛ والموعد مع Arzt اليوم بعد الظهر." },
       ]},
-      { de: "Was muss die Person morgen mitbringen?", ar: "ماذا يجب أن يحضر الشخص غداً؟", options: [
-        { text: "Die Krankmeldung", ar: "شهادة المرض", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Den Laptop", ar: "الحاسوب المحمول", correct: false, explanation: "لا — لم يُطلب حاسوب Laptop؛ بل «Bringen Sie morgen die Krankmeldung mit»." },
-        { text: "Die Versicherungskarte", ar: "بطاقة التأمين", correct: false, explanation: "لا — لم تُطلب بطاقة تأمين Versicherungskarte هنا؛ والمطلوب غداً die Krankmeldung." },
+      { de: "Was soll die Person morgen tun, falls sie noch krank ist?", ar: "ماذا ينبغي للشخص أن يفعل غداً إذا بقي مريضاً؟", options: [
+        { text: "Sich noch einmal melden", ar: "الاتصال مجدداً", correct: true, explanation: "صحيح — طلبت السكرتيرة منها أن تبلغ الشركة مجدداً إذا بقيت مريضة." },
+        { text: "Eine Krankmeldung auf Papier mitbringen", ar: "إحضار شهادة مرض ورقية", correct: false, explanation: "لا — طلبت السكرتيرة «Bitte melden Sie sich morgen noch einmal» إذا استمر المرض؛ ولم تطلب إحضار مستند." },
+        { text: "Den Laptop zur Arbeit bringen", ar: "إحضار الحاسوب المحمول إلى العمل", correct: false, explanation: "لا — قالت السكرتيرة «falls Sie dann noch krank sind» وطلبت الإبلاغ مجدداً، ولم تذكر Laptop أو العودة إلى العمل." },
       ]},
     ],
     keyVocab: [
       { de: "krank sein", ar: "مريض" },
-      { de: "die Krankmeldung", ar: "شهادة المرض" },
+      { de: "die Krankmeldung", ar: "الإبلاغ عن المرض" },
       { de: "gute Besserung", ar: "الشفاء العاجل" },
       { de: "zur Arbeit kommen", ar: "الحضور للعمل" },
       { de: "das Verständnis", ar: "التفهم" },
@@ -133,7 +133,8 @@ export const B1_DIALOGUES_2: DailyDialogue[] = [
     title: "شراء تذاكر حفلة",
     titleDe: "Konzertkarten kaufen",
     emoji: "🎵",
-    situation: "تشتري تذكرتين لحفلة موسيقية",
+    situation: "حوار تدريبي خيالي لشراء تذكرتين؛ الأسعار والخصم افتراضيان وليسا عرضاً حقيقياً.",
+    audioNoteAr: "حوار تمثيلي؛ السعر وخصم الطلاب أرقام خيالية للتدريب، فتحقق من شروط الجهة المنظمة عند شراء تذكرة فعلية.",
     turns: [
       { speaker: "الموظفة", role: "a", de: "Guten Tag! Was möchten Sie bestellen?", ar: "طاب يومك! ماذا تريد أن تحجز؟" },
       { speaker: "أنت", role: "b", de: "Ich hätte gern zwei Karten für das Konzert am Freitag.", ar: "أود تذكرتين لحفلة يوم الجمعة." },
@@ -173,7 +174,7 @@ export const B1_DIALOGUES_2: DailyDialogue[] = [
     title: "طلب مساعدة دراسية",
     titleDe: "Nachhilfe organisieren",
     emoji: "📚",
-    situation: "تبحث عن مدرس خصوصي للرياضيات",
+    situation: "حوار تدريبي خيالي للبحث عن مدرس خصوصي للرياضيات؛ سعر 25 يورو للساعة مثال افتراضي وليس سعراً مرجعياً.",
     turns: [
       { speaker: "أنت", role: "a", de: "Hallo! Ich suche Nachhilfe in Mathematik für meinen Sohn.", ar: "مرحباً! أبحث عن دروس خصوصية في الرياضيات لابني." },
       { speaker: "المدرسة", role: "b", de: "In welcher Klasse ist er?", ar: "في أي صف هو؟" },
@@ -188,7 +189,7 @@ export const B1_DIALOGUES_2: DailyDialogue[] = [
         { text: "In der fünften Klasse", ar: "في الصف الخامس", correct: false, explanation: "لا — الصف التاسع لا الخامس: «In der neunten Klasse»." },
         { text: "In der zwölften Klasse", ar: "في الصف الثاني عشر", correct: false, explanation: "لا — لم يُذكر الصف الثاني عشر zwölfte؛ والابن «In der neunten Klasse»." },
       ]},
-      { de: "Welches Fach braucht der Sohn Hilfe?", ar: "في أي مادة يحتاج ابنه المساعدة؟", options: [
+      { de: "In welchem Fach braucht der Sohn Nachhilfe?", ar: "في أي مادة يحتاج ابنه المساعدة؟", options: [
         { text: "Mathematik", ar: "الرياضيات", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
         { text: "Deutsch", ar: "الألمانية", correct: false, explanation: "لا — ليست الألمانية Deutsch؛ بل «Ich suche Nachhilfe in Mathematik für meinen Sohn»." },
         { text: "Englisch", ar: "الإنجليزية", correct: false, explanation: "لا — لم تُذكر الإنجليزية Englisch؛ والمادة Mathematik (والمشكلة مع Algebra)." },

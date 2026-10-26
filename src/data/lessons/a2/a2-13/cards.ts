@@ -86,7 +86,7 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     { id: "fc4", de: "der Fortschritt", ar: "التقدّم", example: "Ich sehe meinen Fortschritt.", exampleAr: "أرى تقدّمي.", level: "A2" },
     { id: "fc5", de: "die Stufe", ar: "المرحلة/الدرجة", example: "Die nächste Stufe ist B1.", exampleAr: "المرحلة التالية هي B1.", level: "A2" },
     { id: "fc6", de: "das Fieber", ar: "الحمّى", example: "Ich habe Fieber und bleibe zu Hause.", exampleAr: "عندي حمّى وأبقى في البيت.", level: "A2" },
-    { id: "fc7", de: "die Krankmeldung", ar: "إشعار المرض", example: "Ich schicke die Krankmeldung per E-Mail.", exampleAr: "أرسل إشعار المرض بالبريد.", level: "A2" },
+    { id: "fc7", de: "die Krankmeldung", ar: "إبلاغ جهة العمل بالمرض", example: "Ich melde mich heute bei meinem Chef krank.", exampleAr: "أبلغ رئيسي اليوم أنني مريض.", level: "A2" },
     { id: "fc8", de: "wiederholen", ar: "يراجع/يكرّر", example: "Vor der Prüfung wiederhole ich alles.", exampleAr: "قبل الامتحان أراجع كل شيء.", level: "A2" },
     { id: "fc9", de: "das Ergebnis", ar: "النتيجة", example: "Ich warte auf das Ergebnis der Prüfung.", exampleAr: "أنتظر نتيجة الامتحان.", level: "A2" },
     { id: "fc10", de: "die Schwäche", ar: "نقطة الضعف", example: "Meine größte Schwäche war der Dativ.", exampleAr: "كانت أكبر نقطة ضعف عندي حالةُ الجر Dativ.", level: "A2" },

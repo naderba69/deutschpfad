@@ -1,7 +1,11 @@
+import path from "node:path";
 import { describe, expect, it } from "vitest";
 
+import { isPlayableMp3 } from "@/lib/audio/mp3-file";
 import { lessonB111 } from "@/data/lessons/b1/b1-11";
 import { LESSON_META } from "@/data/lessons/meta";
+import { LESSON_RELATED_RESOURCES } from "@/data/lessons/related-resources";
+import { B1_STORIES } from "@/data/stories/b1";
 import { evaluateExercise } from "@/lib/lesson/exercise-engine";
 import { getGoalEvidenceStatus } from "@/lib/lesson/goal-evidence";
 import { getListeningQuestionTaskId } from "@/lib/lesson/listening-evidence";
@@ -22,7 +26,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   },
   "ex-b1-11-5": { options: ["في رأيي", "في الواقع", "من ناحية أخرى"], key: "في رأيي" },
   "ex-b1-11-6": { options: ["gingen", "gehen", "gegangen"], key: "gingen" },
-  "ex-b1-11-7": { options: ["andererseits", "damit", "nachdem"], key: "andererseits" },
+  "ex-b1-11-7": { options: ["andererseits", "unterdessen", "anschließend"], key: "andererseits" },
   "ex-b1-11-13": { options: ["Werden", "Wird", "Wirst", "Werdet"], key: "Werden" },
   "mt-b1-11-1": {
     options: [
@@ -42,6 +46,19 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     options: ["Den Lebenslauf und die Zeugnisse", "Ein kleines Geschenk für den Chef", "Nichts, er braucht gar keine Unterlagen"],
     key: "Den Lebenslauf und die Zeugnisse",
   },
+  "lsq-b1-11-3": {
+    options: ["Die Busse fahren häufiger", "Die Tickets sind billiger", "Die Busse fahren nur am Wochenende"],
+    key: "Die Busse fahren häufiger",
+  },
+  "lsq-b1-11-4": {
+    options: ["Weil er kürzer warten muss", "Weil er keine Fahrkarte braucht", "Weil er am Wochenende arbeitet"],
+    key: "Weil er kürzer warten muss",
+  },
+  "lsq-b1-11-5": {
+    options: ["Ein günstigeres Monatsticket", "Einen neuen Zug nach Berlin", "Kostenlose Fahrräder für alle"],
+    key: "Ein günstigeres Monatsticket",
+  },
+  "lsq-b1-11-6": { options: ["An der Haltestelle Rathaus", "Am Bahnhof gegenüber", "Auf dem Platz am Markt"], key: "An der Haltestelle Rathaus" },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -150,6 +167,34 @@ describe("B1-11 lesson content audit", () => {
     const meta = lessonMetaList.find((item) => item.id === "b1-11");
     expect(meta).toMatchObject({ id: "b1-11", unitId: "b1-11", level: "B1", order: 1, summary: lessonB111.summary });
     expect(meta && "duration" in meta).toBe(false);
+    expect(meta).toMatchObject({ estimatedMinutes: 45 });
+  });
+
+  it("adds a second disclosed TTS listening scene with six playable MP3 lines", () => {
+    expect(lessonB111.listening.items).toHaveLength(3);
+    const item = lessonB111.listening.items.find((candidate) => candidate.id === "ls-b1-11-2");
+    expect(item?.title).toBe("حوار خيالي: خطة الحافلات الجديدة");
+    expect(item?.audioNoteAr).toContain("مولّدة آلياً (TTS)");
+    expect(item?.audioNoteAr).toContain("سيناريو تدريبي خيالي");
+    expect(item?.lines).toHaveLength(6);
+    for (const line of item?.lines ?? []) {
+      expect(line.audioSrc).toContain("/audio/lessons/b1-11/ls-b1-11-2-");
+      expect(line.audioSrc?.endsWith(".mp3")).toBe(true);
+      expect(isPlayableMp3(path.join(process.cwd(), "public", line.audioSrc!.slice(1))), line.audioSrc).toBe(true);
+    }
+    expect(lessonB111.listening.items.find((candidate) => candidate.id === "ls-b1-11-1")?.audioNoteAr).toContain("لا يوجد ملف تسجيل مرفق");
+    expect(lessonB111.listening.questions).toHaveLength(6);
+    expect(lessonB111.listening.questions.filter((question) => question.itemId === "ls-b1-11-2")).toHaveLength(3);
+    const newItem = lessonB111.listening.items.find((candidate) => candidate.id === "ls-b1-11-3");
+    expect(newItem?.audioNoteAr).toContain("مولّدة آلياً (TTS)");
+    expect(newItem?.audioNoteAr).toContain("سيناريو تدريبي خيالي");
+    expect(newItem?.lines).toHaveLength(6);
+    for (const line of newItem?.lines ?? []) {
+      expect(line.audioSrc).toContain("/audio/lessons/b1-11/ls-b1-11-3-");
+      expect(line.audioSrc?.endsWith(".mp3")).toBe(true);
+      expect(isPlayableMp3(path.join(process.cwd(), "public", line.audioSrc!.slice(1))), line.audioSrc).toBe(true);
+    }
+    expect(lessonB111.listening.questions.filter((question) => question.itemId === "ls-b1-11-3")).toHaveLength(1);
   });
 
   it("uses only evaluable performances as goals, each all-correct", () => {
@@ -163,7 +208,14 @@ describe("B1-11 lesson content audit", () => {
       "mt-b1-11-1",
       "mt-b1-11-2",
     ]);
-    expect(goal("z2").evidence?.exerciseIds).toEqual(["lsq-b1-11-1", "lsq-b1-11-2"]);
+    expect(goal("z2").evidence?.exerciseIds).toEqual([
+      "lsq-b1-11-1",
+      "lsq-b1-11-2",
+      "lsq-b1-11-3",
+      "lsq-b1-11-4",
+      "lsq-b1-11-5",
+      "lsq-b1-11-6",
+    ]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["wr-b1-11-1", "wr-b1-11-2"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["ex-b1-11-5", "ex-b1-11-7"]);
     for (const item of lessonB111.lernziele) {
@@ -197,7 +249,14 @@ describe("B1-11 lesson content audit", () => {
       lessonB111.listening.questions.map(({ id, itemId }) =>
         getListeningQuestionTaskId("b1-11", itemId, id, false),
       ),
-    ).toEqual(["listening:ls-b1-11-1:lsq-b1-11-1", "listening:ls-b1-11-1:lsq-b1-11-2"]);
+    ).toEqual([
+      "listening:ls-b1-11-1:lsq-b1-11-1",
+      "listening:ls-b1-11-1:lsq-b1-11-2",
+      "listening:ls-b1-11-2:lsq-b1-11-3",
+      "listening:ls-b1-11-2:lsq-b1-11-4",
+      "listening:ls-b1-11-2:lsq-b1-11-5",
+      "listening:ls-b1-11-3:lsq-b1-11-6",
+    ]);
     expect(getListeningQuestionTaskId("b1-11", "ls-b1-11-1", "lsq-b1-11-1", true)).toBe(
       "listening-transcript:b1-11:ls-b1-11-1:lsq-b1-11-1",
     );
@@ -406,8 +465,8 @@ describe("B1-11 lesson content audit", () => {
     const reading = lessonB111.reading;
     expect(reading?.id).toBe("read-b1-11");
     expect(reading?.textType).toBe("brief");
-    expect(reading?.titleDe).toBe("Ein Brief vom Bildungszentrum");
-    expect(reading?.titleAr).toBe("رسالة من مركز التعليم");
+    expect(reading?.titleDe).toBe("Ein fiktiver Übungsbrief vom Bildungszentrum");
+    expect(reading?.titleAr).toBe("رسالة تدريبية خيالية من مركز التعليم (كل المواعيد والرسوم افتراضية)");
     expect(reading?.paragraphs).toHaveLength(4);
     expect(reading?.paragraphsAr).toHaveLength(4);
     const text = reading!.paragraphs.join(" ").toLowerCase();
@@ -443,6 +502,38 @@ describe("B1-11 lesson content audit", () => {
     for (const anchor of ["die unterlagen, die", "wenn sie den früheren termin", "trotzdem bitten wir"]) {
       expect(text.includes(anchor), `مرساة مفقودة: ${anchor}`).toBe(true);
     }
+  });
+
+  it("discloses fictional course and story scenarios without presenting them as official exam procedure", () => {
+    const reading = lessonB111.reading;
+    expect(reading?.titleAr).toMatch(/خيالية/);
+    expect(reading?.titleAr).toMatch(/الرسوم افتراضية/);
+    const readingText = reading?.paragraphs.join(" ") ?? "";
+    expect(readingText).toContain("internen Übungsprüfung");
+    expect(readingText).not.toContain("einige Wochen später");
+    expect(reading?.paragraphsAr.join(" ")).toContain("التدريبات الكتابية والشفهية");
+    expect(lessonB111.mediation?.[0].titleAr).toMatch(/خيالية/);
+    expect(lessonB111.mediation?.[0].taskAr).toMatch(/لا يصف موعداً أو جهة حقيقية/);
+
+    const resource = LESSON_RELATED_RESOURCES["b1-11"]?.find((item) => item.id === "b1-vorstellungsgespraech");
+    expect(resource?.reasonAr).toMatch(/خيالية/);
+    expect(resource?.reasonAr).toMatch(/ليست محاكاة لامتحان رسمي/);
+    const story = B1_STORIES.find((item) => item.id === "b1-vorstellungsgespraech");
+    expect(story?.description).toMatch(/خيالية/);
+  });
+
+  it("keeps grammar explanations and exercises from claiming a unique tense without context", () => {
+    const theory = JSON.stringify(lessonB111.theory);
+    expect(theory).toContain("Futur II");
+    expect(theory).toContain("ليست خطأً نحوياً");
+    expect(theory).not.toContain("بقي في مستوى A2");
+    expect(task("ex-b1-11-3").type).toBe("fill-blank");
+    expect(task("ex-b1-11-3").explanation).toContain("لا يختلف الفاعل");
+    const obwohl = task("ex-b1-11-6");
+    if (obwohl.type !== "multiple-choice") throw new Error("ex-b1-11-6 is not multiple-choice");
+    expect(obwohl.questionDe).toContain("gestern");
+    const nachdem = lessonB111.writing?.find((item) => item.id === "wr-b1-11-2");
+    expect(nachdem?.hint).toContain("زمن الجملة الرئيسية يتبع السياق");
   });
 
   it("removes exam timings, Goethe claims and pass-rate claims", () => {

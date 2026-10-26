@@ -14,10 +14,10 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionAr: "كيف يُنطق الحرف W؟",
       options: ["ڤ (مثل v)", "و (مثل الإنجليزية)", "ف", "ب"],
       correctIndex: 0,
-      explanation: "W الألمانية تُنطق ڤ دائماً: Wasser = ڤاسّر.",
+      explanation: "في الكلمات الألمانية الشائعة، W تُنطق عادةً بصوت قريب من V: Wasser = ڤاسّر.",
       optionExplanations: [
         undefined,
-        "قيمة «W» الإنجليزية غير موجودة في الألمانية؛ فـ«Wasser» تُنطق بڤ.",
+        "في الكلمات الألمانية الشائعة لا تُنطق W بصوت [w] الإنجليزي، بل بصوت قريب من [v] كما في Wasser.",
         "ف تُنطق بـ V الألمانية في كلمات مثل Vater.",
         "صوت الباء يقابله الحرف «B» كما في «Buch»، لا «W».",
       ],
@@ -31,7 +31,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionAr: "أي كلمة تُنطق بفاء؟",
       options: ["Video", "Vater", "Wasser", "Wien"],
       correctIndex: 1,
-      optionExplanations: ["لا — في الدخيلة «Video» يُنطق «V» كالواو الإنجليزية؛ وأما الأصل الألماني فيُنطق فاءً: «Vater».", undefined, "لا — «Wasser» تبدأ بـ«W» وتُنطق كالواو؛ والمطلوب كلمةٌ فيها «V» تُنطق فاءً: «Vater».", "لا — «Wien» أوّلها «W» لا «V»؛ والقاعدة أن «V» الألمانية تُنطق «f» كما في «Vater»."],
+      optionExplanations: ["لا — «Video» دخيلة شائعة ويُنطق فيها V صوتاً مجهوراً قريباً من V الإنجليزية، لا فاءً؛ أما «Vater» فتبدأ بفاء.", undefined, "لا — «Wasser» تبدأ بـ«W» وتُنطق كالواو؛ والمطلوب كلمةٌ فيها «V» تُنطق فاءً: «Vater».", "لا — «Wien» أوّلها «W» لا «V»؛ وفي كلمات ألمانية شائعة مثل «Vater»، تُنطق «V» فاءً."],
       explanation:
         "Vater = فاتر (ف). أما Video فتلفظ ڤ، وWasser وWien بـ ڤ أيضاً.",
       errorType: "spelling",
@@ -42,7 +42,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       instructionAr: "صل الصوت المركب بنطقه:",
       pairs: [
         { left: "ei", right: "آي (ماين)" },
-        { left: "ie", right: "إي (ڤين)" },
+        { left: "ie", right: "إي طويلة (wie)" },
         { left: "eu", right: "أُوي (نُوي)" },
         { left: "sch", right: "ش (شولِه)" },
         { left: "tz", right: "تس (كاتسِه)" },
@@ -76,13 +76,13 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e6",
       type: "error-correction",
       instructionAr:
-        "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Das ist die Strasse.",
+        "اختر الإملاء الصحيح للكلمة المحددة وفق الإملاء الألماني في ألمانيا:",
+      wrongSentence: "In Leipzig: Das ist die Strasse.",
       wrongWord: "Strasse",
       correctWord: "Straße",
       options: ["Straße", "Strasze", "Strase", "Straze"],
       explanation:
-        "بعد الأصوات الطويلة أو المركبة (a طويلة هنا) يُكتب ß وليس ss. Straße = شارع.",
+        "وفق الإملاء القياسي في ألمانيا، تُكتب Straße بـ ß بعد a الطويلة. أما Strasse فتُستعمل في سويسرا؛ لذلك حُدد سياق المثال في Leipzig.",
       errorType: "spelling",
     },
     {
@@ -93,15 +93,15 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionAr: "كيف يُنطق Apfel (تفاحة)؟",
       options: ["آپفِل", "آفِل", "آپِل", "بَفِل"],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — هذا النطق يُسقط «p»؛ و«Apfel» تُنطق «آپفِل» بالفاء بعد الپاء: «Ap-fel».", "لا — هذا النطق يحذف «f» من الوسط؛ و«Apfel» مقطعان: «آپفِل».", "لا — هذا يقلب «pf» إلى باء؛ والصوت في «Apfel» مركّبٌ من «p» ثم «f»."],
+      optionExplanations: [undefined, "لا — هذا النطق يُسقط «p»؛ و«Apfel» تُنطق «آپفِل» بالفاء بعد الپاء: «Ap-fel».", "لا — هذا النطق يحذف «f» من الوسط؛ و«Apfel» مقطعان: «آپفِل».", "لا — هذا يبدّل /p/ بـ/b/؛ وفي Apfel يتتابع /p/ ثم /f/ من دون حركة بينهما."],
       explanation:
-        "pf يُنطق معاً: الشفتان تبدأ p ثم يمر الهواء f فوراً — آپفِل.",
+        "في Apfel نطق /p/ ثم /f/ متتابعين بلا حركة فاصلة؛ إنهما صامتان متتابعان لا صوت مفرد.",
       errorType: "spelling",
     },
     {
       id: "e8",
       type: "dictation",
-      instructionAr: "استمع واكتب الكلمة التي تسمعها (ستسمع حرفاً حرفاً):",
+      instructionAr: "استمع إلى الكلمة كاملة ثم اكتبها:",
       audioText: "Katze",
       explanation: "Katze = قطة: K-A-T-Z-E — وtz تُنطق تس.",
       errorType: "spelling",
@@ -116,7 +116,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { left: "Z", right: "تس (Zeit = تسايت)" },
         { left: "W", right: "ڤ (Wasser = ڤاسّر)" },
       ],
-      explanation: "أربعة حروف تخدع العربي: J=ي، V=ف، Z=تس، W=ڤ.",
+      explanation: "في الكلمات الشائعة: J في ja قريب من ي، وV في Vater ف، وZ في Zeit تس، وW في Wasser قريب من ڤ. قد يختلف V في بعض الكلمات الدخيلة مثل Video.",
       errorType: "spelling",
     },
     {
@@ -142,7 +142,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       correctIndex: 1,
       explanation:
-        "حرف W الألماني يُنطق «ڤ» دائماً. وss هنا مهموسة «س» حادّة لأنّها مضاعفة، وهي تدلّ في الوقت نفسه على أنّ a قبلها قصيرة.",
+        "في Wasser يُنطق W بصوت قريب من [v]، وss صوتها مهموس [s] وتشير هنا إلى قصر a.",
       optionExplanations: [
         "هذه قيمة «W» الإنجليزية؛ والألمانية تنطقه ڤ كما في «Wasser».",
         undefined,
@@ -160,12 +160,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       options: ["die Milch", "das Buch", "nicht", "die Kirche"],
       correctIndex: 1,
       explanation:
-        "الخاء الغليظة (ach-Laut) تأتي حصراً بعد a و o و u و au. وفي Buch يسبقها u. أمّا Milch فقبلها l، وnicht قبلها i، وKirche قبلها r — وكلّها شين ناعمة.",
+        "في «Buch» يظهر ach-Laut [x]. أمّا في «Milch» و«nicht» و«Kirche» فيظهر ich-Laut [ç]، وهو ليس الشين العربية. النطق يتعلّم بالسماع والتدريب، لا بالتقريب الكتابي وحده.",
       optionExplanations: [
-        "في «die Milch» مقطع «ch» بعد «i» ⇒ شين ناعمة لا خاء غليظة.",
+        "في «Milch» يظهر ich-Laut [ç]، وليس الشين العربية ولا ach-Laut [x].",
         undefined,
-        "في «nicht» يسبق «ch» حرفُ «i» ⇒ شين ناعمة (ich-Laut).",
-        "في «die Kirche» تُنطق «ch» شيناً ناعمة لأن مقطعها بعد «i»؛ والخاء الغليظة بعد a/o/u/au كما في «Buch».",
+        "في «nicht» يظهر ich-Laut [ç]؛ كلمة «شين» مجرد تقريب لا يطابق الصوت الألماني.",
+        "في «Kirche» يظهر ich-Laut [ç]، لا الشين العربية؛ وفي «Buch» يظهر ach-Laut [x].",
       ],
       errorType: "spelling",
     },
@@ -183,7 +183,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e14",
       type: "error-correction",
       instructionAr: "صحّح الكلمة الخاطئة في الجملة:",
-      wrongSentence: "Meine Mutter hat zwei Mutter im Haus.",
+      wrongSentence: "Zwei Mutter warten draußen.",
       wrongWord: "Mutter",
       correctWord: "Mütter",
       options: ["Mütter", "Muttern", "Mutters", "Muter"],
@@ -201,10 +201,23 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { left: "eu", right: "أُويْ (neu)" },
         { left: "sch", right: "ش صافية (Schule)" },
         { left: "tz", right: "تس (Katze)" },
-        { left: "pf", right: "پف (Apfel)" },
+        { left: "pf", right: "پف متتابعان (Apfel)" },
+        { left: "äu", right: "أُوي (Häuser)" },
+        { left: "sp-", right: "شپ في بداية الكلمة (Sport)" },
+        { left: "st-", right: "شت في بداية الكلمة (Stadt)" },
       ],
       explanation:
-        "هذه المجموعات الستّ تغطّي أغلب ما يقرؤه المبتدئ. وأخطرها زوج ei/ie لأنّهما متشابهان في الشكل ومختلفان في النطق تماماً.",
+        "هذه أمثلة تدريبية على أنماط شائعة، وليست جرداً لكل تراكيب الألمانية. قارِن ei وie خصوصاً: تتشابهان في الحروف وتختلفان عادةً في النطق. eu وäu متشابهان في الصوت في أمثلة مثل neu وHäuser، رغم اختلاف الكتابة.",
+      errorType: "spelling",
+    },
+    {
+      id: "e16",
+      type: "fill-blank",
+      instructionAr: "اختر الحرف المناسب (ö أو o):",
+      template: "Das Mädchen ist sch___n. (جميلة)",
+      blanks: [{ correct: "ö", options: ["ö", "o"] }],
+      explanation:
+        "المقصود «schön» (جميلة) بحرف ö. أما «schon» بحرف o فتعني «بالفعل/من قبل»؛ تغيّر الحرف يغيّر الكلمة والمعنى.",
       errorType: "spelling",
     },
   ];
@@ -214,9 +227,9 @@ export const fehlerUndTipps: NonNullable<Lesson["fehlerUndTipps"]> = {
     mistakes: [
       {
         wrong: "نطق W الإنجليزية (Water = ووتر)",
-        right: "نطق W كـ ڤ (Wasser = ڤاسّر)",
+        right: "في الكلمات الألمانية الشائعة تُنطق W قريباً من ڤ: Wasser = ڤاسّر",
         whyAr:
-          "الألمانية لا تملك w الإنجليزي إطلاقاً — ووه تعني «أين» وتُنطق ڤوه!",
+          "في النطق الألماني القياسي للكلمات الشائعة، تقابل W عادةً الصوت [v]، لا [w] كما في كثير من الكلمات الإنجليزية. قد توجد اختلافات في بعض الكلمات الدخيلة والأسماء؛ تعلّم نطق الكلمة نفسها عند الشك.",
       },
       {
         wrong: "نطق ei كـ«إي»",
@@ -238,6 +251,6 @@ export const fehlerUndTipps: NonNullable<Lesson["fehlerUndTipps"]> = {
     culturalNote: {
       title: "لماذا التهجئة مهمة في ألمانيا؟",
       content:
-        "الألمان يتهجّون أسماءهم في الهاتف والبنك والمكتب كل يوم. ولتجنب اللبس، طوروا «أبجدية هاتفية» رسمية: A wie Anton، B wie Berta، C wie Cäsar... وهي تُستعمل في الهاتف والبنوك والاستمارات، ويكفي أن تعرف الأشهر منها.",
+        "قد يُطلب منك تهجئة اسم أو عنوان في مكالمة أو عند ملء استمارة. تساعد كلمات التهجئة على تمييز الحروف المتشابهة عند سماعها. الأمثلة Anton وBerta وCäsar في هذا الدرس من جدول ألماني تقليدي؛ أما جدول DIN 5009 الحديث فيستخدم أسماء مدن مثل Aachen وBerlin. ليست قائمة هذا الدرس ادعاءً بأن الجميع يستخدمون جدولاً واحداً في كل موقف.",
     },
   };

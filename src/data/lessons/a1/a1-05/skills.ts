@@ -10,14 +10,14 @@ export const reading: NonNullable<Lesson["reading"]> = {
     titleAr: "ثلاثاء عادي جداً",
     textType: "blog",
     paragraphs: [
-      "Mein Name ist Tarek und ich arbeite als Krankenpfleger in einem Krankenhaus in Hamburg. Mein Tag beginnt sehr früh. Ich stehe immer um halb sechs auf, denn meine Schicht fängt um sieben Uhr an. Ich dusche schnell und ziehe mich an.",
+      "Heute ist Dienstag. Mein Name ist Tarek und ich arbeite als Krankenpfleger in einem Krankenhaus in Hamburg. Mein Tag beginnt sehr früh. Ich stehe immer um halb sechs auf, denn meine Schicht fängt um sieben Uhr an. Ich dusche schnell und ziehe mich an.",
       "Um Viertel vor sechs frühstücke ich. Meistens esse ich nur ein Brötchen mit Käse und trinke einen starken Kaffee. Manchmal habe ich keine Zeit und nehme das Brötchen einfach mit. Dann fahre ich mit der U-Bahn zur Arbeit. Die Fahrt dauert zwanzig Minuten.",
       "Im Krankenhaus ist immer viel los. Von sieben bis zwölf arbeite ich auf der Station. Um halb eins mache ich Mittagspause. Dann esse ich in der Kantine und rufe kurz meine Mutter an. Sie wohnt in Tunis und wir telefonieren fast jeden Tag.",
       "Am Nachmittag habe ich oft Besprechungen. Um sechzehn Uhr ist meine Schicht zu Ende. Ich kaufe schnell im Supermarkt ein und fahre nach Hause. Zweimal pro Woche gehe ich noch ins Fitnessstudio, aber montags bin ich immer zu müde.",
       "Am Abend koche ich und sehe ein bisschen fern. Um zehn Uhr räume ich die Küche auf und lese noch zwanzig Minuten. Ich gehe selten nach Mitternacht ins Bett, denn morgen früh klingelt der Wecker wieder um halb sechs. So ist mein Leben: anstrengend, aber ich mag meinen Beruf.",
     ],
     paragraphsAr: [
-      "اسمي طارق وأعمل ممرّضاً في مستشفى بهامبورغ. يبدأ يومي باكراً جداً. أنهض دائماً في الخامسة والنصف، لأنّ نوبتي تبدأ في السابعة. أستحمّ سريعاً وأرتدي ملابسي.",
+      "اليوم يوم الثلاثاء. اسمي طارق وأعمل ممرّضاً في مستشفى بهامبورغ. يبدأ يومي باكراً جداً. أنهض دائماً في الخامسة والنصف، لأنّ نوبتي تبدأ في السابعة. أستحمّ سريعاً وأرتدي ملابسي.",
       "أفطر في السادسة إلا ربعاً. غالباً آكل خبزةً صغيرة مع الجبن وأشرب قهوةً قوية. وأحياناً لا يكون عندي وقت، فأخذ الخبزة معي. ثم أذهب إلى العمل بقطار الأنفاق. تستغرق الرحلة عشرين دقيقة.",
       "في المستشفى الحركة دائمة. أعمل في القسم من السابعة إلى الثانية عشرة. وفي الثانية عشرة والنصف آخذ استراحة الغداء. حينها آكل في المقصف وأتّصل بأمّي قليلاً. هي تسكن في تونس ونتحدّث هاتفياً كلّ يوم تقريباً.",
       "بعد الظهر عندي اجتماعات كثيرة. وفي الرابعة عصراً تنتهي نوبتي. أتسوّق سريعاً من السوبرماركت وأعود إلى البيت. وأذهب إلى النادي مرّتين أسبوعياً، لكنّني يوم الاثنين أكون متعباً جداً دائماً.",
@@ -28,13 +28,13 @@ export const reading: NonNullable<Lesson["reading"]> = {
         de: "der Krankenpfleger",
         ar: "الممرّض",
         noteAr:
-          "مركّب من krank (مريض) + Pfleger (راعٍ). والمؤنّث die Krankenpflegerin. ويُقال أيضاً die Pflegefachkraft بصيغة محايدة رسمياً.",
+          "مركّب من krank (مريض) وPfleger (مقدّم رعاية)، والمؤنّث Krankenpflegerin. وتُستعمل أيضاً die Pflegefachkraft؛ وهي مؤنثة نحوياً، ويورد Duden أن المسمّى المهني في ألمانيا منذ 2020 هو Pflegefachfrau أو Pflegefachmann.",
       },
       {
         de: "die Schicht",
         ar: "نوبة العمل",
         noteAr:
-          "مؤنّثة. ومنها Frühschicht (نوبة صباحية) و Spätschicht (مسائية) و Nachtschicht (ليلية) — ومهنة التمريض قائمة عليها.",
+          "مؤنّثة. من مركّباتها Frühschicht (نوبة صباحية) وSpätschicht (مسائية) وNachtschicht (ليلية). وتشيع المناوبات في بعض وظائف التمريض، لكن طبيعة الدوام تختلف بحسب الوظيفة ومكان العمل.",
       },
       {
         de: "das Brötchen",
@@ -61,10 +61,20 @@ export const reading: NonNullable<Lesson["reading"]> = {
           "تعبير ثابت شديد الشيوع. ويُسأل به أيضاً: Was ist los? = ما الأمر؟ ما الخطب؟",
       },
       {
+        de: "die Station",
+        ar: "قسم / جناح في المستشفى",
+        noteAr: "في سياق المستشفى تعني وحدةً أو جناحاً يعمل فيه الطاقم؛ والمعنى يتحدد بالسياق.",
+      },
+      {
+        de: "das Fitnessstudio",
+        ar: "النادي الرياضي / صالة اللياقة البدنية",
+        noteAr: "المكان الذي تُمارَس فيه تمارين اللياقة؛ ويستعمل Duden أيضاً Fitnesscenter مرادفاً.",
+      },
+      {
         de: "die Mittagspause",
         ar: "استراحة الغداء",
         noteAr:
-          "مؤنّثة. من التركيبات الشائعة: eine Pause machen أو eine Pause einlegen؛ لا تنقل التعبير الإنجليزي take a break حرفياً إلى nehmen.",
+          "مؤنّثة. من التراكيب الشائعة eine Pause machen وeine Pause einlegen؛ احفظ التركيب الكامل ولا تنقل صياغة تعبير إنجليزي إلى الألمانية حرفياً.",
       },
       {
         de: "die Kantine",
@@ -145,22 +155,22 @@ export const reading: NonNullable<Lesson["reading"]> = {
         id: "r3",
         type: "multiple-choice",
         instructionAr: "الفقرة الرابعة — انتبه للاستثناء:",
-        questionDe: "Warum geht Tarek montags nicht ins Fitnessstudio?",
-        questionAr: "لماذا لا يذهب طارق إلى النادي يوم الاثنين؟",
+        questionDe: "Wie fühlt sich Tarek montags?",
+        questionAr: "كيف يشعر طارق أيام الاثنين؟",
         options: [
-          "Weil das Studio geschlossen ist",
-          "Weil er dann immer zu müde ist",
-          "Weil er montags arbeitet",
-          "Weil er kein Geld hat",
+          "Er ist immer zu müde.",
+          "Er ist immer sehr hungrig.",
+          "Er ist nie müde.",
+          "Er ist sehr entspannt.",
         ],
-        correctIndex: 1,
+        correctIndex: 0,
         explanation:
-          "النصّ: «aber montags bin ich immer zu müde». ولاحظ الصيغة montags بحرفٍ صغير و‑s: تعني «كلّ اثنين» عادةً، لا «الاثنين القادم» الذي يُقال له am Montag.",
+          "النصّ يقول حرفياً: «montags bin ich immer zu müde» — يكون متعباً جداً كل يوم اثنين. ولاحظ montags بحرفٍ صغير و‑s، أي كل اثنين عادةً.",
         optionExplanations: [
-          "لم يُذكر إغلاق «das Studio ist geschlossen»؛ والسبب «montags bin ich immer zu müde».",
           undefined,
-          "النصّ لا يجعل العمل سبباً؛ بل «aber montags bin ich immer zu müde».",
-          "لم يُذكر مال «kein Geld» إطلاقاً في هذه الفقرة.",
+          "لم يذكر النصّ الجوع؛ بل قال إنه يكون متعباً جداً يوم الاثنين.",
+          "هذا عكس «montags bin ich immer zu müde».",
+          "لم يصف الاثنين بأنه مريح؛ بل قال إنه يكون متعباً جداً.",
         ],
         errorType: "vocabulary",
         paragraph: 3,
@@ -250,6 +260,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         id: "l1",
         title: "يوم سامي",
+        audioNoteAr: "النص يُنطق آلياً عبر أصوات المتصفح (TTS)، وليس تسجيلاً بشرياً؛ وقد تختلف الأصوات حسب الجهاز.",
         lines: [
           {
             speaker: "Sami",
@@ -281,6 +292,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         id: "l2",
         title: "أسئلة عن اليوم",
+        audioNoteAr: "النص يُنطق آلياً عبر أصوات المتصفح (TTS)، وليس تسجيلاً بشرياً؛ وقد تختلف الأصوات حسب الجهاز.",
         lines: [
           { speaker: "Mona", de: "Wann stehst du auf?", ar: "متى تنهض؟" },
           {
@@ -298,6 +310,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
             de: "Ich räume das Zimmer auf und sehe fern.",
             ar: "أرتّب الغرفة وأشاهد التلفاز.",
           },
+        ],
+      },
+      {
+        id: "l3",
+        title: "روتين يوم السبت",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً. الحوار مثال تدريبي خيالي.",
+        lines: [
+          { speaker: "Mona", de: "Wann stehst du am Samstag auf?", ar: "متى تنهض يوم السبت؟", audioSrc: "/audio/lessons/a1-05/ls-a1-05-3-1.mp3" },
+          { speaker: "Karim", de: "Am Samstag stehe ich um acht Uhr auf.", ar: "أنهض يوم السبت في الثامنة.", audioSrc: "/audio/lessons/a1-05/ls-a1-05-3-2.mp3" },
+          { speaker: "Mona", de: "Was machst du am Vormittag?", ar: "ماذا تفعل قبل الظهر؟", audioSrc: "/audio/lessons/a1-05/ls-a1-05-3-3.mp3" },
+          { speaker: "Karim", de: "Ich kaufe ein und räume mein Zimmer auf.", ar: "أتسوّق وأرتّب غرفتي.", audioSrc: "/audio/lessons/a1-05/ls-a1-05-3-4.mp3" },
+          { speaker: "Mona", de: "Und was machst du am Abend?", ar: "وماذا تفعل مساءً؟", audioSrc: "/audio/lessons/a1-05/ls-a1-05-3-5.mp3" },
+          { speaker: "Karim", de: "Am Abend sehe ich fern.", ar: "أشاهد التلفاز مساءً.", audioSrc: "/audio/lessons/a1-05/ls-a1-05-3-6.mp3" },
         ],
       },
     ],
@@ -371,6 +396,45 @@ export const listening: NonNullable<Lesson["listening"]> = {
           "لم تُذكر التاسعة «um neun Uhr» في الحوار.",
           "«halb acht» = 7:30، وكريم قال «um sieben Uhr» أي 7:00 بالضبط.",
         ],
+      },
+      {
+        id: "q4",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Wann steht Karim am Samstag auf?",
+        questionAr: "متى ينهض كريم يوم السبت؟",
+        options: ["um acht Uhr", "um sieben Uhr", "um neun Uhr", "um halb acht"],
+        correctIndex: 0,
+        optionExplanations: [undefined, "السابعة وقتٌ غير المذكور؛ قال كريم إنه ينهض في الثامنة.", "لم يقل إنه ينهض في التاسعة.", "«halb acht» تعني السابعة والنصف، لكن كريم قال «um acht Uhr»."],
+        explanation: "قال: Am Samstag stehe ich um acht Uhr auf.",
+        errorType: "vocabulary",
+      },
+      {
+        id: "q5",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Was macht Karim am Vormittag?",
+        questionAr: "ماذا يفعل كريم قبل الظهر؟",
+        options: ["Er kauft ein und räumt sein Zimmer auf", "Er arbeitet und lernt heute Deutsch", "Er besucht seine Freunde und kocht", "Er schläft lange und sieht fern"],
+        correctIndex: 0,
+        optionExplanations: [undefined, "لم يذكر العمل أو تعلّم الألمانية؛ قال إنه يتسوّق ويرتّب غرفته.", "لم يذكر زيارة الأصدقاء أو الطبخ.", "النوم ومشاهدة التلفاز ليسا نشاطيه في الصباح؛ يشاهد التلفاز مساءً."],
+        explanation: "قال: Ich kaufe ein und räume mein Zimmer auf.",
+        errorType: "vocabulary",
+      },
+      {
+        id: "q6",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Was macht Karim am Abend?",
+        questionAr: "ماذا يفعل كريم مساءً؟",
+        options: ["Er sieht am Abend fern", "Er liest lange ein Buch", "Er macht seine Hausaufgaben", "Er geht um sieben schlafen"],
+        correctIndex: 0,
+        optionExplanations: [undefined, "لم يذكر قراءة كتاب؛ قال إنه يشاهد التلفاز مساءً.", "الواجبات غير مذكورة في الحوار.", "لم يقل إنه ينام في السابعة؛ نشاطه المذكور هو مشاهدة التلفاز."],
+        explanation: "أجاب: Am Abend sehe ich fern.",
+        errorType: "vocabulary",
       },
     ],
   };
@@ -467,7 +531,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
     {
       id: "w3",
       type: "dictation",
-      instructionAr: "استمع واكتب الجملة:",
+      instructionAr: "استمع إلى النطق الآلي في المتصفح واكتب الجملة:",
       audioText: "Ich stehe am Morgen um halb sieben auf.",
       explanation: "أنهض صباحاً في السادسة والنصف — halb sieben تعني 6:30.",
       errorType: "spelling",

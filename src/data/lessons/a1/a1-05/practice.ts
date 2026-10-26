@@ -142,7 +142,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e10",
       type: "dictation",
-      instructionAr: "استمع واكتب الجملة:",
+      instructionAr: "استمع إلى النطق الآلي في المتصفح واكتب الجملة:",
       audioText: "Am Abend sehe ich fern.",
       explanation: "مساءً أشاهد التلفاز — fern في نهاية الجملة.",
       errorType: "spelling",

@@ -90,10 +90,10 @@ export const mediation: NonNullable<Lesson["mediation"]> = [
         {
       id: "med-b2-07-1", type: "summarize-de-to-ar",
       titleAr: "لخّص نصاً فلسفياً اجتماعياً بالعربية",
-      sourceDe: "Die Frage nach dem Sinn des Lebens beschäftigt die Menschheit seit Jahrtausenden. Philosophen argumentieren, dass Sinn oft durch Beziehungen und Gemeinschaft entsteht.",
-      taskAr: "لخّص النص: السؤال الفلسفي، وما يرى الفلاسفة أنه مصدر المعنى.",
-      modelAnswerAr: "«سؤال معنى الحياة يشغل البشرية منذ آلاف السنين. يرى الفلاسفة أن المعنى ينشأ غالباً عبر العلاقات والمجتمع.»",
-      keyPointsAr: ["نقلت السؤال الفلسفي", "ذكرت رأي الفلاسفة (العلاقات والمجتمع)"],
+      sourceDe: "Fiktive Diskussionsrunde: Eine Person fragt: «Was gibt meinem Leben Sinn?» Eine andere antwortet: «Für mich entstehen Sinn und Zugehörigkeit oft in Beziehungen und in der Gemeinschaft.» Das ist eine persönliche Position im Beispiel, keine Aussage über alle Menschen.",
+      taskAr: "لخّص سؤال المتحدث وموقف الشخص الآخر، وبيّن أنه رأي شخصي في حوار متخيّل لا تعميم عن الناس.",
+      modelAnswerAr: "«في حوار متخيّل يسأل شخص عمّا يمنح الحياة معنى، ويجيب آخر بأن العلاقات والمجتمع يمنحانه هو شعوراً بالمعنى والانتماء. هذا رأيه الشخصي لا قاعدة عامة.»",
+      keyPointsAr: ["نقلت سؤال المتحدث عن معنى الحياة", "نقلت الرأي الشخصي للمتحدث الثاني", "ميّزت الرأي الافتراضي من الحقيقة العامة"],
     },
   ];
 
@@ -109,7 +109,7 @@ export const interaction: NonNullable<Lesson["interaction"]> = [
           speakerAr: "ماذا تعني السعادة لك؟",
           options: [
             { de: "Für mich ist Glück weniger ein Ziel als ein Zustand. Es entsteht in Momenten der Verbundenheit und Dankbarkeit, nicht durch materiellen Besitz.", ar: "بالنسبة لي السعادة ليست هدفاً بقدر ما هي حالة. تنشأ في لحظات التواصل والامتنان، لا بالملكية المادية.", best: true, replyDe: "Eine tiefe und reflektierte Antwort. Hat sich deine Sichtweise verändert?", replyAr: "إجابة عميقة وتأملية. هل تغيرت نظرتك؟" },
-            { de: "Glück ist Geld, ganz einfach.", ar: "السعادة هي المال، ببساطة.", best: false, replyDe: "Manche Studien deuten darauf hin, dass Geld das Glücksgefühl nur bis zu einem gewissen Punkt steigert.", replyAr: "تشير بعض الدراسات إلى أن المال يزيد الشعور بالسعادة حتى حد معين فقط." },
+            { de: "Glück ist Geld, ganz einfach.", ar: "السعادة هي المال، ببساطة.", best: false, replyDe: "Für manche ist Geld eine wichtige Voraussetzung; ob es allein glücklich macht, hängt jedoch von der persönlichen Sichtweise ab.", replyAr: "يرى بعض الناس أن المال شرط مهم، لكن كفايته لتحقيق السعادة مسألة تختلف باختلاف وجهات النظر." },
           ],
         },
         {
@@ -117,7 +117,7 @@ export const interaction: NonNullable<Lesson["interaction"]> = [
           speakerAr: "هل تغيرت نظرتك للسعادة؟",
           options: [
             { de: "Ja, früher dachte ich, Erfolg sei entscheidend. Heute weiß ich, dass Beziehungen und Gesundheit wichtiger sind, obwohl Erfolg auch seinen Wert hat.", ar: "نعم، كنت أظن سابقاً أن النجاح حاسم. اليوم أعلم أن العلاقات والصحة أهم، رغم أن للنجاح قيمته أيضاً.", best: true, replyDe: "Eine weise Erkenntnis. Das Leben lehrt uns solche Lektionen.", replyAr: "حكمة ناضجة. الحياة تعلمنا هذه الدروس." },
-            { de: "Meine Sichtweise hat sich nie geändert und wird sich nie ändern.", ar: "لم تتغير نظرتي ولن تتغير أبداً.", best: false, replyDe: "Flexibilität im Denken ist ein Zeichen von Reife.", replyAr: "مرونة التفكير علامة نضج." },
+            { de: "Meine Sichtweise hat sich nie geändert und wird sich nie ändern.", ar: "لم تتغير نظرتي ولن تتغير أبداً.", best: false, replyDe: "Andere Menschen ändern manche Ansichten, während sie an anderen Überzeugungen festhalten.", replyAr: "يغيّر بعض الناس بعض آرائهم، ويتمسكّون بقناعات أخرى." },
           ],
         },
       ],

@@ -8,15 +8,15 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e1",
       type: "multiple-choice",
-      instructionAr: "اختر أداة الزمن (عندما: حدث ماضٍ واحد):",
+      instructionAr: "اختر أداة الزمن (وقت/حالة ماضية محددة):",
       questionDe: "___ ich jung war, lebte ich in Tunis.",
       options: ["Als", "Wenn", "Während", "Bis"],
       correctIndex: 0,
-      explanation: "ماضٍ مرة واحدة → als.",
+      explanation: "وقت/حالة ماضية محددة → als.",
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«Wenn» شرط، وليس تزامناً في الماضي.",
+        "«Wenn» يمكن أن تدل أيضاً على التكرار في الماضي، لكنها لا تناسب هذه الفترة الماضية المحددة هنا.",
         "«Während» تعبّر عن التزامن، وتحتاج معنى مختلفاً.",
         "«Bis» تعبّر عن الوقت حتى نقطة معينة، ولا تناسب الجملة.",
       ],
@@ -32,7 +32,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«Als» تستعمل للحدث الماضي المفرد، ولا تناسب الزمن الحاضر هنا.",
+        "«Als» لا تناسب هذا الشرط الحاضر؛ وتستعمل أيضاً لفترة ماضية محددة، لا للحظات فقط.",
         "«Während» تعبّر عن تزامن ممتد، لا عن الشرط.",
         "«Bis» تعبّر عن نقطة النهاية، ولا تناسب الجملة.",
       ],
@@ -56,7 +56,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       instructionAr: "رتّب الجملة:",
       tokens: ["war", "Als", "jung", "ich", "lebte", "ich", "in", "Tunis", ",", "."],
       correctSentence: "Als ich jung war, lebte ich in Tunis.",
-      explanation: "عندما كنت صغيراً عشت في تونس — als + Präteritum.",
+      explanation: "عندما كنت صغيراً عشت في تونس — als هنا لفترة ماضية محددة.",
       errorType: "word-order",
     },
     {
@@ -67,7 +67,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       wrongWord: "Als",
       correctWord: "Wenn",
       options: ["Wenn", "Als", "Während", "Bis"],
-      explanation: "المضارع → wenn. als للماضي فقط.",
+      explanation: "في هذا المعنى الشرطي الحاضر → wenn. وتستعمل wenn أيضاً للتكرار في الماضي.",
       errorType: "grammar",
     },
     {
@@ -119,7 +119,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       wrongWord: "ich lese",
       correctWord: "lese ich",
       options: ["lese ich", "ich lese", "lesen ich", "ich lesen"],
-      explanation: "الجملة الثانوية أولاً → الفعل الرئيسي بعدها مباشرة.",
+      explanation: "الجملة التابعة المتقدمة تشغل الحقل الأول؛ يليها مباشرة الفعل المصرف في الجملة الرئيسية (الموقع الثاني).",
       errorType: "word-order",
     },
     {
@@ -151,7 +151,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       instructionAr: "رتّب الكلمات لتكوّن جملة تخالفية (obwohl):",
       tokens: ["Obwohl", "die", "Wahl", "wichtig", "ist,", "gehen", "viele", "nicht", "wählen."],
       correctSentence: "Obwohl die Wahl wichtig ist, gehen viele nicht wählen.",
-      hint: "obwohl + فعل في النهاية (ist)، ثم الجملة الرئيسية بفعل أولاً (gehen).",
+      hint: "obwohl + الفعل في النهاية (ist)، ثم الجملة الرئيسية ويأتي فعلها المصرف في الموقع الثاني (gehen).",
       explanation: "رغم أن الانتخاب مهم، كثيرون لا ينتخبون.",
       errorType: "word-order",
       points: 2,
@@ -181,17 +181,17 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
 
 export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     mistakes: [
-      { wrong: "Als ich Zeit habe... (als مع مضارع)", right: "Wenn ich Zeit habe...", whyAr: "als لحدث ماضٍ منتهٍ، لا للمضارع." },
+      { wrong: "Als ich Zeit habe... (المقصود: إذا كان عندي وقت)", right: "Wenn ich Zeit habe...", whyAr: "في هذا الشرط الحاضر يناسب wenn. وتستعمل wenn أيضاً للتكرار في الماضي." },
       { wrong: "Bevor ich schlafe, ich lese.", right: "Bevor ich schlafe, lese ich.", whyAr: "الفعل بعد الجملة الثانوية مباشرة." },
       { wrong: "seitdem أم seit؟", right: "seitdem + جملة (منذ أن). seit + اسم (منذ)", whyAr: "seitdem يبدأ جملة، seit يتبعها اسم." },
     ],
     eselsbruecken: [
-      "«als = حكاية ماضية واحدة، wenn = عادة/مستقبل».",
+      "«als = وقت ماضٍ محدد، wenn = شرط أو حاضر/مستقبل أو تكرار في الماضي».",
       "«الستة الزمنية»: als-wenn-während-bevor-nachdem-bis — كلها ترمي الفعل للنهاية.",
     ],
     culturalNote: {
       title: "السياسة الألمانية",
       content:
-        "ألمانيا ديمقراطية برلمانية: ينتخب الشعب «der Bundestag» (البرلمان) كل أربع سنوات عادةً، ثم يختار البرلمان «der Bundeskanzler» (المستشار)، وليس الشعب مباشرة.",
+        "ألمانيا ديمقراطية برلمانية. ينتخب الناس أعضاء Bundestag عادةً لمدة أربع سنوات، مع إمكان إجراء انتخابات مبكرة إذا حُلّ البرلمان. وينتخب أعضاء Bundestag المستشار/ة؛ لا ينتخبه الناخبون مباشرة. المصادر الرسمية: https://www.bundeswahlleiterin.de/service/glossar/w/wahlperiode.html وhttps://www.bundesregierung.de/breg-de/aktuelles/die-wahl-des-bundeskanzlers-346690 .",
     },
   };

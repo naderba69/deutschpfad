@@ -61,7 +61,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       id: "m5",
       type: "fill-blank",
       instructionAr: "أكمل بـ deshalb/trotzdem/dann:",
-      template: "Ich habe eine Prüfung, ___ lerne ich. (لذلك) Ich bin krank, ___ gehe ich zur Arbeit. (رغم ذلك) Erst arbeite ich, ___ koche ich. (ثم)",
+      template: "Ich habe eine Prüfung, ___ lerne ich. (لذلك) Es regnet, ___ gehe ich spazieren. (رغم ذلك) Erst arbeite ich, ___ koche ich. (ثم)",
       blanks: [
         { correct: "deshalb", options: ["deshalb", "trotzdem"] },
         { correct: "trotzdem", options: ["trotzdem", "deshalb"] },
@@ -83,7 +83,7 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     { id: "fc8", de: "dann", ar: "ثم (مقلوبة)", example: "Erst lernen, dann fernsehen.", exampleAr: "أولاً نتعلم ثم نشاهد التلفاز.", level: "A2" },
     { id: "fc9", de: "überrascht", ar: "متفاجئ", example: "Ich bin überrascht.", exampleAr: "أنا متفاجئ.", level: "A2" },
     { id: "fc10", de: "ärgerlich", ar: "مزعج", example: "Das ist ärgerlich.", exampleAr: "هذا مزعج.", level: "A2" },
-    { id: "fc11", de: "sich freuen", ar: "يفرح", example: "Ich freue mich auf das Fest.", exampleAr: "أفرح بالاحتفال.", level: "A2" },
+    { id: "fc11", de: "sich freuen auf", ar: "يتطلّع إلى (شيء قادم)", example: "Ich freue mich auf das Fest.", exampleAr: "أتطلّع إلى الاحتفال.", level: "A2" },
     { id: "fc12", de: "die Überraschung", ar: "المفاجأة", example: "Eine Überraschung für Nour.", exampleAr: "مفاجأة لنور.", level: "A2" },
   ];
 

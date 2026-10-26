@@ -14,14 +14,14 @@ export const reading: NonNullable<Lesson["reading"]> = {
       "Kellner: Möchten Sie auch etwas essen? Wir haben heute Suppe, Salat und Käsebrötchen.\nAmira: Ich habe großen Hunger! Ich nehme die Suppe und ein Käsebrötchen.\nYoussef: Für mich nur einen Salat, bitte. Ich bin nicht sehr hungrig.",
       "Kellner: Sie möchten also einen Kaffee mit Milch, einen Tee, ein Mineralwasser, die Suppe, ein Käsebrötchen und einen Salat. Ist das richtig?\nAmira: Ja, das ist richtig. Vielen Dank!\nKellner: Einen Moment bitte, das Essen kommt gleich.",
       "Youssef: Der Salat ist wirklich frisch. Wie ist deine Suppe?\nAmira: Sie ist sehr gut, aber ein bisschen heiß. Möchtest du probieren?\nYoussef: Nein, danke. Ich habe keinen Hunger mehr, aber noch Durst. Entschuldigung, noch ein Glas Wasser bitte!",
-      "Amira: Entschuldigung, die Rechnung bitte! Wie viel macht das?\nKellner: Das macht zusammen zwanzig Euro fünfzig.\nAmira: Hier sind fünfundzwanzig Euro. Stimmt so.\nKellner: Vielen Dank und einen schönen Tag noch!"
+      "Amira: Entschuldigung, die Rechnung bitte! Wie viel macht das?\nKellner: Das macht zusammen zwanzig Euro fünfzig.\nAmira: Hier sind zweiundzwanzig Euro fünfzig. Stimmt so.\nKellner: Vielen Dank und einen schönen Tag noch!"
     ],
     "paragraphsAr": [
       "النادل: مرحباً! ماذا تودّان أن تشربا؟\nأميرة: مرحباً. أريد قهوةً من فضلك، مع الحليب ومن دون سكر.\nالنادل: بكل سرور. وماذا عنك؟\nيوسف: سأطلب شايًا. هل لديكم ماء معدني أيضاً؟\nالنادل: نعم، بالطبع.\nيوسف: إذن ماءً معدنياً أيضاً، من فضلك.",
       "النادل: هل تودّان تناول شيء أيضاً؟ لدينا اليوم حساء وسلطة وخبز صغير بالجبن.\nأميرة: أنا جائعة جداً! سأطلب الحساء وخبزةً صغيرة بالجبن.\nيوسف: أريد سلطةً فقط من فضلك. لست جائعاً جداً.",
       "النادل: إذن ستطلبان قهوةً بالحليب، وشاياً، وماءً معدنياً، والحساء، وخبزةً صغيرة بالجبن، وسلطةً. أهذا صحيح؟\nأميرة: نعم، هذا صحيح. شكراً جزيلاً!\nالنادل: لحظة من فضلكما، سيأتي الطعام بعد قليل.",
       "يوسف: السلطة طازجة حقاً. كيف حساؤك؟\nأميرة: إنها لذيذة جداً، لكنها ساخنة قليلاً. هل تريد أن تتذوق؟\nيوسف: لا، شكراً. لم أعد جائعاً، لكنني ما زلت عطشان. عفواً، كأس ماء آخر من فضلك!",
-      "أميرة: عفواً، الفاتورة من فضلك! كم الحساب؟\nالنادل: المجموع عشرون يورو وخمسون سنتاً.\nأميرة: تفضّل خمسةً وعشرين يورو، واحتفظ بالباقي.\nالنادل: شكراً جزيلاً، وأتمنى لكما يوماً سعيداً!"
+      "أميرة: عفواً، الفاتورة من فضلك! كم الحساب؟\nالنادل: المجموع عشرون يورو وخمسون سنتاً.\nأميرة: تفضّل اثنين وعشرين يورو وخمسين سنتاً، واحتفظ بالباقي.\nالنادل: شكراً جزيلاً، وأتمنى لكما يوماً سعيداً!"
     ],
     "glossary": [
       {
@@ -162,18 +162,18 @@ export const reading: NonNullable<Lesson["reading"]> = {
         "questionDe": "Wie viel Trinkgeld gibt Amira?",
         "questionAr": "كم تركت أميرة بقشيشاً؟",
         "options": [
-          "Nichts",
           "Zwanzig Euro fünfzig",
-          "Vier Euro fünfzig",
-          "Fünfundzwanzig Euro"
+          "Zwei Euro",
+          "Zweiundzwanzig Euro fünfzig",
+          "Nichts"
         ],
-        "correctIndex": 2,
-        "explanation": "الحساب ٢٠٫٥٠ يورو، وأعطت أميرة ٢٥ يورو وقالت Stimmt so (احتفظ بالباقي)؛ فالفرق بين المبلغين ٤٫٥٠ يورو.",
+        "correctIndex": 1,
+        "explanation": "الحساب ٢٠٫٥٠ يورو، وأعطت أميرة ٢٢٫٥٠ يورو وقالت Stimmt so (احتفظ بالباقي)؛ فالفرق يوروَان. هذا مثال حسابي، وليس قاعدةً تحدد مقدار Trinkgeld المعتاد.",
         "optionExplanations": [
-          "Stimmt so تعني صراحةً ترك الباقي.",
           "هذا مبلغ الفاتورة «20,50 Euro» نفسه، لا البقشيش «Trinkgeld».",
           undefined,
-          "هذا ما دفعته إجمالاً مع قولها «Stimmt so»؛ والفرق «Vier Euro fünfzig»."
+          "هذا ما دفعته أميرة إجمالاً، لا الفرق الذي تركته.",
+          "قولها Stimmt so يعني أنها تركت الباقي، لا أنها استردته."
         ],
         "errorType": "vocabulary",
         "paragraph": 4
@@ -236,6 +236,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         id: "l1",
         title: "في المقهى",
+        audioNoteAr: "يستخدم هذا المشهد النطق الآلي في المتصفح (TTS)، وليس تسجيلاً بشرياً؛ وقد يختلف الصوت باختلاف الجهاز.",
         lines: [
           { speaker: "Kellner", de: "Guten Tag! Was möchten Sie bestellen?", ar: "مرحباً! ماذا تودّ أن تطلب؟" },
           { speaker: "Sami", de: "Ich hätte gern einen Kaffee und ein Brötchen, bitte.", ar: "أودّ قهوةً وخبزةً صغيرة، من فضلك." },
@@ -247,11 +248,25 @@ export const listening: NonNullable<Lesson["listening"]> = {
       {
         id: "l2",
         title: "في السوبرماركت",
+        audioNoteAr: "يستخدم هذا المشهد النطق الآلي في المتصفح (TTS)، وليس تسجيلاً بشرياً؛ وقد يختلف الصوت باختلاف الجهاز.",
         lines: [
           { speaker: "Mona", de: "Ich brauche einen Apfel und eine Banane.", ar: "أحتاج تفاحةً وموزةً." },
           { speaker: "Karim", de: "Und wir kaufen auch Brot und Milch.", ar: "ونشتري أيضاً خبزاً وحليباً." },
           { speaker: "Mona", de: "Hast du Hunger?", ar: "هل أنت جائع؟" },
           { speaker: "Karim", de: "Ja, ich habe großen Hunger!", ar: "نعم، أنا جائع جداً!" },
+        ],
+      },
+      {
+        id: "l3",
+        title: "شراء حاجيات من المخبز",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS)، وليست تسجيلاً بشرياً. الحوار مثال تدريبي خيالي.",
+        lines: [
+          { speaker: "Verkäuferin", de: "Guten Morgen! Was möchten Sie?", ar: "صباح الخير! ماذا تودّ؟", audioSrc: "/audio/lessons/a1-03/ls-a1-03-3-1.mp3" },
+          { speaker: "Sami", de: "Ich möchte zwei Brötchen und einen Apfel, bitte.", ar: "أريد خبزتين صغيرتين وتفاحةً، من فضلك.", audioSrc: "/audio/lessons/a1-03/ls-a1-03-3-2.mp3" },
+          { speaker: "Verkäuferin", de: "Möchten Sie noch eine Banane?", ar: "هل تودّ موزةً أيضاً؟", audioSrc: "/audio/lessons/a1-03/ls-a1-03-3-3.mp3" },
+          { speaker: "Sami", de: "Nein, danke. Haben Sie Milch?", ar: "لا، شكراً. هل لديكم حليب؟", audioSrc: "/audio/lessons/a1-03/ls-a1-03-3-4.mp3" },
+          { speaker: "Verkäuferin", de: "Ja. Eine Flasche Milch kostet zwei Euro.", ar: "نعم. زجاجة الحليب بيوروين.", audioSrc: "/audio/lessons/a1-03/ls-a1-03-3-5.mp3" },
+          { speaker: "Sami", de: "Dann nehme ich die Milch auch.", ar: "إذن سآخذ الحليب أيضاً.", audioSrc: "/audio/lessons/a1-03/ls-a1-03-3-6.mp3" },
         ],
       },
     ],
@@ -293,6 +308,45 @@ export const listening: NonNullable<Lesson["listening"]> = {
         correctIndex: 0,
         optionExplanations: [undefined, "لا — لم تحتج خبزاً ولا حليباً؛ بل «einen Apfel und eine Banane».", "لا — القهوة ليست طلبها؛ والحاجة «einen Apfel und eine Banane».", "لا — الخبز وحده لا يكفي؛ فالمذكور «einen Apfel und eine Banane»."],
         explanation: "قالت: Ich brauche einen Apfel und eine Banane.",
+        errorType: "vocabulary",
+      },
+      {
+        id: "q4",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة بعد الاستماع:",
+        questionDe: "Was möchte Sami kaufen?",
+        questionAr: "ماذا يريد سامي أن يشتري؟",
+        options: ["Zwei Brötchen und einen Apfel", "Ein Brot und eine Banane", "Einen Kaffee und Milch", "Zwei Äpfel und ein Brötchen"],
+        correctIndex: 0,
+        optionExplanations: [undefined, "لم يطلب رغيفاً أو موزة؛ طلب خبزتين صغيرتين وتفاحة.", "القهوة ليست في طلبه؛ قال: zwei Brötchen und einen Apfel.", "لم يطلب تفاحتين؛ بل تفاحة واحدة وخبزتين صغيرتين."],
+        explanation: "طلب سامي: zwei Brötchen und einen Apfel.",
+        errorType: "vocabulary",
+      },
+      {
+        id: "q5",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Kauft Sami auch eine Banane?",
+        questionAr: "هل يشتري سامي موزةً أيضاً؟",
+        options: ["Nein, er sagt Nein, danke", "Ja, zwei Bananen", "Ja, eine Banane", "Das Gespräch sagt es nicht"],
+        correctIndex: 0,
+        optionExplanations: [undefined, "لا يشتري موزتين؛ بل يرفض الموزة ويطلب الحليب.", "رفض العرض بقوله Nein, danke.", "الحوار يذكر بوضوح أنه يرفض الموزة."],
+        explanation: "رفض سامي الموزة بقوله: Nein, danke.",
+        errorType: "comprehension",
+      },
+      {
+        id: "q6",
+        itemId: "l3",
+        type: "multiple-choice",
+        instructionAr: "اختر الإجابة الصحيحة:",
+        questionDe: "Wie viel kostet eine Flasche Milch?",
+        questionAr: "كم ثمن زجاجة الحليب؟",
+        options: ["Zwei Euro", "Drei Euro", "Ein Euro fünfzig", "Fünf Euro"],
+        correctIndex: 0,
+        optionExplanations: [undefined, "قالت البائعة إن ثمنها zwei Euro.", "لم تذكر سعراً قدره يورو وخمسون سنتاً.", "لم تذكر خمسة يورو؛ السعر هو zwei Euro."],
+        explanation: "قالت البائعة: Eine Flasche Milch kostet zwei Euro.",
         errorType: "vocabulary",
       },
     ],

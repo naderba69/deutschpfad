@@ -114,11 +114,11 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e9",
       type: "error-correction",
       instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Ich freue mich mit den Urlaub.",
+      wrongSentence: "Ich freue mich mit Berlin.",
       wrongWord: "mit",
       correctWord: "auf",
       options: ["auf", "zu", "von", "bei"],
-      explanation: "sich freuen auf (تطلع لمستقبل). و«mit» لا تأتي مع sich freuen هنا.",
+      explanation: "في هذا السياق، التطلع إلى زيارة مقبلة يُصاغ بـsich freuen auf؛ حرف الجر الصحيح هو auf.",
       errorType: "preposition",
     },
     {
@@ -188,7 +188,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
 export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     mistakes: [
       { wrong: "sich interessieren auf", right: "sich interessieren für", whyAr: "الفعل يحدد حرفه." },
-      { wrong: "sich freuen über للمستقبل", right: "auf للمستقبل، über للحاضر/الماضي", whyAr: "الزمن يحدد الحرف." },
+      { wrong: "sich freuen über للمستقبل دائماً", right: "auf للتطلع غالباً؛ über للفرح بحدث أو نتيجة غالباً", whyAr: "الفرق المعتاد دلاليّ وسياقي، وليس قاعدة زمنية مطلقة؛ راجع معنى الجملة ومتمّم الفعل." },
       { wrong: "träumen für", right: "träumen von", whyAr: "الحلم بـ: von." },
     ],
     eselsbruecken: [
@@ -198,6 +198,6 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     culturalNote: {
       title: "التعدد اللغوي",
       content:
-        "يعيش في ألمانيا أشخاص كثيرون من خلفيات لغوية وثقافية متعددة. و«der Spracherwerb» (اكتساب اللغة) موضوع واسع في البحث اللغوي. والأخطاء جزء طبيعي من التعلم، والممارسة المبكرة تساعد على تحسين الطلاقة.",
+        "يرد تعبير «der Spracherwerb» في النصوص التعليمية واللغوية بمعنى اكتساب اللغة. وفي هذا الدرس نستخدم «Mehrsprachigkeit» لتعدد اللغات و«interkulturell» لما يتعلق بالتفاعل بين أشخاص ذوي خبرات مختلفة. هذه تعريفات للمفردات وليست وصفاً إحصائياً لمجتمع بعينه."
     },
   };

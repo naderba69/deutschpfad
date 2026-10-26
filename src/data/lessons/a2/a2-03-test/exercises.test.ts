@@ -96,7 +96,7 @@ describe("A2-03 audited lesson", () => {
     if (adjectiveQuestion.type !== "fill-blank") throw new Error("e22 must remain fill-blank");
     expect(adjectiveQuestion.template).toBe("Ich möchte etwas ___ essen.");
     expect(adjectiveQuestion.blanks[0].options).not.toContain("warm");
-    expect(adjectiveQuestion.explanation).toContain("Ich möchte etwas warm essen سليمة");
+    expect(adjectiveQuestion.explanation).toContain("Ich möchte etwas warm essen صحيحة أيضاً وقريبة المعنى");
   });
 
   it("protects ordering, accepted alternatives, corrections, transformations, and dictation keys", () => {

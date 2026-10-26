@@ -216,12 +216,12 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
       {
         wrong: "Ich spreche laut, um du mich zu hören.",
         right: "Ich spreche laut, damit du mich hörst.",
-        whyAr: "اختلاف الفاعل يوجب damit، وهذا خلط محتمل للناطق بالعربية لأنّ «لكي» واحدة في العربية.",
+        whyAr: "في هذا المثال يختلف الفاعل، لذلك تناسبه damit؛ ويمكن أن تأتي damit أيضاً عند اتحاد الفاعل.",
       },
       {
         wrong: "wegen dem Wetter (في الكتابة)",
         right: "wegen des Wetters",
-        whyAr: "المعيار المكتوب Genitiv؛ وصيغة Dativ أقل معيارية في الكتابة.",
+        whyAr: "في نمط الكتابة الرسمية الذي نتدرّب عليه نختار Genitiv (wegen des Wetters). وتُستعمل صيغة Dativ بعد wegen في الكلام؛ لا نعرضها هنا بوصفها خطأ مطلقاً في كل سياق.",
       },
       {
         wrong: "während die Pause",

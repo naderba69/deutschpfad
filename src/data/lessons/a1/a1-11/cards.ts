@@ -82,8 +82,8 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
     {
       "id": "m5",
       "type": "fill-blank",
-      "instructionAr": "أكمل وفق القرائن بين الوجهة دون دخولها والدخول إلى الداخل:",
-      "template": "Wir fahren ___ Tunis. (Tunis ist unser Ziel.) Er geht ___ Bank und bleibt draußen davor. Sie geht ___ Kino hinein.",
+      "instructionAr": "أكمل وفق القرائن بين الوجهة دون دخولها والدخول إلى الداخل؛ Bank هنا البنك/المؤسسة المالية، لا مقعداً:",
+      "template": "Wir fahren ___ Tunis. (Tunis ist unser Ziel.) Er geht ___ Bank und bleibt draußen vor dem Eingang. Sie geht ___ Kino hinein.",
       "blanks": [
         {
           "correct": "nach",

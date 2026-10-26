@@ -9,7 +9,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e1",
       type: "multiple-choice",
       instructionAr: "اختر Konjunktiv II:",
-      questionDe: "Wenn ich Zeit ___, würde ich kommen.",
+      questionDe: "Stell dir vor: Wenn ich mehr Zeit ___, würde ich öfter kommen.",
       options: ["hätte", "habe", "hatte", "haben"],
       correctIndex: 0,
       explanation: "الشرط غير الواقعي: hätte.",
@@ -25,8 +25,8 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e2",
       type: "multiple-choice",
       instructionAr: "اختر Konjunktiv II:",
-      questionDe: "Ich ___ gern nach Deutschland.",
-      options: ["würde reisen", "werde reisen", "reise würde", "würde gereist"],
+      questionDe: "Ich ___ nach Deutschland.",
+      options: ["würde gern reisen", "werde gern reisen", "reise gern würde", "würde gern gereist"],
       correctIndex: 0,
       explanation: "würde + المصدر في النهاية.",
       errorType: "grammar",
@@ -34,7 +34,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         undefined,
         "«werde reisen» تعبّر عن المستقبل، ولا تعبّر عن الرغبة.",
         "«reise würde» ترتيب خاطئ للكلمات.",
-        "«würde gereist» صيغة خاطئة؛ الفعل reisen لا يحتاج Partizip II هنا.",
+        "«würde gern gereist» صيغة غير مناسبة هنا؛ نستخدم المصدر reisen بعد würde.",
       ],
     },
     {
@@ -62,7 +62,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e5",
       type: "error-correction",
-      instructionAr: "في الجملة خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
+      instructionAr: "في هذا الافتراض المخالف للواقع خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
       wrongSentence: "Wenn ich Zeit habe, würde ich kommen.",
       wrongWord: "habe",
       correctWord: "hätte",
@@ -132,20 +132,20 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e11",
       type: "fill-blank",
-      instructionAr: "أكمل بالصيغة الشرطية المحفوظة (بلا würde):",
-      template: "Wenn ich reich ___, ___ ich eine Stiftung. Und du: ___ du mir bitte helfen?",
+      instructionAr: "أكمل بالصيغة المناسبة في كل فراغ:",
+      template: "Wenn ich reich ___, ___ ich eine Stiftung gründen. Und du: ___ du mir bitte helfen?",
       blanks: [
         { correct: "wäre", options: ["wäre", "war", "werde"] },
-        { correct: "gründete", options: ["gründete", "gründen", "gründet"] },
+        { correct: "würde", options: ["würde", "wäre", "hätte"] },
         { correct: "Könntest", options: ["Könntest", "Kannst", "Konntest"] },
       ],
-      explanation: "sein ← wäre (صيغة محفوظة). والأفعال الأخرى تأخذ würde + مصدر ومنها gründen؛ و«gründete» صيغة شرطية قديمة مقبولة في الأسلوب الراقي. والتهذيب: Könntest du...?",
+      explanation: "sein ← wäre (صيغة محفوظة). والفعل الرئيسي يُصاغ هنا بـ würde + المصدر: würde gründen. والتهذيب: Könntest du...?",
       errorType: "grammar",
     },
     {
       id: "e12",
       type: "error-correction",
-      instructionAr: "في الجملة خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
+      instructionAr: "في هذا الافتراض المخالف للواقع خطأ واحد: اختر التصحيح الصحيح للكلمة المخطئة.",
       wrongSentence: "Wenn ich Zeit habe, würde ich mehr lesen.",
       wrongWord: "habe",
       correctWord: "hätte",
@@ -160,9 +160,10 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       prompt: "Schließen Sie das Fenster! → (هل يمكنكم إغلاق النافذة من فضلكم؟)",
       acceptedAnswers: [
         "Könnten Sie bitte das Fenster schließen",
-        "Könnten Sie bitte das Fenster schließen.",
+        "Könnten Sie bitte das Fenster schließen?",
         "Würden Sie bitte das Fenster schließen",
         "Würden Sie bitte das Fenster schließen.",
+        "Würden Sie bitte das Fenster schließen?",
       ],
       sampleAnswer: "Könnten Sie bitte das Fenster schließen?",
       explanation: "الأمر المباشر Schließen Sie... حادّ؛ وصيغة الأدب تبنى بـKönnten Sie...? أو Würden Sie...? مع المصدر في النهاية.",
@@ -185,17 +186,17 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
 
 export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     mistakes: [
-      { wrong: "Wenn ich Zeit habe, würde ich... (خلط)", right: "Wenn ich Zeit hätte, würde ich...", whyAr: "الافتراض: hätte." },
+      { wrong: "Wenn ich Zeit habe, würde ich... (في افتراض مخالف للواقع)", right: "Wenn ich Zeit hätte, würde ich...", whyAr: "في الافتراض المقصود هنا تلائمها صيغة hätte. أما مع شرط واقعي أو محتمل فيصح المضارع: Wenn ich Zeit habe, komme ich." },
       { wrong: "Ich würde nach Deutschland gegangen.", right: "Ich würde nach Deutschland gehen.", whyAr: "würde + Infinitiv." },
       { wrong: "Könnten du mir helfen?", right: "Könntest du mir helfen? / Könnten Sie mir helfen?", whyAr: "مع du نقول Könntest، ومع Sie نقول Könnten Sie." },
     ],
     eselsbruecken: [
-      "«würde = كنت سأفعل» — كثير من الأمنيات والطلبات المهذبة تبدأ بـ würde.",
+      "«würde + المصدر» تُستعمل لافتراضات ورغبات مثل Ich würde gern reisen؛ ومن صيغ الطلب المهذب Könnten Sie mir helfen?" ,
       "«رباعية الحلم»: wäre-hätte-könnte-würde.",
     ],
     culturalNote: {
-      title: "الأدب الشرطي الألماني",
+      title: "صياغة الطلب المهذب",
       content:
-        "في الطلبات المهذبة يستعمل الألمان Konjunktiv II مع أفعال مثل können وdürfen وmögen وhaben: «Könnten Sie mir helfen?» و«Hätten Sie einen Moment Zeit?». وتظهر هذه الصيغة كثيراً في المواقف الرسمية وخدمة العملاء والعمل.",
+        "يمكن استعمال Konjunktiv II لصياغة طلب مهذب، مثل «Könnten Sie mir helfen?» أو «Hätten Sie einen Moment Zeit?». هذه أمثلة لغوية، ويعتمد اختيار الصيغة على الفعل والسياق."
     },
   };

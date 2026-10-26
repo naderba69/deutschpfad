@@ -18,7 +18,7 @@ export const lessonB110: Lesson = {
   order: 1,
   titleDe: "Zukunft und Pläne",
   titleAr: "المستقبل والخطط",
-  summary: "التحدث عن خطط المستقبل، مراجعة لأهم قواعد B1 (Genitiv، Relativsätze، Konjunktiv II، Passiv، Adjektivdeklination)، وخاتمة المستوى المتوسط.",
+  summary: "التحدث عن خطط المستقبل، مع إعادة توظيف بعض تراكيب B1 مثل الجمل النسبية والشرطية والتعليل.",
   lernziele,
   einfuehrung,
   review,

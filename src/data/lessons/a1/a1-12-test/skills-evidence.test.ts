@@ -56,7 +56,8 @@ describe("A1-12 audited lesson content", () => {
     expect(lessonA112.writing).toHaveLength(3);
     expect(lessonA112.mediation).toHaveLength(1);
     expect(lessonA112.mediation?.[0].keyPointsAr).toHaveLength(3);
-    expect(lessonA112.mediation?.[0].taskAr).toContain("ليست دليلاً مسجلاً");
+    expect(lessonA112.mediation?.[0].taskAr).toContain("ليست توقعاً حقيقياً");
+    expect(lessonA112.mediation?.[0].taskAr).toContain("دليلاً مسجلاً");
     expect(lessonA112.mediation?.[0].sourceDe).toContain("Es sind 15 Grad.");
     const personalWarmth = findTask("e16");
     expect(personalWarmth.type).toBe("multiple-choice");

@@ -30,14 +30,14 @@ describe("A1-12 audited lesson content", () => {
     };
     const taskIds = allTasks().map((task) => task.id).sort();
     expect(taskIds).toEqual(Object.keys(answerKey).sort());
-    expect(taskIds).toHaveLength(45);
+    expect(taskIds).toHaveLength(48);
     expect(new Set(taskIds).size).toBe(taskIds.length);
     expect(lessonA112.review).toHaveLength(3);
     expect(lessonA112.practiceBank).toHaveLength(26);
     expect(lessonA112.miniTest).toHaveLength(5);
     expect(lessonA112.writing).toHaveLength(3);
     expect(reading().questions).toHaveLength(5);
-    expect(lessonA112.listening.questions).toHaveLength(3);
+    expect(lessonA112.listening.questions).toHaveLength(6);
 
     for (const [id, answer] of Object.entries(answerKey)) {
       const task = findTask(id);
