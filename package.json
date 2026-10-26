@@ -63,6 +63,9 @@
   "overrides": {
     "@rollup/plugin-terser": {
       "serialize-javascript": "^7.1.4"
+    },
+    "next": {
+      "postcss": "8.5.26"
     }
   }
 }
