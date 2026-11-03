@@ -80,7 +80,7 @@ const A2_2: InteractiveStory = {
     {
       id: 1,
       de: "Lisa hat morgen Geburtstag. Sie wird 20 Jahre alt.",
-      ar: "غداً عيد ميلاد ليزا. ستصبح في العشرين.",
+      ar: "غداً عيد ميلاد ليزا. ستبلغ العشرين من عمرها.",
     },
     {
       id: 2,
@@ -385,12 +385,12 @@ const A2_7: InteractiveStory = {
     {
       id: 2,
       de: "Sie haben den Hafen und das Rathaus besichtigt.",
-      ar: "زاروا الميناء وقاعة المدينة.",
+      ar: "زاروا الميناء ودار البلدية.",
       question: {
         de: "Was haben sie besichtigt?",
         ar: "ماذا زاروا؟",
         options: [
-          { text: "Den Hafen und das Rathaus", ar: "الميناء وقاعة المدينة", correct: true, explanation: "نعم — هذا ما ورد في القصة: «Den Hafen und das Rathaus» (الميناء وقاعة المدينة)." },
+          { text: "Den Hafen und das Rathaus", ar: "الميناء ودار البلدية", correct: true, explanation: "نعم — هذا ما ورد في القصة: «Den Hafen und das Rathaus» (الميناء ودار البلدية)." },
           { text: "Den Flughafen und den Zoo", ar: "المطار وحديقة الحيوان", correct: false, explanation: "لا — الصواب هو الخيار المذكور في القصة." },
           { text: "Die Kirche und die Schule", ar: "الكنيسة والمدرسة", correct: false, explanation: "لا — الصواب هو الخيار المذكور في القصة." },
         ],

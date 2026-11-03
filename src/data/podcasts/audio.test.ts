@@ -27,6 +27,15 @@ const PUBLIC = path.join(process.cwd(), "public");
 const AUDIO_DIR = path.join(PUBLIC, PODCAST_AUDIO_BASE.replace(/^\//, ""));
 const clips = podcastAudioClips();
 
+describe("إفصاح صوت بودكاست B2-08", () => {
+  it("يذكر التفريغ المحلي وحدود التقييم السمعي بدقة", () => {
+    const episode = PODCASTS.find((item) => item.id === "p-b2-migration");
+    expect(episode?.contentNoteAr).toContain("قورن بتفريغ ASR محلي");
+    expect(episode?.contentNoteAr).toContain("لم يُجر تقييم سمعي");
+    expect(episode?.contentNoteAr).not.toContain("لم يُجر تفريغ مستقل");
+  });
+});
+
 describe("حلقة الشقة المرتبطة بـA2-04", () => {
   it("توضح ترجمتها ترتيب الطابق الألماني وتتكلم عن محطة المترو لا نظام النقل", () => {
     const episode = PODCASTS.find((item) => item.id === "p-a2-wohnung");

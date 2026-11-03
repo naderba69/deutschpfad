@@ -64,9 +64,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "كيف تقول بالألمانية «الكاتب الذي رواياته مترجمة إلى العربية»؟ العربية تربطها بضمير صغير («رواياته»)، والألمانية تحتاج كلمة واحدة دقيقة: dessen. وكيف تقول «اضطررت أن أعمل»؟ ليس gemusst بل: Ich habe arbeiten müssen. بابان صغيران يفصلان نصّ B1 عن نصّ B2.",
+      "كيف تصوغ بالألمانية «الكاتب الذي رواياته مترجمة إلى العربية»؟ في هذا المثال تربط العربية الملكية بضمير متصل («رواياته»)، بينما تستعمل الألمانية dessen. وكيف تقول «اضطررت أن أعمل»؟ في Perfekt نقول: Ich habe arbeiten müssen. هذان نمطان يساعدان على فهم الجمل المركّبة، لا حدّ فاصل آلي بين مستويي B1 وB2.",
     contextAr:
-      "في المقال الصحفي والنصّ الأدبي وتقرير العمل تتراكم المعلومات داخل الجملة الواحدة. بدل ثلاث جمل قصيرة يكتب الألماني جملة واحدة محكمة: Der Autor, dessen Romane ins Arabische übersetzt wurden, lebt in Berlin. ويظهر هذا التكثيف في نصوص مستوى B2 عادةً.",
+      "في المقال الصحفي أو النص الأدبي أو تقرير العمل قد تُجمع معلومات مترابطة في جملة واحدة، بدلاً من فصلها إلى جمل قصيرة. مثال: Der Autor, dessen Romane ins Arabische übersetzt wurden, lebt in Berlin. هذا تركيب مفيد عند قراءة نصوص متقدمة، مع أن اختيار الجمل القصيرة أو المركّبة يتغيّر بحسب الكاتب والسياق.",
     activateVocabulary: [
       { de: "der Autor", ar: "الكاتب" },
       { de: "der Roman", ar: "الرواية" },
@@ -116,7 +116,7 @@ export const review: NonNullable<Lesson["review"]> = [
       instructionAr: "مراجعة من B1 (درس b1-02 — الماضي البسيط والماضي التام): أكمل الفعل المساعد:",
       template: "Ich ___ gestern lange gearbeitet.",
       blanks: [{ correct: "habe", options: ["habe", "bin", "war"] }],
-      explanation: "arbeiten فعل غير حركي ⇒ Perfekt مع haben.",
+      explanation: "الفعل arbeiten يُكوّن Perfekt هنا مع haben: Ich habe gearbeitet.",
       errorType: "conjugation",
     },
   ];

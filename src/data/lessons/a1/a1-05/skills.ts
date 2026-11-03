@@ -525,7 +525,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
         { correct: "ein", options: ["auf", "fern", "an", "ein"] },
       ],
       explanation:
-        "aufstehen (استيقظ) + fernsehen (تلفاز) + anfangen (يبدأ) + einkaufen (تسوق).",
+        "aufstehen (ينهض/يقوم من السرير) + fernsehen (يشاهد التلفاز) + anfangen (يبدأ) + einkaufen (يتسوّق).",
       errorType: "vocabulary",
     },
     {

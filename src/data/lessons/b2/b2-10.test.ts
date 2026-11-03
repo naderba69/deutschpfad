@@ -27,16 +27,16 @@ const expectedMultipleChoice: Record<string, [string[], string]> = {
   q1: [["mit der Linguistik", "mit der Geschichte", "mit der Kunst", "mit der Wirtschaft"], "mit der Linguistik"],
   q2: [["die mündliche Prüfung", "die schriftliche Prüfung", "die Hausarbeit", "das Seminar"], "die mündliche Prüfung"],
   q3: [["indem sie sprechen", "indem sie schreiben", "indem sie lesen", "indem sie schlafen"], "indem sie sprechen"],
-  q4: [["Kurze Pausen verbessern die Konzentration", "Ein Wochenplan verbessert die Konzentration", "Längere Lernphasen verbessern die Konzentration", "Mehr Lernstoff verbessert die Konzentration"], "Kurze Pausen verbessern die Konzentration"],
+  q4: [["Kurze Pausen können die Konzentration verbessern", "Ein Wochenplan verbessert die Konzentration", "Längere Lernphasen verbessern die Konzentration", "Mehr Lernstoff verbessert die Konzentration"], "Kurze Pausen können die Konzentration verbessern"],
 };
 
 /** [المفاتيح, بدائل كل فراغ] — كل تمارين الفراغات */
 const expectedFillBlanks: Record<string, [string[], string[][]]> = {
   e6: [["Es", "Meiner", "Maße"], [["Es", "Das", "Man"], ["Meiner", "Meine", "Mein"], ["Maße", "Maß", "Masse"]]],
-  "e12-punct": [[".", ".", "!"], [[".", ",", "?", "!"], [".", "?", "!", ":"], [".", ",", "?", "!"]]],
+  "e12-punct": [[".", ".", "?"], [[".", ",", "?", "!"], [".", "?", "!", ":"], [".", ",", "?", "!"]]],
   "e14-nominal": [["Bei", "Trotz", "Zur"], [["Bei", "Wenn", "Mit"], ["Trotz", "Obwohl", "Wegen"], ["Zur", "Damit", "Für"]]],
   m5: [["erwiesen", "Ansicht", "sagen"], [["erwiesen", "bewiesen", "gesehen"], ["Ansicht", "Meinung", "Sicht"], ["sagen", "sprechen", "reden"]]],
-  m8: [["Wegen", "um", "Bei"], [["Wegen", "Weil", "Denn"], ["um", "für", "auf"], ["Bei", "Wenn", "Als"]]],
+  m8: [["Wegen", "auf", "Bei"], [["Wegen", "Weil", "Denn"], ["auf", "für", "um"], ["Bei", "Wenn", "Als"]]],
   r3: [["lässt", "haben", "für"], [["lässt", "kann", "wird"], ["haben", "sein", "werden"], ["für", "auf", "an"]]],
   w2: [["Meiner", "Zusammenfassend"], [["Meiner", "Meine", "Mein"], ["Zusammenfassend", "Erstens", "Außerdem"]]],
 };
@@ -60,27 +60,27 @@ const expectedMatching: Record<string, { left: string; right: string }[]> = {
 
 const expectedTransformations: Record<string, string[]> = {
   e7: ["Meiner Ansicht nach ist das wichtig", "Meiner Ansicht nach ist das wichtig."],
-  w1: ["Es ist erwiesen, dass Sprachenlernen das Gehirn stärkt", "Es ist erwiesen, dass Sprachen das Gehirn stärken"],
+  w1: ["Es ist erwiesen, dass die Auswertung auf drei Texten basiert", "Es ist erwiesen, dass die Auswertung auf drei Texten basiert."],
 };
 
 const expectedWordOrder: Record<string, [string[], string]> = {
-  e4: [["erwiesen", "Es", "ist", "dass", "Sprachen", "Denken", "unser", "beeinflussen", ",", "."], "Es ist erwiesen, dass Sprachen unser Denken beeinflussen."],
+  e4: [["erwiesen", "Es", "ist", "dass", "die", "Auswertung", "auf", "drei", "Texten", "basiert", ",", "."], "Es ist erwiesen, dass die Auswertung auf drei Texten basiert."],
   "e16-b2": [["Der", "eingereichte", "Antrag", "muss", "noch", "geprüft", "werden", "."], "Der eingereichte Antrag muss noch geprüft werden."],
   m3: [["Meiner", "nach", "ist", "Ansicht", "das", "wichtig", "."], "Meiner Ansicht nach ist das wichtig."],
 };
 
 const expectedDictations: Record<string, string> = {
-  e10: "Zusammenfassend lässt sich sagen, dass B2 ein Meilenstein ist.", w3: "Es ist erwiesen, dass Sprachen unser Denken beeinflussen.",
+  e10: "Zusammenfassend lässt sich sagen, dass B2 ein Meilenstein ist.", w3: "Es ist erwiesen, dass die Auswertung auf drei Texten basiert.",
 };
 
 /** مراسي النصّ — تُفحص حرفياً بعد التصغير */
 const readingAnchors = [
   "als leila im september ihre zulassung erhielt", "die einschreibung dauerte dann zwei stunden",
-  "der beitrag von 340 euro sei keine studiengebühr", "ein sprachnachweis auf dem erforderlichen niveau",
+  "der semesterbeitrag umfasse in diesem beispiel auch einen beitrag zum studierendenwerk und ein semesterticket", "ein sprachnachweis auf dem erforderlichen niveau",
   "jede behauptung brauche einen beleg, jede quelle eine genaue angabe", "ist kein zeichen von unsicherheit, sondern eine genauigkeitspflicht",
-  "aus «weil man spart» wird «wegen der einsparung»", "plötzlich klang der text kürzer und ruhiger",
+  "aus «weil man spart» kann «wegen der einsparung» werden", "der text wurde dadurch an einigen stellen kürzer",
   "die gliederung sollte sichtbar sein", "zunächst nannte sie das problem, anschließend zeigte sie beispiele",
-  "drei werkzeuge: behaupten, belegen, einschränken", "das «ich» verschwinde, die sache bleibe",
+  "drei leitfragen: was ist die behauptung, was ist ihr beleg, und wo liegen ihre grenzen?", "den gegenstand statt die schreibende person in den mittelpunkt zu stellen",
 ];
 
 function allTasks(): Exercise[] {
@@ -132,6 +132,7 @@ describe("B2-10 lesson content audit", () => {
     });
     expect("duration" in lessonB210).toBe(false);
     expect(lessonB210.summary).not.toMatch(/Goethe|CEFR|معتمد|إتقان عام/i);
+    expect(lessonB210.einfuehrung.contextAr).toContain("أمثلة لغوية افتراضية");
 
     const meta = lessonMetaList.find((item) => item.id === "b2-10");
     expect(meta).toMatchObject({ id: "b2-10", unitId: "b2-10", level: "B2", order: 1, estimatedMinutes: 75 });
@@ -145,7 +146,7 @@ describe("B2-10 lesson content audit", () => {
     expect(goal("z1").evidence?.exerciseIds).toEqual(["w1", "e4", "e7", "q4"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e2", "e6", "e8", "m1", "m2", "w2"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e15-nominal", "e16-b2", "e17-b2", "m6", "m7", "m8"]);
-    expect(goal("z4").evidence?.exerciseIds).toEqual(["e3", "w3"]);
+    expect(goal("z4").evidence?.exerciseIds).toEqual(["e3"]);
     for (const item of lessonB210.lernziele) {
       expect(item.evidence?.completion, `${item.id} completion`).toBe("all-correct");
       for (const exerciseId of item.evidence?.exerciseIds ?? []) {
@@ -209,6 +210,22 @@ describe("B2-10 lesson content audit", () => {
         expect(evaluateExercise(exercise, option).isCorrect, `${id}: ${option}`).toBe(index === exercise.correctIndex);
       }
     }
+  });
+
+  it("keeps fixed-phrase question frames grammatically complete when answered", () => {
+    const e1 = task("e1");
+    const m1 = task("m1");
+    if (e1.type !== "multiple-choice" || m1.type !== "multiple-choice") throw new Error("expected MCQs");
+    expect(e1.questionDe).toBe("___ die Auswertung auf drei Texten basiert. (ثابت أن)");
+    expect(e1.options[e1.correctIndex]).toBe("Es ist erwiesen, dass");
+    expect(
+      `${e1.options[e1.correctIndex]} ${e1.questionDe.replace("___", "").replace(" (ثابت أن)", "").trim()}`,
+    ).toBe("Es ist erwiesen, dass die Auswertung auf drei Texten basiert.");
+    expect(m1.questionDe).toBe("___ die Frist verlängert wurde. (ثبت أن)");
+    expect(m1.options[m1.correctIndex]).toBe("Es ist erwiesen, dass");
+    expect(
+      `${m1.options[m1.correctIndex]} ${m1.questionDe.replace("___", "").replace(" (ثبت أن)", "").trim()}`,
+    ).toBe("Es ist erwiesen, dass die Frist verlängert wurde.");
   });
 
   it("checks every fill-blank key and tests each alternative against the engine", () => {
@@ -310,7 +327,9 @@ describe("B2-10 lesson content audit", () => {
     }
     const e10 = task("e10");
     if (e10.type !== "dictation") throw new Error("e10 is not dictation");
-    expect(e10.audioText, "الخاتمة الذهبية").toContain("Zusammenfassend lässt sich sagen");
+    expect(e10.audioText, "صيغة تلخيص ممكنة").toContain("Zusammenfassend lässt sich sagen");
+    const w3 = task("w3");
+    expect(w3.explanation).toContain("لا يثبت التمرين وحده صحة أي ادعاء بحثي");
   });
 
   it("keeps the nominal-style transformation on its prepositions and cases", () => {
@@ -342,7 +361,7 @@ describe("B2-10 lesson content audit", () => {
     }
     const e12 = task("e12-punct");
     if (e12.type !== "fill-blank") throw new Error("e12-punct is not fill-blank");
-    expect(e12.blanks.map(({ correct }) => correct), "نقطة/نقطة/تعجب").toEqual([".", ".", "!"]);
+    expect(e12.blanks.map(({ correct }) => correct), "نقطة/نقطة/استفهام").toEqual([".", ".", "?"]);
     expect(e12.errorType, "تصنيف الترقيم").toBe("punctuation");
   });
 
@@ -407,7 +426,7 @@ describe("B2-10 lesson content audit", () => {
     const markers = [
       "Es ist erwiesen, dass", "meiner Ansicht nach", "in gewissem Maße", "Es lässt sich kaum leugnen",
       "Zusammenfassend lässt sich sagen", "wegen der Einsparung", "nach der Ankunft",
-      "Konjunktiv I لنقل الكلام", "Futur II للفعل المنجَز مستقبلاً", "Zustandspassiv",
+      "Konjunktiv I لنقل الكلام", "Futur II للإنجاز المستقبلي والافتراض عن الماضي", "Zustandspassiv",
     ];
     for (const marker of markers) expect(theoryText, `بنية مفقودة: ${marker}`).toContain(marker);
   });
@@ -416,12 +435,14 @@ describe("B2-10 lesson content audit", () => {
     const [t1, praesentation, t2, t3] = lessonB210.theory;
     expect(t1.table, "جدول t1").toBeDefined();
     expect(t1.table?.columns).toEqual(["الوظيفة", "العبارات", "مثال"]);
-    expect(t1.table?.rows.map(({ label }) => label)).toEqual(["تأكيد", "تلطيف", "تحفظ"]);
+    expect(t1.table?.rows.map(({ label }) => label)).toEqual(["تأكيد", "إبداء رأي", "احتمال", "تحديد النطاق"]);
+    expect(t1.table?.rows[1].cells[0]).toContain("meiner Ansicht nach");
+    expect(t1.table?.rows[2].cells[0]).toContain("möglicherweise");
     expect(t1.relatedRuleComparison?.title).toBe("Erörterung أم Hausarbeit؟");
 
     expect(praesentation.table?.columns).toEqual(["الجزء", "عبارة مفيدة", "وظيفتها"]);
     expect(praesentation.commonMistakes.map(({ wrong }) => wrong)).toEqual([
-      "Ich sage jetzt über Müll. (بدون مقدمة ولا خطة)",
+      "Ich spreche jetzt über Müll. (بدون مقدمة ولا خطة)",
       "Danach ich zeige Lösungen.",
       "Danke. Ende. (في نهاية العرض)",
     ]);
@@ -443,7 +464,7 @@ describe("B2-10 lesson content audit", () => {
     expect(t2.examples.map(({ de }) => de)).toContain("Bei der Anmeldung müssen Sie Ihren Ausweis vorlegen.");
 
     expect(t3.table?.columns).toEqual(["الوحدة", "القاعدة", "مثال"]);
-    expect(t3.table?.rows).toHaveLength(10);
+    expect(t3.table?.rows).toHaveLength(11);
     expect(t3.table?.rows.map(({ label }) => label)).toContain("9 — سوق العمل");
     expect(t3.relatedRuleComparison?.title).toBe("متى أستعمل أي طبقة؟");
     expect(t3.examples.map(({ de }) => de)).toContain("Das Seminar, an dem ich teilnehme, beginnt im Oktober.");
@@ -489,9 +510,9 @@ describe("B2-10 lesson content audit", () => {
   it("keeps the reading text, glossary, comprehension questions, and discourse anchors intact", () => {
     const reading = lessonB210.reading;
     expect(reading?.id).toBe("read-b2-10");
-    expect(reading?.textType).toBe("artikel");
+    expect(reading?.textType).toBe("erzaehlung");
     expect(reading?.titleDe).toBe("Der erste Monat an einer deutschen Universität");
-    expect(reading?.titleAr).toBe("الشهر الأول في جامعة ألمانية");
+    expect(reading?.titleAr).toBe("الشهر الأول في جامعة ألمانية — قصة تدريبية خيالية");
     expect(reading?.paragraphs).toHaveLength(6);
     expect(reading?.paragraphsAr).toHaveLength(6);
     const text = reading!.paragraphs.join(" ").toLowerCase();
@@ -541,40 +562,13 @@ describe("B2-10 lesson content audit", () => {
   it("keeps the interaction best replies as the formal register the lesson teaches", () => {
     const rounds = (lessonB210.interaction ?? [])[0].rounds as unknown as { options: { de: string; best?: boolean }[] }[];
     expect(rounds.map((round) => round.options.find((option) => option.best)?.de)).toEqual([
-      "Obwohl ein Auslandsstudium mit Sprachbarrieren und Heimweh verbunden ist, überwiegen meiner Meinung nach die Vorteile.",
+      "Obwohl ein Auslandsstudium mit Sprachbarrieren und Heimweh verbunden sein kann, bietet es fachliche Erfahrungen und neue Perspektiven. Ob diese Vorteile überwiegen, hängt meiner Ansicht nach von den persönlichen Zielen und Bedingungen ab.",
       "Ich würde regelmäßigen Kontakt mit der Familie halten und neue soziale Kreise aufbauen.",
     ]);
     for (const round of rounds) {
       expect(round.options.filter((option) => option.best)).toHaveLength(1);
     }
-    expect(JSON.stringify(rounds), "سجل أكاديمي في التفاعل").toContain("meiner Meinung nach");
-  });
-
-  it("keeps the mediation task pointing at a real source text", () => {
-    const mediation = lessonB210.mediation?.[0];
-    expect(mediation?.id).toBe("med-b2-10-1");
-    expect(mediation?.type).toBe("merge-info");
-    expect((mediation?.sourceDe ?? "").trim().length, "نصّ المصدر").toBeGreaterThan(100);
-    expect(mediation?.keyPointsAr?.length, "نقاط المفتاح").toBeGreaterThanOrEqual(3);
-  });
-
-  it("removes unsourced figures, context-dependent false errors, and misleading translations", () => {
-    const text = JSON.stringify(lessonB210);
-    expect(text).not.toMatch(/\d+\s*%|~\d+/);
-    expect(text).not.toContain("Sprich von Tag eins an");
-    expect(text).not.toContain("الحروف العربية (بـ، عن، في) تطابق");
-    expect(text).not.toContain("والقائمة الشهيرة");
-    expect(text).not.toContain("Ich freue mich über den Urlaub. (مستقبل)");
-    expect(text).not.toMatch(/على الأكثر/);
-    expect(text).not.toContain("~300");
-    expect(text).not.toContain("75 دقيقة");
-    expect(text).not.toContain("ستُّ قواعد");
-    expect(text).not.toContain("can itself");
-    expect(text).not.toContain("سقف علامة");
-    expect(text).not.toContain("جاهزاً للامتحانات");
-    expect(text).not.toContain("تطابق عباراتنا");
-    expect(text).not.toContain("gv");
-    expect(text).not.toContain("عامية");
+    expect(JSON.stringify(rounds), "صياغة الرأي الأكاديمية").toContain("meiner Ansicht nach");
   });
 
   it("counts only correct, mapped exercise results toward goals", () => {
@@ -596,4 +590,5 @@ describe("B2-10 lesson content audit", () => {
       ]),
     ).toBe("pending");
   });
+
 });

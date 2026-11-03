@@ -24,7 +24,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
     {
       id: "m2",
       type: "multiple-choice",
-      instructionAr: "اختر الصيغة الصحيحة:",
+      instructionAr: "اختر الصيغة القياسية المستهدفة:",
       questionDe: "Er ___ die Prüfung leider wiederholen ___ .",
       options: ["hat … müssen", "ist … müssen", "hat … gemusst", "hat … zu müssen"],
       correctIndex: 0,
@@ -32,8 +32,8 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       errorType: "conjugation",
       optionExplanations: [
         undefined,
-        "«ist … müssen» خطأ؛ الفعل المساعد haben وليس sein.",
-        "«hat … gemusst» خطأ؛ تُستعمل صيغة müssen مع Ersatzinfinitiv.",
+        "«ist … müssen» ليس الشكل القياسي المستهدف في هذا الدرس؛ استعمل haben.",
+        "«hat … gemusst» ليست الصيغة القياسية المطلوبة هنا مع مودالي يتبعه مصدر؛ استعمل Ersatzinfinitiv.",
         "«hat … zu müssen» خطأ؛ لا يُستعمل zu مع müssen هنا.",
       ],
     },
@@ -87,9 +87,9 @@ export const mediation: NonNullable<Lesson["mediation"]> = [
     {
       id: "med-b2-11-1",
       type: "summarize-de-to-ar",
-      titleAr: "لخّص نصاً تدريبياً عن زيارة أديب بالعربية",
+      titleAr: "لخّص نصاً تدريبياً خيالياً عن زيارة أديب بالعربية",
       sourceDe:
-        "Der Schriftsteller, dessen Romane in zwölf Sprachen übersetzt wurden, kommt im Mai nach Tunis. Die Veranstalter haben den Termin einmal verschieben müssen, weil die Übersetzerin, deren Beitrag zentral ist, kurzfristig absagen musste.",
+        "Übungstext (fiktiver Fall): Der Schriftsteller, dessen Romane in zwölf Sprachen übersetzt wurden, kommt im Mai nach Tunis. Die Veranstalter haben den Termin einmal verschieben müssen, weil die Übersetzerin, deren Beitrag zentral ist, kurzfristig absagen musste.",
       taskAr: "لخّص لصديق: من الضيف، ولماذا تغيّر الموعد، ومن السبب.",
       modelAnswerAr:
         "«الأديب الذي تُرجمت رواياته إلى اثنتي عشرة لغة سيأتي إلى تونس في مايو. اضطرّ المنظّمون إلى تأجيل الموعد مرّة واحدة، لأنّ المترجمة التي مساهمتها أساسية اعتذرت في اللحظة الأخيرة.»",
@@ -143,8 +143,8 @@ export const interaction: NonNullable<Lesson["interaction"]> = [
               de: "Ich bin arbeiten gemusst die ganze Woche.",
               ar: "كنت مضطراً للعمل طوال الأسبوع (بصياغة خاطئة).",
               best: false,
-              replyDe: "Sie meinen sicher „Ich habe arbeiten müssen“. Kein Problem.",
-              replyAr: "تقصد «Ich habe arbeiten müssen». لا مشكلة.",
+              replyDe: "Im Standarddeutschen können Sie sagen: „Ich habe die ganze Woche arbeiten müssen.“ Kein Problem.",
+              replyAr: "في الألمانية المعيارية يمكنك أن تقول: «Ich habe die ganze Woche arbeiten müssen». لا مشكلة.",
             },
           ],
         },

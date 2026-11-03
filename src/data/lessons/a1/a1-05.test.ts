@@ -5,6 +5,14 @@ import {lessonA105} from "./a1-05";
 
 const lesson = lessonA105;
 
+describe("مفردات درس الروتين اليومي", () => {
+  it("يترجم aufstehen بالنهوض لا بمجرد الاستيقاظ في التمرين", () => {
+    const writingContent = JSON.stringify(lesson.writing);
+    expect(writingContent).toContain("aufstehen (ينهض/يقوم من السرير)");
+    expect(writingContent).not.toContain("aufstehen (استيقظ)");
+  });
+});
+
 function knownTaskIds(): Set<string> {
   const ids = new Set<string>();
   for (const task of lesson.practiceBank) {
@@ -98,5 +106,17 @@ describe("A1-05 — الروتين اليومي والوقت", () => {
       expect(task.correctIndex).toBeGreaterThanOrEqual(0);
       expect(task.correctIndex).toBeLessThan(task.options.length);
     }
+  });
+});
+
+describe("حراسة arbeiten في الروتين المهني", () => {
+  it("يطابق جهة العمل ووقت النوبة في قراءة طارق", () => {
+    const reading = lesson.reading;
+    expect(reading?.paragraphs[0]).toContain("ich arbeite als Krankenpfleger");
+    expect(reading?.paragraphsAr[0]).toContain("أعمل ممرّضاً في مستشفى");
+    expect(reading?.paragraphs[2]).toContain("Von sieben bis zwölf arbeite ich auf der Station");
+    expect(reading?.paragraphsAr[2]).toContain("أعمل في القسم من السابعة إلى الثانية عشرة");
+    expect(reading?.paragraphs[3]).toContain("Um sechzehn Uhr ist meine Schicht zu Ende");
+    expect(reading?.paragraphsAr[3]).toContain("في الرابعة عصراً تنتهي نوبتي");
   });
 });

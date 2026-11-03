@@ -200,8 +200,8 @@ export const reading: NonNullable<Lesson["reading"]> = {
         questionDe: "Wie endete die Geschichte?",
         instructionAr: "اقرأ الفقرة الخامسة: كيف انتهت القصّة؟",
         options: [
-          "Sie bekamen ein Zimmer in einem anderen Hotel, das billiger und schöner war.",
-          "Sie fuhren am selben Abend enttäuscht wieder nach Hause zurück",
+          "Sie bekamen ein Zimmer in einem günstigeren, schöneren Hotel.",
+          "Sie fuhren noch am selben Abend enttäuscht nach Hause.",
           "Sie schliefen die ganze Nacht lang am Bahnhof",
           "Sie fanden den Rucksack auch später niemals wieder",
         ],
@@ -211,7 +211,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         errorType: "vocabulary",
         optionExplanations: [
           undefined,
-          "«enttäuscht wieder nach Hause zurück» يناقض «Die Rezeption eines anderen Hotels … war noch geöffnet».",
+          "«enttäuscht nach Hause» يناقض «Die Rezeption eines anderen Hotels … war noch geöffnet».",
           "«die ganze Nacht am Bahnhof geschlafen» لم يحدث؛ وُجدت غرفة في فندق آخر.",
           "«den Rucksack niemals wieder gefunden» لا ذكر له في نهاية النصّ.",
         ],

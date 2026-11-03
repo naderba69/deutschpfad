@@ -63,3 +63,6 @@ screenshots/
 # مُخرَجات بايثون (أدوات scripts/*.py)
 __pycache__/
 *.pyc
+
+# Locally retained audio comparison originals
+/tmp/audio-review-b2-09/

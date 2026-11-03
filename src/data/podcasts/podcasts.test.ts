@@ -27,6 +27,12 @@ describe("مكتبة البودكاست التعليمي", () => {
     expect(episode?.scriptAr).toContain("ميمي أفضل صديقة لي.");
   });
 
+  it("ترجم التعبير المجازي zu Hause في خيار حلقة الهجرة ترجمةً شعورية لا مكانية", () => {
+    const episode = PODCASTS.find(({ id }) => id === "p-b2-migration");
+    const option = episode?.questions[0]?.options.find(({ text }) => text === "Sofort zu Hause");
+    expect(option?.ar).toBe("شعرت فوراً بأنها في بيتها");
+  });
+
   it("attributes the B1 health recommendation to the WHO and uses the weekly adult guideline", () => {
     const episode = PODCASTS.find(({ id }) => id === "p-b1-gesundheit");
     expect(episode).toBeDefined();
@@ -36,6 +42,14 @@ describe("مكتبة البودكاست التعليمي", () => {
     expect(episode?.script).not.toMatch(/30 Minuten pro Tag|Ärzte empfehlen/);
     expect(episode?.scriptAr).toContain("ليست بديلاً عن المشورة الطبية الشخصية");
     expect(episode?.questions[0]?.options.some((option) => option.correct && option.text.includes("150 bis 300 Minuten"))).toBe(true);
+  });
+
+  it("تترجم خيار السمك في حلقة السوق ترجمة عربية سليمة", () => {
+    const episode = PODCASTS.find(({ id }) => id === "p-a2-wochenmarkt");
+    const option = episode?.questions.find(({ de }) => de === "Was gibt es bei Frau Huber?")?.options.find(
+      ({ text }) => text === "Den frischesten Fisch",
+    );
+    expect(option?.ar).toBe("السمك الأشدّ طزاجةً");
   });
 
   it("كل مستوى لديه على الأقل حلقة واحدة", () => {
@@ -110,5 +124,16 @@ describe("شروح البودكاست — دليل ألماني واقتباس �
     }
     expect(problems).toEqual([]);
     expect(spansChecked).toBeGreaterThan(40); // حارس غير فارغ
+  });
+});
+
+describe("حراسة مقابلات frühstücken في البودكاست", () => {
+  it("تطابق ترجمة نص الأحد وشرح الإجابة الصحيحة", () => {
+    const episode = PODCASTS.find(({ id }) => id === "p-a2-sonnntag");
+    expect(episode?.script).toContain("Wir haben zusammen gefrühstückt.");
+    expect(episode?.scriptAr).toContain("تناولنا الفطور معاً");
+    const answer = episode?.questions.find(({ de }) => de === "Was haben sie am Sonntag gemacht?")?.options.find(({ correct }) => correct);
+    expect(answer?.ar).toContain("تناولوا الفطور معاً");
+    expect(answer?.explanation).toContain("zusammen gefrühstückt");
   });
 });

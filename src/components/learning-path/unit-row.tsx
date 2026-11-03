@@ -31,7 +31,7 @@ export function UnitRow({ unit, status, onToggle }: UnitRowProps) {
         "flex items-center justify-between gap-3 rounded-xl border px-4 py-3 transition-colors",
         isCompleted && "border-success/30 bg-success/5",
         !isCompleted && !isLocked && "border-primary/20 bg-primary/[0.03]",
-        isLocked && "border-muted bg-muted/30 opacity-70",
+        isLocked && "border-muted bg-muted/30",
       )}
     >
       <div className="flex min-w-0 items-center gap-3">
@@ -97,7 +97,13 @@ export function UnitRow({ unit, status, onToggle }: UnitRowProps) {
             </Link>
           </Button>
           {lesson ? (
-            <Button asChild size="sm" variant={isCompleted ? "ghost" : "default"} className={isCompleted ? "text-success hover:text-success" : ""}>
+            <Button
+              asChild
+              size="sm"
+              variant={isCompleted ? "ghost" : "default"}
+              className={isCompleted ? "text-success hover:text-success" : ""}
+              aria-label={`${isCompleted ? "افتح الدرس" : "ابدأ الدرس"}: ${lesson.titleAr}`}
+            >
               <Link href={`/lesson/${lesson.id}`}>
                 <PlayCircle className="h-3.5 w-3.5" aria-hidden="true" />
                 <span className="hidden sm:inline">ابدأ الدرس</span>

@@ -30,7 +30,7 @@ export const listening: Lesson["listening"] = {
       {
         id: "l3",
         title: "لقاء للتبادل الثقافي",
-        audioNoteAr: "الصوت مولّد آلياً (TTS)، وليس تسجيلاً بشرياً. هذا مشهد تدريبي خيالي عن مجموعة محددة، لا وصفٌ لثقافات كاملة. بعد تنقيح النص في هذه المراجعة لم تُعَدّ التسجيلات أو تُطابق معه؛ فلا يُفترض تطابق النص والصوت.",
+        audioNoteAr: "المقاطع مولّدة آلياً (TTS) من سطور النص الحالية، وليست تسجيلات بشرية. هذا مشهد تدريبي خيالي عن مجموعة محددة، لا وصفٌ لثقافات كاملة. قورنت الملفات بتفريغ ASR محلي؛ وهذا لا يثبت دقة كل كلمة أو جودة الأداء. لم يُجر تقييم سمعي للوضوح أو طبيعية الأداء أو النطق.",
         lines: [
           { speaker: "Karim", de: "Für den Austausch nächste Woche bereite ich mich auf das Treffen mit den deutschen Studierenden vor.", ar: "أستعد للقاء الطلاب الألمان في التبادل الأسبوع المقبل.", audioSrc: "/audio/lessons/b2-08/ls-b2-08-3-1.mp3" },
           { speaker: "Mona", de: "Worauf freust du dich am meisten?", ar: "إلى ماذا تتطلع أكثر؟", audioSrc: "/audio/lessons/b2-08/ls-b2-08-3-2.mp3" },

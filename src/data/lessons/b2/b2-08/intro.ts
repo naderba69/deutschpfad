@@ -41,19 +41,19 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z3",
-      de: "Ich kann Aussagen über Gewohnheiten und Anpassung verstehen.",
-      ar: "أن أفهم حديثاً عن الاعتياد والتأقلم مع عادات جديدة.",
+      de: "Ich kann in einem kurzen Dialog eine Aussage über Gewohnheiten und Anpassung verstehen.",
+      ar: "أن أفهم في حوار قصير قولاً عن الاعتياد والتأقلم.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["q3", "e7"],
-        taskIds: ["listening:l2:q3", "practice:b2-08:e7"],
-        labelAr: "أجيب صحيحاً بعد الاستماع إلى l2 في q3، وأكمل عبارة sich gewöhnen an في e7، دون كشف النص أو الحل.",
+        exerciseIds: ["q3"],
+        taskIds: ["listening:l2:q3"],
+        labelAr: "أجيب صحيحاً عن سؤال q3 بعد الاستماع إلى l2 من دون كشف نص الحوار.",
       },
     },
     {
       id: "z4",
-      de: "Ich kann kurze Sätze über Sprachen und Kultur schriftlich ergänzen.",
-      ar: "أن أكمل جملاً قصيرة عن اللغات والثقافة كتابةً.",
+      de: "Ich kann kurze Sätze mit ausgewählten Verben und passenden Präpositionen schriftlich ergänzen.",
+      ar: "أن أكمل كتابة جمل قصيرة بأفعال منتقاة وحروف جرها المناسبة.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["w1", "w2"],
@@ -61,7 +61,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "writing:b2-08:w1",
           "writing:b2-08:w2",
         ],
-        labelAr: "أكمل جملة وأحوّلها (w1 وw2)، دون كشف الحل. لا يقيس هذا كتابة نص كامل.",
+        labelAr: "أكمل جملتين قصيرتين بأفعال منتقاة وحروف جرها المناسبة (w1 وw2)، دون كشف الحل. لا يقيس هذا كتابة نص كامل.",
       },
     },
   ];

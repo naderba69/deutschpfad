@@ -54,7 +54,8 @@ export const B2_DIALOGUES_1: DailyDialogue[] = [
     title: "اجتماع فريق العمل",
     titleDe: "Teambesprechung",
     emoji: "👥",
-    situation: "تناقش مع فريقك موعد تسليم المشروع",
+    situation: "محاكاة تدريبية خيالية لاجتماع فريق حول موعد تسليم مشروع.",
+    audioNoteAr: "مصدر ملفات MP3 غير موثق. طابق تفريغ ASR محلي بتمريرين الأسطر الستة مع النص الحالي؛ لم تُجرَ مراجعة سمعية بشرية، ولا يثبت ASR جودة النطق أو طبيعته.",
     turns: [
       { speaker: "الزميلة", role: "a", de: "Wir haben ein Problem mit der Deadline. Wir schaffen es nicht bis Freitag.", ar: "عندنا مشكلة مع الموعد النهائي. لن ننجز حتى الجمعة." },
       { speaker: "أنت", role: "b", de: "Das ist besorgniserregend. Was ist der aktuelle Stand?", ar: "هذا مقلق. ما الوضع الحالي؟" },
@@ -107,11 +108,11 @@ export const B2_DIALOGUES_1: DailyDialogue[] = [
     questions: [
       { de: "Warum ist die Person enttäuscht?", ar: "لماذا الشخص محبط؟", options: [
         { text: "Ihre Ideen wurden im Meeting nicht erwähnt", ar: "لم تُذكر أفكاره في الاجتماع", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Das Gehalt ist zu niedrig für die Arbeit", ar: "الراتب منخفض", correct: false, explanation: "لا — لم يُذكر راتب Gehalt؛ والعتب «Du hast meine Ideen im Meeting nicht erwähnt»." },
+        { text: "Das Gehalt ist zu niedrig für die Arbeit", ar: "الراتب منخفض جداً قياساً إلى العمل", correct: false, explanation: "لا — لم يُذكر راتب Gehalt؛ والعتب «Du hast meine Ideen im Meeting nicht erwähnt»." },
         { text: "Der Kollege ist zu spät gekommen", ar: "الزميل تأخر", correct: false, explanation: "لا — لم يُذكر تأخّر zu spät؛ وسبب الخيبة Ideen nicht erwähnt." },
       ]},
       { de: "Warum fühlte sich die Person übergangen?", ar: "لماذا شعر الشخص بالتجاهل؟", options: [
-        { text: "Es wirkte, als wäre ihre Arbeit nichts wert", ar: "بدا وكأن عمله بلا قيمة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
+        { text: "Es wirkte, als wäre ihre Arbeit nichts wert", ar: "بدا وكأن عملها بلا قيمة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
         { text: "Weil sie zu spät zum wichtigen Termin kam", ar: "لأنه تأخر", correct: false, explanation: "لا — لم يُذكر تأخّر عن موعد Termin؛ والشعور «als ob meine Arbeit nichts wert wäre»." },
         { text: "Weil sie krank war und deshalb fehlte", ar: "لأنه كان مريضاً", correct: false, explanation: "لا — لم يُذكر مرض krank؛ والإحساس بالتجاهل من عدم ذكر الأفكار («meine Ideen im Meeting nicht erwähnt»)." },
       ]},
@@ -136,6 +137,7 @@ export const B2_DIALOGUES_1: DailyDialogue[] = [
     titleDe: "Notruf",
     emoji: "🚨",
     situation: "شاهدت حادثاً وتتصل بالطوارئ (112)",
+    audioNoteAr: "توجد ملفات MP3 لهذا الحوار ومصدرها غير موثق. قورن النص بتفريغ ASR محلي في تمريرين؛ اختلفا في تفريغ أداة التعريف في الجملة الثانية (ein/einen)، فلا يُحسم ذلك دون استماع بشري. لا يثبت التفريغ جودة النطق، والحوار محاكاة لغوية لا دليل إسعاف.",
     turns: [
       { speaker: "الموظف", role: "a", de: "Notruf 112. Was ist passiert?", ar: "الطوارئ 112. ماذا حدث؟" },
       { speaker: "أنت", role: "b", de: "Es gab einen Unfall auf der Kreuzung. Ein Fahrradfahrer ist gestürzt.", ar: "وقع حادث في التقاطع. سقط راكب دراجة." },
@@ -176,13 +178,13 @@ export const B2_DIALOGUES_1: DailyDialogue[] = [
     titleDe: "Pass verloren",
     emoji: "🛂",
     situation: "محاكاة تدريبية خيالية لفقدان جواز في الخارج؛ الخطوات تختلف حسب جهة الإصدار والبلد والبعثة.",
-    audioNoteAr: "ملفات MP3 لهذا الحوار موجودة، لكن مصدرها غير موثق؛ لا أجزم بأنها بشرية أو مولّدة، ولم تُتحقق مطابقتها للنص أو جودة النطق. إجراءات الجواز يجب التحقق منها لدى الجهة المختصة.",
+    audioNoteAr: "في المقاطع 3–5 لم يطابق التفريغ المحلي للنطق الآلي النص الحالي، لذلك عُطّلت ملفات MP3 لهذه الأدوار في المشغّل؛ يستخدم زر الاستماع TTS المتصفح للنص الحالي فيها وقد يختلف الصوت حسب الجهاز. المقاطع الأخرى تستخدم MP3، ومصدرها وجودة النطق غير متحققين. هذا إجراء احترازي برمجي لا حكم سمعي؛ وتُراجع إجراءات الجواز لدى الجهة المختصة.",
     turns: [
       { speaker: "الموظف", role: "a", de: "Guten Tag! Wie kann ich Ihnen helfen?", ar: "طاب يومك! كيف أساعدك؟" },
       { speaker: "أنت", role: "b", de: "Ich habe meinen Pass verloren. Ich brauche einen Ersatz.", ar: "فقدت جواز سفري. أحتاج بديلاً." },
-      { speaker: "الموظف", role: "a", de: "Das tut mir leid. Haben Sie den Verlust bei der örtlichen Polizei gemeldet?", ar: "يؤسفني. هل قدمت بلاغاً للشرطة؟" },
-      { speaker: "أنت", role: "b", de: "Noch nicht. Welche Schritte gelten in meinem Fall?", ar: "ليس بعد. ماذا أفعل أولاً؟" },
-      { speaker: "الموظف", role: "a", de: "In diesem Beispiel melden Sie den Verlust zuerst bei der örtlichen Polizei und bringen Sie die Anzeige mit. Bitte prüfen Sie die Anforderungen Ihrer zuständigen Botschaft, denn sie können abweichen.", ar: "في هذا المثال، أبلغ الشرطة المحلية أولاً وأحضر البلاغ. وتحقق من متطلبات سفارتك المختصة لأنها قد تختلف." },
+      { speaker: "الموظف", role: "a", de: "Das tut mir leid. Haben Sie den Verlust bei der örtlichen Polizei gemeldet?", ar: "يؤسفني. هل قدمت بلاغاً للشرطة؟", audioSrc: null },
+      { speaker: "أنت", role: "b", de: "Noch nicht. Welche Schritte gelten in meinem Fall?", ar: "ليس بعد. ماذا أفعل أولاً؟", audioSrc: null },
+      { speaker: "الموظف", role: "a", de: "In diesem Beispiel melden Sie den Verlust zuerst bei der örtlichen Polizei und bringen Sie die Anzeige mit. Bitte prüfen Sie die Anforderungen Ihrer zuständigen Botschaft, denn sie können abweichen.", ar: "في هذا المثال، أبلغ الشرطة المحلية أولاً وأحضر البلاغ. وتحقق من متطلبات سفارتك المختصة لأنها قد تختلف.", audioSrc: null },
       { speaker: "أنت", role: "b", de: "Alles klar. Wie lange dauert der Ersatzpass?", ar: "حسناً. كم يستغرق إصدار الجواز البديل؟" },
     ],
     questions: [

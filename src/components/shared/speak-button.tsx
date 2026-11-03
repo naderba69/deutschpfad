@@ -20,7 +20,7 @@ interface SpeakButtonProps {
   /** اسم وصول مستقل عند ضرورة إخفاء النص المرئي/المسموع قبل كشفه. */
   ariaLabel?: string;
   autoLabel?: boolean;
-  /** ملف صوت بشري مسجّل (مثل /audio/dialogues-a1/…mp3). إن تعذّر تشغيله يُستعمل صوت الجهاز. */
+  /** ملف صوت مرتبط بالنص (مثل /audio/dialogues-a1/…mp3)؛ مصدره أو مطابقته لا يُفترضان. إن غاب أو تعذّر يُستعمل صوت الجهاز. */
   audioSrc?: string;
 }
 
@@ -115,6 +115,10 @@ export function SpeakButton({
     [text, rate, audioSrc],
   );
 
+  const accessibleLabel = label
+    ? `${label} — ${ariaLabel ?? text}`
+    : ariaLabel ?? `استمع: ${text}`;
+
   return (
     <div className="inline-flex items-center gap-1">
       <Button
@@ -122,8 +126,8 @@ export function SpeakButton({
         variant={variant}
         size={size}
         onClick={speak}
-        aria-label={ariaLabel ?? `استمع: ${text}`}
-        title={ariaLabel ?? `استمع: ${text}`}
+        aria-label={accessibleLabel}
+        title={accessibleLabel}
         className={cn("shrink-0", className)}
       >
         {speaking ? <Loader2 className="h-4 w-4 animate-spin" /> : <Volume2 className="h-4 w-4" />}

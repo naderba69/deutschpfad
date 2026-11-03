@@ -243,3 +243,23 @@ describe("أطقم B2 — الامتحان الكامل يقرأ من الأطق
     expect(problems).toEqual([]);
   });
 });
+
+describe("دقة ترجمة Mietpreisbremse في استماع B2", () => {
+  it("ينقل وظيفة الحد من الإيجارات المرتفعة في العقود الجديدة دون ترجمة حرفية", () => {
+    const part = B2_HOEREN_B.find((item) => item.teil === 4);
+    const question = part?.questions?.find((item) => item.id === "h4-q5");
+    expect(question?.qAr).toBe("لماذا يظل أثر القيود على الإيجارات الجديدة محدوداً؟");
+    expect(question?.qAr).not.toContain("فرامل الإيجارات");
+    expect(part?.audioText).toContain("Mietpreisbremse eingeführt");
+    expect(part?.audioText).toContain("überhöhte Mieten bei Neuvermietungen begrenzen");
+  });
+});
+
+describe("دقة معنى warm في بيان الإيجار B2", () => {
+  it("يقيّد الترجمة بما يدل عليه الحوار ولا يخترع بنوداً مشمولة", () => {
+    const part = B2_HOEREN_B.find((item) => item.teil === 1);
+    const statement = part?.statements?.find((item) => item.id === "h1-s8");
+    expect(statement?.ar).toContain("التكاليف المشمولة عادةً");
+    expect(statement?.whyAr).toContain("لا يحدد الحوار بقية البنود المشمولة");
+  });
+});

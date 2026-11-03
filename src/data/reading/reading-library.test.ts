@@ -40,6 +40,18 @@ function germanSpans(explanation: string): string[] {
 }
 
 describe("مكتبة القراءة المتدرجة (قراءة حرة)", () => {
+  it("ينقل kleine Regel بمعنى قاعدة بسيطة لا قاعدة صغيرة حجماً", () => {
+    const reading = READING_LIBRARY.find((item) => item.id === "rd-b2-6");
+    const question = reading?.questions?.find((item) => item.q.startsWith("Wer hat nur eine kleine Regel"));
+    expect(question?.qAr).toBe("من لديه قاعدة بسيطة واحدة فقط: لا هاتف أثناء تناول الطعام؟");
+  });
+
+  it("تصوغ أيام العمل من المنزل في نموذج هجين بعربية طبيعية", () => {
+    const reading = READING_LIBRARY.find((item) => item.id === "rd-b2-4");
+    const question = reading?.questions?.find((item) => item.q.includes("drei Tage Büro"));
+    expect(question?.qAr).toBe("تخطط الشركة لنموذج هجين: ثلاثة أيام في المكتب ويومان من المنزل.");
+  });
+
   it("15 نصاً موزّعة على المستويات الأربعة بمعرّفات فريدة", () => {
     expect(READING_LIBRARY).toHaveLength(15);
     const ids = READING_LIBRARY.map((r) => r.id);
@@ -103,6 +115,55 @@ describe("مكتبة القراءة المتدرجة (قراءة حرة)", () =>
 });
 
 describe("مكتبة قراءة امتحان B2", () => {
+  it("يحفظ المقارنة في ختام نص الحياة الحضرية", () => {
+    const text = B2_READING_EXAM.find((reading) => reading.id === "b2x-6");
+    expect(text?.text).toContain("Die Zukunft der Stadt entscheidet sich weniger in den Hochhäusern als auf der Straße.");
+    expect(text?.textAr).toContain("مستقبل المدينة لا يُحسم في ناطحات السحاب بقدر ما يُحسم في الشارع.");
+    expect(text?.textAr).not.toContain("في الشوارع لا في ناطحات السحاب");
+    expect(text?.text).toContain("Nachbarschaftszentren");
+    expect(text?.textAr).toContain("المراكز المجتمعية في الأحياء");
+    expect(text?.textAr).not.toContain("مراكز جوار");
+    expect(text?.textAr).toContain("يعتمد مخططو المدن بشكل متزايد على مفاهيم مستدامة");
+    expect(text?.textAr).toContain("مراكز المدن الخالية من السيارات");
+    expect(text?.textAr).toContain("مساكن ميسورة التكلفة");
+    expect(text?.textAr).toContain("المدن الصالحة للعيش تحتاج إلى أكثر من البنية التحتية");
+    expect(text?.textAr).not.toContain("يعتمد مخططو المدن بشكل متزايد مفاهيم");
+    expect(text?.text).toContain("Wohnraum wird knapp und teuer");
+    expect(text?.textAr).toContain("تقلّ المساكن المتاحة وترتفع تكلفتها");
+    expect(text?.text).toContain("der Verkehr nimmt zu");
+    expect(text?.textAr).toContain("وتزداد حركة المرور");
+    expect(text?.textAr).not.toContain("الازدحام المروري");
+    expect(text?.text).toContain("Schattenseiten");
+    expect(text?.textAr).toContain("جوانب سلبية");
+    expect(text?.textAr).not.toContain("جوانب مظلمة");
+    expect(text?.text).toContain("Klimaschutzpläne");
+    expect(text?.textAr).toContain("تستقطب المدن الكبرى الناس من أنحاء العالم بما توفره من فرص عمل");
+    expect(text?.textAr).toContain("وضعت مدن كثيرة خططاً خاصة لحماية المناخ، وتدعم مشاريع للسكن المشترك");
+  });
+
+  it("يصوغ jeder dritte عربياً بوصفه واحداً من كل ثلاثة", () => {
+    const text = B2_READING_EXAM.find((reading) => reading.id === "b2x-8");
+    expect(text?.questions[0]?.qAr).toBe(
+      "كم سيبلغ عمر واحد من كل ثلاثة من سكان ألمانيا بحلول عام 2030؟",
+    );
+  });
+
+  it("يستخدم تركيباً سليماً في خاتمة نص الشيخوخة عن التعامل معها", () => {
+    const text = B2_READING_EXAM.find((reading) => reading.id === "b2x-8");
+    expect(text?.text).toContain(
+      "Die Frage ist nicht, wie wir das Altern verhindern, sondern wie wir damit umgehen.",
+    );
+    expect(text?.text).not.toContain("wie wir mit ihr gestalten");
+  });
+
+  it("يحسم مرجع الضمير في جملة الجيل 60+", () => {
+    const text = B2_READING_EXAM.find((reading) => reading.id === "b2x-8");
+    expect(text?.text).toContain(
+      "wenn die Generation 60+ als aktive Ressource gesehen wird",
+    );
+    expect(text?.text).not.toContain("wenn sie als aktive Ressource gesehen wird");
+  });
+
   it("12 نصاً امتحانياً بأسئلة وأسباب عربية بدليل ألماني", () => {
     const problems: string[] = [];
     expect(B2_READING_EXAM.length).toBeGreaterThanOrEqual(12);
@@ -138,5 +199,23 @@ describe("مكتبة قراءة امتحان B2", () => {
       }
     }
     expect(problems).toEqual([]);
+  });
+});
+
+
+describe("حراسة ترجمة aufstehen في القراءة", () => {
+  it("يوحّد النص والسؤال على معنى النهوض", () => {
+    const reading = READING_LIBRARY.find((item) => item.id === "rd-a1-2");
+    expect(reading?.textAr).toMatch(/^أنهض في السادسة/);
+    expect(reading?.questions?.find((item) => item.q === "Wann steht er auf?")?.qAr).toBe("متى ينهض؟");
+  });
+});
+
+describe("حراسة ترجمة Warmmiete في إعلان السكن", () => {
+  it("تحفظ دلالة warm دون افتراض أن التدفئة هي التكلفة الوحيدة", () => {
+    const reading = READING_LIBRARY.find((item) => item.id === "rd-a2-2");
+    expect(reading?.text).toContain("650 Euro warm");
+    expect(reading?.textAr).toContain("650 يورو شاملة التكاليف المذكورة في الإعلان");
+    expect(reading?.textAr).not.toContain("شاملة التدفئة");
   });
 });

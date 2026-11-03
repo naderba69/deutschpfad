@@ -21,7 +21,7 @@ export interface Diktat {
 
 export const DIKTATE: Diktat[] = [
   /* ── A1 ── */
-  { id: "dk-a1-1", level: "A1", text: "Guten Tag! Ich heiße Mona und komme aus Tunesien.", ar: "طاب يومك! اسمي منى وأنا من تونس.", focusWords: ["heiße", "komme"], note: "الهملة ß في heiße — تكتب ss بعدها لا ß في النسخ." },
+  { id: "dk-a1-1", level: "A1", text: "Guten Tag! Ich heiße Mona und komme aus Tunesien.", ar: "طاب يومك! اسمي منى وأنا من تونس.", focusWords: ["heiße", "komme"], note: "الحرف ß في heiße يُستبدل بـ ss إذا لم يتوفر على لوحة المفاتيح." },
   { id: "dk-a1-2", level: "A1", text: "Meine Familie ist groß und wir essen zusammen.", ar: "عائلتي كبيرة ونأكل معاً.", focusWords: ["Familie", "zusammen"], note: "Familie بحرف F كبير (اسم)." },
   { id: "dk-a1-3", level: "A1", text: "Ich wohne in Berlin und arbeite in einer Schule.", ar: "أسكن في برلين وأعمل في مدرسة.", focusWords: ["wohne", "Schule"], note: "Berlin اسم مدينة — حرف كبير." },
   { id: "dk-a1-4", level: "A1", text: "Am Montag gehe ich ins Kino und am Dienstag in die Stadt.", ar: "الاثنين أذهب للسينما والثلاثاء إلى المدينة.", focusWords: ["Montag", "Dienstag", "Kino"], note: "أيام الأسبوع بأحرف كبيرة." },
@@ -31,7 +31,7 @@ export const DIKTATE: Diktat[] = [
   { id: "dk-a2-2", level: "A2", text: "Ich habe gestern einen sehr interessanten Film gesehen.", ar: "شاهدت أمس فيلماً مثيراً جداً.", focusWords: ["interessanten", "gesehen"], note: "einen interessanten Film — نصب مذكر مع تنوين." },
   { id: "dk-a2-3", level: "A2", text: "Kannst du mir bitte das Salz geben?", ar: "هل يمكنك إعطائي الملح من فضلك؟", focusWords: ["Kannst", "Salz"], note: "mir = Dativ (لي)." },
   { id: "dk-a2-4", level: "A2", text: "Wir treffen uns am Freitag um zehn Uhr vor dem Bahnhof.", ar: "نتقابل الجمعة العاشرة أمام المحطة.", focusWords: ["Freitag", "Bahnhof"], note: "vor dem Bahnhof — vor + Dativ (مكان ثابت)." },
-  { id: "dk-a2-5", level: "A2", text: "Der Kaffee schmeckt mir sehr gut, aber er ist heiß.", ar: "القهوة تعجبني كثيراً لكنها ساخنة.", focusWords: ["schmeckt", "heiß"], note: "schmecken + Dativ (mir). heiß بـ ei." },
+  { id: "dk-a2-5", level: "A2", text: "Der Kaffee schmeckt mir sehr gut, aber er ist heiß.", ar: "مذاق القهوة طيب جداً بالنسبة إليّ، لكنها ساخنة.", focusWords: ["schmeckt", "heiß"], note: "schmecken + Dativ (mir). heiß بـ ei." },
   /* ── B1 ── */
   { id: "dk-b1-1", level: "B1", text: "Obwohl das Wetter schlecht war, sind wir spazieren gegangen.", ar: "رغم سوء الطقس ذهبنا في نزهة.", focusWords: ["Obwohl", "spazieren gegangen"], note: "Obwohl + فعل في النهاية. Perfekt: sind gegangen." },
   { id: "dk-b1-2", level: "B1", text: "Ich wusste nicht, dass die Prüfung schon nächste Woche ist.", ar: "لم أكن أعلم أن الامتحان الأسبوع القادم.", focusWords: ["wusste", "dass", "Prüfung"], note: "dass + جملة ثانوية (فعل في النهاية). wusste = Präteritum من wissen." },

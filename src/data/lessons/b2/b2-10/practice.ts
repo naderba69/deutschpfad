@@ -9,7 +9,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e1",
       type: "multiple-choice",
       instructionAr: "اختر عبارة التأكيد:",
-      questionDe: "___ ist das richtig. (ثابت أن)",
+      questionDe: "___ die Auswertung auf drei Texten basiert. (ثابت أن)",
       options: ["Es ist erwiesen, dass", "Es könnte sein, dass", "In einem gewissen Maße", "Unter bestimmten Umständen"],
       correctIndex: 0,
       explanation: "التأكيد: es ist erwiesen.",
@@ -54,8 +54,8 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e4",
       type: "word-ordering",
       instructionAr: "رتّب الجملة:",
-      tokens: ["erwiesen", "Es", "ist", "dass", "Sprachen", "Denken", "unser", "beeinflussen", ",", "."],
-      correctSentence: "Es ist erwiesen, dass Sprachen unser Denken beeinflussen.",
+      tokens: ["erwiesen", "Es", "ist", "dass", "die", "Auswertung", "auf", "drei", "Texten", "basiert", ",", "."],
+      correctSentence: "Es ist erwiesen, dass die Auswertung auf drei Texten basiert.",
       explanation: "جملة أكاديمية: es ist erwiesen + dass.",
       errorType: "word-order",
     },
@@ -150,13 +150,13 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e12-punct",
       type: "fill-blank",
       instructionAr: "ضع علامة الترقيم الصحيحة (اكتبها في نهاية الجملة):",
-      template: "Er fragte mich, ob ich komme ___  — Ich habe Hunger, aber ich koche ___  — Vorsicht, die Tür ist offen ___",
+      template: "Er fragte mich, ob ich komme ___  — Ich habe Hunger, aber ich koche ___  — Wann beginnt das Seminar ___",
       blanks: [
         { correct: ".", options: [".", ",", "?", "!"] },
         { correct: ".", options: [".", "?", "!", ":"] },
-        { correct: "!", options: [".", ",", "?", "!"] },
+        { correct: "?", options: [".", ",", "?", "!"] },
       ],
-      explanation: "جملة خبرية → نقطة. تحذير → علامة تعجب.",
+      explanation: "جملة غير مباشرة خبرية → نقطة؛ وجملة خبرية منسقة بـaber → نقطة؛ وسؤال مباشر → علامة استفهام.",
       errorType: "punctuation",
     },
     {
@@ -188,7 +188,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "Zur", options: ["Zur", "Damit", "Für"], errorType: "preposition" },
       ],
       explanation:
-        "لكل أداة ربط نظيرٌ من حروف الجر: wenn ← bei + Dativ، وobwohl ← trotz + Genitiv، وum ... zu ← zur + Dativ (zur Klärung). أدوات الربط تُتبع بجملة، وحروف الجر تُتبع باسم.",
+        "في هذه الأمثلة يمكن التعبير عن العلاقة بجملة أو تركيب اسمي: عند الوصول «wenn man ankommt» → «bei der Ankunft»، رغم المطر «obwohl es regnet» → «trotz des Regens»، ولغرض التوضيح «damit man die Frage klärt» → «zur Klärung der Frage». ليست هذه مقابلات آلية لكل سياق. أدوات الربط تُتبع بجملة، وحروف الجر تُتبع باسم.",
       errorType: "preposition",
     },
     {
@@ -200,7 +200,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctWord: "der",
       options: ["der", "die", "des", "dem"],
       explanation:
-        "nach حرف جر يلزم Dativ دائماً، ومؤنث Dativ هو der: nach der Prüfung. (die صيغة الرفع أو النصب للمؤنث، وdes صيغة الإضافة للمذكر والمحايد.)",
+        "في «nach der Prüfung» يأتي الاسم في Dativ، ومؤنث Dativ يأخذ der. قارن «nach dem Studium» و«nach der Ankunft»؛ أما التعبير الثابت «nach Hause» فلا تظهر فيه أداة اسمية.",
       errorType: "case",
     },
     {
@@ -235,24 +235,24 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       type: "dictation",
       instructionAr: "استمع واكتب الجملة:",
       audioText: "Zusammenfassend lässt sich sagen, dass B2 ein Meilenstein ist.",
-      explanation: "خلاصةً يمكن القول إن B2 علامة فارقة — الخاتمة الذهبية.",
+      explanation: "تلخّص العبارة الفكرة في هذا المثال: «Zusammenfassend lässt sich sagen, dass …»؛ ويمكن اختيار صيغة أخرى بحسب النص.",
       errorType: "spelling",
     },
   ];
 
 export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     mistakes: [
-      { wrong: "أسلوب حاد بلا دليل", right: "لطّف: meiner Ansicht nach", whyAr: "الأكاديميا تكره الجزم." },
-      { wrong: "Ich denke في مقال أكاديمي", right: "Meiner Ansicht nach / Meines Erachtens", whyAr: "الأسلوب الرسمي." },
-      { wrong: "تحفظ زائد", right: "وازن: أكّد + لطّف + تحفظ", whyAr: "التوازن هو النضج." },
+      { wrong: "حكم مباشر بلا دليل كافٍ", right: "اسند الحكم أو حدّد نطاقه", whyAr: "لا تُمنع العبارة المباشرة إذا دعمها دليل مناسب؛ المهم أن يتناسب مدى الادعاء مع ما يسنده." },
+      { wrong: "افتراض أن Ich denke خطأ دائماً في مقال أكاديمي", right: "اختر صيغة تلائم التخصص والمهمة", whyAr: "قد تكون Ich denke أقل رسمية في بعض السياقات، لكنها ليست خطأ مطلقاً؛ ويمكن استعمال صيغ أخرى وفق تعليمات المقرر." },
+      { wrong: "تكرار ألفاظ التحفظ بلا حاجة", right: "وازن درجة الجزم بحسب الدليل", whyAr: "التكرار قد يربك موقف الكاتب؛ اختر أداة واحدة مناسبة ولا تستخدمها بديلاً عن الدليل." },
     ],
     eselsbruecken: [
-      "«ثلاثية الأكاديميا: أكّد (erwiesen)، لطّف (meiner Ansicht)، تحفظ (in gewissem Maße)».",
-      "«Zusammenfassend lässt sich sagen» — خاتمة ذهبية لكل مقال.",
+      "اربط العبارة بوظيفتها: «erwiesen» لإسناد تأكيد، و«meiner Ansicht nach» لبيان الرأي، و«in gewissem Maße» لتقييد النطاق.",
+      "«Zusammenfassend lässt sich sagen» عبارة ممكنة للتلخيص، وليست خاتمة إلزامية لكل مقال.",
     ],
     culturalNote: {
       title: "الجامعات الألمانية",
       content:
-        "معظم الجامعات الحكومية في ألمانيا لا تفرض رسوم دراسة (كما يرد في نص الوساطة أدناه). والجامعات: TU (تقنية)، Universität (شاملة)، Fachhochschule (تطبيقية). وتختلف متطلبات اللغة حسب الجامعة والبرنامج، وقد تُطلب شهادات مثل TestDaF أو DSH. وعبارة: «der Numerus clausus» (قيد القبول — تخصص محدود القبول مثل الطب؛ تُحدَّد علامة القطع من المنافسة، وغالباً لا تُعلن مسبقاً).",
+        "لا تفرض جامعات حكومية كثيرة رسوماً دراسية عامة على برامج عديدة، لكن توجد استثناءات؛ وتُدفع المساهمة الفصلية منفصلةً وقد تختلف قيمتها ومكوناتها. تتأثر الرسوم وشروط القبول بالولاية والجامعة والبرنامج ووضع الطالب، لذلك ينبغي الرجوع إلى صفحة الجامعة والبرنامج الحالية. تختلف المؤسسات أيضاً في اختصاصاتها وتسمياتها؛ فـTU غالباً ذات تركيز تقني، بينما يشيع وصف Fachhochschule أو Hochschule للتركيز التطبيقي، ولا تمثل هذه التسميات وحدها تصنيفاً شاملاً لكل مؤسسة. قد تطلب البرامج شهادات لغة مثل TestDaF أو DSH وفق شروطها. ويشير Numerus clausus إلى قيد قبول في برامج محدودة المقاعد؛ وقد تتغير درجات القبول ومعايير الاختيار من دورة إلى أخرى، فلا توجد علامة عامة ثابتة.",
     },
   };

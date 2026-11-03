@@ -43,8 +43,8 @@ export const DIALOGUES: Dialogue[] = [
         ar: "طاب يومك! ماذا تريد؟",
         choices: [
           { id: "c1", de: "Ich möchte bitte einen Kaffee.", ar: "أريد قهوة من فضلك.", next: "n2", feedback: "طلب مهذب ممتاز! (möchte + نصب)" },
-          { id: "c2", de: "Ich will Kaffee.", ar: "أريد قهوة.", next: "n1", feedback: "«will» حادة جداً في المطعم — استخدم möchte دائماً." },
-          { id: "c3", de: "Kaffee.", ar: "قهوة.", next: "n1", feedback: "قصيرة جداً — أضف «Ich möchte bitte» للأدب." },
+          { id: "c2", de: "Ich will Kaffee.", ar: "أريد قهوة.", next: "n2", feedback: "الجملة صحيحة ومفهومة، لكنها تعبّر عن الرغبة مباشرةً؛ قد تلائم الموقف أو تبدو أقل لطفاً بحسب النبرة والسياق. في هذا التمرين اخترنا صيغة شائعة ألطف للطلب: «Ich möchte bitte einen Kaffee»؛ وليس معنى ذلك أن «wollen» ممنوعة دائماً." },
+          { id: "c3", de: "Kaffee.", ar: "قهوة.", next: "n1", feedback: "قد يُفهم الطلب المقتضب من السياق، لكنه لا يوضح الصيغة المقصودة هنا. جرّب «Einen Kaffee, bitte» أو «Ich hätte gern einen Kaffee, bitte»؛ فهما نموذجان واضحان ولطيفان لهذا التمرين." },
         ],
       },
       n2: {
@@ -142,7 +142,7 @@ export const DIALOGUES: Dialogue[] = [
         de: "Erzählen Sie mir etwas über Ihre Erfahrung.",
         ar: "حدثني عن خبرتك.",
         choices: [
-          { id: "c1", de: "Ich habe drei Jahre als Programmierer gearbeitet und dabei viele Projekte geleitet.", ar: "عملت ثلاث سنوات مبرمجاً وقدمت مشاريع كثيرة.", next: "n2", feedback: "إجابة قوية بجمل مركبة! (Perfekt + Relativsatz)" },
+          { id: "c1", de: "Ich habe drei Jahre als Programmierer gearbeitet und dabei viele Projekte geleitet.", ar: "عملت ثلاث سنوات مبرمجاً وأدرت مشاريع كثيرة.", next: "n2", feedback: "إجابة قوية بجمل مركبة! (Perfekt + Relativsatz)" },
           { id: "c2", de: "Ich habe viel gearbeitet.", ar: "عملت كثيراً.", next: "n1", feedback: "عامة جداً — أضف تفاصيل: أين؟ كم سنة؟ ماذا أنجزت؟" },
         ],
       },
@@ -319,7 +319,7 @@ export const DIALOGUES: Dialogue[] = [
         id: "n2",
         speaker: "المالك",
         de: "Die Miete ist 600 Euro warm. Ist die Lage für Sie in Ordnung?",
-        ar: "الإيجار 600 يورو شامل. هل الموقع مناسب لك؟",
+        ar: "الإيجار 600 يورو مع التكاليف المشمولة عادةً. هل الموقع مناسب لك؟",
         choices: [
           { id: "c1", de: "Ja, die U-Bahn ist nah. Wie lange ist der Vertrag?", ar: "نعم، المترو قريب. كم مدة العقد؟", next: "n3", feedback: "سؤال ذكي عن العقد." },
           { id: "c2", de: "600 Euro ist zu viel für mich.", ar: "600 يورو كثير عليّ.", next: "end2", feedback: "واضح لكن قد يغلق الحوار." },

@@ -234,7 +234,11 @@ export function ConversationSimulator() {
 
       {/* شريط التقدم */}
       <div className="mb-4 flex items-center gap-3">
-        <Progress value={finished ? 100 : progress} className="h-2 flex-1" />
+        <Progress
+          value={finished ? 100 : progress}
+          aria-label="تقدم المحادثة"
+          className="h-2 flex-1"
+        />
         <span className="font-de text-xs font-bold text-primary">{Math.round(progress)}%</span>
       </div>
 
@@ -263,7 +267,7 @@ export function ConversationSimulator() {
                   type="button"
                   onClick={() => setRate((r) => (r === 0.75 ? 0.85 : 0.75))}
                   className="tap-target rounded-full border px-2 text-[11px] font-bold text-muted-foreground"
-                  aria-label="تغيير سرعة النطق"
+                  aria-label={`${rate === 0.75 ? "بطيء" : "عادي"} — تغيير سرعة النطق`}
                 >
                   {rate === 0.75 ? "بطيء" : "عادي"}
                 </button>

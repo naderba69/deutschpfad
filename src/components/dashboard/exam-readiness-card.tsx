@@ -121,7 +121,7 @@ export function ExamReadinessCard({ completedUnits, totalUnits, reviewsCount, go
                 <div key={s.key} className="flex items-center gap-2 rounded-xl border bg-muted/20 px-3 py-2">
                   <span className="text-primary">{s.icon}</span>
                   <span className="flex-1 text-xs font-bold">{s.label}</span>
-                  <Progress value={pct} className="h-1.5 w-16" />
+                  <Progress value={pct} className="h-1.5 w-16" aria-label={`جاهزية مهارة ${s.label}: ${pct}%`} />
                   <span className={cn("font-de text-xs font-extrabold", pct >= 60 ? "text-success" : "text-destructive")}>
                     {pct}%
                   </span>

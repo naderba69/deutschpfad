@@ -5,6 +5,7 @@
  */
 import { describe, expect, it } from "vitest";
 import { LEVEL_MODELS } from "./level-models";
+import { A1_SPRECHEN } from "./a1-sprechen";
 import type { ExamModel } from "./level-models";
 
 const MODELS: ExamModel[] = LEVEL_MODELS.A1;
@@ -66,6 +67,18 @@ describe("نماذج A1 التدريبية — الكتابة", () => {
       expect(t.requires.length).toBeGreaterThanOrEqual(2);
       expect(t.aufgabeDe.length).toBeGreaterThan(40);
     }
+  });
+});
+
+describe("ترجمة aufstehen في نموذج التحدث A1", () => {
+  it("يفصل النهوض عن الاستيقاظ في العبارة النموذجية وقائمة التحقق", () => {
+    const routineTurn = A1_SPRECHEN.flatMap((part) => part.turns)
+      .find((turn) => turn.modelDe.startsWith("Ich stehe um sieben Uhr auf."));
+    expect(routineTurn?.modelAr).toContain("أنهض من الفراش في السابعة");
+    expect(routineTurn?.modelAr).not.toContain("أستيقظ");
+    const routinePart = A1_SPRECHEN.find((part) => part.checklistAr.some((item) => item.includes("النهوض من الفراش")));
+    expect(routinePart).toBeDefined();
+    expect(routinePart?.checklistAr.join(" ")).not.toContain("ساعة الاستيقاظ");
   });
 });
 

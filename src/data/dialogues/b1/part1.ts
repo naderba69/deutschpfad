@@ -31,8 +31,8 @@ export const B1_DIALOGUES_1: DailyDialogue[] = [
       ]},
       { de: "Was ist vielleicht die beste Lösung?", ar: "ما الحل الأفضل ربما؟", options: [
         { text: "Ein hybrides Modell", ar: "نموذج هجين", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Nur im Büro arbeiten", ar: "في المكتب فقط", correct: false, explanation: "لا — الحل المقترح مختلط: «ein hybrides Modell vielleicht die beste Lösung»." },
-        { text: "Nur zu Hause bleiben", ar: "في البيت فقط", correct: false, explanation: "لا — لم يُقترح البقاء في البيت وحده؛ والخلاصة «Deshalb ist ein hybrides Modell vielleicht die beste Lösung»." },
+        { text: "Nur im Büro arbeiten", ar: "العمل في المكتب فقط", correct: false, explanation: "لا — الحل المقترح مختلط: «ein hybrides Modell vielleicht die beste Lösung»." },
+        { text: "Nur zu Hause bleiben", ar: "البقاء في البيت فقط", correct: false, explanation: "لا — لم يُقترح البقاء في البيت وحده؛ والخلاصة «Deshalb ist ein hybrides Modell vielleicht die beste Lösung»." },
       ]},
       { de: "Warum ist Homeoffice nicht für jeden gut?", ar: "لماذا ليس العمل عن بُعد جيداً للجميع؟", options: [
         { text: "Manche brauchen die Trennung zwischen Arbeit und Freizeit", ar: "بعض الناس يحتاجون الفصل بين العمل والفراغ", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
@@ -107,9 +107,9 @@ export const B1_DIALOGUES_1: DailyDialogue[] = [
     ],
     questions: [
       { de: "Worüber beschwert sich die Person?", ar: "ممَّ يشتكي الشخص؟", options: [
-        { text: "Über ein schmutziges Zimmer", ar: "من غرفة متسخة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Über das Essen im Restaurant", ar: "من الطعام", correct: false, explanation: "لا — لم يُذكر طعام Restaurant؛ والشكوى «Das Zimmer war schmutzig»." },
-        { text: "Über die Parkplätze vor dem Haus", ar: "من مواقف السيارات", correct: false, explanation: "لا — لم تُذكر مواقف سيارات Parkplätze؛ والمشتكى منه Zimmer schmutzig." },
+        { text: "Über ein schmutziges Zimmer", ar: "عن غرفة متسخة", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
+        { text: "Über das Essen im Restaurant", ar: "عن الطعام في المطعم", correct: false, explanation: "لا — لم يُذكر الطعام في المطعم؛ والشكوى «Das Zimmer war schmutzig»." },
+        { text: "Über die Parkplätze vor dem Haus", ar: "عن مواقف السيارات أمام المنزل", correct: false, explanation: "لا — لم تُذكر مواقف السيارات؛ والشكوى «Das Zimmer war schmutzig»." },
       ]},
       { de: "Wann war die Person im Hotel?", ar: "متى كان الشخص في الفندق؟", options: [
         { text: "Vom 3. bis 5. August", ar: "من 3 إلى 5 أغسطس", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
@@ -119,7 +119,7 @@ export const B1_DIALOGUES_1: DailyDialogue[] = [
       { de: "Was erwartet die Person?", ar: "ماذا يتوقع الشخص؟", options: [
         { text: "Eine Entschädigung, zum Beispiel Geld zurück", ar: "تعويضاً، مثلاً استرداد المال", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
         { text: "Nichts, sie erwartet gar keine Reaktion", ar: "لا شيء", correct: false, explanation: "لا — هناك توقّع صريح: «Ich erwarte eine Entschädigung»." },
-        { text: "Ein neues Hotelzimmer komplett gratis", ar: "فندقاً جديداً مجاناً", correct: false, explanation: "لا — لم تُطلب غرفة مجانية gratis؛ بل تعويضٌ مثل «eine Rückerstattung»." },
+        { text: "Ein neues Hotelzimmer komplett gratis", ar: "غرفة فندقية جديدة مجاناً", correct: false, explanation: "لا — لم تُطلب غرفة فندقية مجانية؛ بل تعويضٌ مثل «eine Rückerstattung»." },
       ]},
     ],
     keyVocab: [
@@ -159,7 +159,7 @@ export const B1_DIALOGUES_1: DailyDialogue[] = [
       ]},
       { de: "Wo ruft die Person an?", ar: "أين يتصل الشخص؟", options: [
         { text: "Bei einer Arztpraxis", ar: "بعيادة طبيب", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Bei einer großen Bank", ar: "ببنك", correct: false, explanation: "لا — لم يُذكر بنك Bank؛ والمستقبِلة «Praxis Dr. Müller, guten Tag!»." },
+        { text: "Bei einer großen Bank", ar: "في بنك كبير", correct: false, explanation: "لا — لم يُذكر بنك Bank؛ والمستقبِلة «Praxis Dr. Müller, guten Tag!»." },
         { text: "Bei einem Hotel am Platz", ar: "بفندق", correct: false, explanation: "لا — لم يُذكر فندق Hotel؛ والاتصال بعيادة Praxis Dr. Müller." },
       ]},
     ],
@@ -199,7 +199,7 @@ export const B1_DIALOGUES_1: DailyDialogue[] = [
       ]},
       { de: "Was macht die Person am Ende?", ar: "ماذا سيفعل الشخص في النهاية؟", options: [
         { text: "Sie kümmert sich um das Problem und meldet sich später", ar: "سيتولى الأمر ويتصل لاحقاً", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Sie fährt nach Hause und ruht sich erst einmal aus", ar: "ستعود إلى البيت", correct: false, explanation: "لا — لم يُذكر بيتٌ أو راحة nach Hause؛ والتعهّد «Ja, ich kümmere mich darum»." },
+        { text: "Sie fährt nach Hause und ruht sich erst einmal aus", ar: "ستعود إلى البيت وتستريح قليلاً أولاً", correct: false, explanation: "لا — لم يُذكر رجوعٌ إلى البيت أو استراحة؛ والتعهّد «Ja, ich kümmere mich darum»." },
         { text: "Sie kündigt noch am selben Tag fristlos", ar: "ستستقيل", correct: false, explanation: "لا — لم تُذكر استقالة kündigen؛ والوعد «Ich melde mich später»." },
       ]},
     ],

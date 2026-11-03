@@ -209,7 +209,11 @@ export function UmformungClient() {
       ) : (
         <div className="space-y-4">
           <div className="flex items-center gap-3">
-            <Progress value={progress} className="h-2 flex-1" />
+            <Progress
+              value={progress}
+              aria-label={`التقدم في تمرين التحويل: أُنجز ${idx} من ${shuffled.length}`}
+              className="h-2 flex-1"
+            />
             <span className="font-de shrink-0 text-xs font-bold text-primary">{idx + 1}/{shuffled.length}</span>
           </div>
 

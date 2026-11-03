@@ -1,6 +1,7 @@
 import {describe, expect, it} from "vitest";
 
 import {A1_DIALOGUES_2} from "@/data/dialogues/a1/part2";
+import { A1_VOCAB } from "@/data/vocabulary/a1";
 import {lessonA104} from "./a1-04";
 
 const lesson = lessonA104;
@@ -37,6 +38,30 @@ function knownTaskIds(): Set<string> {
 }
 
 describe("A1-04 — السكن والمنزل", () => {
+  it("يحرس ترجمة وأجناس مفردات الأثاث والأبواب والنوافذ", () => {
+    const entries = A1_VOCAB["a1-04"];
+    const expected = [
+      ["der Tisch", "الطاولة", "der"],
+      ["der Stuhl", "الكرسي", "der"],
+      ["das Sofa", "الأريكة", "das"],
+      ["das Bett", "السرير", "das"],
+      ["der Schrank", "الخزانة", "der"],
+      ["die Lampe", "المصباح", "die"],
+      ["das Fenster", "النافذة", "das"],
+      ["die Tür", "الباب", "die"],
+      ["die Wand", "الجدار", "die"],
+    ];
+    for (const [de, ar, gender] of expected) {
+      const entry = entries.find((item) => item.de === de);
+      expect(entry?.ar, de).toBe(ar);
+      expect(entry?.g, de).toBe(gender);
+    }
+    const localPrepositions = entries.find((item) => item.de === "im / in der / auf dem");
+    expect(localPrepositions?.ar).toContain("im = in dem");
+    expect(localPrepositions?.ar).toContain("للمؤنث في Dativ");
+    expect(localPrepositions?.ar).toContain("عند وصف الموقع");
+  });
+
   it("المورد الحواري المرتبط لا يخلط بين الغرف والمطبخ الإضافي", () => {
     const dialogue = A1_DIALOGUES_2.find((item) => item.id === "a1-07-wohnung");
     expect(dialogue).toBeDefined();
@@ -44,6 +69,17 @@ describe("A1-04 — السكن والمنزل", () => {
     expect(answer?.de).toContain("Die Küche ist extra.");
     const question = dialogue?.questions.find((item) => item.de === "Wie viele Zimmer hat die Wohnung?");
     expect(question?.options.filter((option) => option.correct).map((option) => option.text)).toEqual(["Zwei Zimmer"]);
+  });
+
+  it("تصوغ تمييز Wohnung/Haus وصفياً من دون تعميم ثقافي غير مسند", () => {
+    const section = lesson.theory?.find((item) => item.id === "t1");
+    expect(section?.explanationAr).toContain("تمييزات لغوية مهمّة في هذا الحقل.");
+    const example = section?.examples?.find((item) => item.de === "Ich suche eine Wohnung, kein Haus.");
+    expect(example?.ar).toContain("تمييز بين نوعَي السكن");
+  });
+
+  it("تترجم Wohnung في هدف الوحدة إلى شقة لا إلى منزل أعم", () => {
+    expect(lesson.lernziele.find((goal) => goal.id === "z2")?.ar).toContain("أصف شقتي");
   });
 
   it("تحافظ عناوين مشاهد الاستماع على موضوعها وتفصح عن صوت المتصفح الآلي", () => {
@@ -79,6 +115,18 @@ describe("A1-04 — السكن والمنزل", () => {
     }
   });
 
+  it("تميّز ترجمة unter المكانية والمبنى السكني عن موضع الجارة", () => {
+    const reading = lesson.reading;
+    expect(reading).toBeDefined();
+    if (!reading) throw new Error("A1-04 reading is required");
+    expect(reading.paragraphs[2]).toContain("Der Kühlschrank steht neben dem Fenster");
+    expect(reading.paragraphsAr[2]).toContain("الثلّاجة بجانب النافذة");
+    expect(reading.paragraphs[2]).toContain("Unter dem Bett habe ich meine Koffer");
+    expect(reading.paragraphsAr[2]).toContain("وتحت السرير حقائبي");
+    expect(reading.paragraphs[4]).toContain("Frau Berger wohnt unter mir");
+    expect(reading.paragraphsAr[4]).toContain("السيّدة بيرغر تسكن في الطابق الذي أسكن فوقه");
+  });
+
   it("ترجمة القراءة محاذية للفقرات وسؤال r5 له إجابة واحدة منصوص عليها", () => {
     const reading = lesson.reading;
     expect(reading).toBeDefined();
@@ -101,5 +149,21 @@ describe("A1-04 — السكن والمنزل", () => {
       expect(task.correctIndex).toBeGreaterThanOrEqual(0);
       expect(task.correctIndex).toBeLessThan(task.options.length);
     }
+  });
+});
+
+describe("حراسة groß وklein وneu في وصف الشقة", () => {
+  it("يطابق حجم الغرفة والمطبخ وحداثة الموقد مع المقصود في الرسالة", () => {
+    const reading = lesson.reading;
+    expect(reading).toBeDefined();
+    if (!reading) throw new Error("A1-04 reading is required");
+    expect(reading.paragraphs[0]).toContain("nicht sehr groß");
+    expect(reading.paragraphsAr[0]).toContain("ليست كبيرة جداً");
+    expect(reading.paragraphs[2]).toContain("sehr klein, aber praktisch");
+    expect(reading.paragraphsAr[2]).toContain("المطبخ صغير جداً لكنّه عمليّ");
+    expect(reading.paragraphs[2]).toContain("der Herd ist ziemlich neu");
+    expect(reading.paragraphsAr[2]).toContain("الموقد جديد نسبياً");
+    expect(JSON.stringify(lesson)).toContain("Ja, die Küche ist groß und modern.");
+    expect(JSON.stringify(lesson)).toContain("نعم، المطبخ كبير وحديث.");
   });
 });

@@ -18,7 +18,7 @@ export const lessonB210: Lesson = {
   order: 1,
   titleDe: "Studium in Deutschland",
   titleAr: "الدراسة في ألمانيا",
-  summary: "النظام الجامعي والكتابة الأكاديمية (Fachsprache)، أساليب التأكيد والتلطيف والتحفظ، ومراجعة شاملة تجمع كل قواعد B2 — خاتمة المستويات الأربعة!",
+  summary: "الكتابة في السياق الجامعي (Fachsprache)، والتمييز بين التأكيد والرأي والاحتمال وتحديد النطاق، والأسلوب الاسمي، مع مراجعة مختارة لبنى من B2.",
   lernziele,
   einfuehrung,
   review,

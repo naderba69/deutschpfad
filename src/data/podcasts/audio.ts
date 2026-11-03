@@ -47,7 +47,8 @@ export const MAX_PODCAST_CLIP_CHARS = 1500;
  *
  * القاعدة الصوتية الأصلية: A1 وA2 بصوت `voice-02`، وB1 وB2 بصوت `voice-03`.
  * أُعيد إنتاج `p-b1-homeoffice` بعد تحديث نصها و`p-b1-gesundheit` بعد تحديث النص الصحي
- * بأصوات سرد أخرى في 2026-10-25؛ هذا اختلاف صوتي معلن، لا تقييم لجودة النطق.
+ * بأصوات سرد أخرى في 2026-10-25؛ وأُعيد إنتاج `p-b2-migration` من نصها الحالي بصوت `voice-26`
+ * في 2026-10-26. هذه اختلافات صوتية معلنة لمتابعة تحديث النص، وليست تقييماً لجودة النطق.
  */
 export const PRODUCED_PODCAST_AUDIO: readonly string[] = [
   /* A1 — مُنتَج (voice-02) */
@@ -67,7 +68,7 @@ export const PRODUCED_PODCAST_AUDIO: readonly string[] = [
   "p-b1-reisen",
   "p-b1-lernen",
   "p-b1-gesundheit",
-  /* B2 — مُنتَج (voice-03) */
+  /* B2 — voice-03 عدا p-b2-migration (voice-26، 2026-10-26) وp-b2-gesunde-ernaehrung (أُعيد توليده بصوت voice-29 في 2026-10-27 بعد تحديث النص). */
   "p-b2-digitalisierung",
   "p-b2-globalisierung",
   "p-b2-kuenstliche-intelligenz",

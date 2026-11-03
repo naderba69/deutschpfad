@@ -66,7 +66,7 @@ export const B1_MODEL2_HOEREN: ExamHoerenTeil[] = [
     questions: [
       { id: "m2c2-q1", q: "Was ist das Problem des Mannes?", qAr: "ما مشكلة الرجل؟", options: ["Er müsste Kunden verschieben", "Er hat kein Interesse", "Die Fortbildung ist zu teuer"], correct: 0, whyAr: "قال: müsste ich dafür zwei Kunden verschieben." },
       { id: "m2c2-q2", q: "Warum hat Frau Klein gekündigt?", qAr: "لماذا استقالت السيدة كلاين؟", options: ["Wegen der Arbeitszeit", "Weil die neue Stelle näher ist", "Weil sie mehr Geld bekommt"], correct: 1, whyAr: "قيل: eine Stelle … die näher an ihrem Wohnort liegt." },
-      { id: "m2c2-q3", q: "Warum passt Donnerstag nicht?", qAr: "لماذا لا يناسب الخميس؟", options: ["Die Geschäftsleitung ist außer Haus", "Der Raum ist heute besetzt", "Ein Kollege fehlt krankheitshalber"], correct: 0, whyAr: "قال: da ist die Geschäftsleitung außer Haus." },
+      { id: "m2c2-q3", q: "Warum passt Donnerstag nicht?", qAr: "لماذا لا يناسب الخميس؟", options: ["Die Geschäftsleitung ist außer Haus", "Der Raum ist heute besetzt", "Ein Kollege fehlt krankheitshalber"], correct: 0, whyAr: "قال: da ist die Geschäftsleitung außer Haus، أي إن الإدارة خارج مقر العمل يوم الخميس." },
       { id: "m2c2-q4", q: "Was bekommt die Frau für die Samstagsarbeit?", qAr: "ماذا تحصل عليه المرأة مقابل عمل السبت؟", options: ["Einen freien Tag", "Mehr Urlaubstage", "Eine Prämie"], correct: 0, whyAr: "قالت: und ich bekomme dafür einen freien Tag." },
     ],
   },

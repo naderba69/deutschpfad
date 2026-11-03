@@ -532,7 +532,7 @@ describe("B2-04 lesson content audit", () => {
       "reading:read-b2-04:rq1", "reading:read-b2-04:rq2", "reading:read-b2-04:rq3", "reading:read-b2-04:rq4",
     ]);
     const dialogue = B2_DIALOGUES_3.find(({ id }) => id === "b2-14-medien");
-    expect(dialogue?.audioNoteAr).toContain("مصدر ملفات MP3 لهذا الحوار غير موثّق");
+    expect(dialogue?.audioNoteAr).toContain("مصدر ملفات MP3 غير موثق. طابق ASR المحلي النص في خمسة مقاطع");
     expect(dialogue?.situation).toContain("حوار تدريبي متخيّل");
     expect(dialogue?.turns.map(({ de }) => de).join(" ")).toContain("Viele verbreiten nur noch Falschinformationen");
   });

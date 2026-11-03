@@ -54,13 +54,13 @@ export const B2_DIALOGUES_2: DailyDialogue[] = [
     titleDe: "Arbeitsvertrag prüfen",
     emoji: "📄",
     situation: "محاكاة تدريبية خيالية لمراجعة مسودة عقد عمل؛ الشروط والأرقام ليست قواعد عامة أو استشارة قانونية.",
-    audioNoteAr: "ملفات MP3 لهذا الحوار موجودة، لكن مصدرها غير موثق؛ لا أجزم بأنها بشرية أو مولّدة، ولم تُتحقق مطابقتها للنص أو جودة النطق. شروط العقد في الحوار افتراضية وليست معياراً قانونياً.",
+    audioNoteAr: "في المقطع 5 لم يطابق التفريغ المحلي للنطق الآلي النص الحالي، لذلك عُطّل ملف MP3 لهذا الدور في المشغّل؛ يستخدم زر الاستماع TTS المتصفح للنص الحالي وقد يختلف الصوت حسب الجهاز. بقية الأدوار تستخدم MP3، ومصدرها وجودة النطق غير متحققين. هذا إجراء احترازي برمجي لا حكم سمعي. شروط العقد افتراضية وليست معياراً قانونياً.",
     turns: [
       { speaker: "الصديق", role: "a", de: "Wie läuft die neue Stelle? Hast du den Vertrag unterschrieben?", ar: "كيف الوظيفة الجديدة؟ هل وقعت العقد؟" },
       { speaker: "أنت", role: "b", de: "Noch nicht. Ich möchte die Bedingungen genau prüfen.", ar: "ليس بعد. أريد فحص الشروط بدقة." },
       { speaker: "الصديق", role: "a", de: "Was steht denn drin?", ar: "ماذا يوجد فيه؟" },
       { speaker: "أنت", role: "b", de: "Im Vertragsentwurf stehen sechs Monate Probezeit und eine Kündigungsfrist von drei Monaten.", ar: "ترد في مسودة العقد فترة تجربة ستة أشهر ومهلة إنهاء ثلاثة أشهر." },
-      { speaker: "الصديق", role: "a", de: "Die Kündigungsfrist von drei Monaten kommt mir lang vor. Ob sie im konkreten Fall gilt, sollte man prüfen.", ar: "تبدو لي مهلة الإنهاء البالغة ثلاثة أشهر طويلة. وينبغي التحقق من انطباقها في الحالة المحددة." },
+      { speaker: "الصديق", role: "a", de: "Die Kündigungsfrist von drei Monaten kommt mir lang vor. Ob sie im konkreten Fall gilt, sollte man prüfen.", ar: "تبدو لي مهلة الإنهاء البالغة ثلاثة أشهر طويلة. وينبغي التحقق من انطباقها في الحالة المحددة.", audioSrc: null },
       { speaker: "أنت", role: "b", de: "Genau. Vielleicht sollte ich verhandeln oder einen Anwalt konsultieren.", ar: "بالضبط. ربما يجب التفاوض أو استشارة محامٍ." },
     ],
     questions: [
@@ -132,18 +132,18 @@ export const B2_DIALOGUES_2: DailyDialogue[] = [
   {
     id: "b2-09-wohnungsvertrag",
     level: "B2",
-    title: "مشكلة في عقد الإيجار",
-    titleDe: "Mietvertrag-Problem",
+    title: "مشكلة في تدفئة الشقة",
+    titleDe: "Problem mit der Heizung",
     emoji: "🏠",
     situation: "محاكاة خيالية لعطل تدفئة؛ لا يحدد الحوار وحده استحقاق تخفيض الإيجار أو أي حق قانوني.",
-    audioNoteAr: "ملفات MP3 لهذا الحوار موجودة، لكن مصدرها غير موثق؛ لا أجزم بأنها بشرية أو مولّدة، ولم تُتحقق مطابقتها للنص أو جودة النطق. السيناريو افتراضي وليس استشارة قانونية.",
+    audioNoteAr: "في المقطعين 3 و5 لم يطابق التفريغ المحلي للنطق الآلي النص الحالي، لذلك عُطّلت ملفاتهما في المشغّل؛ يستخدم زر الاستماع TTS المتصفح للنص الحالي وقد يختلف الصوت حسب الجهاز. بقية الأدوار تستخدم MP3، ومصدرها وجودة النطق غير متحققين. هذا إجراء احترازي برمجي لا حكم سمعي. السيناريو افتراضي وليس استشارة قانونية.",
     turns: [
-      { speaker: "أنت", role: "a", de: "Guten Tag! Ich muss mit Ihnen über die Heizung sprechen. Sie funktioniert seit zwei Wochen nicht.", ar: "طاب يومك! يجب التحدث عن التدفئة. لا تعمل منذ أسبوعين." },
-      { speaker: "المالك", role: "b", de: "Das ist ärgerlich. Haben Sie den Handwerker angerufen?", ar: "هذا مزعج. هل اتصلت بالسباك؟" },
-      { speaker: "أنت", role: "a", de: "Ja, aber er sagt, dass ein neues Teil nötig ist und die Reparatur deshalb länger dauert.", ar: "نعم، لكنه يقول إنه يحتاج قطعة جديدة ويستغرق ذلك وقتاً." },
+      { speaker: "أنت", role: "a", de: "Guten Tag! Ich möchte mit Ihnen über die Heizung sprechen. Sie funktioniert seit zwei Wochen nicht.", ar: "طاب يومك. أود أن أتحدث معكم عن التدفئة؛ فهي لا تعمل منذ أسبوعين." },
+      { speaker: "المالك", role: "b", de: "Das ist ärgerlich. Haben Sie den Handwerker angerufen?", ar: "هذا مزعج. هل اتصلت بفني الصيانة؟" },
+      { speaker: "أنت", role: "a", de: "Ja, aber er sagt, dass ein neues Teil nötig ist und die Reparatur deshalb länger dauert.", ar: "نعم، لكنه يقول إن الأمر يحتاج إلى قطعة جديدة، ولذلك سيستغرق الإصلاح وقتاً أطول.", audioSrc: null },
       { speaker: "المالك", role: "b", de: "Ich werde mich darum kümmern. Können Sie bis nächste Woche warten?", ar: "سأتولى الأمر. هل تستطيع الانتظار حتى الأسبوع القادم؟" },
-      { speaker: "أنت", role: "a", de: "Das ist mir zu lang. Ich bitte um eine schnelle Reparatur. Ob eine Mietminderung in Betracht kommt, möchte ich für meinen Fall prüfen lassen.", ar: "هذا طويل بالنسبة إليّ. أطلب إصلاحاً سريعاً، وأريد التحقق مما إذا كان تخفيض الإيجار ينطبق على حالتي." },
-      { speaker: "المالك", role: "b", de: "Ich verstehe. Ich verspreche, dass der Handwerker übermorgen kommt.", ar: "أفهم. أعدك أن السباك سيأتي بعد غد." },
+      { speaker: "أنت", role: "a", de: "Das ist mir zu lang. Ich bitte um eine schnelle Reparatur. Ob eine Mietminderung in Betracht kommt, möchte ich für meinen Fall prüfen lassen.", ar: "هذا طويل بالنسبة إليّ. أطلب إصلاحاً سريعاً، وأريد التحقق مما إذا كان تخفيض الإيجار ينطبق على حالتي.", audioSrc: null },
+      { speaker: "المالك", role: "b", de: "Ich verstehe. Ich verspreche, dass der Handwerker übermorgen kommt.", ar: "أفهم. أعدك أن فني الصيانة سيأتي بعد غد." },
     ],
     questions: [
       { de: "Seit wann funktioniert die Heizung nicht?", ar: "منذ متى لا تعمل التدفئة؟", options: [
@@ -164,7 +164,7 @@ export const B2_DIALOGUES_2: DailyDialogue[] = [
     ],
     keyVocab: [
       { de: "die Heizung", ar: "التدفئة" },
-      { de: "der Handwerker", ar: "السباك/الحرفي" },
+      { de: "der Handwerker", ar: "الحرفي أو فني الصيانة" },
       { de: "die Mietminderung", ar: "تخفيض الإيجار" },
       { de: "verlangen", ar: "يطالب" },
       { de: "versprechen", ar: "يعد" },
@@ -177,6 +177,7 @@ export const B2_DIALOGUES_2: DailyDialogue[] = [
     titleDe: "Internationales Meeting",
     emoji: "🌐",
     situation: "محاكاة خيالية لاجتماع عبر الفيديو مع فريق دولي.",
+    audioNoteAr: "ملفات MP3 لهذا الحوار مولّدة آلياً (TTS) من سطوره الحالية بصوتين اصطناعيين، وليست تسجيلات بشرية. قورنت بتفريغ ASR محلي أظهر تطابقاً نصياً مرتفعاً مع اختلافات تفريغ محدودة؛ لا يثبت ذلك دقة كل كلمة أو جودة الأداء. لم يُجر تقييم سمعي للوضوح أو النطق أو طبيعية الأداء.",
     turns: [
       { speaker: "المديرة", role: "a", de: "Willkommen im Team. Ich möchte unsere neue Kollegin vorstellen.", ar: "مرحباً بك في الفريق. أود أن أقدم زميلتنا الجديدة." },
       { speaker: "أنت", role: "b", de: "Vielen Dank. Ich freue mich auf die Zusammenarbeit mit dem Team.", ar: "شكراً جزيلاً. يسعدني التعاون مع الفريق." },

@@ -535,3 +535,17 @@ describe("A1-10 audited lesson content", () => {
     expect(LESSON_META.every((item) => !hasDurationField(item))).toBe(true);
   });
 });
+
+describe("حراسة معنى arbeiten في سياق المهنة والتدريب", () => {
+  it("لا تخلط بين المهنة والتدريب العملي المؤقت لدى الشركة", () => {
+    const reading = lessonA110.reading;
+    expect(reading).toBeDefined();
+    if (!reading) throw new Error("A1-10 reading is required");
+    expect(reading.paragraphs[0]).toContain("Er ist Ingenieur von Beruf");
+    expect(reading.paragraphs[0]).toContain("macht er ein Praktikum bei einer kleinen Firma");
+    expect(reading.paragraphsAr[0]).toContain("مهنته مهندس");
+    expect(reading.paragraphsAr[0]).toContain("يؤدي حالياً تدريباً عملياً لدى شركة صغيرة");
+    expect(reading.paragraphs[4]).toContain("Wir arbeiten von Montag bis Freitag");
+    expect(reading.paragraphsAr[4]).toContain("نعمل من الاثنين إلى الجمعة");
+  });
+});

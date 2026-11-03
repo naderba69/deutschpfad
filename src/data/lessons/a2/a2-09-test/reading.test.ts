@@ -79,6 +79,9 @@ describe("A2-09 lesson audit", () => {
       "Sie helfen beim Aufräumen.",
       "Ihre Nachbarn haben ihr geholfen.",
     ]);
+    const giftQuestion = reading.questions.find((question) => question.id === "rq2");
+    expect(giftQuestion?.options[2]).toBe("Ein Kuchen, der nach Schokolade riecht.");
+    expect(giftQuestion?.optionExplanations?.[2]).toContain("riecht");
     for (const question of reading.questions) {
       for (const [index, option] of question.options.entries()) {
         expect(

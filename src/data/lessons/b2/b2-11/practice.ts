@@ -106,7 +106,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e8",
       type: "multiple-choice",
-      instructionAr: "اختر الصيغة الصحيحة للماضي التام:",
+      instructionAr: "اختر الصيغة القياسية المستهدفة للماضي التام:",
       questionDe: "Ich ___ gestern bis Mitternacht arbeiten ___ .",
       options: ["habe … müssen", "bin … müssen", "habe … gemusst", "habe … zu müssen"],
       correctIndex: 0,
@@ -114,8 +114,8 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       errorType: "conjugation",
       optionExplanations: [
         undefined,
-        "«bin … müssen» خطأ؛ الفعل المساعد haben وليس sein.",
-        "«habe … gemusst» خطأ؛ تُستعمل صيغة müssen مع Ersatzinfinitiv.",
+        "«bin … müssen» ليس الصيغة القياسية المستهدفة؛ استعمل haben هنا.",
+        "«habe … gemusst» ليست الصيغة القياسية المطلوبة هنا مع مودالي يتبعه مصدر؛ استعمل Ersatzinfinitiv.",
         "«habe … zu müssen» خطأ؛ لا يُستعمل zu مع müssen هنا.",
       ],
     },
@@ -138,7 +138,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       wrongWord: "ist",
       correctWord: "hat",
       options: ["hat", "ist", "war", "wurde"],
-      explanation: "المصدر المزدوج يأخذ haben دائماً حتى مع فعل حركي.",
+      explanation: "الصيغة القياسية المستهدفة تستعمل haben حتى مع فعل حركي.",
       errorType: "conjugation",
     },
     {
@@ -231,7 +231,7 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
       {
         wrong: "Ich bin gehen müssen.",
         right: "Ich habe gehen müssen.",
-        whyAr: "المصدر المزدوج لا يقبل sein ولو كان الفعل حركياً.",
+        whyAr: "الصيغة القياسية التي يدرّب عليها هذا التمرين تستعمل haben، حتى مع فعل حركي.",
       },
     ],
     eselsbruecken: [
@@ -240,8 +240,8 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
       "فعل رئيسي حاضر ⇒ مصدران وhaben. مودالي وحيد ⇒ اسم مفعول.",
     ],
     culturalNote: {
-      title: "لماذا يقول الألماني «schneiden lassen» ولا يقول «قصصت شعري»؟",
+      title: "التعبير عن قصّ الشعر بمساعدة شخص آخر",
       content:
-        "في الألمانية يُفرَّق بين من ينفّذ العمل ومن يطلبه. فحين تقول Ich habe meine Haare geschnitten يفهم المستمع أنّك قصصتها بنفسك، أمّا Ich habe mir die Haare schneiden lassen فتعني أنّك طلبت ذلك من الحلاق. ومن يخلط بين الصيغتين قد يُحدث سوء فهم في المحادثة اليومية.",
+        "تساعد بنية sich die Haare schneiden lassen على التصريح بأن شخصاً آخر قصّ الشعر. أمّا Ich habe meine Haare geschnitten فتنسب الفعل إلى المتكلم، وغالباً يُفهم أنه نفّذه بنفسه؛ وقد يوضح السياق من قام بالعمل فعلياً.",
     },
   };

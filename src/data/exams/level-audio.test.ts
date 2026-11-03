@@ -13,11 +13,16 @@ import path from "node:path";
 
 import { describe, expect, it } from "vitest";
 
+import { isPlayableMp3 } from "@/lib/audio/mp3-file";
 import {
   LEVEL_AUDIO,
   LEVEL_AUDIO_BASE,
   LEVEL_AUDIO_FILES,
   LEVEL_EXAM_DATA,
+  MODEL2_AUDIO_BASE,
+  MODEL2_FILE_PLAN,
+  MODEL3_AUDIO_BASE,
+  MODEL3_FILE_PLAN,
   maxPlaysFor,
   type ExamLevel,
 } from "@/data/exams/level-audio";
@@ -52,6 +57,96 @@ describe("صوت A1/A2/B1 — البيانات والقرص على اتفاق", 
       }
     }
     expect(missing).toEqual([]);
+  });
+
+  it("14 ملفاً لنموذج A1 الأساسي لها ترويسة MP3 قابلة للتشغيل", () => {
+    const failures: string[] = [];
+    for (const file of referenced("A1")) {
+      const full = path.join(PUBLIC_DIR, LEVEL_AUDIO_BASE.A1, file);
+      if (!isPlayableMp3(full)) failures.push(file);
+    }
+    expect(referenced("A1")).toHaveLength(14);
+    expect(failures).toEqual([]);
+  });
+
+  it("14 ملفاً لنموذج A2 الأساسي لها ترويسة MP3 قابلة للتشغيل", () => {
+    const failures: string[] = [];
+    for (const file of referenced("A2")) {
+      const full = path.join(PUBLIC_DIR, LEVEL_AUDIO_BASE.A2, file);
+      if (!isPlayableMp3(full)) failures.push(file);
+    }
+    expect(referenced("A2")).toHaveLength(14);
+    expect(failures).toEqual([]);
+  });
+
+  it("14 ملفاً لنموذج B1 الأساسي لها ترويسة MP3 قابلة للتشغيل", () => {
+    const failures: string[] = [];
+    for (const file of referenced("B1")) {
+      const full = path.join(PUBLIC_DIR, LEVEL_AUDIO_BASE.B1, file);
+      if (!isPlayableMp3(full)) failures.push(file);
+    }
+    expect(referenced("B1")).toHaveLength(14);
+    expect(failures).toEqual([]);
+  });
+
+  it("14 ملفاً لنموذج A1 الثاني لها ترويسة MP3 قابلة للتشغيل", () => {
+    const files = Object.values(MODEL2_FILE_PLAN.A1).flat();
+    expect(files).toHaveLength(14);
+    for (const file of files) {
+      const full = path.join(PUBLIC_DIR, MODEL2_AUDIO_BASE.A1, file);
+      expect(fs.existsSync(full), full).toBe(true);
+      expect(isPlayableMp3(full), full).toBe(true);
+    }
+  });
+
+  it("17 ملفاً لنموذج A2 الثاني لها ترويسة MP3 قابلة للتشغيل", () => {
+    const files = Object.values(MODEL2_FILE_PLAN.A2).flat();
+    expect(files).toHaveLength(17);
+    for (const file of files) {
+      const full = path.join(PUBLIC_DIR, MODEL2_AUDIO_BASE.A2, file);
+      expect(fs.existsSync(full), full).toBe(true);
+      expect(isPlayableMp3(full), full).toBe(true);
+    }
+  });
+
+  it("15 ملفاً لنموذج B1 الثاني لها ترويسة MP3 قابلة للتشغيل", () => {
+    const files = Object.values(MODEL2_FILE_PLAN.B1).flat();
+    expect(files).toHaveLength(15);
+    for (const file of files) {
+      const full = path.join(PUBLIC_DIR, MODEL2_AUDIO_BASE.B1, file);
+      expect(fs.existsSync(full), full).toBe(true);
+      expect(isPlayableMp3(full), full).toBe(true);
+    }
+  });
+
+  it("15 ملفاً لنموذج A2 الثالث لها ترويسة MP3 قابلة للتشغيل", () => {
+    const files = Object.values(MODEL3_FILE_PLAN.A2).flat();
+    expect(files).toHaveLength(15);
+    for (const file of files) {
+      const full = path.join(PUBLIC_DIR, MODEL3_AUDIO_BASE.A2, file);
+      expect(fs.existsSync(full), full).toBe(true);
+      expect(isPlayableMp3(full), full).toBe(true);
+    }
+  });
+
+  it("13 ملفاً لنموذج A1 الثالث لها ترويسة MP3 قابلة للتشغيل", () => {
+    const files = Object.values(MODEL3_FILE_PLAN.A1).flat();
+    expect(files).toHaveLength(13);
+    for (const file of files) {
+      const full = path.join(PUBLIC_DIR, MODEL3_AUDIO_BASE.A1, file);
+      expect(fs.existsSync(full), full).toBe(true);
+      expect(isPlayableMp3(full), full).toBe(true);
+    }
+  });
+
+  it("19 ملفاً لنموذج B1 الثالث لها ترويسة MP3 قابلة للتشغيل", () => {
+    const files = Object.values(MODEL3_FILE_PLAN.B1).flat();
+    expect(files).toHaveLength(19);
+    for (const file of files) {
+      const full = path.join(PUBLIC_DIR, MODEL3_AUDIO_BASE.B1, file);
+      expect(fs.existsSync(full), full).toBe(true);
+      expect(isPlayableMp3(full), full).toBe(true);
+    }
   });
 
   it("لا ملف صوتي في مجلدات exam-a1/a2/b1 خارج المُشار إليه", () => {

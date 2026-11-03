@@ -131,7 +131,7 @@ describe("B2-11 lesson content audit", () => {
       level: "B2",
       order: 2,
       titleDe: "Zugehörigkeit und doppelter Infinitiv",
-      titleAr: "الإسناد والمِلكية في الجملة المركّبة",
+      titleAr: "الانتماء والملكية والمصدر المزدوج",
     });
     expect("duration" in lessonB211).toBe(false);
     expect(lessonB211.summary).not.toMatch(/Goethe|CEFR|معتمد|إتقان عام/i);
@@ -407,7 +407,7 @@ describe("B2-11 lesson content audit", () => {
     const theoryText = JSON.stringify(lessonB211.theory);
     for (const marker of [
       "dessen", "deren", "Ersatzinfinitiv", "habe arbeiten müssen", "haben", "gelassen",
-      "reparieren lassen", "mit dessen Bruder", "أفعال إطار", "المصدر المزدوج",
+      "reparieren lassen", "mit dessen Bruder", "أفعال الإطار", "المصدر المزدوج",
     ]) {
       expect(theoryText, `بنية مفقودة: ${marker}`).toContain(marker);
     }
@@ -439,7 +439,7 @@ describe("B2-11 lesson content audit", () => {
     expect(t3.table?.rows).toHaveLength(5);
     expect(t3.commonMistakes.map(({ wrong }) => wrong)).toEqual([
       "Ich habe das Auto reparieren gelassen.",
-      "Ich habe ihn kommen gesehen sehen.",
+      "Ich habe ihn kommen gesehen.",
       "Ich habe das Auto repariert lassen.",
     ]);
     expect(t3.relatedRuleComparison?.title).toBe("reparieren أم reparieren lassen؟");
@@ -490,8 +490,8 @@ describe("B2-11 lesson content audit", () => {
     const reading = lessonB211.reading;
     expect(reading?.id).toBe("read-b2-11");
     expect(reading?.textType).toBe("bericht");
-    expect(reading?.titleDe).toBe("Die Werkstatt, deren Türen zwei Familien verbinden");
-    expect(reading?.titleAr).toBe("الورشة التي تربط أبوابُها عائلتين");
+    expect(reading?.titleDe).toBe("Fiktiver Übungsbericht: Die Werkstatt, deren Türen zwei Familien verbinden");
+    expect(reading?.titleAr).toBe("تقرير تدريبي خيالي: ورشة تربط أبوابها عائلتين");
     expect(reading?.paragraphs).toHaveLength(6);
     expect(reading?.paragraphsAr).toHaveLength(6);
     const text = reading!.paragraphs.join(" ").toLowerCase();

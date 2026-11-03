@@ -9,7 +9,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       id: "m1",
       type: "multiple-choice",
       instructionAr: "اختر عبارة التأكيد:",
-      questionDe: "___ ist das bewiesen. (ثابت)",
+      questionDe: "___ die Frist verlängert wurde. (ثبت أن)",
       options: ["Es ist erwiesen, dass", "Es könnte sein, dass", "Unter bestimmten Umständen", "In einem gewissen Maße"],
       correctIndex: 0,
       explanation: "التأكيد: es ist erwiesen.",
@@ -79,13 +79,13 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       options: ["beginne", "beginnt", "begänne", "begann"],
       correctIndex: 0,
       explanation:
-        "النقل الرسمي المكتوب يلزم Konjunktiv I: beginnen ← es beginne. وbeginnt إخبار ينسب الكلام للكاتب، وbegänne صيغة Konjunktiv II، وbegann ماضٍ.",
+        "وفق الصياغة المستهدفة في هذا التمرين نختار Konjunktiv I: beginnen ← es beginne. قد تختلف الصياغة في الاستعمال بحسب السياق، لكن هذا الشكل علامة شائعة على النقل؛ أما begänne فـKonjunktiv II وbegann ماضٍ.",
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«beginnt» صيغة المضارع، ولا تناسب الكلام غير المباشر.",
-        "«begänne» صيغة الشرط، ولا تناسب الكلام غير المباشر.",
-        "«begann» صيغة الماضي، ولا تناسب الكلام غير المباشر.",
+        "«beginnt» مضارع Indicativ، لكنه ليس علامة النقل المستهدفة في هذا السؤال.",
+        "«begänne» صيغة Konjunktiv II وقد تُستعمل في النقل عند الحاجة؛ لكن هذا السؤال يطلب Konjunktiv I صراحةً.",
+        "«begann» ماضٍ، ويغيّر الإطار الزمني عن الصياغة المستهدفة.",
       ],
     },
     {
@@ -100,7 +100,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«können» فعل مودال، ولا يعطي معنى الإمكانية هنا.",
+        "«können» فعل مودال يدل على الإمكان، لكنه يحتاج هنا إلى بناء مختلف، مثل: Die Bedingungen können online nachgelesen werden.",
         "«werden» تستعمل مع المبني للمجهول، ولا تناسب الجملة.",
         "«sind» تستعمل مع حالة الفعل، ولا تناسب lassen sich.",
       ],
@@ -110,14 +110,14 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       type: "fill-blank",
       instructionAr: "الاختبار الختامي — الأسلوب الاسمي وحروف الجر (الوحدتان 8 و10):",
       template:
-        "___ der Verspätung des Zuges kam sie zu spät. (بسبب) — Ich bewerbe mich ___ einen Studienplatz. (على) — ___ der Ankunft bekommen Sie Ihren Ausweis. (عند)",
+        "___ der Verspätung des Zuges kam sie zu spät. (بسبب) — Ich warte ___ die Zulassung. (على) — ___ der Ankunft bekommen Sie Ihren Ausweis. (عند)",
       blanks: [
         { correct: "Wegen", options: ["Wegen", "Weil", "Denn"], errorType: "preposition" },
-        { correct: "um", options: ["um", "für", "auf"], errorType: "preposition" },
+        { correct: "auf", options: ["auf", "für", "um"], errorType: "preposition" },
         { correct: "Bei", options: ["Bei", "Wenn", "Als"], errorType: "preposition" },
       ],
       explanation:
-        "wegen حرف جر + Genitiv (وweil/denn أدوات جملة)، وsich bewerben يلزمه um + منصوب لا für، وbei + Dativ يقابل wenn في الأسلوب الاسمي.",
+        "wegen يتبعه اسم، وغالباً Genitiv في السجل الرسمي؛ وwarten auf + Akkusativ تركيب ثابت في هذا المعنى. أما bei + Dativ فإعادة صياغة ممكنة عندما يكون المقصود «عند الوصول»، لا مقابلاً آلياً لكل استعمال لـwenn.",
       errorType: "preposition",
     },
   ];
@@ -132,7 +132,7 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     { id: "fc7", de: "möglicherweise", ar: "ربما", example: "Möglicherweise stimmt das.", exampleAr: "ربما هذا صحيح.", level: "B2" },
     { id: "fc8", de: "zusammenfassend", ar: "خلاصةً", example: "Zusammenfassend lässt sich sagen...", exampleAr: "خلاصةً يمكن القول...", level: "B2" },
     { id: "fc9", de: "die Zulassung", ar: "القبول الجامعي", example: "Als Leila ihre Zulassung erhielt, war die wichtigste Hürde genommen.", exampleAr: "عندما تلقّت ليلى قبولها الجامعي كانت أهم عقبة قد زالت.", level: "B2" },
-    { id: "fc10", de: "der Semesterbeitrag", ar: "المساهمة الفصلية", example: "Der Semesterbeitrag ist keine Studiengebühr.", exampleAr: "المساهمة الفصلية ليست رسوماً دراسية.", level: "B2" },
+    { id: "fc10", de: "der Semesterbeitrag", ar: "المساهمة الفصلية", example: "Der Semesterbeitrag ist in diesem Beispiel keine allgemeine Studiengebühr.", exampleAr: "المساهمة الفصلية في هذا المثال ليست رسوماً دراسية عامة.", level: "B2" },
     { id: "fc11", de: "die Gliederung", ar: "البنية، تقسيم العرض", example: "Die Gliederung sollte im Referat sichtbar sein.", exampleAr: "ينبغي أن تكون البنية ظاهرة في العرض.", level: "B2" },
     { id: "fc12", de: "die Einschränkung", ar: "التحفظ، تحديد النطاق", example: "Eine Einschränkung schützt vor falschen Verallgemeinerungen.", exampleAr: "التحفظ يحمي من التعميمات الخاطئة.", level: "B2" },
   ];
@@ -142,10 +142,10 @@ export const mediation: NonNullable<Lesson["mediation"]> = [
       id: "med-b2-10-1",
       type: "merge-info",
       titleAr: "ادمج معلومات عن الدراسة في ألمانيا في تلخيص عربي",
-      sourceDe: "Text 1: Die meisten staatlichen Universitäten erheben keine Studiengebühren. Text 2: Allerdings benötigen internationale Studierende einen Sprachnachweis und ausreichende finanzielle Mittel.",
-      taskAr: "ادمج المعلومتين في تلخيص متماسك: مجانية الدراسة + الشروط (اللغة والتمويل).",
-      modelAnswerAr: "«معظم الجامعات الحكومية لا تفرض رسوماً دراسية، لكن الطلاب الدوليين يحتاجون شهادة لغة وإثبات موارد مالية كافية.»",
-      keyPointsAr: ["دمجت المعلومتين معاً", "نقلت مجانية الدراسة", "نقلت شرطي اللغة والتمويل"],
+      sourceDe: "Vereinfachte Übungstexte, keine wörtlichen Zitate: Text 1: Viele staatliche Hochschulen erheben für zahlreiche Studiengänge keine allgemeinen Studiengebühren; Ausnahmen und Semesterbeiträge gibt es je nach Ort, Hochschule, Programm und Status. Text 2: Zulassungsvoraussetzungen unterscheiden sich. Je nach Programm kann ein anerkannter Sprachnachweis verlangt werden; weitere Unterlagen richten sich nach Hochschule und Studiengang.",
+      taskAr: "ادمج المعلومتين في تلخيص متماسك، مع إبقاء اختلاف الرسوم وشروط القبول واضحاً وعدم تعميمهما على كل الطلاب.",
+      modelAnswerAr: "«لا تفرض جامعات حكومية كثيرة رسوماً دراسية عامة على برامج عديدة، لكن توجد استثناءات وتختلف المساهمة الفصلية بحسب المكان والجامعة والبرنامج ووضع الطالب. كما تختلف شروط القبول؛ فقد يُطلب إثبات لغة، وتحدد الجامعة والبرنامج الوثائق الأخرى اللازمة.»",
+      keyPointsAr: ["دمجت المعلومتين معاً", "ذكرت القاعدة مع الاستثناءات والمساهمة الفصلية", "أشرت إلى اختلاف شروط القبول وإثبات اللغة بحسب البرنامج"],
     },
   ];
 
@@ -160,8 +160,8 @@ export const interaction: NonNullable<Lesson["interaction"]> = [
           speakerDe: "Lohnt sich ein Studium im Ausland trotz der Herausforderungen?",
           speakerAr: "هل يستحق الدراسة في الخارج رغم التحديات؟",
           options: [
-            { de: "Obwohl ein Auslandsstudium mit Sprachbarrieren und Heimweh verbunden ist, überwiegen meiner Meinung nach die Vorteile.", ar: "رغم أن الدراسة بالخارج ترتبط بحواجز اللغة والحنين للوطن، أرى أن المزايا تفوق.", best: true, replyDe: "Ein starkes Argument. Wie würden Sie mit dem Heimweh umgehen?", replyAr: "حجة قوية. كيف تتعامل مع الحنين للوطن؟" },
-            { de: "Ein Auslandsstudium ist reine Zeitverschwendung.", ar: "الدراسة بالخارج مضيعة للوقت تماماً.", best: false, replyDe: "Das widerspricht den Erfahrungen vieler erfolgreicher Absolventen.", replyAr: "هذا يتعارض مع تجارب خريجين ناجحين كثيرين." },
+            { de: "Obwohl ein Auslandsstudium mit Sprachbarrieren und Heimweh verbunden sein kann, bietet es fachliche Erfahrungen und neue Perspektiven. Ob diese Vorteile überwiegen, hängt meiner Ansicht nach von den persönlichen Zielen und Bedingungen ab.", ar: "رغم أن الدراسة في الخارج قد تصاحبها حواجز لغوية وحنين إلى الوطن، فإنها تتيح خبرات تخصصية وآفاقاً جديدة. وفي رأيي، يتوقف رجحان هذه المزايا على الأهداف والظروف الشخصية.", best: true, replyDe: "Das ist eine abgewogene Einschätzung. Können Sie ein Beispiel oder einen Beleg nennen?", replyAr: "هذا تقدير متوازن. هل يمكنك ذكر مثال أو دليل؟" },
+            { de: "Ein Auslandsstudium ist immer reine Zeitverschwendung.", ar: "الدراسة بالخارج مضيعة للوقت دائماً.", best: false, replyDe: "Das ist eine pauschale Aussage. Worauf stützen Sie Ihre Einschätzung?", replyAr: "هذا تعميم واسع. على أي أساس تستند في تقديرك؟" },
           ],
         },
         {
@@ -169,7 +169,7 @@ export const interaction: NonNullable<Lesson["interaction"]> = [
           speakerAr: "كيف تتعامل مع الحنين للوطن؟",
           options: [
             { de: "Ich würde regelmäßigen Kontakt mit der Familie halten und neue soziale Kreise aufbauen.", ar: "سأحافظ على تواصل منتظم مع العائلة وأبني دوائر اجتماعية جديدة.", best: true, replyDe: "Eine reife Strategie. Viel Erfolg!", replyAr: "استراتيجية ناضجة. بالتوفيق!" },
-            { de: "Ich würde einfach zurückfliegen, sobald es schwer wird.", ar: "سأعود ببساطة بمجرد أن يصعب الأمر.", best: false, replyDe: "Herausforderungen gehören zum Wachstum.", replyAr: "التحديات جزء من النمو." },
+            { de: "Ich würde einfach zurückfliegen, sobald es schwer wird.", ar: "سأعود ببساطة بمجرد أن يصعب الأمر.", best: false, replyDe: "Das kann eine Option sein. Vielleicht möchten Sie zunächst Unterstützung suchen und Ihre nächsten Schritte abwägen.", replyAr: "قد يكون ذلك خياراً. وربما تود أولاً طلب الدعم وموازنة خطواتك التالية." },
           ],
         },
       ],

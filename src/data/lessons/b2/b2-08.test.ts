@@ -168,7 +168,12 @@ describe("B2-08 lesson content audit", () => {
     expect(lessonB208.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
     expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "e2", "e3", "e5", "e6", "e9", "m1", "m2", "m4", "w1", "w2"]);
-    expect(goal("z3").evidence?.exerciseIds).toEqual(["q3", "e7"]);
+    expect(goal("z3").de).toContain("in einem kurzen Dialog");
+    expect(goal("z3").ar).toContain("في حوار قصير");
+    expect(goal("z3").evidence?.exerciseIds).toEqual(["q3"]);
+    expect(goal("z3").evidence?.taskIds).toEqual(["listening:l2:q3"]);
+    expect(goal("z4").de).toContain("ausgewählten Verben und passenden Präpositionen");
+    expect(goal("z4").ar).toContain("بأفعال منتقاة وحروف جرها المناسبة");
     expect(goal("z4").evidence?.exerciseIds).toEqual(["w1", "w2"]);
     for (const item of lessonB208.lernziele) {
       expect(item.evidence?.completion, `${item.id} completion`).toBe("all-correct");
@@ -543,7 +548,10 @@ describe("B2-08 lesson content audit", () => {
     const episode = PODCASTS.find((candidate) => candidate.id === "p-b2-migration");
     expect(episode).toBeDefined();
     expect(episode?.contentNoteAr).toContain("خيالي");
-    expect(episode?.contentNoteAr).toContain("لم يُحدّث");
+    expect(episode?.contentNoteAr).toContain("مولّد آلياً من نص الحلقة الحالي");
+    expect(episode?.contentNoteAr).toContain("ليس تسجيلاً بشرياً");
+    expect(episode?.contentNoteAr).toContain("قورن بتفريغ ASR محلي");
+    expect(episode?.contentNoteAr).toContain("لم يُجر تقييم سمعي");
     expect(episode?.script).not.toContain("Experten betonen");
     expect(episode?.script).toContain("Andere Menschen erleben Zugehörigkeit anders.");
     expect(episode?.scriptAr).toContain("وقد يختبر أشخاص آخرون الانتماء على نحو مختلف.");

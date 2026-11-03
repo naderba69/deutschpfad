@@ -20,7 +20,7 @@ const B1_1: InteractiveStory = {
     {
       id: 1,
       de: "Die Familie Müller sucht eine neue Wohnung, weil die alte zu klein ist.",
-      ar: "تبحث عائلة مولر عن شقة جديدة لأن القديمة صغيرة جداً.",
+      ar: "تبحث عائلة مولر عن شقة جديدة لأن القديمة أصغر من اللازم.",
     },
     {
       id: 2,
@@ -30,8 +30,8 @@ const B1_1: InteractiveStory = {
         de: "Warum sucht die Familie eine neue Wohnung?",
         ar: "لماذا تبحث العائلة عن شقة جديدة؟",
         options: [
-          { text: "Die alte Wohnung ist zu klein", ar: "القديمة صغيرة جداً", correct: true, explanation: "نعم — هذا ما ورد في القصة: «Die alte Wohnung ist zu klein» (القديمة صغيرة جداً)." },
-          { text: "Die Miete ist zu hoch", ar: "الإيجار مرتفع", correct: false, explanation: "لا — الصواب هو الخيار المذكور في القصة." },
+          { text: "Die alte Wohnung ist zu klein", ar: "الشقة القديمة أصغر من اللازم", correct: true, explanation: "نعم — هذا ما ورد في القصة: «Die alte Wohnung ist zu klein» (الشقة القديمة أصغر من اللازم)." },
+          { text: "Die Miete ist zu hoch", ar: "الإيجار مرتفع", correct: false, explanation: "مع أن الإيجار مرتفع، لا تذكره القصة سبباً للبحث عن شقة؛ السبب الصريح أن الشقة القديمة أصغر من اللازم." },
           { text: "Die Aussicht ist schlecht", ar: "المنظر سيئ", correct: false, explanation: "لا — الصواب هو الخيار المذكور في القصة." },
         ],
       },

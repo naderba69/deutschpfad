@@ -45,7 +45,7 @@ describe("A2-08 reviewed lesson", () => {
       { speaker: "Lea", de: "Verpasse ich dadurch den Anschluss in Bonn?", ar: "هل سأفوت بذلك قطار المتابعة في بون؟", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-3.mp3" },
       { speaker: "Mitarbeiter", de: "Das weiß ich nicht. Bitte fragen Sie am Schalter nach.", ar: "لا أعرف. يُرجى السؤال عند شباك الخدمة.", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-4.mp3" },
       { speaker: "Lea", de: "Wo ist der Schalter?", ar: "أين شباك الخدمة؟", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-5.mp3" },
-      { speaker: "Mitarbeiter", de: "Gleich links neben dem Fahrkartenautomaten.", ar: "إلى اليسار مباشرة بجانب آلة بيع التذاكر.", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-6.mp3" },
+      { speaker: "Mitarbeiter", de: "Gleich links neben dem Fahrkartenautomaten.", ar: "مباشرةً إلى يسار آلة بيع التذاكر.", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-6.mp3" },
     ]);
     expect(lessonA208.listening.questions.map((question) => question.itemId)).toEqual([
       "l1",
@@ -58,6 +58,8 @@ describe("A2-08 reviewed lesson", () => {
       "l4",
       "l4",
     ]);
+    expect(lessonA208.listening.questions.find((question) => question.id === "q9")?.explanation)
+      .toContain("شباك الخدمة يقع مباشرةً إلى يسار آلة بيع التذاكر");
 
     expect(lessonA208.pronunciation.items.map((item) => item.de)).toEqual([
       "der Zug",

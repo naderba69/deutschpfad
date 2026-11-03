@@ -70,6 +70,19 @@ describe("مكمّلات — الحوارات المتفرعة: لا طريق م
     expect(bad, "بدايات معطوبة").toEqual([]);
   });
 
+  it("لا يصنّف طلب القهوة بـwollen خطأً مطلقاً أو يفرض صيغة واحدة", () => {
+    const cafe = DIALOGUES.find(({ id }) => id === "dl-cafe");
+    const directRequest = cafe?.nodes.n1.choices.find(({ id }) => id === "c2");
+    expect(directRequest?.de).toBe("Ich will Kaffee.");
+    expect(directRequest?.next).toBe("n2");
+    expect(directRequest?.feedback).toContain("الجملة صحيحة ومفهومة");
+    expect(directRequest?.feedback).toContain("النبرة والسياق");
+    expect(directRequest?.feedback).not.toContain("استخدم möchte دائماً");
+    const fragmentRequest = cafe?.nodes.n1.choices.find(({ id }) => id === "c3");
+    expect(fragmentRequest?.feedback).toContain("قد يُفهم الطلب المقتضب من السياق");
+    expect(fragmentRequest?.feedback).toContain("Einen Kaffee, bitte");
+  });
+
   it("حوار الطبيب التدريبي لا يضع تشخيصاً أو جرعة أو مدة دواء عامة", () => {
     const doctorDialogue = DIALOGUES.find(({ id }) => id === "dl-arzt");
     expect(doctorDialogue?.situation).toContain("لا تشخيصاً أو نصيحة طبية");
@@ -126,5 +139,15 @@ describe("مكمّلات — الاستمارات والاستراتيجيات",
       if (!p.icon.trim() || !p.title.trim() || !p.content.trim()) problems.push(`path.${p.title}`);
     }
     expect(problems, "استراتيجيات ناقصة").toEqual([]);
+  });
+});
+
+describe("دقة ترجمة warm في حوار معاينة السكن", () => {
+  it("لا يحذف دلالة التكاليف المدرجة ولا يوحي بأن كل المصروفات مشمولة", () => {
+    const dialogue = DIALOGUES.find((item) => item.id === "dl-wohnungsbesichtigung");
+    const rentLine = dialogue?.nodes.n2?.ar ?? "";
+    expect(rentLine).toContain("600 يورو");
+    expect(rentLine).toContain("التكاليف المشمولة عادةً");
+    expect(rentLine).not.toContain("شامل.");
   });
 });

@@ -17,7 +17,11 @@ describe("A2-03 audited lesson", () => {
     expect(text.paragraphsAr).toHaveLength(text.paragraphs.length);
     expect(text.paragraphs.every((paragraph) => paragraph.trim().length > 0)).toBe(true);
     expect(text.paragraphsAr.every((paragraph) => paragraph.trim().length > 0)).toBe(true);
+    expect(text.titleAr).toBe("أمسيةٌ في مطعم الأسد");
+    expect(text.paragraphsAr[0]).toContain("مطعم الأسد ممتلئاً تماماً");
+    expect(text.glossary.find((entry) => entry.de === "das Gasthaus")?.ar).toContain("مطعمٌ تقليديّ");
     expect(text.paragraphs[2]).toContain("zwei Apfelschorlen");
+    expect(text.paragraphsAr[2]).toContain("كأسان من عصير التفاح الممزوج بالماء الفوّار");
     expect(text.paragraphs[3]).toContain("an die Küche weitergeben");
     expect(text.paragraphs[3]).toContain("einen neuen Teller gebracht");
     expect(text.paragraphs[5]).toContain("Mein Anteil war 21,40 Euro");
@@ -83,6 +87,9 @@ describe("A2-03 audited lesson", () => {
     );
     expect(lessonA203.listening.questions.find((question) => question.id === "q1")?.options[0]).toContain(
       "ein Wasser",
+    );
+    expect(lessonA203.listening.questions.find((question) => question.id === "q3")?.explanation).toBe(
+      "قالت منى: Ich kann kein Fleisch essen — لا أستطيع تناول اللحم.",
     );
     expect(getListeningQuestionTaskId(lessonA203.id, "l1", "q1", false)).toBe("listening:l1:q1");
     expect(getListeningQuestionTaskId(lessonA203.id, "l1", "q1", true)).toBe(

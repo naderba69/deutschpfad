@@ -63,11 +63,11 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e5",
       type: "error-correction",
       instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
-      wrongSentence: "Ich bewerbe mich nach der Stelle.",
+      wrongSentence: "Ich bewerbe mich nach die Stelle.",
       wrongWord: "nach",
       correctWord: "um",
-      options: ["um", "nach", "auf", "an"],
-      explanation: "التركيب الثابت: sich bewerben um + Akkusativ — Ich bewerbe mich um die Stelle.",
+      options: ["um", "nach", "von", "zu"],
+      explanation: "في هذا الجواب: sich um eine Stelle bewerben. ويصح أيضاً auf + Akk عند الحديث عن وظيفة معروضة؛ أما nach die Stelle فلا يصلح هنا.",
       errorType: "preposition",
     },
     {
@@ -131,7 +131,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e11",
       type: "error-correction",
-      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاخر «لا خطأ».",
+      instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
       wrongSentence: "Wir haben eine schnelle Entscheidung gemacht.",
       wrongWord: "gemacht",
       correctWord: "getroffen",
@@ -163,40 +163,45 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         "wir müssen diese option in betracht ziehen.",
       ],
       sampleAnswer: "Wir müssen diese Option in Betracht ziehen.",
-      explanation: "berücksichtigen → in Betracht ziehen؛ والتركيب الرسمي يرفع سجل الجملة.",
+      explanation: "استُبدل الفعل البسيط berücksichtigen بتركيب in Betracht ziehen في هذا المثال؛ ولا يعني ذلك أن التركيب أعلى رسمية في كل سياق.",
       errorType: "grammar",
     },
     {
       id: "e14",
       type: "multiple-choice",
-      instructionAr: "اختر الأسلوب الرسمي الصحيح:",
-      questionDe: "___ die geforderten Unterlagen ___ .",
-      options: ["Anbei finden Sie ...", "Hier ist ...", "Ich gebe dir ...", "Das ist ..."],
+      instructionAr: "اختر الصيغة المهذبة الأنسب لإخبار متلقي الرسالة بأن المستندات مرفقة:",
+      questionDe: "Welche Formulierung passt in einer formellen Nachricht zu beigefügten Unterlagen?",
+      options: [
+        "Anbei finden Sie die geforderten Unterlagen.",
+        "Ich schicke du die geforderten Unterlagen.",
+        "Finden anbei Sie die geforderten Unterlagen.",
+        "Du findest die geforderten Unterlagen anbei.",
+      ],
       correctIndex: 0,
-      explanation: "Anbei finden Sie … هو القالب المتعاقد عليه في المراسلة الرسمية للمرفقات.",
+      explanation: "Anbei finden Sie … صيغة شائعة ومهذبة للإشارة إلى المرفقات؛ توجد صيغ رسمية أخرى بحسب السياق.",
       errorType: "vocabulary",
       optionExplanations: [
         undefined,
-        "«Hier ist …» فقيرة في المراسلة الرسمية ولا تُخاطب القارئ بالمباشرة المتوقعة.",
-        "«Ich gebe dir …» عامية واضحة؛ لا تُستعمل في خطاب تقديم.",
-        "«Das ist …» تقريرية وجافة، وتفقد الخطاب مسافة الاحترام.",
+        "«Ich schicke du ...» غير سليم: الفعل يتطلب هنا المفعول به Dativ (dir)، والصيغة du غير رسمية.",
+        "ترتيب الكلمات غير سليم هنا؛ الصيغة المستهدفة: Anbei finden Sie ... .",
+        "تستعمل هذه العبارة du لمخاطبة غير رسمية، فلا تلائم السياق المهذب المحدد في السؤال.",
       ],
     },
   ];
 
 export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     mistakes: [
-      { wrong: "Ich bewerbe mich nach der Stelle", right: "Ich bewerbe mich um die Stelle", whyAr: "sich bewerben um + Akkusativ." },
+      { wrong: "Ich bewerbe mich nach die Stelle", right: "Ich bewerbe mich um die Stelle", whyAr: "في هذا التركيب نستعمل sich um eine Stelle bewerben؛ ويصح أيضاً sich auf eine ausgeschriebene Stelle bewerben بحسب المقصود." },
       { wrong: "Wert machen auf", right: "Wert legen auf", whyAr: "الأهمية توضع." },
-      { wrong: "Anbei ist (أقل شيوعاً)", right: "Anbei finden Sie", whyAr: "الصيغة المعتادة في المراسلة الرسمية." },
+      { wrong: "Anbei finden Sie mein Lebenslauf.", right: "Anbei finden Sie meinen Lebenslauf.", whyAr: "Lebenslauf مذكر ويأتي مفعولاً به في هذه الجملة؛ لذلك نقول meinen Lebenslauf." },
     ],
     eselsbruecken: [
       "«وصلات الخطاب الخمس»: bewerben um، Anbei finden Sie، Wert legen auf، zur Verfügung stellen، in Betracht ziehen.",
       "«الأسلوب الرسمي في التقديم»: Sehr geehrte + Anbei + Mit freundlichen Grüßen.",
     ],
     culturalNote: {
-      title: "سوق العمل الألماني",
+      title: "مفردات مرتبطة بالتقديم الوظيفي",
       content:
-        "سوق العمل منظم: «der Arbeitsvertrag» (عقد عمل)، و«die Probezeit» (فترة التجربة)، و«der Kündigungsschutz» (حماية من الفصل). والمؤهلات مهمة: «Anerkennung der Abschlüsse» (الاعتراف بالشهادات الأجنبية). وعبارة: «Ich bringe Berufserfahrung mit» (أمتلك خبرة مهنية).",
+        "تدرّب على مفردات قد تظهر في نصوص العمل مثل der Arbeitsvertrag (عقد العمل)، die Probezeit (فترة التجربة)، der Kündigungsschutz (الحماية من الفصل)، وAnerkennung ausländischer Abschlüsse (الاعتراف بالمؤهلات الأجنبية). هذه أمثلة لغوية فقط، وليست شرحاً قانونياً أو وصفاً شاملاً لسوق العمل؛ تحقّق من الجهة المختصة لأي معلومة عملية.",
     },
   };

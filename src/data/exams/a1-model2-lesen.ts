@@ -44,7 +44,7 @@ export const A1_MODEL2_LESEN: ExamLesenTeil[] = [
       "Anmeldung im Büro oder per E-Mail.\n" +
       "Das Kursbuch ist im Preis nicht enthalten.",
     statements: [
-      { id: "m2l2-s1", de: "Die Kurse beginnen im September.", ar: "الدورات تبدأ في سبتمبر.", isTrue: true, whyAr: "قيل: Neue Kurse ab September." },
+      { id: "m2l2-s1", de: "Die Kurse beginnen im September.", ar: "تبدأ الدورات الجديدة في سبتمبر.", isTrue: true, whyAr: "قيل: Neue Kurse ab September." },
       { id: "m2l2-s2", de: "Der Deutschkurs ist am Dienstag.", ar: "درس الألمانية يوم الثلاثاء.", isTrue: false, whyAr: "قيل: Montag und Mittwoch." },
       { id: "m2l2-s3", de: "Man kann sich per E-Mail anmelden.", ar: "يمكن التسجيل بالبريد الإلكتروني.", isTrue: true, whyAr: "قيل: Anmeldung im Büro oder per E-Mail." },
       { id: "m2l2-s4", de: "Das Kursbuch kostet nichts.", ar: "كتاب الدورة مجاني.", isTrue: false, whyAr: "قيل: Das Kursbuch ist im Preis nicht enthalten، أي غير مشمول." },

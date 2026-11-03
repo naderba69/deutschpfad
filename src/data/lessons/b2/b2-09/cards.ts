@@ -72,52 +72,52 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
   ];
 
 export const flashcards: NonNullable<Lesson["flashcards"]> = [
-    { id: "fc1", de: "der Arbeitsmarkt", ar: "سوق العمل", example: "Der Arbeitsmarkt ist dynamisch.", exampleAr: "سوق العمل ديناميكي.", level: "B2" },
-    { id: "fc2", de: "die Stelle", ar: "المنصب", example: "Die Stelle ist frei.", exampleAr: "المنصب شاغر.", level: "B2" },
-    { id: "fc3", de: "das Anschreiben", ar: "خطاب التقديم", example: "Das Anschreiben ist kurz.", exampleAr: "خطاب التقديم قصير.", level: "B2" },
+    { id: "fc1", de: "der Arbeitsmarkt", ar: "سوق العمل", example: "Wir sprechen über den Arbeitsmarkt.", exampleAr: "نتحدث عن سوق العمل.", level: "B2" },
+    { id: "fc2", de: "die Stelle", ar: "الوظيفة الشاغرة", example: "Die Stelle ist frei.", exampleAr: "الوظيفة شاغرة.", level: "B2" },
+    { id: "fc3", de: "das Anschreiben", ar: "رسالة التقديم", example: "Ich schreibe mein Anschreiben.", exampleAr: "أكتب رسالة التقديم الخاصة بي.", level: "B2" },
     { id: "fc4", de: "in Betracht ziehen", ar: "يأخذ بعين الاعتبار", example: "Ich ziehe die Stelle in Betracht.", exampleAr: "آخذ المنصب بعين الاعتبار.", level: "B2" },
     { id: "fc5", de: "zur Verfügung stellen", ar: "يضع تحت التصرف", example: "Ich stelle meine Erfahrung zur Verfügung.", exampleAr: "أضع خبرتي تحت التصرف.", level: "B2" },
     { id: "fc6", de: "Wert legen auf", ar: "يولي أهمية", example: "Ich lege Wert auf Qualität.", exampleAr: "أولي أهمية للجودة.", level: "B2" },
-    { id: "fc7", de: "Anbei finden Sie ...", ar: "مرفقاً تجدون...", example: "Anbei finden Sie meinen Lebenslauf.", exampleAr: "مرفقاً سيرتي الذاتية.", level: "B2" },
-    { id: "fc8", de: "die Fähigkeit", ar: "المهارة", example: "Meine Fähigkeiten sind vielfältig.", exampleAr: "مهاراتي متنوعة.", level: "B2" },
-    { id: "fc9", de: "die Entscheidung", ar: "القرار", example: "Wir treffen die Entscheidung nicht im ersten Gespräch.", exampleAr: "لا نتخذ القرار في المقابلة الأولى.", level: "B2" },
-    { id: "fc10", de: "die Kritik", ar: "النقد", example: "In der zweiten Runde übte die Personalabteilung offen Kritik.", exampleAr: "وفي الجولة الثانية وجّهت إدارة الموارد البشرية نقداً صريحاً.", level: "B2" },
+    { id: "fc7", de: "Anbei finden Sie ...", ar: "تجدون مرفقاً...", example: "Anbei finden Sie meinen Lebenslauf.", exampleAr: "تجدون سيرتي الذاتية مرفقة.", level: "B2" },
+    { id: "fc8", de: "die Fähigkeit", ar: "المهارة", example: "Ich bringe meine Fähigkeiten ein.", exampleAr: "أوظف مهاراتي.", level: "B2" },
+    { id: "fc9", de: "die Entscheidung", ar: "القرار", example: "Wir treffen eine Entscheidung.", exampleAr: "نتخذ قراراً.", level: "B2" },
+    { id: "fc10", de: "die Kritik", ar: "النقد", example: "Im Beispiel übt die Personalabteilung Kritik.", exampleAr: "في المثال، توجّه إدارة الموارد البشرية نقداً.", level: "B2" },
     { id: "fc11", de: "die Frist", ar: "الموعد النهائي", example: "Später wurde eine Frist gesetzt.", exampleAr: "ثم حُدّد موعد نهائي.", level: "B2" },
-    { id: "fc12", de: "der Vorschlag", ar: "الاقتراح", example: "Sie übte Kritik an einem Vorschlag, den Sara mitgebracht hatte.", exampleAr: "وجّهت نقداً لاقتراح قدّمته سارة.", level: "B2" },
+    { id: "fc12", de: "der Vorschlag", ar: "الاقتراح", example: "Im Beispiel übte sie Kritik an einem Vorschlag.", exampleAr: "في المثال، وجّهت نقداً لاقتراح.", level: "B2" },
   ];
 
 export const mediation: NonNullable<Lesson["mediation"]> = [
         {
       id: "med-b2-09-1", type: "summarize-de-to-ar",
-      titleAr: "لخّص نصاً تدريبياً عن سوق العمل بالعربية مع نقل الاتجاهات",
-      sourceDe: "Die Arbeitslosenquote ist auf 5,8 Prozent gesunken. Besonders gefragt sind Fachkräfte im Gesundheitswesen und in der IT-Branche. Die Digitalisierung schafft neue Berufsbilder.",
-      taskAr: "لخّص البيانات: نسبة البطالة، القطاعات المطلوبة، وتأثير الرقمنة.",
-      modelAnswerAr: "«انخفضت البطالة إلى 5.8 في المئة. الأكثر طلباً خبراء الصحة وتقنية المعلومات. والرقمنة تخلق مهناً جديدة.»",
-      keyPointsAr: ["نقلت نسبة البطالة (5.8 في المئة)", "ذكرت القطاعين المطلوبين", "نقلت أثر الرقمنة"],
+      titleAr: "لخّص بيانات افتراضية في تمرين وساطة بالعربية مع نقل الاتجاهات",
+      sourceDe: "Im fiktiven Beispielszenario ist die Arbeitslosenquote auf 5,8 Prozent gesunken. In diesem Beispiel sind Fachkräfte im Gesundheitswesen und in der IT-Branche besonders gefragt. Die Digitalisierung verändert die Berufsbilder.",
+      taskAr: "لخّص بيانات السيناريو الافتراضي: نسبة البطالة المذكورة، والقطاعان، وما يقوله النص عن الرقمنة.",
+      modelAnswerAr: "«في السيناريو الافتراضي انخفضت البطالة إلى 5.8 في المئة. ويذكر النص ارتفاع الطلب على مختصين في الصحة وتقنية المعلومات، وأن الرقمنة تغيّر المهن.»",
+      keyPointsAr: ["نقل النسبة المذكورة في المثال الافتراضي (5.8 في المئة)", "ذكر القطاعين في النص", "نقل فكرة تغيّر المهن في السيناريو"],
     },
   ];
 
 export const interaction: NonNullable<Lesson["interaction"]> = [
     {
       id: "int-b2-09-1",
-      scenarioAr: "نقاش عن التقدم لوظيفة — مهارات المستقبل.",
-      scenarioDe: "Diskussion über Bewerbung und Zukunftskompetenzen.",
-      strategyAr: "الاستراتيجية: تقديم نفسك مهنياً ومناقشة المهارات المطلوبة.",
+      scenarioAr: "نقاش تدريبي عن مهارات قد تلائم وظيفة افتراضية في إدارة المشاريع، لا تقرير عن سوق العمل.",
+      scenarioDe: "Diskussion über eine fiktive Projektmanagerstelle: Welche Fähigkeiten passen dazu?",
+      strategyAr: "الاستراتيجية: عبّر عن رأيك، واربط المهارة بمتطلبات الوظيفة الافتراضية بدلاً من تعميمها على جميع الوظائف.",
       rounds: [
         {
-          speakerDe: "Welche Fähigkeiten sind für den Arbeitsmarkt der Zukunft wichtig?",
-          speakerAr: "ما المهارات المهمة لسوق عمل المستقبل؟",
+          speakerDe: "Welche Fähigkeiten sind Ihrer Ansicht nach für unsere fiktive Projektmanagerstelle wichtig?",
+          speakerAr: "ما المهارات التي تراها مهمة لوظيفتنا الافتراضية في إدارة المشاريع؟",
           options: [
-            { de: "Neben fachlichen Qualifikationen werden Soft Skills wie Kommunikation und Teamfähigkeit immer wichtiger. Außerdem sind digitale Kompetenzen unverzichtbar.", ar: "إلى جانب المؤهلات المهنية، تزداد أهمية المهارات الناعمة كالتواصل والعمل الجماعي. كما أن الكفاءات الرقمية لا غنى عنها.", best: true, replyDe: "Eine umfassende Antwort. Wie würden Sie sich selbst einschätzen?", replyAr: "إجابة شاملة. كيف تقيّم نفسك؟" },
-            { de: "Nur die technischen Fähigkeiten zählen, der Rest ist unwichtig.", ar: "المهارات التقنية فقط تهم، والباقي غير مهم.", best: false, replyDe: "Viele Arbeitgeber legen auch Wert auf soziale Kompetenzen.", replyAr: "كثير من أصحاب العمل يولون أهمية أيضاً للكفاءات الاجتماعية." },
+            { de: "Meiner Ansicht nach sind neben fachlichen Qualifikationen auch Kommunikation und Teamfähigkeit wichtig. Je nach Stelle können digitale Kompetenzen ebenfalls eine Rolle spielen.", ar: "في رأيي، إلى جانب المؤهلات المهنية، يهمّ التواصل والعمل الجماعي أيضاً. وقد تؤدي المهارات الرقمية دوراً بحسب الوظيفة.", best: true, replyDe: "Das ist nachvollziehbar. Wie würden Sie sich selbst einschätzen?", replyAr: "هذا رأي مفهوم. كيف تقيّم نفسك؟" },
+            { de: "Für diese Stelle sind nur technische Fähigkeiten wichtig; Teamarbeit spielt keine Rolle.", ar: "هذه الوظيفة تتطلب مهارات تقنية فقط؛ ولا دور للعمل الجماعي فيها.", best: false, replyDe: "Ich würde trotzdem die konkrete Ausschreibung prüfen; je nach Aufgabe kann Teamarbeit wichtig sein.", replyAr: "مع ذلك، سأراجع إعلان الوظيفة نفسه؛ فقد يكون العمل الجماعي مهماً بحسب المهام." },
           ],
         },
         {
           speakerDe: "Wie würden Sie sich selbst einschätzen?",
           speakerAr: "كيف تقيّم نفسك؟",
           options: [
-            { de: "Ich bin kommunikativ und teamfähig. Zudem beherrsche ich mehrere Sprachen, was in internationalen Unternehmen ein großer Vorteil ist.", ar: "أنا اجتماعي وأجيد العمل الجماعي. كما أتقن لغات عدة، وهي ميزة كبيرة في الشركات الدولية.", best: true, replyDe: "Das klingt überzeugend. Welche Sprachen sprechen Sie?", replyAr: "يبدو مقنعاً. أي لغات تتحدث؟" },
-            { de: "Ich habe keine besonderen Fähigkeiten.", ar: "لا أملك مهارات خاصة.", best: false, replyDe: "Jeder hat Stärken. Analysieren Sie Ihre Qualifikationen genauer.", replyAr: "لكل شخص نقاط قوة. حلل مؤهلاتك بدقة أكبر." },
+            { de: "Ich kann gut kommunizieren und im Team arbeiten. Außerdem spreche ich mehrere Sprachen und könnte diese Stärke in internationalen Projekten einsetzen.", ar: "أستطيع التواصل والعمل ضمن فريق. كما أتحدث لغات عدة ويمكنني توظيف هذه المهارة في مشروعات دولية.", best: true, replyDe: "Können Sie ein Beispiel nennen, bei dem Ihnen Teamarbeit geholfen hat?", replyAr: "هل تذكر مثالاً ساعدك فيه العمل الجماعي؟" },
+            { de: "Ich habe keine besonderen Fähigkeiten.", ar: "لا أملك مهارات خاصة.", best: false, replyDe: "Überlegen Sie, welche Aufgaben Sie schon übernommen haben, und nennen Sie ein konkretes Beispiel.", replyAr: "فكّر في المهام التي سبق أن توليتها، واذكر مثالاً محدداً." },
           ],
         },
       ],

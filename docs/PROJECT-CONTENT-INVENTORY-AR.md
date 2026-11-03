@@ -1,6 +1,6 @@
 # جرد مصادر المحتوى والنصوص والوسائط في المشروع
 
-**تاريخ آخر تحديث لهذا السجل:** 2026-10-25.
+**تاريخ آخر جرد للأعداد:** 2026-10-25. **آخر تحديث لحالات الوسائط:** المستوى B2 كاملاً، 2026-10-28 (لا يعيد هذا التحديث جرد الأعداد).
 **الغرض:** سجل تغطية شامل بحسب الملفات، يمنع الاقتصار على عينات. وجود الملف في الجرد لا يعني تدقيقه؛ لا تُغلق مادة إلا بعد فحص عناصرها اللغوية والتربوية ومصادر ادعاءاتها ونتائج الاختبار ذات الصلة.
 
 ## النطاق الحالي
@@ -12,7 +12,7 @@
 ## حدود ما لم يُحسم
 
 - لا توجد مراجعة شاملة حتى الآن لكل الملفات المدرجة. حالة «لم تبدأ» تعني عدم وجود دليل إغلاق، لا حكماً على صحة المادة.
-- لا يمكن الاستدلال على جودة نطق التسجيلات من الاسم أو التفريغ النصي. يجب مطابقة كل أصل صوتي بمحتواه النصي حيث يوجد، ووضع «غير قابل للتحقق بهذه الأدوات» عند الحاجة؛ لا يُدّعى قياس النطق.
+- الصوت له فحوص مستقلة: يُراجع النص والمطابقة النصية والملف والربط والتشغيل بوسائلها وسكريبتاتها المناسبة، وتُوثق نتائج كل فحص. لا تُستخدم نتيجة فحص آلي محدود لإثبات جودة النطق أو طبيعية الأداء؛ هذا قيد على نوع الادعاء لا حالة إنجاز ولا سبب لإسقاط بقية الفحوص.
 - تُفحص المصادر التعليمية والمراجع عند الادعاءات اللغوية/الثقافية/الصحية/القانونية. لا يُدّعى اعتماد CEFR/Goethe الرسمي دون مصدر مناسب.
 - لا توجد مراجعة بشرية متاحة؛ السجل لا يشترطها ولا يدّعي حصولها.
 
@@ -22,8 +22,8 @@
 
 | المجال | الملف | الحالة |
 |---|---|---|
-| `dialogues` | `src/data/dialogues/a1/part1.ts` | لم تبدأ؛ حصر العناصر وتدقيقها بنداً بنداً |
-| `dialogues` | `src/data/dialogues/a1/part2.ts` | لم تبدأ؛ حصر العناصر وتدقيقها بنداً بنداً |
+| `dialogues` | `src/data/dialogues/a1/part1.ts` | اكتمل التدقيق النصي لكل 5 حوارات و30 جولة و17 سؤالاً و51 خياراً و25 مفردة؛ عُدلت مواضع محددة وثُبتت باختبارات. المطابقة المرجعية شواهدها موثقة انتقائياً لا لكل حكم/ترجمة، والصوت ومستوى CEFR الرسمي خارج هذا النطاق. التقرير: `docs/DIALOGUES-A1-PART1-REVIEW-AR.md` |
+| `dialogues` | `src/data/dialogues/a1/part2.ts` | اكتمل المرور النصي على 5 حوارات/30 جولة/15 سؤالاً/45 خياراً/26 مفردة، وثُبتت تعديلات مختارة بالاختبارات. مصادر Duden موثقة للأحكام المحددة فقط؛ جُلبت PONS لمداخل ثنائية محددة، واستُخدمت مراجع بديلة لـ`T-Shirt` و`zu Fuß` وسند تقاربي فقط لـ`Stadtzentrum`. أُضيفت في مرور المتابعة مداخل PONS أخرى (منها `Zimmer`, `Stadtrand`, `Dorf`, `Kleidung`, `Glückwunsch`, `Kunde`, وغيرها) وسُجلت التحسينات التحريرية، لكن المطابقة الخارجية لكل الظهورات والتراكيب ما زالت جزئية؛ الصوت ومواءمة CEFR الرسمية غير منجزين. التقرير: `docs/DIALOGUES-A1-PART2-REVIEW-AR.md` |
 | `dialogues` | `src/data/dialogues/a1/part3.ts` | لم تبدأ؛ حصر العناصر وتدقيقها بنداً بنداً |
 | `dialogues` | `src/data/dialogues/a1.ts` | لم تبدأ؛ حصر العناصر وتدقيقها بنداً بنداً |
 | `dialogues` | `src/data/dialogues/a2/part1.ts` | لم تبدأ؛ حصر العناصر وتدقيقها بنداً بنداً |
@@ -485,9 +485,9 @@
 | `vocabulary` | `src/data/vocabulary/a2-extra2.ts` | لم تبدأ؛ حصر العناصر وتدقيقها بنداً بنداً |
 | `vocabulary` | `src/data/vocabulary/a2.ts` | لم تبدأ؛ حصر العناصر وتدقيقها بنداً بنداً |
 | `vocabulary` | `src/data/vocabulary/b1-extra.ts` | لم تبدأ؛ حصر العناصر وتدقيقها بنداً بنداً |
-| `vocabulary` | `src/data/vocabulary/b1-extra2/part1.ts` | لم تبدأ؛ حصر العناصر وتدقيقها بنداً بنداً |
-| `vocabulary` | `src/data/vocabulary/b1-extra2/part2.ts` | لم تبدأ؛ حصر العناصر وتدقيقها بنداً بنداً |
-| `vocabulary` | `src/data/vocabulary/b1-extra2/part3.ts` | لم تبدأ؛ حصر العناصر وتدقيقها بنداً بنداً |
+| `vocabulary` | `src/data/vocabulary/b1-extra2/part1.ts` | اكتملت المراجعة المصدرية المتتابعة للمداخل 203/203 في `docs/B1-EXTRA2-PART1-REVIEW-AR.md`؛ اكتملت المجموعات الخمس: العمل 51/51 والتعليم 36/36 والصحة 41/41 والبيئة والطبيعة 41/41 والتقنية والإعلام 34/34؛ لا يعني ذلك مراجعة كل سياق استعمال في المشروع |
+| `vocabulary` | `src/data/vocabulary/b1-extra2/part2.ts` | اكتملت المراجعة المصدرية لكل المداخل 206/206 بمراجع Duden مباشرة؛ أُغلقت الدفعات #246–255 و#256–305 و#306–355 و#356–405، ثم المداخل الأخيرة #406–409. وُثق شاهد ورابط وقرار لكل مدخل، وأضيفت assertions لجميع المدخلات المدققة؛ اكتملت الفحوص المناسبة (integrity 15/15، typecheck، lint، audit:content، و`git diff --check`). التفاصيل في `docs/B1-EXTRA2-PART2-REVIEW-AR.md` |
+| `vocabulary` | `src/data/vocabulary/b1-extra2/part3.ts` | أُغلقت الدفعات المتتابعة #410–459 و#460–509 و#510–559 و#560–579 بمراجعة Duden لكل مدخل (170/170)، وتوثيق الشواهد والروابط والقرارات في تقارير الدفعات؛ أضيفت assertions للمداخل الـ170. تقرير الإغلاق الأخير: `docs/B1-EXTRA2-PART3-REVIEW-AR-560-579.md`. انتهى هذا المرور المرجعي على ملف part3؛ لا يعني ذلك إكمال مراجعة بقية محتوى المشروع |
 | `vocabulary` | `src/data/vocabulary/b1-extra2.ts` | لم تبدأ؛ حصر العناصر وتدقيقها بنداً بنداً |
 | `vocabulary` | `src/data/vocabulary/b1.ts` | لم تبدأ؛ حصر العناصر وتدقيقها بنداً بنداً |
 | `vocabulary` | `src/data/vocabulary/b2-extra.ts` | لم تبدأ؛ حصر العناصر وتدقيقها بنداً بنداً |
@@ -940,872 +940,872 @@
 
 | المجال | الملف | الحالة |
 |---|---|---|
-| `audio` | `public/audio/dialogues-a1/a1-01-begruessung-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-01-begruessung-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-01-begruessung-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-01-begruessung-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-01-begruessung-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-01-begruessung-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-02-cafe-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-02-cafe-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-02-cafe-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-02-cafe-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-02-cafe-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-02-cafe-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-03-supermarkt-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-03-supermarkt-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-03-supermarkt-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-03-supermarkt-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-03-supermarkt-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-03-supermarkt-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-04-familie-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-04-familie-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-04-familie-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-04-familie-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-04-familie-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-04-familie-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-05-uhrzeit-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-05-uhrzeit-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-05-uhrzeit-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-05-uhrzeit-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-05-uhrzeit-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-05-uhrzeit-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-06-kleidung-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-06-kleidung-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-06-kleidung-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-06-kleidung-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-06-kleidung-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-06-kleidung-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-07-wohnung-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-07-wohnung-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-07-wohnung-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-07-wohnung-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-07-wohnung-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-07-wohnung-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-08-einladung-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-08-einladung-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-08-einladung-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-08-einladung-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-08-einladung-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-08-einladung-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-09-wegbeschreibung-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-09-wegbeschreibung-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-09-wegbeschreibung-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-09-wegbeschreibung-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-09-wegbeschreibung-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-09-wegbeschreibung-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-10-essen-bestellen-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-10-essen-bestellen-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-10-essen-bestellen-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-10-essen-bestellen-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-10-essen-bestellen-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-10-essen-bestellen-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-11-apotheke-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-11-apotheke-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-11-apotheke-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-11-apotheke-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-11-apotheke-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-11-apotheke-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-12-freizeit-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-12-freizeit-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-12-freizeit-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-12-freizeit-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-12-freizeit-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-12-freizeit-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-13-hotel-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-13-hotel-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-13-hotel-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-13-hotel-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-13-hotel-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-13-hotel-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-14-wetter-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-14-wetter-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-14-wetter-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-14-wetter-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-14-wetter-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-14-wetter-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-15-ticket-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-15-ticket-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-15-ticket-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-15-ticket-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-15-ticket-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-15-ticket-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-16-bahnhof-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-16-bahnhof-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-16-bahnhof-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-16-bahnhof-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-16-bahnhof-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a1/a1-16-bahnhof-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-01-arzt-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-01-arzt-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-01-arzt-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-01-arzt-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-01-arzt-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-01-arzt-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-02-restaurant-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-02-restaurant-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-02-restaurant-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-02-restaurant-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-02-restaurant-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-02-restaurant-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-03-zug-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-03-zug-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-03-zug-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-03-zug-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-03-zug-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-03-zug-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-04-wohnungssuche-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-04-wohnungssuche-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-04-wohnungssuche-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-04-wohnungssuche-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-04-wohnungssuche-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-04-wohnungssuche-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-05-reisebuero-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-05-reisebuero-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-05-reisebuero-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-05-reisebuero-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-05-reisebuero-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-05-reisebuero-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-06-post-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-06-post-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-06-post-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-06-post-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-06-post-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-06-post-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-07-bank-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-07-bank-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-07-bank-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-07-bank-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-07-bank-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-07-bank-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-08-handy-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-08-handy-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-08-handy-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-08-handy-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-08-handy-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-08-handy-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-09-bus-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-09-bus-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-09-bus-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-09-bus-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-09-bus-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-09-bus-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-10-bewerbung-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-10-bewerbung-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-10-bewerbung-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-10-bewerbung-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-10-bewerbung-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-10-bewerbung-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-11-friseur-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-11-friseur-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-11-friseur-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-11-friseur-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-11-friseur-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-11-friseur-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-12-verspaetet-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-12-verspaetet-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-12-verspaetet-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-12-verspaetet-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-12-verspaetet-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-12-verspaetet-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-13-einkaufen-kleidung-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-13-einkaufen-kleidung-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-13-einkaufen-kleidung-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-13-einkaufen-kleidung-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-13-einkaufen-kleidung-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-13-einkaufen-kleidung-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-14-nachbarn-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-14-nachbarn-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-14-nachbarn-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-14-nachbarn-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-14-nachbarn-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-14-nachbarn-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-15-geschenk-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-15-geschenk-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-15-geschenk-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-15-geschenk-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-15-geschenk-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-a2/a2-15-geschenk-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-01-meinung-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-01-meinung-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-01-meinung-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-01-meinung-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-01-meinung-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-01-meinung-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-02-urlaub-planen-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ المصدر/المطابقة/النطق غير مثبتة |
-| `audio` | `public/audio/dialogues-b1/b1-02-urlaub-planen-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ المصدر/المطابقة/النطق غير مثبتة |
-| `audio` | `public/audio/dialogues-b1/b1-02-urlaub-planen-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ المصدر/المطابقة/النطق غير مثبتة |
-| `audio` | `public/audio/dialogues-b1/b1-02-urlaub-planen-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ المصدر/المطابقة/النطق غير مثبتة |
-| `audio` | `public/audio/dialogues-b1/b1-02-urlaub-planen-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ المصدر/المطابقة/النطق غير مثبتة |
-| `audio` | `public/audio/dialogues-b1/b1-02-urlaub-planen-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ المصدر/المطابقة/النطق غير مثبتة |
-| `audio` | `public/audio/dialogues-b1/b1-03-beschwerde-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-03-beschwerde-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-03-beschwerde-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-03-beschwerde-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-03-beschwerde-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-03-beschwerde-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-04-terminal-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-04-terminal-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-04-terminal-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-04-terminal-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-04-terminal-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-04-terminal-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-05-probleme-loesen-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-05-probleme-loesen-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-05-probleme-loesen-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-05-probleme-loesen-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-05-probleme-loesen-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-05-probleme-loesen-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-06-umwelt-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-06-umwelt-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-06-umwelt-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-06-umwelt-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-06-umwelt-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-06-umwelt-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-07-interview-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-07-interview-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-07-interview-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-07-interview-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-07-interview-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-07-interview-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-08-krankmeldung-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-08-krankmeldung-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-08-krankmeldung-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-08-krankmeldung-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-08-krankmeldung-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-08-krankmeldung-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-09-ticket-kaufen-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-09-ticket-kaufen-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-09-ticket-kaufen-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-09-ticket-kaufen-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-09-ticket-kaufen-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-09-ticket-kaufen-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-10-nachhilfe-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-10-nachhilfe-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-10-nachhilfe-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-10-nachhilfe-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-10-nachhilfe-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-10-nachhilfe-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-11-panne-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-11-panne-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-11-panne-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-11-panne-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-11-panne-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-11-panne-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-12-geld-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت مصدر الملف أو مطابقته للنص أو النطق؛ تقرير `B1-12-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/dialogues-b1/b1-12-geld-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت مصدر الملف أو مطابقته للنص أو النطق؛ تقرير `B1-12-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/dialogues-b1/b1-12-geld-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت مصدر الملف أو مطابقته للنص أو النطق؛ تقرير `B1-12-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/dialogues-b1/b1-12-geld-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت مصدر الملف أو مطابقته للنص أو النطق؛ تقرير `B1-12-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/dialogues-b1/b1-12-geld-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت مصدر الملف أو مطابقته للنص أو النطق؛ تقرير `B1-12-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/dialogues-b1/b1-12-geld-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت مصدر الملف أو مطابقته للنص أو النطق؛ تقرير `B1-12-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/dialogues-b1/b1-13-sport-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-13-sport-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-13-sport-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-13-sport-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-13-sport-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-13-sport-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-14-kochen-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-14-kochen-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-14-kochen-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-14-kochen-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-14-kochen-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-14-kochen-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b1/b1-15-wohnungswechsel-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ المصدر/المطابقة/النطق غير مثبتة |
-| `audio` | `public/audio/dialogues-b1/b1-15-wohnungswechsel-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ المصدر/المطابقة/النطق غير مثبتة |
-| `audio` | `public/audio/dialogues-b1/b1-15-wohnungswechsel-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ المصدر/المطابقة/النطق غير مثبتة |
-| `audio` | `public/audio/dialogues-b1/b1-15-wohnungswechsel-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ المصدر/المطابقة/النطق غير مثبتة |
-| `audio` | `public/audio/dialogues-b1/b1-15-wohnungswechsel-5.mp3` | طُبّع +13 dB واجتاز الإشارة؛ المصدر/المطابقة/النطق غير مثبتة |
-| `audio` | `public/audio/dialogues-b1/b1-15-wohnungswechsel-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ المصدر/المطابقة/النطق غير مثبتة |
-| `audio` | `public/audio/dialogues-b2/b2-01-gehaltsverhandlung-1.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في `docs/B2-06-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/dialogues-b2/b2-01-gehaltsverhandlung-2.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في `docs/B2-06-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/dialogues-b2/b2-01-gehaltsverhandlung-3.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في `docs/B2-06-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/dialogues-b2/b2-01-gehaltsverhandlung-4.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في `docs/B2-06-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/dialogues-b2/b2-01-gehaltsverhandlung-5.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في `docs/B2-06-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/dialogues-b2/b2-01-gehaltsverhandlung-6.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في `docs/B2-06-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/dialogues-b2/b2-02-teambesprechung-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-02-teambesprechung-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-02-teambesprechung-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-02-teambesprechung-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-02-teambesprechung-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-02-teambesprechung-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-03-konflikt-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدره ومطابقته غير موثقين، والفحص لا يقيس النطق؛ تقرير B2-05 |
-| `audio` | `public/audio/dialogues-b2/b2-03-konflikt-2.mp3` | طُبّع +10 dB؛ اجتاز فك الترميز ومؤشرات الإشارة؛ مصدره ومطابقته غير موثقين؛ تقرير B2-05 |
-| `audio` | `public/audio/dialogues-b2/b2-03-konflikt-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدره ومطابقته غير موثقين، والفحص لا يقيس النطق؛ تقرير B2-05 |
-| `audio` | `public/audio/dialogues-b2/b2-03-konflikt-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدره ومطابقته غير موثقين، والفحص لا يقيس النطق؛ تقرير B2-05 |
-| `audio` | `public/audio/dialogues-b2/b2-03-konflikt-5.mp3` | طُبّع +10 dB؛ اجتاز فك الترميز ومؤشرات الإشارة؛ مصدره ومطابقته غير موثقين؛ تقرير B2-05 |
-| `audio` | `public/audio/dialogues-b2/b2-03-konflikt-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدره ومطابقته غير موثقين، والفحص لا يقيس النطق؛ تقرير B2-05 |
-| `audio` | `public/audio/dialogues-b2/b2-04-notfall-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-04-notfall-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-04-notfall-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-04-notfall-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-04-notfall-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-04-notfall-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-05-pass-verloren-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03 |
-| `audio` | `public/audio/dialogues-b2/b2-05-pass-verloren-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03 |
-| `audio` | `public/audio/dialogues-b2/b2-05-pass-verloren-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03 |
-| `audio` | `public/audio/dialogues-b2/b2-05-pass-verloren-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ طُبّع المستوى بكسب +14 dB؛ التفاصيل في تقرير B2-03 |
-| `audio` | `public/audio/dialogues-b2/b2-05-pass-verloren-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03 |
-| `audio` | `public/audio/dialogues-b2/b2-05-pass-verloren-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03 |
-| `audio` | `public/audio/dialogues-b2/b2-06-akademisch-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-06-akademisch-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-06-akademisch-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-06-akademisch-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-06-akademisch-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-06-akademisch-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-07-bewerbung-vertrag-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن فحص B2-03/B2-07؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقريري الدرسين |
-| `audio` | `public/audio/dialogues-b2/b2-07-bewerbung-vertrag-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن فحص B2-03/B2-07؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقريري الدرسين |
-| `audio` | `public/audio/dialogues-b2/b2-07-bewerbung-vertrag-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن فحص B2-03/B2-07؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقريري الدرسين |
-| `audio` | `public/audio/dialogues-b2/b2-07-bewerbung-vertrag-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن فحص B2-03/B2-07؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقريري الدرسين |
-| `audio` | `public/audio/dialogues-b2/b2-07-bewerbung-vertrag-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن فحص B2-03/B2-07؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقريري الدرسين |
-| `audio` | `public/audio/dialogues-b2/b2-07-bewerbung-vertrag-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن فحص B2-03/B2-07؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقريري الدرسين |
-| `audio` | `public/audio/dialogues-b2/b2-08-praesentation-1.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في تقرير B2-06؛ طُبّع المستوى بكسب +14 dB |
-| `audio` | `public/audio/dialogues-b2/b2-08-praesentation-2.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في تقرير B2-06 |
-| `audio` | `public/audio/dialogues-b2/b2-08-praesentation-3.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في تقرير B2-06 |
-| `audio` | `public/audio/dialogues-b2/b2-08-praesentation-4.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في تقرير B2-06 |
-| `audio` | `public/audio/dialogues-b2/b2-08-praesentation-5.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في تقرير B2-06 |
-| `audio` | `public/audio/dialogues-b2/b2-08-praesentation-6.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في تقرير B2-06 |
-| `audio` | `public/audio/dialogues-b2/b2-09-wohnungsvertrag-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03 |
-| `audio` | `public/audio/dialogues-b2/b2-09-wohnungsvertrag-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03 |
-| `audio` | `public/audio/dialogues-b2/b2-09-wohnungsvertrag-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03 |
-| `audio` | `public/audio/dialogues-b2/b2-09-wohnungsvertrag-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03 |
-| `audio` | `public/audio/dialogues-b2/b2-09-wohnungsvertrag-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03 |
-| `audio` | `public/audio/dialogues-b2/b2-09-wohnungsvertrag-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03 |
-| `audio` | `public/audio/dialogues-b2/b2-10-international-1.mp3` | الحوار النصي المرتبط نُقح لـB2-08؛ اجتاز الملف فك الترميز ومؤشرات الإشارة الخشنة، لكن لم يُستمع أو يُطابق بالنص الجديد. تفاصيل الحدود في تقرير B2-08 |
-| `audio` | `public/audio/dialogues-b2/b2-10-international-2.mp3` | الحوار النصي المرتبط نُقح لـB2-08؛ اجتاز الملف فك الترميز ومؤشرات الإشارة الخشنة، لكن لم يُستمع أو يُطابق بالنص الجديد. تفاصيل الحدود في تقرير B2-08 |
-| `audio` | `public/audio/dialogues-b2/b2-10-international-3.mp3` | الحوار النصي المرتبط نُقح لـB2-08؛ اجتاز الملف فك الترميز ومؤشرات الإشارة الخشنة، لكن لم يُستمع أو يُطابق بالنص الجديد. تفاصيل الحدود في تقرير B2-08 |
-| `audio` | `public/audio/dialogues-b2/b2-10-international-4.mp3` | الحوار النصي المرتبط نُقح لـB2-08؛ اجتاز الملف فك الترميز ومؤشرات الإشارة الخشنة، لكن لم يُستمع أو يُطابق بالنص الجديد. تفاصيل الحدود في تقرير B2-08 |
-| `audio` | `public/audio/dialogues-b2/b2-10-international-5.mp3` | الحوار النصي المرتبط نُقح لـB2-08؛ اجتاز الملف فك الترميز ومؤشرات الإشارة الخشنة، لكن لم يُستمع أو يُطابق بالنص الجديد. تفاصيل الحدود في تقرير B2-08 |
-| `audio` | `public/audio/dialogues-b2/b2-10-international-6.mp3` | الحوار النصي المرتبط نُقح لـB2-08؛ اجتاز الملف فك الترميز ومؤشرات الإشارة الخشنة، لكن لم يُستمع أو يُطابق بالنص الجديد. الملف السادس منخفض المستوى نسبياً؛ تفاصيل الحدود في تقرير B2-08 |
-| `audio` | `public/audio/dialogues-b2/b2-11-verhandlung-kunde-1.mp3` | اجتاز فحص الإشارة؛ مصدر MP3 غير موثق، ولا يثبت الفحص المطابقة أو وضوح/طبيعية النطق؛ المقطع 6 طُبّع مستوى إشارته؛ تقرير B2-02 |
-| `audio` | `public/audio/dialogues-b2/b2-11-verhandlung-kunde-2.mp3` | اجتاز فحص الإشارة؛ مصدر MP3 غير موثق، ولا يثبت الفحص المطابقة أو وضوح/طبيعية النطق؛ المقطع 6 طُبّع مستوى إشارته؛ تقرير B2-02 |
-| `audio` | `public/audio/dialogues-b2/b2-11-verhandlung-kunde-3.mp3` | اجتاز فحص الإشارة؛ مصدر MP3 غير موثق، ولا يثبت الفحص المطابقة أو وضوح/طبيعية النطق؛ المقطع 6 طُبّع مستوى إشارته؛ تقرير B2-02 |
-| `audio` | `public/audio/dialogues-b2/b2-11-verhandlung-kunde-4.mp3` | اجتاز فحص الإشارة؛ مصدر MP3 غير موثق، ولا يثبت الفحص المطابقة أو وضوح/طبيعية النطق؛ المقطع 6 طُبّع مستوى إشارته؛ تقرير B2-02 |
-| `audio` | `public/audio/dialogues-b2/b2-11-verhandlung-kunde-5.mp3` | اجتاز فحص الإشارة؛ مصدر MP3 غير موثق، ولا يثبت الفحص المطابقة أو وضوح/طبيعية النطق؛ المقطع 6 طُبّع مستوى إشارته؛ تقرير B2-02 |
-| `audio` | `public/audio/dialogues-b2/b2-11-verhandlung-kunde-6.mp3` | اجتاز فحص الإشارة؛ مصدر MP3 غير موثق، ولا يثبت الفحص المطابقة أو وضوح/طبيعية النطق؛ المقطع 6 طُبّع مستوى إشارته؛ تقرير B2-02 |
-| `audio` | `public/audio/dialogues-b2/b2-12-arzt-spezialist-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-12-arzt-spezialist-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-12-arzt-spezialist-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-12-arzt-spezialist-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-12-arzt-spezialist-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-12-arzt-spezialist-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-13-flug-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03 |
-| `audio` | `public/audio/dialogues-b2/b2-13-flug-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03 |
-| `audio` | `public/audio/dialogues-b2/b2-13-flug-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03 |
-| `audio` | `public/audio/dialogues-b2/b2-13-flug-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03 |
-| `audio` | `public/audio/dialogues-b2/b2-13-flug-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ طُبّع المستوى بكسب +14 dB؛ التفاصيل في تقرير B2-03 |
-| `audio` | `public/audio/dialogues-b2/b2-13-flug-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03 |
-| `audio` | `public/audio/dialogues-b2/b2-14-medien-1.mp3` | عُدّل المستوى +10 dB؛ اجتاز فك الترميز ومؤشرات الإشارة؛ المصدر غير موثق، ولا يثبت الفحص وضوح النطق أو طبيعته أو مطابقة النص؛ تقرير B2-04 |
-| `audio` | `public/audio/dialogues-b2/b2-14-medien-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ المصدر غير موثق، ولا يثبت الفحص وضوح النطق أو طبيعته أو مطابقة النص؛ تقرير B2-04 |
-| `audio` | `public/audio/dialogues-b2/b2-14-medien-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ المصدر غير موثق، ولا يثبت الفحص وضوح النطق أو طبيعته أو مطابقة النص؛ تقرير B2-04 |
-| `audio` | `public/audio/dialogues-b2/b2-14-medien-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ المصدر غير موثق، ولا يثبت الفحص وضوح النطق أو طبيعته أو مطابقة النص؛ تقرير B2-04 |
-| `audio` | `public/audio/dialogues-b2/b2-14-medien-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ المصدر غير موثق، ولا يثبت الفحص وضوح النطق أو طبيعته أو مطابقة النص؛ تقرير B2-04 |
-| `audio` | `public/audio/dialogues-b2/b2-14-medien-6.mp3` | عُدّل المستوى +10 dB؛ اجتاز فك الترميز ومؤشرات الإشارة؛ المصدر غير موثق، ولا يثبت الفحص وضوح النطق أو طبيعته أو مطابقة النص؛ تقرير B2-04 |
-| `audio` | `public/audio/dialogues-b2/b2-15-umzug-firma-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-15-umzug-firma-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-15-umzug-firma-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-15-umzug-firma-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-15-umzug-firma-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/dialogues-b2/b2-15-umzug-firma-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/hoeren-t1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/hoeren-t2-g1-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/hoeren-t2-g1-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/hoeren-t2-g2-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/hoeren-t2-g2-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/hoeren-t2-g3-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/hoeren-t2-g3-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/hoeren-t2-g4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/hoeren-t2-g4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/hoeren-t3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/hoeren-t4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/hoeren-t4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/hoeren-t4-c.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/hoeren-t4-d.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m2/hoeren-t1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m2/hoeren-t2-g1-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m2/hoeren-t2-g1-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m2/hoeren-t2-g1-c.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m2/hoeren-t2-g2-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m2/hoeren-t2-g2-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m2/hoeren-t2-g3-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m2/hoeren-t2-g3-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m2/hoeren-t2-g4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m2/hoeren-t2-g4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m2/hoeren-t3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m2/hoeren-t4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m2/hoeren-t4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m2/hoeren-t4-c.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m3/hoeren-t1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m3/hoeren-t2-g1-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m3/hoeren-t2-g1-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m3/hoeren-t2-g2-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m3/hoeren-t2-g2-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m3/hoeren-t2-g3-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m3/hoeren-t2-g3-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m3/hoeren-t2-g4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m3/hoeren-t2-g4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m3/hoeren-t3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m3/hoeren-t4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m3/hoeren-t4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a1/m3/hoeren-t4-c.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/hoeren-t1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/hoeren-t2-g1-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/hoeren-t2-g1-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/hoeren-t2-g2-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/hoeren-t2-g2-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/hoeren-t2-g3-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/hoeren-t2-g3-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/hoeren-t2-g4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/hoeren-t2-g4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/hoeren-t3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/hoeren-t4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/hoeren-t4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/hoeren-t4-c.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/hoeren-t4-d.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m2/hoeren-t1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m2/hoeren-t2-g1-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m2/hoeren-t2-g1-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m2/hoeren-t2-g2-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m2/hoeren-t2-g2-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m2/hoeren-t2-g3-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m2/hoeren-t2-g3-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m2/hoeren-t2-g4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m2/hoeren-t2-g4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m2/hoeren-t3-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m2/hoeren-t3-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m2/hoeren-t4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m2/hoeren-t4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m2/hoeren-t4-c.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m2/hoeren-t4-d.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m2/hoeren-t4-e.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m2/hoeren-t4-f.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m3/hoeren-t1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m3/hoeren-t2-g1-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m3/hoeren-t2-g1-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m3/hoeren-t2-g2-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m3/hoeren-t2-g2-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m3/hoeren-t2-g3-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m3/hoeren-t2-g3-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m3/hoeren-t2-g4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m3/hoeren-t2-g4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m3/hoeren-t3-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m3/hoeren-t3-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m3/hoeren-t4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m3/hoeren-t4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m3/hoeren-t4-c.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-a2/m3/hoeren-t4-d.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/hoeren-t1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/hoeren-t2-g1-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/hoeren-t2-g1-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/hoeren-t2-g2-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/hoeren-t2-g2-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/hoeren-t2-g3-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/hoeren-t2-g3-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/hoeren-t2-g4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/hoeren-t2-g4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/hoeren-t3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/hoeren-t4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/hoeren-t4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/hoeren-t4-c.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/hoeren-t4-d.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m2/hoeren-t1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m2/hoeren-t2-g1-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m2/hoeren-t2-g1-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m2/hoeren-t2-g2-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m2/hoeren-t2-g2-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m2/hoeren-t2-g3-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m2/hoeren-t2-g3-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m2/hoeren-t2-g4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m2/hoeren-t2-g4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m2/hoeren-t3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m2/hoeren-t4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m2/hoeren-t4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m2/hoeren-t4-c.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m2/hoeren-t4-d.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m2/hoeren-t4-e.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t2-g1-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t2-g1-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t2-g2-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t2-g2-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t2-g3-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t2-g3-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t2-g4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t2-g4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t3-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t3-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t3-c.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t3-d.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t4-c.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t4-d.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t4-e.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b1/m3/hoeren-t4-f.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
+| `audio` | `public/audio/dialogues-a1/a1-01-begruessung-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-01-begruessung-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-01-begruessung-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-01-begruessung-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-01-begruessung-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-01-begruessung-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-02-cafe-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-02-cafe-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-02-cafe-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-02-cafe-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-02-cafe-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-02-cafe-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-03-supermarkt-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-03-supermarkt-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-03-supermarkt-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-03-supermarkt-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-03-supermarkt-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-03-supermarkt-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-04-familie-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-04-familie-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-04-familie-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-04-familie-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-04-familie-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-04-familie-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-05-uhrzeit-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-05-uhrzeit-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-05-uhrzeit-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-05-uhrzeit-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-05-uhrzeit-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-05-uhrzeit-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-06-kleidung-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-06-kleidung-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-06-kleidung-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-06-kleidung-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-06-kleidung-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-06-kleidung-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-07-wohnung-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-07-wohnung-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-07-wohnung-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-07-wohnung-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-07-wohnung-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-07-wohnung-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-08-einladung-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-08-einladung-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-08-einladung-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-08-einladung-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-08-einladung-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-08-einladung-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-09-wegbeschreibung-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-09-wegbeschreibung-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-09-wegbeschreibung-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-09-wegbeschreibung-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-09-wegbeschreibung-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-09-wegbeschreibung-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-10-essen-bestellen-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-10-essen-bestellen-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-10-essen-bestellen-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-10-essen-bestellen-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-10-essen-bestellen-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-10-essen-bestellen-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-11-apotheke-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-11-apotheke-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-11-apotheke-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-11-apotheke-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-11-apotheke-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-11-apotheke-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-12-freizeit-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-12-freizeit-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-12-freizeit-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-12-freizeit-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-12-freizeit-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-12-freizeit-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-13-hotel-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-13-hotel-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-13-hotel-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-13-hotel-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-13-hotel-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-13-hotel-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-14-wetter-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-14-wetter-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-14-wetter-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-14-wetter-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-14-wetter-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-14-wetter-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-15-ticket-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-15-ticket-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-15-ticket-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-15-ticket-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-15-ticket-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-15-ticket-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-16-bahnhof-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-16-bahnhof-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-16-bahnhof-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-16-bahnhof-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-16-bahnhof-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a1/a1-16-bahnhof-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن المجموعة ذات 96 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-01-arzt-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-01-arzt-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-01-arzt-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-01-arzt-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-01-arzt-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-01-arzt-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-02-restaurant-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-02-restaurant-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-02-restaurant-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-02-restaurant-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-02-restaurant-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-02-restaurant-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-03-zug-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-03-zug-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-03-zug-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-03-zug-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-03-zug-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-03-zug-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-04-wohnungssuche-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-04-wohnungssuche-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-04-wohnungssuche-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-04-wohnungssuche-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-04-wohnungssuche-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-04-wohnungssuche-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-05-reisebuero-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-05-reisebuero-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-05-reisebuero-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-05-reisebuero-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-05-reisebuero-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-05-reisebuero-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-06-post-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-06-post-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-06-post-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-06-post-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-06-post-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-06-post-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-07-bank-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-07-bank-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-07-bank-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-07-bank-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-07-bank-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-07-bank-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-08-handy-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-08-handy-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-08-handy-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-08-handy-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-08-handy-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-08-handy-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-09-bus-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-09-bus-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-09-bus-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-09-bus-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-09-bus-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-09-bus-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-10-bewerbung-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-10-bewerbung-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-10-bewerbung-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-10-bewerbung-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-10-bewerbung-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-10-bewerbung-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-11-friseur-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-11-friseur-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-11-friseur-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-11-friseur-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-11-friseur-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-11-friseur-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-12-verspaetet-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-12-verspaetet-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-12-verspaetet-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-12-verspaetet-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-12-verspaetet-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-12-verspaetet-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-13-einkaufen-kleidung-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-13-einkaufen-kleidung-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-13-einkaufen-kleidung-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-13-einkaufen-kleidung-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-13-einkaufen-kleidung-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-13-einkaufen-kleidung-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-14-nachbarn-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-14-nachbarn-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-14-nachbarn-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-14-nachbarn-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-14-nachbarn-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-14-nachbarn-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-15-geschenk-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-15-geschenk-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-15-geschenk-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-15-geschenk-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-15-geschenk-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-a2/a2-15-geschenk-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة الحوارات ذات 90 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-01-meinung-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-01-meinung-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-01-meinung-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-01-meinung-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-01-meinung-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-01-meinung-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-02-urlaub-planen-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-02-urlaub-planen-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-02-urlaub-planen-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-02-urlaub-planen-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-02-urlaub-planen-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-02-urlaub-planen-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-03-beschwerde-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-03-beschwerde-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-03-beschwerde-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-03-beschwerde-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-03-beschwerde-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-03-beschwerde-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-04-terminal-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-04-terminal-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-04-terminal-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-04-terminal-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-04-terminal-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-04-terminal-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-05-probleme-loesen-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-05-probleme-loesen-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-05-probleme-loesen-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-05-probleme-loesen-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-05-probleme-loesen-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-05-probleme-loesen-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-06-umwelt-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-06-umwelt-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-06-umwelt-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-06-umwelt-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-06-umwelt-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-06-umwelt-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-07-interview-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-07-interview-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-07-interview-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-07-interview-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-07-interview-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-07-interview-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-08-krankmeldung-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-08-krankmeldung-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-08-krankmeldung-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-08-krankmeldung-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-08-krankmeldung-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-08-krankmeldung-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-09-ticket-kaufen-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-09-ticket-kaufen-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-09-ticket-kaufen-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-09-ticket-kaufen-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-09-ticket-kaufen-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-09-ticket-kaufen-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-10-nachhilfe-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-10-nachhilfe-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-10-nachhilfe-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-10-nachhilfe-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-10-nachhilfe-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-10-nachhilfe-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-11-panne-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-11-panne-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-11-panne-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-11-panne-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-11-panne-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-11-panne-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-12-geld-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-12-geld-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-12-geld-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-12-geld-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-12-geld-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-12-geld-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-13-sport-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-13-sport-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-13-sport-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-13-sport-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-13-sport-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-13-sport-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-14-kochen-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-14-kochen-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-14-kochen-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-14-kochen-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-14-kochen-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-14-kochen-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-15-wohnungswechsel-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-15-wohnungswechsel-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-15-wohnungswechsel-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-15-wohnungswechsel-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-15-wohnungswechsel-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b1/b1-15-wohnungswechsel-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي بتمريرين. نتيجة مجموعة الحوارات 70/1398 بعد تطبيع الأعداد؛ راجع `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/dialogues-b2/b2-01-gehaltsverhandlung-1.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في `docs/B2-06-REVIEW-NOTES-AR.md`؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-01-gehaltsverhandlung-2.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في `docs/B2-06-REVIEW-NOTES-AR.md`؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-01-gehaltsverhandlung-3.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في `docs/B2-06-REVIEW-NOTES-AR.md`؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-01-gehaltsverhandlung-4.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في `docs/B2-06-REVIEW-NOTES-AR.md`؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-01-gehaltsverhandlung-5.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في `docs/B2-06-REVIEW-NOTES-AR.md`؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-01-gehaltsverhandlung-6.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في `docs/B2-06-REVIEW-NOTES-AR.md`؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-02-teambesprechung-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-02-teambesprechung-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-02-teambesprechung-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-02-teambesprechung-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-02-teambesprechung-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-02-teambesprechung-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-03-konflikt-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدره ومطابقته غير موثقين، والفحص لا يقيس النطق؛ تقرير B2-05؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-03-konflikt-2.mp3` | طُبّع +10 dB؛ اجتاز فك الترميز ومؤشرات الإشارة؛ مصدره ومطابقته غير موثقين؛ تقرير B2-05؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-03-konflikt-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدره ومطابقته غير موثقين، والفحص لا يقيس النطق؛ تقرير B2-05؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-03-konflikt-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدره ومطابقته غير موثقين، والفحص لا يقيس النطق؛ تقرير B2-05؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-03-konflikt-5.mp3` | طُبّع +10 dB؛ اجتاز فك الترميز ومؤشرات الإشارة؛ مصدره ومطابقته غير موثقين؛ تقرير B2-05؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-03-konflikt-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدره ومطابقته غير موثقين، والفحص لا يقيس النطق؛ تقرير B2-05؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-04-notfall-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-04-notfall-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-04-notfall-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-04-notfall-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-04-notfall-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-04-notfall-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-05-pass-verloren-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-05-pass-verloren-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-05-pass-verloren-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-05-pass-verloren-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ طُبّع المستوى بكسب +14 dB؛ التفاصيل في تقرير B2-03؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-05-pass-verloren-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-05-pass-verloren-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-06-akademisch-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-06-akademisch-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-06-akademisch-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-06-akademisch-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-06-akademisch-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-06-akademisch-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-07-bewerbung-vertrag-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن فحص B2-03/B2-07؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقريري الدرسين؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-07-bewerbung-vertrag-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن فحص B2-03/B2-07؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقريري الدرسين؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-07-bewerbung-vertrag-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن فحص B2-03/B2-07؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقريري الدرسين؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-07-bewerbung-vertrag-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن فحص B2-03/B2-07؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقريري الدرسين؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-07-bewerbung-vertrag-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن فحص B2-03/B2-07؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقريري الدرسين؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-07-bewerbung-vertrag-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن فحص B2-03/B2-07؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقريري الدرسين؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-08-praesentation-1.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في تقرير B2-06؛ طُبّع المستوى بكسب +14 dB؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-08-praesentation-2.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في تقرير B2-06؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-08-praesentation-3.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في تقرير B2-06؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-08-praesentation-4.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في تقرير B2-06؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-08-praesentation-5.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في تقرير B2-06؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-08-praesentation-6.mp3` | فُحص فك الترميز ومؤشرات الإشارة ضمن موارد B2-06؛ المصدر ومطابقة النص غير موثقين، ولا يثبت الفحص وضوح النطق أو طبيعيته؛ التفاصيل في تقرير B2-06؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-09-wohnungsvertrag-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-09-wohnungsvertrag-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-09-wohnungsvertrag-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-09-wohnungsvertrag-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-09-wohnungsvertrag-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-09-wohnungsvertrag-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ مصدر MP3 ومطابقته للنص غير موثقين، والفحص لا يقيس وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-03؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-10-international-1.mp3` | الحوار النصي المرتبط نُقح لـB2-08؛ اجتاز الملف فك الترميز ومؤشرات الإشارة الخشنة، لكن لم يُستمع أو يُطابق بالنص الجديد. تفاصيل الحدود في تقرير B2-08؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-10-international-2.mp3` | الحوار النصي المرتبط نُقح لـB2-08؛ اجتاز الملف فك الترميز ومؤشرات الإشارة الخشنة، لكن لم يُستمع أو يُطابق بالنص الجديد. تفاصيل الحدود في تقرير B2-08؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-10-international-3.mp3` | الحوار النصي المرتبط نُقح لـB2-08؛ اجتاز الملف فك الترميز ومؤشرات الإشارة الخشنة، لكن لم يُستمع أو يُطابق بالنص الجديد. تفاصيل الحدود في تقرير B2-08؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-10-international-4.mp3` | الحوار النصي المرتبط نُقح لـB2-08؛ اجتاز الملف فك الترميز ومؤشرات الإشارة الخشنة، لكن لم يُستمع أو يُطابق بالنص الجديد. تفاصيل الحدود في تقرير B2-08؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-10-international-5.mp3` | الحوار النصي المرتبط نُقح لـB2-08؛ اجتاز الملف فك الترميز ومؤشرات الإشارة الخشنة، لكن لم يُستمع أو يُطابق بالنص الجديد. تفاصيل الحدود في تقرير B2-08؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-10-international-6.mp3` | الحوار النصي المرتبط نُقح لـB2-08؛ اجتاز الملف فك الترميز ومؤشرات الإشارة الخشنة، لكن لم يُستمع أو يُطابق بالنص الجديد. الملف السادس منخفض المستوى نسبياً؛ تفاصيل الحدود في تقرير B2-08؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-11-verhandlung-kunde-1.mp3` | اجتاز فحص الإشارة؛ مصدر MP3 غير موثق، ولا يثبت الفحص المطابقة أو وضوح/طبيعية النطق؛ المقطع 6 طُبّع مستوى إشارته؛ تقرير B2-02؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-11-verhandlung-kunde-2.mp3` | اجتاز فحص الإشارة؛ مصدر MP3 غير موثق، ولا يثبت الفحص المطابقة أو وضوح/طبيعية النطق؛ المقطع 6 طُبّع مستوى إشارته؛ تقرير B2-02؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-11-verhandlung-kunde-3.mp3` | اجتاز فحص الإشارة؛ مصدر MP3 غير موثق، ولا يثبت الفحص المطابقة أو وضوح/طبيعية النطق؛ المقطع 6 طُبّع مستوى إشارته؛ تقرير B2-02؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-11-verhandlung-kunde-4.mp3` | اجتاز فحص الإشارة؛ مصدر MP3 غير موثق، ولا يثبت الفحص المطابقة أو وضوح/طبيعية النطق؛ المقطع 6 طُبّع مستوى إشارته؛ تقرير B2-02؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-11-verhandlung-kunde-5.mp3` | اجتاز فحص الإشارة؛ مصدر MP3 غير موثق، ولا يثبت الفحص المطابقة أو وضوح/طبيعية النطق؛ المقطع 6 طُبّع مستوى إشارته؛ تقرير B2-02؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-11-verhandlung-kunde-6.mp3` | اجتاز فحص الإشارة؛ مصدر MP3 غير موثق، ولا يثبت الفحص المطابقة أو وضوح/طبيعية النطق؛ المقطع 6 طُبّع مستوى إشارته؛ تقرير B2-02؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-12-arzt-spezialist-1.mp3` | اكتمل التدقيق البرمجي؛ طابق ASR محلي بتمريرين النص الحالي (WER=0 بعد تطبيع حالة الأحرف والترقيم)، واجتاز فك MP3. الأصل محفوظ في `.audit-tools/b2-12-audio/`؛ مصدر الصوت غير موثق، ولا يثبت الفحص جودة النطق أو طبيعيته.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-12-arzt-spezialist-2.mp3` | اكتمل التدقيق البرمجي؛ طابق ASR محلي بتمريرين النص الحالي (WER=0 بعد تطبيع حالة الأحرف والترقيم)، واجتاز فك MP3. الأصل محفوظ في `.audit-tools/b2-12-audio/`؛ مصدر الصوت غير موثق، ولا يثبت الفحص جودة النطق أو طبيعيته.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-12-arzt-spezialist-3.mp3` | اكتمل التدقيق البرمجي؛ طابق ASR محلي بتمريرين النص الحالي (WER=0 بعد تطبيع حالة الأحرف والترقيم)، واجتاز فك MP3. الأصل محفوظ في `.audit-tools/b2-12-audio/`؛ مصدر الصوت غير موثق، ولا يثبت الفحص جودة النطق أو طبيعيته.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-12-arzt-spezialist-4.mp3` | اكتمل التدقيق البرمجي؛ طابق ASR محلي بتمريرين النص الحالي (WER=0 بعد تطبيع حالة الأحرف والترقيم)، واجتاز فك MP3. الأصل محفوظ في `.audit-tools/b2-12-audio/`؛ مصدر الصوت غير موثق، ولا يثبت الفحص جودة النطق أو طبيعيته.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-12-arzt-spezialist-5.mp3` | اكتمل التدقيق البرمجي؛ طابق ASR محلي بتمريرين النص الحالي (WER=0 بعد تطبيع حالة الأحرف والترقيم)، واجتاز فك MP3. الأصل محفوظ في `.audit-tools/b2-12-audio/`؛ مصدر الصوت غير موثق، ولا يثبت الفحص جودة النطق أو طبيعيته.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-12-arzt-spezialist-6.mp3` | اكتمل التدقيق البرمجي؛ طابق ASR محلي بتمريرين النص الحالي (WER=0 بعد تطبيع حالة الأحرف والترقيم)، واجتاز فك MP3. الأصل محفوظ في `.audit-tools/b2-12-audio/`؛ مصدر الصوت غير موثق، ولا يثبت الفحص جودة النطق أو طبيعيته.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-13-flug-1.mp3` | طابق ASR المحلي النص الحالي بتمريرين، واجتاز فك MP3؛ مصدر الصوت غير موثق. الأصل محفوظ في `.audit-tools/b2-13-audio/`؛ لا يثبت ذلك جودة النطق أو طبيعيته.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-13-flug-2.mp3` | طابق ASR المحلي النص الحالي بتمريرين، واجتاز فك MP3؛ مصدر الصوت غير موثق. الأصل محفوظ في `.audit-tools/b2-13-audio/`؛ لا يثبت ذلك جودة النطق أو طبيعيته.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-13-flug-3.mp3` | طابق ASR المحلي النص الحالي بتمريرين، واجتاز فك MP3؛ مصدر الصوت غير موثق. الأصل محفوظ في `.audit-tools/b2-13-audio/`؛ لا يثبت ذلك جودة النطق أو طبيعيته.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-13-flug-4.mp3` | استُبدل بعد حفظ الأصل لأن التفريغ السابق تضمّن وعداً بالتعويض لا يطابق النص الحالي؛ أُعيد توليده TTS من النص. طابق التمريران بقية الكلمات وأغفلا «Uhr»؛ الفرق معلن في `docs/B2-13-DIALOGUE-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-13-flug-5.mp3` | طابق ASR المحلي النص الحالي بتمريرين. المستوى الحالي RMS −26.93 dBFS بعد كسب +14 dB الموثق سابقاً في تقرير B2-03؛ تُرك دون تعديل إضافي. المصدر غير موثق؛ الأصل محفوظ في `.audit-tools/b2-13-audio/`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-13-flug-6.mp3` | طابق ASR المحلي النص الحالي بتمريرين، واجتاز فك MP3؛ مصدر الصوت غير موثق. الأصل محفوظ في `.audit-tools/b2-13-audio/`؛ لا يثبت ذلك جودة النطق أو طبيعيته.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-14-medien-1.mp3` | طابق ASR المحلي الكلمات بتمريرين، وفُك MP3؛ المصدر غير موثق. سبق تعديل المستوى +10 dB؛ لم يضف هذا التدقيق كسباً آخر. الأصل محفوظ في `.audit-tools/b2-14-audio/`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-14-medien-2.mp3` | طابق ASR المحلي الكلمات بتمريرين، وفُك MP3؛ المصدر غير موثق. الأصل محفوظ في `.audit-tools/b2-14-audio/`؛ لا يثبت ذلك جودة النطق أو طبيعيته.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-14-medien-3.mp3` | اختلف تفريغا ASR في تمثيل «Falschinformationen» بعبارة «falsche Informationen»؛ لا يحسم ASR اللفظ المنطوق. فُك MP3، والأصل محفوظ في `.audit-tools/b2-14-audio/`؛ لا استبدال.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-14-medien-4.mp3` | طابق ASR المحلي الكلمات بتمريرين، وفُك MP3؛ المصدر غير موثق. الأصل محفوظ في `.audit-tools/b2-14-audio/`؛ لا يثبت ذلك جودة النطق أو طبيعيته.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-14-medien-5.mp3` | طابق ASR المحلي الكلمات بتمريرين، وفُك MP3؛ المصدر غير موثق. الأصل محفوظ في `.audit-tools/b2-14-audio/`؛ لا يثبت ذلك جودة النطق أو طبيعيته.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-14-medien-6.mp3` | طابق ASR المحلي الكلمات بتمريرين، وفُك MP3؛ المصدر غير موثق. سبق تعديل المستوى +10 dB؛ لم يضف هذا التدقيق كسباً آخر. الأصل محفوظ في `.audit-tools/b2-14-audio/`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-15-umzug-firma-1.mp3` | أُعيد توليده TTS من النص الحالي؛ طابقه ASR محلياً؛ لم يُجر استماع أو تقييم جودة صوتية؛ تقرير B2-09؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-15-umzug-firma-2.mp3` | أُعيد توليده TTS من النص الحالي؛ طابقه ASR محلياً؛ لم يُجر استماع أو تقييم جودة صوتية؛ تقرير B2-09؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-15-umzug-firma-3.mp3` | أُعيد توليده TTS من النص الحالي؛ طابقه ASR محلياً؛ لم يُجر استماع أو تقييم جودة صوتية؛ تقرير B2-09؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-15-umzug-firma-4.mp3` | أُعيد توليده TTS من النص الحالي؛ طابقه ASR محلياً؛ لم يُجر استماع أو تقييم جودة صوتية؛ تقرير B2-09؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-15-umzug-firma-5.mp3` | أُعيد توليده TTS من النص الحالي؛ طابقه ASR محلياً؛ لم يُجر استماع أو تقييم جودة صوتية؛ تقرير B2-09؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/dialogues-b2/b2-15-umzug-firma-6.mp3` | أُعيد توليده TTS من النص الحالي؛ طابقه ASR محلياً؛ لم يُجر استماع أو تقييم جودة صوتية؛ تقرير B2-09؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/exam-a1/hoeren-t1.mp3` | طابق ASR المحلي نص الإعلان بعد تطبيع كتابة الأعداد بالحروف/الأرقام والترقيم في تمريرين؛ فك MP3 ناجح. الأصل محفوظ في `.audit-tools/exam-a1-model1-audio/`؛ مصدر التسجيل غير موثق. |
+| `audio` | `public/audio/exam-a1/hoeren-t2-g1-a.mp3` | طابق ASR المحلي النص بتمريرين؛ فك MP3 ناجح. مصدر التسجيل غير موثق؛ الأصل محفوظ في `.audit-tools/exam-a1-model1-audio/`. |
+| `audio` | `public/audio/exam-a1/hoeren-t2-g1-b.mp3` | طابق ASR النص بعد توحيد فصل/وصل `geradeaus` و`gerade aus`؛ فك MP3 ناجح. مصدر التسجيل غير موثق؛ الأصل محفوظ في `.audit-tools/exam-a1-model1-audio/`. |
+| `audio` | `public/audio/exam-a1/hoeren-t2-g2-a.mp3` | طابق ASR المحلي النص بتمريرين؛ فك MP3 ناجح. مصدر التسجيل غير موثق؛ الأصل محفوظ في `.audit-tools/exam-a1-model1-audio/`. |
+| `audio` | `public/audio/exam-a1/hoeren-t2-g2-b.mp3` | طابق ASR النص بعد تطبيع حالة الأحرف والترقيم؛ فك MP3 ناجح. مصدر التسجيل غير موثق؛ الأصل محفوظ في `.audit-tools/exam-a1-model1-audio/`. |
+| `audio` | `public/audio/exam-a1/hoeren-t2-g3-a.mp3` | طابق ASR المحلي النص بتمريرين؛ فك MP3 ناجح. مصدر التسجيل غير موثق؛ الأصل محفوظ في `.audit-tools/exam-a1-model1-audio/`. |
+| `audio` | `public/audio/exam-a1/hoeren-t2-g3-b.mp3` | اختلف تمريرا ASR في تفريغ `früher Schluss`: أحدهما «Früherschluss»، والآخر «Frühjahr Schluss»؛ بقي الالتباس معلناً ولم يُستبدل الملف. الأصل محفوظ في `.audit-tools/exam-a1-model1-audio/`. |
+| `audio` | `public/audio/exam-a1/hoeren-t2-g4-a.mp3` | استُبدل بعد حفظ الأصل لأن التمريرين سمعا `Hand` بدلاً من `Hemd`؛ مرشح TTS بصوت voice-29 طابق النص في التمريرين وفُك بنجاح. الأصل والمرشح في `.audit-tools/exam-a1-model1-audio/`. |
+| `audio` | `public/audio/exam-a1/hoeren-t2-g4-b.mp3` | طابق ASR المحلي النص بعد تطبيع `fünfzehn`/`15`؛ فك MP3 ناجح. مصدر التسجيل غير موثق؛ الأصل محفوظ في `.audit-tools/exam-a1-model1-audio/`. |
+| `audio` | `public/audio/exam-a1/hoeren-t3.mp3` | طابق ASR المحلي نص الإعلان بعد تطبيع كتابة الأعداد بالحروف/الأرقام والترقيم في تمريرين؛ فك MP3 ناجح. الأصل محفوظ في `.audit-tools/exam-a1-model1-audio/`؛ مصدر التسجيل غير موثق. |
+| `audio` | `public/audio/exam-a1/hoeren-t4-a.mp3` | طابق ASR المحلي النص بتمريرين بعد تجاهل الترقيم؛ فك MP3 ناجح. مصدر التسجيل غير موثق؛ الأصل محفوظ في `.audit-tools/exam-a1-model1-audio/`. |
+| `audio` | `public/audio/exam-a1/hoeren-t4-b.mp3` | طابق ASR المحلي النص بتمريرين؛ فك MP3 ناجح. مصدر التسجيل غير موثق؛ الأصل محفوظ في `.audit-tools/exam-a1-model1-audio/`. |
+| `audio` | `public/audio/exam-a1/hoeren-t4-c.mp3` | طابق ASR المحلي النص بتمريرين؛ فك MP3 ناجح. مصدر التسجيل غير موثق؛ الأصل محفوظ في `.audit-tools/exam-a1-model1-audio/`. |
+| `audio` | `public/audio/exam-a1/hoeren-t4-d.mp3` | طابق ASR المحلي النص بتمريرين؛ فك MP3 ناجح. مصدر التسجيل غير موثق؛ الأصل محفوظ في `.audit-tools/exam-a1-model1-audio/`. |
+| `audio` | `public/audio/exam-a1/m2/hoeren-t1.mp3` | فُك MP3؛ طابق ASR النص بعد تطبيع الأعداد والترقيم في تمرير beam5، بينما كتب تمرير beam1 «bitzelt» بدل «bittet». ثلاث إعدادات إضافية أعادت «bittet»؛ لم يُستبدل. الأصل محفوظ في `.audit-tools/exam-a1-model2-audio/`. |
+| `audio` | `public/audio/exam-a1/m2/hoeren-t2-g1-a.mp3` | طابق ASR المحلي النص بتمريرين، وفُك MP3؛ الأصل محفوظ في `.audit-tools/exam-a1-model2-audio/`. |
+| `audio` | `public/audio/exam-a1/m2/hoeren-t2-g1-b.mp3` | طابق ASR المحلي النص بتمريرين بعد تجاهل الترقيم؛ فُك MP3، والأصل محفوظ في `.audit-tools/exam-a1-model2-audio/`. |
+| `audio` | `public/audio/exam-a1/m2/hoeren-t2-g1-c.mp3` | طابق ASR المحلي النص بتمريرين بعد تجاهل الترقيم؛ فُك MP3، والأصل محفوظ في `.audit-tools/exam-a1-model2-audio/`. |
+| `audio` | `public/audio/exam-a1/m2/hoeren-t2-g2-a.mp3` | طابق ASR المحلي النص بتمريرين؛ فُك MP3، والأصل محفوظ في `.audit-tools/exam-a1-model2-audio/`. |
+| `audio` | `public/audio/exam-a1/m2/hoeren-t2-g2-b.mp3` | استُبدل بعد حفظ الأصل؛ كان ASR يخطئ في «Vorher ist sie zu»، واجتاز مرشح voice-30 التمريرين بنص مطابق. التفريغات والبصمات في `.audit-tools/exam-a1-model2-audio/`. |
+| `audio` | `public/audio/exam-a1/m2/hoeren-t2-g3-a.mp3` | طابق ASR النص بعد توحيد الفصل في «Freitag Zeit/Freitagzeit»؛ فُك MP3، والأصل محفوظ في `.audit-tools/exam-a1-model2-audio/`. |
+| `audio` | `public/audio/exam-a1/m2/hoeren-t2-g3-b.mp3` | طابق ASR المحلي النص بتمريرين؛ فُك MP3، والأصل محفوظ في `.audit-tools/exam-a1-model2-audio/`. |
+| `audio` | `public/audio/exam-a1/m2/hoeren-t2-g4-a.mp3` | طابق ASR المحلي النص بتمريرين؛ فُك MP3، والأصل محفوظ في `.audit-tools/exam-a1-model2-audio/`. |
+| `audio` | `public/audio/exam-a1/m2/hoeren-t2-g4-b.mp3` | طابق ASR النص بعد تطبيع «Zwei Euro fünfzig»/«2,50 Euro»؛ فُك MP3، والأصل محفوظ في `.audit-tools/exam-a1-model2-audio/`. |
+| `audio` | `public/audio/exam-a1/m2/hoeren-t3.mp3` | طابق ASR النص بعد تطبيع `Doktor/Dr.` والفصل في «Versichertenkarte»؛ فُك MP3، والأصل محفوظ في `.audit-tools/exam-a1-model2-audio/`. |
+| `audio` | `public/audio/exam-a1/m2/hoeren-t4-a.mp3` | طابق ASR المحلي النص بتمريرين؛ فُك MP3، والأصل محفوظ في `.audit-tools/exam-a1-model2-audio/`. |
+| `audio` | `public/audio/exam-a1/m2/hoeren-t4-b.mp3` | طابق ASR المحلي النص بتمريرين؛ فُك MP3، والأصل محفوظ في `.audit-tools/exam-a1-model2-audio/`. |
+| `audio` | `public/audio/exam-a1/m2/hoeren-t4-c.mp3` | طابق ASR النص بعد تطبيع الأعداد؛ فُك MP3، والأصل محفوظ في `.audit-tools/exam-a1-model2-audio/`. |
+| `audio` | `public/audio/exam-a1/m3/hoeren-t1.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين لكل ملف؛ WER بعد تطبيع الأعداد والوقت 5/340. فروق ASR في Haltestelle/Omar/Euro غير محسومة، ولم يُستبدل ملف. التقرير: `docs/A1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a1/m3/hoeren-t2-g1-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين لكل ملف؛ WER بعد تطبيع الأعداد والوقت 5/340. فروق ASR في Haltestelle/Omar/Euro غير محسومة، ولم يُستبدل ملف. التقرير: `docs/A1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a1/m3/hoeren-t2-g1-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين لكل ملف؛ WER بعد تطبيع الأعداد والوقت 5/340. فروق ASR في Haltestelle/Omar/Euro غير محسومة، ولم يُستبدل ملف. التقرير: `docs/A1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a1/m3/hoeren-t2-g2-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين لكل ملف؛ WER بعد تطبيع الأعداد والوقت 5/340. فروق ASR في Haltestelle/Omar/Euro غير محسومة، ولم يُستبدل ملف. التقرير: `docs/A1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a1/m3/hoeren-t2-g2-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين لكل ملف؛ WER بعد تطبيع الأعداد والوقت 5/340. فروق ASR في Haltestelle/Omar/Euro غير محسومة، ولم يُستبدل ملف. التقرير: `docs/A1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a1/m3/hoeren-t2-g3-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين لكل ملف؛ WER بعد تطبيع الأعداد والوقت 5/340. فروق ASR في Haltestelle/Omar/Euro غير محسومة، ولم يُستبدل ملف. التقرير: `docs/A1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a1/m3/hoeren-t2-g3-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين لكل ملف؛ WER بعد تطبيع الأعداد والوقت 5/340. فروق ASR في Haltestelle/Omar/Euro غير محسومة، ولم يُستبدل ملف. التقرير: `docs/A1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a1/m3/hoeren-t2-g4-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين لكل ملف؛ WER بعد تطبيع الأعداد والوقت 5/340. فروق ASR في Haltestelle/Omar/Euro غير محسومة، ولم يُستبدل ملف. التقرير: `docs/A1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a1/m3/hoeren-t2-g4-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين لكل ملف؛ WER بعد تطبيع الأعداد والوقت 5/340. فروق ASR في Haltestelle/Omar/Euro غير محسومة، ولم يُستبدل ملف. التقرير: `docs/A1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a1/m3/hoeren-t3.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين لكل ملف؛ WER بعد تطبيع الأعداد والوقت 5/340. فروق ASR في Haltestelle/Omar/Euro غير محسومة، ولم يُستبدل ملف. التقرير: `docs/A1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a1/m3/hoeren-t4-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين لكل ملف؛ WER بعد تطبيع الأعداد والوقت 5/340. فروق ASR في Haltestelle/Omar/Euro غير محسومة، ولم يُستبدل ملف. التقرير: `docs/A1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a1/m3/hoeren-t4-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين لكل ملف؛ WER بعد تطبيع الأعداد والوقت 5/340. فروق ASR في Haltestelle/Omar/Euro غير محسومة، ولم يُستبدل ملف. التقرير: `docs/A1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a1/m3/hoeren-t4-c.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين لكل ملف؛ WER بعد تطبيع الأعداد والوقت 5/340. فروق ASR في Haltestelle/Omar/Euro غير محسومة، ولم يُستبدل ملف. التقرير: `docs/A1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/hoeren-t1.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين ضمن المجموعة؛ WER بعد تطبيع الأعداد 1/390. اختلاف `Bringen/Bring` في مقطع واحد غير محسوم؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/hoeren-t2-g1-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين ضمن المجموعة؛ WER بعد تطبيع الأعداد 1/390. اختلاف `Bringen/Bring` في مقطع واحد غير محسوم؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/hoeren-t2-g1-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين ضمن المجموعة؛ WER بعد تطبيع الأعداد 1/390. اختلاف `Bringen/Bring` في مقطع واحد غير محسوم؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/hoeren-t2-g2-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين ضمن المجموعة؛ WER بعد تطبيع الأعداد 1/390. اختلاف `Bringen/Bring` في مقطع واحد غير محسوم؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/hoeren-t2-g2-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين ضمن المجموعة؛ WER بعد تطبيع الأعداد 1/390. اختلاف `Bringen/Bring` في مقطع واحد غير محسوم؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/hoeren-t2-g3-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين ضمن المجموعة؛ WER بعد تطبيع الأعداد 1/390. اختلاف `Bringen/Bring` في مقطع واحد غير محسوم؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/hoeren-t2-g3-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين ضمن المجموعة؛ WER بعد تطبيع الأعداد 1/390. اختلاف `Bringen/Bring` في مقطع واحد غير محسوم؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/hoeren-t2-g4-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين ضمن المجموعة؛ WER بعد تطبيع الأعداد 1/390. اختلاف `Bringen/Bring` في مقطع واحد غير محسوم؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/hoeren-t2-g4-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين ضمن المجموعة؛ WER بعد تطبيع الأعداد 1/390. اختلاف `Bringen/Bring` في مقطع واحد غير محسوم؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/hoeren-t3.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين ضمن المجموعة؛ WER بعد تطبيع الأعداد 1/390. اختلاف `Bringen/Bring` في مقطع واحد غير محسوم؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/hoeren-t4-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين ضمن المجموعة؛ WER بعد تطبيع الأعداد 1/390. اختلاف `Bringen/Bring` في مقطع واحد غير محسوم؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/hoeren-t4-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين ضمن المجموعة؛ WER بعد تطبيع الأعداد 1/390. اختلاف `Bringen/Bring` في مقطع واحد غير محسوم؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/hoeren-t4-c.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين ضمن المجموعة؛ WER بعد تطبيع الأعداد 1/390. اختلاف `Bringen/Bring` في مقطع واحد غير محسوم؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/hoeren-t4-d.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً (mono، 44.1 kHz). اكتمل ASR المحلي بتمريرين ضمن المجموعة؛ WER بعد تطبيع الأعداد 1/390. اختلاف `Bringen/Bring` في مقطع واحد غير محسوم؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m2/hoeren-t1.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 15/494. فروق `liegt/legt` وتهجئة/وصل موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m2/hoeren-t2-g1-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 15/494. فروق `liegt/legt` وتهجئة/وصل موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m2/hoeren-t2-g1-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 15/494. فروق `liegt/legt` وتهجئة/وصل موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m2/hoeren-t2-g2-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 15/494. فروق `liegt/legt` وتهجئة/وصل موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m2/hoeren-t2-g2-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 15/494. فروق `liegt/legt` وتهجئة/وصل موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m2/hoeren-t2-g3-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 15/494. فروق `liegt/legt` وتهجئة/وصل موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m2/hoeren-t2-g3-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 15/494. فروق `liegt/legt` وتهجئة/وصل موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m2/hoeren-t2-g4-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 15/494. فروق `liegt/legt` وتهجئة/وصل موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m2/hoeren-t2-g4-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 15/494. فروق `liegt/legt` وتهجئة/وصل موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m2/hoeren-t3-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 15/494. فروق `liegt/legt` وتهجئة/وصل موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m2/hoeren-t3-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 15/494. فروق `liegt/legt` وتهجئة/وصل موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m2/hoeren-t4-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 15/494. فروق `liegt/legt` وتهجئة/وصل موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m2/hoeren-t4-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 15/494. فروق `liegt/legt` وتهجئة/وصل موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m2/hoeren-t4-c.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 15/494. فروق `liegt/legt` وتهجئة/وصل موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m2/hoeren-t4-d.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 15/494. فروق `liegt/legt` وتهجئة/وصل موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m2/hoeren-t4-e.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 15/494. فروق `liegt/legt` وتهجئة/وصل موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m2/hoeren-t4-f.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 15/494. فروق `liegt/legt` وتهجئة/وصل موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m3/hoeren-t1.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين ضمن النموذج؛ WER بعد تطبيع الأعداد 12/602. فروق `so/zu` و`Kassenbon/Bonn` والاختصار والوحدة موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m3/hoeren-t2-g1-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين ضمن النموذج؛ WER بعد تطبيع الأعداد 12/602. فروق `so/zu` و`Kassenbon/Bonn` والاختصار والوحدة موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m3/hoeren-t2-g1-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين ضمن النموذج؛ WER بعد تطبيع الأعداد 12/602. فروق `so/zu` و`Kassenbon/Bonn` والاختصار والوحدة موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m3/hoeren-t2-g2-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين ضمن النموذج؛ WER بعد تطبيع الأعداد 12/602. فروق `so/zu` و`Kassenbon/Bonn` والاختصار والوحدة موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m3/hoeren-t2-g2-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين ضمن النموذج؛ WER بعد تطبيع الأعداد 12/602. فروق `so/zu` و`Kassenbon/Bonn` والاختصار والوحدة موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m3/hoeren-t2-g3-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين ضمن النموذج؛ WER بعد تطبيع الأعداد 12/602. فروق `so/zu` و`Kassenbon/Bonn` والاختصار والوحدة موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m3/hoeren-t2-g3-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين ضمن النموذج؛ WER بعد تطبيع الأعداد 12/602. فروق `so/zu` و`Kassenbon/Bonn` والاختصار والوحدة موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m3/hoeren-t2-g4-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين ضمن النموذج؛ WER بعد تطبيع الأعداد 12/602. فروق `so/zu` و`Kassenbon/Bonn` والاختصار والوحدة موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m3/hoeren-t2-g4-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين ضمن النموذج؛ WER بعد تطبيع الأعداد 12/602. فروق `so/zu` و`Kassenbon/Bonn` والاختصار والوحدة موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m3/hoeren-t3-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين ضمن النموذج؛ WER بعد تطبيع الأعداد 12/602. فروق `so/zu` و`Kassenbon/Bonn` والاختصار والوحدة موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m3/hoeren-t3-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين ضمن النموذج؛ WER بعد تطبيع الأعداد 12/602. فروق `so/zu` و`Kassenbon/Bonn` والاختصار والوحدة موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m3/hoeren-t4-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين ضمن النموذج؛ WER بعد تطبيع الأعداد 12/602. فروق `so/zu` و`Kassenbon/Bonn` والاختصار والوحدة موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m3/hoeren-t4-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين ضمن النموذج؛ WER بعد تطبيع الأعداد 12/602. فروق `so/zu` و`Kassenbon/Bonn` والاختصار والوحدة موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m3/hoeren-t4-c.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين ضمن النموذج؛ WER بعد تطبيع الأعداد 12/602. فروق `so/zu` و`Kassenbon/Bonn` والاختصار والوحدة موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-a2/m3/hoeren-t4-d.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين ضمن النموذج؛ WER بعد تطبيع الأعداد 12/602. فروق `so/zu` و`Kassenbon/Bonn` والاختصار والوحدة موثقة وغير محسومة؛ لم يُستبدل الملف. التقرير: `docs/A2-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/hoeren-t1.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER الأساسي 60/518 تأثر بتكرار التفريغ في T1، ومعظمه لا يُفسر خطأ منطوقاً. فروق `seien/sein` و`Wer/Wenn` غير محسومة؛ لم يُستبدل الملف. التقرير: `docs/B1-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/hoeren-t2-g1-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER الأساسي 60/518 تأثر بتكرار التفريغ في T1، ومعظمه لا يُفسر خطأ منطوقاً. فروق `seien/sein` و`Wer/Wenn` غير محسومة؛ لم يُستبدل الملف. التقرير: `docs/B1-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/hoeren-t2-g1-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER الأساسي 60/518 تأثر بتكرار التفريغ في T1، ومعظمه لا يُفسر خطأ منطوقاً. فروق `seien/sein` و`Wer/Wenn` غير محسومة؛ لم يُستبدل الملف. التقرير: `docs/B1-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/hoeren-t2-g2-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER الأساسي 60/518 تأثر بتكرار التفريغ في T1، ومعظمه لا يُفسر خطأ منطوقاً. فروق `seien/sein` و`Wer/Wenn` غير محسومة؛ لم يُستبدل الملف. التقرير: `docs/B1-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/hoeren-t2-g2-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER الأساسي 60/518 تأثر بتكرار التفريغ في T1، ومعظمه لا يُفسر خطأ منطوقاً. فروق `seien/sein` و`Wer/Wenn` غير محسومة؛ لم يُستبدل الملف. التقرير: `docs/B1-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/hoeren-t2-g3-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER الأساسي 60/518 تأثر بتكرار التفريغ في T1، ومعظمه لا يُفسر خطأ منطوقاً. فروق `seien/sein` و`Wer/Wenn` غير محسومة؛ لم يُستبدل الملف. التقرير: `docs/B1-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/hoeren-t2-g3-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER الأساسي 60/518 تأثر بتكرار التفريغ في T1، ومعظمه لا يُفسر خطأ منطوقاً. فروق `seien/sein` و`Wer/Wenn` غير محسومة؛ لم يُستبدل الملف. التقرير: `docs/B1-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/hoeren-t2-g4-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER الأساسي 60/518 تأثر بتكرار التفريغ في T1، ومعظمه لا يُفسر خطأ منطوقاً. فروق `seien/sein` و`Wer/Wenn` غير محسومة؛ لم يُستبدل الملف. التقرير: `docs/B1-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/hoeren-t2-g4-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER الأساسي 60/518 تأثر بتكرار التفريغ في T1، ومعظمه لا يُفسر خطأ منطوقاً. فروق `seien/sein` و`Wer/Wenn` غير محسومة؛ لم يُستبدل الملف. التقرير: `docs/B1-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/hoeren-t3.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER الأساسي 60/518 تأثر بتكرار التفريغ في T1، ومعظمه لا يُفسر خطأ منطوقاً. فروق `seien/sein` و`Wer/Wenn` غير محسومة؛ لم يُستبدل الملف. التقرير: `docs/B1-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/hoeren-t4-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER الأساسي 60/518 تأثر بتكرار التفريغ في T1، ومعظمه لا يُفسر خطأ منطوقاً. فروق `seien/sein` و`Wer/Wenn` غير محسومة؛ لم يُستبدل الملف. التقرير: `docs/B1-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/hoeren-t4-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER الأساسي 60/518 تأثر بتكرار التفريغ في T1، ومعظمه لا يُفسر خطأ منطوقاً. فروق `seien/sein` و`Wer/Wenn` غير محسومة؛ لم يُستبدل الملف. التقرير: `docs/B1-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/hoeren-t4-c.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER الأساسي 60/518 تأثر بتكرار التفريغ في T1، ومعظمه لا يُفسر خطأ منطوقاً. فروق `seien/sein` و`Wer/Wenn` غير محسومة؛ لم يُستبدل الملف. التقرير: `docs/B1-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/hoeren-t4-d.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER الأساسي 60/518 تأثر بتكرار التفريغ في T1، ومعظمه لا يُفسر خطأ منطوقاً. فروق `seien/sein` و`Wer/Wenn` غير محسومة؛ لم يُستبدل الملف. التقرير: `docs/B1-EXAM-MODEL1-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/m2/hoeren-t1.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 7/536، وكل الفروق تركزت في التقرير T3 (`autofrei machen`/`autofreimachen`, `Shuttlebusse`/`Schattelbusse`). لم يُستبدل الملف؛ التقرير `docs/B1-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/m2/hoeren-t2-g1-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 7/536، وكل الفروق تركزت في التقرير T3 (`autofrei machen`/`autofreimachen`, `Shuttlebusse`/`Schattelbusse`). لم يُستبدل الملف؛ التقرير `docs/B1-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/m2/hoeren-t2-g1-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 7/536، وكل الفروق تركزت في التقرير T3 (`autofrei machen`/`autofreimachen`, `Shuttlebusse`/`Schattelbusse`). لم يُستبدل الملف؛ التقرير `docs/B1-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/m2/hoeren-t2-g2-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 7/536، وكل الفروق تركزت في التقرير T3 (`autofrei machen`/`autofreimachen`, `Shuttlebusse`/`Schattelbusse`). لم يُستبدل الملف؛ التقرير `docs/B1-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/m2/hoeren-t2-g2-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 7/536، وكل الفروق تركزت في التقرير T3 (`autofrei machen`/`autofreimachen`, `Shuttlebusse`/`Schattelbusse`). لم يُستبدل الملف؛ التقرير `docs/B1-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/m2/hoeren-t2-g3-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 7/536، وكل الفروق تركزت في التقرير T3 (`autofrei machen`/`autofreimachen`, `Shuttlebusse`/`Schattelbusse`). لم يُستبدل الملف؛ التقرير `docs/B1-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/m2/hoeren-t2-g3-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 7/536، وكل الفروق تركزت في التقرير T3 (`autofrei machen`/`autofreimachen`, `Shuttlebusse`/`Schattelbusse`). لم يُستبدل الملف؛ التقرير `docs/B1-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/m2/hoeren-t2-g4-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 7/536، وكل الفروق تركزت في التقرير T3 (`autofrei machen`/`autofreimachen`, `Shuttlebusse`/`Schattelbusse`). لم يُستبدل الملف؛ التقرير `docs/B1-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/m2/hoeren-t2-g4-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 7/536، وكل الفروق تركزت في التقرير T3 (`autofrei machen`/`autofreimachen`, `Shuttlebusse`/`Schattelbusse`). لم يُستبدل الملف؛ التقرير `docs/B1-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/m2/hoeren-t3.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 7/536، وكل الفروق تركزت في التقرير T3 (`autofrei machen`/`autofreimachen`, `Shuttlebusse`/`Schattelbusse`). لم يُستبدل الملف؛ التقرير `docs/B1-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/m2/hoeren-t4-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 7/536، وكل الفروق تركزت في التقرير T3 (`autofrei machen`/`autofreimachen`, `Shuttlebusse`/`Schattelbusse`). لم يُستبدل الملف؛ التقرير `docs/B1-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/m2/hoeren-t4-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 7/536، وكل الفروق تركزت في التقرير T3 (`autofrei machen`/`autofreimachen`, `Shuttlebusse`/`Schattelbusse`). لم يُستبدل الملف؛ التقرير `docs/B1-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/m2/hoeren-t4-c.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 7/536، وكل الفروق تركزت في التقرير T3 (`autofrei machen`/`autofreimachen`, `Shuttlebusse`/`Schattelbusse`). لم يُستبدل الملف؛ التقرير `docs/B1-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/m2/hoeren-t4-d.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 7/536، وكل الفروق تركزت في التقرير T3 (`autofrei machen`/`autofreimachen`, `Shuttlebusse`/`Schattelbusse`). لم يُستبدل الملف؛ التقرير `docs/B1-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/m2/hoeren-t4-e.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً mono/44.1 kHz. ASR محلي بتمريرين؛ WER بعد تطبيع الأعداد 7/536، وكل الفروق تركزت في التقرير T3 (`autofrei machen`/`autofreimachen`, `Shuttlebusse`/`Schattelbusse`). لم يُستبدل الملف؛ التقرير `docs/B1-EXAM-MODEL2-AUDIO-REVIEW-AR.md`. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t1.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t2-g1-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t2-g1-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t2-g2-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t2-g2-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t2-g3-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t2-g3-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t2-g4-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t2-g4-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t3-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t3-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t3-c.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t3-d.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t4-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t4-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t4-c.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t4-d.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t4-e.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
+| `audio` | `public/audio/exam-b1/m3/hoeren-t4-f.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 بالكامل. ASR محلي ضمن التدقيق الشامل؛ WER بعد تطبيع الأعداد 14/756 (1.85%) للنموذج، وتفاصيل الفروق والتمريرات في `docs/B1-EXAM-MODEL3-AUDIO-REVIEW-AR.md`. لم يُستبدل الملف. |
 | `audio` | `public/audio/exam-b2/README.md` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
 | `audio` | `public/audio/exam-b2/a/.gitkeep` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2/a/hoeren-t1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2/a/hoeren-t2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2/a/hoeren-t3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2/a/hoeren-t4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2/a/hoeren-t4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
+| `audio` | `public/audio/exam-b2/a/hoeren-t1.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً. ASR محلي بتمريرين، مع إعدادات تشخيصية للمجموعة؛ WER على النص المصدر وبعد تطبيع الأعداد 77/1522 (5.06%)، ويتأثر بوسوم المتحدث التي قد لا ينطقها ASR. لا يُحسم بها اللفظ. لم يُستبدل الملف؛ التقرير `docs/B2-EXAM-MODELA-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/exam-b2/a/hoeren-t2.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً. ASR محلي بتمريرين، مع إعدادات تشخيصية للمجموعة؛ WER على النص المصدر وبعد تطبيع الأعداد 77/1522 (5.06%)، ويتأثر بوسوم المتحدث التي قد لا ينطقها ASR. لا يُحسم بها اللفظ. لم يُستبدل الملف؛ التقرير `docs/B2-EXAM-MODELA-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/exam-b2/a/hoeren-t3.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً. ASR محلي بتمريرين، مع إعدادات تشخيصية للمجموعة؛ WER على النص المصدر وبعد تطبيع الأعداد 77/1522 (5.06%)، ويتأثر بوسوم المتحدث التي قد لا ينطقها ASR. لا يُحسم بها اللفظ. لم يُستبدل الملف؛ التقرير `docs/B2-EXAM-MODELA-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/exam-b2/a/hoeren-t4-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً. ASR محلي بتمريرين، مع إعدادات تشخيصية للمجموعة؛ WER على النص المصدر وبعد تطبيع الأعداد 77/1522 (5.06%)، ويتأثر بوسوم المتحدث التي قد لا ينطقها ASR. لا يُحسم بها اللفظ. لم يُستبدل الملف؛ التقرير `docs/B2-EXAM-MODELA-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/exam-b2/a/hoeren-t4-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً. ASR محلي بتمريرين، مع إعدادات تشخيصية للمجموعة؛ WER على النص المصدر وبعد تطبيع الأعداد 77/1522 (5.06%)، ويتأثر بوسوم المتحدث التي قد لا ينطقها ASR. لا يُحسم بها اللفظ. لم يُستبدل الملف؛ التقرير `docs/B2-EXAM-MODELA-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
 | `audio` | `public/audio/exam-b2/b/.gitkeep` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2/b/hoeren-t1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2/b/hoeren-t2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2/b/hoeren-t3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2/b/hoeren-t4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2/b/hoeren-t4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
+| `audio` | `public/audio/exam-b2/b/hoeren-t1.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً. ASR محلي بتمريرين وأربعة إعدادات تشخيصية؛ WER على النص المصدر وبعد تطبيع الأعداد 71/1534 (4.63%)، ويتأثر بوسوم الأدوار/العناوين التي لم يُعدها ASR. لا يُحسم بها المنطوق. لم يُستبدل الملف؛ التقرير `docs/B2-EXAM-MODELB-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/exam-b2/b/hoeren-t2.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً. ASR محلي بتمريرين وأربعة إعدادات تشخيصية؛ WER على النص المصدر وبعد تطبيع الأعداد 71/1534 (4.63%)، ويتأثر بوسوم الأدوار/العناوين التي لم يُعدها ASR. لا يُحسم بها المنطوق. لم يُستبدل الملف؛ التقرير `docs/B2-EXAM-MODELB-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/exam-b2/b/hoeren-t3.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً. ASR محلي بتمريرين وأربعة إعدادات تشخيصية؛ WER على النص المصدر وبعد تطبيع الأعداد 71/1534 (4.63%)، ويتأثر بوسوم الأدوار/العناوين التي لم يُعدها ASR. لا يُحسم بها المنطوق. لم يُستبدل الملف؛ التقرير `docs/B2-EXAM-MODELB-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/exam-b2/b/hoeren-t4-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً. ASR محلي بتمريرين وأربعة إعدادات تشخيصية؛ WER على النص المصدر وبعد تطبيع الأعداد 71/1534 (4.63%)، ويتأثر بوسوم الأدوار/العناوين التي لم يُعدها ASR. لا يُحسم بها المنطوق. لم يُستبدل الملف؛ التقرير `docs/B2-EXAM-MODELB-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/exam-b2/b/hoeren-t4-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً. ASR محلي بتمريرين وأربعة إعدادات تشخيصية؛ WER على النص المصدر وبعد تطبيع الأعداد 71/1534 (4.63%)، ويتأثر بوسوم الأدوار/العناوين التي لم يُعدها ASR. لا يُحسم بها المنطوق. لم يُستبدل الملف؛ التقرير `docs/B2-EXAM-MODELB-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
 | `audio` | `public/audio/exam-b2/c/.gitkeep` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2/c/hoeren-t1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2/c/hoeren-t2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2/c/hoeren-t3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2/c/hoeren-t4-a.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2/c/hoeren-t4-b.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2-sim/h1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2-sim/h2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2-sim/h3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/exam-b2-sim/h4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-02/ls-a1-02-2-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-02/ls-a1-02-2-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-02/ls-a1-02-2-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-02/ls-a1-02-2-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-02/ls-a1-02-2-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-02/ls-a1-02-2-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-03/ls-a1-03-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-03/ls-a1-03-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-03/ls-a1-03-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-03/ls-a1-03-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-03/ls-a1-03-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-03/ls-a1-03-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-04/ls-a1-04-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-04/ls-a1-04-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-04/ls-a1-04-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-04/ls-a1-04-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-04/ls-a1-04-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-04/ls-a1-04-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-05/ls-a1-05-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-05/ls-a1-05-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-05/ls-a1-05-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-05/ls-a1-05-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-05/ls-a1-05-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-05/ls-a1-05-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-06/ls-a1-06-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-06/ls-a1-06-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-06/ls-a1-06-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-06/ls-a1-06-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-06/ls-a1-06-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-06/ls-a1-06-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-07/ls-a1-07-kiosk-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-07/ls-a1-07-kiosk-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-07/ls-a1-07-kiosk-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-07/ls-a1-07-kiosk-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-07/ls-a1-07-kiosk-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-07/ls-a1-07-kiosk-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-08/ls-a1-08-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-08/ls-a1-08-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-08/ls-a1-08-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-08/ls-a1-08-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-08/ls-a1-08-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-08/ls-a1-08-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-09/ls-a1-09-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-09/ls-a1-09-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-09/ls-a1-09-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-09/ls-a1-09-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-09/ls-a1-09-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-09/ls-a1-09-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-10/ls-a1-10-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-10/ls-a1-10-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-10/ls-a1-10-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-10/ls-a1-10-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-10/ls-a1-10-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-10/ls-a1-10-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-11/ls-a1-11-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-11/ls-a1-11-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-11/ls-a1-11-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-11/ls-a1-11-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-11/ls-a1-11-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-11/ls-a1-11-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-12/ls-a1-12-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-12/ls-a1-12-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-12/ls-a1-12-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-12/ls-a1-12-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-12/ls-a1-12-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-12/ls-a1-12-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-13/ls-a1-13-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-13/ls-a1-13-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-13/ls-a1-13-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-13/ls-a1-13-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-13/ls-a1-13-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-13/ls-a1-13-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-14/ls-a1-14-2-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-14/ls-a1-14-2-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-14/ls-a1-14-2-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-14/ls-a1-14-2-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-14/ls-a1-14-2-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-14/ls-a1-14-2-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-14/ls-a1-14-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-14/ls-a1-14-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-14/ls-a1-14-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-14/ls-a1-14-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-14/ls-a1-14-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a1-14/ls-a1-14-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-01/ls-a2-01-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-01/ls-a2-01-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-01/ls-a2-01-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-01/ls-a2-01-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-01/ls-a2-01-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-01/ls-a2-01-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-02/ls-a2-02-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-02/ls-a2-02-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-02/ls-a2-02-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-02/ls-a2-02-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-02/ls-a2-02-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-02/ls-a2-02-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-03/ls-a2-03-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-03/ls-a2-03-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-03/ls-a2-03-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-03/ls-a2-03-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-03/ls-a2-03-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-03/ls-a2-03-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-04/ls-a2-04-4-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-04/ls-a2-04-4-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-04/ls-a2-04-4-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-04/ls-a2-04-4-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-04/ls-a2-04-4-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-04/ls-a2-04-4-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-05/ls-a2-05-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-05/ls-a2-05-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-05/ls-a2-05-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-05/ls-a2-05-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-05/ls-a2-05-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-05/ls-a2-05-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-06/ls-a2-06-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-06/ls-a2-06-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-06/ls-a2-06-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-06/ls-a2-06-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-06/ls-a2-06-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-06/ls-a2-06-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-06/ls-a2-06-4-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-06/ls-a2-06-4-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-06/ls-a2-06-4-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-06/ls-a2-06-4-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-06/ls-a2-06-4-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-06/ls-a2-06-4-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-07/ls-a2-07-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-07/ls-a2-07-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-07/ls-a2-07-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-07/ls-a2-07-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-07/ls-a2-07-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-07/ls-a2-07-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-07/ls-a2-07-4-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-07/ls-a2-07-4-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-07/ls-a2-07-4-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-07/ls-a2-07-4-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-07/ls-a2-07-4-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-07/ls-a2-07-4-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-08/ls-a2-08-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-08/ls-a2-08-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-08/ls-a2-08-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-08/ls-a2-08-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-08/ls-a2-08-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-08/ls-a2-08-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-08/ls-a2-08-4-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-08/ls-a2-08-4-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-08/ls-a2-08-4-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-08/ls-a2-08-4-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-08/ls-a2-08-4-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-08/ls-a2-08-4-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-09/ls-a2-09-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-09/ls-a2-09-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-09/ls-a2-09-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-09/ls-a2-09-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-09/ls-a2-09-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-09/ls-a2-09-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-09/ls-a2-09-4-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-09/ls-a2-09-4-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-09/ls-a2-09-4-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-09/ls-a2-09-4-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-09/ls-a2-09-4-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-09/ls-a2-09-4-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-10/ls-a2-10-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-10/ls-a2-10-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-10/ls-a2-10-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-10/ls-a2-10-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-10/ls-a2-10-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-10/ls-a2-10-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-10/ls-a2-10-4-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-10/ls-a2-10-4-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-10/ls-a2-10-4-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-10/ls-a2-10-4-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-10/ls-a2-10-4-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-10/ls-a2-10-4-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-11/ls-a2-11-4-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-11/ls-a2-11-4-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-11/ls-a2-11-4-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-11/ls-a2-11-4-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-11/ls-a2-11-4-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-11/ls-a2-11-4-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-12/ls-a2-12-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-12/ls-a2-12-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-12/ls-a2-12-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-12/ls-a2-12-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-12/ls-a2-12-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-12/ls-a2-12-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-12/ls-a2-12-4-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-12/ls-a2-12-4-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-12/ls-a2-12-4-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-12/ls-a2-12-4-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-12/ls-a2-12-4-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-12/ls-a2-12-4-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-13/ls-a2-13-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-13/ls-a2-13-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-13/ls-a2-13-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-13/ls-a2-13-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-13/ls-a2-13-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/a2-13/ls-a2-13-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-01/ls-b1-01-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-01/ls-b1-01-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-01/ls-b1-01-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-01/ls-b1-01-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-01/ls-b1-01-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-01/ls-b1-01-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-02/ls-b1-02-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-02/ls-b1-02-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-02/ls-b1-02-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-02/ls-b1-02-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-02/ls-b1-02-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-02/ls-b1-02-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-03/ls-b1-03-4-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-03/ls-b1-03-4-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-03/ls-b1-03-4-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-03/ls-b1-03-4-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-03/ls-b1-03-4-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-03/ls-b1-03-4-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-04/ls-b1-04-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-04/ls-b1-04-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-04/ls-b1-04-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-04/ls-b1-04-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-04/ls-b1-04-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-04/ls-b1-04-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-05/ls-b1-05-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-05/ls-b1-05-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-05/ls-b1-05-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-05/ls-b1-05-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-05/ls-b1-05-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-05/ls-b1-05-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-06/ls-b1-06-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-06/ls-b1-06-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-06/ls-b1-06-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-06/ls-b1-06-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-06/ls-b1-06-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-06/ls-b1-06-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-07/ls-b1-07-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-07/ls-b1-07-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-07/ls-b1-07-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-07/ls-b1-07-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-07/ls-b1-07-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-07/ls-b1-07-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-08/ls-b1-08-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-08/ls-b1-08-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-08/ls-b1-08-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-08/ls-b1-08-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-08/ls-b1-08-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-08/ls-b1-08-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-09/ls-b1-09-3-1.mp3` | الملف موجود الآن كأصل غير مربوط في بيانات الدرس؛ السطر الأول وزر «استمع للكل» يستخدمان TTS المتصفح بعد إزالة الربط السابق بسبب خطر قطع الكلام. لم تُراجع النسخة الحالية أو تُطابق؛ تقرير `docs/B1-09-REVIEW-NOTES-AR.md` يوثق السياق السابق. |
-| `audio` | `public/audio/lessons/b1-09/ls-b1-09-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-09/ls-b1-09-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-09/ls-b1-09-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-09/ls-b1-09-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-09/ls-b1-09-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b1-10/ls-b1-10-3-1.mp3` | فُحص تقنياً؛ اجتاز فك الترميز ومؤشرات الإشارة؛ المطابقة والنطق غير مثبتين. |
-| `audio` | `public/audio/lessons/b1-10/ls-b1-10-3-2.mp3` | فُحص تقنياً؛ اجتاز فك الترميز ومؤشرات الإشارة؛ المطابقة والنطق غير مثبتين. |
-| `audio` | `public/audio/lessons/b1-10/ls-b1-10-3-3.mp3` | فُحص تقنياً؛ صمت طرفي 1.30ث يتجاوز حد 1.20؛ لا توجد مطابقة نصية. |
-| `audio` | `public/audio/lessons/b1-10/ls-b1-10-3-4.mp3` | فُحص تقنياً؛ اجتاز فك الترميز ومؤشرات الإشارة؛ المطابقة والنطق غير مثبتين. |
-| `audio` | `public/audio/lessons/b1-10/ls-b1-10-3-5.mp3` | فُحص تقنياً؛ اجتاز فك الترميز ومؤشرات الإشارة؛ المطابقة والنطق غير مثبتين. |
-| `audio` | `public/audio/lessons/b1-10/ls-b1-10-3-6.mp3` | فُحص تقنياً؛ اجتاز فك الترميز ومؤشرات الإشارة؛ المطابقة والنطق غير مثبتين. |
-| `audio` | `public/audio/lessons/b1-11/ls-b1-11-2-1.mp3` | فُحص بالسكريبت واجتاز فك الترميز ومؤشرات الإشارة؛ TTS ولا يثبت النطق أو مطابقة النص؛ التقرير `docs/B1-11-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b1-11/ls-b1-11-2-2.mp3` | فُحص بالسكريبت واجتاز فك الترميز ومؤشرات الإشارة؛ TTS ولا يثبت النطق أو مطابقة النص؛ التقرير `docs/B1-11-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b1-11/ls-b1-11-2-3.mp3` | فُحص بالسكريبت واجتاز فك الترميز ومؤشرات الإشارة؛ TTS ولا يثبت النطق أو مطابقة النص؛ التقرير `docs/B1-11-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b1-11/ls-b1-11-2-4.mp3` | فُحص بالسكريبت واجتاز فك الترميز ومؤشرات الإشارة؛ TTS ولا يثبت النطق أو مطابقة النص؛ التقرير `docs/B1-11-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b1-11/ls-b1-11-2-5.mp3` | فُحص بالسكريبت واجتاز فك الترميز ومؤشرات الإشارة؛ TTS ولا يثبت النطق أو مطابقة النص؛ التقرير `docs/B1-11-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b1-11/ls-b1-11-2-6.mp3` | فُحص بالسكريبت واجتاز فك الترميز ومؤشرات الإشارة؛ TTS ولا يثبت النطق أو مطابقة النص؛ التقرير `docs/B1-11-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b1-11/ls-b1-11-3-1.mp3` | فُحص بالسكريبت واجتاز فك الترميز ومؤشرات الإشارة؛ TTS ولا يثبت النطق أو مطابقة النص؛ التقرير `docs/B1-11-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b1-11/ls-b1-11-3-2.mp3` | فُحص بالسكريبت واجتاز فك الترميز ومؤشرات الإشارة؛ TTS ولا يثبت النطق أو مطابقة النص؛ التقرير `docs/B1-11-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b1-11/ls-b1-11-3-3.mp3` | فُحص بالسكريبت واجتاز فك الترميز ومؤشرات الإشارة؛ TTS ولا يثبت النطق أو مطابقة النص؛ التقرير `docs/B1-11-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b1-11/ls-b1-11-3-4.mp3` | فُحص بالسكريبت واجتاز فك الترميز ومؤشرات الإشارة؛ TTS ولا يثبت النطق أو مطابقة النص؛ التقرير `docs/B1-11-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b1-11/ls-b1-11-3-5.mp3` | فُحص بالسكريبت واجتاز فك الترميز ومؤشرات الإشارة؛ TTS ولا يثبت النطق أو مطابقة النص؛ التقرير `docs/B1-11-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b1-11/ls-b1-11-3-6.mp3` | فُحص بالسكريبت واجتاز فك الترميز ومؤشرات الإشارة؛ TTS ولا يثبت النطق أو مطابقة النص؛ التقرير `docs/B1-11-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b1-12/ls-b1-12-3-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت المطابقة أو وضوح/طبيعية النطق؛ تقرير `B1-12-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b1-12/ls-b1-12-3-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت المطابقة أو وضوح/طبيعية النطق؛ تقرير `B1-12-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b1-12/ls-b1-12-3-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت المطابقة أو وضوح/طبيعية النطق؛ تقرير `B1-12-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b1-12/ls-b1-12-3-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت المطابقة أو وضوح/طبيعية النطق؛ تقرير `B1-12-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b1-12/ls-b1-12-3-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت المطابقة أو وضوح/طبيعية النطق؛ تقرير `B1-12-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b1-12/ls-b1-12-3-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت المطابقة أو وضوح/طبيعية النطق؛ تقرير `B1-12-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b2-01/ls-b2-01-3-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت مطابقة النص أو جودة النطق؛ تقرير `B2-01-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b2-01/ls-b2-01-3-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت مطابقة النص أو جودة النطق؛ تقرير `B2-01-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b2-01/ls-b2-01-3-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت مطابقة النص أو جودة النطق؛ تقرير `B2-01-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b2-01/ls-b2-01-3-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت مطابقة النص أو جودة النطق؛ تقرير `B2-01-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b2-01/ls-b2-01-3-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت مطابقة النص أو جودة النطق؛ تقرير `B2-01-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b2-01/ls-b2-01-3-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت مطابقة النص أو جودة النطق؛ تقرير `B2-01-REVIEW-NOTES-AR.md` |
-| `audio` | `public/audio/lessons/b2-02/ls-b2-02-3-1.mp3` | اجتازت الملفات الستة فحص فك الترميز ومؤشرات الإشارة؛ معلنة TTS، لكن ذلك لا يثبت المطابقة السمعية أو وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-02 |
-| `audio` | `public/audio/lessons/b2-02/ls-b2-02-3-2.mp3` | اجتازت الملفات الستة فحص فك الترميز ومؤشرات الإشارة؛ معلنة TTS، لكن ذلك لا يثبت المطابقة السمعية أو وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-02 |
-| `audio` | `public/audio/lessons/b2-02/ls-b2-02-3-3.mp3` | اجتازت الملفات الستة فحص فك الترميز ومؤشرات الإشارة؛ معلنة TTS، لكن ذلك لا يثبت المطابقة السمعية أو وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-02 |
-| `audio` | `public/audio/lessons/b2-02/ls-b2-02-3-4.mp3` | اجتازت الملفات الستة فحص فك الترميز ومؤشرات الإشارة؛ معلنة TTS، لكن ذلك لا يثبت المطابقة السمعية أو وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-02 |
-| `audio` | `public/audio/lessons/b2-02/ls-b2-02-3-5.mp3` | اجتازت الملفات الستة فحص فك الترميز ومؤشرات الإشارة؛ معلنة TTS، لكن ذلك لا يثبت المطابقة السمعية أو وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-02 |
-| `audio` | `public/audio/lessons/b2-02/ls-b2-02-3-6.mp3` | اجتازت الملفات الستة فحص فك الترميز ومؤشرات الإشارة؛ معلنة TTS، لكن ذلك لا يثبت المطابقة السمعية أو وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-02 |
-| `audio` | `public/audio/lessons/b2-03/ls-b2-03-3-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ البيانات تعلن TTS، لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-03 |
-| `audio` | `public/audio/lessons/b2-03/ls-b2-03-3-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ البيانات تعلن TTS، لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-03 |
-| `audio` | `public/audio/lessons/b2-03/ls-b2-03-3-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ البيانات تعلن TTS، لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-03 |
-| `audio` | `public/audio/lessons/b2-03/ls-b2-03-3-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ البيانات تعلن TTS، لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-03 |
-| `audio` | `public/audio/lessons/b2-03/ls-b2-03-3-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ البيانات تعلن TTS، لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-03 |
-| `audio` | `public/audio/lessons/b2-03/ls-b2-03-3-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ البيانات تعلن TTS، لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-03 |
-| `audio` | `public/audio/lessons/b2-04/ls-b2-04-3-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ TTS معلن بالبيانات لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-04 |
-| `audio` | `public/audio/lessons/b2-04/ls-b2-04-3-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ TTS معلن بالبيانات لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-04 |
-| `audio` | `public/audio/lessons/b2-04/ls-b2-04-3-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ TTS معلن بالبيانات لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-04 |
-| `audio` | `public/audio/lessons/b2-04/ls-b2-04-3-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ TTS معلن بالبيانات لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-04 |
-| `audio` | `public/audio/lessons/b2-04/ls-b2-04-3-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ TTS معلن بالبيانات لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-04 |
-| `audio` | `public/audio/lessons/b2-04/ls-b2-04-3-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ TTS معلن بالبيانات لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-04 |
-| `audio` | `public/audio/lessons/b2-05/ls-b2-05-3-1.mp3` | TTS معلن؛ اجتاز فك الترميز ومؤشرات الإشارة. لا يثبت الفحص النطق أو المطابقة السمعية للنص؛ تقرير B2-05 |
-| `audio` | `public/audio/lessons/b2-05/ls-b2-05-3-2.mp3` | TTS معلن؛ اجتاز فك الترميز ومؤشرات الإشارة. يتضمن النص تسمية `Mira:` داخل سطر موسوم Jonas؛ لم يتحقق سمعياً من نطقها أو مطابقتها؛ تقرير B2-05 |
-| `audio` | `public/audio/lessons/b2-05/ls-b2-05-3-3.mp3` | TTS معلن؛ اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت الفحص النطق أو المطابقة السمعية للنص؛ تقرير B2-05 |
-| `audio` | `public/audio/lessons/b2-05/ls-b2-05-3-4.mp3` | TTS معلن؛ اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت الفحص النطق أو المطابقة السمعية للنص؛ تقرير B2-05 |
-| `audio` | `public/audio/lessons/b2-05/ls-b2-05-3-5.mp3` | TTS معلن؛ اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت الفحص النطق أو المطابقة السمعية للنص؛ تقرير B2-05 |
-| `audio` | `public/audio/lessons/b2-05/ls-b2-05-3-6.mp3` | TTS معلن؛ اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت الفحص النطق أو المطابقة السمعية للنص؛ تقرير B2-05 |
-| `audio` | `public/audio/lessons/b2-06/ls-b2-06-3-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-06 الموسوم TTS؛ لا يثبت الفحص النطق أو المطابقة؛ التفاصيل في تقرير B2-06 |
-| `audio` | `public/audio/lessons/b2-06/ls-b2-06-3-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-06 الموسوم TTS؛ لا يثبت الفحص النطق أو المطابقة؛ التفاصيل في تقرير B2-06 |
-| `audio` | `public/audio/lessons/b2-06/ls-b2-06-3-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-06 الموسوم TTS؛ لا يثبت الفحص النطق أو المطابقة؛ التفاصيل في تقرير B2-06 |
-| `audio` | `public/audio/lessons/b2-06/ls-b2-06-3-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-06 الموسوم TTS؛ لا يثبت الفحص النطق أو المطابقة؛ التفاصيل في تقرير B2-06 |
-| `audio` | `public/audio/lessons/b2-06/ls-b2-06-3-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-06 الموسوم TTS؛ لا يثبت الفحص النطق أو المطابقة؛ التفاصيل في تقرير B2-06 |
-| `audio` | `public/audio/lessons/b2-06/ls-b2-06-3-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-06 الموسوم TTS؛ لا يثبت الفحص النطق أو المطابقة؛ التفاصيل في تقرير B2-06 |
-| `audio` | `public/audio/lessons/b2-07/ls-b2-07-3-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-07؛ الفحص لا يثبت النطق أو محاذاة النص؛ التفاصيل في تقرير B2-07 |
-| `audio` | `public/audio/lessons/b2-07/ls-b2-07-3-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-07؛ الفحص لا يثبت النطق أو محاذاة النص؛ التفاصيل في تقرير B2-07 |
-| `audio` | `public/audio/lessons/b2-07/ls-b2-07-3-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-07؛ الفحص لا يثبت النطق أو محاذاة النص؛ التفاصيل في تقرير B2-07 |
-| `audio` | `public/audio/lessons/b2-07/ls-b2-07-3-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-07؛ الفحص لا يثبت النطق أو محاذاة النص؛ التفاصيل في تقرير B2-07 |
-| `audio` | `public/audio/lessons/b2-07/ls-b2-07-3-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-07؛ الفحص لا يثبت النطق أو محاذاة النص؛ التفاصيل في تقرير B2-07 |
-| `audio` | `public/audio/lessons/b2-07/ls-b2-07-3-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-07؛ الفحص لا يثبت النطق أو محاذاة النص؛ التفاصيل في تقرير B2-07 |
-| `audio` | `public/audio/lessons/b2-08/ls-b2-08-3-1.mp3` | اجتاز فك الترميز وحدود الإشارة الخشنة؛ النص المنقح غير مطابق/غير متحقق، والفحص لا يقيس النطق أو المحاذاة. تقرير B2-08 |
-| `audio` | `public/audio/lessons/b2-08/ls-b2-08-3-2.mp3` | اجتاز فك الترميز وحدود الإشارة الخشنة؛ النص المنقح غير مطابق/غير متحقق، والفحص لا يقيس النطق أو المحاذاة. تقرير B2-08 |
-| `audio` | `public/audio/lessons/b2-08/ls-b2-08-3-3.mp3` | فُكّ ترميزه؛ تجاوز الصمت الطرفي 1.28ث حد 1.20ث. لم يُقصّ لعدم التحقق من الذيل الكلامي؛ النص المنقح غير محاذى. تقرير B2-08 |
-| `audio` | `public/audio/lessons/b2-08/ls-b2-08-3-4.mp3` | اجتاز فك الترميز وحدود الإشارة الخشنة؛ النص المنقح غير مطابق/غير متحقق، والفحص لا يقيس النطق أو المحاذاة. تقرير B2-08 |
-| `audio` | `public/audio/lessons/b2-08/ls-b2-08-3-5.mp3` | اجتاز فك الترميز وحدود الإشارة الخشنة؛ النص المنقح غير مطابق/غير متحقق، والفحص لا يقيس النطق أو المحاذاة. تقرير B2-08 |
-| `audio` | `public/audio/lessons/b2-08/ls-b2-08-3-6.mp3` | اجتاز فك الترميز وحدود الإشارة الخشنة؛ النص المنقح غير مطابق/غير متحقق، والفحص لا يقيس النطق أو المحاذاة. تقرير B2-08 |
-| `audio` | `public/audio/lessons/b2-09/ls-b2-09-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b2-09/ls-b2-09-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b2-09/ls-b2-09-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b2-09/ls-b2-09-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b2-09/ls-b2-09-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b2-09/ls-b2-09-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b2-10/ls-b2-10-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b2-10/ls-b2-10-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b2-10/ls-b2-10-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b2-10/ls-b2-10-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b2-10/ls-b2-10-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b2-10/ls-b2-10-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b2-11/ls-b2-11-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b2-11/ls-b2-11-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b2-11/ls-b2-11-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b2-11/ls-b2-11-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b2-11/ls-b2-11-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/lessons/b2-11/ls-b2-11-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
+| `audio` | `public/audio/exam-b2/c/hoeren-t1.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً. ASR محلي بتمريرين وأربعة إعدادات تشخيصية؛ WER على النص المصدر وبعد تطبيع الأعداد 89/1640 (5.43%)، مع فروق تمثيل الأعداد ووسوم الأدوار/العناوين غير المحسومة. لا يُحسم بها المنطوق. لم يُستبدل الملف؛ التقرير `docs/B2-EXAM-MODELC-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/exam-b2/c/hoeren-t2.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً. ASR محلي بتمريرين وأربعة إعدادات تشخيصية؛ WER على النص المصدر وبعد تطبيع الأعداد 89/1640 (5.43%)، مع فروق تمثيل الأعداد ووسوم الأدوار/العناوين غير المحسومة. لا يُحسم بها المنطوق. لم يُستبدل الملف؛ التقرير `docs/B2-EXAM-MODELC-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/exam-b2/c/hoeren-t3.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً. ASR محلي بتمريرين وأربعة إعدادات تشخيصية؛ WER على النص المصدر وبعد تطبيع الأعداد 89/1640 (5.43%)، مع فروق تمثيل الأعداد ووسوم الأدوار/العناوين غير المحسومة. لا يُحسم بها المنطوق. لم يُستبدل الملف؛ التقرير `docs/B2-EXAM-MODELC-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/exam-b2/c/hoeren-t4-a.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً. ASR محلي بتمريرين وأربعة إعدادات تشخيصية؛ WER على النص المصدر وبعد تطبيع الأعداد 89/1640 (5.43%)، مع فروق تمثيل الأعداد ووسوم الأدوار/العناوين غير المحسومة. لا يُحسم بها المنطوق. لم يُستبدل الملف؛ التقرير `docs/B2-EXAM-MODELC-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/exam-b2/c/hoeren-t4-b.mp3` | حُفظ الأصل وتحقق من بصمته؛ فُك MP3 كاملاً. ASR محلي بتمريرين وأربعة إعدادات تشخيصية؛ WER على النص المصدر وبعد تطبيع الأعداد 89/1640 (5.43%)، مع فروق تمثيل الأعداد ووسوم الأدوار/العناوين غير المحسومة. لا يُحسم بها المنطوق. لم يُستبدل الملف؛ التقرير `docs/B2-EXAM-MODELC-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/exam-b2-sim/h1.mp3` | حُفظ الأصل وتحقق من بصمته؛ فك MP3 كاملاً 4/4 في مجموعة المحاكاة. ASR محلي لـ12 تفريغاً؛ WER الخام وبعد تطبيع الأعداد 4/270 (1.48%)، مع `Fahrtzeit/Fahrzeit` في h1 و`warnen/waren` في h2 بثبات 4/4 لكل منهما، دون حسم آلي للفظ. لم يُستبدل الملف؛ التقرير `docs/B2-SIM-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/exam-b2-sim/h2.mp3` | حُفظ الأصل وتحقق من بصمته؛ فك MP3 كاملاً 4/4 في مجموعة المحاكاة. ASR محلي لـ12 تفريغاً؛ WER الخام وبعد تطبيع الأعداد 4/270 (1.48%)، مع `Fahrtzeit/Fahrzeit` في h1 و`warnen/waren` في h2 بثبات 4/4 لكل منهما، دون حسم آلي للفظ. لم يُستبدل الملف؛ التقرير `docs/B2-SIM-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/exam-b2-sim/h3.mp3` | حُفظ الأصل وتحقق من بصمته؛ فك MP3 كاملاً 4/4 في مجموعة المحاكاة. ASR محلي لـ12 تفريغاً؛ WER الخام وبعد تطبيع الأعداد 4/270 (1.48%)، مع `Fahrtzeit/Fahrzeit` في h1 و`warnen/waren` في h2 بثبات 4/4 لكل منهما، دون حسم آلي للفظ. لم يُستبدل الملف؛ التقرير `docs/B2-SIM-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/exam-b2-sim/h4.mp3` | حُفظ الأصل وتحقق من بصمته؛ فك MP3 كاملاً 4/4 في مجموعة المحاكاة. ASR محلي لـ12 تفريغاً؛ WER الخام وبعد تطبيع الأعداد 4/270 (1.48%)، مع `Fahrtzeit/Fahrzeit` في h1 و`warnen/waren` في h2 بثبات 4/4 لكل منهما، دون حسم آلي للفظ. لم يُستبدل الملف؛ التقرير `docs/B2-SIM-AUDIO-REVIEW-AR.md`.؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/a1-02/ls-a1-02-2-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-02/ls-a1-02-2-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-02/ls-a1-02-2-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-02/ls-a1-02-2-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-02/ls-a1-02-2-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-02/ls-a1-02-2-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-03/ls-a1-03-3-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-03/ls-a1-03-3-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-03/ls-a1-03-3-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-03/ls-a1-03-3-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-03/ls-a1-03-3-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-03/ls-a1-03-3-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-04/ls-a1-04-3-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-04/ls-a1-04-3-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-04/ls-a1-04-3-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-04/ls-a1-04-3-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-04/ls-a1-04-3-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-04/ls-a1-04-3-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-05/ls-a1-05-3-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-05/ls-a1-05-3-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-05/ls-a1-05-3-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-05/ls-a1-05-3-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-05/ls-a1-05-3-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-05/ls-a1-05-3-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-06/ls-a1-06-3-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-06/ls-a1-06-3-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-06/ls-a1-06-3-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-06/ls-a1-06-3-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-06/ls-a1-06-3-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-06/ls-a1-06-3-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-07/ls-a1-07-kiosk-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-07/ls-a1-07-kiosk-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-07/ls-a1-07-kiosk-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-07/ls-a1-07-kiosk-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-07/ls-a1-07-kiosk-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-07/ls-a1-07-kiosk-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-08/ls-a1-08-3-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-08/ls-a1-08-3-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-08/ls-a1-08-3-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-08/ls-a1-08-3-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-08/ls-a1-08-3-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-08/ls-a1-08-3-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-09/ls-a1-09-3-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-09/ls-a1-09-3-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-09/ls-a1-09-3-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-09/ls-a1-09-3-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-09/ls-a1-09-3-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-09/ls-a1-09-3-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-10/ls-a1-10-3-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-10/ls-a1-10-3-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-10/ls-a1-10-3-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-10/ls-a1-10-3-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-10/ls-a1-10-3-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-10/ls-a1-10-3-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-11/ls-a1-11-3-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-11/ls-a1-11-3-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-11/ls-a1-11-3-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-11/ls-a1-11-3-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-11/ls-a1-11-3-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-11/ls-a1-11-3-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-12/ls-a1-12-3-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-12/ls-a1-12-3-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-12/ls-a1-12-3-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-12/ls-a1-12-3-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-12/ls-a1-12-3-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-12/ls-a1-12-3-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-13/ls-a1-13-3-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-13/ls-a1-13-3-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-13/ls-a1-13-3-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-13/ls-a1-13-3-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-13/ls-a1-13-3-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-13/ls-a1-13-3-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-14/ls-a1-14-2-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-14/ls-a1-14-2-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-14/ls-a1-14-2-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-14/ls-a1-14-2-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-14/ls-a1-14-2-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-14/ls-a1-14-2-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-14/ls-a1-14-3-1.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-14/ls-a1-14-3-2.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-14/ls-a1-14-3-3.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-14/ls-a1-14-3-4.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-14/ls-a1-14-3-5.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a1-14/ls-a1-14-3-6.mp3` | ضمن تدقيق المستوى A1 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 84 ملفاً؛ النتائج والحدود في `docs/A1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-01/ls-a2-01-3-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-01/ls-a2-01-3-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-01/ls-a2-01-3-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-01/ls-a2-01-3-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-01/ls-a2-01-3-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-01/ls-a2-01-3-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-02/ls-a2-02-3-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-02/ls-a2-02-3-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-02/ls-a2-02-3-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-02/ls-a2-02-3-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-02/ls-a2-02-3-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-02/ls-a2-02-3-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-03/ls-a2-03-3-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-03/ls-a2-03-3-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-03/ls-a2-03-3-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-03/ls-a2-03-3-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-03/ls-a2-03-3-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-03/ls-a2-03-3-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-04/ls-a2-04-4-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-04/ls-a2-04-4-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-04/ls-a2-04-4-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-04/ls-a2-04-4-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-04/ls-a2-04-4-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-04/ls-a2-04-4-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-05/ls-a2-05-3-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-05/ls-a2-05-3-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-05/ls-a2-05-3-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-05/ls-a2-05-3-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-05/ls-a2-05-3-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-05/ls-a2-05-3-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-06/ls-a2-06-3-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-06/ls-a2-06-3-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-06/ls-a2-06-3-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-06/ls-a2-06-3-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-06/ls-a2-06-3-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-06/ls-a2-06-3-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-06/ls-a2-06-4-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-06/ls-a2-06-4-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-06/ls-a2-06-4-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-06/ls-a2-06-4-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-06/ls-a2-06-4-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-06/ls-a2-06-4-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-07/ls-a2-07-3-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-07/ls-a2-07-3-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-07/ls-a2-07-3-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-07/ls-a2-07-3-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-07/ls-a2-07-3-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-07/ls-a2-07-3-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-07/ls-a2-07-4-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-07/ls-a2-07-4-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-07/ls-a2-07-4-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-07/ls-a2-07-4-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-07/ls-a2-07-4-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-07/ls-a2-07-4-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-08/ls-a2-08-3-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-08/ls-a2-08-3-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-08/ls-a2-08-3-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-08/ls-a2-08-3-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-08/ls-a2-08-3-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-08/ls-a2-08-3-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-08/ls-a2-08-4-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-08/ls-a2-08-4-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-08/ls-a2-08-4-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-08/ls-a2-08-4-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-08/ls-a2-08-4-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-08/ls-a2-08-4-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-09/ls-a2-09-3-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-09/ls-a2-09-3-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-09/ls-a2-09-3-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-09/ls-a2-09-3-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-09/ls-a2-09-3-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-09/ls-a2-09-3-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-09/ls-a2-09-4-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-09/ls-a2-09-4-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-09/ls-a2-09-4-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-09/ls-a2-09-4-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-09/ls-a2-09-4-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-09/ls-a2-09-4-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-10/ls-a2-10-3-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-10/ls-a2-10-3-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-10/ls-a2-10-3-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-10/ls-a2-10-3-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-10/ls-a2-10-3-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-10/ls-a2-10-3-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-10/ls-a2-10-4-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-10/ls-a2-10-4-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-10/ls-a2-10-4-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-10/ls-a2-10-4-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-10/ls-a2-10-4-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-10/ls-a2-10-4-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-11/ls-a2-11-4-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-11/ls-a2-11-4-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-11/ls-a2-11-4-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-11/ls-a2-11-4-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-11/ls-a2-11-4-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-11/ls-a2-11-4-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-12/ls-a2-12-3-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-12/ls-a2-12-3-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-12/ls-a2-12-3-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-12/ls-a2-12-3-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-12/ls-a2-12-3-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-12/ls-a2-12-3-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-12/ls-a2-12-4-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-12/ls-a2-12-4-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-12/ls-a2-12-4-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-12/ls-a2-12-4-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-12/ls-a2-12-4-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-12/ls-a2-12-4-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-13/ls-a2-13-3-1.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-13/ls-a2-13-3-2.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-13/ls-a2-13-3-3.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-13/ls-a2-13-3-4.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-13/ls-a2-13-3-5.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/a2-13/ls-a2-13-3-6.mp3` | ضمن تدقيق المستوى A2 كاملاً: حُفظ الأصل في الأرشيف الموحد وتطابقت بصمته، وفُك MP3. ASR ضمن مجموعة مقاطع الدروس ذات 114 ملفاً؛ النتائج والحدود في `docs/A2-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-01/ls-b1-01-3-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-01/ls-b1-01-3-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-01/ls-b1-01-3-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-01/ls-b1-01-3-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-01/ls-b1-01-3-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-01/ls-b1-01-3-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-02/ls-b1-02-3-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-02/ls-b1-02-3-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-02/ls-b1-02-3-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-02/ls-b1-02-3-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-02/ls-b1-02-3-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-02/ls-b1-02-3-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-03/ls-b1-03-4-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-03/ls-b1-03-4-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-03/ls-b1-03-4-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-03/ls-b1-03-4-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-03/ls-b1-03-4-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-03/ls-b1-03-4-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-04/ls-b1-04-3-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-04/ls-b1-04-3-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-04/ls-b1-04-3-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-04/ls-b1-04-3-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-04/ls-b1-04-3-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-04/ls-b1-04-3-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-05/ls-b1-05-3-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-05/ls-b1-05-3-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-05/ls-b1-05-3-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-05/ls-b1-05-3-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-05/ls-b1-05-3-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-05/ls-b1-05-3-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-06/ls-b1-06-3-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-06/ls-b1-06-3-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-06/ls-b1-06-3-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-06/ls-b1-06-3-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-06/ls-b1-06-3-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-06/ls-b1-06-3-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-07/ls-b1-07-3-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-07/ls-b1-07-3-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-07/ls-b1-07-3-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-07/ls-b1-07-3-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-07/ls-b1-07-3-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-07/ls-b1-07-3-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-08/ls-b1-08-3-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-08/ls-b1-08-3-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-08/ls-b1-08-3-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-08/ls-b1-08-3-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-08/ls-b1-08-3-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-08/ls-b1-08-3-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-09/ls-b1-09-3-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-09/ls-b1-09-3-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-09/ls-b1-09-3-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-09/ls-b1-09-3-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-09/ls-b1-09-3-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-09/ls-b1-09-3-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-10/ls-b1-10-3-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-10/ls-b1-10-3-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-10/ls-b1-10-3-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-10/ls-b1-10-3-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-10/ls-b1-10-3-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-10/ls-b1-10-3-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-11/ls-b1-11-2-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-11/ls-b1-11-2-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-11/ls-b1-11-2-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-11/ls-b1-11-2-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-11/ls-b1-11-2-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-11/ls-b1-11-2-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-11/ls-b1-11-3-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-11/ls-b1-11-3-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-11/ls-b1-11-3-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-11/ls-b1-11-3-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-11/ls-b1-11-3-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-11/ls-b1-11-3-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-12/ls-b1-12-3-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-12/ls-b1-12-3-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-12/ls-b1-12-3-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-12/ls-b1-12-3-4.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-12/ls-b1-12-3-5.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b1-12/ls-b1-12-3-6.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي للمقاطع ذات المرجع. نتيجة المجموعة 57/1472 بعد تطبيع الأعداد. المقطع B1-09-3-1 متقاعد بلا مرجع نصي ولم يحتسب WER؛ التفاصيل في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/lessons/b2-01/ls-b2-01-3-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت مطابقة النص أو جودة النطق؛ تقرير `B2-01-REVIEW-NOTES-AR.md`؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-01/ls-b2-01-3-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت مطابقة النص أو جودة النطق؛ تقرير `B2-01-REVIEW-NOTES-AR.md`؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-01/ls-b2-01-3-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت مطابقة النص أو جودة النطق؛ تقرير `B2-01-REVIEW-NOTES-AR.md`؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-01/ls-b2-01-3-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت مطابقة النص أو جودة النطق؛ تقرير `B2-01-REVIEW-NOTES-AR.md`؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-01/ls-b2-01-3-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت مطابقة النص أو جودة النطق؛ تقرير `B2-01-REVIEW-NOTES-AR.md`؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-01/ls-b2-01-3-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت مطابقة النص أو جودة النطق؛ تقرير `B2-01-REVIEW-NOTES-AR.md`؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-02/ls-b2-02-3-1.mp3` | اجتازت الملفات الستة فحص فك الترميز ومؤشرات الإشارة؛ معلنة TTS، لكن ذلك لا يثبت المطابقة السمعية أو وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-02؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-02/ls-b2-02-3-2.mp3` | اجتازت الملفات الستة فحص فك الترميز ومؤشرات الإشارة؛ معلنة TTS، لكن ذلك لا يثبت المطابقة السمعية أو وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-02؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-02/ls-b2-02-3-3.mp3` | اجتازت الملفات الستة فحص فك الترميز ومؤشرات الإشارة؛ معلنة TTS، لكن ذلك لا يثبت المطابقة السمعية أو وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-02؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-02/ls-b2-02-3-4.mp3` | اجتازت الملفات الستة فحص فك الترميز ومؤشرات الإشارة؛ معلنة TTS، لكن ذلك لا يثبت المطابقة السمعية أو وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-02؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-02/ls-b2-02-3-5.mp3` | اجتازت الملفات الستة فحص فك الترميز ومؤشرات الإشارة؛ معلنة TTS، لكن ذلك لا يثبت المطابقة السمعية أو وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-02؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-02/ls-b2-02-3-6.mp3` | اجتازت الملفات الستة فحص فك الترميز ومؤشرات الإشارة؛ معلنة TTS، لكن ذلك لا يثبت المطابقة السمعية أو وضوح/طبيعية النطق؛ التفاصيل في تقرير B2-02؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-03/ls-b2-03-3-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ البيانات تعلن TTS، لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-03؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-03/ls-b2-03-3-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ البيانات تعلن TTS، لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-03؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-03/ls-b2-03-3-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ البيانات تعلن TTS، لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-03؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-03/ls-b2-03-3-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ البيانات تعلن TTS، لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-03؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-03/ls-b2-03-3-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ البيانات تعلن TTS، لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-03؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-03/ls-b2-03-3-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ البيانات تعلن TTS، لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-03؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-04/ls-b2-04-3-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ TTS معلن بالبيانات لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-04؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-04/ls-b2-04-3-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ TTS معلن بالبيانات لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-04؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-04/ls-b2-04-3-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ TTS معلن بالبيانات لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-04؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-04/ls-b2-04-3-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ TTS معلن بالبيانات لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-04؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-04/ls-b2-04-3-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ TTS معلن بالبيانات لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-04؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-04/ls-b2-04-3-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة؛ TTS معلن بالبيانات لكن الفحص لا يثبت وضوح النطق أو طبيعته أو المطابقة السمعية للنص؛ تقرير B2-04؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-05/ls-b2-05-3-1.mp3` | TTS معلن؛ اجتاز فك الترميز ومؤشرات الإشارة. لا يثبت الفحص النطق أو المطابقة السمعية للنص؛ تقرير B2-05؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-05/ls-b2-05-3-2.mp3` | TTS معلن؛ اجتاز فك الترميز ومؤشرات الإشارة. يتضمن النص تسمية `Mira:` داخل سطر موسوم Jonas؛ لم يتحقق سمعياً من نطقها أو مطابقتها؛ تقرير B2-05؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-05/ls-b2-05-3-3.mp3` | TTS معلن؛ اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت الفحص النطق أو المطابقة السمعية للنص؛ تقرير B2-05؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-05/ls-b2-05-3-4.mp3` | TTS معلن؛ اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت الفحص النطق أو المطابقة السمعية للنص؛ تقرير B2-05؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-05/ls-b2-05-3-5.mp3` | TTS معلن؛ اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت الفحص النطق أو المطابقة السمعية للنص؛ تقرير B2-05؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-05/ls-b2-05-3-6.mp3` | TTS معلن؛ اجتاز فك الترميز ومؤشرات الإشارة؛ لا يثبت الفحص النطق أو المطابقة السمعية للنص؛ تقرير B2-05؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-06/ls-b2-06-3-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-06 الموسوم TTS؛ لا يثبت الفحص النطق أو المطابقة؛ التفاصيل في تقرير B2-06؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-06/ls-b2-06-3-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-06 الموسوم TTS؛ لا يثبت الفحص النطق أو المطابقة؛ التفاصيل في تقرير B2-06؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-06/ls-b2-06-3-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-06 الموسوم TTS؛ لا يثبت الفحص النطق أو المطابقة؛ التفاصيل في تقرير B2-06؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-06/ls-b2-06-3-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-06 الموسوم TTS؛ لا يثبت الفحص النطق أو المطابقة؛ التفاصيل في تقرير B2-06؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-06/ls-b2-06-3-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-06 الموسوم TTS؛ لا يثبت الفحص النطق أو المطابقة؛ التفاصيل في تقرير B2-06؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-06/ls-b2-06-3-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-06 الموسوم TTS؛ لا يثبت الفحص النطق أو المطابقة؛ التفاصيل في تقرير B2-06؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-07/ls-b2-07-3-1.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-07؛ الفحص لا يثبت النطق أو محاذاة النص؛ التفاصيل في تقرير B2-07؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-07/ls-b2-07-3-2.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-07؛ الفحص لا يثبت النطق أو محاذاة النص؛ التفاصيل في تقرير B2-07؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-07/ls-b2-07-3-3.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-07؛ الفحص لا يثبت النطق أو محاذاة النص؛ التفاصيل في تقرير B2-07؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-07/ls-b2-07-3-4.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-07؛ الفحص لا يثبت النطق أو محاذاة النص؛ التفاصيل في تقرير B2-07؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-07/ls-b2-07-3-5.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-07؛ الفحص لا يثبت النطق أو محاذاة النص؛ التفاصيل في تقرير B2-07؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-07/ls-b2-07-3-6.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن استماع B2-07؛ الفحص لا يثبت النطق أو محاذاة النص؛ التفاصيل في تقرير B2-07؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-08/ls-b2-08-3-1.mp3` | اجتاز فك الترميز وحدود الإشارة الخشنة؛ النص المنقح غير مطابق/غير متحقق، والفحص لا يقيس النطق أو المحاذاة. تقرير B2-08؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-08/ls-b2-08-3-2.mp3` | اجتاز فك الترميز وحدود الإشارة الخشنة؛ النص المنقح غير مطابق/غير متحقق، والفحص لا يقيس النطق أو المحاذاة. تقرير B2-08؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-08/ls-b2-08-3-3.mp3` | فُكّ ترميزه؛ تجاوز الصمت الطرفي 1.28ث حد 1.20ث. لم يُقصّ لعدم التحقق من الذيل الكلامي؛ النص المنقح غير محاذى. تقرير B2-08؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-08/ls-b2-08-3-4.mp3` | اجتاز فك الترميز وحدود الإشارة الخشنة؛ النص المنقح غير مطابق/غير متحقق، والفحص لا يقيس النطق أو المحاذاة. تقرير B2-08؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-08/ls-b2-08-3-5.mp3` | اجتاز فك الترميز وحدود الإشارة الخشنة؛ النص المنقح غير مطابق/غير متحقق، والفحص لا يقيس النطق أو المحاذاة. تقرير B2-08؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-08/ls-b2-08-3-6.mp3` | اجتاز فك الترميز وحدود الإشارة الخشنة؛ النص المنقح غير مطابق/غير متحقق، والفحص لا يقيس النطق أو المحاذاة. تقرير B2-08؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-09/ls-b2-09-3-1.mp3` | أُعيد توليده TTS من النص الحالي؛ طابقه ASR محلياً؛ لم يُجر استماع أو تقييم جودة صوتية؛ تقرير B2-09؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-09/ls-b2-09-3-2.mp3` | أُعيد توليده TTS من النص الحالي؛ طابقه ASR محلياً؛ لم يُجر استماع أو تقييم جودة صوتية؛ تقرير B2-09؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-09/ls-b2-09-3-3.mp3` | أُعيد توليده TTS من النص الحالي؛ طابقه ASR محلياً؛ لم يُجر استماع أو تقييم جودة صوتية؛ تقرير B2-09؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-09/ls-b2-09-3-4.mp3` | أُعيد توليده TTS من النص الحالي؛ طابقه ASR محلياً؛ لم يُجر استماع أو تقييم جودة صوتية؛ تقرير B2-09؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-09/ls-b2-09-3-5.mp3` | أُعيد توليده TTS من النص الحالي؛ طابقه ASR محلياً؛ لم يُجر استماع أو تقييم جودة صوتية؛ تقرير B2-09؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-09/ls-b2-09-3-6.mp3` | أُعيد توليده TTS من النص الحالي؛ طابقه ASR محلياً؛ لم يُجر استماع أو تقييم جودة صوتية؛ تقرير B2-09؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-10/ls-b2-10-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-10/ls-b2-10-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-10/ls-b2-10-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-10/ls-b2-10-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-10/ls-b2-10-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-10/ls-b2-10-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-11/ls-b2-11-3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-11/ls-b2-11-3-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-11/ls-b2-11-3-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-11/ls-b2-11-3-4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-11/ls-b2-11-3-5.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/lessons/b2-11/ls-b2-11-3-6.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
 | `audio` | `public/audio/podcasts/p-a1-geburstag.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
 | `audio` | `public/audio/podcasts/p-a1-haustier.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
 | `audio` | `public/audio/podcasts/p-a1-markt.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
@@ -1815,17 +1815,17 @@
 | `audio` | `public/audio/podcasts/p-a2-wochenmarkt.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
 | `audio` | `public/audio/podcasts/p-a2-wohnung.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
 | `audio` | `public/audio/podcasts/p-a2-zug.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/podcasts/p-b1-gesundheit.mp3` | الملف موجود فعلياً لكنه مسجل ضمن `PENDING_PODCAST_AUDIO` لأن النص المسموع الحالي تغيّر؛ لم تُراجع النسخة أو تُطابق، فلا يُعدّ تسجيلاً صالحاً للنص الحالي. |
-| `audio` | `public/audio/podcasts/p-b1-homeoffice.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/podcasts/p-b1-lernen.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/podcasts/p-b1-reisen.mp3` | اجتاز فك الترميز ومؤشرات الإشارة بحد مدة 30ث؛ المطابقة والنطق غير مثبتين |
-| `audio` | `public/audio/podcasts/p-b1-umwelt.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/podcasts/p-b2-digitalisierung.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن فحص B2-07؛ لا يثبت الفحص النطق أو المطابقة السمعية؛ التفاصيل في تقرير B2-07 |
-| `audio` | `public/audio/podcasts/p-b2-gesunde-ernaehrung.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/podcasts/p-b2-globalisierung.mp3` | 25.94 ثانية؛ اجتاز فك الترميز ومؤشرات الإشارة بحد مدة 40 ثانية؛ الواجهة تعلنه TTS لكن الفحص لا يثبت المطابقة السمعية أو جودة النطق؛ تقرير B2-02 |
-| `audio` | `public/audio/podcasts/p-b2-kuenstliche-intelligenz.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن فحص B2-07؛ لا يثبت الفحص النطق أو المطابقة السمعية؛ التفاصيل في تقرير B2-07 |
-| `audio` | `public/audio/podcasts/p-b2-migration.mp3` | اجتاز فك الترميز وحدود الإشارة عند سقف مدة 60ث؛ نص الحلقة استُبدل دون تجديد/محاذاة الصوت. المؤشر لا يثبت وضوحاً أو نطقاً. تقرير B2-08 |
-| `audio` | `public/audio/podcasts/p-b2-work-life-balance.mp3` | 24.44 ثانية؛ اجتاز فك الترميز ومؤشرات الإشارة بحد مدة 40 ثانية؛ لا يثبت المطابقة السمعية أو جودة النطق؛ تقرير B2-05 |
+| `audio` | `public/audio/podcasts/p-b1-gesundheit.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي مقابل النص الحالي. أخطاء مطبعة 10/500 عبر التمريرين؛ الفروق والحدود في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/podcasts/p-b1-homeoffice.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي مقابل النص الحالي. أخطاء مطبعة 10/500 عبر التمريرين؛ الفروق والحدود في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/podcasts/p-b1-lernen.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي مقابل النص الحالي. أخطاء مطبعة 10/500 عبر التمريرين؛ الفروق والحدود في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/podcasts/p-b1-reisen.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي مقابل النص الحالي. أخطاء مطبعة 10/500 عبر التمريرين؛ الفروق والحدود في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/podcasts/p-b1-umwelt.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي مقابل النص الحالي. أخطاء مطبعة 10/500 عبر التمريرين؛ الفروق والحدود في `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/podcasts/p-b2-digitalisierung.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن فحص B2-07؛ لا يثبت الفحص النطق أو المطابقة السمعية؛ التفاصيل في تقرير B2-07؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/podcasts/p-b2-gesunde-ernaehrung.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/podcasts/p-b2-globalisierung.mp3` | 25.94 ثانية؛ اجتاز فك الترميز ومؤشرات الإشارة بحد مدة 40 ثانية؛ الواجهة تعلنه TTS لكن الفحص لا يثبت المطابقة السمعية أو جودة النطق؛ تقرير B2-02؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/podcasts/p-b2-kuenstliche-intelligenz.mp3` | اجتاز فك الترميز ومؤشرات الإشارة ضمن فحص B2-07؛ لا يثبت الفحص النطق أو المطابقة السمعية؛ التفاصيل في تقرير B2-07؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/podcasts/p-b2-migration.mp3` | اجتاز فك الترميز وحدود الإشارة عند سقف مدة 60ث؛ نص الحلقة استُبدل دون تجديد/محاذاة الصوت. المؤشر لا يثبت وضوحاً أو نطقاً. تقرير B2-08؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/podcasts/p-b2-work-life-balance.mp3` | 24.44 ثانية؛ اجتاز فك الترميز ومؤشرات الإشارة بحد مدة 40 ثانية؛ لا يثبت المطابقة السمعية أو جودة النطق؛ تقرير B2-05؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
 | `audio` | `public/audio/speaking-a1/m1-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
 | `audio` | `public/audio/speaking-a1/m1-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
 | `audio` | `public/audio/speaking-a1/m1-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
@@ -1856,34 +1856,34 @@
 | `audio` | `public/audio/speaking-a2/t2-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
 | `audio` | `public/audio/speaking-a2/t2-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
 | `audio` | `public/audio/speaking-a2/t3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b1/m1-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b1/m1-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b1/m1-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b1/m2-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b1/m2-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b1/m3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b1/t1-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b1/t1-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b1/t1-3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b1/t2-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b1/t2-2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b1/t3-1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b2/a/d1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b2/a/d2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b2/a/d3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b2/a/d4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b2/a/v1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b2/a/v2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b2/a/v3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b2/a/v4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b2/b/b-d1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b2/b/b-d2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b2/b/b-d3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b2/b/b-d4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b2/b/b-v1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b2/b/b-v2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b2/b/b-v3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
-| `audio` | `public/audio/speaking-b2/b/b-v4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
+| `audio` | `public/audio/speaking-b1/m1-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي مقابل نموذج التحدث. أخطاء مطبعة 0/336 عبر التمريرين؛ التقرير `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/speaking-b1/m1-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي مقابل نموذج التحدث. أخطاء مطبعة 0/336 عبر التمريرين؛ التقرير `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/speaking-b1/m1-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي مقابل نموذج التحدث. أخطاء مطبعة 0/336 عبر التمريرين؛ التقرير `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/speaking-b1/m2-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي مقابل نموذج التحدث. أخطاء مطبعة 0/336 عبر التمريرين؛ التقرير `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/speaking-b1/m2-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي مقابل نموذج التحدث. أخطاء مطبعة 0/336 عبر التمريرين؛ التقرير `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/speaking-b1/m3-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي مقابل نموذج التحدث. أخطاء مطبعة 0/336 عبر التمريرين؛ التقرير `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/speaking-b1/t1-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي مقابل نموذج التحدث. أخطاء مطبعة 0/336 عبر التمريرين؛ التقرير `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/speaking-b1/t1-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي مقابل نموذج التحدث. أخطاء مطبعة 0/336 عبر التمريرين؛ التقرير `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/speaking-b1/t1-3.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي مقابل نموذج التحدث. أخطاء مطبعة 0/336 عبر التمريرين؛ التقرير `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/speaking-b1/t2-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي مقابل نموذج التحدث. أخطاء مطبعة 0/336 عبر التمريرين؛ التقرير `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/speaking-b1/t2-2.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي مقابل نموذج التحدث. أخطاء مطبعة 0/336 عبر التمريرين؛ التقرير `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/speaking-b1/t3-1.mp3` | ضمن تدقيق B1 الكامل: أُرشف الأصل وطوبقت بصمته وفُكّ؛ ASR محلي مقابل نموذج التحدث. أخطاء مطبعة 0/336 عبر التمريرين؛ التقرير `docs/B1-AUDIO-LEVEL-REVIEW-AR.md`. |
+| `audio` | `public/audio/speaking-b2/a/d1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/speaking-b2/a/d2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/speaking-b2/a/d3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/speaking-b2/a/d4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/speaking-b2/a/v1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/speaking-b2/a/v2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/speaking-b2/a/v3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/speaking-b2/a/v4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/speaking-b2/b/b-d1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/speaking-b2/b/b-d2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/speaking-b2/b/b-d3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/speaking-b2/b/b-d4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/speaking-b2/b/b-v1.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/speaking-b2/b/b-v2.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/speaking-b2/b/b-v3.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
+| `audio` | `public/audio/speaking-b2/b/b-v4.mp3` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه؛ ضمن تدقيق المستوى B2 كاملاً: حُفظ الأصل وطوبقت بصمته وفُك ضمن الأرشيف الموحد 197/197. التقرير `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` |
 | `icons` | `public/icons/apple-touch-icon.png` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
 | `icons` | `public/icons/icon-180.png` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
 | `icons` | `public/icons/icon-192.png` | لم تبدأ؛ تصنيف الأصل ومطابقته بسياقه |
@@ -1893,10 +1893,13 @@
 | `sw.js` | `public/sw.js` | غير موجود في مساحة العمل الحالية؛ قد يكون ناتجاً مولداً، ولم يُتحقق من بناء PWA. مسار مفقود لا يدخل العدد |
 | `workbox-0db717d9.js` | `public/workbox-0db717d9.js` | غير موجود في مساحة العمل الحالية؛ قد يكون ناتجاً مولداً، ولم يُتحقق من بناء PWA. مسار مفقود لا يدخل العدد |
 
-## وثائق المشروع `docs` (164)
+## وثائق المشروع `docs` (168)
 
 | الملف | الحالة |
 |---|---|
+| `docs/A1-AUDIO-LEVEL-REVIEW-AR.md` | تقرير تدقيق صوت A1 كاملاً؛ حفظ وفك وASR محلي مع فروق وحدود معلنة |
+| `docs/A2-AUDIO-LEVEL-REVIEW-AR.md` | تقرير تدقيق صوت A2 كاملاً؛ حفظ وفك وASR محلي مع فروق وحدود معلنة |
+| `docs/B1-AUDIO-LEVEL-REVIEW-AR.md` | تقرير تدقيق صوت B1 كاملاً؛ حفظ وفك وASR محلي مع فروق وحدود معلنة |
 | `docs/A1-00-REVIEW-NOTES-AR.md` | تقرير مراجعة A1-00؛ وثيقة دعم لا مادة متعلم، وحدود النطاق في التقرير وسجل الدروس |
 | `docs/A1-01-REVIEW-NOTES-AR.md` | تقرير مراجعة A1-01؛ وثيقة دعم لا مادة متعلم، وحدود النطاق في التقرير وسجل الدروس |
 | `docs/A1-01B-REVIEW-NOTES-AR.md` | تقرير مراجعة A1-01B؛ وثيقة دعم لا مادة متعلم، وحدود النطاق في التقرير وسجل الدروس |
@@ -1938,6 +1941,7 @@
 | `docs/B1-10-REVIEW-NOTES-AR.md` | تقرير مراجعة B1-10؛ وثيقة دعم لا مادة متعلم. نطاق الدرس وأدلته في سجل المراجعة الخاص به؛ وجود التقرير لا يثبت صحة كل الملفات. |
 | `docs/B1-11-REVIEW-NOTES-AR.md` | تقرير تدقيق B1-11؛ المصادر والاختبارات وحدود الصوت موثقة |
 | `docs/B1-12-REVIEW-NOTES-AR.md` | تقرير تدقيق B1-12؛ الإصلاحات والمراجع والاختبارات وحدود الصوت موثقة |
+| `docs/B2-AUDIO-LEVEL-REVIEW-AR.md` | تقرير تدقيق صوت B2 كاملاً؛ 197 أصلاً محفوظاً ومفكوكاً، ASR محلي مع فروق كبيرة غير محسومة وحدود موثقة |
 | `docs/B2-01-REVIEW-NOTES-AR.md` | تقرير تدقيق B2-01؛ الإصلاحات والمراجع والاختبارات وحدود الصوت موثقة |
 | `docs/B2-02-REVIEW-NOTES-AR.md` | تقرير تدقيق B2-02؛ الإصلاحات والمراجع والاختبارات وحدود فحص الإشارة موثقة |
 | `docs/B2-03-REVIEW-NOTES-AR.md` | تقرير تدقيق B2-03؛ الإصلاحات القانونية/اللغوية، 30 فحص إشارة، الاختبارات والنواقص موثقة |
@@ -1945,16 +1949,16 @@
 | `docs/B2-05-REVIEW-NOTES-AR.md` | تقرير مراجعة B2-05؛ الإصلاحات والمراجع و80 اختباراً و13 فحص إشارة والنواقص موثقة |
 | `docs/B2-06-REVIEW-NOTES-AR.md` | تقرير مراجعة B2-06؛ الإصلاحات والمراجع و86 اختباراً و24 فحص إشارة والحدود موثقة |
 | `docs/B2-07-REVIEW-NOTES-AR.md` | تقرير مراجعة B2-07؛ الإصلاحات ومصادر IDS والقانون و88 اختباراً و14 فحص إشارة والحدود موثقة |
-| `docs/B2-08-REVIEW-NOTES-AR.md` | تقرير B2-08 الجاري؛ تغييرات المحتوى والموارد و78 اختباراً وفحوص النوع/التمارين والإشارة، ومشكلات محاذاة الصوت وحدود المراجعة موثقة |
+| `docs/B2-08-REVIEW-NOTES-AR.md` | تقرير B2-08؛ سجل المراجعة يسجل إغلاقه ضمن الأدلة والنطاق في المتعقب. راجع تحديثات حالة الصوت والتفريغ وحدودهما وآثارها في التقرير |
 | `docs/B2-EXAM-AUDIO-PRODUCTION.md` | لم تبدأ؛ تصنيف علاقتها بمحتوى المتعلم وفحص النصوص ذات الصلة |
 | `docs/BROWSER-VERIFICATION-2026-10-13.md` | لم تبدأ؛ تصنيف علاقتها بمحتوى المتعلم وفحص النصوص ذات الصلة |
 | `docs/EXAM-AUDIO-MODEL2-PRODUCTION.md` | لم تبدأ؛ تصنيف علاقتها بمحتوى المتعلم وفحص النصوص ذات الصلة |
 | `docs/EXPERT-REVIEW-2026-10-13.md` | لم تبدأ؛ تصنيف علاقتها بمحتوى المتعلم وفحص النصوص ذات الصلة |
 | `docs/FINAL-KNOWN-GAPS-AR.md` | لم تبدأ؛ تصنيف علاقتها بمحتوى المتعلم وفحص النصوص ذات الصلة |
-| `docs/LESSON-REVIEW-TRACKER-AR.md` | سُجل إغلاق B1-12 وB2-01 حتى B2-07؛ B2-08 قيد المراجعة وغير مغلق، مع الأدلة والحدود في تقريره |
+| `docs/LESSON-REVIEW-TRACKER-AR.md` | سُجل إغلاق الوحدات الـ52 ضمن نطاقها وأدلتها حتى B2-11؛ أحدث دفعات الصوت الكاملة A1 وA2 وB1 وB2 موثقة منفصلة |
 | `docs/MODEL-SOURCE-REVIEW-PROTOCOL-AR.md` | لم تبدأ؛ تصنيف علاقتها بمحتوى المتعلم وفحص النصوص ذات الصلة |
 | `docs/PLAN-CLOSING-GAPS-AR.md` | لم تبدأ؛ تصنيف علاقتها بمحتوى المتعلم وفحص النصوص ذات الصلة |
-| `docs/PROJECT-CONTENT-INVENTORY-AR.md` | حُدث الجرد بتقدم B2-08 وموارده الصوتية والقصصية والحوارية والبودكاستية، مع تحديث العدد وحالة الملفات؛ التفاصيل والحدود في تقارير الدروس |
+| `docs/PROJECT-CONTENT-INVENTORY-AR.md` | سجل جرد المشروع؛ آخر تحديث لحالات الوسائط يسجل تدقيق B2 كاملاً، مع فصل عدد الملفات عن حالات التدقيق |
 | `docs/README.md` | لم تبدأ؛ تصنيف علاقتها بمحتوى المتعلم وفحص النصوص ذات الصلة |
 | `docs/REFACTOR-PLAN.md` | لم تبدأ؛ تصنيف علاقتها بمحتوى المتعلم وفحص النصوص ذات الصلة |
 | `docs/REPORT-CEFR-GOETHE-COVERAGE-AR.md` | لم تبدأ؛ تصنيف علاقتها بمحتوى المتعلم وفحص النصوص ذات الصلة |
@@ -2162,6 +2166,10 @@
 
 ## التقدم المؤكد
 
-- وفق سجل الدروس، أُغلقت 46 وحدة ضمن نطاق وأدلة موثقة؛ أحدث إغلاق B2-07، بينما B2-08 قيد المراجعة ولم يُغلق. التقرير الخاص بكل جولة يبيّن الاختبارات وحدود الأدلة، ولا يعني هذا مراجعة كل عناصر الجرد.
+### قاعدة الحالة الإلزامية
+
+كل ملف/عنصر/مهمة في هذا الجرد يجب أن يحمل حالة صريحة ومحدثة: **منجز ضمن النطاق الموثق** أو **غير منجز**؛ لا توجد حالة «متعذر». «قيد التنفيذ»، «مراجع جزئياً»، «لم تبدأ»، و«بانتظار مصدر أو حكم» أوصاف فرعية لحالة غير منجز، ويجب أن توضّح ما أُنجز وما تبقى والخطوة التنفيذية التالية. لا يُستدل على الإنجاز من غياب تنبيه أو من جرد الملف أو نجاح اختبار آلي. تستخدم السكريبتات لإنتاج الجرد والاستخراجات والفحوص اللازمة، وتُطابق النتائج مع المراجع؛ التوليد الآلي لا يحل محل الحكم اللغوي. عند تفريع الملف إلى دفعات، يسجل نطاق كل دفعة، ويظل الملف غير منجز حتى إغلاق جميع الدفعات. بعد كل دفعة تُحدّث الحالة هنا وفي سجل المراجعة المرتبط، وتُسجّل الأدلة وتاريخ التحديث والخطوة التالية.
+
+- وفق سجل المراجعة، أُغلقت 52 وحدة ضمن نطاق وأدلة موثقة حتى B2-11؛ لا يعني الإغلاق ضمن النطاق ضماناً مطلقاً أو اعتماداً رسمياً. التقرير الخاص بكل جولة يبيّن الاختبارات وحدود الأدلة، ولا يعني هذا مراجعة كل عناصر الجرد.
 - بقية ملفات هذا الجرد لا تزال مفتوحة حتى تُراجع مباشرة ويُحدّث سجلها. تدقيق التمارين الآلي وفحوص TypeScript/ESLint والبناء لا تثبت سلامة اللغة أو جودة التدريس.
 - راجع العدد بعد أي إضافة/حذف للملفات؛ هذا السجل جرد لمساحة العمل بتاريخ التحديث وليس بياناً بأن محتوى المشروع كله قد قُرئ.

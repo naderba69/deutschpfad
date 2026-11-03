@@ -19,7 +19,7 @@ export const B1_SCHREIBEN: ExamSchreibaufgabe[] = [
     aufgabeDe:
       "In Ihrer Wohnung funktioniert die Heizung seit einer Woche nicht richtig. Schreiben Sie an die Hausverwaltung: Beschreiben Sie das Problem, nennen Sie die Folgen für Sie und bitten Sie um einen Termin für eine Reparatur.",
     aufgabeAr:
-      "التدفئة في شقتك لا تعمل بشكل صحيح منذ أسبوع. اكتب إلى إدارة العمارة: صف المشكلة، واذكر نتائجها عليك، واطلب موعداً للإصلاح.",
+      "التدفئة في شقتك لا تعمل بشكل صحيح منذ أسبوع. اكتب إلى إدارة العمارة: صف المشكلة، ووضّح أثرها عليك، واطلب موعداً للإصلاح.",
     minWords: 80,
     requires: [
       { de: "Das Problem genau beschreiben", ar: "وصف المشكلة بدقة" },

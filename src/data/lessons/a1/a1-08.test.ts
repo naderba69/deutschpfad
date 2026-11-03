@@ -8,6 +8,20 @@ import {getGoalEvidenceStatus} from "@/lib/lesson/goal-evidence";
 import type {AnalyticsEvent} from "@/types/analytics";
 import type {Exercise} from "@/types/lesson";
 
+describe("وصف المقاس بصفة klein", () => {
+  it("يحفظ أثر zu بمعنى أن المقاس أصغر من المطلوب", () => {
+    const theoryText = JSON.stringify(lessonA108.theory);
+    expect(theoryText).toContain("هذا القميص أصغر من اللازم.");
+    expect(theoryText).not.toContain("هذا القميص صغير أكثر من اللازم.");
+    expect(theoryText).not.toContain("هذا القميص صغير جداً.");
+    const lessonText = JSON.stringify(lessonA108);
+    expect(lessonText).toContain("مقاسها أصغر من المطلوب، لا أكبر من اللازم");
+    expect(lessonText).toContain("للأسف مقاسها أصغر من اللازم");
+    expect(lessonText).not.toContain("أي صغيرة، لا كبيرة");
+    expect(lessonText).not.toContain("للأسف هي صغيرة جداً");
+  });
+});
+
 const practiceAnswers: Record<string, unknown> = {
   e1: "rot",
   e2: "trägst",

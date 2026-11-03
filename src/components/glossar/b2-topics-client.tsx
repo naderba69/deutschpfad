@@ -144,7 +144,7 @@ export function B2TopicsClient() {
 
       {/* نصيحة */}
       <div className="rounded-xl border border-gold/40 bg-gold/10 p-4 text-sm">
-        <p className="font-bold text-gold-foreground">💡 لماذا المواضيع الـ18؟</p>
+        <p className="font-bold text-gold-strong">💡 لماذا المواضيع الـ18؟</p>
         <p className="mt-1 text-muted-foreground">
           امتحان Goethe B2 يبنى على هذه المواضيع الـ18 حصراً — في القراءة والاستماع والكتابة
           والمحادثة. إتقان مفردات كل موضوع يضمن لك فهم أي نص وتكوين أي رد. أضف الكلمات

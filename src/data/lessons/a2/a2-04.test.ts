@@ -8,6 +8,46 @@ import {getListeningQuestionTaskId} from "@/lib/lesson/listening-evidence";
 import type {AnalyticsEvent} from "@/types/analytics";
 import type {Exercise} from "@/types/lesson";
 
+describe("تمييز Kaution عن التأمين في عقد الإيجار", () => {
+  it("يترجم مبلغ الضمان الإيجاري لا بوليصة التأمين", () => {
+    const paragraph = lessonA204.reading?.paragraphsAr[2] ?? "";
+    expect(paragraph).toContain("كم مبلغ الضمان؟");
+    expect(paragraph).toContain("مبلغ الضمان يعادل إيجار شهرين أساسيين");
+    expect(paragraph).not.toContain("مبلغ التأمين");
+  });
+});
+
+describe("اتساق مقابلات Kaution في مواد قراءة A2-04", () => {
+  it("يستخدم مبلغ الضمان في الشروح وعبارة السؤال، لا التأمين", () => {
+    const reading = lessonA204.reading;
+    const warmRentDistractor = reading?.questions.find((question) => question.id === "rq2")?.optionExplanations?.[2] ?? "";
+    const depositDistractor = reading?.questions.find((question) => question.id === "rq3")?.optionExplanations?.[3] ?? "";
+    const question = reading?.redemittel?.find((item) => item.de === "Wie hoch ist die Kaution?")?.ar ?? "";
+
+    expect(warmRentDistractor).toContain("مبلغ الضمان");
+    expect(depositDistractor).toContain("مبلغ الضمان");
+    expect(question).toContain("كم مبلغ الضمان؟");
+    expect(`${warmRentDistractor} ${depositDistractor} ${question}`).not.toContain("التأمين");
+  });
+});
+
+describe("دقة صياغة مشتت الإيجار في سؤال قراءة A2-04", () => {
+  it("يشرح أن الإيجار لم يُذكر أنه غالٍ من دون توليد صيغة عربية غير سليمة", () => {
+    const explanation = lessonA204.reading?.questions.find((question) => question.id === "rq1")?.optionExplanations?.[2] ?? "";
+    expect(explanation).toContain("إيجاره صار باهظاً");
+    expect(explanation).not.toContain("إيجارة");
+  });
+});
+
+describe("دلالة zu klein في وصف مساحة السكن", () => {
+  it("ينقل أن الغرفة أصغر من المطلوب لا أنها صغيرة فحسب", () => {
+    expect(lessonA204.reading?.paragraphsAr[0]).toContain("غرفته في السكن الجامعي أصغر من اللازم");
+    const lessonText = JSON.stringify(lessonA204);
+    expect(lessonText).toContain("النص يقول إن غرفته في السكن الجامعي أصغر من اللازم");
+    expect(lessonText).not.toContain("غرفته في السكن الجامعي صغيرة جداً");
+  });
+});
+
 const expectedMultipleChoiceKeys: Record<string, string> = {
   r1: "auf dem",
   r2: "in",
@@ -369,7 +409,7 @@ describe("A2-04 audited lesson", () => {
         ["Mona", "Schön! Wo ist das Bad?", "جميلة! أين الحمّام؟"],
         ["Vermieter", "Das Bad ist neben dem Schlafzimmer.", "الحمّام بجانب غرفة النوم."],
         ["Mona", "Und wie hoch ist die Miete?", "وكم الإيجار؟"],
-        ["Vermieter", "Sechshundert Euro warm.", "ستمائة يورو كإيجار شامل بحسب هذا العرض."],
+        ["Vermieter", "Sechshundert Euro warm.", "ستمائة يورو مع التكاليف المشمولة عادةً في هذا العرض."],
         ["Mona", "Okay. Ich stelle die Lampe später in die Ecke.", "حسناً. سأضع المصباح لاحقاً في الزاوية."],
         ["Vermieter", "Kein Problem!", "لا مشكلة."],
       ]],

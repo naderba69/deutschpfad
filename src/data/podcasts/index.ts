@@ -107,7 +107,7 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
         ar: "ماذا فعلوا بعد الظهر؟",
         options: [
           { text: "Kuchen gebacken und Filme geschaut", ar: "خبزوا كعكة وشاهدوا أفلاماً", correct: true, explanation: "نعم — الحلقة تقول: «Am Nachmittag haben wir einen Kuchen gebacken und Filme geschaut.»." },
-          { text: "Gearbeitet und E-Mails beantwortet", ar: "عملوا", correct: false, explanation: "لا — الحلقة تقول: «Am Nachmittag haben wir einen Kuchen gebacken und Filme geschaut.»." },
+          { text: "Gearbeitet und E-Mails beantwortet", ar: "عملوا وأجابوا عن رسائل البريد الإلكتروني", correct: false, explanation: "لا — الحلقة تقول: «Am Nachmittag haben wir einen Kuchen gebacken und Filme geschaut.»." },
           { text: "Geschlafen bis zum späten Abend", ar: "ناموا", correct: false, explanation: "لا — الحلقة تقول: «Am Nachmittag haben wir einen Kuchen gebacken und Filme geschaut.»." },
         ],
       },
@@ -116,7 +116,7 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
         ar: "ماذا فعلوا يوم الأحد؟",
         options: [
           { text: "Zusammen gefrühstückt und spazieren gegangen", ar: "تناولوا الفطور معاً وتمشوا", correct: true, explanation: "نعم — الحلقة تقول: «Wir haben zusammen gefrühstückt. Danach sind wir spazieren gegangen.»." },
-          { text: "Gearbeitet und E-Mails beantwortet", ar: "عملوا", correct: false, explanation: "لا — الحلقة تقول: «Wir haben zusammen gefrühstückt. Danach sind wir spazieren gegangen.»." },
+          { text: "Gearbeitet und E-Mails beantwortet", ar: "عملوا وأجابوا عن رسائل البريد الإلكتروني", correct: false, explanation: "لا — الحلقة تقول: «Wir haben zusammen gefrühstückt. Danach sind wir spazieren gegangen.»." },
           { text: "Geschlafen bis zum späten Abend", ar: "ناموا", correct: false, explanation: "لا — الحلقة تقول: «Wir haben zusammen gefrühstückt. Danach sind wir spazieren gegangen.»." },
         ],
       }
@@ -278,11 +278,11 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     titleAr: "عيد الميلاد",
     emoji: "🎂",
     script: "Heute hat Emma Geburtstag. Sie wird sieben Jahre alt. Am Morgen singen die Eltern: „Happy Birthday!“ Emma bekommt viele Geschenke: ein Buch, einen Ball und eine Puppe. Am Nachmittag kommen die Freunde. Sie essen Kuchen und spielen im Garten.",
-    scriptAr: "اليوم عيد ميلاد إيما. ستصبح في السابعة. في الصباح تغني الأسرة: «عيد ميلاد سعيد!» تحصل إيما على هدايا كثيرة: كتاباً وكرة ودمية. بعد الظهر يأتي الأصدقاء. يأكلون الكعك ويلعبون في الحديقة.",
+    scriptAr: "اليوم عيد ميلاد إيما. ستبلغ السابعة من عمرها. في الصباح تغني الأسرة: «عيد ميلاد سعيد!» تحصل إيما على هدايا كثيرة: كتاباً وكرة ودمية. بعد الظهر يأتي الأصدقاء. يأكلون الكعك ويلعبون في الحديقة.",
     questions: [
       {
         de: "Wie alt wird Emma?",
-        ar: "كم ستصبح إيما؟",
+        ar: "كم سيبلغ عمر إيما؟",
         options: [
           { text: "Sieben Jahre", ar: "سبع سنوات", correct: true, explanation: "نعم — الحلقة تقول: «Sie wird sieben Jahre alt.»." },
           { text: "Sechs Jahre", ar: "ست سنوات", correct: false, explanation: "لا — الحلقة تقول: «Sie wird sieben Jahre alt.»." },
@@ -325,7 +325,7 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
         options: [
           { text: "Den besten Honig", ar: "أفضل عسل", correct: true, explanation: "نعم — الحلقة تقول: «Am Stand von Frau Huber gibt es den besten Honig.»." },
           { text: "Die billigsten Äpfel", ar: "أرخص تفاح", correct: false, explanation: "لا — الحلقة تقول: «Am Stand von Frau Huber gibt es den besten Honig.»." },
-          { text: "Den frischesten Fisch", ar: "أطازج سمك", correct: false, explanation: "لا — الحلقة تقول: «Am Stand von Frau Huber gibt es den besten Honig.»." },
+          { text: "Den frischesten Fisch", ar: "السمك الأشدّ طزاجةً", correct: false, explanation: "لا — الحلقة تقول: «Am Stand von Frau Huber gibt es den besten Honig.»." },
         ],
       },
     ],
@@ -398,25 +398,26 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     title: "Gesunde Ernährung im Alltag",
     titleAr: "التغذية الصحية في الحياة اليومية",
     emoji: "🥗",
-    script: "Ernährungswissenschaftler betonen, dass eine ausgewogene Ernährung die Grundlage für Gesundheit ist. Kritiker der modernen Lebensmittelindustrie argumentieren, dass viele Produkte zu viel Zucker enthalten. Fachleute empfehlen, mehr frische Zutaten zu verwenden und Fertiggerichte zu vermeiden. Allerdings ist gesundes Essen nicht für alle bezahlbar. Deshalb fordern Experten günstigere gesunde Alternativen in Supermärkten.",
-    scriptAr: "يؤكد خبراء التغذية أن الغذاء المتوازن أساس الصحة. يجادل منتقدو صناعة الأغذية الحديثة أن منتجات كثيرة تحتوي سكراً كثيراً. يوصي المختصون باستخدام مكونات طازجة أكثر وتجنب الوجبات الجاهزة. لكن الطعام الصحي ليس ميسوراً للجميع. لذلك يطالب الخبراء ببدائل صحية أرخص في المتاجر.",
+    contentNoteAr: "نقاش تدريبي خيالي عن التغذية والعوامل التي تؤثر في اختيار الطعام؛ ليس تقريراً علمياً أو نصيحة غذائية. أُعيد توليد التسجيل TTS من النص المحدّث وقورن محلياً بتفريغ ASR، مع اختلاف كتابي في فصل «darauf hin». لم يُجر تقييم سمعي للوضوح أو طبيعية الأداء أو النطق.",
+    script: "In dieser fiktiven Diskussionsrunde geht es um Ernährung im Alltag. Eine Person hält eine ausgewogene Ernährung für wichtig; eine andere fragt, welche Belege diese Aussage stützen. Manche Teilnehmende bevorzugen frische Zutaten, andere weisen darauf hin, dass Zeit, Preis und Verfügbarkeit die Auswahl beeinflussen. Die Runde diskutiert deshalb, wie Informationen verständlich und verschiedene Lebenslagen fair berücksichtigt werden können.",
+    scriptAr: "تدور هذه الحلقة النقاشية الخيالية حول التغذية في الحياة اليومية. يرى أحد المشاركين أن الغذاء المتوازن مهم، ويسأل مشارك آخر عن الأدلة التي تسند هذا القول. يفضّل بعض المشاركين المكونات الطازجة، بينما يشير آخرون إلى أن الوقت والسعر والتوافر تؤثر في الاختيار. لذلك تناقش المجموعة كيف يمكن عرض المعلومات بوضوح ومراعاة اختلاف ظروف الناس بعدل.",
     questions: [
       {
-        de: "Was argumentieren Kritiker der Lebensmittelindustrie?",
-        ar: "بماذا يجادل منتقدو صناعة الأغذية؟",
+        de: "Worauf weist ein Teilnehmender hin?",
+        ar: "إلى ماذا يشير أحد المشاركين؟",
         options: [
-          { text: "Viele Produkte enthalten zu viel Zucker", ar: "منتجات كثيرة تحتوي سكراً كثيراً", correct: true, explanation: "نعم — الحلقة تقول: «viele Produkte zu viel Zucker enthalten.»." },
-          { text: "Gesundes Essen ist zu billig", ar: "الطعام الصحي رخيص جداً", correct: false, explanation: "لا — الحلقة تقول: «viele Produkte zu viel Zucker enthalten.»." },
-          { text: "Man soll mehr Fertiggerichte essen", ar: "يجب أكل وجبات جاهزة أكثر", correct: false, explanation: "لا — الحلقة تقول: «viele Produkte zu viel Zucker enthalten.»." },
+          { text: "Zeit, Preis und Verfügbarkeit beeinflussen die Auswahl", ar: "الوقت والسعر والتوافر تؤثر في الاختيار", correct: true, explanation: "نعم — يذكر الحوار: «dass Zeit, Preis und Verfügbarkeit die Auswahl beeinflussen.»" },
+          { text: "Alle Menschen wählen dieselben Lebensmittel", ar: "يختار الجميع الأطعمة نفسها", correct: false, explanation: "لا — ينصّ الحوار: «Manche Teilnehmende bevorzugen frische Zutaten, andere weisen darauf hin ...»؛ أي إنه يذكر اختلافاً لا تطابقاً." },
+          { text: "Die Runde hat bereits eine Studie veröffentlicht", ar: "نشرت المجموعة دراسة بالفعل", correct: false, explanation: "لا — يصف النص لقاءً خيالياً: «In dieser fiktiven Diskussionsrunde geht es um Ernährung im Alltag» ولا يذكر نشر دراسة." },
         ],
       },
       {
-        de: "Was fordern Experten?",
-        ar: "بماذا يطالب الخبراء؟",
+        de: "Was möchte die Runde erreichen?",
+        ar: "ما الذي تريد المجموعة تحقيقه؟",
         options: [
-          { text: "Günstigere gesunde Alternativen", ar: "بدائل صحية أرخص", correct: true, explanation: "نعم — الحلقة تقول: «Deshalb fordern Experten günstigere gesunde Alternativen in Supermärkten.»." },
-          { text: "Teurere Produkte in allen Läden", ar: "منتجات أغلى", correct: false, explanation: "لا — الحلقة تقول: «Deshalb fordern Experten günstigere gesunde Alternativen in Supermärkten.»." },
-          { text: "Weniger frische Zutaten im Angebot", ar: "مكونات طازجة أقل", correct: false, explanation: "لا — الحلقة تقول: «Deshalb fordern Experten günstigere gesunde Alternativen in Supermärkten.»." },
+          { text: "Klare Infos und faire Rücksicht auf unterschiedliche Lebenslagen.", ar: "معلومات واضحة ومراعاة عادلة لاختلاف ظروف الناس", correct: true, explanation: "نعم — يختم الحوار: «wie Informationen verständlich und verschiedene Lebenslagen fair berücksichtigt werden können.»" },
+          { text: "Eine verbindliche Ernährungsregel für alle Teilnehmenden.", ar: "فرض قاعدة غذائية ملزمة على جميع المشاركين", correct: false, explanation: "لا — لا يقترح النص قاعدة واحدة؛ بل تقول المجموعة: «In dieser fiktiven Diskussionsrunde geht es um Ernährung im Alltag»." },
+          { text: "Eine persönliche Diagnose für die Ernährung aller Zuhörenden.", ar: "تشخيصاً شخصياً لتغذية جميع المستمعين", correct: false, explanation: "لا — النص يصف نقاشاً: «Die Runde diskutiert deshalb, wie Informationen verständlich und verschiedene Lebenslagen fair berücksichtigt werden können»؛ وليس تشخيصاً طبياً." },
         ],
       },
     ],
@@ -438,7 +439,7 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
       ]},
       { de: "Wo wohnt die Familie?", ar: "أين تسكن العائلة؟", options: [
         { text: "In einem Haus mit Garten", ar: "في بيت فيه حديقة", correct: true, explanation: "نعم — الحلقة تقول: «Wir wohnen in einem Haus mit Garten.»." },
-        { text: "In einer kleinen Wohnung", ar: "في شقة", correct: false, explanation: "لا — ليست شقة Wohnung؛ بل «Wir wohnen in einem Haus mit Garten»." },
+        { text: "In einer kleinen Wohnung", ar: "في شقة صغيرة", correct: false, explanation: "لا — ليست شقة Wohnung؛ بل «Wir wohnen in einem Haus mit Garten»." },
         { text: "In einem Hotel am Meer", ar: "في فندق", correct: false, explanation: "لا — لم يُذكر فندق Hotel ولا بحر؛ والمسكن «in einem Haus mit Garten»." },
       ]},
     ],
@@ -503,7 +504,7 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
       { de: "Worüber klagen viele Arbeitnehmer?", ar: "ممَّ يشكو كثير من الموظفين؟", options: [
         { text: "Über Überstunden und ständige Erreichbarkeit", ar: "من الساعات الإضافية والاتصال الدائم", correct: true, explanation: "نعم — الحلقة تقول: «Viele Arbeitnehmer klagen über Überstunden und ständige Erreichbarkeit.»." },
         { text: "Über zu viel Urlaub und zu freie Tage", ar: "من الإجازات الكثيرة", correct: false, explanation: "لا — ليست الإجازات الكثيرة Urlaub؛ والشكوى «über Überstunden und ständige Erreichbarkeit»." },
-        { text: "Über zu wenig Arbeit und Langeweile", ar: "من قلة العمل", correct: false, explanation: "لا — ليست قلّة العمل ولا الملل Langeweile؛ بل «Viele Arbeitnehmer klagen über Überstunden»." },
+        { text: "Über zu wenig Arbeit und Langeweile", ar: "من قلة العمل والملل", correct: false, explanation: "لا — ليست قلّة العمل ولا الملل Langeweile؛ بل «Viele Arbeitnehmer klagen über Überstunden»." }
       ]},
       { de: "Wie reagieren Unternehmen?", ar: "كيف تستجيب الشركات؟", options: [
         { text: "Mit flexiblen Arbeitszeiten", ar: "بساعات عمل مرنة", correct: true, explanation: "نعم — الحلقة تقول: «Unternehmen reagieren mit flexiblen Arbeitszeiten.»." },
@@ -521,12 +522,12 @@ export const RAW_PODCASTS: PodcastEpisode[] = [
     emoji: "🪪",
     script: "In dieser Übungsfolge erzählt Samira von ihrem Umzug nach Bremen. Am Anfang fühlte sie sich oft unsicher und fragte sich, wo sie sich zu Hause fühlte. In ihrem neuen Team brachte sie ihre Erfahrungen ein. Mit der Zeit fand sie Menschen, bei denen sie sich wohlfühlte. Für Samira gehört beides zu ihrer Identität: Erinnerungen an früher und ihr Leben heute. Andere Menschen erleben Zugehörigkeit anders.",
     scriptAr: "تحكي سميرة في هذه الحلقة التدريبية عن انتقالها إلى بريمن. في البداية شعرت بعدم الأمان كثيراً وتساءلت أين شعرت بأنها في بيتها. وفي فريقها الجديد شاركت خبراتها. ومع الوقت وجدت أشخاصاً ارتاحت إليهم. وبالنسبة إلى سميرة، تتألف هويتها من الأمرين: ذكريات الماضي وحياتها اليوم. وقد يختبر أشخاص آخرون الانتماء على نحو مختلف.",
-    contentNoteAr: "مشهد تدريبي خيالي عن تجربة سميرة الفردية، وليس وصفاً إحصائياً أو بحثاً عن الهجرة والهوية. التسجيل الصوتي لم يُحدّث أو يُطابق مع النص في هذه المراجعة؛ ففحص الإشارة لا يثبت التطابق.",
+    contentNoteAr: "مشهد تدريبي خيالي عن تجربة سميرة الفردية، وليس وصفاً إحصائياً أو بحثاً عن الهجرة والهوية. التسجيل مولّد آلياً من نص الحلقة الحالي، وليس تسجيلاً بشرياً؛ قورن بتفريغ ASR محلي أظهر تطابقاً نصياً مرتفعاً مع اختلاف إملائي في كلمة واحدة. لم يُجر تقييم سمعي للوضوح أو طبيعية الأداء أو النطق.",
     questions: [
       { de: "Wie fühlte sich Samira am Anfang?", ar: "كيف شعرت سميرة في البداية؟", options: [
         { text: "Oft unsicher", ar: "بعدم الأمان كثيراً", correct: true, explanation: "نعم — يقول النص: «Am Anfang fühlte sie sich oft unsicher»." },
         { text: "Immer gelangweilt", ar: "بالملل دائماً", correct: false, explanation: "لا — النص يقول «Am Anfang fühlte sie sich oft unsicher»؛ ولا يذكر Langeweile." },
-        { text: "Sofort zu Hause", ar: "بأنها في بيتها فوراً", correct: false, explanation: "لا — النص يقول إنها «fragte sich, wo sie sich zu Hause fühlte»؛ فلا يقول إنها شعرت فوراً بأنها في بيتها." },
+        { text: "Sofort zu Hause", ar: "شعرت فوراً بأنها في بيتها", correct: false, explanation: "لا — النص يقول إنها «fragte sich, wo sie sich zu Hause fühlte»؛ فلا يقول إنها شعرت فوراً بأنها في بيتها." },
       ]},
       { de: "Was gehört für Samira zu ihrer Identität?", ar: "ما الذي يشكل هوية سميرة بحسب تجربتها؟", options: [
         { text: "Frühere Erinnerungen und ihr heutiges Leben", ar: "ذكريات الماضي وحياتها اليوم", correct: true, explanation: "نعم — يقول النص: «Für Samira gehört beides zu ihrer Identität: Erinnerungen an früher und ihr Leben heute»." },

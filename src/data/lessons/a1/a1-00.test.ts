@@ -28,6 +28,15 @@ describe("A1-00 — الأبجدية والنطق", () => {
     expect(dialog).toContain("null, drei, vier, eins, sieben, neun");
   });
 
+  it("شرح مشتت Wasser يميّز نطق W الألمانية عن V في Vater", () => {
+    const e2 = lesson.practiceBank.find((task) => task.id === "e2");
+    expect(e2?.type).toBe("multiple-choice");
+    if (e2?.type !== "multiple-choice") throw new Error("A1-00 e2 must be multiple-choice");
+    const waterExplanation = e2.optionExplanations?.[e2.options.indexOf("Wasser")];
+    expect(waterExplanation).toContain("[v]");
+    expect(waterExplanation).not.toContain("كالواو");
+  });
+
   it("تمرين الحروف المعلمة e5 تعليمته تطابق خياراته (ü وu) ولا يحوي كلمة زائدة", () => {
     const e5 = lesson.practiceBank.find((task) => task.id === "e5");
     expect(e5?.type).toBe("fill-blank");

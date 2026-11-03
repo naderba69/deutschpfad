@@ -11,9 +11,10 @@ describe("B2-08 listening audio", () => {
   it("declares TTS honestly and provides exactly one valid MP3 per turn", () => {
     const item = lessonB208.listening.items.find((candidate) => candidate.id === "l3");
     expect(item).toBeDefined();
-    expect(item?.audioNoteAr).toContain("مولّد آلياً (TTS)");
-    expect(item?.audioNoteAr).toContain("ليس تسجيلاً بشرياً");
-    expect(item?.audioNoteAr).toContain("فلا يُفترض تطابق النص والصوت");
+    expect(item?.audioNoteAr).toContain("مولّدة آلياً (TTS) من سطور النص الحالية");
+    expect(item?.audioNoteAr).toContain("ليست تسجيلات بشرية");
+    expect(item?.audioNoteAr).toContain("قورنت الملفات بتفريغ ASR محلي");
+    expect(item?.audioNoteAr).toContain("لم يُجر تقييم سمعي");
     expect(item?.lines).toHaveLength(6);
     expect(item?.lines.map((line) => line.speaker)).toEqual(["Karim", "Mona", "Karim", "Mona", "Karim", "Mona"]);
     expect(item?.lines.some((line) => /(?:Mona|Karim):/.test(line.de))).toBe(false);

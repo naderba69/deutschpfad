@@ -9,6 +9,7 @@ import type {OralProductionTask} from "@/types/lesson";
 
 function OralPromptCard({task}: {task: OralProductionTask}) {
   const [recording, setRecording] = React.useState(false);
+  const [requestingMic, setRequestingMic] = React.useState(false);
   const [audioUrl, setAudioUrl] = React.useState<string | null>(null);
   const [error, setError] = React.useState<string | null>(null);
   const recorderRef = React.useRef<MediaRecorder | null>(null);
@@ -22,6 +23,11 @@ function OralPromptCard({task}: {task: OralProductionTask}) {
     setAudioUrl(url);
   };
 
+  const stopStream = () => {
+    streamRef.current?.getTracks().forEach((track) => track.stop());
+    streamRef.current = null;
+  };
+
   React.useEffect(() => () => {
     const recorder = recorderRef.current;
     if (recorder) {
@@ -31,16 +37,19 @@ function OralPromptCard({task}: {task: OralProductionTask}) {
       if (recorder.state === "recording") recorder.stop();
     }
     streamRef.current?.getTracks().forEach((track) => track.stop());
+    streamRef.current = null;
     if (audioUrlRef.current) URL.revokeObjectURL(audioUrlRef.current);
   }, []);
 
   const start = async () => {
+    if (requestingMic || recording) return;
     setError(null);
+    if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === "undefined") {
+      setError("التسجيل غير متاح في هذا المتصفح. يمكنك تنفيذ المهمة شفهياً من دون تسجيل.");
+      return;
+    }
+    setRequestingMic(true);
     try {
-      if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === "undefined") {
-        setError("التسجيل غير متاح في هذا المتصفح. يمكنك تنفيذ المهمة شفهياً من دون تسجيل.");
-        return;
-      }
       const stream = await navigator.mediaDevices.getUserMedia({audio: true});
       streamRef.current = stream;
       chunksRef.current = [];
@@ -55,20 +64,22 @@ function OralPromptCard({task}: {task: OralProductionTask}) {
       recorder.onerror = () => {
         setError("تعذّر إكمال التسجيل. جرّب مرة أخرى أو نفّذ المهمة من دون تسجيل.");
         setRecording(false);
-        stream.getTracks().forEach((track) => track.stop());
+        stopStream();
       };
       recorder.onstop = () => {
         const blob = new Blob(chunksRef.current, {type: recorder.mimeType || "audio/webm"});
         replaceAudioUrl(blob.size ? URL.createObjectURL(blob) : null);
-        stream.getTracks().forEach((track) => track.stop());
-        streamRef.current = null;
+        stopStream();
         setRecording(false);
       };
       recorder.start();
       setRecording(true);
       replaceAudioUrl(null);
     } catch {
-      setError("لم يُسمح باستخدام الميكروفون. افحص إذن المتصفح، أو نفّذ المهمة شفهياً من دونه.");
+      stopStream();
+      setError("تعذّر بدء التسجيل أو لم يُسمح باستخدام الميكروفون. افحص دعم المتصفح وإذنه، أو نفّذ المهمة شفهياً من دونه.");
+    } finally {
+      setRequestingMic(false);
     }
   };
 
@@ -94,9 +105,9 @@ function OralPromptCard({task}: {task: OralProductionTask}) {
 
       <div className="mt-4 flex flex-wrap items-center gap-2">
         {!recording ? (
-          <button type="button" onClick={() => void start()} className="inline-flex items-center gap-2 rounded-full bg-primary px-3 py-2 text-sm font-bold text-primary-foreground hover:bg-primary/90">
+          <button type="button" onClick={() => void start()} disabled={requestingMic} className="inline-flex items-center gap-2 rounded-full bg-primary px-3 py-2 text-sm font-bold text-primary-foreground hover:bg-primary/90 disabled:cursor-wait disabled:opacity-60">
             <Mic className="h-4 w-4" aria-hidden="true" />
-            {audioUrl ? "أعد التسجيل" : "ابدأ التسجيل"}
+            {requestingMic ? "بانتظار إذن الميكروفون…" : audioUrl ? "أعد التسجيل" : "ابدأ التسجيل"}
           </button>
         ) : (
           <button type="button" onClick={stop} className="inline-flex items-center gap-2 rounded-full bg-destructive px-3 py-2 text-sm font-bold text-white hover:bg-destructive/90">

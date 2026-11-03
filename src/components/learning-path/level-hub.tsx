@@ -61,7 +61,7 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
           <div className="flex flex-wrap items-center gap-3">
             <Badge variant="gold" className="text-xs">{level.code}</Badge>
             <span className="text-sm font-bold opacity-90">{level.titleAr}</span>
-            <span className="text-xs opacity-70" dir="ltr">{level.subtitleDe}</span>
+            <span className="text-xs" dir="ltr">{level.subtitleDe}</span>
           </div>
           <h1 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
             رحلة مستوى <LangDe className="font-extrabold">{level.code}</LangDe>
@@ -103,7 +103,7 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
           <div className="mt-4 flex flex-wrap gap-2">
             <Link
               href={`/lesson/${nextLesson.id}`}
-              className="inline-flex items-center gap-1.5 rounded-xl bg-white px-4 py-2 text-sm font-extrabold text-foreground shadow-soft transition-transform hover:scale-[1.02]"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-white px-4 py-2 text-sm font-extrabold text-slate-900 shadow-soft transition-transform hover:scale-[1.02]"
             >
               <PlayCircle className="h-4 w-4" aria-hidden="true" />
               {doneCount > 0 ? "استأنف" : "ابدأ"} الدرس: {nextLesson.titleAr}

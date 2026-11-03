@@ -18,7 +18,7 @@ export const lessonB209: Lesson = {
   order: 1,
   titleDe: "Arbeitsmarkt und Bewerbung",
   titleAr: "سوق العمل والتقديم الوظيفي",
-  summary: "ملفات التقديم ومقابلات العمل، الوصلات الاسمية-الفعلية المتقدمة (in Betracht ziehen, zur Verfügung stellen) والمراسلات الرسمية الكاملة بأسلوب أكاديمي.",
+  summary: "مفردات سوق العمل والتقديم الوظيفي، وصلات اسمية-فعلية مختارة، وتدريب على عبارات افتتاح وختام قصيرة وإجابات مقابلة العمل.",
   lernziele,
   einfuehrung,
   review,

@@ -32,7 +32,7 @@ describe("B2-04 listening audio", () => {
   });
   it("indexes the six B2-04-related media-dialogue MP3s without claiming speech quality", () => {
     const item = B2_DIALOGUES_3.find((candidate) => candidate.id === "b2-14-medien");
-    expect(item?.audioNoteAr).toContain("مصدر ملفات MP3 لهذا الحوار غير موثّق");
+    expect(item?.audioNoteAr).toContain("مصدر ملفات MP3 غير موثق. طابق ASR المحلي النص في خمسة مقاطع");
     const dir = path.join(process.cwd(), "public", "audio", "dialogues-b2");
     for (let index = 1; index <= 6; index += 1) {
       const file = path.join(dir, `b2-14-medien-${index}.mp3`);

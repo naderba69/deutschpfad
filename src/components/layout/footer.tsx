@@ -15,7 +15,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* الهوية */}
           <div className="space-y-4">
-            <Link href="/" aria-label="درب الألمانية — الرئيسية" className="inline-block rounded-lg py-1">
+            <Link href="/" className="inline-block rounded-lg py-1">
               <Logo />
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
@@ -44,7 +44,7 @@ export function Footer() {
 
           {/* روابط المنصة */}
           <div>
-            <h3 className="mb-4 text-sm font-bold">المنصة</h3>
+            <h2 className="mb-4 text-sm font-bold">المنصة</h2>
             <ul className="space-y-2.5 text-sm">
               {siteConfig.footerLinks["منصة"].map((link) => (
                 <li key={link.href}>
@@ -61,7 +61,7 @@ export function Footer() {
 
           {/* المستويات */}
           <div>
-            <h3 className="mb-4 text-sm font-bold">المستويات</h3>
+            <h2 className="mb-4 text-sm font-bold">المستويات</h2>
             <ul className="space-y-2.5 text-sm">
               {siteConfig.levelsNav.map((lvl) => (
                 <li key={lvl.code}>
@@ -86,7 +86,7 @@ export function Footer() {
 
           {/* مراجع سريعة */}
           <div>
-            <h3 className="mb-4 text-sm font-bold">مراجع سريعة</h3>
+            <h2 className="mb-4 text-sm font-bold">مراجع سريعة</h2>
             <ul className="space-y-2.5 text-sm">
               {siteConfig.footerLinks["مراجع سريعة"].map((link) => (
                 <li key={link.href}>

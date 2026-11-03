@@ -6,8 +6,8 @@ import { ERROR_TYPES } from "@/lib/lesson/error-types";
 /**
  * حارس المرجع النحوي (Grammatik-Referenz):
  *  - سلامة البنية: معرّفات فريدة، عناوين عربية + ألمانية، شرح، «لماذا».
- *  - أمثلة بلا خلل: كل مثال بنصّ ألماني حقيقي + ترجمة عربية، بلا حروف عربية
- *    داخل النص الألماني.
+ *  - اكتمال حقول الأمثلة فقط: نص ألماني وترجمة عربية غير فارغين، بلا حروف عربية
+ *    داخل حقل الألمانية. هذا الحارس لا يثبت صحة الجملة نحوياً أو تداولياً.
  *  - الاتساق مع الواجهة والقاموس: كل فئة مُعلنة لها ≥1 موضوع (وإلا ظهرت
  *    قائمة فارغة للمتعلم)، وكل `mistakeLink` موجود فعلاً في `ERROR_TYPES`.
  *  - عدّادات غير هامشية (بوابة حراسة الحارس): المجموع والفئات.
@@ -44,7 +44,7 @@ describe("GRAMMAR_REFERENCE — سلامة البنية", () => {
     expect(bad, bad.join(" · ")).toEqual([]);
   });
 
-  it("كل موضوع له مثالان على الأقل، وكل مثال ألماني صحيح مع ترجمة عربية", () => {
+  it("كل موضوع له مثالان على الأقل، ولكل مثال نص ألماني وترجمة عربية", () => {
     const bad: string[] = [];
     let examplesChecked = 0;
     GRAMMAR_REFERENCE.forEach((t) => {
@@ -65,6 +65,69 @@ describe("GRAMMAR_REFERENCE — سلامة البنية", () => {
     const missEsels = GRAMMAR_REFERENCE.filter((t) => (t.eselsbruecke ?? "").trim().length < 10).map((t) => t.id);
     expect(missWhy, `بلا «لماذا»: ${missWhy.join(", ")}`).toEqual([]);
     expect(missEsels, `بلا جسر: ${missEsels.join(", ")}`).toEqual([]);
+  });
+});
+
+describe("GRAMMAR_REFERENCE — دقة الحدود النحوية", () => {
+  const topic = (id: string) => {
+    const found = GRAMMAR_REFERENCE.find((item) => item.id === id);
+    if (!found) throw new Error(`موضوع مفقود: ${id}`);
+    return found;
+  };
+
+  it("لا يعمم أداة die على كل حالات الجمع ولا يخلط مثال أداة التعريف بغير المعدود", () => {
+    expect(topic("a1-articles").examples.map((example) => example.de).join(" ")).not.toContain("eine Milch");
+    expect(topic("a1-articles").summary).toMatch(/في الرفع/);
+    expect(topic("a1-plural").summary).toMatch(/تتبدل بحسب الحالة/);
+  });
+
+  it("يفرق بين سؤال الفاعل، حركة المكان، أداتي الملكية، وظروف الربط", () => {
+    expect(topic("a1-wfragen").summary).toContain("Wer kommt?");
+    expect(topic("a2-wechsel").summary).toContain("ليست كل حركة داخل المكان");
+    expect(topic("a2-possessiv").titleDe).toContain("Possessivartikel");
+    expect(topic("a2-possessiv").summary).toContain("Possessivpronomen");
+    expect(topic("a2-konnektoren").summary).toContain("ظروف ربط");
+  });
+
+  it("يحدد sein/haben كاتجاه شائع لا قاعدة مطلقة، ويذكر قيود تكوين Partizip II", () => {
+    const summary = topic("a2-perfekt").summary;
+    expect(summary).toContain("غالباً");
+    expect(summary).toContain("-ieren");
+    expect(summary).toContain("البادئات غير المنفصلة");
+  });
+
+  it("لا يساوي الحركات الانعكاسية حرفياً ولا يختزل تصريف جمع Dativ إلى den+n دائماً", () => {
+    expect(topic("a2-reflexiv").why).toContain("لا تُترجم حرفياً");
+    expect(topic("a2-reflexiv").summary).toContain("Ich wasche mir die Hände");
+    expect(topic("a2-dativ").summary).toContain("إن لم ينتهِ أصلاً");
+  });
+
+  it("يميز صيغ الأمر والمودالات وحروف الربط بحسب حدّ القاعدة", () => {
+    expect(topic("a1-imperativ").summary).toContain("Lies!");
+    expect(topic("a2-modal").summary).toContain("du غالباً -st");
+    expect(topic("a2-nebensaetze").summary).toContain("أدوات ربط تابعة");
+    expect(topic("a2-esgibt").why).not.toContain("حرفياً");
+  });
+
+  it("يضبط حدود قواعد B1: V2 في الرئيسية، الاستعمال التداولي للأزمنة، ونهايات الصفات", () => {
+    expect(topic("b1-word-order").summary).toContain("الموضع الثاني");
+    expect(topic("b1-praeteritum").summary).toContain("الكلام اليومي");
+    expect(topic("b1-adjektiv").summary).toContain("الجنس والعدد والحالة");
+    expect(topic("b1-ndeklination").summary).toContain("ليست كل الأسماء المنتهية بـ -e");
+  });
+
+  it("يميز المعنى والسجل في Konjunktiv I والروابط والضمائر النسبية وModalpartikeln", () => {
+    expect(topic("b2-konjunktiv1").summary).toContain("لا يعني وحده أن القول كاذب");
+    expect(topic("b2-zustandspassiv").summary).toContain("ليس كل sein + Partizip II مجهولاً");
+    expect(topic("b2-relativ-adv").summary).toContain("أقل رسمية في بعض السياقات");
+    expect(topic("b2-partizipial").summary).toContain("تختلفان بحسب الفعل");
+    expect(topic("b2-modalpartikeln").summary).toContain("لا تقابلها ترجمة عربية ثابتة");
+  });
+
+  it("يفصل عمليات الاشتقاق ودلالة Futur II ومجالات الادعاء الأكاديمي", () => {
+    expect(topic("b2-nominalisierung").summary).toContain("لا تمثل وحدها مثالاً واضحاً");
+    expect(topic("b2-futur2").summary).toContain("استنتاج عن حدث ماضٍ");
+    expect(topic("b2-akademisch").summary).toContain("لا تستخدم صيغة الجزم");
   });
 });
 
@@ -94,5 +157,13 @@ describe("GRAMMAR_REFERENCE — الاتساق مع الواجهة والقام�
     });
     expect(bad, bad.join(" · ")).toEqual([]);
     expect(linked).toBe(GRAMMAR_REFERENCE.length); // كل موضوع مربوط بنوع خطأ
+  });
+});
+
+
+describe("حراسة معنى aufstehen", () => {
+  it("يترجم مثال الفعل المنفصل بمعنى النهوض", () => {
+    const topic = GRAMMAR_REFERENCE.find((item) => item.id === "a1-trennbare");
+    expect(topic?.examples.find((example) => example.de === "Ich stehe um sieben auf.")?.ar).toBe("أنهض في السابعة.");
   });
 });

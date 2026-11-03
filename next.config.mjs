@@ -22,6 +22,20 @@ const withPWA = withPWAInit({
     maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
     runtimeCaching: [
       {
+        // صفحات التنقل: الشبكة أولاً مع نسخة احتياطية من الصفحة التي زارها المستخدم مسبقاً دون اتصال
+        urlPattern: ({ request }) => request.mode === "navigate",
+        handler: "NetworkFirst",
+        options: {
+          cacheName: "navigation-pages",
+          networkTimeoutSeconds: 3,
+          expiration: {
+            maxEntries: 100,
+            maxAgeSeconds: 7 * 24 * 60 * 60,
+          },
+          cacheableResponse: { statuses: [200] },
+        },
+      },
+      {
         // الأصول الثابتة: أيقونات التطبيق وشعارات وصور عامة — تُخزَّن محلياً شهراً
         urlPattern: ({ url }) =>
           /\.(?:png|jpg|jpeg|svg|webp|gif|ico)$/i.test(url.pathname) &&

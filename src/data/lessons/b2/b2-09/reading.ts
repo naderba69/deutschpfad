@@ -12,20 +12,20 @@ export const readingB209: ReadingText = {
   titleAr: "من طلب التوظيف إلى أول يوم عمل",
   textType: "bericht",
   paragraphs: [
-    "Als Sara sich um eine Stelle als Datenanalystin bewarb, war der Arbeitsmarkt eng und die Konkurrenz groß. Ihr war klar, dass die Unterlagen entscheiden würden. Sie legte Wert auf ein knappes Anschreiben, brachte zwei Jahre Erfahrung im Bereich Logistik mit und stellte auf Anfrage gern Arbeitsproben zur Verfügung. Anbei finden Sie, so begann jede ihrer Bewerbungen, die wichtigsten Nachweise. Am Ende brachte diese Klarheit ihr eine Einladung nach nur vier Tagen.",
+    "In diesem fiktiven Fall bewarb sich Sara um eine Stelle als Datenanalystin. Auf dem Arbeitsmarkt war die Konkurrenz um diese Stelle groß. Für ihre Bewerbung formulierte sie ein knappes Anschreiben, erwähnte zwei Jahre Erfahrung im Bereich Logistik und stellte auf Anfrage gern Arbeitsproben zur Verfügung. In ihrem Anschreiben stand: „Anbei finden Sie die wichtigsten Nachweise.“ Vier Tage später wurde sie zu einem Gespräch eingeladen.",
     "Das Gespräch selbst verlief anders als erwartet. Die Leiterin der Abteilung sagte: „Wir treffen die Entscheidung nicht im ersten Gespräch, aber wir ziehen alle Kandidaten gleich in Betracht.“ Sara hatte sich auf Fachfragen vorbereitet und musste feststellen, dass ihre Erfahrung nur eine kleine Rolle spielte. Wichtiger war, wie sie auf Rückfragen reagierte und ob sie Kritik annehmen konnte.",
     "In der zweiten Runde übte die Personalabteilung offen Kritik an einem Vorschlag, den Sara mitgebracht hatte. Sie hätte widersprechen können; stattdessen fragte sie nach den Gründen und nahm den Einwand auf. Später wurde eine Frist gesetzt und ein Plan entworfen, der beiden Seiten half. Ihr wurde klar, dass die Sitzung vor allem dem Zweck diente, ihre Arbeitsweise kennenzulernen — nicht ihr Wissen.",
-    "Eine Woche später erhielt sie die Zusage, aber nicht für die Stelle, auf die sie sich beworben hatte. Das Unternehmen bot ihr eine andere Position an, in der ihre Erfahrung besser zur Geltung kam. Sara nahm das Angebot in Betracht, verglich Gehalt und Wege und entschied sich nach zwei Tagen. Diese Entscheidung hat sie nie bereut: Der neue Bereich brauchte genau die Ordnung, die sie mitbrachte.",
-    "Am ersten Arbeitstag wurde ihr ein Pate zugeteilt, der sie durch die ersten Wochen brachte. Jede Woche musste sie einen kurzen Bericht abgeben, in dem sie eine Frage stellte und einen Vorschlag machte. Auf diese Weise übte sie Kritik, ohne sie zu erleiden, und brachte ihre Zweifel zur Sprache, bevor sie zu Fehlern wurden. Nach drei Monaten legte sie Wert darauf, dass auch der Pate von ihr etwas gelernt hatte.",
-    "Was Sara rückblickend empfiehlt, klingt einfach: sorgfältig schreiben, offen sprechen, Kritik annehmen und Alternative prüfen. Anbei finden Sie, schreibt sie heute selbst, ist ein Satz, den man sauber bauen muss — denn er entscheidet mit darüber, ob ein Mensch die nächste Seite überhaupt aufschlägt.",
+    "Eine Woche später erhielt sie die Zusage, aber nicht für die Stelle, auf die sie sich beworben hatte. Das Unternehmen bot ihr eine andere Position an, in der ihre Erfahrung besser zur Geltung kam. Sara nahm das Angebot in Betracht, verglich das Gehalt und den Arbeitsweg und entschied sich nach zwei Tagen. Diese Entscheidung bereute sie nie: Der neue Bereich brauchte genau die Ordnung, die sie mitbrachte.",
+    "Am ersten Arbeitstag wurde ihr ein Pate zugeteilt, der sie durch die ersten Wochen begleitete. Jede Woche musste sie einen kurzen Bericht abgeben, in dem sie eine Frage stellte und einen Vorschlag machte. Dabei lernte sie, Einwände sachlich zu formulieren und Rückmeldungen aufzunehmen. Außerdem brachte sie ihre Bedenken frühzeitig zur Sprache, bevor daraus Probleme wurden. Nach drei Monaten merkte sie, dass auch ihr Pate von ihr etwas gelernt hatte.",
+    "Was Sara rückblickend empfiehlt, klingt einfach: sorgfältig schreiben, offen sprechen, Kritik annehmen und Alternativen prüfen. Bei einem Anschreiben achtet sie darauf, dass Formulierungen wie „Anbei finden Sie …“ zum Inhalt und zur Situation passen.",
   ],
   paragraphsAr: [
-    "عندما تقدّمت سارة لوظيفة محلّلة بيانات كان سوق العمل ضيّقاً والمنافسة كبيرة، وكان واضحاً لها أن الأوراق هي التي ستحسم. فأولت أهمية لرسالة موجزة، وحملت معها سنتين من الخبرة في مجال اللوجستيك، ووضعت عند الطلب نماذج من عملها تحت التصرف. وكل طلب توظيف من طلباتها بدأ بـ«مرفق تجدون أهم الشهادات». وفي النهاية جرت عليها هذه الوضوح دعوة بعد أربعة أيام فقط.",
-    "وسار الحوار نفسه على غير ما توقعته. قالت مديرة القسم: «نحن لا نتخذ القرار في المقابلة الأولى، لكننا نأخذ كل المتقدمين بعين الاعتبار بالتساوي». وكانت سارة قد استعدّت لأسئلة فنية، فتّضح أن خبرتها لم تلعب إلا دوراً صغيراً؛ والأهم كان كيف تتفاعل مع الأسئلة الراجعة، وهل تقبل النقد.",
-    "وفي الجولة الثانية وجّهت إدارة الموارد البشرية نقداً صريحاً لاقتراح قدّمته سارة. كان بإمكانها أن تعترض، لكنها سألت عن الأسباب وتلقّت الاعتراض. ثم حُدّد موعد ووُضعت خطّة أفادت الطرفين. وأدركت سارة أن الجلسة كانت في جوهرها لمعرفة طريقة عملها لا معرفتها.",
-    "وبعد أسبوع تلقّت القبول، لكن لا في الوظيفة التي تقدّمت لها. فقد عرضت عليها الشركة منصباً آخر تبرز فيه خبرتها أكثر. فأخذت سارة العرض بعين الاعتبار، وقارنت الراتب والمسافة، وقررت بعد يومين. ولم تندم على هذا القرار قط: فالقسم الجديد كان يحتاج بالضبط النظام الذي تحمله معها.",
-    "وفي أول يوم عمل أُسند إليها مرشد يصحبها في الأسابيع الأولى. وكان عليها كل أسبوع أن تسلّم تقريراً قصيراً تطرح فيه سؤالاً وتقدّم مقترحاً. وبهذه الطريقة تدرّبت على النقد دون أن تعانيه، وأثارت شكوكها قبل أن تصير أخطاءً. وبعد ثلاثة أشهر أصرّت على أن المرشد أيضاً تعلّم منها شيئاً.",
-    "وما توصي به سارة اليوم يبدو بسيطاً: اكتب بعناية، وتحدّث بصراحة، وتقبّل النقد، وافحص البديل. وأما جملة «مرفق تجدون» فهي الآن من جملها هي، وتقول إنها جملة يجب بناؤها بدقة — لأنها تشارك في تحديد ما إذا كان إنسان سيقلب الصفحة التالية أصلاً.",
+    "في هذا المثال التدريبي الخيالي، تقدّمت سارة لوظيفة محلّلة بيانات، وكانت المنافسة على هذه الوظيفة كبيرة في سوق العمل. وفي طلبها صاغت رسالة موجزة، وذكرت خبرة سنتين في مجال الخدمات اللوجستية، وأبدت استعدادها لإتاحة نماذج من عملها عند الطلب. وكتبت في رسالتها: «تجدون مرفقاً أهم المستندات الداعمة». وبعد أربعة أيام دُعيت إلى مقابلة.",
+    "وسارت المقابلة على غير ما توقعت. قالت مديرة القسم: «لن نتخذ القرار في المقابلة الأولى، لكننا نأخذ جميع المتقدمين بعين الاعتبار على قدم المساواة». كانت سارة قد استعدّت لأسئلة فنية، لكن خبرتها لم تلعب إلا دوراً صغيراً؛ والأهم كان طريقة استجابتها للأسئلة وكيفية تقبّلها للملاحظات.",
+    "وفي الجولة الثانية وجّهت إدارة الموارد البشرية نقداً صريحاً لاقتراح قدّمته سارة. كان بإمكانها الاعتراض، لكنها سألت عن الأسباب وأخذت الملاحظة في الحسبان. ثم حُدّدت مهلة ووُضعت خطة أفادت الطرفين. وأدركت سارة أن الهدف الأساسي من الجلسة كان التعرّف إلى طريقة عملها، لا اختبار معلوماتها.",
+    "وبعد أسبوع تلقت قبولاً، لكن ليس للوظيفة التي تقدمت إليها. فقد عرضت عليها الشركة منصباً آخر تبرز فيه خبرتها أكثر. وأخذت سارة العرض بعين الاعتبار، وقارنت الراتب وطريق الوصول إلى العمل، ثم قررت بعد يومين. ولم تندم على قرارها: فالقسم الجديد كان يحتاج إلى التنظيم الذي تجيده.",
+    "وفي أول يوم عمل عُيّن لها مرشد رافقها في الأسابيع الأولى. وكان عليها كل أسبوع أن تسلّم تقريراً قصيراً تطرح فيه سؤالاً وتقدّم مقترحاً. وتعلّمت أن تصوغ اعتراضاتها بموضوعية وأن تستفيد من الملاحظات. كما صارت تطرح مخاوفها مبكراً قبل أن تتحول إلى مشكلات. وبعد ثلاثة أشهر لاحظت أن مرشدها تعلّم منها شيئاً أيضاً.",
+    "وتبدو نصيحة سارة عند استرجاع التجربة بسيطة: الكتابة بعناية، والتحدث بصراحة، وتقبّل النقد، ودراسة البدائل. وفي رسائل التقديم تحرص على أن تلائم صيغ مثل «Anbei finden Sie …» المحتوى والسياق.",
   ],
   glossary: [
     { de: "die Bewerbung", ar: "طلب التوظيف", noteAr: "مؤنّثة؛ sich um eine Stelle bewerben." },
@@ -54,7 +54,7 @@ export const readingB209: ReadingText = {
         "Als lange Liste von Gehaltsforderungen und persönlichen Wünschen.",
       ],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — العكس؛ فالإيجازُ مقصود: «Sie legte Wert auf ein knappes Anschreiben».", "لا — خبرتُها حاضرةٌ لا محذوفة: «brachte zwei Jahre Erfahrung im Bereich Logistik mit».", "لا — قائمةُ مطالب الأجر والرغبات الشخصية لم تُذكر؛ والبناءُ «ein knappes Anschreiben» مع شواهدَ عند الطلب: «stellte auf Anfrage gern Arbeitsproben zur Verfügung»."],
+      optionExplanations: [undefined, "لا — العكس؛ فالإيجاز مقصود: «Für ihre Bewerbung formulierte sie ein knappes Anschreiben».", "لا — خبرتُها حاضرةٌ لا محذوفة: «brachte zwei Jahre Erfahrung im Bereich Logistik mit».", "لا — قائمةُ مطالب الأجر والرغبات الشخصية لم تُذكر؛ والبناءُ «ein knappes Anschreiben» مع شواهدَ عند الطلب: «stellte auf Anfrage gern Arbeitsproben zur Verfügung»."],
       paragraph: 1,
       explanation:
         "الفقرة الأولى تجمع العناصر الثلاثة: رسالة موجزة، وخبرة سنتين، وعيّنات تضعها تحت التصرف عند الطلب — وهي التراكيب الوظيفية التي يعلّمها الدرس.",
@@ -73,7 +73,7 @@ export const readingB209: ReadingText = {
         "Die Dauer des Gesprächs.",
       ],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — هذا هو الأهمّ لا الأقلّ: «Wichtiger war, wie sie auf Rückfragen reagierte und ob sie Kritik annehmen konnte».", "لا — عددُ الطلبات يخصّ ضيق السوق في البداية: «war der Arbeitsmarkt eng und die Konkurrenz groß»؛ وأما في الحديث فالصغيرُ دورُه خبرةُ سارة.", "لا — مدّةُ الحديث لم تُذكر؛ والمذكورُ أن خبرتها «nur eine kleine Rolle spielte»."],
+      optionExplanations: [undefined, "لا — هذا هو الأهمّ لا الأقلّ: «Wichtiger war, wie sie auf Rückfragen reagierte und ob sie Kritik annehmen konnte».", "لا — عددُ الطلبات يخصّ ضيق السوق في البداية: «die Konkurrenz um diese Stelle war groß»؛ وأما في الحديث فالصغيرُ دورُه خبرةُ سارة.", "لا — مدّةُ الحديث لم تُذكر؛ والمذكورُ أن خبرتها «nur eine kleine Rolle spielte»."],
       paragraph: 2,
       explanation:
         "الفقرة الثانية تفصل بين ما استعدّت له (الأسئلة الفنية) وما رُصد فعلاً (ردّها على الأسئلة وتقبّلها للنقد)، وتقول إن الخبرة لم تلعب إلا دوراً صغيراً.",
@@ -95,7 +95,7 @@ export const readingB209: ReadingText = {
       optionExplanations: [undefined, "لا — النصّ يذكر الممكن لا الواقع: «Sie hätte widersprechen können; stattdessen fragte sie nach den Gründen und nahm den Einwand auf».", "لا — الصمتُ حتى الجلسة التالية لم يقع؛ بل سألت عن الأسباب: «fragte sie nach den Gründen».", "لا — شكوى كتابية لم تُذكر؛ والمذكورُ أنها أخذت الاعتراض في الحسبان ثم «wurde eine Frist gesetzt und ein Plan entworfen, der beiden Seiten half»."],
       paragraph: 3,
       explanation:
-        "الفقرة الثالثة تذكر صراحةً أنها كانت تستطيع الاعتراض، لكنها سألت عن الأسباب وتلقّت الاعتراض — وهذا هو الفرق بين «Kritik üben» و«Critik erleiden» الذي يشرحه النصّ.",
+        "الفقرة الثالثة تذكر أنها كانت تستطيع الاعتراض، لكنها سألت عن أسباب النقد وتعاملت مع الملاحظة؛ وهذا يميز بين توجيه النقد إلى شخص وبين تلقّي ملاحظات حول مقترح.",
       errorType: "comprehension",
     },
     {
@@ -111,20 +111,20 @@ export const readingB209: ReadingText = {
         "Weil sie den Paten nicht mochte.",
       ],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — سوءُ فهم العرض الأول لم يُذكر؛ والسببُ أن خبرتها ظهرت هناك أفضل: «eine andere Position an, in der ihre Erfahrung besser zur Geltung kam».", "لا — ارتفاعُ الراتب سبباً للقبول لم يُذكر؛ وقد قارنته بالمسافات: «verglich Gehalt und Wege und entschied sich nach zwei Tagen».", "لا — المرشدُ جاء بعد القبول في أول يوم عمل: «Am ersten Arbeitstag wurde ihr ein Pate zugeteilt, der sie durch die ersten Wochen brachte»."],
+      optionExplanations: [undefined, "لا — سوءُ فهم العرض الأول لم يُذكر؛ والسببُ أن خبرتها ظهرت هناك أفضل: «eine andere Position an, in der ihre Erfahrung besser zur Geltung kam».", "لا — ارتفاعُ الراتب سبباً للقبول لم يُذكر؛ وقد قارنته بالراتب ومدة التنقل: «verglich das Gehalt und den Arbeitsweg und entschied sich nach zwei Tagen».", "لا — المرشدُ جاء بعد القبول في أول يوم عمل: «Am ersten Arbeitstag wurde ihr ein Pate zugeteilt, der sie durch die ersten Wochen begleitete»."],
       paragraph: 4,
       explanation:
-        "الفقرة الرابعة تقول إن الشركة عرضت منصباً آخر «in der ihre Erfahrung besser zur Geltung kam»، ثم تشرح أنها قارنت الراتب والمسافة وأخذت العرض بعين الاعتبار.",
+        "الفقرة الرابعة تقول إن الشركة عرضت منصباً آخر «in der ihre Erfahrung besser zur Geltung kam»، ثم تذكر أنها قارنت الراتب ومدة التنقل قبل اتخاذ القرار.",
       errorType: "comprehension",
     },
   ],
   redemittel: [
     { de: "Ich lege Wert auf ein knappes Anschreiben.", ar: "أولي أهمية لرسالة موجزة." },
     { de: "Ich bringe zwei Jahre Erfahrung mit.", ar: "أحمل سنتين من الخبرة." },
-    { de: "Anbei finden Sie in meiner Bewerbung die wichtigsten Nachweise.", ar: "مرفق تجدون في طلب توظيفي أهم الشهادات." },
+    { de: "Anbei finden Sie meine wichtigsten Nachweise.", ar: "تجدون أهم مستنداتي مرفقة." },
     { de: "Wir ziehen alle Kandidaten gleich in Betracht.", ar: "نأخذ كل المتقدمين بعين الاعتبار بالتساوي." },
     { de: "Ihre Erfahrung kommt hier besser zur Geltung.", ar: "تبرز خبرتك هنا أكثر." },
   ],
   discussionAr:
-    "اكتب مع زميلك طلب توظيف مختصراً (خمس فقرات) ثم تمثّلا مقابلة: عرض الوظيفة، وعرض المؤهلات، وسؤال نقدي، ثم ردّ على النقد. وشرط الأسلوب: استعملا خمسة تراكيب وظيفية على الأقل (sich bewerben um · Wert legen auf · zur Verfügung stellen · in Betracht ziehen · eine Entscheidung treffen · eine Rolle spielen · Kritik üben)، وجملة افتتاحية رسمية بصيغة «Anbei finden Sie …»، ثم اقرأا الطلب على مجموعة واسألاهم: هل تظهر الخبرة برقم واضح أم بصفات عامة؟ وهل جاء الردّ على النقد بالتعليل أم بالاعتراض؟",
+    "صوغا معاً ثلاثة أسطر تدريبية لا ملف توظيف كاملاً: افتتاحاً رسمياً، ومثالاً واحداً على خبرة أو مهارة، وختاماً. أدرجا عبارتين مستهدفتين على الأقل، مثل sich bewerben um وWert auf etwas legen أو zur Verfügung stellen. ثم مثّلا مقابلة قصيرة فيها سؤال عن الخبرة وملاحظة أو سؤال متابعة وردّ يوضح اختياركما؛ ناقشا بعد ذلك هل ذُكرت الخبرة بمثال محدد، وهل تناول الردّ الملاحظة بوضوح.",
 };

@@ -151,6 +151,17 @@ function goalEvent(goalId: string, exerciseId: string, correct = true): Analytic
 }
 
 describe("B2-03 lesson content audit", () => {
+  it("translates Hausverwaltung as the property-management office in mediation and advice", () => {
+    const mediation = lessonB203.mediation?.find(({ id }) => id === "med-b2-03-1");
+    expect(mediation?.modelAnswerAr).toContain("مكتب إدارة العقار");
+    expect(mediation?.keyPointsAr?.join(" ")).toContain("إبلاغ مكتب إدارة العقار");
+
+    const responses = lessonB203.interaction?.flatMap(({ rounds }) => rounds)
+      .flatMap(({ options }) => options).filter(({ de }) => de.includes("Hausverwaltung")) ?? [];
+    expect(responses).toHaveLength(2);
+    expect(responses.every(({ ar }) => ar.includes("مكتب إدارة العقار"))).toBe(true);
+  });
+
   it("keeps identity, unit placement, and mirrors the summary into meta", () => {
     expect(lessonB203).toMatchObject({
       id: "b2-03",

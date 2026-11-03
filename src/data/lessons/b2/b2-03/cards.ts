@@ -92,8 +92,8 @@ export const mediation: NonNullable<Lesson["mediation"]> = [
       titleAr: "بسّط نصاً قانونياً بالعربية لشخص عادي",
       sourceDe: "In dieser fiktiven Hausordnung ist das Rauchen in den Gemeinschaftsräumen untersagt. Bei wiederholten Verstößen wird die Hausverwaltung informiert.",
       taskAr: "بسّط هذا المثال التدريبي الافتراضي بالعربية: ما الممنوع، وأين، وما الإجراء المذكور؟ لا تتعامل معه بوصفه قاعدة قانونية عامة.",
-      modelAnswerAr: "«في هذا المثال، التدخين ممنوع في الأماكن المشتركة. وإذا تكرر الأمر، فستُبلّغ إدارة المبنى.»",
-      keyPointsAr: ["نقلت المنع (التدخين)", "حددت المكان (الأماكن المشتركة)", "نقلت الإجراء المذكور (إبلاغ الإدارة)، من دون اختراع غرامة"],
+      modelAnswerAr: "«في هذا المثال، التدخين ممنوع في الأماكن المشتركة. وإذا تكرر الأمر، فسيُبلّغ مكتب إدارة العقار.»",
+      keyPointsAr: ["نقلت المنع (التدخين)", "حددت المكان (الأماكن المشتركة)", "نقلت الإجراء المذكور (إبلاغ مكتب إدارة العقار)، من دون اختراع غرامة"],
     },
   ];
 
@@ -108,7 +108,7 @@ export const interaction: NonNullable<Lesson["interaction"]> = [
           speakerDe: "Mein Nachbar macht nachts laute Musik. Was soll ich tun?",
           speakerAr: "جارتي تشغّل موسيقى صاخبة ليلاً. ماذا أفعل؟",
           options: [
-            { de: "Wenn du dich sicher fühlst, kannst du zuerst höflich mit ihr sprechen. Falls das nicht hilft, wende dich an die Hausverwaltung. Bei einer Bedrohung hol dir sofort Hilfe.", ar: "إذا كنت تشعر بالأمان، يمكنك التحدث معها بأدب أولاً. إن لم ينفع، تواصل مع إدارة المبنى. وإذا شعرت بتهديد، اطلب المساعدة فوراً.", best: true, replyDe: "Guter Rat. Aber was ist, wenn sie aggressiv reagiert?", replyAr: "نصيحة جيدة. لكن ماذا لو ردت بعدوانية؟" },
+            { de: "Wenn du dich sicher fühlst, kannst du zuerst höflich mit ihr sprechen. Falls das nicht hilft, wende dich an die Hausverwaltung. Bei einer Bedrohung hol dir sofort Hilfe.", ar: "إذا كنت تشعر بالأمان، يمكنك التحدث معها بأدب أولاً. إن لم ينفع، تواصل مع مكتب إدارة العقار. وإذا شعرت بتهديد، اطلب المساعدة فوراً.", best: true, replyDe: "Guter Rat. Aber was ist, wenn sie aggressiv reagiert?", replyAr: "نصيحة جيدة. لكن ماذا لو ردت بعدوانية؟" },
             { de: "Du solltest sofort die Polizei rufen und schreien.", ar: "يجب أن تستدعي الشرطة فوراً وتصرخ.", best: false, replyDe: "Das wäre übertrieben. Zuerst das Gespräch suchen.", replyAr: "هذا مبالغ فيه. ابحث عن الحوار أولاً." },
           ],
         },
@@ -116,7 +116,7 @@ export const interaction: NonNullable<Lesson["interaction"]> = [
           speakerDe: "Was ist, wenn sie aggressiv reagiert?",
           speakerAr: "ماذا لو ردت بعدوانية؟",
           options: [
-            { de: "Wenn du dich bedroht fühlst, bring dich zuerst in Sicherheit und hol dir Hilfe. Wenn es sicher ist, dokumentiere die Vorfälle und wende dich an die Hausverwaltung. Welche Ruhezeiten gelten, hängt unter anderem von den örtlichen Regeln und der Hausordnung ab.", ar: "إذا شعرت بتهديد، ابتعد إلى مكان آمن واطلب المساعدة. وإذا كان ذلك آمناً، وثّق الوقائع وتواصل مع إدارة المبنى. وتختلف أوقات الهدوء بحسب القواعد المحلية ولائحة المبنى.", best: true, replyDe: "Das klingt nach einem sinnvollen Vorgehen.", replyAr: "يبدو إجراءً منطقياً." },
+            { de: "Wenn du dich bedroht fühlst, bring dich zuerst in Sicherheit und hol dir Hilfe. Wenn es sicher ist, dokumentiere die Vorfälle und wende dich an die Hausverwaltung. Welche Ruhezeiten gelten, hängt unter anderem von den örtlichen Regeln und der Hausordnung ab.", ar: "إذا شعرت بتهديد، ابتعد إلى مكان آمن واطلب المساعدة. وإذا كان ذلك آمناً، وثّق الوقائع وتواصل مع مكتب إدارة العقار. وتختلف أوقات الهدوء بحسب القواعد المحلية ولائحة المبنى.", best: true, replyDe: "Das klingt nach einem sinnvollen Vorgehen.", replyAr: "يبدو إجراءً منطقياً." },
             { de: "Dann solltest du einfach umziehen und alles aufgeben.", ar: "إذن يجب أن تنتقل وتتخلى عن كل شيء.", best: false, replyDe: "Das ist keine Lösung, es gibt rechtliche Wege.", replyAr: "هذا ليس حلاً، توجد طرق قانونية." },
           ],
         },

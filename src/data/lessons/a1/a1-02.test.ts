@@ -109,3 +109,17 @@ describe("A1-02 — العائلة والأصدقاء", () => {
     expect(missingPerson?.options[missingPerson.correctIndex]).toBe("Der Onkel");
   });
 });
+
+describe("حراسة groß وklein وalt في سياق العائلة", () => {
+  it("يميّز كِبَر العائلة وعمر أفرادها وصغر الأخت عن قِدم الصورة", () => {
+    const reading = lesson.reading;
+    expect(reading).toBeDefined();
+    if (!reading) throw new Error("A1-02 reading is required");
+    expect(reading.paragraphs[0]).toContain("Das Foto ist alt");
+    expect(reading.paragraphsAr[0]).toContain("الصورة قديمة");
+    expect(reading.paragraphs[0]).toContain("Meine Familie ist groß");
+    expect(reading.paragraphsAr[0]).toContain("عائلتي كبيرة");
+    expect(reading.paragraphs[2]).toContain("Meine Schwester Nour ist noch klein. Sie ist sieben Jahre alt");
+    expect(reading.paragraphsAr[2]).toContain("أختي نور ما زالت صغيرة. عمرها سبع سنوات");
+  });
+});

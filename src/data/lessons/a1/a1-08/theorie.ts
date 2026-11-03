@@ -204,7 +204,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       },
       examples: [
         { de: "Welcher Pullover gefällt dir?", ar: "أيّ كنزة تعجبك؟" },
-        { de: "Dieses Hemd ist zu klein.", ar: "هذا القميص صغير جداً." },
+        { de: "Dieses Hemd ist zu klein.", ar: "هذا القميص أصغر من اللازم." },
         { de: "Welche Größe haben Sie?", ar: "ما مقاسك؟" },
         {
           de: "Ich nehme diesen Mantel.",

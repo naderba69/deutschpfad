@@ -16,6 +16,7 @@ import {test, expect, type Page} from "@playwright/test";
 test.use({
   permissions: ["microphone"],
   launchOptions: {
+    ...(process.env.PLAYWRIGHT_CHROMIUM_PATH ? {executablePath: process.env.PLAYWRIGHT_CHROMIUM_PATH} : {}),
     args: [
       "--use-fake-ui-for-media-stream",
       "--use-fake-device-for-media-stream",

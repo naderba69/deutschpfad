@@ -110,14 +110,14 @@ export const interaction: NonNullable<Lesson["interaction"]> = [
           speakerAr: "هل يجب أن يكون الشباب أكثر نشاطاً سياسياً؟",
           options: [
             { de: "Ja, meiner Meinung nach sollten junge Menschen wählen gehen und sich engagieren, weil sie die Zukunft gestalten.", ar: "نعم، في رأيي يجب أن يصوت الشباب وينخرطوا لأنهم يصنعون المستقبل.", best: true, replyDe: "Guter Punkt. Manche Menschen haben vielleicht trotzdem das Gefühl, dass ihre Stimme wenig verändert.", replyAr: "نقطة جيدة. ومع ذلك قد يشعر بعض الناس أن أصواتهم لا تغيّر كثيراً." },
-            { de: "Nein, Politik ist nur etwas für alte Leute.", ar: "لا، السياسة للكبار فقط.", best: false, replyDe: "Das ist ein Vorurteil. Politik betrifft alle Generationen.", replyAr: "هذا تحيز. السياسة تهم كل الأجيال." },
+            { de: "Nein, Politik ist nur etwas für alte Leute.", ar: "لا، السياسة تخصّ كبار السن فقط.", best: false, replyDe: "Das ist ein Vorurteil. Politik betrifft alle Generationen.", replyAr: "هذا تحيز. السياسة تهم كل الأجيال." },
           ],
         },
         {
           speakerDe: "Warum kann sich jemand politisch machtlos fühlen?",
           speakerAr: "لماذا قد يشعر شخص بالعجز السياسي؟",
           options: [
-            { de: "Vielleicht hat diese Person den Eindruck, dass ihre Stimme wenig verändert. Ich finde trotzdem, dass Beteiligung sinnvoll ist.", ar: "ربما يشعر هذا الشخص أن صوته لا يغيّر كثيراً. ومع ذلك أرى أن المشاركة مفيدة.", best: true, replyDe: "Das ist eine mögliche persönliche Sichtweise.", replyAr: "هذه نظرة متفائلة." },
+            { de: "Vielleicht hat diese Person den Eindruck, dass ihre Stimme wenig verändert. Ich finde trotzdem, dass Beteiligung sinnvoll ist.", ar: "ربما يشعر هذا الشخص أن صوته لا يغيّر كثيراً. ومع ذلك أرى أن المشاركة مفيدة.", best: true, replyDe: "Das ist eine mögliche persönliche Sichtweise.", replyAr: "هذه وجهة نظر شخصية ممكنة." },
             { de: "Weil politische Entscheidungen grundsätzlich nie etwas verändern.", ar: "لأن السياسة فعلاً لا تغير شيئاً.", best: false, replyDe: "Das ist sehr allgemein formuliert. In diesem Rollenspiel vertrittst du eine begründete persönliche Meinung.", replyAr: "هذا تشاؤم مفرط. الديمقراطية تعيش بالمشاركة." },
           ],
         },

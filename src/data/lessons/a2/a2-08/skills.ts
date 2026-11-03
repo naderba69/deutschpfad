@@ -195,7 +195,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
           { speaker: "Lea", de: "Verpasse ich dadurch den Anschluss in Bonn?", ar: "هل سأفوت بذلك قطار المتابعة في بون؟", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-3.mp3" },
           { speaker: "Mitarbeiter", de: "Das weiß ich nicht. Bitte fragen Sie am Schalter nach.", ar: "لا أعرف. يُرجى السؤال عند شباك الخدمة.", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-4.mp3" },
           { speaker: "Lea", de: "Wo ist der Schalter?", ar: "أين شباك الخدمة؟", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-5.mp3" },
-          { speaker: "Mitarbeiter", de: "Gleich links neben dem Fahrkartenautomaten.", ar: "إلى اليسار مباشرة بجانب آلة بيع التذاكر.", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-6.mp3" },
+          { speaker: "Mitarbeiter", de: "Gleich links neben dem Fahrkartenautomaten.", ar: "مباشرةً إلى يسار آلة بيع التذاكر.", audioSrc: "/audio/lessons/a2-08/ls-a2-08-4-6.mp3" },
         ],
       },
     ],
@@ -314,7 +314,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
         instructionAr: "أجب بعد الاستماع إلى الحوار الرابع وقبل فتح التفريغ:",
         questionDe: "Wo ist der Schalter?", questionAr: "أين يوجد شباك الخدمة؟",
         options: ["Links neben dem Fahrkartenautomaten", "Rechts neben dem Eingang", "Gegenüber von Gleis drei", "Hinter dem Informationsbüro"], correctIndex: 0,
-        explanation: "يقول الموظف إن الشباك إلى اليسار مباشرة بجانب آلة بيع التذاكر.", errorType: "comprehension",
+        explanation: "يوضح الموظف أن شباك الخدمة يقع مباشرةً إلى يسار آلة بيع التذاكر.", errorType: "comprehension",
       },
     ],
   };

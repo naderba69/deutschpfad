@@ -81,7 +81,7 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     { id: "fc20", de: "die Fahrt", ar: "الرحلة، السفرة", example: "Die Fahrt hat vier Stunden gedauert.", exampleAr: "استغرقت الرحلة أربع ساعات.", level: "A1" },
     { id: "fc21", de: "treffen", ar: "يقابل، يلتقي", example: "In Berlin habe ich Nadia getroffen.", exampleAr: "في برلين قابلتُ نادية.", level: "A1" },
     { id: "fc22", de: "probieren", ar: "يجرّب، يذوق", example: "Ich habe eine Currywurst probiert.", exampleAr: "جرّبتُ الكاري فورست.", level: "A1" },
-    { id: "fc23", de: "schmecken", ar: "يكون طعمه طيّباً", example: "Es hat mir gut geschmeckt.", exampleAr: "أعجبني طعمه.", level: "A1" },
+    { id: "fc23", de: "schmecken", ar: "يكون مذاقه (طيباً أو غير ذلك بحسب السياق)", example: "Es hat mir gut geschmeckt.", exampleAr: "كان مذاقه طيباً بالنسبة إليّ.", level: "A1" },
     { id: "fc24", de: "deshalb", ar: "لذلك، لهذا السبب", example: "Es hat geregnet, deshalb sind wir ins Museum gegangen.", exampleAr: "أمطرت، لذلك ذهبنا إلى المتحف.", level: "A1" },
     { id: "fc25", de: "das Museum", ar: "المتحف", example: "Im Museum habe ich viel gelernt.", exampleAr: "في المتحف تعلّمتُ كثيراً.", level: "A1" },
   ];

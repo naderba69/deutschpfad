@@ -14,6 +14,7 @@ import type { Exercise } from "@/types/lesson";
 
 const lessonMetaList = LESSON_META;
 
+
 const expectedMultipleChoice: Record<string, { options: string[]; key: string }> = {
   r1: { options: ["ging", "gehe", "gegangen", "geht"], key: "ging" },
   "ex-b1-11-4": {
@@ -579,5 +580,13 @@ describe("B1-11 lesson content audit", () => {
         goalEvent("z1", "mt-b1-11-2"),
       ]),
     ).toBe("pending");
+  });
+});
+
+describe("حراسة معنى modern", () => {
+  it("يفهم modern وصفاً لحالة البيت الحالية لا لعمر بنائه", () => {
+    const examples = JSON.stringify(lessonB111);
+    expect(examples).toContain("Das Haus, das 1990 gebaut wurde, ist heute wieder modern.");
+    expect(examples).toContain("البيت الذي بُني عام 1990 صار اليوم عصرياً من جديد.");
   });
 });

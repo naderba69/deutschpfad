@@ -7,12 +7,18 @@ import type { Lesson } from "@/types/lesson";
 export const theory: NonNullable<Lesson["theory"]> = [
     {
       id: "t1",
-      titleAr: "الوصلات المتقدمة + المراسلات الرسمية",
-      titleDe: "Fortgeschrittene Nomen-Verb-Verbindungen und formelle Briefe",
+      titleAr: "تعبيرات في سياق العمل والمراسلات الرسمية",
+      titleDe: "Arbeitsbezogene Wendungen und formelle Korrespondenz",
       explanationAr:
-        "الوصلات المتقدمة في هذا الدرس صنفان: تراكيب «اسم + فعل» (in Betracht ziehen · zur Verfügung stellen) وتراكيب خطاب التقديم الرسمي (sich bewerben um · Wert legen auf · eine Rolle spielen · Anbei finden Sie). وكلاهما يقوم على مبدأ واحد: الاسم يحمل المعنى، والفعل يحمل الوظيفة النحوية والتصريف.\n\nوخطاب التقديم الألماني «قوالب» لا نص حرّ: بداية بوظيفة (hiermit bewerbe ich mich um …)، ثم عرض المؤهلات (ich bringe … mit · ich verfüge über …)، ثم الإشارة إلى المرفقات (Anbei finden Sie …)، ثم الرغبة في مقابلة (ich freue mich auf ein Gespräch). والمصحّح يقرأ هذه المواضع أولاً، فمن خرج عن القالب يفقد انطباعاً كاملاً وإن كانت لغته سليمة.\n\nوالأخطاء في هذا الباب أخطاء «تعاقد» لا أخطاء قواعد: قيمة الحرف (sich bewerben um + Akkusativ، لا nach)، وفعل التركيب (Wert legen auf، لا machen)، والحالة داخل الكتلة الثابتة (zur Verfügung، لا zu Verfügung). وهذه لا تُستنبط من المنطق، لأن الألمانية شكّلت كل كتلة على حدة عبر الاستعمال، والمحفوظ فيها هو الوحدة كاملة لا الكلمة وحدها.\n\nوللأسلوب ثمنه: من كدّس هذه الكتل حتى خلت الجملة من الأفعال المصرّفة ظهر نصه مصطنعاً ومهماً بلا مضمون. والقاعدة العملية أن تحمل كل كتلة معلومة جديدة واحدة، وأن تُفكّ بينها بجملة بسيطة تشرح وتستريح.\n\nوأخيراً: هذه التراكيب في الألمانية الرسمية ما يقابل «التراكيب المصطلحة» في العربية الرسمية («نتشرّف بأن نتقدّم»، «نرفق لسيادتكم»)، فالحسّ اللغوي العربي يخدم المتعلّم هنا إذا عاملها كصيغ جاهزة لا كأفعال تُصرَّف.",
+        `يعرض الدرس وصلات اسمية-فعلية منتقاة (Funktionsverbgefüge) مثل eine Entscheidung treffen وin Betracht ziehen وzur Verfügung stellen، إلى جانب تراكيب أخرى مفيدة في سياق الوظائف مثل sich um eine Stelle bewerben وWert auf etwas legen وصيغ مراسلة مثل Anbei finden Sie. ليست هذه كلها نوعاً تركيبياً واحداً: فبعضها وصلات اسمية-فعلية، وبعضها فعل مع حرف جر، وبعضها صيغة خطاب. في كثير من الوصلات الاسمية-الفعلية يحمل الاسم قسماً كبيراً من المعنى، بينما يوفّر الفعل التصريف؛ لكن درجة خفوت معنى الفعل وبنية كل تركيب تختلف.
+
+قد يضم خطاب التقديم تحية وسبب التقديم وعرضاً موجزاً للمؤهلات أو أمثلة عليها وختاماً مهذباً، لكن لا يوجد قالب وحيد يصلح لكل الوظائف. تتحدد التفاصيل بما تطلبه الجهة وبسياق الرسالة. هذا الدرس يتدرب على عبارات مختارة، ولا يدرّب على إعداد ملف توظيف كامل أو يضمن نتيجة التقديم.
+
+احفظ التركيب مع حرف الجر والحالة عندما تكون جزءاً منه، ولا تعمم حرفاً واحداً على كل استعمال: من الصيغ الشائعة sich bewerben um + Akkusativ، مثل sich um eine Stelle bewerben؛ ويصح أيضاً sich auf eine ausgeschriebene Stelle bewerben أو sich für einen Job bewerben؛ ويُذكر صاحب العمل مثلاً مع bei + Dativ. ومن التراكيب الأخرى Wert auf + Akkusativ legen، وjemandem etwas zur Verfügung stellen؛ أما عبارة zur Verfügung فتُحفظ بصيغتها.
+
+تساعد هذه العبارات على تنويع التعبير في الرسائل والمقابلات، لكنها لا تجعل النص أفضل تلقائياً بمجرد إدراجها. اخترها حين تناسب المعنى والسياق، ويمكن أن تقابلها في العربية تراكيب فعلية أو اسمية؛ فالترجمة هنا سياقية وليست مقابلة ثابتة كلمةً بكلمة.`,
       whyAr:
-        "لماذا هذه الوصلات؟ لأن خطاب التقديم الألماني «قوالب»: البداية (أي وظيفة)، ثم المؤهلات، ثم المرفقات، ثم الرغبة في مقابلة. ومن يستعمل القالب يعطي المصحّح ما يبحث عنه في ثوانٍ، ومن يكتب نصاً حرّاً بلغة سليمة قد يبدو غير متمكّن من الأسلوب المهني. ومن ثمّ فالفائدة هنا وظيفية لا تجميلية: القالب هو ما يُقبل به الناس إلى المقابلة. وعملياً، من حفظ عشر كتل كاملة (sich bewerben um · Wert legen auf · zur Verfügung stellen · in Betracht ziehen · eine Rolle spielen · Anbei finden Sie) استطاع أن يكتب خطاباً كاملاً من قوالب، وأن يقرأ عروض العمل والردود الرسمية بلا أن يعلق في حرف جر أو اسم.",
+        "تفيد هذه التراكيب في فهم بعض نصوص العمل وصياغة عبارات موجزة في طلب التوظيف أو المقابلة. تدرب على معناها وبنيتها في الأمثلة، ثم اختر ما يلائم السياق؛ فمعرفة الوصلات لا تعني وحدها إتقان خطاب كامل أو التنبؤ بقبول الطلب. واحفظ كل تركيب مع حرف الجر والحالة ومتمماته؛ فالتعميم على الصيغ المتشابهة قد يغيّر المعنى أو يجعل العبارة غير مناسبة.",
       table: {
         title: "وصلات B2 المتقدمة",
         columns: ["الوصلة", "المعنى", "مثال"],
@@ -26,20 +32,20 @@ export const theory: NonNullable<Lesson["theory"]> = [
       },
       examples: [
         { de: "Ich bewerbe mich um die Stelle als Projektmanager.", ar: "أتقدم لمنصب مدير مشاريع." },
-        { de: "Anbei finden Sie meinen Lebenslauf.", ar: "مرفقاً سيرتي الذاتية." },
+        { de: "Anbei finden Sie meinen Lebenslauf.", ar: "تجدون سيرتي الذاتية مرفقة." },
         { de: "Ich lege großen Wert auf Teamarbeit.", ar: "أولي أهمية كبيرة للعمل الجماعي." },
         { de: "Meine Erfahrung spielt eine wichtige Rolle.", ar: "تلعب خبرتي دوراً مهماً." },
         { de: "Ich stelle meine Fähigkeiten gern zur Verfügung.", ar: "أضع قدراتي بكل سرور تحت التصرف." },
         { de: "Ich bringe drei Jahre Erfahrung im Projektmanagement mit.", ar: "أحمل ثلاث سنوات من الخبرة في إدارة المشروعات." },
       ],
       comparisonWithArabic:
-        "«أتقدم لمنصب» = Ich bewerbe mich um die Stelle — تقابل قريب. و«مرفق تجد سيرتي الذاتية» = Anbei finden Sie meinen Lebenslauf، و«أولي أهمية للعمل الجماعي» = Ich lege Wert auf Teamarbeit. والتقابل قريب لأن العربية الرسمية أيضاً تميل إلى تراكيب اسمية-فعلية ثابتة («أولي أهمية»، «أتقدّم بطلب»). والفرق في الشيوع: العربية تستعمل البديل الفعلي (أهتمّ) في أغلب السياقات، والألمانية الرسمية تفضّل الكتلة الاصطلاحية لأنها إشارة إلى سجل لغوي رفيع. ومن ثمّ تُترجم الكتلة بكتلة عربية رسمية («أولي أهمية»)، لا بفعل محايد («أهتم»).",
+        "يمكن ترجمة Ich bewerbe mich um die Stelle بـ«أتقدم للوظيفة»، وAnbei finden Sie meinen Lebenslauf بـ«أرفق لكم سيرتي الذاتية» أو «تجدون مرفقاً سيرتي الذاتية» بحسب سياق الرسالة. وIch lege Wert auf Teamarbeit قد تعني «أولي أهمية للعمل الجماعي». هذه مقابلات سياقية؛ لا يلزم أن تستخدم العربية والألمانية النوع نفسه من التركيب أو درجة الرسمية نفسها في كل موقف.",
       eselsbruecke:
-        "«مرفق تجدون سيرتي» = Anbei finden Sie meinen Lebenslauf — جملة جاهزة. و«أولي أهمية» = Wert legen auf. احفظ الوصلات الخمس كقائمة جاهزة للخطاب.",
+        "احفظ كل وصلة مع مثال قصير وحرف الجر عند وجوده: eine Entscheidung treffen · sich um eine Stelle bewerben · Wert auf Teamarbeit legen.",
       commonMistakes: [
-        { wrong: "Ich bewerbe mich nach der Stelle (حرف خاطئ)", right: "Ich bewerbe mich um die Stelle", whyAr: "الفعل يحمل حرفه: sich bewerben um + Akkusativ. ومن قاس على «تقدم إلى» في العربية كتب nach، ومن ردّده في سياقات أخرى تردّد؛ والحلّ أن تُحفظ الكتلة بصيغها: ich bewerbe mich um die Stelle · um einen Platz · um ein Stipendium." },
+        { wrong: "Ich bewerbe mich nach die Stelle.", right: "Ich bewerbe mich um die Stelle.", whyAr: "في هذا المعنى نقول مثلاً sich um eine Stelle bewerben أو sich auf eine ausgeschriebene Stelle bewerben؛ أما nach die Stelle فلا يصلح هنا. وقد يتغير حرف الجر بحسب المقصود، مثل bei + Dativ لذكر الجهة التي يُقدَّم إليها الطلب." },
         { wrong: "Wert machen auf", right: "Wert legen auf", whyAr: "الكتلة الثابتة هي Wert legen auf: القيمة تُوضع لا تُصنع. والخطأ إنتاجي خالص لأن machen هو الفعل العام الأكثر حضوراً في ذهن المتعلّم؛ ولمّا كانت الكتل تُقاس على الاستعمال لا على المعنى، وجب أن تُحفظ بحرفها وفعلها معاً." },
-        { wrong: "Anbei ist mein Lebenslauf (أقل شيوعاً)", right: "Anbei finden Sie meinen Lebenslauf", whyAr: "الصيغة المتعاقد عليها في المراسلة الرسمية «Anbei finden Sie …» لأنها تخاطب القارئ مباشرة وتقدّم العرض. و«Anbei ist …» ليست خطأ نحوياً لكنها تقريرية باردة، وتُقرأ في خطاب رسمي كمسافة في الأسلوب." },
+        { wrong: "Anbei finden Sie mein Lebenslauf.", right: "Anbei finden Sie meinen Lebenslauf.", whyAr: "Lebenslauf مذكر، وهو مفعول به Akkusativ بعد finden؛ لذلك تتغير أداة التعريف من mein إلى meinen. والخطأ هنا في الحالة الإعرابية؛ لا يعني ذلك أن كل جملة تبدأ بـAnbei يجب أن تستخدم الفعل finden." },
       ],
       relatedRuleComparison: {
         title: "الخطاب الرسمي أم العامي؟",
@@ -50,8 +56,8 @@ export const theory: NonNullable<Lesson["theory"]> = [
       id: "t2",
       titleAr: "Funktionsverbgefüge: تراكيب الأفعال الوظيفية",
       titleDe: "Funktionsverbgefüge",
-      explanationAr: "التراكيب الوظيفية تجعل الاسم هو حامل المعنى: eine Entscheidung treffen (يقرّر) بدل entscheiden، وin Betracht ziehen (يأخذ بعين الاعتبار) بدل berücksichtigen، وzur Verfügung stellen بدل bereitstellen. والفعل فيها («الفعل الوظيفي») شبه فارغ من معناه الأصلي: وظيفته أن يحمل التصريف والشخص والزمن، أما الدلالة الكاملة ففي الاسم.\n\nوكل كتلة تُحفظ بثلاثة عناصر معاً: الفعل الوظيفي (treffen · ziehen · stellen · legen)، وحرف الجر أو أداة التعريف (in · zur · auf)، وحالة الاسم. وهذه العناصر «تعاقدية» لا منطقية: يقال eine Entscheidung treffen ولا يقال machen، ويقال Kritik üben ولا يقال geben؛ لأن الاستعمال هو المصدر الوحيد هنا.\n\nوالفائدة الأسلوبية أن التراكيب الوظيفية ترفع السجل اللغوي: «Wir müssen diese Option berücksichtigen» صحيحة، لكن «Wir müssen diese Option in Betracht ziehen» تُقرأ كمكتوبة في مؤسسة، لأنها تقدّم المعلومة بمسافة رسمية. وهذا ما تطلبه التقارير والمراسلات المهنية والخطب.\n\nوللاختيار بين التركيب والفعل البسيط قاعدتان: (1) كثرة التراكيب تفقد النص حيويته إن تجاوزت واحدة كل جملتين، لأن القارئ يفقد الفاعل بين الأسماء؛ (2) بعض التراكيب مشترك بين الرسمي والعامي (eine Rolle spielen · in Kraft treten)، وبعضها محصور في اللغة المتخصّصة (einer Prüfung unterziehen). ومن أدرك هذا التوزيع استعمل الفعل البسيط في الحوار فصار طبيعياً، واستعمل الكتلة في التقرير فصار مهنياً.",
-      whyAr: "لماذا؟ لأن النصوص المهنية والأكاديمية تستخدمها كثيراً: هي تُعبّر عن عمل مؤسسي لا عن فعل شخصي، وتسمح بإضافة صفات ومتمّمات بسهولة (eine schnelle Entscheidung treffen · die Daten der Kunden zur Verfügung stellen). ولذلك يقرأ المتعلّم في تقرير واحد عشراً منها، فمن لم يحفظها قرأ الجملة كلمة كلمة وضاع عليه الفاعل، ومن حفظها قرأ الكتلة كوحدة واحدة وبقي المجال لالتقاط المعنى. ولهذا تُدرَّس مبكراً: لأنها عتبة الدخول إلى القراءة المهنية، لا زينة أسلوبية.",
+      explanationAr: "تضم Funktionsverbgefüge اسماً مع فعل يكون معناه أقل استقلالاً في هذا التركيب، مثل eine Entscheidung treffen، وKritik üben، وin Betracht ziehen. في هذه الأمثلة يحمل الاسم جانباً مهماً من المعنى، ويُسهم الفعل في بناء الجملة وتصريفها، لكن مقدار المعنى الذي يحتفظ به الفعل يختلف بين التراكيب.\n\nتعلّم التركيب كما يرد مع أدواته ومتمماته: eine Entscheidung treffen، Kritik an etwas üben، Wert auf etwas legen، jemanden/etwas zur Verfügung stellen. لاحظ موضع المتمم والحالة أيضاً؛ فالمعنى العام لا يكفي وحده لاختيار البنية الصحيحة. لا توجد قاعدة دلالية واحدة تسمح باستنتاج كل فعل من الاسم؛ لذا تساعد الأمثلة والمعاجم على تثبيت الاستعمال.\n\nقد يختار الكاتب التركيب الاسمي-الفعلي أو فعلاً أبسط بحسب المعنى والسياق والنبرة. فـberücksichtigen وin Betracht ziehen متقاربان في مثال الخيار، لكنهما ليسا قابلين للاستبدال في كل تركيب. ولا توجد عتبة عددية عامة لما يبدو طبيعياً؛ ركّز على دقة المعنى وتنوع الجمل بدلاً من عدّ الوصلات.",
+      whyAr: "معرفة هذه الوصلات تساعدك على فهم تعبيرات متكررة في مواد العمل والتقديم، وعلى اختيار صياغة مناسبة عند الكتابة أو الحديث. لكنها لا تثبت وحدها مستوى القارئ أو جودة نصه؛ افهم تركيب كل مثال ومتمماته قبل استعماله. واختبر المثال في جملة كاملة لا في ترجمة منفردة، لأن الفعل وحرف الجر يحددان دور الاسم والعلاقة بين عناصر العبارة.",
       table: {
         title: "Funktionsverbgefüge الشائعة",
         columns: ["التركيب", "الفعل البسيط", "المعنى", "المجال"],
@@ -67,7 +73,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
         { de: "Die Firma trifft eine wichtige Entscheidung.", ar: "الشركة تتخذ قراراً مهماً." }, { de: "Wir müssen die Kosten in Betracht ziehen.", ar: "يجب أن نأخذ التكاليف بعين الاعتبار." }, { de: "Wir müssen eine Entscheidung treffen.", ar: "علينا اتخاذ قرار." }, { de: "Das Unternehmen stellt die Daten zur Verfügung.", ar: "توفّر الشركة البيانات." }, { de: "Diese Option sollten wir in Betracht ziehen.", ar: "ينبغي أن نأخذ هذا الخيار في الاعتبار." },
         { de: "Wir müssen die Unterlagen bis Freitag zur Verfügung stellen.", ar: "علينا وضع المستندات تحت التصرف قبل الجمعة." },
       ],
-      comparisonWithArabic: "هذا التركيب مألوف تماماً للعربي: نقول في الصياغة الرسمية «اتخذ قراراً» و«وجّه نقداً»، وهما أقرب إلى الاسم منهما إلى الفعل البسيط. الفارق أن الاختيار في الألمانية مقيّد بشدة: لا يجوز machen eine Entscheidung ولا geben Kritik — فالفعل الوظيفي جزء من التركيب المحفوظ.",
+      comparisonWithArabic: "هذا التركيب مألوف تماماً للعربي: نقول في الصياغة الرسمية «اتخذ قراراً» و«وجّه نقداً»، وهما أقرب إلى الاسم منهما إلى الفعل البسيط. في هذه التراكيب لا يُستعمل عادةً machen مع eine Entscheidung ولا geben مع Kritik؛ فالفعل المعتاد جزء من التركيب الذي ينبغي حفظه.",
       eselsbruecke: "احفظ التركيب كاملاً كوحدة واحدة: الاسم مع فعله ومع حرف الجر إن وُجد. فالخطأ الشائع ليس في الاسم بل في اختيار الفعل، ولا توجد قاعدة تهديك إليه دائماً، لذلك تُحفظ مع الأمثلة.",
       commonMistakes: [
         { wrong: "eine Entscheidung machen", right: "eine Entscheidung treffen", whyAr: "الفعل الوظيفي المعتاد مع Entscheidung هو treffen، وmachen لا تُستعمل مع هذا الاسم بهذا المعنى." },
@@ -76,7 +82,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       ],
       relatedRuleComparison: {
         title: "Funktionsverbgefüge أم الفعل البسيط؟",
-        content: "الفعل البسيط أوضح وأخفّ وهو الأفضل في الكلام: Wir entscheiden. أما التركيب الوظيفي فأكثر رسمية وتجريداً، ويكثر في لغة الإدارة والصحافة والتقارير. استعمله في الكتابة الرسمية ولا تُثقل به المحادثة.",
+        content: "قد تكون الصياغة بالفعل البسيط أقصر (Wir berücksichtigen diese Option)، ويشيع أيضاً تركيب in Betracht ziehen. الاختيار بينهما يتبع المعنى والسياق؛ لا تُصنّف كل Funktionsverbgefüge تلقائياً على أنه رسمي أو غير مناسب للمحادثة.",
       },
     },
   ];

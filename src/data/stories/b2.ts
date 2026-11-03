@@ -14,7 +14,7 @@ const B2_1: InteractiveStory = {
   title: "Der erste Arbeitstag",
   titleAr: "أول يوم عمل",
   emoji: "💼",
-  description: "نورا تبدأ وظيفة جديدة — لغة الأعمال والرأي والجدل المهذب.",
+  description: "قصة تدريبية خيالية عن نورا في أول يوم عمل؛ تُقرأ المقاطع بصوت الجهاز (TTS). لا تمثل شركة أو تجربة حقيقية.",
   grammar: "Konjunktiv II (المهذّب) • جمل الغرض (um … zu) • لغة الأعمال",
   segments: [
     {
@@ -229,7 +229,7 @@ const B2_4: InteractiveStory = {
         de: "Wie war die Anfangszeit für Yasmin?",
         ar: "كيف كانت الفترة الأولى لياسمين؟",
         options: [
-          { text: "Schwierig wegen Sprache und Bürokratie", ar: "صعبة بسبب اللغة والروتين", correct: true, explanation: "نعم — هذا ما ورد في القصة: «Schwierig wegen Sprache und Bürokratie» (صعبة بسبب اللغة والروتين)." },
+          { text: "Schwierig wegen Sprache und Bürokratie", ar: "صعبة بسبب اللغة والبيروقراطية", correct: true, explanation: "نعم — هذا ما ورد في القصة: «Schwierig wegen Sprache und Bürokratie» (صعبة بسبب اللغة والبيروقراطية)." },
           { text: "Sehr einfach", ar: "سهلة جداً", correct: false, explanation: "لا — الصواب هو الخيار المذكور في القصة." },
           { text: "Langweilig", ar: "مملة", correct: false, explanation: "لا — الصواب هو الخيار المذكور في القصة." },
         ],
@@ -254,7 +254,7 @@ const B2_5: InteractiveStory = {
   title: "Die Konferenz",
   titleAr: "المؤتمر",
   emoji: "🎤",
-  description: "أستاذ يلقي محاضرة عن الذكاء الاصطناعي — العرض الرسمي والأسئلة.",
+  description: "قصة تدريبية خيالية عن أستاذ يعرض موضوع الذكاء الاصطناعي ويتلقى أسئلة؛ لا تمثل محاضرة أو نتائج بحث حقيقية.",
   grammar: "العرض الرسمي • نقل الآراء • الربط المتقدم (trotz, im Anschluss)",
   segments: [
     {
@@ -314,8 +314,8 @@ const B2_6: InteractiveStory = {
   title: "Der Bewerbungsprozess",
   titleAr: "عملية التقديم للوظيفة",
   emoji: "📋",
-  description: "ألبرشت يتقدم لمنصب مدير مشروع — الرسائل الرسمية والتقديم.",
-  grammar: "المراسلات الرسمية • السيرة الذاتية • اللغة الرسمية المتقدمة",
+  description: "حكاية تدريبية خيالية عن تقدّم ألبرشت لمنصب مدير مشروع؛ تتناول طلب التوظيف والمقابلة.",
+  grammar: "طلب التوظيف • السيرة الذاتية • تعبيرات رسمية مختارة",
   segments: [
     {
       id: 1,
@@ -360,11 +360,11 @@ const B2_6: InteractiveStory = {
       de: "Drei Tage später kam die Zusage: Er bekam die Stelle!",
       ar: "بعد ثلاثة أيام جاء القبول: حصل على الوظيفة!",
       choices: [
-        { text: "Eine gute Bewerbung öffnet Türen.", ar: "الطلب الجيد يفتح الأبواب.", next: 6, feedback: "صحيح تماماً!" },
-        { text: "Der Lebenslauf war unwichtig.", ar: "كانت السيرة الذاتية غير مهمة.", next: 6, feedback: "لا — كانت أساسية!" },
+        { text: "Er hatte seine Unterlagen vorbereitet und konnte seine Erfahrung vorstellen.", ar: "أعدّ مستنداته واستطاع عرض خبرته.", next: 6, feedback: "هذا ينسجم مع تفاصيل الحكاية التدريبية." },
+        { text: "Er verzichtete auf den Lebenslauf.", ar: "استغنى عن السيرة الذاتية.", next: 6, feedback: "لا — تذكر الحكاية أنه أرفق سيرة ذاتية." }
       ],
     },
-    { id: 6, de: "Herr Albrecht sagte: „Vorbereitung ist alles.“ Ende.", ar: "قال السيد ألبرشت: «التحضير هو كل شيء». النهاية." },
+    { id: 6, de: "Herr Albrecht sagte: „Eine gute Vorbereitung kann helfen.“ Ende.", ar: "قال السيد ألبرشت: «يمكن أن يساعد الاستعداد الجيد». النهاية." },
   ],
 };
 

@@ -4,6 +4,16 @@ import {lessonA106} from "./a1-06";
 
 const lesson = lessonA106;
 
+describe("تمييز معنى aufstehen في صيغة الأمر", () => {
+  it("يترجم Steh auf! بـانهض لا باستيقظ", () => {
+    const exercise = lesson.practiceBank.find((task) => task.id === "e6");
+    const exerciseText = JSON.stringify(exercise);
+    expect(exerciseText).toContain("(انهض)");
+    expect(exerciseText).not.toContain("(استيقظ)");
+    expect(exerciseText).toContain("Steh auf (قم)");
+  });
+});
+
 function knownTaskIds(): Set<string> {
   const ids = new Set<string>();
   for (const task of lesson.practiceBank) ids.add(`practice:${lesson.id}:${task.id}`);
@@ -61,6 +71,15 @@ describe("A1-06 — أوقات الفراغ والهوايات", () => {
     expect(task.instructionAr).toMatch(/الساعة 15:00 لا تناسبك/);
     expect(task.blanks[0]?.correct).toMatch(/Ja, gern/);
     expect(task.blanks[1]?.correct).toMatch(/15 Uhr nicht/);
+  });
+
+  it("يشرح أن Ich will صحيح وقد يكون أكثر مباشرة بحسب السياق لا فظاً على نحو مطلق", () => {
+    const request = lesson.practiceBank.find((task) => task.id === "e14");
+    if (!request || request.type !== "multiple-choice") throw new Error("A1-06 e14 must be multiple-choice");
+    const explanation = request.optionExplanations?.[request.options.indexOf("Ich will")];
+    expect(explanation).toContain("صحيحة نحوياً");
+    expect(explanation).toContain("السياق والنبرة");
+    expect(explanation).not.toContain("حدّة");
   });
 
   it("خيارات الاختيار من متعدد فريدة وإجابتها الصحيحة ضمن المدى", () => {

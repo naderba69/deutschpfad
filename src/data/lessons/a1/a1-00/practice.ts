@@ -31,7 +31,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionAr: "أي كلمة تُنطق بفاء؟",
       options: ["Video", "Vater", "Wasser", "Wien"],
       correctIndex: 1,
-      optionExplanations: ["لا — «Video» دخيلة شائعة ويُنطق فيها V صوتاً مجهوراً قريباً من V الإنجليزية، لا فاءً؛ أما «Vater» فتبدأ بفاء.", undefined, "لا — «Wasser» تبدأ بـ«W» وتُنطق كالواو؛ والمطلوب كلمةٌ فيها «V» تُنطق فاءً: «Vater».", "لا — «Wien» أوّلها «W» لا «V»؛ وفي كلمات ألمانية شائعة مثل «Vater»، تُنطق «V» فاءً."],
+      optionExplanations: ["لا — «Video» دخيلة شائعة ويُنطق فيها V صوتاً مجهوراً قريباً من V الإنجليزية، لا فاءً؛ أما «Vater» فتبدأ بفاء.", undefined, "لا — «Wasser» تبدأ بـW لا V؛ وW الألمانية تُنطق عادةً قريباً من [v] (ڤ). المطلوب كلمة تبدأ بحرف V ذي نطق [f]: «Vater».", "لا — «Wien» أوّلها «W» لا «V»؛ وفي كلمات ألمانية شائعة مثل «Vater»، تُنطق «V» فاءً."],
       explanation:
         "Vater = فاتر (ف). أما Video فتلفظ ڤ، وWasser وWien بـ ڤ أيضاً.",
       errorType: "spelling",

@@ -36,7 +36,7 @@ const B2_7: InteractiveStory = {
         ar: "كيف شعر السيد دمير في البداية؟",
         options: [
           { text: "Isoliert und verunsichert", ar: "معزولاً وغير واثق", correct: true, explanation: "صحيح — «sich isoliert gefühlt» بسبب عدم فهم اللغة." },
-          { text: "Völlig zu Hause", ar: "في بيته تماماً", correct: false, explanation: "لا — شعر بالعزلة في البداية." },
+          { text: "Völlig zu Hause", ar: "شعر بأنه في بيته تماماً", correct: false, explanation: "لا — شعر بالعزلة في البداية." },
           { text: "Gelangweilt", ar: "مملولاً", correct: false, explanation: "لا — لم يكن الملل هو المشكلة." },
         ],
       },
@@ -51,11 +51,11 @@ const B2_8: InteractiveStory = {
   title: "Nachhaltige Stadt",
   titleAr: "مدينة مستدامة",
   emoji: "🏙️",
-  description: "مشروع مدينة خضراء — البيئة والاقتصاد.",
+  description: "سيناريو خيالي عن مشروع مدينة مستدامة؛ لا يصف خطة بلدية حقيقية أو توقعاً موثقاً.",
   grammar: "الاشتقاق الاسمي • المبني للمجهول المتقدم",
   segments: [
     { id: 1, de: "Die Stadtverwaltung hat ein Projekt für eine nachhaltige Stadtentwicklung gestartet.", ar: "أطلقت إدارة المدينة مشروعاً للتنمية الحضرية المستدامة." },
-    { id: 2, de: "Es wird geplant, dass bis 2030 alle Gebäude energieeffizient werden.", ar: "يُخطط أنه بحلول 2030 ستصبح كل المباني موفرة للطاقة." },
+    { id: 2, de: "Im Planszenario sollen bis 2030 ausgewählte öffentliche Gebäude energetisch verbessert werden.", ar: "في هذا السيناريو يُراد تحسين كفاءة الطاقة في مبانٍ عامة مختارة بحلول 2030." },
     {
       id: 3,
       de: "Die Finanzierung des Projekts wird durch Fördermittel gesichert.",
@@ -78,13 +78,13 @@ const B2_8: InteractiveStory = {
         de: "Was ist das Ziel bis 2030?",
         ar: "ما الهدف بحلول 2030؟",
         options: [
-          { text: "Alle Gebäude werden energieeffizient", ar: "كل المباني تصبح موفرة للطاقة", correct: true, explanation: "صحيح — الهدف المعلن بوضوح في النص." },
+          { text: "Ausgewählte öffentliche Gebäude sollen energetisch verbessert werden", ar: "تحسين كفاءة الطاقة في مبانٍ عامة مختارة", correct: true, explanation: "صحيح — الهدف المعلن بوضوح في النص." },
           { text: "Alle Autos verschwinden", ar: "تختفي كل السيارات", correct: false, explanation: "لا — النص لا يتحدث عن إلغاء السيارات." },
           { text: "Die Stadt wird größer", ar: "المدينة تكبر", correct: false, explanation: "لا — الهدف هو كفاءة الطاقة." },
         ],
       },
     },
-    { id: 5, de: "Experten sind überzeugt, dass das Projekt beispielhaft sein wird. Ende.", ar: "الخبراء واثقون أن المشروع سيكون نموذجياً. النهاية." },
+    { id: 5, de: "Die Beteiligten hoffen, dass das Projekt anderen Städten als Beispiel dienen könnte. Ende.", ar: "يأمل المشاركون أن يكون المشروع مثالاً تستفيد منه مدن أخرى. النهاية." },
   ],
 };
 

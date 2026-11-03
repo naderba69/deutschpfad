@@ -66,7 +66,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       id: "e6",
       type: "fill-blank",
       instructionAr: "أكمل بأمر مناسب (Steh auf/Hör zu/Komm mit):",
-      template: "___ ! Es ist spät. (استيقظ) · ___ bitte! (أنصت) · ___ ! (تعال معنا)",
+      template: "___ ! Es ist spät. (انهض) · ___ bitte! (أنصت) · ___ ! (تعال معنا)",
       blanks: [
         { correct: "Steh auf", options: ["Steh auf", "Hör zu", "Komm mit"] },
         { correct: "Hör zu", options: ["Steh auf", "Hör zu", "Komm mit"] },
@@ -166,7 +166,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       errorType: "conjugation",
       points: 2,
     },
-    {"id": "e14", "type": "multiple-choice", "instructionAr": "اختر الصيغة الطبيعية للطلب في مقهى:", "questionDe": "Im Café: «___ einen Tee, bitte.»", "questionAr": "في المقهى: ما الصيغة المهذّبة؟", "options": ["Ich will", "Ich möchte", "Ich mag", "Ich kann"], "correctIndex": 1, "explanation": "möchte صيغة شائعة ولطيفة للطلب في المقهى. وwill صحيحة نحوياً لكنها قد تبدو أكثر مباشرة في هذا المقام؛ ويتأثر وقعها بالنبرة والسياق.", "optionExplanations": ["«Ich will einen Tee» صحيحة نحوياً لكنها مباشرةٌ حدّة؛ والمهذّب في المقهى «Ich möchte».", undefined, "«Ich mag einen Tee» ميلٌ عام لا طلب؛ والطلب «Ich möchte einen Tee, bitte».", "«Ich kann einen Tee» قدرةٌ لا طلب؛ والمطلوب صيغة الطلب «Ich möchte»."], "errorType": "vocabulary"},
+    {"id": "e14", "type": "multiple-choice", "instructionAr": "اختر الصيغة الطبيعية للطلب في مقهى:", "questionDe": "Im Café: «___ einen Tee, bitte.»", "questionAr": "في المقهى: ما الصيغة المهذّبة؟", "options": ["Ich will", "Ich möchte", "Ich mag", "Ich kann"], "correctIndex": 1, "explanation": "möchte صيغة شائعة ولطيفة للطلب في المقهى. وwill صحيحة نحوياً لكنها قد تبدو أكثر مباشرة في هذا المقام؛ ويتأثر وقعها بالنبرة والسياق.", "optionExplanations": ["«Ich will einen Tee» صحيحة نحوياً وقد تبدو أكثر مباشرةً؛ يتأثر وقعها بالسياق والنبرة. «Ich möchte» صيغة شائعة ألطف للطلب في هذا المثال.", undefined, "«Ich mag einen Tee» ميلٌ عام لا طلب؛ والطلب «Ich möchte einen Tee, bitte».", "«Ich kann einen Tee» قدرةٌ لا طلب؛ والمطلوب صيغة الطلب «Ich möchte»."], "errorType": "vocabulary"},
     {"id": "e15", "type": "fill-blank", "instructionAr": "أكمل تغيّر الصائت:", "template": "Ich ___ gern Obst, aber mein Bruder ___ lieber Fleisch. (essen)", "blanks": [{"correct": "esse", "options": ["esse", "isst", "esst", "isse"]}, {"correct": "isst", "options": ["isst", "esst", "esse", "essst"]}], "explanation": "في essen يتغير e إلى i مع du وer/sie/es: du isst وer isst؛ أما ich فتحافظ على e: ich esse.", "errorType": "conjugation"},
     {"id": "e16", "type": "word-ordering", "instructionAr": "رتّب جملة الفعل الناقص:", "tokens": ["Wir", "möchten", "am", "Samstag", "Fußball", "spielen", "."], "correctSentence": "Wir möchten am Samstag Fußball spielen.", "explanation": "في الجملة الخبرية البسيطة يأتي الفعل الناقص المصرف في المركز الثاني، والمصدر المجرد في نهاية الجملة.", "errorType": "word-order"},
     {"id": "e17", "type": "error-correction", "instructionAr": "صحّح صيغة الأمر:", "wrongSentence": "Fähr bitte langsam!", "wrongWord": "Fähr", "correctWord": "Fahr", "options": ["Fahr", "Fährst", "Fahre Sie", "Fahren"], "explanation": "في هذا الفعل نقول «Fahr!» من دون ä. وتبقى e→i/ie في أوامر أفعال معيّنة مثل «Iss!» و«Lies!» و«Nimm!»؛ احفظ صيغة كل فعل.", "errorType": "conjugation"},

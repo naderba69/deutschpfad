@@ -9,6 +9,7 @@ export const listening: Lesson["listening"] = {
       {
         id: "l1",
         title: "مقابلة عمل",
+        audioNoteAr: "يستخدم الاستماع في هذا المشهد صوت النطق الاصطناعي الذي يوفره المتصفح؛ ليس تسجيلاً بشرياً ولا ملف MP3 مستقلاً، وقد يختلف توفر الصوت وأداؤه بين الأجهزة.",
         lines: [
           { speaker: "Interviewerin", de: "Warum möchten Sie bei uns arbeiten?", ar: "لماذا تريد العمل عندنا؟" },
           { speaker: "Sami", de: "Ich lege großen Wert auf Innovation. Und ich ziehe diese Stelle sehr in Betracht.", ar: "أولي أهمية كبيرة للابتكار. وآخذ هذا المنصب بعين الاعتبار." },
@@ -19,6 +20,7 @@ export const listening: Lesson["listening"] = {
       {
         id: "l2",
         title: "قبول الوظيفة",
+        audioNoteAr: "يستخدم الاستماع في هذا المشهد صوت النطق الاصطناعي الذي يوفره المتصفح؛ ليس تسجيلاً بشرياً ولا ملف MP3 مستقلاً، وقد يختلف توفر الصوت وأداؤه بين الأجهزة.",
         lines: [
           { speaker: "HR", de: "Wir möchten Ihnen die Stelle anbieten.", ar: "نريد أن نعرض عليك المنصب." },
           { speaker: "Mona", de: "Das freut mich sehr! Ich bringe meine Motivation zum Ausdruck.", ar: "يسعدني جداً! أعبر عن حماسي." },
@@ -29,14 +31,14 @@ export const listening: Lesson["listening"] = {
       {
         id: "l3",
         title: "مقابلة حول العمل الجماعي",
-        audioNoteAr: "الصوت مولّد آلياً (TTS)، وليس تسجيلاً بشرياً.",
+        audioNoteAr: "هذه المقاطع TTS مولّدة من النصوص الحالية وليست تسجيلات بشرية. طابق تفريغ ASR محلي أولي النص في المقاطع الستة؛ لم يُجر استماع بشري أو تقييم لوضوح الصوت وطبيعيته، ولا يقيس هذا نطق المتعلم.",
         lines: [
           { speaker: "Interviewerin", de: "Welche Aufgaben würden Sie in unserem Team übernehmen?", ar: "ما المهام التي ستتولاها في فريقنا؟", audioSrc: "/audio/lessons/b2-09/ls-b2-09-3-1.mp3" },
           { speaker: "Sami", de: "Ich würde meine Erfahrung im Projektmanagement zur Verfügung stellen und Verantwortung übernehmen.", ar: "سأضع خبرتي في إدارة المشاريع تحت التصرف وأتحمل المسؤولية.", audioSrc: "/audio/lessons/b2-09/ls-b2-09-3-2.mp3" },
           { speaker: "Interviewerin", de: "Was ist Ihnen bei der Zusammenarbeit besonders wichtig?", ar: "ما المهم بالنسبة إليك خصوصاً في التعاون؟", audioSrc: "/audio/lessons/b2-09/ls-b2-09-3-3.mp3" },
           { speaker: "Sami", de: "Ich lege großen Wert auf klare Kommunikation. Teamarbeit spielt für mich eine große Rolle.", ar: "أولي أهمية كبيرة للتواصل الواضح. والعمل الجماعي مهم جداً بالنسبة إليّ.", audioSrc: "/audio/lessons/b2-09/ls-b2-09-3-4.mp3" },
-          { speaker: "Interviewerin", de: "Wo sehen Sie sich in drei Jahren? Sami: Ich möchte mich beruflich weiterentwickelt haben.", ar: "أين ترى نفسك بعد ثلاث سنوات؟ سامي: أريد أن أكون قد تطورت مهنياً.", audioSrc: "/audio/lessons/b2-09/ls-b2-09-3-5.mp3" },
-          { speaker: "Sami", de: "Ich bin davon überzeugt, dass ich mich bei Ihnen fachlich und persönlich weiterentwickeln kann.", ar: "أنا مقتنع بأنني أستطيع أن أتطور لديكم مهنياً وشخصياً.", audioSrc: "/audio/lessons/b2-09/ls-b2-09-3-6.mp3" },
+          { speaker: "Interviewerin", de: "Wo sehen Sie sich in drei Jahren?", ar: "أين ترى نفسك بعد ثلاث سنوات؟", audioSrc: "/audio/lessons/b2-09/ls-b2-09-3-5.mp3" },
+          { speaker: "Sami", de: "Ich möchte mich fachlich weiterentwickeln und mehr Verantwortung übernehmen. Ich bin davon überzeugt, dass ich mich bei Ihnen beruflich weiterentwickeln kann.", ar: "أود أن أتطور مهنياً وأن أتحمل مسؤولية أكبر. وأنا مقتنع بأنني أستطيع مواصلة التطور المهني لديكم.", audioSrc: "/audio/lessons/b2-09/ls-b2-09-3-6.mp3" },
         ],
       },
     ],
@@ -118,19 +120,19 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "أصوات التقديم: sch، au، وst",
+    title: "النطق والرموز الصوتية (IPA)",
     items: [
-      { de: "die Bewerbung", ar: "التقديم", note: "w = ڤ (صوت v): بِڤِربونغ" },
-      { de: "das Anschreiben", ar: "خطاب التقديم", note: "sch = ش: آن-شرايبِن" },
-      { de: "der Lebenslauf", ar: "السيرة الذاتية", note: "au = آو: ليبِنْس-لاوف" },
-      { de: "die Stelle", ar: "المنصب", note: "st = شت: شتِلِّه" },
-      { de: "die Erfahrung", ar: "الخبرة", note: "f + a: إرفارونغ" },
-      { de: "die Fähigkeit", ar: "المهارة", note: "h = تطويل: فيه-يغكايت" },
+      { de: "die Bewerbung", ar: "طلب التوظيف", note: "[bəˈvɛʁbʊŋ] — موضع النبر على المقطع الثاني؛ w تمثل /v/." },
+      { de: "das Anschreiben", ar: "رسالة التقديم", note: "[ˈanʃʁaɪ̯bn̩] — sch تمثل /ʃ/، وei تمثل /aɪ̯/." },
+      { de: "der Lebenslauf", ar: "السيرة الذاتية", note: "[ˈleːbənsˌlaʊ̯f] — au تمثل /aʊ̯/، مع نبر رئيسي ثم ثانوي." },
+      { de: "die Stelle", ar: "الوظيفة", note: "[ˈʃtɛlə] — بداية st هنا تمثل /ʃt/." },
+      { de: "die Erfahrung", ar: "الخبرة", note: "[ɛɐ̯ˈfaːʁʊŋ] — النبر على مقطع fa؛ قيمة /ʁ/ تختلف إقليمياً." },
+      { de: "die Fähigkeit", ar: "المهارة", note: "[ˈfɛːɪçkaɪ̯t] — h يطيل /ɛː/، وch هنا تمثل /ç/." },
     ],
-    tip: "Anschreiben = آن-شرايبِن — sch ثم ei. وLebenslauf = ليبِنْس-لاوف — au = آو.",
+    tip: "النطق مكتوب برموز IPA تقريبية للكلمات الألمانية القياسية؛ تختلف بعض تحققات /ʁ/ إقليمياً. لا تمثل الرموز حكماً على أداء ملف صوتي بعينه.",
     shadowing: [
       { de: "Ich bewerbe mich um die Stelle.", ar: "أتقدم للمنصب.", tip: "sich bewerben um" },
-      { de: "Anbei finden Sie meinen Lebenslauf.", ar: "مرفقاً سيرتي الذاتية.", tip: "Anbei finden Sie" },
+      { de: "Anbei finden Sie meinen Lebenslauf.", ar: "تجدون سيرتي الذاتية مرفقة.", tip: "Anbei finden Sie" },
       { de: "Ich lege Wert auf Pünktlichkeit.", ar: "أولي أهمية للالتزام بالمواعيد.", tip: "Wert legen auf" },
       { de: "Ich stehe zur Verfügung.", ar: "أنا تحت التصرف.", tip: "zur Verfügung stehen" },
     ],

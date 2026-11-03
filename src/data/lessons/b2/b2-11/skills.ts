@@ -9,8 +9,9 @@ export const listening: Lesson["listening"] = {
       {
         id: "l1",
         title: "في دار النشر",
+        audioNoteAr: "الصوت في هذا المشهد يُنشأ بواسطة تحويل النص إلى كلام في المتصفح (TTS)، وليس تسجيلاً بشرياً؛ ويعتمد الصوت على الجهاز والمتصفح.",
         lines: [
-          { speaker: "Redakteurin", de: "Kennen Sie den Autor, dessen Romane wir übersetzen?", ar: "هل تعرفين الكاتب الذي نترجم رواياته؟" },
+          { speaker: "Redakteurin", de: "Kennen Sie den Autor, dessen Romane wir übersetzen?", ar: "هل تعرف الكاتب الذي نترجم رواياته؟" },
           { speaker: "Karim", de: "Natürlich. Das ist der Schriftsteller, dessen Bücher in Tunesien sehr beliebt sind.", ar: "بالطبع. إنه الأديب الذي كتبه محبوبة جداً في تونس." },
           { speaker: "Redakteurin", de: "Wir haben den Termin leider verschieben müssen.", ar: "اضطررنا للأسف إلى تأجيل الموعد." },
           { speaker: "Karim", de: "Wegen der Kollegin, deren Vortrag ausgefallen ist?", ar: "بسبب الزميلة التي أُلغيت محاضرتها؟" },
@@ -20,8 +21,9 @@ export const listening: Lesson["listening"] = {
       {
         id: "l2",
         title: "بعد العطلة",
+        audioNoteAr: "الصوت في هذا المشهد يُنشأ بواسطة تحويل النص إلى كلام في المتصفح (TTS)، وليس تسجيلاً بشرياً؛ ويعتمد الصوت على الجهاز والمتصفح.",
         lines: [
-          { speaker: "Nora", de: "Ich habe mein Auto reparieren lassen. Es war teuer.", ar: "أعطيت سيارتي لتُصلَّح. كان الأمر مكلفاً." },
+          { speaker: "Nora", de: "Ich habe mein Auto reparieren lassen. Es war teuer.", ar: "كلّفت شخصاً بإصلاح سيارتي؛ وكان ذلك مكلفاً." },
           { speaker: "Jonas", de: "Bei dem Mechaniker, dessen Werkstatt am Bahnhof ist?", ar: "عند الميكانيكي الذي ورشته قرب المحطة؟" },
           { speaker: "Nora", de: "Ja. Ich habe zwei Tage warten müssen.", ar: "نعم. اضطررت إلى الانتظار يومين." },
           { speaker: "Jonas", de: "Ich habe dich gestern telefonieren hören. Klang stressig.", ar: "سمعتك تتحدثين في الهاتف أمس. بدا الأمر مرهقاً." },
@@ -30,7 +32,7 @@ export const listening: Lesson["listening"] = {
       {
         id: "l3",
         title: "التحضير لإصدار مترجم",
-        audioNoteAr: "الصوت مولّد آلياً (TTS)، وليس تسجيلاً بشرياً.",
+        audioNoteAr: "ملفات هذا المشهد مولّدة آلياً (TTS)، وليست تسجيلات بشرية. طابق تفريغ ASR محلي بتمريرين النصوص الستة بعد تصحيح ثلاثة مقاطع؛ لم تُجرَ مراجعة سمعية بشرية، ولا يثبت ASR جودة النطق أو طبيعته.",
         lines: [
           { speaker: "Mira", de: "Wir arbeiten mit der Übersetzerin, deren letzter Roman viel Lob erhalten hat.", ar: "نعمل مع المترجمة التي لاقت روايتها الأخيرة استحساناً كبيراً.", audioSrc: "/audio/lessons/b2-11/ls-b2-11-3-1.mp3" },
           { speaker: "Karim", de: "Ist das der Autor, dessen Bücher wir ins Arabische übertragen?", ar: "هل هذا هو الكاتب الذي ننقل كتبه إلى العربية؟", audioSrc: "/audio/lessons/b2-11/ls-b2-11-3-2.mp3" },
@@ -124,16 +126,16 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "أصوات الإسناد: ss القصيرة وe غير المنبورة وr النهائية",
+    title: "النطق: dessen وderen والمصدر المزدوج",
     items: [
-      { de: "dessen", ar: "الذي (مضاف إليه، مذكّر)", note: "ss قصيرة حادّة والحركة قبلها قصيرة، وe الثانية مختزلة: دِسّـِن" },
-      { de: "deren", ar: "التي/الذين (مضاف إليه)", note: "e الأولى طويلة مفتوحة وr خفيفة في الحلق: ديـرِن" },
-      { de: "müssen", ar: "يجب", note: "ü شفتان مستديرتان مع نطق i، وss قصيرة: مُيسِّن" },
-      { de: "lassen", ar: "يدع/يكلّف", note: "a قصيرة لأنّ ss تقصّر ما قبلها: لاسِّن" },
-      { de: "der Autor", ar: "الكاتب", note: "النبر على المقطع الأول، وr النهائية تُلفظ حركة خفيفة: آوتوأ" },
-      { de: "übersetzen", ar: "يترجم", note: "ü في البداية، وtz = تس، والنبر على setz: أوبَرزِتسِن" },
+      { de: "dessen", ar: "ضمير ملكية نسبي للمذكّر والمحايد", note: "النطق القياسي تقريباً [ˈdɛsən]؛ ss بعد حركة قصيرة، والمقطع الأول منبور." },
+      { de: "deren", ar: "ضمير ملكية نسبي للمؤنّث والجمع", note: "النطق القياسي تقريباً [ˈdeːʁən]؛ الحركة e الأولى طويلة، مع اختلاف نطق r إقليمياً." },
+      { de: "müssen", ar: "يجب", note: "النطق القياسي تقريباً [ˈmʏsən]؛ ü أمامية مستديرة وss بعد حركة قصيرة." },
+      { de: "lassen", ar: "يدع/يكلّف", note: "النطق القياسي تقريباً [ˈlasən]؛ a قصيرة وss بعدها." },
+      { de: "der Autor", ar: "الكاتب", note: "النطق القياسي تقريباً [ˈaʊ̯toːɐ̯]؛ النبر على المقطع الأول، وقد تتحقق r النهائية صوتاً حركياً." },
+      { de: "übersetzen", ar: "يترجم", note: "النطق القياسي تقريباً [ˌyːbɐˈzɛtsən]؛ النبر الرئيسي على المقطع setz." },
     ],
-    tip: "قاعدة ss: الحرف المزدوج ss يعني أنّ الحركة قبله قصيرة (dessen، müssen، lassen) — بخلاف ß التي تأتي بعد حركة طويلة (Straße). طول الحركة هنا هو ما يفرّق الكلمة عن أختها.",
+    tip: "قاعدة إملائية عامة: يأتي ss بعد حركة قصيرة، بينما تأتي ß بعد حركة طويلة أو مزدوجة (مثل Straße وheißen). هذا نمط إملائي يفيد في القراءة، وليس بديلاً عن سماع طول الحركة ونطقها.",
     shadowing: [
       { de: "Der Autor, dessen Roman ich lese, kommt aus Wien.", ar: "الكاتب الذي أقرأ روايته من فيينا.", tip: "dessen — مالك مذكّر" },
       { de: "Die Frau, deren Auto dort steht, ist meine Chefin.", ar: "المرأة التي سيارتها هناك هي مديرتي.", tip: "deren — مالكة مؤنّثة" },
@@ -171,7 +173,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
     {
       id: "w3",
       type: "dictation",
-      instructionAr: "استمع واكتب الجملة:",
+      instructionAr: "استمع إلى الصوت الذي يولّده المتصفح واكتب الجملة:",
       audioText: "Die Kollegin, deren Vortrag wir gehört haben, arbeitet hier.",
       explanation: "deren للمالكة المؤنّثة، والاسم بعدها بلا أداة تعريف: deren Vortrag.",
       errorType: "spelling",

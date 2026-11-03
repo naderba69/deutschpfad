@@ -70,8 +70,8 @@ const A1_15: InteractiveStory = {
         ar: "ماذا يوجد للفطور؟",
         options: [
           { text: "Brötchen, Käse und Eier", ar: "خبز وجبن وبيض", correct: true, explanation: "نعم — هذه الأطعمة موجودة على الطاولة." },
-          { text: "Pizza und Eis", ar: "بيتزا وآيس كريم", correct: false, explanation: "لا — هذه أطعمة الغداء أو الحلوى." },
-          { text: "Fisch und Reis", ar: "سمك وأرز", correct: false, explanation: "لا — الفطور ألماني تقليدي." },
+          { text: "Pizza und Eis", ar: "بيتزا وآيس كريم", correct: false, explanation: "لا — لم يرد ذكرهما؛ يذكر النص Brötchen, Käse, Eier und Marmelade." },
+          { text: "Fisch und Reis", ar: "سمك وأرز", correct: false, explanation: "لا — لا يذكر النص سمكاً أو أرزاً؛ بل Brötchen, Käse, Eier und Marmelade." },
         ],
       },
     },
@@ -229,7 +229,7 @@ const B1_13: InteractiveStory = {
   id: "b1-nebenjob",
   level: "B1",
   title: "Der Nebenjob",
-  titleAr: "العمل الإضافي",
+  titleAr: "العمل الجانبي",
   emoji: "🛍️",
   description: "قصة تدريبية خيالية عن طالبة تعمل في متجر وتوازن بين العمل والدراسة؛ ليست مرجعاً للأجور أو شروط العمل.",
   grammar: "الماضي البسيط (Präteritum) • التوازن بين العمل والدراسة",
@@ -238,7 +238,7 @@ const B1_13: InteractiveStory = {
     {
       id: 2,
       de: "Sie arbeitet acht Stunden am Wochenende und verdient damit eigenes Geld.",
-      ar: "تعمل ثماني ساعات وتكسب 12 يورو في الساعة.",
+      ar: "تعمل ثماني ساعات في عطلة نهاية الأسبوع وتكسب مالها الخاص.",
       question: {
         de: "Wo arbeitet Clara?",
         ar: "أين تعمل كلارا؟",
@@ -307,7 +307,7 @@ const B1_14: InteractiveStory = {
         ],
       },
     },
-    { id: 5, de: "Alle sind motivierter nach Hause gekommen. Ende.", ar: "عاد الجميع إلى البيت بحماس أكبر. النهاية." },
+    { id: 5, de: "Alle sind motivierter nach Hause gekommen. Ende.", ar: "عاد الجميع إلى البيت وهم أكثر حماساً. النهاية." },
   ],
 };
 
@@ -361,7 +361,7 @@ const B2_12: InteractiveStory = {
   title: "Homeoffice-Kultur",
   titleAr: "ثقافة العمل عن بُعد",
   emoji: "💻",
-  description: "نقاش حول مستقبل العمل عن بُعد — نقل الآراء والتحليل.",
+  description: "مشهد تدريبي خيالي عن نقاش داخلي حول العمل عن بُعد؛ لا يقرر اتجاهات عامة في الإنتاجية أو التعاون.",
   grammar: "Konjunktiv I (نقل الكلام) • لغة الأعمال",
   segments: [
     { id: 1, de: "In der Firma wird intensiv über Homeoffice diskutiert.", ar: "يُناقش في الشركة بشكل مكثف موضوع العمل عن بُعد." },
@@ -493,7 +493,7 @@ const B2_15: InteractiveStory = {
   description: "قصة تدريبية متخيّلة عن آراء في مستقبل العمل؛ لا تعرض توقعات خبراء موثقة.",
   grammar: "المستقبل التام (Futur II) • التحليل • عرض الافتراضات والآراء",
   segments: [
-    { id: 1, de: "In einer fiktiven Gesprächsrunde diskutieren drei Personen, wie künstliche Intelligenz die Arbeit verändern könnte.", ar: "في نقاش متخيّل يتحدث ثلاثة أشخاص عن كيفية إمكان تغيّر العمل بالذكاء الاصطناعي." },
+    { id: 1, de: "In einer fiktiven Gesprächsrunde diskutieren drei Personen, wie künstliche Intelligenz die Arbeit verändern könnte.", ar: "في نقاش متخيّل، يتحدث ثلاثة أشخاص عن الكيفية التي يمكن أن يغيّر بها الذكاء الاصطناعي العمل." },
     {
       id: 2,
       de: "Eine Teilnehmerin vermutet, dass künstliche Intelligenz bis 2040 einige Routineaufgaben übernommen haben wird. Das ist ihre Annahme, keine Prognose aus einer Studie.",

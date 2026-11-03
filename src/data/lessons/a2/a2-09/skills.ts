@@ -66,7 +66,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         instructionAr: "أجب عن سؤال الفهم بعد قراءة المقطع الثاني:",
         questionDe: "Was gefiel Frau Yilmaz besonders gut?",
         questionAr: "ما الهدية التي أعجبت السيدة يلماز خصوصاً؟",
-        options: ["Ein großes Fotoalbum.", "Ein Blumenstrauß.", "Ein Kuchen mit Schokolade.", "Ein neues Kleid."],
+        options: ["Ein großes Fotoalbum.", "Ein Blumenstrauß.", "Ein Kuchen, der nach Schokolade riecht.", "Ein neues Kleid."],
         correctIndex: 0,
         explanation:
           "أعجبها ألبوم الصور الذي صنعه الأطفال؛ الزهور والكعكة مذكورتان أيضاً لكنهما ليستا الهدية المقصودة.",
@@ -75,7 +75,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         optionExplanations: [
           undefined,
           "الزهور «Ein Blumenstrauß» مذكورة لكنها ليست ما أعجبها خصوصاً.",
-          "الكعكة «Ein Kuchen mit Schokolade» قُدِّمت في الاحتفال، لا الهدية التي أعجبتها.",
+          "ورد أن ضيفاً أحضر كعكة تفوح منها رائحة الشوكولاتة («Ein Kuchen, der nach Schokolade riecht»)، لكنها ليست الهدية التي أعجبت السيدة يلماز خصوصاً.",
           "لم يُذكر فستانٌ جديد «Ein neues Kleid» في النص. ",
         ],
       },

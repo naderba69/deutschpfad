@@ -482,3 +482,13 @@ describe("B1-12 lesson content audit", () => {
     ).toBe("pending");
   });
 });
+
+describe("حراسة معنى arbeiten als في قراءة B1-12", () => {
+  it("يحفظ مهنة أحمدي وهدفها المستقل عن عملها", () => {
+    const reading = lessonB112.reading;
+    expect(reading?.paragraphs[1]).toContain("arbeitet als Krankenschwester");
+    expect(reading?.paragraphsAr[1]).toContain("تعمل السيدة أحمدي ممرّضةً");
+    expect(reading?.paragraphs[1]).toContain("um ihre Ausbildung anerkennen zu lassen");
+    expect(reading?.paragraphsAr[1]).toContain("لكي يُعترف بتأهيلها المهني");
+  });
+});

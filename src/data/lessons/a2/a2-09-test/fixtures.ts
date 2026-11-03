@@ -43,7 +43,7 @@ export const expectedMultipleChoiceOptions: Record<string, string[]> = {
   m1: ["dem", "den", "der", "die"],
   m2: ["dir", "dich", "mir", "mich"],
   rq1: ["In den Innenhof.", "In ein Café.", "In ihr Büro.", "In eine Turnhalle."],
-  rq2: ["Ein großes Fotoalbum.", "Ein Blumenstrauß.", "Ein Kuchen mit Schokolade.", "Ein neues Kleid."],
+  rq2: ["Ein großes Fotoalbum.", "Ein Blumenstrauß.", "Ein Kuchen, der nach Schokolade riecht.", "Ein neues Kleid."],
   rq3: [
     "Sie helfen beim Aufräumen.",
     "Sie beginnen einen Ausflug.",

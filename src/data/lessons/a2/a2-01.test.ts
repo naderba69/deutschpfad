@@ -29,7 +29,7 @@ const expectedMultipleChoiceKeys: Record<string, string> = {
   rq3: "Die Schwester hat ihren Rucksack im Zug vergessen",
   rq4: "wollten steht im Präteritum, haben … gebucht im Perfekt; der Text verwendet beide Formen.",
   rq5: "sein — im intransitiven Sinn «der Zug fährt ab»",
-  rq6: "Sie bekamen ein Zimmer in einem anderen Hotel, das billiger und schöner war.",
+  rq6: "Sie bekamen ein Zimmer in einem günstigeren, schöneren Hotel.",
   q1: "Museen besucht",
   q2: "nach Sousse",
   q3: "super",
@@ -199,7 +199,10 @@ describe("A2-01 audited lesson", () => {
     expect(text.paragraphs[1]).toContain("Nach zwei Stunden sind wir endlich abgefahren.");
     expect(text.questions.find((question) => question.id === "rq5")?.questionDe).toContain("Nach zwei Stunden");
     expect(text.questions.find((question) => question.id === "rq6")?.options[0]).toBe(
-      "Sie bekamen ein Zimmer in einem anderen Hotel, das billiger und schöner war.",
+      "Sie bekamen ein Zimmer in einem günstigeren, schöneren Hotel.",
+    );
+    expect(text.questions.find((question) => question.id === "rq6")?.options[1]).toBe(
+      "Sie fuhren noch am selben Abend enttäuscht nach Hause.",
     );
     expect(task("e3").instructionAr).toContain("Partizip II");
     expect(task("e4").instructionAr).toContain("Partizip II");
@@ -466,5 +469,19 @@ describe("A2-01 audited lesson", () => {
         }
       }
     }
+  });
+});
+
+describe("حراسة ترجمة aufstehen في A2-01", () => {
+  it("يبقي الخيارات الخاطئة وشروحها متسقة في تمرين e8", async () => {
+    const {practiceBank} = await import("@/data/lessons/a2/a2-01/practice");
+    const exercise = practiceBank.find((item) => item.id === "e8");
+    if (!exercise || exercise.type !== "multiple-choice") throw new Error("تمرين e8 مفقود أو ليس اختياراً متعددًا");
+    expect(exercise.options[1]).toBe("أنهض في السابعة");
+    expect(exercise?.optionExplanations?.[1]).toContain("أنهض في السابعة");
+    expect(exercise?.options[2]).toBe("سأنهض في السابعة");
+    expect(exercise?.optionExplanations?.[2]).toContain("سأنهض في السابعة");
+    expect(exercise?.optionExplanations?.[1]).not.toContain("أستيقظ");
+    expect(exercise?.optionExplanations?.[2]).not.toContain("أستيقظ");
   });
 });

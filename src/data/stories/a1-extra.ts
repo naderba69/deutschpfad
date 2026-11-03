@@ -30,10 +30,10 @@ const A1_9: InteractiveStory = {
     {
       id: 4,
       de: "Sie essen auch einen Kuchen. Der Kuchen schmeckt sehr gut.",
-      ar: "يأكلان أيضاً قطعة كعك. الكعك لذيذ جداً.",
+      ar: "يأكلان أيضاً كعكةً. الكعكة لذيذة جداً.",
       question: {
-        de: "Was möchte Tim?",
-        ar: "ماذا يريد تيم؟",
+        de: "Was möchte Tim trinken?",
+        ar: "ماذا يريد تيم أن يشرب؟",
         options: [
           { text: "Einen Kaffee", ar: "قهوة", correct: true, explanation: "صحيح — «Ich möchte einen Kaffee» = أريد قهوة." },
           { text: "Einen Tee", ar: "شاياً", correct: false, explanation: "لا — الشاي من نصيب بيا وليس تيم." },

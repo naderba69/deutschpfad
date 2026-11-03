@@ -95,7 +95,7 @@ export const A2_MODEL2_HOEREN: ExamHoerenTeil[] = [
     ],
     questions: [
       { id: "m2a3-q1", q: "Warum fährt die Linie vier anders?", qAr: "لماذا تسير الحافلة رقم 4 في مسار آخر؟", options: ["Wegen Bauarbeiten", "Wegen eines Unfalls", "Wegen eines Festes"], correct: 0, whyAr: "قيل: Wegen der Bauarbeiten in der Goethestraße." },
-      { id: "m2a3-q2", q: "Welche Haltestelle können die Fahrgäste benutzen?", qAr: "أي موقف يمكن للركاب استخدامه؟", options: ["Der Marktplatz", "Das Rathaus", "Die Goethestraße"], correct: 1, whyAr: "قيل: können die Haltestelle Rathaus benutzen، وMarktplatz لا يُخدَم." },
+      { id: "m2a3-q2", q: "Welche Haltestelle können die Fahrgäste benutzen?", qAr: "أي موقف يمكن للركاب استخدامه؟", options: ["Haltestelle Marktplatz", "Haltestelle Rathaus", "Haltestelle Goethestraße"], correct: 1, whyAr: "الموقف المقصود هو Rathaus؛ أمّا Marktplatz فلا يخدمه هذا الخط بحسب الإعلان." },
       { id: "m2a3-q3", q: "Wie lange dauern die Bauarbeiten?", qAr: "كم تستمر أشغال البناء؟", options: ["Bis Ende Oktober", "Bis Ende September", "Eine Woche"], correct: 0, whyAr: "قيل: dauern bis Ende Oktober." },
       { id: "m2a3-q4", q: "Warum ruft Familie Weber an?", qAr: "لماذا تتصل عائلة فيبر؟", options: ["Um sich für die Wohnung zu interessieren", "Um sich zu beschweren", "Um einen Termin beim Arzt zu machen"], correct: 0, whyAr: "قالت: Ist die Wohnung noch frei?" },
     ],

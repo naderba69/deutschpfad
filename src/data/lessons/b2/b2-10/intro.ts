@@ -18,8 +18,8 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z2",
-      de: "Ich kann Meinungen abschwächen und betonen.",
-      ar: "أن ألطّف وأؤكد وأتحفظ في الجمل الأكاديمية.",
+      de: "Ich kann Aussagen stützen, Meinungen kennzeichnen und ihren Geltungsbereich einschränken.",
+      ar: "أن أميز بين إسناد التأكيد، وبيان الرأي، والاحتمال، وتقييد نطاق الحكم.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["e1", "e2", "e6", "e8", "m1", "m2", "w2"],
@@ -37,8 +37,8 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     },
     {
       id: "z3",
-      de: "Ich kann Grammatikstrukturen aus B2 in einem Satz kombinieren.",
-      ar: "أن أجمع في الجملة الواحدة بين أكثر من بنية من B2.",
+      de: "Ich kann ausgewählte Grammatikstrukturen aus B2 in passenden Sätzen anwenden.",
+      ar: "أن أستخدم بعض البنى المختارة من B2 في جمل مناسبة للسياق.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["e15-nominal", "e16-b2", "e17-b2", "m6", "m7", "m8"],
@@ -59,24 +59,21 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       ar: "أن أربط مصطلحات الدراسة الجامعية بمعانيها.",
       evidence: {
         completion: "all-correct",
-        exerciseIds: ["e3", "w3"],
-        taskIds: [
-          "practice:b2-10:e3",
-          "writing:b2-10:w3",
-        ],
-        labelAr: "أطابق مصطلحات الدراسة الجامعية (e3) وأكتب جملة أكاديمية بالإملاء (w3)، دون كشف الحل.",
+        exerciseIds: ["e3"],
+        taskIds: ["practice:b2-10:e3"],
+        labelAr: "أطابق مصطلحات الدراسة الجامعية بمعانيها (e3)، دون كشف الحل.",
       },
     },
   ];
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "أنت الآن في قمة رحلتك! هذا الدرس الأخير يجمّع B2 كله: Konjunktiv I (النقل)، Passiv المتقدم، النسبية المتقدمة، المشاركات، الروابط المتقدمة، الاشتقاق، Futur II، الأفعال مع حروف الجر. وستضيف مهارة الباحث: التأكيد والتلطيف والتحفظ — لغة الأكاديميا.",
+      "في هذا الدرس الختامي لمسار B2 ستتدرّب على الكتابة في السياق الجامعي، والتمييز بين التأكيد والرأي والاحتمال وتحديد نطاق الحكم، وتراجع أمثلة مختارة من تراكيب درستها سابقاً. هذه المراجعة لا تحصر قواعد B2 كلها ولا تثبت وحدها الجاهزية لامتحان رسمي.",
     motivatingQuestionDe: "Wie schreibt man eine Hausarbeit?",
     contextAr:
-      "الدراسة في ألمانيا حلم كثيرين: نتعلم لغة الجامعة — المقال الأكاديمي وطرق التعبير الدقيق — ثم نراجع B2 كله في ختام المستويات الأربعة.",
+      "يدور الدرس حول مفردات الدراسة والكتابة في سياق جامعي، ويعرض أدوات للتعبير الدقيق؛ ثم يراجع بعض البنى التي سبق تناولها في مسار B2. الجمل التي تذكر دراسة أو نتائج بحثية أمثلة لغوية افتراضية ما لم يُذكر مصدر محدد.",
     contextDe: "Die vorliegende Arbeit beschäftigt sich mit der deutschen Sprache.",
-    connectionToPreviousAr: "هذا ختام B2: من Konjunktiv I (درس 1) إلى الوصلات (درس 9). كل شيء يجتمع في الدرس الأخير — وبعده: اختبارات Goethe الكاملة (المرحلة 10)!",
+    connectionToPreviousAr: "هذا ختام مسار B2 في المنهج، ويستدعي أمثلة من وحداته السابقة. أي اختبارات تدريبية لاحقة لا تُعدّ نماذج رسمية أو دليلاً على الاعتماد أو الجاهزية للامتحان.",
     activateVocabulary: [
       { de: "das Studium", ar: "الدراسة الجامعية" },
       { de: "die Hausarbeit", ar: "البحث الجامعي" },
@@ -90,24 +87,24 @@ export const review: NonNullable<Lesson["review"]> = [
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة شاملة من B2 (درس b2-01 — العلوم: نقل الكلام بـ Konjunktiv I): اختر الصيغة:",
+      instructionAr: "مراجعة تراكمية منتقاة من B2 (درس b2-01 — العلوم: نقل الكلام بـ Konjunktiv I): اختر الصيغة:",
       questionDe: "Der Professor sagt, die Frist ___ verlängert.",
       options: ["werde", "wird", "würde", "wurde"],
       correctIndex: 0,
       explanation:
-        "النقل المكتوب الرسمي يلزم Konjunktiv I: werden ← er/sie werde. أما wird فإخبار (يجعل الكلام رأي الكاتب)، وwürde صيغة شرطية، وwurde ماضٍ للمجهول.",
+        "في هذا السؤال يُستهدف Konjunktiv I في نقل الكلام: werden ← er/sie werde. قد ترد صيغ أخرى في الاستعمال تبعاً للسياق والسجل؛ أما würde فـKonjunktiv II وwurde ماضٍ للمجهول.",
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«wird» صيغة المضارع، ولا تناسب مضارع الحالة في الكلام غير المباشر.",
-        "«würde» صيغة الشرط، ولا تناسب الكلام غير المباشر هنا.",
-        "«wurde» صيغة الماضي، ولا تناسب الكلام غير المباشر هنا.",
+        "«wird» صيغة المضارع Indicativ؛ ليست علامة النقل المستهدفة في هذا السؤال.",
+        "«würde» صيغة Konjunktiv II وقد ترد في سياقات نقل أخرى؛ المطلوب هنا Konjunktiv I.",
+        "«wurde» صيغة الماضي، وليست الصيغة المستهدفة لنقل القول الحاضر هنا.",
       ],
     },
     {
       id: "r2",
       type: "multiple-choice",
-      instructionAr: "مراجعة شاملة من B2 (درس b2-02 — الاقتصاد: Zustandspassiv مقابل Vorgangspassiv): اختر الحالة:",
+      instructionAr: "مراجعة تراكمية منتقاة من B2 (درس b2-02 — الاقتصاد: Zustandspassiv مقابل Vorgangspassiv): اختر الحالة:",
       questionDe: "Die Bibliothek ___ seit acht Uhr geöffnet. (مفتوحة الآن — وصف حالة)",
       options: ["ist", "wird", "kann", "hat"],
       correctIndex: 0,
@@ -124,7 +121,7 @@ export const review: NonNullable<Lesson["review"]> = [
     {
       id: "r3",
       type: "fill-blank",
-      instructionAr: "مراجعة شاملة من B2 (درس b2-03 — القانون: بدائل المجهول · درس b2-07 — الفلسفة: Futur II · درس b2-08 — اللغات: الأفعال مع حروف الجر): أكمل:",
+      instructionAr: "مراجعة تراكمية منتقاة من B2 (درس b2-03 — القانون: بدائل المجهول · درس b2-07 — الفلسفة: Futur II · درس b2-08 — اللغات: الأفعال مع حروف الجر): أكمل:",
       template:
         "Das Problem ___ sich leicht lösen. (يمكن حلّه) — Bis Juni werde ich die Prüfung bestanden ___. (Futur II) — Ich interessiere mich ___ ein Studium in Deutschland. (بـ)",
       blanks: [

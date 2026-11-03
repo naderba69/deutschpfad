@@ -21,6 +21,12 @@ function knownTaskIds(): Set<string> {
 }
 
 describe("A1-03 — الطعام والشراب", () => {
+  it("يوضح التقابل بين frisch وalt عند وصف الطعام", () => {
+    expect(lesson.reading?.glossary.find((item) => item.de === "frisch")?.noteAr).toBe(
+      "صفة تعني طازج؛ وقارن بها alt: عند وصف الطعام تعني أنه قديم أو لم يعد طازجاً، بحسب السياق.",
+    );
+  });
+
   it("عناوين الاستماع لا تكشف تفاصيل تقنية عن الصوت", () => {
     for (const item of lesson.listening.items) {
       expect(item.title, item.id).not.toMatch(/المتصفح|اصطناعي/);

@@ -17,6 +17,12 @@ export interface DialogueTurn {
   role: "a" | "b";
   de: string;
   ar: string;
+  /**
+   * مسار صوت صريح لهذا الدور؛ null يعطّل MP3 المتعارض المعروف،
+   * ليستخدم الزر TTS المتصفح بدلاً من تشغيل صوت لا يطابق النص الحالي.
+   * undefined يعني استخدام المسار الاصطلاحي المعتاد للحوار.
+   */
+  audioSrc?: string | null;
 }
 
 export interface DialogueQuestion {

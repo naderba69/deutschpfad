@@ -117,8 +117,8 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionAr: "ما معنى الجملة؟",
       options: [
         "نهضتُ في السابعة",
-        "أستيقظ في السابعة",
-        "سأستيقظ في السابعة",
+        "أنهض في السابعة",
+        "سأنهض في السابعة",
         "كنت نائماً في السابعة",
       ],
       correctIndex: 0,
@@ -127,8 +127,8 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       errorType: "vocabulary",
       optionExplanations: [
         undefined,
-        "«أستيقظ في السابعة» حاضرٌ (Präsens) بينما الجملة ماضٍ: «bin … aufgestanden».",
-        "«سأستيقظ في السابعة» مستقبل، والجملة Perfekt عن ماضٍ.",
+        "«أنهض في السابعة» حاضرٌ (Präsens) بينما الجملة ماضٍ: «bin … aufgestanden».",
+        "«سأنهض في السابعة» مستقبل، والجملة Perfekt عن ماضٍ.",
         "«كنت نائماً في السابعة» عكس المعنى؛ «aufstehen» قيامٌ من السرير.",
       ],
     },

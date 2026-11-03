@@ -71,7 +71,7 @@ export const A2_DIALOGUES_3: DailyDialogue[] = [
       { de: "Was bietet die Person an?", ar: "ماذا تعرض الشخص؟", options: [
         { text: "Kaffee einladen", ar: "دعوة للقهوة", correct: true, explanation: "صحيح — «Ich lade dich zum Kaffee ein»." },
         { text: "Ein Geschenk", ar: "هدية", correct: false, explanation: "لا — لم تُذكر هدية Geschenk؛ والعرض «Ich lade dich zum Kaffee ein»." },
-        { text: "Nach Hause fahren", ar: "توصيل للبيت", correct: false, explanation: "لا — لم يُعرض توصيلٌ إلى البيت nach Hause؛ بل دعوةٌ إلى القهوة («zum Kaffee ein»)." },
+        { text: "Nach Hause fahren", ar: "العودة إلى البيت بالسيارة", correct: false, explanation: "لا — لم يُعرض الذهاب بالسيارة إلى البيت nach Hause؛ بل دعوةٌ إلى القهوة («zum Kaffee ein»)." },
       ]},
       { de: "Wie reagiert der Freund?", ar: "كيف يتفاعل الصديق؟", options: [
         { text: "Er ist böse und geht.", ar: "يغضب ويذهب.", correct: false, explanation: "لا — قال «Kein Problem»." },
@@ -97,7 +97,7 @@ export const A2_DIALOGUES_3: DailyDialogue[] = [
     turns: [
       { speaker: "أنت", role: "a", de: "Guten Tag! Ich möchte diese Hose zurückgeben.", ar: "طاب يومك! أريد إرجاع هذا البنطال." },
       { speaker: "البائعة", role: "b", de: "Ist etwas nicht in Ordnung?", ar: "هل هناك مشكلة؟" },
-      { speaker: "أنت", role: "a", de: "Die Größe passt nicht. Sie ist zu klein.", ar: "المقاس غير مناسب. صغير جداً." },
+      { speaker: "أنت", role: "a", de: "Die Größe passt nicht. Sie ist zu klein.", ar: "المقاس غير مناسب؛ هو أصغر من المطلوب." },
       { speaker: "البائعة", role: "b", de: "Haben Sie den Kassenzettel?", ar: "هل لديك الإيصال؟" },
       { speaker: "أنت", role: "a", de: "Ja, hier ist er.", ar: "نعم، هذا هو." },
       { speaker: "البائعة", role: "b", de: "In Ordnung. Sie bekommen Ihr Geld zurück.", ar: "حسناً. سيعود إليك مالك." },
@@ -114,15 +114,16 @@ export const A2_DIALOGUES_3: DailyDialogue[] = [
         { text: "Die Kreditkarte", ar: "بطاقة الائتمان", correct: false, explanation: "لا — لم تُذكر بطاقة ائتمان Kreditkarte؛ والمطلوب der Kassenzettel." },
       ]},
       { de: "Was ist das Problem mit der Hose?", ar: "ما المشكلة في البنطال؟", options: [
-        { text: "Sie ist zu lang.", ar: "إنه طويل جداً.", correct: false, explanation: "لا — الطول ليس المشكلة؛ بل «Sie ist zu klein»." },
-        { text: "Sie ist zu klein.", ar: "إنه صغير جداً.", correct: true, explanation: "نعم — «Sie ist zu klein»." },
+        { text: "Sie ist zu lang.", ar: "إنه أطول من اللازم.", correct: false, explanation: "لا — الطول ليس المشكلة؛ بل «Sie ist zu klein»." },
+        { text: "Sie ist zu klein.", ar: "إنه أصغر من اللازم.", correct: true, explanation: "نعم — «Sie ist zu klein»." },
+
         { text: "Sie hat einen Fleck.", ar: "به بقعة.", correct: false, explanation: "لا — لم تُذكر بقعة Fleck؛ والعيب «Die Größe passt nicht»." },
       ]},
     ],
     keyVocab: [
       { de: "zurückgeben", ar: "يعيد (سلعة)" },
       { de: "der Kassenzettel", ar: "الإيصال" },
-      { de: "zu klein", ar: "صغير جداً" },
+      { de: "zu klein", ar: "أصغر من اللازم" },
       { de: "das Geld zurückbekommen", ar: "استعادة المال" },
       { de: "in Ordnung", ar: "حسناً" },
     ],
@@ -186,7 +187,7 @@ export const A2_DIALOGUES_3: DailyDialogue[] = [
       { de: "Was sucht die Person?", ar: "ماذا يبحث الشخص؟", options: [
         { text: "Ein Geschenk für einen Freund", ar: "هدية لصديق", correct: true, explanation: "نعم — الغرض من الزيارة." },
         { text: "Ein Buch für sich selbst", ar: "كتاباً لنفسه", correct: false, explanation: "لا — الكتاب ليس لنفسه؛ بل «Ich suche ein Geschenk für einen Freund»." },
-        { text: "Musik für sich zu Hause", ar: "موسيقى لنفسه", correct: false, explanation: "لا — الموسيقى ذوقُ الصديق لا طلبُ الزبون؛ والغرض «ein Geschenk für einen Freund»." },
+        { text: "Musik für sich zu Hause", ar: "موسيقى لنفسه في البيت", correct: false, explanation: "لا — الموسيقى ذوقُ الصديق لا طلبُ الزبون؛ والغرض «ein Geschenk für einen Freund»." },
       ]},
       { de: "Was mag der Freund?", ar: "ماذا يحب الصديق؟", options: [
         { text: "Musik und Bücher", ar: "الموسيقى والكتب", correct: true, explanation: "صحيح — الهوايتان." },

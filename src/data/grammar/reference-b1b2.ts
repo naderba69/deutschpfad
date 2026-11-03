@@ -7,47 +7,49 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
 /* ═══════════ B1 ═══════════ */
   {
     id: "b1-genitiv", level: "B1", category: "cases",
-    titleAr: "حالة المضاف إليه (Genitiv)", titleDe: "Der Genitiv",
-    summary: "الملكية الرسمية: des (مذكر/محايد +s), der (مؤنث/جمع). das Buch des Lehrers. حروفه: wegen, trotz, während, statt + Genitiv.",
-    why: "علامة المستوى المتوسط — في الكتابة والصحافة إلزامية.",
+    titleAr: "حالة Genitiv (الملكية وعلاقات أخرى)", titleDe: "Der Genitiv",
+    summary: "يُستعمل Genitiv للملكية وعلاقات أخرى. أداة المذكر والمحايد des، وغالباً ينتهي الاسم بـ -s أو -es (des Lehrers, des Buches)؛ وللمؤنث والجمع der. تأخذ حروف مثل wegen, trotz, während, statt الـGenitiv في المعيارية الرسمية، مع وجود استعمالات Dativ أيضاً في بعض السياقات.",
+    why: "معرفة Genitiv ضرورية لفهم الملكية والعلاقات الاسمية، وهي شائعة في النصوص الرسمية والتحريرية؛ لكنها ليست شرطاً في كل جملة أو كل أسلوب كتابي.",
     examples: [
       { de: "Das Buch des Lehrers ist neu.", ar: "كتاب المعلّم جديد." },
       { de: "Wegen des Regens bleiben wir.", ar: "بسبب المطر نبقى." },
     ],
-    eselsbruecke: "«Genitiv = لمن؟ (wessen؟)» — وحروفه الأربعة: wegen-trotz-während-statt.",
+    eselsbruecke: "السؤال Wessen? يساعد على تمييز الملكية، لكن لا يفسّر كل وظائف Genitiv؛ احفظ الأداة والحالة المطلوبة بعد كل حرف جر.",
     mistakeLink: "case",
   },
   {
     id: "b1-word-order", level: "B1", category: "word-order",
     titleAr: "ترتيب الكلمات: الفعل في المرتبة الثانية", titleDe: "Wortstellung: Verb an Position 2",
-    summary: "في الجملة الألمانية الخبرية يحتل الفعل المُصرَّف المرتبة الثانية دائماً، والعنصر الأول قد يكون أي شيء (فاعلاً أو زماناً أو مفعولاً) — لكن تغييره يغيّر موضع الفاعل: Nach dem Essen geht er spazieren. الأهم أن يبقى الفعل ثانياً لا أن يبقى الفاعل أولاً.",
-    why: "العربية تسمح بتقديم أي عنصر دون قاعدة موضع للمضارع الصريح، والألمانية تربط الترتيب بالفعل نفسه — فالفعل هو «مرساة» الجملة، وأي كسر لها يجعل الجملة تُقرأ كسؤال أو خطأ صريح.",
+    summary: "في الجملة الرئيسية الخبرية الألمانية يأتي الفعل المصرف في الموضع الثاني (V2)، أي بعد مكوّن واحد قد يتكوّن من كلمة أو عدة كلمات؛ وقد يكون هذا المكوّن الفاعل أو ظرفاً أو مفعولاً: Nach dem Essen geht er spazieren. يظل الفعل المصرف في الموضع الثاني عند تقديم عنصر آخر.",
+    why: "في الجملة الرئيسية الخبرية القياسية، يحدد V2 موضع الفعل المصرف بوصفه ثاني مكوّن؛ ولا يعني ذلك أن الفعل هو الكلمة الثانية دائماً أو أن كل ترتيب آخر خطأ، فترتيب الجمل التابعة والأسئلة والأوامر له قواعده.",
     examples: [
       { de: "Heute lerne ich Deutsch. (Verb = Pos. 2)", ar: "اليوم أتعلم الألمانية. (الفعل في المرتبة الثانية)" },
       { de: "Nach dem Essen geht er spazieren.", ar: "بعد الأكل يذهب في نزهة." },
       { de: "Morgen fahre ich nach Tunis.", ar: "غداً أسافر إلى تونس." },
       { de: "Den Film habe ich schon gesehen.", ar: "الفيلم رأيته بالفعل. (المفعول في الأول)" },
     ],
-    eselsbruecke: "«المرتبة الثانية للفعل — والفاعل يزحف بعد الفعل إذا سبقه شيء»: إذا بدأت بغير الفاعل، فالفاعل يجيء بعد الفعل مباشرة.",
+    eselsbruecke: "ضع مكوّناً واحداً قبل الفعل المصرف، ثم أبقِ الفعل في الموضع الثاني؛ غالباً يأتي الفاعل بعده، لكن قد تتوسط عناصر أخرى.",
     mistakeLink: "word-order",
   },
   {
     id: "b1-relativ", level: "B1", category: "sentences",
     titleAr: "الجمل النسبية", titleDe: "Relativsätze",
-    summary: "الضمير النسبي يطابق الاسم بالجنس والعدد وحالته حسب دوره: der (فاعل), den (مفعول), dem (جر). الفعل في نهاية النسبية.",
+    summary: "يطابق الضمير النسبي الاسم السابق في الجنس والعدد، وتُحدّد حالته وظيفته داخل الجملة النسبية؛ مثلاً للمذكر المفرد: der (Nominativ), den (Akkusativ), dem (Dativ). يأتي الفعل المصرف في نهاية الجملة النسبية.",
     why: "الضمير «نيابة» عن الاسم — جنسه من الاسم، حالته من وظيفته.",
     examples: [
       { de: "Der Mann, der dort steht, ist mein Lehrer.", ar: "الرجل الذي يقف هناك معلّمي." },
       { de: "Das Buch, das ich lese, ist gut.", ar: "الكتاب الذي أقرؤه جيد." },
+      { de: "Die Frau, der ich helfe, ist Ärztin.", ar: "المرأة التي أساعدها طبيبة." },
+      { de: "Die Kinder, die dort spielen, sind müde.", ar: "الأطفال الذين يلعبون هناك متعبون." },
     ],
     eselsbruecke: "«جنس الاسم + دور الكلمة داخل النسبية» = الضمير الصحيح.",
     mistakeLink: "grammar",
   },
   {
     id: "b1-praeteritum", level: "B1", category: "tenses",
-    titleAr: "الماضي البسيط (Präteritum)", titleDe: "Das Präteritum",
-    summary: "المنتظم: جذر+te (arbeitete). الشاذ: تغيير جذري (ging, kam, sah). الأفعال المساعدة: war, hatte. في الكتابة والقصص للكل.",
-    why: "نصوص القراءة والقصص كلها بـ Präteritum — لا بد منه للفهم.",
+    titleAr: "الماضي السردي/البسيط (Präteritum)", titleDe: "Das Präteritum",
+    summary: "في الأفعال الضعيفة تُضاف غالباً -te إلى الجذر (arbeitete)، وفي الأفعال القوية يتغير الجذر وتختلف النهاية (ging, kam, sah). من الصيغ الشائعة: war وhatte. يشيع Präteritum في السرد والكتابة؛ وفي الكلام اليومي يشيع أيضاً مع sein وhaben والأفعال الناقصة، بينما يُستعمل Perfekt مع كثير من الأفعال الأخرى.",
+    why: "التعرّف إلى Präteritum يساعد على فهم السرد المكتوب والنصوص القصصية، كما أن صيغ sein وhaben والأفعال الناقصة شائعة في الكلام اليومي.",
     examples: [
       { de: "Ich arbeitete fünf Jahre in einer Firma.", ar: "عملت خمس سنوات في شركة." },
       { de: "Er ging jeden Tag zu Fuß.", ar: "كان يمشي كل يوم." },
@@ -58,8 +60,8 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   {
     id: "b1-plusquamperfekt", level: "B1", category: "tenses",
     titleAr: "الماضي التام المركب (Plusquamperfekt)", titleDe: "hatte/war + Partizip II",
-    summary: "ما قبل الماضي: hatte/war (Präteritum) + Partizip II. Bevor ich studierte, hatte ich gearbeitet. مع bevor/nachdem/als.",
-    why: "ترتيب الأحداث: حدث قديم (Plusquamperfekt) ثم أحدث (ماضٍ).",
+    summary: "يعبّر Plusquamperfekt غالباً عن حدث أسبق من نقطة ماضية أخرى: hatte/war (بحسب فعل المساعد في Perfekt) + Partizip II. في الجملة الرئيسية يأتي Partizip II في النهاية؛ وفي الجملة التابعة تأتي صيغة hatte/war في نهايتها: Bevor ich kam, hatte er gegessen / Nachdem er gegessen hatte, ging er.",
+    why: "يساعد على توضيح أن الحدث وقع قبل نقطة مرجعية في الماضي؛ ويُختار haben أو sein كما في Perfekt للفعل نفسه.",
     examples: [
       { de: "Bevor ich kam, hatte er gegessen.", ar: "قبل أن آتي كان قد أكل." },
       { de: "Nachdem er gegessen hatte, ging er.", ar: "بعد أن أكل ذهب." },
@@ -70,7 +72,7 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   {
     id: "b1-konjunktiv2", level: "B1", category: "modal",
     titleAr: "صيغة الشرط (Konjunktiv II)", titleDe: "würde, wäre, hätte, könnte",
-    summary: "غير واقعي/مؤدب: würde + Infinitiv (Ich würde reisen). الأشكال: wäre (كان سيكون), hätte (كان سيملك), könnte (كان يستطيع). التمني والتهذيب.",
+    summary: "يُستعمل Konjunktiv II للفرض غير الواقعي والطلب المهذب والتمني. صيغة شائعة: würde + Infinitiv (Ich würde reisen)؛ وتُستعمل كثيراً الصيغ الخاصة wäre وhätte وkönnte، كما توجد صيغ مثل ginge. الاختيار يتبع الفعل والسياق.",
     why: "تمييز الواقع عن الافتراض — والأدب الشرطي الألماني.",
     examples: [
       { de: "Wenn ich reich wäre, würde ich reisen.", ar: "لو كنت غنياً لسافرت." },
@@ -82,8 +84,8 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   {
     id: "b1-passiv", level: "B1", category: "passive",
     titleAr: "المبني للمجهول (Passiv)", titleDe: "werden + Partizip II",
-    summary: "التركيز على الحدث لا الفاعل: wird (مضارع) / wurde (ماضٍ) + Partizip II. الفاعل بـ von + Dativ. البديل: man + فعل.",
-    why: "الأخبار والتقارير: لا يهم من فعل — يهم ماذا حدث.",
+    summary: "في Vorgangspassiv للمضارع: werden المصرف + Partizip II (Das Haus wird gebaut)، وللماضي: wurde + Partizip II. يتحول مفعول Akkusativ في الجملة الفاعلة عادةً إلى فاعل نحوي؛ ويمكن ذكر القائم بالفعل بـ von + Dativ، أو السبب/الوسيلة بـ durch + Akkusativ. وman صياغة بديلة لا تطابق المبني للمجهول تماماً.",
+    why: "يسمح المبني للمجهول بتقديم الحدث أو المتأثر به، سواء أُريد إخفاء القائم بالفعل أو كان مجهولاً أو غير مهم في السياق.",
     examples: [
       { de: "Das Haus wird gebaut.", ar: "البيت يُبنى." },
       { de: "Das Haus wurde 1900 gebaut.", ar: "بُني البيت عام 1900." },
@@ -94,20 +96,20 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   {
     id: "b1-adjektiv", level: "B1", category: "adjectives",
     titleAr: "تصريف الصفات (Adjektivdeklination)", titleDe: "Die Adjektivdeklination",
-    summary: "قبل الاسم تأخذ الصفة نهاية: بعد der/die/das: -e/-en. بعد ein: نهايات الأداة (ein guter Mann, ein gutes Kind). بدون أداة: نهايات قوية.",
-    why: "توازن: إذا كشفت الأداة الجنس تكتفي الصفة بـ -e/-en، وإلا تتحمل هي.",
+    summary: "الصفة قبل الاسم تتلقى نهاية تتحدد بالجنس والعدد والحالة ونوع الأداة. مع أداة التعريف: -e في مواضع الرفع وبعض النصب، و-en في معظم المواضع الأخرى (der gute Mann, den guten Mann). مع ein-وأدوات الملكية تُظهر الصفة علامة الجنس حين لا تظهرها الأداة (ein guter Mann, ein gutes Kind, einen guten Mann). بلا أداة تُستعمل النهايات القوية.",
+    why: "تتوزع علامات الجنس والحالة والعدد بين الأداة والصفة؛ لذا ينبغي تعلم النهايات ضمن الجدول الكامل بحسب الحالة والأداة، لا بقاعدة واحدة مطلقة.",
     examples: [
       { de: "ein guter Mann / eine gute Frau / ein gutes Kind", ar: "رجل جيد / امرأة جيدة / طفل جيد" },
       { de: "Das schöne Bild ist teuer.", ar: "الصورة الجميلة غالية." },
     ],
-    eselsbruecke: "«مع ein: الرفع يحمل نهايات الأداة (ر-هـ، س)» — والجر -en.",
+    eselsbruecke: "مع ein وmein وkein: لاحظ أين تكشف الأداة الجنس وأين تحتاج الصفة إلى إظهاره؛ ثم تحقق من الحالة والعدد.",
     mistakeLink: "article",
   },
   {
     id: "b1-temporal", level: "B1", category: "sentences",
     titleAr: "الجمل الزمنية الست", titleDe: "als, wenn, während, bevor, nachdem, bis",
-    summary: "als (ماضٍ مرة), wenn (مضارع/تكرار), während (بينما), bevor (قبل أن), nachdem (بعد أن), bis (حتى). كلها ترسل الفعل للنهاية.",
-    why: "الألمانية دقيقة: als لحكاية واحدة، wenn لعادة — يمنع اللبس.",
+    summary: "تدخل هذه الأدوات جملةً تابعةً ويأتي فعلها المصرف في النهاية. als تُستعمل غالباً لحدث/فترة واحدة في الماضي؛ wenn للتكرار في الماضي أو للحاضر والمستقبل والشرط؛ während (بينما)، bevor (قبل أن)، nachdem (بعد أن)، bis (إلى أن).",
+    why: "تمييز als وwenn يعتمد على الزمن والمعنى: حدث ماضٍ واحد أو فترة ماضية مقابل التكرار، أو الزمن الحاضر/المستقبل، أو الشرط؛ لا تختزل القاعدة في «مرة/عادة» فقط.",
     examples: [
       { de: "Als ich jung war, lebte ich in Tunis.", ar: "عندما كنت صغيراً عشت في تونس." },
       { de: "Wenn ich Zeit habe, lese ich.", ar: "عندما يكون عندي وقت أقرأ." },
@@ -130,8 +132,8 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   {
     id: "b1-futur1", level: "B1", category: "tenses",
     titleAr: "المستقبل (Futur I)", titleDe: "werden + Infinitiv",
-    summary: "التوقع والنية: werden (مضارع) + Infinitiv في النهاية. Ich werde lernen. ملاحظة: المضارع + ظرف زمان شائع في المحادثة.",
-    why: "الاستخدام الثالث لـ werden: + صفة (يصبح), + Partizip II (مجهول), + مصدر (مستقبل).",
+    summary: "للتوقع أو النية المستقبلية، يأتي werden في المضارع مع المصدر في نهاية الجملة الرئيسية: Ich werde lernen. ويُستخدم المضارع مع ظرف زمان كثيراً للدلالة على المستقبل؛ كما قد يدل Futur I بحسب السياق على افتراض عن الحاضر.",
+    why: "لـwerden وظائف مختلفة بحسب ما يأتي بعده: صفة/اسم في معنى «يصبح»، Partizip II في البناء للمجهول، أو مصدر في Futur I؛ ويحدد السياق المعنى.",
     examples: [
       { de: "Ich werde morgen lernen.", ar: "سأتعلم غداً." },
       { de: "Die Technik wird sich entwickeln.", ar: "ستتطور التقنية." },
@@ -141,9 +143,9 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   },
   {
     id: "b1-nomenverb", level: "B1", category: "nouns",
-    titleAr: "الوصلات الاسمية-الفعلية", titleDe: "Nomen-Verb-Verbindungen",
-    summary: "eine Frage stellen (يطرح سؤالاً), Bescheid sagen (يبلغ), Hilfe leisten (يقدم مساعدة), eine Entscheidung treffen (يتخذ قراراً). أسلوب رسمي.",
-    why: "الأسلوب الرسمي والإداري — وامتحان Goethe يحبها.",
+    titleAr: "التراكيب الاسمية-الفعلية الثابتة", titleDe: "Nomen-Verb-Verbindungen",
+    summary: "تلازمات ثابتة تجمع اسماً وفعلاً: eine Frage stellen (يطرح سؤالاً)، Bescheid sagen (يُعلم/يُبلغ)، Hilfe leisten (يقدّم مساعدة)، eine Entscheidung treffen (يتخذ قراراً). بعضها شائع في اليومي وبعضها أنسب للسياق الرسمي؛ يُحفظ التركيب مع الفعل والتصريف.",
+    why: "تعلم هذه التلازمات يساعد على إنتاج عبارات ألمانية طبيعية بدلاً من ترجمة كل فعل واسم منفصلين؛ ويختلف سجلها بحسب التركيب.",
     examples: [
       { de: "Darf ich eine Frage stellen?", ar: "هل أستطيع طرح سؤال؟" },
       { de: "Er traf eine wichtige Entscheidung.", ar: "اتخذ قراراً مهماً." },
@@ -154,13 +156,13 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   {
     id: "b1-ndeklination", level: "B1", category: "nouns",
     titleAr: "تصريف n (n-Deklination)", titleDe: "den Studenten",
-    summary: "أسماء مذكرة (تنتهي بـ e أو لاتينية) تضيف n/en في كل الحالات ما عدا الرفع: der Student → den Studenten, dem Studenten, des Studenten.",
-    why: "آثار إعراب لاتيني في أسماء حية: Student, Kunde, Herr, Polizist, Kollege, Junge.",
+    summary: "مجموعة من الأسماء المذكرة الضعيفة، كثير منها ينتهي بـ -e أو -ent/-ant/-ist/-oge، تأخذ -(e)n في حالات المفرد غير Nominativ وفي الجمع: der Student, den/dem/des Studenten; die Studenten. ليست كل الأسماء المنتهية بـ -e من هذه المجموعة. بعض الأسماء مثل Name وGedanke لها صيغة Genitiv خاصة بـ -ns: des Namens, des Gedankens.",
+    why: "لا تكفي قاعدة واحدة للتنبؤ بكل الأسماء؛ احفظ الجنس وصيغ المفرد والجمع مع أمثلة شائعة، وانتبه إلى الأسماء المختلطة والاستثناءات.",
     examples: [
       { de: "Ich kenne den Studenten.", ar: "أعرف الطالب." },
       { de: "Wir helfen dem Kunden.", ar: "نساعد الزبون." },
     ],
-    eselsbruecke: "«رجال بـ e + لاتينيون» يضيفون n/en.",
+    eselsbruecke: "احفظ الاسم مع صيغته: der Student – den Studenten؛ ولا تعمم القاعدة على كل اسم ينتهي بـ -e.",
     mistakeLink: "case",
   },
 
@@ -168,8 +170,8 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   {
     id: "b2-konjunktiv1", level: "B2", category: "modal",
     titleAr: "نقل الكلام غير المباشر (Konjunktiv I)", titleDe: "Die indirekte Rede",
-    summary: "لنقل الأقوال: er habe, sie sei, er werde. Er sagt, er habe keine Zeit. يبين أن الكلام منقول وليس مؤكداً.",
-    why: "الصحفي يحتاج «مسافة»: أنقل القول دون المسؤولية عن صحته.",
+    summary: "يُستخدم Konjunktiv I كثيراً في نقل الكلام، مثل er habe, sie sei, er werde. وهو يبيّن أن القول منقول، لكنه لا يعني وحده أن القول كاذب أو غير مؤكّد. إذا تطابقت صيغته مع Indikativ في بعض الأشخاص/الأفعال، قد يُستعاض عنها بـKonjunktiv II أو صيغة بديلة لتوضيح النقل.",
+    why: "تساعد صيغة النقل على تمييز كلام الناقل من مضمون القول المنقول، ولا تحكم بذاتها على صدق ذلك المضمون؛ يختلف استعمالها بحسب السجل والسياق.",
     examples: [
       { de: "Er sagt, er habe keine Zeit.", ar: "يقول إنه لا وقت عنده." },
       { de: "Sie sagt, sie sei müde.", ar: "تقول إنها متعبة." },
@@ -180,44 +182,46 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   {
     id: "b2-zustandspassiv", level: "B2", category: "passive",
     titleAr: "مجهول الحالة (Zustandspassiv)", titleDe: "sein + Partizip II",
-    summary: "الحالة المنتهية: ist geöffnet (مفتوح) مقابل wird geöffnet (يُفتح). مع شرطي: kann geliefert werden. بدائل: sich lassen, -bar, man.",
+    summary: "يصف Zustandspassiv غالباً الحالة الناتجة: Die Tür ist geöffnet، مقابل Vorgangspassiv للعملية: Die Tür wird geöffnet. ليس كل sein + Partizip II مجهولاً؛ فقد يكون Partizip صفةً بحسب السياق. أمّا kann geliefert werden فهو Passiv مع Modalverb، وDas Problem lässt sich lösen تعبير إمكاني بديل.",
     why: "الدقة: عملية (wird) مقابل نتيجة (ist) مقابل إمكانية (kann/sich lassen).",
     examples: [
       { de: "Die Tür ist geöffnet.", ar: "الباب مفتوح (حالة)." },
       { de: "Das Problem lässt sich lösen.", ar: "المشكلة قابلة للحل." },
     ],
-    eselsbruecke: "«ist = حالة، wird = عملية، -bar = قابل للـ».",
+    eselsbruecke: "قارن السياق: ist geöffnet يصف حالة، وwird geöffnet يصف عملية؛ وتحقق من الزمن والمعنى قبل تصنيف Partizip.",
     mistakeLink: "grammar",
   },
   {
     id: "b2-relativ-adv", level: "B2", category: "sentences",
-    titleAr: "النسبية المتقدمة (حروف جر + wo/was)", titleDe: "auf den, wo, was, wofür",
-    summary: "حرف الجر قبل الضمير: Der Mann, auf den ich warte. wo للمكان (in dem). was بعد alles/nichts. wo+حرف جر: wofür, womit.",
-    why: "الاختصارات الأنيقة: wo بدل in dem، was بعد كل شيء.",
+    titleAr: "تراكيب الوصل المتقدمة: wo/was والظروف الضميرية", titleDe: "Relativpronomen und Pronominaladverbien",
+    summary: "في الوصل الرسمي يُقدّم حرف الجر على الضمير النسبي: das Haus, in dem ich wohne. وقد تأتي wo مع مرجع مكاني/زماني في الاستعمال، لكنها أقل رسمية في بعض السياقات؛ في الكتابة المحايدة يُفضّل غالباً حرف الجر + الضمير. يأتي was بعد مرجع عام مثل alles, etwas, nichts. أمّا Pronominaladverbien مثل worüber/womit فتُحيل عادةً إلى أشياء أو موضوعات لا أشخاص؛ وللأشخاص نستخدم حرف الجر + ضمير نسبي، مثل mit dem.",
+    why: "اختيار أداة الوصل يتوقف على نوع المرجع والسجل: ضمير نسبي يطابق الاسم، was بعد مرجع عام، وظرف ضميري للموضوع/الشيء؛ ليست هذه الصيغ قابلة للاستبدال دائماً.",
     examples: [
       { de: "Der Mann, auf den ich warte, ist mein Anwalt.", ar: "الرجل الذي أنتظره محامي." },
       { de: "Alles, was du sagst, ist wichtig.", ar: "كل ما تقوله مهم." },
+      { de: "Das ist das Thema, worüber wir sprechen.", ar: "هذا هو الموضوع الذي نتحدث عنه." },
+      { de: "Der Kollege, mit dem ich arbeite, ist freundlich.", ar: "الزميل الذي أعمل معه ودود." },
     ],
     eselsbruecke: "«حرف الجر يسبق الضمير» — و«was بعد كل شيء، wo بعد مكان».",
     mistakeLink: "preposition",
   },
   {
     id: "b2-partizipial", level: "B2", category: "adjectives",
-    titleAr: "المشاركات كصفات", titleDe: "Partizip I/II als Adjektive",
-    summary: "Partizip I (نشط): das spielende Kind. Partizip II (منتهي): der geschriebene Brief. تختصر الجمل النسبية: der arbeitende Mann = der Mann, der arbeitet.",
-    why: "أسلوب مكثف: كلمة واحدة تعوض جملة — حبيب الصحافة والأدب.",
+    titleAr: "Partizip I/II في وظيفة الصفة", titleDe: "Partizip I/II als Adjektive",
+    summary: "يُشتق Partizip I غالباً من المصدر مع -d ويصف فعلاً جارياً/عالِماً به الفاعل: das spielende Kind = das Kind, das spielt. أمّا Partizip II فصورته ودلالته تختلفان بحسب الفعل؛ وقد يعبّر عن نتيجة أو معنى متأثر بالفعل: der geschriebene Brief = der Brief, der geschrieben wurde. كلاهما يأخذ نهاية الصفة حين يسبق الاسم.",
+    why: "يتيح النعت بـPartizip ضغط معلومات الجملة في تركيب وصفي؛ لكن تفسير العلاقة (فاعل/متأثر/نتيجة) يتوقف على الفعل والسياق، فلا يكفي شكل Partizip II وحده.",
     examples: [
       { de: "Das spielende Kind ist glücklich.", ar: "الطفل اللاعب سعيد." },
       { de: "Der geschriebene Brief liegt auf dem Tisch.", ar: "الرسالة المكتوبة على الطاولة." },
     ],
-    eselsbruecke: "«-end = فاعل (يلعب)، ge-...t/en = مفعول (مكتوب)».",
+    eselsbruecke: "Partizip I ينتهي غالباً بـ -end؛ أمّا Partizip II فلا تحكم من شكله وحده بأنه مفعول/مجهول، بل راجع معنى الفعل وسياقه.",
     mistakeLink: "article",
   },
   {
     id: "b2-konnektoren-adv", level: "B2", category: "connectives",
-    titleAr: "الروابط المتقدمة", titleDe: "indem, anstatt...zu, ohne...zu, es sei denn",
-    summary: "indem (بأن/طريقة), anstatt...zu (بدلاً من أن), ohne...zu (دون أن), es sei denn (إلا إذا), je nachdem (حسبما), statt dass (بدل أن بفاعل).",
-    why: "بفاعل واحد: anstatt/ohne + zu + مصدر — اختصار أنيق.",
+    titleAr: "أدوات الربط والتراكيب المصدرية المتقدمة", titleDe: "indem, anstatt/ohne ... zu, es sei denn",
+    summary: "indem تقدّم الطريقة وغالباً تُدخل جملةً فعلها في النهاية؛ anstatt/ohne + zu + مصدر تُستعملان غالباً عندما يكون الفاعل واحداً، أمّا anstatt dass/statt dass فتدخلان جملةً تامة وقد يختلف فاعلها. es sei denn تعني «إلا إذا» وتقدّم استثناءً؛ وje nachdem تعني «بحسب/يتوقف على» وتأتي كثيراً مع ob أو wie.",
+    why: "اختيار zu-Infinitiv أو جملة dass يتأثر غالباً بتطابق الفاعل: عند اتحاد الفاعل يمكن عادةً استعمال anstatt/ohne ... zu، وعند اختلافه نحتاج جملة تامة.",
     examples: [
       { de: "Man lernt, indem man übt.", ar: "يتعلم المرء بالممارسة." },
       { de: "Er ging, ohne zu grüßen.", ar: "غادر دون أن يحيي." },
@@ -228,19 +232,19 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   {
     id: "b2-nominalisierung", level: "B2", category: "nouns",
     titleAr: "الاشتقاق الاسمي (Nominalisierung)", titleDe: "lesen → das Lesen",
-    summary: "تحويل الفعل إلى اسم: das Lesen, die Arbeit, die Verbesserung. الاستخدامات الرسمية: beim Lesen, zum Nachdenken.",
-    why: "النصوص الرسمية تحب الأسماء — الاشتقاق يختصر ويرفع الأسلوب.",
+    summary: "يمكن تحويل المصدر إلى اسم محايد يُكتب بحرف كبير: lesen → das Lesen، ويظل الفعل الاسمي كبيراً بعد حرف الجر: beim Lesen, zum Nachdenken. كما تُشتق أسماء بأدوات اشتقاق مثل verbessern → die Verbesserung؛ أما Arbeit فهي اسم معجمي ولا تمثل وحدها مثالاً واضحاً على تحويل المصدر.",
+    why: "تتيح Nominalisierung ضغط الجملة واستخدام تراكيب اسمية شائعة في النصوص الرسمية؛ لكن الإفراط فيها يثقل الأسلوب، لذا يُختار التركيب وفق المعنى والسجل.",
     examples: [
       { de: "Beim Lesen lernt man.", ar: "بالقراءة يتعلم المرء." },
       { de: "Die Verbesserung der Bedingungen ist wichtig.", ar: "تحسين الظروف مهم." },
     ],
-    eselsbruecke: "«الفعل → das + مصدر كبير» — وbeim = عند + اسم.",
+    eselsbruecke: "المصدر حين يُستعمل اسماً يُكتب كبيراً ويأخذ das (das Lesen)؛ أما الأسماء المشتقة الأخرى فتحفظ أداتها: die Verbesserung.",
     mistakeLink: "grammar",
   },
   {
     id: "b2-futur2", level: "B2", category: "tenses",
     titleAr: "المستقبل التام (Futur II)", titleDe: "werde + Partizip II + haben/sein",
-    summary: "اكتمال في المستقبل: Bis 2030 werde ich Deutsch gelernt haben. الحركة: werde gegangen sein. الفعل العادي: werde gemacht haben.",
+    summary: "يتكوّن Futur II من werden المصرف + Partizip II + haben/sein في المصدر: Bis 2030 werde ich Deutsch gelernt haben. يُختار haben أو sein كما في Perfekt للفعل. يدل كثيراً على حدث مكتمل قبل نقطة مستقبلية، وقد يدل بحسب السياق على استنتاج عن حدث ماضٍ (Er wird schon gegangen sein).",
     why: "التوقع يحتاج «الاكتمال»: سيكون قد فعل ≠ سيفعل.",
     examples: [
       { de: "Bis 2030 werde ich Deutsch gelernt haben.", ar: "بحلول 2030 سأكون قد تعلمت الألمانية." },
@@ -252,8 +256,8 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   {
     id: "b2-verben-praep", level: "B2", category: "prepositions",
     titleAr: "الأفعال مع حروف الجر الثابتة", titleDe: "sich interessieren für, warten auf",
-    summary: "كل فعل يلتصق بحرف جر وحالة: sich interessieren für (+A), warten auf (+A), träumen von (+D), abhängen von (+D), sich kümmern um (+A), denken an (+A).",
-    why: "الألمانية لا تسمح بالتبديل — احفظ الفعل مع حرفه ككلمة واحدة.",
+    summary: "احفظ إطار الفعل في المعنى المقصود مع حرف الجر والحالة: sich interessieren für (+A), warten auf (+A), träumen von (+D), abhängen von (+D), sich kümmern um (+A), denken an (+A). قد يتغير حرف الجر أو المعنى في استعمالات أخرى، لذا يُتعلم كل تركيب مع مثال.",
+    why: "التركيب الفعلي وحرف الجر يحددان المعنى والحالة في هذا الاستعمال؛ قد يغيّر حرف جر آخر المعنى، لذلك تُحفظ التلازمات مع أمثلة لا كقائمة ترجمة فقط.",
     examples: [
       { de: "Ich interessiere mich für Musik.", ar: "أهتم بالموسيقى." },
       { de: "Ich warte auf den Bus.", ar: "أنتظر الحافلة." },
@@ -264,10 +268,10 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   {
     id: "b2-akademisch", level: "B2", category: "sentences",
     titleAr: "الكتابة الأكاديمية", titleDe: "Akademisches Schreiben",
-    summary: "التأكيد: es ist erwiesen, dass... التلطيف: meiner Ansicht nach, möglicherweise. التحفظ: in gewissem Maße. الخاتمة: zusammenfassend lässt sich sagen...",
+    summary: "لصياغة أكاديمية متوازنة: اعرض نتيجة موثقة (Es ist gut belegt, dass ...)، وانسب الرأي إلى صاحبه (Meiner Ansicht nach ...)، وعبّر عن درجة اليقين بتحفظ مناسب (möglicherweise, in gewissem Maße). للخاتمة: Zusammenfassend lässt sich sagen, dass ... . لا تستخدم صيغة الجزم مثل es ist erwiesen إلا إذا كان الدليل يسندها.",
     why: "الجرأة المدروسة: أكّد المدعوم ولطّف غير المؤكد.",
     examples: [
-      { de: "Es ist erwiesen, dass Sprachen das Denken prägen.", ar: "ثابت أن اللغات تشكل التفكير." },
+      { de: "Es gilt als gesichert, dass reines Wasser bei Normaldruck bei 100 °C siedet.", ar: "في ظل الضغط الجوي القياسي، يغلي الماء النقي عند 100 درجة مئوية." },
       { de: "Meiner Ansicht nach ist das wichtig.", ar: "في رأيي هذا مهم." },
     ],
     eselsbruecke: "«ثلاثية الأكاديميا: أكّد-لطّف-تحفظ» — وخاتمة ذهبية: zusammenfassend.",
@@ -275,30 +279,31 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   },
   {
     id: "b2-verbaustausch", level: "B2", category: "nouns",
-    titleAr: "الوصلات المتقدمة", titleDe: "in Betracht ziehen, zur Verfügung stellen",
-    summary: "in Betracht ziehen (يأخذ بعين الاعتبار), zur Verfügung stellen (يضع تحت التصرف), Wert legen auf (يولي أهمية), eine Rolle spielen (يلعب دوراً).",
-    why: "لغة المقابلات والمراسلات — ترفع خطابك لمستوى ممتاز.",
+    titleAr: "التراكيب الفعلية-الاسمية المتقدمة", titleDe: "Nomen-Verb-Verbindungen: in Betracht ziehen, zur Verfügung stellen",
+    summary: "تراكيب فعلية-اسمية تحفظ كوحدة مع تصريف الفعل وحرف الجر والحالة حيث يلزم: in Betracht ziehen (يأخذ بعين الاعتبار)، zur Verfügung stellen (يضع تحت التصرف)، Wert auf etwas legen (+ Akkusativ: يولي شيئاً أهمية)، eine Rolle spielen (يؤدي دوراً).",
+    why: "تساعد التلازمات الثابتة على التعبير الاصطلاحي الطبيعي؛ احفظ معها مثالاً وسجلاً مناسباً بدلاً من استبدال كل عنصر بترجمة حرفية.",
     examples: [
       { de: "Ich ziehe die Stelle in Betracht.", ar: "آخذ المنصب بعين الاعتبار." },
       { de: "Ich stelle meine Erfahrung zur Verfügung.", ar: "أضع خبرتي تحت التصرف." },
+      { de: "Ich lege großen Wert auf klare Rückmeldungen.", ar: "أولي الملاحظات الواضحة أهمية كبيرة." },
     ],
     eselsbruecke: "«أربع عبارات جاهزة للكتابة الرسمية»: in Betracht ziehen، zur Verfügung stellen، Wert legen auf، eine Rolle spielen.",
     mistakeLink: "grammar",
   },
   {
     id: "b2-modalpartikeln", level: "B2", category: "particles",
-    titleAr: "الجسيمات المشدِّدة", titleDe: "Modalpartikeln: doch, ja, mal, denn, eigentlich, wohl",
-    summary: "كلمات صغيرة بلا ترجمة حرفية تنقل موقف المتكلم: doch = «بلى» (رداً على نفي)، ja = تأكيد حار، mal = تخفيف الطلب، denn = فضول في السؤال، eigentlich = «أصلاً/بالمناسبة»، wohl = «على الأرجح». بدونها تبدو الألمانية منطوقة «روبوطية».",
-    why: "تظهر في امتحان B2 (Hören وSprechen) وفي كل محادثة ألمانية حقيقية — إتقانها علامة الطلاقة.",
+    titleAr: "أدوات الخطاب الألمانية (Modalpartikeln)", titleDe: "Modalpartikeln: doch, ja, mal, denn, eigentlich, wohl",
+    summary: "أدوات قصيرة تنقل موقف المتكلم ونبرة الخطاب، ولا تقابلها ترجمة عربية ثابتة. doch قد تعارض نفياً أو تلطف دعوة؛ ja قد تشير إلى معلومة مشتركة أو مفاجأة؛ mal تلطف طلباً غير رسمي ولا تعني دائماً «قليلاً»؛ denn تضيف اهتماماً/استغراباً في السؤال؛ eigentlich قد تعيد توجيه السؤال أو تلطّفه؛ وwohl تدل غالباً على استنتاج أو احتمال. يتحدد المعنى بالسياق والتنغيم.",
+    why: "تشيع هذه الأدوات في الألمانية المحكية وتساعد على فهم النبرة والتعبير عنها؛ يتغير استعمالها بحسب المقام، ولا يلزم إدراجها في كل جملة.",
     examples: [
       { de: "Komm doch mit!", ar: "تعال معنا، هيا!" },
-      { de: "Das ist ja super!", ar: "هذا ممتاز حقاً!" },
-      { de: "Kannst du mir mal helfen?", ar: "هل تساعدني فقط قليلاً؟" },
-      { de: "Was machst du denn hier?", ar: "ماذا تفعل هنا إذاً (فضولاً)؟" },
+      { de: "Das ist ja super!", ar: "هذا رائع بالفعل!" },
+      { de: "Kannst du mir mal helfen?", ar: "هل يمكنك مساعدتي؟ (طلب غير رسمي ملطّف)" },
+      { de: "Was machst du denn hier?", ar: "ما الذي تفعله هنا يا ترى؟ (قد تحمل اهتماماً أو استغراباً)" },
       { de: "Wo wohnst du eigentlich?", ar: "أين تسكن أصلاً؟" },
       { de: "Er hat wohl den Bus verpasst.", ar: "على الأرجح فاته الحافلة." },
     ],
-    eselsbruecke: "D-J-M-D-E-W: Doch=بلى، Ja=أكيد، Mal=فقط، Denn=إذاً، Eigentlich=أصلاً، Wohl=غالباً.",
+    eselsbruecke: "لا تحفظ لكل Modalpartikel مقابلاً عربياً واحداً؛ اربطها بنوع الجملة والسياق والتنغيم، وقارن أمثلة متعددة.",
     mistakeLink: "grammar",
   },
 ];

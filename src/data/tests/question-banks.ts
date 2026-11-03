@@ -58,10 +58,10 @@ export const RAW_TEST_BANK: TestQuestion[] = [
   {
     id: "a1-r2", skill: "lesen", level: "A1", kind: "reading",
     text: "Sami arbeitet als Koch in einem Restaurant. Er steht um sechs Uhr auf und kocht bis vierzehn Uhr. Am Abend sieht er fern oder liest ein Buch. Am Sonntag besucht er seine Eltern.",
-    textAr: "يعمل سامي طباخاً في مطعم. يستيقظ في السادسة ويطبخ حتى الثانية عشرة. مساءً يشاهد التلفاز أو يقرأ كتاباً. يوم الأحد يزور والديه.",
+    textAr: "يعمل سامي طباخاً في مطعم. ينهض في السادسة ويطهو حتى الساعة الثانية بعد الظهر. مساءً يشاهد التلفاز أو يقرأ كتاباً. يوم الأحد يزور والديه.",
     questions: [
       { q: "Was ist Sami von Beruf?", qAr: "ما مهنة سامي؟", options: ["Koch", "Lehrer", "Arzt", "Fahrer"], correct: 0, explanation: "قيل: Sami arbeitet als Koch in einem Restaurant." },
-      { q: "Wann steht Sami auf?", qAr: "متى يستيقظ سامي؟", options: ["um sechs Uhr", "um sieben Uhr", "um acht Uhr", "um zehn Uhr"], correct: 0, explanation: "قيل: Er steht um sechs Uhr auf." },
+      { q: "Wann steht Sami auf?", qAr: "متى ينهض سامي؟", options: ["um sechs Uhr", "um sieben Uhr", "um acht Uhr", "um zehn Uhr"], correct: 0, explanation: "قيل: Er steht um sechs Uhr auf." },
       { q: "Was macht Sami am Sonntag?", qAr: "ماذا يفعل سامي يوم الأحد؟", options: ["seine Eltern besuchen", "zu Hause arbeiten", "einkaufen gehen", "schwimmen gehen"], correct: 0, explanation: "قيل: Am Sonntag besucht er seine Eltern." },
     ],
   },
@@ -129,7 +129,7 @@ export const RAW_TEST_BANK: TestQuestion[] = [
   {
     id: "a2-r2", skill: "lesen", level: "A2", kind: "reading",
     text: "Anna sucht eine Wohnung. Sie möchte eine Wohnung mit zwei Zimmern in der Stadtmitte. Die Miete soll nicht mehr als 700 Euro kosten. Gestern hat sie eine Anzeige gesehen: eine schöne Wohnung neben dem Park, 650 Euro warm. Sie ruft heute an.",
-    textAr: "تبحث آنا عن شقة. تريد شقة بغرفتين في وسط المدينة. يجب ألا يتجاوز الإيجار 700 يورو. أمس رأت إعلاناً: شقة جميلة بجانب الحديقة، 650 يورو شاملة التدفئة. ستتصل اليوم.",
+    textAr: "تبحث آنا عن شقة. تريد شقة بغرفتين في وسط المدينة. يجب ألا يتجاوز الإيجار 700 يورو. أمس رأت إعلاناً: شقة جميلة بجانب الحديقة، 650 يورو شاملة التكاليف المذكورة في الإعلان. ستتصل اليوم.",
     questions: [
       { q: "Was sucht Anna?", qAr: "ماذا تبحث آنا؟", options: ["eine Wohnung", "ein Haus", "ein Zimmer", "eine Garage"], correct: 0, explanation: "قيل: Anna sucht eine Wohnung." },
       { q: "Wie viel kostet die Wohnung?", qAr: "بكم الشقة؟", options: ["650 Euro", "700 Euro", "600 Euro", "800 Euro"], correct: 0, explanation: "قيل: 650 Euro warm." },
@@ -160,7 +160,7 @@ export const RAW_TEST_BANK: TestQuestion[] = [
   /* ═══════════ A2 — كتابة ═══════════ */
   { id: "a2-w1", skill: "schreiben", level: "A2", kind: "writing", prompt: "Schreibe über deinen letzten Urlaub. (Perfekt)", promptAr: "اكتب عن إجازتك الأخيرة (بالماضي التام).", rubric: "3 جمل بـ Perfekt", sampleAnswer: "Ich bin nach Sousse gefahren. Ich habe geschwommen und viel gegessen. Das Hotel war sehr schön.", points: 10 },
   { id: "a2-w2", skill: "schreiben", level: "A2", kind: "writing", prompt: "Schreibe eine E-Mail: Du lädst einen Freund zu deiner Party ein.", promptAr: "اكتب بريداً: تدعو صديقاً لحفلتك.", rubric: "بداية + دعوة + وقت + مكان", sampleAnswer: "Hallo Karim! Ich habe am Samstag Geburtstag. Kommst du zu meiner Party? Sie beginnt um sieben Uhr bei mir. Bis bald! Mona", points: 10 },
-  { id: "a2-w3", skill: "schreiben", level: "A2", kind: "writing", prompt: "Beschreibe deine Wohnung.", promptAr: "صف شقتك.", rubric: "3 جمل (غرف + أثاث)", sampleAnswer: "Meine Wohnung hat drei Zimmer: eine Küche, ein Wohnzimmer und ein Schlafzimmer. Das Wohnzimmer ist groß und modern.", points: 10 },
+  { id: "a2-w3", skill: "schreiben", level: "A2", kind: "writing", prompt: "Beschreibe deine Wohnung.", promptAr: "صف شقتك.", rubric: "3 جمل (غرف + أثاث)", sampleAnswer: "Meine Wohnung hat drei Zimmer: ein Wohnzimmer, ein Schlafzimmer und ein Arbeitszimmer. Das Wohnzimmer ist groß und modern.", points: 10 },
 
   /* ═══════════ B1 — قواعد ═══════════ */
   { id: "b1-g1", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "Das ist das Buch ___ Lehrers.", options: ["des", "der", "dem", "den"], correctIndex: 0, explanation: "Genitiv: des Lehrers." },
@@ -260,7 +260,7 @@ export const RAW_TEST_BANK: TestQuestion[] = [
   {
     id: "b2-r1", skill: "lesen", level: "B2", kind: "reading",
     text: "Es ist erwiesen, dass die Digitalisierung die Arbeitswelt grundlegend verändert. Einerseits schafft sie neue Berufe, andererseits macht sie viele alte überflüssig. Die Forscher, mit denen wir gesprochen haben, betonen, dass die Weiterbildung entscheidend sei. Meiner Ansicht nach brauchen wir ein Gleichgewicht zwischen Technologie und menschlicher Arbeit.",
-    textAr: "ثابت أن الرقمنة تغير عالم العمل جذرياً. من ناحية تخلق مهناً جديدة، ومن ناحية أخرى تجعل مهناً قديمة زائدة. يؤكد الباحثون الذين تحدثنا معهم أن التدريب المستمر حاسم. في رأيي نحتاج توازناً بين التقنية والعمل البشري.",
+    textAr: "ثابت أن الرقمنة تغير عالم العمل جذرياً. من ناحية تخلق مهناً جديدة، ومن ناحية أخرى تجعل كثيراً من المهن القديمة غير ضرورية. يؤكد الباحثون الذين تحدثنا معهم أن التدريب المستمر حاسم. في رأيي نحتاج توازناً بين التقنية والعمل البشري.",
     questions: [
       { q: "Was verändert die Digitalisierung?", qAr: "ماذا تغير الرقمنة؟", options: ["die Arbeitswelt", "das Wetter und Klima", "die Politik des Landes", "die Schule"], correct: 0, explanation: "قيل: die Digitalisierung die Arbeitswelt grundlegend verändert." },
       { q: "Was betonen die Forscher?", qAr: "ماذا يؤكد الباحثون؟", options: ["die Weiterbildung sei entscheidend", "die Technik sei in diesem Fall nutzlos", "die Arbeit sei künftig unnötig", "die Schule sei alt und überholt"], correct: 0, explanation: "قيل: dass die Weiterbildung entscheidend sei (Konjunktiv I)." },
@@ -351,7 +351,7 @@ export const RAW_TEST_BANK: TestQuestion[] = [
   {
     id: "b1-r3", skill: "lesen", level: "B1", kind: "reading",
     text: "Viele Arbeitnehmer klagen über zu viel Stress. Eine Umfrage zeigt, dass mehr als die Hälfte der Befragten nach der Arbeit nicht abschalten kann. Die Gründe sind unterschiedlich: hoher Leistungsdruck, ständige Erreichbarkeit durch das Handy und zu wenig Pausen. Experten empfehlen, klare Grenzen zu setzen und regelmäßig Sport zu treiben. Einige Firmen bieten mittlerweile flexible Arbeitszeiten an, um den Druck zu verringern. Ob das reicht, ist allerdings fraglich.",
-    textAr: "يشكو كثير من الموظفين من التوتر الزائد. يُظهر استطلاع أن أكثر من نصف المشاركين لا يستطيعون الابتعاد عن العمل بعد الدوام. الأسباب مختلفة: ضغط الأداء العالي، والاتصال الدائم عبر الهاتف، وقلة الاستراحات. يوصي الخبراء بوضع حدود واضحة وممارسة الرياضة بانتظام. بعض الشركات تقدم الآن ساعات عمل مرنة لتخفيف الضغط. لكن ما إذا كان ذلك كافياً أمر محل شك.",
+    textAr: "يشكو كثير من الموظفين من التوتر الزائد. يُظهر استطلاع أن أكثر من نصف المشاركين لا يستطيعون فصل أذهانهم عن العمل بعد انتهاء الدوام. الأسباب مختلفة: ضغط الأداء العالي، والاتصال الدائم عبر الهاتف، وقلة الاستراحات. يوصي الخبراء بوضع حدود واضحة وممارسة الرياضة بانتظام. بعض الشركات تقدم الآن ساعات عمل مرنة لتخفيف الضغط. لكن ما إذا كان ذلك كافياً أمر محل شك.",
     questions: [
       { q: "Was zeigt die Umfrage?", qAr: "ماذا يُظهر الاستطلاع؟", options: ["Mehr als die Hälfte kann nach der Arbeit nicht abschalten", "Die meisten sind mit ihrer Arbeit sehr zufrieden", "Die Arbeit ist für alle sehr leicht", "Die Hälfte der Befragten arbeitet gar nicht"], correct: 0, explanation: "قيل: mehr als die Hälfte der Befragten kann nach der Arbeit nicht abschalten." },
       { q: "Was empfehlen die Experten?", qAr: "ماذا يوصي الخبراء؟", options: ["klare Grenzen und Sport", "mehr Überstunden am Abend", "gar kein Handy mehr", "deutlich mehr Kaffee"], correct: 0, explanation: "قيل: klare Grenzen zu setzen und regelmäßig Sport zu treiben." },
@@ -398,10 +398,10 @@ export const RAW_TEST_BANK: TestQuestion[] = [
   {
     id: "a1-r4", skill: "lesen", level: "A1", kind: "reading",
     text: "Herr Müller arbeitet in einer Bank. Er steht jeden Tag um sechs Uhr auf. Um halb sieben frühstückt er. Um sieben Uhr fährt er mit dem Bus zur Arbeit. Er arbeitet von acht bis fünfzehn Uhr. Am Abend isst er mit seiner Frau und sieht fern. Am Samstag geht er einkaufen, am Sonntag besucht er seine Kinder.",
-    textAr: "السيد مولر يعمل في بنك. يستيقظ كل يوم السادسة. في السادسة والنصف يفطر. في السابعة يذهب بالحافلة إلى العمل. يعمل من الثامنة حتى الثالثة عصراً. مساءً يأكل مع زوجته ويشاهد التلفاز. السبت يتسوق، والأحد يزور أولاده.",
+    textAr: "السيد مولر يعمل في بنك. ينهض كل يوم في السادسة. في السادسة والنصف يتناول الفطور. في السابعة يذهب بالحافلة إلى العمل. يعمل من الثامنة حتى الثالثة عصراً. مساءً يأكل مع زوجته ويشاهد التلفاز. السبت يتسوق، والأحد يزور أولاده.",
     questions: [
       { q: "Wo arbeitet Herr Müller?", qAr: "أين يعمل السيد مولر؟", options: ["in einer Bank", "in einer Schule", "in einem Krankenhaus", "in einem Geschäft"], correct: 0, explanation: "في بنك (in einer Bank)." },
-      { q: "Wann steht er auf?", qAr: "متى يستيقظ؟", options: ["um sechs Uhr", "um sieben Uhr", "um acht Uhr", "um fünf Uhr"], correct: 0, explanation: "في السادسة (um sechs Uhr)." },
+      { q: "Wann steht er auf?", qAr: "متى ينهض؟", options: ["um sechs Uhr", "um sieben Uhr", "um acht Uhr", "um fünf Uhr"], correct: 0, explanation: "في السادسة (um sechs Uhr)." },
       { q: "Was macht er am Samstag?", qAr: "ماذا يفعل السبت؟", options: ["einkaufen", "arbeiten", "schlafen", "reisen"], correct: 0, explanation: "يتسوق (einkaufen)." },
     ],
   },
@@ -442,10 +442,10 @@ export const RAW_TEST_BANK: TestQuestion[] = [
   {
     id: "b1-r4", skill: "lesen", level: "B1", kind: "reading",
     text: "Immer mehr Menschen entscheiden sich für ein Leben auf dem Land. Die Vorteile liegen auf der Hand: frische Luft, mehr Platz und weniger Lärm. Doch die Nachteile sind nicht zu unterschätzen: Der Weg zur Arbeit ist länger, und die Auswahl an Geschäften und Schulen ist kleiner. Außerdem fühlen sich manche Menschen auf dem Land isoliert, besonders junge Leute. Experten raten daher, die Entscheidung gut zu überlegen und sich vorher zu informieren. Wer jedoch Ruhe und Natur schätzt, findet auf dem Land oft genau das, was er sucht.",
-    textAr: "يتزايد عدد من يختارون الحياة في الريف. المزايا واضحة: هواء نقي ومساحة أكبر وضوضاء أقل. لكن لا ينبغي الاستهانة بالعيوب: طريق العمل أطول واختيار المتاجر والمدارس أقل. كما يشعر بعض الناس بالعزلة في الريف، خاصة الشباب. لذلك ينصح الخبراء بالتفكير الجيد في القرار والاطلاع أولاً. أما من يقدّر الهدوء والطبيعة فيجد في الريف غالباً ما يبحث عنه.",
+    textAr: "يتزايد عدد من يختارون الحياة في الريف. المزايا واضحة: هواء نقي ومساحة أكبر وضوضاء أقل. لكن لا ينبغي الاستهانة بالعيوب: طريق الوصول إلى العمل أطول، وخيارات المتاجر والمدارس أقل. كما يشعر بعض الناس بالعزلة في الريف، خاصة الشباب. لذلك ينصح الخبراء بالتفكير الجيد في القرار والاطلاع أولاً. أما من يقدّر الهدوء والطبيعة فيجد في الريف غالباً ما يبحث عنه.",
     questions: [
       { q: "Was ist ein Vorteil des Lebens auf dem Land?", qAr: "ما ميزة الحياة في الريف؟", options: ["mehr Platz und frische Luft", "kürzere Wege zur Arbeit", "mehr Geschäfte in der Nähe", "bessere Schulen für Kinder"], correct: 0, explanation: "مساحة أكبر وهواء نقي (mehr Platz und frische Luft)." },
-      { q: "Was ist ein Nachteil laut dem Text?", qAr: "ما العيب حسب النص؟", options: ["längere Wege zur Arbeit", "zu viel Lärm in der Nacht", "zu wenig Natur im Ort", "zu hohe Mieten für alle"], correct: 0, explanation: "طرق العمل أطول (länger)." },
+      { q: "Was ist ein Nachteil laut dem Text?", qAr: "ما العيب حسب النص؟", options: ["längere Wege zur Arbeit", "zu viel Lärm in der Nacht", "zu wenig Natur im Ort", "zu hohe Mieten für alle"], correct: 0, explanation: "طريق الوصول إلى العمل أطول (Der Weg zur Arbeit ist länger)." },
       { q: "Was raten die Experten?", qAr: "بماذا ينصح الخبراء؟", options: ["die Entscheidung gut zu überlegen", "sofort umzuziehen", "nie aufs Land zu ziehen", "eine größere Stadt zu wählen"], correct: 0, explanation: "التفكير الجيد في القرار (gut zu überlegen)." },
       { q: "Der Text ist insgesamt ...", qAr: "النص إجمالاً ...", options: ["ausgewogen", "nur positiv", "nur negativ", "ironisch"], correct: 0, explanation: "النص: Die Vorteile … Doch die Nachteile … — عرض متوازن ثم نصيحة." },
     ],
@@ -469,7 +469,7 @@ export const RAW_TEST_BANK: TestQuestion[] = [
     questions: [
       { q: "Was behaupten die Befürworter des Mindestlohns?", qAr: "ماذا يدّعي مؤيدو الحد الأدنى؟", options: ["Er stärkt die Kaufkraft und reduziert Armut", "Er führt in vielen Branchen zu Stellenabbau", "Er schadet der Wirtschaft insgesamt", "Er erhöht die Preise für alle Kunden"], correct: 0, explanation: "يقوّي القوة الشرائية ويحد من الفقر (نقل كلام: stärke, reduziere)." },
       { q: "Wovor warnen die Kritiker?", qAr: "ماذا يحذر النقاد؟", options: ["Stellenabbau in kleinen Betrieben", "zu viel Kaufkraft in der Bevölkerung", "deutlich mehr Armut", "höhere Steuern für alle"], correct: 0, explanation: "خفض الوظائف في المؤسسات الصغيرة (Stellenabbau)." },
-      { q: "Was betonen die Ökonomen?", qAr: "ماذا يؤكد الاقتصاديون؟", options: ["Die Wirkung hängt vom Arbeitsmarkt ab", "Der Mindestlohn ist immer gut", "Der Mindestlohn ist immer schlecht", "Es gibt keine Studien"], correct: 0, explanation: "الأثر يعتمد على سوق العمل (abgehängt vom Arbeitsmarkt)." },
+      { q: "Was betonen die Ökonomen?", qAr: "ماذا يؤكد الاقتصاديون؟", options: ["Die Wirkung hängt vom Arbeitsmarkt ab", "Der Mindestlohn ist immer gut", "Der Mindestlohn ist immer schlecht", "Es gibt keine Studien"], correct: 0, explanation: "الأثر يعتمد على سوق العمل (hängt vom Arbeitsmarkt ab)." },
       { q: "Worauf kommt es letztlich an?", qAr: "على ماذا يعتمد الأمر في النهاية؟", options: ["das Verhältnis zu den Lebenshaltungskosten", "die Höhe der Steuern im Land", "die Anzahl der Betriebe in der Region", "das Alter der Arbeitnehmer im Betrieb"], correct: 0, explanation: "التناسب مع تكاليف المعيشة (im Verhältnis zu den Lebenshaltungskosten)." },
     ],
   },

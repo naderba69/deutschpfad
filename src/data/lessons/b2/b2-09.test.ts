@@ -16,7 +16,15 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   e1: { options: ["ziehe", "stelle", "lege", "mache"], key: "ziehe" },
   e2: { options: ["stelle", "ziehe", "lege", "gebe"], key: "stelle" },
   e8: { options: ["خطاب التقديم", "السيرة الذاتية", "الشهادة", "العقد"], key: "خطاب التقديم" },
-  e14: { options: ["Anbei finden Sie ...", "Hier ist ...", "Ich gebe dir ...", "Das ist ..."], key: "Anbei finden Sie ..." },
+  e14: {
+    options: [
+      "Anbei finden Sie die geforderten Unterlagen.",
+      "Ich schicke du die geforderten Unterlagen.",
+      "Finden anbei Sie die geforderten Unterlagen.",
+      "Du findest die geforderten Unterlagen anbei.",
+    ],
+    key: "Anbei finden Sie die geforderten Unterlagen.",
+  },
   m1: { options: ["treffe", "mache", "nehme", "gebe"], key: "treffe" },
   m2: { options: ["lege", "stelle", "ziehe", "mache"], key: "lege" },
   q1: { options: ["auf Innovation", "auf viel Geld", "auf den Urlaub", "auf gutes Essen"], key: "auf Innovation" },
@@ -58,7 +66,7 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
 };
 
 const expectedErrorCorrections: Record<string, { wrongWord: string; correctWord: string; options: string[] }> = {
-  e5: { wrongWord: "nach", correctWord: "um", options: ["um", "nach", "auf", "an"] },
+  e5: { wrongWord: "nach", correctWord: "um", options: ["um", "nach", "von", "zu"] },
   e9: { wrongWord: "für", correctWord: "auf", options: ["auf", "für", "an", "über"] },
   e11: { wrongWord: "gemacht", correctWord: "getroffen", options: ["getroffen", "gemacht", "genommen", "gestellt"] },
   m4: { wrongWord: "zu", correctWord: "zur", options: ["zur", "zu", "zum", "zur Verfügung"] },
@@ -291,6 +299,9 @@ describe("B2-09 lesson content audit", () => {
         );
       }
     }
+    const e5 = task("e5");
+    if (e5.type !== "error-correction") throw new Error("e5 is not error-correction");
+    expect(e5.wrongSentence.replace(e5.wrongWord, e5.correctWord)).toBe("Ich bewerbe mich um die Stelle.");
   });
 
   it("keeps every Funktionsverbgefüge on its contractual verb", () => {
@@ -316,7 +327,7 @@ describe("B2-09 lesson content audit", () => {
   it("keeps the application letter formula for attachments intact", () => {
     const e14 = task("e14");
     if (e14.type !== "multiple-choice") throw new Error("e14 is not multiple-choice");
-    expect(e14.options[e14.correctIndex], "قالب المرفقات").toBe("Anbei finden Sie ...");
+    expect(e14.options[e14.correctIndex], "صيغة مهذبة للمرفقات").toBe("Anbei finden Sie die geforderten Unterlagen.");
     const m5 = task("m5");
     if (m5.type !== "fill-blank") throw new Error("m5 is not fill-blank");
     expect(m5.blanks[0].correct, "فعل القالب").toBe("finden");
@@ -465,7 +476,7 @@ describe("B2-09 lesson content audit", () => {
     expect(reading?.titleAr).toBe("من طلب التوظيف إلى أول يوم عمل");
     expect(reading?.paragraphs).toHaveLength(6);
     expect(reading?.paragraphsAr).toHaveLength(6);
-    const text = reading!.paragraphs.join(" ").toLowerCase();
+    const text = [reading!.titleDe, ...reading!.paragraphs].join(" ").toLowerCase();
     expect(text.split(/\s+/).filter(Boolean).length, "كلمات القراءة").toBeGreaterThanOrEqual(320);
 
     expect(reading?.glossary.length).toBeGreaterThanOrEqual(8);
@@ -497,10 +508,10 @@ describe("B2-09 lesson content audit", () => {
     expect(reading?.discussionAr?.trim().length).toBeGreaterThanOrEqual(40);
 
     for (const anchor of [
-      "als sara sich um eine stelle als datenanalystin bewarb",
-      "sie legte wert auf ein knappes anschreiben",
+      "in diesem fiktiven fall bewarb sich sara um eine stelle als datenanalystin",
+      "für ihre bewerbung formulierte sie ein knappes anschreiben",
       "stellte auf anfrage gern arbeitsproben zur verfügung",
-      "anbei finden sie, so begann jede ihrer bewerbungen",
+      "in ihrem anschreiben stand: „anbei finden sie die wichtigsten nachweise.“",
       "wir treffen die entscheidung nicht im ersten gespräch",
       "wir ziehen alle kandidaten gleich in betracht",
       "dass ihre erfahrung nur eine kleine rolle spielte",
@@ -509,34 +520,50 @@ describe("B2-09 lesson content audit", () => {
       "in der ihre erfahrung besser zur geltung kam",
       "sara nahm das angebot in betracht",
       "am ersten arbeitstag wurde ihr ein pate zugeteilt",
-      "auf diese weise übte sie kritik, ohne sie zu erleiden",
-      "nach drei monaten legte sie wert darauf",
+      "einwände sachlich zu formulieren und rückmeldungen aufzunehmen",
+      "nach drei monaten merkte sie, dass auch ihr pate",
     ]) {
       expect(text.includes(anchor), `مرساة مفقودة: ${anchor}`).toBe(true);
     }
 
     const readingText = JSON.stringify(reading).toLowerCase();
-    for (const marker of ["in betracht", "zur verfügung", "wert leg", "rolle spiel", "kritik", "frist", "zusage"]) {
+    for (const marker of ["in betracht", "zur verfügung", "lege wert auf", "rolle spiel", "kritik", "frist", "zusage"]) {
       expect(readingText, `بنية مفقودة في القراءة: ${marker}`).toContain(marker);
     }
   });
 
   it("keeps the interaction best replies as complete sentences", () => {
-    const rounds = (lessonB209.interaction ?? [])[0].rounds as unknown as { options: { de: string; best?: boolean }[] }[];
+    const rounds = (lessonB209.interaction ?? [])[0].rounds as unknown as { speakerDe: string; options: { de: string; best?: boolean }[] }[];
+    expect(rounds[0]?.speakerDe).toContain("fiktive Projektmanagerstelle");
     expect(rounds.map((round) => round.options.find((option) => option.best)?.de)).toEqual([
-      "Neben fachlichen Qualifikationen werden Soft Skills wie Kommunikation und Teamfähigkeit immer wichtiger. Außerdem sind digitale Kompetenzen unverzichtbar.",
-      "Ich bin kommunikativ und teamfähig. Zudem beherrsche ich mehrere Sprachen, was in internationalen Unternehmen ein großer Vorteil ist.",
+      "Meiner Ansicht nach sind neben fachlichen Qualifikationen auch Kommunikation und Teamfähigkeit wichtig. Je nach Stelle können digitale Kompetenzen ebenfalls eine Rolle spielen.",
+      "Ich kann gut kommunizieren und im Team arbeiten. Außerdem spreche ich mehrere Sprachen und könnte diese Stärke in internationalen Projekten einsetzen.",
     ]);
     for (const round of rounds) {
       expect(round.options.filter((option) => option.best)).toHaveLength(1);
     }
   });
 
-  it("keeps the mediation task pointing at a real source text", () => {
+  it("labels mediation statistics as a fictional exercise scenario", () => {
     const mediation = lessonB209.mediation?.[0];
     expect(mediation?.id).toBe("med-b2-09-1");
     expect(mediation?.type).toBe("summarize-de-to-ar");
+    expect(mediation?.sourceDe).toContain("fiktiven Beispielszenario");
+    expect(mediation?.taskAr).toContain("السيناريو الافتراضي");
+    expect(mediation?.modelAnswerAr).toContain("السيناريو الافتراضي");
     expect((mediation?.sourceDe ?? "").trim().length, "نصّ المصدر").toBeGreaterThan(100);
+  });
+
+  it("uses IPA notation for pronunciation examples and avoids Arabic respelling", () => {
+    const pronunciation = lessonB209.pronunciation;
+    expect(pronunciation?.title).toContain("IPA");
+    expect(pronunciation?.items).toHaveLength(6);
+    for (const item of pronunciation?.items ?? []) {
+      expect(item.note).toMatch(/\[[^\]]+\]/);
+      expect(item.note).not.toMatch(/بِڤِربونغ|آن-شرايبِن|ليبِنْس-لاوف|شتِلِّه|إرفارونغ|فيه-يغكايت/);
+    }
+    expect(pronunciation?.tip).toContain("IPA");
+    expect(pronunciation?.shadowing?.[1]?.ar).toBe("تجدون سيرتي الذاتية مرفقة.");
   });
 
   it("keeps the meta row aligned with the lesson title", () => {

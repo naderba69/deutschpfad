@@ -42,9 +42,9 @@ export const READING_LIBRARY: ReadingText[] = [
     titleDe: "Mein Tag",
     category: "الروتين",
     text: "Ich stehe um sechs Uhr auf. Dann frühstücke ich. Um acht Uhr gehe ich zur Schule. Am Mittag esse ich in der Schule. Am Nachmittag mache ich Hausaufgaben. Am Abend sehe ich fern oder spiele mit meinem Bruder. Um zehn Uhr schlafe ich.",
-    textAr: "أستيقظ في السادسة. ثم أتناول الفطور. في الثامنة أذهب إلى المدرسة. ظهراً آكل في المدرسة. بعد الظهر أحل واجباتي. مساءً أشاهد التلفاز أو ألعب مع أخي. في العاشرة أنام.",
+    textAr: "أنهض في السادسة. ثم أتناول الفطور. في الثامنة أذهب إلى المدرسة. ظهراً آكل في المدرسة. بعد الظهر أحل واجباتي. مساءً أشاهد التلفاز أو ألعب مع أخي. في العاشرة أنام.",
     questions: [
-      { q: "Wann steht er auf?", qAr: "متى يستيقظ؟", options: ["um sechs Uhr", "um acht Uhr", "um zehn Uhr", "um sieben Uhr"], correct: 0, explanation: "النص: «Ich stehe um sechs Uhr auf.»." },
+      { q: "Wann steht er auf?", qAr: "متى ينهض؟", options: ["um sechs Uhr", "um acht Uhr", "um zehn Uhr", "um sieben Uhr"], correct: 0, explanation: "النص: «Ich stehe um sechs Uhr auf.»." },
       { q: "Was macht er am Nachmittag?", qAr: "ماذا يفعل بعد الظهر؟", options: ["Hausaufgaben", "schlafen", "fernsehen nur", "einkaufen"], correct: 0, explanation: "النص: «Am Nachmittag mache ich Hausaufgaben.»." },
     ],
   },
@@ -71,7 +71,7 @@ export const READING_LIBRARY: ReadingText[] = [
     titleDe: "Eine neue Wohnung",
     category: "السكن",
     text: "Anna sucht eine neue Wohnung. Sie möchte eine Wohnung mit zwei Zimmern in der Stadtmitte. Gestern hat sie eine Anzeige gesehen: eine schöne Wohnung neben dem Park, 650 Euro warm. Sie hat angerufen und heute besichtigt sie die Wohnung. Der Vermieter ist nett. Anna hofft, dass sie die Wohnung bekommt.",
-    textAr: "تبحث آنا عن شقة جديدة. تريد شقة بغرفتين في وسط المدينة. أمس رأت إعلاناً: شقة جميلة بجانب الحديقة، 650 يورو شاملة التدفئة. اتصلت واليوم تعاين الشقة. المؤجر لطيف. تأمل آنا أن تحصل على الشقة.",
+    textAr: "تبحث آنا عن شقة جديدة. تريد شقة بغرفتين في وسط المدينة. أمس رأت إعلاناً: شقة جميلة بجانب الحديقة، 650 يورو شاملة التكاليف المذكورة في الإعلان. اتصلت واليوم تعاين الشقة. المؤجر لطيف. تأمل آنا أن تحصل على الشقة.",
     questions: [
       { q: "Was sucht Anna?", qAr: "ماذا تبحث آنا؟", options: ["eine Wohnung", "ein Haus", "ein Zimmer", "ein Auto"], correct: 0, explanation: "النص: «Anna sucht eine neue Wohnung.»." },
       { q: "Wo liegt die Wohnung?", qAr: "أين تقع الشقة؟", options: ["neben dem Park", "am Bahnhof", "im Zentrum", "an der Schule"], correct: 0, explanation: "النص: «eine schöne Wohnung neben dem Park»." },
@@ -117,7 +117,7 @@ export const READING_LIBRARY: ReadingText[] = [
     titleDe: "Künstliche Intelligenz und Arbeit",
     category: "التقنية",
     text: "Es ist erwiesen, dass die künstliche Intelligenz die Arbeitswelt grundlegend verändert. Einerseits schafft sie neue Berufe, andererseits macht sie viele traditionelle Tätigkeiten überflüssig. Die Forscher, mit denen wir gesprochen haben, betonen, dass die Weiterbildung entscheidend sei. Meiner Ansicht nach brauchen wir ein Gleichgewicht zwischen technologischem Fortschritt und menschlicher Arbeit. Man sollte die Technik nicht als Bedrohung sehen, sondern als Werkzeug, das uns unterstützt. Die Gesellschaft, die sich schnell anpasst, wird am meisten profitieren.",
-    textAr: "ثابت أن الذكاء الاصطناعي يغير عالم العمل جذرياً. من ناحية يخلق مهناً جديدة، ومن ناحية أخرى يجعل أنشطة تقليدية كثيرة زائدة. يؤكد الباحثون الذين تحدثنا معهم أن التدريب المستمر حاسم. في رأيي نحتاج توازناً بين التقدم التكنولوجي والعمل البشري. يجب ألا ننظر للتقنية كتهديد بل كأداة تدعمنا. المجتمع الذي يتكيف بسرعة سيستفيد أكثر.",
+    textAr: "ثبت أن الذكاء الاصطناعي يغيّر عالم العمل جذرياً. فمن ناحية يخلق مهناً جديدة، ومن ناحية أخرى يجعل كثيراً من المهام التقليدية غير ضرورية. ويؤكد الباحثون الذين تحدثنا معهم أهمية التدريب المستمر. وفي رأيي نحتاج إلى توازن بين التقدم التكنولوجي والعمل البشري. ينبغي ألا ننظر إلى التقنية بوصفها تهديداً، بل أداةً تدعمنا. والمجتمع الذي يتكيف بسرعة سيستفيد أكثر.",
     questions: [
       { q: "Was verändert die KI?", qAr: "ماذا تغير الذكاء الاصطناعي؟", options: ["die Arbeitswelt", "das Wetter", "die Schule nur", "nichts"], correct: 0, explanation: "النص: «die künstliche Intelligenz die Arbeitswelt grundlegend verändert»." },
       { q: "Was ist laut Forschern entscheidend?", qAr: "ما الحاسم حسب الباحثين؟", options: ["die Weiterbildung", "das Geld", "die Zeit", "die Politik"], correct: 0, explanation: "النص: «dass die Weiterbildung entscheidend sei»." },
@@ -164,7 +164,7 @@ export const READING_LIBRARY: ReadingText[] = [
     questions: [
       { q: "Anna spart täglich zwei Stunden Fahrtzeit.", qAr: "توفر آنا يومياً ساعتي تنقل.", options: ["richtig", "falsch", "nicht im Text"], correct: 0, explanation: "مذكور حرفياً: spart täglich zwei Stunden Fahrtzeit." },
       { q: "Markus möchte nie wieder ins Büro.", qAr: "ماركوس لا يريد العودة للمكتب أبداً.", options: ["richtig", "falsch", "nicht im Text"], correct: 1, explanation: "النص: «Markus dagegen vermisst den direkten Austausch im Büro» — العبارة عكس ما يرويه النصّ." },
-      { q: "Das Unternehmen plant drei Tage Büro und zwei Tage Homeoffice.", qAr: "تخطط الشركة لثلاثة أيام مكتب ويومين منزل.", options: ["richtig", "falsch", "nicht im Text"], correct: 0, explanation: "النموذج الهجين مذكور: drei Tage im Büro, zwei Tage zu Hause." },
+      { q: "Das Unternehmen plant drei Tage Büro und zwei Tage Homeoffice.", qAr: "تخطط الشركة لنموذج هجين: ثلاثة أيام في المكتب ويومان من المنزل.", options: ["richtig", "falsch", "nicht im Text"], correct: 0, explanation: "النموذج الهجين مذكور: drei Tage im Büro, zwei Tage zu Hause." },
       { q: "Anna verdient mehr Geld als früher.", qAr: "آنا تتقاضى راتباً أعلى من قبل.", options: ["richtig", "falsch", "nicht im Text"], correct: 2, explanation: "لا ذكر للراتب إطلاقاً — nicht im Text (أسلوب غوته B2)." },
     ],
   },
@@ -227,7 +227,7 @@ export const READING_LIBRARY: ReadingText[] = [
       { q: "Wer sagt: „Ich schalte mein Handy jedes Wochenende komplett ab“?", qAr: "من قال: «أطفئ هاتفي تماماً كل عطلة نهاية أسبوع»؟", options: ["Anna", "Peter", "Omar", "Julia"], correct: 0, explanation: "النص: «Ich schalte mein Handy jeden Freitagabend ab» — آنا." },
       { q: "Wer sagt: „Ohne Handy fühle ich mich fast nackt“?", qAr: "من قال: «بدون هاتفي أشعر تقريباً كأني عارٍ»؟", options: ["Anna", "Peter", "Sara", "Julia"], correct: 1, explanation: "بيتر — يعبر عن التعلق الشديد بالهاتف (nackt = عارٍ، تعبير مجازي)." },
       { q: "Wer nennt Disziplin wichtiger als Verzicht?", qAr: "من يرى أن الانضباط أهم من الحرمان؟", options: ["Sara", "Omar", "Julia", "Anna"], correct: 1, explanation: "عمر — «Disziplin ist wichtiger als Verzicht» (الانضباط أهم من الحرمان)." },
-      { q: "Wer hat nur eine kleine Regel: kein Handy beim Essen?", qAr: "من لديه قاعدة صغيرة فقط: لا هاتف أثناء الأكل؟", options: ["Peter", "Julia", "Sara", "Omar"], correct: 2, explanation: "النص: «Während der Mahlzeiten bleibt das Handy in der Tasche.» — سارة." },
+      { q: "Wer hat nur eine kleine Regel: kein Handy beim Essen?", qAr: "من لديه قاعدة بسيطة واحدة فقط: لا هاتف أثناء تناول الطعام؟", options: ["Peter", "Julia", "Sara", "Omar"], correct: 2, explanation: "النص: «Während der Mahlzeiten bleibt das Handy in der Tasche.» — سارة." },
       { q: "Wer hat durch eine Woche ohne Internet sein Leben verändert?", qAr: "من غيّر أسبوع دون إنترنت حياته؟", options: ["Anna", "Peter", "Omar", "Julia"], correct: 3, explanation: "جوليا — «Das hat mein Leben verändert»." },
     ],
   },

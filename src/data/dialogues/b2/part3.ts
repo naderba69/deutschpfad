@@ -54,14 +54,15 @@ export const B2_DIALOGUES_3: DailyDialogue[] = [
     title: "استشارة طبيب متخصص",
     titleDe: "Facharztbesuch",
     emoji: "🩻",
-    situation: "تشرح أعراضاً معقدة لطبيب متخصص",
+    situation: "محاكاة لغوية خيالية لشرح أعراض لطبيب؛ ليست تشخيصاً أو نصيحة طبية.",
+    audioNoteAr: "أُعيد توليد المقطع الخامس TTS من النص الحالي؛ وطابق تفريغ ASR محلي في تمريرين نص الأدوار الستة. مصدر المقاطع الأخرى غير موثق، ولا يثبت التفريغ جودة النطق أو طبيعيته. لم يُجر استماع بشري؛ التدقيق برمجي وبالسكريبتات فقط.",
     turns: [
       { speaker: "الطبيب", role: "a", de: "Guten Tag! Was führt Sie zu mir?", ar: "طاب يومك! ما الذي أتى بك؟" },
       { speaker: "أنت", role: "b", de: "Ich habe seit Monaten wiederkehrende Rückenschmerzen und weiß nicht, woran es liegt.", ar: "عندي منذ أشهر آلام ظهر متكررة ولا أعرف السبب." },
       { speaker: "الطبيب", role: "a", de: "Wann treten die Schmerzen auf?", ar: "متى تظهر الآلام؟" },
       { speaker: "أنت", role: "b", de: "Besonders nach langem Sitzen am Schreibtisch.", ar: "خصوصاً بعد الجلوس الطويل على المكتب." },
-      { speaker: "الطبيب", role: "a", de: "Das deutet auf eine Fehlhaltung hin. Machen Sie regelmäßig Pausen?", ar: "هذا يشير إلى وضعية خاطئة. هل تأخذ فترات راحة؟" },
-      { speaker: "أنت", role: "b", de: "Ehrlich gesagt, nein. Ich arbeite oft stundenlang ohne Unterbrechung.", ar: "بصراحة لا. أعمل غالباً ساعات دون انقطاع." },
+      { speaker: "الطبيب", role: "a", de: "Das kann verschiedene Ursachen haben. Wir untersuchen das näher. Machen Sie regelmäßig Pausen?", ar: "قد تكون لذلك أسباب مختلفة. سنفحص الأمر بمزيد من التفصيل. هل تأخذ فترات راحة منتظمة؟" },
+      { speaker: "أنت", role: "b", de: "Ehrlich gesagt, nein. Ich arbeite oft stundenlang ohne Unterbrechung.", ar: "بصراحة لا. أعمل غالباً ساعات طويلة دون انقطاع." },
     ],
     questions: [
       { de: "Wie lange hat die Person schon Rückenschmerzen?", ar: "منذ متى يعاني الشخص من آلام الظهر؟", options: [
@@ -83,8 +84,8 @@ export const B2_DIALOGUES_3: DailyDialogue[] = [
     keyVocab: [
       { de: "wiederkehrend", ar: "متكرر" },
       { de: "die Rückenschmerzen", ar: "آلام الظهر" },
-      { de: "die Fehlhaltung", ar: "الوضعية الخاطئة" },
-      { de: "deuten auf … hin", ar: "يشير إلى …" },
+      { de: "die Ursache", ar: "السبب" },
+      { de: "etwas näher untersuchen", ar: "يفحص شيئاً بمزيد من التفصيل" },
       { de: "die Unterbrechung", ar: "الانقطاع" },
     ],
   },
@@ -95,7 +96,7 @@ export const B2_DIALOGUES_3: DailyDialogue[] = [
     titleDe: "Am Flughafen",
     emoji: "✈️",
     situation: "محاكاة خيالية لإلغاء رحلة؛ لا يضمن الإلغاء وحده تعويضاً، فالحقوق تعتمد على المسار والسبب ووقت الإبلاغ والقواعد المطبقة.",
-    audioNoteAr: "مصدر ملفات MP3 غير موثق؛ لا أجزم بأنها بشرية أو مولّدة، ولم تُتحقق مطابقتها للنص أو جودة النطق. موقف الرحلة افتراضي، ولا يقرر الحوار استحقاق تعويض فعلي.",
+    audioNoteAr: "مصدر ملفات MP3 غير موثق للمقاطع 1–3 و5–6. أُعيد توليد المقطع 4 TTS من نصه الحالي؛ طابق ASR المحلي الكلمات عدا «Uhr» التي أغفلها التمريران. لا يثبت ASR جودة النطق أو طبيعيته. لم يُجر استماع بشري؛ التدقيق برمجي فقط. موقف الرحلة افتراضي ولا يقرر استحقاق تعويض فعلي.",
     turns: [
       { speaker: "أنت", role: "a", de: "Entschuldigung, mein Flug nach Tunis wurde gestrichen. Was kann ich tun?", ar: "عذراً، أُلغيت رحلتي إلى تونس. ماذا أفعل؟" },
       { speaker: "الموظف", role: "b", de: "Das tut mir leid. Wir können Sie auf einen späteren Flug umbuchen.", ar: "يؤسفني. نستطيع تحويلك لرحلة لاحقة." },
@@ -131,7 +132,7 @@ export const B2_DIALOGUES_3: DailyDialogue[] = [
   },
   {
     id: "b2-14-medien",
-    audioNoteAr: "مصدر ملفات MP3 لهذا الحوار غير موثّق؛ لا أجزم بأنها تسجيلات بشرية أو مولّدة آلياً، ولا يثبت فحص الإشارة مطابقتها للنص أو وضوح النطق.",
+    audioNoteAr: "مصدر ملفات MP3 غير موثق. طابق ASR المحلي النص في خمسة مقاطع؛ وفي المقطع الثالث ظهر اختلاف تفريغي بين «Falschinformationen» و«falsche Informationen» ولا يحسم ذلك اللفظ المنطوق. لم يُجر استماع بشري؛ لا يثبت ASR جودة النطق أو طبيعيته.",
     level: "B2",
     title: "نقاش عن الإعلام",
     titleDe: "Über Medien diskutieren",
@@ -176,12 +177,13 @@ export const B2_DIALOGUES_3: DailyDialogue[] = [
     title: "تنظيم نقل الشركة",
     titleDe: "Firmenumzug organisieren",
     emoji: "🏢",
-    situation: "تنظم نقل مكتب شركتك إلى مبنى جديد",
+    situation: "محاكاة تدريبية خيالية: تنظم نقل مكتب شركتك إلى مبنى جديد.",
+    audioNoteAr: "الأدوار الستة مقاطع TTS مولّدة من النص الحالي، وطابقها تفريغ ASR محلي. لم يُجر استماع بشري أو تقييم لوضوح الصوت أو طبيعية النطق. الموقف تدريبي خيالي.",
     turns: [
       { speaker: "الزميل", role: "a", de: "Der Umzug ist in zwei Wochen. Sind alle Vorbereitungen getroffen?", ar: "النقل بعد أسبوعين. هل كل الاستعدادات تمت؟" },
       { speaker: "أنت", role: "b", de: "Fast. Die IT-Abteilung ist noch nicht fertig mit den Servern.", ar: "تقريباً. قسم التقنية لم ينتهِ من الخوادم بعد." },
       { speaker: "الزميل", role: "a", de: "Das ist kritisch. Wir brauchen die Server am ersten Tag.", ar: "هذا حرج. نحتاج الخوادم في اليوم الأول." },
-      { speaker: "أنت", role: "b", de: "Ich habe mit dem Anbieter gesprochen. Sie installieren am Wochenende.", ar: "تحدثت مع المزود. سيثبتونها في نهاية الأسبوع." },
+      { speaker: "أنت", role: "b", de: "Ich habe mit dem Anbieter gesprochen. Die Installation findet am Wochenende statt.", ar: "تحدثت مع مزود الخدمة. ستتم عملية التثبيت في نهاية الأسبوع." },
       { speaker: "الزميل", role: "a", de: "Perfekt. Und die Umzugsfirma?", ar: "ممتاز. وشركة النقل؟" },
       { speaker: "أنت", role: "b", de: "Alles bestätigt. Sie kommen am Freitag um acht Uhr.", ar: "كل شيء مؤكد. سيأتون الجمعة في الثامنة." },
     ],

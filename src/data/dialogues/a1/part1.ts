@@ -60,7 +60,7 @@ export const A1_DIALOGUES_1: DailyDialogue[] = [
     emoji: "☕",
     situation: "تدخل مقهى وتطلب مشروباً وحلوى",
     turns: [
-      { speaker: "النادل", role: "a", de: "Guten Tag! Was möchten Sie?", ar: "طاب يومك! ماذا تريد؟" },
+      { speaker: "النادل", role: "a", de: "Guten Tag! Was möchten Sie?", ar: "مرحباً! ماذا تودّ؟" },
       { speaker: "أنت", role: "b", de: "Ich möchte einen Kaffee, bitte.", ar: "أريد قهوة من فضلك." },
       { speaker: "النادل", role: "a", de: "Mit Milch oder schwarz?", ar: "مع الحليب أم سوداء؟" },
       { speaker: "أنت", role: "b", de: "Mit Milch, bitte. Und ein Stück Kuchen.", ar: "مع الحليب من فضلك. وقطعة كعك." },
@@ -83,10 +83,10 @@ export const A1_DIALOGUES_1: DailyDialogue[] = [
         { text: "Guten Morgen", ar: "صباح الخير", correct: false, explanation: "لا — Guten Morgen تحية صباحية؛ وخاتمة الزبون «Danke schön!»." },
         { text: "Auf Wiedersehen", ar: "إلى اللقاء", correct: false, explanation: "لا — لم يقل Auf Wiedersehen؛ بل شكر: «Danke schön!»." },
       ]},
-      { de: "Was isst der Gast?", ar: "ماذا يأكل الزبون؟", options: [
-        { text: "Eine Pizza Margherita", ar: "بيتزا", correct: false, explanation: "لا — لم تُطلب بيتزا Eine Pizza Margherita؛ بل «ein Stück Kuchen»." },
-        { text: "Ein Brötchen mit Käse", ar: "لفافة خبز", correct: false, explanation: "لا — لم يُذكر لفّاف خبز Ein Brötchen؛ والمأكول «ein Stück Kuchen»." },
-        { text: "Ein Stück Apfelkuchen", ar: "قطعة كعك", correct: true, explanation: "نعم — «ein Stück Kuchen»." },
+      { de: "Was bestellt der Gast zu essen?", ar: "ماذا يطلب الزبون ليأكله؟", options: [
+        { text: "Ein Eis", ar: "مثلجات", correct: false, explanation: "لا — لم يطلب مثلجات؛ بل «ein Stück Kuchen»." },
+        { text: "Ein Stück Brot", ar: "قطعة خبز", correct: false, explanation: "لا — لم يطلب خبزاً؛ بل «ein Stück Kuchen»." },
+        { text: "Ein Stück Kuchen", ar: "قطعة كعك", correct: true, explanation: "نعم — «Und ein Stück Kuchen»." },
       ]},
     ],
     keyVocab: [
@@ -146,32 +146,32 @@ export const A1_DIALOGUES_1: DailyDialogue[] = [
     emoji: "👨‍👩‍👧‍👦",
     situation: "تسأل صديقاً جديداً عن عائلته",
     turns: [
-      { speaker: "أنت", role: "a", de: "Hast du Geschwister?", ar: "هل لديك إخوة؟" },
+      { speaker: "أنت", role: "a", de: "Hast du Geschwister?", ar: "هل لديك إخوة أو أخوات؟" },
       { speaker: "باول", role: "b", de: "Ja, ich habe einen Bruder und eine Schwester.", ar: "نعم، عندي أخ وأخت." },
       { speaker: "أنت", role: "a", de: "Und deine Eltern?", ar: "ووالداك؟" },
       { speaker: "باول", role: "b", de: "Mein Vater ist Lehrer. Meine Mutter ist Ärztin.", ar: "أبي معلم. أمي طبيبة." },
-      { speaker: "أنت", role: "a", de: "Das ist interessant! Meine Mutter ist auch Ärztin.", ar: "هذا مثير! أمي طبيبة أيضاً." },
+      { speaker: "أنت", role: "a", de: "Das ist interessant! Meine Mutter ist auch Ärztin.", ar: "هذا مثير للاهتمام! أمي طبيبة أيضاً." },
       { speaker: "باول", role: "b", de: "Wirklich? Wie schön!", ar: "حقاً؟ كم جميل!" },
     ],
     questions: [
-      { de: "Wie viele Geschwister hat Paul?", ar: "كم أخاً لدى باول؟", options: [
+      { de: "Wie viele Geschwister hat Paul?", ar: "كم عدد الإخوة والأخوات لدى باول؟", options: [
         { text: "Einen Bruder und eine Schwester", ar: "أخاً وأختاً", correct: true, explanation: "نعم — «einen Bruder und eine Schwester»." },
-        { text: "Nur einen älteren Bruder", ar: "أخوين", correct: false, explanation: "لا — الأخ الأكبر älter لم يُذكر؛ بل «einen Bruder und eine Schwester»." },
-        { text: "Zwei Schwestern, keinen Bruder", ar: "لا أحد", correct: false, explanation: "لا — له أخٌ صراحةً: «ich habe einen Bruder und eine Schwester»." },
+        { text: "Zwei Brüder und zwei Schwestern", ar: "أخوان وأختان", correct: false, explanation: "لا — له شقيقان فقط، أخ وأخت: «einen Bruder und eine Schwester»." },
+        { text: "Zwei Schwestern und ein Bruder", ar: "أختان وأخ", correct: false, explanation: "لا — له أخت واحدة وأخ واحد: «einen Bruder und eine Schwester»." },
       ]},
       { de: "Was ist Pauls Mutter von Beruf?", ar: "ما مهنة أم باول؟", options: [
         { text: "Ärztin", ar: "طبيبة", correct: true, explanation: "صحيح — «Meine Mutter ist Ärztin»." },
         { text: "Lehrerin", ar: "معلمة", correct: false, explanation: "لا — التعليم مهنة الأب: «Mein Vater ist Lehrer»." },
-        { text: "Köchin", ar: "لا، طباخة", correct: false, explanation: "لا — لم تُذكر طباخة Köchin؛ والأمّ «Meine Mutter ist Ärztin»." },
+        { text: "Köchin", ar: "طباخة", correct: false, explanation: "لا — لم تُذكر طباخة Köchin؛ والأمّ «Meine Mutter ist Ärztin»." },
       ]},
-      { de: "Wie viele Brüder hat Paul?", ar: "كم أخاً لبول؟", options: [
+      { de: "Wie viele Brüder hat Paul?", ar: "كم أخاً لباول؟", options: [
         { text: "Keinen Bruder", ar: "لا أخ", correct: false, explanation: "لا — قال إن له أخاً: «ich habe einen Bruder»." },
         { text: "Einen Bruder", ar: "أخ واحد", correct: true, explanation: "نعم — «einen Bruder und eine Schwester»." },
-        { text: "Nur einen älteren Bruder", ar: "أخوان", correct: false, explanation: "لا — ذُكر أخٌ واحد بلا وصف älter؛ والصيغة «einen Bruder und eine Schwester»." },
+        { text: "Drei Brüder", ar: "ثلاثة إخوة", correct: false, explanation: "لا — ذُكر أخ واحد فقط: «einen Bruder und eine Schwester»." },
       ]},
     ],
     keyVocab: [
-      { de: "die Geschwister", ar: "الإخوة" },
+      { de: "die Geschwister", ar: "الإخوة والأخوات" },
       { de: "der Vater / die Mutter", ar: "الأب / الأم" },
       { de: "von Beruf", ar: "من حيث المهنة" },
       { de: "der Lehrer / die Ärztin", ar: "المعلم / الطبيبة" },
@@ -189,7 +189,7 @@ export const A1_DIALOGUES_1: DailyDialogue[] = [
     turns: [
       { speaker: "أنت", role: "a", de: "Entschuldigung, wie spät ist es?", ar: "عذراً، كم الساعة؟" },
       { speaker: "المرأة", role: "b", de: "Es ist halb drei.", ar: "إنها الثانية والنصف." },
-      { speaker: "أنت", role: "a", de: "Danke schön! Und wann fährt der Bus?", ar: "شكراً! ومتى ينطلق الحافلة؟" },
+      { speaker: "أنت", role: "a", de: "Danke schön! Und wann fährt der Bus?", ar: "شكراً! ومتى تنطلق الحافلة؟" },
       { speaker: "المرأة", role: "b", de: "Der Bus fährt um drei Uhr.", ar: "الحافلة تنطلق في الثالثة." },
       { speaker: "أنت", role: "a", de: "Perfekt, ich habe noch Zeit. Danke!", ar: "ممتاز، ما زال عندي وقت. شكراً!" },
       { speaker: "المرأة", role: "b", de: "Gern geschehen!", ar: "على الرحب والسعة!" },

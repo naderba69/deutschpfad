@@ -104,7 +104,7 @@ export const B1_DIALOGUES_2: DailyDialogue[] = [
     ],
     questions: [
       { de: "Warum ruft die Person an?", ar: "لماذا يتصل الشخص؟", options: [
-        { text: "Sie ist krank und kommt nicht zur Arbeit", ar: "هو مريض ولا يستطيع الحضور للعمل", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
+        { text: "Sie ist krank und kommt nicht zur Arbeit", ar: "هي مريضة ولا تستطيع الحضور للعمل", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
         { text: "Sie möchte gern einen Urlaub buchen", ar: "تريد حجز إجازة", correct: false, explanation: "لا — لم يُطلب حجز إجازة Urlaub buchen؛ والسبب «Ich bin heute krank und kann nicht zur Arbeit kommen»." },
         { text: "Sie hat eine wichtige Frage zum Gehalt", ar: "لديها سؤال عن الراتب", correct: false, explanation: "لا — لم يُذكر راتب Gehalt؛ والاتصال للإبلاغ عن المرض («Ich bin heute krank»)." },
       ]},

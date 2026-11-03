@@ -27,6 +27,17 @@ describe("A1-01b — أسئلة W وتصريف الأفعال المنتظمة",
     expect(lesson.theory.map((block) => block.id)).toEqual(["t2", "t3"]);
   });
 
+  it("يقصر تدريب النطق والأخطاء الشائعة على أهداف الجزء الثاني", () => {
+    const pronunciation = lesson.pronunciation;
+    expect(pronunciation.id).toBe("p-a1-01b");
+    expect(pronunciation.items.map((item) => item.de)).toEqual(["Woher", "wohnst", "lernt", "arbeitest"]);
+    expect(pronunciation.shadowing?.map((line) => line.de)).toContain("Warum lernst du Deutsch?");
+    expect(lesson.fehlerUndTipps.mistakes.map((mistake) => mistake.right)).toContain("Du arbeitest in einem Café.");
+    expect(lesson.fehlerUndTipps.mistakes.map((mistake) => mistake.right)).toContain("Er lernt Deutsch.");
+    expect(SERIALIZED).not.toContain("Ich bin Anna heißen.");
+    expect(SERIALIZED).not.toContain("Hallo! Ich heiße Anna.");
+  });
+
   it("يحتفظ بمراجعة تراكمية من الدرس السابق A1-00", () => {
     expect(lesson.review).toEqual(lessonA101.review);
     expect(lesson.review).toHaveLength(3);
@@ -116,6 +127,23 @@ describe("A1-01b — أسئلة W وتصريف الأفعال المنتظمة",
     const card = lesson.flashcards.find((item) => item.id === "fc27");
     expect(card?.example).toBe("Ich stelle viele Fragen.");
     expect(card?.example).not.toContain("habe");
+  });
+
+  it("يوفر استماعاً قصيراً على أسئلة W وتصريف الأفعال مع إفصاح مصدر TTS", () => {
+    expect(lesson.listening.items).toHaveLength(2);
+    const [intro, work] = lesson.listening.items;
+    for (const item of [intro, work]) expect(item.audioNoteAr).toContain("SpeechSynthesis");
+    expect(intro.lines.map((line) => line.de).join(" ")).toContain("Woher kommst du?");
+    expect(intro.lines.map((line) => line.de).join(" ")).toContain("Wo wohnst du jetzt, Sara?");
+    expect(work.lines.map((line) => line.de).join(" ")).toContain("Wann lernst du Deutsch?");
+    expect(lesson.listening.questions).toHaveLength(5);
+    for (const question of lesson.listening.questions) {
+      expect(lesson.listening.items.some((item) => item.id === question.itemId)).toBe(true);
+      expect(question.options[question.correctIndex]).toBeTruthy();
+      expect(new Set(question.options).size).toBe(question.options.length);
+    }
+    expect(lesson.listening.questions[2].options[lesson.listening.questions[2].correctIndex]).toBe("Deutsch");
+    expect(lesson.listening.questions[4].options[lesson.listening.questions[4].correctIndex]).toBe("Am Abend");
   });
 
   it("خيارات الاختيار من متعدد فريدة والإجابة الصحيحة ضمن الخيارات", () => {

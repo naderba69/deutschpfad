@@ -101,7 +101,7 @@ export function DailyVocabChallenge() {
                   "block w-full rounded-xl border p-3 text-start transition-all",
                   flipped.has(i) ? "border-primary/50 bg-primary/5" : "bg-card hover:border-primary/30",
                 )}
-                aria-label={flipped.has(i) ? "إظهار الألمانية" : "إظهار المعنى"}
+                aria-pressed={flipped.has(i)}
               >
                 <span className="flex items-center gap-1.5">
                   <span className="text-lg">{topic.icon}</span>

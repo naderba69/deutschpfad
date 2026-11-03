@@ -204,7 +204,11 @@ export function B2SimulationClient() {
             <Timer className="h-4 w-4" /> {Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, "0")}
           </p>
         </div>
-        <Progress value={(readingIdx / 5) * 100} className="mt-2 h-2" />
+        <Progress
+          value={(readingIdx / 5) * 100}
+          aria-label={`تقدم القراءة: أُنجز ${readingIdx} من 5 نصوص`}
+          className="mt-2 h-2"
+        />
         <div className="mt-4 rounded-xl border bg-card p-5">
           <h2 className="font-de font-bold" dir="ltr">{reading.title}</h2>
           <p className="font-de mt-3 text-sm leading-relaxed" dir="ltr" lang="de">{reading.text}</p>
@@ -254,7 +258,11 @@ export function B2SimulationClient() {
             <Timer className="h-4 w-4" /> {Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, "0")}
           </p>
         </div>
-        <Progress value={(listeningIdx / 4) * 100} className="mt-2 h-2" />
+        <Progress
+          value={(listeningIdx / 4) * 100}
+          aria-label={`تقدم الاستماع: أُنجز ${listeningIdx} من 4 مقاطع`}
+          className="mt-2 h-2"
+        />
         <div className="mt-4 rounded-xl border bg-card p-5">
           <h2 className="font-de font-bold" dir="ltr">{listening.title}</h2>
           <div className="mt-3">

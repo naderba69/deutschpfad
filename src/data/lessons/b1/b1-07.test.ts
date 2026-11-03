@@ -388,3 +388,15 @@ describe("B1-07 lesson content audit", () => {
     ).toBe("pending");
   });
 });
+
+describe("دقة معنى alt في حوار المشاركة السياسية", () => {
+  it("يميّز كبار السن من معنى الكبار عموماً ويحفظ معنى الرد", () => {
+    const interaction = lessonB107.interaction?.find((item) => item.id === "int-b1-07-1");
+    const stereotype = interaction?.rounds[0]?.options[1];
+    const reply = interaction?.rounds[1]?.options[0];
+    expect(stereotype?.de).toContain("alte Leute");
+    expect(stereotype?.ar).toContain("كبار السن");
+    expect(reply?.replyDe).toBe("Das ist eine mögliche persönliche Sichtweise.");
+    expect(reply?.replyAr).toBe("هذه وجهة نظر شخصية ممكنة.");
+  });
+});

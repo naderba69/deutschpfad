@@ -153,7 +153,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
         title: "حقول وعِبارات مفيدة",
         columns: ["الحقل/الموقف", "الصيغة", "مثال"],
         rows: [
-          {label: "الشارع والرقم", cells: ["Straße + Hausnummer", "Musterstraße 12"]},
+          {label: "الشارع ورقم المنزل", cells: ["Straße + Hausnummer", "Musterstraße 12"]},
           {label: "الرمز والمدينة", cells: ["PLZ + Ort", "12345 Musterstadt"]},
           {label: "رقم الهاتف", cells: ["Wie ist Ihre Telefonnummer?", "Meine Nummer ist …"]},
           {label: "طلب إعادة", cells: ["Können Sie das wiederholen?", "Können Sie das bitte wiederholen?"]},

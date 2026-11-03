@@ -17,7 +17,7 @@ export interface Top500Entry {
 
 export const B2_TOP500: Top500Entry[] = [
   /* ═══ 1) Arbeit und Beruf — العمل والمهنة (28) ═══ */
-  { de: "die Arbeitsstelle", ar: "مكان العمل", topic: "arbeit", freq: 3 },
+  { de: "die Arbeitsstelle", ar: "وظيفة/مكان العمل بحسب السياق", topic: "arbeit", freq: 3 },
   { de: "der Arbeitgeber", ar: "صاحب العمل", topic: "arbeit", freq: 3 },
   { de: "der Arbeitnehmer", ar: "الموظف/الأجير", topic: "arbeit", freq: 3 },
   { de: "die Bewerbung", ar: "طلب الوظيفة", topic: "arbeit", freq: 3 },
@@ -109,7 +109,7 @@ export const B2_TOP500: Top500Entry[] = [
   /* ═══ 4) Feste und Feiern — المناسبات والاحتفالات (28) ═══ */
   { de: "das Fest", ar: "العيد/الاحتفال", topic: "feste", freq: 2 },
   { de: "die Feier", ar: "الاحتفال", topic: "feste", freq: 2 },
-  { de: "das Festessen", ar: "وليمة العيد", topic: "feste", freq: 1 },
+  { de: "das Festessen", ar: "وليمة احتفالية", topic: "feste", freq: 1 },
   { de: "das Geschenk", ar: "الهدية", topic: "feste", freq: 3 },
   { de: "einladen", ar: "يدعو", topic: "feste", freq: 2 },
   { de: "die Einladung", ar: "الدعوة", topic: "feste", freq: 2 },
@@ -129,7 +129,7 @@ export const B2_TOP500: Top500Entry[] = [
   { de: "die Glückwünsche", ar: "التهاني", topic: "feste", freq: 2 },
   { de: "gratulieren", ar: "يهنئ", topic: "feste", freq: 2 },
   { de: "die Überraschung", ar: "المفاجأة", topic: "feste", freq: 2 },
-  { de: "das Festessen vorbereiten", ar: "يحضّر الوليمة", topic: "feste", freq: 1 },
+  { de: "das Festessen vorbereiten", ar: "يحضّر وليمة احتفالية", topic: "feste", freq: 1 },
   { de: "die Dekoration", ar: "الزينة", topic: "feste", freq: 1 },
   { de: "die Musik", ar: "الموسيقى", topic: "feste", freq: 2 },
   { de: "tanzen", ar: "يرقص", topic: "feste", freq: 1 },
@@ -402,7 +402,7 @@ export const B2_TOP500: Top500Entry[] = [
   { de: "der Vermieter", ar: "المؤجر/صاحب البيت", topic: "wohnen", freq: 2 },
   { de: "der Mieter", ar: "المستأجر", topic: "wohnen", freq: 2 },
   { de: "der Mietvertrag", ar: "عقد الإيجار", topic: "wohnen", freq: 3 },
-  { de: "die Kaution", ar: "التأمين المالي", topic: "wohnen", freq: 2 },
+  { de: "die Kaution", ar: "مبلغ ضمان مالي", topic: "wohnen", freq: 2 },
   { de: "die Nebenkosten", ar: "التكاليف الجانبية", topic: "wohnen", freq: 3 },
   { de: "der Balkon", ar: "الشرفة", topic: "wohnen", freq: 1 },
   { de: "die Küche", ar: "المطبخ", topic: "wohnen", freq: 1 },

@@ -7,7 +7,7 @@ import type { Lesson } from "@/types/lesson";
 export const reading: NonNullable<Lesson["reading"]> = {
     id: "read-a2-03",
     titleDe: "Ein Abend im Gasthaus Löwen",
-    titleAr: "أمسيةٌ في نُزُل الأسد",
+    titleAr: "أمسيةٌ في مطعم الأسد",
     textType: "erzaehlung",
     paragraphs: [
       "Letzten Samstag wollten wir endlich mal wieder essen gehen. Meine Frau hatte am Mittwoch angerufen und einen Tisch für vier Personen auf den Namen Haddad reserviert. Das war eine gute Idee, denn das Gasthaus Löwen war am Abend komplett voll.",
@@ -18,9 +18,9 @@ export const reading: NonNullable<Lesson["reading"]> = {
       "Dann kam die Frage, die ich am Anfang nie verstanden habe: „Zusammen oder getrennt?“ An diesem Abend haben wir getrennt gezahlt. Mein Anteil war 21,40 Euro. Ich habe freiwillig auf 23 Euro aufgerundet und gesagt: „Dreiundzwanzig, bitte.“ So gab ich 1,60 Euro Trinkgeld. Der Kellner hat sich bedankt, und wir sind zufrieden nach Hause gegangen.",
     ],
     paragraphsAr: [
-      "السبت الماضي أردنا أخيراً أن نخرج للعشاء من جديد. كانت زوجتي قد اتّصلت يوم الأربعاء وحجزت طاولةً لأربعة أشخاص باسم حدّاد. وكانت فكرةً صائبة، فقد كان نُزُل الأسد ممتلئاً تماماً في المساء.",
+      "السبت الماضي أردنا أخيراً أن نخرج للعشاء من جديد. كانت زوجتي قد اتّصلت يوم الأربعاء وحجزت طاولةً لأربعة أشخاص باسم حدّاد. وكانت فكرةً صائبة، فقد كان مطعم الأسد ممتلئاً تماماً في المساء.",
       "وصلنا في السابعة. عند المدخل كانت لافتة: «انتظروا من فضلكم، سيُجلسكم أحدُنا». في السابق كنتُ سأجلس ببساطة، لكنّي صرتُ أعرف الآن كيف تجري الأمور هنا. وبعد دقيقتين جاء النادل وقادنا إلى طاولةٍ جميلة عند النافذة.",
-      "في البداية جاءت المشروبات وحدها. «ماذا تحبّون أن تشربوا؟» — «ماءان بلا غاز وشرابا تفاح مخففان بالماء الغازي من فضلك». وبعد ذلك أحضر قائمة الطعام وسألنا عمّا نريد أن نأكل. كمقبّلات أردنا شوربة القرع، وكطبق رئيس شنيتسلين مع البطاطا وسمكتين.",
+      "في البداية جاءت المشروبات وحدها. «ماذا تحبّون أن تشربوا؟» — «ماءان بلا غاز وكأسان من عصير التفاح الممزوج بالماء الفوّار من فضلك». وبعد ذلك أحضر قائمة الطعام وسألنا عمّا نريد أن نأكل. كمقبّلات أردنا شوربة القرع، وكطبق رئيس شنيتسلين مع البطاطا وسمكتين.",
       "كان مذاق الطعام طيباً جداً لدى الجميع تقريباً. غير أنّ أخي لم يكن راضياً تماماً: كانت سمكته للأسف جافةً بعض الشيء. نادى النادل وقال بأدب: «عذراً، السمك جاف إلى حد ما للأسف. هل يمكن أن تنقل ذلك إلى المطبخ من فضلك؟» فاعتذر النادل وأحضر له طبقاً جديداً.",
       "وبعد الطبق الرئيس لم يُرد أحدٌ شيئاً حلواً. كنّا كلّنا شباعاً. «هل راق لكم مذاق الطعام؟» سأل النادل. «نعم، ممتاز، شكراً!»",
       "ثمّ جاء السؤال: «معاً أم كلٌّ على حدة؟» دفعنا في تلك الأمسية كلٌّ على حدة. كان نصيبي ٢١٫٤٠ يورو. قرّبتُ المبلغ طوعاً إلى ٢٣ يورو وقلت: «ثلاثة وعشرون من فضلك». بذلك أعطيتُ إكراميةً قدرها ١٫٦٠ يورو. شكرني النادل، وعدنا إلى البيت راضين.",
@@ -28,7 +28,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
     glossary: [
       {
         de: "das Gasthaus",
-        ar: "النُّزُل، مطعمٌ تقليديّ",
+        ar: "مطعمٌ تقليديّ، وقد يكون نُزلاً أيضاً",
       },
       {
         de: "reserviert (reservieren)",
@@ -390,7 +390,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
         questionAr: "ماذا لا تستطيع منى أكل؟",
         options: ["Fleisch", "Gemüse", "Salat", "Fisch"],
         correctIndex: 0,
-        explanation: "قالت منى: Ich kann kein Fleisch essen — لا تستطيع اللحم.",
+        explanation: "قالت منى: Ich kann kein Fleisch essen — لا أستطيع تناول اللحم.",
         errorType: "vocabulary",
         optionExplanations: [
           undefined,

@@ -19,7 +19,7 @@ import path from "node:path";
 
 import { describe, expect, it } from "vitest";
 
-import { TEST_BANK } from "@/data/tests/question-banks";
+import { RAW_TEST_BANK, TEST_BANK } from "@/data/tests/question-banks";
 import { PLACEMENT_BANK } from "@/data/tests/placement-questions";
 
 /** دليل ألماني في الشرح: كلمة من ثلاثة أحرف لاتينية على الأقل */
@@ -29,6 +29,19 @@ const GERMAN_EVIDENCE = /[A-Za-zÄÖÜäöüß]{3,}/;
 const MIN_PER_LEVEL = 25;
 
 describe("بنك أسئلة الاختبارات — سلامة بنيوية", () => {
+  it("إجابة وصف الشقة لا تحسب المطبخ ضمن عدد الغرف", () => {
+    const writing = TEST_BANK.find((question) => question.id === "a2-w3");
+    expect(writing?.sampleAnswer).toContain("drei Zimmer: ein Wohnzimmer, ein Schlafzimmer und ein Arbeitszimmer");
+    expect(writing?.sampleAnswer).not.toContain("drei Zimmer: eine Küche");
+  });
+
+  it("شرح سؤال سوق العمل يطابق صيغة الفعل الألمانية abhängen", () => {
+    const passage = RAW_TEST_BANK.find((question) => question.id === "b2-r4");
+    const item = passage?.questions?.find((question) => question.q === "Was betonen die Ökonomen?");
+    expect(item?.explanation).toContain("hängt vom Arbeitsmarkt ab");
+    expect(item?.explanation).not.toContain("abgehängt");
+  });
+
   it("المعرّفات فريدة، وكل مستوى وكل مهارة ممثَّلان", () => {
     const ids = TEST_BANK.map((q) => q.id);
     const duplicates = ids.filter((id, i) => ids.indexOf(id) !== i);
@@ -230,5 +243,25 @@ describe("بنك تحديد المستوى — كل شرحٍ بدليل ألما
       expect(q.correctIndex, q.id).toBe(0);
       expect(q.options.length, q.id).toBeGreaterThanOrEqual(3);
     }
+  });
+});
+
+
+describe("حراسة ترجمة aufstehen في قراءتي A1", () => {
+  it("يوحّد النص والسؤال في قصتي سامي والسيد مولر", () => {
+    for (const [id, questionText, expected] of [["a1-r2", "Wann steht Sami auf?", "متى ينهض سامي؟"], ["a1-r4", "Wann steht er auf?", "متى ينهض؟"]] as const) {
+      const passage = RAW_TEST_BANK.find((item) => item.id === id);
+      expect(passage?.textAr).toMatch(/ينهض/);
+      expect(passage?.questions?.find((item) => item.q === questionText)?.qAr).toBe(expected);
+    }
+  });
+});
+
+describe("حراسة ترجمة warm في إعلان الإيجار", () => {
+  it("لا يختزل الإيجار الشامل إلى التدفئة وحدها حين لا يذكر النص تفاصيله", () => {
+    const passage = RAW_TEST_BANK.find((item) => item.id === "a2-r2");
+    expect(passage?.text).toContain("650 Euro warm");
+    expect(passage?.textAr).toContain("650 يورو شاملة التكاليف المذكورة في الإعلان");
+    expect(passage?.textAr).not.toContain("شاملة التدفئة");
   });
 });

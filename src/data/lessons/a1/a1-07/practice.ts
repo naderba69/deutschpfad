@@ -48,7 +48,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       type: "word-ordering",
       instructionAr: "رتّب الكلمات لصنع سؤال صحيح عن السعر.",
       tokens: ["Was", "kostet", "ein", "Kilo", "Äpfel", "?"],
-      correctSentence: "Was kostet ein Kilo Äpfel ?",
+      correctSentence: "Was kostet ein Kilo Äpfel?",
       explanation: "في السؤال تأتي Was أولاً ثم الفعل؛ وهو مفرد هنا لأن وحدة القياس ein Kilo مفردة، أما Äpfel فتسمّي ما نَزِنه.",
       errorType: "word-order",
       tags: ["price", "goal:z3"],

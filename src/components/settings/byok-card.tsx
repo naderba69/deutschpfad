@@ -64,7 +64,7 @@ export function ByokCard() {
           <KeyRound className="h-4.5 w-4.5" aria-hidden="true" />
         </span>
         <div className="min-w-0 flex-1">
-          <h4 className="text-sm font-extrabold">🔑 مفتاحك الخاص للذكاء الاصطناعي (اختياري)</h4>
+          <h2 className="text-sm font-extrabold">🔑 مفتاحك الخاص للذكاء الاصطناعي (اختياري)</h2>
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
             أضف مفتاح Gemini API خاصاً بك لتفعيل المعلّم الذكي — يُحفظ على جهازك فقط،
             وتُجرى المكالمات من متصفحك مباشرة (المنصة لا ترى مفتاحك ولا تدفع شيئاً).

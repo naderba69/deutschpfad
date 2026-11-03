@@ -34,7 +34,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       examples: [
         { de: "Ich heiße Sami und komme aus Tunesien.", ar: "اسمي سامي وأنا من تونس. (تصريف فعلين في سياق واحد)" },
         { de: "Heute lerne ich Deutsch.", ar: "اليوم أتعلم الألمانية. (مكوّن وقت في البداية، ثم الفعل المصرف)" },
-        { de: "Am Morgen stehe ich um sieben Uhr auf.", ar: "أستيقظ في السابعة صباحاً. (فعل منفصل في جملة رئيسية خبرية)" },
+        { de: "Am Morgen stehe ich um sieben Uhr auf.", ar: "أنهض من الفراش في السابعة صباحاً. (فعل منفصل في جملة رئيسية خبرية)" },
         { de: "Ich habe gestern einen Film gesehen.", ar: "شاهدت فيلماً أمس. (مثال Perfekt مع sehen)" },
         { de: "Ich kann schon viel sagen, aber ich muss noch viel lernen.", ar: "أستطيع قول الكثير، لكن عليّ أن أتعلم المزيد. (جملتان رئيسيتان مع aber)" },
         { de: "Ich esse einen Apfel und trinke einen Tee.", ar: "آكل تفاحة وأشرب شاياً. (einen Apfel مفعول مباشر مذكر)" },
@@ -111,7 +111,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
         { de: "Zusammen oder getrennt? — Zusammen, bitte.", ar: "معاً أم على نحو منفصل؟ — معاً من فضلك. (في سياق تقسيم الحساب)" },
         { de: "Ich möchte bezahlen, bitte.", ar: "أود الدفع من فضلك. (طلب مهذب في نهاية الزيارة)" },
         { de: "Der Kellner bringt die Speisekarte.", ar: "يُحضر النادل قائمة الطعام. (مثال في موقف المقهى)" },
-        { de: "Gestern bin ich früh aufgestanden und habe gefrühstückt.", ar: "استيقظت مبكراً وتناولت الفطور أمس. (مثالان في Perfekt)" },
+        { de: "Gestern bin ich früh aufgestanden und habe gefrühstückt.", ar: "نهضتُ مبكراً وتناولت الفطور أمس. (مثالان في Perfekt)" },
         { de: "Um acht bin ich zur Arbeit gefahren.", ar: "ذهبت إلى العمل في الثامنة. (العبارة الزمنية في البداية)" },
         { de: "Ich habe viel gearbeitet, aber der Tag war gut.", ar: "عملت كثيراً، لكن اليوم كان جيداً. (ربط جملتين رئيسيتين)" },
         { de: "Am Abend habe ich meine Familie angerufen.", ar: "اتصلت بعائلتي في المساء. (فعل منفصل في Perfekt)" },

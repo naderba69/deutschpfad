@@ -12,6 +12,9 @@ const KIND_AR: Record<string, string> = {
   adj: "صفة",
   adv: "ظرف",
   pron: "ضمير",
+  poss: "أداة ملكية",
+  det: "محدِّد اسمي",
+  plural: "اسم جمع",
   other: "أخرى",
 };
 

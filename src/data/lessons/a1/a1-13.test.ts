@@ -8,6 +8,25 @@ import {getListeningQuestionTaskId} from "@/lib/lesson/listening-evidence";
 import type {AnalyticsEvent} from "@/types/analytics";
 import type {Exercise} from "@/types/lesson";
 import {lessonA113} from "./a1-13";
+import {theory as a1Theory} from "./a1-13/theorie";
+
+describe("ترجمة aufstehen في درس المقهى", () => {
+  it("يميز النهوض من النوم عن مجرد الاستيقاظ في أمثلة المصدر والماضي", () => {
+    const task = lessonA113.practiceBank.find((item) => item.id === "e7");
+    const taskText = JSON.stringify(task);
+    expect(taskText).toContain("أنهض من الفراش");
+    expect(taskText).toContain("ينهض/يقوم من الفراش");
+    expect(taskText).not.toContain("يستيقظ");
+    const listeningQuestion = lessonA113.listening.questions.find((item) => item.id === "q1");
+    const listeningText = JSON.stringify(listeningQuestion);
+    expect(listeningText).toContain("متى ينهض سامي من الفراش؟");
+    expect(listeningText).not.toContain("متى يستيقظ سامي؟");
+    expect(listeningText).not.toContain("والاستيقاظ «um sieben Uhr»");
+    const theoryText = JSON.stringify(a1Theory);
+    expect(theoryText).toContain("نهضتُ مبكراً وتناولت الفطور أمس");
+    expect(theoryText).not.toContain("استيقظت مبكراً وتناولت الفطور أمس");
+  });
+});
 
 const reviewAnswers: Record<string, unknown> = {
   r1: "Woher",
@@ -80,7 +99,7 @@ const readingAnswers: Record<string, string> = {
 
 const listeningAnswers: Record<string, string> = {
   q1: "um sieben Uhr",
-  q2: "ein Brot mit Käse",
+  q2: "Brot mit Käse",
   q3: "ins Kino gehen",
   q4: "zu Hause",
   q5: "neue Wörter",
@@ -231,6 +250,13 @@ function hasDurationField(value: unknown): boolean {
 }
 
 describe("A1-13 audited lesson content", () => {
+  it("translates letztes Wochenende as the previous weekend, not the last holiday", () => {
+    const dialogue = lessonA113.listening.items.find((item) => item.id === "l2");
+    const line = dialogue?.lines.find((entry) => entry.de === "Gern! Ich kann heute Abend kommen. Letztes Wochenende war ich zu Hause.");
+    expect(line?.ar).toBe("بسرور! أستطيع المجيء الليلة. في عطلة نهاية الأسبوع الماضية كنت في المنزل.");
+    const question = lessonA113.listening.questions.find((entry) => entry.id === "q4");
+    expect(question?.questionAr).toBe("أين كانت منى في عطلة نهاية الأسبوع الماضية؟");
+  });
   it("keys every review, practice, mini-test, writing, reading, and listening task", () => {
     const answerKey = {
       ...reviewAnswers,
@@ -379,6 +405,16 @@ describe("A1-13 audited lesson content", () => {
       q6: "mache Notizen",
       q7: "Am Samstag",
     };
+    const breakfast = itemsById.get("l1");
+    expect(breakfast?.lines.find((line) => line.speaker === "Sami" && line.de.includes("Brot mit Käse"))?.de).toBe(
+      "Ich esse Brot mit Käse und trinke einen Kaffee.",
+    );
+    const breakfastQuestion = lessonA113.listening.questions.find((question) => question.id === "q2");
+    expect(breakfastQuestion?.options[breakfastQuestion.correctIndex]).toBe("Brot mit Käse");
+    expect(breakfastQuestion?.optionExplanations?.[1]).toBe(
+      "لا — لم يذكر النص بيضةً مسلوقة؛ بل قال سامي: «Ich esse Brot mit Käse».",
+    );
+
     for (const question of lessonA113.listening.questions) {
       const item = itemsById.get(question.itemId);
       expect(item, `${question.id} refers to a transcript`).toBeDefined();

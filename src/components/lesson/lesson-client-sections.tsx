@@ -254,7 +254,7 @@ export function LessonPrevNext({ lessonId }: { lessonId: string }) {
         <div className="flex items-center justify-end">
           <Link
             href="/learning-path#path-b2"
-            className="inline-flex items-center gap-1.5 rounded-xl border border-success/40 bg-success/10 px-4 py-3 text-sm font-bold text-success transition-colors hover:bg-success/15"
+            className="inline-flex items-center gap-1.5 rounded-xl border border-success/40 bg-success/10 px-4 py-3 text-sm font-bold text-emerald-800 dark:text-emerald-300 transition-colors hover:bg-success/15"
           >
             🎓 أتممت المسار الكامل — عد لخارطة الطريق
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />

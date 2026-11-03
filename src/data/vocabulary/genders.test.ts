@@ -40,6 +40,17 @@ const ALL = [
 ];
 
 describe("سلامة أجناس الأسماء (يمنع تكرار الأخطاء)", () => {
+  it("يحفظ الجنس المحايد لكل أسماء Haus المسجلة في القاموس", () => {
+    const houseCompounds = Object.keys(GENDERS).filter((word) => word.toLowerCase().endsWith("haus"));
+    expect(houseCompounds).toContain("Haus");
+    expect(houseCompounds.length).toBeGreaterThanOrEqual(10);
+    // Compound with head noun Geschäft: direct Duden entry for the whole lemma was not found.
+    expect(GENDERS["Haushaltswarengeschäft"]).toBe("das");
+    for (const word of houseCompounds) {
+      expect(GENDERS[word], word).toBe("das");
+    }
+  });
+
   it("لا اسم مفرد معروف بجنس خاطئ في أي بنك", () => {
     const errors: string[] = [];
     for (const w of ALL) {

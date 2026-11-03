@@ -16,9 +16,9 @@ export const A2_MODEL2_SPRECHEN: A1SpeakingPart[] = [
     turns: [
       {
         partnerDe: "Erzähl mir bitte von deinem Tag. Wann stehst du auf?",
-        partnerAr: "حدّثني عن يومك. متى تستيقظ؟",
+        partnerAr: "حدّثني عن يومك. متى تنهض من الفراش؟",
         modelDe: "Ich stehe um sechs Uhr auf und frühstücke um halb sieben.",
-        modelAr: "أستيقظ الساعة السادسة وأفطر في السادسة والنصف.",
+        modelAr: "أنهض من الفراش في السادسة وأتناول الفطور في السادسة والنصف.",
       },
       {
         partnerDe: "Und was machst du danach?",

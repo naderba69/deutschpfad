@@ -157,6 +157,18 @@ function evidenceEvent(goalId: string, exerciseId: string, correct = true): Anal
 }
 
 describe("A1-07 reviewed lesson content", () => {
+  it("يترجم Hausnummer بوضوح في حقل العنوان", () => {
+    const addressRow = lessonA107.theory?.flatMap((section) => section.table?.rows ?? [])
+      .find((row) => row.cells.includes("Straße + Hausnummer"));
+    expect(addressRow?.label).toBe("الشارع ورقم المنزل");
+  });
+
+  it("يكتب علامة الاستفهام ملاصقة لسؤال السعر في الإجابة النموذجية", () => {
+    const task = findTask("e4");
+    expect(task.type).toBe("word-ordering");
+    if (task.type !== "word-ordering") throw new Error("A1-07 e4 must be word-ordering");
+    expect(task.correctSentence).toBe("Was kostet ein Kilo Äpfel?");
+  });
   it("checks each cumulative-review prompt and answer key", () => {
     const review = lessonA107.review ?? [];
     expect(review.map((task) => task.id).sort()).toEqual(["r1", "r2", "r3"]);

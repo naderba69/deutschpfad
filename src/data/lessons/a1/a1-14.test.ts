@@ -197,6 +197,12 @@ function hasDurationField(value: unknown): boolean {
 }
 
 describe("A1-14 audited lesson content", () => {
+  it("لا يختزل schmecken إلى المذاق الطيب وحده", () => {
+    const card = lessonA114.flashcards?.find(({ de }) => de === "schmecken");
+    expect(card?.ar).toContain("بحسب السياق");
+    expect(card?.example).toBe("Es hat mir gut geschmeckt.");
+    expect(card?.exampleAr).toBe("كان مذاقه طيباً بالنسبة إليّ.");
+  });
   it("keeps lesson and metadata scope free of A1-completion and exam-frequency claims", () => {
     expect(lessonA114.id).toBe("a1-14");
     expect(lessonA114.summary).toContain("قرينة مفيدة لا اختبار وحيد");
@@ -471,5 +477,17 @@ describe("A1-14 audited lesson content", () => {
     expect(noError.isAlreadyCorrect).toBe(true);
     expect(evaluateExercise(noError, NO_ERROR_OPTION).isCorrect).toBe(true);
     expect(evaluateExercise(noError, noError.correctWord).isCorrect).toBe(false);
+  });
+});
+
+describe("حراسة معنى frühstücken في A1-14", () => {
+  it("يفصل معنى تناول الفطور عن النهوض في فقرة Perfekt", async () => {
+    const {practiceBank} = await import("@/data/lessons/a1/a1-14/practice");
+    const exercise = practiceBank.find((item) => item.id === "e13");
+    expect(exercise?.type).toBe("true-false");
+    if (exercise?.type !== "true-false") throw new Error("تمرين e13 مفقود أو ليس صواباً/خطأ");
+    expect(exercise.textDe).toContain("habe gefrühstückt");
+    expect(exercise.statements.find((item) => item.id === "s2")?.ar).toBe("لم يتناول الشخص الفطور.");
+    expect(exercise.explanation).toContain("gefrühstückt وferngesehen مع haben");
   });
 });

@@ -145,7 +145,7 @@ export function GlossarClient() {
                       </div>
                       <p className="text-sm text-muted-foreground">{entry.ar}</p>
                       {entry.ex && (
-                        <p className="font-de truncate text-xs text-muted-foreground/70" dir="ltr" lang="de">
+                        <p className="font-de truncate text-xs text-muted-foreground" dir="ltr" lang="de">
                           {entry.ex}
                         </p>
                       )}

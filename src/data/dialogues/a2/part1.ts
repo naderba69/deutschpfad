@@ -68,12 +68,12 @@ export const A2_DIALOGUES_1: DailyDialogue[] = [
       { de: "Was bestellt der Gast?", ar: "ماذا يطلب الزبون؟", options: [
         { text: "Schnitzel mit Pommes", ar: "شنيتزل مع بطاطس", correct: true, explanation: "نعم — الطبق الرئيسي." },
         { text: "Eine Pizza mit Käse", ar: "بيتزا", correct: false, explanation: "لا — لم تُطلب بيتزا Pizza؛ والطلب «Ich nehme das Schnitzel mit Pommes»." },
-        { text: "Einen großen Salat", ar: "سلطة", correct: false, explanation: "لا — لم تُذكر سلطة Salat؛ والطبق «das Schnitzel mit Pommes»." },
+        { text: "Einen großen Salat", ar: "سلطة كبيرة", correct: false, explanation: "لا — لم تُذكر سلطة Salat؛ والطبق «das Schnitzel mit Pommes»." },
       ]},
       { de: "Was möchte der Gast als Nachtisch?", ar: "ماذا يريد الزبون للحلوى؟", options: [
         { text: "Einen Apfelstrudel", ar: "أبل شترودل", correct: true, explanation: "صحيح — الحلوى النمساوية الشهيرة." },
         { text: "Eis mit Sahne", ar: "آيس كريم", correct: false, explanation: "لا — لم يُطلب آيس كريم Eis؛ والحلوى «Einen Apfelstrudel, bitte»." },
-        { text: "Kuchen und Kaffee", ar: "كعكة", correct: false, explanation: "لا — لم تُذكر كعكة Kuchen ولا قهوة؛ والحلوى «Einen Apfelstrudel, bitte»." },
+        { text: "Kuchen und Kaffee", ar: "كعكة وقهوة", correct: false, explanation: "لا — لم تُذكر كعكة Kuchen ولا قهوة؛ والحلوى «Einen Apfelstrudel, bitte»." },
       ]},
       { de: "Was trinkt der Gast?", ar: "ماذا يشرب الزبون؟", options: [
         { text: "Ein Bier", ar: "بيرة", correct: false, explanation: "لا — لم تُطلب بيرة Bier؛ والمشروب «ein Glas Wasser, bitte»." },

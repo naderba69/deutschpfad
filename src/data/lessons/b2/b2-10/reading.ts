@@ -1,36 +1,35 @@
 /**
  * b2-10 — نصّ القراءة الممتدّ (الجزء «reading»)
- * أُضيف في المرحلة 5. مقال عن الفصل الأول في جامعة ألمانية: من الزولاسونغ
- * والمساهمة الفصلية إلى أول «Hausarbeit» و«Referat» — يضخّ أدوات الأسلوب
- * الأكاديمي (Behauptung · Beleg · Einschränkung) والأسلوب الاسمي معاً.
+ * قصة تدريبية خيالية عن الشهر الأول لطالبة في جامعة ألمانية؛ لا تمثل
+ * متطلبات أو رسوماً موحدة. تتناول أدوات الكتابة الجامعية والأسلوب الاسمي.
  */
 import type { ReadingText } from "@/types/lesson";
 
 export const readingB210: ReadingText = {
   id: "read-b2-10",
   titleDe: "Der erste Monat an einer deutschen Universität",
-  titleAr: "الشهر الأول في جامعة ألمانية",
-  textType: "artikel",
+  titleAr: "الشهر الأول في جامعة ألمانية — قصة تدريبية خيالية",
+  textType: "erzaehlung",
   paragraphs: [
-    "Als Leila im September ihre Zulassung erhielt, hielt sie die wichtigste Hürde für genommen. Die Einschreibung dauerte dann zwei Stunden: Matrikelnummer, Semesterbeitrag, Versicherung, Zahlungsnachweis. Ein Tutor erklärte ihr, der Beitrag von 340 Euro sei keine Studiengebühr, sondern ein Ticket für Mensa, Bibliothek und Bus. Ohne den Nachweis hätte die Immatrikulation nicht gegolten — und ein Studienplatz wäre in dieser Stadt schnell vergeben gewesen.",
+    "Als Leila im September ihre Zulassung erhielt, hielt sie die wichtigste Hürde für genommen. Die Einschreibung dauerte dann zwei Stunden: Matrikelnummer, Semesterbeitrag, Versicherung, Zahlungsnachweis. Ein Tutor erklärte ihr, der Semesterbeitrag umfasse in diesem Beispiel auch einen Beitrag zum Studierendenwerk und ein Semesterticket; er sei keine allgemeine Studiengebühr. Zusammensetzung und Höhe seien je nach Hochschule und Ort verschieden. Leila prüfte die Angaben ihrer Hochschule und reichte den Zahlungsnachweis ein.",
     "Der eigentliche Schock kam in der ersten Woche. Ein Sprachnachweis auf dem erforderlichen Niveau hatte gereicht, doch die erste Hausarbeit war schwerer als jede Prüfung. Die Dozentin gab ein Merkblatt heraus: Jede Behauptung brauche einen Beleg, jede Quelle eine genaue Angabe, und wer verallgemeinere, solle seine Aussage begrenzen. «Eine Einschränkung», stand dort, «ist kein Zeichen von Unsicherheit, sondern eine Genauigkeitspflicht.»",
-    "Beim Schreiben half ihr eine Regel aus dem Sprachkurs: Was man mündlich als Satz sagt, schreibt man formell oft als Nominalgruppe. Aus «weil man spart» wird «wegen der Einsparung», aus «nachdem man angekommen ist» wird «nach der Ankunft». Leila markierte in ihrem Entwurf jedes «ich denke» und ersetzte es durch «meiner Ansicht nach» oder «es lässt sich sagen». Plötzlich klang der Text kürzer und ruhiger, und die Dozentin strich weniger an.",
+    "Beim Schreiben half ihr ein Beispiel aus dem Sprachkurs: Manche Nebensätze lassen sich, wenn es zum Sinn passt, als Präpositionalgruppe formulieren. Aus «weil man spart» kann «wegen der Einsparung» werden; aus «nachdem man angekommen ist» die kürzere Angabe «nach der Ankunft». Leila prüfte in ihrem Entwurf, ob «ich denke» zur Aufgabe passte, und probierte auch «meiner Ansicht nach» oder eine unpersönliche Formulierung aus. Der Text wurde dadurch an einigen Stellen kürzer.",
     "Im Seminar musste sie außerdem ein Referat halten. Die Gliederung sollte sichtbar sein: Zunächst nannte sie das Problem, anschließend zeigte sie Beispiele, zum Schluss bündelte sie ihre These. Nach dem Vortrag fragte ein Kommilitone kritisch nach. Leila hatte geübt, Kritik anzunehmen: Sie bat um eine Begründung, statt sofort zu widersprechen, und notierte den Einwand für die Überarbeitung.",
-    "Am Ende ihres ersten Semesters zog sie eine Bilanz. Nicht die zehn Regeln hatten ihr geholfen, sondern drei Werkzeuge: behaupten, belegen, einschränken. Sie erinnerte sich an einen Satz aus einem Studienführer — wer akademisch schreibe, dürfe von sich selbst absehen; das «ich» verschwinde, die Sache bleibe. Seitdem baut sie Berichte, Aufsätze und Anträge nach demselben Muster auf.",
-    "Was sie einer Kommilitonin am Ende des Monats riet, klang nüchtern: den Zahlungsnachweis sofort einreichen, die erste Hausarbeit früh genug beginnen, die Gliederung offen zeigen und jede Behauptung mit einer Quelle verbinden. Wer diese vier Schritte einhalte, sagte sie, spare sich später die Hälfte der Korrekturzeit — und die Nerven.",
+    "Nach ihrem ersten Monat zog sie eine Bilanz. Nicht allein die zehn Grammatikregeln hatten ihr geholfen, sondern drei Leitfragen: Was ist die Behauptung, was ist ihr Beleg, und wo liegen ihre Grenzen? Sie erinnerte sich an einen Satz in ihrem fiktiven Studienführer über die Möglichkeit, den Gegenstand statt die schreibende Person in den Mittelpunkt zu stellen. Seitdem achtete sie in ihren akademischen Texten stärker auf Belege und eine klare Gliederung.",
+    "Was sie einer Kommilitonin am Ende des Monats riet, klang nüchtern: die Angaben der Hochschule prüfen, die erste Hausarbeit früh genug beginnen, die Gliederung sichtbar machen und überprüfbare Behauptungen belegen. Sie hoffte, dass diese Schritte spätere Überarbeitungen erleichtern würden.",
   ],
   paragraphsAr: [
-    "عندما تلقّت ليلى قبولها الجامعي في سبتمبر اعتبرت أهم عقبة قد زالت. ثم استغرق التسجيل ساعتين: رقم القيد، والمساهمة الفصلية، والتأمين، وإثبات الدفع. وشرح لها أحد المرشدين أن المساهمة البالغة 340 يورو ليست رسوماً دراسية، بل تذكرة للمطعم والمكتبة والباص. ولولا إثبات الدفع لما صحّ التسجيل الجامعي — ولكان مقعد الدراسة في هذه المدينة قد حُجز بسرعة.",
+    "عندما تلقّت ليلى قبولها الجامعي في سبتمبر اعتبرت أهم عقبة قد زالت. ثم استغرق التسجيل ساعتين: رقم القيد، والمساهمة الفصلية، والتأمين، وإثبات الدفع. وشرح لها أحد المرشدين أن المساهمة الفصلية في هذا المثال تشمل أيضاً مساهمةً للخدمات الطلابية وتذكرة فصلية للنقل، وليست رسماً دراسياً عاماً. وتختلف قيمتها ومكوناتها بحسب الجامعة والمكان. تحققت ليلى من معلومات جامعتها وقدمت إثبات الدفع.",
     "أما الصدمة الحقيقية فجاءت في الأسبوع الأول. كان إثبات اللغة بالمستوى المطلوب قد كفى، لكن أول بحث جامعي كان أصعب من أي امتحان. ووزّعت الأستاذة ورقة إرشادية: كل ادعاء يحتاج دليلاً، وكل مصدر يحتاج إحالة دقيقة، ومن عمّم فليُضيّق نطاق كلامه. وقد جاء فيها: «التحفظ ليس علامة على عدم الثقة، بل واجب من واجبات الدقة.»",
-    "وفي الكتابة ساعدتها قاعدة من درس اللغة: ما تقوله شفهياً جملةً تكتبه رسمياً في الغالب كتلة اسمية. فمن «لأن المرء يوفّر» تصير «بسبب التوفير»، ومن «بعد أن وصلنا» تصير «بعد الوصول». ووضعت ليلى علامة في مسوّدتها عند كل «أنا أرى» واستبدلتها بـ«في رأيي» أو «يمكن القول». وفجأة صار النص أقصر وأهدأ، وقلّ ما تشطبه الأستاذة.",
+    "وفي الكتابة ساعدها مثال من درس اللغة: يمكن أحياناً، إذا وافق المعنى، إعادة صياغة جملة فرعية بتركيب جارّ ومجرور ذي اسم. فمن «لأن المرء يوفّر» يمكن أن تصير «بسبب التوفير»، ومن «بعد أن يصل المرء» إلى «بعد الوصول». وراجعت ليلى ملاءمة «أنا أرى» للسياق، وجرّبت أيضاً «في رأيي» أو صياغة غير شخصية. فصار النص أقصر في بعض المواضع.",
     "وفي الندوة كان عليها أن تقدّم عرضاً أيضاً. وكان على البنية أن تكون ظاهرة: ذكرت المشكلة أولاً، ثم عرضت أمثلة، ثم جمعت أطروحتها في النهاية. وبعد العرض سأل أحد الزملاء سؤالاً نقدياً. وكانت ليلى قد تدرّبت على تقبّل النقد: طلبت التعليل بدل أن تعترض فوراً، ودوّنت الاعتراض لأجل المراجعة.",
-    "وفي نهاية فصلها الأول أجرت حصيلة. لم تفدها القواعد العشر، بل ثلاث أدوات: أن تدّعي، وأن تسند بدليل، وأن تحدّ من نطاق كلامك. وتذكّرت جملة من دليل دراسي: من يكتب كتابة أكاديمية يجوز له أن يتنحّى عن نفسه؛ فيغيب «أنا» وتبقى المسألة. ومنذ ذلك الحين تبني التقارير والمقالات والطلبات على المثال ذاته.",
-    "وما نصحَت به زميلة لها في آخر الشهر بدا واقعياً: سلّم إثبات الدفع فوراً، وابدأ أول بحث جامعي مبكّراً بما يكفي، وأظهر البنية بوضوح، واربط كل ادعاء بمصدر. ومن التزم هذه الخطوات الأربع، كما قالت، وفّر على نفسه لاحقاً نصف وقت التصحيح — وأعصابه.",
+    "وبعد شهرها الأول أجرت حصيلة. لم تكن القواعد العشر وحدها ما أفادها؛ بل ساعدتها ثلاثة أسئلة: ما الادعاء؟ ما دليله؟ وما حدوده؟ وتذكّرت جملة من دليل دراسي — كما ورد في قصتها — عن إمكان التركيز على الموضوع بدلاً من الكاتب. ومنذ ذلك الحين صارت تنتبه في نصوصها الأكاديمية إلى المصادر ووضوح البنية.",
+    "ونصحت زميلة لها في آخر الشهر بأن تتحقق من تعليمات جامعتها، وتبدأ البحث مبكراً، وتوضح بنيته، وتسند الادعاءات القابلة للتحقق إلى مصادر. ورجت أن تساعدها هذه الخطوات على تقليل التعديلات اللاحقة.",
   ],
   glossary: [
     { de: "die Zulassung", ar: "القبول الجامعي", noteAr: "مؤنّثة؛ die Zulassung erhalten (يتلقّى القبول)." },
     { de: "die Einschreibung", ar: "التسجيل الجامعي", noteAr: "مؤنّثة؛ تُسمى أيضاً Immatrikulation." },
-    { de: "der Semesterbeitrag", ar: "المساهمة الفصلية", noteAr: "مذكّر؛ ليست رسوماً دراسية بل تذكرة خدمات." },
+    { de: "der Semesterbeitrag", ar: "المساهمة الفصلية", noteAr: "مذكّر؛ مساهمة فصلية تختلف قيمتها ومكوناتها بين المؤسسات، وليست بالضرورة رسماً دراسياً." },
     { de: "der Sprachnachweis", ar: "إثبات اللغة", noteAr: "مذكّر؛ einen Sprachnachweis erbringen." },
     { de: "die Hausarbeit", ar: "البحث الجامعي", noteAr: "مؤنّثة؛ eine Hausarbeit schreiben/abgeben." },
     { de: "der Beleg", ar: "الدليل، الإسناد", noteAr: "مذكّر؛ eine Behauptung mit einem Beleg stützen." },
@@ -47,16 +46,16 @@ export const readingB210: ReadingText = {
       questionDe: "Was war der Semesterbeitrag laut dem Tutor?",
       questionAr: "ما كانت المساهمة الفصلية بحسب المرشد؟",
       options: [
-        "Ein Ticket für Mensa, Bibliothek und Bus, keine Studiengebühr.",
+        "Studierendenwerk-Beitrag plus Semesterticket, keine allgemeine Studiengebühr.",
         "Die volle Studiengebühr des jeweils gewählten Fachs.",
         "Eine Strafe für eine deutlich zu späte Einschreibung.",
         "Ein zusätzlicher Beitrag nur für internationale Studierende.",
       ],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — العكسُ نصّاً: «der Beitrag von 340 Euro sei keine Studiengebühr, sondern ein Ticket für Mensa, Bibliothek und Bus».", "لا — غرامةُ التسجيل المتأخّر لم تُذكر؛ والتسجيلُ استغرق ساعتين: «Die Einschreibung dauerte dann zwei Stunden».", "لا — الحصرُ في الطلبة الدوليين لم يُذكر؛ فالمبلغُ تذكرةُ خدمات: «ein Ticket für Mensa, Bibliothek und Bus»."],
+      optionExplanations: [undefined, "لا — يوضح المرشد أن هذا المثال يشمل مساهمةً للخدمات الطلابية وتذكرة فصلية، لا رسماً دراسياً عاماً؛ وتختلف الرسوم والخدمات بين الجامعات.", "لا — غرامةُ التسجيل المتأخّر لم تُذكر؛ والتسجيلُ استغرق ساعتين: «Die Einschreibung dauerte dann zwei Stunden».", "لا — لا يصفها النص بأنها خاصة بالطلاب الدوليين؛ بل يقول: «Zusammensetzung und Höhe seien je nach Hochschule und Ort verschieden»."],
       paragraph: 1,
       explanation:
-        "الفقرة الأولى تنقل تفسير المرشد صراحةً: المساهمة ليست رسماً دراسياً، بل تذكرة للمطعم والمكتبة والباص، ولذلك يلزم إثبات الدفع.",
+        "الفقرة الأولى تصف مثالاً خيالياً: تشمل المساهمة فيه مبلغاً للخدمات الطلابية وتذكرة نقل، وتختلف المكونات والقيمة بين المؤسسات. لا تعمم ذلك على كل جامعة.",
       errorType: "comprehension",
     },
     {
@@ -104,26 +103,26 @@ export const readingB210: ReadingText = {
       questionDe: "Was half Leila nach ihrer eigenen Bilanz?",
       questionAr: "ما الذي أفاد ليلى بحسب حصيلتها هي؟",
       options: [
-        "Drei Werkzeuge: behaupten, belegen, einschränken.",
-        "Die zehn Grammatikregeln aus dem Kurs.",
+        "Behauptung, Beleg und Grenzen der Aussage.",
+        "Allein die zehn Grammatikregeln aus dem Kurs.",
         "Ein längerer Text mit mehr Adjektiven.",
         "Die Note der Sprachprüfung.",
       ],
       correctIndex: 0,
-      optionExplanations: [undefined, "لا — النصّ ينفيها صريحاً: «Nicht die zehn Regeln hatten ihr geholfen, sondern drei Werkzeuge: behaupten, belegen, einschränken».", "لا — العكس؛ فنصُّها صار أقصر وأهدأ: «Plötzlich klang der Text kürzer und ruhiger, und die Dozentin strich weniger an».", "لا — درجةُ امتحان اللغة لم تكن العون؛ فالشهادةُ اللغويةُ وحدها ما كفت: «Ein Sprachnachweis auf dem erforderlichen Niveau hatte gereicht, doch die erste Hausarbeit war schwerer als jede Prüfung»."],
+      optionExplanations: [undefined, "لا — ينصّ: «Nicht allein die zehn Grammatikregeln hatten ihr geholfen»؛ ثم يلخّص ثلاث أسئلة عن الادعاء ودليله وحدوده.", "لا — يورد النص مثالاً: «Aus «weil man spart» kann «wegen der Einsparung» werden»؛ ولا يقول إن الصفات أطالت النص.", "لا — درجةُ امتحان اللغة لم تكن العون؛ فالشهادةُ اللغويةُ وحدها ما كفت: «Ein Sprachnachweis auf dem erforderlichen Niveau hatte gereicht, doch die erste Hausarbeit war schwerer als jede Prüfung»."],
       paragraph: 5,
       explanation:
-        "الفقرة الخامسة صريحة في نفي القواعد وحدها وإثبات الأدوات الثلاث؛ والفقرة السادسة تلخّصها أربع خطوات عملية للمذاكرة.",
+        "الفقرة الخامسة تذكر الأسئلة الثلاثة التي تلخص بها ليلى تجربتها؛ والفقرة السادسة تنقل نصيحتها العملية لزميلتها.",
       errorType: "comprehension",
     },
   ],
   redemittel: [
     { de: "Jede Behauptung braucht einen Beleg.", ar: "كل ادعاء يحتاج دليلاً." },
     { de: "Eine Einschränkung ist eine Genauigkeitspflicht.", ar: "التحفظ واجب من واجبات الدقة." },
-    { de: "Aus «weil man spart» wird «wegen der Einsparung».", ar: "من «لأن المرء يوفّر» تصير «بسبب التوفير» — الأسلوب الاسمي." },
+    { de: "Aus «weil man spart» kann «wegen der Einsparung» werden, wenn diese Umformung zum Sinn passt.", ar: "يمكن أن تصير «لأن المرء يوفّر» «بسبب التوفير» إذا ناسبت إعادة الصياغة المعنى." },
     { de: "Die Gliederung sollte sichtbar sein: zunächst, anschließend, zum Schluss.", ar: "ينبغي أن تكون البنية ظاهرة: أولاً، ثم، وفي النهاية." },
     { de: "Meiner Ansicht nach lässt sich das kürzer sagen.", ar: "في رأيي يمكن قول ذلك بصيغة أقصر." },
   ],
   discussionAr:
-    "اقرأ الفقرة الثانية بصوت مسموع ثم اكتب أنت وزميلك فقرة واحدة عن دراسة جامعية: الجملة الأولى ادعاء، والثانية دليل («Studien zeigen, dass …»)، والثالثة تحفظ («In gewissem Maße … / Unter Umständen …»)، والرابعة إحالة («laut einer Umfrage an der Universität …»). ثم حوّلا جملتين فعليتين في الفقرة إلى الأسلوب الاسمي (weil → wegen · nachdem → nach · wenn → bei) واقرأا النسختين على المجموعة: أي نسخة تبدو أكثر رسمية، وهل بقي في كل جملة فعل مصرّف واحد يحكم المعنى؟",
+    "اكتب مع زميلك فقرة تدريبية عن الدراسة: اطرح ادعاءً محدداً، ثم اسنده إلى مصدر حقيقي يمكن الرجوع إليه أو صرّح بوضوح أن المثال افتراضي؛ وبعدها حدّد نطاق النتيجة بعبارة مثل «In gewissem Maße» أو «Unter Umständen». جرّبا إعادة صياغة جملة فرعية واحدة اسميّاً مع الحفاظ على معناها قدر الإمكان، ثم ناقشا ما الذي تغيّر في التركيز أو الدلالة.",
 };

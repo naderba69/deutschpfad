@@ -25,7 +25,7 @@ export const B1_DIALOGUES_3: DailyDialogue[] = [
     questions: [
       { de: "Wo befindet sich die Person?", ar: "أين يوجد الشخص؟", options: [
         { text: "Auf der A8 bei Kilometer 45", ar: "على الطريق A8 عند الكيلومتر 45", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "In der Stadt neben dem Markt", ar: "في المدينة", correct: false, explanation: "لا — لا مدينة ولا سوق Markt؛ والموقع «Auf der A8, in Richtung München, bei Kilometer 45»." },
+        { text: "In der Stadt neben dem Markt", ar: "في المدينة بجانب السوق", correct: false, explanation: "لا — لا مدينة ولا سوق Markt؛ والموقع «Auf der A8, in Richtung München, bei Kilometer 45»." },
         { text: "Am Flughafen vor dem Terminal", ar: "في المطار", correct: false, explanation: "لا — لم يُذكر مطار Flughafen ولا Terminal؛ والعطل على Autobahn عند Kilometer 45." },
       ]},
       { de: "Was hat die Person zur Sicherheit angezogen?", ar: "ماذا ارتدى الشخص للسلامة؟", options: [
@@ -72,7 +72,7 @@ export const B1_DIALOGUES_3: DailyDialogue[] = [
       { de: "Wofür spart die Person?", ar: "لماذا يدخر الشخص؟", options: [
         { text: "Für eine Reise nach Japan", ar: "لرحلة إلى اليابان", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
         { text: "Für ein eigenes Auto", ar: "لسيارة", correct: false, explanation: "لا — لم تُذكر سيارة Auto؛ والهدف «Für eine Reise nach Japan»." },
-        { text: "Für eine größere Wohnung", ar: "لشقة", correct: false, explanation: "لا — لم تُذكر شقة Wohnung؛ والحلم Reise nach Japan («Es ist mein Traum»)." },
+        { text: "Für eine größere Wohnung", ar: "لشقة أكبر", correct: false, explanation: "لا — لم تُذكر شقة Wohnung؛ والحلم رحلة إلى اليابان («Für eine Reise nach Japan»)." },
       ]},
       { de: "Wie lange spart die Person schon?", ar: "منذ متى يدخر الشخص؟", options: [
         { text: "Seit zwei Jahren", ar: "منذ سنتين", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
@@ -193,12 +193,12 @@ export const B1_DIALOGUES_3: DailyDialogue[] = [
         { text: "Im Juli nächsten Jahres", ar: "في يوليو", correct: false, explanation: "لا — لم يُذكر Juli ولا عامٌ قادم؛ والشهر «im September»." },
       ]},
       { de: "Warum zieht die Person um?", ar: "لماذا ينتقل الشخص؟", options: [
-        { text: "Sie braucht ein eigenes Büro für die Arbeit", ar: "يحتاج مكتباً خاصاً للعمل", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
-        { text: "Sie will viel näher am Meer wohnen", ar: "يريد السكن قرب البحر", correct: false, explanation: "لا — لم يُذكر بحر Meer؛ والسبب «Weil ich ein eigenes Büro für die Arbeit brauche»." },
-        { text: "Sie hat leider Streit mit den Nachbarn", ar: "لديه خلاف مع الجيران", correct: false, explanation: "لا — لم يُذكر خلافٌ مع جيران Nachbarn؛ والدافع Büro für die Arbeit." },
+        { text: "Sie braucht ein eigenes Büro für die Arbeit", ar: "تحتاج إلى مكتب خاص للعمل", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
+        { text: "Sie will viel näher am Meer wohnen", ar: "تريد السكن أقرب كثيراً إلى البحر", correct: false, explanation: "لا — لم يُذكر بحر Meer؛ والسبب «Weil ich ein eigenes Büro für die Arbeit brauche»." },
+        { text: "Sie hat leider Streit mit den Nachbarn", ar: "لديها للأسف خلاف مع الجيران", correct: false, explanation: "لا — لم يُذكر خلافٌ مع جيران Nachbarn؛ والدافع Büro für die Arbeit." }
       ]},
       { de: "Was bietet die Person dem Freund nach dem Umzug an?", ar: "ماذا يعرض الشخص على صديقه بعد الانتقال؟", options: [
-        { text: "Ein Essen einzuladen", ar: "دعوته إلى العشاء", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
+        { text: "Ihn zum Essen einzuladen", ar: "أن يدعوه إلى الطعام", correct: true, explanation: "صحيح — قال: «Ich lade dich danach zum Essen ein»." },
         { text: "Einen Umzugswagen zu kaufen", ar: "شراء شاحنة نقل", correct: false, explanation: "لا — لم يُذكر شراء شاحنة Umzugswagen؛ والعرض «Ich lade dich danach zum Essen ein»." },
         { text: "Geld zu leihen", ar: "إقراضه مالاً", correct: false, explanation: "لا — لم يُعرض إقراض مال Geld leihen؛ بل دعوةٌ إلى الطعام («zum Essen ein»)." },
       ]},

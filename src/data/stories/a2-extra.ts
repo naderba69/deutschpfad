@@ -84,7 +84,7 @@ const A2_10: InteractiveStory = {
         ],
       },
     },
-    { id: 5, de: "Mia fährt glücklich nach Hause. Das Fahrrad ist super! Ende.", ar: "تركب ميا إلى البيت سعيدة. الدراجة رائعة! النهاية." },
+    { id: 5, de: "Mia fährt glücklich nach Hause. Das Fahrrad ist super! Ende.", ar: "تعود ميا بدراجتها إلى البيت سعيدةً. الدراجة رائعة! النهاية." },
   ],
 };
 

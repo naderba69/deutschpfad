@@ -255,8 +255,8 @@ export const LESSON_RELATED_RESOURCES: Record<string, RelatedResource[]> = {
     { kind: "dialogue", id: "b2-14-medien", reasonAr: "نقاش مع زملاء عن موثوقية الأخبار — نقد الإعلام شفهياً." },
   ],
   "b2-11": [
-    { kind: "story", id: "b2-erste-arbeitstag", reasonAr: "أول يوم عمل لنورا: جمل مركّبة طويلة وجمل الغرض — أرضية جيدة لملاحظة مرجع الضمير في السياق." },
-    { kind: "dialogue", id: "b2-02-teambesprechung", reasonAr: "اجتماع فريق: جمل متداخلة تُتابَع فيها مراجع الضمائر والمِلكية." },
+    { kind: "story", id: "b2-erste-arbeitstag", reasonAr: "قصة تدريبية خيالية قصيرة عن أول يوم عمل؛ تشترك مع الدرس في سياق العمل، لكنها لا تدرّب مباشرةً على dessen/deren أو المصدر المزدوج." },
+    { kind: "dialogue", id: "b2-02-teambesprechung", reasonAr: "حوار عن اجتماع فريق ومواعيد التسليم؛ يفيد في مفردات بيئة العمل، ولا يتضمن تدريباً مباشراً على قواعد هذا الدرس." },
   ],
   "b2-05": [
     { kind: "dialogue", id: "b2-03-konflikt", reasonAr: "إدارة خلاف مع زميل — أدوات الكلام (Modalpartikeln) ولغة التلطيف." },
@@ -278,19 +278,19 @@ export const LESSON_RELATED_RESOURCES: Record<string, RelatedResource[]> = {
     { kind: "story", id: "b2-umzug-muenchen", reasonAr: "حكاية خيالية محددة عن ياسمين؛ أمثلتها عن اللهجة والاستمارات تخص تجربتها ولا تعمم على ميونخ أو بافاريا." },
     { kind: "dialogue", id: "b2-10-international", reasonAr: "محاكاة خيالية لاجتماع فريق؛ عُدلت لتتناول خبرة الزميلة المهنية لا أن تمثل ثقافة بلدها." },
 
-    { kind: "podcast", id: "p-b2-migration", reasonAr: "مشهد خيالي عن تجربة سميرة الفردية مع الهوية والانتماء؛ لا يمثل نتائج بحثية أو تجارب الجميع. التسجيل لم يُحدّث أو يُطابق بالنص." },
+    { kind: "podcast", id: "p-b2-migration", reasonAr: "مشهد خيالي عن تجربة سميرة الفردية مع الهوية والانتماء؛ لا يمثل نتائج بحثية أو تجارب الجميع. التسجيل TTS مولّد من نص الحلقة الحالي، ولم يُجر تفريغ مستقل أو تقييم لجودة النطق." },
   ],
   "b2-09": [
-    { kind: "story", id: "b2-bewerbung", reasonAr: "ألبرشت يتقدّم لمنصب: المراسلات الرسمية والسيرة الذاتية." },
-    { kind: "story", id: "b2-homeoffice-kultur", reasonAr: "نقاش مستقبل العمل عن بُعد: Konjunktiv I ولغة الأعمال." },
-    { kind: "dialogue", id: "b2-15-umzug-firma", reasonAr: "تنظيم نقل شركة — لغة إدارية تطبيقية." },
+    { kind: "story", id: "b2-bewerbung", reasonAr: "قصة تدريبية خيالية عن طلب توظيف ومقابلة؛ لا تعمم نتيجة ألبرشت على سوق العمل." },
+    { kind: "story", id: "b2-homeoffice-kultur", reasonAr: "حالة تدريبية خيالية لشرح Konjunktiv I؛ لا تثبت اتجاهاً عاماً في الإنتاجية أو التعاون." },
+    { kind: "dialogue", id: "b2-15-umzug-firma", reasonAr: "محاكاة خيالية لتنظيم نقل شركة؛ المواعيد والتفاصيل أمثلة لغوية لا وقائع أو إجراءات عامة." },
   ],
   "b2-10": [
-    { kind: "story", id: "b2-konferenz", reasonAr: "محاضرة أكاديمية وأسئلة الجمهور: العرض الرسمي والربط المتقدم." },
-    { kind: "story", id: "b2-nachhaltigkeit", reasonAr: "مشروع مدينة مستدامة: الاشتقاق الاسمي والمبني للمجهول المتقدم." },
-    { kind: "dialogue", id: "b2-04-notfall", reasonAr: "الاتصال بالطوارئ (112) — معلومة حياتية لا غنى عنها لمن يدرس في ألمانيا." },
-    { kind: "dialogue", id: "b2-12-arzt-spezialist", reasonAr: "شرح أعراض معقّدة لطبيب متخصص — لغة دقيقة في موقف ضاغط." },
-    { kind: "podcast", id: "p-b2-gesunde-ernaehrung", reasonAr: "حلقة «التغذية الصحية» — استماع أكاديمي مبسّط." },
+    { kind: "story", id: "b2-konferenz", reasonAr: "قصة تدريبية خيالية عن عرض وأسئلة جمهور؛ تتناول تنظيم العرض، ولا تمثل محاضرة أو نتائج بحث حقيقية." },
+    { kind: "story", id: "b2-nachhaltigkeit", reasonAr: "سيناريو خيالي لمشروع مدينة مستدامة للتدرب على الاشتقاق الاسمي والمجهول؛ لا يصف خطة أو توقعاً موثقاً." },
+    { kind: "dialogue", id: "b2-04-notfall", reasonAr: "محاكاة لغوية لاتصال بالطوارئ (112)، وليست دليلاً للإسعافات الأولية؛ في حالة حقيقية اتبع تعليمات موظف الطوارئ والجهات الرسمية." },
+    { kind: "dialogue", id: "b2-12-arzt-spezialist", reasonAr: "محاكاة لغوية خيالية لشرح أعراض، وليست تشخيصاً أو نصيحة طبية." },
+    { kind: "podcast", id: "p-b2-gesunde-ernaehrung", reasonAr: "حلقة نقاش خيالية عن التغذية وعوامل الاختيار؛ مادة لغوية لا نصيحة غذائية أو تقرير بحثي. نص الحلقة حُدّث، وتحتاج النسخة الصوتية إلى مراجعة المحور الصوتي." },
   ],
 };
 

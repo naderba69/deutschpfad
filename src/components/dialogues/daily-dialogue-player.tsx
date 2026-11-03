@@ -9,6 +9,7 @@ import {SpeakButton} from "@/components/shared/speak-button";
 import {recordEvent} from "@/lib/analytics/events";
 import {playCorrect, playWrong} from "@/lib/audio/sfx";
 import {cn} from "@/lib/utils";
+import {dialogueTurnAudioSrc} from "@/data/dialogues/audio";
 import type { DailyDialogue } from "@/data/dialogues";
 
 /**
@@ -22,12 +23,8 @@ import type { DailyDialogue } from "@/data/dialogues";
  *  4) مفردات الحوار مظللة
  * ═══════════════════════════════════════════════════════════
  */
-/** المستويات التي سُجّلت حوارتها بصوت بشري (ملف لكل سطر: <id>-<رقم السطر>.mp3) */
-const NATIVE_AUDIO_LEVELS = new Set(["A1", "A2", "B1", "B2"]);
-
 function clipSrc(dialogue: DailyDialogue, step: number): string | undefined {
-  if (!NATIVE_AUDIO_LEVELS.has(dialogue.level)) return undefined;
-  return `/audio/dialogues-${dialogue.level.toLowerCase()}/${dialogue.id}-${step}.mp3`;
+  return dialogueTurnAudioSrc(dialogue, step);
 }
 
 export function DailyDialoguePlayer({ dialogue, onBack }: { dialogue: DailyDialogue; onBack: () => void }) {
