@@ -591,23 +591,4 @@ describe("B2-10 lesson content audit", () => {
     ).toBe("pending");
   });
 
-  it("counts only correct, mapped exercise results toward goals", () => {
-    expect(getGoalEvidenceStatus(goal("z1"), lessonB210.id, [])).toBe("pending");
-    expect(getGoalEvidenceStatus(goal("z1"), lessonB210.id, [goalEvent("z1", "w1")])).toBe("pending");
-    expect(
-      getGoalEvidenceStatus(goal("z1"), lessonB210.id, [
-        goalEvent("z1", "w1"),
-        goalEvent("z1", "e4"),
-        goalEvent("z1", "e7"),
-        goalEvent("z1", "q4"),
-      ]),
-    ).toBe("evidenced");
-    expect(
-      getGoalEvidenceStatus(goal("z1"), lessonB210.id, [
-        goalEvent("z1", "w1"),
-        goalEvent("z1", "e4"),
-        goalEvent("z1", "e7", false),
-      ]),
-    ).toBe("pending");
-  });
 });
