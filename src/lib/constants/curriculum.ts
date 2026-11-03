@@ -23,7 +23,7 @@ export const LEVELS: LevelMeta[] = [
     words: 800,
     unlockThreshold: 80,
     gradient: "from-sky-500 via-blue-500 to-indigo-500",
-    accent: "#0ea5e9",
+    accent: "#0369a1",
     emoji: "🌱",
   },
   {
@@ -38,7 +38,7 @@ export const LEVELS: LevelMeta[] = [
     words: 800,
     unlockThreshold: 80,
     gradient: "from-emerald-500 via-teal-500 to-cyan-500",
-    accent: "#10b981",
+    accent: "#047857",
     emoji: "🌿",
   },
   {
@@ -53,7 +53,7 @@ export const LEVELS: LevelMeta[] = [
     words: 1000,
     unlockThreshold: 80,
     gradient: "from-amber-500 via-orange-500 to-rose-500",
-    accent: "#f59e0b",
+    accent: "#b45309",
     emoji: "🌳",
   },
   {
@@ -68,7 +68,7 @@ export const LEVELS: LevelMeta[] = [
     words: 1000,
     unlockThreshold: 80,
     gradient: "from-rose-500 via-pink-500 to-fuchsia-500",
-    accent: "#f43f5e",
+    accent: "#be123c",
     emoji: "🌲",
   },
 ];
@@ -219,7 +219,7 @@ export const UNITS: Unit[] = [
     titleDe: "Im Restaurant",
     titleAr: "المطعم والطعام",
     descDe: "Bestellen, bezahlen und über Geschmack sprechen.",
-    descAr: "طلب الطعام، الدفع، والتعبير عن الرأي في الأكل (schmecken).",
+    descAr: "طلب الطعام، الدفع، والتحدث عن مذاقه (schmecken).",
   },
   {
     id: "a2-04",

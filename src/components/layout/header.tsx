@@ -30,7 +30,7 @@ function HeaderProgress() {
         <TooltipTrigger asChild>
           <Link
             href="/learning-path"
-            aria-label="التقدم الإجمالي في المنهج"
+            aria-label={`${pct === null ? "…" : `${pct}%`} — التقدم الإجمالي في المنهج`}
             className="hidden sm:inline-flex"
           >
             <Badge variant="secondary" className="gap-1.5 px-3 py-1">
@@ -110,7 +110,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
-        <Link href="/" className="shrink-0 rounded-lg py-2" aria-label="درب الألمانية — الرئيسية">
+        <Link href="/" className="shrink-0 rounded-lg py-2">
           <Logo />
         </Link>
 
@@ -159,7 +159,7 @@ export function Header() {
               </div>
               <div className="mt-6 border-t pt-4">
                 <p className="mb-2 text-xs font-semibold text-muted-foreground">
-                  المستويات (CERR)
+                  المستويات (CEFR)
                 </p>
                 <div className="grid grid-cols-2 gap-2">
                   {siteConfig.levelsNav.map((lvl) => (

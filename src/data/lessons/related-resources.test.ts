@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import { DAILY_DIALOGUES } from "@/data/dialogues";
 import { LESSON_META } from "@/data/lessons/meta";
+import { lessonB103 } from "@/data/lessons/b1/b1-03";
 import {
   LESSON_RELATED_RESOURCES,
   resolveRelatedResources,
@@ -99,10 +100,10 @@ describe("ربط المحتوى الرديف بالدروس", () => {
     expect(overloaded, `دروس محمّلة أكثر من اللازم: ${overloaded.join(", ")}`).toEqual([]);
   });
 
-  it("يُغطّى ما لا يقلّ عن 85٪ من الموارد الـ140", () => {
+  it("يُغطّى ما لا يقلّ عن 85٪ من الموارد الـ141", () => {
     const total = INTERACTIVE_STORIES.length + DAILY_DIALOGUES.length + PODCASTS.length;
     const linked = entries.reduce((n, [, refs]) => n + refs.length, 0);
-    expect(total).toBe(140);
+    expect(total).toBe(141);
     expect(linked / total).toBeGreaterThanOrEqual(0.85);
   });
 
@@ -112,6 +113,127 @@ describe("ربط المحتوى الرديف بالدروس", () => {
       const linked = ids.filter((id) => (LESSON_RELATED_RESOURCES[id] ?? []).length > 0);
       expect(linked.length, `المستوى ${level} بلا موارد مربوطة`).toBeGreaterThan(0);
     }
+  });
+
+  it("keeps B1-05's health resources explicitly fictional and scope-limited", () => {
+    const refs = LESSON_RELATED_RESOURCES["b1-05"];
+    expect(refs.find(({ id }) => id === "b1-04-terminal")?.reasonAr).toContain("ليست قاعدة عامة");
+    expect(refs.find(({ id }) => id === "b1-13-sport")?.reasonAr).toContain("ليست عرضاً حقيقياً");
+    expect(refs.find(({ id }) => id === "p-b1-gesundheit")?.reasonAr).toContain("منظمة الصحة العالمية");
+    expect(DAILY_DIALOGUES.find(({ id }) => id === "b1-04-terminal")?.audioNoteAr).toContain("خيالي");
+    expect(DAILY_DIALOGUES.find(({ id }) => id === "b1-13-sport")?.audioNoteAr).toContain("السعر والشروط أرقام خيالية");
+  });
+
+  it("describes B1-07's optional resources as fictional, scoped supplements rather than political evidence", () => {
+    const refs = LESSON_RELATED_RESOURCES["b1-07"];
+    expect(refs.map(({ id }) => id)).toEqual(["b1-03-beschwerde", "b1-verein"]);
+    expect(refs.every(({ reasonAr }) => reasonAr.includes("خيالي") || reasonAr.includes("خيالية"))).toBe(true);
+    expect(refs[0]?.reasonAr).toContain("ليس مادة عن السياسة أو الانتخابات");
+    expect(refs[1]?.reasonAr).toContain("لا مصدر لمعلومات سياسية");
+
+    const complaint = DAILY_DIALOGUES.find(({ id }) => id === "b1-03-beschwerde");
+    expect(complaint?.situation).toContain("خيالية");
+    expect(complaint?.audioNoteAr).toContain("لا يقدّم الحوار حكماً على استحقاق تعويض قانوني");
+
+    const clubStory = INTERACTIVE_STORIES.find(({ id }) => id === "b1-verein");
+    expect(clubStory?.description).toContain("خيالية");
+    expect(clubStory?.description).not.toContain("العمل التطوعي");
+    expect(clubStory?.grammar).toContain("seit");
+  });
+
+  it("keeps B1-06's culture resources explicitly fictional or personal rather than national generalizations", () => {
+    const refs = LESSON_RELATED_RESOURCES["b1-06"];
+    expect(refs.map(({ id }) => id)).toEqual(["b1-09-ticket-kaufen", "b1-familienfest", "b1-14-kochen"]);
+    expect(refs.every(({ reasonAr }) => reasonAr.includes("خيال") || reasonAr.includes("تمثيلي"))).toBe(true);
+
+    const tickets = DAILY_DIALOGUES.find(({ id }) => id === "b1-09-ticket-kaufen");
+    expect(tickets?.audioNoteAr).toContain("أرقام خيالية");
+    expect(tickets?.situation).toContain("افتراضيان");
+
+    const recipe = DAILY_DIALOGUES.find(({ id }) => id === "b1-14-kochen");
+    expect(recipe?.audioNoteAr).toContain("تفضيل شخصي");
+    expect(recipe?.turns.some(({ de }) => /traditionell|typisch für Tunesien/i.test(de))).toBe(false);
+
+    const familyStory = INTERACTIVE_STORIES.find(({ id }) => id === "b1-familienfest");
+    expect(familyStory?.description).toContain("خيالية");
+    expect(familyStory?.description).toContain("غير منسوب إلى ثقافة بعينها");
+  });
+
+  it("describes A2-05's informal late-arrival dialogue without presenting it as workplace speech", () => {
+    const lateDialogue = LESSON_RELATED_RESOURCES["a2-05"].find(({ id }) => id === "a2-12-verspaetet");
+    expect(lateDialogue?.reasonAr).toContain("لصديق");
+    expect(lateDialogue?.reasonAr).toContain("غير رسمي");
+    expect(lateDialogue?.reasonAr).toContain("لا نموذج لمكالمة عمل");
+  });
+
+  it("constrains the scope of A2-06's optional phone-service dialogue and checks the speaker role", () => {
+    const handyRef = LESSON_RELATED_RESOURCES["a2-06"].find(({ id }) => id === "a2-08-handy");
+    expect(handyRef?.reasonAr).toContain("مفردة الإنترنت");
+    expect(handyRef?.reasonAr).toContain("لا يتناول مباشرةً قراءة الأخبار");
+    const handyDialogue = DAILY_DIALOGUES.find(({ id }) => id === "a2-08-handy");
+    expect(handyDialogue?.turns.at(-1)).toMatchObject({ speaker: "الموظف", role: "a" });
+  });
+
+  it("describes A2-07's bank dialogue and bicycle story as scoped optional resources", () => {
+    const a207 = LESSON_RELATED_RESOURCES["a2-07"];
+    expect(a207).toHaveLength(2);
+    expect(a207.find(({ id }) => id === "a2-07-bank")?.reasonAr).toContain("محاكاة افتراضية");
+    expect(a207.find(({ id }) => id === "a2-07-bank")?.reasonAr).toContain("لا لعرض متطلبات مصرفية عامة");
+    expect(a207.find(({ id }) => id === "a2-fahrrad")?.reasonAr).toContain("امتداد اختياري");
+  });
+
+  it("scopes B1-03's environment resources as practice scenarios rather than empirical claims", () => {
+    const refs = LESSON_RELATED_RESOURCES["b1-03"];
+    expect(refs).toHaveLength(4);
+    expect(refs.find(({ id }) => id === "b1-umweltgruppe")?.reasonAr).toContain("خيالية");
+    expect(refs.find(({ id }) => id === "b1-energiesparen")?.reasonAr).toContain("ليست دليلاً");
+    expect(refs.find(({ id }) => id === "p-b1-umwelt")?.reasonAr).toContain("ليس مسحاً");
+    const group = INTERACTIVE_STORIES.find(({ id }) => id === "b1-umweltgruppe");
+    expect(group?.description).toContain("خيالية");
+    expect(group?.grammar).toContain("wurde");
+    expect(group?.grammar).not.toContain("wurden");
+    expect(group?.segments[2]?.ar).toContain("يُعتنى بالأشجار");
+    expect(group?.segments[4]?.ar).toContain("كافأت إدارة المدينة");
+    const energy = INTERACTIVE_STORIES.find(({ id }) => id === "b1-energiesparen");
+    expect(energy?.description).toContain("خيالية");
+    const mediation = lessonB103.mediation?.[0];
+    expect(mediation?.sourceDe).toContain("Übungstext");
+    expect(mediation?.sourceDe).not.toContain("Experten fordern");
+  });
+
+  it("scopes B1-04's linked digital-detox story as fictional and non-diagnostic", () => {
+    const ref = LESSON_RELATED_RESOURCES["b1-04"].find(({ id }) => id === "b1-digital-detox");
+    expect(ref?.reasonAr).toContain("خيالية");
+    expect(ref?.reasonAr).toContain("لا تشخّص إدماناً");
+    const story = INTERACTIVE_STORIES.find(({ id }) => id === "b1-digital-detox");
+    expect(story?.titleAr).toBe("أسبوع للابتعاد عن الهاتف");
+    expect(story?.description).toContain("خيالية");
+    expect(story?.description).toContain("لا تشخّص إدماناً");
+  });
+
+  it("checks B1-04's linked opinion dialogue translation for Freizeit", () => {
+    const dialogue = DAILY_DIALOGUES.find(({ id }) => id === "b1-01-meinung");
+    expect(dialogue?.turns[3]?.de).toContain("Freizeit");
+    expect(dialogue?.turns[3]?.ar).toContain("وقت الفراغ");
+    expect(dialogue?.audioNoteAr).toContain("مصدر ملفات MP3 لهذا الحوار غير موثّق");
+    expect(dialogue?.audioNoteAr).toContain("لم تُتحقق مطابقتها للنص أو جودة النطق");
+  });
+
+  it("B2-02 يوسم موارد الأعمال الافتراضية ويبيّن حدود صوت الحوار", () => {
+    const story = INTERACTIVE_STORIES.find(({ id }) => id === "b2-startup");
+    expect(story?.description).toContain("خيالية");
+    expect(story?.description).toContain("افتراضية للتدريب");
+
+    const dialogue = DAILY_DIALOGUES.find(({ id }) => id === "b2-11-verhandlung-kunde");
+    expect(dialogue?.situation).toContain("خيالي");
+    expect(dialogue?.situation).toContain("ليست عرضاً تجارياً");
+    expect(dialogue?.audioNoteAr).toContain("مصدر ملفات MP3");
+    expect(dialogue?.audioNoteAr).toContain("لا أجزم بأنها تسجيلات بشرية أو مولّدة آلياً");
+    expect(dialogue?.audioNoteAr).toContain("لم تُتحقق مطابقتها للنص أو جودة النطق");
+
+    const podcastRef = LESSON_RELATED_RESOURCES["b2-02"].find(({ id }) => id === "p-b2-globalisierung");
+    expect(podcastRef?.reasonAr).toContain("نقاش عام");
+    expect(podcastRef?.reasonAr).toContain("ليس تقريراً اقتصادياً");
   });
 
   it("resolveRelatedResources يعيد عنواناً وشارة لكل مرجع", () => {
@@ -125,6 +247,34 @@ describe("ربط المحتوى الرديف بالدروس", () => {
         expect(r.href).toBe(`${{ story: "/stories", dialogue: "/dialogues", podcast: "/podcasts" }[r.kind]}?open=${r.id}`);
       }
     }
+  });
+
+
+  it("scopes B1-02's optional interview and illness resources and avoids dated salary or certificate advice", () => {
+    const refs = LESSON_RELATED_RESOURCES["b1-02"];
+    expect(refs.find(({ id }) => id === "b1-07-interview")?.reasonAr).toContain("محاكاة تدريبية");
+    expect(refs.find(({ id }) => id === "b1-nebenjob")?.reasonAr).toContain("ليست مرجعاً للأجور");
+
+    const interview = DAILY_DIALOGUES.find(({ id }) => id === "b1-07-interview");
+    expect(interview?.titleDe).toBe("Vorstellungsgespräch (detailliert)");
+    expect(interview?.situation).toContain("مثال خيالي");
+    expect(interview?.turns.some(({ de }) => de.includes("3000 Euro brutto"))).toBe(true);
+
+    const illness = DAILY_DIALOGUES.find(({ id }) => id === "b1-08-krankmeldung");
+    expect(illness?.turns.some(({ de }) => de.includes("falls Sie dann noch krank sind"))).toBe(true);
+    expect(illness?.turns.some(({ de }) => de.includes("Bringen Sie morgen die Krankmeldung mit"))).toBe(false);
+    expect(illness?.keyVocab.find(({ de }) => de === "die Krankmeldung")?.ar).toBe("الإبلاغ عن المرض");
+  });
+
+  it("keeps B1-02's linked work stories evidence-based and avoids treating fictional wages as current benchmarks", () => {
+    const job = INTERACTIVE_STORIES.find(({ id }) => id === "b1-neuer-job");
+    expect(job?.segments.find(({ id }) => id === 3)?.de).toContain("war alles neu und schwierig");
+    expect(job?.segments.find(({ id }) => id === 4)?.question?.options[0].text).toBe("Viel lernen");
+
+    const sideJob = INTERACTIVE_STORIES.find(({ id }) => id === "b1-nebenjob");
+    const sideJobText = sideJob?.segments.map(({ de }) => de).join(" ") ?? "";
+    expect(sideJobText).not.toContain("12 Euro pro Stunde");
+    expect(sideJob?.segments.find(({ id }) => id === 4)?.question?.options[0].text).toBe("Mehr Arbeitsstunden");
   });
 
   it("resolveRelatedResources يعيد فارغاً لدرس غير مربوط", () => {

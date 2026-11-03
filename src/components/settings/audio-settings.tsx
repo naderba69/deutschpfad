@@ -76,7 +76,7 @@ export function AudioSettings() {
                 )}
               >
                 {r.label}
-                <span className="font-de ms-1 opacity-70">×{r.value}</span>
+                <span className="font-de ms-1 ">×{r.value}</span>
               </button>
             ))}
           </div>
@@ -100,6 +100,7 @@ export function AudioSettings() {
           <button
             type="button"
             role="switch"
+            aria-label="المؤثرات الصوتية"
             aria-checked={sfx}
             onClick={toggleSfx}
             className={cn(

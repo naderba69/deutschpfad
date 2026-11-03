@@ -7,6 +7,7 @@ import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
 import {saveTestResult} from "@/lib/storage/test-results-store";
 import {levelFromPct} from "@/lib/tests/test-engine";
+import {ExamReviewList} from "@/components/tests/exam-question-views";
 ;
 import type { TestAnswer, TestQuestion, TestResult, TestSkill } from "@/types/test";
 
@@ -105,6 +106,49 @@ export function ResultsPanel({ result, onRetry, onNext, nextLabel, onComplete }:
         </div>
       </div>
 
+      {/* مراجعة الأدلة — لماذا هذا الجواب (الدفعة 122): شروح البنك الظاهرة أخيراً */}
+      {result.review.length > 0 && (
+        <div className="space-y-3" data-testid="exam-review">
+          <h3 className="text-lg font-extrabold">مراجعة الأدلة — لماذا هذا الجواب</h3>
+          <ExamReviewList
+            teile={[
+              {
+                teil: "review",
+                titleAr: "الأسئلة وشروحها",
+                kind: "mcq",
+                questions: result.review
+                  .filter((r) => r.options.length > 0)
+                  .map((r) => ({ id: r.id, q: r.questionDe, qAr: r.questionAr, options: r.options, correct: r.correct, whyAr: r.explanation })),
+              },
+            ]}
+            answers={Object.fromEntries(
+              result.review.filter((r) => typeof r.chosen === "number").map((r) => [r.id, r.chosen as number]),
+            )}
+            label="review"
+          />
+          {result.review.some((r) => r.options.length === 0) && (
+            <div className="space-y-2">
+              {result.review
+                .filter((r) => r.options.length === 0)
+                .map((r) => (
+                  <div key={r.id} data-testid="exam-review-item" className="rounded-lg border p-2.5">
+                    <p className="font-de text-sm" dir="ltr" lang="de">{r.questionDe}</p>
+                    <p className="mt-1 text-xs">
+                      جوابك: <span className="font-de" dir="ltr" lang="de">{r.answerText || "— لم تُجب"}</span>
+                    </p>
+                    {r.sampleAnswer && (
+                      <p className="mt-1 rounded-md bg-muted/40 p-2 text-xs leading-relaxed">
+                        <span className="font-bold">النموذج المقترح: </span>
+                        <span className="font-de" dir="ltr" lang="de" data-testid="exam-review-evidence">{r.sampleAnswer}</span>
+                      </p>
+                    )}
+                  </div>
+                ))}
+            </div>
+          )}
+        </div>
+      )}
+
       {/* اقتراحات التقوية (تكيفي) */}
       {result.reinforcement.length > 0 && (
         <div className="rounded-xl border border-gold/40 bg-gold/10 p-4">
@@ -146,18 +190,4 @@ function ReviewLessonsLink({ level }: { level: string }) {
       راجع دروس مستوى {level} من جديد
     </a>
   );
-}
-
-/** شريط مهارة لطيف (للمعالجة البصرية) */
-export function SkillBadge({ skill }: { skill: TestSkill }) {
-  return (
-    <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">
-      {SKILL_LABEL[skill] ?? skill}
-    </span>
-  );
-}
-
-/** مساعد: مستوى من نسبة (للعرض السريع) */
-export function levelFromPctLabel(pct: number) {
-  return levelFromPct(pct);
 }

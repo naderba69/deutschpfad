@@ -13,6 +13,7 @@ import {Button} from "@/components/ui/button";
 import {Card, CardContent} from "@/components/ui/card";
 import {HOEREN_FORMATS, HOEREN_LIBRARY, type HoerenText} from "@/data/hoeren/library";
 import {cn} from "@/lib/utils";
+import {FilterChip} from "@/components/ui/filter-chip";
 
 export function HoerenClient() {
   const [level, setLevel] = React.useState<"A1" | "A2" | "B1" | "B2">("A1");
@@ -69,17 +70,13 @@ export function HoerenClient() {
       {/* فلترة المستوى */}
       <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="المستوى">
         {(["A1", "A2", "B1", "B2"] as const).map((l) => (
-          <button
+          <FilterChip
             key={l}
-            type="button"
             onClick={() => selectLevel(l)}
-            className={cn(
-              "font-de rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
-              level === l ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
-            )}
+            active={level === l}
           >
             {l}
-          </button>
+          </FilterChip>
         ))}
       </div>
 

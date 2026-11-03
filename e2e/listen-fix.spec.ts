@@ -16,6 +16,8 @@
  */
 import { test, expect, type Page } from "@playwright/test";
 
+import {gotoLessonStep} from "./helpers/lesson-steps";
+
 async function clearData(page: Page) {
   await page.evaluate(async () => {
     try {
@@ -42,13 +44,15 @@ async function gotoListen(page: Page) {
   await clearData(page);
   await page.reload();
   await page.waitForTimeout(1800);
-  // إلى قسم الاستماع (4 نقرات من البداية)
-  for (let i = 0; i < 4; i++) {
-    await page.getByRole("button", { name: /التالي:/ }).last().click().catch(() => {});
-    await page.waitForTimeout(450);
+  // إلى قسم الاستماع: تنقّل حتى ظهوره (ترتيب الأقسام قد يتغير بين إصدارات الدروس)
+  await gotoLessonStep(page, "الاستماع");
+  await page.waitForTimeout(600);
+  // أزرار كل سطر («استمع إلى: …» و«سجّل نطقك: …») تظهر بعد كشف نص الحوار
+  const reveal = page.getByRole("button", { name: /اكشف نص الحوار/ }).first();
+  if (await reveal.isVisible().catch(() => false)) {
+    await reveal.click().catch(() => {});
+    await page.waitForTimeout(600);
   }
-  await page.waitForTimeout(900);
-  await expect(page.locator("#lesson-step-content h2").first()).toContainText("الاستماع", { timeout: 8000 });
 }
 
 test("الاستماع: أزرار كل سطر بحجم طبيعي — لا تتمدد عمودياً ولا تتداخل", async ({ page }) => {
@@ -130,15 +134,7 @@ test("الاستماع: «انطقها» يعمل في أكثر من سطر (ا�
 
 test("الاستماع: لا فيضان أفقي على 320px", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 800 });
-  await page.goto("/lesson/a1-01");
-  await clearData(page);
-  await page.reload();
-  await page.waitForTimeout(1800);
-  for (let i = 0; i < 4; i++) {
-    await page.getByRole("button", { name: /التالي:/ }).last().click().catch(() => {});
-    await page.waitForTimeout(400);
-  }
-  await page.waitForTimeout(800);
+  await gotoListen(page);
   const overflow = await page.evaluate(
     () => document.documentElement.scrollWidth > document.documentElement.clientWidth + 2,
   );

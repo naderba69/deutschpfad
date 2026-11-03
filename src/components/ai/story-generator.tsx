@@ -69,6 +69,7 @@ export function AiStoryGenerator() {
           </div>
           <input
             type="text"
+            aria-label="موضوع القصة"
             value={theme}
             onChange={(e) => setTheme(e.target.value)}
             placeholder="موضوع القصة (رحلة، عائلة، مدينة...)"

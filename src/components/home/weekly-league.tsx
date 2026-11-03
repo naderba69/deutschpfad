@@ -165,15 +165,3 @@ export function WeeklyLeague() {
     </div>
   );
 }
-
-/** شارة أسبوعية صغيرة (تُعرض في لوحة التقدم) */
-export function WeeklyStreakChip({ streak }: { streak: number }) {
-  return (
-    <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2.5 py-1 text-xs font-extrabold text-primary">
-      <Flame className="h-3.5 w-3.5 text-orange-500" aria-hidden="true" />
-      {streak} يوم
-      <Medal className="ms-1 h-3.5 w-3.5 text-gold" aria-hidden="true" />
-      <TrendingUp className="h-3.5 w-3.5 text-success" aria-hidden="true" />
-    </span>
-  );
-}

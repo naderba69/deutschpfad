@@ -16,10 +16,11 @@ test("المراجعة الأسبوعية: الصفحة تعمل وتظهر ال
   await expect(page.getByText(/ملخص أسبوعك|لا توجد/).first()).toBeVisible();
 });
 
-test("كفايات CEFR: الصفحة تعرض المهارات الست", async ({ page }) => {
+test("مؤشرات التدريب: تعرض النتائج مع توضيح أنها ليست تقديراً لـCEFR", async ({ page }) => {
   await page.goto("/dashboard/competencies");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("CEFR");
-  await expect(page.getByText("مؤشر الإتقان النحوي").first()).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("مؤشرات التدريب");
+  await expect(page.getByText("معايير النشاط تختلف؛ ليست تقديراً لـCEFR").first()).toBeVisible();
+  await expect(page.getByText("نتائج التدريبات حسب المفهوم").first()).toBeVisible();
 });
 
 test("البودكاست: المكتبة تعرض الحلقات لكل مستوى", async ({ page }) => {

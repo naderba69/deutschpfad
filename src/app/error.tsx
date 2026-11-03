@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import {AlertTriangle, RotateCcw} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
@@ -44,7 +45,7 @@ export default function GlobalError({
                 أعد المحاولة
               </Button>
               <Button variant="outline" asChild>
-                <a href="/">الرئيسية</a>
+                <Link href="/">الرئيسية</Link>
               </Button>
             </div>
             {process.env.NODE_ENV !== "production" && (

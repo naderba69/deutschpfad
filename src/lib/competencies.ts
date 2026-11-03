@@ -1,15 +1,10 @@
 /**
- * كفايات CEFR + مؤشر الإتقان النحوي 📊
- * — يحسب مستوى كل مهارة (استماع/قراءة/كتابة/تحدث/قواعد/مفردات)
- *   من نتائج التمارين والأحداث المخزنة، ويعرض «أنت هنا» مقابل مستويات CEFR —
- * — ويحسب إتقان كل مفهوم نحوي (أجناس، ترتيب، إملاء…) من نتائج التمارين —
+ * مؤشرات وصفية لنتائج أنشطة المتعلم المسجلة محلياً.
+ * لا تحوّل نسب الإجابات إلى مستوى CEFR، ولا تثبت إتقان مهارة أو مفهوماً.
  */
 
-import type { AnalyticsEvent } from "@/types/analytics";
-import type { ErrorTypeCode, ExerciseType } from "@/types/lesson";
-
-/** ربط نوع التمرين بالمهارة */
-export const EXERCISE_TO_SKILL: Record<string, string> = {
+/** ربط نوع النشاط بمجال وصفي في لوحة النتائج */
+export const EXERCISE_TO_DOMAIN: Record<string, string> = {
   "multiple-choice": "القواعد",
   "word-ordering": "القواعد",
   "fill-blank": "القواعد",
@@ -22,70 +17,61 @@ export const EXERCISE_TO_SKILL: Record<string, string> = {
   zuordnung: "القراءة",
 };
 
-export const SKILLS = [
+export const ACTIVITY_DOMAINS = [
   { key: "الاستماع", emoji: "🎧", color: "#3b82f6" },
   { key: "القراءة", emoji: "📖", color: "#8b5cf6" },
   { key: "الكتابة", emoji: "✍️", color: "#f59e0b" },
-  { key: "التحدث", emoji: "🎤", color: "#ef4444" },
+  { key: "النطق", emoji: "🎤", color: "#ef4444" },
   { key: "القواعد", emoji: "🧩", color: "#10b981" },
   { key: "المفردات", emoji: "💬", color: "#14b8a6" },
 ];
 
-/** نطاقات CEFR حسب النسبة */
-export function cefrFromPct(pct: number): { label: string; level: number } {
-  if (pct >= 85) return { label: "B2", level: 3 };
-  if (pct >= 65) return { label: "B1", level: 2 };
-  if (pct >= 40) return { label: "A2", level: 1 };
-  return { label: "A1", level: 0 };
-}
-
-export interface SkillStat {
+export interface ActivityDomainStat {
   key: string;
   total: number;
-  correct: number;
+  metCriterion: number;
   pct: number;
-  cefr: string;
 }
 
-/** حساب إحصاءات المهارات من الأحداث */
-export async function computeSkillStats(): Promise<SkillStat[]> {
+/** تلخيص مؤشرات النشاط؛ تختلف معايير النتيجة باختلاف نوع الحدث. */
+export async function computeActivityDomainStats(): Promise<ActivityDomainStat[]> {
   const { getRecentEvents } = await import("@/lib/analytics/events");
   const events = await getRecentEvents(1500);
-  const counts: Record<string, { total: number; correct: number }> = {};
+  const counts: Record<string, { total: number; metCriterion: number }> = {};
   const init = () => {
-    for (const s of SKILLS) counts[s.key] = { total: 0, correct: 0 };
+    for (const domain of ACTIVITY_DOMAINS) counts[domain.key] = { total: 0, metCriterion: 0 };
   };
   init();
 
   for (const e of events) {
     if (e.type === "exercise-result") {
-      const skill = EXERCISE_TO_SKILL[e.exerciseType] ?? "القواعد";
-      if (!counts[skill]) counts[skill] = { total: 0, correct: 0 };
-      counts[skill].total += 1;
-      if (e.correct) counts[skill].correct += 1;
+      const domain = EXERCISE_TO_DOMAIN[e.exerciseType] ?? "القواعد";
+      if (!counts[domain]) counts[domain] = { total: 0, metCriterion: 0 };
+      counts[domain].total += 1;
+      if (e.correct) counts[domain].metCriterion += 1;
     } else if (e.type === "pronunciation-score") {
-      counts["التحدث"].total += 1;
-      counts["التحدث"].correct += e.score >= 75 ? 1 : 0;
+      counts["النطق"].total += 1;
+      counts["النطق"].metCriterion += e.score >= 75 ? 1 : 0;
     } else if (e.type === "review") {
       counts["المفردات"].total += 1;
-      counts["المفردات"].correct += e.quality >= 3 ? 1 : 0;
+      counts["المفردات"].metCriterion += e.quality >= 3 ? 1 : 0;
     } else if (e.type === "skill-result") {
-      // أحداث صريحة من أسئلة الفهم (الاستماع/القراءة) في القصص والبودكاست والاستماع
-      const skill = e.skill && counts[e.skill] ? e.skill : "القواعد";
-      if (!counts[skill]) counts[skill] = { total: 0, correct: 0 };
-      counts[skill].total += 1;
-      if (e.correct) counts[skill].correct += 1;
+      // أحداث فهم مسجلة (مثل القراءة/الاستماع)، لا تقيس المهارة كاملة.
+      const domain = e.skill && counts[e.skill] ? e.skill : "القواعد";
+      if (!counts[domain]) counts[domain] = { total: 0, metCriterion: 0 };
+      counts[domain].total += 1;
+      if (e.correct) counts[domain].metCriterion += 1;
     }
   }
 
-  return SKILLS.map((s) => {
-    const c = counts[s.key];
-    const pct = c.total > 0 ? Math.round((c.correct / c.total) * 100) : 0;
-    return { key: s.key, total: c.total, correct: c.correct, pct, cefr: cefrFromPct(pct).label };
+  return ACTIVITY_DOMAINS.map((domain) => {
+    const c = counts[domain.key];
+    const pct = c.total > 0 ? Math.round((c.metCriterion / c.total) * 100) : 0;
+    return { key: domain.key, total: c.total, metCriterion: c.metCriterion, pct };
   });
 }
 
-/* ═══════════════ الإتقان النحوي ═══════════════ */
+/* ═══════════════ نتائج التمارين حسب المفهوم ═══════════════ */
 
 /** تصنيف نوع الخطأ ← مفهوم نحوي (بالعربية) */
 export const ERROR_TYPE_TO_CONCEPT: Record<string, string> = {
@@ -102,16 +88,16 @@ export const ERROR_TYPE_TO_CONCEPT: Record<string, string> = {
   grammar: "القواعد العامة",
 };
 
-export interface ConceptMastery {
+export interface ConceptPracticeStat {
   concept: string;
   attempts: number;
   correct: number;
   pct: number;
-  mastered: boolean;
+  thresholdReached: boolean;
 }
 
-/** حساب إتقان المفاهيم النحوية من نتائج التمارين (بتصنيف نوع الخطأ) */
-export async function computeConceptMastery(): Promise<ConceptMastery[]> {
+/** تلخيص نتائج التمارين حسب تصنيف الخطأ؛ 80% إشارة وصفية في العينة لا إثبات إتقان. */
+export async function computeConceptPracticeStats(): Promise<ConceptPracticeStat[]> {
   const { getRecentEvents } = await import("@/lib/analytics/events");
   const events = await getRecentEvents(2000);
   const counts = new Map<string, { total: number; correct: number }>();
@@ -132,7 +118,7 @@ export async function computeConceptMastery(): Promise<ConceptMastery[]> {
       attempts: c.total,
       correct: c.correct,
       pct: Math.round((c.correct / c.total) * 100),
-      mastered: c.correct / c.total >= 0.8,
+      thresholdReached: c.correct / c.total >= 0.8,
     }))
     .sort((a, b) => a.pct - b.pct);
 }

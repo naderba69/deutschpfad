@@ -14,6 +14,48 @@ describe("مسار الكتابة المتدرج", () => {
     expect(essay.minWords).toBeGreaterThan(sentence.minWords);
   });
 
+  it("نموذج فقرة عطلة نهاية الأسبوع يلتزم بعدد الجمل والحد الأدنى للكلمات", () => {
+    const task = WRITING_TASKS.find(({ id }) => id === "w-s2-a2");
+    expect(task).toBeDefined();
+    const example = task?.exampleDe ?? "";
+    const sentences = example.split(/[.!?]+/).filter((sentence) => sentence.trim());
+    const words = example.trim().split(/\s+/);
+    expect(sentences.length).toBeGreaterThanOrEqual(5);
+    expect(sentences.length).toBeLessThanOrEqual(6);
+    expect(words.length).toBeGreaterThanOrEqual(task?.minWords ?? 40);
+    expect(example).toContain("zu Hause");
+  });
+
+  it("كل نموذج إجابة يبلغ الحد الأدنى للكلمات المعلن في مهمته", () => {
+    const examples = WRITING_TASKS.filter((task) => task.exampleDe?.trim());
+    expect(examples.length).toBeGreaterThan(0);
+    for (const task of examples) {
+      const count = task.exampleDe!.trim().split(/\s+/).length;
+      expect(count, `${task.id}: ${count} كلمة، والحد ${task.minWords}`).toBeGreaterThanOrEqual(task.minWords);
+    }
+  });
+
+  it("يلتزم مقال Homeoffice بطول المهمة وروابطها الثلاثة", () => {
+    const task = WRITING_TASKS.find(({ id }) => id === "w-s4-b2");
+    const example = task?.exampleDe ?? "";
+    const words = example.trim().split(/\s+/).length;
+    expect(words).toBeGreaterThanOrEqual(150);
+    expect(words).toBeLessThanOrEqual(180);
+    expect(example).toContain("zwar klare Vorteile, aber");
+    expect(example).toContain("Einerseits");
+    expect(example).toContain("Andererseits");
+    expect(example).toContain("Außerdem");
+  });
+
+  it("تتضمن النماذج مفردات المتطلبات المعلنة لكل مهمة", () => {
+    for (const task of WRITING_TASKS) {
+      if (!task.exampleDe) continue;
+      for (const requirement of task.requires ?? []) {
+        expect(task.exampleDe.toLocaleLowerCase(), `${task.id}: ${requirement}`).toContain(requirement.toLocaleLowerCase());
+      }
+    }
+  });
+
   it("مهام المراحل المتقدمة تُقيَّم بشكل صحيح بالمقيّم المحلي", async () => {
     // مقال قصير جداً يُعطي نتيجة ضعيفة في الإنجاز
     const short = await evaluateWriting("Meinung: Ich mag Deutsch.", "Forumsbeitrag");

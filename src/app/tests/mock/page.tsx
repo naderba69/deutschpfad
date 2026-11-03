@@ -15,10 +15,11 @@ const LEVELS = [
   { code: "B2", label: "Zertifikat B2", ar: "المتقدم", minutes: 120, color: "#dc2626" },
 ] as const;
 
-export default function MockExamPage({ searchParams }: { searchParams: { level?: string; adaptive?: string } }) {
-  const selected = (searchParams.level ?? "B2").toUpperCase();
+export default async function MockExamPage({ searchParams }: { searchParams: Promise<{ level?: string; adaptive?: string }> }) {
+  const { level: selectedLevel, adaptive: adaptiveParam } = await searchParams;
+  const selected = (selectedLevel ?? "B2").toUpperCase();
   const meta = LEVELS.find((l) => l.code === selected) ?? LEVELS[3];
-  const adaptive = searchParams.adaptive === "1";
+  const adaptive = adaptiveParam === "1";
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6">

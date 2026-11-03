@@ -64,8 +64,9 @@ export function B2Top500() {
           <button type="button" onClick={() => setFreq(1)} className={cn("rounded-full border px-3 py-1 text-xs font-bold", freq === 1 ? "border-muted bg-muted text-muted-foreground" : "border-muted bg-background")}>مفيدة</button>
           <div className="relative ms-auto w-full sm:w-56">
             <Search className="absolute end-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
-            <input
-              value={search}
+          <input
+            aria-label="ابحث في مفردات B2"
+            value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="ابحث بالعربية أو الألمانية…"
               className="h-9 w-full rounded-lg border bg-background pe-9 ps-3 text-sm outline-none focus:border-primary"

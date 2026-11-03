@@ -1,5 +1,5 @@
 import { evaluateWriting } from "@/lib/writing/goethe-local";
-import type { LevelTestConfig, SkillResult, TestLevel, TestQuestion, TestResult, TestSkill } from "@/types/test";
+import type { LevelTestConfig, SkillResult, TestLevel, TestQuestion, TestResult, TestReviewItem, TestSkill } from "@/types/test";
 
 /**
  * محرك الاختبارات — التصحيح والتقييم والمستوى المقدر والاقتراحات التكيفية
@@ -110,6 +110,51 @@ export async function buildTestResult(input: {
 
   const reinforcement = recommendReinforcement(skillResults, input.level);
 
+  // مراجعة الأدلة (الدفعة 122): كل سؤالٍ بجواب المتعلّم وشاهده —
+  // كانت الشروح المكتوبة في البنك لا تُعرض في أي شاشة نتيجة.
+  const review: TestReviewItem[] = [];
+  for (const q of input.questions) {
+    if (q.kind === "reading" || q.kind === "listening") {
+      const subs = q.questions ?? [];
+      for (let i = 0; i < subs.length; i++) {
+        const ans = input.answers.get(`${q.id}:${i}`);
+        review.push({
+          id: `${q.id}:${i}`,
+          questionDe: subs[i].q,
+          questionAr: subs[i].qAr,
+          options: subs[i].options,
+          correct: subs[i].correct,
+          chosen: typeof ans === "number" ? ans : null,
+          explanation: subs[i].explanation,
+        });
+      }
+      continue;
+    }
+    const ans = input.answers.get(q.id);
+    if (q.kind === "writing") {
+      review.push({
+        id: q.id,
+        questionDe: q.questionDe ?? "",
+        questionAr: q.questionAr,
+        options: [],
+        correct: -1,
+        chosen: null,
+        answerText: typeof ans === "string" ? ans : undefined,
+        sampleAnswer: q.sampleAnswer,
+      });
+      continue;
+    }
+    review.push({
+      id: q.id,
+      questionDe: q.questionDe ?? "",
+      questionAr: q.questionAr,
+      options: q.options ?? [],
+      correct: q.correctIndex ?? 0,
+      chosen: typeof ans === "number" ? ans : null,
+      explanation: q.explanation,
+    });
+  }
+
   return {
     kind: input.kind,
     level: input.level,
@@ -120,6 +165,7 @@ export async function buildTestResult(input: {
     overallPct,
     estimatedLevel,
     reinforcement,
+    review,
     passed: overallPct >= 60,
   };
 }

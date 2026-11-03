@@ -66,7 +66,7 @@ export function ReviewSession({ refreshKey }: ReviewSessionProps) {
         <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-full bg-success/10">
           <CheckCircle2 className="h-8 w-8 text-success" aria-hidden="true" />
         </span>
-        <h3 className="mt-4 text-xl font-extrabold">لا توجد بطاقات مستحقة اليوم 🎉</h3>
+        <h2 className="mt-4 text-xl font-extrabold">لا توجد بطاقات مستحقة اليوم 🎉</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           راجعت كل ما هو مستحق! عد غداً، أو أضف بطاقات من الدروس أو يدوياً.
         </p>
@@ -87,7 +87,7 @@ export function ReviewSession({ refreshKey }: ReviewSessionProps) {
         <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
           <BrainCircuit className="h-8 w-8 text-primary" aria-hidden="true" />
         </span>
-        <h3 className="mt-4 text-xl font-extrabold">أحسنت — أنهيت جلسة المراجعة!</h3>
+        <h2 className="mt-4 text-xl font-extrabold">أحسنت — أنهيت جلسة المراجعة!</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           راجعت <span className="font-de font-bold text-foreground">{reviewedCount}</span> بطاقة —
           دقة التذكر <span className="font-de font-bold text-primary">{accuracy}%</span>

@@ -19,7 +19,7 @@ function exerciseToTestQuestion(ex: McqExercise, level: "A1" | "A2" | "B1" | "B2
     questionAr: ex.questionAr,
     options: ex.options,
     correctIndex: ex.correctIndex,
-    explanation: ex.explanation,
+    explanation: ex.explanation ?? ex.optionExplanations?.filter((x): x is string => Boolean(x)).join(" · "),
   };
 }
 

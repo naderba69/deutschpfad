@@ -12,13 +12,44 @@ import {B2_READING_EXAM} from "@/data/reading/b2-exam-library";
 import {B2_TOP500} from "@/data/vocabulary/b2-top500";
 import {B2_EXAM_TOPICS} from "@/data/vocabulary/b2-topics";
 import {FALLSTRICKE} from "@/data/exams/fallstricke";
+import {B2_LESEN_B} from "@/data/exams/b2-lesen-b";
+import {B2_LESEN} from "@/data/exams/b2-lesen";
+import {A2_LESEN} from "@/data/exams/a2-lesen";
 import {WRITING_TASKS} from "@/data/writing-path";
 import {getTasksByStage, STAGE_ORDER} from "@/data/writing-path";
 import {lessonB205} from "@/data/lessons/b2/b2-05";
 import {SCHREIB_MODELLE} from "@/data/schreibmodelle";
 import {EXAM_STRATEGIEN} from "@/data/exams/strategien";
+import {A2_MODEL2_HOEREN} from "@/data/exams/a2-model2-hoeren";
+
+describe("مراجعة سياق الصفة sauber", () => {
+  it("ينقل sauber trennen بمعنى الفصل بوضوح لا نظافة حرفية", () => {
+    const modelsText = JSON.stringify(SCHREIB_MODELLE);
+    expect(modelsText).toContain("الانضباط الذاتي للفصل بوضوح بين العمل ووقت الفراغ");
+    expect(modelsText).not.toContain("الفصل النظيف بين العمل والراحة");
+  });
+
+  it("ينقل بدقة الحجتين عن الإنتاجية وروح الفريق في نموذج Homeoffice", () => {
+    const model = SCHREIB_MODELLE.find((item) => item.topicDe === "Homeoffice: Vor- und Nachteile");
+    const advantages = model?.forum.find((item) => item.level === "sehr-gut")?.paragraphs
+      .find((item) => item.heading === "مزايا معمقة");
+    const disadvantages = model?.forum.find((item) => item.level === "sehr-gut")?.paragraphs
+      .find((item) => item.heading === "عيوب معمقة");
+
+    expect(advantages?.de).toContain("viele Beschäftigte nachweislich produktiver arbeiten");
+    expect(advantages?.ar).toContain("أن كثيراً من الموظفين يحققون إنتاجية أعلى بالفعل");
+    expect(disadvantages?.de).toContain("leiden Teamgeist und Kreativität");
+    expect(disadvantages?.ar).toContain("تتضرر روح الفريق والإبداع");
+  });
+});
 
 describe("محرك امتحان Goethe-B2 الرسمي", () => {
+  it("يسمي موقف Rathaus موقفاً لا مبنى البلدية في سؤال الاستماع A2", () => {
+    const teil3 = A2_MODEL2_HOEREN.find((teil) => teil.teil === 3)!;
+    const question = teil3.questions?.find((item) => item.id === "m2a3-q2");
+    expect(question?.options[question.correct]).toBe("Haltestelle Rathaus");
+  });
+
   it("القراءة: 5 أجزاء و30 سؤالاً بالضبط (كما في الامتحان الرسمي)", () => {
     expect(GOETHE_B2_EXAM.lesen).toHaveLength(5);
     expect(countLesenQuestions(GOETHE_B2_EXAM)).toBe(30);
@@ -122,6 +153,39 @@ describe("محرك امتحان Goethe-B2 الرسمي", () => {
     }
   });
 
+  it("تنقل ترجمة لائحة القاعة مسؤولية الأضرار عن الاستخدام غير السليم بدقة", () => {
+    const section = B2_LESEN.find((part) =>
+      part.text?.includes("Hausordnung für den Gemeinschaftsraum"),
+    );
+    expect(section?.textAr).toContain("يتحمّل الشخص المسؤول تبعة الأضرار الناجمة عن الاستخدام غير السليم");
+    expect(section?.textAr).not.toContain("المستخدم غير الصحيح");
+  });
+
+  it("يستعمل الفعل الانعكاسي في اقتراح إعادة اللقاء", () => {
+    const messagePart = A2_LESEN.find((part) => part.teil === 1);
+    expect(messagePart?.text).toContain("Können wir uns morgen um drei treffen?");
+    expect(messagePart?.text).not.toContain("Können wir morgen um drei treffen?");
+  });
+
+  it("يستخدم صيغة سليمة لـ Auto المحايد في نص الاستدامة", () => {
+    const section = B2_LESEN_B.find((part) => part.teil === 1);
+    const item = section?.items?.find((entry) => entry.id === "t1-2");
+    expect(item?.de).toContain("Ich habe mein altes Auto mit Benzinmotor verkauft");
+    expect(item?.de).not.toContain("meinen alten Benzinauto");
+  });
+
+  it("يترجم جملة الجيل الأصغر وسؤال التطوع طويل الأمد ترجمة طبيعية", () => {
+    const section = B2_LESEN_B.find((part) =>
+      (part.questions ?? []).some((question) => question.id === "t2-q3"),
+    );
+    expect(section?.textAr).toContain(
+      "فبينما بقيت الأجيال الأكبر سناً لعقود في المنظمة نفسها، يرغب الأصغر سناً في تقديم المساعدة بمرونة والمشاركة في مشروعات محددة.",
+    );
+    expect(section?.questions?.find((question) => question.id === "t2-q3")?.qAr).toBe(
+      "لماذا تقلّ مشاركة الشباب في العمل التطوعي طويل الأمد؟",
+    );
+  });
+
   it("الاستماع: 3 نماذج كاملة × 30 سؤالاً (المرحلة 2)", () => {
     expect(B2_HOEREN_SETS).toHaveLength(3);
     for (const set of B2_HOEREN_SETS) {
@@ -143,6 +207,11 @@ describe("محرك امتحان Goethe-B2 الرسمي", () => {
       expect(q.correct).toBeGreaterThanOrEqual(0);
       expect(q.correct).toBeLessThan(q.options.length);
     }
+  });
+
+  it("تصوغ ترجمة Hausaufgaben المبني للمجهول بالعربية على نحو سليم", () => {
+    const item = B2_GRAMMATIK.find((question) => question.id === "g4");
+    expect(item?.qAr).toBe("يجب إنجاز الواجبات من قِبل الطلاب (مجهول + ناقص).");
   });
 
   it("مكتبة القراءة B2: نصوص بأسئلة صحيحة (المرحلة 2)", () => {
@@ -198,6 +267,14 @@ describe("محرك امتحان Goethe-B2 الرسمي", () => {
     for (const t of B2_EXAM_TOPICS) {
       expect((byTopic[t.id] ?? 0)).toBeGreaterThanOrEqual(20);
     }
+  });
+
+  it("يفصل Festessen عن وليمة دينية محددة في مفردات الاحتفالات", () => {
+    const festiveMeal = B2_TOP500.find((entry) => entry.de === "das Festessen");
+    expect(festiveMeal?.topic).toBe("feste");
+    expect(festiveMeal?.ar).toBe("وليمة احتفالية");
+    const prepareFestiveMeal = B2_TOP500.find((entry) => entry.de === "das Festessen vorbereiten");
+    expect(prepareFestiveMeal?.ar).toBe("يحضّر وليمة احتفالية");
   });
 
   it("فخاخ الامتحان: 12 تمريناً بشرح مصيدة + صحيح", () => {

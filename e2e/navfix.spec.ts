@@ -92,14 +92,24 @@ test("الدرس: زر «التالي» في الشريط السفلي لا يت
     if (!nav) return { ok: false as const, reason: "شريط التنقل السفلي غير موجود" };
     const navTop = Math.round(nav.getBoundingClientRect().top);
 
-    // زر «التالي» الظاهر داخل الشريط اللاصق السفلي
+    // زر «التالي» داخل الشريط اللاصق السفلي تحديداً.
+    // (كان الاختيار بمدى الإحداثيات فيلتقط زر «أتممت هذا القسم» الموجود داخل
+    //  تدفّق الصفحة — وهو يمرّ خلف الشريط السفلي أثناء التمرير وهذا سلوك طبيعي.)
+    const insideSticky = (el: Element) => {
+      let node: Element | null = el.parentElement;
+      while (node) {
+        if (getComputedStyle(node).position === "sticky") return true;
+        node = node.parentElement;
+      }
+      return false;
+    };
     const stuckBtn = [...document.querySelectorAll("button")].find((b) => {
       const t = b.textContent ?? "";
       if (!t.includes("التالي")) return false;
       if (b.offsetParent === null) return false;
+      if (!insideSticky(b)) return false;
       const r = b.getBoundingClientRect();
-      // ظاهر ضمن منطقة الشريط السفلي اللاصق فقط
-      return r.top > window.innerHeight - 260 && r.bottom <= window.innerHeight + 8;
+      return r.bottom <= window.innerHeight + 8;
     });
     if (!stuckBtn) return { ok: false as const, reason: "لا يوجد زر «التالي» ظاهر في الشريط اللاصق" };
 

@@ -53,7 +53,7 @@ export function TestHub() {
         <Card className="transition-all hover:-translate-y-1 hover:shadow-soft">
           <CardHeader className="border-b bg-muted/20">
             <CardTitle className="flex items-center gap-2 text-lg">
-              <BookOpenCheck className="h-5 w-5 text-sky-500" aria-hidden="true" />
+              <BookOpenCheck className="h-5 w-5 text-sky-700" aria-hidden="true" />
               مكتبة القراءة B2
             </CardTitle>
           </CardHeader>
@@ -64,7 +64,7 @@ export function TestHub() {
             </p>
             <Link
               href="/tests/lesen-b2"
-              className="mt-3 inline-flex items-center gap-1.5 rounded-lg bg-sky-500 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-sky-600"
+              className="mt-3 inline-flex items-center gap-1.5 rounded-lg bg-sky-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-sky-800"
             >
               <BookOpenCheck className="h-4 w-4" aria-hidden="true" />
               اقرأ وتدرب
@@ -86,7 +86,7 @@ export function TestHub() {
             </p>
             <Link
               href="/tests/b2-grammatik"
-              className="mt-3 inline-flex items-center gap-1.5 rounded-lg bg-violet-500 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-violet-600"
+              className="mt-3 inline-flex items-center gap-1.5 rounded-lg bg-violet-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-violet-800"
             >
               <BrainCircuit className="h-4 w-4" aria-hidden="true" />
               ابدأ التدريب

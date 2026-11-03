@@ -35,10 +35,6 @@ const LEVEL_ORDER: Record<string, number> = { A1: 0, A2: 1, B1: 2, B2: 3 };
 /** أيام الأسبوع (لرسالة مخصصة) */
 const WEEKDAYS_AR = ["الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
 
-/** حساب «يوم المسار»: عدد الدروس المكتملة (يحدد النمط المتناوب) */
-export function getPathDay(completedLessons: number): number {
-  return completedLessons;
-}
 
 /** مفتاح اليوم (لتخزين إنجاز الخطة) */
 export function todayKey(): string {
@@ -182,9 +178,4 @@ export function markPlanDone(): void {
   } catch {
     /* تجاهل */
   }
-}
-
-/** نشاطات المستوى — روابط جاهزة حسب المستوى */
-export function levelContentHref(level: LevelCode): string {
-  return `/level/${level.toLowerCase()}`;
 }

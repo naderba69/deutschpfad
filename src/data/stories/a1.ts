@@ -38,16 +38,16 @@ const A1_1: InteractiveStory = {
     },
     {
       id: 3,
-      de: "Der Verkäufer sagt: „Die Äpfel kosten zwei Euro.“",
-      ar: "يقول البائع: «التفاح يكلف يوروين».",
+      de: "Der Verkäufer sagt: „Ein Apfel kostet zwei Euro.“",
+      ar: "يقول البائع: «سعر التفاحة الواحدة يوروين».",
     },
     {
       id: 4,
       de: "Anna sagt: „Ich nehme drei Äpfel, bitte.“",
-      ar: "تقول آنا: «سآخذ ثلاثة تفاح، من فضلك».",
+      ar: "تقول آنا: «سآخذ ثلاث تفاحات، من فضلك».",
       question: {
-        de: "Wie viel kostet ein Apfel? (2 € pro Stück)",
-        ar: "كم تكلف التفاحة الواحدة؟ (2 يورو للحبة)",
+        de: "Wie viel kostet ein Apfel?",
+        ar: "كم ثمن التفاحة الواحدة؟",
         options: [
           { text: "Zwei Euro", ar: "يوروين", correct: true, explanation: "نعم — هذا ما ورد في القصة: «Zwei Euro» (يوروين)." },
           { text: "Drei Euro", ar: "ثلاثة يورو", correct: false, explanation: "لا — الصواب هو الخيار المذكور في القصة." },
@@ -84,8 +84,8 @@ const A1_2: InteractiveStory = {
     },
     {
       id: 2,
-      de: "Der Hund ist allein. Max sagt: „Wem gehörst du?“",
-      ar: "الكلب وحيد. يقول ماكس: «لمن تنتمي؟»",
+      de: "Der Hund ist allein. Max fragt: „Wem gehört der Hund?“",
+      ar: "الكلب وحيد. يتساءل ماكس: «لمن يعود هذا الكلب؟»",
       question: {
         de: "Wo spielt Max?",
         ar: "أين يلعب ماكس؟",
@@ -98,20 +98,20 @@ const A1_2: InteractiveStory = {
     },
     {
       id: 3,
-      de: "Max nimmt den Hund und geht nach Hause. Seine Mutter öffnet die Tür.",
-      ar: "يأخذ ماكس الكلب ويعود إلى البيت. تفتح أمه الباب.",
+      de: "Max bleibt mit dem Hund im Park. Seine Mutter kommt und hilft ihm.",
+      ar: "يبقى ماكس مع الكلب في الحديقة. تأتي أمه وتساعده.",
     },
     {
       id: 4,
-      de: "Die Mutter fragt: „Ist das dein Hund?“ Max sagt: „Nein, ich weiß nicht.“",
-      ar: "تسأل الأم: «هل هذا كلبك؟» يقول ماكس: «لا، لا أعرف».",
+      de: "Die Mutter fragt: „Kennst du den Hund?“ Max sagt: „Nein, ich kenne ihn nicht.“",
+      ar: "تسأل الأم: «هل تعرف هذا الكلب؟» يقول ماكس: «لا، لا أعرفه».",
       question: {
-        de: "Wem gehört der Hund?",
-        ar: "لمن ينتمي الكلب؟",
+        de: "Kennt Max den Hund?",
+        ar: "هل يعرف ماكس الكلب؟",
         options: [
-          { text: "Max weiß nicht", ar: "ماكس لا يعرف", correct: true, explanation: "نعم — هذا ما ورد في القصة: «Max weiß nicht» (ماكس لا يعرف)." },
-          { text: "Der Mutter", ar: "لأم ماكس", correct: false, explanation: "لا — الصواب هو الخيار المذكور في القصة." },
-          { text: "Dem Verkäufer", ar: "للبائع", correct: false, explanation: "لا — الصواب هو الخيار المذكور في القصة." },
+          { text: "Nein, er kennt ihn nicht.", ar: "لا، إنه لا يعرفه.", correct: true, explanation: "نعم — يقول ماكس: «Nein, ich kenne ihn nicht.»" },
+          { text: "Ja, er kennt ihn.", ar: "نعم، إنه يعرفه.", correct: false, explanation: "لا — يقول ماكس إنه لا يعرف الكلب: «Ich kenne ihn nicht.»" },
+          { text: "Er ist der Besitzer.", ar: "هو صاحبه.", correct: false, explanation: "لا — لا يعرف ماكس الكلب، والجار يقول لاحقاً إنه صاحبه." },
         ],
       },
     },
@@ -403,8 +403,8 @@ const A1_7: InteractiveStory = {
     },
     {
       id: 4,
-      de: "Tom gibt das Geld. Der Zug kommt um zehn Uhr.",
-      ar: "يعطي توم المال. يأتي القطار في العاشرة.",
+      de: "Tom gibt das Geld. Der Zug fährt um zehn Uhr ab.",
+      ar: "يعطي توم المال. ينطلق القطار في العاشرة.",
       question: {
         de: "Wie viel kostet das Ticket?",
         ar: "كم تكلف التذكرة؟",

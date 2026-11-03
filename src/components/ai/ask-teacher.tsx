@@ -46,6 +46,7 @@ export function AiAskTeacher() {
       {(run) => (
         <div className="space-y-3">
           <textarea
+            aria-label="سؤالك للمعلّم"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
             placeholder="اكتب سؤالك… (مثال: ما الفرق بين weil وdenn؟ متى أستخدم Konjunktiv II؟)"
@@ -120,6 +121,7 @@ export function AiCefrAssessment() {
       {(run) => (
         <div className="space-y-3">
           <textarea
+            aria-label="النص الألماني للشرح"
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="اكتب فقرة حرة بالألمانية (5 جمل على الأقل)…"

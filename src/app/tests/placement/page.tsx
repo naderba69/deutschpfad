@@ -9,11 +9,12 @@ export const metadata: Metadata = {
 };
 
 interface Props {
-  searchParams: { mode?: string };
+  searchParams: Promise<{ mode?: string }>;
 }
 
-export default function PlacementPage({ searchParams }: Props) {
-  const quick = searchParams?.mode === "quick";
+export default async function PlacementPage({ searchParams }: Props) {
+  const { mode } = await searchParams;
+  const quick = mode === "quick";
 
   return (
     <div className="mx-auto w-full max-w-2xl px-4 py-10 sm:px-6">

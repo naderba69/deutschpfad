@@ -162,7 +162,7 @@ export function RedemittelClient() {
 
       {/* نصيحة */}
       <div className="rounded-xl border border-gold/40 bg-gold/10 p-4 text-sm">
-        <p className="font-bold text-gold-foreground">💡 نصيحة المعلم للامتحان:</p>
+        <p className="font-bold text-gold-strong">💡 نصيحة المعلم للامتحان:</p>
         <p className="mt-1 text-muted-foreground">
           لا تحفظ العبارات منفردة — احفظها في جمل كاملة وردّدها بصوتك. في امتحان B2،
           استخدم 3-4 عبارات متنوعة (رأي + تعليل + مثال + تحفظ) في كل رد. المصحح يبحث عن

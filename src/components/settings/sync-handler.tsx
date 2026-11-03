@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import {CheckCircle2, Trophy} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
@@ -129,10 +130,10 @@ export function SyncHandler() {
           </p>
           <div className="mt-4 flex flex-wrap justify-center gap-2">
             <Button asChild>
-              <a href="/learning-path">ابدأ الآن</a>
+              <Link href="/learning-path">ابدأ الآن</Link>
             </Button>
             <Button asChild variant="outline">
-              <a href="/">الرئيسية</a>
+              <Link href="/">الرئيسية</Link>
             </Button>
           </div>
         </div>
@@ -155,7 +156,7 @@ export function SyncHandler() {
           <h1 className="mt-2 text-lg font-extrabold">تمت الاستعادة!</h1>
           <p className="mt-1 text-sm text-muted-foreground">{message}</p>
           <Button asChild className="mt-4">
-            <a href="/">عُد لرحلتك</a>
+            <Link href="/">عُد لرحلتك</Link>
           </Button>
         </div>
       )}
@@ -165,7 +166,7 @@ export function SyncHandler() {
           <p className="text-3xl" aria-hidden="true">⚠️</p>
           <p className="mt-2 text-sm font-bold text-destructive">{message}</p>
           <Button asChild variant="outline" className="mt-4">
-            <a href="/settings">الإعدادات</a>
+            <Link href="/settings">الإعدادات</Link>
           </Button>
         </div>
       )}

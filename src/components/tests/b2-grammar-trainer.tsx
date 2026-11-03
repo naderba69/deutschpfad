@@ -10,6 +10,7 @@ import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent} from "@/components/ui/card";
 import {Progress} from "@/components/ui/progress";
+import {ExamReviewList, type ExamReviewTeil} from "@/components/tests/exam-question-views";
 
 /**
  * تدريب القواعد والمفردات B2 — 60 سؤالاً MCQ موقوتاً
@@ -88,6 +89,17 @@ export function B2GrammarTrainer() {
             أجبت صحيحاً على {result.correct} من {result.total} سؤالاً.
           </p>
           <Progress value={pct} className="mx-auto h-3 max-w-sm" aria-label={`النتيجة ${pct}%`} />
+
+          {/* مراجعة الأدلة — لماذا هذا الجواب (الدفعة 121): بنك القواعد متوافق بنيوياً منذ الدفعة 119 */}
+          <div className="mt-6 text-start" data-testid="exam-review">
+            <h3 className="mb-3 text-lg font-extrabold">مراجعة الأدلة — لماذا هذا الجواب</h3>
+            <ExamReviewList
+              teile={[{ teil: "grammatik", titleAr: "القواعد والمفردات", kind: "mcq", questions } satisfies ExamReviewTeil]}
+              answers={answers}
+              label="grammatik"
+            />
+          </div>
+
           <div className="flex justify-center gap-2">
             <Button onClick={restart} className="gap-2">
               <RotateCcw className="h-4 w-4" aria-hidden="true" />

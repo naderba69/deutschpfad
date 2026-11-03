@@ -149,6 +149,9 @@ export function VerbDrill() {
             صرّف الفعل «<span className="font-de" dir="ltr" lang="de">{question.verb.infinitiv}</span>»
             ({question.verb.ar}) في زمن {TENSES.find((t) => t.id === question.tense)?.label} مع er/sie/es:
           </p>
+          {question.verb.note && (
+            <p className="mt-2 text-xs font-semibold text-destructive">⚠ {question.verb.note}</p>
+          )}
           <p className="font-de mt-3 text-2xl font-extrabold" dir="ltr" lang="de">
             {question.tense === "partizip2" ? "Partizip II" : "er / sie / es"}
           </p>

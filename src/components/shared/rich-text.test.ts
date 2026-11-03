@@ -15,11 +15,10 @@ import { LESSONS } from "@/data/lessons";
  */
 const THEORY_VIEWS = [
   "src/components/lesson/sections/theorie.tsx",
-  "src/components/lesson/lesson-flow.tsx",
 ];
 
 describe("عرض النصّ الغنيّ في الكتل النظرية", () => {
-  it("المكوّنان يستعملان RichText للشرح المطوّل", () => {
+  it("المكوّن يستعمل RichText للشرح المطوّل", () => {
     for (const file of THEORY_VIEWS) {
       const src = readFileSync(file, "utf-8");
       expect(src, `${file} لا يستورد RichText`).toContain("@/components/shared/rich-text");

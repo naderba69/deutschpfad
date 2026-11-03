@@ -23,13 +23,35 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   m2: { options: ["hätte ... gemacht", "wäre ... gemacht", "hätte ... machen", "hat ... gemacht"], key: "hätte ... gemacht" },
   q1: { options: ["mehr Sport", "weniger schlafen", "mehr essen", "weniger arbeiten"], key: "mehr Sport" },
   q2: {
-    options: ["Wasser trinken und Bewegung", "Tabletten nur", "Bettruhe", "wenig essen"],
+    options: ["Wasser trinken und Bewegung", "nur Tabletten einnehmen", "viel Bettruhe zu Hause", "wenig essen und fast nichts trinken"],
     key: "Wasser trinken und Bewegung",
   },
   q3: {
-    options: ["Ich hätte früher kommen sollen", "Ich bin gesund", "Ich gehe jetzt", "Ich brauche Tabletten"],
+    options: ["Ich hätte früher kommen sollen", "Ich bin wieder ganz gesund", "Ich gehe jetzt nach Hause", "Ich brauche heute Tabletten"],
     key: "Ich hätte früher kommen sollen",
   },
+  q4: { options: ["schlechter Schlaf und Müdigkeit", "Kopfschmerzen nach dem Sport", "zu wenig Zeit für die Arbeit", "eine Erkältung seit gestern"], key: "schlechter Schlaf und Müdigkeit" },
+  q5: { options: ["täglicher Spaziergang und feste Schlafzeiten", "lange Läufe und spätes Aufstehen", "neue Tabletten und weniger Bewegung", "mehr Kaffee und kurze Nächte"], key: "täglicher Spaziergang und feste Schlafzeiten" },
+  q6: { options: ["wieder in die Praxis kommen", "sofort mit Sport aufhören", "nur noch Kaffee trinken", "einen Urlaub buchen"], key: "wieder in die Praxis kommen" },
+};
+
+const expectedTransformations: string[] = ["e7", "e13", "w1"];
+
+const expectedTransformationAnswers: Record<string, string[]> = {
+  w1: ["Ich hätte Sport gemacht", "Ich hätte Sport gemacht."],
+  e13: [
+    "Wenn ich geschlafen hätte, wäre ich nicht müde gewesen",
+    "Wenn ich geschlafen hätte, wäre ich nicht müde gewesen.",
+  ],
+};
+
+const expectedFillBlanksExtra: Record<string, { correct: string[]; options: string[][] }> = {};
+
+const expectedErrorCorrectionsExtra: Record<
+  string,
+  { wrongWord: string; correctWord: string; options: string[] }
+> = {
+  e14: { wrongWord: "sei", correctWord: "seien", options: ["seien", "sei", "ist", "wäre"] },
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
@@ -133,8 +155,8 @@ describe("B1-05 lesson content audit", () => {
 
   it("uses only evaluable performances as goals, with no speaking or summary claims", () => {
     expect(lessonB105.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
-    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3"]);
-    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l2:q2", "listening:l2:q3"]);
+    expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q3", "q4", "q5", "q6"]);
+    expect(goal("z1").evidence?.taskIds).toEqual(["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4", "listening:l3:q5", "listening:l3:q6"]);
     expect(goal("z2").evidence?.exerciseIds).toEqual(["e1", "m2", "w1"]);
     expect(goal("z3").evidence?.exerciseIds).toEqual(["e4", "e5", "m3"]);
     expect(goal("z4").evidence?.exerciseIds).toEqual(["e11", "e12"]);
@@ -149,6 +171,90 @@ describe("B1-05 lesson content audit", () => {
         const exerciseId = taskId.split(":").at(-1) ?? "";
         expect(evidence.exerciseIds, `${taskId} maps to a goal exercise`).toContain(exerciseId);
       }
+    }
+  });
+
+  it("enumerates every auditable task type so no new task escapes the guard", () => {
+    const byType = (type: Exercise["type"]) =>
+      allTasks()
+        .filter((item) => item.type === type)
+        .map(({ id }) => id)
+        .sort();
+    expect(byType("multiple-choice").filter((id) => id in expectedMultipleChoice), "MCQ مغطّاة").toEqual(
+      byType("multiple-choice"),
+    );
+    const fills = { ...expectedFillBlanks, ...expectedFillBlanksExtra };
+    expect(byType("fill-blank").filter((id) => id in fills), "فراغات مغطّاة").toEqual(byType("fill-blank"));
+    const corrections = { ...expectedErrorCorrections, ...expectedErrorCorrectionsExtra };
+    expect(byType("error-correction").filter((id) => id in corrections), "تصحيحات مغطّاة").toEqual(
+      byType("error-correction"),
+    );
+    expect(byType("matching").filter((id) => id in expectedMatching), "مطابقات مغطّاة").toEqual(
+      byType("matching"),
+    );
+    const transformations = byType("transformation");
+    expect(transformations.filter((id) => expectedTransformations.includes(id)), "تحويلات مغطّاة").toEqual(
+      transformations,
+    );
+  });
+
+  it("checks the accepted answers of every transformation", () => {
+    for (const [id, accepted] of Object.entries(expectedTransformationAnswers)) {
+      const exercise = task(id);
+      if (exercise.type !== "transformation") throw new Error(`${id} is not transformation`);
+      expect(exercise.acceptedAnswers, `${id} accepted`).toEqual(accepted);
+      for (const answer of accepted) {
+        expect(evaluateExercise(exercise, answer).isCorrect, `${id}: ${answer}`).toBe(true);
+      }
+    }
+  });
+
+  it("checks the new error-correction key against the engine", () => {
+    for (const [id, expected] of Object.entries(expectedErrorCorrectionsExtra)) {
+      const exercise = task(id);
+      if (exercise.type !== "error-correction") throw new Error(`${id} is not error-correction`);
+      expect(exercise.wrongWord, `${id} wrong`).toBe(expected.wrongWord);
+      expect(exercise.correctWord, `${id} correct`).toBe(expected.correctWord);
+      expect(exercise.options, `${id} options`).toEqual(expected.options);
+      expect(evaluateExercise(exercise, expected.correctWord).isCorrect, `${id} answer`).toBe(true);
+    }
+  });
+
+  it("keeps the reading text, glossary, comprehension questions, and discourse anchors intact", () => {
+    const reading = lessonB105.reading;
+    expect(reading?.id).toBe("read-b1-05");
+    expect(reading?.textType).toBe("bericht");
+    expect(reading?.titleDe).toBe("Ein fiktiver Bericht: Arbeit und Erholung");
+    expect(reading?.titleAr).toBe("تقرير تدريبي خيالي: العمل والراحة");
+    expect(reading?.paragraphs).toHaveLength(4);
+    expect(reading?.paragraphs[3]).toContain("alle Personen und Aussagen seien erfunden");
+    expect(reading?.paragraphsAr).toHaveLength(4);
+    const text = reading!.paragraphs.join(" ").toLowerCase();
+    expect(text.split(/\s+/).filter(Boolean).length).toBeGreaterThanOrEqual(250);
+
+    expect(reading?.glossary.length).toBeGreaterThanOrEqual(8);
+    for (const item of reading!.glossary) {
+      const head = item.de.replace(/^(der|die|das)\s+/i, "").split(/[\s,(/]/)[0];
+      const stem = head.slice(0, Math.max(4, head.length - 3)).toLowerCase();
+      expect(text.includes(stem), `${item.de} ليست في النصّ`).toBe(true);
+      expect(item.ar.trim().length).toBeGreaterThan(1);
+    }
+
+    expect(reading?.questions.map(({ id }) => id)).toEqual(["rq1", "rq2", "rq3", "rq4"]);
+    for (const question of reading!.questions) {
+      expect(question.options.length).toBeGreaterThanOrEqual(3);
+      expect(question.correctIndex).toBeGreaterThanOrEqual(0);
+      expect(question.correctIndex).toBeLessThan(question.options.length);
+      expect(question.explanation.trim().length).toBeGreaterThan(20);
+      const answer = question.options[question.correctIndex];
+      expect(text.includes(answer.toLowerCase()) && answer.length > 45, `${question.id} منسوخ حرفياً`).toBe(false);
+    }
+
+    expect(reading?.redemittel?.length).toBeGreaterThanOrEqual(4);
+    expect(reading?.discussionAr?.trim().length).toBeGreaterThanOrEqual(40);
+
+    for (const anchor of ["bericht", "schlaf", "pausen"]) {
+      expect(text.includes(anchor), `مرساة مفقودة: ${anchor}`).toBe(true);
     }
   });
 
@@ -250,20 +356,25 @@ describe("B1-05 lesson content audit", () => {
       "l1:q1",
       "l2:q2",
       "l2:q3",
+      "l3:q4",
+      "l3:q5",
+      "l3:q6",
     ]);
   });
 
   it("keeps the culture note sourced and removes unsupported claims", () => {
     const text = JSON.stringify(lessonB105);
     expect(text).toContain("DWDS");
-    expect(text).toContain("Check-up 35");
+    expect(text).toContain("gesund.bund.de");
     expect(text).not.toMatch(/Fitnessstudio|في المطعم!|ندم المهاجر|تسيطر على لغة الصحافة|هذا ما يفعله الصحفيون/);
+    expect(text).toContain("https://www.dwds.de/wb/Sport%20ist%20Mord");
+    expect(text).toContain("https://gesund.bund.de/en/krebsfrueherkennung");
     expect(text).not.toMatch(/الألمان يمارسون الرياضة كثيراً/);
   });
 
   it("counts only correct, mapped exercise results toward goals", () => {
     expect(getGoalEvidenceStatus(goal("z1"), lessonB105.id, [])).toBe("pending");
-    const z1Events = [goalEvent("z1", "q1"), goalEvent("z1", "q2"), goalEvent("z1", "q3")];
+    const z1Events = [goalEvent("z1", "q1"), goalEvent("z1", "q2"), goalEvent("z1", "q3"), goalEvent("z1", "q4"), goalEvent("z1", "q5"), goalEvent("z1", "q6")];
     expect(getGoalEvidenceStatus(goal("z1"), lessonB105.id, z1Events)).toBe("evidenced");
     expect(getGoalEvidenceStatus(goal("z1"), lessonB105.id, z1Events.slice(0, 2))).toBe("pending");
     expect(getGoalEvidenceStatus(goal("z2"), lessonB105.id, [goalEvent("z2", "e1", false)])).toBe("pending");

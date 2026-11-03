@@ -159,6 +159,7 @@ export function UmschreibungenClient() {
             {/* الإدخال */}
             <div className="flex flex-col gap-2 sm:flex-row">
               <input
+                aria-label="إجابتك لتحويل الجملة"
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
                 onKeyDown={(e) => {

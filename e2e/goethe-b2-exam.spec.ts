@@ -100,3 +100,42 @@ test("vollpruefung: الأوقات الرسمية الصحيحة (65/40/75) + ت
   await expect(page.getByText("75 دقيقة")).toBeVisible();
   await expect(page.getByText(/توضيح صدق/)).toBeVisible();
 });
+
+test("محرك B2: مراجعة الأدلة تظهر في النتيجة (جوابك · الصحيح · الشاهد)", async ({ page }) => {
+  const pageErrors: string[] = [];
+  page.on("pageerror", (e) => pageErrors.push(e.message));
+  await page.goto("/tests/b2", { waitUntil: "networkidle" });
+  await page.waitForTimeout(500);
+  await page.getByRole("button", { name: /ابدأ الامتحان/ }).click();
+
+  // أجب عنصراً واحداً في Teil 1 (Zuordnung) حتى تُقيَّم مراجعةُ المطابقة
+  const firstItemCard = page.locator("div.rounded-xl.border.bg-card.p-3").first();
+  await firstItemCard.locator("button").first().click();
+
+  // إنهاء القراءة (5 أجزاء) ← الاستماع (4 أجزاء) ← الكتابة ← التحدث
+  for (let i = 0; i < 4; i++) {
+    await page.getByRole("button", { name: /^التالي/ }).click();
+  }
+  await page.getByRole("button", { name: /إنهاء القراءة/ }).click();
+  await expect(page.getByText(/Hören — 1\/4/)).toBeVisible();
+  for (let i = 0; i < 3; i++) {
+    await page.getByRole("button", { name: /^التالي/ }).click();
+  }
+  await page.getByRole("button", { name: /إنهاء الاستماع/ }).click();
+  await page.getByRole("button", { name: /إنهاء الكتابة/ }).click();
+  await page.getByRole("button", { name: /إنهاء التحدث/ }).click();
+
+  // شاشة النتيجة تحمل مراجعة الأدلة (الدفعة 118)
+  await expect(page.getByRole("heading", { name: /نتيجة محاكاة Goethe-B2/ })).toBeVisible();
+  const review = page.getByTestId("exam-review");
+  await expect(review).toBeVisible();
+  await expect(review).toContainText("مراجعة الأدلة");
+  // عناصر المراجعة من الأنواع الأربعة (Zuordnung في Teil 1 · MCQ · …)
+  await expect(page.getByTestId("exam-review-item").first()).toBeVisible();
+  // الشاهد الألماني ظاهرٌ لأول سؤال اختيار/عبارة يحمل whyAr
+  const evidence = page.getByTestId("exam-review-evidence").first();
+  await expect(evidence).toBeVisible();
+  await expect(evidence).toContainText(/[A-Za-zÄÖÜäöüß]{3,}/);
+
+  expect(pageErrors, "أخطاء JavaScript في الصفحة").toEqual([]);
+});

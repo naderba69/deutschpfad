@@ -227,6 +227,7 @@ export function PlacementDiagnostic() {
             </p>
             <p className="text-sm text-muted-foreground">{current.promptAr}</p>
             <textarea
+              aria-label={`إجابتك الكتابية: ${current.promptAr}`}
               value={(answers.get(current.id) as string) ?? ""}
               onChange={(e) => updateAnswer(current.id, e.target.value)}
               placeholder="اكتب إجابتك..."

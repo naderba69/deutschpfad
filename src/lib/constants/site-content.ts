@@ -1,5 +1,7 @@
 import {AudioLines, Award, BarChart3, BookOpen, BrainCircuit, ClipboardCheck, GraduationCap, Mic, MousePointerClick, Repeat, Sparkles, Trophy, WifiOff, type LucideIcon} from "lucide-react";
 
+import {TOTAL_LESSONS, TOTAL_UNITS, TOTAL_WORDS} from "@/lib/constants/curriculum";
+
 /**
  * محتوى الصفحة الرئيسية (بيانات فقط — لا JSX)
  * — فصل المحتوى عن المكونات —
@@ -96,11 +98,18 @@ export interface Stat {
   label: string;
 }
 
+/**
+ * شريط إحصائيات الصفحة الرئيسية.
+ *
+ * الأرقام تُشتقّ من خريطة المنهج (`curriculum.ts`) ولا تُكتب يدوياً:
+ * كانت مكتوبة «44 وحدة» و«240+ درس تفاعلي» بينما الفعلي 47 وحدة و52 درساً،
+ * فتُضلّل الزائر من أول شاشة. الاختبار في `consistency.test.ts` يحرس ذلك.
+ */
 export const STATS: Stat[] = [
   { value: "4", label: "مستويات CEFR كاملة" },
-  { value: "44", label: "وحدة دراسية" },
-  { value: "3600+", label: "كلمة ومصطلح" },
-  { value: "240+", label: "درس تفاعلي" },
+  { value: String(TOTAL_UNITS), label: "وحدة دراسية" },
+  { value: `${TOTAL_WORDS}+`, label: "كلمة ومصطلح" },
+  { value: String(TOTAL_LESSONS), label: "درس تفاعلي" },
 ];
 
 export interface Faq {

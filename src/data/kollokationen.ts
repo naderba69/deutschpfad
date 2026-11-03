@@ -52,5 +52,3 @@ export const KOLLOKATIONEN: Kollokation[] = [
   { id: "ko-29", de: "einen Eindruck machen", ar: "يترك انطباعاً", example: "Der erste Eindruck ist sehr wichtig.", exampleAr: "الانطباع الأول مهم جداً." },
   { id: "ko-30", de: "ein Risiko eingehen", ar: "يخوض مخاطرة", example: "Man sollte kein unnötiges Risiko eingehen.", exampleAr: "لا ينبغي خوض مخاطرة غير ضرورية." },
 ];
-
-export const TOTAL_KOLLOKATIONEN = KOLLOKATIONEN.length;

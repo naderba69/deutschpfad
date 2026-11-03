@@ -52,20 +52,20 @@ test("a1-01: قسم الوساطة يظهر بعد التمرير عبر الخ�
   expect(foundInteraction, "قسم التفاعل لم يظهر في مسار الخطوات").toBe(true);
 });
 
-test("a1-14 (الأرقام والهاتف): يفتح ويعرض محتواه", async ({ page }) => {
+test("a1-14 (الماضي المحكيّ Perfekt): يفتح ويعرض محتواه", async ({ page }) => {
   await page.goto("/lesson/a1-14");
   await clearData(page);
   await page.reload();
   await page.waitForTimeout(1800);
 
-  await expect(page.locator("h1").first()).toContainText("Zahlen, Telefon", { timeout: 8000 });
+  await expect(page.locator("h1").first()).toContainText("Das Perfekt", { timeout: 8000 });
   // الأهداف تظهر
   await expect(page.getByText("الأهداف التعليمية", { exact: false }).first()).toBeVisible();
   // لا فيضان
   const overflow = await page.evaluate(
     () => document.documentElement.scrollWidth > document.documentElement.clientWidth + 2,
   );
-  expect(overflow, "فيضان أفقي في درس الأرقام").toBe(false);
+  expect(overflow, "فيضان أفقي في درس a1-14").toBe(false);
 });
 
 test("التفاعل: اختيار الرد في a1-01 ينتج ردّ المحاور", async ({ page }) => {
@@ -77,7 +77,7 @@ test("التفاعل: اختيار الرد في a1-01 ينتج ردّ المح�
   // انتقل عبر الخطوات بالتسلسل (الوساطة ثم التفاعل — آخر قسمين)
   for (let i = 0; i < 20; i++) {
     const h2 = await page.evaluate(() => document.querySelector("#lesson-step-content h2")?.textContent ?? "");
-    if (h2.includes("تفاعل حي")) break;
+    if (h2.includes("تفاعل موجّه")) break;
     const nextBtn = page.getByRole("button", { name: /التالي:|أتممت هذا القسم/ }).last();
     if (await nextBtn.isVisible().catch(() => false)) {
       await nextBtn.click().catch(() => {});
@@ -89,7 +89,7 @@ test("التفاعل: اختيار الرد في a1-01 ينتج ردّ المح�
   const h2 = await page.evaluate(() => document.querySelector("#lesson-step-content h2")?.textContent ?? "");
   expect(h2.includes("تفاعل"), `القسم الحالي: ${h2}`).toBe(true);
 
-  await expect(page.getByText("اختر ردّك الأنسب:", { exact: false }).first()).toBeVisible({ timeout: 8000 });
+  await expect(page.getByText("اختر الرد الأنسب", { exact: false }).first()).toBeVisible({ timeout: 8000 });
   // اختر الرد الأول (يبدأ بـ Hallo Lisa)
   const opt = page.locator("button", { hasText: /Hallo Lisa/ }).first();
   await opt.click();

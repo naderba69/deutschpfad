@@ -99,7 +99,7 @@ export const siteConfig = {
       label: "اختبر",
       items: [
         { title: "مركز الاختبارات", href: "/tests" },
-        { title: "كفاياتك CEFR 📊", href: "/dashboard/competencies" },
+        { title: "مؤشرات التدريب 📊", href: "/dashboard/competencies" },
         { title: "تحديد المستوى", href: "/placement" },
         { title: "محاكاة Goethe", href: "/tests/mock" },
         { title: "امتحان الختم", href: "/tests/seal/b2" },
@@ -177,8 +177,6 @@ export const siteConfig = {
     ],
   },
 } as const;
-
-export type SiteConfig = typeof siteConfig;
 
 /** حلّ رابط الموقع الموثوق (P1-06) */
 function resolveSiteUrl(): string {

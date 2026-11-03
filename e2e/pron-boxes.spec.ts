@@ -12,6 +12,8 @@
  */
 import { test, expect, type Page } from "@playwright/test";
 
+import {gotoLessonStep} from "./helpers/lesson-steps";
+
 const WIDTHS = [320, 360, 390];
 
 async function gotoPronSection(page: Page) {
@@ -35,12 +37,9 @@ async function gotoPronSection(page: Page) {
   });
   await page.reload();
   await page.waitForTimeout(1800);
-  for (let i = 0; i < 5; i++) {
-    await page.getByRole("button", { name: /التالي:/ }).last().click().catch(() => {});
-    await page.waitForTimeout(400);
-  }
+  // تنقّل حتى قسم النطق (لا نعتمد على عدّ نقرات ثابت — ترتيب الأقسام يتغير)
+  await gotoLessonStep(page, "النطق");
   await page.waitForTimeout(1200);
-  await expect(page.locator("#lesson-step-content h2").first()).toContainText("النطق", { timeout: 8000 });
 }
 
 for (const w of WIDTHS) {

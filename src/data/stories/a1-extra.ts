@@ -30,10 +30,10 @@ const A1_9: InteractiveStory = {
     {
       id: 4,
       de: "Sie essen auch einen Kuchen. Der Kuchen schmeckt sehr gut.",
-      ar: "يأكلان أيضاً قطعة كعك. الكعك لذيذ جداً.",
+      ar: "يأكلان أيضاً كعكةً. الكعكة لذيذة جداً.",
       question: {
-        de: "Was möchte Tim?",
-        ar: "ماذا يريد تيم؟",
+        de: "Was möchte Tim trinken?",
+        ar: "ماذا يريد تيم أن يشرب؟",
         options: [
           { text: "Einen Kaffee", ar: "قهوة", correct: true, explanation: "صحيح — «Ich möchte einen Kaffee» = أريد قهوة." },
           { text: "Einen Tee", ar: "شاياً", correct: false, explanation: "لا — الشاي من نصيب بيا وليس تيم." },
@@ -100,15 +100,15 @@ const A1_11: InteractiveStory = {
     { id: 1, de: "Morgen hat Saras Mutter Geburtstag. Sara möchte ein Geschenk kaufen.", ar: "غداً عيد ميلاد والدة سارة. تريد سارة شراء هدية." },
     {
       id: 2,
-      de: "Sie sieht eine schöne rote Tasche. Sie kostet 25 Euro.",
-      ar: "ترى حقيبة حمراء جميلة. تكلف 25 يورو.",
+      de: "Sie sieht eine Tasche. Die Tasche ist rot und schön. Sie kostet 25 Euro.",
+      ar: "ترى حقيبة. الحقيبة حمراء وجميلة. تكلف 25 يورو.",
       question: {
         de: "Was sieht Sara?",
         ar: "ماذا ترى سارة؟",
         options: [
-          { text: "Eine rote Tasche", ar: "حقيبة حمراء", correct: true, explanation: "نعم — «eine schöne rote Tasche» = حقيبة حمراء جميلة." },
-          { text: "Einen blauen Schal", ar: "وشاحاً أزرق", correct: false, explanation: "لا — الوشاح الأزرق غير موجود في القصة." },
-          { text: "Eine gelbe Jacke", ar: "سترة صفراء", correct: false, explanation: "لا — الحقيبة حمراء وليست سترة صفراء." },
+          { text: "Eine Tasche", ar: "حقيبة", correct: true, explanation: "نعم — النص يقول «Sie sieht eine Tasche»." },
+          { text: "Einen Schal", ar: "وشاحاً", correct: false, explanation: "لا — الوشاح غير موجود في القصة." },
+          { text: "Eine Jacke", ar: "سترة", correct: false, explanation: "لا — النص يذكر حقيبة لا سترة." },
         ],
       },
     },

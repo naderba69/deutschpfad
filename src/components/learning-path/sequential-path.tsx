@@ -10,6 +10,7 @@ import {useProgress} from "@/components/providers/progress-provider";
 import {LESSON_META} from "@/data/lessons/meta";
 import {LEVELS} from "@/lib/constants/curriculum";
 import {cn} from "@/lib/utils";
+import {LEVEL_BADGE_CLASSES, LEVEL_NUMBER_CLASSES} from "@/components/learning-path/level-colors";
 
 /**
  * المسار المتسلسل الكامل — كل الدروس (46) بالترتيب من a1-00 حتى b2-10
@@ -61,7 +62,10 @@ export function SequentialPath() {
                     <span className="text-2xl" aria-hidden="true">{level.emoji}</span>
                     <div className="min-w-0">
                       <div className="flex min-w-0 flex-wrap items-center gap-2">
-                        <Badge variant="outline" className="font-de font-bold" style={{ color: level.accent, borderColor: `${level.accent}66` }}>
+                        <Badge
+                          variant="outline"
+                          className={cn("font-de font-bold", LEVEL_BADGE_CLASSES[level.code])}
+                        >
                           {level.code}
                         </Badge>
                         <LangDe className="break-words text-sm font-bold [overflow-wrap:anywhere]">{level.titleDe}</LangDe>
@@ -72,7 +76,7 @@ export function SequentialPath() {
                   <div className="flex shrink-0 items-center gap-2">
                     <Link
                       href={`/level/${level.code.toLowerCase()}`}
-                      className="rounded-lg border border-primary/30 bg-card px-3 py-1.5 text-xs font-bold text-primary transition-colors hover:bg-primary/10"
+                      className="tap-target rounded-lg border border-primary/30 bg-card px-3 py-1.5 text-xs font-bold text-primary transition-colors hover:bg-primary/10"
                     >
                       مركز المستوى ←
                     </Link>
@@ -100,10 +104,7 @@ export function SequentialPath() {
                         <span
                           className={cn(
                             "inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full font-de text-xs font-extrabold",
-                            lesson.level === "A1" && "bg-primary/10 text-primary",
-                            lesson.level === "A2" && "bg-gold/15 text-gold-strong",
-                            lesson.level === "B1" && "bg-[#16a34a]/10 text-[#16a34a]",
-                            lesson.level === "B2" && "bg-[#dc2626]/10 text-[#dc2626]",
+                            LEVEL_NUMBER_CLASSES[lesson.level],
                           )}
                         >
                           {String(globalNumber).padStart(2, "0")}

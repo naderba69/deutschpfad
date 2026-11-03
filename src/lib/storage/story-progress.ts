@@ -38,12 +38,3 @@ export function getStoryProgress(levelCounts: Record<string, number>): Record<st
   }
   return out;
 }
-
-/** إعادة تعيين تقدم القصص */
-export function resetStoryProgress(): void {
-  try {
-    localStorage.removeItem(KEY);
-  } catch {
-    /* تجاهل */
-  }
-}
