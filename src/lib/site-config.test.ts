@@ -17,6 +17,23 @@ import {siteConfig} from "@/lib/site-config";
 const links: [string, readonly {readonly title: string; readonly href: string}[]][] =
   Object.entries(siteConfig.footerLinks);
 
+describe("البيانات العامة وروابط التنقل", () => {
+  it("لا تنسب المنصة إلى منهج Goethe أو اعتماد CEFR ولا تسوّق محاكاة رسمية", () => {
+    expect(siteConfig.description).toMatch(/دون ادعاء.*مطابقة رسمية/);
+    expect(siteConfig.description).not.toMatch(/وفق منهجية معهد غوته|معايير.*CEFR/);
+    const titles = [
+      ...siteConfig.navItems.map((item) => item.title),
+      ...siteConfig.navGroups.flatMap((group) => group.items.map((item) => item.title)),
+      ...Object.values(siteConfig.footerLinks).flatMap((group) => group.map((item) => item.title)),
+    ];
+    expect(titles).not.toContain("محاكاة Goethe");
+    expect(titles).not.toContain("محاكاة B2 الكاملة");
+    expect(titles).not.toContain("كفاياتك CEFR 📊");
+    expect(titles).not.toContain("مقيّم الكتابة بمعايير غوته");
+    expect(titles.join(" | ")).not.toMatch(/محاكاة.*(?:كاملة|Goethe|الامتحان الشفهي)|كفاياتك CEFR|مقيّم الكتابة بمعايير غوته/);
+  });
+});
+
 describe("روابط الفوتر", () => {
   it("لا وجهة مكررة داخل أي مجموعة (مفتاح React = href)", () => {
     const dups: string[] = [];

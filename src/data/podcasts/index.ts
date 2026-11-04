@@ -66,8 +66,8 @@ export const PODCASTS: PodcastEpisode[] = [
     title: "Mein Haustier",
     titleAr: "حيواني الأليف",
     emoji: "🐱",
-    script: "Ich habe eine Katze. Sie heißt Mimi. Mimi ist klein und grau. Sie schläft am Tag und spielt in der Nacht. Ich mag meine Katze. Mimi ist mein bester Freund.",
-    scriptAr: "عندي قطة. اسمها ميمي. ميمي صغيرة ورمادية. تنام نهاراً وتلعب ليلاً. أحب قطتي. ميمي أفضل صديق لي.",
+    script: "Ich habe eine Katze. Sie heißt Mimi. Mimi ist klein und grau. Sie schläft am Tag und spielt in der Nacht. Ich mag meine Katze. Mimi ist meine beste Freundin.",
+    scriptAr: "عندي قطة. اسمها ميمي. ميمي صغيرة ورمادية. تنام نهاراً وتلعب ليلاً. أحب قطتي. ميمي أفضل صديقة لي.",
     questions: [
       {
         de: "Wie heißt die Katze?",
@@ -185,7 +185,7 @@ export const PODCASTS: PodcastEpisode[] = [
     titleAr: "العمل من المنزل: الإيجابيات والسلبيات",
     emoji: "🏠",
     script: "Immer mehr Leute arbeiten im Homeoffice. Ein Vorteil ist, dass man keine Zeit im Verkehr verliert. Man kann besser konzentrieren. Aber es gibt auch Nachteile. Man sieht seine Kollegen nicht so oft. Das kann einsam machen. Und die Grenze zwischen Arbeit und Freizeit wird schwer.",
-    scriptAr: "المزيد والمزيد من الناس يعملون من المنزل. من المزايا أنك لا تضيّع وقتاً في الزحام. يمكنك التركيز بشكل أفضل. لكن هناك أيضاً عيوباً. لا ترى زملاءك كثيراً. هذا قد يسبب الوحدة. ويصبح الحد بين العمل والفراغ صعباً.",
+    scriptAr: "المزيد والمزيد من الناس يعملون من المنزل. من المزايا أنك لا تضيّع وقتاً في الزحام. يمكنك التركيز بشكل أفضل. لكن هناك أيضاً عيوباً. لا ترى زملاءك كثيراً. هذا قد يسبب الوحدة. ويصعب الفصل بين العمل ووقت الفراغ.",
     questions: [
       {
         de: "Was ist ein Vorteil von Homeoffice?",
@@ -274,11 +274,11 @@ export const PODCASTS: PodcastEpisode[] = [
     titleAr: "عيد الميلاد",
     emoji: "🎂",
     script: "Heute hat Emma Geburtstag. Sie wird sieben Jahre alt. Am Morgen singen die Eltern: „Happy Birthday!“ Emma bekommt viele Geschenke: ein Buch, einen Ball und eine Puppe. Am Nachmittag kommen die Freunde. Sie essen Kuchen und spielen im Garten.",
-    scriptAr: "اليوم عيد ميلاد إيما. ستصبح في السابعة. في الصباح تغني الأسرة: «عيد ميلاد سعيد!» تحصل إيما على هدايا كثيرة: كتاباً وكرة ودمية. بعد الظهر يأتي الأصدقاء. يأكلون الكعك ويلعبون في الحديقة.",
+    scriptAr: "اليوم عيد ميلاد إيما. ستتمّ عامها السابع. في الصباح تغني الأسرة: «عيد ميلاد سعيد!» تحصل إيما على هدايا كثيرة: كتاباً وكرة ودمية. بعد الظهر يأتي الأصدقاء. يأكلون الكعك ويلعبون في الحديقة.",
     questions: [
       {
         de: "Wie alt wird Emma?",
-        ar: "كم ستصبح إيما؟",
+        ar: "كم ستبلغ إيما من العمر؟",
         options: [
           { text: "Sieben Jahre", ar: "سبع سنوات", correct: true, explanation: "نعم — هذا ما ورد في الحلقة: «Sieben Jahre» (سبع سنوات)." },
           { text: "Sechs Jahre", ar: "ست سنوات", correct: false, explanation: "لا — الصواب هو ما ذُكر في الحلقة." },

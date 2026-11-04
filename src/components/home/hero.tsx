@@ -25,7 +25,7 @@ export function Hero() {
         <div className="flex flex-col items-start gap-6 animate-fade-up">
           <Badge variant="gold" className="gap-2 px-3 py-1.5 text-sm">
             <span className="inline-block h-2 w-2 rounded-full bg-current" />
-            بمنهجية معهد غوته ومعايير CEFR
+            استلهام من CEFR وGoethe، لا اعتماد رسمي
           </Badge>
 
           <h1 className="text-balance text-4xl font-extrabold leading-[1.15] tracking-tight sm:text-5xl lg:text-6xl">

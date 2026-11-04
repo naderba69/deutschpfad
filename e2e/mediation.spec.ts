@@ -138,19 +138,19 @@ test("a2-03: الوساطة والتفاعل يعملان (تغطية كاملة
   await expect(page.getByText("بسّط قائمة طعام", { exact: false }).first()).toBeVisible({ timeout: 6000 });
 });
 
-test("محاكاة Goethe-B2: تفتح بالأقسام الأربعة والمدد الفعلية", async ({ page }) => {
-  await page.goto("/tests/b2-simulation");
+test("تدريب Goethe-B2: تفتح بالأقسام الأربعة وتوضح أنها غير رسمية", async ({ page }) => {
+  await page.goto("/tests/b2");
   await page.waitForTimeout(1800);
 
-  await expect(page.getByRole("heading", { name: /محاكاة Goethe-B2/ }).first()).toBeVisible({ timeout: 8000 });
+  await expect(page.getByRole("heading", { name: /تدريب مستوحى من بنية Goethe-Zertifikat B2/ }).first()).toBeVisible({ timeout: 8000 });
   // الأقسام الأربعة ظاهرة
   await expect(page.getByText("Lesen · 65 دقيقة", { exact: false }).first()).toBeVisible();
   await expect(page.getByText("Hören · ~40 دقيقة", { exact: false }).first()).toBeVisible();
   await expect(page.getByText("Schreiben · 75 دقيقة", { exact: false }).first()).toBeVisible();
-  await expect(page.getByText("Sprechen · 15+15 دقيقة", { exact: false }).first()).toBeVisible();
+  await expect(page.getByText("Sprechen — التحدث", { exact: false }).first()).toBeVisible();
 
   // ابدأ الامتحان → قسم القراءة
-  await page.getByRole("button", { name: /ابدأ الامتحان/ }).click();
+  await page.getByRole("button", { name: /ابدأ التدريب/ }).click();
   await page.waitForTimeout(800);
   await expect(page.getByText("القراءة (1/5)", { exact: false }).first()).toBeVisible({ timeout: 6000 });
 });

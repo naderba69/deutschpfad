@@ -95,7 +95,7 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
           {doneCount >= lessons.length && (
             <p className="mt-3 inline-flex items-center gap-2 rounded-xl bg-success/20 px-3 py-2 text-xs font-extrabold backdrop-blur-sm">
               <Award className="h-4 w-4" aria-hidden="true" />
-              أتممت كل دروس هذا المستوى — أنت جاهز لامتحان الختم!
+              أتممت دروس المستوى — يمكنك الآن إجراء اختبار بوابة التقدم الداخلي.
             </p>
           )}
 
@@ -113,7 +113,7 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
               className="inline-flex items-center gap-1.5 rounded-xl bg-black/20 px-4 py-2 text-sm font-bold text-white backdrop-blur-sm transition-colors hover:bg-black/30"
             >
               <Trophy className="h-4 w-4" aria-hidden="true" />
-              محاكاة امتحان {level.code}
+              اختبار تدريبي {level.code}
             </Link>
           </div>
         </div>
@@ -121,8 +121,8 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
 
       {/* ═══ أزرار سريعة ═══ */}
       <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
-        <QuickLink href={`/tests/mock?level=${level.code.toLowerCase()}`} icon={<Target className="h-4 w-4" aria-hidden="true" />} label="امتحان المستوى" />
-        <QuickLink href={`/tests/seal/${level.code.toLowerCase()}`} icon={<Award className="h-4 w-4" aria-hidden="true" />} label="امتحان الختم" />
+        <QuickLink href={`/tests/mock?level=${level.code.toLowerCase()}`} icon={<Target className="h-4 w-4" aria-hidden="true" />} label="تدريب المستوى" />
+        <QuickLink href={`/tests/seal/${level.code.toLowerCase()}`} icon={<Award className="h-4 w-4" aria-hidden="true" />} label="اختبار التقدم الداخلي" />
         <QuickLink href="/glossar" icon={<BookOpen className="h-4 w-4" aria-hidden="true" />} label="المفردات" />
         <QuickLink href="/sound-check" icon={<Mic className="h-4 w-4" aria-hidden="true" />} label="فحص الصوت" />
       </div>
@@ -229,7 +229,7 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
           <div className="rounded-2xl border-2 border-gold/40 bg-gold/10 p-5 text-center">
             <p className="text-lg font-extrabold text-gold-strong">🏅 أتممت كل دروس {level.code}!</p>
             <p className="mt-1 text-sm text-muted-foreground">
-              أنت جاهز لامتحان الختم — اجتزه لفتح المستوى التالي.
+              أصبحت مؤهلاً لاختبار بوابة التقدم الداخلي — اجتزه لفتح المستوى التالي.
             </p>
             <Link
               href={`/tests/seal/${level.code.toLowerCase()}`}
@@ -241,11 +241,11 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
           </div>
         )}
 
-        {/* ═══ شهادة الإتقان — وظائف حقيقية (لغة مكتسبة) ═══ */}
+        {/* ═══ تقييم ذاتي لوظائف Can-Do — لا يثبت مستوى أو إتقاناً ═══ */}
         <div className="mt-8">
           <h2 className="mb-3 flex items-center gap-2 text-xl font-extrabold">
             <Award className="h-5 w-5 text-gold-strong" aria-hidden="true" />
-            شهادة إتقان {level.code} — هل تستطيع فعل هذا فعلاً؟
+            تقييم ذاتي لوظائف {level.code} — راجع قدراتك
           </h2>
           <MasteryCertificate level={level.code} />
         </div>

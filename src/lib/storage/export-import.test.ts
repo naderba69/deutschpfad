@@ -1,6 +1,6 @@
 import {describe, expect, it} from "vitest";
 
-import {validateBackupData, isOwnedLsKey, BACKUP_VERSION} from "@/lib/storage/export-import";
+import {validateBackupData, isOwnedLsKey, isRestorableLsKey, BACKUP_VERSION} from "@/lib/storage/export-import";
 import type { BackupData } from "@/types/storage";
 
 /**
@@ -77,9 +77,21 @@ describe("قائمة أمان LocalStorage (P0-01)", () => {
     expect(isOwnedLsKey("dp-steps:a1-01")).toBe(true);
   });
 
+  it("قائمة الملكية تشمل جميع الصيغ التي يجب أن يمسحها reset", () => {
+    for (const key of ["dp:gems", "deutschpfad:progress:v1", "lesson-step:a1-01", "dp-flow:a1-01", "dp-steps:a1-01"]) {
+      expect(isOwnedLsKey(key)).toBe(true);
+    }
+  });
+
   it("مفاتيح غريبة ليست مملوكة (لا تُكتب عند الاستعادة)", () => {
     expect(isOwnedLsKey("auth_token")).toBe(false);
     expect(isOwnedLsKey("user:session")).toBe(false);
     expect(isOwnedLsKey("")).toBe(false);
+  });
+
+  it("مفتاح BYOK لا يُستعاد حتى لو أُدرج يدوياً في ملف النسخة", () => {
+    expect(isOwnedLsKey("dp:llm:user-key")).toBe(true);
+    expect(isRestorableLsKey("dp:llm:user-key")).toBe(false);
+    expect(isRestorableLsKey("dp:gems")).toBe(true);
   });
 });

@@ -74,7 +74,7 @@ export function FallstrickeTrainer() {
         </p>
         <p className="mt-1 text-sm text-muted-foreground">
           {pct >= 80
-            ? "ممتاز! أنت تعرف فخاخ الامتحان — طبّق هذه العين في محرك الامتحان الكامل."
+            ? "أحسنت في هذه المجموعة التدريبية — واصل تطبيق استراتيجيات القراءة والاستماع."
             : pct >= 50
               ? "جيد — أعد التدريب وركّز على شرح «لماذا المصيدة» لكل تمرين."
               : "لا بأس — هذا بالضبط سبب التدريب. أعد المحاولة وسترى الفرق."}
@@ -86,7 +86,7 @@ export function FallstrickeTrainer() {
             إعادة التدريب
           </Button>
           <Button asChild variant="outline">
-            <a href="/tests/b2">محرك الامتحان الكامل</a>
+            <a href="/tests/b2">تدريب B2</a>
           </Button>
         </div>
       </div>

@@ -64,9 +64,9 @@ export const lessonB101: Lesson = {
       "قل بالعربية: «كتاب المعلّم». لاحظت أنك أضفت «الـ» للمعلّم؟ في الألمانية هذه «حالة المضاف» (Genitiv) لها أداة خاصة: das Buch des Lehrers. وهي الحالة الرابعة والأخيرة في ترتيب الحالات الأربع (Nominativ، Akkusativ، Dativ، Genitiv).",
     motivatingQuestionDe: "Welches Fach studierst du?",
     contextAr:
-      "ندخل مرحلة B1 — الأهم في رحلتك: نتعلم Genitiv (المضاف إليه) والجمل النسبية (التي/الذي) — البوابة لفهم النصوص الألمانية الحقيقية.",
+      "في هذا الدرس من B1 نتدرّب على Genitiv (المضاف إليه) والجمل النسبية (التي/الذي)، وهما أداتان تساعدان على فهم بعض التراكيب والنصوص. هذا تمهيد لموضوعين، لا وصف شامل لمستوى B1.",
     contextDe: "Das Studium der Germanistik ist interessant.",
-    connectionToPreviousAr: "أتقنت Nominativ/Akkusativ/Dativ. الآن الحالة الرابعة: Genitiv — وبعدها تكتمل لوحة الحالات الأربع التي يبنى عليها كل شيء.",
+    connectionToPreviousAr: "تدرّبت في دروس سابقة على Nominativ/Akkusativ/Dativ. هنا نتعرّف إلى Genitiv بوصفها حالة أخرى في الألمانية؛ وتختلف الحاجة إليها وصيغها باختلاف السياق.",
     activateVocabulary: [
       { de: "die Ausbildung", ar: "التدريب/التأهيل" },
       { de: "das Studium", ar: "الدراسة الجامعية" },

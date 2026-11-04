@@ -6,7 +6,7 @@ import {AlertTriangle, DatabaseBackup, Download, History, Upload, Wand2} from "l
 import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {SyncLink} from "@/components/settings/sync-link";
-import {backupFilename, buildBackupData, createManualSnapshot, deleteSnapshot, downloadJson, getSnapshots, maybeAutoSnapshot, restoreSnapshot, validateBackupData, writeBackupData} from "@/lib/storage/export-import";
+import {backupFilename, buildBackupData, createManualSnapshot, deleteSnapshot, downloadJson, getSnapshots, isOwnedLsKey, maybeAutoSnapshot, restoreSnapshot, validateBackupData, writeBackupData} from "@/lib/storage/export-import";
 import {getDb} from "@/lib/storage/db";
 import {computeForgettingCoefficient} from "@/lib/srs/flashcard-service";
 import {forgettingCoefficientLabel} from "@/lib/srs/sm2";
@@ -115,7 +115,7 @@ export function DataManager() {
       const remove: string[] = [];
       for (let i = 0; i < window.localStorage.length; i++) {
         const k = window.localStorage.key(i);
-        if (k && (k.startsWith("dp:") || k.startsWith("deutschpfad:"))) remove.push(k);
+        if (k && isOwnedLsKey(k)) remove.push(k);
       }
       for (const k of remove) window.localStorage.removeItem(k);
     } catch {

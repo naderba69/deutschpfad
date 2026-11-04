@@ -45,7 +45,7 @@ export const TEST_BANK: TestQuestion[] = [
   {
     id: "a1-r2", skill: "lesen", level: "A1", kind: "reading",
     text: "Sami arbeitet als Koch in einem Restaurant. Er steht um sechs Uhr auf und kocht bis vierzehn Uhr. Am Abend sieht er fern oder liest ein Buch. Am Sonntag besucht er seine Eltern.",
-    textAr: "يعمل سامي طباخاً في مطعم. يستيقظ في السادسة ويطبخ حتى الثانية عشرة. مساءً يشاهد التلفاز أو يقرأ كتاباً. يوم الأحد يزور والديه.",
+    textAr: "يعمل سامي طباخاً في مطعم. يستيقظ في السادسة ويطبخ حتى الثانية بعد الظهر. مساءً يشاهد التلفاز أو يقرأ كتاباً. يوم الأحد يزور والديه.",
     questions: [
       { q: "Was ist Sami von Beruf?", qAr: "ما مهنة سامي؟", options: ["Koch", "Lehrer", "Arzt", "Fahrer"], correct: 0, explanation: "طباخ." },
       { q: "Wann steht Sami auf?", qAr: "متى يستيقظ سامي؟", options: ["um sechs Uhr", "um sieben Uhr", "um acht Uhr", "um zehn Uhr"], correct: 0, explanation: "في السادسة." },

@@ -8,6 +8,7 @@ import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
 import {LESSON_META} from "@/data/lessons/meta";
 import {sample} from "@/lib/lesson/shuffle";
+import {getQuickPlacementSuggestion} from "@/lib/tests/quick-placement";
 import type { McqExercise } from "@/types/lesson";
 
 /** بنك أسئلة التحديد — A1 ثم A2 ثم B1 (المبسط) — 5 أسئلة لكل مستوى */
@@ -139,13 +140,7 @@ const PLACEMENT_BANK: McqExercise[] = [
 
 const PER_LEVEL = 5;
 
-function levelForScore(correct: number, total: number): { level: string; label: string; msg: string } {
-  const pct = (correct / total) * 100;
-  if (pct >= 80) return { level: "B1", label: "المتوسط (B1)", msg: "ممتاز! مستوى B1 — ابدأ من دروس B1 مباشرة." };
-  if (pct >= 55) return { level: "A2", label: "ما قبل المتوسط (A2)", msg: "جيد جداً! مستواك A2 — ابدأ من الوحدة A2-01." };
-  if (pct >= 30) return { level: "A1", label: "المبتدئ (A1)", msg: "مستواك A1 — ابدأ من وحدة A1-01 (أو الأبجدية إذا كانت صعبة)." };
-  return { level: "A1", label: "مبتدئ تماماً (A1-00)", msg: "ابدأ من الصفر: درس الأبجدية والنطق أولاً." };
-}
+
 
 /**
  * اختبار تحديد المستوى المبسّط — 15 سؤالاً عشوائياً (5 A1 + 5 A2 + 5 B1)
@@ -173,7 +168,7 @@ export function PlacementTest() {
   // حفظ مستوى المتعلم تلقائياً بعد إتمام التقييم — تغذّي «لوحة الرحلة»
   React.useEffect(() => {
     if (finished && questions.length > 0) {
-      const result = levelForScore(score, questions.length);
+      const result = getQuickPlacementSuggestion(score, questions.length);
       void import("@/lib/storage/learner").then(({saveLearnerProfile}) =>
         saveLearnerProfile({ placementLevel: result.level as "A1" | "A2" | "B1" | "B2" }),
       );
@@ -204,7 +199,7 @@ export function PlacementTest() {
   }
 
   if (finished) {
-    const result = levelForScore(score, questions.length);
+    const result = getQuickPlacementSuggestion(score, questions.length);
     return (
       <div className="rounded-2xl border bg-muted/20 p-8 text-center">
         <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
@@ -214,18 +209,21 @@ export function PlacementTest() {
             <BookOpen className="h-8 w-8 text-primary" aria-hidden="true" />
           )}
         </span>
-        <h3 className="mt-4 text-2xl font-extrabold">نتيجتك: مستوى {result.label}</h3>
+        <h3 className="mt-4 text-2xl font-extrabold">{result.label}</h3>
         <p className="font-de mt-2 text-4xl font-extrabold text-primary">
           {Math.round((score / questions.length) * 100)}%
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
-          أجبت صحيحاً على {score} من {questions.length} — {result.msg}
+          أجبت صحيحاً على {score} من {questions.length} — {result.message}
+        </p>
+        <p className="mt-2 text-xs text-muted-foreground">
+          هذا اقتراح بداية من عينة داخلية قصيرة، وليس قياساً معيارياً أو تصنيفاً رسمياً لمستوى CEFR.
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <Button asChild variant="gold" className="gap-1.5">
             <a href={`/learning-path#${result.level.toLowerCase()}`}>
               <Award className="h-4 w-4" aria-hidden="true" />
-              ابدأ من مستوى {result.level}
+              ابدأ من النطاق المقترح {result.level}
             </a>
           </Button>
           <StartAtLevelButton level={result.level} />

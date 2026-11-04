@@ -412,7 +412,7 @@ export const UNITS: Unit[] = [
     titleDe: "B1 kompakt — Prüfungsvorbereitung",
     titleAr: "B1 الشامل — التحضير للامتحان",
     descDe: "Gesamtwiederholung von B1 und Prüfungsvorbereitung.",
-    descAr: "المراجعة الختامية لمستوى B1 ودمج القواعد في مواقف حية، مع محاكاة أقسام Goethe-B1.",
+    descAr: "مراجعة مختارة لموضوعات B1 ودمج بعض القواعد في مواقف حية، مع مهام تدريبية عامة؛ لا تمثل محاكاة كاملة أو اختباراً رسمياً.",
   },
 
   // ═══ B2 — 10 وحدات ═══

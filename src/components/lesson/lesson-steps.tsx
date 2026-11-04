@@ -40,9 +40,13 @@ export function LessonSteps({ steps, lessonId, onFinish }: LessonStepsProps) {
     try {
       const raw = window.localStorage.getItem(`dp-steps:${lessonId}`);
       if (raw) {
-        const parsed = JSON.parse(raw) as { current: number; done: number[] };
-        setCurrent(Math.min(parsed.current, steps.length - 1));
-        setDone(new Set(parsed.done));
+        const parsed = JSON.parse(raw) as { current?: unknown; done?: unknown };
+        if (Number.isInteger(parsed.current)) {
+          setCurrent(Math.max(0, Math.min(parsed.current as number, steps.length - 1)));
+        }
+        if (Array.isArray(parsed.done)) {
+          setDone(new Set(parsed.done.filter((i): i is number => Number.isInteger(i) && i >= 0 && i < steps.length)));
+        }
       }
     } catch {
       /* تجاهل */
@@ -102,6 +106,8 @@ export function LessonSteps({ steps, lessonId, onFinish }: LessonStepsProps) {
   const prev = () => goTo(current - 1);
 
   const step = steps[current];
+  if (!step) return null;
+
   const isFirst = current === 0;
   const isLast = current === steps.length - 1;
 
@@ -116,6 +122,8 @@ export function LessonSteps({ steps, lessonId, onFinish }: LessonStepsProps) {
             <button
               key={s.id}
               type="button"
+              disabled={!done.has(i) && i !== current}
+              aria-current={isCurrent ? "step" : undefined}
               onClick={() => {
                 // لا نقفز للأمام — المنهجية: فقط الخطوات المفتوحة
                 if (done.has(i) || i === current) goTo(i);

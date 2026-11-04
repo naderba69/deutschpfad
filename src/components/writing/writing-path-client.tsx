@@ -17,7 +17,7 @@ import {cn} from "@/lib/utils";
  *  مسار الكتابة المتدرج — مرحلة بمرحلة:
  *  · شريط المراحل الأربع (الجملة ← الفقرة ← الرسالة ← المقال)
  *  · مهمة مع نموذج + مفردات مساعدة
- *  · تقييم فوري بقواعد Goethe (معايير + نسبة + حكم)
+ *  · فحص آلي محلي محدود لمؤشرات شكلية؛ لا يقيّم جودة النص أو يطابق تصحيحاً رسمياً
  *  · كل مرحلة مكتملة تُخزَّن وتُفتح التالية
  * ═══════════════════════════════════════════════════════════
  */
@@ -57,10 +57,6 @@ export function WritingPathClient() {
     if (text.trim().length < 3) return;
     const r = await evaluateWriting(text, task.taskType, task.requires ?? []);
     setResult(r);
-    // تسجيل مهارة الكتابة في كفايات CEFR
-    void import("@/lib/analytics/events").then(({recordEvent}) =>
-      recordEvent({ type: "skill-result", skill: "الكتابة", correct: r.pct >= 75 }),
-    );
     if (r.pct >= 75) {
       playCorrect();
       addGems(GEM_REWARDS.LESSON_COMPLETED);
@@ -200,7 +196,7 @@ export function WritingPathClient() {
         </div>
       </div>
 
-      {/* التقييم */}
+      {/* فحص آلي محدود — لا يقيس الكفاءة الكتابية ولا يمثل نتيجة امتحان */}
       {result && (
         <div
           className={cn(
@@ -208,13 +204,16 @@ export function WritingPathClient() {
             passed ? "border-success/40 bg-success/5" : "border-gold/40 bg-gold/5",
           )}
         >
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="font-de text-3xl font-extrabold text-foreground">{result.pct}%</span>
-            <div>
-              <p className="text-sm font-extrabold">
-                {result.verdict}
-              </p>
-              <p className="text-xs text-muted-foreground">{result.recommendation}</p>
+          <div className="space-y-2">
+            <p className="rounded-lg bg-muted/40 p-2 text-xs leading-relaxed text-muted-foreground">
+              مؤشر آلي غير معياري يعتمد على الطول وبعض العلامات الشكلية وقواعد بسيطة. لا يتحقق من إنجاز المهمة أو صحة النص كاملةً، ولا يمثل مستوى CEFR أو درجة Goethe.
+            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="font-de text-3xl font-extrabold text-foreground" aria-label={`مؤشر داخلي ${result.pct} بالمئة`}>{result.pct}%</span>
+              <div>
+                <p className="text-sm font-extrabold">مؤشر الفحص الداخلي</p>
+                <p className="text-xs text-muted-foreground">{result.recommendation}</p>
+              </div>
             </div>
           </div>
 

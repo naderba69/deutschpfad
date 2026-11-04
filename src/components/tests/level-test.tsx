@@ -22,14 +22,6 @@ export function LevelTest({ level, onComplete, quick = false }: LevelTestProps) 
   const config = LEVEL_TEST_CONFIGS[level];
   let questions = TEST_BANK.filter((q) => q.level === level);
 
-  // الوضع التكيفي: يبدأ بأسهل ثم يصعد، ويتكيف مع الأداء
-  // (يُستخدم في محاكاة Goethe — ترتيب حسب نوع المهارة وطول النص)
-  if (typeof window !== "undefined" && new URLSearchParams(window.location.search).get("adaptive") === "1") {
-    const bySkill = (skill: string) => questions.filter((q) => q.skill === skill);
-    const easyFirst = [...bySkill("wortschatz"), ...bySkill("grammatik"), ...bySkill("lesen"), ...bySkill("hören"), ...bySkill("schreiben")];
-    questions = easyFirst;
-  }
-
   if (quick) {
     // اختيار متوازن: 6 قواعد + 6 مفردات + 3 قراءة + 3 استماع + 2 كتابة = 20
     const bySkill = (skill: string) => questions.filter((q) => q.skill === skill);

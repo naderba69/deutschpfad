@@ -53,13 +53,13 @@ test("خطة 12 شهراً: المراحل الست ظاهرة", async ({ page }
   await expect(page.getByRole("heading", { name: /خطة 12 شهراً/ })).toBeVisible();
   await expect(page.getByText("الشهران 1-2")).toBeVisible();
   await expect(page.getByText("الشهران 11-12")).toBeVisible();
-  await expect(page.getByText("محاكاة B2 كاملة")).toBeVisible();
+  await expect(page.getByText("مثال لخطة تدريب A1–B2")).toBeVisible();
 });
 
-test("محرك B2: يعرض تنويهاً عن النماذج الثلاثة", async ({ page }) => {
+test("محرك B2: يعرض تنبيهاً عن حدود عينة الأسئلة", async ({ page }) => {
   await page.goto("/tests/b2", { waitUntil: "networkidle" });
   await page.waitForTimeout(500);
-  await expect(page.getByText(/ثلاثة نماذج كاملة/)).toBeVisible();
+  await expect(page.getByText(/لا يقدم ثلاثة نماذج كاملة/)).toBeVisible();
 });
 
 test("مركز الاختبارات: الروابط الجديدة (قراءة، قواعد، استراتيجيات، خطة)", async ({ page }) => {

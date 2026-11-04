@@ -94,7 +94,7 @@ export function B2GrammarTrainer() {
               إعادة التدريب
             </Button>
             <Button asChild variant="outline">
-              <a href="/tests/b2">محرك الامتحان الكامل</a>
+              <a href="/tests/b2">تدريب B2 مستوحى من بعض أنماط Goethe</a>
             </Button>
           </div>
         </CardContent>

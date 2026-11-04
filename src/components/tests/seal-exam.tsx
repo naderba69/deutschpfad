@@ -2,7 +2,7 @@
 
 /**
  * امتحان الختم (Seal Exam) — بوابة الانتقال بين المستويات
- * لا يُفتح المستوى التالي إلا باجتياز هذا الامتحان (60% فأكثر).
+ * بوابة تقدم داخلية؛ الإكمال الكامل قد يتيح الانتقال للمستخدمين القدامى، لكنه لا يسجل اجتياز الامتحان.
  * — الأهلية: إكمال 80% من وحدات المستوى —
  */
 import * as React from "react";
@@ -77,8 +77,7 @@ export function SealExam({ levelParam, quick = false }: { levelParam: string; qu
             🏅 مستوى {level} مختوم!
           </h3>
           <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
-            اجتزت امتحان الختم — المستوى التالي مفتوح الآن. يمكنك إعادة الامتحان في أي وقت
-            لتحسين نتيجتك أو مراجعة مهاراتك.
+            اجتزت بوابة التقدم الداخلية — المستوى التالي مفتوح الآن. هذا الختم لا يمثل شهادة ولا يثبت إتقان المستوى؛ يمكنك إعادة التدريب أو مراجعة مهاراتك.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Button asChild>
@@ -108,10 +107,10 @@ export function SealExam({ levelParam, quick = false }: { levelParam: string; qu
         <CardContent className="p-8 text-center">
           <ShieldCheck className="mx-auto h-12 w-12 text-destructive" aria-hidden="true" />
           <h3 className="mt-4 text-xl font-extrabold text-destructive">
-            نتيجتك {failed}% — تحتاج 60% للختم
+            نتيجتك {failed}% — لم تبلغ عتبة المنصة (60%)
           </h3>
           <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
-            لا بأس — هذه هي طبيعة الامتحانات. راجع المهارات الأضعف من لوحة النتائج، ثم أعد
+            هذه نتيجة تدريبية داخلية؛ راجع المهارات التي تحتاج إلى تدريب إضافي في لوحة النتائج، ثم أعد
             المحاولة. يمكنك أيضاً مراجعة الدروس والقواعد المرتبطة.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
@@ -134,9 +133,7 @@ export function SealExam({ levelParam, quick = false }: { levelParam: string; qu
       <div className="rounded-xl border border-gold/40 bg-gold/10 p-4 text-sm">
         <p className="font-bold text-gold-foreground">🏅 امتحان ختم مستوى {level}</p>
         <p className="mt-1 text-muted-foreground">
-          تدريب تجريبي مستوحى من بنية Goethe-Zertifikat {level} (ليس امتحاناً رسمياً): قراءة + استماع + قواعد + كتابة بتوقيت حقيقي.
-          <span className="font-bold"> النجاح من 60%</span> — عند النجاح يُختَم المستوى ويُفتح
-          التالي تلقائياً. لديك محاولة واحدة في كل مرة؛ إن فشلت، راجع وعد.
+          أسئلة تدريب داخلية في القراءة والاستماع والقواعد، مع مهمة كتابة لا تدخل في النتيجة الآلية (ليست امتحان Goethe ولا تقيس إتقان المستوى). تُفتح بوابة التقدم عند بلوغ عتبة المنصة 60% من الإجابات المصححة آلياً؛ هذا لا يعادل النجاح الرسمي. يمكنك مراجعة المحاولة وإعادتها.
         </p>
       </div>
       <LevelTest level={level} onComplete={handleComplete} quick={quick} />

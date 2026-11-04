@@ -10,7 +10,7 @@ import {Card, CardContent} from "@/components/ui/card";
  * ═══════════════════════════════════════════════════════════
  *  ادعُ صديقاً — مشاركة الموقع:
  *  · كل صديق يفتح الرابط يحفظ تقدمه منفصلاً على متصفحه (بلا حسابات)
- *  · المنصة مجانية 100% — المشاركة لا تكلف شيئاً
+ *  · الرابط يفتح نسخة التطبيق في متصفح الصديق
  * ═══════════════════════════════════════════════════════════
  */
 export function InviteCard() {
@@ -22,7 +22,7 @@ export function InviteCard() {
     (typeof window !== "undefined" ? window.location.origin : "https://deutschpfad.vercel.app");
 
   const inviteText =
-    `تعلمت الألمانية مجاناً مع DeutschPfad — منصة عربية كاملة A1→B2 بمنهجية Goethe: دروس تفاعلية، نطق، قصص، واختبارات محاكاة. جرّبها معي: ${appUrl}`;
+    `جرّب DeutschPfad معي: مواد عربية للتدرب على الألمانية ضمن نطاقات A1–B2، مع دروس وتمارين وقصص وأنشطة داخلية غير رسمية: ${appUrl}`;
 
   const copy = async () => {
     try {
@@ -54,7 +54,7 @@ export function InviteCard() {
           ادعُ صديقاً ليتعلم معك
         </p>
         <p className="text-xs leading-relaxed text-muted-foreground">
-          كل من يفتح الرابط يحفظ تقدمه منفصلاً على متصفحه — تنافسا معاً بلا أي حساب، والمنصة مجانية بالكامل.
+          كل من يفتح الرابط يحفظ تقدمه محلياً على متصفحه؛ لا يتطلب ذلك إنشاء حساب. محتوى التدريب يستلهم بعض المهام ولا يمثل منهجاً أو امتحاناً رسمياً.
         </p>
         <div className="mt-auto flex gap-2 pt-1">
           <Button size="sm" variant="outline" className="flex-1 gap-1.5" onClick={() => void copy()}>

@@ -514,8 +514,8 @@ export const A2_DIALOGUES: DailyDialogue[] = [
         { text: "Die Kreditkarte", ar: "بطاقة الائتمان", correct: false, explanation: "لا — الإيصال." },
       ]},
       { de: "Was ist das Problem mit der Hose?", ar: "ما المشكلة في البنطال؟", options: [
-        { text: "Sie ist zu lang.", ar: "إنه طويل جداً.", correct: false, explanation: "لا — المشكلة في المقاس." },
-        { text: "Sie ist zu klein.", ar: "إنه صغير جداً.", correct: true, explanation: "نعم — «Sie ist zu klein»." },
+        { text: "Sie ist zu lang.", ar: "إنها طويلة جداً.", correct: false, explanation: "لا — المشكلة في المقاس." },
+        { text: "Sie ist zu klein.", ar: "إنها صغيرة جداً.", correct: true, explanation: "نعم — «Sie ist zu klein»." },
         { text: "Sie hat einen Fleck.", ar: "به بقعة.", correct: false, explanation: "لا — لم يُذكر ذلك." },
       ]},
     ],

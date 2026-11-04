@@ -6,9 +6,7 @@ import {Award, BookOpen, GraduationCap, Lightbulb, RotateCcw} from "lucide-react
 import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
 import {saveTestResult} from "@/lib/storage/test-results-store";
-import {levelFromPct} from "@/lib/tests/test-engine";
-;
-import type { TestAnswer, TestQuestion, TestResult, TestSkill } from "@/types/test";
+import type { TestResult, TestSkill } from "@/types/test";
 
 const SKILL_LABEL: Record<string, string> = {
   grammatik: "القواعد",
@@ -51,17 +49,20 @@ export function ResultsPanel({ result, onRetry, onNext, nextLabel, onComplete }:
           )}
         </span>
         <h3 className="mt-4 text-2xl font-extrabold">
-          {result.passed ? "أحسنت! اجتزت الاختبار 🎉" : "لا بأس — واصل التدريب"}
+          {result.passed ? "أحسنت! بلغت عتبة هذا التدريب 🎉" : "واصل التدريب — نتيجتك دون عتبة هذا التدريب"}
         </h3>
         <p className="font-de mt-2 text-4xl font-extrabold text-primary">{result.overallPct}%</p>
         <p className="mt-2 text-sm text-muted-foreground">
-          المستوى المقدر:{" "}
-          <span className="font-de font-bold text-primary">{result.estimatedLevel}</span> ·{" "}
-          {result.kind === "level"
-            ? `اختبار مستوى ${result.level}`
-            : result.kind === "unit"
-              ? "اختبار وحدة"
-              : "تشخيصي"}
+          {result.kind === "diagnostic"
+            ? <>اقتراح نقطة بدء تدريبية من هذه العينة: <span className="font-de font-bold text-primary">{result.estimatedLevel}</span> (ليس تصنيفاً معيارياً)</>
+            : result.kind === "level"
+              ? `نتيجة عينة أسئلة تدريب مستوى ${result.level}`
+              : result.kind === "unit"
+                ? "نتيجة أسئلة تدريب هذه الوحدة"
+                : "نتيجة نشاط تدريبي"}
+        </p>
+        <p className="mt-2 text-xs text-muted-foreground">
+          النتيجة تخص عينة التدريب المصححة آلياً فقط؛ لا تُقيّم جودة إجابات الكتابة الحرة ولا تمثل مستوى CEFR رسمياً.
         </p>
         {result.secondsUsed > 0 && (
           <p className="mt-1 text-xs text-muted-foreground">
@@ -93,12 +94,12 @@ export function ResultsPanel({ result, onRetry, onNext, nextLabel, onComplete }:
               <div className="flex items-center justify-between text-sm">
                 <span className="font-semibold">{SKILL_LABEL[r.skill] ?? r.skill}</span>
                 <span className="font-de font-bold text-primary">
-                  {r.pct}% · {r.level}
+                  {r.pct}%
                 </span>
               </div>
               <Progress value={r.pct} className="mt-2 h-2" aria-label={`${SKILL_LABEL[r.skill]}: ${r.pct}%`} />
               <p className="mt-1 text-xs text-muted-foreground">
-                {r.correct} من {r.total} صحيحة
+                {r.correct} من {r.total} صحيحة. تقدير المهارة تقريبي من هذه العينة، وليس تصنيف CEFR رسمياً.
               </p>
             </div>
           ))}
@@ -155,9 +156,4 @@ export function SkillBadge({ skill }: { skill: TestSkill }) {
       {SKILL_LABEL[skill] ?? skill}
     </span>
   );
-}
-
-/** مساعد: مستوى من نسبة (للعرض السريع) */
-export function levelFromPctLabel(pct: number) {
-  return levelFromPct(pct);
 }

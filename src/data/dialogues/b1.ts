@@ -304,7 +304,7 @@ export const B1_DIALOGUES: DailyDialogue[] = [
     ],
     questions: [
       { de: "Warum ruft die Person an?", ar: "لماذا يتصل الشخص؟", options: [
-        { text: "Sie ist krank und kommt nicht zur Arbeit", ar: "هو مريض ولا يستطيع الحضور للعمل", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
+        { text: "Sie ist krank und kommt nicht zur Arbeit", ar: "هي مريضة ولا تستطيع الحضور إلى العمل", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
         { text: "Sie möchte Urlaub buchen", ar: "تريد حجز إجازة", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
         { text: "Sie hat eine Frage zum Gehalt", ar: "لديها سؤال عن الراتب", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
@@ -589,7 +589,7 @@ export const B1_DIALOGUES: DailyDialogue[] = [
         { text: "Im Juli", ar: "في يوليو", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},
       { de: "Warum zieht die Person um?", ar: "لماذا ينتقل الشخص؟", options: [
-        { text: "Sie braucht ein eigenes Büro für die Arbeit", ar: "يحتاج مكتباً خاصاً للعمل", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
+        { text: "Sie braucht ein eigenes Büro für die Arbeit", ar: "تحتاج إلى مكتب خاص للعمل", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
         { text: "Sie will näher am Meer wohnen", ar: "يريد السكن قرب البحر", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
         { text: "Sie hat Streit mit den Nachbarn", ar: "لديه خلاف مع الجيران", correct: false, explanation: "لا — الإجابة الصحيحة مذكورة في الحوار." },
       ]},

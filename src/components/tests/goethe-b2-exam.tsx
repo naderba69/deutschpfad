@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import {Award, BookOpenCheck, CheckCircle2, Headphones, Mic, PenLine, PlayCircle, RotateCcw, Timer, Volume2, XCircle} from "lucide-react";
+import {Award, BookOpenCheck, Headphones, Mic, PenLine, PlayCircle, RotateCcw, Timer, Volume2} from "lucide-react";
 
 import {B2_GRAMMATIK, B2_HOEREN_SETS, B2_LESEN_SETS, GOETHE_B2_EXAM} from "@/data/exams";
 import {SCHREIB_MODELLE} from "@/data/schreibmodelle";
@@ -15,11 +15,11 @@ import {AutoGrowTextarea} from "@/components/shared/auto-grow-textarea";
 
 /**
  * ═══════════════════════════════════════════════════════════
- *  محرك امتحان Goethe-Zertifikat B2 الرسمي (صيغة 2019+)
- *  — الأجزاء والمدد الحقيقية من وثائق Goethe-Institut —
+ *  تدريب تفاعلي مستوحى من بنية Goethe-Zertifikat B2 (صيغة 2019+)
+ *  — لا يمثل امتحاناً رسمياً ولا يصدر نتيجة معتمدة —
  *   Lesen 65د (5 أجزاء / 30 سؤالاً) ← Hören 40د (4 أجزاء / 30)
  *   ← Schreiben 75د (مهمتان) ← Sprechen 15د (Vortrag + Diskussion)
- *  النتيجة: 100 نقطة لكل مكوّن · نجاح ≥ 60 · تُعرض لكل مكوّن على حدة.
+ *  نتيجة التدريب تقريبية وتُعرض لكل مكوّن على حدة؛ لا تساوي نتيجة Goethe رسمية.
  * ═══════════════════════════════════════════════════════════
  */
 
@@ -29,7 +29,6 @@ interface ModulScore {
   pct: number;
   correct: number;
   total: number;
-  passed: boolean;
 }
 
 const MODULE_META: { key: Phase; icon: React.ReactNode; title: string; minutes: number }[] = [
@@ -209,11 +208,10 @@ function GapList({
       <button
         key={idx}
         type="button"
+        disabled={!chosen}
+        aria-label={chosen ? `إزالة اختيار الفراغ ${idx + 1}` : `الفراغ ${idx + 1} غير مجاب`}
         onClick={() => {
-          const next = { ...answers };
-          delete next[idx];
-          // إعادة توزيع: سنستخدم setState خارجاً — نستدعي onAnswer فقط بالاختيار
-          // للإزالة نستدعي onAnswer مع دالة خاصة — نبسط: زر منفصل
+          if (chosen) onAnswer(idx, "");
         }}
         className={cn(
           "mx-0.5 inline-block min-w-24 rounded-md border-2 px-2 py-0.5 text-sm align-baseline",
@@ -393,7 +391,7 @@ function HoerenTeilView({
 /* ════════════ حاسبة النتيجة ════════════ */
 function scoreModule(correct: number, total: number): ModulScore {
   const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
-  return { pct, correct, total, passed: pct >= GOETHE_B2_EXAM.passThreshold };
+  return { pct, correct, total };
 }
 
 export function GoetheB2Exam() {
@@ -408,6 +406,7 @@ export function GoetheB2Exam() {
   const [runKey, setRunKey] = React.useState(0);
   const [vortragIdx, setVortragIdx] = React.useState(0);
   const [diskIdx, setDiskIdx] = React.useState(0);
+  const [sprechenStage, setSprechenStage] = React.useState<"prep" | "speaking">("prep");
   // إشعار انتهاء الوقت (يُعرض في المكوّن التالي بعد الانتقال التلقائي)
   const [expiredNotice, setExpiredNotice] = React.useState<string | null>(null);
   // المجموعة المختارة (نموذج A/B/C) — تُختار عشوائياً عند بدء الامتحان
@@ -429,12 +428,14 @@ export function GoetheB2Exam() {
     if (phase === "lesen") return GOETHE_B2_EXAM.lesenMinutes * 60;
     if (phase === "hören") return GOETHE_B2_EXAM.hoerenMinutes * 60;
     if (phase === "schreiben") return GOETHE_B2_EXAM.schreibenMinutes * 60;
-    if (phase === "sprechen") return (GOETHE_B2_EXAM.sprechenMinutes + GOETHE_B2_EXAM.sprechen.vorbereitungMinutes) * 60;
+    if (phase === "sprechen") {
+      return (sprechenStage === "prep" ? GOETHE_B2_EXAM.sprechen.vorbereitungMinutes : GOETHE_B2_EXAM.sprechenMinutes) * 60;
+    }
     return 0;
   })();
 
   const remaining = useCountdown(totalSeconds, () => {
-    // انتهاء الوقت: انتقل تلقائياً للمكوّن التالي (كما في الامتحان الحقيقي)
+    // انتهاء المؤقت: الانتقال تلقائي في هذا التدريب
     if (phase === "lesen") {
       setExpiredNotice("⏰ انتهى وقت القراءة (65 دقيقة) — انتقلنا تلقائياً للاستماع. ما أجبت عليه يُحتسب.");
       finishLesen();
@@ -444,8 +445,11 @@ export function GoetheB2Exam() {
     } else if (phase === "schreiben") {
       setExpiredNotice("⏰ انتهى وقت الكتابة (75 دقيقة) — انتقلنا تلقائياً للتحدث.");
       finishSchreiben();
+    } else if (phase === "sprechen" && sprechenStage === "prep") {
+      setExpiredNotice("⏰ انتهى وقت التحضير — بدأ الآن وقت العرض والنقاش.");
+      setSprechenStage("speaking");
     } else if (phase === "sprechen") {
-      setExpiredNotice("⏰ انتهى وقت التحدث — عُرضت النتيجة.");
+      setExpiredNotice("⏰ انتهى وقت العرض والنقاش — عُرضت النتيجة.");
       setPhase("result");
     }
   });
@@ -514,16 +518,8 @@ export function GoetheB2Exam() {
   };
 
   const finishSchreiben = () => {
-    // الكتابة: تقييم ذاتي بالروبرك (المتعلم يقيّم نفسه + طول النص)
-    const w1words = writing1.trim().split(/\s+/).filter(Boolean).length;
-    const w2words = writing2.trim().split(/\s+/).filter(Boolean).length;
-    const minW1 = GOETHE_B2_EXAM.schreiben[0].minWords;
-    const minW2 = GOETHE_B2_EXAM.schreiben[1].minWords;
-    let pct = 50;
-    if (w1words >= minW1 && w2words >= minW2) pct = 60; // الحد الأدنى
-    if (w1words >= minW1 + 30 && w2words >= minW2 + 20) pct = 75;
-    if (w1words >= 200 && w2words >= 130) pct = 90;
-    setScores((s) => ({ ...s, schreiben: scoreModule(pct, 100) }));
+    // لا توجد هنا مصححة موثوقة للنص؛ بلوغ عدد الكلمات لا يقيس جودة الكتابة.
+    setSprechenStage("prep");
     setPhase("sprechen");
   };
 
@@ -539,6 +535,7 @@ export function GoetheB2Exam() {
     setHoerenIdx(0);
     setVortragIdx(0);
     setDiskIdx(0);
+    setSprechenStage("prep");
     setRunKey((k) => k + 1);
   };
 
@@ -550,10 +547,10 @@ export function GoetheB2Exam() {
           <div className="h-1.5 w-full bg-gradient-to-l from-primary via-gold to-success" aria-hidden="true" />
           <CardContent className="space-y-4 p-6">
             <div>
-              <h2 className="text-2xl font-extrabold">📋 هيكل امتحان Goethe-Zertifikat B2 الرسمي</h2>
+              <h2 className="text-2xl font-extrabold">📋 تدريب مستوحى من بنية Goethe-Zertifikat B2</h2>
               <p className="mt-1 text-sm text-muted-foreground">
-                أربعة مكوّنات مستقلة · كل مكوّن 100 نقطة · النجاح من 60 في كل مكوّن على حدة
-                (لا يُعوَّض مكوّن ضعيف بآخر قوي — هكذا يعمل الامتحان الحقيقي).
+                للامتحان الرسمي أربعة مكوّنات. هذه تجربة تدريبية مستوحاة من بنيته؛ النسب المعروضة
+                للقراءة والاستماع هي عدد الإجابات الصحيحة هنا، وليست نقاط Goethe أو حكماً بالنجاح.
               </p>
             </div>
             <ol className="space-y-3">
@@ -577,17 +574,15 @@ export function GoetheB2Exam() {
               ))}
             </ol>
             <p className="rounded-xl border border-gold/40 bg-gold/10 p-3 text-xs leading-relaxed text-muted-foreground">
-              💡 <span className="font-bold text-gold-strong">نصائح الوقت الرسمية (Lesen):</span> Teil 1: 10د · Teil 2: 18د · Teil 3: 12د ·
-              Teil 4: 10د · Teil 5: 15د. ابدأ بالأسهل واترك الأصعب للنهاية. المؤقت يبدأ عند الضغط على «ابدأ الامتحان».
+              💡 <span className="font-bold text-gold-strong">اقتراح لتوزيع وقت تدريب القراءة (غير معياري):</span> Teil 1: 10د · Teil 2: 18د · Teil 3: 12د ·
+              Teil 4: 10د · Teil 5: 15د. يمكنك البدء بالأسهل وترك الأصعب للنهاية. المؤقت يبدأ عند الضغط على «ابدأ التدريب».
             </p>
             <p className="rounded-xl border bg-muted/20 p-3 text-xs leading-relaxed text-muted-foreground">
-              🎲 <span className="font-bold">ثلاثة نماذج كاملة (A/B/C):</span> تُختار مجموعة القراءة
-              والاستماع عشوائياً في كل محاولة — كل نموذج 30+30 سؤالاً بمحتوى مختلف، فلا تتكرر
-              الأسئلة بين جلساتك. تدرب 3 مرات وستواجه 180 سؤالاً فريداً.
+              🎲 <span className="font-bold">تغيّر بعض أسئلة القراءة والاستماع:</span> قد تختلف عينة الأسئلة بين المحاولات بحسب بنك الأسئلة. هذا التدريب لا يقدم ثلاثة نماذج كاملة، ولا يضمن عدم تكرار الأسئلة أو عدد 180 سؤالاً فريداً.
             </p>
             <Button size="lg" className="btn-glow w-full gap-2" onClick={startExam}>
               <PlayCircle className="h-5 w-5" aria-hidden="true" />
-              ابدأ الامتحان — القراءة (65 دقيقة)
+              ابدأ التدريب — القراءة (65 دقيقة)
             </Button>
           </CardContent>
         </Card>
@@ -740,7 +735,7 @@ export function GoetheB2Exam() {
               lang="de"
             />
             <p className={cn("text-xs font-bold", w1words >= w1.minWords ? "text-success" : "text-muted-foreground")}>
-              عدد الكلمات: {w1words} {w1words < w1.minWords ? `(المطلوب ≥ ${w1.minWords})` : "✓ جاهز"}
+              عدد الكلمات: {w1words} {w1words < w1.minWords ? `(الحد الأدنى المقترح ≥ ${w1.minWords})` : "بلغ الحد الأدنى المقترح"}
             </p>
             <details className="rounded-lg border border-dashed p-2 text-xs text-muted-foreground">
               <summary className="cursor-pointer font-bold">💡 بنية مقترحة + عبارات (اضغط)</summary>
@@ -781,7 +776,7 @@ export function GoetheB2Exam() {
               lang="de"
             />
             <p className={cn("text-xs font-bold", w2words >= w2.minWords ? "text-success" : "text-muted-foreground")}>
-              عدد الكلمات: {w2words} {w2words < w2.minWords ? `(المطلوب ≥ ${w2.minWords})` : "✓ جاهز"}
+              عدد الكلمات: {w2words} {w2words < w2.minWords ? `(الحد الأدنى المقترح ≥ ${w2.minWords})` : "بلغ الحد الأدنى المقترح"}
             </p>
             <details className="rounded-lg border border-dashed p-2 text-xs text-muted-foreground">
               <summary className="cursor-pointer font-bold">💡 بنية مقترحة + عبارات (اضغط)</summary>
@@ -798,8 +793,7 @@ export function GoetheB2Exam() {
         </Card>
 
         <p className="rounded-xl border border-gold/40 bg-gold/10 p-3 text-xs text-muted-foreground">
-          ⚖️ <span className="font-bold text-gold-strong">تقييم الكتابة في الامتحان الحقيقي:</span> Erfüllung (25) + Kohärenz (25) +
-          Wortschatz (25) + Struktur (25). هنا يُحسب طول النص آلياً، ويقيّم المعنى بالمعايير الأربعة — ثم قارن بنموذج إجابة أدناه.
+          ⚖️ <span className="font-bold text-gold-strong">تنبيه:</span> هذا التدريب يحسب عدد الكلمات فقط؛ لا يصحح مدى إنجاز المهمة أو الترابط أو المفردات أو البنية، ولا يمنح درجة للكتابة. قارن إجابتك بالنماذج أدناه أو اطلب مراجعة مؤهلة.
         </p>
 
         {/* ربط الكتابة بنماذج Schreibmodelle (نفس موضوعَي المحرك) */}
@@ -873,7 +867,7 @@ export function GoetheB2Exam() {
         <div className="sticky top-16 z-30 flex items-center gap-3 rounded-xl border bg-background/95 px-4 py-2.5 shadow-sm backdrop-blur-md">
           <span className="inline-flex items-center gap-1.5 text-sm font-bold">
             <Mic className="h-4 w-4 text-primary" aria-hidden="true" />
-            Sprechen — Vortrag + Diskussion
+            {sprechenStage === "prep" ? "Sprechen — وقت التحضير" : "Sprechen — Vortrag + Diskussion"}
           </span>
           <span className="font-de ms-auto text-sm font-extrabold text-primary tabular-nums">
             ⏱ {Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, "0")}
@@ -885,8 +879,8 @@ export function GoetheB2Exam() {
           <CardContent className="space-y-3 p-5">
             <h3 className="text-base font-extrabold">🎤 Teil 1 — Vortrag (~4 دقائق)</h3>
             <p className="text-sm text-muted-foreground">
-              اختر موضوعاً، استعد في <b>{sprechen.vorbereitungMinutes} دقيقة</b> (التحضير المخصص يُدار خارج المؤقت)،
-              ثم تحدث عن الموضوع باتباع الأسئلة الإرشادية. استخدم بنية: مقدمة ← وضع حالي ← مشاكل/أسباب ← حلول ← خاتمة.
+              اختر موضوعاً واستعد له خلال <b>{sprechen.vorbereitungMinutes} دقيقة</b>؛ عند انتهاء مؤقت التحضير يبدأ مؤقت العرض والنقاش.
+              هذا التدريب لا يسجل صوتك ولا يقيّم النطق أو التفاعل.
             </p>
             <div className="flex flex-wrap gap-2">
               {sprechen.vortrag.map((t, i) => (
@@ -947,21 +941,25 @@ export function GoetheB2Exam() {
           </CardContent>
         </Card>
 
-        <Button variant="gold" size="lg" className="w-full" onClick={() => setPhase("result")}>
-          إنهاء التحدث ← عرض النتيجة
-        </Button>
+        {sprechenStage === "prep" ? (
+          <Button variant="gold" size="lg" className="w-full" onClick={() => setSprechenStage("speaking")}>
+            انتهيت من التحضير — ابدأ وقت العرض والنقاش
+          </Button>
+        ) : (
+          <Button variant="gold" size="lg" className="w-full" onClick={() => setPhase("result")}>
+            إنهاء التدريب الشفهي ← عرض نتائج التدريب
+          </Button>
+        )}
       </div>
     );
   }
 
   /* ════════ النتيجة ════════ */
-  const allScores: { key: Phase; label: string; score?: ModulScore }[] = [
+  const allScores: { key: "lesen" | "hören"; label: string }[] = [
     { key: "lesen", label: "القراءة (Lesen)" },
     { key: "hören", label: "الاستماع (Hören)" },
-    { key: "schreiben", label: "الكتابة (Schreiben)" },
-    { key: "sprechen", label: "التحدث (Sprechen)" },
   ];
-  const anyScore = allScores.some((s) => (scores as Record<string, ModulScore>)[s.key]);
+  const anyScore = allScores.some((s) => scores[s.key] !== undefined);
   return (
     <div className="space-y-5">
       <Card className="overflow-hidden border-primary/30">
@@ -969,9 +967,9 @@ export function GoetheB2Exam() {
         <CardContent className="space-y-4 p-6">
           <div className="text-center">
             <Award className="mx-auto h-12 w-12 text-gold-strong" aria-hidden="true" />
-            <h2 className="mt-2 text-2xl font-extrabold">نتيجة محاكاة Goethe-B2</h2>
+            <h2 className="mt-2 text-2xl font-extrabold">نتائج التدريب</h2>
             <p className="text-sm text-muted-foreground">
-              معايير رسمية: كل مكوّن 100 نقطة · نجاح من 60 · لكل مكوّن على حدة
+              نسب القراءة والاستماع أدناه هي عدد الإجابات الصحيحة في هذا النموذج فقط، وليست نتيجة Goethe رسمية.
             </p>
           </div>
 
@@ -980,20 +978,14 @@ export function GoetheB2Exam() {
               const sc = (scores as Record<string, ModulScore>)[s.key];
               if (!sc) return null;
               return (
-                <div key={s.key} className={cn("rounded-xl border p-4", sc.passed ? "border-success/40 bg-success/5" : "border-destructive/40 bg-destructive/5")}>
-                  <div className="flex items-center justify-between gap-2">
-                    <p className="text-sm font-bold">{s.label}</p>
-                    <span className={cn("inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-extrabold", sc.passed ? "bg-success/15 text-success" : "bg-destructive/15 text-destructive")}>
-                      {sc.passed ? <CheckCircle2 className="h-3.5 w-3.5" aria-hidden="true" /> : <XCircle className="h-3.5 w-3.5" aria-hidden="true" />}
-                      {sc.passed ? "نجاح ✓" : "يحتاج تقوية"}
-                    </span>
-                  </div>
+                <div key={s.key} className="rounded-xl border bg-muted/20 p-4">
+                  <p className="text-sm font-bold">{s.label}</p>
                   <div className="mt-2 flex items-center gap-3">
-                    <Progress value={sc.pct} className={cn("h-2.5", sc.passed ? "" : "[&>div]:bg-destructive")} aria-label={`${s.label}: ${sc.pct}%`} />
+                    <Progress value={sc.pct} className="h-2.5" aria-label={`${s.label}: ${sc.pct}% من الإجابات الصحيحة`} />
                     <span className="font-de shrink-0 text-lg font-extrabold">{sc.pct}%</span>
                   </div>
                   <p className="mt-1 text-xs text-muted-foreground">
-                    {sc.correct} من {sc.total} · {sc.passed ? "أنت في نطاق النجاح — راجع أخطاءك ثم كرر لترفع درجتك." : "النطاق الرسمي: أعِد تدريب هذا المكوّن في دروس B2 ثم كرر المحاكاة."}
+                    {sc.correct} إجابة صحيحة من أصل {sc.total} في هذا النموذج. راجع إجاباتك؛ لا تُحوَّل هذه النسبة إلى درجة رسمية.
                   </p>
                 </div>
               );
@@ -1002,10 +994,16 @@ export function GoetheB2Exam() {
 
           {!anyScore && <p className="text-center text-sm text-muted-foreground">لم تكمل أي مكوّن بعد — ابدأ من جديد.</p>}
 
+          <div className="rounded-xl border border-amber-400/50 bg-amber-50 p-3 text-sm leading-relaxed text-amber-950 dark:bg-amber-950/30 dark:text-amber-100">
+            <p><b>الكتابة:</b> لا تُصحح هذه الصفحة جودة النص ولا تمنحها درجة؛ يتحقق العداد من عدد الكلمات فقط.</p>
+            <p className="mt-1"><b>التحدث:</b> تعرض الصفحة موضوعات وأسئلة للتدرب، لكنها لا تسجل إجابتك الصوتية أو تقيّم النطق والتفاعل.</p>
+            <p className="mt-1">لذلك لا تمثل النتائج حكماً على النجاح في Goethe B2 أو الجاهزية له.</p>
+          </div>
+
           <div className="flex flex-col gap-2 sm:flex-row">
             <Button onClick={restart} className="flex-1 gap-2">
               <RotateCcw className="h-4 w-4" aria-hidden="true" />
-              إعادة المحاكاة
+              إعادة التدريب
             </Button>
             <Button asChild variant="outline" className="flex-1">
               <a href="/tests/level/b2">اختبار مستوى B2 السريع</a>

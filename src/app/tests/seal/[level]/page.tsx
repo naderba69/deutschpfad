@@ -9,7 +9,7 @@ import { Zap, ShieldCheck } from "lucide-react";
 export const metadata: Metadata = {
   title: "امتحان الختم — بوابة الانتقال بين المستويات",
   description:
-    "امتحان ختم المستوى بصيغة Goethe-Zertifikat: لا تنتقل للمستوى التالي إلا باجتيازه (60% فأكثر). نسخة كاملة أو سريعة (20 سؤالاً).",
+    "اختبار داخلي لبوابة التقدم بين المستويات. عتبة النجاح قرار تدريبي داخل المنصة ولا تمثل امتحان Goethe أو إثباتاً لإتقان المستوى.",
 };
 
 export function generateStaticParams() {
@@ -34,7 +34,7 @@ export default function SealExamPage({ params, searchParams }: Props) {
         </h1>
         <p className="mt-2 max-w-2xl text-balance text-muted-foreground">
           هذا هو «بوابة» المستوى التالي: أكمل 80% من وحدات المستوى، ثم اجتز الامتحان
-          (60% فأكثر) ليُختَم المستوى ويُفتح الذي يليه. الأهلية تُحسب تلقائياً من تقدمك.
+          (60% فأكثر) لفتح المستوى التالي داخل المنصة. هذه عتبة تقدم داخلية وليست حكماً رسمياً على إتقان المستوى. الأهلية تُحسب تلقائياً من تقدمك.
         </p>
       </div>
 
@@ -47,8 +47,8 @@ export default function SealExamPage({ params, searchParams }: Props) {
               <div className="flex-1">
                 <p className="font-bold">الامتحان الكامل</p>
                 <p className="mt-0.5 text-xs text-muted-foreground">
-                  بصيغة Goethe الكاملة (27 سؤالاً: قراءة + استماع + قواعد + مفردات + كتابة)
-                  بتوقيت قريب من الامتحان الرسمي — تدريب وليس امتحاناً رسمياً.
+                  نسخة التدريب الأطول (27 سؤالاً: قراءة + استماع + قواعد + مفردات + كتابة).
+                  التوزيع والتوقيت داخليان ولا يطابقان امتحاناً رسمياً.
                 </p>
                 <span className="mt-2 inline-block rounded-lg bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
                   مُحدد حالياً
@@ -63,7 +63,7 @@ export default function SealExamPage({ params, searchParams }: Props) {
                 <p className="font-bold">الختم السريع ⚡</p>
                 <p className="mt-0.5 text-xs text-muted-foreground">
                   20 سؤالاً متوازناً (6 قواعد + 6 مفردات + 3 قراءة + 3 استماع + 2 كتابة)
-                  بوقت أقصر — لمن يريد تجاوز المستوى بسرعة.
+                  بوقت أقصر لمراجعة سريعة؛ لا يعادل النسخة الأطول في التغطية.
                 </p>
                 <Link
                   href={`/tests/seal/${params.level}?mode=quick`}

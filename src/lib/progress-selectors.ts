@@ -36,8 +36,8 @@ export function isLevelLessonsDone(completedLessons: string[], level: LevelCode)
 /**
  * دوال اختيار التقدم (Pure functions)
  * — حساب حالة المستويات والوحدات بناءً على الوحدات المكتملة والمستويات المختومة —
- * نظام الختم (Seal Exams): لا يُفتح مستوى جديد إلا بعد ختم المستوى السابق
- * بامتحان ختم (أو إكمال 100% من وحداته — توافق مع المستخدمين القدامى).
+ * اجتياز امتحان الختم يسجل حالة الختم. وللتوافق مع بيانات المستخدمين القدامى،
+ * إكمال كل الوحدات يتيح الانتقال داخلياً لكنه لا يسجل اجتيازاً أو ختماً.
  */
 
 /** إحصاءات مستوى معيّن */
@@ -52,20 +52,31 @@ export function getLevelCompletion(completed: string[], level: LevelCode): Level
   };
 }
 
-/** هل المستوى مختوم؟ (بامتحان الختم أو بإكمال كل وحداته) */
+/** هل اجتاز المستخدم امتحان الختم وسُجل ذلك صراحةً؟ */
 export function isLevelSealed(
+  _completed: string[],
+  level: LevelCode,
+  sealed: LevelCode[] = [],
+): boolean {
+  return sealed.includes(level);
+}
+
+/**
+ * أهلية الانتقال الداخلية للمستوى التالي.
+ * يُحافظ إكمال 100% من الوحدات على مسار المستخدمين القدامى، لكنه لا يعني اجتياز امتحان.
+ */
+export function isLevelProgressionComplete(
   completed: string[],
   level: LevelCode,
   sealed: LevelCode[] = [],
 ): boolean {
-  if (sealed.includes(level)) return true;
-  return getLevelCompletion(completed, level).pct === 100;
+  return isLevelSealed(completed, level, sealed) || getLevelCompletion(completed, level).pct === 100;
 }
 
-/** المستوى النشط الحالي: أول مستوى غير مختوم */
+/** المستوى النشط الحالي: أول مستوى اجتاز بوابته الداخلية */
 export function getActiveLevel(completed: string[], sealed: LevelCode[] = []): LevelCode {
   for (const level of LEVELS) {
-    if (!isLevelSealed(completed, level.code, sealed)) return level.code;
+    if (!isLevelProgressionComplete(completed, level.code, sealed)) return level.code;
   }
   return "B2";
 }
@@ -112,7 +123,9 @@ export function getUnitStatus(
 
 /** النسبة الإجمالية للتقدم في المنهج كاملاً */
 export function getOverallProgress(completed: string[]): number {
-  const totalUnits = LEVELS.reduce((sum, l) => sum + l.units, 0);
-  if (totalUnits === 0) return 0;
-  return Math.round((completed.length / totalUnits) * 100);
+  const units = LEVELS.flatMap((level) => getUnitsByLevel(level.code));
+  if (units.length === 0) return 0;
+  const completedSet = new Set(completed);
+  const completedKnownUnits = units.reduce((count, unit) => count + Number(completedSet.has(unit.id)), 0);
+  return Math.round((completedKnownUnits / units.length) * 100);
 }

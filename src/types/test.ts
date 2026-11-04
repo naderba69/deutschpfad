@@ -45,7 +45,7 @@ export interface SkillResult {
   total: number;
   correct: number;
   pct: number;
-  /** مستوى CEFR المقدر لهذه المهارة */
+  /** فئة تدريبية داخلية مشتقة من العينة؛ لا تمثل مستوى CEFR */
   level: TestLevel;
 }
 
@@ -58,7 +58,7 @@ export interface TestResult {
   secondsUsed: number;
   skillResults: SkillResult[];
   overallPct: number;
-  /** مستوى CEFR المقدر */
+  /** اقتراح نقطة بدء تدريبية من العينة؛ لا يمثل تصنيف CEFR معيارياً */
   estimatedLevel: TestLevel;
   /** اقتراحات تقوية (معرفات دروس) */
   reinforcement: { lessonId: string; reason: string }[];

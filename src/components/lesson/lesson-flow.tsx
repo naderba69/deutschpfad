@@ -916,14 +916,14 @@ export function LessonFlow({ lesson, onFinish }: { lesson: Lesson; onFinish?: ()
 /* ═══ مرحلة الإنتاج اللغوي (بند 11-12): يكتب جملة أصلية ويقيّمها ═══ */
 function ProductionStage({ lesson }: { lesson: Lesson }) {
   const [text, setText] = React.useState("");
-  const [result, setResult] = React.useState<{ pct: number; verdict: string } | null>(null);
+  const [result, setResult] = React.useState<{ recommendation: string; errors: { wrong: string; right: string; note: string }[] } | null>(null);
   const [evaluated, setEvaluated] = React.useState(false);
 
   const evaluate = () => {
     if (text.trim().length < 10) return;
     void import("@/lib/writing/goethe-local").then(async ({evaluateWriting}) => {
       const r = await evaluateWriting(text.trim(), "free");
-      setResult({ pct: r.pct, verdict: r.verdict });
+      setResult({ recommendation: r.recommendation, errors: r.errors });
       setEvaluated(true);
       // إشارة أن المستخدم أنتج (يفتح التالي)
       try {
@@ -941,7 +941,7 @@ function ProductionStage({ lesson }: { lesson: Lesson }) {
         <div>
           <h3 className="text-base font-extrabold">✍️ أنتج بنفسك — اكتب جملة</h3>
           <p className="text-xs text-muted-foreground">
-            هذا هو مفتاح الإتقان: اكتب 2-3 جمل أصلية عن «{lesson.titleAr}» مستخدماً ما تعلمته.
+            تدرّب بكتابة 2–3 جمل أصلية عن «{lesson.titleAr}» مستخدماً ما تعلمته. إرسال المحاولة لا يثبت الإتقان.
           </p>
         </div>
       </div>
@@ -959,7 +959,7 @@ function ProductionStage({ lesson }: { lesson: Lesson }) {
       <div className="flex items-center justify-between gap-3">
         <p className="text-xs text-muted-foreground">
           <Sparkles className="me-1 inline h-3 w-3" aria-hidden="true" />
-          تقييم فوري بمعايير Goethe — يعمل دون إنترنت.
+          فحص آلي محلي محدود لبعض الأنماط؛ لا يقيس صحة الجمل كاملةً ولا يمثل تقييماً رسمياً.
         </p>
         <Button onClick={evaluate} disabled={text.trim().length < 10 || evaluated} className="gap-1.5">
           <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
@@ -968,17 +968,19 @@ function ProductionStage({ lesson }: { lesson: Lesson }) {
       </div>
 
       {evaluated && result && (
-        <div className={`rounded-xl border p-4 ${
-          result.pct >= 60 ? "border-success/40 bg-success/5" : "border-gold/40 bg-gold/10"
-        }`}>
-          <p className="text-lg font-extrabold">
-            النسبة: <span className="font-de">{result.pct}%</span> · الحكم: {result.verdict}
-          </p>
+        <div className="rounded-xl border bg-muted/30 p-4">
+          <p className="text-sm font-extrabold">سُجلت محاولة الكتابة</p>
           <p className="mt-1 text-xs text-muted-foreground">
-            {result.pct >= 60
-              ? "أحسنت! أنتجت جملاً صحيحة — هذا هو الإتقان الحقيقي. 🎉"
-              : "بداية جيدة! عدّل جملتك ثم قيّمها مجدداً."}
+            الفحص الآلي محدود وقد يفوّت أخطاء أو يقترح تصحيحاً غير مناسب. استخدمه للتدريب فقط، ولا تعتبره دليلاً على صحة النص أو إتقان المهارة.
           </p>
+          {result.errors.length > 0 && (
+            <ul className="mt-2 space-y-1 text-xs">
+              {result.errors.map((error, index) => (
+                <li key={`${error.wrong}-${index}`}>{error.note}</li>
+              ))}
+            </ul>
+          )}
+          <p className="mt-2 text-xs text-muted-foreground">{result.recommendation}</p>
         </div>
       )}
     </div>

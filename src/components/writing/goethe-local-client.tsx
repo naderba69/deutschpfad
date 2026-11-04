@@ -99,14 +99,16 @@ export function GoetheLocalClient() {
               </p>
             </div>
             <div className="text-center">
-              <p className="font-de text-4xl font-extrabold text-primary">{result.pct}%</p>
-              <p className="font-de text-xs font-bold text-muted-foreground" dir="ltr" lang="de">
-                {result.verdict}
-              </p>
+              <p className="font-de text-3xl font-extrabold text-primary">{result.pct}%</p>
+              <p className="text-[11px] font-bold text-muted-foreground">مؤشر آلي داخلي</p>
             </div>
           </div>
 
-          {/* المعايير الأربعة */}
+          <p className="rounded-lg bg-muted/40 p-2 text-xs leading-relaxed text-muted-foreground">
+            الفحص يعتمد على مؤشرات شكلية وقواعد آلية محدودة؛ لا يتحقق من جودة النص أو إنجاز المهمة ولا يمثل درجة Goethe أو CEFR.
+          </p>
+
+          {/* مؤشرات شكلية آلية */}
           <div className="space-y-3">
             {result.scores.map((s, i) => (
               <div key={i} className="rounded-xl border bg-background p-3">

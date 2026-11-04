@@ -4,9 +4,9 @@ import {UmschreibungenClient} from "@/components/umschreiben/umschreibungen-clie
 import {TOTAL_UMSCHREIB, UMSCHREIB_TYPEN} from "@/data/umschreibungen";
 
 export const metadata: Metadata = {
-  title: "تدريب تحويل الجمل (Umschreibungen) — أسلوب Goethe B2",
+  title: "تدريب تحويل الجمل الألمانية — B1/B2",
   description:
-    "تدرّب على تحويل الجمل بالأنواع العشرة الرسمية لامتحان Goethe B2: نشط/مجهول، اشتقاق اسمي، مشاركات، نقل كلام، wegen، sich lassen، um...zu، Konjunktiv II — مع تصحيح فوري.",
+    "تمارين منصة على تحويل الجمل والتراكيب الألمانية بمستويي B1 وB2 مع تصحيح فوري. ليست قسماً نحوياً في امتحان Goethe B2 ولا تحاكي أسئلته الرسمية."
 };
 
 export default function UmschreibungenPage() {
@@ -17,9 +17,7 @@ export default function UmschreibungenPage() {
           تدريب تحويل الجمل (Umschreibungen)
         </h1>
         <p className="mt-2 max-w-3xl text-balance text-muted-foreground">
-          {TOTAL_UMSCHREIB} تمريناً على {UMSCHREIB_TYPEN.length} أنواع التحويل الرسمية في
-          امتحان Goethe B2 (Grammatik). لكل نوع: شرح ومثال أولاً، ثم حوّل بنفسك مع تصحيح
-          فوري وإجابة نموذجية. هذه التمارين تظهر حرفياً في الامتحان — أتقنها بالتكرار.
+          {TOTAL_UMSCHREIB} تمريناً على {UMSCHREIB_TYPEN.length} نوعاً من تحويل الجمل والتراكيب، من إعداد المنصة للتدرب على الألمانية في نطاق B1–B2. هذه ليست قسماً من امتحان Goethe B2 ولا ندّعي أن الأنواع تظهر فيه حرفياً. لكل نوع شرح ومثال ثم تمرين مع تصحيح وإجابة مقترحة.
         </p>
       </div>
       <UmschreibungenClient />

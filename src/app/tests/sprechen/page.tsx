@@ -4,9 +4,9 @@ import {LazyOralExam} from "@/components/tests/lazy/lazy-oral-exam";
 import {VortragModelle} from "@/components/tests/vortrag-modelle";
 
 export const metadata: Metadata = {
-  title: "الامتحان الشفهي — Mündliche Prüfung (Goethe)",
+  title: "تدريب التحدث الألماني — B1/B2",
   description:
-    "محاكاة الامتحان الشفهي بصيغتيه: B1 (تقديم النفس + حديث + حل مشكلة) وB2 (عرض تقديمي Vortrag + مناقشة Diskussion) — بمؤقت حقيقي وتسجيل صوتي وتقييم ذاتي بمعايير الممتحن.",
+    "تدريبات تفاعلية للتحدث وعرض موضوع ومناقشته، مع مؤقت وتسجيل/تعرف على الكلام وتقييم ذاتي. ليست محاكاة رسمية لامتحان Goethe ولا تقييماً من ممتحن.",
 };
 
 export default function OralTestPage() {
@@ -17,8 +17,7 @@ export default function OralTestPage() {
           الامتحان الشفهي (Mündliche Prüfung)
         </h1>
         <p className="mt-2 max-w-xl text-balance text-muted-foreground">
-          صيغتان كاملتان بنمط Goethe: B2 = عرض تقديمي (3د) + مناقشة (4د)، وB1 = تقديم النفس +
-          حديث عن موضوع + حل مشكلة. سجّل إجاباتك ثم قيّم نفسك بالمعايير الأربعة (النطق، السلاسة، القواعد، المفردات).
+          اختر تدريباً على عرض موضوع ومناقشته أو على مواقف محادثة أخرى. يمكنك تسجيل إجاباتك أو استخدام التعرف على الكلام ثم تقييمها ذاتياً؛ هذا التدريب لا يحاكي امتحان Goethe كاملاً ولا يصدر تقييماً رسمياً.
         </p>
       </div>
       <LazyOralExam />

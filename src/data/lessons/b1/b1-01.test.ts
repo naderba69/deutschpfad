@@ -130,6 +130,13 @@ describe("B1-01 lesson content audit", () => {
     expect(meta && "duration" in meta).toBe(false);
   });
 
+  it("avoids claiming prior mastery or treating one grammar point as the gateway to German", () => {
+    expect(lessonB101.einfuehrung.connectionToPreviousAr).toContain("تدرّبت في دروس سابقة");
+    expect(lessonB101.einfuehrung.connectionToPreviousAr).not.toContain("أتقنت");
+    expect(lessonB101.einfuehrung.contextAr).not.toContain("الأهم في رحلتك");
+    expect(lessonB101.einfuehrung.contextAr).not.toContain("البوابة لفهم النصوص الألمانية الحقيقية");
+  });
+
   it("limits goals to evidenced performances and avoids readiness or certification claims", () => {
     expect(lessonB101.lernziele.map(({ id }) => id)).toEqual(["z1", "z2", "z3", "z4"]);
     expect(goal("z1").evidence?.exerciseIds).toEqual(["q1", "q2", "q4"]);

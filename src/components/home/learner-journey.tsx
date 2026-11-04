@@ -200,6 +200,13 @@ export function LearnerJourney() {
     setSaving(false);
   };
 
+  const handleSkipName = async () => {
+    setSaving(true);
+    const updated = await saveLearnerProfile({ onboarded: true });
+    setProfile(updated);
+    setSaving(false);
+  };
+
   const handleStartLesson = async () => {
     if (nextLesson) await saveLearnerProfile({ lastLessonId: nextLesson.id });
   };
@@ -225,12 +232,12 @@ export function LearnerJourney() {
                 <LangDe className="font-extrabold">B2</LangDe> تبدأ من هنا
               </h2>
               <p className="max-w-xl text-balance text-sm leading-relaxed text-muted-foreground sm:text-base">
-                {LESSON_META.length} درساً متسلسلاً بقواعدها وتريكاتها وتمارينها وحواراتها، بمنهجية معهد غوته.
+                {LESSON_META.length} درساً متسلسلاً يضم قواعد وتمارين وحوارات، في نطاقات تدريبية تستلهم موضوعات من CEFR وGoethe دون ادعاء مطابقة رسمية.
                 أدخل اسمك لنخصّص رحلتك ونحفظ تقدمك.
               </p>
               <p className="inline-flex items-center gap-2 rounded-lg bg-success/10 px-3 py-1.5 text-xs font-bold text-success">
                 <CheckCircle2 className="h-3.5 w-3.5" aria-hidden="true" />
-                مجانية 100% — مدى الحياة، بلا اشتراكات ولا مدفوعات أبداً
+                متاحة للاستخدام دون اشتراك أو دفع حالياً
               </p>
               <form onSubmit={handleSubmitName} className="flex max-w-md flex-col gap-3 sm:flex-row">
                 <div className="relative flex-1">
@@ -248,9 +255,15 @@ export function LearnerJourney() {
                   <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </form>
+              <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                <span>الاسم اختياري ويُحفظ محلياً على هذا الجهاز.</span>
+                <Button type="button" variant="ghost" size="sm" disabled={saving} onClick={handleSkipName}>
+                  المتابعة دون اسم
+                </Button>
+              </div>
             </div>
             <div className="hidden shrink-0 flex-col gap-2 sm:flex">
-              {[["01", "درس الأبجدية والنطق"], [String(LESSON_META.length).padStart(2, "0"), "درس حتى شهادة B2"], ["4", "مستويات معتمدة"]].map(([n, t]) => (
+              {[["01", "درس الأبجدية والنطق"], [String(LESSON_META.length).padStart(2, "0"), "درس ضمن نطاق B2"], ["4", "نطاقات تدريبية A1–B2"]].map(([n, t]) => (
                 <div key={n} className="flex items-center gap-3 rounded-xl bg-card/60 px-4 py-2.5">
                   <span className="font-de text-lg font-extrabold text-primary">{n}</span>
                   <span className="text-xs font-semibold text-muted-foreground">{t}</span>
@@ -289,11 +302,11 @@ export function LearnerJourney() {
                 </span>
                 <h3 className="mt-3 text-center text-base font-extrabold">حدّد مستواك أولاً</h3>
                 <p className="mt-1 text-center text-sm text-muted-foreground">
-                  أجب عن 15 سؤالاً سريعاً — ونبدأ من أول درس يناسب مستواك الحقيقي.
+                  أجب عن 15 سؤالاً سريعاً للحصول على اقتراح استرشادي لنقطة البداية؛ لا يحدد مستوى CEFR رسمياً.
                 </p>
                 <div className="mt-2 flex justify-center gap-2 text-[11px] font-semibold text-muted-foreground">
                   <span className="rounded-full bg-muted px-2 py-0.5">⏱ 5 دقائق</span>
-                  <span className="rounded-full bg-muted px-2 py-0.5">🎯 نقطة بداية دقيقة</span>
+                  <span className="rounded-full bg-muted px-2 py-0.5">🎯 اقتراح استرشادي</span>
                 </div>
                 <Button asChild className="btn-glow mt-4 w-full gap-1.5">
                   <Link href="/tests/placement?mode=quick">
@@ -476,7 +489,7 @@ export function LearnerJourney() {
             <span className="text-4xl" aria-hidden="true">🏆</span>
             <h3 className="mt-2 text-lg font-extrabold text-success">أتممت المسار كاملاً!</h3>
             <p className="mt-1 text-sm text-muted-foreground">
-              أنت جاهز لاختبارات الختم ومحاكاة Goethe الكاملة.
+              يمكنك خوض اختبار الختم B2 لتقييم أدائك؛ إكمال المسار وحده لا يثبت الجاهزية.
             </p>
             <Button asChild className="mt-4 gap-2">
               <Link href="/tests/seal/b2">

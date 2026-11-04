@@ -12,11 +12,8 @@ import {createRecognitionEngine, isRecognitionSupported, unsupportedRecognitionN
 import {cn} from "@/lib/utils";
 
 /**
- * محاكي الامتحان الشفهي (Mündliche Prüfung) — الصيغة الرسمية 2019+
- *  Teil 1: Vortrag (~4 دقائق) — موضوع من اثنين + أسئلة إرشادية (Leitfragen)
- *  Teil 2: Diskussion (~5 دقائق) — قضية خلافية بحجج Pro/Kontra
- *  التحضير: 15 دقيقة (يُدار خارج المؤقت كتدريب حر)
- *  المستخدم يسجل إجاباته (SpeechRecognition) أو يكتبها.
+ * تدريب ذاتي على عرض موضوع ومناقشته باللغة الألمانية.
+ * لا يدعي مطابقة صيغة امتحان رسمية؛ التسجيل/التعرف على الكلام وسيلة للمراجعة الذاتية.
  */
 
 type Mode = "listening" | "recording" | "review";
@@ -136,9 +133,8 @@ export function MündlichePrüfung() {
               ))}
             </div>
             <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-              💡 بنية العرض الرسمية: <b>مقدمة</b> (Sehr geehrte Damen und Herren…) ← <b>الوضع الحالي</b> ←{" "}
-              <b>المشاكل/الأسباب</b> ← <b>الحلول</b> ← <b>خاتمة</b> (Zusammenfassend lässt sich sagen…).
-              تحدث ~4 دقائق، وتوقع أسئلة متابعة من الممتحن.
+              💡 قالب تدريبي ممكن للعرض: <b>مقدمة</b> ← <b>الوضع</b> ← <b>الأسباب أو الحجج</b> ←{" "}
+              <b>خلاصة</b>. ليس هذا قالباً رسمياً إلزامياً؛ تدرّب على تنظيم الأفكار بما يناسب المهمة.
             </p>
           </div>
         </div>
@@ -254,7 +250,7 @@ export function MündlichePrüfung() {
 
       {/* التقييم الذاتي */}
       <div className="rounded-xl border border-gold/40 bg-gold/10 p-4">
-        <p className="text-sm font-bold">📋 قيّم نفسك (كما يفعل الممتحن، 1-5):</p>
+        <p className="text-sm font-bold">📋 تقييم ذاتي للتدريب (1–5، ليس درجة امتحانية):</p>
         <div className="mt-2 grid gap-2 text-xs sm:grid-cols-2">
           {[
             { name: "Aussprache", ar: "النطق مفهوم للألماني؟" },
@@ -289,9 +285,9 @@ export function MündlichePrüfung() {
 
       <div className="rounded-xl border border-success/40 bg-success/10 p-4 text-center">
         <CheckCircle2 className="mx-auto h-8 w-8 text-success" aria-hidden="true" />
-        <p className="mt-2 font-bold">أكملت محاكاة الامتحان الشفهي بالصيغة 2019+! 🎉</p>
+        <p className="mt-2 font-bold">أكملت جلسة التدريب الشفهي! 🎉</p>
         <p className="mt-1 text-sm text-muted-foreground">
-          أعد التدريب بمواضيع أخرى، أو ادخل محرك الامتحان الكامل لتجربة الجلسة الشفهية ضمن الامتحان.
+          يمكنك إعادة التدريب بموضوع آخر. هذه الجلسة ليست محاكاة كاملة ولا تقييماً رسمياً؛ راجع تعليمات الامتحان لدى الجهة المنظمة.
         </p>
       </div>
     </div>

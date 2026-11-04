@@ -63,7 +63,7 @@ function LessonCompletion({ lesson }: { lesson: Lesson }) {
         const {getPersonality, motivationalByPersonality} = await import("@/lib/storage/teacher-personality");
         const p = await getPersonality();
         const core = motivationalByPersonality(p, "success");
-        const nextPart = next ? ` \nالدرس القادم: «${next.titleAr}» — سنبني عليه مباشرة.` : " \nأتممت المسار الكامل — أنت جاهز لاختبار الختم! 🏆";
+        const nextPart = next ? ` \nالدرس القادم: «${next.titleAr}» — سنبني عليه مباشرة.` : " \nأتممت وحدات المسار. يمكنك تجربة اختبار التقدم الداخلي لمراجعة أدائك؛ لا يثبت ذلك مستوى CEFR أو الجاهزية الرسمية. 🏆";
         setTeacherWord(`${core}${nextPart}`);
       } catch {
         setTeacherWord(next ? `أحسنت! الدرس القادم: «${next.titleAr}».` : "أحسنت! أتممت المسار الكامل!");
@@ -335,7 +335,12 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       const saved = window.localStorage.getItem(`lesson-step:${lesson.id}`);
       if (saved) {
         const n = Number(saved);
-        if (Number.isFinite(n) && n > 0) setCurrentSection(Math.min(n, sectionDefs.length - 1));
+        if (Number.isFinite(n) && n > 0) {
+          const restored = Math.min(n, sectionDefs.length - 1);
+          setCurrentSection(restored);
+          const restoredId = sectionDefs[restored]?.id;
+          if (restoredId) setVisited((prev) => new Set([...prev, restoredId]));
+        }
       }
     } catch {
       /* تجاهل */
@@ -427,7 +432,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
     const nextL = idx >= 0 && idx < LESSON_META.length - 1 ? LESSON_META[idx + 1] : undefined;
     if (nextL) {
       setCompletionNotice({
-        title: "🎉 أُنجز الدرس بنجاح!",
+        title: "🎉 أتممت هذا الدرس!",
         sub: `جارٍ الانتقال إلى الدرس التالي: «${nextL.titleAr}»…`,
         href: `/lesson/${nextL.id}`,
       });
@@ -436,8 +441,8 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       }, 2500);
     } else {
       setCompletionNotice({
-        title: "🏆 أتممت المسار كاملاً!",
-        sub: "أنت جاهز لامتحانات الختم ومحاكاة Goethe الكاملة.",
+        title: "🏆 أتممت وحدات المسار!",
+        sub: "يمكنك استخدام اختبار التقدم الداخلي وعينة التدريب لمراجعة أدائك فقط؛ إكمال الوحدات وحده لا يثبت الإتقان أو الجاهزية الرسمية.",
         href: "/tests/seal/b2",
       });
       document.getElementById("lesson-complete")?.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -652,7 +657,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
 
       {/* ═══ وضع العرض: خطوة بخطوة (تفاعلي) أم عرض الكل ═══ */}
       <div className="mb-4 flex items-center justify-between gap-3">
-        <p className="text-xs font-bold text-muted-foreground">
+        <p className="text-xs font-bold text-muted-foreground" aria-live="polite" aria-atomic="true">
           {stepMode
             ? `الخطوة ${currentSection + 1} من ${total} — ${sectionDefs[currentSection]?.label ?? ""}`
             : "جميع خطوات الدرس معاً"}

@@ -14,10 +14,9 @@ import {cn} from "@/lib/utils";
 
 /**
  * ═══════════════════════════════════════════════════════════
- *  طريقك إلى الشهادة — يجيب على «متى أتقن وأحصل على الشهادة؟»
- *  لكل مستوى ثلاثة معايير حقيقية:
- *  · الدروس (التقدم في المسار) · الوظائف (Can-Do) · امتحان الختم
- *  الشهادة الكاملة = أتقنت وظائف B2 + اجتزت امتحان الختم B2
+ *  متابعة التقدم حسب المستوى.
+ *  النسبة مؤشر داخلي يجمع إكمال الدروس والتقييم الذاتي لوظائف Can-Do؛
+ *  لا تمثل قياساً معيارياً للإتقان أو جاهزية امتحان أو شهادة رسمية.
  * ═══════════════════════════════════════════════════════════
  */
 export function CertificatePath() {
@@ -41,13 +40,13 @@ export function CertificatePath() {
     const lessonsPct = isHydrated ? lessons.pct : 0;
     const sealed = (sealedLevels ?? []).includes(l.code);
     const canDoPct = canDo[l.code] ?? 0;
-    // جاهزية الشهادة = متوسط الدروس والوظائف (الختم يكملها)
-    const ready = Math.round((lessonsPct + canDoPct) / 2);
-    return { ...l, lessonsPct, canDoPct, sealed, ready };
+    // مؤشر متابعة داخلي، وليس قياساً معيارياً للجاهزية أو الإتقان.
+    const progressPct = Math.round((lessonsPct + canDoPct) / 2);
+    return { ...l, lessonsPct, canDoPct, sealed, progressPct };
   });
 
   const overall = Math.round(
-    levelItems.reduce((s, l) => s + l.ready, 0) / Math.max(1, levelItems.length),
+    levelItems.reduce((s, l) => s + l.progressPct, 0) / Math.max(1, levelItems.length),
   );
 
   return (
@@ -58,8 +57,8 @@ export function CertificatePath() {
             <Award className="h-4 w-4" aria-hidden="true" />
           </span>
           <div className="min-w-0 flex-1">
-            <h3 className="text-sm font-extrabold">طريقك إلى الشهادة</h3>
-            <p className="text-[11px] text-muted-foreground">أتقن الوظائف + اجتز الختم — لا مجرد دروس منهية</p>
+            <h3 className="text-sm font-extrabold">متابعة التقدم حسب المستوى</h3>
+            <p className="text-[11px] text-muted-foreground">مؤشر داخلي يجمع إكمال الدروس وتقييمك الذاتي؛ لا يقيس الإتقان أو الجاهزية رسمياً.</p>
           </div>
           <span className="font-de rounded-full bg-gold/15 px-2.5 py-1 text-xs font-extrabold text-gold-strong">{overall}%</span>
         </div>
@@ -88,7 +87,7 @@ export function CertificatePath() {
                           <CheckCircle2 className="h-3 w-3" aria-hidden="true" /> مُختومة
                         </span>
                       ) : (
-                        <span className="font-de text-[11px] font-bold text-muted-foreground">{l.ready}%</span>
+                        <span className="font-de text-[11px] font-bold text-muted-foreground">{l.progressPct}%</span>
                       )}
                     </div>
                     {/* شريط مزدوج: دروس + وظائف */}
@@ -117,8 +116,8 @@ export function CertificatePath() {
           <Target className="h-4 w-4 shrink-0 text-gold-strong" aria-hidden="true" />
           <p className="min-w-0 flex-1 text-[11px] font-bold text-muted-foreground">
             {sealedLevels?.includes("B2")
-              ? "أتممت كل المستويات — أنت جاهز للشهادة النهائية!"
-              : `ركّز الآن على ${activeLevel.code}: أتقن وظائفه ثم اجتز امتحان الختم.`}
+              ? "أكملت بوابة التقدم الداخلية للمستويات الأربعة؛ هذا لا يثبت إتقان CEFR أو يمنح شهادة رسمية."
+              : `تابع الآن ${activeLevel.code}: أكمل الدروس وراجع تقييمك الذاتي للوظائف، ثم استخدم اختبار بوابة التقدم الداخلي.`}
           </p>
           <Link
             href={sealedLevels?.includes("B2") ? "/tests/seal/b2" : `/level/${activeLevel.code.toLowerCase()}`}

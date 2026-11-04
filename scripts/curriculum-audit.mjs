@@ -117,34 +117,35 @@ function findMatches(item) {
   const pool = item.lessons.length
     ? item.lessons.map(inLesson).filter(Boolean)
     : inLevel(item.level);
-  const hits = [];
-  for (const kw of item.keywords) {
+  return item.keywords.map((kw) => {
     const k = norm(kw);
-    for (const l of pool) {
-      if (norm(l.text).includes(k)) {
-        hits.push({ kw, file: l.id });
-        break;
-      }
-    }
-  }
-  return hits;
+    const matches = pool.filter((lesson) => norm(lesson.text).includes(k));
+    return { kw, matches };
+  });
 }
 
 const rows = [];
 for (const item of ITEMS) {
-  const hits = findMatches(item);
-  const foundAny = hits.length > 0;
-  const expected = item.keywords.length;
-  const partial = foundAny && hits.length < expected;
-  const status = foundAny ? (partial ? "⚠️" : "✓") : "✗";
+  const matches = findMatches(item);
+  const foundCount = matches.filter((match) => match.matches.length > 0).length;
+  const targetLevelCount = matches.filter((match) =>
+    match.matches.some((lesson) => lesson.level === item.level)
+  ).length;
+  const foundAny = foundCount > 0;
+  // لا نعدّ ذكراً في مستوى آخر دليلاً على تغطية المستوى المطلوب.
+  const status = !foundAny ? "✗" : targetLevelCount === matches.length ? "✓" : "⚠️";
   const scope = item.lessons.length ? item.lessons.join(", ") : `كل ${item.level}`;
+  const detail = matches.map(({ kw, matches: lessons }) => {
+    if (!lessons.length) return `${kw}: غير موجود`;
+    return `${kw}: ${lessons.map((lesson) => lesson.id).join("/")}`;
+  });
   rows.push({
     level: item.level.toUpperCase(),
     theme: item.theme,
     kind: item.kind === "g" ? "قواعد" : "تواصل",
     term: item.term,
     status,
-    detail: foundAny ? hits.map((h) => `${h.file}`).join(", ") : `مفقود في: ${scope}`,
+    detail: foundAny ? detail.join("؛ ") : `مفقود في: ${scope}`,
   });
 }
 
@@ -163,6 +164,6 @@ for (const level of ["A1", "A2", "B1", "B2"]) {
   console.log("");
 }
 console.log("──────────────────────────────────────────────────────────────");
-console.log(`  الملخص: ${ok} ✓ كامل | ${warn} ⚠️ جزئي/مستوى آخر | ${miss} ✗ مفقود  (الإجمالي ${rows.length})`);
-console.log("  ✓=الموضوع مُدرَّس بدقة في الدروس المشار إليها | ⚠️=جزئي أو محتوى في مستوى آخر | ✗=نقص حقيقي");
+console.log(`  الملخص: ${ok} ✓ علامات في المستوى المطلوب | ${warn} ⚠️ جزئي/مستوى آخر | ${miss} ✗ بلا علامة  (الإجمالي ${rows.length})`);
+console.log("  ✓=كل العلامات النصية وُجدت في المستوى المطلوب (قرينة آلية لا تثبت التدريس) | ⚠️=بعض العلامات غائبة أو لا تظهر إلا بمستوى آخر | ✗=لم تُوجد أي علامة");
 console.log("══════════════════════════════════════════════════════════════\n");

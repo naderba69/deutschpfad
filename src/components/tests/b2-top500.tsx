@@ -8,8 +8,8 @@ import {B2_TOP500} from "@/data/vocabulary/b2-top500";
 import {cn} from "@/lib/utils";
 
 /**
- * Top 500 للامتحان — أهم 500 كلمة Goethe-B2 قابلة للفلترة
- * (حسب المواضيع الـ18 الرسمية + درجة التواتر 1-3)
+ * قائمة تدريبية من 500 كلمة وتعبير لنطاق B2، قابلة للفلترة
+ * حسب موضوعات المنصة وأولوية المراجعة الداخلية (1–3).
  */
 export function B2Top500() {
   const [topic, setTopic] = React.useState<string>("all");
@@ -26,11 +26,11 @@ export function B2Top500() {
     return true;
   });
 
-  // الأكثر تواتراً (3) أولاً
+  // الأعلى أولوية للمراجعة بحسب تصنيف المنصة أولاً
   const sorted = [...filtered].sort((a, b) => b.freq - a.freq);
 
   const freqLabel = (f: 1 | 2 | 3) =>
-    f === 3 ? "لا غنى عنها" : f === 2 ? "عالية" : "مفيدة";
+    f === 3 ? "أولوية أعلى" : f === 2 ? "أولوية متوسطة" : "للمراجعة";
 
   return (
     <div className="space-y-4">
@@ -57,9 +57,9 @@ export function B2Top500() {
           ))}
         </div>
         <div className="mt-3 flex flex-wrap items-center gap-2 border-t pt-3">
-          <span className="text-sm font-bold">التواتر:</span>
+          <span className="text-sm font-bold">أولوية المراجعة:</span>
           <button type="button" onClick={() => setFreq(0)} className={cn("rounded-full border px-3 py-1 text-xs font-bold", freq === 0 ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background")}>الكل</button>
-          <button type="button" onClick={() => setFreq(3)} className={cn("rounded-full border px-3 py-1 text-xs font-bold", freq === 3 ? "border-gold bg-gold/20 text-gold-strong" : "border-muted bg-background")}>🔥 لا غنى عنها</button>
+          <button type="button" onClick={() => setFreq(3)} className={cn("rounded-full border px-3 py-1 text-xs font-bold", freq === 3 ? "border-gold bg-gold/20 text-gold-strong" : "border-muted bg-background")}>أولوية أعلى</button>
           <button type="button" onClick={() => setFreq(2)} className={cn("rounded-full border px-3 py-1 text-xs font-bold", freq === 2 ? "border-primary bg-primary/10 text-primary" : "border-muted bg-background")}>عالية</button>
           <button type="button" onClick={() => setFreq(1)} className={cn("rounded-full border px-3 py-1 text-xs font-bold", freq === 1 ? "border-muted bg-muted text-muted-foreground" : "border-muted bg-background")}>مفيدة</button>
           <div className="relative ms-auto w-full sm:w-56">
@@ -73,7 +73,7 @@ export function B2Top500() {
           </div>
         </div>
         <p className="mt-2 text-xs text-muted-foreground">
-          🎯 <b>{sorted.length}</b> كلمة من أصل {B2_TOP500.length} — الأولوية للمستوى 3 (لا غنى عنها).
+          🎯 <b>{sorted.length}</b> كلمة وتعبير من أصل {B2_TOP500.length} — مرتبة بحسب أولوية المراجعة الداخلية، لا بيانات تواتر امتحانية.
           تعلّم 20 كلمة يومياً = 500 كلمة في 25 يوماً.
         </p>
       </div>

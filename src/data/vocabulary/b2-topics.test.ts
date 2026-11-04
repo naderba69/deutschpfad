@@ -62,7 +62,7 @@ import { getA2VocabAll } from "@/data/vocabulary/a2";
 import { getB1VocabAll } from "@/data/vocabulary/b1";
 import { getB2VocabAll } from "@/data/vocabulary/b2";
 
-describe("تغطية المفردات الشاملة — معايير Goethe التراكمية (4000-4800)", () => {
+describe("فحوص حجم قوائم مفردات المنصة حسب النطاق التدريبي", () => {
   it("مستوى A1 وحده: 500-650 كلمة", () => {
     expect(getA1VocabAll().length).toBeGreaterThanOrEqual(500);
   });

@@ -72,7 +72,7 @@ test("مسار الكتابة: مرحلة الترجمة متاحة (20 مهمة
 test("محرك B2: تحذير الوقت يظهر عند الإجبار (بداية المؤقت سليمة)", async ({ page }) => {
   await page.goto("/tests/b2", { waitUntil: "networkidle" });
   await page.waitForTimeout(500);
-  await page.getByRole("button", { name: /ابدأ الامتحان/ }).click();
+  await page.getByRole("button", { name: /ابدأ التدريب/ }).click();
   // شارة النموذج + المؤقت يعملان
   await expect(page.getByText(/نموذج/)).toBeVisible();
   await expect(page.getByText(/⏱/)).toBeVisible();

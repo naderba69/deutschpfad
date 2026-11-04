@@ -20,6 +20,12 @@ describe("مكتبة البودكاست التعليمي", () => {
     }
   });
 
+  it("يطابق جنس Mimi المؤنث في وصف القطة", () => {
+    const episode = PODCASTS.find(({ id }) => id === "p-a1-haustier");
+    expect(episode?.script).toContain("Mimi ist meine beste Freundin.");
+    expect(episode?.scriptAr).toContain("ميمي أفضل صديقة لي.");
+  });
+
   it("كل مستوى لديه على الأقل حلقة واحدة", () => {
     for (const lv of ["A1", "A2", "B1", "B2"] as const) {
       expect(getPodcastsByLevel(lv).length).toBeGreaterThanOrEqual(1);

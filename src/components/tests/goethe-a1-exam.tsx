@@ -353,7 +353,7 @@ export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
             );
           })()}
           <p className="text-xs text-muted-foreground">
-            هذه نسب تدريبية وليست درجة رسمية. الهدف معرفة نقاط الضعف قبل الامتحان الحقيقي.
+            هذه نسب تدريبية وليست درجة رسمية. استخدمها لمراجعة الإجابات التي تحتاج إلى انتباه في هذه العينة التدريبية.
           </p>
           <Button variant="outline" onClick={reset}>إعادة النموذج</Button>
         </section>

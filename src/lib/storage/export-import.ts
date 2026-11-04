@@ -40,6 +40,11 @@ export function isOwnedLsKey(key: string): boolean {
   return LS_PREFIXES.some((p) => key.startsWith(p));
 }
 
+/** المفاتيح التي يجوز للنسخ الاحتياطي استعادتها؛ الأسرار المستثناة لا تُكتب حتى لو وردت في ملف مستورد. */
+export function isRestorableLsKey(key: string): boolean {
+  return isOwnedLsKey(key) && !LS_EXCLUDED.has(key);
+}
+
 /** جمع كل مفاتيح localStorage المملوكة (ديناميكياً — لا قائمة ثابتة ناقصة) */
 function collectOwnedLsKeys(): Record<string, string> {
   if (typeof window === "undefined") return {};
@@ -85,13 +90,28 @@ export async function buildBackupData(): Promise<BackupData> {
   };
 }
 
+/** مسح مفاتيح التطبيق القابلة للاستعادة قبل وضع الاستبدال؛ تُبقى أسرار BYOK المستثناة محلياً. */
+function clearRestorableLocalStorage(): void {
+  if (typeof window === "undefined") return;
+  try {
+    const keys: string[] = [];
+    for (let i = 0; i < window.localStorage.length; i++) {
+      const key = window.localStorage.key(i);
+      if (key && isRestorableLsKey(key)) keys.push(key);
+    }
+    for (const key of keys) window.localStorage.removeItem(key);
+  } catch {
+    /* إذا تعذر الوصول إلى التخزين لا نوقف استعادة IndexedDB */
+  }
+}
+
 /** استعادة بيانات localStorage (قائمة أمان: البادئات المملوكة فقط) */
 function restoreLocalStorage(settings: Record<string, unknown>): void {
   if (typeof window === "undefined") return;
   const ls = settings["_localStorage"];
   if (!ls || typeof ls !== "object") return;
   for (const [k, v] of Object.entries(ls as Record<string, string>)) {
-    if (!isOwnedLsKey(k)) continue; // لا نكتب مفاتيح غريبة
+    if (!isRestorableLsKey(k)) continue; // لا نكتب مفاتيح غريبة أو أسراراً مستثناة
     try {
       window.localStorage.setItem(k, String(v));
     } catch {
@@ -170,6 +190,7 @@ export async function writeBackupData(data: BackupData, mode: "merge" | "replace
       await tx.objectStore("settings").put({ key, data: value });
     }
     await tx.done;
+    clearRestorableLocalStorage();
     restoreLocalStorage(data.settings);
     return;
   }
