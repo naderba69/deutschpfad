@@ -4,9 +4,11 @@ import * as React from "react";
 import {Search} from "lucide-react";
 
 import {SpeakButton} from "@/components/shared/speak-button";
+import {VocabKindBadge} from "@/components/shared/vocab-kind";
 import {cn} from "@/lib/utils";
 import {getLevelVocab} from "@/data/vocabulary";
 import type { VocabEntry } from "@/data/vocabulary/a1";
+import {FilterChip} from "@/components/ui/filter-chip";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -88,18 +90,11 @@ function emojiFor(word: string): string {
 }
 
 /** دمج مفردات A1/A2 مع الإيموجي التلقائي */
-function buildVisual(): { de: string; ar: string; emoji: string; level: string }[] {
-  const out: { de: string; ar: string; emoji: string; level: string }[] = [];
+function buildVisual(): { de: string; ar: string; g?: string; ex?: string; emoji: string; level: string }[] {
+  const out: { de: string; ar: string; g?: string; ex?: string; emoji: string; level: string }[] = [];
   for (const lvl of ["A1", "A2"] as const) {
-    try {
-      const vocab = getLevelVocab(lvl);
-      for (const unit of Object.values(vocab) as unknown as VocabEntry[][]) {
-        for (const entry of unit) {
-          out.push({ de: entry.de, ar: entry.ar, emoji: emojiFor(entry.de), level: lvl });
-        }
-      }
-    } catch {
-      /* تجاهل */
+    for (const entry of getLevelVocab(lvl) as VocabEntry[]) {
+      out.push({ de: entry.de, ar: entry.ar, g: entry.g, ex: entry.ex, emoji: emojiFor(entry.de), level: lvl });
     }
   }
   // أضف البنك البصري اليدوي (لا يكرر الموجود)
@@ -150,6 +145,7 @@ export function PictureDictionaryClient() {
           <div className="relative flex-1">
             <Search className="absolute start-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
             <input
+              aria-label="ابحث في القاموس المصوّر"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="ابحث بالكلمة أو بالعربية…"
@@ -158,33 +154,25 @@ export function PictureDictionaryClient() {
           </div>
           <div className="flex gap-1.5" role="group" aria-label="المستوى">
             {(["all", "A1", "A2"] as const).map((l) => (
-              <button
+              <FilterChip
                 key={l}
-                type="button"
                 onClick={() => setLevel(l)}
-                className={cn(
-                  "rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
-                  level === l ? "border-primary bg-primary text-primary-foreground" : "bg-background hover:border-primary/50",
-                )}
+                active={level === l}
               >
                 {l === "all" ? "الكل" : l}
-              </button>
+              </FilterChip>
             ))}
           </div>
         </div>
         <div className="flex flex-wrap gap-1.5">
           {CATEGORIES.map((c) => (
-            <button
+            <FilterChip
               key={c.id}
-              type="button"
               onClick={() => setEmojiFilter(c.id)}
-              className={cn(
-                "rounded-full border px-3 py-1 text-xs font-bold transition-colors",
-                emojiFilter === c.id ? "border-primary bg-primary/10 text-primary" : "bg-background hover:border-primary/40",
-              )}
+              active={emojiFilter === c.id}
             >
               {c.id === "all" ? "🗂️ الكل" : `${c.id} ${c.label}`}
-            </button>
+            </FilterChip>
           ))}
         </div>
       </div>
@@ -207,9 +195,15 @@ export function PictureDictionaryClient() {
                 <span className="font-de truncate text-sm font-bold" dir="ltr" lang="de">
                   {v.de}
                 </span>
+                <VocabKindBadge g={v.g} />
                 <SpeakButton text={v.de} size="icon" className="h-6 w-6" />
               </div>
               <p className="truncate text-xs text-muted-foreground">{v.ar}</p>
+              {v.ex && (
+                <p className="font-de truncate text-[11px] text-muted-foreground" dir="ltr" lang="de">
+                  {v.ex}
+                </p>
+              )}
             </div>
           </div>
         ))}

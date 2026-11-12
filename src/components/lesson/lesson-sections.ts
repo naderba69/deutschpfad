@@ -26,7 +26,8 @@ export const LESSON_SECTIONS: LessonSectionDef[] = [
   { id: "lernkarten", label: "بطاقات المراجعة", short: "البطاقات", icon: Layers },
   /* ═══ مكوّنا الوساطة والتفاعل (CEFR 2020) — يُعرضان إن توفرا في الدرس ═══ */
   { id: "mediation", label: "الوساطة اللغوية (Mediation)", short: "الوساطة", icon: Languages },
-  { id: "interaction", label: "تفاعل حي (Interaktion)", short: "التفاعل", icon: MessageSquareText },
+  { id: "interaction", label: "تفاعل موجّه (Interaktion)", short: "التفاعل", icon: MessageSquareText },
+  { id: "oral-production", label: "إنتاج شفهي مفتوح", short: "الكلام", icon: Mic },
   /* ═══ التعمّق: قصة/حوار/بودكاست هذا الدرس — يُعرض إن رُبطت موارد به ═══ */
   { id: "vertiefung", label: "التعمّق بعد الدرس", short: "التعمّق", icon: Sparkles },
 ];

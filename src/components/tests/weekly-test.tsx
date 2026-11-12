@@ -6,6 +6,7 @@ import {CalendarDays, Sparkles} from "lucide-react";
 import {TestRunner} from "@/components/tests/test-runner";
 import {TEST_BANK} from "@/data/tests/question-banks";
 import {sample} from "@/lib/lesson/shuffle";
+import {shuffleTestQuestions} from "@/lib/tests/shuffle-questions";
 
 const SKILLS: ("grammatik" | "wortschatz" | "lesen" | "hören" | "schreiben")[] = [
   "grammatik",
@@ -32,13 +33,17 @@ export function WeeklyTest() {
   const levelPool: ("A1" | "A2" | "B1" | "B2")[] = ["A1", "A2", "B1", "B2"];
   const focusLevel = levelPool[seed % 4];
 
-  // أسئلة: 60% من مستوى التركيز + 40% من بقية المستويات (خلط)
-  const focusQs = TEST_BANK.filter((q) => q.level === focusLevel);
-  const otherQs = TEST_BANK.filter((q) => q.level !== focusLevel);
-  const questions = [
-    ...sample(focusQs, Math.min(8, focusQs.length)),
-    ...sample(otherQs, 6),
-  ];
+  /* أسئلة: 60% من مستوى التركيز + 40% من بقية المستويات، مع خلط الخيارات.
+     نحسب العينة مرة لكل مستوى تركيز؛ useMemo يمنع تغيّرها عند إعادة التصيير
+     أثناء الإجابة، بينما يؤدي تغيّر المستوى الأسبوعي إلى اختيار عينة جديدة. */
+  const questions = React.useMemo(() => {
+    const focusQs = TEST_BANK.filter((q) => q.level === focusLevel);
+    const otherQs = TEST_BANK.filter((q) => q.level !== focusLevel);
+    return shuffleTestQuestions([
+      ...sample(focusQs, Math.min(8, focusQs.length)),
+      ...sample(otherQs, 6),
+    ]);
+  }, [focusLevel]);
 
   return (
     <div className="space-y-4">

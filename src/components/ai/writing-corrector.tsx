@@ -62,6 +62,7 @@ export function AiWritingCorrector() {
             ))}
           </div>
           <textarea
+            aria-label="النص الألماني للتصحيح"
             value={text}
             onChange={(e) => setText(e.target.value)}
             aria-label="فقرتك الألمانية للتصحيح"

@@ -50,6 +50,21 @@ export interface SkillResult {
 }
 
 /** نتيجة اختبار كاملة */
+/** عنصر مراجعة الأدلة (الدفعة 122) — سؤالٌ بجواب المتعلّم وشاهده */
+export interface TestReviewItem {
+  id: string;
+  questionDe: string;
+  questionAr?: string;
+  options: string[];
+  correct: number;
+  /** ما اختاره المتعلّم — null: لم يُجب */
+  chosen: number | null;
+  explanation?: string;
+  /** أسئلة الكتابة: إجابة المتعلّم النصية والنموذج المقترح */
+  answerText?: string;
+  sampleAnswer?: string;
+}
+
 export interface TestResult {
   kind: TestKind;
   level: TestLevel;
@@ -62,6 +77,8 @@ export interface TestResult {
   estimatedLevel: TestLevel;
   /** اقتراحات تقوية (معرفات دروس) */
   reinforcement: { lessonId: string; reason: string }[];
+  /** مراجعة الأدلة — كل سؤالٍ بشاهده (كانت 171 شرحاً لا تُعرض) */
+  review: TestReviewItem[];
   passed: boolean;
 }
 

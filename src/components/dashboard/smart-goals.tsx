@@ -136,6 +136,7 @@ export function SmartGoalsCard() {
           <div className="flex items-center gap-2">
             <input
               type="text"
+              aria-label="هدف تعلم جديد"
               value={suggested}
               onChange={(e) => setSuggested(e.target.value)}
               onKeyDown={(e) => {
@@ -158,7 +159,7 @@ export function SmartGoalsCard() {
                 key={s}
                 type="button"
                 onClick={() => addGoal(s)}
-                className="rounded-full border bg-background px-2.5 py-1 text-[11px] text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                className="tap-target rounded-full border bg-background px-2.5 text-[11px] text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
               >
                 {s}
               </button>

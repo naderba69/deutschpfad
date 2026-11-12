@@ -6,9 +6,11 @@ import {
   getUnitKeyWords,
   getUnitLessonCount,
   TOTAL_LESSONS,
+  TOTAL_WORDS,
   UNITS,
   TOTAL_UNITS,
 } from "@/lib/constants/curriculum";
+import {STATS} from "@/lib/constants/site-content";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -102,6 +104,13 @@ describe("اتساق أرقام الدروس (المرحلة 4)", () => {
   });
 });
 
+describe("اتساق أوصاف المنهج", () => {
+  it("الوصف العربي لوحدة المطعم يطابق موضوع الحديث عن المذاق", () => {
+    const restaurant = UNITS.find((unit) => unit.id === "a2-03");
+    expect(restaurant?.descAr).toContain("التحدث عن مذاقه");
+  });
+});
+
 describe("اتساق الدروس الفعلية (المرحلة 4)", () => {
   it("ترتيب LESSON_META صحيح (درس Perfekt قبل المراجعة الختامية، والمستويات متتالية)", () => {
     const ids = LESSON_META.map((m) => m.id);
@@ -130,5 +139,25 @@ describe("عدد الوحدات المعلن (المرحلة 4)", () => {
     for (const unit of UNITS) {
       expect(getUnitLessonCount(unit.id), `${unit.id}: وحدة بلا دروس`).toBeGreaterThanOrEqual(1);
     }
+  });
+});
+
+/**
+ * شريط إحصائيات الصفحة الرئيسية (STATS) كان مكتوباً يدوياً فتعفّن:
+ * «44 وحدة» (والفعلية 47) و«240+ درس تفاعلي» (والفعلية 52). صار مشتقّاً،
+ * وهذا يمنع عودة الرقم المضلِّل من أول شاشة يراها الزائر.
+ */
+describe("اتساق إحصائيات الصفحة الرئيسية (STATS)", () => {
+  it("أرقام الشريط مطابقة للأرقام المشتقّة من المنهج", () => {
+    const byLabel = new Map(STATS.map((s) => [s.label, s.value]));
+    expect(byLabel.get("وحدة دراسية"), "عدد الوحدات في الرئيسية").toBe(String(TOTAL_UNITS));
+    expect(byLabel.get("درس تفاعلي"), "عدد الدروس في الرئيسية").toBe(String(TOTAL_LESSONS));
+    expect(byLabel.get("كلمة ومصطلح"), "عدد الكلمات في الرئيسية").toBe(`${TOTAL_WORDS}+`);
+  });
+
+  it("لا رقم مضلِّل في الشريط (لا 44 وحدة ولا 240+ درساً)", () => {
+    const values = STATS.map((s) => s.value);
+    expect(values).not.toContain("44");
+    expect(values).not.toContain("240+");
   });
 });

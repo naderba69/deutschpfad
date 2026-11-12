@@ -52,7 +52,7 @@ export function Hero() {
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-base">
-              <Link href="/tests/placement">حدّد مستواك أولاً</Link>
+              <Link href="/tests/placement" className="text-foreground">حدّد مستواك أولاً</Link>
             </Button>
             <Button asChild size="lg" variant="ghost" className="text-base">
               <Link href="/lesson/a1-01">جرّب درساً تجريبياً</Link>
@@ -71,10 +71,10 @@ export function Hero() {
         </div>
 
         {/* البطاقة المرئية */}
-        <div className="relative mx-auto w-full max-w-md animate-fade-up animation-delay-2000" aria-hidden="true">
+        <div className="relative mx-auto w-full max-w-md animate-fade-up animation-delay-2000">
           <div className="glass rounded-3xl border p-6 shadow-soft">
             <div className="mb-4 flex items-center justify-between">
-              <span className="text-sm font-bold">درس اليوم <span className="ms-1 text-[10px] font-normal text-muted-foreground">(مثال توضيحي)</span></span>
+              <span className="text-sm font-bold">درس اليوم <span className="ms-1 text-[11px] font-normal text-muted-foreground">(مثال توضيحي)</span></span>
               <Badge className="font-de font-bold">A1</Badge>
             </div>
 
@@ -97,7 +97,7 @@ export function Hero() {
                 <span>تقدم الدرس</span>
                 <span className="font-de font-semibold">65%</span>
               </div>
-              <Progress value={65} />
+              <Progress value={65} aria-label="التقدم في مثال الدرس التوضيحي: 65٪" />
             </div>
 
             <div className="mt-4">

@@ -7,6 +7,7 @@ import {SpeakButton} from "@/components/shared/speak-button";
 import {Badge} from "@/components/ui/badge";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {CULTURAL_FACTS, DAILY_MISTAKES, DID_YOU_KNOW} from "@/data/supplemental/content";
+import {VocabKindBadge} from "@/components/shared/vocab-kind";
 import {getA1VocabAll, type VocabEntry} from "@/data/vocabulary/a1";
 
 /** اختيار ثابت حسب يوم السنة */
@@ -61,9 +62,7 @@ export function DailyDashboard() {
           {word && (
             <div className="flex items-center justify-between gap-3">
               <div>
-                {word.g === "der" || word.g === "die" || word.g === "das" ? (
-                  <span className="font-de text-xs font-bold text-primary">{word.g} </span>
-                ) : null}
+                <VocabKindBadge g={word.g} className="me-1" />
                 <span className="font-de text-xl font-bold" dir="ltr" lang="de">
                   {word.de}
                 </span>

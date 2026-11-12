@@ -149,6 +149,7 @@ export const REDEMITTEL: Redemittel[] = [
   { id: "rm-struktur-6", category: "struktur", de: "Kurz gesagt / Mit anderen Worten ...", ar: "باختصار / بعبارة أخرى ...", usage: "إعادة صياغة للتوضيح.", level: "B2" },
 ];
 
+
 /** بحث نصي في العبارات */
 export function searchRedemittel(query: string): Redemittel[] {
   const q = query.trim().toLowerCase();

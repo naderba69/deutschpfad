@@ -288,7 +288,12 @@ export function DataManager() {
                     </p>
                   </div>
                   <div className="flex shrink-0 gap-1">
-                    <Button variant="ghost" size="sm" onClick={() => handleDownloadSnapshot(snap)}>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      aria-label={`تنزيل لقطة ${snap.kind === "auto" ? "تلقائية" : "يدوية"} ${snap.id}`}
+                      onClick={() => handleDownloadSnapshot(snap)}
+                    >
                       <Download className="h-3.5 w-3.5" aria-hidden="true" />
                       <span className="hidden sm:inline">تنزيل</span>
                     </Button>

@@ -3,7 +3,8 @@
  *  نموذج تدريبي — استماع A1 (بنية شبيهة بـ Start Deutsch 1)
  *  ⚠️ هذا نموذج تدريبي من إعداد المنصة، وليس نصاً رسمياً من Goethe-Institut.
  *  Hören: 4 أجزاء · ~20 دقيقة · 15 عنصراً · 100 نقطة (تُوزَّع على الأجزاء)
- *  النصوص تُقرأ صوتياً عبر المحرك (de-DE). الجزآن 1 و3 يُشغَّلان مرتين.
+ *  الصوت: 14 مقطعاً مسجّلاً في `public/audio/exam-a1/` (الجذر)
+ *  والنطق الآلي في المتصفح احتياط معلَن عند غياب أي ملف. الجزآن 1 و3 يُشغَّلان مرتين.
  * ═══════════════════════════════════════════════════════════
  */
 import type { ExamHoerenTeil } from "@/types/exam";
@@ -26,7 +27,7 @@ export const A1_HOEREN: ExamHoerenTeil[] = [
       "Ansage 4: Der Supermarkt in der Hauptstraße hat am Sonntag geöffnet.",
     statements: [
       { id: "h1-s1", de: "Der Bus fährt um zehn Uhr.", ar: "الحافلة تنطلق الساعة العاشرة.", isTrue: true, whyAr: "قيل: fährt um zehn Uhr." },
-      { id: "h1-s2", de: "Das Schwimmbad ist am Dienstag geschlossen.", ar: "المسبح مغلق يوم الثلاثاء.", isTrue: false, whyAr: "قيل إن المسبح مغلق يوم الاثنين، ويفتح يوم الثلاثاء." },
+      { id: "h1-s2", de: "Das Schwimmbad ist am Dienstag geschlossen.", ar: "المسبح مغلق يوم الثلاثاء.", isTrue: false, whyAr: "قيل: Das Schwimmbad ist am Montag geschlossen، ويفتح يوم الثلاثاء." },
       { id: "h1-s3", de: "Herr Müller bittet die Kunden zu warten.", ar: "السيد مولر يطلب من الزبائن الانتظار.", isTrue: true, whyAr: "قيل: bittet alle Kunden, an der Kasse zu warten." },
       { id: "h1-s4", de: "Der Supermarkt ist am Sonntag geöffnet.", ar: "السوبرماركت مفتوح يوم الأحد.", isTrue: true, whyAr: "قيل: hat am Sonntag geöffnet." },
     ],
@@ -53,13 +54,13 @@ export const A1_HOEREN: ExamHoerenTeil[] = [
         qAr: "إلى أين تذهب المرأة؟",
         options: ["Zum Bahnhof", "Zur Schule", "Ins Kino"],
         correct: 0,
-        whyAr: "سألت: أين المحطة؟",
+        whyAr: "سألت: Wo ist der Bahnhof، فالجواب Zum Bahnhof.",
       },
       {
         id: "h2-q2",
         q: "Was trinkt die Frau?",
         qAr: "ماذا تشرب المرأة؟",
-        options: ["Tee", "Kaffee mit Milch", "Wasser"],
+        options: ["Ein warmer Tee", "Kaffee mit Milch", "Ein Glas Wasser"],
         correct: 1,
         whyAr: "قالت: Einen Kaffee, bitte, mit Milch.",
       },

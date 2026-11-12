@@ -76,7 +76,7 @@ export function WeeklyReportCard() {
           <CalendarRange className="h-5 w-5 text-primary" aria-hidden="true" />
           تقريرك الأسبوعي
           {due && (
-            <span className="ms-auto rounded-full bg-gold px-2.5 py-0.5 text-xs font-bold text-gold-foreground animate-pulse">
+            <span className="ms-auto rounded-full bg-gold px-2.5 py-0.5 text-xs font-bold text-gold-foreground">
               تقرير جديد جاهز ✨
             </span>
           )}

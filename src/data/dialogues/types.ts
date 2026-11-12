@@ -2,7 +2,7 @@ import type { LevelCode } from "@/types/curriculum";
 
 /**
  * ═══════════════════════════════════════════════════════════
- *  مكتبة حوارات الحياة اليومية — 60 حواراً (15 × 4 مستويات)
+ *  مكتبة حوارات الحياة اليومية — 61 حواراً (16 في A1 و15 في كل مستوى آخر)
  *  بأسلوب يتفوق على كتاب Menschen:
  *  · محادثة كاملة (5-6 جولات) بنطق صوتي وسرعتين
  *  · ترجمة كل جولة · أسئلة فهم (سؤالان على الأقل) · مفردات الحوار مظللة
@@ -17,6 +17,12 @@ export interface DialogueTurn {
   role: "a" | "b";
   de: string;
   ar: string;
+  /**
+   * مسار صوت صريح لهذا الدور؛ null يعطّل MP3 المتعارض المعروف،
+   * ليستخدم الزر TTS المتصفح بدلاً من تشغيل صوت لا يطابق النص الحالي.
+   * undefined يعني استخدام المسار الاصطلاحي المعتاد للحوار.
+   */
+  audioSrc?: string | null;
 }
 
 export interface DialogueQuestion {
@@ -33,6 +39,8 @@ export interface DailyDialogue {
   emoji: string;
   /** الموقف بالعربية */
   situation: string;
+  /** إفصاح عن مصدر الصوت وحدود التحقق؛ قد يكون المصدر غير موثّق */
+  audioNoteAr?: string;
   turns: DialogueTurn[];
   questions: DialogueQuestion[];
   keyVocab: { de: string; ar: string }[];

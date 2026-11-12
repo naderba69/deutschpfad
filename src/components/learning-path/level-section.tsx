@@ -4,6 +4,7 @@ import * as React from "react";
 import {ChevronDown, Layers} from "lucide-react";
 
 import {UnitRow} from "@/components/learning-path/unit-row";
+import {LEVEL_BADGE_CLASSES} from "@/components/learning-path/level-colors";
 import {LangDe} from "@/components/shared/lang-de";
 import {Badge} from "@/components/ui/badge";
 import {Card, CardContent} from "@/components/ui/card";
@@ -66,8 +67,7 @@ export function LevelSection({
               <div className="flex flex-wrap items-center gap-2">
                 <Badge
                   variant="outline"
-                  className="font-de font-bold"
-                  style={{ color: level.accent, borderColor: `${level.accent}66` }}
+                  className={cn("font-de font-bold", LEVEL_BADGE_CLASSES[level.code])}
                 >
                   {level.code}
                 </Badge>

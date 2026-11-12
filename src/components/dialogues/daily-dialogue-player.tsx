@@ -9,6 +9,7 @@ import {SpeakButton} from "@/components/shared/speak-button";
 import {recordEvent} from "@/lib/analytics/events";
 import {playCorrect, playWrong} from "@/lib/audio/sfx";
 import {cn} from "@/lib/utils";
+import {dialogueTurnAudioSrc} from "@/data/dialogues/audio";
 import type { DailyDialogue } from "@/data/dialogues";
 
 /**
@@ -22,12 +23,8 @@ import type { DailyDialogue } from "@/data/dialogues";
  *  4) مفردات الحوار مظللة
  * ═══════════════════════════════════════════════════════════
  */
-/** المستويات التي سُجّلت حوارتها بصوت بشري (ملف لكل سطر: <id>-<رقم السطر>.mp3) */
-const NATIVE_AUDIO_LEVELS = new Set(["A1", "A2", "B1", "B2"]);
-
 function clipSrc(dialogue: DailyDialogue, step: number): string | undefined {
-  if (!NATIVE_AUDIO_LEVELS.has(dialogue.level)) return undefined;
-  return `/audio/dialogues-${dialogue.level.toLowerCase()}/${dialogue.id}-${step}.mp3`;
+  return dialogueTurnAudioSrc(dialogue, step);
 }
 
 export function DailyDialoguePlayer({ dialogue, onBack }: { dialogue: DailyDialogue; onBack: () => void }) {
@@ -174,6 +171,11 @@ export function DailyDialoguePlayer({ dialogue, onBack }: { dialogue: DailyDialo
           <p className="mt-2 text-xs text-muted-foreground">
             {total} جولة حوار · نطق صوتي · ترجمة · أسئلة فهم · وضع «دورك» 🎭
           </p>
+          {dialogue.audioNoteAr && (
+            <p data-testid="dialogue-audio-disclosure" className="mt-2 rounded-lg border border-primary/20 bg-primary/5 px-3 py-2 text-xs font-semibold text-primary">
+              🔊 {dialogue.audioNoteAr}
+            </p>
+          )}
           <Button onClick={next} className="btn-glow mt-5 gap-2">
             <Play className="h-4 w-4" aria-hidden="true" />
             ابدأ الحوار

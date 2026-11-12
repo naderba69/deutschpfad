@@ -79,7 +79,11 @@ export function MasteryCertificate({ level }: { level: LevelCode }) {
           </span>
         </div>
         <div className="mt-3 flex items-center gap-3">
-          <Progress value={stats.pct} className="h-2.5 flex-1" />
+          <Progress
+            value={stats.pct}
+            aria-label={`التقدم في مؤشرات الإتقان لمستوى ${level}: ${stats.pct}%`}
+            className="h-2.5 flex-1"
+          />
           <span className="shrink-0 text-[11px] font-bold text-muted-foreground">
             {masteredCount} أتقنتها ✓ · {partialCount} جزئياً
           </span>
@@ -122,30 +126,35 @@ export function MasteryCertificate({ level }: { level: LevelCode }) {
                       <div className="flex shrink-0 flex-wrap items-center justify-end gap-1">
                         <button
                           type="button"
+                          aria-pressed={r === 1}
                           onClick={() => rate(it.id, 1)}
                           className={cn(
-                            "rounded-full px-3 py-1.5 text-[11px] font-extrabold transition-colors",
-                            r === 1 ? "bg-success text-white" : "bg-muted text-muted-foreground hover:bg-success/20",
+                            "tap-target rounded-full px-3 py-1.5 text-[11px] font-extrabold transition-colors",
+                            r === 1 ? "bg-success text-success-foreground" : "bg-muted text-muted-foreground hover:bg-success/20",
                           )}
                         >
                           ✓ أستطيع
                         </button>
                         <button
                           type="button"
+                          aria-pressed={r === 0.5}
                           onClick={() => rate(it.id, 0.5)}
                           className={cn(
-                            "rounded-full px-3 py-1.5 text-[11px] font-extrabold transition-colors",
-                            r === 0.5 ? "bg-gold text-white" : "bg-muted text-muted-foreground hover:bg-gold/20",
+                            "tap-target rounded-full px-3 py-1.5 text-[11px] font-extrabold transition-colors",
+                            r === 0.5 ? "bg-gold text-gold-foreground" : "bg-muted text-muted-foreground hover:bg-gold/20",
                           )}
                         >
                           ~ جزئياً
                         </button>
                         <button
                           type="button"
+                          aria-pressed={r === 0}
                           onClick={() => rate(it.id, 0)}
                           className={cn(
-                            "rounded-full px-3 py-1.5 text-[11px] font-extrabold transition-colors",
-                            r === 0 ? "bg-destructive/15 text-destructive" : "bg-muted text-muted-foreground hover:bg-destructive/15",
+                            "tap-target rounded-full px-3 py-1.5 text-[11px] font-extrabold transition-colors",
+                            r === 0
+                              ? "border border-destructive/50 bg-muted text-foreground ring-1 ring-destructive"
+                              : "bg-muted text-muted-foreground hover:bg-destructive/15",
                           )}
                         >
                           ✗ بعد

@@ -10,6 +10,7 @@ import {Input} from "@/components/ui/input";
 import {GRAMMAR_CATEGORIES, GRAMMAR_REFERENCE, type GrammarCategory, type GrammarTopic} from "@/data/grammar/reference";
 import {errorTypeLabel} from "@/lib/lesson/error-types";
 import {cn} from "@/lib/utils";
+import {FilterChip} from "@/components/ui/filter-chip";
 
 const LEVELS = ["all", "A1", "A2", "B1", "B2"] as const;
 
@@ -50,17 +51,13 @@ export function GrammarReferenceClient() {
         </div>
         <div className="flex flex-wrap gap-1.5" role="group" aria-label="الفلترة بالمستوى">
           {LEVELS.map((l) => (
-            <button
+            <FilterChip
               key={l}
-              type="button"
               onClick={() => setLevel(l)}
-              className={cn(
-                "font-de rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
-                level === l ? "border-primary bg-primary text-primary-foreground" : "bg-background hover:border-primary/50",
-              )}
+              active={level === l}
             >
               {l === "all" ? "الكل" : l}
-            </button>
+            </FilterChip>
           ))}
         </div>
         <select

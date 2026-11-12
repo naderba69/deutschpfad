@@ -3,12 +3,20 @@ import { B1_HOEREN } from "./b1-hoeren";
 import { B1_LESEN } from "./b1-lesen";
 import { B1_SCHREIBEN } from "./b1-schreiben";
 import { B1_SPRECHEN } from "./b1-sprechen";
+import { B1_MODEL2_HOEREN } from "./b1-model2-hoeren";
 
 describe("نموذج B1 التدريبي — الاستماع", () => {
   it("مجموع النقاط 100 والأجزاء مرقّمة 1..4", () => {
     expect(B1_HOEREN.map((t) => t.teil)).toEqual([1, 2, 3, 4]);
     expect(B1_HOEREN.reduce((s, t) => s + t.points, 0)).toBe(100);
   });
+  it("يشرح außer Haus في مشتت الاستماع بمعنى خارج مقر العمل", () => {
+    const question = B1_MODEL2_HOEREN
+      .flatMap((part) => part.questions ?? [])
+      .find((item) => item.id === "m2c2-q3");
+    expect(question?.whyAr).toContain("الإدارة خارج مقر العمل");
+  });
+
   it("كل إجابة صحيحة ضمن الخيارات، ولكل عبارة سبب بالعربية", () => {
     for (const t of B1_HOEREN) {
       if (t.kind === "rf") {
@@ -39,6 +47,13 @@ describe("نموذج B1 التدريبي — القراءة", () => {
 });
 
 describe("نموذج B1 التدريبي — الكتابة", () => {
+  it("تصوغ طلب الشكوى إلى Hausverwaltung بترجمة عربية طبيعية", () => {
+    const task = B1_SCHREIBEN.find((item) => item.teil === 1)!;
+    expect(task.aufgabeDe).toContain("an die Hausverwaltung");
+    expect(task.aufgabeAr).toContain("ووضّح أثرها عليك");
+    expect(task.aufgabeAr).not.toContain("نتائجها عليك");
+  });
+
   it("مهمتان بحد أدنى 80 كلمة ومعايير مكتوبة بالعربية", () => {
     expect(B1_SCHREIBEN.map((t) => t.teil)).toEqual([1, 2]);
     for (const t of B1_SCHREIBEN) {

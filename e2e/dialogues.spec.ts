@@ -1,11 +1,11 @@
 /**
- * اختبارات E2E لمكتبة الحوارات اليومية — 60 حواراً (تفوق Menschen)
+ * اختبارات E2E لمكتبة الحوارات اليومية — 61 حواراً (تفوق Menschen)
  */
 import { test, expect } from "@playwright/test";
 
-test("مكتبة الحوارات: 60 حواراً موزعة على المستويات الأربعة", async ({ page }) => {
+test("مكتبة الحوارات: 61 حواراً موزعة على المستويات الأربعة", async ({ page }) => {
   await page.goto("/dialogues");
-  await expect(page.getByText("60 حواراً يومياً", { exact: false }).first()).toBeVisible({ timeout: 8000 });
+  await expect(page.getByText("61 حواراً يومياً", { exact: false }).first()).toBeVisible({ timeout: 8000 });
   // حوارات من كل مستوى
   await expect(page.getByText("التحية والتعارف").first()).toBeVisible();
   await expect(page.getByText("زيارة الطبيب").first()).toBeVisible();

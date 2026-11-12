@@ -1,7 +1,8 @@
-import { getA1VocabAll } from "@/data/vocabulary/a1";
-import { getA2VocabAll } from "@/data/vocabulary/a2";
-import { getB1VocabAll } from "@/data/vocabulary/b1";
-import { getB2VocabAll } from "@/data/vocabulary/b2";
+import { A1_VOCAB, getA1VocabAll } from "@/data/vocabulary/a1";
+import { A2_VOCAB, getA2VocabAll } from "@/data/vocabulary/a2";
+import { B1_VOCAB, getB1VocabAll } from "@/data/vocabulary/b1";
+import { B2_VOCAB, getB2VocabAll } from "@/data/vocabulary/b2";
+
 
 /** كل مفردات مستوى معين */
 export function getLevelVocab(level: "A1" | "A2" | "B1" | "B2") {

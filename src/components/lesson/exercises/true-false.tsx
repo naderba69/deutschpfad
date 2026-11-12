@@ -47,7 +47,12 @@ export function TrueFalseExerciseView({
   return (
     <div className="space-y-4">
       {exercise.instructionAr && (
-        <p className="text-sm font-semibold text-muted-foreground">{exercise.instructionAr}</p>
+        <>
+          <p className="text-sm font-semibold text-muted-foreground">{exercise.instructionAr}</p>
+          {exercise.instructionDe && (
+            <p className="font-de text-xs text-muted-foreground" dir="ltr" lang="de" data-testid="exercise-instruction-de">{exercise.instructionDe}</p>
+          )}
+        </>
       )}
 
       {/* النص */}

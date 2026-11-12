@@ -33,7 +33,7 @@ export const SATZBAU_PUZZLES: SatzbauPuzzle[] = [
   /* ── B1 — تركيبات معقدة ── */
   { id: "sb-b1-1", level: "B1", words: ["obwohl", "müde", "er", "arbeitete", "war", "weiter", "er"], correct: ["Obwohl", "er", "müde", "war,", "arbeitete", "er", "weiter."], ar: "رغم أنه كان متعباً واصل العمل.", tip: "obwohl: جملة ثانوية أولاً (فعل في النهاية) ثم الجملة الرئيسية (الفعل أولاً)." },
   { id: "sb-b1-2", level: "B1", words: ["Wenn", "hätte", "Zeit", "ich", "mehr", "würde", "reisen", "ich"], correct: ["Wenn", "ich", "mehr", "Zeit", "hätte,", "würde", "ich", "reisen."], ar: "لو كان عندي وقت أكثر لسافرت.", tip: "Konjunktiv II: hätte في نهاية الشرط، würde + مصدر في الجواب." },
-  { id: "sb-b1-3", level: "B1", words: ["wurde", "Das Haus", "vom", "Architekten", "entworfen"], correct: ["Das", "Haus", "wurde", "vom", "Architekten", "entworfen."], ar: "صُمم البيت من المهندس.", tip: "مجهول: werden في المركز الثاني + Partizip II في النهاية." },
+  { id: "sb-b1-3", level: "B1", words: ["wurde", "Das Haus", "vom", "Architekten", "entworfen"], correct: ["Das", "Haus", "wurde", "vom", "Architekten", "entworfen."], ar: "صمّم المهندس البيت.", tip: "مجهول: werden في المركز الثاني + Partizip II في النهاية." },
   { id: "sb-b1-4", level: "B1", words: ["die", "ich", "Firma", "arbeite", "in", "der", "sehr", "erfolgreich", "ist"], correct: ["Die", "Firma,", "in", "der", "ich", "arbeite,", "ist", "sehr", "erfolgreich."], ar: "الشركة التي أعمل فيها ناجحة جداً.", tip: "نسبية مع حرف جر: in der ich arbeite (الفعل في النهاية)." },
   /* ── B2 — بنى متقدمة ── */
   { id: "sb-b2-1", level: "B2", words: ["indem", "lernt", "man", "man", "übt"], correct: ["Man", "lernt,", "indem", "man", "übt."], ar: "يتعلم المرء بالممارسة.", tip: "indem = طريقة (كيف؟) — فعل ثانوي في النهاية." },

@@ -8,6 +8,20 @@ import {getGoalEvidenceStatus} from "@/lib/lesson/goal-evidence";
 import type {AnalyticsEvent} from "@/types/analytics";
 import type {Exercise} from "@/types/lesson";
 
+describe("وصف المقاس بصفة klein", () => {
+  it("يحفظ أثر zu بمعنى أن المقاس أصغر من المطلوب", () => {
+    const theoryText = JSON.stringify(lessonA108.theory);
+    expect(theoryText).toContain("هذا القميص أصغر من اللازم.");
+    expect(theoryText).not.toContain("هذا القميص صغير أكثر من اللازم.");
+    expect(theoryText).not.toContain("هذا القميص صغير جداً.");
+    const lessonText = JSON.stringify(lessonA108);
+    expect(lessonText).toContain("مقاسها أصغر من المطلوب، لا أكبر من اللازم");
+    expect(lessonText).toContain("للأسف مقاسها أصغر من اللازم");
+    expect(lessonText).not.toContain("أي صغيرة، لا كبيرة");
+    expect(lessonText).not.toContain("للأسف هي صغيرة جداً");
+  });
+});
+
 const practiceAnswers: Record<string, unknown> = {
   e1: "rot",
   e2: "trägst",
@@ -82,6 +96,9 @@ const listeningAnswers: Record<string, string> = {
   q1: "eine Jacke in Blau",
   q2: "39 Euro",
   q3: "ein Kleid",
+  q4: "Er sucht ein T-Shirt",
+  q5: "Die Farbe ist schwarz",
+  q6: "fünfzehn Euro",
 };
 
 const writingAnswers: Record<string, unknown> = {
@@ -149,7 +166,6 @@ function validTaskIds() {
   return new Set([
     ...lessonA108.practiceBank.flatMap((task) => [
       `practice:${lessonA108.id}:${task.id}`,
-      `flow-practice:${lessonA108.id}:${task.id}`,
     ]),
     ...lessonA108.miniTest.map((task) => `mini-test:${lessonA108.id}:${task.id}`),
     ...lessonA108.writing.map((task) => `writing:${lessonA108.id}:${task.id}`),
@@ -284,7 +300,7 @@ describe("A1-08 audited lesson content", () => {
 
     const z4 = lessonA108.lernziele.find((goal) => goal.id === "z4");
     expect(z4?.de).toContain("schriftlich");
-    expect(z4?.evidence?.taskIds).toEqual(["practice:a1-08:e7", "flow-practice:a1-08:e7"]);
+    expect(z4?.evidence?.taskIds).toEqual(["practice:a1-08:e7"]);
   });
 
   it("keeps Dativ corrections distinct from context-dependent wording and avoids a false first-exposure claim", () => {
@@ -324,7 +340,7 @@ describe("A1-08 audited lesson content", () => {
 
   it("checks every lesson text, dialogue, instruction, card, and non-test task field", () => {
     const tasks = allTasks();
-    expect(tasks).toHaveLength(43);
+    expect(tasks).toHaveLength(46);
     for (const task of tasks) {
       expect(task.instructionAr.trim(), `${task.id} instruction`).toBeTruthy();
       expect(task.explanation.trim(), `${task.id} explanation`).toBeTruthy();
@@ -402,8 +418,8 @@ describe("A1-08 audited lesson content", () => {
       expect(reading.paragraphs[paragraph - 1], `${question.id} source text`).toBeTruthy();
     }
 
-    expect(lessonA108.listening.items.map((item) => item.id)).toEqual(["l1", "l2"]);
-    expect(lessonA108.listening.items.map((item) => item.lines.length)).toEqual([7, 5]);
+    expect(lessonA108.listening.items.map((item) => item.id)).toEqual(["l1", "l2", "l3"]);
+    expect(lessonA108.listening.items.map((item) => item.lines.length)).toEqual([7, 5, 6]);
     const listeningText = lessonA108.listening.items.flatMap((item) => item.lines);
     for (const line of listeningText) {
       expect(line.speaker.trim()).toBeTruthy();

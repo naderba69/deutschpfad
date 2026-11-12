@@ -40,6 +40,9 @@ export function TransformationExerciseView({
   return (
     <div className="space-y-4">
       <p className="text-sm font-medium text-muted-foreground">{exercise.instructionAr}</p>
+      {exercise.instructionDe && (
+        <p className="font-de text-xs text-muted-foreground" dir="ltr" lang="de" data-testid="exercise-instruction-de">{exercise.instructionDe}</p>
+      )}
 
       <div className="rounded-xl border bg-muted/30 p-4">
         <p className="font-de text-lg font-semibold" dir="ltr" lang="de">

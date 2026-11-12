@@ -5,6 +5,7 @@ import {CalendarDays} from "lucide-react";
 
 import {SpeakButton} from "@/components/shared/speak-button";
 import {getA1VocabAll, type VocabEntry} from "@/data/vocabulary/a1";
+import {VocabKindBadge} from "@/components/shared/vocab-kind";
 import {cn} from "@/lib/utils";
 
 /** اختيار كلمة ثابتة لليوم (حسب رقم اليوم في السنة — لا تتغير خلال اليوم) */
@@ -44,7 +45,13 @@ export function DailyWord() {
             {word.de}
           </span>
           <span className="ms-2 text-muted-foreground">= {word.ar}</span>
+          {!article && <VocabKindBadge g={word.g} className="ms-1.5" />}
         </p>
+        {word.ex && (
+          <p className="font-de mt-0.5 truncate text-xs text-muted-foreground" dir="ltr" lang="de">
+            {word.ex}
+          </p>
+        )}
       </div>
       <SpeakButton text={word.de} variant="outline" size="sm" className="shrink-0" />
     </div>

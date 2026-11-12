@@ -60,7 +60,7 @@ export function WindingPath({
         viewBox={`0 0 ${width} ${height}`}
         className="mx-auto h-auto max-w-full"
         style={{ minWidth: lessons.length > 6 ? 380 : 320 }}
-        role="img"
+        role="group"
         aria-label={`خريطة مسار المستوى ${level}`}
       >
         {/* المسار المتعرج */}

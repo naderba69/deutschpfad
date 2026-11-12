@@ -19,19 +19,19 @@
     --popover: 0 0% 100%;
     --popover-foreground: 224 46% 12%;
 
-    --primary: 215 100% 47%;
+    --primary: 215 100% 41%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 214 32% 94%;
     --secondary-foreground: 224 46% 12%;
 
     --muted: 214 32% 94%;
-    --muted-foreground: 217 17% 45%;
+    --muted-foreground: 217 17% 39%;
 
     --accent: 214 32% 92%;
     --accent-foreground: 224 46% 12%;
 
-    --destructive: 0 72% 51%;
+    --destructive: 0 75% 45%;
     --destructive-foreground: 0 0% 100%;
 
     /* ألوان مميزة للنظام */
@@ -41,11 +41,11 @@
     --gold: 45 100% 51%;
     --gold-foreground: 224 46% 12%;
     /* ذهبي داكن للاستخدام كنص/أيقونة — يحقق تباين AA (≥4.5:1) على الخلفيات الفاتحة */
-    --gold-strong: 41 95% 30%;
+    --gold-strong: 41 95% 28%;
 
     --border: 214 24% 88%;
     --input: 214 24% 86%;
-    --ring: 215 100% 47%;
+    --ring: 215 100% 41%;
 
     --radius: 0.75rem;
   }
@@ -72,7 +72,7 @@
     --accent: 226 30% 19%;
     --accent-foreground: 214 30% 96%;
 
-    --destructive: 0 72% 58%;
+    --destructive: 0 72% 62%;
     --destructive-foreground: 226 44% 8%;
 
     --success: 161 68% 52%;
@@ -197,6 +197,17 @@
   /* مؤشر شريط التقدم — يعمل في الاتجاهين RTL/LTR (عرض لا إزاحة) */
   .progress-indicator {
     left: 0;
+  }
+
+  /* ═══ هدف اللمس (المرحلة 5) ═══
+     أزرار وروابط الرقائق (فلاتر المستوى، روابط التذييل، أزرار التقييم) كانت
+     أقصر من العتبة المريحة على الجوال (16–30px). هذه الأداة تضمن ارتفاعاً
+     لا يقلّ عن 36px مع توسيط أفقي/رأسي — وتُستعمل بدل تكرار py-* في كل ملف. */
+  .tap-target {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.25rem;
   }
   [dir="rtl"] .progress-indicator {
     left: auto;

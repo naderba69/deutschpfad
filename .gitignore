@@ -56,3 +56,14 @@ next-env.d.ts
 test-results/
 playwright-report/
 .audit-tools/
+
+# مخرجات أدوات المتصفح (scripts/README.md)
+audit-report/
+screenshots/
+
+# مُخرَجات بايثون (أدوات scripts/*.py)
+__pycache__/
+*.pyc
+
+# Locally retained audio comparison originals
+/tmp/audio-review-b2-09/

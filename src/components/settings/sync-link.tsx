@@ -108,7 +108,7 @@ export function SyncLink() {
           <Link2 className="h-4.5 w-4.5" aria-hidden="true" />
         </span>
         <div className="min-w-0 flex-1">
-          <h4 className="text-sm font-extrabold">🔗 المزامنة عبر الرابط (بلا خادم)</h4>
+          <h2 className="text-sm font-extrabold">🔗 المزامنة عبر الرابط (بلا خادم)</h2>
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
             ولّد رابطاً يحمل تقدمك كاملاً — افتحه على هاتفك الآخر أو حاسوبك لاستعادة كل شيء.
             و«تحدي الصديق» يشارك نتيجتك ليتفوق عليك أصدقاؤك (دوري الأصدقاء المجاني).
@@ -160,6 +160,7 @@ export function SyncLink() {
 function AutoTextarea({value, onChange, placeholder}: { value: string; onChange: (v: string) => void; placeholder: string }) {
   return (
     <textarea
+      aria-label="رابط أو نص المزامنة"
       value={value}
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}

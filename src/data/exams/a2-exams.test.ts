@@ -8,6 +8,14 @@ describe("نموذج A2 التدريبي — الاستماع", () => {
     expect(A2_HOEREN.map((t) => t.teil)).toEqual([1, 2, 3, 4]);
     expect(A2_HOEREN.reduce((s, t) => s + t.points, 0)).toBe(100);
   });
+  it("يحفظ دلالة neben dem Ausgang Süd بوصفها مجاورة مكانية", () => {
+    const part = A2_HOEREN.find((item) => item.teil === 1)!;
+    const statement = part.statements?.find((item) => item.id === "a2h1-s3");
+    expect(part.audioText).toContain("neben dem Ausgang Süd");
+    expect(statement?.ar).toBe("مكتب المفقودات بجوار مخرج الجنوب.");
+    expect(statement?.whyAr).toContain("neben dem Ausgang Süd");
+  });
+
   it("كل إجابة صحيحة ضمن الخيارات، ولكل عبارة سبب بالعربية", () => {
     for (const t of A2_HOEREN) {
       if (t.kind === "rf") {
@@ -23,6 +31,24 @@ describe("نموذج A2 التدريبي — الاستماع", () => {
 });
 
 describe("نموذج A2 التدريبي — القراءة", () => {
+  it("ينسب المصعد إلى المبنى لا إلى الشقة في إعلان السكن", () => {
+    const part = A2_LESEN.find((item) => item.teil === 2)!;
+    const statement = part.statements?.find((item) => item.id === "a2l2-s1");
+    expect(statement?.de).toBe("Das Haus hat einen Aufzug.");
+    expect(statement?.ar).toBe("في المبنى مصعد.");
+    expect(statement?.isTrue).toBe(true);
+  });
+
+  it("يميّز warm في إعلان السكن عن الإيجار من دون التكاليف", () => {
+    const part = A2_LESEN.find((item) => item.teil === 2)!;
+    const statement = part.statements?.find((item) => item.id === "a2l2-s2");
+    expect(part.text).toContain("780 Euro warm");
+    expect(statement?.isTrue).toBe(false);
+    expect(statement?.whyAr).toContain("التكاليف المشمولة عادةً");
+    expect(statement?.whyAr).toContain("تفاصيل العرض");
+    expect(statement?.whyAr).not.toContain("شامل التكاليف.");
+  });
+
   it("مجموع النقاط 100 والأجزاء مرقّمة 1..4", () => {
     expect(A2_LESEN.map((t) => t.teil)).toEqual([1, 2, 3, 4]);
     expect(A2_LESEN.reduce((s, t) => s + t.points, 0)).toBe(100);

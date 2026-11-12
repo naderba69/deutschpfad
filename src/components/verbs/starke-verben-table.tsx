@@ -93,6 +93,9 @@ export function StarkeVerbenTable({ compact }: { compact?: boolean }) {
                       {v.level}
                     </Badge>
                   </span>
+                  {v.note && (
+                    <p className="mt-1 text-[11px] font-semibold text-destructive">⚠ {v.note}</p>
+                  )}
                 </td>
                 <td className="font-de px-3 py-2" dir="ltr" lang="de">{v.präsens3}</td>
                 <td className="font-de px-3 py-2 font-semibold" dir="ltr" lang="de">{v.präteritum}</td>

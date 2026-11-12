@@ -131,6 +131,7 @@ export function FocusMode() {
           <div className="mt-2 flex items-center gap-2">
             <input
               type="text"
+              aria-label="مهمة جديدة لجلسة التركيز"
               value={newTask}
               onChange={(e) => setNewTask(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && addTask()}

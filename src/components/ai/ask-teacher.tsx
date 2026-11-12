@@ -46,6 +46,7 @@ export function AiAskTeacher() {
       {(run) => (
         <div className="space-y-3">
           <textarea
+            aria-label="سؤالك للمعلّم"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
             aria-label="سؤالك للمعلم الذكي"
@@ -122,6 +123,7 @@ export function AiCefrAssessment() {
       {(run) => (
         <div className="space-y-3">
           <textarea
+            aria-label="النص الألماني للشرح"
             value={text}
             onChange={(e) => setText(e.target.value)}
             aria-label="فقرتك بالألمانية"

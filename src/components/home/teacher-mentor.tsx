@@ -112,7 +112,7 @@ export function TeacherMentor({ profile }: { profile: LearnerProfile }) {
               title="التقييم — اختبر ما تعلمته"
               desc={`اختبار مستوى ${level} — وأقيس تقدمك بالأرقام`}
               href={`/tests/level/${level.toLowerCase()}`}
-              accent="bg-[#dc2626]/10 text-[#dc2626]"
+              accent="bg-[#b91c1c]/10 text-[#b91c1c]"
             />
           </ol>
         </div>

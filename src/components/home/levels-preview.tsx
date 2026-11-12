@@ -11,6 +11,8 @@ import {Progress} from "@/components/ui/progress";
 import {useProgress} from "@/components/providers/progress-provider";
 import {LEVELS} from "@/lib/constants/curriculum";
 import {getLevelCompletion} from "@/lib/progress-selectors";
+import {LEVEL_BADGE_CLASSES} from "@/components/learning-path/level-colors";
+import {cn} from "@/lib/utils";
 import type { LevelCode } from "@/types/curriculum";
 
 const LEVEL_ARABIC_TITLE: Record<LevelCode, string> = {
@@ -56,8 +58,7 @@ export function LevelsPreview() {
                     </span>
                     <Badge
                       variant="outline"
-                      className="font-de font-bold"
-                      style={{ color: level.accent, borderColor: `${level.accent}66` }}
+                      className={cn("font-de font-bold", LEVEL_BADGE_CLASSES[level.code])}
                     >
                       {level.code}
                     </Badge>

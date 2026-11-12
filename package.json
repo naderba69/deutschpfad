@@ -18,7 +18,12 @@
     "audit:lesson-inventory": "node scripts/lessons-inventory.mjs",
     "audit:inventory": "node scripts/project-inventory.mjs",
     "audit:audio": "node scripts/verify-audio-assets.mjs",
-    "audit:pages": "node scripts/audit-pages.mjs"
+    "audit:pages": "node scripts/audit-pages.mjs",
+    "audit:exercises": "node scripts/exercise-integrity-audit.mjs",
+    "audit:dom": "node scripts/dom-audit.mjs",
+    "shots": "node scripts/screenshots.mjs",
+    "verify": "npm run typecheck && npm run lint && npx vitest run && npm run build",
+    "audit:first-option": "node scripts/probe-first-option.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",
@@ -60,7 +65,17 @@
       "workbox-webpack-plugin": "7.4.1"
     },
     "glob": "14.0.3",
-    "minimatch": "11.0.4"
+    "minimatch": "11.0.4",
+    "@rollup/plugin-terser": {
+      "serialize-javascript": "^7.1.4"
+    },
+    "next": {
+      "postcss": "8.5.26"
+    },
+    "tailwindcss": {
+      "postcss-nested": "7.0.2"
+    },
+    "postcss-selector-parser": "7.1.7"
   },
   "engines": {
     "node": ">=20.9.0"

@@ -9,7 +9,7 @@ import {getLearnerProfile} from "@/lib/storage/learner";
 import {DAILY_DIALOGUES, DIALOGUE_LEVEL_COUNTS, DIALOGUE_LEVEL_ORDER, getDialoguesByLevel, type DailyDialogue} from "@/data/dialogues";
 import type { LevelCode } from "@/types/curriculum";
 
-/** مكتبة الحوارات اليومية المتدرجة — 60 حواراً */
+/** مكتبة الحوارات اليومية المتدرجة — 61 حواراً */
 export function DailyLibrary() {
   const [current, setCurrent] = React.useState<DailyDialogue | null>(null);
   const [suggested, setSuggested] = React.useState<LevelCode | null>(null);

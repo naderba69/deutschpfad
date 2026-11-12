@@ -64,7 +64,7 @@ export function GrammarMindMap() {
                   )}
                 >
                   {GRAMMAR_CATEGORIES[cat]}
-                  <span className="font-de ms-1 opacity-70">({count})</span>
+                  <span className="font-de ms-1">({count})</span>
                 </button>
                 {open === cat && (
                   <div className="mt-1 flex max-w-64 flex-col gap-1 rounded-lg border bg-background p-2 text-[11px]">

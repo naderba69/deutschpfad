@@ -3,6 +3,8 @@
  */
 import { describe, expect, it } from "vitest";
 
+import { B2_TOP500 } from "@/data/vocabulary/b2-top500";
+
 import {
   B2_EXAM_TOPICS,
   B2_TOPIC_ALL,
@@ -43,6 +45,16 @@ describe("B2_TOPIC_VOCAB — جودة الكلمات", () => {
       expect(w.ar.length).toBeGreaterThan(0);
       expect(w.de.length).toBeGreaterThan(0);
     }
+  });
+
+  it("يميز معنى Arbeitsstelle بحسب السياق ويصوغ Karrierechance عربياً", () => {
+    const topicArbeitsstelle = B2_TOPIC_VOCAB.arbeit.find(({ de }) => de === "die Arbeitsstelle")?.ar;
+    const top500Arbeitsstelle = B2_TOP500.find(({ de }) => de === "die Arbeitsstelle")?.ar;
+    const careerChance = B2_TOPIC_VOCAB.arbeit.find(({ de }) => de === "die Karrierechance")?.ar;
+
+    expect(topicArbeitsstelle).toBe("وظيفة/مكان العمل بحسب السياق");
+    expect(top500Arbeitsstelle).toBe(topicArbeitsstelle);
+    expect(careerChance).toBe("فرصة للتقدم الوظيفي");
   });
 
   it("لا كلمات مكررة (بين المواضيع)", () => {
@@ -86,5 +98,13 @@ describe("فحوص حجم قوائم مفردات المنصة حسب النطا
       const de = list.map((w) => w.de);
       expect(new Set(de).size).toBe(de.length);
     }
+  });
+});
+
+describe("مقابل العمر في مفردات B2", () => {
+  it("يصرّح بأن ältere Generation تتعلق بالسن لا بحجم الجيل", async () => {
+    const { B2_EXTRA2_PART3 } = await import("@/data/vocabulary/b2-extra2/part3");
+    const entry = B2_EXTRA2_PART3.find((item) => item.de === "die ältere Generation");
+    expect(entry?.ar).toBe("الجيل الأكبر سناً");
   });
 });
