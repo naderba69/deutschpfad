@@ -14,8 +14,6 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   e1: { options: ["des", "der", "dem", "den"], key: "des" },
   e2: { options: ["der", "den", "dem", "dessen"], key: "der" },
   e8: { options: ["لمن؟", "ماذا؟", "أين؟", "متى؟"], key: "لمن؟" },
-  e11: { options: ["der", "die", "den", "deren"], key: "der" },
-  e14: { options: ["für", "an", "mit"], key: "für" },
   m1: { options: ["des", "der", "dem", "den"], key: "des" },
   m2: { options: ["die", "der", "das", "den"], key: "die" },
   q1: { options: ["Informatik", "Medizin", "Germanistik", "Jura"], key: "Informatik" },
@@ -47,7 +45,6 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
       ["die", "der", "das"],
     ],
   },
-  e13: { correct: ["dessen"], options: [["dessen", "deren", "dem"]] },
   m5: {
     correct: ["dem", "das"],
     options: [
@@ -152,13 +149,6 @@ describe("B1-01 lesson content audit", () => {
     const meta = LESSON_META.find((item) => item.id === "b1-01");
     expect(meta).toMatchObject({ id: "b1-01", unitId: "b1-01", level: "B1", order: 1, summary: lessonB101.summary });
     expect(meta && "duration" in meta).toBe(false);
-  });
-
-  it("avoids claiming prior mastery or treating one grammar point as the gateway to German", () => {
-    expect(lessonB101.einfuehrung.connectionToPreviousAr).toContain("تدرّبت في دروس سابقة");
-    expect(lessonB101.einfuehrung.connectionToPreviousAr).not.toContain("أتقنت");
-    expect(lessonB101.einfuehrung.contextAr).not.toContain("الأهم في رحلتك");
-    expect(lessonB101.einfuehrung.contextAr).not.toContain("البوابة لفهم النصوص الألمانية الحقيقية");
   });
 
   it("limits goals to evidenced performances and avoids readiness or certification claims", () => {

@@ -16,7 +16,7 @@ describe("evaluateWriting — نص ممتاز", () => {
 
   it("يحدد حكماً من الخيارات الأربعة", async () => {
     const r = await evaluateWriting(good, "Forumsbeitrag");
-    expect(["مؤشر شكلي مرتفع", "مؤشر شكلي متوسط", "مؤشر شكلي منخفض"]).toContain(r.verdict);
+    expect(["Sehr gut", "Gut", "Bestanden", "Nicht bestanden"]).toContain(r.verdict);
   });
 
   it("يكتشف الروابط النصية", async () => {

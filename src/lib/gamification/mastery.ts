@@ -18,6 +18,16 @@ export function getLessonStars(lessonId: string): number {
   }
 }
 
+export function setLessonStars(lessonId: string, stars: number): void {
+  if (typeof window === "undefined") return;
+  try {
+    const clamped = Math.min(3, Math.max(0, Math.floor(stars)));
+    localStorage.setItem(PREFIX + lessonId, String(clamped));
+  } catch {
+    /* التخزين غير متاح — تُتجاهل الكتابة بصمت */
+  }
+}
+
 
 /** نجوم كل مستوى (للعرض في مراكز المستويات) */
 function getLevelStars(levelLessonIds: string[]): { total: number; earned: number } {

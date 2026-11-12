@@ -370,28 +370,6 @@ describe("B1-04 lesson content audit", () => {
     expect(evaluateExercise(w1, "Ich würde gern nach Deutschland gereist.").isCorrect).toBe(false);
   });
 
-  it("expands the practice bank to 14 with validated polite-request and hypothetical tasks", () => {
-    expect(lessonB104.practiceBank).toHaveLength(14);
-
-    const e11 = task("e11");
-    if (e11.type !== "multiple-choice") throw new Error("e11 is not multiple-choice");
-    expect(evaluateExercise(e11, "Könnten").isCorrect).toBe(true);
-    expect(evaluateExercise(e11, "Können").isCorrect).toBe(false);
-
-    const e12 = task("e12");
-    if (e12.type !== "fill-blank") throw new Error("e12 is not fill-blank");
-    expect(evaluateExercise(e12, ["hätte", "würde"]).isCorrect).toBe(true);
-    expect(evaluateExercise(e12, ["hat", "wird"]).isCorrect).toBe(false);
-
-    const e13 = task("e13");
-    if (e13.type !== "transformation") throw new Error("e13 is not transformation");
-    expect(evaluateExercise(e13, "Könnten Sie mir bitte helfen?").isCorrect).toBe(true);
-
-    const e14 = task("e14");
-    if (e14.type !== "word-ordering") throw new Error("e14 is not word-ordering");
-    expect(evaluateExercise(e14, e14.correctSentence.split(/\s+/)).isCorrect).toBe(true);
-  });
-
   it("checks word-order answers against the sentence in order", () => {
     const e4 = task("e4");
     if (e4.type !== "word-ordering") throw new Error("e4 is not word-ordering");

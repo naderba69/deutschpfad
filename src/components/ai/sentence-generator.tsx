@@ -51,7 +51,6 @@ export function AiSentenceGenerator() {
               aria-label="الكلمة الألمانية لتوليد الجمل"
               value={word}
               onChange={(e) => setWord(e.target.value)}
-              aria-label="الكلمة الألمانية"
               placeholder="أدخل كلمة ألمانية… (مثال: die Freundschaft)"
               dir="ltr"
               lang="de"

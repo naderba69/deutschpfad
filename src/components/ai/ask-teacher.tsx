@@ -49,7 +49,6 @@ export function AiAskTeacher() {
             aria-label="سؤالك للمعلّم"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
-            aria-label="سؤالك للمعلم الذكي"
             placeholder="اكتب سؤالك… (مثال: ما الفرق بين weil وdenn؟ متى أستخدم Konjunktiv II؟)"
             rows={2}
             className="w-full rounded-xl border border-input bg-background p-3 text-sm outline-none placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-ring"
@@ -126,7 +125,6 @@ export function AiCefrAssessment() {
             aria-label="النص الألماني للشرح"
             value={text}
             onChange={(e) => setText(e.target.value)}
-            aria-label="فقرتك بالألمانية"
             placeholder="اكتب فقرة حرة بالألمانية (5 جمل على الأقل)…"
             dir="ltr"
             lang="de"

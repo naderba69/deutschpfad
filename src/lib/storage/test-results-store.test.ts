@@ -18,7 +18,7 @@ vi.mock("@/lib/storage/db", () => ({
 import {getLastTestResultResult, getRecentTestResultsResult, saveTestResult} from "@/lib/storage/test-results-store";
 import type {TestResult} from "@/types/test";
 
-const result: TestResult = {kind: "level", level: "A1", startedAt: 1, finishedAt: 2, secondsUsed: 1, overallPct: 60, passed: false, estimatedLevel: "A1", skillResults: [], reinforcement: []};
+const result: TestResult = {kind: "level", level: "A1", startedAt: 1, finishedAt: 2, secondsUsed: 1, overallPct: 60, passed: false, estimatedLevel: "A1", skillResults: [], reinforcement: [], review: []};
 
 describe("test result storage reads", () => {
   beforeEach(() => {

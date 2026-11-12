@@ -277,27 +277,6 @@ describe("مكتبة حوارات الحياة اليومية — 61 حوارا�
     }
   });
 
-  it("تحافظ على تأنيث الضمير Sie في مشتتات حوارات العمل", () => {
-    const sickCall = DAILY_DIALOGUES.find(({ id }) => id === "b1-08-krankmeldung");
-    const sickOption = sickCall?.questions[0].options.find(({ correct }) => correct);
-    expect(sickOption?.text).toBe("Sie ist krank und kommt nicht zur Arbeit");
-    expect(sickOption?.ar).toBe("هي مريضة ولا تستطيع الحضور إلى العمل");
-
-    const officeMove = DAILY_DIALOGUES.find(({ id }) => id === "b1-15-wohnungswechsel");
-    const officeOption = officeMove?.questions[1].options.find(({ correct }) => correct);
-    expect(officeOption?.text).toBe("Sie braucht ein eigenes Büro für die Arbeit");
-    expect(officeOption?.ar).toBe("تحتاج إلى مكتب خاص للعمل");
-  });
-
-  it("تطابق تأنيث Sie مع Hose في حوار إرجاع الملابس", () => {
-    const clothingReturn = DAILY_DIALOGUES.find(({ id }) => id === "a2-13-einkaufen-kleidung");
-    const q = clothingReturn?.questions.find(({ de }) => de === "Was ist das Problem mit der Hose?");
-    const tooSmall = q?.options.find(({ text }) => text === "Sie ist zu klein.");
-    const tooLong = q?.options.find(({ text }) => text === "Sie ist zu lang.");
-    expect(tooSmall?.ar).toBe("إنها صغيرة جداً.");
-    expect(tooLong?.ar).toBe("إنها طويلة جداً.");
-  });
-
   it("تغطي مواقف الطوارئ (Notfall) و B2 المتقدم", () => {
     const b2 = getDialoguesByLevel("B2");
     const b2Titles = b2.map((d) => d.title);

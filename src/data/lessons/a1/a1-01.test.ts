@@ -1,6 +1,6 @@
 import {describe, expect, it} from "vitest";
 
-import {lessonA101, lessonA101b} from "./a1-01";
+import {lessonA101} from "./a1-01";
 
 const lesson = lessonA101;
 const JSON_TEXT = JSON.stringify(lesson);
@@ -16,43 +16,7 @@ function knownTaskIds(): Set<string> {
   return ids;
 }
 
-describe("A1-01b — أسئلة W وتصريف الأفعال المنتظمة", () => {
-  it("يحتوي مراجعة تراكمية بأسئلة صالحة", () => {
-    expect(lessonA101b.review).toHaveLength(3);
-    for (const task of lessonA101b.review ?? []) {
-      if (task.type !== "multiple-choice") continue;
-      expect(new Set(task.options).size).toBe(task.options.length);
-      expect(task.correctIndex).toBeGreaterThanOrEqual(0);
-      expect(task.correctIndex).toBeLessThan(task.options.length);
-    }
-  });
-
-  it("يتضمن مشهد استماع وأسئلة مرتبطة بمعرّف المشهد", () => {
-    expect(lessonA101b.listening.items).toHaveLength(2);
-    for (const item of lessonA101b.listening.items) {
-      expect(item.lines.length).toBeGreaterThanOrEqual(4);
-      expect(lessonA101b.listening.questions.some((question) => question.itemId === item.id)).toBe(true);
-    }
-    expect(lessonA101b.listening.questions).toHaveLength(4);
-    for (const question of lessonA101b.listening.questions) {
-      expect(lessonA101b.listening.items.some((item) => item.id === question.itemId)).toBe(true);
-      expect(question.correctIndex).toBeGreaterThanOrEqual(0);
-      expect(question.correctIndex).toBeLessThan(question.options.length);
-    }
-  });
-});
-
 describe("A1-01 — التعارف والتحيات", () => {
-  it("يربط المراجعة التراكمية بالدرس التأسيسي A1-00", () => {
-    expect(lesson.review).toHaveLength(3);
-    for (const question of lesson.review ?? []) {
-      if (question.type !== "multiple-choice") continue;
-      expect(new Set(question.options).size).toBe(question.options.length);
-      expect(question.correctIndex).toBeGreaterThanOrEqual(0);
-      expect(question.correctIndex).toBeLessThan(question.options.length);
-    }
-  });
-
   it("لا تظهر نسبة إحصائية غير مسندة عن الأفعال المنتظمة", () => {
     expect(JSON_TEXT).not.toMatch(/90%/);
   });

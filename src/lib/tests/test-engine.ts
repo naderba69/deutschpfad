@@ -1,4 +1,5 @@
-import type { LevelTestConfig, SkillResult, TestLevel, TestQuestion, TestResult, TestSkill } from "@/types/test";
+import { evaluateWriting } from "@/lib/writing/goethe-local";
+import type { LevelTestConfig, SkillResult, TestLevel, TestQuestion, TestResult, TestReviewItem, TestSkill } from "@/types/test";
 
 /**
  * محرك الاختبارات — التصحيح والتقييم والمستوى المقدر والاقتراحات التكيفية
@@ -9,10 +10,28 @@ export function isMcqCorrect(q: TestQuestion, answer: number | null): boolean {
   return answer !== null && q.correctIndex !== undefined && answer === q.correctIndex;
 }
 
-/**
- * الكتابة الحرة لا تُحوّل إلى درجة آلية: لا يثبت طول النص أو تشابهه بالنموذج صحته.
- * تُستبعد من النتيجة الرقمية حتى يتوفر تصحيح موثوق أو تقييم بشري.
- */
+/** تقييم إجابة كتابة (أفضل جهد: تطابق مع العينة أو كلمات مفتاحية) */
+export async function scoreWriting(q: TestQuestion, answer: string): Promise<{ correct: boolean; pct: number }> {
+  const norm = (s: string) => s.toLowerCase().trim().replace(/[.,!?;:]/g, "");
+  const clean = norm(answer);
+  if (!clean) return { correct: false, pct: 0 };
+  if (!q.sampleAnswer) return { correct: clean.length > 3, pct: clean.length > 3 ? 100 : 0 };
+  const sample = norm(q.sampleAnswer);
+  if (clean === sample) return { correct: true, pct: 100 };
+
+  // 1) تشابه الكلمات مع النموذج (هل غطيت الأفكار؟)
+  const sWords = sample.split(" ").filter(Boolean);
+  const aWords = clean.split(" ").filter(Boolean);
+  const matched = sWords.filter((w) => aWords.includes(w)).length;
+  const similarity = sWords.length === 0 ? 0 : Math.round((matched / sWords.length) * 100);
+
+  // 2) مقيّم Goethe المحلي: طول + روابط + أخطاء آلية (قواعد/أدوات/ترتيب)
+  const goethePct = (await evaluateWriting(answer, "Forumsbeitrag")).pct;
+
+  // الوزن النهائي: تشابه الأفكار 40% + تقييم غوته 60%
+  const pct = Math.round(similarity * 0.4 + goethePct * 0.6);
+  return { correct: pct >= 60, pct };
+}
 
 /** حساب نتيجة مهارة من الأسئلة والإجابات */
 export async function scoreSkill(
@@ -24,7 +43,6 @@ export async function scoreSkill(
   let correct = 0;
   for (const q of questions) {
     if (q.skill !== skill) continue;
-    if (q.kind === "writing") continue;
 
     // ═══ C-02 (تدقيق 2026-08-15): تفكيك الأسئلة المتداخلة في القراءة/الاستماع ═══
     // كانت الحاويات تُحتسب في المقام (total++) دون أن تكون قابلة للإجابة
@@ -44,13 +62,17 @@ export async function scoreSkill(
     const ans = answers.get(q.id);
     if (q.kind === "mcq") {
       if (isMcqCorrect(q, typeof ans === "number" ? ans : null)) correct++;
+    } else if (q.kind === "writing") {
+      const s = await scoreWriting(q, typeof ans === "string" ? ans : "");
+      if (s.correct) correct += s.pct >= 60 ? 1 : 0;
+      else if (s.pct >= 40) correct += 0.5; // جزئي
     }
   }
   const pct = total === 0 ? 0 : Math.round((correct / total) * 100);
   return { skill, total, correct: Math.round(correct), pct, level: levelFromPct(pct) };
 }
 
-/** فئة تدريبية داخلية تقريبية من النسبة؛ لا تمثل معايرة أو تصنيف CEFR */
+/** مستوى CEFR من نسبة مئوية (تدرج تكيفي) */
 export function levelFromPct(pct: number): TestLevel {
   if (pct >= 85) return "B2";
   if (pct >= 70) return "B1";
@@ -88,6 +110,51 @@ export async function buildTestResult(input: {
 
   const reinforcement = recommendReinforcement(skillResults, input.level);
 
+  // مراجعة الأدلة (الدفعة 122): كل سؤالٍ بجواب المتعلّم وشاهده —
+  // كانت الشروح المكتوبة في البنك لا تُعرض في أي شاشة نتيجة.
+  const review: TestReviewItem[] = [];
+  for (const q of input.questions) {
+    if (q.kind === "reading" || q.kind === "listening") {
+      const subs = q.questions ?? [];
+      for (let i = 0; i < subs.length; i++) {
+        const ans = input.answers.get(`${q.id}:${i}`);
+        review.push({
+          id: `${q.id}:${i}`,
+          questionDe: subs[i].q,
+          questionAr: subs[i].qAr,
+          options: subs[i].options,
+          correct: subs[i].correct,
+          chosen: typeof ans === "number" ? ans : null,
+          explanation: subs[i].explanation,
+        });
+      }
+      continue;
+    }
+    const ans = input.answers.get(q.id);
+    if (q.kind === "writing") {
+      review.push({
+        id: q.id,
+        questionDe: q.questionDe ?? "",
+        questionAr: q.questionAr,
+        options: [],
+        correct: -1,
+        chosen: null,
+        answerText: typeof ans === "string" ? ans : undefined,
+        sampleAnswer: q.sampleAnswer,
+      });
+      continue;
+    }
+    review.push({
+      id: q.id,
+      questionDe: q.questionDe ?? "",
+      questionAr: q.questionAr,
+      options: q.options ?? [],
+      correct: q.correctIndex ?? 0,
+      chosen: typeof ans === "number" ? ans : null,
+      explanation: q.explanation,
+    });
+  }
+
   return {
     kind: input.kind,
     level: input.level,
@@ -98,6 +165,7 @@ export async function buildTestResult(input: {
     overallPct,
     estimatedLevel,
     reinforcement,
+    review,
     passed: overallPct >= 60,
   };
 }
@@ -109,7 +177,7 @@ const REINFORCEMENT_MAP: Record<TestSkill, { lessonId: string; reason: string }[
   lesen: [{ lessonId: "a1-00", reason: "قوِّ قراءتك: راجع الأبجدية والأصوات أولاً" }],
   hören: [{ lessonId: "a1-01", reason: "درّب أذنك: استمع لحوارات التعارف وأجب عن أسئلة" }],
   schreiben: [{ lessonId: "a1-01", reason: "تدرب على الكتابة: راجع تكوين الجمل الأساسية" }],
-  sprechen: [{ lessonId: "a1-01", reason: "درّب نطقك: استخدم أنشطة التحدث والمراجعة الذاتية" }],
+  sprechen: [{ lessonId: "a1-01", reason: "درّب نطقك: استخدم محاكاة الامتحان الشفهي" }],
 };
 
 /** اقتراحات تقوية تكيفية حسب المهارات الضعيفة */

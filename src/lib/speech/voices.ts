@@ -107,7 +107,7 @@ export function waitForGermanVoice(
 }
 
 /** هل يدعم المتصفح النطق؟ */
-function isSpeechSynthesisSupported(): boolean {
+export function isSpeechSynthesisSupported(): boolean {
   return typeof window !== "undefined" && "speechSynthesis" in window;
 }
 

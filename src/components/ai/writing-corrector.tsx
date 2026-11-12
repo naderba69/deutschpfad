@@ -65,7 +65,6 @@ export function AiWritingCorrector() {
             aria-label="النص الألماني للتصحيح"
             value={text}
             onChange={(e) => setText(e.target.value)}
-            aria-label="فقرتك الألمانية للتصحيح"
             placeholder="اكتب فقرتك بالألمانية هنا… (مثال: Ich bin gestern nach Berlin gefahren und habe viel gesehen. Das Stadt ist sehr schön.)"
             dir="ltr"
             lang="de"

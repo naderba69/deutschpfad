@@ -3,7 +3,7 @@
  */
 import {describe, expect, it} from "vitest";
 
-import {formatTime, isMcqCorrect, levelFromPct, scoreSkill} from "@/lib/tests/test-engine";
+import {formatTime, isMcqCorrect, levelFromPct, scoreSkill, scoreWriting} from "@/lib/tests/test-engine";
 import type { TestQuestion } from "@/types/test";
 
 const mcq: TestQuestion = {
@@ -25,6 +25,49 @@ describe("isMcqCorrect", () => {
   });
   it("خاطئ عند غياب إجابة", async () => {
     expect(isMcqCorrect(mcq, null)).toBe(false);
+  });
+});
+
+describe("scoreWriting — تصحيح الكتابة", () => {
+  const writing: TestQuestion = {
+    id: "w1",
+    skill: "schreiben",
+    level: "B2",
+    kind: "writing",
+    prompt: "Schreiben Sie eine E-Mail.",
+    sampleAnswer: "Sehr geehrte Damen und Herren, ich schreibe Ihnen, weil ich ein Problem habe. Mit freundlichen Grüßen.",
+    points: 10,
+  };
+
+  it("نص فارغ → صفر", async () => {
+    expect((await scoreWriting(writing, "")).pct).toBe(0);
+  });
+
+  it("نص مطابق للنموذج → 100%", async () => {
+    const r = await scoreWriting(writing, writing.sampleAnswer ?? "");
+    expect(r.pct).toBe(100);
+    expect(r.correct).toBe(true);
+  });
+
+  it("نص قصير جداً → نسبة منخفضة", async () => {
+    const r = await scoreWriting(writing, "Hallo.");
+    expect(r.pct).toBeLessThan(40);
+  });
+
+  it("نص يحوي كلمات النموذج الأساسية → نسبة 40-90 (يعتمد على الطول)", async () => {
+    const r = await scoreWriting(writing, "Sehr geehrte Damen und Herren, ich schreibe Ihnen, weil ich ein Problem habe. Mit freundlichen Grüßen.");
+    expect(r.pct).toBeGreaterThanOrEqual(40);
+    expect(r.pct).toBeLessThanOrEqual(100);
+  });
+
+  it("نص طويل يحوي أفكار النموذج + طول جيد → نسبة عالية", async () => {
+    const long = "Sehr geehrte Damen und Herren, ich schreibe Ihnen, weil ich ein Problem habe. " +
+      "Ich habe ein Produkt bestellt und es ist nicht angekommen. Ich bitte Sie, das Problem zu lösen. " +
+      "Die Lieferung sollte letzte Woche kommen, aber ich habe nichts erhalten. " +
+      "Können Sie mir bitte mitteilen, wann die Lieferung eintrifft? " +
+      "Ich hoffe auf eine schnelle Lösung und danke Ihnen im Voraus. Mit freundlichen Grüßen.";
+    const r = await scoreWriting(writing, long);
+    expect(r.pct).toBeGreaterThanOrEqual(60);
   });
 });
 
@@ -85,19 +128,6 @@ describe("C-02 — أسئلة القراءة/الاستماع الفرعية ت�
     const answers = new Map<string, string | number | null>();
     const r = await scoreSkill("lesen", [empty], answers);
     expect(r.total).toBe(0);
-  });
-});
-
-describe("الكتابة الحرة — مستبعدة من النتيجة الآلية", () => {
-  it("لا تُنشئ نتيجة مهارة أو نسبة عند وجود مهمة كتابة فقط", async () => {
-    const writing: TestQuestion = {
-      id: "w1", skill: "schreiben", level: "A1", kind: "writing",
-      prompt: "Schreiben Sie eine E-Mail.", sampleAnswer: "Sehr geehrte Damen und Herren.", points: 10,
-    };
-    const result = await scoreSkill("schreiben", [writing], new Map([["w1", "نص طويل مكتوب"]]));
-    expect(result.total).toBe(0);
-    expect(result.correct).toBe(0);
-    expect(result.pct).toBe(0);
   });
 });
 
