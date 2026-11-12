@@ -21,6 +21,8 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
     options: ["لا بدّ أنه فاته القطار", "سيفوته القطار حتماً", "فوّت القطار أمامنا", "كان سيفوته القطار"],
     key: "لا بدّ أنه فاته القطار",
   },
+  e15: { options: ["حرية الصحافة", "حرية الرأي", "الرقابة", "التغطية الإخبارية"], key: "حرية الصحافة" },
+  e16: { options: ["Es gibt Stimmen", "Ich finde", "Meiner Meinung nach", "Sicher ist"], key: "Es gibt Stimmen" },
   m1: { options: ["werde ... haben", "werde ... sein", "wird ... haben", "habe ... worden"], key: "werde ... haben" },
   m2: { options: ["... sein", "... haben", "... gehabt", "... worden"], key: "... sein" },
   q1: { options: ["Freiheit und Freundschaft", "nur Geld und ein großes Haus", "nur Arbeit und viel Pflicht", "nichts, das wirklich zählt"], key: "Freiheit und Freundschaft" },
@@ -413,8 +415,8 @@ describe("B2-07 lesson content audit", () => {
     );
   });
 
-  it("keeps both theory blocks at six examples, three explained mistakes, and a related rule", () => {
-    expect(lessonB207.theory.map(({ id }) => id)).toEqual(["t1", "t2"]);
+  it("keeps the three theory blocks at six examples, three explained mistakes, and a related rule", () => {
+    expect(lessonB207.theory.map(({ id }) => id)).toEqual(["t1", "t2", "t3"]);
     for (const block of lessonB207.theory) {
       expect(block.examples.length, `${block.id} examples`).toBeGreaterThanOrEqual(6);
       expect(block.commonMistakes.length, `${block.id} mistakes`).toBeGreaterThanOrEqual(3);

@@ -77,4 +77,44 @@ export const theory: NonNullable<Lesson["theory"]> = [
         content: "المعنى واحد لكن الأسلوب يختلف: الصفة المشتقة مكثّفة وسمة للنصوص المكتوبة والصحفية، والجملة الموصولة أوضح وأخفّ وهي المفضّلة في الكلام. السيطرة على التركيب الأول تُظهر تمكّناً أسلوبياً.",
       },
     },
+    {
+      id: "t3",
+      titleAr: "نقد الأفلام والكتب (Filmkritik und Buchrezension)",
+      titleDe: "Einen Film oder ein Buch kritisieren",
+      explanationAr:
+        "النقد الثقافي (Rezension) نوع نصي له بنية مألوفة: عرض العمل (Inhaltsangabe)، ثم تقييم عناصره (Darstellung, Schauspieler, Sprache)، ثم حكم موزون (Fazit). لا يبدأ الناقد بالحكم، بل يمهّد له بوصف ما رآه أو قرأه.\n\n**مفردات التقييم:**\n· الإيجاب: überzeugend (مقنع)، gelungen (ناجح)، fesselnd (آسر)، nuanciert (دقيق/متدرّج)، glaubwürdig (مصداقية).\n· السلبي: vorhersehbar (متوقّع)، übertrieben (مبالغ فيه)، oberflächlich (سطحي)، enttäuschend (مخيّب للآمال)، langatmig (مملّ/مطوّل).\n· المحايد: zurückhaltend (متحفّظ)، ambivalent (ملتبس)، offen (مفتوح للتأويل).\n\n**تراكيب التقييم الموزون:**\n· «Der Film überzeugt durch …» (الفيلم يقنع بـ…) — يبدأ بنقطة قوة.\n· «Weniger gelungen ist …» (الأقل نجاحاً هو …) — نقد مخفّف.\n· «Man mag einwenden, dass …» (قد يُعترض بأن …) — عرض الاعتراض قبل الرد.\n· «Insgesamt …» (في المجمل …) — خاتمة موزونة.\n\n**تنبيه أسلوبي:** النقد الجيد يربط الحكم بالدليل: لا يكتفي بـ«الفيلم مملّ» بل يشرح لماذا («Die zweite Hälfte zieht sich, weil …»). والحكم الشخصي يُعلَّم بصدق («Meiner Ansicht nach») ولا يُقدَّم كحقيقة موضوعية.",
+      whyAr:
+        "النقد الثقافي مهارة B2 أصيلة: قراءة عمل فني وتقييمه بلغة دقيقة وموزونة. المفردات هنا (überzeugend, vorhersehbar, nuanciert) تظهر في الصحافة الثقافية الألمانية، والتراكيب (Der Film überzeugt durch…, Weniger gelungen ist…) أدوات التقييم المتحفّظ المميزة للنقد الجاد. تعلّمها يفيدك في كتابة مراجعات وقراءة النقد الألماني.",
+      table: {
+        title: "مفردات التقييم الثقافي",
+        columns: ["التقييم", "مفردات", "مثال"],
+        rows: [
+          { label: "إيجابي", cells: ["überzeugend, gelungen, fesselnd", "Der Film überzeugt durch seine Bilder."] },
+          { label: "سلبي", cells: ["vorhersehbar, übertrieben, langatmig", "Die Handlung ist vorhersehbar."] },
+          { label: "موزون", cells: ["nuanciert, glaubwürdig, ambivalent", "Die Figuren wirken glaubwürdig."] },
+          { label: "تركيب التخفيف", cells: ["weniger gelungen, man mag einwenden", "Weniger gelungen ist das Ende."] },
+        ],
+      },
+      examples: [
+        { de: "Der Film überzeugt durch seine ruhigen Bilder.", ar: "الفيلم يقنع بصوره الهادئة." },
+        { de: "Die Handlung ist vorhersehbar, aber die Schauspieler sind überzeugend.", ar: "الحبكة متوقّعة، لكن الممثلين مقنعون." },
+        { de: "Weniger gelungen ist das offene Ende.", ar: "الأقل نجاحاً هو النهاية المفتوحة." },
+        { de: "Man mag einwenden, dass der Roman zu lang ist.", ar: "قد يُعترض بأن الرواية طويلة جداً." },
+        { de: "Insgesamt ist das Buch eine nuancierte Darstellung.", ar: "في المجمل، الكتاب عرض دقيق متدرّج." },
+        { de: "Meiner Ansicht nach bleibt der Film lange in Erinnerung.", ar: "في رأيي، يبقى الفيلم في الذاكرة طويلاً." },
+      ],
+      comparisonWithArabic:
+        "العربية تملك «نقد» و«مراجعة» بمعنى قريب من Rezension، لكن النقد الألماني يفضّل التقييم المتحفّظ (weniger gelungen بدل «سيّئ») والربط بالدليل. لاحظ أن «überzeugend» لا تعني «مقنع منطقياً» فقط، بل «مؤثّر ومقنع فنياً» في سياق النقد. والفرق الجوهري أن النقد الألماني الجاد يبني الحكم على وصف دقيق للعمل (Inhaltsangabe) قبل التقييم، بينما يميل النقد العربي أحياناً إلى الحكم المباشر. كما أن «Rezension» في الألمانية تشمل مراجعة الكتب والأفلام والمسرحيات، بينما «نقد» في العربية قد تنحصر في النقد الأدبي. و«fesselnd» (آسر) صفة لا مقابل مباشر لها في العربية — نقول «مشوّق» أو «يشدّ الانتباه» بحسب السياق.",
+      eselsbruecke:
+        "بنية النقد في ثلاث خطوات: اعرض (Inhaltsangabe) ← قيّم (Darstellung) ← اختم (Fazit). واحفظ ثلاثية التقييم: überzeugend (إيجابي) · vorhersehbar (سلبي) · nuanciert (موزون).",
+      commonMistakes: [
+        { wrong: "Der Film ist schlecht.", right: "Der Film überzeugt nicht.", whyAr: "النقد الجاد يتجنّب الأحكام المطلقة (schlecht) ويستعمل التقييم الموزون: «überzeugt nicht» (لا يقنع) أرقى من «schlecht»." },
+        { wrong: "Ich finde den Film langweilig.", right: "Die zweite Hälfte ist langatmig.", whyAr: "النقد الموضوعي يصف العمل لا شعور الناقد: «langatmig» (مطوّل) تصف الفيلم، بينما «langweilig» تصف شعور المشاهد." },
+        { wrong: "Der Film ist gut, weil er gut ist.", right: "Der Film überzeugt durch seine Bilder.", whyAr: "التعليل الدائري («جيد لأنه جيد») لا يفيد؛ النقد الجاد يربط الحكم بدليل محدد: «durch seine Bilder» (بصوره)." },
+      ],
+      relatedRuleComparison: {
+        title: "حكم مطلق أم تقييم موزون؟",
+        content: "«Der Film ist schlecht» حكم مطلق يغلق النقاش. «Der Film überzeugt durch seine Bilder, weniger gelungen ist das Ende» تقييم موزون يفتح النقاش. النقد الجاد يختار الثاني.",
+      },
+    },
   ];

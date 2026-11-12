@@ -85,4 +85,45 @@ export const theory: NonNullable<Lesson["theory"]> = [
         content: "Erörterung تناقش سؤالاً وتعرض حجة أو موقفاً بحسب المهمة. أما Bericht فينقل معلومات أو أحداثاً بقصد الإخبار؛ وقد تختلف بنيتهما باختلاف النوع والجمهور، ولا تختزل الفروق في «رأي مقابل حقائق فقط».",
       },
     },
+    {
+      id: "t3",
+      titleAr: "الإعلام والرأي العام (Presse und öffentliche Meinung)",
+      titleDe: "Medien, Zensur und öffentliche Meinung",
+      explanationAr:
+        "الصحافة الحرة (Pressefreiheit) ركيزة الديمقراطية، لكنها تثير أسئلة: أين تنتهي حرية التعبير وأين تبدأ مسؤولية الإعلام؟ هذا الموضوع يظهر كثيراً في مقالات الرأي الألمانية (Meinungsartikel).\n\n**مفردات أساسية:**\n· die Pressefreiheit (حرية الصحافة) — مبدأ دستوري في ألمانيا (المادة 5 من القانون الأساسي).\n· die Zensur (الرقابة) — منع أو حذف محتوى قبل نشره.\n· die öffentliche Meinung (الرأي العام) — ما يعتقده الناس في قضية.\n· die Meinungsfreiheit (حرية الرأي) — حق التعبير عن الرأي.\n· die Medienlandschaft (المشهد الإعلامي) — مجموع وسائل الإعلام.\n· die Berichterstattung (التغطية الإخبارية) — كيفية نقل الأخبار.\n\n**تراكيب النقاش:**\n· «Die Presse spielt eine wichtige Rolle bei …» (الصحافة تلعب دوراً مهماً في …).\n· «Es gibt Stimmen, die …» (هناك أصوات تقول …) — عرض موقف دون تبنّيه.\n· «Kritiker warnen vor …» (النقاد يحذّرون من …).\n· «Letztlich hängt es davon ab, ob …» (في النهاية يعتمد على ما إذا …).\n\n**تنبيه:** عند مناقشة الرقابة، ميّز بين الرقابة الحكومية (staatliche Zensur) والقرارات التحريرية (redaktionelle Entscheidungen) — فالأخيرة جزء من عمل الصحافة لا رقابة بالمعنى القانوني.",
+      whyAr:
+        "موضوع الإعلام والرأي العام من موضوعات B2 الكلاسيكية في مقالات الرأي (Erörterung). المفردات (Pressefreiheit, Zensur, öffentliche Meinung) أساسية لفهم الصحافة الألمانية، والتراكيب (Es gibt Stimmen, die… / Kritiker warnen vor…) أدوات عرض المواقف المختلفة بموضوعية — مهارة جوهرية في الكتابة الجدلية.",
+      table: {
+        title: "مفردات الإعلام والرأي العام",
+        columns: ["المفهوم", "المصطلح", "ملاحظة"],
+        rows: [
+          { label: "حرية الصحافة", cells: ["die Pressefreiheit", "مبدأ دستوري (المادة 5)"] },
+          { label: "الرقابة", cells: ["die Zensur", "منع المحتوى قبل النشر"] },
+          { label: "الرأي العام", cells: ["die öffentliche Meinung", "معتقدات الناس في قضية"] },
+          { label: "حرية الرأي", cells: ["die Meinungsfreiheit", "حق التعبير"] },
+          { label: "التغطية الإخبارية", cells: ["die Berichterstattung", "كيفية نقل الأخبار"] },
+        ],
+      },
+      examples: [
+        { de: "Die Pressefreiheit ist ein Grundrecht.", ar: "حرية الصحافة حق أساسي." },
+        { de: "Es gibt Stimmen, die für mehr Regulierung sind.", ar: "هناك أصوات تؤيد مزيداً من التنظيم." },
+        { de: "Kritiker warnen vor Desinformation.", ar: "النقاد يحذّرون من التضليل الإعلامي." },
+        { de: "Die öffentliche Meinung hat sich verändert.", ar: "تغيّر الرأي العام." },
+        { de: "Letztlich hängt es davon ab, ob die Medien unabhängig bleiben.", ar: "في النهاية يعتمد على ما إذا بقيت وسائل الإعلام مستقلة." },
+        { de: "Die Berichterstattung über das Thema war ausgewogen.", ar: "كانت التغطية الإخبارية للموضوع متوازنة." },
+      ],
+      comparisonWithArabic:
+        "العربية تملك «حرية الصحافة» و«الرقابة» و«الرأي العام» كمقابلات قريبة. الفارق أن «Pressefreiheit» في ألمانيا مبدأ دستوري محدد (المادة 5 من Grundgesetz)، بينما قد يختلف نطاقها في أنظمة أخرى — فانتبه للسياق القانوني عند الترجمة. و«öffentliche Meinung» ترجمة حرفية لـ«الرأي العام»، لكن الاستعمال الألماني يشمل استطلاعات الرأي (Meinungsumfragen) كأداة لقياسه، بينما قد يقتصر «الرأي العام» في العربية على الانطباع العام. و«Berichterstattung» (التغطية الإخبارية) مصطلح مهني لا مقابل شائع له في العربية — نقول «تغطية» أو «نقل الأخبار» بحسب السياق. ولاحظ أن «Medienlandschaft» (المشهد الإعلامي) استعارة من الجغرافيا تُستعمل في الألمانية لوصف مجموع وسائل الإعلام وتفاعلها.",
+      eselsbruecke:
+        "ثلاثية الإعلام: Pressefreiheit (حرية) · Zensur (رقابة) · öffentliche Meinung (رأي عام). وتركيب العرض المحايد: «Es gibt Stimmen, die…» (هناك أصوات تقول…).",
+      commonMistakes: [
+        { wrong: "die Presse ist frei", right: "die Pressefreiheit", whyAr: "«Pressefreiheit» اسم مركّب (die) وليس صفة: «die Pressefreiheit ist ein Grundrecht» لا «die Presse ist frei»." },
+        { wrong: "Zensur = redaktionelle Entscheidung", right: "Zensur رقابة حكومية؛ القرار التحريري عمل صحفي", whyAr: "الرقابة (Zensur) منع حكومي، أما القرار التحريري (redaktionelle Entscheidung) فاختيار الصحفيين — لا تخلط بينهما." },
+        { wrong: "Die Medien sagen die Wahrheit.", right: "Die Berichterstattung war ausgewogen.", whyAr: "«Die Medien sagen die Wahrheit» ادّعاء مطلق لا يصمد؛ النقد الجاد يقيّم التغطية المحددة: «ausgewogen» (متوازنة) بدل الحكم على كل الإعلام." },
+      ],
+      relatedRuleComparison: {
+        title: "حرية الصحافة أم حرية الرأي؟",
+        content: "Pressefreiheit حرية وسائل الإعلام في النشر، وMeinungsfreiheit حرية الأفراد في التعبير. متكاملتان لكن مختلفتان: الصحفي يتمتع بالأولى، والمواطن بالثانية.",
+      },
+    },
   ];

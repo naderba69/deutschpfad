@@ -21,6 +21,8 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   e2: { options: ["geschriebene", "schreibende", "geschrieben", "schreibt"], key: "geschriebene" },
   e8: { options: ["المقال", "الكتاب", "المجلة", "الخبر"], key: "المقال" },
   e14: { options: ["نفدت نسخه من السوق", "مترجماً إلى لغة أخرى", "مختصراً في صفحات قليلة", "ممنوعاً من البيع"], key: "نفدت نسخه من السوق" },
+  e15: { options: ["überzeugt", "ist schlecht", "ist langweilig", "ist nichts"], key: "überzeugt" },
+  e16: { options: ["متوقّعة يعرف المشاهد نهايتها", "مثيرة للدهشة والمفاجأة", "طويلة جداً ومملّة", "مكتوبة بعناية فائقة"], key: "متوقّعة يعرف المشاهد نهايتها" },
   m1: { options: ["lesende", "gelesene", "lesend", "liest"], key: "lesende" },
   m2: { options: ["übersetzte", "übersetzende", "übersetzt", "übersetzen"], key: "übersetzte" },
   q1: { options: ["fertig", "lang", "kurz", "schlecht"], key: "fertig" },
@@ -397,8 +399,8 @@ describe("B2-04 lesson content audit", () => {
     );
   });
 
-  it("keeps the two theory blocks at six examples, three explained mistakes, and a related rule", () => {
-    expect(lessonB204.theory.map(({ id }) => id)).toEqual(["t1", "t2"]);
+  it("keeps the three theory blocks at six examples, three explained mistakes, and a related rule", () => {
+    expect(lessonB204.theory.map(({ id }) => id)).toEqual(["t1", "t2", "t3"]);
     for (const block of lessonB204.theory) {
       expect(block.examples.length, `${block.id} examples`).toBeGreaterThanOrEqual(6);
       expect(block.commonMistakes.length, `${block.id} mistakes`).toBeGreaterThanOrEqual(3);

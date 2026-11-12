@@ -180,6 +180,40 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         "«كان سيفوته القطار» صيغة شرطية لا Futur II.",
       ],
     },
+    {
+      id: "e15",
+      type: "multiple-choice",
+      instructionAr: "ما معنى «Pressefreiheit»؟",
+      questionDe: "Die Pressefreiheit ist ein Grundrecht.",
+      questionAr: "ما المعنى؟",
+      options: ["حرية الصحافة", "حرية الرأي", "الرقابة", "التغطية الإخبارية"],
+      correctIndex: 0,
+      explanation: "Pressefreiheit = حرية الصحافة — مبدأ دستوري (المادة 5 من Grundgesetz).",
+      errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«حرية الرأي» تقابل Meinungsfreiheit، وليس Pressefreiheit.",
+        "«الرقابة» تقابل Zensur، وهي عكس الحرية.",
+        "«التغطية الإخبارية» تقابل Berichterstattung، وليس Pressefreiheit.",
+      ],
+    },
+    {
+      id: "e16",
+      type: "multiple-choice",
+      instructionAr: "اختر التركيب المناسب لعرض موقف دون تبنّيه:",
+      questionDe: "___ , die für mehr Regulierung sind.",
+      questionAr: "ما التركيب المناسب؟",
+      options: ["Es gibt Stimmen", "Ich finde", "Meiner Meinung nach", "Sicher ist"],
+      correctIndex: 0,
+      explanation: "«Es gibt Stimmen, die…» تعرض موقفاً محايداً دون تبنّيه — أداة أساسية في Erörterung.",
+      errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«Ich finde» يتبنّى الموقف شخصياً — لا يعرضه محايداً.",
+        "«Meiner Meinung nach» رأي شخصي، لا عرض محايد.",
+        "«Sicher ist» ادّعاء يقيني، لا عرض موقف.",
+      ],
+    },
   ];
 
 export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
