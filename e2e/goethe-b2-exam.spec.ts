@@ -40,7 +40,7 @@ test("محرك B2: يمكن الإجابة في Teil 1 والانتقال للج
   await page.waitForTimeout(500);
   await page.getByRole("button", { name: /ابدأ التدريب/ }).click();
   // أجب على أول نص: اختر أول فئة (أول زر مطابقة داخل أول بطاقة نص — مستقل عن النموذج)
-  const firstItemCard = page.locator("div.rounded-xl.border.bg-card.p-3").first();
+  const firstItemCard = page.locator("div.rounded-xl.border.bg-card.p-4").first();
   await firstItemCard.locator("button").first().click();
   // انتقل للجزء التالي
   await page.getByRole("button", { name: /التالي: الجزء 2/ }).click();
@@ -67,7 +67,7 @@ test("محرك B2: يمكن إنهاء القراءة والانتقال إلى 
   await page.waitForTimeout(500);
   await page.getByRole("button", { name: /ابدأ التدريب/ }).click();
   // أجب على شيء واحد في Teil 1 ثم مرر للأجزاء وأنهِ القراءة (مستقل عن النموذج)
-  const firstItemCard = page.locator("div.rounded-xl.border.bg-card.p-3").first();
+  const firstItemCard = page.locator("div.rounded-xl.border.bg-card.p-4").first();
   await firstItemCard.locator("button").first().click();
   // انتقل عبر الأجزاء الخمسة
   for (let i = 0; i < 4; i++) {
@@ -108,7 +108,7 @@ test("محرك B2: مراجعة الأدلة تظهر في النتيجة (جو�
   await page.getByRole("button", { name: /ابدأ الامتحان/ }).click();
 
   // أجب عنصراً واحداً في Teil 1 (Zuordnung) حتى تُقيَّم مراجعةُ المطابقة
-  const firstItemCard = page.locator("div.rounded-xl.border.bg-card.p-3").first();
+  const firstItemCard = page.locator("div.rounded-xl.border.bg-card.p-4").first();
   await firstItemCard.locator("button").first().click();
 
   // إنهاء القراءة (5 أجزاء) ← الاستماع (4 أجزاء) ← الكتابة ← التحدث
