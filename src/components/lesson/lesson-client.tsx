@@ -6,6 +6,7 @@ import {useRouter} from "next/navigation";
 import {ArrowLeft, ArrowRight, Award, CheckCircle2, ListChecks, Printer, Sparkles, TableProperties, Trophy} from "lucide-react";
 
 import {LESSON_SECTIONS} from "@/components/lesson/lesson-sections";
+import {FavoriteButton} from "@/components/shared/favorite-button";
 import {LESSON_META} from "@/data/lessons/meta";
 import {getRelatedResources} from "@/data/lessons/related-resources";
 import {useProgress} from "@/components/providers/progress-provider";
@@ -598,6 +599,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
             <Printer className="h-4 w-4" aria-hidden="true" />
             طباعة / PDF
           </Button>
+          <FavoriteButton kind="lesson" id={lesson.id} label={lesson.titleAr} size="sm" />
         </div>
 
         {/* شريط التقدم */}

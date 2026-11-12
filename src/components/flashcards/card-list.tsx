@@ -3,6 +3,7 @@
 import * as React from "react";
 import {CalendarClock, Search, Trash2} from "lucide-react";
 
+import {FavoriteButton} from "@/components/shared/favorite-button";
 import {SpeakButton} from "@/components/shared/speak-button";
 import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
@@ -143,6 +144,7 @@ export function CardList({ refreshKey }: { refreshKey?: number }) {
                     <CalendarClock className="h-3.5 w-3.5" aria-hidden="true" />
                     {dueLabel(card)}
                   </span>
+                  <FavoriteButton kind="word" id={card.de} label={card.ar} size="sm" />
                   <Button
                     variant="ghost"
                     size="icon"
