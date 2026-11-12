@@ -14,10 +14,9 @@ async function reachHoeren(page: import("@playwright/test").Page) {
   await page.goto("/tests/b2", { waitUntil: "networkidle" });
   await page.waitForTimeout(400);
   await page.getByRole("button", { name: /ابدأ الامتحان/ }).click();
-  const firstItemCard = page.locator("div.rounded-xl.border.bg-card.p-4").first();
-  await firstItemCard.locator("button").first().click();
+  // القراءة: 5 أجزاء — تنقّل بزر «التالي:» حتى الأخير ثم «إنهاء القراءة»
   for (let i = 0; i < 4; i++) {
-    await page.getByRole("button", { name: /التالي: الجزء/ }).click();
+    await page.getByRole("button", { name: /^التالي:/ }).click();
   }
   await page.getByRole("button", { name: /إنهاء القراءة/ }).click();
   await expect(page.getByText(/Hören — 1\/4/)).toBeVisible();
@@ -78,7 +77,7 @@ test("B2 استماع: التشغيل يُستهلك ويتعطّل الزر، �
   }
 
   // الانتقال للجزء 2: مشغّل جديد بحصة كاملة (لا يتسرّب العدّاد)
-  await page.getByRole("button", { name: /التالي: الجزء 2/ }).click();
+  await page.getByRole("button", { name: /^التالي:/ }).click();
   await expect(page.getByText(/Hören — 2\/4/)).toBeVisible();
   await expect(page.getByTestId("exam-audio-left")).toContainText("المتبقي من التشغيل: 1 من 1");
 

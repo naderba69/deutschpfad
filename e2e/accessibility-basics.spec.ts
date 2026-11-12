@@ -85,7 +85,8 @@ test.describe("مراجعة أسماء عناصر الوصول الأساسية"
   test("شارات المستويات في الصفحة الرئيسية تحافظ على تباين WCAG AA في الوضع الداكن", async ({ page }) => {
     await page.addInitScript(() => document.documentElement.classList.add("dark"));
     await page.goto("/");
-    const ratios = await page.locator("section#levels .font-de.font-bold").evaluateAll((elements) => {
+    // شارات المستويات فقط (Badge) — لا عناوين LangDe التي تحمل نفس الأصناف
+    const ratios = await page.locator("section#levels div.font-de.font-bold").evaluateAll((elements) => {
       const luminanceOf = (color: string) => {
         const values = color.match(/[\\d.]+/g)?.slice(0, 3).map(Number);
         if (!values || values.length !== 3) throw new Error(`Unsupported color: ${color}`);

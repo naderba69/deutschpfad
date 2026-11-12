@@ -150,7 +150,7 @@ test("تدريب Goethe-B2: تفتح بالأقسام الأربعة وتوضح 
   await expect(page.getByText(/تدريب غير رسمي/).first()).toBeVisible();
 
   // ابدأ الامتحان → قسم القراءة
-  await page.getByRole("button", { name: /ابدأ التدريب/ }).click();
+  await page.getByRole("button", { name: /ابدأ الامتحان/ }).click();
   await page.waitForTimeout(800);
-  await expect(page.getByText("القراءة (1/5)", { exact: false }).first()).toBeVisible({ timeout: 6000 });
+  await expect(page.getByText("Lesen — 1/5", { exact: false }).first()).toBeVisible({ timeout: 6000 });
 });

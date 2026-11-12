@@ -17,13 +17,13 @@ test("محرك B2: شاشة البداية تعرض البنية التدريب�
   await expect(page.getByText("75 دقيقة", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("15 دقيقة", { exact: true }).first()).toBeVisible();
   // زر البدء
-  await expect(page.getByRole("button", { name: /ابدأ التدريب/ })).toBeVisible();
+  await expect(page.getByRole("button", { name: /ابدأ الامتحان/ })).toBeVisible();
 });
 
 test("محرك B2: القراءة تعرض الجزء 1 (Zuordnung) والمؤقت يعمل", async ({ page }) => {
   await page.goto("/tests/b2", { waitUntil: "networkidle" });
   await page.waitForTimeout(500);
-  await page.getByRole("button", { name: /ابدأ التدريب/ }).click();
+  await page.getByRole("button", { name: /ابدأ الامتحان/ }).click();
   // الجزء 1: 6 نصوص منتدى + 8 عناوين (أي نموذج A/B/C عشوائي)
   await expect(page.getByText(/Lesen — 1\/5/)).toBeVisible();
   // يظهر عنصر من بنك هذا الجزء (Teil 1 Zuordnung دائماً)
@@ -38,12 +38,9 @@ test("محرك B2: القراءة تعرض الجزء 1 (Zuordnung) والمؤق
 test("محرك B2: يمكن الإجابة في Teil 1 والانتقال للجزء 2", async ({ page }) => {
   await page.goto("/tests/b2", { waitUntil: "networkidle" });
   await page.waitForTimeout(500);
-  await page.getByRole("button", { name: /ابدأ التدريب/ }).click();
-  // أجب على أول نص: اختر أول فئة (أول زر مطابقة داخل أول بطاقة نص — مستقل عن النموذج)
-  const firstItemCard = page.locator("div.rounded-xl.border.bg-card.p-4").first();
-  await firstItemCard.locator("button").first().click();
+  await page.getByRole("button", { name: /ابدأ الامتحان/ }).click();
   // انتقل للجزء التالي
-  await page.getByRole("button", { name: /التالي: الجزء 2/ }).click();
+  await page.getByRole("button", { name: /^التالي:/ }).click();
   await expect(page.getByText(/Lesen — 2\/5/)).toBeVisible();
   // الجزء 2 (مقال + MCQ) ظاهر في كل النماذج: صندوق النص + خيارات
   await expect(page.getByText("📄 النص")).toBeVisible();
@@ -53,10 +50,10 @@ test("محرك B2: يمكن الإجابة في Teil 1 والانتقال للج
 test("محرك B2: الجزء 3 يعرض Lückentext ببنك جمل (فقرات ناقصة)", async ({ page }) => {
   await page.goto("/tests/b2", { waitUntil: "networkidle" });
   await page.waitForTimeout(500);
-  await page.getByRole("button", { name: /ابدأ التدريب/ }).click();
+  await page.getByRole("button", { name: /ابدأ الامتحان/ }).click();
   // انتقل حتى الجزء 3
   for (let i = 0; i < 2; i++) {
-    await page.getByRole("button", { name: /التالي: الجزء/ }).click();
+    await page.getByRole("button", { name: /^التالي:/ }).click();
   }
   await expect(page.getByText(/Lesen — 3\/5/)).toBeVisible();
   await expect(page.getByText(/اختر جملة لكل فراغ/)).toBeVisible();
@@ -65,13 +62,10 @@ test("محرك B2: الجزء 3 يعرض Lückentext ببنك جمل (فقرات
 test("محرك B2: يمكن إنهاء القراءة والانتقال إلى الاستماع دون استنتاج نجاح رسمي", async ({ page }) => {
   await page.goto("/tests/b2", { waitUntil: "networkidle" });
   await page.waitForTimeout(500);
-  await page.getByRole("button", { name: /ابدأ التدريب/ }).click();
-  // أجب على شيء واحد في Teil 1 ثم مرر للأجزاء وأنهِ القراءة (مستقل عن النموذج)
-  const firstItemCard = page.locator("div.rounded-xl.border.bg-card.p-4").first();
-  await firstItemCard.locator("button").first().click();
+  await page.getByRole("button", { name: /ابدأ الامتحان/ }).click();
   // انتقل عبر الأجزاء الخمسة
   for (let i = 0; i < 4; i++) {
-    await page.getByRole("button", { name: /التالي: الجزء/ }).click();
+    await page.getByRole("button", { name: /^التالي:/ }).click();
   }
   await page.getByRole("button", { name: /إنهاء القراءة/ }).click();
   // الآن في الاستماع — نتحقق أن الانتقال تم
@@ -107,9 +101,6 @@ test("محرك B2: مراجعة الأدلة تظهر في النتيجة (جو�
   await page.waitForTimeout(500);
   await page.getByRole("button", { name: /ابدأ الامتحان/ }).click();
 
-  // أجب عنصراً واحداً في Teil 1 (Zuordnung) حتى تُقيَّم مراجعةُ المطابقة
-  const firstItemCard = page.locator("div.rounded-xl.border.bg-card.p-4").first();
-  await firstItemCard.locator("button").first().click();
 
   // إنهاء القراءة (5 أجزاء) ← الاستماع (4 أجزاء) ← الكتابة ← التحدث
   for (let i = 0; i < 4; i++) {
