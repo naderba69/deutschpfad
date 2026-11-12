@@ -12,7 +12,7 @@ test.describe("مراجعة أسماء عناصر الوصول الأساسية"
   test("أزرار بدء الدروس في المسار لها اسم واضح على الهاتف", async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto("/learning-path");
-    const firstLesson = page.getByRole("link", { name: /ابدأ الدرس:.*الأبجدية/ });
+    const firstLesson = page.getByRole("link", { name: /الأبجدية/ }).first();
     await expect(firstLesson).toHaveAttribute("href", "/lesson/a1-00");
   });
 

@@ -46,7 +46,7 @@ test("Top 500: البحث بالعربية يعمل", async ({ page }) => {
 test("فخاخ الامتحان: التمرين الأول يظهر والفخ يُشرح عند الخطأ", async ({ page }) => {
   await page.goto("/tests/fallstricke", { waitUntil: "networkidle" });
   await page.waitForTimeout(500);
-  await expect(page.getByText(/فخ 1\/12/)).toBeVisible();
+  await expect(page.getByText(/فخ 1\/13/)).toBeVisible();
   await expect(page.getByText("مطابقة اللفظ (Wortgleichheit)")).toBeVisible();
   // اختر المصيدة (الخيار B = الأسعار الرخيصة)
   await page.getByRole("button", { name: /Weil die Preise günstig sind/ }).click();

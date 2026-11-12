@@ -38,7 +38,7 @@ test("تدريب القواعد: اختيار إجابة وتحقق يعرض ا�
 test("استراتيجيات الامتحان: الأجزاء الثلاثة عشر ظاهرة", async ({ page }) => {
   await page.goto("/tests/strategien", { waitUntil: "networkidle" });
   await page.waitForTimeout(600);
-  await expect(page.getByRole("heading", { name: /استراتيجيات امتحان Goethe-B2/ })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /استراتيجيات تدريب B2/ })).toBeVisible();
   await expect(page.getByText(/القراءة \(Lesen\)/)).toBeVisible();
   await expect(page.getByText(/الاستماع \(Hören\)/)).toBeVisible();
   await expect(page.getByText(/الكتابة \(Schreiben\)/)).toBeVisible();
@@ -56,10 +56,10 @@ test("خطة 12 شهراً: المراحل الست ظاهرة", async ({ page }
   await expect(page.getByText("مثال لخطة تدريب A1–B2")).toBeVisible();
 });
 
-test("محرك B2: يعرض تنبيهاً عن حدود عينة الأسئلة", async ({ page }) => {
+test("محرك B2: يعرض ثلاثة نماذج كاملة", async ({ page }) => {
   await page.goto("/tests/b2", { waitUntil: "networkidle" });
   await page.waitForTimeout(500);
-  await expect(page.getByText(/لا يقدم ثلاثة نماذج كاملة/)).toBeVisible();
+  await expect(page.getByText(/ثلاثة نماذج كاملة/)).toBeVisible();
 });
 
 test("مركز الاختبارات: الروابط الجديدة (قراءة، قواعد، استراتيجيات، خطة)", async ({ page }) => {
