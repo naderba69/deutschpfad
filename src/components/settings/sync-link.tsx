@@ -4,8 +4,10 @@ import * as React from "react";
 import {Copy, Link2, Share2, Trophy} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
+import {ChoiceDialog} from "@/components/ui/choice-dialog";
 import {buildBackupData, validateBackupData, writeBackupData} from "@/lib/storage/export-import";
 import {decodeSyncPayload, encodeSyncPayload} from "@/lib/storage/sync-codec";
+import type { BackupData } from "@/types/storage";
 import {cn} from "@/lib/utils";
 
 /**
@@ -82,6 +84,8 @@ export function SyncLink() {
     }
   };
 
+  const [pendingSyncData, setPendingSyncData] = React.useState<BackupData | null>(null);
+
   const applyImport = async () => {
     try {
       const data = await decodeSyncPayload(importCode.trim());
@@ -89,10 +93,17 @@ export function SyncLink() {
         setStatus("⚠️ الرابط غير صالح لبيانات DeutschPfad");
         return;
       }
-      const mode = window.confirm("دمج مع بياناتك الحالية؟\n«موافق» = دمج · «إلغاء» = استبدال كامل")
-        ? "merge"
-        : "replace";
-      await writeBackupData(data, mode);
+      setPendingSyncData(data as BackupData);
+    } catch {
+      setStatus("⚠️ تعذّر فك الرابط — تأكد من نسخه كاملاً");
+    }
+  };
+
+  const doSyncImport = async (mode: "merge" | "replace") => {
+    if (!pendingSyncData) return;
+    try {
+      await writeBackupData(pendingSyncData, mode);
+      setPendingSyncData(null);
       setStatus(`تم استيراد الرابط (${mode === "merge" ? "دمج" : "استبدال"}) ✓`);
       setImportMode(false);
       setImportCode("");
@@ -152,6 +163,17 @@ export function SyncLink() {
       )}
 
       {status && <p className="text-xs font-bold text-primary">{status}</p>}
+
+      <ChoiceDialog
+        open={pendingSyncData !== null}
+        onOpenChange={(open) => !open && setPendingSyncData(null)}
+        title="دمج مع بياناتك الحالية؟"
+        description="الدمج يضيف البيانات الجديدة إلى بياناتك الحالية. الاستبدال يستبدل كل بياناتك ببيانات الرابط."
+        primaryLabel="دمج"
+        secondaryLabel="استبدال كامل"
+        onPrimary={() => void doSyncImport("merge")}
+        onSecondary={() => void doSyncImport("replace")}
+      />
     </div>
   );
 }

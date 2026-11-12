@@ -9,6 +9,7 @@ import {WindingPath} from "@/components/learning-path/winding-path";
 import {useProgress} from "@/components/providers/progress-provider";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent} from "@/components/ui/card";
+import {ConfirmDialog} from "@/components/ui/confirm-dialog";
 import {Progress} from "@/components/ui/progress";
 import {Skeleton} from "@/components/ui/skeleton";
 import {LEVELS, TOTAL_UNITS, getUnitsByLevel} from "@/lib/constants/curriculum";
@@ -33,14 +34,14 @@ export function LearningPathClient() {
     if (isHydrated) setMapLevel(activeLevel as LevelCode);
   }, [isHydrated, activeLevel]);
 
+  const [resetDialogOpen, setResetDialogOpen] = React.useState(false);
+
   const confirmReset = () => {
-    if (typeof window !== "undefined" && window.confirm("هل تريد مسح كل تقدمك المحفوظ على هذا الجهاز؟")) {
-      resetProgress();
-      // إعادة تعيين كاملة للتقدم: العدادات التراكمية (XP/المستوى) + الملف الشخصي
-      // حتى لا تبقى قيم قديمة ظاهرة بعد المسح. (سجل الأحداث يُبقى كسجل نشاط.)
-      void import("@/lib/gamification/counters").then(({resetCounters}) => resetCounters());
-      void import("@/lib/storage/learner").then(({clearLearnerProfile}) => clearLearnerProfile());
-    }
+    resetProgress();
+    // إعادة تعيين كاملة للتقدم: العدادات التراكمية (XP/المستوى) + الملف الشخصي
+    // حتى لا تبقى قيم قديمة ظاهرة بعد المسح. (سجل الأحداث يُبقى كسجل نشاط.)
+    void import("@/lib/gamification/counters").then(({resetCounters}) => resetCounters());
+    void import("@/lib/storage/learner").then(({clearLearnerProfile}) => clearLearnerProfile());
   };
 
   if (!isHydrated) {
@@ -86,13 +87,23 @@ export function LearningPathClient() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <Button variant="ghost" size="sm" onClick={confirmReset} className="justify-start text-destructive hover:text-destructive">
+            <Button variant="ghost" size="sm" onClick={() => setResetDialogOpen(true)} className="justify-start text-destructive hover:text-destructive">
               <Eraser className="h-4 w-4" aria-hidden="true" />
               إعادة تعيين التقدم
             </Button>
           </div>
         </CardContent>
       </Card>
+
+      <ConfirmDialog
+        open={resetDialogOpen}
+        onOpenChange={setResetDialogOpen}
+        title="مسح كل التقدم المحفوظ؟"
+        description="سيُمسح تقدمك على هذا الجهاز بالكامل. لا يمكن التراجع عن هذا الإجراء."
+        confirmLabel="مسح الكل"
+        destructive
+        onConfirm={confirmReset}
+      />
 
       {/* ═══ الخريطة المتعرجة (Path) — رؤية Duolingo للمسار ═══ */}
       <div className="rounded-2xl border bg-card p-4">

@@ -4,6 +4,7 @@ import * as React from "react";
 import {BookOpenCheck, CheckCircle2, Eraser, RotateCcw, Sparkles, Trash2} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
+import {ConfirmDialog} from "@/components/ui/confirm-dialog";
 import {Progress} from "@/components/ui/progress";
 import {
   clearNotebook,
@@ -50,8 +51,9 @@ export function ErrorNotebook() {
     await refresh();
   };
 
+  const [confirmClearOpen, setConfirmClearOpen] = React.useState(false);
+
   const clearAll = async () => {
-    if (!window.confirm("مسح دفتر الأخطاء بالكامل؟ لا يمكن التراجع عن هذا الإجراء.")) return;
     await clearNotebook();
     await refresh();
   };
@@ -95,11 +97,20 @@ export function ErrorNotebook() {
             <BookOpenCheck className="h-5 w-5 text-primary" aria-hidden="true" />
             <p className="text-sm font-extrabold">أخطاؤك المتراكمة</p>
           </div>
-          <Button variant="outline" size="sm" className="gap-1.5" onClick={clearAll}>
+          <Button variant="outline" size="sm" className="gap-1.5" onClick={() => setConfirmClearOpen(true)}>
             <Eraser className="h-3.5 w-3.5" aria-hidden="true" />
             مسح الدفتر
           </Button>
         </div>
+        <ConfirmDialog
+          open={confirmClearOpen}
+          onOpenChange={setConfirmClearOpen}
+          title="مسح دفتر الأخطاء بالكامل؟"
+          description="لا يمكن التراجع عن هذا الإجراء."
+          confirmLabel="مسح الكل"
+          destructive
+          onConfirm={clearAll}
+        />
         <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-3">
           <div className="rounded-xl border border-destructive/20 bg-destructive/5 px-3 py-2">
             <p className="font-de text-xl font-extrabold text-destructive">{stats?.total ?? 0}</p>

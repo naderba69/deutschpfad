@@ -5,12 +5,14 @@ import {AlertTriangle, DatabaseBackup, Download, History, Upload, Wand2} from "l
 
 import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
+import {ChoiceDialog} from "@/components/ui/choice-dialog";
+import {ConfirmDialog} from "@/components/ui/confirm-dialog";
 import {SyncLink} from "@/components/settings/sync-link";
 import {MAX_BACKUP_BYTES, backupFilename, buildBackupData, createManualSnapshot, deleteSnapshot, downloadJson, isOwnedLsKey, maybeAutoSnapshot, restoreSnapshot, getSnapshotsResult, validateBackupData, writeBackupData} from "@/lib/storage/export-import";
 import {getDb} from "@/lib/storage/db";
 import {computeForgettingCoefficient} from "@/lib/srs/flashcard-service";
 import {forgettingCoefficientLabel} from "@/lib/srs/sm2";
-import type { Snapshot } from "@/types/storage";
+import type { BackupData, Snapshot } from "@/types/storage";
 
 /**
  * إدارة البيانات — تصدير / استيراد / نسخ احتياطي تلقائي / إعادة تعيين
@@ -23,6 +25,7 @@ export function DataManager() {
   const [coefficient, setCoefficient] = React.useState(1);
   const [coefficientLoadError, setCoefficientLoadError] = React.useState(false);
   const [fileInput, setFileInput] = React.useState<HTMLInputElement | null>(null);
+  const [pendingImport, setPendingImport] = React.useState<BackupData | null>(null);
 
   const reload = React.useCallback(async () => {
     const result = await getSnapshotsResult();
@@ -76,13 +79,14 @@ export function DataManager() {
       return;
     }
 
-    const mode = window.confirm(
-      "اختر طريقة الاستيراد:\n\n«موافق» = دمج مع بياناتك الحالية (إضافة البطاقات الجديدة فقط)\n«إلغاء» = استبدال كامل ببيانات الملف",
-    )
-      ? "merge"
-      : "replace";
+    setPendingImport(parsed as BackupData);
+  };
+
+  const doImport = async (mode: "merge" | "replace") => {
+    if (!pendingImport) return;
     try {
-      await writeBackupData(parsed, mode);
+      await writeBackupData(pendingImport, mode);
+      setPendingImport(null);
       await reload();
       showStatus(`تم الاستيراد (وضع: ${mode === "merge" ? "دمج" : "استبدال"}) ✓`);
     } catch (error) {
@@ -106,10 +110,18 @@ export function DataManager() {
     downloadJson(snap.data, `deutschpfad-snapshot-${snap.id}.json`);
   };
 
-  const handleRestoreSnapshot = async (snap: Snapshot) => {
-    if (!window.confirm("استعادة هذه اللقطة ستستبدل كل بياناتك الحالية. متابعة؟")) return;
+  const [restoreTarget, setRestoreTarget] = React.useState<Snapshot | null>(null);
+  const [deleteTarget, setDeleteTarget] = React.useState<Snapshot | null>(null);
+
+  const handleRestoreSnapshot = (snap: Snapshot) => {
+    setRestoreTarget(snap);
+  };
+
+  const doRestoreSnapshot = async () => {
+    if (!restoreTarget) return;
     try {
-      await restoreSnapshot(snap.id);
+      await restoreSnapshot(restoreTarget.id);
+      setRestoreTarget(null);
       await reload();
       showStatus("تمت الاستعادة — أعد تحميل الصفحة");
     } catch (error) {
@@ -118,10 +130,15 @@ export function DataManager() {
     }
   };
 
-  const handleDeleteSnapshot = async (snap: Snapshot) => {
-    if (!window.confirm("حذف هذه اللقطة؟")) return;
+  const handleDeleteSnapshot = (snap: Snapshot) => {
+    setDeleteTarget(snap);
+  };
+
+  const doDeleteSnapshot = async () => {
+    if (!deleteTarget) return;
     try {
-      await deleteSnapshot(snap.id);
+      await deleteSnapshot(deleteTarget.id);
+      setDeleteTarget(null);
       await reload();
       showStatus("تم حذف اللقطة الاحتياطية.");
     } catch {
@@ -129,12 +146,10 @@ export function DataManager() {
     }
   };
 
+  const [resetDialogOpen, setResetDialogOpen] = React.useState(false);
+
   /* ── إعادة تعيين كل شيء ── */
   const handleReset = async () => {
-    const sure = window.confirm(
-      "⚠️ سيتم مسح: تقدمك + بطاقاتك + إحصائياتك + اللقطات + ذاكرة الذكاء الاصطناعي + كل مفاتيح التطبيق المحلية. لا يمكن التراجع. متابعة؟",
-    );
-    if (!sure) return;
     // ═══ P0-01: مسح كل المخازن السبعة + كل LocalStorage المملوك +
     // منع إعادة الترحيل من المرآة القديمة (كانت تعيد البيانات بعد reload) ═══
     const stores = ["progress", "cards", "events", "settings", "snapshots", "llm-cache", "llm-usage"] as const;
@@ -337,7 +352,7 @@ export function DataManager() {
           <p className="text-sm text-muted-foreground">
             مسح كل شيء (التقدم + البطاقات + الإحصائيات + اللقطات) من هذا الجهاز نهائياً.
           </p>
-          <Button variant="destructive" className="mt-3" onClick={() => void handleReset()}>
+          <Button variant="destructive" className="mt-3" onClick={() => setResetDialogOpen(true)}>
             إعادة تعيين كامل
           </Button>
         </CardContent>
@@ -348,6 +363,47 @@ export function DataManager() {
           {status}
         </div>
       )}
+
+      <ChoiceDialog
+        open={pendingImport !== null}
+        onOpenChange={(open) => !open && setPendingImport(null)}
+        title="اختر طريقة الاستيراد"
+        description="الدمج يضيف البطاقات الجديدة إلى بياناتك الحالية فقط. الاستبدال يستبدل كل بياناتك ببيانات الملف."
+        primaryLabel="دمج"
+        secondaryLabel="استبدال كامل"
+        onPrimary={() => void doImport("merge")}
+        onSecondary={() => void doImport("replace")}
+      />
+
+      <ConfirmDialog
+        open={restoreTarget !== null}
+        onOpenChange={(open) => !open && setRestoreTarget(null)}
+        title="استعادة هذه اللقطة؟"
+        description="ستستبدل كل بياناتك الحالية. متابعة؟"
+        confirmLabel="استعادة"
+        destructive
+        onConfirm={doRestoreSnapshot}
+      />
+
+      <ConfirmDialog
+        open={deleteTarget !== null}
+        onOpenChange={(open) => !open && setDeleteTarget(null)}
+        title="حذف هذه اللقطة؟"
+        description="لا يمكن التراجع عن هذا الإجراء."
+        confirmLabel="حذف"
+        destructive
+        onConfirm={doDeleteSnapshot}
+      />
+
+      <ConfirmDialog
+        open={resetDialogOpen}
+        onOpenChange={setResetDialogOpen}
+        title="إعادة تعيين كل شيء؟"
+        description="سيتم مسح: تقدمك + بطاقاتك + إحصائياتك + اللقطات + ذاكرة الذكاء الاصطناعي + كل مفاتيح التطبيق المحلية. لا يمكن التراجع."
+        confirmLabel="مسح الكل"
+        destructive
+        onConfirm={handleReset}
+      />
     </div>
   );
 }
