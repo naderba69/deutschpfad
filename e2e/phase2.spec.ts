@@ -44,7 +44,7 @@ test("استراتيجيات الامتحان: الأجزاء الثلاثة ع�
   await expect(page.getByText(/الكتابة \(Schreiben\)/)).toBeVisible();
   await expect(page.getByText(/التحدث \(Sprechen\)/)).toBeVisible();
   await expect(page.getByText(/الفخاخ العشرة الذهبية/)).toBeVisible();
-  await expect(page.getByText(/جدول إدارة الوقت/)).toBeVisible();
+  await expect(page.getByText(/تقسيم وقت تدريبي مقترح/)).toBeVisible();
 });
 
 test("خطة 12 شهراً: المراحل الست ظاهرة", async ({ page }) => {

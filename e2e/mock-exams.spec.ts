@@ -251,21 +251,16 @@ test("النموذج الثالث: النماذج الثلاثة مسجّلة ب
   ]);
 });
 
-test("محاكاة Goethe: لوحة المستويات والوضع التكيفي", async ({page}) => {
+test("اختبار المستوى التدريبي: لوحة المستويات والتبديل", async ({page}) => {
   const {pageErrors} = watchPage(page);
 
   await page.goto("/tests/mock?level=A1");
-  await expect(page.getByRole("heading", {level: 1})).toContainText("محاكاة امتحان Goethe — A1");
+  await expect(page.getByRole("heading", {level: 1})).toContainText("اختبار تدريبي للمستوى A1");
   await expect(page.getByText(/اختبار مستوى A1/).first()).toBeVisible({timeout: 15_000});
 
   // تبديل المستوى عبر الرابط
   await page.getByRole("link", {name: /^B1 ·/}).click();
-  await expect(page.getByRole("heading", {level: 1})).toContainText("محاكاة امتحان Goethe — B1");
-  await expect(page.getByText(/اختبار مستوى B1/).first()).toBeVisible({timeout: 15_000});
-
-  // الوضع التكيفي
-  await page.getByRole("link", {name: /فعّل الوضع التكيفي/}).click();
-  await expect(page.getByRole("link", {name: /✓ التكيفي مفعّل/})).toBeVisible();
+  await expect(page.getByRole("heading", {level: 1})).toContainText("اختبار تدريبي للمستوى B1");
   await expect(page.getByText(/اختبار مستوى B1/).first()).toBeVisible({timeout: 15_000});
 
   expect(pageErrors, "أخطاء JavaScript في الصفحة").toEqual([]);

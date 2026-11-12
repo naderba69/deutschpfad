@@ -44,7 +44,7 @@ test("مسار الكتابة: المراحل الأربع ظاهرة والمه
 
 test("مكتبة القصص: 60 قصة موزعة على المستويات", async ({ page }) => {
   await page.goto("/stories");
-  await expect(page.getByText("60 قصص").first()).toBeVisible();
+  await expect(page.getByText("60 قصة متاحة").first()).toBeVisible();
   await expect(page.getByText("في المقهى").first()).toBeVisible(); // قصة A1 إضافية
   await expect(page.getByText(/لا تثبت إتقانها أو مستوى CEFR/).first()).toBeVisible();
 });
