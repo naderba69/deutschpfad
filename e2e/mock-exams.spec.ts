@@ -297,8 +297,8 @@ test("محاكاة Goethe: الإجابة والتسليم يظهران لوحة
   }
 
   // لوحة النتيجة
-  await expect(page.getByText(/المستوى المقدر/)).toBeVisible({timeout: 15_000});
-  await expect(page.getByRole("heading", {name: "النتائج حسب المهارة"})).toBeVisible();
+  await expect(page.getByText(/نتيجة عينة أسئلة تدريب مستوى/)).toBeVisible({timeout: 15_000});
+  await expect(page.getByText("النتائج حسب المهارة")).toBeVisible();
   await expect(page.getByText(/الزمن المستخدم/)).toBeVisible();
   expect(pageErrors, "أخطاء JavaScript في الصفحة").toEqual([]);
 });
