@@ -41,6 +41,25 @@ function allExercises(): { key: string; ex: Exercise }[] {
   return out;
 }
 
+describe("سلامة معرفات التمارين", () => {
+  it("كل التمارين التي قد تصل إلى ExerciseRenderer لها معرّفات فريدة داخل الدرس", () => {
+    const duplicates: string[] = [];
+    for (const lesson of LESSONS) {
+      const seen = new Set<string>();
+      for (const exercise of [
+        ...(lesson.practiceBank ?? []),
+        ...(lesson.miniTest ?? []),
+        ...(lesson.review ?? []),
+        ...(lesson.writing ?? []),
+      ]) {
+        if (seen.has(exercise.id)) duplicates.push(`${lesson.id}:${exercise.id}`);
+        seen.add(exercise.id);
+      }
+    }
+    expect(duplicates).toEqual([]);
+  });
+});
+
 describe("سلامة تمارين الفراغات", () => {
   const fillBlanks = allExercises().filter(
     (e): e is { key: string; ex: Extract<Exercise, { type: "fill-blank" }> } =>
@@ -634,9 +653,8 @@ describe("عنوان المراجعة التراكمية", () => {
     expect(reviewLevelLabel([mk("مراجعة سريعة")], "A2")).toBe("A1");
   });
 
-  it("مكوّنات الدرس تشتقّ العنوان ولا تستعمل الوسم الثابت", () => {
+  it("مكوّن الدرس يشتقّ العنوان ولا يستعمل الوسم الثابت", () => {
     for (const file of [
-      "src/components/lesson/lesson-flow.tsx",
       "src/components/lesson/lesson-client.tsx",
     ]) {
       const src = readFileSync(resolve(process.cwd(), file), "utf8");

@@ -1,4 +1,5 @@
 import {AudioLines, Award, BarChart3, BookOpen, BrainCircuit, ClipboardCheck, GraduationCap, Mic, MousePointerClick, Repeat, Sparkles, Trophy, WifiOff, type LucideIcon} from "lucide-react";
+import {TOTAL_LESSONS, TOTAL_UNITS} from "@/lib/constants/curriculum";
 
 /**
  * محتوى الصفحة الرئيسية (بيانات فقط — لا JSX)
@@ -98,9 +99,9 @@ export interface Stat {
 
 export const STATS: Stat[] = [
   { value: "4", label: "نطاقات تدريبية من A1 إلى B2" },
-  { value: "44", label: "وحدة دراسية" },
+  { value: String(TOTAL_UNITS), label: "وحدة دراسية" },
   { value: "3600+", label: "كلمة ومصطلح" },
-  { value: "240+", label: "درس تفاعلي" },
+  { value: String(TOTAL_LESSONS), label: "درس تفاعلي" },
 ];
 
 export interface Faq {
@@ -112,7 +113,7 @@ export const FAQS: Faq[] = [
   {
     question: "هل المنصة مجانية بالكامل؟",
     answer:
-      "نعم — كل المحتوى والتمارين والاختبارات مجانية 100% بدون تسجيل أو بطاقة ائتمان. الميزات الذكية المدعومة بالذكاء الاصطناعي تستخدم مزودين مجانيين (Gemini Flash / Groq / OpenRouter) مع سقف يومي 50 طلباً وذاكرة تخزين مؤقت للطلبات المتكررة.",
+      "التدريبات الأساسية متاحة حالياً دون اشتراك مدفوع، ولا تحتاج إلى إنشاء حساب أو إدخال بطاقة ائتمان لاستخدامها. بعض الميزات الذكية اختيارية وقد تعتمد على مزوّد خارجي وشروطه أو مفاتيح استخدام يضيفها المستخدم؛ تحقق من شروط المزوّد قبل تفعيلها. قد تتغير الميزات أو شروط إتاحتها.",
   },
   {
     question: "لا أعرف أي شيء عن الألمانية — هل أستطيع البدء؟",
@@ -144,6 +145,6 @@ export interface TrustItem {
 export const TRUST_ITEMS: TrustItem[] = [
   { icon: GraduationCap, label: "موضوعات مستوحاة من CEFR وGoethe" },
   { icon: Mic, label: "نطق ألماني حقيقي" },
-  { icon: Sparkles, label: "مدعوم بالذكاء الاصطناعي" },
-  { icon: WifiOff, label: "يعمل دون إنترنت" },
+  { icon: Sparkles, label: "ذكاء اصطناعي اختياري عند توفره" },
+  { icon: WifiOff, label: "يعمل دون إنترنت بعد أول زيارة" },
 ];

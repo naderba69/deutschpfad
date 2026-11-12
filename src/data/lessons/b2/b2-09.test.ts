@@ -43,6 +43,23 @@ describe("B2-09 audit", () => {
     }
   });
 
+  it("expands the practice bank to 14 with validated application-language tasks", () => {
+    expect(lessonB209.practiceBank).toHaveLength(14);
+    const byId = (id: string) => {
+      const item = lessonB209.practiceBank.find((candidate) => candidate.id === id);
+      if (!item) throw new Error(`missing ${id}`);
+      return item;
+    };
+    expect(evaluateExercise(byId("e11"), "auf").isCorrect).toBe(true);
+    expect(evaluateExercise(byId("e11"), "über").isCorrect).toBe(false);
+    expect(evaluateExercise(byId("e12"), ["ein"]).isCorrect).toBe(true);
+    expect(evaluateExercise(byId("e12"), ["an"]).isCorrect).toBe(false);
+    expect(evaluateExercise(byId("e13"), "Ich möchte mich um die Stelle bewerben.").isCorrect).toBe(true);
+    const order = byId("e14");
+    if (order.type !== "word-ordering") throw new Error("e14 is not word-ordering");
+    expect(evaluateExercise(order, order.correctSentence.match(/[^\s,.]+|[,.]/g) ?? []).isCorrect).toBe(true);
+  });
+
   it("keeps writing item ids unique across the lesson", () => {
     const ids = [...lessonB209.practiceBank, ...lessonB209.miniTest, ...lessonB209.writing].map((x) => x.id);
     expect(new Set(ids).size).toBe(ids.length);

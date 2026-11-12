@@ -18,7 +18,7 @@ export interface WeekSummary {
 }
 
 /** بداية الأسبوع الجاري (الإثنين) */
-export function weekStartTs(): number {
+function weekStartTs(): number {
   const now = new Date();
   const day = (now.getDay() + 6) % 7;
   const start = new Date(now);
@@ -29,9 +29,11 @@ export function weekStartTs(): number {
 
 /** تجميع ملخص الأسبوع من الأحداث */
 export async function computeWeekSummary(): Promise<WeekSummary> {
-  const { getRecentEvents } = await import("@/lib/analytics/events");
+  const { getRecentEventsResult } = await import("@/lib/analytics/events");
   const { XP_RULES } = await import("@/lib/gamification/xp");
-  const events = await getRecentEvents(3000);
+  const readResult = await getRecentEventsResult(3000);
+  if (!readResult.ok) throw new Error("تعذرت قراءة سجل النشاط الأسبوعي");
+  const events = readResult.events;
   const start = weekStartTs();
 
   const weekEvents = events.filter((e) => e.ts >= start);
@@ -88,7 +90,7 @@ export async function computeWeekSummary(): Promise<WeekSummary> {
   };
 }
 
-/** أخطاء الأسبوع من دفتر الأخطاء (النشطة — لم تُتقن) */
+/** إدخالات الأخطاء النشطة (التي لم يعلّمها المستخدم كمُراجَعة) */
 export async function getActiveMistakes() {
   const { getNotebook } = await import("@/lib/storage/error-notebook");
   const rows = await getNotebook();
@@ -141,7 +143,7 @@ export type { AnalyticsEvent };
 /** ─── ملخص شهري ─── */
 
 /** بداية الشهر الجاري */
-export function monthStartTs(): number {
+function monthStartTs(): number {
   const now = new Date();
   const start = new Date(now.getFullYear(), now.getMonth(), 1);
   return start.getTime();
@@ -153,9 +155,11 @@ export function monthStartTs(): number {
  *  /review/monthly بخطأ undefined.length — أُصلح بالتوحيد)
  */
 export async function computeMonthSummary(): Promise<WeekSummary> {
-  const { getRecentEvents } = await import("@/lib/analytics/events");
+  const { getRecentEventsResult } = await import("@/lib/analytics/events");
   const { XP_RULES } = await import("@/lib/gamification/xp");
-  const events = await getRecentEvents(5000);
+  const readResult = await getRecentEventsResult(5000);
+  if (!readResult.ok) throw new Error("تعذرت قراءة سجل النشاط الشهري");
+  const events = readResult.events;
   const start = monthStartTs();
   const monthEvents = events.filter((e) => e.ts >= start);
   const lessons = new Set<string>();

@@ -1,3 +1,6 @@
+import {execFileSync} from "node:child_process";
+import {resolve} from "node:path";
+
 import {describe, expect, it} from "vitest";
 
 import {getLesson} from "@/data/lessons";
@@ -11,6 +14,18 @@ import {LESSON_META} from "@/data/lessons/meta";
  * فكانت فحوصها تسأل «هل تعكس المرآةُ ما أمامها؟» — وجوابه نعم دائماً.
  * ما بقي هنا هو ما يفحص المحتوى نفسه، لا انعكاسه.
  */
+
+describe("اتساق جرد المنهج الآلي مع مصادر الدروس", () => {
+  it("لا يصنّف موضوعات تم التحقق من أمثلتها في الدرس نفسه كأنها في مستوى آخر", () => {
+    const report = execFileSync(process.execPath, [resolve(process.cwd(), "scripts/curriculum-audit.mjs")], {
+      encoding: "utf8",
+    });
+    expect(report).toContain("✓ [قواعد] Imperativ + dürfen/sollen");
+    expect(report).toContain("✓ [قواعد] Verben mit Präpositionen");
+    expect(report).toContain("✓ [قواعد] Genitiv-Präpositionen (wegen/trotz)");
+    expect(report).toContain("✓ [قواعد] Genitiv المتقدم");
+  });
+});
 
 describe("تغطية المنهج — الوساطة والتفاعل", () => {
   it("كل درس فعلي له وساطة وتفاعل (49/49)", () => {

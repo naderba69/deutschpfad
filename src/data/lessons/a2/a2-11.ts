@@ -536,6 +536,26 @@ export const lessonA211: Lesson = {
       errorType: "grammar",
       points: 2,
     },
+    {
+      id: "e13",
+      type: "multiple-choice",
+      instructionAr: "اختر الضمير الانعكاسي الصحيح مع ihr (أنتم/أنتن):",
+      questionDe: "Ihr freut ___ auf das Wochenende.",
+      options: ["euch", "uns", "sich"],
+      correctIndex: 0,
+      explanation: "مع ihr (أنتم/أنتن) نستخدم الضمير الانعكاسي euch: Ihr freut euch auf das Wochenende.",
+      errorType: "grammar",
+    },
+    {
+      id: "e14",
+      type: "transformation",
+      instructionAr: "انقل مضمون القول باستخدام dass:",
+      prompt: "Er sagt: «Ich muss mich beeilen.» → (استخدم Er sagt, dass ...)",
+      acceptedAnswers: ["Er sagt, dass er sich beeilen muss."],
+      sampleAnswer: "Er sagt, dass er sich beeilen muss.",
+      explanation: "في الجملة التابعة بـdass يأتي الفعل المصرف müssen في النهاية، ويتحول الفاعل إلى er عند نقل كلامه، ويبقى الضمير الانعكاسي sich.",
+      errorType: "grammar",
+    },
   ],
 
   fehlerUndTipps: {

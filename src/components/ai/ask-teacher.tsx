@@ -48,6 +48,7 @@ export function AiAskTeacher() {
           <textarea
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
+            aria-label="سؤالك للمعلم الذكي"
             placeholder="اكتب سؤالك… (مثال: ما الفرق بين weil وdenn؟ متى أستخدم Konjunktiv II؟)"
             rows={2}
             className="w-full rounded-xl border border-input bg-background p-3 text-sm outline-none placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-ring"
@@ -59,6 +60,7 @@ export function AiAskTeacher() {
                   key={l}
                   type="button"
                   onClick={() => setLevel(l)}
+                  aria-pressed={level === l}
                   className={
                     level === l
                       ? "font-de rounded-lg bg-primary px-2.5 py-1 text-xs font-bold text-primary-foreground"
@@ -122,6 +124,7 @@ export function AiCefrAssessment() {
           <textarea
             value={text}
             onChange={(e) => setText(e.target.value)}
+            aria-label="فقرتك بالألمانية"
             placeholder="اكتب فقرة حرة بالألمانية (5 جمل على الأقل)…"
             dir="ltr"
             lang="de"

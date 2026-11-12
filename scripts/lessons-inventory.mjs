@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * ═══════════════════════════════════════════════════════════════════════
- *  lessons-inventory.mjs — الجرد التفصيلي لكل درس (45 درساً)
+ *  lessons-inventory.mjs — جرد تفصيلي لكل درس مُصدَّر من ملفات المنهج
  *  يحمّل ملفات الدروس كمترجم TypeScript، ويطبع لكل درس: مكوناته العشرة،
  *  عدد الكتل النظرية، المشاهد، التمارين (بأنواعها)، البطاقات، إلخ —
  *  مع أعلام الجودة (نقص مكوّن، ثراء نظري ضعيف، حجم منخفض).
@@ -41,7 +41,7 @@ const require = createRequire(import.meta.url);
 const TMP = mkdtempSync(join(tmpdir(), "linv-"));
 
 /* ── تحميل كل الدروس ككائنات حقيقية ── */
-function loadLesson(path) {
+function loadLessons(path) {
   const src = readFileSync(path, "utf8");
   const js = ts
     .transpileModule(src, {
@@ -51,16 +51,19 @@ function loadLesson(path) {
   const tmp = join(TMP, path.split("/").pop().replace(".ts", ".cjs"));
   writeFileSync(tmp, js);
   const mod = require(tmp);
-  return Object.values(mod).find((v) => v && typeof v === "object" && v.id && v.lernziele);
+  return Object.values(mod).filter((value) => value && typeof value === "object" && value.id && value.lernziele);
 }
 
 const LESSONS = [];
 for (const level of ["a1", "a2", "b1", "b2"]) {
   for (const f of readdirSync(join(ROOT, "src/data/lessons", level))) {
     if (!f.endsWith(".ts") || f.endsWith(".test.ts")) continue;
-    const L = loadLesson(join(ROOT, "src/data/lessons", level, f));
-    if (L) LESSONS.push(L);
+    LESSONS.push(...loadLessons(join(ROOT, "src/data/lessons", level, f)));
   }
+}
+const lessonIds = LESSONS.map((lesson) => lesson.id);
+if (new Set(lessonIds).size !== lessonIds.length) {
+  throw new Error("تكرار معرّف درس في الملفات المُصدَّرة؛ أوقف الجرد بدلاً من إسقاط ملف بصمت.");
 }
 LESSONS.sort((a, b) => a.id.localeCompare(b.id));
 
@@ -78,7 +81,7 @@ function flags(L) {
 }
 
 console.log("════════════════════════════════════════════════════════════════");
-console.log("  جرد الدروس التفصيلي — DeutschPfad (A1→B2) — 45 درساً");
+console.log(`  جرد الدروس التفصيلي — DeutschPfad (A1→B2) — ${LESSONS.length} درساً`);
 console.log("════════════════════════════════════════════════════════════════\n");
 for (const level of ["a1", "a2", "b1", "b2"]) {
   const list = LESSONS.filter((l) => l.level.toLowerCase() === level);

@@ -12,6 +12,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   r1: { options: ["bin", "habe", "war", "hatte"], key: "bin" },
   e1: { options: ["sind", "haben", "waren", "hatten"], key: "sind" },
   e3: { options: ["schneller", "schnell", "am schnellsten", "schnellere"], key: "schneller" },
+  e12: { options: ["habe", "bin", "war", "wurde"], key: "habe" },
   m1: { options: ["sind", "haben", "waren", "hatten"], key: "sind" },
   m3: { options: ["weil", "und", "deshalb", "obwohl"], key: "weil" },
   m5: { options: ["freuen", "freut", "freust", "freue"], key: "freuen" },
@@ -35,6 +36,10 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
       ["dem", "den", "der", "das"],
       ["die", "der", "dem", "den"],
     ],
+  },
+  e13: {
+    correct: ["dem"],
+    options: [["dem", "den", "der"]],
   },
   e5: {
     correct: ["war", "hatte"],
@@ -103,6 +108,10 @@ const expectedTransformations: Record<string, { acceptedAnswers: string[]; sampl
   w1: {
     acceptedAnswers: ["Gestern habe ich bis 18 Uhr gearbeitet.", "Gestern habe ich bis achtzehn Uhr gearbeitet."],
     sampleAnswer: "Gestern habe ich bis 18 Uhr gearbeitet.",
+  },
+  e14: {
+    acceptedAnswers: ["Weil ich krank bin, bleibe ich zu Hause.", "Weil ich krank bin, bleibe ich zu Hause"],
+    sampleAnswer: "Weil ich krank bin, bleibe ich zu Hause.",
   },
 };
 

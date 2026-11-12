@@ -5,7 +5,6 @@ import {CalendarClock, TrendingUp} from "lucide-react";
 
 import {Card, CardContent} from "@/components/ui/card";
 import {useProgress} from "@/components/providers/progress-provider";
-import {getEventStats} from "@/lib/analytics/events";
 import {LESSON_META} from "@/data/lessons/meta";
 
 /**
@@ -20,18 +19,24 @@ const TOTAL_LESSONS = LESSON_META.length;
 
 export function PredictivePath() {
   const { completedLessonsSet, isHydrated } = useProgress();
-  const [daysActive, setDaysActive] = React.useState(1);
+  const [daysActive, setDaysActive] = React.useState(0);
+  const [activityAvailable, setActivityAvailable] = React.useState(false);
+  const [activityReadError, setActivityReadError] = React.useState(false);
 
   React.useEffect(() => {
     void (async () => {
       try {
-        const {getActivityMap, computeStreak} = await import("@/lib/analytics/heatmap");
-        const activity = await getActivityMap();
-        // أيام النشاط = عدد الأيام المختلفة في الخريطة (منذ أول نشاط)
-        setDaysActive(Math.max(1, activity.size));
-        void getEventStats();
+        const {getActivityMapResult} = await import("@/lib/analytics/heatmap");
+        const result = await getActivityMapResult();
+        if (!result.ok) {
+          setActivityReadError(true);
+          return;
+        }
+        // عدد الأيام المختلفة في السجل، وليس استنتاجاً عن المستوى اللغوي.
+        setDaysActive(result.activity.size);
+        setActivityAvailable(true);
       } catch {
-        /* تجاهل */
+        setActivityReadError(true);
       }
     })();
   }, []);
@@ -41,11 +46,9 @@ export function PredictivePath() {
 
   // الوتيرة: دروس في اليوم (أيام نشاط لا أيام تقويم)
   const pace = done / daysActive;
-  const monthsToGoal = pace > 0 ? Math.ceil(remaining / (pace * 30)) : 12;
+  const monthsToGoal = pace > 0 ? Math.ceil(remaining / (pace * 30)) : null;
+  const canEstimate = activityAvailable && !activityReadError && done > 0 && daysActive > 0 && monthsToGoal !== null;
 
-  // مستوى الهدف المتبقي
-  const goalLevel =
-    done < 14 ? "A2" : done < 26 ? "B1" : done < 36 ? "B2" : "إتقان B2";
 
   return (
     <Card className="overflow-hidden border-primary/20 bg-gradient-to-l from-primary/[0.05] via-card to-gold/[0.05]">
@@ -63,17 +66,19 @@ export function PredictivePath() {
         <div className="flex items-end gap-2 rounded-xl border bg-card/70 px-4 py-3">
           <CalendarClock className="mb-1 h-5 w-5 text-gold-strong" aria-hidden="true" />
           <p className="text-lg font-extrabold text-primary">
-            ~{monthsToGoal} {monthsToGoal === 1 ? "شهر" : "أشهر"}
+            {canEstimate ? `~${monthsToGoal} ${monthsToGoal === 1 ? "شهر" : "أشهر"}` : activityReadError ? "التقدير غير متاح" : "بانتظار بيانات كافية"}
           </p>
           <p className="pb-0.5 text-xs text-muted-foreground">
-            حتى تصل {goalLevel} ({remaining} درساً متبقياً)
+            {remaining} درساً متبقياً لإكمال المسار التعليمي المتاح
           </p>
         </div>
 
         <div className="flex items-center justify-between text-[11px] text-muted-foreground">
-          <span>الوتيرة الحالية: {pace > 0 ? `${pace.toFixed(1)} درس/يوم نشاط` : "ابدأ بدرس لتفعيل التوقع"}</span>
+          <span>الوتيرة الحالية: {canEstimate ? `${pace.toFixed(1)} درس/يوم نشاط` : "لا تتوفر بيانات كافية بعد"}</span>
           <span className="font-bold text-primary">{done}/{TOTAL_LESSONS} دروس</span>
         </div>
+        {activityReadError && <p role="alert" className="text-xs text-destructive">تعذرت قراءة سجل النشاط؛ لم نعرض تقديراً زمنياً مضللاً.</p>}
+        <p className="text-[10px] leading-relaxed text-muted-foreground">تقدير إكمال المسار مبني على وتيرة الدروس السابقة فقط؛ لا يثبت مستوى CEFR ولا الجاهزية لامتحان رسمي.</p>
       </CardContent>
     </Card>
   );

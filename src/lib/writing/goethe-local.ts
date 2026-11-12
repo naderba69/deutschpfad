@@ -185,7 +185,7 @@ export async function evaluateWriting(text: string, taskType = "Forumsbeitrag", 
  * ═══ C-03: نسبة الكلمات المعروفة من بنوك مفردات المنصة ═══
  * (دالة نقية قابلة للاختبار — تُستخدم لكشف النصوص الوهمية/غير الألمانية)
  */
-export async function computeKnownWordRatio(text: string): Promise<{ knownRatio: number; knownWords: string[] }> {
+async function computeKnownWordRatio(text: string): Promise<{ knownRatio: number; knownWords: string[] }> {
   const words = text.toLowerCase().replace(/[.,!?;:«»„“"'()\-]/g, " ").split(/\s+/).filter(Boolean);
   if (words.length === 0) return { knownRatio: 0, knownWords: [] };
 

@@ -3,13 +3,17 @@
  * يسجّل أحداث جلسة في IndexedDB (events) ويعرض إحصائيات زمنية.
  */
 
-import { recordEvent, getRecentEvents } from "@/lib/analytics/events";
+import {recordEvent, getAllEventsResult} from "@/lib/analytics/events";
 
 const SESSION_INTERVAL = 60_000; // نبضة كل دقيقة
 
+/** عدد الدقائق المكتملة منذ آخر نبضة (مع تجاهل فرق ساعة سالب). */
+export function elapsedWholeMinutes(last: number, now: number): number {
+  return Math.max(0, Math.floor((now - last) / SESSION_INTERVAL));
+}
+
 /** بدء تتبع الجلسة — يُستدعى عند دخول الصفحة، يعيد دالة الإيقاف */
 export function startSessionTracking(): () => void {
-  let minutes = 0;
   let last = Date.now();
   let active = true;
 
@@ -17,10 +21,9 @@ export function startSessionTracking(): () => void {
     if (!active) return;
     const now = Date.now();
     // نحسب الدقائق المتراكمة (يمكن أن تمر دقائق بين النبضات)
-    const elapsedMin = Math.floor((now - last) / SESSION_INTERVAL);
+    const elapsedMin = elapsedWholeMinutes(last, now);
     if (elapsedMin >= 1) {
-      minutes += elapsedMin;
-      void recordEvent({ type: "session-minute", minutes: 1, ts: now });
+      void recordEvent({ type: "session-minute", minutes: elapsedMin, ts: now });
       last = now;
     }
   };
@@ -61,18 +64,24 @@ export interface StudyStats {
 }
 
 /** جلب إحصائيات الدراسة من الأحداث المسجلة */
-export async function getStudyStats(): Promise<StudyStats> {
-  const events = await getRecentEvents(2000);
-  const sessionMinutes = events
-    .filter((e) => e.type === "session-minute")
-    .reduce((s, e) => s + (e.minutes ?? 1), 0);
+export type StudyStatsReadResult = {ok: true; stats: StudyStats} | {ok: false};
+
+export async function getStudyStatsResult(): Promise<StudyStatsReadResult> {
+  const result = await getAllEventsResult();
+  if (!result.ok) return {ok: false};
+  const events = result.events;
+  const now = Date.now();
+  const validSessionEvents = events.filter(
+    (e): e is Extract<typeof e, {type: "session-minute"}> =>
+      e.type === "session-minute" && Number.isFinite(e.ts) && e.ts <= now
+      && Number.isInteger(e.minutes ?? 1) && (e.minutes ?? 1) > 0,
+  );
+  const sessionMinutes = validSessionEvents.reduce((sum, event) => sum + (event.minutes ?? 1), 0);
 
   const days = new Set<string>();
-  for (const e of events) {
-    if (e.type === "session-minute") {
-      const d = new Date(e.ts);
-      days.add(`${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`);
-    }
+  for (const e of validSessionEvents) {
+    const d = new Date(e.ts);
+    days.add(`${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`);
   }
 
   const errorDistribution: Record<string, number> = {};
@@ -82,15 +91,15 @@ export async function getStudyStats(): Promise<StudyStats> {
     }
   }
 
-  const now = Date.now();
-  const last14 = events.filter(
-    (e) => e.type === "session-minute" && now - e.ts < 14 * 24 * 3600 * 1000,
-  ).length;
+  const fourteenDaysMs = 14 * 24 * 3600 * 1000;
+  const last14 = validSessionEvents
+    .filter((e) => now - e.ts < fourteenDaysMs)
+    .reduce((sum, e) => sum + (e.minutes ?? 1), 0);
 
-  return {
+  return {ok: true, stats: {
     totalMinutes: sessionMinutes,
     dailyAvg: Math.round((last14 / 14) * 10) / 10,
     activeDays: days.size,
     errorDistribution,
-  };
+  }};
 }

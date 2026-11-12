@@ -1,6 +1,8 @@
 "use client";
 
 import * as React from "react";
+
+import {speakGerman} from "@/lib/speech/voices";
 import {Volume2} from "lucide-react";
 
 /**
@@ -21,17 +23,12 @@ export function TextDe({ text, className }: { text: string; className?: string }
       setState("unsupported");
       return;
     }
-    window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = "de-DE";
-    u.rate = 0.85;
-    const voices = window.speechSynthesis.getVoices();
-    const gv = voices.find((v) => v.lang === "de-DE") ?? voices.find((v) => v.lang.startsWith("de"));
-    if (gv) u.voice = gv;
-    u.onstart = () => setState("playing");
-    u.onend = () => setState("idle");
-    u.onerror = () => setState("idle");
-    window.speechSynthesis.speak(u);
+    setState("playing");
+    speakGerman(text, {
+      rate: 0.85,
+      onEnd: () => setState("idle"),
+      onError: () => setState("unsupported"),
+    });
   };
 
   return (

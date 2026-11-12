@@ -9,7 +9,6 @@ import * as React from "react";
 import {Search, WifiOff} from "lucide-react";
 
 import {SpeakButton} from "@/components/shared/speak-button";
-;
 import {Card, CardContent} from "@/components/ui/card";
 import {Input} from "@/components/ui/input";
 import {A1_VOCAB} from "@/data/vocabulary/a1";
@@ -58,6 +57,7 @@ export function OfflineReviewClient() {
           <button
             key={l}
             type="button"
+            aria-pressed={level === l}
             onClick={() => setLevel(l)}
             className={cn(
               "font-de rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",

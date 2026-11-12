@@ -14,6 +14,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   e1: { options: ["schönes", "schöne", "schönen", "schöner"], key: "schönes" },
   e2: { options: ["berühmte", "berühmtes", "berühmten", "berühmter"], key: "berühmte" },
   e8: { options: ["القرن", "العام", "العقد", "الألفية"], key: "القرن" },
+  e14: { options: ["interessante", "interessanten", "interessantes"], key: "interessante" },
   m1: { options: ["kleines", "kleine", "kleinen", "kleiner"], key: "kleines" },
   m2: { options: ["gute", "guter", "gutes", "guten"], key: "gute" },
   q1: {
@@ -169,6 +170,14 @@ describe("B1-06 lesson content audit", () => {
         expect(evidence.exerciseIds, `${taskId} maps to a goal exercise`).toContain(exerciseId);
       }
     }
+  });
+
+  it("expands the practice bank to 14 with validated adjective declension practice", () => {
+    expect(lessonB106.practiceBank).toHaveLength(14);
+    const e14 = task("e14");
+    if (e14.type !== "multiple-choice") throw new Error("e14 is not multiple-choice");
+    expect(evaluateExercise(e14, "interessante").isCorrect).toBe(true);
+    expect(evaluateExercise(e14, "interessanten").isCorrect).toBe(false);
   });
 
   it("audits every multiple-choice key and distractor set", () => {

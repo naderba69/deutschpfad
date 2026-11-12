@@ -50,6 +50,7 @@ export function AiSentenceGenerator() {
               type="text"
               value={word}
               onChange={(e) => setWord(e.target.value)}
+              aria-label="الكلمة الألمانية"
               placeholder="أدخل كلمة ألمانية… (مثال: die Freundschaft)"
               dir="ltr"
               lang="de"
@@ -70,6 +71,7 @@ export function AiSentenceGenerator() {
                 key={l}
                 type="button"
                 onClick={() => setLevel(l)}
+                aria-pressed={level === l}
                 className={
                   level === l
                     ? "font-de rounded-lg bg-primary px-3 py-1 text-xs font-bold text-primary-foreground"

@@ -91,5 +91,5 @@ test("الغوص النحوي: رابط في صفحة القواعد + Top 500 �
 
   await page.goto("/wortschatz-b2", { waitUntil: "networkidle" });
   await page.waitForTimeout(500);
-  await expect(page.getByText(/أهم 500 كلمة في الامتحان/)).toBeVisible();
+  await expect(page.getByText(/500 كلمة وتعبير للمراجعة/)).toBeVisible();
 });

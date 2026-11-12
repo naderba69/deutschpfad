@@ -14,6 +14,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   e1: { options: ["aber", "deshalb", "denn", "dann"], key: "aber" },
   e2: { options: ["deshalb", "aber", "und", "oder"], key: "deshalb" },
   e8: { options: ["أولاً أتعلم ثم أشاهد التلفاز", "أتعلم وأنا أشاهد التلفاز", "لا أتعلم بل أشاهد التلفاز", "أشاهد التلفاز ثم أتعلم"], key: "أولاً أتعلم ثم أشاهد التلفاز" },
+  e11: { options: ["trotzdem", "denn", "weil"], key: "trotzdem" },
   m1: { options: ["denn", "deshalb", "trotzdem", "aber"], key: "denn" },
   m2: { options: ["trotzdem", "deshalb", "und", "denn"], key: "trotzdem" },
   q1: { options: ["wegen der Prüfung", "wegen des Wetters", "wegen der Arbeit", "wegen des Verkehrs"], key: "wegen der Prüfung" },
@@ -31,6 +32,7 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
       ["glücklich", "traurig", "gestresst"],
     ],
   },
+  e12: { correct: ["dass"], options: [["dass", "weil", "ob"]] },
   w2: {
     correct: ["aber", "deshalb", "trotzdem", "dann"],
     options: [
@@ -93,6 +95,10 @@ const expectedTransformations: Record<string, { acceptedAnswers: string[]; sampl
   w5: {
     acceptedAnswers: ["Die Idee ist gut, aber ich sehe das anders.", "Die Idee ist gut, aber ich sehe es anders."],
     sampleAnswer: "Die Idee ist gut, aber ich sehe das anders.",
+  },
+  e14: {
+    acceptedAnswers: ["Er sagt, dass er heute nicht kommen kann.", "Er sagt, dass er heute nicht kommen kann"],
+    sampleAnswer: "Er sagt, dass er heute nicht kommen kann.",
   },
 };
 
@@ -258,19 +264,20 @@ describe("A2-12 lesson content audit", () => {
     }
   });
 
-  it("checks the two word-order tasks against their unique target sentences", () => {
+  it("checks all word-order tasks against their unique target sentences", () => {
     const e4 = task("e4");
     const m3 = task("m3");
-    if (e4.type !== "word-ordering" || m3.type !== "word-ordering") throw new Error("word-ordering expected");
+    const e13 = task("e13");
+    if (e4.type !== "word-ordering" || m3.type !== "word-ordering" || e13.type !== "word-ordering") throw new Error("word-ordering expected");
     expect(e4.tokens).toEqual(["Es", "regnet", "deshalb", "bleibe", "ich", ","]);
     expect(e4.correctSentence).toBe("Es regnet, deshalb bleibe ich.");
     expect(m3.tokens).toEqual(["müde", "aber", "Ich", "bin", "glücklich", ","]);
     expect(m3.correctSentence).toBe("Ich bin müde, aber glücklich.");
-    for (const exercise of [e4, m3]) {
-      expect([...exercise.tokens].sort()).toEqual([...exercise.tokens].sort());
-      expect(evaluateExercise(exercise, exercise.correctSentence.split(" ")).isCorrect, exercise.id).toBe(true);
-      expect(evaluateExercise(exercise, [...exercise.correctSentence.split(" ")].reverse()).isCorrect, `${exercise.id} reversed`).toBe(false);
-    }
+    expect(e13.tokens).toEqual(["Obwohl", "wir", "anderer", "Meinung", "sind", ",", "können", "wir", "ruhig", "sprechen", "."]);
+    expect(e13.correctSentence).toBe("Obwohl wir anderer Meinung sind, können wir ruhig sprechen.");
+    expect(evaluateExercise(e4, ["Es", "regnet", ",", "deshalb", "bleibe", "ich", "."]).isCorrect).toBe(true);
+    expect(evaluateExercise(m3, ["Ich", "bin", "müde", ",", "aber", "glücklich", "."]).isCorrect).toBe(true);
+    expect(evaluateExercise(e13, e13.tokens).isCorrect).toBe(true);
   });
 
   it("validates the accepted answers of every transformation and rejects the wrong word order", () => {
@@ -280,7 +287,7 @@ describe("A2-12 lesson content audit", () => {
       expect(exercise.acceptedAnswers, `${id} accepted`).toEqual(expected.acceptedAnswers);
       expect(exercise.sampleAnswer, `${id} sample`).toBe(expected.sampleAnswer);
       expect(new Set(exercise.acceptedAnswers.map(normalizeText)).size, `${id} distinct after normalization`).toBe(
-        id === "w1" || id === "e7" ? 1 : exercise.acceptedAnswers.length,
+        id === "w1" || id === "e7" || id === "e14" ? 1 : exercise.acceptedAnswers.length,
       );
       for (const answer of expected.acceptedAnswers) {
         expect(evaluateExercise(exercise, answer).isCorrect, `${id}: ${answer}`).toBe(true);

@@ -88,8 +88,3 @@ export async function getRecord<T>(store: "progress" | "settings", key: string):
 export async function putRecord(store: "progress" | "settings", key: string, data: unknown): Promise<void> {
   await (await getDb()).put(store, { key, data });
 }
-
-/** مسح مخزن بالكامل */
-export async function clearStore(store: "progress" | "cards" | "events" | "settings" | "snapshots" | "llm-cache" | "llm-usage"): Promise<void> {
-  await (await getDb()).clear(store);
-}

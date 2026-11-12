@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import * as React from "react";
 import {Award, BookOpen, GraduationCap, RotateCcw} from "lucide-react";
 
@@ -221,10 +222,10 @@ export function PlacementTest() {
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <Button asChild variant="gold" className="gap-1.5">
-            <a href={`/learning-path#${result.level.toLowerCase()}`}>
+            <Link href={`/learning-path#${result.level.toLowerCase()}`}>
               <Award className="h-4 w-4" aria-hidden="true" />
               ابدأ من النطاق المقترح {result.level}
-            </a>
+            </Link>
           </Button>
           <StartAtLevelButton level={result.level} />
           <Button variant="outline" onClick={() => setRound((r) => r + 1)} className="gap-1.5">
@@ -277,10 +278,10 @@ function StartAtLevelButton({ level }: { level: string }) {
   if (!firstLesson) return null;
   return (
     <Button asChild className="gap-1.5">
-      <a href={`/lesson/${firstLesson.id}`}>
+      <Link href={`/lesson/${firstLesson.id}`}>
         <BookOpen className="h-4 w-4" aria-hidden="true" />
         انطلق في المسار: {firstLesson.titleAr}
-      </a>
+      </Link>
     </Button>
   );
 }

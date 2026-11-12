@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import {useRouter} from "next/navigation";
 import {ChevronLeft, GraduationCap, Headphones} from "lucide-react";
 
 import {ResultsPanel} from "@/components/tests/results-panel";
@@ -32,6 +33,7 @@ const DIAGNOSTIC_QUESTION_BANK = buildDiagnosticQuestionBank(TEST_BANK);
  * الكتابة مهمة تدريبية غير مصححة ولا تدخل في التقدير النهائي؛ النتيجة مؤشر محدود.
  */
 export function PlacementDiagnostic() {
+  const router = useRouter();
   const [skillIdx, setSkillIdx] = React.useState(0);
   const [levelIdx, setLevelIdx] = React.useState(0);
   const [questionIdx, setQuestionIdx] = React.useState(0);
@@ -157,7 +159,7 @@ export function PlacementDiagnostic() {
         onRetry={restart}
         nextLabel="ابدأ من مستواك"
         onNext={() => {
-          window.location.href = `/learning-path#${result.estimatedLevel.toLowerCase()}`;
+          router.push(`/learning-path#${result.estimatedLevel.toLowerCase()}`);
         }}
       />
       </div>

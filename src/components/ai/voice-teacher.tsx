@@ -176,6 +176,7 @@ export function AiVoiceTeacher() {
         <button
           type="button"
           onClick={() => setMode("free")}
+          aria-pressed={mode === "free"}
           disabled={!isConfigured}
           className={cn(
             "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
@@ -190,6 +191,7 @@ export function AiVoiceTeacher() {
         <button
           type="button"
           onClick={() => setMode("guided")}
+          aria-pressed={mode === "guided"}
           className={cn(
             "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
             mode === "guided" ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
@@ -208,6 +210,7 @@ export function AiVoiceTeacher() {
             key={l}
             type="button"
             onClick={() => setLevel(l)}
+            aria-pressed={level === l}
             className={cn(
               "font-de rounded-lg border px-3 py-1 text-xs font-bold transition-colors",
               level === l ? "border-primary bg-primary text-primary-foreground" : "text-muted-foreground hover:border-primary/50",
@@ -352,6 +355,7 @@ export function AiVoiceTeacher() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && void send()}
+                aria-label="رسالتك للمعلم الصوتي"
                 placeholder={supported ? "تحدث بالميكروفون أو اكتب بالألمانية…" : "الميكروفون غير مدعوم — اكتب بالألمانية…"}
                 dir="ltr"
                 lang="de"

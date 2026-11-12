@@ -85,6 +85,7 @@ export function UmschreibungenClient() {
             <button
               key={t.id}
               type="button"
+              aria-pressed={typ?.id === t.id}
               onClick={() => selectTyp(typ?.id === t.id ? null : t)}
               className={cn(
                 "rounded-xl border p-2.5 text-start transition-colors",

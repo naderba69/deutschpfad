@@ -328,5 +328,3 @@ export const B1_EXTRA_VOCAB: VocabEntry[] = [
   { de: "monatlich", ar: "شهرياً", g: "other" },
   { de: "jährlich", ar: "سنوياً", g: "other" },
 ];
-
-export const TOTAL_B1_EXTRA = B1_EXTRA_VOCAB.length;

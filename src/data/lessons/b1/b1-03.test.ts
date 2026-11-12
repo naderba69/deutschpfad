@@ -204,6 +204,19 @@ describe("B1-03 lesson content audit", () => {
     );
   });
 
+  it("expands the practice bank to 14 with validated environmental tasks", () => {
+    expect(lessonB103.practiceBank).toHaveLength(14);
+    const e13 = task("e13");
+    if (e13.type !== "multiple-choice") throw new Error("e13 is not multiple-choice");
+    expect(evaluateExercise(e13, "werden").isCorrect).toBe(true);
+    expect(evaluateExercise(e13, "wird").isCorrect).toBe(false);
+
+    const e14 = task("e14");
+    if (e14.type !== "fill-blank") throw new Error("e14 is not fill-blank");
+    expect(evaluateExercise(e14, ["zu pflanzen"]).isCorrect).toBe(true);
+    expect(evaluateExercise(e14, ["pflanzen"]).isCorrect).toBe(false);
+  });
+
   it("requires every evidence taskId to end with a mapped exercise ID", () => {
     for (const item of lessonB103.lernziele) {
       const evidence = item.evidence;

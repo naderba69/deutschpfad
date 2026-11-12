@@ -19,6 +19,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   },
   e11: { options: ["sei", "sind", "seid", "bist"], key: "sei" },
   e12: { options: ["seien", "sind", "seid", "bist"], key: "seien" },
+  e13: { options: ["fühle", "fühlt", "fühlst"], key: "fühle" },
   m1: { options: ["wäre ... gegangen", "hätte ... gegangen", "wäre ... gegeht", "habe ... gegangen"], key: "wäre ... gegangen" },
   m2: { options: ["hätte ... gemacht", "wäre ... gemacht", "hätte ... machen", "hat ... gemacht"], key: "hätte ... gemacht" },
   q1: { options: ["mehr Sport", "weniger schlafen", "mehr essen", "weniger arbeiten"], key: "mehr Sport" },
@@ -42,6 +43,7 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
       ["wären", "hätten"],
     ],
   },
+  e14: { correct: ["hätte"], options: [["hätte", "wäre", "hatte"]] },
   w2: {
     correct: ["wäre", "gekommen", "gehabt hätte", "hätte", "gelernt"],
     options: [

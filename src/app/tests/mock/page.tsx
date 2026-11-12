@@ -15,8 +15,9 @@ const LEVELS = [
   { code: "B2", label: "Zertifikat B2", ar: "المتقدم", minutes: 120, color: "#dc2626" },
 ] as const;
 
-export default function MockExamPage({ searchParams }: { searchParams: { level?: string } }) {
-  const selected = (searchParams.level ?? "B2").toUpperCase();
+export default async function MockExamPage({ searchParams }: { searchParams: Promise<{ level?: string }> }) {
+  const { level } = await searchParams;
+  const selected = (level ?? "B2").toUpperCase();
   const meta = LEVELS.find((l) => l.code === selected) ?? LEVELS[3];
 
   return (

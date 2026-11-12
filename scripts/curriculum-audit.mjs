@@ -64,7 +64,7 @@ const ITEMS = [
   { level: "a2", theme: "2. السفر والطقس (Reisen/Wetter)", kind: "g", term: "حروف المكان nach/in/zu", keywords: ["nach", "in", "zu", "wohin"], lessons: ["a1-11", "a2-01"] },
   { level: "a2", theme: "2. السفر والطقس (Reisen/Wetter)", kind: "k", term: "حجز فندق + تخطيط رحلة", keywords: ["Hotel", "Reise", "Urlaub"], lessons: ["a2-01"] },
   { level: "a2", theme: "2. السفر والطقس (Reisen/Wetter)", kind: "k", term: "نشرة الطقس", keywords: ["Wetter", "تقرير الطقس", "الطقس"], lessons: ["a1-12"] },
-  { level: "a2", theme: "3. الصحة (Gesundheit)", kind: "g", term: "Imperativ + dürfen/sollen", keywords: ["Imperativ", "sollen", "nicht dürfen"], lessons: ["a1-06", "a2-02"] },
+  { level: "a2", theme: "3. الصحة (Gesundheit)", kind: "g", term: "Imperativ + dürfen/sollen", keywords: ["أمر المخاطبة الرسمية Sie", "sollen", "nicht dürfen"], lessons: ["a2-02"] },
   { level: "a2", theme: "3. الصحة (Gesundheit)", kind: "g", term: "Dativ", keywords: ["Dativ"], lessons: ["a2-02", "a2-09"] },
   { level: "a2", theme: "3. الصحة (Gesundheit)", kind: "k", term: "أعضاء الجسم والأعراض + موعد", keywords: ["Körper", "Schmerzen", "Symptome", "Arzt"], lessons: ["a2-02"] },
   { level: "a2", theme: "4. التوجيه والتعايش (Orientierung)", kind: "g", term: "Wechselpräpositionen مع Dativ", keywords: ["Wechselpräpositionen", "Dativ"], lessons: ["a2-04"] },
@@ -88,7 +88,7 @@ const ITEMS = [
   { level: "b1", theme: "4. الهوية والثقافة (Heimat)", kind: "g", term: "Adjektivdeklination", keywords: ["Adjektivdeklination"], lessons: ["b1-06"] },
   { level: "b1", theme: "4. الهوية والثقافة (Heimat)", kind: "g", term: "Futur I", keywords: ["Futur I", "werde"], lessons: ["b1-08"] },
   { level: "b1", theme: "4. الهوية والثقافة (Heimat)", kind: "k", term: "الوطن/الهجرة/صدمات الثقافة", keywords: ["Heimat", "هجرة", "Kulturschock", "صدمات"], lessons: ["b1-06", "b2-08"] },
-  { level: "b1", theme: "5. المشاعر والنزاعات (Gefühle)", kind: "g", term: "Verben mit Präpositionen", keywords: ["Verben mit", "worüber", "darüber", "festen Präpositionen"], lessons: ["b2-08"] },
+  { level: "b1", theme: "5. المشاعر والنزاعات (Gefühle)", kind: "g", term: "Verben mit Präpositionen", keywords: ["Verben mit", "festen Präpositionen", "warten auf", "teilnehmen an"], lessons: ["b1-09"] },
   { level: "b1", theme: "5. المشاعر والنزاعات (Gefühle)", kind: "k", term: "الغضب/الفرح/الاعتذار والتصالح", keywords: ["Gefühle", "المشاعر", "Konflikt", "خلاف", "تصالح"], lessons: ["a2-12", "b2-05"] },
 
   /* ─────────── مستوى B2 ─────────── */
@@ -97,7 +97,7 @@ const ITEMS = [
   { level: "b2", theme: "1. بيئة العمل (Arbeitswelt)", kind: "k", term: "مقابلة + Anschreiben", keywords: ["Anschreiben", "Bewerbung", "مقابلة"], lessons: ["b2-09", "b2-06"] },
   { level: "b2", theme: "1. بيئة العمل (Arbeitswelt)", kind: "k", term: "العمل المرن/عن بعد", keywords: ["Homeoffice", "flexibel", "المرن", "عن بعد"], lessons: ["b2-06"] },
   { level: "b2", theme: "2. الاقتصاد والمال (Wirtschaft)", kind: "g", term: "Nominalisierung", keywords: ["Nominalisierung"], lessons: ["b2-06"] },
-  { level: "b2", theme: "2. الاقتصاد والمال (Wirtschaft)", kind: "g", term: "Genitiv-Präpositionen (wegen/trotz)", keywords: ["wegen", "trotz", "während", "statt"], lessons: ["b1-01"] },
+  { level: "b2", theme: "2. الاقتصاد والمال (Wirtschaft)", kind: "g", term: "Genitiv-Präpositionen (wegen/trotz)", keywords: ["wegen", "trotz"], lessons: ["b2-10"] },
   { level: "b2", theme: "2. الاقتصاد والمال (Wirtschaft)", kind: "k", term: "البنوك والقروض والاستثمار", keywords: ["Bank", "Kredit", "Investition", "البنوك"], lessons: ["a2-07", "b2-02"] },
   { level: "b2", theme: "3. المجتمع والقانون (Politik)", kind: "g", term: "Konjunktiv I (نقل الكلام)", keywords: ["Konjunktiv I", "indirekte Rede", "habe"], lessons: ["b2-01"] },
   { level: "b2", theme: "3. المجتمع والقانون (Politik)", kind: "g", term: "الاستخدام الذاتي للأفعال الناقصة (تخمين)", keywords: ["dürfte", "müsste", "subjektiv", "könnte"], lessons: ["b2-01", "b2-07"] },
@@ -107,7 +107,7 @@ const ITEMS = [
   { level: "b2", theme: "4. العلوم والبحث (Wissenschaft)", kind: "k", term: "عرض أكاديمي (Präsentation)", keywords: ["Präsentation", "العروض", "محاضرة"], lessons: ["b2-01", "b2-10"] },
   { level: "b2", theme: "4. العلوم والبحث (Wissenschaft)", kind: "k", term: "الذكاء الاصطناعي", keywords: ["Intelligenz", "الذكاء"], lessons: ["b1-08", "b2-01"] },
   { level: "b2", theme: "5. الثقافة والإعلام (Kultur)", kind: "g", term: "روابط konzessive/restriktive", keywords: ["obwohl", "es sei denn", "ohne"], lessons: ["b1-07", "b2-05"] },
-  { level: "b2", theme: "5. الثقافة والإعلام (Kultur)", kind: "g", term: "Genitiv المتقدم", keywords: ["Genitiv"], lessons: ["b1-01", "b2-03"] },
+  { level: "b2", theme: "5. الثقافة والإعلام (Kultur)", kind: "g", term: "Genitiv المتقدم", keywords: ["Genitiv", "dessen", "deren"], lessons: ["b2-10", "b2-11"] },
   { level: "b2", theme: "5. الثقافة والإعلام (Kultur)", kind: "k", term: "نقد الكتب والأفلام", keywords: ["Buch", "مراجعة كتاب", "Film", "معرض الكتاب"], lessons: ["b2-04"] },
   { level: "b2", theme: "5. الثقافة والإعلام (Kultur)", kind: "k", term: "الرقابة والصحافة والرأي العام", keywords: ["Zensur", "رقابة", "Zeitung", "Meinung"], lessons: ["b2-07", "a2-06"] },
 ];

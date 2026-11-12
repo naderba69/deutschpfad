@@ -84,9 +84,3 @@ export async function resetUsageToday(): Promise<void> {
     /* تجاهل */
   }
 }
-
-/** الطلبات المتبقية اليوم (للعدّاد المرئي) */
-export async function getRemainingCount(): Promise<number> {
-  const [limit, usage] = await Promise.all([getDailyLimit(), getTodayUsage()]);
-  return Math.max(0, limit - usage.count);
-}

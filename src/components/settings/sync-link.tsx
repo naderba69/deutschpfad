@@ -5,6 +5,7 @@ import {Copy, Link2, Share2, Trophy} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
 import {buildBackupData, validateBackupData, writeBackupData} from "@/lib/storage/export-import";
+import {decodeSyncPayload, encodeSyncPayload} from "@/lib/storage/sync-codec";
 import {cn} from "@/lib/utils";
 
 /**
@@ -18,42 +19,6 @@ import {cn} from "@/lib/utils";
  * ═══════════════════════════════════════════════════════════
  */
 
-/** ضغط + تشفير بسيط (Base64) — ليس أماناً حقيقياً بل حماية من الخطأ */
-async function compress(data: unknown): Promise<string> {
-  const json = JSON.stringify(data);
-  const bytes = new TextEncoder().encode(json);
-  // ضغط بسيط باستخدام CompressionStream (متوفر في المتصفحات الحديثة)
-  try {
-    if ("CompressionStream" in window) {
-      const stream = new Blob([bytes]).stream().pipeThrough(new CompressionStream("gzip"));
-      const compressed = await new Response(stream).arrayBuffer();
-      const base64 = btoa(String.fromCharCode(...new Uint8Array(compressed)));
-      return `v1.${base64}`;
-    }
-  } catch {
-    /* سقط للنسخة غير المضغوطة */
-  }
-  return `v1raw.${btoa(json)}`;
-}
-
-async function decompress(encoded: string): Promise<unknown> {
-  if (encoded.startsWith("v1raw.")) {
-    const json = atob(encoded.slice(6));
-    return JSON.parse(json);
-  }
-  if (encoded.startsWith("v1.")) {
-    const b64 = encoded.slice(3);
-    const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
-    if ("DecompressionStream" in window) {
-      const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
-      const json = await new Response(stream).text();
-      return JSON.parse(json);
-    }
-    throw new Error("متصفحك لا يدعم فك الضغط — استخدم متصفحاً حديثاً");
-  }
-  return JSON.parse(encoded);
-}
-
 export function SyncLink() {
   const [status, setStatus] = React.useState<string | null>(null);
   const [syncLink, setSyncLink] = React.useState<string | null>(null);
@@ -62,23 +27,50 @@ export function SyncLink() {
   const [importCode, setImportCode] = React.useState("");
 
   const buildLinks = async () => {
-    const data = await buildBackupData();
-    const encoded = await compress(data);
+    try {
+      const data = await buildBackupData();
+    const encoded = await encodeSyncPayload(data);
     // رابط المزامنة: يحمل البيانات كاملة
     const sync = `${location.origin}/sync?data=${encodeURIComponent(encoded)}`;
-    // تحدي الصديق: لقطة مبسطة (الاسم + المستوى + النقاط)
+    // ملف المتعلم محفوظ في مرآة LocalStorage داخل settings._localStorage.
+    const localStorageBackup = data.settings["_localStorage"];
+    const rawProfile =
+      localStorageBackup && typeof localStorageBackup === "object"
+        ? (localStorageBackup as Record<string, unknown>)["dp:learner-profile"]
+        : undefined;
+    let profile: {name?: string; placementLevel?: string} = {};
+    if (typeof rawProfile === "string") {
+      try {
+        const parsed: unknown = JSON.parse(rawProfile);
+        if (parsed && typeof parsed === "object") {
+          const candidate = parsed as Record<string, unknown>;
+          profile = {
+            name: typeof candidate.name === "string" ? candidate.name.slice(0, 80) : undefined,
+            placementLevel: ["A1", "A2", "B1", "B2"].includes(String(candidate.placementLevel))
+              ? String(candidate.placementLevel)
+              : undefined,
+          };
+        }
+      } catch {
+        // ملف متعلم تالف: استخدم القيم العامة أدناه.
+      }
+    }
+    // تحدي الصديق: لقطة مختصرة دون مشاركة بقية بيانات النسخة الاحتياطية.
     const snapshot = {
       type: "challenge",
-      name: (data as { profile?: { name?: string } }).profile?.name ?? "صديقك",
-      level: (data as { profile?: { placementLevel?: string } }).profile?.placementLevel ?? "A1",
-      lessons: (data as { progress?: { completedLessons?: string[] } }).progress?.completedLessons?.length ?? 0,
+      name: profile.name || "متعلم Deutschpfad",
+      level: profile.placementLevel ?? "A1",
+      lessons: data.progress.completedLessons?.length ?? 0,
       ts: Date.now(),
     };
-    const encChallenge = await compress(snapshot);
+    const encChallenge = await encodeSyncPayload(snapshot);
     const challenge = `${location.origin}/sync?challenge=${encodeURIComponent(encChallenge)}`;
     setSyncLink(sync);
-    setChallengeLink(challenge);
-    setStatus("تم توليد الروابط ✓ — انسخها وشاركها");
+      setChallengeLink(challenge);
+      setStatus("تم توليد الروابط ✓ — انسخها وشاركها");
+    } catch {
+      setStatus("تعذّر إنشاء رابط المشاركة؛ جرّب تنزيل ملف النسخة الاحتياطية بدلاً منه.");
+    }
   };
 
   const copy = async (text: string, label: string) => {
@@ -92,7 +84,7 @@ export function SyncLink() {
 
   const applyImport = async () => {
     try {
-      const data = await decompress(importCode.trim());
+      const data = await decodeSyncPayload(importCode.trim());
       if (!validateBackupData(data)) {
         setStatus("⚠️ الرابط غير صالح لبيانات DeutschPfad");
         return;

@@ -42,6 +42,7 @@ export function TeacherPersonalityCard() {
             <button
               key={p}
               type="button"
+              aria-pressed={personality === p}
               onClick={() => choose(p)}
               className={cn(
                 "flex flex-col items-center gap-1 rounded-xl border p-4 text-center transition-all",

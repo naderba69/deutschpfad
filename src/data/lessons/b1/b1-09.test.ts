@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { evaluateExercise } from "@/lib/lesson/exercise-engine";
 import { lessonB109 } from "./b1-09";
 
 type Loose = { options?: string[]; correctIndex?: number };
@@ -22,6 +23,14 @@ describe("B1-09 audit", () => {
         expect(ok, `${goal.id}:${id}`).toBe(true);
       }
     }
+  });
+
+  it("expands the practice bank to 14 and validates helfen with plural Dativ", () => {
+    expect(lessonB109.practiceBank).toHaveLength(14);
+    const e14 = lessonB109.practiceBank.find((item) => item.id === "e14");
+    if (!e14 || e14.type !== "fill-blank") throw new Error("e14 fill-blank is required");
+    expect(evaluateExercise(e14, ["den"]).isCorrect).toBe(true);
+    expect(evaluateExercise(e14, ["die"]).isCorrect).toBe(false);
   });
 
   it("offers a correct word among the error-correction options (the no-error option is added by the interface)", () => {

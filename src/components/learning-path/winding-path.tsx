@@ -118,7 +118,12 @@ export function WindingPath({
                   className="text-gold"
                 />
               )}
-              <Link href={`/lesson/${lesson.id}`} aria-label={lesson.titleAr}>
+              <Link
+                href={locked ? "#" : `/lesson/${lesson.id}`}
+                onClick={locked ? (e) => e.preventDefault() : undefined}
+                aria-disabled={locked}
+                aria-label={locked ? `${lesson.titleAr} (مقفلة — أكمل الدرس السابق لفتحها)` : lesson.titleAr}
+              >
                 <circle
                   cx={nodeRadius}
                   cy={nodeRadius}

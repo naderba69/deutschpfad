@@ -357,12 +357,6 @@ export const A1_VOCAB: Record<string, VocabEntry[]> = {
   ],
 };
 
-/** عدد كلمات A1 */
-export const A1_VOCAB_COUNT = Object.values(A1_VOCAB).reduce(
-  (sum, list) => sum + list.length,
-  0,
-);
-
 /** كل مفردات مستوى (مصفوفة مسطحة) */
 export function getA1VocabAll(): VocabEntry[] {
   return [...Object.values(A1_VOCAB).flat(), ...A1_EXTRA_VOCAB, ...A1_EXTRA2_VOCAB];
@@ -371,9 +365,4 @@ export function getA1VocabAll(): VocabEntry[] {
 /** مفردات وحدة معينة */
 export function getUnitVocab(unitId: string): VocabEntry[] {
   return A1_VOCAB[unitId] ?? [];
-}
-
-/** مستوى مفردات للعرض (منظمة حسب الوحدات) */
-export function vocabLevelsSummary(): { unitId: string; count: number }[] {
-  return Object.entries(A1_VOCAB).map(([unitId, list]) => ({ unitId, count: list.length }));
 }

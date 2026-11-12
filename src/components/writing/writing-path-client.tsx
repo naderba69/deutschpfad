@@ -6,7 +6,7 @@ import {CheckCircle2, Lightbulb, Send, Sparkles} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
 import {evaluateWriting} from "@/lib/writing/goethe-local";
-import {recordMistake} from "@/lib/storage/error-notebook";
+import {getNotebookEntryId, recordMistake} from "@/lib/storage/error-notebook";
 import {playCorrect, playWrong} from "@/lib/audio/sfx";
 import {addGems, GEM_REWARDS} from "@/lib/gamification/gems";
 import {STAGE_ORDER, getTasksByStage, WRITING_TASKS, type WritingStage, type WritingTask} from "@/data/writing-path";
@@ -65,8 +65,10 @@ export function WritingPathClient() {
       playWrong();
       if (r.words < task.minWords) {
         void recordMistake({
-          id: `writing-${task.id}`,
-          errorType: "spelling",
+          id: getNotebookEntryId("writing-path", task.id),
+          exerciseId: task.id,
+          sourceId: "writing-path",
+          errorType: "writing_length",
           explanation: `مهمة كتابة: «${task.title}» — النص قصير جداً (${r.words} كلمة، المطلوب ${task.minWords}+). وسّع بالأسباب والأمثلة.`,
         });
       }
@@ -111,6 +113,7 @@ export function WritingPathClient() {
             <button
               key={s.key}
               type="button"
+              aria-pressed={activeStage === s.key}
               onClick={() => goToStage(s.key, i)}
               disabled={locked}
               className={cn(

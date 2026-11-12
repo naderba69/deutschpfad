@@ -178,5 +178,3 @@ export const A1_EXTRA2_VOCAB: VocabEntry[] = [
   { de: "bitter", ar: "مر", g: "adj" },
   { de: "scharf", ar: "حار (طعام)", g: "adj" },
 ];
-
-export const TOTAL_A1_EXTRA2 = A1_EXTRA2_VOCAB.length;

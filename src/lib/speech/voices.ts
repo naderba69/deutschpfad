@@ -11,26 +11,43 @@ export interface GermanVoiceInfo {
 /** قائمة الأصوات المخزنة مؤقتاً */
 let cachedVoices: SpeechSynthesisVoice[] = [];
 
-/** تسجيل مستمعي تغيّر الأصوات */
-const listeners = new Set<() => void>();
-
-function refreshVoices() {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-  cachedVoices = window.speechSynthesis.getVoices();
-  listeners.forEach((fn) => fn());
+function refreshVoices(speechSynthesis?: SpeechSynthesis) {
+  const synth = speechSynthesis ?? (
+    typeof window !== "undefined" && "speechSynthesis" in window ? window.speechSynthesis : null
+  );
+  if (!synth) return;
+  cachedVoices = synth.getVoices();
 }
 
-/** تحميل الأصوات (يُستدعى مرة واحدة عند أول استخدام) */
-export function initVoices(onReady?: () => void): void {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-  refreshVoices();
-  if (onReady) listeners.add(onReady);
-  // بعض المتصفحات تُحمّل الأصوات بشكل غير متزامن
-  window.speechSynthesis.onvoiceschanged = () => {
-    refreshVoices();
-    if (onReady) onReady();
+/** تحميل الأصوات دون استبدال onvoiceschanged العام أو ترك مستمع دائم. */
+export function initVoices(onReady?: () => void, speechSynthesis?: SpeechSynthesis): () => void {
+  const synth = speechSynthesis ?? (
+    typeof window !== "undefined" && "speechSynthesis" in window ? window.speechSynthesis : null
+  );
+  if (!synth) return () => {};
+  let active = true;
+  const cleanup = () => {
+    if (!active) return;
+    active = false;
+    synth.removeEventListener("voiceschanged", handleVoicesChanged);
   };
-  if (cachedVoices.length > 0 && onReady) onReady();
+  const handleVoicesChanged = () => {
+    refreshVoices(synth);
+    if (cachedVoices.length > 0) {
+      cleanup();
+      onReady?.();
+    }
+  };
+
+  refreshVoices(synth);
+  if (cachedVoices.length > 0) {
+    onReady?.();
+    return cleanup;
+  }
+  synth.addEventListener("voiceschanged", handleVoicesChanged);
+  // إعادة الفحص بعد التسجيل لمنع فقدان حدث متزامن مع getVoices().
+  handleVoicesChanged();
+  return cleanup;
 }
 
 /** جميع الأصوات الألمانية المتاحة */
@@ -44,20 +61,53 @@ export function getGermanVoices(): GermanVoiceInfo[] {
     .sort((a, b) => b.quality - a.quality);
 }
 
-/** أفضل صوت ألماني (أو null) */
-export function getBestGermanVoice(): SpeechSynthesisVoice | null {
-  const german = getGermanVoices();
-  if (german.length === 0) return null;
-  return german[0].voice;
+/** يختار صوتاً ألمانياً فقط؛ لا يرجع لصوت افتراضي بلغة أخرى. */
+export function selectGermanVoice(voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | null {
+  const german = voices.filter((voice) => voice.lang.toLowerCase().startsWith("de"));
+  return german.find((voice) => voice.lang.toLowerCase() === "de-de")
+    ?? german.find((voice) => !voice.localService)
+    ?? german[0]
+    ?? null;
 }
 
-/** هل يوجد صوت ألماني مثبت؟ */
-export function hasGermanVoice(): boolean {
-  return getGermanVoices().length > 0;
+/** انتظار تحميل صوت ألماني؛ يدعم المتصفحات التي تملأ القائمة بعد voiceschanged. */
+export function waitForGermanVoice(
+  timeoutMs = 2_000,
+  speechSynthesis?: SpeechSynthesis,
+): Promise<SpeechSynthesisVoice | null> {
+  const synth = speechSynthesis ?? (isSpeechSynthesisSupported() ? window.speechSynthesis : null);
+  if (!synth) return Promise.resolve(null);
+  const current = selectGermanVoice(synth.getVoices());
+  if (current) return Promise.resolve(current);
+
+  return new Promise((resolve) => {
+    let done = false;
+    let timer: ReturnType<typeof setTimeout>;
+    const finish = (voice: SpeechSynthesisVoice | null) => {
+      if (done) return;
+      done = true;
+      globalThis.clearTimeout(timer);
+      synth.removeEventListener("voiceschanged", onVoicesChanged);
+      resolve(voice);
+    };
+    const onVoicesChanged = () => {
+      const voice = selectGermanVoice(synth.getVoices());
+      if (voice) {
+        cachedVoices = synth.getVoices();
+        finish(voice);
+      }
+    };
+    timer = globalThis.setTimeout(() => {
+      cachedVoices = synth.getVoices();
+      finish(selectGermanVoice(cachedVoices));
+    }, timeoutMs);
+    synth.addEventListener("voiceschanged", onVoicesChanged);
+    onVoicesChanged();
+  });
 }
 
 /** هل يدعم المتصفح النطق؟ */
-export function isSpeechSynthesisSupported(): boolean {
+function isSpeechSynthesisSupported(): boolean {
   return typeof window !== "undefined" && "speechSynthesis" in window;
 }
 
@@ -65,40 +115,45 @@ export function isSpeechSynthesisSupported(): boolean {
  * نطق نص ألماني مع أفضل صوت متاح وسرعة محددة
  * — يعيد كائن التحكم لإمكانية الإيقاف —
  */
-export function speakGerman(
+let speechGeneration = 0;
+
+export async function speakGerman(
   text: string,
   opts: { rate?: number; pitch?: number; volume?: number; onEnd?: () => void; onError?: () => void } = {},
-): SpeechSynthesisUtterance | null {
+): Promise<SpeechSynthesisUtterance | null> {
   if (!isSpeechSynthesisSupported()) return null;
 
+  const generation = ++speechGeneration;
   const { rate = 1, pitch = 1, volume = 1, onEnd, onError } = opts;
-
   window.speechSynthesis.cancel();
+  const bestVoice = await waitForGermanVoice();
+  if (generation !== speechGeneration) return null;
+  if (!bestVoice) {
+    onError?.();
+    return null;
+  }
 
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = "de-DE";
   utterance.rate = rate;
   utterance.pitch = pitch;
   utterance.volume = volume;
-
-  const bestVoice = getBestGermanVoice();
-  if (bestVoice) {
-    try {
-      utterance.voice = bestVoice;
-    } catch {
-      /* صوت افتراضي — لا نكسر النطق إذا رفض المتصفح الكائن */
-    }
+  try {
+    utterance.voice = bestVoice;
+  } catch {
+    onError?.();
+    return null;
   }
 
   if (onEnd) utterance.onend = onEnd;
   if (onError) utterance.onerror = onError;
-
   window.speechSynthesis.speak(utterance);
   return utterance;
 }
 
 /** إيقاف أي نطق جارٍ */
 export function stopSpeaking(): void {
+  speechGeneration += 1;
   if (isSpeechSynthesisSupported()) {
     window.speechSynthesis.cancel();
   }
@@ -111,41 +166,41 @@ export function speakSequence(
 ): void {
   if (!isSpeechSynthesisSupported() || lines.length === 0) return;
   stopSpeaking();
+  const generation = speechGeneration;
   const { rate = 1, onEnd } = opts;
 
-  // ═══ الإصلاح الجوهري: التسلسل عبر onend بدل إضافة كل الجمل دفعة واحدة ═══
-  // إضافة عدة utterances فور cancel() معروفة بأنها تجعل Chrome يبتلع
-  // بعضها — فيسمع المستخدم «أول جملة فقط» ثم صمت. بالتسلسل تُنطق كل
-  // جملة بعد انتهاء سابقتها حتماً.
-  const speakNext = (idx: number) => {
+  // تسلسل الأصوات عبر onend لتفادي إسقاط الجمل في بعض المتصفحات.
+  const speakNext = async (idx: number) => {
+    if (generation !== speechGeneration) return;
     if (idx >= lines.length) {
       onEnd?.();
       return;
     }
     const line = lines[idx];
+    const bestVoice = await waitForGermanVoice();
+    if (generation !== speechGeneration) return;
+    if (!bestVoice) {
+      onEnd?.();
+      return;
+    }
     const u = new SpeechSynthesisUtterance(line.de);
     u.lang = "de-DE";
     u.rate = rate;
-    const bestVoice = getBestGermanVoice();
-    if (bestVoice) {
-      try {
-        u.voice = bestVoice;
-      } catch {
-        /* صوت افتراضي */
-      }
+    try {
+      u.voice = bestVoice;
+    } catch {
+      onEnd?.();
+      return;
     }
     u.onend = () => {
       const pause = line.pauseMs ?? 0;
-      if (pause > 0) {
-        window.setTimeout(() => speakNext(idx + 1), pause);
-      } else {
-        speakNext(idx + 1);
-      }
+      if (pause > 0) window.setTimeout(() => void speakNext(idx + 1), pause);
+      else void speakNext(idx + 1);
     };
-    u.onerror = () => speakNext(idx + 1);
+    u.onerror = () => void speakNext(idx + 1);
     window.speechSynthesis.speak(u);
   };
-  speakNext(0);
+  void speakNext(0);
 }
 
 /** تشغيل حلقي: إعادة نطق نفس النص count مرات */

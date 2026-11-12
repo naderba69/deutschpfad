@@ -1,6 +1,7 @@
 import {describe, expect, it} from "vitest";
 
 import {LESSON_META} from "@/data/lessons/meta";
+import {LESSONS} from "@/data/lessons/index";
 import {
   getUnitKeyWords,
   getUnitLessonCount,
@@ -17,6 +18,13 @@ import {
  */
 
 describe("اتساق أرقام الدروس (المرحلة 4)", () => {
+  it("سجل الدروس والفهرس الوصفي يحتويان المعرفات نفسها دون فقد أو تكرار", () => {
+    const registryIds = LESSONS.map((lesson) => lesson.id).sort();
+    const metadataIds = LESSON_META.map((lesson) => lesson.id).sort();
+    expect(new Set(registryIds).size).toBe(registryIds.length);
+    expect(new Set(metadataIds).size).toBe(metadataIds.length);
+    expect(registryIds).toEqual(metadataIds);
+  });
   it("TOTAL_LESSONS يساوي عدد الدروس الفعلية (52 — لا 251 الوهمي)", () => {
     expect(TOTAL_LESSONS).toBe(LESSON_META.length);
     expect(TOTAL_LESSONS).toBe(52);
@@ -95,9 +103,9 @@ describe("اتساق أرقام الدروس (المرحلة 4)", () => {
 });
 
 describe("اتساق الدروس الفعلية (المرحلة 4)", () => {
-  it("ترتيب LESSON_META صحيح (الأرقام قبل المراجعة الختامية، والمستويات متتالية)", () => {
+  it("ترتيب LESSON_META صحيح (درس Perfekt قبل المراجعة الختامية، والمستويات متتالية)", () => {
     const ids = LESSON_META.map((m) => m.id);
-    // a1-14 (الأرقام) قبل a1-13 (المراجعة الختامية)
+    // a1-14 (Perfekt، في الوحدة a1-07) قبل a1-13 (المراجعة الختامية)
     expect(ids.indexOf("a1-14")).toBeLessThan(ids.indexOf("a1-13"));
     // b1-11 قبل b2-01
     expect(ids.indexOf("b1-11")).toBeLessThan(ids.indexOf("b2-01"));
@@ -114,7 +122,7 @@ describe("اتساق الدروس الفعلية (المرحلة 4)", () => {
 });
 
 describe("عدد الوحدات المعلن (المرحلة 4)", () => {
-  it("TOTAL_UNITS ثابت ومعقول (45 وحدة عرض)", () => {
+  it("TOTAL_UNITS يساوي عدد وحدات العرض الفعلية (47)", () => {
     expect(TOTAL_UNITS).toBe(47);
   });
 

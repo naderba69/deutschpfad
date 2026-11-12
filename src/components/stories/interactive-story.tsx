@@ -32,6 +32,7 @@ export function InteractiveStoryPlayer({ story, onExit }: { story: InteractiveSt
   const [answeredCount, setAnsweredCount] = React.useState(0);
   const [finished, setFinished] = React.useState(false);
   const [gemsEarned, setGemsEarned] = React.useState(0);
+  const [progressSaveFailed, setProgressSaveFailed] = React.useState(false);
 
   const seg = story.segments[segmentIdx];
   const progress = (segmentIdx / story.segments.length) * 100;
@@ -66,7 +67,7 @@ export function InteractiveStoryPlayer({ story, onExit }: { story: InteractiveSt
     } else {
       setFinished(true);
       // مكافأة إتمام القصة + تسجيلها كمنجزة
-      markStoryCompleted(story.id);
+      setProgressSaveFailed(!markStoryCompleted(story.id));
       const g = addGems(GEM_REWARDS.LESSON_COMPLETED);
       setGemsEarned(g);
       playCorrect();
@@ -95,6 +96,11 @@ export function InteractiveStoryPlayer({ story, onExit }: { story: InteractiveSt
         {correctCount < answeredCount && (
           <p className="rounded-lg bg-primary/5 px-3 py-2 text-xs font-bold text-primary">
             💡 أعد قراءة الأجزاء التي أخطأت فيها — الفهم يتكرس بالقراءة المتدرجة.
+          </p>
+        )}
+        {progressSaveFailed && (
+          <p role="alert" className="rounded-xl border border-amber-500/40 bg-amber-500/5 p-3 text-sm">
+            تعذر حفظ إكمال القصة؛ قد لا يظهر تقدمها في المكتبة بعد العودة.
           </p>
         )}
         <Button onClick={onExit} className="gap-2">

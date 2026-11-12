@@ -34,7 +34,7 @@ export function TeacherMentor({ profile }: { profile: LearnerProfile }) {
   }, []);
 
   const firstName = (profile.name ?? "").trim().split(/\s+/)[0] ?? "صديقي";
-  const doneCount = completedLessesSetSize(completedLessonsSet);
+  const doneCount = completedLessonsSet.size;
 
   // الدرس التالي (أول درس غير مكتمل في المسار)
   const next = LESSON_META.find((l) => !completedLessonsSet.has(l.id)) ?? LESSON_META[LESSON_META.length - 1];
@@ -56,8 +56,8 @@ export function TeacherMentor({ profile }: { profile: LearnerProfile }) {
   // ملاحظة المعلم عن مستوى المتعلم
   const note =
     weakest !== null
-      ? `لاحظت أن نقطة ضعفك الحالية «${weakest}» — سنعمل عليها في التدريب.`
-      : `وضعك ممتاز — نواصل بنفس التركيز، وكل جلسة تقرّبك من B2.`;
+      ? `تُظهر عينة الأخطاء المسجلة تكرار «${weakest}» — سنراجعه في التدريب؛ وهذا مؤشر محدود لا يحدد مستواك العام.`
+      : `لا توجد بيانات أخطاء كافية لتحديد نقطة مراجعة بعد؛ سنواصل المسار التعليمي دون استنتاج مستوى من غياب البيانات.`;
 
   return (
     <Card className="relative overflow-hidden border-primary/25">
@@ -169,9 +169,4 @@ function SessionStep({
       </Link>
     </li>
   );
-}
-
-/** مساعد: حجم مجموعة الدروس المكتملة (واجهة قديمة) */
-function completedLessesSetSize(set: Set<string>): number {
-  return set.size;
 }

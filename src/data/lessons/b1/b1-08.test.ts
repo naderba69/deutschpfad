@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { evaluateExercise } from "@/lib/lesson/exercise-engine";
 import { lessonB108 } from "./b1-08";
 
 const exercise = (id: string) => {
@@ -19,6 +20,21 @@ describe("B1-08 audit", () => {
         expect(practiceIds.has(id) || miniIds.has(id) || writingIds.has(id) || lessonB108.listening.questions.some((q) => q.id === id), `${goal.id}:${id}`).toBe(true);
       }
     }
+  });
+
+  it("expands the practice bank to 14 with validated double conjunction exercises", () => {
+    expect(lessonB108.practiceBank).toHaveLength(14);
+    const e12 = exercise("e12");
+    expect(evaluateExercise(e12, "Sowohl das Tablet als auch der Laptop sind praktisch.").isCorrect).toBe(true);
+    expect(evaluateExercise(e12, "Sowohl das Tablet oder der Laptop sind praktisch.").isCorrect).toBe(false);
+
+    const e13 = exercise("e13");
+    if (e13.type !== "word-ordering") throw new Error("e13 is not word-ordering");
+    expect(evaluateExercise(e13, e13.correctSentence.split(/\s+/)).isCorrect).toBe(true);
+
+    const e14 = exercise("e14");
+    expect(evaluateExercise(e14, ["weder", "noch"]).isCorrect).toBe(true);
+    expect(evaluateExercise(e14, ["entweder", "oder"]).isCorrect).toBe(false);
   });
 
   it("offers a correct word among the error-correction options (the no-error option is added by the interface)", () => {

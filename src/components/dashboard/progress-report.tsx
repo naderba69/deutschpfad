@@ -11,8 +11,8 @@ import {TOTAL_LESSONS} from "@/lib/constants/curriculum";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useProgress } from "@/components/providers/progress-provider";
-import { getEventStats } from "@/lib/analytics/events";
-import { getStudyStats } from "@/lib/analytics/session";
+import { getEventStatsResult } from "@/lib/analytics/events";
+import { getStudyStatsResult } from "@/lib/analytics/session";
 import { getCardStats } from "@/lib/srs/flashcard-service";
 import { getOverallProgress } from "@/lib/progress-selectors";
 import { LEVELS } from "@/lib/constants/curriculum";
@@ -20,6 +20,7 @@ import { getLevelCompletion } from "@/lib/progress-selectors";
 
 export function ProgressReport() {
   const { completedUnits, sealedLevels, isHydrated } = useProgress();
+  const [statsReadError, setStatsReadError] = React.useState(false);
   const [stats, setStats] = React.useState<{
     xp: number;
     accuracy: number;
@@ -33,15 +34,19 @@ export function ProgressReport() {
   React.useEffect(() => {
     let mounted = true;
     void (async () => {
-      const [s, ss, cs] = await Promise.all([getEventStats(), getStudyStats(), getCardStats()]);
-      if (mounted)
-        setStats({
-          xp: s.xp,
-          accuracy: s.accuracyPct,
-          answered: s.exercisesAnswered,
-          reviews: s.reviewsCount,
-          lessons: s.lessonsCompleted,
-          studyMinutes: ss.totalMinutes,
+      const [s, ss, cs] = await Promise.all([getEventStatsResult(), getStudyStatsResult(), getCardStats()]);
+      if (!mounted) return;
+      if (!s.ok || !ss.ok) {
+        setStatsReadError(true);
+        return;
+      }
+      setStats({
+          xp: s.stats.xp,
+          accuracy: s.stats.accuracyPct,
+          answered: s.stats.exercisesAnswered,
+          reviews: s.stats.reviewsCount,
+          lessons: s.stats.lessonsCompleted,
+          studyMinutes: ss.stats.totalMinutes,
           cards: { total: cs.total, due: cs.due },
         });
     })();
@@ -77,8 +82,10 @@ export function ProgressReport() {
           <p className="mt-1 text-sm text-muted-foreground" suppressHydrationWarning>تاريخ التقرير: {date}</p>
         </div>
 
-        {/* الخلاصة */}
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      {statsReadError && <p role="alert" className="rounded-lg border border-destructive/30 bg-destructive/5 px-3 py-2 text-sm text-destructive">تعذر قراءة سجل النشاط؛ أخفينا الإحصاءات المرتبطة به بدلاً من عرض أصفار غير موثوقة.</p>}
+
+      {/* الخلاصة */}
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {[
             { label: "التقدم الكلي", value: `${overall}%` },
             { label: "الدروس المكتملة", value: stats ? `${stats.lessons}/${TOTAL_LESSONS}` : `—/${TOTAL_LESSONS}` },

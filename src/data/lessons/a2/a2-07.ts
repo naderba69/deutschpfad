@@ -1099,6 +1099,14 @@ export const lessonA207: Lesson = {
       exampleAr: "يوجد نموذجان للحساب.",
       level: "A2",
     },
+    {
+      id: "fc13",
+      de: "der Kredit",
+      ar: "القرض / السلفة",
+      example: "Ich nehme einen Kredit bei der Bank.",
+      exampleAr: "آخذ قرضاً من البنك.",
+      level: "A2",
+    },
   ],
 
   mediation: [

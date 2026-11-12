@@ -5,6 +5,7 @@
  * بوابة تقدم داخلية؛ الإكمال الكامل قد يتيح الانتقال للمستخدمين القدامى، لكنه لا يسجل اجتياز الامتحان.
  * — الأهلية: إكمال 80% من وحدات المستوى —
  */
+import Link from "next/link";
 import * as React from "react";
 import {Award, Lock, PartyPopper, RotateCcw, ShieldCheck} from "lucide-react";
 
@@ -59,7 +60,7 @@ export function SealExam({ levelParam, quick = false }: { levelParam: string; qu
           <Progress value={completion.pct} className="mx-auto mt-4 max-w-sm" aria-label={`تقدم مستوى ${level}`} />
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Button asChild>
-              <a href="/learning-path">العودة إلى مسار التعلم</a>
+              <Link href="/learning-path">العودة إلى مسار التعلم</Link>
             </Button>
           </div>
         </CardContent>
@@ -81,7 +82,7 @@ export function SealExam({ levelParam, quick = false }: { levelParam: string; qu
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Button asChild>
-              <a href="/learning-path">متابعة التعلم</a>
+              <Link href="/learning-path">متابعة التعلم</Link>
             </Button>
             <Button
               variant="outline"
@@ -119,7 +120,7 @@ export function SealExam({ levelParam, quick = false }: { levelParam: string; qu
               إعادة محاولة الامتحان
             </Button>
             <Button variant="outline" asChild>
-              <a href="/dashboard/review">المراجعة أولاً</a>
+              <Link href="/dashboard/review">المراجعة أولاً</Link>
             </Button>
           </div>
         </CardContent>

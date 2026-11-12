@@ -4,6 +4,7 @@
  * عرض تعريفي لبنية امتحان Goethe B2 مع اختبار مستوى كتابي داخلي سريع.
  * الاختبار لا يحاكي الامتحان الكامل ولا يثبت الجاهزية أو يصدر نتيجة رسمية.
  */
+import Link from "next/link";
 import * as React from "react";
 import {Award, BookOpenCheck, Headphones, Mic, PenLine, Timer} from "lucide-react";
 
@@ -60,7 +61,7 @@ export function VollPruefungClient() {
           </ol>
           <p className="rounded-xl border border-amber-400/50 bg-amber-50 p-3 text-xs leading-relaxed text-amber-900 dark:bg-amber-950/40 dark:text-amber-200">
             هذه نظرة معلوماتية وليست بديلاً عن تفاصيل الجهة المنظمة، وقد تتغير صيغ الامتحان أو توقيتاته. الاختبار أدناه عينة تدريب داخلية، والرابط التالي يفتح تدريباً مستوحى من بعض أنماط B2، لا محاكاة كاملة ولا نتيجة رسمية: {" "}
-            <a href="/tests/b2" className="font-bold text-primary underline">تدريب B2</a>.
+            <Link href="/tests/b2" className="font-bold text-primary underline">تدريب B2</Link>.
           </p>
         </CardContent>
       </Card>
@@ -89,10 +90,10 @@ export function VollPruefungClient() {
             وتحدث 3 دقائق) ثم مناقشة (4 دقائق) — مع تسجيل صوتي وتقييم ذاتي بمعايير الممتحن.
           </p>
           <Button asChild size="lg" className="h-auto min-h-11 max-w-full gap-1.5 whitespace-normal py-2 text-start">
-            <a href="/tests/sprechen">
+            <Link href="/tests/sprechen">
               <Mic className="h-4 w-4" aria-hidden="true" />
               انتقل إلى الامتحان الشفهي B2
-            </a>
+            </Link>
           </Button>
         </CardContent>
       </Card>

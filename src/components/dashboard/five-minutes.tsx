@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import * as React from "react";
 import {Clock, Layers, Sparkles, Zap} from "lucide-react";
 
@@ -138,7 +139,7 @@ export function FiveMinutes() {
           {batch.map((ex, i) => (
             <div key={ex.id}>
               <p className="mb-2 text-xs font-bold text-muted-foreground">تمرين {i + 1}/3</p>
-              <ExerciseRenderer exercise={ex} />
+              <ExerciseRenderer exercise={ex} sourceId="dashboard:five-minutes" />
             </div>
           ))}
         </CardContent>
@@ -157,7 +158,7 @@ export function FiveMinutes() {
             </p>
           </div>
           <Button asChild size="sm" className="gap-1.5">
-            <a href={`/lesson/${lesson.id}`}>ابدأ الدرس</a>
+            <Link href={`/lesson/${lesson.id}`}>ابدأ الدرس</Link>
           </Button>
         </div>
       )}

@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import {useRouter} from "next/navigation";
 import {ArrowLeft, ArrowRight, Award, CheckCircle2, ListChecks, Printer, Sparkles, TableProperties, Trophy} from "lucide-react";
 
 import {LESSON_SECTIONS} from "@/components/lesson/lesson-sections";
@@ -47,6 +48,7 @@ const LEVEL_LABEL: Record<string, string> = {
  * + اقتراح امتحان الختم عند إتمام آخر درس في المستوى.
  */
 function LessonCompletion({ lesson }: { lesson: Lesson }) {
+  const router = useRouter();
   const { completedLessonsSet, completeLesson, uncompleteLesson } = useProgress();
   const [autoCount, setAutoCount] = React.useState<number | null>(null);
   const [teacherWord, setTeacherWord] = React.useState<string | null>(null);
@@ -76,12 +78,12 @@ function LessonCompletion({ lesson }: { lesson: Lesson }) {
     if (autoCount === null) return;
     if (autoCount <= 0) {
       setAutoCount(null);
-      if (next) window.location.href = `/lesson/${next.id}`;
+      if (next) router.push(`/lesson/${next.id}`);
       return;
     }
     const t = window.setTimeout(() => setAutoCount((c) => (c === null ? null : c - 1)), 1000);
     return () => window.clearTimeout(t);
-  }, [autoCount, next]);
+  }, [autoCount, next, router]);
 
   return (
     <div className="mt-10 rounded-2xl border bg-muted/10 p-5">
@@ -136,6 +138,10 @@ function LessonCompletion({ lesson }: { lesson: Lesson }) {
                 void import("@/lib/gamification/gems").then(({addGems, GEM_REWARDS}) =>
                   addGems(GEM_REWARDS.LESSON_COMPLETED),
                 );
+                // نجوم الإتقان: نجمة للإتمام + نجمة إن بلا أخطاء في هذا الدرس
+                void import("@/lib/gamification/mastery").then(({awardLessonStars}) =>
+                  awardLessonStars(lesson.id),
+                );
                 // اقتراح الانتقال التلقائي
                 if (next) setAutoCount(3);
               }}
@@ -188,7 +194,7 @@ function LessonCompletion({ lesson }: { lesson: Lesson }) {
 }
 
 /**
- * مؤشر موضع الدرس في المسار الكامل: «الدرس 12 من 48».
+ * مؤشر موضع الدرس في المسار الكامل؛ العدد مشتق من فهرس الدروس الحالي.
  */
 function LessonPosition({ lessonId }: { lessonId: string }) {
   const index = LESSON_META.findIndex((l) => l.id === lessonId);
@@ -293,6 +299,7 @@ function LessonPrevNext({ lessonId }: { lessonId: string }) {
  * مع متصفح أقسام علوي وشريط تقدم
  */
 export function LessonClient({ lesson }: { lesson: Lesson }) {
+  const router = useRouter();
   // سياق التقدم: لتصحيح الإكمال عند «أكمل الدرس» في وضع التدفق
   const { completedLessonsSet, completeLesson } = useProgress();
   const [visited, setVisited] = React.useState<Set<string>>(new Set(["lernziele"]));
@@ -426,6 +433,9 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       void import("@/lib/gamification/gems").then(({addGems, GEM_REWARDS}) =>
         addGems(GEM_REWARDS.LESSON_COMPLETED),
       );
+      void import("@/lib/gamification/mastery").then(({awardLessonStars}) =>
+        awardLessonStars(lesson.id),
+      );
     }
     // انتقال تسلسلي: الدرس التالي تلقائياً
     const idx = LESSON_META.findIndex((l) => l.id === lesson.id);
@@ -437,7 +447,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
         href: `/lesson/${nextL.id}`,
       });
       window.setTimeout(() => {
-        window.location.href = `/lesson/${nextL.id}`;
+        router.push(`/lesson/${nextL.id}`);
       }, 2500);
     } else {
       setCompletionNotice({
@@ -459,6 +469,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
         return (
           <InterleavingReview
             review={reviewQuestions}
+            lessonId={lesson.id}
             levelLabel={reviewLevelLabel(reviewQuestions, lesson.level)}
           />
         );

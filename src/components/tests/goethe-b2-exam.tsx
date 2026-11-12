@@ -1,6 +1,9 @@
 "use client";
 
 import * as React from "react";
+
+import {speakGerman} from "@/lib/speech/voices";
+import Link from "next/link";
 import {Award, BookOpenCheck, Headphones, Mic, PenLine, PlayCircle, RotateCcw, Timer, Volume2} from "lucide-react";
 
 import {B2_GRAMMATIK, B2_HOEREN_SETS, B2_LESEN_SETS, GOETHE_B2_EXAM} from "@/data/exams";
@@ -40,12 +43,7 @@ const MODULE_META: { key: Phase; icon: React.ReactNode; title: string; minutes: 
 
 /** نطق نص ألماني عبر TTS */
 function speakText(text: string, rate = 0.95) {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-  window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = "de-DE";
-  u.rate = rate;
-  window.speechSynthesis.speak(u);
+  speakGerman(text, {rate});
 }
 
 /* ════════════ عارض MCQ ════════════ */
@@ -1006,7 +1004,7 @@ export function GoetheB2Exam() {
               إعادة التدريب
             </Button>
             <Button asChild variant="outline" className="flex-1">
-              <a href="/tests/level/b2">اختبار مستوى B2 السريع</a>
+              <Link href="/tests/level/b2">اختبار مستوى B2 السريع</Link>
             </Button>
           </div>
         </CardContent>

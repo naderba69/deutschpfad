@@ -54,7 +54,7 @@ import { lessonB210 } from "@/data/lessons/b2/b2-10";
 /**
  * ═══════════════════════════════════════════════════════════
  *  مكتبة الدروس — السجل المركزي الكامل
- *  A1 (16) + A2 (12) + B1 (11) + B2 (10) = 48 درساً
+ *  A1 (16) + A2 (13) + B1 (12) + B2 (11) = 52 درساً
  *  (A1-13 = المراجعة الشاملة التجميعية)
  *  — اكتمال المحتوى الأكاديمي (المراحل 6-9) —
  * ═══════════════════════════════════════════════════════════
@@ -84,15 +84,3 @@ export function getLesson(id: string): Lesson | undefined {
 export function getLessonsByUnit(unitId: string): Lesson[] {
   return LESSONS.filter((l) => l.unitId === unitId).sort((a, b) => a.order - b.order);
 }
-
-/** خريطة: معرف الوحدة ← الدرس الأول المتاح فيها (لروابط خارطة الطريق) */
-export function getFirstLessonForUnit(unitId: string): Lesson | undefined {
-  return getLessonsByUnit(unitId)[0];
-}
-
-/** كل دروس مستوى */
-export function getLessonsByLevel(level: string): Lesson[] {
-  return LESSONS.filter((l) => l.level === level).sort((a, b) => a.order - b.order);
-}
-
-export const TOTAL_LESSONS_AVAILABLE = LESSONS.length;

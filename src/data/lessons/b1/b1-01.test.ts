@@ -14,6 +14,8 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
   e1: { options: ["des", "der", "dem", "den"], key: "des" },
   e2: { options: ["der", "den", "dem", "dessen"], key: "der" },
   e8: { options: ["لمن؟", "ماذا؟", "أين؟", "متى؟"], key: "لمن؟" },
+  e11: { options: ["der", "die", "den", "deren"], key: "der" },
+  e14: { options: ["für", "an", "mit"], key: "für" },
   m1: { options: ["des", "der", "dem", "den"], key: "des" },
   m2: { options: ["die", "der", "das", "den"], key: "die" },
   q1: { options: ["Informatik", "Medizin", "Germanistik", "Jura"], key: "Informatik" },
@@ -38,6 +40,7 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
       ["die", "der", "das"],
     ],
   },
+  e13: { correct: ["dessen"], options: [["dessen", "deren", "dem"]] },
   m5: {
     correct: ["dem", "das"],
     options: [

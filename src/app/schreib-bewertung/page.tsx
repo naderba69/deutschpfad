@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 import {GoetheLocalClient} from "@/components/writing/goethe-local-client";
@@ -17,7 +18,7 @@ export default function SchreibBewertungPage() {
         </h1>
         <p className="mt-2 max-w-2xl text-balance text-muted-foreground">
           اكتب نصاً بالألمانية لتظهر مؤشرات محلية محدودة للطول وبعض الروابط والأخطاء الشائعة. لا يتحقق الفاحص من المعنى أو جودة الكتابة كاملةً ولا يصدر درجة امتحانية. للملاحظات التوليدية، يمكن تجربة أدوات الذكاء الاصطناعي مع الانتباه إلى أنها قد تخطئ أيضاً: {" "}
-          <a href="/ai-tools" className="font-bold text-primary underline underline-offset-2">الأدوات الذكية</a>.
+          <Link href="/ai-tools" className="font-bold text-primary underline underline-offset-2">الأدوات الذكية</Link>.
         </p>
       </div>
       <GoetheLocalClient />

@@ -10,13 +10,14 @@ import {ThemeProvider} from "@/components/providers/theme-provider";
 import {VoiceWarmup} from "@/components/providers/voice-warmup";
 import {fontInter, fontTajawal} from "@/lib/fonts";
 import {siteConfig} from "@/lib/site-config";
+import {serializeJsonLd} from "@/lib/security/json-ld";
 
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — تعلّم الألمانية من الصفر حتى الاحتراف (A1 → B2)`,
+    default: `${siteConfig.name} — تعلّم الألمانية من الصفر حتى B2 بثقة (A1 → B2)`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -71,7 +72,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+            __html: serializeJsonLd({
               "@context": "https://schema.org",
               "@type": "Course",
               name: "درب الألمانية — تعلم الألمانية من A1 إلى B2",

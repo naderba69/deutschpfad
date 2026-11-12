@@ -307,7 +307,10 @@ describe("A1-14 audited lesson content", () => {
       expect(question.paragraph, `${question.id} source paragraph`).toBeLessThanOrEqual(passage.paragraphs.length);
     }
 
-    const listeningItemIds = new Set((lessonA114.listening.items ?? []).map((item) => item.id));
+    const listeningItems = lessonA114.listening.items ?? [];
+    const listeningItemIds = new Set(listeningItems.map((item) => item.id));
+    expect(listeningItems).toHaveLength(2);
+    expect(listeningItemIds.size).toBe(listeningItems.length);
     for (const question of lessonA114.listening.questions) {
       expect(listeningItemIds.has(question.itemId), `${question.id} audio item`).toBe(true);
     }
@@ -341,14 +344,14 @@ describe("A1-14 audited lesson content", () => {
     expect(mappedIds).not.toContain("int-a1-14-1");
   });
 
-  it("checks the key and every listed distractor for all 46 review, practice, mini-test, writing, reading, and listening tasks", () => {
+  it("checks the key and every listed distractor for all 48 review, practice, mini-test, writing, reading, and listening tasks", () => {
     expect(lessonA114.review).toHaveLength(3);
     expect(lessonA114.practiceBank).toHaveLength(26);
     expect(lessonA114.miniTest).toHaveLength(5);
     expect(lessonA114.writing).toHaveLength(3);
     expect(reading().questions).toHaveLength(6);
-    expect(lessonA114.listening.questions).toHaveLength(3);
-    expect(allTasks()).toHaveLength(46);
+    expect(lessonA114.listening.questions).toHaveLength(5);
+    expect(allTasks()).toHaveLength(48);
 
     const ids = allTasks().map((task) => task.id);
     expect(new Set(ids).size).toBe(ids.length);

@@ -25,6 +25,27 @@ describe("B1-10 audit", () => {
     }
   });
 
+  it("expands the practice bank to 14 with validated Futur-I practice", () => {
+    expect(lessonB110.practiceBank).toHaveLength(14);
+    const e11 = find("e11");
+    expect(e11.type).toBe("multiple-choice");
+    expect(evaluateExercise(e11 as never, "werde").isCorrect).toBe(true);
+    expect(evaluateExercise(e11 as never, "würde").isCorrect).toBe(false);
+
+    const e12 = find("e12");
+    expect(e12.type).toBe("fill-blank");
+    expect(evaluateExercise(e12 as never, ["wird"]).isCorrect).toBe(true);
+    expect(evaluateExercise(e12 as never, ["werden"]).isCorrect).toBe(false);
+
+    const e13 = find("e13");
+    expect(e13.type).toBe("transformation");
+    expect(evaluateExercise(e13 as never, "Ich werde nächstes Jahr Deutsch lernen.").isCorrect).toBe(true);
+
+    const e14 = find("e14");
+    expect(e14.type).toBe("word-ordering");
+    expect(evaluateExercise(e14 as never, ["In", "zwei", "Jahren", "werde", "ich", "eine", "Ausbildung", "beginnen", "."]).isCorrect).toBe(true);
+  });
+
   it("makes the Relativsatz word-ordering item solvable with its final comma and period", () => {
     const e4 = find("e4");
     expect(

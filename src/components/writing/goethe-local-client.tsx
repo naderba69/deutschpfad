@@ -28,11 +28,12 @@ export function GoetheLocalClient() {
   return (
     <div className="space-y-5">
       {/* اختيار نوع المهمة */}
-      <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="نوع المهمة">
+      <div className="flex flex-wrap gap-1.5" role="group" aria-label="نوع المهمة">
         {TASK_TYPES.map((t) => (
           <button
             key={t.id}
             type="button"
+            aria-pressed={taskType === t.id}
             onClick={() => setTaskType(t.id)}
             className={cn(
               "rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",

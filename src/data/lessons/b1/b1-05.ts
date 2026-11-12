@@ -496,6 +496,25 @@ export const lessonB105: Lesson = {
         "«bist» مع du، ولا تناسب الفاعل.",
       ],
     },
+    {
+      id: "e13",
+      type: "multiple-choice",
+      instructionAr: "انقل كلام الطبيب بصيغة Konjunktiv I:",
+      questionDe: "Der Arzt sagt, die Patientin ___ sich besser.",
+      options: ["fühle", "fühlt", "fühlst"],
+      correctIndex: 0,
+      explanation: "في النقل غير المباشر يُستعمل Konjunktiv I للغائب المفرد: sie fühle.",
+      errorType: "grammar",
+    },
+    {
+      id: "e14",
+      type: "fill-blank",
+      instructionAr: "أكمل الندم على الماضي بصيغة Konjunktiv II:",
+      template: "Wenn ich früher zum Arzt gegangen wäre, ___ ich mich schneller erholt. (haben)",
+      blanks: [{ correct: "hätte", options: ["hätte", "wäre", "hatte"] }],
+      explanation: "sich erholen يتكون في Perfekt مع haben؛ في الجملة الشرطية الماضية نستخدم hätte + Partizip II.",
+      errorType: "grammar",
+    },
   ],
 
   fehlerUndTipps: {

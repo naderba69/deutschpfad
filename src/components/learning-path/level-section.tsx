@@ -22,7 +22,6 @@ interface LevelSectionProps {
   sealed?: LevelCode[];
   /** هل المستوى هو المستوى النشط حالياً؟ */
   isActive: boolean;
-  onToggleUnit: (unitId: string) => void;
 }
 
 /**
@@ -36,7 +35,6 @@ export function LevelSection({
   completed,
   sealed = [],
   isActive,
-  onToggleUnit,
 }: LevelSectionProps) {
   const [expanded, setExpanded] = React.useState(isActive);
   const pct = completion.pct;
@@ -166,7 +164,6 @@ export function LevelSection({
                 key={unit.id}
                 unit={unit}
                 status={getUnitStatus(completed, unit, sealed)}
-                onToggle={onToggleUnit}
               />
             ))}
           </div>

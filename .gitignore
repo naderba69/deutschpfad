@@ -54,4 +54,5 @@ next-env.d.ts
 # audit evidence (local only)
 .audit-shots/
 test-results/
+playwright-report/
 .audit-tools/

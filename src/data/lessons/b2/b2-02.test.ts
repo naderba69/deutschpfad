@@ -28,6 +28,21 @@ describe("B2-02 audit", () => {
     expect(new Set(ids).size).toBe(ids.length);
   });
 
+  it("expands the practice bank to 14 with validated passive and -bar tasks", () => {
+    expect(lessonB202.practiceBank).toHaveLength(14);
+    const byId = (id: string) => {
+      const item = lessonB202.practiceBank.find((candidate) => candidate.id === id);
+      if (!item) throw new Error(`missing ${id}`);
+      return item;
+    };
+    expect(evaluateExercise(byId("e11"), ["muss"]).isCorrect).toBe(true);
+    expect(evaluateExercise(byId("e11"), ["müssen"]).isCorrect).toBe(false);
+    expect(evaluateExercise(byId("e12"), "Die Tür ist geschlossen.").isCorrect).toBe(true);
+    expect(evaluateExercise(byId("e13"), "Der Antrag wird von der Bank geprüft.").isCorrect).toBe(true);
+    expect(evaluateExercise(byId("e14"), ["recycelbar"]).isCorrect).toBe(true);
+    expect(evaluateExercise(byId("e14"), ["recycellich"]).isCorrect).toBe(false);
+  });
+
   it("makes every word-ordering item solvable with its punctuation as separate tokens", () => {
     const items = [...lessonB202.practiceBank, ...lessonB202.miniTest].filter((x) => x.type === "word-ordering") as unknown as Loose[];
     expect(items.length).toBeGreaterThan(0);

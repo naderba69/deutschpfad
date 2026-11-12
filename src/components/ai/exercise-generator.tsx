@@ -71,6 +71,7 @@ export function AiExerciseGenerator() {
                 key={l}
                 type="button"
                 onClick={() => setLevel(l)}
+                aria-pressed={level === l}
                 className={
                   level === l
                     ? "font-de rounded-lg bg-primary px-3 py-1 text-xs font-bold text-primary-foreground"
@@ -99,6 +100,7 @@ export function AiExerciseGenerator() {
                 key={t.id}
                 type="button"
                 onClick={() => setType(t.id)}
+                aria-pressed={type === t.id}
                 className={
                   type === t.id
                     ? "rounded-lg bg-primary px-3 py-1 text-xs font-bold text-primary-foreground"

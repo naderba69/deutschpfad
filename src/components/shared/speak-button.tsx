@@ -5,6 +5,7 @@ import {Loader2, Volume2} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
 import {getPreferredRate} from "@/lib/preferences/audio";
+import {waitForGermanVoice} from "@/lib/speech/voices";
 import {cn} from "@/lib/utils";
 
 interface SpeakButtonProps {
@@ -19,7 +20,6 @@ interface SpeakButtonProps {
   label?: string;
   /** اسم وصول مستقل عند ضرورة إخفاء النص المرئي/المسموع قبل كشفه. */
   ariaLabel?: string;
-  autoLabel?: boolean;
   /** ملف صوت بشري مسجّل (مثل /audio/dialogues-a1/…mp3). إن تعذّر تشغيله يُستعمل صوت الجهاز. */
   audioSrc?: string;
 }
@@ -65,24 +65,13 @@ export function SpeakButton({
         return;
       }
 
-      // ═══ إصلاح «الاستماع الصامت»: بعض المتصفحات تُحمّل أصوات النطق
-      // متأخراً (voiceschanged) أو لا تملكها أصلاً. ننتظر لحظة قصيرة ثم
-      // نُخبر المستخدم بوضوح بدل الصمت التام ═══
-      let voices = window.speechSynthesis.getVoices();
-      if (voices.length === 0) {
-        const ready = await new Promise<boolean>((resolve) => {
-          const timer = globalThis.setTimeout(() => resolve(window.speechSynthesis.getVoices().length > 0), 1500);
-          window.speechSynthesis.onvoiceschanged = () => {
-            globalThis.clearTimeout(timer);
-            resolve(window.speechSynthesis.getVoices().length > 0);
-          };
-        });
-        if (!ready) {
-          setNoVoice(true);
-          globalThis.setTimeout(() => setNoVoice(false), 3000);
-          return;
-        }
-        voices = window.speechSynthesis.getVoices();
+      // Firefox/بعض أنظمة الحاسوب قد يعرض أصواتاً إنجليزية أولاً ثم يحمّل الألمانية لاحقاً.
+      // انتظر صوت de فعلياً ولا تنطق النص الألماني بصوت إنجليزي بديل.
+      const germanVoice = await waitForGermanVoice();
+      if (!germanVoice) {
+        setNoVoice(true);
+        globalThis.setTimeout(() => setNoVoice(false), 5000);
+        return;
       }
 
       window.speechSynthesis.cancel();
@@ -94,16 +83,13 @@ export function SpeakButton({
       utterance.rate = Math.min(1.5, Math.max(0.5, rate * pref));
       utterance.pitch = 1;
 
-      // اختيار صوت ألماني إن وجد — مع حماية: لو رفض المتصفح الكائن
-      // (قد يرمي خطأ في بعض البيئات) نكمل بالصوت الافتراضي بدل الانهيار
-      const germanVoice =
-        voices.find((v) => v.lang === "de-DE") ?? voices.find((v) => v.lang.startsWith("de"));
-      if (germanVoice) {
-        try {
-          utterance.voice = germanVoice;
-        } catch {
-          /* صوت افتراضي */
-        }
+      try {
+        utterance.voice = germanVoice;
+      } catch {
+        // لا تسمح بصوت افتراضي قد يكون إنجليزياً إذا رفض المتصفح الصوت الألماني.
+        setNoVoice(true);
+        globalThis.setTimeout(() => setNoVoice(false), 5000);
+        return;
       }
 
       utterance.onstart = () => setSpeaking(true);
@@ -134,7 +120,7 @@ export function SpeakButton({
           className="max-w-40 rounded-md border border-gold/40 bg-gold/10 px-1.5 py-0.5 text-[9px] font-bold leading-tight text-gold-strong"
           role="status"
         >
-          لا يتوفر صوت نطق في هذا المتصفح — جرّب Chrome أو فعّل أصوات ألمانية من إعدادات الجهاز
+          لا يوجد صوت ألماني مثبت على الجهاز — ثبّت حزمة صوت ألماني ثم أعد المحاولة
         </span>
       )}
     </div>

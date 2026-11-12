@@ -12,6 +12,7 @@
  *   4) الصندوق يتمدد لأسفل (الارتفاع يزداد مع الكتابة)
  */
 import { test, expect, type Page } from "@playwright/test";
+import { navigateLessonToSection } from "./helpers/lesson-navigation";
 
 const LONG_SENTENCE = "Ich heiße Anna und komme aus Berlin. Meine Familie wohnt in Tunis.";
 
@@ -39,13 +40,7 @@ async function gotoPronSection(page: Page) {
   await page.goto("/lesson/a1-01");
   await clearData(page);
   await page.reload();
-  await page.waitForTimeout(1500);
-  for (let i = 0; i < 5; i++) {
-    await page.getByRole("button", { name: /التالي:/ }).last().click().catch(() => {});
-    await page.waitForTimeout(500);
-  }
-  await page.waitForTimeout(900);
-  await expect(page.locator("#lesson-step-content h2").first()).toContainText("النطق", { timeout: 8000 });
+  await navigateLessonToSection(page, "النطق");
 }
 
 test("الإملاء الحر: الكتابة الطويلة تظهر كاملة في صندوق يتمدد (لا قص على الجوال)", async ({ page }) => {
@@ -120,17 +115,10 @@ test("صندوق الكتابة في مهمة الكتابة الحرة يتمد
   await page.goto("/lesson/a1-01");
   await clearData(page);
   await page.reload();
-  await page.waitForTimeout(1500);
-  // إلى خطوة الكتابة (الخطوة 7)
-  for (let i = 0; i < 6; i++) {
-    await page.getByRole("button", { name: /التالي:/ }).last().click().catch(() => {});
-    await page.waitForTimeout(450);
-  }
-  await page.waitForTimeout(900);
-  await expect(page.locator("#lesson-step-content h2").first()).toContainText("الكتابة", { timeout: 8000 });
+  await navigateLessonToSection(page, "الكتابة");
 
   // صندوق مهمة الكتابة
-  const box = page.locator('textarea[aria-label="مهمة الكتابة"]').first();
+  const box = page.locator('textarea[aria-label="مسودة كتابة للمراجعة الذاتية"]').first();
   await expect(box).toBeVisible({ timeout: 6000 });
   const h0 = await box.evaluate((el) => el.clientHeight);
   // فقرة ألمانية طويلة (عدة أسطر) — يجب أن تتمدد

@@ -21,6 +21,7 @@ export function DetailTabs({
 }) {
   const [active, setActive] = React.useState(0);
   const [visited, setVisited] = React.useState<Set<number>>(new Set([0]));
+  const tabRefs = React.useRef<(HTMLButtonElement | null)[]>([]);
 
   const goTo = (i: number) => {
     setActive(i);
@@ -29,6 +30,20 @@ export function DetailTabs({
       next.add(i);
       return next;
     });
+  };
+
+  // تنقل بلوحة المفاتيح (RTL): السهم الأيسر = التالي، الأيمن = السابق
+  const onTabKeyDown = (e: React.KeyboardEvent, i: number) => {
+    let next: number | null = null;
+    if (e.key === "ArrowLeft") next = (i + 1) % tabs.length;
+    else if (e.key === "ArrowRight") next = (i - 1 + tabs.length) % tabs.length;
+    else if (e.key === "Home") next = 0;
+    else if (e.key === "End") next = tabs.length - 1;
+    if (next !== null) {
+      e.preventDefault();
+      goTo(next);
+      tabRefs.current[next]?.focus();
+    }
   };
 
   return (
@@ -44,6 +59,11 @@ export function DetailTabs({
               type="button"
               role="tab"
               aria-selected={isActive}
+              tabIndex={isActive ? 0 : -1}
+              ref={(el) => {
+                tabRefs.current[i] = el;
+              }}
+              onKeyDown={(e) => onTabKeyDown(e, i)}
               onClick={() => goTo(i)}
               className={cn(
                 "flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-bold transition-colors",

@@ -24,7 +24,7 @@ export function Footer() {
             <div className="flex items-center gap-2">
               {[
                 { icon: Globe, label: "الموقع الرسمي", href: siteConfig.url },
-                { icon: Github, label: "المستودع على GitHub", href: "https://github.com" },
+                { icon: Github, label: "المستودع على GitHub", href: "https://github.com/naderba69/deutschpfad" },
                 { icon: Mail, label: "البريد الإلكتروني", href: "mailto:info@deutschpfad.app" },
               ].map(({ icon: Icon, label, href }) => (
                 <Link

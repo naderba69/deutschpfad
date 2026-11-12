@@ -23,10 +23,11 @@ test("القصص التفاعلية: فتح قصة وعرض نصها الألم�
 test("دفتر الأخطاء: يعرض الحالة الفارغة أو الإحصائيات", async ({ page }) => {
   await page.goto("/error-notebook");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("دفتر أخطائك");
-  // إما «دفترك نظيف» أو أخطاء متراكمة — إحداهما تظهر دائماً
+  // الحالة الفارغة أو السجل يظهر دائماً، والتنبيه يوضح حدود التقييم.
   await expect(
-    page.getByText(/دفترك نظيف|أخطاؤك المتراكمة/).first(),
+    page.getByText(/لا توجد أخطاء مسجلة حالياً|أخطاؤك المتراكمة/).first(),
   ).toBeVisible();
+  await expect(page.getByText(/السجل جزئي ولا يقيس مستواك/).first()).toBeVisible();
 });
 
 test("مراجعة الجمل: الصفحة تفتح وتعمل (SRS)", async ({ page }) => {

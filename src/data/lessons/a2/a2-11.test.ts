@@ -15,6 +15,7 @@ const expectedMultipleChoiceKeys: Record<string, string> = {
   e1: "mich",
   e2: "sich",
   e8: "يقدم شكوى",
+  e13: "euch",
   m1: "uns",
   m2: "euch",
   q1: "die Haare schneiden lassen",
@@ -29,6 +30,7 @@ const expectedMultipleChoiceOptions: Record<string, string[]> = {
   e1: ["mich", "dich", "sich", "mir"],
   e2: ["sich", "mich", "dich", "uns"],
   e8: ["يقدم شكوى", "يستعجل", "يسجل", "يغضب"],
+  e13: ["euch", "uns", "sich"],
   m1: ["uns", "euch", "sich", "mich"],
   m2: ["euch", "uns", "sich", "dich"],
   q1: ["die Haare schneiden lassen", "einen Termin absagen", "sich beschweren", "ein Handy kaufen"],
@@ -229,12 +231,12 @@ describe("A2-11 lesson content audit", () => {
 
   it("has a unique, complete inventory of every assessed task", () => {
     expect((lessonA211.review ?? []).map(({ id }) => id)).toEqual(["r1", "r2", "r3"]);
-    expect(lessonA211.practiceBank.map(({ id }) => id)).toEqual(Array.from({ length: 12 }, (_, i) => `e${i + 1}`));
+    expect(lessonA211.practiceBank.map(({ id }) => id)).toEqual(Array.from({ length: 14 }, (_, i) => `e${i + 1}`));
     expect(lessonA211.miniTest.map(({ id }) => id)).toEqual(["m1", "m2", "m3", "m4", "m5"]);
     expect(lessonA211.writing.map(({ id }) => id)).toEqual(["w1", "w2", "w3", "w4", "w5"]);
     expect(lessonA211.listening.questions.map(({ id }) => id)).toEqual(["q1", "q2", "q3", "q4"]);
-    expect(allTasks()).toHaveLength(29);
-    expect(new Set(allTasks().map(({ id }) => id)).size).toBe(29);
+    expect(allTasks()).toHaveLength(31);
+    expect(new Set(allTasks().map(({ id }) => id)).size).toBe(31);
     expect(lessonA211.theory).toHaveLength(2);
     expect(lessonA211.pronunciation.items).toHaveLength(6);
     expect(lessonA211.pronunciation.shadowing).toHaveLength(4);
@@ -448,6 +450,10 @@ describe("A2-11 lesson content audit", () => {
       e7: {
         acceptedAnswers: ["Beeil dich bitte!", "Beeil dich!", "Beeile dich bitte!", "Beeile dich!"],
         sampleAnswer: "Beeil dich bitte!",
+      },
+      e14: {
+        acceptedAnswers: ["Er sagt, dass er sich beeilen muss."],
+        sampleAnswer: "Er sagt, dass er sich beeilen muss.",
       },
     };
     expect(Object.keys(expected).sort()).toEqual(

@@ -1,8 +1,18 @@
 import { describe, expect, it } from "vitest";
 
 import { FAQS, FEATURES, STATS, STEPS, TRUST_ITEMS } from "@/lib/constants/site-content";
+import { TOTAL_LESSONS, TOTAL_UNITS } from "@/lib/constants/curriculum";
 
 describe("public claims about exam preparation and certificates", () => {
+  it("derives the homepage curriculum counts and qualifies current access terms", () => {
+    expect(STATS.find((stat) => stat.label === "وحدة دراسية")?.value).toBe(String(TOTAL_UNITS));
+    expect(STATS.find((stat) => stat.label === "درس تفاعلي")?.value).toBe(String(TOTAL_LESSONS));
+    const accessFaq = FAQS.find((item) => item.question === "هل المنصة مجانية بالكامل؟");
+    expect(accessFaq?.answer).toMatch(/التدريبات الأساسية متاحة حالياً دون اشتراك مدفوع/);
+    expect(accessFaq?.answer).toMatch(/شروط المزوّد/);
+    expect(accessFaq?.answer).not.toMatch(/مجانية 100%|مزودين مجانيين/);
+  });
+
   it("does not promise an official certificate, exam readiness, or a complete Goethe simulation", () => {
     const certificateFaq = FAQS.find((item) => item.question === "هل أحصل على شهادة معترف بها؟");
     expect(certificateFaq).toBeDefined();

@@ -29,6 +29,7 @@ export function SchreibmodelleClient() {
           <button
             key={m.id}
             type="button"
+            aria-pressed={active === i}
             onClick={() => setActive(i)}
             className={cn(
               "rounded-full border px-3 py-1.5 text-xs font-bold transition-colors",
@@ -61,6 +62,7 @@ export function SchreibmodelleClient() {
       <div className="flex flex-wrap gap-2">
         <button
           type="button"
+          aria-pressed={tab === "forum"}
           onClick={() => setTab("forum")}
           className={cn(
             "inline-flex items-center gap-1.5 rounded-lg border px-3 py-2 text-sm font-bold transition-colors",
@@ -72,6 +74,7 @@ export function SchreibmodelleClient() {
         </button>
         <button
           type="button"
+          aria-pressed={tab === "email"}
           onClick={() => setTab("email")}
           className={cn(
             "inline-flex items-center gap-1.5 rounded-lg border px-3 py-2 text-sm font-bold transition-colors",
@@ -90,6 +93,7 @@ export function SchreibmodelleClient() {
           <button
             key={l}
             type="button"
+            aria-pressed={level === l}
             onClick={() => setLevel(l)}
             className={cn(
               "rounded-full border px-3 py-1 text-xs font-bold transition-colors",

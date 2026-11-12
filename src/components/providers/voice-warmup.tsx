@@ -13,22 +13,20 @@ export function VoiceWarmup() {
   const [ready, setReady] = React.useState(false);
 
   React.useEffect(() => {
-    // بدء تحميل الأصوات فوراً (يُستدعى مرة واحدة)
-    initVoices(() => setReady(true));
-    // تسخين فعلي: جملة صامتة (volume 0) لتهيئة محرك النطق
-    try {
-      const t = window.setTimeout(() => {
-        if ("speechSynthesis" in window) {
-          const u = new SpeechSynthesisUtterance(" ");
-          u.lang = "de-DE";
-          u.volume = 0;
-          window.speechSynthesis.speak(u);
-        }
-      }, 800);
-      return () => window.clearTimeout(t);
-    } catch {
-      /* تجاهل */
-    }
+    // بدء تحميل الأصوات فوراً وتحرير مستمع voiceschanged عند إزالة المكوّن.
+    const stopListening = initVoices(() => setReady(true));
+    const timer = window.setTimeout(() => {
+      if ("speechSynthesis" in window) {
+        const utterance = new SpeechSynthesisUtterance(" ");
+        utterance.lang = "de-DE";
+        utterance.volume = 0;
+        window.speechSynthesis.speak(utterance);
+      }
+    }, 800);
+    return () => {
+      window.clearTimeout(timer);
+      stopListening();
+    };
   }, []);
 
   // لا يظهر أي شيء — مكوّن خلفي

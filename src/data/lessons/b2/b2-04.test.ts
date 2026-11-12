@@ -23,6 +23,23 @@ describe("B2-04 audit", () => {
     }
   });
 
+  it("expands the practice bank to 14 with validated participial adjectives", () => {
+    expect(lessonB204.practiceBank).toHaveLength(14);
+    const byId = (id: string) => {
+      const item = lessonB204.practiceBank.find((candidate) => candidate.id === id);
+      if (!item) throw new Error(`missing ${id}`);
+      return item;
+    };
+    expect(evaluateExercise(byId("e11"), "empfohlenen").isCorrect).toBe(true);
+    expect(evaluateExercise(byId("e11"), "empfohlene").isCorrect).toBe(false);
+    expect(evaluateExercise(byId("e12"), ["bellender", "geschriebenes"]).isCorrect).toBe(true);
+    expect(evaluateExercise(byId("e12"), ["gebellt", "schreibendes"]).isCorrect).toBe(false);
+    expect(evaluateExercise(byId("e13"), "Das oft empfohlene Buch ist interessant.").isCorrect).toBe(true);
+    const order = byId("e14");
+    if (order.type !== "word-ordering") throw new Error("e14 is not word-ordering");
+    expect(evaluateExercise(order, order.correctSentence.split(/\s+/)).isCorrect).toBe(true);
+  });
+
   it("makes every word-ordering item solvable", () => {
     const items = [...lessonB204.practiceBank, ...lessonB204.miniTest].filter((x) => x.type === "word-ordering") as unknown as Loose[];
     expect(items.length).toBeGreaterThan(0);

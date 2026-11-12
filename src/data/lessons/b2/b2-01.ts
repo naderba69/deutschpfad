@@ -502,6 +502,26 @@ export const lessonB201: Lesson = {
       errorType: "word-order",
       points: 2,
     },
+    {
+      id: "e13",
+      type: "multiple-choice",
+      instructionAr: "انقل تقرير الباحث بصيغة Konjunktiv I Perfekt:",
+      questionDe: "Der Forscher berichtet, er ___ eine neue Methode entwickelt.",
+      options: ["habe", "hat", "hätte"],
+      correctIndex: 0,
+      explanation: "في النقل غير المباشر: Konjunktiv I من haben (habe) + Partizip II entwickelt.",
+      errorType: "grammar",
+    },
+    {
+      id: "e14",
+      type: "fill-blank",
+      instructionAr: "أكمل تخميناً عن سبب سابق:",
+      template: "Die Ergebnisse ___ durch einen Messfehler beeinflusst worden sein. (können)",
+      blanks: [{ correct: "könnten", options: ["könnten", "können", "konnten"] }],
+      explanation: "Modalverb بصيغة Konjunktiv II يعبّر عن احتمال غير مؤكد؛ في هذا البناء يأتي Partizip II + worden + sein في النهاية.",
+      errorType: "grammar",
+      points: 2,
+    },
   ],
 
   fehlerUndTipps: {

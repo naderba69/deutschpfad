@@ -13,6 +13,52 @@ import {playAchievement, playCorrect} from "@/lib/audio/sfx";
  *  2) بطاقة إنجاز أنيقة تُرسم كصورة PNG قابلة للتحميل/المشاركة
  * ═══════════════════════════════════════════════════════════
  */
+/** رسم بطاقة الإنجاز على canvas بتصميم ثابت (لا يعتمد على DOM) */
+function drawAchievementCard(
+  g: CanvasRenderingContext2D,
+  opts: { title: string; subtitle?: string; emoji?: string; stats?: { label: string; value: string }[] },
+) {
+  const { title, subtitle, emoji, stats } = opts;
+  // خلفية متدرجة
+  const grad = g.createLinearGradient(0, 0, 900, 560);
+  grad.addColorStop(0, "#0f172a");
+  grad.addColorStop(1, "#1e3a8a");
+  g.fillStyle = grad;
+  g.fillRect(0, 0, 900, 560);
+  // إطار
+  g.strokeStyle = "rgba(255,255,255,0.25)";
+  g.lineWidth = 4;
+  g.strokeRect(24, 24, 852, 512);
+  // الرمز
+  g.font = "140px sans-serif";
+  g.textAlign = "center";
+  g.fillText(emoji ?? "🎓", 450, 190);
+  // العنوان
+  g.fillStyle = "#ffffff";
+  g.font = "bold 56px sans-serif";
+  g.fillText(title, 450, 290);
+  // السطر
+  g.fillStyle = "rgba(255,255,255,0.5)";
+  g.font = "30px sans-serif";
+  if (subtitle) g.fillText(subtitle, 450, 350);
+  // الإحصاءات
+  if (stats && stats.length > 0) {
+    const per = 900 / stats.length;
+    stats.forEach((s, i) => {
+      g.fillStyle = "#eab308";
+      g.font = "bold 44px sans-serif";
+      g.fillText(s.value, per * i + per / 2, 440);
+      g.fillStyle = "rgba(255,255,255,0.75)";
+      g.font = "24px sans-serif";
+      g.fillText(s.label, per * i + per / 2, 485);
+    });
+  }
+  // الشعار
+  g.fillStyle = "rgba(255,255,255,0.6)";
+  g.font = "22px sans-serif";
+  g.fillText("DeutschPfad — درب الألمانية", 450, 530);
+}
+
 export function Celebration({ title, subtitle, emoji, stats }: {
   title: string;
   subtitle?: string;
@@ -88,44 +134,7 @@ export function Celebration({ title, subtitle, emoji, stats }: {
     c.height = 560;
     const g = c.getContext("2d");
     if (!g) return;
-    // خلفية متدرجة
-    const grad = g.createLinearGradient(0, 0, 900, 560);
-    grad.addColorStop(0, "#0f172a");
-    grad.addColorStop(1, "#1e3a8a");
-    g.fillStyle = grad;
-    g.fillRect(0, 0, 900, 560);
-    // إطار
-    g.strokeStyle = "rgba(255,255,255,0.25)";
-    g.lineWidth = 4;
-    g.strokeRect(24, 24, 852, 512);
-    // الرمز
-    g.font = "140px sans-serif";
-    g.textAlign = "center";
-    g.fillText(emoji ?? "🎓", 450, 190);
-    // العنوان
-    g.fillStyle = "#ffffff";
-    g.font = "bold 56px sans-serif";
-    g.fillText(title, 450, 290);
-    // السطر
-    g.fillStyle = "rgba(255,255,255,0.5)";
-    g.font = "30px sans-serif";
-    if (subtitle) g.fillText(subtitle, 450, 350);
-    // الإحصاءات
-    if (stats && stats.length > 0) {
-      const per = 900 / stats.length;
-      stats.forEach((s, i) => {
-        g.fillStyle = "#eab308";
-        g.font = "bold 44px sans-serif";
-        g.fillText(s.value, per * i + per / 2, 440);
-        g.fillStyle = "rgba(255,255,255,0.75)";
-        g.font = "24px sans-serif";
-        g.fillText(s.label, per * i + per / 2, 485);
-      });
-    }
-    // الشعار
-    g.fillStyle = "rgba(255,255,255,0.6)";
-    g.font = "22px sans-serif";
-    g.fillText("DeutschPfad — درب الألمانية", 450, 530);
+    drawAchievementCard(g, { title, subtitle, emoji, stats });
     const url = c.toDataURL("image/png");
     const a = document.createElement("a");
     a.href = url;
@@ -141,37 +150,7 @@ export function Celebration({ title, subtitle, emoji, stats }: {
     c.height = 560;
     const g = c.getContext("2d");
     if (!g) return;
-    const grad = g.createLinearGradient(0, 0, 900, 560);
-    grad.addColorStop(0, "#0f172a");
-    grad.addColorStop(1, "#1e3a8a");
-    g.fillStyle = grad;
-    g.fillRect(0, 0, 900, 560);
-    g.strokeStyle = "rgba(255,255,255,0.25)";
-    g.lineWidth = 4;
-    g.strokeRect(24, 24, 852, 512);
-    g.font = "140px sans-serif";
-    g.textAlign = "center";
-    g.fillText(emoji ?? "🎓", 450, 190);
-    g.fillStyle = "#ffffff";
-    g.font = "bold 56px sans-serif";
-    g.fillText(title, 450, 290);
-    g.fillStyle = "rgba(255,255,255,0.5)";
-    g.font = "30px sans-serif";
-    if (subtitle) g.fillText(subtitle, 450, 350);
-    if (stats && stats.length > 0) {
-      const per = 900 / stats.length;
-      stats.forEach((s, i) => {
-        g.fillStyle = "#eab308";
-        g.font = "bold 44px sans-serif";
-        g.fillText(s.value, per * i + per / 2, 440);
-        g.fillStyle = "rgba(255,255,255,0.75)";
-        g.font = "24px sans-serif";
-        g.fillText(s.label, per * i + per / 2, 485);
-      });
-    }
-    g.fillStyle = "rgba(255,255,255,0.6)";
-    g.font = "22px sans-serif";
-    g.fillText("DeutschPfad — درب الألمانية", 450, 530);
+    drawAchievementCard(g, { title, subtitle, emoji, stats });
     const blob = await new Promise<Blob | null>((res) => c.toBlob(res, "image/png"));
     if (!blob) return;
     const file = new File([blob], "deutschpfad-achievement.png", { type: "image/png" });

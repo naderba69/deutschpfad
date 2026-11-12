@@ -10,7 +10,7 @@ import { test, expect } from "@playwright/test";
 test("محرك B2: شاشة البداية تعرض البنية التدريبية والأقسام ومددها", async ({ page }) => {
   await page.goto("/tests/b2", { waitUntil: "networkidle" });
   await page.waitForTimeout(600);
-  await expect(page.getByRole("heading", { name: /تدريب مستوحى من بنية Goethe-Zertifikat B2/ })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /تدريب مستوحى من بنية Goethe-Zertifikat B2/ }).first()).toBeVisible();
   // الأجزاء الأربعة + المدد (exact + first لتجنب تعدد المطابقات)
   await expect(page.getByText("65 دقيقة", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("40 دقيقة", { exact: true }).first()).toBeVisible();
@@ -97,5 +97,5 @@ test("vollpruefung: يعرض مدد التدريب والتنبيه على حد�
   await expect(page.getByText("65 دقيقة")).toBeVisible();
   await expect(page.getByText("40 دقيقة")).toBeVisible();
   await expect(page.getByText("75 دقيقة")).toBeVisible();
-  await expect(page.getByText(/توضيح صدق/)).toBeVisible();
+  await expect(page.getByText(/عينة تدريب داخلية/).first()).toBeVisible();
 });

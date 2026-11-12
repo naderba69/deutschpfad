@@ -23,6 +23,23 @@ describe("B2-03 audit", () => {
     }
   });
 
+  it("expands the practice bank to 14 with validated legal-language questions", () => {
+    expect(lessonB203.practiceBank).toHaveLength(14);
+    const byId = (id: string) => {
+      const item = lessonB203.practiceBank.find((candidate) => candidate.id === id);
+      if (!item) throw new Error(`missing ${id}`);
+      return item;
+    };
+    expect(evaluateExercise(byId("e11"), "an die").isCorrect).toBe(true);
+    expect(evaluateExercise(byId("e11"), "auf die").isCorrect).toBe(false);
+    expect(evaluateExercise(byId("e12"), ["für wen"]).isCorrect).toBe(true);
+    expect(evaluateExercise(byId("e12"), ["wessen"]).isCorrect).toBe(false);
+    expect(evaluateExercise(byId("e13"), "Ich möchte wissen, wann die Verhandlung beginnt.").isCorrect).toBe(true);
+    const e14 = byId("e14");
+    if (e14.type !== "word-ordering") throw new Error("e14 is not word-ordering");
+    expect(evaluateExercise(e14, e14.correctSentence.match(/[^\s,.]+|[,.]/g) ?? []).isCorrect).toBe(true);
+  });
+
   it("makes every word-ordering item solvable with every comma and the final period as tokens", () => {
     const items = [...lessonB203.practiceBank, ...lessonB203.miniTest].filter((x) => x.type === "word-ordering") as unknown as Loose[];
     expect(items.length).toBeGreaterThan(0);

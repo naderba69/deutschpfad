@@ -9,18 +9,11 @@
 import * as React from "react";
 
 import { Button } from "@/components/ui/button";
+import {speakGerman} from "@/lib/speech/voices";
 import { A1_SPRECHEN, type A1SpeakingPart } from "@/data/exams/a1-sprechen";
 
 function speakDe(text: string) {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-  window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = "de-DE";
-  u.rate = 0.9;
-  const voices = window.speechSynthesis.getVoices();
-  const gv = voices.find((v) => v.lang === "de-DE") ?? voices.find((v) => v.lang.startsWith("de"));
-  if (gv) u.voice = gv;
-  window.speechSynthesis.speak(u);
+  speakGerman(text, {rate: 0.9});
 }
 
 /** تشغيل تسجيل بشري لجملة الشريك؛ إن تعذّر ذلك (الملف غير موجود) نرجع لصوت الجهاز */

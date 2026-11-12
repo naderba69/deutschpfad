@@ -84,18 +84,25 @@ export async function getLearnerProfile(): Promise<LearnerProfile> {
   }
 }
 
-export async function saveLearnerProfile(patch: Partial<LearnerProfile>): Promise<LearnerProfile> {
-  const current = await getLearnerProfile();
-  const next = { ...current, ...patch, lastSeen: Date.now() };
-  // 1) المرآة أولاً — الريفريش يعيد الحالة فوراً
-  writeMirror(next);
-  // 2) ثم IndexedDB (غير متزامن)
-  try {
-    await putRecord(STORE, KEY, next);
-  } catch {
-    /* تجاهل أخطاء الكتابة — المرآة كافية */
-  }
-  return next;
+let profileSaveQueue: Promise<void> = Promise.resolve();
+
+/** تسلسل التحديثات الجزئية كي لا يمحو حفظان متزامنان حقول بعضهما. */
+export function saveLearnerProfile(patch: Partial<LearnerProfile>): Promise<LearnerProfile> {
+  const operation = profileSaveQueue.then(async () => {
+    const current = await getLearnerProfile();
+    const next = {...current, ...patch, lastSeen: Date.now()};
+    // 1) المرآة أولاً — الريفريش يعيد الحالة فوراً.
+    writeMirror(next);
+    // 2) ثم IndexedDB؛ تبقى المرآة بديلًا إذا تعذر الحفظ في القاعدة.
+    try {
+      await putRecord(STORE, KEY, next);
+    } catch {
+      /* المرآة المحلية ما زالت تحتوي التحديث. */
+    }
+    return next;
+  });
+  profileSaveQueue = operation.then(() => undefined, () => undefined);
+  return operation;
 }
 
 /** مسح الملف الشخصي (اختياري — عند إعادة تعيين) */

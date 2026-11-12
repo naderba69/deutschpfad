@@ -220,6 +220,29 @@ describe("B1-02 lesson content audit", () => {
     }
   });
 
+  it("expands the practice bank with four validated Arbeitswelt tasks", () => {
+    expect(lessonB102.practiceBank).toHaveLength(14);
+    const e11 = task("e11");
+    if (e11.type !== "multiple-choice") throw new Error("e11 is not multiple-choice");
+    expect(evaluateExercise(e11, "Der Lebenslauf").isCorrect).toBe(true);
+    for (const option of e11.options.filter((_, index) => index !== e11.correctIndex)) {
+      expect(evaluateExercise(e11, option).isCorrect).toBe(false);
+    }
+
+    const e12 = task("e12");
+    if (e12.type !== "matching") throw new Error("e12 is not matching");
+    expect(evaluateExercise(e12, e12.pairs).isCorrect).toBe(true);
+
+    const e13 = task("e13");
+    if (e13.type !== "word-ordering") throw new Error("e13 is not word-ordering");
+    expect(evaluateExercise(e13, e13.correctSentence.split(/\s+/)).isCorrect).toBe(true);
+
+    const e14 = task("e14");
+    if (e14.type !== "fill-blank") throw new Error("e14 is not fill-blank");
+    expect(evaluateExercise(e14, ["hatte"]).isCorrect).toBe(true);
+    expect(evaluateExercise(e14, ["habe"]).isCorrect).toBe(false);
+  });
+
   it("checks word-order answers against the sentence in order", () => {
     const e4 = task("e4");
     if (e4.type !== "word-ordering") throw new Error("e4 is not word-ordering");

@@ -569,6 +569,17 @@ export const lessonB106: Lesson = {
       errorType: "grammar",
       points: 2,
     },
+    {
+      id: "e14",
+      type: "multiple-choice",
+      instructionAr: "اختر نهاية الصفة الصحيحة في الجمع من دون أداة:",
+      questionDe: "In Berlin gibt es viele ___ Museen.",
+      options: ["interessante", "interessanten", "interessantes"],
+      correctIndex: 0,
+      explanation: "في الجمع دون أداة، تحمل الصفة علامة الحالة والجمع؛ هنا viele interessante Museen.",
+      errorType: "grammar",
+      points: 2,
+    },
   ],
 
   fehlerUndTipps: {

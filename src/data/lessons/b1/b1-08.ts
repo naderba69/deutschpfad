@@ -498,6 +498,41 @@ export const lessonB108: Lesson = {
         "الموازنة بين وجهين: einerseits ... andererseits (من ناحية... ومن ناحية أخرى). لا تخلطها بـ entweder... oder (اختيار) ولا weder... noch (نفي).",
       errorType: "grammar",
     },
+    {
+      id: "e12",
+      type: "multiple-choice",
+      instructionAr: "اختر الجملة التي تستخدم sowohl ... als auch بصورة صحيحة:",
+      questionDe: "Welche Aussage ist richtig?",
+      options: [
+        "Sowohl das Tablet als auch der Laptop sind praktisch.",
+        "Sowohl das Tablet oder der Laptop sind praktisch.",
+        "Weder das Tablet als auch der Laptop sind praktisch.",
+      ],
+      correctIndex: 0,
+      explanation: "الاقتران الثنائي الصحيح هو sowohl ... als auch؛ أما entweder فيأتي مع oder، وweder مع noch.",
+      errorType: "grammar",
+    },
+    {
+      id: "e13",
+      type: "word-ordering",
+      instructionAr: "رتّب جملة اختيار باستخدام entweder ... oder:",
+      tokens: ["Entweder", "arbeite", "ich", "im", "Büro", ",", "oder", "ich", "arbeite", "von", "zu", "Hause", "."],
+      correctSentence: "Entweder arbeite ich im Büro, oder ich arbeite von zu Hause.",
+      explanation: "إذا بدأت الجملة بـEntweder، يأتي الفعل المصرف مباشرة في الموقع الثاني؛ وتُستخدم oder للشق الآخر.",
+      errorType: "word-order",
+    },
+    {
+      id: "e14",
+      type: "fill-blank",
+      instructionAr: "أكمل رابط النفي المزدوج:",
+      template: "Die App ist ___ teuer ___ kompliziert.",
+      blanks: [
+        { correct: "weder", options: ["weder", "entweder", "sowohl"] },
+        { correct: "noch", options: ["noch", "oder", "als auch"] },
+      ],
+      explanation: "النفي المزدوج يكون weder ... noch (لا ... ولا)، دون إضافة nicht.",
+      errorType: "grammar",
+    },
   ],
 
   fehlerUndTipps: {

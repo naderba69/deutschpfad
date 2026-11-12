@@ -42,6 +42,18 @@ describe("A1-02 — العائلة والأصدقاء", () => {
     }
   });
 
+  it("مشاهد الاستماع والأسئلة مرتبطة بمعرّفات فريدة وصحيحة", () => {
+    const itemIds = lesson.listening.items.map((item) => item.id);
+    const questionIds = lesson.listening.questions.map((question) => question.id);
+    expect(itemIds).toHaveLength(2);
+    expect(new Set(itemIds).size).toBe(itemIds.length);
+    expect(new Set(questionIds).size).toBe(questionIds.length);
+    for (const question of lesson.listening.questions) {
+      expect(itemIds, `${question.id} scene`).toContain(question.itemId);
+    }
+    expect(lesson.listening.questions.filter((question) => question.itemId === "ls-a1-02-2")).toHaveLength(2);
+  });
+
   it("خيارات الاختيار من متعدد فريدة وإجابتها الصحيحة ضمن المدى", () => {
     for (const task of [...lesson.practiceBank, ...lesson.miniTest]) {
       if (task.type !== "multiple-choice") continue;

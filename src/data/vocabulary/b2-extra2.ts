@@ -1863,5 +1863,3 @@ export const B2_EXTRA2_VOCAB: VocabEntry[] = [
   { de: "verlängern um", ar: "يجدد لمدة", g: "v" },
   { de: "verlängert werden", ar: "يُمدد", g: "v" },
 ];
-
-export const TOTAL_B2_EXTRA2 = B2_EXTRA2_VOCAB.length;

@@ -40,6 +40,7 @@ export function ReadingLibraryClient() {
             <button
               key={l}
               type="button"
+              aria-pressed={level === l}
               onClick={() => {
                 setLevel(l);
                 setActive(null);

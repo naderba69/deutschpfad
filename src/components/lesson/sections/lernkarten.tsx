@@ -8,6 +8,7 @@ import {Card, CardContent} from "@/components/ui/card";
 import {SpeakAndScore} from "@/components/lesson/speech/speak-and-score";
 import {getAllCards, addLessonFlashcards} from "@/lib/srs/flashcard-service";
 import {addLessonSentences, extractSentencesFromCards} from "@/lib/srs/sentence-service";
+import {speakGerman} from "@/lib/speech/voices";
 import {cn} from "@/lib/utils";
 import type { Flashcard } from "@/types/lesson";
 
@@ -134,16 +135,7 @@ export function LernkartenSection({ lessonId, flashcards: sourceCards }: { lesso
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
-                    if (typeof window !== "undefined" && "speechSynthesis" in window) {
-                      window.speechSynthesis.cancel();
-                      const u = new SpeechSynthesisUtterance(card.de);
-                      u.lang = "de-DE";
-                      u.rate = 0.85;
-                      const voices = window.speechSynthesis.getVoices();
-                      const gv = voices.find((v) => v.lang === "de-DE") ?? voices.find((v) => v.lang.startsWith("de"));
-                      if (gv) u.voice = gv;
-                      window.speechSynthesis.speak(u);
-                    }
+                    speakGerman(card.de, {rate: 0.85});
                   }}
                   className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-muted bg-background/90 text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
                   aria-label={`استمع: ${card.de}`}

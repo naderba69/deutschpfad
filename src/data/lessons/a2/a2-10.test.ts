@@ -24,6 +24,7 @@ const expectedMultipleChoiceKeys: Record<string, string> = {
   q2: "Wenn er am Morgen Zeit hat.",
   q3: "Ob die Prüfung schwierig wird.",
   q4: "Ein bisschen nervös.",
+  e11: "محاضرة جامعية",
 };
 
 const expectedMultipleChoiceOptions: Record<string, string[]> = {
@@ -72,11 +73,13 @@ const expectedMultipleChoiceOptions: Record<string, string[]> = {
     "Wie viele Wörter er lernen muss.",
   ],
   q4: ["Ein bisschen nervös.", "Ganz ruhig und sicher.", "Wütend auf Mona.", "Müde und krank."],
+  e11: ["محاضرة جامعية", "امتحان شفهي", "استراحة", "واجب منزلي"],
 };
 
 const expectedFillBlankKeys: Record<string, string[]> = {
   r3: ["mein"],
   e6: ["meinen", "meiner"],
+  e12: ["auf"],
   w2: ["weil", "Wenn", "ob"],
   m5: ["weil", "Wenn", "ob"],
 };
@@ -87,6 +90,7 @@ const expectedFillBlankOptions: Record<string, string[][]> = {
     ["meinen", "meinem", "meine"],
     ["meiner", "meinen", "meine"],
   ],
+  e12: [["auf", "für", "mit"]],
   w2: [
     ["weil", "wenn", "ob"],
     ["Wenn", "Weil", "Ob"],
@@ -257,14 +261,14 @@ describe("A2-10 lesson content audit", () => {
     ]);
     expect(taskIds(lessonA210.review ?? [])).toEqual(["r1", "r2", "r3"]);
     expect(taskIds(lessonA210.practiceBank)).toEqual(
-      Array.from({ length: 10 }, (_, index) => `e${index + 1}`).sort(),
+      Array.from({ length: 14 }, (_, index) => `e${index + 1}`).sort(),
     );
     expect(taskIds(lessonA210.miniTest)).toEqual(["m1", "m2", "m3", "m4", "m5"]);
     expect(taskIds(lessonA210.writing)).toEqual(["w1", "w2", "w3"]);
     expect(taskIds(lessonA210.reading?.questions ?? [])).toEqual(["rq1", "rq2", "rq3", "rq4"]);
     expect(taskIds(lessonA210.listening.questions)).toEqual(["q1", "q2", "q3", "q4"]);
-    expect(allTasks()).toHaveLength(29);
-    expect(new Set(allTasks().map((item) => item.id)).size).toBe(29);
+    expect(allTasks()).toHaveLength(33);
+    expect(new Set(allTasks().map((item) => item.id)).size).toBe(33);
     expect(lessonA210.theory).toHaveLength(2);
     expect(lessonA210.theory.every((block) => block.examples.length >= 5)).toBe(true);
     expect(lessonA210.flashcards.map(({ id, de, ar, example, exampleAr, level }) => ({
@@ -434,6 +438,7 @@ describe("A2-10 lesson content audit", () => {
     const correctTokenOrders: Record<string, string[]> = {
       e4: ["Ich", "lerne", ",", "weil", "ich", "die", "Prüfung", "bestehen", "will", "."],
       m3: ["Ich", "weiß", "nicht", ",", "ob", "er", "kommt", "."],
+      e13: ["Ich", "möchte", "wissen", ",", "wann", "der", "Unterricht", "beginnt", "."],
     };
     expect(Object.keys(correctTokenOrders).sort()).toEqual(
       allTasks()
@@ -461,6 +466,10 @@ describe("A2-10 lesson content audit", () => {
       e7: {
         accepted: ["Ich weiß nicht, ob er kommt", "Ich weiß nicht, ob er kommt."],
         sample: "Ich weiß nicht, ob er kommt.",
+      },
+      e14: {
+        accepted: ["Ich lerne jeden Tag, weil ich die Prüfung bestehen möchte.", "Ich lerne jeden Tag, weil ich die Prüfung bestehen möchte"],
+        sample: "Ich lerne jeden Tag, weil ich die Prüfung bestehen möchte.",
       },
     };
     expect(Object.keys(transformations).sort()).toEqual(

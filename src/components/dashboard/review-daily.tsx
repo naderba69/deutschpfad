@@ -117,7 +117,7 @@ export function ReviewDaily() {
             ثلاثة أسئلة من مستويات مختلفة — خلط (Interleaving) يقوي الذاكرة.
           </p>
           {batch.map((ex) => (
-            <ExerciseRenderer key={ex.id} exercise={ex} />
+            <ExerciseRenderer key={ex.id} exercise={ex} sourceId="dashboard:review-daily" />
           ))}
         </CardContent>
       </Card>

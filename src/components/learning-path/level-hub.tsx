@@ -150,13 +150,7 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
             const isDone = completedLessonsSet.has(lesson.id);
             const isNext = lesson.id === nextLesson.id;
             const locked = isLocked(i); // القفل التسلسلي
-            return (
-              <Link
-                key={lesson.id}
-                href={locked ? "#" : `/lesson/${lesson.id}`}
-                onClick={locked ? (e) => e.preventDefault() : undefined}
-                aria-disabled={locked}
-                className={`group relative flex min-w-0 items-center gap-3 rounded-2xl border p-4 transition-all ${
+            const cardClass = `group relative flex min-w-0 items-center gap-3 rounded-2xl border p-4 transition-all ${
                   isDone
                     ? "border-success/30 bg-success/[0.04]"
                     : isNext
@@ -164,8 +158,9 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
                       : locked
                         ? "cursor-not-allowed border-muted bg-muted/30 opacity-60"
                         : "border-muted bg-card hover:border-primary/30 hover:shadow-soft"
-                }`}
-              >
+                }`;
+            const cardContent = (
+              <>
                 {/* الرقم أو القفل */}
                 <span className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl font-de text-sm font-extrabold ${
                   isDone
@@ -219,6 +214,16 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
                   </span>
                 )}
                 {!locked && <ChevronLeft className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" aria-hidden="true" />}
+            </>
+            );
+            // المقفل: div غير تفاعلي (لا رابط وهمي في سجل التصفح)
+            return locked ? (
+              <div key={lesson.id} aria-disabled="true" className={cardClass}>
+                {cardContent}
+              </div>
+            ) : (
+              <Link key={lesson.id} href={`/lesson/${lesson.id}`} className={cardClass}>
+                {cardContent}
               </Link>
             );
           })}

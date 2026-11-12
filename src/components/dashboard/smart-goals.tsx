@@ -7,7 +7,6 @@ import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
 import {getRecord, putRecord} from "@/lib/storage/db";
 import {getPreferences} from "@/lib/storage/preferences";
-;
 import {cn} from "@/lib/utils";
 
 interface SmartGoal {

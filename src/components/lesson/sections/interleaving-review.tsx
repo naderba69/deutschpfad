@@ -15,9 +15,11 @@ import type { Exercise } from "@/types/lesson";
 export function InterleavingReview({
   review,
   levelLabel,
+  lessonId,
 }: {
   review: Exercise[];
   levelLabel: string;
+  lessonId: string;
 }) {
   if (review.length === 0) return null;
 
@@ -37,7 +39,7 @@ export function InterleavingReview({
           أجب عن هذه الأسئلة السريعة لتستعيد ما تعلمته سابقاً — ثم انطلق في درس اليوم بثقة.
         </p>
         {review.map((exercise) => (
-          <ExerciseRenderer key={exercise.id} exercise={exercise} />
+          <ExerciseRenderer key={exercise.id} exercise={exercise} sourceId={lessonId} lessonId={lessonId} />
         ))}
       </CardContent>
     </Card>

@@ -604,5 +604,3 @@ export const B1_EXTRA2_VOCAB: VocabEntry[] = [
   { de: "vereinbaren", ar: "يحدد موعداً/يتفق على", g: "v" },
   { de: "einreichen", ar: "يقدم/يسلّم (وثائق)", g: "v" },
 ];
-
-export const TOTAL_B1_EXTRA2 = B1_EXTRA2_VOCAB.length;

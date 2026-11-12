@@ -7,12 +7,12 @@ import { test, expect } from "@playwright/test";
  * ═══════════════════════════════════════════════════════════
  */
 
-test("مسار التعلم: يعرض 46 وحدة و48 درساً (لا 251 الوهمي)", async ({ page }) => {
+test("مسار التعلم: يعرض 47 وحدة و52 درساً من فهرس الدروس (لا 251 الوهمي)", async ({ page }) => {
   await page.goto("/learning-path", { waitUntil: "networkidle" });
   await page.waitForTimeout(800);
   const body = await page.locator("body").innerText();
-  expect(body).toContain("46 وحدة دراسية");
-  expect(body).toContain("48+ درساً");
+  expect(body).toContain("47 وحدة");
+  expect(body).toContain("52 درساً");
   expect(body).not.toContain("251");
   expect(body).not.toContain("45 وحدة");
 });
@@ -23,48 +23,55 @@ test("مسار التعلم: خطة 12 شهراً مرتبطة بالمسار", 
   await expect(page.getByText("افتح خطة 12 شهراً ←")).toBeVisible();
 });
 
-test("بطاقات الوحدات تعرض عدد الدروس الصحيح (a1-01 = 2)", async ({ page }) => {
+test("بطاقات الوحدات تعرض عدد الدروس الصحيح (A1 = 16)", async ({ page }) => {
   await page.goto("/learning-path", { waitUntil: "networkidle" });
   await page.waitForTimeout(800);
-  // شارات المستويات: 15/12/11/10
-  const body = await page.locator("body").innerText();
-  // شارة مستوى A1 تعرض 15 درساً
-  await expect(page.getByText("15 دروس").first()).toBeVisible();
-  // وحدة a1-01 (التعارف) تعرض درسين — نبحث عن "2 دروس" في سياق الوحدة
+  // أعداد A1/B1/B2 هي 16/12/11؛ نتحقق من شارة A1 ومن وجود وحدة بثلاثة دروس.
+  await expect(page.getByText("16 دروس").first()).toBeVisible();
+  // الوحدة a1-01 تضم درس التعارف وجزأه الإضافي؛ نبحث عن شارة «3 دروس»
   const counts = await page.evaluate(() => {
     const spans = [...document.querySelectorAll("span")].filter((s) => /^\d+ دروس$/.test((s.textContent || "").trim()));
     return spans.map((s) => (s.textContent || "").trim());
   });
-  expect(counts).toContain("2 دروس");
+  expect(counts).toContain("3 دروس");
   expect(counts).not.toContain("6 دروس"); // القيمة الوهمية القديمة
 });
 
-test("لوحة التحكم: لا تعرض /45 بل /48", async ({ page }) => {
+test("الرئيسية: تعرض صياغة الإتاحة الحالية لا وعداً مجانياً مطلقاً", async ({ page }) => {
+  await page.goto("/", { waitUntil: "networkidle" });
+  const body = await page.locator("body").innerText();
+  expect(body).toContain("التدريبات الأساسية متاحة دون اشتراك مدفوع حالياً.");
+  expect(body).not.toContain("مجاناً 100%");
+});
+
+test("لوحة التحكم: لا تعرض إجماليات قديمة /45 أو /48", async ({ page }) => {
   await page.goto("/dashboard", { waitUntil: "networkidle" });
   await page.waitForTimeout(1000);
   const body = await page.locator("body").innerText();
   expect(body).not.toContain("/45");
+  expect(body).not.toContain("/48");
 });
 
-test("الرئيسية: تعرض 48 درساً (متسقة مع المسار)", async ({ page }) => {
+test("الرئيسية: تعرض 52 درساً (متسقة مع المسار)", async ({ page }) => {
   await page.goto("/", { waitUntil: "networkidle" });
   await page.waitForTimeout(800);
   const body = await page.locator("body").innerText();
-  expect(body).toContain("48 درساً");
+  await expect(page.getByText("52", { exact: true }).first()).toBeVisible();
+  await expect(page.getByText("درس تفاعلي", { exact: true })).toBeVisible();
 });
 
-test("ترتيب المسار: الأرقام (a1-14) قبل المراجعة الختامية (a1-13)", async ({ page }) => {
+test("ترتيب المسار: درس التسوق والأرقام (a1-07) قبل المراجعة الختامية (a1-13)", async ({ page }) => {
   await page.goto("/learning-path", { waitUntil: "networkidle" });
   await page.waitForTimeout(800);
-  // في المسار التسلسلي: درس الأرقام يظهر قبل درس المراجعة
+  // نقارن ترتيب رابطَي الدرس الفعليين، لا نص عنوان قديم.
   const order = await page.evaluate(() => {
-    const els = [...document.querySelectorAll("a.group p, a.group")];
-    const texts = els.map((e) => (e.textContent || ""));
-    const findIdx = (re: RegExp) => texts.findIndex((t) => re.test(t));
-    return { zahlen: findIdx(/Zahlen, Telefon/), wiederholung: findIdx(/A1 kompakt/) };
+    const links = [...document.querySelectorAll<HTMLAnchorElement>('a[href^="/lesson/"]')];
+    return {
+      shopping: links.findIndex((link) => link.pathname.endsWith("/a1-07")),
+      review: links.findIndex((link) => link.pathname.endsWith("/a1-13")),
+    };
   });
-  // كلاهما ظاهر
-  expect(order.zahlen).toBeGreaterThanOrEqual(0);
-  expect(order.wiederholung).toBeGreaterThanOrEqual(0);
-  expect(order.zahlen).toBeLessThan(order.wiederholung);
+  expect(order.shopping).toBeGreaterThanOrEqual(0);
+  expect(order.review).toBeGreaterThanOrEqual(0);
+  expect(order.shopping).toBeLessThan(order.review);
 });

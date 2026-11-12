@@ -202,12 +202,6 @@ export const B2_VOCAB: Record<string, VocabEntry[]> = {
   ],
 };
 
-/** عدد كلمات B2 */
-export const B2_VOCAB_COUNT = Object.values(B2_VOCAB).reduce(
-  (sum, list) => sum + list.length,
-  0,
-);
-
 /** كل مفردات B2 (مصفوفة مسطحة) */
 export function getB2VocabAll(): VocabEntry[] {
   /* عدّاد فريد عبر المستويات (تدقيق نهائي 2026-08-12) */

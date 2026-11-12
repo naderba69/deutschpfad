@@ -5,7 +5,6 @@ import {Zap} from "lucide-react";
 
 import {ExerciseRenderer} from "@/components/lesson/exercises/exercise-renderer";
 import {Button} from "@/components/ui/button";
-;
 import {Progress} from "@/components/ui/progress";
 import {recordEvent} from "@/lib/analytics/events";
 import {sample} from "@/lib/lesson/shuffle";
@@ -77,7 +76,6 @@ export function ChallengeMode() {
   const [questions, setQuestions] = React.useState<Exercise[]>([]);
   const [index, setIndex] = React.useState(0);
   const [score, setScore] = React.useState(0);
-  const [round, setRound] = React.useState(0);
 
   const remaining = useCountdown(phase === "running" ? SECONDS_PER_QUESTION : 0, () => {
     // انتهاء وقت السؤال → التالي بلا نقاط — ونُسجّل خطأً صريحاً (P1-01)
@@ -162,7 +160,7 @@ export function ChallengeMode() {
   const current = questions[index];
 
   return (
-    <div key={round} className="space-y-4">
+    <div className="space-y-4">
       <div className="flex items-center justify-between rounded-xl border bg-muted/30 p-3">
         <p className="text-sm font-bold">
           سؤال {index + 1}/{QUESTIONS}
@@ -177,6 +175,7 @@ export function ChallengeMode() {
         <ExerciseRenderer
           key={`${current.id}-${index}`}
           exercise={current}
+          sourceId="gamification:challenge"
           onResult={(r) => onResult(r.isCorrect, current)}
         />
       )}

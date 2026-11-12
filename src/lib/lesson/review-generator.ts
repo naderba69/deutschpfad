@@ -49,7 +49,7 @@ export function reviewLevelLabel(review: Exercise[], lessonLevel: string): strin
 }
 
 /** هل يملك الدرس مراجعة مكتوبة يدوياً؟ */
-export function hasManualReview(lesson: Lesson): boolean {
+function hasManualReview(lesson: Lesson): boolean {
   return Array.isArray(lesson.review) && lesson.review.length > 0;
 }
 
@@ -72,8 +72,10 @@ export async function buildInterleavedReview(lesson: Lesson): Promise<Exercise[]
     const previousLessons = position > 0 ? sequence.slice(0, position) : [];
 
     // نجمع أسئلة MCQ من الدروس السابقة (اختيار متنوع)
-    const mcqs = previousLessons.flatMap((l) =>
-      l.miniTest.filter((q): q is Extract<Exercise, { type: "multiple-choice" }> => q.type === "multiple-choice"),
+    const mcqs = previousLessons.flatMap((sourceLesson) =>
+      sourceLesson.miniTest
+        .filter((question): question is Extract<Exercise, { type: "multiple-choice" }> => question.type === "multiple-choice")
+        .map((question) => ({sourceLessonId: sourceLesson.id, question})),
     );
 
     // خلط بسيط واختيار 3 (أو كل ما توفر)
@@ -82,11 +84,11 @@ export async function buildInterleavedReview(lesson: Lesson): Promise<Exercise[]
 
     if (picked.length === 0) return [];
 
-    // نعيد تأطيرها كمراجعة بمعرّفات فريدة (لا تتعارض مع تمارين الدرس)
-    return picked.map((q, i) => ({
-      ...q,
-      id: `review-${lesson.id}-${i}`,
-      instructionAr: `مراجعة تراكمية من مستوى سابق: ${q.questionAr ?? q.instructionAr ?? ""}`,
+    // تضمين مصدر السؤال في المعرف كي لا يندمج سؤالان عشوائيان في إدخال خطأ واحد.
+    return picked.map(({sourceLessonId, question}) => ({
+      ...question,
+      id: `review-${lesson.id}-${sourceLessonId}-${question.id}`,
+      instructionAr: `مراجعة تراكمية من مستوى سابق: ${question.questionAr ?? question.instructionAr ?? ""}`,
     }));
   } catch {
     return [];

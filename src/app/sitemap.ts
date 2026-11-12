@@ -71,7 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/offline", priority: 0.3 },
   ];
 
-  // إضافة الدروس الـ45 (المحتوى الأساسي) — الأولوية حسب المستوى
+  // إضافة كل الدروس من الفهرس (المحتوى الأساسي) — الأولوية حسب المستوى
   const levelPriority: Record<string, number> = { A1: 0.8, A2: 0.8, B1: 0.7, B2: 0.7 };
   const lessonRoutes = LESSON_META.map((lesson) => ({
     path: `/lesson/${lesson.id}`,

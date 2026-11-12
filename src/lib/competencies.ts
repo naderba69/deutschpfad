@@ -7,7 +7,7 @@ import type { AnalyticsEvent } from "@/types/analytics";
 import type { ErrorTypeCode, ExerciseType } from "@/types/lesson";
 
 /** ربط نوع التمرين بالمهارة */
-export const EXERCISE_TO_SKILL: Record<string, string> = {
+const EXERCISE_TO_SKILL: Record<string, string> = {
   "multiple-choice": "القواعد",
   "word-ordering": "القواعد",
   "fill-blank": "القواعد",
@@ -74,14 +74,16 @@ export function aggregateSkillStats(events: AnalyticsEvent[]): SkillStat[] {
 
 /** حساب إحصاءات المهارات من الأحداث الأخيرة */
 export async function computeSkillStats(): Promise<SkillStat[]> {
-  const { getRecentEvents } = await import("@/lib/analytics/events");
-  return aggregateSkillStats(await getRecentEvents(1500));
+  const { getRecentEventsResult } = await import("@/lib/analytics/events");
+  const result = await getRecentEventsResult(1500);
+  if (!result.ok) throw new Error("تعذرت قراءة أحداث المهارات");
+  return aggregateSkillStats(result.events);
 }
 
 /* ═══════════════ الإتقان النحوي ═══════════════ */
 
 /** تصنيف نوع الخطأ ← مفهوم نحوي (بالعربية) */
-export const ERROR_TYPE_TO_CONCEPT: Record<string, string> = {
+const ERROR_TYPE_TO_CONCEPT: Record<string, string> = {
   gender: "الجنس النحوي",
   article: "أدوات التعريف",
   spelling: "الإملاء",
@@ -134,8 +136,10 @@ export function aggregateConceptMastery(events: AnalyticsEvent[]): ConceptMaster
 
 /** حساب معدلات التصنيفات من بيانات الأخطاء الصريحة فقط */
 export async function computeConceptMastery(): Promise<ConceptMastery[]> {
-  const { getRecentEvents } = await import("@/lib/analytics/events");
-  return aggregateConceptMastery(await getRecentEvents(2000));
+  const { getRecentEventsResult } = await import("@/lib/analytics/events");
+  const result = await getRecentEventsResult(2000);
+  if (!result.ok) throw new Error("تعذرت قراءة أحداث المفاهيم");
+  return aggregateConceptMastery(result.events);
 }
 
 /** المفاهيم النحوية الأساسية لكل مستوى (لعرضها حتى بلا بيانات) */

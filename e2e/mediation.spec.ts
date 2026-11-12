@@ -2,7 +2,7 @@
  * اختبارات E2E: مكوّنا الوساطة والتفاعل (CEFR 2020) + الدرس الجديد A1-14
  *
  * 1) درس a1-01 يعرض قسمي «الوساطة» و«تفاعل حي» في مسار الخطوات
- * 2) درس الأرقام الجديد a1-14 يفتح ويعمل
+ * 2) درس Perfekt الحالي a1-14 يفتح ويعمل
  * 3) التفاعل: اختيار الرد ينتج ردّ المحاور
  */
 import { test, expect, type Page } from "@playwright/test";
@@ -52,20 +52,20 @@ test("a1-01: قسم الوساطة يظهر بعد التمرير عبر الخ�
   expect(foundInteraction, "قسم التفاعل لم يظهر في مسار الخطوات").toBe(true);
 });
 
-test("a1-14 (الأرقام والهاتف): يفتح ويعرض محتواه", async ({ page }) => {
+test("a1-14 (Perfekt): يفتح ويعرض محتواه", async ({ page }) => {
   await page.goto("/lesson/a1-14");
   await clearData(page);
   await page.reload();
   await page.waitForTimeout(1800);
 
-  await expect(page.locator("h1").first()).toContainText("Zahlen, Telefon", { timeout: 8000 });
+  await expect(page.locator("h1").first()).toContainText("Das Perfekt", { timeout: 8000 });
   // الأهداف تظهر
   await expect(page.getByText("الأهداف التعليمية", { exact: false }).first()).toBeVisible();
   // لا فيضان
   const overflow = await page.evaluate(
     () => document.documentElement.scrollWidth > document.documentElement.clientWidth + 2,
   );
-  expect(overflow, "فيضان أفقي في درس الأرقام").toBe(false);
+  expect(overflow, "فيضان أفقي في درس Perfekt").toBe(false);
 });
 
 test("التفاعل: اختيار الرد في a1-01 ينتج ردّ المحاور", async ({ page }) => {
@@ -89,7 +89,7 @@ test("التفاعل: اختيار الرد في a1-01 ينتج ردّ المح�
   const h2 = await page.evaluate(() => document.querySelector("#lesson-step-content h2")?.textContent ?? "");
   expect(h2.includes("تفاعل"), `القسم الحالي: ${h2}`).toBe(true);
 
-  await expect(page.getByText("اختر ردّك الأنسب:", { exact: false }).first()).toBeVisible({ timeout: 8000 });
+  await expect(page.getByText("اختر الرد الأنسب في هذا السياق النصي:", { exact: false }).first()).toBeVisible({ timeout: 8000 });
   // اختر الرد الأول (يبدأ بـ Hallo Lisa)
   const opt = page.locator("button", { hasText: /Hallo Lisa/ }).first();
   await opt.click();
@@ -143,11 +143,11 @@ test("تدريب Goethe-B2: تفتح بالأقسام الأربعة وتوضح 
   await page.waitForTimeout(1800);
 
   await expect(page.getByRole("heading", { name: /تدريب مستوحى من بنية Goethe-Zertifikat B2/ }).first()).toBeVisible({ timeout: 8000 });
-  // الأقسام الأربعة ظاهرة
-  await expect(page.getByText("Lesen · 65 دقيقة", { exact: false }).first()).toBeVisible();
-  await expect(page.getByText("Hören · ~40 دقيقة", { exact: false }).first()).toBeVisible();
-  await expect(page.getByText("Schreiben · 75 دقيقة", { exact: false }).first()).toBeVisible();
-  await expect(page.getByText("Sprechen — التحدث", { exact: false }).first()).toBeVisible();
+  // المدد المرجعية للأقسام الأربعة ظاهرة، مع تنبيه بأن التدريب غير رسمي.
+  for (const duration of ["65 دقيقة", "40 دقيقة", "75 دقيقة", "15 دقيقة"]) {
+    await expect(page.getByText(duration, { exact: true }).first()).toBeVisible();
+  }
+  await expect(page.getByText(/تدريب غير رسمي/).first()).toBeVisible();
 
   // ابدأ الامتحان → قسم القراءة
   await page.getByRole("button", { name: /ابدأ التدريب/ }).click();

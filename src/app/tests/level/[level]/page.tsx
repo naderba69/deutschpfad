@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 interface Props {
-  params: { level: string };
+  params: Promise<{ level: string }>;
 }
 
 export function generateStaticParams() {
@@ -20,8 +20,9 @@ export function generateStaticParams() {
 
 const VALID: TestLevel[] = ["A1", "A2", "B1", "B2"];
 
-export default function LevelTestPage({ params }: Props) {
-  const level = params.level.toUpperCase() as TestLevel;
+export default async function LevelTestPage({ params }: Props) {
+  const { level: rawLevel } = await params;
+  const level = rawLevel.toUpperCase() as TestLevel;
   if (!VALID.includes(level)) notFound();
   const meta = LEVELS.find((l) => l.code === level);
 

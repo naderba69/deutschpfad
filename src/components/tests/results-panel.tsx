@@ -6,7 +6,7 @@ import {Award, BookOpen, GraduationCap, Lightbulb, RotateCcw} from "lucide-react
 import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
 import {saveTestResult} from "@/lib/storage/test-results-store";
-import type { TestResult, TestSkill } from "@/types/test";
+import type { TestResult } from "@/types/test";
 
 const SKILL_LABEL: Record<string, string> = {
   grammatik: "القواعد",
@@ -30,10 +30,16 @@ interface ResultsPanelProps {
  * لوحة النتائج — النسب لكل مهارة + المستوى المقدر + اقتراحات التقوية
  */
 export function ResultsPanel({ result, onRetry, onNext, nextLabel, onComplete }: ResultsPanelProps) {
+  const [saveFailed, setSaveFailed] = React.useState(false);
   // حفظ النتيجة تلقائياً (لتغذية تحليل الأخطاء والتقرير الأسبوعي)
   React.useEffect(() => {
-    void saveTestResult(result);
+    let mounted = true;
+    setSaveFailed(false);
+    void saveTestResult(result).then((saved) => {
+      if (mounted) setSaveFailed(!saved);
+    });
     onComplete?.(result);
+    return () => { mounted = false; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [result]);
 
@@ -84,6 +90,11 @@ export function ResultsPanel({ result, onRetry, onNext, nextLabel, onComplete }:
           )}
         </div>
       </div>
+      {saveFailed && (
+        <p role="alert" className="rounded-xl border border-destructive/30 bg-destructive/5 p-3 text-sm">
+          تعذر حفظ نتيجة الاختبار؛ يمكنك تنزيل بياناتك الاحتياطية لاحقاً والتحقق من التخزين المحلي.
+        </p>
+      )}
 
       {/* المهارات */}
       <div>
@@ -146,14 +157,5 @@ function ReviewLessonsLink({ level }: { level: string }) {
       <BookOpen className="h-3.5 w-3.5" aria-hidden="true" />
       راجع دروس مستوى {level} من جديد
     </a>
-  );
-}
-
-/** شريط مهارة لطيف (للمعالجة البصرية) */
-export function SkillBadge({ skill }: { skill: TestSkill }) {
-  return (
-    <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">
-      {SKILL_LABEL[skill] ?? skill}
-    </span>
   );
 }

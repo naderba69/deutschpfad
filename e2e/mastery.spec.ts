@@ -53,7 +53,7 @@ async function setOnboarded(page: Page) {
 
 test("مركز المستوى: شهادة الإتقان تظهر بوظائف Can-Do", async ({ page }) => {
   await page.goto("/level/a1");
-  await expect(page.getByText("شهادة إتقان A1").first()).toBeVisible({ timeout: 8000 });
+  await expect(page.getByRole("heading", { name: /تقييم ذاتي لوظائف A1/ }).first()).toBeVisible({ timeout: 8000 });
   // وظائف حقيقية تظهر
   await expect(page.getByText("Ich kann mich vorstellen und andere begrüßen.").first()).toBeVisible();
   await expect(page.getByRole("button", { name: "✓ أستطيع" }).first()).toBeVisible();
@@ -84,7 +84,7 @@ test("لوحة الرحلة: طريق الشهادة يعرض المستويات
   await setOnboarded(page);
   await page.reload();
   await page.waitForTimeout(2500);
-  await expect(page.getByText("طريقك إلى الشهادة").first()).toBeAttached({ timeout: 8000 });
+  await expect(page.getByText("متابعة التقدم حسب المستوى").first()).toBeVisible({ timeout: 8000 });
   await expect(page.getByText("وظائف 0%", { exact: false }).first()).toBeAttached();
 });
 

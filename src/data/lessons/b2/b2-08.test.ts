@@ -23,6 +23,23 @@ describe("B2-08 audit", () => {
     }
   });
 
+  it("expands the practice bank to 14 with validated intercultural communication tasks", () => {
+    expect(lessonB208.practiceBank).toHaveLength(14);
+    const byId = (id: string) => {
+      const item = lessonB208.practiceBank.find((candidate) => candidate.id === id);
+      if (!item) throw new Error(`missing ${id}`);
+      return item;
+    };
+    expect(evaluateExercise(byId("e11"), "über").isCorrect).toBe(true);
+    expect(evaluateExercise(byId("e11"), "an").isCorrect).toBe(false);
+    expect(evaluateExercise(byId("e12"), ["verständigen"]).isCorrect).toBe(true);
+    expect(evaluateExercise(byId("e12"), ["verständigt"]).isCorrect).toBe(false);
+    expect(evaluateExercise(byId("e13"), "Der Erfolg hängt von der Kommunikation ab.").isCorrect).toBe(true);
+    const e14 = byId("e14");
+    if (e14.type !== "word-ordering") throw new Error("e14 is not word-ordering");
+    expect(evaluateExercise(e14, e14.correctSentence.match(/[^\s,.]+|[,.]/g) ?? []).isCorrect).toBe(true);
+  });
+
   it("makes every word-ordering item solvable with punctuation as separate tokens", () => {
     const items = [...lessonB208.practiceBank, ...lessonB208.miniTest].filter((x) => x.type === "word-ordering") as unknown as Loose[];
     expect(items.length).toBeGreaterThan(0);

@@ -20,15 +20,21 @@ export function CefrCompetencies() {
   const [skills, setSkills] = React.useState<SkillStat[]>([]);
   const [concepts, setConcepts] = React.useState<ConceptMastery[]>([]);
   const [loading, setLoading] = React.useState(true);
+  const [readError, setReadError] = React.useState(false);
 
   React.useEffect(() => {
     let cancelled = false;
     (async () => {
-      const [s, c] = await Promise.all([computeSkillStats(), computeConceptMastery()]);
-      if (cancelled) return;
-      setSkills(s);
-      setConcepts(c);
-      setLoading(false);
+      try {
+        const [s, c] = await Promise.all([computeSkillStats(), computeConceptMastery()]);
+        if (cancelled) return;
+        setSkills(s);
+        setConcepts(c);
+      } catch {
+        if (!cancelled) setReadError(true);
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
     })();
     return () => {
       cancelled = true;
@@ -36,6 +42,7 @@ export function CefrCompetencies() {
   }, []);
 
   if (loading) return <div className="h-64 animate-pulse rounded-2xl border bg-muted/30" />;
+  if (readError) return <div role="alert" className="rounded-xl border border-destructive/30 bg-destructive/5 p-4 text-sm">تعذرت قراءة سجل إجابات التمارين؛ أُخفيت المؤشرات بدلاً من عرضها كبيانات فارغة.</div>;
 
   const activeSkills = skills.filter((skill) => skill.total > 0);
   const hasData = activeSkills.length > 0;

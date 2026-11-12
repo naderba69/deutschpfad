@@ -518,6 +518,25 @@ export const lessonB103: Lesson = {
       errorType: "word-order",
       points: 2,
     },
+    {
+      id: "e13",
+      type: "multiple-choice",
+      instructionAr: "اختر صيغة المبني للمجهول المناسبة للفاعل الجمع:",
+      questionDe: "Die Batterien ___ getrennt gesammelt.",
+      options: ["werden", "wird", "wurde"],
+      correctIndex: 0,
+      explanation: "Batterien جمع، لذلك نستخدم werden في المضارع المبني للمجهول: werden gesammelt.",
+      errorType: "grammar",
+    },
+    {
+      id: "e14",
+      type: "fill-blank",
+      instructionAr: "أكمل بـ zu + المصدر:",
+      template: "Die Stadt plant, mehr Bäume ___. (pflanzen)",
+      blanks: [{ correct: "zu pflanzen", options: ["zu pflanzen", "pflanzen", "gepflanzt"] }],
+      explanation: "بعد planen نستخدم zu + Infinitiv: mehr Bäume zu pflanzen.",
+      errorType: "grammar",
+    },
   ],
 
   fehlerUndTipps: {

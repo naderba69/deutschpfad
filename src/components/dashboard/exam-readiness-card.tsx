@@ -10,12 +10,13 @@ import {Award, BookOpenCheck, GraduationCap, Headphones} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Progress} from "@/components/ui/progress";
-import {getRecentTestResults} from "@/lib/storage/test-results-store";
+import {getRecentTestResultsResult} from "@/lib/storage/test-results-store";
+import type {TestResult} from "@/types/test";
 
 interface Props {
   completedUnits: number;
   totalUnits: number;
-  reviewsCount: number;
+  reviewsCount: number | null;
   goalLevel?: "A1" | "A2" | "B1" | "B2";
 }
 
@@ -27,14 +28,16 @@ const SKILL_LABELS: Record<string, string> = {
 };
 
 export function ExamReadinessCard({completedUnits, totalUnits, reviewsCount, goalLevel = "B2"}: Props) {
-  const [latest, setLatest] = React.useState<Awaited<ReturnType<typeof getRecentTestResults>>[number] | null>(null);
+  const [latest, setLatest] = React.useState<TestResult | null>(null);
   const [loaded, setLoaded] = React.useState(false);
+  const [loadError, setLoadError] = React.useState(false);
 
   React.useEffect(() => {
     let mounted = true;
-    void getRecentTestResults(1).then((results) => {
+    void getRecentTestResultsResult(1).then((result) => {
       if (!mounted) return;
-      setLatest(results[0] ?? null);
+      setLatest(result.ok ? result.value[0] ?? null : null);
+      setLoadError(!result.ok);
       setLoaded(true);
     });
     return () => { mounted = false; };
@@ -68,11 +71,15 @@ export function ExamReadinessCard({completedUnits, totalUnits, reviewsCount, goa
         <div className="grid gap-3 sm:grid-cols-2">
           <div className="rounded-xl border bg-muted/20 p-3">
             <p className="flex items-center gap-2 text-xs text-muted-foreground"><GraduationCap className="h-4 w-4" aria-hidden="true" />المراجعات المسجلة</p>
-            <p className="mt-1 font-de text-2xl font-bold" dir="ltr">{reviewsCount}</p>
+            {reviewsCount === null ? (
+              <p role="status" className="mt-1 text-xs text-amber-700 dark:text-amber-300">تعذر قراءة سجل المراجعات.</p>
+            ) : (
+              <p className="mt-1 font-de text-2xl font-bold" dir="ltr">{reviewsCount}</p>
+            )}
           </div>
           <div className="rounded-xl border bg-muted/20 p-3">
             <p className="flex items-center gap-2 text-xs text-muted-foreground"><Headphones className="h-4 w-4" aria-hidden="true" />آخر اختبار محفوظ</p>
-            {!loaded ? <p className="mt-1 text-sm">جارٍ التحميل…</p> : latest?.skillResults?.some((skill) => skill.skill === "schreiben") ? (
+            {!loaded ? <p className="mt-1 text-sm">جارٍ التحميل…</p> : loadError ? <p role="status" className="mt-1 text-xs text-amber-700 dark:text-amber-300">تعذر قراءة نتائج الاختبارات المحفوظة.</p> : latest?.skillResults?.some((skill) => skill.skill === "schreiben") ? (
               <p className="mt-1 text-xs text-muted-foreground">المحاولة محفوظة وفق آلية تصحيح سابقة؛ أخفينا نسبتها لعدم قابليتها للمقارنة.</p>
             ) : latest ? (
               <>
@@ -99,9 +106,9 @@ export function ExamReadinessCard({completedUnits, totalUnits, reviewsCount, goa
         )}
 
         <div className="flex flex-wrap gap-2">
-          <Button asChild size="sm" variant="outline"><a href="/tests/level/b2">تدرّب على اختبار B2</a></Button>
-          <Button asChild size="sm" variant="outline"><a href="/tests/sprechen">تدريب شفهي</a></Button>
-          <Button asChild size="sm" variant="outline"><a href="/dashboard/report">📄 تقرير PDF</a></Button>
+          <Button asChild size="sm" variant="outline"><Link href="/tests/level/b2">تدرّب على اختبار B2</Link></Button>
+          <Button asChild size="sm" variant="outline"><Link href="/tests/sprechen">تدريب شفهي</Link></Button>
+          <Button asChild size="sm" variant="outline"><Link href="/dashboard/report">📄 تقرير PDF</Link></Button>
         </div>
       </CardContent>
     </Card>

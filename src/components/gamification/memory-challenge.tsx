@@ -9,7 +9,6 @@ import {Progress} from "@/components/ui/progress";
 import {getA1VocabAll} from "@/data/vocabulary/a1";
 import {getA2VocabAll} from "@/data/vocabulary/a2";
 import {sample, shuffle} from "@/lib/lesson/shuffle";
-;
 
 const ROUNDS = 8;
 
@@ -64,7 +63,7 @@ export function MemoryChallenge() {
         </CardHeader>
         <CardContent className="p-5">
           <p className="text-sm text-muted-foreground">
-            {ROUNDS} كلمات عشوائية من المستويات الأربعة — لكل كلمة اختر معناها من 4 خيارات.
+            {ROUNDS} كلمات عشوائية من مستويات A1–A2 — لكل كلمة اختر معناها من 4 خيارات.
             الأسئلة تتبدل كل مرة!
           </p>
           <Button className="mt-4" onClick={start}>

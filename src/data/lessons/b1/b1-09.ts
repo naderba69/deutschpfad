@@ -583,6 +583,15 @@ export const lessonB109: Lesson = {
       explanation: "sich interessieren für + Akkusativ. حرف الجر الثابت جزء من الفعل ولا يُستبدل بحرف قريب المعنى.",
       errorType: "preposition",
     },
+    {
+      id: "e14",
+      type: "fill-blank",
+      instructionAr: "أكمل بحالة Dativ بعد الفعل helfen:",
+      template: "Die Freiwilligen helfen ___ neuen Mitgliedern.",
+      blanks: [{ correct: "den", options: ["den", "die", "der"] }],
+      explanation: "helfen يطلب Dativ؛ الجمع هنا den neuen Mitgliedern، مع علامة الجمع -n في الاسم.",
+      errorType: "case",
+    },
   ],
 
   fehlerUndTipps: {

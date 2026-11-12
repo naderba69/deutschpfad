@@ -12,7 +12,7 @@ import {LEVELS} from "@/lib/constants/curriculum";
 import {cn} from "@/lib/utils";
 
 /**
- * المسار المتسلسل الكامل — كل الدروس (46) بالترتيب من a1-00 حتى b2-10
+ * المسار المتسلسل الكامل — كل الدروس بالترتيب من a1-00 حتى b2-10
  * يعرض الرحلة كاملة درساً بدرس: رقم عالمي + مستوى + عنوان + مدة + زر فتح.
  * هذا هو «المسار والمنهجية» الذي يتبعه المتعلم من أول درس A1 حتى آخر B2.
  */
@@ -37,7 +37,7 @@ export function SequentialPath() {
             <h2 className="text-lg font-extrabold">المسار الكامل — درساً بدرس</h2>
             <p className="text-xs text-muted-foreground">
               رحلتك مرتبة بالترتيب الصحيح: {lessons.length} درساً من الأبجدية (A1) حتى
-              الاحتراف الأكاديمي (B2). افتح درساً وأكمل، ثم تابع «الدرس التالي» في نهايته.
+              المستوى المتقدم (B2). افتح درساً وأكمل، ثم تابع «الدرس التالي» في نهايته.
             </p>
           </div>
           <div className="shrink-0 rounded-xl bg-muted px-3 py-1.5 text-center">

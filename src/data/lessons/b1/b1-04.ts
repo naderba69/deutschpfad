@@ -1,7 +1,7 @@
 import type { Lesson } from "@/types/lesson";
 
 /**
- * الدرس B1-04: الإعلام والمجتمع — Konjunktiv II (صيغة الشرط) — جزء أول
+ * الدرس B1-04: الإعلام والمجتمع — Konjunktiv II (صيغة الشرط) بوصفه أداة للنقاش النقدي
  */
 export const lessonB104: Lesson = {
   id: "b1-04",
@@ -457,6 +457,47 @@ export const lessonB104: Lesson = {
       audioText: "Du solltest mehr Wasser trinken.",
       explanation: "ينبغي أن تشرب ماءً أكثر — نصيحة بـ sollte.",
       errorType: "spelling",
+    },
+    {
+      id: "e11",
+      type: "multiple-choice",
+      instructionAr: "اختر الطلب الأكثر تهذيباً:",
+      questionDe: "___ Sie mir bitte den Weg erklären?",
+      options: ["Könnten", "Können", "Konnten"],
+      correctIndex: 0,
+      explanation: "Könnten Sie ...? صيغة مهذبة بـKonjunktiv II؛ Können Sie سؤال مباشر، وKonnten ماضٍ.",
+      errorType: "grammar",
+    },
+    {
+      id: "e12",
+      type: "fill-blank",
+      instructionAr: "أكمل الشرط غير الواقعي بصيغة Konjunktiv II:",
+      template: "Wenn er mehr Zeit ___, ___ er öfter lesen. (haben / werden)",
+      blanks: [
+        { correct: "hätte", options: ["hätte", "hat", "hatte"] },
+        { correct: "würde", options: ["würde", "wird", "wurde"] },
+      ],
+      explanation: "في الشرط غير الواقعي نستخدم hätte في جملة wenn وwürde مع المصدر في الجملة الرئيسية.",
+      errorType: "grammar",
+    },
+    {
+      id: "e13",
+      type: "transformation",
+      instructionAr: "حوّل إلى طلب مهذب باستخدام könnten:",
+      prompt: "Helfen Sie mir. →",
+      acceptedAnswers: ["Könnten Sie mir helfen?", "Könnten Sie mir bitte helfen?"],
+      sampleAnswer: "Könnten Sie mir bitte helfen?",
+      explanation: "في الطلب المهذب تأتي صيغة könnten في الموقع الثاني، ثم الفاعل، ويأتي المصدر helfen في نهاية السؤال.",
+      errorType: "grammar",
+    },
+    {
+      id: "e14",
+      type: "word-ordering",
+      instructionAr: "رتّب الشرط غير الواقعي:",
+      tokens: ["Wenn", "ich", "mehr", "Zeit", "hätte", ",", "würde", "ich", "öfter", "kochen", "."],
+      correctSentence: "Wenn ich mehr Zeit hätte, würde ich öfter kochen.",
+      explanation: "الفعل المصرف في جملة wenn يأتي في النهاية، وبعدها يبدأ الفعل في الجملة الرئيسية مباشرةً.",
+      errorType: "word-order",
     },
   ],
 

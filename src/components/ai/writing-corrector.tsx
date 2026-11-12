@@ -5,7 +5,6 @@ import {PenLine} from "lucide-react";
 
 import {AiToolShell} from "@/components/ai/ai-tool-shell";
 import {useLLM} from "@/components/providers/llm-provider";
-;
 import {writingCorrectorPrompt} from "@/lib/llm/prompts";
 
 const LEVELS = ["A1", "A2", "B1", "B2"];
@@ -65,6 +64,7 @@ export function AiWritingCorrector() {
           <textarea
             value={text}
             onChange={(e) => setText(e.target.value)}
+            aria-label="فقرتك الألمانية للتصحيح"
             placeholder="اكتب فقرتك بالألمانية هنا… (مثال: Ich bin gestern nach Berlin gefahren und habe viel gesehen. Das Stadt ist sehr schön.)"
             dir="ltr"
             lang="de"

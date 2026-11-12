@@ -33,6 +33,19 @@ describe("B2-01 audit", () => {
     }
   });
 
+  it("expands the practice bank to 14 with validated research-report grammar", () => {
+    expect(lessonB201.practiceBank).toHaveLength(14);
+    const byId = (id: string) => {
+      const item = lessonB201.practiceBank.find((candidate) => candidate.id === id);
+      if (!item) throw new Error(`missing ${id}`);
+      return item;
+    };
+    expect(evaluateExercise(byId("e13"), "habe").isCorrect).toBe(true);
+    expect(evaluateExercise(byId("e13"), "hat").isCorrect).toBe(false);
+    expect(evaluateExercise(byId("e14"), ["könnten"]).isCorrect).toBe(true);
+    expect(evaluateExercise(byId("e14"), ["konnten"]).isCorrect).toBe(false);
+  });
+
   it("uses no invented probability percentages or unsourced statistics", () => {
     const text = JSON.stringify(lessonB201);
     expect(text).not.toMatch(/\d+\s*%/);

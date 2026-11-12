@@ -4,16 +4,17 @@ import * as React from "react";
 import {CheckCircle2, Flame, ListChecks, Mic, Repeat, Target} from "lucide-react";
 
 import {Card, CardContent} from "@/components/ui/card";
-import {addGems, GEM_REWARDS} from "@/lib/gamification/gems";
-import {getRecentEvents} from "@/lib/analytics/events";
+import {addGemsResult, GEM_REWARDS} from "@/lib/gamification/gems";
+import {claimQuestReward} from "@/lib/gamification/daily-quest-reward";
+import {getRecentEventsResult} from "@/lib/analytics/events";
 import {getDueCardsForReview} from "@/lib/review/weekly-review";
 import {cn} from "@/lib/utils";
 
 /**
  * ═══════════════════════════════════════════════════════════
- *  التحديات اليومية المتجددة — 5 مهام تُحدَّث يومياً
+ *  التحديات اليومية المتجددة — 4 مهام تُحدَّث يومياً
  *  كل مهمة تُحتسب من نشاطك الفعلي:
- *  · حل 10 تمارين · راجع 5 بطاقات · أكمل قصة · تحدث (نطق) · سلسلة 3 أيام
+ *  · حل 10 تمارين · راجع 5 بطاقات · أكمل قصة · تحدث (نطق)
  *  عند إتمام مهمة تُمنح جواهر 💎 تلقائياً
  * ═══════════════════════════════════════════════════════════
  */
@@ -30,10 +31,16 @@ interface Quest {
 export function DailyQuests() {
   const [quests, setQuests] = React.useState<Quest[]>([]);
   const [claimed, setClaimed] = React.useState<Record<string, boolean>>({});
+  const [storageNotice, setStorageNotice] = React.useState("");
 
   React.useEffect(() => {
     void (async () => {
-      const events = await getRecentEvents(3000);
+      const eventsResult = await getRecentEventsResult(3000);
+      if (!eventsResult.ok) {
+        setStorageNotice("تعذر قراءة نشاط اليوم؛ لم نعرض التحديات أو نمنح مكافآت بناءً على بيانات ناقصة.");
+        return;
+      }
+      const events = eventsResult.events;
       const today = new Date().toISOString().slice(0, 10);
       const todayEvents = events.filter((e) => new Date(e.ts).toISOString().slice(0, 10) === today);
 
@@ -50,26 +57,54 @@ export function DailyQuests() {
       ];
       setQuests(qs);
 
-      // الجواهر المستحقة
+      // لا نعلّم المهمة مستلمة إذا تعذر تسجيل مكافأتها.
+      const claimedKey = `dp:quests-claimed:${today}`;
+      let prev: Record<string, boolean>;
       try {
-        const claimedKey = `dp:quests-claimed:${today}`;
-        const prev = JSON.parse(localStorage.getItem(claimedKey) ?? "{}") as Record<string, boolean>;
-        setClaimed(prev);
-        for (const q of qs) {
-          if (q.current >= q.target && !prev[q.id]) {
-            addGems(q.reward);
-            prev[q.id] = true;
-          }
+        const raw = localStorage.getItem(claimedKey);
+        const parsed: unknown = raw === null ? {} : JSON.parse(raw);
+        if (!parsed || typeof parsed !== "object" || Array.isArray(parsed) ||
+            Object.values(parsed).some((value) => typeof value !== "boolean")) {
+          throw new Error("Invalid claimed quests data");
         }
-        localStorage.setItem(claimedKey, JSON.stringify(prev));
-        setClaimed(prev);
+        prev = parsed as Record<string, boolean>;
       } catch {
-        /* تجاهل */
+        setStorageNotice("تعذر قراءة سجل مكافآت التحديات؛ لم نغيّر السجل لتجنب تكرار المكافآت.");
+        return;
+      }
+      setClaimed(prev);
+      for (const q of qs) {
+        if (q.current < q.target || prev[q.id]) continue;
+        const result = claimQuestReward(q.id, q.reward, prev, (next) => {
+          try {
+            // حجز الاستلام قبل إضافة الرصيد لتقليل احتمال تكرار المكافأة.
+            localStorage.setItem(claimedKey, JSON.stringify(next));
+            return true;
+          } catch {
+            return false;
+          }
+        }, addGemsResult);
+        if (result.status === "claim-storage-error") {
+          setStorageNotice("تعذر حفظ سجل استلام التحدي؛ لم نضف المكافأة.");
+          break;
+        }
+        if (result.status === "reward-error") {
+          setStorageNotice("تعذر حفظ الجواهر؛ تحقّق من سجل التحدي قبل إعادة المحاولة.");
+          break;
+        }
+        prev = result.claimed;
+        setClaimed(prev);
       }
     })();
   }, []);
 
-  if (quests.length === 0) return null;
+  if (quests.length === 0) {
+    return storageNotice ? (
+      <p className="rounded-lg border border-destructive/30 bg-destructive/5 px-3 py-2 text-sm text-destructive" role="alert">
+        {storageNotice}
+      </p>
+    ) : null;
+  }
 
   const doneCount = quests.filter((q) => q.current >= q.target).length;
 
@@ -85,6 +120,8 @@ export function DailyQuests() {
             <p className="text-[11px] text-muted-foreground">أنجز {doneCount}/4 تحدياً — تُمنح الجواهر تلقائياً 💎</p>
           </div>
         </div>
+
+        {storageNotice && <p className="rounded-lg border border-destructive/30 bg-destructive/5 px-3 py-2 text-xs text-destructive" role="status">{storageNotice}</p>}
 
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
           {quests.map((q) => {

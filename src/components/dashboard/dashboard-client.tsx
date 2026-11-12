@@ -31,9 +31,9 @@ import {DailyDashboard} from "@/components/daily/daily-dashboard";
 import {useProgress} from "@/components/providers/progress-provider";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
-import {getEventStats} from "@/lib/analytics/events";
-import {getBeforeAfterComparison} from "@/lib/analytics/compare";
-import {buildHeatmap, computeStreak, getActivityMap} from "@/lib/analytics/heatmap";
+import {getEventStatsResult} from "@/lib/analytics/events";
+import {getBeforeAfterComparisonResult, type BeforeAfter} from "@/lib/analytics/compare";
+import {buildHeatmap, computeStreak, getActivityMapResult} from "@/lib/analytics/heatmap";
 import {useLLM} from "@/components/providers/llm-provider";
 import {getCardStats, computeForgettingCoefficient} from "@/lib/srs/flashcard-service";
 import {forgettingCoefficientLabel} from "@/lib/srs/sm2";
@@ -93,33 +93,46 @@ export function DashboardClient() {
     lessons: 0,
     pronunciationAvg: null as number | null,
   });
+  const [statsAvailable, setStatsAvailable] = React.useState(false);
+  const [statsReadError, setStatsReadError] = React.useState(false);
   const [cards, setCards] = React.useState({ due: 0, total: 0 });
   const [coefficient, setCoefficient] = React.useState(1);
   const [heat, setHeat] = React.useState({ cells: [] as Awaited<ReturnType<typeof buildHeatmap>>, streak: 0 });
-  const [comparison, setComparison] = React.useState<Awaited<ReturnType<typeof getBeforeAfterComparison>>>(null);
+  const [heatReadError, setHeatReadError] = React.useState(false);
+  const [comparison, setComparison] = React.useState<BeforeAfter | null>(null);
 
   React.useEffect(() => {
     const stop = startSessionTracking();
     void (async () => {
       const [s, cs, fc, activity, cmp] = await Promise.all([
-        getEventStats(),
+        getEventStatsResult(),
         getCardStats(),
         computeForgettingCoefficient(),
-        getActivityMap(),
-        getBeforeAfterComparison(),
+        getActivityMapResult(),
+        getBeforeAfterComparisonResult(),
       ]);
-      setStats({
-        xp: s.xp,
-        accuracy: s.accuracyPct,
-        answered: s.exercisesAnswered,
-        reviews: s.reviewsCount,
-        lessons: s.lessonsCompleted,
-        pronunciationAvg: s.pronunciationAvg,
-      });
+      if (s.ok) {
+        setStats({
+          xp: s.stats.xp,
+          accuracy: s.stats.accuracyPct,
+          answered: s.stats.exercisesAnswered,
+          reviews: s.stats.reviewsCount,
+          lessons: s.stats.lessonsCompleted,
+          pronunciationAvg: s.stats.pronunciationAvg,
+        });
+        setStatsAvailable(true);
+      } else {
+        setStatsReadError(true);
+      }
       setCards({ due: cs.due, total: cs.total });
       setCoefficient(fc);
-      setHeat({ cells: buildHeatmap(activity), streak: computeStreak(activity) });
-      setComparison(cmp);
+      if (activity.ok) {
+        setHeat({ cells: buildHeatmap(activity.activity), streak: computeStreak(activity.activity) });
+      } else {
+        setHeatReadError(true);
+      }
+      setComparison(cmp.ok ? cmp.comparison : null);
+      if (!cmp.ok) setStatsReadError(true);
     })();
     return () => stop();
   }, []);
@@ -171,8 +184,8 @@ export function DashboardClient() {
       <DashSection step="٢" title="أرقامك" subtitle="ملخص تقدمك في لمحة">
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <StatCard icon={<Target className="h-5 w-5 text-primary" aria-hidden="true" />} label="التقدم في المنهج" value={`${progressPct}%`} sub={`${completedUnits.length} وحدة مكتملة`} />
-          <StatCard icon={<TrendingUp className="h-5 w-5 text-success" aria-hidden="true" />} label="دقة التمارين" value={`${stats.accuracy}%`} sub={`${stats.answered} تمرين محلول`} />
-          <StatCard icon={<BrainCircuit className="h-5 w-5 text-gold-strong" aria-hidden="true" />} label="نقاط الخبرة (XP)" value={`${stats.xp}`} sub={`${stats.lessons} دروس · ${stats.reviews} مراجعات`} />
+          <StatCard icon={<TrendingUp className="h-5 w-5 text-success" aria-hidden="true" />} label="دقة التمارين" value={statsAvailable ? `${stats.accuracy}%` : "—"} sub={statsAvailable ? `${stats.answered} تمرين محلول` : statsReadError ? "تعذر قراءة سجل النشاط" : "جارٍ التحميل…"} />
+          <StatCard icon={<BrainCircuit className="h-5 w-5 text-gold-strong" aria-hidden="true" />} label="نقاط الخبرة (XP)" value={statsAvailable ? `${stats.xp}` : "—"} sub={statsAvailable ? `${stats.lessons} دروس · ${stats.reviews} مراجعات` : statsReadError ? "تعذر قراءة سجل النشاط" : "جارٍ التحميل…"} />
           <StatCard icon={<CalendarClock className="h-5 w-5 text-indigo-500" aria-hidden="true" />} label="بطاقات مستحقة" value={`${cards.due}`} sub={`من أصل ${cards.total} بطاقة`} link="/flashcards" />
         </div>
       </DashSection>
@@ -182,7 +195,7 @@ export function DashboardClient() {
         <ExamReadinessCard
           completedUnits={completedUnits.length}
           totalUnits={TOTAL_UNITS}
-          reviewsCount={stats.reviews}
+          reviewsCount={statsAvailable ? stats.reviews : null}
           goalLevel="B2"
         />
       </DashSection>
@@ -223,7 +236,9 @@ export function DashboardClient() {
               </CardTitle>
             </CardHeader>
             <CardContent className="p-5">
-              {comparison ? (
+              {statsReadError && comparison === null ? (
+                <p role="alert" className="text-sm text-destructive">تعذرت قراءة بيانات التمارين؛ لم نعرض مقارنة فارغة كأنها نتيجة مؤكدة.</p>
+              ) : comparison ? (
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-muted-foreground">أول الفترة</span>
@@ -251,7 +266,7 @@ export function DashboardClient() {
           </Card>
         </div>
 
-        <HeatmapChart cells={heat.cells} streak={heat.streak} />
+        {heatReadError ? <div role="alert" className="rounded-xl border border-destructive/30 bg-destructive/5 p-4 text-sm">تعذرت قراءة سجل النشاط؛ أخفينا خريطة النشاط وسلسلة الأيام.</div> : <HeatmapChart cells={heat.cells} streak={heat.streak} />}
       </DashSection>
 
       {/* ⑥ نقاط ضعفك وأهدافك */}

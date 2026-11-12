@@ -109,5 +109,3 @@ export function getLessonCountForUnit(unitId: string): number {
 export function getLessonMetaByLevel(level: string): LessonMeta[] {
   return LESSON_META.filter((l) => l.level === level);
 }
-
-export const TOTAL_LESSONS_META = LESSON_META.length;

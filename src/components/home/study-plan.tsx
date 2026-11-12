@@ -20,17 +20,22 @@ export function StudyPlan({ profile, onSaved }: { profile: LearnerProfile; onSav
   const [goal, setGoal] = React.useState(profile.dailyGoalMinutes ?? 20);
   const [saving, setSaving] = React.useState(false);
   const [todayMinutes, setTodayMinutes] = React.useState(0);
+  const [activityReadError, setActivityReadError] = React.useState(false);
 
   // دقائق اليوم (من أحداث session-minute)
   React.useEffect(() => {
     let cancelled = false;
     (async () => {
       try {
-        const {getRecentEvents} = await import("@/lib/analytics/events");
-        const events = await getRecentEvents(2000);
+        const {getRecentEventsResult} = await import("@/lib/analytics/events");
+        const result = await getRecentEventsResult(2000);
+        if (!result.ok) {
+          if (!cancelled) setActivityReadError(true);
+          return;
+        }
         const today = new Date().toDateString();
         let mins = 0;
-        for (const e of events) {
+        for (const e of result.events) {
           if (e.type === "session-minute" && new Date(e.ts).toDateString() === today) {
             mins += e.minutes;
           }
@@ -120,17 +125,23 @@ export function StudyPlan({ profile, onSaved }: { profile: LearnerProfile; onSav
               (الآن الساعة <span className="font-de font-bold">{String(now).padStart(2, "0")}:00</span>)
             </p>
           )}
-          <div className="mt-2 flex items-center gap-3">
-            <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
-              <div className="h-full rounded-full bg-gradient-to-l from-gold to-success" style={{ width: `${pct}%` }} />
-            </div>
-            <span className="font-de shrink-0 text-xs font-extrabold text-primary">
-              {todayMinutes}/{goal} د
-            </span>
-          </div>
-          <p className="mt-1 text-[11px] text-muted-foreground">
-            {pct >= 100 ? "أنجزت هدف اليوم — رائع! 🎉" : `تقدمك نحو هدف اليوم: ${pct}%`}
-          </p>
+          {activityReadError ? (
+            <p role="alert" className="mt-2 text-xs text-destructive">تعذرت قراءة دقائق النشاط؛ لم نعرض تقدماً صفرياً.</p>
+          ) : (
+            <>
+              <div className="mt-2 flex items-center gap-3">
+                <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
+                  <div className="h-full rounded-full bg-gradient-to-l from-gold to-success" style={{ width: `${pct}%` }} />
+                </div>
+                <span className="font-de shrink-0 text-xs font-extrabold text-primary">
+                  {todayMinutes}/{goal} د
+                </span>
+              </div>
+              <p className="mt-1 text-[11px] text-muted-foreground">
+                {pct >= 100 ? "أنجزت هدف اليوم — رائع! 🎉" : `تقدمك نحو هدف اليوم: ${pct}%`}
+              </p>
+            </>
+          )}
         </div>
       </CardContent>
     </Card>
