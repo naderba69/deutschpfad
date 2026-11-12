@@ -44,7 +44,7 @@ test("المحاكاة الكاملة: مراجعة الأدلة في النتي
   expect(pageErrors, "أخطاء JavaScript في الصفحة").toEqual([]);
 });
 
-test("المحاكاة: مشغّل تسجيلات الاستماع يعمل (TTS مُولَّد بتصريح صادق)", async ({ page }) => {
+test("المحاكاة: مشغّل تسجيلات الاستماع يعمل (مقاطع بشرية أو TTS معلن)", async ({ page }) => {
   const pageErrors: string[] = [];
   page.on("pageerror", (e) => pageErrors.push(e.message));
   await page.goto("/tests/b2-simulation", { waitUntil: "networkidle" });
@@ -66,8 +66,13 @@ test("المحاكاة: مشغّل تسجيلات الاستماع يعمل (TTS
   await play.click();
   await expect(page.getByTestId("exam-audio-left")).toContainText("المتبقي من التشغيل: 0 من 1");
 
-  // التصريح الصادق بأن التسجيلات مُولَّدة (TTS) وليست امتحاناً رسمياً
-  await expect(page.getByText(/التسجيلات مُولَّدة/)).toBeVisible();
+  // الوضع يُحسم بالمحاولة: مقاطع بشرية (files) أو نطق آلي معلن (tts)
+  const player = page.locator("[data-audio-mode]");
+  const mode = await player.getAttribute("data-audio-mode");
+  expect(["files", "tts"]).toContain(mode);
+  if (mode === "tts") {
+    await expect(player).toContainText(/غير متاحة بعد/);
+  }
 
   expect(pageErrors, "أخطاء JavaScript في الصفحة").toEqual([]);
 });

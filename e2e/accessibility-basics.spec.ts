@@ -86,6 +86,8 @@ test.describe("مراجعة أسماء عناصر الوصول الأساسية"
     // next-themes يستخدم prefers-color-scheme — نحاكي الداكن عبر emulateMedia
     await page.emulateMedia({ colorScheme: "dark" });
     await page.goto("/");
+    // انتظر ظهور الشارات قبل القياس
+    await expect(page.locator("section#levels div.font-de.font-bold").first()).toBeVisible({ timeout: 10000 });
     // شارات المستويات فقط (Badge) — لا عناوين LangDe التي تحمل نفس الأصناف
     const ratios = await page.locator("section#levels div.font-de.font-bold").evaluateAll((elements) => {
       const luminanceOf = (color: string) => {
