@@ -31,10 +31,20 @@ function daySeed(): number {
   return now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
 }
 
+/** خلط Fisher–Yates غير متحيّز بمولّد ببذرة ثابتة */
+function seededShuffle<T>(arr: T[], rand: () => number): T[] {
+  const out = [...arr];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+
 /** اختيار 5 كلمات موزعة على 5 مواضيع مختلفة عشوائياً لكن ثابتة اليوم */
 function pickDailyWords(): { word: VocabEntry; topic: B2ExamTopic }[] {
   const rand = seeded(daySeed());
-  const topics = [...B2_EXAM_TOPICS].sort(() => rand() - 0.5).slice(0, 5);
+  const topics = seededShuffle(B2_EXAM_TOPICS, rand).slice(0, 5);
   const out: { word: VocabEntry; topic: B2ExamTopic }[] = [];
   for (const topic of topics) {
     const words = B2_TOPIC_VOCAB[topic.id] ?? [];

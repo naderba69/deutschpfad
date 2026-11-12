@@ -25,20 +25,20 @@ export function Hero() {
         <div className="flex flex-col items-start gap-6 animate-fade-up">
           <Badge variant="gold" className="gap-2 px-3 py-1.5 text-sm">
             <span className="inline-block h-2 w-2 rounded-full bg-current" />
-            بمنهجية معهد غوته ومعايير CEFR
+            استلهام من CEFR وGoethe، لا اعتماد رسمي
           </Badge>
 
           <h1 className="text-balance text-4xl font-extrabold leading-[1.15] tracking-tight sm:text-5xl lg:text-6xl">
-            رحلتك الكاملة لإتقان الألمانية
+            رحلتك الكاملة لتعلم الألمانية
             <span className="mt-2 block text-gradient">
-              من الصفر حتى الاحتراف
+              من الصفر حتى B2 بثقة
             </span>
           </h1>
 
           <p className="max-w-xl text-balance text-base leading-relaxed text-muted-foreground sm:text-lg">
-            دروس عربية واضحة، نطق صوتي ألماني حقيقي، تمارين تفاعلية بتصحيح فوري
-            يشرح «لماذا»، مراجعة ذكية مبنية على خوارزمية SM-2، ومعلّم افتراضي
-            مدعوم بالذكاء الاصطناعي — كل ذلك مجاناً 100%.
+            دروس عربية واضحة، ونطق صوتي ألماني، وتمارين تفاعلية بتصحيح فوري يشرح
+            «لماذا»، ومراجعة متباعدة مبنية على SM-2. التدريبات الأساسية متاحة حالياً دون
+            اشتراك مدفوع؛ وبعض الميزات المتصلة اختيارية.
           </p>
 
           {/* مسار واضح بثلاث خطوات — لا تكديس خيارات يسبب الحيرة:

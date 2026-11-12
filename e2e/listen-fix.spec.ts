@@ -15,8 +15,7 @@
  * 4) لا فيضان أفقي في قسم الاستماع على 320px
  */
 import { test, expect, type Page } from "@playwright/test";
-
-import {gotoLessonStep} from "./helpers/lesson-steps";
+import { navigateLessonToSection } from "./helpers/lesson-navigation";
 
 async function clearData(page: Page) {
   await page.evaluate(async () => {
@@ -43,30 +42,21 @@ async function gotoListen(page: Page) {
   await page.goto("/lesson/a1-01");
   await clearData(page);
   await page.reload();
-  await page.waitForTimeout(1800);
-  // إلى قسم الاستماع: تنقّل حتى ظهوره (ترتيب الأقسام قد يتغير بين إصدارات الدروس)
-  await gotoLessonStep(page, "الاستماع");
-  await page.waitForTimeout(600);
-  // أزرار كل سطر («استمع إلى: …» و«سجّل نطقك: …») تظهر بعد كشف نص الحوار
-  const reveal = page.getByRole("button", { name: /اكشف نص الحوار/ }).first();
-  if (await reveal.isVisible().catch(() => false)) {
-    await reveal.click().catch(() => {});
-    await page.waitForTimeout(600);
-  }
+  await navigateLessonToSection(page, "الاستماع");
 }
 
 test("الاستماع: أزرار كل سطر بحجم طبيعي — لا تتمدد عمودياً ولا تتداخل", async ({ page }) => {
   await gotoListen(page);
 
-  // أزرار «استمع» و«انطقها» في أسطر الحوار
-  const buttons = page.getByRole("button", { name: /انطقها|استمع إلى:/ }).all();
+  // أزرار الاستماع لكل سطر؛ الترديد لا يظهر قبل كشف النص عمداً.
+  const buttons = page.getByRole("button", { name: /استمع إلى السطر/ }).all();
   const list = await buttons;
   expect(list.length).toBeGreaterThanOrEqual(2);
 
   const sizes = await page.evaluate(() => {
     const btns = [...document.querySelectorAll("button")].filter((b) => {
       const t = b.textContent ?? "";
-      return t.includes("انطقها") || (t.includes("استمع") && !t.includes("الكل"));
+      return b.getAttribute("aria-label")?.includes("استمع إلى السطر") ?? false;
     });
     return btns.map((b) => ({ text: (b.textContent ?? "").trim().slice(0, 20), h: Math.round(b.getBoundingClientRect().height), w: Math.round(b.getBoundingClientRect().width) }));
   });
@@ -116,8 +106,10 @@ test("الاستماع: «انطقها» يعمل في أكثر من سطر (ا�
   });
 
   await gotoListen(page);
+  // ميزة الترديد/التقييم لا تظهر إلا بعد إظهار النص صراحةً.
+  await page.getByRole("button", { name: "اكشف نص الحوار" }).first().click();
 
-  // كل أزرار «انطقها» في الأسطر
+  // أزرار التسجيل/التقييم في الأسطر بعد كشف النص
   const speakBtns = page.getByRole("button", { name: /سجّل نطقك:/ });
   const count = await speakBtns.count();
   expect(count).toBeGreaterThanOrEqual(2);
@@ -134,7 +126,10 @@ test("الاستماع: «انطقها» يعمل في أكثر من سطر (ا�
 
 test("الاستماع: لا فيضان أفقي على 320px", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 800 });
-  await gotoListen(page);
+  await page.goto("/lesson/a1-01");
+  await clearData(page);
+  await page.reload();
+  await navigateLessonToSection(page, "الاستماع");
   const overflow = await page.evaluate(
     () => document.documentElement.scrollWidth > document.documentElement.clientWidth + 2,
   );

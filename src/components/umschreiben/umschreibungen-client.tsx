@@ -85,6 +85,7 @@ export function UmschreibungenClient() {
             <button
               key={t.id}
               type="button"
+              aria-pressed={typ?.id === t.id}
               onClick={() => selectTyp(typ?.id === t.id ? null : t)}
               className={cn(
                 "rounded-xl border p-2.5 text-start transition-colors",
@@ -116,8 +117,7 @@ export function UmschreibungenClient() {
           <ArrowLeftRight className="mx-auto h-10 w-10 text-primary" aria-hidden="true" />
           <h3 className="mt-3 text-lg font-extrabold">اختر نوع التحويل من الأعلى</h3>
           <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
-            هذه الأنواع العشرة هي التي تظهر فعلياً في امتحان Goethe B2 (Grammatik). لكل نوع
-            شرح ومثال أولاً، ثم تمارين تصحيح فوري.
+            هذه قائمة تدريبات تحويل أعدّتها المنصة لممارسة تراكيب ألمانية. ليست أقساماً أو أنماطاً مضمونة في امتحان Goethe B2. لكل نوع شرح ومثال ثم تمارين تصحيح فوري.
           </p>
         </div>
       )}

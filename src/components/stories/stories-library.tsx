@@ -6,7 +6,7 @@ import {BookOpen, CheckCircle2, GraduationCap, Sparkles} from "lucide-react";
 import {InteractiveStoryPlayer} from "@/components/stories/interactive-story";
 import {Badge} from "@/components/ui/badge";
 import {getLearnerProfile} from "@/lib/storage/learner";
-import {getCompletedStories, getStoryProgress} from "@/lib/storage/story-progress";
+import {getCompletedStoriesResult, getStoryProgressForCompleted} from "@/lib/storage/story-progress";
 import {
   STORY_LEVEL_COUNTS,
   STORY_LEVEL_ORDER,
@@ -27,10 +27,15 @@ export function StoriesLibrary() {
   const [suggested, setSuggested] = React.useState<LevelCode | null>(null);
   const [completed, setCompleted] = React.useState<string[]>([]);
   const [progress, setProgress] = React.useState<Record<string, { done: number; total: number }>>({});
+  const [progressReadError, setProgressReadError] = React.useState(false);
 
   const refreshProgress = React.useCallback(() => {
-    setCompleted(getCompletedStories());
-    setProgress(getStoryProgress(STORY_LEVEL_COUNTS));
+    const result = getCompletedStoriesResult();
+    setProgressReadError(!result.ok);
+    if (result.ok) {
+      setCompleted(result.stories);
+      setProgress(getStoryProgressForCompleted(result.stories, STORY_LEVEL_COUNTS));
+    }
   }, []);
 
   React.useEffect(() => {
@@ -64,6 +69,12 @@ export function StoriesLibrary() {
 
   return (
     <div className="space-y-8">
+      {progressReadError && (
+        <div role="alert" className="rounded-xl border border-amber-500/40 bg-amber-500/5 p-3 text-sm">
+          تعذر قراءة حالة إكمال القصص؛ لم نعرض القصص على أنها غير مكتملة.
+          <button type="button" className="ms-2 font-bold underline" onClick={refreshProgress}>إعادة المحاولة</button>
+        </div>
+      )}
       {suggested && (
         <div className="rounded-2xl border border-primary/20 bg-primary/5 p-4">
           <p className="flex items-center gap-1.5 text-sm font-extrabold text-primary">
@@ -81,9 +92,9 @@ export function StoriesLibrary() {
         const stories = getStoriesByLevel(level);
         if (stories.length === 0) return null;
         const p = progress[level];
-        const levelDone = p?.done ?? 0;
+        const levelDone = progressReadError ? null : p?.done ?? 0;
         const levelTotal = p?.total ?? stories.length;
-        const levelComplete = levelDone === levelTotal && levelTotal > 0;
+        const levelComplete = !progressReadError && levelDone === levelTotal && levelTotal > 0;
         return (
           <section key={level}>
             <div className="mb-3 flex flex-wrap items-center gap-2">
@@ -95,7 +106,7 @@ export function StoriesLibrary() {
                 {level === "B2" && "متقدم — لغة الأعمال والتعبير المهذّب"}
               </h2>
               <span className="ms-auto inline-flex items-center gap-1.5 text-[11px] font-bold text-muted-foreground">
-                {levelDone}/{levelTotal}
+                {progressReadError ? "حالة التقدم غير متاحة" : `${levelDone}/${levelTotal}`}
                 {levelComplete && (
                   <span className="inline-flex items-center gap-1 rounded-full bg-success/15 px-2 py-0.5 text-success">
                     <CheckCircle2 className="h-3 w-3" aria-hidden="true" />
@@ -105,15 +116,17 @@ export function StoriesLibrary() {
               </span>
             </div>
             {/* شريط تقدم المستوى */}
-            <div className="mb-3 h-1.5 w-full overflow-hidden rounded-full bg-muted">
-              <div
-                className={cn("h-full rounded-full", levelComplete ? "bg-success" : "bg-gradient-to-l from-primary to-success")}
-                style={{ width: `${(levelDone / Math.max(1, levelTotal)) * 100}%` }}
-              />
-            </div>
+            {!progressReadError && (
+              <div className="mb-3 h-1.5 w-full overflow-hidden rounded-full bg-muted">
+                <div
+                  className={cn("h-full rounded-full", levelComplete ? "bg-success" : "bg-gradient-to-l from-primary to-success")}
+                  style={{ width: `${((levelDone ?? 0) / Math.max(1, levelTotal)) * 100}%` }}
+                />
+              </div>
+            )}
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {stories.map((s) => {
-                const isDone = completed.includes(s.id);
+                const isDone = !progressReadError && completed.includes(s.id);
                 return (
                   <button
                     key={s.id}
@@ -152,7 +165,7 @@ export function StoriesLibrary() {
       <div className="rounded-2xl border border-muted bg-card p-4 text-center">
         <p className="flex items-center justify-center gap-1.5 text-xs font-bold text-muted-foreground">
           <BookOpen className="h-3.5 w-3.5" aria-hidden="true" />
-          {INTERACTIVE_STORIES.length} قصص متاحة — أتمّم قصص كل مستوى لتتقن قواعده قبل الانتقال للتالي.
+          {INTERACTIVE_STORIES.length} قصة متاحة — قراءة القصص تساعد على مراجعة المفردات والقواعد، لكنها لا تثبت إتقانها أو مستوى CEFR.
         </p>
       </div>
     </div>

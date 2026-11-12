@@ -6,6 +6,7 @@ import {CheckCircle2, Trophy} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
 import {validateBackupData, writeBackupData} from "@/lib/storage/export-import";
+import {decodeSyncPayload} from "@/lib/storage/sync-codec";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -16,28 +17,21 @@ import {validateBackupData, writeBackupData} from "@/lib/storage/export-import";
  * ═══════════════════════════════════════════════════════════
  */
 
-async function decompress(encoded: string): Promise<unknown> {
-  if (encoded.startsWith("v1raw.")) {
-    return JSON.parse(atob(encoded.slice(6)));
-  }
-  if (encoded.startsWith("v1.")) {
-    const b64 = encoded.slice(3);
-    const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
-    if ("DecompressionStream" in window) {
-      const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
-      return JSON.parse(await new Response(stream).text());
-    }
-    throw new Error("المتصفح لا يدعم فك الضغط");
-  }
-  return JSON.parse(encoded);
-}
-
 interface Challenge {
   type: "challenge";
   name: string;
-  level: string;
+  level: "A1" | "A2" | "B1" | "B2";
   lessons: number;
   ts: number;
+}
+
+function isChallenge(value: unknown): value is Challenge {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+  const candidate = value as Record<string, unknown>;
+  return candidate.type === "challenge" && typeof candidate.name === "string" &&
+    candidate.name.length <= 80 && ["A1", "A2", "B1", "B2"].includes(String(candidate.level)) &&
+    typeof candidate.lessons === "number" && Number.isSafeInteger(candidate.lessons) && candidate.lessons >= 0 &&
+    typeof candidate.ts === "number" && Number.isFinite(candidate.ts);
 }
 
 export function SyncHandler() {
@@ -58,14 +52,14 @@ export function SyncHandler() {
     void (async () => {
       try {
         if (chal) {
-          const decoded = (await decompress(chal)) as Challenge;
-          if (decoded?.type !== "challenge") throw new Error("رابط غير صالح");
+          const decoded = await decodeSyncPayload(chal);
+          if (!isChallenge(decoded)) throw new Error("رابط غير صالح");
           setChallenge(decoded);
           setMode("challenge");
           return;
         }
         if (data) {
-          const decoded = await decompress(data);
+          const decoded = await decodeSyncPayload(data);
           if (!validateBackupData(decoded)) throw new Error("بيانات غير صالحة");
           setMode("loading");
           setMessage("تم فك الرابط بنجاح — اختر طريقة الاستعادة:");
@@ -102,7 +96,7 @@ export function SyncHandler() {
             الإعدادات ← «المزامنة عبر الرابط».
           </p>
           <Button asChild className="mt-4">
-            <a href="/settings">الذهاب للإعدادات</a>
+            <Link href="/settings">الذهاب للإعدادات</Link>
           </Button>
         </div>
       )}

@@ -8,7 +8,6 @@ import {Badge} from "@/components/ui/badge";
 import {Card, CardContent} from "@/components/ui/card";
 import {SCHREIB_MODELLE} from "@/data/schreibmodelle";
 import {cn} from "@/lib/utils";
-import {FilterChip} from "@/components/ui/filter-chip";
 
 /**
  * نماذج الكتابة B2 — عرض الموضوع + المهمة + النموذجين (جيد/ممتاز)
@@ -30,6 +29,7 @@ export function SchreibmodelleClient() {
           <button
             key={m.id}
             type="button"
+            aria-pressed={active === i}
             onClick={() => setActive(i)}
             className={cn(
               "rounded-full border px-3 py-1.5 text-xs font-bold transition-colors",
@@ -62,6 +62,7 @@ export function SchreibmodelleClient() {
       <div className="flex flex-wrap gap-2">
         <button
           type="button"
+          aria-pressed={tab === "forum"}
           onClick={() => setTab("forum")}
           className={cn(
             "inline-flex items-center gap-1.5 rounded-lg border px-3 py-2 text-sm font-bold transition-colors",
@@ -73,6 +74,7 @@ export function SchreibmodelleClient() {
         </button>
         <button
           type="button"
+          aria-pressed={tab === "email"}
           onClick={() => setTab("email")}
           className={cn(
             "inline-flex items-center gap-1.5 rounded-lg border px-3 py-2 text-sm font-bold transition-colors",
@@ -88,13 +90,18 @@ export function SchreibmodelleClient() {
       <div className="flex items-center gap-2">
         <Badge variant="outline">مستوى النموذج:</Badge>
         {(["gut", "sehr-gut"] as const).map((l) => (
-          <FilterChip
+          <button
             key={l}
+            type="button"
+            aria-pressed={level === l}
             onClick={() => setLevel(l)}
-            active={level === l}
+            className={cn(
+              "rounded-full border px-3 py-1 text-xs font-bold transition-colors",
+              level === l ? "border-gold bg-gold/15 text-gold-strong" : "bg-muted/40 text-muted-foreground",
+            )}
           >
             {l === "gut" ? "جيد (Gut)" : "ممتاز (Sehr gut)"}
-          </FilterChip>
+          </button>
         ))}
         <span className="text-xs text-muted-foreground">
           — قارن: الممتاز يضيف تعقيداً لغوياً وبنية أعمق

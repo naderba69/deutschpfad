@@ -26,11 +26,9 @@ const SKILL_ICON: Record<string, React.ElementType> = {
 
 /**
  * ═══════════════════════════════════════════════════════════
- *  شهادة الإتقان — لغة مكتسبة لا مُلقّنة
- *  قيّم نفسك بصدق على وظائف CEFR الحقيقية (Can-Do):
- *  «هل أستطيع فعل هذا فعلاً في ألمانيا؟»
- *  الإتقان = 100% وظائف + نجاح في امتحان الختم.
- *  لا توجد دروس «تُلقَّن» — توجد قدرات «تُكتسب».
+ *  قائمة تقييم ذاتي لوظائف لغوية مستلهمة من Can-Do.
+ *  التقييم من اختيار المتعلم ولا يُتحقق منه أداءً؛ لا يمثل شهادة
+ *  أو قياساً معيارياً لمستوى CEFR أو إثباتاً للإتقان.
  * ═══════════════════════════════════════════════════════════
  */
 export function MasteryCertificate({ level }: { level: LevelCode }) {
@@ -71,9 +69,9 @@ export function MasteryCertificate({ level }: { level: LevelCode }) {
             <Award className="h-5 w-5" aria-hidden="true" />
           </span>
           <div className="min-w-0 flex-1">
-            <h2 className="text-base font-extrabold">شهادة إتقان {level} — وظائف حقيقية</h2>
+            <h2 className="text-base font-extrabold">تقييم ذاتي لوظائف {level}</h2>
             <p className="text-xs text-muted-foreground">
-              قيّم نفسك بصدق: هل تستطيع فعل هذا فعلاً؟ الإتقان = قدرة مكتسبة لا دروس منهية.
+              قيّم ما تظن أنك تستطيع فعله. هذا التقييم الذاتي غير متحقق منه ولا يثبت الإتقان أو مستوى CEFR.
             </p>
           </div>
           <span className="font-de rounded-full bg-gold/15 px-3 py-1 text-sm font-extrabold text-gold-strong">
@@ -93,11 +91,11 @@ export function MasteryCertificate({ level }: { level: LevelCode }) {
         {stats.pct >= 100 ? (
           <p className="mt-2 flex items-center gap-1.5 rounded-lg bg-success/15 px-3 py-2 text-xs font-extrabold text-success">
             <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
-            أتقنت كل وظائف {level}! الآن اجتز امتحان الختم لإصدار الشهادة.
+            قيّمت كل وظائف {level} على أنك تستطيعها. هذا اختيار ذاتي وليس دليلاً على الإتقان؛ يمكنك تجربة اختبار التقدم الداخلي.
           </p>
         ) : stats.pct >= 70 ? (
           <p className="mt-2 rounded-lg bg-gold/10 px-3 py-2 text-xs font-bold text-gold-strong">
-            قريب جداً — ركّز على الوظائف المتبقية لبلوغ الإتقان الكامل.
+            بعض الوظائف ما زالت غير مكتملة في تقييمك الذاتي؛ استخدمها لتحديد ما تريد مراجعته.
           </p>
         ) : (
           <p className="mt-2 rounded-lg bg-muted/30 px-3 py-2 text-xs text-muted-foreground">

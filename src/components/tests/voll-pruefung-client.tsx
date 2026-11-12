@@ -1,10 +1,10 @@
 "use client";
 
 /**
- * محاكاة امتحان Goethe B2 الكامل (Vollprüfung)
- * — الأجزاء المكتوبة الأربعة بتوقيت حقيقي (LevelTest B2) —
- * ثم الخطوة الشفهية (Vortrag + Diskussion) ونتيجة نهائية بمعايير غوته.
+ * عرض تعريفي لبنية امتحان Goethe B2 مع اختبار مستوى كتابي داخلي سريع.
+ * الاختبار لا يحاكي الامتحان الكامل ولا يثبت الجاهزية أو يصدر نتيجة رسمية.
  */
+import Link from "next/link";
 import * as React from "react";
 import {Award, BookOpenCheck, Headphones, Mic, PenLine, Timer} from "lucide-react";
 
@@ -13,12 +13,13 @@ import {Button} from "@/components/ui/button";
 import {Card, CardContent} from "@/components/ui/card";
 import {Progress} from "@/components/ui/progress";
 import {getLastTestResult} from "@/lib/storage/test-results-store";
+import { getLevelTestFeedback } from "@/lib/tests/level-test-feedback";
 
 const EXAM_STEPS = [
-  { icon: <BookOpenCheck className="h-5 w-5" aria-hidden="true" />, title: "Lesen — القراءة", time: "65 دقيقة", desc: "5 أجزاء · 30 سؤالاً: مطابقة، مقال، فقرات ناقصة، مواقف، لائحة (المدة الرسمية)" },
-  { icon: <Headphones className="h-5 w-5" aria-hidden="true" />, title: "Hören — الاستماع", time: "40 دقيقة", desc: "4 أجزاء · 30 سؤالاً: حوارات، مقابلة، إعلانات، حديث (المدة الرسمية)" },
-  { icon: <PenLine className="h-5 w-5" aria-hidden="true" />, title: "Schreiben — الكتابة", time: "75 دقيقة", desc: "Forumsbeitrag ≥150 + رسالة رسمية ≥100 (المدة الرسمية)" },
-  { icon: <Mic className="h-5 w-5" aria-hidden="true" />, title: "Sprechen — الشفهي", time: "15 دقيقة", desc: "Vortrag ~4 دقائق + Diskussion ~5 دقائق (التحضير 15 دقيقة)" },
+  { icon: <BookOpenCheck className="h-5 w-5" aria-hidden="true" />, title: "Lesen — القراءة", time: "65 دقيقة", desc: "المدة المرجعية المعروضة لقسم القراءة؛ راجع معلومات الجهة المنظمة قبل الامتحان." },
+  { icon: <Headphones className="h-5 w-5" aria-hidden="true" />, title: "Hören — الاستماع", time: "40 دقيقة", desc: "المدة المرجعية المعروضة لقسم الاستماع؛ قد تختلف التفاصيل حسب نسخة الامتحان." },
+  { icon: <PenLine className="h-5 w-5" aria-hidden="true" />, title: "Schreiben — الكتابة", time: "75 دقيقة", desc: "قسم الكتابة؛ تفاصيل المهام والحدود الزمنية ينبغي التحقق منها لدى الجهة المنظمة." },
+  { icon: <Mic className="h-5 w-5" aria-hidden="true" />, title: "Sprechen — الشفهي", time: "15 دقيقة", desc: "قسم التحدث؛ قد تسبق الأداء فترة تحضير منفصلة بحسب نظام الامتحان." },
 ];
 
 export function VollPruefungClient() {
@@ -41,7 +42,7 @@ export function VollPruefungClient() {
       {/* خارطة الامتحان */}
       <Card className="overflow-hidden">
         <CardContent className="space-y-3 p-5">
-          <p className="font-bold text-primary">📋 هيكل امتحان Goethe B2 الحقيقي:</p>
+          <p className="font-bold text-primary">📋 نظرة عامة على أقسام Goethe B2:</p>
           <ol className="space-y-2">
             {EXAM_STEPS.map((s, i) => (
               <li key={i} className="flex items-start gap-3 rounded-xl border bg-muted/20 p-3">
@@ -58,16 +59,9 @@ export function VollPruefungClient() {
               </li>
             ))}
           </ol>
-          <p className="text-xs text-muted-foreground">
-            💡 الدرجات في غوته الحقيقي: نجاح من 60%، «جيد» من 75%، «ممتاز» من 90%. كل جزء
-            يُقيَّم منفصلاً — لا تهمل أي مهارة.
-          </p>
           <p className="rounded-xl border border-amber-400/50 bg-amber-50 p-3 text-xs leading-relaxed text-amber-900 dark:bg-amber-950/40 dark:text-amber-200">
-            ⚠️ <b>توضيح صدق:</b> هذه الصفحة تعرض الهيكل الرسمي (الأجزاء والمدد الصحيحة) ثم
-            تشغّل <b>اختبار مستوى سريعاً</b> (LevelTest) لا يطابق عدد أسئلة الامتحان الحقيقي.
-            للتدريب الكامل بنفس الأجزاء والمدد وأنواع المهام الرسمية (30+30 سؤالاً،
-            Richtig/Falsch، فقرات ناقصة، مطابقة…) استخدم{" "}
-            <a href="/tests/b2" className="font-bold text-primary underline">محرك امتحان Goethe-B2 الرسمي</a>.
+            هذه نظرة معلوماتية وليست بديلاً عن تفاصيل الجهة المنظمة، وقد تتغير صيغ الامتحان أو توقيتاته. الاختبار أدناه عينة تدريب داخلية، والرابط التالي يفتح تدريباً مستوحى من بعض أنماط B2، لا محاكاة كاملة ولا نتيجة رسمية: {" "}
+            <Link href="/tests/b2" className="font-bold text-primary underline">تدريب B2</Link>.
           </p>
         </CardContent>
       </Card>
@@ -78,15 +72,7 @@ export function VollPruefungClient() {
           <CardContent className="space-y-3 p-5 text-center">
             <Award className="mx-auto h-10 w-10 text-gold-strong" aria-hidden="true" />
             <p className="font-de text-4xl font-extrabold text-primary">{verdict.pct}%</p>
-            <p className="font-bold">
-              {verdict.passed
-                ? verdict.pct >= 90
-                  ? "Sehr gut — ممتاز! 🏆 أنت جاهز للامتحان الحقيقي"
-                  : verdict.pct >= 75
-                    ? "Gut — جيد جداً، أبقِ مستواك بمراجعة أسبوعية"
-                    : "Bestanden — ناجح، واصل تقوية المهارات الأضعف"
-                : "Nicht bestanden — أعد التدريب على المهارات الأقل من 60% ثم أعد المحاكاة"}
-            </p>
+            <p className="font-bold">{getLevelTestFeedback(verdict.pct, verdict.passed)}</p>
             <Progress value={verdict.pct} className="mx-auto h-3 max-w-sm" aria-label={`النتيجة ${verdict.pct}%`} />
             <p className="text-xs text-muted-foreground">
               المستوى المقدر: <span className="font-de font-bold">{verdict.level}</span>
@@ -104,10 +90,10 @@ export function VollPruefungClient() {
             وتحدث 3 دقائق) ثم مناقشة (4 دقائق) — مع تسجيل صوتي وتقييم ذاتي بمعايير الممتحن.
           </p>
           <Button asChild size="lg" className="h-auto min-h-11 max-w-full gap-1.5 whitespace-normal py-2 text-start">
-            <a href="/tests/sprechen">
+            <Link href="/tests/sprechen">
               <Mic className="h-4 w-4" aria-hidden="true" />
               انتقل إلى الامتحان الشفهي B2
-            </a>
+            </Link>
           </Button>
         </CardContent>
       </Card>
@@ -115,7 +101,7 @@ export function VollPruefungClient() {
       {/* الأجزاء المكتوبة — LevelTest B2 */}
       <div className="rounded-2xl border bg-muted/20 p-4">
         <p className="mb-3 text-sm font-bold text-muted-foreground">
-          ⏱️ الأجزاء المكتوبة تبدأ الآن — بتوقيت حقيقي مثل الامتحان (يُسلَّم كل قسم تلقائياً):
+          اختبار مستوى كتابي سريع (ليس محاكاة كاملة للامتحان):
         </p>
         <LevelTest level="B2" />
       </div>

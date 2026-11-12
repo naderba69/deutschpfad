@@ -1,35 +1,17 @@
 import { test, expect } from "@playwright/test";
-test("التدفق كاملاً — لا حبس", async ({ page }) => {
+
+test("التنقل داخل الدرس ينتقل من الأهداف إلى التمهيد دون أخطاء في الصفحة", async ({ page }) => {
+  const pageErrors: string[] = [];
+  page.on("pageerror", (error) => pageErrors.push(error.message));
+
   await page.goto("/lesson/a1-01");
-  await page.evaluate(async () => {
-    try {
-        const dbs = await indexedDB.databases();
-        for (const db of dbs) {
-          const dbName = db.name;
-            if (dbName) {
-              await new Promise<void>((res) => {
-                const req = indexedDB.deleteDatabase(dbName);
-                req.onsuccess = () => res();
-                req.onerror = () => res();
-                req.onblocked = () => res();
-              });
-            }
-        }
-      } catch {}
-    localStorage.clear();
-  });
-  await page.reload();
-  await page.waitForTimeout(1500);
-  let guard = 0;
-  while (guard < 25) {
-    const nextBtn = page.getByRole("button", { name: /^التالي:/ }).first();
-    if (await nextBtn.isVisible().catch(() => false)) {
-      await nextBtn.click().catch(() => {});
-    } else break;
-    await page.waitForTimeout(500);
-    guard++;
-  }
-  const btns = await page.getByRole("button").count();
-  console.log("STEPS:", guard, "BUTTONS:", btns);
-  expect(btns).toBeGreaterThan(0);
+
+  await expect(page.getByText("الأهداف التعليمية", { exact: false }).first()).toBeVisible();
+  const nextButton = page.getByRole("button", { name: /^التالي:/ }).first();
+  await expect(nextButton).toBeVisible();
+  await expect(nextButton).toBeEnabled();
+  await nextButton.click();
+  await expect(page.getByText("التمهيد وتنشيط", { exact: false }).first()).toBeVisible();
+
+  expect(pageErrors).toEqual([]);
 });

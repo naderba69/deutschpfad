@@ -4,9 +4,9 @@ import {EXAM_STRATEGIEN, GOLDEN_TRAPS, LESEN_TIME_PLAN} from "@/data/exams/strat
 import {Badge} from "@/components/ui/badge";
 
 export const metadata: Metadata = {
-  title: "استراتيجيات امتحان Goethe-B2 — دليل كل Teil",
+  title: "استراتيجيات تدريب B2 — القراءة والاستماع والكتابة والتحدث",
   description:
-    "كيف تحل كل جزء من امتحان Goethe-Zertifikat B2: خطوات عملية لكل Teil، الفخاخ الشائعة، وجدول إدارة الوقت الرسمي (65 دقيقة للقراءة).",
+    "اقتراحات تدريبية لإدارة الوقت وفهم المهام الشائعة في مستوى B2. الأوقات الواردة إرشادية ويجب التحقق من متطلبات نسخة الامتحان لدى الجهة المنظمة."
 };
 
 const MODULE_META: Record<string, { label: string; emoji: string; color: string }> = {
@@ -21,17 +21,16 @@ export default function StrategienPage() {
     <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6">
       <div className="mb-8">
         <h1 className="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-          استراتيجيات امتحان Goethe-B2
+          استراتيجيات تدريب B2
         </h1>
         <p className="mt-2 max-w-2xl text-balance text-muted-foreground">
-          ما يفرّق «عارف اللغة» عن «ناجح في الامتحان» هو إدارة الوقت ومعرفة الفخاخ.
-          هذا الدليل يعطيك خطة عمل لكل Teil — طبّقه في محرك الامتحان.
+          هذه اقتراحات للممارسة وإدارة الوقت، وليست وصفة مضمونة للنجاح. تحقّق من بنية الاختبار ومدده من الجهة المنظمة قبل التحضير لامتحان محدد.
         </p>
       </div>
 
       {/* جدول إدارة وقت القراءة */}
       <div className="mb-8 rounded-xl border border-primary/30 bg-primary/5 p-4">
-        <p className="mb-3 text-sm font-extrabold text-primary">⏱️ جدول إدارة الوقت — القراءة (65 دقيقة رسمياً)</p>
+        <p className="mb-3 text-sm font-extrabold text-primary">⏱️ تقسيم وقت تدريبي مقترح — القراءة</p>
         <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
           {LESEN_TIME_PLAN.map((p) => (
             <div key={p.teil} className="rounded-lg border bg-background p-2.5 text-center">

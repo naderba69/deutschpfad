@@ -24,30 +24,51 @@ function sanitize(raw: unknown): ProgressState {
   };
 }
 
-/** تحميل التقدم من IndexedDB (مع ترحيل من LocalStorage القديم) */
-export async function loadProgressFromDb(): Promise<ProgressState> {
+export type ProgressLoadResult = {ok: true; state: ProgressState} | {ok: false; state: ProgressState};
+
+/** تحميل التقدم وتمييز تعذر القراءة كي لا تُكتب المرآة القديمة فوق بيانات غير مقروءة. */
+export async function loadProgressResult(): Promise<ProgressLoadResult> {
   try {
     const stored = await getRecord<ProgressState>("progress", PROGRESS_KEY);
-    if (stored) return sanitize(stored);
+    if (stored) return {ok: true, state: sanitize(stored)};
 
-    // ترحيل من النسخة القديمة (LocalStorage v1) إن وُجدت
+    // ترحيل من النسخة القديمة (LocalStorage v1) إن وُجدت؛ نجاح القراءة أثبت عدم وجود سجل أحدث.
     const legacy = loadProgress();
-    if (legacy.completedUnits.length > 0) {
-      await saveProgressToDb(legacy);
-      return legacy;
-    }
-    return EMPTY_PROGRESS;
+    if (legacy.completedUnits.length > 0) await saveProgressToDb(legacy);
+    return {ok: true, state: legacy.completedUnits.length > 0 ? legacy : EMPTY_PROGRESS};
   } catch {
-    return loadProgress();
+    return {ok: false, state: loadProgress()};
   }
 }
 
+
+
 /** حفظ التقدم في IndexedDB + مرآة LocalStorage */
-export async function saveProgressToDb(state: ProgressState): Promise<void> {
-  try {
-    await putRecord("progress", PROGRESS_KEY, state);
-  } catch {
-    // تجاهل أخطاء IndexedDB (وضع خاص مثلاً)
-  }
-  saveProgress(state);
+export interface ProgressSaveResult {
+  indexedDbSaved: boolean;
+  localStorageSaved: boolean;
+  persistedSomewhere: boolean;
+}
+
+let progressSaveQueue: Promise<void> = Promise.resolve();
+
+/** يحفظ بالتتابع لمنع كتابة حالة قديمة بعد حالة أحدث، ويكشف نتيجة الوجهتين. */
+export function saveProgressToDb(state: ProgressState): Promise<ProgressSaveResult> {
+  const operation = progressSaveQueue.then(async () => {
+    let indexedDbSaved = false;
+    try {
+      await putRecord("progress", PROGRESS_KEY, state);
+      indexedDbSaved = true;
+    } catch {
+      // جرّب المرآة، لكن لا تخفِ النتيجة عن واجهة المستخدم.
+    }
+    const localStorageSaved = saveProgress(state);
+    return {
+      indexedDbSaved,
+      localStorageSaved,
+      persistedSomewhere: indexedDbSaved || localStorageSaved,
+    };
+  });
+  progressSaveQueue = operation.then(() => undefined, () => undefined);
+  return operation;
 }

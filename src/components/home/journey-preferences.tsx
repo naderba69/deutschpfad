@@ -71,6 +71,7 @@ export function JourneyPreferences() {
             {GOALS.map((g) => (
               <button type="button"
                 key={g.id}
+                aria-pressed={goal === g.id}
                                 onClick={() => setGoal(g.id)}
                 className={`rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors ${
                   goal === g.id ? "border-primary bg-primary/10 text-primary" : "border-muted bg-card hover:border-primary/40"
@@ -89,6 +90,7 @@ export function JourneyPreferences() {
             {PACES.map((p) => (
               <button type="button"
                 key={p.id}
+                aria-pressed={pace === p.id}
                                 onClick={() => setPace(p.id)}
                 className={`rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors ${
                   pace === p.id ? "border-gold bg-gold/10 text-gold-strong" : "border-muted bg-card hover:border-gold/40"
@@ -107,6 +109,7 @@ export function JourneyPreferences() {
             {(Object.keys(PERSONALITY_META) as TeacherPersonality[]).map((t) => (
               <button type="button"
                 key={t}
+                aria-pressed={personality === t}
                                 onClick={() => setPersonality(t)}
                 title={PERSONALITY_META[t].desc}
                 className={`rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors ${

@@ -7,7 +7,6 @@ import {SpeakButton} from "@/components/shared/speak-button";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {getDialogue, type Dialogue, type DialogueNode} from "@/data/supplemental/dialogues";
-;
 
 /**
  * مشغّل سيناريوهات المحادثة المتفرعة — اختر ردك وتفرع الحوار

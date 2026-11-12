@@ -8,8 +8,8 @@ import {Progress} from "@/components/ui/progress";
 import {
   clearNotebook,
   ERROR_TYPE_LABELS,
-  getNotebook,
-  getNotebookStats,
+  getNotebookResult,
+  getNotebookStatsForRows,
   markMastered,
   removeEntry,
   type NotebookEntry,
@@ -18,20 +18,22 @@ import {cn} from "@/lib/utils";
 
 /**
  * ═══════════════════════════════════════════════════════════
- *  دفتر الأخطاء — كل خطأ ترتكبه عبر كل الجلسات يتراكم هنا
- *  مع الشرح والإجابة الصحيحة وعدّاد التكرار:
- *  · الخطأ المتكرر = نقطة ضعف حقيقية → أعد تمرينه حتى يُتقن
- *  · بعد الإتقان تُعلَّم ✓ وتبقى سجلاً لتقدمك
+ *  دفتر الملاحظات يسجل أخطاء التمارين المدعومة التي ترسل نتائجها إليه.
+ *  لا يشمل كل أنشطة المنصة ولا يقيس مستوى المتعلم:
+ *  · التكرار يصف التسجيلات المحفوظة فقط
+ *  · وسم الإدخال كمُراجَع اختيار ذاتي، وليس إثباتاً للإتقان
  * ═══════════════════════════════════════════════════════════
  */
 export function ErrorNotebook() {
   const [rows, setRows] = React.useState<NotebookEntry[]>([]);
   const [stats, setStats] = React.useState<{ total: number; repeated: number; mastered: number; top: NotebookEntry | null } | null>(null);
+  const [loadError, setLoadError] = React.useState(false);
 
   const refresh = React.useCallback(async () => {
-    const [r, s] = await Promise.all([getNotebook(), getNotebookStats()]);
-    setRows(r);
-    setStats(s);
+    const result = await getNotebookResult();
+    setLoadError(!result.ok);
+    setRows(result.rows);
+    setStats(result.ok ? getNotebookStatsForRows(result.rows) : null);
   }, []);
 
   React.useEffect(() => {
@@ -49,9 +51,24 @@ export function ErrorNotebook() {
   };
 
   const clearAll = async () => {
+    if (!window.confirm("مسح دفتر الأخطاء بالكامل؟ لا يمكن التراجع عن هذا الإجراء.")) return;
     await clearNotebook();
     await refresh();
   };
+
+  if (loadError) {
+    return (
+      <div role="alert" className="mx-auto max-w-xl rounded-2xl border border-destructive/30 bg-card p-8 text-center">
+        <h2 className="text-lg font-extrabold">تعذر تحميل دفتر الأخطاء</h2>
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+          لم نتمكن من قراءة السجل المحلي، لذلك لا نعرضه على أنه فارغ. لم يُمسح أي سجل؛ أعد المحاولة.
+        </p>
+        <Button className="mt-4" variant="outline" onClick={() => void refresh()}>
+          إعادة المحاولة
+        </Button>
+      </div>
+    );
+  }
 
   if (rows.length === 0) {
     return (
@@ -59,14 +76,15 @@ export function ErrorNotebook() {
         <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-success/15 text-3xl" aria-hidden="true">✨</span>
         <h2 className="mt-4 text-lg font-extrabold">دفترك نظيف!</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          لم ترتكب أي خطأ بعد — أو أتقنت كل ما سُجّل. كل خطأ مستقبلي في أي درس سيُسجَّل هنا
-          تلقائياً مع الشرح، فيصبح نقطة قوتك القادمة.
+          لا توجد أخطاء مسجلة حالياً؛ قد لا تكون أجبت خطأ في تمرين يدعم التسجيل، أو ربما مُسح السجل.
+          خلوّ الدفتر لا يثبت الإتقان. ستظهر هنا الأخطاء التي تسجلها التمارين المدعومة مع الشروح المتاحة.
         </p>
       </div>
     );
   }
 
   const active = rows.filter((r) => !r.mastered);
+  const legacyRows = rows.filter((r) => !r.sourceId);
 
   return (
     <div className="space-y-4">
@@ -89,19 +107,26 @@ export function ErrorNotebook() {
           </div>
           <div className="rounded-xl border border-gold/30 bg-gold/10 px-3 py-2">
             <p className="font-de text-xl font-extrabold text-gold-strong">{stats?.repeated ?? 0}</p>
-            <p className="text-[11px] font-bold text-muted-foreground">خطأ متكرر (نقطة ضعف)</p>
+            <p className="text-[11px] font-bold text-muted-foreground">أخطاء تكررت في التمارين المسجلة</p>
           </div>
           <div className="rounded-xl border border-success/30 bg-success/10 px-3 py-2">
             <p className="font-de text-xl font-extrabold text-success">{stats?.mastered ?? 0}</p>
-            <p className="text-[11px] font-bold text-muted-foreground">أُتقن ✓</p>
+            <p className="text-[11px] font-bold text-muted-foreground">عُلّم كمُراجَع ذاتياً</p>
           </div>
         </div>
         {stats?.top && (
           <p className="mt-3 rounded-lg bg-primary/5 px-3 py-2 text-xs font-bold text-primary">
-            🎯 أكبر نقطة ضعف: «{stats.top.id}» — تكررت {stats.top.count} مرة. أعد تدريبها حتى تختفي من دفترك.
+            🎯 أكثر بند تكراراً في السجل: «{stats.top.exerciseId ?? stats.top.id}»{stats.top.lessonId ? ` في ${stats.top.lessonId}` : ""} — تكرر تسجيله {stats.top.count} مرة. يمكنك مراجعة شرحه أو إعادة التدريب.
           </p>
         )}
       </div>
+
+      {legacyRows.length > 0 && (
+        <p className="rounded-xl border border-amber-500/30 bg-amber-500/5 px-4 py-3 text-xs leading-relaxed text-muted-foreground">
+          السجلات القديمة بلا مصدر للدرس: {legacyRows.length}؛ وقد تكون جمعت تمارين متشابهة المعرّف من دروس مختلفة.
+          لا يمكن استعادة المصدر المفقود، لذا راجع هذه السجلات أو احذفها. التسجيلات الجديدة تفصل الدرس ومجموعة التدريب.
+        </p>
+      )}
 
       {/* القائمة */}
       <div className="space-y-2">
@@ -116,7 +141,8 @@ export function ErrorNotebook() {
             <div className="flex flex-wrap items-start justify-between gap-2">
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="font-de text-sm font-extrabold" dir="ltr">{e.id}</span>
+                  <span className="font-de text-sm font-extrabold" dir="ltr">{e.exerciseId ?? e.id}</span>
+                  {e.lessonId && <span className="rounded-full bg-muted px-2 py-0.5 text-[11px] font-bold text-muted-foreground">{e.lessonId}</span>}
                   <span
                     className={cn(
                       "rounded-full px-2 py-0.5 text-[11px] font-bold",
@@ -131,7 +157,7 @@ export function ErrorNotebook() {
                   {e.mastered && (
                     <span className="inline-flex items-center gap-1 rounded-full bg-success/15 px-2 py-0.5 text-[11px] font-bold text-success">
                       <CheckCircle2 className="h-3 w-3" aria-hidden="true" />
-                      أتقنته
+                      مُراجَع ذاتياً
                     </span>
                   )}
                 </div>
@@ -146,7 +172,7 @@ export function ErrorNotebook() {
                 {!e.mastered ? (
                   <Button size="sm" variant="outline" className="h-7 gap-1 text-[11px]" onClick={() => void master(e.id)}>
                     <CheckCircle2 className="h-3 w-3" aria-hidden="true" />
-                    أتقنته
+                    علّمته كمُراجَع
                   </Button>
                 ) : (
                   <Button size="sm" variant="outline" className="h-7 gap-1 text-[11px]" onClick={() => void master(e.id)}>
@@ -154,7 +180,7 @@ export function ErrorNotebook() {
                     إعادة فتح
                   </Button>
                 )}
-                <Button size="sm" variant="ghost" className="h-7 gap-1 text-[11px] text-destructive" onClick={() => void del(e.id)}>
+                <Button size="sm" variant="ghost" className="h-7 gap-1 text-[11px] text-destructive" aria-label={`حذف سجل التمرين ${e.exerciseId ?? e.id}${e.lessonId ? ` من الدرس ${e.lessonId}` : ""}`} onClick={() => void del(e.id)}>
                   <Trash2 className="h-3 w-3" aria-hidden="true" />
                 </Button>
               </div>
@@ -168,7 +194,7 @@ export function ErrorNotebook() {
         <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 text-center">
           <p className="flex items-center justify-center gap-1.5 text-xs font-bold text-primary">
             <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-            المنهجية: الخطأ المتكرر ليس فشلاً — إنه خريطة طريقك. راجع كل خطأ حتى يُعلَّم ✓.
+            راجع الإجابة والشرح، ويمكنك تعليم ما راجعته. هذا الوسم ذاتي ولا يثبت الإتقان.
           </p>
         </div>
       )}

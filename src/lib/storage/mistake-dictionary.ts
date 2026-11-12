@@ -1,4 +1,4 @@
-import {getRecentEvents} from "@/lib/analytics/events";
+import {getRecentEventsResult} from "@/lib/analytics/events";
 import {errorTypeLabel} from "@/lib/lesson/error-types";
 import {getDb} from "@/lib/storage/db";
 import {createCard} from "@/lib/srs/sm2";
@@ -18,9 +18,12 @@ export interface MistakeStat {
 }
 
 /** إحصاءات الأخطاء: تكرار كل نوع + أحدث 3 أمثلة لكل نوع */
-export async function getMistakeStats(): Promise<MistakeStat[]> {
-  const events = await getRecentEvents(800);
-  const wrong = events.filter((e) => e.type === "exercise-result" && !e.correct && e.errorType);
+export type MistakeStatsReadResult = {ok: true; stats: MistakeStat[]} | {ok: false};
+
+export async function getMistakeStatsResult(): Promise<MistakeStatsReadResult> {
+  const result = await getRecentEventsResult(800);
+  if (!result.ok) return {ok: false};
+  const wrong = result.events.filter((e) => e.type === "exercise-result" && !e.correct && e.errorType);
 
   const byType = new Map<ErrorTypeCode, MistakeStat>();
   for (const e of wrong) {
@@ -42,7 +45,13 @@ export async function getMistakeStats(): Promise<MistakeStat[]> {
     byType.set(e.errorType, stat);
   }
 
-  return [...byType.values()].sort((a, b) => b.count - a.count);
+  return {ok: true, stats: [...byType.values()].sort((a, b) => b.count - a.count)};
+}
+
+/** واجهة توافقية؛ استخدم نتيجة القراءة الصريحة في واجهات المستخدم. */
+export async function getMistakeStats(): Promise<MistakeStat[]> {
+  const result = await getMistakeStatsResult();
+  return result.ok ? result.stats : [];
 }
 
 /** إضافة خطأ كبطاقة SM-2 للتدرب عليه */

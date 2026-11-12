@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import {LazyVollPruefung} from "@/components/tests/lazy/lazy-vollpruefung";
 
 export const metadata: Metadata = {
-  title: "محاكاة امتحان Goethe B2 الكامل",
+  title: "تدريب B2 وبنية امتحان Goethe",
   description:
-    "محاكاة كاملة لامتحان Goethe-Zertifikat B2: القراءة والاستماع والقواعد والكتابة بتوقيت حقيقي + الخطوة الشفهية (عرض ومناقشة) + نتيجة نهائية بمعايير غوته.",
+    "نظرة عامة على أقسام Goethe B2 وعينة تدريب داخلية قصيرة. ليست هذه الصفحة محاكاة كاملة أو تقييماً للجاهزية؛ تحقق من تفاصيل الامتحان لدى الجهة المنظمة.",
 };
 
 export default function VollPruefungPage() {
@@ -13,12 +13,10 @@ export default function VollPruefungPage() {
     <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6">
       <div className="mb-8">
         <h1 className="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-          محاكاة امتحان Goethe B2 الكامل
+          تدريب B2 وبنية امتحان Goethe
         </h1>
         <p className="mt-2 max-w-2xl text-balance text-muted-foreground">
-          جلسة واحدة تحاكي الامتحان الحقيقي: أربعة أقسام مكتوبة بتوقيت حقيقي، ثم الخطوة
-          الشفهية، ونتيجة نهائية بمعايير غوته (نجاح 60%، جيد 75%، ممتاز 90%). ركّز
-          وأكملها حتى النهاية — هذه أقرب محاكاة للشهادة.
+          تعرّف إلى نظرة عامة على أقسام الامتحان، ثم جرّب اختبار مستوى كتابياً سريعاً. العينة لا تحاكي Goethe B2 كاملاً ولا تثبت الجاهزية أو تمنح نتيجة رسمية؛ أما /tests/b2 فيقدم تدريباً مستوحى من بعض أنماطه وليس محاكاة كاملة.
         </p>
       </div>
       <LazyVollPruefung />

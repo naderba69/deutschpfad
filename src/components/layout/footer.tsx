@@ -19,13 +19,12 @@ export function Footer() {
               <Logo />
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-              منصة عربية متكاملة لتعليم اللغة الألمانية من A1 إلى B2 وفق منهجية معهد غوته
-              ومعايير CEFR — مجانية بالكامل.
+              منصة عربية لتعلّم الألمانية عبر تدريبات في نطاقات A1–B2 تستلهم موضوعات من CEFR وGoethe، دون ادعاء اعتماد أو مطابقة رسمية.
             </p>
             <div className="flex items-center gap-2">
               {[
                 { icon: Globe, label: "الموقع الرسمي", href: siteConfig.url },
-                { icon: Github, label: "المستودع على GitHub", href: "https://github.com" },
+                { icon: Github, label: "المستودع على GitHub", href: "https://github.com/naderba69/deutschpfad" },
                 { icon: Mail, label: "البريد الإلكتروني", href: "mailto:info@deutschpfad.app" },
               ].map(({ icon: Icon, label, href }) => (
                 <Link

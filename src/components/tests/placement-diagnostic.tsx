@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import {useRouter} from "next/navigation";
 import {ChevronLeft, GraduationCap, Headphones} from "lucide-react";
 
 import {ResultsPanel} from "@/components/tests/results-panel";
@@ -9,8 +10,9 @@ import {TEST_BANK} from "@/data/tests/question-banks";
 import {speakSequence} from "@/lib/speech/voices";
 import {shuffleTestQuestions} from "@/lib/tests/shuffle-questions";
 import {buildTestResult} from "@/lib/tests/test-engine";
+import {buildDiagnosticQuestionBank, type DiagnosticQuestion} from "@/lib/tests/placement-questions";
 import {cn} from "@/lib/utils";
-import type { TestLevel, TestQuestion, TestResult, TestSkill } from "@/types/test";
+import type { TestLevel, TestResult, TestSkill } from "@/types/test";
 
 const SKILLS: { skill: TestSkill; label: string; icon: string }[] = [
   { skill: "grammatik", label: "القواعد", icon: "📘" },
@@ -24,11 +26,14 @@ const LEVELS: TestLevel[] = ["A1", "A2", "B1", "B2"];
 const QUESTIONS_PER_LEVEL = 3;
 const PASS_THRESHOLD = 2;
 
+const DIAGNOSTIC_QUESTION_BANK = buildDiagnosticQuestionBank(TEST_BANK);
+
 /**
- * اختبار تحديد المستوى التشخيصي — تكيفي لكل مهارة:
- * يبدأ من A1 ويتقدم عند النجاح (≥2/3) ويتوقف عند الرسوب.
+ * تدريب تشخيصي قصير يتدرج في أسئلة المهارات الموضوعية من A1 صعوداً/توقفاً.
+ * الكتابة مهمة تدريبية غير مصححة ولا تدخل في التقدير النهائي؛ النتيجة مؤشر محدود.
  */
 export function PlacementDiagnostic() {
+  const router = useRouter();
   const [skillIdx, setSkillIdx] = React.useState(0);
   const [levelIdx, setLevelIdx] = React.useState(0);
   const [questionIdx, setQuestionIdx] = React.useState(0);
@@ -46,8 +51,8 @@ export function PlacementDiagnostic() {
   const questions = React.useMemo(
     () =>
       shuffleTestQuestions(
-        TEST_BANK.filter((q) => q.skill === skill && q.level === level).slice(0, QUESTIONS_PER_LEVEL),
-      ),
+        DIAGNOSTIC_QUESTION_BANK.filter((q) => q.skill === skill && q.level === level).slice(0, QUESTIONS_PER_LEVEL),
+      ) as DiagnosticQuestion[],
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [skill, level, round],
   );
@@ -75,31 +80,20 @@ export function PlacementDiagnostic() {
   };
 
   const computeFinal = async () => {
-    const allQuestions = TEST_BANK;
-    const res = await buildTestResult({
+    const attemptedIds = new Set(answersRef.current.keys());
+    // لا نعرض الكتابة كدرجة: في هذا التشخيص لا تُصحح جودة النص أو دقته.
+    const attemptedQuestions = DIAGNOSTIC_QUESTION_BANK.filter(
+      (question) => attemptedIds.has(question.id) && question.kind !== "writing",
+    );
+    const result = await buildTestResult({
       kind: "diagnostic",
       level: "A1",
       startedAt: Date.now() - 1000,
       finishedAt: Date.now(),
-      questions: allQuestions,
+      questions: attemptedQuestions,
       answers: answersRef.current,
     });
-    const adjusted = {
-      ...res,
-      skillResults: res.skillResults.map((sr) => ({
-        ...sr,
-        level: skillLevels[sr.skill] ?? "A1",
-        pct: sr.skill === "grammatik" || sr.skill === "wortschatz" || sr.skill === "lesen" || sr.skill === "hören"
-          ? (skillLevels[sr.skill] === "B2" ? 85 : skillLevels[sr.skill] === "B1" ? 70 : skillLevels[sr.skill] === "A2" ? 55 : 40)
-          : sr.pct,
-      })),
-    };
-    const pts: Record<string, number> = { A1: 1, A2: 2, B1: 3, B2: 4 };
-    const lvls = Object.values(skillLevels);
-    const avg = lvls.length ? lvls.reduce((s, l) => s + pts[l], 0) / lvls.length : 1;
-    adjusted.estimatedLevel = avg >= 3.5 ? "B2" : avg >= 2.5 ? "B1" : avg >= 1.5 ? "A2" : "A1";
-    adjusted.overallPct = Math.round((avg / 4) * 100);
-    setResult(adjusted);
+    setResult(result);
     setFinished(true);
   };
 
@@ -156,14 +150,19 @@ export function PlacementDiagnostic() {
 
   if (finished && result) {
     return (
+      <div className="space-y-3">
+      <p className="rounded-lg border bg-muted/30 p-3 text-xs leading-relaxed text-muted-foreground">
+        هذا تقدير داخلي من عينة محدودة، وليس تصنيف CEFR أو تقييماً معيارياً. مهمة الكتابة للتدريب فقط؛ لا تُقيّم دقتها أو جودتها ولا تدخل في النتيجة.
+      </p>
       <ResultsPanel
         result={result}
         onRetry={restart}
         nextLabel="ابدأ من مستواك"
         onNext={() => {
-          window.location.href = `/learning-path#${result.estimatedLevel.toLowerCase()}`;
+          router.push(`/learning-path#${result.estimatedLevel.toLowerCase()}`);
         }}
       />
+      </div>
     );
   }
 
@@ -204,14 +203,15 @@ export function PlacementDiagnostic() {
       </div>
 
       <div className="rounded-xl border bg-card p-4">
-        {current.kind === "reading" && current.text && (
+        {current.sourceKind === "reading" && current.text && (
           <div className="mb-3 rounded-lg bg-muted/30 p-3">
             <p className="font-de text-sm leading-relaxed" dir="ltr" lang="de">
               {current.text}
             </p>
+            {current.textAr && <p className="mt-1 text-xs text-muted-foreground">{current.textAr}</p>}
           </div>
         )}
-        {current.kind === "listening" && current.text && (
+        {current.sourceKind === "listening" && current.text && (
           <div className="mb-3 rounded-lg bg-muted/30 p-3">
             <Button variant="outline" size="sm" onClick={() => speakSequence([{ de: current.text ?? "" }, { de: current.text ?? "" }], { rate: 0.9 })} className="gap-1.5">
               <Headphones className="h-4 w-4" aria-hidden="true" />
@@ -222,6 +222,9 @@ export function PlacementDiagnostic() {
 
         {current.kind === "writing" ? (
           <div className="space-y-3">
+            <p className="rounded-lg bg-muted/40 p-2 text-xs text-muted-foreground">
+              مهمة كتابة للتدريب فقط؛ لا تُصحح ولا تدخل في تقدير المستوى.
+            </p>
             <p className="font-de text-lg font-bold" dir="ltr" lang="de">
               {current.prompt}
             </p>
@@ -273,7 +276,7 @@ export function PlacementDiagnostic() {
 
       <p className="text-center text-xs text-muted-foreground">
         <GraduationCap className="inline h-3.5 w-3.5" aria-hidden="true" />
-        الخوارزمية التكيفية: نجحت في مستوى؟ ننتقل للأعلى. رسوب؟ نتوقف ونقدر مستواك.
+        يتدرج التدريب داخلياً حسب الإجابات (عتبة 2 من 3). العينة القصيرة تعطي مؤشراً تقريبياً فقط، لا تحديداً معيارياً للمستوى.
       </p>
     </div>
   );

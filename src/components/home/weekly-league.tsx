@@ -1,9 +1,9 @@
 "use client";
 
 import * as React from "react";
-import {Crown, Flame, Medal, Rocket, TrendingUp, Trophy} from "lucide-react";
+import {Crown, Rocket, Trophy} from "lucide-react";
 
-import {getRecentEvents} from "@/lib/analytics/events";
+import {getRecentEventsResult} from "@/lib/analytics/events";
 import {XP_RULES} from "@/lib/gamification/xp";
 import {cn} from "@/lib/utils";
 
@@ -47,7 +47,9 @@ const RANKS = [
 /** حساب XP هذا الأسبوع من الأحداث */
 async function computeWeeklyStats(): Promise<WeeklyStats> {
   const { ts } = weekStart();
-  const events = await getRecentEvents(5000);
+  const result = await getRecentEventsResult(5000);
+  if (!result.ok) throw new Error("تعذرت قراءة أحداث الدوري الأسبوعي");
+  const events = result.events;
   let weekXp = 0;
   for (const e of events) {
     if (e.ts < ts) continue;
@@ -84,17 +86,21 @@ async function computeWeeklyStats(): Promise<WeeklyStats> {
 
 export function WeeklyLeague() {
   const [stats, setStats] = React.useState<WeeklyStats | null>(null);
+  const [readError, setReadError] = React.useState(false);
 
   React.useEffect(() => {
     let cancelled = false;
     void computeWeeklyStats().then((s) => {
       if (!cancelled) setStats(s);
+    }).catch(() => {
+      if (!cancelled) setReadError(true);
     });
     return () => {
       cancelled = true;
     };
   }, []);
 
+  if (readError) return <div role="alert" className="rounded-xl border border-destructive/30 bg-destructive/5 p-4 text-sm">تعذرت قراءة سجل النشاط؛ لم نحتسب رتبتك الأسبوعية من بيانات ناقصة.</div>;
   if (!stats) return null;
 
   const nextRank = RANKS[Math.min(stats.rankIndex + 1, RANKS.length - 1)];

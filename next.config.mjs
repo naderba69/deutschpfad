@@ -108,11 +108,15 @@ const nextConfig = {
         key: "Content-Security-Policy",
         value: [
           "default-src 'self'",
-          "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com",
+          // 'unsafe-inline' في script-src مطلوب لسكربت JSON-LD المضمّن في layout
+          // (Next.js لا يوفّر nonce له تلقائياً) — أُزيل GTM غير المستخدم.
+          "script-src 'self' 'unsafe-inline'",
+          // 'unsafe-inline' في style-src مطلوب لأساليب Next.js المُحقونة وقت التشغيل.
           "style-src 'self' 'unsafe-inline'",
           "img-src 'self' data: blob: https:",
           "font-src 'self' data:",
-          "connect-src 'self' https://generativelanguage.googleapis.com https://api.groq.com https://openrouter.ai https://www.google-analytics.com",
+          // أُزيل google-analytics (لا يوجد كود تتبع في المشروع).
+          "connect-src 'self' https://generativelanguage.googleapis.com https://api.groq.com https://openrouter.ai",
           "frame-ancestors 'self'",
           "base-uri 'self'",
           "form-action 'self'",

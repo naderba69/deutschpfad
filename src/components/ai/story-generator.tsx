@@ -24,7 +24,14 @@ export function AiStoryGenerator() {
   const [result, setResult] = React.useState("");
 
   const generate = async () => {
-    const words = ["der Freund", "die Stadt", "das Café", "lernen", "gehen"].slice(0, 3 + level.length);
+    // مفردات متدرجة حسب المستوى (Comprehensible Input): كلما ارتفع المستوى أُضيفت مفردات أغنى
+    const LEVEL_WORDS: Record<string, string[]> = {
+      A1: ["der Freund", "die Stadt", "das Café"],
+      A2: ["der Freund", "die Stadt", "das Café", "lernen", "gehen"],
+      B1: ["der Freund", "die Stadt", "das Café", "lernen", "gehen", "die Reise", "das Wetter"],
+      B2: ["der Freund", "die Stadt", "das Café", "lernen", "gehen", "die Reise", "das Wetter", "die Entwicklung", "die Gesellschaft"],
+    };
+    const words = LEVEL_WORDS[level] ?? LEVEL_WORDS.A2;
     const p = storyGeneratorPrompt(level, words, length);
     const r = await callLLM({
       messages: [
@@ -57,6 +64,7 @@ export function AiStoryGenerator() {
                 key={l}
                 type="button"
                 onClick={() => setLevel(l)}
+                aria-pressed={level === l}
                 className={
                   level === l
                     ? "font-de rounded-lg bg-primary px-3 py-1 text-xs font-bold text-primary-foreground"
@@ -81,6 +89,7 @@ export function AiStoryGenerator() {
                 key={l.id}
                 type="button"
                 onClick={() => setLength(l.id)}
+                aria-pressed={length === l.id}
                 className={
                   length === l.id
                     ? "rounded-lg bg-primary px-3 py-1 text-xs font-bold text-primary-foreground"

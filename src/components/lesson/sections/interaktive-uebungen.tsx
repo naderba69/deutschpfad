@@ -77,7 +77,7 @@ export function InteraktiveUebungenSection({bank, lessonId}: {bank: Exercise[]; 
 
       {current && (
         <div key={`${current.id}-${index}-${regenerateKey}`}>
-          <ExerciseRenderer exercise={current} onResult={(r) => handleResult(r, current)} />
+          <ExerciseRenderer sourceId={lessonId} lessonId={lessonId} exercise={current} onResult={(r) => handleResult(r, current)} />
         </div>
       )}
 

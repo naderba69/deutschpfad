@@ -113,20 +113,19 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
     if (questionIdx > 0) setQuestionIdx((i) => i - 1);
   };
 
-  const restart = () => {
+  const restart = React.useCallback(() => {
     setRunKey((k) => k + 1);
     setSectionIdx(0);
     setQuestionIdx(0);
     setAnswers(new Map());
     setFinished(false);
     setResult(null);
-  };
+  }, []);
 
   // إعادة التشغيل عند تغيير resetKey
   React.useEffect(() => {
     restart();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [resetKey]);
+  }, [resetKey, restart]);
 
   if (finished && result) {
     return <ResultsPanel result={result} onRetry={restart} onComplete={onComplete} />;

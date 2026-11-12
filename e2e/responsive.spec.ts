@@ -115,7 +115,7 @@ test.describe("الريسبونسف — سطح المكتب 1280px", () => {
   });
 
   test("محاكاة B2: لا تجاوز أفقي وتُعرض الأقسام", async ({ page }) => {
-    await page.goto("/tests/b2-simulation", { waitUntil: "networkidle" });
+    await page.goto("/tests/b2", { waitUntil: "networkidle" });
     await page.waitForTimeout(600);
     await expectNoHorizontalOverflow(page);
     await expect(page.locator("h1, h2", { hasText: /محاكاة|B2/ }).first()).toBeVisible();

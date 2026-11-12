@@ -1,6 +1,8 @@
 "use client";
 
 import * as React from "react";
+
+import {speakSequence} from "@/lib/speech/voices";
 import {Headphones, Play, Users} from "lucide-react";
 
 import {MultipleChoiceExercise} from "@/components/lesson/exercises/multiple-choice";
@@ -27,23 +29,7 @@ const SPEED_OPTIONS = [
 /** تشغيل حوار كامل بالتسلسل — سطر بعد سطر عبر onend (لا دفعة واحدة) */
 function playDialogue(lines: { de: string }[], rate: number) {
   if (typeof window === "undefined" || !("speechSynthesis" in window) || lines.length === 0) return;
-  window.speechSynthesis.cancel();
-  // إضافة كل الأسطر دفعة واحدة بعد cancel يجعل المتصفح يبتلع بعضها —
-  // بالتسلسل تُنطق كل جملة بعد انتهاء سابقتها.
-  const speakNext = (idx: number) => {
-    if (idx >= lines.length) return;
-    const u = new SpeechSynthesisUtterance(lines[idx].de);
-    u.lang = "de-DE";
-    // اختيار صوت ألماني صراحةً إن وُجد، حتى لا يُنطق النص بصوت إنجليزي على بعض الأجهزة
-    const voices = window.speechSynthesis.getVoices();
-    const gv = voices.find((v) => v.lang === "de-DE") ?? voices.find((v) => v.lang.startsWith("de"));
-    if (gv) u.voice = gv;
-    u.rate = rate;
-    u.onend = () => speakNext(idx + 1);
-    u.onerror = () => speakNext(idx + 1);
-    window.speechSynthesis.speak(u);
-  };
-  speakNext(0);
+  speakSequence(lines, {rate});
 }
 
 /**

@@ -1,7 +1,7 @@
 /**
  * ═══════════════════════════════════════════════════════════
- *  مفردات B2 حسب المواضيع الـ18 الرسمية لامتحان Goethe
- *  (Themenwortschatz) — قائمة مواضيع Goethe-Zertifikat B2 الرسمية
+ *  مفردات تدريبية لنطاق B2 مصنفة تحت 18 موضوعاً من إعداد المنصة.
+ *  هذا التقسيم ليس قائمة رسمية أو شاملة من Goethe.
  *  مع ~180 كلمة/تركيباً جديداً إضافياً (موازٍ لمفردات الوحدات)
  *  — أضيفت ضمن اقتراحات المرحلة النهائية —
  * ═══════════════════════════════════════════════════════════
@@ -11,14 +11,14 @@ import type { VocabEntry } from "@/data/vocabulary/a1";
 
 export interface B2ExamTopic {
   id: string;
-  /** رقم الموضوع في قائمة غوته الرسمية */
+  /** ترتيب الموضوع داخل تصنيف المنصة */
   num: number;
   titleAr: string;
   titleDe: string;
   icon: string;
 }
 
-/** المواضيع الـ18 الرسمية لامتحان Goethe B2 */
+/** موضوعات تدريبية مختارة لتنظيم مفردات B2 */
 export const B2_EXAM_TOPICS: B2ExamTopic[] = [
   { id: "arbeit", num: 1, titleAr: "العمل والمهنة", titleDe: "Arbeit und Beruf", icon: "💼" },
   { id: "bildung", num: 2, titleAr: "التعليم والدراسة", titleDe: "Ausbildung und Studium", icon: "🎓" },

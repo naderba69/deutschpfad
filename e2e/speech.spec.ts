@@ -14,8 +14,7 @@
  *   5) البديل «سجّل واستمع لنفسك» يفتح أداة المقارنة التي تعمل دائماً.
  */
 import { test, expect, type Page } from "@playwright/test";
-
-import {gotoLessonStep} from "./helpers/lesson-steps";
+import { navigateLessonToSection } from "./helpers/lesson-navigation";
 
 async function clearData(page: Page) {
   await page.evaluate(async () => {
@@ -37,14 +36,12 @@ async function clearData(page: Page) {
   });
 }
 
-/** التنقل إلى قسم النطق في a1-01 (بلا عدّ نقرات ثابت — الأقسام قد تُعاد ترتيبها) */
+/** التنقل إلى قسم النطق (الخطوة 6 من 11 في a1-01) */
 async function gotoPronSection(page: Page) {
   await page.goto("/lesson/a1-01");
   await clearData(page);
   await page.reload();
-  await page.waitForTimeout(1500);
-  await gotoLessonStep(page, "النطق");
-  await page.waitForTimeout(900);
+  await navigateLessonToSection(page, "النطق");
 }
 
 test("قسم النطق يظهر في موضعه بكل أدواته (استمع + انطقها + سجّل نطقك)", async ({ page }) => {
@@ -98,9 +95,10 @@ test("التقييم التلقائي: النطق يُقيَّم فورياً ب
   await page.waitForTimeout(1500);
 
   // النتيجة: درجة + تعليق + مقارنة حرفية (Haloo قريبة من Hallo لكنها أقل من 100)
-  await expect(page.getByText("مطابقة نصية", { exact: false }).first()).toBeVisible({ timeout: 8000 });
-  // المقارنة الحرفية تظهر (تطابق/اختلاف الحروف)
-  await expect(page.getByText(/مطابق|مطابقة|اختلف/).first()).toBeVisible();
+  await expect(page.getByText(/%/).first()).toBeVisible({ timeout: 6000 });
+  await expect(page.getByText("مطابقة نصية عالية للتفريغ", { exact: false }).first()).toBeVisible();
+  // المقارنة الحرفية تظهر (مطابق/اختلف)
+  await expect(page.getByText("مطابق", { exact: false }).first()).toBeVisible();
 });
 
 test("«الدعم الوهمي» يُكتشف: محرك صامت → رسالة واضحة + بديل تلقائي", async ({ page }) => {

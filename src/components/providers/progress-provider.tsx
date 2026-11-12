@@ -3,7 +3,7 @@
 import * as React from "react";
 
 import {maybeAutoSnapshot} from "@/lib/storage/export-import";
-import {loadProgressFromDb, saveProgressToDb} from "@/lib/storage/progress-db";
+import {loadProgressResult, saveProgressToDb} from "@/lib/storage/progress-db";
 import type { LevelCode, ProgressState } from "@/types/curriculum";
 
 interface ProgressContextValue extends ProgressState {
@@ -15,18 +15,12 @@ interface ProgressContextValue extends ProgressState {
   sealedSet: Set<string>;
   /** مجموعة سريعة للدروس المكتملة */
   completedLessonsSet: Set<string>;
-  /** تبديل حالة اكتمال وحدة */
-  toggleUnit: (unitId: string) => void;
   /** تعليم وحدة كمكتملة */
   completeUnit: (unitId: string) => void;
-  /** إلغاء اكتمال وحدة */
-  uncompleteUnit: (unitId: string) => void;
   /** تعليم درس كمكتمل (المسار المتسلسل) */
   completeLesson: (lessonId: string) => void;
   /** إلغاء اكتمال درس */
   uncompleteLesson: (lessonId: string) => void;
-  /** تبديل حالة اكتمال درس */
-  toggleLesson: (lessonId: string) => void;
   /** ختم مستوى بامتحان الختم (Seal Exam) */
   sealLevel: (level: LevelCode) => void;
   /** مسح كل التقدم */
@@ -45,16 +39,25 @@ const ProgressContext = React.createContext<ProgressContextValue | null>(null);
 export function ProgressProvider({ children }: { children: React.ReactNode }) {
   const [state, setState] = React.useState<ProgressState>(EMPTY);
   const [isHydrated, setIsHydrated] = React.useState(false);
+  const [canPersist, setCanPersist] = React.useState(false);
+  const [storageWarning, setStorageWarning] = React.useState<string | null>(null);
+  const saveAttempt = React.useRef(0);
 
   React.useEffect(() => {
     let cancelled = false;
     (async () => {
-      const loaded = await loadProgressFromDb();
+      const loaded = await loadProgressResult();
       if (!cancelled) {
-        setState(loaded);
+        setState(loaded.state);
+        setCanPersist(loaded.ok);
         setIsHydrated(true);
-        // نسخة احتياطية تلقائية (مرة واحدة يومياً)
-        void maybeAutoSnapshot();
+        if (loaded.ok) {
+          setStorageWarning(null);
+          // نسخة احتياطية تلقائية (مرة واحدة يومياً) بعد قراءة موثوقة فقط.
+          void maybeAutoSnapshot();
+        } else {
+          setStorageWarning("تعذرت قراءة تقدمك من قاعدة البيانات؛ أوقفنا الحفظ التلقائي كي لا نستبدل بيانات غير مقروءة بنسخة قديمة. أعد المحاولة.");
+        }
       }
     })();
     return () => {
@@ -63,19 +66,25 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   React.useEffect(() => {
-    if (isHydrated) void saveProgressToDb(state);
-  }, [state, isHydrated]);
-
-  const toggleUnit = React.useCallback((unitId: string) => {
-    // ═══ P0-01: كان يُعيد { completedUnits } فقط فيُسقط sealedLevels
-    // و completedLessons — الآن ننشر الحالة كاملة ═══
-    setState((prev) => ({
-      ...prev,
-      completedUnits: prev.completedUnits.includes(unitId)
-        ? prev.completedUnits.filter((id) => id !== unitId)
-        : [...prev.completedUnits, unitId],
-    }));
-  }, []);
+    if (!isHydrated || !canPersist) return;
+    const attempt = ++saveAttempt.current;
+    void saveProgressToDb(state).then((result) => {
+      if (attempt !== saveAttempt.current) return;
+      if (!result.persistedSomewhere) {
+        setStorageWarning("تعذر حفظ تقدمك في التخزين المحلي. انسخ بياناتك احتياطياً إن أمكن، ولا تغلق الصفحة قبل إعادة المحاولة.");
+      } else if (!result.indexedDbSaved) {
+        setStorageWarning("حُفظ التقدم في النسخة المحلية المؤقتة فقط؛ قاعدة البيانات غير متاحة حالياً. صدّر نسخة احتياطية وأعد المحاولة لاحقاً.");
+      } else if (!result.localStorageSaved) {
+        setStorageWarning("حُفظ التقدم في قاعدة البيانات، لكن تعذرت كتابة المرآة المحلية؛ بعض الشاشات قد لا تعرضه فوراً.");
+      } else {
+        setStorageWarning(null);
+      }
+    }).catch(() => {
+      if (attempt === saveAttempt.current) {
+        setStorageWarning("تعذر التحقق من حفظ تقدمك؛ تحقق من التخزين المحلي وأعد المحاولة.");
+      }
+    });
+  }, [state, isHydrated, canPersist]);
 
   const completeUnit = React.useCallback((unitId: string) => {
     setState((prev) =>
@@ -83,13 +92,6 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         ? prev
         : { ...prev, completedUnits: [...prev.completedUnits, unitId] },
     );
-  }, []);
-
-  const uncompleteUnit = React.useCallback((unitId: string) => {
-    setState((prev) => ({
-      ...prev,
-      completedUnits: prev.completedUnits.filter((id) => id !== unitId),
-    }));
   }, []);
 
   const completeLesson = React.useCallback((lessonId: string) => {
@@ -105,18 +107,6 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       ...prev,
       completedLessons: (prev.completedLessons ?? []).filter((id) => id !== lessonId),
     }));
-  }, []);
-
-  const toggleLesson = React.useCallback((lessonId: string) => {
-    setState((prev) => {
-      const done = prev.completedLessons ?? [];
-      return {
-        ...prev,
-        completedLessons: done.includes(lessonId)
-          ? done.filter((id) => id !== lessonId)
-          : [...done, lessonId],
-      };
-    });
   }, []);
 
   const sealLevel = React.useCallback((level: LevelCode) => {
@@ -140,19 +130,30 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       sealedSet: new Set(state.sealedLevels ?? []),
       completedLessonsSet: new Set(state.completedLessons ?? []),
       isHydrated,
-      toggleUnit,
       completeUnit,
-      uncompleteUnit,
       completeLesson,
       uncompleteLesson,
-      toggleLesson,
       sealLevel,
       resetProgress,
     }),
-    [state, isHydrated, toggleUnit, completeUnit, uncompleteUnit, completeLesson, uncompleteLesson, toggleLesson, sealLevel, resetProgress],
+    [state, isHydrated, completeUnit, completeLesson, uncompleteLesson, sealLevel, resetProgress],
   );
 
-  return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;
+  return (
+    <ProgressContext.Provider value={value}>
+      {storageWarning && (
+        <div role="alert" className="fixed inset-x-3 top-3 z-[100] mx-auto max-w-2xl rounded-xl border border-amber-500/40 bg-background p-3 text-sm font-semibold text-foreground shadow-lg">
+          {storageWarning}
+          {!canPersist && isHydrated && (
+            <button type="button" className="ms-2 underline underline-offset-2" onClick={() => window.location.reload()}>
+              إعادة المحاولة
+            </button>
+          )}
+        </div>
+      )}
+      {children}
+    </ProgressContext.Provider>
+  );
 }
 
 export function useProgress(): ProgressContextValue {

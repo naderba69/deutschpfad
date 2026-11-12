@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import * as React from "react";
 import {BrainCircuit, CheckCircle2, RotateCcw, XCircle} from "lucide-react";
 
@@ -24,7 +25,6 @@ export function B2GrammarTrainer() {
   const [runKey, setRunKey] = React.useState(0);
 
   // خلط الخيارات لكل محاولة — البنك يضع الإجابة الصحيحة في الموضع الأول دائماً
-  // eslint-disable-next-line react-hooks/exhaustive-deps -- runKey مقصود: يعيد الخلط عند إعادة المحاولة
   // خلط بعد التركيب فقط (تفادياً لخطأ الـ hydration)
   const [questions, setQuestions] = React.useState(() => B2_GRAMMATIK);
   React.useEffect(() => {
@@ -106,7 +106,7 @@ export function B2GrammarTrainer() {
               إعادة التدريب
             </Button>
             <Button asChild variant="outline">
-              <a href="/tests/b2">محرك الامتحان الكامل</a>
+              <Link href="/tests/b2">تدريب B2 مستوحى من بعض أنماط Goethe</Link>
             </Button>
           </div>
         </CardContent>

@@ -29,25 +29,20 @@ describe("goetheWritingPrompt — مقيّم غوته", () => {
     expect(p.user).toContain("Meiner Meinung nach");
   });
 
-  it("يطلب المعايير الأربعة الرسمية", () => {
+  it("يطلب محاور تعليمية عامة دون ادعاء أنها معايير رسمية", () => {
     expect(p.system).toContain("Erfüllung");
     expect(p.system).toContain("Kohärenz");
     expect(p.system).toContain("Wortschatz");
     expect(p.system).toContain("Struktur");
+    expect(p.system).toMatch(/لا يمثل تصحيح Goethe الرسمي/);
   });
 
-  it("يطلب وسوم الإخراج المحددة (قابلة للتحليل)", () => {
+  it("يطلب وسوم ملاحظات قابلة للتحليل دون نسبة أو حكم نجاح", () => {
     expect(p.system).toContain("###معيار1:");
-    expect(p.system).toContain("###النسبة:");
-    expect(p.system).toContain("###الحكم:");
     expect(p.system).toContain("###أخطاء:");
     expect(p.system).toContain("###توصية:");
-  });
-
-  it("يحدد نطاق الحكم بـ Goethe (60/75/90)", () => {
-    expect(p.system).toContain("60");
-    expect(p.system).toContain("75");
-    expect(p.system).toContain("90");
+    expect(p.system).not.toContain("###النسبة:");
+    expect(p.system).not.toContain("###الحكم:");
   });
 });
 

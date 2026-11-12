@@ -13,7 +13,6 @@ import {Card, CardContent} from "@/components/ui/card";
 import {Progress} from "@/components/ui/progress";
 import {SATZBAU_LEVELS, getPuzzlesByLevel, type SatzbauPuzzle} from "@/data/satzbau";
 import {cn} from "@/lib/utils";
-import {FilterChip} from "@/components/ui/filter-chip";
 
 export function SatzbauGame() {
   const [level, setLevel] = React.useState<(typeof SATZBAU_LEVELS)[number]>("A1");
@@ -89,13 +88,18 @@ export function SatzbauGame() {
       {/* المستوى */}
       <div className="flex flex-wrap gap-1.5">
         {SATZBAU_LEVELS.map((l) => (
-          <FilterChip
+          <button
             key={l}
+            type="button"
+            aria-pressed={level === l}
             onClick={() => loadLevel(l)}
-            active={level === l}
+            className={cn(
+              "font-de rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
+              level === l ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
+            )}
           >
             {l}
-          </FilterChip>
+          </button>
         ))}
       </div>
 

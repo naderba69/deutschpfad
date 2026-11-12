@@ -118,8 +118,7 @@ export function StarkeVerbenTable({ compact }: { compact?: boolean }) {
       </div>
       <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
         <Table className="h-3.5 w-3.5" aria-hidden="true" />
-        {unique.length} فعل (فريد) من أصل {STARK_VERBEN.length} إدخال — الجدول الكامل التفاعلي
-        قادم في المرحلة 13 (المرجع النحوي).
+        {unique.length} فعل (فريد) من أصل {STARK_VERBEN.length} إدخال — الجدول تفاعلي بالكامل (بحث + فلترة بالمستوى + نطق).
       </p>
     </div>
   );

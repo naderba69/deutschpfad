@@ -1,10 +1,13 @@
 /**
- * مؤشرات وصفية لنتائج أنشطة المتعلم المسجلة محلياً.
- * لا تحوّل نسب الإجابات إلى مستوى CEFR، ولا تثبت إتقان مهارة أو مفهوماً.
+ * مؤشرات نشاط وتغذية راجعة داخلية من أحداث التمارين والمراجعة.
+ * النسب هنا معدلات صحة ضمن عينة الأحداث المسجلة، ولا تحدد مستوى CEFR أو الإتقان.
  */
 
-/** ربط نوع النشاط بمجال وصفي في لوحة النتائج */
-export const EXERCISE_TO_DOMAIN: Record<string, string> = {
+import type { AnalyticsEvent } from "@/types/analytics";
+import type { ErrorTypeCode, ExerciseType } from "@/types/lesson";
+
+/** ربط نوع التمرين بالمهارة */
+const EXERCISE_TO_SKILL: Record<string, string> = {
   "multiple-choice": "القواعد",
   "word-ordering": "القواعد",
   "fill-blank": "القواعد",
@@ -17,64 +20,70 @@ export const EXERCISE_TO_DOMAIN: Record<string, string> = {
   zuordnung: "القراءة",
 };
 
-export const ACTIVITY_DOMAINS = [
+export const SKILLS = [
   { key: "الاستماع", emoji: "🎧", color: "#3b82f6" },
   { key: "القراءة", emoji: "📖", color: "#8b5cf6" },
   { key: "الكتابة", emoji: "✍️", color: "#f59e0b" },
-  { key: "النطق", emoji: "🎤", color: "#ef4444" },
+  { key: "التحدث", emoji: "🎤", color: "#ef4444" },
   { key: "القواعد", emoji: "🧩", color: "#10b981" },
   { key: "المفردات", emoji: "💬", color: "#14b8a6" },
 ];
 
-export interface ActivityDomainStat {
+export interface SkillStat {
   key: string;
   total: number;
-  metCriterion: number;
+  correct: number;
   pct: number;
 }
 
-/** تلخيص مؤشرات النشاط؛ تختلف معايير النتيجة باختلاف نوع الحدث. */
-export async function computeActivityDomainStats(): Promise<ActivityDomainStat[]> {
-  const { getRecentEvents } = await import("@/lib/analytics/events");
-  const events = await getRecentEvents(1500);
-  const counts: Record<string, { total: number; metCriterion: number }> = {};
-  const init = () => {
-    for (const domain of ACTIVITY_DOMAINS) counts[domain.key] = { total: 0, metCriterion: 0 };
-  };
-  init();
+/** تجميع نسب الإجابة من أحداث التمارين المصححة فقط؛ لا نحوّل المراجعة أو النطق إلى «إجابة صحيحة». */
+export function aggregateSkillStats(events: AnalyticsEvent[]): SkillStat[] {
+  const counts: Record<string, { total: number; correct: number }> = Object.fromEntries(
+    SKILLS.map((skill) => [skill.key, {total: 0, correct: 0}]),
+  );
 
-  for (const e of events) {
-    if (e.type === "exercise-result") {
-      const domain = EXERCISE_TO_DOMAIN[e.exerciseType] ?? "القواعد";
-      if (!counts[domain]) counts[domain] = { total: 0, metCriterion: 0 };
-      counts[domain].total += 1;
-      if (e.correct) counts[domain].metCriterion += 1;
-    } else if (e.type === "pronunciation-score") {
-      counts["النطق"].total += 1;
-      counts["النطق"].metCriterion += e.score >= 75 ? 1 : 0;
-    } else if (e.type === "review") {
-      counts["المفردات"].total += 1;
-      counts["المفردات"].metCriterion += e.quality >= 3 ? 1 : 0;
-    } else if (e.type === "skill-result") {
-      // أحداث فهم مسجلة (مثل القراءة/الاستماع)، لا تقيس المهارة كاملة.
-      const domain = e.skill && counts[e.skill] ? e.skill : "القواعد";
-      if (!counts[domain]) counts[domain] = { total: 0, metCriterion: 0 };
-      counts[domain].total += 1;
-      if (e.correct) counts[domain].metCriterion += 1;
+  for (const event of events) {
+    let skill: string | undefined;
+    let isCorrect: boolean;
+    if (event.type === "exercise-result") {
+      skill = EXERCISE_TO_SKILL[event.exerciseType] ?? "القواعد";
+      isCorrect = event.correct;
+    } else if (event.type === "skill-result") {
+      // نقبل المهارات المعروفة فقط؛ لا نصنف قيمة مجهولة على أنها قواعد.
+      skill = SKILLS.some((item) => item.key === event.skill) ? event.skill : undefined;
+      isCorrect = event.correct;
+    } else {
+      // المراجعات والتقييمات الصوتية ليست إجابات من النوع نفسه.
+      continue;
     }
+    if (!skill || !counts[skill]) continue;
+    counts[skill].total += 1;
+    if (isCorrect) counts[skill].correct += 1;
   }
 
-  return ACTIVITY_DOMAINS.map((domain) => {
-    const c = counts[domain.key];
-    const pct = c.total > 0 ? Math.round((c.metCriterion / c.total) * 100) : 0;
-    return { key: domain.key, total: c.total, metCriterion: c.metCriterion, pct };
+  return SKILLS.map(({key}) => {
+    const count = counts[key];
+    return {
+      key,
+      total: count.total,
+      correct: count.correct,
+      pct: count.total > 0 ? Math.round((count.correct / count.total) * 100) : 0,
+    };
   });
 }
 
-/* ═══════════════ نتائج التمارين حسب المفهوم ═══════════════ */
+/** حساب إحصاءات المهارات من الأحداث الأخيرة */
+export async function computeSkillStats(): Promise<SkillStat[]> {
+  const { getRecentEventsResult } = await import("@/lib/analytics/events");
+  const result = await getRecentEventsResult(1500);
+  if (!result.ok) throw new Error("تعذرت قراءة أحداث المهارات");
+  return aggregateSkillStats(result.events);
+}
+
+/* ═══════════════ الإتقان النحوي ═══════════════ */
 
 /** تصنيف نوع الخطأ ← مفهوم نحوي (بالعربية) */
-export const ERROR_TYPE_TO_CONCEPT: Record<string, string> = {
+const ERROR_TYPE_TO_CONCEPT: Record<string, string> = {
   gender: "الجنس النحوي",
   article: "أدوات التعريف",
   spelling: "الإملاء",
@@ -85,42 +94,52 @@ export const ERROR_TYPE_TO_CONCEPT: Record<string, string> = {
   preposition: "حروف الجر",
   negation: "النفي",
   pronoun: "الضمائر",
+  plural: "صياغة الجمع",
+  punctuation: "علامات الترقيم",
+  comprehension: "الفهم القرائي/السمعي",
   grammar: "القواعد العامة",
 };
 
-export interface ConceptPracticeStat {
+export interface ConceptMastery {
   concept: string;
   attempts: number;
   correct: number;
   pct: number;
-  thresholdReached: boolean;
+  aboveInternalThreshold: boolean;
 }
 
-/** تلخيص نتائج التمارين حسب تصنيف الخطأ؛ 80% إشارة وصفية في العينة لا إثبات إتقان. */
-export async function computeConceptPracticeStats(): Promise<ConceptPracticeStat[]> {
-  const { getRecentEvents } = await import("@/lib/analytics/events");
-  const events = await getRecentEvents(2000);
+/** حساب معدل الإجابات الصحيحة في عينات التمارين المصنفة حسب نوع الخطأ */
+export function aggregateConceptMastery(events: AnalyticsEvent[]): ConceptMastery[] {
   const counts = new Map<string, { total: number; correct: number }>();
 
-  for (const e of events) {
-    if (e.type !== "exercise-result") continue;
-    const key = e.errorType ?? ("grammar" as const);
-    const concept = ERROR_TYPE_TO_CONCEPT[key] ?? "القواعد العامة";
-    const c = counts.get(concept) ?? { total: 0, correct: 0 };
-    c.total += 1;
-    if (e.correct) c.correct += 1;
-    counts.set(concept, c);
+  for (const event of events) {
+    if (event.type !== "exercise-result" || !event.errorType) continue;
+    const concept = ERROR_TYPE_TO_CONCEPT[event.errorType];
+    // لا نخمن المفهوم من غياب/جهالة الوسم؛ التخمين كان يضخم «القواعد العامة».
+    if (!concept) continue;
+    const count = counts.get(concept) ?? {total: 0, correct: 0};
+    count.total += 1;
+    if (event.correct) count.correct += 1;
+    counts.set(concept, count);
   }
 
   return [...counts.entries()]
-    .map(([concept, c]) => ({
+    .map(([concept, count]) => ({
       concept,
-      attempts: c.total,
-      correct: c.correct,
-      pct: Math.round((c.correct / c.total) * 100),
-      thresholdReached: c.correct / c.total >= 0.8,
+      attempts: count.total,
+      correct: count.correct,
+      pct: Math.round((count.correct / count.total) * 100),
+      aboveInternalThreshold: count.correct / count.total >= 0.8,
     }))
     .sort((a, b) => a.pct - b.pct);
+}
+
+/** حساب معدلات التصنيفات من بيانات الأخطاء الصريحة فقط */
+export async function computeConceptMastery(): Promise<ConceptMastery[]> {
+  const { getRecentEventsResult } = await import("@/lib/analytics/events");
+  const result = await getRecentEventsResult(2000);
+  if (!result.ok) throw new Error("تعذرت قراءة أحداث المفاهيم");
+  return aggregateConceptMastery(result.events);
 }
 
 /** المفاهيم النحوية الأساسية لكل مستوى (لعرضها حتى بلا بيانات) */

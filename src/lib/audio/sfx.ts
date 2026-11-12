@@ -6,7 +6,6 @@
 let ctx: AudioContext | null = null;
 let enabled = true;
 
-
 /** تفعيل/إيقاف المؤثرات (يُحفظ في localStorage) */
 export function setSfxEnabled(value: boolean): void {
   enabled = value;

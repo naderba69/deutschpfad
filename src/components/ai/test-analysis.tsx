@@ -7,7 +7,7 @@ import {AiToolShell} from "@/components/ai/ai-tool-shell";
 import {useLLM} from "@/components/providers/llm-provider";
 import {Button} from "@/components/ui/button";
 import {testAnalysisPrompt} from "@/lib/llm/prompts";
-import {getLastTestResult} from "@/lib/storage/test-results-store";
+import {getLastTestResultResult} from "@/lib/storage/test-results-store";
 
 const SKILL_AR: Record<string, string> = {
   grammatik: "القواعد",
@@ -26,13 +26,26 @@ export function AiTestAnalysis() {
   const { callLLM } = useLLM();
   const [result, setResult] = React.useState("");
   const [hasResult, setHasResult] = React.useState<boolean | null>(null);
+  const [loadError, setLoadError] = React.useState(false);
 
   React.useEffect(() => {
-    void getLastTestResult().then((r) => setHasResult(r !== null));
+    let mounted = true;
+    void getLastTestResultResult().then((read) => {
+      if (!mounted) return;
+      setHasResult(read.ok ? read.value !== null : null);
+      setLoadError(!read.ok);
+    });
+    return () => { mounted = false; };
   }, []);
 
   const generate = async () => {
-    const last = await getLastTestResult();
+    const read = await getLastTestResultResult();
+    if (!read.ok) {
+      setResult("⚠️ تعذرت قراءة نتائج الاختبارات من التخزين المحلي. أعد المحاولة لاحقاً.");
+      setLoadError(true);
+      return;
+    }
+    const last = read.value;
     if (!last) {
       setResult("⚠️ لا توجد نتائج اختبار محفوظة بعد — أجرِ أي اختبار أولاً ثم عد هنا لتحليل أخطائك.");
       return;
@@ -70,11 +83,15 @@ export function AiTestAnalysis() {
             <Sparkles className="h-4 w-4" aria-hidden="true" />
             حلّل آخر اختبار لي
           </Button>
-          {hasResult === false && (
+          {loadError ? (
+            <span role="status" className="text-xs text-amber-700 dark:text-amber-300">
+              تعذرت قراءة النتائج المحفوظة؛ لم نعتبرها فارغة.
+            </span>
+          ) : hasResult === false ? (
             <span className="text-xs text-muted-foreground">
               لا توجد نتائج بعد — أجرِ اختباراً من مركز الاختبارات أولاً.
             </span>
-          )}
+          ) : null}
         </div>
       )}
     </AiToolShell>

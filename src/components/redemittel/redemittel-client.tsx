@@ -30,6 +30,7 @@ export function RedemittelClient() {
       <div className="flex gap-2">
         <button
           type="button"
+          aria-pressed={tab === "redemittel"}
           onClick={() => setTab("redemittel")}
           className={cn(
             "rounded-lg border px-4 py-2 text-sm font-bold transition-colors",
@@ -40,6 +41,7 @@ export function RedemittelClient() {
         </button>
         <button
           type="button"
+          aria-pressed={tab === "kollokationen"}
           onClick={() => setTab("kollokationen")}
           className={cn(
             "rounded-lg border px-4 py-2 text-sm font-bold transition-colors",
@@ -69,6 +71,7 @@ export function RedemittelClient() {
       <div className="flex flex-wrap gap-1.5">
         <button
           type="button"
+          aria-pressed={category === null}
           onClick={() => setCategory(null)}
           className={cn(
             "rounded-full border px-3 py-1.5 text-xs font-bold transition-colors",
@@ -85,6 +88,7 @@ export function RedemittelClient() {
             <button
               key={cat.id}
               type="button"
+              aria-pressed={category === cat.id}
               onClick={() => setCategory(cat.id)}
               title={`${cat.examSection}`}
               className={cn(

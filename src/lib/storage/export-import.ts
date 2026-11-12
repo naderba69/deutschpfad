@@ -1,6 +1,7 @@
 import {getDb} from "@/lib/storage/db";
 import {PROGRESS_KEY} from "@/lib/storage/keys";
 import type { BackupData, Snapshot } from "@/types/storage";
+import type { Sm2CardData } from "@/types/srs";
 import type { AnalyticsEvent } from "@/types/analytics";
 
 /**
@@ -17,6 +18,7 @@ import type { AnalyticsEvent } from "@/types/analytics";
  */
 
 export const BACKUP_VERSION = 2 as const;
+export const MAX_BACKUP_BYTES = 20 * 1024 * 1024;
 const MAX_AUTO_SNAPSHOTS = 14;
 
 /** بادئات مفاتيح localStorage المملوكة للمنصة (allowlist للتصدير/الاستعادة) */
@@ -24,6 +26,8 @@ const LS_PREFIXES = [
   "dp:",
   "deutschpfad:",
   // تقدم الدروس (موضع الخطوة/الأقسام): مفاتيح بصيغ أخرى غير dp: — كانت تُفقد عند النسخ
+  // lesson-step: هو المفتاح الحي الوحيد (lesson-client)؛ dp-flow:/dp-steps: إرث من
+  // مكونات محذوفة — تُبقى في القائمة لاستعادة النسخ القديمة فقط.
   "lesson-step:",
   "dp-flow:",
   "dp-steps:",
@@ -40,8 +44,13 @@ export function isOwnedLsKey(key: string): boolean {
   return LS_PREFIXES.some((p) => key.startsWith(p));
 }
 
+/** المفاتيح التي يجوز للنسخ الاحتياطي استعادتها؛ الأسرار المستثناة لا تُكتب حتى لو وردت في ملف مستورد. */
+export function isRestorableLsKey(key: string): boolean {
+  return isOwnedLsKey(key) && !LS_EXCLUDED.has(key);
+}
+
 /** جمع كل مفاتيح localStorage المملوكة (ديناميكياً — لا قائمة ثابتة ناقصة) */
-function collectOwnedLsKeys(): Record<string, string> {
+export function collectOwnedLsKeys(): Record<string, string> {
   if (typeof window === "undefined") return {};
   const out: Record<string, string> = {};
   try {
@@ -53,7 +62,7 @@ function collectOwnedLsKeys(): Record<string, string> {
       }
     }
   } catch {
-    /* تجاهل */
+    throw new Error("تعذر قراءة مفاتيح التخزين المحلي؛ أُوقف التصدير لتجنب إنشاء نسخة ناقصة.");
   }
   return out;
 }
@@ -85,54 +94,140 @@ export async function buildBackupData(): Promise<BackupData> {
   };
 }
 
+/** مسح مفاتيح التطبيق القابلة للاستعادة قبل وضع الاستبدال؛ تُبقى أسرار BYOK المستثناة محلياً. */
+export function clearRestorableLocalStorage(): void {
+  if (typeof window === "undefined") return;
+  try {
+    const keys: string[] = [];
+    for (let i = 0; i < window.localStorage.length; i++) {
+      const key = window.localStorage.key(i);
+      if (key && isRestorableLsKey(key)) keys.push(key);
+    }
+    for (const key of keys) window.localStorage.removeItem(key);
+  } catch {
+    throw new Error("تعذر مسح مفاتيح التطبيق من التخزين المحلي؛ قد تكون استعادة قاعدة البيانات قد تمت وحدها.");
+  }
+}
+
 /** استعادة بيانات localStorage (قائمة أمان: البادئات المملوكة فقط) */
-function restoreLocalStorage(settings: Record<string, unknown>): void {
+export function restoreLocalStorage(settings: Record<string, unknown>): void {
   if (typeof window === "undefined") return;
   const ls = settings["_localStorage"];
   if (!ls || typeof ls !== "object") return;
   for (const [k, v] of Object.entries(ls as Record<string, string>)) {
-    if (!isOwnedLsKey(k)) continue; // لا نكتب مفاتيح غريبة
+    if (!isRestorableLsKey(k)) continue; // لا نكتب مفاتيح غريبة أو أسراراً مستثناة
     try {
       window.localStorage.setItem(k, String(v));
     } catch {
-      /* تجاهل */
+      throw new Error("تم تحديث قاعدة البيانات، لكن تعذر استعادة بعض مفاتيح التخزين المحلي. قد تكون العملية جزئية.");
     }
   }
 }
 
-/** التحقق الصارم من صحة نسخة مستوردة (schema runtime) */
-export function validateBackupData(raw: unknown): raw is BackupData {
-  if (!raw || typeof raw !== "object") return false;
-  const b = raw as Partial<BackupData>;
+function isPlainRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
 
-  // الإصدار: نقبل 1 (تُرحَّل) و 2
-  if (b.version !== 1 && b.version !== 2) return false;
-  if (typeof b.exportedAt !== "string") return false;
+function isFiniteNumber(value: unknown): value is number {
+  return typeof value === "number" && Number.isFinite(value);
+}
 
-  // التقدم: يجب أن يكون كائناً بـ completedUnits مصفوفة
-  if (!b.progress || typeof b.progress !== "object") return false;
-  if (!Array.isArray((b.progress as { completedUnits?: unknown }).completedUnits)) return false;
+export function withoutAnalyticsEventId(event: AnalyticsEvent): AnalyticsEvent {
+  const {id: _storedId, ...importedEvent} = event;
+  return importedEvent;
+}
 
-  // البطاقات: مصفوفة بعناصر صالحة
-  if (!Array.isArray(b.cards)) return false;
-  for (const c of b.cards) {
-    if (!c || typeof c !== "object" || typeof (c as { id?: unknown }).id !== "string") return false;
+export function deduplicateAnalyticsEvents(
+  existingEvents: AnalyticsEvent[],
+  incomingEvents: AnalyticsEvent[],
+): AnalyticsEvent[] {
+  const eventKey = (event: AnalyticsEvent) => {
+    const fields = Object.entries(event as unknown as Record<string, unknown>)
+      .filter(([key]) => key !== "id")
+      .sort(([a], [b]) => a.localeCompare(b));
+    return JSON.stringify(fields);
+  };
+  const seen = new Set(existingEvents.map(eventKey));
+  return incomingEvents.filter((event) => {
+    const key = eventKey(event);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function isValidAnalyticsEvent(value: unknown): value is AnalyticsEvent {
+  if (!isPlainRecord(value) || !isFiniteNumber(value.ts)) return false;
+  if (value.id !== undefined && !isFiniteNumber(value.id)) return false;
+  switch (value.type) {
+    case "exercise-result":
+      return typeof value.exerciseId === "string" && typeof value.exerciseType === "string" &&
+        typeof value.correct === "boolean" && isFiniteNumber(value.points);
+    case "pronunciation-score":
+      return typeof value.target === "string" && isFiniteNumber(value.score);
+    case "self-pronunciation-rating":
+      return typeof value.target === "string" && [0, 0.5, 1].includes(value.rating as number);
+    case "skill-result":
+      return typeof value.skill === "string" && typeof value.correct === "boolean";
+    case "lesson-completed":
+      return typeof value.lessonId === "string" && typeof value.unitId === "string";
+    case "lesson-view":
+      return typeof value.lessonId === "string";
+    case "review":
+      return typeof value.cardId === "string" && isFiniteNumber(value.quality);
+    case "test-result":
+      return isPlainRecord(value.result);
+    case "session-minute":
+      return isFiniteNumber(value.minutes);
+    default:
+      return false;
   }
+}
 
-  // الأحداث (اختياري في v1): مصفوفة إن وُجدت
-  if (b.events !== undefined && !Array.isArray(b.events)) return false;
+function isValidCard(value: unknown): value is Sm2CardData {
+  if (!isPlainRecord(value)) return false;
+  return typeof value.id === "string" && typeof value.de === "string" && typeof value.ar === "string" &&
+    ["A1", "A2", "B1", "B2"].includes(String(value.level)) &&
+    ["lesson", "manual", "sentence"].includes(String(value.source)) &&
+    isFiniteNumber(value.createdAt) && isFiniteNumber(value.repetitions) &&
+    isFiniteNumber(value.interval) && isFiniteNumber(value.ease) && isFiniteNumber(value.due) &&
+    (value.lastReview === null || value.lastReview === undefined || isFiniteNumber(value.lastReview)) &&
+    isFiniteNumber(value.lapses) && isFiniteNumber(value.qualitySum) && isFiniteNumber(value.qualityCount) &&
+    (value.example === undefined || typeof value.example === "string") &&
+    (value.exampleAr === undefined || typeof value.exampleAr === "string");
+}
 
-  // الإعدادات: يجب أن تكون كائناً (P0-01: كانت مفقودة تُسبب استعادة جزئية)
-  if (!b.settings || typeof b.settings !== "object") return false;
+/** التحقق من بنية النسخة المستوردة قبل لمس IndexedDB */
+export function validateBackupData(raw: unknown): raw is BackupData {
+  if (!isPlainRecord(raw)) return false;
+  const b = raw;
 
-  // حدود الحجم: 20MB كحد أقصى للنسخة
+  if (b.version !== 1 && b.version !== 2) return false;
+  if (typeof b.exportedAt !== "string" || !Number.isFinite(Date.parse(b.exportedAt))) return false;
+
+  if (!isPlainRecord(b.progress) || !Array.isArray(b.progress.completedUnits) ||
+    !b.progress.completedUnits.every((value) => typeof value === "string")) return false;
+  if (b.progress.sealedLevels !== undefined &&
+    (!Array.isArray(b.progress.sealedLevels) || !b.progress.sealedLevels.every((value) => ["A1", "A2", "B1", "B2"].includes(String(value))))) return false;
+  if (b.progress.completedLessons !== undefined &&
+    (!Array.isArray(b.progress.completedLessons) || !b.progress.completedLessons.every((value) => typeof value === "string"))) return false;
+
+  if (!Array.isArray(b.cards) || !b.cards.every(isValidCard)) return false;
+  if (b.events !== undefined && (!Array.isArray(b.events) || !b.events.every(isValidAnalyticsEvent))) return false;
+  if (!isPlainRecord(b.settings)) return false;
+
+  const localStorageBackup = b.settings["_localStorage"];
+  if (localStorageBackup !== undefined &&
+    (!isPlainRecord(localStorageBackup) || !Object.entries(localStorageBackup).every(([key, value]) =>
+      typeof key === "string" && typeof value === "string"))) return false;
+
+  // حد الحجم يُحسب ببايتات UTF-8 لا بعدد وحدات UTF-16.
   try {
-    const size = JSON.stringify(b).length;
-    if (size > 20 * 1024 * 1024) return false;
+    const serialized = JSON.stringify(b);
+    if (new TextEncoder().encode(serialized).byteLength > MAX_BACKUP_BYTES) return false;
   } catch {
     return false;
   }
-
   return true;
 }
 
@@ -164,52 +259,42 @@ export async function writeBackupData(data: BackupData, mode: "merge" | "replace
     // التقدم الكامل (لا اختزال للوحدات)
     await tx.objectStore("progress").put({ key: PROGRESS_KEY, data: data.progress });
     for (const card of data.cards) await tx.objectStore("cards").put(card);
-    if (data.events) for (const ev of data.events) await tx.objectStore("events").add(ev);
+    if (data.events) for (const ev of data.events) await tx.objectStore("events").add(withoutAnalyticsEventId(ev));
     for (const [key, value] of Object.entries(data.settings)) {
       if (key === "_localStorage") continue;
       await tx.objectStore("settings").put({ key, data: value });
     }
     await tx.done;
+    clearRestorableLocalStorage();
     restoreLocalStorage(data.settings);
     return;
   }
 
-  // ── وضع الدمج: دون مسح — تحقق من الوجود أولاً ثم اكتب ──
-  const existingProgress =
-    (await db.get("progress", PROGRESS_KEY))?.data as BackupData["progress"] | undefined;
-  await db.put("progress", {
-    key: PROGRESS_KEY,
-    data: mergeProgress(existingProgress, data.progress),
-  });
+  // ── وضع الدمج: اقرأ/تحقق أولاً، ثم اكتب كل مخازن IndexedDB في معاملة واحدة ──
+  const [existingProgressRecord, existingCards, existingEvents] = await Promise.all([
+    db.get("progress", PROGRESS_KEY),
+    db.getAll("cards"),
+    db.getAll("events"),
+  ]);
+  const existingProgress = existingProgressRecord?.data as BackupData["progress"] | undefined;
+  const existingIds = new Set(existingCards.map((card) => card.id));
+  const cardsToAdd = data.cards.filter((card) => !existingIds.has(card.id));
+  const eventsToAdd = deduplicateAnalyticsEvents(existingEvents, data.events ?? []);
+  const settingsToWrite = Object.entries(data.settings).filter(([key]) => key !== "_localStorage");
 
-  // البطاقات: دمج بالمعرّف
-  const existingCards = await db.getAll("cards");
-  const existingIds = new Set(existingCards.map((c) => c.id));
-  const toAdd = data.cards.filter((c) => !existingIds.has(c.id));
-  if (toAdd.length > 0) {
-    const tx = db.transaction("cards", "readwrite");
-    for (const card of toAdd) tx.objectStore("cards").put(card);
-    await tx.done;
+  const tx = db.transaction(["progress", "cards", "events", "settings"], "readwrite");
+  const writes: Promise<unknown>[] = [
+    tx.objectStore("progress").put({
+      key: PROGRESS_KEY,
+      data: mergeProgress(existingProgress, data.progress),
+    }),
+  ];
+  for (const card of cardsToAdd) writes.push(tx.objectStore("cards").put(card));
+  for (const event of eventsToAdd) writes.push(tx.objectStore("events").add(withoutAnalyticsEventId(event)));
+  for (const [key, value] of settingsToWrite) {
+    writes.push(tx.objectStore("settings").put({key, data: value}));
   }
-
-  // الأحداث: دمج (لا نكرر — نضيف الجديد فقط)
-  if (data.events && data.events.length > 0) {
-    const existingEvents = await db.getAll("events");
-    const evKey = (e: AnalyticsEvent) => `${e.type}:${e.ts}:${JSON.stringify((e as unknown as Record<string, unknown>).result ?? (e as unknown as Record<string, unknown>).lessonId ?? (e as unknown as Record<string, unknown>).exerciseId ?? "")}`;
-    const existingKeys = new Set(existingEvents.map(evKey));
-    const newEvents = data.events.filter((e) => !existingKeys.has(evKey(e)));
-    if (newEvents.length > 0) {
-      const tx = db.transaction("events", "readwrite");
-      for (const ev of newEvents) await tx.objectStore("events").add(ev);
-      await tx.done;
-    }
-  }
-
-  // الإعدادات (دمج)
-  for (const [key, value] of Object.entries(data.settings)) {
-    if (key === "_localStorage") continue;
-    await db.put("settings", { key, data: value });
-  }
+  await Promise.all([...writes, tx.done]);
 
   restoreLocalStorage(data.settings);
 }
@@ -236,17 +321,20 @@ export function backupFilename(): string {
 }
 
 /** لقطة تلقائية يومية (لا تتجاوز حد عدد اللقطات) */
-export async function maybeAutoSnapshot(): Promise<boolean> {
+export type AutoSnapshotResult = "created" | "already-exists" | "error";
+
+export async function maybeAutoSnapshot(): Promise<AutoSnapshotResult> {
   try {
-    const snaps = await getSnapshots();
+    const result = await getSnapshotsResult();
+    if (!result.ok) return "error";
     const today = new Date().toISOString().slice(0, 10);
-    if (snaps.some((s) => s.createdAt && new Date(s.createdAt).toISOString().slice(0, 10) === today && s.kind === "auto")) {
-      return false;
+    if (result.rows.some((s) => s.createdAt && new Date(s.createdAt).toISOString().slice(0, 10) === today && s.kind === "auto")) {
+      return "already-exists";
     }
     await createManualSnapshot("auto");
-    return true;
+    return "created";
   } catch {
-    return false;
+    return "error";
   }
 }
 
@@ -270,14 +358,22 @@ export async function createManualSnapshot(kind: "manual" | "auto" = "manual"): 
 }
 
 /** كل اللقطات مرتبة من الأحدث */
-export async function getSnapshots(): Promise<Snapshot[]> {
+export type SnapshotReadResult = {ok: true; rows: Snapshot[]} | {ok: false; rows: []};
+
+/** قراءة اللقطات مع التمييز بين القائمة الفارغة وفشل التخزين. */
+export async function getSnapshotsResult(): Promise<SnapshotReadResult> {
   try {
     const db = await getDb();
     const all = (await db.getAll("snapshots")) as Snapshot[];
-    return all.sort((a, b) => b.createdAt - a.createdAt);
+    return {ok: true, rows: all.sort((a, b) => b.createdAt - a.createdAt)};
   } catch {
-    return [];
+    return {ok: false, rows: []};
   }
+}
+
+/** كل اللقطات مرتبة من الأحدث؛ للاستخدامات التي لا تعرض حالة التخزين. */
+async function getSnapshots(): Promise<Snapshot[]> {
+  return (await getSnapshotsResult()).rows;
 }
 
 /** استعادة لقطة (استبدال كامل عبر المسار الذري) */

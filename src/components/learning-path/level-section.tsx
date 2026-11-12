@@ -23,7 +23,6 @@ interface LevelSectionProps {
   sealed?: LevelCode[];
   /** هل المستوى هو المستوى النشط حالياً؟ */
   isActive: boolean;
-  onToggleUnit: (unitId: string) => void;
 }
 
 /**
@@ -37,11 +36,11 @@ export function LevelSection({
   completed,
   sealed = [],
   isActive,
-  onToggleUnit,
 }: LevelSectionProps) {
   const [expanded, setExpanded] = React.useState(isActive);
   const pct = completion.pct;
-  const levelSealed = isLevelSealed(completed, level.code, sealed);
+  const examPassed = isLevelSealed(completed, level.code, sealed);
+  const progressionComplete = completion.pct === 100;
   const sealReady = canTakeSealExam(completed, level.code);
 
   return (
@@ -114,20 +113,32 @@ export function LevelSection({
 
         {/* شريط امتحان الختم — بوابة الانتقال للمستوى التالي */}
         <div className="border-t bg-muted/10 px-6 py-3">
-          {levelSealed ? (
+          {examPassed ? (
             <p className="flex flex-wrap items-center gap-2 text-sm">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-success/15 px-3 py-1 text-xs font-bold text-success">
-                ✅ مستوى مختوم
+                ✅ اجتزت بوابة التقدم الداخلية
               </span>
               <span className="text-muted-foreground">
-                اجتزت امتحان ختم {level.code} — يمكنك الانتقال إلى المستوى التالي.
+                سُجل اجتياز تدريب {level.code} الداخلي؛ لا يمثل شهادة أو إثباتاً رسمياً للمستوى.
               </span>
             </p>
+          ) : progressionComplete ? (
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <p className="text-sm text-muted-foreground">
+                اكتملت وحدات {level.code}. أُتيح الانتقال للمستخدمين القدامى بالتوافق، لكن إكمال الوحدات لا يعني اجتياز اختبار أو إثبات المستوى.
+              </p>
+              <a
+                href={`/tests/seal/${level.code.toLowerCase()}`}
+                className="inline-flex items-center gap-1.5 rounded-lg border px-4 py-2 text-sm font-bold transition-colors hover:bg-muted"
+              >
+                خض اختبار التقدم الداخلي
+              </a>
+            </div>
           ) : isActive && sealReady ? (
             <div className="flex flex-wrap items-center justify-between gap-3">
               <p className="text-sm text-muted-foreground">
-                🎓 أكملت <span className="font-bold">{pct}%</span> من وحدات {level.code} — أنت
-                جاهز لامتحان الختم! اجتزه لفتح المستوى التالي.
+                🎓 أكملت <span className="font-bold">{pct}%</span> من وحدات {level.code} — يمكنك الآن
+                إجراء اختبار بوابة التقدم الداخلي لفتح المستوى التالي.
               </p>
               <a
                 href={`/tests/seal/${level.code.toLowerCase()}`}
@@ -153,7 +164,6 @@ export function LevelSection({
                 key={unit.id}
                 unit={unit}
                 status={getUnitStatus(completed, unit, sealed)}
-                onToggle={onToggleUnit}
               />
             ))}
           </div>

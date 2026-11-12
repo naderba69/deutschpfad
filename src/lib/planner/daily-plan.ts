@@ -35,7 +35,6 @@ const LEVEL_ORDER: Record<string, number> = { A1: 0, A2: 1, B1: 2, B2: 3 };
 /** أيام الأسبوع (لرسالة مخصصة) */
 const WEEKDAYS_AR = ["الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
 
-
 /** مفتاح اليوم (لتخزين إنجاز الخطة) */
 export function todayKey(): string {
   return new Date().toISOString().slice(0, 10);

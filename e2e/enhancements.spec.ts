@@ -34,7 +34,7 @@ test("الشاشات الكبيرة: شريط التنقل السفلي مخفي
 test("صفحة «عن المنصة» تعرض القيم", async ({ page }) => {
   await page.goto("/about");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("DeutschPfad");
-  await expect(page.getByText("مجانية 100%").first()).toBeVisible();
+  await expect(page.getByText("متاحة دون اشتراك مدفوع حالياً").first()).toBeVisible();
 });
 
 test("مركز المستوى: نجوم الإتقان تظهر", async ({ page }) => {

@@ -10,7 +10,6 @@ import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {READING_LIBRARY, type ReadingText} from "@/data/reading/library";
 import {speakSequence} from "@/lib/speech/voices";
 import {cn} from "@/lib/utils";
-import {FilterChip} from "@/components/ui/filter-chip";
 
 const LEVELS = ["all", "A1", "A2", "B1", "B2"] as const;
 
@@ -38,17 +37,22 @@ export function ReadingLibraryClient() {
       <div className="space-y-3">
         <div className="flex flex-wrap gap-1.5" role="group" aria-label="الفلترة بالمستوى">
           {LEVELS.map((l) => (
-            <FilterChip
+            <button
               key={l}
+              type="button"
+              aria-pressed={level === l}
               onClick={() => {
                 setLevel(l);
                 setActive(null);
                 setAnswers({});
               }}
-              active={level === l}
+              className={cn(
+                "font-de rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
+                level === l ? "border-primary bg-primary text-primary-foreground" : "bg-background hover:border-primary/50",
+              )}
             >
               {l === "all" ? "الكل" : l}
-            </FilterChip>
+            </button>
           ))}
         </div>
         <div className="space-y-2">

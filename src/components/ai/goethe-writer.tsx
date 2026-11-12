@@ -1,10 +1,9 @@
 "use client";
 
 /**
- * مصحح الكتابة بمعايير Goethe الرسمية (Schreiben-Bewertung)
- * — المعايير الأربعة الرسمية: Erfüllung / Kohärenz / Wortschatz / Struktur —
- * كل معيار من 1-5 + نسبة مئوية + حكم (Bestanden/Gut/Sehr gut)
- * + قائمة أخطاء + توصية — كما يقيس المصححون الحقيقيون.
+ * ملاحظات تعليمية آلية على الكتابة الألمانية.
+ * المؤشرات النوعية والأخطاء المحتملة مساعدة للمراجعة فقط؛ ليست تصحيحاً رسمياً
+ * أو تقديراً موثوقاً لنتيجة امتحان Goethe/CEFR.
  */
 import * as React from "react";
 import {Award, BookOpenCheck, Link2, PenLine, Sparkles, Type} from "lucide-react";
@@ -15,7 +14,6 @@ import {SCHREIB_MODELLE} from "@/data/schreibmodelle";
 import {goetheWritingPrompt} from "@/lib/llm/prompts";
 import {Progress} from "@/components/ui/progress";
 import {cn} from "@/lib/utils";
-import {FilterChip} from "@/components/ui/filter-chip";
 
 const LEVELS = ["A2", "B1", "B2"];
 
@@ -29,8 +27,6 @@ const CRITERIA_KEYS = ["معيار1", "معيار2", "معيار3", "معيار4
 
 interface Parsed {
   scores: { name: string; score: number; note: string }[];
-  pct: number | null;
-  verdict: string;
   errors: string;
   recommendation: string;
 }
@@ -38,8 +34,6 @@ interface Parsed {
 function parseResult(raw: string): Parsed {
   const out: Parsed = {
     scores: [],
-    pct: null,
-    verdict: "",
     errors: "",
     recommendation: "",
   };
@@ -58,11 +52,6 @@ function parseResult(raw: string): Parsed {
         if (out.scores[i]) out.scores[i].note = note;
       }
     }
-    if (t.startsWith("###النسبة:")) {
-      const m = t.match(/(\d+)\s*%/);
-      if (m) out.pct = Math.min(100, Math.max(0, Number(m[1])));
-    }
-    if (t.startsWith("###الحكم:")) out.verdict = t.slice("###الحكم:".length).trim();
     if (t.startsWith("###أخطاء:")) out.errors = t.slice("###أخطاء:".length).trim();
     if (t.startsWith("###توصية:")) out.recommendation = t.slice("###توصية:".length).trim();
   }
@@ -111,8 +100,8 @@ export function AiGoetheWriter() {
 
   return (
     <AiToolShell
-      title="مقيّم الكتابة بمعايير Goethe الرسمية"
-      description="اكتب Forumsbeitrag أو رسالة رسمية أو مقالاً — يحلّله المعلّم بالمعايير الأربعة الرسمية للامتحان (إنجاز المهمة، الترابط، المفردات، القواعد) مع درجة تقريبية وحكم نهائي كما يفعل المصححون."
+      title="ملاحظات آلية على الكتابة الألمانية"
+      description="اكتب نصاً بالألمانية لتحصل على ملاحظات تعليمية أولية حول إنجاز المهمة والترابط والمفردات والقواعد. قد يخطئ النموذج؛ المؤشرات ليست درجات Goethe أو CEFR ولا حكماً على النجاح."
       icon={<Award className="h-5 w-5 text-primary" aria-hidden="true" />}
       canRun={text.trim().length > 20}
       buttonLabel="قيّم كتابتي"
@@ -129,26 +118,36 @@ export function AiGoetheWriter() {
           <div className="flex flex-wrap items-center gap-1.5">
             <span className="text-xs font-bold text-muted-foreground">المستوى المستهدف:</span>
             {LEVELS.map((l) => (
-              <FilterChip
+              <button
                 key={l}
+                type="button"
                 onClick={() => setLevel(l)}
-                active={level === l}
+                aria-pressed={level === l}
+                className={cn(
+                  "font-de rounded-lg border px-3 py-1 text-xs font-bold transition-colors",
+                  level === l ? "border-primary bg-primary text-primary-foreground" : "text-muted-foreground hover:border-primary/50",
+                )}
               >
                 {l}
-              </FilterChip>
+              </button>
             ))}
           </div>
 
           {/* نوع المهمة */}
           <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="نوع المهمة">
             {TASK_TYPES.map((t) => (
-              <FilterChip
+              <button
                 key={t.id}
+                type="button"
                 onClick={() => setTaskType(t.id)}
-                active={taskType === t.id}
+                aria-pressed={taskType === t.id}
+                className={cn(
+                  "rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
+                  taskType === t.id ? "border-primary bg-primary/10 text-primary" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
+                )}
               >
                 {t.label}
-              </FilterChip>
+              </button>
             ))}
           </div>
 
@@ -221,11 +220,8 @@ export function AiGoetheWriter() {
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <p className="inline-flex items-center gap-2 font-bold text-primary">
                   <Award className="h-5 w-5" aria-hidden="true" />
-                  تقييم بمعايير Goethe الرسمية
+                  مؤشرات آلية للمراجعة — ليست تقييماً رسمياً
                 </p>
-                {parsed.pct !== null && (
-                  <span className="font-de text-3xl font-extrabold text-primary">{parsed.pct}%</span>
-                )}
               </div>
 
               {/* أشرطة المعايير الأربعة */}
@@ -247,14 +243,6 @@ export function AiGoetheWriter() {
                   </div>
                 ))}
               </div>
-
-              {/* الحكم */}
-              {parsed.verdict && (
-                <p className="rounded-xl border bg-muted/30 p-3 text-sm">
-                  <span className="font-bold">الحكم: </span>
-                  <span className="font-de font-bold text-primary" dir="ltr" lang="de">{parsed.verdict}</span>
-                </p>
-              )}
 
               {/* الأخطاء */}
               {parsed.errors && (

@@ -55,6 +55,7 @@ function NavLinks({ className, onNavigate }: { className?: string; onNavigate?: 
       <Link
         href="/learning-path"
         onClick={onNavigate}
+        aria-current={pathname.startsWith("/learning-path") || pathname.startsWith("/lesson") ? "page" : undefined}
         className={cn(
           "rounded-md px-3 py-2 text-sm font-semibold transition-colors",
           pathname.startsWith("/learning-path") || pathname.startsWith("/lesson")
@@ -67,6 +68,7 @@ function NavLinks({ className, onNavigate }: { className?: string; onNavigate?: 
       <Link
         href="/dashboard"
         onClick={onNavigate}
+        aria-current={pathname.startsWith("/dashboard") ? "page" : undefined}
         className={cn(
           "rounded-md px-3 py-2 text-sm font-semibold transition-colors",
           pathname.startsWith("/dashboard")

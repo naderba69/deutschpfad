@@ -18,34 +18,51 @@ export class LLMProviderError extends Error {
   }
 }
 
-const DEFAULT_TIMEOUT_MS = 45000;
+const DEFAULT_TIMEOUT_MS = 45_000;
 
-/** جلب JSON مع معالجة موحّدة للأخطاء (429/401/5xx/شبكة) */
-async function fetchJson(url: string, init: RequestInit, timeoutMs = DEFAULT_TIMEOUT_MS): Promise<Record<string, unknown>> {
-  let res: Response;
+/** Fetch and consume the response under both the per-provider and request-wide abort signals. */
+async function fetchJson(
+  url: string,
+  init: RequestInit,
+  requestSignal?: AbortSignal,
+  timeoutMs = DEFAULT_TIMEOUT_MS,
+): Promise<Record<string, unknown>> {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(
+    () => controller.abort(new DOMException("انتهت مهلة الاتصال", "TimeoutError")),
+    timeoutMs,
+  );
+  const abortFromRequest = () => controller.abort(
+    requestSignal?.reason ?? new DOMException("تم إلغاء الطلب", "AbortError"),
+  );
+  if (requestSignal?.aborted) abortFromRequest();
+  else requestSignal?.addEventListener("abort", abortFromRequest, {once: true});
+
   try {
-    res = await fetch(url, { ...init, signal: AbortSignal.timeout(timeoutMs) });
+    const res = await fetch(url, {...init, signal: controller.signal});
+    if (res.status === 429) throw new LLMProviderError("تجاوز حد الطلبات (429)", 429, true);
+    if (res.status === 401 || res.status === 403) {
+      throw new LLMProviderError("المفتاح غير صالح — تحقق من إعدادات الخادم", res.status, false);
+    }
+    if (res.status >= 500) {
+      throw new LLMProviderError(`خطأ خادم المزوّد (${res.status})`, res.status, true);
+    }
+    if (!res.ok) {
+      const text = await res.text().catch(() => "");
+      throw new LLMProviderError(`HTTP ${res.status}: ${text.slice(0, 200)}`, res.status, true);
+    }
+    return (await res.json()) as Record<string, unknown>;
   } catch (err) {
-    if (err instanceof Error && err.name === "TimeoutError") {
+    if (requestSignal?.aborted) throw requestSignal.reason ?? err;
+    if (controller.signal.aborted) {
       throw new LLMProviderError("انتهت مهلة الاتصال", undefined, true);
     }
+    if (err instanceof LLMProviderError) throw err;
     throw new LLMProviderError("خطأ في الشبكة", undefined, true);
+  } finally {
+    clearTimeout(timeoutId);
+    requestSignal?.removeEventListener("abort", abortFromRequest);
   }
-
-  if (res.status === 429) {
-    throw new LLMProviderError("تجاوز حد الطلبات (429)", 429, true);
-  }
-  if (res.status === 401 || res.status === 403) {
-    throw new LLMProviderError("المفتاح غير صالح — تحقق من إعدادات الخادم", res.status, false);
-  }
-  if (res.status >= 500) {
-    throw new LLMProviderError(`خطأ خادم المزوّد (${res.status})`, res.status, true);
-  }
-  if (!res.ok) {
-    const text = await res.text().catch(() => "");
-    throw new LLMProviderError(`HTTP ${res.status}: ${text.slice(0, 200)}`, res.status, true);
-  }
-  return (await res.json()) as Record<string, unknown>;
 }
 
 /* ═══════════ Google Gemini ═══════════ */
@@ -53,6 +70,7 @@ async function fetchJson(url: string, init: RequestInit, timeoutMs = DEFAULT_TIM
 export async function callGemini(
   messages: LLMMessage[],
   opts: { maxTokens?: number; temperature?: number },
+  signal?: AbortSignal,
 ): Promise<string> {
   const system = messages.filter((m) => m.role === "system").map((m) => m.content).join("\n");
   const contents = messages
@@ -76,7 +94,7 @@ export async function callGemini(
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
-  });
+  }, signal);
 
   const text =
     (data as { candidates?: { content?: { parts?: { text?: string }[] } }[] })
@@ -93,6 +111,7 @@ export async function callGemini(
 export async function callGroq(
   messages: LLMMessage[],
   opts: { maxTokens?: number; temperature?: number },
+  signal?: AbortSignal,
 ): Promise<string> {
   const url = "https://api.groq.com/openai/v1/chat/completions";
   const data = await fetchJson(url, {
@@ -107,7 +126,7 @@ export async function callGroq(
       temperature: opts.temperature ?? 0.7,
       max_tokens: opts.maxTokens ?? 1024,
     }),
-  });
+  }, signal);
 
   const text = (data as { choices?: { message?: { content?: string } }[] })
     .choices?.[0]?.message?.content ?? "";
@@ -122,6 +141,7 @@ export async function callGroq(
 export async function callOpenRouter(
   messages: LLMMessage[],
   opts: { maxTokens?: number; temperature?: number },
+  signal?: AbortSignal,
 ): Promise<string> {
   const url = "https://openrouter.ai/api/v1/chat/completions";
   const data = await fetchJson(url, {
@@ -138,7 +158,7 @@ export async function callOpenRouter(
       temperature: opts.temperature ?? 0.7,
       max_tokens: opts.maxTokens ?? 1024,
     }),
-  });
+  }, signal);
 
   const text = (data as { choices?: { message?: { content?: string } }[] })
     .choices?.[0]?.message?.content ?? "";

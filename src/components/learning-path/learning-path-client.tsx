@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import {Eraser, Flag, Info, Rocket, Sparkles} from "lucide-react";
+import {Eraser, Flag, Info, Sparkles} from "lucide-react";
 
 import {LevelSection} from "@/components/learning-path/level-section";
 import {SequentialPath} from "@/components/learning-path/sequential-path";
@@ -22,7 +22,7 @@ import {FilterChip} from "@/components/ui/filter-chip";
  * (التقدم من مخزن LocalStorage عبر ProgressProvider)
  */
 export function LearningPathClient() {
-  const { completedUnits, sealedLevels, isHydrated, toggleUnit, completeUnit, uncompleteUnit, resetProgress, completedLessonsSet } =
+  const { completedUnits, sealedLevels, isHydrated, resetProgress, completedLessonsSet } =
     useProgress();
 
   const overallPct = isHydrated ? getOverallProgress(completedUnits) : 0;
@@ -33,27 +33,13 @@ export function LearningPathClient() {
     if (isHydrated) setMapLevel(activeLevel as LevelCode);
   }, [isHydrated, activeLevel]);
 
-  const handleToggle = (unitId: string) => toggleUnit(unitId);
-
-  /** تجربة سريعة: إكمال أول وحدة من كل مستوى مفتوح */
-  const completeFirstUnits = () => {
-    for (const level of LEVELS) {
-      const first = getUnitsByLevel(level.code)[0];
-      if (first && getUnitUnlockedForDemo(first)) completeUnit(first.id);
-    }
-  };
-
-  /** هل الوحدة مفتوحة؟ (نسخة مبسطة لزر التجربة) */
-  function getUnitUnlockedForDemo(unit: { level: string; number: number }): boolean {
-    const active = getActiveLevel(completedUnits, sealedLevels);
-    const levelIdx = LEVELS.findIndex((l) => l.code === unit.level);
-    const activeIdx = LEVELS.findIndex((l) => l.code === active);
-    return levelIdx <= activeIdx;
-  }
-
   const confirmReset = () => {
     if (typeof window !== "undefined" && window.confirm("هل تريد مسح كل تقدمك المحفوظ على هذا الجهاز؟")) {
       resetProgress();
+      // إعادة تعيين كاملة للتقدم: العدادات التراكمية (XP/المستوى) + الملف الشخصي
+      // حتى لا تبقى قيم قديمة ظاهرة بعد المسح. (سجل الأحداث يُبقى كسجل نشاط.)
+      void import("@/lib/gamification/counters").then(({resetCounters}) => resetCounters());
+      void import("@/lib/storage/learner").then(({clearLearnerProfile}) => clearLearnerProfile());
     }
   };
 
@@ -100,15 +86,6 @@ export function LearningPathClient() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={completeFirstUnits}
-              className="justify-start"
-            >
-              <Rocket className="h-4 w-4 text-primary" aria-hidden="true" />
-              تجربة سريعة: افتح أول وحدة بكل مستوى
-            </Button>
             <Button variant="ghost" size="sm" onClick={confirmReset} className="justify-start text-destructive hover:text-destructive">
               <Eraser className="h-4 w-4" aria-hidden="true" />
               إعادة تعيين التقدم
@@ -159,7 +136,6 @@ export function LearningPathClient() {
               units={getUnitsByLevel(level.code)}
               completed={completedUnits}
               isActive={level.code === activeLevel}
-              onToggleUnit={handleToggle}
             />
           ))}
         </div>

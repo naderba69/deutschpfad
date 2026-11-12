@@ -2,6 +2,7 @@
  * اختبار E2E: نظام التبويبات التفصيلية في الشرح (طريقة عرض احترافية)
  */
 import { test, expect } from "@playwright/test";
+import { navigateLessonToSection } from "./helpers/lesson-navigation";
 
 test("الشرح يعرض التبويبات التفصيلية (لا سكرول طويل)", async ({ page }) => {
   await page.goto("/lesson/a1-01");
@@ -23,16 +24,7 @@ test("الشرح يعرض التبويبات التفصيلية (لا سكرول
     localStorage.clear();
   });
   await page.reload();
-  await page.waitForTimeout(1500);
-
-  // نمر إلى قسم الشرح (الخطوة 3 — بعد 3 نقرات)
-  for (let i = 0; i < 3; i++) {
-    const nextBtn = page.getByRole("button", { name: /^التالي:/ }).first();
-    if (await nextBtn.isVisible().catch(() => false)) {
-      await nextBtn.click().catch(() => {});
-      await page.waitForTimeout(300);
-    } else break;
-  }
+  await navigateLessonToSection(page, "الشرح النظري");
 
   // التبويبات التفصيلية تظهر
   await expect(page.getByRole("tab", { name: "الشرح" }).first()).toBeVisible({ timeout: 8000 });

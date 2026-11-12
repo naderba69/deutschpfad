@@ -9,7 +9,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "درب الألمانية — DeutschPfad",
     short_name: "DeutschPfad",
     description:
-      "منصة عربية متكاملة لتعليم اللغة الألمانية من A1 إلى B2 وفق منهجية معهد غوته ومعايير CEFR — تمارين تفاعلية ونطق صوتي ومراجعة ذكية.",
+      "منصة عربية لتعلّم الألمانية عبر مواد تدريبية في نطاقات A1–B2 تستلهم موضوعات من CEFR وGoethe، دون ادعاء اعتماد أو مطابقة رسمية.",
     start_url: "/",
     display: "standalone",
     display_override: ["standalone", "minimal-ui"],

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { getServerLimit } from "@/lib/llm/server/counter";
+import { getServerLimit, getSharedServerUsage } from "@/lib/llm/server/counter";
 import { configuredProviders, serverModeEnabled } from "@/lib/llm/server/config";
 
 export const runtime = "nodejs";
@@ -21,10 +21,14 @@ export async function GET() {
       usageToday: 0,
     });
   }
-  return NextResponse.json({
-    configured: true,
-    providers: configuredProviders(),
-    dailyLimit: getServerLimit(),
-    usageToday: 0,
-  });
+  try {
+    return NextResponse.json({
+      configured: true,
+      providers: configuredProviders(),
+      dailyLimit: getServerLimit(),
+      usageToday: await getSharedServerUsage(),
+    });
+  } catch {
+    return NextResponse.json({configured: false, status: "counter-unavailable"}, {status: 503});
+  }
 }

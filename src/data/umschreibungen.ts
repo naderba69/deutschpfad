@@ -1,7 +1,7 @@
 /**
  * ═══════════════════════════════════════════════════════════
- *  تدريب تحويل الجمل (Umschreibungen) — بأساليب Goethe B2
- *  الأنواع العشرة الرسمية في امتحان غوته B2 (Grammatik):
+ *  تدريب منصة على تحويل الجمل والتراكيب الألمانية لمستويي B1–B2.
+ *  هذه الأنواع ليست قسماً رسمياً أو بنك أسئلة لامتحان Goethe B2:
  *  1) Aktiv → Passiv        6) Direkte → Indirekte Rede
  *  2) Passiv → Aktiv        7) weil → wegen (اسمي)
  *  3) Satz → Nominalisierung 8) Passiv → sich lassen
@@ -39,7 +39,7 @@ export interface UmschreibExercise {
   explanation: string;
 }
 
-/** الأنواع العشرة الرسمية */
+/** أنواع التحويل المختارة للتدريب داخل المنصة */
 export const UMSCHREIB_TYPEN: UmschreibTyp[] = [
   {
     id: "aktiv-passiv",

@@ -154,7 +154,7 @@ export function MiniTestSection({
 
       {current && (
         <div key={`${current.id}-${round}`}>
-          <ExerciseRenderer exercise={current} onResult={(r) => handleResult(r, current)} />
+          <ExerciseRenderer sourceId={lessonId ?? unitId} lessonId={lessonId} exercise={current} onResult={(r) => handleResult(r, current)} />
         </div>
       )}
 

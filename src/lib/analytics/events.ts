@@ -12,49 +12,78 @@ type DistributiveOmit<T, K extends keyof any> = T extends any ? Omit<T, K> : nev
 
 export type AnalyticsEventInput = DistributiveOmit<AnalyticsEvent, "ts"> & { ts?: number };
 
-export async function recordEvent(event: AnalyticsEventInput): Promise<void> {
+export async function recordEvent(event: AnalyticsEventInput): Promise<boolean> {
+  const full: AnalyticsEvent = { ...event, ts: event.ts ?? Date.now() } as AnalyticsEvent;
+  // محاولة بذر العدادات قبل إضافة الحدث لتجنب احتسابه مرتين.
   try {
-    const full: AnalyticsEvent = { ...event, ts: event.ts ?? Date.now() } as AnalyticsEvent;
-    // ═══ P1-01: بذر العدادات من الأحداث الموجودة قبل إضافة الحدث الجديد ═══
-    // (كان البذر يحدث بعد الإضافة فيحسب الحدث الجديد مرتين: مرة في البذر
-    //  ومرة في bumpCounter)
     const {ensureSeeded} = await import("@/lib/gamification/counters");
     await ensureSeeded();
+  } catch {
+    // تعطل العدادات لا ينبغي أن يمنع حفظ الحدث نفسه.
+  }
+  try {
     await (await getDb()).add("events", full);
-    if (full.type === "exercise-result" && full.lessonId && typeof window !== "undefined") {
-      window.dispatchEvent(
-        new CustomEvent(GOAL_EVIDENCE_UPDATED_EVENT, {detail: {lessonId: full.lessonId}}),
-      );
-    }
-    // تحديث العدادات التراكمية (XP لا ينقص أبداً) — ذرية عبر transaction
+  } catch {
+    return false;
+  }
+  if (full.type === "exercise-result" && full.lessonId && typeof window !== "undefined") {
+    window.dispatchEvent(
+      new CustomEvent(GOAL_EVIDENCE_UPDATED_EVENT, {detail: {lessonId: full.lessonId}}),
+    );
+  }
+  // فشل تحديث العدادات لا يعني أن الحدث نفسه لم يُحفظ.
+  try {
     await import("@/lib/gamification/counters").then(({bumpCounter}) => bumpCounter(full));
   } catch {
-    /* تجاهل — الأحداث تحليلية غير حرجة */
+    // تعاد مزامنة العدادات عند التهيئة التالية.
   }
+  return true;
 }
 
-/** كل الأحداث (للبذر الأولي للعدادات) */
-export async function getAllEvents(): Promise<AnalyticsEvent[]> {
+/** كل الأحداث مع فصل فشل القراءة عن قاعدة بيانات فارغة. */
+export type AllEventsReadResult =
+  | {ok: true; events: AnalyticsEvent[]}
+  | {ok: false; events: []};
+
+export async function getAllEventsResult(): Promise<AllEventsReadResult> {
   try {
-    return await (await getDb()).getAll("events");
+    return {ok: true, events: await (await getDb()).getAll("events")};
   } catch {
-    return [];
+    return {ok: false, events: []};
   }
 }
 
-/** آخر N أحداث (الأحدث أولاً) */
-export async function getRecentEvents(limit = 100): Promise<AnalyticsEvent[]> {
+/** واجهة توافقية؛ كل الأحداث (للبذر الأولي للعدادات). */
+export async function getAllEvents(): Promise<AnalyticsEvent[]> {
+  return (await getAllEventsResult()).events;
+}
+
+/** آخر N أحداث (الأحدث أولاً) مع التمييز بين القائمة الفارغة وفشل القراءة. */
+export type RecentEventsReadResult =
+  | {ok: true; events: AnalyticsEvent[]}
+  | {ok: false; events: []};
+
+export async function getRecentEventsResult(limit = 100): Promise<RecentEventsReadResult> {
   try {
     const all = await (await getDb()).getAll("events");
-    return all.sort((a, b) => b.ts - a.ts).slice(0, limit);
+    return {ok: true, events: all.sort((a, b) => b.ts - a.ts).slice(0, limit)};
   } catch {
-    return [];
+    return {ok: false, events: []};
   }
 }
 
-/** إحصائيات مجمّعة (للوحة والمراجعة الذكية) */
-export async function getEventStats(): Promise<EventStats> {
-  const events = await getRecentEvents(500);
+/** واجهة توافقية؛ استخدم getRecentEventsResult حين يؤثر الفراغ في قرار المستخدم. */
+export async function getRecentEvents(limit = 100): Promise<AnalyticsEvent[]> {
+  return (await getRecentEventsResult(limit)).events;
+}
+
+/** إحصائيات مجمّعة مع فصل تعذر القراءة عن الأصفار الصحيحة. */
+export type EventStatsReadResult = {ok: true; stats: EventStats} | {ok: false};
+
+export async function getEventStatsResult(): Promise<EventStatsReadResult> {
+  const readResult = await getRecentEventsResult(500);
+  if (!readResult.ok) return {ok: false};
+  const events = readResult.events;
 
   const exercises = events.filter((e) => e.type === "exercise-result");
   const correct = exercises.filter((e) => e.correct).length;
@@ -83,7 +112,7 @@ export async function getEventStats(): Promise<EventStats> {
     counters = null;
   }
 
-  return {
+  return {ok: true, stats: {
     totalEvents: counters?.totalEvents ?? events.length,
     exercisesAnswered: counters?.exercisesAnswered ?? exercises.length,
     exercisesCorrect: counters?.exercisesCorrect ?? correct,
@@ -102,5 +131,5 @@ export async function getEventStats(): Promise<EventStats> {
     lessonsCompleted: counters?.lessonsCompleted ?? lessons.length,
     errorTypeCounts,
     xp: counters?.xp ?? 0,
-  };
+  }};
 }

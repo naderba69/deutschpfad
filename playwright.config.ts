@@ -11,6 +11,7 @@ const chromiumPath = process.env.PLAYWRIGHT_CHROMIUM_PATH;
 
 export default defineConfig({
   testDir: "./e2e",
+  reporter: [["list"], ["html", {outputFolder: "playwright-report", open: "never"}]],
   timeout: 30_000,
   retries: 1,
   use: {

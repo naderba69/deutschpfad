@@ -12,8 +12,7 @@
  *   4) الصندوق يتمدد لأسفل (الارتفاع يزداد مع الكتابة)
  */
 import { test, expect, type Page } from "@playwright/test";
-
-import {gotoLessonStep} from "./helpers/lesson-steps";
+import { navigateLessonToSection } from "./helpers/lesson-navigation";
 
 const LONG_SENTENCE = "Ich heiße Anna und komme aus Berlin. Meine Familie wohnt in Tunis.";
 
@@ -41,9 +40,7 @@ async function gotoPronSection(page: Page) {
   await page.goto("/lesson/a1-01");
   await clearData(page);
   await page.reload();
-  await page.waitForTimeout(1500);
-  await gotoLessonStep(page, "النطق");
-  await page.waitForTimeout(900);
+  await navigateLessonToSection(page, "النطق");
 }
 
 test("الإملاء الحر: الكتابة الطويلة تظهر كاملة في صندوق يتمدد (لا قص على الجوال)", async ({ page }) => {
@@ -118,10 +115,7 @@ test("صندوق الكتابة في مهمة الكتابة الحرة يتمد
   await page.goto("/lesson/a1-01");
   await clearData(page);
   await page.reload();
-  await page.waitForTimeout(1500);
-  // إلى خطوة الكتابة
-  await gotoLessonStep(page, "الكتابة");
-  await page.waitForTimeout(900);
+  await navigateLessonToSection(page, "الكتابة");
 
   // صندوق مهمة الكتابة
   const box = page.locator('textarea[aria-label="مسودة كتابة للمراجعة الذاتية"]').first();

@@ -6,8 +6,8 @@ import {LEVELS} from "@/lib/constants/curriculum";
 import type { TestLevel } from "@/types/test";
 
 export const metadata: Metadata = {
-  title: "اختبار نهاية المستوى — Goethe-Zertifikat",
-  description: "اختبار نهاية مستوى بصيغة Goethe-Zertifikat: قراءة + استماع + قواعد + كتابة بتوقيت حقيقي.",
+  title: "اختبار تدريبي لنهاية المستوى",
+  description: "تدريب داخلي على مهارات المستوى في القراءة والاستماع والقواعد والكتابة. لا يمثل امتحان Goethe أو تقييماً رسمياً للمستوى.",
 };
 
 interface Props {

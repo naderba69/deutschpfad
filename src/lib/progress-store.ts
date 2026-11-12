@@ -38,11 +38,12 @@ export function loadProgress(): ProgressState {
 }
 
 /** حفظ التقدم */
-export function saveProgress(state: ProgressState): void {
-  if (typeof window === "undefined") return;
+export function saveProgress(state: ProgressState): boolean {
+  if (typeof window === "undefined") return false;
   try {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    return true;
   } catch {
-    // تجاهل أخطاء التخزين (وضع التصفح الخاص مثلاً)
+    return false;
   }
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {BookOpen, Check, CheckCircle2, ClipboardCheck, Lock, PlayCircle} from "lucide-react";
+import {BookOpen, CheckCircle2, ClipboardCheck, Lock, PlayCircle} from "lucide-react";
 
 import {getFirstLessonMetaForUnit} from "@/data/lessons/meta";
 import {getUnitLessonCount} from "@/lib/constants/curriculum";
@@ -14,13 +14,12 @@ import {cn} from "@/lib/utils";
 interface UnitRowProps {
   unit: Unit;
   status: "locked" | "current" | "completed";
-  onToggle: (unitId: string) => void;
 }
 
 /**
  * صف وحدة دراسية واحدة داخل خارطة الطريق
  */
-export function UnitRow({ unit, status, onToggle }: UnitRowProps) {
+export function UnitRow({ unit, status }: UnitRowProps) {
   const isLocked = status === "locked";
   const isCompleted = status === "completed";
   const lesson = getFirstLessonMetaForUnit(unit.id);
@@ -109,7 +108,7 @@ export function UnitRow({ unit, status, onToggle }: UnitRowProps) {
                 <span className="hidden sm:inline">ابدأ الدرس</span>
               </Link>
             </Button>
-          ) : isLocked ? (
+          ) : (
             <TooltipProvider delayDuration={150}>
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -130,22 +129,6 @@ export function UnitRow({ unit, status, onToggle }: UnitRowProps) {
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
-          ) : (
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => onToggle(unit.id)}
-              aria-pressed={isCompleted}
-              aria-label={
-                isCompleted
-                  ? `إلغاء إتمام الوحدة ${unit.titleAr}`
-                  : `تعليم الوحدة ${unit.titleAr} كمكتملة (تجريبي)`
-              }
-              className="text-primary"
-            >
-              <Check className="h-3.5 w-3.5" aria-hidden="true" />
-              <span className="hidden sm:inline">إكمال (تجريبي)</span>
-            </Button>
           )}
         </div>
       </div>

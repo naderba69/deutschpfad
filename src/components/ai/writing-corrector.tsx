@@ -5,7 +5,6 @@ import {PenLine} from "lucide-react";
 
 import {AiToolShell} from "@/components/ai/ai-tool-shell";
 import {useLLM} from "@/components/providers/llm-provider";
-;
 import {writingCorrectorPrompt} from "@/lib/llm/prompts";
 
 const LEVELS = ["A1", "A2", "B1", "B2"];

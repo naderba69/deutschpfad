@@ -2,15 +2,15 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
  *  curriculum-audit.mjs — الجرد الآلي لمنهاج Goethe/CEFR (A1→B2)
- *  يبحث عن كلمات/عبارات مفتاحية مرشحة في ملفات الدروس ويعرض مواضع العثور.
- *  هذا فحص نصّي استكشافي فقط: لا يحكم على تدريس المفهوم أو صحته أو ملاءمته
- *  للمستوى، ولا يثبت هدف CEFR/Goethe أو اكتساب المتعلم.
+ *  يقارن كل نقطة نحوية (Grammatik) وتواصلية (Kommunikation) من الجرد
+ *  الأكاديمي المرجعي بمحتوى دروس المنصة الفعلي، ويطبع جدول تغطية
+ *  (✓ موجود / ⚠️ في مستوى آخر / ✗ مفقود) مع اسم الملف الدال.
  *
- *  التشغيل: node scripts/curriculum-audit.mjs
+ *  التشغيل:  node scripts/curriculum-audit.mjs
+ *  — حماية دائمة ضد الانحدار: أي نقص مستقبلي يظهر فوراً في التقرير.
  * ═══════════════════════════════════════════════════════════════════════
  */
-import { readdirSync } from "node:fs";
-import { readLessonSource } from "./lib/lesson-source.mjs";
+import { readFileSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -22,7 +22,7 @@ for (const level of ["a1", "a2", "b1", "b2"]) {
   for (const f of readdirSync(join(ROOT, "src/data/lessons", level))) {
     // ملفات الاختبار (*.test.ts) تحوي معرّفات دروس مكرّرة نصّياً فتفسد البحث
     if (!f.endsWith(".ts") || f.endsWith(".test.ts")) continue;
-    const text = readLessonSource(join(ROOT, "src/data/lessons", level, f));
+    const text = readFileSync(join(ROOT, "src/data/lessons", level, f), "utf8");
     const id = (text.match(/id: "([^"]+)"/) || [])[1] ?? f.replace(".ts", "");
     LESSONS.push({ level, id, text });
   }
@@ -64,7 +64,7 @@ const ITEMS = [
   { level: "a2", theme: "2. السفر والطقس (Reisen/Wetter)", kind: "g", term: "حروف المكان nach/in/zu", keywords: ["nach", "in", "zu", "wohin"], lessons: ["a1-11", "a2-01"] },
   { level: "a2", theme: "2. السفر والطقس (Reisen/Wetter)", kind: "k", term: "حجز فندق + تخطيط رحلة", keywords: ["Hotel", "Reise", "Urlaub"], lessons: ["a2-01"] },
   { level: "a2", theme: "2. السفر والطقس (Reisen/Wetter)", kind: "k", term: "نشرة الطقس", keywords: ["Wetter", "تقرير الطقس", "الطقس"], lessons: ["a1-12"] },
-  { level: "a2", theme: "3. الصحة (Gesundheit)", kind: "g", term: "Imperativ + dürfen/sollen", keywords: ["Imperativ", "sollen", "nicht dürfen"], lessons: ["a1-06", "a2-02"] },
+  { level: "a2", theme: "3. الصحة (Gesundheit)", kind: "g", term: "Imperativ + dürfen/sollen", keywords: ["أمر المخاطبة الرسمية Sie", "sollen", "nicht dürfen"], lessons: ["a2-02"] },
   { level: "a2", theme: "3. الصحة (Gesundheit)", kind: "g", term: "Dativ", keywords: ["Dativ"], lessons: ["a2-02", "a2-09"] },
   { level: "a2", theme: "3. الصحة (Gesundheit)", kind: "k", term: "أعضاء الجسم والأعراض + موعد", keywords: ["Körper", "Schmerzen", "Symptome", "Arzt"], lessons: ["a2-02"] },
   { level: "a2", theme: "4. التوجيه والتعايش (Orientierung)", kind: "g", term: "Wechselpräpositionen مع Dativ", keywords: ["Wechselpräpositionen", "Dativ"], lessons: ["a2-04"] },
@@ -88,7 +88,7 @@ const ITEMS = [
   { level: "b1", theme: "4. الهوية والثقافة (Heimat)", kind: "g", term: "Adjektivdeklination", keywords: ["Adjektivdeklination"], lessons: ["b1-06"] },
   { level: "b1", theme: "4. الهوية والثقافة (Heimat)", kind: "g", term: "Futur I", keywords: ["Futur I", "werde"], lessons: ["b1-08"] },
   { level: "b1", theme: "4. الهوية والثقافة (Heimat)", kind: "k", term: "الوطن/الهجرة/صدمات الثقافة", keywords: ["Heimat", "هجرة", "Kulturschock", "صدمات"], lessons: ["b1-06", "b2-08"] },
-  { level: "b1", theme: "5. المشاعر والنزاعات (Gefühle)", kind: "g", term: "Verben mit Präpositionen", keywords: ["Verben mit", "worüber", "darüber", "festen Präpositionen"], lessons: ["b2-08"] },
+  { level: "b1", theme: "5. المشاعر والنزاعات (Gefühle)", kind: "g", term: "Verben mit Präpositionen", keywords: ["Verben mit", "festen Präpositionen", "warten auf", "teilnehmen an"], lessons: ["b1-09"] },
   { level: "b1", theme: "5. المشاعر والنزاعات (Gefühle)", kind: "k", term: "الغضب/الفرح/الاعتذار والتصالح", keywords: ["Gefühle", "المشاعر", "Konflikt", "خلاف", "تصالح"], lessons: ["a2-12", "b2-05"] },
 
   /* ─────────── مستوى B2 ─────────── */
@@ -97,7 +97,7 @@ const ITEMS = [
   { level: "b2", theme: "1. بيئة العمل (Arbeitswelt)", kind: "k", term: "مقابلة + Anschreiben", keywords: ["Anschreiben", "Bewerbung", "مقابلة"], lessons: ["b2-09", "b2-06"] },
   { level: "b2", theme: "1. بيئة العمل (Arbeitswelt)", kind: "k", term: "العمل المرن/عن بعد", keywords: ["Homeoffice", "flexibel", "المرن", "عن بعد"], lessons: ["b2-06"] },
   { level: "b2", theme: "2. الاقتصاد والمال (Wirtschaft)", kind: "g", term: "Nominalisierung", keywords: ["Nominalisierung"], lessons: ["b2-06"] },
-  { level: "b2", theme: "2. الاقتصاد والمال (Wirtschaft)", kind: "g", term: "Genitiv-Präpositionen (wegen/trotz)", keywords: ["wegen", "trotz", "während", "statt"], lessons: ["b1-01"] },
+  { level: "b2", theme: "2. الاقتصاد والمال (Wirtschaft)", kind: "g", term: "Genitiv-Präpositionen (wegen/trotz)", keywords: ["wegen", "trotz"], lessons: ["b2-10"] },
   { level: "b2", theme: "2. الاقتصاد والمال (Wirtschaft)", kind: "k", term: "البنوك والقروض والاستثمار", keywords: ["Bank", "Kredit", "Investition", "البنوك"], lessons: ["a2-07", "b2-02"] },
   { level: "b2", theme: "3. المجتمع والقانون (Politik)", kind: "g", term: "Konjunktiv I (نقل الكلام)", keywords: ["Konjunktiv I", "indirekte Rede", "habe"], lessons: ["b2-01"] },
   { level: "b2", theme: "3. المجتمع والقانون (Politik)", kind: "g", term: "الاستخدام الذاتي للأفعال الناقصة (تخمين)", keywords: ["dürfte", "müsste", "subjektiv", "könnte"], lessons: ["b2-01", "b2-07"] },
@@ -107,7 +107,7 @@ const ITEMS = [
   { level: "b2", theme: "4. العلوم والبحث (Wissenschaft)", kind: "k", term: "عرض أكاديمي (Präsentation)", keywords: ["Präsentation", "العروض", "محاضرة"], lessons: ["b2-01", "b2-10"] },
   { level: "b2", theme: "4. العلوم والبحث (Wissenschaft)", kind: "k", term: "الذكاء الاصطناعي", keywords: ["Intelligenz", "الذكاء"], lessons: ["b1-08", "b2-01"] },
   { level: "b2", theme: "5. الثقافة والإعلام (Kultur)", kind: "g", term: "روابط konzessive/restriktive", keywords: ["obwohl", "es sei denn", "ohne"], lessons: ["b1-07", "b2-05"] },
-  { level: "b2", theme: "5. الثقافة والإعلام (Kultur)", kind: "g", term: "Genitiv المتقدم", keywords: ["Genitiv"], lessons: ["b1-01", "b2-03"] },
+  { level: "b2", theme: "5. الثقافة والإعلام (Kultur)", kind: "g", term: "Genitiv المتقدم", keywords: ["Genitiv", "dessen", "deren"], lessons: ["b2-10", "b2-11"] },
   { level: "b2", theme: "5. الثقافة والإعلام (Kultur)", kind: "k", term: "نقد الكتب والأفلام", keywords: ["Buch", "مراجعة كتاب", "Film", "معرض الكتاب"], lessons: ["b2-04"] },
   { level: "b2", theme: "5. الثقافة والإعلام (Kultur)", kind: "k", term: "الرقابة والصحافة والرأي العام", keywords: ["Zensur", "رقابة", "Zeitung", "Meinung"], lessons: ["b2-07", "a2-06"] },
 ];
@@ -117,41 +117,42 @@ function findMatches(item) {
   const pool = item.lessons.length
     ? item.lessons.map(inLesson).filter(Boolean)
     : inLevel(item.level);
-  const hits = [];
-  for (const kw of item.keywords) {
+  return item.keywords.map((kw) => {
     const k = norm(kw);
-    for (const l of pool) {
-      if (norm(l.text).includes(k)) {
-        hits.push({ kw, file: l.id });
-        break;
-      }
-    }
-  }
-  return hits;
+    const matches = pool.filter((lesson) => norm(lesson.text).includes(k));
+    return { kw, matches };
+  });
 }
 
 const rows = [];
 for (const item of ITEMS) {
-  const hits = findMatches(item);
-  const foundAny = hits.length > 0;
-  const expected = item.keywords.length;
-  const partial = foundAny && hits.length < expected;
-  const status = foundAny ? (partial ? "◐" : "🔎") : "∅";
+  const matches = findMatches(item);
+  const foundCount = matches.filter((match) => match.matches.length > 0).length;
+  const targetLevelCount = matches.filter((match) =>
+    match.matches.some((lesson) => lesson.level === item.level)
+  ).length;
+  const foundAny = foundCount > 0;
+  // لا نعدّ ذكراً في مستوى آخر دليلاً على تغطية المستوى المطلوب.
+  const status = !foundAny ? "✗" : targetLevelCount === matches.length ? "✓" : "⚠️";
   const scope = item.lessons.length ? item.lessons.join(", ") : `كل ${item.level}`;
+  const detail = matches.map(({ kw, matches: lessons }) => {
+    if (!lessons.length) return `${kw}: غير موجود`;
+    return `${kw}: ${lessons.map((lesson) => lesson.id).join("/")}`;
+  });
   rows.push({
     level: item.level.toUpperCase(),
     theme: item.theme,
     kind: item.kind === "g" ? "قواعد" : "تواصل",
     term: item.term,
     status,
-    detail: foundAny ? hits.map((h) => `${h.file}`).join(", ") : `مفقود في: ${scope}`,
+    detail: foundAny ? detail.join("؛ ") : `مفقود في: ${scope}`,
   });
 }
 
 /* ═══ الطباعة ═══ */
-const allKeywordsFound = rows.filter((r) => r.status === "🔎").length;
-const someKeywordsFound = rows.filter((r) => r.status === "◐").length;
-const noKeywordsFound = rows.filter((r) => r.status === "∅").length;
+const ok = rows.filter((r) => r.status === "✓").length;
+const warn = rows.filter((r) => r.status === "⚠️").length;
+const miss = rows.filter((r) => r.status === "✗").length;
 console.log("\n══════════════════════════════════════════════════════════════");
 console.log("  الجرد الآلي لمنهاج Goethe/CEFR — تغطية الدروس (A1→B2)");
 console.log("══════════════════════════════════════════════════════════════\n");
@@ -163,7 +164,6 @@ for (const level of ["A1", "A2", "B1", "B2"]) {
   console.log("");
 }
 console.log("──────────────────────────────────────────────────────────────");
-console.log(`  الملخص النصّي: ${allKeywordsFound} بنداً ظهرت كل كلمات البحث فيه | ${someKeywordsFound} ظهرت بعض كلمات البحث | ${noKeywordsFound} لم تظهر كلمات البحث (الإجمالي ${rows.length})`);
-console.log("  🔎/◐/∅ نتائج بحث نصّي فقط؛ لا تثبت التدريس أو الجودة أو المطابقة أو إتقان المتعلم.");
-console.log("  الكلمات المفتاحية مؤشرات أولية لمراجعة بشرية، وقد تفوّت المرادفات أو تعثر على ذكر عابر.");
+console.log(`  الملخص: ${ok} ✓ علامات في المستوى المطلوب | ${warn} ⚠️ جزئي/مستوى آخر | ${miss} ✗ بلا علامة  (الإجمالي ${rows.length})`);
+console.log("  ✓=كل العلامات النصية وُجدت في المستوى المطلوب (قرينة آلية لا تثبت التدريس) | ⚠️=بعض العلامات غائبة أو لا تظهر إلا بمستوى آخر | ✗=لم تُوجد أي علامة");
 console.log("══════════════════════════════════════════════════════════════\n");

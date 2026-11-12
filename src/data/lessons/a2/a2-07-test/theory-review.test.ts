@@ -211,7 +211,7 @@ describe("A2-07 audited lesson", () => {
     });
 
     expect(ids(lessonA207.flashcards)).toEqual(
-      Array.from({ length: 12 }, (_, index) => `fc${index + 1}`).sort(),
+      Array.from({ length: 13 }, (_, index) => `fc${index + 1}`).sort(),
     );
     expect(
       lessonA207.flashcards.map((card) => [card.id, card.de, card.ar, card.example, card.exampleAr, card.level]),
@@ -228,6 +228,7 @@ describe("A2-07 audited lesson", () => {
       ["fc10", "die Gebühr", "الرسم / رسوم الخدمة", "Wo finde ich die Gebühren?", "أين أجد معلومات الرسوم؟", "A2"],
       ["fc11", "die Übersicht", "ملخص المعلومات / جدول المعلومات", "Die Gebühren stehen in der Übersicht.", "الرسوم واردة في ملخص المعلومات.", "A2"],
       ["fc12", "das Kontomodell", "نموذج الحساب", "Es gibt zwei Kontomodelle.", "يوجد نموذجان للحساب.", "A2"],
+      ["fc13", "der Kredit", "القرض / السلفة", "Ich nehme einen Kredit bei der Bank.", "آخذ قرضاً من البنك.", "A2"],
     ],
     );
 

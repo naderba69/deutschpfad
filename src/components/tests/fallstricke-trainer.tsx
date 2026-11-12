@@ -1,9 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import * as React from "react";
 import {PlayCircle, RotateCcw, Volume2} from "lucide-react";
 
 import {FALLSTRICKE} from "@/data/exams/fallstricke";
+import {speakGerman} from "@/lib/speech/voices";
 import {shuffleTrapItem} from "@/lib/tests/shuffle-questions";
 import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
@@ -11,12 +13,7 @@ import {cn} from "@/lib/utils";
 
 /** نطق نص ألماني (لتمارين الاستماع) */
 function speak(text: string) {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-  window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = "de-DE";
-  u.rate = 0.95;
-  window.speechSynthesis.speak(u);
+  speakGerman(text, {rate: 0.95});
 }
 
 /**
@@ -33,7 +30,6 @@ export function FallstrickeTrainer() {
   const [log, setLog] = React.useState<Record<string, number>>({});
 
   // خلط الخيارات لكل محاولة (مع نقل فهرسي الصحيح والمصيدة)
-  // eslint-disable-next-line react-hooks/exhaustive-deps -- runKey مقصود: يعيد الخلط عند إعادة المحاولة
   // ترتيب الخيارات يُخلط بعد التركيب فقط، لأن العشوائية في التصيير تُسبّب خطأ الـ hydration
   const [exercises, setExercises] = React.useState(() => FALLSTRICKE);
   React.useEffect(() => {
@@ -78,7 +74,7 @@ export function FallstrickeTrainer() {
         </p>
         <p className="mt-1 text-sm text-muted-foreground">
           {pct >= 80
-            ? "ممتاز! أنت تعرف فخاخ الامتحان — طبّق هذه العين في محرك الامتحان الكامل."
+            ? "أحسنت في هذه المجموعة التدريبية — واصل تطبيق استراتيجيات القراءة والاستماع."
             : pct >= 50
               ? "جيد — أعد التدريب وركّز على شرح «لماذا المصيدة» لكل تمرين."
               : "لا بأس — هذا بالضبط سبب التدريب. أعد المحاولة وسترى الفرق."}
@@ -124,7 +120,7 @@ export function FallstrickeTrainer() {
             إعادة التدريب
           </Button>
           <Button asChild variant="outline">
-            <a href="/tests/b2">محرك الامتحان الكامل</a>
+            <Link href="/tests/b2">تدريب B2</Link>
           </Button>
         </div>
       </div>

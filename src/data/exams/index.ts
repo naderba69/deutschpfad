@@ -45,7 +45,7 @@ export const B2_SPRECHEN_SETS = [B2_SPRECHEN, B2_SPRECHEN_B];
 export const GOETHE_B2_EXAM: GoetheB2Exam = {
   id: "goethe-b2",
   title: "Goethe-Zertifikat B2",
-  titleAr: "محاكاة امتحان غوته B2 الرسمية",
+  titleAr: "تدريب مستوحى من بنية امتحان غوته B2",
   lesenMinutes: 65,
   hoerenMinutes: 40,
   schreibenMinutes: 75,

@@ -37,6 +37,7 @@ export function LevelCertificates({ completedUnits }: { completedUnits: string[]
           <button
             key={l.code}
             type="button"
+            aria-pressed={active === l.code}
             onClick={() => setActive(l.code)}
             className={cn(
               "rounded-lg border px-3 py-1.5 text-sm font-semibold transition-colors",
@@ -71,13 +72,15 @@ function CertificateView({ level, onClose }: { level: string; onClose: () => voi
         <p className="mt-3 text-xs font-bold uppercase tracking-widest text-muted-foreground">
           درب الألمانية · DeutschPfad
         </p>
-        <h3 className="mt-2 text-3xl font-extrabold">شهادة إتمام</h3>
-        <p className="mt-1 text-sm text-muted-foreground">تشهد المنصة بأن المتعلم أتم بنجاح متطلبات المستوى</p>
+        <h3 className="mt-2 text-3xl font-extrabold">شهادة إتمام داخلية</h3>
+        <p className="mt-1 text-sm text-muted-foreground">وثيقة متابعة داخلية من المنصة — ليست شهادة رسمية ولا إثباتاً لمستوى CEFR</p>
         <p className="font-de mt-4 text-5xl font-extrabold text-primary">{meta.code}</p>
         <p className="mt-1 text-lg font-bold">{meta.titleDe} — {meta.titleAr}</p>
         <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-          وفق معايير الإطار الأوروبي المرجعي للغات (CEFR) ومنهجية معهد غوته — ويشمل:
-          القواعد، المفردات، القراءة، الاستماع، الكتابة، والنطق.
+          أتمّ المتعلم 80% أو أكثر من وحدات هذا المستوى في منصة درب الألمانية،
+          وتدرّب على القواعد والمفردات والقراءة والاستماع والكتابة والنطق ضمن نطاقات
+          تدريبية مستلهمة من CEFR. إكمال الوحدات لا يثبت مستوى CEFR ولا الجاهزية
+          لامتحان خارجي.
         </p>
         <div className="mt-6 flex items-center justify-center gap-8 text-xs text-muted-foreground">
           <div>
@@ -89,8 +92,8 @@ function CertificateView({ level, onClose }: { level: string; onClose: () => voi
             <p className="font-de" dir="ltr">DeutschPfad</p>
           </div>
           <div>
-            <p className="font-bold text-foreground">الإطار</p>
-            <p className="font-de" dir="ltr">CEFR {meta.code}</p>
+            <p className="font-bold text-foreground">النطاق التدريبي</p>
+            <p className="font-de" dir="ltr">{meta.code} (داخلي)</p>
           </div>
         </div>
       </div>

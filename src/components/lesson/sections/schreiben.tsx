@@ -25,6 +25,8 @@ export function SchreibenSection({ exercises, lesson }: { exercises: WritingExer
         <ExerciseRenderer
           key={exercise.id}
           exercise={exercise}
+          sourceId={lesson.id}
+          lessonId={lesson.id}
           onResult={(result) => {
             void recordEvent({
               type: "exercise-result",

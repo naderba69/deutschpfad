@@ -11,11 +11,16 @@ export function registerServiceWorker(): void {
   // في بيئة التطوير يكون الـ SW معطلاً عن قصد (لتفادي تعارض HMR)
   if (process.env.NODE_ENV === "development") return;
 
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("/sw.js")
-      .catch(() => {
-        /* تجاهل صامت لأي فشل في التسجيل */
-      });
-  });
+  const register = () => {
+    void navigator.serviceWorker.register("/sw.js").catch(() => {
+      /* تجاهل صامت لأي فشل في التسجيل */
+    });
+  };
+
+  // قد يُحمّل المكوّن بعد حدث load (ترطيب React/تنقل عميل)، فلا ننتظر حدثاً لن يتكرر.
+  if (document.readyState === "complete") {
+    register();
+  } else {
+    window.addEventListener("load", register, { once: true });
+  }
 }

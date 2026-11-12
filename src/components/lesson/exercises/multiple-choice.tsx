@@ -6,7 +6,6 @@ import {Lightbulb} from "lucide-react";
 import {SpeakButton} from "@/components/shared/speak-button";
 import {FeedbackPanel} from "@/components/lesson/exercises/feedback-panel";
 import {useExerciseState} from "@/components/lesson/exercises/use-exercise-state";
-;
 import {evaluateMcq} from "@/lib/lesson/exercise-engine";
 import {seededShuffle} from "@/lib/lesson/shuffle";
 import {cn} from "@/lib/utils";

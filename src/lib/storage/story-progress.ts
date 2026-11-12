@@ -1,40 +1,50 @@
-/**
- * تقدم القصص 📚 — أي قصة أتممتها يُحفظ (LocalStorage)
- * — تقدم منفصل لكل متصفح — ويُعرض ✓ في المكتبة
- */
+/** تقدم القصص التفاعلية — LocalStorage محلي لكل متصفح. */
 
 const KEY = "dp:stories:v1";
 
-/** القصص المكتملة */
-export function getCompletedStories(): string[] {
-  if (typeof window === "undefined") return [];
+export type StoryProgressReadResult = {ok: true; stories: string[]} | {ok: false; stories: []};
+
+/** قراءة التقدم مع التمييز بين عدم وجود سجل وبين تعذر قراءته أو تلفه. */
+export function getCompletedStoriesResult(): StoryProgressReadResult {
+  if (typeof window === "undefined") return {ok: false, stories: []};
   try {
-    const raw = localStorage.getItem(KEY);
-    const arr = raw ? (JSON.parse(raw) as string[]) : [];
-    return Array.isArray(arr) ? arr : [];
+    const raw = window.localStorage.getItem(KEY);
+    if (raw === null) return {ok: true, stories: []};
+    const parsed: unknown = JSON.parse(raw);
+    if (!Array.isArray(parsed) || !parsed.every((id): id is string => typeof id === "string")) {
+      return {ok: false, stories: []};
+    }
+    return {ok: true, stories: parsed};
   } catch {
-    return [];
+    return {ok: false, stories: []};
   }
 }
 
-/** تسجيل إتمام قصة */
-export function markStoryCompleted(id: string): void {
+
+
+/** تسجيل إتمام قصة؛ لا يكتب فوق تقدم غير مقروء. */
+export function markStoryCompleted(id: string): boolean {
+  const result = getCompletedStoriesResult();
+  if (!result.ok || typeof window === "undefined") return false;
   try {
-    const done = new Set(getCompletedStories());
+    const done = new Set(result.stories);
     done.add(id);
-    localStorage.setItem(KEY, JSON.stringify([...done]));
+    window.localStorage.setItem(KEY, JSON.stringify([...done]));
+    return true;
   } catch {
-    /* تجاهل */
+    return false;
   }
 }
 
-/** إحصائيات لكل مستوى: كم أتممت من كم */
-export function getStoryProgress(levelCounts: Record<string, number>): Record<string, { done: number; total: number }> {
-  const done = getCompletedStories();
-  const out: Record<string, { done: number; total: number }> = {};
+/** اشتقاق الإحصاءات من قائمة قصص قرأها المستدعي بنجاح. */
+export function getStoryProgressForCompleted(
+  completed: string[],
+  levelCounts: Record<string, number>,
+): Record<string, {done: number; total: number}> {
+  const out: Record<string, {done: number; total: number}> = {};
   for (const [level, total] of Object.entries(levelCounts)) {
-    const levelStories = done.filter((id) => id.startsWith(`${level.toLowerCase()}-`));
-    out[level] = { done: levelStories.length, total };
+    const levelStories = completed.filter((id) => id.startsWith(`${level.toLowerCase()}-`));
+    out[level] = {done: levelStories.length, total};
   }
   return out;
 }

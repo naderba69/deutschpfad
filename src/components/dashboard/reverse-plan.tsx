@@ -126,9 +126,9 @@ export function ReversePlanCard() {
               <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-gold-strong" aria-hidden="true" />
               <p className="text-muted-foreground">
                 <span className="font-bold">إيقاعك الأسبوعي:</span> {plan.lessonsPerWeek} دروس +
-                اختبار ختم عند إكمال كل مستوى + {plan.weeklyTest} اختبار أسبوعي تجميعي +
-                محاكاة شفهي B2 مرة أسبوعياً. قبل الموعد بأسبوعين: محاكاة امتحان كاملة في
-                <span className="font-bold"> /tests/vollpruefung</span>.
+                اختبار تقدم داخلي عند إكمال المستوى + {plan.weeklyTest} اختباراً تدريبياً أسبوعياً +
+                تدريب شفهي B2 مرة أسبوعياً. قبل الموعد بأسبوعين: استخدم العينة التدريبية الداخلية في
+                <span className="font-bold"> /tests/vollpruefung</span>، ولا تعتبرها محاكاة كاملة أو تقديراً للجاهزية.
               </p>
             </div>
 

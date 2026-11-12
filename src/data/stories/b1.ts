@@ -90,7 +90,7 @@ const B1_2: InteractiveStory = {
         de: "Wo arbeitet Daniel jetzt?",
         ar: "أين يعمل دانيال الآن؟",
         options: [
-          { text: "Bei einer Bank", ar: "في بنك", correct: true, explanation: "نعم — هذا ما ورد في القصة: «Bei einer Bank» (في بنك)." },
+          { text: "Bei einer Bank", ar: "لدى بنك", correct: true, explanation: "نعم — هذا ما ورد في القصة: «Bei einer Bank» (لدى بنك)." },
           { text: "In einer Schule", ar: "في مدرسة", correct: false, explanation: "لا — الصواب هو الخيار المذكور في القصة." },
           { text: "In einem Krankenhaus", ar: "في مستشفى", correct: false, explanation: "لا — الصواب هو الخيار المذكور في القصة." },
         ],

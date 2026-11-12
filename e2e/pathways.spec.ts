@@ -16,11 +16,10 @@ test("المراجعة الأسبوعية: الصفحة تعمل وتظهر ال
   await expect(page.getByText(/ملخص أسبوعك|لا توجد/).first()).toBeVisible();
 });
 
-test("مؤشرات التدريب: تعرض النتائج مع توضيح أنها ليست تقديراً لـCEFR", async ({ page }) => {
+test("كفايات CEFR: الصفحة تعرض المهارات الست", async ({ page }) => {
   await page.goto("/dashboard/competencies");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("مؤشرات التدريب");
-  await expect(page.getByText("معايير النشاط تختلف؛ ليست تقديراً لـCEFR").first()).toBeVisible();
-  await expect(page.getByText("نتائج التدريبات حسب المفهوم").first()).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("CEFR");
+  await expect(page.getByText("مؤشرات التمرين والمراجعة").first()).toBeVisible();
 });
 
 test("البودكاست: المكتبة تعرض الحلقات لكل مستوى", async ({ page }) => {
@@ -43,8 +42,9 @@ test("مسار الكتابة: المراحل الأربع ظاهرة والمه
   await expect(page.getByText(/عرّف عن نفسك/).first()).toBeVisible();
 });
 
-test("مكتبة القصص: 48 قصة موزعة على المستويات", async ({ page }) => {
+test("مكتبة القصص: 60 قصة موزعة على المستويات", async ({ page }) => {
   await page.goto("/stories");
   await expect(page.getByText("60 قصص").first()).toBeVisible();
   await expect(page.getByText("في المقهى").first()).toBeVisible(); // قصة A1 إضافية
+  await expect(page.getByText(/لا تثبت إتقانها أو مستوى CEFR/).first()).toBeVisible();
 });

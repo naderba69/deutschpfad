@@ -8,7 +8,6 @@ import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Progress} from "@/components/ui/progress";
 import {useCountdown} from "@/lib/tests/use-countdown";
 import {formatTime} from "@/lib/tests/test-engine";
-;
 import {cn} from "@/lib/utils";
 
 const SESSION_OPTIONS = [
@@ -63,11 +62,12 @@ export function FocusMode() {
             <p className="text-sm text-muted-foreground">
               اختر مدة الجلسة، حدد مهامك، وركّز — لا مشتتات. (يُوصى: 25 دقيقة ثم استراحة 5)
             </p>
-            <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="مدة الجلسة">
+            <div className="flex flex-wrap gap-2" role="group" aria-label="مدة الجلسة">
               {SESSION_OPTIONS.map((o, i) => (
                 <button
                   key={o.minutes}
                   type="button"
+                  aria-pressed={session === i}
                   onClick={() => setSession(i)}
                   className={cn(
                     "rounded-lg border px-4 py-2 text-sm font-semibold transition-colors",

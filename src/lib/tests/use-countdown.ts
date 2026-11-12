@@ -33,7 +33,6 @@ export function useCountdown(totalSeconds: number, onExpire?: () => void) {
       });
     }, 1000);
     return () => clearInterval(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [totalSeconds]);
 
   return remaining;

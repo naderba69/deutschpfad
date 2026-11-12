@@ -1,14 +1,19 @@
 /**
- * دفتر الأخطاء التراكمي 📖
- * — يسجّل كل خطأ ترتكبه عبر كل الجلسات (وليس جلسة الدرس فقط):
- *   كل خطأ يتكرر يتراكم عدّاده — فيرى المتعلم «نقاط ضعفه الحقيقية»
- *   ويُراجعها من صفحة /error-notebook.
- * المخزن: IndexedDB (settings) — تقدم منفصل لكل متصفح.
+ * سجلّ الملاحظات للأخطاء التي ترسلها التمارين المدعومة عبر recordMistake.
+ * لا يمثل السجل كل نشاط المنصة ولا يقيس مستوى المتعلم. يميّز المفتاح بين
+ * الدرس والتمرين لأن معرّفات التمارين (مثل e1) تتكرر عبر الدروس.
+ * المخزن: IndexedDB (settings) — بيانات منفصلة لكل متصفح.
  */
 
 export interface NotebookEntry {
-  /** مفتاح فريد: exerciseId */
+  /** مفتاح فريد مركب من نطاق المصدر ومعرّف التمرين؛ الإدخالات القديمة قد تحمل exerciseId فقط. */
   id: string;
+  /** معرّف التمرين الأصلي للعرض */
+  exerciseId?: string;
+  /** نطاق مصدر التمرين لمنع الدمج بين مجموعات مختلفة */
+  sourceId?: string;
+  /** الدرس الذي سجّل فيه التمرين، إن كان من درس محدد */
+  lessonId?: string;
   /** نوع الخطأ (أجناس، إملاء، ترتيب…) */
   errorType: string;
   /** الشرح بالعربية (لماذا كان خطأً) */
@@ -21,7 +26,7 @@ export interface NotebookEntry {
   lastAt: number;
   /** أول مرة حصل فيها */
   firstAt: number;
-  /** هل أُتقن (أُصلح لاحقاً)؟ */
+  /** وسم داخلي قديم لاختيار المستخدم تعليمه كمُراجَع ذاتياً؛ ليس دليلاً على الإتقان. */
   mastered?: boolean;
 }
 
@@ -29,16 +34,26 @@ const KEY = "error-notebook:v1";
 
 type Store = "settings" | "progress";
 
-/** قراءة كل الأخطاء (مرتبة بالأحدث أولاً) */
-export async function getNotebook(): Promise<NotebookEntry[]> {
+export interface NotebookReadResult {
+  ok: boolean;
+  rows: NotebookEntry[];
+}
+
+/** قراءة السجل مع التمييز بين سجل فارغ وخلل في التخزين */
+export async function getNotebookResult(): Promise<NotebookReadResult> {
   try {
     const { getRecord } = await import("@/lib/storage/db");
     const rows = await getRecord<NotebookEntry[]>("settings", KEY);
-    if (!Array.isArray(rows)) return [];
-    return rows.sort((a, b) => b.lastAt - a.lastAt);
+    if (!Array.isArray(rows)) return {ok: true, rows: []};
+    return {ok: true, rows: rows.sort((a, b) => b.lastAt - a.lastAt)};
   } catch {
-    return [];
+    return {ok: false, rows: []};
   }
+}
+
+/** قراءة كل الأخطاء (مرتبة بالأحدث أولاً). للاستخدامات التي لا تعرض حالة التخزين. */
+export async function getNotebook(): Promise<NotebookEntry[]> {
+  return (await getNotebookResult()).rows;
 }
 
 /** حفظ القائمة كاملة */
@@ -51,9 +66,16 @@ async function saveNotebook(rows: NotebookEntry[]): Promise<void> {
   }
 }
 
-/** تسجيل خطأ جديد (أو زيادة عدّاد خطأ موجود) */
+/** مفتاح ثابت يمنع دمج تمارين متشابهة المعرّف من دروس مختلفة. */
+export function getNotebookEntryId(sourceId: string, exerciseId: string): string {
+  return `${sourceId}::${exerciseId}`;
+}
+
+/** تسجيل خطأ جديد (أو زيادة عدّاد الخطأ نفسه في الدرس نفسه) */
 export async function recordMistake(entry: Omit<NotebookEntry, "count" | "lastAt" | "firstAt" | "mastered">): Promise<void> {
-  const rows = await getNotebook();
+  const result = await getNotebookResult();
+  if (!result.ok) return; // لا تستبدل سجلاً قديمًا بقائمة فارغة عند تعذر القراءة.
+  const rows = result.rows;
   const existing = rows.find((r) => r.id === entry.id);
   if (existing) {
     existing.count += 1;
@@ -73,9 +95,11 @@ export async function recordMistake(entry: Omit<NotebookEntry, "count" | "lastAt
   await saveNotebook(sorted);
 }
 
-/** تحديد خطأ كـ«أتقنته» */
+/** تسجيل اختيار المستخدم تعليم الإدخال كمُراجَع ذاتياً؛ لا يثبت الإتقان. */
 export async function markMastered(id: string): Promise<void> {
-  const rows = await getNotebook();
+  const result = await getNotebookResult();
+  if (!result.ok) return;
+  const rows = result.rows;
   const e = rows.find((r) => r.id === id);
   if (e) {
     e.mastered = true;
@@ -85,8 +109,9 @@ export async function markMastered(id: string): Promise<void> {
 
 /** حذف خطأ واحد */
 export async function removeEntry(id: string): Promise<void> {
-  const rows = await getNotebook();
-  await saveNotebook(rows.filter((r) => r.id !== id));
+  const result = await getNotebookResult();
+  if (!result.ok) return;
+  await saveNotebook(result.rows.filter((r) => r.id !== id));
 }
 
 /** مسح الدفتر كاملاً */
@@ -94,14 +119,13 @@ export async function clearNotebook(): Promise<void> {
   await saveNotebook([]);
 }
 
-/** إحصائيات سريعة: عدد الأخطاء الفريدة + الأكثر تكراراً + المتقنة */
-export async function getNotebookStats(): Promise<{
+/** إحصائيات سريعة لسجل محدد */
+export function getNotebookStatsForRows(rows: NotebookEntry[]): {
   total: number;
   repeated: number;
   mastered: number;
   top: NotebookEntry | null;
-}> {
-  const rows = await getNotebook();
+} {
   const active = rows.filter((r) => !r.mastered);
   const top = active.length > 0 ? active.reduce((a, b) => (b.count > a.count ? b : a)) : null;
   return {
@@ -111,6 +135,8 @@ export async function getNotebookStats(): Promise<{
     top,
   };
 }
+
+
 
 /** أسماء أنواع الأخطاء بالعربية */
 export const ERROR_TYPE_LABELS: Record<string, string> = {
@@ -124,6 +150,7 @@ export const ERROR_TYPE_LABELS: Record<string, string> = {
   preposition: "حرف الجر",
   plural: "الجمع",
   listening: "الفهم السمعي",
+  writing_length: "طول النص",
   "not-available": "غير محدد",
 };
 
