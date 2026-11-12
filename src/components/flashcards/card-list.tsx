@@ -7,6 +7,7 @@ import {FavoriteButton} from "@/components/shared/favorite-button";
 import {SpeakButton} from "@/components/shared/speak-button";
 import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
+import {ConfirmDialog} from "@/components/ui/confirm-dialog";
 import {Input} from "@/components/ui/input";
 import {deleteCard, getAllCards} from "@/lib/srs/flashcard-service";
 import {cn} from "@/lib/utils";
@@ -54,11 +55,17 @@ export function CardList({ refreshKey }: { refreshKey?: number }) {
     return matchesLevel && matchesQuery;
   });
 
+  const [deleteTarget, setDeleteTarget] = React.useState<{ id: string; de: string } | null>(null);
+
   const handleDelete = async (id: string, de: string) => {
-    if (window.confirm(`حذف البطاقة «${de}»؟ لا يمكن التراجع.`)) {
-      await deleteCard(id);
-      await load();
-    }
+    setDeleteTarget({ id, de });
+  };
+
+  const confirmDelete = async () => {
+    if (!deleteTarget) return;
+    await deleteCard(deleteTarget.id);
+    await load();
+    setDeleteTarget(null);
   };
 
   return (
@@ -165,6 +172,16 @@ export function CardList({ refreshKey }: { refreshKey?: number }) {
         إجمالي البطاقات: <span className="font-de font-bold">{cards.length}</span> — تُحفظ في
         IndexedDB على جهازك وتعمل دون إنترنت.
       </p>
+
+      <ConfirmDialog
+        open={deleteTarget !== null}
+        onOpenChange={(open) => !open && setDeleteTarget(null)}
+        title={`حذف البطاقة «${deleteTarget?.de ?? ""}»؟`}
+        description="لا يمكن التراجع عن هذا الإجراء."
+        confirmLabel="حذف"
+        destructive
+        onConfirm={confirmDelete}
+      />
     </div>
   );
 }

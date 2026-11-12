@@ -13,6 +13,8 @@ import {DatabaseBackup, Upload} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
 import {Card, CardContent} from "@/components/ui/card";
+import {ChoiceDialog} from "@/components/ui/choice-dialog";
+import type { BackupData } from "@/types/storage";
 import {cn} from "@/lib/utils";
 
 /** عنوان قسم رقمي: يوجّه المتعلم في التسلسل */
@@ -56,6 +58,7 @@ export function JourneySection({
 export function BackupCard() {
   const fileRef = React.useRef<HTMLInputElement | null>(null);
   const [status, setStatus] = React.useState("");
+  const [pendingImport, setPendingImport] = React.useState<BackupData | null>(null);
 
   const exportBackup = async () => {
     try {
@@ -78,10 +81,18 @@ export function BackupCard() {
         setTimeout(() => setStatus(""), 5000);
         return;
       }
-      const ok = window.confirm(
-        "استعادة النسخة؟\n«موافق» = دمج مع بياناتك الحالية\n«إلغاء» = استبدال كامل",
-      );
-      await writeBackupData(parsed, ok ? "merge" : "replace");
+      setPendingImport(parsed as BackupData);
+    } catch {
+      setStatus("⚠️ فشلت الاستعادة — تأكد من الملف");
+    }
+  };
+
+  const doImport = async (mode: "merge" | "replace") => {
+    if (!pendingImport) return;
+    try {
+      const {writeBackupData} = await import("@/lib/storage/export-import");
+      await writeBackupData(pendingImport, mode);
+      setPendingImport(null);
       setStatus("✅ تمت الاستعادة — أعد تحميل الصفحة لترى مستواك");
       setTimeout(() => window.location.reload(), 1200);
     } catch {
@@ -128,6 +139,17 @@ export function BackupCard() {
         </div>
 
         {status && <p className="rounded-lg bg-muted/30 px-3 py-2 text-xs font-semibold text-foreground">{status}</p>}
+
+        <ChoiceDialog
+          open={pendingImport !== null}
+          onOpenChange={(open) => !open && setPendingImport(null)}
+          title="استعادة النسخة؟"
+          description="اختر طريقة الاستعادة: الدمج يضيف البطاقات الجديدة إلى بياناتك الحالية، والاستبدال يستبدل كل بياناتك ببيانات الملف."
+          primaryLabel="دمج"
+          secondaryLabel="استبدال كامل"
+          onPrimary={() => void doImport("merge")}
+          onSecondary={() => void doImport("replace")}
+        />
       </CardContent>
     </Card>
   );
