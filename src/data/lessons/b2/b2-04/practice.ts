@@ -189,6 +189,40 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         "«ممنوعاً من البيع» تقابل verboten، وليس vergriffen.",
       ],
     },
+    {
+      id: "e15",
+      type: "multiple-choice",
+      instructionAr: "اختر التقييم الموزون المناسب للنقد الجاد:",
+      questionDe: "Der Film ___ durch seine ruhigen Bilder, weniger gelungen ist das Ende.",
+      questionAr: "ما الكلمة المناسبة؟",
+      options: ["überzeugt", "ist schlecht", "ist langweilig", "ist nichts"],
+      correctIndex: 0,
+      explanation: "النقد الجاد يستعمل «überzeugt» (يقنع) بدل الحكم المطلق «ist schlecht».",
+      errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«ist schlecht» حكم مطلق يغلق النقاش — النقد الجاد يتجنّبه.",
+        "«ist langweilig» تصف شعور المشاهد لا العمل نفسه.",
+        "«ist nichts» تعبير عام غير دقيق في النقد.",
+      ],
+    },
+    {
+      id: "e16",
+      type: "multiple-choice",
+      instructionAr: "ما معنى «vorhersehbar» في سياق نقد الفيلم؟",
+      questionDe: "Die Handlung ist vorhersehbar.",
+      questionAr: "ما المعنى؟",
+      options: ["متوقّعة يعرف المشاهد نهايتها", "مثيرة للدهشة والمفاجأة", "طويلة جداً ومملّة", "مكتوبة بعناية فائقة"],
+      correctIndex: 0,
+      explanation: "vorhersehbar = متوقّعة — نقد سلبي يعني أن الحبكة لا تفاجئ المشاهد.",
+      errorType: "vocabulary",
+      optionExplanations: [
+        undefined,
+        "«مثيرة للدهشة» تقابل überraschend، وهي عكس vorhersehbar.",
+        "«طويلة جداً» تقابل langatmig، وليس vorhersehbar.",
+        "«مكتوبة بعناية» تقابل sorgfältig geschrieben، وليس vorhersehbar.",
+      ],
+    },
   ];
 
 export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {

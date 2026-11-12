@@ -84,6 +84,12 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     { id: "fc10", de: "die Autorin", ar: "المؤلّفة", example: "Die spät entdeckte Autorin zählt zu den meistgelesenen Stimmen.", exampleAr: "الكاتبة المكتشفة متأخّرةً من أكثر الأصوات قراءةً.", level: "B2" },
     { id: "fc11", de: "der Kritiker", ar: "الناقد", example: "Ein in Frankfurt arbeitender Kritiker nannte das Buch inhaltlich dünn.", exampleAr: "وصف ناقد يعمل في فرانكفورت الكتاب بأنه هزيل المضمون.", level: "B2" },
     { id: "fc12", de: "die Übersetzung", ar: "الترجمة", example: "Eine erwartete Übersetzung soll nächstes Jahr erscheinen.", exampleAr: "من المتوقّع صدور ترجمة في العام القادم.", level: "B2" },
+    { id: "fc13", de: "die Rezension", ar: "النقد/المراجعة الثقافية", example: "Die Rezension im Feuilleton war positiv.", exampleAr: "كان النقد في صفحة الثقافة إيجابياً.", level: "B2" },
+    { id: "fc14", de: "die Filmkritik", ar: "نقد الفيلم", example: "Die Filmkritik lobte die Kameraarbeit.", exampleAr: "أثنى نقد الفيلم على عمل الكاميرا.", level: "B2" },
+    { id: "fc15", de: "überzeugend", ar: "مقنع/مؤثّر (في النقد)", example: "Der Film überzeugt durch seine Bilder.", exampleAr: "الفيلم يقنع بصوره.", level: "B2" },
+    { id: "fc16", de: "vorhersehbar", ar: "متوقّع (سلبي في النقد)", example: "Die Handlung ist vorhersehbar.", exampleAr: "الحبكة متوقّعة.", level: "B2" },
+    { id: "fc17", de: "nuanciert", ar: "دقيق/متدرّج (موزون)", example: "Das Buch ist eine nuancierte Darstellung.", exampleAr: "الكتاب عرض دقيق متدرّج.", level: "B2" },
+    { id: "fc18", de: "das Fazit", ar: "الخاتمة/الحكم النهائي", example: "Insgesamt ist das Fazit positiv.", exampleAr: "في المجمل، الحكم النهائي إيجابي.", level: "B2" },
   ];
 
 export const mediation: NonNullable<Lesson["mediation"]> = [

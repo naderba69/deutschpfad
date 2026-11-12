@@ -14,7 +14,7 @@ async function reachHoeren(page: import("@playwright/test").Page) {
   await page.goto("/tests/b2", { waitUntil: "networkidle" });
   await page.waitForTimeout(400);
   await page.getByRole("button", { name: /ابدأ الامتحان/ }).click();
-  const firstItemCard = page.locator("div.rounded-xl.border.bg-card.p-3").first();
+  const firstItemCard = page.locator("div.rounded-xl.border.bg-card.p-4").first();
   await firstItemCard.locator("button").first().click();
   for (let i = 0; i < 4; i++) {
     await page.getByRole("button", { name: /التالي: الجزء/ }).click();

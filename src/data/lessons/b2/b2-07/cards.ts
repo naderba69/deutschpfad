@@ -84,6 +84,12 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     { id: "fc10", de: "die Generation", ar: "الجيل", example: "Die künftigen Generationen können keine Forderungen stellen.", exampleAr: "الأجيال القادمة لا تستطيع أن تطالب بشيء.", level: "B2" },
     { id: "fc11", de: "die Begründung", ar: "التعليل", example: "Bei langfristigen Entscheidungen gehören Begründung und Verhältnismäßigkeit zusammen.", exampleAr: "في القرارات البعيدة يقترن التعليل والتناسب.", level: "B2" },
     { id: "fc12", de: "der Fortschritt", ar: "التقدّم", example: "Dagegen wird eingewandt, dass solche Regeln den Fortschritt bremsen.", exampleAr: "ويُعترض بأن مثل هذه القواعد تعطّل التقدّم.", level: "B2" },
+    { id: "fc13", de: "die Pressefreiheit", ar: "حرية الصحافة", example: "Die Pressefreiheit ist ein Grundrecht.", exampleAr: "حرية الصحافة حق أساسي.", level: "B2" },
+    { id: "fc14", de: "die Zensur", ar: "الرقابة", example: "Die Zensur wurde abgeschafft.", exampleAr: "أُلغيت الرقابة.", level: "B2" },
+    { id: "fc15", de: "die öffentliche Meinung", ar: "الرأي العام", example: "Die öffentliche Meinung hat sich verändert.", exampleAr: "تغيّر الرأي العام.", level: "B2" },
+    { id: "fc16", de: "die Meinungsfreiheit", ar: "حرية الرأي", example: "Die Meinungsfreiheit ist geschützt.", exampleAr: "حرية الرأي محمية.", level: "B2" },
+    { id: "fc17", de: "die Berichterstattung", ar: "التغطية الإخبارية", example: "Die Berichterstattung war ausgewogen.", exampleAr: "كانت التغطية الإخبارية متوازنة.", level: "B2" },
+    { id: "fc18", de: "die Medienlandschaft", ar: "المشهد الإعلامي", example: "Die Medienlandschaft verändert sich schnell.", exampleAr: "يتغيّر المشهد الإعلامي بسرعة.", level: "B2" },
   ];
 
 export const mediation: NonNullable<Lesson["mediation"]> = [

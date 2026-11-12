@@ -64,7 +64,7 @@ import { balanceChoiceTree } from "@/lib/tests/balance-options";
 export const RAW_LESSONS: Lesson[] = [
   /* A1 — 16 */
   lessonA100, lessonA101, lessonA101b, lessonA102, lessonA103, lessonA104, lessonA105,
-  lessonA106, lessonA107, lessonA108, lessonA109, lessonA110, lessonA111, lessonA112, lessonA113, lessonA114,
+  lessonA106, lessonA107, lessonA108, lessonA109, lessonA110, lessonA111, lessonA112, lessonA114, lessonA113,
   /* A2 — 13 */
   lessonA201, lessonA202, lessonA203, lessonA204, lessonA205, lessonA206,
   lessonA207, lessonA208, lessonA209, lessonA210, lessonA211, lessonA212, lessonA213,
