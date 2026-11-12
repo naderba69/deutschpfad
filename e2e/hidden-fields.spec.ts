@@ -1,17 +1,17 @@
 import { expect, test } from "@playwright/test";
 
-import { advanceLessonStep } from "./helpers/lesson-steps";
+import { advanceLessonStep, gotoLessonStep } from "./helpers/lesson-steps";
 
-test("الدرس يعرض مصطلحات keyWords (بيانات مخفية أصبحت ظاهرة)", async ({ page }) => {
+test("بطاقات الدرس تعرض مفردات keyWords (der Name / heißen) في قسم البطاقات", async ({ page }) => {
   const pageErrors: string[] = [];
   page.on("pageerror", (e) => pageErrors.push(e.message));
   await page.goto("/lesson/a1-01", { waitUntil: "networkidle" });
   await page.waitForTimeout(400);
 
-  const keywords = page.getByTestId("lesson-keywords");
-  await expect(keywords).toBeVisible();
-  await expect(keywords).toContainText("der Name");
-  await expect(keywords).toContainText("heißen");
+  // بطاقات الدرس (fc1: der Name، fc2: heißen) تُعرض في قسم «بطاقات المراجعة»
+  await gotoLessonStep(page, "بطاقات المراجعة");
+  await expect(page.getByText("der Name")).toBeVisible();
+  await expect(page.getByText("heißen")).toBeVisible();
 
   expect(pageErrors, "أخطاء JavaScript في الصفحة").toEqual([]);
 });

@@ -10,21 +10,42 @@
  *  — حماية دائمة ضد الانحدار: أي نقص مستقبلي يظهر فوراً في التقرير.
  * ═══════════════════════════════════════════════════════════════════════
  */
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-/* ── تحميل كل ملفات الدروس كمصفوفة {level, id, text} ── */
+/* ── تحميل كل ملفات الدروس كمصفوفة {level, id, text} ──
+   ملاحظة: الدروس مقسّمة إلى مجلدات فرعية (a1-01/theorie.ts إلخ) منذ المرحلة 5.
+   يجب قراءة كل الملفات تراجعياً — قراءة ملفات التغليف فقط تفوّت كل المحتوى. */
+function walkTsFiles(dir) {
+  const out = [];
+  for (const entry of readdirSync(dir)) {
+    const full = join(dir, entry);
+    if (statSync(full).isDirectory()) {
+      out.push(...walkTsFiles(full));
+    } else if (entry.endsWith(".ts") && !entry.endsWith(".test.ts")) {
+      out.push(full);
+    }
+  }
+  return out;
+}
+
 const LESSONS = [];
 for (const level of ["a1", "a2", "b1", "b2"]) {
-  for (const f of readdirSync(join(ROOT, "src/data/lessons", level))) {
-    // ملفات الاختبار (*.test.ts) تحوي معرّفات دروس مكرّرة نصّياً فتفسد البحث
-    if (!f.endsWith(".ts") || f.endsWith(".test.ts")) continue;
-    const text = readFileSync(join(ROOT, "src/data/lessons", level, f), "utf8");
-    const id = (text.match(/id: "([^"]+)"/) || [])[1] ?? f.replace(".ts", "");
-    LESSONS.push({ level, id, text });
+  // تجميع محتوى كل درس من كل ملفاته (التغليف + المجلد المقسّم)
+  const byLesson = new Map();
+  for (const file of walkTsFiles(join(ROOT, "src/data/lessons", level))) {
+    const text = readFileSync(file, "utf8");
+    // معرّف الدرس من اسم الملف أو المجلد (a1-01.ts أو a1-01/theorie.ts)
+    const rel = file.slice(join(ROOT, "src/data/lessons", level).length + 1);
+    const id = rel.split("/")[0].replace(/\.ts$/, "");
+    if (!byLesson.has(id)) byLesson.set(id, []);
+    byLesson.get(id).push(text);
+  }
+  for (const [id, texts] of byLesson) {
+    LESSONS.push({ level, id, text: texts.join("\n") });
   }
 }
 const norm = (s) => s.toLowerCase().replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss");
