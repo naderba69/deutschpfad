@@ -83,7 +83,8 @@ test.describe("مراجعة أسماء عناصر الوصول الأساسية"
   });
 
   test("شارات المستويات في الصفحة الرئيسية تحافظ على تباين WCAG AA في الوضع الداكن", async ({ page }) => {
-    await page.addInitScript(() => document.documentElement.classList.add("dark"));
+    // next-themes يستخدم prefers-color-scheme — نحاكي الداكن عبر emulateMedia
+    await page.emulateMedia({ colorScheme: "dark" });
     await page.goto("/");
     // شارات المستويات فقط (Badge) — لا عناوين LangDe التي تحمل نفس الأصناف
     const ratios = await page.locator("section#levels div.font-de.font-bold").evaluateAll((elements) => {

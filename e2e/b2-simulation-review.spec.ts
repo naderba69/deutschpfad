@@ -57,14 +57,14 @@ test("المحاكاة: مشغّل تسجيلات الاستماع يعمل (TTS
   }
   await page.getByRole("button", { name: /إنهاء القراءة/ }).click();
 
-  // المشغّل ظاهر بعدّاد التشغيل (مرتان كامتحان Goethe-B2)
+  // المشغّل ظاهر بعدّاد التشغيل (مرة واحدة لكل جزء في B2)
   const play = page.getByTestId("exam-audio-play");
   await expect(play).toBeVisible();
-  await expect(page.getByTestId("exam-audio-left")).toContainText("المتبقي من التشغيل: 2");
+  await expect(page.getByTestId("exam-audio-left")).toContainText("المتبقي من التشغيل: 1 من 1");
 
-  // تشغيل واحد يُستهلك فتنخفض الحصة إلى 1
+  // تشغيل واحد يُستهلك فتنخفض الحصة إلى 0
   await play.click();
-  await expect(page.getByTestId("exam-audio-left")).toContainText("المتبقي من التشغيل: 1");
+  await expect(page.getByTestId("exam-audio-left")).toContainText("المتبقي من التشغيل: 0 من 1");
 
   // التصريح الصادق بأن التسجيلات مُولَّدة (TTS) وليست امتحاناً رسمياً
   await expect(page.getByText(/التسجيلات مُولَّدة/)).toBeVisible();
