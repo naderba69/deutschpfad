@@ -47,6 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/tests/seal/b1", priority: 0.9 },
     { path: "/tests/seal/b2", priority: 0.9 },
     { path: "/flashcards", priority: 0.8 },
+    { path: "/favorites", priority: 0.6 },
     { path: "/placement", priority: 0.7 },
     { path: "/verben", priority: 0.6 },
     { path: "/assistant", priority: 0.7 },

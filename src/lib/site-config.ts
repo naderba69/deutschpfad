@@ -35,6 +35,7 @@ export const siteConfig = {
     { title: "الاختبارات", href: "/tests" },
     { title: "اختبار التقدم الداخلي", href: "/tests/seal/b2" },
     { title: "بطاقاتي", href: "/flashcards" },
+    { title: "المفضلة", href: "/favorites" },
     { title: "الأدوات الذكية", href: "/ai-tools" },
     { title: "المعلّم الذكي", href: "/assistant" },
     { title: "المرجع النحوي", href: "/grammatik" },
@@ -84,6 +85,7 @@ export const siteConfig = {
       label: "تدرب",
       items: [
         { title: "بطاقاتي (مراجعة ذكية)", href: "/flashcards" },
+        { title: "المفضلة ⭐", href: "/favorites" },
         { title: "مراجعة الجمل (SRS) 🧠", href: "/sentence-review" },
         { title: "المراجعة الأسبوعية 📅", href: "/review/weekly" },
         { title: "المراجعة الشهرية 📆", href: "/review/monthly" },
@@ -132,6 +134,7 @@ export const siteConfig = {
       { title: "الاختبارات", href: "/tests" },
       { title: "الاختبار الأسبوعي", href: "/tests/weekly" },
       { title: "بطاقاتي (المراجعة الذكية)", href: "/flashcards" },
+      { title: "المفضلة", href: "/favorites" },
       { title: "الأدوات الذكية", href: "/ai-tools" },
       { title: "حدّد مستواك", href: "/placement" },
       { title: "تدريب شفهي داخلي", href: "/tests/sprechen" },
