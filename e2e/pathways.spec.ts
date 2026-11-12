@@ -18,7 +18,7 @@ test("المراجعة الأسبوعية: الصفحة تعمل وتظهر ال
 
 test("كفايات CEFR: الصفحة تعرض المهارات الست", async ({ page }) => {
   await page.goto("/dashboard/competencies");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("CEFR");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("مؤشرات التمرين والمراجعة");
   await expect(page.getByText("مؤشرات التمرين والمراجعة").first()).toBeVisible();
 });
 
