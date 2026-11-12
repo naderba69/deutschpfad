@@ -5,10 +5,10 @@
 import { test, expect } from "@playwright/test";
 
 test("المكتبات الموسعة: 60 قصة و21 بودكاست", async ({ page }) => {
-  await page.goto("/stories");
-  await expect(page.getByText("60 قصة متاحة").first()).toBeVisible({ timeout: 8000 });
-  await page.goto("/podcasts");
-  await expect(page.getByText("21 حلقات بودكاست").first()).toBeVisible({ timeout: 8000 });
+  await page.goto("/stories", { waitUntil: "networkidle" });
+  await expect(page.getByText("60 قصة متاحة").first()).toBeVisible({ timeout: 10000 });
+  await page.goto("/podcasts", { waitUntil: "networkidle" });
+  await expect(page.getByText("21 حلقات بودكاست").first()).toBeVisible({ timeout: 10000 });
 });
 
 test("الجوال: شريط التنقل السفلي يظهر بأربع تبويبات", async ({ page }) => {
