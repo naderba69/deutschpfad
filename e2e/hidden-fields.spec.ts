@@ -10,8 +10,8 @@ test("بطاقات الدرس تعرض مفردات keyWords (der Name / heißen
 
   // بطاقات الدرس (fc1: der Name، fc2: heißen) تُعرض في قسم «بطاقات المراجعة»
   await gotoLessonStep(page, "بطاقات المراجعة");
-  await expect(page.getByText("der Name")).toBeVisible();
-  await expect(page.getByText("heißen")).toBeVisible();
+  await expect(page.getByText("der Name").first()).toBeVisible();
+  await expect(page.getByText("heißen").first()).toBeVisible();
 
   expect(pageErrors, "أخطاء JavaScript في الصفحة").toEqual([]);
 });
