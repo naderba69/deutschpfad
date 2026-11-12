@@ -88,7 +88,7 @@ test.describe("مراجعة أسماء عناصر الوصول الأساسية"
     // شارات المستويات فقط (Badge) — لا عناوين LangDe التي تحمل نفس الأصناف
     const ratios = await page.locator("section#levels div.font-de.font-bold").evaluateAll((elements) => {
       const luminanceOf = (color: string) => {
-        const values = color.match(/[\\d.]+/g)?.slice(0, 3).map(Number);
+        const values = color.match(/[\d.]+/g)?.slice(0, 3).map(Number);
         if (!values || values.length !== 3) throw new Error(`Unsupported color: ${color}`);
         const channels = values.map((channel) => {
           const value = channel / 255;
@@ -102,7 +102,7 @@ test.describe("مراجعة أسماء عناصر الوصول الأساسية"
         let background = "rgb(255, 255, 255)";
         while (current) {
           const candidate = getComputedStyle(current).backgroundColor;
-          const channels = candidate.match(/[\\d.]+/g)?.map(Number);
+          const channels = candidate.match(/[\d.]+/g)?.map(Number);
           if (channels && channels.length >= 3 && (channels.length < 4 || channels[3] > 0)) {
             background = candidate;
             break;

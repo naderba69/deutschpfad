@@ -12,7 +12,8 @@ test("المحاكاة الكاملة: مراجعة الأدلة في النتي
   await page.getByRole("button", { name: /ابدأ الامتحان/ }).click();
 
   // أجب عن سؤال القراءة الأول (الخيار الأول — الخلط لكل جلسة) وتذكّر نصه
-  const firstOption = page.locator("button:has(> span.font-de)").first();
+  // Teil 1 قد يكون Zuordnung (أزرار بلا font-de) أو MCQ — نستخدم محدداً عاماً
+  const firstOption = page.locator("div.rounded-xl.border.bg-card.p-4 button, div.rounded-xl.border.bg-card.p-3 button").first();
   const chosenText = (await firstOption.innerText()).trim();
   await firstOption.click();
 
