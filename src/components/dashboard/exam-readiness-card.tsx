@@ -5,6 +5,7 @@
  * ولا يفسر النتائج على أنها مستوى CEFR أو جاهزية لامتحان خارجي.
  */
 import * as React from "react";
+import Link from "next/link";
 import {Award, BookOpenCheck, GraduationCap, Headphones} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
