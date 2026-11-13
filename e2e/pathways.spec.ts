@@ -18,7 +18,7 @@ test("المراجعة الأسبوعية: الصفحة تعمل وتظهر ال
 
 test("كفايات CEFR: الصفحة تعرض المهارات الست", async ({ page }) => {
   await page.goto("/dashboard/competencies");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("CEFR");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("مؤشرات التمرين والمراجعة");
   await expect(page.getByText("مؤشرات التمرين والمراجعة").first()).toBeVisible();
 });
 
@@ -44,7 +44,7 @@ test("مسار الكتابة: المراحل الأربع ظاهرة والمه
 
 test("مكتبة القصص: 60 قصة موزعة على المستويات", async ({ page }) => {
   await page.goto("/stories");
-  await expect(page.getByText("60 قصص").first()).toBeVisible();
+  await expect(page.getByText("60 قصة متاحة").first()).toBeVisible();
   await expect(page.getByText("في المقهى").first()).toBeVisible(); // قصة A1 إضافية
   await expect(page.getByText(/لا تثبت إتقانها أو مستوى CEFR/).first()).toBeVisible();
 });

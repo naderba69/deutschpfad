@@ -12,7 +12,8 @@ test("المحاكاة الكاملة: مراجعة الأدلة في النتي
   await page.getByRole("button", { name: /ابدأ الامتحان/ }).click();
 
   // أجب عن سؤال القراءة الأول (الخيار الأول — الخلط لكل جلسة) وتذكّر نصه
-  const firstOption = page.locator("button:has(> span.font-de)").first();
+  // Teil 1 قد يكون Zuordnung (أزرار بلا font-de) أو MCQ — نستخدم محدداً عاماً
+  const firstOption = page.locator("div.rounded-xl.border.bg-card.p-4 button, div.rounded-xl.border.bg-card.p-3 button").first();
   const chosenText = (await firstOption.innerText()).trim();
   await firstOption.click();
 
@@ -43,7 +44,7 @@ test("المحاكاة الكاملة: مراجعة الأدلة في النتي
   expect(pageErrors, "أخطاء JavaScript في الصفحة").toEqual([]);
 });
 
-test("المحاكاة: مشغّل تسجيلات الاستماع يعمل (TTS مُولَّد بتصريح صادق)", async ({ page }) => {
+test("المحاكاة: مشغّل تسجيلات الاستماع يعمل (مقاطع بشرية أو TTS معلن)", async ({ page }) => {
   const pageErrors: string[] = [];
   page.on("pageerror", (e) => pageErrors.push(e.message));
   await page.goto("/tests/b2-simulation", { waitUntil: "networkidle" });
@@ -56,17 +57,22 @@ test("المحاكاة: مشغّل تسجيلات الاستماع يعمل (TTS
   }
   await page.getByRole("button", { name: /إنهاء القراءة/ }).click();
 
-  // المشغّل ظاهر بعدّاد التشغيل (مرتان كامتحان Goethe-B2)
+  // المشغّل ظاهر بعدّاد التشغيل (مرة واحدة لكل جزء في B2)
   const play = page.getByTestId("exam-audio-play");
   await expect(play).toBeVisible();
-  await expect(page.getByTestId("exam-audio-left")).toContainText("المتبقي من التشغيل: 2");
+  await expect(page.getByTestId("exam-audio-left")).toContainText("المتبقي من التشغيل: 1 من 1");
 
-  // تشغيل واحد يُستهلك فتنخفض الحصة إلى 1
+  // تشغيل واحد يُستهلك فتنخفض الحصة إلى 0
   await play.click();
-  await expect(page.getByTestId("exam-audio-left")).toContainText("المتبقي من التشغيل: 1");
+  await expect(page.getByTestId("exam-audio-left")).toContainText("المتبقي من التشغيل: 0 من 1");
 
-  // التصريح الصادق بأن التسجيلات مُولَّدة (TTS) وليست امتحاناً رسمياً
-  await expect(page.getByText(/التسجيلات مُولَّدة/)).toBeVisible();
+  // الوضع يُحسم بالمحاولة: مقاطع بشرية (files) أو نطق آلي معلن (tts)
+  const player = page.locator("[data-audio-mode]");
+  const mode = await player.getAttribute("data-audio-mode");
+  expect(["files", "tts"]).toContain(mode);
+  if (mode === "tts") {
+    await expect(player).toContainText(/غير متاحة بعد/);
+  }
 
   expect(pageErrors, "أخطاء JavaScript في الصفحة").toEqual([]);
 });

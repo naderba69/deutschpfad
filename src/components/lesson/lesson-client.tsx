@@ -27,6 +27,7 @@ import {SchreibenSection} from "@/components/lesson/sections/schreiben";
 import {TheorieSection} from "@/components/lesson/sections/theorie";
 import {VertiefungSection} from "@/components/lesson/sections/vertiefung";
 import {LesetextSection} from "@/components/lesson/sections/lesetext";
+import {OralProductionSection} from "@/components/lesson/sections/oral-production";
 import {LangDe} from "@/components/shared/lang-de";
 import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
@@ -534,6 +535,8 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
             .
           </div>
         );
+      case "oral-production":
+        return <OralProductionSection tasks={lesson.oralProduction ?? []} />;
       case "vertiefung":
         return <VertiefungSection lessonId={lesson.id} />;
       default:

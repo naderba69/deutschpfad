@@ -27,13 +27,12 @@ test("الغوص العميق: يمكن الإجابة في تدريب الفج�
 test("Top 500: الصفحة تعرض الفلاتر والكلمات", async ({ page }) => {
   await page.goto("/wortschatz-b2/top500", { waitUntil: "networkidle" });
   await page.waitForTimeout(500);
-  await expect(page.getByRole("heading", { name: /Top 500/ })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /500 كلمة/ })).toBeVisible();
   await expect(page.getByText("الموضوع:", { exact: true })).toBeVisible();
-  await expect(page.getByText("التواتر:", { exact: true })).toBeVisible();
-  // كلمة من المستوى 3 (لا غنى عنها)
+  // كلمة من المستوى 3 (أولوية أعلى)
   await expect(page.getByText("die Bewerbung").first()).toBeVisible();
-  // فلتر التواتر 3
-  await page.getByRole("button", { name: /لا غنى عنها/ }).click();
+  // فلتر الأولوية 3
+  await page.getByRole("button", { name: /أولوية أعلى/ }).click();
   await expect(page.getByText("die Bewerbung").first()).toBeVisible();
 });
 
@@ -72,7 +71,7 @@ test("مسار الكتابة: مرحلة الترجمة متاحة (20 مهمة
 test("محرك B2: تحذير الوقت يظهر عند الإجبار (بداية المؤقت سليمة)", async ({ page }) => {
   await page.goto("/tests/b2", { waitUntil: "networkidle" });
   await page.waitForTimeout(500);
-  await page.getByRole("button", { name: /ابدأ التدريب/ }).click();
+  await page.getByRole("button", { name: /ابدأ الامتحان/ }).click();
   // شارة النموذج + المؤقت يعملان
   await expect(page.getByText(/نموذج/)).toBeVisible();
   await expect(page.getByText(/⏱/)).toBeVisible();

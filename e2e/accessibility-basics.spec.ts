@@ -12,7 +12,7 @@ test.describe("مراجعة أسماء عناصر الوصول الأساسية"
   test("أزرار بدء الدروس في المسار لها اسم واضح على الهاتف", async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto("/learning-path");
-    const firstLesson = page.getByRole("link", { name: /ابدأ الدرس:.*الأبجدية/ });
+    const firstLesson = page.getByRole("link", { name: /الأبجدية/ }).first();
     await expect(firstLesson).toHaveAttribute("href", "/lesson/a1-00");
   });
 
@@ -83,11 +83,15 @@ test.describe("مراجعة أسماء عناصر الوصول الأساسية"
   });
 
   test("شارات المستويات في الصفحة الرئيسية تحافظ على تباين WCAG AA في الوضع الداكن", async ({ page }) => {
-    await page.addInitScript(() => document.documentElement.classList.add("dark"));
+    // next-themes يستخدم prefers-color-scheme — نحاكي الداكن عبر emulateMedia
+    await page.emulateMedia({ colorScheme: "dark" });
     await page.goto("/");
-    const ratios = await page.locator("section#levels .font-de.font-bold").evaluateAll((elements) => {
+    // انتظر ظهور الشارات قبل القياس
+    await expect(page.locator("section#levels div.font-de.font-bold").first()).toBeVisible({ timeout: 10000 });
+    // شارات المستويات فقط (Badge) — لا عناوين LangDe التي تحمل نفس الأصناف
+    const ratios = await page.locator("section#levels div.font-de.font-bold").evaluateAll((elements) => {
       const luminanceOf = (color: string) => {
-        const values = color.match(/[\\d.]+/g)?.slice(0, 3).map(Number);
+        const values = color.match(/[\d.]+/g)?.slice(0, 3).map(Number);
         if (!values || values.length !== 3) throw new Error(`Unsupported color: ${color}`);
         const channels = values.map((channel) => {
           const value = channel / 255;
@@ -101,7 +105,7 @@ test.describe("مراجعة أسماء عناصر الوصول الأساسية"
         let background = "rgb(255, 255, 255)";
         while (current) {
           const candidate = getComputedStyle(current).backgroundColor;
-          const channels = candidate.match(/[\\d.]+/g)?.map(Number);
+          const channels = candidate.match(/[\d.]+/g)?.map(Number);
           if (channels && channels.length >= 3 && (channels.length < 4 || channels[3] > 0)) {
             background = candidate;
             break;

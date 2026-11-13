@@ -22,7 +22,7 @@ test("فتح حوار والتنقل بين الجولات مع ترجمة", asy
   await expect(page.getByText("Hallo! Ich heiße Thomas.").first()).toBeVisible();
   // أظهر الترجمة
   await page.getByRole("button", { name: /أظهر الترجمة/ }).click();
-  await expect(page.getByText("مرحباً! اسمي توماس.").first()).toBeVisible();
+  await expect(page.getByText(/مرحباً! اسمي توماس/).first()).toBeVisible();
 });
 
 test("وضع «دورك»: كشف الإجابة يعمل", async ({ page }) => {

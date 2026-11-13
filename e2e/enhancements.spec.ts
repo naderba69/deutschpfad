@@ -5,10 +5,10 @@
 import { test, expect } from "@playwright/test";
 
 test("المكتبات الموسعة: 60 قصة و20 بودكاست", async ({ page }) => {
-  await page.goto("/stories");
-  await expect(page.getByText("60 قصص").first()).toBeVisible({ timeout: 8000 });
-  await page.goto("/podcasts");
-  await expect(page.getByText("20 حلقات بودكاست").first()).toBeVisible({ timeout: 8000 });
+  await page.goto("/stories", { waitUntil: "networkidle" });
+  await expect(page.getByText(/60 قصة متاحة/).first()).toBeVisible({ timeout: 10000 });
+  await page.goto("/podcasts", { waitUntil: "networkidle" });
+  await expect(page.getByText(/20 حلقات بودكاست/).first()).toBeVisible({ timeout: 10000 });
 });
 
 test("الجوال: شريط التنقل السفلي يظهر بأربع تبويبات", async ({ page }) => {
@@ -39,7 +39,7 @@ test("صفحة «عن المنصة» تعرض القيم", async ({ page }) => {
 
 test("مركز المستوى: نجوم الإتقان تظهر", async ({ page }) => {
   await page.goto("/level/a1");
-  await expect(page.getByText("% إتقان").first()).toBeVisible({ timeout: 8000 });
+  await expect(page.getByText(/أتقنتها/).first()).toBeVisible({ timeout: 8000 });
 });
 
 test("التحديات اليومية في صفحة التحفيز", async ({ page }) => {

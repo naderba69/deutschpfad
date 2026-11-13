@@ -117,6 +117,44 @@ export function ResultsPanel({ result, onRetry, onNext, nextLabel, onComplete }:
         </div>
       </div>
 
+      {/* مراجعة الأدلة — كل سؤالٍ بشاهده */}
+      {result.review.length > 0 && (
+        <div data-testid="exam-review">
+          <h4 className="mb-3 text-lg font-bold">مراجعة الأدلة</h4>
+          <div className="space-y-3">
+            {result.review.map((item) => {
+              const answered = item.chosen !== null;
+              const ok = answered && item.chosen === item.correct;
+              return (
+                <div key={item.id} data-testid="exam-review-item" className="rounded-xl border bg-card p-3">
+                  <p className="text-sm">
+                    <span aria-hidden className={ok ? "text-success" : "text-destructive"}>{ok ? "✓" : "✗"}</span>{" "}
+                    <span dir="ltr" lang="de" className="font-de">{item.questionDe}</span>
+                  </p>
+                  {item.questionAr && <p className="mt-0.5 text-xs text-muted-foreground">{item.questionAr}</p>}
+                  <p className="mt-1 text-xs">
+                    جوابك: <span dir="ltr" lang="de" className="font-de">{answered ? item.options[item.chosen!] : "— لم تُجب"}</span> ·
+                    الصحيح: <span dir="ltr" lang="de" className="font-de">{item.options[item.correct]}</span>
+                  </p>
+                  {item.explanation && (
+                    <p className="mt-1 rounded-md bg-muted/40 p-2 text-xs leading-relaxed">
+                      <span className="font-bold">الدليل: </span>
+                      <span data-testid="exam-review-evidence">{item.explanation}</span>
+                    </p>
+                  )}
+                  {item.answerText !== undefined && (
+                    <p className="mt-1 text-xs">
+                      إجابتك: <span dir="ltr" lang="de" className="font-de">{item.answerText || "—"}</span>
+                      {item.sampleAnswer && <> · نموذج: <span dir="ltr" lang="de" className="font-de">{item.sampleAnswer}</span></>}
+                    </p>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       {/* اقتراحات التقوية (تكيفي) */}
       {result.reinforcement.length > 0 && (
         <div className="rounded-xl border border-gold/40 bg-gold/10 p-4">

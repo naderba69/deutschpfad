@@ -1,7 +1,7 @@
 /**
  * اختبارات E2E: مكوّنا الوساطة والتفاعل (CEFR 2020) + الدرس الجديد A1-14
  *
- * 1) درس a1-01 يعرض قسمي «الوساطة» و«تفاعل حي» في مسار الخطوات
+ * 1) درس a1-01 يعرض قسمي «الوساطة» و«تفاعل موجّه» في مسار الخطوات
  * 2) درس Perfekt الحالي a1-14 يفتح ويعمل
  * 3) التفاعل: اختيار الرد ينتج ردّ المحاور
  */
@@ -77,7 +77,7 @@ test("التفاعل: اختيار الرد في a1-01 ينتج ردّ المح�
   // انتقل عبر الخطوات بالتسلسل (الوساطة ثم التفاعل — آخر قسمين)
   for (let i = 0; i < 20; i++) {
     const h2 = await page.evaluate(() => document.querySelector("#lesson-step-content h2")?.textContent ?? "");
-    if (h2.includes("تفاعل حي")) break;
+    if (h2.includes("تفاعل موجّه")) break;
     const nextBtn = page.getByRole("button", { name: /التالي:|أتممت هذا القسم/ }).last();
     if (await nextBtn.isVisible().catch(() => false)) {
       await nextBtn.click().catch(() => {});
@@ -150,7 +150,7 @@ test("تدريب Goethe-B2: تفتح بالأقسام الأربعة وتوضح 
   await expect(page.getByText(/تدريب غير رسمي/).first()).toBeVisible();
 
   // ابدأ الامتحان → قسم القراءة
-  await page.getByRole("button", { name: /ابدأ التدريب/ }).click();
+  await page.getByRole("button", { name: /ابدأ الامتحان/ }).click();
   await page.waitForTimeout(800);
-  await expect(page.getByText("القراءة (1/5)", { exact: false }).first()).toBeVisible({ timeout: 6000 });
+  await expect(page.getByText("Lesen — 1/5", { exact: false }).first()).toBeVisible({ timeout: 6000 });
 });

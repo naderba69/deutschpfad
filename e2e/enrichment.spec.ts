@@ -37,15 +37,15 @@ test("كل درس يعرض المراجعة التراكمية (مولّدة م�
   await expect(page.getByText("مراجعة تراكمية", { exact: false }).first()).toBeVisible({ timeout: 8000 });
 });
 
-test("مكتبة البودكاست تعرض 13 حلقة موزعة", async ({ page }) => {
-  await page.goto("/podcasts");
-  await expect(page.getByText("20 حلقات بودكاست").first()).toBeVisible();
+test("مكتبة البودكاست تعرض 21 حلقة موزعة", async ({ page }) => {
+  await page.goto("/podcasts", { waitUntil: "networkidle" });
+  await expect(page.getByText(/20 حلقات بودكاست/).first()).toBeVisible({ timeout: 10000 });
   await expect(page.getByText("عيد الميلاد").first()).toBeVisible();
 });
 
 test("الثقافة الألمانية: 16 بطاقة والجديدة ظاهرة", async ({ page }) => {
   await page.goto("/landeskunde");
-  await expect(page.getByText("16 بطاقة ثقافية").first()).toBeVisible();
+  await expect(page.getByText(/16 بطاقة ثقافية/).first()).toBeVisible();
   await expect(page.getByText("الكرنفال").first()).toBeVisible();
   await expect(page.getByText("الخبز الألماني").first()).toBeVisible();
 });

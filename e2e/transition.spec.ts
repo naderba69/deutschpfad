@@ -53,7 +53,7 @@ test("«إنهاء الدرس» ينقل تلقائياً إلى الدرس ال
   await page.getByRole("button", { name: "إنهاء الدرس", exact: true }).first().click();
 
   // شريط الانتقال يظهر
-  await expect(page.getByText("أُنجز الدرس بنجاح!").first()).toBeVisible({ timeout: 5000 });
+  await expect(page.getByText("أتممت هذا الدرس!").first()).toBeVisible({ timeout: 5000 });
 
   // خلال ~3 ثوانٍ ينتقل لصفحة الدرس التالي حسب ترتيب الفهرس (a1-01 → a1-01b)
   const idx = LESSON_META.findIndex((l) => l.id === "a1-01");
