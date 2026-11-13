@@ -100,10 +100,10 @@ describe("ربط المحتوى الرديف بالدروس", () => {
     expect(overloaded, `دروس محمّلة أكثر من اللازم: ${overloaded.join(", ")}`).toEqual([]);
   });
 
-  it("يُغطّى ما لا يقلّ عن 85٪ من الموارد الـ141", () => {
+  it("يُغطّى ما لا يقلّ عن 85٪ من الموارد الـ143", () => {
     const total = INTERACTIVE_STORIES.length + DAILY_DIALOGUES.length + PODCASTS.length;
     const linked = entries.reduce((n, [, refs]) => n + refs.length, 0);
-    expect(total).toBe(141);
+    expect(total).toBe(143);
     expect(linked / total).toBeGreaterThanOrEqual(0.85);
   });
 
