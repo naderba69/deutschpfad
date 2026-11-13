@@ -1,12 +1,12 @@
 /**
  * اختبارات E2E للميزات الجديدة (دفعة التطوير الشاملة):
- * 60 قصة، 20 بودكاست، شريط تنقل سفلي، نجوم إتقان، عن المنصة، تحديات يومية
+ * 62 قصة، 20 بودكاست، شريط تنقل سفلي، نجوم إتقان، عن المنصة، تحديات يومية
  */
 import { test, expect } from "@playwright/test";
 
-test("المكتبات الموسعة: 60 قصة و20 بودكاست", async ({ page }) => {
+test("المكتبات الموسعة: 62 قصة و20 بودكاست", async ({ page }) => {
   await page.goto("/stories", { waitUntil: "networkidle" });
-  await expect(page.getByText(/60 قصة متاحة/).first()).toBeVisible({ timeout: 10000 });
+  await expect(page.getByText(/62 قصة متاحة/).first()).toBeVisible({ timeout: 10000 });
   await page.goto("/podcasts", { waitUntil: "networkidle" });
   await expect(page.getByText(/20 حلقات بودكاست/).first()).toBeVisible({ timeout: 10000 });
 });
