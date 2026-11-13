@@ -2,9 +2,10 @@
 
 /**
  * المعلم الصوتي — محادثة ألمانية صوتية
- * وضعان:
+ * ثلاثة أوضاع:
  * 1) محادثة حرة (LLM) — شريك ذكي يرد عليك صوتاً (يتطلب مفاتيح)
- * 2) تدريب موجه (محلي 100%) — أسئلة جاهزة بلا مفاتيح: استمع، أجب بالميكروفون، قيّم نفسك
+ * 2) محادثة حرة محلية (بلا مفاتيح) — محرك محادثة محلي يرد بجمل مناسبة للمستوى
+ * 3) تدريب موجه (محلي 100%) — أسئلة جاهزة بلا مفاتيح: استمع، أجب بالميكروفون، قيّم نفسك
  */
 import * as React from "react";
 import {Headphones, MessageCircle, Mic, Send, Sparkles, Square, Wand2} from "lucide-react";
@@ -12,6 +13,7 @@ import {Headphones, MessageCircle, Mic, Send, Sparkles, Square, Wand2} from "luc
 import {Button} from "@/components/ui/button";
 import {useLLM} from "@/components/providers/llm-provider";
 import {voiceTeacherSystemPrompt} from "@/lib/llm/prompts";
+import {createConversationState, respondToUser, type ConversationState} from "@/lib/speech/offline-conversation";
 import {speakGerman, stopSpeaking} from "@/lib/speech/voices";
 import {createRecognitionEngine, isRecognitionSupported, unsupportedRecognitionNote, type RecognitionEngine} from "@/lib/speech/speech-recognition";
 import {cn} from "@/lib/utils";
@@ -32,6 +34,8 @@ const TOPICS = [
 interface Msg {
   role: "user" | "assistant";
   text: string;
+  /** ترجمة عربية للرد (الوضع المحلي فقط) */
+  textAr?: string;
   correction?: string;
 }
 
@@ -69,7 +73,7 @@ const GUIDED_BANK: Record<string, { q: string; qAr: string; model: string; model
 
 export function AiVoiceTeacher() {
   const { callLLM, isConfigured } = useLLM();
-  const [mode, setMode] = React.useState<"free" | "guided">(isConfigured ? "free" : "guided");
+  const [mode, setMode] = React.useState<"free" | "guided" | "local">(isConfigured ? "free" : "local");
   const [level, setLevel] = React.useState<(typeof LEVELS)[number]>("A2");
   const [topic, setTopic] = React.useState(TOPICS[0]);
   const [messages, setMessages] = React.useState<Msg[]>([]);
@@ -85,6 +89,14 @@ export function AiVoiceTeacher() {
   const [gIdx, setGIdx] = React.useState(0);
   const [gAnswered, setGAnswered] = React.useState(false);
   const [gRevealed, setGRevealed] = React.useState(false);
+
+  /* حالة المحادثة الحرة المحلية */
+  const [convState, setConvState] = React.useState<ConversationState>(() => createConversationState("A2", TOPICS[0].id));
+
+  /* مزامنة مستوى/موضوع المحرك المحلي مع الاختيار الحالي */
+  React.useEffect(() => {
+    setConvState((s) => ({ ...s, level, topicId: topic.id }));
+  }, [level, topic.id]);
 
   const guidedQs = GUIDED_BANK[level];
   const gQ = guidedQs[gIdx % guidedQs.length];
@@ -134,6 +146,20 @@ export function AiVoiceTeacher() {
     if (!content || thinking) return;
     if (recognition?.isListening) recognition.stop();
 
+    /* الوضع المحلي: محرك محادثة بلا مفاتيح */
+    if (mode === "local") {
+      setMessages((prev) => [...prev, { role: "user", text: content }]);
+      setInput("");
+      const { reply, state: nextState } = respondToUser(convState, content);
+      setConvState(nextState);
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", text: reply.reply, textAr: reply.replyAr, correction: reply.correction },
+      ]);
+      speak(reply.reply.replace(/\*\*/g, ""), level === "A1" || level === "A2" ? 0.9 : 0.95);
+      return;
+    }
+
     const updated: Msg[] = [...messages, { role: "user", text: content }];
     setMessages(updated);
     setInput("");
@@ -166,6 +192,7 @@ export function AiVoiceTeacher() {
     setMessages([]);
     setInput("");
     setInterim("");
+    setConvState(createConversationState(level, topic.id));
   };
 
   /* ── التدريب الموجه ── */
@@ -208,6 +235,18 @@ export function AiVoiceTeacher() {
           <Wand2 className="h-3.5 w-3.5" aria-hidden="true" />
           تدريب موجه (بدون مفاتيح)
         </button>
+        <button
+          type="button"
+          onClick={() => setMode("local")}
+          aria-pressed={mode === "local"}
+          className={cn(
+            "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
+            mode === "local" ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
+          )}
+        >
+          <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
+          محادثة حرة محلية (بدون مفاتيح)
+        </button>
       </div>
 
       {/* شريط المستوى */}
@@ -227,7 +266,7 @@ export function AiVoiceTeacher() {
             {l}
           </button>
         ))}
-        {mode === "free" && (
+        {mode !== "guided" && (
           <>
             <span className="ms-2 text-xs font-bold text-muted-foreground">الموضوع:</span>
             <select
@@ -328,6 +367,9 @@ export function AiVoiceTeacher() {
                   )}
                 >
                   <p className="font-de whitespace-pre-line" dir="ltr" lang="de">{m.text}</p>
+                  {m.role === "assistant" && m.textAr && (
+                    <p className="mt-1 text-xs text-muted-foreground">{m.textAr}</p>
+                  )}
                   {m.role === "assistant" && m.correction && (
                     <p className="mt-1.5 rounded-lg bg-gold/10 px-2 py-1 text-xs text-gold-strong">✍️ تصحيح: {m.correction}</p>
                   )}
@@ -398,7 +440,7 @@ export function AiVoiceTeacher() {
             ? "تدرّب يومياً: استمع، أجب بصوتك، قارن بالنموذج — المفتاح هو التكرار الصوتي."
             : "ابدأ بـ «Hallo!» ثم أجب على أسئلتي. الأخطاء تُصحَّح بلطف داخل الرد."}
         </p>
-        {messages.length > 0 && mode === "free" && (
+        {messages.length > 0 && mode !== "guided" && (
           <Button variant="ghost" size="sm" onClick={reset}>🗑 محادثة جديدة</Button>
         )}
       </div>
