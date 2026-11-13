@@ -71,6 +71,36 @@ describe("محرك المحادثة الحرة المحلي", () => {
     expect(replyFor("Ich möchte nach Berlin reisen.").reply.intent).toBe("travel");
   });
 
+  it("يرد على الطقس والوقت والاتجاهات", () => {
+    expect(replyFor("Wie ist das Wetter heute?").reply.intent).toBe("weather");
+    expect(replyFor("Es regnet.").reply.intent).toBe("weather");
+    expect(replyFor("Wie viel Uhr ist es?").reply.intent).toBe("time");
+    expect(replyFor("Wo ist der Bahnhof?").reply.intent).toBe("directions");
+    expect(replyFor("Wie komme ich zur Schule?").reply.intent).toBe("directions");
+  });
+
+  it("يرد على التسوق والنقل والتعلم", () => {
+    expect(replyFor("Wie viel kostet das?").reply.intent).toBe("shopping");
+    expect(replyFor("Ich kaufe Brot.").reply.intent).toBe("shopping");
+    expect(replyFor("Ich fahre mit dem Bus.").reply.intent).toBe("transport");
+    expect(replyFor("Ich lerne Deutsch.").reply.intent).toBe("learning");
+  });
+
+  it("يرد على نهاية الأسبوع والموسيقى", () => {
+    expect(replyFor("Am Wochenende spiele ich Fußball.").reply.intent).toBe("weekend");
+    expect(replyFor("Ich höre gern Musik.").reply.intent).toBe("music");
+    expect(replyFor("Ich sehe gern Filme.").reply.intent).toBe("music");
+  });
+
+  it("الأولوية للنيات المحددة على العامة", () => {
+    // «ich höre Musik» موسيقى لا هواية عامة
+    expect(replyFor("Ich höre Musik.").reply.intent).toBe("music");
+    // «ich fahre mit dem Bus» نقل لا سفر
+    expect(replyFor("Ich fahre mit dem Zug.").reply.intent).toBe("transport");
+    // «ich fahre nach Berlin» سفر لا نقل
+    expect(replyFor("Ich fahre nach Berlin.").reply.intent).toBe("travel");
+  });
+
   it("يرد على الأسئلة الموجهة للشريك", () => {
     const { reply } = replyFor("Was machst du?");
     expect(reply.intent).toBe("partner-question");
@@ -130,6 +160,14 @@ describe("محرك المحادثة الحرة المحلي", () => {
       "Nein.",
       "Danke!",
       "Was machst du?",
+      "Wie ist das Wetter?",
+      "Wie viel Uhr ist es?",
+      "Wo ist der Bahnhof?",
+      "Wie viel kostet das?",
+      "Ich fahre mit dem Bus.",
+      "Ich lerne Deutsch.",
+      "Am Wochenende spiele ich Fußball.",
+      "Ich höre gern Musik.",
     ];
     for (const input of inputs) {
       const { reply } = replyFor(input);
