@@ -17,7 +17,7 @@ test.use({
 async function openOralTask(page: Page) {
   await page.goto("/lesson/b2-10");
   await page.getByRole("button", {name: "عرض الكل"}).click();
-  await expect(page.getByText("تدريب على الإنتاج الشفهي")).toBeVisible();
+  await expect(page.getByText(/تدريب على الإنتاج الشفهي/)).toBeVisible();
 }
 
 test("lesson oral recorder waits for permission and creates a local playback", async ({page}) => {
