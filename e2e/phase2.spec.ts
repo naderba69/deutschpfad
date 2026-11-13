@@ -29,8 +29,8 @@ test("تدريب القواعد والمفردات B2: السؤال الأول �
 test("تدريب القواعد: اختيار إجابة وتحقق يعرض الشرح", async ({ page }) => {
   await page.goto("/tests/b2-grammatik", { waitUntil: "networkidle" });
   await page.waitForTimeout(500);
-  // اختر الخيار الصحيح (habe — موضعه يُخلط عشوائياً)
-  await page.getByRole("button", { name: /habe/ }).click();
+  // اختر الخيار الصحيح (habe — موضعه يُخلط عشوائياً؛ / habe$/ يتجنب «haben»)
+  await page.getByRole("button", { name: / habe$/ }).click();
   await page.getByRole("button", { name: "تحقق" }).click();
   await expect(page.getByText(/✓ إجابة صحيحة/)).toBeVisible();
 });
