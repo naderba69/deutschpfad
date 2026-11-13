@@ -154,6 +154,162 @@ const SCENARIOS: Scenario[] = [
       },
     ],
   },
+  {
+    id: "hotel",
+    title: "في الفندق",
+    emoji: "🏨",
+    level: "A1",
+    intro: "أنت في فندق. موظف الاستقبال يسألك عن الحجز.",
+    turns: [
+      {
+        speaker: "محاور",
+        de: "Guten Abend! Haben Sie eine Reservierung?",
+        ar: "مساء الخير! هل لديك حجز؟",
+        options: [
+          { de: "Ja, auf den Namen Sami.", ar: "نعم، باسم سامي.", best: true, replyDe: "Sehr gut. Darf ich Ihren Ausweis sehen?", replyAr: "جيد جداً. هل يمكنني رؤية بطاقتك؟" },
+          { de: "Nein, ich schlafe auf der Straße.", ar: "لا، أنام في الشارع.", best: false, replyDe: "Oh… Dann kann ich Ihnen leider kein Zimmer geben.", replyAr: "أوه… إذن لا يمكنني إعطاؤك غرفة للأسف." },
+          { de: "Ja, für zwei Nächte.", ar: "نعم، لليلتين.", best: true, replyDe: "Perfekt. Darf ich Ihren Ausweis sehen?", replyAr: "ممتاز. هل يمكنني رؤية بطاقتك؟" },
+        ],
+      },
+      {
+        speaker: "محاور",
+        de: "Darf ich Ihren Ausweis sehen?",
+        ar: "هل يمكنني رؤية بطاقتك؟",
+        options: [
+          { de: "Ja, hier ist mein Pass.", ar: "نعم، ها هو جواز سفري.", best: true, replyDe: "Danke. Ihr Zimmer ist im dritten Stock.", replyAr: "شكراً. غرفتك في الطابق الثالث." },
+          { de: "Ich habe keinen Ausweis, ich bin ein Geist.", ar: "ليس لدي بطاقة، أنا شبح.", best: false, replyDe: "Ein Geist? Dann brauchen Sie kein Zimmer…", replyAr: "شبح؟ إذن لا تحتاج غرفة…" },
+          { de: "Gerne, hier bitte.", ar: "بكل سرور، تفضل.", best: true, replyDe: "Vielen Dank! Hier ist Ihre Karte.", replyAr: "شكراً جزيلاً! هذه بطاقتك." },
+        ],
+      },
+      {
+        speaker: "محاور",
+        de: "Ihr Zimmer ist im dritten Stock. Hier ist Ihre Karte.",
+        ar: "غرفتك في الطابق الثالث. هذه بطاقتك.",
+        options: [
+          { de: "Vielen Dank! Wo ist der Aufzug?", ar: "شكراً جزيلاً! أين المصعد؟", best: true, replyDe: "Rechts um die Ecke.", replyAr: "على اليمين عند الزاوية." },
+          { de: "Ich nehme die Treppe zum Mond.", ar: "سآخذ الدرج إلى القمر.", best: false, replyDe: "Zum Mond? Der Aufzug ist rechts!", replyAr: "إلى القمر؟ المصعد على اليمين!" },
+          { de: "Danke schön! Schönen Abend noch!", ar: "شكراً جميلاً! مساء سعيد!", best: true, replyDe: "Ihnen auch! Gute Nacht!", replyAr: "لك أيضاً! ليلة سعيدة!" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "restaurant",
+    title: "في المطعم",
+    emoji: "🍽️",
+    level: "A2",
+    intro: "أنت في مطعم مع صديق. النادل يسألك عن الطلب.",
+    turns: [
+      {
+        speaker: "محاور",
+        de: "Guten Abend! Haben Sie reserviert?",
+        ar: "مساء الخير! هل حجزتم؟",
+        options: [
+          { de: "Nein, wir sind zu zweit.", ar: "لا، نحن شخصان.", best: true, replyDe: "Kein Problem. Setzen Sie sich bitte.", replyAr: "لا مشكلة. اجلسا من فضلكما." },
+          { de: "Ja, für den Mond.", ar: "نعم، للقمر.", best: false, replyDe: "Für den Mond? Wir haben nur Tische auf der Erde!", replyAr: "للقمر؟ لدينا طاولات على الأرض فقط!" },
+          { de: "Nein, aber wir möchten gern essen.", ar: "لا، لكننا نود أن نأكل.", best: true, replyDe: "Natürlich! Hier ist die Speisekarte.", replyAr: "بالطبع! هذه قائمة الطعام." },
+        ],
+      },
+      {
+        speaker: "محاور",
+        de: "Was möchten Sie essen?",
+        ar: "ماذا تريد أن تأكل؟",
+        options: [
+          { de: "Ich nehme die Pasta, bitte.", ar: "سآخذ المعكرونة من فضلك.", best: true, replyDe: "Sehr gut. Und zu trinken?", replyAr: "جيد جداً. وماذا تشرب؟" },
+          { de: "Ich esse nur Luft.", ar: "آكل الهواء فقط.", best: false, replyDe: "Nur Luft? Das steht nicht auf der Karte!", replyAr: "الهواء فقط؟ هذا ليس في القائمة!" },
+          { de: "Ich hätte gern die Pizza.", ar: "أود البيتزا.", best: true, replyDe: "Kommt sofort!", replyAr: "تأتي فوراً!" },
+        ],
+      },
+      {
+        speaker: "محاور",
+        de: "Das macht 25 Euro. Möchten Sie mit Karte zahlen?",
+        ar: "المبلغ 25 يورو. هل تريد الدفع بالبطاقة؟",
+        options: [
+          { de: "Ja, mit Karte bitte.", ar: "نعم بالبطاقة من فضلك.", best: true, replyDe: "Hier ist die Rechnung. Vielen Dank!", replyAr: "هذه الفاتورة. شكراً جزيلاً!" },
+          { de: "Ich zahle mit einem Lied.", ar: "أدفع بأغنية.", best: false, replyDe: "Mit einem Lied? Wir nehmen nur Geld!", replyAr: "بأغنية؟ نقبل المال فقط!" },
+          { de: "Nein, ich zahle bar.", ar: "لا، أدفع نقداً.", best: true, replyDe: "Alles klar, das stimmt so.", replyAr: "حسناً، المبلغ صحيح." },
+        ],
+      },
+    ],
+  },
+  {
+    id: "shopping",
+    title: "في المتجر",
+    emoji: "🛍️",
+    level: "A2",
+    intro: "أنت في متجر ملابس. البائعة تسألك عما تبحث عنه.",
+    turns: [
+      {
+        speaker: "محاور",
+        de: "Guten Tag! Kann ich Ihnen helfen?",
+        ar: "طاب يومك! هل يمكنني مساعدتك؟",
+        options: [
+          { de: "Ja, ich suche eine Jacke.", ar: "نعم، أبحث عن معطف.", best: true, replyDe: "Welche Größe haben Sie?", replyAr: "ما مقاسك؟" },
+          { de: "Ja, ich suche einen Elefanten.", ar: "نعم، أبحث عن فيل.", best: false, replyDe: "Einen Elefanten? Wir verkaufen nur Kleidung!", replyAr: "فيلاً؟ نبيع الملابس فقط!" },
+          { de: "Nein, danke. Ich schaue nur.", ar: "لا، شكراً. أتفرج فقط.", best: true, replyDe: "Gerne! Rufen Sie mich, wenn Sie etwas brauchen.", replyAr: "بكل سرور! نادني إذا احتجت شيئاً." },
+        ],
+      },
+      {
+        speaker: "محاور",
+        de: "Welche Größe haben Sie?",
+        ar: "ما مقاسك؟",
+        options: [
+          { de: "Ich habe Größe M.", ar: "مقاسي M.", best: true, replyDe: "Hier ist die Jacke. Gefällt sie Ihnen?", replyAr: "هذا هو المعطف. هل يعجبك؟" },
+          { de: "Ich habe Größe Mond.", ar: "مقاسي القمر.", best: false, replyDe: "Größe Mond? Die haben wir nicht!", replyAr: "مقاس القمر؟ ليس لدينا!" },
+          { de: "Größe L, bitte.", ar: "مقاس L من فضلك.", best: true, replyDe: "Einen Moment, ich hole sie.", replyAr: "لحظة، سأحضرها." },
+        ],
+      },
+      {
+        speaker: "محاور",
+        de: "Das kostet 59 Euro. Möchten Sie sie kaufen?",
+        ar: "ثمنها 59 يورو. هل تريد شراءها؟",
+        options: [
+          { de: "Ja, ich nehme sie.", ar: "نعم، سآخذها.", best: true, replyDe: "Sehr gut! An der Kasse bitte.", replyAr: "جيد جداً! عند الصندوق من فضلك." },
+          { de: "Nein, sie ist zu teuer.", ar: "لا، إنها غالية.", best: false, replyDe: "Verstehe. Vielleicht ein anderes Mal!", replyAr: "أفهم. ربما في مرة أخرى!" },
+          { de: "Ja, aber ist sie im Angebot?", ar: "نعم، لكن هل هي في التخفيض؟", best: true, replyDe: "Ja, 20 Prozent Rabatt!", replyAr: "نعم، تخفيض 20 بالمئة!" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "airport",
+    title: "في المطار",
+    emoji: "✈️",
+    level: "B1",
+    intro: "أنت في المطار لتسجيل الوصول. الموظفة تطلب جوازك وتذكرتك.",
+    turns: [
+      {
+        speaker: "محاور",
+        de: "Guten Morgen! Darf ich Ihren Pass und Ihr Ticket sehen?",
+        ar: "صباح الخير! هل يمكنني رؤية جوازك وتذكرتك؟",
+        options: [
+          { de: "Ja, hier sind sie.", ar: "نعم، ها هما.", best: true, replyDe: "Danke. Haben Sie Gepäck?", replyAr: "شكراً. هل لديك أمتعة؟" },
+          { de: "Ich habe nur einen Hut.", ar: "لدي قبعة فقط.", best: false, replyDe: "Nur einen Hut? Und Ihr Pass?", replyAr: "قبعة فقط؟ وأين جوازك؟" },
+          { de: "Gerne, einen Moment bitte.", ar: "بكل سرور، لحظة من فضلك.", best: true, replyDe: "Kein Problem. Nehmen Sie sich Zeit.", replyAr: "لا مشكلة. خذ وقتك." },
+        ],
+      },
+      {
+        speaker: "محاور",
+        de: "Haben Sie Gepäck?",
+        ar: "هل لديك أمتعة؟",
+        options: [
+          { de: "Ja, einen Koffer und eine Tasche.", ar: "نعم، حقيبة كبيرة وحقيبة يد.", best: true, replyDe: "Okay. Wiegen Sie den Koffer bitte.", replyAr: "حسناً. زن الحقيبة من فضلك." },
+          { de: "Ja, ein ganzes Haus.", ar: "نعم، بيت كامل.", best: false, replyDe: "Ein Haus? Das ist zu groß für das Flugzeug!", replyAr: "بيت؟ هذا كبير جداً على الطائرة!" },
+          { de: "Nein, nur Handgepäck.", ar: "لا، أمتعة يد فقط.", best: true, replyDe: "Perfekt. Dann gehen Sie zu Gate 12.", replyAr: "ممتاز. إذن اذهب إلى البوابة 12." },
+        ],
+      },
+      {
+        speaker: "محاور",
+        de: "Ihr Flug ist um 14 Uhr. Gate 12, bitte.",
+        ar: "رحلتك الساعة 14. البوابة 12 من فضلك.",
+        options: [
+          { de: "Vielen Dank! Schönen Tag noch!", ar: "شكراً جزيلاً! يوم سعيد!", best: true, replyDe: "Ihnen auch! Gute Reise!", replyAr: "لك أيضاً! رحلة سعيدة!" },
+          { de: "Ich fliege mit dem Besen.", ar: "أطير على المكنسة.", best: false, replyDe: "Mit dem Besen? Das ist keine Fluggesellschaft!", replyAr: "بمكنسة؟ هذه ليست شركة طيران!" },
+          { de: "Danke! Bis später!", ar: "شكراً! إلى اللقاء!", best: true, replyDe: "Bis später und gute Reise!", replyAr: "إلى اللقاء ورحلة سعيدة!" },
+        ],
+      },
+    ],
+  },
 ];
 
 export function ConversationSimulator() {
