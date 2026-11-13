@@ -217,4 +217,90 @@ const B2_11: InteractiveStory = {
   ],
 };
 
-export const B2_EXTRA_STORIES: InteractiveStory[] = [B2_7, B2_8, B2_9, B2_10, B2_11];
+const B2_12: InteractiveStory = {
+  id: "b2-ki-arbeitswelt",
+  level: "B2",
+  title: "KI in der Arbeitswelt",
+  titleAr: "الذكاء الاصطناعي في عالم العمل",
+  emoji: "🤖",
+  description: "حكاية تدريبية عن تأثير الذكاء الاصطناعي على الوظائف — Konjunktiv I واللغة الرسمية.",
+  grammar: "Konjunktiv I (النقل) • اللغة الرسمية • التأثير",
+  segments: [
+    { id: 1, de: "Experten berichten, dass künstliche Intelligenz viele Berufe verändern werde.", ar: "يذكر الخبراء أن الذكاء الاصطناعي سيغيّر كثيراً من المهن." },
+    { id: 2, de: "Sie sagen, Routineaufgaben würden zunehmend automatisiert, während kreative Tätigkeiten weniger betroffen seien.", ar: "يقولون إن المهام الروتينية ستُؤتمت بشكل متزايد، بينما الأنشطة الإبداعية أقل تأثراً." },
+    {
+      id: 3,
+      de: "Studien zeigen, dass Arbeitnehmer sich kontinuierlich weiterbilden müssten, um wettbewerbsfähig zu bleiben.",
+      ar: "تُظهر الدراسات أن الموظفين يجب أن يستمروا في التطوير المهني ليبقوا قادرين على المنافسة.",
+      question: {
+        de: "Was zeigen Studien?",
+        ar: "ماذا تُظهر الدراسات؟",
+        options: [
+          { text: "Arbeitnehmer müssten sich weiterbilden", ar: "يجب على الموظفين التطوير المستمر", correct: true, explanation: "نعم — «dass Arbeitnehmer sich kontinuierlich weiterbilden müssten»." },
+          { text: "KI ersetzt alle Berufe", ar: "الذكاء الاصطناعي يستبدل كل المهن", correct: false, explanation: "لا — الدراسات تتحدث عن التطوير لا الاستبدال الكامل." },
+          { text: "Weiterbildung ist unnötig", ar: "التطوير غير ضروري", correct: false, explanation: "لا — الدراسات تؤكد ضرورته." },
+        ],
+      },
+    },
+    {
+      id: 4,
+      de: "Führungskräfte betonen, dass der Mensch trotz Automatisierung unersetzlich bleibe, solange er Empathie und Kreativität einbringe.",
+      ar: "يؤكد القادة أن الإنسان سيبقى لا غنى عنه رغم الأتمتة، طالما يُظهر التعاطف والإبداع.",
+      question: {
+        de: "Was betonen Führungskräfte?",
+        ar: "ماذا يؤكد القادة؟",
+        options: [
+          { text: "Der Mensch bleibe unersetzlich mit Empathie", ar: "الإنسان لا غنى عنه بالتعاطف", correct: true, explanation: "صحيح — «der Mensch unersetzlich bleibe, solange er Empathie einbringe»." },
+          { text: "Menschen seien überflüssig", ar: "البشر غير ضروريين", correct: false, explanation: "لا — القادة يؤكدون أهمية الإنسان." },
+          { text: "Automatisierung sei schädlich", ar: "الأتمتة ضارة", correct: false, explanation: "لا — الحديث عن التعايش لا الضرر." },
+        ],
+      },
+    },
+    { id: 5, de: "Die Debatte darüber wird die Arbeitswelt noch lange prägen. Ende.", ar: "سيستمر النقاش حول هذا في تشكيل عالم العمل طويلاً. النهاية." },
+  ],
+};
+
+const B2_13: InteractiveStory = {
+  id: "b2-klimawandel",
+  level: "B2",
+  title: "Klimawandel und Verantwortung",
+  titleAr: "تغير المناخ والمسؤولية",
+  emoji: "🌍",
+  description: "حكاية تدريبية عن المسؤولية المناخية — Passiv والجمل المعقدة.",
+  grammar: "Passiv (المبني للمجهول) • اللغة الرسمية • المسؤولية المناخية",
+  segments: [
+    { id: 1, de: "Wissenschaftler warnen, dass die Erderwärmung durch menschliche Aktivitäten beschleunigt werde.", ar: "يحذر العلماء من أن الاحترار العالمي يتسارع بسبب الأنشطة البشرية." },
+    { id: 2, de: "Sie fordern, dass Maßnahmen ergriffen werden, um die Emissionen zu reduzieren.", ar: "يطالبون باتخاذ تدابير لتقليل الانبعاثات." },
+    {
+      id: 3,
+      de: "Regierungen haben versprochen, dass bis 2030 deutlich mehr erneuerbare Energien genutzt werden sollen.",
+      ar: "وعدت الحكومات بأنه بحلول 2030 يجب استخدام طاقات متجددة أكثر بكثير.",
+      question: {
+        de: "Was haben Regierungen versprochen?",
+        ar: "ماذا وعدت الحكومات؟",
+        options: [
+          { text: "Mehr erneuerbare Energien bis 2030", ar: "طاقات متجددة أكثر بحلول 2030", correct: true, explanation: "نعم — «dass bis 2030 mehr erneuerbare Energien genutzt werden sollen»." },
+          { text: "Weniger Klimaschutz", ar: "حماية مناخ أقل", correct: false, explanation: "لا — الوعد بزيادة الطاقات المتجددة." },
+          { text: "Keine Maßnahmen", ar: "لا تدابير", correct: false, explanation: "لا — وعدوا بتدابير محددة." },
+        ],
+      },
+    },
+    {
+      id: 4,
+      de: "Jeder Einzelne kann beitragen, indem er bewusster konsumiert und weniger fliegt.",
+      ar: "يمكن لكل فرد المساهمة من خلال الاستهلاك الواعي وتقليل الطيران.",
+      question: {
+        de: "Wie kann jeder Einzelne beitragen?",
+        ar: "كيف يمكن لكل فرد المساهمة؟",
+        options: [
+          { text: "Bewusster konsumieren, weniger fliegen", ar: "استهلاك واعٍ وطيران أقل", correct: true, explanation: "صحيح — «indem er bewusster konsumiert und weniger fliegt»." },
+          { text: "Mehr Auto fahren", ar: "قيادة سيارة أكثر", correct: false, explanation: "لا — العكس: تقليل الانبعاثات." },
+          { text: "Nichts tun", ar: "لا شيء", correct: false, explanation: "لا — كل فرد يمكنه المساهمة." },
+        ],
+      },
+    },
+    { id: 5, de: "Ob die Ziele erreicht werden, hängt von allen ab. Ende.", ar: "ما إذا كانت الأهداف ستتحقق يعتمد على الجميع. النهاية." },
+  ],
+};
+
+export const B2_EXTRA_STORIES: InteractiveStory[] = [B2_7, B2_8, B2_9, B2_10, B2_11, B2_12, B2_13];
