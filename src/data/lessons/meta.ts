@@ -94,6 +94,7 @@ const LESSON_META_SOURCE: LessonMeta[] = [
   { id: "b2-10", estimatedMinutes: 75, unitId: "b2-10", level: "B2", order: 1, titleDe: "Studium in Deutschland", titleAr: "الدراسة في ألمانيا", summary: "الكتابة في السياق الجامعي (Fachsprache)، والتمييز بين التأكيد والرأي والاحتمال وتحديد النطاق، والأسلوب الاسمي، مع مراجعة مختارة لبنى من B2.", keyWords: ["das Studium", "die Hausarbeit", "das Seminar", "die Fachsprache", "meiner Ansicht nach"] },
   { id: "b2-12", estimatedMinutes: 70, unitId: "b2-12", level: "B2", order: 1, titleDe: "Karriereentwicklung", titleAr: "المهن المتقدمة", summary: "التقدم المهني والتطوير: الترقية والتدريب المستمر والقيادة، صيغة الشرط (Konjunktiv II) للفرضيات المهنية والتهذيب، والمبني للمجهول في وثائق التقديم والشهادات.", keyWords: ["die Beförderung", "die Weiterbildung", "die Führungskraft", "die Verantwortung", "der Lebenslauf"] },
 
+  { id: "b2-13", estimatedMinutes: 70, unitId: "b2-13", level: "B2", order: 1, titleDe: "Technologie und KI", titleAr: "التكنولوجيا والذكاء الاصطناعي", summary: "الرقمنة والذكاء الاصطناعي وحماية البيانات: الاشتقاق التقني (السوابق واللواحق والمركبات: die Digitalisierung، nachvollziehbar، der Datenschutz)، والروابط الاستدراكية في النقاش التقني (obwohl، dennoch، zwar ... aber).", keyWords: ["die Digitalisierung", "die künstliche Intelligenz", "der Datenschutz", "die Cybersicherheit", "die Automatisierung"] },
 ];
 
 /** الفهرس المُصدَّر — مرتَّب دائماً بترتيب المسار التعليمي */
