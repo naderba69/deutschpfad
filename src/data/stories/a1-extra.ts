@@ -303,4 +303,47 @@ const A1_15: InteractiveStory = {
   ],
 };
 
-export const A1_EXTRA_STORIES: InteractiveStory[] = [A1_9, A1_10, A1_11, A1_12, A1_13, A1_14, A1_15];
+const A1_16: InteractiveStory = {
+  id: "a1-spielplatz",
+  level: "A1",
+  title: "Auf dem Spielplatz",
+  titleAr: "في ساحة اللعب",
+  emoji: "🛝",
+  description: "حكاية تدريبية خيالية عن عائلة في ساحة اللعب؛ أسماء وأحداث مخترعة.",
+  grammar: "المضارع البسيط • الأنشطة اليومية",
+  segments: [
+    { id: 1, de: "Heute ist Samstag. Familie Yilmaz geht auf den Spielplatz.", ar: "اليوم السبت. عائلة يلماز تذهب إلى ساحة اللعب." },
+    { id: 2, de: "Die Kinder spielen mit dem Ball. Die Eltern sitzen auf einer Bank.", ar: "الأطفال يلعبون بالكرة. الوالدان يجلسان على مقعد." },
+    {
+      id: 3,
+      de: "Die Sonne scheint. Es ist warm und schön.",
+      ar: "الشمس مشرقة. الجو دافئ وجميل.",
+      question: {
+        de: "Was machen die Kinder?",
+        ar: "ماذا يفعل الأطفال؟",
+        options: [
+          { text: "Sie spielen mit dem Ball", ar: "يلعبون بالكرة", correct: true, explanation: "صحيح — «Die Kinder spielen mit dem Ball»." },
+          { text: "Sie schlafen", ar: "ينامون", correct: false, explanation: "لا — الأطفال يلعبون لا ينامون." },
+          { text: "Sie lesen ein Buch", ar: "يقرؤون كتاباً", correct: false, explanation: "لا — الأم تقرأ كتاباً لا الأطفال." },
+        ],
+      },
+    },
+    {
+      id: 4,
+      de: "Der Vater trinkt Wasser. Die Mutter liest ein Buch.",
+      ar: "الأب يشرب الماء. الأم تقرأ كتاباً.",
+      question: {
+        de: "Was macht die Mutter?",
+        ar: "ماذا تفعل الأم؟",
+        options: [
+          { text: "Sie liest ein Buch", ar: "تقرأ كتاباً", correct: true, explanation: "صحيح — «Die Mutter liest ein Buch»." },
+          { text: "Sie spielt Fußball", ar: "تلعب كرة القدم", correct: false, explanation: "لا — الأطفال يلعبون بالكرة." },
+          { text: "Sie kocht", ar: "تطبخ", correct: false, explanation: "لا — الأم تقرأ كتاباً." },
+        ],
+      },
+    },
+    { id: 5, de: "Alle sind glücklich. Der Tag ist schön! Ende.", ar: "الجميع سعداء. اليوم جميل! النهاية." },
+  ],
+};
+
+export const A1_EXTRA_STORIES: InteractiveStory[] = [A1_9, A1_10, A1_11, A1_12, A1_13, A1_14, A1_15, A1_16];

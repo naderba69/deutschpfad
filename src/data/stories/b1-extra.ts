@@ -260,4 +260,47 @@ const B1_13: InteractiveStory = {
   ],
 };
 
-export const B1_EXTRA_STORIES: InteractiveStory[] = [B1_8, B1_9, B1_10, B1_11, B1_12, B1_13];
+const B1_14: InteractiveStory = {
+  id: "b1-urlaubsplanung",
+  level: "B1",
+  title: "Urlaubsplanung",
+  titleAr: "التخطيط للعطلة",
+  emoji: "🏖️",
+  description: "حكاية تدريبية خيالية عن تخطيط عطلة عائلية؛ أسماء وأحداث مخترعة.",
+  grammar: "المستقبل والخطط • جمل السبب (weil)",
+  segments: [
+    { id: 1, de: "Familie Nasser plant ihren Urlaub für den Sommer.", ar: "تخطط عائلة ناصر لعطلتها الصيفية." },
+    { id: 2, de: "Sie möchten ans Meer fahren, weil die Kinder schwimmen möchten.", ar: "يريدون الذهاب إلى البحر لأن الأطفال يريدون السباحة." },
+    {
+      id: 3,
+      de: "Der Vater hat ein Ferienhaus am Meer gebucht. Es kostet 900 Euro.",
+      ar: "حجز الأب بيت عطلة على البحر. ثمنه 900 يورو.",
+      question: {
+        de: "Was hat der Vater gebucht?",
+        ar: "ماذا حجز الأب؟",
+        options: [
+          { text: "Ein Ferienhaus am Meer", ar: "بيت عطلة على البحر", correct: true, explanation: "صحيح — «Der Vater hat ein Ferienhaus am Meer gebucht»." },
+          { text: "Ein Flugzeug", ar: "طائرة", correct: false, explanation: "لا — حجز بيت عطلة لا طائرة." },
+          { text: "Ein Auto", ar: "سيارة", correct: false, explanation: "لا — حجز بيت عطلة." },
+        ],
+      },
+    },
+    {
+      id: 4,
+      de: "Die Mutter sagt, dass sie im August fahren werden, weil das Wetter dann am besten ist.",
+      ar: "تقول الأم إنهم سيذهبون في أغسطس لأن الطقس يكون الأفضل حينها.",
+      question: {
+        de: "Wann werden sie fahren?",
+        ar: "متى سيذهبون؟",
+        options: [
+          { text: "Im August", ar: "في أغسطس", correct: true, explanation: "صحيح — «sie werden im August fahren»." },
+          { text: "Im Winter", ar: "في الشتاء", correct: false, explanation: "لا — سيذهبون في أغسطس." },
+          { text: "Heute", ar: "اليوم", correct: false, explanation: "لا — العطلة في الصيف." },
+        ],
+      },
+    },
+    { id: 5, de: "Alle freuen sich auf den Urlaub. Die Kinder können es kaum erwarten. Ende.", ar: "الجميع متحمسون للعطلة. الأطفال لا يستطيعون الانتظار. النهاية." },
+  ],
+};
+
+export const B1_EXTRA_STORIES: InteractiveStory[] = [B1_8, B1_9, B1_10, B1_11, B1_12, B1_13, B1_14];

@@ -303,4 +303,47 @@ const A2_15: InteractiveStory = {
   ],
 };
 
-export const A2_EXTRA_STORIES: InteractiveStory[] = [A2_9, A2_10, A2_11, A2_12, A2_13, A2_14, A2_15];
+const A2_16: InteractiveStory = {
+  id: "a2-fahrradwerkstatt",
+  level: "A2",
+  title: "In der Fahrradwerkstatt",
+  titleAr: "في ورشة الدراجات",
+  emoji: "🚲",
+  description: "حكاية تدريبية خيالية عن إصلاح دراجة؛ أسماء وأحداث مخترعة.",
+  grammar: "الماضي التام (Perfekt) • وسائل النقل",
+  segments: [
+    { id: 1, de: "Gestern ist Herr Kaya in die Fahrradwerkstatt gegangen.", ar: "أمس ذهب السيد كايا إلى ورشة الدراجات." },
+    { id: 2, de: "Sein Fahrrad hat einen platten Reifen gehabt.", ar: "كانت إطارات دراجته مثقوبة." },
+    {
+      id: 3,
+      de: "Der Mechaniker hat den Reifen repariert. Es hat eine Stunde gedauert.",
+      ar: "أصلح الميكانيكي الإطار. استغرق ذلك ساعة.",
+      question: {
+        de: "Was hat der Mechaniker gemacht?",
+        ar: "ماذا فعل الميكانيكي؟",
+        options: [
+          { text: "Er hat den Reifen repariert", ar: "أصلح الإطار", correct: true, explanation: "صحيح — «Der Mechaniker hat den Reifen repariert»." },
+          { text: "Er hat das Fahrrad verkauft", ar: "باع الدراجة", correct: false, explanation: "لا — الميكانيكي أصلح الإطار." },
+          { text: "Er hat geschlafen", ar: "نام", correct: false, explanation: "لا — الميكانيكي عمل ساعة كاملة." },
+        ],
+      },
+    },
+    {
+      id: 4,
+      de: "Herr Kaya hat mit Karte bezahlt und ist nach Hause gefahren.",
+      ar: "دفع السيد كايا بالبطاقة وركب دراجته إلى المنزل.",
+      question: {
+        de: "Wie hat Herr Kaya bezahlt?",
+        ar: "كيف دفع السيد كايا؟",
+        options: [
+          { text: "Mit Karte", ar: "بالبطاقة", correct: true, explanation: "صحيح — «Herr Kaya hat mit Karte bezahlt»." },
+          { text: "Mit einem Lied", ar: "بأغنية", correct: false, explanation: "لا — دفع بالبطاقة." },
+          { text: "Gar nicht", ar: "لم يدفع", correct: false, explanation: "لا — دفع بالبطاقة." },
+        ],
+      },
+    },
+    { id: 5, de: "Das Fahrrad fährt wieder gut. Herr Kaya ist zufrieden. Ende.", ar: "الدراجة تعمل جيداً مجدداً. السيد كايا راضٍ. النهاية." },
+  ],
+};
+
+export const A2_EXTRA_STORIES: InteractiveStory[] = [A2_9, A2_10, A2_11, A2_12, A2_13, A2_14, A2_15, A2_16];

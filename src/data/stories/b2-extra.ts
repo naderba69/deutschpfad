@@ -303,4 +303,47 @@ const B2_13: InteractiveStory = {
   ],
 };
 
-export const B2_EXTRA_STORIES: InteractiveStory[] = [B2_7, B2_8, B2_9, B2_10, B2_11, B2_12, B2_13];
+const B2_14: InteractiveStory = {
+  id: "b2-homeoffice",
+  level: "B2",
+  title: "Homeoffice und Produktivität",
+  titleAr: "العمل عن بعد والإنتاجية",
+  emoji: "🏠",
+  description: "حكاية تدريبية خيالية عن العمل عن بعد؛ لا تصف سياسات شركات حقيقية.",
+  grammar: "تحليل أسلوب العمل • الاشتقاق الاسمي",
+  segments: [
+    { id: 1, de: "Seit der Pandemie hat sich die Arbeitswelt grundlegend verändert.", ar: "منذ الجائحة تغيّر عالم العمل جذرياً." },
+    { id: 2, de: "Viele Unternehmen bieten ihren Mitarbeitern die Möglichkeit, von zu Hause zu arbeiten.", ar: "تقدم كثير من الشركات لموظفيها إمكانية العمل من المنزل." },
+    {
+      id: 3,
+      de: "Studien zeigen, dass die Produktivität im Homeoffice oft höher ist als im Büro.",
+      ar: "تُظهر الدراسات أن الإنتاجية في العمل عن بعد غالباً أعلى منها في المكتب.",
+      question: {
+        de: "Was zeigen die Studien?",
+        ar: "ماذا تُظهر الدراسات؟",
+        options: [
+          { text: "Die Produktivität ist oft höher", ar: "الإنتاجية غالباً أعلى", correct: true, explanation: "صحيح — «die Produktivität im Homeoffice oft höher ist»." },
+          { text: "Die Produktivität ist immer niedriger", ar: "الإنتاجية دائماً أقل", correct: false, explanation: "لا — الدراسات تقول إنها غالباً أعلى." },
+          { text: "Es gibt keine Studien", ar: "لا توجد دراسات", correct: false, explanation: "لا — النص يذكر دراسات." },
+        ],
+      },
+    },
+    {
+      id: 4,
+      de: "Allerdings betonen Experten, dass der persönliche Kontakt zwischen Kollegen nicht ersetzt werden kann.",
+      ar: "لكن الخبراء يؤكدون أن التواصل الشخصي بين الزملاء لا يمكن تعويضه.",
+      question: {
+        de: "Was betonen die Experten?",
+        ar: "ماذا يؤكد الخبراء؟",
+        options: [
+          { text: "Persönlicher Kontakt ist wichtig", ar: "التواصل الشخصي مهم", correct: true, explanation: "صحيح — «der persönliche Kontakt nicht ersetzt werden kann»." },
+          { text: "Kontakt ist unnötig", ar: "التواصل غير ضروري", correct: false, explanation: "لا — الخبراء يؤكدون أهميته." },
+          { text: "Büros sind überflüssig", ar: "المكاتب زائدة", correct: false, explanation: "لا — لم يُقل ذلك." },
+        ],
+      },
+    },
+    { id: 5, de: "Die Zukunft der Arbeit wird vermutlich eine Mischung aus Büro und Homeoffice sein. Ende.", ar: "ربما يكون مستقبل العمل مزيجاً من المكتب والعمل عن بعد. النهاية." },
+  ],
+};
+
+export const B2_EXTRA_STORIES: InteractiveStory[] = [B2_7, B2_8, B2_9, B2_10, B2_11, B2_12, B2_13, B2_14];
