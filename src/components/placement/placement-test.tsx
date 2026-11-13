@@ -151,7 +151,7 @@ export function PlacementTest() {
   const [questions, setQuestions] = React.useState<McqExercise[]>([]);
   const [index, setIndex] = React.useState(0);
   const [score, setScore] = React.useState(0);
-  const [answers, setAnswers] = React.useState<Record<string, boolean>>({});
+  const [answers, setAnswers] = React.useState<Record<string, { correct: boolean; chosen?: string }>>({});
   const [finished, setFinished] = React.useState(false);
   const [round, setRound] = React.useState(0);
 
@@ -179,9 +179,9 @@ export function PlacementTest() {
 
   const current = questions[index];
 
-  const handleResult = (correct: boolean, id: string) => {
+  const handleResult = (correct: boolean, id: string, chosen?: string) => {
     if (answers[id] !== undefined) return;
-    const next = { ...answers, [id]: correct };
+    const next = { ...answers, [id]: { correct, chosen } };
     setAnswers(next);
     if (correct) setScore((s) => s + 1);
     setTimeout(() => {
@@ -233,6 +233,35 @@ export function PlacementTest() {
             إعادة الاختبار
           </Button>
         </div>
+        {/* مراجعة الأدلة — كل سؤالٍ بشاهده */}
+        <div className="mt-8 text-start" data-testid="exam-review">
+          <h4 className="mb-3 text-lg font-bold">مراجعة الأدلة</h4>
+          <div className="space-y-3">
+            {questions.map((q) => {
+              const ans = answers[q.id];
+              const ok = ans?.correct ?? false;
+              const correctOpt = q.options[q.correctIndex];
+              return (
+                <div key={q.id} data-testid="exam-review-item" className="rounded-xl border bg-card p-3">
+                  <p className="text-sm">
+                    <span aria-hidden className={ok ? "text-success" : "text-destructive"}>{ok ? "✓" : "✗"}</span>{" "}
+                    <span dir="ltr" lang="de" className="font-de">{q.questionDe}</span>
+                  </p>
+                  <p className="mt-1 text-xs">
+                    جوابك: <span dir="ltr" lang="de" className="font-de">{ans?.chosen ?? "— لم تُجب"}</span> ·
+                    الصحيح: <span dir="ltr" lang="de" className="font-de">{correctOpt}</span>
+                  </p>
+                  {q.explanation && (
+                    <p className="mt-1 rounded-md bg-muted/40 p-2 text-xs leading-relaxed">
+                      <span className="font-bold">الدليل: </span>
+                      <span data-testid="exam-review-evidence">{q.explanation}</span>
+                    </p>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     );
   }
@@ -250,7 +279,7 @@ export function PlacementTest() {
       </div>
       {current && (
         <div key={`${current.id}-${round}`}>
-          <MultipleChoiceExercise exercise={current} onResult={(r) => handleResult(r.isCorrect, current.id)} />
+          <MultipleChoiceExercise exercise={current} onResult={(r) => handleResult(r.isCorrect, current.id, r.chosen)} />
         </div>
       )}
     </div>
