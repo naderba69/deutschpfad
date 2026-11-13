@@ -20,7 +20,7 @@ test("مسار التعلم: يعرض 47 وحدة و52 درساً من فهرس 
 test("مسار التعلم: خطة 12 شهراً مرتبطة بالمسار", async ({ page }) => {
   await page.goto("/learning-path", { waitUntil: "networkidle" });
   await page.waitForTimeout(600);
-  await expect(page.getByText("افتح خطة 12 شهراً ←")).toBeVisible();
+  await expect(page.getByText("اعرض مثالاً لجدول التدريب ←")).toBeVisible();
 });
 
 test("بطاقات الوحدات تعرض عدد الدروس الصحيح (A1 = 16)", async ({ page }) => {
