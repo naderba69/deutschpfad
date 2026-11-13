@@ -144,7 +144,7 @@ const PER_LEVEL = 5;
 
 
 /**
- * اختبار تحديد المستوى المبسّط — 15 سؤالاً عشوائياً (5 A1 + 5 A2 + 5 B1)
+ * اختبار تحديد المستوى التكيفي — يبدأ بـ A1 ويتقدم عند النجاح (≥3/5)
  * — نواة نظام الاختبارات الكامل (المرحلة 10) —
  */
 export function PlacementTest() {
@@ -154,22 +154,30 @@ export function PlacementTest() {
   const [answers, setAnswers] = React.useState<Record<string, { correct: boolean; chosen?: string }>>({});
   const [finished, setFinished] = React.useState(false);
   const [round, setRound] = React.useState(0);
+  const [levelIdx, setLevelIdx] = React.useState(0);
+  const [levelCorrect, setLevelCorrect] = React.useState(0);
+  const [allQuestions, setAllQuestions] = React.useState<McqExercise[]>([]);
+
+  const LEVELS = ["a1", "a2", "b1"] as const;
 
   React.useEffect(() => {
     const a1 = sample(PLACEMENT_BANK.filter((q) => q.id.startsWith("pl-a1")), PER_LEVEL);
-    const a2 = sample(PLACEMENT_BANK.filter((q) => q.id.startsWith("pl-a2")), PER_LEVEL);
-    const b1 = sample(PLACEMENT_BANK.filter((q) => q.id.startsWith("pl-b1")), PER_LEVEL);
-    setQuestions([...a1, ...a2, ...b1]);
+    setQuestions(a1);
+    setAllQuestions(a1);
     setIndex(0);
     setScore(0);
     setAnswers({});
     setFinished(false);
+    setLevelIdx(0);
+    setLevelCorrect(0);
   }, [round]);
+
+  const totalAnswered = Object.keys(answers).length;
 
   // حفظ مستوى المتعلم تلقائياً بعد إتمام التقييم — تغذّي «لوحة الرحلة»
   React.useEffect(() => {
-    if (finished && questions.length > 0) {
-      const result = getQuickPlacementSuggestion(score, questions.length);
+    if (finished && totalAnswered > 0) {
+      const result = getQuickPlacementSuggestion(score, totalAnswered);
       void import("@/lib/storage/learner").then(({saveLearnerProfile}) =>
         saveLearnerProfile({ placementLevel: result.level as "A1" | "A2" | "B1" | "B2" }),
       );
@@ -183,14 +191,27 @@ export function PlacementTest() {
     if (answers[id] !== undefined) return;
     const next = { ...answers, [id]: { correct, chosen } };
     setAnswers(next);
-    if (correct) setScore((s) => s + 1);
+    if (correct) {
+      setScore((s) => s + 1);
+      setLevelCorrect((c) => c + 1);
+    }
     setTimeout(() => {
       setIndex((i) => {
-        if (i + 1 >= questions.length) {
-          setFinished(true);
-          return i;
+        if (i + 1 < questions.length) return i + 1;
+        // انتهى مستوى — قرر: تقدم أم توقف
+        const totalCorrect = correct ? levelCorrect + 1 : levelCorrect;
+        if (totalCorrect >= 3 && levelIdx < LEVELS.length - 1) {
+          // تقدم للمستوى التالي
+          const nextLevel = LEVELS[levelIdx + 1];
+          const nextQs = sample(PLACEMENT_BANK.filter((q) => q.id.startsWith(`pl-${nextLevel}`)), PER_LEVEL);
+          setQuestions(nextQs);
+          setAllQuestions((prev) => [...prev, ...nextQs]);
+          setLevelIdx((l) => l + 1);
+          setLevelCorrect(0);
+          return 0;
         }
-        return i + 1;
+        setFinished(true);
+        return i;
       });
     }, 800);
   };
@@ -200,7 +221,7 @@ export function PlacementTest() {
   }
 
   if (finished) {
-    const result = getQuickPlacementSuggestion(score, questions.length);
+    const result = getQuickPlacementSuggestion(score, totalAnswered);
     return (
       <div className="rounded-2xl border bg-muted/20 p-8 text-center">
         <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
@@ -212,10 +233,10 @@ export function PlacementTest() {
         </span>
         <h3 className="mt-4 text-2xl font-extrabold">{result.label}</h3>
         <p className="font-de mt-2 text-4xl font-extrabold text-primary">
-          {Math.round((score / questions.length) * 100)}%
+          {Math.round((score / totalAnswered) * 100)}%
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
-          أجبت صحيحاً على {score} من {questions.length} — {result.message}
+          أجبت صحيحاً على {score} من {totalAnswered} — {result.message}
         </p>
         <p className="mt-2 text-xs text-muted-foreground">
           هذا اقتراح بداية من عينة داخلية قصيرة، وليس قياساً معيارياً أو تصنيفاً رسمياً لمستوى CEFR.
@@ -237,7 +258,7 @@ export function PlacementTest() {
         <div className="mt-8 text-start" data-testid="exam-review">
           <h4 className="mb-3 text-lg font-bold">مراجعة الأدلة</h4>
           <div className="space-y-3">
-            {questions.map((q) => {
+            {allQuestions.map((q) => {
               const ans = answers[q.id];
               const ok = ans?.correct ?? false;
               const correctOpt = q.options[q.correctIndex];

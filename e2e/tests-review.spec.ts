@@ -1,23 +1,32 @@
 import { expect, test } from "@playwright/test";
 
-test("تحديد المستوى السريع: مراجعة الشروح في النتيجة (15 سؤالاً)", async ({ page }) => {
+test("تحديد المستوى السريع: مراجعة الشروح في النتيجة (تكيفي)", async ({ page }) => {
   const pageErrors: string[] = [];
   page.on("pageerror", (e) => pageErrors.push(e.message));
   await page.goto("/tests/placement?mode=quick", { waitUntil: "networkidle" });
   await page.waitForTimeout(400);
 
-  // 15 سؤالاً — كل اختيار يقدّم تلقائياً بعد 800ms
-  for (let i = 0; i < 15; i++) {
-    await page.getByRole("radio").first().click();
-    await page.waitForTimeout(900);
+  // اختبار تكيفي: أجب حتى تظهر النتيجة (5 أو 10 أو 15 سؤالاً حسب الأداء)
+  for (let i = 0; i < 20; i++) {
+    const review = page.getByTestId("exam-review");
+    if (await review.isVisible().catch(() => false)) break;
+    const radio = page.getByRole("radio").first();
+    if (await radio.isVisible().catch(() => false)) {
+      await radio.click();
+      await page.waitForTimeout(900);
+    } else {
+      break;
+    }
   }
 
-  // النتيجة تحمل المراجعة كاملة: 15 عنصراً بشاهده (الدفعة 122)
+  // النتيجة تحمل المراجعة كاملة
   const review = page.getByTestId("exam-review");
   await expect(review).toBeVisible({ timeout: 10000 });
   await expect(review).toContainText("مراجعة الأدلة");
-  expect(await page.getByTestId("exam-review-item").count(), "15 عنصر مراجعة").toBe(15);
-  expect(await page.getByTestId("exam-review-evidence").count(), "15 شاهداً").toBe(15);
+  const itemCount = await page.getByTestId("exam-review-item").count();
+  expect(itemCount, "عدد عناصر المراجعة يطابق الأسئلة المُجابة").toBeGreaterThanOrEqual(5);
+  expect(itemCount, "عدد عناصر المراجعة لا يتجاوز 15").toBeLessThanOrEqual(15);
+  expect(await page.getByTestId("exam-review-evidence").count(), "شاهد لكل سؤال").toBe(itemCount);
   await expect(page.getByTestId("exam-review-evidence").first()).toContainText(/[A-Za-zÄÖÜäöüß]{3,}/);
   await expect(review).toContainText("جوابك:");
 
