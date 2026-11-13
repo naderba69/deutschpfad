@@ -24,7 +24,7 @@ describe("open oral production pilot tasks", () => {
   });
 
   it("can build a level-scaled open-speaking task for every indexed lesson", () => {
-    expect(LESSON_META).toHaveLength(52);
+    expect(LESSON_META).toHaveLength(53);
     expect(Object.keys(ORAL_PROMPTS_BY_LESSON).sort()).toEqual(LESSON_META.map((meta) => meta.id).sort());
     const generated = LESSON_META.map((meta) => buildDefaultOralProductionTask(meta));
     expect(new Set(generated.map((task) => task.id)).size).toBe(LESSON_META.length);
