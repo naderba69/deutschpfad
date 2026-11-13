@@ -515,6 +515,15 @@ export const UNITS: Unit[] = [
     descDe: "Beförderung, Weiterbildung und Führungskraft werden.",
     descAr: "الترقية، التدريب المستمر، ومهارات القيادة والتطوير المهني.",
   },
+  {
+    id: "b2-13",
+    level: "B2",
+    number: 12,
+    titleDe: "Technologie und KI",
+    titleAr: "التكنولوجيا والذكاء الاصطناعي",
+    descDe: "Digitalisierung, KI und Datenschutz sprachlich einordnen.",
+    descAr: "الرقمنة والذكاء الاصطناعي وحماية البيانات، والاشتقاق التقني.",
+  },
 ];
 
 /** إرجاع وحدات مستوى معيّن مرتبة */

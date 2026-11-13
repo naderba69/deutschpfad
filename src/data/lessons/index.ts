@@ -51,6 +51,7 @@ import { lessonB208 } from "@/data/lessons/b2/b2-08";
 import { lessonB209 } from "@/data/lessons/b2/b2-09";
 import { lessonB210 } from "@/data/lessons/b2/b2-10";
 import { lessonB212 } from "@/data/lessons/b2/b2-12";
+import { lessonB213 } from "@/data/lessons/b2/b2-13";
 import { balanceChoiceTree } from "@/lib/tests/balance-options";
 
 /**
@@ -74,7 +75,7 @@ export const RAW_LESSONS: Lesson[] = [
   lessonB106, lessonB107, lessonB108, lessonB109, lessonB110, lessonB112, lessonB111,
   /* B2 — 11 */
   lessonB201, lessonB202, lessonB203, lessonB204, lessonB211, lessonB205,
-  lessonB206, lessonB207, lessonB208, lessonB209, lessonB210, lessonB212,
+  lessonB206, lessonB207, lessonB208, lessonB209, lessonB210, lessonB212, lessonB213,
 ];
 /**
  * الدروس كما يراها المتعلم: **مواضع الإجابات موزّعة** (الدفعة 70).

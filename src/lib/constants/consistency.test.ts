@@ -27,9 +27,9 @@ describe("اتساق أرقام الدروس (المرحلة 4)", () => {
     expect(new Set(metadataIds).size).toBe(metadataIds.length);
     expect(registryIds).toEqual(metadataIds);
   });
-  it("TOTAL_LESSONS يساوي عدد الدروس الفعلية (53 — لا 251 الوهمي)", () => {
+  it("TOTAL_LESSONS يساوي عدد الدروس الفعلية (54 — لا 251 الوهمي)", () => {
     expect(TOTAL_LESSONS).toBe(LESSON_META.length);
-    expect(TOTAL_LESSONS).toBe(53);
+    expect(TOTAL_LESSONS).toBe(54);
   });
 
   it("عدد دروس كل وحدة معروض = الدروس الفعلية لهذه الوحدة", () => {
@@ -131,8 +131,8 @@ describe("اتساق الدروس الفعلية (المرحلة 4)", () => {
 });
 
 describe("عدد الوحدات المعلن (المرحلة 4)", () => {
-  it("TOTAL_UNITS يساوي عدد وحدات العرض الفعلية (48)", () => {
-    expect(TOTAL_UNITS).toBe(48);
+  it("TOTAL_UNITS يساوي عدد وحدات العرض الفعلية (49)", () => {
+    expect(TOTAL_UNITS).toBe(49);
   });
 
   it("كل وحدة عرض لها درس واحد على الأقل", () => {

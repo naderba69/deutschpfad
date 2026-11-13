@@ -57,7 +57,8 @@ export const ORAL_PROMPTS_BY_LESSON: Record<string, TopicPrompt> = {
   "b2-10": {promptAr:"قدّم عرضاً قصيراً عن موضوع دراسي: عرّف السؤال، واشرح فكرتين أو دليلاً، ثم لخّص النتيجة وأجب عن سؤال متوقع.",promptDe:"Halte einen kurzen Vortrag zu einem Studienthema: Formuliere die Frage, erkläre zwei Gedanken oder Belege, fasse das Ergebnis zusammen und beantworte eine mögliche Rückfrage.",prompts:["استخدم بنية واضحة للمقدمة والعرض والخاتمة.","اشرح المصطلحات اللازمة للجمهور.","ميّز بين الدليل والاستنتاج."]},
   "b2-11": {promptAr:"انقل رأي شخص أو تقرير بدقة: اذكر من قال ماذا، وما الذي استنتجته أنت، مع تجنب خلط الرأي بالحقيقة.",promptDe:"Gib die Aussage einer Person oder eines Berichts genau wieder. Nenne, wer was gesagt hat, und trenne davon deine eigene Schlussfolgerung.",prompts:["استخدم أسلوب نقل الكلام عند الحاجة.","حافظ على معنى المصدر ولا تضف ادعاءً إليه.","اختم بتمييز واضح بين النقل ورأيك."]},
   "b2-12": {promptAr:"تحدث عن هدفك المهني القادم: ما المنصب الذي تريده؟ وكيف ستطور مؤهلاتك؟ استخدم صيغة الشرط للفرضية والمبني للمجهول لوصف إنجاز.",promptDe:"Sprich über dein nächstes Karriereziel: Welche Position möchtest du, wie entwickelst du deine Qualifikationen? Nutze den Konjunktiv II für eine Hypothese und das Passiv für eine Leistung.",prompts:["اذكر هدفاً مهنياً محدداً ومدة زمنية.","استخدم würde أو bekäme لفرضية مستقبلية.","صف إنجازاً واحداً بالمبني للمجهول."]},
-};
+
+  "b2-13": {promptAr:"ناقش فائدة تقنية ومساوئها: اعرض وجهين بأدوات استدراكية، واستخدم مصطلحاً تقنياً مشتقاً واحداً على الأقل لتصف الأثر.",promptDe:"Diskutiere einen Nutzen und einen Nachteil einer Technologie: Formuliere beide Seiten mit konzessiven Konnektoren und nutze mindestens einen abgeleiteten Fachbegriff.",prompts:["اذكر ميزة واحدة وعيباً واحداً.","استخدم obwohl أو zwar ... aber.","صف الأثر بمصطلح مشتق مثل die Automatisierung."]},};
 
 /**
  * Default level-scaled oral-production practice for every indexed lesson.
