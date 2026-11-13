@@ -40,7 +40,7 @@ test("بطاقات الوحدات تعرض عدد الدروس الصحيح (A1 
 test("الرئيسية: تعرض صياغة الإتاحة الحالية لا وعداً مجانياً مطلقاً", async ({ page }) => {
   await page.goto("/", { waitUntil: "networkidle" });
   const body = await page.locator("body").innerText();
-  expect(body).toContain("التدريبات الأساسية متاحة دون اشتراك مدفوع حالياً.");
+  expect(body).toContain("التدريبات الأساسية متاحة حالياً دون اشتراك مدفوع");
   expect(body).not.toContain("مجاناً 100%");
 });
 
@@ -67,8 +67,8 @@ test("ترتيب المسار: درس التسوق والأرقام (a1-07) قب
   const order = await page.evaluate(() => {
     const links = [...document.querySelectorAll<HTMLAnchorElement>('a[href^="/lesson/"]')];
     return {
-      shopping: links.findIndex((link) => link.pathname.endsWith("/a1-07")),
-      review: links.findIndex((link) => link.pathname.endsWith("/a1-13")),
+      shopping: links.findIndex((link) => (link.getAttribute("href") ?? "").endsWith("/a1-07")),
+      review: links.findIndex((link) => (link.getAttribute("href") ?? "").endsWith("/a1-13")),
     };
   });
   expect(order.shopping).toBeGreaterThanOrEqual(0);
