@@ -68,5 +68,5 @@ test("مركز الاختبارات: الروابط الجديدة (قراءة،
   await expect(page.getByText("مكتبة القراءة B2")).toBeVisible();
   await expect(page.getByText("تدريب القواعد والمفردات B2")).toBeVisible();
   await expect(page.getByText("استراتيجيات الامتحان — دليل كل Teil")).toBeVisible();
-  await expect(page.getByText("خطة 12 شهراً → B2")).toBeVisible();
+  await expect(page.getByText("خطة تدريب قابلة للتعديل نحو B2")).toBeVisible();
 });
