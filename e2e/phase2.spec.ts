@@ -50,7 +50,7 @@ test("استراتيجيات الامتحان: الأجزاء الثلاثة ع�
 test("خطة 12 شهراً: المراحل الست ظاهرة", async ({ page }) => {
   await page.goto("/tests/plan-b2", { waitUntil: "networkidle" });
   await page.waitForTimeout(600);
-  await expect(page.getByRole("heading", { name: /خطة 12 شهراً/ })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /مثال لخطة تدريب/ })).toBeVisible();
   await expect(page.getByText("الشهران 1-2")).toBeVisible();
   await expect(page.getByText("الشهران 11-12")).toBeVisible();
   await expect(page.getByText("مثال لخطة تدريب A1–B2")).toBeVisible();
