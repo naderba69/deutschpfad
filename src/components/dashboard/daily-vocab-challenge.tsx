@@ -13,9 +13,25 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { VocabKindBadge } from "@/components/shared/vocab-kind";
 import { Progress } from "@/components/ui/progress";
 import { B2_EXAM_TOPICS, B2_TOPIC_VOCAB, type B2ExamTopic } from "@/data/vocabulary/b2-topics";
+import { A1_VOCAB } from "@/data/vocabulary/a1";
+import { A2_VOCAB } from "@/data/vocabulary/a2";
+import { B1_VOCAB } from "@/data/vocabulary/b1";
 import type { VocabEntry } from "@/data/vocabulary/a1";
 import { addManualCard } from "@/lib/srs/flashcard-service";
+import { getLearnerProfile } from "@/lib/storage/learner";
 import { cn } from "@/lib/utils";
+
+type LearnerLevel = "A1" | "A2" | "B1" | "B2";
+
+/** مفردات مستوى معين — مسطحة من كل المواضيع */
+function vocabForLevel(level: LearnerLevel): VocabEntry[] {
+  switch (level) {
+    case "A1": return Object.values(A1_VOCAB).flat();
+    case "A2": return Object.values(A2_VOCAB).flat();
+    case "B1": return Object.values(B1_VOCAB).flat();
+    case "B2": return Object.values(B2_TOPIC_VOCAB).flat();
+  }
+}
 
 /** مولد أرقام عشوائية ببذرة ثابتة (يتغير يومياً) */
 function seeded(seed: number) {
@@ -41,25 +57,39 @@ function seededShuffle<T>(arr: T[], rand: () => number): T[] {
   return out;
 }
 
-/** اختيار 5 كلمات موزعة على 5 مواضيع مختلفة عشوائياً لكن ثابتة اليوم */
-function pickDailyWords(): { word: VocabEntry; topic: B2ExamTopic }[] {
+/** اختيار 5 كلمات من مستوى المتعلم — ثابتة اليوم لكن متدرجة حسب المستوى */
+function pickDailyWords(level: LearnerLevel): { word: VocabEntry; topic: B2ExamTopic }[] {
   const rand = seeded(daySeed());
-  const topics = seededShuffle(B2_EXAM_TOPICS, rand).slice(0, 5);
-  const out: { word: VocabEntry; topic: B2ExamTopic }[] = [];
-  for (const topic of topics) {
-    const words = B2_TOPIC_VOCAB[topic.id] ?? [];
-    if (words.length > 0) {
-      out.push({ word: words[Math.floor(rand() * words.length)], topic });
+  if (level === "B2") {
+    const topics = seededShuffle(B2_EXAM_TOPICS, rand).slice(0, 5);
+    const out: { word: VocabEntry; topic: B2ExamTopic }[] = [];
+    for (const topic of topics) {
+      const words = B2_TOPIC_VOCAB[topic.id] ?? [];
+      if (words.length > 0) {
+        out.push({ word: words[Math.floor(rand() * words.length)], topic });
+      }
     }
+    return out;
   }
-  return out;
+  // مستويات A1–B1: اختيار عشوائي من مفردات المستوى
+  const all = vocabForLevel(level);
+  const shuffled = seededShuffle(all, rand).slice(0, 5);
+  return shuffled.map((word) => ({
+    word,
+    topic: { id: level.toLowerCase(), titleAr: `مفردات ${level}`, icon: "📚" } as B2ExamTopic,
+  }));
 }
 
 export function DailyVocabChallenge() {
+  const [level, setLevel] = React.useState<LearnerLevel>("B2");
   // الكلمات اليومية تعتمد على التاريخ المحلي: تُحسب بعد الـ mount لتجنب عدم التطابق
   const [daily, setDaily] = React.useState<{ word: VocabEntry; topic: B2ExamTopic }[]>([]);
   React.useEffect(() => {
-    setDaily(pickDailyWords());
+    void getLearnerProfile().then((p) => {
+      const lvl = (p.placementLevel ?? "B2") as LearnerLevel;
+      setLevel(lvl);
+      setDaily(pickDailyWords(lvl));
+    });
   }, []);
   const [flipped, setFlipped] = React.useState<Set<number>>(new Set());
   const [added, setAdded] = React.useState<Set<string>>(new Set());
@@ -79,7 +109,7 @@ export function DailyVocabChallenge() {
 
   const addAll = async () => {
     for (const { word } of daily) {
-      await addManualCard({ de: word.de, ar: word.ar, level: "B2" });
+      await addManualCard({ de: word.de, ar: word.ar, level });
       setAdded((prev) => new Set(prev).add(word.de));
     }
   };
@@ -91,7 +121,7 @@ export function DailyVocabChallenge() {
       <CardHeader className="border-b bg-muted/20">
         <CardTitle className="flex items-center gap-2 text-lg">
           <Flame className="h-5 w-5 text-gold-strong" aria-hidden="true" />
-          تحدّي المفردات اليومي — 5 كلمات من مواضيع B2
+          تحدّي المفردات اليومي — 5 كلمات {level === "B2" ? "من مواضيع B2" : `من مستوى ${level}`}
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4 p-5">
