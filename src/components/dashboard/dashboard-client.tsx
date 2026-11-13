@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 
 import {HeatmapChart} from "@/components/dashboard/heatmap-chart";
+import {WeeklyActivityChart} from "@/components/dashboard/weekly-activity-chart";
 import {ExamReadinessCard} from "@/components/dashboard/exam-readiness-card";
 import {MistakeDictionaryCard} from "@/components/dashboard/mistake-dictionary-card";
 import {PreferencesCard} from "@/components/dashboard/preferences-card";
@@ -269,6 +270,7 @@ export function DashboardClient() {
         </div>
 
         {heatReadError ? <div role="alert" className="rounded-xl border border-destructive/30 bg-destructive/5 p-4 text-sm">تعذرت قراءة سجل النشاط؛ أخفينا خريطة النشاط وسلسلة الأيام.</div> : <HeatmapChart cells={heat.cells} streak={heat.streak} />}
+        <WeeklyActivityChart />
       </DashSection>
 
       {/* ⑥ نقاط ضعفك وأهدافك */}

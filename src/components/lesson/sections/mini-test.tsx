@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import {Award, ClipboardCheck, RotateCcw, Trophy} from "lucide-react";
+import {Award, BookOpenCheck, ClipboardCheck, RotateCcw, Trophy} from "lucide-react";
 
 import {ExerciseRenderer} from "@/components/lesson/exercises/exercise-renderer";
 import {useProgress} from "@/components/providers/progress-provider";
@@ -9,6 +9,7 @@ import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
 import {recordEvent} from "@/lib/analytics/events";
 import {addLessonFlashcards} from "@/lib/srs/flashcard-service";
+import {ERROR_TYPE_LABELS, getNotebookResult, type NotebookEntry} from "@/lib/storage/error-notebook";
 import {cn} from "@/lib/utils";
 import type { Exercise, FeedbackResult, Flashcard } from "@/types/lesson";
 
@@ -42,6 +43,20 @@ export function MiniTestSection({
   const [finished, setFinished] = React.useState(false);
   const [round, setRound] = React.useState(0);
   const [cardsAdded, setCardsAdded] = React.useState(false);
+  const [pastErrors, setPastErrors] = React.useState<NotebookEntry[]>([]);
+  const [showErrorReview, setShowErrorReview] = React.useState(false);
+
+  // مراجعة الأخطاء السابقة من هذا الدرس قبل بدء الاختبار
+  React.useEffect(() => {
+    if (!lessonId) return;
+    void getNotebookResult().then((res) => {
+      if (!res.ok) return;
+      const lessonErrors = res.rows
+        .filter((e) => e.lessonId === lessonId && !e.mastered)
+        .slice(0, 5);
+      setPastErrors(lessonErrors);
+    });
+  }, [lessonId]);
 
   const current = questions[index];
   const answered = Object.keys(scores).length;
@@ -136,6 +151,35 @@ export function MiniTestSection({
 
   return (
     <div className="space-y-5">
+      {/* مراجعة الأخطاء السابقة — قبل بدء الاختبار */}
+      {pastErrors.length > 0 && (
+        <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4">
+          <button
+            type="button"
+            onClick={() => setShowErrorReview((s) => !s)}
+            className="flex w-full items-center gap-2 text-sm font-bold text-amber-700"
+            aria-expanded={showErrorReview}
+          >
+            <BookOpenCheck className="h-4 w-4" aria-hidden="true" />
+            راجع أخطاءك السابقة ({pastErrors.length}) قبل الاختبار
+            <span className="ms-auto text-xs">{showErrorReview ? "إخفاء" : "عرض"}</span>
+          </button>
+          {showErrorReview && (
+            <ul className="mt-3 space-y-2">
+              {pastErrors.map((e) => (
+                <li key={e.id} className="rounded-lg bg-background/60 p-2.5 text-xs leading-relaxed">
+                  <span className="font-bold">{ERROR_TYPE_LABELS[e.errorType] ?? e.errorType}</span>
+                  {e.correctAnswer && (
+                    <> · الصحيح: <span dir="ltr" lang="de" className="font-de font-bold">{e.correctAnswer}</span></>
+                  )}
+                  {e.explanation && <p className="mt-1 text-muted-foreground">{e.explanation}</p>}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
+
       <div className="rounded-xl border bg-muted/30 p-4">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <p className="inline-flex items-center gap-2 text-sm font-semibold">
