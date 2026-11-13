@@ -506,6 +506,15 @@ export const UNITS: Unit[] = [
     descDe: "Universitätssystem, Seminare und wissenschaftliches Schreiben.",
     descAr: "النظام الجامعي، الندوات، والكتابة الأكاديمية العلمية (Fachsprache).",
   },
+  {
+    id: "b2-12",
+    level: "B2",
+    number: 11,
+    titleDe: "Karriereentwicklung",
+    titleAr: "المهن المتقدمة",
+    descDe: "Beförderung, Weiterbildung und Führungskraft werden.",
+    descAr: "الترقية، التدريب المستمر، ومهارات القيادة والتطوير المهني.",
+  },
 ];
 
 /** إرجاع وحدات مستوى معيّن مرتبة */

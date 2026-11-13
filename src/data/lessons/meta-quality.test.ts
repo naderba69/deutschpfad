@@ -21,7 +21,7 @@ const GERMAN = /[A-Za-zÄÖÜäöüß]{3,}/;
 const GERMAN_TERM = /[A-Za-zÄÖÜäöüß]{2,}/;
 
 describe("بيانات الدروس المخفية — keyWords (الدفعة 123)", () => {
-  it("كل درس يحمل مصطلحات غير فارغة (أرضية 52 درساً)", () => {
+  it("كل درس يحمل مصطلحات غير فارغة (أرضية 53 درساً)", () => {
     expect(LESSON_META.length).toBeGreaterThanOrEqual(52);
     const empty = LESSON_META.filter((m) => !(m.keyWords?.length)).map((m) => m.id);
     expect(empty, "دروس بلا مصطلحات").toEqual([]);

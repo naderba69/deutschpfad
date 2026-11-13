@@ -7,12 +7,12 @@ import { test, expect } from "@playwright/test";
  * ═══════════════════════════════════════════════════════════
  */
 
-test("مسار التعلم: يعرض 47 وحدة و52 درساً من فهرس الدروس (لا 251 الوهمي)", async ({ page }) => {
+test("مسار التعلم: يعرض 48 وحدة و53 درساً من فهرس الدروس (لا 251 الوهمي)", async ({ page }) => {
   await page.goto("/learning-path", { waitUntil: "networkidle" });
   await page.waitForTimeout(800);
   const body = await page.locator("body").innerText();
-  expect(body).toContain("47 وحدة");
-  expect(body).toContain("52 درساً");
+  expect(body).toContain("48 وحدة");
+  expect(body).toContain("53 درساً");
   expect(body).not.toContain("251");
   expect(body).not.toContain("45 وحدة");
 });
@@ -52,11 +52,11 @@ test("لوحة التحكم: لا تعرض إجماليات قديمة /45 أو 
   expect(body).not.toContain("/48");
 });
 
-test("الرئيسية: تعرض 52 درساً (متسقة مع المسار)", async ({ page }) => {
+test("الرئيسية: تعرض 53 درساً (متسقة مع المسار)", async ({ page }) => {
   await page.goto("/", { waitUntil: "networkidle" });
   await page.waitForTimeout(800);
   const body = await page.locator("body").innerText();
-  await expect(page.getByText("52", { exact: true }).first()).toBeVisible();
+  await expect(page.getByText("53", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("درس تفاعلي", { exact: true })).toBeVisible();
 });
 
