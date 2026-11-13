@@ -217,4 +217,90 @@ const A2_13: InteractiveStory = {
   ],
 };
 
-export const A2_EXTRA_STORIES: InteractiveStory[] = [A2_9, A2_10, A2_11, A2_12, A2_13];
+const A2_14: InteractiveStory = {
+  id: "a2-markt",
+  level: "A2",
+  title: "Auf dem Markt",
+  titleAr: "في السوق",
+  emoji: "🥕",
+  description: "مريم تشتري الخضار في السوق — Perfekt والأسعار.",
+  grammar: "الماضي (Perfekt) • الأسعار • الكميات",
+  segments: [
+    { id: 1, de: "Mariam ist heute auf den Markt gegangen, weil sie frisches Gemüse kaufen wollte.", ar: "ذهبت مريم اليوم إلى السوق لأنها أرادت شراء خضار طازجة." },
+    { id: 2, de: "Sie hat einen großen Korb mitgenommen und ist langsam durch die Stände gegangen.", ar: "أخذت سلة كبيرة ومشت ببطء بين الأكشاك." },
+    {
+      id: 3,
+      de: "Sie hat Tomaten und Karotten gekauft, weil sie für die Suppe brauchte.",
+      ar: "اشترت طماطم وجزراً لأنها احتاجتها للشوربة.",
+      question: {
+        de: "Was hat Mariam gekauft?",
+        ar: "ماذا اشترت مريم؟",
+        options: [
+          { text: "Tomaten und Karotten", ar: "طماطم وجزراً", correct: true, explanation: "نعم — «Sie hat Tomaten und Karotten gekauft»." },
+          { text: "Äpfel und Bananen", ar: "تفاحاً وموزاً", correct: false, explanation: "لا — اشترت خضاراً لا فواكه." },
+          { text: "Brot und Käse", ar: "خبزاً وجبناً", correct: false, explanation: "لا — الخبز والجبن لم يُذكرا." },
+        ],
+      },
+    },
+    {
+      id: 4,
+      de: "Der Verkäufer hat ihr gesagt, dass die Tomaten heute besonders frisch seien.",
+      ar: "قال لها البائع إن الطماطم طازجة بشكل خاص اليوم.",
+      question: {
+        de: "Was hat der Verkäufer gesagt?",
+        ar: "ماذا قال البائع؟",
+        options: [
+          { text: "Die Tomaten sind frisch", ar: "الطماطم طازجة", correct: true, explanation: "صحيح — «dass die Tomaten heute besonders frisch seien»." },
+          { text: "Die Tomaten sind teuer", ar: "الطماطم غالية", correct: false, explanation: "لا — تحدث عن الطزاجة لا السعر." },
+          { text: "Die Tomaten sind alt", ar: "الطماطم قديمة", correct: false, explanation: "لا — قال إنها طازجة." },
+        ],
+      },
+    },
+    { id: 5, de: "Zu Hause hat Mariam eine leckere Suppe gekocht. Ende.", ar: "في البيت طبخت مريم شوربة لذيذة. النهاية." },
+  ],
+};
+
+const A2_15: InteractiveStory = {
+  id: "a2-bibliothek",
+  level: "A2",
+  title: "In der Bibliothek",
+  titleAr: "في المكتبة",
+  emoji: "📖",
+  description: "عمر يستعير كتباً من المكتبة — القراءة والاستعارة.",
+  grammar: "الاستعارة • القراءة • المكتبة",
+  segments: [
+    { id: 1, de: "Omar geht in die Bibliothek, weil er ein Buch für seine Prüfung braucht.", ar: "يذهب عمر إلى المكتبة لأنه يحتاج كتاباً لامتحانه." },
+    { id: 2, de: "Er hat seinen Studentenausweis mitgenommen und sich am Empfang angemeldet.", ar: "أخذ بطاقة الطالب وسجل عند الاستقبال." },
+    {
+      id: 3,
+      de: "Er hat drei Bücher ausgeliehen und sie für vier Wochen behalten.",
+      ar: "استعار ثلاثة كتب واحتفظ بها أربعة أسابيع.",
+      question: {
+        de: "Wie viele Bücher hat Omar ausgeliehen?",
+        ar: "كم كتاباً استعار عمر؟",
+        options: [
+          { text: "Drei Bücher", ar: "ثلاثة كتب", correct: true, explanation: "نعم — «Er hat drei Bücher ausgeliehen»." },
+          { text: "Ein Buch", ar: "كتاباً واحداً", correct: false, explanation: "لا — استعار ثلاثة كتب." },
+          { text: "Fünf Bücher", ar: "خمسة كتب", correct: false, explanation: "لا — العدد ثلاثة." },
+        ],
+      },
+    },
+    {
+      id: 4,
+      de: "Die Bibliothekarin hat ihm gesagt, dass er die Bücher rechtzeitig zurückgeben solle.",
+      ar: "قالت له أمينة المكتبة إنه يجب أن يعيد الكتب في الوقت المناسب.",
+      question: {
+        de: "Was hat die Bibliothekarin gesagt?",
+        ar: "ماذا قالت أمينة المكتبة؟",
+        options: [
+          { text: "Er soll die Bücher zurückgeben", ar: "يجب أن يعيد الكتب", correct: true, explanation: "صحيح — «dass er die Bücher rechtzeitig zurückgeben solle»." },
+          { text: "Er soll die Bücher behalten", ar: "يجب أن يحتفظ بالكتب", correct: false, explanation: "لا — يجب إعادتها في الوقت." },
+          { text: "Er soll mehr Bücher nehmen", ar: "يجب أن يأخذ كتباً أكثر", correct: false, explanation: "لا — الحديث عن الإعادة." },
+        ],
+      },
+    },
+    { id: 5, de: "Omar hat viel gelernt und die Prüfung bestanden. Ende.", ar: "تعلم عمر كثيراً واجتاز الامتحان. النهاية." },
+  ],
+};
+
+export const A2_EXTRA_STORIES: InteractiveStory[] = [A2_9, A2_10, A2_11, A2_12, A2_13, A2_14, A2_15];
