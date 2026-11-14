@@ -211,4 +211,45 @@ export const B1_DIALOGUES_3: DailyDialogue[] = [
       { de: "danach", ar: "بعد ذلك" },
     ],
   },
+  {
+    id: "b1-16-bewerbungsgespraech",
+    level: "B1",
+    title: "مقابلة عمل",
+    titleDe: "Bewerbungsgespräch",
+    emoji: "💼",
+    situation: "مقابلة تدريبية خيالية لشغل منصب في مكتب؛ الشركة والراتب والمواعيد المذكورة أمثلة للتدريب وليست عرض عمل حقيقياً.",
+    audioNoteAr: "ملفات صوت هذا الحوار مولّدة آلياً (TTS) من نصه الألماني، ولم تُراجع من متحدث أصلي؛ قد تختلف النبرة قليلاً عن الحوار الطبيعي.",
+    turns: [
+      { speaker: "المديرة", role: "b", de: "Guten Morgen! Danke, dass Sie zu uns gekommen sind. Erzählen Sie kurz etwas über sich.", ar: "صباح الخير! شكراً لحضورك إلينا. حدّثنا باختصار عن نفسك." },
+      { speaker: "أنت", role: "a", de: "In den letzten drei Jahren habe ich in einem Reisebüro gearbeitet. Dort habe ich vor allem Kunden beraten.", ar: "خلال السنوات الثلاث الماضية عملت في مكتب سفر. هناك قمت أساساً باستشارة العملاء." },
+      { speaker: "المديرة", role: "b", de: "Warum können Sie bei uns anfangen?", ar: "لماذا تبدأ العمل عندنا؟" },
+      { speaker: "أنت", role: "a", de: "Weil ich gern mit Menschen arbeite und mein Deutsch jeden Tag verbessern möchte.", ar: "لأنني أحب العمل مع الناس وأريد تحسين ألمانيتي كل يوم." },
+      { speaker: "المديرة", role: "b", de: "Wann könnten Sie anfangen, und haben Sie noch Fragen?", ar: "متى يمكنك البدء، وهل لديك أسئلة أخرى؟" },
+      { speaker: "أنت", role: "a", de: "Ab dem ersten nächsten Monat. Ich hätte noch eine Frage zu den Arbeitszeiten.", ar: "من أول الشهر القادم. لديّ سؤال آخر عن أوقات العمل." },
+    ],
+    questions: [
+      { de: "Wo hat die Person vorher gearbeitet?", ar: "أين عمل الشخص سابقاً؟", options: [
+        { text: "In einem Reisebüro", ar: "في مكتب سفر", correct: true, explanation: "صحيح — يقول: «in einem Reisebüro gearbeitet»." },
+        { text: "In einem Restaurant", ar: "في مطعم", correct: false, explanation: "لا — لم يُذكر مطعم Restaurant؛ والوظيفة السابقة في Reisebüro." },
+        { text: "An einer Schule", ar: "في مدرسة", correct: false, explanation: "لا — المدرسة Schule غير مذكورة؛ وإنما «in einem Reisebüro»." },
+      ]},
+      { de: "Warum will die Person die Stelle?", ar: "لماذا يريد الشخص هذه الوظيفة؟", options: [
+        { text: "Weil sie gern mit Menschen arbeitet", ar: "لأنها تحب العمل مع الناس", correct: true, explanation: "صحيح — «Weil ich gern mit Menschen arbeite und mein Deutsch jeden Tag verbessern möchte»." },
+        { text: "Weil sie mehr Geld für die Miete braucht", ar: "لأنها تحتاج مالاً أكثر للإيجار", correct: false, explanation: "لا — لم يُذكر المال Geld ولا الإيجار Miete؛ والسبب المذكور هو «Weil ich gern mit Menschen arbeite»." },
+        { text: "Weil die Firma im Ausland liegt", ar: "لأن الشركة في الخارج", correct: false, explanation: "لا — لم يُذكر Ausland؛ والشخص يتحدث عن تحسين ألمانيته Deutsch." },
+      ]},
+      { de: "Ab wann kann die Person anfangen?", ar: "من متى يمكن للشخص البدء؟", options: [
+        { text: "Ab dem ersten nächsten Monat", ar: "من أول الشهر القادم", correct: true, explanation: "صحيح — هذا الجواب الحرفي." },
+        { text: "Sofort schon am selben Tag", ar: "فوراً في اليوم نفسه", correct: false, explanation: "لا — لم يُذكر البدء الفوري إطلاقاً؛ بل «Ab dem ersten nächsten Monat»." },
+        { text: "Erst im nächsten Jahr im Herbst", ar: "في الخريف من السنة القادمة فقط", correct: false, explanation: "لا — السنة القادمة nächstes Jahr غير مذكورة؛ إنما الشهر القادم nächster Monat." },
+      ]},
+    ],
+    keyVocab: [
+      { de: "sich vorstellen", ar: "يقدّم نفسه" },
+      { de: "die Bewerbung", ar: "طلب التوظيف" },
+      { de: "beraten", ar: "يقدّم المشورة" },
+      { de: "die Arbeitszeiten", ar: "أوقات العمل" },
+      { de: "anfangen", ar: "يبدأ" },
+    ],
+  },
 ];

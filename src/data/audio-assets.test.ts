@@ -3,7 +3,7 @@
  *  تدقيق أصول الصوت — حارس انحدار دائم
  *  يتأكد أن كل ملف صوتي تشير إليه المنصة موجود فعلاً و MP3 صالح
  *  (لا ملف فارغ ولا ملف Placeholder):
- *   · حوارات الحياة اليومية A1–B2 (90 مقطعاً لكل مستوى = جولة لكل ملف)
+ *   · حوارات الحياة اليومية A1–B2 (96 مقطعاً في A1 وB1 وB2، و90 في A2 = جولة لكل ملف)
  *   · صوت الاستماع A1/A2/B1 (14 ملفاً لكل مستوى) — تسجيلات صوتية
  *   · صوت الاستماع B2 (5 ملفات mp3 لكل نموذج a/b/c في public/audio/exam-b2/)
  *   · وترويسات مصادر الاستماع تعلن **حالة الصوت الحقيقية** المُقاسة على القرص
@@ -48,10 +48,10 @@ describe("أصول الصوت — حوارات الحياة اليومية", () 
     expect(missing, `مقاطع ناقصة/تالفة (${missing.length})`).toEqual([]);
   });
 
-  it("كل المستويات الأربعة مكتملة — A1 (16 حواراً/96 مقطعاً) وB2 (16/96)", () => {
+  it("كل المستويات الأربعة مكتملة — 16 حواراً/96 مقطعاً في A1 وB1 وB2، و15/90 في A2", () => {
     for (const lv of ["A1", "A2", "B1", "B2"] as const) {
       const dialogues = getDialoguesByLevel(lv);
-      expect(dialogues.length, `حوارات ${lv}`).toBe(lv === "A1" || lv === "B2" ? 16 : 15);
+      expect(dialogues.length, `حوارات ${lv}`).toBe(lv === "A2" ? 15 : 16);
       const expected = dialogues.reduce((n, d) => n + d.turns.length, 0);
       const dir = path.join(AUDIO_ROOT, `dialogues-${lv.toLowerCase()}`);
       const files = fs.readdirSync(dir).filter((f) => f.endsWith(".mp3"));
