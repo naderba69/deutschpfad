@@ -48,10 +48,10 @@ describe("أصول الصوت — حوارات الحياة اليومية", () 
     expect(missing, `مقاطع ناقصة/تالفة (${missing.length})`).toEqual([]);
   });
 
-  it("كل المستويات الأربعة مكتملة — A1 (16 حواراً/96 مقطعاً) وB2 (15/90)", () => {
+  it("كل المستويات الأربعة مكتملة — A1 (16 حواراً/96 مقطعاً) وB2 (16/96)", () => {
     for (const lv of ["A1", "A2", "B1", "B2"] as const) {
       const dialogues = getDialoguesByLevel(lv);
-      expect(dialogues.length, `حوارات ${lv}`).toBe(lv === "A1" ? 16 : 15);
+      expect(dialogues.length, `حوارات ${lv}`).toBe(lv === "A1" || lv === "B2" ? 16 : 15);
       const expected = dialogues.reduce((n, d) => n + d.turns.length, 0);
       const dir = path.join(AUDIO_ROOT, `dialogues-${lv.toLowerCase()}`);
       const files = fs.readdirSync(dir).filter((f) => f.endsWith(".mp3"));
