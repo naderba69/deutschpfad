@@ -9,7 +9,7 @@ import {Button} from "@/components/ui/button";
 export function FinalCta() {
   return (
     <section className="mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 lg:pb-24">
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-blue-600 to-indigo-700 px-6 py-14 text-center text-primary-foreground shadow-soft sm:px-12">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-blue-600 to-indigo-700 px-6 py-14 text-center text-primary-foreground shadow-soft dark:from-blue-950 dark:via-blue-900 dark:to-indigo-900 dark:text-white sm:px-12">
         {/* زخارف */}
         <div
           className="absolute -start-10 -top-10 h-48 w-48 rounded-full bg-white/10 blur-2xl"
@@ -28,7 +28,7 @@ export function FinalCta() {
           <h2 className="text-balance text-3xl font-extrabold leading-tight sm:text-4xl">
             ابدأ التحدث بالألمانية اليوم
           </h2>
-          <p className="text-balance text-base leading-relaxed text-white/85 sm:text-lg">
+          <p className="text-balance text-base leading-relaxed text-white/95 sm:text-lg">
             أول درس جاهز في أقل من دقيقة — ستتعلم النطق الصحيح من اليوم الأول،
             ولن تحتاج لأي خبرة سابقة.
           </p>
@@ -43,7 +43,7 @@ export function FinalCta() {
               asChild
               size="lg"
               variant="outline"
-              className="border-white/40 bg-transparent text-primary-foreground hover:bg-white/15 hover:text-primary-foreground"
+              className="border-white/40 bg-transparent text-primary-foreground hover:bg-white/15 hover:text-primary-foreground dark:text-white dark:hover:text-white"
             >
               <Link href="/learning-path#a1">استكشف مستوى A1</Link>
             </Button>

@@ -68,7 +68,7 @@ export default async function SealExamPage({ params, searchParams }: Props) {
                 </p>
                 <Link
                   href={`/tests/seal/${rawLevel}?mode=quick`}
-                  className="mt-2 inline-block rounded-lg bg-gold px-3 py-1 text-xs font-bold text-gold-foreground transition-colors hover:bg-gold/90"
+                  className="mt-2 inline-flex min-h-8 items-center rounded-lg bg-gold px-3 py-1 text-xs font-bold text-gold-foreground transition-colors hover:bg-gold/90"
                 >
                   اختر الختم السريع
                 </Link>

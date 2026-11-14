@@ -16,7 +16,7 @@ export function Footer() {
           {/* الهوية */}
           <div className="space-y-4">
             <Link href="/" className="inline-block rounded-lg py-1">
-              <Logo />
+              <Logo idSuffix="-footer" />
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
               منصة عربية لتعلّم الألمانية عبر تدريبات في نطاقات A1–B2 تستلهم موضوعات من CEFR وGoethe، دون ادعاء اعتماد أو مطابقة رسمية.

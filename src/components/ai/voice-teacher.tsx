@@ -272,7 +272,7 @@ export function AiVoiceTeacher() {
             <select
               value={topic.id}
               onChange={(e) => setTopic(TOPICS.find((t) => t.id === e.target.value) ?? TOPICS[0])}
-              className="rounded-lg border bg-background px-2 py-1 text-xs font-bold outline-none focus:border-primary"
+              className="min-h-8 rounded-lg border bg-background px-2 py-1 text-xs font-bold outline-none focus:border-primary"
               aria-label="موضوع المحادثة"
             >
               {TOPICS.map((t) => (

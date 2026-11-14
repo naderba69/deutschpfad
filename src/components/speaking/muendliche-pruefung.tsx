@@ -74,9 +74,10 @@ export function MündlichePrüfung() {
       <div className="flex flex-wrap gap-1.5">
         <button
           type="button"
+          aria-pressed={teil === 1}
           onClick={() => { setTeil(1); clearAnswer(); }}
           className={cn(
-            "rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors",
+            "min-h-8 rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors",
             teil === 1 ? "border-primary bg-primary text-primary-foreground" : "bg-background hover:border-primary/50",
           )}
         >
@@ -84,9 +85,10 @@ export function MündlichePrüfung() {
         </button>
         <button
           type="button"
+          aria-pressed={teil === 2}
           onClick={() => { setTeil(2); clearAnswer(); }}
           className={cn(
-            "rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors",
+            "min-h-8 rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors",
             teil === 2 ? "border-primary bg-primary text-primary-foreground" : "bg-background hover:border-primary/50",
           )}
         >

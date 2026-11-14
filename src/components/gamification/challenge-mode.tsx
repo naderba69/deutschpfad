@@ -122,7 +122,7 @@ export function ChallengeMode() {
     return (
       <div className="rounded-2xl border bg-muted/20 p-8 text-center">
         <Zap className="mx-auto h-12 w-12 text-gold-strong" aria-hidden="true" />
-        <h3 className="mt-4 text-xl font-extrabold">وضع التحدي الزمني ⚡</h3>
+        <h2 className="mt-4 text-xl font-extrabold">وضع التحدي الزمني ⚡</h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
           {QUESTIONS} أسئلة × {SECONDS_PER_QUESTION} ثانية لكل سؤال —
           أجب بأسرع ما يمكن: كل ثانية متبقية = {BONUS_PER_SECOND} نقاط إضافية!

@@ -122,7 +122,7 @@ export function InteractiveStoryPlayer({ story, onExit }: { story: InteractiveSt
         >
           خروج
         </button>
-        <p className="truncate text-xs font-extrabold text-primary">{story.emoji} {story.title}</p>
+        <p className="truncate text-xs font-extrabold text-primary" dir="ltr" lang="de">{story.emoji} {story.title}</p>
         <span className="font-de shrink-0 text-[11px] font-bold text-muted-foreground">
           {segmentIdx + 1}/{story.segments.length}
         </span>

@@ -85,9 +85,9 @@ export function LessonSummary({ lesson }: { lesson: Lesson }) {
           <ul className="space-y-1.5">
             {mistakes.map((m, i) => (
               <li key={i} className="rounded-lg border border-destructive/20 bg-destructive/5 px-3 py-2 text-sm">
-                <span className="font-de line-through opacity-60">{m.wrong}</span>
+                <span className="font-de line-through opacity-60" dir="ltr" lang="de">{m.wrong}</span>
                 {" ← "}
-                <span className="font-de font-bold text-success">{m.right}</span>
+                <span className="font-de font-bold text-success" dir="ltr" lang="de">{m.right}</span>
                 <span className="mt-0.5 block text-xs text-muted-foreground">{m.whyAr}</span>
               </li>
             ))}
@@ -105,7 +105,7 @@ export function LessonSummary({ lesson }: { lesson: Lesson }) {
           <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
             {lesson.flashcards.map((c) => (
               <div key={c.id} className="rounded-lg border border-muted bg-card/60 px-3 py-1.5 text-sm">
-                <span className="font-de font-bold">{c.de}</span>
+                <span className="font-de font-bold" dir="ltr" lang="de">{c.de}</span>
                 <span className="ms-2 text-xs text-muted-foreground">{c.ar}</span>
               </div>
             ))}

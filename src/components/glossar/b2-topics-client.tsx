@@ -157,7 +157,7 @@ export function B2TopicsClient() {
 
       {/* نصيحة */}
       <div className="rounded-xl border border-gold/40 bg-gold/10 p-4 text-sm">
-        <p className="font-bold text-gold-foreground">💡 تصنيف موضوعي للمراجعة</p>
+        <p className="font-bold text-gold-strong">💡 تصنيف موضوعي للمراجعة</p>
         <p className="mt-1 text-muted-foreground">
           هذه موضوعات تدريبية مختارة لتنظيم المفردات، ولا تمثل قائمة رسمية أو حصرية لموضوعات امتحان Goethe B2. استخدمها لتحديد مفردات تريد مراجعتها، وأضف الكلمات إلى بطاقاتك لتظهر في جلسات التكرار المتباعد.
         </p>

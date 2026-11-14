@@ -4,7 +4,7 @@ import {EXAM_STRATEGIEN, GOLDEN_TRAPS, LESEN_TIME_PLAN} from "@/data/exams/strat
 import {Badge} from "@/components/ui/badge";
 
 export const metadata: Metadata = {
-  title: "استراتيجيات تدريب B2 — القراءة والاستماع والكتابة والتحدث",
+  title: "استراتيجيات B2 — القراءة والاستماع والتحدث",
   description:
     "اقتراحات تدريبية لإدارة الوقت وفهم المهام الشائعة في مستوى B2. الأوقات الواردة إرشادية ويجب التحقق من متطلبات نسخة الامتحان لدى الجهة المنظمة."
 };

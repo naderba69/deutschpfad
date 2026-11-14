@@ -162,8 +162,8 @@ function SessionStep({
         </span>
         <span className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${accent}`}>{icon}</span>
         <span className="min-w-0 flex-1">
-          <span className="block truncate text-sm font-bold">{title}</span>
-          <span className="block truncate text-xs text-muted-foreground">{desc}</span>
+          <span className="block line-clamp-2 text-sm font-bold">{title}</span>
+          <span className="block line-clamp-2 text-xs text-muted-foreground">{desc}</span>
         </span>
         <span className="text-muted-foreground transition-transform group-hover:-translate-x-1" aria-hidden="true">←</span>
       </Link>

@@ -9,6 +9,7 @@
  */
 import * as React from "react";
 import Link from "next/link";
+import {useRouter} from "next/navigation";
 import {ArrowLeft, ArrowRight, CheckCircle2} from "lucide-react";
 
 import {useProgress} from "@/components/providers/progress-provider";
@@ -24,6 +25,7 @@ import type { Lesson } from "@/types/lesson";
  * + اقتراح امتحان الختم عند إتمام آخر درس في المستوى.
  */
 export function LessonCompletion({ lesson }: { lesson: Lesson }) {
+  const router = useRouter();
   const { completedLessonsSet, completeLesson, uncompleteLesson } = useProgress();
   const [autoCount, setAutoCount] = React.useState<number | null>(null);
   const [teacherWord, setTeacherWord] = React.useState<string | null>(null);
@@ -53,12 +55,13 @@ export function LessonCompletion({ lesson }: { lesson: Lesson }) {
     if (autoCount === null) return;
     if (autoCount <= 0) {
       setAutoCount(null);
-      if (next) window.location.href = `/lesson/${next.id}`;
+      // router.push بدل window.location.href: تنقّل داخلي بلا إعادة تحميل كاملة
+      if (next) router.push(`/lesson/${next.id}`);
       return;
     }
     const t = window.setTimeout(() => setAutoCount((c) => (c === null ? null : c - 1)), 1000);
     return () => window.clearTimeout(t);
-  }, [autoCount, next]);
+  }, [autoCount, next, router]);
 
   return (
     <div className="mt-10 rounded-2xl border bg-muted/10 p-5">

@@ -5,16 +5,25 @@ import {Flame, Search} from "lucide-react";
 
 import {B2_EXAM_TOPICS} from "@/data/vocabulary/b2-topics";
 import {B2_TOP500} from "@/data/vocabulary/b2-top500";
+import {Button} from "@/components/ui/button";
 import {cn} from "@/lib/utils";
+
+/** كم بطاقة تُصيَّر أول مرة — الباقي «اعرض المزيد» */
+const PAGE_SIZE = 60;
 
 /**
  * قائمة تدريبية من 500 كلمة وتعبير لنطاق B2، قابلة للفلترة
  * حسب موضوعات المنصة وأولوية المراجعة الداخلية (1–3).
+ *
+ * تُصيَّر البطاقات على دفعات: تصيير 500 بطاقة دفعة واحدة كان ينتج صفحة
+ * HTML بحجم 452KB و1008 عنصراً صغيراً في DOM. الآن 60 بطاقة أولاً
+ * (قياس في docs/AUDIT-EVERY-PAGE-2026-10-13.md).
  */
 export function B2Top500() {
   const [topic, setTopic] = React.useState<string>("all");
   const [freq, setFreq] = React.useState<0 | 1 | 2 | 3>(0);
   const [search, setSearch] = React.useState("");
+  const [visible, setVisible] = React.useState(PAGE_SIZE);
 
   const filtered = B2_TOP500.filter((e) => {
     if (topic !== "all" && e.topic !== topic) return false;
@@ -28,6 +37,17 @@ export function B2Top500() {
 
   // الأعلى أولوية للمراجعة بحسب تصنيف المنصة أولاً
   const sorted = [...filtered].sort((a, b) => b.freq - a.freq);
+  const shown = sorted.slice(0, visible);
+
+  // أي تغيير في الفلاتر يعيد الدفعة إلى أولها
+  const filterKey = `${topic}|${freq}|${search}`;
+  const lastFilter = React.useRef(filterKey);
+  React.useEffect(() => {
+    if (lastFilter.current !== filterKey) {
+      lastFilter.current = filterKey;
+      setVisible(PAGE_SIZE);
+    }
+  }, [filterKey]);
 
   const freqLabel = (f: 1 | 2 | 3) =>
     f === 3 ? "أولوية أعلى" : f === 2 ? "أولوية متوسطة" : "للمراجعة";
@@ -81,7 +101,7 @@ export function B2Top500() {
 
       {/* القائمة */}
       <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-        {sorted.map((e) => {
+        {shown.map((e) => {
           const t = B2_EXAM_TOPICS.find((x) => x.id === e.topic);
           return (
             <div key={e.de} className="flex items-start gap-2 rounded-xl border bg-card p-3">
@@ -93,7 +113,7 @@ export function B2Top500() {
                 <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-bold text-primary">
                   {t?.icon} {t?.titleAr.slice(0, 12)}
                 </span>
-                <span className={cn("inline-flex items-center gap-0.5 rounded-full px-2 py-0.5 text-[11px] font-bold", e.freq === 3 ? "bg-gold/20 text-gold-strong" : e.freq === 2 ? "bg-sky-500/10 text-sky-600" : "bg-muted text-muted-foreground")}>
+                <span className={cn("inline-flex items-center gap-0.5 rounded-full px-2 py-0.5 text-[11px] font-bold", e.freq === 3 ? "bg-gold/20 text-gold-strong" : e.freq === 2 ? "bg-sky-500/10 text-sky-800 dark:text-sky-200" : "bg-muted text-muted-foreground")}>
                   {e.freq === 3 && <Flame className="h-3 w-3" aria-hidden="true" />}
                   {freqLabel(e.freq)}
                 </span>
@@ -106,6 +126,21 @@ export function B2Top500() {
         <p className="rounded-xl border border-dashed p-6 text-center text-sm text-muted-foreground">
           لا كلمات تطابق الفلاتر — جرّب بحثاً آخر.
         </p>
+      )}
+      {sorted.length > shown.length && (
+        <div className="flex flex-col items-center gap-2 pt-2">
+          <Button
+            type="button"
+            variant="outline"
+            onClick={() => setVisible((v) => v + PAGE_SIZE)}
+            className="min-h-10"
+          >
+            اعرض {Math.min(PAGE_SIZE, sorted.length - shown.length)} كلمة أخرى
+          </Button>
+          <p className="text-xs text-muted-foreground" aria-live="polite">
+            يُعرض {shown.length} من {sorted.length}
+          </p>
+        </div>
       )}
     </div>
   );

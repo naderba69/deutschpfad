@@ -35,7 +35,8 @@
     --destructive-foreground: 0 0% 100%;
 
     /* ألوان مميزة للنظام */
-    --success: 166 78% 28%;
+    /* 24% بدل 28%: كان نصّ success على خلفية success/10 عند 4.15:1 (تحت AA) */
+    --success: 166 78% 24%;
     --success-foreground: 0 0% 100%;
 
     --gold: 45 100% 51%;

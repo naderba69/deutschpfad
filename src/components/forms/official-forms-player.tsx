@@ -13,6 +13,9 @@ import {cn} from "@/lib/utils";
  */
 export function OfficialFormsPlayer({ formId }: { formId: string }) {
   const form = OFFICIAL_FORMS.find((f) => f.id === formId);
+  // معرّف فريد لكل نسخة: صفحة /forms تعرض أكثر من نموذج، وبعضها يشترك في
+  // أسماء الحقول (vorname/nachname) فكانت المعرّفات مكررة في الصفحة الواحدة.
+  const uid = React.useId().replace(/[:]/g, "");
   const [values, setValues] = React.useState<Record<string, string>>({});
   const [submitted, setSubmitted] = React.useState(false);
   const [round, setRound] = React.useState(0);
@@ -54,7 +57,7 @@ export function OfficialFormsPlayer({ formId }: { formId: string }) {
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {form.fields.map((field) => (
             <div key={field.id} className="space-y-1">
-              <label htmlFor={field.id} className="flex flex-wrap items-center gap-1.5 text-xs font-semibold">
+              <label htmlFor={`${uid}-${field.id}`} className="flex flex-wrap items-center gap-1.5 text-xs font-semibold">
                 <span>{field.label}</span>
                 <span className="font-de text-muted-foreground" dir="ltr" lang="de">
                   ({field.labelDe})
@@ -62,7 +65,7 @@ export function OfficialFormsPlayer({ formId }: { formId: string }) {
               </label>
               {field.type === "select" ? (
                 <select
-                  id={field.id}
+                  id={`${uid}-${field.id}`}
                   value={values[field.id] ?? ""}
                   onChange={(e) => setValue(field.id, e.target.value)}
                   className={cn(
@@ -79,7 +82,7 @@ export function OfficialFormsPlayer({ formId }: { formId: string }) {
                 </select>
               ) : (
                 <input
-                  id={field.id}
+                  id={`${uid}-${field.id}`}
                   type={field.type}
                   value={values[field.id] ?? ""}
                   onChange={(e) => setValue(field.id, e.target.value)}

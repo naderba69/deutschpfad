@@ -5,6 +5,8 @@ import {Header} from "@/components/layout/header";
 import {MobileBottomNav} from "@/components/layout/mobile-bottom-nav";
 import {LLMProvider} from "@/components/providers/llm-provider";
 import {ProgressProvider} from "@/components/providers/progress-provider";
+import {ChunkRecovery} from "@/components/providers/chunk-recovery";
+import {GermanLang} from "@/components/providers/german-lang";
 import {ServiceWorkerRegister} from "@/components/providers/service-worker-register";
 import {ThemeProvider} from "@/components/providers/theme-provider";
 import {VoiceWarmup} from "@/components/providers/voice-warmup";
@@ -17,7 +19,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — تعلّم الألمانية من الصفر حتى B2 بثقة (A1 → B2)`,
+    default: `${siteConfig.name} — تعلّم الألمانية من الصفر حتى B2`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -115,6 +117,8 @@ export default function RootLayout({
                 <MobileBottomNav />
               </div>
               <ServiceWorkerRegister />
+              <ChunkRecovery />
+              <GermanLang />
               <VoiceWarmup />
             </LLMProvider>
           </ProgressProvider>
