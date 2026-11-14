@@ -31,7 +31,7 @@ const KNOWN_OVERSIZE: readonly [string, number][] = [
    * وتحليلات الأحداث، وشخصية المعلّم، ومحددات التقدم — منطق تفاعلي
    * مترابط يصعب تقسيمه دون كسر تدفق الدرس. الحجم مقصود ومُعلَن.
    */
-  ["src/components/lesson/lesson-client.tsx", 824],
+  ["src/components/lesson/lesson-client.tsx", 792],
 ];
 
 function walk(dir: string, acc: string[] = []): string[] {

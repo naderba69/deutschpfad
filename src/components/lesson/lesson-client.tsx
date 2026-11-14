@@ -33,6 +33,7 @@ import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Progress} from "@/components/ui/progress";
+import {SectionStrip} from "@/components/lesson/section-strip";
 import {StarkeVerbenTable} from "@/components/verbs/starke-verben-table";
 import {cn} from "@/lib/utils";
 import type { Exercise, Lesson } from "@/types/lesson";
@@ -623,49 +624,16 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
         </div>
       )}
 
-      {/* متصفح الأقسام العشرة — شريط علوي (لاصق في وضع «عرض الكل» فقط؛
-          في وضع «خطوة بخطوة» يبقى عادياً كي لا يتكدس فوق شريط التقدم اللاصق) */}
+      {/* متصفح الأقسام العشرة — يستبقي القسم النشط مرئياً على الجوال */}
       {!focusMode && (
-      <div
-        className={`${
-          stepMode ? "" : "sticky top-16 z-30"
-        } -mx-4 mb-6 border-y bg-background/90 px-4 py-2 backdrop-blur-md sm:mx-0 sm:rounded-xl sm:border`}
-      >
-        <div className="flex gap-1.5 overflow-x-auto pb-1 sm:flex-wrap">
-          {sectionDefs.map((def, i) => {
-            const isVisited = visited.has(def.id);
-            const isCurrent = i === currentSection;
-            return (
-              <button
-                key={def.id}
-                type="button"
-                onClick={() => goTo(i)}
-                disabled={stepMode && !isVisited && !isCurrent}
-                aria-current={isCurrent ? "step" : undefined}
-                title={
-                  stepMode && !isVisited && !isCurrent
-                    ? "أتمّ القسم الحالي لفتح هذا القسم — لا تخطي في المسار"
-                    : undefined
-                }
-                className={cn(
-                  "flex shrink-0 items-center gap-1.5 rounded-lg border px-3 py-2 text-xs font-semibold transition-colors",
-                  isCurrent
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : isVisited
-                      ? "border-success/40 bg-success/10 text-success hover:border-success/60"
-                      : stepMode
-                        ? "cursor-not-allowed bg-muted/20 text-muted-foreground/50"
-                        : "bg-muted/40 text-muted-foreground hover:border-primary/40",
-                )}
-              >
-                <def.icon className="h-3.5 w-3.5" aria-hidden="true" />
-                {def.short}
-                {isVisited && !isCurrent && <CheckCircle2 className="h-3 w-3" aria-hidden="true" />}
-              </button>
-            );
-          })}
-        </div>
-      </div>
+        <SectionStrip
+          sectionDefs={sectionDefs}
+          currentSection={currentSection}
+          visited={visited}
+          stepMode={stepMode}
+          sticky={!stepMode}
+          onSelect={goTo}
+        />
       )}
 
       {/* ═══ هدف اليوم + مراجعة قبل النسيان ═══ */}
