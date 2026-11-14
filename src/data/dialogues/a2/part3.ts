@@ -208,4 +208,45 @@ export const A2_DIALOGUES_3: DailyDialogue[] = [
       { de: "mögen", ar: "يحب" },
     ],
   },
+  {
+    id: "a2-16-erster-arbeitstag",
+    level: "A2",
+    title: "أول يوم عمل",
+    titleDe: "Der erste Arbeitstag",
+    emoji: "🪪",
+    situation: "محاكاة تدريبية خيالية لأول يوم في عمل جديد؛ المكان والمواعيد المذكورة أمثلة للتدريب وليست وصفاً لشركة حقيقية.",
+    audioNoteAr: "ملفات صوت هذا الحوار مولّدة آلياً (TTS) من نصه الألماني، ولم تُراجع من متحدث أصلي؛ قد تختلف النبرة قليلاً عن الحوار الطبيعي.",
+    turns: [
+      { speaker: "المدير", role: "b", de: "Guten Morgen! Sie sind neu hier, richtig?", ar: "صباح الخير! أنت جديد هنا، صحيح؟" },
+      { speaker: "أنت", role: "a", de: "Ja, ich heiße Sami und fange heute an.", ar: "نعم، اسمي سامي وأبدأ العمل اليوم." },
+      { speaker: "المدير", role: "b", de: "Willkommen! Ihr Platz ist neben der Küche.", ar: "أهلاً بك! مكانك بجانب المطبخ." },
+      { speaker: "أنت", role: "a", de: "Danke. Wo finde ich die Kaffeemaschine?", ar: "شكراً. أين أجد آلة القهوة؟" },
+      { speaker: "المدير", role: "b", de: "Im Pausenraum im ersten Stock. Die Pause ist um zwölf Uhr.", ar: "في غرفة الاستراحة في الطابق الأول. الاستراحة في الثانية عشرة." },
+      { speaker: "أنت", role: "a", de: "Alles klar. Ich freue mich auf die Arbeit.", ar: "واضح. أتطلع إلى العمل." },
+    ],
+    questions: [
+      { de: "Wo ist der Platz von Sami?", ar: "أين مكان سامي؟", options: [
+        { text: "Neben der Küche", ar: "بجانب المطبخ", correct: true, explanation: "صحيح — «Ihr Platz ist neben der Küche»." },
+        { text: "Im ersten Stock", ar: "في الطابق الأول", correct: false, explanation: "لا — الطابق الأول مكان الاستراحة لا مكان العمل." },
+        { text: "Vor dem Büro", ar: "أمام المكتب", correct: false, explanation: "لا — المكتب أمامه غير مذكور؛ والمكان المذكور «neben der Küche»." },
+      ]},
+      { de: "Wo ist die Kaffeemaschine?", ar: "أين آلة القهوة؟", options: [
+        { text: "Im Pausenraum im ersten Stock", ar: "في غرفة الاستراحة في الطابق الأول", correct: true, explanation: "صحيح — «Im Pausenraum im ersten Stock»." },
+        { text: "Im Büro vom Chef im Erdgeschoss", ar: "في مكتب المدير في الطابق الأرضي", correct: false, explanation: "لا — لم يُذكر مكتب المدير Büro vom Chef." },
+        { text: "In der Küche neben dem Eingang", ar: "في المطبخ بجانب المدخل", correct: false, explanation: "لا — Küche مذكورة مكان العمل لا مكان الآلة." },
+      ]},
+      { de: "Wann ist die Pause?", ar: "متى الاستراحة؟", options: [
+        { text: "Um zwölf Uhr", ar: "في الثانية عشرة", correct: true, explanation: "صحيح — «Die Pause ist um zwölf Uhr»." },
+        { text: "Um halb eins", ar: "في الثانية عشرة والنصف", correct: false, explanation: "لا — لم يُذكر نصف الساعة؛ بل «Die Pause ist um zwölf Uhr»." },
+        { text: "Um zehn Uhr", ar: "في العاشرة", correct: false, explanation: "لا — العاشرة Uhr zehn غير مذكورة في الحوار." },
+      ]},
+    ],
+    keyVocab: [
+      { de: "der erste Arbeitstag", ar: "أول يوم عمل" },
+      { de: "die Pause", ar: "الاستراحة" },
+      { de: "der Pausenraum", ar: "غرفة الاستراحة" },
+      { de: "im ersten Stock", ar: "في الطابق الأول" },
+      { de: "sich freuen auf", ar: "يتطلع إلى" },
+    ],
+  },
 ];
