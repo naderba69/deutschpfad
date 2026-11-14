@@ -25,7 +25,8 @@
     "verify": "npm run typecheck && npm run lint && npx vitest run && npm run build",
     "audit:first-option": "node scripts/probe-first-option.mjs",
     "audit:every-page": "node scripts/audit-every-page.mjs",
-    "audit:links": "node scripts/audit-links.mjs"
+    "audit:links": "node scripts/audit-links.mjs",
+    "audit:keyboard": "NODE_PATH=/tmp/vb/node_modules node scripts/audit-keyboard.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",
