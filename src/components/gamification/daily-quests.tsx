@@ -116,7 +116,7 @@ export function DailyQuests() {
             <Flame className="h-4 w-4" aria-hidden="true" />
           </span>
           <div>
-            <h3 className="text-sm font-extrabold">تحديات اليوم</h3>
+            <h2 className="text-sm font-extrabold">تحديات اليوم</h2>
             <p className="text-[11px] text-muted-foreground">أنجز {doneCount}/4 تحدياً — تُمنح الجواهر تلقائياً 💎</p>
           </div>
         </div>

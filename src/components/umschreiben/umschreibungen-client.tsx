@@ -115,7 +115,7 @@ export function UmschreibungenClient() {
       {!typ && (
         <div className="rounded-2xl border border-dashed bg-muted/20 p-8 text-center">
           <ArrowLeftRight className="mx-auto h-10 w-10 text-primary" aria-hidden="true" />
-          <h3 className="mt-3 text-lg font-extrabold">اختر نوع التحويل من الأعلى</h3>
+          <h2 className="mt-3 text-lg font-extrabold">اختر نوع التحويل من الأعلى</h2>
           <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
             هذه قائمة تدريبات تحويل أعدّتها المنصة لممارسة تراكيب ألمانية. ليست أقساماً أو أنماطاً مضمونة في امتحان Goethe B2. لكل نوع شرح ومثال ثم تمارين تصحيح فوري.
           </p>

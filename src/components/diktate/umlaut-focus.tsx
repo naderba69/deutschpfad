@@ -127,6 +127,7 @@ export function UmlautFocus() {
                 answered && !isPicked && !isCorrect && "border-muted bg-muted/30 text-muted-foreground opacity-60",
               )}
               dir="ltr"
+              lang="de"
             >
               {opt}
             </button>

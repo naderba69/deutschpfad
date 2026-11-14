@@ -102,7 +102,7 @@ export function GrammarReferenceClient() {
                     <span className="rounded-full bg-muted px-2 py-0.5 text-[11px] font-semibold text-muted-foreground">
                       {GRAMMAR_CATEGORIES[topic.category]}
                     </span>
-                    <h3 className="font-bold">{topic.titleAr}</h3>
+                    <h2 className="font-bold">{topic.titleAr}</h2>
                   </div>
                   <p className="font-de mt-1 text-sm text-primary" dir="ltr" lang="de">
                     {topic.titleDe}

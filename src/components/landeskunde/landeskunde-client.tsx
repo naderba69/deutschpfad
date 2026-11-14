@@ -45,11 +45,11 @@ export function LandeskundeClient() {
                     <span className="rounded-full bg-muted px-2 py-0.5 text-[11px] font-bold text-muted-foreground">{card.category}</span>
                   </div>
                   <h3 className="mt-2 text-sm font-extrabold">{card.titleAr}</h3>
-                  <p className="font-de mt-0.5 text-xs font-bold" dir="ltr">{card.title}</p>
+                  <p className="font-de mt-0.5 text-xs font-bold" dir="ltr" lang="de">{card.title}</p>
 
                   <div className="mt-3 space-y-2">
                     <p className="font-de rounded-lg bg-muted/30 px-3 py-2 text-xs leading-relaxed" dir="ltr">
-                      {card.de}
+                      <span lang="de" dir="ltr">{card.de}</span>
                     </p>
                     <p className="rounded-lg bg-primary/5 px-3 py-2 text-xs leading-relaxed text-muted-foreground">
                       {card.ar}
@@ -70,7 +70,7 @@ export function LandeskundeClient() {
                     <ul className="mt-2 space-y-1.5">
                       {card.facts.map((f, i) => (
                         <li key={i} className="rounded-lg border border-muted bg-muted/10 px-2.5 py-1.5 text-xs">
-                          <span className="font-de block font-bold" dir="ltr">{f.de}</span>
+                          <span className="font-de block font-bold" dir="ltr" lang="de">{f.de}</span>
                           <span className="text-[11px] text-muted-foreground">{f.ar}</span>
                         </li>
                       ))}

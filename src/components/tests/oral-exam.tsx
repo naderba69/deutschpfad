@@ -273,7 +273,7 @@ export function OralExam() {
     return (
       <div className="rounded-2xl border bg-muted/20 p-8 text-center">
         <Users className="mx-auto h-12 w-12 text-primary" aria-hidden="true" />
-        <h3 className="mt-4 text-xl font-extrabold">الامتحان الشفهي بنمط Goethe</h3>
+        <h2 className="mt-4 text-xl font-extrabold">الامتحان الشفهي بنمط Goethe</h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
           اختر تدريباً على مواقف محادثة B1 أو على عرض موضوع ومناقشته في نطاق B2. هذه الأنشطة
           مستوحاة من مهام لغوية عامة وليست صيغة امتحان رسمية. سجّل إجاباتك ثم راجعها ذاتياً؛

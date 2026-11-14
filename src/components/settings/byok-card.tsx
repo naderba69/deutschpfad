@@ -84,7 +84,7 @@ export function ByokCard() {
           }}
           placeholder="AIza… (مفتاح Gemini API)"
           dir="ltr"
-          className="h-10 flex-1 rounded-xl border border-input bg-background px-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring"
+          className="h-10 w-full rounded-xl border border-input bg-background px-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring sm:flex-1"
         />
         {saved ? (
           <Button variant="destructive" size="sm" className="shrink-0 gap-1.5" onClick={remove}>

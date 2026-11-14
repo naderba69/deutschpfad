@@ -51,7 +51,7 @@ export function SealExam({ levelParam, quick = false }: { levelParam: string; qu
       <Card className="overflow-hidden">
         <CardContent className="p-8 text-center">
           <Lock className="mx-auto h-12 w-12 text-muted-foreground" aria-hidden="true" />
-          <h3 className="mt-4 text-xl font-extrabold">امتحان ختم {level} غير متاح بعد</h3>
+          <h2 className="mt-4 text-xl font-extrabold">امتحان ختم {level} غير متاح بعد</h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
             تحتاج إكمال <span className="font-bold">{meta?.unlockThreshold}%</span> من وحدات
             المستوى قبل التمكن من الامتحان. تقدمك الحالي:{" "}

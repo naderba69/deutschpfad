@@ -148,7 +148,7 @@ export function StoriesLibrary() {
                       <span className="font-de rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-extrabold text-primary">{s.level}</span>
                     </div>
                     <h3 className="mt-2 text-sm font-extrabold group-hover:text-primary">{s.titleAr}</h3>
-                    <p className="font-de mt-0.5 text-xs font-bold" dir="ltr">{s.title}</p>
+                    <p className="font-de mt-0.5 text-xs font-bold" dir="ltr" lang="de">{s.title}</p>
                     <p className="mt-1.5 text-[11px] leading-relaxed text-muted-foreground">{s.description}</p>
                     <p className="mt-2 flex items-center gap-1 text-[11px] font-bold text-primary">
                       <Sparkles className="h-3 w-3" aria-hidden="true" />

@@ -210,12 +210,13 @@ export function MinimalPairsGame({ groups, compact }: MinimalPairsGameProps) {
               <button
                 key={g.id}
                 type="button"
+                aria-pressed={i === groupIndex}
                 onClick={() => {
                   setGroupIndex(i);
                   setGameKey((k) => k + 1);
                 }}
                 className={cn(
-                  "rounded-lg border px-2.5 py-1 text-xs font-semibold transition-colors",
+                  "min-h-8 rounded-lg border px-2.5 py-1 text-xs font-semibold transition-colors",
                   i === groupIndex
                     ? "border-primary bg-primary text-primary-foreground"
                     : "bg-muted/40 hover:border-primary/50",

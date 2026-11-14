@@ -155,7 +155,7 @@ export function Header() {
             <SheetContent side="right" className="w-80">
               <SheetHeader className="border-b pb-4">
                 <SheetTitle>
-                  <Logo />
+                  <Logo idSuffix="-menu" />
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col gap-1 pt-4">

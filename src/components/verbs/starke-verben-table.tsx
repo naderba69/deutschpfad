@@ -89,7 +89,7 @@ export function StarkeVerbenTable({ compact }: { compact?: boolean }) {
                     <span className="font-de font-bold" dir="ltr" lang="de">
                       {v.infinitiv}
                     </span>
-                    <Badge variant="outline" className="font-de text-[9px] px-1.5">
+                    <Badge variant="outline" className="font-de text-[11px] px-1.5">
                       {v.level}
                     </Badge>
                   </span>

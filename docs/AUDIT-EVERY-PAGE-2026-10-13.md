@@ -297,16 +297,18 @@
 
 ```bash
 # 1) بناء وتشغيل
-npm run build && npm run start
+npm ci && npm run build && npm run start
 
-# 2) التدقيق (سكربتات خارج المستودع في /tmp/vb)
-LD_LIBRARY_PATH=/tmp/stublibs node /tmp/vb/audit3v.js    # 3 مقاسات → /tmp/audit3v/report.json
-LD_LIBRARY_PATH=/tmp/stublibs node /tmp/vb/audit320.js   # 320px      → /tmp/audit320/report.json
+# 2) التدقيق الكامل (الجولة الثانية: 189 × 4 مقاسات)
+npm run audit:every-page     # → /tmp/audit-final/report.json + لقطات
 
 # 3) الروابط والخريطة
-node /tmp/vb/links.mjs
-node /tmp/vb/orphans.mjs
+npm run audit:links          # → /tmp/audit-links.json
 ```
+
+> الملحق في الجولة الأولى كان يشير إلى سكربتات في `/tmp/vb` لا تبقى بين الجلسات.
+> صارت السكربتات جزءاً من المستودع، ونتائج الجولة الموسّعة في
+> `docs/AUDIT-EVERY-PAGE-ROUND2-2026-10-13.md` (756 فحصاً، 0 ملاحظة).
 
 ## 8. الحدود — تُقرأ قبل الاقتباس
 

@@ -75,7 +75,9 @@ function DashSection({
         </span>
         <div className="min-w-0">
           <h2 className="text-base font-extrabold sm:text-lg">{title}</h2>
-          {subtitle && <p className="truncate text-xs text-muted-foreground">{subtitle}</p>}
+          {subtitle && (
+            <p className="line-clamp-2 text-xs text-muted-foreground sm:truncate sm:line-clamp-none">{subtitle}</p>
+          )}
         </div>
         <div className="h-px flex-1 bg-gradient-to-l from-muted to-transparent" aria-hidden="true" />
       </div>
@@ -168,7 +170,7 @@ export function DashboardClient() {
                   درسك التالي في التسلسل · {nextLesson.level}
                 </p>
                 <p className="break-words text-lg font-extrabold [overflow-wrap:anywhere]">
-                  <span dir="ltr">{nextLesson.titleDe}</span>
+                  <span dir="ltr" lang="de">{nextLesson.titleDe}</span>
                   <span className="ms-2 text-sm font-medium text-muted-foreground">{nextLesson.titleAr}</span>
                 </p>
               </div>

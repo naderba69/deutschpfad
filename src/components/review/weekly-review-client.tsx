@@ -230,7 +230,7 @@ export function WeeklyReviewClient({ range = "weekly" }: { range?: "weekly" | "m
               سؤال من دروسك
             </p>
             <p className="font-de mt-2 text-base font-bold" dir="ltr" lang="de">{current.de}</p>
-            <p className="mt-0.5 text-xs text-muted-foreground">{current.ar}</p>
+            {current.ar ? <p className="mt-0.5 text-xs text-muted-foreground">{current.ar}</p> : null}
             <div className="mt-3 grid gap-2">
               {current.options.map((opt) => {
                 const isPicked = picked === opt.text;
@@ -249,6 +249,7 @@ export function WeeklyReviewClient({ range = "weekly" }: { range?: "weekly" | "m
                       isAnswered && !isPicked && !opt.correct && "border-muted bg-muted/30 opacity-60",
                     )}
                     dir="ltr"
+                    lang="de"
                   >
                     {opt.text}
                   </button>
@@ -265,7 +266,7 @@ export function WeeklyReviewClient({ range = "weekly" }: { range?: "weekly" | "m
               بطاقة مراجعة ذكية (SM-2)
             </p>
             <p className="font-de mt-3 text-lg font-bold" dir="ltr" lang="de">{current.de}</p>
-            <p className="mt-1 text-sm text-muted-foreground">{current.ar}</p>
+            {current.ar ? <p className="mt-1 text-sm text-muted-foreground">{current.ar}</p> : null}
             {!answered[current.id] ? (
               <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
                 {[

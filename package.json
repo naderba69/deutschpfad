@@ -23,7 +23,9 @@
     "audit:dom": "node scripts/dom-audit.mjs",
     "shots": "node scripts/screenshots.mjs",
     "verify": "npm run typecheck && npm run lint && npx vitest run && npm run build",
-    "audit:first-option": "node scripts/probe-first-option.mjs"
+    "audit:first-option": "node scripts/probe-first-option.mjs",
+    "audit:every-page": "node scripts/audit-every-page.mjs",
+    "audit:links": "node scripts/audit-links.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",

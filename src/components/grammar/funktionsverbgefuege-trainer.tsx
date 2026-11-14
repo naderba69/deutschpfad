@@ -108,10 +108,10 @@ export function FunktionsverbgefuegeTrainer() {
               <tbody>
                 {FVG_TABLE.map((r) => (
                   <tr key={r.fvg} className="border-t">
-                    <td className="p-2 font-de font-bold" dir="ltr">{r.fvg}</td>
-                    <td className="p-2 font-de text-muted-foreground" dir="ltr">{r.gleich}</td>
+                    <td className="p-2 font-de font-bold" dir="ltr" lang="de">{r.fvg}</td>
+                    <td className="p-2 font-de text-muted-foreground" dir="ltr" lang="de">{r.gleich}</td>
                     <td className="p-2">{r.ar}</td>
-                    <td className="hidden p-2 font-de text-xs text-muted-foreground sm:table-cell" dir="ltr">{r.example}</td>
+                    <td className="hidden p-2 font-de text-xs text-muted-foreground sm:table-cell" dir="ltr" lang="de">{r.example}</td>
                   </tr>
                 ))}
               </tbody>
@@ -175,7 +175,7 @@ export function FunktionsverbgefuegeTrainer() {
             const isWrong = gapChecked && chosen !== g.correct;
             return (
               <div key={g.id} className="rounded-xl border p-3">
-                <p className="font-de text-sm leading-relaxed" dir="ltr">
+                <p className="font-de text-sm leading-relaxed" dir="ltr" lang="de">
                   {g.text.split("{0}")[0]}
                   <span className={cn("mx-1 inline-block min-w-24 rounded-md border-2 px-2 py-0.5 text-center", !chosen && "border-dashed border-muted-foreground/50 bg-muted/30", chosen && !gapChecked && "border-primary bg-primary/10 text-primary", isRight && "border-success bg-success/10 text-success", isWrong && "border-destructive bg-destructive/10 text-destructive")}>
                     {chosen ?? "…"}
@@ -191,7 +191,7 @@ export function FunktionsverbgefuegeTrainer() {
                       onClick={() => setGapAns((a) => ({ ...a, [g.id]: w }))}
                       className={cn("inline-flex min-h-8 items-center rounded-md border px-2.5 py-1.5 text-xs font-semibold", gapAns[g.id] === w ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background hover:border-primary/40")}
                     >
-                      <span dir="ltr">{w}</span>
+                      <span dir="ltr" lang="de">{w}</span>
                     </button>
                   ))}
                 </div>
@@ -218,8 +218,8 @@ export function FunktionsverbgefuegeTrainer() {
       <div className="rounded-xl border border-gold/40 bg-gold/10 p-4 text-sm">
         <p className="font-extrabold text-gold-strong">📌 نصائح للامتحان:</p>
         <ul className="mt-2 space-y-1.5 text-muted-foreground">
-          <li>• في <b>Schreiben</b>: استخدم 2-3 FVG لرفع درجة «Struktur» (z.B. «zur Verfügung stellen»، «eine Rolle spielen»).</li>
-          <li>• في <b>Lesen Teil 2/3</b>: لا تحلل الجملة كلمة كلمة — ابحث عن الاسم المشهور (Kraft، Frage، Verfügung) وافهم الفعل معه.</li>
+          <li>• في <b lang="de">Schreiben</b>: استخدم 2-3 FVG لرفع درجة «Struktur» (z.B. «zur Verfügung stellen»، «eine Rolle spielen»).</li>
+          <li>• في <b lang="de">Lesen Teil 2/3</b>: لا تحلل الجملة كلمة كلمة — ابحث عن الاسم المشهور (Kraft، Frage، Verfügung) وافهم الفعل معه.</li>
           <li>• <b>الأخطاء الشائعة:</b> نسيان الفعل المنفصل (tritt...in Kraft)، وخلط stellen (يوفّر) مع stehen (متاح).</li>
         </ul>
       </div>

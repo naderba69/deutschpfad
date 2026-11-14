@@ -61,7 +61,7 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
           <div className="flex flex-wrap items-center gap-3">
             <Badge variant="gold" className="text-xs">{level.code}</Badge>
             <span className="text-sm font-bold opacity-90">{level.titleAr}</span>
-            <span className="text-xs" dir="ltr">{level.subtitleDe}</span>
+            <span className="text-xs" dir="ltr" lang="de">{level.subtitleDe}</span>
           </div>
           <h1 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
             رحلة مستوى <LangDe className="font-extrabold">{level.code}</LangDe>
@@ -77,7 +77,7 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
             </div>
             <span className="font-de shrink-0 text-lg font-extrabold">{pct}%</span>
           </div>
-          <p className="mt-1 text-xs font-bold text-white/80">
+          <p className="mt-1 text-xs font-bold text-white/90">
             {doneCount} من {lessons.length} دروس مكتملة · {level.units} وحدات
           </p>
 

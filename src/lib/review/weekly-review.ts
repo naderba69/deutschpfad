@@ -121,7 +121,7 @@ export async function getWeeklyQuizQuestions(lessonIds: string[], count = 5) {
           correct: i === q.correctIndex,
         }));
         if (opts.length < 2) continue;
-        questions.push({ de: q.questionDe, ar: q.questionAr ?? q.questionDe, options: opts });
+        questions.push({ de: q.questionDe, ar: q.questionAr ?? "", options: opts });
       }
     } catch {
       /* تجاهل */
