@@ -188,6 +188,20 @@ describe("موضع الإجابة الصحيحة — النسخ الخام لل�
   /** الملفات التي تُعرّف الخام أو تُوازن — يُسمح لها وحدها بلمس المصادر غير الموزّنة */
   const BALANCING_FILES = ["src/data/lessons/index.ts", "src/data/podcasts/index.ts", "src/data/dialogues/index.ts"];
   /**
+   * مجمِّعات المستوى (`a1-level.ts` … `b2-level.ts`) وحدها تُعيد الدروس **الخام**،
+   * وتُستدعى حصراً من `level-loaders.ts` الذي يطبّق `balanceChoiceTree` قبل الإرجاع.
+   * أُضيفت إلى القائمة بعد قياس: تحميل المنهاج كاملاً (3.8MB) لكل اختبار وحدة كان
+   * يجعل حزمة صفحة الاختبار تساوي حزمة المنهاج. والتقييد مفحوص في الاختبار التالي:
+   * لا مستهلك إنتاجي لهذه المجمِّعات غير المُوازِن.
+   */
+  const LEVEL_AGGREGATORS = [
+    "src/data/lessons/a1-level.ts",
+    "src/data/lessons/a2-level.ts",
+    "src/data/lessons/b1-level.ts",
+    "src/data/lessons/b2-level.ts",
+    "src/data/lessons/level-loaders.ts",
+  ];
+  /**
    * حوارات: الخام هو التصدير الأصلي لكل ملف مستوى (`A1_DIALOGUES` من
    * `@/data/dialogues/a1`)، والموازنة في البرميل — فالممنوع على الإنتاج هو
    * استيراد ملف المستوى مباشرةً (البرميل وحده يفعل).
@@ -211,7 +225,7 @@ describe("موضع الإجابة الصحيحة — النسخ الخام لل�
   it("لا ملف إنتاجي يستورد نسخة غير موزّعة", () => {
     const offenders: string[] = [];
     for (const rel of productionFiles()) {
-      if (BALANCING_FILES.includes(rel)) continue;
+      if (BALANCING_FILES.includes(rel) || LEVEL_AGGREGATORS.includes(rel)) continue;
       const body = fs.readFileSync(path.join(process.cwd(), rel), "utf8");
       for (const name of RAW_NAMES) if (body.includes(name)) offenders.push(`${rel} ← ${name}`);
       for (const spec of RAW_DIALOGUE_IMPORTS) {
@@ -219,6 +233,18 @@ describe("موضع الإجابة الصحيحة — النسخ الخام لل�
       }
     }
     expect(offenders, `ملفات إنتاجية تستهلك النسخ الخام: ${offenders.join(" · ")}`).toEqual([]);
+  });
+
+  it("مجمِّعات المستوى لا يستهلكها إنتاجياً إلا المُوازِن", () => {
+    const offenders: string[] = [];
+    for (const rel of productionFiles()) {
+      if (rel === "src/data/lessons/level-loaders.ts" || LEVEL_AGGREGATORS.includes(rel)) continue;
+      const body = fs.readFileSync(path.join(process.cwd(), rel), "utf8");
+      for (const lv of ["a1", "a2", "b1", "b2"]) {
+        if (body.includes(`@/data/lessons/${lv}-level`)) offenders.push(`${rel} ← ${lv}-level`);
+      }
+    }
+    expect(offenders, `مستهلكون غير مُوازِنين: ${offenders.join(" · ")}`).toEqual([]);
   });
 
   it("الموازنة مطبَّقة فعلاً عند حدود التصدير الثلاثة (لا التفاف على التحويل)", () => {

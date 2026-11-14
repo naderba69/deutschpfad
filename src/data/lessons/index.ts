@@ -73,7 +73,7 @@ export const RAW_LESSONS: Lesson[] = [
   /* B1 — 12 */
   lessonB101, lessonB102, lessonB103, lessonB104, lessonB105,
   lessonB106, lessonB107, lessonB108, lessonB109, lessonB110, lessonB112, lessonB111,
-  /* B2 — 11 */
+  /* B2 — 13 */
   lessonB201, lessonB202, lessonB203, lessonB204, lessonB211, lessonB205,
   lessonB206, lessonB207, lessonB208, lessonB209, lessonB210, lessonB212, lessonB213,
 ];
