@@ -73,12 +73,12 @@ describe("مكتبة القصص التفاعلية — سلامة البنية �
     expect(segment?.ar).toBe("عاد الجميع إلى البيت وهم أكثر حماساً. النهاية.");
   });
 
-  it("تحتوي على 72 قصة موزعة على المستويات الأربعة", () => {
-    expect(INTERACTIVE_STORIES.length).toBe(72);
-    expect(getStoriesByLevel("A1").length).toBe(18);
-    expect(getStoriesByLevel("A2").length).toBe(18);
-    expect(getStoriesByLevel("B1").length).toBe(18);
-    expect(getStoriesByLevel("B2").length).toBe(18);
+  it("تحتوي على 76 قصة موزعة على المستويات الأربعة", () => {
+    expect(INTERACTIVE_STORIES.length).toBe(76);
+    expect(getStoriesByLevel("A1").length).toBe(19);
+    expect(getStoriesByLevel("A2").length).toBe(19);
+    expect(getStoriesByLevel("B1").length).toBe(19);
+    expect(getStoriesByLevel("B2").length).toBe(19);
   });
 
   it("كل قصة لها معرّف فريد وبنية مكتملة", () => {
