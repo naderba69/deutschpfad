@@ -28,17 +28,25 @@ function exerciseToTestQuestion(ex: McqExercise, level: "A1" | "A2" | "B1" | "B2
  * (قواعد من التدريبات + مفردات من بنك الوحدة)
  */
 export function UnitTest({ unitId }: { unitId: string }) {
-  // تحميل كسول: نستورد دروس الوحدة فقط عند الطلب (بدل جرّ كل الدروس الـ46 للحزمة)
+  // تحميل كسول بمستوى الوحدة فقط: حزمة مستوى واحد (~900KB خام) بدل المنهاج
+  // كاملاً (3.8MB خام). التساوي مع LESSONS محروس في level-loaders.test.ts.
   const [lessons, setLessons] = React.useState<Lesson[]>([]);
   const [ready, setReady] = React.useState(false);
 
   React.useEffect(() => {
     let cancelled = false;
-    void import("@/data/lessons").then(({getLessonsByUnit}) => {
-      if (cancelled) return;
-      setLessons(getLessonsByUnit(unitId));
-      setReady(true);
-    });
+    void import("@/data/lessons/level-loaders")
+      .then(({ loadLessonsByUnit }) => loadLessonsByUnit(unitId))
+      .then((lessonList) => {
+        if (cancelled) return;
+        setLessons(lessonList);
+        setReady(true);
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setLessons([]);
+        setReady(true);
+      });
     return () => {
       cancelled = true;
     };
