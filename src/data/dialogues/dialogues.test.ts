@@ -24,7 +24,7 @@ describe("ترجمة neben في مشتت حوار العطل", () => {
   });
 });
 
-describe("مكتبة حوارات الحياة اليومية — 61 حواراً (تفوق Menschen)", () => {
+describe("مكتبة حوارات الحياة اليومية — 62 حواراً (تفوق Menschen)", () => {
   it("يصوغ دعوة الطعام في حوار الانتقال بجملة ألمانية مكتملة", () => {
     const dialogue = DAILY_DIALOGUES.find((item) => item.id === "b1-15-wohnungswechsel");
     expect(dialogue?.turns.at(-1)?.de).toContain("Ich lade dich danach zum Essen ein.");
@@ -42,11 +42,11 @@ describe("مكتبة حوارات الحياة اليومية — 61 حوارا�
       .toBe("ستعود إلى البيت وتستريح قليلاً أولاً");
   });
 
-  it("تحتوي 61 حواراً: 16 في A1 و15 في كل مستوى آخر", () => {
-    expect(DAILY_DIALOGUES.length).toBe(61);
+  it("تحتوي 62 حواراً: 16 في A1 و15 في A2/B1 و16 في B2", () => {
+    expect(DAILY_DIALOGUES.length).toBe(62);
     for (const lv of ["A1", "A2", "B1", "B2"] as const) {
-      expect(getDialoguesByLevel(lv).length).toBe(lv === "A1" ? 16 : 15);
-      expect(DIALOGUE_LEVEL_COUNTS[lv]).toBe(lv === "A1" ? 16 : 15);
+      expect(getDialoguesByLevel(lv).length).toBe(lv === "A1" || lv === "B2" ? 16 : 15);
+      expect(DIALOGUE_LEVEL_COUNTS[lv]).toBe(lv === "A1" || lv === "B2" ? 16 : 15);
     }
   });
 
@@ -289,7 +289,7 @@ describe("مكتبة حوارات الحياة اليومية — 61 حوارا�
 
 /* ═══════════════════════════════════════════════════════════
    شروح الخيارات — مقاييس دفعة 52 (2026-10-16)
-   قياس الحوارات بعد إضافة A1-16 (61 حواراً · 185 سؤالاً · 555 خياراً):
+   قياس الحوارات بعد إضافة A1-16 وb2-16 (62 حواراً · 188 سؤالاً · 564 خياراً):
      · شروح الخيارات **الخاطئة** ملاحظات عربية موجزة («لا — قهوة أولاً.») — عُرف
        مقصود لا عيب (لا تُقتبس آلياً)، فلم تُعدّل.
      · شروح الخيارات **الصحيحة** عربية تشرح لماذا — والدليل الألماني هو نصّ

@@ -20,7 +20,7 @@ test("كل حلقة بودكاست تعلن حالة التسجيل الصحيح
   await page.goto("/podcasts");
   const cards = page.locator("section button h3");
   const total = await cards.count();
-  expect(total, "عدد الحلقات المعروضة في المكتبة").toBe(20);
+  expect(total, "عدد الحلقات المعروضة في المكتبة").toBe(21);
 
   const titles: string[] = [];
   for (let i = 0; i < total; i += 1) titles.push((await cards.nth(i).innerText()).trim());

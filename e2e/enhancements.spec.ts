@@ -8,7 +8,7 @@ test("المكتبات الموسعة: 72 قصة و20 بودكاست", async ({ 
   await page.goto("/stories", { waitUntil: "networkidle" });
   await expect(page.getByText(/72 قصة متاحة/).first()).toBeVisible({ timeout: 10000 });
   await page.goto("/podcasts", { waitUntil: "networkidle" });
-  await expect(page.getByText(/20 حلقات بودكاست/).first()).toBeVisible({ timeout: 10000 });
+  await expect(page.getByText(/21 حلقات بودكاست/).first()).toBeVisible({ timeout: 10000 });
 });
 
 test("الجوال: شريط التنقل السفلي يظهر بأربع تبويبات", async ({ page }) => {

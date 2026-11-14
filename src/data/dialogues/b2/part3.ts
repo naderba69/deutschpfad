@@ -212,4 +212,46 @@ export const B2_DIALOGUES_3: DailyDialogue[] = [
       { de: "bestätigen", ar: "يؤكد" },
     ],
   },
+
+  {
+    id: "b2-16-ki-im-betrieb",
+    level: "B2",
+    title: "الذكاء الاصطناعي في الشركة",
+    titleDe: "KI im Betrieb",
+    emoji: "🤖",
+    situation: "حوار تمثيلي خيالي بين موظف وإدارة عن إدخال نظام ذكاء اصطناعي؛ أسماء الأنظمة والنسب أمثلة تدريبية وليست وصفاً لنظام حقيقي.",
+    audioNoteAr: "المقاطع الستة ملفات TTS مولّدة آلياً وليست تسجيلات بشرية؛ ولم تُتحقق مطابقتها الصوتية للنص أو جودة نطقها. هي تدريب استماع لا نموذج صوتي.",
+    turns: [
+      { speaker: "أنت", role: "a", de: "Guten Tag, Frau Weber. Ich habe gehört, dass ein KI-System eingeführt wird.", ar: "صباح الخير سيدة فيبر. سمعت أنه سيُدخل نظام ذكاء اصطناعي." },
+      { speaker: "Frau Weber", role: "b", de: "Richtig. Das System übernimmt einfache Anfragen, zum Beispiel Öffnungszeiten und Liefertermine.", ar: "صحيح. يتولى النظام الأسئلة البسيطة، مثل أوقات العمل ومواعيد التسليم." },
+      { speaker: "أنت", role: "a", de: "Und was passiert mit den schwierigen Fällen?", ar: "وماذا يحدث في الحالات الصعبة؟" },
+      { speaker: "Frau Weber", role: "b", de: "Die gehen weiterhin an uns. Obwohl das System schnell antwortet, prüft eine Kollegin jede Antwort.", ar: "تظل تصل إلينا. ورغم أن النظام يجيب بسرعة، تفحص زميلة كل إجابة." },
+      { speaker: "أنت", role: "a", de: "Werden die Ergebnisse dokumentiert? Ich möchte nachvollziehen können, wie eine Empfehlung entsteht.", ar: "هل تُوثَّق النتائج؟ أودّ أن أستطيع تتبع كيف تنشأ التوصية." },
+      { speaker: "Frau Weber", role: "b", de: "Zwar ist das noch nicht vollständig gelöst, aber jede Entscheidung mit Folgen für Kunden trifft weiterhin ein Mensch.", ar: "صحيح أن هذا لم يُحل بالكامل بعد، لكن كل قرار له أثر على العملاء يتخذه إنسان دائماً." },
+    ],
+    questions: [
+      { de: "Was übernimmt das KI-System?", ar: "ماذا يتولى نظام الذكاء الاصطناعي؟", options: [
+        { text: "Einfache Anfragen wie Öffnungszeiten", ar: "أسئلة بسيطة مثل أوقات العمل", correct: true, explanation: "صحيح — يذكر الحوار: «einfache Anfragen, zum Beispiel Öffnungszeiten und Liefertermine»." },
+        { text: "Alle schwierigen Fälle im Betrieb", ar: "كل الحالات الصعبة في الشركة", correct: false, explanation: "لا — الحالات الصعبة تبقى مع الموظفين: «Die gehen weiterhin an uns»." },
+        { text: "Die Entscheidungen mit Kundenfolgen", ar: "القرارات ذات الأثر على العملاء", correct: false, explanation: "لا — هذه القرارات يتخذها إنسان: «trifft weiterhin ein Mensch»." },
+      ]},
+      { de: "Wer prüft jede Antwort?", ar: "من يفحص كل إجابة؟", options: [
+        { text: "Eine Kollegin prüft jede Antwort", ar: "زميلة تفحص كل إجابة", correct: true, explanation: "صحيح — «prüft eine Kollegin jede Antwort»." },
+        { text: "Das System prüft sich selbst", ar: "النظام يفحص نفسه", correct: false, explanation: "لا — الفحص بشري: «prüft eine Kollegin jede Antwort»." },
+        { text: "Niemand prüft die Antworten", ar: "لا أحد يفحص الإجابات", correct: false, explanation: "لا — الحوار يذكر فحصاً صريحاً لكل إجابة." },
+      ]},
+      { de: "Was ist noch nicht vollständig gelöst?", ar: "ما الذي لم يُحل بعد بالكامل؟", options: [
+        { text: "Die Dokumentation der Ergebnisse", ar: "توثيق النتائج", correct: true, explanation: "صحيح — تقول Frau Weber بعد سؤال التوثيق: «Zwar ist das noch nicht vollständig gelöst»." },
+        { text: "Der Liefertermin des neuen Systems", ar: "موعد تسليم النظام الجديد", correct: false, explanation: "لا — موعد تسليم النظام لم يُذكر مشكلة مفتوحة." },
+        { text: "Die Höhe der monatlichen Lizenzkosten", ar: "حجم تكاليف الترخيص الشهرية", correct: false, explanation: "لا — التكاليف لم تُذكر في الحوار، وليست موضوع السؤال." },
+      ]},
+    ],
+    keyVocab: [
+      { de: "das KI-System", ar: "نظام الذكاء الاصطناعي" },
+      { de: "einfache Anfragen", ar: "أسئلة بسيطة" },
+      { de: "nachvollziehen", ar: "يتتبع ويفهم" },
+      { de: "die Empfehlung", ar: "التوصية" },
+      { de: "die Dokumentation", ar: "التوثيق" },
+    ],
+  },
 ];
