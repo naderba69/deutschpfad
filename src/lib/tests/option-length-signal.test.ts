@@ -364,7 +364,7 @@ describe("دروس المنهج — أكبر كوربوس داخل القياس"
   const levels = ["A1", "A2", "B1", "B2"] as const;
   const byLevel = (lvl: string) => LESSONS.filter((l) => String(l.level) === lvl);
 
-  it("بوابة حراسة الحارس: 52 درساً و≥800 سؤال اختيار تُجمع فعلاً", () => {
+  it("بوابة حراسة الحارس: 54 درساً و≥800 سؤال اختيار تُجمع فعلاً", () => {
     expect(LESSONS.length).toBeGreaterThanOrEqual(52);
     expect(collectChoiceQuestions(LESSONS).length).toBeGreaterThanOrEqual(800);
     for (const lvl of levels) {
