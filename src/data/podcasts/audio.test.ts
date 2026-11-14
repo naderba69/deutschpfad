@@ -76,7 +76,7 @@ describe("صوت البودكاست — البيان مشتقّ من بيانا�
       (ep) => `${ep.id}: ${ep.script.length}`,
     );
     expect(tooLong, `حلقات تستحيل بمقطع واحد: ${tooLong.join(" · ")}`).toEqual([]);
-    // عدّاد غير هامشي: 21 حلقة فعلاً لها نصّ
+    // عدّاد غير هامشي: 22 حلقة فعلاً لها نصّ
     expect(PODCASTS.length).toBeGreaterThanOrEqual(20);
     expect(PODCASTS.every((ep) => ep.script.trim().length > 0)).toBe(true);
   });
