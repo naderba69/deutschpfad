@@ -40,7 +40,7 @@ export function MobileBottomNav() {
               href={tab.href}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "flex flex-col items-center gap-1 py-2.5 text-[10px] font-bold transition-colors",
+                "flex flex-col items-center gap-1 py-2.5 text-[11px] font-bold transition-colors",
                 active ? "text-primary" : "text-muted-foreground hover:text-foreground",
               )}
             >

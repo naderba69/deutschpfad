@@ -104,7 +104,7 @@ export function AudioSettings() {
             aria-checked={sfx}
             onClick={toggleSfx}
             className={cn(
-              "relative h-6 w-11 shrink-0 rounded-full transition-colors",
+              "relative h-6 w-11 shrink-0 rounded-full transition-colors after:absolute after:-inset-y-2 after:inset-x-0 after:content-['']",
               sfx ? "bg-success" : "bg-muted",
             )}
           >

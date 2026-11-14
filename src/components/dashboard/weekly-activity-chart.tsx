@@ -102,11 +102,11 @@ export function WeeklyActivityChart() {
                       style={{ height: `${h * 0.8}px` }}
                       title={`${d.label}: ${d.answered} تمريناً، دقة ${d.pct}%`}
                     />
-                    <span className={cn("text-[10px]", isToday ? "font-bold text-primary" : "text-muted-foreground")}>
+                    <span className={cn("text-[11px]", isToday ? "font-bold text-primary" : "text-muted-foreground")}>
                       {d.label.slice(0, 3)}
                     </span>
                     {d.answered > 0 && (
-                      <span className="font-de text-[10px] font-bold text-success">{d.pct}%</span>
+                      <span className="font-de text-[11px] font-bold text-success">{d.pct}%</span>
                     )}
                   </div>
                 );

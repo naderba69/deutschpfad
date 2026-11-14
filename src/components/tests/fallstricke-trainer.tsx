@@ -184,7 +184,7 @@ export function FallstrickeTrainer() {
                 <span className="font-de ms-1 inline-block w-4 text-xs font-bold opacity-60">{String.fromCharCode(65 + i)}</span>
                 <span dir="ltr" lang="de">{opt}</span>
                 {answered && isTrap && i !== ex.correct && (
-                  <span className="ms-2 rounded-full bg-amber-500/15 px-2 py-0.5 text-[10px] font-bold text-amber-700">هذه هي المصيدة 🪤</span>
+                  <span className="ms-2 rounded-full bg-amber-500/15 px-2 py-0.5 text-[11px] font-bold text-amber-700">هذه هي المصيدة 🪤</span>
                 )}
               </button>
             );

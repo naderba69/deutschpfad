@@ -77,7 +77,7 @@ export function ProgressReport() {
         {/* الترويسة */}
         <div className="border-b pb-4 text-center">
           <p className="font-de text-3xl font-extrabold text-primary">DeutschPfad</p>
-          <h1 className="mt-1 text-2xl font-extrabold">تقرير تقدمي — درب الألمانية</h1>
+          <h2 className="mt-1 text-2xl font-extrabold">تقرير تقدمي — درب الألمانية</h2>
           {/* suppressHydrationWarning: التاريخ يختلف بين الخادم والعميل حسب المنطقة الزمنية */}
           <p className="mt-1 text-sm text-muted-foreground" suppressHydrationWarning>تاريخ التقرير: {date}</p>
         </div>

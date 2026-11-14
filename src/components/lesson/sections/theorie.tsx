@@ -93,7 +93,7 @@ function CommonMistakes({mistakes}: {mistakes: TheoryBlock["commonMistakes"]}) {
                   {mistake.wrong}
                 </span>
                 {isAlternative ? (
-                  <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold text-muted-foreground">بديل سياقي</span>
+                  <span className="rounded-full bg-muted px-2 py-0.5 text-[11px] font-bold text-muted-foreground">بديل سياقي</span>
                 ) : (
                   <XCircle className="h-4 w-4 text-destructive" aria-hidden="true" />
                 )}

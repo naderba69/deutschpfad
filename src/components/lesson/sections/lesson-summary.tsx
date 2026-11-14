@@ -117,7 +117,7 @@ export function LessonSummary({ lesson }: { lesson: Lesson }) {
       {culture && (
         <div className="rounded-lg bg-muted/40 px-3 py-2">
           <p className="text-[11px] font-bold text-muted-foreground">{culture.title}</p>
-          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{culture.content}</p>
+          <p className="mt-1 break-words text-xs leading-relaxed text-muted-foreground">{culture.content}</p>
         </div>
       )}
     </div>

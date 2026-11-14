@@ -189,7 +189,7 @@ export function FunktionsverbgefuegeTrainer() {
                       type="button"
                       disabled={gapChecked}
                       onClick={() => setGapAns((a) => ({ ...a, [g.id]: w }))}
-                      className={cn("rounded-md border px-2.5 py-1 text-xs font-semibold", gapAns[g.id] === w ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background hover:border-primary/40")}
+                      className={cn("inline-flex min-h-8 items-center rounded-md border px-2.5 py-1.5 text-xs font-semibold", gapAns[g.id] === w ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background hover:border-primary/40")}
                     >
                       <span dir="ltr">{w}</span>
                     </button>

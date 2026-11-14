@@ -130,8 +130,10 @@ export function LesetextSection({reading, lessonId}: {reading: ReadingText; less
                       <SpeakButton text={g.de} />
                     </div>
                     <p className="mt-1 text-muted-foreground">{g.ar}</p>
+                    {/* ملاحظات المفردات تحمل عناوين URL طويلة بلا مسافات؛ بلا كسر
+                        الكلمة تفيض خارج البطاقة (قياس: 757px داخل 644px). */}
                     {g.noteAr ? (
-                      <p className="mt-1 text-xs text-primary/80">{g.noteAr}</p>
+                      <p className="mt-1 break-words text-xs text-primary/80">{g.noteAr}</p>
                     ) : null}
                   </li>
                 ))}

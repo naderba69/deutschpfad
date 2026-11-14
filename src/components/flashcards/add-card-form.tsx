@@ -105,8 +105,8 @@ export function AddCardForm({ onAdded }: { onAdded?: () => void }) {
               onClick={() => setLevel(lvl)}
               className={
                 level === lvl
-                  ? "rounded-lg bg-primary px-3 py-1.5 font-de text-xs font-bold text-primary-foreground"
-                  : "rounded-lg border px-3 py-1.5 font-de text-xs font-bold text-muted-foreground hover:border-primary/50"
+                  ? "min-h-8 rounded-lg bg-primary px-3 py-1.5 font-de text-xs font-bold text-primary-foreground"
+                  : "min-h-8 rounded-lg border px-3 py-1.5 font-de text-xs font-bold text-muted-foreground hover:border-primary/50"
               }
             >
               {lvl}

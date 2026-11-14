@@ -196,7 +196,7 @@ export function PictureDictionaryClient() {
                   {v.de}
                 </span>
                 <VocabKindBadge g={v.g} />
-                <SpeakButton text={v.de} size="icon" className="h-6 w-6" />
+                <SpeakButton text={v.de} size="icon" className="h-8 w-8" />
               </div>
               <p className="truncate text-xs text-muted-foreground">{v.ar}</p>
               {v.ex && (

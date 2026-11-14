@@ -38,7 +38,7 @@ export function TextDe({ text, className }: { text: string; className?: string }
         onClick={speak}
         aria-label={`استمع: ${text}`}
         title={state === "unsupported" ? "متصفحك لا يدعم النطق — استخدم Chrome/Edge" : "اضغط للاستماع"}
-        className={`inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full border transition-colors ${
+        className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-colors ${
           state === "playing"
             ? "border-primary bg-primary text-primary-foreground"
             : "border-muted bg-muted/40 text-muted-foreground hover:border-primary/50 hover:text-primary"

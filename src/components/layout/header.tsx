@@ -31,9 +31,9 @@ function HeaderProgress() {
           <Link
             href="/learning-path"
             aria-label={`${pct === null ? "…" : `${pct}%`} — التقدم الإجمالي في المنهج`}
-            className="hidden sm:inline-flex"
+            className="hidden min-h-8 items-center sm:inline-flex"
           >
-            <Badge variant="secondary" className="gap-1.5 px-3 py-1">
+            <Badge variant="secondary" className="gap-1.5 px-3 py-1.5">
               <Percent className="h-3.5 w-3.5 text-primary" />
               {/* suppressHydrationWarning: «…» قبل التحميل ثم النسبة — تغيّر مقصود */}
               <span className="font-de font-semibold" suppressHydrationWarning>{pct === null ? "…" : `${pct}%`}</span>
@@ -116,14 +116,19 @@ export function Header() {
           <Logo />
         </Link>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <NavLinks />
         </div>
 
         <div className="flex items-center gap-2">
           <HeaderProgress />
-          <DueCounter />
-          <UsageCounter />
+          {/* عند 768px كان شريط التنقّل الأفقي هو ما يدفع كتلة الرأس خارج
+              الشاشة (‎-13px)؛ نُقل إلى lg فصار العدّادان يتّسعان من md.
+              القياس في docs/AUDIT-EVERY-PAGE-2026-10-13.md. */}
+          <div className="hidden items-center gap-2 md:flex">
+            <DueCounter />
+            <UsageCounter />
+          </div>
           <ThemeToggle />
           <Button
             asChild
@@ -143,7 +148,7 @@ export function Header() {
           {/* قائمة الجوال */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden" aria-label="فتح القائمة">
+              <Button variant="ghost" size="icon" className="lg:hidden" aria-label="فتح القائمة">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
