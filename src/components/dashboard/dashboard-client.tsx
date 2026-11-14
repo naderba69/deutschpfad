@@ -24,6 +24,7 @@ import {PreferencesCard} from "@/components/dashboard/preferences-card";
 import {ReversePlanCard} from "@/components/dashboard/reverse-plan";
 import {DailyVocabChallenge} from "@/components/dashboard/daily-vocab-challenge";
 import {TodayReviewCard} from "@/components/dashboard/today-review-card";
+import {RetentionCard} from "@/components/dashboard/retention-card";
 import {StudyStatsCard} from "@/components/dashboard/study-stats-card";
 import {RecentActivity} from "@/components/dashboard/recent-activity";
 import {startSessionTracking} from "@/lib/analytics/session";
@@ -208,6 +209,7 @@ export function DashboardClient() {
           <TodayReviewCard />
           <DailyVocabChallenge />
           <StudyStatsCard />
+          <RetentionCard />
         </div>
       </DashSection>
 
