@@ -94,12 +94,13 @@ export const B1_DIALOGUES_2: DailyDialogue[] = [
     titleDe: "Krankmeldung",
     emoji: "🤒",
     situation: "محاكاة افتراضية للتدرب على إبلاغ العمل بالمرض؛ الإجراءات قد تختلف حسب جهة العمل",
+    audioNoteAr: "في المقطع 5 لم يطابق التفريغ المحلي للنطق الآلي (2.7 ثانية مقابل نصّ أطول) النص الحالي، لذلك عُطّل ملف MP3 لهذا الدور في المشغّل؛ يستخدم زر الاستماع TTS المتصفح للنص الحالي وقد يختلف الصوت حسب الجهاز. المقاطع الأخرى تستخدم MP3 ومصدرها غير موثّق، وهذا إجراء احترازي برمجي لا حكم سمعي. وتُراجع إجراءات الإبلاغ عن المرض لدى جهة العمل.",
     turns: [
       { speaker: "السكرتيرة", role: "a", de: "Guten Morgen, Firma Schmidt. Was kann ich für Sie tun?", ar: "صباح الخير، شركة شميت. ماذا أفعل لك؟" },
       { speaker: "أنت", role: "b", de: "Guten Morgen! Ich bin heute krank und kann nicht zur Arbeit kommen.", ar: "صباح الخير! أنا مريض اليوم ولا أستطيع الحضور." },
       { speaker: "السكرتيرة", role: "a", de: "Oh, gute Besserung! Haben Sie einen Arzttermin?", ar: "أوه، الشفاء العاجل! هل لديك موعد طبيب؟" },
       { speaker: "أنت", role: "b", de: "Ja, ich gehe heute Nachmittag zum Arzt.", ar: "نعم، سأذهب للطبيب بعد الظهر." },
-      { speaker: "السكرتيرة", role: "a", de: "Gut. Bitte melden Sie sich morgen noch einmal, falls Sie dann noch krank sind.", ar: "حسناً. يرجى الاتصال بنا غداً مجدداً إذا بقيت مريضاً." },
+      { speaker: "السكرتيرة", role: "a", de: "Gut. Bitte melden Sie sich morgen noch einmal, falls Sie dann noch krank sind.", ar: "حسناً. يرجى الاتصال بنا غداً مجدداً إذا بقيت مريضاً.", audioSrc: null },
       { speaker: "أنت", role: "b", de: "Mache ich. Danke für Ihr Verständnis!", ar: "سأفعل. شكراً لتفهمك!" },
     ],
     questions: [
