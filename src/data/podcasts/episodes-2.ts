@@ -191,4 +191,32 @@ export const PODCASTS_PART_2: PodcastEpisode[] = [
       ]},
     ],
   },
+  /* ─── B1 — حلقة سادسة (مهنية) ─── */
+  {
+    id: "p-b1-erster-job",
+    level: "B1",
+    title: "Die erste Woche im neuen Job",
+    titleAr: "الأسبوع الأول في العمل الجديد",
+    emoji: "🧑‍💼",
+    script: "In dieser Übungsfolge erzählt Lena von ihrer ersten Woche in einem neuen Büro. Am ersten Tag wurde sie von ihrer Teamleiterin begrüßt und bekam einen Laptop. Weil sie noch niemanden kannte, hat sie mittags allein gegessen. Am zweiten Tag fragte sie eine Kollegin, ob sie zusammen Mittag essen wollten. Am Ende der Woche kannte sie schon die wichtigsten Abläufe. Lena sagt, es habe geholfen, früh Fragen zu stellen.",
+    scriptAr: "تحكي لينا في هذه الحلقة التدريبية عن أسبوعها الأول في مكتب جديد. في اليوم الأول استقبلتها قائدة فريقها وحصلت على حاسوب محمول. ولأنها لم تكن تعرف أحداً بعد، تناولت الغداء وحدها. وفي اليوم الثاني سألت زميلة إن كانتا تريدان تناول الغداء معاً. وفي نهاية الأسبوع كانت تعرف أهم الإجراءات. وتقول لينا إن طرح الأسئلة مبكراً ساعدها.",
+    contentNoteAr: "مشهد تدريبي خيالي عن تجربة لينا الفردية، وليس إحصاءً عن بيئات العمل أو برامج التأهيل. التسجيل مولّد آلياً من نص الحلقة الحالي، وليس تسجيلاً بشرياً، ولم يُجر تقييم سمعي للوضوح أو طبيعية الأداء.",
+    questions: [
+      { de: "Wer begrüßte Lena am ersten Tag?", ar: "من استقبل لينا في اليوم الأول؟", options: [
+        { text: "Ihre Teamleiterin", ar: "قائدة فريقها", correct: true, explanation: "نعم — الحلقة تقول: «wurde sie von ihrer Teamleiterin begrüßt»." },
+        { text: "Ihr neuer Kollege", ar: "زميلها الجديد", correct: false, explanation: "لا — الذي استقبلها «von ihrer Teamleiterin begrüßt»، لا زميل." },
+        { text: "Die Geschäftsführung", ar: "الإدارة", correct: false, explanation: "لا — لم تُذكر الإدارة Geschäftsführung؛ بل «von ihrer Teamleiterin begrüßt»." },
+      ]},
+      { de: "Was bekam Lena am ersten Tag?", ar: "ماذا حصلت عليه لينا في اليوم الأول؟", options: [
+        { text: "Einen Laptop für die Arbeit", ar: "حاسوباً محمولاً للعمل", correct: true, explanation: "نعم — «bekam einen Laptop»." },
+        { text: "Ein eigenes Büro im Gebäude", ar: "مكتباً خاصاً في المبنى", correct: false, explanation: "لا — لم يُذكر مكتب خاص؛ والمذكور «bekam einen Laptop»." },
+        { text: "Einen Firmenwagen zur Nutzung", ar: "سيارة شركة للاستخدام", correct: false, explanation: "لا — سيارة الشركة لم تُذكر؛ بل «bekam einen Laptop»." },
+      ]},
+      { de: "Was wusste Lena am Ende der Woche?", ar: "ماذا عرفت لينا في نهاية الأسبوع؟", options: [
+        { text: "Die wichtigsten Abläufe im Büro", ar: "أهم الإجراءات في المكتب", correct: true, explanation: "نعم — «kannte sie schon die wichtigsten Abläufe»." },
+        { text: "Alle Namen der Firma auswendig", ar: "كل أسماء الشركة عن ظهر قلب", correct: false, explanation: "لا — لم تُذكر أسماء الشركة؛ بل «kannte sie schon die wichtigsten Abläufe»." },
+        { text: "Den gesamten Computerkurs", ar: "دورة الحاسوب كاملة", correct: false, explanation: "لا — لم تُذكر دورة حاسوب؛ بل «kannte sie schon die wichtigsten Abläufe»." },
+      ]},
+    ],
+  },
 ];
