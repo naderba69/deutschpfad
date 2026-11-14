@@ -85,7 +85,7 @@ export function StarkeVerbenTable({ compact }: { compact?: boolean }) {
               <tr key={`${v.infinitiv}-${v.level}`} className="border-b last:border-0 hover:bg-muted/20">
                 <td className="px-3 py-2">
                   <span className="flex items-center gap-1.5">
-                    <SpeakButton text={v.infinitiv} size="sm" className="h-7 w-7" />
+                    <SpeakButton text={v.infinitiv} size="sm" className="h-8 w-8" />
                     <span className="font-de font-bold" dir="ltr" lang="de">
                       {v.infinitiv}
                     </span>

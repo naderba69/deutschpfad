@@ -291,7 +291,7 @@ export function DataManager() {
           ) : (
             <ul className="divide-y rounded-xl border bg-card">
               {snapshots.map((snap) => (
-                <li key={snap.id} className="flex items-center justify-between gap-3 p-3 text-sm">
+                <li key={snap.id} className="flex flex-col gap-2 p-3 text-sm sm:flex-row sm:items-center sm:justify-between sm:gap-3">
                   <div className="min-w-0">
                     <p className="font-semibold">
                       {snap.kind === "auto" ? "تلقائية" : "يدوية"}{" "}

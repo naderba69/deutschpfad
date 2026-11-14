@@ -30,8 +30,9 @@ export function VortragModelle() {
             key={m.id}
             type="button"
             onClick={() => setActive(i)}
+            aria-pressed={active === i}
             className={cn(
-              "rounded-full border px-3 py-1.5 text-xs font-bold transition-colors",
+              "min-h-8 rounded-full border px-3 py-1.5 text-xs font-bold transition-colors",
               active === i ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 hover:border-primary/40",
             )}
           >

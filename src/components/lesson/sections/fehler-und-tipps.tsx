@@ -68,7 +68,7 @@ export function FehlerUndTippsSection({ data }: { data: FehlerUndTipps }) {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="leading-relaxed text-muted-foreground">{data.culturalNote.content}</p>
+          <p className="break-words leading-relaxed text-muted-foreground">{data.culturalNote.content}</p>
         </CardContent>
       </Card>
     </div>

@@ -70,6 +70,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/sound-check", priority: 0.4 },
     { path: "/aussprache", priority: 0.5 },
     { path: "/offline", priority: 0.3 },
+    // ═══ مسارات كانت غائبة عن الخريطة رغم ظهورها في التنقّل (تدقيق 2026-10-13) ═══
+    { path: "/conversations", priority: 0.6 },
+    { path: "/picture-dictionary", priority: 0.6 },
+    { path: "/shop", priority: 0.4 },
+    { path: "/sprechen", priority: 0.7 },
+    { path: "/umformung", priority: 0.7 },
+    { path: "/sync", priority: 0.3 },
+    { path: "/tests/a1-exam", priority: 0.8 },
+    { path: "/tests/a2-exam", priority: 0.8 },
+    { path: "/tests/b1-exam", priority: 0.8 },
+    { path: "/tests/b2", priority: 0.8 },
+    { path: "/tests/b2-grammatik", priority: 0.7 },
+    { path: "/tests/fallstricke", priority: 0.7 },
+    { path: "/tests/lesen-b2", priority: 0.7 },
+    { path: "/tests/strategien", priority: 0.7 },
   ];
 
   // إضافة كل الدروس من الفهرس (المحتوى الأساسي) — الأولوية حسب المستوى
@@ -79,7 +94,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: levelPriority[lesson.level] ?? 0.7,
   }));
 
-  return [...routes, ...lessonRoutes].map(({ path, priority }) => ({
+  // اختبارات الوحدات: صفحة لكل وحدة لها دروس (كانت 49 صفحة خارج الخريطة)
+  const unitRoutes = [...new Set(LESSON_META.map((lesson) => lesson.unitId))].map((unitId) => ({
+    path: `/tests/unit/${unitId}`,
+    priority: 0.5,
+  }));
+
+  return [...routes, ...lessonRoutes, ...unitRoutes].map(({ path, priority }) => ({
     url: `${siteConfig.url}${path}`,
     lastModified: new Date(),
     changeFrequency: path === "" ? "weekly" : "monthly",

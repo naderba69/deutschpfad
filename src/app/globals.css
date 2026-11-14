@@ -103,6 +103,19 @@
     text-rendering: optimizeLegibility;
   }
 
+  /* كلمات ألمانية أو عناوين URL طويلة داخل نص عربي لا تجد مسافة للكسر،
+     فكانت تتجاوز الحاوية وتُقصّ بصمت بفضل overflow-x: clip (قياس:
+     757px داخل 644px في /lesson/b1-10). الكسر يحدث فقط عند الحد. */
+  :where(p, li, dd, dt, blockquote, figcaption, td, th, h1, h2, h3, h4, h5, h6) {
+    overflow-wrap: break-word;
+  }
+
+  /* شرائح التصفية/التبويب تحمل aria-pressed: نوحّد حدّ اللمس الأدنى 32px
+     (كانت 24–30px في flashcards/redemittel/sprechtraining/tests…). */
+  :where(button[aria-pressed], a[aria-pressed]) {
+    min-height: 2rem;
+  }
+
   ::selection {
     @apply bg-primary/20 text-foreground;
   }

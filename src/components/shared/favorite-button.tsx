@@ -48,7 +48,8 @@ export function FavoriteButton({ kind, id, label, className, size = "md" }: Favo
       className={cn(
         "inline-flex items-center justify-center rounded-full border transition-colors",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-        size === "sm" ? "h-7 w-7" : "h-9 w-9",
+        // 32px حدّ أدنى مقبول لأهداف اللمس (كان h-7 = 28px، قياس 28×28).
+        size === "sm" ? "h-8 w-8" : "h-9 w-9",
         active
           ? "border-amber-300 bg-amber-50 text-amber-500 dark:border-amber-700 dark:bg-amber-950/40"
           : "border-border bg-background text-muted-foreground hover:border-amber-300 hover:text-amber-500",

@@ -41,7 +41,7 @@ export function B2Top500() {
           <button
             type="button"
             onClick={() => setTopic("all")}
-            className={cn("rounded-full border px-3 py-1 text-xs font-bold", topic === "all" ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background")}
+            className={cn("rounded-full border px-3 py-1.5 text-xs min-h-8 font-bold", topic === "all" ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background")}
           >
             الكل
           </button>
@@ -50,7 +50,7 @@ export function B2Top500() {
               key={t.id}
               type="button"
               onClick={() => setTopic(t.id)}
-              className={cn("rounded-full border px-3 py-1 text-xs font-semibold", topic === t.id ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background hover:border-primary/40")}
+              className={cn("rounded-full border px-3 py-1.5 text-xs min-h-8 font-semibold", topic === t.id ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background hover:border-primary/40")}
             >
               {t.icon} {t.titleAr}
             </button>
@@ -58,10 +58,10 @@ export function B2Top500() {
         </div>
         <div className="mt-3 flex flex-wrap items-center gap-2 border-t pt-3">
           <span className="text-sm font-bold">أولوية المراجعة:</span>
-          <button type="button" onClick={() => setFreq(0)} className={cn("rounded-full border px-3 py-1 text-xs font-bold", freq === 0 ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background")}>الكل</button>
-          <button type="button" onClick={() => setFreq(3)} className={cn("rounded-full border px-3 py-1 text-xs font-bold", freq === 3 ? "border-gold bg-gold/20 text-gold-strong" : "border-muted bg-background")}>أولوية أعلى</button>
-          <button type="button" onClick={() => setFreq(2)} className={cn("rounded-full border px-3 py-1 text-xs font-bold", freq === 2 ? "border-primary bg-primary/10 text-primary" : "border-muted bg-background")}>عالية</button>
-          <button type="button" onClick={() => setFreq(1)} className={cn("rounded-full border px-3 py-1 text-xs font-bold", freq === 1 ? "border-muted bg-muted text-muted-foreground" : "border-muted bg-background")}>مفيدة</button>
+          <button type="button" onClick={() => setFreq(0)} className={cn("rounded-full border px-3 py-1.5 text-xs min-h-8 font-bold", freq === 0 ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background")}>الكل</button>
+          <button type="button" onClick={() => setFreq(3)} className={cn("rounded-full border px-3 py-1.5 text-xs min-h-8 font-bold", freq === 3 ? "border-gold bg-gold/20 text-gold-strong" : "border-muted bg-background")}>أولوية أعلى</button>
+          <button type="button" onClick={() => setFreq(2)} className={cn("rounded-full border px-3 py-1.5 text-xs min-h-8 font-bold", freq === 2 ? "border-primary bg-primary/10 text-primary" : "border-muted bg-background")}>عالية</button>
+          <button type="button" onClick={() => setFreq(1)} className={cn("rounded-full border px-3 py-1.5 text-xs min-h-8 font-bold", freq === 1 ? "border-muted bg-muted text-muted-foreground" : "border-muted bg-background")}>مفيدة</button>
           <div className="relative ms-auto w-full sm:w-56">
             <Search className="absolute end-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
           <input
@@ -90,10 +90,10 @@ export function B2Top500() {
                 <p className="mt-0.5 text-xs text-muted-foreground">{e.ar}</p>
               </div>
               <div className="flex shrink-0 flex-col items-end gap-1">
-                <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary">
+                <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-bold text-primary">
                   {t?.icon} {t?.titleAr.slice(0, 12)}
                 </span>
-                <span className={cn("inline-flex items-center gap-0.5 rounded-full px-2 py-0.5 text-[10px] font-bold", e.freq === 3 ? "bg-gold/20 text-gold-strong" : e.freq === 2 ? "bg-sky-500/10 text-sky-600" : "bg-muted text-muted-foreground")}>
+                <span className={cn("inline-flex items-center gap-0.5 rounded-full px-2 py-0.5 text-[11px] font-bold", e.freq === 3 ? "bg-gold/20 text-gold-strong" : e.freq === 2 ? "bg-sky-500/10 text-sky-600" : "bg-muted text-muted-foreground")}>
                   {e.freq === 3 && <Flame className="h-3 w-3" aria-hidden="true" />}
                   {freqLabel(e.freq)}
                 </span>

@@ -73,7 +73,7 @@ export function CefrCompetencies() {
                 <div key={s.key} className="rounded-xl border bg-muted/10 px-3 py-2.5">
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-xs font-extrabold">{SKILLS.find((k) => k.key === s.key)?.emoji} {s.key}</span>
-                    <span className="text-[10px] text-muted-foreground">{s.total} محاولات</span>
+                    <span className="text-[11px] text-muted-foreground">{s.total} محاولات</span>
                   </div>
                   <div className="mt-2 flex items-center gap-2">
                     <div

@@ -78,7 +78,7 @@ export function PredictivePath() {
           <span className="font-bold text-primary">{done}/{TOTAL_LESSONS} دروس</span>
         </div>
         {activityReadError && <p role="alert" className="text-xs text-destructive">تعذرت قراءة سجل النشاط؛ لم نعرض تقديراً زمنياً مضللاً.</p>}
-        <p className="text-[10px] leading-relaxed text-muted-foreground">تقدير إكمال المسار مبني على وتيرة الدروس السابقة فقط؛ لا يثبت مستوى CEFR ولا الجاهزية لامتحان رسمي.</p>
+        <p className="text-[11px] leading-relaxed text-muted-foreground">تقدير إكمال المسار مبني على وتيرة الدروس السابقة فقط؛ لا يثبت مستوى CEFR ولا الجاهزية لامتحان رسمي.</p>
       </CardContent>
     </Card>
   );

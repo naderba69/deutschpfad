@@ -174,6 +174,7 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
           <button
             key={s.skill}
             type="button"
+            aria-pressed={i === sectionIdx}
             onClick={() => {
               setSectionIdx(i);
               setQuestionIdx(0);
