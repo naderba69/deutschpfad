@@ -283,7 +283,7 @@ export function SpeakAndScore({ target, compact }: { target: string; compact?: b
                   {seg.text}
                 </span>
               ))}
-              <span className="ms-1.5 text-[9px] text-muted-foreground">
+              <span className="ms-1.5 text-[11px] text-muted-foreground">
                 <span className="text-success">■ مطابق نصياً</span> <span className="text-destructive">■ اختلف نصياً</span>
               </span>
             </p>

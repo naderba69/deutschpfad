@@ -94,13 +94,15 @@ export function UmschreibungenClient() {
                   : "bg-card hover:border-primary/40",
               )}
             >
-              <div className="flex items-center justify-between">
+              {/* flex-wrap + shrink-0: عند تكبير النص 200% كان العنوان الألماني
+                  يزاحم شارة العدد في قصّها خارج الشاشة (WCAG 1.4.4). */}
+              <div className="flex flex-wrap items-center justify-between gap-1">
                 <span className="font-de text-sm font-extrabold" dir="ltr" lang="de">
                   {t.num}. {t.titleDe}
                 </span>
                 <Badge
                   variant={typ?.id === t.id ? "secondary" : "outline"}
-                  className="text-[9px]"
+                  className="shrink-0 text-[11px]"
                 >
                   {count}
                 </Badge>

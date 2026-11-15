@@ -159,7 +159,7 @@ export function WeeklyLeague() {
             )}
           >
             <span className="block text-sm" aria-hidden="true">{r.emoji}</span>
-            <span className="block text-[9px] font-extrabold">{r.name}</span>
+            <span className="block text-[11px] font-extrabold">{r.name}</span>
           </div>
         ))}
       </div>

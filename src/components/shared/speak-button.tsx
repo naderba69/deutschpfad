@@ -117,7 +117,7 @@ export function SpeakButton({
       </Button>
       {noVoice && (
         <span
-          className="max-w-40 rounded-md border border-gold/40 bg-gold/10 px-1.5 py-0.5 text-[9px] font-bold leading-tight text-gold-strong"
+          className="max-w-40 rounded-md border border-gold/40 bg-gold/10 px-1.5 py-0.5 text-[11px] font-bold leading-tight text-gold-strong"
           role="status"
         >
           لا يوجد صوت ألماني مثبت على الجهاز — ثبّت حزمة صوت ألماني ثم أعد المحاولة

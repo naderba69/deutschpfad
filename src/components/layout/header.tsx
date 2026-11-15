@@ -50,7 +50,7 @@ function NavLinks({ className, onNavigate }: { className?: string; onNavigate?: 
   const pathname = usePathname();
 
   return (
-    <nav className={cn("flex items-center gap-1", className)} aria-label="التنقل الرئيسي">
+    <nav className={cn("flex flex-wrap items-center gap-1", className)} aria-label="التنقل الرئيسي">
       {/* رابطان أساسيان دائمان */}
       <Link
         href="/learning-path"
@@ -111,7 +111,10 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
+      {/* ═══ WCAG 1.4.4: ارتفاع ثابت h-16 + عدم الالتفاف كان يقصّ الهيدر عند
+          تكبير النص 200% (المحتوى 1755px داخل 1280px، مقصوص بـoverflow-x:clip
+          فلا يمكن الوصول إليه). الآن يلتفّ المحتوى ويزداد الارتفاع بدل أن يُفقد. ═══ */}
+      <div className="mx-auto flex min-h-16 w-full max-w-7xl flex-wrap items-center justify-between gap-x-3 gap-y-1 px-4 sm:px-6">
         <Link href="/" className="shrink-0 rounded-lg py-2">
           <Logo />
         </Link>
