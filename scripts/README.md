@@ -20,13 +20,14 @@
 | `audit-keyboard.mjs` | لوحة المفاتيح والنماذج لكل مسار: هدف رابط التخطي، المراسي، أسماء الحقول، مؤشر التركيز عبر Tab حقيقي، عناصر مخفية قابلة للتركيز | `npm run audit:keyboard` (يحتاج خادماً + NODE_PATH للحزم) | ✅ يعمل — 189 صفحة، 8491 نقطة تركيز، 0 ملاحظة (2026-10-13) |
 | `audit-robustness.mjs` | الجولة الرابعة — متانة التخطيط: CLS لكل مسار · تباعد النص (WCAG 1.4.12) · `prefers-reduced-motion` · مطابقة الهيدرشن · مهام طويلة | `npm run audit:robustness` (يحتاج خادماً + NODE_PATH للحزم) | ✅ يعمل — 189 صفحة، CLS الأقصى 0.094، 0 ملاحظة (2026-10-13) — يكشف CLS · تباعد النص · الحركة · تعارض الهيدرشن |
 | `audit-zoom.mjs` | الجولة الخامسة — إعادة التدفّق (WCAG 1.4.10): كل مسار بعرض 320px (تكبير 400%) · تكبير النص 200% (1.4.4): فيضان أفقي، عناصر خارج الشاشة، نص مقصوص، نص يفيض | `npm run audit:zoom` (يحتاج خادماً + NODE_PATH) | ✅ يعمل — 189 صفحة، 0 ملاحظة (2026-10-13) |
+| `audit-interactive.mjs` | الجولة السادسة — الحالات **المفتوحة**: يفتح كل مشغّل (`aria-haspopup` · `aria-expanded` · `summary` · `aria-controls`) بنقرة حقيقية، ثم يفحص الدور وانتقال التركيز و`Escape` وعودته وتسريب التركيز خارج النافذة. وفيه وضع `AUDIT_FAULT` للتحكّم السلبي | `npm run audit:interactive` (و`AUDIT_VIEWPORT=390x844` للجوال) | ✅ يعمل — 189 صفحة × مقاسين · 1483 مشغّلاً · 0 ملاحظة (2026-10-13) |
 | `setup-audit-browser.sh` | تجهيز متصفح التدقيق خارج تبعيات المشروع: `puppeteer-core` + Chromium + مكتبات كعب NSS/NSPR في Debian | `bash scripts/setup-audit-browser.sh` | ✅ يعمل — أمر واحد بدل وصفة يدوية |
 | `probe-first-option.mjs` | مسبار سلوكي (3 جلسات، متوسط): هل يُجتاز اختبار المستوى باختيار «الخيار الأول» دائماً؟ يفشل إن بلغ **متوسط** مهارة حدّ النجاح | `npm run audit:first-option` (يحتاج خادماً على :3000) | ✅ يعمل — قياس 2026-10-16: 23 · 0 · 5 · 13 · 33% (كانت 100% قبل الإصلاح) |
 | `apply-depth.py` | ترقية عمق درس واحد انطلاقاً من حمولة JSON (بحقول إلزامية وتحقّق قبل الكتابة) | `python3 scripts/apply-depth.py payload.json` | أداة جراحة نصّية — تُستعمل يدوياً عند الحاجة |
 | `insert-theory-block.py` | إدراج كتلة نظرية + تدريبات + بطاقات في درس قائم بثلاثة شروط أمان قبل الكتابة | `python3 scripts/insert-theory-block.py <ملف> <حمولة>` | أداة جراحة نصّية — تُستعمل يدوياً عند الحاجة |
 | `lib/lesson-source.mjs` | مساعد القراءة المشترك (ليس أداة مستقلة) | يُستورَد من الأدوات الأخرى | ✅ مُستخدم في الأدوات الأربع |
 
-## أدوات المتصفح (dom-audit · screenshots · audit-every-page · audit-robustness · audit-zoom)
+## أدوات المتصفح (dom-audit · screenshots · audit-every-page · audit-robustness · audit-zoom · audit-interactive)
 
 `audit-every-page.mjs` و`audit-links.mjs` يحتاجان `puppeteer-core` و`@sparticuz/chromium`
 خارج اعتماديات المشروع. في Debian بلا `libnss3`/`libnspr4` تُبنى مكتبات كعب —

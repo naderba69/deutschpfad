@@ -61,6 +61,10 @@ const SheetContent = React.forwardRef<
     <SheetOverlay />
     <SheetPrimitive.Content
       ref={ref}
+      /* `aria-modal` صريح: الراديكس يعتمد على إخفاء الخلفية بـaria-hidden،
+         لكن قارئات الشاشة تحتاج الإعلان الصريح كي لا تتجوّل خارج اللوحة.
+         اللوحة هنا حاجزة دائماً (لها طبقة تعتيم)، فلا لبس في ذلك. */
+      aria-modal="true"
       className={cn(sheetVariants({ side }), className)}
       {...props}
     >
