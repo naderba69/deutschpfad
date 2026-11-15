@@ -158,7 +158,13 @@ export function Header() {
             <SheetContent side="right" className="w-80">
               <SheetHeader className="border-b pb-4">
                 <SheetTitle>
-                  <Logo idSuffix="-menu" />
+                  {/* اسم اللوحة كان اسم العلامة التجارية ("درب الألمانية DeutschPfad")
+                      لأن الشعار بداخلها؛ فيُعلن قارئ الشاشة «درب الألمانية» عند فتح
+                      القائمة بلا دلالة على أنها قائمة تنقّل. */}
+                  <span className="sr-only">قائمة التنقل</span>
+                  <span aria-hidden="true">
+                    <Logo idSuffix="-menu" />
+                  </span>
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col gap-1 pt-4">
