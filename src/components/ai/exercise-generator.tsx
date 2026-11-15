@@ -6,6 +6,7 @@ import {Dumbbell} from "lucide-react";
 import {AiToolShell} from "@/components/ai/ai-tool-shell";
 import {useLLM} from "@/components/providers/llm-provider";
 import {exerciseGeneratorPrompt} from "@/lib/llm/prompts";
+import {useRadioGroupNav} from "@/lib/use-radio-group-nav";
 
 const LEVELS = ["A1", "A2", "B1", "B2"];
 const TYPES = [
@@ -36,6 +37,8 @@ export function AiExerciseGenerator() {
   const [level, setLevel] = React.useState("A2");
   const [topic, setTopic] = React.useState(TOPICS[1]);
   const [type, setType] = React.useState(TYPES[0].id);
+  const navLevel = useRadioGroupNav();
+  const navType = useRadioGroupNav();
   const [result, setResult] = React.useState("");
 
   const generate = async () => {
@@ -65,7 +68,7 @@ export function AiExerciseGenerator() {
     >
       {(run) => (
         <div className="space-y-3">
-          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="المستوى">
+          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="المستوى" {...navLevel}>
             {LEVELS.map((l) => (
               <button
                 key={l}
@@ -94,7 +97,7 @@ export function AiExerciseGenerator() {
               </option>
             ))}
           </select>
-          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="نوع التمرين">
+          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="نوع التمرين" {...navType}>
             {TYPES.map((t) => (
               <button
                 key={t.id}

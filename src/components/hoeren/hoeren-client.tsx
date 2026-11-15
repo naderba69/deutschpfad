@@ -68,7 +68,9 @@ export function HoerenClient() {
   return (
     <div className="space-y-5">
       {/* فلترة المستوى */}
-      <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="المستوى">
+      {/* أزرار تبديل بـaria-pressed لا radios ⇒ الدور الصحيح group لا radiogroup
+          (radiogroup لا يجوز أن يحتوي أزراراً بلا role=radio). */}
+      <div className="flex flex-wrap gap-1.5" role="group" aria-label="تصفية المستوى">
         {(["A1", "A2", "B1", "B2"] as const).map((l) => (
           <FilterChip
             key={l}

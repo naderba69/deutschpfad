@@ -6,6 +6,7 @@ import {ListOrdered} from "lucide-react";
 import {AiToolShell} from "@/components/ai/ai-tool-shell";
 import {useLLM} from "@/components/providers/llm-provider";
 import {sentenceGeneratorPrompt} from "@/lib/llm/prompts";
+import {useRadioGroupNav} from "@/lib/use-radio-group-nav";
 
 const LEVELS = ["A1", "A2", "B1", "B2"];
 
@@ -16,6 +17,7 @@ export function AiSentenceGenerator() {
   const { callLLM } = useLLM();
   const [word, setWord] = React.useState("");
   const [level, setLevel] = React.useState("A2");
+  const navLevel = useRadioGroupNav();
   const [result, setResult] = React.useState("");
 
   const generate = async () => {
@@ -65,7 +67,7 @@ export function AiSentenceGenerator() {
               توليد
             </button>
           </div>
-          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="المستوى">
+          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="المستوى" {...navLevel}>
             {LEVELS.map((l) => (
               <button
                 key={l}

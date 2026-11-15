@@ -10,6 +10,7 @@ import {Progress} from "@/components/ui/progress";
 import {useCountdown} from "@/lib/tests/use-countdown";
 import {createRecognitionEngine, isRecognitionSupported, unsupportedRecognitionNote, type RecognitionEngine} from "@/lib/speech/speech-recognition";
 import {cn} from "@/lib/utils";
+import {useRadioGroupNav} from "@/lib/use-radio-group-nav";
 
 const PARTS = [
   {
@@ -191,6 +192,7 @@ export function OralExam() {
   const [round, setRound] = React.useState(0);
   const [b2TopicIdx, setB2TopicIdx] = React.useState(0);
   const [b2StatementIdx, setB2StatementIdx] = React.useState(0);
+  const nav = useRadioGroupNav();
   const currentAnswerRef = React.useRef(currentAnswer);
   currentAnswerRef.current = currentAnswer;
   const partIdxRef = React.useRef(partIdx);
@@ -281,7 +283,7 @@ export function OralExam() {
         </p>
 
         {/* اختيار الصيغة */}
-        <div className="mx-auto mt-6 grid grid-cols-1 max-w-lg gap-3 sm:grid-cols-2" role="radiogroup" aria-label="صيغة الامتحان">
+        <div className="mx-auto mt-6 grid grid-cols-1 max-w-lg gap-3 sm:grid-cols-2" role="radiogroup" aria-label="صيغة الامتحان" {...nav}>
           <button
             type="button"
             role="radio"
@@ -339,11 +341,14 @@ export function OralExam() {
                 <p className="font-bold">{r.label}</p>
                 <span className="text-xs text-muted-foreground">{r.hint}</span>
               </div>
-              <div className="mt-2 flex gap-1.5" role="radiogroup" aria-label={r.label}>
+              <div className="mt-2 flex gap-1.5" role="radiogroup" aria-label={r.label} {...nav}>
                 {[1, 2, 3, 4, 5].map((v) => (
                   <button
                     key={v}
                     type="button"
+                    role="radio"
+                    aria-checked={scores[r.key] === v}
+                    aria-label={`${r.label}: ${v} من 5`}
                     onClick={() => setScores((prev) => ({ ...prev, [r.key]: v }))}
                     className={cn(
                       "flex h-9 w-9 items-center justify-center rounded-lg border text-sm font-bold transition-colors",

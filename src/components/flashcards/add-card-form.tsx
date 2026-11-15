@@ -8,6 +8,7 @@ import {Input} from "@/components/ui/input";
 import {Label} from "@/components/ui/label";
 import {addManualCard} from "@/lib/srs/flashcard-service";
 import type { LevelCode } from "@/types/curriculum";
+import {useRadioGroupNav} from "@/lib/use-radio-group-nav";
 
 const LEVELS: LevelCode[] = ["A1", "A2", "B1", "B2"];
 
@@ -22,10 +23,25 @@ export function AddCardForm({ onAdded }: { onAdded?: () => void }) {
   const [level, setLevel] = React.useState<LevelCode>("A1");
   const [saving, setSaving] = React.useState(false);
   const [done, setDone] = React.useState(false);
+  /* رسالة تحقّق ظاهرة: الحقلان `required` فالحالة الفارغة يعالجها المتصفح، لكن
+     الإدخال المكوّن من فراغات فقط يمرّ من `required` ثم يُرفض بصمت داخل `submit`
+     (WCAG 3.3.1: الخطأ يجب أن يُحدَّد ويُشرح). */
+  const [error, setError] = React.useState("");
+  const navLevel = useRadioGroupNav();
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!de.trim() || !ar.trim()) return;
+    if (!de.trim() || !ar.trim()) {
+      setError(
+        !de.trim() && !ar.trim()
+          ? "أدخل الكلمة الألمانية ومعناها بالعربية."
+          : !de.trim()
+            ? "أدخل الكلمة الألمانية (لا يكفي الفراغ)."
+            : "أدخل المعنى بالعربية (لا يكفي الفراغ).",
+      );
+      return;
+    }
+    setError("");
     setSaving(true);
     await addManualCard({
       de: de.trim(),
@@ -36,6 +52,7 @@ export function AddCardForm({ onAdded }: { onAdded?: () => void }) {
     });
     setSaving(false);
     setDone(true);
+    setError("");
     setDe("");
     setAr("");
     setExample("");
@@ -57,6 +74,8 @@ export function AddCardForm({ onAdded }: { onAdded?: () => void }) {
             lang="de"
             placeholder="z.B. der Apfel"
             required
+            aria-invalid={!de.trim() && error ? true : undefined}
+            aria-describedby={!de.trim() && error ? "card-form-error" : undefined}
           />
         </div>
         <div className="space-y-1.5">
@@ -67,6 +86,8 @@ export function AddCardForm({ onAdded }: { onAdded?: () => void }) {
             onChange={(e) => setAr(e.target.value)}
             placeholder="مثال: التفاحة"
             required
+            aria-invalid={!ar.trim() && error ? true : undefined}
+            aria-describedby={!ar.trim() && error ? "card-form-error" : undefined}
           />
         </div>
       </div>
@@ -93,9 +114,15 @@ export function AddCardForm({ onAdded }: { onAdded?: () => void }) {
         </div>
       </div>
 
+      {error && (
+        <p id="card-form-error" role="alert" className="text-sm font-semibold text-destructive">
+          {error}
+        </p>
+      )}
+
       <div className="space-y-1.5">
         <Label>المستوى</Label>
-        <div className="flex gap-1.5" role="radiogroup" aria-label="مستوى البطاقة">
+        <div className="flex gap-1.5" role="radiogroup" aria-label="مستوى البطاقة" {...navLevel}>
           {LEVELS.map((lvl) => (
             <button
               key={lvl}

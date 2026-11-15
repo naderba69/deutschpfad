@@ -29,7 +29,8 @@
     "audit:keyboard": "NODE_PATH=/tmp/vb/node_modules node scripts/audit-keyboard.mjs",
     "audit:robustness": "NODE_PATH=${NODE_PATH:-/tmp/vb/node_modules} node scripts/audit-robustness.mjs",
     "audit:zoom": "NODE_PATH=${NODE_PATH:-/tmp/vb/node_modules} node scripts/audit-zoom.mjs",
-    "audit:interactive": "NODE_PATH=${NODE_PATH:-/tmp/vb/node_modules} node scripts/audit-interactive.mjs"
+    "audit:interactive": "NODE_PATH=${NODE_PATH:-/tmp/vb/node_modules} node scripts/audit-interactive.mjs",
+    "audit:forms": "NODE_PATH=${NODE_PATH:-/tmp/vb/node_modules} node scripts/audit-forms.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",

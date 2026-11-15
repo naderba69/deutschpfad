@@ -216,6 +216,7 @@ export function LearnerJourney() {
                     placeholder="اكتب اسمك الأول… (مثال: نادر)"
                     className="pe-10"
                     aria-label="اسمك الأول"
+                    autoComplete="given-name"
                   />
                 </div>
                 <Button type="submit" disabled={!nameInput.trim() || saving} className="gap-1.5">
