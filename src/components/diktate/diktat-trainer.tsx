@@ -125,6 +125,8 @@ export function DiktatTrainer() {
               {!feedback && (
                 <button
                   type="button"
+                  aria-expanded={revealed}
+                  aria-controls="diktat-text"
                   onClick={() => setRevealed((v) => !v)}
                   className="tap-target mt-2 gap-1 text-xs font-bold text-muted-foreground hover:text-primary"
                 >
@@ -132,8 +134,13 @@ export function DiktatTrainer() {
                   {revealed ? "إخفاء النص" : "عرض النص (استسلام)"}
                 </button>
               )}
-              {revealed && !feedback && (
-                <p className="font-de mt-2 rounded-lg border border-gold/40 bg-gold/10 p-3 text-sm" dir="ltr" lang="de">
+              {!feedback && (
+                <p
+                  id="diktat-text"
+                  className={`font-de mt-2 rounded-lg border border-gold/40 bg-gold/10 p-3 text-sm ${revealed ? "" : "hidden"}`}
+                  dir="ltr"
+                  lang="de"
+                >
                   {current.text}
                 </p>
               )}

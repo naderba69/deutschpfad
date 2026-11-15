@@ -136,6 +136,8 @@ export function HoerverstehenSection({
                     <Button
                       variant={showText ? "outline" : "default"}
                       size="sm"
+                      aria-expanded={showText}
+                      aria-controls={`transcript-${item.id}`}
                       onClick={() => {
                         const nextShowText = !showText;
                         setVisibleTranscripts((previous) => ({
@@ -177,7 +179,7 @@ export function HoerverstehenSection({
                     </p>
                   ) : null}
 
-                  <div className="space-y-3">
+                  <div id={`transcript-${item.id}`} className="space-y-3">
                     {item.lines.map((line, i) => (
                       <div
                         key={i}

@@ -111,13 +111,25 @@ export function SentenceReview() {
         <p className="font-de text-xl font-bold leading-relaxed" dir="ltr" lang="de">
           {s.de}
         </p>
-        {revealed && <p className="mt-3 text-sm text-muted-foreground">{s.ar}</p>}
+        <p
+          id="sentence-translation"
+          className={`mt-3 text-sm text-muted-foreground ${revealed ? "" : "hidden"}`}
+        >
+          {s.ar}
+        </p>
         <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
           <Button variant="outline" size="sm" className="gap-1.5" onClick={speak}>
             <Volume2 className="h-4 w-4" aria-hidden="true" />
             استمع
           </Button>
-          <Button variant="outline" size="sm" className="gap-1.5" onClick={() => setRevealed((r) => !r)}>
+          <Button
+            variant="outline"
+            size="sm"
+            className="gap-1.5"
+            aria-expanded={revealed}
+            aria-controls="sentence-translation"
+            onClick={() => setRevealed((r) => !r)}
+          >
             <Eye className="h-4 w-4" aria-hidden="true" />
             {revealed ? "إخفاء الترجمة" : "أظهر الترجمة"}
           </Button>

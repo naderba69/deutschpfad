@@ -84,7 +84,7 @@ export function Hero() {
                   Guten Morgen! Wie geht es dir?
                 </LangDe>
                 <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Volume2 className="h-4 w-4" />
+                  <Volume2 className="h-4 w-4" aria-hidden="true" />
                 </span>
               </div>
               <p className="text-sm text-muted-foreground">
@@ -108,14 +108,14 @@ export function Hero() {
           {/* بطاقات عائمة */}
           <div className="absolute -end-4 -top-6 rounded-2xl border bg-background/95 px-4 py-3 shadow-soft animate-float">
             <p className="inline-flex items-center gap-2 text-sm font-semibold">
-              <Flame className="h-4 w-4 fill-orange-400 text-orange-400" />
+              <Flame className="h-4 w-4 fill-orange-400 text-orange-400" aria-hidden="true" />
               مثال: سلسلة أيامك
             </p>
             <p className="font-de mt-0.5 text-xl font-bold">7 أيام 🔥</p>
           </div>
           <div className="absolute -start-4 -bottom-6 rounded-2xl border bg-background/95 px-4 py-3 shadow-soft animate-float animation-delay-2000">
             <p className="inline-flex items-center gap-2 text-sm font-semibold">
-              <Sparkles className="h-4 w-4 text-amber-500" />
+              <Sparkles className="h-4 w-4 text-amber-500" aria-hidden="true" />
               المعلّم الذكي
             </p>
             <p className="mt-0.5 text-sm text-muted-foreground">جاهز للإجابة عن أسئلتك</p>

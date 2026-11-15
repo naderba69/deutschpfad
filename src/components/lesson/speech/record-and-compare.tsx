@@ -163,7 +163,7 @@ export function RecordAndCompare({
         )}
 
         {recording && (
-          <span className="inline-flex items-center gap-1.5 text-xs font-bold text-destructive">
+          <span role="status" className="inline-flex items-center gap-1.5 text-xs font-bold text-destructive">
             <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-destructive opacity-75" />
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-destructive" />
@@ -186,7 +186,11 @@ export function RecordAndCompare({
 
       {/* الخطأ */}
       {error && (
-        <p className="mt-2 rounded-lg border border-destructive/30 bg-destructive/5 px-2.5 py-1.5 text-xs font-medium text-destructive">
+        /* رفض إذن الميكروفون/تعذّر التشغيل حدث غير متوقع ⇒ يجب أن يُعلَن فوراً */
+        <p
+          role="alert"
+          className="mt-2 rounded-lg border border-destructive/30 bg-destructive/5 px-2.5 py-1.5 text-xs font-medium text-destructive"
+        >
           ⚠️ {error}
         </p>
       )}

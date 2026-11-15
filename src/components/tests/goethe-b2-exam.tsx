@@ -32,10 +32,10 @@ import {HoerenTeilView, LesenTeilView, speakText} from "@/components/tests/goeth
 type Phase = "intro" | "lesen" | "hören" | "schreiben" | "sprechen" | "result";
 
 const MODULE_META: { key: Phase; icon: React.ReactNode; title: string; minutes: number }[] = [
-  { key: "lesen", icon: <BookOpenCheck className="h-5 w-5" />, title: "Lesen — القراءة", minutes: GOETHE_B2_EXAM.lesenMinutes },
-  { key: "hören", icon: <Headphones className="h-5 w-5" />, title: "Hören — الاستماع", minutes: GOETHE_B2_EXAM.hoerenMinutes },
-  { key: "schreiben", icon: <PenLine className="h-5 w-5" />, title: "Schreiben — الكتابة", minutes: GOETHE_B2_EXAM.schreibenMinutes },
-  { key: "sprechen", icon: <Mic className="h-5 w-5" />, title: "Sprechen — التحدث", minutes: GOETHE_B2_EXAM.sprechenMinutes },
+  { key: "lesen", icon: <BookOpenCheck className="h-5 w-5" aria-hidden="true" />, title: "Lesen — القراءة", minutes: GOETHE_B2_EXAM.lesenMinutes },
+  { key: "hören", icon: <Headphones className="h-5 w-5" aria-hidden="true" />, title: "Hören — الاستماع", minutes: GOETHE_B2_EXAM.hoerenMinutes },
+  { key: "schreiben", icon: <PenLine className="h-5 w-5" aria-hidden="true" />, title: "Schreiben — الكتابة", minutes: GOETHE_B2_EXAM.schreibenMinutes },
+  { key: "sprechen", icon: <Mic className="h-5 w-5" aria-hidden="true" />, title: "Sprechen — التحدث", minutes: GOETHE_B2_EXAM.sprechenMinutes },
 ];
 
 export function GoetheB2Exam() {
