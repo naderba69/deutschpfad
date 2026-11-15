@@ -147,28 +147,46 @@ export function WritingPathClient() {
         <p className="mt-2 text-sm leading-relaxed">{task.promptAr}</p>
 
         <div className="mt-3 flex flex-wrap gap-2">
-          <Button size="sm" variant="outline" className="gap-1.5" onClick={() => setShowExample((e) => !e)}>
+          <Button
+            size="sm"
+            variant="outline"
+            className="gap-1.5"
+            aria-expanded={showExample}
+            aria-controls="writing-example"
+            onClick={() => setShowExample((e) => !e)}
+          >
             <Lightbulb className="h-3.5 w-3.5" aria-hidden="true" />
             {showExample ? "إخفاء النموذج" : "أظهر نموذجاً"}
           </Button>
-          <Button size="sm" variant="ghost" className="gap-1.5" onClick={() => setShowHilfen((h) => !h)}>
+          <Button
+            size="sm"
+            variant="ghost"
+            className="gap-1.5"
+            aria-expanded={showHilfen}
+            aria-controls="writing-hilfen"
+            onClick={() => setShowHilfen((h) => !h)}
+          >
             {showHilfen ? "إخفاء المفردات" : "مفردات مساعدة"}
           </Button>
         </div>
-        {showExample && (
-          <p className="font-de mt-2 rounded-lg bg-muted/30 px-3 py-2 text-xs leading-relaxed" dir="ltr">
-            {task.exampleDe}
-          </p>
-        )}
-        {showHilfen && (
-          <div className="mt-2 flex flex-wrap gap-1.5">
-            {task.hilfen.map((h) => (
-              <span key={h} className="font-de rounded-full bg-primary/10 px-2.5 py-0.5 text-[11px] font-bold text-primary" dir="ltr">
-                {h}
-              </span>
-            ))}
-          </div>
-        )}
+        <p
+          id="writing-example"
+          hidden={!showExample}
+          className="font-de mt-2 rounded-lg bg-muted/30 px-3 py-2 text-xs leading-relaxed"
+          dir="ltr"
+        >
+          {task.exampleDe}
+        </p>
+        <div
+          id="writing-hilfen"
+          className={showHilfen ? "mt-2 flex flex-wrap gap-1.5" : "hidden"}
+        >
+          {task.hilfen.map((h) => (
+            <span key={h} className="font-de rounded-full bg-primary/10 px-2.5 py-0.5 text-[11px] font-bold text-primary" dir="ltr">
+              {h}
+            </span>
+          ))}
+        </div>
       </div>
 
       {/* منطقة الكتابة */}

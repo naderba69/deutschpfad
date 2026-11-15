@@ -115,7 +115,14 @@ export function ReadingLibraryClient() {
                   <Headphones className="h-4 w-4" aria-hidden="true" />
                   استمع للنص مرتين
                 </Button>
-                <Button variant="outline" size="sm" onClick={() => setShowAr((v) => !v)} className="gap-1.5">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  aria-expanded={showAr}
+                  aria-controls="reading-translation"
+                  onClick={() => setShowAr((v) => !v)}
+                  className="gap-1.5"
+                >
                   <Languages className="h-4 w-4" aria-hidden="true" />
                   {showAr ? "إخفاء الترجمة" : "الترجمة العربية"}
                 </Button>
@@ -125,11 +132,13 @@ export function ReadingLibraryClient() {
               <p className="font-de text-base leading-relaxed" dir="ltr" lang="de">
                 {current.text}
               </p>
-              {showAr && (
-                <p className="rounded-lg border border-primary/20 bg-primary/5 p-3 text-sm leading-relaxed text-muted-foreground">
-                  {current.textAr}
-                </p>
-              )}
+              <p
+                id="reading-translation"
+                hidden={!showAr}
+                className="rounded-lg border border-primary/20 bg-primary/5 p-3 text-sm leading-relaxed text-muted-foreground"
+              >
+                {current.textAr}
+              </p>
             </CardContent>
           </Card>
 

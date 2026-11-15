@@ -82,10 +82,16 @@ export function LesetextSection({reading, lessonId}: {reading: ReadingText; less
           <Button
             variant="outline"
             size="sm"
+            aria-expanded={showTranslation}
+            aria-controls="lesetext-translation"
             onClick={() => setShowTranslation((v) => !v)}
             className="gap-2"
           >
-            {showTranslation ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+            {showTranslation ? (
+              <EyeOff className="h-4 w-4" aria-hidden="true" />
+            ) : (
+              <Eye className="h-4 w-4" aria-hidden="true" />
+            )}
             {showTranslation ? "إخفاء الترجمة" : "أظهر الترجمة"}
           </Button>
           {!showTranslation ? (
@@ -101,6 +107,8 @@ export function LesetextSection({reading, lessonId}: {reading: ReadingText; less
           <CardHeader className="pb-2">
             <button
               type="button"
+              aria-expanded={openGloss}
+              aria-controls="lesetext-glossary"
               onClick={() => setOpenGloss((v) => !v)}
               className="flex w-full items-center justify-between gap-2 text-start"
             >
@@ -115,8 +123,7 @@ export function LesetextSection({reading, lessonId}: {reading: ReadingText; less
               </span>
             </button>
           </CardHeader>
-          {openGloss ? (
-            <CardContent>
+          <CardContent id="lesetext-glossary" className={openGloss ? "" : "hidden"}>
               <ul className="grid gap-2 sm:grid-cols-2">
                 {reading.glossary.map((g) => (
                   <li
@@ -138,8 +145,7 @@ export function LesetextSection({reading, lessonId}: {reading: ReadingText; less
                   </li>
                 ))}
               </ul>
-            </CardContent>
-          ) : null}
+          </CardContent>
         </Card>
       ) : null}
 

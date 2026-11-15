@@ -175,7 +175,14 @@ export function PodcastPlayer({ episode, onBack }: { episode: PodcastEpisode; on
               إيقاف
             </Button>
           )}
-          <Button variant="outline" onClick={() => setShowScriptAr((s) => !s)}>
+          {/* حالة الإفصاح معلَنة: «أظهر/إخفاء» نصّ يتغيّر، لكن قارئ الشاشة لا
+              يعرف أن هناك لوحة تُفتح دون aria-expanded. */}
+          <Button
+            variant="outline"
+            aria-expanded={showScriptAr}
+            aria-controls="podcast-script-ar"
+            onClick={() => setShowScriptAr((s) => !s)}
+          >
             {showScriptAr ? "إخفاء الترجمة" : "أظهر الترجمة"}
           </Button>
         </div>
@@ -197,11 +204,13 @@ export function PodcastPlayer({ episode, onBack }: { episode: PodcastEpisode; on
             {episode.script}
           </p>
         </div>
-        {showScriptAr && (
-          <p className="mt-2 rounded-lg bg-muted/30 px-3 py-2 text-xs leading-relaxed text-muted-foreground">
-            {episode.scriptAr}
-          </p>
-        )}
+        {/* تبقى في DOM ليظل aria-controls صالحاً عند الإغلاق */}
+        <p
+          id="podcast-script-ar"
+          className={`mt-2 rounded-lg bg-muted/30 px-3 py-2 text-xs leading-relaxed text-muted-foreground ${showScriptAr ? "" : "hidden"}`}
+        >
+          {episode.scriptAr}
+        </p>
       </div>
 
       {/* الأسئلة */}

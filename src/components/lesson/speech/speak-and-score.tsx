@@ -244,7 +244,10 @@ export function SpeakAndScore({ target, compact }: { target: string; compact?: b
 
       {/* رسالة الخطأ — كانت تُبتلع سابقاً، الآن تظهر بوضوح */}
       {error && !listening && !result && (
-        <span className="inline-flex max-w-72 items-start gap-1 rounded-lg border border-destructive/30 bg-destructive/5 px-2 py-1 text-[11px] font-medium leading-snug text-destructive">
+        <span
+          role="alert"
+          className="inline-flex max-w-72 items-start gap-1 rounded-lg border border-destructive/30 bg-destructive/5 px-2 py-1 text-[11px] font-medium leading-snug text-destructive"
+        >
           <CircleAlert className="mt-0.5 h-3 w-3 shrink-0" aria-hidden="true" />
           {error}
         </span>
@@ -311,6 +314,7 @@ export function SpeakAndScore({ target, compact }: { target: string; compact?: b
           {compact ? (
             <button
               type="button"
+              aria-expanded={openFallback}
               onClick={() => setOpenFallback((v) => !v)}
               className="inline-flex items-center gap-1 rounded-full border border-gold/40 bg-gold/10 px-2 py-1 text-[11px] font-bold text-gold-strong transition-colors hover:bg-gold/15"
             >

@@ -269,16 +269,25 @@ export function DailyDialoguePlayer({ dialogue, onBack }: { dialogue: DailyDialo
               </p>
               <SpeakButton text={turn.de} audioSrc={clipSrc(dialogue, step)} rate={0.8} size="sm" />
             </div>
-            {showAr && (
-              <p className="rounded-lg bg-primary/5 px-3 py-2 text-sm text-muted-foreground">{turn.ar}</p>
-            )}
+            <p
+              id="dialogue-translation"
+              className={`rounded-lg bg-primary/5 px-3 py-2 text-sm text-muted-foreground ${showAr ? "" : "hidden"}`}
+            >
+              {turn.ar}
+            </p>
           </div>
         )}
       </div>
 
       {/* أزرار التحكم */}
       <div className="flex items-center justify-between gap-3">
-        <Button variant="outline" size="sm" onClick={() => setShowAr((s) => !s)}>
+        <Button
+          variant="outline"
+          size="sm"
+          aria-expanded={showAr}
+          aria-controls="dialogue-translation"
+          onClick={() => setShowAr((s) => !s)}
+        >
           <Headphones className="h-4 w-4" aria-hidden="true" />
           {showAr ? "إخفاء الترجمة" : "أظهر الترجمة"}
         </Button>
