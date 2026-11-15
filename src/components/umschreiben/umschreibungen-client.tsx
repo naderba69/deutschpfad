@@ -78,7 +78,7 @@ export function UmschreibungenClient() {
   return (
     <div key={round} className="space-y-5">
       {/* شبكة الأنواع العشرة */}
-      <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-3 lg:grid-cols-5">
+      <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-3 lg:grid-cols-5" role="group" aria-label="تصفية بنوع إعادة الصياغة">
         {UMSCHREIB_TYPEN.map((t) => {
           const count = getUmschreibByTyp(t.id).length;
           return (

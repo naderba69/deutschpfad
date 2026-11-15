@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import {ScrollRegion} from "@/components/ui/scroll-region";
 
 /**
  * عارض نصّ تعليمي غنيّ — فقرات وقوائم وتشديد.
@@ -52,13 +53,14 @@ function MdTable({ rows, keyPrefix }: { rows: string[]; keyPrefix: string }) {
   const head = hasHead ? cells(rows[0]) : null;
   const body = rows.filter((r, i) => !isSep(r) && !(hasHead && i === 0)).map(cells);
   return (
-    <div className="my-2 overflow-x-auto rounded-xl border bg-background">
+    <ScrollRegion className="my-2 overflow-x-auto rounded-xl border bg-background" label="جدول بيانات — قابل للتمرير">
       <table className="w-full text-sm">
+        <caption className="sr-only">{head?.length ? `جدول: ${head.join(" · ")}` : "جدول بيانات"}</caption>
         {head ? (
           <thead>
             <tr className="border-b bg-muted/40">
               {head.map((c, i) => (
-                <th key={i} className="px-3 py-2 text-start font-bold">
+                <th key={i} scope="col" className="px-3 py-2 text-start font-bold">
                   {inline(c, `${keyPrefix}-h${i}`)}
                 </th>
               ))}
@@ -68,16 +70,23 @@ function MdTable({ rows, keyPrefix }: { rows: string[]; keyPrefix: string }) {
         <tbody>
           {body.map((r, i) => (
             <tr key={i} className="border-b last:border-0">
-              {r.map((c, j) => (
-                <td key={j} className="px-3 py-2 align-top">
-                  {inline(c, `${keyPrefix}-r${i}c${j}`)}
-                </td>
-              ))}
+              {r.map((c, j) =>
+                /* العمود الأول رأس صف: جدول Markdown عمودُه الأول مفتاح (زمن/حالة) */
+                j === 0 ? (
+                  <th key={j} scope="row" className="px-3 py-2 text-start align-top font-semibold">
+                    {inline(c, `${keyPrefix}-r${i}c${j}`)}
+                  </th>
+                ) : (
+                  <td key={j} className="px-3 py-2 align-top">
+                    {inline(c, `${keyPrefix}-r${i}c${j}`)}
+                  </td>
+                ),
+              )}
             </tr>
           ))}
         </tbody>
       </table>
-    </div>
+    </ScrollRegion>
   );
 }
 

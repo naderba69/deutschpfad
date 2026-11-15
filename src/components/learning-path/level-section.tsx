@@ -157,16 +157,15 @@ export function LevelSection({
         </div>
 
         {/* قائمة الوحدات */}
+        {/* قائمة الوحدات — ul/li كي تُعلَن «قائمة، N عنصراً» */}
         {expanded && (
-          <div className="space-y-2 border-t bg-muted/20 px-4 py-4 sm:px-6">
+          <ul className="space-y-2 border-t bg-muted/20 px-4 py-4 sm:px-6">
             {units.map((unit) => (
-              <UnitRow
-                key={unit.id}
-                unit={unit}
-                status={getUnitStatus(completed, unit, sealed)}
-              />
+              <li key={unit.id}>
+                <UnitRow unit={unit} status={getUnitStatus(completed, unit, sealed)} />
+              </li>
             ))}
-          </div>
+          </ul>
         )}
       </CardContent>
     </Card>

@@ -67,8 +67,8 @@ export function RedemittelClient() {
         />
       </div>
 
-      {/* تصفية الوظائف */}
-      <div className="flex flex-wrap gap-1.5">
+      {/* تصفية الوظائف — مجموعة مسماة: 15 زراً بلا سياق جماعي تُعلَن متفرقة */}
+      <div className="flex flex-wrap gap-1.5" role="group" aria-label="تصفية بالوظيفة">
         <button
           type="button"
           aria-pressed={category === null}

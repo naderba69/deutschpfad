@@ -4,6 +4,7 @@ import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Flame} from "lucide-react";
 import {type HeatCell} from "@/lib/analytics/heatmap";
 import {cn} from "@/lib/utils";
+import {ScrollRegion} from "@/components/ui/scroll-region";
 
 const DAY_LABELS = ["أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"];
 const MONTHS = ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"];
@@ -47,7 +48,11 @@ export function HeatmapChart({ cells, streak }: { cells: HeatCell[][]; streak: n
       </CardHeader>
       <CardContent className="p-4">
         {/* تسميات المحور 10px عمداً: خلايا الشبكة 10px — تكبيرها يكسر المحاذاة (استثناء موثّق في dom-audit) */}
-        <div className="max-w-full overflow-x-auto pb-1" data-dense-labels="1">
+        <ScrollRegion
+          className="max-w-full overflow-x-auto pb-1"
+          label="خريطة النشاط اليومي — قابلة للتمرير"
+          data-dense-labels="1"
+        >
           <div className="inline-block max-w-full">
             {/* أسماء الأشهر — اختصار في الشاشات الضيقة حتى لا يُقصّ النص */}
             <div className="flex gap-[2px] pb-1 ps-7">
@@ -99,7 +104,7 @@ export function HeatmapChart({ cells, streak }: { cells: HeatCell[][]; streak: n
               أكثر
             </div>
           </div>
-        </div>
+        </ScrollRegion>
       </CardContent>
     </Card>
   );

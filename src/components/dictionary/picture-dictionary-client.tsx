@@ -164,7 +164,7 @@ export function PictureDictionaryClient() {
             ))}
           </div>
         </div>
-        <div className="flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap gap-1.5" role="group" aria-label="تصفية بالفئة الدلالية">
           {CATEGORIES.map((c) => (
             <FilterChip
               key={c.id}
@@ -177,13 +177,13 @@ export function PictureDictionaryClient() {
         </div>
       </div>
 
-      <p className="mb-3 text-xs font-bold text-muted-foreground">
+      <p className="mb-3 text-xs font-bold text-muted-foreground" role="status">
         {filtered.length} كلمة مرئية
       </p>
 
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+      <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
         {filtered.slice(0, 200).map((v) => (
-          <div
+          <li
             key={`${v.de}-${v.ar}`}
             className="flex items-center gap-2.5 rounded-xl border bg-card p-3 transition-shadow hover:shadow-soft"
           >
@@ -205,9 +205,9 @@ export function PictureDictionaryClient() {
                 </p>
               )}
             </div>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
       {filtered.length === 0 && (
         <p className="py-10 text-center text-sm text-muted-foreground">لا نتائج — جرّب كلمة أخرى.</p>
       )}

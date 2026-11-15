@@ -5,6 +5,7 @@ import {CheckCircle2, Link2, RotateCcw, XCircle} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
 import {cn} from "@/lib/utils";
+import {ScrollRegion} from "@/components/ui/scroll-region";
 
 /**
  * الغوص العميق في Funktionsverbgefüge (FVG) — B2
@@ -95,20 +96,21 @@ export function FunktionsverbgefuegeTrainer() {
           <span className="text-muted-foreground">{showTable ? "▲" : "▼"}</span>
         </button>
         {showTable && (
-          <div className="overflow-x-auto border-t">
+          <ScrollRegion className="overflow-x-auto border-t" label="جدول Funktionsverbgefüge — قابل للتمرير">
             <table className="w-full text-sm">
+              <caption className="sr-only">أشهر 14 Funktionsverbgefüge للامتحان</caption>
               <thead>
                 <tr className="bg-muted/40 text-xs text-muted-foreground">
-                  <th className="p-2 text-start">FVG</th>
-                  <th className="p-2 text-start">يعادل</th>
-                  <th className="p-2 text-start">المعنى</th>
-                  <th className="hidden p-2 text-start sm:table-cell">مثال</th>
+                  <th scope="col" className="p-2 text-start">FVG</th>
+                  <th scope="col" className="p-2 text-start">يعادل</th>
+                  <th scope="col" className="p-2 text-start">المعنى</th>
+                  <th scope="col" className="hidden p-2 text-start sm:table-cell">مثال</th>
                 </tr>
               </thead>
               <tbody>
                 {FVG_TABLE.map((r) => (
                   <tr key={r.fvg} className="border-t">
-                    <td className="p-2 font-de font-bold" dir="ltr" lang="de">{r.fvg}</td>
+                    <th scope="row" className="p-2 text-start font-de font-bold" dir="ltr" lang="de">{r.fvg}</th>
                     <td className="p-2 font-de text-muted-foreground" dir="ltr" lang="de">{r.gleich}</td>
                     <td className="p-2">{r.ar}</td>
                     <td className="hidden p-2 font-de text-xs text-muted-foreground sm:table-cell" dir="ltr" lang="de">{r.example}</td>
@@ -116,7 +118,7 @@ export function FunktionsverbgefuegeTrainer() {
                 ))}
               </tbody>
             </table>
-          </div>
+          </ScrollRegion>
         )}
       </div>
 

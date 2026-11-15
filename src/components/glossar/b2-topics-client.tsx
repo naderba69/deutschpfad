@@ -41,11 +41,12 @@ export function B2TopicsClient() {
   return (
     <div className="space-y-6">
       {/* شريط الموضوعات الـ18 */}
-      <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-3 lg:grid-cols-6">
+      <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-3 lg:grid-cols-6" role="group" aria-label="تصفية بالموضوع">
         {B2_EXAM_TOPICS.map((t) => (
           <button
             key={t.id}
             type="button"
+            aria-pressed={topic?.id === t.id}
             onClick={() => {
               setTopic(topic?.id === t.id ? null : t);
               setQuery("");
@@ -85,7 +86,7 @@ export function B2TopicsClient() {
         <h2 className="text-lg font-extrabold">
           {topic ? `${topic.icon} ${topic.titleAr} (${topic.titleDe})` : "كل مواضيع B2 الـ18"}
         </h2>
-        <Badge variant="outline" className="font-de">
+        <Badge variant="outline" className="font-de" role="status">
           {filtered.length} كلمة
         </Badge>
         {topic && (
@@ -96,9 +97,10 @@ export function B2TopicsClient() {
       </div>
 
       {/* الكلمات */}
-      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+      <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
         {filtered.map((w) => (
-          <Card key={w.de} className="overflow-hidden">
+          <li key={w.de}>
+          <Card className="overflow-hidden">
             <CardContent className="flex items-center justify-between gap-2 p-3">
               <div className="min-w-0">
                 <p className="flex flex-wrap items-center gap-1.5">
@@ -147,13 +149,14 @@ export function B2TopicsClient() {
               </div>
             </CardContent>
           </Card>
+          </li>
         ))}
         {filtered.length === 0 && (
-          <p className="col-span-full rounded-xl border border-dashed p-8 text-center text-sm text-muted-foreground">
+          <li className="col-span-full rounded-xl border border-dashed p-8 text-center text-sm text-muted-foreground">
             لا نتائج — جرّب كلمة أخرى.
-          </p>
+          </li>
         )}
-      </div>
+      </ul>
 
       {/* نصيحة */}
       <div className="rounded-xl border border-gold/40 bg-gold/10 p-4 text-sm">

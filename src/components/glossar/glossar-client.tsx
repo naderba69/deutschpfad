@@ -96,7 +96,7 @@ export function GlossarClient() {
             </FilterChip>
           ))}
         </div>
-        <p className="text-xs text-muted-foreground">
+        <p className="text-xs text-muted-foreground" role="status">
           {filtered.length} كلمة من {all.length} — منظمة حسب الوحدات
         </p>
       </div>

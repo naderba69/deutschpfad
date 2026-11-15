@@ -73,18 +73,18 @@ export function GrammarReferenceClient() {
             </option>
           ))}
         </select>
-        <p className="text-xs text-muted-foreground">
+        <p className="text-xs text-muted-foreground" role="status">
           {filtered.length} قاعدة من أصل {GRAMMAR_REFERENCE.length} — من A1 حتى B2
         </p>
       </div>
 
-      {/* البطاقات */}
-      <div className="space-y-3">
+      {/* البطاقات — قائمة دلالية: «قائمة، 44 عنصراً» تُعلَن، وكل بطاقة عنصر */}
+      <ul className="space-y-3">
         {filtered.map((topic) => {
           const isOpen = open === topic.id;
           return (
+            <li key={topic.id}>
             <Card
-              key={topic.id}
               id={topic.id}
               className="scroll-mt-28 overflow-hidden"
             >
@@ -113,14 +113,15 @@ export function GrammarReferenceClient() {
 
               {isOpen && <TopicDetail topic={topic} />}
             </Card>
+            </li>
           );
         })}
         {filtered.length === 0 && (
-          <p className="rounded-xl border bg-muted/20 p-8 text-center text-muted-foreground">
+          <li className="rounded-xl border bg-muted/20 p-8 text-center text-muted-foreground">
             لا نتائج مطابقة — جرّب كلمة أخرى أو غيّر الفلاتر.
-          </p>
+          </li>
         )}
-      </div>
+      </ul>
     </div>
   );
 }
