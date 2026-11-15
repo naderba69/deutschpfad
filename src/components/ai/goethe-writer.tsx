@@ -14,6 +14,7 @@ import {SCHREIB_MODELLE} from "@/data/schreibmodelle";
 import {goetheWritingPrompt} from "@/lib/llm/prompts";
 import {Progress} from "@/components/ui/progress";
 import {cn} from "@/lib/utils";
+import {useRadioGroupNav} from "@/lib/use-radio-group-nav";
 
 const LEVELS = ["A2", "B1", "B2"];
 
@@ -63,6 +64,7 @@ export function AiGoetheWriter() {
   const [text, setText] = React.useState("");
   const [level, setLevel] = React.useState("B1");
   const [taskType, setTaskType] = React.useState("Forumsbeitrag");
+  const navTask = useRadioGroupNav();
   const [taskDesc, setTaskDesc] = React.useState("");
   const [raw, setRaw] = React.useState("");
   const [parsed, setParsed] = React.useState<Parsed | null>(null);
@@ -134,7 +136,7 @@ export function AiGoetheWriter() {
           </div>
 
           {/* نوع المهمة */}
-          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="نوع المهمة">
+          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="نوع المهمة" {...navTask}>
             {TASK_TYPES.map((t) => (
               <button
                 key={t.id}

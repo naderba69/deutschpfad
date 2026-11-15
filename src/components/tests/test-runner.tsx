@@ -15,6 +15,7 @@ import {cn} from "@/lib/utils";
 import {seededShuffleTestQuestions} from "@/lib/tests/shuffle-questions";
 import {dailySeed} from "@/lib/lesson/shuffle";
 import type { TestQuestion, TestResult, TestSkill } from "@/types/test";
+import {useRadioGroupNav} from "@/lib/use-radio-group-nav";
 
 export interface TestSectionConfig {
   skill: TestSkill;
@@ -54,6 +55,7 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
   const [result, setResult] = React.useState<TestResult | null>(null);
   const [startedAt] = React.useState(() => Date.now());
   const [runKey, setRunKey] = React.useState(0);
+  const nav = useRadioGroupNav();
 
   /* خلط الخيارات مرة واحدة لكل محاولة — بنوك الأسئلة تضع الإجابة الصحيحة في
      الموضع الأول دائماً، فبدون الخلط يكفي اختيار «أ» للنجاح بنسبة 100%.
@@ -244,7 +246,7 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
                     {sub.q}
                   </p>
                   {sub.qAr && <p className="mt-0.5 text-xs text-muted-foreground">{sub.qAr}</p>}
-                  <div className="mt-2 grid grid-cols-1 gap-1.5 sm:grid-cols-2" role="radiogroup" aria-label={sub.q}>
+                  <div className="mt-2 grid grid-cols-1 gap-1.5 sm:grid-cols-2" role="radiogroup" aria-label={sub.q} {...nav}>
                     {sub.options.map((opt, j) => {
                       const selected = answers.get(`${current.id}:${i}`) === j;
                       return (
@@ -306,7 +308,7 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
               <p className="mt-1 text-sm text-muted-foreground">{current.questionAr}</p>
             )}
             {current.options && (
-              <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2" role="radiogroup" aria-label={current.questionDe ?? "سؤال"}>
+              <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2" role="radiogroup" aria-label={current.questionDe ?? "سؤال"} {...nav}>
                 {current.options.map((opt, i) => {
                   const selected = answers.get(current.id) === i;
                   return (

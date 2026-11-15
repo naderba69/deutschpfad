@@ -11,6 +11,7 @@ import {evaluateErrorCorrection} from "@/lib/lesson/exercise-engine";
 import {shuffle} from "@/lib/lesson/shuffle";
 import {cn} from "@/lib/utils";
 import type { ErrorCorrectionExercise, FeedbackResult } from "@/types/lesson";
+import {useRadioGroupNav} from "@/lib/use-radio-group-nav";
 
 /**
  * تمرين تصحيح الخطأ — أشر إلى الكلمة الخاطئة ثم اختر التصحيح الصحيح
@@ -24,6 +25,7 @@ export function ErrorCorrectionExerciseView({
 }) {
   // خيار «لا خطأ» يُعرض في *كل* بنود التصحيح، لا في البنود الخادعة وحدها:
   // لو ظهر عند الخدعة فقط لصار وجوده ذاته كاشفاً للإجابة.
+  const nav = useRadioGroupNav();
   const [options] = React.useState(() =>
     shuffle([
       ...exercise.options.filter(
@@ -91,7 +93,9 @@ export function ErrorCorrectionExerciseView({
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2" role="radiogroup" aria-label="خيارات التصحيح">
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2" role="radiogroup"
+        aria-label={`خيارات التصحيح — ${exercise.wrongSentence}`}
+        {...nav}>
         {options.map((option, i) => {
           const isCorrectOption = option === expectedAnswer;
           const isSelected = option === selected;
@@ -104,7 +108,9 @@ export function ErrorCorrectionExerciseView({
               type="button"
               role="radio"
               aria-checked={isSelected}
-              disabled={locked || state.revealedSolution}
+              /* لا `disabled`: تعطيل الزر المركَّز عليه يُسقط التركيز إلى body.
+                 `aria-disabled` يكفي، و`handleSelect` يرفض التغيير بعد القفل. */
+              aria-disabled={locked || undefined}
               onClick={() => handleSelect(option)}
               className={cn(
                 "rounded-xl border bg-background px-4 py-3 text-start transition-all",

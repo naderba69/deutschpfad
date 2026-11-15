@@ -6,6 +6,7 @@ import {BookHeart} from "lucide-react";
 import {AiToolShell} from "@/components/ai/ai-tool-shell";
 import {useLLM} from "@/components/providers/llm-provider";
 import {storyGeneratorPrompt} from "@/lib/llm/prompts";
+import {useRadioGroupNav} from "@/lib/use-radio-group-nav";
 
 const LEVELS = ["A1", "A2", "B1", "B2"];
 const LENGTHS = [
@@ -20,6 +21,8 @@ export function AiStoryGenerator() {
   const { callLLM } = useLLM();
   const [level, setLevel] = React.useState("A2");
   const [length, setLength] = React.useState(LENGTHS[0].id);
+  const navLevel = useRadioGroupNav();
+  const navLength = useRadioGroupNav();
   const [theme, setTheme] = React.useState("رحلة إلى برلين");
   const [result, setResult] = React.useState("");
 
@@ -58,7 +61,7 @@ export function AiStoryGenerator() {
     >
       {(run) => (
         <div className="space-y-3">
-          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="المستوى">
+          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="المستوى" {...navLevel}>
             {LEVELS.map((l) => (
               <button
                 key={l}
@@ -83,7 +86,7 @@ export function AiStoryGenerator() {
             placeholder="موضوع القصة (رحلة، عائلة، مدينة...)"
             className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring"
           />
-          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="الطول">
+          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="الطول" {...navLength}>
             {LENGTHS.map((l) => (
               <button
                 key={l.id}
