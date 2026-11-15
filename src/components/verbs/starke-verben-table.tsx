@@ -8,6 +8,7 @@ import {Badge} from "@/components/ui/badge";
 import {Input} from "@/components/ui/input";
 import {STARK_VERBEN} from "@/data/verbs/starke-verben";
 import {cn} from "@/lib/utils";
+import {ScrollRegion} from "@/components/ui/scroll-region";
 
 /**
  * جدول الأفعال الشاذة التفاعلي — بحث + فلترة + نطق
@@ -68,22 +69,23 @@ export function StarkeVerbenTable({ compact }: { compact?: boolean }) {
 
       {/* dir="ltr" يجعل الجدول يبدأ بعمود الفعل الألماني على الجوال
           (بدل البدء بالعربية بسبب RTL ثم التمرير لليمين) */}
-      <div className="overflow-x-auto rounded-xl border" dir="ltr">
+      <ScrollRegion className="overflow-x-auto rounded-xl border" label="جدول الأفعال الشاذة — قابل للتمرير" dir="ltr">
         <table className="w-full text-sm">
+          <caption className="sr-only">جدول الأفعال الشاذة: التصريف والأصل والترجمة</caption>
           <thead>
             <tr className="border-b bg-muted/40">
-              <th className="px-3 py-2.5 text-start font-bold">الفعل</th>
-              <th className="px-3 py-2.5 text-start font-bold">Präsens (er)</th>
-              <th className="px-3 py-2.5 text-start font-bold">Präteritum</th>
-              <th className="px-3 py-2.5 text-start font-bold">Partizip II</th>
-              <th className="px-3 py-2.5 text-start font-bold">العربية</th>
-              <th className="px-3 py-2.5 text-start font-bold">مع</th>
+              <th scope="col" className="px-3 py-2.5 text-start font-bold">الفعل</th>
+              <th scope="col" className="px-3 py-2.5 text-start font-bold">Präsens (er)</th>
+              <th scope="col" className="px-3 py-2.5 text-start font-bold">Präteritum</th>
+              <th scope="col" className="px-3 py-2.5 text-start font-bold">Partizip II</th>
+              <th scope="col" className="px-3 py-2.5 text-start font-bold">العربية</th>
+              <th scope="col" className="px-3 py-2.5 text-start font-bold">مع</th>
             </tr>
           </thead>
           <tbody>
             {unique.map((v) => (
               <tr key={`${v.infinitiv}-${v.level}`} className="border-b last:border-0 hover:bg-muted/20">
-                <td className="px-3 py-2">
+                <th scope="row" className="px-3 py-2 text-start font-normal">
                   <span className="flex items-center gap-1.5">
                     <SpeakButton text={v.infinitiv} size="sm" className="h-8 w-8" />
                     <span className="font-de font-bold" dir="ltr" lang="de">
@@ -96,7 +98,7 @@ export function StarkeVerbenTable({ compact }: { compact?: boolean }) {
                   {v.note && (
                     <p className="mt-1 text-[11px] font-semibold text-destructive">⚠ {v.note}</p>
                   )}
-                </td>
+                </th>
                 <td className="font-de px-3 py-2" dir="ltr" lang="de">{v.präsens3}</td>
                 <td className="font-de px-3 py-2 font-semibold" dir="ltr" lang="de">{v.präteritum}</td>
                 <td className="font-de px-3 py-2 font-semibold text-primary" dir="ltr" lang="de">{v.partizip2}</td>
@@ -115,8 +117,8 @@ export function StarkeVerbenTable({ compact }: { compact?: boolean }) {
             )}
           </tbody>
         </table>
-      </div>
-      <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
+      </ScrollRegion>
+      <p className="flex items-center gap-1.5 text-xs text-muted-foreground" role="status">
         <Table className="h-3.5 w-3.5" aria-hidden="true" />
         {unique.length} فعل (فريد) من أصل {STARK_VERBEN.length} إدخال — الجدول تفاعلي بالكامل (بحث + فلترة بالمستوى + نطق).
       </p>

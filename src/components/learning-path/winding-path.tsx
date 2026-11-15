@@ -7,6 +7,7 @@ import {CheckCircle2, Lock, PlayCircle} from "lucide-react";
 import {LESSON_META} from "@/data/lessons/meta";
 import type { LevelCode } from "@/types/curriculum";
 import {cn} from "@/lib/utils";
+import {ScrollRegion} from "@/components/ui/scroll-region";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -55,7 +56,7 @@ export function WindingPath({
   const height = 70 + (lessons.length - 1) * 92 + 60;
 
   return (
-    <div className="overflow-x-auto pb-4" dir="ltr">
+    <ScrollRegion className="overflow-x-auto pb-4" label={`خريطة مسار المستوى ${level} — قابلة للتمرير`} dir="ltr">
       <svg
         viewBox={`0 0 ${width} ${height}`}
         className="mx-auto h-auto max-w-full"
@@ -227,6 +228,6 @@ export function WindingPath({
         <span className="inline-flex items-center gap-1"><PlayCircle className="h-3 w-3 text-primary" /> درسك الحالي</span>
         <span className="inline-flex items-center gap-1"><Lock className="h-3 w-3 text-muted-foreground" /> مقفل — أتمّ السابق</span>
       </div>
-    </div>
+    </ScrollRegion>
   );
 }

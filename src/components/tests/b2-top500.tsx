@@ -56,10 +56,11 @@ export function B2Top500() {
     <div className="space-y-4">
       {/* الفلاتر */}
       <div className="rounded-xl border bg-card p-4">
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2" role="group" aria-label="تصفية بالموضوع">
           <span className="text-sm font-bold">الموضوع:</span>
           <button
             type="button"
+            aria-pressed={topic === "all"}
             onClick={() => setTopic("all")}
             className={cn("rounded-full border px-3 py-1.5 text-xs min-h-8 font-bold", topic === "all" ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background")}
           >
@@ -69,6 +70,7 @@ export function B2Top500() {
             <button
               key={t.id}
               type="button"
+              aria-pressed={topic === t.id}
               onClick={() => setTopic(t.id)}
               className={cn("rounded-full border px-3 py-1.5 text-xs min-h-8 font-semibold", topic === t.id ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background hover:border-primary/40")}
             >
@@ -76,12 +78,12 @@ export function B2Top500() {
             </button>
           ))}
         </div>
-        <div className="mt-3 flex flex-wrap items-center gap-2 border-t pt-3">
+        <div className="mt-3 flex flex-wrap items-center gap-2 border-t pt-3" role="group" aria-label="تصفية بأولوية المراجعة">
           <span className="text-sm font-bold">أولوية المراجعة:</span>
-          <button type="button" onClick={() => setFreq(0)} className={cn("rounded-full border px-3 py-1.5 text-xs min-h-8 font-bold", freq === 0 ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background")}>الكل</button>
-          <button type="button" onClick={() => setFreq(3)} className={cn("rounded-full border px-3 py-1.5 text-xs min-h-8 font-bold", freq === 3 ? "border-gold bg-gold/20 text-gold-strong" : "border-muted bg-background")}>أولوية أعلى</button>
-          <button type="button" onClick={() => setFreq(2)} className={cn("rounded-full border px-3 py-1.5 text-xs min-h-8 font-bold", freq === 2 ? "border-primary bg-primary/10 text-primary" : "border-muted bg-background")}>عالية</button>
-          <button type="button" onClick={() => setFreq(1)} className={cn("rounded-full border px-3 py-1.5 text-xs min-h-8 font-bold", freq === 1 ? "border-muted bg-muted text-muted-foreground" : "border-muted bg-background")}>مفيدة</button>
+          <button type="button" aria-pressed={freq === 0} onClick={() => setFreq(0)} className={cn("rounded-full border px-3 py-1.5 text-xs min-h-8 font-bold", freq === 0 ? "border-primary bg-primary text-primary-foreground" : "border-muted bg-background")}>الكل</button>
+          <button type="button" aria-pressed={freq === 3} onClick={() => setFreq(3)} className={cn("rounded-full border px-3 py-1.5 text-xs min-h-8 font-bold", freq === 3 ? "border-gold bg-gold/20 text-gold-strong" : "border-muted bg-background")}>أولوية أعلى</button>
+          <button type="button" aria-pressed={freq === 2} onClick={() => setFreq(2)} className={cn("rounded-full border px-3 py-1.5 text-xs min-h-8 font-bold", freq === 2 ? "border-primary bg-primary/10 text-primary" : "border-muted bg-background")}>عالية</button>
+          <button type="button" aria-pressed={freq === 1} onClick={() => setFreq(1)} className={cn("rounded-full border px-3 py-1.5 text-xs min-h-8 font-bold", freq === 1 ? "border-muted bg-muted text-muted-foreground" : "border-muted bg-background")}>مفيدة</button>
           <div className="relative ms-auto w-full sm:w-56">
             <Search className="absolute end-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
           <input
@@ -93,18 +95,18 @@ export function B2Top500() {
             />
           </div>
         </div>
-        <p className="mt-2 text-xs text-muted-foreground">
+        <p className="mt-2 text-xs text-muted-foreground" role="status">
           🎯 <b>{sorted.length}</b> كلمة وتعبير من أصل {B2_TOP500.length} — مرتبة بحسب أولوية المراجعة الداخلية، لا بيانات تواتر امتحانية.
           تعلّم 20 كلمة يومياً = 500 كلمة في 25 يوماً.
         </p>
       </div>
 
       {/* القائمة */}
-      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
         {shown.map((e) => {
           const t = B2_EXAM_TOPICS.find((x) => x.id === e.topic);
           return (
-            <div key={e.de} className="flex items-start gap-2 rounded-xl border bg-card p-3">
+            <li key={e.de} className="flex items-start gap-2 rounded-xl border bg-card p-3">
               <div className="min-w-0 flex-1">
                 <p className="font-de text-sm font-bold" dir="ltr" lang="de">{e.de}</p>
                 <p className="mt-0.5 text-xs text-muted-foreground">{e.ar}</p>
@@ -118,10 +120,10 @@ export function B2Top500() {
                   {freqLabel(e.freq)}
                 </span>
               </div>
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
       {sorted.length === 0 && (
         <p className="rounded-xl border border-dashed p-6 text-center text-sm text-muted-foreground">
           لا كلمات تطابق الفلاتر — جرّب بحثاً آخر.
