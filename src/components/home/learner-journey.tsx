@@ -373,7 +373,7 @@ export function LearnerJourney() {
                     aria-hidden="true"
                   />
                 ))}
-                <span className="ms-1 text-[9px] font-bold text-muted-foreground">{weekDays}/5 أيام</span>
+                <span className="ms-1 text-[11px] font-bold text-muted-foreground">{weekDays}/5 أيام</span>
               </div>
             </div>
           </div>
@@ -484,7 +484,7 @@ export function LearnerJourney() {
                 <div className="flex items-start justify-between">
                   <span className="text-2xl" aria-hidden="true">{l.emoji}</span>
                   {sealed && (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-success/15 px-2 py-0.5 text-[9px] font-extrabold text-success">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-success/15 px-2 py-0.5 text-[11px] font-extrabold text-success">
                       <CheckCircle2 className="h-3 w-3" aria-hidden="true" />
                       ختم
                     </span>

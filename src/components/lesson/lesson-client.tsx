@@ -12,7 +12,7 @@ import {getRelatedResources} from "@/data/lessons/related-resources";
 import {useProgress} from "@/components/providers/progress-provider";
 import {isLevelLessonsDone, getLessonLevelCompletion} from "@/lib/progress-selectors";
 import {InterleavingReview} from "@/components/lesson/sections/interleaving-review";
-import {buildInterleavedReview, reviewLevelLabel} from "@/lib/lesson/review-generator";
+import {buildInterleavedReview, likelyHasInterleavedReview, reviewLevelLabel} from "@/lib/lesson/review-generator";
 import {AusspracheSection} from "@/components/lesson/sections/aussprache";
 import {EinfuehrungSection} from "@/components/lesson/sections/einfuehrung";
 import {FehlerUndTippsSection} from "@/components/lesson/sections/fehler-und-tipps";
@@ -213,13 +213,13 @@ function LessonPosition({ lessonId }: { lessonId: string }) {
  * شريط هدف اليوم — يذكّر المتعلم بهدفه اليومي ويظهر تقدّم إكمال الدرس.
  */
 function DailyGoalBar() {
-  const [profile, setProfile] = React.useState<{ dailyGoalMinutes?: number; studyHour?: number } | null>(null);
+  // القيم الافتراضية تُرسَم في HTML الخادمي أيضاً: كان الشريط يُضاف بعد التحميل فيدفع الدرس 62px (CLS 0.17).
+  const [profile, setProfile] = React.useState<{ dailyGoalMinutes?: number; studyHour?: number }>({dailyGoalMinutes: 20});
 
   React.useEffect(() => {
     void import("@/lib/storage/learner").then(({getLearnerProfile}) => getLearnerProfile().then(setProfile));
   }, []);
 
-  if (!profile) return null;
   const goal = profile.dailyGoalMinutes ?? 20;
   const studyHour = profile.studyHour;
 
@@ -375,7 +375,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
 
   const sectionDefs = LESSON_SECTIONS.filter(
     (def) =>
-      (def.id !== "review" || (reviewLoaded && reviewQuestions.length > 0)) &&
+      (def.id !== "review" || (reviewLoaded ? reviewQuestions.length > 0 : likelyHasInterleavedReview(lesson))) &&
       (def.id !== "verben" || lesson.level === "B1" || lesson.level === "B2") &&
       /* ═══ الوساطة والتفاعل: تُعرضان فقط إذا كان الدرس يحتويهما ═══ */
       (def.id !== "mediation" || (lesson.mediation && lesson.mediation.length > 0)) &&

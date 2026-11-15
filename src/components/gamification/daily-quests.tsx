@@ -28,8 +28,23 @@ interface Quest {
   reward: number;
 }
 
+/**
+ * التعريفات الثابتة للتحديات — تُرسَم من الخادم بعدّادات صفرية.
+ *
+ * لماذا؟ كانت القائمة تبدأ فارغة ويُعاد null حتى تقرأ الأحداث من IndexedDB،
+ * ثم تظهر البطاقة كاملة بعد الهيدرشن فتدفع كل ما تحتها 335px
+ * (CLS 0.196 في /gamification، مقيس في الجولة الخامسة). التعريفات نفسها
+ * ثابتة، والمتغيّر هو العدّاد فقط، فصار يُحدَّث داخل صفوف ذات ارتفاع ثابت.
+ */
+const BASE_QUESTS: Quest[] = [
+  { id: "exercises", label: "حل 10 تمارين اليوم", icon: ListChecks, target: 10, current: 0, reward: 5 },
+  { id: "reviews", label: "راجع 5 بطاقات", icon: Repeat, target: 5, current: 0, reward: 4 },
+  { id: "story", label: "اقرأ قصة كاملة", icon: Target, target: 1, current: 0, reward: 4 },
+  { id: "speak", label: "درّب نطقك 3 مرات", icon: Mic, target: 3, current: 0, reward: 4 },
+];
+
 export function DailyQuests() {
-  const [quests, setQuests] = React.useState<Quest[]>([]);
+  const [quests, setQuests] = React.useState<Quest[]>(BASE_QUESTS);
   const [claimed, setClaimed] = React.useState<Record<string, boolean>>({});
   const [storageNotice, setStorageNotice] = React.useState("");
 
@@ -49,12 +64,13 @@ export function DailyQuests() {
       const stories = todayEvents.filter((e) => e.type === "skill-result" && e.skill === "القراءة").length;
       const pronunciation = todayEvents.filter((e) => e.type === "pronunciation-score").length;
 
-      const qs: Quest[] = [
-        { id: "exercises", label: "حل 10 تمارين اليوم", icon: ListChecks, target: 10, current: Math.min(10, exercises), reward: 5 },
-        { id: "reviews", label: "راجع 5 بطاقات", icon: Repeat, target: 5, current: Math.min(5, reviews), reward: 4 },
-        { id: "story", label: "اقرأ قصة كاملة", icon: Target, target: 1, current: Math.min(1, stories), reward: 4 },
-        { id: "speak", label: "درّب نطقك 3 مرات", icon: Mic, target: 3, current: Math.min(3, pronunciation), reward: 4 },
-      ];
+      const counts: Record<string, number> = {
+        exercises: Math.min(10, exercises),
+        reviews: Math.min(5, reviews),
+        story: Math.min(1, stories),
+        speak: Math.min(3, pronunciation),
+      };
+      const qs: Quest[] = BASE_QUESTS.map((q) => ({ ...q, current: counts[q.id] ?? 0 }));
       setQuests(qs);
 
       // لا نعلّم المهمة مستلمة إذا تعذر تسجيل مكافأتها.
@@ -97,14 +113,6 @@ export function DailyQuests() {
       }
     })();
   }, []);
-
-  if (quests.length === 0) {
-    return storageNotice ? (
-      <p className="rounded-lg border border-destructive/30 bg-destructive/5 px-3 py-2 text-sm text-destructive" role="alert">
-        {storageNotice}
-      </p>
-    ) : null;
-  }
 
   const doneCount = quests.filter((q) => q.current >= q.target).length;
 

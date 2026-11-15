@@ -72,7 +72,7 @@ export function ReadingLibraryClient() {
                 </Badge>
                 <span className="text-xs text-muted-foreground">{r.category}</span>
                 {r.examType && (
-                  <Badge variant="secondary" className="text-[9px]">
+                  <Badge variant="secondary" className="text-[11px]">
                     {r.examType}
                   </Badge>
                 )}

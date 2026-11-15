@@ -4,7 +4,8 @@ import * as React from "react";
 
 import { TestRunner } from "@/components/tests/test-runner";
 import { TEST_BANK } from "@/data/tests/question-banks";
-import { shuffleTestQuestions } from "@/lib/tests/shuffle-questions";
+import { seededShuffleTestQuestions } from "@/lib/tests/shuffle-questions";
+import { dailySeed } from "@/lib/lesson/shuffle";
 import { LEVEL_TEST_CONFIGS } from "@/lib/tests/test-engine";
 import type { TestLevel, TestResult } from "@/types/test";
 
@@ -28,7 +29,12 @@ export function LevelTest({ level, onComplete, quick = false }: LevelTestProps) 
      كان إجاباته كلها في الموضع الأول (قياس 2026-10-16: 171/171) — ومع موازنة
      البيانات صار الخلط طبقة ثانية لا طبقة وحيدة. */
   const questions = React.useMemo(() => {
-    let list = shuffleTestQuestions(TEST_BANK.filter((q) => q.level === level));
+    // خلط حتمي ببذرة يومية: الخادم والعميل يصيران الترتيب نفسه، فيُصيَّر
+    // الاختبار كاملاً من الخادم بدل مربّع تحميل يقفز إلى محتوى (CLS).
+    let list = seededShuffleTestQuestions(
+      TEST_BANK.filter((q) => q.level === level),
+      dailySeed(`level-test:${level}${quick ? ":quick" : ""}`),
+    );
     // الوضع التكيفي: يبدأ بأسهل ثم يصعد، ويتكيف مع الأداء
     // (يُستخدم في محاكاة Goethe — ترتيب حسب نوع المهارة وطول النص)
     if (typeof window !== "undefined" && new URLSearchParams(window.location.search).get("adaptive") === "1") {

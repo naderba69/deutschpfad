@@ -8,7 +8,8 @@ import {ResultsPanel} from "@/components/tests/results-panel";
 import {Button} from "@/components/ui/button";
 import {TEST_BANK} from "@/data/tests/question-banks";
 import {speakSequence} from "@/lib/speech/voices";
-import {shuffleTestQuestions} from "@/lib/tests/shuffle-questions";
+import {seededShuffleTestQuestions} from "@/lib/tests/shuffle-questions";
+import {dailySeed} from "@/lib/lesson/shuffle";
 import {buildTestResult} from "@/lib/tests/test-engine";
 import {buildDiagnosticQuestionBank, type DiagnosticQuestion} from "@/lib/tests/placement-questions";
 import {cn} from "@/lib/utils";
@@ -50,10 +51,10 @@ export function PlacementDiagnostic() {
   // يكفي اختيار الخيار الأول لاجتياز التشخيص كاملاً.
   const questions = React.useMemo(
     () =>
-      shuffleTestQuestions(
+      seededShuffleTestQuestions(
         DIAGNOSTIC_QUESTION_BANK.filter((q) => q.skill === skill && q.level === level).slice(0, QUESTIONS_PER_LEVEL),
+        `${dailySeed("placement-diagnostic")}:${skill}:${level}:${round}`,
       ) as DiagnosticQuestion[],
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [skill, level, round],
   );
   const current = questions[questionIdx];

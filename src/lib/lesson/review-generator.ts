@@ -1,4 +1,5 @@
 import type { Exercise, Lesson } from "@/types/lesson";
+import {LESSON_META} from "@/data/lessons/meta";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -46,6 +47,20 @@ export function reviewLevelLabel(review: Exercise[], lessonLevel: string): strin
   const ordered = found.sort((a, b) => (LEVEL_ORDER[a] ?? 0) - (LEVEL_ORDER[b] ?? 0));
   if (ordered.length === 1) return ordered[0];
   return `${ordered.slice(0, -1).join(" و")} و${ordered[ordered.length - 1]}`;
+}
+
+/**
+ * هل يُتوقَّع لهذا الدرس قسم «مراجعة تراكمية» قبل تحميل الأسئلة؟
+ *
+ * حالة متزامنة تُستعمل في التصيير الأول (خادم + عميل): مراجعة مكتوبة يدوياً،
+ * أو درس ليس الأول في المنهج (تُولَّد أسئلته من الدروس السابقة). بلا هذا
+ * الشرط كان القسم يُلحق بعد التحميل، فيلتفّ شريط الأقسام من صفّ إلى صفّين
+ * ويهتزّ الدرس كله — CLS 0.192 في /lesson/b2-03. النتيجة النهائية تُصحَّح
+ * بعد وصول الأسئلة عبر `reviewLoaded`.
+ */
+export function likelyHasInterleavedReview(lesson: Pick<Lesson, "id" | "review">): boolean {
+  if (Array.isArray(lesson.review) && lesson.review.length > 0) return true;
+  return LESSON_META.findIndex((l) => l.id === lesson.id) > 0;
 }
 
 /** هل يملك الدرس مراجعة مكتوبة يدوياً؟ */

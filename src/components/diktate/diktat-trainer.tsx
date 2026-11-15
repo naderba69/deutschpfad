@@ -149,6 +149,7 @@ export function DiktatTrainer() {
                   else next();
                 }}
                 placeholder="اكتب الجملة هنا…"
+                aria-label="اكتب الجملة الألمانية التي سمعتها"
                 dir="ltr"
                 lang="de"
                 disabled={!!feedback}

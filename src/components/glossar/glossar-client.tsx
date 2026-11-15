@@ -126,7 +126,7 @@ export function GlossarClient() {
                           <span
                             title={`إتقان ${mastery[entry.de.toLowerCase()]}% — راجعه في البطاقات`}
                             className={cn(
-                              "inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[9px] font-extrabold",
+                              "inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[11px] font-extrabold",
                               mastery[entry.de.toLowerCase()] >= 80
                                 ? "bg-success/15 text-success"
                                 : mastery[entry.de.toLowerCase()] >= 40

@@ -83,7 +83,7 @@ export function CertificatePath() {
                     <div className="flex items-center justify-between gap-2">
                       <p className="font-de text-xs font-extrabold">{l.code}</p>
                       {l.sealed ? (
-                        <span className="inline-flex items-center gap-1 rounded-full bg-success/15 px-2 py-0.5 text-[9px] font-extrabold text-success">
+                        <span className="inline-flex items-center gap-1 rounded-full bg-success/15 px-2 py-0.5 text-[11px] font-extrabold text-success">
                           <CheckCircle2 className="h-3 w-3" aria-hidden="true" /> مُختومة
                         </span>
                       ) : (
@@ -99,7 +99,7 @@ export function CertificatePath() {
                         <div className="h-full rounded-full bg-gold" style={{ width: `${l.canDoPct}%` }} />
                       </div>
                     </div>
-                    <p className="mt-0.5 flex items-center justify-between text-[9px] text-muted-foreground">
+                    <p className="mt-0.5 flex items-center justify-between text-[11px] text-muted-foreground">
                       <span>دروس {l.lessonsPct}%</span>
                       <span>وظائف {l.canDoPct}%</span>
                       {l.sealed && <span className="text-success">الختم ✓</span>}

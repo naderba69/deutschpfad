@@ -197,19 +197,19 @@ export function WeeklyReviewClient({ range = "weekly" }: { range?: "weekly" | "m
           <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
             <div className="rounded-lg border bg-muted/30 px-2 py-1.5 text-center">
               <p className="font-de text-sm font-extrabold">{summary.lessonsCompleted.length}</p>
-              <p className="text-[9px] font-bold text-muted-foreground">دروس</p>
+              <p className="text-[11px] font-bold text-muted-foreground">دروس</p>
             </div>
             <div className="rounded-lg border bg-muted/30 px-2 py-1.5 text-center">
               <p className="font-de text-sm font-extrabold">{summary.exercisesAnswered}</p>
-              <p className="text-[9px] font-bold text-muted-foreground">تمارين</p>
+              <p className="text-[11px] font-bold text-muted-foreground">تمارين</p>
             </div>
             <div className="rounded-lg border bg-muted/30 px-2 py-1.5 text-center">
               <p className="font-de text-sm font-extrabold">{Math.round(summary.minutesStudied)}</p>
-              <p className="text-[9px] font-bold text-muted-foreground">دقائق</p>
+              <p className="text-[11px] font-bold text-muted-foreground">دقائق</p>
             </div>
             <div className="rounded-lg border bg-muted/30 px-2 py-1.5 text-center">
               <p className="font-de text-sm font-extrabold">{summary.daysActive.length}</p>
-              <p className="text-[9px] font-bold text-muted-foreground">أيام نشطة</p>
+              <p className="text-[11px] font-bold text-muted-foreground">أيام نشطة</p>
             </div>
           </div>
         </div>
