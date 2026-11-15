@@ -23,6 +23,7 @@ import * as React from "react";
 
 import type { ExamGapText, ExamHoerenTeil, ExamLesenTeil, ExamMcq, ExamStatement, ExamZuordnungCategory, ExamZuordnungItem } from "@/types/exam";
 import { cn } from "@/lib/utils";
+import {dailySeed, seededShuffle} from "@/lib/lesson/shuffle";
 
 /* ═══════════════════════════════════════════════════════════
  *  العارضات الرسمية (B2) — نُقلت حرفياً من goethe-b2-exam.tsx
@@ -181,7 +182,11 @@ export function ExamGapList({
   answers: Record<number, string>;
   onAnswer: (gapIdx: number, sentenceId: string) => void;
 }) {
-  const [bank] = React.useState(() => [...gap.sentenceBank].sort(() => Math.random() - 0.5));
+  /* خلط حتمي ببذرة (معرّف الفراغ): `Math.random` هنا كان يعطي ترتيباً مختلفاً
+     على الخادم والعميل ⇒ خطأ هيدرشن React #418 في صفحات امتحانات B2. */
+  const [bank] = React.useState(() =>
+    seededShuffle(gap.sentenceBank, dailySeed(`exam-bank:${gap.textWithGaps.slice(0, 24)}`)),
+  );
   const parts = gap.textWithGaps.split(/(\{(\d+)\})/g);
   const gapCount = gap.gapOrder.length;
 

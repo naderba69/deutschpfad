@@ -3,6 +3,8 @@ import {notFound} from "next/navigation";
 
 import {LazyUnitTest} from "@/components/tests/lazy/lazy-unit-test";
 import {getLessonCountForUnit} from "@/data/lessons/meta";
+import {loadLessonsByUnit} from "@/data/lessons/level-loaders";
+import {buildUnitTestQuestions} from "@/lib/tests/unit-test-questions";
 
 interface Props {
   params: Promise<{ unitId: string }>;
@@ -27,6 +29,11 @@ export default async function UnitTestPage({ params }: Props) {
   const { unitId } = await params;
   if (getLessonCountForUnit(unitId) === 0) notFound();
 
+  // الأسئلة تُبنى على الخادم كي يصل HTML كاملاً (بلا انزياح تخطيط)،
+  // ويُمرَّر إلى العميل الأسئلة العشرة فقط لا دروس المستوى.
+  const lessons = await loadLessonsByUnit(unitId);
+  const {level, questions} = buildUnitTestQuestions(unitId, lessons);
+
   return (
     <div className="mx-auto w-full max-w-2xl px-4 py-10 sm:px-6">
       <div className="mb-8">
@@ -38,7 +45,7 @@ export default async function UnitTestPage({ params }: Props) {
           واقتراحات التقوية.
         </p>
       </div>
-      <LazyUnitTest unitId={unitId} />
+      <LazyUnitTest unitId={unitId} level={level} questions={questions} />
     </div>
   );
 }

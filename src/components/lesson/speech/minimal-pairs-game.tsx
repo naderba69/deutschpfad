@@ -6,7 +6,7 @@ import {Ear, RefreshCw, Shuffle, Timer, Trophy, Zap} from "lucide-react";
 import {SpeakButton} from "@/components/shared/speak-button";
 import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
-import {shuffle} from "@/lib/lesson/shuffle";
+import {dailySeed, seededShuffle} from "@/lib/lesson/shuffle";
 import {cn} from "@/lib/utils";
 import type { MinimalPair, MinimalPairGroup } from "@/types/lesson";
 
@@ -32,7 +32,6 @@ interface Round {
  */
 export function MinimalPairsGame({ groups, compact }: MinimalPairsGameProps) {
   const [groupIndex, setGroupIndex] = React.useState(0);
-  const [rounds, setRounds] = React.useState<Round[]>([]);
   const [roundIdx, setRoundIdx] = React.useState(0);
   const [correctCount, setCorrectCount] = React.useState(0);
   const [lastCorrect, setLastCorrect] = React.useState<boolean | null>(null);
@@ -47,12 +46,24 @@ export function MinimalPairsGame({ groups, compact }: MinimalPairsGameProps) {
 
   const group = groups[groupIndex] ?? groups[0];
 
+  /* خلط حتمي ببذرة يومية: الجولة الأولى تُصيَّر من الخادم (كانت `rounds`
+     تبدأ فارغة فتُرسَل بطاقة فارغة ثم يظهر التمرين بعد الهيدرشن — CLS).
+     البذرة تُغيّر الترتيب كل يوم وتُبقي الخادم والعميل متطابقين. */
   const makeRounds = React.useCallback(
-    (g: MinimalPairGroup): Round[] =>
-      shuffle(g.pairs)
+    (g: MinimalPairGroup): Round[] => {
+      const seed = dailySeed(`minimal-pairs:${g.id}:${gameKey}`);
+      return seededShuffle(g.pairs, seed)
         .slice(0, ROUNDS_PER_GAME)
-        .map((pair) => ({ pair, spokenIsA: Math.random() < 0.5 })),
-    [],
+        .map((pair, i) => ({
+          pair,
+          spokenIsA: seededShuffle([true, false], `${seed}:${i}`)[0],
+        }));
+    },
+    [gameKey],
+  );
+
+  const [rounds, setRounds] = React.useState<Round[]>(() =>
+    groups.length > 0 ? makeRounds(groups[0]) : [],
   );
 
   // إعادة بناء الجولة عند تغيير المجموعة أو البدء

@@ -177,12 +177,18 @@ describe("بنك أسئلة الاختبارات — المحرّكات تخلط
     "src/components/tests/placement-diagnostic.tsx",
   ];
 
-  it("كل محرّك يستورد shuffleTestQuestions ويستدعيها", () => {
+  it("كل محرّك يستورد خلط الخيارات ويستدعيه (عشوائي أو ببذرة)", () => {
+    /* يقبل الصيغتين: `shuffleTestQuestions` (عشوائي) و`seededShuffleTestQuestions`
+       (حتمي ببذرة يومية — أُضيف لإصلاح CLS: الخلط العشوائي في أول تصيير كان
+       يكسر مطابقة الهيدرشن فيُرسَل الاختبار بـ ssr:false ويقفز المحتوى).
+       القاعدة المقصودة تبقى: لا محرّك يعرض الخيارات بترتيبها الأصلي. */
     const problems: string[] = [];
     for (const rel of ENGINES) {
       const src = fs.readFileSync(path.join(process.cwd(), rel), "utf8");
-      if (!src.includes("shuffleTestQuestions")) problems.push(`${rel}: لا يستورد/يستدعي shuffleTestQuestions`);
-      if (!/shuffleTestQuestions\s*\(/.test(src)) problems.push(`${rel}: استيراد بلا استدعاء`);
+      if (!/\b(?:seeded)?[sS]huffleTestQuestions\b/.test(src)) {
+        problems.push(`${rel}: لا يستورد/يستدعي خلط الخيارات`);
+      }
+      if (!/(?:seeded)?[sS]huffleTestQuestions\s*\(/.test(src)) problems.push(`${rel}: استيراد بلا استدعاء`);
     }
     expect(problems).toEqual([]);
   });

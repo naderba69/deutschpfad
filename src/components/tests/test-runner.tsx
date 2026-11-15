@@ -12,7 +12,8 @@ import {speakSequence} from "@/lib/speech/voices";
 import {buildTestResult, formatTime} from "@/lib/tests/test-engine";
 import {useCountdown} from "@/lib/tests/use-countdown";
 import {cn} from "@/lib/utils";
-import {shuffleTestQuestions} from "@/lib/tests/shuffle-questions";
+import {seededShuffleTestQuestions} from "@/lib/tests/shuffle-questions";
+import {dailySeed} from "@/lib/lesson/shuffle";
 import type { TestQuestion, TestResult, TestSkill } from "@/types/test";
 
 export interface TestSectionConfig {
@@ -54,11 +55,20 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
   const [startedAt] = React.useState(() => Date.now());
   const [runKey, setRunKey] = React.useState(0);
 
-  // خلط الخيارات مرة واحدة لكل محاولة — بنوك الأسئلة تضع الإجابة الصحيحة
-  // في الموضع الأول دائماً، فبدون الخلط يكفي اختيار «أ» للنجاح بنسبة 100%.
+  /* خلط الخيارات مرة واحدة لكل محاولة — بنوك الأسئلة تضع الإجابة الصحيحة في
+     الموضع الأول دائماً، فبدون الخلط يكفي اختيار «أ» للنجاح بنسبة 100%.
+
+     ولماذا البذرة؟ كان الخلط عشوائياً (`Math.random`)، فتُصيَّر الخيارات في
+     الخادم بترتيب وتُصيَّر في العميل بترتيب آخر ⇒ خطأ هيدرشن React #418
+     («server rendered text didn't match») يُعيد بناء الشجرة كلها. لذلك صار
+     الخلط حتمياً ببذرة يومية + رقم المحاولة: نفس الترتيب على الطرفين،
+     ويتجدّد يومياً ومع كل «إعادة» (runKey). */
   const shuffledQuestions = React.useMemo(
-    () => shuffleTestQuestions(questions),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    () =>
+      seededShuffleTestQuestions(
+        questions,
+        `${dailySeed("test-runner")}:${runKey}:${resetKey ?? 0}`,
+      ),
     [questions, runKey, resetKey],
   );
 

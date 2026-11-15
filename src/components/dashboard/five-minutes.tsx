@@ -13,7 +13,7 @@ import {Progress} from "@/components/ui/progress";
 import {getFirstLessonMetaForUnit} from "@/data/lessons/meta";
 import {getUnitsByLevel} from "@/lib/constants/curriculum";
 import {getActiveLevel} from "@/lib/progress-selectors";
-import {sample} from "@/lib/lesson/shuffle";
+import {dailySeed, seededSample} from "@/lib/lesson/shuffle";
 import {useCountdown} from "@/lib/tests/use-countdown";
 import {formatTime} from "@/lib/tests/test-engine";
 import type { Exercise } from "@/types/lesson";
@@ -78,13 +78,14 @@ const TOTAL_SECONDS = 5 * 60;
  */
 export function FiveMinutes() {
   const { completedUnits, sealedLevels, isHydrated } = useProgress();
-  // ═══ إصلاح hydration: sample عشوائي في أول رندر كان يكسر التطابق
-  // (الخادم يختار عشوائياً مختلفاً عن العميل) — أُجّل إلى useEffect ═══
-  const [batch, setBatch] = React.useState<typeof QUICK_EXERCISES>([]);
+  // عيّنة اليوم من التمارين السريعة: خلط **حتمي** ببذرة يومية بدل `sample`
+  // العشوائي. كان التعارض مع الهيدرشن يُحلّ بتأجيل الاختيار إلى `useEffect`،
+  // لكن ذلك يترك الصفحة بلا تمارين في HTML ثم يقفز المحتوى بعد الهيدرشن
+  // (CLS). البذرة اليومية تُبقي التنويع اليومي وتطابق الخادم بالعميل.
+  const [batch] = React.useState<typeof QUICK_EXERCISES>(() =>
+    seededSample(QUICK_EXERCISES, 3, dailySeed("five-minutes")),
+  );
   const [done, setDone] = React.useState(false);
-  React.useEffect(() => {
-    setBatch(sample(QUICK_EXERCISES, 3));
-  }, []);
   const remaining = useCountdown(TOTAL_SECONDS, () => setDone(true));
 
   const activeLevel = isHydrated ? getActiveLevel(completedUnits, sealedLevels) : "A1";

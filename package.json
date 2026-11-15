@@ -26,7 +26,8 @@
     "audit:first-option": "node scripts/probe-first-option.mjs",
     "audit:every-page": "node scripts/audit-every-page.mjs",
     "audit:links": "node scripts/audit-links.mjs",
-    "audit:keyboard": "NODE_PATH=/tmp/vb/node_modules node scripts/audit-keyboard.mjs"
+    "audit:keyboard": "NODE_PATH=/tmp/vb/node_modules node scripts/audit-keyboard.mjs",
+    "audit:robustness": "NODE_PATH=${NODE_PATH:-/tmp/vb/node_modules} node scripts/audit-robustness.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",

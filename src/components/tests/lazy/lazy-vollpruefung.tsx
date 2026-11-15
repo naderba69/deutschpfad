@@ -1,22 +1,4 @@
 "use client";
 
-/**
- * تحميل كسول لصفحة نظرة عامة وعينة تدريب داخلية — تُحمَّل عند فتحها فقط
- */
-import dynamic from "next/dynamic";
-
-import {Skeleton} from "@/components/ui/skeleton";
-
-export const LazyVollPruefung = dynamic(
-  () => import("@/components/tests/voll-pruefung-client").then((m) => m.VollPruefungClient),
-  {
-    loading: () => (
-      <div className="space-y-4" aria-live="polite">
-        <Skeleton className="h-12 w-2/3" />
-        <Skeleton className="h-8 w-1/2" />
-        <Skeleton className="h-64 w-full rounded-2xl" />
-      </div>
-    ),
-    ssr: false,
-  },
-);
+/** استيراد مباشر بدل `next/dynamic` — انظر lazy-ai-tools.tsx (CLS). */
+export { VollPruefungClient as LazyVollPruefung } from "@/components/tests/voll-pruefung-client";

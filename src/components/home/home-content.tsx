@@ -32,7 +32,11 @@ export function HomeContent() {
   // h1 مخفي في SSR: يضمن وجود عنوان رئيسي في HTML الخادمي قبل اكتمال الفحص
   if (hasProfile === null) {
     return (
-      <div className="mx-auto w-full max-w-7xl space-y-6 px-4 py-10 sm:px-6" aria-busy="true" aria-label="جارٍ تحميل صفحتك">
+      <div
+        className="mx-auto w-full max-w-7xl min-h-[calc(100dvh-4rem)] space-y-6 px-4 py-10 sm:px-6"
+        aria-busy="true"
+        aria-label="جارٍ تحميل صفحتك"
+      >
         <h1 className="sr-only">درب الألمانية — تعلّم الألمانية من الصفر حتى B2 بثقة</h1>
         <Skeleton className="h-24 w-full rounded-2xl" />
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">

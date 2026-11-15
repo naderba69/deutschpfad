@@ -7,7 +7,8 @@ import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
 import {playCorrect, playWrong} from "@/lib/audio/sfx";
 import {speakGerman, stopSpeaking} from "@/lib/speech/voices";
-import {shuffled, UMLAUT_ITEMS} from "@/data/umlauts";
+import {UMLAUT_ITEMS} from "@/data/umlauts";
+import {dailySeed, seededShuffle} from "@/lib/lesson/shuffle";
 import {cn} from "@/lib/utils";
 
 /**
@@ -18,16 +19,24 @@ import {cn} from "@/lib/utils";
  * ═══════════════════════════════════════════════════════════
  */
 export function UmlautFocus() {
-  const [order, setOrder] = React.useState<number[]>([]);
+  /* ترتيب حتمي ببذرة يومية: `order` كان يبدأ فارغاً والمكوّن يعيد null،
+     فيظهر التمرين كاملاً بعد الهيدرشن ويدفع ما بعده (CLS في /diktate). */
+  const [round, setRound] = React.useState(0);
+  const newOrder = React.useCallback(
+    (r: number) => seededShuffle(UMLAUT_ITEMS.map((_, i) => i), dailySeed(`umlaut:${r}`)),
+    [],
+  );
+  const [order, setOrder] = React.useState<number[]>(() => newOrder(0));
+  const restart = () => {
+    const next = round + 1;
+    setRound(next);
+    setOrder(newOrder(next));
+  };
   const [idx, setIdx] = React.useState(0);
   const [correctCount, setCorrectCount] = React.useState(0);
   const [answered, setAnswered] = React.useState(false);
   const [picked, setPicked] = React.useState<number | null>(null);
   const [done, setDone] = React.useState(false);
-
-  React.useEffect(() => {
-    setOrder(shuffled(UMLAUT_ITEMS.map((_, i) => i)));
-  }, []);
 
   React.useEffect(() => {
     return () => stopSpeaking();
@@ -46,7 +55,7 @@ export function UmlautFocus() {
         <Button
           className="mt-4"
           onClick={() => {
-            setOrder(shuffled(UMLAUT_ITEMS.map((_, i) => i)));
+            restart();
             setIdx(0);
             setCorrectCount(0);
             setAnswered(false);
