@@ -4,6 +4,7 @@ import * as React from "react";
 import {CheckCircle2, Dices, Lightbulb, Send, XCircle} from "lucide-react";
 
 import {AutoGrowTextarea} from "@/components/shared/auto-grow-textarea";
+import {LangDe} from "@/components/shared/lang-de";
 import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
 import {playCorrect, playWrong} from "@/lib/audio/sfx";
@@ -223,7 +224,7 @@ export function UmformungClient() {
                 {task.level}
               </span>
               <span className="rounded-full bg-gold/10 px-2.5 py-0.5 text-[11px] font-extrabold text-gold-strong">
-                ← {task.to}
+                ← <LangDe>{task.to}</LangDe>
               </span>
             </div>
             <p className="font-de mt-3 text-xl font-extrabold" dir="ltr" lang="de">

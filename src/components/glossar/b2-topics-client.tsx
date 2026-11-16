@@ -118,6 +118,7 @@ export function B2TopicsClient() {
                             : "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300",
                       )}
                       dir="ltr"
+                      lang="de"
                     >
                       {w.g}
                     </span>

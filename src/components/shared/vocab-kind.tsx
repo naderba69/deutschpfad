@@ -32,6 +32,7 @@ export function VocabKindBadge({ g, className }: { g?: string; className?: strin
         data-testid="vocab-kind-article"
         className={cn("rounded px-1 py-0.5 text-[11px] font-bold", ARTICLE_PILL[g], className)}
         dir="ltr"
+        lang="de"
       >
         {g}
       </span>

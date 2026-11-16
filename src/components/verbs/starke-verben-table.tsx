@@ -71,15 +71,15 @@ export function StarkeVerbenTable({ compact }: { compact?: boolean }) {
           (بدل البدء بالعربية بسبب RTL ثم التمرير لليمين) */}
       <ScrollRegion className="overflow-x-auto rounded-xl border" label="جدول الأفعال الشاذة — قابل للتمرير" dir="ltr">
         <table className="w-full text-sm">
-          <caption className="sr-only">جدول الأفعال الشاذة: التصريف والأصل والترجمة</caption>
+          <caption className="sr-only" dir="rtl">جدول الأفعال الشاذة: التصريف والأصل والترجمة</caption>
           <thead>
             <tr className="border-b bg-muted/40">
-              <th scope="col" className="px-3 py-2.5 text-start font-bold">الفعل</th>
-              <th scope="col" className="px-3 py-2.5 text-start font-bold">Präsens (er)</th>
-              <th scope="col" className="px-3 py-2.5 text-start font-bold">Präteritum</th>
-              <th scope="col" className="px-3 py-2.5 text-start font-bold">Partizip II</th>
-              <th scope="col" className="px-3 py-2.5 text-start font-bold">العربية</th>
-              <th scope="col" className="px-3 py-2.5 text-start font-bold">مع</th>
+              <th scope="col" className="px-3 py-2.5 text-start font-bold" dir="rtl">الفعل</th>
+              <th scope="col" className="px-3 py-2.5 text-start font-bold" dir="ltr" lang="de">Präsens (er)</th>
+              <th scope="col" className="px-3 py-2.5 text-start font-bold" dir="ltr" lang="de">Präteritum</th>
+              <th scope="col" className="px-3 py-2.5 text-start font-bold" dir="ltr" lang="de">Partizip II</th>
+              <th scope="col" className="px-3 py-2.5 text-start font-bold" dir="rtl">العربية</th>
+              <th scope="col" className="px-3 py-2.5 text-start font-bold" dir="rtl">مع</th>
             </tr>
           </thead>
           <tbody>
@@ -96,13 +96,13 @@ export function StarkeVerbenTable({ compact }: { compact?: boolean }) {
                     </Badge>
                   </span>
                   {v.note && (
-                    <p className="mt-1 text-[11px] font-semibold text-destructive">⚠ {v.note}</p>
+                    <p className="mt-1 text-[11px] font-semibold text-destructive" dir="rtl">⚠ {v.note}</p>
                   )}
                 </th>
                 <td className="font-de px-3 py-2" dir="ltr" lang="de">{v.präsens3}</td>
                 <td className="font-de px-3 py-2 font-semibold" dir="ltr" lang="de">{v.präteritum}</td>
                 <td className="font-de px-3 py-2 font-semibold text-primary" dir="ltr" lang="de">{v.partizip2}</td>
-                <td className="px-3 py-2">{v.ar}</td>
+                <td className="px-3 py-2" dir="rtl">{v.ar}</td>
                 <td className="font-de px-3 py-2 text-xs text-muted-foreground" dir="ltr">
                   {v.hilfsverb}
                 </td>

@@ -58,7 +58,7 @@ export const B1_VOCAB: Record<string, VocabEntry[]> = {
     { de: "die Energie", ar: "الطاقة", g: "die" },
     { de: "die Sonnenenergie", ar: "الطاقة الشمسية", g: "die" },
     { de: "das Passiv", ar: "المبني للمجهول", g: "das" },
-    { de: "werden (المصرف) + Partizip II", ar: "قالب المضارع للمبني للمجهول", g: "other", ex: "Das Haus wird gebaut." },
+    { de: "werden + Partizip II", ar: "قالب المضارع للمبني للمجهول (werden هو الفعل المصرف)", g: "other", ex: "Das Haus wird gebaut." },
     { de: "wurde + Partizip II", ar: "فُعل (ماضٍ مجهول)", g: "other" },
     { de: "man", ar: "المرء / الناس عموماً؛ ضمير فاعل عام", g: "pron", ex: "Man schützt die Umwelt." },
     { de: "die Nachhaltigkeit", ar: "الاستدامة", g: "die" },

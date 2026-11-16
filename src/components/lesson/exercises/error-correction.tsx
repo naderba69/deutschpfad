@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import {LangDe} from "@/components/shared/lang-de";
 import {Wrench} from "lucide-react";
 
 import {FeedbackPanel} from "@/components/lesson/exercises/feedback-panel";
@@ -120,9 +121,9 @@ export function ErrorCorrectionExerciseView({
                 locked && !showState && "opacity-60",
               )}
             >
-              <span className="font-de font-medium" dir="ltr" lang="de">
+              <LangDe className="font-medium">
                 {option}
-              </span>
+              </LangDe>
             </button>
           );
         })}

@@ -11,6 +11,7 @@ import {Award, BookOpenCheck, Headphones, Mic, PenLine, Timer} from "lucide-reac
 import {LevelTest} from "@/components/tests/level-test";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent} from "@/components/ui/card";
+import {LangDe} from "@/components/shared/lang-de";
 import {Progress} from "@/components/ui/progress";
 import {getLastTestResult} from "@/lib/storage/test-results-store";
 import { getLevelTestFeedback } from "@/lib/tests/level-test-feedback";
@@ -51,7 +52,7 @@ export function VollPruefungClient() {
                 </span>
                 <div className="min-w-0">
                   <p className="text-sm font-bold">
-                    <span className="font-de" dir="ltr" lang="de">{s.title}</span>
+                    <LangDe>{s.title}</LangDe>
                     <span className="ms-2 rounded-full bg-muted px-2 py-0.5 text-[11px] font-bold text-muted-foreground">{s.time}</span>
                   </p>
                   <p className="text-xs text-muted-foreground">{s.desc}</p>

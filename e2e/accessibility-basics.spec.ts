@@ -24,7 +24,9 @@ test.describe("مراجعة أسماء عناصر الوصول الأساسية"
   test("بطاقة المفردة تحتفظ باسمها المرئي وتعلن حالة القلب", async ({ page }) => {
     await page.goto("/dashboard");
     const card = page.locator(".perspective").first();
-    const word = (await card.locator('[lang="de"]').innerText()).trim();
+    // البطاقة تحمل الآن عنصرين ألمانيين: الكلمة وشارة أداة التعريف (der/die/das)
+    // — كلاهما موسوم lang="de" منذ الجولة العاشرة، والكلمة هي الأولى.
+    const word = (await card.locator('[lang="de"]').first().innerText()).trim();
     const escapedWord = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const flipButton = card.getByRole("button");
     await expect(flipButton).toHaveAccessibleName(new RegExp(escapedWord));

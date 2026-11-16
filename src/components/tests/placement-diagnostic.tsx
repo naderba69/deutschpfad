@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import {LangDe} from "@/components/shared/lang-de";
 import {useRouter} from "next/navigation";
 import {ChevronLeft, GraduationCap, Headphones} from "lucide-react";
 
@@ -264,9 +265,9 @@ export function PlacementDiagnostic() {
                       selected && "border-primary bg-primary/10 ring-2 ring-ring",
                     )}
                   >
-                    <span className="font-de font-medium" dir="ltr" lang="de">
+                    <LangDe className="font-medium">
                       {opt}
-                    </span>
+                    </LangDe>
                   </button>
                 );
               })}

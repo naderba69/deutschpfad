@@ -223,7 +223,10 @@ export function WindingPath({
       </svg>
 
       {/* أسطورة الحالات */}
-      <div className="mx-auto mt-2 flex max-w-md flex-wrap items-center justify-center gap-4 text-[11px] font-bold text-muted-foreground">
+      <div
+        dir="rtl"
+        className="mx-auto mt-2 flex max-w-md flex-wrap items-center justify-center gap-4 text-[11px] font-bold text-muted-foreground"
+      >
         <span className="inline-flex items-center gap-1"><CheckCircle2 className="h-3 w-3 text-success" aria-hidden="true" /> مكتمل</span>
         <span className="inline-flex items-center gap-1"><PlayCircle className="h-3 w-3 text-primary" aria-hidden="true" /> درسك الحالي</span>
         <span className="inline-flex items-center gap-1"><Lock className="h-3 w-3 text-muted-foreground" aria-hidden="true" /> مقفل — أتمّ السابق</span>

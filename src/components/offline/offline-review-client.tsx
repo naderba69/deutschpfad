@@ -94,7 +94,7 @@ export function OfflineReviewClient() {
                     <span className={cn(
                       "rounded px-1 py-0.5 text-[11px] font-bold",
                       w.g === "der" ? "bg-sky-100 text-sky-700 dark:bg-sky-900/50 dark:text-sky-300" : w.g === "die" ? "bg-rose-100 text-rose-700 dark:bg-rose-900/50 dark:text-rose-300" : "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300",
-                    )} dir="ltr">{w.g}</span>
+                    )} dir="ltr" lang="de">{w.g}</span>
                   )}
                 </p>
                 <p className="mt-0.5 text-sm font-semibold text-primary">{w.ar}</p>

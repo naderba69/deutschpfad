@@ -5,6 +5,7 @@ import {CheckCircle2, Link2, RotateCcw, XCircle} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
 import {cn} from "@/lib/utils";
+import {LangDe} from "@/components/shared/lang-de";
 import {ScrollRegion} from "@/components/ui/scroll-region";
 
 /**
@@ -130,7 +131,7 @@ export function FunktionsverbgefuegeTrainer() {
             <div key={qi} className="rounded-xl border p-3">
               <p className="text-sm font-bold">
                 <span className="ms-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-[11px] font-extrabold text-primary">{qi + 1}</span>
-                <span dir="ltr" lang="de">{q.q}</span>
+                <LangDe>{q.q}</LangDe>
               </p>
               <div className="mt-2 grid gap-1.5 sm:grid-cols-2">
                 {q.options.map((opt, oi) => (
@@ -145,7 +146,7 @@ export function FunktionsverbgefuegeTrainer() {
                       mcqChecked && mcqAns[qi] === oi && oi !== q.correct && "border-destructive bg-destructive/10 text-destructive",
                     )}
                   >
-                    <span dir="ltr" lang="de">{opt}</span>
+                    <LangDe>{opt}</LangDe>
                   </button>
                 ))}
               </div>
