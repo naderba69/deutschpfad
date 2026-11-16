@@ -22,8 +22,11 @@ test("تدريب القواعد والمفردات B2: السؤال الأول �
   await expect(page.getByText(/قواعد ومفردات B2 — 1\/60/)).toBeVisible();
   // سؤال قواعد أول: Konjunktiv I
   await expect(page.getByText(/Er sagte, er ___ keine Zeit/)).toBeVisible();
-  // المؤقت
-  await expect(page.getByText(/⏱ 5[0-9]:[0-9]{2}/)).toBeVisible();
+  // المؤقت: الجولة الحادية عشرة — لا يمضي قبل «ابدأ المؤقت» (WCAG 2.2.1)
+  await expect(page.getByText(/⏱ 60:00/)).toBeVisible();
+  await page.getByRole("button", {name: "ابدأ المؤقت"}).click();
+  await expect(page.getByRole("timer")).toHaveAttribute("aria-label", /الوقت المتبقي/);
+  await expect(page.getByText(/⏱ 5[0-9]:[0-9]{2}/)).toBeVisible({timeout: 10_000});
 });
 
 test("تدريب القواعد: اختيار إجابة وتحقق يعرض الشرح", async ({ page }) => {
