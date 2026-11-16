@@ -225,8 +225,13 @@ export function GoetheB2Exam() {
           </span>
           <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-bold text-primary">نموذج {setName}</span>
           <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-bold text-muted-foreground">{teil.title}</span>
-          <span className="font-de ms-auto text-sm font-extrabold text-primary tabular-nums">
-            ⏱ {Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, "0")}
+          <span
+            role="timer"
+            aria-label={`الوقت المتبقي: ${Math.floor(remaining / 60)} دقيقة و${remaining % 60} ثانية`}
+            className="font-de ms-auto text-sm font-extrabold text-primary tabular-nums"
+          >
+            <span aria-hidden="true">⏱ </span>
+            {Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, "0")}
           </span>
         </div>
         <LesenTeilView
@@ -271,8 +276,13 @@ export function GoetheB2Exam() {
           </span>
           <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-bold text-primary">نموذج {setName}</span>
           <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-bold text-muted-foreground">{teil.title}</span>
-          <span className="font-de ms-auto text-sm font-extrabold text-primary tabular-nums">
-            ⏱ {Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, "0")}
+          <span
+            role="timer"
+            aria-label={`الوقت المتبقي: ${Math.floor(remaining / 60)} دقيقة و${remaining % 60} ثانية`}
+            className="font-de ms-auto text-sm font-extrabold text-primary tabular-nums"
+          >
+            <span aria-hidden="true">⏱ </span>
+            {Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, "0")}
           </span>
         </div>
         <HoerenTeilView
@@ -319,8 +329,13 @@ export function GoetheB2Exam() {
             <PenLine className="h-4 w-4 text-primary" aria-hidden="true" />
             Schreiben — مهمتان
           </span>
-          <span className="font-de ms-auto text-sm font-extrabold text-primary tabular-nums">
-            ⏱ {Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, "0")}
+          <span
+            role="timer"
+            aria-label={`الوقت المتبقي: ${Math.floor(remaining / 60)} دقيقة و${remaining % 60} ثانية`}
+            className="font-de ms-auto text-sm font-extrabold text-primary tabular-nums"
+          >
+            <span aria-hidden="true">⏱ </span>
+            {Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, "0")}
           </span>
         </div>
 

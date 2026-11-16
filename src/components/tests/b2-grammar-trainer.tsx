@@ -33,7 +33,23 @@ export function B2GrammarTrainer() {
 
   // 60 دقيقة = دقيقة لكل سؤال (توصية تدريبية)
   const totalSeconds = B2_GRAMMATIK.length * 60;
-  const remaining = useCountdown(totalSeconds, () => finish());
+
+  /* الجولة الحادية عشرة (2.2.1 · 2.2.2): كان عدّاد الساعة يبدأ فور تحميل
+     الصفحة، فلا مهلة للمستخدم ليقرأ التعليمات، ولا سبيل لإيقافه. صار
+     الانتظار هو الأصل، والإيقاف المؤقت متاح، والانتهاء يُعلن في منطقة حيّة
+     بدل أن تختفي الأسئلة صامتة. */
+  const [timerStarted, setTimerStarted] = React.useState(false);
+  const [paused, setPaused] = React.useState(false);
+  const [timeUp, setTimeUp] = React.useState(false);
+
+  const remaining = useCountdown(
+    totalSeconds,
+    () => {
+      setTimeUp(true);
+      finish();
+    },
+    {paused: !timerStarted || paused},
+  );
 
   const current = questions[idx];
   const chosen = answers[current.id];
@@ -72,6 +88,9 @@ export function B2GrammarTrainer() {
     setChecked(false);
     setResult(null);
     setRunKey((k) => k + 1);
+    setTimerStarted(false);
+    setPaused(false);
+    setTimeUp(false);
   };
 
   if (result) {
@@ -80,6 +99,14 @@ export function B2GrammarTrainer() {
     return (
       <Card className="overflow-hidden border-primary/30">
         <CardContent className="space-y-4 p-6 text-center">
+          {timeUp && (
+            <p
+              role="alert"
+              className="rounded-xl border border-destructive/40 bg-destructive/10 p-3 text-sm font-bold text-destructive"
+            >
+              انتهى وقت التدريب — عُرضت نتيجتك أعلاه.
+            </p>
+          )}
           <CheckCircle2 className={cn("mx-auto h-12 w-12", passed ? "text-success" : "text-destructive")} aria-hidden="true" />
           <p className="font-de text-4xl font-extrabold text-primary">{pct}%</p>
           <p className="font-bold">
@@ -125,8 +152,30 @@ export function B2GrammarTrainer() {
         <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-bold text-muted-foreground">
           {current.skill === "grammatik" ? "🧩 قواعد" : "💬 مفردات"}
         </span>
-        <span className="font-de ms-auto text-sm font-extrabold text-primary tabular-nums">
-          ⏱ {Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, "0")}
+        <span
+          role="timer"
+          aria-label={`الوقت المتبقي: ${Math.floor(remaining / 60)} دقيقة و${remaining % 60} ثانية`}
+          className="font-de ms-auto text-sm font-extrabold text-primary tabular-nums"
+        >
+          <span aria-hidden="true">⏱ </span>
+          {Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, "0")}
+        </span>
+        {!timerStarted ? (
+          <Button size="sm" variant="outline" onClick={() => setTimerStarted(true)}>
+            ابدأ المؤقت
+          </Button>
+        ) : (
+          <Button
+            size="sm"
+            variant="outline"
+            aria-pressed={paused}
+            onClick={() => setPaused((p) => !p)}
+          >
+            {paused ? "متابعة المؤقت" : "إيقاف مؤقت"}
+          </Button>
+        )}
+        <span role="status" aria-live="polite" className="sr-only">
+          {timeUp ? "انتهى الوقت — عُرضت نتيجتك." : paused ? "أُوقف المؤقت مؤقتاً." : ""}
         </span>
       </div>
 

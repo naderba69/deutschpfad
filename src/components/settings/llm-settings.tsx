@@ -5,6 +5,7 @@ import {CheckCircle2, Database, RefreshCcw, Save, XCircle, Zap} from "lucide-rea
 
 import {useLLM} from "@/components/providers/llm-provider";
 import {Button} from "@/components/ui/button";
+import {ConfirmDialog} from "@/components/ui/confirm-dialog";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Input} from "@/components/ui/input";
 import {Label} from "@/components/ui/label";
@@ -27,6 +28,11 @@ export function LLMSettings() {
   const [limitInput, setLimitInput] = React.useState(dailyLimit);
   const [saving, setSaving] = React.useState(false);
   const [cacheCount, setCacheCount] = React.useState(0);
+  /* الجولة الحادية عشرة — كان الزرّان ينفّذان فوراً: تصفير حصة اليوم يُفقد
+     سجلّ الاستهلاك بلا رجعة، ومسح التخزين المؤقت يدفع المستخدم ثمن طلبات
+     جديدة. صار كلاهما خلف تأكيد صريح، والنتيجة تُعلن في منطقة حيّة. */
+  const [confirm, setConfirm] = React.useState<null | "reset" | "cache">(null);
+  const [notice, setNotice] = React.useState("");
 
   React.useEffect(() => {
     setLimitInput(dailyLimit);
@@ -47,11 +53,15 @@ export function LLMSettings() {
   const resetToday = async () => {
     await resetUsageToday();
     await refresh();
+    setConfirm(null);
+    setNotice("أُعيد تعيين عدّاد اليوم إلى صفر.");
   };
 
   const clearCache = async () => {
     await clearLLMCache();
     setCacheCount(await countLLMCache());
+    setConfirm(null);
+    setNotice("مُسح التخزين المؤقت.");
   };
 
   return (
@@ -132,11 +142,11 @@ export function LLMSettings() {
 
         {/* إجراءات */}
         <div className="flex flex-wrap gap-2">
-          <Button variant="outline" size="sm" onClick={() => void resetToday()} className="gap-1.5">
+          <Button variant="outline" size="sm" onClick={() => setConfirm("reset")} className="gap-1.5">
             <RefreshCcw className="h-3.5 w-3.5" aria-hidden="true" />
             إعادة تعيين عدّاد اليوم
           </Button>
-          <Button variant="outline" size="sm" onClick={() => void clearCache()} className="gap-1.5">
+          <Button variant="outline" size="sm" onClick={() => setConfirm("cache")} className="gap-1.5">
             <Database className="h-3.5 w-3.5" aria-hidden="true" />
             مسح التخزين المؤقت ({cacheCount})
           </Button>
@@ -145,6 +155,29 @@ export function LLMSettings() {
           مسح التخزين المؤقت يجعل الأسئلة المتكررة تستهلك طلباً جديداً مرة واحدة، ثم يعاد
           تخزينها تلقائياً.
         </p>
+
+        <p role="status" aria-live="polite" className="sr-only">
+          {notice}
+        </p>
+
+        <ConfirmDialog
+          open={confirm === "reset"}
+          onOpenChange={(open) => !open && setConfirm(null)}
+          title="إعادة تعيين عدّاد اليوم؟"
+          description="سيُصفَّر عدد الطلبات المسجّل اليوم، ولن يمكن استرجاعه. هذا لا يغيّر الحد اليومي."
+          confirmLabel="أعد التعيين"
+          destructive
+          onConfirm={() => void resetToday()}
+        />
+        <ConfirmDialog
+          open={confirm === "cache"}
+          onOpenChange={(open) => !open && setConfirm(null)}
+          title="مسح التخزين المؤقت؟"
+          description={`ستُحذف ${cacheCount} نتيجة مخزَّنة، وأول سؤال متكرر سيستهلك طلباً جديداً من حصتك.`}
+          confirmLabel="امسح التخزين"
+          destructive
+          onConfirm={() => void clearCache()}
+        />
       </CardContent>
     </Card>
   );

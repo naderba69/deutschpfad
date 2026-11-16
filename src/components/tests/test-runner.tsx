@@ -78,15 +78,30 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
   const section = sections[sectionIdx];
   const sectionQuestions = shuffledQuestions.filter((q) => q.skill === section.skill);
   const totalSeconds = section.minutes * 60;
-  const remaining = useCountdown(totalSeconds, () => {
-    // انتهاء وقت القسم → الانتقال للقسم التالي أو التسليم
-    if (sectionIdx < sections.length - 1) {
-      setSectionIdx((i) => i + 1);
-      setQuestionIdx(0);
-    } else {
-      submitTest();
-    }
-  });
+
+  /* الجولة الحادية عشرة — WCAG 2.2.1: كان العدّاد يبدأ فور تحميل الصفحة
+     (10:00 → 09:55) والمستخدم ما زال يقرأ المقدمة. صار الوقت محدَّداً بقرار
+     المستخدم: لا يمضي إلا بعد «ابدأ المؤقت». */
+  const [timerStarted, setTimerStarted] = React.useState(false);
+  const [timedOut, setTimedOut] = React.useState(false);
+  const [timerNotice, setTimerNotice] = React.useState("");
+
+  const remaining = useCountdown(
+    totalSeconds,
+    () => {
+      // انتهاء وقت القسم → الانتقال للقسم التالي أو التسليم
+      if (sectionIdx < sections.length - 1) {
+        setSectionIdx((i) => i + 1);
+        setQuestionIdx(0);
+        setTimerStarted(false);
+        setTimerNotice(`انتهى وقت القسم — انتقلنا إلى القسم ${sectionIdx + 2}. اضغط «ابدأ المؤقت» لبدء عدّاده.`);
+      } else {
+        setTimedOut(true);
+        submitTest();
+      }
+    },
+    {paused: !timerStarted},
+  );
 
   const current = sectionQuestions[questionIdx];
 
@@ -133,6 +148,9 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
     setAnswers(new Map());
     setFinished(false);
     setResult(null);
+    setTimerStarted(false);
+    setTimedOut(false);
+    setTimerNotice("");
   }, []);
 
   // إعادة التشغيل عند تغيير resetKey
@@ -141,16 +159,19 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
   }, [resetKey, restart]);
 
   if (finished && result) {
-    return <ResultsPanel result={result} onRetry={restart} onComplete={onComplete} />;
-  }
-
-  if (!current) {
     return (
-      <div className="rounded-xl border bg-muted/20 p-8 text-center">
-        <p className="text-muted-foreground">لا توجد أسئلة في هذا القسم — انتقل للتالي.</p>
-        <Button className="mt-4" onClick={nextQuestion}>
-          القسم التالي
-        </Button>
+      <div className="space-y-3">
+        {/* التسليم التلقائي عند انتهاء الوقت كان يحدث بلا أي إعلان: يختفي
+            المؤقت وتظهر النتيجة. role=alert يُعلن السبب مرة واحدة. */}
+        {timedOut && (
+          <p
+            role="alert"
+            className="rounded-xl border border-destructive/40 bg-destructive/10 p-3 text-sm font-bold text-destructive"
+          >
+            انتهى الوقت — سُلِّم الاختبار تلقائياً وحُفظت إجاباتك.
+          </p>
+        )}
+        <ResultsPanel result={result} onRetry={restart} onComplete={onComplete} />
       </div>
     );
   }
@@ -159,6 +180,42 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
     const a = answers.get(q.id);
     return a !== undefined && a !== null && a !== "";
   }).length;
+
+  /* إعلان تغيّر القسم — وُجِد في التدقيق أنه كان يُعرَض داخل شريط الحالة وحده،
+     والشريط يختفي في فرع «لا توجد أسئلة»، فتنتقل الشاشة بصمت. صار الشريط
+     والإعلان يُعادان في الفرعين. */
+  const timerNoticeRegion = (
+    <span className="sr-only" role="status" aria-live="polite">
+      {timerNotice}
+    </span>
+  );
+
+  if (!current) {
+    return (
+      <div className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-muted/30 p-3">
+          <p className="min-w-0 truncate text-sm font-bold">
+            {title} — القسم {sectionIdx + 1}/{sections.length}
+          </p>
+          <TestTimer seconds={remaining} total={totalSeconds} />
+          {!timerStarted && (
+            <Button size="sm" variant="outline" onClick={() => setTimerStarted(true)}>
+              ابدأ المؤقت
+            </Button>
+          )}
+          {timerNoticeRegion}
+        </div>
+        <div className="rounded-xl border bg-muted/20 p-8 text-center">
+          <p className="text-muted-foreground">
+            {timerNotice || "لا توجد أسئلة في هذا القسم."}
+          </p>
+          <Button className="mt-4" onClick={nextQuestion}>
+            {sectionIdx < sections.length - 1 ? "القسم التالي" : "تسليم الاختبار"}
+          </Button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div key={runKey} className="space-y-4">
@@ -178,6 +235,12 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
             أجبت {answeredCount}/{sectionQuestions.length}
           </span>
           <TestTimer seconds={remaining} total={totalSeconds} />
+          {!timerStarted && (
+            <Button size="sm" variant="outline" onClick={() => setTimerStarted(true)} className="gap-1">
+              ابدأ المؤقت
+            </Button>
+          )}
+          {timerNoticeRegion}
         </div>
       </div>
 
@@ -370,7 +433,8 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
       </div>
 
       <p className="text-center text-xs text-muted-foreground">
-        عند انتهاء الوقت يُسلَّم القسم تلقائياً — الوقت المتبقي: {formatTime(remaining)}
+        لا يبدأ العدّ حتى تضغط «ابدأ المؤقت». عند انتهاء الوقت يُسلَّم القسم تلقائياً —
+        الوقت المتبقي: {formatTime(remaining)}
       </p>
     </div>
   );

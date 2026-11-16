@@ -205,6 +205,12 @@ export function OralExam() {
   const part = parts[partIdx];
   const question = part.questions[questionIdx];
   const totalSeconds = part.minutes * 60;
+
+  /* الجولة الحادية عشرة (4.1.3): كان انتهاء وقت الجزء يبدّل الأسئلة أو ينقل
+     إلى التقييم بصمت تام — لا يعرف المستخدم الكفيف أن وقته انتهى وأن ما كتبه
+     سُجِّل. نصّ الإعلان يشرح ما حدث بالضبط. */
+  const [timerNotice, setTimerNotice] = React.useState("");
+
   const remaining = useCountdown(phase === "running" ? totalSeconds : 0, () => {
     // انتهاء وقت الجزء → تسجيل الإجابة الحالية والانتقال
     setAnswers((prev) => [...prev, currentAnswerRef.current || "(لم يُجب)"]);
@@ -212,8 +218,10 @@ export function OralExam() {
     if (partIdxRef.current < parts.length - 1) {
       setPartIdx((i) => i + 1);
       setQuestionIdx(0);
+      setTimerNotice("انتهى وقت هذا الجزء — سُجّلت إجابتك وانتقلنا إلى الجزء التالي.");
     } else {
       setPhase("scoring");
+      setTimerNotice("انتهى وقت التدريب — سُجّلت إجاباتك، حان وقت التقييم الذاتي.");
     }
   });
 
@@ -249,6 +257,7 @@ export function OralExam() {
     setPartIdx(0);
     setQuestionIdx(0);
     setCurrentAnswer("");
+    setTimerNotice("");
   };
 
   const nextQuestion = () => {
@@ -336,6 +345,14 @@ export function OralExam() {
   if (phase === "scoring") {
     return (
       <div className="space-y-5">
+        {/* الإعلان يفرّق بين انتهاء الوقت (alert: تغيّر لم يطلبه المستخدم) وإنهاء
+            المستخدم بنفسه (status: نتيجة فعلَه هو). */}
+        <p
+          role={timerNotice ? "alert" : "status"}
+          className="rounded-xl border border-primary/40 bg-primary/5 p-3 text-sm font-bold"
+        >
+          {timerNotice || "أنهيت التدريب — سُجّلت إجاباتك، حان وقت التقييم الذاتي."}
+        </p>
         <h3 className="text-xl font-extrabold">قيّم أداءك (مثل الممتحن)</h3>
         <div className="space-y-4">
           {RUBRIC.map((r) => (
@@ -415,6 +432,9 @@ export function OralExam() {
           </span>
         ))}
         <TestTimer seconds={remaining} total={totalSeconds} />
+        <span role="status" aria-live="polite" className="sr-only">
+          {timerNotice}
+        </span>
       </div>
 
       {/* بطاقة موضوع B2 — في Teil 1 (العرض) */}

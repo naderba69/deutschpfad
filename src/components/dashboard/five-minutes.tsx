@@ -86,7 +86,8 @@ export function FiveMinutes() {
     seededSample(QUICK_EXERCISES, 3, dailySeed("five-minutes")),
   );
   const [done, setDone] = React.useState(false);
-  const remaining = useCountdown(TOTAL_SECONDS, () => setDone(true));
+  const [paused, setPaused] = React.useState(false);
+  const remaining = useCountdown(TOTAL_SECONDS, () => setDone(true), {paused});
 
   const activeLevel = isHydrated ? getActiveLevel(completedUnits, sealedLevels) : "A1";
   const units = getUnitsByLevel(activeLevel);
@@ -101,9 +102,27 @@ export function FiveMinutes() {
           <Zap className="h-5 w-5 text-gold-strong" aria-hidden="true" />
           كبسولة 5 دقائق — للأيام المزدحمة
         </p>
-        <span className="font-de rounded-lg border border-primary/30 bg-primary/5 px-3 py-1.5 text-sm font-bold text-primary tabular-nums" role="timer">
-          ⏱ {formatTime(remaining)}
-        </span>
+        <div className="flex flex-wrap items-center gap-2">
+          <span
+            className="font-de rounded-lg border border-primary/30 bg-primary/5 px-3 py-1.5 text-sm font-bold text-primary tabular-nums"
+            role="timer"
+            aria-label={`الوقت المتبقي في الكبسولة: ${formatTime(remaining)}`}
+          >
+            ⏱ {formatTime(remaining)}
+          </span>
+          {/* WCAG 2.2.1: عدّاد الكبسولة حدّ زمني من المحتوى لا من المستخدم،
+              فيجب أن يُوقَف ويُستأنف. الاستئناف يكمل ولا يعيد الضبط. */}
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={() => setPaused((p) => !p)}
+            aria-pressed={paused}
+            disabled={done}
+            className="gap-1.5"
+          >
+            {paused ? "متابعة الكبسولة" : "إيقاف مؤقت"}
+          </Button>
+        </div>
       </div>
 
       {done && (
@@ -114,6 +133,9 @@ export function FiveMinutes() {
           </p>
         </div>
       )}
+      <span className="sr-only" role="status" aria-live="polite">
+        {done ? "انتهت مدة الكبسولة (5 دقائق)." : paused ? "أُوقف العدّاد مؤقتاً." : ""}
+      </span>
 
       {/* كلمة اليوم */}
       <Card>
