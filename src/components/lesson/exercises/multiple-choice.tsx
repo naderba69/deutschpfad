@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import {LangDe} from "@/components/shared/lang-de";
 
 import {Lightbulb} from "lucide-react";
 import {SpeakButton} from "@/components/shared/speak-button";
@@ -49,8 +50,8 @@ export function MultipleChoiceExercise({
     <div className="space-y-4">
       <div className="rounded-xl border bg-muted/30 p-4">
         <div className="flex items-start justify-between gap-3">
-          <p className="font-de text-lg font-semibold" dir="ltr" lang="de">
-            {exercise.questionDe}
+          <p className="text-lg font-semibold">
+            <LangDe>{exercise.questionDe}</LangDe>
           </p>
           <SpeakButton text={exercise.questionDe} />
         </div>
@@ -94,9 +95,9 @@ export function MultipleChoiceExercise({
                 state.revealedSolution && !isCorrectOption && "opacity-50",
               )}
             >
-              <span className="font-de font-medium" dir="ltr" lang="de">
+              <LangDe className="font-medium">
                 {option}
-              </span>
+              </LangDe>
             </button>
           );
         })}
@@ -125,7 +126,9 @@ export function MultipleChoiceExercise({
         <>
           <p className="text-xs text-muted-foreground">{exercise.instructionAr}</p>
           {exercise.instructionDe && (
-            <p className="font-de text-xs text-muted-foreground" dir="ltr" lang="de" data-testid="exercise-instruction-de">{exercise.instructionDe}</p>
+            <p className="text-xs text-muted-foreground" data-testid="exercise-instruction-de">
+          <LangDe>{exercise.instructionDe}</LangDe>
+        </p>
           )}
         </>
       )}

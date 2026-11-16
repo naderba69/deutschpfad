@@ -2,6 +2,7 @@
 
 import {AlertTriangle, Brain, Landmark} from "lucide-react";
 
+import {LangDe} from "@/components/shared/lang-de";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import type { FehlerUndTipps } from "@/types/lesson";
 
@@ -23,15 +24,17 @@ export function FehlerUndTippsSection({ data }: { data: FehlerUndTipps }) {
           {data.mistakes.map((m, i) => (
             <div key={i} className="rounded-xl border bg-background p-3">
               <div className="flex flex-wrap items-center gap-2 text-sm">
-                <span className="rounded-lg bg-destructive/10 px-2 py-1 font-de text-destructive line-through decoration-2" dir="ltr" lang="de">
+                <LangDe className="rounded-lg bg-destructive/10 px-2 py-1 text-destructive line-through decoration-2">
                   {m.wrong}
-                </span>
+                </LangDe>
                 <span className="text-muted-foreground">← الصواب:</span>
-                <span className="rounded-lg bg-success/10 px-2 py-1 font-de font-semibold text-success" dir="ltr" lang="de">
+                <LangDe className="rounded-lg bg-success/10 px-2 py-1 font-semibold text-success">
                   {m.right}
-                </span>
+                </LangDe>
               </div>
-              <p className="mt-1.5 text-sm text-muted-foreground">{m.whyAr}</p>
+              <p className="mt-1.5 text-sm text-muted-foreground">
+                <LangDe>{m.whyAr}</LangDe>
+              </p>
             </div>
           ))}
         </CardContent>

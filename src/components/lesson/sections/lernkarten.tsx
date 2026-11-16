@@ -3,6 +3,7 @@
 import * as React from "react";
 import {BookmarkPlus, Check, Layers, RotateCcw, Volume2} from "lucide-react";
 
+import {LangDe} from "@/components/shared/lang-de";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent} from "@/components/ui/card";
 import {SpeakAndScore} from "@/components/lesson/speech/speak-and-score";
@@ -148,21 +149,21 @@ export function LernkartenSection({ lessonId, flashcards: sourceCards }: { lesso
               <CardContent className="flex h-full min-h-40 flex-col items-center justify-center gap-3 p-5 text-center">
                 {!isFlipped ? (
                   <>
-                    <span className="font-de text-xl font-bold" dir="ltr" lang="de">
+                    <LangDe className="text-xl font-bold">
                       {card.de}
-                    </span>
+                    </LangDe>
                     <span className="text-xs text-muted-foreground">اضغط لرؤية المعنى</span>
                   </>
                 ) : (
                   <>
-                    <span className="font-de text-xl font-bold text-primary" dir="ltr" lang="de">
+                    <LangDe className="text-xl font-bold text-primary">
                       {card.de}
-                    </span>
+                    </LangDe>
                     <span className="text-lg font-bold">{card.ar}</span>
                     {card.example && (
                       <div className="rounded-lg bg-muted/40 p-2 text-xs">
-                        <p className="font-de" dir="ltr" lang="de">
-                          {card.example}
+                        <p>
+                          <LangDe>{card.example}</LangDe>
                         </p>
                         {card.exampleAr && <p className="mt-0.5 text-muted-foreground">{card.exampleAr}</p>}
                       </div>

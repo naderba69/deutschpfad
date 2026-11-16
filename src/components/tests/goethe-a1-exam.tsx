@@ -9,6 +9,7 @@
  */
 
 import * as React from "react";
+import {LangDe} from "@/components/shared/lang-de";
 
 import { Button } from "@/components/ui/button";
 import { FilterChip } from "@/components/ui/filter-chip";
@@ -56,7 +57,10 @@ export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
   return (
     <div className="mx-auto w-full max-w-4xl space-y-6 px-4 py-10 sm:px-6" dir="rtl">
       <header className="space-y-2">
-        <h1 className="text-2xl font-extrabold">نموذج تدريبي — {level} (بنية {({ A1: "Start Deutsch 1", A2: "Goethe A2", B1: "Goethe B1" } as const)[level]})</h1>
+        <h1 className="text-2xl font-extrabold">
+          نموذج تدريبي — {level} (بنية{" "}
+          <LangDe>{({ A1: "Start Deutsch 1", A2: "Goethe A2", B1: "Goethe B1" } as const)[level]}</LangDe>)
+        </h1>
         <p className="text-sm text-muted-foreground">
           هذا نموذج تدريبي من إعداد المنصة، وليس امتحاناً رسمياً من Goethe-Institut.
           {models.length > 1 ? ` النموذج الحالي: ${model.label}.` : ""}

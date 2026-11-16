@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import {LangDe} from "@/components/shared/lang-de";
 import {ChevronLeft, ChevronRight, Headphones, Send} from "lucide-react";
 
 import {SpeakButton} from "@/components/shared/speak-button";
@@ -242,8 +243,8 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
             <div className="mt-4 space-y-4">
               {current.questions.map((sub, i) => (
                 <div key={i} className="rounded-xl border bg-muted/10 p-3">
-                  <p className="font-de text-sm font-bold" dir="ltr" lang="de">
-                    {sub.q}
+                  <p className="text-sm font-bold">
+                    <LangDe>{sub.q}</LangDe>
                   </p>
                   {sub.qAr && <p className="mt-0.5 text-xs text-muted-foreground">{sub.qAr}</p>}
                   <div className="mt-2 grid grid-cols-1 gap-1.5 sm:grid-cols-2" role="radiogroup" aria-label={sub.q} {...nav}>
@@ -263,9 +264,7 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
                               : "hover:border-primary/40 hover:bg-primary/5",
                           )}
                         >
-                          <span className="font-de" dir="ltr" lang="de">
-                            {opt}
-                          </span>
+                          <LangDe>{opt}</LangDe>
                         </button>
                       );
                     })}
@@ -277,8 +276,8 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
 
         {current.kind === "writing" ? (
           <div className="space-y-3">
-            <p className="font-de text-lg font-bold" dir="ltr" lang="de">
-              {current.prompt}
+            <p className="text-lg font-bold">
+              <LangDe>{current.prompt}</LangDe>
             </p>
             <p className="text-sm text-muted-foreground">{current.promptAr}</p>
             {current.rubric && (
@@ -300,8 +299,8 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
         ) : (
           <>
             {current.questionDe && (
-              <p className="font-de text-lg font-bold" dir="ltr" lang="de">
-                {current.questionDe}
+              <p className="text-lg font-bold">
+                <LangDe>{current.questionDe}</LangDe>
               </p>
             )}
             {current.questionAr && (
@@ -324,9 +323,7 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
                         selected && "border-primary bg-primary/10 ring-2 ring-ring",
                       )}
                     >
-                      <span className="font-de font-medium" dir="ltr" lang="de">
-                        {opt}
-                      </span>
+                      <LangDe className="font-medium">{opt}</LangDe>
                     </button>
                   );
                 })}

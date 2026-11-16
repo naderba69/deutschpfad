@@ -1,6 +1,8 @@
 "use client";
 
 import * as React from "react";
+
+import {LangDe} from "@/components/shared/lang-de";
 import {BrainCircuit, CheckCircle2, RotateCcw, Star} from "lucide-react";
 
 import {QUALITY_BUTTONS} from "@/lib/srs/sm2";
@@ -157,8 +159,8 @@ export function ReviewSession({ refreshKey }: ReviewSessionProps) {
             <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
               تذكّر المعنى أولاً…
             </span>
-            <p className="font-de text-3xl font-extrabold" dir="ltr" lang="de">
-              {card.de}
+            <p className="text-3xl font-extrabold">
+              <LangDe>{card.de}</LangDe>
             </p>
             <span className="text-xs text-muted-foreground">اضغط للكشف عن الترجمة</span>
           </div>
@@ -170,9 +172,9 @@ export function ReviewSession({ refreshKey }: ReviewSessionProps) {
             <p className="text-2xl font-bold">{card.ar}</p>
             {card.example && (
               <div className="mx-auto max-w-md rounded-xl bg-muted/40 p-3 text-sm">
-                <p className="font-de" dir="ltr" lang="de">
+                <LangDe>
                   {card.example}
-                </p>
+                </LangDe>
                 {card.exampleAr && (
                   <p className="mt-1 text-muted-foreground">{card.exampleAr}</p>
                 )}

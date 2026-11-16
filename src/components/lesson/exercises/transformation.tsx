@@ -5,6 +5,7 @@ import {Check, Send} from "lucide-react";
 
 import {FeedbackPanel} from "@/components/lesson/exercises/feedback-panel";
 import {AutoGrowTextarea} from "@/components/shared/auto-grow-textarea";
+import {LangDe} from "@/components/shared/lang-de";
 import {useExerciseState} from "@/components/lesson/exercises/use-exercise-state";
 import {Button} from "@/components/ui/button";
 import {evaluateTransformation} from "@/lib/lesson/exercise-engine";
@@ -45,8 +46,8 @@ export function TransformationExerciseView({
       )}
 
       <div className="rounded-xl border bg-muted/30 p-4">
-        <p className="font-de text-lg font-semibold" dir="ltr" lang="de">
-          {exercise.prompt}
+        <p className="text-lg font-semibold">
+          <LangDe>{exercise.prompt}</LangDe>
         </p>
       </div>
 

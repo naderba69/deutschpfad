@@ -4,6 +4,7 @@ import * as React from "react";
 import {Award, Mic, MicOff, RotateCcw, Star, Users} from "lucide-react";
 
 import {TestTimer} from "@/components/tests/test-timer";
+import {LangDe} from "@/components/shared/lang-de";
 import {SpeakButton} from "@/components/shared/speak-button";
 import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
@@ -311,7 +312,9 @@ export function OralExam() {
             )}
           >
             <p className="font-de text-lg font-extrabold text-primary">B1</p>
-            <p className="mt-1 text-sm font-bold">Sich vorstellen + Thema + Planung</p>
+            <p className="mt-1 text-sm font-bold">
+              <LangDe>Sich vorstellen + Thema + Planung</LangDe>
+            </p>
             <p className="mt-1 text-xs text-muted-foreground">
               تقديم النفس (3د) + حديث عن موضوع (4د) + حل مشكلة (3د) — كما في Zertifikat B1.
             </p>
