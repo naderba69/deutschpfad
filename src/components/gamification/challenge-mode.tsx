@@ -77,12 +77,17 @@ export function ChallengeMode() {
   const [index, setIndex] = React.useState(0);
   const [score, setScore] = React.useState(0);
 
+  /* الجولة الحادية عشرة (4.1.3): كان انتقال السؤال عند انتهاء العشر ثوانٍ
+     يحدث بصمت — تتبدّل البطاقة وحدها. نصّ الإعلان هنا يُقرأ مرة عند كل انتهاء. */
+  const [expiredNotice, setExpiredNotice] = React.useState("");
+
   const remaining = useCountdown(phase === "running" ? SECONDS_PER_QUESTION : 0, () => {
     // انتهاء وقت السؤال → التالي بلا نقاط — ونُسجّل خطأً صريحاً (P1-01)
     const currentQ = questions[index];
     if (currentQ) {
       void recordEvent({ type: "exercise-result", exerciseId: currentQ.id, exerciseType: currentQ.type, correct: false, points: 0, errorType: currentQ.errorType, timedOut: true } as never);
     }
+    setExpiredNotice(`انتهى وقت السؤال ${index + 1} — انتقلنا إلى السؤال التالي بلا نقاط.`);
     advance();
   });
 
@@ -139,6 +144,10 @@ export function ChallengeMode() {
     const maxScore = QUESTIONS * 10 + QUESTIONS * SECONDS_PER_QUESTION * BONUS_PER_SECOND;
     return (
       <div className="rounded-2xl border bg-muted/20 p-8 text-center">
+        {/* نهاية التحدي كانت تبدّل الشاشة بصمت. role=status يُعلن النتيجة مرة. */}
+        <p role="status" aria-live="polite" className="sr-only">
+          انتهى التحدي — نتيجتك {score} نقطة.
+        </p>
         <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-full bg-gold/10">
           <Zap className="h-8 w-8 text-gold-strong" aria-hidden="true" />
         </span>
@@ -166,8 +175,13 @@ export function ChallengeMode() {
           سؤال {index + 1}/{QUESTIONS}
         </p>
         <span className="font-de text-sm font-bold text-primary">⭐ {score}</span>
-        <span className="font-de rounded-lg border border-gold/50 bg-gold/10 px-3 py-1 text-sm font-bold text-gold-strong-foreground tabular-nums">
-          ⏱ {formatTime(remaining)}
+        <span
+          role="timer"
+          aria-label={`الوقت المتبقي لهذا السؤال: ${formatTime(remaining)}`}
+          className="font-de rounded-lg border border-gold/50 bg-gold/10 px-3 py-1 text-sm font-bold text-gold-strong-foreground tabular-nums"
+        >
+          <span aria-hidden="true">⏱ </span>
+          {formatTime(remaining)}
         </span>
       </div>
       <Progress value={((index + 1) / QUESTIONS) * 100} aria-label="التقدم في التحدي" />
@@ -181,6 +195,9 @@ export function ChallengeMode() {
       )}
       <p className="text-center text-xs text-muted-foreground">
         ⚡ كلما أجبت أسرع، زادت نقاطك — التحدي يختبر سرعتك ودقتك معاً!
+      </p>
+      <p role="status" aria-live="polite" className="sr-only">
+        {expiredNotice}
       </p>
     </div>
   );

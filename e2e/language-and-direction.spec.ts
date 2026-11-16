@@ -72,7 +72,9 @@ test.describe("الجذر والجملة الألمانية", () => {
 
   test("خيارات الاختبار الألمانية موسومة lang=de", async ({page}) => {
     await page.goto("/tests/unit/a1-03");
-    await page.getByRole("button", {name: /قواعد ومفردات الوحدة/}).first().click();
+    /* أسماء الأقسام صارت تطابق المهارات الفعلية في اختبار الوحدة
+       (`grammatik` + `wortschatz`) بعد إصلاح الجولة الحادية عشرة. */
+    await page.getByRole("button", {name: /قواعد الوحدة/}).first().click();
 
     const option = page.getByRole("radio", {name: "Er ist ein Lehrer"}).first();
     await expect(option).toBeVisible({timeout: 15_000});
