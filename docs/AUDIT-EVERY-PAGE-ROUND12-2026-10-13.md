@@ -83,7 +83,7 @@
 | `src/components/learning-path/level-hub.tsx` | نجوم الإتقان (`span` + `aria-label`) يُهمَل الاسم والنجوم `aria-hidden` | `role="img"` ليُقرأ «إتقان الدرس 2 من 3 نجوم» |
 | `src/components/lesson/sections/mini-test.tsx` | `aria-label="تقدم الأسئلة"` على `div` | `role="group"` |
 | `src/components/writing/writing-path-client.tsx` | مؤشر النسبة بـ`aria-label` على `span` | `role="img"` |
-| `src/components/lesson/lesson-client.tsx` | التمرير التلقائي بعد «التالي» يضع بطاقة القسم على 236px لأن ارتفاع الشريط اللاصق يستقر بعد أول رندر | تمرير صريح (`scrollY + rect.top − header − الشريط − 12`) بعد استقرار التخطيط؛ البطاقة عند 113px (تحت الأشرطة، فوق منتصف الشاشة) |
+| `src/components/lesson/lesson-scroll.ts` (جديد) | التمرير التلقائي بعد «التالي» يضع بطاقة القسم على 236px لأن ارتفاع الشريط اللاصق يستقر بعد أول رندر | تمرير صريح (`scrollY + rect.top − header − الشريط − 12`) بعد استقرار التخطيط؛ البطاقة عند 113px. المنطق في وحدة مستقلة كي لا يتجاوز `lesson-client.tsx` سقف الحجم المسجَّل (791 ≤ 792) |
 | `src/components/lesson/exercises/word-ordering.tsx` | مناطق الإسقاط `aria-label` على `div` بلا دور؛ الكلمات بلا اسم يشرح الفعل | `role="group"` للمنطقتين، `aria-label="أضف الكلمة «…» إلى الجملة"` / `"إزالة الكلمة «…»"` |
 
 ## 5. جدول كل مسار — سطح المكتب 1280×900
