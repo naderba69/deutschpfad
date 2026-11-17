@@ -35,6 +35,7 @@ import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Progress} from "@/components/ui/progress";
 import {SectionStrip} from "@/components/lesson/section-strip";
 import {StarkeVerbenTable} from "@/components/verbs/starke-verben-table";
+import {scrollToLessonTarget} from "./lesson-scroll";
 import {cn} from "@/lib/utils";
 import type { Exercise, Lesson } from "@/types/lesson";
 
@@ -420,8 +421,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       ? "lesson-step-content"
       : `lesson-section-${sectionDefs[currentSection]?.id}`;
     if (!targetId) return;
-    const el = document.getElementById(targetId);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    return scrollToLessonTarget(targetId);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSection, stepMode]);
 
@@ -664,7 +664,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
             الكتابة ← التدريبات ← الأخطاء والحيل ← التقييم ← البطاقات) */
         <div className="space-y-4">
           {/* شريط التقدم اللاصق — يبقى مرئياً دائماً حتى في السكرول الطويل */}
-          <div className="sticky top-16 z-30 flex items-center gap-3 rounded-xl border bg-background/95 px-4 py-2.5 shadow-sm backdrop-blur-md">
+          <div data-lesson-sticky-strip className="sticky top-16 z-30 flex items-center gap-3 rounded-xl border bg-background/95 px-4 py-2.5 shadow-sm backdrop-blur-md">
             <Progress value={progressPct} className="h-2.5 flex-1" aria-label={`الخطوة ${currentSection + 1} من ${total}`} />
             <span className="font-de shrink-0 text-sm font-extrabold text-primary">{currentSection + 1}/{total}</span>
             <span className="max-w-24 shrink-0 truncate rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-bold text-primary">

@@ -30,10 +30,13 @@ export function HomeContent() {
 
   // انتظار التحميل — هيكل عظمي بدل الفراغ (يمنع الوميض/إعادة التخطيط)
   // h1 مخفي في SSR: يضمن وجود عنوان رئيسي في HTML الخادمي قبل اكتمال الفحص
+  /* aria-label على div بلا دور يُهمَل تماماً (WCAG 4.1.2): الدور يجعل الاسم
+     مقروءاً، و aria-busy وحده لا يُعلن الحالة. */
   if (hasProfile === null) {
     return (
       <div
         className="mx-auto w-full max-w-7xl min-h-[calc(100dvh-4rem)] space-y-6 px-4 py-10 sm:px-6"
+        role="status"
         aria-busy="true"
         aria-label="جارٍ تحميل صفحتك"
       >

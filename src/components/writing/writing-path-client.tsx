@@ -231,7 +231,13 @@ export function WritingPathClient() {
               مؤشر آلي غير معياري يعتمد على الطول وبعض العلامات الشكلية وقواعد بسيطة. لا يتحقق من إنجاز المهمة أو صحة النص كاملةً، ولا يمثل مستوى CEFR أو درجة Goethe.
             </p>
             <div className="flex flex-wrap items-center gap-3">
-              <span className="font-de text-3xl font-extrabold text-foreground" aria-label={`مؤشر داخلي ${result.pct} بالمئة`}>{result.pct}%</span>
+              <span
+                role="img"
+                className="font-de text-3xl font-extrabold text-foreground"
+                aria-label={`مؤشر داخلي ${result.pct} بالمئة`}
+              >
+                {result.pct}%
+              </span>
               <div>
                 <p className="text-sm font-extrabold">مؤشر الفحص الداخلي</p>
                 <p className="text-xs text-muted-foreground">{result.recommendation}</p>

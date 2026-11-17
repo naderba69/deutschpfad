@@ -202,7 +202,7 @@ export function MiniTestSection({
         </div>
       )}
 
-      <div className="flex gap-1.5" aria-label="تقدم الأسئلة">
+      <div className="flex gap-1.5" role="group" aria-label="تقدم الأسئلة">
         {questions.map((q, i) => {
           const state = scores[q.id];
           return (
