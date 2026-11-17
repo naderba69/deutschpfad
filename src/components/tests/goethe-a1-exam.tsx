@@ -65,16 +65,20 @@ export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
           هذا نموذج تدريبي من إعداد المنصة، وليس امتحاناً رسمياً من Goethe-Institut.
           {models.length > 1 ? ` النموذج الحالي: ${model.label}.` : ""}
         </p>
-        <nav className="flex flex-wrap gap-2 text-sm">
+        {/* مراحل النموذج مؤشّر تقدّم لا تنقّل: عناصرها `<span>` غير قابلة للنقر،
+            فوصفها `<nav>` يضيف معلماً ثانياً بلا اسم لقائمة معالم قارئ الشاشة
+            (2.4.6/1.3.1). قائمة مرتّبة باسم صريح، والمعلَّم عليها `aria-current`. */}
+        <ol className="flex flex-wrap gap-2 text-sm" aria-label="مراحل النموذج">
           {(["intro", "hoeren", "lesen", "schreiben", "sprechen", "result"] as Phase[]).map((p) => (
-            <span
+            <li
               key={p}
+              aria-current={phase === p ? "step" : undefined}
               className={`rounded-full border px-3 py-1 ${phase === p ? "border-primary font-bold" : ""}`}
             >
               {{ intro: "المقدمة", hoeren: "الاستماع", lesen: "القراءة", schreiben: "الكتابة", sprechen: "التحدث", result: "النتيجة" }[p]}
-            </span>
+            </li>
           ))}
-        </nav>
+        </ol>
       </header>
 
       {phase === "intro" && (
