@@ -207,7 +207,11 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
                   </span>
                 )}
                 {!locked && (
-                  <span className="flex shrink-0 items-center gap-0.5 text-[11px]" aria-label={`إتقان الدرس ${getLessonStars(lesson.id)} من 3 نجوم`}>
+                  <span
+                    role="img"
+                    className="flex shrink-0 items-center gap-0.5 text-[11px]"
+                    aria-label={`إتقان الدرس ${getLessonStars(lesson.id)} من 3 نجوم`}
+                  >
                     {[0, 1, 2].map((si) => (
                       <span key={si} className={si < getLessonStars(lesson.id) ? "text-gold" : "opacity-20 grayscale"} aria-hidden="true">★</span>
                     ))}

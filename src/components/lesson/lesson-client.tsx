@@ -421,7 +421,22 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       : `lesson-section-${sectionDefs[currentSection]?.id}`;
     if (!targetId) return;
     const el = document.getElementById(targetId);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (!el) return;
+    /* الجولة الثانية عشرة: `scrollIntoView({block:"start"})` صار يضع البطاقة
+       تحت الأشرطة مباشرة بفضل scroll-padding، لكن ارتفاع الشريط اللاصق يتغيّر
+       بعد أول رندر فتنتقل البطاقة إلى 236px. الحساب الصريح (ارتفاع الهيدر +
+       الشريط اللاصق) يعطي 120px ثابتة، ويُعاد بعد استقرار التخطيط. */
+    const scrollToTarget = () => {
+      const target = document.getElementById(targetId);
+      if (!target) return;
+      const header = document.querySelector("header")?.getBoundingClientRect().height ?? 0;
+      const strip =
+        document.querySelector("[data-lesson-sticky-strip]")?.getBoundingClientRect().height ?? 0;
+      const top = window.scrollY + target.getBoundingClientRect().top - header - strip - 12;
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+    };
+    const settle = window.setTimeout(scrollToTarget, 120);
+    return () => window.clearTimeout(settle);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSection, stepMode]);
 
@@ -664,7 +679,10 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
             الكتابة ← التدريبات ← الأخطاء والحيل ← التقييم ← البطاقات) */
         <div className="space-y-4">
           {/* شريط التقدم اللاصق — يبقى مرئياً دائماً حتى في السكرول الطويل */}
-          <div className="sticky top-16 z-30 flex items-center gap-3 rounded-xl border bg-background/95 px-4 py-2.5 shadow-sm backdrop-blur-md">
+          <div
+            data-lesson-sticky-strip
+            className="sticky top-16 z-30 flex items-center gap-3 rounded-xl border bg-background/95 px-4 py-2.5 shadow-sm backdrop-blur-md"
+          >
             <Progress value={progressPct} className="h-2.5 flex-1" aria-label={`الخطوة ${currentSection + 1} من ${total}`} />
             <span className="font-de shrink-0 text-sm font-extrabold text-primary">{currentSection + 1}/{total}</span>
             <span className="max-w-24 shrink-0 truncate rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-bold text-primary">

@@ -76,7 +76,9 @@ test.describe("الجذر والجملة الألمانية", () => {
        (`grammatik` + `wortschatz`) بعد إصلاح الجولة الحادية عشرة. */
     await page.getByRole("button", {name: /قواعد الوحدة/}).first().click();
 
-    const option = page.getByRole("radio", {name: "Er ist ein Lehrer"}).first();
+    /* الأسئلة نفسها تُخلط ببذرة يومية، فالاعتماد على نص خيار بعينه يجعل
+       الاختبار يفشل غداً بلا تغيير في الكود. نفحص أول خيار معروض أياً كان. */
+    const option = page.getByRole("radio").first();
     await expect(option).toBeVisible({timeout: 15_000});
     await expect(option.locator("[lang='de']")).toHaveCount(1);
   });
