@@ -6,12 +6,6 @@ import { LazySealExam } from "@/components/tests/lazy/lazy-seal-exam";
 import { Card, CardContent } from "@/components/ui/card";
 import { Zap, ShieldCheck } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "امتحان الختم — بوابة الانتقال بين المستويات",
-  description:
-    "اختبار داخلي لبوابة التقدم بين المستويات. عتبة النجاح قرار تدريبي داخل المنصة ولا تمثل امتحان Goethe أو إثباتاً لإتقان المستوى.",
-};
-
 export function generateStaticParams() {
   return ["a1", "a2", "b1", "b2"].map((level) => ({ level }));
 }
@@ -19,6 +13,16 @@ export function generateStaticParams() {
 interface Props {
   params: Promise<{ level: string }>;
   searchParams: Promise<{ mode?: string }>;
+}
+
+/** 2.4.2 — عنوان يذكر المستوى: أربع بوابات ختم كانت تتشارك عنواناً واحداً. */
+export async function generateMetadata({ params }: { params: Promise<{ level: string }> }): Promise<Metadata> {
+  const { level: raw } = await params;
+  return {
+    title: `امتحان الختم ${raw.toUpperCase()} — بوابة الانتقال`,
+    description:
+      `اختبار داخلي لبوابة الانتقال إلى ما بعد ${raw.toUpperCase()}. عتبة النجاح قرار تدريبي داخل المنصة ولا تمثل امتحان Goethe أو إثباتاً لإتقان المستوى.`,
+  };
 }
 
 export default async function SealExamPage({ params, searchParams }: Props) {

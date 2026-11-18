@@ -108,8 +108,10 @@ export function SpeakButton({
         variant={variant}
         size={size}
         onClick={speak}
-        aria-label={ariaLabel ?? `استمع: ${text}`}
-        title={ariaLabel ?? `استمع: ${text}`}
+        /* 2.5.3: إن كان للزر نص مرئي («استمع للفعل») فلا بد أن يكون جزءاً من
+           الاسم الميسور، وإلا لم يجده من يستخدم الإدخال الصوتي بما ينطقه. */
+        aria-label={ariaLabel ?? (label ? `${label}: ${text}` : `استمع: ${text}`)}
+        title={ariaLabel ?? (label ? `${label}: ${text}` : `استمع: ${text}`)}
         className={cn("shrink-0", className)}
       >
         {speaking ? <Loader2 className="h-4 w-4 animate-spin" /> : <Volume2 className="h-4 w-4" />}
