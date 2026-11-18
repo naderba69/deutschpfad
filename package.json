@@ -36,7 +36,8 @@
     "audit:lang": "NODE_PATH=${NODE_PATH:-/tmp/vb/node_modules} node scripts/audit-lang.mjs",
     "audit:time": "NODE_PATH=${NODE_PATH:-/tmp/vb/node_modules} node scripts/audit-time.mjs",
     "audit:wcag22": "NODE_PATH=${NODE_PATH:-/tmp/vb/node_modules} node scripts/audit-wcag22.mjs",
-    "audit:structure": "NODE_PATH=${NODE_PATH:-/tmp/vb/node_modules} node scripts/audit-structure.mjs"
+    "audit:structure": "NODE_PATH=${NODE_PATH:-/tmp/vb/node_modules} node scripts/audit-structure.mjs",
+    "audit:nontext": "NODE_PATH=${NODE_PATH:-/tmp/vb/node_modules} node scripts/audit-nontext.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",

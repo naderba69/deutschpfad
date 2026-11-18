@@ -88,7 +88,7 @@ export function OfficialFormsPlayer({ formId }: { formId: string }) {
                   aria-invalid={attempted && (values[field.id] ?? "").trim() === "" ? true : undefined}
                   aria-describedby={attempted && (values[field.id] ?? "").trim() === "" ? errId(field.id) : undefined}
                   className={cn(
-                    "w-full rounded-lg border bg-background px-3 py-2 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring",
+                    "w-full rounded-lg border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring",
                     values[field.id] ? "" : "text-muted-foreground",
                   )}
                 >

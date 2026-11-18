@@ -272,7 +272,7 @@ export function AiVoiceTeacher() {
             <select
               value={topic.id}
               onChange={(e) => setTopic(TOPICS.find((t) => t.id === e.target.value) ?? TOPICS[0])}
-              className="min-h-8 rounded-lg border bg-background px-2 py-1 text-xs font-bold outline-none focus:border-primary"
+              className="min-h-8 rounded-lg border border-input bg-background px-2 py-1 text-xs font-bold outline-none focus:border-primary"
               aria-label="موضوع المحادثة"
             >
               {TOPICS.map((t) => (
@@ -399,7 +399,7 @@ export function AiVoiceTeacher() {
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            <div className="flex flex-1 items-center gap-2 rounded-xl border bg-background px-3 focus-within:border-primary">
+            <div className="flex flex-1 items-center gap-2 rounded-xl border border-input bg-background px-3 focus-within:border-primary">
               <MessageCircle className="h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />
               <input
                 value={input}

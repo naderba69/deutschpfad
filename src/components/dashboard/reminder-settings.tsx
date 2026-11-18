@@ -118,7 +118,7 @@ export function ReminderSettings() {
                 <select
                   value={prefs.hour}
                   onChange={(e) => void save({ ...prefs, hour: Number(e.target.value) })}
-                  className="rounded-lg border bg-background px-2 py-1.5 text-xs font-bold outline-none focus:border-primary"
+                  className="rounded-lg border border-input bg-background px-2 py-1.5 text-xs font-bold outline-none focus:border-primary"
                   aria-label="ساعة التذكير"
                 >
                   {Array.from({ length: 24 }, (_, h) => (
