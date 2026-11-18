@@ -164,14 +164,24 @@ test.describe("2.3.1 — لا وميض", () => {
   test("الصفحة الرئيسية: لا عنصر يومض، والمقياس نفسه يكشف وميضاً محقوناً", async ({ page }) => {
     await page.goto("/");
     await expect(page.locator("h1").first()).toBeVisible({ timeout: 15_000 });
-    /* الحركات الطبيعية أبطأ من أن تبلغ ثلاث ومضات في الثانية */
-    const natural = await page.evaluate(() =>
+    /* ثلاث ومضات في الثانية تحتاج دورة أقصر من 333ms؛ والحركة اللانهائية
+       يجب ألا تكون أسرع من ثانية. حركة دخول واحدة 700ms ليست وميضاً. */
+    const risky = await page.evaluate(() =>
       document
         .getAnimations()
-        .map((a) => Number(a.effect?.getTiming?.().duration) || 0)
-        .filter((d) => d > 0),
+        .map((a) => {
+          const t = a.effect?.getTiming?.() || {};
+          return {
+            name: (a as Animation & { animationName?: string; transitionProperty?: string }).animationName ||
+              (a as Animation & { transitionProperty?: string }).transitionProperty ||
+              "?",
+            duration: Number(t.duration) || 0,
+            infinite: t.iterations === Infinity,
+          };
+        })
+        .filter((a) => a.duration > 0 && ((a.infinite && a.duration < 1000) || a.duration < 333)),
     );
-    expect(natural.every((d) => d >= 1000), `حركات قصيرة: ${natural.filter((d) => d < 1000)}`).toBe(true);
+    expect(risky, `حركات قد تومض: ${JSON.stringify(risky)}`).toEqual([]);
 
     /* تحكّم سلبي: عطل وميض 120ms يُرصد فعلاً بنفس الدالة */
     await page.evaluate(() => {
