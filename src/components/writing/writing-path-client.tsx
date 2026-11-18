@@ -207,7 +207,7 @@ export function WritingPathClient() {
           dir="ltr"
           lang="de"
           placeholder="Schreiben Sie hier auf Deutsch…"
-          className="font-de mt-2 min-h-40 w-full rounded-xl border bg-muted/20 p-3 text-sm outline-none ring-primary/40 focus:ring-2"
+          className="font-de mt-2 min-h-40 w-full rounded-xl border border-input bg-muted/20 p-3 text-sm outline-none ring-primary/40 focus:ring-2"
         />
         <div className="mt-2 flex items-center justify-between">
           <div className="flex-1" />

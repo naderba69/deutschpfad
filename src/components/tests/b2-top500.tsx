@@ -91,7 +91,7 @@ export function B2Top500() {
             value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="ابحث بالعربية أو الألمانية…"
-              className="h-9 w-full rounded-lg border bg-background pe-9 ps-3 text-sm outline-none focus:border-primary"
+              className="h-9 w-full rounded-lg border border-input bg-background pe-9 ps-3 text-sm outline-none focus:border-primary"
             />
           </div>
         </div>
