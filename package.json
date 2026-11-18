@@ -39,7 +39,8 @@
     "audit:structure": "NODE_PATH=${NODE_PATH:-/tmp/vb/node_modules} node scripts/audit-structure.mjs",
     "audit:nontext": "NODE_PATH=${NODE_PATH:-/tmp/vb/node_modules} node scripts/audit-nontext.mjs",
     "audit:residual": "NODE_PATH=${NODE_PATH:-/tmp/vb/node_modules} node scripts/audit-residual.mjs",
-    "audit:semantics": "NODE_PATH=${NODE_PATH:-/tmp/vb/node_modules} node scripts/audit-semantics.mjs"
+    "audit:semantics": "NODE_PATH=${NODE_PATH:-/tmp/vb/node_modules} node scripts/audit-semantics.mjs",
+    "audit:conformance": "NODE_PATH=${NODE_PATH:-/tmp/vb/node_modules} node scripts/audit-conformance.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",
