@@ -1,4 +1,4 @@
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test, type Locator, type Page } from "@playwright/test";
 
 /**
  * الجولة الرابعة عشرة — التباين غير النصي ومؤشر التركيز والمحتوى عند التحويم.
@@ -120,50 +120,142 @@ test.describe("1.4.11 — حدود الحقول ≥3:1 في المظهرين", (
   }
 });
 
+/**
+ * تباين فعلي من بكسل العنصر: أكثر لون شيوعاً = الخلفية، وأبعد لون عنها = الرمز.
+ * يحلّ حالتين تُخطئ فيهما الحسبة النظرية: أيقونة فوق قرص ملوّن (الخلفية هي القرص
+ * لا البطاقة)، وخلفية شفافة تماماً.
+ */
+async function iconContrastFromShot(page: Page, locator: Locator) {
+  const buf = await locator.screenshot();
+  const url = `data:image/png;base64,${buf.toString("base64")}`;
+  return page.evaluate(async (src) => {
+    const lum = (r: number, g: number, b: number) => {
+      const f = (v: number) => {
+        v /= 255;
+        return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+      };
+      return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b);
+    };
+    const img = new Image();
+    img.src = src;
+    await img.decode();
+    const canvas = document.createElement("canvas");
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return null;
+    ctx.drawImage(img, 0, 0);
+    const { data } = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const counts = new Map<string, number>();
+    for (let i = 0; i < data.length; i += 4) {
+      const key = `${data[i]},${data[i + 1]},${data[i + 2]}`;
+      counts.set(key, (counts.get(key) || 0) + 1);
+    }
+    if (!counts.size) return null;
+    const [bgKey] = [...counts.entries()].sort((a, b) => b[1] - a[1])[0];
+    const [br, bg, bb] = bgKey.split(",").map(Number);
+    const L1 = lum(br, bg, bb);
+    let best = 0;
+    for (const key of counts.keys()) {
+      const [r, g, b] = key.split(",").map(Number);
+      const L2 = lum(r, g, b);
+      best = Math.max(best, (Math.max(L1, L2) + 0.05) / (Math.min(L1, L2) + 0.05));
+    }
+    return Number(best.toFixed(2));
+  }, url);
+}
+
 test("1.4.11 — أيقونة زر بلا نص ≥3:1 مع خلفيتها (فاتح وداكن)", async ({ page }) => {
   for (const theme of ["light", "dark"] as const) {
     await applyTheme(page, theme);
     await page.goto("/");
-    const low = await page.evaluate((fnSrc) => {
-      const contrast = eval(fnSrc) as (a: string, b: string) => number;
-      const parse = (c: string) => {
-        const m = c.match(/rgba?\(([^)]+)\)/);
-        if (!m) return null;
-        const [r, g, b, a] = m[1].split(",").map(Number);
-        return { r, g, b, a: a === undefined ? 1 : a };
-      };
-      const out: { name: string; ratio: number }[] = [];
-      for (const el of document.querySelectorAll("a[href], button")) {
-        const svg = el.querySelector("svg");
-        if (!svg) continue;
-        const text = [...el.childNodes]
-          .filter((n) => n.nodeType === 3)
-          .map((n) => (n.textContent || "").trim())
-          .join("");
-        if (text.length > 1) continue;
-        const r = el.getBoundingClientRect();
-        if (r.width === 0 || r.height === 0) continue;
-        const color = parse(getComputedStyle(svg).color);
-        let n: Element | null = el.parentElement;
-        let back = parse(getComputedStyle(document.body).backgroundColor);
-        /* أول خلفية **معتمة** فعلياً: الشفاف (rgba(...,0)) ليس لوناً */
-        while (n && n !== document.documentElement) {
-          const c = parse(getComputedStyle(n).backgroundColor);
-          if (c && c.a > 0.05) {
-            back = c;
-            break;
-          }
-          n = n.parentElement;
+    await expect(page.locator("html")).toHaveClass(new RegExp(`\\b${theme}\\b`), { timeout: 15_000 });
+    /* المرشّح: عنصر تفاعلي بلا نص مرئي (أيقونة زر/رابط)، غير معطّل.
+       أيقونة داخل رابط له نص ليست الوسيلة الوحيدة ⇒ لا يشملها 1.4.11. */
+    const candidates = page.locator("a[href]:has(svg), button:has(svg)");
+    const n = await candidates.count();
+    let checked = 0;
+    const low: { name: string; ratio: number }[] = [];
+    for (let i = 0; i < n; i += 1) {
+      const el = candidates.nth(i);
+      if (!(await el.isVisible())) continue;
+      const info = await el.evaluate((node) => {
+        const parse = (c: string) => {
+          const m = String(c).match(/rgba?\(([^)]+)\)/);
+          if (!m) return null;
+          const [r, g, b, a] = m[1].split(",").map(Number);
+          return { r, g, b, a: a === undefined ? 1 : a };
+        };
+        const contrast = (x: { r: number; g: number; b: number }, y: { r: number; g: number; b: number }) => {
+          const f = (v: number) => {
+            v /= 255;
+            return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+          };
+          const L1 = 0.2126 * f(x.r) + 0.7152 * f(x.g) + 0.0722 * f(x.b);
+          const L2 = 0.2126 * f(y.r) + 0.7152 * f(y.g) + 0.0722 * f(y.b);
+          return (Math.max(L1, L2) + 0.05) / (Math.min(L1, L2) + 0.05);
+        };
+        const visibleText = (node as HTMLElement).innerText.trim();
+        const svg = node.querySelector("svg");
+        if (!svg) return null;
+        const cs = getComputedStyle(node);
+        if (
+          node.closest('[aria-disabled="true"],[disabled]') ||
+          cs.pointerEvents === "none" ||
+          cs.cursor === "not-allowed"
+        )
+          return null;
+        /* شفافية مقصودة (حالة مقفلة) تُستثنى بنص المعيار */
+        let p: Element | null = node;
+        while (p) {
+          if (parseFloat(getComputedStyle(p).opacity) < 0.99) return null;
+          p = p.parentElement;
         }
-        if (!color || !back) continue;
-        const ratio = contrast(
-          `rgb(${Math.round(color.r)},${Math.round(color.g)},${Math.round(color.b)})`,
-          `rgb(${Math.round(back.r)},${Math.round(back.g)},${Math.round(back.b)})`,
-        );
-        if (ratio < 3) out.push({ name: (el.getAttribute("aria-label") || "").slice(0, 24), ratio: Number(ratio.toFixed(2)) });
-      }
-      return out;
-    }, CONTRAST_FN);
+        if (visibleText.length > 1) return null;
+        const color = parse(getComputedStyle(svg).color);
+        if (!color) return null;
+        /* سطح العنصر نفسه أولاً (bg-card)، ثم الطبقات خلفه: تُركَّب من أول
+           طبقة معتمة صعوداً — الشفاف (rgba(…,0)) ليس لوناً، والتركيب على
+           الأبيض كان يفسد حسابات المظهر الداكن. */
+        const layers: { r: number; g: number; b: number; a: number }[] = [];
+        let q: Element | null = node;
+        while (q && q !== document.documentElement) {
+          const c = parse(getComputedStyle(q).backgroundColor);
+          if (c && c.a > 0.004) {
+            layers.push(c);
+            if (c.a >= 0.99) break;
+          }
+          q = q.parentElement;
+        }
+        if (!layers.length || layers[layers.length - 1].a < 0.99) {
+          const body = parse(getComputedStyle(document.body).backgroundColor);
+          layers.push(body && body.a >= 0.99 ? body : { r: 255, g: 255, b: 255, a: 1 });
+        }
+        let back = layers[layers.length - 1];
+        for (let i = layers.length - 2; i >= 0; i -= 1) {
+          const top = layers[i];
+          back = {
+            r: top.r * top.a + back.r * (1 - top.a),
+            g: top.g * top.a + back.g * (1 - top.a),
+            b: top.b * top.a + back.b * (1 - top.a),
+            a: 1,
+          };
+        }
+        back = { r: Math.round(back.r), g: Math.round(back.g), b: Math.round(back.b), a: 1 };
+        return {
+          name: (node.getAttribute("aria-label") || node.getAttribute("title") || "").slice(0, 24),
+          ratio: Number(contrast(color, back).toFixed(2)),
+        };
+      });
+      if (!info) continue;
+      checked += 1;
+      if (info.ratio >= 3) continue;
+      /* الحسبة النظرية قد تُخطئ (أيقونة فوق قرص/خلفية مركّبة) ⇒ البكسل هو الحكم */
+      const measured = await iconContrastFromShot(page, el);
+      if (measured !== null && measured >= 3) continue;
+      low.push({ name: info.name, ratio: measured ?? info.ratio });
+    }
+    expect(checked, `لم يُفحص أي زر أيقونة في ${theme}`).toBeGreaterThan(0);
     expect(low, `أيقونات باهتة في ${theme}: ${JSON.stringify(low)}`).toEqual([]);
   }
 });
