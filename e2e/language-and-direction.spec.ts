@@ -76,11 +76,26 @@ test.describe("الجذر والجملة الألمانية", () => {
        (`grammatik` + `wortschatz`) بعد إصلاح الجولة الحادية عشرة. */
     await page.getByRole("button", {name: /قواعد الوحدة/}).first().click();
 
-    /* الأسئلة نفسها تُخلط ببذرة يومية، فالاعتماد على نص خيار بعينه يجعل
-       الاختبار يفشل غداً بلا تغيير في الكود. نفحص أول خيار معروض أياً كان. */
-    const option = page.getByRole("radio").first();
-    await expect(option).toBeVisible({timeout: 15_000});
-    await expect(option.locator("[lang='de']")).toHaveCount(1);
+    /* الأسئلة نفسها تُخلط ببذرة يومية، وبعض أسئلة الوحدة خياراتها **ترجمات
+       عربية** لسؤال ألماني («اختر الترجمة الصحيحة»). لذلك لا يُفترض أن كل
+       خيار ألماني: يُفحص كل خيار حسب لغته الفعلية — العربي لا يُوسم ألمانية،
+       والألماني يُوسم `lang="de"` مرة واحدة. */
+    const radios = page.getByRole("radio");
+    await expect(radios.first()).toBeVisible({timeout: 15_000});
+    const arabic = /[\u0600-\u06FF]/;
+    const count = Math.min(await radios.count(), 8);
+    expect(count).toBeGreaterThan(0);
+    for (let i = 0; i < count; i += 1) {
+      const option = radios.nth(i);
+      const text = (await option.innerText()).trim();
+      if (arabic.test(text)) {
+        await expect(option.locator("[lang='de']"), `خيار عربي موسوم ألمانية: ${text}`).toHaveCount(0);
+      } else {
+        await expect(option.locator("[lang='de']"), `خيار ألماني بلا lang=de: ${text}`).toHaveCount(1);
+      }
+    }
+    /* نص السؤال نفسه ألماني وموسوم، حتى لو كانت الخيارات ترجمات عربية */
+    await expect(page.locator("main [lang='de']").first()).toBeAttached();
   });
 });
 
