@@ -5,13 +5,21 @@ import {LazyLevelTest} from "@/components/tests/lazy/lazy-level-test";
 import {LEVELS} from "@/lib/constants/curriculum";
 import type { TestLevel } from "@/types/test";
 
-export const metadata: Metadata = {
-  title: "اختبار تدريبي لنهاية المستوى",
-  description: "تدريب داخلي على مهارات المستوى في القراءة والاستماع والقواعد والكتابة. لا يمثل امتحان Goethe أو تقييماً رسمياً للمستوى.",
-};
-
 interface Props {
   params: Promise<{ level: string }>;
+}
+
+/**
+ * الجولة 15 — 2.4.2: عنوان واحد لكل المستويات يعني أربع صفحات بنفس اسم
+ * لسان المتصفح وبلا تمييز في السجل. العنوان الآن يحمل المستوى صريحاً.
+ */
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { level: raw } = await params;
+  const level = raw.toUpperCase();
+  return {
+    title: `اختبار نهاية المستوى ${level} — تدريب شامل`,
+    description: `تدريب داخلي على مهارات ${level} في القراءة والاستماع والقواعد والكتابة. لا يمثل امتحان Goethe أو تقييماً رسمياً للمستوى.`,
+  };
 }
 
 export function generateStaticParams() {
