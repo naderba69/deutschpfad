@@ -13,6 +13,8 @@ import {useProgress} from "@/components/providers/progress-provider";
 import {isLevelLessonsDone, getLessonLevelCompletion} from "@/lib/progress-selectors";
 import {InterleavingReview} from "@/components/lesson/sections/interleaving-review";
 import {buildInterleavedReview, likelyHasInterleavedReview, reviewLevelLabel} from "@/lib/lesson/review-generator";
+import {sectionIndexFromUrl, visibleSectionDefs} from "@/lib/session/visible-sections";
+import {acknowledgeOnAdvance} from "@/lib/session/section-completion";
 import {AusspracheSection} from "@/components/lesson/sections/aussprache";
 import {EinfuehrungSection} from "@/components/lesson/sections/einfuehrung";
 import {FehlerUndTippsSection} from "@/components/lesson/sections/fehler-und-tipps";
@@ -343,6 +345,9 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
   // استرجاع الخطوة المحفوظة لكل درس (يستأنف من حيث توقف)
   React.useEffect(() => {
     try {
+      // رابط من صفحة الحصة ?section=<id> يفتح ذلك القسم مباشرة
+      const linked = sectionIndexFromUrl(window.location.search, sectionDefs.map((d) => d.id));
+      if (linked >= 0) { setCurrentSection(linked); setVisited((prev) => new Set([...prev, sectionDefs[linked].id])); return; }
       const saved = window.localStorage.getItem(`lesson-step:${lesson.id}`);
       if (saved) {
         const n = Number(saved);
@@ -374,17 +379,8 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
     [lesson.id],
   );
 
-  const sectionDefs = LESSON_SECTIONS.filter(
-    (def) =>
-      (def.id !== "review" || (reviewLoaded ? reviewQuestions.length > 0 : likelyHasInterleavedReview(lesson))) &&
-      (def.id !== "verben" || lesson.level === "B1" || lesson.level === "B2") &&
-      /* ═══ الوساطة والتفاعل: تُعرضان فقط إذا كان الدرس يحتويهما ═══ */
-      (def.id !== "mediation" || (lesson.mediation && lesson.mediation.length > 0)) &&
-      (def.id !== "interaction" || (lesson.interaction && lesson.interaction.length > 0)) &&
-      /* ═══ نصّ القراءة: يُعرض فقط إن كُتب للدرس ═══ */
-      /* ═══ التعمّق: يُعرض فقط إن رُبطت بالدرس موارد رديفة ═══ */
-      (def.id !== "vertiefung" || hasRelatedResources),
-  );
+  const reviewAvailable = reviewLoaded ? reviewQuestions.length > 0 : likelyHasInterleavedReview(lesson);
+  const sectionDefs = visibleSectionDefs(lesson, reviewAvailable, hasRelatedResources);
   const total = sectionDefs.length;
   const progressPct = Math.round((visited.size / total) * 100);
 
@@ -407,6 +403,9 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
     markVisited(def.id);
     // التمرير لأول المحتوى يتم في useEffect أدناه (بعد اكتمال الرندر)
   };
+
+  /** «التالي» من قسم شرح/قراءة يُسجَّل إنجازه بالتأكيد؛ أقسام التمارين تسجّل نفسها */
+  const advanceFrom = (index: number) => { if (sectionDefs[index]) acknowledgeOnAdvance(lesson.id, sectionDefs[index].id); goTo(index + 1); };
 
   // ═══ إصلاح السكرول: عند تغيير القسم ننتقل تلقائياً «لأول المحتوى» ═══
   // يُنفَّذ بعد اكتمال الرندر (useEffect) لا قبله (requestAnimationFrame)
@@ -693,7 +692,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
             {/* زر «التالي» في نهاية القسم — لا حاجة للتمرير للأعلى بعد إنهاء قسم طويل */}
             <div className="mt-6 flex flex-wrap justify-end gap-2 border-t pt-4">
               {currentSection < total - 1 ? (
-                <Button size="lg" className="btn-glow gap-2 px-6 whitespace-normal text-center leading-snug" onClick={() => goTo(currentSection + 1)}>
+                <Button size="lg" className="btn-glow gap-2 px-6 whitespace-normal text-center leading-snug" onClick={() => advanceFrom(currentSection)}>
                   أتممت هذا القسم — التالي: {sectionDefs[currentSection + 1].short}
                   <ArrowLeft className="h-5 w-5" aria-hidden="true" />
                 </Button>
@@ -715,7 +714,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
                 السابق
               </Button>
               {currentSection < total - 1 ? (
-                <Button size="lg" className="btn-glow gap-2 px-6 whitespace-normal text-center leading-snug" onClick={() => goTo(currentSection + 1)}>
+                <Button size="lg" className="btn-glow gap-2 px-6 whitespace-normal text-center leading-snug" onClick={() => advanceFrom(currentSection)}>
                   التالي: {sectionDefs[currentSection + 1].short}
                   <ArrowLeft className="h-5 w-5" aria-hidden="true" />
                 </Button>
@@ -760,7 +759,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
               السابق
             </Button>
             {currentSection < total - 1 ? (
-              <Button onClick={() => goTo(currentSection + 1)} className="gap-1.5">
+              <Button onClick={() => advanceFrom(currentSection)} className="gap-1.5">
                 {sectionDefs[currentSection + 1].short}
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
               </Button>
