@@ -8,6 +8,7 @@ import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
 import {recordEvent} from "@/lib/analytics/events";
 import {sample} from "@/lib/lesson/shuffle";
+import {markSectionCompleted} from "@/lib/session/section-completion";
 import {cn} from "@/lib/utils";
 import type { Exercise, FeedbackResult } from "@/types/lesson";
 
@@ -27,7 +28,12 @@ export function InteraktiveUebungenSection({bank, lessonId}: {bank: Exercise[]; 
 
   const handleResult = (result: FeedbackResult, exercise: Exercise) => {
     if (result.isCorrect) {
-      setSolved((prev) => (prev[exercise.id] ? prev : { ...prev, [exercise.id]: true }));
+      const nextSolved = { ...solved, [exercise.id]: true };
+      setSolved((prev) => (prev[exercise.id] ? prev : nextSolved));
+      // إنجاز القسم = حلّ كل تمارين الدفعة الحالية بشكل صحيح (دليل فعلي، لا زيارة)
+      if (batch.every((e) => nextSolved[e.id])) {
+        void markSectionCompleted(lessonId, "uebungen");
+      }
     }
     void recordEvent({
       type: "exercise-result",

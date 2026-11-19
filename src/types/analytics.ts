@@ -64,6 +64,14 @@ export type AnalyticsEvent =
     }
   | {
       id?: number;
+      type: "section-completed";
+      ts: number;
+      lessonId: string;
+      /** معرّف القسم في LESSON_SECTIONS، ويجب أن يكون ضمن مراحل الحصة. */
+      sectionId: string;
+    }
+  | {
+      id?: number;
       type: "lesson-view";
       ts: number;
       lessonId: string;
