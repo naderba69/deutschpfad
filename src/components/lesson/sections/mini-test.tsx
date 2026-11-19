@@ -8,6 +8,7 @@ import {useProgress} from "@/components/providers/progress-provider";
 import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
 import {recordEvent} from "@/lib/analytics/events";
+import {markSectionCompleted} from "@/lib/session/section-completion";
 import {addLessonFlashcards} from "@/lib/srs/flashcard-service";
 import {ERROR_TYPE_LABELS, getNotebookResult, type NotebookEntry} from "@/lib/storage/error-notebook";
 import {cn} from "@/lib/utils";
@@ -105,6 +106,8 @@ export function MiniTestSection({
   React.useEffect(() => {
     if (finished && passed) {
       completeUnit(unitId);
+      // إنجاز قسم الاختبار المصغّر = اجتيازه (دليل فعلي للبوابة)
+      if (lessonId) void markSectionCompleted(lessonId, "minitest");
       if (lessonId && !lessonDone) {
         void recordEvent({ type: "lesson-completed", lessonId, unitId });
       }
