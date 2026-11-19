@@ -184,7 +184,7 @@ export function MinimalPairsGame({ groups, compact }: MinimalPairsGameProps) {
     return (
       <div className="rounded-xl border bg-muted/20 p-5 text-center">
         <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-          {pct >= 80 ? <Ear className="h-7 w-7 text-success" /> : <RefreshCw className="h-7 w-7 text-muted-foreground" />}
+          {pct >= 80 ? <Ear className="h-7 w-7 text-success" aria-hidden="true" /> : <RefreshCw className="h-7 w-7 text-muted-foreground" aria-hidden="true" />}
         </span>
         <p className="font-de mt-3 text-3xl font-extrabold text-primary">{pct}%</p>
         <p className="mt-1 font-bold">

@@ -270,11 +270,11 @@ export function SpeakAndScore({ target, compact }: { target: string; compact?: b
               {result.score}%
             </span>
             {result.score >= 80 ? (
-              <span className="inline-flex items-center gap-1 font-bold"><CheckCircle2 className="h-3 w-3" /> مطابقة نصية عالية للتفريغ</span>
+              <span className="inline-flex items-center gap-1 font-bold"><CheckCircle2 className="h-3 w-3" aria-hidden="true" /> مطابقة نصية عالية للتفريغ</span>
             ) : result.score >= 50 ? (
-              <span className="inline-flex items-center gap-1 font-bold"><CircleAlert className="h-3 w-3" /> مطابقة نصية جزئية — قارن النصين</span>
+              <span className="inline-flex items-center gap-1 font-bold"><CircleAlert className="h-3 w-3" aria-hidden="true" /> مطابقة نصية جزئية — قارن النصين</span>
             ) : (
-              <span className="inline-flex items-center gap-1 font-bold"><XCircle className="h-3 w-3" /> التفريغ يختلف عن الهدف — تحقق من التعرف</span>
+              <span className="inline-flex items-center gap-1 font-bold"><XCircle className="h-3 w-3" aria-hidden="true" /> التفريغ يختلف عن الهدف — تحقق من التعرف</span>
             )}
           </div>
 

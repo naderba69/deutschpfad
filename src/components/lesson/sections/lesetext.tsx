@@ -43,7 +43,7 @@ export function LesetextSection({reading, lessonId}: {reading: ReadingText; less
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
-                <BookMarked className="h-5 w-5 shrink-0 text-primary" />
+                <BookMarked className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
                 <CardTitle className="text-lg">{reading.titleAr}</CardTitle>
               </div>
               <p className="text-sm text-muted-foreground" dir="ltr" lang="de">
@@ -153,7 +153,7 @@ export function LesetextSection({reading, lessonId}: {reading: ReadingText; less
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="flex items-center gap-2 text-base">
-              <MessageCircleQuestion className="h-5 w-5 text-primary" />
+              <MessageCircleQuestion className="h-5 w-5 text-primary" aria-hidden="true" />
               أسئلة الفهم
             </CardTitle>
           </CardHeader>
@@ -185,7 +185,7 @@ export function LesetextSection({reading, lessonId}: {reading: ReadingText; less
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="flex items-center gap-2 text-base">
-              <Quote className="h-5 w-5 text-primary" />
+              <Quote className="h-5 w-5 text-primary" aria-hidden="true" />
               عبارات جاهزة من النصّ (Redemittel)
             </CardTitle>
           </CardHeader>

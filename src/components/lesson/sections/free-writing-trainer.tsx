@@ -62,7 +62,7 @@ export function FreeWritingTrainer({lesson}: {lesson: Lesson}) {
           <PenLine className="h-4.5 w-4.5" aria-hidden="true" />
         </span>
         <div>
-          <h4 className="text-sm font-extrabold">مسودة كتابة للمراجعة الذاتية</h4>
+          <h3 className="text-sm font-extrabold">مسودة كتابة للمراجعة الذاتية</h3>
           <p className="mt-1 text-sm text-muted-foreground">{writingGuide.task}</p>
           <p className="mt-1 text-xs font-semibold text-primary">حجم مقترح: {writingGuide.target}</p>
         </div>
