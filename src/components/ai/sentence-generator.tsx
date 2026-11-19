@@ -6,6 +6,7 @@ import {ListOrdered} from "lucide-react";
 import {AiToolShell} from "@/components/ai/ai-tool-shell";
 import {useLLM} from "@/components/providers/llm-provider";
 import {sentenceGeneratorPrompt} from "@/lib/llm/prompts";
+import {useRadioGroupNav} from "@/lib/use-radio-group-nav";
 
 const LEVELS = ["A1", "A2", "B1", "B2"];
 
@@ -16,6 +17,7 @@ export function AiSentenceGenerator() {
   const { callLLM } = useLLM();
   const [word, setWord] = React.useState("");
   const [level, setLevel] = React.useState("A2");
+  const navLevel = useRadioGroupNav();
   const [result, setResult] = React.useState("");
 
   const generate = async () => {
@@ -48,6 +50,7 @@ export function AiSentenceGenerator() {
           <div className="flex items-center gap-2">
             <input
               type="text"
+              aria-label="الكلمة الألمانية لتوليد الجمل"
               value={word}
               onChange={(e) => setWord(e.target.value)}
               placeholder="أدخل كلمة ألمانية… (مثال: die Freundschaft)"
@@ -64,12 +67,13 @@ export function AiSentenceGenerator() {
               توليد
             </button>
           </div>
-          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="المستوى">
+          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="المستوى" {...navLevel}>
             {LEVELS.map((l) => (
               <button
                 key={l}
                 type="button"
                 onClick={() => setLevel(l)}
+                aria-pressed={level === l}
                 className={
                   level === l
                     ? "font-de rounded-lg bg-primary px-3 py-1 text-xs font-bold text-primary-foreground"

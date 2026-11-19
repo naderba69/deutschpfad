@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import {LazyTestHub} from "@/components/tests/lazy/lazy-test-hub";
 
 export const metadata: Metadata = {
-  title: "الاختبارات — قس مستواك وجاهزيتك",
+  title: "الاختبارات — تدريبات وتقييمات داخلية",
   description:
-    "اختبار تحديد المستوى التشخيصي لكل مهارة، اختبارات نهاية الوحدات، واختبارات نهاية المستويات بصيغة Goethe-Zertifikat مع توقيت حقيقي.",
+    "اختبار تشخيصي وتدريبات للوحدات والمستويات. بعض التدريبات تستلهم أنماطاً من Goethe؛ نتائج المنصة تقديرية وليست امتحاناً رسمياً أو حكماً على الجاهزية.",
 };
 
 export default function TestsPage() {

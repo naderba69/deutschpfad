@@ -3,11 +3,13 @@
 import * as React from "react";
 import {BookmarkPlus, Check, Layers, RotateCcw, Volume2} from "lucide-react";
 
+import {LangDe} from "@/components/shared/lang-de";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent} from "@/components/ui/card";
 import {SpeakAndScore} from "@/components/lesson/speech/speak-and-score";
 import {getAllCards, addLessonFlashcards} from "@/lib/srs/flashcard-service";
 import {addLessonSentences, extractSentencesFromCards} from "@/lib/srs/sentence-service";
+import {speakGerman} from "@/lib/speech/voices";
 import {cn} from "@/lib/utils";
 import type { Flashcard } from "@/types/lesson";
 
@@ -134,16 +136,7 @@ export function LernkartenSection({ lessonId, flashcards: sourceCards }: { lesso
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
-                    if (typeof window !== "undefined" && "speechSynthesis" in window) {
-                      window.speechSynthesis.cancel();
-                      const u = new SpeechSynthesisUtterance(card.de);
-                      u.lang = "de-DE";
-                      u.rate = 0.85;
-                      const voices = window.speechSynthesis.getVoices();
-                      const gv = voices.find((v) => v.lang === "de-DE") ?? voices.find((v) => v.lang.startsWith("de"));
-                      if (gv) u.voice = gv;
-                      window.speechSynthesis.speak(u);
-                    }
+                    speakGerman(card.de, {rate: 0.85});
                   }}
                   className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-muted bg-background/90 text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
                   aria-label={`استمع: ${card.de}`}
@@ -156,21 +149,21 @@ export function LernkartenSection({ lessonId, flashcards: sourceCards }: { lesso
               <CardContent className="flex h-full min-h-40 flex-col items-center justify-center gap-3 p-5 text-center">
                 {!isFlipped ? (
                   <>
-                    <span className="font-de text-xl font-bold" dir="ltr" lang="de">
+                    <LangDe className="text-xl font-bold">
                       {card.de}
-                    </span>
+                    </LangDe>
                     <span className="text-xs text-muted-foreground">اضغط لرؤية المعنى</span>
                   </>
                 ) : (
                   <>
-                    <span className="font-de text-xl font-bold text-primary" dir="ltr" lang="de">
+                    <LangDe className="text-xl font-bold text-primary">
                       {card.de}
-                    </span>
+                    </LangDe>
                     <span className="text-lg font-bold">{card.ar}</span>
                     {card.example && (
                       <div className="rounded-lg bg-muted/40 p-2 text-xs">
-                        <p className="font-de" dir="ltr" lang="de">
-                          {card.example}
+                        <p>
+                          <LangDe>{card.example}</LangDe>
                         </p>
                         {card.exampleAr && <p className="mt-0.5 text-muted-foreground">{card.exampleAr}</p>}
                       </div>

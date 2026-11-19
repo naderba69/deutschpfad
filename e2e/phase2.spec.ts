@@ -22,15 +22,18 @@ test("تدريب القواعد والمفردات B2: السؤال الأول �
   await expect(page.getByText(/قواعد ومفردات B2 — 1\/60/)).toBeVisible();
   // سؤال قواعد أول: Konjunktiv I
   await expect(page.getByText(/Er sagte, er ___ keine Zeit/)).toBeVisible();
-  // المؤقت
-  await expect(page.getByText(/⏱ 5[0-9]:[0-9]{2}/)).toBeVisible();
+  // المؤقت: الجولة الحادية عشرة — لا يمضي قبل «ابدأ المؤقت» (WCAG 2.2.1)
+  await expect(page.getByText(/⏱ 60:00/)).toBeVisible();
+  await page.getByRole("button", {name: "ابدأ المؤقت"}).click();
+  await expect(page.getByRole("timer")).toHaveAttribute("aria-label", /الوقت المتبقي/);
+  await expect(page.getByText(/⏱ 5[0-9]:[0-9]{2}/)).toBeVisible({timeout: 10_000});
 });
 
 test("تدريب القواعد: اختيار إجابة وتحقق يعرض الشرح", async ({ page }) => {
   await page.goto("/tests/b2-grammatik", { waitUntil: "networkidle" });
   await page.waitForTimeout(500);
-  // اختر الخيار الصحيح (A: habe)
-  await page.getByRole("button", { name: "A habe" }).click();
+  // اختر الخيار الصحيح (habe — موضعه يُخلط عشوائياً؛ / habe$/ يتجنب «haben»)
+  await page.getByRole("button", { name: / habe$/ }).click();
   await page.getByRole("button", { name: "تحقق" }).click();
   await expect(page.getByText(/✓ إجابة صحيحة/)).toBeVisible();
 });
@@ -38,25 +41,25 @@ test("تدريب القواعد: اختيار إجابة وتحقق يعرض ا�
 test("استراتيجيات الامتحان: الأجزاء الثلاثة عشر ظاهرة", async ({ page }) => {
   await page.goto("/tests/strategien", { waitUntil: "networkidle" });
   await page.waitForTimeout(600);
-  await expect(page.getByRole("heading", { name: /استراتيجيات امتحان Goethe-B2/ })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /استراتيجيات تدريب B2/ })).toBeVisible();
   await expect(page.getByText(/القراءة \(Lesen\)/)).toBeVisible();
   await expect(page.getByText(/الاستماع \(Hören\)/)).toBeVisible();
   await expect(page.getByText(/الكتابة \(Schreiben\)/)).toBeVisible();
   await expect(page.getByText(/التحدث \(Sprechen\)/)).toBeVisible();
   await expect(page.getByText(/الفخاخ العشرة الذهبية/)).toBeVisible();
-  await expect(page.getByText(/جدول إدارة الوقت/)).toBeVisible();
+  await expect(page.getByText(/تقسيم وقت تدريبي مقترح/)).toBeVisible();
 });
 
 test("خطة 12 شهراً: المراحل الست ظاهرة", async ({ page }) => {
   await page.goto("/tests/plan-b2", { waitUntil: "networkidle" });
   await page.waitForTimeout(600);
-  await expect(page.getByRole("heading", { name: /خطة 12 شهراً/ })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /مثال لخطة تدريب/ })).toBeVisible();
   await expect(page.getByText("الشهران 1-2")).toBeVisible();
   await expect(page.getByText("الشهران 11-12")).toBeVisible();
-  await expect(page.getByText("محاكاة B2 كاملة")).toBeVisible();
+  await expect(page.getByText("مثال لخطة تدريب A1–B2")).toBeVisible();
 });
 
-test("محرك B2: يعرض تنويهاً عن النماذج الثلاثة", async ({ page }) => {
+test("محرك B2: يعرض ثلاثة نماذج كاملة", async ({ page }) => {
   await page.goto("/tests/b2", { waitUntil: "networkidle" });
   await page.waitForTimeout(500);
   await expect(page.getByText(/ثلاثة نماذج كاملة/)).toBeVisible();
@@ -68,5 +71,5 @@ test("مركز الاختبارات: الروابط الجديدة (قراءة،
   await expect(page.getByText("مكتبة القراءة B2")).toBeVisible();
   await expect(page.getByText("تدريب القواعد والمفردات B2")).toBeVisible();
   await expect(page.getByText("استراتيجيات الامتحان — دليل كل Teil")).toBeVisible();
-  await expect(page.getByText("خطة 12 شهراً → B2")).toBeVisible();
+  await expect(page.getByText("خطة تدريب قابلة للتعديل نحو B2")).toBeVisible();
 });

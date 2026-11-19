@@ -36,12 +36,12 @@ export const B2_VOCAB: Record<string, VocabEntry[]> = {
   "b2-02": [
     { de: "die Wirtschaft", ar: "الاقتصاد", g: "die" },
     { de: "der Markt", ar: "السوق", g: "der" },
-    { de: "der Umsatz", ar: "المبيعات", g: "der" },
+    { de: "der Umsatz", ar: "الإيرادات / حجم المبيعات", g: "der" },
     { de: "die Inflation", ar: "التضخم", g: "die" },
-    { de: "die Aktien", ar: "الأسهم", g: "die" },
+    { de: "die Aktie", ar: "السهم", g: "die" },
     { de: "das Zustandspassiv", ar: "مجهول الحالة", g: "das" },
-    { de: "sich lassen", ar: "يمكن (بديل مجهول)", g: "v" },
-    { de: "-bar", ar: "قابل للـ", g: "other" },
+    { de: "sich lösen lassen", ar: "يمكن حلّه (تركيب يفيد الإمكان)", g: "other", ex: "Das Problem lässt sich lösen." },
+    { de: "-bar (Suffix)", ar: "لاحقة تُفيد غالباً القابلية: قابل لـ…", g: "other", ex: "Das Problem ist lösbar." },
     { de: "die Konjunktur", ar: "الدورة الاقتصادية", g: "die" },
     { de: "die Investition", ar: "الاستثمار", g: "die" },
     { de: "der Gewinn", ar: "الربح", g: "der" },
@@ -75,8 +75,8 @@ export const B2_VOCAB: Record<string, VocabEntry[]> = {
     { de: "der Roman", ar: "الرواية", g: "der" },
     { de: "das Gedicht", ar: "القصيدة", g: "das" },
     { de: "der Autor", ar: "الكاتب", g: "der" },
-    { de: "das Partizip I", ar: "المشارك الأول (فاعل)", g: "das" },
-    { de: "das Partizip II", ar: "المشارك الثاني (مفعول)", g: "das" },
+    { de: "das Partizip I", ar: "صيغة الفعل الوصفية الأولى (Partizip I)", g: "das" },
+    { de: "das Partizip II", ar: "صيغة الفعل الوصفية الثانية (Partizip II)", g: "das" },
     { de: "der Beitrag", ar: "المقال/المساهمة", g: "der" },
     { de: "die Geschichte", ar: "القصة", g: "die" },
     { de: "die Erzählung", ar: "الحكاية", g: "die" },
@@ -201,12 +201,6 @@ export const B2_VOCAB: Record<string, VocabEntry[]> = {
     { de: "das Semesterticket", ar: "تذكرة الفصل", g: "das" },
   ],
 };
-
-/** عدد كلمات B2 */
-export const B2_VOCAB_COUNT = Object.values(B2_VOCAB).reduce(
-  (sum, list) => sum + list.length,
-  0,
-);
 
 /** كل مفردات B2 (مصفوفة مسطحة) */
 export function getB2VocabAll(): VocabEntry[] {

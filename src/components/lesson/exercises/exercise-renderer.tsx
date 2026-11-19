@@ -2,7 +2,7 @@
 
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge";
-import {recordMistake} from "@/lib/storage/error-notebook";
+import {getNotebookEntryId, recordMistake} from "@/lib/storage/error-notebook";
 import {DictationExerciseView} from "@/components/lesson/exercises/dictation";
 import {ErrorCorrectionExerciseView} from "@/components/lesson/exercises/error-correction";
 import {FillBlankExerciseView} from "@/components/lesson/exercises/fill-blank";
@@ -30,6 +30,9 @@ const TYPE_LABELS: Record<Exercise["type"], string> = {
 
 interface ExerciseRendererProps {
   exercise: Exercise;
+  /** درس أو مجموعة تدريب يملكان معرّفات التمارين */
+  sourceId: string;
+  lessonId?: string;
   /** يُستدعى عند كل نتيجة تصحيح (للتقييم الختامي وجلسات التدريب) */
   onResult?: (result: FeedbackResult) => void;
 }
@@ -37,13 +40,16 @@ interface ExerciseRendererProps {
 /**
  * الموجّه العام للتمارين — يعرض أي تمرين حسب نوعه داخل بطاقة موحدة
  */
-export function ExerciseRenderer({ exercise, onResult }: ExerciseRendererProps) {
+export function ExerciseRenderer({ exercise, sourceId, lessonId, onResult }: ExerciseRendererProps) {
   const handleResult = (result: FeedbackResult) => {
     onResult?.(result);
     // تسجيل الخطأ في دفتر الأخطاء التراكمي (كل الجلسات)
     if (!result.isCorrect) {
       void recordMistake({
-        id: exercise.id,
+        id: getNotebookEntryId(sourceId, exercise.id),
+        exerciseId: exercise.id,
+        sourceId,
+        lessonId,
         errorType: result.errorType,
         explanation: result.explanation,
         correctAnswer: result.correctAnswer,

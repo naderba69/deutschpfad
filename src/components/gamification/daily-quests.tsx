@@ -4,16 +4,17 @@ import * as React from "react";
 import {CheckCircle2, Flame, ListChecks, Mic, Repeat, Target} from "lucide-react";
 
 import {Card, CardContent} from "@/components/ui/card";
-import {addGems, GEM_REWARDS} from "@/lib/gamification/gems";
-import {getRecentEvents} from "@/lib/analytics/events";
+import {addGemsResult, GEM_REWARDS} from "@/lib/gamification/gems";
+import {claimQuestReward} from "@/lib/gamification/daily-quest-reward";
+import {getRecentEventsResult} from "@/lib/analytics/events";
 import {getDueCardsForReview} from "@/lib/review/weekly-review";
 import {cn} from "@/lib/utils";
 
 /**
  * ═══════════════════════════════════════════════════════════
- *  التحديات اليومية المتجددة — 5 مهام تُحدَّث يومياً
+ *  التحديات اليومية المتجددة — 4 مهام تُحدَّث يومياً
  *  كل مهمة تُحتسب من نشاطك الفعلي:
- *  · حل 10 تمارين · راجع 5 بطاقات · أكمل قصة · تحدث (نطق) · سلسلة 3 أيام
+ *  · حل 10 تمارين · راجع 5 بطاقات · أكمل قصة · تحدث (نطق)
  *  عند إتمام مهمة تُمنح جواهر 💎 تلقائياً
  * ═══════════════════════════════════════════════════════════
  */
@@ -27,13 +28,34 @@ interface Quest {
   reward: number;
 }
 
+/**
+ * التعريفات الثابتة للتحديات — تُرسَم من الخادم بعدّادات صفرية.
+ *
+ * لماذا؟ كانت القائمة تبدأ فارغة ويُعاد null حتى تقرأ الأحداث من IndexedDB،
+ * ثم تظهر البطاقة كاملة بعد الهيدرشن فتدفع كل ما تحتها 335px
+ * (CLS 0.196 في /gamification، مقيس في الجولة الخامسة). التعريفات نفسها
+ * ثابتة، والمتغيّر هو العدّاد فقط، فصار يُحدَّث داخل صفوف ذات ارتفاع ثابت.
+ */
+const BASE_QUESTS: Quest[] = [
+  { id: "exercises", label: "حل 10 تمارين اليوم", icon: ListChecks, target: 10, current: 0, reward: 5 },
+  { id: "reviews", label: "راجع 5 بطاقات", icon: Repeat, target: 5, current: 0, reward: 4 },
+  { id: "story", label: "اقرأ قصة كاملة", icon: Target, target: 1, current: 0, reward: 4 },
+  { id: "speak", label: "درّب نطقك 3 مرات", icon: Mic, target: 3, current: 0, reward: 4 },
+];
+
 export function DailyQuests() {
-  const [quests, setQuests] = React.useState<Quest[]>([]);
+  const [quests, setQuests] = React.useState<Quest[]>(BASE_QUESTS);
   const [claimed, setClaimed] = React.useState<Record<string, boolean>>({});
+  const [storageNotice, setStorageNotice] = React.useState("");
 
   React.useEffect(() => {
     void (async () => {
-      const events = await getRecentEvents(3000);
+      const eventsResult = await getRecentEventsResult(3000);
+      if (!eventsResult.ok) {
+        setStorageNotice("تعذر قراءة نشاط اليوم؛ لم نعرض التحديات أو نمنح مكافآت بناءً على بيانات ناقصة.");
+        return;
+      }
+      const events = eventsResult.events;
       const today = new Date().toISOString().slice(0, 10);
       const todayEvents = events.filter((e) => new Date(e.ts).toISOString().slice(0, 10) === today);
 
@@ -42,34 +64,55 @@ export function DailyQuests() {
       const stories = todayEvents.filter((e) => e.type === "skill-result" && e.skill === "القراءة").length;
       const pronunciation = todayEvents.filter((e) => e.type === "pronunciation-score").length;
 
-      const qs: Quest[] = [
-        { id: "exercises", label: "حل 10 تمارين اليوم", icon: ListChecks, target: 10, current: Math.min(10, exercises), reward: 5 },
-        { id: "reviews", label: "راجع 5 بطاقات", icon: Repeat, target: 5, current: Math.min(5, reviews), reward: 4 },
-        { id: "story", label: "اقرأ قصة كاملة", icon: Target, target: 1, current: Math.min(1, stories), reward: 4 },
-        { id: "speak", label: "درّب نطقك 3 مرات", icon: Mic, target: 3, current: Math.min(3, pronunciation), reward: 4 },
-      ];
+      const counts: Record<string, number> = {
+        exercises: Math.min(10, exercises),
+        reviews: Math.min(5, reviews),
+        story: Math.min(1, stories),
+        speak: Math.min(3, pronunciation),
+      };
+      const qs: Quest[] = BASE_QUESTS.map((q) => ({ ...q, current: counts[q.id] ?? 0 }));
       setQuests(qs);
 
-      // الجواهر المستحقة
+      // لا نعلّم المهمة مستلمة إذا تعذر تسجيل مكافأتها.
+      const claimedKey = `dp:quests-claimed:${today}`;
+      let prev: Record<string, boolean>;
       try {
-        const claimedKey = `dp:quests-claimed:${today}`;
-        const prev = JSON.parse(localStorage.getItem(claimedKey) ?? "{}") as Record<string, boolean>;
-        setClaimed(prev);
-        for (const q of qs) {
-          if (q.current >= q.target && !prev[q.id]) {
-            addGems(q.reward);
-            prev[q.id] = true;
-          }
+        const raw = localStorage.getItem(claimedKey);
+        const parsed: unknown = raw === null ? {} : JSON.parse(raw);
+        if (!parsed || typeof parsed !== "object" || Array.isArray(parsed) ||
+            Object.values(parsed).some((value) => typeof value !== "boolean")) {
+          throw new Error("Invalid claimed quests data");
         }
-        localStorage.setItem(claimedKey, JSON.stringify(prev));
-        setClaimed(prev);
+        prev = parsed as Record<string, boolean>;
       } catch {
-        /* تجاهل */
+        setStorageNotice("تعذر قراءة سجل مكافآت التحديات؛ لم نغيّر السجل لتجنب تكرار المكافآت.");
+        return;
+      }
+      setClaimed(prev);
+      for (const q of qs) {
+        if (q.current < q.target || prev[q.id]) continue;
+        const result = claimQuestReward(q.id, q.reward, prev, (next) => {
+          try {
+            // حجز الاستلام قبل إضافة الرصيد لتقليل احتمال تكرار المكافأة.
+            localStorage.setItem(claimedKey, JSON.stringify(next));
+            return true;
+          } catch {
+            return false;
+          }
+        }, addGemsResult);
+        if (result.status === "claim-storage-error") {
+          setStorageNotice("تعذر حفظ سجل استلام التحدي؛ لم نضف المكافأة.");
+          break;
+        }
+        if (result.status === "reward-error") {
+          setStorageNotice("تعذر حفظ الجواهر؛ تحقّق من سجل التحدي قبل إعادة المحاولة.");
+          break;
+        }
+        prev = result.claimed;
+        setClaimed(prev);
       }
     })();
   }, []);
-
-  if (quests.length === 0) return null;
 
   const doneCount = quests.filter((q) => q.current >= q.target).length;
 
@@ -81,10 +124,12 @@ export function DailyQuests() {
             <Flame className="h-4 w-4" aria-hidden="true" />
           </span>
           <div>
-            <h3 className="text-sm font-extrabold">تحديات اليوم</h3>
+            <h2 className="text-sm font-extrabold">تحديات اليوم</h2>
             <p className="text-[11px] text-muted-foreground">أنجز {doneCount}/4 تحدياً — تُمنح الجواهر تلقائياً 💎</p>
           </div>
         </div>
+
+        {storageNotice && <p className="rounded-lg border border-destructive/30 bg-destructive/5 px-3 py-2 text-xs text-destructive" role="status">{storageNotice}</p>}
 
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
           {quests.map((q) => {

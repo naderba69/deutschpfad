@@ -1,9 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import * as React from "react";
 import {PlayCircle, RotateCcw, Volume2} from "lucide-react";
 
 import {FALLSTRICKE} from "@/data/exams/fallstricke";
+import {speakGerman} from "@/lib/speech/voices";
 import {shuffleTrapItem} from "@/lib/tests/shuffle-questions";
 import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
@@ -11,12 +13,7 @@ import {cn} from "@/lib/utils";
 
 /** نطق نص ألماني (لتمارين الاستماع) */
 function speak(text: string) {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-  window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = "de-DE";
-  u.rate = 0.95;
-  window.speechSynthesis.speak(u);
+  speakGerman(text, {rate: 0.95});
 }
 
 /**
@@ -29,9 +26,10 @@ export function FallstrickeTrainer() {
   const [score, setScore] = React.useState(0);
   const [done, setDone] = React.useState(false);
   const [runKey, setRunKey] = React.useState(0);
+  /** سجل الإجابات (id الفخ ← فهرس المختار) لمراجعة النتيجة */
+  const [log, setLog] = React.useState<Record<string, number>>({});
 
   // خلط الخيارات لكل محاولة (مع نقل فهرسي الصحيح والمصيدة)
-  // eslint-disable-next-line react-hooks/exhaustive-deps -- runKey مقصود: يعيد الخلط عند إعادة المحاولة
   // ترتيب الخيارات يُخلط بعد التركيب فقط، لأن العشوائية في التصيير تُسبّب خطأ الـ hydration
   const [exercises, setExercises] = React.useState(() => FALLSTRICKE);
   React.useEffect(() => {
@@ -44,6 +42,7 @@ export function FallstrickeTrainer() {
   const pick = (i: number) => {
     if (answered) return;
     setChosen(i);
+    setLog((l) => ({ ...l, [ex.id]: i }));
     if (i === ex.correct) setScore((s) => s + 1);
   };
 
@@ -61,6 +60,7 @@ export function FallstrickeTrainer() {
     setChosen(null);
     setScore(0);
     setDone(false);
+    setLog({});
     setRunKey((k) => k + 1);
   };
 
@@ -74,19 +74,53 @@ export function FallstrickeTrainer() {
         </p>
         <p className="mt-1 text-sm text-muted-foreground">
           {pct >= 80
-            ? "ممتاز! أنت تعرف فخاخ الامتحان — طبّق هذه العين في محرك الامتحان الكامل."
+            ? "أحسنت في هذه المجموعة التدريبية — واصل تطبيق استراتيجيات القراءة والاستماع."
             : pct >= 50
               ? "جيد — أعد التدريب وركّز على شرح «لماذا المصيدة» لكل تمرين."
               : "لا بأس — هذا بالضبط سبب التدريب. أعد المحاولة وسترى الفرق."}
         </p>
         <Progress value={pct} className="mx-auto mt-3 h-3 max-w-sm" aria-label={`النتيجة ${pct}%`} />
+
+        {/* مراجعة الفخاخ — لماذا يخدع وهذا هو الصحيح (الدفعة 121) */}
+        <div className="mt-6 space-y-3 text-start" data-testid="exam-review">
+          <h3 className="text-lg font-extrabold">مراجعة الفخاخ — لماذا يخدع وهذا هو الصحيح</h3>
+          {exercises.map((t) => {
+            const chosenIdx = log[t.id];
+            const wasAnswered = chosenIdx !== undefined;
+            const ok = wasAnswered && chosenIdx === t.correct;
+            return (
+              <div key={t.id} data-testid="exam-review-item" className="rounded-lg border p-2.5">
+                <p className="text-sm">
+                  <span aria-hidden className={ok ? "text-success" : "text-destructive"}>{ok ? "✓" : "✗"}</span>{" "}
+                  <span dir="ltr" lang="de" className="font-de">{t.question}</span>
+                </p>
+                <p className="mt-1 text-xs">
+                  المصيدة: {t.trapName} — <span dir="ltr" lang="de" className="font-de">{t.trapNameDe}</span>
+                </p>
+                <p className="mt-1 text-xs">
+                  جوابك: <span dir="ltr" lang="de" className="font-de">{wasAnswered ? t.options[chosenIdx] : "— لم تُجب"}</span> ·
+                  الصحيح: <span dir="ltr" lang="de" className="font-de">{t.options[t.correct]}</span>
+                </p>
+                <p className="mt-1 rounded-md bg-muted/40 p-2 text-xs leading-relaxed">
+                  <span className="font-bold">لماذا المصيدة تخدع: </span>
+                  <span data-testid="exam-review-evidence">{t.whyTrap}</span>
+                </p>
+                <p className="mt-1 rounded-md bg-success/10 p-2 text-xs leading-relaxed">
+                  <span className="font-bold">لماذا الصحيح صحيح: </span>
+                  <span data-testid="exam-review-evidence">{t.whyCorrect}</span>
+                </p>
+              </div>
+            );
+          })}
+        </div>
+
         <div className="mt-4 flex justify-center gap-2">
           <Button onClick={reset} className="gap-2">
             <RotateCcw className="h-4 w-4" aria-hidden="true" />
             إعادة التدريب
           </Button>
           <Button asChild variant="outline">
-            <a href="/tests/b2">محرك الامتحان الكامل</a>
+            <Link href="/tests/b2">تدريب B2</Link>
           </Button>
         </div>
       </div>
@@ -101,7 +135,7 @@ export function FallstrickeTrainer() {
           فخ {idx + 1}/{FALLSTRICKE.length}
         </span>
         <span className="rounded-full bg-destructive/10 px-2.5 py-0.5 text-[11px] font-bold text-destructive">
-          ⚠️ {ex.trapName}
+          ⚠️ {ex.trapName} · <span dir="ltr" lang="de" className="font-de">{ex.trapNameDe}</span>
         </span>
         <span className="rounded-full bg-muted px-2.5 py-0.5 text-[11px] font-bold text-muted-foreground">
           {ex.skill === "lesen" ? "📖 قراءة" : "🎧 استماع"}
@@ -150,7 +184,7 @@ export function FallstrickeTrainer() {
                 <span className="font-de ms-1 inline-block w-4 text-xs font-bold opacity-60">{String.fromCharCode(65 + i)}</span>
                 <span dir="ltr" lang="de">{opt}</span>
                 {answered && isTrap && i !== ex.correct && (
-                  <span className="ms-2 rounded-full bg-amber-500/15 px-2 py-0.5 text-[10px] font-bold text-amber-700">هذه هي المصيدة 🪤</span>
+                  <span className="ms-2 rounded-full bg-amber-500/15 px-2 py-0.5 text-[11px] font-bold text-amber-700">هذه هي المصيدة 🪤</span>
                 )}
               </button>
             );

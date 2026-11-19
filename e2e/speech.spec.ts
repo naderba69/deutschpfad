@@ -14,6 +14,7 @@
  *   5) البديل «سجّل واستمع لنفسك» يفتح أداة المقارنة التي تعمل دائماً.
  */
 import { test, expect, type Page } from "@playwright/test";
+import { navigateLessonToSection } from "./helpers/lesson-navigation";
 
 async function clearData(page: Page) {
   await page.evaluate(async () => {
@@ -40,13 +41,7 @@ async function gotoPronSection(page: Page) {
   await page.goto("/lesson/a1-01");
   await clearData(page);
   await page.reload();
-  await page.waitForTimeout(1500);
-  for (let i = 0; i < 5; i++) {
-    await page.getByRole("button", { name: /التالي:/ }).last().click().catch(() => {});
-    await page.waitForTimeout(500);
-  }
-  await page.waitForTimeout(900);
-  await expect(page.locator("#lesson-step-content h2").first()).toContainText("النطق", { timeout: 8000 });
+  await navigateLessonToSection(page, "النطق");
 }
 
 test("قسم النطق يظهر في موضعه بكل أدواته (استمع + انطقها + سجّل نطقك)", async ({ page }) => {
@@ -58,7 +53,7 @@ test("قسم النطق يظهر في موضعه بكل أدواته (استمع
   // زر «سجّل نطقك» في بطاقة التدريب الرئيسية (PronunciationPractice)
   await expect(page.getByRole("button", { name: "سجّل نطقك" }).first()).toBeVisible();
   // نصيحتان مرئيتان
-  await expect(page.getByText("تدرّب على نطقك", { exact: false }).first()).toBeVisible();
+  await expect(page.getByText("تدرّب على النطق", { exact: false }).first()).toBeVisible();
 });
 
 test("التقييم التلقائي: النطق يُقيَّم فورياً بدرجة ومقارنة حرفية", async ({ page }) => {
@@ -101,7 +96,7 @@ test("التقييم التلقائي: النطق يُقيَّم فورياً ب
 
   // النتيجة: درجة + تعليق + مقارنة حرفية (Haloo قريبة من Hallo لكنها أقل من 100)
   await expect(page.getByText(/%/).first()).toBeVisible({ timeout: 6000 });
-  await expect(page.getByText("نطق ممتاز", { exact: false }).first()).toBeVisible();
+  await expect(page.getByText("مطابقة نصية عالية للتفريغ", { exact: false }).first()).toBeVisible();
   // المقارنة الحرفية تظهر (مطابق/اختلف)
   await expect(page.getByText("مطابق", { exact: false }).first()).toBeVisible();
 });

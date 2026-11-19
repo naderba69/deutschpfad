@@ -41,6 +41,14 @@ test("بعد إدخال الاسم، الريفريش لا يطلب الاسم �
   await expect(page.getByText("نادر", { exact: false }).first()).toBeAttached({ timeout: 6000 });
 });
 
+test("يمكن تجاوز إدخال الاسم ومتابعة الإعداد", async ({page}) => {
+  await page.goto("/");
+  await page.evaluate(() => localStorage.clear());
+  await page.reload();
+  await page.getByRole("button", {name: "المتابعة دون اسم"}).click();
+  await expect(page.getByText("كيف تريد أن نبدأ؟", {exact: false}).first()).toBeVisible();
+});
+
 test("مرآة LocalStorage تُكتب عند الحفظ", async ({ page }) => {
   await page.goto("/");
   await page.evaluate(async () => {

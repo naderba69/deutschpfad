@@ -49,25 +49,38 @@ export function GrammarMindMap() {
           اضغط أي فئة لترى القواعد المرتبطة بها — كل قاعدة تقودك لشرحها الكامل في الجدول
           المرجعي أدناه.
         </p>
-        <div className="flex flex-wrap gap-2">
+        {/* مجموعة أزرار إفصاح: بلا role=group كان قارئ الشاشة يعلن 15 زراً
+            متفرقاً بلا سياق، وبلا aria-expanded كان لا يعرف أن الزر يفتح قائمة. */}
+        <div className="flex flex-wrap gap-2" role="group" aria-label="فئات القواعد">
           {categories.map((cat) => {
             const count = topicsByCat(cat).length;
+            const isOpen = open === cat;
             return (
               <div key={cat} className="flex flex-col items-center gap-1">
                 <button
                   type="button"
+                  aria-expanded={isOpen}
+                  aria-controls={`mindmap-${cat}`}
                   onClick={() => setOpen((o) => (o === cat ? null : cat))}
                   className={cn(
                     "rounded-xl border px-3 py-2 text-xs font-bold transition-all hover:scale-105",
                     CATEGORY_COLORS[cat],
-                    open === cat && "ring-2 ring-ring",
+                    isOpen && "ring-2 ring-ring",
                   )}
                 >
                   {GRAMMAR_CATEGORIES[cat]}
-                  <span className="font-de ms-1 opacity-70">({count})</span>
+                  <span className="font-de ms-1">({count})</span>
                 </button>
-                {open === cat && (
-                  <div className="mt-1 flex max-w-64 flex-col gap-1 rounded-lg border bg-background p-2 text-[11px]">
+                {/* اللوحة تبقى في DOM دائماً: `aria-controls` يجب أن يشير إلى
+                    معرّف موجود، وغيابها عند الإغلاق مرجعٌ مكسور. الإخفاء بـ
+                    `hidden` في Tailwind (لا سمة hidden: تفوز عليها .flex). */}
+                <div
+                  id={`mindmap-${cat}`}
+                  className={cn(
+                    "mt-1 max-w-64 flex-col gap-1 rounded-lg border bg-background p-2 text-[11px]",
+                    isOpen ? "flex" : "hidden",
+                  )}
+                >
                     {topicsByCat(cat).map((t) => (
                       <a
                         key={t.id}
@@ -78,9 +91,8 @@ export function GrammarMindMap() {
                         <span className="block text-muted-foreground">{t.titleAr}</span>
                       </a>
                     ))}
-                    <ChevronDown className="mx-auto h-3 w-3 text-muted-foreground" aria-hidden="true" />
-                  </div>
-                )}
+                  <ChevronDown className="mx-auto h-3 w-3 text-muted-foreground" aria-hidden="true" />
+                </div>
               </div>
             );
           })}

@@ -1,6 +1,8 @@
 "use client";
 
 import * as React from "react";
+
+import {speakSequence} from "@/lib/speech/voices";
 import {Headphones, Play, Users} from "lucide-react";
 
 import {MultipleChoiceExercise} from "@/components/lesson/exercises/multiple-choice";
@@ -27,23 +29,7 @@ const SPEED_OPTIONS = [
 /** تشغيل حوار كامل بالتسلسل — سطر بعد سطر عبر onend (لا دفعة واحدة) */
 function playDialogue(lines: { de: string }[], rate: number) {
   if (typeof window === "undefined" || !("speechSynthesis" in window) || lines.length === 0) return;
-  window.speechSynthesis.cancel();
-  // إضافة كل الأسطر دفعة واحدة بعد cancel يجعل المتصفح يبتلع بعضها —
-  // بالتسلسل تُنطق كل جملة بعد انتهاء سابقتها.
-  const speakNext = (idx: number) => {
-    if (idx >= lines.length) return;
-    const u = new SpeechSynthesisUtterance(lines[idx].de);
-    u.lang = "de-DE";
-    // اختيار صوت ألماني صراحةً إن وُجد، حتى لا يُنطق النص بصوت إنجليزي على بعض الأجهزة
-    const voices = window.speechSynthesis.getVoices();
-    const gv = voices.find((v) => v.lang === "de-DE") ?? voices.find((v) => v.lang.startsWith("de"));
-    if (gv) u.voice = gv;
-    u.rate = rate;
-    u.onend = () => speakNext(idx + 1);
-    u.onerror = () => speakNext(idx + 1);
-    window.speechSynthesis.speak(u);
-  };
-  speakNext(0);
+  speakSequence(lines, {rate});
 }
 
 /**
@@ -62,6 +48,35 @@ export function HoerverstehenSection({
   const [rate, setRate] = React.useState<number>(1);
   const [visibleTranscripts, setVisibleTranscripts] = React.useState<Record<string, boolean>>({});
   const [revealedTranscripts, setRevealedTranscripts] = React.useState<Record<string, boolean>>({});
+  const activeAudioRef = React.useRef<HTMLAudioElement | null>(null);
+  const playbackSessionRef = React.useRef(0);
+
+  const playAudioSequence = React.useCallback((sources: string[]) => {
+    window.speechSynthesis?.cancel();
+    const session = ++playbackSessionRef.current;
+    activeAudioRef.current?.pause();
+    const playAt = (index: number) => {
+      if (session !== playbackSessionRef.current || index >= sources.length) return;
+      const audio = new Audio(sources[index]);
+      activeAudioRef.current = audio;
+      audio.playbackRate = rate;
+      let advanced = false;
+      const advance = () => {
+        if (advanced || session !== playbackSessionRef.current) return;
+        advanced = true;
+        playAt(index + 1);
+      };
+      audio.onended = advance;
+      audio.onerror = advance;
+      void audio.play().catch(advance);
+    };
+    playAt(0);
+  }, [rate]);
+
+  React.useEffect(() => () => {
+    playbackSessionRef.current++;
+    activeAudioRef.current?.pause();
+  }, []);
 
   return (
     <div className="space-y-6">
@@ -103,13 +118,26 @@ export function HoerverstehenSection({
               content: (
                 <div className="space-y-4">
                   <div className="flex flex-wrap items-center gap-2">
-                    <Button variant="outline" size="sm" onClick={() => playDialogue(item.lines, rate)}>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        const sources = item.lines.map((line) => line.audioSrc);
+                        if (sources.every((source): source is string => Boolean(source))) {
+                          playAudioSequence(sources);
+                        } else {
+                          playDialogue(item.lines, rate);
+                        }
+                      }}
+                    >
                       <Play className="h-4 w-4" aria-hidden="true" />
                       استمع للكل
                     </Button>
                     <Button
                       variant={showText ? "outline" : "default"}
                       size="sm"
+                      aria-expanded={showText}
+                      aria-controls={`transcript-${item.id}`}
                       onClick={() => {
                         const nextShowText = !showText;
                         setVisibleTranscripts((previous) => ({
@@ -134,6 +162,11 @@ export function HoerverstehenSection({
                       ariaLabel="استمع إلى الحوار كاملاً"
                     />
                   </div>
+                  {item.audioNoteAr && (
+                    <p data-testid="listening-audio-disclosure" className="rounded-lg border border-primary/20 bg-primary/5 px-3 py-2 text-xs font-semibold text-primary">
+                      🔊 {item.audioNoteAr}
+                    </p>
+                  )}
                   <p className="text-xs text-muted-foreground">
                     {transcriptWasRevealed
                       ? "كُشف نص هذا الحوار؛ أسئلته الآن للمراجعة ولا تُحتسب دليلاً مستقلاً على الاستماع. تمرين الترتيب نصّي أيضاً."
@@ -146,7 +179,7 @@ export function HoerverstehenSection({
                     </p>
                   ) : null}
 
-                  <div className="space-y-3">
+                  <div id={`transcript-${item.id}`} className="space-y-3">
                     {item.lines.map((line, i) => (
                       <div
                         key={i}
@@ -165,7 +198,18 @@ export function HoerverstehenSection({
                           )}
                         </div>
                         <div className="flex shrink-0 flex-col items-end gap-1.5">
-                          <SpeakButton text={line.de} rate={rate} ariaLabel={`استمع إلى السطر ${i + 1}`} />
+                          {line.audioSrc ? (
+                            <Button
+                              variant="outline"
+                              size="icon"
+                              aria-label={`استمع إلى السطر ${i + 1}`}
+                              onClick={() => playAudioSequence([line.audioSrc!])}
+                            >
+                              <Play className="h-4 w-4" aria-hidden="true" />
+                            </Button>
+                          ) : (
+                            <SpeakButton text={line.de} rate={rate} ariaLabel={`استمع إلى السطر ${i + 1}`} />
+                          )}
                           {showText ? <SpeakAndScore target={line.de} compact /> : null}
                         </div>
                       </div>

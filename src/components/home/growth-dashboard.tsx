@@ -22,51 +22,44 @@ export function GrowthDashboard() {
   const [streak, setStreak] = React.useState(0);
   const [badges, setBadges] = React.useState<{ name: string; emoji: string }[]>([]);
   const [todayDone, setTodayDone] = React.useState(0);
-  const [xp, setXp] = React.useState(0);
+  const [xp, setXp] = React.useState<number | null>(null);
+  const [activityReadError, setActivityReadError] = React.useState(false);
+  const [statsReadError, setStatsReadError] = React.useState(false);
 
-  // بطاقة الإنجاز اليومية + XP (بند 7 و9)
+  // قراءة موثوقة لملخص النشاط؛ لا نحسب XP من عينة حديثة قد تسقط أحداثاً قديمة.
   React.useEffect(() => {
+    let cancelled = false;
     void (async () => {
-      try {
-        const {getRecentEvents} = await import("@/lib/analytics/events");
-        const events = await getRecentEvents(2000);
+      const [{getRecentEventsResult, getEventStatsResult}, {getActivityMapResult, computeStreak}] = await Promise.all([
+        import("@/lib/analytics/events"),
+        import("@/lib/analytics/heatmap"),
+      ]);
+      const [recent, stats, activity] = await Promise.all([
+        getRecentEventsResult(2000),
+        getEventStatsResult(),
+        getActivityMapResult(),
+      ]);
+      if (cancelled) return;
+      if (recent.ok) {
         const today = new Date().toDateString();
-        const doneToday = events.filter((e) => e.type === "lesson-completed" && new Date(e.ts).toDateString() === today).length;
-        setTodayDone(doneToday);
-        // XP من الأحداث
-        let xpTotal = 0;
-        for (const e of events) {
-          if (e.type === "exercise-result") xpTotal += e.correct ? 10 : 2;
-          if (e.type === "lesson-completed") xpTotal += 50;
-        }
-        setXp(xpTotal);
-      } catch {
-        /* تجاهل */
+        setTodayDone(recent.events.filter((e) => e.type === "lesson-completed" && new Date(e.ts).toDateString() === today).length);
+      } else setActivityReadError(true);
+      if (stats.ok) {
+        setAccuracy(stats.stats.accuracyPct);
+        setXp(stats.stats.xp);
+      } else setStatsReadError(true);
+      if (activity.ok) setStreak(computeStreak(activity.activity));
+      else setActivityReadError(true);
+    })().catch(() => {
+      if (!cancelled) {
+        setActivityReadError(true);
+        setStatsReadError(true);
       }
-    })();
+    });
+    return () => { cancelled = true; };
   }, []);
 
   React.useEffect(() => {
-    void (async () => {
-      try {
-        const {getRecentEvents} = await import("@/lib/analytics/events");
-        const events = await getRecentEvents(500);
-        const ex = events.filter((e) => e.type === "exercise-result");
-        if (ex.length > 0) {
-          setAccuracy(Math.round((ex.filter((e) => e.correct).length / ex.length) * 100));
-        }
-      } catch {
-        /* تجاهل */
-      }
-    })();
-    void (async () => {
-      try {
-        const {getActivityMap, computeStreak} = await import("@/lib/analytics/heatmap");
-        setStreak(computeStreak(await getActivityMap()));
-      } catch {
-        /* تجاهل */
-      }
-    })();
     void (async () => {
       try {
         const {getUnlockedBadges} = await import("@/lib/gamification/badges");
@@ -108,8 +101,8 @@ export function GrowthDashboard() {
             {overallPct >= 75 ? "خبير الطريق" : overallPct >= 40 ? "متقدم واثق" : overallPct >= 10 ? "متعلم نشط" : "باحث جديد"}
           </p>
           <p className="text-[11px] text-muted-foreground">
-            إنجاز اليوم: <span className="font-de font-bold">{todayDone}</span> درس · إجمالي XP:{" "}
-            <span className="font-de font-bold text-gold-strong">⚡{xp}</span>
+            إنجاز اليوم: <span className="font-de font-bold">{activityReadError ? "—" : todayDone}</span> درس · إجمالي XP:{" "}
+            <span className="font-de font-bold text-gold-strong">⚡{xp ?? "—"}</span>
           </p>
         </div>
         {todayDone > 0 && <span className="shrink-0 rounded-full bg-success/15 px-2 py-0.5 text-[11px] font-bold text-success">يوم نشط ✓</span>}
@@ -145,15 +138,17 @@ export function GrowthDashboard() {
         <StatBox icon={<Target className="h-3.5 w-3.5" aria-hidden="true" />} value={`${doneCount}`} label="درس مكتمل" />
         <StatBox
           icon={<Flame className="h-3.5 w-3.5" aria-hidden="true" />}
-          value={streak > 0 ? `${streak}` : "—"}
+          value={activityReadError || streak === 0 ? "—" : `${streak}`}
           label="أيام متتالية"
         />
         <StatBox
           icon={<Award className="h-3.5 w-3.5" aria-hidden="true" />}
-          value={accuracy !== null ? `${accuracy}%` : "—"}
+          value={!statsReadError && accuracy !== null ? `${accuracy}%` : "—"}
           label="دقة التمارين"
         />
       </div>
+
+      {(activityReadError || statsReadError) && <p role="alert" className="mt-3 text-xs text-destructive">تعذرت قراءة بعض بيانات النشاط؛ أخفينا المؤشرات المتأثرة بدلاً من عرض أصفار مضللة.</p>}
 
       {/* الشارات */}
       {badges.length > 0 && (

@@ -212,6 +212,8 @@ export type Exercise =
 
 export interface FeedbackResult {
   isCorrect: boolean;
+  /** الخيار الذي اختاره المتعلّم (نصّه) — لمراجعة النتيجة (الدفعة 122) */
+  chosen?: string;
   /** هل كانت الإجابة صحيحة جزئياً؟ (مثل ترتيب الكلمات صحيح لكن نقص) */
   partial?: boolean;
   pointsEarned: number;
@@ -359,11 +361,15 @@ export interface ListeningLine {
   speaker: string;
   de: string;
   ar: string;
+  /** مسار ملف صوتي مرفق لهذا السطر عند توفره، بجانب الصوت النطقي في المتصفح */
+  audioSrc?: string;
 }
 
 export interface ListeningItem {
   id: string;
   title: string;
+  /** إفصاح مصدر الصوت للمقاطع المولّدة آلياً */
+  audioNoteAr?: string;
   lines: ListeningLine[];
 }
 
@@ -442,6 +448,18 @@ export interface MediationTask {
   keyPointsAr: string[];
 }
 
+/** ═══ إنتاج شفهي — مهمة مفتوحة للتسجيل والمراجعة الذاتية، بلا تصحيح آلي ═══ */
+export interface OralProductionTask {
+  id: string;
+  titleAr: string;
+  promptAr: string;
+  promptDe?: string;
+  /** تلميحات اختيارية تساعد المتعلم على إعداد كلامه */
+  prompts?: string[];
+  /** عناصر يراجعها المتعلم ذاتياً بعد أن يتحدث؛ لا تمثل درجة أو إثبات إتقان */
+  selfReview: string[];
+}
+
 /** ═══ مكوّن التفاعل — أدوار متفرعة وتبادل أدوار وطلب توضيح ═══ */
 export interface InteractionTask {
   id: string;
@@ -493,6 +511,8 @@ export interface Lesson {
   flashcards: Flashcard[];
   /** ═══ مكوّن الوساطة (جديد — CEFR 2020) ═══ */
   mediation?: MediationTask[];
-  /** ═══ مكوّن التفاعل (جديد — CEFR 2020) ═══ */
+  /** ═══ مكوّن التفاعل (CEFR 2020) ═══ */
   interaction?: InteractionTask[];
+  /** تدريب إنتاج شفهي مفتوح مع مراجعة ذاتية غير مقوّمة */
+  oralProduction?: OralProductionTask[];
 }

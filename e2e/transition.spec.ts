@@ -5,6 +5,8 @@
  */
 import { test, expect } from "@playwright/test";
 
+import { LESSON_META } from "@/data/lessons/meta";
+
 test("«إنهاء الدرس» ينقل تلقائياً إلى الدرس التالي", async ({ page }) => {
   await page.goto("/lesson/a1-01");
   // بيانات نظيفة
@@ -51,10 +53,12 @@ test("«إنهاء الدرس» ينقل تلقائياً إلى الدرس ال
   await page.getByRole("button", { name: "إنهاء الدرس", exact: true }).first().click();
 
   // شريط الانتقال يظهر
-  await expect(page.getByText("أُنجز الدرس بنجاح!").first()).toBeVisible({ timeout: 5000 });
+  await expect(page.getByText("أتممت هذا الدرس!").first()).toBeVisible({ timeout: 5000 });
 
-  // خلال ~3 ثوانٍ ينتقل لصفحة الدرس التالي (a1-02)
-  await page.waitForURL(/\/lesson\/a1-02/, { timeout: 8000 });
+  // خلال ~3 ثوانٍ ينتقل لصفحة الدرس التالي حسب ترتيب الفهرس (a1-01 → a1-01b)
+  const idx = LESSON_META.findIndex((l) => l.id === "a1-01");
+  const nextId = LESSON_META[idx + 1].id;
+  await page.waitForURL(new RegExp(`/lesson/${nextId}`), { timeout: 8000 });
 });
 
 test("وضع الخطوات: تسلسل صارم — يبدأ من الخطوة 1 ولا يظهر «إنهاء الدرس» مبكراً", async ({ page }) => {

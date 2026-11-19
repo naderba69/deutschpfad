@@ -6,7 +6,7 @@ import {LEVELS} from "@/lib/constants/curriculum";
 import {getLessonMetaByLevel} from "@/data/lessons/meta";
 
 interface Props {
-  params: { level: string };
+  params: Promise<{ level: string }>;
 }
 
 export function generateStaticParams() {
@@ -14,7 +14,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const code = params.level.toUpperCase();
+  const { level } = await params;
+  const code = level.toUpperCase();
   const meta = LEVELS.find((l) => l.code === code);
   if (!meta) return { title: "المستوى غير موجود" };
   return {
@@ -23,8 +24,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function LevelPage({ params }: Props) {
-  const code = params.level.toUpperCase() as "A1" | "A2" | "B1" | "B2";
+export default async function LevelPage({ params }: Props) {
+  const { level } = await params;
+  const code = level.toUpperCase() as "A1" | "A2" | "B1" | "B2";
   const meta = LEVELS.find((l) => l.code === code);
   if (!meta) notFound();
 

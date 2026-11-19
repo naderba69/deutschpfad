@@ -1,40 +1,13 @@
 "use client";
 
 /**
- * تحميل كسول لمكوّن تفاعلي ثقيل — يُحمَّل عند الحاجة فقط
- * (كل مكوّن في ملف مستقل ليتمكن webpack من عزل بياناته)
+ * أدوات الذكاء الاصطناعي — استيراد مباشر بدل `next/dynamic`.
+ *
+ * كان التحميل الكسول يُنشئ حدّ Suspense حول المكوّن، فتصل الصفحة من الخادم
+ * (أو من التوليد المسبق) وفيها هيكل تحميل ثم يُستبدل بالمحتوى عبر سكربت
+ * `$RC` بعد التحميل. فيتغيّر ارتفاع الصفحة بعد أول رسم ويهتزّ التذييل —
+ * انزياح تخطيط مقيس يصل 0.75 في /tests. الاستيراد المباشر يجعل المحتوى
+ * داخل HTML نفسه. التقسيم لكل مسار ما زال قائماً (Next يقسّم الحزمة حسب
+ * المسار)، والخسارة الوحيدة هي تقسيم ثانٍ اختياري بعد الرسم.
  */
-import dynamic from "next/dynamic";
-
-import {Skeleton} from "@/components/ui/skeleton";
-
-export function TestLoading() {
-  return (
-    <div
-      role="status"
-      aria-live="polite"
-      className="flex flex-col items-center justify-center gap-4 rounded-2xl border bg-muted/20 p-12"
-    >
-      <div
-        className="h-9 w-9 animate-spin rounded-full border-2 border-primary border-t-transparent"
-        aria-hidden="true"
-      />
-      <p className="text-sm text-muted-foreground">جارٍ تحميل الاختبار…</p>
-    </div>
-  );
-}
-
-export function PanelLoading() {
-  return (
-    <div className="space-y-4" aria-live="polite">
-      <Skeleton className="h-12 w-2/3" />
-      <Skeleton className="h-8 w-1/2" />
-      <Skeleton className="h-64 w-full rounded-2xl" />
-    </div>
-  );
-}
-
-export const LazyAiToolsClient = dynamic(
-  () => import("@/components/ai/ai-tools-client").then((m) => m.AiToolsClient),
-  { loading: PanelLoading, ssr: false },
-);
+export { AiToolsClient as LazyAiToolsClient } from "@/components/ai/ai-tools-client";

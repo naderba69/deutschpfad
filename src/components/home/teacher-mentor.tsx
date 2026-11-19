@@ -34,7 +34,7 @@ export function TeacherMentor({ profile }: { profile: LearnerProfile }) {
   }, []);
 
   const firstName = (profile.name ?? "").trim().split(/\s+/)[0] ?? "صديقي";
-  const doneCount = completedLessesSetSize(completedLessonsSet);
+  const doneCount = completedLessonsSet.size;
 
   // الدرس التالي (أول درس غير مكتمل في المسار)
   const next = LESSON_META.find((l) => !completedLessonsSet.has(l.id)) ?? LESSON_META[LESSON_META.length - 1];
@@ -56,8 +56,8 @@ export function TeacherMentor({ profile }: { profile: LearnerProfile }) {
   // ملاحظة المعلم عن مستوى المتعلم
   const note =
     weakest !== null
-      ? `لاحظت أن نقطة ضعفك الحالية «${weakest}» — سنعمل عليها في التدريب.`
-      : `وضعك ممتاز — نواصل بنفس التركيز، وكل جلسة تقرّبك من B2.`;
+      ? `تُظهر عينة الأخطاء المسجلة تكرار «${weakest}» — سنراجعه في التدريب؛ وهذا مؤشر محدود لا يحدد مستواك العام.`
+      : `لا توجد بيانات أخطاء كافية لتحديد نقطة مراجعة بعد؛ سنواصل المسار التعليمي دون استنتاج مستوى من غياب البيانات.`;
 
   return (
     <Card className="relative overflow-hidden border-primary/25">
@@ -112,7 +112,7 @@ export function TeacherMentor({ profile }: { profile: LearnerProfile }) {
               title="التقييم — اختبر ما تعلمته"
               desc={`اختبار مستوى ${level} — وأقيس تقدمك بالأرقام`}
               href={`/tests/level/${level.toLowerCase()}`}
-              accent="bg-[#dc2626]/10 text-[#dc2626]"
+              accent="bg-[#b91c1c]/10 text-[#b91c1c]"
             />
           </ol>
         </div>
@@ -162,16 +162,11 @@ function SessionStep({
         </span>
         <span className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${accent}`}>{icon}</span>
         <span className="min-w-0 flex-1">
-          <span className="block truncate text-sm font-bold">{title}</span>
-          <span className="block truncate text-xs text-muted-foreground">{desc}</span>
+          <span className="block line-clamp-2 text-sm font-bold">{title}</span>
+          <span className="block line-clamp-2 text-xs text-muted-foreground">{desc}</span>
         </span>
         <span className="text-muted-foreground transition-transform group-hover:-translate-x-1" aria-hidden="true">←</span>
       </Link>
     </li>
   );
-}
-
-/** مساعد: حجم مجموعة الدروس المكتملة (واجهة قديمة) */
-function completedLessesSetSize(set: Set<string>): number {
-  return set.size;
 }

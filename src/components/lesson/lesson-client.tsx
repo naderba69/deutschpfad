@@ -2,15 +2,17 @@
 
 import * as React from "react";
 import Link from "next/link";
+import {useRouter} from "next/navigation";
 import {ArrowLeft, ArrowRight, Award, CheckCircle2, ListChecks, Printer, Sparkles, TableProperties, Trophy} from "lucide-react";
 
 import {LESSON_SECTIONS} from "@/components/lesson/lesson-sections";
+import {FavoriteButton} from "@/components/shared/favorite-button";
 import {LESSON_META} from "@/data/lessons/meta";
 import {getRelatedResources} from "@/data/lessons/related-resources";
 import {useProgress} from "@/components/providers/progress-provider";
 import {isLevelLessonsDone, getLessonLevelCompletion} from "@/lib/progress-selectors";
 import {InterleavingReview} from "@/components/lesson/sections/interleaving-review";
-import {buildInterleavedReview, reviewLevelLabel} from "@/lib/lesson/review-generator";
+import {buildInterleavedReview, likelyHasInterleavedReview, reviewLevelLabel} from "@/lib/lesson/review-generator";
 import {AusspracheSection} from "@/components/lesson/sections/aussprache";
 import {EinfuehrungSection} from "@/components/lesson/sections/einfuehrung";
 import {FehlerUndTippsSection} from "@/components/lesson/sections/fehler-und-tipps";
@@ -25,12 +27,15 @@ import {SchreibenSection} from "@/components/lesson/sections/schreiben";
 import {TheorieSection} from "@/components/lesson/sections/theorie";
 import {VertiefungSection} from "@/components/lesson/sections/vertiefung";
 import {LesetextSection} from "@/components/lesson/sections/lesetext";
+import {OralProductionSection} from "@/components/lesson/sections/oral-production";
 import {LangDe} from "@/components/shared/lang-de";
 import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Progress} from "@/components/ui/progress";
+import {SectionStrip} from "@/components/lesson/section-strip";
 import {StarkeVerbenTable} from "@/components/verbs/starke-verben-table";
+import {scrollToLessonTarget} from "./lesson-scroll";
 import {cn} from "@/lib/utils";
 import type { Exercise, Lesson } from "@/types/lesson";
 
@@ -47,6 +52,7 @@ const LEVEL_LABEL: Record<string, string> = {
  * + اقتراح امتحان الختم عند إتمام آخر درس في المستوى.
  */
 function LessonCompletion({ lesson }: { lesson: Lesson }) {
+  const router = useRouter();
   const { completedLessonsSet, completeLesson, uncompleteLesson } = useProgress();
   const [autoCount, setAutoCount] = React.useState<number | null>(null);
   const [teacherWord, setTeacherWord] = React.useState<string | null>(null);
@@ -63,7 +69,7 @@ function LessonCompletion({ lesson }: { lesson: Lesson }) {
         const {getPersonality, motivationalByPersonality} = await import("@/lib/storage/teacher-personality");
         const p = await getPersonality();
         const core = motivationalByPersonality(p, "success");
-        const nextPart = next ? ` \nالدرس القادم: «${next.titleAr}» — سنبني عليه مباشرة.` : " \nأتممت المسار الكامل — أنت جاهز لاختبار الختم! 🏆";
+        const nextPart = next ? ` \nالدرس القادم: «${next.titleAr}» — سنبني عليه مباشرة.` : " \nأتممت وحدات المسار. يمكنك تجربة اختبار التقدم الداخلي لمراجعة أدائك؛ لا يثبت ذلك مستوى CEFR أو الجاهزية الرسمية. 🏆";
         setTeacherWord(`${core}${nextPart}`);
       } catch {
         setTeacherWord(next ? `أحسنت! الدرس القادم: «${next.titleAr}».` : "أحسنت! أتممت المسار الكامل!");
@@ -76,12 +82,12 @@ function LessonCompletion({ lesson }: { lesson: Lesson }) {
     if (autoCount === null) return;
     if (autoCount <= 0) {
       setAutoCount(null);
-      if (next) window.location.href = `/lesson/${next.id}`;
+      if (next) router.push(`/lesson/${next.id}`);
       return;
     }
     const t = window.setTimeout(() => setAutoCount((c) => (c === null ? null : c - 1)), 1000);
     return () => window.clearTimeout(t);
-  }, [autoCount, next]);
+  }, [autoCount, next, router]);
 
   return (
     <div className="mt-10 rounded-2xl border bg-muted/10 p-5">
@@ -136,6 +142,10 @@ function LessonCompletion({ lesson }: { lesson: Lesson }) {
                 void import("@/lib/gamification/gems").then(({addGems, GEM_REWARDS}) =>
                   addGems(GEM_REWARDS.LESSON_COMPLETED),
                 );
+                // نجوم الإتقان: نجمة للإتمام + نجمة إن بلا أخطاء في هذا الدرس
+                void import("@/lib/gamification/mastery").then(({awardLessonStars}) =>
+                  awardLessonStars(lesson.id),
+                );
                 // اقتراح الانتقال التلقائي
                 if (next) setAutoCount(3);
               }}
@@ -188,7 +198,7 @@ function LessonCompletion({ lesson }: { lesson: Lesson }) {
 }
 
 /**
- * مؤشر موضع الدرس في المسار الكامل: «الدرس 12 من 48».
+ * مؤشر موضع الدرس في المسار الكامل؛ العدد مشتق من فهرس الدروس الحالي.
  */
 function LessonPosition({ lessonId }: { lessonId: string }) {
   const index = LESSON_META.findIndex((l) => l.id === lessonId);
@@ -204,13 +214,13 @@ function LessonPosition({ lessonId }: { lessonId: string }) {
  * شريط هدف اليوم — يذكّر المتعلم بهدفه اليومي ويظهر تقدّم إكمال الدرس.
  */
 function DailyGoalBar() {
-  const [profile, setProfile] = React.useState<{ dailyGoalMinutes?: number; studyHour?: number } | null>(null);
+  // القيم الافتراضية تُرسَم في HTML الخادمي أيضاً: كان الشريط يُضاف بعد التحميل فيدفع الدرس 62px (CLS 0.17).
+  const [profile, setProfile] = React.useState<{ dailyGoalMinutes?: number; studyHour?: number }>({dailyGoalMinutes: 20});
 
   React.useEffect(() => {
     void import("@/lib/storage/learner").then(({getLearnerProfile}) => getLearnerProfile().then(setProfile));
   }, []);
 
-  if (!profile) return null;
   const goal = profile.dailyGoalMinutes ?? 20;
   const studyHour = profile.studyHour;
 
@@ -293,6 +303,7 @@ function LessonPrevNext({ lessonId }: { lessonId: string }) {
  * مع متصفح أقسام علوي وشريط تقدم
  */
 export function LessonClient({ lesson }: { lesson: Lesson }) {
+  const router = useRouter();
   // سياق التقدم: لتصحيح الإكمال عند «أكمل الدرس» في وضع التدفق
   const { completedLessonsSet, completeLesson } = useProgress();
   const [visited, setVisited] = React.useState<Set<string>>(new Set(["lernziele"]));
@@ -335,7 +346,12 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       const saved = window.localStorage.getItem(`lesson-step:${lesson.id}`);
       if (saved) {
         const n = Number(saved);
-        if (Number.isFinite(n) && n > 0) setCurrentSection(Math.min(n, sectionDefs.length - 1));
+        if (Number.isFinite(n) && n > 0) {
+          const restored = Math.min(n, sectionDefs.length - 1);
+          setCurrentSection(restored);
+          const restoredId = sectionDefs[restored]?.id;
+          if (restoredId) setVisited((prev) => new Set([...prev, restoredId]));
+        }
       }
     } catch {
       /* تجاهل */
@@ -360,7 +376,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
 
   const sectionDefs = LESSON_SECTIONS.filter(
     (def) =>
-      (def.id !== "review" || (reviewLoaded && reviewQuestions.length > 0)) &&
+      (def.id !== "review" || (reviewLoaded ? reviewQuestions.length > 0 : likelyHasInterleavedReview(lesson))) &&
       (def.id !== "verben" || lesson.level === "B1" || lesson.level === "B2") &&
       /* ═══ الوساطة والتفاعل: تُعرضان فقط إذا كان الدرس يحتويهما ═══ */
       (def.id !== "mediation" || (lesson.mediation && lesson.mediation.length > 0)) &&
@@ -405,8 +421,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       ? "lesson-step-content"
       : `lesson-section-${sectionDefs[currentSection]?.id}`;
     if (!targetId) return;
-    const el = document.getElementById(targetId);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    return scrollToLessonTarget(targetId);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSection, stepMode]);
 
@@ -421,23 +436,26 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       void import("@/lib/gamification/gems").then(({addGems, GEM_REWARDS}) =>
         addGems(GEM_REWARDS.LESSON_COMPLETED),
       );
+      void import("@/lib/gamification/mastery").then(({awardLessonStars}) =>
+        awardLessonStars(lesson.id),
+      );
     }
     // انتقال تسلسلي: الدرس التالي تلقائياً
     const idx = LESSON_META.findIndex((l) => l.id === lesson.id);
     const nextL = idx >= 0 && idx < LESSON_META.length - 1 ? LESSON_META[idx + 1] : undefined;
     if (nextL) {
       setCompletionNotice({
-        title: "🎉 أُنجز الدرس بنجاح!",
+        title: "🎉 أتممت هذا الدرس!",
         sub: `جارٍ الانتقال إلى الدرس التالي: «${nextL.titleAr}»…`,
         href: `/lesson/${nextL.id}`,
       });
       window.setTimeout(() => {
-        window.location.href = `/lesson/${nextL.id}`;
+        router.push(`/lesson/${nextL.id}`);
       }, 2500);
     } else {
       setCompletionNotice({
-        title: "🏆 أتممت المسار كاملاً!",
-        sub: "أنت جاهز لامتحانات الختم ومحاكاة Goethe الكاملة.",
+        title: "🏆 أتممت وحدات المسار!",
+        sub: "يمكنك استخدام اختبار التقدم الداخلي وعينة التدريب لمراجعة أدائك فقط؛ إكمال الوحدات وحده لا يثبت الإتقان أو الجاهزية الرسمية.",
         href: "/tests/seal/b2",
       });
       document.getElementById("lesson-complete")?.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -454,6 +472,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
         return (
           <InterleavingReview
             review={reviewQuestions}
+            lessonId={lesson.id}
             levelLabel={reviewLevelLabel(reviewQuestions, lesson.level)}
           />
         );
@@ -517,6 +536,8 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
             .
           </div>
         );
+      case "oral-production":
+        return <OralProductionSection tasks={lesson.oralProduction ?? []} />;
       case "vertiefung":
         return <VertiefungSection lessonId={lesson.id} />;
       default:
@@ -529,7 +550,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       {/* ترويسة الدرس */}
       <div className="mb-6 space-y-3">
         <div className="flex flex-wrap items-center gap-2">
-          <Link href="/learning-path" className="rounded-lg py-1 text-sm text-muted-foreground hover:text-primary">
+          <Link href="/learning-path" className="rounded-lg py-2 text-sm text-muted-foreground hover:text-primary">
             ← مسار التعلم
           </Link>
           <span className="text-muted-foreground">/</span>
@@ -582,6 +603,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
             <Printer className="h-4 w-4" aria-hidden="true" />
             طباعة / PDF
           </Button>
+          <FavoriteButton kind="lesson" id={lesson.id} label={lesson.titleAr} size="sm" />
         </div>
 
         {/* شريط التقدم */}
@@ -602,49 +624,16 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
         </div>
       )}
 
-      {/* متصفح الأقسام العشرة — شريط علوي (لاصق في وضع «عرض الكل» فقط؛
-          في وضع «خطوة بخطوة» يبقى عادياً كي لا يتكدس فوق شريط التقدم اللاصق) */}
+      {/* متصفح الأقسام العشرة — يستبقي القسم النشط مرئياً على الجوال */}
       {!focusMode && (
-      <div
-        className={`${
-          stepMode ? "" : "sticky top-16 z-30"
-        } -mx-4 mb-6 border-y bg-background/90 px-4 py-2 backdrop-blur-md sm:mx-0 sm:rounded-xl sm:border`}
-      >
-        <div className="flex gap-1.5 overflow-x-auto pb-1 sm:flex-wrap">
-          {sectionDefs.map((def, i) => {
-            const isVisited = visited.has(def.id);
-            const isCurrent = i === currentSection;
-            return (
-              <button
-                key={def.id}
-                type="button"
-                onClick={() => goTo(i)}
-                disabled={stepMode && !isVisited && !isCurrent}
-                aria-current={isCurrent ? "step" : undefined}
-                title={
-                  stepMode && !isVisited && !isCurrent
-                    ? "أتمّ القسم الحالي لفتح هذا القسم — لا تخطي في المسار"
-                    : undefined
-                }
-                className={cn(
-                  "flex shrink-0 items-center gap-1.5 rounded-lg border px-3 py-2 text-xs font-semibold transition-colors",
-                  isCurrent
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : isVisited
-                      ? "border-success/40 bg-success/10 text-success hover:border-success/60"
-                      : stepMode
-                        ? "cursor-not-allowed bg-muted/20 text-muted-foreground/50"
-                        : "bg-muted/40 text-muted-foreground hover:border-primary/40",
-                )}
-              >
-                <def.icon className="h-3.5 w-3.5" aria-hidden="true" />
-                {def.short}
-                {isVisited && !isCurrent && <CheckCircle2 className="h-3 w-3" aria-hidden="true" />}
-              </button>
-            );
-          })}
-        </div>
-      </div>
+        <SectionStrip
+          sectionDefs={sectionDefs}
+          currentSection={currentSection}
+          visited={visited}
+          stepMode={stepMode}
+          sticky={!stepMode}
+          onSelect={goTo}
+        />
       )}
 
       {/* ═══ هدف اليوم + مراجعة قبل النسيان ═══ */}
@@ -652,7 +641,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
 
       {/* ═══ وضع العرض: خطوة بخطوة (تفاعلي) أم عرض الكل ═══ */}
       <div className="mb-4 flex items-center justify-between gap-3">
-        <p className="text-xs font-bold text-muted-foreground">
+        <p className="text-xs font-bold text-muted-foreground" aria-live="polite" aria-atomic="true">
           {stepMode
             ? `الخطوة ${currentSection + 1} من ${total} — ${sectionDefs[currentSection]?.label ?? ""}`
             : "جميع خطوات الدرس معاً"}
@@ -675,7 +664,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
             الكتابة ← التدريبات ← الأخطاء والحيل ← التقييم ← البطاقات) */
         <div className="space-y-4">
           {/* شريط التقدم اللاصق — يبقى مرئياً دائماً حتى في السكرول الطويل */}
-          <div className="sticky top-16 z-30 flex items-center gap-3 rounded-xl border bg-background/95 px-4 py-2.5 shadow-sm backdrop-blur-md">
+          <div data-lesson-sticky-strip className="sticky top-16 z-30 flex items-center gap-3 rounded-xl border bg-background/95 px-4 py-2.5 shadow-sm backdrop-blur-md">
             <Progress value={progressPct} className="h-2.5 flex-1" aria-label={`الخطوة ${currentSection + 1} من ${total}`} />
             <span className="font-de shrink-0 text-sm font-extrabold text-primary">{currentSection + 1}/{total}</span>
             <span className="max-w-24 shrink-0 truncate rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-bold text-primary">

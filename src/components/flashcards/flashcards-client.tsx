@@ -74,7 +74,10 @@ export function FlashcardsClient() {
           <CardTitle className="flex items-center gap-2 text-lg">
             <CalendarClock className="h-5 w-5 text-primary" aria-hidden="true" />
             مراجعة اليوم — خوارزمية SM-2
-            <span className="font-de ms-auto rounded-full bg-primary/10 px-3 py-0.5 text-xs font-bold text-primary">
+            <span
+              className="font-de ms-auto rounded-full bg-primary/10 px-3 py-0.5 text-xs font-bold text-primary"
+              role="status"
+            >
               {stats.due} بطاقة
             </span>
           </CardTitle>

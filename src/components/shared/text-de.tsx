@@ -1,6 +1,8 @@
 "use client";
 
 import * as React from "react";
+
+import {speakGerman} from "@/lib/speech/voices";
 import {Volume2} from "lucide-react";
 
 /**
@@ -21,17 +23,12 @@ export function TextDe({ text, className }: { text: string; className?: string }
       setState("unsupported");
       return;
     }
-    window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = "de-DE";
-    u.rate = 0.85;
-    const voices = window.speechSynthesis.getVoices();
-    const gv = voices.find((v) => v.lang === "de-DE") ?? voices.find((v) => v.lang.startsWith("de"));
-    if (gv) u.voice = gv;
-    u.onstart = () => setState("playing");
-    u.onend = () => setState("idle");
-    u.onerror = () => setState("idle");
-    window.speechSynthesis.speak(u);
+    setState("playing");
+    speakGerman(text, {
+      rate: 0.85,
+      onEnd: () => setState("idle"),
+      onError: () => setState("unsupported"),
+    });
   };
 
   return (
@@ -41,7 +38,7 @@ export function TextDe({ text, className }: { text: string; className?: string }
         onClick={speak}
         aria-label={`استمع: ${text}`}
         title={state === "unsupported" ? "متصفحك لا يدعم النطق — استخدم Chrome/Edge" : "اضغط للاستماع"}
-        className={`inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full border transition-colors ${
+        className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-colors ${
           state === "playing"
             ? "border-primary bg-primary text-primary-foreground"
             : "border-muted bg-muted/40 text-muted-foreground hover:border-primary/50 hover:text-primary"

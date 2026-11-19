@@ -30,8 +30,9 @@ export function VortragModelle() {
             key={m.id}
             type="button"
             onClick={() => setActive(i)}
+            aria-pressed={active === i}
             className={cn(
-              "rounded-full border px-3 py-1.5 text-xs font-bold transition-colors",
+              "min-h-8 rounded-full border px-3 py-1.5 text-xs font-bold transition-colors",
               active === i ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 hover:border-primary/40",
             )}
           >
@@ -51,7 +52,10 @@ export function VortragModelle() {
 
           {/* الأسئلة الإرشادية */}
           <details className="rounded-xl border bg-muted/20 p-3 text-sm">
-            <summary className="cursor-pointer font-bold text-primary">📋 الأسئلة الإرشادية (Leitfragen) — كما في بطاقة الامتحان</summary>
+            {/* هدف اللمس: <summary> بارتفاع 20px كان أصغر من 24px (WCAG 2.5.8) */}
+            <summary className="flex min-h-6 cursor-pointer items-center font-bold text-primary">
+              📋 الأسئلة الإرشادية (Leitfragen) — كما في بطاقة الامتحان
+            </summary>
             <ul className="mt-2 space-y-1.5">
               {model.leitfragen.map((q, i) => (
                 <li key={i} className="font-de" dir="ltr" lang="de">• {q}</li>

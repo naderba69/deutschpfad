@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import * as React from "react";
 import {Award, BookOpen, GraduationCap, RotateCcw} from "lucide-react";
 
@@ -8,6 +9,7 @@ import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
 import {LESSON_META} from "@/data/lessons/meta";
 import {sample} from "@/lib/lesson/shuffle";
+import {getQuickPlacementSuggestion} from "@/lib/tests/quick-placement";
 import type { McqExercise } from "@/types/lesson";
 
 /** بنك أسئلة التحديد — A1 ثم A2 ثم B1 (المبسط) — 5 أسئلة لكل مستوى */
@@ -139,41 +141,43 @@ const PLACEMENT_BANK: McqExercise[] = [
 
 const PER_LEVEL = 5;
 
-function levelForScore(correct: number, total: number): { level: string; label: string; msg: string } {
-  const pct = (correct / total) * 100;
-  if (pct >= 80) return { level: "B1", label: "المتوسط (B1)", msg: "ممتاز! مستوى B1 — ابدأ من دروس B1 مباشرة." };
-  if (pct >= 55) return { level: "A2", label: "ما قبل المتوسط (A2)", msg: "جيد جداً! مستواك A2 — ابدأ من الوحدة A2-01." };
-  if (pct >= 30) return { level: "A1", label: "المبتدئ (A1)", msg: "مستواك A1 — ابدأ من وحدة A1-01 (أو الأبجدية إذا كانت صعبة)." };
-  return { level: "A1", label: "مبتدئ تماماً (A1-00)", msg: "ابدأ من الصفر: درس الأبجدية والنطق أولاً." };
-}
+
 
 /**
- * اختبار تحديد المستوى المبسّط — 15 سؤالاً عشوائياً (5 A1 + 5 A2 + 5 B1)
+ * اختبار تحديد المستوى التكيفي — يبدأ بـ A1 ويتقدم عند النجاح (≥3/5)
  * — نواة نظام الاختبارات الكامل (المرحلة 10) —
  */
 export function PlacementTest() {
   const [questions, setQuestions] = React.useState<McqExercise[]>([]);
   const [index, setIndex] = React.useState(0);
   const [score, setScore] = React.useState(0);
-  const [answers, setAnswers] = React.useState<Record<string, boolean>>({});
+  const [answers, setAnswers] = React.useState<Record<string, { correct: boolean; chosen?: string }>>({});
   const [finished, setFinished] = React.useState(false);
   const [round, setRound] = React.useState(0);
+  const [levelIdx, setLevelIdx] = React.useState(0);
+  const [levelCorrect, setLevelCorrect] = React.useState(0);
+  const [allQuestions, setAllQuestions] = React.useState<McqExercise[]>([]);
+
+  const LEVELS = ["a1", "a2", "b1"] as const;
 
   React.useEffect(() => {
     const a1 = sample(PLACEMENT_BANK.filter((q) => q.id.startsWith("pl-a1")), PER_LEVEL);
-    const a2 = sample(PLACEMENT_BANK.filter((q) => q.id.startsWith("pl-a2")), PER_LEVEL);
-    const b1 = sample(PLACEMENT_BANK.filter((q) => q.id.startsWith("pl-b1")), PER_LEVEL);
-    setQuestions([...a1, ...a2, ...b1]);
+    setQuestions(a1);
+    setAllQuestions(a1);
     setIndex(0);
     setScore(0);
     setAnswers({});
     setFinished(false);
+    setLevelIdx(0);
+    setLevelCorrect(0);
   }, [round]);
+
+  const totalAnswered = Object.keys(answers).length;
 
   // حفظ مستوى المتعلم تلقائياً بعد إتمام التقييم — تغذّي «لوحة الرحلة»
   React.useEffect(() => {
-    if (finished && questions.length > 0) {
-      const result = levelForScore(score, questions.length);
+    if (finished && totalAnswered > 0) {
+      const result = getQuickPlacementSuggestion(score, totalAnswered);
       void import("@/lib/storage/learner").then(({saveLearnerProfile}) =>
         saveLearnerProfile({ placementLevel: result.level as "A1" | "A2" | "B1" | "B2" }),
       );
@@ -183,18 +187,31 @@ export function PlacementTest() {
 
   const current = questions[index];
 
-  const handleResult = (correct: boolean, id: string) => {
+  const handleResult = (correct: boolean, id: string, chosen?: string) => {
     if (answers[id] !== undefined) return;
-    const next = { ...answers, [id]: correct };
+    const next = { ...answers, [id]: { correct, chosen } };
     setAnswers(next);
-    if (correct) setScore((s) => s + 1);
+    if (correct) {
+      setScore((s) => s + 1);
+      setLevelCorrect((c) => c + 1);
+    }
     setTimeout(() => {
       setIndex((i) => {
-        if (i + 1 >= questions.length) {
-          setFinished(true);
-          return i;
+        if (i + 1 < questions.length) return i + 1;
+        // انتهى مستوى — قرر: تقدم أم توقف
+        const totalCorrect = correct ? levelCorrect + 1 : levelCorrect;
+        if (totalCorrect >= 3 && levelIdx < LEVELS.length - 1) {
+          // تقدم للمستوى التالي
+          const nextLevel = LEVELS[levelIdx + 1];
+          const nextQs = sample(PLACEMENT_BANK.filter((q) => q.id.startsWith(`pl-${nextLevel}`)), PER_LEVEL);
+          setQuestions(nextQs);
+          setAllQuestions((prev) => [...prev, ...nextQs]);
+          setLevelIdx((l) => l + 1);
+          setLevelCorrect(0);
+          return 0;
         }
-        return i + 1;
+        setFinished(true);
+        return i;
       });
     }, 800);
   };
@@ -204,7 +221,7 @@ export function PlacementTest() {
   }
 
   if (finished) {
-    const result = levelForScore(score, questions.length);
+    const result = getQuickPlacementSuggestion(score, totalAnswered);
     return (
       <div className="rounded-2xl border bg-muted/20 p-8 text-center">
         <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
@@ -214,25 +231,57 @@ export function PlacementTest() {
             <BookOpen className="h-8 w-8 text-primary" aria-hidden="true" />
           )}
         </span>
-        <h3 className="mt-4 text-2xl font-extrabold">نتيجتك: مستوى {result.label}</h3>
+        <h3 className="mt-4 text-2xl font-extrabold">{result.label}</h3>
         <p className="font-de mt-2 text-4xl font-extrabold text-primary">
-          {Math.round((score / questions.length) * 100)}%
+          {Math.round((score / totalAnswered) * 100)}%
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
-          أجبت صحيحاً على {score} من {questions.length} — {result.msg}
+          أجبت صحيحاً على {score} من {totalAnswered} — {result.message}
+        </p>
+        <p className="mt-2 text-xs text-muted-foreground">
+          هذا اقتراح بداية من عينة داخلية قصيرة، وليس قياساً معيارياً أو تصنيفاً رسمياً لمستوى CEFR.
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <Button asChild variant="gold" className="gap-1.5">
-            <a href={`/learning-path#${result.level.toLowerCase()}`}>
+            <Link href={`/learning-path#${result.level.toLowerCase()}`}>
               <Award className="h-4 w-4" aria-hidden="true" />
-              ابدأ من مستوى {result.level}
-            </a>
+              ابدأ من النطاق المقترح {result.level}
+            </Link>
           </Button>
           <StartAtLevelButton level={result.level} />
           <Button variant="outline" onClick={() => setRound((r) => r + 1)} className="gap-1.5">
             <RotateCcw className="h-4 w-4" aria-hidden="true" />
             إعادة الاختبار
           </Button>
+        </div>
+        {/* مراجعة الأدلة — كل سؤالٍ بشاهده */}
+        <div className="mt-8 text-start" data-testid="exam-review">
+          <h4 className="mb-3 text-lg font-bold">مراجعة الأدلة</h4>
+          <div className="space-y-3">
+            {allQuestions.map((q) => {
+              const ans = answers[q.id];
+              const ok = ans?.correct ?? false;
+              const correctOpt = q.options[q.correctIndex];
+              return (
+                <div key={q.id} data-testid="exam-review-item" className="rounded-xl border bg-card p-3">
+                  <p className="text-sm">
+                    <span aria-hidden className={ok ? "text-success" : "text-destructive"}>{ok ? "✓" : "✗"}</span>{" "}
+                    <span dir="ltr" lang="de" className="font-de">{q.questionDe}</span>
+                  </p>
+                  <p className="mt-1 text-xs">
+                    جوابك: <span dir="ltr" lang="de" className="font-de">{ans?.chosen ?? "— لم تُجب"}</span> ·
+                    الصحيح: <span dir="ltr" lang="de" className="font-de">{correctOpt}</span>
+                  </p>
+                  {q.explanation && (
+                    <p className="mt-1 rounded-md bg-muted/40 p-2 text-xs leading-relaxed">
+                      <span className="font-bold">الدليل: </span>
+                      <span data-testid="exam-review-evidence">{q.explanation}</span>
+                    </p>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     );
@@ -251,7 +300,7 @@ export function PlacementTest() {
       </div>
       {current && (
         <div key={`${current.id}-${round}`}>
-          <MultipleChoiceExercise exercise={current} onResult={(r) => handleResult(r.isCorrect, current.id)} />
+          <MultipleChoiceExercise exercise={current} onResult={(r) => handleResult(r.isCorrect, current.id, r.chosen)} />
         </div>
       )}
     </div>
@@ -279,10 +328,10 @@ function StartAtLevelButton({ level }: { level: string }) {
   if (!firstLesson) return null;
   return (
     <Button asChild className="gap-1.5">
-      <a href={`/lesson/${firstLesson.id}`}>
+      <Link href={`/lesson/${firstLesson.id}`}>
         <BookOpen className="h-4 w-4" aria-hidden="true" />
         انطلق في المسار: {firstLesson.titleAr}
-      </a>
+      </Link>
     </Button>
   );
 }

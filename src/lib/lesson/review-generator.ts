@@ -1,4 +1,5 @@
 import type { Exercise, Lesson } from "@/types/lesson";
+import {LESSON_META} from "@/data/lessons/meta";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -48,8 +49,22 @@ export function reviewLevelLabel(review: Exercise[], lessonLevel: string): strin
   return `${ordered.slice(0, -1).join(" و")} و${ordered[ordered.length - 1]}`;
 }
 
+/**
+ * هل يُتوقَّع لهذا الدرس قسم «مراجعة تراكمية» قبل تحميل الأسئلة؟
+ *
+ * حالة متزامنة تُستعمل في التصيير الأول (خادم + عميل): مراجعة مكتوبة يدوياً،
+ * أو درس ليس الأول في المنهج (تُولَّد أسئلته من الدروس السابقة). بلا هذا
+ * الشرط كان القسم يُلحق بعد التحميل، فيلتفّ شريط الأقسام من صفّ إلى صفّين
+ * ويهتزّ الدرس كله — CLS 0.192 في /lesson/b2-03. النتيجة النهائية تُصحَّح
+ * بعد وصول الأسئلة عبر `reviewLoaded`.
+ */
+export function likelyHasInterleavedReview(lesson: Pick<Lesson, "id" | "review">): boolean {
+  if (Array.isArray(lesson.review) && lesson.review.length > 0) return true;
+  return LESSON_META.findIndex((l) => l.id === lesson.id) > 0;
+}
+
 /** هل يملك الدرس مراجعة مكتوبة يدوياً؟ */
-export function hasManualReview(lesson: Lesson): boolean {
+function hasManualReview(lesson: Lesson): boolean {
   return Array.isArray(lesson.review) && lesson.review.length > 0;
 }
 
@@ -72,8 +87,10 @@ export async function buildInterleavedReview(lesson: Lesson): Promise<Exercise[]
     const previousLessons = position > 0 ? sequence.slice(0, position) : [];
 
     // نجمع أسئلة MCQ من الدروس السابقة (اختيار متنوع)
-    const mcqs = previousLessons.flatMap((l) =>
-      l.miniTest.filter((q): q is Extract<Exercise, { type: "multiple-choice" }> => q.type === "multiple-choice"),
+    const mcqs = previousLessons.flatMap((sourceLesson) =>
+      sourceLesson.miniTest
+        .filter((question): question is Extract<Exercise, { type: "multiple-choice" }> => question.type === "multiple-choice")
+        .map((question) => ({sourceLessonId: sourceLesson.id, question})),
     );
 
     // خلط بسيط واختيار 3 (أو كل ما توفر)
@@ -82,11 +99,11 @@ export async function buildInterleavedReview(lesson: Lesson): Promise<Exercise[]
 
     if (picked.length === 0) return [];
 
-    // نعيد تأطيرها كمراجعة بمعرّفات فريدة (لا تتعارض مع تمارين الدرس)
-    return picked.map((q, i) => ({
-      ...q,
-      id: `review-${lesson.id}-${i}`,
-      instructionAr: `مراجعة تراكمية من مستوى سابق: ${q.questionAr ?? q.instructionAr ?? ""}`,
+    // تضمين مصدر السؤال في المعرف كي لا يندمج سؤالان عشوائيان في إدخال خطأ واحد.
+    return picked.map(({sourceLessonId, question}) => ({
+      ...question,
+      id: `review-${lesson.id}-${sourceLessonId}-${question.id}`,
+      instructionAr: `مراجعة تراكمية من مستوى سابق: ${question.questionAr ?? question.instructionAr ?? ""}`,
     }));
   } catch {
     return [];

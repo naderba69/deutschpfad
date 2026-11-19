@@ -78,13 +78,14 @@ export function UmschreibungenClient() {
   return (
     <div key={round} className="space-y-5">
       {/* شبكة الأنواع العشرة */}
-      <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-3 lg:grid-cols-5">
+      <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-3 lg:grid-cols-5" role="group" aria-label="تصفية بنوع إعادة الصياغة">
         {UMSCHREIB_TYPEN.map((t) => {
           const count = getUmschreibByTyp(t.id).length;
           return (
             <button
               key={t.id}
               type="button"
+              aria-pressed={typ?.id === t.id}
               onClick={() => selectTyp(typ?.id === t.id ? null : t)}
               className={cn(
                 "rounded-xl border p-2.5 text-start transition-colors",
@@ -93,13 +94,15 @@ export function UmschreibungenClient() {
                   : "bg-card hover:border-primary/40",
               )}
             >
-              <div className="flex items-center justify-between">
+              {/* flex-wrap + shrink-0: عند تكبير النص 200% كان العنوان الألماني
+                  يزاحم شارة العدد في قصّها خارج الشاشة (WCAG 1.4.4). */}
+              <div className="flex flex-wrap items-center justify-between gap-1">
                 <span className="font-de text-sm font-extrabold" dir="ltr" lang="de">
                   {t.num}. {t.titleDe}
                 </span>
                 <Badge
                   variant={typ?.id === t.id ? "secondary" : "outline"}
-                  className="text-[9px]"
+                  className="shrink-0 text-[11px]"
                 >
                   {count}
                 </Badge>
@@ -114,10 +117,9 @@ export function UmschreibungenClient() {
       {!typ && (
         <div className="rounded-2xl border border-dashed bg-muted/20 p-8 text-center">
           <ArrowLeftRight className="mx-auto h-10 w-10 text-primary" aria-hidden="true" />
-          <h3 className="mt-3 text-lg font-extrabold">اختر نوع التحويل من الأعلى</h3>
+          <h2 className="mt-3 text-lg font-extrabold">اختر نوع التحويل من الأعلى</h2>
           <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
-            هذه الأنواع العشرة هي التي تظهر فعلياً في امتحان Goethe B2 (Grammatik). لكل نوع
-            شرح ومثال أولاً، ثم تمارين تصحيح فوري.
+            هذه قائمة تدريبات تحويل أعدّتها المنصة لممارسة تراكيب ألمانية. ليست أقساماً أو أنماطاً مضمونة في امتحان Goethe B2. لكل نوع شرح ومثال ثم تمارين تصحيح فوري.
           </p>
         </div>
       )}
@@ -159,6 +161,7 @@ export function UmschreibungenClient() {
             {/* الإدخال */}
             <div className="flex flex-col gap-2 sm:flex-row">
               <input
+                aria-label="إجابتك لتحويل الجملة"
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
                 onKeyDown={(e) => {

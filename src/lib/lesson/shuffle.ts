@@ -49,3 +49,20 @@ export function seededShuffle<T>(input: readonly T[], seed: string): T[] {
   }
   return arr;
 }
+
+/**
+ * بذرة يومية مشتركة بين الخادم والعميل (تتغيّر مرة كل يوم).
+ *
+ * لماذا؟ المكوّنات كانت تهيّئ ترتيبها العشوائي داخل `useEffect` بعد التركيب
+ * (أو بـ `ssr: false`)، فيُرسَل HTML بلا محتوى ثم يظهر المحتوى بعد الهيدرشن
+ * فيقفز التذييل والمحتوى (CLS مقيس يصل 0.75 في /tests). البذرة اليومية تُبقي
+ * التنويع التربوي (ترتيب مختلف كل يوم) مع تطابق الخادم والعميل.
+ */
+export function dailySeed(scope: string, now: number = Date.now()): string {
+  return `${scope}:${Math.floor(now / 86_400_000)}`;
+}
+
+/** خلط حتمي ثم اختيار n عنصراً (بديل `sample` الآمن للـ SSR) */
+export function seededSample<T>(input: readonly T[], n: number, seed: string): T[] {
+  return seededShuffle(input, seed).slice(0, Math.max(0, n));
+}

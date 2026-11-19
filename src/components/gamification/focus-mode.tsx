@@ -8,7 +8,6 @@ import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Progress} from "@/components/ui/progress";
 import {useCountdown} from "@/lib/tests/use-countdown";
 import {formatTime} from "@/lib/tests/test-engine";
-;
 import {cn} from "@/lib/utils";
 
 const SESSION_OPTIONS = [
@@ -23,15 +22,26 @@ const SESSION_OPTIONS = [
 export function FocusMode() {
   const [session, setSession] = React.useState(0);
   const [phase, setPhase] = React.useState<"setup" | "running">("setup");
+  const [paused, setPaused] = React.useState(false);
   const [tasks, setTasks] = React.useState<string[]>(["مراجعة بطاقات SM-2", "درس واحد + تمارينه", "تقييم نطق واحد"]);
   const [done, setDone] = React.useState<Set<number>>(new Set());
   const [newTask, setNewTask] = React.useState("");
 
   const minutes = SESSION_OPTIONS[session]?.minutes ?? 25;
-  const remaining = useCountdown(phase === "running" ? minutes * 60 : 0, () => setPhase("setup"));
+  const remaining = useCountdown(
+    phase === "running" ? minutes * 60 : 0,
+    () => setPhase("setup"),
+    {paused},
+  );
 
-  const start = () => setPhase("running");
-  const stop = () => setPhase("setup");
+  const start = () => {
+    setPaused(false);
+    setPhase("running");
+  };
+  const stop = () => {
+    setPaused(false);
+    setPhase("setup");
+  };
 
   const toggleTask = (i: number) => {
     setDone((prev) => {
@@ -63,11 +73,12 @@ export function FocusMode() {
             <p className="text-sm text-muted-foreground">
               اختر مدة الجلسة، حدد مهامك، وركّز — لا مشتتات. (يُوصى: 25 دقيقة ثم استراحة 5)
             </p>
-            <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="مدة الجلسة">
+            <div className="flex flex-wrap gap-2" role="group" aria-label="مدة الجلسة">
               {SESSION_OPTIONS.map((o, i) => (
                 <button
                   key={o.minutes}
                   type="button"
+                  aria-pressed={session === i}
                   onClick={() => setSession(i)}
                   className={cn(
                     "rounded-lg border px-4 py-2 text-sm font-semibold transition-colors",
@@ -87,14 +98,32 @@ export function FocusMode() {
           <div className="space-y-4">
             <div className="flex items-center justify-between rounded-xl border border-primary/30 bg-primary/5 p-4">
               <p className="font-bold">الجلسة جارية… 🎧</p>
-              <span className="font-de text-2xl font-extrabold text-primary tabular-nums">
+              <span
+                className="font-de text-2xl font-extrabold text-primary tabular-nums"
+                role="timer"
+                aria-label={`الوقت المتبقي في الجلسة: ${formatTime(remaining)}`}
+              >
                 {formatTime(remaining)}
               </span>
             </div>
             <Progress value={((minutes * 60 - remaining) / (minutes * 60)) * 100} aria-label="التقدم في الجلسة" />
-            <Button variant="outline" onClick={stop} className="w-full">
-              إنهاء الجلسة مبكراً
-            </Button>
+            {/* WCAG 2.2.1: يمكن إيقاف الجلسة مؤقتاً واستئنافها من حيث توقفت. */}
+            <div className="flex flex-col gap-2 sm:flex-row">
+              <Button
+                variant="outline"
+                onClick={() => setPaused((p) => !p)}
+                aria-pressed={paused}
+                className="flex-1"
+              >
+                {paused ? "متابعة الجلسة" : "إيقاف مؤقت"}
+              </Button>
+              <Button variant="outline" onClick={stop} className="flex-1">
+                إنهاء الجلسة مبكراً
+              </Button>
+            </div>
+            <span className="sr-only" role="status" aria-live="polite">
+              {paused ? "أُوقفت الجلسة مؤقتاً — العدّاد متوقف." : ""}
+            </span>
           </div>
         )}
 
@@ -131,6 +160,7 @@ export function FocusMode() {
           <div className="mt-2 flex items-center gap-2">
             <input
               type="text"
+              aria-label="مهمة جديدة لجلسة التركيز"
               value={newTask}
               onChange={(e) => setNewTask(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && addTask()}

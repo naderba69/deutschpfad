@@ -5,7 +5,7 @@ import {WritingPathClient} from "@/components/writing/writing-path-client";
 export const metadata: Metadata = {
   title: "مسار الكتابة المتدرج — DeutschPfad",
   description:
-    "من الجملة إلى المقال: 4 مراحل تصاعدية (جملة ← فقرة ← رسالة رسمية ← مقال) كل مرحلة تُقيَّم آلياً بقواعد Goethe.",
+    "تدريبات كتابة ألمانية متدرجة من الجملة إلى المقال. يقدم فاحص محلي مؤشرات آلية محدودة للطول والروابط وبعض الأنماط، ولا يمثل تصحيح Goethe أو تقييماً معيارياً للجودة.",
 };
 
 export default function WritingPathPage() {
@@ -16,9 +16,7 @@ export default function WritingPathPage() {
           ✍️ مسار الكتابة المتدرج
         </h1>
         <p className="mt-2 max-w-2xl text-balance text-muted-foreground">
-          الكتابة تُبنى خطوة بخطوة: جملة ← فقرة ← رسالة رسمية ← مقال. أكمل كل مرحلة
-          بالترتيب، واحصل على تقييم فوري بقواعد Goethe: الطول، الروابط، التنوع،
-          والعلامات الإملائية.
+          تدريبات متدرجة من الجملة إلى المقال. بعد كل إجابة يعرض الفاحص المحلي مؤشرات آلية محدودة للطول والروابط وبعض الأنماط؛ لا يقيّم جودة الكتابة كاملةً ولا يحاكي مصحح Goethe.
         </p>
       </div>
       <WritingPathClient />

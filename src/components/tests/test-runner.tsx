@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import {LangDe} from "@/components/shared/lang-de";
 import {ChevronLeft, ChevronRight, Headphones, Send} from "lucide-react";
 
 import {SpeakButton} from "@/components/shared/speak-button";
@@ -12,8 +13,10 @@ import {speakSequence} from "@/lib/speech/voices";
 import {buildTestResult, formatTime} from "@/lib/tests/test-engine";
 import {useCountdown} from "@/lib/tests/use-countdown";
 import {cn} from "@/lib/utils";
-import {shuffleTestQuestions} from "@/lib/tests/shuffle-questions";
+import {seededShuffleTestQuestions} from "@/lib/tests/shuffle-questions";
+import {dailySeed} from "@/lib/lesson/shuffle";
 import type { TestQuestion, TestResult, TestSkill } from "@/types/test";
+import {useRadioGroupNav} from "@/lib/use-radio-group-nav";
 
 export interface TestSectionConfig {
   skill: TestSkill;
@@ -53,27 +56,52 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
   const [result, setResult] = React.useState<TestResult | null>(null);
   const [startedAt] = React.useState(() => Date.now());
   const [runKey, setRunKey] = React.useState(0);
+  const nav = useRadioGroupNav();
 
-  // خلط الخيارات مرة واحدة لكل محاولة — بنوك الأسئلة تضع الإجابة الصحيحة
-  // في الموضع الأول دائماً، فبدون الخلط يكفي اختيار «أ» للنجاح بنسبة 100%.
+  /* خلط الخيارات مرة واحدة لكل محاولة — بنوك الأسئلة تضع الإجابة الصحيحة في
+     الموضع الأول دائماً، فبدون الخلط يكفي اختيار «أ» للنجاح بنسبة 100%.
+
+     ولماذا البذرة؟ كان الخلط عشوائياً (`Math.random`)، فتُصيَّر الخيارات في
+     الخادم بترتيب وتُصيَّر في العميل بترتيب آخر ⇒ خطأ هيدرشن React #418
+     («server rendered text didn't match») يُعيد بناء الشجرة كلها. لذلك صار
+     الخلط حتمياً ببذرة يومية + رقم المحاولة: نفس الترتيب على الطرفين،
+     ويتجدّد يومياً ومع كل «إعادة» (runKey). */
   const shuffledQuestions = React.useMemo(
-    () => shuffleTestQuestions(questions),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    () =>
+      seededShuffleTestQuestions(
+        questions,
+        `${dailySeed("test-runner")}:${runKey}:${resetKey ?? 0}`,
+      ),
     [questions, runKey, resetKey],
   );
 
   const section = sections[sectionIdx];
   const sectionQuestions = shuffledQuestions.filter((q) => q.skill === section.skill);
   const totalSeconds = section.minutes * 60;
-  const remaining = useCountdown(totalSeconds, () => {
-    // انتهاء وقت القسم → الانتقال للقسم التالي أو التسليم
-    if (sectionIdx < sections.length - 1) {
-      setSectionIdx((i) => i + 1);
-      setQuestionIdx(0);
-    } else {
-      submitTest();
-    }
-  });
+
+  /* الجولة الحادية عشرة — WCAG 2.2.1: كان العدّاد يبدأ فور تحميل الصفحة
+     (10:00 → 09:55) والمستخدم ما زال يقرأ المقدمة. صار الوقت محدَّداً بقرار
+     المستخدم: لا يمضي إلا بعد «ابدأ المؤقت». */
+  const [timerStarted, setTimerStarted] = React.useState(false);
+  const [timedOut, setTimedOut] = React.useState(false);
+  const [timerNotice, setTimerNotice] = React.useState("");
+
+  const remaining = useCountdown(
+    totalSeconds,
+    () => {
+      // انتهاء وقت القسم → الانتقال للقسم التالي أو التسليم
+      if (sectionIdx < sections.length - 1) {
+        setSectionIdx((i) => i + 1);
+        setQuestionIdx(0);
+        setTimerStarted(false);
+        setTimerNotice(`انتهى وقت القسم — انتقلنا إلى القسم ${sectionIdx + 2}. اضغط «ابدأ المؤقت» لبدء عدّاده.`);
+      } else {
+        setTimedOut(true);
+        submitTest();
+      }
+    },
+    {paused: !timerStarted},
+  );
 
   const current = sectionQuestions[questionIdx];
 
@@ -113,32 +141,37 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
     if (questionIdx > 0) setQuestionIdx((i) => i - 1);
   };
 
-  const restart = () => {
+  const restart = React.useCallback(() => {
     setRunKey((k) => k + 1);
     setSectionIdx(0);
     setQuestionIdx(0);
     setAnswers(new Map());
     setFinished(false);
     setResult(null);
-  };
+    setTimerStarted(false);
+    setTimedOut(false);
+    setTimerNotice("");
+  }, []);
 
   // إعادة التشغيل عند تغيير resetKey
   React.useEffect(() => {
     restart();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [resetKey]);
+  }, [resetKey, restart]);
 
   if (finished && result) {
-    return <ResultsPanel result={result} onRetry={restart} onComplete={onComplete} />;
-  }
-
-  if (!current) {
     return (
-      <div className="rounded-xl border bg-muted/20 p-8 text-center">
-        <p className="text-muted-foreground">لا توجد أسئلة في هذا القسم — انتقل للتالي.</p>
-        <Button className="mt-4" onClick={nextQuestion}>
-          القسم التالي
-        </Button>
+      <div className="space-y-3">
+        {/* التسليم التلقائي عند انتهاء الوقت كان يحدث بلا أي إعلان: يختفي
+            المؤقت وتظهر النتيجة. role=alert يُعلن السبب مرة واحدة. */}
+        {timedOut && (
+          <p
+            role="alert"
+            className="rounded-xl border border-destructive/40 bg-destructive/10 p-3 text-sm font-bold text-destructive"
+          >
+            انتهى الوقت — سُلِّم الاختبار تلقائياً وحُفظت إجاباتك.
+          </p>
+        )}
+        <ResultsPanel result={result} onRetry={restart} onComplete={onComplete} />
       </div>
     );
   }
@@ -147,6 +180,42 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
     const a = answers.get(q.id);
     return a !== undefined && a !== null && a !== "";
   }).length;
+
+  /* إعلان تغيّر القسم — وُجِد في التدقيق أنه كان يُعرَض داخل شريط الحالة وحده،
+     والشريط يختفي في فرع «لا توجد أسئلة»، فتنتقل الشاشة بصمت. صار الشريط
+     والإعلان يُعادان في الفرعين. */
+  const timerNoticeRegion = (
+    <span className="sr-only" role="status" aria-live="polite">
+      {timerNotice}
+    </span>
+  );
+
+  if (!current) {
+    return (
+      <div className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-muted/30 p-3">
+          <p className="min-w-0 truncate text-sm font-bold">
+            {title} — القسم {sectionIdx + 1}/{sections.length}
+          </p>
+          <TestTimer seconds={remaining} total={totalSeconds} />
+          {!timerStarted && (
+            <Button size="sm" variant="outline" onClick={() => setTimerStarted(true)}>
+              ابدأ المؤقت
+            </Button>
+          )}
+          {timerNoticeRegion}
+        </div>
+        <div className="rounded-xl border bg-muted/20 p-8 text-center">
+          <p className="text-muted-foreground">
+            {timerNotice || "لا توجد أسئلة في هذا القسم."}
+          </p>
+          <Button className="mt-4" onClick={nextQuestion}>
+            {sectionIdx < sections.length - 1 ? "القسم التالي" : "تسليم الاختبار"}
+          </Button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div key={runKey} className="space-y-4">
@@ -166,6 +235,12 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
             أجبت {answeredCount}/{sectionQuestions.length}
           </span>
           <TestTimer seconds={remaining} total={totalSeconds} />
+          {!timerStarted && (
+            <Button size="sm" variant="outline" onClick={() => setTimerStarted(true)} className="gap-1">
+              ابدأ المؤقت
+            </Button>
+          )}
+          {timerNoticeRegion}
         </div>
       </div>
 
@@ -175,6 +250,7 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
           <button
             key={s.skill}
             type="button"
+            aria-pressed={i === sectionIdx}
             onClick={() => {
               setSectionIdx(i);
               setQuestionIdx(0);
@@ -230,11 +306,11 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
             <div className="mt-4 space-y-4">
               {current.questions.map((sub, i) => (
                 <div key={i} className="rounded-xl border bg-muted/10 p-3">
-                  <p className="font-de text-sm font-bold" dir="ltr" lang="de">
-                    {sub.q}
+                  <p className="text-sm font-bold">
+                    <LangDe>{sub.q}</LangDe>
                   </p>
                   {sub.qAr && <p className="mt-0.5 text-xs text-muted-foreground">{sub.qAr}</p>}
-                  <div className="mt-2 grid grid-cols-1 gap-1.5 sm:grid-cols-2" role="radiogroup" aria-label={sub.q}>
+                  <div className="mt-2 grid grid-cols-1 gap-1.5 sm:grid-cols-2" role="radiogroup" aria-label={sub.q} {...nav}>
                     {sub.options.map((opt, j) => {
                       const selected = answers.get(`${current.id}:${i}`) === j;
                       return (
@@ -251,9 +327,7 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
                               : "hover:border-primary/40 hover:bg-primary/5",
                           )}
                         >
-                          <span className="font-de" dir="ltr" lang="de">
-                            {opt}
-                          </span>
+                          <LangDe>{opt}</LangDe>
                         </button>
                       );
                     })}
@@ -265,8 +339,8 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
 
         {current.kind === "writing" ? (
           <div className="space-y-3">
-            <p className="font-de text-lg font-bold" dir="ltr" lang="de">
-              {current.prompt}
+            <p className="text-lg font-bold">
+              <LangDe>{current.prompt}</LangDe>
             </p>
             <p className="text-sm text-muted-foreground">{current.promptAr}</p>
             {current.rubric && (
@@ -288,15 +362,15 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
         ) : (
           <>
             {current.questionDe && (
-              <p className="font-de text-lg font-bold" dir="ltr" lang="de">
-                {current.questionDe}
+              <p className="text-lg font-bold">
+                <LangDe>{current.questionDe}</LangDe>
               </p>
             )}
             {current.questionAr && (
               <p className="mt-1 text-sm text-muted-foreground">{current.questionAr}</p>
             )}
             {current.options && (
-              <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2" role="radiogroup" aria-label={current.questionDe ?? "سؤال"}>
+              <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2" role="radiogroup" aria-label={current.questionDe ?? "سؤال"} {...nav}>
                 {current.options.map((opt, i) => {
                   const selected = answers.get(current.id) === i;
                   return (
@@ -312,9 +386,7 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
                         selected && "border-primary bg-primary/10 ring-2 ring-ring",
                       )}
                     >
-                      <span className="font-de font-medium" dir="ltr" lang="de">
-                        {opt}
-                      </span>
+                      <LangDe className="font-medium">{opt}</LangDe>
                     </button>
                   );
                 })}
@@ -361,7 +433,8 @@ export function TestRunner({ kind, level, sections, questions, title, resetKey ,
       </div>
 
       <p className="text-center text-xs text-muted-foreground">
-        عند انتهاء الوقت يُسلَّم القسم تلقائياً — الوقت المتبقي: {formatTime(remaining)}
+        لا يبدأ العدّ حتى تضغط «ابدأ المؤقت». عند انتهاء الوقت يُسلَّم القسم تلقائياً —
+        الوقت المتبقي: {formatTime(remaining)}
       </p>
     </div>
   );

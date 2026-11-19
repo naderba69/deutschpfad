@@ -76,7 +76,7 @@ function getRecognitionCtor(): SpeechRecognitionCtor | null {
 let activeEngine: { abort: () => void; destroy: () => void } | null = null;
 
 /** إيقاف أي جلسة نشطة حالياً (يُستدعى قبل بدء جلسة جديدة) */
-export function stopActiveRecognition(): void {
+function stopActiveRecognition(): void {
   if (activeEngine) {
     try {
       activeEngine.abort();

@@ -15,17 +15,16 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* الهوية */}
           <div className="space-y-4">
-            <Link href="/" aria-label="درب الألمانية — الرئيسية" className="inline-block rounded-lg py-1">
-              <Logo />
+            <Link href="/" className="inline-block rounded-lg py-1">
+              <Logo idSuffix="-footer" />
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-              منصة عربية متكاملة لتعليم اللغة الألمانية من A1 إلى B2 وفق منهجية معهد غوته
-              ومعايير CEFR — مجانية بالكامل.
+              منصة عربية لتعلّم الألمانية عبر تدريبات في نطاقات A1–B2 تستلهم موضوعات من CEFR وGoethe، دون ادعاء اعتماد أو مطابقة رسمية.
             </p>
             <div className="flex items-center gap-2">
               {[
                 { icon: Globe, label: "الموقع الرسمي", href: siteConfig.url },
-                { icon: Github, label: "المستودع على GitHub", href: "https://github.com" },
+                { icon: Github, label: "المستودع على GitHub", href: "https://github.com/naderba69/deutschpfad" },
                 { icon: Mail, label: "البريد الإلكتروني", href: "mailto:info@deutschpfad.app" },
               ].map(({ icon: Icon, label, href }) => (
                 <Link
@@ -44,13 +43,13 @@ export function Footer() {
 
           {/* روابط المنصة */}
           <div>
-            <h3 className="mb-4 text-sm font-bold">المنصة</h3>
+            <h2 className="mb-4 text-sm font-bold">المنصة</h2>
             <ul className="space-y-2.5 text-sm">
               {siteConfig.footerLinks["منصة"].map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="inline-block py-1 text-muted-foreground transition-colors hover:text-foreground"
+                    className="tap-target py-1 text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {link.title}
                   </Link>
@@ -61,13 +60,13 @@ export function Footer() {
 
           {/* المستويات */}
           <div>
-            <h3 className="mb-4 text-sm font-bold">المستويات</h3>
+            <h2 className="mb-4 text-sm font-bold">المستويات</h2>
             <ul className="space-y-2.5 text-sm">
               {siteConfig.levelsNav.map((lvl) => (
                 <li key={lvl.code}>
                   <Link
                     href={lvl.href}
-                    className="inline-block py-1 text-muted-foreground transition-colors hover:text-foreground"
+                    className="tap-target py-1 text-muted-foreground transition-colors hover:text-foreground"
                   >
                     <span className="font-de font-bold">{lvl.code}</span>
                     {" — "}
@@ -86,13 +85,13 @@ export function Footer() {
 
           {/* مراجع سريعة */}
           <div>
-            <h3 className="mb-4 text-sm font-bold">مراجع سريعة</h3>
+            <h2 className="mb-4 text-sm font-bold">مراجع سريعة</h2>
             <ul className="space-y-2.5 text-sm">
               {siteConfig.footerLinks["مراجع سريعة"].map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="inline-block py-1 text-muted-foreground transition-colors hover:text-foreground"
+                    className="tap-target py-1 text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {link.title}
                   </Link>

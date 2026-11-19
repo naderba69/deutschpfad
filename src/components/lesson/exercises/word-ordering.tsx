@@ -86,6 +86,9 @@ export function WordOrderingExercise({
   return (
     <div className="space-y-4">
       <p className="text-sm font-medium text-muted-foreground">{exercise.instructionAr}</p>
+      {exercise.instructionDe && (
+        <p className="font-de text-xs text-muted-foreground" dir="ltr" lang="de" data-testid="exercise-instruction-de">{exercise.instructionDe}</p>
+      )}
 
       {/* منطقة الإجابة */}
       <div
@@ -96,7 +99,8 @@ export function WordOrderingExercise({
           answer.length > 0 ? "border-primary/50 bg-primary/5" : "border-muted",
           locked && "border-success/50 bg-success/5",
         )}
-        aria-label="منطقة الإجابة"
+        role="group"
+        aria-label="منطقة الإجابة — الكلمات المرتَّبة"
       >
         {answer.length === 0 && (
           <span className="text-sm text-muted-foreground/70">
@@ -116,6 +120,9 @@ export function WordOrderingExercise({
               <button
                 type="button"
                 onClick={() => removeWord(token)}
+                /* الاسم المرئي كلمة ألمانية وحدها («kann») — بلا سياق لا
+                   يعرف مستخدم قارئ الشاشة أنها كلمة موضوعة يمكن إزالتها. */
+                aria-label={`إزالة الكلمة «${token.word}» من الجملة`}
                 title="إزالة الكلمة (انقر عليها)"
                 className="group flex items-center gap-1 rounded-lg border bg-background px-2.5 py-1.5 font-de font-semibold transition-colors hover:border-destructive/50 hover:bg-destructive/10"
                 dir="ltr"
@@ -134,7 +141,8 @@ export function WordOrderingExercise({
         onDragOver={(e) => e.preventDefault()}
         onDrop={(e) => handleDrop(e, "bank")}
         className="flex flex-wrap items-center gap-2 rounded-xl border bg-muted/30 p-3"
-        aria-label="بنك الكلمات"
+        role="group"
+        aria-label="بنك الكلمات — اختر كلمة لإضافتها"
       >
         {bank.length === 0 && <span className="text-sm text-muted-foreground/70">كل الكلمات استُخدمت ✓</span>}
         {bank.map((token, i) => (
@@ -148,6 +156,9 @@ export function WordOrderingExercise({
             }}
             onDragEnd={() => setDragIndex(null)}
             onClick={() => addWord(token)}
+            /* WCAG 2.5.7: السحب مكافئ بالنقر/Enter، والاسم يشرح الفعل
+               لا الكلمة وحدها. */
+            aria-label={`أضف الكلمة «${token.word}» إلى الجملة`}
             disabled={locked}
             className={cn(
               "inline-flex items-center gap-1 rounded-lg border bg-background px-3 py-2 font-de font-semibold shadow-sm transition-all",

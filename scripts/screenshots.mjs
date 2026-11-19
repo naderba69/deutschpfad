@@ -2,8 +2,8 @@
 import { chromium } from "@playwright/test";
 import fs from "fs";
 
-const BASE = "http://localhost:3000";
-const OUT = "/home/user/screenshots";
+const BASE = process.env.BASE_URL ?? "http://localhost:3000";
+const OUT = process.env.OUT_DIR ?? "screenshots";
 fs.mkdirSync(OUT, { recursive: true });
 
 const VIEWPORTS = [
@@ -68,4 +68,4 @@ await browser.close();
 
 console.log("FAILURES:", JSON.stringify(failures, null, 2));
 console.log("Total screenshots:", VIEWPORTS.length * PAGES.length);
-fs.writeFileSync("/home/user/screenshots/overflow-report.json", JSON.stringify(failures, null, 2));
+fs.writeFileSync(`${OUT}/overflow-report.json`, JSON.stringify(failures, null, 2));

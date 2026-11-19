@@ -43,7 +43,7 @@ export function LesetextSection({reading, lessonId}: {reading: ReadingText; less
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
-                <BookMarked className="h-5 w-5 shrink-0 text-primary" />
+                <BookMarked className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
                 <CardTitle className="text-lg">{reading.titleAr}</CardTitle>
               </div>
               <p className="text-sm text-muted-foreground" dir="ltr" lang="de">
@@ -82,10 +82,16 @@ export function LesetextSection({reading, lessonId}: {reading: ReadingText; less
           <Button
             variant="outline"
             size="sm"
+            aria-expanded={showTranslation}
+            aria-controls="lesetext-translation"
             onClick={() => setShowTranslation((v) => !v)}
             className="gap-2"
           >
-            {showTranslation ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+            {showTranslation ? (
+              <EyeOff className="h-4 w-4" aria-hidden="true" />
+            ) : (
+              <Eye className="h-4 w-4" aria-hidden="true" />
+            )}
             {showTranslation ? "إخفاء الترجمة" : "أظهر الترجمة"}
           </Button>
           {!showTranslation ? (
@@ -101,6 +107,8 @@ export function LesetextSection({reading, lessonId}: {reading: ReadingText; less
           <CardHeader className="pb-2">
             <button
               type="button"
+              aria-expanded={openGloss}
+              aria-controls="lesetext-glossary"
               onClick={() => setOpenGloss((v) => !v)}
               className="flex w-full items-center justify-between gap-2 text-start"
             >
@@ -115,8 +123,7 @@ export function LesetextSection({reading, lessonId}: {reading: ReadingText; less
               </span>
             </button>
           </CardHeader>
-          {openGloss ? (
-            <CardContent>
+          <CardContent id="lesetext-glossary" className={openGloss ? "" : "hidden"}>
               <ul className="grid gap-2 sm:grid-cols-2">
                 {reading.glossary.map((g) => (
                   <li
@@ -130,14 +137,15 @@ export function LesetextSection({reading, lessonId}: {reading: ReadingText; less
                       <SpeakButton text={g.de} />
                     </div>
                     <p className="mt-1 text-muted-foreground">{g.ar}</p>
+                    {/* ملاحظات المفردات تحمل عناوين URL طويلة بلا مسافات؛ بلا كسر
+                        الكلمة تفيض خارج البطاقة (قياس: 757px داخل 644px). */}
                     {g.noteAr ? (
-                      <p className="mt-1 text-xs text-primary/80">{g.noteAr}</p>
+                      <p className="mt-1 break-words text-xs text-primary/80">{g.noteAr}</p>
                     ) : null}
                   </li>
                 ))}
               </ul>
-            </CardContent>
-          ) : null}
+          </CardContent>
         </Card>
       ) : null}
 
@@ -145,7 +153,7 @@ export function LesetextSection({reading, lessonId}: {reading: ReadingText; less
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="flex items-center gap-2 text-base">
-              <MessageCircleQuestion className="h-5 w-5 text-primary" />
+              <MessageCircleQuestion className="h-5 w-5 text-primary" aria-hidden="true" />
               أسئلة الفهم
             </CardTitle>
           </CardHeader>
@@ -177,7 +185,7 @@ export function LesetextSection({reading, lessonId}: {reading: ReadingText; less
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="flex items-center gap-2 text-base">
-              <Quote className="h-5 w-5 text-primary" />
+              <Quote className="h-5 w-5 text-primary" aria-hidden="true" />
               عبارات جاهزة من النصّ (Redemittel)
             </CardTitle>
           </CardHeader>

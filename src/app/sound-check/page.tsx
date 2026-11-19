@@ -7,6 +7,7 @@ import {CheckCircle2, Loader2, Mic, MicOff, PlayCircle, Volume2, XCircle} from "
 import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {isRecognitionSupported} from "@/lib/speech/speech-recognition";
+import {getGermanVoices, initVoices, speakGerman} from "@/lib/speech/voices";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -19,32 +20,37 @@ import {isRecognitionSupported} from "@/lib/speech/speech-recognition";
 export default function SoundCheckPage() {
   const [micState, setMicState] = React.useState<"idle" | "checking" | "ok" | "fail">("idle");
   const [micTranscript, setMicTranscript] = React.useState("");
-  const [ttsState, setTtsState] = React.useState<"idle" | "playing" | "ok">("idle");
+  const [ttsState, setTtsState] = React.useState<"idle" | "playing" | "ok" | "missing">("idle");
   const [recognitionSupported, setRecognitionSupported] = React.useState<boolean | null>(null);
   const [micPermission, setMicPermission] = React.useState<"unknown" | "granted" | "denied">("unknown");
+  // الصوت الألماني الذي سيُستخدم فعلياً (الأفضل جودة) — يُحمَّل عند فتح الصفحة
+  const [germanVoice, setGermanVoice] = React.useState<{ name: string; quality: number } | null>(null);
   const recRef = React.useRef<{ stop: () => void; abort: () => void } | null>(null);
 
   React.useEffect(() => {
     setRecognitionSupported(isRecognitionSupported());
   }, []);
 
+  React.useEffect(() => {
+    const cleanup = initVoices(() => {
+      const best = getGermanVoices()[0];
+      setGermanVoice(best ? { name: best.voice.name, quality: best.quality } : null);
+    });
+    return cleanup;
+  }, []);
+
   /* ── اختبار إخراج الصوت (TTS) ── */
   const testSpeaker = () => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) {
-      setTtsState("ok"); // لا يوجد دعم — نعتبره غير متاح بصمت
+      setTtsState("missing");
       return;
     }
-    window.speechSynthesis.cancel();
     setTtsState("playing");
-    const u = new SpeechSynthesisUtterance("Hallo! Ich bin dein Deutschlehrer. Wie geht es dir?");
-    u.lang = "de-DE";
-    u.rate = 0.9;
-    const voices = window.speechSynthesis.getVoices();
-    const gv = voices.find((v) => v.lang === "de-DE") ?? voices.find((v) => v.lang.startsWith("de"));
-    if (gv) u.voice = gv;
-    u.onend = () => setTtsState("ok");
-    u.onerror = () => setTtsState("ok");
-    window.speechSynthesis.speak(u);
+    speakGerman("Hallo! Ich bin dein Deutschlehrer. Wie geht es dir?", {
+      rate: 0.9,
+      onEnd: () => setTtsState("ok"),
+      onError: () => setTtsState("missing"),
+    });
   };
 
   /* ── اختبار الميكروفون (التعرف على الكلام) ── */
@@ -129,6 +135,12 @@ export default function SoundCheckPage() {
               اضغط الزر — يجب أن تسمع جملة ألمانية بصوت ألماني:{" "}
               <span className="font-de font-semibold text-foreground">„Hallo! Ich bin dein Deutschlehrer…"</span>
             </p>
+            {germanVoice && (
+              <p className="rounded-lg bg-muted/30 px-3 py-2 text-xs text-muted-foreground" role="status">
+                🔊 الصوت الألماني في جهازك: <b className="text-foreground">{germanVoice.name}</b>
+                {germanVoice.quality >= 2 ? " (جودة عالية)" : " (جودة أساسية)"}
+              </p>
+            )}
             <div className="flex flex-wrap items-center gap-3">
               <Button onClick={testSpeaker} className="gap-1.5" disabled={ttsState === "playing"}>
                 {ttsState === "playing" ? (
@@ -142,6 +154,12 @@ export default function SoundCheckPage() {
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-success/15 px-3 py-1 text-xs font-bold text-success">
                   <CheckCircle2 className="h-3.5 w-3.5" aria-hidden="true" />
                   سمعت؟ إذن الصوت يعمل
+                </span>
+              )}
+              {ttsState === "missing" && (
+                <span className="text-xs font-semibold text-destructive" role="status">
+                  لم يُعثر على صوت ألماني في النظام؛ لا نستخدم صوتاً إنجليزياً بديلاً.
+                  ثبّت حزمة German voice في إعدادات النظام ثم أعد المحاولة.
                 </span>
               )}
             </div>

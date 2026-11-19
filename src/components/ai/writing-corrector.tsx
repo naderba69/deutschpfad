@@ -5,8 +5,8 @@ import {PenLine} from "lucide-react";
 
 import {AiToolShell} from "@/components/ai/ai-tool-shell";
 import {useLLM} from "@/components/providers/llm-provider";
-;
 import {writingCorrectorPrompt} from "@/lib/llm/prompts";
+import {useRadioGroupNav} from "@/lib/use-radio-group-nav";
 
 const LEVELS = ["A1", "A2", "B1", "B2"];
 
@@ -17,6 +17,7 @@ export function AiWritingCorrector() {
   const { callLLM } = useLLM();
   const [text, setText] = React.useState("");
   const [level, setLevel] = React.useState("A2");
+  const navLevel = useRadioGroupNav();
   const [result, setResult] = React.useState("");
 
   const generate = async () => {
@@ -46,7 +47,7 @@ export function AiWritingCorrector() {
     >
       {(run) => (
         <div className="space-y-3">
-          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="مستوى المتعلم">
+          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="مستوى المتعلم" {...navLevel}>
             {LEVELS.map((l) => (
               <button
                 key={l}
@@ -63,6 +64,7 @@ export function AiWritingCorrector() {
             ))}
           </div>
           <textarea
+            aria-label="النص الألماني للتصحيح"
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="اكتب فقرتك بالألمانية هنا… (مثال: Ich bin gestern nach Berlin gefahren und habe viel gesehen. Das Stadt ist sehr schön.)"

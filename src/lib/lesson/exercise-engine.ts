@@ -40,7 +40,7 @@ export function normalizeText(s: string): string {
  * `normalizeText` يمسح كل علامة ترقيم، فتصير «.» و«?» و«» كلها نصاً فارغاً
  * وتُقبل أي إجابة. هنا نُبقي العلامة ونُطبّع المسافات وحدها.
  */
-export function normalizePunctuation(s: string): string {
+function normalizePunctuation(s: string): string {
   return s.toLowerCase().replace(/\s+/g, " ").trim();
 }
 
@@ -74,7 +74,7 @@ function answersMatch(
 }
 
 /** مجموع نقاط تمرين */
-export function exercisePoints(exercise: Exercise): number {
+function exercisePoints(exercise: Exercise): number {
   return exercise.points ?? 10;
 }
 
@@ -252,7 +252,7 @@ export function evaluateDictation(exercise: DictationExercise, answer: string): 
 }
 
 /** Richtig/Falsch — كل عبارة تُصحح على حدة (نقطة مستقلة في الامتحان) */
-export function evaluateTrueFalse(exercise: TrueFalseExercise, answer: Record<string, boolean>): FeedbackResult {
+function evaluateTrueFalse(exercise: TrueFalseExercise, answer: Record<string, boolean>): FeedbackResult {
   let correct = 0;
   for (const s of exercise.statements) {
     if (answer[s.id] === s.isTrue) correct++;
@@ -271,7 +271,7 @@ export function evaluateTrueFalse(exercise: TrueFalseExercise, answer: Record<st
 }
 
 /** Lückentext بجمل — كل فتحة نقطة مستقلة */
-export function evaluateSentenceGap(exercise: SentenceGapExercise, answer: Record<number, string>): FeedbackResult {
+function evaluateSentenceGap(exercise: SentenceGapExercise, answer: Record<number, string>): FeedbackResult {
   let correct = 0;
   for (let i = 0; i < exercise.gapOrder.length; i++) {
     if (answer[i] === exercise.gapOrder[i]) correct++;
@@ -290,7 +290,7 @@ export function evaluateSentenceGap(exercise: SentenceGapExercise, answer: Recor
 }
 
 /** Zuordnung — كل مطابقة نقطة مستقلة */
-export function evaluateZuordnung(exercise: ZuordnungExercise, answer: Record<string, string>): FeedbackResult {
+function evaluateZuordnung(exercise: ZuordnungExercise, answer: Record<string, string>): FeedbackResult {
   let correct = 0;
   for (const it of exercise.items) {
     if (answer[it.id] === exercise.correctMap[it.id]) correct++;

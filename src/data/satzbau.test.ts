@@ -6,6 +6,11 @@ import { describe, expect, it } from "vitest";
 import { SATZBAU_LEVELS, SATZBAU_PUZZLES, TOTAL_SATZBAU, getPuzzlesByLevel } from "@/data/satzbau";
 
 describe("SATZBAU — بنك الألغاز", () => {
+  it("ترجمة مثال البناء تحفظ علاقة الفاعل بالمفعول بصياغة عربية سليمة", () => {
+    const puzzle = SATZBAU_PUZZLES.find((item) => item.id === "sb-b1-3");
+    expect(puzzle?.ar).toBe("صمّم المهندس البيت.");
+  });
+
   it("كل مستوى له ألغاز", () => {
     for (const lv of SATZBAU_LEVELS) {
       expect(getPuzzlesByLevel(lv).length).toBeGreaterThanOrEqual(2);

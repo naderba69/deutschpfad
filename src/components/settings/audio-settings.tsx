@@ -76,7 +76,7 @@ export function AudioSettings() {
                 )}
               >
                 {r.label}
-                <span className="font-de ms-1 opacity-70">×{r.value}</span>
+                <span className="font-de ms-1 ">×{r.value}</span>
               </button>
             ))}
           </div>
@@ -100,17 +100,24 @@ export function AudioSettings() {
           <button
             type="button"
             role="switch"
+            aria-label="المؤثرات الصوتية"
             aria-checked={sfx}
             onClick={toggleSfx}
-            className={cn(
-              "relative h-6 w-11 shrink-0 rounded-full transition-colors",
-              sfx ? "bg-success" : "bg-muted",
-            )}
+            className="relative inline-flex h-8 w-11 shrink-0 items-center"
           >
+            {/* المفتاح المرئي 24px، لكن مساحة اللمس 32px (الزر كله) */}
             <span
+              aria-hidden="true"
               className={cn(
-                "absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-all",
-                sfx ? "start-0.5 translate-x-5" : "start-0.5",
+                "absolute inset-x-0 top-1 h-6 rounded-full transition-colors",
+                sfx ? "bg-success" : "bg-muted",
+              )}
+            />
+            <span
+              aria-hidden="true"
+              className={cn(
+                "absolute top-1.5 start-0.5 h-5 w-5 rounded-full bg-white shadow transition-all",
+                sfx && "translate-x-5",
               )}
             />
           </button>

@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 
-import { getServerLimit, getServerUsage, incrementServerUsage } from "@/lib/llm/server/counter";
+import { getServerLimit, reserveSharedServerUsage } from "@/lib/llm/server/counter";
 import { hasAnyKey, serverModeEnabled } from "@/lib/llm/server/config";
 import { generateWithFallback } from "@/lib/llm/server/fallback";
+import { isJsonObject, readRequestTextLimited } from "@/lib/llm/server/request-body";
 import type { LLMMessage } from "@/types/llm";
 
 export const runtime = "nodejs";
@@ -35,18 +36,32 @@ const TOTAL_TIMEOUT_MS = 50_000;
  * · مهلة كلية واحدة عبر كل المحاولات
  */
 export async function POST(req: Request) {
-  // حد حجم الجسم قبل القراءة
-  const rawText = await req.text();
-  if (rawText.length > MAX_BODY_BYTES) {
+  // ارفض الحجم المعلن مبكراً، ثم طبّق حداً فعلياً أثناء قراءة التدفق كي لا
+  // يُحمّل جسم غير موثوق بالكامل في الذاكرة قبل التحقق منه.
+  const contentLength = Number(req.headers.get("content-length"));
+  if (Number.isFinite(contentLength) && contentLength > MAX_BODY_BYTES) {
+    return NextResponse.json({ ok: false, status: "error", error: "الطلب كبير جداً" }, { status: 413 });
+  }
+  let rawText: string | null;
+  try {
+    rawText = await readRequestTextLimited(req.body, MAX_BODY_BYTES);
+  } catch {
+    return NextResponse.json({ ok: false, status: "error", error: "تعذرت قراءة الطلب" }, { status: 400 });
+  }
+  if (rawText === null) {
     return NextResponse.json({ ok: false, status: "error", error: "الطلب كبير جداً" }, { status: 413 });
   }
 
-  let body: RequestBody;
+  let parsedBody: unknown;
   try {
-    body = JSON.parse(rawText) as RequestBody;
+    parsedBody = JSON.parse(rawText) as unknown;
   } catch {
     return NextResponse.json({ ok: false, status: "error", error: "طلبات غير صالحة" }, { status: 400 });
   }
+  if (!isJsonObject(parsedBody)) {
+    return NextResponse.json({ ok: false, status: "error", error: "يجب أن يكون الطلب كائناً صالحاً" }, { status: 400 });
+  }
+  const body = parsedBody as RequestBody;
 
   // ── وضع الخادم مغلق افتراضياً — الحماية المالية الأساسية ──
   if (!serverModeEnabled()) {
@@ -83,13 +98,30 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, status: "error", error: "رسائل غير صالحة" }, { status: 400 });
   }
 
-  // clamp المعلمات
-  const maxTokens = Math.min(MAX_TOKENS_CAP, Math.max(1, Math.round(Number(body.maxTokens) || 512)));
-  const temperature = Math.min(TEMP_MAX, Math.max(TEMP_MIN, Number(body.temperature) ?? 0.7));
+  // clamp المعلمات مع رفض NaN/Infinity ضمنياً إلى قيم افتراضية آمنة
+  const requestedMaxTokens = typeof body.maxTokens === "number" && Number.isFinite(body.maxTokens)
+    ? body.maxTokens
+    : 512;
+  const requestedTemperature = typeof body.temperature === "number" && Number.isFinite(body.temperature)
+    ? body.temperature
+    : 0.7;
+  const maxTokens = Math.min(MAX_TOKENS_CAP, Math.max(1, Math.round(requestedMaxTokens)));
+  const temperature = Math.min(TEMP_MAX, Math.max(TEMP_MIN, requestedTemperature));
 
   // ── السقف اليومي (حماية إضافية فوق الإغلاق الافتراضي) ──
   const limit = getServerLimit();
-  if (getServerUsage() >= limit) {
+  let used: number | null;
+  try {
+    // حجز ذري مركزي يمنع تجاوز الحد بين workers/instances أيضاً.
+    used = await reserveSharedServerUsage(limit);
+  } catch {
+    // Fail closed: لا نصل إلى مزود مدفوع إذا تعذر التأكد من الحصة.
+    return NextResponse.json(
+      { ok: false, status: "counter-unavailable", error: "الخدمة غير متاحة مؤقتاً" },
+      { status: 503 },
+    );
+  }
+  if (used === null) {
     return NextResponse.json(
       { ok: false, status: "limit", remaining: 0, limit },
       { status: 429 },
@@ -97,14 +129,22 @@ export async function POST(req: Request) {
   }
 
   // ── الاستدعاء مع Fallback تلقائي + مهلة كلية واحدة ──
+  const controller = new AbortController();
+  const abortFromClient = () => controller.abort(
+    req.signal.reason ?? new DOMException("أغلق العميل الاتصال", "AbortError"),
+  );
+  if (req.signal.aborted) abortFromClient();
+  else req.signal.addEventListener("abort", abortFromClient, {once: true});
+  const timeoutId = setTimeout(
+    () => controller.abort(new Error("انتهت مهلة الاستجابة — أعد المحاولة")),
+    TOTAL_TIMEOUT_MS,
+  );
   try {
-    const { content, provider } = await Promise.race([
-      generateWithFallback(typedMessages, { maxTokens, temperature }),
-      new Promise<never>((_, reject) =>
-        setTimeout(() => reject(new Error("انتهت مهلة الاستجابة — أعد المحاولة")), TOTAL_TIMEOUT_MS),
-      ),
-    ]);
-    const used = incrementServerUsage();
+    const { content, provider } = await generateWithFallback(
+      typedMessages,
+      {maxTokens, temperature},
+      controller.signal,
+    );
     return NextResponse.json({
       ok: true,
       content,
@@ -115,8 +155,11 @@ export async function POST(req: Request) {
   } catch (err) {
     const message = err instanceof Error ? err.message : "خطأ غير معروف";
     return NextResponse.json(
-      { ok: false, status: "error", error: message, remaining: Math.max(0, limit - getServerUsage()), limit },
+      { ok: false, status: "error", error: message, remaining: Math.max(0, limit - used), limit },
       { status: 502 },
     );
+  } finally {
+    clearTimeout(timeoutId);
+    req.signal.removeEventListener("abort", abortFromClient);
   }
 }

@@ -6,7 +6,7 @@ import {AlertCircle, Brain, CalendarClock, RefreshCcw, Sparkles} from "lucide-re
 
 import {useProgress} from "@/components/providers/progress-provider";
 import {LESSON_META} from "@/data/lessons/meta";
-import {getMistakeStats} from "@/lib/storage/mistake-dictionary";
+import {getMistakeStatsResult} from "@/lib/storage/mistake-dictionary";
 import type { LearnerProfile } from "@/lib/storage/learner";
 
 /**
@@ -26,29 +26,37 @@ export function TodaySuggestions({ profile }: { profile: LearnerProfile }) {
   const [dueReview, setDueReview] = React.useState<typeof LESSON_META>([]);
   // دروس المراجعة الذكية (مبنية على أخطاء المتعلم)
   const [smartReview, setSmartReview] = React.useState<typeof LESSON_META>([]);
+  const [activityReadError, setActivityReadError] = React.useState(false);
 
   React.useEffect(() => {
-    void getMistakeStats().then((stats) =>
-      setMistakes(
-        stats
-          .slice(0, 3)
-          .map((m) => ({ text: m.label ?? m.errorType ?? "خطأ", count: m.count ?? 1 })),
-      ),
-    );
+    void getMistakeStatsResult().then((result) => {
+      if (!result.ok) {
+        setActivityReadError(true);
+        return;
+      }
+      setMistakes(result.stats.slice(0, 3).map((m) => ({ text: m.label ?? m.errorType ?? "خطأ", count: m.count ?? 1 })));
+    });
     // دروس هذا الأسبوع (من أحداث lesson-completed)
-    void import("@/lib/analytics/events").then(({getRecentEvents}) =>
-      getRecentEvents(1000).then((events) => {
+    void import("@/lib/analytics/events").then(({getRecentEventsResult}) =>
+      getRecentEventsResult(1000).then((result) => {
+        if (!result.ok) {
+          setActivityReadError(true);
+          return;
+        }
         const weekAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
-        const count = events.filter((e) => e.type === "lesson-completed" && e.ts >= weekAgo).length;
-        setWeekCount(count);
+        setWeekCount(result.events.filter((e) => e.type === "lesson-completed" && e.ts >= weekAgo).length);
       }),
     );
     // المراجعة الذكية: من أحداث التمارين الخاطئة — أين تتكرر أخطاؤك؟
     void (async () => {
       try {
-        const {getRecentEvents} = await import("@/lib/analytics/events");
-        const events = await getRecentEvents(2000);
-        const wrong = events.filter((e) => e.type === "exercise-result" && !e.correct);
+        const {getRecentEventsResult} = await import("@/lib/analytics/events");
+        const result = await getRecentEventsResult(2000);
+        if (!result.ok) {
+          setActivityReadError(true);
+          return;
+        }
+        const wrong = result.events.filter((e) => e.type === "exercise-result" && !e.correct);
         if (wrong.length >= 3) {
           // اختر درسين من الدروس المكتملة (للمراجعة) — الأولوية للدروس الأخيرة
           const doneIds = [...completedLessonsSet];
@@ -62,6 +70,35 @@ export function TodaySuggestions({ profile }: { profile: LearnerProfile }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+
+  // مراجعة قبل النسيان: دروس أُتمّت قبل 1/3/7 أيام (من أحداث lesson-completed)
+  React.useEffect(() => {
+    void (async () => {
+      try {
+        const {getRecentEventsResult} = await import("@/lib/analytics/events");
+        const result = await getRecentEventsResult(2000);
+        if (!result.ok) {
+          setActivityReadError(true);
+          return;
+        }
+        const done = result.events
+          .filter((e) => e.type === "lesson-completed")
+          .sort((a, b) => b.ts - a.ts);
+        const now = Date.now();
+        const due = done.filter((e) => {
+          const days = (now - e.ts) / (24 * 60 * 60 * 1000);
+          return days >= 1 && days < 8; // استحقاق خلال أسبوع من الإتمام
+        });
+        if (due.length > 0) {
+          const dueIds = [...new Set(due.map((e) => e.lessonId))].slice(0, 2);
+          const dueLessons = LESSON_META.filter((l) => dueIds.includes(l.id));
+          setDueReview(dueLessons);
+        }
+      } catch {
+        /* تجاهل */
+      }
+    })();
+  }, []);
   const doneCount = completedLessonsSet.size;
   const suggestions: React.ReactNode[] = [];
 
@@ -116,31 +153,6 @@ export function TodaySuggestions({ profile }: { profile: LearnerProfile }) {
       </li>,
     );
   }
-
-  // 0) مراجعة قبل النسيان: دروس أُتمّت قبل 1/3/7 أيام (من أحداث lesson-completed)
-  React.useEffect(() => {
-    void (async () => {
-      try {
-        const {getRecentEvents} = await import("@/lib/analytics/events");
-        const events = await getRecentEvents(2000);
-        const done = events
-          .filter((e) => e.type === "lesson-completed")
-          .sort((a, b) => b.ts - a.ts);
-        const now = Date.now();
-        const due = done.filter((e) => {
-          const days = (now - e.ts) / (24 * 60 * 60 * 1000);
-          return days >= 1 && days < 8; // استحقاق خلال أسبوع من الإتمام
-        });
-        if (due.length > 0) {
-          const dueIds = [...new Set(due.map((e) => e.lessonId))].slice(0, 2);
-          const dueLessons = LESSON_META.filter((l) => dueIds.includes(l.id));
-          setDueReview(dueLessons);
-        }
-      } catch {
-        /* تجاهل */
-      }
-    })();
-  }, []);
 
   // 1) مراجعة تراكمية كل 5 دروس
   if (doneCount >= 5 && doneCount % 5 === 0) {
@@ -214,6 +226,9 @@ export function TodaySuggestions({ profile }: { profile: LearnerProfile }) {
     );
   }
 
+  if (activityReadError) {
+    suggestions.push(<li key="activity-error" role="alert" className="rounded-lg border border-destructive/25 bg-destructive/5 px-3 py-2 text-sm text-destructive">تعذرت قراءة بعض بيانات النشاط؛ قد تكون الاقتراحات والإحصاءات المعروضة غير مكتملة.</li>);
+  }
   if (suggestions.length === 0) return null;
 
   return (

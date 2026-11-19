@@ -6,9 +6,7 @@ import {Award, BookOpen, GraduationCap, Lightbulb, RotateCcw} from "lucide-react
 import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
 import {saveTestResult} from "@/lib/storage/test-results-store";
-import {levelFromPct} from "@/lib/tests/test-engine";
-;
-import type { TestAnswer, TestQuestion, TestResult, TestSkill } from "@/types/test";
+import type { TestResult } from "@/types/test";
 
 const SKILL_LABEL: Record<string, string> = {
   grammatik: "القواعد",
@@ -32,10 +30,16 @@ interface ResultsPanelProps {
  * لوحة النتائج — النسب لكل مهارة + المستوى المقدر + اقتراحات التقوية
  */
 export function ResultsPanel({ result, onRetry, onNext, nextLabel, onComplete }: ResultsPanelProps) {
+  const [saveFailed, setSaveFailed] = React.useState(false);
   // حفظ النتيجة تلقائياً (لتغذية تحليل الأخطاء والتقرير الأسبوعي)
   React.useEffect(() => {
-    void saveTestResult(result);
+    let mounted = true;
+    setSaveFailed(false);
+    void saveTestResult(result).then((saved) => {
+      if (mounted) setSaveFailed(!saved);
+    });
     onComplete?.(result);
+    return () => { mounted = false; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [result]);
 
@@ -51,17 +55,20 @@ export function ResultsPanel({ result, onRetry, onNext, nextLabel, onComplete }:
           )}
         </span>
         <h3 className="mt-4 text-2xl font-extrabold">
-          {result.passed ? "أحسنت! اجتزت الاختبار 🎉" : "لا بأس — واصل التدريب"}
+          {result.passed ? "أحسنت! بلغت عتبة هذا التدريب 🎉" : "واصل التدريب — نتيجتك دون عتبة هذا التدريب"}
         </h3>
         <p className="font-de mt-2 text-4xl font-extrabold text-primary">{result.overallPct}%</p>
         <p className="mt-2 text-sm text-muted-foreground">
-          المستوى المقدر:{" "}
-          <span className="font-de font-bold text-primary">{result.estimatedLevel}</span> ·{" "}
-          {result.kind === "level"
-            ? `اختبار مستوى ${result.level}`
-            : result.kind === "unit"
-              ? "اختبار وحدة"
-              : "تشخيصي"}
+          {result.kind === "diagnostic"
+            ? <>اقتراح نقطة بدء تدريبية من هذه العينة: <span className="font-de font-bold text-primary">{result.estimatedLevel}</span> (ليس تصنيفاً معيارياً)</>
+            : result.kind === "level"
+              ? `نتيجة عينة أسئلة تدريب مستوى ${result.level}`
+              : result.kind === "unit"
+                ? "نتيجة أسئلة تدريب هذه الوحدة"
+                : "نتيجة نشاط تدريبي"}
+        </p>
+        <p className="mt-2 text-xs text-muted-foreground">
+          النتيجة تخص عينة التدريب المصححة آلياً فقط؛ لا تُقيّم جودة إجابات الكتابة الحرة ولا تمثل مستوى CEFR رسمياً.
         </p>
         {result.secondsUsed > 0 && (
           <p className="mt-1 text-xs text-muted-foreground">
@@ -83,6 +90,11 @@ export function ResultsPanel({ result, onRetry, onNext, nextLabel, onComplete }:
           )}
         </div>
       </div>
+      {saveFailed && (
+        <p role="alert" className="rounded-xl border border-destructive/30 bg-destructive/5 p-3 text-sm">
+          تعذر حفظ نتيجة الاختبار؛ يمكنك تنزيل بياناتك الاحتياطية لاحقاً والتحقق من التخزين المحلي.
+        </p>
+      )}
 
       {/* المهارات */}
       <div>
@@ -93,17 +105,55 @@ export function ResultsPanel({ result, onRetry, onNext, nextLabel, onComplete }:
               <div className="flex items-center justify-between text-sm">
                 <span className="font-semibold">{SKILL_LABEL[r.skill] ?? r.skill}</span>
                 <span className="font-de font-bold text-primary">
-                  {r.pct}% · {r.level}
+                  {r.pct}%
                 </span>
               </div>
               <Progress value={r.pct} className="mt-2 h-2" aria-label={`${SKILL_LABEL[r.skill]}: ${r.pct}%`} />
               <p className="mt-1 text-xs text-muted-foreground">
-                {r.correct} من {r.total} صحيحة
+                {r.correct} من {r.total} صحيحة. تقدير المهارة تقريبي من هذه العينة، وليس تصنيف CEFR رسمياً.
               </p>
             </div>
           ))}
         </div>
       </div>
+
+      {/* مراجعة الأدلة — كل سؤالٍ بشاهده */}
+      {result.review.length > 0 && (
+        <div data-testid="exam-review">
+          <h4 className="mb-3 text-lg font-bold">مراجعة الأدلة</h4>
+          <div className="space-y-3">
+            {result.review.map((item) => {
+              const answered = item.chosen !== null;
+              const ok = answered && item.chosen === item.correct;
+              return (
+                <div key={item.id} data-testid="exam-review-item" className="rounded-xl border bg-card p-3">
+                  <p className="text-sm">
+                    <span aria-hidden className={ok ? "text-success" : "text-destructive"}>{ok ? "✓" : "✗"}</span>{" "}
+                    <span dir="ltr" lang="de" className="font-de">{item.questionDe}</span>
+                  </p>
+                  {item.questionAr && <p className="mt-0.5 text-xs text-muted-foreground">{item.questionAr}</p>}
+                  <p className="mt-1 text-xs">
+                    جوابك: <span dir="ltr" lang="de" className="font-de">{answered ? item.options[item.chosen!] : "— لم تُجب"}</span> ·
+                    الصحيح: <span dir="ltr" lang="de" className="font-de">{item.options[item.correct]}</span>
+                  </p>
+                  {item.explanation && (
+                    <p className="mt-1 rounded-md bg-muted/40 p-2 text-xs leading-relaxed">
+                      <span className="font-bold">الدليل: </span>
+                      <span data-testid="exam-review-evidence">{item.explanation}</span>
+                    </p>
+                  )}
+                  {item.answerText !== undefined && (
+                    <p className="mt-1 text-xs">
+                      إجابتك: <span dir="ltr" lang="de" className="font-de">{item.answerText || "—"}</span>
+                      {item.sampleAnswer && <> · نموذج: <span dir="ltr" lang="de" className="font-de">{item.sampleAnswer}</span></>}
+                    </p>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* اقتراحات التقوية (تكيفي) */}
       {result.reinforcement.length > 0 && (
@@ -146,18 +196,4 @@ function ReviewLessonsLink({ level }: { level: string }) {
       راجع دروس مستوى {level} من جديد
     </a>
   );
-}
-
-/** شريط مهارة لطيف (للمعالجة البصرية) */
-export function SkillBadge({ skill }: { skill: TestSkill }) {
-  return (
-    <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">
-      {SKILL_LABEL[skill] ?? skill}
-    </span>
-  );
-}
-
-/** مساعد: مستوى من نسبة (للعرض السريع) */
-export function levelFromPctLabel(pct: number) {
-  return levelFromPct(pct);
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import * as React from "react";
 import {Clock, Layers, Sparkles, Zap} from "lucide-react";
 
@@ -12,7 +13,7 @@ import {Progress} from "@/components/ui/progress";
 import {getFirstLessonMetaForUnit} from "@/data/lessons/meta";
 import {getUnitsByLevel} from "@/lib/constants/curriculum";
 import {getActiveLevel} from "@/lib/progress-selectors";
-import {sample} from "@/lib/lesson/shuffle";
+import {dailySeed, seededSample} from "@/lib/lesson/shuffle";
 import {useCountdown} from "@/lib/tests/use-countdown";
 import {formatTime} from "@/lib/tests/test-engine";
 import type { Exercise } from "@/types/lesson";
@@ -77,14 +78,16 @@ const TOTAL_SECONDS = 5 * 60;
  */
 export function FiveMinutes() {
   const { completedUnits, sealedLevels, isHydrated } = useProgress();
-  // ═══ إصلاح hydration: sample عشوائي في أول رندر كان يكسر التطابق
-  // (الخادم يختار عشوائياً مختلفاً عن العميل) — أُجّل إلى useEffect ═══
-  const [batch, setBatch] = React.useState<typeof QUICK_EXERCISES>([]);
+  // عيّنة اليوم من التمارين السريعة: خلط **حتمي** ببذرة يومية بدل `sample`
+  // العشوائي. كان التعارض مع الهيدرشن يُحلّ بتأجيل الاختيار إلى `useEffect`،
+  // لكن ذلك يترك الصفحة بلا تمارين في HTML ثم يقفز المحتوى بعد الهيدرشن
+  // (CLS). البذرة اليومية تُبقي التنويع اليومي وتطابق الخادم بالعميل.
+  const [batch] = React.useState<typeof QUICK_EXERCISES>(() =>
+    seededSample(QUICK_EXERCISES, 3, dailySeed("five-minutes")),
+  );
   const [done, setDone] = React.useState(false);
-  React.useEffect(() => {
-    setBatch(sample(QUICK_EXERCISES, 3));
-  }, []);
-  const remaining = useCountdown(TOTAL_SECONDS, () => setDone(true));
+  const [paused, setPaused] = React.useState(false);
+  const remaining = useCountdown(TOTAL_SECONDS, () => setDone(true), {paused});
 
   const activeLevel = isHydrated ? getActiveLevel(completedUnits, sealedLevels) : "A1";
   const units = getUnitsByLevel(activeLevel);
@@ -99,9 +102,27 @@ export function FiveMinutes() {
           <Zap className="h-5 w-5 text-gold-strong" aria-hidden="true" />
           كبسولة 5 دقائق — للأيام المزدحمة
         </p>
-        <span className="font-de rounded-lg border border-primary/30 bg-primary/5 px-3 py-1.5 text-sm font-bold text-primary tabular-nums" role="timer">
-          ⏱ {formatTime(remaining)}
-        </span>
+        <div className="flex flex-wrap items-center gap-2">
+          <span
+            className="font-de rounded-lg border border-primary/30 bg-primary/5 px-3 py-1.5 text-sm font-bold text-primary tabular-nums"
+            role="timer"
+            aria-label={`الوقت المتبقي في الكبسولة: ${formatTime(remaining)}`}
+          >
+            ⏱ {formatTime(remaining)}
+          </span>
+          {/* WCAG 2.2.1: عدّاد الكبسولة حدّ زمني من المحتوى لا من المستخدم،
+              فيجب أن يُوقَف ويُستأنف. الاستئناف يكمل ولا يعيد الضبط. */}
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={() => setPaused((p) => !p)}
+            aria-pressed={paused}
+            disabled={done}
+            className="gap-1.5"
+          >
+            {paused ? "متابعة الكبسولة" : "إيقاف مؤقت"}
+          </Button>
+        </div>
       </div>
 
       {done && (
@@ -112,6 +133,9 @@ export function FiveMinutes() {
           </p>
         </div>
       )}
+      <span className="sr-only" role="status" aria-live="polite">
+        {done ? "انتهت مدة الكبسولة (5 دقائق)." : paused ? "أُوقف العدّاد مؤقتاً." : ""}
+      </span>
 
       {/* كلمة اليوم */}
       <Card>
@@ -138,7 +162,7 @@ export function FiveMinutes() {
           {batch.map((ex, i) => (
             <div key={ex.id}>
               <p className="mb-2 text-xs font-bold text-muted-foreground">تمرين {i + 1}/3</p>
-              <ExerciseRenderer exercise={ex} />
+              <ExerciseRenderer exercise={ex} sourceId="dashboard:five-minutes" />
             </div>
           ))}
         </CardContent>
@@ -157,7 +181,7 @@ export function FiveMinutes() {
             </p>
           </div>
           <Button asChild size="sm" className="gap-1.5">
-            <a href={`/lesson/${lesson.id}`}>ابدأ الدرس</a>
+            <Link href={`/lesson/${lesson.id}`}>ابدأ الدرس</Link>
           </Button>
         </div>
       )}

@@ -60,5 +60,3 @@ export function useExerciseState(exercise: Exercise) {
     reset,
   };
 }
-
-export type ExerciseState = ReturnType<typeof useExerciseState>;

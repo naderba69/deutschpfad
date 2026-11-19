@@ -4,6 +4,7 @@ import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Flame} from "lucide-react";
 import {type HeatCell} from "@/lib/analytics/heatmap";
 import {cn} from "@/lib/utils";
+import {ScrollRegion} from "@/components/ui/scroll-region";
 
 const DAY_LABELS = ["أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"];
 const MONTHS = ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"];
@@ -46,14 +47,19 @@ export function HeatmapChart({ cells, streak }: { cells: HeatCell[][]; streak: n
         </CardTitle>
       </CardHeader>
       <CardContent className="p-4">
-        <div className="max-w-full overflow-x-auto pb-1">
+        {/* تسميات المحور 10px عمداً: خلايا الشبكة 10px — تكبيرها يكسر المحاذاة (استثناء موثّق في dom-audit) */}
+        <ScrollRegion
+          className="max-w-full overflow-x-auto pb-1"
+          label="خريطة النشاط اليومي — قابلة للتمرير"
+          data-dense-labels="1"
+        >
           <div className="inline-block max-w-full">
             {/* أسماء الأشهر — اختصار في الشاشات الضيقة حتى لا يُقصّ النص */}
             <div className="flex gap-[2px] pb-1 ps-7">
               {monthLabels.map((m, i) => (
                 <span
                   key={i}
-                  className="w-[14px] shrink-0 truncate text-[9px] leading-3 text-muted-foreground sm:w-[14px] sm:text-[9px]"
+                  className="w-[14px] shrink-0 truncate text-[11px] leading-3 text-muted-foreground sm:w-[14px] sm:text-[11px]"
                   title={m.label}
                 >
                   <span className="sm:hidden">{MONTHS_SHORT[m.label ? MONTHS.indexOf(m.label) : 0]}</span>
@@ -63,7 +69,7 @@ export function HeatmapChart({ cells, streak }: { cells: HeatCell[][]; streak: n
             </div>
             <div className="flex gap-[2px]">
               {/* أيام الأسبوع */}
-              <div className="flex w-7 shrink-0 flex-col gap-[3px] text-[9px] text-muted-foreground">
+              <div className="flex w-7 shrink-0 flex-col gap-[3px] text-[11px] text-muted-foreground">
                 {DAY_LABELS.map((d, i) => (
                   <span key={d} className="h-[10px] leading-[10px]">
                     {i % 2 === 0 ? d : ""}
@@ -90,7 +96,7 @@ export function HeatmapChart({ cells, streak }: { cells: HeatCell[][]; streak: n
                 </div>
               ))}
             </div>
-            <div className="mt-2 flex items-center gap-1 ps-7 text-[9px] text-muted-foreground">
+            <div className="mt-2 flex items-center gap-1 ps-7 text-[11px] text-muted-foreground">
               أقل
               {[0, 1, 2, 3, 4].map((lvl) => (
                 <span key={lvl} className={cn("h-3 w-3 rounded-[3px]", lvl === 0 ? "bg-muted/40" : lvl === 1 ? "bg-sky-300/50" : lvl === 2 ? "bg-sky-400/70" : lvl === 3 ? "bg-sky-500" : "bg-indigo-600")} />
@@ -98,7 +104,7 @@ export function HeatmapChart({ cells, streak }: { cells: HeatCell[][]; streak: n
               أكثر
             </div>
           </div>
-        </div>
+        </ScrollRegion>
       </CardContent>
     </Card>
   );

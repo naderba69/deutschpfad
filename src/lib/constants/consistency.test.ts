@@ -1,13 +1,16 @@
 import {describe, expect, it} from "vitest";
 
 import {LESSON_META} from "@/data/lessons/meta";
+import {LESSONS} from "@/data/lessons/index";
 import {
   getUnitKeyWords,
   getUnitLessonCount,
   TOTAL_LESSONS,
+  TOTAL_WORDS,
   UNITS,
   TOTAL_UNITS,
 } from "@/lib/constants/curriculum";
+import {STATS} from "@/lib/constants/site-content";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -17,9 +20,16 @@ import {
  */
 
 describe("اتساق أرقام الدروس (المرحلة 4)", () => {
-  it("TOTAL_LESSONS يساوي عدد الدروس الفعلية (52 — لا 251 الوهمي)", () => {
+  it("سجل الدروس والفهرس الوصفي يحتويان المعرفات نفسها دون فقد أو تكرار", () => {
+    const registryIds = LESSONS.map((lesson) => lesson.id).sort();
+    const metadataIds = LESSON_META.map((lesson) => lesson.id).sort();
+    expect(new Set(registryIds).size).toBe(registryIds.length);
+    expect(new Set(metadataIds).size).toBe(metadataIds.length);
+    expect(registryIds).toEqual(metadataIds);
+  });
+  it("TOTAL_LESSONS يساوي عدد الدروس الفعلية (54 — لا 251 الوهمي)", () => {
     expect(TOTAL_LESSONS).toBe(LESSON_META.length);
-    expect(TOTAL_LESSONS).toBe(52);
+    expect(TOTAL_LESSONS).toBe(54);
   });
 
   it("عدد دروس كل وحدة معروض = الدروس الفعلية لهذه الوحدة", () => {
@@ -94,10 +104,17 @@ describe("اتساق أرقام الدروس (المرحلة 4)", () => {
   });
 });
 
+describe("اتساق أوصاف المنهج", () => {
+  it("الوصف العربي لوحدة المطعم يطابق موضوع الحديث عن المذاق", () => {
+    const restaurant = UNITS.find((unit) => unit.id === "a2-03");
+    expect(restaurant?.descAr).toContain("التحدث عن مذاقه");
+  });
+});
+
 describe("اتساق الدروس الفعلية (المرحلة 4)", () => {
-  it("ترتيب LESSON_META صحيح (الأرقام قبل المراجعة الختامية، والمستويات متتالية)", () => {
+  it("ترتيب LESSON_META صحيح (درس Perfekt قبل المراجعة الختامية، والمستويات متتالية)", () => {
     const ids = LESSON_META.map((m) => m.id);
-    // a1-14 (الأرقام) قبل a1-13 (المراجعة الختامية)
+    // a1-14 (Perfekt، في الوحدة a1-07) قبل a1-13 (المراجعة الختامية)
     expect(ids.indexOf("a1-14")).toBeLessThan(ids.indexOf("a1-13"));
     // b1-11 قبل b2-01
     expect(ids.indexOf("b1-11")).toBeLessThan(ids.indexOf("b2-01"));
@@ -114,13 +131,33 @@ describe("اتساق الدروس الفعلية (المرحلة 4)", () => {
 });
 
 describe("عدد الوحدات المعلن (المرحلة 4)", () => {
-  it("TOTAL_UNITS ثابت ومعقول (45 وحدة عرض)", () => {
-    expect(TOTAL_UNITS).toBe(47);
+  it("TOTAL_UNITS يساوي عدد وحدات العرض الفعلية (49)", () => {
+    expect(TOTAL_UNITS).toBe(49);
   });
 
   it("كل وحدة عرض لها درس واحد على الأقل", () => {
     for (const unit of UNITS) {
       expect(getUnitLessonCount(unit.id), `${unit.id}: وحدة بلا دروس`).toBeGreaterThanOrEqual(1);
     }
+  });
+});
+
+/**
+ * شريط إحصائيات الصفحة الرئيسية (STATS) كان مكتوباً يدوياً فتعفّن:
+ * «44 وحدة» (والفعلية 47) و«240+ درس تفاعلي» (والفعلية 52). صار مشتقّاً،
+ * وهذا يمنع عودة الرقم المضلِّل من أول شاشة يراها الزائر.
+ */
+describe("اتساق إحصائيات الصفحة الرئيسية (STATS)", () => {
+  it("أرقام الشريط مطابقة للأرقام المشتقّة من المنهج", () => {
+    const byLabel = new Map(STATS.map((s) => [s.label, s.value]));
+    expect(byLabel.get("وحدة دراسية"), "عدد الوحدات في الرئيسية").toBe(String(TOTAL_UNITS));
+    expect(byLabel.get("درس تفاعلي"), "عدد الدروس في الرئيسية").toBe(String(TOTAL_LESSONS));
+    expect(byLabel.get("كلمة ومصطلح"), "عدد الكلمات في الرئيسية").toBe(`${TOTAL_WORDS}+`);
+  });
+
+  it("لا رقم مضلِّل في الشريط (لا 44 وحدة ولا 240+ درساً)", () => {
+    const values = STATS.map((s) => s.value);
+    expect(values).not.toContain("44");
+    expect(values).not.toContain("240+");
   });
 });

@@ -19,33 +19,37 @@
     --popover: 0 0% 100%;
     --popover-foreground: 224 46% 12%;
 
-    --primary: 215 100% 47%;
+    --primary: 215 100% 41%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 214 32% 94%;
     --secondary-foreground: 224 46% 12%;
 
     --muted: 214 32% 94%;
-    --muted-foreground: 217 17% 45%;
+    --muted-foreground: 217 17% 39%;
 
     --accent: 214 32% 92%;
     --accent-foreground: 224 46% 12%;
 
-    --destructive: 0 72% 51%;
+    --destructive: 0 75% 45%;
     --destructive-foreground: 0 0% 100%;
 
     /* ألوان مميزة للنظام */
-    --success: 166 78% 28%;
+    /* 24% بدل 28%: كان نصّ success على خلفية success/10 عند 4.15:1 (تحت AA) */
+    --success: 166 78% 24%;
     --success-foreground: 0 0% 100%;
 
     --gold: 45 100% 51%;
     --gold-foreground: 224 46% 12%;
     /* ذهبي داكن للاستخدام كنص/أيقونة — يحقق تباين AA (≥4.5:1) على الخلفيات الفاتحة */
-    --gold-strong: 41 95% 30%;
+    --gold-strong: 41 95% 28%;
 
     --border: 214 24% 88%;
-    --input: 214 24% 86%;
-    --ring: 215 100% 47%;
+    /* الجولة 14 — 1.4.11: حدّ الحقل هو المعلومة الوحيدة التي تعرّف به.
+       56% يعطي 3.34:1 مع خلفية الصفحة و3.49:1 مع البطاقة و3.02:1 مع muted،
+       بدل 1.35:1 عند 86% (الحدّ كان غير مرئي عملياً). */
+    --input: 214 24% 56%;
+    --ring: 215 100% 41%;
 
     --radius: 0.75rem;
   }
@@ -72,7 +76,7 @@
     --accent: 226 30% 19%;
     --accent-foreground: 214 30% 96%;
 
-    --destructive: 0 72% 58%;
+    --destructive: 0 72% 62%;
     --destructive-foreground: 226 44% 8%;
 
     --success: 161 68% 52%;
@@ -84,7 +88,9 @@
     --gold-strong: 45 100% 62%;
 
     --border: 226 28% 18%;
-    --input: 226 28% 20%;
+    /* داكن: 52% يعطي 4.06:1 مع الخلفية و3.87:1 مع البطاقة و3.13:1 مع muted
+       (كان 1.38:1 عند 20%). */
+    --input: 226 30% 52%;
     --ring: 213 94% 62%;
   }
 
@@ -95,12 +101,50 @@
   html {
     overflow-x: clip;
     scroll-behavior: smooth;
+
+    /* ═══ الجولة الثانية عشرة — WCAG 2.4.11 (التركيز غير المحجوب) ═══
+       الهيدر لاصق (sticky top-0، ارتفاعه 65px) وشريط التنقل السفلي ثابت
+       (fixed bottom-0، ارتفاعه حتى 70px على الهاتف). كان التركيز بلوحة
+       المفاتيح يُمرّر العنصر إلى حافة الشاشة بالضبط، فيقع تحت أحد الشريطين
+       ويختفي كلياً (قيس فعلياً: 6–8 عناصر في كل صفحة عند 390×700).
+       scroll-padding يجعل «المنطقة المرئية المثلى» تبدأ تحت الهيدر وتنتهي
+       فوق الشريط السفلي، فيُمرَّر العنصر إلى ما بينهما. */
+    scroll-padding-top: 7.5rem;
+    scroll-padding-bottom: 9.5rem;
+  }
+
+  /* الشريط السفلي يظهر على الهاتف فقط (md:hidden) */
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 7rem;
+      scroll-padding-bottom: 6rem;
+    }
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-tajawal), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
     text-rendering: optimizeLegibility;
+  }
+
+  /* كلمات ألمانية أو عناوين URL طويلة داخل نص عربي لا تجد مسافة للكسر،
+     فكانت تتجاوز الحاوية وتُقصّ بصمت بفضل overflow-x: clip (قياس:
+     757px داخل 644px في /lesson/b1-10). الكسر يحدث فقط عند الحد. */
+  :where(p, li, dd, dt, blockquote, figcaption, td, th, h1, h2, h3, h4, h5, h6) {
+    overflow-wrap: break-word;
+  }
+
+  /* ═══ الجولة الثانية عشرة — WCAG 2.5.8 (حجم الهدف) ═══
+     <summary> يرث ارتفاع السطر وحده (20px) فيصير هدفاً أصغر من 24px.
+     القاعدة هنا تغطي كل الإفصاحات القائمة والمستقبلية بدل ترقيع كل ملف. */
+  summary {
+    min-height: 1.5rem;
+  }
+
+  /* شرائح التصفية/التبويب تحمل aria-pressed: نوحّد حدّ اللمس الأدنى 32px
+     (كانت 24–30px في flashcards/redemittel/sprechtraining/tests…). */
+  :where(button[aria-pressed], a[aria-pressed]) {
+    min-height: 2rem;
   }
 
   ::selection {
@@ -197,6 +241,17 @@
   /* مؤشر شريط التقدم — يعمل في الاتجاهين RTL/LTR (عرض لا إزاحة) */
   .progress-indicator {
     left: 0;
+  }
+
+  /* ═══ هدف اللمس (المرحلة 5) ═══
+     أزرار وروابط الرقائق (فلاتر المستوى، روابط التذييل، أزرار التقييم) كانت
+     أقصر من العتبة المريحة على الجوال (16–30px). هذه الأداة تضمن ارتفاعاً
+     لا يقلّ عن 36px مع توسيط أفقي/رأسي — وتُستعمل بدل تكرار py-* في كل ملف. */
+  .tap-target {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.25rem;
   }
   [dir="rtl"] .progress-indicator {
     left: auto;

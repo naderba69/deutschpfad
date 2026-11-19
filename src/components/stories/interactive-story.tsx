@@ -32,6 +32,7 @@ export function InteractiveStoryPlayer({ story, onExit }: { story: InteractiveSt
   const [answeredCount, setAnsweredCount] = React.useState(0);
   const [finished, setFinished] = React.useState(false);
   const [gemsEarned, setGemsEarned] = React.useState(0);
+  const [progressSaveFailed, setProgressSaveFailed] = React.useState(false);
 
   const seg = story.segments[segmentIdx];
   const progress = (segmentIdx / story.segments.length) * 100;
@@ -66,7 +67,7 @@ export function InteractiveStoryPlayer({ story, onExit }: { story: InteractiveSt
     } else {
       setFinished(true);
       // مكافأة إتمام القصة + تسجيلها كمنجزة
-      markStoryCompleted(story.id);
+      setProgressSaveFailed(!markStoryCompleted(story.id));
       const g = addGems(GEM_REWARDS.LESSON_COMPLETED);
       setGemsEarned(g);
       playCorrect();
@@ -97,6 +98,11 @@ export function InteractiveStoryPlayer({ story, onExit }: { story: InteractiveSt
             💡 أعد قراءة الأجزاء التي أخطأت فيها — الفهم يتكرس بالقراءة المتدرجة.
           </p>
         )}
+        {progressSaveFailed && (
+          <p role="alert" className="rounded-xl border border-amber-500/40 bg-amber-500/5 p-3 text-sm">
+            تعذر حفظ إكمال القصة؛ قد لا يظهر تقدمها في المكتبة بعد العودة.
+          </p>
+        )}
         <Button onClick={onExit} className="gap-2">
           <ChevronLeft className="h-4 w-4" aria-hidden="true" />
           العودة لمكتبة القصص
@@ -116,7 +122,7 @@ export function InteractiveStoryPlayer({ story, onExit }: { story: InteractiveSt
         >
           خروج
         </button>
-        <p className="truncate text-xs font-extrabold text-primary">{story.emoji} {story.title}</p>
+        <p className="truncate text-xs font-extrabold text-primary" dir="ltr" lang="de">{story.emoji} {story.title}</p>
         <span className="font-de shrink-0 text-[11px] font-bold text-muted-foreground">
           {segmentIdx + 1}/{story.segments.length}
         </span>
@@ -143,6 +149,10 @@ export function InteractiveStoryPlayer({ story, onExit }: { story: InteractiveSt
             {showTranslation ? "إخفاء الترجمة" : "أظهر الترجمة"}
           </Button>
         </div>
+        <p className="mt-2 text-xs text-muted-foreground">
+          النطق عبر TTS المدمج في المتصفح، لا عبر تسجيل بشري؛ وقد يختلف باختلاف الجهاز والمتصفح.
+          لم يُتحقق من وضوح النطق أو مطابقته للنص.
+        </p>
       </div>
 
       {/* سؤال الفهم (إن وُجد) */}

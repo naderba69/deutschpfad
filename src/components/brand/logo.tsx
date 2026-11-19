@@ -4,7 +4,12 @@ import {cn} from "@/lib/utils";
  * شعار المنصة — SVG داخلي (بدون ملفات خارجية)
  * مربع متدرج (أزرق هادئ ← نيلي) + "De" + ألوان العلم الألماني
  */
-export function Logo({ className }: { className?: string }) {
+/**
+ * `idSuffix` يضمن تفرّد معرّف التدرّج داخل الصفحة: كان المعرّف ثابتاً
+ * `logo-gradient` في الرأس والتذييل معاً (معرّف مكرر في كل صفحة).
+ */
+export function Logo({ className, idSuffix = "" }: { className?: string; idSuffix?: string }) {
+  const gradientId = `logo-gradient${idSuffix}`;
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
       <svg
@@ -14,12 +19,12 @@ export function Logo({ className }: { className?: string }) {
         role="img"
       >
         <defs>
-          <linearGradient id="logo-gradient" x1="0" y1="0" x2="1" y2="1">
+          <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="#0ea5e9" />
             <stop offset="100%" stopColor="#4f46e5" />
           </linearGradient>
         </defs>
-        <rect width="64" height="64" rx="14" fill="url(#logo-gradient)" />
+        <rect width="64" height="64" rx="14" fill={`url(#${gradientId})`} />
         <text
           x="32"
           y="40"

@@ -8,7 +8,7 @@ import {DAILY_DIALOGUES} from "@/data/dialogues";
 export const metadata: Metadata = {
   title: "الحوارات والمحادثات — DeutschPfad",
   description:
-    "60 حواراً يومياً متدرجاً A1→B2 (محادثة + نطق + ترجمة + أسئلة + وضع «دورك») + سيناريوهات محادثة متفرعة تختار فيها ردك — تغطية تتجاوز كتاب Menschen.",
+    `${DAILY_DIALOGUES.length} حواراً يومياً متدرجاً A1→B2 (محادثة + نطق + ترجمة + أسئلة + وضع «دورك») + سيناريوهات محادثة متفرعة تختار فيها ردك — تغطية تتجاوز كتاب Menschen.`,
 };
 
 export default function DialoguesPage() {

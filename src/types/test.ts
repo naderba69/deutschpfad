@@ -45,11 +45,26 @@ export interface SkillResult {
   total: number;
   correct: number;
   pct: number;
-  /** مستوى CEFR المقدر لهذه المهارة */
+  /** فئة تدريبية داخلية مشتقة من العينة؛ لا تمثل مستوى CEFR */
   level: TestLevel;
 }
 
 /** نتيجة اختبار كاملة */
+/** عنصر مراجعة الأدلة (الدفعة 122) — سؤالٌ بجواب المتعلّم وشاهده */
+export interface TestReviewItem {
+  id: string;
+  questionDe: string;
+  questionAr?: string;
+  options: string[];
+  correct: number;
+  /** ما اختاره المتعلّم — null: لم يُجب */
+  chosen: number | null;
+  explanation?: string;
+  /** أسئلة الكتابة: إجابة المتعلّم النصية والنموذج المقترح */
+  answerText?: string;
+  sampleAnswer?: string;
+}
+
 export interface TestResult {
   kind: TestKind;
   level: TestLevel;
@@ -58,10 +73,12 @@ export interface TestResult {
   secondsUsed: number;
   skillResults: SkillResult[];
   overallPct: number;
-  /** مستوى CEFR المقدر */
+  /** اقتراح نقطة بدء تدريبية من العينة؛ لا يمثل تصنيف CEFR معيارياً */
   estimatedLevel: TestLevel;
   /** اقتراحات تقوية (معرفات دروس) */
   reinforcement: { lessonId: string; reason: string }[];
+  /** مراجعة الأدلة — كل سؤالٍ بشاهده (كانت 171 شرحاً لا تُعرض) */
+  review: TestReviewItem[];
   passed: boolean;
 }
 

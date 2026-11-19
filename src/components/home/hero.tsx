@@ -25,20 +25,20 @@ export function Hero() {
         <div className="flex flex-col items-start gap-6 animate-fade-up">
           <Badge variant="gold" className="gap-2 px-3 py-1.5 text-sm">
             <span className="inline-block h-2 w-2 rounded-full bg-current" />
-            بمنهجية معهد غوته ومعايير CEFR
+            استلهام من CEFR وGoethe، لا اعتماد رسمي
           </Badge>
 
           <h1 className="text-balance text-4xl font-extrabold leading-[1.15] tracking-tight sm:text-5xl lg:text-6xl">
-            رحلتك الكاملة لإتقان الألمانية
+            رحلتك الكاملة لتعلم الألمانية
             <span className="mt-2 block text-gradient">
-              من الصفر حتى الاحتراف
+              من الصفر حتى B2 بثقة
             </span>
           </h1>
 
           <p className="max-w-xl text-balance text-base leading-relaxed text-muted-foreground sm:text-lg">
-            دروس عربية واضحة، نطق صوتي ألماني حقيقي، تمارين تفاعلية بتصحيح فوري
-            يشرح «لماذا»، مراجعة ذكية مبنية على خوارزمية SM-2، ومعلّم افتراضي
-            مدعوم بالذكاء الاصطناعي — كل ذلك مجاناً 100%.
+            دروس عربية واضحة، ونطق صوتي ألماني، وتمارين تفاعلية بتصحيح فوري يشرح
+            «لماذا»، ومراجعة متباعدة مبنية على SM-2. التدريبات الأساسية متاحة حالياً دون
+            اشتراك مدفوع؛ وبعض الميزات المتصلة اختيارية.
           </p>
 
           {/* مسار واضح بثلاث خطوات — لا تكديس خيارات يسبب الحيرة:
@@ -52,7 +52,7 @@ export function Hero() {
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-base">
-              <Link href="/tests/placement">حدّد مستواك أولاً</Link>
+              <Link href="/tests/placement" className="text-foreground">حدّد مستواك أولاً</Link>
             </Button>
             <Button asChild size="lg" variant="ghost" className="text-base">
               <Link href="/lesson/a1-01">جرّب درساً تجريبياً</Link>
@@ -71,10 +71,10 @@ export function Hero() {
         </div>
 
         {/* البطاقة المرئية */}
-        <div className="relative mx-auto w-full max-w-md animate-fade-up animation-delay-2000" aria-hidden="true">
+        <div className="relative mx-auto w-full max-w-md animate-fade-up animation-delay-2000">
           <div className="glass rounded-3xl border p-6 shadow-soft">
             <div className="mb-4 flex items-center justify-between">
-              <span className="text-sm font-bold">درس اليوم <span className="ms-1 text-[10px] font-normal text-muted-foreground">(مثال توضيحي)</span></span>
+              <span className="text-sm font-bold">درس اليوم <span className="ms-1 text-[11px] font-normal text-muted-foreground">(مثال توضيحي)</span></span>
               <Badge className="font-de font-bold">A1</Badge>
             </div>
 
@@ -84,7 +84,7 @@ export function Hero() {
                   Guten Morgen! Wie geht es dir?
                 </LangDe>
                 <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Volume2 className="h-4 w-4" />
+                  <Volume2 className="h-4 w-4" aria-hidden="true" />
                 </span>
               </div>
               <p className="text-sm text-muted-foreground">
@@ -97,7 +97,7 @@ export function Hero() {
                 <span>تقدم الدرس</span>
                 <span className="font-de font-semibold">65%</span>
               </div>
-              <Progress value={65} />
+              <Progress value={65} aria-label="التقدم في مثال الدرس التوضيحي: 65٪" />
             </div>
 
             <div className="mt-4">
@@ -108,14 +108,14 @@ export function Hero() {
           {/* بطاقات عائمة */}
           <div className="absolute -end-4 -top-6 rounded-2xl border bg-background/95 px-4 py-3 shadow-soft animate-float">
             <p className="inline-flex items-center gap-2 text-sm font-semibold">
-              <Flame className="h-4 w-4 fill-orange-400 text-orange-400" />
+              <Flame className="h-4 w-4 fill-orange-400 text-orange-400" aria-hidden="true" />
               مثال: سلسلة أيامك
             </p>
             <p className="font-de mt-0.5 text-xl font-bold">7 أيام 🔥</p>
           </div>
           <div className="absolute -start-4 -bottom-6 rounded-2xl border bg-background/95 px-4 py-3 shadow-soft animate-float animation-delay-2000">
             <p className="inline-flex items-center gap-2 text-sm font-semibold">
-              <Sparkles className="h-4 w-4 text-amber-500" />
+              <Sparkles className="h-4 w-4 text-amber-500" aria-hidden="true" />
               المعلّم الذكي
             </p>
             <p className="mt-0.5 text-sm text-muted-foreground">جاهز للإجابة عن أسئلتك</p>

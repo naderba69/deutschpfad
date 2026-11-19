@@ -5,7 +5,7 @@ import {CalendarRange, Loader2, Sparkles} from "lucide-react";
 
 import {useLLM} from "@/components/providers/llm-provider";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
-import {getEventStats} from "@/lib/analytics/events";
+import {getEventStatsResult} from "@/lib/analytics/events";
 import {weeklyReportPrompt} from "@/lib/llm/prompts";
 import {buildLocalWeeklyReport, motivationalMessage} from "@/lib/reports/weekly-report-local";
 import {getRecord, putRecord} from "@/lib/storage/db";
@@ -31,7 +31,13 @@ export function WeeklyReportCard() {
 
   const generate = async () => {
     setLoading(true);
-    const stats = await getEventStats();
+    const statsResult = await getEventStatsResult();
+    if (!statsResult.ok) {
+      setReport("تعذر قراءة سجل النشاط؛ لم ننشئ تقريراً من بيانات ناقصة. أعد المحاولة لاحقاً.");
+      setLoading(false);
+      return;
+    }
+    const stats = statsResult.stats;
 
     let content: string;
     if (isConfigured) {
@@ -70,7 +76,7 @@ export function WeeklyReportCard() {
           <CalendarRange className="h-5 w-5 text-primary" aria-hidden="true" />
           تقريرك الأسبوعي
           {due && (
-            <span className="ms-auto rounded-full bg-gold px-2.5 py-0.5 text-xs font-bold text-gold-foreground animate-pulse">
+            <span className="ms-auto rounded-full bg-gold px-2.5 py-0.5 text-xs font-bold text-gold-foreground">
               تقرير جديد جاهز ✨
             </span>
           )}

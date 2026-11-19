@@ -1,7 +1,9 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 import { FAQ_ITEMS } from "@/data/faq";
 import { siteConfig } from "@/lib/site-config";
+import { serializeJsonLd } from "@/lib/security/json-ld";
 
 export const metadata: Metadata = {
   title: "الأسئلة الشائعة — تعلم الألمانية وشهادة B2",
@@ -19,7 +21,7 @@ export default function FaqPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: serializeJsonLd({
             "@context": "https://schema.org",
             "@type": "FAQPage",
             mainEntity: FAQ_ITEMS.map((i) => ({
@@ -63,9 +65,9 @@ export default function FaqPage() {
 
       <p className="mt-8 text-center text-xs text-muted-foreground">
         لم تجد إجابتك؟ اسأل المعلّم الافتراضي في{" "}
-        <a href="/assistant" className="font-bold text-primary underline underline-offset-2">
+        <Link href="/assistant" className="font-bold text-primary underline underline-offset-2">
           /assistant
-        </a>{" "}
+        </Link>{" "}
         — {siteConfig.name} جاهز دائماً.
       </p>
     </div>

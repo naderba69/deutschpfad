@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 interface AssistantPageProps {
-  searchParams: { lesson?: string };
+  searchParams: Promise<{ lesson?: string }>;
 }
 
 /**
@@ -21,7 +21,7 @@ interface AssistantPageProps {
 export default async function AssistantPage({ searchParams }: AssistantPageProps) {
   let lessonContext: LessonContext | undefined;
 
-  const lessonId = searchParams?.lesson;
+  const { lesson: lessonId } = await searchParams;
   if (lessonId) {
     const lesson = getLesson(lessonId);
     if (lesson) {

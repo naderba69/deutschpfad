@@ -4,12 +4,14 @@ import * as React from "react";
 import {Award, Mic, MicOff, RotateCcw, Star, Users} from "lucide-react";
 
 import {TestTimer} from "@/components/tests/test-timer";
+import {LangDe} from "@/components/shared/lang-de";
 import {SpeakButton} from "@/components/shared/speak-button";
 import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
 import {useCountdown} from "@/lib/tests/use-countdown";
 import {createRecognitionEngine, isRecognitionSupported, unsupportedRecognitionNote, type RecognitionEngine} from "@/lib/speech/speech-recognition";
 import {cn} from "@/lib/utils";
+import {useRadioGroupNav} from "@/lib/use-radio-group-nav";
 
 const PARTS = [
   {
@@ -41,9 +43,8 @@ const PARTS = [
 ];
 
 /**
- * صيغة Goethe B2 الشفهي الحقيقية (2019+):
- * Teil 1 = Vortrag (عرض تقديمي لموضوع مع أسئلة إرشادية ~3 دقائق)
- * Teil 2 = Diskussion (مناقشة مع رد على آراء شريك ~4 دقائق)
+ * تدريب B2 يتناول عرض موضوع ومناقشته، مستلهماً بعض سمات مهام Goethe.
+ * توقيت المحتوى وصياغته لا يثبتان مطابقة صيغة امتحانية رسمية.
  */
 const B2_PRESENTATION_TOPICS = [
   {
@@ -192,6 +193,7 @@ export function OralExam() {
   const [round, setRound] = React.useState(0);
   const [b2TopicIdx, setB2TopicIdx] = React.useState(0);
   const [b2StatementIdx, setB2StatementIdx] = React.useState(0);
+  const nav = useRadioGroupNav();
   const currentAnswerRef = React.useRef(currentAnswer);
   currentAnswerRef.current = currentAnswer;
   const partIdxRef = React.useRef(partIdx);
@@ -203,6 +205,12 @@ export function OralExam() {
   const part = parts[partIdx];
   const question = part.questions[questionIdx];
   const totalSeconds = part.minutes * 60;
+
+  /* الجولة الحادية عشرة (4.1.3): كان انتهاء وقت الجزء يبدّل الأسئلة أو ينقل
+     إلى التقييم بصمت تام — لا يعرف المستخدم الكفيف أن وقته انتهى وأن ما كتبه
+     سُجِّل. نصّ الإعلان يشرح ما حدث بالضبط. */
+  const [timerNotice, setTimerNotice] = React.useState("");
+
   const remaining = useCountdown(phase === "running" ? totalSeconds : 0, () => {
     // انتهاء وقت الجزء → تسجيل الإجابة الحالية والانتقال
     setAnswers((prev) => [...prev, currentAnswerRef.current || "(لم يُجب)"]);
@@ -210,8 +218,10 @@ export function OralExam() {
     if (partIdxRef.current < parts.length - 1) {
       setPartIdx((i) => i + 1);
       setQuestionIdx(0);
+      setTimerNotice("انتهى وقت هذا الجزء — سُجّلت إجابتك وانتقلنا إلى الجزء التالي.");
     } else {
       setPhase("scoring");
+      setTimerNotice("انتهى وقت التدريب — سُجّلت إجاباتك، حان وقت التقييم الذاتي.");
     }
   });
 
@@ -247,6 +257,7 @@ export function OralExam() {
     setPartIdx(0);
     setQuestionIdx(0);
     setCurrentAnswer("");
+    setTimerNotice("");
   };
 
   const nextQuestion = () => {
@@ -274,15 +285,15 @@ export function OralExam() {
     return (
       <div className="rounded-2xl border bg-muted/20 p-8 text-center">
         <Users className="mx-auto h-12 w-12 text-primary" aria-hidden="true" />
-        <h3 className="mt-4 text-xl font-extrabold">الامتحان الشفهي بنمط Goethe</h3>
+        <h2 className="mt-4 text-xl font-extrabold">الامتحان الشفهي بنمط Goethe</h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
-          اختر الصيغة التي تتدرب عليها: B1 (تقديم النفس + حديث + حل مشكلة) أو B2 (عرض
-          تقديمي + مناقشة — الصيغة الحقيقية لشهادة B2). سجّل إجاباتك ثم قيّم نفسك بمعايير
-          الممتحنين (النطق، السلاسة، القواعد، المفردات).
+          اختر تدريباً على مواقف محادثة B1 أو على عرض موضوع ومناقشته في نطاق B2. هذه الأنشطة
+          مستوحاة من مهام لغوية عامة وليست صيغة امتحان رسمية. سجّل إجاباتك ثم راجعها ذاتياً؛
+          المؤشرات لا تعادل تقييماً من ممتحن.
         </p>
 
         {/* اختيار الصيغة */}
-        <div className="mx-auto mt-6 grid grid-cols-1 max-w-lg gap-3 sm:grid-cols-2" role="radiogroup" aria-label="صيغة الامتحان">
+        <div className="mx-auto mt-6 grid grid-cols-1 max-w-lg gap-3 sm:grid-cols-2" role="radiogroup" aria-label="صيغة الامتحان" {...nav}>
           <button
             type="button"
             role="radio"
@@ -310,7 +321,9 @@ export function OralExam() {
             )}
           >
             <p className="font-de text-lg font-extrabold text-primary">B1</p>
-            <p className="mt-1 text-sm font-bold">Sich vorstellen + Thema + Planung</p>
+            <p className="mt-1 text-sm font-bold">
+              <LangDe>Sich vorstellen + Thema + Planung</LangDe>
+            </p>
             <p className="mt-1 text-xs text-muted-foreground">
               تقديم النفس (3د) + حديث عن موضوع (4د) + حل مشكلة (3د) — كما في Zertifikat B1.
             </p>
@@ -332,6 +345,14 @@ export function OralExam() {
   if (phase === "scoring") {
     return (
       <div className="space-y-5">
+        {/* الإعلان يفرّق بين انتهاء الوقت (alert: تغيّر لم يطلبه المستخدم) وإنهاء
+            المستخدم بنفسه (status: نتيجة فعلَه هو). */}
+        <p
+          role={timerNotice ? "alert" : "status"}
+          className="rounded-xl border border-primary/40 bg-primary/5 p-3 text-sm font-bold"
+        >
+          {timerNotice || "أنهيت التدريب — سُجّلت إجاباتك، حان وقت التقييم الذاتي."}
+        </p>
         <h3 className="text-xl font-extrabold">قيّم أداءك (مثل الممتحن)</h3>
         <div className="space-y-4">
           {RUBRIC.map((r) => (
@@ -340,11 +361,14 @@ export function OralExam() {
                 <p className="font-bold">{r.label}</p>
                 <span className="text-xs text-muted-foreground">{r.hint}</span>
               </div>
-              <div className="mt-2 flex gap-1.5" role="radiogroup" aria-label={r.label}>
+              <div className="mt-2 flex gap-1.5" role="radiogroup" aria-label={r.label} {...nav}>
                 {[1, 2, 3, 4, 5].map((v) => (
                   <button
                     key={v}
                     type="button"
+                    role="radio"
+                    aria-checked={scores[r.key] === v}
+                    aria-label={`${r.label}: ${v} من 5`}
                     onClick={() => setScores((prev) => ({ ...prev, [r.key]: v }))}
                     className={cn(
                       "flex h-9 w-9 items-center justify-center rounded-lg border text-sm font-bold transition-colors",
@@ -379,14 +403,13 @@ export function OralExam() {
         <p className="font-de mt-4 text-4xl font-extrabold text-primary">
           {totalScore}/{maxScore}
         </p>
-        <p className="mt-1 font-bold">{pct >= 80 ? "مستوى ممتاز للامتحان! 🎉" : pct >= 60 ? "جيد — واصل التدريب اليومي" : "تحتاج مزيداً من التدريب — استخدم محاكاة التحدث يومياً"}</p>
+        <p className="mt-1 font-bold">{pct >= 80 ? "تقييمك الذاتي مرتفع في هذه المحاولة 🎉" : pct >= 60 ? "تابع التدريب وراجع ملاحظاتك" : "اختر جانباً واحداً للتدرب عليه مجدداً"}</p>
         <p className="mt-2 text-sm text-muted-foreground">
-          تذكّر: في الامتحان الحقيقي تُقيَّم هذه المعايير الأربعة نفسها. تدرب يومياً بالأسئلة
-          العشوائية وستتحسن بسرعة.
+          هذه المعايير مخصصة للتأمل الذاتي في هذا التدريب، وقد تختلف عن معايير الجهة المنظمة. النتيجة لا تحدد مستوى CEFR أو الجاهزية لامتحان رسمي، والتدرب لا يضمن تحسناً سريعاً.
         </p>
         <Button className="mt-6" onClick={() => { setRound((r) => r + 1); start(); }}>
           <RotateCcw className="h-4 w-4" aria-hidden="true" />
-          إعادة المحاكاة
+          إعادة التدريب
         </Button>
       </div>
     );
@@ -409,6 +432,9 @@ export function OralExam() {
           </span>
         ))}
         <TestTimer seconds={remaining} total={totalSeconds} />
+        <span role="status" aria-live="polite" className="sr-only">
+          {timerNotice}
+        </span>
       </div>
 
       {/* بطاقة موضوع B2 — في Teil 1 (العرض) */}

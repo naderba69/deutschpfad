@@ -10,8 +10,8 @@ export function HowItWorks() {
       <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:py-24">
         <SectionHeading
           eyebrow="كيف تعمل المنصة؟"
-          title="منهجية تعلم مثبتة في 4 خطوات"
-          description="مسار بيداغوجي منظم: قياس → تعلم → مراجعة → شهادة، بنفس منطق الدورات المكثفة في معهد غوته."
+          title="خطوات تعلم مترابطة"
+          description="مسار تدريبي منظم: اختبار عينة → تعلم → مراجعة → تقرير إتمام داخلي. يستلهم بعض ممارسات تعلم اللغات، ولا يدّعي أنه منهج Goethe أو شهادة مستوى."
         />
 
         <ol className="relative mt-12 grid grid-cols-1 gap-8 md:grid-cols-4">

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import * as React from "react";
 import {BrainCircuit, CheckCircle2, RotateCcw, XCircle} from "lucide-react";
 
@@ -10,6 +11,7 @@ import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent} from "@/components/ui/card";
 import {Progress} from "@/components/ui/progress";
+import {ExamReviewList, type ExamReviewTeil} from "@/components/tests/exam-question-views";
 
 /**
  * تدريب القواعد والمفردات B2 — 60 سؤالاً MCQ موقوتاً
@@ -23,7 +25,6 @@ export function B2GrammarTrainer() {
   const [runKey, setRunKey] = React.useState(0);
 
   // خلط الخيارات لكل محاولة — البنك يضع الإجابة الصحيحة في الموضع الأول دائماً
-  // eslint-disable-next-line react-hooks/exhaustive-deps -- runKey مقصود: يعيد الخلط عند إعادة المحاولة
   // خلط بعد التركيب فقط (تفادياً لخطأ الـ hydration)
   const [questions, setQuestions] = React.useState(() => B2_GRAMMATIK);
   React.useEffect(() => {
@@ -32,7 +33,23 @@ export function B2GrammarTrainer() {
 
   // 60 دقيقة = دقيقة لكل سؤال (توصية تدريبية)
   const totalSeconds = B2_GRAMMATIK.length * 60;
-  const remaining = useCountdown(totalSeconds, () => finish());
+
+  /* الجولة الحادية عشرة (2.2.1 · 2.2.2): كان عدّاد الساعة يبدأ فور تحميل
+     الصفحة، فلا مهلة للمستخدم ليقرأ التعليمات، ولا سبيل لإيقافه. صار
+     الانتظار هو الأصل، والإيقاف المؤقت متاح، والانتهاء يُعلن في منطقة حيّة
+     بدل أن تختفي الأسئلة صامتة. */
+  const [timerStarted, setTimerStarted] = React.useState(false);
+  const [paused, setPaused] = React.useState(false);
+  const [timeUp, setTimeUp] = React.useState(false);
+
+  const remaining = useCountdown(
+    totalSeconds,
+    () => {
+      setTimeUp(true);
+      finish();
+    },
+    {paused: !timerStarted || paused},
+  );
 
   const current = questions[idx];
   const chosen = answers[current.id];
@@ -71,6 +88,9 @@ export function B2GrammarTrainer() {
     setChecked(false);
     setResult(null);
     setRunKey((k) => k + 1);
+    setTimerStarted(false);
+    setPaused(false);
+    setTimeUp(false);
   };
 
   if (result) {
@@ -79,6 +99,14 @@ export function B2GrammarTrainer() {
     return (
       <Card className="overflow-hidden border-primary/30">
         <CardContent className="space-y-4 p-6 text-center">
+          {timeUp && (
+            <p
+              role="alert"
+              className="rounded-xl border border-destructive/40 bg-destructive/10 p-3 text-sm font-bold text-destructive"
+            >
+              انتهى وقت التدريب — عُرضت نتيجتك أعلاه.
+            </p>
+          )}
           <CheckCircle2 className={cn("mx-auto h-12 w-12", passed ? "text-success" : "text-destructive")} aria-hidden="true" />
           <p className="font-de text-4xl font-extrabold text-primary">{pct}%</p>
           <p className="font-bold">
@@ -88,13 +116,24 @@ export function B2GrammarTrainer() {
             أجبت صحيحاً على {result.correct} من {result.total} سؤالاً.
           </p>
           <Progress value={pct} className="mx-auto h-3 max-w-sm" aria-label={`النتيجة ${pct}%`} />
+
+          {/* مراجعة الأدلة — لماذا هذا الجواب (الدفعة 121): بنك القواعد متوافق بنيوياً منذ الدفعة 119 */}
+          <div className="mt-6 text-start" data-testid="exam-review">
+            <h3 className="mb-3 text-lg font-extrabold">مراجعة الأدلة — لماذا هذا الجواب</h3>
+            <ExamReviewList
+              teile={[{ teil: "grammatik", titleAr: "القواعد والمفردات", kind: "mcq", questions } satisfies ExamReviewTeil]}
+              answers={answers}
+              label="grammatik"
+            />
+          </div>
+
           <div className="flex justify-center gap-2">
             <Button onClick={restart} className="gap-2">
               <RotateCcw className="h-4 w-4" aria-hidden="true" />
               إعادة التدريب
             </Button>
             <Button asChild variant="outline">
-              <a href="/tests/b2">محرك الامتحان الكامل</a>
+              <Link href="/tests/b2">تدريب B2 مستوحى من بعض أنماط Goethe</Link>
             </Button>
           </div>
         </CardContent>
@@ -113,8 +152,30 @@ export function B2GrammarTrainer() {
         <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-bold text-muted-foreground">
           {current.skill === "grammatik" ? "🧩 قواعد" : "💬 مفردات"}
         </span>
-        <span className="font-de ms-auto text-sm font-extrabold text-primary tabular-nums">
-          ⏱ {Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, "0")}
+        <span
+          role="timer"
+          aria-label={`الوقت المتبقي: ${Math.floor(remaining / 60)} دقيقة و${remaining % 60} ثانية`}
+          className="font-de ms-auto text-sm font-extrabold text-primary tabular-nums"
+        >
+          <span aria-hidden="true">⏱ </span>
+          {Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, "0")}
+        </span>
+        {!timerStarted ? (
+          <Button size="sm" variant="outline" onClick={() => setTimerStarted(true)}>
+            ابدأ المؤقت
+          </Button>
+        ) : (
+          <Button
+            size="sm"
+            variant="outline"
+            aria-pressed={paused}
+            onClick={() => setPaused((p) => !p)}
+          >
+            {paused ? "متابعة المؤقت" : "إيقاف مؤقت"}
+          </Button>
+        )}
+        <span role="status" aria-live="polite" className="sr-only">
+          {timeUp ? "انتهى الوقت — عُرضت نتيجتك." : paused ? "أُوقف المؤقت مؤقتاً." : ""}
         </span>
       </div>
 

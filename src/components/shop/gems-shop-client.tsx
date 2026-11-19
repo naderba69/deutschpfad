@@ -5,7 +5,7 @@ import {BadgeCheck, Check, Gem, RotateCcw, ShoppingBag, Snowflake} from "lucide-
 
 import {Button} from "@/components/ui/button";
 import {playCorrect} from "@/lib/audio/sfx";
-import {getGems, spendGems, addGems} from "@/lib/gamification/gems";
+import {getGemsResult, spendGems, addGemsResult} from "@/lib/gamification/gems";
 import {cn} from "@/lib/utils";
 
 /**
@@ -65,30 +65,50 @@ function writeSet(key: string, s: Set<string>) {
 
 export function GemsShopClient() {
   const [gems, setGems] = React.useState<number>(0);
+  const [gemsUnavailable, setGemsUnavailable] = React.useState(false);
   const [owned, setOwned] = React.useState<Set<string>>(new Set());
   const [freeze, setFreeze] = React.useState(0);
   const [notice, setNotice] = React.useState<string | null>(null);
 
-  React.useEffect(() => {
-    setGems(getGems());
-    setOwned(readSet(STORAGE.owned));
-    setFreeze(Number(localStorage.getItem(STORAGE.freeze) ?? "0"));
+  const refresh = React.useCallback(() => {
+    const result = getGemsResult();
+    setGems(result.balance);
+    setGemsUnavailable(!result.ok);
+    return result.ok;
   }, []);
 
-  const refresh = () => setGems(getGems());
+  React.useEffect(() => {
+    refresh();
+    setOwned(readSet(STORAGE.owned));
+    setFreeze(Number(localStorage.getItem(STORAGE.freeze) ?? "0"));
+  }, [refresh]);
 
   const buy = (item: ShopItem) => {
     if (owned.has(item.id)) return;
+    if (gemsUnavailable) {
+      setNotice("تعذر قراءة رصيد الجواهر؛ لم ننفذ أي عملية شراء. أعد تحميل الصفحة وحاول مجدداً.");
+      return;
+    }
     if (item.id === "gems-pack") {
-      // مكافأة اليوم (مرة كل يوم)
       const today = new Date().toISOString().slice(0, 10);
-      if (localStorage.getItem(STORAGE.bonus) === today) {
-        setNotice("جمعت مكافأتك اليوم — عُد غداً 💎");
+      try {
+        if (localStorage.getItem(STORAGE.bonus) === today) {
+          setNotice("جمعت مكافأتك اليوم — عُد غداً 💎");
+          return;
+        }
+        localStorage.setItem(STORAGE.bonus, today);
+      } catch {
+        setNotice("تعذر الوصول إلى التخزين المحلي؛ لم نضف المكافأة.");
         return;
       }
-      localStorage.setItem(STORAGE.bonus, today);
-      addGems(15);
-      refresh();
+      const added = addGemsResult(15);
+      if (!added.ok) {
+        try { localStorage.removeItem(STORAGE.bonus); } catch { /* لا نعلن نجاحاً غير مؤكد */ }
+        refresh();
+        setNotice("تعذر حفظ الجواهر الإضافية؛ أعد المحاولة بعد التحقق من التخزين.");
+        return;
+      }
+      setGems(added.balance);
       setNotice("+15 جوهرة إضافية! عُد غداً 💎");
       playCorrect();
       return;
@@ -98,12 +118,22 @@ export function GemsShopClient() {
         setNotice("الجواهر غير كافية — أكمل الدروس واجمع المزيد! 💪");
         return;
       }
+      const nextFreeze = freeze + 1;
+      try {
+        localStorage.setItem(STORAGE.freeze, String(nextFreeze));
+      } catch {
+        setNotice("تعذر حفظ أداة التجميد؛ لم نخصم الجواهر.");
+        return;
+      }
       if (spendGems(item.price)) {
-        setFreeze((f) => f + 1);
-        localStorage.setItem(STORAGE.freeze, String(freeze + 1));
+        setFreeze(nextFreeze);
         refresh();
-        setNotice(`❄️ حصلت على تجميد سلسلة — لديك الآن ${freeze + 1}`);
+        setNotice(`❄️ حصلت على تجميد سلسلة — لديك الآن ${nextFreeze}`);
         playCorrect();
+      } else {
+        try { localStorage.setItem(STORAGE.freeze, String(freeze)); } catch { /* أظهر فشل العملية أدناه */ }
+        refresh();
+        setNotice("تعذر إتمام الشراء عبر التخزين المحلي؛ تحقق من الرصيد والأداة قبل إعادة المحاولة.");
       }
       return;
     }
@@ -143,7 +173,7 @@ export function GemsShopClient() {
         {/* رصيد الجواهر */}
         <div className="flex items-center gap-2 rounded-xl border border-gold/40 bg-gold/10 px-4 py-3">
           <Gem className="h-5 w-5 text-gold-strong" aria-hidden="true" />
-          <p className="text-sm font-extrabold text-gold-strong">رصيدك: {gems} جوهرة</p>
+          <p className="text-sm font-extrabold text-gold-strong">{gemsUnavailable ? "تعذر قراءة رصيد الجواهر" : `رصيدك: ${gems} جوهرة`}</p>
           <span className="ms-auto flex items-center gap-1 rounded-full bg-background px-2.5 py-1 text-xs font-bold text-muted-foreground">
             <Snowflake className="h-3.5 w-3.5 text-sky-500" aria-hidden="true" />
             تجميد متاح: {freeze}

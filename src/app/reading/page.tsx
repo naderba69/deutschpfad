@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import {LangDe} from "@/components/shared/lang-de";
 import {ReadingLibraryClient} from "@/components/reading/reading-library-client";
 
 export const metadata: Metadata = {
@@ -41,7 +42,9 @@ export default function ReadingPage() {
           { title: "🚫 تجاهل المجهول", desc: "لا تتوقف عند كل كلمة جديدة — خمّن من السياق واستمر. الكلمات المجهولة تُستبعد من الامتحان غالباً." },
         ].map((t) => (
           <div key={t.title} className="rounded-xl border bg-muted/20 p-4">
-            <p className="text-sm font-bold">{t.title}</p>
+            <p className="text-sm font-bold">
+              <LangDe>{t.title}</LangDe>
+            </p>
             <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{t.desc}</p>
           </div>
         ))}

@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getRecord, putRecord } from "@/lib/storage/db";
 import { cn } from "@/lib/utils";
+import {FilterChip} from "@/components/ui/filter-chip";
 
 const REMINDER_KEY = "reminder-settings";
 
@@ -107,23 +108,17 @@ export function ReminderSettings() {
         ) : (
           <>
             <div className="flex flex-wrap items-center gap-3">
-              <button
-                type="button"
+              <FilterChip
                 onClick={() => void save({ ...prefs, enabled: !prefs.enabled })}
-                className={cn(
-                  "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
-                  prefs.enabled
-                    ? "border-gold bg-gold/15 text-gold-strong"
-                    : "bg-muted/40 text-muted-foreground hover:border-primary/40",
-                )}
+                active={prefs.enabled}
               >
                 {prefs.enabled ? "🔔 مفعّل" : "🔕 معطّل"}
-              </button>
+              </FilterChip>
               {prefs.enabled && (
                 <select
                   value={prefs.hour}
                   onChange={(e) => void save({ ...prefs, hour: Number(e.target.value) })}
-                  className="rounded-lg border bg-background px-2 py-1.5 text-xs font-bold outline-none focus:border-primary"
+                  className="rounded-lg border border-input bg-background px-2 py-1.5 text-xs font-bold outline-none focus:border-primary"
                   aria-label="ساعة التذكير"
                 >
                   {Array.from({ length: 24 }, (_, h) => (

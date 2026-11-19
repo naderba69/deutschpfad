@@ -217,7 +217,7 @@ export function AssistantClient({ lessonContext }: { lessonContext?: LessonConte
                   ? "rounded-br-sm border-primary/30 bg-primary text-primary-foreground"
                   : "rounded-bl-sm bg-card",
               )}
-              dir={msg.role === "user" ? "rtl" : "rtl"}
+              dir="rtl"
             >
               {msg.role === "assistant" ? (
                 <span className="font-de whitespace-pre-wrap">{msg.content}</span>

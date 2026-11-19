@@ -52,10 +52,12 @@ export function WeeklyReviewClient({ range = "weekly" }: { range?: "weekly" | "m
   const [picked, setPicked] = React.useState<string | null>(null);
   const [correctCount, setCorrectCount] = React.useState(0);
   const [loading, setLoading] = React.useState(true);
+  const [readError, setReadError] = React.useState(false);
   const [finished, setFinished] = React.useState(false);
   const [gems, setGems] = React.useState(0);
 
   const buildSession = React.useCallback(async () => {
+    try {
     // أولاً: ملخص الفترة (أسبوعية أو شهرية) — لنعرف الدروس المكتملة فعلاً
     const sum = (range === "monthly" ? await computeMonthSummary() : await computeWeekSummary()) as unknown as WeekSummary;
     setSummary(sum);
@@ -65,7 +67,7 @@ export function WeeklyReviewClient({ range = "weekly" }: { range?: "weekly" | "m
     const items: SessionItem[] = [];
     // 1) أخطاء نشطة
     for (const m of mistakes.slice(0, 3)) {
-      items.push({ kind: "mistake", id: m.id, de: m.correctAnswer ?? m.id, explanation: m.explanation, correctAnswer: m.correctAnswer });
+      items.push({ kind: "mistake", id: m.id, de: m.correctAnswer ?? m.exerciseId ?? m.id, explanation: m.explanation, correctAnswer: m.correctAnswer });
     }
     // 2) بطاقات مستحقة
     for (const c of cards.slice(0, 4)) {
@@ -86,6 +88,10 @@ export function WeeklyReviewClient({ range = "weekly" }: { range?: "weekly" | "m
     setIdx(0);
     setLoading(false);
     setFinished(items.length === 0);
+    } catch {
+      setReadError(true);
+      setLoading(false);
+    }
   }, [range]);
 
   React.useEffect(() => {
@@ -144,6 +150,7 @@ export function WeeklyReviewClient({ range = "weekly" }: { range?: "weekly" | "m
   };
 
   if (loading) return <div className="h-64 animate-pulse rounded-2xl border bg-muted/30" />;
+  if (readError) return <div role="alert" className="rounded-xl border border-destructive/30 bg-destructive/5 p-4 text-sm">تعذرت قراءة سجل النشاط؛ لم نُنشئ مراجعة من بيانات غير مكتملة. أعد تحميل الصفحة وحاول مجدداً.</div>;
 
   if (finished) {
     return (
@@ -190,19 +197,19 @@ export function WeeklyReviewClient({ range = "weekly" }: { range?: "weekly" | "m
           <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
             <div className="rounded-lg border bg-muted/30 px-2 py-1.5 text-center">
               <p className="font-de text-sm font-extrabold">{summary.lessonsCompleted.length}</p>
-              <p className="text-[9px] font-bold text-muted-foreground">دروس</p>
+              <p className="text-[11px] font-bold text-muted-foreground">دروس</p>
             </div>
             <div className="rounded-lg border bg-muted/30 px-2 py-1.5 text-center">
               <p className="font-de text-sm font-extrabold">{summary.exercisesAnswered}</p>
-              <p className="text-[9px] font-bold text-muted-foreground">تمارين</p>
+              <p className="text-[11px] font-bold text-muted-foreground">تمارين</p>
             </div>
             <div className="rounded-lg border bg-muted/30 px-2 py-1.5 text-center">
               <p className="font-de text-sm font-extrabold">{Math.round(summary.minutesStudied)}</p>
-              <p className="text-[9px] font-bold text-muted-foreground">دقائق</p>
+              <p className="text-[11px] font-bold text-muted-foreground">دقائق</p>
             </div>
             <div className="rounded-lg border bg-muted/30 px-2 py-1.5 text-center">
               <p className="font-de text-sm font-extrabold">{summary.daysActive.length}</p>
-              <p className="text-[9px] font-bold text-muted-foreground">أيام نشطة</p>
+              <p className="text-[11px] font-bold text-muted-foreground">أيام نشطة</p>
             </div>
           </div>
         </div>
@@ -223,7 +230,7 @@ export function WeeklyReviewClient({ range = "weekly" }: { range?: "weekly" | "m
               سؤال من دروسك
             </p>
             <p className="font-de mt-2 text-base font-bold" dir="ltr" lang="de">{current.de}</p>
-            <p className="mt-0.5 text-xs text-muted-foreground">{current.ar}</p>
+            {current.ar ? <p className="mt-0.5 text-xs text-muted-foreground">{current.ar}</p> : null}
             <div className="mt-3 grid gap-2">
               {current.options.map((opt) => {
                 const isPicked = picked === opt.text;
@@ -242,6 +249,7 @@ export function WeeklyReviewClient({ range = "weekly" }: { range?: "weekly" | "m
                       isAnswered && !isPicked && !opt.correct && "border-muted bg-muted/30 opacity-60",
                     )}
                     dir="ltr"
+                    lang="de"
                   >
                     {opt.text}
                   </button>
@@ -258,7 +266,7 @@ export function WeeklyReviewClient({ range = "weekly" }: { range?: "weekly" | "m
               بطاقة مراجعة ذكية (SM-2)
             </p>
             <p className="font-de mt-3 text-lg font-bold" dir="ltr" lang="de">{current.de}</p>
-            <p className="mt-1 text-sm text-muted-foreground">{current.ar}</p>
+            {current.ar ? <p className="mt-1 text-sm text-muted-foreground">{current.ar}</p> : null}
             {!answered[current.id] ? (
               <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
                 {[

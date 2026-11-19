@@ -1,6 +1,8 @@
 "use client";
 
 import * as React from "react";
+
+import {LangDe} from "@/components/shared/lang-de";
 import {BrainCircuit, CheckCircle2, RotateCcw, Star} from "lucide-react";
 
 import {QUALITY_BUTTONS} from "@/lib/srs/sm2";
@@ -66,7 +68,7 @@ export function ReviewSession({ refreshKey }: ReviewSessionProps) {
         <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-full bg-success/10">
           <CheckCircle2 className="h-8 w-8 text-success" aria-hidden="true" />
         </span>
-        <h3 className="mt-4 text-xl font-extrabold">لا توجد بطاقات مستحقة اليوم 🎉</h3>
+        <h2 className="mt-4 text-xl font-extrabold">لا توجد بطاقات مستحقة اليوم 🎉</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           راجعت كل ما هو مستحق! عد غداً، أو أضف بطاقات من الدروس أو يدوياً.
         </p>
@@ -87,7 +89,7 @@ export function ReviewSession({ refreshKey }: ReviewSessionProps) {
         <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
           <BrainCircuit className="h-8 w-8 text-primary" aria-hidden="true" />
         </span>
-        <h3 className="mt-4 text-xl font-extrabold">أحسنت — أنهيت جلسة المراجعة!</h3>
+        <h2 className="mt-4 text-xl font-extrabold">أحسنت — أنهيت جلسة المراجعة!</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           راجعت <span className="font-de font-bold text-foreground">{reviewedCount}</span> بطاقة —
           دقة التذكر <span className="font-de font-bold text-primary">{accuracy}%</span>
@@ -157,8 +159,8 @@ export function ReviewSession({ refreshKey }: ReviewSessionProps) {
             <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
               تذكّر المعنى أولاً…
             </span>
-            <p className="font-de text-3xl font-extrabold" dir="ltr" lang="de">
-              {card.de}
+            <p className="text-3xl font-extrabold">
+              <LangDe>{card.de}</LangDe>
             </p>
             <span className="text-xs text-muted-foreground">اضغط للكشف عن الترجمة</span>
           </div>
@@ -170,9 +172,9 @@ export function ReviewSession({ refreshKey }: ReviewSessionProps) {
             <p className="text-2xl font-bold">{card.ar}</p>
             {card.example && (
               <div className="mx-auto max-w-md rounded-xl bg-muted/40 p-3 text-sm">
-                <p className="font-de" dir="ltr" lang="de">
+                <LangDe>
                   {card.example}
-                </p>
+                </LangDe>
                 {card.exampleAr && (
                   <p className="mt-1 text-muted-foreground">{card.exampleAr}</p>
                 )}

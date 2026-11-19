@@ -11,6 +11,8 @@ import {Progress} from "@/components/ui/progress";
 import {useProgress} from "@/components/providers/progress-provider";
 import {LEVELS} from "@/lib/constants/curriculum";
 import {getLevelCompletion} from "@/lib/progress-selectors";
+import {LEVEL_BADGE_CLASSES} from "@/components/learning-path/level-colors";
+import {cn} from "@/lib/utils";
 import type { LevelCode } from "@/types/curriculum";
 
 const LEVEL_ARABIC_TITLE: Record<LevelCode, string> = {
@@ -31,8 +33,8 @@ export function LevelsPreview() {
     <section id="levels" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:py-24">
       <SectionHeading
         eyebrow="المستويات"
-        title="4 مستويات معتمدة دولياً (CERR)"
-        description="من أول حرف في الأبجدية حتى الكتابة الأكاديمية — كل مستوى يفتح بعد إتقان سابقه، تماماً مثل الدورات الرسمية."
+        title="نطاقات تدريبية من A1 إلى B2"
+        description="استكشف موضوعات ومهارات مختارة ضمن هذه النطاقات. إكمال دروس المنصة لا يساوي اعتماداً دولياً أو إثبات إتقان المستوى."
       />
 
       <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -56,8 +58,7 @@ export function LevelsPreview() {
                     </span>
                     <Badge
                       variant="outline"
-                      className="font-de font-bold"
-                      style={{ color: level.accent, borderColor: `${level.accent}66` }}
+                      className={cn("font-de font-bold", LEVEL_BADGE_CLASSES[level.code])}
                     >
                       {level.code}
                     </Badge>

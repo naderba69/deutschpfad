@@ -149,5 +149,3 @@ export const VORTRAG_MODELLE: VortragModell[] = [
     ],
   },
 ];
-
-export const TOTAL_VORTRAG_MODELLE = VORTRAG_MODELLE.length;

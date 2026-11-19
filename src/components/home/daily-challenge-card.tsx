@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import * as React from "react";
 import {Flame, Trophy} from "lucide-react";
 
@@ -16,15 +17,20 @@ import {LESSON_META} from "@/data/lessons/meta";
  */
 export function DailyChallengeCard() {
   const { completedLessonsSet } = useProgress();
-  const [doneToday, setDoneToday] = React.useState(false);
+  const [completedLessonToday, setCompletedLessonToday] = React.useState(false);
+  const [readError, setReadError] = React.useState(false);
 
   React.useEffect(() => {
     void (async () => {
       try {
-        const {getRecentEvents} = await import("@/lib/analytics/events");
-        const events = await getRecentEvents(1000);
+        const {getRecentEventsResult} = await import("@/lib/analytics/events");
+        const result = await getRecentEventsResult(1000);
+        if (!result.ok) {
+          setReadError(true);
+          return;
+        }
         const today = new Date().toDateString();
-        setDoneToday(events.some((e) => e.type === "lesson-completed" && new Date(e.ts).toDateString() === today));
+        setCompletedLessonToday(result.events.some((e) => e.type === "lesson-completed" && new Date(e.ts).toDateString() === today));
       } catch {
         /* تجاهل */
       }
@@ -45,15 +51,15 @@ export function DailyChallengeCard() {
           <div>
             <h4 className="text-sm font-extrabold">تحدي اليوم 🔥</h4>
             <p className="text-xs text-muted-foreground">
-              5 أسئلة سريعة من مستواك — نقاط وسلسلة. {doneToday ? "أتممت تحدياً اليوم ✓" : "جاهز؟"}
+              5 أسئلة سريعة من مستواك — نقاط وسلسلة. {readError ? "تعذر التحقق من نشاطك اليوم" : completedLessonToday ? "أكملت درساً اليوم ✓" : "جاهز؟"}
             </p>
           </div>
         </div>
         <Button asChild variant="gold" size="sm" className="gap-1.5">
-          <a href="/tests/placement?mode=quick">
+          <Link href="/tests/placement?mode=quick">
             <Trophy className="h-4 w-4" aria-hidden="true" />
             ابدأ التحدي
-          </a>
+          </Link>
         </Button>
       </CardContent>
     </Card>

@@ -4,8 +4,6 @@
  * المدة والدرجات من وثائق Goethe-Institut الرسمية.
  */
 
-export type ExamModule = "lesen" | "hören" | "schreiben" | "sprechen";
-
 /* ═══════════ أسئلة القراءة ═══════════ */
 
 /** Zuordnung (Teil 1/4): نص ← فئة/عنوان */
@@ -84,6 +82,13 @@ export interface ExamHoerenTeil {
   kind: "rf" | "mcq" | "zuordnung";
   /** نص يُقرأ صوتياً (TTS) */
   audioText: string;
+  /**
+   * مقاطع الملفات المسجّلة بالترتيب (واحد لكل ملف في مسار صوت الجزء) — النص
+   * **المنطوق** في المقطع بلا وسوم المتحدثين (Frau/Mann/Ansage). تُعلَن قبل
+   * توليد الملفات لتكون خطة الإنتاج موثّقة في البيانات نفسها، ويحرس الاختبار
+   * أن كلمات كل مقطع واردة في `audioText` وبالترتيب (فلا يخالف التسجيل النصّ).
+   */
+  audioSegments?: string[];
   audioAr?: string;
   /** Richtig/Falsch (Teil 1) */
   statements?: ExamStatement[];
@@ -132,6 +137,11 @@ export interface ExamSprechenVortrag {
   topicAr: string;
   /** الأسئلة الإرشادية الرسمية (Leitfragen) */
   leitfragen: string[];
+  /**
+   * إجابة نموذجية للمراجعة بعد المحاولة: توجيه عربي + جمل ألمانية بين «...»
+   * تُقرأ كما تُقال. تُعرض مطوية (details) فلا تكشف نفسها قبل أن يتحدث المتعلم.
+   */
+  modelAr?: string;
 }
 
 export interface ExamSprechenDiskussion {
@@ -142,6 +152,8 @@ export interface ExamSprechenDiskussion {
   positionAr: string;
   pro: string[];
   kontra: string[];
+  /** إجابة نموذجية للمراجعة (نفس نمط `modelAr` في العرض) */
+  modelAr?: string;
 }
 
 export interface ExamSprechen {
@@ -152,13 +164,6 @@ export interface ExamSprechen {
   teil1Minutes: number;
   teil2Minutes: number;
 }
-
-export const EXAM_SPRECHEN_RUBRIC = [
-  { name: "Aussprache", ar: "النطق والتنغيم (مفهوم للمتحدث الأصلي)", max: 25 },
-  { name: "Wortschatz", ar: "المفردات (دقة ومرونة وملاءمة للموضوع)", max: 25 },
-  { name: "Flüssigkeit", ar: "الطلاقة (تدفق طبيعي بلا توقفات طويلة)", max: 25 },
-  { name: "Interaktion", ar: "التفاعل (الرد على الأسئلة والبناء على كلام الآخر)", max: 25 },
-] as const;
 
 /* ═══════════ الامتحان الكامل ═══════════ */
 

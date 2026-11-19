@@ -11,6 +11,7 @@
  *   - لا تداخل ولا تمدد ولا فيضان
  */
 import { test, expect, type Page } from "@playwright/test";
+import { navigateLessonToSection } from "./helpers/lesson-navigation";
 
 const WIDTHS = [320, 360, 390];
 
@@ -34,13 +35,7 @@ async function gotoPronSection(page: Page) {
     localStorage.clear();
   });
   await page.reload();
-  await page.waitForTimeout(1800);
-  for (let i = 0; i < 5; i++) {
-    await page.getByRole("button", { name: /التالي:/ }).last().click().catch(() => {});
-    await page.waitForTimeout(400);
-  }
-  await page.waitForTimeout(1200);
-  await expect(page.locator("#lesson-step-content h2").first()).toContainText("النطق", { timeout: 8000 });
+  await navigateLessonToSection(page, "النطق");
 }
 
 for (const w of WIDTHS) {

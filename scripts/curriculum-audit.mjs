@@ -10,21 +10,42 @@
  *  — حماية دائمة ضد الانحدار: أي نقص مستقبلي يظهر فوراً في التقرير.
  * ═══════════════════════════════════════════════════════════════════════
  */
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-/* ── تحميل كل ملفات الدروس كمصفوفة {level, id, text} ── */
+/* ── تحميل كل ملفات الدروس كمصفوفة {level, id, text} ──
+   ملاحظة: الدروس مقسّمة إلى مجلدات فرعية (a1-01/theorie.ts إلخ) منذ المرحلة 5.
+   يجب قراءة كل الملفات تراجعياً — قراءة ملفات التغليف فقط تفوّت كل المحتوى. */
+function walkTsFiles(dir) {
+  const out = [];
+  for (const entry of readdirSync(dir)) {
+    const full = join(dir, entry);
+    if (statSync(full).isDirectory()) {
+      out.push(...walkTsFiles(full));
+    } else if (entry.endsWith(".ts") && !entry.endsWith(".test.ts")) {
+      out.push(full);
+    }
+  }
+  return out;
+}
+
 const LESSONS = [];
 for (const level of ["a1", "a2", "b1", "b2"]) {
-  for (const f of readdirSync(join(ROOT, "src/data/lessons", level))) {
-    // ملفات الاختبار (*.test.ts) تحوي معرّفات دروس مكرّرة نصّياً فتفسد البحث
-    if (!f.endsWith(".ts") || f.endsWith(".test.ts")) continue;
-    const text = readFileSync(join(ROOT, "src/data/lessons", level, f), "utf8");
-    const id = (text.match(/id: "([^"]+)"/) || [])[1] ?? f.replace(".ts", "");
-    LESSONS.push({ level, id, text });
+  // تجميع محتوى كل درس من كل ملفاته (التغليف + المجلد المقسّم)
+  const byLesson = new Map();
+  for (const file of walkTsFiles(join(ROOT, "src/data/lessons", level))) {
+    const text = readFileSync(file, "utf8");
+    // معرّف الدرس من اسم الملف أو المجلد (a1-01.ts أو a1-01/theorie.ts)
+    const rel = file.slice(join(ROOT, "src/data/lessons", level).length + 1);
+    const id = rel.split("/")[0].replace(/\.ts$/, "");
+    if (!byLesson.has(id)) byLesson.set(id, []);
+    byLesson.get(id).push(text);
+  }
+  for (const [id, texts] of byLesson) {
+    LESSONS.push({ level, id, text: texts.join("\n") });
   }
 }
 const norm = (s) => s.toLowerCase().replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss");
@@ -64,7 +85,7 @@ const ITEMS = [
   { level: "a2", theme: "2. السفر والطقس (Reisen/Wetter)", kind: "g", term: "حروف المكان nach/in/zu", keywords: ["nach", "in", "zu", "wohin"], lessons: ["a1-11", "a2-01"] },
   { level: "a2", theme: "2. السفر والطقس (Reisen/Wetter)", kind: "k", term: "حجز فندق + تخطيط رحلة", keywords: ["Hotel", "Reise", "Urlaub"], lessons: ["a2-01"] },
   { level: "a2", theme: "2. السفر والطقس (Reisen/Wetter)", kind: "k", term: "نشرة الطقس", keywords: ["Wetter", "تقرير الطقس", "الطقس"], lessons: ["a1-12"] },
-  { level: "a2", theme: "3. الصحة (Gesundheit)", kind: "g", term: "Imperativ + dürfen/sollen", keywords: ["Imperativ", "sollen", "nicht dürfen"], lessons: ["a1-06", "a2-02"] },
+  { level: "a2", theme: "3. الصحة (Gesundheit)", kind: "g", term: "Imperativ + dürfen/sollen", keywords: ["أمر المخاطبة الرسمية Sie", "sollen", "nicht dürfen"], lessons: ["a2-02"] },
   { level: "a2", theme: "3. الصحة (Gesundheit)", kind: "g", term: "Dativ", keywords: ["Dativ"], lessons: ["a2-02", "a2-09"] },
   { level: "a2", theme: "3. الصحة (Gesundheit)", kind: "k", term: "أعضاء الجسم والأعراض + موعد", keywords: ["Körper", "Schmerzen", "Symptome", "Arzt"], lessons: ["a2-02"] },
   { level: "a2", theme: "4. التوجيه والتعايش (Orientierung)", kind: "g", term: "Wechselpräpositionen مع Dativ", keywords: ["Wechselpräpositionen", "Dativ"], lessons: ["a2-04"] },
@@ -88,7 +109,7 @@ const ITEMS = [
   { level: "b1", theme: "4. الهوية والثقافة (Heimat)", kind: "g", term: "Adjektivdeklination", keywords: ["Adjektivdeklination"], lessons: ["b1-06"] },
   { level: "b1", theme: "4. الهوية والثقافة (Heimat)", kind: "g", term: "Futur I", keywords: ["Futur I", "werde"], lessons: ["b1-08"] },
   { level: "b1", theme: "4. الهوية والثقافة (Heimat)", kind: "k", term: "الوطن/الهجرة/صدمات الثقافة", keywords: ["Heimat", "هجرة", "Kulturschock", "صدمات"], lessons: ["b1-06", "b2-08"] },
-  { level: "b1", theme: "5. المشاعر والنزاعات (Gefühle)", kind: "g", term: "Verben mit Präpositionen", keywords: ["Verben mit", "worüber", "darüber", "festen Präpositionen"], lessons: ["b2-08"] },
+  { level: "b1", theme: "5. المشاعر والنزاعات (Gefühle)", kind: "g", term: "Verben mit Präpositionen", keywords: ["Verben mit", "festen Präpositionen", "warten auf", "teilnehmen an"], lessons: ["b1-09"] },
   { level: "b1", theme: "5. المشاعر والنزاعات (Gefühle)", kind: "k", term: "الغضب/الفرح/الاعتذار والتصالح", keywords: ["Gefühle", "المشاعر", "Konflikt", "خلاف", "تصالح"], lessons: ["a2-12", "b2-05"] },
 
   /* ─────────── مستوى B2 ─────────── */
@@ -97,7 +118,7 @@ const ITEMS = [
   { level: "b2", theme: "1. بيئة العمل (Arbeitswelt)", kind: "k", term: "مقابلة + Anschreiben", keywords: ["Anschreiben", "Bewerbung", "مقابلة"], lessons: ["b2-09", "b2-06"] },
   { level: "b2", theme: "1. بيئة العمل (Arbeitswelt)", kind: "k", term: "العمل المرن/عن بعد", keywords: ["Homeoffice", "flexibel", "المرن", "عن بعد"], lessons: ["b2-06"] },
   { level: "b2", theme: "2. الاقتصاد والمال (Wirtschaft)", kind: "g", term: "Nominalisierung", keywords: ["Nominalisierung"], lessons: ["b2-06"] },
-  { level: "b2", theme: "2. الاقتصاد والمال (Wirtschaft)", kind: "g", term: "Genitiv-Präpositionen (wegen/trotz)", keywords: ["wegen", "trotz", "während", "statt"], lessons: ["b1-01"] },
+  { level: "b2", theme: "2. الاقتصاد والمال (Wirtschaft)", kind: "g", term: "Genitiv-Präpositionen (wegen/trotz)", keywords: ["wegen", "trotz"], lessons: ["b2-10"] },
   { level: "b2", theme: "2. الاقتصاد والمال (Wirtschaft)", kind: "k", term: "البنوك والقروض والاستثمار", keywords: ["Bank", "Kredit", "Investition", "البنوك"], lessons: ["a2-07", "b2-02"] },
   { level: "b2", theme: "3. المجتمع والقانون (Politik)", kind: "g", term: "Konjunktiv I (نقل الكلام)", keywords: ["Konjunktiv I", "indirekte Rede", "habe"], lessons: ["b2-01"] },
   { level: "b2", theme: "3. المجتمع والقانون (Politik)", kind: "g", term: "الاستخدام الذاتي للأفعال الناقصة (تخمين)", keywords: ["dürfte", "müsste", "subjektiv", "könnte"], lessons: ["b2-01", "b2-07"] },
@@ -107,7 +128,7 @@ const ITEMS = [
   { level: "b2", theme: "4. العلوم والبحث (Wissenschaft)", kind: "k", term: "عرض أكاديمي (Präsentation)", keywords: ["Präsentation", "العروض", "محاضرة"], lessons: ["b2-01", "b2-10"] },
   { level: "b2", theme: "4. العلوم والبحث (Wissenschaft)", kind: "k", term: "الذكاء الاصطناعي", keywords: ["Intelligenz", "الذكاء"], lessons: ["b1-08", "b2-01"] },
   { level: "b2", theme: "5. الثقافة والإعلام (Kultur)", kind: "g", term: "روابط konzessive/restriktive", keywords: ["obwohl", "es sei denn", "ohne"], lessons: ["b1-07", "b2-05"] },
-  { level: "b2", theme: "5. الثقافة والإعلام (Kultur)", kind: "g", term: "Genitiv المتقدم", keywords: ["Genitiv"], lessons: ["b1-01", "b2-03"] },
+  { level: "b2", theme: "5. الثقافة والإعلام (Kultur)", kind: "g", term: "Genitiv المتقدم", keywords: ["Genitiv", "dessen", "deren"], lessons: ["b2-10", "b2-11"] },
   { level: "b2", theme: "5. الثقافة والإعلام (Kultur)", kind: "k", term: "نقد الكتب والأفلام", keywords: ["Buch", "مراجعة كتاب", "Film", "معرض الكتاب"], lessons: ["b2-04"] },
   { level: "b2", theme: "5. الثقافة والإعلام (Kultur)", kind: "k", term: "الرقابة والصحافة والرأي العام", keywords: ["Zensur", "رقابة", "Zeitung", "Meinung"], lessons: ["b2-07", "a2-06"] },
 ];
@@ -117,34 +138,35 @@ function findMatches(item) {
   const pool = item.lessons.length
     ? item.lessons.map(inLesson).filter(Boolean)
     : inLevel(item.level);
-  const hits = [];
-  for (const kw of item.keywords) {
+  return item.keywords.map((kw) => {
     const k = norm(kw);
-    for (const l of pool) {
-      if (norm(l.text).includes(k)) {
-        hits.push({ kw, file: l.id });
-        break;
-      }
-    }
-  }
-  return hits;
+    const matches = pool.filter((lesson) => norm(lesson.text).includes(k));
+    return { kw, matches };
+  });
 }
 
 const rows = [];
 for (const item of ITEMS) {
-  const hits = findMatches(item);
-  const foundAny = hits.length > 0;
-  const expected = item.keywords.length;
-  const partial = foundAny && hits.length < expected;
-  const status = foundAny ? (partial ? "⚠️" : "✓") : "✗";
+  const matches = findMatches(item);
+  const foundCount = matches.filter((match) => match.matches.length > 0).length;
+  const targetLevelCount = matches.filter((match) =>
+    match.matches.some((lesson) => lesson.level === item.level)
+  ).length;
+  const foundAny = foundCount > 0;
+  // لا نعدّ ذكراً في مستوى آخر دليلاً على تغطية المستوى المطلوب.
+  const status = !foundAny ? "✗" : targetLevelCount === matches.length ? "✓" : "⚠️";
   const scope = item.lessons.length ? item.lessons.join(", ") : `كل ${item.level}`;
+  const detail = matches.map(({ kw, matches: lessons }) => {
+    if (!lessons.length) return `${kw}: غير موجود`;
+    return `${kw}: ${lessons.map((lesson) => lesson.id).join("/")}`;
+  });
   rows.push({
     level: item.level.toUpperCase(),
     theme: item.theme,
     kind: item.kind === "g" ? "قواعد" : "تواصل",
     term: item.term,
     status,
-    detail: foundAny ? hits.map((h) => `${h.file}`).join(", ") : `مفقود في: ${scope}`,
+    detail: foundAny ? detail.join("؛ ") : `مفقود في: ${scope}`,
   });
 }
 
@@ -163,6 +185,6 @@ for (const level of ["A1", "A2", "B1", "B2"]) {
   console.log("");
 }
 console.log("──────────────────────────────────────────────────────────────");
-console.log(`  الملخص: ${ok} ✓ كامل | ${warn} ⚠️ جزئي/مستوى آخر | ${miss} ✗ مفقود  (الإجمالي ${rows.length})`);
-console.log("  ✓=الموضوع مُدرَّس بدقة في الدروس المشار إليها | ⚠️=جزئي أو محتوى في مستوى آخر | ✗=نقص حقيقي");
+console.log(`  الملخص: ${ok} ✓ علامات في المستوى المطلوب | ${warn} ⚠️ جزئي/مستوى آخر | ${miss} ✗ بلا علامة  (الإجمالي ${rows.length})`);
+console.log("  ✓=كل العلامات النصية وُجدت في المستوى المطلوب (قرينة آلية لا تثبت التدريس) | ⚠️=بعض العلامات غائبة أو لا تظهر إلا بمستوى آخر | ✗=لم تُوجد أي علامة");
 console.log("══════════════════════════════════════════════════════════════\n");

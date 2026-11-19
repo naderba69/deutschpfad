@@ -50,30 +50,42 @@ import { lessonB207 } from "@/data/lessons/b2/b2-07";
 import { lessonB208 } from "@/data/lessons/b2/b2-08";
 import { lessonB209 } from "@/data/lessons/b2/b2-09";
 import { lessonB210 } from "@/data/lessons/b2/b2-10";
+import { lessonB212 } from "@/data/lessons/b2/b2-12";
+import { lessonB213 } from "@/data/lessons/b2/b2-13";
+import { balanceChoiceTree } from "@/lib/tests/balance-options";
 
 /**
  * ═══════════════════════════════════════════════════════════
  *  مكتبة الدروس — السجل المركزي الكامل
- *  A1 (16) + A2 (12) + B1 (11) + B2 (10) = 48 درساً
+ *  A1 (16) + A2 (13) + B1 (12) + B2 (13) = 54 درساً
  *  (A1-13 = المراجعة الشاملة التجميعية)
  *  — اكتمال المحتوى الأكاديمي (المراحل 6-9) —
  * ═══════════════════════════════════════════════════════════
  */
 
-export const LESSONS: Lesson[] = [
+export const RAW_LESSONS: Lesson[] = [
   /* A1 — 16 */
   lessonA100, lessonA101, lessonA101b, lessonA102, lessonA103, lessonA104, lessonA105,
-  lessonA106, lessonA107, lessonA108, lessonA109, lessonA110, lessonA111, lessonA112, lessonA113, lessonA114,
+  lessonA106, lessonA107, lessonA108, lessonA109, lessonA110, lessonA111, lessonA112, lessonA114, lessonA113,
   /* A2 — 13 */
   lessonA201, lessonA202, lessonA203, lessonA204, lessonA205, lessonA206,
   lessonA207, lessonA208, lessonA209, lessonA210, lessonA211, lessonA212, lessonA213,
   /* B1 — 12 */
   lessonB101, lessonB102, lessonB103, lessonB104, lessonB105,
   lessonB106, lessonB107, lessonB108, lessonB109, lessonB110, lessonB112, lessonB111,
-  /* B2 — 11 */
+  /* B2 — 13 */
   lessonB201, lessonB202, lessonB203, lessonB204, lessonB211, lessonB205,
-  lessonB206, lessonB207, lessonB208, lessonB209, lessonB210,
+  lessonB206, lessonB207, lessonB208, lessonB209, lessonB210, lessonB212, lessonB213,
 ];
+/**
+ * الدروس كما يراها المتعلم: **مواضع الإجابات موزّعة** (الدفعة 70).
+ * كان 88% من الإجابات الصحيحة في الخيار الأول (B2 99%)، فيُجتاز الدرس
+ * باختيار الأول دائماً. `RAW_LESSONS` هو ما كُتب (ترتيب تحريري طبيعي،
+ * تستورده الحرّاس للقياس والمقارنة) ولا يستهلكه أي مكوّن إنتاجي.
+ * التحويل لا يغيّر نصّ خيار ولا نصّ الصحيحة ولا شرحها — فقط الموضع.
+ */
+export const LESSONS: Lesson[] = RAW_LESSONS.map((item, index) => balanceChoiceTree(item, index + 1));
+
 
 /** إيجاد درس بمعرّفه */
 export function getLesson(id: string): Lesson | undefined {
@@ -84,15 +96,3 @@ export function getLesson(id: string): Lesson | undefined {
 export function getLessonsByUnit(unitId: string): Lesson[] {
   return LESSONS.filter((l) => l.unitId === unitId).sort((a, b) => a.order - b.order);
 }
-
-/** خريطة: معرف الوحدة ← الدرس الأول المتاح فيها (لروابط خارطة الطريق) */
-export function getFirstLessonForUnit(unitId: string): Lesson | undefined {
-  return getLessonsByUnit(unitId)[0];
-}
-
-/** كل دروس مستوى */
-export function getLessonsByLevel(level: string): Lesson[] {
-  return LESSONS.filter((l) => l.level === level).sort((a, b) => a.order - b.order);
-}
-
-export const TOTAL_LESSONS_AVAILABLE = LESSONS.length;

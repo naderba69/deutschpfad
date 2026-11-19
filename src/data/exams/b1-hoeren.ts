@@ -4,6 +4,8 @@
  *  ⚠️ نموذج تدريبي من إعداد المنصة، وليس نصاً رسمياً من Goethe-Institut.
  *  Hören: 4 أجزاء · ~40 دقيقة · 15 عنصراً
  *  الجزآن 1 و3 يُشغَّلان مرتين، والباقي مرة واحدة.
+ *  الصوت: 14 مقطعاً مسجّلاً في `public/audio/exam-b1/` (الجذر)،
+ *  والنطق الآلي في المتصفح احتياط معلَن عند غياب أي ملف.
  * ═══════════════════════════════════════════════════════════
  */
 import type { ExamHoerenTeil } from "@/types/exam";
@@ -25,7 +27,7 @@ export const B1_HOEREN: ExamHoerenTeil[] = [
       "Durchsage 3: Wer an dem Sprachkurs teilnehmen möchte, sollte sich bis Ende des Monats bei der Personalabteilung melden. " +
       "Durchsage 4: Der Parkplatz hinter dem Gebäude wird im Sommer neu asphaltiert, deshalb dürfen Autos dort nicht parken.",
     statements: [
-      { id: "b1h1-s1", de: "Der Aufzug funktioniert wieder ab Freitag.", ar: "المصعد يعمل مجدداً ابتداءً من الجمعة.", isTrue: true, whyAr: "قيل إنه خارج الخدمة حتى الجمعة، أي يعمل من السبت." },
+      { id: "b1h1-s1", de: "Der Aufzug funktioniert wieder ab Freitag.", ar: "المصعد يعمل مجدداً ابتداءً من الجمعة.", isTrue: false, whyAr: "قيل: bis Freitag außer Betrieb، أي يعمل من السبت لا من الجمعة." },
       { id: "b1h1-s2", de: "Die Betriebsversammlung findet am Donnerstag statt.", ar: "اجتماع الموظفين يُعقد يوم الخميس.", isTrue: false, whyAr: "قيل: findet nun eine Woche später statt، أي تأجل أسبوعاً." },
       { id: "b1h1-s3", de: "Man muss sich bei der Personalabteilung anmelden.", ar: "يجب التسجيل لدى قسم شؤون الموظفين.", isTrue: true, whyAr: "قيل: sollte sich bei der Personalabteilung melden." },
       { id: "b1h1-s4", de: "Auf dem Parkplatz darf man im Sommer parken.", ar: "يُسمح بالوقوف في المواقف صيفاً.", isTrue: false, whyAr: "قيل: deshalb dürfen Autos dort nicht parken." },
@@ -51,7 +53,7 @@ export const B1_HOEREN: ExamHoerenTeil[] = [
         id: "b1h2-q1",
         q: "Was würde die Frau machen, wenn sie mehr Zeit hätte?",
         qAr: "ماذا كانت ستفعل المرأة لو كان لديها وقت أكثر؟",
-        options: ["Einen Sprachkurs besuchen", "In Urlaub fahren", "Ein Auto kaufen"],
+        options: ["Einen Sprachkurs besuchen", "In Urlaub fahren und ausruhen", "Ein neues Auto kaufen"],
         correct: 0,
         whyAr: "قالت: würde ich einen Sprachkurs machen، وهي جملة شرطية بالـ Konjunktiv II.",
       },
@@ -101,7 +103,7 @@ export const B1_HOEREN: ExamHoerenTeil[] = [
         id: "b1h3-q1",
         q: "Was hat sich in den letzten drei Jahren verändert?",
         qAr: "ماذا تغيّر خلال السنوات الثلاث الأخيرة؟",
-        options: ["Die Zahl der Radfahrer hat sich verdoppelt.", "Die Zahl der Autos ist gesunken.", "Die Radwege wurden gebaut."],
+        options: ["Die Zahl der Radfahrer hat sich verdoppelt.", "Die Zahl der Autos ist deutlich gesunken.", "Die Radwege wurden überall neu gebaut."],
         correct: 0,
         whyAr: "قيل: hat sich die Zahl in den letzten drei Jahren verdoppelt.",
       },
@@ -125,7 +127,7 @@ export const B1_HOEREN: ExamHoerenTeil[] = [
         id: "b1h3-q4",
         q: "Warum lohnt sich die Investition nach Meinung des Experten?",
         qAr: "لماذا تستحق الاستثمار حسب رأي الخبير؟",
-        options: ["Weil weniger Autos weniger Staus bedeuten", "Weil die Stadt Geld verdient", "Weil die Radwege schön sind"],
+        options: ["Weil weniger Autos weniger Staus bedeuten", "Weil die Stadt damit Geld verdient", "Weil die Radwege schön und sicher sind"],
         correct: 0,
         whyAr: "قيل: weil weniger Autos weniger Staus bedeuten.",
       },
@@ -159,7 +161,7 @@ export const B1_HOEREN: ExamHoerenTeil[] = [
         id: "b1h4-q2",
         q: "Was rät Herr Kaya den Anfängern?",
         qAr: "ماذا ينصح السيد كايا المبتدئين؟",
-        options: ["Nur Grammatik zu lernen", "Jeden Tag zu sprechen, auch mit Fehlern", "Keine Fehler zu machen"],
+        options: ["Nur Grammatik und Vokabeln zu lernen", "Jeden Tag zu sprechen, auch mit Fehlern", "Keine Fehler zu machen und langsam zu lernen"],
         correct: 1,
         whyAr: "قال: jeden Tag ein paar Minuten sprechen، auch wenn sie Fehler machen.",
       },

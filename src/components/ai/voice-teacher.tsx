@@ -2,9 +2,10 @@
 
 /**
  * المعلم الصوتي — محادثة ألمانية صوتية
- * وضعان:
+ * ثلاثة أوضاع:
  * 1) محادثة حرة (LLM) — شريك ذكي يرد عليك صوتاً (يتطلب مفاتيح)
- * 2) تدريب موجه (محلي 100%) — أسئلة جاهزة بلا مفاتيح: استمع، أجب بالميكروفون، قيّم نفسك
+ * 2) محادثة حرة محلية (بلا مفاتيح) — محرك محادثة محلي يرد بجمل مناسبة للمستوى
+ * 3) تدريب موجه (محلي 100%) — أسئلة جاهزة بلا مفاتيح: استمع، أجب بالميكروفون، قيّم نفسك
  */
 import * as React from "react";
 import {Headphones, MessageCircle, Mic, Send, Sparkles, Square, Wand2} from "lucide-react";
@@ -12,6 +13,7 @@ import {Headphones, MessageCircle, Mic, Send, Sparkles, Square, Wand2} from "luc
 import {Button} from "@/components/ui/button";
 import {useLLM} from "@/components/providers/llm-provider";
 import {voiceTeacherSystemPrompt} from "@/lib/llm/prompts";
+import {createConversationState, respondToUser, type ConversationState} from "@/lib/speech/offline-conversation";
 import {speakGerman, stopSpeaking} from "@/lib/speech/voices";
 import {createRecognitionEngine, isRecognitionSupported, unsupportedRecognitionNote, type RecognitionEngine} from "@/lib/speech/speech-recognition";
 import {cn} from "@/lib/utils";
@@ -32,6 +34,8 @@ const TOPICS = [
 interface Msg {
   role: "user" | "assistant";
   text: string;
+  /** ترجمة عربية للرد (الوضع المحلي فقط) */
+  textAr?: string;
   correction?: string;
 }
 
@@ -41,27 +45,35 @@ const GUIDED_BANK: Record<string, { q: string; qAr: string; model: string; model
     { q: "Wie heißt du und woher kommst du?", qAr: "ما اسمك ومن أين أنت؟", model: "Ich heiße Sami und ich komme aus Tunesien.", modelAr: "اسمي سامي وأنا من تونس.", tip: "ابدأ بـ Ich heiße… ثم Ich komme aus…" },
     { q: "Was machst du gern in deiner Freizeit?", qAr: "ماذا تحب أن تفعل في فراغك؟", model: "Ich spiele gern Fußball und höre Musik.", modelAr: "أحب لعب كرة القدم والاستماع للموسيقى.", tip: "استخدم gern: Ich … gern (أحب أن…)." },
     { q: "Wie ist dein Tag? Wann stehst du auf?", qAr: "كيف يومك؟ متى تستيقظ؟", model: "Ich stehe um sieben Uhr auf. Dann frühstücke ich.", modelAr: "أستيقظ السابعة ثم أتناول الفطور.", tip: "الفعل المنفصل: Ich stehe … auf (أستيقظ)." },
+    { q: "Was isst du zum Frühstück?", qAr: "ماذا تأكل على الفطور؟", model: "Zum Frühstück esse ich Brot mit Käse und trinke Tee.", modelAr: "على الفطور آكل خبزاً مع جبن وأشرب شاياً.", tip: "zum Frühstück = على الفطور (وقت)." },
+    { q: "Hast du Geschwister? Wie viele?", qAr: "هل عندك إخوة؟ كم عددهم؟", model: "Ja, ich habe zwei Brüder und eine Schwester.", modelAr: "نعم، عندي أخوان وأخت.", tip: "haben + أعداد: ich habe zwei Brüder." },
   ],
   A2: [
     { q: "Was hast du am Wochenende gemacht?", qAr: "ماذا فعلت في نهاية الأسبوع؟", model: "Am Wochenende bin ich in die Stadt gefahren und habe Freunde getroffen.", modelAr: "في نهاية الأسبوع ذهبت إلى المدينة والتقيت أصدقاء.", tip: "الماضي: bin gefahren (حركة) + habe getroffen (haben)." },
     { q: "Was isst du gern? Was schmeckt dir?", qAr: "ماذا تأكل بسرور؟ ما الذي يعجبك طعمه؟", model: "Ich esse gern Couscous, es schmeckt mir sehr gut.", modelAr: "أحب الكسكس، طعمه يعجبني كثيراً.", tip: "schmecken + Dativ: es schmeckt mir (يعجبني)." },
     { q: "Wohin möchtest du reisen und warum?", qAr: "إلى أين تريد السفر ولماذا؟", model: "Ich möchte nach Deutschland reisen, weil ich die Sprache lernen will.", modelAr: "أريد السفر إلى ألمانيا لأنني أريد تعلم اللغة.", tip: "möchte + weil: السبب في النهاية بالفعل." },
+    { q: "Was hast du gestern gemacht?", qAr: "ماذا فعلت أمس؟", model: "Gestern habe ich meine Freundin getroffen und wir haben zusammen gekocht.", modelAr: "أمس التقيت صديقتي وطبخنا معاً.", tip: "Perfekt: habe getroffen (لقاء) + habe gekocht (طبخ)." },
+    { q: "Wie war dein letzter Urlaub?", qAr: "كيف كانت عطلتك الأخيرة؟", model: "Mein Urlaub war toll. Ich bin ans Meer gefahren und habe viel geschwommen.", modelAr: "عطلتي كانت رائعة. ذهبت إلى البحر وسبحت كثيراً.", tip: "sein + gefahren (حركة) = ذهبت." },
   ],
   B1: [
     { q: "Wie findest du das Leben in der Stadt im Vergleich zum Land?", qAr: "كيف تجد الحياة في المدينة مقارنة بالريف؟", model: "Ich finde das Leben in der Stadt praktischer, weil alles näher ist. Aber auf dem Land ist es ruhiger.", modelAr: "أجد الحياة في المدينة أسهل لأن كل شيء قريب. لكن الريف أكثر هدوءاً.", tip: "قارن: praktischer + weil… ثم لكن (aber)." },
     { q: "Was würdest du ändern, wenn du mehr Zeit hättest?", qAr: "ماذا كنت ستغيّر لو كان عندك وقت أكثر؟", model: "Wenn ich mehr Zeit hätte, würde ich mehr Sport treiben und meine Familie besuchen.", modelAr: "لو كان عندي وقت أكثر لمارست رياضة أكثر وزاررت عائلتي.", tip: "Konjunktiv II: hätte + würde… machen." },
     { q: "Sollte man im Ausland arbeiten? Warum?", qAr: "هل ينبغي العمل في الخارج؟ ولماذا؟", model: "Meiner Meinung nach lohnt es sich, weil man neue Erfahrungen sammelt. Aber man sollte die Sprache gut lernen.", modelAr: "في رأيي الأمر يستحق لأنك تكتسب خبرات جديدة. لكن ينبغي تعلم اللغة جيداً.", tip: "أبدِ رأيك: Meiner Meinung nach… + سبب weil." },
+    { q: "Was würdest du tun, wenn du eine Million Euro hättest?", qAr: "ماذا كنت ستفعل لو كان عندك مليون يورو؟", model: "Wenn ich eine Million Euro hätte, würde ich ein Haus kaufen und viel reisen.", modelAr: "لو كان عندي مليون يورو لاشتريت بيتاً وسافرت كثيراً.", tip: "Konjunktiv II: hätte + würde… kaufen." },
+    { q: "Findest du, dass man mehr Bücher lesen sollte?", qAr: "هل تظن أنه ينبغي قراءة كتب أكثر؟", model: "Ich finde, dass man mehr Bücher lesen sollte, weil man dabei viel lernt. Aber viele lesen lieber im Internet.", modelAr: "أظن أنه ينبغي قراءة كتب أكثر لأنك تتعلم كثيراً. لكن كثيرين يفضلون القراءة على الإنترنت.", tip: "dass + الفعل في النهاية: sollte… lesen." },
   ],
   B2: [
     { q: "Wie kann man den Umweltschutz im Alltag verbessern?", qAr: "كيف يمكن تحسين حماية البيئة في الحياة اليومية؟", model: "Man könnte mehr Fahrrad fahren und weniger Fleisch essen. Außerdem sollte man auf Plastik verzichten.", modelAr: "يمكن ركوب الدراجة أكثر وتقليل اللحوم. كما ينبغي الاستغناء عن البلاستيك.", tip: "Man könnte + sollte — اقتراحات عامة B2." },
     { q: "Welche Rolle spielt die Digitalisierung in Ihrem Beruf?", qAr: "ما دور الرقمنة في مهنتك؟", model: "Die Digitalisierung spielt eine große Rolle: Wir arbeiten viel mit Online-Tools, und die Kommunikation ist schneller geworden.", modelAr: "للرقمنة دور كبير: نعمل كثيراً بالأدوات الإلكترونية وأصبح التواصل أسرع.", tip: "كولوكيشن: eine Rolle spielen (يلعب دوراً)." },
     { q: "Diskutieren Sie: Sollte Handy in der Schule verboten werden?", qAr: "ناقش: هل يجب منع الهاتف في المدرسة؟", model: "Einerseits können Handys im Unterricht ablenken. Andererseits sind sie für die Recherche nützlich. Meiner Ansicht nach brauchen wir klare Regeln.", modelAr: "من ناحية تشتت الهواتف في الدرس. ومن ناحية أخرى مفيدة للبحث. في رأيي نحتاج قواعد واضحة.", tip: "Einerseits… andererseits… + رأيك في النهاية." },
+    { q: "Wie hat sich die künstliche Intelligenz auf Ihren Alltag ausgewirkt?", qAr: "كيف أثر الذكاء الاصطناعي على حياتك اليومية؟", model: "Die KI hat meinen Alltag stark verändert: Ich nutze sie für Übersetzungen und zum Lernen. Allerdings mache ich mir Sorgen um Datenschutz.", modelAr: "غيّر الذكاء الاصطناعي حياتي كثيراً: أستخدمه للترجمة والتعلم. لكنني قلق بشأن الخصوصية.", tip: "sich auswirken auf + Akkusativ (يؤثر على)." },
+    { q: "Sollte man ein Sabbatjahr machen? Begründen Sie Ihre Meinung.", qAr: "هل ينبغي أخذ سنة استراحة؟ علّل رأيك.", model: "Ich denke, ein Sabbatjahr ist sinnvoll, wenn man sich beruflich neu orientieren will. Jedoch sollte man einen klaren Plan haben.", modelAr: "أظن أن سنة الاستراحة مفيدة إذا أردت تغيير مسارك المهني. لكن ينبغي أن يكون عندك خطة واضحة.", tip: "sinnvoll sein + wenn… + jedoch (لكن)." },
   ],
 };
 
 export function AiVoiceTeacher() {
   const { callLLM, isConfigured } = useLLM();
-  const [mode, setMode] = React.useState<"free" | "guided">(isConfigured ? "free" : "guided");
+  const [mode, setMode] = React.useState<"free" | "guided" | "local">(isConfigured ? "free" : "local");
   const [level, setLevel] = React.useState<(typeof LEVELS)[number]>("A2");
   const [topic, setTopic] = React.useState(TOPICS[0]);
   const [messages, setMessages] = React.useState<Msg[]>([]);
@@ -77,6 +89,14 @@ export function AiVoiceTeacher() {
   const [gIdx, setGIdx] = React.useState(0);
   const [gAnswered, setGAnswered] = React.useState(false);
   const [gRevealed, setGRevealed] = React.useState(false);
+
+  /* حالة المحادثة الحرة المحلية */
+  const [convState, setConvState] = React.useState<ConversationState>(() => createConversationState("A2", TOPICS[0].id));
+
+  /* مزامنة مستوى/موضوع المحرك المحلي مع الاختيار الحالي */
+  React.useEffect(() => {
+    setConvState((s) => ({ ...s, level, topicId: topic.id }));
+  }, [level, topic.id]);
 
   const guidedQs = GUIDED_BANK[level];
   const gQ = guidedQs[gIdx % guidedQs.length];
@@ -126,6 +146,20 @@ export function AiVoiceTeacher() {
     if (!content || thinking) return;
     if (recognition?.isListening) recognition.stop();
 
+    /* الوضع المحلي: محرك محادثة بلا مفاتيح */
+    if (mode === "local") {
+      setMessages((prev) => [...prev, { role: "user", text: content }]);
+      setInput("");
+      const { reply, state: nextState } = respondToUser(convState, content);
+      setConvState(nextState);
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", text: reply.reply, textAr: reply.replyAr, correction: reply.correction },
+      ]);
+      speak(reply.reply.replace(/\*\*/g, ""), level === "A1" || level === "A2" ? 0.9 : 0.95);
+      return;
+    }
+
     const updated: Msg[] = [...messages, { role: "user", text: content }];
     setMessages(updated);
     setInput("");
@@ -158,6 +192,7 @@ export function AiVoiceTeacher() {
     setMessages([]);
     setInput("");
     setInterim("");
+    setConvState(createConversationState(level, topic.id));
   };
 
   /* ── التدريب الموجه ── */
@@ -176,6 +211,7 @@ export function AiVoiceTeacher() {
         <button
           type="button"
           onClick={() => setMode("free")}
+          aria-pressed={mode === "free"}
           disabled={!isConfigured}
           className={cn(
             "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
@@ -190,6 +226,7 @@ export function AiVoiceTeacher() {
         <button
           type="button"
           onClick={() => setMode("guided")}
+          aria-pressed={mode === "guided"}
           className={cn(
             "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
             mode === "guided" ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
@@ -197,6 +234,18 @@ export function AiVoiceTeacher() {
         >
           <Wand2 className="h-3.5 w-3.5" aria-hidden="true" />
           تدريب موجه (بدون مفاتيح)
+        </button>
+        <button
+          type="button"
+          onClick={() => setMode("local")}
+          aria-pressed={mode === "local"}
+          className={cn(
+            "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
+            mode === "local" ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
+          )}
+        >
+          <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
+          محادثة حرة محلية (بدون مفاتيح)
         </button>
       </div>
 
@@ -208,6 +257,7 @@ export function AiVoiceTeacher() {
             key={l}
             type="button"
             onClick={() => setLevel(l)}
+            aria-pressed={level === l}
             className={cn(
               "font-de rounded-lg border px-3 py-1 text-xs font-bold transition-colors",
               level === l ? "border-primary bg-primary text-primary-foreground" : "text-muted-foreground hover:border-primary/50",
@@ -216,13 +266,13 @@ export function AiVoiceTeacher() {
             {l}
           </button>
         ))}
-        {mode === "free" && (
+        {mode !== "guided" && (
           <>
             <span className="ms-2 text-xs font-bold text-muted-foreground">الموضوع:</span>
             <select
               value={topic.id}
               onChange={(e) => setTopic(TOPICS.find((t) => t.id === e.target.value) ?? TOPICS[0])}
-              className="rounded-lg border bg-background px-2 py-1 text-xs font-bold outline-none focus:border-primary"
+              className="min-h-8 rounded-lg border border-input bg-background px-2 py-1 text-xs font-bold outline-none focus:border-primary"
               aria-label="موضوع المحادثة"
             >
               {TOPICS.map((t) => (
@@ -317,6 +367,9 @@ export function AiVoiceTeacher() {
                   )}
                 >
                   <p className="font-de whitespace-pre-line" dir="ltr" lang="de">{m.text}</p>
+                  {m.role === "assistant" && m.textAr && (
+                    <p className="mt-1 text-xs text-muted-foreground">{m.textAr}</p>
+                  )}
                   {m.role === "assistant" && m.correction && (
                     <p className="mt-1.5 rounded-lg bg-gold/10 px-2 py-1 text-xs text-gold-strong">✍️ تصحيح: {m.correction}</p>
                   )}
@@ -346,12 +399,13 @@ export function AiVoiceTeacher() {
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            <div className="flex flex-1 items-center gap-2 rounded-xl border bg-background px-3 focus-within:border-primary">
+            <div className="flex flex-1 items-center gap-2 rounded-xl border border-input bg-background px-3 focus-within:border-primary">
               <MessageCircle className="h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />
               <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && void send()}
+                aria-label="رسالتك للمعلم الصوتي"
                 placeholder={supported ? "تحدث بالميكروفون أو اكتب بالألمانية…" : "الميكروفون غير مدعوم — اكتب بالألمانية…"}
                 dir="ltr"
                 lang="de"
@@ -386,7 +440,7 @@ export function AiVoiceTeacher() {
             ? "تدرّب يومياً: استمع، أجب بصوتك، قارن بالنموذج — المفتاح هو التكرار الصوتي."
             : "ابدأ بـ «Hallo!» ثم أجب على أسئلتي. الأخطاء تُصحَّح بلطف داخل الرد."}
         </p>
-        {messages.length > 0 && mode === "free" && (
+        {messages.length > 0 && mode !== "guided" && (
           <Button variant="ghost" size="sm" onClick={reset}>🗑 محادثة جديدة</Button>
         )}
       </div>

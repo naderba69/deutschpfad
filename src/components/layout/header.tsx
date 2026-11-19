@@ -30,10 +30,10 @@ function HeaderProgress() {
         <TooltipTrigger asChild>
           <Link
             href="/learning-path"
-            aria-label="التقدم الإجمالي في المنهج"
-            className="hidden sm:inline-flex"
+            aria-label={`${pct === null ? "…" : `${pct}%`} — التقدم الإجمالي في المنهج`}
+            className="hidden min-h-8 items-center sm:inline-flex"
           >
-            <Badge variant="secondary" className="gap-1.5 px-3 py-1">
+            <Badge variant="secondary" className="gap-1.5 px-3 py-1.5">
               <Percent className="h-3.5 w-3.5 text-primary" />
               {/* suppressHydrationWarning: «…» قبل التحميل ثم النسبة — تغيّر مقصود */}
               <span className="font-de font-semibold" suppressHydrationWarning>{pct === null ? "…" : `${pct}%`}</span>
@@ -50,11 +50,12 @@ function NavLinks({ className, onNavigate }: { className?: string; onNavigate?: 
   const pathname = usePathname();
 
   return (
-    <nav className={cn("flex items-center gap-1", className)} aria-label="التنقل الرئيسي">
+    <nav className={cn("flex flex-wrap items-center gap-1", className)} aria-label="التنقل الرئيسي">
       {/* رابطان أساسيان دائمان */}
       <Link
         href="/learning-path"
         onClick={onNavigate}
+        aria-current={pathname.startsWith("/learning-path") || pathname.startsWith("/lesson") ? "page" : undefined}
         className={cn(
           "rounded-md px-3 py-2 text-sm font-semibold transition-colors",
           pathname.startsWith("/learning-path") || pathname.startsWith("/lesson")
@@ -67,6 +68,7 @@ function NavLinks({ className, onNavigate }: { className?: string; onNavigate?: 
       <Link
         href="/dashboard"
         onClick={onNavigate}
+        aria-current={pathname.startsWith("/dashboard") ? "page" : undefined}
         className={cn(
           "rounded-md px-3 py-2 text-sm font-semibold transition-colors",
           pathname.startsWith("/dashboard")
@@ -109,19 +111,27 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
-        <Link href="/" className="shrink-0 rounded-lg py-2" aria-label="درب الألمانية — الرئيسية">
+      {/* ═══ WCAG 1.4.4: ارتفاع ثابت h-16 + عدم الالتفاف كان يقصّ الهيدر عند
+          تكبير النص 200% (المحتوى 1755px داخل 1280px، مقصوص بـoverflow-x:clip
+          فلا يمكن الوصول إليه). الآن يلتفّ المحتوى ويزداد الارتفاع بدل أن يُفقد. ═══ */}
+      <div className="mx-auto flex min-h-16 w-full max-w-7xl flex-wrap items-center justify-between gap-x-3 gap-y-1 px-4 sm:px-6">
+        <Link href="/" className="shrink-0 rounded-lg py-2">
           <Logo />
         </Link>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <NavLinks />
         </div>
 
         <div className="flex items-center gap-2">
           <HeaderProgress />
-          <DueCounter />
-          <UsageCounter />
+          {/* عند 768px كان شريط التنقّل الأفقي هو ما يدفع كتلة الرأس خارج
+              الشاشة (‎-13px)؛ نُقل إلى lg فصار العدّادان يتّسعان من md.
+              القياس في docs/AUDIT-EVERY-PAGE-2026-10-13.md. */}
+          <div className="hidden items-center gap-2 md:flex">
+            <DueCounter />
+            <UsageCounter />
+          </div>
           <ThemeToggle />
           <Button
             asChild
@@ -141,14 +151,20 @@ export function Header() {
           {/* قائمة الجوال */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden" aria-label="فتح القائمة">
+              <Button variant="ghost" size="icon" className="lg:hidden" aria-label="فتح القائمة">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-80">
               <SheetHeader className="border-b pb-4">
                 <SheetTitle>
-                  <Logo />
+                  {/* اسم اللوحة كان اسم العلامة التجارية ("درب الألمانية DeutschPfad")
+                      لأن الشعار بداخلها؛ فيُعلن قارئ الشاشة «درب الألمانية» عند فتح
+                      القائمة بلا دلالة على أنها قائمة تنقّل. */}
+                  <span className="sr-only">قائمة التنقل</span>
+                  <span aria-hidden="true">
+                    <Logo idSuffix="-menu" />
+                  </span>
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col gap-1 pt-4">
@@ -159,7 +175,7 @@ export function Header() {
               </div>
               <div className="mt-6 border-t pt-4">
                 <p className="mb-2 text-xs font-semibold text-muted-foreground">
-                  المستويات (CERR)
+                  المستويات (CEFR)
                 </p>
                 <div className="grid grid-cols-2 gap-2">
                   {siteConfig.levelsNav.map((lvl) => (

@@ -1,7 +1,11 @@
 "use client";
 
+import * as React from "react";
+
 import { TestRunner } from "@/components/tests/test-runner";
 import { TEST_BANK } from "@/data/tests/question-banks";
+import { seededShuffleTestQuestions } from "@/lib/tests/shuffle-questions";
+import { dailySeed } from "@/lib/lesson/shuffle";
 import { LEVEL_TEST_CONFIGS } from "@/lib/tests/test-engine";
 import type { TestLevel, TestResult } from "@/types/test";
 
@@ -20,28 +24,36 @@ interface LevelTestProps {
  */
 export function LevelTest({ level, onComplete, quick = false }: LevelTestProps) {
   const config = LEVEL_TEST_CONFIGS[level];
-  let questions = TEST_BANK.filter((q) => q.level === level);
-
-  // الوضع التكيفي: يبدأ بأسهل ثم يصعد، ويتكيف مع الأداء
-  // (يُستخدم في محاكاة Goethe — ترتيب حسب نوع المهارة وطول النص)
-  if (typeof window !== "undefined" && new URLSearchParams(window.location.search).get("adaptive") === "1") {
-    const bySkill = (skill: string) => questions.filter((q) => q.skill === skill);
-    const easyFirst = [...bySkill("wortschatz"), ...bySkill("grammatik"), ...bySkill("lesen"), ...bySkill("hören"), ...bySkill("schreiben")];
-    questions = easyFirst;
-  }
-
-  if (quick) {
-    // اختيار متوازن: 6 قواعد + 6 مفردات + 3 قراءة + 3 استماع + 2 كتابة = 20
-    const bySkill = (skill: string) => questions.filter((q) => q.skill === skill);
-    const take = (skill: string, n: number) => bySkill(skill).slice(0, n);
-    questions = [
-      ...take("grammatik", 6),
-      ...take("wortschatz", 6),
-      ...take("lesen", 3),
-      ...take("hören", 3),
-      ...take("schreiben", 2),
-    ];
-  }
+  /* خلط الخيارات مرة واحدة لكل جلسة (useMemo): التصحيح يُخزَّن **بالفهرس**،
+     فخلطٌ في كل تصيير يغيّر معنى إجابة سابقة. وسبب الخلط أساساً: بنك الأسئلة
+     كان إجاباته كلها في الموضع الأول (قياس 2026-10-16: 171/171) — ومع موازنة
+     البيانات صار الخلط طبقة ثانية لا طبقة وحيدة. */
+  const questions = React.useMemo(() => {
+    // خلط حتمي ببذرة يومية: الخادم والعميل يصيران الترتيب نفسه، فيُصيَّر
+    // الاختبار كاملاً من الخادم بدل مربّع تحميل يقفز إلى محتوى (CLS).
+    let list = seededShuffleTestQuestions(
+      TEST_BANK.filter((q) => q.level === level),
+      dailySeed(`level-test:${level}${quick ? ":quick" : ""}`),
+    );
+    // الوضع التكيفي: يبدأ بأسهل ثم يصعد، ويتكيف مع الأداء
+    // (يُستخدم في محاكاة Goethe — ترتيب حسب نوع المهارة وطول النص)
+    if (typeof window !== "undefined" && new URLSearchParams(window.location.search).get("adaptive") === "1") {
+      const bySkill = (skill: string) => list.filter((q) => q.skill === skill);
+      list = [...bySkill("wortschatz"), ...bySkill("grammatik"), ...bySkill("lesen"), ...bySkill("hören"), ...bySkill("schreiben")];
+    }
+    if (quick) {
+      // اختيار متوازن: 6 قواعد + 6 مفردات + 3 قراءة + 3 استماع + 2 كتابة = 20
+      const take = (skill: string, n: number) => list.filter((q) => q.skill === skill).slice(0, n);
+      list = [
+        ...take("grammatik", 6),
+        ...take("wortschatz", 6),
+        ...take("lesen", 3),
+        ...take("hören", 3),
+        ...take("schreiben", 2),
+      ];
+    }
+    return list;
+  }, [level, quick]);
 
   return (
     <TestRunner

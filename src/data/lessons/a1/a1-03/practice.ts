@@ -1,0 +1,141 @@
+/**
+ * a1-03 — بنك التمارين ونصائح الأخطاء (الجزء «practice»)
+ * فُصل من a1-03.ts في الدفعة 88 (سقف الحجم). القيم منقولة حرفياً.
+ */
+import type { Lesson } from "@/types/lesson";
+
+export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
+    {
+      id: "e1",
+      type: "multiple-choice",
+      instructionAr: "اختر أداة التعريف الصحيحة:",
+      questionDe: "___ Brot ist frisch.",
+      questionAr: "الخبز طازج.",
+      options: ["Das", "Der", "Die", "Ein"],
+      correctIndex: 0,
+      optionExplanations: [undefined, "لا — «der» أداة المذكر؛ و«Brot» محايد: «Das Brot ist frisch».", "لا — «die» للمؤنث أو للجمع؛ و«das Brot» محايد مفرد.", "لا — «Ein Brot» تنكير؛ والجملة تعرّف خبزاً بعينه فتحتاج «Das Brot»."],
+      explanation: "Brot محايد → Das Brot. (ein أداة تنكير وليست تعريفاً هنا).",
+      errorType: "article",
+    },
+    {
+      id: "e2",
+      type: "multiple-choice",
+      instructionAr: "اختر الصيغة الصحيحة في النصب:",
+      questionDe: "Ich esse ___ Apfel.",
+      questionAr: "آكل تفاحة.",
+      options: ["einen", "ein", "einer", "eine"],
+      correctIndex: 0,
+      optionExplanations: [undefined, "لا — «ein» صيغة الرفع؛ وبعد «esse» نصبٌ فالمطلوب «einen Apfel».", "لا — «einer» صيغة جرّ/إضافة؛ والمنصوب المذكر «einen Apfel».", "لا — «eine» للمؤنث؛ و«Apfel» مذكر: «Ich esse einen Apfel»."],
+      explanation: "بعد essen، المذكر ein→einen (نصب).",
+      errorType: "case",
+    },
+    {
+      id: "e3",
+      type: "matching",
+      instructionAr: "صل الطعام بجنسه (أداته):",
+      pairs: [
+        { left: "der Käse", right: "الجبن" },
+        { left: "die Milch", right: "الحليب" },
+        { left: "das Brot", right: "الخبز" },
+        { left: "die Banane", right: "الموزة" },
+      ],
+      explanation: "Käse مذكر، Milch مؤنث، Brot محايد، Banane مؤنث. احفظها مع الأداة!",
+      errorType: "gender",
+    },
+    {
+      id: "e4",
+      type: "word-ordering",
+      instructionAr: "رتّب الجملة (انتبه للنصب):",
+      tokens: ["Ich", "einen", "Kaffee", "trinke", "."],
+      correctSentence: "Ich trinke einen Kaffee.",
+      explanation: "Ich + trinke (V2) + einen Kaffee (نصب).",
+      errorType: "word-order",
+    },
+    {
+      id: "e5",
+      type: "error-correction",
+      instructionAr: "اختر التصحيح المناسب للجزء الخاطئ المعلّم:",
+      wrongSentence: "Ich habe ein Brot. Und ich esse der Käse.",
+      wrongWord: "der Käse",
+      correctWord: "den Käse",
+      options: ["den Käse", "der Käse", "das Käse", "ein Käse"],
+      explanation: "Käse مذكر؛ وفي هذا المثال يأتي مفعولاً به مع أداة التعريف، فتكون الصيغة den Käse.",
+      errorType: "case",
+    },
+    {
+      id: "e6",
+      type: "fill-blank",
+      instructionAr: "أكمل بـ habe/hast/hat:",
+      template: "Ich ___ Hunger. Du ___ Durst. Er ___ einen Kaffee.",
+      blanks: [
+        { correct: "habe", options: ["habe", "hast", "hat"] },
+        { correct: "hast", options: ["habe", "hast", "hat"] },
+        { correct: "hat", options: ["habe", "hast", "hat"] },
+      ],
+      explanation: "ich→habe، du→hast، er→hat. احفظ كل صيغة مع الضمير الذي يأتي معها.",
+      errorType: "conjugation",
+    },
+    {
+      id: "e7",
+      type: "transformation",
+      instructionAr: "حوّل السؤال إلى جواب:",
+      prompt: "Hast du Durst? → (أجب: نعم، أنا عطشان)",
+      acceptedAnswers: ["Ja, ich habe Durst."],
+      sampleAnswer: "Ja, ich habe Durst.",
+      explanation: "الجواب النموذجي: Ja, ich habe Durst.",
+      errorType: "grammar",
+    },
+    {
+      id: "e8",
+      type: "multiple-choice",
+      instructionAr: "اختر الترجمة الصحيحة:",
+      questionDe: "Ich habe Hunger.",
+      questionAr: "ما معنى الجملة؟",
+      options: ["أنا جائع", "أنا عطشان", "أنا متعب", "أنا سعيد"],
+      correctIndex: 0,
+      optionExplanations: [undefined, "لا — العطش «Durst»: «Ich habe Durst»؛ أما «Hunger» فجوع.", "لا — التعب «müde»: «Ich bin müde»؛ والجملة تقول «Ich habe Hunger».", "لا — السعادة «glücklich»: «Ich bin glücklich»؛ ولا علاقة لها بـ«Hunger»."],
+      explanation: "Hunger = جوع → Ich habe Hunger = أنا جائع.",
+      errorType: "vocabulary",
+    },
+    {
+      id: "e9",
+      type: "error-correction",
+      instructionAr: "اختر التصحيح المناسب للكلمة الخاطئة في الجملة:",
+      wrongSentence: "Ich bin Durst.",
+      wrongWord: "bin",
+      correctWord: "habe",
+      options: ["habe", "bin", "hast", "ist"],
+      explanation: "التعبير الألماني الشائع هو Ich habe Durst؛ ويمكن وصف الحال بصفة: Ich bin durstig.",
+      errorType: "grammar",
+    },
+    {
+      id: "e10",
+      type: "dictation",
+      instructionAr: "استمع إلى النطق الاصطناعي واكتب جملة الطلب في المقهى:",
+      audioText: "Ich hätte gern einen Tee.",
+      explanation: "Ich hätte gern einen Tee = أريد شاياً (بأدب). لاحظ النصب: einen Tee.",
+      errorType: "case",
+    },
+    {"id": "e11", "type": "fill-blank", "instructionAr": "أكمل بأداة التنكير المناسبة في Akkusativ:", "template": "Ich möchte ___ Kaffee und ___ Banane, bitte.", "blanks": [{"correct": "einen", "options": ["einen", "ein", "eine", "der"]}, {"correct": "eine", "options": ["eine", "einen", "ein", "die"]}], "explanation": "Kaffee مذكّر، فتأتي أداة التنكير einen في النصب. وBanane مؤنثة، فتأتي eine في النصب أيضاً؛ في هذا المثال تتغير أداة المذكر وحدها.", "errorType": "case"},
+    {"id": "e12", "type": "error-correction", "instructionAr": "صحّح الخطأ:", "wrongSentence": "Ich bin Hunger und ich möchte etwas essen.", "wrongWord": "bin", "correctWord": "habe", "options": ["habe", "hat", "bist", "sind"], "explanation": "التعبير الشائع هو Ich habe Hunger؛ ويمكن وصف الحال بصفة: Ich bin hungrig.", "errorType": "grammar"},
+    {"id": "e13", "type": "multiple-choice", "instructionAr": "أيّ جملة صحيحة نحوياً؟", "questionDe": "Welcher Satz ist korrekt?", "questionAr": "أيّ جملة صحيحة؟", "options": ["Er ist einen Lehrer", "Er ist ein Lehrer", "Er hat ein Lehrer", "Er ist eine Lehrer"], "correctIndex": 1, "explanation": "بعد sein الرابط يأتي الخبر الاسمي في الرفع: ein Lehrer. ويمكن قول Er ist Lehrer بلا أداة عند ذكر المهنة. أمّا einen Lehrer فيأتي مثلاً مفعولاً به في Er sieht einen Lehrer.", "optionExplanations": ["في معنى الهوية هنا يأتي الاسم الخبري في الرفع بعد sein: ein Lehrer، لا einen Lehrer.", undefined, "إذا كان المقصود «لديه معلّم» فنقول einen Lehrer؛ لذلك لا تصح هذه الصيغة.", "Lehrer مذكّر فلا تصحّ معه eine."], "errorType": "case"},
+    {"id": "e14", "type": "word-ordering", "instructionAr": "رتّب الكلمات:", "tokens": ["Wir", "haben", "heute", "keine", "Zeit", "."], "correctSentence": "Wir haben heute keine Zeit.", "explanation": "الفعل haben في المركز الثاني، ويأتي ظرف الزمان heute بعده، ثمّ عبارة keine Zeit في نهاية هذه الجملة. وZeit مؤنّثة، لذا تبقى صيغة النصب keine كما هي.", "errorType": "word-order"},
+    {"id": "e15", "type": "transformation", "instructionAr": "حوّل الجملة إلى النفي بأداة النفي المناسبة:", "prompt": "Ich habe einen Bruder.", "acceptedAnswers": ["Ich habe keinen Bruder."], "sampleAnswer": "Ich habe keinen Bruder.", "explanation": "في هذا النفي المحايد نستبدل einen بـkeinen؛ فBruder مذكر في Akkusativ. لا تعمم ذلك إلى كل العبارات الاسمية، إذ يعتمد استعمال nicht أو kein على تركيب العبارة والمعنى.", "errorType": "negation"},
+  ];
+
+export const fehlerUndTipps: NonNullable<Lesson["fehlerUndTipps"]> = {
+    mistakes: [
+      { wrong: "Ich esse ein Apfel.", right: "Ich esse einen Apfel.", whyAr: "حين يكون الاسم المذكر مفعولاً به في أمثلة هذا الدرس تتغير أداة التنكير في النصب: ein→einen." },
+      { wrong: "Ich bin Hunger.", right: "Ich habe Hunger.", whyAr: "الصيغة الألمانية الشائعة هي Ich habe Hunger؛ ويمكن وصف الحال بالصفة: Ich bin hungrig." },
+      { wrong: "die Brot", right: "das Brot", whyAr: "Brot محايد. احفظ الاسم مع أداة جنسه: das Brot، لا الاسم وحده." },
+    ],
+    eselsbruecken: [
+      "في جدول الأدوات هنا يتغير المذكر في Akkusativ: der→den وein→einen؛ وتبقى صور أدوات المؤنث والمحايد والجمع كما هي في هذا الجدول.",
+      "في بعض اللهجات العربية يقال «عندي جوع»؛ اربطها بالتعبير الألماني الشائع Ich habe Hunger، مع تذكّر أن التعبير يختلف بين اللغتين.",
+    ],
+    culturalNote: {
+      title: "Guten Appetit!",
+      content:
+        "تُستعمل عبارة Guten Appetit! لتمني وجبة شهية قبل الأكل، ويتغير تواترها بحسب الموقف. وبعد تناول طعام أعجبك يمكنك أن تقول: Das hat gut geschmeckt! هذه أمثلة لغوية، وليست قواعد تلزم جميع المتحدثين أو الموائد.",
+    },
+  };

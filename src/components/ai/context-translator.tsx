@@ -43,6 +43,7 @@ export function AiContextTranslator() {
       {(run) => (
         <div className="space-y-3">
           <textarea
+            aria-label="النص الألماني للترجمة"
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="الصق النص الألماني هنا…"

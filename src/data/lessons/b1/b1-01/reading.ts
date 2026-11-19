@@ -1,0 +1,95 @@
+/**
+ * b1-01 — نصّ القراءة الممتدّ (الجزء «reading»)
+ * فُصل في المرحلة 5. نصّ B1 عن التعليم والدراسة: Genitiv والجمل النسبية في سياق حقيقي.
+ */
+import type { ReadingText } from "@/types/lesson";
+
+export const readingB101: ReadingText = {
+  id: "read-b1-01",
+  titleDe: "Zwei häufige Wege nach der Schule",
+  titleAr: "طريقان شائعان بعد المدرسة",
+  textType: "artikel",
+  paragraphs: [
+    "In Deutschland gibt es nach der Schule verschiedene Wege in den Beruf. Zwei häufige Möglichkeiten sind die Ausbildung und das Studium. Bei einer dualen Ausbildung lernt man im Betrieb und in der Berufsschule; je nach Beruf dauert sie zwei bis dreieinhalb Jahre. Ein Studium an einer Hochschule führt oft zu einem Bachelorabschluss. Dauer und Aufbau unterscheiden sich je nach Fach und Hochschule.",
+    "Lena hat sich für eine duale Ausbildung bei einem Unternehmen entschieden. Ein Teil ihrer Ausbildung findet im Betrieb statt, den anderen Teil verbringt sie in der Berufsschule. „Ich bekomme eine Ausbildungsvergütung und sammle praktische Erfahrungen“, sagt sie. „Ein Vorteil ist für mich die Verbindung von Lernen und Arbeit.“ „Nach meinem Abschluss möchte ich mich bei einem Unternehmen bewerben.“ Ihre Schwester studiert Medizin und möchte später Ärztin werden. Beide Schwestern haben sich informiert und einen Weg gewählt, der zu ihren Interessen passt.",
+    "Welcher Weg ist besser? Das hängt von der Person und vom Ziel ab. Wer praktisch arbeiten möchte, kann eine Ausbildung in Betracht ziehen; für manche akademischen Berufe ist ein Studium erforderlich. Erfahrungen aus Praktika, Projekten oder Nebenjobs können bei einer späteren Bewerbung helfen. Welche Voraussetzungen gelten, hängt vom Beruf und vom Studiengang ab. Bei der Berufsberatung kann man Fragen zu den Zugangsvoraussetzungen stellen.",
+    "Wer sich früh informiert, kann eine passendere Entscheidung treffen. Die Berufsberatung der Agentur für Arbeit ist kostenlos. Manche Schulen laden ehemalige Schülerinnen und Schüler ein, die von ihren Erfahrungen berichten. Auch ein Gespräch mit einer Person, die den gewünschten Weg kennt, kann bei der Orientierung helfen. Es lohnt sich, verschiedene Informationsquellen zu nutzen und Fragen rechtzeitig zu stellen.",
+  ],
+  paragraphsAr: [
+    "في ألمانيا توجد طرق مختلفة بعد المدرسة تؤدي إلى المهنة. ومن الخيارات الشائعة التدريب المهني والدراسة الجامعية. في التدريب المزدوج يتعلم المرء في المؤسسة وفي المدرسة المهنية؛ وتتراوح مدته بحسب المهنة بين سنتين وثلاث سنوات ونصف. وتؤدي الدراسة في مؤسسة للتعليم العالي غالباً إلى شهادة بكالوريوس، لكن مدتها وبناءها يختلفان بحسب التخصص والمؤسسة.",
+    "اختارت لينا تدريباً مهنياً مزدوجاً في شركة. يقضي جزء من تدريبها في المؤسسة وجزءاً آخر في المدرسة المهنية. تقول: «أتقاضى أجراً تدريبياً وأكتسب خبرة عملية. وبعد حصولي على الشهادة أريد أن أتقدم للعمل في شركة». أما أختها فتدرس الطب وتريد أن تصبح طبيبة. وقد استعلمت الأختان واختارت كل واحدة منهما مساراً يناسب اهتماماتها.",
+    "أيّ الطريقين أفضل؟ يتوقف ذلك على الشخص والهدف. من يريد عملاً عملياً يمكنه التفكير في التدريب المهني؛ وبعض المهن الأكاديمية تتطلب دراسة جامعية. وقد تساعد الخبرة المكتسبة من التدريبات العملية والمشاريع والأعمال الجانبية في طلب التوظيف لاحقاً. وتختلف الشروط المطلوبة بحسب المهنة والتخصص الدراسي. وفي الإرشاد المهني يمكن طرح أسئلة عن شروط القبول.",
+    "من يستعلم مبكراً يستطيع اتخاذ قرار أنسب. والإرشاد المهني الذي تقدمه وكالة العمل الألمانية مجاني. وتدعو بعض المدارس طلاباً سابقين للحديث عن تجاربهم. كما يمكن للحديث مع شخص يعرف المسار الذي تهتم به أن يساعدك على الاسترشاد. ومن المفيد استخدام مصادر متنوعة وطرح الأسئلة في وقت مبكر.",
+  ],
+  glossary: [
+    { de: "die Ausbildung", ar: "التدريب المهني", noteAr: "مؤنّثة؛ وفي التدريب المزدوج يجمع المتدرّب بين التعلم في المؤسسة والمدرسة المهنية." },
+    { de: "das Studium", ar: "الدراسة الجامعية", noteAr: "محايد؛ والجمع die Studien بمعنى دراسات." },
+    { de: "der Betrieb", ar: "المؤسسة، الشركة", noteAr: "مذكّر؛ وقد تُستعمل أيضاً بمعنى التشغيل والحركة." },
+    { de: "der Vorteil", ar: "الميزة", noteAr: "مذكّر؛ وعكسها der Nachteil (العيب)." },
+    { de: "der Abschluss", ar: "الشهادة، الإنهاء", noteAr: "مذكّر؛ ومنه abschließen (يُنهي، يُبرم)." },
+    { de: "sich entscheiden", ar: "يقرّر", noteAr: "فعل انعكاسي مع für: sich für etwas entscheiden — ich entscheide mich für eine Ausbildung." },
+    { de: "das Praktikum", ar: "التدريب العملي", noteAr: "محايد؛ والجمع die Praktika (يوناني الأصل)." },
+    { de: "die Bewerbung", ar: "طلب التوظيف، الترشّح", noteAr: "مؤنّثة؛ ومنه sich bewerben um/bei (يتقدّم بطلب إلى)." },
+    { de: "die Berufsberatung", ar: "الإرشاد المهني", noteAr: "مركّب مؤنّث: der Beruf + die Beratung." },
+    { de: "die Erfahrung", ar: "الخبرة", noteAr: "مؤنّثة؛ والجمع die Erfahrungen." },
+  ],
+  questions: [
+    {
+      id: "rq1",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Wo findet die duale Ausbildung statt?",
+      options: ["Nur in einer Universität", "Im Betrieb und in der Berufsschule", "Nur zu Hause", "In einer Sprachschule und im Ausland"],
+      correctIndex: 1,
+      optionExplanations: ["لا — النص يقول: «Bei einer dualen Ausbildung lernt man im Betrieb und in der Berufsschule»؛ لا الجامعة وحدها.", undefined, "لا — ورد حرفياً: «im Betrieb und in der Berufsschule»؛ وليس في البيت.", "لا — التدريب المزدوج يجري «im Betrieb und in der Berufsschule»؛ ولا يذكر النص مدرسة لغة أو الخارج."],
+      explanation: "الفقرة 1: يجري التدريب المزدوج في المؤسسة والمدرسة المهنية.",
+      paragraph: 1,
+      errorType: "comprehension",
+    },
+    {
+      id: "rq2",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was bekommt Lena während ihrer Ausbildung?",
+      options: ["Eine Ausbildungsvergütung", "Ein Stipendium für ein Studium", "Einen Lohn für einen Nebenjob", "Eine kostenlose Wohnung"],
+      correctIndex: 0,
+      optionExplanations: [undefined, "لا — تقول لينا: «Ich bekomme eine Ausbildungsvergütung und sammle praktische Erfahrungen»؛ ولا تذكر منحة Studium.", "لا — وصفت لينا التدريب بقولها: «Ich bekomme eine Ausbildungsvergütung»؛ ولم تذكر Nebenjob.", "لا — ما ذكرته لينا هو «eine Ausbildungsvergütung» و«praktische Erfahrungen»؛ لا eine kostenlose Wohnung."],
+      explanation: "الفقرة 2: تقول لينا إنها تتقاضى أجراً تدريبياً وتكتسب خبرة عملية.",
+      paragraph: 2,
+      errorType: "comprehension",
+    },
+    {
+      id: "rq3",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was kann laut Text bei einer späteren Bewerbung helfen?",
+      options: ["Ein langes Studium an der Universität", "Erfahrungen aus Praktika und Projekten", "Ein Nebenjob im Ausland für ein Jahr", "Eine Empfehlung von der alten Schule"],
+      correctIndex: 1,
+      optionExplanations: ["لا — النص يقول: «Erfahrungen aus Praktika, Projekten oder Nebenjobs können bei einer späteren Bewerbung helfen»؛ ولا يشترط دراسة طويلة.", undefined, "لا — النص يذكر «Praktika, Projekten oder Nebenjobs» من دون اشتراط Ausland.", "لا — الدليل هو «Erfahrungen aus Praktika, Projekten oder Nebenjobs»؛ ولا يذكر النص Empfehlung من المدرسة."],
+      explanation: "الفقرة 3: يمكن أن تساعد خبرات Praktika وProjekte وNebenjobs في طلب التوظيف لاحقاً.",
+      paragraph: 3,
+      errorType: "comprehension",
+    },
+    {
+      id: "rq4",
+      type: "multiple-choice",
+      instructionAr: "اختر الجواب الصحيح حسب النصّ:",
+      questionDe: "Was empfiehlt der Text am Ende?",
+      options: ["Nur im Internet nach Informationen zu lesen", "Sofort zu studieren ohne Erfahrung", "Zu warten, bis die Schule von selbst hilft", "Mit Menschen zu sprechen, die den Weg kennen"],
+      correctIndex: 3,
+      optionExplanations: ["لا — يقول النص: «Es lohnt sich, verschiedene Informationsquellen zu nutzen»؛ أي لا يقتصر على الإنترنت.", "لا — ينصح النص: «Wer sich früh informiert, kann eine passendere Entscheidung treffen»؛ لا البدء فوراً بلا خبرة.", "لا — يوصي النص بأن «Fragen rechtzeitig zu stellen»؛ ولا ينصح بانتظار المدرسة.", undefined],
+      explanation: "الفقرة 4: يذكر النص أن الحديث مع شخص يعرف المسار قد يساعد في الاسترشاد، إلى جانب استخدام مصادر متنوعة.",
+      paragraph: 4,
+      errorType: "comprehension",
+    },
+  ],
+  redemittel: [
+    { de: "Ich habe mich für eine Ausbildung entschieden.", ar: "قرّرتُ أن أسلك التدريب المهني." },
+    { de: "Der Vorteil ist … / Der Nachteil ist …", ar: "الميزة هي … / العيب هو …" },
+    { de: "Das hängt von der Person und vom Ziel ab.", ar: "هذا يتوقف على الشخص والهدف." },
+    { de: "Ich sammle Erfahrungen während des Studiums.", ar: "أجمع خبرات خلال الدراسة." },
+    { de: "Wer sich früh informiert, kann eine passendere Entscheidung treffen.", ar: "من يستعلم مبكراً يستطيع اتخاذ قرار أنسب." },
+  ],
+  discussionAr:
+    "أيّ الطريقين أقرب إلى وضعك: التدريب المهني أم الدراسة الجامعية؟ اكتب أربعة أسطر تشرح اختيارك، واستعمل فيه تركيب Genitiv مرّة على الأقل (مثل «Der Vorteil der Ausbildung …») وجملة نسبية مرّة على الأقل (مثل «… , der/die …»)، ثم اذكر خطوة واحدة ستبدأ بها هذا الشهر لتعرف أكثر عن الطريق الذي تريده.",
+};

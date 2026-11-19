@@ -4,9 +4,9 @@ import {HoerenClient} from "@/components/hoeren/hoeren-client";
 import {TOTAL_HOEREN} from "@/data/hoeren/library";
 
 export const metadata: Metadata = {
-  title: "مكتبة الاستماع — بأسلوب Goethe B2",
+  title: "مكتبة الاستماع الألماني — تدريبات B1/B2",
   description:
-    "تدريب الاستماع بأنواع غوته الرسمية الأربعة: إعلان إذاعي، رسالة هاتفية، مقابلة، ومحاضرة — استمع والنص مخفي ثم أجب كما في الامتحان.",
+    "نصوص وتمارين استماع ألمانية مع إخفاء النص وإمكان تكرار التشغيل. تصنيف الأنشطة من إعداد المنصة ولا يمثل بنكاً رسمياً أو محاكاة لامتحان Goethe.",
 };
 
 export default function HoerenPage() {
@@ -17,9 +17,7 @@ export default function HoerenPage() {
           مكتبة الاستماع (Hörverstehen)
         </h1>
         <p className="mt-2 max-w-2xl text-balance text-muted-foreground">
-          {TOTAL_HOEREN} نصوصاً سمعية بأسلوب امتحان Goethe B2 — منهجية مثل الامتحان تماماً:
-          <span className="font-bold"> استمع والنص مخفي، ثم أجب، ثم كشف النص.</span> يمكنك
-          الاستماع مرتين وبسرعتين.
+          {TOTAL_HOEREN} مادة استماع تدريبية من إعداد المنصة. استمع والنص مخفي، ثم أجب واكشف النص للمراجعة؛ يمكنك تكرار الاستماع وتعديل السرعة. هذه المواد ليست محاكاة رسمية لامتحان.
         </p>
       </div>
       <HoerenClient />

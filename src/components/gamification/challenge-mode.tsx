@@ -5,7 +5,6 @@ import {Zap} from "lucide-react";
 
 import {ExerciseRenderer} from "@/components/lesson/exercises/exercise-renderer";
 import {Button} from "@/components/ui/button";
-;
 import {Progress} from "@/components/ui/progress";
 import {recordEvent} from "@/lib/analytics/events";
 import {sample} from "@/lib/lesson/shuffle";
@@ -77,7 +76,10 @@ export function ChallengeMode() {
   const [questions, setQuestions] = React.useState<Exercise[]>([]);
   const [index, setIndex] = React.useState(0);
   const [score, setScore] = React.useState(0);
-  const [round, setRound] = React.useState(0);
+
+  /* الجولة الحادية عشرة (4.1.3): كان انتقال السؤال عند انتهاء العشر ثوانٍ
+     يحدث بصمت — تتبدّل البطاقة وحدها. نصّ الإعلان هنا يُقرأ مرة عند كل انتهاء. */
+  const [expiredNotice, setExpiredNotice] = React.useState("");
 
   const remaining = useCountdown(phase === "running" ? SECONDS_PER_QUESTION : 0, () => {
     // انتهاء وقت السؤال → التالي بلا نقاط — ونُسجّل خطأً صريحاً (P1-01)
@@ -85,6 +87,7 @@ export function ChallengeMode() {
     if (currentQ) {
       void recordEvent({ type: "exercise-result", exerciseId: currentQ.id, exerciseType: currentQ.type, correct: false, points: 0, errorType: currentQ.errorType, timedOut: true } as never);
     }
+    setExpiredNotice(`انتهى وقت السؤال ${index + 1} — انتقلنا إلى السؤال التالي بلا نقاط.`);
     advance();
   });
 
@@ -124,7 +127,7 @@ export function ChallengeMode() {
     return (
       <div className="rounded-2xl border bg-muted/20 p-8 text-center">
         <Zap className="mx-auto h-12 w-12 text-gold-strong" aria-hidden="true" />
-        <h3 className="mt-4 text-xl font-extrabold">وضع التحدي الزمني ⚡</h3>
+        <h2 className="mt-4 text-xl font-extrabold">وضع التحدي الزمني ⚡</h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
           {QUESTIONS} أسئلة × {SECONDS_PER_QUESTION} ثانية لكل سؤال —
           أجب بأسرع ما يمكن: كل ثانية متبقية = {BONUS_PER_SECOND} نقاط إضافية!
@@ -141,6 +144,10 @@ export function ChallengeMode() {
     const maxScore = QUESTIONS * 10 + QUESTIONS * SECONDS_PER_QUESTION * BONUS_PER_SECOND;
     return (
       <div className="rounded-2xl border bg-muted/20 p-8 text-center">
+        {/* نهاية التحدي كانت تبدّل الشاشة بصمت. role=status يُعلن النتيجة مرة. */}
+        <p role="status" aria-live="polite" className="sr-only">
+          انتهى التحدي — نتيجتك {score} نقطة.
+        </p>
         <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-full bg-gold/10">
           <Zap className="h-8 w-8 text-gold-strong" aria-hidden="true" />
         </span>
@@ -162,14 +169,19 @@ export function ChallengeMode() {
   const current = questions[index];
 
   return (
-    <div key={round} className="space-y-4">
+    <div className="space-y-4">
       <div className="flex items-center justify-between rounded-xl border bg-muted/30 p-3">
         <p className="text-sm font-bold">
           سؤال {index + 1}/{QUESTIONS}
         </p>
         <span className="font-de text-sm font-bold text-primary">⭐ {score}</span>
-        <span className="font-de rounded-lg border border-gold/50 bg-gold/10 px-3 py-1 text-sm font-bold text-gold-strong-foreground tabular-nums">
-          ⏱ {formatTime(remaining)}
+        <span
+          role="timer"
+          aria-label={`الوقت المتبقي لهذا السؤال: ${formatTime(remaining)}`}
+          className="font-de rounded-lg border border-gold/50 bg-gold/10 px-3 py-1 text-sm font-bold text-gold-strong-foreground tabular-nums"
+        >
+          <span aria-hidden="true">⏱ </span>
+          {formatTime(remaining)}
         </span>
       </div>
       <Progress value={((index + 1) / QUESTIONS) * 100} aria-label="التقدم في التحدي" />
@@ -177,11 +189,15 @@ export function ChallengeMode() {
         <ExerciseRenderer
           key={`${current.id}-${index}`}
           exercise={current}
+          sourceId="gamification:challenge"
           onResult={(r) => onResult(r.isCorrect, current)}
         />
       )}
       <p className="text-center text-xs text-muted-foreground">
         ⚡ كلما أجبت أسرع، زادت نقاطك — التحدي يختبر سرعتك ودقتك معاً!
+      </p>
+      <p role="status" aria-live="polite" className="sr-only">
+        {expiredNotice}
       </p>
     </div>
   );

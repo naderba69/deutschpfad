@@ -244,7 +244,10 @@ export function SpeakAndScore({ target, compact }: { target: string; compact?: b
 
       {/* رسالة الخطأ — كانت تُبتلع سابقاً، الآن تظهر بوضوح */}
       {error && !listening && !result && (
-        <span className="inline-flex max-w-72 items-start gap-1 rounded-lg border border-destructive/30 bg-destructive/5 px-2 py-1 text-[11px] font-medium leading-snug text-destructive">
+        <span
+          role="alert"
+          className="inline-flex max-w-72 items-start gap-1 rounded-lg border border-destructive/30 bg-destructive/5 px-2 py-1 text-[11px] font-medium leading-snug text-destructive"
+        >
           <CircleAlert className="mt-0.5 h-3 w-3 shrink-0" aria-hidden="true" />
           {error}
         </span>
@@ -267,11 +270,11 @@ export function SpeakAndScore({ target, compact }: { target: string; compact?: b
               {result.score}%
             </span>
             {result.score >= 80 ? (
-              <span className="inline-flex items-center gap-1 font-bold"><CheckCircle2 className="h-3 w-3" /> مطابقة نصية عالية للتفريغ</span>
+              <span className="inline-flex items-center gap-1 font-bold"><CheckCircle2 className="h-3 w-3" aria-hidden="true" /> مطابقة نصية عالية للتفريغ</span>
             ) : result.score >= 50 ? (
-              <span className="inline-flex items-center gap-1 font-bold"><CircleAlert className="h-3 w-3" /> مطابقة نصية جزئية — قارن النصين</span>
+              <span className="inline-flex items-center gap-1 font-bold"><CircleAlert className="h-3 w-3" aria-hidden="true" /> مطابقة نصية جزئية — قارن النصين</span>
             ) : (
-              <span className="inline-flex items-center gap-1 font-bold"><XCircle className="h-3 w-3" /> التفريغ يختلف عن الهدف — تحقق من التعرف</span>
+              <span className="inline-flex items-center gap-1 font-bold"><XCircle className="h-3 w-3" aria-hidden="true" /> التفريغ يختلف عن الهدف — تحقق من التعرف</span>
             )}
           </div>
 
@@ -283,7 +286,7 @@ export function SpeakAndScore({ target, compact }: { target: string; compact?: b
                   {seg.text}
                 </span>
               ))}
-              <span className="ms-1.5 text-[9px] text-muted-foreground">
+              <span className="ms-1.5 text-[11px] text-muted-foreground">
                 <span className="text-success">■ مطابق نصياً</span> <span className="text-destructive">■ اختلف نصياً</span>
               </span>
             </p>
@@ -311,6 +314,7 @@ export function SpeakAndScore({ target, compact }: { target: string; compact?: b
           {compact ? (
             <button
               type="button"
+              aria-expanded={openFallback}
               onClick={() => setOpenFallback((v) => !v)}
               className="inline-flex items-center gap-1 rounded-full border border-gold/40 bg-gold/10 px-2 py-1 text-[11px] font-bold text-gold-strong transition-colors hover:bg-gold/15"
             >

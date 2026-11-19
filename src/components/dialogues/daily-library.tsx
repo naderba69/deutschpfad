@@ -9,7 +9,7 @@ import {getLearnerProfile} from "@/lib/storage/learner";
 import {DAILY_DIALOGUES, DIALOGUE_LEVEL_COUNTS, DIALOGUE_LEVEL_ORDER, getDialoguesByLevel, type DailyDialogue} from "@/data/dialogues";
 import type { LevelCode } from "@/types/curriculum";
 
-/** مكتبة الحوارات اليومية المتدرجة — 60 حواراً */
+/** مكتبة الحوارات اليومية المتدرجة — 64 حواراً */
 export function DailyLibrary() {
   const [current, setCurrent] = React.useState<DailyDialogue | null>(null);
   const [suggested, setSuggested] = React.useState<LevelCode | null>(null);
@@ -74,7 +74,7 @@ export function DailyLibrary() {
                     </span>
                   </div>
                   <h3 className="mt-2 text-sm font-extrabold group-hover:text-primary">{d.title}</h3>
-                  <p className="font-de mt-0.5 text-xs font-bold text-muted-foreground" dir="ltr">{d.titleDe}</p>
+                  <p className="font-de mt-0.5 text-xs font-bold text-muted-foreground" dir="ltr" lang="de">{d.titleDe}</p>
                   <p className="mt-1.5 text-[11px] leading-relaxed text-muted-foreground">{d.situation}</p>
                 </button>
               ))}

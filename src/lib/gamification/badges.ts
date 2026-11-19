@@ -1,11 +1,8 @@
-;
-import {getEventStats} from "@/lib/analytics/events";
+import {getEventStatsResult} from "@/lib/analytics/events";
 import {getCardStats} from "@/lib/srs/flashcard-service";
-;
-;
 import {getRecentTestResults} from "@/lib/storage/test-results-store";
 import {getRecord, putRecord} from "@/lib/storage/db";
-import type { LevelCode } from "@/types/curriculum";
+import type {EventStats} from "@/types/analytics";
 
 /**
  * نظام الشارات — تعريف + فحص الإنجازات من البيانات
@@ -38,6 +35,11 @@ async function saveUnlocked(ids: string[]): Promise<void> {
   await putRecord("settings", UNLOCKED_KEY, ids);
 }
 
+async function eventStatCheck(select: (stats: EventStats) => boolean): Promise<boolean> {
+  const result = await getEventStatsResult();
+  return result.ok ? select(result.stats) : false;
+}
+
 /** تعريفات الشارات — الشروط من البيانات الحقيقية */
 export const BADGES: BadgeDef[] = [
   {
@@ -46,7 +48,7 @@ export const BADGES: BadgeDef[] = [
     description: "أكملت أول درس في رحلتك",
     emoji: "🚶",
     category: "first",
-    check: async () => (await getEventStats()).lessonsCompleted >= 1,
+    check: async () => eventStatCheck((stats) => stats.lessonsCompleted >= 1),
   },
   {
     id: "first-test",
@@ -62,7 +64,7 @@ export const BADGES: BadgeDef[] = [
     description: "أول مراجعة بطاقات",
     emoji: "🔁",
     category: "first",
-    check: async () => (await getEventStats()).reviewsCount >= 1,
+    check: async () => eventStatCheck((stats) => stats.reviewsCount >= 1),
   },
   {
     id: "xp-100",
@@ -70,7 +72,7 @@ export const BADGES: BadgeDef[] = [
     description: "جمعت 100 نقطة خبرة",
     emoji: "⭐",
     category: "progress",
-    check: async () => (await getEventStats()).xp >= 100,
+    check: async () => eventStatCheck((stats) => stats.xp >= 100),
   },
   {
     id: "xp-500",
@@ -78,7 +80,7 @@ export const BADGES: BadgeDef[] = [
     description: "جمعت 500 نقطة خبرة",
     emoji: "🌟",
     category: "progress",
-    check: async () => (await getEventStats()).xp >= 500,
+    check: async () => eventStatCheck((stats) => stats.xp >= 500),
   },
   {
     id: "exercises-50",
@@ -86,7 +88,7 @@ export const BADGES: BadgeDef[] = [
     description: "حللت 50 تمريناً",
     emoji: "⚙️",
     category: "progress",
-    check: async () => (await getEventStats()).exercisesAnswered >= 50,
+    check: async () => eventStatCheck((stats) => stats.exercisesAnswered >= 50),
   },
   {
     id: "cards-50",
@@ -110,7 +112,7 @@ export const BADGES: BadgeDef[] = [
     description: "دقة 80%+ في التمارين",
     emoji: "🎯",
     category: "skill",
-    check: async () => (await getEventStats()).accuracyPct >= 80,
+    check: async () => eventStatCheck((stats) => stats.accuracyPct >= 80),
   },
   {
     id: "pronunciation-90",
@@ -118,7 +120,7 @@ export const BADGES: BadgeDef[] = [
     description: "تقييم نطق 90%+",
     emoji: "🎤",
     category: "skill",
-    check: async () => (await getEventStats()).pronunciationAvg !== null && (await getEventStats()).pronunciationAvg! >= 90,
+    check: async () => eventStatCheck((stats) => stats.pronunciationAvg !== null && stats.pronunciationAvg >= 90),
   },
   {
     id: "test-pass",
@@ -145,7 +147,7 @@ export const BADGES: BadgeDef[] = [
 ];
 
 /** شارة مستوى محقق (تُفحص خارجياً) */
-export const LEVEL_BADGES: { id: string; level: number; name: string; emoji: string }[] = [
+const LEVEL_BADGES: { id: string; level: number; name: string; emoji: string }[] = [
   { id: "level-5", level: 5, name: "متوسط متعلم", emoji: "🥉" },
   { id: "level-10", level: 10, name: "متقدم", emoji: "🥈" },
   { id: "level-15", level: 15, name: "خبير", emoji: "🥇" },
@@ -157,13 +159,15 @@ export async function refreshBadges(extraChecks?: Record<string, boolean>): Prom
   const newly: string[] = [];
 
   // شارات المستوى
-  const xpStats = await getEventStats();
-  for (const lb of LEVEL_BADGES) {
-    if (unlocked.has(lb.id)) continue;
-    const level = Math.max(1, Math.floor(xpStats.xp / 100) + 1);
-    if (level >= lb.level) {
-      unlocked.add(lb.id);
-      newly.push(lb.id);
+  const xpStats = await getEventStatsResult();
+  if (xpStats.ok) {
+    for (const lb of LEVEL_BADGES) {
+      if (unlocked.has(lb.id)) continue;
+      const level = Math.max(1, Math.floor(xpStats.stats.xp / 100) + 1);
+      if (level >= lb.level) {
+        unlocked.add(lb.id);
+        newly.push(lb.id);
+      }
     }
   }
 

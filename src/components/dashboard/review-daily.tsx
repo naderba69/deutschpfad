@@ -8,7 +8,7 @@ import {ExerciseRenderer} from "@/components/lesson/exercises/exercise-renderer"
 import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {getDueCards} from "@/lib/srs/flashcard-service";
-import {sample} from "@/lib/lesson/shuffle";
+import {dailySeed, seededSample} from "@/lib/lesson/shuffle";
 import type { Exercise } from "@/types/lesson";
 
 /** بنك مراجعة سريع من تمارين المستويات (يُبنى من دروس المنصة) */
@@ -69,16 +69,16 @@ const REVIEW_EXERCISES: Exercise[] = [
 export function ReviewDaily() {
   const [dueCount, setDueCount] = React.useState(0);
   const [refreshKey, setRefreshKey] = React.useState(0);
-  // ═══ إصلاح hydration: sample عشوائي في أول رندر → أُجّل إلى useEffect ═══
-  const [batch, setBatch] = React.useState<typeof REVIEW_EXERCISES>([]);
+  // خلط حتمي ببذرة يومية: العيّنة العشوائية في أول تصيير كانت تُؤجَّل إلى
+  // `useEffect` لتفادي عدم تطابق الهيدرشن، فيصل HTML ببطاقة تمارين فارغة ثم
+  // تنمو 149→278px بعد التحميل (CLS 0.19 في /dashboard/review).
+  const [batch] = React.useState<typeof REVIEW_EXERCISES>(() =>
+    seededSample(REVIEW_EXERCISES, 3, dailySeed("review-daily")),
+  );
 
   React.useEffect(() => {
     void getDueCards().then((c) => setDueCount(c.length));
   }, [refreshKey]);
-
-  React.useEffect(() => {
-    setBatch(sample(REVIEW_EXERCISES, 3));
-  }, []);
 
   return (
     <div className="space-y-6">
@@ -117,7 +117,7 @@ export function ReviewDaily() {
             ثلاثة أسئلة من مستويات مختلفة — خلط (Interleaving) يقوي الذاكرة.
           </p>
           {batch.map((ex) => (
-            <ExerciseRenderer key={ex.id} exercise={ex} />
+            <ExerciseRenderer key={ex.id} exercise={ex} sourceId="dashboard:review-daily" />
           ))}
         </CardContent>
       </Card>

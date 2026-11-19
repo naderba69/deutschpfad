@@ -1,58 +1,73 @@
 import {configuredProviders, type ProviderName} from "@/lib/llm/server/config";
 import {callGemini, callGroq, callOpenRouter, LLMProviderError} from "@/lib/llm/server/providers";
-import type { LLMMessage } from "@/types/llm";
-
-/**
- * التراجع التلقائي (Fallback) بين المزودين:
- * Gemini → Groq → OpenRouter
- * — إعادة محاولة بانتظار مضاعف (Exponential Backoff) عند 429/5xx
- * — الانتقال للمزوّد التالي فوراً عند فشل دائم (مفتاح خاطئ مثلاً)
- */
+import type {LLMMessage} from "@/types/llm";
 
 export interface FallbackResult {
   content: string;
   provider: ProviderName;
 }
 
-const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
+function throwIfAborted(signal: AbortSignal): void {
+  if (signal.aborted) throw signal.reason ?? new DOMException("تم إلغاء الطلب", "AbortError");
+}
 
-/** استدعاء مزوّد محدد حسب اسمه */
+function sleep(ms: number, signal: AbortSignal): Promise<void> {
+  throwIfAborted(signal);
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(done, ms);
+    function cleanup() {
+      clearTimeout(timer);
+      signal.removeEventListener("abort", onAbort);
+    }
+    function done() {
+      cleanup();
+      resolve();
+    }
+    function onAbort() {
+      cleanup();
+      reject(signal.reason ?? new DOMException("تم إلغاء الطلب", "AbortError"));
+    }
+    signal.addEventListener("abort", onAbort, {once: true});
+  });
+}
+
 async function callProvider(
   name: ProviderName,
   messages: LLMMessage[],
-  opts: { maxTokens?: number; temperature?: number },
+  opts: {maxTokens?: number; temperature?: number},
+  signal: AbortSignal,
 ): Promise<string> {
-  if (name === "gemini") return callGemini(messages, opts);
-  if (name === "groq") return callGroq(messages, opts);
-  return callOpenRouter(messages, opts);
+  if (name === "gemini") return callGemini(messages, opts, signal);
+  if (name === "groq") return callGroq(messages, opts, signal);
+  return callOpenRouter(messages, opts, signal);
 }
 
-/** إعادة محاولة مع backoff مضاعف (1s, 2s, 4s) */
 async function withBackoff<T>(
   fn: () => Promise<T>,
-  attempts = 3,
-  baseDelayMs = 1000,
+  attempts: number,
+  baseDelayMs: number,
+  signal: AbortSignal,
 ): Promise<T> {
   let lastError: unknown;
   for (let attempt = 0; attempt < attempts; attempt++) {
+    throwIfAborted(signal);
     try {
       return await fn();
     } catch (err) {
+      if (signal.aborted) throw signal.reason ?? err;
       lastError = err;
       const retriable = err instanceof LLMProviderError ? err.retriable : true;
-      if (!retriable) throw err; // فشل دائم → انتقل للمزوّد التالي فوراً
-      if (attempt < attempts - 1) {
-        await sleep(baseDelayMs * 2 ** attempt);
-      }
+      if (!retriable) throw err;
+      if (attempt < attempts - 1) await sleep(baseDelayMs * 2 ** attempt, signal);
     }
   }
   throw lastError instanceof Error ? lastError : new Error("فشل الاستدعاء بعد المحاولات");
 }
 
-/** توليد رد عبر أول مزوّد متاح يعمل */
 export async function generateWithFallback(
   messages: LLMMessage[],
-  opts: { maxTokens?: number; temperature?: number } = {},
+  opts: {maxTokens?: number; temperature?: number} = {},
+  signal: AbortSignal = new AbortController().signal,
 ): Promise<FallbackResult> {
   const order = configuredProviders();
   if (order.length === 0) {
@@ -61,12 +76,19 @@ export async function generateWithFallback(
 
   let lastError: unknown = null;
   for (const name of order) {
+    throwIfAborted(signal);
     try {
-      const content = await withBackoff(() => callProvider(name, messages, opts));
-      return { content, provider: name };
+      const content = await withBackoff(
+        () => callProvider(name, messages, opts, signal),
+        3,
+        1000,
+        signal,
+      );
+      return {content, provider: name};
     } catch (err) {
+      if (signal.aborted) throw signal.reason ?? err;
       lastError = err;
-      await sleep(350); // فاصل بسيط قبل المحاولة على المزوّد التالي
+      await sleep(350, signal);
     }
   }
 

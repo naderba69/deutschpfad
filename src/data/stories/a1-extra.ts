@@ -30,10 +30,10 @@ const A1_9: InteractiveStory = {
     {
       id: 4,
       de: "Sie essen auch einen Kuchen. Der Kuchen schmeckt sehr gut.",
-      ar: "يأكلان أيضاً قطعة كعك. الكعك لذيذ جداً.",
+      ar: "يأكلان أيضاً كعكةً. الكعكة لذيذة جداً.",
       question: {
-        de: "Was möchte Tim?",
-        ar: "ماذا يريد تيم؟",
+        de: "Was möchte Tim trinken?",
+        ar: "ماذا يريد تيم أن يشرب؟",
         options: [
           { text: "Einen Kaffee", ar: "قهوة", correct: true, explanation: "صحيح — «Ich möchte einen Kaffee» = أريد قهوة." },
           { text: "Einen Tee", ar: "شاياً", correct: false, explanation: "لا — الشاي من نصيب بيا وليس تيم." },
@@ -100,15 +100,15 @@ const A1_11: InteractiveStory = {
     { id: 1, de: "Morgen hat Saras Mutter Geburtstag. Sara möchte ein Geschenk kaufen.", ar: "غداً عيد ميلاد والدة سارة. تريد سارة شراء هدية." },
     {
       id: 2,
-      de: "Sie sieht eine schöne rote Tasche. Sie kostet 25 Euro.",
-      ar: "ترى حقيبة حمراء جميلة. تكلف 25 يورو.",
+      de: "Sie sieht eine Tasche. Die Tasche ist rot und schön. Sie kostet 25 Euro.",
+      ar: "ترى حقيبة. الحقيبة حمراء وجميلة. تكلف 25 يورو.",
       question: {
         de: "Was sieht Sara?",
         ar: "ماذا ترى سارة؟",
         options: [
-          { text: "Eine rote Tasche", ar: "حقيبة حمراء", correct: true, explanation: "نعم — «eine schöne rote Tasche» = حقيبة حمراء جميلة." },
-          { text: "Einen blauen Schal", ar: "وشاحاً أزرق", correct: false, explanation: "لا — الوشاح الأزرق غير موجود في القصة." },
-          { text: "Eine gelbe Jacke", ar: "سترة صفراء", correct: false, explanation: "لا — الحقيبة حمراء وليست سترة صفراء." },
+          { text: "Eine Tasche", ar: "حقيبة", correct: true, explanation: "نعم — النص يقول «Sie sieht eine Tasche»." },
+          { text: "Einen Schal", ar: "وشاحاً", correct: false, explanation: "لا — الوشاح غير موجود في القصة." },
+          { text: "Eine Jacke", ar: "سترة", correct: false, explanation: "لا — النص يذكر حقيبة لا سترة." },
         ],
       },
     },
@@ -217,4 +217,133 @@ const A1_13: InteractiveStory = {
   ],
 };
 
-export const A1_EXTRA_STORIES: InteractiveStory[] = [A1_9, A1_10, A1_11, A1_12, A1_13];
+const A1_14: InteractiveStory = {
+  id: "a1-zoo-tag",
+  level: "A1",
+  title: "Im Zoo",
+  titleAr: "في حديقة الحيوان",
+  emoji: "🦁",
+  description: "سارة وعائلتها في حديقة الحيوان — الحيوانات والألوان.",
+  grammar: "أسماء الحيوانات • الألوان • sein",
+  segments: [
+    { id: 1, de: "Sara geht mit ihrer Familie in den Zoo.", ar: "تذهب سارة مع عائلتها إلى حديقة الحيوان." },
+    {
+      id: 2,
+      de: "Sie sehen einen großen Löwen. Der Löwe ist braun.",
+      ar: "يرون أسداً كبيراً. الأسد بني اللون.",
+      question: {
+        de: "Welche Farbe hat der Löwe?",
+        ar: "ما لون الأسد؟",
+        options: [
+          { text: "Braun", ar: "بني", correct: true, explanation: "نعم — «Der Löwe ist braun»." },
+          { text: "Schwarz", ar: "أسود", correct: false, explanation: "لا — الأسد بني اللون في القصة." },
+          { text: "Weiß", ar: "أبيض", correct: false, explanation: "لا — لا يوجد حيوان أبيض في القصة." },
+        ],
+      },
+    },
+    { id: 3, de: "Die Affen klettern auf den Bäumen. Sie sind lustig.", ar: "القرود تتسلق الأشجار. إنها مضحكة." },
+    {
+      id: 4,
+      de: "Sara gibt den Elefanten Äpfel. Die Elefanten sind groß und grau.",
+      ar: "تعطي سارة الأفيال تفاحاً. الأفيال كبيرة ورمادية.",
+      question: {
+        de: "Was gibt Sara den Elefanten?",
+        ar: "ماذا تعطي سارة الأفيال؟",
+        options: [
+          { text: "Äpfel", ar: "تفاحاً", correct: true, explanation: "صحيح — «Sara gibt den Elefanten Äpfel»." },
+          { text: "Bananen", ar: "موزاً", correct: false, explanation: "لا — سارة تعطي التفاح لا الموز." },
+          { text: "Brot", ar: "خبزاً", correct: false, explanation: "لا — الخبز لم يُذكر في القصة." },
+        ],
+      },
+    },
+    { id: 5, de: "Am Abend sind alle müde, aber sehr glücklich. Ende.", ar: "في المساء الجميع متعبون لكن سعداء جداً. النهاية." },
+  ],
+};
+
+const A1_15: InteractiveStory = {
+  id: "a1-mein-geburtstag",
+  level: "A1",
+  title: "Mein Geburtstag",
+  titleAr: "عيد ميلادي",
+  emoji: "🎂",
+  description: "ليلى تحتفل بعيد ميلادها — الأرقام والأصدقاء.",
+  grammar: "الأعداد • الأصدقاء • الاحتفال",
+  segments: [
+    { id: 1, de: "Heute ist Lailas Geburtstag. Sie wird zehn Jahre alt.", ar: "اليوم عيد ميلاد ليلى. ستبلغ عشر سنوات." },
+    {
+      id: 2,
+      de: "Ihre Freunde kommen mit Geschenken. Sie singen ein Lied.",
+      ar: "يأتي أصدقاؤها بالهدايا. يغنون أغنية.",
+      question: {
+        de: "Wie alt wird Laila?",
+        ar: "كم عمر ليلى؟",
+        options: [
+          { text: "Zehn Jahre", ar: "عشر سنوات", correct: true, explanation: "نعم — «Sie wird zehn Jahre alt»." },
+          { text: "Fünf Jahre", ar: "خمس سنوات", correct: false, explanation: "لا — ليلى تبلغ عشر سنوات." },
+          { text: "Zwölf Jahre", ar: "اثنتي عشرة سنة", correct: false, explanation: "لا — العدد في القصة هو عشرة." },
+        ],
+      },
+    },
+    { id: 3, de: "Es gibt eine große Torte mit zehn Kerzen.", ar: "توجد كعكة كبيرة عليها عشر شموع." },
+    {
+      id: 4,
+      de: "Laila pustet die Kerzen aus. Alle klatschen und lachen.",
+      ar: "تنفخ ليلى الشموع. يصفق الجميع ويضحكون.",
+      question: {
+        de: "Was macht Laila mit den Kerzen?",
+        ar: "ماذا تفعل ليلى بالشموع؟",
+        options: [
+          { text: "Sie pustet sie aus", ar: "تنفخها", correct: true, explanation: "صحيح — «Laila pustet die Kerzen aus»." },
+          { text: "Sie isst sie", ar: "تأكلها", correct: false, explanation: "لا — ليلى تنفخ الشموع لا تأكلها." },
+          { text: "Sie kauft sie", ar: "تشتريها", correct: false, explanation: "لا — الشموع على الكعكة أصلاً." },
+        ],
+      },
+    },
+    { id: 5, de: "Die Party ist toll! Laila ist sehr glücklich. Ende.", ar: "الحفلة رائعة! ليلى سعيدة جداً. النهاية." },
+  ],
+};
+
+const A1_16: InteractiveStory = {
+  id: "a1-spielplatz",
+  level: "A1",
+  title: "Auf dem Spielplatz",
+  titleAr: "في ساحة اللعب",
+  emoji: "🛝",
+  description: "حكاية تدريبية خيالية عن عائلة في ساحة اللعب؛ أسماء وأحداث مخترعة.",
+  grammar: "المضارع البسيط • الأنشطة اليومية",
+  segments: [
+    { id: 1, de: "Heute ist Samstag. Familie Yilmaz geht auf den Spielplatz.", ar: "اليوم السبت. عائلة يلماز تذهب إلى ساحة اللعب." },
+    { id: 2, de: "Die Kinder spielen mit dem Ball. Die Eltern sitzen auf einer Bank.", ar: "الأطفال يلعبون بالكرة. الوالدان يجلسان على مقعد." },
+    {
+      id: 3,
+      de: "Die Sonne scheint. Es ist warm und schön.",
+      ar: "الشمس مشرقة. الجو دافئ وجميل.",
+      question: {
+        de: "Was machen die Kinder?",
+        ar: "ماذا يفعل الأطفال؟",
+        options: [
+          { text: "Sie spielen mit dem Ball", ar: "يلعبون بالكرة", correct: true, explanation: "صحيح — «Die Kinder spielen mit dem Ball»." },
+          { text: "Sie schlafen", ar: "ينامون", correct: false, explanation: "لا — الأطفال يلعبون لا ينامون." },
+          { text: "Sie lesen ein Buch", ar: "يقرؤون كتاباً", correct: false, explanation: "لا — الأم تقرأ كتاباً لا الأطفال." },
+        ],
+      },
+    },
+    {
+      id: 4,
+      de: "Der Vater trinkt Wasser. Die Mutter liest ein Buch.",
+      ar: "الأب يشرب الماء. الأم تقرأ كتاباً.",
+      question: {
+        de: "Was macht die Mutter?",
+        ar: "ماذا تفعل الأم؟",
+        options: [
+          { text: "Sie liest ein Buch", ar: "تقرأ كتاباً", correct: true, explanation: "صحيح — «Die Mutter liest ein Buch»." },
+          { text: "Sie spielt Fußball", ar: "تلعب كرة القدم", correct: false, explanation: "لا — الأطفال يلعبون بالكرة." },
+          { text: "Sie kocht", ar: "تطبخ", correct: false, explanation: "لا — الأم تقرأ كتاباً." },
+        ],
+      },
+    },
+    { id: 5, de: "Alle sind glücklich. Der Tag ist schön! Ende.", ar: "الجميع سعداء. اليوم جميل! النهاية." },
+  ],
+};
+
+export const A1_EXTRA_STORIES: InteractiveStory[] = [A1_9, A1_10, A1_11, A1_12, A1_13, A1_14, A1_15, A1_16];

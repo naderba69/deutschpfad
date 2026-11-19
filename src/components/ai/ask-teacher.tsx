@@ -6,6 +6,7 @@ import {GraduationCap, MessageCircleQuestion} from "lucide-react";
 import {AiToolShell} from "@/components/ai/ai-tool-shell";
 import {useLLM} from "@/components/providers/llm-provider";
 import {askTeacherPrompt, cefrAssessmentPrompt} from "@/lib/llm/prompts";
+import {useRadioGroupNav} from "@/lib/use-radio-group-nav";
 
 const LEVELS = ["A1", "A2", "B1", "B2"];
 
@@ -16,6 +17,7 @@ export function AiAskTeacher() {
   const { callLLM } = useLLM();
   const [question, setQuestion] = React.useState("");
   const [level, setLevel] = React.useState("A2");
+  const navLevel = useRadioGroupNav();
   const [result, setResult] = React.useState("");
 
   const generate = async () => {
@@ -46,6 +48,7 @@ export function AiAskTeacher() {
       {(run) => (
         <div className="space-y-3">
           <textarea
+            aria-label="سؤالك للمعلّم"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
             placeholder="اكتب سؤالك… (مثال: ما الفرق بين weil وdenn؟ متى أستخدم Konjunktiv II؟)"
@@ -53,12 +56,13 @@ export function AiAskTeacher() {
             className="w-full rounded-xl border border-input bg-background p-3 text-sm outline-none placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-ring"
           />
           <div className="flex items-center gap-2">
-            <div className="flex flex-wrap gap-1" role="radiogroup" aria-label="المستوى">
+            <div className="flex flex-wrap gap-1" role="radiogroup" aria-label="المستوى" {...navLevel}>
               {LEVELS.map((l) => (
                 <button
                   key={l}
                   type="button"
                   onClick={() => setLevel(l)}
+                  aria-pressed={level === l}
                   className={
                     level === l
                       ? "font-de rounded-lg bg-primary px-2.5 py-1 text-xs font-bold text-primary-foreground"
@@ -120,6 +124,7 @@ export function AiCefrAssessment() {
       {(run) => (
         <div className="space-y-3">
           <textarea
+            aria-label="النص الألماني للشرح"
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="اكتب فقرة حرة بالألمانية (5 جمل على الأقل)…"

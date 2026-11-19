@@ -28,11 +28,12 @@ export function GoetheLocalClient() {
   return (
     <div className="space-y-5">
       {/* اختيار نوع المهمة */}
-      <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="نوع المهمة">
+      <div className="flex flex-wrap gap-1.5" role="group" aria-label="نوع المهمة">
         {TASK_TYPES.map((t) => (
           <button
             key={t.id}
             type="button"
+            aria-pressed={taskType === t.id}
             onClick={() => setTaskType(t.id)}
             className={cn(
               "rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
@@ -99,14 +100,16 @@ export function GoetheLocalClient() {
               </p>
             </div>
             <div className="text-center">
-              <p className="font-de text-4xl font-extrabold text-primary">{result.pct}%</p>
-              <p className="font-de text-xs font-bold text-muted-foreground" dir="ltr" lang="de">
-                {result.verdict}
-              </p>
+              <p className="font-de text-3xl font-extrabold text-primary">{result.pct}%</p>
+              <p className="text-[11px] font-bold text-muted-foreground">مؤشر آلي داخلي</p>
             </div>
           </div>
 
-          {/* المعايير الأربعة */}
+          <p className="rounded-lg bg-muted/40 p-2 text-xs leading-relaxed text-muted-foreground">
+            الفحص يعتمد على مؤشرات شكلية وقواعد آلية محدودة؛ لا يتحقق من جودة النص أو إنجاز المهمة ولا يمثل درجة Goethe أو CEFR.
+          </p>
+
+          {/* مؤشرات شكلية آلية */}
           <div className="space-y-3">
             {result.scores.map((s, i) => (
               <div key={i} className="rounded-xl border bg-background p-3">

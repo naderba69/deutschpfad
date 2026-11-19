@@ -1,16 +1,19 @@
 /**
  * خلط خيارات أسئلة الاختبارات مع إعادة تعيين فهرس الإجابة الصحيحة.
  *
- * لماذا؟ بنوك أسئلة الاختبارات مكتوبة بالإجابة الصحيحة في الموضع الأول
- * (correctIndex: 0) في كل الأسئلة تقريباً. ولأن مُصحِّح الاختبار يقارن
- * الفهارس (answer === q.correctIndex)، كان بإمكان المتعلّم اختيار الخيار
- * الأول دائماً فيحصل على 100% ويفتح المستوى التالي دون معرفة حقيقية.
+ * لماذا؟ بنوك أسئلة الاختبارات كُتبت بالإجابة الصحيحة في الموضع الأول
+ * (correctIndex: 0) في كل الأسئلة — قياس 2026-10-16: **171/171 (100%)** — ولأن
+ * مُصحِّح الاختبار يقارن الفهارس (answer === q.correctIndex)، كان بإمكان
+ * المتعلّم اختيار الخيار الأول دائماً فيحصل على 100% ويفتح المستوى التالي.
+ * (وبعد الإصلاح صار البنك نفسه مُوازَناً في `balanceTestBank`، وهذا الخلط
+ * طبقة ثانية — والمحرّكات الثلاثة كلها تستدعيه الآن: level-test ·
+ * weekly-test · placement-diagnostic.)
  *
  * الحل: خلط الخيارات عند بناء الجلسة، مع نقل correctIndex إلى الموضع
  * الجديد للنص الصحيح — فيبقى التصحيح بالفهرس سليماً دون تغيير المُصحِّح.
  */
 
-import { shuffle } from "@/lib/lesson/shuffle";
+import { seededShuffle, shuffle } from "@/lib/lesson/shuffle";
 import type { TestQuestion } from "@/types/test";
 
 /** خلط قائمة خيارات وإرجاعها مع الفهرس الجديد للإجابة الصحيحة */
@@ -86,4 +89,55 @@ export function shuffleTrapItem<T extends ChoiceItem & { trap: number }>(item: T
     correct: shuffled.indexOf(correctText),
     trap: shuffled.indexOf(trapText),
   };
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * نسخ حتمية (بذرة) من الخلط — للاستخدام في التصيير الأول.
+ *
+ * الخلط العشوائي في التصيير الأول يجعل HTML الخادم يخالف العميل، ولذلك كانت
+ * صفحات الاختبارات تُحمَّل بـ `ssr: false`، فيظهر HTML بمربّع تحميل ثم يستبدل
+ * بمحتوى كامل بعد الهيدرشن — انزياح تخطيط مقيس 0.75 في /tests و0.29–0.31 في
+ * /tests/level/*. الخلط بالبذرة اليومية يُبقي التنويع ويجعل الخادم والعميل
+ * يصيران الشيء نفسه، فيُصيَّر المحتوى كاملاً من الخادم.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/** خلط خيارات سؤال ببذرة (نفس `shuffleOptions` لكن حتمي) */
+export function seededShuffleOptions(
+  options: readonly string[],
+  correctIndex: number,
+  seed: string,
+): { options: string[]; correctIndex: number } {
+  if (options.length < 2 || correctIndex < 0 || correctIndex >= options.length) {
+    return { options: [...options], correctIndex };
+  }
+  const correctText = options[correctIndex];
+  const shuffled = seededShuffle(options, seed);
+  const newIndex = shuffled.indexOf(correctText);
+  return { options: shuffled, correctIndex: newIndex >= 0 ? newIndex : correctIndex };
+}
+
+/** خلط سؤال واحد ببذرة (بما فيه الأسئلة الفرعية) */
+export function seededShuffleTestQuestion(q: TestQuestion, seed: string): TestQuestion {
+  const next: TestQuestion = { ...q };
+  if (next.options && next.options.length > 1 && typeof next.correctIndex === "number") {
+    const r = seededShuffleOptions(next.options, next.correctIndex, `${seed}:${q.id}`);
+    next.options = r.options;
+    next.correctIndex = r.correctIndex;
+  }
+  if (next.questions && next.questions.length > 0) {
+    next.questions = next.questions.map((sub, i) => {
+      if (!sub.options || sub.options.length < 2) return { ...sub };
+      const r = seededShuffleOptions(sub.options, sub.correct, `${seed}:${q.id}:${i}`);
+      return { ...sub, options: r.options, correct: r.correctIndex };
+    });
+  }
+  return next;
+}
+
+/** خلط خيارات مجموعة أسئلة ببذرة، والحفاظ على ترتيب الأسئلة نفسها */
+export function seededShuffleTestQuestions(
+  questions: readonly TestQuestion[],
+  seed: string,
+): TestQuestion[] {
+  return questions.map((q) => seededShuffleTestQuestion(q, seed));
 }

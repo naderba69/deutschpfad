@@ -18,7 +18,7 @@ export const A2_LESEN: ExamLesenTeil[] = [
     kind: "mcq",
     introAr: "اقرأ الرسائل. لكل سؤال اختر الجواب الصحيح من بين 3 خيارات.",
     text:
-      "(a) Liebe Sara, ich habe leider die Verabredung vergessen. Können wir morgen um drei treffen? Lars\n" +
+      "(a) Liebe Sara, ich habe leider die Verabredung vergessen. Können wir uns morgen um drei treffen? Lars\n" +
       "(b) Hallo Familie Müller, am Samstag feiern wir Opas Geburtstag. Bitte bringt einen Salat mit! Jana\n" +
       "(c) Achtung Kunden: Die Bibliothek ist wegen Renovierung bis Ende März geschlossen.",
     questions: [
@@ -34,7 +34,7 @@ export const A2_LESEN: ExamLesenTeil[] = [
         id: "a2l1-q2",
         q: "Was sollen die Gäste zur Feier mitbringen?",
         qAr: "ماذا يجب أن يحضر الضيوف إلى الحفل؟",
-        options: ["Kuchen", "Einen Salat", "Blumen"],
+        options: ["Kuchen und Kekse", "Einen frischen Salat", "Blumen und eine Karte"],
         correct: 1,
         whyAr: "في (b): bringt einen Salat mit.",
       },
@@ -63,8 +63,8 @@ export const A2_LESEN: ExamLesenTeil[] = [
       "Miete: 780 Euro warm, Kaution drei Monatsmieten. Die Wohnung ist ab 1. Juli frei.\n" +
       "Haustiere sind nicht erlaubt. Besichtigung nur nach Terminvereinbarung unter 0221-5550.",
     statements: [
-      { id: "a2l2-s1", de: "Die Wohnung hat einen Aufzug.", ar: "في الشقة مصعد.", isTrue: true, whyAr: "قيل: zweiter Stock mit Aufzug." },
-      { id: "a2l2-s2", de: "Die Miete kostet 780 Euro ohne Nebenkosten.", ar: "الإيجار 780 يورو دون التكاليف الإضافية.", isTrue: false, whyAr: "قيل: 780 Euro warm، أي شامل التكاليف." },
+      { id: "a2l2-s1", de: "Das Haus hat einen Aufzug.", ar: "في المبنى مصعد.", isTrue: true, whyAr: "قيل: zweiter Stock mit Aufzug؛ أي إن المبنى مزوّد بمصعد." },
+      { id: "a2l2-s2", de: "Die Miete kostet 780 Euro ohne Nebenkosten.", ar: "الإيجار 780 يورو دون التكاليف الإضافية.", isTrue: false, whyAr: "قيل: 780 Euro warm؛ أي مع التكاليف المشمولة عادةً في الإيجار، لا من دونها. ويُرجع إلى تفاصيل العرض لمعرفة البنود المشمولة." },
       { id: "a2l2-s3", de: "Man kann die Wohnung sofort besichtigen.", ar: "يمكن معاينة الشقة فوراً.", isTrue: false, whyAr: "قيل: Besichtigung nur nach Terminvereinbarung، أي بموعد مسبق." },
       { id: "a2l2-s4", de: "Mit einem Hund darf man einziehen.", ar: "يُسمح بالسكن مع كلب.", isTrue: false, whyAr: "قيل: Haustiere sind nicht erlaubt." },
     ],
@@ -97,7 +97,7 @@ export const A2_LESEN: ExamLesenTeil[] = [
         id: "a2l3-q2",
         q: "Wie war der Anfang?",
         qAr: "كيف كانت البداية؟",
-        options: ["Sehr leicht", "Schwierig, mit vielen Fehlern", "Langweilig"],
+        options: ["Sehr leicht und gut erklärt", "Schwierig, mit vielen Fehlern", "Langweilig und ohne Beispiele"],
         correct: 1,
         whyAr: "قال: habe ich viele Fehler gemacht.",
       },
@@ -105,7 +105,7 @@ export const A2_LESEN: ExamLesenTeil[] = [
         id: "a2l3-q3",
         q: "Was empfiehlt die Person?",
         qAr: "ماذا يوصي الشخص؟",
-        options: ["Zu Hause zu lernen", "Einen Kurs im Ausland zu besuchen", "Ein Buch zu kaufen"],
+        options: ["Zu Hause allein zu lernen", "Einen Kurs im Ausland zu besuchen", "Ein Buch über das Land zu kaufen"],
         correct: 1,
         whyAr: "قال: ich empfehle jedem, im Ausland einen Kurs zu besuchen.",
       },

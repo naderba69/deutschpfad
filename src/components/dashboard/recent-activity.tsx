@@ -5,7 +5,7 @@ import Link from "next/link";
 import {CheckCircle2, FileQuestion, Headphones, History, Mic, Repeat, Trophy} from "lucide-react";
 
 import {Card, CardContent} from "@/components/ui/card";
-import {getRecentEvents} from "@/lib/analytics/events";
+import {getRecentEventsResult} from "@/lib/analytics/events";
 import {LESSON_META} from "@/data/lessons/meta";
 import {cn} from "@/lib/utils";
 
@@ -27,12 +27,17 @@ const ACTIVITY_META: Record<string, { label: string; icon: React.ElementType; cl
 
 export function RecentActivity() {
   const [items, setItems] = React.useState<{ ts: number; label: string; icon: React.ElementType; cls: string; href?: string }[]>([]);
+  const [readError, setReadError] = React.useState(false);
 
   React.useEffect(() => {
     void (async () => {
       try {
-        const events = await getRecentEvents(200);
-        const mapped = events
+        const result = await getRecentEventsResult(200);
+        if (!result.ok) {
+          setReadError(true);
+          return;
+        }
+        const mapped = result.events
           .filter((e) => e.type in ACTIVITY_META)
           .slice(0, 5)
           .map((e) => {
@@ -51,6 +56,7 @@ export function RecentActivity() {
     })();
   }, []);
 
+  if (readError) return <div role="alert" className="rounded-xl border border-destructive/30 bg-destructive/5 p-4 text-sm">تعذرت قراءة سجل النشاط الأخير.</div>;
   if (items.length === 0) return null;
 
   const timeAgo = (ts: number) => {

@@ -8,7 +8,7 @@ const B1_8: InteractiveStory = {
   title: "Der Sprachkurs",
   titleAr: "دورة اللغة",
   emoji: "📚",
-  description: "أحمد يتعلم الألمانية في دورة — التقدم والجمل الثانوية.",
+  description: "قصة تدريبية خيالية عن أحمد في دورة ألمانية — التقدم والجمل الثانوية.",
   grammar: "الجمل الثانوية (dass, weil) • التقدم • الأهداف",
   segments: [
     { id: 1, de: "Ahmed besucht einen Deutschkurs, weil er in Deutschland arbeiten möchte.", ar: "يحضر أحمد دورة ألمانية لأنه يريد العمل في ألمانيا." },
@@ -29,8 +29,8 @@ const B1_8: InteractiveStory = {
     },
     {
       id: 4,
-      de: "Nach drei Monaten kann er sich gut verständigen.",
-      ar: "بعد ثلاثة أشهر يستطيع التواصل جيداً.",
+      de: "Nach drei Monaten merkt er, dass ihm kurze Alltagsgespräche leichter fallen.",
+      ar: "بعد ثلاثة أشهر يلاحظ أن المحادثات اليومية القصيرة أصبحت أسهل عليه.",
       question: {
         de: "Was sagt der Lehrer über Ahmed?",
         ar: "ماذا يقول المعلم عن أحمد؟",
@@ -51,8 +51,8 @@ const B1_9: InteractiveStory = {
   title: "Der Fußballverein",
   titleAr: "نادي كرة القدم",
   emoji: "⚽",
-  description: "يوسف ينضم لنادٍ رياضي — العمل التطوعي والاندماج.",
-  grammar: "العمل التطوعي • الاندماج • منذ (seit)",
+  description: "قصة تدريبية خيالية عن يوسف الذي ينضم إلى نادٍ لكرة القدم؛ لا تصف شخصاً أو تجربة موثقة.",
+  grammar: "الانضمام إلى نادٍ • منذ (seit) • obwohl",
   segments: [
     { id: 1, de: "Seit einem Monat ist Yusuf Mitglied in einem Fußballverein.", ar: "منذ شهر ويوسف عضو في نادٍ لكرة القدم." },
     { id: 2, de: "Er trainiert zweimal pro Woche, obwohl er anfangs müde war.", ar: "يتدرب مرتين أسبوعياً رغم أنه كان متعباً في البداية." },
@@ -94,7 +94,7 @@ const B1_10: InteractiveStory = {
   title: "Das Familienfest",
   titleAr: "احتفال العائلة",
   emoji: "🎉",
-  description: "احتفال عائلي كبير — التقاليد والروابط الزمنية.",
+  description: "قصة تدريبية خيالية عن احتفال عائلي غير منسوب إلى ثقافة بعينها — التقاليد والروابط الزمنية.",
   grammar: "الروابط الزمنية (bevor, nachdem) • التقاليد",
   segments: [
     { id: 1, de: "Bevor das Familienfest begann, haben alle beim Kochen geholfen.", ar: "قبل أن يبدأ الاحتفال العائلي، ساعد الجميع في الطبخ." },
@@ -137,10 +137,10 @@ const B1_11: InteractiveStory = {
   title: "Der Umzug ins Büro",
   titleAr: "نقل المكتب",
   emoji: "🏢",
-  description: "شركة تنقل مكاتبها — التنظيم والعمل الجماعي.",
+  description: "قصة تدريبية خيالية عن انتقال شركة إلى مبنى جديد؛ للتدرّب على التنظيم والعمل الجماعي، وليست تقريراً عن شركة حقيقية.",
   grammar: "المبني للمجهول (wurde, wird) • العمل الجماعي",
   segments: [
-    { id: 1, de: "Die Firma zieht in ein neues Gebäude. Alles wird umgezogen.", ar: "تنتقل الشركة إلى مبنى جديد. كل شيء يُنقل." },
+    { id: 1, de: "Die Firma zieht in ein neues Gebäude. Alles wird transportiert.", ar: "تنتقل الشركة إلى مبنى جديد. تُنقل الأغراض كلها." },
     { id: 2, de: "Am Montag wurden die Computer und Schreibtische transportiert.", ar: "يوم الاثنين نُقلت الحواسيب والمكاتب." },
     {
       id: 3,
@@ -174,4 +174,133 @@ const B1_11: InteractiveStory = {
   ],
 };
 
-export const B1_EXTRA_STORIES: InteractiveStory[] = [B1_8, B1_9, B1_10, B1_11];
+const B1_12: InteractiveStory = {
+  id: "b1-krankenhaus",
+  level: "B1",
+  title: "Im Krankenhaus",
+  titleAr: "في المستشفى",
+  emoji: "🏥",
+  description: "قصة تدريبية عن زيارة المستشفى — الماضي والجمل الثانوية.",
+  grammar: "الماضي (Perfekt) • الجمل الثانوية • الأعراض",
+  segments: [
+    { id: 1, de: "Fatma hatte seit zwei Tagen Fieber und starke Kopfschmerzen.", ar: "كانت فاطمة تعاني من حمى وصداع شديد منذ يومين." },
+    { id: 2, de: "Ihr Mann brachte sie ins Krankenhaus, weil es ihr immer schlechter ging.", ar: "أخذها زوجها إلى المستشفى لأن حالتها ازدادت سوءاً." },
+    {
+      id: 3,
+      de: "Der Arzt untersuchte sie und sagte, dass sie eine Grippe habe.",
+      ar: "فحصها الطبيب وقال إنها مصابة بالإنفلونزا.",
+      question: {
+        de: "Was hat Fatma?",
+        ar: "ما الذي تعاني منه فاطمة؟",
+        options: [
+          { text: "Eine Grippe", ar: "إنفلونزا", correct: true, explanation: "نعم — «Der Arzt sagte, dass sie eine Grippe habe»." },
+          { text: "Eine Erkältung", ar: "زكاماً", correct: false, explanation: "لا — الطبيب شخص الإنفلونزا لا الزكام." },
+          { text: "Zahnschmerzen", ar: "ألم أسنان", correct: false, explanation: "لا — الأعراض حمى وصداع." },
+        ],
+      },
+    },
+    {
+      id: 4,
+      de: "Er verschrieb ihr Medikamente und sagte, dass sie viel trinken solle.",
+      ar: "وصف لها أدوية وقال إنها يجب أن تشرب كثيراً.",
+      question: {
+        de: "Was soll Fatma tun?",
+        ar: "ماذا يجب أن تفعل فاطمة؟",
+        options: [
+          { text: "Viel trinken", ar: "تشرب كثيراً", correct: true, explanation: "صحيح — «dass sie viel trinken solle»." },
+          { text: "Sport machen", ar: "تمارس الرياضة", correct: false, explanation: "لا — المريضة تحتاج راحة لا رياضة." },
+          { text: "Arbeiten gehen", ar: "تذهب للعمل", correct: false, explanation: "لا — يجب أن تبقى في البيت." },
+        ],
+      },
+    },
+    { id: 5, de: "Nach einer Woche war Fatma wieder gesund. Ende.", ar: "بعد أسبوع عادت فاطمة سليمة. النهاية." },
+  ],
+};
+
+const B1_13: InteractiveStory = {
+  id: "b1-umzug",
+  level: "B1",
+  title: "Der Umzug",
+  titleAr: "الانتقال إلى بيت جديد",
+  emoji: "📦",
+  description: "عائلة تنتقل إلى شقة أكبر — المستقبل والخطط.",
+  grammar: "المستقبل (werden) • الخطط • الترتيب",
+  segments: [
+    { id: 1, de: "Die Familie Yilmaz wird nächsten Monat in eine größere Wohnung umziehen.", ar: "ستنتقل عائلة يلماز الشهر المقبل إلى شقة أكبر." },
+    { id: 2, de: "Sie haben schon einen Transporter gemietet, weil sie viele Möbel haben.", ar: "لقد استأجروا شاحنة نقل لأن عندهم أثاثاً كثيراً." },
+    {
+      id: 3,
+      de: "Am Samstag werden die Freunde helfen, weil der Umzug anstrengend ist.",
+      ar: "يوم السبت سيساعد الأصدقاء لأن الانتقال مرهق.",
+      question: {
+        de: "Wann wird die Familie umziehen?",
+        ar: "متى ستنتقل العائلة؟",
+        options: [
+          { text: "Nächsten Monat", ar: "الشهر المقبل", correct: true, explanation: "نعم — «nächsten Monat» في الجملة الأولى." },
+          { text: "Heute", ar: "اليوم", correct: false, explanation: "لا — الانتقال الشهر المقبل." },
+          { text: "Letztes Jahr", ar: "السنة الماضية", correct: false, explanation: "لا — الانتقال في المستقبل." },
+        ],
+      },
+    },
+    {
+      id: 4,
+      de: "Die Kinder freuen sich auf das neue Zimmer, weil es größer ist.",
+      ar: "الأطفال سعداء بالغرفة الجديدة لأنها أكبر.",
+      question: {
+        de: "Warum freuen sich die Kinder?",
+        ar: "لماذا الأطفال سعداء؟",
+        options: [
+          { text: "Das Zimmer ist größer", ar: "الغرفة أكبر", correct: true, explanation: "صحيح — «weil es größer ist»." },
+          { text: "Sie bleiben zu Hause", ar: "سيبقون في البيت", correct: false, explanation: "لا — سينتقلون إلى بيت جديد." },
+          { text: "Es gibt kein Zimmer", ar: "لا توجد غرفة", correct: false, explanation: "لا — الغرفة الجديدة أكبر." },
+        ],
+      },
+    },
+    { id: 5, de: "Am Abend werden sie in der neuen Wohnung essen. Ende.", ar: "في المساء سيأكلون في الشقة الجديدة. النهاية." },
+  ],
+};
+
+const B1_14: InteractiveStory = {
+  id: "b1-urlaubsplanung",
+  level: "B1",
+  title: "Urlaubsplanung",
+  titleAr: "التخطيط للعطلة",
+  emoji: "🏖️",
+  description: "حكاية تدريبية خيالية عن تخطيط عطلة عائلية؛ أسماء وأحداث مخترعة.",
+  grammar: "المستقبل والخطط • جمل السبب (weil)",
+  segments: [
+    { id: 1, de: "Familie Nasser plant ihren Urlaub für den Sommer.", ar: "تخطط عائلة ناصر لعطلتها الصيفية." },
+    { id: 2, de: "Sie möchten ans Meer fahren, weil die Kinder schwimmen möchten.", ar: "يريدون الذهاب إلى البحر لأن الأطفال يريدون السباحة." },
+    {
+      id: 3,
+      de: "Der Vater hat ein Ferienhaus am Meer gebucht. Es kostet 900 Euro.",
+      ar: "حجز الأب بيت عطلة على البحر. ثمنه 900 يورو.",
+      question: {
+        de: "Was hat der Vater gebucht?",
+        ar: "ماذا حجز الأب؟",
+        options: [
+          { text: "Ein Ferienhaus am Meer", ar: "بيت عطلة على البحر", correct: true, explanation: "صحيح — «Der Vater hat ein Ferienhaus am Meer gebucht»." },
+          { text: "Ein Flugzeug", ar: "طائرة", correct: false, explanation: "لا — حجز بيت عطلة لا طائرة." },
+          { text: "Ein Auto", ar: "سيارة", correct: false, explanation: "لا — حجز بيت عطلة." },
+        ],
+      },
+    },
+    {
+      id: 4,
+      de: "Die Mutter sagt, dass sie im August fahren werden, weil das Wetter dann am besten ist.",
+      ar: "تقول الأم إنهم سيذهبون في أغسطس لأن الطقس يكون الأفضل حينها.",
+      question: {
+        de: "Wann werden sie fahren?",
+        ar: "متى سيذهبون؟",
+        options: [
+          { text: "Im August", ar: "في أغسطس", correct: true, explanation: "صحيح — «sie werden im August fahren»." },
+          { text: "Im Winter", ar: "في الشتاء", correct: false, explanation: "لا — سيذهبون في أغسطس." },
+          { text: "Heute", ar: "اليوم", correct: false, explanation: "لا — العطلة في الصيف." },
+        ],
+      },
+    },
+    { id: 5, de: "Alle freuen sich auf den Urlaub. Die Kinder können es kaum erwarten. Ende.", ar: "الجميع متحمسون للعطلة. الأطفال لا يستطيعون الانتظار. النهاية." },
+  ],
+};
+
+export const B1_EXTRA_STORIES: InteractiveStory[] = [B1_8, B1_9, B1_10, B1_11, B1_12, B1_13, B1_14];

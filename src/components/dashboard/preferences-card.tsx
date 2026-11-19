@@ -46,11 +46,12 @@ export function PreferencesCard() {
       <CardContent className="space-y-4 p-5">
         <div>
           <p className="mb-2 text-sm font-bold">هدفي من تعلم الألمانية</p>
-          <div className="grid grid-cols-2 gap-1.5" role="radiogroup" aria-label="هدف التعلم">
+          <div className="grid grid-cols-2 gap-1.5" role="group" aria-label="هدف التعلم">
             {(Object.keys(GOAL_LABELS) as LearningGoal[]).map((g) => (
               <button
                 key={g}
                 type="button"
+                aria-pressed={prefs.goal === g}
                 onClick={() => update({ goal: g })}
                 className={cn(
                   "flex items-center gap-2 rounded-lg border px-3 py-2 text-sm transition-colors",
@@ -67,11 +68,12 @@ export function PreferencesCard() {
 
         <div>
           <p className="mb-2 text-sm font-bold">الخطة الزمنية</p>
-          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="الخطة الزمنية">
+          <div className="flex flex-wrap gap-1.5" role="group" aria-label="الخطة الزمنية">
             {(Object.keys(PACE_LABELS) as StudyPace[]).map((p) => (
               <button
                 key={p}
                 type="button"
+                aria-pressed={prefs.pace === p}
                 onClick={() => update({ pace: p })}
                 className={cn(
                   "rounded-lg border px-3 py-1.5 text-sm transition-colors",

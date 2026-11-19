@@ -120,7 +120,7 @@ export function AusspracheSection({ focus }: { focus: PronunciationFocus }) {
           <div className="flex items-start gap-2 rounded-xl border border-gold/40 bg-gold/10 p-3 text-sm">
             <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-gold-foreground" aria-hidden="true" />
             <p>
-              <span className="font-bold">نصيحة الخبراء: </span>
+              <span className="font-bold">ملاحظة تدريبية: </span>
               {focus.tip}
             </p>
           </div>

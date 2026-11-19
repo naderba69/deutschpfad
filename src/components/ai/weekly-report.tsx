@@ -6,7 +6,7 @@ import {CalendarRange, Sparkles} from "lucide-react";
 import {AiToolShell} from "@/components/ai/ai-tool-shell";
 import {useLLM} from "@/components/providers/llm-provider";
 import {Button} from "@/components/ui/button";
-import {getEventStats} from "@/lib/analytics/events";
+import {getEventStatsResult} from "@/lib/analytics/events";
 import {weeklyReportPrompt} from "@/lib/llm/prompts";
 
 /**
@@ -17,7 +17,12 @@ export function AiWeeklyReport() {
   const [result, setResult] = React.useState("");
 
   const generate = async () => {
-    const stats = await getEventStats();
+    const statsResult = await getEventStatsResult();
+    if (!statsResult.ok) {
+      setResult("تعذر قراءة سجل النشاط؛ لم نرسل بيانات ناقصة إلى خدمة التقرير. أعد المحاولة لاحقاً.");
+      return;
+    }
+    const stats = statsResult.stats;
     const summary = [
       `تمارين محلولة: ${stats.exercisesAnswered} (صحيحة: ${stats.exercisesCorrect} — دقة ${stats.accuracyPct}%)`,
       `مقارنات التفريغ النصي بالهدف: ${stats.pronunciationScores.length} (متوسط تشابه تقريبي ${stats.pronunciationAvg ?? "—"}%)`,

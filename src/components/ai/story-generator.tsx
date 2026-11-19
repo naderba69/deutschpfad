@@ -6,6 +6,7 @@ import {BookHeart} from "lucide-react";
 import {AiToolShell} from "@/components/ai/ai-tool-shell";
 import {useLLM} from "@/components/providers/llm-provider";
 import {storyGeneratorPrompt} from "@/lib/llm/prompts";
+import {useRadioGroupNav} from "@/lib/use-radio-group-nav";
 
 const LEVELS = ["A1", "A2", "B1", "B2"];
 const LENGTHS = [
@@ -20,11 +21,20 @@ export function AiStoryGenerator() {
   const { callLLM } = useLLM();
   const [level, setLevel] = React.useState("A2");
   const [length, setLength] = React.useState(LENGTHS[0].id);
+  const navLevel = useRadioGroupNav();
+  const navLength = useRadioGroupNav();
   const [theme, setTheme] = React.useState("رحلة إلى برلين");
   const [result, setResult] = React.useState("");
 
   const generate = async () => {
-    const words = ["der Freund", "die Stadt", "das Café", "lernen", "gehen"].slice(0, 3 + level.length);
+    // مفردات متدرجة حسب المستوى (Comprehensible Input): كلما ارتفع المستوى أُضيفت مفردات أغنى
+    const LEVEL_WORDS: Record<string, string[]> = {
+      A1: ["der Freund", "die Stadt", "das Café"],
+      A2: ["der Freund", "die Stadt", "das Café", "lernen", "gehen"],
+      B1: ["der Freund", "die Stadt", "das Café", "lernen", "gehen", "die Reise", "das Wetter"],
+      B2: ["der Freund", "die Stadt", "das Café", "lernen", "gehen", "die Reise", "das Wetter", "die Entwicklung", "die Gesellschaft"],
+    };
+    const words = LEVEL_WORDS[level] ?? LEVEL_WORDS.A2;
     const p = storyGeneratorPrompt(level, words, length);
     const r = await callLLM({
       messages: [
@@ -51,12 +61,13 @@ export function AiStoryGenerator() {
     >
       {(run) => (
         <div className="space-y-3">
-          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="المستوى">
+          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="المستوى" {...navLevel}>
             {LEVELS.map((l) => (
               <button
                 key={l}
                 type="button"
                 onClick={() => setLevel(l)}
+                aria-pressed={level === l}
                 className={
                   level === l
                     ? "font-de rounded-lg bg-primary px-3 py-1 text-xs font-bold text-primary-foreground"
@@ -69,17 +80,19 @@ export function AiStoryGenerator() {
           </div>
           <input
             type="text"
+            aria-label="موضوع القصة"
             value={theme}
             onChange={(e) => setTheme(e.target.value)}
             placeholder="موضوع القصة (رحلة، عائلة، مدينة...)"
             className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring"
           />
-          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="الطول">
+          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="الطول" {...navLength}>
             {LENGTHS.map((l) => (
               <button
                 key={l.id}
                 type="button"
                 onClick={() => setLength(l.id)}
+                aria-pressed={length === l.id}
                 className={
                   length === l.id
                     ? "rounded-lg bg-primary px-3 py-1 text-xs font-bold text-primary-foreground"

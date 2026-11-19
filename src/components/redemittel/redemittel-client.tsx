@@ -30,6 +30,7 @@ export function RedemittelClient() {
       <div className="flex gap-2">
         <button
           type="button"
+          aria-pressed={tab === "redemittel"}
           onClick={() => setTab("redemittel")}
           className={cn(
             "rounded-lg border px-4 py-2 text-sm font-bold transition-colors",
@@ -40,6 +41,7 @@ export function RedemittelClient() {
         </button>
         <button
           type="button"
+          aria-pressed={tab === "kollokationen"}
           onClick={() => setTab("kollokationen")}
           className={cn(
             "rounded-lg border px-4 py-2 text-sm font-bold transition-colors",
@@ -65,10 +67,11 @@ export function RedemittelClient() {
         />
       </div>
 
-      {/* تصفية الوظائف */}
-      <div className="flex flex-wrap gap-1.5">
+      {/* تصفية الوظائف — مجموعة مسماة: 15 زراً بلا سياق جماعي تُعلَن متفرقة */}
+      <div className="flex flex-wrap gap-1.5" role="group" aria-label="تصفية بالوظيفة">
         <button
           type="button"
+          aria-pressed={category === null}
           onClick={() => setCategory(null)}
           className={cn(
             "rounded-full border px-3 py-1.5 text-xs font-bold transition-colors",
@@ -85,6 +88,7 @@ export function RedemittelClient() {
             <button
               key={cat.id}
               type="button"
+              aria-pressed={category === cat.id}
               onClick={() => setCategory(cat.id)}
               title={`${cat.examSection}`}
               className={cn(
@@ -162,7 +166,7 @@ export function RedemittelClient() {
 
       {/* نصيحة */}
       <div className="rounded-xl border border-gold/40 bg-gold/10 p-4 text-sm">
-        <p className="font-bold text-gold-foreground">💡 نصيحة المعلم للامتحان:</p>
+        <p className="font-bold text-gold-strong">💡 نصيحة المعلم للامتحان:</p>
         <p className="mt-1 text-muted-foreground">
           لا تحفظ العبارات منفردة — احفظها في جمل كاملة وردّدها بصوتك. في امتحان B2،
           استخدم 3-4 عبارات متنوعة (رأي + تعليل + مثال + تحفظ) في كل رد. المصحح يبحث عن

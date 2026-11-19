@@ -9,7 +9,7 @@ import { AlarmClock, BarChart3, CalendarCheck2, Timer } from "lucide-react";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { getStudyStats, type StudyStats } from "@/lib/analytics/session";
+import { getStudyStatsResult, type StudyStats } from "@/lib/analytics/session";
 import { errorTypeLabel } from "@/lib/lesson/error-types";
 import { formatMinutes } from "@/lib/analytics/session-format";
 
@@ -27,17 +27,22 @@ const ERROR_COLORS: Record<string, string> = {
 
 export function StudyStatsCard() {
   const [stats, setStats] = React.useState<StudyStats | null>(null);
+  const [readError, setReadError] = React.useState(false);
 
   React.useEffect(() => {
     let mounted = true;
     void (async () => {
-      const s = await getStudyStats();
-      if (mounted) setStats(s);
+      const result = await getStudyStatsResult();
+      if (!mounted) return;
+      if (result.ok) setStats(result.stats);
+      else setReadError(true);
     })();
     return () => {
       mounted = false;
     };
   }, []);
+
+  if (readError) return <div role="alert" className="rounded-xl border border-destructive/30 bg-destructive/5 p-4 text-sm">تعذرت قراءة سجل زمن الدراسة والأخطاء؛ أُخفيت الإحصاءات غير المؤكدة.</div>;
 
   if (!stats) {
     return (

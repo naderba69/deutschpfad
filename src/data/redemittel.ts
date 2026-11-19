@@ -149,10 +149,6 @@ export const REDEMITTEL: Redemittel[] = [
   { id: "rm-struktur-6", category: "struktur", de: "Kurz gesagt / Mit anderen Worten ...", ar: "باختصار / بعبارة أخرى ...", usage: "إعادة صياغة للتوضيح.", level: "B2" },
 ];
 
-/** كل عبارات فئة معينة */
-export function getRedemittelByCategory(category: string): Redemittel[] {
-  return REDEMITTEL.filter((r) => r.category === category);
-}
 
 /** بحث نصي في العبارات */
 export function searchRedemittel(query: string): Redemittel[] {

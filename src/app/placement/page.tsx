@@ -7,7 +7,7 @@ import {Zap, Target} from "lucide-react";
 export const metadata: Metadata = {
   title: "اختبار تحديد المستوى",
   description:
-    "حدد مستواك في الألمانية: اختبار سريع (15 سؤالاً) أو تشخيصي مفصل لكل مهارة (قواعد، مفردات، قراءة، استماع، كتابة).",
+    "أدوات تدريب لتقدير نقطة بداية مبدئية في الألمانية عبر أسئلة قصيرة؛ النتائج غير معيارية ولا تمثل اختبار CEFR رسمياً.",
 };
 
 /** صفحة تحديد المستوى الموحّدة — تقدم الخيارين (سريع/تشخيصي) وتربط للتشخيصي الكامل */
@@ -19,7 +19,7 @@ export default function PlacementPage() {
           اختبار تحديد المستوى
         </h1>
         <p className="mt-2 max-w-2xl text-balance text-muted-foreground">
-          اختر الطريقة الأنسب لك لتحديد نقطة البداية الصحيحة في رحلتك نحو B2:
+          اختر أداة تدريب تساعدك على تحديد نقطة بداية مبدئية. النتائج تقديرية وليست اختبار تحديد مستوى معيارياً.
         </p>
       </div>
 
@@ -51,19 +51,18 @@ export default function PlacementPage() {
           <CardHeader className="border-b bg-primary/5">
             <CardTitle className="flex items-center gap-2 text-lg">
               <Target className="h-5 w-5 text-primary" aria-hidden="true" />
-              تشخيصي كامل (لكل مهارة)
+              تدريب تشخيصي لكل مهارة
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3 p-5">
             <p className="text-sm leading-relaxed text-muted-foreground">
-              خمس مهارات تُختبر منفصلة (قواعد، مفردات، قراءة، استماع، كتابة) بتكيف ذكي —
-              تحصل على مستوى دقيق لكل مهارة على حدة.
+              أسئلة محدودة في القواعد والمفردات والقراءة والاستماع والكتابة تتدرج داخلياً. التقدير لكل مهارة تقريبي، وإجابة الكتابة لا تُقيّم من حيث الدقة والجودة؛ لا يُعد ذلك مستوى CEFR رسمياً.
             </p>
             <Link
               href="/tests/placement"
               className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
             >
-              ابدأ التشخيص الكامل
+              ابدأ التدريب التشخيصي
             </Link>
           </CardContent>
         </Card>

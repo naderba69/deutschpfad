@@ -74,6 +74,9 @@ const listeningAnswers: Record<string, string> = {
   q1: "Ärztin",
   q2: "Nein, sie arbeitet am Wochenende nicht.",
   q3: "Er ist Student.",
+  q4: "Köchin",
+  q5: "In einem Hotel",
+  q6: "Am Montag um neun Uhr",
 };
 
 function reading() {
@@ -173,7 +176,6 @@ function validTaskIds() {
   return new Set([
     ...lessonA110.practiceBank.flatMap((task) => [
       `practice:${lessonA110.id}:${task.id}`,
-      `flow-practice:${lessonA110.id}:${task.id}`,
     ]),
     ...lessonA110.miniTest.map((task) => `mini-test:${lessonA110.id}:${task.id}`),
     ...lessonA110.writing.map((task) => `writing:${lessonA110.id}:${task.id}`),
@@ -375,8 +377,8 @@ describe("A1-10 audited lesson content", () => {
       expect(question.correctIndex).toBeLessThan(question.options.length);
     }
 
-    expect(lessonA110.listening.items).toHaveLength(2);
-    expect(lessonA110.listening.items.map((item) => item.lines.length)).toEqual([6, 4]);
+    expect(lessonA110.listening.items).toHaveLength(3);
+    expect(lessonA110.listening.items.map((item) => item.lines.length)).toEqual([6, 4, 6]);
     const listeningIds = new Set(lessonA110.listening.items.map((item) => item.id));
     for (const item of lessonA110.listening.items) {
       expect(item.title.trim()).toBeTruthy();
@@ -531,5 +533,19 @@ describe("A1-10 audited lesson content", () => {
     expect(meta?.summary).toContain("الجمل المهنية بـsein وarbeiten als");
     expect(hasDurationField(lessonA110)).toBe(false);
     expect(LESSON_META.every((item) => !hasDurationField(item))).toBe(true);
+  });
+});
+
+describe("حراسة معنى arbeiten في سياق المهنة والتدريب", () => {
+  it("لا تخلط بين المهنة والتدريب العملي المؤقت لدى الشركة", () => {
+    const reading = lessonA110.reading;
+    expect(reading).toBeDefined();
+    if (!reading) throw new Error("A1-10 reading is required");
+    expect(reading.paragraphs[0]).toContain("Er ist Ingenieur von Beruf");
+    expect(reading.paragraphs[0]).toContain("macht er ein Praktikum bei einer kleinen Firma");
+    expect(reading.paragraphsAr[0]).toContain("مهنته مهندس");
+    expect(reading.paragraphsAr[0]).toContain("يؤدي حالياً تدريباً عملياً لدى شركة صغيرة");
+    expect(reading.paragraphs[4]).toContain("Wir arbeiten von Montag bis Freitag");
+    expect(reading.paragraphsAr[4]).toContain("نعمل من الاثنين إلى الجمعة");
   });
 });

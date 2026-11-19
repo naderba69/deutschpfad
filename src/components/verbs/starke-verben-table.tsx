@@ -8,6 +8,7 @@ import {Badge} from "@/components/ui/badge";
 import {Input} from "@/components/ui/input";
 import {STARK_VERBEN} from "@/data/verbs/starke-verben";
 import {cn} from "@/lib/utils";
+import {ScrollRegion} from "@/components/ui/scroll-region";
 
 /**
  * جدول الأفعال الشاذة التفاعلي — بحث + فلترة + نطق
@@ -68,36 +69,40 @@ export function StarkeVerbenTable({ compact }: { compact?: boolean }) {
 
       {/* dir="ltr" يجعل الجدول يبدأ بعمود الفعل الألماني على الجوال
           (بدل البدء بالعربية بسبب RTL ثم التمرير لليمين) */}
-      <div className="overflow-x-auto rounded-xl border" dir="ltr">
+      <ScrollRegion className="overflow-x-auto rounded-xl border" label="جدول الأفعال الشاذة — قابل للتمرير" dir="ltr">
         <table className="w-full text-sm">
+          <caption className="sr-only" dir="rtl">جدول الأفعال الشاذة: التصريف والأصل والترجمة</caption>
           <thead>
             <tr className="border-b bg-muted/40">
-              <th className="px-3 py-2.5 text-start font-bold">الفعل</th>
-              <th className="px-3 py-2.5 text-start font-bold">Präsens (er)</th>
-              <th className="px-3 py-2.5 text-start font-bold">Präteritum</th>
-              <th className="px-3 py-2.5 text-start font-bold">Partizip II</th>
-              <th className="px-3 py-2.5 text-start font-bold">العربية</th>
-              <th className="px-3 py-2.5 text-start font-bold">مع</th>
+              <th scope="col" className="px-3 py-2.5 text-start font-bold" dir="rtl">الفعل</th>
+              <th scope="col" className="px-3 py-2.5 text-start font-bold" dir="ltr" lang="de">Präsens (er)</th>
+              <th scope="col" className="px-3 py-2.5 text-start font-bold" dir="ltr" lang="de">Präteritum</th>
+              <th scope="col" className="px-3 py-2.5 text-start font-bold" dir="ltr" lang="de">Partizip II</th>
+              <th scope="col" className="px-3 py-2.5 text-start font-bold" dir="rtl">العربية</th>
+              <th scope="col" className="px-3 py-2.5 text-start font-bold" dir="rtl">مع</th>
             </tr>
           </thead>
           <tbody>
             {unique.map((v) => (
               <tr key={`${v.infinitiv}-${v.level}`} className="border-b last:border-0 hover:bg-muted/20">
-                <td className="px-3 py-2">
+                <th scope="row" className="px-3 py-2 text-start font-normal">
                   <span className="flex items-center gap-1.5">
-                    <SpeakButton text={v.infinitiv} size="sm" className="h-7 w-7" />
+                    <SpeakButton text={v.infinitiv} size="sm" className="h-8 w-8" />
                     <span className="font-de font-bold" dir="ltr" lang="de">
                       {v.infinitiv}
                     </span>
-                    <Badge variant="outline" className="font-de text-[9px] px-1.5">
+                    <Badge variant="outline" className="font-de text-[11px] px-1.5">
                       {v.level}
                     </Badge>
                   </span>
-                </td>
+                  {v.note && (
+                    <p className="mt-1 text-[11px] font-semibold text-destructive" dir="rtl">⚠ {v.note}</p>
+                  )}
+                </th>
                 <td className="font-de px-3 py-2" dir="ltr" lang="de">{v.präsens3}</td>
                 <td className="font-de px-3 py-2 font-semibold" dir="ltr" lang="de">{v.präteritum}</td>
                 <td className="font-de px-3 py-2 font-semibold text-primary" dir="ltr" lang="de">{v.partizip2}</td>
-                <td className="px-3 py-2">{v.ar}</td>
+                <td className="px-3 py-2" dir="rtl">{v.ar}</td>
                 <td className="font-de px-3 py-2 text-xs text-muted-foreground" dir="ltr">
                   {v.hilfsverb}
                 </td>
@@ -112,11 +117,10 @@ export function StarkeVerbenTable({ compact }: { compact?: boolean }) {
             )}
           </tbody>
         </table>
-      </div>
-      <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
+      </ScrollRegion>
+      <p className="flex items-center gap-1.5 text-xs text-muted-foreground" role="status">
         <Table className="h-3.5 w-3.5" aria-hidden="true" />
-        {unique.length} فعل (فريد) من أصل {STARK_VERBEN.length} إدخال — الجدول الكامل التفاعلي
-        قادم في المرحلة 13 (المرجع النحوي).
+        {unique.length} فعل (فريد) من أصل {STARK_VERBEN.length} إدخال — الجدول تفاعلي بالكامل (بحث + فلترة بالمستوى + نطق).
       </p>
     </div>
   );

@@ -7,6 +7,7 @@ import {CheckCircle2, Lock, PlayCircle} from "lucide-react";
 import {LESSON_META} from "@/data/lessons/meta";
 import type { LevelCode } from "@/types/curriculum";
 import {cn} from "@/lib/utils";
+import {ScrollRegion} from "@/components/ui/scroll-region";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -55,12 +56,12 @@ export function WindingPath({
   const height = 70 + (lessons.length - 1) * 92 + 60;
 
   return (
-    <div className="overflow-x-auto pb-4" dir="ltr">
+    <ScrollRegion className="overflow-x-auto pb-4" label={`خريطة مسار المستوى ${level} — قابلة للتمرير`} dir="ltr">
       <svg
         viewBox={`0 0 ${width} ${height}`}
         className="mx-auto h-auto max-w-full"
         style={{ minWidth: lessons.length > 6 ? 380 : 320 }}
-        role="img"
+        role="group"
         aria-label={`خريطة مسار المستوى ${level}`}
       >
         {/* المسار المتعرج */}
@@ -118,7 +119,12 @@ export function WindingPath({
                   className="text-gold"
                 />
               )}
-              <Link href={`/lesson/${lesson.id}`} aria-label={lesson.titleAr}>
+              <Link
+                href={locked ? "#" : `/lesson/${lesson.id}`}
+                onClick={locked ? (e) => e.preventDefault() : undefined}
+                aria-disabled={locked}
+                aria-label={locked ? `${lesson.titleAr} (مقفلة — أكمل الدرس السابق لفتحها)` : lesson.titleAr}
+              >
                 <circle
                   cx={nodeRadius}
                   cy={nodeRadius}
@@ -217,11 +223,14 @@ export function WindingPath({
       </svg>
 
       {/* أسطورة الحالات */}
-      <div className="mx-auto mt-2 flex max-w-md flex-wrap items-center justify-center gap-4 text-[10px] font-bold text-muted-foreground">
-        <span className="inline-flex items-center gap-1"><CheckCircle2 className="h-3 w-3 text-success" /> مكتمل</span>
-        <span className="inline-flex items-center gap-1"><PlayCircle className="h-3 w-3 text-primary" /> درسك الحالي</span>
-        <span className="inline-flex items-center gap-1"><Lock className="h-3 w-3 text-muted-foreground" /> مقفل — أتمّ السابق</span>
+      <div
+        dir="rtl"
+        className="mx-auto mt-2 flex max-w-md flex-wrap items-center justify-center gap-4 text-[11px] font-bold text-muted-foreground"
+      >
+        <span className="inline-flex items-center gap-1"><CheckCircle2 className="h-3 w-3 text-success" aria-hidden="true" /> مكتمل</span>
+        <span className="inline-flex items-center gap-1"><PlayCircle className="h-3 w-3 text-primary" aria-hidden="true" /> درسك الحالي</span>
+        <span className="inline-flex items-center gap-1"><Lock className="h-3 w-3 text-muted-foreground" aria-hidden="true" /> مقفل — أتمّ السابق</span>
       </div>
-    </div>
+    </ScrollRegion>
   );
 }

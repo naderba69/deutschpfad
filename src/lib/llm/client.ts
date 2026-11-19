@@ -100,7 +100,7 @@ export async function callLLM(input: LLMCallInput): Promise<LLMResult> {
 }
 
 /** هل مفتاح BYOK محفوظ محلياً؟ */
-export function hasUserLLMKey(): boolean {
+function hasUserLLMKey(): boolean {
   try {
     return typeof window !== "undefined" && !!window.localStorage.getItem("dp:llm:user-key");
   } catch {

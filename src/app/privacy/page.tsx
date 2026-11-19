@@ -13,7 +13,7 @@ export default function PrivacyPage() {
         🔒 الخصوصية والشفافية
       </h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        DeutschPfad منصة مجانية 100% — والخصوصية جزء من تصميمها الأساسي.
+        DeutschPfad منصة تدريبية تتاح تدريباتها الأساسية حالياً دون اشتراك مدفوع؛ والخصوصية جزء من تصميمها الأساسي.
       </p>
 
       <div className="mt-8 space-y-5">

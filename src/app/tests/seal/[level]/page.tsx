@@ -6,25 +6,30 @@ import { LazySealExam } from "@/components/tests/lazy/lazy-seal-exam";
 import { Card, CardContent } from "@/components/ui/card";
 import { Zap, ShieldCheck } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "امتحان الختم — بوابة الانتقال بين المستويات",
-  description:
-    "امتحان ختم المستوى بصيغة Goethe-Zertifikat: لا تنتقل للمستوى التالي إلا باجتيازه (60% فأكثر). نسخة كاملة أو سريعة (20 سؤالاً).",
-};
-
 export function generateStaticParams() {
   return ["a1", "a2", "b1", "b2"].map((level) => ({ level }));
 }
 
 interface Props {
-  params: { level: string };
-  searchParams: { mode?: string };
+  params: Promise<{ level: string }>;
+  searchParams: Promise<{ mode?: string }>;
 }
 
-export default function SealExamPage({ params, searchParams }: Props) {
-  const level = params.level.toUpperCase();
+/** 2.4.2 — عنوان يذكر المستوى: أربع بوابات ختم كانت تتشارك عنواناً واحداً. */
+export async function generateMetadata({ params }: { params: Promise<{ level: string }> }): Promise<Metadata> {
+  const { level: raw } = await params;
+  return {
+    title: `امتحان الختم ${raw.toUpperCase()} — بوابة الانتقال`,
+    description:
+      `اختبار داخلي لبوابة الانتقال إلى ما بعد ${raw.toUpperCase()}. عتبة النجاح قرار تدريبي داخل المنصة ولا تمثل امتحان Goethe أو إثباتاً لإتقان المستوى.`,
+  };
+}
+
+export default async function SealExamPage({ params, searchParams }: Props) {
+  const [{ level: rawLevel }, { mode }] = await Promise.all([params, searchParams]);
+  const level = rawLevel.toUpperCase();
   if (!["A1", "A2", "B1", "B2"].includes(level)) notFound();
-  const quick = searchParams?.mode === "quick";
+  const quick = mode === "quick";
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6">
@@ -34,7 +39,7 @@ export default function SealExamPage({ params, searchParams }: Props) {
         </h1>
         <p className="mt-2 max-w-2xl text-balance text-muted-foreground">
           هذا هو «بوابة» المستوى التالي: أكمل 80% من وحدات المستوى، ثم اجتز الامتحان
-          (60% فأكثر) ليُختَم المستوى ويُفتح الذي يليه. الأهلية تُحسب تلقائياً من تقدمك.
+          (60% فأكثر) لفتح المستوى التالي داخل المنصة. هذه عتبة تقدم داخلية وليست حكماً رسمياً على إتقان المستوى. الأهلية تُحسب تلقائياً من تقدمك.
         </p>
       </div>
 
@@ -47,8 +52,8 @@ export default function SealExamPage({ params, searchParams }: Props) {
               <div className="flex-1">
                 <p className="font-bold">الامتحان الكامل</p>
                 <p className="mt-0.5 text-xs text-muted-foreground">
-                  بصيغة Goethe الكاملة (27 سؤالاً: قراءة + استماع + قواعد + مفردات + كتابة)
-                  بتوقيت قريب من الامتحان الرسمي — تدريب وليس امتحاناً رسمياً.
+                  نسخة التدريب الأطول (27 سؤالاً: قراءة + استماع + قواعد + مفردات + كتابة).
+                  التوزيع والتوقيت داخليان ولا يطابقان امتحاناً رسمياً.
                 </p>
                 <span className="mt-2 inline-block rounded-lg bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
                   مُحدد حالياً
@@ -63,11 +68,11 @@ export default function SealExamPage({ params, searchParams }: Props) {
                 <p className="font-bold">الختم السريع ⚡</p>
                 <p className="mt-0.5 text-xs text-muted-foreground">
                   20 سؤالاً متوازناً (6 قواعد + 6 مفردات + 3 قراءة + 3 استماع + 2 كتابة)
-                  بوقت أقصر — لمن يريد تجاوز المستوى بسرعة.
+                  بوقت أقصر لمراجعة سريعة؛ لا يعادل النسخة الأطول في التغطية.
                 </p>
                 <Link
-                  href={`/tests/seal/${params.level}?mode=quick`}
-                  className="mt-2 inline-block rounded-lg bg-gold px-3 py-1 text-xs font-bold text-gold-foreground transition-colors hover:bg-gold/90"
+                  href={`/tests/seal/${rawLevel}?mode=quick`}
+                  className="mt-2 inline-flex min-h-8 items-center rounded-lg bg-gold px-3 py-1 text-xs font-bold text-gold-foreground transition-colors hover:bg-gold/90"
                 >
                   اختر الختم السريع
                 </Link>
@@ -81,7 +86,7 @@ export default function SealExamPage({ params, searchParams }: Props) {
         <p className="mb-4 rounded-xl border border-gold/40 bg-gold/10 p-3 text-sm">
           ⚡ <span className="font-bold">الوضع السريع:</span> 20 سؤالاً بوقت مخفّض — النجاح
           من 60% يختم المستوى كما في النسخة الكاملة.{" "}
-          <Link href={`/tests/seal/${params.level}`} className="font-bold text-primary underline underline-offset-2">
+          <Link href={`/tests/seal/${rawLevel}`} className="font-bold text-primary underline underline-offset-2">
             عُد للنسخة الكاملة
           </Link>
         </p>

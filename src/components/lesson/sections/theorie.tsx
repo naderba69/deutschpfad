@@ -11,21 +11,27 @@ import {DetailTabs} from "@/components/shared/detail-tabs";
 import {RichText} from "@/components/shared/rich-text";
 import {cn} from "@/lib/utils";
 import type {TheoryBlock} from "@/types/lesson";
+import {ScrollRegion} from "@/components/ui/scroll-region";
 
 /** جدول التصريف مع أزرار نطق لكل خلية ألمانية */
 function ConjugationTable({ table }: { table: NonNullable<TheoryBlock["table"]> }) {
   return (
-    <div className="overflow-x-auto rounded-xl border bg-background">
+    <ScrollRegion
+      className="overflow-x-auto rounded-xl border bg-background"
+      label={`${table.title ?? "جدول التصريف"} — قابل للتمرير`}
+    >
       {table.title ? (
         <p className="border-b bg-muted/20 px-4 py-2.5 text-sm font-bold" dir="rtl">
           {table.title}
         </p>
       ) : null}
       <table className="w-full text-sm" dir="ltr">
+        {/* اسم الجدول من عنوانه: بدونه يُعلَن «جدول 7×3» بلا سياق */}
+        <caption className="sr-only">{table.title ?? "جدول تصريف"}</caption>
         <thead>
           <tr className="border-b bg-muted/40">
             {table.columns.map((col) => (
-              <th key={col} className="px-4 py-2.5 text-start font-bold">
+              <th key={col} scope="col" className="px-4 py-2.5 text-start font-bold">
                 {col}
               </th>
             ))}
@@ -34,7 +40,10 @@ function ConjugationTable({ table }: { table: NonNullable<TheoryBlock["table"]> 
         <tbody>
           {table.rows.map((row, i) => (
             <tr key={i} className="border-b last:border-0">
-              <td className="px-4 py-2.5 font-semibold">{row.label}</td>
+              {/* رأس صف: «Nominativ» يُعلَن مع خليته لا منفصلاً عنها */}
+              <th scope="row" className="px-4 py-2.5 text-start font-semibold">
+                {row.label}
+              </th>
               {row.cells.map((cell, j) => (
                 <td key={j} className="px-4 py-2.5">
                   <TextDe text={cell} />
@@ -44,7 +53,7 @@ function ConjugationTable({ table }: { table: NonNullable<TheoryBlock["table"]> 
           ))}
         </tbody>
       </table>
-    </div>
+    </ScrollRegion>
   );
 }
 
@@ -93,7 +102,7 @@ function CommonMistakes({mistakes}: {mistakes: TheoryBlock["commonMistakes"]}) {
                   {mistake.wrong}
                 </span>
                 {isAlternative ? (
-                  <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold text-muted-foreground">بديل سياقي</span>
+                  <span className="rounded-full bg-muted px-2 py-0.5 text-[11px] font-bold text-muted-foreground">بديل سياقي</span>
                 ) : (
                   <XCircle className="h-4 w-4 text-destructive" aria-hidden="true" />
                 )}

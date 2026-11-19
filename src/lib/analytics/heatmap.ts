@@ -1,4 +1,4 @@
-import {getRecentEvents} from "@/lib/analytics/events";
+import {getRecentEventsResult} from "@/lib/analytics/events";
 
 /**
  * الخريطة الحرارية للنشاط — شبيهة بـ GitHub
@@ -6,18 +6,27 @@ import {getRecentEvents} from "@/lib/analytics/events";
  */
 
 /** نشاط كل يوم: YYYY-MM-DD → عدد الأحداث */
-export async function getActivityMap(): Promise<Map<string, number>> {
-  const events = await getRecentEvents(2000);
+export type ActivityMapReadResult = {ok: true; activity: Map<string, number>} | {ok: false};
+
+export async function getActivityMapResult(): Promise<ActivityMapReadResult> {
+  const result = await getRecentEventsResult(2000);
+  if (!result.ok) return {ok: false};
   const map = new Map<string, number>();
-  for (const e of events) {
+  for (const e of result.events) {
     const key = new Date(e.ts).toISOString().slice(0, 10);
     map.set(key, (map.get(key) ?? 0) + 1);
   }
-  return map;
+  return {ok: true, activity: map};
+}
+
+/** واجهة توافقية؛ استخدم النتيجة الصريحة حين تُعرض الخلايا أو السلاسل كبيانات فعلية. */
+export async function getActivityMap(): Promise<Map<string, number>> {
+  const result = await getActivityMapResult();
+  return result.ok ? result.activity : new Map<string, number>();
 }
 
 /** مستوى نشاط خلية (0-4) حسب عدد الأحداث */
-export function activityLevel(count: number): 0 | 1 | 2 | 3 | 4 {
+function activityLevel(count: number): 0 | 1 | 2 | 3 | 4 {
   if (count <= 0) return 0;
   if (count <= 2) return 1;
   if (count <= 5) return 2;

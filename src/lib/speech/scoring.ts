@@ -29,7 +29,7 @@ export function normalizeGermanText(s: string): string {
 }
 
 /** مسافة ليفنشتاين بين سلسلتين */
-export function levenshtein(a: string, b: string): number {
+function levenshtein(a: string, b: string): number {
   const m = a.length;
   const n = b.length;
   if (m === 0) return n;

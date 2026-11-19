@@ -1,5 +1,6 @@
 "use client";
 
+import {LangDe} from "@/components/shared/lang-de";
 import {SpeakButton} from "@/components/shared/speak-button";
 import {Badge} from "@/components/ui/badge";
 import {Card, CardContent} from "@/components/ui/card";
@@ -17,20 +18,20 @@ export function RedewendungenList() {
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="font-de text-lg font-bold" dir="ltr" lang="de">
+                  <LangDe className="text-lg font-bold">
                     {r.de}
-                  </span>
+                  </LangDe>
                   <Badge variant="outline" className="font-de text-[11px]">
                     {r.level}
                   </Badge>
                 </div>
-                <p className="mt-1 text-xs italic text-muted-foreground" dir="ltr" lang="de">
-                  {r.literal}
+                <p className="mt-1 text-xs italic text-muted-foreground">
+                  <LangDe>{r.literal}</LangDe>
                 </p>
                 <p className="mt-1 text-sm font-semibold text-primary">= {r.meaning}</p>
                 <div className="mt-2 rounded-lg bg-muted/30 p-2.5">
-                  <p className="font-de text-sm" dir="ltr" lang="de">
-                    {r.example}
+                  <p className="text-sm">
+                    <LangDe>{r.example}</LangDe>
                   </p>
                   <p className="mt-0.5 text-xs text-muted-foreground">{r.exampleAr}</p>
                 </div>

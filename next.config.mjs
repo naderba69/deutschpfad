@@ -22,6 +22,20 @@ const withPWA = withPWAInit({
     maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
     runtimeCaching: [
       {
+        // صفحات التنقل: الشبكة أولاً مع نسخة احتياطية من الصفحة التي زارها المستخدم مسبقاً دون اتصال
+        urlPattern: ({ request }) => request.mode === "navigate",
+        handler: "NetworkFirst",
+        options: {
+          cacheName: "navigation-pages",
+          networkTimeoutSeconds: 3,
+          expiration: {
+            maxEntries: 100,
+            maxAgeSeconds: 7 * 24 * 60 * 60,
+          },
+          cacheableResponse: { statuses: [200] },
+        },
+      },
+      {
         // الأصول الثابتة: أيقونات التطبيق وشعارات وصور عامة — تُخزَّن محلياً شهراً
         urlPattern: ({ url }) =>
           /\.(?:png|jpg|jpeg|svg|webp|gif|ico)$/i.test(url.pathname) &&
@@ -94,11 +108,15 @@ const nextConfig = {
         key: "Content-Security-Policy",
         value: [
           "default-src 'self'",
-          "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com",
+          // 'unsafe-inline' في script-src مطلوب لسكربت JSON-LD المضمّن في layout
+          // (Next.js لا يوفّر nonce له تلقائياً) — أُزيل GTM غير المستخدم.
+          "script-src 'self' 'unsafe-inline'",
+          // 'unsafe-inline' في style-src مطلوب لأساليب Next.js المُحقونة وقت التشغيل.
           "style-src 'self' 'unsafe-inline'",
           "img-src 'self' data: blob: https:",
           "font-src 'self' data:",
-          "connect-src 'self' https://generativelanguage.googleapis.com https://api.groq.com https://openrouter.ai https://www.google-analytics.com",
+          // أُزيل google-analytics (لا يوجد كود تتبع في المشروع).
+          "connect-src 'self' https://generativelanguage.googleapis.com https://api.groq.com https://openrouter.ai",
           "frame-ancestors 'self'",
           "base-uri 'self'",
           "form-action 'self'",

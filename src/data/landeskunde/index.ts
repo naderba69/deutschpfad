@@ -32,8 +32,8 @@ export const CULTURE_CARDS: CultureCard[] = [
     titleAr: "التحية والوداع",
     emoji: "👋",
     category: "عادات",
-    de: "In Deutschland sagt man „Hallo“ oder „Guten Tag“. Freunde sagen „Tschüss“ oder „Bis bald“. Nach dem Essen sagt man „Guten Appetit“. Und wenn jemand niest, sagt man „Gesundheit!“",
-    ar: "في ألمانيا يقول الناس «هالو» أو «غوتن تاغ». الأصدقاء يقولون «تشوس» أو «بيس بالد». بعد الأكل يقال «غوتن أبّتيت» (بالهناء). وعندما يعطس أحد يقال «غيزوندهايت» (صحة)!",
+    de: "In Deutschland sagt man „Hallo“ oder „Guten Tag“. Freunde sagen „Tschüss“ oder „Bis bald“. Vor dem Essen sagt man oft „Guten Appetit“. Und wenn jemand niest, sagt man „Gesundheit!“",
+    ar: "في ألمانيا يقول الناس «هالو» أو «غوتن تاغ». الأصدقاء يقولون «تشوس» أو «بيس بالد». قبل الأكل يقول الناس عادةً «غوتن أبّتيت» (بالهناء). وعندما يعطس أحد يقال «غيزوندهايت» (صحة)!",
     facts: [
       { de: "Man sagt „du“ zu Freunden und „Sie“ zu Fremden.", ar: "يقال «دو» للأصدقاء و«زي» للغرباء." },
       { de: "„Gesundheit!“ nach dem Niesen ist höflich.", ar: "قول «غيزوندهايت» بعد العطس مهذب." },
@@ -250,7 +250,7 @@ export const CULTURE_CARDS: CultureCard[] = [
     emoji: "🎭",
     category: "تقاليد",
     de: "Der Karneval ist vor allem im Rheinland eine große Tradition. Die Hochburg ist Köln. Wochenlang feiern die Menschen mit Kostümen, Umzügen und Musik. Am Rosenmontag findet der größte Umzug statt. Kritiker sagen, der Karneval sei nur Kommerz. Anhänger betonen, er stärke das Gemeinschaftsgefühl.",
-    ar: "الكرنفال تقليد كبير خاصة في منطقة الراين. العاصمة الحقيقية له كولونيا. لأسابيع يحتفل الناس بالأزياء والمواكب والموسيقى. في «روزن مونتاغ» (إثنين الورد) يقام أكبر موكب. يقول النقاد إن الكرنفال مجرد تجارة. يؤكد المؤيدون أنه يقوي الشعور بالجماعة.",
+    ar: "الكرنفال تقليد عريق، خاصةً في منطقة الراين. وكولونيا هي مركزه الأبرز. لأسابيع يحتفل الناس بالأزياء والمواكب والموسيقى. في «روزن مونتاغ» (إثنين الورد) يقام أكبر موكب. يقول النقاد إن الكرنفال مجرد تجارة. يؤكد المؤيدون أنه يقوي الشعور بالجماعة.",
     facts: [
       { de: "Die Hochburg des Karnevals ist Köln.", ar: "عاصمة الكرنفال كولونيا." },
       { de: "Der größte Umzug ist am Rosenmontag.", ar: "أكبر موكب في إثنين الورد." },

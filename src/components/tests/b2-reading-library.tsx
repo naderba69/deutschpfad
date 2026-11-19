@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import {LangDe} from "@/components/shared/lang-de";
 import {BookOpenCheck} from "lucide-react";
 
 import {B2_READING_EXAM, B2_READING_SOURCES} from "@/data/reading/b2-exam-library";
@@ -69,7 +70,7 @@ export function B2ReadingExamLibrary() {
                   <span dir="ltr" lang="de">{text.titleDe}</span>
                 </p>
                 <p className="mt-0.5 text-xs text-muted-foreground">
-                  {text.title} · {sourceLabel(text.source)} · {text.questions.length} أسئلة
+                  <LangDe>{text.title}</LangDe> · {sourceLabel(text.source)} · {text.questions.length} أسئلة
                   {isChecked && (
                     <span className={cn("ms-2 font-bold", correctCount === text.questions.length ? "text-success" : "text-destructive")}>
                       {correctCount}/{text.questions.length} ✓

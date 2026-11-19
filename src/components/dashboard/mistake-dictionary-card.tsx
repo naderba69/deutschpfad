@@ -7,7 +7,7 @@ import {AlertTriangle, BookMarked, BookmarkPlus, Check} from "lucide-react";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Progress} from "@/components/ui/progress";
 import {getTopicsByMistakeType} from "@/data/grammar/reference";
-import {addMistakeAsCard, getMistakeStats, type MistakeStat} from "@/lib/storage/mistake-dictionary";
+import {addMistakeAsCard, getMistakeStatsResult, type MistakeStat} from "@/lib/storage/mistake-dictionary";
 
 /**
  * قاموس الأخطاء الشخصي — نقاط ضعفك معروضة مباشرة
@@ -18,9 +18,13 @@ import {addMistakeAsCard, getMistakeStats, type MistakeStat} from "@/lib/storage
 export function MistakeDictionaryCard() {
   const [mistakes, setMistakes] = React.useState<MistakeStat[]>([]);
   const [added, setAdded] = React.useState<string[]>([]);
+  const [readError, setReadError] = React.useState(false);
 
   React.useEffect(() => {
-    void getMistakeStats().then(setMistakes);
+    void getMistakeStatsResult().then((result) => {
+      if (result.ok) setMistakes(result.stats);
+      else setReadError(true);
+    });
   }, []);
 
   const total = mistakes.reduce((s, m) => s + m.count, 0);
@@ -41,8 +45,8 @@ export function MistakeDictionaryCard() {
           </CardTitle>
         </CardHeader>
         <CardContent className="p-5">
-          <p className="text-sm text-muted-foreground">
-            لا أخطاء مسجلة بعد! أجب عن تمارين لتُبنى خريطة أخطائك الشخصية تلقائياً.
+          <p role={readError ? "alert" : undefined} className={readError ? "text-sm text-destructive" : "text-sm text-muted-foreground"}>
+            {readError ? "تعذرت قراءة سجل التمارين؛ لا يمكن تأكيد وجود أخطاء مسجلة الآن." : "لا أخطاء مسجلة بعد! أجب عن تمارين لتُبنى خريطة أخطائك الشخصية تلقائياً."}
           </p>
         </CardContent>
       </Card>

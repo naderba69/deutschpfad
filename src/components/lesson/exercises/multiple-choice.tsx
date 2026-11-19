@@ -1,16 +1,17 @@
 "use client";
 
 import * as React from "react";
+import {LangDe} from "@/components/shared/lang-de";
 
 import {Lightbulb} from "lucide-react";
 import {SpeakButton} from "@/components/shared/speak-button";
 import {FeedbackPanel} from "@/components/lesson/exercises/feedback-panel";
 import {useExerciseState} from "@/components/lesson/exercises/use-exercise-state";
-;
 import {evaluateMcq} from "@/lib/lesson/exercise-engine";
 import {seededShuffle} from "@/lib/lesson/shuffle";
 import {cn} from "@/lib/utils";
 import type { McqExercise, FeedbackResult } from "@/types/lesson";
+import {useRadioGroupNav} from "@/lib/use-radio-group-nav";
 
 /**
  * تمرين الاختيار من متعدد — خيارات مخلوطة عشوائياً في كل عرض
@@ -24,16 +25,17 @@ export function MultipleChoiceExercise({
 }) {
   const [options] = React.useState(() => seededShuffle(exercise.options, exercise.id));
   const [selected, setSelected] = React.useState<string | null>(null);
+  const nav = useRadioGroupNav();
   const state = useExerciseState(exercise);
 
   const correctOption = exercise.options[exercise.correctIndex];
 
   const handleSelect = (option: string) => {
-    if (state.result?.isCorrect) return;
+    if (state.result?.isCorrect || state.revealedSolution) return;
     setSelected(option);
     const feedback = evaluateMcq(exercise, option);
     state.submit(feedback);
-    onResult?.(feedback);
+    onResult?.({ ...feedback, chosen: option });
   };
 
   const handleRetry = () => {
@@ -48,8 +50,8 @@ export function MultipleChoiceExercise({
     <div className="space-y-4">
       <div className="rounded-xl border bg-muted/30 p-4">
         <div className="flex items-start justify-between gap-3">
-          <p className="font-de text-lg font-semibold" dir="ltr" lang="de">
-            {exercise.questionDe}
+          <p className="text-lg font-semibold">
+            <LangDe>{exercise.questionDe}</LangDe>
           </p>
           <SpeakButton text={exercise.questionDe} />
         </div>
@@ -58,7 +60,13 @@ export function MultipleChoiceExercise({
         )}
       </div>
 
-      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2" role="radiogroup" aria-label={exercise.instructionAr}>
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2" role="radiogroup"
+        aria-label={
+          exercise.instructionAr
+            ? `${exercise.instructionAr.replace(/[:：]\s*$/, "")} — ${exercise.questionDe}`
+            : exercise.questionDe
+        }
+        {...nav}>
         {options.map((option, i) => {
           const isCorrectOption = option === correctOption;
           const isSelected = option === selected;
@@ -72,7 +80,11 @@ export function MultipleChoiceExercise({
               type="button"
               role="radio"
               aria-checked={isSelected}
-              disabled={isLocked || state.revealedSolution}
+              /* بعد الإجابة الصحيحة أو كشف الحل لا نُعطّل الزر بـ`disabled`: تعطيل
+                 العنصر الذي يحمل التركيز يُسقط التركيز إلى `body` فيضيع مستخدم
+                 لوحة المفاتيح (2.4.3). `aria-disabled` يُعلن الحالة نفسها ويُبقي
+                 التركيز، والمعالِج يرفض أي تغيير بعد القفل. */
+              aria-disabled={isLocked || state.revealedSolution || undefined}
               onClick={() => handleSelect(option)}
               className={cn(
                 "rounded-xl border bg-background px-4 py-3 text-start transition-all",
@@ -83,9 +95,9 @@ export function MultipleChoiceExercise({
                 state.revealedSolution && !isCorrectOption && "opacity-50",
               )}
             >
-              <span className="font-de font-medium" dir="ltr" lang="de">
+              <LangDe className="font-medium">
                 {option}
-              </span>
+              </LangDe>
             </button>
           );
         })}
@@ -111,7 +123,14 @@ export function MultipleChoiceExercise({
         onRevealSolution={state.revealSolution}
       />
       {!state.result && !state.revealedSolution && (
-        <p className="text-xs text-muted-foreground">{exercise.instructionAr}</p>
+        <>
+          <p className="text-xs text-muted-foreground">{exercise.instructionAr}</p>
+          {exercise.instructionDe && (
+            <p className="text-xs text-muted-foreground" data-testid="exercise-instruction-de">
+          <LangDe>{exercise.instructionDe}</LangDe>
+        </p>
+          )}
+        </>
       )}
     </div>
   );

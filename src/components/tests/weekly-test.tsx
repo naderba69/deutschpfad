@@ -5,7 +5,8 @@ import {CalendarDays, Sparkles} from "lucide-react";
 
 import {TestRunner} from "@/components/tests/test-runner";
 import {TEST_BANK} from "@/data/tests/question-banks";
-import {sample} from "@/lib/lesson/shuffle";
+import {seededSample} from "@/lib/lesson/shuffle";
+import {seededShuffleTestQuestions} from "@/lib/tests/shuffle-questions";
 
 const SKILLS: ("grammatik" | "wortschatz" | "lesen" | "hören" | "schreiben")[] = [
   "grammatik",
@@ -20,25 +21,30 @@ const SKILLS: ("grammatik" | "wortschatz" | "lesen" | "hören" | "schreiben")[] 
  * — اقتراح المرحلة 10: اختبار أسبوعي عشوائي متجدد —
  */
 export function WeeklyTest() {
-  // اختيار مستوى البداية حسب رقم الأسبوع (تجديد أسبوعي)
-  const [seed, setSeed] = React.useState(0);
-
-  React.useEffect(() => {
-    // تجديد تلقائي أسبوعي
-    const week = Math.floor(Date.now() / (7 * 24 * 3600 * 1000));
-    setSeed(week);
-  }, []);
+  // اختيار مستوى البداية حسب رقم الأسبوع (تجديد أسبوعي).
+  // كان الرقم يُحسب في `useEffect` فيبدأ الخادم بـ seed = 0 ثم يتبدّل بعد
+  // الهيدرشن — فيتغيّر المحتوى كله (CLS). الحساب المباشر متطابق على الطرفين
+  // لأن رقم الأسبوع لا يتغيّر خلال الطلب.
+  const week = Math.floor(Date.now() / (7 * 24 * 3600 * 1000));
 
   const levelPool: ("A1" | "A2" | "B1" | "B2")[] = ["A1", "A2", "B1", "B2"];
-  const focusLevel = levelPool[seed % 4];
+  const focusLevel = levelPool[week % 4];
 
-  // أسئلة: 60% من مستوى التركيز + 40% من بقية المستويات (خلط)
-  const focusQs = TEST_BANK.filter((q) => q.level === focusLevel);
-  const otherQs = TEST_BANK.filter((q) => q.level !== focusLevel);
-  const questions = [
-    ...sample(focusQs, Math.min(8, focusQs.length)),
-    ...sample(otherQs, 6),
-  ];
+  /* أسئلة: 60% من مستوى التركيز + 40% من بقية المستويات، مع خلط الخيارات.
+     نحسب العينة مرة لكل مستوى تركيز؛ useMemo يمنع تغيّرها عند إعادة التصيير
+     أثناء الإجابة، بينما يؤدي تغيّر المستوى الأسبوعي إلى اختيار عينة جديدة. */
+  const questions = React.useMemo(() => {
+    const focusQs = TEST_BANK.filter((q) => q.level === focusLevel);
+    const otherQs = TEST_BANK.filter((q) => q.level !== focusLevel);
+    const seed = `weekly:${week}:${focusLevel}`;
+    return seededShuffleTestQuestions(
+      [
+        ...seededSample(focusQs, Math.min(8, focusQs.length), `${seed}:focus`),
+        ...seededSample(otherQs, 6, `${seed}:other`),
+      ],
+      seed,
+    );
+  }, [focusLevel, week]);
 
   return (
     <div className="space-y-4">

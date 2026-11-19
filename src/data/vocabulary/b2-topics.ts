@@ -1,7 +1,7 @@
 /**
  * ═══════════════════════════════════════════════════════════
- *  مفردات B2 حسب المواضيع الـ18 الرسمية لامتحان Goethe
- *  (Themenwortschatz) — قائمة مواضيع Goethe-Zertifikat B2 الرسمية
+ *  مفردات تدريبية لنطاق B2 مصنفة تحت 18 موضوعاً من إعداد المنصة.
+ *  هذا التقسيم ليس قائمة رسمية أو شاملة من Goethe.
  *  مع ~180 كلمة/تركيباً جديداً إضافياً (موازٍ لمفردات الوحدات)
  *  — أضيفت ضمن اقتراحات المرحلة النهائية —
  * ═══════════════════════════════════════════════════════════
@@ -11,14 +11,14 @@ import type { VocabEntry } from "@/data/vocabulary/a1";
 
 export interface B2ExamTopic {
   id: string;
-  /** رقم الموضوع في قائمة غوته الرسمية */
+  /** ترتيب الموضوع داخل تصنيف المنصة */
   num: number;
   titleAr: string;
   titleDe: string;
   icon: string;
 }
 
-/** المواضيع الـ18 الرسمية لامتحان Goethe B2 */
+/** موضوعات تدريبية مختارة لتنظيم مفردات B2 */
 export const B2_EXAM_TOPICS: B2ExamTopic[] = [
   { id: "arbeit", num: 1, titleAr: "العمل والمهنة", titleDe: "Arbeit und Beruf", icon: "💼" },
   { id: "bildung", num: 2, titleAr: "التعليم والدراسة", titleDe: "Ausbildung und Studium", icon: "🎓" },
@@ -43,7 +43,7 @@ export const B2_EXAM_TOPICS: B2ExamTopic[] = [
 export const B2_TOPIC_VOCAB: Record<string, VocabEntry[]> = {
   /* 1) Arbeit und Beruf */
   arbeit: [
-    { de: "die Arbeitsstelle", ar: "مكان العمل", g: "die" },
+    { de: "die Arbeitsstelle", ar: "وظيفة/مكان العمل بحسب السياق", g: "die" },
     { de: "der Arbeitgeber", ar: "صاحب العمل", g: "der" },
     { de: "der Arbeitnehmer", ar: "الموظف/الأجير", g: "der" },
     { de: "die Bewerbung", ar: "طلب الوظيفة", g: "die" },
@@ -57,7 +57,7 @@ export const B2_TOPIC_VOCAB: Record<string, VocabEntry[]> = {
     { de: "die Führungskraft", ar: "القائد/المدير", g: "die" },
     { de: "kündigen", ar: "يستقيل/ينهي عقداً", g: "v" },
     { de: "sich bewerben um", ar: "يتقدم لوظيفة", g: "v" },
-    { de: "die Karrierechance", ar: "فرصة المسيرة", g: "die" },
+    { de: "die Karrierechance", ar: "فرصة للتقدم الوظيفي", g: "die" },
     { de: "die Weiterbildung", ar: "التدريب المستمر", g: "die" },
     { de: "das Team", ar: "الفريق", g: "das" },
     { de: "die Überstunde", ar: "ساعة إضافية", g: "die" },
@@ -270,7 +270,7 @@ export const B2_TOPIC_VOCAB: Record<string, VocabEntry[]> = {
     { de: "der Mietvertrag", ar: "عقد الإيجار", g: "der" },
     { de: "die Miete", ar: "الإيجار", g: "die" },
     { de: "die Nebenkosten", ar: "التكاليف الإضافية", g: "die" },
-    { de: "die Kaution", ar: "التأمين/الوديعة", g: "die" },
+    { de: "die Kaution", ar: "مبلغ الضمان (وديعة مالية)", g: "die" },
     { de: "der Vermieter", ar: "المؤجّر", g: "der" },
     { de: "der Mieter", ar: "المستأجر", g: "der" },
     { de: "die Kündigung", ar: "الإنهاء", g: "die" },
@@ -287,7 +287,7 @@ export const B2_TOPIC_VOCAB: Record<string, VocabEntry[]> = {
     { de: "die Wirtschaft", ar: "الاقتصاد", g: "die" },
     { de: "der Markt", ar: "السوق", g: "der" },
     { de: "die Investition", ar: "الاستثمار", g: "die" },
-    { de: "der Umsatz", ar: "المبيعات", g: "der" },
+    { de: "der Umsatz", ar: "الإيرادات / حجم المبيعات", g: "der" },
     { de: "der Gewinn", ar: "الربح", g: "der" },
     { de: "der Verlust", ar: "الخسارة", g: "der" },
     { de: "die Inflation", ar: "التضخم", g: "die" },

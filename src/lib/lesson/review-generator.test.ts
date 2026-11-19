@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { LESSONS, getLesson } from "@/data/lessons";
 import { buildInterleavedReview } from "@/lib/lesson/review-generator";
+import type { Exercise } from "@/types/lesson";
 
 /** ترتيب المنهج كما في المولّد: المستوى ثم رقم الدرس */
 const LEVEL_RANK: Record<string, number> = { A1: 0, A2: 1, B1: 2, B2: 3 };
@@ -20,6 +21,40 @@ function questionKeys(lessons: typeof LESSONS) {
 }
 
 describe("مراجعة الدروس السابقة تعتمد على تسلسل المنهج", () => {
+  it("يضمّن الدرس المصدر في معرّف كل سؤال مراجعة مولّد", async () => {
+    const sourceLesson = sequence.find((candidate) => sequence.indexOf(candidate) > 1);
+    expect(sourceLesson).toBeDefined();
+    // Force the generator path for a later lesson even when production data has manual review.
+    const lesson = {...sourceLesson!, review: undefined};
+    const position = sequence.findIndex((candidate) => candidate.id === lesson.id);
+    const previousIds = sequence.slice(0, position).map((previous) => previous.id);
+    const review = await buildInterleavedReview(lesson!);
+    expect(review.length).toBeGreaterThan(0);
+
+    for (const item of review) {
+      expect(item.type).toBe("multiple-choice");
+      if (item.type !== "multiple-choice") continue;
+
+      const sourceMatch = sequence
+        .filter((sourceLesson) => previousIds.includes(sourceLesson.id))
+        .flatMap((sourceLesson) =>
+          sourceLesson.miniTest
+            .filter((question): question is Extract<Exercise, { type: "multiple-choice" }> => question.type === "multiple-choice")
+            .map((question) => ({sourceLesson, question})),
+        )
+        .find(
+          ({sourceLesson, question}) =>
+            question.questionDe === item.questionDe &&
+            question.questionAr === item.questionAr &&
+            question.options.join("\\0") === item.options.join("\\0") &&
+            item.id === `review-${lesson!.id}-${sourceLesson.id}-${question.id}`,
+        );
+
+      expect(sourceMatch, `${item.id} يقابل سؤالاً في درس سابق`).toBeDefined();
+      expect(item.id).toBe(`review-${lesson!.id}-${sourceMatch!.sourceLesson.id}-${sourceMatch!.question.id}`);
+    }
+    expect(new Set(review.map((item) => item.id)).size).toBe(review.length);
+  });
   it.each(["a1-10", "a1-08", "b1-11"])("كل أسئلة مراجعة %s تأتي من دروس سابقة له فعلاً", async (id) => {
     const lesson = getLesson(id);
     expect(lesson).toBeDefined();

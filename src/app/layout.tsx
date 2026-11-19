@@ -5,18 +5,21 @@ import {Header} from "@/components/layout/header";
 import {MobileBottomNav} from "@/components/layout/mobile-bottom-nav";
 import {LLMProvider} from "@/components/providers/llm-provider";
 import {ProgressProvider} from "@/components/providers/progress-provider";
+import {ChunkRecovery} from "@/components/providers/chunk-recovery";
+import {GermanLang} from "@/components/providers/german-lang";
 import {ServiceWorkerRegister} from "@/components/providers/service-worker-register";
 import {ThemeProvider} from "@/components/providers/theme-provider";
 import {VoiceWarmup} from "@/components/providers/voice-warmup";
 import {fontInter, fontTajawal} from "@/lib/fonts";
 import {siteConfig} from "@/lib/site-config";
+import {serializeJsonLd} from "@/lib/security/json-ld";
 
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — تعلّم الألمانية من الصفر حتى الاحتراف (A1 → B2)`,
+    default: `${siteConfig.name} — تعلّم الألمانية من الصفر حتى B2`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -71,7 +74,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+            __html: serializeJsonLd({
               "@context": "https://schema.org",
               "@type": "Course",
               name: "درب الألمانية — تعلم الألمانية من A1 إلى B2",
@@ -114,6 +117,8 @@ export default function RootLayout({
                 <MobileBottomNav />
               </div>
               <ServiceWorkerRegister />
+              <ChunkRecovery />
+              <GermanLang />
               <VoiceWarmup />
             </LLMProvider>
           </ProgressProvider>

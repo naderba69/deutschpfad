@@ -104,11 +104,11 @@ export const A1_SPRECHEN: A1SpeakingPart[] = [
         partnerDe: "Erzählen Sie mir etwas über Ihren Tag.",
         partnerAr: "احكِ لي شيئاً عن يومك.",
         modelDe: "Ich stehe um sieben Uhr auf. Am Nachmittag lerne ich Deutsch. Abends sehe ich gern fern.",
-        modelAr: "أستيقظ في السابعة. بعد الظهر أتعلم الألمانية. مساءً أحب مشاهدة التلفاز.",
+        modelAr: "أنهض من الفراش في السابعة. بعد الظهر أتعلم الألمانية. مساءً أحب مشاهدة التلفاز.",
       },
     ],
     checklistAr: [
-      "ذكرت ساعة الاستيقاظ (um … Uhr)",
+      "ذكرت وقت النهوض من الفراش (um … Uhr)",
       "تحدثت عن فترة من اليوم (am Nachmittag / abends)",
       "قلت ما تحب بعبارة مثل: ich … gern",
     ],

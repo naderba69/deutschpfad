@@ -5,13 +5,21 @@ import {LazyLevelTest} from "@/components/tests/lazy/lazy-level-test";
 import {LEVELS} from "@/lib/constants/curriculum";
 import type { TestLevel } from "@/types/test";
 
-export const metadata: Metadata = {
-  title: "اختبار نهاية المستوى — Goethe-Zertifikat",
-  description: "اختبار نهاية مستوى بصيغة Goethe-Zertifikat: قراءة + استماع + قواعد + كتابة بتوقيت حقيقي.",
-};
-
 interface Props {
-  params: { level: string };
+  params: Promise<{ level: string }>;
+}
+
+/**
+ * الجولة 15 — 2.4.2: عنوان واحد لكل المستويات يعني أربع صفحات بنفس اسم
+ * لسان المتصفح وبلا تمييز في السجل. العنوان الآن يحمل المستوى صريحاً.
+ */
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { level: raw } = await params;
+  const level = raw.toUpperCase();
+  return {
+    title: `اختبار نهاية المستوى ${level} — تدريب شامل`,
+    description: `تدريب داخلي على مهارات ${level} في القراءة والاستماع والقواعد والكتابة. لا يمثل امتحان Goethe أو تقييماً رسمياً للمستوى.`,
+  };
 }
 
 export function generateStaticParams() {
@@ -20,8 +28,9 @@ export function generateStaticParams() {
 
 const VALID: TestLevel[] = ["A1", "A2", "B1", "B2"];
 
-export default function LevelTestPage({ params }: Props) {
-  const level = params.level.toUpperCase() as TestLevel;
+export default async function LevelTestPage({ params }: Props) {
+  const { level: rawLevel } = await params;
+  const level = rawLevel.toUpperCase() as TestLevel;
   if (!VALID.includes(level)) notFound();
   const meta = LEVELS.find((l) => l.code === level);
 

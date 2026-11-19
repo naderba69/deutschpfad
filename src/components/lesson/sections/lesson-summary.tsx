@@ -49,8 +49,8 @@ export function LessonSummary({ lesson }: { lesson: Lesson }) {
                 <LangDe>{t.titleDe}</LangDe>
               </span>
               {t.examples && t.examples[0] && (
-                <p className="font-de mt-1 text-xs text-muted-foreground">
-                  مثال: {t.examples[0].de}
+                <p className="mt-1 text-xs text-muted-foreground">
+                  مثال: <LangDe>{t.examples[0].de}</LangDe>
                 </p>
               )}
             </li>
@@ -68,7 +68,7 @@ export function LessonSummary({ lesson }: { lesson: Lesson }) {
           <ul className="space-y-1.5">
             {tips.map((tip, i) => (
               <li key={i} className="rounded-lg border border-gold/30 bg-gold/10 px-3 py-2 text-sm">
-                {tip}
+                <LangDe>{tip}</LangDe>
               </li>
             ))}
           </ul>
@@ -85,10 +85,12 @@ export function LessonSummary({ lesson }: { lesson: Lesson }) {
           <ul className="space-y-1.5">
             {mistakes.map((m, i) => (
               <li key={i} className="rounded-lg border border-destructive/20 bg-destructive/5 px-3 py-2 text-sm">
-                <span className="font-de line-through opacity-60">{m.wrong}</span>
+                <LangDe className="line-through opacity-60">{m.wrong}</LangDe>
                 {" ← "}
-                <span className="font-de font-bold text-success">{m.right}</span>
-                <span className="mt-0.5 block text-xs text-muted-foreground">{m.whyAr}</span>
+                <LangDe className="font-bold text-success">{m.right}</LangDe>
+                <span className="mt-0.5 block text-xs text-muted-foreground">
+                  <LangDe>{m.whyAr}</LangDe>
+                </span>
               </li>
             ))}
           </ul>
@@ -105,7 +107,7 @@ export function LessonSummary({ lesson }: { lesson: Lesson }) {
           <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
             {lesson.flashcards.map((c) => (
               <div key={c.id} className="rounded-lg border border-muted bg-card/60 px-3 py-1.5 text-sm">
-                <span className="font-de font-bold">{c.de}</span>
+                <LangDe className="font-bold">{c.de}</LangDe>
                 <span className="ms-2 text-xs text-muted-foreground">{c.ar}</span>
               </div>
             ))}
@@ -116,8 +118,10 @@ export function LessonSummary({ lesson }: { lesson: Lesson }) {
       {/* 5) لقطة ثقافية */}
       {culture && (
         <div className="rounded-lg bg-muted/40 px-3 py-2">
-          <p className="text-[11px] font-bold text-muted-foreground">{culture.title}</p>
-          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{culture.content}</p>
+          <p className="text-[11px] font-bold text-muted-foreground">
+            <LangDe>{culture.title}</LangDe>
+          </p>
+          <p className="mt-1 break-words text-xs leading-relaxed text-muted-foreground">{culture.content}</p>
         </div>
       )}
     </div>

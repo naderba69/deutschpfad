@@ -22,8 +22,8 @@ export const LEVELS: LevelMeta[] = [
     units: 13,
     words: 800,
     unlockThreshold: 80,
-    gradient: "from-sky-500 via-blue-500 to-indigo-500",
-    accent: "#0ea5e9",
+    gradient: "from-sky-700 via-blue-700 to-indigo-700",
+    accent: "#0369a1",
     emoji: "🌱",
   },
   {
@@ -37,8 +37,8 @@ export const LEVELS: LevelMeta[] = [
     units: 13,
     words: 800,
     unlockThreshold: 80,
-    gradient: "from-emerald-500 via-teal-500 to-cyan-500",
-    accent: "#10b981",
+    gradient: "from-emerald-800 via-teal-800 to-cyan-800",
+    accent: "#047857",
     emoji: "🌿",
   },
   {
@@ -52,8 +52,8 @@ export const LEVELS: LevelMeta[] = [
     units: 11,
     words: 1000,
     unlockThreshold: 80,
-    gradient: "from-amber-500 via-orange-500 to-rose-500",
-    accent: "#f59e0b",
+    gradient: "from-amber-800 via-orange-800 to-rose-700",
+    accent: "#b45309",
     emoji: "🌳",
   },
   {
@@ -67,8 +67,8 @@ export const LEVELS: LevelMeta[] = [
     units: 10,
     words: 1000,
     unlockThreshold: 80,
-    gradient: "from-rose-500 via-pink-500 to-fuchsia-500",
-    accent: "#f43f5e",
+    gradient: "from-rose-700 via-pink-700 to-fuchsia-700",
+    accent: "#be123c",
     emoji: "🌲",
   },
 ];
@@ -219,7 +219,7 @@ export const UNITS: Unit[] = [
     titleDe: "Im Restaurant",
     titleAr: "المطعم والطعام",
     descDe: "Bestellen, bezahlen und über Geschmack sprechen.",
-    descAr: "طلب الطعام، الدفع، والتعبير عن الرأي في الأكل (schmecken).",
+    descAr: "طلب الطعام، الدفع، والتحدث عن مذاقه (schmecken).",
   },
   {
     id: "a2-04",
@@ -412,7 +412,7 @@ export const UNITS: Unit[] = [
     titleDe: "B1 kompakt — Prüfungsvorbereitung",
     titleAr: "B1 الشامل — التحضير للامتحان",
     descDe: "Gesamtwiederholung von B1 und Prüfungsvorbereitung.",
-    descAr: "المراجعة الختامية لمستوى B1 ودمج القواعد في مواقف حية، مع محاكاة أقسام Goethe-B1.",
+    descAr: "مراجعة مختارة لموضوعات B1 ودمج بعض القواعد في مواقف حية، مع مهام تدريبية عامة؛ لا تمثل محاكاة كاملة أو اختباراً رسمياً.",
   },
 
   // ═══ B2 — 10 وحدات ═══
@@ -505,6 +505,24 @@ export const UNITS: Unit[] = [
     titleAr: "الدراسة في ألمانيا",
     descDe: "Universitätssystem, Seminare und wissenschaftliches Schreiben.",
     descAr: "النظام الجامعي، الندوات، والكتابة الأكاديمية العلمية (Fachsprache).",
+  },
+  {
+    id: "b2-12",
+    level: "B2",
+    number: 11,
+    titleDe: "Karriereentwicklung",
+    titleAr: "المهن المتقدمة",
+    descDe: "Beförderung, Weiterbildung und Führungskraft werden.",
+    descAr: "الترقية، التدريب المستمر، ومهارات القيادة والتطوير المهني.",
+  },
+  {
+    id: "b2-13",
+    level: "B2",
+    number: 12,
+    titleDe: "Technologie und KI",
+    titleAr: "التكنولوجيا والذكاء الاصطناعي",
+    descDe: "Digitalisierung, KI und Datenschutz sprachlich einordnen.",
+    descAr: "الرقمنة والذكاء الاصطناعي وحماية البيانات، والاشتقاق التقني.",
   },
 ];
 

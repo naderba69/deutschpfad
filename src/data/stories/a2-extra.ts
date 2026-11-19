@@ -84,7 +84,7 @@ const A2_10: InteractiveStory = {
         ],
       },
     },
-    { id: 5, de: "Mia fährt glücklich nach Hause. Das Fahrrad ist super! Ende.", ar: "تركب ميا إلى البيت سعيدة. الدراجة رائعة! النهاية." },
+    { id: 5, de: "Mia fährt glücklich nach Hause. Das Fahrrad ist super! Ende.", ar: "تعود ميا بدراجتها إلى البيت سعيدةً. الدراجة رائعة! النهاية." },
   ],
 };
 
@@ -94,7 +94,7 @@ const A2_11: InteractiveStory = {
   title: "Der Zahnarztbesuch",
   titleAr: "زيارة طبيب الأسنان",
   emoji: "🦷",
-  description: "فيل يعاني من ألم الأسنان — الألم والنصائح.",
+  description: "حكاية تعليمية خيالية عن ألم الأسنان؛ النصيحة فيها مثال لغوي وليست إرشاداً طبياً أو تشخيصاً.",
   grammar: "الألم (Zahnschmerzen) • النصائح (sollen) • الخوف",
   segments: [
     { id: 1, de: "Felix hat starke Zahnschmerzen. Er muss zum Zahnarzt.", ar: "فيلكس يعاني من ألم أسنان شديد. يجب أن يذهب لطبيب الأسنان." },
@@ -217,4 +217,133 @@ const A2_13: InteractiveStory = {
   ],
 };
 
-export const A2_EXTRA_STORIES: InteractiveStory[] = [A2_9, A2_10, A2_11, A2_12, A2_13];
+const A2_14: InteractiveStory = {
+  id: "a2-markt",
+  level: "A2",
+  title: "Auf dem Markt",
+  titleAr: "في السوق",
+  emoji: "🥕",
+  description: "مريم تشتري الخضار في السوق — Perfekt والأسعار.",
+  grammar: "الماضي (Perfekt) • الأسعار • الكميات",
+  segments: [
+    { id: 1, de: "Mariam ist heute auf den Markt gegangen, weil sie frisches Gemüse kaufen wollte.", ar: "ذهبت مريم اليوم إلى السوق لأنها أرادت شراء خضار طازجة." },
+    { id: 2, de: "Sie hat einen großen Korb mitgenommen und ist langsam durch die Stände gegangen.", ar: "أخذت سلة كبيرة ومشت ببطء بين الأكشاك." },
+    {
+      id: 3,
+      de: "Sie hat Tomaten und Karotten gekauft, weil sie für die Suppe brauchte.",
+      ar: "اشترت طماطم وجزراً لأنها احتاجتها للشوربة.",
+      question: {
+        de: "Was hat Mariam gekauft?",
+        ar: "ماذا اشترت مريم؟",
+        options: [
+          { text: "Tomaten und Karotten", ar: "طماطم وجزراً", correct: true, explanation: "نعم — «Sie hat Tomaten und Karotten gekauft»." },
+          { text: "Äpfel und Bananen", ar: "تفاحاً وموزاً", correct: false, explanation: "لا — اشترت خضاراً لا فواكه." },
+          { text: "Brot und Käse", ar: "خبزاً وجبناً", correct: false, explanation: "لا — الخبز والجبن لم يُذكرا." },
+        ],
+      },
+    },
+    {
+      id: 4,
+      de: "Der Verkäufer hat ihr gesagt, dass die Tomaten heute besonders frisch seien.",
+      ar: "قال لها البائع إن الطماطم طازجة بشكل خاص اليوم.",
+      question: {
+        de: "Was hat der Verkäufer gesagt?",
+        ar: "ماذا قال البائع؟",
+        options: [
+          { text: "Die Tomaten sind frisch", ar: "الطماطم طازجة", correct: true, explanation: "صحيح — «dass die Tomaten heute besonders frisch seien»." },
+          { text: "Die Tomaten sind teuer", ar: "الطماطم غالية", correct: false, explanation: "لا — تحدث عن الطزاجة لا السعر." },
+          { text: "Die Tomaten sind alt", ar: "الطماطم قديمة", correct: false, explanation: "لا — قال إنها طازجة." },
+        ],
+      },
+    },
+    { id: 5, de: "Zu Hause hat Mariam eine leckere Suppe gekocht. Ende.", ar: "في البيت طبخت مريم شوربة لذيذة. النهاية." },
+  ],
+};
+
+const A2_15: InteractiveStory = {
+  id: "a2-bibliothek",
+  level: "A2",
+  title: "In der Bibliothek",
+  titleAr: "في المكتبة",
+  emoji: "📖",
+  description: "عمر يستعير كتباً من المكتبة — القراءة والاستعارة.",
+  grammar: "الاستعارة • القراءة • المكتبة",
+  segments: [
+    { id: 1, de: "Omar geht in die Bibliothek, weil er ein Buch für seine Prüfung braucht.", ar: "يذهب عمر إلى المكتبة لأنه يحتاج كتاباً لامتحانه." },
+    { id: 2, de: "Er hat seinen Studentenausweis mitgenommen und sich am Empfang angemeldet.", ar: "أخذ بطاقة الطالب وسجل عند الاستقبال." },
+    {
+      id: 3,
+      de: "Er hat drei Bücher ausgeliehen und sie für vier Wochen behalten.",
+      ar: "استعار ثلاثة كتب واحتفظ بها أربعة أسابيع.",
+      question: {
+        de: "Wie viele Bücher hat Omar ausgeliehen?",
+        ar: "كم كتاباً استعار عمر؟",
+        options: [
+          { text: "Drei Bücher", ar: "ثلاثة كتب", correct: true, explanation: "نعم — «Er hat drei Bücher ausgeliehen»." },
+          { text: "Ein Buch", ar: "كتاباً واحداً", correct: false, explanation: "لا — استعار ثلاثة كتب." },
+          { text: "Fünf Bücher", ar: "خمسة كتب", correct: false, explanation: "لا — العدد ثلاثة." },
+        ],
+      },
+    },
+    {
+      id: 4,
+      de: "Die Bibliothekarin hat ihm gesagt, dass er die Bücher rechtzeitig zurückgeben solle.",
+      ar: "قالت له أمينة المكتبة إنه يجب أن يعيد الكتب في الوقت المناسب.",
+      question: {
+        de: "Was hat die Bibliothekarin gesagt?",
+        ar: "ماذا قالت أمينة المكتبة؟",
+        options: [
+          { text: "Er soll die Bücher zurückgeben", ar: "يجب أن يعيد الكتب", correct: true, explanation: "صحيح — «dass er die Bücher rechtzeitig zurückgeben solle»." },
+          { text: "Er soll die Bücher behalten", ar: "يجب أن يحتفظ بالكتب", correct: false, explanation: "لا — يجب إعادتها في الوقت." },
+          { text: "Er soll mehr Bücher nehmen", ar: "يجب أن يأخذ كتباً أكثر", correct: false, explanation: "لا — الحديث عن الإعادة." },
+        ],
+      },
+    },
+    { id: 5, de: "Omar hat viel gelernt und die Prüfung bestanden. Ende.", ar: "تعلم عمر كثيراً واجتاز الامتحان. النهاية." },
+  ],
+};
+
+const A2_16: InteractiveStory = {
+  id: "a2-fahrradwerkstatt",
+  level: "A2",
+  title: "In der Fahrradwerkstatt",
+  titleAr: "في ورشة الدراجات",
+  emoji: "🚲",
+  description: "حكاية تدريبية خيالية عن إصلاح دراجة؛ أسماء وأحداث مخترعة.",
+  grammar: "الماضي التام (Perfekt) • وسائل النقل",
+  segments: [
+    { id: 1, de: "Gestern ist Herr Kaya in die Fahrradwerkstatt gegangen.", ar: "أمس ذهب السيد كايا إلى ورشة الدراجات." },
+    { id: 2, de: "Sein Fahrrad hat einen platten Reifen gehabt.", ar: "كانت إطارات دراجته مثقوبة." },
+    {
+      id: 3,
+      de: "Der Mechaniker hat den Reifen repariert. Es hat eine Stunde gedauert.",
+      ar: "أصلح الميكانيكي الإطار. استغرق ذلك ساعة.",
+      question: {
+        de: "Was hat der Mechaniker gemacht?",
+        ar: "ماذا فعل الميكانيكي؟",
+        options: [
+          { text: "Er hat den Reifen repariert", ar: "أصلح الإطار", correct: true, explanation: "صحيح — «Der Mechaniker hat den Reifen repariert»." },
+          { text: "Er hat das Fahrrad verkauft", ar: "باع الدراجة", correct: false, explanation: "لا — الميكانيكي أصلح الإطار." },
+          { text: "Er hat geschlafen", ar: "نام", correct: false, explanation: "لا — الميكانيكي عمل ساعة كاملة." },
+        ],
+      },
+    },
+    {
+      id: 4,
+      de: "Herr Kaya hat mit Karte bezahlt und ist nach Hause gefahren.",
+      ar: "دفع السيد كايا بالبطاقة وركب دراجته إلى المنزل.",
+      question: {
+        de: "Wie hat Herr Kaya bezahlt?",
+        ar: "كيف دفع السيد كايا؟",
+        options: [
+          { text: "Mit Karte", ar: "بالبطاقة", correct: true, explanation: "صحيح — «Herr Kaya hat mit Karte bezahlt»." },
+          { text: "Mit einem Lied", ar: "بأغنية", correct: false, explanation: "لا — دفع بالبطاقة." },
+          { text: "Gar nicht", ar: "لم يدفع", correct: false, explanation: "لا — دفع بالبطاقة." },
+        ],
+      },
+    },
+    { id: 5, de: "Das Fahrrad fährt wieder gut. Herr Kaya ist zufrieden. Ende.", ar: "الدراجة تعمل جيداً مجدداً. السيد كايا راضٍ. النهاية." },
+  ],
+};
+
+export const A2_EXTRA_STORIES: InteractiveStory[] = [A2_9, A2_10, A2_11, A2_12, A2_13, A2_14, A2_15, A2_16];

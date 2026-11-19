@@ -92,18 +92,14 @@ test("الدرس: زر «التالي» في الشريط السفلي لا يت
     if (!nav) return { ok: false as const, reason: "شريط التنقل السفلي غير موجود" };
     const navTop = Math.round(nav.getBoundingClientRect().top);
 
-    // زر «التالي» الظاهر داخل الشريط اللاصق السفلي
-    const stuckBtn = [...document.querySelectorAll("button")].find((b) => {
-      const t = b.textContent ?? "";
-      if (!t.includes("التالي")) return false;
-      if (b.offsetParent === null) return false;
-      const r = b.getBoundingClientRect();
-      // ظاهر ضمن منطقة الشريط السفلي اللاصق فقط
-      return r.top > window.innerHeight - 260 && r.bottom <= window.innerHeight + 8;
-    });
-    if (!stuckBtn) return { ok: false as const, reason: "لا يوجد زر «التالي» ظاهر في الشريط اللاصق" };
+    // افحص زر الشريط اللاصق نفسه، لا زر الإجراء المكرر داخل نهاية محتوى القسم.
+    const stickyBar = document.querySelector<HTMLElement>('div.sticky[class*="bottom"]');
+    const stickyButton = stickyBar
+      ? [...stickyBar.querySelectorAll("button")].find((button) => (button.textContent ?? "").includes("التالي"))
+      : undefined;
+    if (!stickyButton) return { ok: false as const, reason: "لا يوجد زر «التالي» داخل الشريط اللاصق" };
 
-    const r = stuckBtn.getBoundingClientRect();
+    const r = stickyButton.getBoundingClientRect();
     return {
       ok: true as const,
       barButtonBottom: Math.round(r.bottom),

@@ -3,8 +3,8 @@
  */
 import {describe, expect, it} from "vitest";
 
-import {canTakeSealExam, getActiveLevel, getLevelCompletion, getOverallProgress, getUnitStatus, isLevelSealed, isUnitUnlocked} from "@/lib/progress-selectors";
-import {getUnitsByLevel} from "@/lib/constants/curriculum";
+import {canTakeSealExam, getActiveLevel, getLevelCompletion, getOverallProgress, getUnitStatus, isLevelProgressionComplete, isLevelSealed, isUnitUnlocked} from "@/lib/progress-selectors";
+import {getUnitsByLevel, LEVELS} from "@/lib/constants/curriculum";
 
 const a1Units = getUnitsByLevel("A1");
 const a2Units = getUnitsByLevel("A2");
@@ -33,13 +33,24 @@ describe("isLevelSealed — امتحان الختم", () => {
     expect(isLevelSealed([], "A1", ["A1"])).toBe(true);
   });
 
-  it("مختوم تلقائياً عند إكمال 100% من الوحدات (توافق قديم)", () => {
-    expect(isLevelSealed(allA1, "A1", [])).toBe(true);
+  it("إكمال الوحدات وحده لا يسجل اجتياز امتحان الختم", () => {
+    expect(isLevelSealed(allA1, "A1", [])).toBe(false);
+  });
+
+  it("يسجل الختم بعد نتيجة امتحان صريحة فقط", () => {
+    expect(isLevelSealed([], "A1", ["A1"])).toBe(true);
   });
 
   it("غير مختوم عند 80% دون اجتياز الامتحان", () => {
     const eighty = a1Units.slice(0, Math.ceil(a1Units.length * 0.8)).map((u) => u.id);
     expect(isLevelSealed(eighty, "A1", [])).toBe(false);
+  });
+});
+
+describe("isLevelProgressionComplete — توافق مسار المستخدمين القدامى", () => {
+  it("يسمح بالانتقال الداخلي بعد إكمال الوحدات، دون اعتباره اجتيازاً للامتحان", () => {
+    expect(isLevelProgressionComplete(allA1, "A1", [])).toBe(true);
+    expect(isLevelSealed(allA1, "A1", [])).toBe(false);
   });
 });
 
@@ -110,5 +121,11 @@ describe("getUnitStatus", () => {
 describe("getOverallProgress", () => {
   it("صفر لمستخدم جديد", () => {
     expect(getOverallProgress([])).toBe(0);
+  });
+
+  it("يحتسب الوحدات المعروفة الفريدة فقط ويتجاهل المعرفات غير الصالحة", () => {
+    const totalUnits = LEVELS.reduce((sum, level) => sum + getUnitsByLevel(level.code).length, 0);
+    const expected = Math.round((1 / totalUnits) * 100);
+    expect(getOverallProgress([a1First.id, a1First.id, "unknown-unit"])).toBe(expected);
   });
 });

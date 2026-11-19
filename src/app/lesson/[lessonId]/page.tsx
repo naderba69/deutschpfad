@@ -3,9 +3,10 @@ import {notFound} from "next/navigation";
 
 import {LessonClient} from "@/components/lesson/lesson-client";
 import {LESSONS, getLesson} from "@/data/lessons";
+import {fitTitle} from "@/lib/seo/title";
 
 interface LessonPageProps {
-  params: { lessonId: string };
+  params: Promise<{ lessonId: string }>;
 }
 
 /** توليد الصفحات الثابتة لجميع الدروس المتاحة */
@@ -14,16 +15,18 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: LessonPageProps): Promise<Metadata> {
-  const lesson = getLesson(params.lessonId);
+  const { lessonId } = await params;
+  const lesson = getLesson(lessonId);
   if (!lesson) return { title: "درس غير موجود" };
   return {
-    title: `${lesson.titleDe} — ${lesson.titleAr}`,
+    title: fitTitle(lesson.titleDe, lesson.titleAr),
     description: lesson.summary,
   };
 }
 
-export default function LessonPage({ params }: LessonPageProps) {
-  const lesson = getLesson(params.lessonId);
+export default async function LessonPage({ params }: LessonPageProps) {
+  const { lessonId } = await params;
+  const lesson = getLesson(lessonId);
   if (!lesson) notFound();
 
   return <LessonClient lesson={lesson} />;

@@ -4,7 +4,6 @@ import * as React from "react";
 import {Loader2, Sparkles} from "lucide-react";
 
 import {useLLM} from "@/components/providers/llm-provider";
-import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import {cn} from "@/lib/utils";
 
@@ -20,8 +19,6 @@ interface AiToolShellProps {
   canRun?: boolean;
   /** معاينة الزر */
   buttonLabel?: string;
-  /** مفتاح التخزين المؤقت */
-  cacheKey?: string;
   /** إعادة ضبط النتيجة */
   onClear?: () => void;
 }
@@ -108,15 +105,5 @@ export function AiToolShell({
         )}
       </CardContent>
     </Card>
-  );
-}
-
-/** زر تشغيل موحد */
-export function AiRunButton({ loading, label, disabled }: { loading: boolean; label: string; disabled?: boolean }) {
-  return (
-    <Button type="button" disabled={disabled || loading} className="gap-1.5">
-      {loading ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" /> : <Sparkles className="h-4 w-4" aria-hidden="true" />}
-      {loading ? "جارٍ التوليد…" : label}
-    </Button>
   );
 }
