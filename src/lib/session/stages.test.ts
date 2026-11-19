@@ -1,10 +1,10 @@
 import {describe, expect, it} from "vitest";
 import {LESSON_SECTIONS} from "@/components/lesson/lesson-sections";
-import {SESSION_STAGES, SESSION_TOTAL_MINUTES, sectionIdsOfStages} from "./stages";
+import {SECTION_PROOF, SESSION_STAGES, SESSION_TOTAL_MINUTES, sectionIdsOfStages} from "./stages";
 import {stageBudgetMatches} from "./plan";
 
 describe("مراحل الحصة — التغطية والتسلسل", () => {
-  it("كل قسم من أقسام الدرس ينتمي إلى مرحلة واحدة بالضبط", () => {
+  it("كل قسم من أقسام الدرس (17) ينتمي إلى مرحلة واحدة بالضبط", () => {
     const lessonIds = LESSON_SECTIONS.map((s) => s.id).sort();
     const stageIds = sectionIdsOfStages().sort();
     expect(stageIds).toEqual(lessonIds);
@@ -27,9 +27,16 @@ describe("مراحل الحصة — التغطية والتسلسل", () => {
     expect(stageBudgetMatches()).toBe(true);
   });
 
-  it("التسلسل التعليمي: استرجاع ← أهداف ← تمهيد ← مدخل ← تطبيق ← إنتاج ← تثبيت", () => {
+  it("التسلسل الأكاديمي: 10 مراحل بالترتيب المعتمد", () => {
     expect(SESSION_STAGES.map((s) => s.id)).toEqual([
-      "recall", "objectives", "activation", "input", "guided", "production", "consolidate",
+      "ziele", "einstieg", "wortschatz", "grammatik", "hoeren-lesen",
+      "gezielte-uebungen", "produktion", "landeskunde", "lernkontrolle", "sicherung",
     ]);
+    expect(SESSION_STAGES).toHaveLength(10);
+  });
+
+  it("كل قسم له طريقة إثبات واحدة (تمرين أو إقرار)، ولا قسم زائداً", () => {
+    const all = sectionIdsOfStages().sort();
+    expect(Object.keys(SECTION_PROOF).sort()).toEqual(all);
   });
 });

@@ -5,7 +5,7 @@
  *  القاعدة المتفق عليها:
  *  · إتقان = 3 إجابات صحيحة متتالية بدون تلميح،
  *    وتمتد هذه السلسلة على يومين مختلفين على الأقل (اختبار مؤجَّل).
- *  · آخر إجابة خاطئة ⇒ «تحتاج مراجعة» (تعود في اليوم التالي).
+ *  · آخر إجابة خاطئة ⇒ «تحتاج مراجعة»، وتعود بعد 1 و3 و7 أيام.
  *  · هذا إتقان داخل التطبيق فقط، وليس إثباتاً لمستوى CEFR.
  * ═══════════════════════════════════════════════════════════
  */
@@ -40,6 +40,17 @@ export function nextDayKey(ts: number): string {
   const d = new Date(ts);
   d.setDate(d.getDate() + 1);
   return dayKey(d.getTime());
+}
+
+/** جدول المراجعة بعد الخطأ: بعد 1 و3 و7 أيام (مفاتيح الأيام) */
+export const REVIEW_OFFSETS_DAYS = [1, 3, 7] as const;
+
+export function reviewScheduleKeys(ts: number): string[] {
+  return REVIEW_OFFSETS_DAYS.map((offset) => {
+    const d = new Date(ts);
+    d.setDate(d.getDate() + offset);
+    return dayKey(d.getTime());
+  });
 }
 
 export function evaluateMastery(attempts: readonly Attempt[]): MasteryResult {

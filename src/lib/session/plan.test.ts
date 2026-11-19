@@ -33,9 +33,9 @@ describe("مُخطِّط الاسترجاع", () => {
     expect(selectWarmupItems(a).map((x) => x.id)).toEqual(selectWarmupItems([...a].reverse()).map((x) => x.id));
   });
 
-  it("الخطة تحوي المراحل السبع ومجموع دقائقها 90", () => {
+  it("الخطة تحوي المراحل العشر ومجموع دقائقها 90", () => {
     const plan = buildSessionPlan([]);
-    expect(plan.stages).toHaveLength(7);
+    expect(plan.stages).toHaveLength(10);
     expect(plan.totalMinutes).toBe(90);
     expect(plan.warmupItems).toEqual([]);
   });

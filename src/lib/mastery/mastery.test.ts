@@ -1,5 +1,5 @@
 import {describe, expect, it} from "vitest";
-import {evaluateMastery, nextDayKey, type Attempt} from "./mastery";
+import {evaluateMastery, nextDayKey, reviewScheduleKeys, type Attempt} from "./mastery";
 
 // أوقات الظهر لتفادي فروق المنطقة الزمنية
 const D1 = new Date(2026, 9, 10, 12, 0).getTime();
@@ -45,5 +45,9 @@ describe("قاعدة الإتقان", () => {
 
   it("بعد الخطأ تكون المراجعة في اليوم التالي", () => {
     expect(nextDayKey(D1)).toBe("2026-10-11");
+  });
+
+  it("جدول المراجعة بعد الخطأ: بعد 1 و3 و7 أيام", () => {
+    expect(reviewScheduleKeys(D1)).toEqual(["2026-10-11", "2026-10-13", "2026-10-17"]);
   });
 });
