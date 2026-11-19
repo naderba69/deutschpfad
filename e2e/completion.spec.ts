@@ -3,6 +3,7 @@
  * — يتحقق من الإصلاح الجوهري: «إنهاء الدرس» يسجّل الإنجاز ويُظهر الدرس التالي —
  */
 import { test, expect } from "@playwright/test";
+import { seedLessonCompletions } from "./helpers/session-gate";
 
 test("التدفق الكامل: المرور بكل المراحل ثم «إنهاء الدرس» يسجّل الإنجاز ويُظهر الدرس التالي", async ({ page }) => {
   await page.goto("/lesson/a1-01");
@@ -26,6 +27,7 @@ test("التدفق الكامل: المرور بكل المراحل ثم «إن�
   });
   await page.reload();
   await page.waitForTimeout(1500);
+  await seedLessonCompletions(page, "a1-01");
 
   // المرور عبر كل مراحل التدفق بالزر السفلي «متابعة»
   let reachedFinish = false;
@@ -85,6 +87,7 @@ test("الدرس التالي: بعد الإكمال، رابط التنقل ي�
   });
   await page.reload();
   await page.waitForTimeout(1200);
+  await seedLessonCompletions(page, "a1-01");
 
   // تمرير سريع للمراحل حتى الإكمال
   for (let i = 0; i < 20; i++) {

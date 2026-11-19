@@ -15,6 +15,7 @@ import {InterleavingReview} from "@/components/lesson/sections/interleaving-revi
 import {buildInterleavedReview, likelyHasInterleavedReview, reviewLevelLabel} from "@/lib/lesson/review-generator";
 import {sectionIndexFromUrl, visibleSectionDefs} from "@/lib/session/visible-sections";
 import {acknowledgeOnAdvance} from "@/lib/session/section-completion";
+import {useSessionGate} from "@/components/session/use-session-gate";
 import {AusspracheSection} from "@/components/lesson/sections/aussprache";
 import {EinfuehrungSection} from "@/components/lesson/sections/einfuehrung";
 import {FehlerUndTippsSection} from "@/components/lesson/sections/fehler-und-tipps";
@@ -381,6 +382,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
 
   const reviewAvailable = reviewLoaded ? reviewQuestions.length > 0 : likelyHasInterleavedReview(lesson);
   const sectionDefs = visibleSectionDefs(lesson, reviewAvailable, hasRelatedResources);
+  const gate = useSessionGate(lesson.id, sectionDefs.map((d) => d.id));
   const total = sectionDefs.length;
   const progressPct = Math.round((visited.size / total) * 100);
 
@@ -393,19 +395,18 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
     });
   };
 
-  const goTo = (index: number) => {
+  const goTo = (index: number, done: ReadonlySet<string> = gate.completed) => {
     const clamped = Math.max(0, Math.min(total - 1, index));
     const def = sectionDefs[clamped];
-    // ═══ تسلسل صارم: في وضع «خطوة بخطوة» يُسمح بالخطوة التالية مباشرة،
-    // ويمنع القفز لخطوتين أو أكثر للأمام (لا تخطي في المسار) ═══
-    if (stepMode && clamped > currentSection + 1) return;
+    // تسلسل صارم: لا قفز لخطوتين، ولا دخول مرحلة مقفلة (بوابة المراحل) — في وضع «خطوة بخطوة»
+    if (stepMode && (clamped > currentSection + 1 || !gate.canOpen(clamped, done))) return;
     setCurrentSection(clamped);
     markVisited(def.id);
     // التمرير لأول المحتوى يتم في useEffect أدناه (بعد اكتمال الرندر)
   };
 
   /** «التالي» من قسم شرح/قراءة يُسجَّل إنجازه بالتأكيد؛ أقسام التمارين تسجّل نفسها */
-  const advanceFrom = (index: number) => { if (sectionDefs[index]) acknowledgeOnAdvance(lesson.id, sectionDefs[index].id); goTo(index + 1); };
+  const advanceFrom = (index: number) => { const id = sectionDefs[index]?.id; if (!id) return; const acked = acknowledgeOnAdvance(lesson.id, id); if (acked) gate.markLocal(id); goTo(index + 1, acked ? new Set([...gate.completed, id]) : gate.completed); };
 
   // ═══ إصلاح السكرول: عند تغيير القسم ننتقل تلقائياً «لأول المحتوى» ═══
   // يُنفَّذ بعد اكتمال الرندر (useEffect) لا قبله (requestAnimationFrame)
@@ -707,7 +708,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
 
           {/* أزرار التنقل السفلية اللاصقة — على الجوال ترتفع فوق شريط التنقل
               السفلي (MobileBottomNav) فلا يغطيها، وعلى الشاشات الكبيرة تلتصق بأسفل الشاشة */}
-          <div className="sticky bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-30 -mx-4 border-t bg-background/95 px-4 py-3 backdrop-blur-md sm:mx-0 sm:rounded-t-2xl sm:border md:bottom-0">
+          <div className="sticky bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-30 -mx-4 border-t bg-background/95 px-4 py-3 backdrop-blur-md sm:mx-0 sm:rounded-t-2xl sm:border md:bottom-0">{stepMode && gate.lockMessage(currentSection + 1) ? <p role="status" className="mb-2 text-xs font-bold text-warning">{gate.lockMessage(currentSection + 1)}</p> : null}
             <div className="flex flex-wrap items-center justify-between gap-3">
               <Button variant="outline" onClick={() => goTo(currentSection - 1)} disabled={currentSection === 0} className="gap-1.5">
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />

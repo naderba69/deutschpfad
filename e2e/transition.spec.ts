@@ -6,6 +6,7 @@
 import { test, expect } from "@playwright/test";
 
 import { LESSON_META } from "@/data/lessons/meta";
+import { seedLessonCompletions } from "./helpers/session-gate";
 
 test("«إنهاء الدرس» ينقل تلقائياً إلى الدرس التالي", async ({ page }) => {
   await page.goto("/lesson/a1-01");
@@ -29,6 +30,7 @@ test("«إنهاء الدرس» ينقل تلقائياً إلى الدرس ال
   });
   await page.reload();
   await page.waitForTimeout(1500);
+  await seedLessonCompletions(page, "a1-01");
 
   // المرور عبر مراحل التدفق حتى الوصول لزر «إنهاء الدرس»
   let reachedFinish = false;
