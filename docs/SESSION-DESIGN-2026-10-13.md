@@ -139,7 +139,8 @@
 
 ### 9.2 طريقة إثبات الإنجاز حسب نوع القسم
 
-- **تمرين (`exercise`):** `review`، `hoerverstehen`، `lesetext`، `uebungen`، `schreiben`، `oral-production`، `mediation`، `interaction`، `minitest`.
+- **تمرين (`exercise`):** `review`، `hoerverstehen`، `lesetext`، `uebungen`، `schreiben`، `interaction`، `minitest`. (إنجاز كل منها بنتيجة صحيحة فعلية.)
+- **تأكيد (`acknowledge`) بعد قرار المستخدم:** `oral-production`، `mediation`. لا تصحيح فيهما، فيُثبت إنجازهما بضغط المتعلم «أتممت هذا القسم».
 - **إقرار صريح (`acknowledge`):** `lernziele`، `einfuehrung`، `theorie`، `verben`، `aussprache`، `fehler`، `lernkarten`، `vertiefung`.
 
 **ما هو مُنفَّذ فعلاً:** الإنجاز يُسجَّل حالياً لـ`uebungen` و`minitest` فقط (من المرحلة السابقة). باقي الأقسام لم تُربط بعد، وإقرار «أنهيت القسم» لم يُبنَ.
