@@ -177,7 +177,11 @@ test("4.1.2 — لا تفاعلي متداخل ولا إشارة ARIA معلّق
 
 test("تحكّم سلبي — الحراسة تكشف عيباً محقوناً (لا تمرّ عليه)", async ({ page }) => {
   await page.goto("/about");
-  await page.evaluate(() => {
+  /* الحقن والقياس في استدعاء evaluate واحد: React يعيد رسم أبناء <main> بعد التحميل
+     (تأكّد بالقياس: العقدة المحقونة تختفي خلال 50–200ms بلا تنقّل ولا إعادة تحميل).
+     فصل الحقن عن القياس بجولتين كان يُسقط العقد المحقونة أحياناً (7 من 12 تشغيلاً
+     متوازياً). هذه النسخة تطابق منطق unnamedControls و«الفحص الثاني» حرفياً. */
+  const { missing, found } = await page.evaluate(() => {
     const main = document.querySelector("main")!;
     const empty = document.createElement("button");
     empty.type = "button";
@@ -205,21 +209,59 @@ test("تحكّم سلبي — الحراسة تكشف عيباً محقوناً 
     dangling.setAttribute("role", "group");
     dangling.setAttribute("aria-labelledby", "__missing");
     main.appendChild(dangling);
-  });
 
-  const missing = await unnamedControls(page);
-  expect(missing.length, "الزر بلا اسم لم يُكتشف").toBeGreaterThan(0);
+    /* — منطق unnamedControls (نسخة مطابقة) — */
+    const norm = (s: string | null | undefined) => (s || "").replace(/\s+/g, " ").trim();
+    const nameOf = (el: Element) => {
+      const lb = el.getAttribute("aria-labelledby");
+      if (lb) {
+        const t = lb
+          .split(/\s+/)
+          .map((id) => norm(document.getElementById(id)?.textContent))
+          .join(" ")
+          .trim();
+        if (t) return t;
+      }
+      const aria = norm(el.getAttribute("aria-label"));
+      if (aria) return aria;
+      if (["INPUT", "SELECT", "TEXTAREA"].includes(el.tagName)) {
+        const lab =
+          (el.id && document.querySelector(`label[for='${CSS.escape(el.id)}']`)) ||
+          el.closest("label");
+        const lt = lab ? norm(lab.textContent) : "";
+        if (lt) return lt;
+      }
+      const clone = el.cloneNode(true) as Element;
+      clone.querySelectorAll("[aria-hidden='true'], [hidden], .sr-only").forEach((n) => n.remove());
+      return norm(clone.textContent);
+    };
+    const sel =
+      "a[href],button,[role=button],[role=link],input:not([type=hidden]),select,textarea,summary";
+    const missing: { tag: string; cls: string }[] = [];
+    for (const el of document.querySelectorAll(sel)) {
+      const cs = getComputedStyle(el);
+      const r = el.getBoundingClientRect();
+      if (cs.display === "none" || cs.visibility === "hidden" || r.width === 0) continue;
+      if (el.closest("[hidden], [aria-hidden='true']")) continue;
+      if (el.tagName === "INPUT" && ["submit", "button", "reset"].includes((el as HTMLInputElement).type))
+        continue;
+      if (!nameOf(el)) missing.push({ tag: el.tagName.toLowerCase(), cls: (el.className || "").toString().slice(0, 60) });
+    }
 
-  const found = await page.evaluate(() => {
+    /* — الفحص الثاني — */
     const hs = [...document.querySelectorAll("h1,h2,h3,h4,h5,h6")].map((h) => Number(h.tagName[1]));
-    const jump = hs.some((l, i) => i > 0 && l - hs[i - 1] > 1);
+    const hasJump = hs.some((l, i) => i > 0 && l - hs[i - 1] > 1);
     const ids = new Map<string, number>();
     for (const el of document.querySelectorAll("[id]")) ids.set(el.id, (ids.get(el.id) || 0) + 1);
-    const dup = [...ids.values()].some((n) => n > 1);
+    const hasDup = [...ids.values()].some((n) => n > 1);
     const nested = Boolean(document.querySelector("a button, button a, a a, button button"));
-    const dangling = Boolean(document.querySelector("[aria-labelledby='__missing']"));
-    return { jump, dup, nested, dangling };
+    const hasDangling = Boolean(document.querySelector("[aria-labelledby='__missing']"));
+    return {
+      missing,
+      found: { jump: hasJump, dup: hasDup, nested, dangling: hasDangling },
+    };
   });
+  expect(missing.length, "الزر بلا اسم لم يُكتشف").toBeGreaterThan(0);
   expect(found).toEqual({ jump: true, dup: true, nested: true, dangling: true });
 });
 
