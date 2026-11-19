@@ -1,12 +1,14 @@
 import { expect, test } from "@playwright/test";
 
 import { advanceLessonStep, gotoLessonStep } from "./helpers/lesson-steps";
+import { seedLessonCompletions } from "./helpers/session-gate";
 
 test("بطاقات الدرس تعرض مفردات keyWords (der Name / heißen) في قسم البطاقات", async ({ page }) => {
   const pageErrors: string[] = [];
   page.on("pageerror", (e) => pageErrors.push(e.message));
   await page.goto("/lesson/a1-01", { waitUntil: "networkidle" });
   await page.waitForTimeout(400);
+  await seedLessonCompletions(page, "a1-01");
 
   // بطاقات الدرس (fc1: der Name، fc2: heißen) تُعرض في قسم «بطاقات المراجعة»
   await gotoLessonStep(page, "بطاقات المراجعة");
@@ -21,6 +23,7 @@ test("التمرين يعرض التعليم الألماني instructionDe بج
   page.on("pageerror", (e) => pageErrors.push(e.message));
   await page.goto("/lesson/a1-01", { waitUntil: "networkidle" });
   await page.waitForTimeout(400);
+  await seedLessonCompletions(page, "a1-01");
 
   // امسح أقسام الدرس كلها حتى يظهر أي تمرين يحمل تعليماً ألمانياً
   // (التدريبات تُعرض بشريحة متنامية — فالهدف أي تمرين ظاهر لا تمرين معيّن)

@@ -4,6 +4,7 @@
  * ← الكتابة ← التدريبات ← الأخطاء ← التقييم ← البطاقات) — لا يُختصر الدرس.
  */
 import { test, expect } from "@playwright/test";
+import { seedLessonCompletions } from "./helpers/session-gate";
 
 test("وضع الخطوات: كل المكونات تظهر بالترتيب (لا درس مختصر)", async ({ page }) => {
   await page.goto("/lesson/a1-01");
@@ -26,6 +27,7 @@ test("وضع الخطوات: كل المكونات تظهر بالترتيب (ل
   });
   await page.reload();
   await page.waitForTimeout(1500);
+  await seedLessonCompletions(page, "a1-01");
 
   // الأقسام الـ12 التي يجب أن تظهر تباعاً
   const expectedSections = [

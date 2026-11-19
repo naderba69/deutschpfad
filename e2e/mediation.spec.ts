@@ -6,6 +6,7 @@
  * 3) التفاعل: اختيار الرد ينتج ردّ المحاور
  */
 import { test, expect, type Page } from "@playwright/test";
+import { seedLessonCompletions } from "./helpers/session-gate";
 
 async function clearData(page: Page) {
   await page.evaluate(async () => {
@@ -32,6 +33,7 @@ test("a1-01: قسم الوساطة يظهر بعد التمرير عبر الخ�
   await clearData(page);
   await page.reload();
   await page.waitForTimeout(1800);
+  await seedLessonCompletions(page, "a1-01");
 
   // نمر عبر كل الخطوات حتى نصل للوساطة والتفاعل (الأخيران)
   let foundMediation = false;
@@ -73,6 +75,7 @@ test("التفاعل: اختيار الرد في a1-01 ينتج ردّ المح�
   await clearData(page);
   await page.reload();
   await page.waitForTimeout(1800);
+  await seedLessonCompletions(page, "a1-01");
 
   // انتقل عبر الخطوات بالتسلسل (الوساطة ثم التفاعل — آخر قسمين)
   for (let i = 0; i < 20; i++) {
@@ -102,6 +105,7 @@ test("a1-03: الوساطة والتفاعل متاحان (توزيع عبر ا�
   await clearData(page);
   await page.reload();
   await page.waitForTimeout(1800);
+  await seedLessonCompletions(page, "a1-03");
 
   let foundMediation = false;
   for (let i = 0; i < 20; i++) {
@@ -123,6 +127,7 @@ test("a2-03: الوساطة والتفاعل يعملان (تغطية كاملة
   await clearData(page);
   await page.reload();
   await page.waitForTimeout(1800);
+  await seedLessonCompletions(page, "a2-03");
 
   let foundMediation = false;
   for (let i = 0; i < 22; i++) {
