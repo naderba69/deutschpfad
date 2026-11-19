@@ -7,6 +7,7 @@ import {SpeakButton} from "@/components/shared/speak-button";
 import {Button} from "@/components/ui/button";
 import {playCorrect, playWrong} from "@/lib/audio/sfx";
 import {recordEvent} from "@/lib/analytics/events";
+import {useExerciseSectionCompletion} from "@/components/session/use-exercise-section-completion";
 import {cn} from "@/lib/utils";
 import type { MediationTask, InteractionTask } from "@/types/lesson";
 
@@ -110,7 +111,13 @@ export function MediationSection({ tasks }: { tasks: MediationTask[] }) {
 }
 
 /** ── التفاعل ── */
-export function InteractionSection({ tasks }: { tasks: InteractionTask[] }) {
+export function InteractionSection({ tasks, lessonId }: { tasks: InteractionTask[]; lessonId: string }) {
+  // كل جولة حوار = تمرين له إجابة صحيحة واحدة (الخيار الأفضل)
+  const report = useExerciseSectionCompletion(
+    lessonId,
+    "interaction",
+    tasks.flatMap((t) => (t.rounds ?? []).map((_, i) => `${t.id}#${i}`)),
+  );
   const [taskIdx, setTaskIdx] = React.useState(0);
   const [roundIdx, setRoundIdx] = React.useState(0);
   const [reply, setReply] = React.useState<{ de: string; ar: string; best: boolean } | null>(null);
@@ -123,6 +130,7 @@ export function InteractionSection({ tasks }: { tasks: InteractionTask[] }) {
   const choose = (opt: InteractionTask["rounds"][number]["options"][number]) => {
     if (reply) return;
     setReply(opt);
+    report(`${task.id}#${roundIdx}`, opt.best);
     if (opt.best) {
       playCorrect();
       void recordEvent({ type: "interaction-round", taskId: task.id, correct: true } as never);

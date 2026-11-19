@@ -13,6 +13,7 @@ import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {DetailTabs} from "@/components/shared/detail-tabs";
 import {recordEvent} from "@/lib/analytics/events";
+import {useExerciseSectionCompletion} from "@/components/session/use-exercise-section-completion";
 import {
   getListeningQuestionTaskId,
   isDialogueOrderingUnlocked,
@@ -45,6 +46,7 @@ export function HoerverstehenSection({
   questions: ListeningQuestion[];
   lessonId: string;
 }) {
+  const report = useExerciseSectionCompletion(lessonId, "hoerverstehen", questions.map((q) => q.id));
   const [rate, setRate] = React.useState<number>(1);
   const [visibleTranscripts, setVisibleTranscripts] = React.useState<Record<string, boolean>>({});
   const [revealedTranscripts, setRevealedTranscripts] = React.useState<Record<string, boolean>>({});
@@ -240,6 +242,7 @@ export function HoerverstehenSection({
                     key={q.id}
                     exercise={q}
                     onResult={(result) => {
+                      report(q.id, result.isCorrect);
                       void recordEvent({
                         type: "exercise-result",
                         exerciseId: q.id,

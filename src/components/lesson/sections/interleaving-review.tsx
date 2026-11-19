@@ -4,6 +4,7 @@ import * as React from "react";
 import {Repeat} from "lucide-react";
 
 import {ExerciseRenderer} from "@/components/lesson/exercises/exercise-renderer";
+import {useExerciseSectionCompletion} from "@/components/session/use-exercise-section-completion";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import type { Exercise } from "@/types/lesson";
 
@@ -21,6 +22,7 @@ export function InterleavingReview({
   levelLabel: string;
   lessonId: string;
 }) {
+  const report = useExerciseSectionCompletion(lessonId, "review", review.map((e) => e.id));
   if (review.length === 0) return null;
 
   return (
@@ -39,7 +41,13 @@ export function InterleavingReview({
           أجب عن هذه الأسئلة السريعة لتستعيد ما تعلمته سابقاً — ثم انطلق في درس اليوم بثقة.
         </p>
         {review.map((exercise) => (
-          <ExerciseRenderer key={exercise.id} exercise={exercise} sourceId={lessonId} lessonId={lessonId} />
+          <ExerciseRenderer
+            key={exercise.id}
+            exercise={exercise}
+            sourceId={lessonId}
+            lessonId={lessonId}
+            onResult={(result) => report(exercise.id, result.isCorrect)}
+          />
         ))}
       </CardContent>
     </Card>
