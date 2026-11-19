@@ -522,7 +522,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       case "mediation":
         return <MediationSection tasks={lesson.mediation ?? []} />;
       case "interaction":
-        return <InteractionSection tasks={lesson.interaction ?? []} />;
+        return <InteractionSection tasks={lesson.interaction ?? []} lessonId={lesson.id} />;
       case "lesetext":
         return lesson.reading ? (
           <LesetextSection reading={lesson.reading} lessonId={lesson.id} />

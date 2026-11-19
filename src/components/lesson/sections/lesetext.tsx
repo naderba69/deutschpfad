@@ -8,6 +8,7 @@ import {SpeakButton} from "@/components/shared/speak-button";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {recordEvent} from "@/lib/analytics/events";
+import {useExerciseSectionCompletion} from "@/components/session/use-exercise-section-completion";
 import {cn} from "@/lib/utils";
 import type {ReadingText} from "@/types/lesson";
 
@@ -32,6 +33,7 @@ const TEXT_TYPE_LABEL: Record<ReadingText["textType"], string> = {
  * البداية يجعل العين تقفز إلى العربية فلا تُقرأ الألمانية أصلاً.
  */
 export function LesetextSection({reading, lessonId}: {reading: ReadingText; lessonId: string}) {
+  const report = useExerciseSectionCompletion(lessonId, "lesetext", reading.questions.map((q) => q.id));
   const [showTranslation, setShowTranslation] = React.useState(false);
   const [openGloss, setOpenGloss] = React.useState(false);
   const fullText = reading.paragraphs.join(" ");
@@ -163,6 +165,7 @@ export function LesetextSection({reading, lessonId}: {reading: ReadingText; less
                 key={q.id}
                 exercise={q}
                 onResult={(result) => {
+                  report(q.id, result.isCorrect);
                   void recordEvent({
                     type: "exercise-result",
                     exerciseId: q.id,
