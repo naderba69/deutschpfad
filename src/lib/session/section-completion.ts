@@ -7,6 +7,7 @@
 
 import {getAllEventsResult, recordEvent} from "@/lib/analytics/events";
 import {completedSectionIds, decideSectionCompletion} from "./completion";
+import {SECTION_PROOF} from "./stages";
 
 export type MarkSectionResult =
   | {status: "recorded"}
@@ -42,4 +43,13 @@ export async function loadCompletedSections(
   const read = await getAllEventsResult();
   if (!read.ok) return {ok: false, ids: new Set()};
   return {ok: true, ids: completedSectionIds(read.events, lessonId)};
+}
+
+/**
+ * عند الضغط على «التالي» من قسم يُثبت بالتأكيد (شرح/قراءة) نسجّل إنجازه.
+ * أقسام التمارين لا تُسجَّل هنا؛ تسجّل نفسها عند ظهور نتيجتها الفعلية.
+ */
+export function acknowledgeOnAdvance(lessonId: string, sectionId: string): void {
+  if (SECTION_PROOF[sectionId] !== "acknowledge") return;
+  void markSectionCompleted(lessonId, sectionId).catch(() => undefined);
 }
