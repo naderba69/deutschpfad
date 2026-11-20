@@ -4,7 +4,7 @@
 import { test, expect } from "@playwright/test";
 
 test("كل درس يعرض المراجعة التراكمية (مولّدة من دروس سابقة)", async ({ page }) => {
-  // درس A1-02 (له دروس سابقة) — وضع الخطوات يعرض المراجعة كقسم ثالث
+  // درس A1-02 (له دروس سابقة) — وضع الخطوات يعرض المراجعة كقسم ثاني
   await page.goto("/lesson/a1-02");
   await page.evaluate(async () => {
     try {
@@ -25,8 +25,8 @@ test("كل درس يعرض المراجعة التراكمية (مولّدة م�
   });
   await page.reload();
   await page.waitForTimeout(1500);
-  // ننتقل خطوتين: الأهداف ← التمهيد ← المراجعة التراكمية
-  for (let i = 0; i < 2; i++) {
+  // ننتقل خطوة واحدة: الأهداف ← المراجعة التراكمية (الاسترجاع أولاً وفق تسلسل المراحل)
+  for (let i = 0; i < 1; i++) {
     const nextBtn = page.getByRole("button", { name: /^التالي:/ }).first();
     if (await nextBtn.isVisible().catch(() => false)) {
       await nextBtn.click().catch(() => {});
