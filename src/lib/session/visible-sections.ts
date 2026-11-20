@@ -8,6 +8,8 @@
  */
 
 import {LESSON_SECTIONS, type LessonSectionDef} from "@/components/lesson/lesson-sections";
+import {landeskundeFor, wortschatzFor} from "./lesson-content";
+import type {CultureNote, VocabEntry} from "@/types/lesson";
 
 export interface VisibilityInput {
   level: string;
@@ -47,11 +49,12 @@ export function sectionIndexFromUrl(search: string, sectionIds: readonly string[
 /** تعريفات الأقسام المعروضة لدرس (المصدر الوحيد لصفحة الدرس وصفحة الحصة). */
 export function visibleSectionDefs(
   lesson: {
+    id?: string;
     level: string;
     mediation?: readonly unknown[];
     interaction?: readonly unknown[];
-    wortschatz?: readonly unknown[];
-    landeskunde?: readonly unknown[];
+    wortschatz?: readonly VocabEntry[];
+    landeskunde?: readonly CultureNote[];
   },
   reviewAvailable: boolean,
   hasRelatedResources: boolean,
@@ -61,8 +64,8 @@ export function visibleSectionDefs(
       level: lesson.level,
       hasMediation: !!lesson.mediation && lesson.mediation.length > 0,
       hasInteraction: !!lesson.interaction && lesson.interaction.length > 0,
-      hasWortschatz: !!lesson.wortschatz && lesson.wortschatz.length > 0,
-      hasLandeskunde: !!lesson.landeskunde && lesson.landeskunde.length > 0,
+      hasWortschatz: wortschatzFor(lesson.id ?? "", lesson.wortschatz).length > 0,
+      hasLandeskunde: landeskundeFor(lesson.id ?? "", lesson.landeskunde).length > 0,
       reviewAvailable,
       hasRelatedResources,
     }),

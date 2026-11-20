@@ -481,8 +481,10 @@ export interface InteractionTask {
 export interface VocabEntry {
   de: string;
   ar: string;
-  exampleDe: string;
-  exampleAr: string;
+  /** جملة مثال بالألمانية (اختيارية: بعض المفردات في البنك بلا مثال) */
+  exampleDe?: string;
+  /** ترجمة المثال (اختيارية: لا تُترجم كل الأمثلة في البنك) */
+  exampleAr?: string;
 }
 
 /** ملاحظة ثقافية في قسم «الثقافة» (Landeskunde) */

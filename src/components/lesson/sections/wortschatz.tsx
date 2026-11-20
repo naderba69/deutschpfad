@@ -23,8 +23,8 @@ export function WortschatzSection({entries}: {entries: VocabEntry[]}) {
           استمع إلى كل كلمة واقرأ المثال بصوت مرتفع. لا داعي لحفظ كل شيء الآن، فستستعمل هذه الكلمات في التمارين.
         </p>
         <ul className="grid gap-3 sm:grid-cols-2">
-          {entries.map((entry) => (
-            <li key={entry.de} className="rounded-xl border bg-background p-4">
+          {entries.map((entry, i) => (
+            <li key={`${i}-${entry.de}`} className="rounded-xl border bg-background p-4">
               <div className="flex items-center justify-between gap-2">
                 <span className="font-de text-lg font-bold" dir="ltr" lang="de">
                   {entry.de}
@@ -32,10 +32,12 @@ export function WortschatzSection({entries}: {entries: VocabEntry[]}) {
                 <SpeakButton text={entry.de} size="sm" className="h-7 w-7" />
               </div>
               <p className="mt-1 text-sm text-muted-foreground">{entry.ar}</p>
-              <p className="font-de mt-3 text-sm" dir="ltr" lang="de">
-                {entry.exampleDe}
-              </p>
-              <p className="mt-0.5 text-xs text-muted-foreground">{entry.exampleAr}</p>
+              {entry.exampleDe && (
+                <p className="font-de mt-3 text-sm" dir="ltr" lang="de">
+                  {entry.exampleDe}
+                </p>
+              )}
+              {entry.exampleAr && <p className="mt-0.5 text-xs text-muted-foreground">{entry.exampleAr}</p>}
             </li>
           ))}
         </ul>
