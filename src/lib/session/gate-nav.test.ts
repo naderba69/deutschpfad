@@ -1,5 +1,5 @@
 import {describe, expect, it} from "vitest";
-import {canOpenSection, lockMessageFor} from "./gate-nav";
+import {canOpenSection, lastOpenIndex, lockMessageFor} from "./gate-nav";
 
 const AVAILABLE = ["lernziele", "einfuehrung", "theorie", "verben", "uebungen", "minitest"];
 
@@ -31,5 +31,16 @@ describe("بوابة التنقّل بين المراحل", () => {
     const msg = lockMessageFor(AVAILABLE, new Set(["lernziele"]), "theorie");
     expect(msg).toContain("التمهيد والاسترجاع");
     expect(lockMessageFor(AVAILABLE, new Set(["lernziele", "einfuehrung"]), "theorie")).toBeNull();
+  });
+});
+
+describe("أقرب قسم مفتوح", () => {
+  it("من قسم مقفول يرجع إلى آخر قسم مفتوح قبله", () => {
+    const ids = ["lernziele", "einfuehrung", "theorie", "verben"];
+    // الأهداف مكتملة (المرحلة 1)، والتمهيد غير مكتمل: الفهرس 2 (theorie) مقفول
+    expect(lastOpenIndex(ids, new Set(["lernziele"]), 2)).toBe(1);
+  });
+  it("القسم المفتوح يبقى كما هو", () => {
+    expect(lastOpenIndex(["lernziele", "einfuehrung"], new Set(), 0)).toBe(0);
   });
 });

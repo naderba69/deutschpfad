@@ -1,8 +1,10 @@
 import { expect, test } from "@playwright/test";
+import { seedLessonCompletions } from "./helpers/session-gate";
 
 /** الدفعة 130 — المراجعة اليدوية من الأبجدية السابقة تظهر فعلياً في الدرس. */
 test("A1-01 يعرض المراجعة التراكمية من درس الأبجدية A1-00", async ({ page }) => {
   await page.goto("/lesson/a1-01");
+  await seedLessonCompletions(page, "a1-01");
   await page.getByRole("button", { name: "عرض الكل" }).click();
   await expect(page.getByText("Welche Buchstabenkombination schreibt den sch-Laut am Anfang von „Schule“?")).toBeVisible({ timeout: 15_000 });
   const review = page.getByRole("region", { name: "مراجعة تراكمية (Interleaving)" });

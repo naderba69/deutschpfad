@@ -1,8 +1,10 @@
 import { expect, test } from "@playwright/test";
+import { seedLessonCompletions } from "./helpers/session-gate";
 
 test("B1-11: حوار النقل يعلن TTS ويشغّل MP3", async ({ page }) => {
   await page.addInitScript(() => localStorage.removeItem("lesson-step:b1-11"));
   await page.goto("/lesson/b1-11");
+  await seedLessonCompletions(page, "b1-11");
   await page.getByRole("button", { name: "عرض الكل" }).click();
 
   const section = page.locator("#lesson-section-hoerverstehen");

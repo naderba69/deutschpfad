@@ -15,6 +15,7 @@
  * لا يدّعي هذا الملف اختبار قارئ شاشة حقيقي ولا ميكروفوناً حقيقياً.
  */
 import {test, expect, type Page} from "@playwright/test";
+import {seedLessonCompletions} from "./helpers/session-gate";
 
 /** يفتح أول حلقة بودكاست (المشغّل يُصيَّر داخل الصفحة عند الضغط). */
 async function openFirstPodcast(page: Page) {
@@ -114,9 +115,10 @@ test.describe("الاستماع داخل الدرس", () => {
   test("«اكشف نص الحوار»: الحالة معلَنة، واللوحة موجودة قبل الكشف، والنص يظهر بعده", async ({
     page,
   }) => {
-    // خطوة الاستماع قد تكون مقفلة في التنقّل المباشر؛ نستأنف منها كما يفعل
-    // التطبيق نفسه عبر مفتاح `lesson-step:<id>`.
+    // خطوة الاستماع مقفلة في التنقّل المباشر؛ نكتب إنجازات الدرس أولاً (تُحمَّل الصفحة من جديد)،
+    // ثم نستأنف من خطوة الاستماع كما يفعل التطبيق نفسه عبر مفتاح `lesson-step:<id>`.
     await page.goto("/lesson/a1-01");
+    await seedLessonCompletions(page, "a1-01");
     const listenIdx = await page.evaluate(() =>
       [...document.querySelectorAll("[role='tab']")].findIndex((t) =>
         /الاستماع/.test(t.textContent || ""),

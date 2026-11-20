@@ -38,8 +38,9 @@ describe("عنوان المراجعة التراكمية", () => {
   });
 
   it("مكوّنات الدرس تشتقّ العنوان ولا تستعمل الوسم الثابت", () => {
+    // المكوّن الذي يرسم قسم المراجعة (انتقل إليه من lesson-client عند فصل عرض الأقسام)
     for (const file of [
-      "src/components/lesson/lesson-client.tsx",
+      "src/components/lesson/lesson-section-body.tsx",
     ]) {
       const src = readFileSync(resolve(process.cwd(), file), "utf8");
       expect(src, `${file} لا يستدعي reviewLevelLabel`).toMatch(/levelLabel=\{reviewLevelLabel\(/);

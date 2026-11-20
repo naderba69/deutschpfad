@@ -44,3 +44,22 @@ test("البوابة: تمنع دخول المرحلة التالية قبل إ�
     timeout: 4000,
   });
 });
+
+test("عرض الكل: لا يكشف أقسام المرحلة المقفلة", async ({ page }) => {
+  await page.goto("/lesson/a1-01");
+  await page.waitForTimeout(800);
+  await page.getByRole("button", { name: "عرض الكل" }).click();
+  // الأهداف مفتوحة، والشرح (مرحلة قواعد) مقفول قبل إكمال «أهداف الحصة»
+  await expect(page.locator("#lesson-section-lernziele")).toHaveCount(1, { timeout: 8000 });
+  await expect(page.locator("#lesson-section-theorie")).toHaveCount(0);
+  await expect(page.getByText("أكمل أقسام «أهداف الحصة» أولاً", { exact: false }).first()).toBeVisible({
+    timeout: 4000,
+  });
+});
+
+test("رابط مباشر لقسم مقفول: يعود المتعلم لآخر قسم مفتوح", async ({ page }) => {
+  await page.goto("/lesson/a1-01?section=theorie");
+  const heading = page.locator("#lesson-step-content h2").first();
+  await expect(heading).toContainText("الأهداف", { timeout: 8000 });
+  await expect(heading).not.toContainText("الشرح");
+});

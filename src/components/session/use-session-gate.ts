@@ -12,12 +12,17 @@ import {canOpenSection, lockMessageFor} from "@/lib/session/gate-nav";
  */
 export function useSessionGate(lessonId: string, availableIds: readonly string[]) {
   const [completed, setCompleted] = React.useState<ReadonlySet<string>>(new Set());
+  /** هل انتهت أول قراءة للإنجازات؟ قبلها لا يُعرض محتوى الدرس (لا نكشف قسماً قبل التحقق) */
+  const [loaded, setLoaded] = React.useState(false);
 
   React.useEffect(() => {
     let cancelled = false;
     const load = () => {
       void loadCompletedSections(lessonId).then((read) => {
-        if (!cancelled && read.ok) setCompleted(read.ids);
+        if (cancelled) return;
+        // عند فشل القراءة تبقى المجموعة فارغة: لا تُفتح إلا المرحلة الأولى
+        if (read.ok) setCompleted(read.ids);
+        setLoaded(true);
       });
     };
     load();
@@ -33,6 +38,7 @@ export function useSessionGate(lessonId: string, availableIds: readonly string[]
 
   return {
     completed,
+    loaded,
     /** هل يُفتح القسم عند هذا الفهرس؟ `done` يسمح بتمرير مجموعة محدّثة فوراً */
     canOpen: (index: number, done: ReadonlySet<string> = completed) => {
       const id = availableIds[index];

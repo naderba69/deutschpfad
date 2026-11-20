@@ -38,3 +38,18 @@ export function lockMessageFor(
   if (!blocking || !target) return null;
   return `أكمل أقسام «${blocking.stage.labelAr}» أولاً، ثم تنتقل إلى «${target.labelAr}».`;
 }
+
+/**
+ * أقرب فهرس مفتوح يرجع إليه المتعلم من فهرس مقفول (آخر قسم مفتوح قبله).
+ * يُستعمل حين يتبيّن بعد تحميل الإنجازات أن الفهرس المحفوظ أو المقصود مقفول.
+ */
+export function lastOpenIndex(
+  availableIds: readonly string[],
+  completed: ReadonlySet<string>,
+  from: number,
+): number {
+  for (let k = Math.min(from, availableIds.length - 1); k >= 0; k--) {
+    if (canOpenSection(availableIds, completed, availableIds[k])) return k;
+  }
+  return 0;
+}
