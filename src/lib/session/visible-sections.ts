@@ -17,6 +17,10 @@ export interface VisibilityInput {
   hasInteraction: boolean;
   /** هل توجد أسئلة مراجعة تراكمية؟ (يُحسب من المولّد أو المحمّل) */
   reviewAvailable: boolean;
+  /** هل للدرس مفردات مكتوبة؟ (lesson.wortschatz) */
+  hasWortschatz: boolean;
+  /** هل للدرس ملاحظات ثقافية؟ (lesson.landeskunde) */
+  hasLandeskunde: boolean;
   /** هل للدرس موارد رديفة مربوطة؟ */
   hasRelatedResources: boolean;
 }
@@ -28,6 +32,8 @@ export function visibleSectionIds(input: VisibilityInput): string[] {
       (def.id !== "verben" || input.level === "B1" || input.level === "B2") &&
       (def.id !== "mediation" || input.hasMediation) &&
       (def.id !== "interaction" || input.hasInteraction) &&
+      (def.id !== "wortschatz" || input.hasWortschatz) &&
+      (def.id !== "landeskunde" || input.hasLandeskunde) &&
       (def.id !== "vertiefung" || input.hasRelatedResources),
   ).map((def) => def.id);
 }
@@ -40,7 +46,13 @@ export function sectionIndexFromUrl(search: string, sectionIds: readonly string[
 
 /** تعريفات الأقسام المعروضة لدرس (المصدر الوحيد لصفحة الدرس وصفحة الحصة). */
 export function visibleSectionDefs(
-  lesson: {level: string; mediation?: readonly unknown[]; interaction?: readonly unknown[]},
+  lesson: {
+    level: string;
+    mediation?: readonly unknown[];
+    interaction?: readonly unknown[];
+    wortschatz?: readonly unknown[];
+    landeskunde?: readonly unknown[];
+  },
   reviewAvailable: boolean,
   hasRelatedResources: boolean,
 ): LessonSectionDef[] {
@@ -49,6 +61,8 @@ export function visibleSectionDefs(
       level: lesson.level,
       hasMediation: !!lesson.mediation && lesson.mediation.length > 0,
       hasInteraction: !!lesson.interaction && lesson.interaction.length > 0,
+      hasWortschatz: !!lesson.wortschatz && lesson.wortschatz.length > 0,
+      hasLandeskunde: !!lesson.landeskunde && lesson.landeskunde.length > 0,
       reviewAvailable,
       hasRelatedResources,
     }),

@@ -80,6 +80,6 @@ test("صفحة الدرس: «التالي» ينقل للقسم التالي (ح
   await expect(page.locator("#lesson-step-content h2").first()).toContainText("الأهداف", { timeout: 8000 });
   await page.getByRole("button", { name: /أتممت هذا القسم/ }).first().click();
   await page.waitForTimeout(1000);
-  // يجب أن ينتقل للقسم الثاني — لو بقي على نفسه فالـ chunks قديمة/خادم قديم
-  await expect(page.locator("#lesson-step-content h2").first()).toContainText("التمهيد", { timeout: 8000 });
+  // يجب أن ينتقل للقسم الثاني في تسلسل المراحل (المراجعة السابقة) — لو بقي على نفسه فالـ chunks قديمة/خادم قديم
+  await expect(page.getByText("مراجعة تراكمية من", { exact: false }).first()).toBeVisible({ timeout: 8000 });
 });

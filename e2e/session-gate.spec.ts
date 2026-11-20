@@ -1,7 +1,8 @@
 /**
  * بوابة المراحل الصارمة (وضع الخطوات): لا تُفتح مرحلة قبل إكمال أقسام المرحلة السابقة.
- * في A1-01 تنتهي مرحلة «التمهيد والاسترجاع» بقسم «المراجعة التراكمية» (تمارين):
- * بعد الوصول إليه، الضغط على «التالي» يجب ألا يفتح «الشرح» وأن يوضّح السبب.
+ * في A1-01 تبدأ مرحلة «التمهيد والاسترجاع» بقسم «المراجعة التراكمية» (تمارين)، ثم «التمهيد»
+ * (إثبات بالتأكيد)، وتُغلق قبل «المفردات». بعد «التمهيد» يجب أن يمنع «التالي» دخول «المفردات»
+ * ويوضّح السبب ما دامت المراجعة غير محلولة.
  */
 import { expect, test } from "@playwright/test";
 
@@ -31,15 +32,17 @@ test("البوابة: تمنع دخول المرحلة التالية قبل إ�
   const heading = page.locator("#lesson-step-content h2").first();
   await expect(heading).toContainText("الأهداف", { timeout: 8000 });
 
-  // الأهداف (إثبات بالتأكيد) ← التمهيد (إثبات بالتأكيد) ← المراجعة التراكمية (تمارين)
+  // الترتيب وفق المراحل: الأهداف ← المراجعة (تمارين) ← التمهيد (إثبات بالتأكيد) ← [حدّ المرحلة] المفردات
   await advanceLessonStep(page);
-  await expect(heading).toContainText("التمهيد", { timeout: 8000 });
+  await expect(page.getByText("مراجعة تراكمية من", { exact: false }).first()).toBeVisible({ timeout: 8000 });
+  // داخل المرحلة نفسها الحركة حرة: من المراجعة إلى التمهيد مسموح
   await advanceLessonStep(page);
-  await expect(heading).toContainText("مراجعة", { timeout: 8000 });
+  const nextLabel = page.getByRole("button", { name: /^التالي: المفردات/ }).last();
+  await expect(nextLabel).toBeVisible({ timeout: 8000 });
 
-  // المراجعة لم تُحلّ بعد: الانتقال إلى «الشرح» (مرحلة قواعد) يجب أن يُمنع
+  // المراجعة لم تُحلّ بعد: الانتقال من «التمهيد» إلى «المفردات» (مرحلة تالية) يجب أن يُمنع
   await advanceLessonStep(page);
-  await expect(heading).toContainText("مراجعة", { timeout: 4000 });
+  await expect(nextLabel).toBeVisible();
   await expect(page.getByText("أكمل أقسام «التمهيد والاسترجاع» أولاً", { exact: false }).first()).toBeVisible({
     timeout: 4000,
   });

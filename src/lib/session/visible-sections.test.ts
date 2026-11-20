@@ -5,6 +5,8 @@ const BASE: VisibilityInput = {
   level: "A1",
   hasMediation: false,
   hasInteraction: false,
+  hasWortschatz: false,
+  hasLandeskunde: false,
   reviewAvailable: false,
   hasRelatedResources: false,
 };
@@ -33,10 +35,12 @@ describe("الأقسام المعروضة لدرس", () => {
       level: "B2",
       hasMediation: true,
       hasInteraction: true,
+      hasWortschatz: true,
+      hasLandeskunde: true,
       reviewAvailable: true,
       hasRelatedResources: true,
     });
-    for (const id of ["verben", "mediation", "interaction", "vertiefung", "review"]) {
+    for (const id of ["verben", "mediation", "interaction", "vertiefung", "review", "wortschatz", "landeskunde"]) {
       expect(ids).toContain(id);
     }
   });
@@ -47,6 +51,17 @@ describe("الأقسام المعروضة لدرس", () => {
     expect(indexOf("lernziele")).toBeLessThan(indexOf("theorie"));
     expect(indexOf("theorie")).toBeLessThan(indexOf("uebungen"));
     expect(indexOf("uebungen")).toBeLessThan(indexOf("minitest"));
+  });
+
+  it("المفردات والثقافة تظهران فقط إن وُجد محتواهما، وبترتيب المراحل", () => {
+    expect(visibleSectionIds(BASE)).not.toContain("wortschatz");
+    expect(visibleSectionIds(BASE)).not.toContain("landeskunde");
+    const ids = visibleSectionIds({...BASE, hasWortschatz: true, hasLandeskunde: true});
+    const at = (id: string) => ids.indexOf(id);
+    expect(at("einfuehrung")).toBeLessThan(at("wortschatz"));
+    expect(at("wortschatz")).toBeLessThan(at("theorie"));
+    expect(at("uebungen")).toBeLessThan(at("landeskunde"));
+    expect(at("landeskunde")).toBeLessThan(at("minitest"));
   });
 });
 
@@ -69,6 +84,8 @@ describe("تعريفات الأقسام المعروضة", () => {
       level: "B2",
       hasMediation: true,
       hasInteraction: false,
+      hasWortschatz: false,
+      hasLandeskunde: false,
       reviewAvailable: false,
       hasRelatedResources: true,
     }));

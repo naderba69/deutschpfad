@@ -71,8 +71,7 @@ export const SESSION_STAGES: readonly SessionStageDef[] = [
     labelDe: "Wortschatz",
     purposeAr: "كلمات الدرس الجديدة بالصوت والمثال قبل استعمالها.",
     minutes: 8,
-    // لا قسم مستقل للمفردات بعد؛ تُضاف عند إنشاء المحتوى المخصص لها.
-    sectionIds: [],
+    sectionIds: ["wortschatz"],
   },
   {
     id: "grammatik",
@@ -112,8 +111,7 @@ export const SESSION_STAGES: readonly SessionStageDef[] = [
     labelDe: "Landeskunde",
     purposeAr: "السياق الألماني الحقيقي للموضوع: عادات وحياة يومية.",
     minutes: 5,
-    // لا قسم مستقل للثقافة بعد؛ تُضاف عند إنشاء المحتوى المخصص لها.
-    sectionIds: [],
+    sectionIds: ["landeskunde"],
   },
   {
     id: "lernkontrolle",
@@ -145,6 +143,8 @@ export const SECTION_PROOF: Readonly<Record<string, SectionProof>> = {
   review: "exercise",
   einfuehrung: "acknowledge",
   lernziele: "acknowledge",
+  wortschatz: "acknowledge",
+  landeskunde: "acknowledge",
   theorie: "acknowledge",
   verben: "acknowledge",
   aussprache: "acknowledge",

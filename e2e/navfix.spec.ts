@@ -131,8 +131,8 @@ test("الدرس: الضغط على «التالي» ينقل تلقائياً �
   await nextBtn.click();
   await page.waitForTimeout(1100);
 
-  // القسم الثاني (التمهيد) ظاهر
-  await expect(page.getByText("التمهيد وتنشيط", { exact: false }).first()).toBeVisible({ timeout: 6000 });
+  // القسم الثاني (المراجعة السابقة) ظاهر
+  await expect(page.getByText("مراجعة تراكمية من", { exact: false }).first()).toBeVisible({ timeout: 6000 });
 
   // ═══ التحقق الأساسي: بطاقة القسم الجديد في «أول المحتوى» (قرب أعلى الشاشة)
   const y = await page.evaluate(() => {
