@@ -32,8 +32,8 @@ describe("الحصة التجريبية A1-01", () => {
     for (const e of entries) {
       expect(e.de.trim(), `de في ${e.de}`).not.toBe("");
       expect(e.ar.trim(), `ar في ${e.de}`).not.toBe("");
-      expect(e.exampleDe.trim(), `مثال ألماني لـ ${e.de}`).not.toBe("");
-      expect(e.exampleAr.trim(), `مثال عربي لـ ${e.de}`).not.toBe("");
+      expect((e.exampleDe ?? "").trim(), `مثال ألماني لـ ${e.de}`).not.toBe("");
+      expect((e.exampleAr ?? "").trim(), `مثال عربي لـ ${e.de}`).not.toBe("");
     }
   });
 
