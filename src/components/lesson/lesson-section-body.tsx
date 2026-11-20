@@ -6,6 +6,8 @@ import {InterleavingReview} from "@/components/lesson/sections/interleaving-revi
 import {reviewLevelLabel} from "@/lib/lesson/review-generator";
 import {AusspracheSection} from "@/components/lesson/sections/aussprache";
 import {EinfuehrungSection} from "@/components/lesson/sections/einfuehrung";
+import {WortschatzSection} from "@/components/lesson/sections/wortschatz";
+import {LandeskundeSection} from "@/components/lesson/sections/landeskunde";
 import {FehlerUndTippsSection} from "@/components/lesson/sections/fehler-und-tipps";
 import {HoerverstehenSection} from "@/components/lesson/sections/hoerverstehen";
 import {InteraktiveUebungenSection} from "@/components/lesson/sections/interaktive-uebungen";
@@ -50,6 +52,10 @@ export function LessonSectionBody({
             levelLabel={reviewLevelLabel(reviewQuestions, lesson.level)}
           />
         );
+      case "wortschatz":
+        return <WortschatzSection entries={lesson.wortschatz ?? []} />;
+      case "landeskunde":
+        return <LandeskundeSection notes={lesson.landeskunde ?? []} />;
       case "theorie":
         return <TheorieSection blocks={lesson.theory} lessonId={lesson.id} />;
       case "verben":

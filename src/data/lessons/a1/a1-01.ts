@@ -12,6 +12,8 @@ import {reading, listening, pronunciation, writing} from "./a1-01/skills";
 import {practiceBank, fehlerUndTipps} from "./a1-01/practice";
 import {miniTest, flashcards, mediation, interaction} from "./a1-01/cards";
 import {readingA1B} from "./a1-01/part2";
+import {wortschatz} from "./a1-01/wortschatz";
+import {landeskunde} from "./a1-01/landeskunde";
 
 const masterA101: Lesson = {
   id: "a1-01",
@@ -60,6 +62,8 @@ const isPart2Task = (id: string) => PART2_TASKS.has(id);
 /** الجزء الأول: كل شيء ما عدا محتوى الجزء الثاني */
 export const lessonA101: Lesson = {
   ...masterA101,
+  wortschatz,
+  landeskunde,
   theory: masterA101.theory.filter((t) => !PART2_THEORY.has(t.id)),
   lernziele: masterA101.lernziele.filter((g) => !PART2_GOALS.has(g.id)),
   practiceBank: masterA101.practiceBank.filter((t) => !isPart2Task(t.id)),

@@ -477,6 +477,20 @@ export interface InteractionTask {
 }
 
 /** الدرس الكامل */
+/** مفردة في قسم «المفردات» (Wortschatz): الكلمة مع جملة مثال كاملة وترجمتها */
+export interface VocabEntry {
+  de: string;
+  ar: string;
+  exampleDe: string;
+  exampleAr: string;
+}
+
+/** ملاحظة ثقافية في قسم «الثقافة» (Landeskunde) */
+export interface CultureNote {
+  titleAr: string;
+  bodyAr: string;
+}
+
 export interface Lesson {
   id: string;
   unitId: string;
@@ -509,6 +523,10 @@ export interface Lesson {
   miniTest: Exercise[];
   /** 10 */
   flashcards: Flashcard[];
+  /** مرحلة المفردات (اختياري: الدرس بلا مفردات تُتخطّى مرحلتها) */
+  wortschatz?: VocabEntry[];
+  /** مرحلة الثقافة (اختياري: بلا ملاحظات تُتخطّى مرحلتها) */
+  landeskunde?: CultureNote[];
   /** ═══ مكوّن الوساطة (جديد — CEFR 2020) ═══ */
   mediation?: MediationTask[];
   /** ═══ مكوّن التفاعل (CEFR 2020) ═══ */
