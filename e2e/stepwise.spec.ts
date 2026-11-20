@@ -90,8 +90,8 @@ test("الدرس لا ينتهي قبل إتمام كل الخطوات", async (
   await expect(page.getByText("الأهداف التعليمية", { exact: false }).first()).toBeVisible({ timeout: 8000 });
   await expect(page.getByRole("button", { name: "إنهاء الدرس", exact: true }).first()).not.toBeVisible();
 
-  // بالضغط "التالي" ننتقل للقسم الثاني (التمهيد)
+  // بالضغط "التالي" ننتقل للقسم الثاني في تسلسل المراحل (المراجعة السابقة)
   await page.getByRole("button", { name: /^التالي:/ }).first().click();
   await page.waitForTimeout(400);
-  await expect(page.getByText("التمهيد وتنشيط", { exact: false }).first()).toBeVisible();
+  await expect(page.getByText("مراجعة تراكمية من", { exact: false }).first()).toBeVisible();
 });

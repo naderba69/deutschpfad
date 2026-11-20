@@ -113,12 +113,12 @@ test("الدرس: «التالي» ينقل لأعلى القسم الجديد (
   // القسم الأول ظاهر
   await expect(page.getByText("الأهداف التعليمية", { exact: false }).first()).toBeVisible({ timeout: 8000 });
 
-  // نضغط التالي وننتظر — يجب أن يظهر القسم الثاني (التمهيد) في أعلى الشاشة
+  // نضغط التالي وننتظر — يجب أن يظهر القسم الثاني (المراجعة السابقة) في أعلى الشاشة
   await page.getByRole("button", { name: /^التالي:/ }).first().click();
   await page.waitForTimeout(800);
 
   // القسم الثاني ظاهر
-  await expect(page.getByText("التمهيد وتنشيط", { exact: false }).first()).toBeVisible({ timeout: 6000 });
+  await expect(page.getByText("مراجعة تراكمية من", { exact: false }).first()).toBeVisible({ timeout: 6000 });
 
   // التحقق من موضع السكرول: بطاقة القسم قريبة من أعلى الشاشة
   const y = await page.evaluate(() => {

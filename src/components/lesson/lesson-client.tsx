@@ -565,8 +565,8 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
 
       {stepMode ? (
         /* ═══ وضع «خطوة بخطوة» الكامل: كل الأقسام البيداغوجية بالترتيب ═══
-           (الأهداف ← التمهيد ← المراجعة ← الشرح ← الاستماع ← النطق ←
-            الكتابة ← التدريبات ← الأخطاء والحيل ← التقييم ← البطاقات) */
+           (الأهداف ← المراجعة ← التمهيد ← المفردات ← الشرح ← الأفعال ← القراءة ← الاستماع ←
+            التدريبات ← النطق ← الكتابة ← الوساطة ← الكلام ← الثقافة ← التقييم ← الأخطاء ← البطاقات) */
         <div className="space-y-4">
           {/* شريط التقدم اللاصق — يبقى مرئياً دائماً حتى في السكرول الطويل */}
           <div data-lesson-sticky-strip className="sticky top-16 z-30 flex items-center gap-3 rounded-xl border bg-background/95 px-4 py-2.5 shadow-sm backdrop-blur-md">

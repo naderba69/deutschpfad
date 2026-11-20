@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test("التنقل داخل الدرس ينتقل من الأهداف إلى التمهيد دون أخطاء في الصفحة", async ({ page }) => {
+test("التنقل داخل الدرس ينتقل من الأهداف إلى المراجعة السابقة دون أخطاء في الصفحة", async ({ page }) => {
   const pageErrors: string[] = [];
   page.on("pageerror", (error) => pageErrors.push(error.message));
 
@@ -11,7 +11,7 @@ test("التنقل داخل الدرس ينتقل من الأهداف إلى ا�
   await expect(nextButton).toBeVisible();
   await expect(nextButton).toBeEnabled();
   await nextButton.click();
-  await expect(page.getByText("التمهيد وتنشيط", { exact: false }).first()).toBeVisible();
+  await expect(page.getByText("مراجعة تراكمية من", { exact: false }).first()).toBeVisible();
 
   expect(pageErrors).toEqual([]);
 });

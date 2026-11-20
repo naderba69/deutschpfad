@@ -103,10 +103,10 @@ test("شريط الخطوات + زر تنقل سفلي في الدرس", async (
   // القسم الأول (الأهداف) ظاهر + زر التنقل السفلي "التالي:"
   await expect(page.getByText("الأهداف التعليمية", { exact: false }).first()).toBeVisible();
   await expect(page.getByRole("button", { name: /^التالي:/ }).first()).toBeVisible();
-  // بالتنقل ننتقل للقسم التالي (التمهيد)
+  // بعد «الأهداف» يأتي القسم التالي في تسلسل المراحل: المراجعة السابقة (الاسترجاع أولاً)
   await page.getByRole("button", { name: /^التالي:/ }).first().click();
   await page.waitForTimeout(800);
-  await expect(page.getByText("التمهيد وتنشيط", { exact: false }).first()).toBeVisible();
+  await expect(page.getByText("مراجعة تراكمية من", { exact: false }).first()).toBeVisible();
 });
 
 test("التدفق لا يُحبس: أزرار التنقل تعمل وتتقدم", async ({ page }) => {
