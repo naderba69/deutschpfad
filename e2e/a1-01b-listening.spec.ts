@@ -1,8 +1,10 @@
 import { expect, test } from "@playwright/test";
+import { seedLessonCompletions } from "./helpers/session-gate";
 
 test("A1-01b: مشهد الاستماع موجود ومصدر النطق معلن والنص يُكشف صراحةً", async ({ page }) => {
   await page.addInitScript(() => localStorage.removeItem("lesson-step:a1-01b"));
   await page.goto("/lesson/a1-01b");
+  await seedLessonCompletions(page, "a1-01b");
   await page.getByRole("button", { name: "عرض الكل" }).click();
 
   const section = page.locator("#lesson-section-hoerverstehen");

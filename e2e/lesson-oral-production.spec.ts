@@ -1,5 +1,6 @@
 /** Regressions for the lesson-level local oral recorder. */
 import {expect, test, type Page} from "@playwright/test";
+import { seedLessonCompletions } from "./helpers/session-gate";
 
 test.use({
   permissions: ["microphone"],
@@ -16,6 +17,7 @@ test.use({
 
 async function openOralTask(page: Page) {
   await page.goto("/lesson/b2-10");
+  await seedLessonCompletions(page, "b2-10");
   await page.getByRole("button", {name: "عرض الكل"}).click();
   await expect(page.getByText(/تدريب على الإنتاج الشفهي/)).toBeVisible();
 }

@@ -1,8 +1,10 @@
 import { expect, test } from "@playwright/test";
+import { seedLessonCompletions } from "./helpers/session-gate";
 
 test("A1-02: مشهد العائلة الثاني يعلن TTS ويشغّل MP3", async ({ page }) => {
   await page.addInitScript(() => localStorage.removeItem("lesson-step:a1-02"));
   await page.goto("/lesson/a1-02");
+  await seedLessonCompletions(page, "a1-02");
   await page.getByRole("button", { name: "عرض الكل" }).click();
 
   const section = page.locator("#lesson-section-hoerverstehen");
