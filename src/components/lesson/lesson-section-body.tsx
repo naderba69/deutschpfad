@@ -7,7 +7,7 @@ import {reviewLevelLabel} from "@/lib/lesson/review-generator";
 import {AusspracheSection} from "@/components/lesson/sections/aussprache";
 import {EinfuehrungSection} from "@/components/lesson/sections/einfuehrung";
 import {WortschatzSection} from "@/components/lesson/sections/wortschatz";
-import {landeskundeFor, wortschatzFor} from "@/lib/session/lesson-content";
+import {landeskundeFor} from "@/lib/session/lesson-content";
 import {LandeskundeSection} from "@/components/lesson/sections/landeskunde";
 import {FehlerUndTippsSection} from "@/components/lesson/sections/fehler-und-tipps";
 import {HoerverstehenSection} from "@/components/lesson/sections/hoerverstehen";
@@ -54,7 +54,7 @@ export function LessonSectionBody({
           />
         );
       case "wortschatz":
-        return <WortschatzSection entries={wortschatzFor(lesson.id, lesson.wortschatz)} />;
+        return <WortschatzSection lessonId={lesson.id} explicit={lesson.wortschatz} />;
       case "landeskunde":
         return <LandeskundeSection notes={landeskundeFor(lesson.id, lesson.landeskunde)} />;
       case "theorie":

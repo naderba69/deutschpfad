@@ -8,7 +8,7 @@
  */
 
 import {LESSON_SECTIONS, type LessonSectionDef} from "@/components/lesson/lesson-sections";
-import {landeskundeFor, wortschatzFor} from "./lesson-content";
+import {landeskundeFor, lessonHasWortschatz} from "./lesson-content";
 import type {CultureNote, VocabEntry} from "@/types/lesson";
 
 export interface VisibilityInput {
@@ -64,7 +64,7 @@ export function visibleSectionDefs(
       level: lesson.level,
       hasMediation: !!lesson.mediation && lesson.mediation.length > 0,
       hasInteraction: !!lesson.interaction && lesson.interaction.length > 0,
-      hasWortschatz: wortschatzFor(lesson.id ?? "", lesson.wortschatz).length > 0,
+      hasWortschatz: lessonHasWortschatz(lesson.id ?? "", lesson.wortschatz),
       hasLandeskunde: landeskundeFor(lesson.id ?? "", lesson.landeskunde).length > 0,
       reviewAvailable,
       hasRelatedResources,
