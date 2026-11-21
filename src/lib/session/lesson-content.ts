@@ -4,7 +4,7 @@
  *
  *  المفردات — ثلاثة مصادر بالأولوية:
  *   1) محتوى الدرس نفسه (lesson.wortschatz)            ← متزامن، خفيف
- *   2) قوائم إضافية صغيرة (vocab-extra.ts)              ← متزامن، خفيف
+ *   2) قوائم إضافية صغيرة (A1_EXTRA_LESSON_VOCAB، GAP_LESSON_VOCAB) ← متزامن، خفيف
  *   3) بنك المستوى (A1_VOCAB … B2_VOCAB)                ← يُحمَّل عند فتح القسم فقط
  *
  *  البنوك كبيرة (B2 وحده ~240KB مصدراً)، لذلك لا تُستورد مع صفحة الدرس؛
@@ -16,15 +16,19 @@
 
 import {BANK_LESSON_IDS} from "@/data/vocabulary/bank-lesson-ids";
 import {A1_EXTRA_LESSON_VOCAB} from "@/data/lessons/a1/vocab-extra";
+import {GAP_LESSON_VOCAB} from "@/data/vocabulary/gap-lessons";
 import {LESSON_CULTURE} from "@/data/landeskunde/lesson-notes";
 import type {CultureNote, VocabEntry} from "@/types/lesson";
 
 type BankEntry = {de: string; ar: string; ex?: string};
 
+/** القوائم الإضافية المتزامنة. لا تتداخل معرّفاتها مع `BANK_LESSON_IDS` (يحرسه الاختبار). */
+const EXTRA_LESSON_VOCAB: Record<string, VocabEntry[]> = {...A1_EXTRA_LESSON_VOCAB, ...GAP_LESSON_VOCAB};
+
 /** المفردات المتزامنة فقط (محتوى الدرس أو القوائم الإضافية) */
 export function ownWortschatz(lessonId: string, explicit?: readonly VocabEntry[]): VocabEntry[] {
   if (explicit && explicit.length > 0) return [...explicit];
-  const extra = A1_EXTRA_LESSON_VOCAB[lessonId];
+  const extra = EXTRA_LESSON_VOCAB[lessonId];
   return extra ? [...extra] : [];
 }
 
