@@ -5,8 +5,7 @@
  *  - كل درس له ملاحظة ثقافية.
  *  - كل درس له مفردات، إلا:
  *      • دروس المراجعة (kompakt) لا تقدّم كلمات جديدة بالتصميم؛
- *      • فجوات معروفة (KNOWN_GAPS) بلا بنك مفردات بعد. أي تغيير في هذه القائمة يكسر الاختبار
- *        عمداً حتى تُحدَّث الوثيقة.
+ *      • أي درس عادي بلا مفردات يفشل الاختبار؛ المراجعات الختامية وحدها مستثناة (REVIEW_LESSONS).
  */
 import {describe, expect, it} from "vitest";
 import {LESSONS} from "@/data/lessons";
@@ -15,14 +14,13 @@ import {A2_VOCAB} from "@/data/vocabulary/a2";
 import {B1_VOCAB} from "@/data/vocabulary/b1";
 import {B2_VOCAB} from "@/data/vocabulary/b2";
 import {BANK_LESSON_IDS} from "@/data/vocabulary/bank-lesson-ids";
+import {GAP_LESSON_VOCAB} from "@/data/vocabulary/gap-lessons";
 import {landeskundeFor, lessonHasWortschatz, loadBankWortschatz} from "./lesson-content";
 
 const LEVEL_LESSONS = LESSONS.filter((l) => /^(a1|a2|b1|b2)-/.test(l.id));
 
 /** دروس مراجعة ختامية (kompakt): لا كلمات جديدة فيها بالتصميم */
 const REVIEW_LESSONS = new Set(["a1-13", "a2-13", "b1-11"]);
-/** فجوات معروفة: دروس عادية بلا بنك مفردات بعد */
-const KNOWN_GAPS = new Set(["b1-12", "b2-11", "b2-12", "b2-13"]);
 
 describe("قائمة معرّفات البنك", () => {
   it("تطابق مفاتيح البنوك الأربعة تماماً", () => {
@@ -52,19 +50,26 @@ describe("المفردات", () => {
       });
       continue;
     }
-    if (KNOWN_GAPS.has(lesson.id)) {
-      it(`${lesson.id}: فجوة معروفة (بلا بنك مفردات)`, () => {
-        expect(lessonHasWortschatz(lesson.id, lesson.wortschatz)).toBe(false);
-      });
-      continue;
-    }
     it(`${lesson.id}: له قسم مفردات`, () => {
       expect(lessonHasWortschatz(lesson.id, lesson.wortschatz)).toBe(true);
     });
   }
 
-  it("الفجوات المعروفة فعلاً بلا بنك (لا تظهر في القائمة الثابتة)", () => {
-    for (const id of KNOWN_GAPS) expect(BANK_LESSON_IDS.includes(id)).toBe(false);
+  it("القوائم الإضافية لا تتداخل مع البنك (لا تكرار للمفردات)", () => {
+    for (const id of Object.keys(GAP_LESSON_VOCAB)) {
+      expect(BANK_LESSON_IDS.includes(id), id).toBe(false);
+    }
+  });
+
+  it("فجوات B1/B2 السابقة صارت مغطاة بقوائم إضافية", () => {
+    for (const id of ["b1-12", "b2-11", "b2-12", "b2-13"]) {
+      expect(GAP_LESSON_VOCAB[id]?.length ?? 0, id).toBeGreaterThanOrEqual(8);
+      for (const e of GAP_LESSON_VOCAB[id] ?? []) {
+        expect(e.de.trim(), `de في ${id}`).not.toBe("");
+        expect(e.ar?.trim(), `ar لـ ${e.de} في ${id}`).toBeTruthy();
+        expect(e.exampleDe?.trim(), `مثال لـ ${e.de} في ${id}`).toBeTruthy();
+      }
+    }
   });
 
   it("كل بنك يُحمَّل ويعطي 5 مفردات على الأقل بمعنى عربي", async () => {
