@@ -9,8 +9,8 @@ import {A2_VOCAB} from "@/data/vocabulary/a2";
 import {B1_VOCAB} from "@/data/vocabulary/b1";
 import {B2_VOCAB} from "@/data/vocabulary/b2";
 
-/** الرقم الحالي للمدخلات بلا مثال في البنوك الأربعة (بعد A1 الكامل). لا يُرفع أبداً. */
-const MAX_WITHOUT_EXAMPLE = 509;
+/** الرقم الحالي للمدخلات بلا مثال في البنوك الأربعة (بعد A1 وA2). لا يُرفع أبداً. */
+const MAX_WITHOUT_EXAMPLE = 290;
 
 type Entry = {de: string; ar: string; ex?: string; exAr?: string};
 const BANKS: Record<string, Record<string, Entry[]>> = {a1: A1_VOCAB, a2: A2_VOCAB, b1: B1_VOCAB, b2: B2_VOCAB};
