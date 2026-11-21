@@ -20,7 +20,7 @@ import {GAP_LESSON_VOCAB} from "@/data/vocabulary/gap-lessons";
 import {LESSON_CULTURE} from "@/data/landeskunde/lesson-notes";
 import type {CultureNote, VocabEntry} from "@/types/lesson";
 
-type BankEntry = {de: string; ar: string; ex?: string};
+type BankEntry = {de: string; ar: string; ex?: string; exAr?: string};
 
 /** القوائم الإضافية المتزامنة. لا تتداخل معرّفاتها مع `BANK_LESSON_IDS` (يحرسه الاختبار). */
 const EXTRA_LESSON_VOCAB: Record<string, VocabEntry[]> = {...A1_EXTRA_LESSON_VOCAB, ...GAP_LESSON_VOCAB};
@@ -49,7 +49,7 @@ export async function loadBankWortschatz(lessonId: string): Promise<VocabEntry[]
   else if (level === "b1") bank = (await import("@/data/vocabulary/b1")).B1_VOCAB;
   else if (level === "b2") bank = (await import("@/data/vocabulary/b2")).B2_VOCAB;
   const entries = bank?.[lessonId] ?? [];
-  return entries.map((e) => ({de: e.de, ar: e.ar, exampleDe: e.ex}));
+  return entries.map((e) => ({de: e.de, ar: e.ar, exampleDe: e.ex, exampleAr: e.exAr}));
 }
 
 export function landeskundeFor(lessonId: string, explicit?: readonly CultureNote[]): CultureNote[] {
