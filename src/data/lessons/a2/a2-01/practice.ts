@@ -479,7 +479,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       correctIndex: 0,
       explanation:
-        "الخيار الأول يحافظ على نوع الغرفة (Doppelzimmer) والتاريخ، ويستخدم reservieren في طلب حجز واضح. العبارات الأخرى تغيّر نوع الغرفة أو تستعمل فعلاً/اسماً لا يطابق المقصود.",
+        "الجملة الصحيحة تحافظ على نوع الغرفة (Doppelzimmer) والتاريخ، وتستخدم reservieren في طلب حجز واضح. العبارات الأخرى تغيّر نوع الغرفة أو تستعمل فعلاً/اسماً لا يطابق المقصود.",
       errorType: "vocabulary",
       optionExplanations: [
         undefined,

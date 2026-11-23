@@ -3,7 +3,7 @@ import path from "node:path";
 
 import {describe, expect, it} from "vitest";
 
-import {siteConfig} from "@/lib/site-config";
+import {resolveSiteUrl, siteConfig} from "@/lib/site-config";
 
 /**
  * سلامة روابط الفوتر.
@@ -72,5 +72,36 @@ describe("روابط الفوتر", () => {
       }
     }
     expect(dead, `روابط بلا صفحة: ${dead.join("، ")}`).toEqual([]);
+  });
+});
+
+describe("عنوان الموقع العام لخريطة الموقع", () => {
+  it("المتغيّر الصريح يغلب على كل شيء", () => {
+    expect(
+      resolveSiteUrl({NEXT_PUBLIC_APP_URL: "https://example.com/", VERCEL_PROJECT_PRODUCTION_URL: "x.vercel.app"}),
+    ).toBe("https://example.com");
+  });
+
+  it("على Vercel يُستعمل نطاق الإنتاج العام لا عنوان النشر المحمي", () => {
+    expect(
+      resolveSiteUrl({
+        VERCEL_PROJECT_PRODUCTION_URL: "deutschpfad-kappa.vercel.app",
+        VERCEL_URL: "deutschpfad-abc123-team.vercel.app",
+      }),
+    ).toBe("https://deutschpfad-kappa.vercel.app");
+  });
+
+  it("بلا نطاق إنتاج يعود إلى عنوان النشر الحالي", () => {
+    expect(resolveSiteUrl({VERCEL_URL: "preview-x.vercel.app"})).toBe("https://preview-x.vercel.app");
+  });
+
+  it("التطوير المحلي فقط يستعمل localhost، والإنتاج بلا متغيرات لا يستعمله أبداً", () => {
+    expect(resolveSiteUrl({NODE_ENV: "development"})).toBe("http://localhost:3000");
+    expect(resolveSiteUrl({NODE_ENV: "production"})).toBe("https://deutschpfad.vercel.app");
+    expect(resolveSiteUrl({})).not.toMatch(/localhost/);
+  });
+
+  it("المسار الافتراضي للموقع مُحدَّد (لا فارغ)", () => {
+    expect(siteConfig.url).toMatch(/^https:\/\//);
   });
 });

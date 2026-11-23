@@ -142,7 +142,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       correctIndex: 0,
       optionExplanations: [undefined, "لا — «weil» تستدعي جملةً جانبية فيذهب الفعل المتصرّف إلى آخرها: «weil alle zustimmen» لا «weil alle stimmen zu».", "لا — الجملة النسبية تحتاج اسماً موصولاً في حالة النصب يعود على «Der Plan»: «den wir besprochen haben».", "لا — في الجملة الجانبية يقف التصريف الثالث «besprochen» في النهاية مع الفعل المساعد: «den wir besprochen haben»."],
-      explanation: "في الجملة النسبية يأتي Partizip II أولاً ثم الفعل المساعد المصرف في النهاية: «den wir besprochen haben». وفي جملة weil يأتي الفعل المصرف في النهاية: «weil alle zustimmen». الخياران 2 و4 يخطئان في ترتيب الجملة الثانوية، والخيار 3 يفتقد الضمير النسبي.",
+      explanation: "في الجملة النسبية يأتي Partizip II أولاً ثم الفعل المساعد المصرف في النهاية: «den wir besprochen haben». وفي جملة weil يأتي الفعل المصرف في النهاية: «weil alle zustimmen». الجملتان اللتان تضعان «stimmen zu» أو «haben besprochen» في غير موضعهما تخطئان في ترتيب الجملة الثانوية، والجملة التي تحذف الضمير النسبي «den» تفتقده.",
       errorType: "grammar",
       points: 2,
     },
