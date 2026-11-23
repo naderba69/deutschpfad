@@ -153,6 +153,11 @@ export function stabilityOf(card: Pick<Sm2CardData, "stability" | "interval" | "
   return Math.max(LEGACY_MIN_STABILITY, card.interval || INITIAL_STABILITY);
 }
 
+/** مفتاح اليوم YYYY-MM-DD (بالتوقيت العالمي) */
+export function dayKey(ts: number): string {
+  return new Date(ts).toISOString().slice(0, 10);
+}
+
 /** الاحتفاظ الحالي للبطاقة الآن */
 export function currentRetention(card: Sm2CardData, now: number): number {
   if (card.lastReview === null) return 1;
@@ -227,6 +232,7 @@ export function applyEbbinghausReview(
     Math.max(1, Math.round(intervalForRetention(newS, policy.target))),
   );
   next.stability = newS;
+  next.successDays = [...(card.successDays ?? []), dayKey(now)].slice(-10);
   next.repetitions = card.repetitions + 1;
   next.interval = days;
   next.due = now + days * DAY_MS;
