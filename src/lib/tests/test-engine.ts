@@ -1,5 +1,6 @@
 import { evaluateWriting } from "@/lib/writing/goethe-local";
 import type { LevelTestConfig, SkillResult, TestLevel, TestQuestion, TestResult, TestReviewItem, TestSkill } from "@/types/test";
+import {capToExamLevel, examPassed} from "./verdict";
 
 /**
  * محرك الاختبارات — التصحيح والتقييم والمستوى المقدر والاقتراحات التكيفية
@@ -163,10 +164,11 @@ export async function buildTestResult(input: {
     secondsUsed: Math.round((input.finishedAt - input.startedAt) / 1000),
     skillResults,
     overallPct,
-    estimatedLevel,
+    // السقف: لا يتجاوز مستوى الامتحان (منع A1 ← B2)، والنجاح منفرداً لكل وحدة في B1/B2
+    estimatedLevel: capToExamLevel(estimatedLevel, input.level),
     reinforcement,
     review,
-    passed: overallPct >= 60,
+    passed: examPassed(input.level, skillResults),
   };
 }
 
