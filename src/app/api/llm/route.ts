@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 
 import { getServerLimit, reserveSharedServerUsage } from "@/lib/llm/server/counter";
-import { hasAnyKey, serverModeEnabled } from "@/lib/llm/server/config";
+import { hasAnyKey, serverModeEnabled, TRUST_PROXY } from "@/lib/llm/server/config";
+import { clientIp, llmLimiter } from "@/lib/llm/server/rate-limit";
 import { generateWithFallback } from "@/lib/llm/server/fallback";
 import { isJsonObject, readRequestTextLimited } from "@/lib/llm/server/request-body";
 import type { LLMMessage } from "@/types/llm";
@@ -36,6 +37,14 @@ const TOTAL_TIMEOUT_MS = 50_000;
  * · مهلة كلية واحدة عبر كل المحاولات
  */
 export async function POST(req: Request) {
+  // حد المعدل أولاً: قبل أي قراءة للجسم أو استدعاء مزود
+  const verdict = llmLimiter.hit(clientIp(req.headers, TRUST_PROXY));
+  if (!verdict.allowed) {
+    return NextResponse.json(
+      { ok: false, status: "error", error: "طلبات كثيرة — انتظر دقيقة ثم أعد المحاولة" },
+      { status: 429, headers: { "Retry-After": String(Math.ceil(verdict.retryAfterMs / 1000)) } },
+    );
+  }
   // ارفض الحجم المعلن مبكراً، ثم طبّق حداً فعلياً أثناء قراءة التدفق كي لا
   // يُحمّل جسم غير موثوق بالكامل في الذاكرة قبل التحقق منه.
   const contentLength = Number(req.headers.get("content-length"));

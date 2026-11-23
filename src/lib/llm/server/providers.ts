@@ -67,6 +67,16 @@ async function fetchJson(
 
 /* ═══════════ Google Gemini ═══════════ */
 
+/** نقطة نهاية Gemini بلا مفتاح — المفتاح لا يدخل الرابط أبداً */
+export function geminiEndpoint(model: string): string {
+  return `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`;
+}
+
+/** ترويسات Gemini: المفتاح في x-goog-api-key */
+export function geminiHeaders(apiKey: string): Record<string, string> {
+  return { "Content-Type": "application/json", "x-goog-api-key": apiKey };
+}
+
 export async function callGemini(
   messages: LLMMessage[],
   opts: { maxTokens?: number; temperature?: number },
@@ -89,10 +99,10 @@ export async function callGemini(
   };
   if (system) body.systemInstruction = { parts: [{ text: system }] };
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
-  const data = await fetchJson(url, {
+  // المفتاح في ترويسة لا في الرابط: الروابط تظهر في السجلات ورسائل الأخطاء
+  const data = await fetchJson(geminiEndpoint(GEMINI_MODEL), {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: geminiHeaders(GEMINI_API_KEY),
     body: JSON.stringify(body),
   }, signal);
 

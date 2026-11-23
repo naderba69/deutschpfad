@@ -31,6 +31,8 @@ export const LLM_DAILY_LIMIT = parseDailyLimit(process.env.NEXT_PUBLIC_LLM_DAILY
  * وإلا تُعاد not-configured ولا يُستدعى أي مزود بمفتاح المالك أبداً.
  */
 export const LLM_SERVER_MODE = process.env.LLM_SERVER_MODE === "1";
+/** خلف وكيل عكسي موثوق (nginx/Caddy/Vercel): نقرأ IP العميل من x-forwarded-for */
+export const TRUST_PROXY = process.env.TRUST_PROXY === "1";
 const counterRestUrl = process.env.LLM_COUNTER_REST_URL?.trim() ?? "";
 export const LLM_COUNTER_REST_URL = counterRestUrl.endsWith("/")
   ? counterRestUrl.slice(0, -1)
