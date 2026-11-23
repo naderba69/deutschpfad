@@ -11,6 +11,7 @@ import {
 import {createManualSnapshot} from "@/lib/storage/export-import";
 import {getDb, getRecord, putRecord} from "@/lib/storage/db";
 import {errorCardInput, type NotebookLike} from "@/lib/srs/error-cards";
+import {addReview, EMPTY_REVIEW_LOG, type ReviewLog} from "@/lib/srs/review-log";
 import type { Flashcard } from "@/types/lesson";
 import type { ReviewQuality, Sm2CardData } from "@/types/srs";
 
@@ -20,6 +21,17 @@ import type { ReviewQuality, Sm2CardData } from "@/types/srs";
 
 /** حدث يُطلق عند أي تغيير في البطاقات (لتحديث الرسوم مباشرة) */
 export const CARDS_CHANGED_EVENT = "srs:cards-changed";
+
+const REVIEW_LOG_KEY = "srs-review-log";
+
+/** سجل المراجعات (إجمالي + مراجعات كل يوم) — يُقرأ للعرض */
+export async function getReviewLog(): Promise<ReviewLog> {
+  return (await getRecord<ReviewLog>("settings", REVIEW_LOG_KEY)) ?? EMPTY_REVIEW_LOG;
+}
+
+async function bumpReviewLog(now: number): Promise<void> {
+  await putRecord("settings", REVIEW_LOG_KEY, addReview(await getReviewLog(), now));
+}
 
 function notifyCardsChanged(): void {
   if (typeof window !== "undefined") window.dispatchEvent(new Event(CARDS_CHANGED_EVENT));
@@ -172,8 +184,10 @@ export async function reviewCard(id: string, quality: ReviewQuality): Promise<Sm
 
   const accuracy = QUALITY_TO_ACCURACY[quality] ?? (quality >= 4 ? 0.9 : 0.2);
   const policy = policyFor(await getExamMode());
-  const next = applyEbbinghausReview(card, accuracy, Date.now(), policy);
+  const now = Date.now();
+  const next = applyEbbinghausReview(card, accuracy, now, policy);
   await db.put("cards", next);
+  await bumpReviewLog(now);
   void recordEvent({ type: "review", cardId: id, quality });
   notifyCardsChanged();
 
@@ -196,8 +210,10 @@ export async function reviewCardByTyping(
   const expected = card.de;
   const grade = gradeTypedAnswer(typed, expected);
   const policy = policyFor(await getExamMode());
-  const next = applyEbbinghausReview(card, grade.accuracy, Date.now(), policy);
+  const now = Date.now();
+  const next = applyEbbinghausReview(card, grade.accuracy, now, policy);
   await db.put("cards", next);
+  await bumpReviewLog(now);
   void recordEvent({ type: "review", cardId: id, quality: Math.round(grade.accuracy * 5) as ReviewQuality });
   notifyCardsChanged();
   return {card: next, grade};

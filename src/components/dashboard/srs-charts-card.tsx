@@ -5,7 +5,8 @@ import {Bar, BarChart, CartesianGrid, Cell, Legend, Pie, PieChart, ResponsiveCon
 
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
-import {CARDS_CHANGED_EVENT, getAllCards} from "@/lib/srs/flashcard-service";
+import {CARDS_CHANGED_EVENT, getAllCards, getReviewLog} from "@/lib/srs/flashcard-service";
+import {currentStreak, reviewsOn, type ReviewLog} from "@/lib/srs/review-log";
 import {countByLevel, countCategories, LEVELS} from "@/lib/srs/mastery";
 import type {LevelCode} from "@/types/curriculum";
 import type {Sm2CardData} from "@/types/srs";
@@ -28,9 +29,12 @@ export function SrsChartsCard() {
   const [cards, setCards] = React.useState<Sm2CardData[] | null>(null);
   const [level, setLevel] = React.useState<LevelFilter>("all");
   const [now, setNow] = React.useState(() => Date.now());
+  const [log, setLog] = React.useState<ReviewLog | null>(null);
 
   const load = React.useCallback(async () => {
-    setCards(await getAllCards());
+    const [all, reviewLog] = await Promise.all([getAllCards(), getReviewLog()]);
+    setCards(all);
+    setLog(reviewLog);
     setNow(Date.now());
   }, []);
 
@@ -70,6 +74,24 @@ export function SrsChartsCard() {
             </Button>
           ))}
         </div>
+
+        {/* إحصاءات المراجعة: اليوم، الإجمالي، السلسلة */}
+        {log && (
+          <dl className="grid grid-cols-3 gap-2 text-center" aria-label="إحصاءات مراجعة البطاقات">
+            <div className="rounded-xl bg-muted/40 p-3">
+              <dt className="text-xs text-muted-foreground">مراجعات اليوم</dt>
+              <dd className="font-de text-xl font-extrabold">{reviewsOn(log, now)}</dd>
+            </div>
+            <div className="rounded-xl bg-muted/40 p-3">
+              <dt className="text-xs text-muted-foreground">الإجمالي</dt>
+              <dd className="font-de text-xl font-extrabold">{log.total}</dd>
+            </div>
+            <div className="rounded-xl bg-muted/40 p-3">
+              <dt className="text-xs text-muted-foreground">سلسلة الأيام</dt>
+              <dd className="font-de text-xl font-extrabold">{currentStreak(log, now)}</dd>
+            </div>
+          </dl>
+        )}
 
         <div className="grid gap-6 md:grid-cols-2">
           {/* الدائري */}
