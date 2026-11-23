@@ -35,6 +35,8 @@ export interface Sm2CardData {
   srsModel?: "ebbinghaus-v1";
   /** الاستقرار S بالأيام: الاحتفاظ = 85% عند t = S */
   stability?: number;
+  /** أيام النجاح (YYYY-MM-DD)، آخر 10 — للإتقان على يومين مختلفين */
+  successDays?: string[];
 }
 
 /** تقييم الجودة حسب SM-2 (0-5) */

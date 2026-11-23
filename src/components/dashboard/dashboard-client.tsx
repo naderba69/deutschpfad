@@ -24,6 +24,7 @@ import {PreferencesCard} from "@/components/dashboard/preferences-card";
 import {ReversePlanCard} from "@/components/dashboard/reverse-plan";
 import {DailyVocabChallenge} from "@/components/dashboard/daily-vocab-challenge";
 import {TodayReviewCard} from "@/components/dashboard/today-review-card";
+import {SrsChartsCard} from "@/components/dashboard/srs-charts-card";
 import {RetentionCard} from "@/components/dashboard/retention-card";
 import {StudyStatsCard} from "@/components/dashboard/study-stats-card";
 import {RecentActivity} from "@/components/dashboard/recent-activity";
@@ -209,6 +210,7 @@ export function DashboardClient() {
       <DashSection step="٤" title="تدريبك اليومي" subtitle="مارس الآن: مراجعة مستحقة + مفردات + إحصاءات دراسة">
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
           <TodayReviewCard />
+          <SrsChartsCard />
           <DailyVocabChallenge />
           <StudyStatsCard />
           <RetentionCard />

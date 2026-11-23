@@ -16,6 +16,13 @@ import type { ReviewQuality, Sm2CardData } from "@/types/srs";
  * خدمة بطاقات المراجعة (SRS) — تعمل فوق IndexedDB (مخزن cards)
  */
 
+/** حدث يُطلق عند أي تغيير في البطاقات (لتحديث الرسوم مباشرة) */
+export const CARDS_CHANGED_EVENT = "srs:cards-changed";
+
+function notifyCardsChanged(): void {
+  if (typeof window !== "undefined") window.dispatchEvent(new Event(CARDS_CHANGED_EVENT));
+}
+
 /** إضافة بطاقات درس (لا يضيف المكرر) — تُستدعى عند إتمام درس */
 export async function addLessonFlashcards(cards: Flashcard[]): Promise<number> {
   if (cards.length === 0) return 0;
@@ -40,6 +47,7 @@ export async function addLessonFlashcards(cards: Flashcard[]): Promise<number> {
     );
   }
   await tx.done;
+  notifyCardsChanged();
   return toAdd.length;
 }
 
@@ -57,6 +65,7 @@ export async function addManualCard(input: {
     "cards",
     createCard({ id, ...input, source: "manual" }),
   );
+  notifyCardsChanged();
 }
 
 /** كل البطاقات */
@@ -164,6 +173,7 @@ export async function reviewCard(id: string, quality: ReviewQuality): Promise<Sm
   const next = applyEbbinghausReview(card, accuracy, Date.now(), policy);
   await db.put("cards", next);
   void recordEvent({ type: "review", cardId: id, quality });
+  notifyCardsChanged();
 
   return next;
 }
@@ -187,6 +197,7 @@ export async function reviewCardByTyping(
   const next = applyEbbinghausReview(card, grade.accuracy, Date.now(), policy);
   await db.put("cards", next);
   void recordEvent({ type: "review", cardId: id, quality: Math.round(grade.accuracy * 5) as ReviewQuality });
+  notifyCardsChanged();
   return {card: next, grade};
 }
 
@@ -194,6 +205,7 @@ export async function reviewCardByTyping(
 export async function deleteCard(id: string): Promise<void> {
   const db = await getDb();
   await db.delete("cards", id);
+  notifyCardsChanged();
 }
 
 /** إحصائيات البطاقات */
