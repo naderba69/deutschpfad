@@ -184,17 +184,27 @@ export const siteConfig = {
 export type SiteConfig = typeof siteConfig;
 
 /** حلّ رابط الموقع الموثوق (P1-06) */
-function resolveSiteUrl(): string {
-  const explicit = process.env.NEXT_PUBLIC_APP_URL?.trim();
+/**
+ * عنوان الموقع العام (للخريطة والروابط المطلقة). دالة نقية تستقبل البيئة للاختبار.
+ * الترتيب:
+ *  1) NEXT_PUBLIC_APP_URL إن وُضع (المصدر الصريح).
+ *  2) VERCEL_PROJECT_PRODUCTION_URL: نطاق الإنتاج العام، وليس عنوان النشر المحمي.
+ *     (كانت الخريطة تخرج بـVERCEL_URL فقط، وهو عنوان النشر المحمي، فتفشل الروابط العامة.)
+ *  3) VERCEL_URL: عنوان النشر الحالي (معاينة).
+ *  4) التطوير المحلي فقط: localhost.
+ *  5) الإنتاج بلا متغيرات: نطاق النشر الفعلي، لا localhost أبداً.
+ */
+export function resolveSiteUrl(env: Partial<NodeJS.ProcessEnv> = process.env): string {
+  const explicit = env.NEXT_PUBLIC_APP_URL?.trim();
   if (explicit) return explicit.replace(/\/$/, "");
 
-  // على Vercel: VERCEL_URL مثل "deutschpfad.vercel.app"
-  const vercelUrl = process.env.VERCEL_URL?.trim();
+  const production = env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
+  if (production) return `https://${production.replace(/^https?:\/\//, "").replace(/\/$/, "")}`;
+
+  const vercelUrl = env.VERCEL_URL?.trim();
   if (vercelUrl) return `https://${vercelUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")}`;
 
-  // التطوير المحلي فقط (نستخدم localhost في dev — لا يُبنى للإنتاج)
-  if (process.env.NODE_ENV === "development") return "http://localhost:3000";
+  if (env.NODE_ENV === "development") return "http://localhost:3000";
 
-  // الإنتاج بلا متغيرات: نطاق النشر الفعلي — لا localhost أبداً
   return "https://deutschpfad.vercel.app";
 }
