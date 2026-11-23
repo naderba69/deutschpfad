@@ -7,6 +7,7 @@ import {BrainCircuit, CheckCircle2, RotateCcw, Star} from "lucide-react";
 
 import {QUALITY_BUTTONS} from "@/lib/srs/sm2";
 import {getCardStats, getDueCards, reviewCard} from "@/lib/srs/flashcard-service";
+import {TypedAnswerPanel} from "@/components/flashcards/typed-answer-panel";
 import {addRefillReview, getRefillCount, REFILLS_PER_HEART} from "@/lib/gamification/hearts";
 import {SpeakButton} from "@/components/shared/speak-button";
 import {Button} from "@/components/ui/button";
@@ -21,8 +22,9 @@ interface ReviewSessionProps {
 }
 
 /**
- * جلسة المراجعة (SM-2) — استعرض البطاقات المستحقة وقم بتقييمها بنفسك:
- * نسيت / صعب / حسن / سهل → تحديث تلقائي للفاصل الزمني
+ * جلسة المراجعة (إبنغهاوس) — وضعان:
+ *  · الكتابة (افتراضي): تكتب الكلمة الألمانية مع مادتها، فتُحسب الدقة تلقائياً
+ *  · التقييم الذاتي: نسيت / صعب / حسن / سهل
  */
 export function ReviewSession({ refreshKey }: ReviewSessionProps) {
   const [loading, setLoading] = React.useState(true);
@@ -34,6 +36,7 @@ export function ReviewSession({ refreshKey }: ReviewSessionProps) {
   const [stats, setStats] = React.useState<{ total: number; due: number }>({ total: 0, due: 0 });
   const [finished, setFinished] = React.useState(false);
   const [sessionKey, setSessionKey] = React.useState(0);
+  const [mode, setMode] = React.useState<"typed" | "self">("typed");
 
   React.useEffect(() => {
     let cancelled = false;
@@ -96,7 +99,7 @@ export function ReviewSession({ refreshKey }: ReviewSessionProps) {
           {lapses > 0 && <span> (أعِدت {lapses} بطاقة)</span>}
         </p>
         <p className="mt-1 text-xs text-muted-foreground">
-          خوارزمية SM-2 جدولت مواعيد المراجعة التالية لكل بطاقة حسب تقييمك.
+          نموذج إبنغهاوس جدوَل مواعيد المراجعة التالية لكل بطاقة حسب دقتك.
         </p>
         <Button className="mt-5 gap-1.5" onClick={() => setSessionKey((k) => k + 1)}>
           <RotateCcw className="h-4 w-4" aria-hidden="true" />
@@ -108,13 +111,12 @@ export function ReviewSession({ refreshKey }: ReviewSessionProps) {
 
   const card = cards[index];
 
-  const handleRate = async (q: ReviewQuality) => {
-    if (q < 3) setLapses((l) => l + 1);
+  const advance = (failed: boolean) => {
+    if (failed) setLapses((l) => l + 1);
     setReviewedCount((c) => c + 1);
     setFlipped(false);
     // كل بطاقة مراجعة تُحتسب لإعادة شحن القلوب (كل 3 = قلب)
     addRefillReview();
-    await reviewCard(card.id, q);
     setIndex((i) => {
       if (i + 1 >= cards.length) {
         setFinished(true);
@@ -122,6 +124,11 @@ export function ReviewSession({ refreshKey }: ReviewSessionProps) {
       }
       return i + 1;
     });
+  };
+
+  const handleRate = async (q: ReviewQuality) => {
+    await reviewCard(card.id, q);
+    advance(q < 3);
   };
 
   return (
@@ -142,7 +149,40 @@ export function ReviewSession({ refreshKey }: ReviewSessionProps) {
         </span>
       </div>
 
-      {/* البطاقة */}
+      {/* اختيار الوضع */}
+      <div className="flex justify-center gap-2" role="group" aria-label="وضع المراجعة">
+        <Button
+          size="sm"
+          variant={mode === "typed" ? "default" : "outline"}
+          aria-pressed={mode === "typed"}
+          onClick={() => setMode("typed")}
+        >
+          الكتابة
+        </Button>
+        <Button
+          size="sm"
+          variant={mode === "self" ? "default" : "outline"}
+          aria-pressed={mode === "self"}
+          onClick={() => setMode("self")}
+        >
+          التقييم الذاتي
+        </Button>
+      </div>
+
+      {mode === "typed" ? (
+        <div className="space-y-4 rounded-2xl border bg-card p-6">
+          <div className="space-y-1 text-center">
+            <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">المعنى:</span>
+            <p className="text-2xl font-bold">{card.ar}</p>
+          </div>
+          <TypedAnswerPanel
+            key={`${card.id}-${index}`}
+            card={card}
+            onDone={(lapse) => advance(lapse)}
+          />
+        </div>
+      ) : (
+      /* البطاقة */
       <button
         type="button"
         onClick={() => setFlipped((f) => !f)}
@@ -189,9 +229,10 @@ export function ReviewSession({ refreshKey }: ReviewSessionProps) {
           </div>
         )}
       </button>
+      )}
 
       {/* أزرار التقييم (تظهر بعد الكشف) */}
-      {flipped && (
+      {mode === "self" && flipped && (
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
           {QUALITY_BUTTONS.map(({ q, label, emoji, hint }) => (
             <Button
@@ -208,10 +249,12 @@ export function ReviewSession({ refreshKey }: ReviewSessionProps) {
         </div>
       )}
 
-      <p className="flex items-center justify-center gap-2 text-center text-xs text-muted-foreground">
-        <Star className="h-3.5 w-3.5 text-gold-strong" aria-hidden="true" />
-        تقييمك الذاتي يضبط فترات المراجعة — «سهل» يباعد، «نسيت» يقرب
-      </p>
+      {mode === "self" && (
+        <p className="flex items-center justify-center gap-2 text-center text-xs text-muted-foreground">
+          <Star className="h-3.5 w-3.5 text-gold-strong" aria-hidden="true" />
+          تقييمك الذاتي يضبط فترات المراجعة — «سهل» يباعد، «نسيت» يقرب
+        </p>
+      )}
     </div>
   );
 }
