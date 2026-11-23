@@ -394,6 +394,8 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
   };
 
   /** «التالي» من قسم شرح/قراءة يُسجَّل إنجازه بالتأكيد؛ أقسام التمارين تسجّل نفسها */
+  // إنهاء الدرس من آخر قسم: قسم الإقرار الأخير يُثبت إنجازه قبل الانتقال (وإلا بقي معلّقاً في تقدّم المراحل)
+  const finishLesson = () => { const id = sectionDefs[currentSection]?.id; if (id) acknowledgeOnAdvance(lesson.id, id); handleCompleteLesson(); };
   const advanceFrom = (index: number) => { const id = sectionDefs[index]?.id; if (!id) return; const acked = acknowledgeOnAdvance(lesson.id, id); if (acked) gate.markLocal(id); goTo(index + 1, acked ? new Set([...gate.completed, id]) : gate.completed); };
 
   // ═══ إصلاح السكرول: عند تغيير القسم ننتقل تلقائياً «لأول المحتوى» ═══
@@ -607,7 +609,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
                   <ArrowLeft className="h-5 w-5" aria-hidden="true" />
                 </Button>
               ) : (
-                <Button size="lg" variant="gold" className="btn-glow gap-2 px-6" onClick={handleCompleteLesson}>
+                <Button size="lg" variant="gold" className="btn-glow gap-2 px-6" onClick={finishLesson}>
                   <Trophy className="h-5 w-5" aria-hidden="true" />
                   إنهاء الدرس
                 </Button>
@@ -629,7 +631,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
                   <ArrowLeft className="h-5 w-5" aria-hidden="true" />
                 </Button>
               ) : (
-                <Button size="lg" variant="gold" className="btn-glow gap-2 px-6" onClick={handleCompleteLesson}>
+                <Button size="lg" variant="gold" className="btn-glow gap-2 px-6" onClick={finishLesson}>
                   <Trophy className="h-5 w-5" aria-hidden="true" />
                   إنهاء الدرس
                 </Button>

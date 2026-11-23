@@ -20,7 +20,7 @@ vi.mock("@/lib/analytics/events", () => ({
 }));
 
 import {recordEvent} from "@/lib/analytics/events";
-import {loadCompletedSections, markSectionCompleted} from "./section-completion";
+import {acknowledgeOnAdvance, loadCompletedSections, markSectionCompleted} from "./section-completion";
 
 beforeEach(() => {
   store.events = [];
@@ -73,5 +73,25 @@ describe("كتابة إنجاز القسم وقراءته", () => {
     const res = await loadCompletedSections("a1-01");
     expect(res.ok).toBe(false);
     expect(res.ids.size).toBe(0);
+  });
+});
+
+describe("إقرار المتعلم بإنهاء قسم (التالي أو إنهاء الدرس)", () => {
+  it("قسم إقرار (vertiefung، آخر أقسام الدرس) يُسجَّل ويعيد true", async () => {
+    expect(acknowledgeOnAdvance("a1-01", "vertiefung")).toBe(true);
+    await vi.waitFor(() => expect(store.events).toHaveLength(1));
+    expect(store.events[0]).toMatchObject({type: "section-completed", lessonId: "a1-01", sectionId: "vertiefung"});
+  });
+
+  it("قسم تمارين (uebungen) لا يُسجَّل من هنا، لأن إنجازه بنتيجة فعلية", async () => {
+    expect(acknowledgeOnAdvance("a1-01", "uebungen")).toBe(false);
+    await new Promise((r) => setTimeout(r, 0));
+    expect(recordEvent).not.toHaveBeenCalled();
+  });
+
+  it("معرّف مجهول لا يُسجَّل", async () => {
+    expect(acknowledgeOnAdvance("a1-01", "nicht-da")).toBe(false);
+    await new Promise((r) => setTimeout(r, 0));
+    expect(recordEvent).not.toHaveBeenCalled();
   });
 });
