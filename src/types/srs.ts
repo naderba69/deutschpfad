@@ -10,7 +10,7 @@ export interface Sm2CardData {
   example?: string;
   exampleAr?: string;
   level: LevelCode;
-  source: "lesson" | "manual" | "sentence";
+  source: "lesson" | "manual" | "sentence" | "error";
   createdAt: number;
 
   /* ── حالة SM-2 ── */
