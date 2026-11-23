@@ -2,6 +2,7 @@ import {recordEvent} from "@/lib/analytics/events";
 import {createCard, forgettingCoefficient} from "@/lib/srs/sm2";
 import {
   applyEbbinghausReview,
+  DAY_MS,
   gradeTypedAnswer,
   MODEL_ID,
   policyFor,
@@ -9,6 +10,7 @@ import {
 } from "@/lib/srs/ebbinghaus";
 import {createManualSnapshot} from "@/lib/storage/export-import";
 import {getDb, getRecord, putRecord} from "@/lib/storage/db";
+import {errorCardInput, type NotebookLike} from "@/lib/srs/error-cards";
 import type { Flashcard } from "@/types/lesson";
 import type { ReviewQuality, Sm2CardData } from "@/types/srs";
 
@@ -199,6 +201,31 @@ export async function reviewCardByTyping(
   void recordEvent({ type: "review", cardId: id, quality: Math.round(grade.accuracy * 5) as ReviewQuality });
   notifyCardsChanged();
   return {card: next, grade};
+}
+
+/**
+ * خطأ من أي وحدة ⇒ بطاقة مستحقة بعد يوم (أول مرة)، أو فشل على البطاقة نفسها
+ * فتُعاد جدولتها خلال 10 دقائق (تكرار الخطأ). بلا إجابة صحيحة لا بطاقة.
+ */
+export async function recordErrorCard(entry: NotebookLike): Promise<void> {
+  const input = errorCardInput(entry);
+  if (!input) return;
+  const db = await getDb();
+  const now = Date.now();
+  const existing = await db.get("cards", input.id);
+  if (existing) {
+    const policy = policyFor(await getExamMode());
+    await db.put("cards", applyEbbinghausReview(existing, 0.2, now, policy));
+  } else {
+    await db.put(
+      "cards",
+      {
+        ...createCard({id: input.id, de: input.de, ar: input.ar, level: input.level, source: "error"}),
+        due: now + DAY_MS,
+      },
+    );
+  }
+  notifyCardsChanged();
 }
 
 /** حذف بطاقة */

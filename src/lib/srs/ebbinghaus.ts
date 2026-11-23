@@ -18,6 +18,7 @@
  * ═══════════════════════════════════════════════════════════
  */
 
+import {dayKey} from "@/lib/mastery/mastery";
 import {normalizeGermanText} from "@/lib/speech/scoring";
 import {DEFAULT_EASE, MAX_INTERVAL_DAYS, type Sm2CardData} from "@/types/srs";
 
@@ -151,11 +152,6 @@ export function stabilityOf(card: Pick<Sm2CardData, "stability" | "interval" | "
   if (card.stability && card.stability > 0) return card.stability;
   if (card.lastReview === null) return INITIAL_STABILITY;
   return Math.max(LEGACY_MIN_STABILITY, card.interval || INITIAL_STABILITY);
-}
-
-/** مفتاح اليوم YYYY-MM-DD (بالتوقيت العالمي) */
-export function dayKey(ts: number): string {
-  return new Date(ts).toISOString().slice(0, 10);
 }
 
 /** الاحتفاظ الحالي للبطاقة الآن */

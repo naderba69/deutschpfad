@@ -4,6 +4,7 @@
  * الدرس والتمرين لأن معرّفات التمارين (مثل e1) تتكرر عبر الدروس.
  * المخزن: IndexedDB (settings) — بيانات منفصلة لكل متصفح.
  */
+import {recordErrorCard} from "@/lib/srs/flashcard-service";
 
 export interface NotebookEntry {
   /** مفتاح فريد مركب من نطاق المصدر ومعرّف التمرين؛ الإدخالات القديمة قد تحمل exerciseId فقط. */
@@ -93,6 +94,13 @@ export async function recordMistake(entry: Omit<NotebookEntry, "count" | "lastAt
   // حد أقصى 500 سطر للحفاظ على الأداء
   const sorted = rows.sort((a, b) => b.lastAt - a.lastAt).slice(0, 500);
   await saveNotebook(sorted);
+
+  // الخطأ يصبح بطاقة مراجعة (ثانوي: فشل البطاقة لا يُفشل تسجيل الخطأ)
+  try {
+    await recordErrorCard(entry);
+  } catch {
+    /* تجاهل: الدفتر هو المصدر الأساسي */
+  }
 }
 
 /** تسجيل اختيار المستخدم تعليم الإدخال كمُراجَع ذاتياً؛ لا يثبت الإتقان. */

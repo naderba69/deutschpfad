@@ -1,7 +1,8 @@
 import {describe, expect, it} from "vitest";
 
 import {countByLevel, countCategories, isMastered, categorize} from "./mastery";
-import {DAY_MS, applyEbbinghausReview, NORMAL_POLICY, dayKey} from "./ebbinghaus";
+import {DAY_MS, applyEbbinghausReview, NORMAL_POLICY} from "./ebbinghaus";
+import {dayKey} from "@/lib/mastery/mastery";
 import {createCard} from "./sm2";
 import type {Sm2CardData} from "@/types/srs";
 
