@@ -5,6 +5,7 @@ import {CheckCircle2, Dices, Headphones, Send, XCircle} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
 import {AutoGrowTextarea} from "@/components/shared/auto-grow-textarea";
+import {multisetMatch} from "@/lib/dictation/multiset";
 import {normalizeGermanText} from "@/lib/speech/scoring";
 import {speakRepeated} from "@/lib/speech/voices";
 import {cn} from "@/lib/utils";
@@ -51,10 +52,9 @@ export function FreeDictation() {
 
     const targetWords = normalizeGermanText(target).split(" ").filter(Boolean);
     const answerWords = normalizeGermanText(answer).split(" ").filter(Boolean);
-    const correct = targetWords.filter((w) => answerWords.includes(w));
-    const missed = targetWords.filter((w) => !answerWords.includes(w));
-    const score = Math.round((correct.length / targetWords.length) * 100);
-    setResult({ correct, missed, score });
+    // عدّاد تكرار: الكلمة المكررة في الهدف تحتاج نسخها كلها (لا وجودها مرة)
+    const m = multisetMatch(targetWords, answerWords);
+    setResult({ correct: m.matchedWords, missed: m.missing, score: Math.round(m.ratio * 100) });
   };
 
   return (

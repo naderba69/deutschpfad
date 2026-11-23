@@ -15,6 +15,7 @@ import {speakGerman, stopSpeaking} from "@/lib/speech/voices";
 import {DIKTAT_LEVELS, getDiktateByLevel, type Diktat} from "@/data/diktate";
 import {cn} from "@/lib/utils";
 import {FilterChip} from "@/components/ui/filter-chip";
+import {multisetMatch} from "@/lib/dictation/multiset";
 
 /** تسوية للمقارنة: تجاهل علامات ونهايات */
 function norm(s: string): string {
@@ -30,8 +31,8 @@ function similar(a: string, b: string): boolean {
   const aw = norm(a).split(" ").filter(Boolean);
   const bw = norm(b).split(" ").filter(Boolean);
   if (aw.length === 0 || bw.length === 0) return false;
-  const hits = aw.filter((w) => bw.includes(w)).length;
-  return hits / Math.max(aw.length, bw.length) >= 0.85;
+  // عدّاد تكرار لا وجود: «der der Mann» لا تُقبل بـ«der Mann»
+  return multisetMatch(bw, aw).ratio >= 0.85;
 }
 
 export function DiktatTrainer() {
