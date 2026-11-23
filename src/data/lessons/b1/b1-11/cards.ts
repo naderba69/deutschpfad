@@ -72,6 +72,15 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       explanation: "المبني للمجهول في المضارع = werden + اسم المفعول (wird gekocht).",
       errorType: "grammar",
     },
+    {
+      id: "mt-b1-11-6",
+      type: "word-ordering",
+      instructionAr: "رتّب الجملة (تمنٍّ في الحاضر):",
+      tokens: ["hätte", "Ich", "mehr", "Zeit", "."],
+      correctSentence: "Ich hätte mehr Zeit.",
+      explanation: "Konjunktiv II: ich hätte = لو كان لديّ. الفعل يأتي في الموضع الثاني كالجملة الخبرية.",
+      errorType: "grammar",
+    },
   ];
 
 export const flashcards: NonNullable<Lesson["flashcards"]> = [

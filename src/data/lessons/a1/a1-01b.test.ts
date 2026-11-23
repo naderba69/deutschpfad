@@ -22,7 +22,7 @@ describe("A1-01b — أسئلة W وتصريف الأفعال المنتظمة",
     expect(lesson.practiceBank.map((task) => task.id)).toEqual([
       "e8", "e11", "e12", "e13", "e14", "e20", "e21", "e22", "e23", "e24", "e25", "e26", "e27", "e28",
     ]);
-    expect(lesson.miniTest.map((task) => task.id)).toEqual(["m3", "m4", "m5"]);
+    expect(lesson.miniTest.map((task) => task.id)).toEqual(["m3", "m4", "m5", "m9", "m10"]);
     expect(lesson.writing.map((task) => task.id)).toEqual(["w2"]);
     expect(lesson.theory.map((block) => block.id)).toEqual(["t2", "t3"]);
   });

@@ -49,7 +49,7 @@ const PART2_THEORY = new Set(["t2", "t3"]);
 const PART2_TASKS = new Set([
   "e8", "e11", "e12", "e13", "e14", "e20", "e21",
   "e22", "e23", "e24", "e25", "e26", "e27", "e28",
-  "m3", "m4", "m5", "w2",
+  "m3", "m4", "m5", "m9", "m10", "w2",
 ]);
 const PART2_FLASHCARDS = new Set([
   "fc5", "fc9", "fc10", "fc13",
