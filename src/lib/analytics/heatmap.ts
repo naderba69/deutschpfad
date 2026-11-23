@@ -1,4 +1,5 @@
 import {getRecentEventsResult} from "@/lib/analytics/events";
+import {dayKey} from "@/lib/mastery/mastery";
 
 /**
  * الخريطة الحرارية للنشاط — شبيهة بـ GitHub
@@ -13,7 +14,8 @@ export async function getActivityMapResult(): Promise<ActivityMapReadResult> {
   if (!result.ok) return {ok: false};
   const map = new Map<string, number>();
   for (const e of result.events) {
-    const key = new Date(e.ts).toISOString().slice(0, 10);
+    // اليوم المحلي (مثل بقية الواجهة) — لا UTC، وإلا انتقل نشاط منتصف الليل لليوم السابق
+    const key = dayKey(e.ts);
     map.set(key, (map.get(key) ?? 0) + 1);
   }
   return {ok: true, activity: map};
@@ -56,7 +58,7 @@ export function buildHeatmap(activity: Map<string, number>, weeks = 52): HeatCel
     const column: HeatCell[] = [];
     for (let d = 0; d < 7; d++) {
       const date = new Date(cursor);
-      const key = date.toISOString().slice(0, 10);
+      const key = dayKey(date.getTime());
       const count = activity.get(key) ?? 0;
       column.push({ date: new Date(date), count, level: activityLevel(count) });
       cursor.setDate(cursor.getDate() + 1);
@@ -67,17 +69,17 @@ export function buildHeatmap(activity: Map<string, number>, weeks = 52): HeatCel
 }
 
 /** حساب سلسلة الأيام المتتالية (Streak) — مع حماية يوم واحد */
-export function computeStreak(activity: Map<string, number>): number {
-  const today = new Date();
+export function computeStreak(activity: Map<string, number>, now: number = Date.now()): number {
+  const today = new Date(now);
   today.setHours(0, 0, 0, 0);
   const keys = new Set(activity.keys());
   let streak = 0;
   const cursor = new Date(today);
   // إذا لم يسجل اليوم، نبدأ من أمس (حماية يوم واحد)
-  if (!keys.has(cursor.toISOString().slice(0, 10))) {
+  if (!keys.has(dayKey(cursor.getTime()))) {
     cursor.setDate(cursor.getDate() - 1);
   }
-  while (keys.has(cursor.toISOString().slice(0, 10))) {
+  while (keys.has(dayKey(cursor.getTime()))) {
     streak++;
     cursor.setDate(cursor.getDate() - 1);
   }
