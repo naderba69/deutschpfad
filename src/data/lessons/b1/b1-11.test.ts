@@ -113,6 +113,10 @@ const expectedWordOrder: Record<string, { tokens: string[]; correctSentence: str
     tokens: ["Der", "Mann", ",", "der", "mir", "geholfen", "hat", ",", "ist", "nett", "."],
     correctSentence: "Der Mann, der mir geholfen hat, ist nett.",
   },
+  "mt-b1-11-6": {
+    tokens: ["hätte", "Ich", "mehr", "Zeit", "."],
+    correctSentence: "Ich hätte mehr Zeit.",
+  },
 };
 
 function allTasks(): Exercise[] {
