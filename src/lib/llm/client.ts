@@ -128,13 +128,14 @@ export async function fetchLLMStatus(): Promise<LLMStatus | null> {
  * — لا يمر بخادمنا إطلاقاً: لا تكلفة على المنصة ولا تسريب للمفتاح —
  * Gemini Web API يسمح بذلك (CORS + مفتاح API). مدة 45 ثانية ثم خطأ.
  */
-async function callGeminiDirect(
+export async function callGeminiDirect(
   apiKey: string,
   messages: LLMMessage[],
   opts: { maxTokens?: number; temperature?: number } = {},
 ): Promise<string> {
   const model = "gemini-2.5-flash";
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`;
+  // المفتاح في ترويسة الطلب لا في الرابط (لا يظهر في عناوين الصفحات أو السجلات)
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
 
   // نبني المحتوى: كل الرسائل بنصها
   const contents = messages.map((m) => ({
@@ -144,7 +145,7 @@ async function callGeminiDirect(
 
   const res = await fetch(url, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey },
     body: JSON.stringify({
       contents,
       generationConfig: {
