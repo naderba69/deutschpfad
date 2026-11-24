@@ -5,11 +5,18 @@
  *   الإعدادات مستقبلاً. التسجيل المتكرر لنفس المسار لا يسبب
  *   أي مشكلة (يعيد نفس التسجيل).
  */
+import {unregisterServiceWorkersForDev} from "@/lib/pwa/dev-sw-cleanup";
+
 export function registerServiceWorker(): void {
   if (typeof window === "undefined") return;
   if (!("serviceWorker" in navigator)) return;
-  // في بيئة التطوير يكون الـ SW معطلاً عن قصد (لتفادي تعارض HMR)
-  if (process.env.NODE_ENV === "development") return;
+  // في التطوير لا نسجّل SW، ونلغي أي تسجيل قديم بقي من بناء إنتاج على المنفذ نفسه
+  if (process.env.NODE_ENV === "development") {
+    void unregisterServiceWorkersForDev(navigator.serviceWorker).catch(() => {
+      /* تجاهل: التنظيف لا يعطّل الصفحة */
+    });
+    return;
+  }
 
   const register = () => {
     void navigator.serviceWorker.register("/sw.js").catch(() => {

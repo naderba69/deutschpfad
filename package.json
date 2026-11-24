@@ -4,6 +4,7 @@
   "private": true,
   "description": "درب الألمانية — منصة تدريب ذاتي باللغة الألمانية من A1 إلى B2 للناطقين بالعربية",
   "scripts": {
+    "predev": "node scripts/clean-generated-sw.mjs",
     "dev": "next dev --webpack -H 0.0.0.0 -p 3000",
     "build": "next build --webpack",
     "start": "next start -H 0.0.0.0 -p ${PORT:-3000}",
