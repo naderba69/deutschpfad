@@ -15,6 +15,7 @@
  */
 import type { Lesson } from "@/types/lesson";
 import { balanceChoiceTree } from "@/lib/tests/balance-options";
+import { applyDialogueIpa } from "./dialogue-ipa";
 
 /** ترتيب معرّفات RAW_LESSONS حرفياً (يحرسه level-loaders.test.ts) */
 export const GLOBAL_ORDER: readonly string[] = [
@@ -50,7 +51,7 @@ export async function loadLessonsByLevel(level: string): Promise<Lesson[]> {
   const loader = LOADERS[key];
   if (!loader) return [];
   const { RAW } = await loader();
-  return RAW.map((lesson) => {
+  return RAW.map(applyDialogueIpa).map((lesson) => {
     const globalIndex = GLOBAL_ORDER.indexOf(lesson.id);
     // بذرة الموازنة = الموضع العالمي + 1 (كما في RAW_LESSONS.map((item, i) => … i + 1))
     return balanceChoiceTree(lesson, globalIndex >= 0 ? globalIndex + 1 : 0);

@@ -198,6 +198,11 @@ export function HoerverstehenSection({
                           {showText && (
                             <p className="mt-0.5 text-sm text-muted-foreground">{line.ar}</p>
                           )}
+                          {showText && line.ipa ? (
+                            <p dir="ltr" lang="de" className="mt-0.5 font-mono text-xs text-muted-foreground" aria-label="النطق الدولي IPA">
+                              [{line.ipa}]
+                            </p>
+                          ) : null}
                         </div>
                         <div className="flex shrink-0 flex-col items-end gap-1.5">
                           {line.audioSrc ? (
