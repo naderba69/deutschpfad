@@ -1,4 +1,5 @@
 import type { Lesson } from "@/types/lesson";
+import { applyDialogueIpa } from "@/data/lessons/dialogue-ipa";
 import { lessonA100 } from "@/data/lessons/a1/a1-00";
 import { lessonA101, lessonA101b } from "@/data/lessons/a1/a1-01";
 import { lessonA102 } from "@/data/lessons/a1/a1-02";
@@ -63,7 +64,7 @@ import { balanceChoiceTree } from "@/lib/tests/balance-options";
  * ═══════════════════════════════════════════════════════════
  */
 
-export const RAW_LESSONS: Lesson[] = [
+const RAW_LESSONS_SOURCE: Lesson[] = [
   /* A1 — 16 */
   lessonA100, lessonA101, lessonA101b, lessonA102, lessonA103, lessonA104, lessonA105,
   lessonA106, lessonA107, lessonA108, lessonA109, lessonA110, lessonA111, lessonA112, lessonA114, lessonA113,
@@ -77,6 +78,8 @@ export const RAW_LESSONS: Lesson[] = [
   lessonB201, lessonB202, lessonB203, lessonB204, lessonB211, lessonB205,
   lessonB206, lessonB207, lessonB208, lessonB209, lessonB210, lessonB212, lessonB213,
 ];
+/** نطق IPA لأسطر الحوارات يُرفق هنا (بيانات منفصلة في dialogue-ipa.ts) */
+export const RAW_LESSONS: Lesson[] = RAW_LESSONS_SOURCE.map(applyDialogueIpa);
 /**
  * الدروس كما يراها المتعلم: **مواضع الإجابات موزّعة** (الدفعة 70).
  * كان 88% من الإجابات الصحيحة في الخيار الأول (B2 99%)، فيُجتاز الدرس

@@ -361,6 +361,8 @@ export interface ListeningLine {
   speaker: string;
   de: string;
   ar: string;
+  /** نطق دولي (IPA) للسطر الألماني، بلا أقواس [ ] — يُكتب يدوياً ويُراجع */
+  ipa?: string;
   /** مسار ملف صوتي مرفق لهذا السطر عند توفره، بجانب الصوت النطقي في المتصفح */
   audioSrc?: string;
 }
