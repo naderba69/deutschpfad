@@ -70,6 +70,8 @@ const withPWA = withPWAInit({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // صورة Docker فقط: إخراج مستقل (server.js + الاعتماديات الضرورية) — بناء Vercel لا يتغير
+  ...(process.env.DOCKER_BUILD === "1" ? { output: "standalone" } : {}),
   // ضغط الاستجابات (gzip/brotli) عبر خادم Next المدمج عند الاستضافة الذاتية
   compress: true,
   // إخفاء ترويسة X-Powered-By (أمان + نظافة)

@@ -1,0 +1,25 @@
+# ملفات التطوير والاختبار والأسرار لا تدخل الصورة
+node_modules
+.next
+.git
+.github
+.vercel
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+coverage
+test-results
+playwright-report
+e2e
+scripts
+docs
+*.md
+Dockerfile
+.dockerignore
+vitest.config.ts
+playwright.config.ts
+# يُولَّد أثناء البناء
+public/sw.js
+public/sw.js.map
+public/workbox-*.js
