@@ -7,6 +7,7 @@ import {CalendarClock, DatabaseBackup, Layers, PlusCircle, Shuffle} from "lucide
 import {AddCardForm} from "@/components/flashcards/add-card-form";
 import {CardList} from "@/components/flashcards/card-list";
 import {ReviewSession} from "@/components/flashcards/review-session";
+import {VocabIOPanel} from "@/components/flashcards/vocab-io-panel";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {getCardStats, computeForgettingCoefficient, getAllCards} from "@/lib/srs/flashcard-service";
@@ -123,6 +124,9 @@ export function FlashcardsClient() {
           <AddCardForm onAdded={bump} />
         </CardContent>
       </Card>
+
+      {/* ملف المفردات: تصدير / استيراد / البنك الأساسي */}
+      <VocabIOPanel onChanged={bump} />
 
       {/* رابط البيانات */}
       <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-muted/20 p-4">

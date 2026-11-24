@@ -6,6 +6,7 @@ import {CheckCircle2, Lightbulb, Send, Sparkles} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
 import {evaluateWriting} from "@/lib/writing/goethe-local";
+import {checkFormality, checkLengthForLevel} from "@/lib/writing/form-check";
 import {getNotebookEntryId, recordMistake} from "@/lib/storage/error-notebook";
 import {playCorrect, playWrong} from "@/lib/audio/sfx";
 import {addGems, GEM_REWARDS} from "@/lib/gamification/gems";
@@ -243,6 +244,32 @@ export function WritingPathClient() {
                 <p className="text-xs text-muted-foreground">{result.recommendation}</p>
               </div>
             </div>
+          </div>
+
+          {/* فحوص الصيغة والطول حسب المستوى (آلية، محلية) */}
+          <div className="mt-3 space-y-1 text-xs text-muted-foreground" role="note">
+            {(() => {
+              const f = checkFormality(text);
+              const len = checkLengthForLevel(text, task.level);
+              const formLine =
+                f.mixed
+                  ? "الصيغة: خلطت بين du و Sie. اختر صيغة واحدة في النص كله."
+                  : f.dominant === "du"
+                    ? "الصيغة: du (غير رسمية)."
+                    : f.dominant === "sie"
+                      ? "الصيغة: Sie (رسمية)."
+                      : "الصيغة: لم يُعثر على ضمير مخاطبة.";
+              const lenLine =
+                len.verdict === "ok"
+                  ? `الطول: ${len.words} كلمة، بلغت الحد الأدنى لمستوى ${task.level} (${len.target.min}).`
+                  : `الطول: ${len.words} كلمة، والحد الأدنى لمستوى ${task.level} هو ${len.target.min}.`;
+              return (
+                <>
+                  <p>{formLine}</p>
+                  <p>{lenLine}</p>
+                </>
+              );
+            })()}
           </div>
 
           {/* المعايير */}

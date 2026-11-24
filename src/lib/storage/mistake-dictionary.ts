@@ -1,7 +1,5 @@
 import {getRecentEventsResult} from "@/lib/analytics/events";
 import {errorTypeLabel} from "@/lib/lesson/error-types";
-import {getDb} from "@/lib/storage/db";
-import {createCard} from "@/lib/srs/sm2";
 import type { ErrorTypeCode } from "@/types/lesson";
 
 /**
@@ -52,21 +50,4 @@ export async function getMistakeStatsResult(): Promise<MistakeStatsReadResult> {
 export async function getMistakeStats(): Promise<MistakeStat[]> {
   const result = await getMistakeStatsResult();
   return result.ok ? result.stats : [];
-}
-
-/** إضافة خطأ كبطاقة SM-2 للتدرب عليه */
-export async function addMistakeAsCard(mistake: MistakeStat): Promise<void> {
-  const db = await getDb();
-  const id = `mistake-${mistake.errorType}-${Date.now()}`;
-  await db.put(
-    "cards",
-    createCard({
-      id,
-      de: `⚠️ خطأ متكرر: ${mistake.label}`,
-      ar: `تذكر: هذا النوع من الأخطاء (${mistake.label}) تكرر ${mistake.count} مرة. راجعه حتى لا يقع مرة أخرى!`,
-      example: "→ تصحيح هذا الخطأ يحسّن دقتك مباشرة",
-      level: "A1",
-      source: "manual",
-    }),
-  );
 }
