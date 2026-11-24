@@ -2,18 +2,15 @@
  * ═══════════════════════════════════════════════════════════
  *  فحوص الكتابة الآلية (دوال نقية، بلا شبكة)
  *
- *  1) du/Sie: هل النص يخاطب الشخص بصيغة واحدة؟ الخلط بين du و Sie
- *     خطأ شائع في الرسائل الرسمية. نعدّ الضمائر والملكيات فقط:
+ *  1) du/Sie: هل النص يخاطب الشخص بصيغة واحدة؟ نعدّ الضمائر والملكيات فقط:
  *     - du: du, dir, dich, dein…, euch, euer…
  *     - Sie: Sie (وسط الجملة)، Ihnen، Ihr… (بحرف كبير وسط الجملة)
- *     لا نعدّ «Sie» في بداية الجملة (قد تعني sie = هي/هم)، ولا «ihr/Ihr» الصغيرة.
+ *     لا نعدّ «Sie» في بداية الجملة (قد تعني sie = هي/هم)، ولا «ihr» الصغيرة.
  *
- *  2) الطول حسب المستوى: حدود الكلمات المستخرجة من ملفات الامتحانات
- *     في src/data/exams (أدنى وأعلى minWords لكل مستوى). هذه أرقام المنصة
- *     نفسها، وليست أرقاماً رسمية من Goethe/telc بعد.
+ *  2) الطول: يُقارن بالحد الخاص بالمهمة (minWords)، لا بحد عام للمستوى.
+ *     الأرقام الرسمية في ./official-writing.ts كمرجع فقط.
  * ═══════════════════════════════════════════════════════════
  */
-import type {LevelCode} from "@/types/curriculum";
 
 export type Address = "du" | "sie" | "none";
 
@@ -51,31 +48,9 @@ export function checkFormality(text: string): FormalityResult {
   for (const {word, sentenceStart} of tokens(text)) {
     if (DU_WORDS.has(word)) du++;
     else if (SIE_MID_WORDS.has(word) && !sentenceStart) sie++;
-    else if (word === "Sie" && sentenceStart) {
-      /* لا نعدّها: قد تكون sie = هي/هم */
-    }
   }
   const dominant: Address = du === 0 && sie === 0 ? "none" : du >= sie ? "du" : "sie";
   return {duCount: du, sieCount: sie, dominant, mixed: du > 0 && sie > 0};
-}
-
-/**
- * حدود عدد الكلمات لكل مستوى كما في ملفات الامتحانات:
- * A1 ⇐ 20–30، A2 ⇐ 30–60، B1 = 80، B2 ⇐ 100–150.
- */
-export const LEVEL_WORD_TARGET: Record<LevelCode, {min: number; max: number}> = {
-  A1: {min: 20, max: 30},
-  A2: {min: 30, max: 60},
-  B1: {min: 80, max: 80},
-  B2: {min: 100, max: 150},
-};
-
-export type LengthVerdict = "short" | "ok";
-
-export interface LengthResult {
-  words: number;
-  target: {min: number; max: number};
-  verdict: LengthVerdict;
 }
 
 /** عدد الكلمات: كلمات ألمانية/عربية، بلا أرقام ولا رموز */
@@ -83,9 +58,14 @@ export function countWords(text: string): number {
   return (text.match(/[\p{L}]+(?:['’-][\p{L}]+)*/gu) ?? []).length;
 }
 
-/** هل بلغ النص الحد الأدنى للمستوى؟ (الحد الأعلى يُعرض فقط ولا يُحسب خطأً) */
-export function checkLengthForLevel(text: string, level: LevelCode): LengthResult {
+export interface LengthResult {
+  words: number;
+  min: number;
+  reached: boolean;
+}
+
+/** هل بلغ النص الحد الأدنى للمهمة؟ (الحد الأعلى لا يُحسب خطأً) */
+export function checkLength(text: string, minWords: number): LengthResult {
   const words = countWords(text);
-  const target = LEVEL_WORD_TARGET[level];
-  return {words, target, verdict: words >= target.min ? "ok" : "short"};
+  return {words, min: minWords, reached: words >= minWords};
 }

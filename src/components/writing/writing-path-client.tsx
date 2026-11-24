@@ -6,7 +6,8 @@ import {CheckCircle2, Lightbulb, Send, Sparkles} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
 import {evaluateWriting} from "@/lib/writing/goethe-local";
-import {checkFormality, checkLengthForLevel} from "@/lib/writing/form-check";
+import {checkFormality, checkLength} from "@/lib/writing/form-check";
+import {OFFICIAL_WRITING, statusLabel} from "@/lib/writing/official-writing";
 import {getNotebookEntryId, recordMistake} from "@/lib/storage/error-notebook";
 import {playCorrect, playWrong} from "@/lib/audio/sfx";
 import {addGems, GEM_REWARDS} from "@/lib/gamification/gems";
@@ -250,7 +251,8 @@ export function WritingPathClient() {
           <div className="mt-3 space-y-1 text-xs text-muted-foreground" role="note">
             {(() => {
               const f = checkFormality(text);
-              const len = checkLengthForLevel(text, task.level);
+              const len = checkLength(text, task.minWords);
+              const ref = OFFICIAL_WRITING[task.level];
               const formLine =
                 f.mixed
                   ? "الصيغة: خلطت بين du و Sie. اختر صيغة واحدة في النص كله."
@@ -259,14 +261,16 @@ export function WritingPathClient() {
                     : f.dominant === "sie"
                       ? "الصيغة: Sie (رسمية)."
                       : "الصيغة: لم يُعثر على ضمير مخاطبة.";
-              const lenLine =
-                len.verdict === "ok"
-                  ? `الطول: ${len.words} كلمة، بلغت الحد الأدنى لمستوى ${task.level} (${len.target.min}).`
-                  : `الطول: ${len.words} كلمة، والحد الأدنى لمستوى ${task.level} هو ${len.target.min}.`;
+              const lenLine = len.reached
+                ? `الطول: ${len.words} كلمة، بلغت حد هذه المهمة (${len.min}).`
+                : `الطول: ${len.words} كلمة، وحد هذه المهمة ${len.min} على الأقل.`;
               return (
                 <>
                   <p>{formLine}</p>
                   <p>{lenLine}</p>
+                  <p className="pt-1">
+                    المرجع الرسمي ({ref.exam} {task.level}، {statusLabel(ref.status)}): {ref.summary}
+                  </p>
                 </>
               );
             })()}
