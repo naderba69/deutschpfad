@@ -15,6 +15,7 @@ import type {Lesson} from "@/types/lesson";
 import {DIALOGUE_IPA_A1} from "@/data/lessons/dialogue-ipa-a1";
 import {DIALOGUE_IPA_A2} from "@/data/lessons/dialogue-ipa-a2";
 import {DIALOGUE_IPA_B1} from "@/data/lessons/dialogue-ipa-b1";
+import {DIALOGUE_IPA_B2} from "@/data/lessons/dialogue-ipa-b2";
 
 type DialogueIpaMap = Record<string, Record<string, string[]>>;
 
@@ -22,6 +23,7 @@ export const DIALOGUE_IPA: DialogueIpaMap = {
   ...DIALOGUE_IPA_A1,
   ...DIALOGUE_IPA_A2,
   ...DIALOGUE_IPA_B1,
+  ...DIALOGUE_IPA_B2,
 };
 
 /** يُرفق نطق IPA بأسطر الحوار المطابقة؛ لا يغيّر أي حقل آخر */
