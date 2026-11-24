@@ -1,7 +1,7 @@
 import {describe, expect, it} from "vitest";
 
 import {RAW_LESSONS} from "@/data/lessons";
-import {A1_RAW_LESSONS} from "@/data/lessons/a1-level";
+import {A2_RAW_LESSONS} from "@/data/lessons/a2-level";
 
 import {applyDialogueIpa, DIALOGUE_IPA} from "./dialogue-ipa";
 
@@ -41,7 +41,7 @@ describe("نطق IPA لأسطر الحوارات", () => {
   });
 
   it("درس بلا نطق يبقى كما هو", () => {
-    const lesson = A1_RAW_LESSONS.find((l) => l.id === "a1-05")!;
+    const lesson = A2_RAW_LESSONS.find((l) => l.id === "a2-01")!;
     expect(applyDialogueIpa(lesson)).toBe(lesson);
   });
 });
