@@ -11,6 +11,7 @@ import {
 import {createManualSnapshot} from "@/lib/storage/export-import";
 import {getDb, getRecord, putRecord} from "@/lib/storage/db";
 import {errorCardInput, type NotebookLike} from "@/lib/srs/error-cards";
+import {buildVocabFile, importedCardId, type VocabFile, type VocabItem} from "@/lib/srs/vocab-file";
 import {addReview, EMPTY_REVIEW_LOG, type ReviewLog} from "@/lib/srs/review-log";
 import type { Flashcard } from "@/types/lesson";
 import type { ReviewQuality, Sm2CardData } from "@/types/srs";
@@ -49,15 +50,17 @@ export async function addLessonFlashcards(cards: Flashcard[]): Promise<number> {
   const tx = db.transaction("cards", "readwrite");
   for (const c of toAdd) {
     tx.store.put(
-      createCard({
-        id: c.id,
-        de: c.de,
-        ar: c.ar,
-        example: c.example,
-        exampleAr: c.exampleAr,
-        level: c.level,
-        source: "lesson",
-      }),
+      toEbbinghausCard(
+        createCard({
+          id: c.id,
+          de: c.de,
+          ar: c.ar,
+          example: c.example,
+          exampleAr: c.exampleAr,
+          level: c.level,
+          source: "lesson",
+        }),
+      ),
     );
   }
   await tx.done;
@@ -75,10 +78,7 @@ export async function addManualCard(input: {
 }): Promise<void> {
   const db = await getDb();
   const id = `manual-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
-  await db.put(
-    "cards",
-    createCard({ id, ...input, source: "manual" }),
-  );
+  await db.put("cards", toEbbinghausCard(createCard({ id, ...input, source: "manual" })));
   notifyCardsChanged();
 }
 
@@ -236,12 +236,58 @@ export async function recordErrorCard(entry: NotebookLike): Promise<void> {
     await db.put(
       "cards",
       {
-        ...createCard({id: input.id, de: input.de, ar: input.ar, level: input.level, source: "error"}),
+        ...toEbbinghausCard(createCard({id: input.id, de: input.de, ar: input.ar, level: input.level, source: "error"})),
         due: now + DAY_MS,
       },
     );
   }
   notifyCardsChanged();
+}
+
+/**
+ * استيراد مفردات (من ملف JSON أو من البنك الأساسي). المعرّف ثابت من الكلمة
+ * والمستوى، فالبطاقة الموجودة لا تُكرَّر ولا تُمسّ (يحفظ تقدم المراجعة).
+ */
+export async function importVocabItems(
+  items: VocabItem[],
+  prefix: "vocab" | "core",
+): Promise<{added: number; existing: number}> {
+  const db = await getDb();
+  const knownIds = new Set((await db.getAll("cards")).map((c) => c.id));
+  const tx = db.transaction("cards", "readwrite");
+  let added = 0;
+  let existing = 0;
+  for (const item of items) {
+    const id = importedCardId(prefix, item);
+    if (knownIds.has(id)) {
+      existing++;
+      continue;
+    }
+    knownIds.add(id);
+    tx.store.put(
+      toEbbinghausCard(
+        createCard({
+          id,
+          de: item.de,
+          ar: item.ar,
+          example: item.example,
+          exampleAr: item.exampleAr,
+          level: item.level,
+          source: "manual",
+        }),
+      ),
+    );
+    added++;
+  }
+  await tx.done;
+  if (added > 0) notifyCardsChanged();
+  return {added, existing};
+}
+
+/** ملف تصدير المفردات اليدوية (JSON) */
+export async function exportCustomVocab(now: Date = new Date()): Promise<VocabFile> {
+  const db = await getDb();
+  return buildVocabFile(await db.getAll("cards"), now);
 }
 
 /** حذف بطاقة */
