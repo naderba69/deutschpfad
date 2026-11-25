@@ -380,12 +380,12 @@ export function LearnerJourney() {
           </div>
           {/* النقاط */}
           <div className="flex items-center gap-3 rounded-2xl border bg-card p-4">
-            <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-500/10 text-blue-600">
+            <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-300">
               <Zap className="h-5 w-5" aria-hidden="true" />
             </span>
             <div className="min-w-0">
               <p className="text-[11px] font-bold text-muted-foreground">نقاطك XP</p>
-              <p className="font-de truncate text-sm font-extrabold text-blue-600">⚡ {xp.toLocaleString("ar-EG")}</p>
+              <p className="font-de truncate text-sm font-extrabold text-blue-600 dark:text-blue-300">⚡ {xp.toLocaleString("ar-EG")}</p>
               <p className="text-[11px] text-muted-foreground">مستوى {levelNum}</p>
             </div>
           </div>

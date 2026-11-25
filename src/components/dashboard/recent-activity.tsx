@@ -17,11 +17,11 @@ import {cn} from "@/lib/utils";
  */
 
 const ACTIVITY_META: Record<string, { label: string; icon: React.ElementType; cls: string }> = {
-  "exercise-result": { label: "تمرين", icon: FileQuestion, cls: "text-blue-600" },
+  "exercise-result": { label: "تمرين", icon: FileQuestion, cls: "text-blue-600 dark:text-blue-300" },
   "lesson-completed": { label: "درس", icon: CheckCircle2, cls: "text-success" },
   review: { label: "مراجعة", icon: Repeat, cls: "text-gold-strong" },
   "pronunciation-score": { label: "نطق", icon: Mic, cls: "text-red-500" },
-  "skill-result": { label: "قصة/استماع", icon: Headphones, cls: "text-indigo-500" },
+  "skill-result": { label: "قصة/استماع", icon: Headphones, cls: "text-indigo-500 dark:text-indigo-300" },
   "test-result": { label: "اختبار", icon: Trophy, cls: "text-primary" },
 };
 

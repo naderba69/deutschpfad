@@ -222,7 +222,7 @@ export function TheoryBlockView({ block, lessonId }: { block: TheoryBlock; lesso
                   icon: <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" />,
                   content: (
                     <div className="flex items-start gap-2 rounded-xl border border-indigo-300/50 bg-indigo-500/5 p-3 text-sm leading-relaxed">
-                      <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-indigo-500" aria-hidden="true" />
+                      <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-indigo-500 dark:text-indigo-300" aria-hidden="true" />
                       <div>
                         <p className="mb-1 font-bold">{block.relatedRuleComparison.title}</p>
                         <RichText text={block.relatedRuleComparison.content} className="space-y-2 leading-relaxed" />

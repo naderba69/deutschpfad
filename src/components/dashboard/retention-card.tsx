@@ -95,7 +95,7 @@ export function RetentionCard() {
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-base">
-          <CalendarClock className="h-5 w-5 text-indigo-500" aria-hidden="true" />
+          <CalendarClock className="h-5 w-5 text-indigo-500 dark:text-indigo-300" aria-hidden="true" />
           عودية الاستخدام
         </CardTitle>
         <CardDescription>

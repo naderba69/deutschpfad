@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import {CheckCircle2, ChevronLeft, Headphones, Mic, Play, Sparkles, User, XCircle} from "lucide-react";
+import {CheckCircle2, ChevronLeft, ChevronRight, Headphones, Mic, Play, Sparkles, User, XCircle} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
@@ -144,7 +144,7 @@ export function DailyDialoguePlayer({ dialogue, onBack }: { dialogue: DailyDialo
               {correctCount === dialogue.questions.length ? "فهمت الحوار بالكامل — ممتاز! 🎉" : "راجع الجولات التي أخطأت فيها ثم أعد المحاولة."}
             </p>
             <Button onClick={onBack} className="mt-3 gap-1.5">
-              <ChevronLeft className="h-4 w-4" aria-hidden="true" />
+              <ChevronRight className="h-4 w-4" aria-hidden="true" />
               العودة للمكتبة
             </Button>
           </div>

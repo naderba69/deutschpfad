@@ -160,7 +160,7 @@ export function MiniTestSection({
           <button
             type="button"
             onClick={() => setShowErrorReview((s) => !s)}
-            className="flex w-full items-center gap-2 text-sm font-bold text-amber-700"
+            className="flex w-full items-center gap-2 text-sm font-bold text-amber-700 dark:text-amber-300"
             aria-expanded={showErrorReview}
           >
             <BookOpenCheck className="h-4 w-4" aria-hidden="true" />

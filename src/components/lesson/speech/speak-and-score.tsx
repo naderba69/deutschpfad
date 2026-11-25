@@ -186,7 +186,7 @@ export function SpeakAndScore({ target, compact }: { target: string; compact?: b
             "inline-flex shrink-0 items-center justify-center gap-1 rounded-full border text-[11px] font-bold transition-colors",
             compact ? "h-7 px-2.5" : "px-2.5 py-1",
             listening
-              ? "border-red-400 bg-red-500/15 text-red-600"
+              ? "border-red-400 bg-red-500/15 text-red-600 dark:text-red-300"
               : result
                 ? score >= 80
                   ? "border-success bg-success/15 text-success"
