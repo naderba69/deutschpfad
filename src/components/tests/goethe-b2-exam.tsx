@@ -38,8 +38,14 @@ const MODULE_META: { key: Phase; icon: React.ReactNode; title: string; minutes: 
   { key: "sprechen", icon: <Mic className="h-5 w-5" aria-hidden="true" />, title: "Sprechen — التحدث", minutes: GOETHE_B2_EXAM.sprechenMinutes },
 ];
 
-export function GoetheB2Exam() {
+export function GoetheB2Exam({ onFinish }: { onFinish?: () => void } = {}) {
   const [phase, setPhase] = React.useState<Phase>("intro");
+  // إبلاغ المُستدعي (مثلاً الامتحان الكامل) عند عرض النتيجة، بما فيها انتهاء الوقت
+  const onFinishRef = React.useRef(onFinish);
+  onFinishRef.current = onFinish;
+  React.useEffect(() => {
+    if (phase === "result") onFinishRef.current?.();
+  }, [phase]);
   const [lesenIdx, setLesenIdx] = React.useState(0);
   const [hoerenIdx, setHoerenIdx] = React.useState(0);
   const [lesenAnswers, setLesenAnswers] = React.useState<Record<string, unknown>>({});

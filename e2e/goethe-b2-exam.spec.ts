@@ -85,13 +85,23 @@ test("الشفهي الجديد: صفحة /sprechen تعرض Vortrag + Diskussio
   await expect(page.getByText("KONTRA — حجج معارضة")).toBeVisible();
 });
 
-test("vollpruefung: يعرض مدد التدريب والتنبيه على حدود العينة", async ({ page }) => {
+test("vollpruefung: يعرض المراحل الأربع بالترتيب مع القفل التدريجي", async ({ page }) => {
   await page.goto("/tests/vollpruefung", { waitUntil: "networkidle" });
   await page.waitForTimeout(600);
-  await expect(page.getByText("65 دقيقة")).toBeVisible();
-  await expect(page.getByText("40 دقيقة")).toBeVisible();
-  await expect(page.getByText("75 دقيقة")).toBeVisible();
-  await expect(page.getByText(/عينة تدريب داخلية/).first()).toBeVisible();
+  await expect(page.getByText(/المرحلة 1:/).first()).toBeVisible();
+  await expect(page.getByText(/المرحلة 4:/).first()).toBeVisible();
+  // في حالة جديدة: A1 متاحة، والثلاث الباقية مقفلة
+  await expect(page.getByText("أكمل المرحلة السابقة أولاً")).toHaveCount(3);
+  await expect(page.getByText(/65\/40\/75\/15 دقيقة/).first()).toBeVisible();
+  await expect(page.getByText(/تدريب داخلي وليس امتحان/).first()).toBeVisible();
+});
+
+test("vollpruefung: مرحلة مقفلة تمنع البدء قبل إكمال السابقة", async ({ page }) => {
+  await page.goto("/tests/vollpruefung", { waitUntil: "networkidle" });
+  await page.evaluate(() => window.localStorage.removeItem("deutschpfad.vollpruefung.v1"));
+  await page.goto("/tests/vollpruefung/B1", { waitUntil: "networkidle" });
+  await expect(page.getByText("هذه المرحلة مقفلة")).toBeVisible();
+  await expect(page.getByRole("link", { name: "الذهاب إلى A1" })).toBeVisible();
 });
 
 test("محرك B2: مراجعة الأدلة تظهر في النتيجة (جوابك · الصحيح · الشاهد)", async ({ page }) => {

@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import {LazyVollPruefung} from "@/components/tests/lazy/lazy-vollpruefung";
 
 export const metadata: Metadata = {
-  title: "تدريب B2 وبنية امتحان Goethe",
+  title: "الامتحان الكامل: A1 ثم A2 ثم B1 ثم B2",
   description:
-    "نظرة عامة على أقسام Goethe B2 وعينة تدريب داخلية قصيرة. ليست هذه الصفحة محاكاة كاملة أو تقييماً للجاهزية؛ تحقق من تفاصيل الامتحان لدى الجهة المنظمة.",
+    "امتحان تدريبي كامل بالترتيب: A1 ثم A2 ثم B1 ثم B2، بالأقسام نفسها في كل مستوى. تدريب داخلي وليس امتحاناً رسمياً ولا يعطي نتيجة Goethe.",
 };
 
 export default function VollPruefungPage() {
@@ -13,10 +13,10 @@ export default function VollPruefungPage() {
     <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6">
       <div className="mb-8">
         <h1 className="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-          تدريب B2 وبنية امتحان Goethe
+          الامتحان الكامل بالترتيب
         </h1>
         <p className="mt-2 max-w-2xl text-balance text-muted-foreground">
-          تعرّف إلى نظرة عامة على أقسام الامتحان، ثم جرّب اختبار مستوى كتابياً سريعاً. العينة لا تحاكي Goethe B2 كاملاً ولا تثبت الجاهزية أو تمنح نتيجة رسمية؛ أما /tests/b2 فيقدم تدريباً مستوحى من بعض أنماطه وليس محاكاة كاملة.
+          أكمل المستويات A1 ثم A2 ثم B1 ثم B2 بالترتيب. كل مرحلة تعرض أقسام الامتحان نفسها في مستواها.
         </p>
       </div>
       <LazyVollPruefung />

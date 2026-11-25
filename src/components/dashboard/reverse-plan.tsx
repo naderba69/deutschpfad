@@ -127,8 +127,8 @@ export function ReversePlanCard() {
               <p className="text-muted-foreground">
                 <span className="font-bold">إيقاعك الأسبوعي:</span> {plan.lessonsPerWeek} دروس +
                 اختبار تقدم داخلي عند إكمال المستوى + {plan.weeklyTest} اختباراً تدريبياً أسبوعياً +
-                تدريب شفهي B2 مرة أسبوعياً. قبل الموعد بأسبوعين: استخدم العينة التدريبية الداخلية في
-                <span className="font-bold"> /tests/vollpruefung</span>، ولا تعتبرها محاكاة كاملة أو تقديراً للجاهزية.
+                تدريب شفهي B2 مرة أسبوعياً. قبل الموعد بأسبوعين: استخدم الامتحان التدريبي الكامل بالترتيب في
+                <span className="font-bold"> /tests/vollpruefung</span>، ولا تعتبره امتحاناً رسمياً أو تقديراً للجاهزية.
               </p>
             </div>
 
