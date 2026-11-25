@@ -31,6 +31,10 @@ export const RAW_TEST_BANK: TestQuestion[] = [
   { id: "a1-g8", skill: "grammatik", level: "A1", kind: "mcq", questionDe: "Es ist ___ acht. (7:30)", options: ["halb", "viertel", "um", "am"], correctIndex: 0, explanation: "halb acht = 7:30." },
   { id: "a1-g9", skill: "grammatik", level: "A1", kind: "mcq", questionDe: "Ich habe ___ Bruder. (نفي — ليس لدي أخ)", options: ["keinen", "kein", "keine", "nicht"], correctIndex: 0, explanation: "النفي مع النصب المذكر: keinen." },
   { id: "a1-g10", skill: "grammatik", level: "A1", kind: "mcq", questionDe: "___ Sie bitte! (تعالوا — أمر مهذب)", options: ["Kommen", "Komm", "Kommt", "Komme"], correctIndex: 0, explanation: "الأمر المهذب: Kommen Sie!" },
+  { id: "a1-g11", skill: "grammatik", level: "A1", kind: "mcq", questionDe: "Der Hund ist ___ Tisch.", questionAr: "الكلب تحت الطاولة.", options: ["unter dem", "unter den", "unter der", "unter das"], correctIndex: 0, explanation: "unter + Dativ عند السكون: unter dem Tisch." },
+  { id: "a1-g12", skill: "grammatik", level: "A1", kind: "mcq", questionDe: "Ich gebe ___ Frau die Blumen.", questionAr: "أعطي المرأة الزهور.", options: ["der", "die", "den", "dem"], correctIndex: 0, explanation: "geben + Dativ المؤنث: der Frau." },
+  { id: "a1-g13", skill: "grammatik", level: "A1", kind: "mcq", questionDe: "Das ist ___ Haus.", questionAr: "هذا بيتي.", options: ["mein", "meine", "meinen", "meinem"], correctIndex: 0, explanation: "Nominativ المحايد بعد ist: mein Haus." },
+  { id: "a1-g14", skill: "grammatik", level: "A1", kind: "mcq", questionDe: "Ich sehe ___ Kind.", questionAr: "أرى الطفل.", options: ["das", "dem", "der", "die"], correctIndex: 0, explanation: "Akkusativ المحايد: das Kind." },
 
   /* ═══════════ A1 — مفردات ═══════════ */
   { id: "a1-v1", skill: "wortschatz", level: "A1", kind: "mcq", questionDe: "die Mutter", options: ["الأم", "الأب", "الأخت", "الجدة"], correctIndex: 0, explanation: "die Mutter = الأم." },
@@ -102,6 +106,10 @@ export const RAW_TEST_BANK: TestQuestion[] = [
   { id: "a2-g8", skill: "grammatik", level: "A2", kind: "mcq", questionDe: "Ich ___ mich. (أفرح)", options: ["freue", "freust", "freut", "freuen"], correctIndex: 0, explanation: "sich freuen: ich freue mich." },
   { id: "a2-g9", skill: "grammatik", level: "A2", kind: "mcq", questionDe: "Es regnet, ___ bleibe ich zu Hause.", options: ["deshalb", "aber", "und", "denn"], correctIndex: 0, explanation: "لذلك → deshalb (مقلوبة)." },
   { id: "a2-g10", skill: "grammatik", level: "A2", kind: "mcq", questionDe: "Ich ___ gestern im Büro. (كنت)", options: ["war", "hatte", "bin", "habe"], correctIndex: 0, explanation: "Präteritum sein: war." },
+  { id: "a2-g11", skill: "grammatik", level: "A2", kind: "mcq", questionDe: "Er hilft ___ Freund.", questionAr: "هو يساعد صديقه.", options: ["seinem", "seinen", "seiner", "sein"], correctIndex: 0, explanation: "helfen يأخذ Dativ: seinem Freund." },
+  { id: "a2-g12", skill: "grammatik", level: "A2", kind: "mcq", questionDe: "Wir wohnen in ___ schönen Stadt.", questionAr: "نسكن في المدينة الجميلة.", options: ["der", "die", "den", "dem"], correctIndex: 0, explanation: "in + Dativ للمكان: in der schönen Stadt." },
+  { id: "a2-g13", skill: "grammatik", level: "A2", kind: "mcq", questionDe: "Das ist das Auto ___ Vaters.", questionAr: "هذه سيارة أبي.", options: ["meines", "meiner", "meinem", "meinen"], correctIndex: 0, explanation: "Genitiv المذكر: meines Vaters." },
+  { id: "a2-g14", skill: "grammatik", level: "A2", kind: "mcq", questionDe: "Ich kaufe ___ neuen Schuhe.", questionAr: "أشتري الأحذية الجديدة.", options: ["die", "den", "der", "dem"], correctIndex: 0, explanation: "Akkusativ الجمع: die neuen Schuhe." },
 
   /* ═══════════ A2 — مفردات ═══════════ */
   { id: "a2-v1", skill: "wortschatz", level: "A2", kind: "mcq", questionDe: "die Prüfung", options: ["الامتحان", "الدورة", "الدرس", "الواجب"], correctIndex: 0, explanation: "die Prüfung = الامتحان." },
@@ -173,6 +181,10 @@ export const RAW_TEST_BANK: TestQuestion[] = [
   { id: "b1-g8", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "Ich habe ___ Zeit ___ Geld.", options: ["weder ... noch", "nicht nur ... sondern auch", "entweder ... oder", "sowohl ... als auch"], correctIndex: 0, explanation: "لا ولا: weder... noch." },
   { id: "b1-g9", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "Ich sehe den ___. (طالب — نصب)", options: ["Studenten", "Student", "Studentes", "Studentin"], correctIndex: 0, explanation: "n-Deklination: den Studenten." },
   { id: "b1-g10", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "Bevor ich studierte, ___ ich gearbeitet.", options: ["hatte", "habe", "hat", "haben"], correctIndex: 0, explanation: "Plusquamperfekt: hatte gearbeitet." },
+  { id: "b1-g11", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "Mit ___ neuen Auto fahre ich zur Arbeit.", questionAr: "أذهب إلى العمل بالسيارة الجديدة.", options: ["dem", "den", "der", "des"], correctIndex: 0, explanation: "mit + Dativ المحايد: mit dem neuen Auto." },
+  { id: "b1-g12", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "Der Mann, ___ ich gestern gesehen habe, ist mein Lehrer.", questionAr: "الرجل الذي رأيته أمس هو معلمي.", options: ["den", "der", "dem", "dessen"], correctIndex: 0, explanation: "الاسم الموصول في Akkusativ المذكر: den." },
+  { id: "b1-g13", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "Ich wünsche dir ___ Erfolg.", questionAr: "أتمنى لك نجاحاً كبيراً.", options: ["viel", "viele", "vielen", "vielem"], correctIndex: 0, explanation: "wünschen بلا أداة مع Akkusativ: viel Erfolg." },
+  { id: "b1-g14", skill: "grammatik", level: "B1", kind: "mcq", questionDe: "Ich habe ___ Freundin getroffen.", questionAr: "قابلت صديقتي.", options: ["meine", "meinen", "meiner", "meinem"], correctIndex: 0, explanation: "Akkusativ المؤنث: meine Freundin." },
 
   /* ═══════════ B1 — مفردات ═══════════ */
   { id: "b1-v1", skill: "wortschatz", level: "B1", kind: "mcq", questionDe: "der Lebenslauf", options: ["السيرة الذاتية", "خطاب التقديم", "العقد", "الشهادة"], correctIndex: 0, explanation: "der Lebenslauf = السيرة الذاتية." },
@@ -243,6 +255,10 @@ export const RAW_TEST_BANK: TestQuestion[] = [
   { id: "b2-g8", skill: "grammatik", level: "B2", kind: "mcq", questionDe: "Bis 2030 werde ich Deutsch gelernt ___.", options: ["haben", "sein", "gehabt", "worden"], correctIndex: 0, explanation: "Futur II: haben." },
   { id: "b2-g9", skill: "grammatik", level: "B2", kind: "mcq", questionDe: "Ich interessiere mich ___ Musik.", options: ["für", "auf", "von", "um"], correctIndex: 0, explanation: "sich interessieren für." },
   { id: "b2-g10", skill: "grammatik", level: "B2", kind: "mcq", questionDe: "Das Problem lässt ___ lösen.", options: ["sich", "mich", "dich", "uns"], correctIndex: 0, explanation: "sich lassen." },
+  { id: "b2-g11", skill: "grammatik", level: "B2", kind: "mcq", questionDe: "Trotz ___ Schwierigkeiten schaffen wir es.", questionAr: "رغم الصعوبات الكبيرة سننجح.", options: ["großer", "große", "großen", "großes"], correctIndex: 0, explanation: "Trotz + Genitiv بلا أداة: großer Schwierigkeiten." },
+  { id: "b2-g12", skill: "grammatik", level: "B2", kind: "mcq", questionDe: "Das ist die Frau, ___ Sohn Arzt ist.", questionAr: "هذه المرأة التي ابنها طبيب.", options: ["deren", "dessen", "dem", "der"], correctIndex: 0, explanation: "الاسم الموصول في Genitiv يتبع المؤنث: deren Sohn." },
+  { id: "b2-g13", skill: "grammatik", level: "B2", kind: "mcq", questionDe: "Sie erzählte ___ Geschichte, die alle begeisterte.", questionAr: "حكت قصة أبهرت الجميع.", options: ["eine", "einen", "einer", "einem"], correctIndex: 0, explanation: "erzählen + Akkusativ: eine Geschichte." },
+  { id: "b2-g14", skill: "grammatik", level: "B2", kind: "mcq", questionDe: "Er wohnt seit ___ Jahr in Berlin.", questionAr: "يسكن في برلين منذ سنة.", options: ["einem", "einen", "einer", "ein"], correctIndex: 0, explanation: "seit + Dativ: seit einem Jahr." },
 
   /* ═══════════ B2 — مفردات ═══════════ */
   { id: "b2-v1", skill: "wortschatz", level: "B2", kind: "mcq", questionDe: "die Entdeckung", options: ["الاكتشاف", "التجربة", "الاختراع", "البحث"], correctIndex: 0, explanation: "die Entdeckung (مؤنث، من entdecken) = الاكتشاف." },
