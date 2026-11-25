@@ -433,6 +433,20 @@ export const listening: NonNullable<Lesson["listening"]> = {
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "p1",
     title: "نطق الألوان والملابس: ei، au، ü، sch وطول الصوت",
+    minimalPairs: [
+      {
+        id: "mp-a1-08-laenge",
+        title: "طول الحركة: قصير مقابل طويل",
+        titleDe: "Vokallänge: lang und kurz",
+        explanationAr: "في الألمانية طول الحركة يغيّر المعنى. الحركة الطويلة تُمدّ قليلاً، والقصيرة تُنطق بسرعة وتتبعها غالباً أكثر من حرف ساكن.",
+        pairs: [
+        { a: "Miete", aAr: "إيجار", b: "Mitte", bAr: "منتصف", note: "Miete: i طويلة. Mitte: i قصيرة." },
+        { a: "Staat", aAr: "دولة", b: "Stadt", bAr: "مدينة", note: "Staat: a طويلة. Stadt: a قصيرة." },
+        { a: "Ofen", aAr: "فرن", b: "offen", bAr: "مفتوح", note: "Ofen: o طويلة. offen: o قصيرة." },
+        { a: "Bett", aAr: "سرير", b: "Beet", bAr: "حوض زهور", note: "Bett: e قصيرة. Beet: e طويلة." },
+        ],
+      },
+    ],
     items: [
       { de: "weiß", ar: "أبيض", note: "تقريباً /vaɪ̯s/: ei مثل /aɪ̯/، وß صوت /s/ واحد، لا سّ مشددة؛ ڤايس تقريب كتابي." },
       { de: "blau", ar: "أزرق", note: "au يقترب من /aʊ̯/؛ «بلاو» تقريب كتابي للصوت." },

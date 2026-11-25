@@ -443,6 +443,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "p1",
     title: "أصوات اليوم: st، ch، وü",
+    minimalPairs: [
+      {
+        id: "mp-a1-05-ue",
+        title: "الحرف ü: طويل وقصير",
+        titleDe: "ü: lang und kurz",
+        explanationAr: "ü تُنطق بشفتين مستديرتين ولسان للأمام، فلا تشبه u ولا o. انتبه إلى الفرق بين Hüte الطويلة وHütte القصيرة.",
+        pairs: [
+        { a: "Bühne", aAr: "مسرح", b: "Bohne", bAr: "فاصوليا", note: "ü مقابل o: الشفتان مستديرتان في الاثنين، لكن ü لسانها للأمام." },
+        { a: "Hüte", aAr: "قبعات (جمع Hut)", b: "Hütte", bAr: "كوخ", note: "Hüte: ü طويلة. Hütte: ü قصيرة." },
+        { a: "Schuh", aAr: "حذاء", b: "Schuss", bAr: "طلقة / دفعة", note: "Schuh: u طويلة. Schuss: u قصيرة." },
+        ],
+      },
+    ],
     items: [
       {
         de: "aufstehen",

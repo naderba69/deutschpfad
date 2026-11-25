@@ -306,6 +306,18 @@ export const listening: NonNullable<Lesson["listening"]> = {
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "p1",
     title: "أصوات التقويم: ch وng وü والنهاية المهموسة",
+    minimalPairs: [
+      {
+        id: "mp-a1-09-ng",
+        title: "ng في نهاية الكلمة",
+        titleDe: "ng vs. n",
+        explanationAr: "ng في نهاية الكلمة صوت واحد يخرج من الأنف (ŋ)، ولا يُنطق معه g. قارن بين n وng في نهاية الكلمة.",
+        pairs: [
+        { a: "Sinn", aAr: "معنى", b: "Sing", bAr: "غنِّ (أمر)", note: "Sinn: n في النهاية. Sing: ng في النهاية." },
+        { a: "Hahn", aAr: "ديك", b: "Hang", bAr: "منحدر", note: "Hahn: n في النهاية. Hang: ng في النهاية." },
+        ],
+      },
+    ],
     items: [
       { de: "Montag", ar: "الاثنين", note: "IPA: [ˈmoːntaːk]. حرف g في هذا الموضع يُنطق [k]، وo طويلة." },
       { de: "Mittwoch", ar: "الأربعاء", note: "IPA: [ˈmɪtˌvɔx]. w يُنطق [v]، وch بعد o يُنطق [x]؛ الخاء العربية تقريب تقريبي." },

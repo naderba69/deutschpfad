@@ -228,10 +228,10 @@ describe("بنك أسئلة الاختبارات — المحرّكات تخلط
 describe("بنك تحديد المستوى — كل شرحٍ بدليل ألماني (الدفعة 122)", () => {
   const GERMAN = /[A-Za-zÄÖÜäöüß]{3,}/;
 
-  it("15 سؤالاً (5 لكل مستوى) ولكلٍّ شرحٌ غير فارغ", () => {
-    expect(PLACEMENT_BANK).toHaveLength(15);
+  it("27 سؤالاً (9 لكل مستوى) ولكلٍّ شرحٌ غير فارغ", () => {
+    expect(PLACEMENT_BANK).toHaveLength(27);
     for (const level of ["pl-a1", "pl-a2", "pl-b1"]) {
-      expect(PLACEMENT_BANK.filter((q) => q.id.startsWith(level)), level).toHaveLength(5);
+      expect(PLACEMENT_BANK.filter((q) => q.id.startsWith(level)), level).toHaveLength(9);
     }
     const empty = PLACEMENT_BANK.filter((q) => !(q.explanation ?? "").trim()).map((q) => q.id);
     expect(empty, "شروح فارغة").toEqual([]);
