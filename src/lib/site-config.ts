@@ -105,7 +105,7 @@ export const siteConfig = {
         { title: "تحديد نقطة البداية", href: "/placement" },
         { title: "اختبار مستوى تدريبي", href: "/tests/mock" },
         { title: "اختبار التقدم الداخلي", href: "/tests/seal/b2" },
-        { title: "نظرة عامة وعينة B2", href: "/tests/vollpruefung" },
+        { title: "الامتحان الكامل بالترتيب", href: "/tests/vollpruefung" },
       ],
     },
     {
@@ -156,7 +156,7 @@ export const siteConfig = {
       { title: "المراجعة دون إنترنت", href: "/offline-review" },
       { title: "تقرير التقدم (PDF)", href: "/dashboard/report" },
       { title: "مكتبة الاستماع", href: "/hoeren" },
-      { title: "نظرة عامة وعينة تدريب B2", href: "/tests/vollpruefung" },
+      { title: "الامتحان الكامل بالترتيب", href: "/tests/vollpruefung" },
       { title: "المرجع النحوي", href: "/grammatik" },
       { title: "القاموس الشامل", href: "/glossar" },
       { title: "القراءة المتدرجة", href: "/reading" },

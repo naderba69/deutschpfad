@@ -25,7 +25,7 @@ export type ExamLevel = "A1" | "A2" | "B1";
 type Phase = "intro" | "hoeren" | "lesen" | "schreiben" | "sprechen" | "result";
 
 
-export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
+export function GoetheA1Exam({ level = "A1", onFinish }: { level?: ExamLevel; onFinish?: () => void } = {}) {
   const models = LEVEL_MODELS[level];
   const [modelId, setModelId] = React.useState(models[0].id);
   const model = examModel(level, modelId);
@@ -35,6 +35,13 @@ export function GoetheA1Exam({ level = "A1" }: { level?: ExamLevel } = {}) {
   const [lAns, setLAns] = React.useState<Record<string, boolean | number>>({});
   const [writing, setWriting] = React.useState<string[]>(["", ""]);
   const [heard, setHeard] = React.useState<Record<number, boolean>>({});
+
+  // إبلاغ المُستدعي (مثلاً الامتحان الكامل) عند عرض النتيجة
+  const onFinishRef = React.useRef(onFinish);
+  onFinishRef.current = onFinish;
+  React.useEffect(() => {
+    if (phase === "result") onFinishRef.current?.();
+  }, [phase]);
 
   // التصحيح من الوحدة الموحّدة (src/lib/tests/exam-scoring.ts) — لا نسخة محلية
   const hRes = gradeTeile(data.hoeren, hAns);
