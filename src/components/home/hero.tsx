@@ -71,7 +71,7 @@ export function Hero() {
         </div>
 
         {/* البطاقة المرئية */}
-        <div className="relative mx-auto w-full max-w-md animate-fade-up animation-delay-2000">
+        <div className="relative mx-auto w-full max-w-md animate-fade-up animation-delay-2000 pb-16">
           <div className="glass rounded-3xl border p-6 shadow-soft">
             <div className="mb-4 flex items-center justify-between">
               <span className="text-sm font-bold">درس اليوم <span className="ms-1 text-[11px] font-normal text-muted-foreground">(مثال توضيحي)</span></span>
@@ -113,7 +113,7 @@ export function Hero() {
             </p>
             <p className="font-de mt-0.5 text-xl font-bold">7 أيام 🔥</p>
           </div>
-          <div className="absolute -start-4 -bottom-6 rounded-2xl border bg-background/95 px-4 py-3 shadow-soft animate-float animation-delay-2000">
+          <div className="absolute -start-4 -bottom-2 rounded-2xl border bg-background/95 px-4 py-3 shadow-soft animate-float animation-delay-2000">
             <p className="inline-flex items-center gap-2 text-sm font-semibold">
               <Sparkles className="h-4 w-4 text-amber-500" aria-hidden="true" />
               المعلّم الذكي
