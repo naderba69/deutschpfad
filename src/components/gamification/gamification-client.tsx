@@ -136,7 +136,7 @@ export function GamificationClient() {
       </div>
 
       <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
-        <Sprout className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
+        <Sprout className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-300" aria-hidden="true" />
         أهداف SMART في لوحة التحكم: إكمال هدف يفتح شارة «صانع الأهداف» تلقائياً!
       </p>
     </div>

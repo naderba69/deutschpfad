@@ -25,7 +25,7 @@ export function LanguageTree({ completedUnits }: { completedUnits: string[] }) {
     <Card>
       <CardHeader className="border-b bg-muted/20">
         <CardTitle className="flex items-center gap-2 text-lg">
-          <Sprout className="h-5 w-5 text-emerald-600" aria-hidden="true" />
+          <Sprout className="h-5 w-5 text-emerald-600 dark:text-emerald-300" aria-hidden="true" />
           شجرتك اللغوية
           <span className="font-de ms-auto rounded-full bg-emerald-500/10 px-3 py-0.5 text-xs font-bold text-emerald-800 dark:text-emerald-200">
             {growthPct}% نموّاً

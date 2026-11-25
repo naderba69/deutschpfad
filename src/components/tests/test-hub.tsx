@@ -48,7 +48,7 @@ export function TestHub() {
         <Card className="transition-all hover:-translate-y-1 hover:shadow-soft">
           <CardHeader className="border-b bg-muted/20">
             <CardTitle className="flex items-center gap-2 text-lg">
-              <BookOpenCheck className="h-5 w-5 text-sky-700" aria-hidden="true" />
+              <BookOpenCheck className="h-5 w-5 text-sky-700 dark:text-sky-300" aria-hidden="true" />
               مكتبة القراءة B2
             </CardTitle>
           </CardHeader>
@@ -70,7 +70,7 @@ export function TestHub() {
         <Card className="transition-all hover:-translate-y-1 hover:shadow-soft">
           <CardHeader className="border-b bg-muted/20">
             <CardTitle className="flex items-center gap-2 text-lg">
-              <BrainCircuit className="h-5 w-5 text-violet-500" aria-hidden="true" />
+              <BrainCircuit className="h-5 w-5 text-violet-500 dark:text-violet-300" aria-hidden="true" />
               تدريب القواعد والمفردات B2
             </CardTitle>
           </CardHeader>

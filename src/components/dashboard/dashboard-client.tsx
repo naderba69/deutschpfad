@@ -192,7 +192,7 @@ export function DashboardClient() {
           <StatCard icon={<Target className="h-5 w-5 text-primary" aria-hidden="true" />} label="التقدم في المنهج" value={`${progressPct}%`} sub={`${completedUnits.length} وحدة مكتملة`} />
           <StatCard icon={<TrendingUp className="h-5 w-5 text-success" aria-hidden="true" />} label="دقة التمارين" value={statsAvailable ? `${stats.accuracy}%` : "—"} sub={statsAvailable ? `${stats.answered} تمرين محلول` : statsReadError ? "تعذر قراءة سجل النشاط" : "جارٍ التحميل…"} />
           <StatCard icon={<BrainCircuit className="h-5 w-5 text-gold-strong" aria-hidden="true" />} label="نقاط الخبرة (XP)" value={statsAvailable ? `${stats.xp}` : "—"} sub={statsAvailable ? `${stats.lessons} دروس · ${stats.reviews} مراجعات` : statsReadError ? "تعذر قراءة سجل النشاط" : "جارٍ التحميل…"} />
-          <StatCard icon={<CalendarClock className="h-5 w-5 text-indigo-500" aria-hidden="true" />} label="بطاقات مستحقة" value={`${cards.due}`} sub={`من أصل ${cards.total} بطاقة`} link="/flashcards" />
+          <StatCard icon={<CalendarClock className="h-5 w-5 text-indigo-500 dark:text-indigo-300" aria-hidden="true" />} label="بطاقات مستحقة" value={`${cards.due}`} sub={`من أصل ${cards.total} بطاقة`} link="/flashcards" />
         </div>
       </DashSection>
 

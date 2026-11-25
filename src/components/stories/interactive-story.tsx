@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import {ArrowLeft, CheckCircle2, ChevronLeft, Headphones, Star, XCircle} from "lucide-react";
+import {ArrowLeft, CheckCircle2, ChevronRight, Headphones, Star, XCircle} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
 import {Progress} from "@/components/ui/progress";
@@ -104,7 +104,7 @@ export function InteractiveStoryPlayer({ story, onExit }: { story: InteractiveSt
           </p>
         )}
         <Button onClick={onExit} className="gap-2">
-          <ChevronLeft className="h-4 w-4" aria-hidden="true" />
+          <ChevronRight className="h-4 w-4" aria-hidden="true" />
           العودة لمكتبة القصص
         </Button>
       </div>

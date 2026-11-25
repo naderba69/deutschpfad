@@ -684,7 +684,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
               <Button asChild variant="gold">
                 <Link href="/learning-path">
                   العودة لمسار التعلم
-                  <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
             )}

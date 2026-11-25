@@ -29,7 +29,7 @@ export function InterleavingReview({
     <Card className="overflow-hidden border-indigo-300/40">
       <CardHeader className="border-b bg-indigo-500/5 py-3.5">
         <CardTitle className="flex items-center gap-2 text-base">
-          <Repeat className="h-4 w-4 text-indigo-500" aria-hidden="true" />
+          <Repeat className="h-4 w-4 text-indigo-500 dark:text-indigo-300" aria-hidden="true" />
           مراجعة تراكمية من {levelLabel} — قبل أن نبدأ
           <span className="ms-auto rounded-full bg-indigo-500/10 px-2.5 py-0.5 text-xs font-bold text-indigo-600 dark:text-indigo-300">
             Interleaving
