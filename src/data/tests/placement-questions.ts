@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════
- *  بنك أسئلة تحديد المستوى السريع (15 سؤالاً: 5 A1 + 5 A2 + 5 B1)
+ *  بنك أسئلة تحديد المستوى السريع (27 سؤالاً: 9 A1 + 9 A2 + 9 B1)
  *  — أُخرج من `placement-test.tsx` (الدفعة 122) ليُصرَّح ويُحرس:
  *  كل `explanation` شاهدٌ بألمانية `[A-Za-zÄÖÜäöüß]{3,}`، وشاشة
  *  النتيجة تعرض المراجعة (جوابك · الصحيح · الشاهد).
@@ -8,7 +8,7 @@
  */
 import type { McqExercise } from "@/types/lesson";
 
-/** بنك أسئلة التحديد — A1 ثم A2 ثم B1 (المبسط) — 5 أسئلة لكل مستوى */
+/** بنك أسئلة التحديد — A1 ثم A2 ثم B1 (المبسط) — 9 أسئلة لكل مستوى */
 export const PLACEMENT_BANK: McqExercise[] = [
   /* ── A1 (مستوى 1-5) ── */
   {
@@ -49,6 +49,38 @@ export const PLACEMENT_BANK: McqExercise[] = [
     questionDe: "___ du Hunger? — Ja, ich habe Hunger.",
     options: ["Hast", "Habe", "Hat", "Habt"],
     correctIndex: 0, explanation: "السؤال عن du: Hast du Hunger? (A1)",
+    errorType: "conjugation",
+  },
+  {
+    id: "pl-a1-6", type: "multiple-choice",
+    instructionAr: "سؤال تحديد (A1):",
+    questionDe: "Wir ___ aus Tunesien.",
+    options: ["kommen", "kommt", "komme", "kommst"],
+    correctIndex: 0, explanation: "مع wir: kommen. (A1)",
+    errorType: "conjugation",
+  },
+  {
+    id: "pl-a1-7", type: "multiple-choice",
+    instructionAr: "سؤال تحديد (A1):",
+    questionDe: "Das ist ___ Buch.",
+    options: ["mein", "meine", "meinen", "meiner"],
+    correctIndex: 0, explanation: "Buch محايد، فنقول: mein Buch. (A1)",
+    errorType: "gender",
+  },
+  {
+    id: "pl-a1-8", type: "multiple-choice",
+    instructionAr: "سؤال تحديد (A1):",
+    questionDe: "Ich brauche ___ Stift.",
+    options: ["einen", "ein", "eine", "der"],
+    correctIndex: 0, explanation: "brauchen يأخذ Akkusativ: einen Stift. (A1)",
+    errorType: "case",
+  },
+  {
+    id: "pl-a1-9", type: "multiple-choice",
+    instructionAr: "سؤال تحديد (A1):",
+    questionDe: "Wo ___ du?",
+    options: ["wohnst", "wohnt", "wohne", "wohnen"],
+    correctIndex: 0, explanation: "مع du: wohnst. (A1)",
     errorType: "conjugation",
   },
   /* ── A2 (مستوى 6-10) ── */
@@ -92,6 +124,38 @@ export const PLACEMENT_BANK: McqExercise[] = [
     correctIndex: 0, explanation: "المقارنة: schneller als. (A2)",
     errorType: "grammar",
   },
+  {
+    id: "pl-a2-6", type: "multiple-choice",
+    instructionAr: "سؤال تحديد (A2):",
+    questionDe: "Ich ___ gestern ins Kino gegangen.",
+    options: ["bin", "habe", "war", "hatte"],
+    correctIndex: 0, explanation: "gehen يكوّن الماضي مع sein: bin gegangen. (A2)",
+    errorType: "grammar",
+  },
+  {
+    id: "pl-a2-7", type: "multiple-choice",
+    instructionAr: "سؤال تحديد (A2):",
+    questionDe: "Ich wohne ___ Berlin.",
+    options: ["in", "auf", "an", "zu"],
+    correctIndex: 0, explanation: "المدن مع wohnen: in Berlin. (A2)",
+    errorType: "preposition",
+  },
+  {
+    id: "pl-a2-8", type: "multiple-choice",
+    instructionAr: "سؤال تحديد (A2):",
+    questionDe: "Der Mann, ___ dort steht, ist mein Onkel.",
+    options: ["der", "den", "dem", "dessen"],
+    correctIndex: 0, explanation: "اسم الموصول للمذكر في الرفع: der. (A2)",
+    errorType: "case",
+  },
+  {
+    id: "pl-a2-9", type: "multiple-choice",
+    instructionAr: "سؤال تحديد (A2):",
+    questionDe: "Ich habe ___ Hunger.",
+    options: ["keinen", "keine", "kein", "keines"],
+    correctIndex: 0, explanation: "Hunger مذكر بعد haben: keinen Hunger. (A2)",
+    errorType: "case",
+  },
   /* ── B1 (مستوى 11-15) ── */
   {
     id: "pl-b1-1", type: "multiple-choice",
@@ -132,5 +196,37 @@ export const PLACEMENT_BANK: McqExercise[] = [
     options: ["wurde", "wird", "worden", "geworden"],
     correctIndex: 0, explanation: "المبني للمجهول في الماضي: wurde gebaut. (B1)",
     errorType: "grammar",
+  },
+  {
+    id: "pl-b1-6", type: "multiple-choice",
+    instructionAr: "سؤال تحديد (B1):",
+    questionDe: "Ich weiß nicht, ___ er morgen kommt.",
+    options: ["ob", "dass", "wenn", "weil"],
+    correctIndex: 0, explanation: "سؤال غير مباشر بنعم أو لا يبدأ بـ ob: ob er morgen kommt. (B1)",
+    errorType: "grammar",
+  },
+  {
+    id: "pl-b1-7", type: "multiple-choice",
+    instructionAr: "سؤال تحديد (B1):",
+    questionDe: "___ es stark regnet, gehen wir trotzdem spazieren.",
+    options: ["Obwohl", "Weil", "Damit", "Ob"],
+    correctIndex: 0, explanation: "تناقض مع trotzdem: Obwohl. (B1)",
+    errorType: "grammar",
+  },
+  {
+    id: "pl-b1-8", type: "multiple-choice",
+    instructionAr: "سؤال تحديد (B1):",
+    questionDe: "Als ich ankam, ___ der Film schon begonnen.",
+    options: ["hatte", "war", "habe", "bin"],
+    correctIndex: 0, explanation: "Plusquamperfekt مع beginnen: hatte begonnen. (B1)",
+    errorType: "grammar",
+  },
+  {
+    id: "pl-b1-9", type: "multiple-choice",
+    instructionAr: "سؤال تحديد (B1):",
+    questionDe: "Der Mann, ___ Auto kaputt ist, wartet.",
+    options: ["dessen", "deren", "dem", "den"],
+    correctIndex: 0, explanation: "Genitiv مع Auto (محايد): dessen. (B1)",
+    errorType: "case",
   },
 ];

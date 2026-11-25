@@ -365,6 +365,19 @@ export const listening: NonNullable<Lesson["listening"]> = {
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "p1",
     title: "أصوات الأسرة: ch وsch وw",
+    minimalPairs: [
+      {
+        id: "mp-a1-02-ch",
+        title: "ch مقابل sch مقابل ach",
+        titleDe: "ch vs. sch vs. ach",
+        explanationAr: "ch في Kirche وich صوت خفيف (ç) بعد الحركة الأمامية، أما sch في Kirsche فهي الشين. وفي ach يكون الصوت خلفياً.",
+        pairs: [
+        { a: "Kirche", aAr: "كنيسة", b: "Kirsche", bAr: "كرزة", note: "Kirche: ch خفيفة (ç). Kirsche: sch = ش." },
+        { a: "ich", aAr: "أنا", b: "ach", bAr: "آه", note: "ich: ç أمامية خفيفة. ach: x خلفية (من الحلق)." },
+        { a: "Lache", aAr: "بركة / ضحكة", b: "Lasche", bAr: "لسانة (قطعة جلد)", note: "Lache: ch خفيفة. Lasche: sch = ش." },
+        ],
+      },
+    ],
     items: [
       {
         de: "ich",
