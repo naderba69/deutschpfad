@@ -64,6 +64,11 @@ export const STARK_VERBEN: StarkeVerb[] = [
   { infinitiv: "bringen", präsens3: "bringt", präteritum: "brachte", partizip2: "gebracht", ar: "يحضر/يجلب", hilfsverb: "haben", level: "A2" },
   { infinitiv: "wissen", präsens3: "weiß", präteritum: "wusste", partizip2: "gewusst", ar: "يعرف", hilfsverb: "haben", level: "A2" },
 
+  { infinitiv: "halten", präsens3: "hält", präteritum: "hielt", partizip2: "gehalten", ar: "يمسك / يتوقف", hilfsverb: "haben", level: "A2" },
+  { infinitiv: "lassen", präsens3: "lässt", präteritum: "ließ", partizip2: "gelassen", ar: "يترك / يدع", hilfsverb: "haben", level: "A2" },
+  { infinitiv: "waschen", präsens3: "wäscht", präteritum: "wusch", partizip2: "gewaschen", ar: "يغسل", hilfsverb: "haben", level: "A2" },
+  { infinitiv: "schließen", präsens3: "schließt", präteritum: "schloss", partizip2: "geschlossen", ar: "يغلق", hilfsverb: "haben", level: "A2" },
+  { infinitiv: "schneiden", präsens3: "schneidet", präteritum: "schnitt", partizip2: "geschnitten", ar: "يقطع", hilfsverb: "haben", level: "A2" },
   /* ── B1 ── */
   { infinitiv: "bleiben", präsens3: "bleibt", präteritum: "blieb", partizip2: "geblieben", ar: "يبقى", hilfsverb: "sein", level: "B1" },
   { infinitiv: "steigen", präsens3: "steigt", präteritum: "stieg", partizip2: "gestiegen", ar: "يصعد/يرتفع", hilfsverb: "sein", level: "B1" },
@@ -81,6 +86,16 @@ export const STARK_VERBEN: StarkeVerb[] = [
   { infinitiv: "versprechen", präsens3: "verspricht", präteritum: "versprach", partizip2: "versprochen", ar: "يعد", hilfsverb: "haben", level: "B1" },
   { infinitiv: "ziehen", präsens3: "zieht", präteritum: "zog", partizip2: "gezogen", ar: "ينتقل/يسحب", hilfsverb: "sein", level: "B1" },
 
+  { infinitiv: "stehlen", präsens3: "stiehlt", präteritum: "stahl", partizip2: "gestohlen", ar: "يسرق", hilfsverb: "haben", level: "B1" },
+  { infinitiv: "sterben", präsens3: "stirbt", präteritum: "starb", partizip2: "gestorben", ar: "يموت", hilfsverb: "sein", level: "B1" },
+  { infinitiv: "werfen", präsens3: "wirft", präteritum: "warf", partizip2: "geworfen", ar: "يرمي", hilfsverb: "haben", level: "B1" },
+  { infinitiv: "laden", präsens3: "lädt", präteritum: "lud", partizip2: "geladen", ar: "يحمّل / يدعو", hilfsverb: "haben", level: "B1" },
+  { infinitiv: "schlagen", präsens3: "schlägt", präteritum: "schlug", partizip2: "geschlagen", ar: "يضرب", hilfsverb: "haben", level: "B1" },
+  { infinitiv: "wachsen", präsens3: "wächst", präteritum: "wuchs", partizip2: "gewachsen", ar: "ينمو", hilfsverb: "sein", level: "B1" },
+  { infinitiv: "verschwinden", präsens3: "verschwindet", präteritum: "verschwand", partizip2: "verschwunden", ar: "يختفي", hilfsverb: "sein", level: "B1" },
+  { infinitiv: "entscheiden", präsens3: "entscheidet", präteritum: "entschied", partizip2: "entschieden", ar: "يقرر", hilfsverb: "haben", level: "B1" },
+  { infinitiv: "verbieten", präsens3: "verbietet", präteritum: "verbot", partizip2: "verboten", ar: "يمنع", hilfsverb: "haben", level: "B1" },
+  { infinitiv: "erfahren", präsens3: "erfährt", präteritum: "erfuhr", partizip2: "erfahren", ar: "يعلم / يعرف", hilfsverb: "haben", level: "B1" },
   /* ── B2 ── */
   { infinitiv: "zerstören", präsens3: "zerstört", präteritum: "zerstörte", partizip2: "zerstört", ar: "يدمر", hilfsverb: "haben", level: "B2" },
   { infinitiv: "entstehen", präsens3: "entsteht", präteritum: "entstand", partizip2: "entstanden", ar: "ينشأ", hilfsverb: "sein", level: "B2" },
@@ -92,4 +107,5 @@ export const STARK_VERBEN: StarkeVerb[] = [
   { infinitiv: "erhalten", präsens3: "erhält", präteritum: "erhielt", partizip2: "erhalten", ar: "يتلقى", hilfsverb: "haben", level: "B2" },
   { infinitiv: "enthalten", präsens3: "enthält", präteritum: "enthielt", partizip2: "enthalten", ar: "يحتوي", hilfsverb: "haben", level: "B2" },
   { infinitiv: "verlaufen", präsens3: "verläuft", präteritum: "verlief", partizip2: "verlaufen", ar: "يجري (أحداث)", hilfsverb: "sein", level: "B2" },
+  { infinitiv: "befehlen", präsens3: "befiehlt", präteritum: "befahl", partizip2: "befohlen", ar: "يأمر", hilfsverb: "haben", level: "B2" },
 ];
