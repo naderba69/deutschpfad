@@ -6,6 +6,7 @@ import {Loader2, Volume2} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {getPreferredRate} from "@/lib/preferences/audio";
 import {waitForGermanVoice} from "@/lib/speech/voices";
+import {fetchAiSpeechUrl, isAiVoiceEnabled} from "@/lib/speech/ai-tts";
 import {cn} from "@/lib/utils";
 
 interface SpeakButtonProps {
@@ -57,6 +58,26 @@ export function SpeakButton({
           return;
         } catch {
           // لا يوجد ملف أو تعذّر التشغيل: نرجع إلى صوت الجهاز
+        }
+      }
+      // الصوت الذكي (اختياري، مغلق افتراضياً): إن فشل يبقى صوت المتصفح أدناه
+      if (isAiVoiceEnabled()) {
+        setSpeaking(true);
+        const aiUrl = await fetchAiSpeechUrl(text);
+        if (aiUrl) {
+          try {
+            currentClip?.pause();
+            const clip = new Audio(aiUrl);
+            currentClip = clip;
+            clip.onended = () => setSpeaking(false);
+            clip.onerror = () => setSpeaking(false);
+            await clip.play();
+            return;
+          } catch {
+            setSpeaking(false);
+          }
+        } else {
+          setSpeaking(false);
         }
       }
       if (typeof window === "undefined" || !("speechSynthesis" in window)) {

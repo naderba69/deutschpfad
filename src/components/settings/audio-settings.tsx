@@ -8,6 +8,7 @@ import {Button} from "@/components/ui/button";
 import {getPreferredRate, isSfxEnabledPref, setPreferredRate, setSfxEnabledPref} from "@/lib/preferences/audio";
 import {initSfx, playCorrect, setSfxEnabled} from "@/lib/audio/sfx";
 import {speakGerman, stopSpeaking} from "@/lib/speech/voices";
+import {isAiVoiceEnabled, setAiVoiceEnabled} from "@/lib/speech/ai-tts";
 import {cn} from "@/lib/utils";
 
 const RATES = [
@@ -21,16 +22,24 @@ const RATES = [
 export function AudioSettings() {
   const [rate, setRate] = React.useState(1);
   const [sfx, setSfx] = React.useState(true);
+  const [aiVoice, setAiVoice] = React.useState(false);
 
   React.useEffect(() => {
     setRate(getPreferredRate());
     setSfx(isSfxEnabledPref());
+    setAiVoice(isAiVoiceEnabled());
     initSfx();
   }, []);
 
   const changeRate = (r: number) => {
     setRate(r);
     setPreferredRate(r);
+  };
+
+  const toggleAiVoice = () => {
+    const next = !aiVoice;
+    setAiVoice(next);
+    setAiVoiceEnabled(next);
   };
 
   const toggleSfx = () => {
@@ -84,6 +93,36 @@ export function AudioSettings() {
             <Volume2 className="h-3.5 w-3.5" aria-hidden="true" />
             جرّب السرعة
           </Button>
+        </div>
+
+        {/* الصوت الذكي (اختياري) */}
+        <div className="flex items-center justify-between gap-3 rounded-xl border bg-muted/30 p-3">
+          <div>
+            <p className="flex items-center gap-1.5 text-sm font-bold">
+              <Volume2 className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+              الصوت الذكي للجمل القصيرة
+            </p>
+            <p className="mt-0.5 text-xs text-muted-foreground">
+              صوت آلي مولَّد لا تسجيل بشري. يُرسل النص القصير إلى الخادم ويُحسب ضمن السقف اليومي للمنصة. عند التعذّر يعود الصوت إلى المتصفح. الافتراضي: مغلق.
+            </p>
+          </div>
+          <button
+            type="button"
+            role="switch"
+            aria-label="الصوت الذكي للجمل القصيرة"
+            aria-checked={aiVoice}
+            onClick={toggleAiVoice}
+            className="relative inline-flex h-8 w-11 shrink-0 items-center"
+          >
+            <span
+              aria-hidden="true"
+              className={cn("absolute inset-x-0 top-1 h-6 rounded-full transition-colors", aiVoice ? "bg-success" : "bg-muted")}
+            />
+            <span
+              aria-hidden="true"
+              className={cn("absolute top-1.5 start-0.5 h-5 w-5 rounded-full bg-white shadow transition-all", aiVoice && "translate-x-5")}
+            />
+          </button>
         </div>
 
         {/* المؤثرات الصوتية */}

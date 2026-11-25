@@ -7,6 +7,8 @@ export const GROQ_API_KEY = process.env.GROQ_API_KEY?.trim() ?? "";
 export const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY?.trim() ?? "";
 
 export const GEMINI_MODEL = process.env.GEMINI_MODEL?.trim() ?? "gemini-2.5-flash";
+/** نموذج تحويل النص إلى كلام (Gemini TTS) — لا يُستدعى إلا عند تفعيل الصوت الذكي */
+export const GEMINI_TTS_MODEL = process.env.GEMINI_TTS_MODEL?.trim() || "gemini-2.5-flash-preview-tts";
 export const GROQ_MODEL = process.env.GROQ_MODEL?.trim() ?? "llama-3.3-70b-versatile";
 export const OPENROUTER_MODEL =
   process.env.OPENROUTER_MODEL?.trim() ?? "meta-llama/llama-3.3-70b-instruct:free";
