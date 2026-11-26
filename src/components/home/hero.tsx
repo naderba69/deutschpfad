@@ -106,7 +106,7 @@ export function Hero() {
           </div>
 
           {/* بطاقات عائمة */}
-          <div className="absolute -end-4 -top-6 rounded-2xl border bg-background/95 px-4 py-3 shadow-soft animate-float">
+          <div className="absolute -end-4 -top-20 rounded-2xl border bg-background/95 px-4 py-3 shadow-soft animate-float">
             <p className="inline-flex items-center gap-2 text-sm font-semibold">
               <Flame className="h-4 w-4 fill-orange-400 text-orange-400" aria-hidden="true" />
               مثال: سلسلة أيامك
