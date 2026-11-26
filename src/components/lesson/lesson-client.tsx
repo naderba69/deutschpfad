@@ -5,7 +5,7 @@ import {lastOpenIndex} from "@/lib/session/gate-nav";
 import * as React from "react";
 import Link from "next/link";
 import {useRouter} from "next/navigation";
-import {ArrowLeft, ArrowRight, CheckCircle2, ListChecks, Printer, Sparkles, Trophy} from "lucide-react";
+import {ArrowLeft, ArrowRight, CheckCircle2, Clock, ListChecks, Printer, Sparkles, Trophy} from "lucide-react";
 
 import {FavoriteButton} from "@/components/shared/favorite-button";
 import {LESSON_META} from "@/data/lessons/meta";
@@ -465,27 +465,15 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
             ← مسار التعلم
           </Link>
           <span className="text-muted-foreground">/</span>
-          <Badge variant="outline" className="font-de font-bold">
-            {lesson.level}
-          </Badge>
           <LessonPosition lessonId={lesson.id} />
-          <Button
-            variant={focusMode ? "default" : "ghost"}
-            size="sm"
-            onClick={() => setFocusMode((v) => !v)}
-            className="gap-1.5 text-xs"
-            aria-pressed={focusMode}
-            aria-label="وضع التركيز: إخفاء التنقل الداخلي"
-          >
-            <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-            {focusMode ? "خروج من التركيز" : "وضع التركيز"}
-          </Button>
-          <Badge variant="secondary">
-            {LEVEL_LABEL[lesson.level] ?? lesson.level}
+          {/* مستوى واحد يظهر مرة واحدة: الرمز مع الاسم معاً */}
+          <Badge variant="secondary" className="font-de font-bold">
+            {lesson.level} · {LEVEL_LABEL[lesson.level] ?? lesson.level}
           </Badge>
           {LESSON_META.find((m) => m.id === lesson.id)?.estimatedMinutes && (
             <Badge variant="outline" title="تقدير تقريبي للمتعلم الذاتي، وليس قياساً فعلياً">
-              ⏱ حوالي {LESSON_META.find((m) => m.id === lesson.id)?.estimatedMinutes} دقيقة (تقدير)
+              <Clock className="me-1 inline h-3.5 w-3.5" aria-hidden="true" />
+              حوالي {LESSON_META.find((m) => m.id === lesson.id)?.estimatedMinutes} دقيقة (تقدير)
             </Badge>
           )}
         </div>
@@ -515,6 +503,17 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
             طباعة / PDF
           </Button>
           <FavoriteButton kind="lesson" id={lesson.id} label={lesson.titleAr} size="sm" />
+          <Button
+            variant={focusMode ? "default" : "outline"}
+            size="sm"
+            onClick={() => setFocusMode((v) => !v)}
+            className="gap-1.5 print:hidden"
+            aria-pressed={focusMode}
+            aria-label="وضع التركيز: إخفاء التنقل الداخلي"
+          >
+            <Sparkles className="h-4 w-4" aria-hidden="true" />
+            {focusMode ? "خروج من التركيز" : "وضع التركيز"}
+          </Button>
         </div>
 
         {/* شريط التقدم */}

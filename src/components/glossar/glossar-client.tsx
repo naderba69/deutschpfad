@@ -5,6 +5,7 @@ import {BookMarked, CheckCircle2, Search, Sparkles} from "lucide-react";
 
 import {SpeakButton} from "@/components/shared/speak-button";
 import {Badge} from "@/components/ui/badge";
+import {Button} from "@/components/ui/button";
 import {Card, CardContent} from "@/components/ui/card";
 import {Input} from "@/components/ui/input";
 import {getAllCards} from "@/lib/srs/flashcard-service";
@@ -26,13 +27,17 @@ const LEVEL_MAP: Record<string, Record<string, VocabEntry[]>> = {
 
 const LEVELS = ["all", "A1", "A2", "B1", "B2"] as const;
 
+/** عدد الكلمات المعروضة دفعة واحدة — القاموس يضم آلاف المداخل، وعرضها كلها يبطئ الصفحة */
+const PAGE_SIZE = 120;
+
 /**
- * القاموس الشامل القابل للبحث — كل المفردات (أكثر من 4000 كلمة)
+ * القاموس الشامل القابل للبحث — كل المفردات (نحو 830 مدخلاً)
  * فلترة بالمستوى + بحث + نطق
  */
 export function GlossarClient() {
   const [query, setQuery] = React.useState("");
   const [level, setLevel] = React.useState<(typeof LEVELS)[number]>("all");
+  const [shown, setShown] = React.useState(PAGE_SIZE);
   // ═══ مؤشر الإتقان: خريطة (كلمة → درجة إتقان) من بطاقات SM-2 ═══
   const [mastery, setMastery] = React.useState<Record<string, number>>({});
 
@@ -79,7 +84,10 @@ export function GlossarClient() {
           <Search className="absolute start-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
           <Input
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setShown(PAGE_SIZE);
+            }}
             className="ps-9 font-de"
             dir="auto"
             aria-label="البحث في القاموس"
@@ -89,7 +97,10 @@ export function GlossarClient() {
           {LEVELS.map((l) => (
             <FilterChip
               key={l}
-              onClick={() => setLevel(l)}
+              onClick={() => {
+                setLevel(l);
+                setShown(PAGE_SIZE);
+              }}
               active={level === l}
             >
               {l === "all" ? "الكل" : l}
@@ -108,7 +119,7 @@ export function GlossarClient() {
             <p className="p-6 text-center text-sm text-muted-foreground">لا نتائج مطابقة.</p>
           ) : (
             <ul className="divide-y">
-              {filtered.map(({ level: lv, entry }, i) => (
+              {filtered.slice(0, shown).map(({ level: lv, entry }, i) => (
                 <li key={`${lv}-${entry.de}-${i}`} className="flex items-center justify-between gap-3 p-3">
                   <div className="flex min-w-0 items-center gap-3">
                     <SpeakButton text={entry.de} size="sm" className="h-8 w-8 shrink-0" />
@@ -156,6 +167,16 @@ export function GlossarClient() {
               ))}
             </ul>
           )}
+          {filtered.length > shown ? (
+            <div className="flex flex-col items-center gap-2 p-4">
+              <p className="text-xs text-muted-foreground">
+                تُعرض {shown} من {filtered.length} كلمة
+              </p>
+              <Button variant="outline" onClick={() => setShown((n) => n + PAGE_SIZE)}>
+                عرض {Math.min(PAGE_SIZE, filtered.length - shown)} كلمة أخرى
+              </Button>
+            </div>
+          ) : null}
         </CardContent>
       </Card>
     </div>
