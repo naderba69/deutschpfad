@@ -310,6 +310,8 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
   const [currentSection, setCurrentSection] = React.useState(0);
   // وضع الخطوات التفاعلي: قسم واحد في كل مرة (الافتراضي) أم عرض الكل
   const [stepMode, setStepMode] = React.useState<boolean>(true);
+  // على الجوال: تفاصيل سبب القفل تظهر عند الضغط على «لماذا؟» فقط
+  const [showLockDetails, setShowLockDetails] = React.useState(false);
 
   // ═══ المراجعة التراكمية: يدوية أو مولّدة من الدروس السابقة (تغطي كل الدروس) ═══
   const [reviewQuestions, setReviewQuestions] = React.useState<Exercise[]>([]);
@@ -373,6 +375,8 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
   }, [gate, sectionDefs, currentSection]);
   const total = sectionDefs.length;
   const progressPct = Math.round((visited.size / total) * 100);
+  // سبب قفل القسم التالي في وضع الخطوات (null إن لم يكن مقفلاً)
+  const lockMessageNext = gate.lockMessage(currentSection + 1);
 
   const markVisited = (id: string) => {
     setVisited((prev) => {
@@ -619,19 +623,39 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
 
           {/* أزرار التنقل السفلية اللاصقة — على الجوال ترتفع فوق شريط التنقل
               السفلي (MobileBottomNav) فلا يغطيها، وعلى الشاشات الكبيرة تلتصق بأسفل الشاشة */}
-          <div className="sticky bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-30 -mx-4 border-t bg-background/95 px-4 py-3 backdrop-blur-md sm:mx-0 sm:rounded-t-2xl sm:border md:bottom-0">{stepMode && gate.lockMessage(currentSection + 1) ? <p role="status" className="mb-2 text-xs font-bold text-warning">{gate.lockMessage(currentSection + 1)}</p> : null}
+          <div className="sticky bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-30 -mx-4 border-t bg-background/95 px-4 py-3 backdrop-blur-md sm:mx-0 sm:rounded-t-2xl sm:border md:bottom-0">
+            {stepMode && lockMessageNext ? (
+              <div className="mb-2">
+                {/* الجوال: سطر قصير + زر «لماذا؟» */}
+                <p role="status" className="text-xs font-bold text-warning md:hidden">
+                  التالي مقفل.{" "}
+                  <button
+                    type="button"
+                    className="underline underline-offset-2"
+                    aria-expanded={showLockDetails}
+                    onClick={() => setShowLockDetails((v) => !v)}
+                  >
+                    {showLockDetails ? "إخفاء" : "لماذا؟"}
+                  </button>
+                </p>
+                {showLockDetails ? <p className="mt-1 text-xs font-bold text-warning md:hidden">{lockMessageNext}</p> : null}
+                {/* الشاشات الكبيرة: الرسالة الكاملة دائماً */}
+                <p className="hidden text-xs font-bold text-warning md:block">{lockMessageNext}</p>
+              </div>
+            ) : null}
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <Button variant="outline" onClick={() => goTo(currentSection - 1)} disabled={currentSection === 0} className="gap-1.5">
+              {/* على الجوال يبقى زر واحد ظاهر (التالي)؛ الرجوع متاح من شريط الأقسام */}
+              <Button variant="outline" onClick={() => goTo(currentSection - 1)} disabled={currentSection === 0} className="hidden gap-1.5 md:inline-flex">
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 السابق
               </Button>
               {currentSection < total - 1 ? (
-                <Button size="lg" className="btn-glow gap-2 px-6 whitespace-normal text-center leading-snug" onClick={() => advanceFrom(currentSection)}>
+                <Button size="lg" className="btn-glow w-full gap-2 px-6 whitespace-normal text-center leading-snug md:w-auto" onClick={() => advanceFrom(currentSection)}>
                   التالي: {sectionDefs[currentSection + 1].short}
                   <ArrowLeft className="h-5 w-5" aria-hidden="true" />
                 </Button>
               ) : (
-                <Button size="lg" variant="gold" className="btn-glow gap-2 px-6" onClick={finishLesson}>
+                <Button size="lg" variant="gold" className="btn-glow w-full gap-2 px-6 md:w-auto" onClick={finishLesson}>
                   <Trophy className="h-5 w-5" aria-hidden="true" />
                   إنهاء الدرس
                 </Button>
