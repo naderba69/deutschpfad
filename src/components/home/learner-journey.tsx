@@ -148,9 +148,9 @@ export function LearnerJourney() {
   const encouragement = React.useMemo(() => {
     if (dailyStreak === 0) return "ابدأ اليوم بدرس واحد — الخطوة الأولى أهم خطوة.";
     if (dailyStreak === 1) return "يوم أول في السلسلة — عظّمها بعادة ثانية غداً!";
-    if (dailyStreak === 2) return "يومان متتاليان — أنت تبني عادة حقيقية. 🔥";
+    if (dailyStreak === 2) return "يومان متتاليان — أنت تبني عادة حقيقية.";
     if (dailyStreak === 3) return "3 أيام! الأسبوع الأول في المتناول.";
-    if (dailyStreak === 7) return "أسبوع كامل متتالٍ — هذا إنجاز كبير! 🏆";
+    if (dailyStreak === 7) return "أسبوع كامل متتالٍ — هذا إنجاز كبير!";
     if (dailyStreak === 30) return "30 يوماً! أنت الآن في نادي الملتزمين. 🥇";
     if (dailyStreak >= 100) return `${dailyStreak} يوماً متتالياً — أنت أسطورة هذا الطريق! 👑`;
     return `${dailyStreak} أيام متتالية — استمر، العادة صارت أقوى منك.`;
@@ -274,7 +274,7 @@ export function LearnerJourney() {
                   أجب عن 15 سؤالاً سريعاً للحصول على اقتراح استرشادي لنقطة البداية؛ لا يحدد مستوى CEFR رسمياً.
                 </p>
                 <div className="mt-2 flex justify-center gap-2 text-[11px] font-semibold text-muted-foreground">
-                  <span className="rounded-full bg-muted px-2 py-0.5">⏱ 5 دقائق</span>
+                  <span className="rounded-full bg-muted px-2 py-0.5">5 دقائق</span>
                   <span className="rounded-full bg-muted px-2 py-0.5">🎯 اقتراح استرشادي</span>
                 </div>
                 <Button asChild className="btn-glow mt-4 w-full gap-1.5">
@@ -363,7 +363,7 @@ export function LearnerJourney() {
             <div className="min-w-0 flex-1">
               <p className="text-[11px] font-bold text-muted-foreground">سلسلة أيامك</p>
               <p className="truncate text-sm font-extrabold text-gold-strong">
-                {dailyStreak} {dailyStreak === 1 ? "يوم" : "أيام"} 🔥
+                {dailyStreak} {dailyStreak === 1 ? "يوم" : "أيام"}
               </p>
               {/* تقدم الأسبوع: درست X من 5 أيام */}
               <div className="mt-1.5 flex items-center gap-1">

@@ -439,7 +439,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
     const nextL = idx >= 0 && idx < LESSON_META.length - 1 ? LESSON_META[idx + 1] : undefined;
     if (nextL) {
       setCompletionNotice({
-        title: "🎉 أتممت هذا الدرس!",
+        title: "أتممت هذا الدرس!",
         sub: `جارٍ الانتقال إلى الدرس التالي: «${nextL.titleAr}»…`,
         href: `/lesson/${nextL.id}`,
       });
@@ -448,7 +448,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
       }, 2500);
     } else {
       setCompletionNotice({
-        title: "🏆 أتممت وحدات المسار!",
+        title: "أتممت وحدات المسار!",
         sub: "يمكنك استخدام اختبار التقدم الداخلي وعينة التدريب لمراجعة أدائك فقط؛ إكمال الوحدات وحده لا يثبت الإتقان أو الجاهزية الرسمية.",
         href: "/tests/seal/b2",
       });
