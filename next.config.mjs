@@ -10,6 +10,8 @@ import withPWAInit from "@ducanh2912/next-pwa";
  *   وملفات JS/CSS من المبنى CacheFirst (لها بصمات فريدة)،
  *   وباقي التنقلات NetworkFirst (الافتراضي) لضمان الحداثة.
  */
+const isDev = process.env.NODE_ENV !== "production";
+
 const withPWA = withPWAInit({
   dest: "public",
   register: true,
@@ -112,13 +114,15 @@ const nextConfig = {
           "default-src 'self'",
           // 'unsafe-inline' في script-src مطلوب لسكربت JSON-LD المضمّن في layout
           // (Next.js لا يوفّر nonce له تلقائياً) — أُزيل GTM غير المستخدم.
-          "script-src 'self' 'unsafe-inline'",
+          // التطوير فقط: بيئة React/Next الحية تحتاج 'unsafe-eval'، وإلا تبقى الصفحات
+          // على هياكل التحميل ولا تُهيَّأ. الإنتاج لا يتغير.
+          `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
           // 'unsafe-inline' في style-src مطلوب لأساليب Next.js المُحقونة وقت التشغيل.
           "style-src 'self' 'unsafe-inline'",
           "img-src 'self' data: blob: https:",
           "font-src 'self' data:",
           // أُزيل google-analytics (لا يوجد كود تتبع في المشروع).
-          "connect-src 'self' https://generativelanguage.googleapis.com https://api.groq.com https://openrouter.ai",
+          `connect-src 'self' https://generativelanguage.googleapis.com https://api.groq.com https://openrouter.ai${isDev ? " ws: wss:" : ""}`,
           "frame-ancestors 'self'",
           "base-uri 'self'",
           "form-action 'self'",
