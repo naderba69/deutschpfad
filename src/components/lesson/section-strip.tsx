@@ -13,6 +13,7 @@ import * as React from "react";
 import { CheckCircle2 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { LESSON_PHASES, lessonPhaseOfSection } from "@/lib/session/lesson-phases";
 
 export type SectionDef = {
   id: string;
@@ -59,6 +60,12 @@ export function SectionStrip({ sectionDefs, currentSection, visited, stepMode, s
   const activeRef = React.useRef<HTMLButtonElement | null>(null);
   useCenterActiveSection(stripRef, activeRef, currentSection);
 
+  const currentPhaseId = sectionDefs[currentSection] ? lessonPhaseOfSection(sectionDefs[currentSection].id)?.id : undefined;
+  const phaseRows = LESSON_PHASES.map((phase) => {
+    const items = sectionDefs.filter((d) => lessonPhaseOfSection(d.id)?.id === phase.id);
+    return { phase, total: items.length, done: items.filter((d) => visited.has(d.id)).length };
+  }).filter((row) => row.total > 0);
+
   return (
     <div
       className={cn(
@@ -66,6 +73,25 @@ export function SectionStrip({ sectionDefs, currentSection, visited, stepMode, s
         sticky && "sticky top-16 z-30",
       )}
     >
+      {/* مراحل الدرس الأربع: تجميع للعرض فقط، دون تغيير في الفتح أو الترتيب */}
+      <ol className="mb-2 grid gap-1 text-center text-[11px]" style={{ gridTemplateColumns: `repeat(${phaseRows.length}, minmax(0, 1fr))` }} aria-label="مراحل الدرس">
+        {phaseRows.map(({ phase, total, done }) => {
+          const isCurrent = phase.id === currentPhaseId;
+          return (
+            <li
+              key={phase.id}
+              aria-current={isCurrent ? "step" : undefined}
+              className={cn(
+                "rounded-md border px-1.5 py-1 font-bold",
+                isCurrent ? "border-primary/60 bg-primary/10 text-primary" : "border-border/60 text-muted-foreground",
+              )}
+            >
+              {phase.labelAr}
+              <span className="ms-1 font-normal tabular-nums">{done}/{total}</span>
+            </li>
+          );
+        })}
+      </ol>
       <div
         ref={stripRef}
         className="flex snap-x snap-mandatory gap-1.5 overflow-x-auto pb-1 sm:flex-wrap sm:snap-none"
@@ -75,6 +101,7 @@ export function SectionStrip({ sectionDefs, currentSection, visited, stepMode, s
         {sectionDefs.map((def, i) => {
           const isVisited = visited.has(def.id);
           const isCurrent = i === currentSection;
+          const startsPhase = i > 0 && lessonPhaseOfSection(def.id)?.id !== lessonPhaseOfSection(sectionDefs[i - 1].id)?.id;
           return (
             <button
               key={def.id}
@@ -92,6 +119,7 @@ export function SectionStrip({ sectionDefs, currentSection, visited, stepMode, s
               }
               className={cn(
                 "flex shrink-0 snap-start items-center gap-1.5 rounded-lg border px-3 py-2 text-xs font-semibold transition-colors",
+                startsPhase && "ms-3",
                 isCurrent
                   ? "border-primary bg-primary text-primary-foreground"
                   : isVisited
