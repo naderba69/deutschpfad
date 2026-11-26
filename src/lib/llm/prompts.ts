@@ -2,6 +2,7 @@
  * قوالب البرومبتات المركزية — لكل ميزة ذكية
  * (نظام تعليمي موحد + تعليمات إخراج صارمة)
  */
+import {OPEN_PRODUCTION_RUBRIC, criterionLabel, expectationFor} from "@/lib/rubric/open-production";
 
 const BASE =
   "أنت معلّم لغة ألمانية محترف للمتعلمين العرب (مستوى A1–B2 وفق CEFR). " +
@@ -134,6 +135,15 @@ export function cefrAssessmentPrompt(text: string): { system: string; user: stri
 }
 
 /** ملاحظات آلية إرشادية على الكتابة؛ ليست تقييماً رسمياً أو نتيجة امتحان */
+/** الجوانب الأربعة من السلّم الموحّد، مع ما يُتوقَّع عند مستوى المتعلم */
+function goetheAspectsBlock(level: string): string {
+  const lines = OPEN_PRODUCTION_RUBRIC.map((c, i) => {
+    const expected = expectationFor(level, c.id);
+    return `${i + 1}) ${criterionLabel(c)}: ${c.question}${expected ? ` المتوقع في ${level}: ${expected}` : ""}\n`;
+  });
+  return "الجوانب الأربعة:\n" + lines.join("");
+}
+
 export function goetheWritingPrompt(input: {
   text: string;
   level: string;
@@ -145,11 +155,7 @@ export function goetheWritingPrompt(input: {
       BASE +
       "\nمهمتك: تقديم ملاحظات تعليمية أولية على نص ألماني كتبه متعلم، باستخدام أربعة جوانب عامة: إنجاز المهمة، الترابط، المفردات، والقواعد. هذا تحليل آلي إرشادي لا يمثل تصحيح Goethe الرسمي ولا يثبت مستوى CEFR أو نتيجة امتحان.\n" +
       "أعطِ لكل جانب مؤشراً نوعياً من 1 إلى 5 لمساعدة المتعلم على المراجعة فقط؛ لا تجمع الدرجات ولا تحولها إلى نسبة أو حكم نجاح/رسوب.\n" +
-      "الجوانب الأربعة:\n" +
-      "1) Erfüllung — إنجاز المهمة: هل غُطيت كل نقاط المهمة؟ هل نوع النص والأسلوب مناسبان؟\n" +
-      "2) Kohärenz — البنية والترابط: فقرات منطقية، روابط (Redemittel)، انتقالات سلسة.\n" +
-      "3) Wortschatz — المفردات: مدى مناسب للمستوى، دقة اختيار الكلمات، كولوكيشنات، تنويع.\n" +
-      "4) Struktur — القواعد: تنوع تركيبي (جمل ثانوية، Konjunktiv، مجهول...) وصحة نحوية.\n" +
+      goetheAspectsBlock(input.level) +
       "أخرج النتيجة بهذا الشكل الدقيق (كل سطر يبدأ بالوسم):\n" +
       "###معيار1: الاسم — الدرجة/5\n" +
       "###ملاحظة1: ملاحظة بالعربية (سطر واحد واضح)\n" +
