@@ -29,7 +29,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
       {
         de: "aufgewacht (aufwachen)",
         ar: "استيقظ",
-        noteAr: "تغيّرُ حال ⟵ sein، وge- في الوسط",
+        noteAr: "تغيّرُ حال ⟵ sein، و ge- في الوسط",
       },
       {
         de: "hinlegen (sich hinlegen)",
@@ -430,16 +430,16 @@ export const listening: NonNullable<Lesson["listening"]> = {
 
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "p1",
-    title: "أصوات الجسم: ch، sch، وau",
+    title: "أصوات الجسم: ch، sch، و au",
     items: [
       { de: "der Kopf", ar: "الرأس", note: "IPA /kɔpf/: o قصيرة؛ pf في نهاية المقطع، من دون حركة بينهما." },
       { de: "der Bauch", ar: "البطن", note: "IPA /baʊ̯x/: au ثنائي الصوت؛ ch هنا /x/، والخاء العربية تقريبية." },
       { de: "der Rücken", ar: "الظهر", note: "IPA /ˈʁʏkn̩/: ü حركة أمامية مدوّرة قصيرة؛ النبر على المقطع الأول." },
-      { de: "die Schulter", ar: "الكتف", note: "IPA /ˈʃʊltɐ/: sch = /ʃ/، وu قصيرة." },
+      { de: "die Schulter", ar: "الكتف", note: "IPA /ˈʃʊltɐ/: sch = /ʃ/، و u قصيرة." },
       { de: "das Auge", ar: "العين", note: "IPA /ˈaʊ̯ɡə/: au ثنائي الصوت؛ g هنا /ɡ/ انفجاري مجهور، لا /ɣ/ العربية." },
-      { de: "der Husten", ar: "السعال", note: "IPA /ˈhuːstən/: u طويلة /uː/؛ راجع Cambridge وCollins." },
+      { de: "der Husten", ar: "السعال", note: "IPA /ˈhuːstən/: u طويلة /uː/؛ راجع Cambridge و Collins." },
     ],
-    tip: "استخدم IPA للاستدلال على الأصوات؛ الكتابة بالحروف العربية تقريبية ولا تمثل صوتاً ألمانياً مطابقاً. يبيّن نطق Auge أن g هنا /ɡ/ لا غ /ɣ/، وHusten فيه u طويلة. تكرار النص أو مطابقة التفريغ لا يقيسان وحدهما مخارج الأصوات والنبر.",
+    tip: "استخدم IPA للاستدلال على الأصوات؛ الكتابة بالحروف العربية تقريبية ولا تمثل صوتاً ألمانياً مطابقاً. يبيّن نطق Auge أن g هنا /ɡ/ لا غ /ɣ/، و Husten فيه u طويلة. تكرار النص أو مطابقة التفريغ لا يقيسان وحدهما مخارج الأصوات والنبر.",
     shadowing: [
       {
         de: "Ich habe Kopfschmerzen.",
@@ -449,7 +449,7 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       {
         de: "Mein Rücken tut weh.",
         ar: "ظهري يؤلمني.",
-        tip: "tut weh: في weh يُنطق w /v/ وe طويلة /eː/.",
+        tip: "tut weh: في weh يُنطق w /v/ و e طويلة /eː/.",
       },
       {
         de: "Sie sollen sich ausruhen.",

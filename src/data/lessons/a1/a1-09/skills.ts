@@ -305,13 +305,13 @@ export const listening: NonNullable<Lesson["listening"]> = {
 
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "p1",
-    title: "أصوات التقويم: ch وng وü والنهاية المهموسة",
+    title: "أصوات التقويم: ch و ng و ü والنهاية المهموسة",
     minimalPairs: [
       {
         id: "mp-a1-09-ng",
         title: "ng في نهاية الكلمة",
         titleDe: "ng vs. n",
-        explanationAr: "ng في نهاية الكلمة صوت واحد يخرج من الأنف (ŋ)، ولا يُنطق معه g. قارن بين n وng في نهاية الكلمة.",
+        explanationAr: "ng في نهاية الكلمة صوت واحد يخرج من الأنف (ŋ)، ولا يُنطق معه g. قارن بين n و ng في نهاية الكلمة.",
         pairs: [
         { a: "Sinn", aAr: "معنى", b: "Sing", bAr: "غنِّ (أمر)", note: "Sinn: n في النهاية. Sing: ng في النهاية." },
         { a: "Hahn", aAr: "ديك", b: "Hang", bAr: "منحدر", note: "Hahn: n في النهاية. Hang: ng في النهاية." },
@@ -319,14 +319,14 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       },
     ],
     items: [
-      { de: "Montag", ar: "الاثنين", note: "IPA: [ˈmoːntaːk]. حرف g في هذا الموضع يُنطق [k]، وo طويلة." },
-      { de: "Mittwoch", ar: "الأربعاء", note: "IPA: [ˈmɪtˌvɔx]. w يُنطق [v]، وch بعد o يُنطق [x]؛ الخاء العربية تقريب تقريبي." },
+      { de: "Montag", ar: "الاثنين", note: "IPA: [ˈmoːntaːk]. حرف g في هذا الموضع يُنطق [k]، و o طويلة." },
+      { de: "Mittwoch", ar: "الأربعاء", note: "IPA: [ˈmɪtˌvɔx]. w يُنطق [v]، و ch بعد o يُنطق [x]؛ الخاء العربية تقريب تقريبي." },
       { de: "Donnerstag", ar: "الخميس", note: "IPA: [ˈdɔnɐstaːk]. لا تمدّ n لمجرد كتابتها nn؛ ونهاية -tag هنا [taːk]." },
-      { de: "der Frühling", ar: "الربيع", note: "IPA: [ˈfʁyːlɪŋ]. ü حركة طويلة [yː]، وng في النهاية صوت أنفي واحد [ŋ] لا يتبعه [g] منفصل." },
+      { de: "der Frühling", ar: "الربيع", note: "IPA: [ˈfʁyːlɪŋ]. ü حركة طويلة [yː]، و ng في النهاية صوت أنفي واحد [ŋ] لا يتبعه [g] منفصل." },
       { de: "der Monat", ar: "الشهر", note: "IPA: [ˈmoːnat]. حركة o طويلة [oː]؛ ليست o قصيرة." },
       { de: "der Herbst", ar: "الخريف", note: "IPA: [hɛʁpst]. الحرف المكتوب b يتحقق هنا بصوت مهموس [p]، وليس صامتاً." },
     ],
-    tip: "في النطق الألماني القياسي تُهمس الوقفات المجهورة في نهاية المقطع: g→[k] مثل Tag، وb→[p] مثل Herbst، وd→[t] مثل Hund. لا يُحذف الصوت؛ والرموز الصوتية أدق من كتابته بحروف عربية تقريبية. أزرار الاستماع تستخدم TTS في المتصفح لا تسجيلاً بشرياً، وقد يختلف الصوت بحسب الجهاز؛ ولا يقيس هذا التدريب النطق آلياً.",
+    tip: "في النطق الألماني القياسي تُهمس الوقفات المجهورة في نهاية المقطع: g→[k] مثل Tag، و b→[p] مثل Herbst، و d→[t] مثل Hund. لا يُحذف الصوت؛ والرموز الصوتية أدق من كتابته بحروف عربية تقريبية. أزرار الاستماع تستخدم TTS في المتصفح لا تسجيلاً بشرياً، وقد يختلف الصوت بحسب الجهاز؛ ولا يقيس هذا التدريب النطق آلياً.",
     shadowing: [
       { de: "Heute ist Montag.", ar: "اليوم الاثنين.", tip: "Montag [ˈmoːntaːk]: انتبه إلى [k] في نهاية -tag." },
       { de: "Am Samstag gehe ich einkaufen.", ar: "أذهب للتسوّق يوم السبت.", tip: "Samstag [ˈzamstaːk]: نهاية -tag تُسمع [taːk]." },

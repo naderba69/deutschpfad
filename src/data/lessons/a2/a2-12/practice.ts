@@ -137,7 +137,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "Ich bleibe heute zu Hause, ___ ich bin krank.",
       options: ["denn", "deshalb", "trotzdem", "weil"],
       correctIndex: 0,
-      explanation: "denn تعطي السبب ولا تقلب الترتيب، فيبقى الفاعل ich قبل الفعل bin. أما weil فتنقل الفعل إلى النهاية (…, weil ich krank bin)، وdeshalb فتعطي النتيجة لا السبب.",
+      explanation: "denn تعطي السبب ولا تقلب الترتيب، فيبقى الفاعل ich قبل الفعل bin. أما weil فتنقل الفعل إلى النهاية (…, weil ich krank bin)، و deshalb فتعطي النتيجة لا السبب.",
       errorType: "grammar",
       optionExplanations: [
         undefined,
@@ -155,7 +155,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "deshalb", options: ["deshalb", "trotzdem", "denn"] },
         { correct: "trotzdem", options: ["deshalb", "trotzdem", "denn"] },
       ],
-      explanation: "deshalb تربط نتيجة منطقية (طويل → نمت)، وtrotzdem تعبّر عن مفارقة (بارد → ومع ذلك سبحت). وكلتاهما مقلوبة، فالفعل bin بعدها مباشرة.",
+      explanation: "deshalb تربط نتيجة منطقية (طويل → نمت)، و trotzdem تعبّر عن مفارقة (بارد → ومع ذلك سبحت). وكلتاهما مقلوبة، فالفعل bin بعدها مباشرة.",
       errorType: "grammar",
     },
     {

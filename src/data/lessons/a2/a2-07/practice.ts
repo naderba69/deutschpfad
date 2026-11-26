@@ -13,7 +13,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       options: ["eine", "ein", "einen", "der"],
       correctIndex: 0,
       explanation:
-        "Bank مؤنث، وبعد es gibt نستخدم صيغة Akkusativ: eine Bank. أما ein/einen فليسا صيغة هذا الاسم، وder لا يطابق التركيب.",
+        "Bank مؤنث، وبعد es gibt نستخدم صيغة Akkusativ: eine Bank. أما ein/einen فليسا صيغة هذا الاسم، و der لا يطابق التركيب.",
       errorType: "case",
       optionExplanations: [
         undefined,
@@ -30,7 +30,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       options: ["keinen", "kein", "keine", "nicht"],
       correctIndex: 0,
       explanation:
-        "Park اسم مذكر مفرد؛ النفي غير المحدد في Akkusativ هو keinen Park. keine تلائم مثلاً جمعاً أو مؤنثاً، وnicht لا تحل محل أداة النفي هنا.",
+        "Park اسم مذكر مفرد؛ النفي غير المحدد في Akkusativ هو keinen Park. keine تلائم مثلاً جمعاً أو مؤنثاً، و nicht لا تحل محل أداة النفي هنا.",
       errorType: "negation",
       optionExplanations: [
         undefined,
@@ -50,7 +50,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { left: "dir", right: "Ich helfe dir. = أساعدك." },
       ],
       explanation:
-        "اقرأ الضمير ضمن جملته: sehen يأتي هنا مع mich/dich، وhelfen مع mir/dir. الترجمة توضح المعنى ولا تجعل أسماء الحالات الألمانية مطابقة لإعراب العربية.",
+        "اقرأ الضمير ضمن جملته: sehen يأتي هنا مع mich/dich، و helfen مع mir/dir. الترجمة توضح المعنى ولا تجعل أسماء الحالات الألمانية مطابقة لإعراب العربية.",
       errorType: "pronoun",
     },
     {
@@ -87,7 +87,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       caseSensitive: true,
       explanation:
-        "sehen وlieben يأتيان مع متمم Akkusativ في هذين المثالين: sie/mich. وعند ذكر الشخص الذي نشكره يأتي danken مع dir.",
+        "sehen و lieben يأتيان مع متمم Akkusativ في هذين المثالين: sie/mich. وعند ذكر الشخص الذي نشكره يأتي danken مع dir.",
       errorType: "pronoun",
     },
     {
@@ -208,7 +208,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "einen", options: ["einen", "einem", "ein", "der"] },
       ],
       explanation:
-        "المقصود صراف واحد: einen Geldautomaten. Geldautomat اسم مذكر وصيغته في Akkusativ المفرد Geldautomaten؛ أما einem فهو Dativ، وein لا يطابق الصيغة المطلوبة.",
+        "المقصود صراف واحد: einen Geldautomaten. Geldautomat اسم مذكر وصيغته في Akkusativ المفرد Geldautomaten؛ أما einem فهو Dativ، و ein لا يطابق الصيغة المطلوبة.",
       errorType: "case",
     },
   ];

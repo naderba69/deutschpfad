@@ -320,7 +320,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       correctIndex: 0,
       optionExplanations: [undefined, "لا — «ich will» صحيحة نحوياً لكنها أكثر مباشرة في هذا الطلب؛ نختار هنا صيغة شائعة مهذبة: «ich hätte gern einen Termin». وقد يختلف الانطباع بحسب السياق.", "لا — «Termin» مذكر في النصب فيلزم «einen Termin» لا «ein Termin».", "لا — الفعل «sein» لا يتعدّى إلى مفعول كهذا؛ وطلب الموعد بـ«hätte gern»: «ich hätte gern einen Termin»."],
-      explanation: "Ich hätte gern einen Termin صيغة شائعة مهذبة. وIch will einen Termin صحيحة نحوياً لكنها أكثر مباشرة بحسب السياق؛ كما أن Ich möchte gern أيضاً خيار مهذب غير مدرج.",
+      explanation: "Ich hätte gern einen Termin صيغة شائعة مهذبة. و Ich will einen Termin صحيحة نحوياً لكنها أكثر مباشرة بحسب السياق؛ كما أن Ich möchte gern أيضاً خيار مهذب غير مدرج.",
       errorType: "vocabulary",
     },
     {

@@ -142,7 +142,7 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "أصوات الشرط: ü، ä، ö، ch، وsch",
+    title: "أصوات الشرط: ü، ä، ö، ch، و sch",
     items: [
       { de: "würde", ar: "كنت سأفعل", note: "تقريب غير دقيق: /ˈvʏʁdə/" },
       { de: "wäre", ar: "كان سيكون", note: "تقريب غير دقيق: /ˈvɛːʁə/" },
@@ -151,7 +151,7 @@ export const pronunciation: Lesson["pronunciation"] = {
       { de: "die Gesellschaft", ar: "المجتمع", note: "تقريب: /ɡəˈzɛlʃaft/؛ بداية الكلمة g لا غ." },
       { de: "die Nachricht", ar: "الخبر", note: "تقريب: /ˈnaːxʁɪçt/" },
     ],
-    tip: "استمع إلى النطق الآلي وكرّر الكلمات؛ والتهجئة العربية تقريبية ولا تنقل أصوات ü وö وä بدقة.",
+    tip: "استمع إلى النطق الآلي وكرّر الكلمات؛ والتهجئة العربية تقريبية ولا تنقل أصوات ü و ö و ä بدقة.",
     shadowing: [
       { de: "Ich würde gern reisen.", ar: "أودّ أن أسافر.", tip: "würde = ڤوردِه" },
       { de: "Wenn ich reich wäre...", ar: "لو كنت غنياً...", tip: "wäre = ڤيرِه" },

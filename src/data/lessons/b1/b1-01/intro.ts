@@ -23,14 +23,14 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e1", "e5", "w1"],
         taskIds: ["practice:b1-01:e1", "practice:b1-01:e5", "writing:b1-01:w1"],
-        labelAr: "أجب صحيحاً عن e1 (يظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق) وe5 (تصحيح wegen + Genitiv)، واكتب w1 بصحة (جملة كاملة مع des). قراءة جدول t1 لا تُحتسب أداءً.",
+        labelAr: "أجب صحيحاً عن e1 (يظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق) و e5 (تصحيح wegen + Genitiv)، واكتب w1 بصحة (جملة كاملة مع des). قراءة جدول t1 لا تُحتسب أداءً.",
         completion: "all-correct",
       },
     },
     {
       id: "z3",
       de: "Ich kann einfache Relativsätze mit der, die, das und dem bilden und sie mit einem vorgegebenen Satz verbinden.",
-      ar: "أن أكوّن الجمل النسبية بـ der وdie وdas وdem حسب دور الاسم في الجملة.",
+      ar: "أن أكوّن الجمل النسبية بـ der و die و das و dem حسب دور الاسم في الجملة.",
       evidence: {
         exerciseIds: ["e4", "e6", "e13", "m5"],
         taskIds: ["practice:b1-01:e4", "practice:b1-01:e6", "practice:b1-01:e13", "mini-test:b1-01:m5"],
@@ -80,7 +80,7 @@ export const review: NonNullable<Lesson["review"]> = [
       errorType: "case",
       optionExplanations: [
         undefined,
-        "«meinen» مفعول به (Akkusativ)، وhelfen يطلب الجر هنا، فالصيغة meinem.",
+        "«meinen» مفعول به (Akkusativ)، و helfen يطلب الجر هنا، فالصيغة meinem.",
         "«mein» بلا نهاية لا تناسب الجر المذكر في هذا الموضع.",
         "«meine» للمؤنث أو الجمع، والأخ مذكّر.",
       ],

@@ -207,7 +207,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "habe", options: ["habe", "bin", "war", "hatte"], errorType: "grammar" },
         { correct: "angerufen", options: ["angerufen", "anrufen", "gerufen", "anrufte"], errorType: "grammar" },
       ],
-      hint: "راجع: Perfekt bin aufgestanden / bin gefahren / habe angerufen، وPräteritum war لوصف الحالة müde.",
+      hint: "راجع: Perfekt bin aufgestanden / bin gefahren / habe angerufen، و Präteritum war لوصف الحالة müde.",
       explanation: "الإجابة تتبع الجمل المعطاة: bin aufgestanden · bin gefahren · war müde · habe angerufen. هذا لا يثبت القدرة على سرد يوم كامل من دون نموذج.",
       errorType: "grammar",
     },

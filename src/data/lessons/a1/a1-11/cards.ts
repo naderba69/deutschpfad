@@ -76,7 +76,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
         "zum Stadt",
         "nach Stadt"
       ],
-      "explanation": "Stadt مؤنث، وins اختصار in das؛ لذلك الصيغة هنا in die Stadt. إذا كان المعنى الحركة داخل المدينة، نقول in der Stadt.",
+      "explanation": "Stadt مؤنث، و ins اختصار in das؛ لذلك الصيغة هنا in die Stadt. إذا كان المعنى الحركة داخل المدينة، نقول in der Stadt.",
       "errorType": "preposition"
     },
     {

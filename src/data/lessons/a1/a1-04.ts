@@ -18,7 +18,7 @@ export const lessonA104: Lesson = {
   titleDe: "Meine Wohnung",
   titleAr: "السكن والمنزل",
   summary:
-    "غرف المنزل والأثاث، وصف السكن بصفات بسيطة، بعض حروف المكان مع Dativ، السؤال Wo wohnst du?، واستعمال müssen وdürfen في تعليمات منزلية.",
+    "غرف المنزل والأثاث، وصف السكن بصفات بسيطة، بعض حروف المكان مع Dativ، السؤال Wo wohnst du?، واستعمال müssen و dürfen في تعليمات منزلية.",
 
   lernziele,
   einfuehrung,

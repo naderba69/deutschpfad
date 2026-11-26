@@ -66,7 +66,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       { correct: "Automatisierung", options: ["Automatisierung", "Automatisieren", "Automat"] },
       { correct: "Sicherheit", options: ["Sicherheit", "Sicherkeit", "Sichern"] },
     ],
-    explanation: "automatisieren + ung = die Automatisierung، وsicher + heit = die Sicherheit.",
+    explanation: "automatisieren + ung = die Automatisierung، و sicher + heit = die Sicherheit.",
     errorType: "grammar",
   },
 ];

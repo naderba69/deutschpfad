@@ -27,11 +27,11 @@ export const readingB108: ReadingText = {
     { de: "die Aufgabe", ar: "المهمة", noteAr: "مؤنّثة؛ ومنها aufgeben (يتخلّى / يُوكل)." },
     { de: "bedienen", ar: "يُشغّل، يخدم", noteAr: "فعل منتظم؛ ومنها der Bediener (المُشغّل)." },
     { de: "die Weiterbildung", ar: "التدريب المستمر", noteAr: "مؤنّثة مركّبة من weiter + Bildung؛ ومنها bilden (يُكوّن)." },
-    { de: "verbindlich", ar: "ملزم، مُلزِم", noteAr: "صفة؛ ومنها verbinden (يربط) وdie Verbindlichkeit (الإلزام)." },
+    { de: "verbindlich", ar: "ملزم، مُلزِم", noteAr: "صفة؛ ومنها verbinden (يربط) و die Verbindlichkeit (الإلزام)." },
     { de: "die Gewerkschaft", ar: "النقابة", noteAr: "مؤنّثة؛ ومنها der Gewerkschafter (النقابي)." },
     { de: "ersetzen", ar: "يستبدل", noteAr: "فعل منتظم: ersetzen · ersetzte · hat ersetzt؛ ومنها der Ersatz (البديل)." },
-    { de: "der Beruf", ar: "المهنة", noteAr: "مذكّر؛ ومنها beruflich (مهني) وdie Berufung (النداء، الاستدعاء)." },
-    { de: "der Gewinn", ar: "المكسب، الربح", noteAr: "مذكّر؛ ومنها gewinnen (يكسب) وder Gewinner (الفائز)." },
+    { de: "der Beruf", ar: "المهنة", noteAr: "مذكّر؛ ومنها beruflich (مهني) و die Berufung (النداء، الاستدعاء)." },
+    { de: "der Gewinn", ar: "المكسب، الربح", noteAr: "مذكّر؛ ومنها gewinnen (يكسب) و der Gewinner (الفائز)." },
   ],
   questions: [
     {

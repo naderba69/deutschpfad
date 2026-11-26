@@ -1,6 +1,6 @@
 /**
  * b1-12 — نصّ القراءة الممتدّ (الجزء «reading»)
- * فُصل وأُضيف في المرحلة 5. نصّ B1 عن الأهداف والأسباب: um … zu وdamit وحروف الجر مع المضاف إليه.
+ * فُصل وأُضيف في المرحلة 5. نصّ B1 عن الأهداف والأسباب: um … zu و damit وحروف الجر مع المضاف إليه.
  */
 import type { ReadingText } from "@/types/lesson";
 
@@ -86,7 +86,7 @@ export const readingB112: ReadingText = {
       correctIndex: 0,
       optionExplanations: [undefined, "لا — هذا كلام Frau Ahmadi عن امتحانها: «damit ich sie sicher bestehe»؛ وأما نوفاك فدافعه أبناؤه.", "لا — العمل منفرداً في الشركة لم يُذكر؛ بل زملاؤه شجّعوه: «haben ihn seine Kollegen dazu ermutigt».", "لا — الوردية الليلية لم تُذكر مصدراً للفراغ؛ وقوله: «Ich arbeite viel, damit meine Kinder später studieren können»."],
       paragraph: 3,
-      explanation: "الفقرة 3: «Ich arbeite viel, damit meine Kinder später studieren können» — فاعلان مختلفان (هو يعمل، والأطفال يدرسون)، فوجب damit لا um … zu. ويُلاحظ الفرق في الفقرة نفسها بين wegen des Geldes وinnerhalb von zwei Jahren.",
+      explanation: "الفقرة 3: «Ich arbeite viel, damit meine Kinder später studieren können» — فاعلان مختلفان (هو يعمل، والأطفال يدرسون)، فوجب damit لا um … zu. ويُلاحظ الفرق في الفقرة نفسها بين wegen des Geldes و innerhalb von zwei Jahren.",
       errorType: "comprehension",
     },
     {
@@ -116,5 +116,5 @@ export const readingB112: ReadingText = {
     { de: "die Absicht haben, … zu", ar: "ينوي أن…" },
   ],
   discussionAr:
-    "ناقش مع زميلك: ما هدفك من تعلّم الألمانية، وما السبب الحقيقي وراءه؟ استعمل في حديثك بنية um … zu مرة وبنية damit مرة، وحرفين من wegen وtrotz وwährend مع المضاف إليه، ثم اكتب أربعة أسطر تشرح فيها هدفاً لك: سببه، وما تفعله رغم العقبات.",
+    "ناقش مع زميلك: ما هدفك من تعلّم الألمانية، وما السبب الحقيقي وراءه؟ استعمل في حديثك بنية um … zu مرة وبنية damit مرة، وحرفين من wegen و trotz و während مع المضاف إليه، ثم اكتب أربعة أسطر تشرح فيها هدفاً لك: سببه، وما تفعله رغم العقبات.",
 };

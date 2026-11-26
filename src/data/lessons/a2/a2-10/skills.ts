@@ -356,21 +356,21 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "نطق كلمات الدرس: ü وch وie والنبر",
+    title: "نطق كلمات الدرس: ü و ch و ie والنبر",
     items: [
-      { de: "die Prüfung", ar: "الامتحان", note: "IPA: [ˈpʁyːfʊŋ]. النبر على المقطع الأول؛ ü هي /yː/ طويلة ومدوّرة، وng تمثل /ŋ/. يختلف نطق r إقليمياً." },
+      { de: "die Prüfung", ar: "الامتحان", note: "IPA: [ˈpʁyːfʊŋ]. النبر على المقطع الأول؛ ü هي /yː/ طويلة ومدوّرة، و ng تمثل /ŋ/. يختلف نطق r إقليمياً." },
       { de: "der Unterricht", ar: "التعليم أو الحصة", note: "IPA: [ˈʊntɐˌʁɪçt]. في هذا الموضع ch هي /ç/ (الصوت الألماني في ich)، وليست /ʃ/." },
-      { de: "studieren", ar: "يدرس في الجامعة", note: "IPA: [ʃtuˈdiːʁən]. النبر على مقطع -die-، وie تمثل /iː/ طويلة." },
+      { de: "studieren", ar: "يدرس في الجامعة", note: "IPA: [ʃtuˈdiːʁən]. النبر على مقطع -die-، و ie تمثل /iː/ طويلة." },
       { de: "die Vokabel (Plural: die Vokabeln)", ar: "المفردة (الجمع: المفردات)", note: "IPA للمفرد: [voˈkaːbl̩]. v في هذه الكلمة /v/، والنبر على المقطع الثاني؛ لا تُعمّم هذا النطق على كل كلمة فيها v." },
       { de: "bestehen", ar: "يجتاز امتحاناً", note: "IPA: [bəˈʃteːən]. النبر على -ste-؛ ويُنطق st في بداية المقطع المنبور /ʃt/." },
-      { de: "der Lehrer", ar: "المعلم", note: "IPA: [ˈleːʁɐ]. النبر على المقطع الأول، وe فيه طويلة؛ يتغير تحقيق r بحسب المتحدث والمنطقة." },
+      { de: "der Lehrer", ar: "المعلم", note: "IPA: [ˈleːʁɐ]. النبر على المقطع الأول، و e فيه طويلة؛ يتغير تحقيق r بحسب المتحدث والمنطقة." },
     ],
     tip: "استخدم IPA مرجعاً للصوت لا تهجئة عربية تقريبية: لا تمثل العربية /yː/ أو /ç/ تمثيلاً مطابقاً. استمع إلى النطق المعروض في القاموس، ولا تعتبر تهجئة عربية مثل «پريوفونغ» معياراً صوتياً.",
     shadowing: [
       { de: "Ich lerne weiter, weil ich die Prüfung bestehen will.", ar: "أواصل التعلم لأنني أريد اجتياز الامتحان.", tip: "في هذا النمط التابع يأتي الفعل المصرف will في النهاية، بعد bestehen." },
       { de: "Wenn ich Zeit habe, wiederhole ich Vokabeln.", ar: "إذا توفر لديّ وقت، أراجع المفردات.", tip: "ينتهي الجزء التابع بـhabe؛ وبعده يأتي فعل الجملة الرئيسية wiederhole قبل الفاعل ich." },
-      { de: "Ich weiß nicht, ob er kommt.", ar: "لا أعرف ما إذا كان سيأتي.", tip: "ei في weiß هو /aɪ̯/؛ وw في الألمانية القياسية يُنطق /v/." },
-      { de: "Die Prüfung ist leicht.", ar: "الامتحان سهل.", tip: "ei في leicht هو /aɪ̯/، وch هنا /ç/ لا /x/." },
+      { de: "Ich weiß nicht, ob er kommt.", ar: "لا أعرف ما إذا كان سيأتي.", tip: "ei في weiß هو /aɪ̯/؛ و w في الألمانية القياسية يُنطق /v/." },
+      { de: "Die Prüfung ist leicht.", ar: "الامتحان سهل.", tip: "ei في leicht هو /aɪ̯/، و ch هنا /ç/ لا /x/." },
     ],
   };
 

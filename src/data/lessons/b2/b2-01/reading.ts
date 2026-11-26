@@ -70,7 +70,7 @@ export const readingB201: ReadingText = {
       correctIndex: 0,
       optionExplanations: [undefined, "لا — الوحدات القصيرة ما صارت إليه بعد التجربة لا قبلها؛ وأما قناعتها السابقة فـ«sie habe vorher geglaubt, langes Lernen sei wirksamer».", "لا — هي مشاركةٌ لا قائدةً على الدراسة؛ والقائدة شخصٌ آخر: «sagt die Leiterin des Versuchs».", "لا — العكس؛ فهي تروي خبرتها فيها: «Eine Teilnehmerin erzählt … Nach dem Versuch sei sie anderer Meinung»."],
       paragraph: 2,
-      explanation: "الفقرة الثانية: «sie habe vorher geglaubt, langes Lernen sei wirksamer» — نقل قولها بصيغة Konjunktiv I في الجملتين (habe geglaubt وsei wirksamer)، ومعه إشارة صريحة إلى أنها ليست خبيرة.",
+      explanation: "الفقرة الثانية: «sie habe vorher geglaubt, langes Lernen sei wirksamer» — نقل قولها بصيغة Konjunktiv I في الجملتين (habe geglaubt و sei wirksamer)، ومعه إشارة صريحة إلى أنها ليست خبيرة.",
       errorType: "comprehension",
     },
     {

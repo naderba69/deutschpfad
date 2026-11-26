@@ -127,7 +127,7 @@ export const pronunciation: Lesson["pronunciation"] = {
       { de: "zweifellos", ar: "بلا شك", note: "zw = تسڤ: تسڤايفِلوس" },
       { de: "erwiesen", ar: "مثبت", note: "ie = إي: إرڤيزِن" },
     ],
-    tip: "Fachsprache = فاخ-شپراخه — خ + شپ معاً. وzweifellos = تسڤايفِلوس — zw ألمانية تسڤ.",
+    tip: "Fachsprache = فاخ-شپراخه — خ + شپ معاً. و zweifellos = تسڤايفِلوس — zw ألمانية تسڤ.",
     shadowing: [
       { de: "Es ist erwiesen, dass...", ar: "ثابت أن...", tip: "erwiesen = إرڤيزِن" },
       { de: "Meiner Ansicht nach ist das wichtig.", ar: "في رأيي هذا مهم.", tip: "Meiner Ansicht nach" },

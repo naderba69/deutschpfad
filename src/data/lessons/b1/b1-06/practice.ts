@@ -16,8 +16,8 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       errorType: "grammar",
       optionExplanations: [
         undefined,
-        "«schöne» تناسب الاسم المؤنث، وBild محايد هنا.",
-        "«schönen» تناسب الجر أو المذكر، وBild محايد هنا.",
+        "«schöne» تناسب الاسم المؤنث، و Bild محايد هنا.",
+        "«schönen» تناسب الجر أو المذكر، و Bild محايد هنا.",
         "«schöner» لا توافق الاسم المحايد Bild في هذه العبارة؛ وليست هنا نهاية التصريف المطلوبة.",
       ],
     },
@@ -186,7 +186,7 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
       { wrong: "ein gut Mann (بدون نهاية)", right: "ein guter Mann", whyAr: "الصفة النعتية في هذه الأمثلة تأخذ نهاية مناسبة بحسب الأداة والجنس والحالة." },
       { wrong: "das schönes Bild (بعد das)", right: "das schöne Bild", whyAr: "بعد الأداة المعرّفة تتغير النهاية بحسب الجنس والحالة؛ هنا بعد das: -e." },
       { wrong: "mit einem gute Freund", right: "mit einem guten Freund", whyAr: "بعد einem في Dativ: -en في هذا النمط (einem guten Freund)." },
-      { wrong: "Ich bin Heimweh.", right: "Ich habe Heimweh.", whyAr: "Heimweh اسم يُبنى مع haben (مثل Hunger وDurst): Ich habe Heimweh — أحِنّ إلى وطني." },
+      { wrong: "Ich bin Heimweh.", right: "Ich habe Heimweh.", whyAr: "Heimweh اسم يُبنى مع haben (مثل Hunger و Durst): Ich habe Heimweh — أحِنّ إلى وطني." },
     ],
     eselsbruecken: [
       "«مع ein: الرفع يحمل نهايات الأداة (ر-هـ، س)» — والجر والنصب المذكر -en.",

@@ -23,7 +23,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e1", "e6", "w2"],
         taskIds: ["practice:a2-11:e1", "practice:a2-11:e6", "writing:a2-11:w2"],
-        labelAr: "أجب صحيحاً عن e1 وe6 في التدريب (ويظهر e1 أيضاً ضمن أول أربعة تمارين في مسار التدفق)، ثم اختر الضمائر المناسبة لفراغات w2؛ هذه مهام اختيار موجّه لا كتابة حرة.",
+        labelAr: "أجب صحيحاً عن e1 و e6 في التدريب (ويظهر e1 أيضاً ضمن أول أربعة تمارين في مسار التدفق)، ثم اختر الضمائر المناسبة لفراغات w2؛ هذه مهام اختيار موجّه لا كتابة حرة.",
         completion: "all-correct",
       },
     },
@@ -53,7 +53,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "في هذا المعنى نقول بالعربية «أنا مسرور»، وبالألمانية: Ich freue mich. لا تترجم mich هنا حرفياً إلى «نفسي»؛ فالمعنى هو «أنا مسرور/أتطلع إلى…» بحسب ما يأتي بعد الفعل. وقارن لاحقاً بين Ich wasche mich وIch wasche mir die Hände.",
+      "في هذا المعنى نقول بالعربية «أنا مسرور»، وبالألمانية: Ich freue mich. لا تترجم mich هنا حرفياً إلى «نفسي»؛ فالمعنى هو «أنا مسرور/أتطلع إلى…» بحسب ما يأتي بعد الفعل. وقارن لاحقاً بين Ich wasche mich و Ich wasche mir die Hände.",
     motivatingQuestionDe: "Was kann ich für Sie tun?",
     contextAr:
       "نتدرّب على مشاهد مختارة عند الحلاق وخدمة إصلاح هاتف، وعلى صيغ انعكاسية شائعة، ثم نكتب عبارة افتتاحية مهذبة للشكوى ونكمل نموذجاً تدريبياً افتراضياً.",

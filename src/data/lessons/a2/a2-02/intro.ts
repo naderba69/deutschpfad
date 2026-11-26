@@ -130,10 +130,10 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
     motivatingQuestionAr:
-      "في المثال التدريبي، Sie sollten sich ausruhen اقتراحٌ، وSie dürfen nicht rauchen منعٌ. يساعدك الفعل الناقص على فهم المعنى، لكن السياق يظل مهماً. نراجع اليوم صيغاً سبق أن قابلت بعضها في دروس A1.",
+      "في المثال التدريبي، Sie sollten sich ausruhen اقتراحٌ، و Sie dürfen nicht rauchen منعٌ. يساعدك الفعل الناقص على فهم المعنى، لكن السياق يظل مهماً. نراجع اليوم صيغاً سبق أن قابلت بعضها في دروس A1.",
     motivatingQuestionDe: "Was fehlt Ihnen?",
     contextAr:
-      "موضوعات لغوية مختارة في الجسم والأعراض، وصيغ sollen/sollten وdürfen/müssen، وبعض عبارات العيادة والوثائق، ثم أفعال انعكاسية شائعة. المواقف الصحية خيالية ومخصصة لتعلّم اللغة؛ ليست تشخيصاً أو نصيحة طبية ولا وصفاً كاملاً للرعاية الصحية أو لامتحان رسمي.",
+      "موضوعات لغوية مختارة في الجسم والأعراض، وصيغ sollen/sollten و dürfen/müssen، وبعض عبارات العيادة والوثائق، ثم أفعال انعكاسية شائعة. المواقف الصحية خيالية ومخصصة لتعلّم اللغة؛ ليست تشخيصاً أو نصيحة طبية ولا وصفاً كاملاً للرعاية الصحية أو لامتحان رسمي.",
     contextDe: "Ich habe Kopfschmerzen und Fieber.",
     connectionToPreviousAr:
       "تتذكر من A1: Ich habe Hunger (عندي جوع). اليوم نعمم: Ich habe Kopfschmerzen (عندي صداع) — نفس البنية مع haben + اسم.",

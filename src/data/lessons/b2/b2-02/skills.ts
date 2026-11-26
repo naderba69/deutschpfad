@@ -118,7 +118,7 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "أصوات الاقتصاد: tion، sch، وtz",
+    title: "أصوات الاقتصاد: tion، sch، و tz",
     items: [
       { de: "die Wirtschaft", ar: "الاقتصاد", note: "sch = ش: ڤيرت-شافَت" },
       { de: "der Umsatz", ar: "الإيراد/حجم المبيعات", note: "tz = تس: أوم-زاتس" },

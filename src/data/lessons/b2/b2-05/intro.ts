@@ -13,13 +13,13 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["q1", "q4"],
         taskIds: ["listening:l1:q1", "listening:l3:q4"],
-        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 وl3 في q4، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 و l3 في q4، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
       id: "z2",
       de: "Ich kann die fortgeschrittenen Konnektoren benutzen.",
-      ar: "أن أستخدم بعض الروابط المتقدمة في الجمل والتمارين، ومنها indem وanstatt...zu وohne...zu وes sei denn.",
+      ar: "أن أستخدم بعض الروابط المتقدمة في الجمل والتمارين، ومنها indem و anstatt...zu و ohne...zu و es sei denn.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["e1", "e2", "e4", "e7", "m1", "m3", "w1", "w2"],
@@ -33,18 +33,18 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "writing:b2-05:w1",
           "writing:b2-05:w2",
         ],
-        labelAr: "أختار الرابط الصحيح وأرتب الجملة وأكمل بـ anstatt/ohne (e1 وe2 وe4 وe7 وm1 وm3 وw1 وw2)، دون كشف الحل.",
+        labelAr: "أختار الرابط الصحيح وأرتب الجملة وأكمل بـ anstatt/ohne (e1 و e2 و e4 و e7 و m1 و m3 و w1 و w2)، دون كشف الحل.",
       },
     },
     {
       id: "z3",
       de: "Ich kann Bedingungen und Vorbehalte ausdrücken.",
-      ar: "أن أعبّر عن الشروط والتحفظات بـ es sei denn وje nachdem.",
+      ar: "أن أعبّر عن الشروط والتحفظات بـ es sei denn و je nachdem.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["e6", "m2", "q2", "q3"],
         taskIds: ["practice:b2-05:e6", "mini-test:b2-05:m2", "listening:l2:q2", "listening:l2:q3"],
-        labelAr: "أكمل جمل es sei denn (e6 وm2) وأفهم الشرط والاختيار بالاستماع إلى l2 (q2 وq3)، دون كشف الحل.",
+        labelAr: "أكمل جمل es sei denn (e6 و m2) وأفهم الشرط والاختيار بالاستماع إلى l2 (q2 و q3)، دون كشف الحل.",
       },
     },
     {
@@ -61,7 +61,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b2-05:m6",
           "mini-test:b2-05:m7",
         ],
-        labelAr: "أطابق بعض الجسيمات بوظائفها التقريبية وأختارها في الجمل المعروضة (e11 وe12 وe13 وm6 وm7)، دون كشف الحل؛ هذا لا يقيس استعمالاً تلقائياً أو نطقاً طبيعياً.",
+        labelAr: "أطابق بعض الجسيمات بوظائفها التقريبية وأختارها في الجمل المعروضة (e11 و e12 و e13 و m6 و m7)، دون كشف الحل؛ هذا لا يقيس استعمالاً تلقائياً أو نطقاً طبيعياً.",
       },
     },
     {
@@ -72,7 +72,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["e14", "e15"],
         taskIds: ["practice:b2-05:e14", "practice:b2-05:e15"],
-        labelAr: "أكمل جملة النتيجة بـ folglich/demnach وأرتب الفعل بعدهما (e14 وe15)، دون كشف الحل.",
+        labelAr: "أكمل جملة النتيجة بـ folglich/demnach وأرتب الفعل بعدهما (e14 و e15)، دون كشف الحل.",
       },
     },
     {
@@ -90,12 +90,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "في B1 تعلمت weil/obwohl. اليوم روابط B2 الدقيقة: indem (بأن/بواسطة)، anstatt...zu (بدلاً من أن)، ohne...zu (دون أن)، es sei denn (إلا إذا)، je nachdem (حسبما). لاحظ: anstatt...zu وohne...zu تبنيان بلا فاعل: «بدلاً من أن أنام، عملت» = Anstatt zu schlafen, arbeitete ich؛ ويُفهم الفاعل هنا من الجملة الرئيسية.",
+      "في B1 تعلمت weil/obwohl. اليوم روابط B2 الدقيقة: indem (بأن/بواسطة)، anstatt...zu (بدلاً من أن)، ohne...zu (دون أن)، es sei denn (إلا إذا)، je nachdem (حسبما). لاحظ: anstatt...zu و ohne...zu تبنيان بلا فاعل: «بدلاً من أن أنام، عملت» = Anstatt zu schlafen, arbeitete ich؛ ويُفهم الفاعل هنا من الجملة الرئيسية.",
     motivatingQuestionDe: "Wie kommunizieren wir besser?",
     contextAr:
       "علم النفس والتواصل: كيف نفهم بعضنا؟ نضيف الروابط المتقدمة — أدوات التعبير الدقيق عن النوايا والتحفظات.",
     contextDe: "Man kann Missverständnisse vermeiden, indem man aktiv zuhört.",
-    connectionToPreviousAr: "تتذكر الروابط المزدوجة (nicht nur...) من B1. اليوم تتدرّب على indem وanstatt/ohne + zu، حيث يُفهم فاعل المصدر غالباً من فاعل الجملة الرئيسية، وعلى تراكيب الشرط والتحفّظ.",
+    connectionToPreviousAr: "تتذكر الروابط المزدوجة (nicht nur...) من B1. اليوم تتدرّب على indem و anstatt/ohne + zu، حيث يُفهم فاعل المصدر غالباً من فاعل الجملة الرئيسية، وعلى تراكيب الشرط والتحفّظ.",
     activateVocabulary: [
       { de: "die Psychologie", ar: "علم النفس" },
       { de: "die Kommunikation", ar: "التواصل" },

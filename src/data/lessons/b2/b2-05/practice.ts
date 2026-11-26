@@ -170,7 +170,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "denn", options: ["denn", "mal", "ja", "doch"] },
         { correct: "ja", options: ["ja", "denn", "mal", "doch"] },
       ],
-      explanation: "في المثال الأول ترد Doch على النفي؛ وdenn تضيف موقفاً إلى السؤال؛ أما ja فتؤدي وظيفة حوارية تقريبية في المثال الأخير، لا جواب نعم.",
+      explanation: "في المثال الأول ترد Doch على النفي؛ و denn تضيف موقفاً إلى السؤال؛ أما ja فتؤدي وظيفة حوارية تقريبية في المثال الأخير، لا جواب نعم.",
       errorType: "grammar",
     },
     {
@@ -308,7 +308,7 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     eselsbruecken: [
       "«indem = بوسيلة، anstatt...zu = بدلاً من، ohne...zu = دون أن، es sei denn = إلا إذا».",
       "«فاعل واحد → zu + مصدر» — الاختصار الأنيق.",
-      "اربط كل جسيمة بمثال محدد؛ لا تختزل doch وja وmal وdenn وeigentlich وwohl إلى ترجمة واحدة ثابتة.",
+      "اربط كل جسيمة بمثال محدد؛ لا تختزل doch و ja و mal و denn و eigentlich و wohl إلى ترجمة واحدة ثابتة.",
     ],
     culturalNote: {
       title: "التواصل الألماني المباشر",

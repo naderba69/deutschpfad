@@ -131,7 +131,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
         "قبل الفعل اسأل نفسك: **ما الذي يكلف؟** مفرد → *kostet*، جمع → *kosten*. وللطلب تذكّر القالب: *Ich hätte gern + المنتج/الكمية + bitte*.",
       commonMistakes: [
         {wrong: "Was kostet die Äpfel?", right: "Was kosten die Äpfel?", classification: "error", whyAr: "الفاعل في السؤال هو die Äpfel بصيغة الجمع؛ لذلك يتفق معه الفعل kosten. استخدم kostet عند فاعل مفرد مثل das Brot."},
-        {wrong: "Ich hätte gerne zwei Äpfel.", right: "Ich hätte gern zwei Äpfel.", classification: "contextual-alternative", whyAr: "gern وgerne صيغتان مستعملتان؛ المثالان صحيحان، فلا نصحح gerne على أنه خطأ."},
+        {wrong: "Ich hätte gerne zwei Äpfel.", right: "Ich hätte gern zwei Äpfel.", classification: "contextual-alternative", whyAr: "gern و gerne صيغتان مستعملتان؛ المثالان صحيحان، فلا نصحح gerne على أنه خطأ."},
         {wrong: "Ich will ein Kilo Trauben. (immer unhöflich)", right: "Ich hätte gern ein Kilo Trauben. (häufig weichere Bitte)", classification: "contextual-alternative", whyAr: "Ich will صحيح نحوياً وقد يكون مباشراً بحسب السياق؛ Ich hätte gern غالباً ألطف في طلب متجر، لكن لا نحكم على الأولى بالفظاظة دائماً."},
         {wrong: "3.50 € (deutsche Preisnotation)", right: "3,50 € (deutsche Preisnotation)", classification: "error", whyAr: "يُستعمل الفاصل العشري في الكتابة الألمانية المعتادة؛ لكن اكتب الأسعار في بطاقة السعر بالأرقام، ولا تحوّل ذلك إلى قاعدة لكتابة كل عدد بالحروف."},
       ],

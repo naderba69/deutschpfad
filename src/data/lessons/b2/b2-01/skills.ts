@@ -120,7 +120,7 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "أصوات العلوم: tion، sch، وck",
+    title: "أصوات العلوم: tion، sch، و ck",
     items: [
       { de: "die Wissenschaft", ar: "العلم", note: "sch = ش: ڤيسن-شافَت" },
       { de: "die Forschung", ar: "البحث", note: "or: فورشونغ" },

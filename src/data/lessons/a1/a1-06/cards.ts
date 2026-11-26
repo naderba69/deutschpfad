@@ -115,7 +115,7 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     {"id": "fc17", "de": "nehmen – du nimmst – Nimm!", "ar": "يأخذ — تصريف غير منتظم", "example": "Nimmst du Zucker?", "exampleAr": "أتضع سكّراً؟", "level": "A1"},
     {"id": "fc18", "de": "Modalverb + Infinitiv (ohne zu)", "ar": "الناقص + مصدر عارٍ في الآخر", "example": "Ich kann sehr gut kochen.", "exampleAr": "أُحسن الطبخ جيّداً.", "level": "A1"},
     {"id": "fc19", "de": "ich möchte / er möchte", "ar": "أودّ — الطلب المهذّب", "example": "Ich möchte bitte einen Tee.", "exampleAr": "أودّ شاياً من فضلك.", "level": "A1"},
-    {"id": "fc20", "de": "Ich hatte Hunger / Zeit / Angst", "ar": "تراكيب شائعة مع haben؛ وIch war hungrig صحيح أيضاً", "example": "Ich hatte gestern keine Zeit.", "exampleAr": "لم يكن لديّ وقت أمس.", "level": "A1"},
+    {"id": "fc20", "de": "Ich hatte Hunger / Zeit / Angst", "ar": "تراكيب شائعة مع haben؛ و Ich war hungrig صحيح أيضاً", "example": "Ich hatte gestern keine Zeit.", "exampleAr": "لم يكن لديّ وقت أمس.", "level": "A1"},
     { id: "fc21", de: "schwimmen", ar: "يسبح", example: "Ich gehe zweimal pro Woche schwimmen.", exampleAr: "أذهب للسباحة مرّتين في الأسبوع.", level: "A1" },
     { id: "fc22", de: "kochen", ar: "يطبخ", example: "Am Wochenende koche ich gern.", exampleAr: "في العطلة أطبخ بسرور.", level: "A1" },
     { id: "fc23", de: "spielen", ar: "يلعب", example: "Ich spiele Volleyball.", exampleAr: "ألعب الكرة الطائرة.", level: "A1" },

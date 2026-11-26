@@ -121,10 +121,10 @@ export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
     title: "مقاطع وأصوات في مفردات الدرس",
     items: [
-      { de: "die Sprache", ar: "اللغة", note: "IPA: /ˈʃpʁaːxə/؛ sp في أول الكلمة /ʃp/، وch هنا /x/." },
+      { de: "die Sprache", ar: "اللغة", note: "IPA: /ˈʃpʁaːxə/؛ sp في أول الكلمة /ʃp/، و ch هنا /x/." },
       { de: "die Kultur", ar: "الثقافة", note: "IPA: /kʊlˈtuːɐ̯/ في النطق المعياري؛ يختلف تحقيق r باختلاف اللهجة." },
       { de: "interkulturell", ar: "بين الثقافات", note: "IPA: /ˌɪntɐkʊltuˈʁɛl/؛ موضع النبر في المقطع الأخير." },
-      { de: "der Austausch", ar: "التبادل", note: "IPA: /ˈaʊ̯staʊ̯ʃ/؛ يحتوي على au مرتين، وsch تُنطق /ʃ/." },
+      { de: "der Austausch", ar: "التبادل", note: "IPA: /ˈaʊ̯staʊ̯ʃ/؛ يحتوي على au مرتين، و sch تُنطق /ʃ/." },
       { de: "die Verständigung", ar: "التفاهم", note: "IPA: /fɛɐ̯ˈʃtɛndɪɡʊŋ/؛ v في بداية الكلمة /f/." },
       { de: "sich gewöhnen an", ar: "يعتاد على", note: "IPA: /zɪç ɡəˈvøːnən ʔan/؛ ö صوت /øː/ ولا يمثله حرف عربي مطابق." },
     ],

@@ -18,7 +18,7 @@ export const lessonA106: Lesson = {
   titleDe: "Freizeit und Hobbys",
   titleAr: "أوقات الفراغ والهوايات",
   summary:
-    "الهوايات والتعبير عن تفضيل نشاط بـ gern، وصيغ الأمر الأساسية du/ihr/Sie، وتغيّر الصائت في أفعال شائعة، واستخدام können وmöchte(n)، وتمهيد لفهم war وhatte في جمل عن الماضي.",
+    "الهوايات والتعبير عن تفضيل نشاط بـ gern، وصيغ الأمر الأساسية du/ihr/Sie، وتغيّر الصائت في أفعال شائعة، واستخدام können و möchte(n)، وتمهيد لفهم war و hatte في جمل عن الماضي.",
 
   lernziele,
   einfuehrung,

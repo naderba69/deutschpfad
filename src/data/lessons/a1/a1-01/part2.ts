@@ -23,7 +23,7 @@ export const readingA1B: ReadingText = {
   ],
   glossary: [
     { de: "der Kurs", ar: "الدورة", noteAr: "مذكّر: der Kurs، والجمع die Kurse." },
-    { de: "beginnen", ar: "يبدأ", noteAr: "في الحاضر: ich beginne · du beginnst · er beginnt؛ لكنه فعل قوي في أزمنة ماضية مثل begann وbegonnen." },
+    { de: "beginnen", ar: "يبدأ", noteAr: "في الحاضر: ich beginne · du beginnst · er beginnt؛ لكنه فعل قوي في أزمنة ماضية مثل begann و begonnen." },
     { de: "antworten", ar: "يجيب", noteAr: "فعل منتظم: ich antworte · du antwortest · er antwortet." },
     { de: "die Lehrerin", ar: "المعلّمة", noteAr: "مؤنّثة بلاحقة -in، والمذكّر der Lehrer." },
     { de: "fragen", ar: "يسأل", noteAr: "فعل منتظم، ومنه die Frage (السؤال)." },

@@ -120,13 +120,13 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "أصوات التقنية: ch، z، وw",
+    title: "أصوات التقنية: ch، z، و w",
     items: [
       { de: "die Technik", ar: "التقنية", note: "IPA: [ˈtɛçnɪk]؛ ch هنا الصوت [ç]، لا صوت الشين العربية." },
       { de: "der Computer", ar: "الحاسوب", note: "IPA تقريبي: [kɔmˈpjuːtɐ]؛ النبر على المقطع الثاني." },
       { de: "digital", ar: "رقمي", note: "IPA: [dɪɡiˈtaːl]؛ g صوت [ɡ] المجهور، وليس k." },
-      { de: "die Entwicklung", ar: "التطور", note: "IPA تقريبي: [ɛntˈvɪklʊŋ]؛ w يلفظ [v]، وng في النهاية [ŋ]." },
-      { de: "die Intelligenz", ar: "الذكاء", note: "IPA تقريبي: [ɪntɛliˈɡɛnts]؛ z يلفظ [ts]، وg يظل [ɡ]." },
+      { de: "die Entwicklung", ar: "التطور", note: "IPA تقريبي: [ɛntˈvɪklʊŋ]؛ w يلفظ [v]، و ng في النهاية [ŋ]." },
+      { de: "die Intelligenz", ar: "الذكاء", note: "IPA تقريبي: [ɪntɛliˈɡɛnts]؛ z يلفظ [ts]، و g يظل [ɡ]." },
       { de: "die Zukunft", ar: "المستقبل", note: "IPA: [ˈtsuːkʊnft]؛ z يلفظ [ts]، والمقطع الأول منبور وطويل." },
     ],
     tip: "هذه رموز IPA معيارية تقريبية للنطق الألماني، وليست تهجئة عربية. انتبه إلى [ç] في Technik و[ts] في Zukunft و[Intelligenz].",

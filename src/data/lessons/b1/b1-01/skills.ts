@@ -148,7 +148,7 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "أصوات B1: ch، وst",
+    title: "أصوات B1: ch، و st",
     items: [
       { de: "das Studium", ar: "الدراسة الجامعية", note: "St في بداية الكلمة = شت: شتوديوم" },
       { de: "der Lehrer", ar: "المعلم", note: "e الأولى طويلة (ليه)، و-er في النهاية خفيفة: ليهر" },

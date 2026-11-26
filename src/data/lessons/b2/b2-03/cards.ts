@@ -66,7 +66,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
         { correct: "wofür", options: ["wofür", "wo", "was"] },
         { correct: "wo", options: ["wofür", "wo", "was"] },
       ],
-      explanation: "في الجملة النسبية: das Thema, wofür ich mich interessiere؛ وwo يعود على مكان في der Ort, wo wir uns treffen. وقد تظهر الصيغ نفسها أيضاً في الأسئلة غير المباشرة، لكن الجملتين هنا نسبيتان.",
+      explanation: "في الجملة النسبية: das Thema, wofür ich mich interessiere؛ و wo يعود على مكان في der Ort, wo wir uns treffen. وقد تظهر الصيغ نفسها أيضاً في الأسئلة غير المباشرة، لكن الجملتين هنا نسبيتان.",
       errorType: "grammar",
     },
   ];

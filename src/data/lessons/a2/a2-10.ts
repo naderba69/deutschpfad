@@ -18,7 +18,7 @@ export const lessonA210: Lesson = {
   titleDe: "Lernen und Schule",
   titleAr: "المدرسة والتعلم",
   summary:
-    "تمييز معنى السبب بـweil، والشرط أو الزمن بـwenn، والسؤال غير المباشر بـob؛ واستعمال صيغ ملكية منتقاة في Nominativ وAkkusativ وDativ، مع قراءة واستماع عن التعلم. لا يغطي ذلك كل دلالات الروابط أو حالات الملكية.",
+    "تمييز معنى السبب بـweil، والشرط أو الزمن بـwenn، والسؤال غير المباشر بـob؛ واستعمال صيغ ملكية منتقاة في Nominativ و Akkusativ و Dativ، مع قراءة واستماع عن التعلم. لا يغطي ذلك كل دلالات الروابط أو حالات الملكية.",
   lernziele,
   einfuehrung,
   review,

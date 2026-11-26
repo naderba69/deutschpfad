@@ -35,7 +35,7 @@ export const MAX_PODCAST_CLIP_CHARS = 1500;
  * و«Mein Haustier» (11.7 ث).
  * الدفعة 69 (2026-10-17): عشرة مقاطع (186.4 ث) — A1 «Der Geburtstag» و«Meine Familie»،
  * وكل A2 المعلّق («Ein Sonntag in der Familie» · «Mit dem Zug reisen» · «Der Wochenmarkt» ·
- * «Ein Kinoabend» · «Die neue Wohnung»)، وB1 («umweltfreundlicher leben» · «Homeoffice» ·
+ * «Ein Kinoabend» · «Die neue Wohnung»)، و B1 («umweltfreundlicher leben» · «Homeoffice» ·
  * «Reisen oder zu Hause bleiben»). المجموع 12 مقطعاً / 213.5 ث / ALL_VALID.
  * الدفعة 76 (2026-10-17): المقاطع الثمانية الأخيرة (196.0 ث) — B1 «Gesund leben»
  * و«Sprachen lernen» وستّ حلقات B2 («Digitalisierung» · «Globalisierung» · «Künstliche
@@ -45,7 +45,7 @@ export const MAX_PODCAST_CLIP_CHARS = 1500;
  * الإنتاج كان على دفعات لأن سقف التوليد **10 مقاطع في الرد الواحدة**؛ الملفات الـ20
  * الآن مُعلنة ومغطاة، ولا توجد حلقة معلّقة.
  *
- * القاعدة الصوتية الأصلية: A1 وA2 بصوت `voice-02`، وB1 وB2 بصوت `voice-03`.
+ * القاعدة الصوتية الأصلية: A1 و A2 بصوت `voice-02`، و B1 و B2 بصوت `voice-03`.
  * أُعيد إنتاج `p-b1-homeoffice` بعد تحديث نصها و`p-b1-gesundheit` بعد تحديث النص الصحي
  * بأصوات سرد أخرى في 2026-10-25؛ وأُعيد إنتاج `p-b2-migration` من نصها الحالي بصوت `voice-26`
  * في 2026-10-26. هذه اختلافات صوتية معلنة لمتابعة تحديث النص، وليست تقييماً لجودة النطق.
@@ -62,14 +62,14 @@ export const PRODUCED_PODCAST_AUDIO: readonly string[] = [
   "p-a2-wochenmarkt",
   "p-a2-kinoabend",
   "p-a2-wohnung",
-  /* B1 — مُنتَج؛ الصحة أُعيد توليدها بعد تحديث النص، وhomeoffice أُعيد إنتاجه في 2026-10-25 */
+  /* B1 — مُنتَج؛ الصحة أُعيد توليدها بعد تحديث النص، و homeoffice أُعيد إنتاجه في 2026-10-25 */
   "p-b1-umwelt",
   "p-b1-homeoffice",
   "p-b1-reisen",
   "p-b1-lernen",
   "p-b1-gesundheit",
   "p-b1-erster-job",
-  /* B2 — voice-03 عدا p-b2-migration (voice-26، 2026-10-26) وp-b2-gesunde-ernaehrung (أُعيد توليده بصوت voice-29 في 2026-10-27 بعد تحديث النص). */
+  /* B2 — voice-03 عدا p-b2-migration (voice-26، 2026-10-26) و p-b2-gesunde-ernaehrung (أُعيد توليده بصوت voice-29 في 2026-10-27 بعد تحديث النص). */
   "p-b2-digitalisierung",
   "p-b2-globalisierung",
   "p-b2-kuenstliche-intelligenz",

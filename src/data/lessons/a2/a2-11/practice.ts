@@ -154,7 +154,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "aus", options: ["aus", "an", "auf", "mit"] },
         { correct: "mich", options: ["mich", "mir", "dich", "sich"] },
       ],
-      hint: "ausfüllen فعل منفصل (fülle ... aus). وsich anmelden تعني التسجيل/الالتحاق بحسب السياق؛ مع ich نستخدم mich.",
+      hint: "ausfüllen فعل منفصل (fülle ... aus). و sich anmelden تعني التسجيل/الالتحاق بحسب السياق؛ مع ich نستخدم mich.",
       explanation: "Ich fülle das Formular aus (فعل منفصل) / Ich möchte mich anmelden (أريد أن أسجّل/ألتحق).",
       errorType: "grammar",
       points: 2,

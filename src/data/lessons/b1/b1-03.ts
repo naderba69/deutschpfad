@@ -18,7 +18,7 @@ export const lessonB103: Lesson = {
   order: 1,
   titleDe: "Umwelt und Klima",
   titleAr: "البيئة والمناخ",
-  summary: "مفردات البيئة، ومجهول الحدث (Vorgangspassiv: werden + Partizip II) في الحاضر والماضي البسيط، وman بفاعل عام بوصفه تعبيراً بديلاً، وzu + مصدر في أمثلة قصيرة.",
+  summary: "مفردات البيئة، ومجهول الحدث (Vorgangspassiv: werden + Partizip II) في الحاضر والماضي البسيط، و man بفاعل عام بوصفه تعبيراً بديلاً، و zu + مصدر في أمثلة قصيرة.",
   lernziele,
   einfuehrung,
   review,

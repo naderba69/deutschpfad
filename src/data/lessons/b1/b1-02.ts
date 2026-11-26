@@ -18,7 +18,7 @@ export const lessonB102: Lesson = {
   order: 1,
   titleDe: "Arbeitswelt",
   titleAr: "عالم العمل",
-  summary: "صيغ Präteritum لأفعال منتقاة منتظمة وشاذة، وPlusquamperfekt لبيان حدث سابق لمرجع ماضٍ، ضمن أمثلة عن الخبرة والعمل.",
+  summary: "صيغ Präteritum لأفعال منتقاة منتظمة وشاذة، و Plusquamperfekt لبيان حدث سابق لمرجع ماضٍ، ضمن أمثلة عن الخبرة والعمل.",
   lernziele,
   einfuehrung,
   review,

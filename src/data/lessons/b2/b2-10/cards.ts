@@ -79,7 +79,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       options: ["beginne", "beginnt", "begänne", "begann"],
       correctIndex: 0,
       explanation:
-        "وفق الصياغة المستهدفة في هذا التمرين نختار Konjunktiv I: beginnen ← es beginne. قد تختلف الصياغة في الاستعمال بحسب السياق، لكن هذا الشكل علامة شائعة على النقل؛ أما begänne فـKonjunktiv II وbegann ماضٍ.",
+        "وفق الصياغة المستهدفة في هذا التمرين نختار Konjunktiv I: beginnen ← es beginne. قد تختلف الصياغة في الاستعمال بحسب السياق، لكن هذا الشكل علامة شائعة على النقل؛ أما begänne فـKonjunktiv II و begann ماضٍ.",
       errorType: "grammar",
       optionExplanations: [
         undefined,
@@ -96,7 +96,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       options: ["lassen", "können", "werden", "sind"],
       correctIndex: 0,
       explanation:
-        "lassen + sich + مصدر = بديل المجهول بمعنى «يمكن أن يُقرأ». وkönnen وحده لا يكوّن هذا البديل، وwerden يقتضي Partizip II (werden nachgelesen)، وsein يقتضي zu + مصدر.",
+        "lassen + sich + مصدر = بديل المجهول بمعنى «يمكن أن يُقرأ». و können وحده لا يكوّن هذا البديل، و werden يقتضي Partizip II (werden nachgelesen)، و sein يقتضي zu + مصدر.",
       errorType: "grammar",
       optionExplanations: [
         undefined,
@@ -117,7 +117,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
         { correct: "Bei", options: ["Bei", "Wenn", "Als"], errorType: "preposition" },
       ],
       explanation:
-        "wegen يتبعه اسم، وغالباً Genitiv في السجل الرسمي؛ وwarten auf + Akkusativ تركيب ثابت في هذا المعنى. أما bei + Dativ فإعادة صياغة ممكنة عندما يكون المقصود «عند الوصول»، لا مقابلاً آلياً لكل استعمال لـwenn.",
+        "wegen يتبعه اسم، وغالباً Genitiv في السجل الرسمي؛ و warten auf + Akkusativ تركيب ثابت في هذا المعنى. أما bei + Dativ فإعادة صياغة ممكنة عندما يكون المقصود «عند الوصول»، لا مقابلاً آلياً لكل استعمال لـwenn.",
       errorType: "preposition",
     },
   ];

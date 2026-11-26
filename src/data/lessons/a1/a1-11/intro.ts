@@ -23,7 +23,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       "id": "z2",
       "de": "Ich kann eine einfache Frage nach dem Weg in den geübten Formen formulieren.",
-      "ar": "أكوّن صيغة سؤال مكتوبة عن مكان أو طريق في نمطي Wo ist …? وWie komme ich …?؛ هذا لا يثبت أنني نطقتها شفهياً.",
+      "ar": "أكوّن صيغة سؤال مكتوبة عن مكان أو طريق في نمطي Wo ist …? و Wie komme ich …?؛ هذا لا يثبت أنني نطقتها شفهياً.",
       "evidence": {
         "exerciseIds": [
           "e7",
@@ -33,7 +33,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "practice:a1-11:e7",
           "practice:a1-11:e22"
         ],
-        "labelAr": "أجب عن e7 وe22 كليهما؛ يقيس ذلك تكوين الصيغة وترتيب كلماتها في هاتين المهمتين، لا أداءً شفهياً.",
+        "labelAr": "أجب عن e7 و e22 كليهما؛ يقيس ذلك تكوين الصيغة وترتيب كلماتها في هاتين المهمتين، لا أداءً شفهياً.",
         "completion": "all-correct"
       }
     },
@@ -59,7 +59,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       "id": "z4",
       "de": "Ich kann in den geübten Sätzen die passende Orts- oder Zielangabe auswählen.",
-      "ar": "أختار بين تعبيرات الموقع والوجهة في الأمثلة المحددة، مع تمييز in der Stadt / in die Stadt وnach Hause / zu Hause.",
+      "ar": "أختار بين تعبيرات الموقع والوجهة في الأمثلة المحددة، مع تمييز in der Stadt / in die Stadt و nach Hause / zu Hause.",
       "evidence": {
         "exerciseIds": [
           "e1",
@@ -89,14 +89,14 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "writing:a1-11:w1",
           "writing:a1-11:w2"
         ],
-        "labelAr": "أجب عن مهام الوجهة والموقع e1 وe2 وe5 وe9 وe19 وe20 وe23 وm1 وm4 وm5 وw1 وw2 كلها؛ بعض الصيغ البديلة تتوقف على المعنى والسياق.",
+        "labelAr": "أجب عن مهام الوجهة والموقع e1 و e2 و e5 و e9 و e19 و e20 و e23 و m1 و m4 و m5 و w1 و w2 كلها؛ بعض الصيغ البديلة تتوقف على المعنى والسياق.",
         "completion": "all-correct"
       }
     },
     {
       "id": "z5",
       "de": "Ich kann für Verkehrsmittel die geübten Formen mit + Dativ und passende Bewegungsverben in klaren Kontexten verwenden.",
-      "ar": "أضبط صيغ mit + Dativ وzu Fuß في التمارين، وأميّز الفعل الأنسب عندما تسمّي الجملة وسيلة النقل صراحةً.",
+      "ar": "أضبط صيغ mit + Dativ و zu Fuß في التمارين، وأميّز الفعل الأنسب عندما تسمّي الجملة وسيلة النقل صراحةً.",
       "evidence": {
         "exerciseIds": [
           "e11",
@@ -118,7 +118,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "practice:a1-11:e25",
           "practice:a1-11:e27"
         ],
-        "labelAr": "أنجز تدريبات mit وzu Fuß والوسيلة والفعل في e11–e15 وe21 وe25 وe27 كلها؛ e27 يتحقق من عدم تصحيح Ich gehe nach Berlin خارج سياق يحدد الوسيلة.",
+        "labelAr": "أنجز تدريبات mit و zu Fuß والوسيلة والفعل في e11–e15 و e21 و e25 و e27 كلها؛ e27 يتحقق من عدم تصحيح Ich gehe nach Berlin خارج سياق يحدد الوسيلة.",
         "completion": "all-correct"
       }
     },
@@ -141,7 +141,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "practice:a1-11:e24",
           "practice:a1-11:e26"
         ],
-        "labelAr": "أجب عن اختيار الضمير وتصحيحه واستبدال الاسم في e16–e18 وe24 وe26 كلها؛ لا تستنتج جنس الاسم الألماني من مقابله العربي.",
+        "labelAr": "أجب عن اختيار الضمير وتصحيحه واستبدال الاسم في e16–e18 و e24 و e26 كلها؛ لا تستنتج جنس الاسم الألماني من مقابله العربي.",
         "completion": "all-correct"
       }
     },
@@ -217,13 +217,13 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
     motivatingQuestionAr:
-      "أين محطة القطار، وكيف أسأل عن طريق الوصول إليها؟ قارن Wo ist der Bahnhof? وWie komme ich zum Bahnhof? ثم لاحظ in في in der Stadt / in die Stadt: ما العلاقة المكانية التي تغيّرت؟ هل يكفي وجود حركة لاختيار Akkusativ؟",
+      "أين محطة القطار، وكيف أسأل عن طريق الوصول إليها؟ قارن Wo ist der Bahnhof? و Wie komme ich zum Bahnhof? ثم لاحظ in في in der Stadt / in die Stadt: ما العلاقة المكانية التي تغيّرت؟ هل يكفي وجود حركة لاختيار Akkusativ؟",
     motivatingQuestionDe: "Entschuldigung, wo ist der Bahnhof?",
     contextAr:
       "في مدينة جديدة، تسمية الأماكن وطلب إعادة الاتجاه وفهم وسيلة النقل تساعدك على متابعة الحديث. سنقارن تعبيرات الوجهة والموقع بحسب العلاقة المقصودة؛ لا نستخدم قاعدة آلية تقول إن كل حركة تأخذ Akkusativ.",
     contextDe: "Gehen Sie geradeaus und dann links!",
     connectionToPreviousAr:
-      "سبق أن تدربنا على وصف أماكن وصيغ حالات في تراكيب مختلفة. هنا نعيد النظر إلى المكان ونقارن Wo? بـWohin? مع in في أمثلة محددة، مع تذكّر أن حروفاً مثل zu وmit تحكم الحالة بطريقة أخرى؛ وليس هذا أول تعرض لـDativ.",
+      "سبق أن تدربنا على وصف أماكن وصيغ حالات في تراكيب مختلفة. هنا نعيد النظر إلى المكان ونقارن Wo? بـWohin? مع in في أمثلة محددة، مع تذكّر أن حروفاً مثل zu و mit تحكم الحالة بطريقة أخرى؛ وليس هذا أول تعرض لـDativ.",
     activateVocabulary: [
       { de: "die Stadt", ar: "المدينة" },
       { de: "der Bahnhof", ar: "محطة القطار" },
@@ -238,7 +238,7 @@ export const review: NonNullable<Lesson["review"]> = [
     {
       id: "r1",
       type: "multiple-choice",
-      instructionAr: "مراجعة منتقاة من A1 (درس a1-10 — النفي بـ nicht وkein): اختر الكلمة الصحيحة.",
+      instructionAr: "مراجعة منتقاة من A1 (درس a1-10 — النفي بـ nicht و kein): اختر الكلمة الصحيحة.",
       questionDe: "Ich habe ___ Auto.",
       questionAr: "ليست لدي سيارة.",
       options: ["kein", "nicht", "keine", "keinen"],

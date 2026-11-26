@@ -229,7 +229,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
       },
     ],
     discussionAr:
-      "تدريب كتابة حرّ اختياري غير مسجّل كدليل على هدف كتابة: صف طقس بلدك في الفصول الأربعة، واذكر الفصل المفضّل لديك ولماذا. يمكنك ربط جملك بـund وaber وdenn واستعمال werden للتعبير عن التحوّل.",
+      "تدريب كتابة حرّ اختياري غير مسجّل كدليل على هدف كتابة: صف طقس بلدك في الفصول الأربعة، واذكر الفصل المفضّل لديك ولماذا. يمكنك ربط جملك بـund و aber و denn واستعمال werden للتعبير عن التحوّل.",
   };
 
 
@@ -392,7 +392,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
 
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "p1",
-    title: "أصوات الطقس: w وsch وg",
+    title: "أصوات الطقس: w و sch و g",
     items: [
       {
         de: "das Wetter",
@@ -412,7 +412,7 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       {
         de: "der Schnee",
         ar: "الثلج",
-        note: "sch يقابل /ʃ/ وee طويلة في هذا المثال؛ دوّن الصوت ولا تعتمد على نقل عربي حرفي.",
+        note: "sch يقابل /ʃ/ و ee طويلة في هذا المثال؛ دوّن الصوت ولا تعتمد على نقل عربي حرفي.",
       },
       {
         de: "kalt / warm",
@@ -422,7 +422,7 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       {
         de: "der Wind",
         ar: "الريح",
-        note: "w يبدأ بـ/v/؛ وi قصيرة، وd النهائية تُسمع عادةً /t/ في النطق القياسي.",
+        note: "w يبدأ بـ/v/؛ و i قصيرة، و d النهائية تُسمع عادةً /t/ في النطق القياسي.",
       },
     ],
     tip:

@@ -13,7 +13,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["w1", "e4", "e7", "q4"],
         taskIds: ["writing:b2-10:w1", "practice:b2-10:e4", "practice:b2-10:e7", "listening:l3:q4"],
-        labelAr: "أكتب جملة أكاديمية بعبارة ثابتة وأرتب جملة (w1 وe4 وe7)، وأفهم عبارة es ist erwiesen في الاستماع (q4)، دون كشف الحل. لا يقيس هذا كتابة بحث جامعي كامل.",
+        labelAr: "أكتب جملة أكاديمية بعبارة ثابتة وأرتب جملة (w1 و e4 و e7)، وأفهم عبارة es ist erwiesen في الاستماع (q4)، دون كشف الحل. لا يقيس هذا كتابة بحث جامعي كامل.",
       },
     },
     {
@@ -32,7 +32,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b2-10:m2",
           "writing:b2-10:w2",
         ],
-        labelAr: "أختار عبارة التأكيد والتلطيف والتحفظ وأكمل الفراغات بها (e1 وe2 وe6 وe8 وm1 وm2 وw2)، دون كشف الحل.",
+        labelAr: "أختار عبارة التأكيد والتلطيف والتحفظ وأكمل الفراغات بها (e1 و e2 و e6 و e8 و m1 و m2 و w2)، دون كشف الحل.",
       },
     },
     {
@@ -50,7 +50,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b2-10:m7",
           "mini-test:b2-10:m8",
         ],
-        labelAr: "أصحح خطأ الحالة وأرتب جملة مشتقة ومجهولة وأختار الرابط وأكمل الاختبار الختامي (e15-nominal وe16-b2 وe17-b2 وm6 إلى m8)، دون كشف الحل. لا يقيس هذا كل قواعد B2.",
+        labelAr: "أصحح خطأ الحالة وأرتب جملة مشتقة ومجهولة وأختار الرابط وأكمل الاختبار الختامي (e15-nominal و e16-b2 و e17-b2 و m6 إلى m8)، دون كشف الحل. لا يقيس هذا كل قواعد B2.",
       },
     },
     {
@@ -92,7 +92,7 @@ export const review: NonNullable<Lesson["review"]> = [
       options: ["werde", "wird", "würde", "wurde"],
       correctIndex: 0,
       explanation:
-        "في هذا السؤال يُستهدف Konjunktiv I في نقل الكلام: werden ← er/sie werde. قد ترد صيغ أخرى في الاستعمال تبعاً للسياق والسجل؛ أما würde فـKonjunktiv II وwurde ماضٍ للمجهول.",
+        "في هذا السؤال يُستهدف Konjunktiv I في نقل الكلام: werden ← er/sie werde. قد ترد صيغ أخرى في الاستعمال تبعاً للسياق والسجل؛ أما würde فـKonjunktiv II و wurde ماضٍ للمجهول.",
       errorType: "grammar",
       optionExplanations: [
         undefined,
@@ -130,7 +130,7 @@ export const review: NonNullable<Lesson["review"]> = [
         { correct: "für", options: ["für", "auf", "an"], errorType: "preposition" },
       ],
       explanation:
-        "ثلاث وحدات في بندٍ واحد: lassen + sich + مصدر بديلاً عن المجهول (b2-03)، وFutur II = werde + Partizip II + haben لأن bestehen فعل متعدٍّ (b2-07)، وsich interessieren يلزمه für + منصوب (b2-08).",
+        "ثلاث وحدات في بندٍ واحد: lassen + sich + مصدر بديلاً عن المجهول (b2-03)، و Futur II = werde + Partizip II + haben لأن bestehen فعل متعدٍّ (b2-07)، و sich interessieren يلزمه für + منصوب (b2-08).",
       errorType: "grammar",
     },
   ];

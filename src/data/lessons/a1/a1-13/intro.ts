@@ -55,7 +55,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e8", "e16"],
         taskIds: ["practice:a1-13:e8", "practice:a1-13:e16"],
-        labelAr: "إكمال جمل قصيرة بـkann وmöchte وmuss وwill وdarf وفق الإشارات الواضحة في كل جملة.",
+        labelAr: "إكمال جمل قصيرة بـkann و möchte و muss و will و darf وفق الإشارات الواضحة في كل جملة.",
         completion: "all-correct",
       },
     },

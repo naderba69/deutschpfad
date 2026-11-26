@@ -13,7 +13,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["q1", "q2", "q3", "q4"],
         taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"],
-        labelAr: "أجيب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن q1 و q2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -31,7 +31,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b2-02:m1",
           "mini-test:b2-02:m4",
         ],
-        labelAr: "أجيب صحيحاً عن تمارين الحالة والتصحيح (e1 وe5 وw1 وw2 وm1 وm4)، دون كشف الحل.",
+        labelAr: "أجيب صحيحاً عن تمارين الحالة والتصحيح (e1 و e5 و w1 و w2 و m1 و m4)، دون كشف الحل.",
       },
     },
     {
@@ -52,7 +52,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b2-02:m3",
           "mini-test:b2-02:m5",
         ],
-        labelAr: "أجيب صحيحاً عن تمارين الإمكانية والبدائل والترتيب (e2 وe6 وe7 وe9 وw3 وw4 وm2 وm3 وm5)، دون كشف الحل.",
+        labelAr: "أجيب صحيحاً عن تمارين الإمكانية والبدائل والترتيب (e2 و e6 و e7 و e9 و w3 و w4 و m2 و m3 و m5)، دون كشف الحل.",
       },
     },
     {

@@ -51,7 +51,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["w5"],
         taskIds: ["writing:a1-05:w5"],
-        labelAr: "أكمل am قبل Morgen وNachmittag وAbend في w5.",
+        labelAr: "أكمل am قبل Morgen و Nachmittag و Abend في w5.",
         completion: "all-correct",
       },
     },
@@ -62,7 +62,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["r1", "r2"],
         taskIds: ["reading:read-a1-05:r1", "reading:read-a1-05:r2"],
-        labelAr: "أجب إجابة صحيحة عن r1 وr2 بعد قراءة النص الألماني.",
+        labelAr: "أجب إجابة صحيحة عن r1 و r2 بعد قراءة النص الألماني.",
         completion: "all-correct",
       },
     },
@@ -88,7 +88,7 @@ export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
       "نقرأ يوم طارق في هامبورغ ونستمع إلى سامي، ثم نتدرّب على الأفعال المنفصلة وذكر الأوقات في جمل يومية قصيرة.",
     contextDe: "Mein Tag beginnt um sieben Uhr.",
     connectionToPreviousAr:
-      "تعلمت أسماء الغرف ووصف المكان بـ in وauf مع Dativ. الآن ننتقل من وصف مكان الأشياء إلى وصف روتينك اليومي، ونتعلم الأفعال المنفصلة والتعبير عن الوقت.",
+      "تعلمت أسماء الغرف ووصف المكان بـ in و auf مع Dativ. الآن ننتقل من وصف مكان الأشياء إلى وصف روتينك اليومي، ونتعلم الأفعال المنفصلة والتعبير عن الوقت.",
     activateVocabulary: [
       { de: "aufstehen", ar: "ينهض من الفراش" },
       { de: "der Morgen", ar: "الصباح" },

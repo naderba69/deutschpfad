@@ -415,17 +415,17 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       {
         de: "das Konto",
         ar: "الحساب المصرفي",
-        note: "DWDS يورد [ˈkɔnto]: النبر على المقطع الأول، وo الأولى قصيرة مفتوحة [ɔ]. استمع إلى المثال ولا تحوّل النطق إلى كتابة عربية حرفية.",
+        note: "DWDS يورد [ˈkɔnto]: النبر على المقطع الأول، و o الأولى قصيرة مفتوحة [ɔ]. استمع إلى المثال ولا تحوّل النطق إلى كتابة عربية حرفية.",
       },
       {
         de: "das Geld",
         ar: "المال",
-        note: "Duden يورد [ɡɛlt]: g صوت وقفي [g] وليس غ، وe قصيرة [ɛ]، أما d في آخر الكلمة فيُنطق [t] في هذا المثال.",
+        note: "Duden يورد [ɡɛlt]: g صوت وقفي [g] وليس غ، و e قصيرة [ɛ]، أما d في آخر الكلمة فيُنطق [t] في هذا المثال.",
       },
       {
         de: "überweisen",
         ar: "يحوّل مالاً",
-        note: "قسّمها حسب Duden: über|wei|sen، والنبر على wei. في ü دوّر الشفتين مع إبقاء اللسان قريباً من [i]؛ وei هو [aɪ̯]، وw الألمانية قريب من [v].",
+        note: "قسّمها حسب Duden: über|wei|sen، والنبر على wei. في ü دوّر الشفتين مع إبقاء اللسان قريباً من [i]؛ و ei هو [aɪ̯]، و w الألمانية قريب من [v].",
       },
       {
         de: "der Geldautomat",
@@ -435,7 +435,7 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       {
         de: "die Kreditkarte",
         ar: "بطاقة الائتمان",
-        note: "Duden يورد [kreˈdiːtkartə]: الحرف d المكتوب في Kredit يوافق [t] في هذا الموضع، وie تمثل [iː]. استمع إلى الكلمة كاملة.",
+        note: "Duden يورد [kreˈdiːtkartə]: الحرف d المكتوب في Kredit يوافق [t] في هذا الموضع، و ie تمثل [iː]. استمع إلى الكلمة كاملة.",
       },
       {
         de: "abheben",
@@ -449,7 +449,7 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       {
         de: "Ich möchte ein Konto eröffnen.",
         ar: "أريد فتح حساب.",
-        tip: "استمع إلى الفرق بين o في Konto وö في eröffnen، ثم كرر الجملة كاملة.",
+        tip: "استمع إلى الفرق بين o في Konto و ö في eröffnen، ثم كرر الجملة كاملة.",
       },
       {
         de: "Es gibt einen Geldautomaten.",
@@ -482,7 +482,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
       caseSensitive: true,
       sampleAnswer: "Es gibt eine Bank in der Nähe.",
       explanation:
-        "es gibt يأخذ Akkusativ؛ وBank مؤنث، لذلك نقول eine Bank. ويجوز تقديم in der Nähe مع بقاء الفعل في المرتبة الثانية: In der Nähe gibt es eine Bank.",
+        "es gibt يأخذ Akkusativ؛ و Bank مؤنث، لذلك نقول eine Bank. ويجوز تقديم in der Nähe مع بقاء الفعل في المرتبة الثانية: In der Nähe gibt es eine Bank.",
       errorType: "grammar",
     },
     {
@@ -497,7 +497,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
         { correct: "ihm", options: ["ihm", "ihn", "ihr"] },
       ],
       explanation:
-        "sehen يأتي هنا مع dich؛ helfen مع mir؛ وgehören مع ihm. الفعل هو الذي يحدد صيغة المتمم الألماني في هذه الأمثلة.",
+        "sehen يأتي هنا مع dich؛ helfen مع mir؛ و gehören مع ihm. الفعل هو الذي يحدد صيغة المتمم الألماني في هذه الأمثلة.",
       errorType: "pronoun",
     },
     {

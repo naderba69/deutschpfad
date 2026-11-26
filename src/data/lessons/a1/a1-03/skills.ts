@@ -354,14 +354,14 @@ export const listening: NonNullable<Lesson["listening"]> = {
 
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "p1",
-    title: "أصوات الطعام: ei، ch، وpf",
+    title: "أصوات الطعام: ei، ch، و pf",
     items: [
-      { de: "der Apfel", ar: "التفاحة", note: "[ˈapfəl]: الصوت pf يُنطق p وf معاً دون حركة فاصلة بينهما، والنبر على المقطع الأول." },
+      { de: "der Apfel", ar: "التفاحة", note: "[ˈapfəl]: الصوت pf يُنطق p و f معاً دون حركة فاصلة بينهما، والنبر على المقطع الأول." },
       { de: "das Brot", ar: "الخبز", note: "[bʁoːt]: الحركة o طويلة [oː]." },
       { de: "die Milch", ar: "الحليب", note: "[mɪlç]: ch هنا صوت ich-Laut [ç] بعد i؛ لا يطابق الشين أو الخاء العربية تماماً." },
-      { de: "der Kaffee", ar: "القهوة", note: "من النطق الشائع [kaˈfeː]: النبر على المقطع الثاني وe طويلة؛ توجد فروق إقليمية في النطق." },
+      { de: "der Kaffee", ar: "القهوة", note: "من النطق الشائع [kaˈfeː]: النبر على المقطع الثاني و e طويلة؛ توجد فروق إقليمية في النطق." },
       { de: "der Käse", ar: "الجبن", note: "تُسمع نطقتان إقليميتان: [ˈkɛːzə] و[ˈkeːzə]؛ النبر على المقطع الأول." },
-      { de: "die Eier", ar: "البيض", note: "[ˈaɪ̯ɐ]: ei صوت مركّب [aɪ̯]، وer في النهاية غير منبور." },
+      { de: "die Eier", ar: "البيض", note: "[ˈaɪ̯ɐ]: ei صوت مركّب [aɪ̯]، و er في النهاية غير منبور." },
     ],
     tip: "الرموز بين [ ] تمثّل النطق (IPA)؛ ˈ قبل المقطع المنبور وː للحركة الطويلة. في Eier تُنطق ei قريباً من [aɪ̯]، وفي Euro تُنطق eu [ɔʏ̯]؛ الصوتان مختلفان.",
     shadowing: [
@@ -393,7 +393,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
         { correct: "einen", options: ["ein", "einen", "eine"] },
         { correct: "Die", options: ["Die", "Der", "Das"] },
       ],
-      explanation: "بعد ist يأتي الاسم الخبري Apfel في الرفع: ein Apfel. وبعد esse يكون مفعولاً به: einen Apfel. وMilch مؤنثة؛ وكُتبت Die بحرف كبير لأنها في بداية الجملة.",
+      explanation: "بعد ist يأتي الاسم الخبري Apfel في الرفع: ein Apfel. وبعد esse يكون مفعولاً به: einen Apfel. و Milch مؤنثة؛ وكُتبت Die بحرف كبير لأنها في بداية الجملة.",
       errorType: "case",
     },
     {

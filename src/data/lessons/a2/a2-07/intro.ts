@@ -22,14 +22,14 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "writing:a2-07:w1",
         ],
         labelAr:
-          "أجب إجابة صحيحة عن e1 وe2 وe7 وe13 وe14 وm1 وm3، ثم أنجز w1؛ تختبر المهام الإثبات والنفي والسؤال وأداة الاسم وصيغة الماضي المحددة، لا مجرد فتحها.",
+          "أجب إجابة صحيحة عن e1 و e2 و e7 و e13 و e14 و m1 و m3، ثم أنجز w1؛ تختبر المهام الإثبات والنفي والسؤال وأداة الاسم وصيغة الماضي المحددة، لا مجرد فتحها.",
         completion: "all-correct",
       },
     },
     {
       id: "z2",
       de: "Ich kann häufige Personalpronomen mit passenden Verben verwenden.",
-      ar: "أختار صيغة الضمير الألماني المناسبة في تراكيب مثل sehen وhelfen وgehören.",
+      ar: "أختار صيغة الضمير الألماني المناسبة في تراكيب مثل sehen و helfen و gehören.",
       evidence: {
         exerciseIds: ["e3", "e5", "e6", "e9", "m2", "m4", "m5", "w2", "w3"],
         taskIds: [
@@ -44,14 +44,14 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "writing:a2-07:w3",
         ],
         labelAr:
-          "أنجز مهام المطابقة والتصحيح والاختيار والإملاء e3 وe5 وe6 وe9 وm2 وm4 وm5 وw2 وw3 إجابةً صحيحة؛ لا تُعد الترجمة وحدها دليلاً على إتقان صيغ الحالات.",
+          "أنجز مهام المطابقة والتصحيح والاختيار والإملاء e3 و e5 و e6 و e9 و m2 و m4 و m5 و w2 و w3 إجابةً صحيحة؛ لا تُعد الترجمة وحدها دليلاً على إتقان صيغ الحالات.",
         completion: "all-correct",
       },
     },
     {
       id: "z-bank",
       de: "Ich kann zentrale Ausdrücke für Barzahlung, Überweisung und Bargeldabhebung verstehen und einfache Formen verwenden.",
-      ar: "أميّز معنى bar zahlen وüberweisen، وأختار صيغة abheben المناسبة وأكتب جملة قصيرة فيها تحويل.",
+      ar: "أميّز معنى bar zahlen و überweisen، وأختار صيغة abheben المناسبة وأكتب جملة قصيرة فيها تحويل.",
       evidence: {
         exerciseIds: ["e8", "e10", "e11", "e12"],
         taskIds: [
@@ -61,7 +61,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "practice:a2-07:e12",
         ],
         labelAr:
-          "أجب عن e8 وe11، واكتب جملة التحويل في e10، واختر تصريف abheben في e12؛ تُحتسب الإجابات المنفذة فقط.",
+          "أجب عن e8 و e11، واكتب جملة التحويل في e10، واختر تصريف abheben في e12؛ تُحتسب الإجابات المنفذة فقط.",
         completion: "all-correct",
       },
     },
@@ -131,7 +131,7 @@ export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
       "نستخدم قصة وحوارين تعليميين متخيّلين للتدرّب على كلمات الحساب والبطاقة والسحب والتحويل. أسماء العروض والأسعار فيها أمثلة مختلقة وليست معلومات عن شروط بنك حقيقي.",
     contextDe: "Ich möchte ein Konto eröffnen und die Informationen verstehen.",
     connectionToPreviousAr:
-      "هذه ليست أول مرة ترى فيها Dativ: ظهرت تراكيب مثل gefallen وpassen في A1-04 وA1-08، وhelfen في A1-06. نراجع الآن صيغ الضمائر ضمن أمثلة كاملة، ونميّز حالة الاسم الألمانية من الترجمة العربية؛ فلا نساوي Dativ مباشرةً بالجر العربي.",
+      "هذه ليست أول مرة ترى فيها Dativ: ظهرت تراكيب مثل gefallen و passen في A1-04 و A1-08، و helfen في A1-06. نراجع الآن صيغ الضمائر ضمن أمثلة كاملة، ونميّز حالة الاسم الألمانية من الترجمة العربية؛ فلا نساوي Dativ مباشرةً بالجر العربي.",
     activateVocabulary: [
       { de: "das Konto", ar: "الحساب المصرفي" },
       { de: "die Bankkarte", ar: "البطاقة المصرفية" },
@@ -150,7 +150,7 @@ export const review: NonNullable<Lesson["review"]> = [
       options: ["einen", "ein", "eine", "der"],
       correctIndex: 0,
       explanation:
-        "Kaffee مذكر هنا، وkaufen يأخذ مفعولاً في Akkusativ: einen Kaffee. لا تصلح ein أو eine لمطابقة الجنس، وder صيغة Nominativ.",
+        "Kaffee مذكر هنا، و kaufen يأخذ مفعولاً في Akkusativ: einen Kaffee. لا تصلح ein أو eine لمطابقة الجنس، و der صيغة Nominativ.",
       errorType: "case",
       optionExplanations: [
         undefined,

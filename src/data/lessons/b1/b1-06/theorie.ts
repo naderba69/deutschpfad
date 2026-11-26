@@ -31,9 +31,9 @@ export const theory: NonNullable<Lesson["theory"]> = [
       { de: "Ich habe eine interessante Ausstellung gesehen.", ar: "شاهدت معرضاً فنياً مثيراً للاهتمام." },
     ],
     comparisonWithArabic:
-      "في العربية الفصحى تتغير الصفة وتطابق الموصوف في وجوه منها الجنس والعدد والتعريف والإعراب: «الرجلُ الطويلُ» و«الرجلَ الطويلَ». لذلك لا يصح القول إن الصفة العربية ثابتة أو إن المطابقة تظهر في الأداة وحدها. لكن أشكال المطابقة في العربية ليست هي نهايات الصفات الألمانية؛ فلا تنقل نهايةً من لغة إلى الأخرى حرفياً. قارن أمثلة كاملة: «رجل طويل» وein großer Mann؛ فالصيغة الألمانية تعتمد على الأداة والحالة والجنس والعدد.",
+      "في العربية الفصحى تتغير الصفة وتطابق الموصوف في وجوه منها الجنس والعدد والتعريف والإعراب: «الرجلُ الطويلُ» و«الرجلَ الطويلَ». لذلك لا يصح القول إن الصفة العربية ثابتة أو إن المطابقة تظهر في الأداة وحدها. لكن أشكال المطابقة في العربية ليست هي نهايات الصفات الألمانية؛ فلا تنقل نهايةً من لغة إلى الأخرى حرفياً. قارن أمثلة كاملة: «رجل طويل» و ein großer Mann؛ فالصيغة الألمانية تعتمد على الأداة والحالة والجنس والعدد.",
     eselsbruecke:
-      "بعد أداة معرّفة مصرفة: نهايات ضعيفة مثل der gute Mann. مع ein: قارن ein guter Mann / einem guten Mann. بلا أداة: guter Wein / mit gutem Wein. وبعد أدوات الكمية راجع المثال المحدد؛ فـ alle guten Leute وviele gute Leute يختلفان.",
+      "بعد أداة معرّفة مصرفة: نهايات ضعيفة مثل der gute Mann. مع ein: قارن ein guter Mann / einem guten Mann. بلا أداة: guter Wein / mit gutem Wein. وبعد أدوات الكمية راجع المثال المحدد؛ فـ alle guten Leute و viele gute Leute يختلفان.",
     commonMistakes: [
       {
         wrong: "ein gute Mann",
@@ -62,7 +62,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
     titleAr: "تصريف الصفة بعد أدوات مختلفة",
     titleDe: "Adjektivdeklination nach verschiedenen Artikeln",
     explanationAr:
-      "بعد الأداة المعرّفة المصرفة تأتي الصفة غالباً بالنمط الضعيف: -e في بعض مواضع المفرد، و-en في مواضع أخرى، مثل der gute Mann، die gute Frau، das gute Kind، die guten Leute. وتتغير صيغ ein وأدوات الملكية بحسب الجنس والحالة؛ وفي الرفع لا تحمل ein نهاية ظاهرة مع المذكر والمحايد، فنقول ein guter Mann وein gutes Kind، بينما نقول einem guten Mann وeiner guten Frau في Dativ. أما الكلمات الكمية فليست على نهاية واحدة: بعد alle تأتي الصفة غالباً بـ -en (alle guten Männer)، بينما بعد viele وmanche وeinige قد تأتي نهاية قوية مثل -e في الجمع (viele junge Leute، manche interessante Bücher، einige gute Orchester). احفظ المثال مع الكلمة والحالة، ولا تعمم -en على جميعها.\n\nفي التطبيق لا تبدأ بحفظ جدول النهايات كله دفعة واحدة؛ خذ زوجاً من الجمل يختلف في الأداة مع بقاء الاسم والحالة: die jungen Leute مقابل junge Leute. في الأولى تظهر علامة الجمع في die، فتأخذ الصفة النهاية الضعيفة -en؛ وفي الثانية لا توجد أداة، فتظهر علامة الجمع على الصفة -e. ثم بدّل الحالة: mit den jungen Leuten، مع ملاحظة أن Dativ الجمع يضيف -n إلى الاسم إن لم يكن منتهياً به. هذه المقارنة تساعد على رؤية ما يتغير فعلاً في كل تركيب.",
+      "بعد الأداة المعرّفة المصرفة تأتي الصفة غالباً بالنمط الضعيف: -e في بعض مواضع المفرد، و-en في مواضع أخرى، مثل der gute Mann، die gute Frau، das gute Kind، die guten Leute. وتتغير صيغ ein وأدوات الملكية بحسب الجنس والحالة؛ وفي الرفع لا تحمل ein نهاية ظاهرة مع المذكر والمحايد، فنقول ein guter Mann و ein gutes Kind، بينما نقول einem guten Mann و einer guten Frau في Dativ. أما الكلمات الكمية فليست على نهاية واحدة: بعد alle تأتي الصفة غالباً بـ -en (alle guten Männer)، بينما بعد viele و manche و einige قد تأتي نهاية قوية مثل -e في الجمع (viele junge Leute، manche interessante Bücher، einige gute Orchester). احفظ المثال مع الكلمة والحالة، ولا تعمم -en على جميعها.\n\nفي التطبيق لا تبدأ بحفظ جدول النهايات كله دفعة واحدة؛ خذ زوجاً من الجمل يختلف في الأداة مع بقاء الاسم والحالة: die jungen Leute مقابل junge Leute. في الأولى تظهر علامة الجمع في die، فتأخذ الصفة النهاية الضعيفة -en؛ وفي الثانية لا توجد أداة، فتظهر علامة الجمع على الصفة -e. ثم بدّل الحالة: mit den jungen Leuten، مع ملاحظة أن Dativ الجمع يضيف -n إلى الاسم إن لم يكن منتهياً به. هذه المقارنة تساعد على رؤية ما يتغير فعلاً في كل تركيب.",
     whyAr:
       "الأداة تساعد في اختيار نهاية الصفة، لكن لا تختزل النظام في فكرة «علامة واحدة ظاهرة». قارن die guten Leute (صفة ضعيفة بعد أداة مصرفة) بـ gute Leute (تصريف قوي بلا أداة)، ثم قارن alle guten Leute بـ viele gute Leute. هذه أمثلة تعليمية على أنماط مختلفة، لا قاعدة واحدة تنطبق على كل أداة كمية. التدريب المتكرر على أمثلة متنوعة يساعد على ترسيخ الاختيار، لكنه لا يضمن أن تصبح النهاية تلقائية لدى كل متعلم.",
     table: {
@@ -89,7 +89,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
     comparisonWithArabic:
       "في العربية الفصحى تطابق الصفة موصوفها في وجوه منها التعريف والجنس والعدد والإعراب، مثل «المعلمُ الجديدُ» و«المعلمَ الجديدَ». وتظهر المطابقة في الصفة أيضاً، لا في الأداة وحدها. أما الألمانية فلها نهاياتها الخاصة المرتبطة بالأداة والجنس والعدد والحالة؛ لذلك تفيد مقارنة أمثلة كاملة، لا افتراض أن إحدى اللغتين تخلو من تصريف الصفة.",
     eselsbruecke:
-      "بعد أداة معرّفة مصرفة: der gute Mann. مع ein: ein guter Mann / einem guten Mann. بلا أداة: guter Wein / mit gutem Wein. وتذكّر الفرق بين alle guten Leute وviele gute Leute.",
+      "بعد أداة معرّفة مصرفة: der gute Mann. مع ein: ein guter Mann / einem guten Mann. بلا أداة: guter Wein / mit gutem Wein. وتذكّر الفرق بين alle guten Leute و viele gute Leute.",
     commonMistakes: [
       {
         wrong: "ein gute Mann",

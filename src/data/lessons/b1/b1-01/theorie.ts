@@ -62,7 +62,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
 
 والمعيار العملي لاختيار الحالة سؤالٌ واحد: ما دور الاسم داخل الجملة النسبية؟ إن كان فاعلاً فNominativ (Der Mann, der dort steht)، وإن كان مفعولاً به فAkkusativ (Das Buch, das ich lese)، وإن كان مفعولاً غير مباشر أو جاء بعد حرف جرّ فDativ (Der Student, dem ich helfe · Die Universität, in der ich studiere). ووجود حرف الجرّ قبل الضمير لا يغيّر شيئاً: يأتي الحرف أولاً ثمّ الضمير في حالته.
 
-وموضع هذه القاعدة من مسارك: الجملة النسبية جملةٌ ثانوية، فهي تخضع للقانون نفسه الذي عرفته في weil وdass وobwohl — الفعل المصرَّف في النهاية — والفرق أنّ فيها ضميراً يعود على اسمٍ قبلها.`,
+وموضع هذه القاعدة من مسارك: الجملة النسبية جملةٌ ثانوية، فهي تخضع للقانون نفسه الذي عرفته في weil و dass و obwohl — الفعل المصرَّف في النهاية — والفرق أنّ فيها ضميراً يعود على اسمٍ قبلها.`,
       whyAr:
         "لماذا يتغيّر الضمير؟ لأنّه يعود على الاسم بالجنس والعدد، أمّا حالته فيحدّدها دوره داخل الجملة النسبية. بهذه القاعدة تربط فكرتين في جملة واحدة: «Das ist mein Bruder. Er wohnt in Bonn» تصبح «Das ist mein Bruder, der in Bonn wohnt». المعنى الأساسي واحد، لكن الصيغة الثانية تستخدم جملة نسبية أكثر تركيباً.",
       table: {
@@ -90,7 +90,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       commonMistakes: [
         { wrong: "Der Mann, den dort steht, ist mein Lehrer.", right: "Der Mann, der dort steht, ist mein Lehrer.", whyAr: "الفعل steht يحتاج فاعلاً؛ لذلك يكون الضمير النسبي في Nominativ: der، لا den في Akkusativ." },
         { wrong: "Das Buch, dem ich lese, ist spannend.", right: "Das Buch, das ich lese, ist spannend.", whyAr: "الفعل lesen يأخذ مفعولاً به في Akkusativ؛ لذلك نستخدم das، لا dem في Dativ." },
-        { wrong: "الفعل في منتصف الجملة النسبية", right: "الفعل في النهاية: Der Mann, der dort steht", whyAr: "الجملة النسبية جملة ثانوية مثلها مثل weil وdass، فتنتقل الصيغة المصرَّفة إلى نهايتها: Der Mann, der dort steht — لا der dort steht في المنتصف كما في الجملة الرئيسية." },
+        { wrong: "الفعل في منتصف الجملة النسبية", right: "الفعل في النهاية: Der Mann, der dort steht", whyAr: "الجملة النسبية جملة ثانوية مثلها مثل weil و dass، فتنتقل الصيغة المصرَّفة إلى نهايتها: Der Mann, der dort steht — لا der dort steht في المنتصف كما في الجملة الرئيسية." },
       ],
       relatedRuleComparison: {
         title: "Relativsatz أم dass؟",

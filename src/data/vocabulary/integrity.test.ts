@@ -80,7 +80,7 @@ describe("مراجعة ترجمات مصطلحات القواعد في المف�
     );
   });
 
-  it("يحافظ على التمييز الصرفي والدلالي بين Liebe وlieben", () => {
+  it("يحافظ على التمييز الصرفي والدلالي بين Liebe و lieben", () => {
     expect(findEntry("A1", "die Liebe")?.ar).toBe("الحب");
     expect(findEntry("A1", "lieben")?.ar).toBe("يحب");
     expect(findEntry("A1", "lieben")?.ex).toBe("Ich liebe meine Familie.");
@@ -196,7 +196,7 @@ describe("دفعة مفردات B1 — صيغ التصريف والتراكيب 
     expect(find("der Kontakt")?.ar).toBe("تواصل/صلة");
     expect(find("den Termin vereinbaren")?.ar).toBe("يتفق على موعد");
     expect(find("die Realschule")?.ar).toContain("الشهادة المتوسطة");
-    expect(find("die Gesamtschule")?.ar).toContain("Hauptschule وRealschule وGymnasium");
+    expect(find("die Gesamtschule")?.ar).toContain("Hauptschule و Realschule و Gymnasium");
     expect(find("die Hausarbeit")?.ar).toBe("عمل كتابي يُنجزه الطالب في المنزل (واجب/بحث دراسي)");
     expect(find("der Professor")?.ar).toContain("لقب أكاديمي");
     expect(find("der Studienplatz")?.ar).toBe("مقعد جامعي");

@@ -19,7 +19,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z2",
       de: "Ich kann Adjektive nach der, ein und ohne Artikel richtig deklinieren.",
-      ar: "أن أصرف الصفة النعتية بعد der وein وبلا أداة في الرفع والنصب والجر.",
+      ar: "أن أصرف الصفة النعتية بعد der و ein وبلا أداة في الرفع والنصب والجر.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["e1", "e6", "e9", "m2", "m4", "m6", "w2"],
@@ -32,7 +32,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b1-06:m6",
           "writing:b1-06:w2",
         ],
-        labelAr: "أجيب صحيحاً عن تمارين نهايات الصفة بعد der وein وبلا أداة (e1 وe6 وe9 وm2 وm4 وm6 وw2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن تمارين نهايات الصفة بعد der و ein وبلا أداة (e1 و e6 و e9 و m2 و m4 و m6 و w2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
       },
     },
     {
@@ -43,7 +43,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["q2", "q3", "w4"],
         taskIds: ["listening:l2:q2", "listening:l2:q3", "writing:b1-06:w4"],
-        labelAr: "أجيب صحيحاً عن q2 وq3 بعد الاستماع إلى حوار التجارب الشخصية l2، وأكمل w4 بالنهاية الصحيحة. كشف النص لا يُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن q2 و q3 بعد الاستماع إلى حوار التجارب الشخصية l2، وأكمل w4 بالنهاية الصحيحة. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -61,7 +61,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "practice:b1-06:e12",
           "practice:b1-06:e13",
         ],
-        labelAr: "أجيب صحيحاً عن q4 وq5 وq6 بعد الاستماع إلى l3، وأرتب وأكمل e11 وe12 وe13 بالفعل والكلمات الصحيحة. كشف النص لا يُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن q4 و q5 و q6 بعد الاستماع إلى l3، وأرتب وأكمل e11 و e12 و e13 بالفعل والكلمات الصحيحة. كشف النص لا يُحتسب أداءً.",
       },
     },
   ];
@@ -111,7 +111,7 @@ export const review: NonNullable<Lesson["review"]> = [
       errorType: "gender",
       optionExplanations: [
         undefined,
-        "«Der» أداة المذكر، وMuseum محايد، لذلك لا تصح.",
+        "«Der» أداة المذكر، و Museum محايد، لذلك لا تصح.",
         "«Die» أداة المؤنث أو الجمع، ولا تناسب Museum المحايد.",
         "«Ein» أداة غير معرّفة، والسياق يتحدث عن متحف معروف.",
       ],

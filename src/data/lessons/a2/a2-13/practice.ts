@@ -70,7 +70,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "war", options: ["war", "warst", "waren", "wart"] },
         { correct: "hatte", options: ["hatte", "hattest", "hatten", "hattet"] },
       ],
-      hint: "مع ich: war وhatte بلا نهاية.",
+      hint: "مع ich: war و hatte بلا نهاية.",
       explanation: "Letzten Winter war ich in Wien. Ich hatte dort viele Freunde.",
       errorType: "conjugation",
     },
@@ -183,15 +183,15 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
       { wrong: "Ich habe nach Hause gegangen.", right: "Ich bin nach Hause gegangen.", whyAr: "حركة أو تغيّر مكان أو حال ⇒ sein: gehen, fahren, fliegen, kommen, bleiben, werden." },
       { wrong: "Ich denke, dass er ist nett.", right: "Ich denke, dass er nett ist.", whyAr: "كل جملة ثانوية (dass, weil, wenn, ob, obwohl) تضع الفعل المصرَّف في آخرها." },
       { wrong: "Das gefällt mich.", right: "Das gefällt mir.", whyAr: "gefallen من أفعال الجر: يُعجب لِمن؟ ⇒ mir لا mich." },
-      { wrong: "Ich bin älter wie mein Bruder.", right: "Ich bin älter als mein Bruder.", whyAr: "المقارنة بالتفاوت تستعمل als؛ وwie للتساوي فقط: so alt wie." },
+      { wrong: "Ich bin älter wie mein Bruder.", right: "Ich bin älter als mein Bruder.", whyAr: "المقارنة بالتفاوت تستعمل als؛ و wie للتساوي فقط: so alt wie." },
     ],
     eselsbruecken: [
       "جملة الختام الجامعة: «Gestern war ich krank, deshalb bin ich zu Hause geblieben, obwohl ich meinem Chef helfen wollte.» — خمسة مفاتيح: Präteritum، ربط، Perfekt، obwohl، Dativ.",
-      "أفعال sein في الماضي التام: كل ما يُرسم بسهم على الخريطة (gehen, fahren, fliegen, kommen) + الاستثناءان bleiben وwerden.",
+      "أفعال sein في الماضي التام: كل ما يُرسم بسهم على الخريطة (gehen, fahren, fliegen, kommen) + الاستثناءان bleiben و werden.",
       "قبل امتحان A2: راجع الجدول الأول في هذا الدرس صفاً صفاً، وحوّل كل مثال إلى جملة عن حياتك أنت — التخصيص يثبّت أكثر من التكرار.",
     ],
     culturalNote: {
-      title: "شهادات اللغة والإقامة: A1 وA2 وB1",
+      title: "شهادات اللغة والإقامة: A1 و A2 و B1",
       content:
         "في بعض مسارات لمّ شمل الزوج أو الزوجة وفق § 30 AufenthG يُطلب إثبات معرفة بسيطة بالألمانية، ويعرّف § 2(9) هذه المعرفة بمستوى A1؛ لكن القانون يذكر استثناءات بحسب الحالة ونوع إقامة الطرف المقيم. وتشترط § 9(2) في المسار العام للإقامة الدائمة معرفة كافية، ويعرّف § 2(11) هذا الوصف بمستوى B1، مع استثناءات ومسارات خاصة. أما § 10 StAG فيحدد B1 للتجنيس مع أحكام استثناء. هذه خلاصة تعليمية غير شاملة ولا تحدد أهلية شخص بعينه؛ راجع النص الرسمي والجهة المختصة قبل أي قرار.",
     },

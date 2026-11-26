@@ -306,20 +306,20 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "نطق كلمات مختارة: sch، w، ie، ä، r وeu",
+    title: "نطق كلمات مختارة: sch، w، ie، ä، r و eu",
     items: [
-      { de: "sich beschweren", ar: "يشتكي/يقدّم شكوى", note: "IPA للفعل: [bəˈʃveːʁən]؛ sch يقابل [ʃ] وw يقابل [v]. يختلف تحقيق r إقليمياً." },
+      { de: "sich beschweren", ar: "يشتكي/يقدّم شكوى", note: "IPA للفعل: [bəˈʃveːʁən]؛ sch يقابل [ʃ] و w يقابل [v]. يختلف تحقيق r إقليمياً." },
       { de: "der Friseur", ar: "مصفّف الشعر/الحلّاق", note: "IPA: [fʁiˈzøːɐ̯]. في هذه الكلمة يقارب eu الصوت الطويل [øː]، ويتبعه r في ختام الكلمة؛ لا يُنطق هنا مثل eu الشائع [ɔʏ̯]." },
       { de: "reparieren", ar: "يصلح", note: "IPA: [ʁepaˈʁiːʁən]؛ ie في هذا المقطع تمثل الصوت الطويل [iː]." },
       { de: "sich ärgern", ar: "ينزعج/يغضب بحسب السياق", note: "IPA للكلمة: [ˈɛʁɡɐn]؛ ä قصيرة هنا [ɛ]، ويتغير تحقيق r إقليمياً." },
-      { de: "sich anmelden", ar: "يسجّل/يلتحق بحسب السياق", note: "IPA واسعة: [ˈʔanmɛldn̩]؛ النبر الأساسي على an وe في melden [ɛ]. وتُكتب النهاية أيضاً [ən] في نمط نقل آخر." },
-      { de: "die Beschwerde", ar: "شكوى/تظلّم بحسب السياق", note: "IPA: [bəˈʃveːɐ̯də]؛ sch يقابل [ʃ] وw يقابل [v]، ويتغير تحقيق r إقليمياً." },
+      { de: "sich anmelden", ar: "يسجّل/يلتحق بحسب السياق", note: "IPA واسعة: [ˈʔanmɛldn̩]؛ النبر الأساسي على an و e في melden [ɛ]. وتُكتب النهاية أيضاً [ən] في نمط نقل آخر." },
+      { de: "die Beschwerde", ar: "شكوى/تظلّم بحسب السياق", note: "IPA: [bəˈʃveːɐ̯də]؛ sch يقابل [ʃ] و w يقابل [v]، ويتغير تحقيق r إقليمياً." },
     ],
     tip: "تساعد رموز IPA هنا على ملاحظة الفروق؛ هي تمثيل صوتي تقريبي وليست تهجئة عربية حرفية. في Beschwerde انتبه إلى [ʃ] ثم [v]. زر الاستماع يولّد الصوت آلياً في المتصفح؛ وقد تختلف الأصوات باختلاف الجهاز، فلا تعدّه تسجيلاً معيارياً.",
     shadowing: [
-      { de: "Ich freue mich auf den Urlaub.", ar: "أتطلع إلى العطلة.", tip: "freue: eu صوت واحد تقريباً [ɔʏ̯]؛ وr يتغير نطقه باختلاف اللهجات." },
+      { de: "Ich freue mich auf den Urlaub.", ar: "أتطلع إلى العطلة.", tip: "freue: eu صوت واحد تقريباً [ɔʏ̯]؛ و r يتغير نطقه باختلاف اللهجات." },
       { de: "Beeil dich bitte!", ar: "أسرع من فضلك!", tip: "beeil- تقريباً [bəˈʔaɪ̯l]؛ المقطع be- غير مشدد، ثم يأتي صوت [aɪ̯]." },
-      { de: "Ich möchte mich beschweren.", ar: "أود أن أشتكي.", tip: "في beschweren: sch ≈ [ʃ]، وw = [v]، مع صوت طويل [eː]." },
+      { de: "Ich möchte mich beschweren.", ar: "أود أن أشتكي.", tip: "في beschweren: sch ≈ [ʃ]، و w = [v]، مع صوت طويل [eː]." },
       { de: "Wir müssen uns anmelden.", ar: "علينا أن نسجل.", tip: "في anmelden يقع النبر الأساسي على an؛ e في melden هنا [ɛ]." },
     ],
   };
@@ -366,7 +366,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
       id: "w4",
       type: "transformation",
       instructionAr: "اكتب الصيغة المحددة لشكوى مهذبة:",
-      prompt: "اكتب بالألمانية: «عذراً، أود أن أقدّم شكوى». استخدم Entschuldigung وIch möchte mich beschweren.",
+      prompt: "اكتب بالألمانية: «عذراً، أود أن أقدّم شكوى». استخدم Entschuldigung و Ich möchte mich beschweren.",
       acceptedAnswers: ["Entschuldigung, ich möchte mich beschweren."],
       sampleAnswer: "Entschuldigung, ich möchte mich beschweren.",
       explanation: "هذه صيغة مكتوبة مهذبة ممكنة في هذا التدريب؛ ليست افتتاحاً وحيداً أو إلزامياً لكل شكوى.",

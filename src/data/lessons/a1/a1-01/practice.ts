@@ -79,7 +79,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { left: "Gute Nacht", right: "تصبح على خير" },
         { left: "Auf Wiedersehen", right: "إلى اللقاء" },
       ],
-      explanation: "Guten Morgen وGuten Abend للتحية عند اللقاء، وGute Nacht وAuf Wiedersehen من عبارات الوداع؛ تُقال Gute Nacht عادةً عند نهاية اليوم أو قبل النوم.",
+      explanation: "Guten Morgen و Guten Abend للتحية عند اللقاء، و Gute Nacht و Auf Wiedersehen من عبارات الوداع؛ تُقال Gute Nacht عادةً عند نهاية اليوم أو قبل النوم.",
       errorType: "vocabulary",
     },
     {
@@ -139,7 +139,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       errorType: "conjugation",
       points: 2,
     },
-    {"id": "e12", "type": "multiple-choice", "instructionAr": "اختر الأداة الصحيحة للسؤال:", "questionDe": "___ wohnst du? — In Tunis.", "questionAr": "أين تسكن؟ — في تونس.", "options": ["Wo", "Woher", "Wohin", "Wann"], "correctIndex": 0, "explanation": "الجواب «in Tunis» يدلّ على مكانٍ ثابت، فالأداة Wo. أمّا Woher فتسأل عن الأصل (aus …) وWohin عن الوجهة (nach …).", "optionExplanations": [undefined, "Woher تنتظر جواباً بـ aus: aus Tunesien.", "Wohin تنتظر جواباً بـ nach: nach Berlin.", "Wann تسأل عن الزمن لا المكان."], "errorType": "vocabulary"},
+    {"id": "e12", "type": "multiple-choice", "instructionAr": "اختر الأداة الصحيحة للسؤال:", "questionDe": "___ wohnst du? — In Tunis.", "questionAr": "أين تسكن؟ — في تونس.", "options": ["Wo", "Woher", "Wohin", "Wann"], "correctIndex": 0, "explanation": "الجواب «in Tunis» يدلّ على مكانٍ ثابت، فالأداة Wo. أمّا Woher فتسأل عن الأصل (aus …) و Wohin عن الوجهة (nach …).", "optionExplanations": [undefined, "Woher تنتظر جواباً بـ aus: aus Tunesien.", "Wohin تنتظر جواباً بـ nach: nach Berlin.", "Wann تسأل عن الزمن لا المكان."], "errorType": "vocabulary"},
     {"id": "e13", "type": "fill-blank", "instructionAr": "صرّف الفعل بين قوسين تصريفاً صحيحاً:", "template": "Du ___ sehr schnell. (arbeiten)", "blanks": [{"correct": "arbeitest", "options": ["arbeitest", "arbeitst", "arbeiten", "arbeitet"]}], "explanation": "جذع arbeit- ينتهي بحرف t، فتُدخَل وصلة ‑e‑ قبل نهاية du: arbeit + e + st = arbeitest. ولولا الوصلة لتعذّر نطق tst.", "errorType": "conjugation"},
     {"id": "e14", "type": "word-ordering", "instructionAr": "رتّب الكلمات لتكوّن سؤالاً صحيحاً:", "tokens": ["Warum", "lernst", "du", "Deutsch", "?"], "correctSentence": "Warum lernst du Deutsch?", "explanation": "أداة الاستفهام أوّلاً، ثمّ الفعل المصرَّف في المركز الثاني، ثمّ الفاعل، ثمّ المفعول. هذا هو ترتيب سؤال W الثابت.", "errorType": "word-order"},
     {"id": "e15", "type": "error-correction", "instructionAr": "ابحث عن الكلمة الخاطئة وصحّحها:", "wrongSentence": "Meine Lehrerin heißen Frau Weber.", "wrongWord": "heißen", "correctWord": "heißt", "options": ["heißt", "heiße", "heißest", "bin"], "explanation": "الفاعل «meine Lehrerin» مفردٌ غائب، فيأخذ الفعل النهاية ‑t. والجذع heiß- ينتهي بـ ß لكنّ ذلك لا يمسّ صيغة الغائب: heißt.", "errorType": "conjugation"},
@@ -168,7 +168,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionAr: "في الصباح نقول:",
       options: ["Guten Morgen", "Gute Nacht", "Guten Abend", "Auf Wiedersehen"],
       correctIndex: 0,
-      explanation: "Guten Morgen للصباح. Gute Nacht تُقال عند النوم، وGuten Abend للمساء.",
+      explanation: "Guten Morgen للصباح. Gute Nacht تُقال عند النوم، و Guten Abend للمساء.",
       errorType: "vocabulary",
       optionExplanations: [
         undefined,
@@ -206,7 +206,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { left: "Im Gespräch mit einem Freund (غير رسمي)", right: "Wie heißt du?" },
         { left: "Bei einem formellen Termin (رسمي)", right: "Wie heißen Sie?" },
       ],
-      explanation: "du للمخاطبة غير الرسمية، وSie للمخاطبة الرسمية؛ ويتغير تصريف heißen معها. تختلف الأعراف، لكن المثالين يوضحان السياقين المقصودين.",
+      explanation: "du للمخاطبة غير الرسمية، و Sie للمخاطبة الرسمية؛ ويتغير تصريف heißen معها. تختلف الأعراف، لكن المثالين يوضحان السياقين المقصودين.",
       errorType: "vocabulary",
     },
     {
@@ -266,7 +266,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "___ arbeitet Milan? — In einem Café.",
       options: ["Wo", "Woher", "Wohin", "Wie"],
       correctIndex: 0,
-      explanation: "الجواب In einem Café يدلّ على مكان العمل، فالأداة Wo. أمّا Woher فتنتظر جواباً بـaus، وWohin بـnach، وWie فتسأل عن الحال.",
+      explanation: "الجواب In einem Café يدلّ على مكان العمل، فالأداة Wo. أمّا Woher فتنتظر جواباً بـaus، و Wohin بـnach، و Wie فتسأل عن الحال.",
       optionExplanations: [undefined, "Woher تنتظر جواباً بـaus: aus Polen.", "Wohin تنتظر جواباً بـnach: nach Berlin.", "Wie تسأل عن الحال: Wie geht es dir?"],
       errorType: "vocabulary",
     },
@@ -280,7 +280,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "komme", options: ["komme", "kommst", "kommt", "kommen"] },
         { correct: "arbeitet", options: ["arbeite", "arbeitest", "arbeitet", "arbeiten"] },
       ],
-      explanation: "du → kommst، وich → komme، وer/sie/es → arbeitet مع وصلة ‑e‑ لأنّ جذع arbeit ينتهي بحرف t.",
+      explanation: "du → kommst، و ich → komme، و er/sie/es → arbeitet مع وصلة ‑e‑ لأنّ جذع arbeit ينتهي بحرف t.",
       errorType: "conjugation",
     },
     {
@@ -330,6 +330,6 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     culturalNote: {
       title: "du أم Sie؟",
       content:
-        "في الألمانية تُستعمل du عادةً في العلاقات غير الرسمية، وSie في كثير من المواقف الرسمية أو المهنية. تختلف الأعراف بحسب السياق والمنطقة ومكان العمل؛ عند الشك في لقاء رسمي جديد يكون Sie خياراً حذراً. مثال: Wie heißen Sie?",
+        "في الألمانية تُستعمل du عادةً في العلاقات غير الرسمية، و Sie في كثير من المواقف الرسمية أو المهنية. تختلف الأعراف بحسب السياق والمنطقة ومكان العمل؛ عند الشك في لقاء رسمي جديد يكون Sie خياراً حذراً. مثال: Wie heißen Sie?",
     },
   };

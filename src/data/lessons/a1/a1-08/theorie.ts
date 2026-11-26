@@ -10,7 +10,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       titleAr: "الملابس والألوان + الصفات الخبرية",
       titleDe: "Kleidung, Farben und prädikative Adjektive",
       explanationAr:
-        "احفظ اسم قطعة الملابس مع أداته:\n• مذكّر: **der** Pullover · **der** Mantel · **der** Rock · **der** Schuh\n• مؤنّث: **die** Hose · **die** Jacke · **die** Mütze · **die** Bluse · **die** Socke\n• محايد: **das** Hemd · **das** Kleid · **das** T-Shirt\nجنس الاسم خاصية معجمية؛ لا توجد حيلة واحدة مضمونة تستنتجه من شكل القطعة.\n\n**انتبه إلى المفرد والجمع:** المفرد **der Schuh** وجمعه **die Schuhe**؛ والمفرد **die Socke** وجمعها **die Socken**. أمّا **die Jeans** فتُستعمل للمفرد وللجمع بالصورة نفسها، ويبيّن السياق العدد. وللإشارة إلى زوج من الأحذية نقول **ein Paar Schuhe**.\n\n**ألوان في صيغتها الوصفية:** rot · blau · grün · gelb · schwarz · weiß · braun · grau · orange · rosa · lila. تُكتب الصفة بحرف صغير حين تصف اسماً: **Die Jacke ist rot.** وإذا استُعمل اسم اللون اسماً مستقلاً كُتب بحرف كبير: **Rot ist meine Lieblingsfarbe.**\n\n**الصفة الخبرية بعد sein:** في **Das Hemd ist rot** و**Die Schuhe sind rot** تبقى الصفة في صورتها الأساسية؛ الذي يتغير هنا هو فعل sein مع الفاعل: **ist/sind**. لا تأخذ الصفة في هذا الموقع نهايةً لمطابقة الاسم.\n\nنركّز في هذا الدرس على جمل وصفية من نوع **Das Kleid ist rosa/orange/lila**. لا نعمّم منها قاعدة على الصفة قبل الاسم؛ فالصفة النعتية تتأثر بالحالة والجنس والعدد ونوع الأداة، وهذا نطاق مؤجل إلى كتلة لاحقة. وألوان مثل rosa وlila وorange لها استعمالات كتابية مختلفة قبل الاسم؛ لذلك لا نقرر لها قاعدة استثنائية عامة هنا.",
+        "احفظ اسم قطعة الملابس مع أداته:\n• مذكّر: **der** Pullover · **der** Mantel · **der** Rock · **der** Schuh\n• مؤنّث: **die** Hose · **die** Jacke · **die** Mütze · **die** Bluse · **die** Socke\n• محايد: **das** Hemd · **das** Kleid · **das** T-Shirt\nجنس الاسم خاصية معجمية؛ لا توجد حيلة واحدة مضمونة تستنتجه من شكل القطعة.\n\n**انتبه إلى المفرد والجمع:** المفرد **der Schuh** وجمعه **die Schuhe**؛ والمفرد **die Socke** وجمعها **die Socken**. أمّا **die Jeans** فتُستعمل للمفرد وللجمع بالصورة نفسها، ويبيّن السياق العدد. وللإشارة إلى زوج من الأحذية نقول **ein Paar Schuhe**.\n\n**ألوان في صيغتها الوصفية:** rot · blau · grün · gelb · schwarz · weiß · braun · grau · orange · rosa · lila. تُكتب الصفة بحرف صغير حين تصف اسماً: **Die Jacke ist rot.** وإذا استُعمل اسم اللون اسماً مستقلاً كُتب بحرف كبير: **Rot ist meine Lieblingsfarbe.**\n\n**الصفة الخبرية بعد sein:** في **Das Hemd ist rot** و**Die Schuhe sind rot** تبقى الصفة في صورتها الأساسية؛ الذي يتغير هنا هو فعل sein مع الفاعل: **ist/sind**. لا تأخذ الصفة في هذا الموقع نهايةً لمطابقة الاسم.\n\nنركّز في هذا الدرس على جمل وصفية من نوع **Das Kleid ist rosa/orange/lila**. لا نعمّم منها قاعدة على الصفة قبل الاسم؛ فالصفة النعتية تتأثر بالحالة والجنس والعدد ونوع الأداة، وهذا نطاق مؤجل إلى كتلة لاحقة. وألوان مثل rosa و lila و orange لها استعمالات كتابية مختلفة قبل الاسم؛ لذلك لا نقرر لها قاعدة استثنائية عامة هنا.",
       whyAr:
         "اختيرت الصفة الخبرية لتكوين جمل وصفية قصيرة من دون تقديم جدول نهايات الصفة قبل الاسم؛ هذا تحديدٌ لنطاق الدرس، لا ادعاءٌ بأن الوصف يقتصر على هذه الصيغة أو أن النهايات تخص مستوى امتحان بعينه.\n\nاخترنا الملابس لأنها سياق مناسب لمفردات القطع والألوان والمقاسات. ويتضمن نموذج Goethe الرسمي لـA1 موضوع **Einkaufen** في مهمة شفهية لطلب المعلومات، ومن بطاقاته مثال عن **Schuhe**؛ وهذا يبرر التدريب على السياق، لكنه لا يعني أن كل امتحان يطرح الموضوع أو هذه الأفعال بعينها.\n\nتُراجع أداة الاسم بوصفها جزءاً من المفردة. لا نعتمد على ربط جنس الاسم بشكل القطعة أو طول الكلمة؛ احفظ مثلاً **der Schuh** و**das Hemd** كما هما.",
       table: {
@@ -143,14 +143,14 @@ export const theory: NonNullable<Lesson["theory"]> = [
           wrong: "Du tragst ein Hemd.",
           right: "Du trägst ein Hemd.",
           whyAr:
-            "في تصريف هذا الفعل نقول du trägst وer/sie/es trägt؛ لا ننقل صيغة ich trage إلى du.",
+            "في تصريف هذا الفعل نقول du trägst و er/sie/es trägt؛ لا ننقل صيغة ich trage إلى du.",
           classification: "error",
         },
         {
           wrong: "Wir trägen Jacken.",
           right: "Wir tragen Jacken.",
           whyAr:
-            "في صيغ الجمع الواردة هنا لا يظهر Umlaut: wir/sie tragen وihr tragt.",
+            "في صيغ الجمع الواردة هنا لا يظهر Umlaut: wir/sie tragen و ihr tragt.",
           classification: "error",
         },
         {
@@ -176,7 +176,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
     },
     {
       id: "t3",
-      titleAr: "أيّ قميص؟ هذا القميص — dieser وwelcher",
+      titleAr: "أيّ قميص؟ هذا القميص — dieser و welcher",
       titleDe: "Welcher Pullover? Dieser Pullover!",
       explanationAr:
         "في متجر الملابس نحتاج إلى السؤال «أيّ؟» والإشارة إلى قطعة. نستعمل **welcher-/welche-/welches-** للسؤال، و**dieser/diese/dieses** للإشارة. في أمثلة الرفع:\n**der Pullover → welcher Pullover? → dieser Pullover**\n**die Hose → welche Hose? → diese Hose**\n**das Hemd → welches Hemd? → dieses Hemd**\n**die Schuhe (جمع) → welche Schuhe? → diese Schuhe**\n\nمع مفعول مذكر في النصب نقول **diesen Mantel** و**welchen Mantel**: **Ich nehme diesen Mantel. Welchen Mantel möchten Sie?** في الأمثلة المؤنثة والمحايدة والجمع الواردة هنا تبقى هذه الصيغ كما هي بين الرفع والنصب: **diese Hose / dieses Hemd / diese Schuhe**.\n\nويمكن استعمال **dieses** وحدها إذا كان الاسم مفهوماً: **Welches Hemd möchten Sie? — Dieses, bitte.** أما **dieser-** فيشير إلى شيء في السياق؛ و**der/die/das** أداة تعريف في هذه التراكيب، ويتوقف معنى الإشارة أيضاً على التركيب والنبر. لا نعمّم هنا على جميع الحالات الإعرابية؛ نتدرّب على أمثلة الرفع والنصب الواردة فقط.",
@@ -262,12 +262,12 @@ export const theory: NonNullable<Lesson["theory"]> = [
     },
     {
       id: "t4",
-      titleAr: "يعجبني هذا! — أفعال الدّاتيف gefallen وpassen وstehen",
+      titleAr: "يعجبني هذا! — أفعال الدّاتيف gefallen و passen و stehen",
       titleDe: "Das gefällt mir: Dativ-Verben beim Einkaufen",
       explanationAr:
         "**النمط الذي ندرّب عليه:** الشيء هو الفاعل النحوي، والشخص يأتي في الداتيف مع الأفعال الثلاثة في هذه المعاني:\n• **Das Hemd gefällt mir.** — القميص يعجبني.\n• **Die Hose passt mir.** — البنطال يناسبني من حيث المقاس.\n• **Das Kleid steht dir gut.** — الفستان يليق بك.\n\nفي هذه الأمثلة نقول **mir, dir, ihm, ihr, uns, euch, ihnen, Ihnen** للشخص. احفظ الفعل مع البنية والضمير في الجملة؛ وليس معنى ذلك أن الداتيف له مقابل واحد في كل استعمالات الألمانية.\n\nمع **gefallen** يطابق الفعل الفاعل: **Der Pullover gefällt mir** (مفرد)، و**Die Schuhe gefallen mir** (جمع). الضمير **mir** لا يغيّر تصريف الفعل.\n\nللتفريق في سياق الملابس: **gefallen** يعبّر عن الإعجاب أو الانطباع؛ **passen** قد يصف ملاءمة المقاس للشخص (**Die Hose passt mir**)؛ و**stehen** يصف كيف تبدو قطعة أو لون على شخص (**Blau steht dir gut**). ولـ**passen** استعمال آخر مع **zu** بمعنى الانسجام مع شيء: **Die Farbe passt zur Hose**. هذه فروق مفيدة في الأمثلة، لا تقسيم حصري لكل استعمالات الأفعال.\n\nيمكن تقديم الداتيف في أول الجملة: **Mir gefällt der Pullover.** يبقى الفعل **gefällt** موافقاً للفاعل **der Pullover**، لا للضمير **mir**. كما يمكن قول **Wie gefällt Ihnen das?** في المخاطبة الرسمية.",
       whyAr:
-        "يصف IDS Grammis بناء **gefallen** في هذا المعنى بفاعل في الرفع ومتمّم في الداتيف، ويورد أمثلة مثل **Gefällt dir …?**. وتعرض مداخل الأفعال لدى Grammis وDuden استعمال **stehen** مع شخص في الداتيف لبيان ما يليق به، و**passen** للمقاس أو للملاءمة بحسب السياق. لذلك نعرض البنى في جمل قصيرة، ونبيّن المعنى المقصود في المثال بدلاً من وصفها بأنها «كل لغة المتجر».\n\nقد يصادف المتعلم تراكيب داتيف أخرى في دروس سابقة أو لاحقة؛ لا نزعم أن هذا أول لقاء له بالحالة. وفي هذا القسم نركز على أفعال وجمل بعينها، ولا ندّعي أن كل الأفعال التي تأخذ الداتيف تتبع معنى أو ترتيباً واحداً.",
+        "يصف IDS Grammis بناء **gefallen** في هذا المعنى بفاعل في الرفع ومتمّم في الداتيف، ويورد أمثلة مثل **Gefällt dir …?**. وتعرض مداخل الأفعال لدى Grammis و Duden استعمال **stehen** مع شخص في الداتيف لبيان ما يليق به، و**passen** للمقاس أو للملاءمة بحسب السياق. لذلك نعرض البنى في جمل قصيرة، ونبيّن المعنى المقصود في المثال بدلاً من وصفها بأنها «كل لغة المتجر».\n\nقد يصادف المتعلم تراكيب داتيف أخرى في دروس سابقة أو لاحقة؛ لا نزعم أن هذا أول لقاء له بالحالة. وفي هذا القسم نركز على أفعال وجمل بعينها، ولا ندّعي أن كل الأفعال التي تأخذ الداتيف تتبع معنى أو ترتيباً واحداً.",
       table: {
         title: "من يفعل ومن يتأثّر",
         columns: [

@@ -24,7 +24,7 @@ export const readingB103: ReadingText = {
   glossary: [
     { de: "der Müll", ar: "النفايات", noteAr: "مذكّر بلا جمع غالباً: der Müll؛ ومنه die Mülltrennung (فصل النفايات)." },
     { de: "die Verpackung", ar: "التغليف", noteAr: "مؤنّثة؛ ومنها verpacken (يغلّف)." },
-    { de: "die Gemeinde", ar: "البلدة، البلدية", noteAr: "مؤنّثة؛ وder Gemeinderat هو مجلس البلدة." },
+    { de: "die Gemeinde", ar: "البلدة، البلدية", noteAr: "مؤنّثة؛ و der Gemeinderat هو مجلس البلدة." },
     { de: "vermeiden", ar: "يتجنّب", noteAr: "فعل شاذّ: ich vermeide · ich vermied · ich habe vermieden." },
     { de: "trennen", ar: "يفصل", noteAr: "فعل منتظم؛ ومنه die Mülltrennung." },
     { de: "sammeln", ar: "يجمع", noteAr: "فعل منتظم؛ ويُستعمل أيضاً في sammeln Erfahrungen (يجمع خبرات)." },

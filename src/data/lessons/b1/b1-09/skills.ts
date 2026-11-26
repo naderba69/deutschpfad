@@ -121,14 +121,14 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "أصوات التطوع: eh، ei، وsp",
+    title: "أصوات التطوع: eh، ei، و sp",
     items: [
       { de: "das Ehrenamt", ar: "العمل التطوعي", note: "IPA: [ˈeːʁənʔamt]؛ في هذه الكلمة eh تمثل [eː]." },
       { de: "der Verein", ar: "الجمعية", note: "IPA: [fɛɐ̯ˈʔaɪ̯n]؛ ei تمثل [aɪ̯]." },
       { de: "die Spende", ar: "التبرع", note: "IPA: [ˈʃpɛndə]؛ في بداية المقطع sp تمثل [ʃp]." },
       { de: "das Projekt", ar: "المشروع", note: "IPA: [pʁoˈjɛkt]؛ الحرف j يمثل [j]." },
-      { de: "der Kunde", ar: "الزبون", note: "IPA: [ˈkʊndə]؛ u قصيرة [ʊ]، وe الأخيرة [ə]." },
-      { de: "das Mitglied", ar: "العضو", note: "IPA: [ˈmɪtˌɡliːt]؛ g مجهورة [ɡ]، وd النهائية تُنطق [t]." },
+      { de: "der Kunde", ar: "الزبون", note: "IPA: [ˈkʊndə]؛ u قصيرة [ʊ]، و e الأخيرة [ə]." },
+      { de: "das Mitglied", ar: "العضو", note: "IPA: [ˈmɪtˌɡliːt]؛ g مجهورة [ɡ]، و d النهائية تُنطق [t]." },
     ],
     tip: "في Ehrenamt تمثل eh الصوت الطويل [eː]؛ هذه ملاحظة خاصة بالكلمة، فلا تُعمّم أن كل h يطيل الحركة.",
     shadowing: [

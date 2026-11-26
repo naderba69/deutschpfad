@@ -52,7 +52,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       instructionAr: "رتّب الجملة وابدأ بـIch؛ ضع ظرف gestern قبل المفعول، وانتبه إلى موضع Partizip II",
       tokens: ["Ich", "habe", "gestern", "einen", "Film", "gesehen"],
       correctSentence: "Ich habe gestern einen Film gesehen",
-      explanation: "المساعد habe في المركز الثاني، وgesehen في آخر الجملة، وما بينهما ظرفٌ ومفعول.",
+      explanation: "المساعد habe في المركز الثاني، و gesehen في آخر الجملة، وما بينهما ظرفٌ ومفعول.",
       errorType: "word-order",
     },
     {
@@ -105,7 +105,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { left: "telefonieren", right: "telefoniert" },
         { left: "bleiben", right: "geblieben" },
       ],
-      explanation: "لاحظ الأنماط: gemacht ضعيف، gegessen وgeblieben قويان، angerufen منفصل، verstanden ببادئة غير منفصلة، وtelefoniert من -ieren.",
+      explanation: "لاحظ الأنماط: gemacht ضعيف، gegessen و geblieben قويان، angerufen منفصل، verstanden ببادئة غير منفصلة، و telefoniert من -ieren.",
       errorType: "grammar",
     },
     {
@@ -143,10 +143,10 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       statements: [
         { id: "s1", de: "Die Person ist früh aufgestanden.", ar: "نهض الشخص مبكّراً.", isTrue: true, whyAr: "النصّ يقول: «Am Freitag bin ich früh aufgestanden»." },
         { id: "s2", de: "Die Person hat nicht gefrühstückt.", ar: "لم يتناول الشخص الفطور.", isTrue: false, whyAr: "بل تناوله: «Ich habe gefrühstückt»." },
-        { id: "s3", de: "Alle Verben im Text stehen mit haben.", ar: "كلّ أفعال النصّ مع haben.", isTrue: false, whyAr: "النصّ يخلط المساعدين: aufgestanden وgefahren وeingeschlafen مع sein." },
+        { id: "s3", de: "Alle Verben im Text stehen mit haben.", ar: "كلّ أفعال النصّ مع haben.", isTrue: false, whyAr: "النصّ يخلط المساعدين: aufgestanden و gefahren و eingeschlafen مع sein." },
         { id: "s4", de: "„eingeschlafen“ steht mit sein.", ar: "الفعل eingeschlafen يأخذ sein.", isTrue: true, whyAr: "einschlafen تغيّرُ حالٍ (من يقظةٍ إلى نوم) فمساعدها sein." },
       ],
-      explanation: "النصّ يخلط المساعدين: aufgestanden وgefahren وeingeschlafen مع sein، وgefrühstückt وferngesehen مع haben.",
+      explanation: "النصّ يخلط المساعدين: aufgestanden و gefahren و eingeschlafen مع sein، و gefrühstückt و ferngesehen مع haben.",
       errorType: "grammar",
     },
     {
@@ -169,7 +169,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "will", options: ["will", "willt", "wollt", "wollen"], errorType: "conjugation" },
         { correct: "wollen", options: ["wollen", "will", "wollt", "willst"], errorType: "conjugation" },
       ],
-      explanation: "ich وer متطابقان بلا نهاية: will. وwir wollen بنهاية -en.",
+      explanation: "ich و er متطابقان بلا نهاية: will. و wir wollen بنهاية -en.",
       errorType: "conjugation",
     },
     {
@@ -232,7 +232,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       correctIndex: 0,
       optionExplanations: [undefined, "لا — «studieren» فعلٌ منتظم؛ والقاعدة هنا تخصّ النهاية «-ieren» لا الشذوذ.", "لا — «studieren» غير منفصل؛ والانفصال لا يلغي «ge-» بل يضعها في الوسط.", "لا — الاقتران بـ«haben» («hat … studiert») لا يحذف «ge-»؛ والسبب أن أفعال «-ieren» بلا «ge-»."],
-      explanation: "studieren ينتهي بـ-ieren، وPartizip II هو studiert بلا ge-. النبر ليس وحده قاعدةً عامة لتكوين Partizip II.",
+      explanation: "studieren ينتهي بـ-ieren، و Partizip II هو studiert بلا ge-. النبر ليس وحده قاعدةً عامة لتكوين Partizip II.",
       errorType: "grammar",
     },
     {
@@ -258,7 +258,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         "Am Wochenende bin ich ins Museum gegangen.",
       ],
       sampleAnswer: "Ich bin ins Museum gegangen.",
-      explanation: "gehen بمعنى الذهاب إلى المتحف يأخذ sein، وPartizip II هو gegangen.",
+      explanation: "gehen بمعنى الذهاب إلى المتحف يأخذ sein، و Partizip II هو gegangen.",
       errorType: "grammar",
     },
     {
@@ -288,7 +288,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { left: "acht Stunden schlafen", right: "haben + geschlafen" },
         { left: "früh einschlafen", right: "sein + eingeschlafen" },
       ],
-      explanation: "في هذه الأمثلة يأخذ lesen مع مفعوله وschlafen مع عبارة المدة haben؛ ويأخذ fliegen إلى وجهة وbleiben وeinschlafen sein. هذه أزواج معجمية وسياقية، لا قاعدة «كل حركة = sein».",
+      explanation: "في هذه الأمثلة يأخذ lesen مع مفعوله و schlafen مع عبارة المدة haben؛ ويأخذ fliegen إلى وجهة و bleiben و einschlafen sein. هذه أزواج معجمية وسياقية، لا قاعدة «كل حركة = sein».",
       errorType: "grammar",
     },
     {
@@ -309,7 +309,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       instructionAr: "رتّب السؤال: ابدأ بـWas وضع am Wochenende قبل Partizip II",
       tokens: ["Was", "hast", "du", "am", "Wochenende", "gemacht"],
       correctSentence: "Was hast du am Wochenende gemacht",
-      explanation: "في السؤال بأداة: الأداة أوّلاً، المساعد ثانياً، وPartizip II في الآخر.",
+      explanation: "في السؤال بأداة: الأداة أوّلاً، المساعد ثانياً، و Partizip II في الآخر.",
       errorType: "word-order",
     },
   ];
@@ -345,12 +345,12 @@ export const fehlerUndTipps: NonNullable<Lesson["fehlerUndTipps"]> = {
     eselsbruecken: [
       "في الجملة الرئيسية الخبرية المحايدة: الفعل المصرف في V2 والجزء غير المصرف في نهاية المجال الفعلي؛ راجع ترتيب الجملة الفرعية على حدة.",
       "اختيار haben/sein يتبع الفعل ومعناه واستعماله؛ المفعول المباشر قرينة مفيدة، لا اختبار آلي. واحفظ المساعد مع Partizip II.",
-      "bleiben وsein وpassieren أمثلة شائعة تتعلم معها sein؛ ليست هذه قائمة حصرية لكل الأفعال.",
+      "bleiben و sein و passieren أمثلة شائعة تتعلم معها sein؛ ليست هذه قائمة حصرية لكل الأفعال.",
       "في Partizip II افحص نوع البادئة والفعل: aufstehen → aufgestanden، besuchen → besucht، studieren → studiert. لا تستنتج القاعدة من النبر وحده.",
       "الألمانية will صيغة من wollen تعبّر عن رغبة/نية؛ ليست أداة Futur I، وقد يُستعمل Präsens مع ظرف زمني للمستقبل.",
     ],
     culturalNote: {
-      title: "Perfekt وPräteritum: الاستعمال يتغيّر بحسب السياق",
-      content: "يشيع Perfekt في المحادثات، ويشيع Präteritum في كثير من السرد المكتوب؛ لكن هذا ميل مرتبط بالنوع النصي والسجل، لا قسمة مطلقة بين الكلام والكتابة. توجد فروق إقليمية أيضاً، وقد يقل استعمال Präteritum المنطوق في بعض مناطق الجنوب، لكن لا يصح اختزال ذلك في «لا يبقى إلا war وhatte» أو تقديمه قاعدةً لكل الناطقين. يركّز هذا الدرس على أمثلة Perfekt ولا يطلب استعمال زمن واحد دائماً.",
+      title: "Perfekt و Präteritum: الاستعمال يتغيّر بحسب السياق",
+      content: "يشيع Perfekt في المحادثات، ويشيع Präteritum في كثير من السرد المكتوب؛ لكن هذا ميل مرتبط بالنوع النصي والسجل، لا قسمة مطلقة بين الكلام والكتابة. توجد فروق إقليمية أيضاً، وقد يقل استعمال Präteritum المنطوق في بعض مناطق الجنوب، لكن لا يصح اختزال ذلك في «لا يبقى إلا war و hatte» أو تقديمه قاعدةً لكل الناطقين. يركّز هذا الدرس على أمثلة Perfekt ولا يطلب استعمال زمن واحد دائماً.",
     },
   };

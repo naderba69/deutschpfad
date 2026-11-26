@@ -41,11 +41,11 @@ describe("A2-11 lesson content audit", () => {
       ],
       [
         ["Ich freue mich auf den Urlaub.", "أتطلع إلى العطلة."],
-        ["Ich wasche mir die Hände.", "أغسل يديّ (mir Dativ، وdie Hände Akkusativ في هذا الإطار)."],
+        ["Ich wasche mir die Hände.", "أغسل يديّ (mir Dativ، و die Hände Akkusativ في هذا الإطار)."],
         ["Ich sehe mir das Formular an.", "أتفحّص الاستمارة."],
         ["Wir treffen uns um sieben.", "نلتقي في السابعة (قد يكون المعنى متبادلاً بحسب السياق)."],
         ["Setz dich bitte!", "اجلس من فضلك!"],
-        ["Ich putze mir die Zähne.", "أنظّف أسناني (mir Dativ، وdie Zähne Akkusativ في هذا الإطار)."],
+        ["Ich putze mir die Zähne.", "أنظّف أسناني (mir Dativ، و die Zähne Akkusativ في هذا الإطار)."],
       ],
     ]);
     expect(lessonA211.theory[0]?.commonMistakes).toEqual([
@@ -133,7 +133,7 @@ describe("A2-11 lesson content audit", () => {
     });
     expect(task("w4")).toMatchObject({
       instructionAr: "اكتب الصيغة المحددة لشكوى مهذبة:",
-      prompt: "اكتب بالألمانية: «عذراً، أود أن أقدّم شكوى». استخدم Entschuldigung وIch möchte mich beschweren.",
+      prompt: "اكتب بالألمانية: «عذراً، أود أن أقدّم شكوى». استخدم Entschuldigung و Ich möchte mich beschweren.",
       acceptedAnswers: ["Entschuldigung, ich möchte mich beschweren."],
       sampleAnswer: "Entschuldigung, ich möchte mich beschweren.",
       explanation: "هذه صيغة مكتوبة مهذبة ممكنة في هذا التدريب؛ ليست افتتاحاً وحيداً أو إلزامياً لكل شكوى.",

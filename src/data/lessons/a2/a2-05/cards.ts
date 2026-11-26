@@ -28,7 +28,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       questionDe: "Gestern ___ ihr viel Arbeit.",
       options: ["hattet", "hatte", "hatten", "hattest"],
       correctIndex: 0,
-      explanation: "مع ihr نستخدم hattet؛ hatten مع wir وsie/Sie.",
+      explanation: "مع ihr نستخدم hattet؛ hatten مع wir و sie/Sie.",
       errorType: "conjugation",
       optionExplanations: [
         undefined,

@@ -66,7 +66,7 @@ export const readingB101: ReadingText = {
       options: ["Ein langes Studium an der Universität", "Erfahrungen aus Praktika und Projekten", "Ein Nebenjob im Ausland für ein Jahr", "Eine Empfehlung von der alten Schule"],
       correctIndex: 1,
       optionExplanations: ["لا — النص يقول: «Erfahrungen aus Praktika, Projekten oder Nebenjobs können bei einer späteren Bewerbung helfen»؛ ولا يشترط دراسة طويلة.", undefined, "لا — النص يذكر «Praktika, Projekten oder Nebenjobs» من دون اشتراط Ausland.", "لا — الدليل هو «Erfahrungen aus Praktika, Projekten oder Nebenjobs»؛ ولا يذكر النص Empfehlung من المدرسة."],
-      explanation: "الفقرة 3: يمكن أن تساعد خبرات Praktika وProjekte وNebenjobs في طلب التوظيف لاحقاً.",
+      explanation: "الفقرة 3: يمكن أن تساعد خبرات Praktika و Projekte و Nebenjobs في طلب التوظيف لاحقاً.",
       paragraph: 3,
       errorType: "comprehension",
     },

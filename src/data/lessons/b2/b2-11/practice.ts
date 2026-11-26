@@ -206,7 +206,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { left: "reparieren lassen", right: "يكلّف غيره بالإصلاح" },
         { left: "arbeiten müssen", right: "يضطرّ إلى العمل" },
       ],
-      explanation: "الشكل يتبع المالك، وlassen تنقل الفعل إلى غيرك.",
+      explanation: "الشكل يتبع المالك، و lassen تنقل الفعل إلى غيرك.",
       errorType: "vocabulary",
     },
   ];
@@ -237,7 +237,7 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     eselsbruecken: [
       "اسأل عن المالك لا عن المملوك: رجل أو طفل ⇒ dessen، امرأة أو جماعة ⇒ deren.",
       "بعد dessen/deren اسم عارٍ — إن رأيت der أو die بعدها فاحذفها.",
-      "فعل رئيسي حاضر ⇒ مصدران وhaben. مودالي وحيد ⇒ اسم مفعول.",
+      "فعل رئيسي حاضر ⇒ مصدران و haben. مودالي وحيد ⇒ اسم مفعول.",
     ],
     culturalNote: {
       title: "التعبير عن قصّ الشعر بمساعدة شخص آخر",

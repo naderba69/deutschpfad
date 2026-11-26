@@ -488,6 +488,6 @@ describe("حراسة معنى frühstücken في A1-14", () => {
     if (exercise?.type !== "true-false") throw new Error("تمرين e13 مفقود أو ليس صواباً/خطأ");
     expect(exercise.textDe).toContain("habe gefrühstückt");
     expect(exercise.statements.find((item) => item.id === "s2")?.ar).toBe("لم يتناول الشخص الفطور.");
-    expect(exercise.explanation).toContain("gefrühstückt وferngesehen مع haben");
+    expect(exercise.explanation).toContain("gefrühstückt و ferngesehen مع haben");
   });
 });

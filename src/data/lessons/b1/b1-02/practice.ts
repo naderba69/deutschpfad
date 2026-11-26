@@ -171,7 +171,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { left: "Bevor ich kam, hatte ich gearbeitet.", right: "Plusquamperfekt (الأسبق)" },
         { left: "Ich war müde und hatte Fieber.", right: "Präteritum يبقى في الكلام" },
       ],
-      explanation: "المعنى الماضي واحد والأزمنة ثلاثة: Perfekt للكلام، وPräteritum للسرد المكتوب، وPlusquamperfekt للأسبق؛ وsein وhaben يبقيان في Präteritum حتى في الكلام.",
+      explanation: "المعنى الماضي واحد والأزمنة ثلاثة: Perfekt للكلام، و Präteritum للسرد المكتوب، و Plusquamperfekt للأسبق؛ و sein و haben يبقيان في Präteritum حتى في الكلام.",
       errorType: "grammar",
     },
   ];
@@ -189,6 +189,6 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     culturalNote: {
       title: "التقديم للوظائف في ألمانيا",
       content:
-                "الوثائق المعتادة في التقديم: Anschreiben (خطاب التقديم)، Lebenslauf (السيرة الذاتية)، وZeugnisse (الشهادات). تختلف الممارسة بين الشركات والمهن، فالأفضل مراجعة إعلان الوظيفة. وعبارة مفيدة: «Ich bringe viel Erfahrung mit» (أملك خبرة كبيرة).",
+                "الوثائق المعتادة في التقديم: Anschreiben (خطاب التقديم)، Lebenslauf (السيرة الذاتية)، و Zeugnisse (الشهادات). تختلف الممارسة بين الشركات والمهن، فالأفضل مراجعة إعلان الوظيفة. وعبارة مفيدة: «Ich bringe viel Erfahrung mit» (أملك خبرة كبيرة).",
     },
   };

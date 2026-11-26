@@ -138,14 +138,14 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "أصوات الأدب: ch، sch، وau",
+    title: "أصوات الأدب: ch، sch، و au",
     items: [
       { de: "die Literatur", ar: "الأدب", note: "tu = تو: ليتِراتور" },
       { de: "der Roman", ar: "الرواية", note: "IPA تقريبي: /ʁoˈmaːn/؛ الكتابة العربية تقريبية ولا تمثل صوت r الألماني بدقة." },
-      { de: "der Autor", ar: "الكاتب", note: "IPA تقريبي: /ˈaʊ̯toːɐ̯/؛ au صوت مركب، وr الأخير يختلف نطقه باختلاف المنطقة." },
+      { de: "der Autor", ar: "الكاتب", note: "IPA تقريبي: /ˈaʊ̯toːɐ̯/؛ au صوت مركب، و r الأخير يختلف نطقه باختلاف المنطقة." },
       { de: "lesen", ar: "يقرأ", note: "IPA تقريبي: /ˈleːzn̩/؛ s بين صوتين مجهور /z/، والكتابة العربية تقريبية." },
       { de: "das Gedicht", ar: "القصيدة", note: "IPA: /ɡəˈdɪçt/؛ ch هنا [ç] حنكية وليست خ العربية [x]. أي كتابة عربية تقريبية فقط. يضع Duden النبر على i." },
-      { de: "die Geschichte", ar: "القصة", note: "IPA تقريبي: /ɡəˈʃɪçtə/؛ sch = [ʃ] وch = [ç]، والنبر على المقطع الثاني. الكتابة العربية تقريبية." },
+      { de: "die Geschichte", ar: "القصة", note: "IPA تقريبي: /ɡəˈʃɪçtə/؛ sch = [ʃ] و ch = [ç]، والنبر على المقطع الثاني. الكتابة العربية تقريبية." },
     ],
     tip: "Geschichte /ɡəˈʃɪçtə/: يوجد sch واحدة، ثم ch [ç]. الـIPA أوضح من التقريب بالحروف العربية؛ هذا التدريب لا يقيس دقة النطق.",
     shadowing: [

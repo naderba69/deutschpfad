@@ -12,7 +12,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       questionDe: "Das Geschenk gefällt ___ Kind.",
       options: ["dem", "den", "der", "die"],
       correctIndex: 0,
-      explanation: "Kind محايد مفرد، لذلك تكون أداة Dativ هي dem. في هذا المثال Das Geschenk هو الفاعل النحوي، وdem Kind هو الشخص الذي تعجبه الهدية.",
+      explanation: "Kind محايد مفرد، لذلك تكون أداة Dativ هي dem. في هذا المثال Das Geschenk هو الفاعل النحوي، و dem Kind هو الشخص الذي تعجبه الهدية.",
       errorType: "case",
       optionExplanations: [
         undefined,
@@ -28,7 +28,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       questionDe: "Ich danke ___ für die Blumen. (أنتَ)",
       options: ["dir", "dich", "mir", "mich"],
       correctIndex: 0,
-      explanation: "الشخص بعد danken في هذا التركيب يأتي في Dativ: dir؛ وfür die Blumen مجموعة أخرى في Akkusativ.",
+      explanation: "الشخص بعد danken في هذا التركيب يأتي في Dativ: dir؛ و für die Blumen مجموعة أخرى في Akkusativ.",
       errorType: "case",
       optionExplanations: [
         undefined,
@@ -44,7 +44,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       tokens: ["gefällt", "der", "Nachbarin", "Das", "Fotoalbum", "."],
       correctSentence: "Das Fotoalbum gefällt der Nachbarin.",
       explanation:
-        "Das Fotoalbum هو الفاعل المفرد، وder Nachbarin الشخص الذي يعجبه الشيء في Dativ.",
+        "Das Fotoalbum هو الفاعل المفرد، و der Nachbarin الشخص الذي يعجبه الشيء في Dativ.",
       errorType: "word-order",
     },
     {
@@ -55,7 +55,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       wrongWord: "die",
       correctWord: "der",
       options: ["der", "dem", "den", "das"],
-      explanation: "Oma مؤنث، وhelfen يأخذ Dativ؛ لذلك die تتحول إلى der Oma.",
+      explanation: "Oma مؤنث، و helfen يأخذ Dativ؛ لذلك die تتحول إلى der Oma.",
       errorType: "case",
     },
     {
@@ -67,7 +67,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
         { correct: "mir", options: ["mir", "mich", "dir"] },
         { correct: "ihr", options: ["ihr", "sie", "ihm"] },
       ],
-      explanation: "helfen → mir، وgefallen → ihr في هذين المثالين.",
+      explanation: "helfen → mir، و gefallen → ihr في هذين المثالين.",
       errorType: "case",
     },
   ];

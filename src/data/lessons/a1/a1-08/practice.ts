@@ -216,7 +216,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       options: ["gefallen", "gefällt", "gefalle", "gefällst"],
       correctIndex: 0,
       explanation:
-        "die Schuhe جمع، والفعل يتبع الملبوس لا الشخص ⇒ gefallen. وmir لا تتغيّر.",
+        "die Schuhe جمع، والفعل يتبع الملبوس لا الشخص ⇒ gefallen. و mir لا تتغيّر.",
       errorType: "conjugation",
       optionExplanations: [
         undefined,
@@ -304,7 +304,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       sampleAnswer: "Die Jacke gefällt mir.",
       explanation:
-        "finden يجعلك فاعلاً، وgefallen يجعل الملبوس فاعلاً وأنت مستقبِل في الدّاتيف.",
+        "finden يجعلك فاعلاً، و gefallen يجعل الملبوس فاعلاً وأنت مستقبِل في الدّاتيف.",
       errorType: "case",
     },
     {
@@ -367,7 +367,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         {left: "der Schuh", right: "حذاء واحد"},
         {left: "die Schuhe", right: "الأحذية (جمع)"},
       ],
-      explanation: "احفظ الاسم مع أداة جنسه؛ der Schuh مفرد وdie Schuhe جمع.",
+      explanation: "احفظ الاسم مع أداة جنسه؛ der Schuh مفرد و die Schuhe جمع.",
       errorType: "vocabulary",
     },
     {

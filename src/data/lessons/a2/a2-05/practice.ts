@@ -28,7 +28,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "Wir ___ gestern eine Besprechung.",
       options: ["hatten", "hatte", "hattest", "hattet"],
       correctIndex: 0,
-      explanation: "مع wir نستخدم hatten؛ أما hatte للمفرد وhattet مع ihr.",
+      explanation: "مع wir نستخدم hatten؛ أما hatte للمفرد و hattet مع ihr.",
       errorType: "conjugation",
       optionExplanations: [
         undefined,
@@ -80,7 +80,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "hatte", options: ["war", "hatte"] },
         { correct: "waren", options: ["waren", "hatten"] },
       ],
-      explanation: "نقول Ich war krank وIch hatte Fieber؛ ومع wir نقول wir waren.",
+      explanation: "نقول Ich war krank و Ich hatte Fieber؛ ومع wir نقول wir waren.",
       errorType: "conjugation",
     },
     {
@@ -185,7 +185,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "war", options: ["war", "waren", "hatte"] },
         { correct: "hatte", options: ["hatte", "hatten", "war"] },
       ],
-      explanation: "Frau Weber مفرد غائب: war krank وhatte Fieber.",
+      explanation: "Frau Weber مفرد غائب: war krank و hatte Fieber.",
       errorType: "conjugation",
     },
   ];

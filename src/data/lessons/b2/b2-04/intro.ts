@@ -13,7 +13,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["q1", "q2", "q3", "q4", "q5"],
         taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l1:q4", "listening:l3:q5"],
-        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 وl2 في q1 إلى q5، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 و l2 في q1 إلى q5، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -32,7 +32,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "writing:b2-04:w1",
           "writing:b2-04:w2",
         ],
-        labelAr: "أختار المشارك الصحيح وأكمل نهاياته (e1 وe2 وe6 وm1 وm2 وw1 وw2)، دون كشف الحل.",
+        labelAr: "أختار المشارك الصحيح وأكمل نهاياته (e1 و e2 و e6 و m1 و m2 و w1 و w2)، دون كشف الحل.",
       },
     },
     {
@@ -43,7 +43,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["e7", "w3"],
         taskIds: ["practice:b2-04:e7", "writing:b2-04:w3"],
-        labelAr: "أحوّل الجملة النسبية إلى صفة مشتقة صحيحة (e7 وw3)، دون كشف الحل.",
+        labelAr: "أحوّل الجملة النسبية إلى صفة مشتقة صحيحة (e7 و w3)، دون كشف الحل.",
       },
     },
     {
@@ -54,7 +54,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["e5", "e9", "m4"],
         taskIds: ["practice:b2-04:e5", "practice:b2-04:e9", "mini-test:b2-04:m4"],
-        labelAr: "أصحح نهاية المشارك في الجملة الخاطئة (e5 وe9 وm4)، دون كشف الحل.",
+        labelAr: "أصحح نهاية المشارك في الجملة الخاطئة (e5 و e9 و m4)، دون كشف الحل.",
       },
     },
     {

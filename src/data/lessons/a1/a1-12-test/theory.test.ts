@@ -105,7 +105,7 @@ describe("A1-12 audited lesson content", () => {
     const connectors = lessonA112.theory.find((block) => block.id === "t4");
     expect(connectors?.explanationAr).toContain("جمل خبرية مستقلة");
     expect(connectors?.explanationAr).toContain("لا توضع عادةً فاصلة");
-    expect(connectors?.explanationAr).toContain("denn وweil");
+    expect(connectors?.explanationAr).toContain("denn و weil");
     expect(connectors?.commonMistakes.slice(0, 3).every((mistake) => mistake.classification === "error")).toBe(
       true,
     );

@@ -12,7 +12,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       explanationAr:
         "تُعرض الأعراض الألمانية بأكثر من تركيب. احفظ كل صيغة مع مثالها، ولا تحاول نقل حالة الإعراب حرفياً من العربية.\n\n**١ — haben + اسم عرض:** **Ich habe Kopfschmerzen / Fieber / Husten.** ومن المركّبات الشائعة **Kopf-, Bauch-, Rücken-, Hals-** و**Zahnschmerzen**. يذكر Duden أن **Kopfschmerz** يأتي غالباً في الجمع **Kopfschmerzen**، لكن المفرد موجود أيضاً؛ لذلك نقول هنا «الصيغة الشائعة» لا «الجمع دائماً».\n\n**٢ — العضو + tut/tun weh:** **Mein Rücken tut weh.** · **Meine Augen tun weh.** يتبع الفعلُ الفاعلَ: المفرد **tut** والجمع **tun**.\n\n**٣ — mir ist + صفة في أمثلة الإحساس:** **Mir ist schlecht / schwindelig / heiß / kalt.** الضمير **mir** في هذه البنية الألمانية في حالة **Dativ** ويشير إلى صاحب الإحساس. هذا وصف لحالة ألمانية، لا ترجمة مباشرة لعلامة إعراب عربية.\n\n**٤ — sich fühlen للحالة التي يصفها المتكلم:** **Ich fühle mich nicht gut / schwach.** استعمل الفعل مع الضمير الانعكاسي في هذا المعنى.\n\n**المدة والشدّة:** مع اسم ظاهر، **seit** تأخذ **Dativ**: **seit drei Tagen**؛ أما **seit gestern** فتركيب زمني بلا اسم ظاهر. ومن صفات الشدة الشائعة **leicht, mittel, stark, sehr stark**. المثال **Es tut sehr weh** طبيعي لوصف درجة الألم؛ لا نحوّل اختيار **sehr** هنا إلى قاعدة مطلقة عن كل استعمال لـ**viel**.",
       whyAr:
-        "في **Ich bin krank** يكون **ich** فاعلاً في Nominativ مع صفة خبرية. أما **Mir ist schlecht** فهو تركيب ألماني شائع يضع صاحب الإحساس في Dativ؛ لا يلزم أن نعيد بناء المعنى من ترجمة حرفية، ولا أن نساوي Dativ بالإعراب العربي. احفظ البناءين كما هما: **Ich bin krank** و**Mir ist schlecht**.\n\nو**Ich bin schlecht** جملة ممكنة بمعانٍ أخرى، مثل «أنا ضعيف/سيّئ في هذا المجال» إذا دلّ السياق؛ لكنها ليست الصيغة المحايدة للتعبير عن الغثيان.\n\nأما **Kopfschmerz** فالمفرد صحيح، ويذكر Duden أن الاسم يُستعمل غالباً في الجمع. لا يسند ذلك تفسيراً ثقافياً أو اشتقاقياً عن طبيعة الألم؛ يكفي تعلّم العبارة الشائعة **Ich habe Kopfschmerzen**.",
+        "في **Ich bin krank** يكون **ich** فاعلاً في Nominativ مع صفة خبرية. أما **Mir ist schlecht** فهو تركيب ألماني شائع يضع صاحب الإحساس في Dativ؛ لا يلزم أن نعيد بناء المعنى من ترجمة حرفية، ولا أن نساوي Dativ بالإعراب العربي. احفظ البناءين كما هما: **Ich bin krank** و**Mir ist schlecht**.\n\n و**Ich bin schlecht** جملة ممكنة بمعانٍ أخرى، مثل «أنا ضعيف/سيّئ في هذا المجال» إذا دلّ السياق؛ لكنها ليست الصيغة المحايدة للتعبير عن الغثيان.\n\nأما **Kopfschmerz** فالمفرد صحيح، ويذكر Duden أن الاسم يُستعمل غالباً في الجمع. لا يسند ذلك تفسيراً ثقافياً أو اشتقاقياً عن طبيعة الألم؛ يكفي تعلّم العبارة الشائعة **Ich habe Kopfschmerzen**.",
       table: {
         title: "تراكيب ألمانية شائعة في وصف الأعراض",
         columns: ["البنية", "المثال", "متى؟"],
@@ -97,7 +97,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
           right: "Mir ist schlecht.",
           classification: "contextual-alternative",
           whyAr:
-            "Ich bin schlecht جملة سليمة في معانٍ أخرى، مثل ضعف الأداء في مجال يحدده السياق؛ لكنها ليست الصيغة المحايدة للغثيان. يُستعمل Mir ist schlecht لهذا الإحساس، وmir Dativ في البناء الألماني؛ لا يعني ذلك مقابلةً مباشرة للجر العربي.",
+            "Ich bin schlecht جملة سليمة في معانٍ أخرى، مثل ضعف الأداء في مجال يحدده السياق؛ لكنها ليست الصيغة المحايدة للغثيان. يُستعمل Mir ist schlecht لهذا الإحساس، و mir Dativ في البناء الألماني؛ لا يعني ذلك مقابلةً مباشرة للجر العربي.",
         },
         {
           wrong: "Ich bin Kopfschmerzen.",
@@ -433,7 +433,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
             cells: [
               "يغسل يديه",
               "Ich wasche mir die Hände.",
-              "hat sich die Hände gewaschen؛ sich في Dativ وdie Hände في Akkusativ",
+              "hat sich die Hände gewaschen؛ sich في Dativ و die Hände في Akkusativ",
             ],
           },
         ],
@@ -461,7 +461,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
         },
         {
           de: "Waschen Sie sich bitte vorher die Hände.",
-          ar: "اغسل يديك قبل ذلك من فضلك. (sich هنا في Dativ وdie Hände في Akkusativ)",
+          ar: "اغسل يديك قبل ذلك من فضلك. (sich هنا في Dativ و die Hände في Akkusativ)",
         },
         {
           de: "Heute fühle ich mich viel besser als gestern.",
@@ -496,7 +496,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
           right: "Ich wasche mir die Hände.",
           classification: "error",
           whyAr:
-            "في هذا التركيب المحدد تكون die Hände في Akkusativ وmir في Dativ. ليس السبب قاعدةً عامة بأن أي مفعول آخر يغيّر كل ضمير انعكاسي إلى Dativ، ولا أن Dativ يساوي الجرّ العربي.",
+            "في هذا التركيب المحدد تكون die Hände في Akkusativ و mir في Dativ. ليس السبب قاعدةً عامة بأن أي مفعول آخر يغيّر كل ضمير انعكاسي إلى Dativ، ولا أن Dativ يساوي الجرّ العربي.",
         },
         {
           wrong: "Er fühlt mich nicht gut. (لوصف حال Er)",

@@ -106,7 +106,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       sampleAnswer: "Die Rechnung, bitte!",
       explanation:
-        "Die Rechnung, bitte! وIch möchte zahlen وIch hätte gern die Rechnung وKönnten Sie mir bitte die Rechnung bringen? صيغ ممكنة لهذا الطلب؛ يتغير الاختيار بحسب الموقف.",
+        "Die Rechnung, bitte! و Ich möchte zahlen و Ich hätte gern die Rechnung و Könnten Sie mir bitte die Rechnung bringen? صيغ ممكنة لهذا الطلب؛ يتغير الاختيار بحسب الموقف.",
       errorType: "grammar",
     },
     {
@@ -201,12 +201,12 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       options: ["schmeckt", "schmecken", "schmecke", "schmeckst"],
       correctIndex: 0,
       explanation:
-        "die Suppe مفرد وهي الفاعل ⇒ schmeckt. وIhnen في الـDativ لا تؤثّر في الفعل.",
+        "die Suppe مفرد وهي الفاعل ⇒ schmeckt. و Ihnen في الـDativ لا تؤثّر في الفعل.",
       optionExplanations: [
         undefined,
         "schmecken للجمع، والحساء مفرد.",
-        "schmecke لـ ich، وich ليست فاعل الجملة هنا.",
-        "schmeckst لـ du، وdu ليست الفاعل.",
+        "schmecke لـ ich، و ich ليست فاعل الجملة هنا.",
+        "schmeckst لـ du، و du ليست الفاعل.",
       ],
       errorType: "conjugation",
     },
@@ -231,7 +231,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       acceptedAnswers: ["Der Kuchen gefällt mir.", "Mir gefällt der Kuchen."],
       sampleAnswer: "Der Kuchen gefällt mir.",
       explanation:
-        "في هذا المثال Der Kuchen هو الفاعل وmir في Dativ. استُخدم gefallen للانطباع المقصود، لا بوصفه مرادفاً وحيداً لكل معاني الإعجاب.",
+        "في هذا المثال Der Kuchen هو الفاعل و mir في Dativ. استُخدم gefallen للانطباع المقصود، لا بوصفه مرادفاً وحيداً لكل معاني الإعجاب.",
       errorType: "case",
     },
     {
@@ -248,7 +248,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       correctIndex: 0,
       explanation:
-        "الأولى تستعمل الصيغة المطلوبة. möchte وnehme بديلان صحيحان في سياقات مناسبة، وmag يعبّر هنا عن الميل لا عن طلب واضح؛ لا يعني ذلك أن البدائل الأخرى ممنوعة أو وقحة دائماً.",
+        "الأولى تستعمل الصيغة المطلوبة. möchte و nehme بديلان صحيحان في سياقات مناسبة، و mag يعبّر هنا عن الميل لا عن طلب واضح؛ لا يعني ذلك أن البدائل الأخرى ممنوعة أو وقحة دائماً.",
       errorType: "vocabulary",
       optionExplanations: [
         undefined,
@@ -288,7 +288,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         },
       ],
       explanation:
-        "في هاتين الجملتين يتبع الفعل الفاعل النحوي: das Essen مفرد ⟵ schmeckt، وdie Nudeln جمع ⟵ schmecken. ضمير الشخص في Dativ لا يتحكم في التصريف.",
+        "في هاتين الجملتين يتبع الفعل الفاعل النحوي: das Essen مفرد ⟵ schmeckt، و die Nudeln جمع ⟵ schmecken. ضمير الشخص في Dativ لا يتحكم في التصريف.",
       errorType: "conjugation",
     },
     {
@@ -340,7 +340,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         },
       ],
       explanation:
-        "Tassen جمعٌ للأكواب المعدودة، وGläser جمعٌ للكؤوس الفعلية على الطاولة. هذا لا يضع قاعدةً لكل وحدات القياس؛ فـDuden يورد مثلاً استعمال zwei Glas Wein في سياق كمية مشروب.",
+        "Tassen جمعٌ للأكواب المعدودة، و Gläser جمعٌ للكؤوس الفعلية على الطاولة. هذا لا يضع قاعدةً لكل وحدات القياس؛ فـDuden يورد مثلاً استعمال zwei Glas Wein في سياق كمية مشروب.",
       errorType: "plural",
     },
     {
@@ -453,7 +453,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       options: ["passt", "passen", "passe", "gefallen"],
       correctIndex: 0,
       explanation:
-        "Der Termin فاعل مفرد، لذا نقول passt؛ وmir متمّم Dativ لا يغيّر تصريف الفعل. هنا passen بمعنى يناسب/يلائم في هذا السياق.",
+        "Der Termin فاعل مفرد، لذا نقول passt؛ و mir متمّم Dativ لا يغيّر تصريف الفعل. هنا passen بمعنى يناسب/يلائم في هذا السياق.",
       errorType: "conjugation",
       optionExplanations: [
         undefined,

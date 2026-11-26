@@ -48,7 +48,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
       {
         de: "vergessen",
         ar: "ينسى",
-        noteAr: "قويّ: vergaß – vergessen، وPartizip بلا ge- (بادئة ver-)",
+        noteAr: "قويّ: vergaß – vergessen، و Partizip بلا ge- (بادئة ver-)",
       },
       {
         de: "der Rucksack",
@@ -152,7 +152,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         type: "multiple-choice",
         paragraph: 1,
         questionDe: "Welche Aussage zu „wollten“ und „haben … gebucht“ im ersten Absatz trifft zu?",
-        instructionAr: "سؤال قواعد: قارن صيغ Präteritum وPerfekt الواردة في الفقرة الأولى.",
+        instructionAr: "سؤال قواعد: قارن صيغ Präteritum و Perfekt الواردة في الفقرة الأولى.",
         options: [
           "wollten steht im Präteritum, haben … gebucht im Perfekt; der Text verwendet beide Formen.",
           "Beide Formen stehen im Präteritum.",
@@ -161,11 +161,11 @@ export const reading: NonNullable<Lesson["reading"]> = {
         ],
         correctIndex: 0,
         explanation:
-          "النص يجمع wollten في Präteritum وhaben … gebucht في Perfekt. وجود الصيغتين هنا مثال سياقي، لا قاعدة تلزم كل نص سردي بزمن واحد.",
+          "النص يجمع wollten في Präteritum و haben … gebucht في Perfekt. وجود الصيغتين هنا مثال سياقي، لا قاعدة تلزم كل نص سردي بزمن واحد.",
         errorType: "grammar",
         optionExplanations: [
           undefined,
-          "«Beide Formen stehen im Präteritum» — لكن «haben … gebucht» مركّبة من Hilfsverb وPartizip II فهي Perfekt.",
+          "«Beide Formen stehen im Präteritum» — لكن «haben … gebucht» مركّبة من Hilfsverb و Partizip II فهي Perfekt.",
           "«Beide Formen stehen im Perfekt» — «wollten» ماضٍ بسيط (Präteritum من wollen) بلا مساعد.",
           "«jedes Verb muss im Präteritum stehen» قاعدة غير صحيحة؛ النصّ نفسه يجمع الزمنين.",
         ],
@@ -244,7 +244,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
       },
     ],
     discussionAr:
-      "اكتب أو احكِ مسودةً ذاتية المراجعة في عدة جمل عن رحلة سابقة، واستعمل بعض Perfekt وبعض صيغ Präteritum التي تناسب السياق مثل war وhatte وkonnte وmusste. أدرج فعلين من أفعال السفر المنفصلة، ثم راجع موضع Partizip II. هذه مسودة اختيارية لا تُصحح آلياً ولا تُحتسب دليلاً على هدف سردٍ حر.",
+      "اكتب أو احكِ مسودةً ذاتية المراجعة في عدة جمل عن رحلة سابقة، واستعمل بعض Perfekt وبعض صيغ Präteritum التي تناسب السياق مثل war و hatte و konnte و musste. أدرج فعلين من أفعال السفر المنفصلة، ثم راجع موضع Partizip II. هذه مسودة اختيارية لا تُصحح آلياً ولا تُحتسب دليلاً على هدف سردٍ حر.",
   };
 
 
@@ -443,7 +443,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
 
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "p1",
-    title: "أصوات السفر: ei، eu، وsch",
+    title: "أصوات السفر: ei، eu، و sch",
     items: [
       {
         de: "die Reise",
@@ -455,12 +455,12 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       {
         de: "das Flugzeug",
         ar: "الطائرة",
-        note: "eu = /ɔʏ̯/ تقريباً، وz = /ts/، وg في Flugzeug يُنطق /k/ هنا: Flugzeug",
+        note: "eu = /ɔʏ̯/ تقريباً، و z = /ts/، و g في Flugzeug يُنطق /k/ هنا: Flugzeug",
       },
       {
         de: "geschwommen",
         ar: "سبح (تصريف)",
-        note: "sch = /ʃ/ تقريباً، وo قصيرة قبل mm: geschwommen",
+        note: "sch = /ʃ/ تقريباً، و o قصيرة قبل mm: geschwommen",
       },
       { de: "der Strand", ar: "الشاطئ", note: "st في البداية = شت: شترانت" },
     ],
@@ -520,7 +520,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
         { correct: "gekauft", options: ["gekauft", "gekaufen", "gekaufte"] },
       ],
       explanation:
-        "في هذا المثال يسافر fliegen إلى وجهة فيأخذ sein؛ ويأتي essen وkaufen مع haben في هذين الاستعمالين. اختيار المساعد مرتبط بالفعل ومعناه، لا بقاعدة «الحركة» وحدها.",
+        "في هذا المثال يسافر fliegen إلى وجهة فيأخذ sein؛ ويأتي essen و kaufen مع haben في هذين الاستعمالين. اختيار المساعد مرتبط بالفعل ومعناه، لا بقاعدة «الحركة» وحدها.",
       errorType: "grammar",
     },
     {

@@ -116,10 +116,10 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       explanation: "Ich hätte gern einen Tee = أريد شاياً (بأدب). لاحظ النصب: einen Tee.",
       errorType: "case",
     },
-    {"id": "e11", "type": "fill-blank", "instructionAr": "أكمل بأداة التنكير المناسبة في Akkusativ:", "template": "Ich möchte ___ Kaffee und ___ Banane, bitte.", "blanks": [{"correct": "einen", "options": ["einen", "ein", "eine", "der"]}, {"correct": "eine", "options": ["eine", "einen", "ein", "die"]}], "explanation": "Kaffee مذكّر، فتأتي أداة التنكير einen في النصب. وBanane مؤنثة، فتأتي eine في النصب أيضاً؛ في هذا المثال تتغير أداة المذكر وحدها.", "errorType": "case"},
+    {"id": "e11", "type": "fill-blank", "instructionAr": "أكمل بأداة التنكير المناسبة في Akkusativ:", "template": "Ich möchte ___ Kaffee und ___ Banane, bitte.", "blanks": [{"correct": "einen", "options": ["einen", "ein", "eine", "der"]}, {"correct": "eine", "options": ["eine", "einen", "ein", "die"]}], "explanation": "Kaffee مذكّر، فتأتي أداة التنكير einen في النصب. و Banane مؤنثة، فتأتي eine في النصب أيضاً؛ في هذا المثال تتغير أداة المذكر وحدها.", "errorType": "case"},
     {"id": "e12", "type": "error-correction", "instructionAr": "صحّح الخطأ:", "wrongSentence": "Ich bin Hunger und ich möchte etwas essen.", "wrongWord": "bin", "correctWord": "habe", "options": ["habe", "hat", "bist", "sind"], "explanation": "التعبير الشائع هو Ich habe Hunger؛ ويمكن وصف الحال بصفة: Ich bin hungrig.", "errorType": "grammar"},
     {"id": "e13", "type": "multiple-choice", "instructionAr": "أيّ جملة صحيحة نحوياً؟", "questionDe": "Welcher Satz ist korrekt?", "questionAr": "أيّ جملة صحيحة؟", "options": ["Er ist einen Lehrer", "Er ist ein Lehrer", "Er hat ein Lehrer", "Er ist eine Lehrer"], "correctIndex": 1, "explanation": "بعد sein الرابط يأتي الخبر الاسمي في الرفع: ein Lehrer. ويمكن قول Er ist Lehrer بلا أداة عند ذكر المهنة. أمّا einen Lehrer فيأتي مثلاً مفعولاً به في Er sieht einen Lehrer.", "optionExplanations": ["في معنى الهوية هنا يأتي الاسم الخبري في الرفع بعد sein: ein Lehrer، لا einen Lehrer.", undefined, "إذا كان المقصود «لديه معلّم» فنقول einen Lehrer؛ لذلك لا تصح هذه الصيغة.", "Lehrer مذكّر فلا تصحّ معه eine."], "errorType": "case"},
-    {"id": "e14", "type": "word-ordering", "instructionAr": "رتّب الكلمات:", "tokens": ["Wir", "haben", "heute", "keine", "Zeit", "."], "correctSentence": "Wir haben heute keine Zeit.", "explanation": "الفعل haben في المركز الثاني، ويأتي ظرف الزمان heute بعده، ثمّ عبارة keine Zeit في نهاية هذه الجملة. وZeit مؤنّثة، لذا تبقى صيغة النصب keine كما هي.", "errorType": "word-order"},
+    {"id": "e14", "type": "word-ordering", "instructionAr": "رتّب الكلمات:", "tokens": ["Wir", "haben", "heute", "keine", "Zeit", "."], "correctSentence": "Wir haben heute keine Zeit.", "explanation": "الفعل haben في المركز الثاني، ويأتي ظرف الزمان heute بعده، ثمّ عبارة keine Zeit في نهاية هذه الجملة. و Zeit مؤنّثة، لذا تبقى صيغة النصب keine كما هي.", "errorType": "word-order"},
     {"id": "e15", "type": "transformation", "instructionAr": "حوّل الجملة إلى النفي بأداة النفي المناسبة:", "prompt": "Ich habe einen Bruder.", "acceptedAnswers": ["Ich habe keinen Bruder."], "sampleAnswer": "Ich habe keinen Bruder.", "explanation": "في هذا النفي المحايد نستبدل einen بـkeinen؛ فBruder مذكر في Akkusativ. لا تعمم ذلك إلى كل العبارات الاسمية، إذ يعتمد استعمال nicht أو kein على تركيب العبارة والمعنى.", "errorType": "negation"},
   ];
 
@@ -130,7 +130,7 @@ export const fehlerUndTipps: NonNullable<Lesson["fehlerUndTipps"]> = {
       { wrong: "die Brot", right: "das Brot", whyAr: "Brot محايد. احفظ الاسم مع أداة جنسه: das Brot، لا الاسم وحده." },
     ],
     eselsbruecken: [
-      "في جدول الأدوات هنا يتغير المذكر في Akkusativ: der→den وein→einen؛ وتبقى صور أدوات المؤنث والمحايد والجمع كما هي في هذا الجدول.",
+      "في جدول الأدوات هنا يتغير المذكر في Akkusativ: der→den و ein→einen؛ وتبقى صور أدوات المؤنث والمحايد والجمع كما هي في هذا الجدول.",
       "في بعض اللهجات العربية يقال «عندي جوع»؛ اربطها بالتعبير الألماني الشائع Ich habe Hunger، مع تذكّر أن التعبير يختلف بين اللغتين.",
     ],
     culturalNote: {

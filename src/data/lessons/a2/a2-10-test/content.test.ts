@@ -68,7 +68,7 @@ describe("A2-10 lesson content audit", () => {
     ]);
     expect(possessives?.explanationAr).toContain("لا يغطي الجدول Genitiv");
     expect(possessives?.explanationAr).toContain("في Dativ الجمع تكون الأداة meinen");
-    expect(possessives?.explanationAr).toContain("mit meinen Freunden وmit meinen Eltern");
+    expect(possessives?.explanationAr).toContain("mit meinen Freunden و mit meinen Eltern");
     expect(possessives?.comparisonWithArabic).toContain("لا تقابل تسمية Dativ كلمة «الجر» العربية مقابلةً كاملة");
     expect(possessives?.examples.map(({ de, ar }) => [de, ar])).toEqual([
       ["Das ist mein Bruder.", "هذا أخي. (Nominativ بعد sein)"],

@@ -42,7 +42,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       instructionAr: "رتّب الجملة وابدأ بالفاعل المركّب Meine Schwester",
       tokens: ["Meine", "Schwester", "hat", "in", "München", "studiert"],
       correctSentence: "Meine Schwester hat in München studiert",
-      explanation: "المساعد hat في المركز الثاني بعد المبتدأ المركّب، وstudiert في الآخر.",
+      explanation: "المساعد hat في المركز الثاني بعد المبتدأ المركّب، و studiert في الآخر.",
       errorType: "word-order",
     },
     {
@@ -53,7 +53,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       options: ["sollst", "willst", "darfst", "kannst"],
       correctIndex: 0,
       optionExplanations: [undefined, "لا — «willst» رغبةُ المخاطب نفسه؛ والنصيحة من الوالدين فتُستعمل «sollst».", "لا — «darfst» تعني الإذن؛ والوالدان ينصحان لا يأذنان فيلزم «sollst».", "لا — «kannst» تفيد القدرة؛ والمطلوب نقل نصح: «Du sollst mehr … lernen»."],
-      explanation: "الفعل raten يضع العبارة في سياق نصيحة؛ لذلك تناسب الصيغة Du sollst. أما wollen وdürfen وkönnen فتعبر هنا عن نية أو إذن أو قدرة لا عن النصيحة المطلوبة.",
+      explanation: "الفعل raten يضع العبارة في سياق نصيحة؛ لذلك تناسب الصيغة Du sollst. أما wollen و dürfen و können فتعبر هنا عن نية أو إذن أو قدرة لا عن النصيحة المطلوبة.",
       errorType: "vocabulary",
     },
   ];

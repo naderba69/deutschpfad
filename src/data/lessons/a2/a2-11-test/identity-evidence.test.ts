@@ -57,7 +57,7 @@ describe("A2-11 lesson content audit", () => {
     expect(goal("z2").evidence).toEqual({
       exerciseIds: ["e1", "e6", "w2"],
       taskIds: ["practice:a2-11:e1", "practice:a2-11:e6", "writing:a2-11:w2"],
-      labelAr: "أجب صحيحاً عن e1 وe6 في التدريب (ويظهر e1 أيضاً ضمن أول أربعة تمارين في مسار التدفق)، ثم اختر الضمائر المناسبة لفراغات w2؛ هذه مهام اختيار موجّه لا كتابة حرة.",
+      labelAr: "أجب صحيحاً عن e1 و e6 في التدريب (ويظهر e1 أيضاً ضمن أول أربعة تمارين في مسار التدفق)، ثم اختر الضمائر المناسبة لفراغات w2؛ هذه مهام اختيار موجّه لا كتابة حرة.",
       completion: "all-correct",
     });
     expect(lessonA211.practiceBank.slice(0, 4).map(({ id }) => id)).toEqual(["e1", "e2", "e3", "e4"]);

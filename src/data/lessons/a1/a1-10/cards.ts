@@ -72,7 +72,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
         { correct: "keinen", options: ["nicht", "kein", "keinen"] },
       ],
       explanation:
-        "في هذه الجمل: nicht مع نفي العمل يوم الأحد، keine مع الاسم الجمع Geschwister، وkeinen مع Kaffee المذكر في المفعول به.",
+        "في هذه الجمل: nicht مع نفي العمل يوم الأحد، keine مع الاسم الجمع Geschwister، و keinen مع Kaffee المذكر في المفعول به.",
       errorType: "negation",
     },
   ];

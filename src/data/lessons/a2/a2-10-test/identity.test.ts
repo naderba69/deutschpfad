@@ -99,7 +99,7 @@ describe("A2-10 lesson content audit", () => {
       questionDe: "Ich glaube, ___ das stimmt.",
       options: ["dass", "weil", "wenn", "ob"],
       correctIndex: 0,
-      explanation: "في هذا السياق، يقدّم dass مضمون الاعتقاد: «أعتقد أن ذلك صحيح». أما weil فيقدّم سبباً، وwenn شرطاً أو زمناً، وob سؤالاً غير مباشر بنعم/لا.",
+      explanation: "في هذا السياق، يقدّم dass مضمون الاعتقاد: «أعتقد أن ذلك صحيح». أما weil فيقدّم سبباً، و wenn شرطاً أو زمناً، و ob سؤالاً غير مباشر بنعم/لا.",
     });
     expect(review[2]).toMatchObject({
       id: "r3",

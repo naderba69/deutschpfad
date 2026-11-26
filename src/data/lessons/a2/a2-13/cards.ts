@@ -31,7 +31,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
         { correct: "mir", options: ["mir", "mich", "ich", "meiner"] },
         { correct: "der", options: ["der", "die", "den", "das"] },
       ],
-      explanation: "gefallen وdanken فعلان يطلبان Dativ: gefällt mir · danke der Kollegin.",
+      explanation: "gefallen و danken فعلان يطلبان Dativ: gefällt mir · danke der Kollegin.",
       errorType: "case",
     },
     {
@@ -57,7 +57,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       instructionAr: "رتّب الجملة:",
       tokens: ["Arzt", "Ich", "zum", "gegangen", "bin", "heute", "."],
       correctSentence: "Ich bin heute zum Arzt gegangen.",
-      explanation: "Perfekt مع sein: الفعل المساعد bin في المركز الثاني، وgegangen في النهاية.",
+      explanation: "Perfekt مع sein: الفعل المساعد bin في المركز الثاني، و gegangen في النهاية.",
       errorType: "word-order",
     },
     {

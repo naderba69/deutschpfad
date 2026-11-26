@@ -12,11 +12,11 @@ export const theory: NonNullable<Lesson["theory"]> = [
       explanationAr:
         `الأفعال المنتظمة تأخذ عادةً لاحقة te على الجذع وتحتفظ بلواحقها العادية: arbeiten → ich arbeitete · du arbeitetest · er arbeitete. والأفعال الشاذة تغيّر جذعها نفسه ولا تأخذ te: gehen → ging · kommen → kam · sehen → sah · essen → aß. أمّا الأفعال الناقصة (Modalverben) فتأخذ te أيضاً لكنها تفقد umlaut وتبدّل حرفاً: können → konnte · müssen → musste · wollen → wollte · dürfen → durfte.
 
-ومع الشواذ يحدث أمر يُربك المتعلّم العربي: صيغة ich وer تكون بلا لاحقة في الماضي البسيط (ich ging · er ging)، بخلاف المضارع الذي يضيف t في er geht. فالفرق بين «أنا ذهبت» و«هو ذهب» يظهر في الماضي من السياق لا من اللاحقة، وهذا هو أوّل ما يجب استيعابه.
+ومع الشواذ يحدث أمر يُربك المتعلّم العربي: صيغة ich و er تكون بلا لاحقة في الماضي البسيط (ich ging · er ging)، بخلاف المضارع الذي يضيف t في er geht. فالفرق بين «أنا ذهبت» و«هو ذهب» يظهر في الماضي من السياق لا من اللاحقة، وهذا هو أوّل ما يجب استيعابه.
 
-والتوزيع بحسب نوع النص مفيد كاتجاه عملي: يسود Präteritum غالباً في السرد المكتوب، ويشيع Perfekt في الحديث اليومي للأفعال الأخرى (Ich arbeitete fünf Jahre in einer Firma / Ich habe fünf Jahre gearbeitet). وتشيع صيغ Präteritum من sein وhaben والأفعال الناقصة في الكلام أيضاً. يختلف الاستعمال بحسب المنطقة ونوع النص والفعل؛ فهذه ميول شائعة لا قواعد تلزم كل متحدث.
+والتوزيع بحسب نوع النص مفيد كاتجاه عملي: يسود Präteritum غالباً في السرد المكتوب، ويشيع Perfekt في الحديث اليومي للأفعال الأخرى (Ich arbeitete fünf Jahre in einer Firma / Ich habe fünf Jahre gearbeitet). وتشيع صيغ Präteritum من sein و haben والأفعال الناقصة في الكلام أيضاً. يختلف الاستعمال بحسب المنطقة ونوع النص والفعل؛ فهذه ميول شائعة لا قواعد تلزم كل متحدث.
 
-وموضع هذا الدرس من مسارك: في A2-01 تعلّمت Perfekt للحكي المحكي، وهذا الدرس يكمل الصورة بوجهها المكتوب؛ وفي كثير من السياقات يمكن أن يعبّر Perfekt وPräteritum عن حدث ماضٍ واحد، لكن الاختيار يتأثر بنوع النص والمنطقة والفعل والسياق؛ فلا يصبح Perfekt خطأً لمجرد وروده في كلام.`,
+وموضع هذا الدرس من مسارك: في A2-01 تعلّمت Perfekt للحكي المحكي، وهذا الدرس يكمل الصورة بوجهها المكتوب؛ وفي كثير من السياقات يمكن أن يعبّر Perfekt و Präteritum عن حدث ماضٍ واحد، لكن الاختيار يتأثر بنوع النص والمنطقة والفعل والسياق؛ فلا يصبح Perfekt خطأً لمجرد وروده في كلام.`,
       whyAr:
         "تساعد معرفة صيغ Präteritum الشائعة على قراءة القصص والسرد والتقارير حيث يكثر استعماله. يدرّب هذا الدرس على مجموعة منتقاة من الأفعال، ولا يدّعي تغطية كل أفعال الألمانية أو كل أنماط استعمالها. وقارن في مثال واحد بين الزمنين قبل أن تحكم على الصيغة: Ich arbeitete dort fünf Jahre ينسجم مع سرد مكتوب، بينما Ich habe dort fünf Jahre gearbeitet شائع في الحديث عن التجربة نفسها.",
       table: {
@@ -42,17 +42,17 @@ export const theory: NonNullable<Lesson["theory"]> = [
         { de: "Wir hatten wenig Zeit und mussten schnell arbeiten.", ar: "كان عندنا وقت قليل وكان علينا العمل بسرعة." },
       ],
       comparisonWithArabic:
-        "«عملت» = ich arbeitete، و«ذهب» = er ging. قد يقابل المتعلّم العربي الحدث نفسه بصيغ عربية مختلفة بحسب السياق، كما يجد في الألمانية Perfekt وPräteritum. في كثير من الحالات يشير كلاهما إلى الماضي، لكنهما ليسا متطابقين في كل استعمال: يؤثر نوع النص والمنطقة والفعل والسياق. كاتجاه عام، يكثر Perfekt في الحديث اليومي وPräteritum في السرد المكتوب؛ وهذه ميول لا قاعدة مطلقة.",
+        "«عملت» = ich arbeitete، و«ذهب» = er ging. قد يقابل المتعلّم العربي الحدث نفسه بصيغ عربية مختلفة بحسب السياق، كما يجد في الألمانية Perfekt و Präteritum. في كثير من الحالات يشير كلاهما إلى الماضي، لكنهما ليسا متطابقين في كل استعمال: يؤثر نوع النص والمنطقة والفعل والسياق. كاتجاه عام، يكثر Perfekt في الحديث اليومي و Präteritum في السرد المكتوب؛ وهذه ميول لا قاعدة مطلقة.",
       eselsbruecke:
         "«المنتظم: +te (أربيته)، الشاذ: غيّر الجذر (غينغ، كام)» — احفظ الشواذ بالثلاثي: gehen-ging-gegangen. جدول الأفعال الشاذة (أعلاه) رفيقك الدائم!",
       commonMistakes: [
         { wrong: "Ich gehen ging (خلط المضارع مع الماضي)", right: "Ich ging.", whyAr: "لا يجتمع المضارع والماضي في فعل واحد: الفعل المصرَّف يحمل زمناً واحداً، فإمّا kommen (مضارع) وإمّا kam أو bin gekommen (ماضٍ)، والصواب هنا Ich ging." },
-        { wrong: "ich arbeitete أم ich habe gearbeitet؟", right: "كلاهما صحيح: arbeitete (كتابة) / habe gearbeitet (كلام)", whyAr: "هذا سؤال أسلوب لا سؤال صحّة: arbeitete وhabe gearbeitet كلتاهما صحيحة، والاختيار يتبع نوع النصّ — سردٌ مكتوب يميل إلى Präteritum، وحوارٌ يومي يميل إلى Perfekt — مع شيوع صيغ Präteritum من sein وhaben والأفعال الناقصة في الكلام أيضاً." },
+        { wrong: "ich arbeitete أم ich habe gearbeitet؟", right: "كلاهما صحيح: arbeitete (كتابة) / habe gearbeitet (كلام)", whyAr: "هذا سؤال أسلوب لا سؤال صحّة: arbeitete و habe gearbeitet كلتاهما صحيحة، والاختيار يتبع نوع النصّ — سردٌ مكتوب يميل إلى Präteritum، وحوارٌ يومي يميل إلى Perfekt — مع شيوع صيغ Präteritum من sein و haben والأفعال الناقصة في الكلام أيضاً." },
         { wrong: "Ich sah أم Ich habe gesehen؟ في القصة", right: "في القصة: sah (Präteritum). في الكلام: habe gesehen", whyAr: "في القصص والكتابة السردية يكون Präteritum هو الزمن السائد فيُكتب sah، أمّا في الحوار اليومي فيُقال habe gesehen؛ ويتبع الاختيار نوع النص والسياق، لا قاعدة صواب وخطأ مطلقة." },
       ],
       relatedRuleComparison: {
         title: "Präteritum أم Perfekt — القرار",
-        content: "اتجاه شائع لا قاعدة مطلقة: Perfekt كثير في الحديث اليومي، وPräteritum كثير في السرد المكتوب. وتشيع صيغ war/hatte والأفعال الناقصة في الكلام أيضاً؛ ويتباين الاستعمال إقليمياً وبحسب الفعل والسياق.",
+        content: "اتجاه شائع لا قاعدة مطلقة: Perfekt كثير في الحديث اليومي، و Präteritum كثير في السرد المكتوب. وتشيع صيغ war/hatte والأفعال الناقصة في الكلام أيضاً؛ ويتباين الاستعمال إقليمياً وبحسب الفعل والسياق.",
       },
     },
     {
@@ -60,9 +60,9 @@ export const theory: NonNullable<Lesson["theory"]> = [
       titleAr: "الماضي التام المركب (Plusquamperfekt) — ما قبل الماضي",
       titleDe: "Das Plusquamperfekt: hatte/war + Partizip II",
       explanationAr:
-        `الماضي التام المركب Plusquamperfekt يعبّر عن حدثٍ وقع قبل حدثٍ ماضٍ آخر، أي «الماضي في الماضي». وتركيبه طبقتان: فعلٌ مساعد في صورة Präteritum (hatte أو war) + Partizip II في نهاية الجملة: Bevor ich studierte, hatte ich gearbeitet. ويُختار المساعد كما في Perfekt: يأتي haben مع كثير من الأفعال، وsein مع أفعال معيّنة تدل على انتقال أو تغيّر حالة، وكذلك أفعال مثل bleiben. هذه قاعدة تمهيدية وليست قائمةً حاصرة؛ فاختيار المساعد يتبع الفعل واستعماله.
+        `الماضي التام المركب Plusquamperfekt يعبّر عن حدثٍ وقع قبل حدثٍ ماضٍ آخر، أي «الماضي في الماضي». وتركيبه طبقتان: فعلٌ مساعد في صورة Präteritum (hatte أو war) + Partizip II في نهاية الجملة: Bevor ich studierte, hatte ich gearbeitet. ويُختار المساعد كما في Perfekt: يأتي haben مع كثير من الأفعال، و sein مع أفعال معيّنة تدل على انتقال أو تغيّر حالة، وكذلك أفعال مثل bleiben. هذه قاعدة تمهيدية وليست قائمةً حاصرة؛ فاختيار المساعد يتبع الفعل واستعماله.
 
-يُستعمل Plusquamperfekt لبيان حدث سابق لمرجعٍ ماضٍ، ولا يعني أن الحدث «قديم جداً». يمكن أن يوضّح الأسبقية: hatte gearbeitet (الأسبق) مقابل studierte (اللاحق). لكن أدوات مثل bevor وnachdem وals تساعد بنفسها على ترتيب الأحداث، لذلك لا تفرض وحدها Plusquamperfekt في كل جملة.
+يُستعمل Plusquamperfekt لبيان حدث سابق لمرجعٍ ماضٍ، ولا يعني أن الحدث «قديم جداً». يمكن أن يوضّح الأسبقية: hatte gearbeitet (الأسبق) مقابل studierte (اللاحق). لكن أدوات مثل bevor و nachdem و als تساعد بنفسها على ترتيب الأحداث، لذلك لا تفرض وحدها Plusquamperfekt في كل جملة.
 
 في السرد المكتوب يُستعمل Plusquamperfekt كثيراً للحدث الأسبق، مثل: «Nachdem er die Schule beendet hatte, begann er zu arbeiten». لكن التسلسل قد يكون واضحاً من الأداة والسياق، وقد ترد صيغ أخرى في الكلام؛ فـnachdem أو bevor لا يفرضان Plusquamperfekt آلياً. مثال صحيح أيضاً: «Bevor ich studierte, arbeitete ich in einer Firma».`,
       whyAr:
@@ -95,7 +95,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       ],
       relatedRuleComparison: {
         title: "الأزمنة الثلاثة للماضي",
-        content: "Perfekt وPräteritum صيغتان شائعتان للماضي يختلف استعمالهما بحسب النص والمنطقة والفعل. Plusquamperfekt يضع حدثاً قبل مرجعٍ ماضٍ، ولا تفرضه أداة ربط زمني وحدها.",
+        content: "Perfekt و Präteritum صيغتان شائعتان للماضي يختلف استعمالهما بحسب النص والمنطقة والفعل. Plusquamperfekt يضع حدثاً قبل مرجعٍ ماضٍ، ولا تفرضه أداة ربط زمني وحدها.",
       },
     },
   ];

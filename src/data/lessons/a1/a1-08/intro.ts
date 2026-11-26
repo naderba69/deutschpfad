@@ -23,7 +23,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e1", "e4", "e9", "w1"],
         taskIds: ["practice:a1-08:e1", "practice:a1-08:e4", "practice:a1-08:e9", "writing:a1-08:w1"],
-        labelAr: "اختر الصفة الخبرية الصحيحة في e1 وe9، رتّب جملة الوصف في e4، ثم اكتب الجملتين في w1؛ يجب أن تصحّ كل النتائج.",
+        labelAr: "اختر الصفة الخبرية الصحيحة في e1 و e9، رتّب جملة الوصف في e4، ثم اكتب الجملتين في w1؛ يجب أن تصحّ كل النتائج.",
         completion: "all-correct",
       },
     },
@@ -52,7 +52,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z5",
       de: "Ich kann ausgewählte Formen von welcher- und dieser- im Nominativ und Akkusativ verwenden.",
-      ar: "أستعمل صيغاً مختارة من welcher- وdieser- مع أسماء الملابس في الرفع والنصب.",
+      ar: "أستعمل صيغاً مختارة من welcher- و dieser- مع أسماء الملابس في الرفع والنصب.",
       evidence: {
         exerciseIds: ["e11", "e12", "e13", "e14", "e15"],
         taskIds: ["practice:a1-08:e11", "practice:a1-08:e12", "practice:a1-08:e13", "practice:a1-08:e14", "practice:a1-08:e15"],
@@ -67,7 +67,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e16", "e18", "e19", "e20", "e22", "e23", "e25"],
         taskIds: ["practice:a1-08:e16", "practice:a1-08:e18", "practice:a1-08:e19", "practice:a1-08:e20", "practice:a1-08:e22", "practice:a1-08:e23", "practice:a1-08:e25"],
-        labelAr: "أجب عن توافق الفعل والضمير في e16 وe19 وe20 وe23، وصحّح/حوّل الجملة في e18 وe22، ثم اختر الرد المناسب في e25؛ كل النتائج مطلوبة.",
+        labelAr: "أجب عن توافق الفعل والضمير في e16 و e19 و e20 و e23، وصحّح/حوّل الجملة في e18 و e22، ثم اختر الرد المناسب في e25؛ كل النتائج مطلوبة.",
         completion: "all-correct",
       },
     },
@@ -118,7 +118,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z11",
       de: "Ich kann zwei kurze Sätze über Kleidung und Farbe schriftlich formulieren.",
-      ar: "أكتب جملتين قصيرتين عن قطعة ملابس ولونها باستعمال tragen وsein.",
+      ar: "أكتب جملتين قصيرتين عن قطعة ملابس ولونها باستعمال tragen و sein.",
       evidence: {
         exerciseIds: ["w1"],
         taskIds: ["writing:a1-08:w1"],
@@ -131,7 +131,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
     motivatingQuestionAr:
-      "كيف تصف لون قميص بالألمانية بجملة كاملة؟ لاحظ الفرق بين: Das Hemd ist rot وDie Jacke ist blau.",
+      "كيف تصف لون قميص بالألمانية بجملة كاملة؟ لاحظ الفرق بين: Das Hemd ist rot و Die Jacke ist blau.",
     motivatingQuestionDe: "Wie findest du meine Jacke?",
     contextAr:
       "نتدرّب في موقف متجر ملابس على تسمية قطع وألوان مختارة، ووصف اللون بجملة خبرية، والسؤال عن الرأي والمقاس. هذه أمثلة تدريبية وليست قائمة بكل ما يقال في المتجر.",

@@ -43,7 +43,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:a2-06:m5",
         ],
         labelAr:
-          "أجب عن المهام الخمس m1–m5؛ تتناول الفاعل والتمييز بين dass وdas وترتيب الفعل والفاصلة.",
+          "أجب عن المهام الخمس m1–m5؛ تتناول الفاعل والتمييز بين dass و das وترتيب الفعل والفاصلة.",
         completion: "all-correct",
       },
     },
@@ -147,7 +147,7 @@ export const review: NonNullable<Lesson["review"]> = [
         { correct: "Musik", options: ["Musik", "Zeitung", "Nachricht"] },
       ],
       explanation:
-        "Musik hören تعني الاستماع إلى الموسيقى، وتوضح عبارة besonders neue Lieder أن السياق عن الأغاني. Zeitung لا تُسمع، وNachricht بالمفرد لا تلائم هذا التركيب.",
+        "Musik hören تعني الاستماع إلى الموسيقى، وتوضح عبارة besonders neue Lieder أن السياق عن الأغاني. Zeitung لا تُسمع، و Nachricht بالمفرد لا تلائم هذا التركيب.",
       errorType: "vocabulary",
     },
   ];

@@ -10,7 +10,7 @@ export const A1_EXTRA_LESSON_VOCAB: Record<string, VocabEntry[]> = {
     {de: "buchstabieren", ar: "يهجّئ حرفاً حرفاً", exampleDe: "Bitte buchstabieren Sie Ihren Namen.", exampleAr: "من فضلك هجِّ اسمك حرفاً حرفاً."},
     {de: "aussprechen", ar: "ينطق", exampleDe: "Wie spricht man dieses Wort aus?", exampleAr: "كيف تُنطق هذه الكلمة؟"},
     {de: "der Laut", ar: "الصوت", exampleDe: "Dieser Laut ist neu für mich.", exampleAr: "هذا الصوت جديد بالنسبة لي."},
-    {de: "der Umlaut", ar: "الحرف المعدَّل الصوت (ä, ö, ü)", exampleDe: "Ä, Ö und Ü sind Umlaute.", exampleAr: "Ä وÖ وÜ حروف معدّلة الصوت."},
+    {de: "der Umlaut", ar: "الحرف المعدَّل الصوت (ä, ö, ü)", exampleDe: "Ä, Ö und Ü sind Umlaute.", exampleAr: "Ä و Ö و Ü حروف معدّلة الصوت."},
     {de: "das ß", ar: "حرف ß (Eszett)", exampleDe: "Das ß ist ein besonderer Buchstabe.", exampleAr: "ß حرف خاص في الألمانية."},
     {de: "die Silbe", ar: "المقطع", exampleDe: "Das Wort hat zwei Silben.", exampleAr: "هذه الكلمة فيها مقطعان."},
     {de: "wiederholen", ar: "يكرّر", exampleDe: "Bitte wiederholen Sie.", exampleAr: "من فضلك كرّر."},

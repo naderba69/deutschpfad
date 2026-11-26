@@ -183,7 +183,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         "Ich gehe früh, damit zu pünktlich sein.",
       ],
       correctIndex: 0,
-      explanation: "um … zu: بلا فاعل، وzu تسبق المصدر في النهاية.",
+      explanation: "um … zu: بلا فاعل، و zu تسبق المصدر في النهاية.",
       errorType: "grammar",
       optionExplanations: [
         undefined,

@@ -11,9 +11,9 @@ export const theory: NonNullable<Lesson["theory"]> = [
       titleDe: "Reflexive Verben: sich freuen, sich ärgern",
       explanationAr: `الفعل الانعكاسي فعلٌ يرافقه ضمير يعود على الفاعل: Ich wasche mich. — الضمير mich ليس توكيداً ولا «نفسي» حرفية، بل مفعولٌ حقيقي في Akkusativ. ويتغير الضمير مع الفاعل: ich–mich، du–dich، er/sie/es–sich، wir–uns، ihr–euch، sie/Sie–sich، كما يظهر في الجدول.
 
-لكن الأفعال الانعكاسية ليست نمطاً دلالياً واحداً. بعضها يلزمه الضمير في المعنى المستهدف مثل sich beeilen (يستعجل) وsich erholen (يستريح) وsich beschweren (يشتكي)؛ وبعضها فعل متعدٍّ له استعمال انعكاسي إلى جانبه مثل waschen: Ich wasche mich. مقابل Ich wasche das Auto.؛ وبعضها يتغيّر إطاره بتغيّر المعنى مثل sich vorstellen: Ich stelle mich vor. (أعرّف بنفسي) مقابل Ich stelle mir den Ablauf vor. (أتخيّل سير العملية).
+لكن الأفعال الانعكاسية ليست نمطاً دلالياً واحداً. بعضها يلزمه الضمير في المعنى المستهدف مثل sich beeilen (يستعجل) و sich erholen (يستريح) و sich beschweren (يشتكي)؛ وبعضها فعل متعدٍّ له استعمال انعكاسي إلى جانبه مثل waschen: Ich wasche mich. مقابل Ich wasche das Auto.؛ وبعضها يتغيّر إطاره بتغيّر المعنى مثل sich vorstellen: Ich stelle mich vor. (أعرّف بنفسي) مقابل Ich stelle mir den Ablauf vor. (أتخيّل سير العملية).
 
-لذلك لا تفترض أن الضمير يعني دائماً أن الفاعل «يفعل شيئاً بنفسه» — فـ«sich freuen» تعني «أكون مسروراً/أتطلع إلى…» ولا تعني حرفياً «أُفرح نفسي»؛ فالاستعمال المتعدي المقابل لها هو Das freut mich (هذا يُسعدني). وفي صيغة الجمع قد يُفهم المعنى متبادلاً بحسب السياق: Wir treffen uns. (نلتقي، وغالباً بعضنا بعضاً)، وWir schreiben uns. (نتراسل). والأفضل دائماً حفظ الفعل مع إطاره: الفعل + الضمير + حرف الجر أو المتمم.`,
+لذلك لا تفترض أن الضمير يعني دائماً أن الفاعل «يفعل شيئاً بنفسه» — فـ«sich freuen» تعني «أكون مسروراً/أتطلع إلى…» ولا تعني حرفياً «أُفرح نفسي»؛ فالاستعمال المتعدي المقابل لها هو Das freut mich (هذا يُسعدني). وفي صيغة الجمع قد يُفهم المعنى متبادلاً بحسب السياق: Wir treffen uns. (نلتقي، وغالباً بعضنا بعضاً)، و Wir schreiben uns. (نتراسل). والأفضل دائماً حفظ الفعل مع إطاره: الفعل + الضمير + حرف الجر أو المتمم.`,
       whyAr:
         "تصف المراجع النحوية الاستعمالات الانعكاسية الإلزامية، والاستعمال الانعكاسي لفعل يمكن أن يأتي مع مفعول آخر؛ لذلك لا يصح افتراض أن كل ضمير يعني حرفياً أن الفاعل يفعل شيئاً بنفسه. احفظ `sich freuen` بوصفه تركيباً بمعنى «يسرّه/يكون مسروراً»، وقارنه بالإطار المختلف `Das freut mich` = «هذا يُسعدني».",
       table: {
@@ -70,9 +70,9 @@ export const theory: NonNullable<Lesson["theory"]> = [
       id: "t2",
       titleAr: "الأفعال الانعكاسية: mich أم mir",
       titleDe: "Reflexive Verben: mich oder mir",
-      explanationAr: `اختر الصيغة وفق بناء الفعل في المثال، ولا تحفظ قاعدة عامة من نوع «وجود مفعول آخر يعني Dativ» — فهي غير صحيحة كتعميم. في Ich wasche mich يكون mich مفعولاً في Akkusativ؛ وفي Ich wasche mir die Hände يكون mir في Dativ وdie Hände مفعولاً في Akkusativ. اليدان هنا هما المفعول المباشر، والضمير يدل على صاحب اليدين.
+      explanationAr: `اختر الصيغة وفق بناء الفعل في المثال، ولا تحفظ قاعدة عامة من نوع «وجود مفعول آخر يعني Dativ» — فهي غير صحيحة كتعميم. في Ich wasche mich يكون mich مفعولاً في Akkusativ؛ وفي Ich wasche mir die Hände يكون mir في Dativ و die Hände مفعولاً في Akkusativ. اليدان هنا هما المفعول المباشر، والضمير يدل على صاحب اليدين.
 
-لكل فعل إطاره: sich ansehen يأتي غالباً مع Dativ للشخص أو الشيء المرتبط ومع Akkusativ للمفعول (Ich sehe mir den Film an.)؛ وsich vorstellen يختلف معناه بحسب الضمير (Ich stelle mich vor. أعرّف بنفسي / Ich stelle mir den Ablauf vor. أتخيّل سير العملية)؛ وsich interessieren für يأخذ Akkusativ (Ich interessiere mich für Musik.)؛ وsich bedanken يأخذ bei + Dativ للشخص وfür + Akkusativ للشيء (Ich bedanke mich bei dir für die Hilfe.).
+لكل فعل إطاره: sich ansehen يأتي غالباً مع Dativ للشخص أو الشيء المرتبط ومع Akkusativ للمفعول (Ich sehe mir den Film an.)؛ و sich vorstellen يختلف معناه بحسب الضمير (Ich stelle mich vor. أعرّف بنفسي / Ich stelle mir den Ablauf vor. أتخيّل سير العملية)؛ و sich interessieren für يأخذ Akkusativ (Ich interessiere mich für Musik.)؛ و sich bedanken يأخذ bei + Dativ للشخص و für + Akkusativ للشيء (Ich bedanke mich bei dir für die Hilfe.).
 
 طريقة القرار في ثلاثة أسئلة: ما الفعل وإطاره المعتاد؟ هل الضمير هو المفعول الوحيد أم يوجد مفعول Akkusativ آخر معه؟ وما المعنى المقصود في هذا السياق؟ إن شككت فتحقّق من القاموس على الإطار كاملاً لا على الفعل وحده. واستخدم اسمي الحالتين الألمانيين (Akkusativ/Dativ) دون مساواتهما آلياً بالنصب والجر العربي.`,
       whyAr:
@@ -90,14 +90,14 @@ export const theory: NonNullable<Lesson["theory"]> = [
       },
       examples: [
         { de: "Ich freue mich auf den Urlaub.", ar: "أتطلع إلى العطلة." },
-        { de: "Ich wasche mir die Hände.", ar: "أغسل يديّ (mir Dativ، وdie Hände Akkusativ في هذا الإطار)." },
+        { de: "Ich wasche mir die Hände.", ar: "أغسل يديّ (mir Dativ، و die Hände Akkusativ في هذا الإطار)." },
         { de: "Ich sehe mir das Formular an.", ar: "أتفحّص الاستمارة." },
         { de: "Wir treffen uns um sieben.", ar: "نلتقي في السابعة (قد يكون المعنى متبادلاً بحسب السياق)." },
         { de: "Setz dich bitte!", ar: "اجلس من فضلك!" },
-        { de: "Ich putze mir die Zähne.", ar: "أنظّف أسناني (mir Dativ، وdie Zähne Akkusativ في هذا الإطار)." },
+        { de: "Ich putze mir die Zähne.", ar: "أنظّف أسناني (mir Dativ، و die Zähne Akkusativ في هذا الإطار)." },
       ],
       comparisonWithArabic:
-        "العربية تعبّر عن الانعكاس بوسائل غير الضمير المنفصل غالباً: صيغة الفعل نفسها (اغتسل، استعجل، تشاجر)، أو ضمير متصل بالمفعول (أغسل يديّ)، أو «نفسي/نفسه» للتوكيد فقط. الألمانية لا تملك صيغة فعلية مماثلة، فتضطر إلى كلمة مستقلة يتغير شكلها مع الفاعل — وهذا سبب شيوع الخطأ عند الناطقين بالعربية: ينسون الضمير (Ich freue.) أو يضعون ضميراً في غير موضعه (Ich freue mir.). كذلك في العربية «أغسل يديّ» لا تُظهر مفعولين، بينما الألمانية تُظهرهما بوضوح: mir (Dativ) وdie Hände (Akkusativ). وتذكّر أن الحالة يحددها الفعل وإطاره، لا الترجمة العربية.",
+        "العربية تعبّر عن الانعكاس بوسائل غير الضمير المنفصل غالباً: صيغة الفعل نفسها (اغتسل، استعجل، تشاجر)، أو ضمير متصل بالمفعول (أغسل يديّ)، أو «نفسي/نفسه» للتوكيد فقط. الألمانية لا تملك صيغة فعلية مماثلة، فتضطر إلى كلمة مستقلة يتغير شكلها مع الفاعل — وهذا سبب شيوع الخطأ عند الناطقين بالعربية: ينسون الضمير (Ich freue.) أو يضعون ضميراً في غير موضعه (Ich freue mir.). كذلك في العربية «أغسل يديّ» لا تُظهر مفعولين، بينما الألمانية تُظهرهما بوضوح: mir (Dativ) و die Hände (Akkusativ). وتذكّر أن الحالة يحددها الفعل وإطاره، لا الترجمة العربية.",
       eselsbruecke:
         "احفظ المقارنة الخاصة بـ`waschen`: `Ich wasche mich` مقابل `Ich wasche mir die Hände`. لا تستعمل قاعدة «إذا وجدت كلمة أخرى فاختر Dativ» مع كل فعل؛ تعلّم الفعل مع إطاره ومثاله.",
       commonMistakes: [

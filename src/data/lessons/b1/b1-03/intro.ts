@@ -23,7 +23,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e1", "e2", "e7", "m1"],
         taskIds: ["practice:b1-03:e1", "practice:b1-03:e2", "practice:b1-03:e7", "mini-test:b1-03:m1"],
-        labelAr: "أجب صحيحاً عن e1 (المضارع) وe2 (الماضي البسيط)، وحوّل e7 من النشط إلى المجهول، وأجب عن m1. هذه المهام تختبر صيغتي الحاضر والماضي البسيط؛ قراءة الجدول لا تُحتسب أداءً.",
+        labelAr: "أجب صحيحاً عن e1 (المضارع) و e2 (الماضي البسيط)، وحوّل e7 من النشط إلى المجهول، وأجب عن m1. هذه المهام تختبر صيغتي الحاضر والماضي البسيط؛ قراءة الجدول لا تُحتسب أداءً.",
         completion: "all-correct",
       },
     },
@@ -34,7 +34,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e6", "m5"],
         taskIds: ["practice:b1-03:e6", "mini-test:b1-03:m5"],
-        labelAr: "أكمل e6 وm5 بالاختيار الصحيح بين man والمجهول. الأمثلة المعروضة في الشرح لا تُحتسب أداءً.",
+        labelAr: "أكمل e6 و m5 بالاختيار الصحيح بين man والمجهول. الأمثلة المعروضة في الشرح لا تُحتسب أداءً.",
         completion: "all-correct",
       },
     },
@@ -56,9 +56,9 @@ export const einfuehrung: Lesson["einfuehrung"] = {
       "في هذا الدرس نركّز على Vorgangspassiv: werden مصرّفاً + Partizip II، مثل Das Haus wird gebaut. أمّا werden مع صفة فيمكن أن تعني «يصبح» (Das Klima wird wärmer)، ومع المصدر تدخل في Futur (Das Klima wird sich verändern). يحدد التركيب المعنى.",
     motivatingQuestionDe: "Was kann man für die Umwelt tun?",
     contextAr:
-      "نتدرب على مفردات البيئة، وVorgangspassiv في الحاضر والماضي البسيط، وعلى zu + مصدر في أمثلة قصيرة.",
+      "نتدرب على مفردات البيئة، و Vorgangspassiv في الحاضر والماضي البسيط، وعلى zu + مصدر في أمثلة قصيرة.",
     contextDe: "Die Temperaturen steigen.",
-    connectionToPreviousAr: "تتذكر werden في معنى «يصبح»؛ هنا نميّز هذا الاستعمال عن Vorgangspassiv وFutur من بنية الجملة.",
+    connectionToPreviousAr: "تتذكر werden في معنى «يصبح»؛ هنا نميّز هذا الاستعمال عن Vorgangspassiv و Futur من بنية الجملة.",
     activateVocabulary: [
       { de: "die Umwelt", ar: "البيئة" },
       { de: "das Klima", ar: "المناخ" },

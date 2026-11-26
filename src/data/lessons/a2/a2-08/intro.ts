@@ -24,7 +24,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "listening:l4:q9",
         ],
         labelAr:
-          "أجب عن e11 وe14 من جدول التدريب، وعن أسئلة حوارات التذكرة والمسار والتأخير؛ فتح الجدول أو إظهار التفريغ وحده لا يثبت استخراج المعلومات.",
+          "أجب عن e11 و e14 من جدول التدريب، وعن أسئلة حوارات التذكرة والمسار والتأخير؛ فتح الجدول أو إظهار التفريغ وحده لا يثبت استخراج المعلومات.",
 
         completion: "all-correct",
       },
@@ -66,7 +66,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "writing:a2-08:w2",
         ],
         labelAr:
-          "اختر الصيغ الصحيحة في e1 وe5 وe12 وe13 وm1، ورتّب e4 وm3، ثم أنجز w1 وw2؛ لا تحتسب مشاهدة القاعدة وحدها.",
+          "اختر الصيغ الصحيحة في e1 و e5 و e12 و e13 و m1، ورتّب e4 و m3، ثم أنجز w1 و w2؛ لا تحتسب مشاهدة القاعدة وحدها.",
         completion: "all-correct",
       },
     },
@@ -84,14 +84,14 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "listening:l2:q3",
         ],
         labelAr:
-          "اختر التفضيل في e2 وm2، حوّل جملة e7، وأجب عن q3 وفق رأي المتحدث؛ لا يعني ذلك تقويم النطق.",
+          "اختر التفضيل في e2 و m2، حوّل جملة e7، وأجب عن q3 وفق رأي المتحدث؛ لا يعني ذلك تقويم النطق.",
         completion: "all-correct",
       },
     },
     {
       id: "z4",
       de: "Ich kann die häufigen Steigerungsreihen gut – besser – am besten, viel – mehr – am meisten und gern – lieber – am liebsten zuordnen.",
-      ar: "أختار الصيغ المناسبة في السلاسل الشائعة gut/besser/am besten وviel/mehr/am meisten وgern/lieber/am liebsten.",
+      ar: "أختار الصيغ المناسبة في السلاسل الشائعة gut/besser/am besten و viel/mehr/am meisten و gern/lieber/am liebsten.",
       evidence: {
         exerciseIds: ["e6", "m2", "m5"],
         taskIds: [
@@ -118,7 +118,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "writing:a2-08:w4",
         ],
         labelAr:
-          "طابق مفردات e3، وافهم hin und zurück في e8، وأجب كتابةً عن e10 وw4؛ التفاعل النصي ليس هدف كلام مقوّماً.",
+          "طابق مفردات e3، وافهم hin und zurück في e8، وأجب كتابةً عن e10 و w4؛ التفاعل النصي ليس هدف كلام مقوّماً.",
         completion: "all-correct",
       },
     },

@@ -23,14 +23,14 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e1", "e4", "e8", "e19", "e20", "w1"],
         taskIds: ["practice:a1-06:e1", "practice:a1-06:e4", "practice:a1-06:e8", "practice:a1-06:e19", "practice:a1-06:e20", "writing:a1-06:w1"],
-        labelAr: "أكمل gern في e1 ورتّب جملته في e4، وافهم سؤال Lust في e8، ثم أجب عن mögen وLust في e19–e20 واكتب جملة في w1.",
+        labelAr: "أكمل gern في e1 ورتّب جملته في e4، وافهم سؤال Lust في e8، ثم أجب عن mögen و Lust في e19–e20 واكتب جملة في w1.",
         completion: "all-correct",
       },
     },
     {
       id: "z3",
       de: "Ich kann einfache Aufforderungen mit du, ihr und Sie bilden und häufige trennbare Imperative verwenden.",
-      ar: "أن أصوغ أمراً بسيطاً بصيغ du وihr وSie، وأن أميّز بادئة الفعل المنفصل في الأمر.",
+      ar: "أن أصوغ أمراً بسيطاً بصيغ du و ihr و Sie، وأن أميّز بادئة الفعل المنفصل في الأمر.",
       evidence: {
         exerciseIds: ["w2", "e6"],
         taskIds: ["writing:a1-06:w2", "practice:a1-06:e6"],
@@ -52,7 +52,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z5",
       de: "Ich kann den Stammvokalwechsel häufiger Verben in einfachen Sätzen verwenden.",
-      ar: "أن أستخدم تغيّر الصائت في أفعال شائعة مع du وer/sie/es، مثل essen–isst وlesen–liest وfahren–fährt.",
+      ar: "أن أستخدم تغيّر الصائت في أفعال شائعة مع du و er/sie/es، مثل essen–isst و lesen–liest و fahren–fährt.",
       evidence: {
         exerciseIds: ["e11"],
         taskIds: ["practice:a1-06:e11"],
@@ -63,7 +63,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z6",
       de: "Ich kann können und möchten in einfachen Sätzen verwenden.",
-      ar: "أن أستخدم können وmöchte(n) في جمل بسيطة، مع المصدر المناسب بعد الفعل الناقص.",
+      ar: "أن أستخدم können و möchte(n) في جمل بسيطة، مع المصدر المناسب بعد الفعل الناقص.",
       evidence: {
         exerciseIds: ["e12", "e16"],
         taskIds: ["practice:a1-06:e12", "practice:a1-06:e16"],
@@ -74,7 +74,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z7",
       de: "Ich kann war und hatte in kurzen Sätzen über Vergangenes verwenden.",
-      ar: "أن أستخدم war وhatte في جمل قصيرة عن حالة أو تجربة سابقة.",
+      ar: "أن أستخدم war و hatte في جمل قصيرة عن حالة أو تجربة سابقة.",
       evidence: {
         exerciseIds: ["e13", "e18", "w5"],
         taskIds: ["practice:a1-06:e13", "practice:a1-06:e18", "writing:a1-06:w5"],
@@ -100,7 +100,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["r1", "r2", "r3", "r5"],
         taskIds: ["reading:read-a1-06:r1", "reading:read-a1-06:r2", "reading:read-a1-06:r3", "reading:read-a1-06:r5"],
-        labelAr: "أجب عن أسئلة فهم المعلومات r1–r3 وr5 بعد قراءة الحوار.",
+        labelAr: "أجب عن أسئلة فهم المعلومات r1–r3 و r5 بعد قراءة الحوار.",
         completion: "all-correct",
       },
     },
@@ -108,7 +108,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
     motivatingQuestionAr:
-      "قارن بين: Ich spiele gern Fußball. (أحب لعب كرة القدم) وIch mag Fußball. (أحب كرة القدم). ما الذي تغيّر في بنية الجملة؟",
+      "قارن بين: Ich spiele gern Fußball. (أحب لعب كرة القدم) و Ich mag Fußball. (أحب كرة القدم). ما الذي تغيّر في بنية الجملة؟",
     motivatingQuestionDe: "Was machst du in deiner Freizeit?",
     contextAr:
       "نتحدث اليوم عن الهوايات ونهاية الأسبوع: نصف نشاطاً نحبه، وندعو صديقاً إلى نشاط، ونتدرّب على أوامر وطلبات بسيطة تناسب المخاطَب والسياق.",

@@ -21,7 +21,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b1-11:mt-b1-11-1",
           "mini-test:b1-11:mt-b1-11-2",
         ],
-        labelAr: "أجيب صحيحاً عن تمارين الجمل الموصولة والشرط وأدوات الربط (ex-1 إلى ex-4 وex-6 وmt-1 وmt-2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن تمارين الجمل الموصولة والشرط وأدوات الربط (ex-1 إلى ex-4 و ex-6 و mt-1 و mt-2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
       },
     },
     {
@@ -50,7 +50,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["wr-b1-11-1", "wr-b1-11-2"],
         taskIds: ["writing:b1-11:wr-b1-11-1", "writing:b1-11:wr-b1-11-2"],
-        labelAr: "أكتب التحويلين بالصيغة المقبولة (wr-1 وwr-2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+        labelAr: "أكتب التحويلين بالصيغة المقبولة (wr-1 و wr-2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
       },
     },
     {

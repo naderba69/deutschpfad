@@ -65,7 +65,7 @@ export const B1_EXTRA2_VOCAB_1: VocabEntry[] = [
   { de: "die Realschule", ar: "مدرسة ألمانية تؤهل إلى Mittlere Reife (الشهادة المتوسطة)", g: "die" },
   { de: "das Gymnasium", ar: "مدرسة ثانوية ألمانية تؤهل إلى Hochschulreife", g: "das" },
   { de: "das Abitur", ar: "امتحان/شهادة نهاية المدرسة الثانوية المؤهِّلة للدراسة الجامعية", g: "das" },
-  { de: "die Gesamtschule", ar: "مدرسة ألمانية تجمع Hauptschule وRealschule وGymnasium ضمن مؤسسة واحدة", g: "die" },
+  { de: "die Gesamtschule", ar: "مدرسة ألمانية تجمع Hauptschule و Realschule و Gymnasium ضمن مؤسسة واحدة", g: "die" },
   { de: "die Berufsausbildung", ar: "التدريب المهني", g: "die" },
   { de: "einen Abschluss machen", ar: "يحصل على شهادة/مؤهل", g: "v" },
   { de: "das Studium beginnen", ar: "يبدأ الدراسة", g: "v" },

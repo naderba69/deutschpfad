@@ -118,7 +118,7 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "أصوات القانون: ch، tz، وst",
+    title: "أصوات القانون: ch، tz، و st",
     items: [
       { de: "das Recht", ar: "الحق/القانون", note: "IPA: [ʁɛçt]. الصوت ç هو Ich-Laut؛ والكتابة العربية تقريب غير مطابق." },
       { de: "das Gesetz", ar: "القانون", note: "tz = تس: غِزِتس" },
@@ -127,7 +127,7 @@ export const pronunciation: Lesson["pronunciation"] = {
       { de: "das Gericht", ar: "المحكمة", note: "IPA تقريباً: [ɡəˈʁɪçt]؛ g أول الكلمة صوت وقفي، وç هو Ich-Laut." },
       { de: "die Strafe", ar: "العقوبة", note: "st = شت: شترافه" },
     ],
-    tip: "IPA: Recht [ʁɛçt]، Gericht [ɡəˈʁɪçt]، Vertrag [fɛɐ̯ˈtʁaːk]. الرمز ç هو Ich-Laut ولا يطابق تماماً صوتاً عربياً؛ أي نقل بالحروف العربية تقريب تعليمي فقط. وw الألمانية في Anwalt تقارب ڤ.",
+    tip: "IPA: Recht [ʁɛçt]، Gericht [ɡəˈʁɪçt]، Vertrag [fɛɐ̯ˈtʁaːk]. الرمز ç هو Ich-Laut ولا يطابق تماماً صوتاً عربياً؛ أي نقل بالحروف العربية تقريب تعليمي فقط. و w الألمانية في Anwalt تقارب ڤ.",
     shadowing: [
       { de: "Der Anwalt, mit dem ich sprach, ist erfahren.", ar: "المحامي الذي تحدثت معه خبير.", tip: "mit dem — حرف الجر + ضمير نسبي" },
       { de: "Alles, was du sagst, ist wichtig.", ar: "كل ما تقوله مهم.", tip: "was بعد alles" },

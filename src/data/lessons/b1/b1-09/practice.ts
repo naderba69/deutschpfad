@@ -153,7 +153,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "am", options: ["am", "an das", "für das"] },
         { correct: "für", options: ["für", "über", "an"] },
       ],
-      explanation: "teilnehmen an + Dativ ⇒ an dem = am. وsich interessieren für + Akkusativ.",
+      explanation: "teilnehmen an + Dativ ⇒ an dem = am. و sich interessieren für + Akkusativ.",
       errorType: "preposition",
     },
     {

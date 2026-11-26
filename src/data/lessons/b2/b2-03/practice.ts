@@ -173,8 +173,8 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "ist", options: ["ist", "wird", "hat"] },
         { correct: "lässt", options: ["lässt", "wird", "hat"] },
       ],
-      hint: "sein + zu قد يدل على الوجوب أو الإمكان بحسب السياق؛ وlassen sich يعبّر غالباً عن الإمكان أو القابلية.",
-      explanation: "ist … zu zahlen يفيد هنا الوجوب في سياق الموعد؛ وlässt sich leicht nachrechnen تفيد إمكان إعادة الحساب، وتأتي السهولة من leicht.",
+      hint: "sein + zu قد يدل على الوجوب أو الإمكان بحسب السياق؛ و lassen sich يعبّر غالباً عن الإمكان أو القابلية.",
+      explanation: "ist … zu zahlen يفيد هنا الوجوب في سياق الموعد؛ و lässt sich leicht nachrechnen تفيد إمكان إعادة الحساب، وتأتي السهولة من leicht.",
       errorType: "grammar",
       points: 2,
     },
@@ -201,7 +201,7 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     mistakes: [
       { wrong: "Der Mann, den ich warte auf.", right: "Der Mann, auf den ich warte.", whyAr: "حرف الجر قبل الضمير." },
       { wrong: "Alles, das du sagst.", right: "Alles, was du sagst.", whyAr: "بعد alles يُستعمل was عادةً في الألمانية المعيارية." },
-      { wrong: "wo أم woher أم wohin؟", right: "wo = أين/حيث؛ woher = من أين؛ wohin = إلى أين", whyAr: "تُستعمل wo للمكان، وwoher لمصدر الحركة، وwohin للاتجاه إليها." },
+      { wrong: "wo أم woher أم wohin؟", right: "wo = أين/حيث؛ woher = من أين؛ wohin = إلى أين", whyAr: "تُستعمل wo للمكان، و woher لمصدر الحركة، و wohin للاتجاه إليها." },
     ],
     eselsbruecken: [
       "«حرف الجر قبل الضمير النسبي»: auf den, mit dem, für das.",

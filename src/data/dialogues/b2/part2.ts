@@ -31,7 +31,7 @@ export const B2_DIALOGUES_2: DailyDialogue[] = [
       { de: "Welche Risiken werden genannt?", ar: "ما المخاطر المذكورة؟", options: [
         { text: "Abhängigkeit von Technologie und Datenschutzfragen", ar: "الاعتماد على التقنية وقضايا حماية البيانات", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },
         { text: "Höhere Steuern und Mieten in den Städten", ar: "ارتفاع الضرائب والإيجارات", correct: false, explanation: "لا — لم تُذكر ضرائب Steuern ولا إيجارات؛ والمخاطر «die Abhängigkeit von Technologie und Datenschutzfragen»." },
-        { text: "Lange Reisen ins Ausland mit dem Flugzeug", ar: "رحلات طويلة", correct: false, explanation: "لا — لم تُذكر رحلات Flugzeug؛ والمذكور Abhängigkeit von Technologie وDatenschutzfragen." },
+        { text: "Lange Reisen ins Ausland mit dem Flugzeug", ar: "رحلات طويلة", correct: false, explanation: "لا — لم تُذكر رحلات Flugzeug؛ والمذكور Abhängigkeit von Technologie و Datenschutzfragen." },
       ]},
       { de: "Wie kann man die Risiken verringern?", ar: "كيف يمكن تقليل المخاطر؟", options: [
         { text: "Mit klaren Richtlinien und Medienkompetenz im Lehrplan", ar: "بسياسات واضحة وثقافة إعلامية في المناهج", correct: true, explanation: "صحيح — هذا ما يذكره الحوار." },

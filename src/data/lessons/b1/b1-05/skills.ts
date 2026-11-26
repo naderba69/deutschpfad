@@ -142,16 +142,16 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "أصوات الصحة: ä، ie، ü، وß",
+    title: "أصوات الصحة: ä، ie، ü، و ß",
     items: [
-      { de: "hätte", ar: "صيغة Konjunktiv II من haben", note: "/ˈhɛtə/؛ ä قصيرة، وtt يبيّن قصر الحركة السابقة ولا يعني إطالة /t/." },
-      { de: "wäre", ar: "صيغة Konjunktiv II من sein", note: "/ˈvɛːʁə/؛ ä طويل، وw ألمانية /v/. التقريب العربي لا يطابق النطق تماماً." },
+      { de: "hätte", ar: "صيغة Konjunktiv II من haben", note: "/ˈhɛtə/؛ ä قصيرة، و tt يبيّن قصر الحركة السابقة ولا يعني إطالة /t/." },
+      { de: "wäre", ar: "صيغة Konjunktiv II من sein", note: "/ˈvɛːʁə/؛ ä طويل، و w ألمانية /v/. التقريب العربي لا يطابق النطق تماماً." },
       { de: "gesund", ar: "سليم، صحيّ", note: "/ɡəˈzʊnt/؛ g وقفية مجهور /ɡ/ وليست غ العربية الاحتكاكية /ɣ/؛ u قصيرة." },
-      { de: "die Prävention", ar: "الوقاية", note: "/pʁɛvɛnˈtsi̯oːn/؛ التشديد على المقطع الأخير، وtion = /tsi̯oːn/." },
-      { de: "trainieren", ar: "يتدرّب", note: "/trɛˈniːrən/؛ في هذه الكلمة ai = /ɛ/، وie = /iː/." },
-      { de: "die Süßigkeiten", ar: "الحلويات", note: "/ˈzyːsɪçkaɪ̯tən/؛ ü=/yː/، ß=/s/، وch بعد i=/ç/." },
+      { de: "die Prävention", ar: "الوقاية", note: "/pʁɛvɛnˈtsi̯oːn/؛ التشديد على المقطع الأخير، و tion = /tsi̯oːn/." },
+      { de: "trainieren", ar: "يتدرّب", note: "/trɛˈniːrən/؛ في هذه الكلمة ai = /ɛ/، و ie = /iː/." },
+      { de: "die Süßigkeiten", ar: "الحلويات", note: "/ˈzyːsɪçkaɪ̯tən/؛ ü=/yː/، ß=/s/، و ch بعد i=/ç/." },
     ],
-    tip: "قسّم Süßigkeiten: Sü-ßig-kei-ten. استعن بـIPA /ˈzyːsɪçkaɪ̯tən/؛ التقريب بالحروف العربية لا ينقل ü وch بدقة.",
+    tip: "قسّم Süßigkeiten: Sü-ßig-kei-ten. استعن بـIPA /ˈzyːsɪçkaɪ̯tən/؛ التقريب بالحروف العربية لا ينقل ü و ch بدقة.",
     shadowing: [
       { de: "Ich hätte Sport gemacht.", ar: "كنت سأمارس الرياضة.", tip: "hätte gemacht — ماضٍ شرطي" },
       { de: "Wenn ich Zeit gehabt hätte...", ar: "لو كان قد توفر لي وقت آنذاك...", tip: "gehabt hätte — الفعل المصرف في نهاية الجملة التابعة" },

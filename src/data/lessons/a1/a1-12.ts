@@ -22,7 +22,7 @@ export const lessonA112: Lesson = {
   einfuehrung,
 
 
-  /* مراجعة تراكمية مختارة (Interleaving): من الدروس a1-07 وa1-10 وa1-11 */
+  /* مراجعة تراكمية مختارة (Interleaving): من الدروس a1-07 و a1-10 و a1-11 */
   review,
   theory,
   reading,

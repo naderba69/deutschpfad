@@ -35,7 +35,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         de: "die Großeltern",
         ar: "الجدّان",
         noteAr:
-          "تُستعمل بصيغة الجمع للجدّين؛ والمفردان: der Großvater وdie Großmutter.",
+          "تُستعمل بصيغة الجمع للجدّين؛ والمفردان: der Großvater و die Großmutter.",
       },
       {
         de: "der Lehrer / die Ärztin",
@@ -237,7 +237,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
       },
     ],
     discussionAr:
-      "اكتب أو قل وصفاً لصورة حقيقية أو متخيّلة على منوال أميرة؛ لا حاجة إلى مشاركة صورة شخصية أو معلومات خاصة. ابدأ بـ Das ist ein Foto von …، ثم استخدم links / rechts / in der Mitte، واذكر ما تعرفه عن الأشخاص وصلتهم بك. جرّب mein/meine وsein/ihr في سياق مناسب، ثم راجع: من المالك؟ وما الاسم المملوك؟ وهل الصيغة في حالة الرفع؟",
+      "اكتب أو قل وصفاً لصورة حقيقية أو متخيّلة على منوال أميرة؛ لا حاجة إلى مشاركة صورة شخصية أو معلومات خاصة. ابدأ بـ Das ist ein Foto von …، ثم استخدم links / rechts / in der Mitte، واذكر ما تعرفه عن الأشخاص وصلتهم بك. جرّب mein/meine و sein/ihr في سياق مناسب، ثم راجع: من المالك؟ وما الاسم المملوك؟ وهل الصيغة في حالة الرفع؟",
   };
 
 /* 5) الاستماع */
@@ -364,13 +364,13 @@ export const listening: NonNullable<Lesson["listening"]> = {
 /* 6) النطق */
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "p1",
-    title: "أصوات الأسرة: ch وsch وw",
+    title: "أصوات الأسرة: ch و sch و w",
     minimalPairs: [
       {
         id: "mp-a1-02-ch",
         title: "ch مقابل sch مقابل ach",
         titleDe: "ch vs. sch vs. ach",
-        explanationAr: "ch في Kirche وich صوت خفيف (ç) بعد الحركة الأمامية، أما sch في Kirsche فهي الشين. وفي ach يكون الصوت خلفياً.",
+        explanationAr: "ch في Kirche و ich صوت خفيف (ç) بعد الحركة الأمامية، أما sch في Kirsche فهي الشين. وفي ach يكون الصوت خلفياً.",
         pairs: [
         { a: "Kirche", aAr: "كنيسة", b: "Kirsche", bAr: "كرزة", note: "Kirche: ch خفيفة (ç). Kirsche: sch = ش." },
         { a: "ich", aAr: "أنا", b: "ach", bAr: "آه", note: "ich: ç أمامية خفيفة. ach: x خلفية (من الحلق)." },
@@ -384,16 +384,16 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
         ar: "أنا",
         note: "[ɪç]: احتكاك حنكي خفيف بعد i. لا يطابق الشين [ʃ] ولا الخاء العربية الخلفية [x] تماماً؛ استمع إلى الصوت وقلّده برفق.",
       },
-      { de: "Bruder", ar: "الأخ", note: "النطق التقريبي [ˈbʁuːdɐ]؛ u طويلة، وr الأخيرة تختلف باختلاف اللهجة." },
-      { de: "Schwester", ar: "الأخت", note: "[ˈʃvɛstɐ]: sch مثل ش، وe قصيرة [ɛ] لا ياء طويلة؛ w تُنطق قريباً من ڤ." },
-      { de: "Tochter", ar: "الابنة", note: "[ˈtɔxtɐ]: ch هنا [x]، قريب من الخاء العربية، وo قصيرة." },
+      { de: "Bruder", ar: "الأخ", note: "النطق التقريبي [ˈbʁuːdɐ]؛ u طويلة، و r الأخيرة تختلف باختلاف اللهجة." },
+      { de: "Schwester", ar: "الأخت", note: "[ˈʃvɛstɐ]: sch مثل ش، و e قصيرة [ɛ] لا ياء طويلة؛ w تُنطق قريباً من ڤ." },
+      { de: "Tochter", ar: "الابنة", note: "[ˈtɔxtɐ]: ch هنا [x]، قريب من الخاء العربية، و o قصيرة." },
       {
         de: "Geschwister",
         ar: "الإخوة والأخوات",
         note: "[ɡəˈʃvɪstɐ]: يبدأ المقطع بـg ألمانية [ɡ] ثم sch؛ لا يُنطق غيناً [ɣ].",
       },
     ],
-    tip: "يوجد في الألمانية صوتان كتابيان لـch: Ich-Laut [ç] بعد الحركات الأمامية مثل i، وAch-Laut [x] غالباً بعد الحركات الخلفية مثل a/o/u. هذه تقريبات صوتية؛ لا تساوِ [ç] بالشين أو بالخاء العربية.",
+    tip: "يوجد في الألمانية صوتان كتابيان لـch: Ich-Laut [ç] بعد الحركات الأمامية مثل i، و Ach-Laut [x] غالباً بعد الحركات الخلفية مثل a/o/u. هذه تقريبات صوتية؛ لا تساوِ [ç] بالشين أو بالخاء العربية.",
     shadowing: [
       {
         de: "Mein Bruder heißt Youssef.",

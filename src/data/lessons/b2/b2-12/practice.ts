@@ -76,7 +76,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       { correct: "sagen", options: ["sagen", "sagt", "gesagt"] },
       { correct: "sollten", options: ["sollten", "sollen", "solltest"] },
     ],
-    explanation: "Könnten Sie ... sagen (طلب مهذب) وSie sollten (نصيحة مهذبة).",
+    explanation: "Könnten Sie ... sagen (طلب مهذب) و Sie sollten (نصيحة مهذبة).",
     errorType: "grammar",
   },
   {

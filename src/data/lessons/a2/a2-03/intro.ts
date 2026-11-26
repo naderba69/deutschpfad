@@ -12,18 +12,18 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e16", "e26", "w1"],
         taskIds: ["practice:a2-03:e16", "practice:a2-03:e26", "writing:a2-03:w1"],
-        labelAr: "اختر صيغة الطلب المقصودة في e16، وأعِد الصياغة واكتب طلباً مقبولاً في e26 وw1.",
+        labelAr: "اختر صيغة الطلب المقصودة في e16، وأعِد الصياغة واكتب طلباً مقبولاً في e26 و w1.",
         completion: "all-correct",
       },
     },
     {
       id: "z2",
       de: "Ich kann in kurzen Beispielen die passenden Formen von schmecken, gefallen und passen wählen.",
-      ar: "أن أختار في أمثلة قصيرة صيغة الفعل المناسبة مع schmecken وgefallen وpassen، وأميز المعنى المقصود.",
+      ar: "أن أختار في أمثلة قصيرة صيغة الفعل المناسبة مع schmecken و gefallen و passen، وأميز المعنى المقصود.",
       evidence: {
         exerciseIds: ["e13", "e15", "e18", "e27"],
         taskIds: ["practice:a2-03:e13", "practice:a2-03:e15", "practice:a2-03:e18", "practice:a2-03:e27"],
-        labelAr: "أجب عن سؤال schmecken في e13، وحوّل مثال gefallen في e15، وطابق تصريف الفعل والسياق في e18 وe27.",
+        labelAr: "أجب عن سؤال schmecken في e13، وحوّل مثال gefallen في e15، وطابق تصريف الفعل والسياق في e18 و e27.",
         completion: "all-correct",
       },
     },
@@ -46,7 +46,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z4",
       de: "Ich kann in vorgegebenen Beispielen Geschmackswörter unterscheiden sowie Mengen und etwas Warmes passend ergänzen.",
-      ar: "أن أميز في أمثلة محددة بين صفات الطعم والحرارة، وأختار صيغة كمية وetwas Warmes المناسبة.",
+      ar: "أن أميز في أمثلة محددة بين صفات الطعم والحرارة، وأختار صيغة كمية و etwas Warmes المناسبة.",
       evidence: {
         exerciseIds: ["e20", "e21", "e22"],
         taskIds: ["practice:a2-03:e20", "practice:a2-03:e21", "practice:a2-03:e22"],
