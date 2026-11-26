@@ -5,7 +5,7 @@ import {lastOpenIndex} from "@/lib/session/gate-nav";
 import * as React from "react";
 import Link from "next/link";
 import {useRouter} from "next/navigation";
-import {ArrowLeft, ArrowRight, CheckCircle2, ListChecks, Printer, Sparkles, Trophy} from "lucide-react";
+import {ArrowLeft, ArrowRight, CheckCircle2, Clock, ListChecks, Printer, Sparkles, Trophy} from "lucide-react";
 
 import {FavoriteButton} from "@/components/shared/favorite-button";
 import {LESSON_META} from "@/data/lessons/meta";
@@ -465,27 +465,15 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
             ← مسار التعلم
           </Link>
           <span className="text-muted-foreground">/</span>
-          <Badge variant="outline" className="font-de font-bold">
-            {lesson.level}
-          </Badge>
           <LessonPosition lessonId={lesson.id} />
-          <Button
-            variant={focusMode ? "default" : "ghost"}
-            size="sm"
-            onClick={() => setFocusMode((v) => !v)}
-            className="gap-1.5 text-xs"
-            aria-pressed={focusMode}
-            aria-label="وضع التركيز: إخفاء التنقل الداخلي"
-          >
-            <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-            {focusMode ? "خروج من التركيز" : "وضع التركيز"}
-          </Button>
-          <Badge variant="secondary">
-            {LEVEL_LABEL[lesson.level] ?? lesson.level}
+          {/* مستوى واحد يظهر مرة واحدة: الرمز مع الاسم معاً */}
+          <Badge variant="secondary" className="font-de font-bold">
+            {lesson.level} · {LEVEL_LABEL[lesson.level] ?? lesson.level}
           </Badge>
           {LESSON_META.find((m) => m.id === lesson.id)?.estimatedMinutes && (
             <Badge variant="outline" title="تقدير تقريبي للمتعلم الذاتي، وليس قياساً فعلياً">
-              ⏱ حوالي {LESSON_META.find((m) => m.id === lesson.id)?.estimatedMinutes} دقيقة (تقدير)
+              <Clock className="me-1 inline h-3.5 w-3.5" aria-hidden="true" />
+              حوالي {LESSON_META.find((m) => m.id === lesson.id)?.estimatedMinutes} دقيقة (تقدير)
             </Badge>
           )}
         </div>
@@ -515,6 +503,17 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
             طباعة / PDF
           </Button>
           <FavoriteButton kind="lesson" id={lesson.id} label={lesson.titleAr} size="sm" />
+          <Button
+            variant={focusMode ? "default" : "outline"}
+            size="sm"
+            onClick={() => setFocusMode((v) => !v)}
+            className="gap-1.5 print:hidden"
+            aria-pressed={focusMode}
+            aria-label="وضع التركيز: إخفاء التنقل الداخلي"
+          >
+            <Sparkles className="h-4 w-4" aria-hidden="true" />
+            {focusMode ? "خروج من التركيز" : "وضع التركيز"}
+          </Button>
         </div>
 
         {/* شريط التقدم */}
@@ -606,7 +605,14 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
             )}
 
             {/* زر «التالي» في نهاية القسم — لا حاجة للتمرير للأعلى بعد إنهاء قسم طويل */}
-            <div className="mt-6 flex flex-wrap justify-end gap-2 border-t pt-4">
+            <div className="mt-6 space-y-2 border-t pt-4">
+              {/* الجوال: سبب القفل يظهر هنا لأن الشريط اللاصق مخفيّ على الجوال */}
+              {lockMessageNext ? (
+                <p role="status" className="text-xs font-bold text-warning md:hidden">
+                  {lockMessageNext}
+                </p>
+              ) : null}
+              <div className="flex flex-wrap justify-end gap-2">
               {currentSection < total - 1 ? (
                 <Button size="lg" className="btn-glow gap-2 px-6 whitespace-normal text-center leading-snug" onClick={() => advanceFrom(currentSection)}>
                   أتممت هذا القسم — التالي: {sectionDefs[currentSection + 1].short}
@@ -618,12 +624,14 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
                   إنهاء الدرس
                 </Button>
               )}
+              </div>
             </div>
           </div>
 
-          {/* أزرار التنقل السفلية اللاصقة — على الجوال ترتفع فوق شريط التنقل
-              السفلي (MobileBottomNav) فلا يغطيها، وعلى الشاشات الكبيرة تلتصق بأسفل الشاشة */}
-          <div className="sticky bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-30 -mx-4 border-t bg-background/95 px-4 py-3 backdrop-blur-md sm:mx-0 sm:rounded-t-2xl sm:border md:bottom-0">
+          {/* أزرار التنقل السفلية اللاصقة — على الشاشات الكبيرة فقط. على الجوال يُخفى الشريط
+              لأن كل قسم ينتهي بزر «التالي» ويظهر سبب القفل فوقه؛ وإلا غطّى المحتوى فوق شريط
+              التنقل السفلي (MobileBottomNav). */}
+          <div className="hidden border-t bg-background/95 px-4 py-3 backdrop-blur-md sm:rounded-t-2xl sm:border md:sticky md:bottom-0 md:z-30 md:block">
             {stepMode && lockMessageNext ? (
               <div className="mb-2">
                 {/* الجوال: سطر قصير + زر «لماذا؟» */}
@@ -650,7 +658,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
                 السابق
               </Button>
               {currentSection < total - 1 ? (
-                <Button size="lg" className="btn-glow w-full gap-2 px-6 whitespace-normal text-center leading-snug md:w-auto" onClick={() => advanceFrom(currentSection)}>
+                <Button size="lg" className="btn-glow h-11 w-full gap-2 px-6 whitespace-normal text-center leading-snug md:h-12 md:w-auto" onClick={() => advanceFrom(currentSection)}>
                   التالي: {sectionDefs[currentSection + 1].short}
                   <ArrowLeft className="h-5 w-5" aria-hidden="true" />
                 </Button>

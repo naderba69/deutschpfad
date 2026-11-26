@@ -111,7 +111,7 @@ export function Hero() {
               <Flame className="h-4 w-4 fill-orange-400 text-orange-400" aria-hidden="true" />
               مثال: سلسلة أيامك
             </p>
-            <p className="font-de mt-0.5 text-xl font-bold">7 أيام 🔥</p>
+            <p className="font-de mt-0.5 text-xl font-bold">7 أيام</p>
           </div>
           <div className="absolute -start-4 -bottom-2 rounded-2xl border bg-background/95 px-4 py-3 shadow-soft animate-float animation-delay-2000">
             <p className="inline-flex items-center gap-2 text-sm font-semibold">
