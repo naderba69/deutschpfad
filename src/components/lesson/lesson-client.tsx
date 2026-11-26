@@ -622,7 +622,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
 
           {/* أزرار التنقل السفلية اللاصقة — على الجوال ترتفع فوق شريط التنقل
               السفلي (MobileBottomNav) فلا يغطيها، وعلى الشاشات الكبيرة تلتصق بأسفل الشاشة */}
-          <div className="sticky bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-30 -mx-4 border-t bg-background/95 px-4 py-3 backdrop-blur-md sm:mx-0 sm:rounded-t-2xl sm:border md:bottom-0">
+          <div className="sticky bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-30 -mx-4 border-t bg-background/95 px-4 py-2 backdrop-blur-md sm:mx-0 sm:rounded-t-2xl sm:border sm:py-3 md:bottom-0">
             {stepMode && lockMessageNext ? (
               <div className="mb-2">
                 {/* الجوال: سطر قصير + زر «لماذا؟» */}
@@ -649,7 +649,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
                 السابق
               </Button>
               {currentSection < total - 1 ? (
-                <Button size="lg" className="btn-glow w-full gap-2 px-6 whitespace-normal text-center leading-snug md:w-auto" onClick={() => advanceFrom(currentSection)}>
+                <Button className="btn-glow h-11 w-full gap-2 px-6 whitespace-normal text-center leading-snug md:h-12 md:w-auto md:text-base" onClick={() => advanceFrom(currentSection)}>
                   التالي: {sectionDefs[currentSection + 1].short}
                   <ArrowLeft className="h-5 w-5" aria-hidden="true" />
                 </Button>
