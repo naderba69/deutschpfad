@@ -3,7 +3,7 @@ import type { VocabEntry } from "@/types/lesson";
 /**
  * مفردات الدرس A1-01 (المرحلة 3: المفردات).
  * كتابة أصلية لهذا المشروع؛ كل كلمة مع جملة مثال كاملة وترجمتها.
- * تغطي: التحيات، وheißen وkommen وwohnen، والفرق بين du وSie.
+ * تغطي: التحيات، و heißen و kommen و wohnen، والفرق بين du و Sie.
  */
 export const wortschatz: VocabEntry[] = [
   { de: "Hallo", ar: "مرحباً", exampleDe: "Hallo, ich heiße Lina.", exampleAr: "مرحباً، اسمي لينا." },

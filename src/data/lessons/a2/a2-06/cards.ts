@@ -32,7 +32,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       options: ["dass", "das", "ob", "denn"],
       correctIndex: 0,
       explanation:
-        "dass يقدّم هنا مضمون الرأي؛ das ليست أداة ربط، وob يقدّم سؤالاً غير مباشر، وdenn يربط جملتين رئيسيتين عادةً.",
+        "dass يقدّم هنا مضمون الرأي؛ das ليست أداة ربط، و ob يقدّم سؤالاً غير مباشر، و denn يربط جملتين رئيسيتين عادةً.",
       errorType: "grammar",
       optionExplanations: [
         undefined,

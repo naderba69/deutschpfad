@@ -15,7 +15,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
       options: ["تس", "ز", "س", "ذ"],
       correctIndex: 0,
       optionExplanations: [undefined, "لا — حرف «Z» في الألمانية لا يُنطق «ز» كما في الإنجليزية بل مركّباً «تس» كما في «zehn» و«Zentrum».", "لا — صوت «س» يقابل «S» لا «Z»؛ وحرف «Z» يُنطق «تس» كما في «Zeit».", "لا — لا مقابل لصوت «ذ» هنا؛ و«Z» تُنطق «تس» كما في «zu Hause»."],
-      explanation: "في الكلمات الألمانية الشائعة تمثل Z صوت /ts/، مثل Zeit وzehn.",
+      explanation: "في الكلمات الألمانية الشائعة تمثل Z صوت /ts/، مثل Zeit و zehn.",
       errorType: "spelling",
     },
     {
@@ -109,7 +109,7 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
       de: "der Umlaut (ä, ö, ü)",
       ar: "الحرف المعلم",
       example: "Ä, Ö, Ü sind Umlaute.",
-      exampleAr: "Ä وÖ وÜ حروف معلمة.",
+      exampleAr: "Ä و Ö و Ü حروف معلمة.",
       level: "A1",
     },
     {
@@ -170,7 +170,7 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     },
     {
       id: "fc13",
-      de: "ch في ich وnicht وMilch = ich-Laut [ç]، ليس sch",
+      de: "ch في ich و nicht و Milch = ich-Laut [ç]، ليس sch",
       ar: "صوت حنكي؛ «ش» تقريب غير مطابق",
       example: "Ich spreche nicht viel.",
       exampleAr: "لا أتكلّم كثيراً.",
@@ -179,7 +179,7 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
     {
       id: "fc14",
       de: "St- / Sp-",
-      ar: "في أوّل الكلمة تُنطق شت / شپ (مثل Stadt وSport)",
+      ar: "في أوّل الكلمة تُنطق شت / شپ (مثل Stadt و Sport)",
       example: "Die Stadt ist schön.",
       exampleAr: "المدينة جميلة.",
       level: "A1",
@@ -237,7 +237,7 @@ export const mediation: NonNullable<Lesson["mediation"]> = [
       taskAr:
         "انقل بالعربية أهم ثلاث معلومات عن الأبجدية الألمانية لصديق مبتدئ: عدد الحروف، الحروف الإضافية، والاختلاف عن العربية.",
       modelAnswerAr:
-        "«الأبجدية الألمانية فيها 26 حرفاً، بالإضافة إلى ä وö وü وß. بعض الحروف تُنطق بشكل مختلف عن العربية.»",
+        "«الأبجدية الألمانية فيها 26 حرفاً، بالإضافة إلى ä و ö و ü و ß. بعض الحروف تُنطق بشكل مختلف عن العربية.»",
       keyPointsAr: [
         "ذكرت عدد الحروف (26)",
         "ذكرت الحروف الإضافية الأربعة",
@@ -280,7 +280,7 @@ export const interaction: NonNullable<Lesson["interaction"]> = [
           options: [
             {
               de: "Ungefähr wie das arabische „ش“: Schule, schön. Hör dir die Beispiele an.",
-              ar: "تقريباً مثل «ش» العربية في Schule وschön؛ واستمع إلى المثالين.",
+              ar: "تقريباً مثل «ش» العربية في Schule و schön؛ واستمع إلى المثالين.",
               best: true,
               replyDe: "Danke! Das ist einfach.",
               replyAr: "شكراً! هذا سهل.",

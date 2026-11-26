@@ -32,14 +32,14 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:a1-10:m1",
           "writing:a1-10:w3",
         ],
-        labelAr: "أجب عن صيغ Ärztin وKöchin وVerkäuferin في e1 وe9 وe17 وm1، ثم اكتب Lehrerin في إملاء w3؛ يلزم الصواب في المهام كلها.",
+        labelAr: "أجب عن صيغ Ärztin و Köchin و Verkäuferin في e1 و e9 و e17 و m1، ثم اكتب Lehrerin في إملاء w3؛ يلزم الصواب في المهام كلها.",
         completion: "all-correct",
       },
     },
     {
       id: "z3",
       de: "Ich kann einen Beruf in einem passenden Satzmuster mit sein oder arbeiten als einsetzen.",
-      ar: "أكوّن جملة مهنية بالنمط المحدد، وأميز بين Ich bin … وIch arbeite als … في التمارين.",
+      ar: "أكوّن جملة مهنية بالنمط المحدد، وأميز بين Ich bin … و Ich arbeite als … في التمارين.",
       evidence: {
         exerciseIds: ["e4", "e14", "m3", "w1"],
         taskIds: [
@@ -48,7 +48,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:a1-10:m3",
           "writing:a1-10:w1",
         ],
-        labelAr: "رتّب الجمل المهنية في e4 وe14 وm3، ثم اكتب النمط المحايد المحدد في w1؛ هذه أدلة على أداء تلك المهمات، لا اختبار للكلام الحر.",
+        labelAr: "رتّب الجمل المهنية في e4 و e14 و m3، ثم اكتب النمط المحايد المحدد في w1؛ هذه أدلة على أداء تلك المهمات، لا اختبار للكلام الحر.",
         completion: "all-correct",
       },
     },
@@ -73,14 +73,14 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:a1-10:m5",
           "writing:a1-10:w2",
         ],
-        labelAr: "أكمل اختيارات النفي والتصحيح والترتيب في e2 وe5–e7 وe10 وe22–e25 وm2 وm4 وm5 وw2؛ لا تُحتسب المشاهدة أو فتح التمرين.",
+        labelAr: "أكمل اختيارات النفي والتصحيح والترتيب في e2 و e5–e7 و e10 و e22–e25 و m2 و m4 و m5 و w2؛ لا تُحتسب المشاهدة أو فتح التمرين.",
         completion: "all-correct",
       },
     },
     {
       id: "z5",
       de: "Ich kann in einfachen Arbeitsplatzsätzen bei und in mit den geübten Dativformen verwenden.",
-      ar: "أختار بين bei وin وفق العلاقة المقصودة، وأضبط أداة النكرة في أمثلة المكان الثابت المحددة.",
+      ar: "أختار بين bei و in وفق العلاقة المقصودة، وأضبط أداة النكرة في أمثلة المكان الثابت المحددة.",
       evidence: {
         exerciseIds: ["e11", "e12", "e13", "e14", "e15", "e20", "e21", "e26"],
         taskIds: [
@@ -93,7 +93,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "practice:a1-10:e21",
           "practice:a1-10:e26",
         ],
-        labelAr: "أنجز اختيارات حروف الجر وأدوات المكان في e11–e15 وe20 وe21 وe26؛ يختلف الاختيار بحسب كون المقصود جهة العمل أو الموقع.",
+        labelAr: "أنجز اختيارات حروف الجر وأدوات المكان في e11–e15 و e20 و e21 و e26؛ يختلف الاختيار بحسب كون المقصود جهة العمل أو الموقع.",
         completion: "all-correct",
       },
     },
@@ -158,7 +158,7 @@ export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
       "في العربية نقول «لا أعمل اليوم» و«ليس لدي وقت». هل تستعمل الألمانية أداة النفي نفسها في الحالتين؟ قارن: Ich arbeite heute nicht / Ich habe keine Zeit.",
     motivatingQuestionDe: "Was bist du von Beruf?",
     contextAr:
-      "نتعرّف إلى أسماء مهن مختارة وصيغها المؤنثة الشائعة، ونقارن Ich bin وarbeiten als، ثم نتدرّب على nicht وkein في أمثلة يوضح سياقها ما يقع عليه النفي.",
+      "نتعرّف إلى أسماء مهن مختارة وصيغها المؤنثة الشائعة، ونقارن Ich bin و arbeiten als، ثم نتدرّب على nicht و kein في أمثلة يوضح سياقها ما يقع عليه النفي.",
     contextDe: "Ich arbeite als Lehrer.",
     connectionToPreviousAr:
       "تعلمنا sein في الدرس الأول؛ نطبقه هنا مع أسماء المهن، ونضيف نمط arbeiten als ومفردات العمل والنفي. هذه أنماط تدريب محددة وليست اختباراً عاماً للكلام الحر.",

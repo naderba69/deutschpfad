@@ -63,7 +63,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e4",
       type: "word-ordering",
-      instructionAr: "رتّب الجملة: المساعد في الموضع الثاني وPartizip II في النهاية:",
+      instructionAr: "رتّب الجملة: المساعد في الموضع الثاني و Partizip II في النهاية:",
       tokens: ["habe", "Ich", "gestern", "Pizza", "gegessen", "."],
       correctSentence: "Ich habe gestern Pizza gegessen.",
       explanation: "الإطار: Ich habe + التفاصيل + gegessen في النهاية.",
@@ -174,7 +174,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
           errorType: "grammar",
         },
       ],
-      explanation: "singen – sang – gesungen، عائلة i–a–u مثل trinken وfinden.",
+      explanation: "singen – sang – gesungen، عائلة i–a–u مثل trinken و finden.",
       errorType: "grammar",
     },
     {
@@ -257,7 +257,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         },
       ],
       explanation:
-        "الصيغ المطلوبة هنا هي konnte وmusste وgab. صيغة Präteritum مناسبة للنموذج المعروض؛ لا يعني ذلك أن Perfekt ممنوع في الكلام.",
+        "الصيغ المطلوبة هنا هي konnte و musste و gab. صيغة Präteritum مناسبة للنموذج المعروض؛ لا يعني ذلك أن Perfekt ممنوع في الكلام.",
       errorType: "grammar",
     },
     {
@@ -279,7 +279,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       correctSentence: "Wir sind letzten Sommer mit dem Zug nach Prag gefahren.",
       explanation:
-        "زمان (letzten Sommer) ⟵ كيفية (mit dem Zug) ⟵ مكان (nach Prag)، وPartizip II يُغلق.",
+        "زمان (letzten Sommer) ⟵ كيفية (mit dem Zug) ⟵ مكان (nach Prag)، و Partizip II يُغلق.",
       errorType: "word-order",
     },
     {
@@ -421,9 +421,9 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       sampleAnswer:
         "Der Zug ist um acht abgefahren und hat Berlin am Mittag erreicht.",
-      hint: "المطلوب هنا Perfekt: abfahren في معنى انطلاق القطار يأخذ sein؛ وerreichen يأخذ haben في هذا المثال.",
+      hint: "المطلوب هنا Perfekt: abfahren في معنى انطلاق القطار يأخذ sein؛ و erreichen يأخذ haben في هذا المثال.",
       explanation:
-        "صيغة Perfekt المستهدفة هي ist abgefahren وhat erreicht. قد يرد Präteritum أيضاً في الكلام؛ التمرين يطلب تحويل هذين الفعلين إلى Perfekt تحديداً.",
+        "صيغة Perfekt المستهدفة هي ist abgefahren و hat erreicht. قد يرد Präteritum أيضاً في الكلام؛ التمرين يطلب تحويل هذين الفعلين إلى Perfekt تحديداً.",
       errorType: "grammar",
     },
     {
@@ -450,7 +450,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         {
           id: "s3",
           de: "Im Text stehen hatte, mussten und konnten im Präteritum.",
-          ar: "الأفعال hatte وmussten وkonnten وردت بالـPräteritum.",
+          ar: "الأفعال hatte و mussten و konnten وردت بالـPräteritum.",
           isTrue: true,
           whyAr: "في هذا النص تحديداً، هذه الصيغ الثلاث في Präteritum؛ لا تعمم الصيغة على كل مقام أو كل استعمال.",
         },
@@ -463,7 +463,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         },
       ],
       explanation:
-        "في النص هذا المثال المحدد: sind angekommen في Perfekt، وhatte وmussten وwar وkonnten في Präteritum. لا يعني ذلك أن بقية الأفعال أو كل السياقات تتبع قسمة مطلقة.",
+        "في النص هذا المثال المحدد: sind angekommen في Perfekt، و hatte و mussten و war و konnten في Präteritum. لا يعني ذلك أن بقية الأفعال أو كل السياقات تتبع قسمة مطلقة.",
       errorType: "grammar",
     },
     {
@@ -501,7 +501,7 @@ export const fehlerUndTipps: NonNullable<Lesson["fehlerUndTipps"]> = {
       {
         wrong: "Ich habe gegessen einen Apfel.",
         right: "Ich habe einen Apfel gegessen.",
-        whyAr: "هذا هو الترتيب المحايد للمفعول وPartizip II في الجملة الرئيسية البسيطة؛ قد تظهر عناصر مؤجلة في سياقات مخصوصة.",
+        whyAr: "هذا هو الترتيب المحايد للمفعول و Partizip II في الجملة الرئيسية البسيطة؛ قد تظهر عناصر مؤجلة في سياقات مخصوصة.",
       },
       {
         wrong: "gekaufen",

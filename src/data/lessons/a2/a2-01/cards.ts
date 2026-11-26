@@ -23,7 +23,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
         undefined,
         "«bin ... gesehen» — مشاهدة فيلمٍ فعلٌ متعدٍّ بمفعول («einen Film») فيأخذ haben.",
         "«habe ... geseht» — Partizip II لـ«sehen» هو «gesehen».",
-        "«bin ... geseht» — خطأان معاً: مساعدٌ خاطئ وPartizip غير موجود.",
+        "«bin ... geseht» — خطأان معاً: مساعدٌ خاطئ و Partizip غير موجود.",
       ],
     },
     {
@@ -44,7 +44,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
         undefined,
         "«hat ... gegangen» — «gehen» حركةٌ باتجاه («nach Hause») فتأخذ sein.",
         "«ist ... gegeht» — Partizip II لـ«gehen» هو «gegangen».",
-        "«hat ... gegeht» — خطأان معاً: مساعدٌ خاطئ وPartizip غير موجود.",
+        "«hat ... gegeht» — خطأان معاً: مساعدٌ خاطئ و Partizip غير موجود.",
       ],
     },
     {
@@ -135,7 +135,7 @@ export const flashcards: NonNullable<Lesson["flashcards"]> = [
       de: "das Partizip II",
       ar: "صيغة Partizip II الألمانية",
       example: "gesehen, gegessen, gekauft",
-      exampleAr: "صيغ Partizip II من sehen وessen وkaufen",
+      exampleAr: "صيغ Partizip II من sehen و essen و kaufen",
       level: "A2",
     },
     {

@@ -62,7 +62,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctSentence: "Es regnet heute.",
       acceptedSentences: ["Heute regnet es."],
       explanation:
-        "كلا الترتيبين صحيح في هذا المثال: Es regnet heute وHeute regnet es. عند تقديم اليوم يبقى الفعل المصرف في الموضع الثاني.",
+        "كلا الترتيبين صحيح في هذا المثال: Es regnet heute و Heute regnet es. عند تقديم اليوم يبقى الفعل المصرف في الموضع الثاني.",
       errorType: "word-order",
     },
     {
@@ -193,7 +193,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       sampleAnswer: "Morgen regnet es.",
       caseSensitive: true,
       explanation:
-        "كلتا الصيغتين صحيحة في هذا السياق: Morgen regnet es وEs regnet morgen. أما am Morgen فتعني في الصباح، لا غداً.",
+        "كلتا الصيغتين صحيحة في هذا السياق: Morgen regnet es و Es regnet morgen. أما am Morgen فتعني في الصباح، لا غداً.",
       errorType: "word-order",
     },
     {
@@ -207,7 +207,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         "Es ist sehr heiß im Sommer.",
       ],
       explanation:
-        "Im Sommer ist es sehr heiß وEs ist im Sommer sehr heiß ترتيبان صحيحان هنا؛ يظل الفعل المصرف في موضعه الثاني.",
+        "Im Sommer ist es sehr heiß و Es ist im Sommer sehr heiß ترتيبان صحيحان هنا؛ يظل الفعل المصرف في موضعه الثاني.",
       errorType: "word-order",
     },
     {
@@ -240,7 +240,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       errorType: "case",
       explanation:
-        "Mir ist warm تعبير مألوف عن إحساس الشخص بالدفء. Ich bin warm ليست العبارة المحايدة المقصودة هنا، وEs ist warm يصف الجو؛ لا نحكم على هذه الصيغ خارج السياق نفسه.",
+        "Mir ist warm تعبير مألوف عن إحساس الشخص بالدفء. Ich bin warm ليست العبارة المحايدة المقصودة هنا، و Es ist warm يصف الجو؛ لا نحكم على هذه الصيغ خارج السياق نفسه.",
       optionExplanations: [
         undefined,
         "«Ich bin warm» ليست العبارة المحايدة للإحساس؛ والمألوف «Mir ist warm».",
@@ -258,7 +258,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       options: ["regnet", "regne", "regnest", "geregnet"],
       errorType: "conjugation",
       explanation:
-        "es ضمير مفرد للغائب فيلزمه regnet. وregnen مصدر لا يصلح فعلاً مصرَّفاً في المركز الثاني.",
+        "es ضمير مفرد للغائب فيلزمه regnet. و regnen مصدر لا يصلح فعلاً مصرَّفاً في المركز الثاني.",
     },
     {
       id: "e18",
@@ -333,7 +333,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 0,
       errorType: "preposition",
       explanation:
-        "في هذه الأمثلة نقول im Winter وam Montag؛ أما um فتظهر مع الساعة، مثل um acht Uhr. احفظ التراكيب المحددة دون تعليلها بسُلّم لحجم الوقت.",
+        "في هذه الأمثلة نقول im Winter و am Montag؛ أما um فتظهر مع الساعة، مثل um acht Uhr. احفظ التراكيب المحددة دون تعليلها بسُلّم لحجم الوقت.",
       optionExplanations: [
         undefined,
         "معكوس: الفصول «im Winter» والأيام «am Montag».",
@@ -434,7 +434,7 @@ export const fehlerUndTipps: NonNullable<Lesson["fehlerUndTipps"]> = {
         wrong: "Ich bin kalt. (إذا كان المقصود وصف الجو أو التعبير المحايد عن الإحساس)",
         right: "Es ist kalt. / Mir ist kalt.",
         whyAr:
-          "Es ist kalt تصف الجو في المثال، وMir ist kalt تعبير ألماني مألوف عن إحساس الشخص. Ich bin kalt جملة ممكنة في سياقات أخرى، فلا تُصنّف خطأً مطلقاً من دون سياق.",
+          "Es ist kalt تصف الجو في المثال، و Mir ist kalt تعبير ألماني مألوف عن إحساس الشخص. Ich bin kalt جملة ممكنة في سياقات أخرى، فلا تُصنّف خطأً مطلقاً من دون سياق.",
         classification: "contextual-alternative",
       },
       {
@@ -453,7 +453,7 @@ export const fehlerUndTipps: NonNullable<Lesson["fehlerUndTipps"]> = {
       },
     ],
     eselsbruecken: [
-      "احفظ أمثلة الطقس كما وردت: Es regnet heute / Heute regnet es؛ وes في فعل الطقس المعروض صوريّ، لا ترجمة حرفية لكلمة «الجو» في كل موضع.",
+      "احفظ أمثلة الطقس كما وردت: Es regnet heute / Heute regnet es؛ و es في فعل الطقس المعروض صوريّ، لا ترجمة حرفية لكلمة «الجو» في كل موضع.",
       "للتغيّر: Es wird kalt. واحفظ تصريف المضارع كما هو: werde، wirst، wird، werden، werdet، werden.",
     ],
     culturalNote: {

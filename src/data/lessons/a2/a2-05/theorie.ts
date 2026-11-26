@@ -7,18 +7,18 @@ import type { Lesson } from "@/types/lesson";
 export const theory: NonNullable<Lesson["theory"]> = [
     {
       id: "t1",
-      titleAr: "Präteritum من sein وhaben: war وhatte",
+      titleAr: "Präteritum من sein و haben: war و hatte",
       titleDe: "Das Präteritum von sein und haben",
-      explanationAr: `Präteritum زمن ماضٍ، وتظهر صيغته المستهدفة هنا كفعل مصروف واحد مثل war وhatte. في الألمانية المكتوبة والسرد يظهر هذا الزمن كثيراً، بينما يشيع Perfekt في الحديث عن الماضي في سياقات كثيرة. لكن استعمال Präteritum مع sein وhaben شائع أيضاً في الكلام، وكذلك بعض الأفعال الناقصة؛ وهذه ميول تتأثر بالمنطقة والسياق والنوع، لا قاعدة مطلقة.
+      explanationAr: `Präteritum زمن ماضٍ، وتظهر صيغته المستهدفة هنا كفعل مصروف واحد مثل war و hatte. في الألمانية المكتوبة والسرد يظهر هذا الزمن كثيراً، بينما يشيع Perfekt في الحديث عن الماضي في سياقات كثيرة. لكن استعمال Präteritum مع sein و haben شائع أيضاً في الكلام، وكذلك بعض الأفعال الناقصة؛ وهذه ميول تتأثر بالمنطقة والسياق والنوع، لا قاعدة مطلقة.
 
-تصريف sein هو war, warst, war, waren, wart, waren؛ وتصريف haben هو hatte, hattest, hatte, hatten, hattet, hatten. انتبه إلى الفرق بين ihr wart (أنتم كنتم) وsie/Sie waren (هم كانوا/حضرتكم كنتم)، وبين ihr hattet وsie/Sie hatten. الجدول يعرض صيغ الماضي البسيط المستهدفة في هذا الدرس، لا صيغ Perfekt.
+تصريف sein هو war, warst, war, waren, wart, waren؛ وتصريف haben هو hatte, hattest, hatte, hatten, hattet, hatten. انتبه إلى الفرق بين ihr wart (أنتم كنتم) و sie/Sie waren (هم كانوا/حضرتكم كنتم)، وبين ihr hattet و sie/Sie hatten. الجدول يعرض صيغ الماضي البسيط المستهدفة في هذا الدرس، لا صيغ Perfekt.
 
-يستعمل sein في أمثلة مثل المكان أو الصفة: Ich war im Büro؛ وكذلك للحالة: Ich war krank. ويستعمل haben للملكية ولتراكيب شائعة مثل Zeit haben وFieber haben: Ich hatte Fieber. هذه معانٍ وتراكيب تساعدك على الاختيار، وليست مقابلة آلية من كلمة عربية واحدة. كما أن Ich bin gestern krank gewesen صيغة Perfekt صحيحة، وIch war krank gewesen صيغة Plusquamperfekt لها استعمالها؛ لا تخلط بين اسم الزمن وصحة الجملة.`,
-      whyAr: `تظهر war وhatte كثيراً في أخبار العمل القصيرة: كنت مريضاً، كان الاجتماع أمس، أو كان لدى الزميل موعد. يساعدك التمييز على فهم سبب الغياب أو وقت الاجتماع، وعلى كتابة جمل موجّهة عن موقف سابق. لا يلزم من ذلك استعمال Präteritum في كل حديث؛ قد تسمع Ich bin krank gewesen أو Ich habe Fieber gehabt أيضاً، ويختلف الاختيار باختلاف المتكلم والمنطقة والسياق.
+يستعمل sein في أمثلة مثل المكان أو الصفة: Ich war im Büro؛ وكذلك للحالة: Ich war krank. ويستعمل haben للملكية ولتراكيب شائعة مثل Zeit haben و Fieber haben: Ich hatte Fieber. هذه معانٍ وتراكيب تساعدك على الاختيار، وليست مقابلة آلية من كلمة عربية واحدة. كما أن Ich bin gestern krank gewesen صيغة Perfekt صحيحة، و Ich war krank gewesen صيغة Plusquamperfekt لها استعمالها؛ لا تخلط بين اسم الزمن وصحة الجملة.`,
+      whyAr: `تظهر war و hatte كثيراً في أخبار العمل القصيرة: كنت مريضاً، كان الاجتماع أمس، أو كان لدى الزميل موعد. يساعدك التمييز على فهم سبب الغياب أو وقت الاجتماع، وعلى كتابة جمل موجّهة عن موقف سابق. لا يلزم من ذلك استعمال Präteritum في كل حديث؛ قد تسمع Ich bin krank gewesen أو Ich habe Fieber gehabt أيضاً، ويختلف الاختيار باختلاف المتكلم والمنطقة والسياق.
 
-في التمرين اسأل عن الفاعل أولاً ثم اختر الصيغة: ich war، du warst، wir waren؛ ich hatte، du hattest، wir hatten. وبعدها اسأل هل الجملة تصف حالة أو مكاناً أم شيئاً كان لدى الشخص. هذه قرائن تعليمية للأمثلة هنا، وليست قاعدة تحصر كل استعمال لـsein وhaben.`,
+في التمرين اسأل عن الفاعل أولاً ثم اختر الصيغة: ich war، du warst، wir waren؛ ich hatte، du hattest، wir hatten. وبعدها اسأل هل الجملة تصف حالة أو مكاناً أم شيئاً كان لدى الشخص. هذه قرائن تعليمية للأمثلة هنا، وليست قاعدة تحصر كل استعمال لـsein و haben.`,
       table: {
-        title: "تصريف sein وhaben في Präteritum",
+        title: "تصريف sein و haben في Präteritum",
         columns: ["الضمير", "sein", "haben", "مثال"],
         rows: [
           { label: "ich", cells: ["war", "hatte", "Ich war gestern im Büro."] },
@@ -39,9 +39,9 @@ export const theory: NonNullable<Lesson["theory"]> = [
         { de: "Herr Schulz war heute Morgen im Büro.", ar: "كان السيد شولتس في المكتب هذا الصباح." },
         { de: "Ich bin gestern krank gewesen.", ar: "كنت مريضاً أمس؛ هذه صيغة Perfekt صحيحة أيضاً." },
       ],
-      comparisonWithArabic: `قد تعبّر العربية عن حالتين مختلفتين بعبارتين مثل «كنت مريضاً» و«كان لديّ موعد»، بينما تتطلب الأمثلة الألمانية اختيار فعل مختلف: sein أو haben. هذه مقارنة بين تراكيب بعينها؛ لا تعني أن sein يقابل دائماً «كان» أو أن haben يقابل دائماً «امتلك». فالسياق والتعبير الألماني المصاحب مهمان، مثل Fieber haben وZeit haben.
+      comparisonWithArabic: `قد تعبّر العربية عن حالتين مختلفتين بعبارتين مثل «كنت مريضاً» و«كان لديّ موعد»، بينما تتطلب الأمثلة الألمانية اختيار فعل مختلف: sein أو haben. هذه مقارنة بين تراكيب بعينها؛ لا تعني أن sein يقابل دائماً «كان» أو أن haben يقابل دائماً «امتلك». فالسياق والتعبير الألماني المصاحب مهمان، مثل Fieber haben و Zeit haben.
 
-كما أن العربية لا تطابق تقسيم الأزمنة الألمانية إلى Präteritum وPerfekt وPlusquamperfekt بكلمة أو صيغة واحدة في كل سياق. قد تساعد كلمة «أمس» أو جملة سابقة في نقل العلاقة الزمنية، لكن الترجمة وحدها لا تثبت أن الصيغة الألمانية الأخرى خاطئة. احفظ المثال الألماني كاملاً، ثم استعمل المقابل العربي لفهم معناه لا لاستنتاج قاعدة صرفية عامة.`,
+كما أن العربية لا تطابق تقسيم الأزمنة الألمانية إلى Präteritum و Perfekt و Plusquamperfekt بكلمة أو صيغة واحدة في كل سياق. قد تساعد كلمة «أمس» أو جملة سابقة في نقل العلاقة الزمنية، لكن الترجمة وحدها لا تثبت أن الصيغة الألمانية الأخرى خاطئة. احفظ المثال الألماني كاملاً، ثم استعمل المقابل العربي لفهم معناه لا لاستنتاج قاعدة صرفية عامة.`,
       eselsbruecke:
         "تذكّر السلسلتين مع الضمير: war – warst – war – waren – wart – waren؛ hatte – hattest – hatte – hatten – hattet – hatten. ثم راجع الفاعل قبل اختيار النهاية.",
       commonMistakes: [
@@ -57,7 +57,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
           right: "Wir waren gestern im Büro.",
           classification: "error",
           whyAr:
-            "الفاعل wir جمع، وتصريف sein معه في Präteritum هو waren. أما war فيستعمل مع ich وer/sie/es؛ لذلك يلزم تعديل نهاية الفعل لتوافق الفاعل.",
+            "الفاعل wir جمع، وتصريف sein معه في Präteritum هو waren. أما war فيستعمل مع ich و er/sie/es؛ لذلك يلزم تعديل نهاية الفعل لتوافق الفاعل.",
         },
         {
           wrong: "Ich hatte ein Termin.",
@@ -68,10 +68,10 @@ export const theory: NonNullable<Lesson["theory"]> = [
         },
       ],
       relatedRuleComparison: {
-        title: "قارِنْ: Präteritum وPerfekt وPlusquamperfekt",
-        content: `Ich war krank جملة Präteritum، وIch bin krank gewesen جملة Perfekt؛ كلتاهما صحيحة للتعبير عن الماضي، وإن اختلف شيوعها بحسب المنطقة والسياق. أما Ich war krank gewesen فهي Plusquamperfekt، وتفيد عادةً أن الحالة سبقت نقطةً أخرى في الماضي، مثل: Bevor ich anrief, war Herr Schulz schon im Büro gewesen.
+        title: "قارِنْ: Präteritum و Perfekt و Plusquamperfekt",
+        content: `Ich war krank جملة Präteritum، و Ich bin krank gewesen جملة Perfekt؛ كلتاهما صحيحة للتعبير عن الماضي، وإن اختلف شيوعها بحسب المنطقة والسياق. أما Ich war krank gewesen فهي Plusquamperfekt، وتفيد عادةً أن الحالة سبقت نقطةً أخرى في الماضي، مثل: Bevor ich anrief, war Herr Schulz schon im Büro gewesen.
 
-يظهر الفرق في البنية أيضاً: في أمثلة هذا الدرس يظهر Präteritum في الفعل المصروف war أو hattest؛ وPerfekt يتكوّن هنا من فعل مساعد في المضارع مع Partizip II (bin gewesen/habe gehabt)، وPlusquamperfekt من فعل مساعد في Präteritum مع Partizip II (war gewesen/hatte gehabt). لا تجعل عبارة «للكلام» أو «للكتابة» حكماً يمنع استعمال زمن صحيح في سياق آخر.`,
+يظهر الفرق في البنية أيضاً: في أمثلة هذا الدرس يظهر Präteritum في الفعل المصروف war أو hattest؛ و Perfekt يتكوّن هنا من فعل مساعد في المضارع مع Partizip II (bin gewesen/habe gehabt)، و Plusquamperfekt من فعل مساعد في Präteritum مع Partizip II (war gewesen/hatte gehabt). لا تجعل عبارة «للكلام» أو «للكتابة» حكماً يمنع استعمال زمن صحيح في سياق آخر.`,
       },
     },
     {
@@ -128,7 +128,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
           right: "Mit freundlichen Grüßen",
           classification: "error",
           whyAr:
-            "حرف الجر mit يطلب Dativ، وGrüßen هنا جمع في Dativ؛ لذلك تأخذ الصفة النهاية -en: freundlichen. هذه مسألة تصريف وليست اختياراً بين تحيتين.",
+            "حرف الجر mit يطلب Dativ، و Grüßen هنا جمع في Dativ؛ لذلك تأخذ الصفة النهاية -en: freundlichen. هذه مسألة تصريف وليست اختياراً بين تحيتين.",
         },
         {
           wrong: "Mit freundlichen Grüßen,\nAnna Weber",
@@ -147,9 +147,9 @@ export const theory: NonNullable<Lesson["theory"]> = [
       ],
       relatedRuleComparison: {
         title: "قارِنْ: الهاتف المنطوق والبريد المكتوب",
-        content: `في الهاتف، تساعد عبارات مثل Einen Moment bitte وIch verbinde Sie على تنظيم الأدوار لحظياً، وقد يطلب المتصل إعادة الاسم أو يترك رسالة. وفي البريد، لا يحتاج القارئ إلى ردّ فوري، لذلك يتضمن النص عادةً عنواناً موجزاً وAnrede ومضموناً مكتوباً وخاتمة. يختار المتعلم العبارة بحسب وظيفة الموقف، لا بترجمة كل كلمة حرفياً.
+        content: `في الهاتف، تساعد عبارات مثل Einen Moment bitte و Ich verbinde Sie على تنظيم الأدوار لحظياً، وقد يطلب المتصل إعادة الاسم أو يترك رسالة. وفي البريد، لا يحتاج القارئ إلى ردّ فوري، لذلك يتضمن النص عادةً عنواناً موجزاً و Anrede ومضموناً مكتوباً وخاتمة. يختار المتعلم العبارة بحسب وظيفة الموقف، لا بترجمة كل كلمة حرفياً.
 
-وتختلف صيغة التحية نفسها بحسب العلاقة: Sehr geehrte Frau Weber تصلح لمراسلة رسمية، وHallo Anna قد تلائم زميلة تعرفها. أما القاعدة الإملائية المحددة هنا فهي الفاصلة بعد Anrede وعدم وضع علامة بعد Grußformel المستقلة؛ لا تجعل اختلاف السجل خطأً نحوياً ولا تعمم النموذج على كل علاقة مهنية.`,
+وتختلف صيغة التحية نفسها بحسب العلاقة: Sehr geehrte Frau Weber تصلح لمراسلة رسمية، و Hallo Anna قد تلائم زميلة تعرفها. أما القاعدة الإملائية المحددة هنا فهي الفاصلة بعد Anrede وعدم وضع علامة بعد Grußformel المستقلة؛ لا تجعل اختلاف السجل خطأً نحوياً ولا تعمم النموذج على كل علاقة مهنية.`,
       },
     },
   ];

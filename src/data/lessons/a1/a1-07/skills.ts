@@ -21,7 +21,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
     ],
     glossary: [
       {de: "der Markt", ar: "السوق", noteAr: "جمعه Märkte؛ احفظ تغيّر Umlaut في هذا الاسم."},
-      {de: "die Einkaufsliste", ar: "قائمة التسوّق", noteAr: "مركبة من Einkauf وListe."},
+      {de: "die Einkaufsliste", ar: "قائمة التسوّق", noteAr: "مركبة من Einkauf و Liste."},
       {de: "kosten", ar: "يكلّف", noteAr: "الفعل المفرد kostet، ومع die Äpfel: kosten."},
       {de: "frisch", ar: "طازج", noteAr: "صفة هنا قبل الاسم: frische Tomaten."},
       {de: "die Flasche", ar: "القارورة", noteAr: "جمعها Flaschen."},
@@ -227,7 +227,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
 
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "pron-a1-07",
-    title: "الأعداد ووضوح النطق: ß وig",
+    title: "الأعداد ووضوح النطق: ß و ig",
     items: [
       {de: "sechzehn", ar: "ستة عشر", note: "الصيغة المعيارية sechzehn، لا sechszehn."},
       {de: "siebzehn", ar: "سبعة عشر", note: "تسقط n من sieben في صيغة العدد siebzehn."},
@@ -273,7 +273,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
       type: "dictation",
       instructionAr: "اكتب الجملة المسموعة كتابةً صحيحة، مع نهايات الجمع.",
       audioText: "Ich nehme ein Kilo Tomaten und zwei Flaschen Wasser.",
-      explanation: "كتابة الجملة تتضمن Tomaten وFlaschen بصيغتي الجمع، وKilo في عبارة القياس.",
+      explanation: "كتابة الجملة تتضمن Tomaten و Flaschen بصيغتي الجمع، و Kilo في عبارة القياس.",
       errorType: "spelling",
     },
     {

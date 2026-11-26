@@ -88,12 +88,12 @@ export const reading: NonNullable<Lesson["reading"]> = {
       {
         "de": "erzählen",
         "ar": "يحكي / يروي",
-        "noteAr": "في «Erzähl mir davon!» يأتي الضمير mir في Dativ، وdavon تعني «عن ذلك». وقد يختلف تركيب erzählen بحسب المتمّمات في الجملة."
+        "noteAr": "في «Erzähl mir davon!» يأتي الضمير mir في Dativ، و davon تعني «عن ذلك». وقد يختلف تركيب erzählen بحسب المتمّمات في الجملة."
       },
       {
         "de": "habe gekocht / ferngesehen",
         "ar": "طبخت / شاهدت التلفاز",
-        "noteAr": "صيغة Perfekt ظاهرة هنا لفهم الحوار: haben في الحاضر مع Partizip II. نركز في هذا الدرس على war وhatte؛ لا تخلط بين عرض الصيغة في القراءة وجعلها هدف الإتقان هنا."
+        "noteAr": "صيغة Perfekt ظاهرة هنا لفهم الحوار: haben في الحاضر مع Partizip II. نركز في هذا الدرس على war و hatte؛ لا تخلط بين عرض الصيغة في القراءة وجعلها هدف الإتقان هنا."
       },
     ],
     "questions": [
@@ -239,7 +239,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         "ar": "أفضّل شاياً من فضلك."
       }
     ],
-    "discussionAr": "اكتب حواراً من ثماني تبادلات عن وقت الفراغ مع صديق. أدرج ثلاث جمل بـgern أو lieber أو am liebsten، وجملتين بـkönnen (إحداهما منفية)، وطلباً بـmöchte، وأمراً موجهاً إلى الصديق بصيغة du. ثم اكتب الصيغة الرسمية المقابلة بـSie منفصلةً عن الحوار، واسأل عن عطلة سابقة وأجب باستخدام war وhatte. راجع تصريف الأفعال في كل جملة.",
+    "discussionAr": "اكتب حواراً من ثماني تبادلات عن وقت الفراغ مع صديق. أدرج ثلاث جمل بـgern أو lieber أو am liebsten، وجملتين بـkönnen (إحداهما منفية)، وطلباً بـmöchte، وأمراً موجهاً إلى الصديق بصيغة du. ثم اكتب الصيغة الرسمية المقابلة بـSie منفصلةً عن الحوار، واسأل عن عطلة سابقة وأجب باستخدام war و hatte. راجع تصريف الأفعال في كل جملة.",
   };
 
 export const listening: NonNullable<Lesson["listening"]> = {
@@ -365,18 +365,18 @@ export const listening: NonNullable<Lesson["listening"]> = {
 
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "p1",
-    title: "أصوات الهوايات: ö وz وh",
+    title: "أصوات الهوايات: ö و z و h",
     items: [
       { de: "das Hobby", ar: "الهواية", note: "h في أول الكلمة يُنطق /h/ ولا يُحذف." },
       { de: "gern", ar: "بسرور", note: "g صوت /ɡ/ مجهور، قريب من g في go، وليس غ العربية؛ وقد يختلف r بحسب المنطقة." },
       { de: "tanzen", ar: "يرقص", note: "z الألمانية يُنطق /ts/؛ قرّبها من ت + س متصلتين: tan-tsen." },
       { de: "hören", ar: "يسمع", note: "ö طويل /øː/: ابدأ بصوت e ثم دوّر الشفتين من دون تحويله إلى u." },
       { de: "die Musik", ar: "الموسيقى", note: "النطق [muˈziːk]: s قبل i هنا مجهور /z/؛ آخر الكلمة هو k، لا s." },
-      { de: "fotografieren", ar: "يُصوّر", note: "النبر على ‎-fie-، وie تمثل /iː/ طويلاً تقريباً: fo-to-gra-FIE-ren." },
+      { de: "fotografieren", ar: "يُصوّر", note: "النبر على ‎-fie-، و ie تمثل /iː/ طويلاً تقريباً: fo-to-gra-FIE-ren." },
     ],
     tip: "لا يتغير صوت الحرف لمجرد وقوع الكلمة في نهاية الجملة: في Musik يبقى s قبل i مجهوراً /z/، وتنتهي الكلمة بصوت k.",
     shadowing: [
-      { de: "Ich spiele gern Tennis.", ar: "أحب لعب التنس.", tip: "sp في بداية الكلمة يُنطق /ʃp/؛ وg في gern هو /ɡ/." },
+      { de: "Ich spiele gern Tennis.", ar: "أحب لعب التنس.", tip: "sp في بداية الكلمة يُنطق /ʃp/؛ و g في gern هو /ɡ/." },
       { de: "Ich höre gern Musik.", ar: "أحب الاستماع للموسيقى.", tip: "حافظ على ö الطويل /øː/ ولا تستبدله بصوت u." },
       { de: "Komm bitte um vier Uhr!", ar: "تعال في الرابعة من فضلك!", tip: "v في vier يُنطق /f/." },
       { de: "Hast du Lust, mitzukommen?", ar: "هل لديك رغبة في المجيء معنا؟", tip: "في mitzukommen تدخل zu بين البادئة mit والفعل kommen: mit + zu + kommen." },
@@ -431,14 +431,14 @@ export const writing: NonNullable<Lesson["writing"]> = [
     {
       id: "w5",
       type: "fill-blank",
-      instructionAr: "أكمل رسالة قصيرة عن عطلة سابقة بصيغتي war وhatte:",
+      instructionAr: "أكمل رسالة قصيرة عن عطلة سابقة بصيغتي war و hatte:",
       template: "Am Samstag ___ ich im Museum. Es ___ interessant. Ich ___ wenig Zeit.",
       blanks: [
         { correct: "war", options: ["war", "hatte", "waren"] },
         { correct: "war", options: ["war", "hatte", "warst"] },
         { correct: "hatte", options: ["hatte", "war", "hatten"] },
       ],
-      explanation: "war هي صيغة Präteritum من sein للمكان والوصف، وhatte صيغة Präteritum من haben للوقت أو الملكية.",
+      explanation: "war هي صيغة Präteritum من sein للمكان والوصف، و hatte صيغة Präteritum من haben للوقت أو الملكية.",
       errorType: "conjugation",
     },
   ];

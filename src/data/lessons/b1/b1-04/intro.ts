@@ -8,7 +8,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z1",
       de: "Ich kann Wirklichkeit und Annahme unterscheiden: ich habe / ich hätte.",
-      ar: "أن أميّز بين الواقع والافتراض: habe (عندي) وhätte (لو كان عندي).",
+      ar: "أن أميّز بين الواقع والافتراض: habe (عندي) و hätte (لو كان عندي).",
       evidence: {
         exerciseIds: ["e1", "e5", "e7"],
         taskIds: ["practice:b1-04:e1", "practice:b1-04:e5", "practice:b1-04:e7"],
@@ -30,7 +30,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z3",
       de: "Ich kann wäre, hätte und könnte in Wünschen und Bitten benutzen.",
-      ar: "أن أستخدم wäre وhätte وkönnte في الأماني والطلبات المهذبة.",
+      ar: "أن أستخدم wäre و hätte و könnte في الأماني والطلبات المهذبة.",
       evidence: {
         exerciseIds: ["e3", "m1", "w2"],
         taskIds: ["practice:b1-04:e3", "mini-test:b1-04:m1", "writing:b1-04:w2"],

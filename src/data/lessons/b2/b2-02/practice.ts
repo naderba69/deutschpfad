@@ -168,7 +168,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "sind", options: ["sind", "ist", "werden"] },
       ],
       hint: "sein + zu + مصدر: المفرد ist، والجمع sind؛ لا فعل ناقص في هذه الصيغة.",
-      explanation: "ist zu lesen = يجب قراءته، وsind zu senken = يجب خفضها — صيغة رسمية بلا فعل ناقص.",
+      explanation: "ist zu lesen = يجب قراءته، و sind zu senken = يجب خفضها — صيغة رسمية بلا فعل ناقص.",
       errorType: "grammar",
       points: 2,
     },

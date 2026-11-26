@@ -34,7 +34,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e2", "e7", "e11", "e12", "e15", "e18", "m2"],
         taskIds: ["practice:a1-09:e2", "practice:a1-09:e7", "practice:a1-09:e11", "practice:a1-09:e12", "practice:a1-09:e15", "practice:a1-09:e18", "mini-test:a1-09:m2"],
-        labelAr: "أجب عن صيغ الترتيبي في e2 وe7 وe11 وe12 وe15 وe18، ثم أعد الصيغة في m2؛ يجب أن تكون كل الإجابات صحيحة.",
+        labelAr: "أجب عن صيغ الترتيبي في e2 و e7 و e11 و e12 و e15 و e18، ثم أعد الصيغة في m2؛ يجب أن تكون كل الإجابات صحيحة.",
         completion: "all-correct",
       },
     },
@@ -52,11 +52,11 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z5",
       de: "Ich kann am, im und um in ausgewählten Zeitangaben verwenden.",
-      ar: "أختار am وim وum في أمثلة مختارة لليوم والشهر والفصل والساعة.",
+      ar: "أختار am و im و um في أمثلة مختارة لليوم والشهر والفصل والساعة.",
       evidence: {
         exerciseIds: ["e1", "e4", "e5", "e10", "w1", "w2", "m1", "m3", "m4"],
         taskIds: ["practice:a1-09:e1", "practice:a1-09:e4", "practice:a1-09:e5", "practice:a1-09:e10", "writing:a1-09:w1", "writing:a1-09:w2", "mini-test:a1-09:m1", "mini-test:a1-09:m3", "mini-test:a1-09:m4"],
-        labelAr: "طبّق حروف الجر في e1 وe4 وe5 وe10 وw1 وw2 وm1 وm3 وm4؛ فتح قسم الكتابة أو الاستماع لا يسجّل هذا الهدف.",
+        labelAr: "طبّق حروف الجر في e1 و e4 و e5 و e10 و w1 و w2 و m1 و m3 و m4؛ فتح قسم الكتابة أو الاستماع لا يسجّل هذا الهدف.",
         completion: "all-correct",
       },
     },
@@ -67,7 +67,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e16", "e17", "e19", "e22", "e23", "e25"],
         taskIds: ["practice:a1-09:e16", "practice:a1-09:e17", "practice:a1-09:e19", "practice:a1-09:e22", "practice:a1-09:e23", "practice:a1-09:e25"],
-        labelAr: "أكمل أسئلة von … bis وab وgegen والتكرار montags وصيغة التاريخ في e16 وe17 وe19 وe22 وe23 وe25؛ يلزم الصواب في كلها.",
+        labelAr: "أكمل أسئلة von … bis و ab و gegen والتكرار montags وصيغة التاريخ في e16 و e17 و e19 و e22 و e23 و e25؛ يلزم الصواب في كلها.",
         completion: "all-correct",
       },
     },
@@ -119,10 +119,10 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
     motivatingQuestionAr:
-      "ما الذي تلاحظه في كلمة Mittwoch إذا قارنتها بـMitte وWoche؟ ثم جرّب أن تصوغ موعداً يجمع يوماً وساعةً.",
+      "ما الذي تلاحظه في كلمة Mittwoch إذا قارنتها بـMitte و Woche؟ ثم جرّب أن تصوغ موعداً يجمع يوماً وساعةً.",
     motivatingQuestionDe: "Wann hast du Zeit?",
     contextAr:
-      "في هذا الدرس نتعرف إلى أيام الأسبوع والشهور والفصول، ونقرأ تواريخ مختارة ونتدرب على صياغة موعد بسيط، مثل am Montag وum zehn Uhr. يبدأ ترتيب الأيام في أمثلتنا بالاثنين.",
+      "في هذا الدرس نتعرف إلى أيام الأسبوع والشهور والفصول، ونقرأ تواريخ مختارة ونتدرب على صياغة موعد بسيط، مثل am Montag و um zehn Uhr. يبدأ ترتيب الأيام في أمثلتنا بالاثنين.",
     contextDe: "Der Termin ist am Montag um zehn Uhr.",
     connectionToPreviousAr:
       "يراجع الدرس قراءة الساعة وبعض أمثلة von … bis الواردة في درس الروتين A1-05، ثم يضيف أسماء التقويم وصيغاً أخرى للمواعيد.",

@@ -46,7 +46,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:a1-12:m5",
           "writing:a1-12:w2",
         ],
-        labelAr: "إكمال وتصحيح تصريفات werden في أمثلة محددة، ومنها ich وdu وer/es وwir وihr.",
+        labelAr: "إكمال وتصحيح تصريفات werden في أمثلة محددة، ومنها ich و du و er/es و wir و ihr.",
         completion: "all-correct",
       },
     },
@@ -61,7 +61,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "practice:a1-12:e7",
           "practice:a1-12:e24",
         ],
-        labelAr: "اختيار ist للحالة القائمة وwird للتحوّل في e6، ثم صياغة التحوّل المقصود في e7 وe24.",
+        labelAr: "اختيار ist للحالة القائمة و wird للتحوّل في e6، ثم صياغة التحوّل المقصود في e7 و e24.",
         completion: "all-correct",
       },
     },
@@ -80,14 +80,14 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "practice:a1-12:e22",
           "practice:a1-12:e26",
         ],
-        labelAr: "إكمال واختيار صيغ محددة مع الفصول والأيام والساعة وmorgen وin der Nacht وseit/in.",
+        labelAr: "إكمال واختيار صيغ محددة مع الفصول والأيام والساعة و morgen و in der Nacht و seit/in.",
         completion: "all-correct",
       },
     },
     {
       id: "z6",
       de: "Ich kann und, aber, oder und denn den geübten Beziehungen zuordnen und die Wortstellung in den Beispielen beachten.",
-      ar: "أن أربط und وaber وoder وdenn بالعلاقة المقصودة، وأراعي ترتيب الجملة في أمثلة الدرس.",
+      ar: "أن أربط und و aber و oder و denn بالعلاقة المقصودة، وأراعي ترتيب الجملة في أمثلة الدرس.",
       evidence: {
         exerciseIds: ["e19", "e20", "e23"],
         taskIds: [
@@ -95,7 +95,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "practice:a1-12:e20",
           "practice:a1-12:e23",
         ],
-        labelAr: "تعيين الإضافة والتضاد والاختيار والسبب في e19، ومراجعة ترتيب جملتين مستقلتين بعد aber وdenn في e20 وe23.",
+        labelAr: "تعيين الإضافة والتضاد والاختيار والسبب في e19، ومراجعة ترتيب جملتين مستقلتين بعد aber و denn في e20 و e23.",
         completion: "all-correct",
       },
     },
@@ -149,7 +149,7 @@ export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
       "نستخدم وصف الطقس لنتدرّب على es ist، وأفعال الطقس، وربط الحالة بالتغيّر عبر werden، مع أمثلة زمنية وروابط بسيطة.",
     contextDe: "Im Winter wird es kalt.",
     connectionToPreviousAr:
-      "سبق أن تعلّمنا sein وhaben في دروس سابقة. نراجع بعض استعمالاتهما هنا إلى جانب werden؛ هذه أفعال مساعدة شائعة وليست قائمة حصرية بكل الأفعال المساعدة في الألمانية.",
+      "سبق أن تعلّمنا sein و haben في دروس سابقة. نراجع بعض استعمالاتهما هنا إلى جانب werden؛ هذه أفعال مساعدة شائعة وليست قائمة حصرية بكل الأفعال المساعدة في الألمانية.",
     activateVocabulary: [
       { de: "das Wetter", ar: "الطقس" },
       { de: "die Sonne", ar: "الشمس" },
@@ -161,7 +161,7 @@ export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
 
 
 
-  /* مراجعة تراكمية مختارة (Interleaving): من الدروس a1-07 وa1-10 وa1-11 */
+  /* مراجعة تراكمية مختارة (Interleaving): من الدروس a1-07 و a1-10 و a1-11 */
 export const review: NonNullable<Lesson["review"]> = [
     {
       id: "r1",
@@ -201,7 +201,7 @@ export const review: NonNullable<Lesson["review"]> = [
       hint:
         "في هذا المثال المحايد نقول Ich bin kein Lehrer. لا تعمم أن nicht لا يرد مع الأسماء؛ يتغير التركيز والتركيب بحسب السياق.",
       explanation:
-        "في المعنى المحايد المقصود هنا نقول Ich bin kein Lehrer، وkein Auto؛ لا يعني ذلك أن nicht يمتنع مطلقاً مع الأسماء، إذ يختلف التركيز والبناء في سياقات أخرى — من درس a1-10.",
+        "في المعنى المحايد المقصود هنا نقول Ich bin kein Lehrer، و kein Auto؛ لا يعني ذلك أن nicht يمتنع مطلقاً مع الأسماء، إذ يختلف التركيز والبناء في سياقات أخرى — من درس a1-10.",
       errorType: "negation",
     },
     {

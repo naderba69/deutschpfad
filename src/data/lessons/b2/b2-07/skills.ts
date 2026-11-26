@@ -119,16 +119,16 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "أصوات الفلسفة: sch، ö، وth",
+    title: "أصوات الفلسفة: sch، ö، و th",
     items: [
       { de: "die Philosophie", ar: "الفلسفة", note: "ph = ف: فيلوزوفي" },
       { de: "die These", ar: "الأطروحة", note: "th = ت: تيزِه" },
       { de: "argumentieren", ar: "يبني حجة", note: "g شديدة (قريبة من ج): أرجومنتيرن" },
       { de: "das Argument", ar: "الحجة", note: "g شديدة: أرجومِنت" },
       { de: "die Erörterung", ar: "المقال الجدلي", note: "ö + r: إر-أُورتِرونغ" },
-      { de: "die Gesellschaft", ar: "المجتمع", note: "g شديدة، وsch = ش: جِزِلشافت" },
+      { de: "die Gesellschaft", ar: "المجتمع", note: "g شديدة، و sch = ش: جِزِلشافت" },
     ],
-    tip: "Philosophie = فيلوزوفي — ph تُنطق ف (من أصل يوناني). وThese = تيزِه — th تُنطق ت.",
+    tip: "Philosophie = فيلوزوفي — ph تُنطق ف (من أصل يوناني). و These = تيزِه — th تُنطق ت.",
     shadowing: [
       { de: "Bis 2030 werde ich Deutsch gelernt haben.", ar: "بحلول 2030 سأكون قد تعلمت الألمانية.", tip: "Futur II: werde ... gelernt haben" },
       { de: "Er wird gegangen sein.", ar: "سيكون قد ذهب.", tip: "Futur II حركة: sein" },

@@ -56,7 +56,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
       {
         de: "die Vorspeise",
         ar: "المقبّلات",
-        noteAr: "قد تردّ على القائمة أيضاً كلمتا Hauptgericht وNachtisch؛ Beilage طبق جانبي",
+        noteAr: "قد تردّ على القائمة أيضاً كلمتا Hauptgericht و Nachtisch؛ Beilage طبق جانبي",
       },
       {
         de: "das Hauptgericht",
@@ -174,7 +174,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         ],
         correctIndex: 0,
         explanation:
-          "يذكر النص أنه نادى النادل بأدب، واستعمل Entschuldigung وKönnten Sie … bitte لطلب نقل الملاحظة إلى المطبخ.",
+          "يذكر النص أنه نادى النادل بأدب، واستعمل Entschuldigung و Könnten Sie … bitte لطلب نقل الملاحظة إلى المطبخ.",
         errorType: "vocabulary",
         optionExplanations: [
           undefined,
@@ -193,7 +193,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         options: ["hat", "haben", "habe", "hast"],
         correctIndex: 0,
         explanation:
-          "Das Essen هو الفاعل المفرد، لذلك نستخدم hat؛ وallen ضمير جمع في Dativ. جملة Alle haben das Essen geschmeckt ممكنة في معنى «تذوّق الجميع الطعام»، لكنها تعني شيئاً آخر وليست تصحيحاً لهذه الجملة.",
+          "Das Essen هو الفاعل المفرد، لذلك نستخدم hat؛ و allen ضمير جمع في Dativ. جملة Alle haben das Essen geschmeckt ممكنة في معنى «تذوّق الجميع الطعام»، لكنها تعني شيئاً آخر وليست تصحيحاً لهذه الجملة.",
         errorType: "conjugation",
         optionExplanations: [
           undefined,
@@ -426,27 +426,27 @@ export const listening: NonNullable<Lesson["listening"]> = {
 
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "p1",
-    title: "أصوات المطعم: sch، ü، وck",
+    title: "أصوات المطعم: sch، ü، و ck",
     items: [
       {
         de: "schmecken",
         ar: "يكون مذاقه (بحسب السياق)",
-        note: "schmecken [ˈʃmɛkən]: sch = [ʃ]، وck تمثّل [k] بعد حركة قصيرة.",
+        note: "schmecken [ˈʃmɛkən]: sch = [ʃ]، و ck تمثّل [k] بعد حركة قصيرة.",
       },
       {
         de: "lecker",
         ar: "لذيذ",
-        note: "lecker [ˈlɛkɐ]: e في المقطع الأول [ɛ] قصيرة، وck تمثّل [k] بعد حركة قصيرة.",
+        note: "lecker [ˈlɛkɐ]: e في المقطع الأول [ɛ] قصيرة، و ck تمثّل [k] بعد حركة قصيرة.",
       },
       {
         de: "die Küche",
         ar: "المطبخ",
-        note: "Küche [ˈkʏçə]: ü [ʏ] صوت أمامي مدوّر قصير؛ وch هنا [ç] (ich-Laut)، لا خ [x] ولا ش عربية حرفياً.",
+        note: "Küche [ˈkʏçə]: ü [ʏ] صوت أمامي مدوّر قصير؛ و ch هنا [ç] (ich-Laut)، لا خ [x] ولا ش عربية حرفياً.",
       },
       {
         de: "die Suppe",
         ar: "الحساء",
-        note: "Suppe [ˈzʊpə]: s في البداية [z]، وu [ʊ] قصيرة؛ pp مكتوبتان لكن النطق [p] واحدة بعد حركة قصيرة.",
+        note: "Suppe [ˈzʊpə]: s في البداية [z]، و u [ʊ] قصيرة؛ pp مكتوبتان لكن النطق [p] واحدة بعد حركة قصيرة.",
       },
       {
         de: "die Rechnung",
@@ -456,21 +456,21 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       {
         de: "bestellen",
         ar: "يطلب",
-        note: "bestellen [bəˈʃtɛlən]: المقطع الأول مخفّف [bə]، وe المنبورة [ɛ] قصيرة.",
+        note: "bestellen [bəˈʃtɛlən]: المقطع الأول مخفّف [bə]، و e المنبورة [ɛ] قصيرة.",
       },
     ],
     tip:
-      "في Rechnung يُنطق ch بصوت [ç] (ich-Laut)، وهو ليس خ العربية الخلفية [x] ولا ش العربية. في Küche الصوت نفسه؛ ويمكن تقريب [ç] بوصفه احتكاكاً أمامياً قرب موضع نطق الياء. أما ö في möchte [ˈmœçtə] وkönnen [ˈkœnən] فهو صوت أمامي مدوّر، لا تمثّله كتابة عربية واحدة بدقة.",
+      "في Rechnung يُنطق ch بصوت [ç] (ich-Laut)، وهو ليس خ العربية الخلفية [x] ولا ش العربية. في Küche الصوت نفسه؛ ويمكن تقريب [ç] بوصفه احتكاكاً أمامياً قرب موضع نطق الياء. أما ö في möchte [ˈmœçtə] و können [ˈkœnən] فهو صوت أمامي مدوّر، لا تمثّله كتابة عربية واحدة بدقة.",
     shadowing: [
       {
         de: "Ich möchte bitte einen Tee.",
         ar: "أود شاياً من فضلك.",
-        tip: "في möchte: ö [œ] صوت أمامي مدوّر؛ وch هو [ç]، لا خ عربية مطابقة.",
+        tip: "في möchte: ö [œ] صوت أمامي مدوّر؛ و ch هو [ç]، لا خ عربية مطابقة.",
       },
       {
         de: "Die Speisekarte, bitte!",
         ar: "القائمة من فضلك!",
-        tip: "في أول Speisekarte، sp تُنطق [ʃp] تقريباً؛ وei تُنطق [aɪ̯]. والكتابة العربية تقريبٌ لا نقل صوتي دقيق.",
+        tip: "في أول Speisekarte، sp تُنطق [ʃp] تقريباً؛ و ei تُنطق [aɪ̯]. والكتابة العربية تقريبٌ لا نقل صوتي دقيق.",
       },
       { de: "Das schmeckt lecker!", ar: "هذا لذيذ!", tip: "schmeckt = شمِكْت" },
       {
@@ -522,7 +522,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
         { correct: "möchten", options: ["möchte", "möchtest", "möchten"] },
       ],
       explanation:
-        "الإجابات المطلوبة هنا: ich möchte، du möchtest، wir möchten، وSie möchten (للمخاطب المفرد أو الجمع بصيغة الاحترام).",
+        "الإجابات المطلوبة هنا: ich möchte، du möchtest، wir möchten، و Sie möchten (للمخاطب المفرد أو الجمع بصيغة الاحترام).",
       errorType: "conjugation",
     },
     {

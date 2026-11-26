@@ -122,7 +122,7 @@ export const A1_VOCAB: Record<string, VocabEntry[]> = {
     { de: "das Fenster", ar: "النافذة", g: "das", ex: "Das Fenster ist offen.", exAr: "النافذة مفتوحة." },
     { de: "die Tür", ar: "الباب", g: "die", ex: "Bitte schließen Sie die Tür.", exAr: "من فضلك أغلق الباب." },
     { de: "die Wand", ar: "الجدار", g: "die", ex: "Das Bild hängt an der Wand.", exAr: "الصورة معلقة على الحائط." },
-    { de: "im / in der / auf dem", ar: "في الـ: im = in dem (للمذكر والمحايد في Dativ)، وin der (للمؤنث في Dativ) / على الـ: auf dem (للمذكر والمحايد في Dativ عند وصف الموقع)", g: "other", ex: "Das Buch liegt im Regal. / Die Lampe steht auf dem Tisch.", exAr: "الكتاب على الرف. / المصباح على الطاولة." },
+    { de: "im / in der / auf dem", ar: "في الـ: im = in dem (للمذكر والمحايد في Dativ)، و in der (للمؤنث في Dativ) / على الـ: auf dem (للمذكر والمحايد في Dativ عند وصف الموقع)", g: "other", ex: "Das Buch liegt im Regal. / Die Lampe steht auf dem Tisch.", exAr: "الكتاب على الرف. / المصباح على الطاولة." },
     { de: "unter", ar: "تحت؛ وبين/ضمن بحسب التركيب", g: "other", ex: "Die Katze schläft unter dem Tisch.", exAr: "القطة تنام تحت الطاولة." },
     { de: "neben", ar: "بجانب/إلى جانب (مكانياً أو بمعنى بالإضافة إلى، بحسب السياق)", g: "other", ex: "Die Bank ist neben dem Park.", exAr: "البنك بجانب الحديقة." },
     { de: "groß / klein", ar: "كبير / صغير", g: "adj", ex: "Das Haus ist groß, die Küche ist klein.", exAr: "البيت كبير والمطبخ صغير." },

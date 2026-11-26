@@ -28,13 +28,13 @@ export const reading: NonNullable<Lesson["reading"]> = {
         de: "der Krankenpfleger",
         ar: "الممرّض",
         noteAr:
-          "مركّب من krank (مريض) وPfleger (مقدّم رعاية)، والمؤنّث Krankenpflegerin. وتُستعمل أيضاً die Pflegefachkraft؛ وهي مؤنثة نحوياً، ويورد Duden أن المسمّى المهني في ألمانيا منذ 2020 هو Pflegefachfrau أو Pflegefachmann.",
+          "مركّب من krank (مريض) و Pfleger (مقدّم رعاية)، والمؤنّث Krankenpflegerin. وتُستعمل أيضاً die Pflegefachkraft؛ وهي مؤنثة نحوياً، ويورد Duden أن المسمّى المهني في ألمانيا منذ 2020 هو Pflegefachfrau أو Pflegefachmann.",
       },
       {
         de: "die Schicht",
         ar: "نوبة العمل",
         noteAr:
-          "مؤنّثة. من مركّباتها Frühschicht (نوبة صباحية) وSpätschicht (مسائية) وNachtschicht (ليلية). وتشيع المناوبات في بعض وظائف التمريض، لكن طبيعة الدوام تختلف بحسب الوظيفة ومكان العمل.",
+          "مؤنّثة. من مركّباتها Frühschicht (نوبة صباحية) و Spätschicht (مسائية) و Nachtschicht (ليلية). وتشيع المناوبات في بعض وظائف التمريض، لكن طبيعة الدوام تختلف بحسب الوظيفة ومكان العمل.",
       },
       {
         de: "das Brötchen",
@@ -74,7 +74,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         de: "die Mittagspause",
         ar: "استراحة الغداء",
         noteAr:
-          "مؤنّثة. من التراكيب الشائعة eine Pause machen وeine Pause einlegen؛ احفظ التركيب الكامل ولا تنقل صياغة تعبير إنجليزي إلى الألمانية حرفياً.",
+          "مؤنّثة. من التراكيب الشائعة eine Pause machen و eine Pause einlegen؛ احفظ التركيب الكامل ولا تنقل صياغة تعبير إنجليزي إلى الألمانية حرفياً.",
       },
       {
         de: "die Kantine",
@@ -442,13 +442,13 @@ export const listening: NonNullable<Lesson["listening"]> = {
 
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "p1",
-    title: "أصوات اليوم: st، ch، وü",
+    title: "أصوات اليوم: st، ch، و ü",
     minimalPairs: [
       {
         id: "mp-a1-05-ue",
         title: "الحرف ü: طويل وقصير",
         titleDe: "ü: lang und kurz",
-        explanationAr: "ü تُنطق بشفتين مستديرتين ولسان للأمام، فلا تشبه u ولا o. انتبه إلى الفرق بين Hüte الطويلة وHütte القصيرة.",
+        explanationAr: "ü تُنطق بشفتين مستديرتين ولسان للأمام، فلا تشبه u ولا o. انتبه إلى الفرق بين Hüte الطويلة و Hütte القصيرة.",
         pairs: [
         { a: "Bühne", aAr: "مسرح", b: "Bohne", bAr: "فاصوليا", note: "ü مقابل o: الشفتان مستديرتان في الاثنين، لكن ü لسانها للأمام." },
         { a: "Hüte", aAr: "قبعات (جمع Hut)", b: "Hütte", bAr: "كوخ", note: "Hüte: ü طويلة. Hütte: ü قصيرة." },
@@ -465,7 +465,7 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       {
         de: "frühstücken",
         ar: "يتناول الفطور",
-        note: "ü في früh طويلة /yː/، وفي Stück قصيرة /ʏ/؛ وst في بداية Stück يُنطق /ʃt/ في الألمانية القياسية",
+        note: "ü في früh طويلة /yː/، وفي Stück قصيرة /ʏ/؛ و st في بداية Stück يُنطق /ʃt/ في الألمانية القياسية",
       },
       { de: "die Nacht", ar: "الليل", note: "ch بعد a صوت احتكاكي خلفي /x/، قريب من خ العربية" },
       { de: "der Morgen", ar: "الصباح", note: "في نطق شائع [ˈmɔʁɡn̩]؛ تختلف أصوات r باختلاف اللهجة" },
@@ -558,7 +558,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
         { correct: "fünf", options: ["fünf", "zehn", "zwanzig"] },
         { correct: "zwanzig", options: ["fünf", "zwanzig", "vierzig"] },
       ],
-      explanation: "fünf nach acht = 8:05، وzwanzig vor neun = 8:40.",
+      explanation: "fünf nach acht = 8:05، و zwanzig vor neun = 8:40.",
       errorType: "vocabulary",
     },
     {

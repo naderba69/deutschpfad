@@ -16,7 +16,7 @@ export const lessonA203: Lesson = {
   order: 1,
   titleDe: "Im Restaurant",
   titleAr: "المطعم والطعام",
-  summary: "تعبيرات طلب شائعة تختلف ملاءمتها بحسب السياق، ومنها möchte وhätte gern وnehmen؛ أمثلة على schmecken مع Dativ ومراجعة gefallen/passen؛ مفردات مختارة من زيارة مطعم ووصف الطعام والكميات؛ ونصّ «Ein Abend im Gasthaus Löwen» مع أسئلة قراءة واستماع وكتابة موجّهة. الملاحظات الثقافية أمثلة محدودة لا قواعد عامة لكل المطاعم أو المناطق.",
+  summary: "تعبيرات طلب شائعة تختلف ملاءمتها بحسب السياق، ومنها möchte و hätte gern و nehmen؛ أمثلة على schmecken مع Dativ ومراجعة gefallen/passen؛ مفردات مختارة من زيارة مطعم ووصف الطعام والكميات؛ ونصّ «Ein Abend im Gasthaus Löwen» مع أسئلة قراءة واستماع وكتابة موجّهة. الملاحظات الثقافية أمثلة محدودة لا قواعد عامة لكل المطاعم أو المناطق.",
   lernziele,
   einfuehrung,
   review,

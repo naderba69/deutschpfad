@@ -37,7 +37,7 @@ describe("A1-00 — الأبجدية والنطق", () => {
     expect(waterExplanation).not.toContain("كالواو");
   });
 
-  it("تمرين الحروف المعلمة e5 تعليمته تطابق خياراته (ü وu) ولا يحوي كلمة زائدة", () => {
+  it("تمرين الحروف المعلمة e5 تعليمته تطابق خياراته (ü و u) ولا يحوي كلمة زائدة", () => {
     const e5 = lesson.practiceBank.find((task) => task.id === "e5");
     expect(e5?.type).toBe("fill-blank");
     expect(e5?.instructionAr).toContain("ü أو u");
@@ -78,7 +78,7 @@ describe("A1-00 — الأبجدية والنطق", () => {
     expect(JSON_TEXT).toContain("لا يطابق الشين العربية");
   });
 
-  it("يفرق بين ie الطويلة وdiphthongs، ويعرض pf كتتابع صامتين", () => {
+  it("يفرق بين ie الطويلة و diphthongs، ويعرض pf كتتابع صامتين", () => {
     const t2 = lesson.theory.find((section) => section.id === "t2");
     expect(t2?.explanationAr).toContain("وليس صوتاً مزدوجاً");
     expect(t2?.explanationAr).toContain("تتابع صامتين [pf]");
@@ -126,11 +126,11 @@ describe("A1-00 — الأبجدية والنطق", () => {
   });
 
   it("يتجنب تعميمات النطق التي تخالف أمثلة الدرس وحدود الاختلاف الفردي", () => {
-    expect(JSON_TEXT).toContain("lesen وSonne");
-    expect(JSON_TEXT).toContain("Wasser وist");
+    expect(JSON_TEXT).toContain("lesen و Sonne");
+    expect(JSON_TEXT).toContain("Wasser و ist");
     expect(JSON_TEXT).toContain("تختلف الصعوبة باختلاف لغة المتعلم وخبرته");
-    expect(JSON_TEXT).toContain("Vater وVogel وviel وvier");
-    expect(JSON_TEXT).toContain("Video وVase");
+    expect(JSON_TEXT).toContain("Vater و Vogel و viel و vier");
+    expect(JSON_TEXT).toContain("Video و Vase");
     expect(JSON_TEXT).not.toContain("العربية لا تبدأ كلمةً بساكنين");
     expect(JSON_TEXT).not.toContain("S بين حرفين علة يُنطق Z");
     expect(JSON_TEXT).not.toContain("الأصل يحدّد النطق");

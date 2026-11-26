@@ -19,7 +19,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z2",
       de: "Ich kann die Konnektoren aber, deshalb, trotzdem und dann in vorgegebenen Sätzen richtig verwenden.",
-      ar: "أن أستعمل أدوات الربط aber وdeshalb وtrotzdem وdann في جمل موجّهة، مع الترتيب الصحيح للفعل والفاعل؛ وهذا اختيار وترتيب موجّهان لا إنتاج حر.",
+      ar: "أن أستعمل أدوات الربط aber و deshalb و trotzdem و dann في جمل موجّهة، مع الترتيب الصحيح للفعل والفاعل؛ وهذا اختيار وترتيب موجّهان لا إنتاج حر.",
       evidence: {
         exerciseIds: ["e1", "e2", "w1", "w2"],
         taskIds: [
@@ -28,7 +28,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "writing:a2-12:w1",
           "writing:a2-12:w2",
         ],
-        labelAr: "أجب صحيحاً عن e1 وe2 (يظهر كلاهما ضمن أول أربعة تمارين في مسار التدفق، وفي جلسة التدريب العشوائية)، ثم أكمل w1 (جملة deshalb مقلوبة) وw2 (أربعة فراغات). هذه مهام اختيار موجّه وترتيب، لا كتابة حرة.",
+        labelAr: "أجب صحيحاً عن e1 و e2 (يظهر كلاهما ضمن أول أربعة تمارين في مسار التدفق، وفي جلسة التدريب العشوائية)، ثم أكمل w1 (جملة deshalb مقلوبة) و w2 (أربعة فراغات). هذه مهام اختيار موجّه وترتيب، لا كتابة حرة.",
         completion: "all-correct",
       },
     },
@@ -84,7 +84,7 @@ export const einfuehrung: Lesson["einfuehrung"] = {
     contextAr:
       "نتناول موضوع العلاقات: مشاعر، وآراء، وخلافات صغيرة. ومعها «أدوات الربط» التي تجعل كلامك متصلاً ومتماسكاً، ثم تأتي المراجعة الختامية في A2-13.",
     contextDe: "Ich bin müde, aber ich bin glücklich.",
-    connectionToPreviousAr: "تذكرت dass وweil (الجمل الثانوية). اليوم: أدوات الربط الرئيسية — أربع عادية (und، aber، oder، denn) لا تغيّر الترتيب، وثلاث مقلوبة (deshalb، trotzdem، dann) يأتي الفعل بعدها مباشرة.",
+    connectionToPreviousAr: "تذكرت dass و weil (الجمل الثانوية). اليوم: أدوات الربط الرئيسية — أربع عادية (und، aber، oder، denn) لا تغيّر الترتيب، وثلاث مقلوبة (deshalb، trotzdem، dann) يأتي الفعل بعدها مباشرة.",
     activateVocabulary: [
       { de: "das Gefühl", ar: "الشعور" },
       { de: "glücklich", ar: "سعيد" },

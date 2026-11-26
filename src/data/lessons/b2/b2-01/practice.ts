@@ -138,7 +138,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "könnte", options: ["könnte", "muss", "dürfte", "wollte"] },
       ],
       hint: "هذه قرائن تقريبية في هذا السياق، وليست سلّماً ثابتاً لكل استعمال.",
-      explanation: "في هذه الأمثلة: muss قريب من شبه اليقين، dürfte من الترجيح القوي، وkönnte من الاحتمال؛ تتأثر الدلالة بالسياق.",
+      explanation: "في هذه الأمثلة: muss قريب من شبه اليقين، dürfte من الترجيح القوي، و könnte من الاحتمال؛ تتأثر الدلالة بالسياق.",
       errorType: "grammar",
       points: 2,
     },
@@ -196,6 +196,6 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     culturalNote: {
       title: "العلم في ألمانيا",
       content:
-        "من أسماء منظمات البحث غير الجامعي في ألمانيا Max-Planck-Gesellschaft وFraunhofer-Gesellschaft وHelmholtz-Gemeinschaft. تختلف مصادر التمويل بينها؛ فقد يجتمع التمويل الأساسي مع تمويل المشروعات من جهات متعددة. عبارة «Die Forschung wird staatlich gefördert» (البحث مدعوم من الدولة) مثال لغوي، ولا ينبغي تعميمها على كل مؤسسة أو مشروع من دون التحقق من مصدره.",
+        "من أسماء منظمات البحث غير الجامعي في ألمانيا Max-Planck-Gesellschaft و Fraunhofer-Gesellschaft و Helmholtz-Gemeinschaft. تختلف مصادر التمويل بينها؛ فقد يجتمع التمويل الأساسي مع تمويل المشروعات من جهات متعددة. عبارة «Die Forschung wird staatlich gefördert» (البحث مدعوم من الدولة) مثال لغوي، ولا ينبغي تعميمها على كل مؤسسة أو مشروع من دون التحقق من مصدره.",
     },
   };

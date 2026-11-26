@@ -10,11 +10,11 @@ export const theory: NonNullable<Lesson["theory"]> = [
       titleAr: "تعبيرات في سياق العمل والمراسلات الرسمية",
       titleDe: "Arbeitsbezogene Wendungen und formelle Korrespondenz",
       explanationAr:
-        `يعرض الدرس وصلات اسمية-فعلية منتقاة (Funktionsverbgefüge) مثل eine Entscheidung treffen وin Betracht ziehen وzur Verfügung stellen، إلى جانب تراكيب أخرى مفيدة في سياق الوظائف مثل sich um eine Stelle bewerben وWert auf etwas legen وصيغ مراسلة مثل Anbei finden Sie. ليست هذه كلها نوعاً تركيبياً واحداً: فبعضها وصلات اسمية-فعلية، وبعضها فعل مع حرف جر، وبعضها صيغة خطاب. في كثير من الوصلات الاسمية-الفعلية يحمل الاسم قسماً كبيراً من المعنى، بينما يوفّر الفعل التصريف؛ لكن درجة خفوت معنى الفعل وبنية كل تركيب تختلف.
+        `يعرض الدرس وصلات اسمية-فعلية منتقاة (Funktionsverbgefüge) مثل eine Entscheidung treffen و in Betracht ziehen و zur Verfügung stellen، إلى جانب تراكيب أخرى مفيدة في سياق الوظائف مثل sich um eine Stelle bewerben و Wert auf etwas legen وصيغ مراسلة مثل Anbei finden Sie. ليست هذه كلها نوعاً تركيبياً واحداً: فبعضها وصلات اسمية-فعلية، وبعضها فعل مع حرف جر، وبعضها صيغة خطاب. في كثير من الوصلات الاسمية-الفعلية يحمل الاسم قسماً كبيراً من المعنى، بينما يوفّر الفعل التصريف؛ لكن درجة خفوت معنى الفعل وبنية كل تركيب تختلف.
 
 قد يضم خطاب التقديم تحية وسبب التقديم وعرضاً موجزاً للمؤهلات أو أمثلة عليها وختاماً مهذباً، لكن لا يوجد قالب وحيد يصلح لكل الوظائف. تتحدد التفاصيل بما تطلبه الجهة وبسياق الرسالة. هذا الدرس يتدرب على عبارات مختارة، ولا يدرّب على إعداد ملف توظيف كامل أو يضمن نتيجة التقديم.
 
-احفظ التركيب مع حرف الجر والحالة عندما تكون جزءاً منه، ولا تعمم حرفاً واحداً على كل استعمال: من الصيغ الشائعة sich bewerben um + Akkusativ، مثل sich um eine Stelle bewerben؛ ويصح أيضاً sich auf eine ausgeschriebene Stelle bewerben أو sich für einen Job bewerben؛ ويُذكر صاحب العمل مثلاً مع bei + Dativ. ومن التراكيب الأخرى Wert auf + Akkusativ legen، وjemandem etwas zur Verfügung stellen؛ أما عبارة zur Verfügung فتُحفظ بصيغتها.
+احفظ التركيب مع حرف الجر والحالة عندما تكون جزءاً منه، ولا تعمم حرفاً واحداً على كل استعمال: من الصيغ الشائعة sich bewerben um + Akkusativ، مثل sich um eine Stelle bewerben؛ ويصح أيضاً sich auf eine ausgeschriebene Stelle bewerben أو sich für einen Job bewerben؛ ويُذكر صاحب العمل مثلاً مع bei + Dativ. ومن التراكيب الأخرى Wert auf + Akkusativ legen، و jemandem etwas zur Verfügung stellen؛ أما عبارة zur Verfügung فتُحفظ بصيغتها.
 
 تساعد هذه العبارات على تنويع التعبير في الرسائل والمقابلات، لكنها لا تجعل النص أفضل تلقائياً بمجرد إدراجها. اخترها حين تناسب المعنى والسياق، ويمكن أن تقابلها في العربية تراكيب فعلية أو اسمية؛ فالترجمة هنا سياقية وليست مقابلة ثابتة كلمةً بكلمة.`,
       whyAr:
@@ -39,7 +39,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
         { de: "Ich bringe drei Jahre Erfahrung im Projektmanagement mit.", ar: "أحمل ثلاث سنوات من الخبرة في إدارة المشروعات." },
       ],
       comparisonWithArabic:
-        "يمكن ترجمة Ich bewerbe mich um die Stelle بـ«أتقدم للوظيفة»، وAnbei finden Sie meinen Lebenslauf بـ«أرفق لكم سيرتي الذاتية» أو «تجدون مرفقاً سيرتي الذاتية» بحسب سياق الرسالة. وIch lege Wert auf Teamarbeit قد تعني «أولي أهمية للعمل الجماعي». هذه مقابلات سياقية؛ لا يلزم أن تستخدم العربية والألمانية النوع نفسه من التركيب أو درجة الرسمية نفسها في كل موقف.",
+        "يمكن ترجمة Ich bewerbe mich um die Stelle بـ«أتقدم للوظيفة»، و Anbei finden Sie meinen Lebenslauf بـ«أرفق لكم سيرتي الذاتية» أو «تجدون مرفقاً سيرتي الذاتية» بحسب سياق الرسالة. و Ich lege Wert auf Teamarbeit قد تعني «أولي أهمية للعمل الجماعي». هذه مقابلات سياقية؛ لا يلزم أن تستخدم العربية والألمانية النوع نفسه من التركيب أو درجة الرسمية نفسها في كل موقف.",
       eselsbruecke:
         "احفظ كل وصلة مع مثال قصير وحرف الجر عند وجوده: eine Entscheidung treffen · sich um eine Stelle bewerben · Wert auf Teamarbeit legen.",
       commonMistakes: [
@@ -56,7 +56,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       id: "t2",
       titleAr: "Funktionsverbgefüge: تراكيب الأفعال الوظيفية",
       titleDe: "Funktionsverbgefüge",
-      explanationAr: "تضم Funktionsverbgefüge اسماً مع فعل يكون معناه أقل استقلالاً في هذا التركيب، مثل eine Entscheidung treffen، وKritik üben، وin Betracht ziehen. في هذه الأمثلة يحمل الاسم جانباً مهماً من المعنى، ويُسهم الفعل في بناء الجملة وتصريفها، لكن مقدار المعنى الذي يحتفظ به الفعل يختلف بين التراكيب.\n\nتعلّم التركيب كما يرد مع أدواته ومتمماته: eine Entscheidung treffen، Kritik an etwas üben، Wert auf etwas legen، jemanden/etwas zur Verfügung stellen. لاحظ موضع المتمم والحالة أيضاً؛ فالمعنى العام لا يكفي وحده لاختيار البنية الصحيحة. لا توجد قاعدة دلالية واحدة تسمح باستنتاج كل فعل من الاسم؛ لذا تساعد الأمثلة والمعاجم على تثبيت الاستعمال.\n\nقد يختار الكاتب التركيب الاسمي-الفعلي أو فعلاً أبسط بحسب المعنى والسياق والنبرة. فـberücksichtigen وin Betracht ziehen متقاربان في مثال الخيار، لكنهما ليسا قابلين للاستبدال في كل تركيب. ولا توجد عتبة عددية عامة لما يبدو طبيعياً؛ ركّز على دقة المعنى وتنوع الجمل بدلاً من عدّ الوصلات.",
+      explanationAr: "تضم Funktionsverbgefüge اسماً مع فعل يكون معناه أقل استقلالاً في هذا التركيب، مثل eine Entscheidung treffen، و Kritik üben، و in Betracht ziehen. في هذه الأمثلة يحمل الاسم جانباً مهماً من المعنى، ويُسهم الفعل في بناء الجملة وتصريفها، لكن مقدار المعنى الذي يحتفظ به الفعل يختلف بين التراكيب.\n\nتعلّم التركيب كما يرد مع أدواته ومتمماته: eine Entscheidung treffen، Kritik an etwas üben، Wert auf etwas legen، jemanden/etwas zur Verfügung stellen. لاحظ موضع المتمم والحالة أيضاً؛ فالمعنى العام لا يكفي وحده لاختيار البنية الصحيحة. لا توجد قاعدة دلالية واحدة تسمح باستنتاج كل فعل من الاسم؛ لذا تساعد الأمثلة والمعاجم على تثبيت الاستعمال.\n\nقد يختار الكاتب التركيب الاسمي-الفعلي أو فعلاً أبسط بحسب المعنى والسياق والنبرة. فـberücksichtigen و in Betracht ziehen متقاربان في مثال الخيار، لكنهما ليسا قابلين للاستبدال في كل تركيب. ولا توجد عتبة عددية عامة لما يبدو طبيعياً؛ ركّز على دقة المعنى وتنوع الجمل بدلاً من عدّ الوصلات.",
       whyAr: "معرفة هذه الوصلات تساعدك على فهم تعبيرات متكررة في مواد العمل والتقديم، وعلى اختيار صياغة مناسبة عند الكتابة أو الحديث. لكنها لا تثبت وحدها مستوى القارئ أو جودة نصه؛ افهم تركيب كل مثال ومتمماته قبل استعماله. واختبر المثال في جملة كاملة لا في ترجمة منفردة، لأن الفعل وحرف الجر يحددان دور الاسم والعلاقة بين عناصر العبارة.",
       table: {
         title: "Funktionsverbgefüge الشائعة",
@@ -76,7 +76,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       comparisonWithArabic: "هذا التركيب مألوف تماماً للعربي: نقول في الصياغة الرسمية «اتخذ قراراً» و«وجّه نقداً»، وهما أقرب إلى الاسم منهما إلى الفعل البسيط. في هذه التراكيب لا يُستعمل عادةً machen مع eine Entscheidung ولا geben مع Kritik؛ فالفعل المعتاد جزء من التركيب الذي ينبغي حفظه.",
       eselsbruecke: "احفظ التركيب كاملاً كوحدة واحدة: الاسم مع فعله ومع حرف الجر إن وُجد. فالخطأ الشائع ليس في الاسم بل في اختيار الفعل، ولا توجد قاعدة تهديك إليه دائماً، لذلك تُحفظ مع الأمثلة.",
       commonMistakes: [
-        { wrong: "eine Entscheidung machen", right: "eine Entscheidung treffen", whyAr: "الفعل الوظيفي المعتاد مع Entscheidung هو treffen، وmachen لا تُستعمل مع هذا الاسم بهذا المعنى." },
+        { wrong: "eine Entscheidung machen", right: "eine Entscheidung treffen", whyAr: "الفعل الوظيفي المعتاد مع Entscheidung هو treffen، و machen لا تُستعمل مع هذا الاسم بهذا المعنى." },
         { wrong: "Kritik geben", right: "Kritik üben", whyAr: "التركيب المحفوظ هو Kritik üben أو Kritik äußern، ولا يقال geben، لأن geben تدخل في تراكيب أخرى (einen Vortrag geben · Auskunft geben). والتباين يبيّن أن العنصر الثابت هو ما يحفظه الاستعمال لا ما يناسب العقل: «إعطاء نقد» منطقية عربية لا ألمانية." },
         { wrong: "in Betracht nehmen", right: "in Betracht ziehen", whyAr: "التركيب الثابت هو ziehen مع Betracht، أما nehmen فترد في in Kauf nehmen." },
       ],

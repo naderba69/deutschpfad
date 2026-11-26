@@ -13,7 +13,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["q1", "q2", "q3", "q4"],
         taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4"],
-        labelAr: "أجيب صحيحاً عن q1 بعد الاستماع إلى l1، وعن q2 وq3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن q1 بعد الاستماع إلى l1، وعن q2 و q3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -31,13 +31,13 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "writing:b2-03:w1",
           "writing:b2-03:w2",
         ],
-        labelAr: "أجيب صحيحاً عن تمارين حرف الجر قبل الضمير النسبي (e1 وe4 وe5 وm1 وw1 وw2)، دون كشف الحل.",
+        labelAr: "أجيب صحيحاً عن تمارين حرف الجر قبل الضمير النسبي (e1 و e4 و e5 و m1 و w1 و w2)، دون كشف الحل.",
       },
     },
     {
       id: "z3",
       de: "Ich kann was und wo als Relativ-Elemente benutzen.",
-      ar: "أن أستخدم was وwo كعنصري وصل في الجملة النسبية.",
+      ar: "أن أستخدم was و wo كعنصري وصل في الجملة النسبية.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["e2", "e6", "e7", "e9", "m2", "m3", "m5"],
@@ -50,7 +50,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b2-03:m3",
           "mini-test:b2-03:m5",
         ],
-        labelAr: "أجيب صحيحاً عن تمارين was وwo وعناصر الوصل wofür (e2 وe6 وe7 وe9 وm2 وm3 وm5)، دون كشف الحل.",
+        labelAr: "أجيب صحيحاً عن تمارين was و wo وعناصر الوصل wofür (e2 و e6 و e7 و e9 و m2 و m3 و m5)، دون كشف الحل.",
       },
     },
     {
@@ -87,7 +87,7 @@ export const einfuehrung: Lesson["einfuehrung"] = {
       "في B1: Der Mann, der dort steht. اليوم نتدرّب على الجملة النسبية مع حرف جر: Der Mann, auf den ich warte, ist mein Anwalt. لاحظ أن حرف الجر يسبق الضمير النسبي وأن حالته تتحدد بحسب حرف الجر. ونتعرّف أيضاً على wo للإحالة إلى مكان، وعلى was بعد alles.",
     motivatingQuestionDe: "Was steht im Vertrag?",
     contextAr:
-      "تظهر الجمل النسبية في نصوص ومواقف كثيرة، ومنها موضوعات الحياة اليومية والقانون. نتدرّب على حروف الجر مع الضمائر النسبية، وعلى wo المكانية وwas بعد ألفاظ مثل alles.",
+      "تظهر الجمل النسبية في نصوص ومواقف كثيرة، ومنها موضوعات الحياة اليومية والقانون. نتدرّب على حروف الجر مع الضمائر النسبية، وعلى wo المكانية و was بعد ألفاظ مثل alles.",
     contextDe: "Das Gesetz, auf das sich alle berufen, ist alt.",
     connectionToPreviousAr: "تتذكر Relativsätze الأساسية (der/die/das) من B1. اليوم: مع حروف الجر + wo/was — القفزة إلى B2.",
     activateVocabulary: [

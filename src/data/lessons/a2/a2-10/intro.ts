@@ -8,7 +8,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z1",
       de: "Ich kann weil, wenn und ob in kurzen Kontexten unterscheiden und die Verbendstellung im Nebensatz anwenden.",
-      ar: "أميّز معنى weil وwenn وob في سياقات قصيرة، وأرتب الفعل في نهاية الجملة الثانوية في النمط المستهدف.",
+      ar: "أميّز معنى weil و wenn و ob في سياقات قصيرة، وأرتب الفعل في نهاية الجملة الثانوية في النمط المستهدف.",
       evidence: {
         exerciseIds: ["e1", "e2", "e4", "e7", "e9", "m1", "m3", "m5"],
         taskIds: [
@@ -19,21 +19,21 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:a2-10:m1", "flow-mini-test:a2-10:m1",
           "mini-test:a2-10:m3", "mini-test:a2-10:m5",
         ],
-        labelAr: "أنجز اختيار الروابط وترتيبها في e1/e2/e4/e7/e9 وm1/m3/m5؛ لا يكفي فتح النشاط.",
+        labelAr: "أنجز اختيار الروابط وترتيبها في e1/e2/e4/e7/e9 و m1/m3/m5؛ لا يكفي فتح النشاط.",
         completion: "all-correct",
       },
     },
     {
       id: "z2",
       de: "Ich kann ausgewählte Possessivbegleiter im Akkusativ und Dativ mit den geübten Nomen verwenden.",
-      ar: "أستخدم صيغ ملكية منتقاة في Akkusativ وDativ مع الأسماء التي تدربت عليها، لا في كل الحالات.",
+      ar: "أستخدم صيغ ملكية منتقاة في Akkusativ و Dativ مع الأسماء التي تدربت عليها، لا في كل الحالات.",
       evidence: {
         exerciseIds: ["e5", "e6", "m2", "m4"],
         taskIds: [
           "practice:a2-10:e5", "practice:a2-10:e6",
           "mini-test:a2-10:m2", "flow-mini-test:a2-10:m2", "mini-test:a2-10:m4",
         ],
-        labelAr: "صحّح أو أكمل أدوات الملكية مع Bruder وVater وMutter في e5/e6/m2/m4.",
+        labelAr: "صحّح أو أكمل أدوات الملكية مع Bruder و Vater و Mutter في e5/e6/m2/m4.",
         completion: "all-correct",
       },
     },
@@ -83,7 +83,7 @@ export const einfuehrung: Lesson["einfuehrung"] = {
       "تتحدث نورا عن دورة اللغة وخططها الدراسية. يتيح السياق مقارنة السبب والشرط أو الزمن والسؤال غير المباشر، ثم ملاحظة صيغ ملكية محددة.",
     contextDe: "Ich lerne Deutsch, weil ich in Deutschland studieren will.",
     connectionToPreviousAr:
-      "يستند الدرس إلى أمثلة الجملة الثانوية التي ظهرت سابقاً مع dass، ثم يضيف استعمالات منتقاة لـweil وwenn وob. لا تعني هذه المراجعة أن جميع أشكال الجملة الثانوية قد دُرست.",
+      "يستند الدرس إلى أمثلة الجملة الثانوية التي ظهرت سابقاً مع dass، ثم يضيف استعمالات منتقاة لـweil و wenn و ob. لا تعني هذه المراجعة أن جميع أشكال الجملة الثانوية قد دُرست.",
     activateVocabulary: [
       { de: "der Kurs", ar: "الدورة أو المساق، بحسب السياق" },
       { de: "lernen", ar: "يتعلم أو يدرس" },
@@ -117,7 +117,7 @@ export const review: NonNullable<Lesson["review"]> = [
       questionDe: "Ich glaube, ___ das stimmt.",
       options: ["dass", "weil", "wenn", "ob"],
       correctIndex: 0,
-      explanation: "في هذا السياق، يقدّم dass مضمون الاعتقاد: «أعتقد أن ذلك صحيح». أما weil فيقدّم سبباً، وwenn شرطاً أو زمناً، وob سؤالاً غير مباشر بنعم/لا.",
+      explanation: "في هذا السياق، يقدّم dass مضمون الاعتقاد: «أعتقد أن ذلك صحيح». أما weil فيقدّم سبباً، و wenn شرطاً أو زمناً، و ob سؤالاً غير مباشر بنعم/لا.",
       errorType: "grammar",
       optionExplanations: [
         undefined,

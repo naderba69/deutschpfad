@@ -122,17 +122,17 @@ describe("A2-11 lesson content audit", () => {
 
   it("checks every pronunciation notation, meaning, and shadowing note", () => {
     expect(lessonA211.pronunciation.items.map(({ de, ar, note }) => [de, ar, note])).toEqual([
-      ["sich beschweren", "يشتكي/يقدّم شكوى", "IPA للفعل: [bəˈʃveːʁən]؛ sch يقابل [ʃ] وw يقابل [v]. يختلف تحقيق r إقليمياً."],
+      ["sich beschweren", "يشتكي/يقدّم شكوى", "IPA للفعل: [bəˈʃveːʁən]؛ sch يقابل [ʃ] و w يقابل [v]. يختلف تحقيق r إقليمياً."],
       ["der Friseur", "مصفّف الشعر/الحلّاق", "IPA: [fʁiˈzøːɐ̯]. في هذه الكلمة يقارب eu الصوت الطويل [øː]، ويتبعه r في ختام الكلمة؛ لا يُنطق هنا مثل eu الشائع [ɔʏ̯]."],
       ["reparieren", "يصلح", "IPA: [ʁepaˈʁiːʁən]؛ ie في هذا المقطع تمثل الصوت الطويل [iː]."],
       ["sich ärgern", "ينزعج/يغضب بحسب السياق", "IPA للكلمة: [ˈɛʁɡɐn]؛ ä قصيرة هنا [ɛ]، ويتغير تحقيق r إقليمياً."],
-      ["sich anmelden", "يسجّل/يلتحق بحسب السياق", "IPA واسعة: [ˈʔanmɛldn̩]؛ النبر الأساسي على an وe في melden [ɛ]. وتُكتب النهاية أيضاً [ən] في نمط نقل آخر."],
-      ["die Beschwerde", "شكوى/تظلّم بحسب السياق", "IPA: [bəˈʃveːɐ̯də]؛ sch يقابل [ʃ] وw يقابل [v]، ويتغير تحقيق r إقليمياً."],
+      ["sich anmelden", "يسجّل/يلتحق بحسب السياق", "IPA واسعة: [ˈʔanmɛldn̩]؛ النبر الأساسي على an و e في melden [ɛ]. وتُكتب النهاية أيضاً [ən] في نمط نقل آخر."],
+      ["die Beschwerde", "شكوى/تظلّم بحسب السياق", "IPA: [bəˈʃveːɐ̯də]؛ sch يقابل [ʃ] و w يقابل [v]، ويتغير تحقيق r إقليمياً."],
     ]);
     expect(lessonA211.pronunciation.shadowing).toEqual([
-      { de: "Ich freue mich auf den Urlaub.", ar: "أتطلع إلى العطلة.", tip: "freue: eu صوت واحد تقريباً [ɔʏ̯]؛ وr يتغير نطقه باختلاف اللهجات." },
+      { de: "Ich freue mich auf den Urlaub.", ar: "أتطلع إلى العطلة.", tip: "freue: eu صوت واحد تقريباً [ɔʏ̯]؛ و r يتغير نطقه باختلاف اللهجات." },
       { de: "Beeil dich bitte!", ar: "أسرع من فضلك!", tip: "beeil- تقريباً [bəˈʔaɪ̯l]؛ المقطع be- غير مشدد، ثم يأتي صوت [aɪ̯]." },
-      { de: "Ich möchte mich beschweren.", ar: "أود أن أشتكي.", tip: "في beschweren: sch ≈ [ʃ]، وw = [v]، مع صوت طويل [eː]." },
+      { de: "Ich möchte mich beschweren.", ar: "أود أن أشتكي.", tip: "في beschweren: sch ≈ [ʃ]، و w = [v]، مع صوت طويل [eː]." },
       { de: "Wir müssen uns anmelden.", ar: "علينا أن نسجل.", tip: "في anmelden يقع النبر الأساسي على an؛ e في melden هنا [ɛ]." },
     ]);
     expect(lessonA211.pronunciation.tip).toContain("رموز IPA");

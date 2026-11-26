@@ -21,7 +21,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b1-12:m4",
           "writing:b1-12:w1",
         ],
-        labelAr: "أجيب صحيحاً عن تمارين um … zu واختبارات ترتيبها والتحويل المكتوب (e1 وe4 وe7 وe14 وm1 وm4 وw1)، دون كشف الحل.",
+        labelAr: "أجيب صحيحاً عن تمارين um … zu واختبارات ترتيبها والتحويل المكتوب (e1 و e4 و e7 و e14 و m1 و m4 و w1)، دون كشف الحل.",
       },
     },
     {
@@ -38,13 +38,13 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "practice:b1-12:e11",
           "mini-test:b1-12:m2",
         ],
-        labelAr: "أجيب صحيحاً عن تمارين damit (e2 وe5 وe10 وe11 وm2)، دون كشف الحل.",
+        labelAr: "أجيب صحيحاً عن تمارين damit (e2 و e5 و e10 و e11 و m2)، دون كشف الحل.",
       },
     },
     {
       id: "z3",
       de: "Ich kann Gründe mit Präpositionen wie „wegen“ und „trotz“ nennen.",
-      ar: "أن أذكر السبب والتنازل بحروف الجر wegen وtrotz مع المضاف إليه.",
+      ar: "أن أذكر السبب والتنازل بحروف الجر wegen و trotz مع المضاف إليه.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["e3", "e6", "e9", "e12", "m3", "w3"],
@@ -56,7 +56,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b1-12:m3",
           "writing:b1-12:w3",
         ],
-        labelAr: "أجيب صحيحاً عن تمارين wegen وtrotz والمضاف إليه (e3 وe6 وe9 وe12 وm3 وw3)، دون كشف الحل.",
+        labelAr: "أجيب صحيحاً عن تمارين wegen و trotz والمضاف إليه (e3 و e6 و e9 و e12 و m3 و w3)، دون كشف الحل.",
       },
     },
     {
@@ -74,13 +74,13 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "لماذا تتعلّم الألمانية؟ في العربية تقول «أتعلّم الألمانية لكي أدرس في ألمانيا» و«أتعلّمها لكي يفهمني الأطباء». في أمثلة الدرس تساعدك مقارنة الفاعلين: um … zu صيغة موجزة حين يتحد الفاعل، وdamit جملة واضحة حين يختلف؛ ويمكن أن تأتي damit مع الفاعل نفسه أيضاً.",
+      "لماذا تتعلّم الألمانية؟ في العربية تقول «أتعلّم الألمانية لكي أدرس في ألمانيا» و«أتعلّمها لكي يفهمني الأطباء». في أمثلة الدرس تساعدك مقارنة الفاعلين: um … zu صيغة موجزة حين يتحد الفاعل، و damit جملة واضحة حين يختلف؛ ويمكن أن تأتي damit مع الفاعل نفسه أيضاً.",
     motivatingQuestionDe: "Warum lernen Sie Deutsch?",
     contextAr:
       "نتعلّم اليوم كيف نربط الفعل بهدفه، ثم كيف نذكر السبب باختصار عبر حرف جرّ واحد بدل جملة كاملة — وهما من أدوات الكتابة المترابطة في B1.",
     contextDe: "Wir sprechen über Ziele, Gründe und Absichten.",
     connectionToPreviousAr:
-      "تعرف weil (لأنّ) من A2 وobwohl (رغم أنّ) من B1. اليوم نضيف الوجه الآخر: بدل جملة كاملة بـ weil، حرف جرّ واحد wegen. وبدل «لأنني أريد»، جملة غرض صريحة.",
+      "تعرف weil (لأنّ) من A2 و obwohl (رغم أنّ) من B1. اليوم نضيف الوجه الآخر: بدل جملة كاملة بـ weil، حرف جرّ واحد wegen. وبدل «لأنني أريد»، جملة غرض صريحة.",
     activateVocabulary: [
       { de: "das Ziel", ar: "الهدف" },
       { de: "der Grund", ar: "السبب" },

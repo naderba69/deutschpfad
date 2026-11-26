@@ -177,7 +177,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         },
       ],
       explanation:
-        "Rücken مفرد ⟵ tut، وAugen جمع ⟵ tun. والعبارة تُصرَّف ولا تُحفظ كتلةً جامدة.",
+        "Rücken مفرد ⟵ tut، و Augen جمع ⟵ tun. والعبارة تُصرَّف ولا تُحفظ كتلةً جامدة.",
       errorType: "conjugation",
     },
     {
@@ -193,7 +193,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       correctIndex: 0,
       explanation:
-        "dürfen nicht يعبّر عن منع/عدم إذن في هذا السياق. müssen nicht يعني أن الفعل غير لازم، وsollten nicht نصيحةً لا حظراً بذاتها.",
+        "dürfen nicht يعبّر عن منع/عدم إذن في هذا السياق. müssen nicht يعني أن الفعل غير لازم، و sollten nicht نصيحةً لا حظراً بذاتها.",
       errorType: "negation",
       optionExplanations: [
         undefined,
@@ -260,7 +260,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctWord: "mir",
       options: ["mir", "mich", "sich", "meine"],
       explanation:
-        "في هذا المثال تكون die Hände في Akkusativ وmir في Dativ؛ لا نعمّم الحالة على كل الأفعال الانعكاسية.",
+        "في هذا المثال تكون die Hände في Akkusativ و mir في Dativ؛ لا نعمّم الحالة على كل الأفعال الانعكاسية.",
       errorType: "case",
     },
     {
@@ -316,7 +316,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { left: "die Gesundheitskarte", right: "Versicherungsnachweis in der Praxis" },
       ],
       explanation:
-        "الوصفة تُستخدم لصرف الدواء الموصوف في صيدلية؛ وAU توثّق عدم القدرة على العمل؛ والإحالة تُطلب في بعض الحالات؛ والبطاقة أو وثيقة أخرى قد تثبت التأمين. ليست كل حالة متطابقة.",
+        "الوصفة تُستخدم لصرف الدواء الموصوف في صيدلية؛ و AU توثّق عدم القدرة على العمل؛ والإحالة تُطلب في بعض الحالات؛ والبطاقة أو وثيقة أخرى قد تثبت التأمين. ليست كل حالة متطابقة.",
       errorType: "vocabulary",
     },
     {
@@ -409,7 +409,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         },
       ],
       explanation:
-        "في النص: sollten لاقتراح، وdürfen nicht لمنع مشروط، وmüssen nicht لعدم لزوم العودة.",
+        "في النص: sollten لاقتراح، و dürfen nicht لمنع مشروط، و müssen nicht لعدم لزوم العودة.",
       errorType: "negation",
     },
     {
@@ -460,7 +460,7 @@ export const fehlerUndTipps: NonNullable<Lesson["fehlerUndTipps"]> = {
     ],
     eselsbruecken: [
       "في العبارة الشائعة Ich habe Kopfschmerzen يأتي اسم الصداع مع haben؛ لا تعمّم البناء على كل وصف للألم.",
-      "قارن المثالين في سياقهما: Der Arzt sagt, ich soll … لنقل توجيه، وSie sollten … لاقتراح أقل مباشرة؛ الفعل نفسه قد يتعدد استعماله.",
+      "قارن المثالين في سياقهما: Der Arzt sagt, ich soll … لنقل توجيه، و Sie sollten … لاقتراح أقل مباشرة؛ الفعل نفسه قد يتعدد استعماله.",
     ],
     culturalNote: {
       title: "ملاحظات عامة عن التغطية الصحية والوثائق",

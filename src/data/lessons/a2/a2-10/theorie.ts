@@ -7,11 +7,11 @@ import type { Lesson } from "@/types/lesson";
 export const theory: NonNullable<Lesson["theory"]> = [
     {
       id: "t1",
-      titleAr: "روابط الجمل الثانوية: weil وwenn وob",
+      titleAr: "روابط الجمل الثانوية: weil و wenn و ob",
       titleDe: "weil, wenn und ob — Nebensätze",
-      explanationAr: `في الأمثلة القياسية لهذا الدرس تُدخل weil وwenn وob جملةً ثانوية، ويُنتقل الفعل المصرف إلى آخرها: Ich lerne, weil ich die Prüfung bestehen will. — الفعل will في النهاية بعد المصدر bestehen. وكذلك حين تتصدّر الثانوية: Weil ich müde war, bin ich früh ins Bett gegangen. — الثانوية شغلت الموقع الأول، فجاء الفعل المصرف bin مباشرةً بعد الفاصلة قبل الفاعل ich.
+      explanationAr: `في الأمثلة القياسية لهذا الدرس تُدخل weil و wenn و ob جملةً ثانوية، ويُنتقل الفعل المصرف إلى آخرها: Ich lerne, weil ich die Prüfung bestehen will. — الفعل will في النهاية بعد المصدر bestehen. وكذلك حين تتصدّر الثانوية: Weil ich müde war, bin ich früh ins Bett gegangen. — الثانوية شغلت الموقع الأول، فجاء الفعل المصرف bin مباشرةً بعد الفاصلة قبل الفاعل ich.
 
-وظيفة كل رابط واضحة في المثال: weil تعرض سبباً يُجاب به عن warum؟؛ وwenn تعرض شرطاً أو معنى الزمن بحسب السياق، فقد تعني «إذا» أو «عندما»: Wenn ich Zeit habe, wiederhole ich Vokabeln.؛ وob تفتح سؤالاً غير مباشر إجابته نعم أو لا: Ich weiß nicht, ob er kommt. أي «لا أعرف ما إذا كان سيأتي». لاحظ أن ob لا تعني «إذا» الشرطية؛ فلو كان المقصود شرطاً لاخترنا wenn: Ich rufe dich an, wenn ich zu Hause bin.
+وظيفة كل رابط واضحة في المثال: weil تعرض سبباً يُجاب به عن warum؟؛ و wenn تعرض شرطاً أو معنى الزمن بحسب السياق، فقد تعني «إذا» أو «عندما»: Wenn ich Zeit habe, wiederhole ich Vokabeln.؛ و ob تفتح سؤالاً غير مباشر إجابته نعم أو لا: Ich weiß nicht, ob er kommt. أي «لا أعرف ما إذا كان سيأتي». لاحظ أن ob لا تعني «إذا» الشرطية؛ فلو كان المقصود شرطاً لاخترنا wenn: Ich rufe dich an, wenn ich zu Hause bin.
 
 علامة الترقيم تتبع الجملة الرئيسية لا الثانوية: جملة Ich weiß nicht, ob er kommt. خبرية تنتهي بنقطة وإن احتوت سؤالاً غير مباشر؛ ولا نضع علامة استفهام إلا إذا كانت الجملة الرئيسية نفسها سؤالاً: Wissen Sie, ob er kommt? ويصحّ أن تتقدّم الثانوية على الرئيسية كما في المثال أعلاه، ويبقى الفعل المصرف في الموقع الثاني من الجملة الكاملة — بعد الفاصلة مباشرة.`,
       whyAr:
@@ -34,7 +34,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
         { de: "Weil ich müde war, bin ich früh ins Bett gegangen.", ar: "لأنني كنت متعباً، ذهبت إلى الفراش مبكراً." },
       ],
       comparisonWithArabic:
-        "تقابل weil «لأنّ» وob «هل/ما إذا»، لكن المقابلة ليست كلمةً بكلمة في كل موضع. العربية تفرّق بين «إذا» للشرط و«عندما» للزمن، أما الألمانية فتغطّي الحالتين غالباً بـwenn وحدها، ويفصل السياق بينهما؛ ويخفّف هذا العبء عن المتعلم العربي لأنه لا يحتاج كلمتين مختلفتين. الفرق الأكبر في البنية: العربية لا تغيّر موضع الفعل داخل الجملة التابعة — نقول «أتعلم الألمانية لأنني أريد اجتياز الامتحان» وترتيب الفعل كما هو في الجملة المستقلة. الألمانية تنقله إلى آخر الجملة، وهذا ما يجب تدريبه حتى يصير تلقائياً. ولاحظ أن «هل» العربية تصلح للسؤال المباشر وغير المباشر معاً، بينما الألمانية تسند غير المباشر إلى ob وتُبقي المباشر بلا أداة: Kommt er? مقابل Ich weiß nicht, ob er kommt.",
+        "تقابل weil «لأنّ» و ob «هل/ما إذا»، لكن المقابلة ليست كلمةً بكلمة في كل موضع. العربية تفرّق بين «إذا» للشرط و«عندما» للزمن، أما الألمانية فتغطّي الحالتين غالباً بـwenn وحدها، ويفصل السياق بينهما؛ ويخفّف هذا العبء عن المتعلم العربي لأنه لا يحتاج كلمتين مختلفتين. الفرق الأكبر في البنية: العربية لا تغيّر موضع الفعل داخل الجملة التابعة — نقول «أتعلم الألمانية لأنني أريد اجتياز الامتحان» وترتيب الفعل كما هو في الجملة المستقلة. الألمانية تنقله إلى آخر الجملة، وهذا ما يجب تدريبه حتى يصير تلقائياً. ولاحظ أن «هل» العربية تصلح للسؤال المباشر وغير المباشر معاً، بينما الألمانية تسند غير المباشر إلى ob وتُبقي المباشر بلا أداة: Kommt er? مقابل Ich weiß nicht, ob er kommt.",
       eselsbruecke:
         "للسياقات المتدرّب عليها: سبب → weil؛ شرط أو وقت → wenn؛ سؤال غير مباشر بنعم/لا → ob. ثم حدّد الفعل المصرف في نهاية الجملة التابعة.",
       commonMistakes: [
@@ -51,11 +51,11 @@ export const theory: NonNullable<Lesson["theory"]> = [
       id: "t2",
       titleAr: "أدوات الملكية قبل الاسم في ثلاث حالات",
       titleDe: "Possessivbegleiter: Deklination von mein",
-      explanationAr: `تتغير أداة الملكية التي تسبق الاسم بحسب جنس الاسم وعدده والحالة التي يطلبها تركيب الجملة. يعرض الجدول هنا Nominativ وAkkusativ وDativ فقط: mein Bruder في Nominativ، وmeinen Bruder مفعولاً به مع sehen في Akkusativ، وmeinem Bruder متمماً مع helfen في Dativ. وتأخذ المؤنثة meine Schwester في Nominativ وAkkusativ، وmeiner Schwester في Dativ.
+      explanationAr: `تتغير أداة الملكية التي تسبق الاسم بحسب جنس الاسم وعدده والحالة التي يطلبها تركيب الجملة. يعرض الجدول هنا Nominativ و Akkusativ و Dativ فقط: mein Bruder في Nominativ، و meinen Bruder مفعولاً به مع sehen في Akkusativ، و meinem Bruder متمماً مع helfen في Dativ. وتأخذ المؤنثة meine Schwester في Nominativ و Akkusativ، و meiner Schwester في Dativ.
 
-الخيط الذي يربط الأشكال كلها أن أداة الملكية تسير على نمط ein: mein Bruder / ein Bruder، meinen Bruder / einen Bruder، meinem Bruder / einem Bruder. فإذا عرفت مسار ein في الحالة والجنس والعدد، عرفت mein وdein وsein وihr… معه. في Dativ الجمع تكون الأداة meinen، وتلحق بالاسم -n إن لم يكن جمعه منتهياً بـ-n أو -s: mit meinen Freunden وmit meinen Eltern.
+الخيط الذي يربط الأشكال كلها أن أداة الملكية تسير على نمط ein: mein Bruder / ein Bruder، meinen Bruder / einen Bruder، meinem Bruder / einem Bruder. فإذا عرفت مسار ein في الحالة والجنس والعدد، عرفت mein و dein و sein و ihr… معه. في Dativ الجمع تكون الأداة meinen، وتلحق بالاسم -n إن لم يكن جمعه منتهياً بـ-n أو -s: mit meinen Freunden و mit meinen Eltern.
 
-طريقة العمل في هذا الدرس من ثلاث خطوات: حدّد الحالة أولاً من الفعل أو حرف الجر — helfen وmit يطلبان Dativ، وsehen يطلب Akkusativ؛ ثم حدّد جنس الاسم وعدده من المفردة نفسها؛ ثم طابق النهاية. ولا حاجة إلى أداة تعريف مع أداة الملكية: نقول mein Bruder لا der mein Bruder، فأداة الملكية تكفي وحدها لتعريف الاسم. ولا يغطي الجدول Genitiv (das Haus meines Bruders) ولا الضمير المستقل (Das ist meins.)؛ فلكلٍّ منهما موضعه لاحقاً.`,
+طريقة العمل في هذا الدرس من ثلاث خطوات: حدّد الحالة أولاً من الفعل أو حرف الجر — helfen و mit يطلبان Dativ، و sehen يطلب Akkusativ؛ ثم حدّد جنس الاسم وعدده من المفردة نفسها؛ ثم طابق النهاية. ولا حاجة إلى أداة تعريف مع أداة الملكية: نقول mein Bruder لا der mein Bruder، فأداة الملكية تكفي وحدها لتعريف الاسم. ولا يغطي الجدول Genitiv (das Haus meines Bruders) ولا الضمير المستقل (Das ist meins.)؛ فلكلٍّ منهما موضعه لاحقاً.`,
       whyAr:
         "أداة الملكية قبل الاسم تأخذ نهايات على نمط ein: mein Bruder / ein Bruder، meinen Bruder / einen Bruder، meinem Bruder / einem Bruder. حدّد أولاً الحالة من الفعل أو حرف الجر ووظيفة الاسم، ثم طابق النهاية مع جنس الاسم وعدده. هنا نراجع ثلاثة صفوف من جدول التصريف، لا «كل الحالات».",
       table: {

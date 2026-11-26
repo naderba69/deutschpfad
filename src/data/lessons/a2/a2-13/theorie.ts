@@ -10,11 +10,11 @@ export const theory: NonNullable<Lesson["theory"]> = [
       titleAr: "خريطة قواعد A2 — الاثنا عشر مفتاحاً في جدول واحد",
       titleDe: "Die A2-Grammatik auf einen Blick",
       explanationAr:
-        `كل ما دُرِّس في A2 يعود إلى اثني عشر مفتاحاً، ولكلّ مفتاح وحدةٌ علّمته: 1) الماضي التام Perfekt بـ haben/sein، 2) الأفعال الناقصة (sollen · möchten · können)، 3) حروف الجر المتغيّرة التسعة مع تمييز الموقع والوجهة، 4) الماضي البسيط المنتقى war/hatte، 5) الجملة الثانوية بـ dass، 6) es gibt + النصب وضمائر مختارة، 7) المقارنة والتفضيل، 8) أمثلة منتقاة على Dativ، 9) weil / wenn / ob، 10) الضمائر الملكية في Nominativ وAkkusativ وDativ بحسب أمثلة الدرس، 11) الأفعال الانعكاسية (mich / mir)، 12) أدوات الربط (وobwohl توسعةً).
+        `كل ما دُرِّس في A2 يعود إلى اثني عشر مفتاحاً، ولكلّ مفتاح وحدةٌ علّمته: 1) الماضي التام Perfekt بـ haben/sein، 2) الأفعال الناقصة (sollen · möchten · können)، 3) حروف الجر المتغيّرة التسعة مع تمييز الموقع والوجهة، 4) الماضي البسيط المنتقى war/hatte، 5) الجملة الثانوية بـ dass، 6) es gibt + النصب وضمائر مختارة، 7) المقارنة والتفضيل، 8) أمثلة منتقاة على Dativ، 9) weil / wenn / ob، 10) الضمائر الملكية في Nominativ و Akkusativ و Dativ بحسب أمثلة الدرس، 11) الأفعال الانعكاسية (mich / mir)، 12) أدوات الربط (و obwohl توسعةً).
 
 والمفتاح لا يُعرف بأن تسمّيه، بل بأن تتعرّف إلى وظيفته وموضعه في المثال. في الجملة الخبرية الرئيسية يأتي الفعل المساعد في Perfekt في المرتبة الثانية والـPartizip في النهاية؛ وفي الجمل الثانوية التي نراجعها يأتي الفعل المصرف في آخرها. ومع حروف الجر المتغيّرة نميّز بين الموقع (wo؟، غالباً Dativ) والوجهة (wohin؟، غالباً Akkusativ)؛ فمجرد وجود حركة لا يكفي وحده للحكم. ومن أمثلتنا أن helfen يطلب Dativ للشخص: Ich helfe meinem Bruder؛ ولا نعمّم من هذا المثال على كل تركيب يتضمن Dativ.
 
-وأهمّ ما في الخريطة أنّها تكشف العلاقات لا تحفظ الأسماء: لاحظ أنّ weil وdass وobwohl تعمل العمل نفسه (فعلٌ في النهاية) وقد وردت في المفتاحين التاسع والثاني عشر؛ ولاحظ أنّ meinem في Dativ وmeinen في Akkusativ هما المفتاحان الثامن والعاشر؛ ولاحظ أنّ الضمير الانعكاسي (mich / mir) ليس قاعدةً ثالثة بل اختيارٌ بين الحالتين نفسهما حسب الفعل.
+وأهمّ ما في الخريطة أنّها تكشف العلاقات لا تحفظ الأسماء: لاحظ أنّ weil و dass و obwohl تعمل العمل نفسه (فعلٌ في النهاية) وقد وردت في المفتاحين التاسع والثاني عشر؛ ولاحظ أنّ meinem في Dativ و meinen في Akkusativ هما المفتاحان الثامن والعاشر؛ ولاحظ أنّ الضمير الانعكاسي (mich / mir) ليس قاعدةً ثالثة بل اختيارٌ بين الحالتين نفسهما حسب الفعل.
 
 والغرض العملي أن تستخدم الصفحة فهرساً للمراجعة: تعرّف إلى القاعدة في المثال، ثم عُد إلى وحدتها إن احتجت تفصيلاً. فالجدول يجمع أسماء قواعد من وحدات مختلفة، لكنه لا يعرض كل تصريفاتها أو كل الأفعال التي تتبعها. جرّب أولاً تفسير المثال بنفسك، ثم قارن تفسيرك بما تعلمته في الوحدة الأصلية. الخريطة لا تختبر وحدها القدرة على استعمال القواعد ولا تحلّ محلّ تمارين كل وحدة.`,
       whyAr:
@@ -34,7 +34,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
           { label: "weil / wenn / ob", cells: ["Ich lerne, weil ich die Prüfung brauche.", "a2-10"] },
           { label: "الضمائر الملكية", cells: ["Das ist meine Schwester.", "a2-10"] },
           { label: "الأفعال الانعكاسية", cells: ["Ich freue mich auf den Urlaub.", "a2-11"] },
-          { label: "أدوات الربط (وobwohl توسعةً من a2-12)", cells: ["Ich bin müde, trotzdem lerne ich.", "a2-12"] },
+          { label: "أدوات الربط (و obwohl توسعةً من a2-12)", cells: ["Ich bin müde, trotzdem lerne ich.", "a2-12"] },
         ],
       },
       examples: [
@@ -46,9 +46,9 @@ export const theory: NonNullable<Lesson["theory"]> = [
         { de: "Ich glaube, dass er heute kommt, obwohl er wenig Zeit hat.", ar: "أعتقد أنه يأتي اليوم رغم أن وقته ضيّق." },
       ],
       comparisonWithArabic:
-        "يمكن التعبير عن الماضي في الألمانية بصيغ منها Perfekt وPräteritum. يكثر Perfekt في الحديث عن أحداث ماضية في سياقات كثيرة، ويشيع Präteritum مع war وhatte أيضاً في المحادثة، كما يظهر في السرد المكتوب. هذا وصف عام للاستعمال لا تقسيم صارم بين الشفهي والكتابي.",
+        "يمكن التعبير عن الماضي في الألمانية بصيغ منها Perfekt و Präteritum. يكثر Perfekt في الحديث عن أحداث ماضية في سياقات كثيرة، ويشيع Präteritum مع war و hatte أيضاً في المحادثة، كما يظهر في السرد المكتوب. هذا وصف عام للاستعمال لا تقسيم صارم بين الشفهي والكتابي.",
       eselsbruecke:
-        "للتدرّب على دمج التراكيب، لاحظ: «Gestern war ich krank, deshalb bin ich zu Hause geblieben, obwohl ich meinem Freund helfen wollte.» يجمع المثال Präteritum وPerfekt وروابط وDativ؛ وهو نموذج لغوي لا حكم على ما ينبغي فعله عند المرض.",
+        "للتدرّب على دمج التراكيب، لاحظ: «Gestern war ich krank, deshalb bin ich zu Hause geblieben, obwohl ich meinem Freund helfen wollte.» يجمع المثال Präteritum و Perfekt وروابط و Dativ؛ وهو نموذج لغوي لا حكم على ما ينبغي فعله عند المرض.",
       commonMistakes: [
         { wrong: "Ich habe nach Berlin gefahren.", right: "Ich bin nach Berlin gefahren.", whyAr: "أفعال الحركة وتغيّر المكان تأخذ sein لا haben في الماضي التام." },
         { wrong: "Ich helfe meinen Bruder.", right: "Ich helfe meinem Bruder.", whyAr: "في هذا التركيب يأخذ helfen الشخصَ في Dativ: meinem Bruder لا meinen Bruder." },
@@ -65,9 +65,9 @@ export const theory: NonNullable<Lesson["theory"]> = [
       titleAr: "دمج تراكيب A2 في موقف واحد: المرض والاعتذار عن العمل",
       titleDe: "A2-Strukturen in einer Situation verbinden",
       explanationAr:
-        `قد يجمع موقف واحد أكثر من تركيب. في مثال الإبلاغ عن الغياب نراجع Präteritum للحالة (ich war krank)، وPerfekt لحدث سابق (ich bin zum Arzt gegangen)، وweil للتعليل (weil ich Fieber habe)، وModalverb لنقل نصيحة الطبيب (ich soll zu Hause bleiben)، وDativ في المثال المحدد (ich habe meinem Chef geschrieben). هذه جمل تدريبية ممكنة، لا نصّاً إلزامياً ولا قاعدة عن طريقة تواصل كل جهة عمل. نستخدم هنا die Krankmeldung بمعنى إبلاغ جهة العمل بالغياب، ونميّزها عن الشهادة الطبية AU.
+        `قد يجمع موقف واحد أكثر من تركيب. في مثال الإبلاغ عن الغياب نراجع Präteritum للحالة (ich war krank)، و Perfekt لحدث سابق (ich bin zum Arzt gegangen)، و weil للتعليل (weil ich Fieber habe)، و Modalverb لنقل نصيحة الطبيب (ich soll zu Hause bleiben)، و Dativ في المثال المحدد (ich habe meinem Chef geschrieben). هذه جمل تدريبية ممكنة، لا نصّاً إلزامياً ولا قاعدة عن طريقة تواصل كل جهة عمل. نستخدم هنا die Krankmeldung بمعنى إبلاغ جهة العمل بالغياب، ونميّزها عن الشهادة الطبية AU.
 
-الترتيب المعروض — الحالة، ثم ما حدث، ثم السبب، ثم النصيحة، ثم الإجراء — طريقة تعليمية واحدة لعرض المعلومات، ويمكن تغييرها بحسب ما يريد المتحدث إبرازه. وفي أي ترتيب، تبقى قاعدة موضع الفعل مرتبطة بنوع الجملة: الفعل المساعد في الجملة الرئيسية الخبرية، وPartizip في نهاية Perfekt، والفعل المصرف في نهاية جملة weil، والمصدر في نهاية تركيب Modalverb (ich soll drei Tage zu Hause bleiben). أما Dativ فمثاله هنا شخص يُكتب إليه، لا قاعدة تشمل كل استعمالات الكتابة.`,
+الترتيب المعروض — الحالة، ثم ما حدث، ثم السبب، ثم النصيحة، ثم الإجراء — طريقة تعليمية واحدة لعرض المعلومات، ويمكن تغييرها بحسب ما يريد المتحدث إبرازه. وفي أي ترتيب، تبقى قاعدة موضع الفعل مرتبطة بنوع الجملة: الفعل المساعد في الجملة الرئيسية الخبرية، و Partizip في نهاية Perfekt، والفعل المصرف في نهاية جملة weil، والمصدر في نهاية تركيب Modalverb (ich soll drei Tage zu Hause bleiben). أما Dativ فمثاله هنا شخص يُكتب إليه، لا قاعدة تشمل كل استعمالات الكتابة.`,
       whyAr:
         "يتيح هذا المثال مراجعة أكثر من بنية في سياق واحد، لكنه لا يقيس وحده الاحتفاظ أو القدرة على استخدامها في محادثة حقيقية. لاحظ ترتيب الكلمات في كل جملة، وميّز بين وصف الحالة الماضية ورواية الحدث وبين صيغة الجملة الرئيسية والثانوية، ثم جرّب صياغة مثال مشابه من عندك. لا يلزم أن تسرد كل التفاصيل في بلاغ واقعي؛ يكفي هنا أن ترى كيف تخدم كل بنية غرضها اللغوي.",
       table: {
@@ -95,7 +95,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
         "للتدريب فقط، جرّب هذا الترتيب: حالة أو غياب ← ما تعرفه عن المدة ← سبب أو خطوة تالية. يمكن تغيير الترتيب بحسب الموقف، واتبع دائماً آلية الإبلاغ المعتمدة لدى جهة العمل.",
       commonMistakes: [
         { wrong: "Ich bin krank, weil ich habe Fieber.", right: "Ich bin krank, weil ich Fieber habe.", whyAr: "weil تدفع الفعل المصرَّف إلى النهاية: habe في آخر الجملة الثانوية." },
-        { wrong: "Ich habe zum Arzt gegangen.", right: "Ich bin zum Arzt gegangen.", whyAr: "gehen فعل حركة ينتقل فيه الفاعل من مكان إلى آخر، فماضيه التام بـ sein لا بـ haben: ich bin zum Arzt gegangen، وكذلك kommen وfahren وfliegen." },
+        { wrong: "Ich habe zum Arzt gegangen.", right: "Ich bin zum Arzt gegangen.", whyAr: "gehen فعل حركة ينتقل فيه الفاعل من مكان إلى آخر، فماضيه التام بـ sein لا بـ haben: ich bin zum Arzt gegangen، وكذلك kommen و fahren و fliegen." },
         { wrong: "Ich habe mein Chef geschrieben.", right: "Ich habe meinem Chef geschrieben.", whyAr: "schreiben يأخذ مفعولاً في حالة الجر عندما يكون المكتوب إليه شخصاً: ich schreibe meinem Chef، فالمذكر يصير meinem لا mein، وهو المفتاح الثامن في خريطة الدرس." },
       ],
       relatedRuleComparison: {
@@ -109,7 +109,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       titleAr: "أمثلة توسعات من A2 إلى B1",
       titleDe: "Von A2 nach B1 — was sich ändert",
       explanationAr:
-        `تعرض هذه الخريطة أمثلة على تراكيب تضاف أو تتوسع في مواد B1، لا تحولات آلية لكل ما درسته في A2 ولا قائمة رسمية كاملة للمنهج. قد يُعبَّر عن علاقة الملكية بـvon + Dativ أو بصيغة Genitiv، مع اختلافات في السياق والأسلوب؛ وتضيف الجملة الموصولة تركيباً جديداً مع فعل في النهاية. ويظهر Präteritum مع أفعال أكثر في بعض السرد المكتوب، مع بقائه شائعاً أيضاً في استعمالات مثل war وhatte. أما Konjunktiv II فيتوسع إلى صيغ مثل ich hätte gern وich würde gern bleiben؛ وصيغة möchte المهذبة موجودة أصلاً في الألمانية التعليمية. ويتيح Passiv إبراز الحدث أو المتأثر به بدلاً من فاعل عام مثل man، لكنه ليس بديلاً مطابقاً له في كل سياق.
+        `تعرض هذه الخريطة أمثلة على تراكيب تضاف أو تتوسع في مواد B1، لا تحولات آلية لكل ما درسته في A2 ولا قائمة رسمية كاملة للمنهج. قد يُعبَّر عن علاقة الملكية بـvon + Dativ أو بصيغة Genitiv، مع اختلافات في السياق والأسلوب؛ وتضيف الجملة الموصولة تركيباً جديداً مع فعل في النهاية. ويظهر Präteritum مع أفعال أكثر في بعض السرد المكتوب، مع بقائه شائعاً أيضاً في استعمالات مثل war و hatte. أما Konjunktiv II فيتوسع إلى صيغ مثل ich hätte gern و ich würde gern bleiben؛ وصيغة möchte المهذبة موجودة أصلاً في الألمانية التعليمية. ويتيح Passiv إبراز الحدث أو المتأثر به بدلاً من فاعل عام مثل man، لكنه ليس بديلاً مطابقاً له في كل سياق.
 
 هذه خمس نقاط تمهيدية مختارة؛ ترتيبها ومحتواها التفصيلي يختلفان بين المناهج، ولا تكفي هذه الأمثلة لتحديد مستوى B1 أو إثبات جاهزية المتعلم له. والمقصود بلفظ «توسعة» أن مواد لاحقة قد تعرض بدائل أو تراكيب أوسع، لا أن كل متعلم A2 يستعملها تلقائياً في B1 أو أن صيغة البداية خطأ. تعلّم كل تركيب في سياقه، ولا تستنتج من الجدول تسلسلاً رسمياً للمنهج أو شرطاً للانتقال.`,
       whyAr:
@@ -136,11 +136,11 @@ export const theory: NonNullable<Lesson["theory"]> = [
       comparisonWithArabic:
         "تملك العربية والألمانية صيغاً للملكية وللصلة، لكن تركيبها ليس متطابقاً. مثلاً: «أخي الذي يسكن في بون» يقابل معنى Das ist mein Bruder, der in Bonn wohnt؛ وفي الألمانية يتغير شكل الضمير الموصول بحسب الجنس والعدد والحالة، ويأتي الفعل في نهاية الجملة التابعة. هذا توضيح تقابلي للأمثلة لا قاعدة عن صعوبة لغة بعينها.",
       eselsbruecke:
-        "هذه خمسة أمثلة للاستئناس: ملكية، جملة موصولة، سرد، طلب مهذب، وPassiv. راجع تفاصيل كل تركيب في درس B1 الذي يقدمه؛ لا تفترض أن هذا الجدول يغطي المنهج كله.",
+        "هذه خمسة أمثلة للاستئناس: ملكية، جملة موصولة، سرد، طلب مهذب، و Passiv. راجع تفاصيل كل تركيب في درس B1 الذي يقدمه؛ لا تفترض أن هذا الجدول يغطي المنهج كله.",
       commonMistakes: [
         { wrong: "der Bruder von meines Freundes", right: "der Bruder meines Freundes", whyAr: "إمّا von + Dativ (أسلوب A2) وإمّا Genitiv وحده، لا الاثنان معاً." },
         { wrong: "Das ist mein Bruder, der wohnt in Bonn.", right: "Das ist mein Bruder, der in Bonn wohnt.", whyAr: "الجملة الموصولة جملة ثانوية: الفعل في آخرها، تماماً كقاعدة weil التي تعرفها." },
-        { wrong: "Ich würde gern einen Kaffee, bitte.", right: "Ich hätte gern einen Kaffee, bitte.", whyAr: "في الطلب المهذّب الجاهز تُستعمل صيغة hätte gern، وwürde يحتاج فعلاً مصدراً في النهاية (ich würde gern bleiben)، فلا يقف وحده مع اسم." },
+        { wrong: "Ich würde gern einen Kaffee, bitte.", right: "Ich hätte gern einen Kaffee, bitte.", whyAr: "في الطلب المهذّب الجاهز تُستعمل صيغة hätte gern، و würde يحتاج فعلاً مصدراً في النهاية (ich würde gern bleiben)، فلا يقف وحده مع اسم." },
       ],
       relatedRuleComparison: {
         title: "استخدام الخريطة في المراجعة",

@@ -14,7 +14,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       completion: "all-correct",
       exerciseIds: ["q1", "q2", "q3", "q4"],
       taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4"],
-      labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 وl2 وl3 في q1 إلى q4، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+      labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 و l2 و l3 في q1 إلى q4، دون كشف النص. كشف النص لا يُحتسب أداءً.",
     },
   },
   {
@@ -31,7 +31,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         "mini-test:b2-12:m1",
         "writing:b2-12:w1",
       ],
-      labelAr: "أختار صيغة الشرط الصحيحة وأكمل الفرضيات المهنية (e1 وe2 وe5 وm1 وw1)، دون كشف الحل.",
+      labelAr: "أختار صيغة الشرط الصحيحة وأكمل الفرضيات المهنية (e1 و e2 و e5 و m1 و w1)، دون كشف الحل.",
     },
   },
   {
@@ -48,7 +48,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         "mini-test:b2-12:m2",
         "writing:b2-12:w2",
       ],
-      labelAr: "أحوّل الجمل إلى المبني للمجهول وأصحح صيغه في الوثائق (e3 وe6 وe7 وm2 وw2)، دون كشف الحل.",
+      labelAr: "أحوّل الجمل إلى المبني للمجهول وأصحح صيغه في الوثائق (e3 و e6 و e7 و m2 و w2)، دون كشف الحل.",
     },
   },
   {
@@ -59,7 +59,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       completion: "all-correct",
       exerciseIds: ["e4", "e8", "w3"],
       taskIds: ["practice:b2-12:e4", "practice:b2-12:e8", "writing:b2-12:w3"],
-      labelAr: "أصل مفردات التطوير المهني بمعانيها وأكمل جملاً بها (e4 وe8 وw3)، دون كشف الحل.",
+      labelAr: "أصل مفردات التطوير المهني بمعانيها وأكمل جملاً بها (e4 و e8 و w3)، دون كشف الحل.",
     },
   },
   {

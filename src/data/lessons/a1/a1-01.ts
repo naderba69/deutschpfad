@@ -22,7 +22,7 @@ const masterA101: Lesson = {
   order: 1,
   titleDe: "Hallo! Ich heiße …",
   titleAr: "التعارف والتحيات",
-  summary: "التحيات والوداع، تقديم النفس، تصريف sein وheißen وkommen، والفرق بين du وSie، مع أسئلة التعارف الأساسية (Wie heißt du؟ Woher kommst du؟).",
+  summary: "التحيات والوداع، تقديم النفس، تصريف sein و heißen و kommen، والفرق بين du و Sie، مع أسئلة التعارف الأساسية (Wie heißt du؟ Woher kommst du؟).",
   lernziele,
   einfuehrung,
   review,
@@ -41,7 +41,7 @@ const masterA101: Lesson = {
 
 
 /* ═══ التقسيم إلى جزأين (A1-01 + A1-01b) ═══
- * الجزء الأول: التعارف، وsein، وdu/Sie، والتحيات، وأسئلة التعارف الأساسية.
+ * الجزء الأول: التعارف، و sein، و du/Sie، والتحيات، وأسئلة التعارف الأساسية.
  * الجزء الثاني: أسئلة W وترتيب V2، وتصريف الأفعال المنتظمة.
  * المصدر واحد (masterA101) لتفادي تكرار المحتوى؛ كل جزء يأخذ نصيبه بالمعرّف. */
 
@@ -101,7 +101,7 @@ export const lessonA101b: Lesson = {
       "الأسئلة الألمانية تبدأ بكلمة استفهام، ثم يأتي الفعل، ثم الفاعل. هذا الترتيب هو ما نتدرب عليه في هذا الدرس.",
     contextDe: "Wie? Woher? Wo? Wann? Warum?",
     connectionToPreviousAr:
-      "يكمّل هذا الدرس ما تعلمته في الجزء الأول: sein وheißen وkommen.",
+      "يكمّل هذا الدرس ما تعلمته في الجزء الأول: sein و heißen و kommen.",
     activateVocabulary: [
       { de: "woher", ar: "من أين" },
       { de: "wohnen", ar: "يسكن" },

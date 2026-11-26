@@ -34,7 +34,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["m1", "m2"],
         taskIds: ["mini-test:a2-05:m1", "mini-test:a2-05:m2"],
-        labelAr: "أجب عن m1 وm2؛ يختبر كلاهما اختيار صيغة الفعل وفق فاعل واضح، ولا يُحسب ترتيب الكلمات أو تصحيح الأداة دليلاً لهذا الهدف.",
+        labelAr: "أجب عن m1 و m2؛ يختبر كلاهما اختيار صيغة الفعل وفق فاعل واضح، ولا يُحسب ترتيب الكلمات أو تصحيح الأداة دليلاً لهذا الهدف.",
         completion: "all-correct",
       },
     },
@@ -72,10 +72,10 @@ export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
       "للتعبير عن الأمس، يمكن أن تقول Ich war gestern krank أو Ich bin gestern krank gewesen. كلاهما تركيب صحيح؛ فما الصيغة البسيطة التي ستتدرّب عليها في رسالة المكتب؟",
     motivatingQuestionDe: "Warst du gestern im Büro oder warst du krank?",
     contextAr:
-      "في المكتب، نقرأ بريداً عن غياب موظف ونستمع إلى حوارات قصيرة، بينها مكالمات هاتفية. نراجع صيغ Präteritum من sein وhaben، ونتمرّن على عبارات هاتف وبريد مناسبة للسياق من غير تعميم صيغة واحدة على كل منطقة أو علاقة مهنية.",
+      "في المكتب، نقرأ بريداً عن غياب موظف ونستمع إلى حوارات قصيرة، بينها مكالمات هاتفية. نراجع صيغ Präteritum من sein و haben، ونتمرّن على عبارات هاتف وبريد مناسبة للسياق من غير تعميم صيغة واحدة على كل منطقة أو علاقة مهنية.",
     contextDe: "Ich war gestern krank und hatte Fieber.",
     connectionToPreviousAr:
-      "في A2-01 راجعت Perfekt. يشيع Perfekt في الحديث عن الماضي، بينما يظهر Präteritum كثيراً في الكتابة؛ وتشيع صيغ مثل war وhatte أيضاً في الكلام. هذه اتجاهات استعمال لا قاعدة تمنع إحدى الصيغتين.",
+      "في A2-01 راجعت Perfekt. يشيع Perfekt في الحديث عن الماضي، بينما يظهر Präteritum كثيراً في الكتابة؛ وتشيع صيغ مثل war و hatte أيضاً في الكلام. هذه اتجاهات استعمال لا قاعدة تمنع إحدى الصيغتين.",
     activateVocabulary: [
       { de: "das Büro", ar: "المكتب" },
       { de: "anrufen", ar: "يتصل هاتفياً" },
@@ -127,7 +127,7 @@ export const review: NonNullable<Lesson["review"]> = [
         { correct: "am", options: ["am", "um", "im"] },
         { correct: "um", options: ["um", "am", "im"] },
       ],
-      explanation: "نستعمل am مع يوم الأسبوع وum مع الساعة: am Montag um neun Uhr.",
+      explanation: "نستعمل am مع يوم الأسبوع و um مع الساعة: am Montag um neun Uhr.",
       errorType: "preposition",
     },
   ];

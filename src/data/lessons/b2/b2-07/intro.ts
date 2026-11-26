@@ -13,7 +13,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["q1", "q4"],
         taskIds: ["listening:l1:q1", "listening:l3:q4"],
-        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 وl3 في q4، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 و l3 في q4، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -33,7 +33,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "writing:b2-07:w1",
           "writing:b2-07:w2",
         ],
-        labelAr: "أختار haben أو sein وأرتب الجملة وأصحح المساعد الخطأ (e1 إلى e5 وm1 وm2 وw1 وw2)، دون كشف الحل.",
+        labelAr: "أختار haben أو sein وأرتب الجملة وأصحح المساعد الخطأ (e1 إلى e5 و m1 و m2 و w1 و w2)، دون كشف الحل.",
       },
     },
     {
@@ -44,7 +44,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["e6", "e7", "m5"],
         taskIds: ["practice:b2-07:e6", "practice:b2-07:e7", "mini-test:b2-07:m5"],
-        labelAr: "أكمل عبارات الرأي والروابط الجدلية وأكتب عبارة الخاتمة (e6 وe7 وm5)، دون كشف الحل. لا يقيس هذا كتابة مقال كامل.",
+        labelAr: "أكمل عبارات الرأي والروابط الجدلية وأكتب عبارة الخاتمة (e6 و e7 و m5)، دون كشف الحل. لا يقيس هذا كتابة مقال كامل.",
       },
     },
     {
@@ -55,7 +55,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["q2", "q3"],
         taskIds: ["listening:l2:q2", "listening:l2:q3"],
-        labelAr: "أجيب صحيحاً بعد الاستماع إلى l2 في q2 وq3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l2 في q2 و q3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
   ];
@@ -67,7 +67,7 @@ export const einfuehrung: Lesson["einfuehrung"] = {
     contextAr:
       "الفلسفة: أسئلة كبرى. نضيف المستقبل التام للتعبير عن «الانتهاء في المستقبل»، ثم نتعلم هيكل المقال الجدلي (Erörterung) — مهارة مهمة في الكتابة الأكاديمية.",
     contextDe: "Vermutlich wird sich die Gesellschaft bis 2030 verändert haben.",
-    connectionToPreviousAr: "تتذكر Futur I (werde lernen) وPerfekt (habe gelernt). اليوم: دمجهما — Futur II. ومعه التدريب على بناء حجة وترتيبها؛ وليس ذلك جمعاً لكل قواعد B2.",
+    connectionToPreviousAr: "تتذكر Futur I (werde lernen) و Perfekt (habe gelernt). اليوم: دمجهما — Futur II. ومعه التدريب على بناء حجة وترتيبها؛ وليس ذلك جمعاً لكل قواعد B2.",
     activateVocabulary: [
       { de: "die Philosophie", ar: "الفلسفة" },
       { de: "argumentieren", ar: "يبني حجة" },

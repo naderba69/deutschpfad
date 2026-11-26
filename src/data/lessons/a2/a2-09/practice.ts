@@ -58,7 +58,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       instructionAr: "رتّب الكلمات وفق النمط: الفاعل + الفعل + متمم Dativ + المكان:",
       tokens: ["dem", "Ich", "Garten", "Vater", "im", "helfe", "."],
       correctSentence: "Ich helfe dem Vater im Garten.",
-      explanation: "helfe هو الفعل المصرف في الموقع الثاني، وdem Vater متمم helfen في Dativ.",
+      explanation: "helfe هو الفعل المصرف في الموقع الثاني، و dem Vater متمم helfen في Dativ.",
       errorType: "word-order",
     },
     {
@@ -154,7 +154,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionDe: "Wir fahren ___ dem Zug zur Feier.",
       options: ["mit", "für", "ohne", "gegen"],
       correctIndex: 0,
-      explanation: "للتعبير عن وسيلة النقل نقول mit dem Zug؛ mit يحكم Dativ. أما für وohne وgegen فتطلب Akkusativ في تراكيبها المعتادة، فلا تلائم dem هنا.",
+      explanation: "للتعبير عن وسيلة النقل نقول mit dem Zug؛ mit يحكم Dativ. أما für و ohne و gegen فتطلب Akkusativ في تراكيبها المعتادة، فلا تلائم dem هنا.",
       errorType: "preposition",
       optionExplanations: [
         undefined,
@@ -186,7 +186,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "im", options: ["im", "in den", "in der"] },
       ],
       explanation:
-        "في الجملة الأولى، gehen in den Innenhof يحدد وجهة الوصول (Wohin?)؛ أما im فيصف مكاناً لا وجهة، وin der لا يطابق جنس Innenhof المذكر. وفي الثانية، feiern im Innenhof يصف مكان الاحتفال (Wo?)؛ أما in den فيدل على وجهة، وin der لا يطابق الجنس. نختار الحالة بحسب علاقة المكان/الوجهة، لا بحسب وجود حركة فقط.",
+        "في الجملة الأولى، gehen in den Innenhof يحدد وجهة الوصول (Wohin?)؛ أما im فيصف مكاناً لا وجهة، و in der لا يطابق جنس Innenhof المذكر. وفي الثانية، feiern im Innenhof يصف مكان الاحتفال (Wo?)؛ أما in den فيدل على وجهة، و in der لا يطابق الجنس. نختار الحالة بحسب علاقة المكان/الوجهة، لا بحسب وجود حركة فقط.",
       errorType: "case",
     },
   ];

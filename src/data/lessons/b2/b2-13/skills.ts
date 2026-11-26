@@ -123,7 +123,7 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
   id: "p1",
-  title: "أصوات التقنية: -ung، -keit، وch",
+  title: "أصوات التقنية: -ung، -keit، و ch",
   items: [
     { de: "die Digitalisierung", ar: "الرقمنة", note: "ung = أونغ: ديغي-تالي-زيرونغ" },
     { de: "die Automatisierung", ar: "الأتمتة", note: "au = آو: آو-توماتي-زيرونغ" },
@@ -132,7 +132,7 @@ export const pronunciation: Lesson["pronunciation"] = {
     { de: "nachvollziehbar", ar: "قابل للتتبع", note: "ch = خ: ناخ-فولتسيبار" },
     { de: "die Abhängigkeit", ar: "التبعية", note: "ä = إه: آب-هينغيكهايت" },
   ],
-  tip: "Digitalisierung = ديغي-تالي-زيرونغ — النبرة على «زير»، وung في النهاية واضحة. Cybersicherheit = تسايبر-زيشرهايت — y تُنطق ü.",
+  tip: "Digitalisierung = ديغي-تالي-زيرونغ — النبرة على «زير»، و ung في النهاية واضحة. Cybersicherheit = تسايبر-زيشرهايت — y تُنطق ü.",
   shadowing: [
     { de: "Obwohl das System schnell ist, prüft eine Fachkraft jede Antwort.", ar: "رغم أن النظام سريع، يفحص مختص كل إجابة.", tip: "obwohl — الفعل في النهاية" },
     { de: "Zwar bietet KI Chancen, aber sie birgt auch Risiken.", ar: "صحيح أن الذكاء الاصطناعي يقدم فرصاً، لكنه ينطوي على مخاطر.", tip: "zwar ... aber" },
@@ -161,7 +161,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
       { correct: "Obwohl", options: ["Obwohl", "Trotzdem", "Weil"] },
       { correct: "Trotzdem", options: ["Trotzdem", "Obwohl", "Damit"] },
     ],
-    explanation: "obwohl تُدخل جملة ثانوية بفعل في النهاية، وtrotzdem ظرف رابط يليه الفعل مباشرة.",
+    explanation: "obwohl تُدخل جملة ثانوية بفعل في النهاية، و trotzdem ظرف رابط يليه الفعل مباشرة.",
     errorType: "grammar",
   },
   {

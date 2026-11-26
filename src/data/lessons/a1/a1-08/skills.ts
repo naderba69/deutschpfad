@@ -182,7 +182,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         options: ["passen", "gefallen", "stehen", "tragen"],
         correctIndex: 0,
         explanation:
-          "Die Jacke passt mir nicht — passen للمقاس، وgefallen للذوق، وstehen للّياقة.",
+          "Die Jacke passt mir nicht — passen للمقاس، و gefallen للذوق، و stehen للّياقة.",
         errorType: "vocabulary",
         paragraph: 3,
         optionExplanations: [
@@ -448,14 +448,14 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       },
     ],
     items: [
-      { de: "weiß", ar: "أبيض", note: "تقريباً /vaɪ̯s/: ei مثل /aɪ̯/، وß صوت /s/ واحد، لا سّ مشددة؛ ڤايس تقريب كتابي." },
+      { de: "weiß", ar: "أبيض", note: "تقريباً /vaɪ̯s/: ei مثل /aɪ̯/، و ß صوت /s/ واحد، لا سّ مشددة؛ ڤايس تقريب كتابي." },
       { de: "blau", ar: "أزرق", note: "au يقترب من /aʊ̯/؛ «بلاو» تقريب كتابي للصوت." },
       { de: "grün", ar: "أخضر", note: "ü هو /yː/: اجعل اللسان قريباً من وضع /i/ مع تدوير الشفتين كما في /u/؛ لا يطابق ياءً عربية تماماً." },
-      { de: "gelb", ar: "أصفر", note: "g في البداية /g/ (گ)، لا غ؛ e قصيرة، وb في آخر الكلمة تُنطق قريباً من p." },
-      { de: "schwarz", ar: "أسود", note: "sch = /ʃ/ (ش)، w = /v/ (ڤ)، وz = /t͡s/؛ «شڤارتس» تقريب كتابي." },
-      { de: "die Schuhe", ar: "الأحذية", note: "Schuh: /ʃuː/؛ h لا يُنطق ويشير هنا إلى طول u، وe الأخيرة في Schuhe صوت ضعيف /ə/." },
+      { de: "gelb", ar: "أصفر", note: "g في البداية /g/ (گ)، لا غ؛ e قصيرة، و b في آخر الكلمة تُنطق قريباً من p." },
+      { de: "schwarz", ar: "أسود", note: "sch = /ʃ/ (ش)، w = /v/ (ڤ)، و z = /t͡s/؛ «شڤارتس» تقريب كتابي." },
+      { de: "die Schuhe", ar: "الأحذية", note: "Schuh: /ʃuː/؛ h لا يُنطق ويشير هنا إلى طول u، و e الأخيرة في Schuhe صوت ضعيف /ə/." },
     ],
-    tip: "أزرار الاستماع تستخدم TTS في المتصفح لا تسجيلاً بشرياً، وقد يختلف الصوت بحسب الجهاز. تدرّب على فروق واضحة: ei في weiß، au في blau، ü في grün، وsch/w/z في schwarz. التقريب العربي لا يطابق الصوت تماماً؛ استمع إلى النطق الآلي بوصفه نموذجاً مساعداً فقط.",
+    tip: "أزرار الاستماع تستخدم TTS في المتصفح لا تسجيلاً بشرياً، وقد يختلف الصوت بحسب الجهاز. تدرّب على فروق واضحة: ei في weiß، au في blau، ü في grün، و sch/w/z في schwarz. التقريب العربي لا يطابق الصوت تماماً؛ استمع إلى النطق الآلي بوصفه نموذجاً مساعداً فقط.",
     shadowing: [
       {
         de: "Das Hemd ist rot.",

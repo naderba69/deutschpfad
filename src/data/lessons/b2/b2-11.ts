@@ -18,7 +18,7 @@ export const lessonB211: Lesson = {
   order: 2,
   titleDe: "Zugehörigkeit und doppelter Infinitiv",
   titleAr: "الانتماء والملكية والمصدر المزدوج",
-  summary: "الضميران النسبيان dessen/deren للتعبير عن الملكية في الجملة النسبية، والمصدر المزدوج في Perfekt مع الأفعال المودالية، ومع lassen وsehen وhören حين تتبعها صيغة مصدرية.",
+  summary: "الضميران النسبيان dessen/deren للتعبير عن الملكية في الجملة النسبية، والمصدر المزدوج في Perfekt مع الأفعال المودالية، ومع lassen و sehen و hören حين تتبعها صيغة مصدرية.",
   lernziele,
   einfuehrung,
   review,

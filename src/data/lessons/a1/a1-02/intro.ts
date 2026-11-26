@@ -20,11 +20,11 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z2",
       de: "Ich kann im Nominativ zwischen mein und meine passend zum Nomen wählen.",
-      ar: "أن أختار بين mein وmeine في حالة الرفع بحسب الاسم المملوك عند الحديث عن نفسي.",
+      ar: "أن أختار بين mein و meine في حالة الرفع بحسب الاسم المملوك عند الحديث عن نفسي.",
       evidence: {
         exerciseIds: ["e7", "m4"],
         taskIds: ["practice:a1-02:e7", "mini-test:a1-02:m4"],
-        labelAr: "ملء الفراغات بـ mein أو meine حسب جنس الاسم المملوك (e7 وm4).",
+        labelAr: "ملء الفراغات بـ mein أو meine حسب جنس الاسم المملوك (e7 و m4).",
         completion: "all-correct",
       },
     },

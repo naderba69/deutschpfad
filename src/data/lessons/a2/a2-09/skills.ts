@@ -310,12 +310,12 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       {
         de: "das Geschenk",
         ar: "الهدية",
-        note: "DWDS: [ɡəˈʃɛŋk]؛ النبر على المقطع الثاني، وsch يمثّل /ʃ/.",
+        note: "DWDS: [ɡəˈʃɛŋk]؛ النبر على المقطع الثاني، و sch يمثّل /ʃ/.",
       },
       {
         de: "feiern",
         ar: "يحتفل",
-        note: "Wiktionary (IPA): [ˈfaɪ̯ɐn]؛ النبر على المقطع الأول، وei ثنائي الصوت /aɪ̯/.",
+        note: "Wiktionary (IPA): [ˈfaɪ̯ɐn]؛ النبر على المقطع الأول، و ei ثنائي الصوت /aɪ̯/.",
       },
       {
         de: "die Torte",
@@ -330,12 +330,12 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       {
         de: "die Einladung",
         ar: "الدعوة",
-        note: "Wiktionary (IPA): [ˈaɪ̯nˌlaːdʊŋ]؛ النبر الرئيس على Ein- والثانوي على الجزء الثاني، وei يمثّل /aɪ̯/.",
+        note: "Wiktionary (IPA): [ˈaɪ̯nˌlaːdʊŋ]؛ النبر الرئيس على Ein- والثانوي على الجزء الثاني، و ei يمثّل /aɪ̯/.",
       },
       {
         de: "der Glückwunsch",
         ar: "التهنئة",
-        note: "Wiktionary (IPA): [ˈɡlʏkˌvʊnʃ]؛ انتبه إلى ü القصير /ʏ/ وإلى w=[v] وsch=[ʃ].",
+        note: "Wiktionary (IPA): [ˈɡlʏkˌvʊnʃ]؛ انتبه إلى ü القصير /ʏ/ وإلى w=[v] و sch=[ʃ].",
       },
     ],
     tip:

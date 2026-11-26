@@ -118,7 +118,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionAr: "ما معنى السؤال؟",
       options: ["متى تنهض؟", "أين تعمل؟", "ماذا تأكل؟", "كم الساعة؟"],
       correctIndex: 0,
-      explanation: "Wann = متى، وaufstehen هنا تعني النهوض من الفراش.",
+      explanation: "Wann = متى، و aufstehen هنا تعني النهوض من الفراش.",
       errorType: "vocabulary",
       optionExplanations: [
         undefined,
@@ -201,7 +201,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "nie", options: ["nie", "oft", "meistens"] },
       ],
       explanation:
-        "immer تعني دائماً، manchmal أحياناً، وnie أبداً. تأتي ظروف التكرار غالباً بعد الفعل المصرف، وقد يتغير موضعها بحسب بنية الجملة والتأكيد.",
+        "immer تعني دائماً، manchmal أحياناً، و nie أبداً. تأتي ظروف التكرار غالباً بعد الفعل المصرف، وقد يتغير موضعها بحسب بنية الجملة والتأكيد.",
       errorType: "vocabulary",
     },
     {
@@ -290,7 +290,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "in", options: ["in", "am", "um", "von"] },
       ],
       explanation:
-        "في المثالين نقول Am Morgen وin der Nacht؛ احفظ حرف الجر مع كل تعبير زمني.",
+        "في المثالين نقول Am Morgen و in der Nacht؛ احفظ حرف الجر مع كل تعبير زمني.",
       errorType: "preposition",
     },
     {
@@ -330,7 +330,7 @@ export const fehlerUndTipps: NonNullable<Lesson["fehlerUndTipps"]> = {
     ],
     eselsbruecken: [
       "«ذيل الفعل المنفصل في النهاية»: Ich stehe ... auf — كأنك «تغلق» الجملة بالبادئة.",
-      "يسمّي halb الساعة التالية: halb acht = 7:30، وhalb zehn = 9:30.",
+      "يسمّي halb الساعة التالية: halb acht = 7:30، و halb zehn = 9:30.",
     ],
     culturalNote: {
       title: "التعبير عن المواعيد",

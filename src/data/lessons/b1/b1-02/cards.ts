@@ -103,7 +103,7 @@ export const interaction: NonNullable<Lesson["interaction"]> = [
       id: "int-b1-02-1",
       scenarioAr: "محاكاة تدريبية افتراضية لمقابلة عمل في شركة ألمانية.",
       scenarioDe: "Ein Vorstellungsgespräch bei einer deutschen Firma.",
-      strategyAr: "الاستراتيجية: وصف الخبرات بالماضي (Perfekt في الكلام، وPlusquamperfekt للحدث الأقدم) والرد بثقة مهنية.",
+      strategyAr: "الاستراتيجية: وصف الخبرات بالماضي (Perfekt في الكلام، و Plusquamperfekt للحدث الأقدم) والرد بثقة مهنية.",
       rounds: [
         {
           speakerDe: "Erzählen Sie etwas über Ihre Berufserfahrung.",

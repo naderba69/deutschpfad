@@ -134,7 +134,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
           ]
         }
       ],
-      "explanation": "geradeaus تعني إلى الأمام، وlinks تعني يساراً، وum die Ecke تعبير متدرّب عليه بمعنى حول الزاوية/قريباً بعدها.",
+      "explanation": "geradeaus تعني إلى الأمام، و links تعني يساراً، و um die Ecke تعبير متدرّب عليه بمعنى حول الزاوية/قريباً بعدها.",
       "errorType": "vocabulary"
     },
     {
@@ -260,7 +260,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         "Nach der Bahn."
       ],
       "correctIndex": 0,
-      "explanation": "لذكر وسيلة الوصول نقول mit der Bahn؛ فـmit يحكم Dativ، وBahn مؤنث.",
+      "explanation": "لذكر وسيلة الوصول نقول mit der Bahn؛ فـmit يحكم Dativ، و Bahn مؤنث.",
       "optionExplanations": [
         undefined,
         "die ليست صيغة Dativ بعد mit؛ نقول der Bahn.",
@@ -495,7 +495,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         "Bei dem Bus."
       ],
       "correctIndex": 0,
-      "explanation": "في جواب يذكر وسيلة النقل نقول mit dem Bus؛ mit يحكم Dativ، وBus مفرد مذكر.",
+      "explanation": "في جواب يذكر وسيلة النقل نقول mit dem Bus؛ mit يحكم Dativ، و Bus مفرد مذكر.",
       "errorType": "case",
       "optionExplanations": [
         undefined,
@@ -531,7 +531,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
           "errorType": "pronoun"
         }
       ],
-      "explanation": "das Kino محايد → es، وdie Haltestelle مؤنثة → sie، بوصفهما مفعولين مباشرين في المثالين.",
+      "explanation": "das Kino محايد → es، و die Haltestelle مؤنثة → sie، بوصفهما مفعولين مباشرين في المثالين.",
       "errorType": "pronoun"
     },
     {
@@ -564,7 +564,7 @@ export const fehlerUndTipps: NonNullable<Lesson["fehlerUndTipps"]> = {
       },
       {
         "wrong": "zu Hause للحركة",
-        "right": "nach Hause للاتجاه، وzu Hause للموقع في المثال",
+        "right": "nach Hause للاتجاه، و zu Hause للموقع في المثال",
         "whyAr": "قارن Ich fahre nach Hause مع Ich bin zu Hause؛ احفظ الصيغتين في سياقهما ولا تخلط بين الوصول والموقع.",
         "classification": "contextual-alternative"
       },
@@ -581,6 +581,6 @@ export const fehlerUndTipps: NonNullable<Lesson["fehlerUndTipps"]> = {
     ],
     "culturalNote": {
       "title": "مصطلحات على لوحات النقل",
-      "content": "قد ترى U-Bahn (مترو)، S-Bahn (قطار حضري/ضواحٍ)، Straßenbahn (ترام)، وBus (حافلة). تختلف الشبكات والتسميات والتذاكر بين المدن والمشغلين؛ راجع معلومات المشغّل المحلي قبل السفر. هذا تمهيد مفرداتي، لا وصف شامل للنقل الألماني ولا قائمة أسعار ثابتة."
+      "content": "قد ترى U-Bahn (مترو)، S-Bahn (قطار حضري/ضواحٍ)، Straßenbahn (ترام)، و Bus (حافلة). تختلف الشبكات والتسميات والتذاكر بين المدن والمشغلين؛ راجع معلومات المشغّل المحلي قبل السفر. هذا تمهيد مفرداتي، لا وصف شامل للنقل الألماني ولا قائمة أسعار ثابتة."
     }
   };

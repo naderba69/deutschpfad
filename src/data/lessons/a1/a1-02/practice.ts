@@ -16,7 +16,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctIndex: 1,
       explanation: "Mutter مؤنثة (die Mutter) → meine Mutter.",
       optionExplanations: [
-        "mein تأتي مع الأسماء المذكرة/المحايدة، وMutter مؤنثة.",
+        "mein تأتي مع الأسماء المذكرة/المحايدة، و Mutter مؤنثة.",
         undefined,
         "dein أداة ملكية للمخاطَب المفرد غير الرسمي (du)، وليست أداة المتكلم.",
         "deine صيغة أداة المخاطَب مع اسم مؤنث أو جمع في الرفع؛ هنا المقصود أمي (meine Mutter)، لا أمّ المخاطَب.",
@@ -32,7 +32,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       options: ["هل لديك إخوة أو أخوات؟", "هل تحب عائلتك الكبيرة؟", "كم عمرك؟", "أين والدك الآن؟"],
       correctIndex: 0,
       optionExplanations: [undefined, "لا — السؤال ليس عن المحبة ولا عن عدد أفراد العائلة؛ و«Hast du Geschwister؟» تسأل عن وجود الإخوة والأخوات.", "لا — السؤال عن العمر صيغته «Wie alt bist du؟»؛ و«Geschwister» تعني الإخوة والأخوات.", "لا — السؤال عن المكان صيغته «Wo ist dein Vater؟»؛ و«Hast du…؟» تسأل عن وجود شيء عند المخاطب."],
-      explanation: "Hast du = هل لديك، وGeschwister = الإخوة والأخوات (جمع).",
+      explanation: "Hast du = هل لديك، و Geschwister = الإخوة والأخوات (جمع).",
       errorType: "vocabulary",
     },
     {
@@ -66,7 +66,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { left: "der Sohn", right: "الابن" },
       ],
       explanation:
-        "ثنائيات متقابلة: Bruder/Schwester وSohn/Tochter. تذكّرها كثنائيات!",
+        "ثنائيات متقابلة: Bruder/Schwester و Sohn/Tochter. تذكّرها كثنائيات!",
       errorType: "vocabulary",
     },
     {
@@ -137,7 +137,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "dein", options: ["dein", "deine", "sein"] },
       ],
       explanation:
-        "علي مذكر ⇒ الجذر sein في الأولَيَين. Bruder مذكر ⇒ Sein بلا ـe؛ Schwester مؤنث ⇒ seine. ثم خاطبناك أنت ⇒ dein، وVater مذكر ⇒ بلا ـe.",
+        "علي مذكر ⇒ الجذر sein في الأولَيَين. Bruder مذكر ⇒ Sein بلا ـe؛ Schwester مؤنث ⇒ seine. ثم خاطبناك أنت ⇒ dein، و Vater مذكر ⇒ بلا ـe.",
       errorType: "pronoun",
     },
     {
@@ -205,7 +205,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       correctWord: "Ihre",
       options: ["Ihre", "seine", "meine", "eure"],
       explanation:
-        "ذكر التمرين أن السياق رسمي؛ في هذا السياق نستخدم عادة Sie وIhr. Tochter مؤنث، لذا تكون صيغة الرفع Ihre Tochter. في الاستعمال الواقعي تحدد العلاقة والسياق صيغة المخاطبة.",
+        "ذكر التمرين أن السياق رسمي؛ في هذا السياق نستخدم عادة Sie و Ihr. Tochter مؤنث، لذا تكون صيغة الرفع Ihre Tochter. في الاستعمال الواقعي تحدد العلاقة والسياق صيغة المخاطبة.",
       errorType: "pronoun",
     },
     {
@@ -275,7 +275,7 @@ export const fehlerUndTipps: NonNullable<Lesson["fehlerUndTipps"]> = {
       },
     ],
     eselsbruecken: [
-      "في حالة الرفع: mein Vater / mein Kind، وmeine Mutter / meine Eltern. اختَر النهاية بحسب الاسم المملوك، لا بحسب جنس المتكلم.",
+      "في حالة الرفع: mein Vater / mein Kind، و meine Mutter / meine Eltern. اختَر النهاية بحسب الاسم المملوك، لا بحسب جنس المتكلم.",
       "ثنائيات العائلة: Vater/Mutter, Bruder/Schwester, Sohn/Tochter, Opa/Oma.",
     ],
     culturalNote: {

@@ -10,7 +10,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       titleAr: "عائلات الأفعال القوية — Ablaut ونظامه",
       titleDe: "Starke Verben und ihre Ablautreihen",
       explanationAr:
-        "تُعرض الأفعال القوية غالباً بثلاث صور أساسية للحفظ: المصدر وPräteritum وPartizip II، مثل trinken – trank – getrunken. ويُسمّى تناوب حركة الجذر بين بعض هذه الصور Ablaut. تذكر المراجع سبع فئات تقليدية للأنماط، لكنّ هذا تصنيف وصفي يساعد على تنظيم أمثلة؛ ليس خوارزمية تتنبأ بصيغة كل فعل جديد، كما أن بعض الأفعال لها تفاصيل أو صيغ بديلة.\n\n**أمثلة على أنماط شائعة في هذه الكتلة:**\n· **i – a – u:** trinken – trank – getrunken · finden – fand – gefunden · singen – sang – gesungen\n· **ei – ie – ie:** schreiben – schrieb – geschrieben · bleiben – blieb – geblieben · steigen – stieg – gestiegen\n· **ie – o – o:** fliegen – flog – geflogen · verlieren – verlor – verloren · schließen – schloss – geschlossen\n· **e – a – o:** nehmen – nahm – genommen · sprechen – sprach – gesprochen · helfen – half – geholfen\n\nهذه أمثلة منتقاة لا قائمة شاملة، ولا تدّعي أن أربع مجموعات تغطي نسبة ثابتة من مفردات المتعلم. تعلّم الصور الموثقة لكل فعل ولا تستنتج صورة فعل غير معروف من حركة واحدة وحدها.\n\nوتجمع أفعال توصف بأنها مختلطة أو ضعيفة غير منتظمة تغيّر الجذر مع صيغة تنتهي بـ **-t**، مثل denken – dachte – gedacht وbringen – brachte – gebracht وkennen – kannte – gekannt. أمّا wissen – wusste – gewusst فيُعرض بوصفه فعلاً ذا تصريف خاص من فئة Präteritopräsentia، لا ضمن هذه القائمة نفسها، وإن تشابهت نهاية ماضيه مع بعض الأفعال المختلطة. تختلف المراجع في تصنيف بعض الأفعال، لذلك لا نقدّم هنا قائمةً حصرية.\n\n**الفائدة العملية:** قارن صور الفعل لتلاحظ النمط وتستعين به في التذكّر؛ لكن احفظ الفعل بصوره المسجلة، وانتبه إلى أن الأفعال ذات البادئة قد ترث صور الفعل الأساسي مع قواعد مستقلة لموضع ge-.",
+        "تُعرض الأفعال القوية غالباً بثلاث صور أساسية للحفظ: المصدر و Präteritum و Partizip II، مثل trinken – trank – getrunken. ويُسمّى تناوب حركة الجذر بين بعض هذه الصور Ablaut. تذكر المراجع سبع فئات تقليدية للأنماط، لكنّ هذا تصنيف وصفي يساعد على تنظيم أمثلة؛ ليس خوارزمية تتنبأ بصيغة كل فعل جديد، كما أن بعض الأفعال لها تفاصيل أو صيغ بديلة.\n\n**أمثلة على أنماط شائعة في هذه الكتلة:**\n· **i – a – u:** trinken – trank – getrunken · finden – fand – gefunden · singen – sang – gesungen\n· **ei – ie – ie:** schreiben – schrieb – geschrieben · bleiben – blieb – geblieben · steigen – stieg – gestiegen\n· **ie – o – o:** fliegen – flog – geflogen · verlieren – verlor – verloren · schließen – schloss – geschlossen\n· **e – a – o:** nehmen – nahm – genommen · sprechen – sprach – gesprochen · helfen – half – geholfen\n\nهذه أمثلة منتقاة لا قائمة شاملة، ولا تدّعي أن أربع مجموعات تغطي نسبة ثابتة من مفردات المتعلم. تعلّم الصور الموثقة لكل فعل ولا تستنتج صورة فعل غير معروف من حركة واحدة وحدها.\n\nوتجمع أفعال توصف بأنها مختلطة أو ضعيفة غير منتظمة تغيّر الجذر مع صيغة تنتهي بـ **-t**، مثل denken – dachte – gedacht و bringen – brachte – gebracht و kennen – kannte – gekannt. أمّا wissen – wusste – gewusst فيُعرض بوصفه فعلاً ذا تصريف خاص من فئة Präteritopräsentia، لا ضمن هذه القائمة نفسها، وإن تشابهت نهاية ماضيه مع بعض الأفعال المختلطة. تختلف المراجع في تصنيف بعض الأفعال، لذلك لا نقدّم هنا قائمةً حصرية.\n\n**الفائدة العملية:** قارن صور الفعل لتلاحظ النمط وتستعين به في التذكّر؛ لكن احفظ الفعل بصوره المسجلة، وانتبه إلى أن الأفعال ذات البادئة قد ترث صور الفعل الأساسي مع قواعد مستقلة لموضع ge-.",
       whyAr:
         "التصنيف يصف طريقة تصريف أفعال معينة؛ لا يضمن أن كل فعل يشبهها سيتبع النمط نفسه بلا استثناء. اخترنا هنا أمثلة تعليمية محددة، ويظل الرجوع إلى صورة الفعل في معجم موثوق ضرورياً، ولا سيما عند اختلاف Präteritum أو Partizip II أو وجود أكثر من صيغة. هدف هذا التبسيط مساعدة المتعلم على حفظ مجموعة صغيرة، لا إثبات سبب تاريخي واحد أو قاعدة ذهنية عامة لجميع الأفعال.",
       table: {
@@ -119,7 +119,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       relatedRuleComparison: {
         title: "القويّ في Perfekt مقابل القويّ في المضارع",
         content:
-          "تغيّر e/i في المضارع مثل du sprichst قد يساعد على ملاحظة صلة بين بعض الصور، لكنه لا يتنبأ وحده بصيغ الأفعال القوية ولا يغني عن حفظ المصدر وPräteritum وPartizip II. وقد مرّ helfen في A1-06: sprechen – sprach – gesprochen مع du sprichst، وhelfen – half – geholfen مع du hilfst. أمّا schreiben فيأخذ schreiben – schrieb – geschrieben مع du schreibst في المضارع؛ لذا راجع صور الفعل نفسه.",
+          "تغيّر e/i في المضارع مثل du sprichst قد يساعد على ملاحظة صلة بين بعض الصور، لكنه لا يتنبأ وحده بصيغ الأفعال القوية ولا يغني عن حفظ المصدر و Präteritum و Partizip II. وقد مرّ helfen في A1-06: sprechen – sprach – gesprochen مع du sprichst، و helfen – half – geholfen مع du hilfst. أمّا schreiben فيأخذ schreiben – schrieb – geschrieben مع du schreibst في المضارع؛ لذا راجع صور الفعل نفسه.",
 
       },
     },
@@ -128,7 +128,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       titleAr: "Perfekt أم Präteritum؟ — قسمة العمل بين الماضيين",
       titleDe: "Perfekt oder Präteritum? Die Arbeitsteilung",
       explanationAr:
-        "لكلٍّ من Perfekt وPräteritum استعمالات صحيحة للماضي، ولا يصح اختزالهما إلى «الكلام مقابل الكتابة». في كثير من الحديث اليومي المعاصر يغلب Perfekt عند سرد أحداث كثيرة، بينما يشيع Präteritum في السرد المكتوب؛ لكن Präteritum يُسمع أيضاً في الكلام، وPerfekt يرد في الكتابة. تظهر كثيراً في الحديث صيغ مثل war وhatte وبعض الأفعال الناقصة، كما تختلف الأنماط باختلاف المنطقة والسجل والنص.\n\nللتدريب هنا:\n· **تقرير شخصي عن رحلة:** Ich bin nach Wien gefahren und habe dort meine Tante besucht.\n· **سرد مكتوب:** Der Zug fuhr um acht Uhr ab und erreichte Berlin am Mittag.\n· **صيغ قصيرة شائعة في أمثلة محادثة:** Ich war müde · Wir hatten keine Zeit · Ich konnte nicht kommen · Es gab kein WLAN.\n\nهذه اتجاهات ونماذج لا قوانين حصرية. البدائل مثل Ich bin … gewesen وIch habe nicht kommen können وEs hat … gegeben سليمة نحوياً، وقد تلائم سياقاً أو سجلاً أو منطقة بعينها؛ لا تصفها بأنها خطأ لمجرد أن الدرس يختار صيغة أقصر في مثال محدد.",
+        "لكلٍّ من Perfekt و Präteritum استعمالات صحيحة للماضي، ولا يصح اختزالهما إلى «الكلام مقابل الكتابة». في كثير من الحديث اليومي المعاصر يغلب Perfekt عند سرد أحداث كثيرة، بينما يشيع Präteritum في السرد المكتوب؛ لكن Präteritum يُسمع أيضاً في الكلام، و Perfekt يرد في الكتابة. تظهر كثيراً في الحديث صيغ مثل war و hatte وبعض الأفعال الناقصة، كما تختلف الأنماط باختلاف المنطقة والسجل والنص.\n\nللتدريب هنا:\n· **تقرير شخصي عن رحلة:** Ich bin nach Wien gefahren und habe dort meine Tante besucht.\n· **سرد مكتوب:** Der Zug fuhr um acht Uhr ab und erreichte Berlin am Mittag.\n· **صيغ قصيرة شائعة في أمثلة محادثة:** Ich war müde · Wir hatten keine Zeit · Ich konnte nicht kommen · Es gab kein WLAN.\n\nهذه اتجاهات ونماذج لا قوانين حصرية. البدائل مثل Ich bin … gewesen و Ich habe nicht kommen können و Es hat … gegeben سليمة نحوياً، وقد تلائم سياقاً أو سجلاً أو منطقة بعينها؛ لا تصفها بأنها خطأ لمجرد أن الدرس يختار صيغة أقصر في مثال محدد.",
       whyAr:
         "يتأثر الاختيار بين الزمنين بنوع النص والسجل والمنطقة والسياق، وقد تؤثر دلالة الفعل أيضاً. لذلك لا يوجد تفسير واحد من قبيل أن صيغة بعينها «ثقيلة دائماً» أو أن الزمنين يتطابقان في كل موضع. يعرض الجدول أمثلة واتجاهات مألوفة لتيسير القراءة والتدريب، لا حدوداً ثابتة بين كلام صحيح وكتابة صحيحة.",
       table: {
@@ -180,7 +180,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
         },
         {
           de: "Ich bin nach Wien gefahren und habe dort meine Tante besucht.",
-          ar: "سافرتُ إلى فيينّا وزرتُ عمّتي هناك. (مثال Perfekt للفعلين fahren وbesuchen)",
+          ar: "سافرتُ إلى فيينّا وزرتُ عمّتي هناك. (مثال Perfekt للفعلين fahren و besuchen)",
         },
         {
           de: "Es gab im Hotel kein WLAN.",
@@ -202,7 +202,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       comparisonWithArabic:
         "في العربية طرائق مختلفة للتعبير عن الزمن والحدث، كما تختلف العامية والفصحى في السياق والسجل. يمكن استخدام ذلك لتذكّر أن اختيار الصيغة الألمانية يتأثر بالمقام، لكنه **لا يساوي** Perfekt بالعامية أو Präteritum بالفصحى، ولا يعني أن لكل صيغة مقابلاً عربياً ثابتاً. كلا الزمنين يرد في الكلام والكتابة، ويُفهم المعنى من الجملة والسياق.",
       eselsbruecke:
-        "في تقرير محادثي قصير، يكون Perfekt نقطة بداية نافعة لكثير من الأحداث؛ وتدرّب أيضاً على صيغ Präteritum الشائعة مثل war وhatte وkonnte وmusste. تذكّر أنها **أنماط استعمال شائعة لا قاعدة تمنع البدائل**.",
+        "في تقرير محادثي قصير، يكون Perfekt نقطة بداية نافعة لكثير من الأحداث؛ وتدرّب أيضاً على صيغ Präteritum الشائعة مثل war و hatte و konnte و musste. تذكّر أنها **أنماط استعمال شائعة لا قاعدة تمنع البدائل**.",
       commonMistakes: [
         {
           wrong: "Ich bin gestern sehr müde gewesen.",
@@ -236,9 +236,9 @@ export const theory: NonNullable<Lesson["theory"]> = [
         },
       ],
       relatedRuleComparison: {
-        title: "war وhatte ضمن صيغ الماضي",
+        title: "war و hatte ضمن صيغ الماضي",
         content:
-          "يعرض هذا الدرس war وhatte ضمن Präteritum ويقارنهما باستعمالات Perfekt، دون وصف أي صيغة بأنها ممنوعة من الكلام أو الكتابة. وتأتي تدريبات أوسع على Präteritum في دروس لاحقة؛ هذه أمثلة محددة وليست حصرًا لكل صيغ الماضي.",
+          "يعرض هذا الدرس war و hatte ضمن Präteritum ويقارنهما باستعمالات Perfekt، دون وصف أي صيغة بأنها ممنوعة من الكلام أو الكتابة. وتأتي تدريبات أوسع على Präteritum في دروس لاحقة؛ هذه أمثلة محددة وليست حصرًا لكل صيغ الماضي.",
 
       },
     },
@@ -249,7 +249,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       explanationAr:
         "في الجملة الرئيسية الخبرية البسيطة، يكون المساعد المصرف غالباً في القوس الأيسر من Perfekt، ويأتي Partizip II في القوس الأيمن؛ وما بينهما هو Mittelfeld. أما ترتيب عناصر هذه المساحة فليس سلسلة جامدة واحدة.\n\n· في الأمثلة المحايدة، تتقدم الضمائر غير المنبورة عادةً على مجموعات الأسماء. وإذا اجتمع ضميران مفعوليان فترتيب Akkusativ قبل Dativ هو المعتاد؛ وبين مجموعتي اسم يشيع Dativ قبل Akkusativ. قد يغيّر التركيز والسياق ترتيباً مفضلاً.\n· في الظروف، يكون ترتيب الزمان ثم السبب ثم الكيفية ثم المكان (TeKaMoLo) **ميلاً شائعاً**، لا شرطاً نحوياً لا يتغير.\n· يتحدد موضع nicht بما تنفيه: يرد كثيراً قرب القوس الأيمن عند نفي مضمون الجملة المحايد، وقد يتقدم على العنصر الذي ينفيه في المقابلة، كما في Ich habe **nicht den Film**, sondern die Serie gesehen.\n· يمكن وضع جملة فرعية أو مقارنة في Nachfeld، وقد تأتي عناصر مؤجلة أخرى في سياق استدراك/تركيز؛ لذلك ليست عبارة «كل ما ليس فعلاً يبقى قبل Partizip II» قاعدة مطلقة.\n\nاستخدم الجدول أمثلةً لترتيب محايد قابل للتدريب، واقرأ ترتيب الكلمات مع المعنى والتركيز لا منفصلاً عنهما.",
       whyAr:
-        "القوسان يحددان المجال الفعلي ويساعدان على رؤية موضع المساعد وPartizip II. داخل Mittelfeld توجد تفضيلات بنيوية وتواصلية متعددة، وقد تتفاعل؛ لذا لا تفسر ترتيباً واحداً على أنه الترتيب الوحيد المقبول. في التمرينات سنطلب أحياناً ترتيباً محايداً محدداً، مع التنبيه إلى أن السياق والنبر قد يجيزان بديلاً.",
+        "القوسان يحددان المجال الفعلي ويساعدان على رؤية موضع المساعد و Partizip II. داخل Mittelfeld توجد تفضيلات بنيوية وتواصلية متعددة، وقد تتفاعل؛ لذا لا تفسر ترتيباً واحداً على أنه الترتيب الوحيد المقبول. في التمرينات سنطلب أحياناً ترتيباً محايداً محدداً، مع التنبيه إلى أن السياق والنبر قد يجيزان بديلاً.",
       table: {
         title: "المساحة الوسطى — تفضيلات وأمثلة محايدة",
         columns: ["إرشاد (لا ترتيب إلزامي)", "العنصر", "المثال"],
@@ -354,9 +354,9 @@ export const theory: NonNullable<Lesson["theory"]> = [
       titleAr: "لغة السفر: الحجز والوصول والشكوى",
       titleDe: "Reisewortschatz: buchen, ankommen, sich beschweren",
       explanationAr:
-        "هذه الكتلة تجمع عبارات مفيدة في الحجز والقطار والفندق، وتعرض صيغاً محددة لا قاعدةً تقول إن كل أفعال السفر لها المساعد نفسه.\n\n· **الحجز:** buchen / reservieren: Ich habe ein Zimmer gebucht · Ich möchte einen Tisch reservieren.\n· **أفعال النقل في معناها اللازم المعروض:** abfahren (القطار ينطلق) وankommen (يصل) وumsteigen (يبدّل وسيلة النقل) تُبنى أمثلتها بـsein: ist abgefahren · ist angekommen · ist umgestiegen. والبادئة المنفصلة تحدد موضع ge- في Partizip II، لا اختيار المساعد وحده.\n· **معانٍ أخرى:** abholen في معنى استلام شيء يأخذ haben: hat den Rucksack abgeholt. كما قد يختلف مساعد بعض الأفعال بحسب المعنى؛ فـfliegen إلى وجهة يختلف عن قيادة طائرة أو نقل شيء بها، وschwimmen للانتقال إلى وجهة يختلف عن نشاط السباحة.\n· **في الفندق:** einchecken / auschecken · die Übernachtung · das Einzelzimmer / das Doppelzimmer · inklusive Frühstück · die Rezeption.\n· **طلب واضح ومهذّب:** يمكن تنظيم الرسالة إلى وصف المشكلة ثم بيان أثرها أو الطلب: Entschuldigung, das Zimmer ist leider nicht sauber. Könnten Sie mir bitte ein anderes Zimmer geben? هذه صيغة مناسبة لهذا المثال وليست العبارة المهذبة الوحيدة.",
+        "هذه الكتلة تجمع عبارات مفيدة في الحجز والقطار والفندق، وتعرض صيغاً محددة لا قاعدةً تقول إن كل أفعال السفر لها المساعد نفسه.\n\n· **الحجز:** buchen / reservieren: Ich habe ein Zimmer gebucht · Ich möchte einen Tisch reservieren.\n· **أفعال النقل في معناها اللازم المعروض:** abfahren (القطار ينطلق) و ankommen (يصل) و umsteigen (يبدّل وسيلة النقل) تُبنى أمثلتها بـsein: ist abgefahren · ist angekommen · ist umgestiegen. والبادئة المنفصلة تحدد موضع ge- في Partizip II، لا اختيار المساعد وحده.\n· **معانٍ أخرى:** abholen في معنى استلام شيء يأخذ haben: hat den Rucksack abgeholt. كما قد يختلف مساعد بعض الأفعال بحسب المعنى؛ فـfliegen إلى وجهة يختلف عن قيادة طائرة أو نقل شيء بها، و schwimmen للانتقال إلى وجهة يختلف عن نشاط السباحة.\n· **في الفندق:** einchecken / auschecken · die Übernachtung · das Einzelzimmer / das Doppelzimmer · inklusive Frühstück · die Rezeption.\n· **طلب واضح ومهذّب:** يمكن تنظيم الرسالة إلى وصف المشكلة ثم بيان أثرها أو الطلب: Entschuldigung, das Zimmer ist leider nicht sauber. Könnten Sie mir bitte ein anderes Zimmer geben? هذه صيغة مناسبة لهذا المثال وليست العبارة المهذبة الوحيدة.",
       whyAr:
-        "الحاجة إلى عبارات السفر هنا اختيار موضوعي للتدريب على المفردات والوظائف، لا ادعاء بأن هذا الموضوع وحده يعرّف A2 أو يطابق جزءاً محدداً من امتحان. تعلّم كل فعل مع استعماله الشائع ومساعده في ذلك المعنى؛ لا تستنتج sein من البادئة أو من فكرة الحركة وحدهما. وفي خدمة الفندق تساعد صيغ مثل Entschuldigung وbitte وKönnten Sie… على بناء طلب واضح ومهذّب، لكن درجات المباشرة تختلف بين الأشخاص والمواقف ولا يصح تعميمها ثقافياً.",
+        "الحاجة إلى عبارات السفر هنا اختيار موضوعي للتدريب على المفردات والوظائف، لا ادعاء بأن هذا الموضوع وحده يعرّف A2 أو يطابق جزءاً محدداً من امتحان. تعلّم كل فعل مع استعماله الشائع ومساعده في ذلك المعنى؛ لا تستنتج sein من البادئة أو من فكرة الحركة وحدهما. وفي خدمة الفندق تساعد صيغ مثل Entschuldigung و bitte و Könnten Sie… على بناء طلب واضح ومهذّب، لكن درجات المباشرة تختلف بين الأشخاص والمواقف ولا يصح تعميمها ثقافياً.",
       table: {
         title: "معجم السفر — الأساسيّ",
         columns: ["الألمانية", "العربية", "ملاحظة"],
@@ -426,7 +426,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
           wrong: "Der Zug hat um acht abgefahren.",
           right: "Der Zug ist um acht abgefahren.",
           classification: "error",
-          whyAr: "في معنى انطلاق القطار اللازم، abfahren يبني Perfekt مع sein. ومع البادئة المنفصلة يدخل ge بين ab وfahren؛ والكتابة المعتادة كلمة واحدة: abgefahren.",
+          whyAr: "في معنى انطلاق القطار اللازم، abfahren يبني Perfekt مع sein. ومع البادئة المنفصلة يدخل ge بين ab و fahren؛ والكتابة المعتادة كلمة واحدة: abgefahren.",
         },
         {
           wrong: "Ich habe in Köln umgestiegen.",

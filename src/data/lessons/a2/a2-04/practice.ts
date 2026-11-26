@@ -178,7 +178,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       instructionAr: "اختر الفعل الأدقّ حين يريد المتكلم معاينة الشقة بنفسه:",
       questionDe: "Ich möchte die Wohnung gern ___ . Können wir einen Termin vereinbaren?",
       options: ["besichtigen", "aussehen", "anschauen lassen", "besuchen"], correctIndex: 0,
-      explanation: "besichtigen هو الفعل الأدقّ لمعاينة الشقة بنفس المتكلم. anschauen lassen قد يعني أن يطلب من شخص آخر النظر إليها؛ وbesuchen قد يفيد زيارة المكان، لكنه لا يحدد غرض المعاينة بوضوح. أما aussehen فيصف المظهر.", errorType: "vocabulary",
+      explanation: "besichtigen هو الفعل الأدقّ لمعاينة الشقة بنفس المتكلم. anschauen lassen قد يعني أن يطلب من شخص آخر النظر إليها؛ و besuchen قد يفيد زيارة المكان، لكنه لا يحدد غرض المعاينة بوضوح. أما aussehen فيصف المظهر.", errorType: "vocabulary",
       optionExplanations: [
         undefined,
         "«aussehen» يصف المظهر («Die Wohnung sieht hell aus») ولا يفيد المعاينة هنا.",
@@ -191,14 +191,14 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       instructionAr: "أكمل بالفعل المناسب بحسب المشهد الموضّح:",
       template: "Der Schlüssel ___ noch im Schloss, und die Kartons stehen aufrecht neben dem Aufzug.",
       blanks: [{ correct: "steckt", options: ["steckt", "stellt", "legt"] }],
-      explanation: "المفتاح موجود داخل القفل: steckt. وaufrecht توضح أن الصناديق قائمة، لذلك stehen.", errorType: "vocabulary",
+      explanation: "المفتاح موجود داخل القفل: steckt. و aufrecht توضح أن الصناديق قائمة، لذلك stehen.", errorType: "vocabulary",
     },
     {
       id: "e20", type: "word-ordering",
       instructionAr: "رتّب سؤال المعاينة:",
       tokens: ["die", "Sind", "in", "der", "Nebenkosten", "Warmmiete", "enthalten", "?"],
       correctSentence: "Sind die Nebenkosten in der Warmmiete enthalten?",
-      explanation: "يبدأ السؤال بالفعل المصرف Sind؛ وتأتي بقية العبارة وenthalten في النهاية.", errorType: "word-order",
+      explanation: "يبدأ السؤال بالفعل المصرف Sind؛ وتأتي بقية العبارة و enthalten في النهاية.", errorType: "word-order",
     },
   ];
 
@@ -209,11 +209,11 @@ export const fehlerUndTipps: NonNullable<Lesson["fehlerUndTipps"]> = {
       { wrong: "Der Tisch steht neben das Sofa.", right: "Der Tisch steht neben dem Sofa.", whyAr: "هنا نصف موضع الطاولة بجانب الأريكة: neben dem Sofa. أما وضع الطاولة إلى جوارها فيتطلب معنى وجهة مختلفاً.", classification: "error" },
     ],
     eselsbruecken: [
-      "في الأمثلة المكانية: Wo? يحدد الموقع أو مكان حدوث الحركة فيأتي Dativ؛ وWohin? يحدد الوجهة فيأتي Akkusativ. لا تكفي الحركة الجسدية وحدها.",
-      "أزواج stellen/stehen وlegen/liegen تساعدك على تخيل المشهد؛ اسأل مع ذلك عن دور عبارة المكان، ولا تستنتج الحالة من تعدّي الفعل وحده.",
+      "في الأمثلة المكانية: Wo? يحدد الموقع أو مكان حدوث الحركة فيأتي Dativ؛ و Wohin? يحدد الوجهة فيأتي Akkusativ. لا تكفي الحركة الجسدية وحدها.",
+      "أزواج stellen/stehen و legen/liegen تساعدك على تخيل المشهد؛ اسأل مع ذلك عن دور عبارة المكان، ولا تستنتج الحالة من تعدّي الفعل وحده.",
     ],
     culturalNote: {
       title: "مصطلحات السكن والسياق المحلي",
-      content: "هذه أمثلة لغوية عامة وليست استشارة قانونية. تختلف عناصر Nebenkosten وWarmmiete بحسب العرض والعقد، وقد تُدفع الكهرباء أو الإنترنت منفصلين. يحدد §551 BGB سقف Mietkaution في السكن ويجيز دفع المبلغ النقدي على ثلاثة أقساط شهرية؛ لا يعني ذلك أن كل عقد يطلب السقف أو أن الرد فوري. أما Ruhezeiten فتُقرأ من Hausordnung والقواعد المطبقة على المكان؛ المثال السمعي يخص مبنى متخيلاً واحداً فقط.",
+      content: "هذه أمثلة لغوية عامة وليست استشارة قانونية. تختلف عناصر Nebenkosten و Warmmiete بحسب العرض والعقد، وقد تُدفع الكهرباء أو الإنترنت منفصلين. يحدد §551 BGB سقف Mietkaution في السكن ويجيز دفع المبلغ النقدي على ثلاثة أقساط شهرية؛ لا يعني ذلك أن كل عقد يطلب السقف أو أن الرد فوري. أما Ruhezeiten فتُقرأ من Hausordnung والقواعد المطبقة على المكان؛ المثال السمعي يخص مبنى متخيلاً واحداً فقط.",
     },
   };

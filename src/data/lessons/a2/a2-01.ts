@@ -19,7 +19,7 @@ export const lessonA201: Lesson = {
   order: 1,
   titleDe: "Reisen und Urlaub",
   titleAr: "السفر والعطلات",
-  summary: "Perfekt المتقدّم بعد أساسه في A1: عائلات الأفعال القوية (Ablaut) وصورها الثلاث، وقسمة العمل بين Perfekt وPräteritum (war · hatte · konnte)، وترتيب المساحة الوسطى بين قوسَي الجملة، ثم معجم السفر: الحجز والوصول والشكوى.",
+  summary: "Perfekt المتقدّم بعد أساسه في A1: عائلات الأفعال القوية (Ablaut) وصورها الثلاث، وقسمة العمل بين Perfekt و Präteritum (war · hatte · konnte)، وترتيب المساحة الوسطى بين قوسَي الجملة، ثم معجم السفر: الحجز والوصول والشكوى.",
   lernziele,
   einfuehrung,
   review,

@@ -76,7 +76,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       { correct: "Digitalisierung", options: ["Digitalisierung", "Digitalisieren", "Digital"] },
       { correct: "Verfügbarkeit", options: ["Verfügbarkeit", "Verfügbar", "Verfügung"] },
     ],
-    explanation: "digitalisieren + ung = die Digitalisierung، وverfügbar + keit = die Verfügbarkeit.",
+    explanation: "digitalisieren + ung = die Digitalisierung، و verfügbar + keit = die Verfügbarkeit.",
     errorType: "grammar",
   },
   {

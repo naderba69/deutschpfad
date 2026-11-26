@@ -19,7 +19,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
     ],
     paragraphsAr: [
       "أتعلم الألمانية منذ سنة. قبل سنة بدأت أول دورة ألمانية لي. في الحصة الأولى قالت المعلمة «طاب يومك». لم أفهم تقريباً شيئاً.",
-      "في البداية كانت أدوات الأسماء der وdie وdas صعبة عليّ. لم أفهم: لماذا نقول „der Tisch“ لكن „die Lampe“؟ تعلمت في الدورة أن أتعلم كل كلمة جديدة مع أداتها.",
+      "في البداية كانت أدوات الأسماء der و die و das صعبة عليّ. لم أفهم: لماذا نقول „der Tisch“ لكن „die Lampe“؟ تعلمت في الدورة أن أتعلم كل كلمة جديدة مع أداتها.",
       "بعد ثلاثة أشهر تحدثت لأول مرة بجمل قصيرة بالألمانية: «اسمي أمين. أنا من تونس. أسكن في برلين». وفي السوبرماركت سألت مرة عن السعر بالألمانية. فهمتني البائعة!",
       "قلت مرة في المقهى: „Ich will einen Kaffee“؛ كانت الجملة صحيحة نحوياً ومفهومة. ولطلب ألطف أقول اليوم كثيراً: „Ich hätte gern einen Kaffee, bitte“. ويمكن أيضاً قول: „Einen Kaffee, bitte“.",
       "أتحدث الآن عن يومي وعائلتي وخططي. أستطيع أن أطرح أسئلة بسيطة وأعطي إجابات قصيرة. درست الألمانية في البيت أمس. لم يكن كل شيء مثالياً، لكن الأمر نجح.",
@@ -63,7 +63,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         options: ["Die Artikel der, die und das", "Die Zahlen von eins bis zehn", "Die Aussprache der Umlaute", "Das Wetter im Norden"],
         correctIndex: 0,
         optionExplanations: [undefined, "لا — لم تُذكر أرقام Zahlen؛ والصعب عليه «die Artikel der, die und das».", "لا — لم يُذكر نطق الأحرف الممالة Umlaute؛ والصعوبة في الأدوات der, die und das.", "لا — لم يُذكر طقس Norden؛ والصعب «Die Artikel»."],
-        explanation: "النص يقول إن الأدوات der وdie وdas كانت صعبة عليه في البداية.",
+        explanation: "النص يقول إن الأدوات der و die و das كانت صعبة عليه في البداية.",
         errorType: "vocabulary",
       },
       {
@@ -127,7 +127,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
     ],
     redemittel: [
       { de: "Seit einem Jahr lerne ich Deutsch.", ar: "أتعلم الألمانية منذ سنة." },
-      { de: "Am Anfang waren die Artikel „der“, „die“ und „das“ schwierig für mich.", ar: "في البداية كانت أدوات الاسم der وdie وdas صعبة عليّ." },
+      { de: "Am Anfang waren die Artikel „der“, „die“ und „das“ schwierig für mich.", ar: "في البداية كانت أدوات الاسم der و die و das صعبة عليّ." },
       { de: "Ich frage auf Deutsch nach dem Preis.", ar: "أسأل عن السعر بالألمانية." },
       { de: "Ich hätte gern einen Kaffee, bitte.", ar: "أود قهوة من فضلك." },
       { de: "Ich bin ein bisschen nervös.", ar: "أنا متوتر قليلاً." },
@@ -257,17 +257,17 @@ export const listening: NonNullable<Lesson["listening"]> = {
 
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "p1",
-    title: "أصوات في كلمات مختارة: ei، ie، ch، وsch",
+    title: "أصوات في كلمات مختارة: ei، ie، ch، و sch",
     items: [
-      { de: "heißen", ar: "يُسمّى", note: "ei في هذه الكلمة يُنطق تقريباً /aɪ̯/؛ وß هنا صوت /s/." },
-      { de: "lesen", ar: "يقرأ", note: "e طويلة /eː/، وs بين حركتين تُنطق /z/ هنا؛ لا توجد ie في تهجئة الكلمة." },
+      { de: "heißen", ar: "يُسمّى", note: "ei في هذه الكلمة يُنطق تقريباً /aɪ̯/؛ و ß هنا صوت /s/." },
+      { de: "lesen", ar: "يقرأ", note: "e طويلة /eː/، و s بين حركتين تُنطق /z/ هنا؛ لا توجد ie في تهجئة الكلمة." },
       { de: "Buch", ar: "كتاب", note: "ch بعد u في هذه الكلمة صوت احتكاكي خلفي /x/؛ تقريب الخاء العربية لا يطابقه تماماً." },
       { de: "Schule", ar: "مدرسة", note: "sch في Schule يمثّل /ʃ/، وهو قريب تقريباً من ش." },
-      { de: "Woche", ar: "أسبوع", note: "W تُنطق /v/ وch بعد o هنا /x/؛ لا تعمم الصوت على كل مواضع ch." },
-      { de: "sieben", ar: "سبعة", note: "ie في هذه الكلمة يدل على /iː/ الطويلة، وs في البداية صوت /z/." },
+      { de: "Woche", ar: "أسبوع", note: "W تُنطق /v/ و ch بعد o هنا /x/؛ لا تعمم الصوت على كل مواضع ch." },
+      { de: "sieben", ar: "سبعة", note: "ie في هذه الكلمة يدل على /iː/ الطويلة، و s في البداية صوت /z/." },
     ],
     tip:
-      "استمع إلى كل كلمة وكرّرها، ولاحظ الرمز الصوتي للكلمة نفسها. هذه ملاحظات تقريبية على ست مفردات فقط: ch يتغير باختلاف البيئة، وTTS المتصفح لا يضمن صوتاً موحداً أو حكماً على نطقك. هذا النشاط لا يقيس نصف الامتحان ولا يثبت إتقان النطق.",
+      "استمع إلى كل كلمة وكرّرها، ولاحظ الرمز الصوتي للكلمة نفسها. هذه ملاحظات تقريبية على ست مفردات فقط: ch يتغير باختلاف البيئة، و TTS المتصفح لا يضمن صوتاً موحداً أو حكماً على نطقك. هذا النشاط لا يقيس نصف الامتحان ولا يثبت إتقان النطق.",
   };
 
 export const writing: NonNullable<Lesson["writing"]> = [
@@ -293,7 +293,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
         { correct: "war", options: ["war", "warst", "waren", "wart"] },
         { correct: "hatte", options: ["hatte", "hattest", "hatten", "hattet"] },
       ],
-      hint: "heiße/komme مع ich في الحاضر، وwar/hatte بصيغتي Präteritum في المثالين.",
+      hint: "heiße/komme مع ich في الحاضر، و war/hatte بصيغتي Präteritum في المثالين.",
       explanation: "Ich heiße Sami und komme aus Tunesien. Am Wochenende war ich im Park. Ich hatte ein Fahrrad.",
       errorType: "conjugation",
     },

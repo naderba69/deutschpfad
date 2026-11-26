@@ -12,7 +12,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e1", "m1", "w2"],
         taskIds: ["practice:b1-02:e1", "mini-test:b1-02:m1", "writing:b1-02:w2"],
-        labelAr: "أجب صحيحاً عن e1 (يظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق) وm1 (kam) في الاختبار المصغّر، وأكمل w2 بالأشكال الثلاثة. قراءة جدول t1 أو كشف الحل لا يُحتسبان أداءً.",
+        labelAr: "أجب صحيحاً عن e1 (يظهر أيضاً ضمن أول أربعة تمارين في مسار التدفق) و m1 (kam) في الاختبار المصغّر، وأكمل w2 بالأشكال الثلاثة. قراءة جدول t1 أو كشف الحل لا يُحتسبان أداءً.",
         completion: "all-correct",
       },
     },
@@ -45,7 +45,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["w1", "w3"],
         taskIds: ["writing:b1-02:w1", "writing:b1-02:w3"],
-        labelAr: "أجب عن w1 (جملة قصيرة عن خبرة عمل) وw3 (تحويل جملة قصيرة إلى Präteritum) بصحة. هذا الدليل لا يثبت القدرة على كتابة سيرة مهنية كاملة أو نص حر.",
+        labelAr: "أجب عن w1 (جملة قصيرة عن خبرة عمل) و w3 (تحويل جملة قصيرة إلى Präteritum) بصحة. هذا الدليل لا يثبت القدرة على كتابة سيرة مهنية كاملة أو نص حر.",
         completion: "all-correct",
       },
     },
@@ -53,12 +53,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "في A2 تعلمت war/hatte (ماضي sein/haben). هنا تتدرب على صيغ Präteritum لأفعال منتقاة: المنتظم arbeitete، والشاذ ging وkam. وهناك Plusquamperfekt لبيان حدث سبق مرجعاً ماضياً: «كان قد عمل».",
+      "في A2 تعلمت war/hatte (ماضي sein/haben). هنا تتدرب على صيغ Präteritum لأفعال منتقاة: المنتظم arbeitete، والشاذ ging و kam. وهناك Plusquamperfekt لبيان حدث سبق مرجعاً ماضياً: «كان قد عمل».",
     motivatingQuestionDe: "Wo haben Sie früher gearbeitet?",
     contextAr:
-      "ندخل عالم العمل من خلال أمثلة تدريبية على سرد الخبرة: صيغ Präteritum منتقاة وPlusquamperfekt لإبراز حدث سبق مرجعاً ماضياً.",
+      "ندخل عالم العمل من خلال أمثلة تدريبية على سرد الخبرة: صيغ Präteritum منتقاة و Plusquamperfekt لإبراز حدث سبق مرجعاً ماضياً.",
     contextDe: "Bevor ich studierte, hatte ich als Verkäufer gearbeitet.",
-    connectionToPreviousAr: "تتذكر Perfekt (habe gegessen) وPräteritum للأفعال المساعدة (war). هنا تتدرب على صيغ Präteritum منتقاة وPlusquamperfekt للحدث الأسبق.",
+    connectionToPreviousAr: "تتذكر Perfekt (habe gegessen) و Präteritum للأفعال المساعدة (war). هنا تتدرب على صيغ Präteritum منتقاة و Plusquamperfekt للحدث الأسبق.",
     activateVocabulary: [
       { de: "die Bewerbung", ar: "طلب الوظيفة" },
       { de: "der Arbeitgeber", ar: "صاحب العمل" },

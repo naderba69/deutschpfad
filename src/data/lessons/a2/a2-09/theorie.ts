@@ -11,12 +11,12 @@ export const theory: NonNullable<Lesson["theory"]> = [
       titleDe: "Ausgewählte Verben mit Dativ-Ergänzung",
       explanationAr: `تتكوّن الجملة الألمانية من أدوار نحوية، ويُظهر شكل الأداة أو الضمير بعض هذه العلاقات. في هذا الدرس نراجع صيغاً مختارة من Dativ: مع الاسم المذكر المفرد تتحول أداة التعريف der إلى dem، ومع المحايد das إلى dem، ومع المؤنث die إلى der، وفي الجمع تصبح die den؛ ويأخذ الاسم الجمع عادةً ‑n إضافية إذا لم يكن جمعه منتهياً أصلاً بـ‑n أو ‑s: die Kinder → den Kindern، لكن die Eltern → den Eltern. هذه الأشكال عيّنة تعليمية وليست جدولاً كاملاً لكل الأدوات والصفات والضمائر.
 
-بعض الأفعال تختار متمماً في Dativ، ومن أمثلتها في المعاني المستعملة هنا helfen (يساعد)، gehören (يخصّ/يكون ملكاً لـ)، gefallen (يعجب)، gratulieren (يهنئ)، وdanken (يشكر). تعلّم الفعل مع إطاره: helfen + الشخص في Dativ؛ gehören + المالك في Dativ؛ gratulieren + الشخص في Dativ وغالباً zu + Dativ للمناسبة؛ danken + الشخص في Dativ، ويمكن أن يتبعه für + Akkusativ للشيء الذي نشكره عليه. لا يعني ذلك أن كل كلمة تعبّر عن شخص تأتي في Dativ.
+بعض الأفعال تختار متمماً في Dativ، ومن أمثلتها في المعاني المستعملة هنا helfen (يساعد)، gehören (يخصّ/يكون ملكاً لـ)، gefallen (يعجب)، gratulieren (يهنئ)، و danken (يشكر). تعلّم الفعل مع إطاره: helfen + الشخص في Dativ؛ gehören + المالك في Dativ؛ gratulieren + الشخص في Dativ وغالباً zu + Dativ للمناسبة؛ danken + الشخص في Dativ، ويمكن أن يتبعه für + Akkusativ للشيء الذي نشكره عليه. لا يعني ذلك أن كل كلمة تعبّر عن شخص تأتي في Dativ.
 
 انتبه خصوصاً إلى gefallen: الشيء الذي يثير الإعجاب هو الفاعل في Nominativ، أما الشخص الذي يعجبه الشيء فيأتي في Dativ؛ لذلك يتبع الفعل عدد الشيء: Das Fotoalbum gefällt Frau Yilmaz، لكن Die Blumen gefallen ihr. وفي المقابل، einladen في معنى دعوة شخص يأخذ ذلك الشخص في Akkusativ: Ich lade dich ein، لكن Ich gratuliere dir. سؤال wem? يساعد على فحص المتمم بعد معرفة الفعل، لكنه ليس تفسيراً لسبب اختيار الحالة ولا بديلاً عن حفظ إطار الفعل.`,
-      whyAr: `حفظ صيغة واحدة مثل dem لا يكفي؛ ينبغي معرفة من يطلبها في الجملة. فالفعل هو الذي يحدد الحالة لمتممه في تراكيب مثل Ich helfe dem Vater وIch gratuliere der Nachbarin، بينما تحدد حروف الجر حالة مجموعتها في أمثلة أخرى. ويمنع هذا التفريق خطأً شائعاً: أن يختار المتعلم Dativ أو Akkusativ اعتماداً على ترجمة عربية واحدة أو على سؤال «لمن؟» من دون فحص الفعل.
+      whyAr: `حفظ صيغة واحدة مثل dem لا يكفي؛ ينبغي معرفة من يطلبها في الجملة. فالفعل هو الذي يحدد الحالة لمتممه في تراكيب مثل Ich helfe dem Vater و Ich gratuliere der Nachbarin، بينما تحدد حروف الجر حالة مجموعتها في أمثلة أخرى. ويمنع هذا التفريق خطأً شائعاً: أن يختار المتعلم Dativ أو Akkusativ اعتماداً على ترجمة عربية واحدة أو على سؤال «لمن؟» من دون فحص الفعل.
 
-ويظهر ذلك بوضوح مع gefallen: لا نقول إن الشخص هو الفاعل لمجرد أنه محور الإحساس؛ Das Geschenk هو الفاعل النحوي، وmir/der Nachbarin هو المتمم في Dativ. لهذا نقول Das Geschenk gefällt mir، وDie Blumen gefallen mir. أمّا مع einladen فالشخص المدعو في Akkusativ: Ich lade dich ein. تعلّم الفعل ومتممه واتفاق الفعل في جملة كاملة؛ ولا تعمم قائمة هذه الأمثلة على جميع الأفعال الألمانية.`,
+ويظهر ذلك بوضوح مع gefallen: لا نقول إن الشخص هو الفاعل لمجرد أنه محور الإحساس؛ Das Geschenk هو الفاعل النحوي، و mir/der Nachbarin هو المتمم في Dativ. لهذا نقول Das Geschenk gefällt mir، و Die Blumen gefallen mir. أمّا مع einladen فالشخص المدعو في Akkusativ: Ich lade dich ein. تعلّم الفعل ومتممه واتفاق الفعل في جملة كاملة؛ ولا تعمم قائمة هذه الأمثلة على جميع الأفعال الألمانية.`,
       table: {
         title: "صيغ اسمية وضمائر منتقاة في Dativ",
         columns: ["المجموعة", "Nominativ", "Dativ", "مثال"],
@@ -101,12 +101,12 @@ export const theory: NonNullable<Lesson["theory"]> = [
       titleDe: "Ausgewählte Präpositionen: Dativ und Ortsangabe",
       explanationAr: `تفرض بعض حروف الجر حالة ثابتة على الاسم أو الضمير الذي يليها. من الحروف التي تتكرر في سياق هذا الدرس: mit، bei، von، zu، aus، nach، seit؛ وعند استعمالها حروفَ جرّ تأتي المجموعة الاسمية بعدها في Dativ: mit meiner Schwester، bei den Nachbarn، von den Gästen، zu der Feier / zur Feier، aus dem Hof، nach dem Essen، seit einem Jahr. هذه أمثلة منتقاة وليست قائمة بجميع حروف الجر الألمانية أو بكل معانيها.
 
-تختلف عنها Wechselpräpositionen المحلية التسع: an، auf، hinter، in، neben، über، unter، vor، zwischen. إذا وصفت العبارة مكان وقوع الحدث وسألت Wo? فالصيغة المحلية المعتادة تكون Dativ: Wir feiern im Innenhof (= in dem Innenhof). وإذا حدّدت وجهة أو انتقالاً إلى داخل المكان وسألت Wohin? تأتي Akkusativ: Sie gehen in den Innenhof. لا تجعل «وجود حركة جسدية» وحده قاعدة؛ اسأل هل تصف العبارة المكان أم الهدف. فـWir tanzen im Innenhof تصف مكان الرقص حتى مع الحركة، وWir gehen in den Innenhof تحدد وجهة.
+تختلف عنها Wechselpräpositionen المحلية التسع: an، auf، hinter، in، neben، über، unter، vor، zwischen. إذا وصفت العبارة مكان وقوع الحدث وسألت Wo? فالصيغة المحلية المعتادة تكون Dativ: Wir feiern im Innenhof (= in dem Innenhof). وإذا حدّدت وجهة أو انتقالاً إلى داخل المكان وسألت Wohin? تأتي Akkusativ: Sie gehen in den Innenhof. لا تجعل «وجود حركة جسدية» وحده قاعدة؛ اسأل هل تصف العبارة المكان أم الهدف. فـWir tanzen im Innenhof تصف مكان الرقص حتى مع الحركة، و Wir gehen in den Innenhof تحدد وجهة.
 
-احفظ كذلك بعض الاختصارات الشائعة: in + dem = im، bei + dem = beim، von + dem = vom، zu + dem = zum، وzu + der = zur. والصيغة الكاملة قد تكون صحيحة في سياقها؛ في هذا التدريب نختار الاختصار المعتاد عندما يعرضه السؤال. قارن أيضاً بين bei/mit/von التي تطلب Dativ في هذه التراكيب وبين für التي تطلب Akkusativ: Ich danke dir für die Blumen.`,
-      whyAr: `تساعد حروف الجر على تحديد علاقة المكان أو المصدر أو الرفقة، لكنها لا تختار كلها الحالة بالطريقة نفسها. بعض الحروف في الأمثلة المختارة، مثل mit وbei وvon وzu، تحكم Dativ؛ بينما in المحلية قد تتناوب بين Dativ وAkkusativ بحسب كون العبارة مكاناً أو وجهة. لذلك لا تحفظ «Dativ = حركة» أو «بعد كل حرف جر Dativ»؛ افحص الحرف ومعناه المحلي في الجملة.
+احفظ كذلك بعض الاختصارات الشائعة: in + dem = im، bei + dem = beim، von + dem = vom، zu + dem = zum، و zu + der = zur. والصيغة الكاملة قد تكون صحيحة في سياقها؛ في هذا التدريب نختار الاختصار المعتاد عندما يعرضه السؤال. قارن أيضاً بين bei/mit/von التي تطلب Dativ في هذه التراكيب وبين für التي تطلب Akkusativ: Ich danke dir für die Blumen.`,
+      whyAr: `تساعد حروف الجر على تحديد علاقة المكان أو المصدر أو الرفقة، لكنها لا تختار كلها الحالة بالطريقة نفسها. بعض الحروف في الأمثلة المختارة، مثل mit و bei و von و zu، تحكم Dativ؛ بينما in المحلية قد تتناوب بين Dativ و Akkusativ بحسب كون العبارة مكاناً أو وجهة. لذلك لا تحفظ «Dativ = حركة» أو «بعد كل حرف جر Dativ»؛ افحص الحرف ومعناه المحلي في الجملة.
 
-في Wir feiern im Innenhof لا تصف العبارة اتجاهاً إلى الساحة، بل تحدد مكان الاحتفال. أما Wir gehen in den Innenhof فتحدد الوجهة؛ وقد بقي الحرف in نفسه وتغيّرت أداة الاسم. كذلك لا تخلط بين bei den Kindern (Dativ بعد bei) وfür die Kinder (Akkusativ بعد für). تعمل أسئلة Wo? وWohin? بوصفها وسيلة فحص مع الاستعمال المحلي لحروف التبديل، لا قاعدةً لجميع حروف الجر.`,
+في Wir feiern im Innenhof لا تصف العبارة اتجاهاً إلى الساحة، بل تحدد مكان الاحتفال. أما Wir gehen in den Innenhof فتحدد الوجهة؛ وقد بقي الحرف in نفسه وتغيّرت أداة الاسم. كذلك لا تخلط بين bei den Kindern (Dativ بعد bei) و für die Kinder (Akkusativ بعد für). تعمل أسئلة Wo? و Wohin? بوصفها وسيلة فحص مع الاستعمال المحلي لحروف التبديل، لا قاعدةً لجميع حروف الجر.`,
       table: {
         title: "أمثلة على حرف الجر والحالة",
         columns: ["الاستعمال", "التركيب", "مثال", "المعنى"],
@@ -132,7 +132,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
         { de: "Die Stühle stehen an der Wand.", ar: "توجد الكراسي بمحاذاة الجدار." },
         { de: "Sie bedankt sich bei den Kindern für die Hilfe.", ar: "تشكر الأطفال على المساعدة." },
       ],
-      comparisonWithArabic: `في العربية قد يتغير حرف الجر بين «في الساحة» و«إلى الساحة»، بينما تستخدم الألمانية الحرف المحلي نفسه in وتظهر المقابلة في الأداة: im Innenhof للمكان، وin den Innenhof للوجهة. لكن هذا التشابه في ترجمة موضعية لا يعني تطابق النظامين. كما أن معنى «مع» يقابل mit + Dativ في Ich komme mit meiner Schwester، ويقابل معنى «مخصّص للأطفال» für + Akkusativ في Das Geschenk ist für die Kinder. وفي جملة «أساعد الأطفال» لا نضيف بالضرورة لاماً عربية لمجرد أن الفعل الألماني helfen يأخذ Dativ. استخدم الترجمة لشرح المعنى لا لنسخ الحالة؛ احفظ كل حرف مع الحالة التي يحكمها في الاستعمال المعروض، وافحص Wo?/Wohin? فقط عند حروف التبديل المحلية.`,
+      comparisonWithArabic: `في العربية قد يتغير حرف الجر بين «في الساحة» و«إلى الساحة»، بينما تستخدم الألمانية الحرف المحلي نفسه in وتظهر المقابلة في الأداة: im Innenhof للمكان، و in den Innenhof للوجهة. لكن هذا التشابه في ترجمة موضعية لا يعني تطابق النظامين. كما أن معنى «مع» يقابل mit + Dativ في Ich komme mit meiner Schwester، ويقابل معنى «مخصّص للأطفال» für + Akkusativ في Das Geschenk ist für die Kinder. وفي جملة «أساعد الأطفال» لا نضيف بالضرورة لاماً عربية لمجرد أن الفعل الألماني helfen يأخذ Dativ. استخدم الترجمة لشرح المعنى لا لنسخ الحالة؛ احفظ كل حرف مع الحالة التي يحكمها في الاستعمال المعروض، وافحص Wo?/Wohin? فقط عند حروف التبديل المحلية.`,
       eselsbruecke:
         "للحروف الثابتة في أمثلتنا تذكّر: mit/bei/von/zu + Dativ؛ ولـin المحلية اسأل Wo? للمكان (im Hof) أم Wohin? للوجهة (in den Hof). أما für في المثال فيأتي مع Akkusativ: für die Blumen.",
       commonMistakes: [
@@ -146,7 +146,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
           wrong: "Frau Yilmaz hilft bei das Dekorieren.",
           right: "Frau Yilmaz hilft beim Dekorieren.",
           whyAr:
-            "يحكم bei حالة Dativ؛ وDekorieren هنا مصدر مستعمل اسماً، لذلك يكتب بحرف كبير. الصيغة الكاملة هي bei dem Dekorieren، والاختصار الشائع beim Dekorieren؛ أما bei das Dekorieren فخطأ في الحالة.",
+            "يحكم bei حالة Dativ؛ و Dekorieren هنا مصدر مستعمل اسماً، لذلك يكتب بحرف كبير. الصيغة الكاملة هي bei dem Dekorieren، والاختصار الشائع beim Dekorieren؛ أما bei das Dekorieren فخطأ في الحالة.",
         },
         {
           wrong: "Wir feiern in den Innenhof.",
@@ -168,7 +168,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
         },
       ],
       relatedRuleComparison: {
-        title: "حرف ثابت مقابل حرف متبدّل: mit وin وfür",
+        title: "حرف ثابت مقابل حرف متبدّل: mit و in و für",
         content:
           "mit يحكم Dativ في المثال: mit meiner Schwester. أما in المحلية فقد تأتي مع Dativ للمكان (im Innenhof) أو Akkusativ للوجهة (in den Innenhof). ويأخذ für Akkusativ في für die Blumen. لا تستنتج الحالة من وجود حرف جر فقط؛ احفظ الحرف، ثم افحص معنى المكان/الوجهة إذا كان من حروف التبديل.",
       },

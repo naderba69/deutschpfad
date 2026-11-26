@@ -14,7 +14,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       whyAr:
         "لماذا هذا الأسلوب؟ لأنه «مكثف»: كلمة واحدة تعوض جملة كاملة. «der viel gelesene Autor» = الكاتب الذي يُقرأ كثيراً — ثلاث كلمات بدل خمس. وتميل الكتابة الأدبية والصحفية إلى هذا الإيجاز لأنها تريد أن تحمل المعلومة داخل الاسم لا في جملة منفصلة بعده. ولذلك يظهر الفرق جلياً في العنوان الصحفي: «Die gestiegenen Preise beunruhigen die Kunden» أقوى وأسرع من «Die Preise, die gestiegen sind, beunruhigen die Kunden». وقد تكون الجملة الموصولة أوضح في بعض السياقات، بينما يتيح النعت المشتق صياغة أكثر اختصاراً؛ لا توجد قاعدة ثابتة تقسم الاختيار إلى كلام يومي وكتابة. ومن يتقن التركيبين يستطيع أن ينتقل بين الرسمي واليومي بوعي، لا أن يبقى أسير نمط واحد؛ ويمكن اختيار الصياغة بحسب المقام والوضوح المطلوب؛ لا تُعرض هنا بوصفها شرطاً عاماً لمستوى لغوي بعينه.",
       table: {
-        title: "Partizip I وII كصفات",
+        title: "Partizip I و II كصفات",
         columns: ["النوع", "التركيب", "مثال", "المعنى"],
         rows: [
           { label: "Partizip I (غالباً دلالته فاعلية)", cells: ["جذر + end", "das spielende Kind", "الطفل اللاعب"] },
@@ -65,8 +65,8 @@ export const theory: NonNullable<Lesson["theory"]> = [
       examples: [
         { de: "Die steigende Arbeitslosigkeit ist ein Problem.", ar: "البطالة المتزايدة مشكلة." }, { de: "Das vorgeschlagene Gesetz wird diskutiert.", ar: "القانون المقترح قيد النقاش." }, { de: "Die steigenden Preise beunruhigen die Kunden.", ar: "الأسعار المرتفعة تقلق الزبائن." }, { de: "Das vom Chef unterschriebene Dokument liegt hier.", ar: "الوثيقة الموقّعة من المدير موجودة هنا." }, { de: "Die zu treffende Entscheidung ist schwierig.", ar: "القرار الواجب اتخاذه صعب." }, { de: "Die in der Studie gemessene Wirkung war überraschend.", ar: "الأثر الذي قِيس في الدراسة كان مفاجئاً." }
       ],
-      comparisonWithArabic: "العربية تملك اسم الفاعل (العامل) واسم المفعول (المقروء)، وهو تقابل قريب من Partizip I وPartizip II. الفارق أن الألمانية تسمح بإدخال عبارة كاملة بين الأداة والاسم: das vom Chef unterschriebene Dokument — وهذا التركيب أقل شيوعاً في العربية، فنلجأ غالباً إلى جملة موصولة.",
-      eselsbruecke: "Partizip I يُصنع بإضافة d إلى المصدر (arbeiten صار arbeitend) ويدل على فعل جارٍ. وPartizip II قد يدل على نتيجة أو حالة، لكن ليس كل استعمال له اسماً مفعولاً أو حدثاً منتهياً. ثم صرّف كليهما كأي صفة عادية قبل الاسم.",
+      comparisonWithArabic: "العربية تملك اسم الفاعل (العامل) واسم المفعول (المقروء)، وهو تقابل قريب من Partizip I و Partizip II. الفارق أن الألمانية تسمح بإدخال عبارة كاملة بين الأداة والاسم: das vom Chef unterschriebene Dokument — وهذا التركيب أقل شيوعاً في العربية، فنلجأ غالباً إلى جملة موصولة.",
+      eselsbruecke: "Partizip I يُصنع بإضافة d إلى المصدر (arbeiten صار arbeitend) ويدل على فعل جارٍ. و Partizip II قد يدل على نتيجة أو حالة، لكن ليس كل استعمال له اسماً مفعولاً أو حدثاً منتهياً. ثم صرّف كليهما كأي صفة عادية قبل الاسم.",
       commonMistakes: [
         { wrong: "der arbeitend Mann", right: "der arbeitende Mann", whyAr: "الصفة المشتقة تُصرَّف كأي صفة، فتأخذ النهاية في محلّها: der arbeitende Mann في الرفع المذكّر. وحذف النهاية خطأ شائع عند من يعامل المشارك كفعل لا كصفة، لأن الفعل لا يأخذ نهاية." },
         { wrong: "die gelesende Zeitung", right: "die gelesene Zeitung", whyAr: "المقصود أثر منتهٍ فيلزم Partizip II (gelesen) لا Partizip I." },

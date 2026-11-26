@@ -26,7 +26,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
         { correct: "lernst", options: ["lernst", "lerne", "lernt", "lernen"] },
         { correct: "spielt", options: ["spielt", "spiele", "spielst", "spielen"] },
       ],
-      explanation: "الصيغ في الأمثلة هي ich komme، du lernst، er spielt. لا تمثل هذه التصريفات كل أنماط الأفعال؛ راجع صيغ sein وhaben الخاصة.",
+      explanation: "الصيغ في الأمثلة هي ich komme، du lernst، er spielt. لا تمثل هذه التصريفات كل أنماط الأفعال؛ راجع صيغ sein و haben الخاصة.",
       errorType: "conjugation",
     },
     {
@@ -50,7 +50,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
         { correct: "war", options: ["war", "warst", "waren", "wart"] },
         { correct: "hatte", options: ["hatte", "hattest", "hatten", "hattet"] },
       ],
-      explanation: "war صيغة Präteritum من sein، وhatte صيغة Präteritum من haben؛ وهما الصيغتان المستهدفتان هنا.",
+      explanation: "war صيغة Präteritum من sein، و hatte صيغة Präteritum من haben؛ وهما الصيغتان المستهدفتان هنا.",
       errorType: "conjugation",
     },
     {

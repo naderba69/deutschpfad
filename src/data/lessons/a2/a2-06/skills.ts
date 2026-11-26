@@ -446,7 +446,7 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
         de: "die Zeitung",
         ar: "الصحيفة",
         note:
-          "IPA: [ˈt͡saɪ̯tʊŋ]. يبدأ اللفظ بصوت [t͡s]، وei تمثل الحركة المركبة [aɪ̯]؛ وفي نهاية -ung يظهر [ʊŋ] مع أنفي طبقي [ŋ].",
+          "IPA: [ˈt͡saɪ̯tʊŋ]. يبدأ اللفظ بصوت [t͡s]، و ei تمثل الحركة المركبة [aɪ̯]؛ وفي نهاية -ung يظهر [ʊŋ] مع أنفي طبقي [ŋ].",
       },
       {
         de: "das Fernsehen",
@@ -464,7 +464,7 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
         de: "die Werbung",
         ar: "الدعاية / الإعلان",
         note:
-          "IPA: [ˈvɛʁbʊŋ]. الحرف w هنا [v]، وb صوت مجهور [b] لا [p]؛ والنهاية -ung هي [ʊŋ] لا مقطعاً مستقلاً ng.",
+          "IPA: [ˈvɛʁbʊŋ]. الحرف w هنا [v]، و b صوت مجهور [b] لا [p]؛ والنهاية -ung هي [ʊŋ] لا مقطعاً مستقلاً ng.",
       },
       {
         de: "das Radio",

@@ -34,14 +34,14 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e3", "e4", "e12", "e21", "e24", "mt-a1-14-1"],
         taskIds: ["practice:a1-14:e3", "practice:a1-14:e4", "practice:a1-14:e12", "practice:a1-14:e21", "practice:a1-14:e24", "mini-test:a1-14:mt-a1-14-1", "flow-mini-test:a1-14:mt-a1-14-1"],
-        labelAr: "اختيار/تصحيح haben وsein في جمل انتقالية ونشاطية وأمثلة متقابلة، بما فيها فعل يتغير مساعده بحسب المعنى.",
+        labelAr: "اختيار/تصحيح haben و sein في جمل انتقالية ونشاطية وأمثلة متقابلة، بما فيها فعل يتغير مساعده بحسب المعنى.",
         completion: "all-correct",
       },
     },
     {
       id: "z4",
       de: "Ich kann wollen und sollen in einfachen Sätzen passend konjugieren, den Infinitiv ans Ende stellen und eine häufige höfliche Bitte erkennen.",
-      ar: "أن أستعمل wollen وsollen في مطالب قصيرة، وأضع المصدر في آخر الجملة، وأتعرف على صيغة طلب مهذبة شائعة.",
+      ar: "أن أستعمل wollen و sollen في مطالب قصيرة، وأضع المصدر في آخر الجملة، وأتعرف على صيغة طلب مهذبة شائعة.",
       evidence: {
         exerciseIds: ["e15", "e16", "e17", "e18", "e19", "mt-a1-14-5"],
         taskIds: ["practice:a1-14:e15", "practice:a1-14:e16", "practice:a1-14:e17", "practice:a1-14:e18", "practice:a1-14:e19", "mini-test:a1-14:mt-a1-14-5", "flow-mini-test:a1-14:mt-a1-14-5"],
@@ -89,9 +89,9 @@ export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
       "سؤالٌ مفيد للتدرّب على الحديث عن عطلة الأسبوع: «Was hast du am Wochenende gemacht?» — ماذا فعلتَ في نهاية الأسبوع؟ يتيح لك هذا الدرس تكوين إجابات بسيطة بالماضي المركّب Perfekt، من دون افتراض أن هذا السؤال يظهر في كل لقاء أو امتحان.",
     motivatingQuestionDe: "Was hast du am Wochenende gemacht?",
     contextAr:
-      "Perfekt صيغة ماضٍ مركّبة شائعة في كثير من المحادثات اليومية، لكنها ليست الصيغة الوحيدة؛ فقد يظهر Präteritum أيضاً في الحديث والكتابة، ويتغيّر الاستعمال بحسب الفعل والسياق والمنطقة. نتمرّن هنا على بناء Perfekt: فعل مساعد مصرّف وPartizip II. في الجملة الرئيسية الخبرية يأتي المساعد في المركز الثاني ويقع Partizip II عادةً في نهاية المجال الفعلي؛ أمّا في الجملة الفرعية فقد يأتي المساعد بعد Partizip II في النهاية: weil ich Deutsch gelernt habe.",
+      "Perfekt صيغة ماضٍ مركّبة شائعة في كثير من المحادثات اليومية، لكنها ليست الصيغة الوحيدة؛ فقد يظهر Präteritum أيضاً في الحديث والكتابة، ويتغيّر الاستعمال بحسب الفعل والسياق والمنطقة. نتمرّن هنا على بناء Perfekt: فعل مساعد مصرّف و Partizip II. في الجملة الرئيسية الخبرية يأتي المساعد في المركز الثاني ويقع Partizip II عادةً في نهاية المجال الفعلي؛ أمّا في الجملة الفرعية فقد يأتي المساعد بعد Partizip II في النهاية: weil ich Deutsch gelernt habe.",
     contextDe: "Ich bin nach Berlin gefahren und habe viel gesehen.",
-    connectionToPreviousAr: "يعيد الدرس استخدام مفردات وصيغ سبق أن ظهرت في أمثلة A1، مثل الأفعال المنفصلة وبعض الأفعال الناقصة. راجعها عند الحاجة؛ فمعرفة المفردة أو المضارع وحدهما لا تعني إتقان Perfekt. هنا نتدرّب على المساعد وPartizip II في سياقات محددة.",
+    connectionToPreviousAr: "يعيد الدرس استخدام مفردات وصيغ سبق أن ظهرت في أمثلة A1، مثل الأفعال المنفصلة وبعض الأفعال الناقصة. راجعها عند الحاجة؛ فمعرفة المفردة أو المضارع وحدهما لا تعني إتقان Perfekt. هنا نتدرّب على المساعد و Partizip II في سياقات محددة.",
     activateVocabulary: [
       { de: "gestern", ar: "أمس" },
       { de: "letztes Wochenende", ar: "عطلة الأسبوع الماضية" },

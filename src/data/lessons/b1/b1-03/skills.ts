@@ -177,7 +177,7 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "أصوات البيئة: ü، pf، وw",
+    title: "أصوات البيئة: ü، pf، و w",
     items: [
       { de: "die Umwelt", ar: "البيئة", note: "IPA: /ˈʊmvɛlt/؛ التقريب العربي تقريبي فقط." },
       { de: "der Müll", ar: "النفايات", note: "ü قصيرة /ʏ/: /mʏl/؛ لا يقابلها صوت عربي مطابق." },

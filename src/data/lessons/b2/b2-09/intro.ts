@@ -13,7 +13,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["w1", "w3", "e7"],
         taskIds: ["writing:b2-09:w1", "writing:b2-09:w3", "practice:b2-09:e7"],
-        labelAr: "أصوغ عبارة افتتاحية، وجملة رسمية، وختاماً مختاراً (w1 وw3 وe7)، دون كشف الحل. لا يقيس هذا كتابة ملف تقديم كامل.",
+        labelAr: "أصوغ عبارة افتتاحية، وجملة رسمية، وختاماً مختاراً (w1 و w3 و e7)، دون كشف الحل. لا يقيس هذا كتابة ملف تقديم كامل.",
       },
     },
     {
@@ -37,7 +37,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b2-09:m5",
           "writing:b2-09:w2",
         ],
-        labelAr: "أختار الوصلة الصحيحة وأرتب الجملة وأصحح الحرف أو الصيغة (e1 إلى e6 وe9 وm1 وm2 وm4 وm5 وw2)، دون كشف الحل.",
+        labelAr: "أختار الوصلة الصحيحة وأرتب الجملة وأصحح الحرف أو الصيغة (e1 إلى e6 و e9 و m1 و m2 و m4 و m5 و w2)، دون كشف الحل.",
       },
     },
     {
@@ -48,7 +48,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["q1", "q2", "q3", "q4"],
         taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"],
-        labelAr: "أجيب عن أسئلة l1 وl2 قبل كشف النص؛ يعتمد الصوت فيهما على تحويل النص إلى كلام في المتصفح. يضم هذا الدليل q4 من l3؛ مقاطعه TTS مولّدة من نصها الحالي وطابقها ASR محلياً، وهذا لا يقيّم جودة النطق. كشف النص لا يُحتسب أداءً.",
+        labelAr: "أجيب عن أسئلة l1 و l2 قبل كشف النص؛ يعتمد الصوت فيهما على تحويل النص إلى كلام في المتصفح. يضم هذا الدليل q4 من l3؛ مقاطعه TTS مولّدة من نصها الحالي وطابقها ASR محلياً، وهذا لا يقيّم جودة النطق. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -63,14 +63,14 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "practice:b2-09:e10",
           "mini-test:b2-09:m4",
         ],
-        labelAr: "أتعرف معنى das Anschreiben وأكتب ما أسمعه في مثال على zur Verfügung stellen وأصحح صيغة zur (e8 وe10 وm4)، دون كشف الحل. هذا لا يقيس استعمالاً حراً للوصلة.",
+        labelAr: "أتعرف معنى das Anschreiben وأكتب ما أسمعه في مثال على zur Verfügung stellen وأصحح صيغة zur (e8 و e10 و m4)، دون كشف الحل. هذا لا يقيس استعمالاً حراً للوصلة.",
       },
     },
   ];
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "كيف نصف مؤهلاتنا ونردّ في مقابلة عمل؟ سنتدرب على تعبيرات منتقاة مثل in Betracht ziehen (يأخذ بعين الاعتبار)، zur Verfügung stellen (يضع تحت التصرف)، eine Rolle spielen (يلعب دوراً)، وWert auf etwas legen (يولي أهمية لشيء).",
+      "كيف نصف مؤهلاتنا ونردّ في مقابلة عمل؟ سنتدرب على تعبيرات منتقاة مثل in Betracht ziehen (يأخذ بعين الاعتبار)، zur Verfügung stellen (يضع تحت التصرف)، eine Rolle spielen (يلعب دوراً)، و Wert auf etwas legen (يولي أهمية لشيء).",
     motivatingQuestionDe: "Wie bewerbe ich mich um eine Stelle und stelle meine Erfahrung vor?",
     contextAr:
       "مواقف تدريبية في التقديم الوظيفي: مفردات عن الوظيفة والسيرة الذاتية، وبعض عبارات الطلب والمقابلة. لا يغطي الدرس ملف تقديم كاملاً.",

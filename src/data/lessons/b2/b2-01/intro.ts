@@ -13,7 +13,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["q1", "q2", "q3", "q4"],
         taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"],
-        labelAr: "أجيب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن q1 و q2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -34,7 +34,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b2-01:m4",
           "mini-test:b2-01:m5",
         ],
-        labelAr: "أجيب صحيحاً عن تمارين Konjunktiv I (e1 وe2 وe5 وe6 وe7 وm1 وm2 وm4 وm5)، دون كشف الحل.",
+        labelAr: "أجيب صحيحاً عن تمارين Konjunktiv I (e1 و e2 و e5 و e6 و e7 و m1 و m2 و m4 و m5)، دون كشف الحل.",
       },
     },
     {
@@ -45,7 +45,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["w1", "w2"],
         taskIds: ["writing:b2-01:w1", "writing:b2-01:w2"],
-        labelAr: "أكتب التحويل والإكمال بالصيغة المقبولة (w1 وw2)، دون كشف الحل.",
+        labelAr: "أكتب التحويل والإكمال بالصيغة المقبولة (w1 و w2)، دون كشف الحل.",
       },
     },
     {
@@ -56,7 +56,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["e11", "e12"],
         taskIds: ["practice:b2-01:e11", "practice:b2-01:e12"],
-        labelAr: "أجيب صحيحاً عن تمرين درجات الاحتمال وتمرين ترتيب dürfte (e11 وe12)، دون كشف الحل.",
+        labelAr: "أجيب صحيحاً عن تمرين درجات الاحتمال وتمرين ترتيب dürfte (e11 و e12)، دون كشف الحل.",
       },
     },
   ];

@@ -13,13 +13,13 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["q1", "q2", "q3", "q4"],
         taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4"],
-        labelAr: "أجيب صحيحاً عن q1 بعد الاستماع إلى l1، وعن q2 وq3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن q1 بعد الاستماع إلى l1، وعن q2 و q3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
       id: "z2",
       de: "Ich kann temporale Nebensätze mit als, wenn, während, bevor und nachdem richtig bilden.",
-      ar: "أن أستخدم الجمل الزمنية als وwenn وwährend وbevor وnachdem بالأداة المناسبة للمعنى وترتيب الفعل الصحيح.",
+      ar: "أن أستخدم الجمل الزمنية als و wenn و während و bevor و nachdem بالأداة المناسبة للمعنى وترتيب الفعل الصحيح.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["e1", "e2", "e7", "m1", "m3", "m5", "w2"],
@@ -32,7 +32,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b1-07:m5",
           "writing:b1-07:w2",
         ],
-        labelAr: "أجيب صحيحاً عن تمارين الجمل الزمنية (e1 وe2 وe7 وm1 وm3 وm5 وw2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن تمارين الجمل الزمنية (e1 و e2 و e7 و m1 و m3 و m5 و w2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
       },
     },
     {
@@ -43,7 +43,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["e13", "e14"],
         taskIds: ["practice:b1-07:e13", "practice:b1-07:e14"],
-        labelAr: "أجيب صحيحاً عن e13 وe14 دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن e13 و e14 دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
       },
     },
     {
@@ -61,12 +61,12 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "في A2 تعلمت weil وwenn. اليوم نراجع أدوات زمنية منها als لوقت أو حالة ماضية محددة، وwenn للحاضر والمستقبل والشرط والتكرار في الماضي، إلى جانب während وbevor وnachdem وbis. وتأتي الجملة الرئيسية بالفعل المصرف في الموقع الثاني بعد التابعة المتقدمة.",
+      "في A2 تعلمت weil و wenn. اليوم نراجع أدوات زمنية منها als لوقت أو حالة ماضية محددة، و wenn للحاضر والمستقبل والشرط والتكرار في الماضي، إلى جانب während و bevor و nachdem و bis. وتأتي الجملة الرئيسية بالفعل المصرف في الموقع الثاني بعد التابعة المتقدمة.",
     motivatingQuestionDe: "Was denkst du über Politik?",
     contextAr:
       "المجتمع والسياسة: مفردات أساسية + الجمل الزمنية والسببية والتخالفية — مهمة لفهم النصوص الإخبارية والرأي.",
     contextDe: "Als ich jung war, war die Politik anders.",
-    connectionToPreviousAr: "تتذكر weil/wenn/ob من A2 وdass من درس الإعلام. اليوم: بقية الجمل الثانوية — وخاصة التمييز بين als لوقت ماضٍ محدد وwenn للشرط أو التكرار في الماضي، فضلاً عن استعمالها للحاضر والمستقبل.",
+    connectionToPreviousAr: "تتذكر weil/wenn/ob من A2 و dass من درس الإعلام. اليوم: بقية الجمل الثانوية — وخاصة التمييز بين als لوقت ماضٍ محدد و wenn للشرط أو التكرار في الماضي، فضلاً عن استعمالها للحاضر والمستقبل.",
     activateVocabulary: [
       { de: "die Politik", ar: "السياسة" },
       { de: "die Gesellschaft", ar: "المجتمع" },

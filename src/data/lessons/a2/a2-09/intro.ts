@@ -48,14 +48,14 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:a2-09:m5",
         ],
         labelAr:
-          "أكمل أدوات الأسماء في e1/e2/e6، ثم ضمائر Dativ في w2 وm5، واختر الأداة في m1؛ التدفق لا يعرض كل بنك التدريب.",
+          "أكمل أدوات الأسماء في e1/e2/e6، ثم ضمائر Dativ في w2 و m5، واختر الأداة في m1؛ التدفق لا يعرض كل بنك التدريب.",
         completion: "all-correct",
       },
     },
     {
       id: "z3",
       de: "Ich kann ausgewählte Dativ-Ergänzungen bei helfen, gehören, gefallen, gratulieren und danken erkennen.",
-      ar: "أميّز متمم Dativ في تراكيب مختارة مع helfen وgehören وgefallen وgratulieren وdanken.",
+      ar: "أميّز متمم Dativ في تراكيب مختارة مع helfen و gehören و gefallen و gratulieren و danken.",
       evidence: {
         exerciseIds: ["e2", "e5", "e7", "e11", "e13", "m2", "m4"],
         taskIds: [
@@ -128,13 +128,13 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
     motivatingQuestionAr:
-      "كيف تكتب دعوةً بسيطة وتردّ عليها بوضوح؟ وما الفرق بين Ich lade dich ein وIch gratuliere dir؟ ابدأ بالفعل، ثم لاحظ المتمم الذي يطلبه.",
+      "كيف تكتب دعوةً بسيطة وتردّ عليها بوضوح؟ وما الفرق بين Ich lade dich ein و Ich gratuliere dir؟ ابدأ بالفعل، ثم لاحظ المتمم الذي يطلبه.",
     motivatingQuestionDe: "Wie lädst du jemanden zu einer Feier ein?",
     contextAr:
       "تدور الأمثلة حول عيد ميلاد خيالي: دعوة الجيران، الحديث عن هدية، والردّ بأدب. نراجع تراكيب Dativ سبق أن ظهرت، ونضيف إليها أسماءً وحروف جرّ في سياقات محددة.",
     contextDe: "Herzlichen Glückwunsch zum Geburtstag!",
     connectionToPreviousAr:
-      "هذا درس تراكمي لا أول لقاء بـDativ: ظهر Dativ المكاني في A1-04، وظهر helfen في A1-06 وgefallen/passen في A1-08، ثم تدربت على ضمائر مثل Ich helfe dir في A2-07. هنا نطبّق صيغاً اسمية وأفعالاً وحروف جر منتقاة ضمن دعوة واحتفال؛ ولا ندّعي تغطية كل وظائف الحالة.",
+      "هذا درس تراكمي لا أول لقاء بـDativ: ظهر Dativ المكاني في A1-04، وظهر helfen في A1-06 و gefallen/passen في A1-08، ثم تدربت على ضمائر مثل Ich helfe dir في A2-07. هنا نطبّق صيغاً اسمية وأفعالاً وحروف جر منتقاة ضمن دعوة واحتفال؛ ولا ندّعي تغطية كل وظائف الحالة.",
     activateVocabulary: [
       { de: "das Fest", ar: "المناسبة / الاحتفال" },
       { de: "die Einladung", ar: "الدعوة" },

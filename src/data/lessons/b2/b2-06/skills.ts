@@ -119,7 +119,7 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "أصوات المهنة: sch، ei، وss",
+    title: "أصوات المهنة: sch، ei، و ss",
     items: [
       { de: "die Karriere", ar: "المسار المهني", note: "كلمة فرنسية: كارييرِه" },
       { de: "verhandeln", ar: "يتفاوض", note: "v = ف: فِر-هاندلن" },
@@ -128,7 +128,7 @@ export const pronunciation: Lesson["pronunciation"] = {
       { de: "die Entscheidung", ar: "القرار", note: "sch = ش: إنت-شايدونغ" },
       { de: "die Probezeit", ar: "فترة التجربة", note: "ei = آي: پروبِه-تسايت" },
     ],
-    tip: "Verbesserung = فِر-بِسّرونغ — ss مهموسة (س، لا ز). وEntscheidung = إنت-شايدونغ — sch ثم ei.",
+    tip: "Verbesserung = فِر-بِسّرونغ — ss مهموسة (س، لا ز). و Entscheidung = إنت-شايدونغ — sch ثم ei.",
     shadowing: [
       { de: "Beim Lesen lernt man.", ar: "بالقراءة يتعلم المرء.", tip: "beim Lesen — اسم كبير" },
       { de: "Die Verbesserung der Bedingungen ist wichtig.", ar: "تحسين الظروف مهم.", tip: "die Verbesserung — اسم" },
@@ -178,7 +178,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
         { correct: "Arbeiten", options: ["Arbeiten", "Arbeit", "Arbeiter"] },
         { correct: "Konzentration", options: ["Konzentration", "Konzentrieren", "Konzentrat"] },
       ],
-      explanation: "Das Arbeiten (العمل — من الفعل arbeiten) وdie Konzentration (التركيز) — اشتقاق اسمي بأسلوب رسمي.",
+      explanation: "Das Arbeiten (العمل — من الفعل arbeiten) و die Konzentration (التركيز) — اشتقاق اسمي بأسلوب رسمي.",
       errorType: "grammar",
       points: 2,
     },

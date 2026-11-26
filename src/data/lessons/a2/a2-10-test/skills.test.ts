@@ -27,12 +27,12 @@ describe("A2-10 lesson content audit", () => {
       "der Lehrer": "المعلم",
     };
     const expectedNotes: Record<string, string> = {
-      "die Prüfung": "IPA: [ˈpʁyːfʊŋ]. النبر على المقطع الأول؛ ü هي /yː/ طويلة ومدوّرة، وng تمثل /ŋ/. يختلف نطق r إقليمياً.",
+      "die Prüfung": "IPA: [ˈpʁyːfʊŋ]. النبر على المقطع الأول؛ ü هي /yː/ طويلة ومدوّرة، و ng تمثل /ŋ/. يختلف نطق r إقليمياً.",
       "der Unterricht": "IPA: [ˈʊntɐˌʁɪçt]. في هذا الموضع ch هي /ç/ (الصوت الألماني في ich)، وليست /ʃ/.",
-      studieren: "IPA: [ʃtuˈdiːʁən]. النبر على مقطع -die-، وie تمثل /iː/ طويلة.",
+      studieren: "IPA: [ʃtuˈdiːʁən]. النبر على مقطع -die-، و ie تمثل /iː/ طويلة.",
       "die Vokabel (Plural: die Vokabeln)": "IPA للمفرد: [voˈkaːbl̩]. v في هذه الكلمة /v/، والنبر على المقطع الثاني؛ لا تُعمّم هذا النطق على كل كلمة فيها v.",
       bestehen: "IPA: [bəˈʃteːən]. النبر على -ste-؛ ويُنطق st في بداية المقطع المنبور /ʃt/.",
-      "der Lehrer": "IPA: [ˈleːʁɐ]. النبر على المقطع الأول، وe فيه طويلة؛ يتغير تحقيق r بحسب المتحدث والمنطقة.",
+      "der Lehrer": "IPA: [ˈleːʁɐ]. النبر على المقطع الأول، و e فيه طويلة؛ يتغير تحقيق r بحسب المتحدث والمنطقة.",
     };
     expect(Object.keys(expectedIpa).sort()).toEqual(lessonA210.pronunciation.items.map((item) => item.de).sort());
     expect(lessonA210.pronunciation.items.map((item) => [item.de, item.ar])).toEqual(
@@ -56,8 +56,8 @@ describe("A2-10 lesson content audit", () => {
     expect(shadowing?.map(({ de, ar, tip }) => [de, ar, tip])).toEqual([
       ["Ich lerne weiter, weil ich die Prüfung bestehen will.", "أواصل التعلم لأنني أريد اجتياز الامتحان.", "في هذا النمط التابع يأتي الفعل المصرف will في النهاية، بعد bestehen."],
       ["Wenn ich Zeit habe, wiederhole ich Vokabeln.", "إذا توفر لديّ وقت، أراجع المفردات.", "ينتهي الجزء التابع بـhabe؛ وبعده يأتي فعل الجملة الرئيسية wiederhole قبل الفاعل ich."],
-      ["Ich weiß nicht, ob er kommt.", "لا أعرف ما إذا كان سيأتي.", "ei في weiß هو /aɪ̯/؛ وw في الألمانية القياسية يُنطق /v/."],
-      ["Die Prüfung ist leicht.", "الامتحان سهل.", "ei في leicht هو /aɪ̯/، وch هنا /ç/ لا /x/."],
+      ["Ich weiß nicht, ob er kommt.", "لا أعرف ما إذا كان سيأتي.", "ei في weiß هو /aɪ̯/؛ و w في الألمانية القياسية يُنطق /v/."],
+      ["Die Prüfung ist leicht.", "الامتحان سهل.", "ei في leicht هو /aɪ̯/، و ch هنا /ç/ لا /x/."],
     ]);
   });
 

@@ -166,7 +166,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
           "Sie fragst uns immer"
         ],
         "correctIndex": 1,
-        "explanation": "الفاعل sie (هي) مفرد غائب، فيأخذ الفعل النهاية ‑t: sie fragt. أمّا fragen فللجمع، وfragst لـ du، وfrag بلا نهاية صيغة أمر.",
+        "explanation": "الفاعل sie (هي) مفرد غائب، فيأخذ الفعل النهاية ‑t: sie fragt. أمّا fragen فللجمع، و fragst لـ du، و frag بلا نهاية صيغة أمر.",
         "optionExplanations": [
           "frag بلا نهاية = صيغة الأمر لا الإخبار.",
           undefined,
@@ -325,7 +325,7 @@ export const pronunciation: Lesson["pronunciation"] = {
     shadowing: [
       { de: "Hallo! Ich heiße Anna.", ar: "مرحباً! اسمي آنا.", tip: "انتبه: heiße تُنطق «هاي-سِه» وليس «هيسّه»" },
       { de: "Wie heißt du?", ar: "ما اسمك؟", tip: "هذا سؤال W؛ تكون نبرته في النمط المعتاد هابطة غالباً، بخلاف كثير من أسئلة نعم/لا. قد تتغير النبرة بحسب السياق." },
-      { de: "Ich komme aus Tunesien.", ar: "أنا من تونس.", tip: "في komme تُنطق o قصيرة؛ لا تطِل الحركة، وe الأخيرة خفيفة." },
+      { de: "Ich komme aus Tunesien.", ar: "أنا من تونس.", tip: "في komme تُنطق o قصيرة؛ لا تطِل الحركة، و e الأخيرة خفيفة." },
       { de: "Freut mich!", ar: "يسعدني لقاؤك!", tip: "مقطعان فقط: فرويت ميش" },
     ],
   };

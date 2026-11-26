@@ -136,7 +136,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       wrongWord: "gemacht",
       correctWord: "getroffen",
       options: ["getroffen", "gemacht", "genommen", "gestellt"],
-      explanation: "التركيب الثابت eine Entscheidung treffen؛ وmachen لا تدخل مع Entscheidung.",
+      explanation: "التركيب الثابت eine Entscheidung treffen؛ و machen لا تدخل مع Entscheidung.",
       errorType: "grammar",
     },
     {
@@ -202,6 +202,6 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     culturalNote: {
       title: "مفردات مرتبطة بالتقديم الوظيفي",
       content:
-        "تدرّب على مفردات قد تظهر في نصوص العمل مثل der Arbeitsvertrag (عقد العمل)، die Probezeit (فترة التجربة)، der Kündigungsschutz (الحماية من الفصل)، وAnerkennung ausländischer Abschlüsse (الاعتراف بالمؤهلات الأجنبية). هذه أمثلة لغوية فقط، وليست شرحاً قانونياً أو وصفاً شاملاً لسوق العمل؛ تحقّق من الجهة المختصة لأي معلومة عملية.",
+        "تدرّب على مفردات قد تظهر في نصوص العمل مثل der Arbeitsvertrag (عقد العمل)، die Probezeit (فترة التجربة)، der Kündigungsschutz (الحماية من الفصل)، و Anerkennung ausländischer Abschlüsse (الاعتراف بالمؤهلات الأجنبية). هذه أمثلة لغوية فقط، وليست شرحاً قانونياً أو وصفاً شاملاً لسوق العمل؛ تحقّق من الجهة المختصة لأي معلومة عملية.",
     },
   };

@@ -17,7 +17,7 @@ export const lessonA110: Lesson = {
   order: 1,
   titleDe: "Arbeit und Berufe",
   titleAr: "العمل والمهن",
-  summary: "مفردات مهن مختارة وصيغ مؤنثة شائعة، أنماط Ich bin / arbeiten als، النفي بـnicht وkein بحسب ما يُنفى، ووصف جهة العمل أو مكانها وأدوات الملكية في سياق مهني.",
+  summary: "مفردات مهن مختارة وصيغ مؤنثة شائعة، أنماط Ich bin / arbeiten als، النفي بـnicht و kein بحسب ما يُنفى، ووصف جهة العمل أو مكانها وأدوات الملكية في سياق مهني.",
   lernziele,
   einfuehrung,
   review,

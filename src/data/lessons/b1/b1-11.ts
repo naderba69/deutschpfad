@@ -18,7 +18,7 @@ export const lessonB111: Lesson = {
   order: 1,
   titleDe: "B1 kompakt — Abschlusswiederholung",
   titleAr: "B1 الشامل — مراجعة ختامية",
-  summary: "المراجعة الختامية لبعض قواعد B1: الجمل الموصولة وPassiv وKonjunktiv II وأدوات الربط، مع تمارين استماع وكتابة قصيرة، وعرض للوساطة والتفاعل بوصفهما تدريباً غير مقوّم.",
+  summary: "المراجعة الختامية لبعض قواعد B1: الجمل الموصولة و Passiv و Konjunktiv II وأدوات الربط، مع تمارين استماع وكتابة قصيرة، وعرض للوساطة والتفاعل بوصفهما تدريباً غير مقوّم.",
   lernziele,
   einfuehrung,
   review,

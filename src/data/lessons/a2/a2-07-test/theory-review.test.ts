@@ -105,7 +105,7 @@ describe("A2-07 audited lesson", () => {
       ["Sie", "Sie", "Ihnen"],
     ]);
     expect(lessonA207.einfuehrung.connectionToPreviousAr).toContain("هذه ليست أول مرة ترى فيها Dativ");
-    expect(lessonA207.einfuehrung.connectionToPreviousAr).toContain("A1-04 وA1-08");
+    expect(lessonA207.einfuehrung.connectionToPreviousAr).toContain("A1-04 و A1-08");
     expect(lessonA207.einfuehrung.connectionToPreviousAr).toContain("A1-06");
     expect(lessonA207.theory[1].comparisonWithArabic).toContain(
       "لا يعني تلقائياً أن نظيرها العربي مجرور",
@@ -133,11 +133,11 @@ describe("A2-07 audited lesson", () => {
       ["abheben", "يسحب نقوداً من الحساب"],
     ]);
     expect(lessonA207.pronunciation.items.map((item) => item.note)).toEqual([
-      "DWDS يورد [ˈkɔnto]: النبر على المقطع الأول، وo الأولى قصيرة مفتوحة [ɔ]. استمع إلى المثال ولا تحوّل النطق إلى كتابة عربية حرفية.",
-      "Duden يورد [ɡɛlt]: g صوت وقفي [g] وليس غ، وe قصيرة [ɛ]، أما d في آخر الكلمة فيُنطق [t] في هذا المثال.",
-      "قسّمها حسب Duden: über|wei|sen، والنبر على wei. في ü دوّر الشفتين مع إبقاء اللسان قريباً من [i]؛ وei هو [aɪ̯]، وw الألمانية قريب من [v].",
+      "DWDS يورد [ˈkɔnto]: النبر على المقطع الأول، و o الأولى قصيرة مفتوحة [ɔ]. استمع إلى المثال ولا تحوّل النطق إلى كتابة عربية حرفية.",
+      "Duden يورد [ɡɛlt]: g صوت وقفي [g] وليس غ، و e قصيرة [ɛ]، أما d في آخر الكلمة فيُنطق [t] في هذا المثال.",
+      "قسّمها حسب Duden: über|wei|sen، والنبر على wei. في ü دوّر الشفتين مع إبقاء اللسان قريباً من [i]؛ و ei هو [aɪ̯]، و w الألمانية قريب من [v].",
       "ابدأ بـ Geld [ɡɛlt] ثم Automat [aʊ̯toˈmaːt]. انتبه إلى g المجهورة وإلى au [aʊ̯]؛ لا تستخدم غِلت-آوتومات كنقل صوتي عربي.",
-      "Duden يورد [kreˈdiːtkartə]: الحرف d المكتوب في Kredit يوافق [t] في هذا الموضع، وie تمثل [iː]. استمع إلى الكلمة كاملة.",
+      "Duden يورد [kreˈdiːtkartə]: الحرف d المكتوب في Kredit يوافق [t] في هذا الموضع، و ie تمثل [iː]. استمع إلى الكلمة كاملة.",
       "قسمة Duden: ab|he|ben؛ لا تُسقط h في heben. والفعل ينفصل في الجملة الرئيسة: Ich hebe Geld ab. استمع إلى التسجيل الصوتي بدلاً من التقريب بحروف عربية.",
     ]);
     expect(lessonA207.pronunciation.tip).toContain("IPA والملاحظات الصوتية أدق من تهجئة عربية تقريبية");
@@ -146,7 +146,7 @@ describe("A2-07 audited lesson", () => {
       {
         de: "Ich möchte ein Konto eröffnen.",
         ar: "أريد فتح حساب.",
-        tip: "استمع إلى الفرق بين o في Konto وö في eröffnen، ثم كرر الجملة كاملة.",
+        tip: "استمع إلى الفرق بين o في Konto و ö في eröffnen، ثم كرر الجملة كاملة.",
       },
       {
         de: "Es gibt einen Geldautomaten.",

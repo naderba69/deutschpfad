@@ -13,7 +13,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["q1", "q2", "q3", "q4"],
         taskIds: ["listening:l1:q1", "listening:l2:q2", "listening:l2:q3", "listening:l3:q4"],
-        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 وl2 وl3 في q1 إلى q4، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 و l2 و l3 في q1 إلى q4، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -31,7 +31,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "writing:b2-06:w1",
           "writing:b2-06:w2",
         ],
-        labelAr: "أختار الاسم المشتق وأصحح حرف البداية وأكمل الأسماء (e1 وe5 وe6 وm5 وw1 وw2)، دون كشف الحل.",
+        labelAr: "أختار الاسم المشتق وأصحح حرف البداية وأكمل الأسماء (e1 و e5 و e6 و m5 و w1 و w2)، دون كشف الحل.",
       },
     },
     {
@@ -48,7 +48,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b2-06:m3",
           "writing:b2-06:w3",
         ],
-        labelAr: "أختار الصياغة الاسمية وأرتب الجملة وأكتبها بالإملاء (e2 وe4 وm2 وm3 وw3)، دون كشف الحل.",
+        labelAr: "أختار الصياغة الاسمية وأرتب الجملة وأكتبها بالإملاء (e2 و e4 و m2 و m3 و w3)، دون كشف الحل.",
       },
     },
     {
@@ -59,7 +59,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["e11", "e12", "w4"],
         taskIds: ["practice:b2-06:e11", "practice:b2-06:e12", "writing:b2-06:w4"],
-        labelAr: "أكمل مفردات العمل عن بعد وأرتب جملة عنه وأكمل الاشتقاق (e11 وe12 وw4)، دون كشف الحل.",
+        labelAr: "أكمل مفردات العمل عن بعد وأرتب جملة عنه وأكمل الاشتقاق (e11 و e12 و w4)، دون كشف الحل.",
       },
     },
     {

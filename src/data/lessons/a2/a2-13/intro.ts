@@ -8,11 +8,11 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z1",
       de: "Ich kann in vorgegebenen Sätzen Präteritum, Perfekt, weil und Dativ richtig kombinieren.",
-      ar: "أن أملأ فراغات جمل تجمع war وbin + gegangen وweil وDativ (meinem Chef) بصحة؛ هذا ملء موجّه لا نص حر.",
+      ar: "أن أملأ فراغات جمل تجمع war و bin + gegangen و weil و Dativ (meinem Chef) بصحة؛ هذا ملء موجّه لا نص حر.",
       evidence: {
         exerciseIds: ["w1", "w2"],
         taskIds: ["writing:a2-13:w1", "writing:a2-13:w2"],
-        labelAr: "أكمل w1 (تحويل جملة إلى Perfekt) وw2 (أربعة فراغات في فقرة قصيرة) بصحة. لا يُحتسب فتح الدرس أو الاستماع بعد كشف التفريغ أو الوساطة/التفاعل أداءً.",
+        labelAr: "أكمل w1 (تحويل جملة إلى Perfekt) و w2 (أربعة فراغات في فقرة قصيرة) بصحة. لا يُحتسب فتح الدرس أو الاستماع بعد كشف التفريغ أو الوساطة/التفاعل أداءً.",
         completion: "all-correct",
       },
     },
@@ -23,7 +23,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e1", "e5", "e6"],
         taskIds: ["practice:a2-13:e1", "practice:a2-13:e5", "practice:a2-13:e6"],
-        labelAr: "أجب صحيحاً عن e1 (يظهر ضمن أول أربعة تمارين في مسار التدفق أيضاً) وe5 (war/hatte) وe6 (تصحيح الفعل المساعد) عند ظهورها في جلسة التدريب العشوائية. اختيار الفعل المساعد وحده لا يثبت إنتاج الجملة.",
+        labelAr: "أجب صحيحاً عن e1 (يظهر ضمن أول أربعة تمارين في مسار التدفق أيضاً) و e5 (war/hatte) و e6 (تصحيح الفعل المساعد) عند ظهورها في جلسة التدريب العشوائية. اختيار الفعل المساعد وحده لا يثبت إنتاج الجملة.",
         completion: "all-correct",
       },
     },
@@ -34,7 +34,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e4", "e8", "m3"],
         taskIds: ["practice:a2-13:e4", "practice:a2-13:e8", "mini-test:a2-13:m3"],
-        labelAr: "رتّب e4 (يظهر ضمن أول أربعة تمارين في مسار التدفق أيضاً)، وأجب صحيحاً عن e8 (تصحيح ترتيب dass)، وm3 (اختيار weil) في الاختبار المصغّر. لا يُحتسب كشف الحل أو قراءة الجدول أداءً.",
+        labelAr: "رتّب e4 (يظهر ضمن أول أربعة تمارين في مسار التدفق أيضاً)، وأجب صحيحاً عن e8 (تصحيح ترتيب dass)، و m3 (اختيار weil) في الاختبار المصغّر. لا يُحتسب كشف الحل أو قراءة الجدول أداءً.",
         completion: "all-correct",
       },
     },
@@ -64,7 +64,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "في بداية A1 قد تقول: «Ich war im Park.» وفي هذا الدرس نجمع تراكيب سبق تعلمها في مثال أطول: «Letztes Wochenende bin ich nach Hamburg gefahren, weil meine Schwester Geburtstag hatte, und ich habe ihr ein Buch geschenkt.» يجمع المثال Perfekt وweil وPräteritum وDativ؛ وهو تدريب على الربط، لا وصف لقدرة كل متعلم ولا شرط لبدء B1.",
+      "في بداية A1 قد تقول: «Ich war im Park.» وفي هذا الدرس نجمع تراكيب سبق تعلمها في مثال أطول: «Letztes Wochenende bin ich nach Hamburg gefahren, weil meine Schwester Geburtstag hatte, und ich habe ihr ein Buch geschenkt.» يجمع المثال Perfekt و weil و Präteritum و Dativ؛ وهو تدريب على الربط، لا وصف لقدرة كل متعلم ولا شرط لبدء B1.",
     motivatingQuestionDe: "Was ist der längste Satz, den du auf Deutsch sagen kannst?",
     contextAr:
       "درس ختامي لا يُدرّس قاعدة جديدة: يجمع مفاتيح A2 الاثني عشر في خريطة واحدة، ثم يدمجها في موقفين حقيقيين، ثم يفتح الباب على ما يتغيّر فعلاً في B1 حتى لا يكون الانتقال مفاجأة.",
@@ -107,7 +107,7 @@ export const review: NonNullable<Lesson["review"]> = [
         { correct: "dem", options: ["dem", "den", "der", "des"] },
         { correct: "der", options: ["der", "die", "dem", "den"] },
       ],
-      hint: "helfen وgehören فعلان يطلبان Dativ دائماً: المذكر dem، المؤنث der.",
+      hint: "helfen و gehören فعلان يطلبان Dativ دائماً: المذكر dem، المؤنث der.",
       explanation: "Ich helfe dem Kollegen. Das Buch gehört der Lehrerin. — كلا الفعلين من أفعال الجر.",
       errorType: "case",
     },

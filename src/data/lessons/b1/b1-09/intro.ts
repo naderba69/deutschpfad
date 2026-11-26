@@ -13,7 +13,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["q1", "q2", "q3", "q4"],
         taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"],
-        labelAr: "أجيب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن q1 و q2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -33,7 +33,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "writing:b1-09:w1",
           "writing:b1-09:w2",
         ],
-        labelAr: "أجيب صحيحاً عن تمارين الوصلات (e1 وe4 وe7 وm1 وm3 وm5 وw1 وw2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن تمارين الوصلات (e1 و e4 و e7 و m1 و m3 و m5 و w1 و w2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
       },
     },
     {
@@ -52,7 +52,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b1-09:m4",
           "writing:b1-09:w3",
         ],
-        labelAr: "أجيب صحيحاً عن تمارين تصريف n (e2 وe5 وe6 وe9 وm2 وm4 وw3)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن تمارين تصريف n (e2 و e5 و e6 و e9 و m2 و m4 و w3)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
       },
     },
     {
@@ -79,7 +79,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "practice:b1-09:e13",
           "mini-test:b1-09:m6",
         ],
-        labelAr: "أجيب صحيحاً عن تمارين حروف الجر الثابتة (e11 وe12 وe13 وm6)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن تمارين حروف الجر الثابتة (e11 و e12 و e13 و m6)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
       },
     },
   ];
@@ -113,7 +113,7 @@ export const review: NonNullable<Lesson["review"]> = [
       errorType: "case",
       optionExplanations: [
         undefined,
-        "«meinen» مفعول به، وhelfen يطلب الجر، فالصيغة meinem.",
+        "«meinen» مفعول به، و helfen يطلب الجر، فالصيغة meinem.",
         "«mein» بلا نهاية لا تناسب الجر المذكر هنا.",
         "«meine» للمؤنث أو الجمع، والأخ مذكّر.",
       ],

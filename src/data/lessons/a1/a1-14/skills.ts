@@ -70,7 +70,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
       {
         "de": "eingeschlafen (einschlafen)",
         "ar": "غفا، استغرق في النوم",
-        "noteAr": "تغيّرُ حال ⟵ sein، وge- في وسط الفعل المنفصل"
+        "noteAr": "تغيّرُ حال ⟵ sein، و ge- في وسط الفعل المنفصل"
       },
       {
         "de": "gefallen (hat gefallen)",
@@ -362,16 +362,16 @@ export const listening: NonNullable<Lesson["listening"]> = {
 
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "pron-a1-14",
-    title: "نطق Partizip II: ge وch",
+    title: "نطق Partizip II: ge و ch",
     items: [
-      { de: "gelernt", ar: "تعلَّم", note: "ge- غير منبورة في هذا المثال؛ النبر على مقطع lern، وg ألمانية [ɡ] وليست غيناً عربية." },
+      { de: "gelernt", ar: "تعلَّم", note: "ge- غير منبورة في هذا المثال؛ النبر على مقطع lern، و g ألمانية [ɡ] وليست غيناً عربية." },
       { de: "gemacht", ar: "فعَل", note: "ch بعد a تمثل [x] في النطق المعياري الشائع؛ تقريبها بخاء عربية لا يعني تطابق الصوتين." },
-      { de: "gesprochen", ar: "تكلَّم", note: "في بدء الجذر sprechen/gesprochen تُنطق sp عادةً [ʃp]؛ وch بعد o تمثل [x]." },
+      { de: "gesprochen", ar: "تكلَّم", note: "في بدء الجذر sprechen/gesprochen تُنطق sp عادةً [ʃp]؛ و ch بعد o تمثل [x]." },
       { de: "gefahren", ar: "سافر", note: "ge- غير منبورة، والنبر على fahr مع a طويلة؛ اسمع نهاية -en ولا تفترض أن e محذوفة." },
       { de: "aufgestanden", ar: "نهض", note: "تظهر ge- بين بادئة auf وجذع stehen؛ موضع النبر خاصّ بالكلمة ولا يُستنتج منه حكم عام عن ge-." },
       { de: "besucht", ar: "زار", note: "لا ge إضافية مع البادئة غير المنفصلة be-؛ النبر في هذا الفعل على المقطع such." },
       { de: "studiert", ar: "درس", note: "st في بداية الكلمة تُنطق [ʃt]؛ ie تمثل صوتاً طويلاً، والنبر على المقطع -dier-." },
-      { de: "gewesen", ar: "كان", note: "في النطق المعياري الشائع: w ألمانية [v]، وs بين الحركات [z]؛ ge- غير منبورة." },
+      { de: "gewesen", ar: "كان", note: "في النطق المعياري الشائع: w ألمانية [v]، و s بين الحركات [z]؛ ge- غير منبورة." },
     ],
     tip: "هذه ملاحظات على الكلمات المعروضة لا قاعدة عامة لاستنتاج Partizip II من النبر. زر الاستماع يستخدم TTS المتصفح لا تسجيلاً بشرياً، وقد يختلف الصوت حسب الجهاز والمتصفح؛ ولا يقيس نطقك. حدّد بنية الفعل والبادئة أولاً، واحفظ النطق بالسماع عند توفر الصوت؛ والكتابة العربية تقريبية لا تمثيل صوتي دقيق للألمانية.",
   };
@@ -385,7 +385,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
       acceptedAnswers: ["Ich habe Deutsch gelernt."],
       sampleAnswer: "Ich habe Deutsch gelernt.",
       hint: "في هذا المثال يأخذ lernen مع المفعول Deutsch المساعد haben؛ وتعلّم الصيغة gelernt. وجود مفعول قرينة، لا قاعدة آلية لكل الأفعال.",
-      explanation: "في هذه الجملة الرئيسية الخبرية يأتي haben في V2 وgelernt في نهاية المجال الفعلي، والمفعول Deutsch بينهما.",
+      explanation: "في هذه الجملة الرئيسية الخبرية يأتي haben في V2 و gelernt في نهاية المجال الفعلي، والمفعول Deutsch بينهما.",
       errorType: "grammar",
     },
     {
@@ -402,7 +402,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
     {
       id: "wr-a1-14-3",
       type: "fill-blank",
-      instructionAr: "أكمل قالب البريد بصيغة Perfekt بالمساعدات وPartizip II المناسبة",
+      instructionAr: "أكمل قالب البريد بصيغة Perfekt بالمساعدات و Partizip II المناسبة",
       template: "Liebe Salma,\n\nAm Wochenende ___ ich nach Berlin ___. Dort ___ ich meine Freundin Nadia ___. Wir ___ zusammen durch die Stadt ___ und ___ am Abend in einem Restaurant ___.\n\nViele Grüße\nAmine",
       blanks: [
         { correct: "bin", options: ["bin", "habe", "sind", "bist"], errorType: "grammar" },

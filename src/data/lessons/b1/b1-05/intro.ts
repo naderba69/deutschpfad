@@ -45,7 +45,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
       evidence: {
         exerciseIds: ["e11", "e12"],
         taskIds: ["practice:b1-05:e11", "practice:b1-05:e12"],
-        labelAr: "أجب صحيحاً عن e11 وe12 ضمن تمارين practice. الجدول والأمثلة لا تُحتسب أداءً.",
+        labelAr: "أجب صحيحاً عن e11 و e12 ضمن تمارين practice. الجدول والأمثلة لا تُحتسب أداءً.",
         completion: "all-correct",
       },
     },

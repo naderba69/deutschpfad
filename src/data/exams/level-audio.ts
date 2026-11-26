@@ -214,7 +214,7 @@ export const MODEL3_AUDIO_BASE: Record<ExamLevel, string> = {
 };
 
 export const MODEL3_FILE_PLAN: Record<ExamLevel, Record<number, string[]>> = {
-  // 1 · 8 · 1 · 3 = 13 مقطعاً — T2 أربعة حوارات ثنائية، وT4 حوار + إعلانان
+  // 1 · 8 · 1 · 3 = 13 مقطعاً — T2 أربعة حوارات ثنائية، و T4 حوار + إعلانان
   A1: {
     1: ["hoeren-t1.mp3"],
     2: [
@@ -230,7 +230,7 @@ export const MODEL3_FILE_PLAN: Record<ExamLevel, Record<number, string[]>> = {
     3: ["hoeren-t3.mp3"],
     4: ["hoeren-t4-a.mp3", "hoeren-t4-b.mp3", "hoeren-t4-c.mp3"],
   },
-  // 1 · 8 · 2 · 4 = 15 مقطعاً — T3 راديو وهاتف بصوتين، وT4 حوار + إعلان
+  // 1 · 8 · 2 · 4 = 15 مقطعاً — T3 راديو وهاتف بصوتين، و T4 حوار + إعلان
   A2: {
     1: ["hoeren-t1.mp3"],
     2: [
@@ -246,7 +246,7 @@ export const MODEL3_FILE_PLAN: Record<ExamLevel, Record<number, string[]>> = {
     3: ["hoeren-t3-a.mp3", "hoeren-t3-b.mp3"],
     4: ["hoeren-t4-a.mp3", "hoeren-t4-b.mp3", "hoeren-t4-c.mp3", "hoeren-t4-d.mp3"],
   },
-  // 1 · 8 · 4 · 6 = 19 مقطعاً — T3 تقرير إذاعي بأربعة أدوار، وT4 مشاورة بستة
+  // 1 · 8 · 4 · 6 = 19 مقطعاً — T3 تقرير إذاعي بأربعة أدوار، و T4 مشاورة بستة
   B1: {
     1: ["hoeren-t1.mp3"],
     2: [

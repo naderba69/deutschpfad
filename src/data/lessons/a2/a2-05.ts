@@ -17,7 +17,7 @@ export const lessonA205: Lesson = {
   titleDe: "Im Büro",
   titleAr: "في المكتب والعمل",
   summary:
-    "مراجعة Präteritum من sein وhaben في سياقات المكتب، مع تمييزه من Perfekt وPlusquamperfekt؛ وعبارات هاتفية وبريد إلكتروني مختارة، ونص قراءة وحوارات قصيرة ومهام كتابة موجّهة. لا تقيس المادة النطق أو أداءً شفهياً.",
+    "مراجعة Präteritum من sein و haben في سياقات المكتب، مع تمييزه من Perfekt و Plusquamperfekt؛ وعبارات هاتفية وبريد إلكتروني مختارة، ونص قراءة وحوارات قصيرة ومهام كتابة موجّهة. لا تقيس المادة النطق أو أداءً شفهياً.",
   lernziele,
   einfuehrung,
   review,

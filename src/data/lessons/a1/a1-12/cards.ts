@@ -50,7 +50,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
         "Es wird kalt im Winter.",
       ],
       explanation:
-        "Im Winter wird es kalt، وEs wird im Winter kalt، وEs wird kalt im Winter ترتيبات ممكنة للجملة؛ يبقى الفعل المصرف في الموضع الثاني.",
+        "Im Winter wird es kalt، و Es wird im Winter kalt، و Es wird kalt im Winter ترتيبات ممكنة للجملة؛ يبقى الفعل المصرف في الموضع الثاني.",
       errorType: "word-order",
     },
     {

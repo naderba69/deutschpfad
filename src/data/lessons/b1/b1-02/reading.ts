@@ -1,6 +1,6 @@
 /**
  * b1-02 — نصّ القراءة الممتدّ (الجزء «reading»)
- * فُصل في المرحلة 5. نصّ B1 عن عالم العمل: Präteritum وPlusquamperfekt في سرد تجربة مهنية.
+ * فُصل في المرحلة 5. نصّ B1 عن عالم العمل: Präteritum و Plusquamperfekt في سرد تجربة مهنية.
  */
 import type { ReadingText } from "@/types/lesson";
 
@@ -24,7 +24,7 @@ export const readingB102: ReadingText = {
   glossary: [
     { de: "der Betrieb", ar: "المؤسسة، الشركة", noteAr: "مذكّر: der Betrieb؛ ومنه betrieblich (متعلّق بالمؤسسة)." },
     { de: "der Ablauf", ar: "مجرى العمل، سير الأمور", noteAr: "مذكّر؛ والجمع die Abläufe (المجريات)." },
-    { de: "das Zeugnis", ar: "شهادة (خبرة أو عمل)", noteAr: "محايد: das Zeugnis؛ وZeugnis تُستعمل أيضاً للشهادة المدرسية." },
+    { de: "das Zeugnis", ar: "شهادة (خبرة أو عمل)", noteAr: "محايد: das Zeugnis؛ و Zeugnis تُستعمل أيضاً للشهادة المدرسية." },
     { de: "das Vorstellungsgespräch", ar: "مقابلة العمل", noteAr: "مركّب محايد: sich vorstellen (يقدّم نفسه) + das Gespräch." },
     { de: "der Chef", ar: "الرئيس، المدير", noteAr: "مذكّر؛ والمؤنّث die Chefin." },
     { de: "die Schicht", ar: "الدوام، الوردية", noteAr: "مؤنّثة: die Schicht؛ ومنها Schichtarbeit (العمل بالورديات)." },
@@ -91,5 +91,5 @@ export const readingB102: ReadingText = {
     { de: "Wer Fragen stellt, arbeitet besser.", ar: "من يطرح الأسئلة يعمل أفضل." },
   ],
   discussionAr:
-    "اكتب خمسة أسطر تسرد فيها تجربتك العملية الأولى (أو تجربة زميل تعرفها): متى كانت، وماذا كنت قد فعلت قبلها، وماذا حدث بعدها. استعمل Präteritum مرّة على الأقل وPlusquamperfekt مرّة على الأقل، وابدأ جملةً واحدة بـnachdem مع مراعاة ترتيبها الصحيح (الفعل في النهاية ثم الفعل المساعد).",
+    "اكتب خمسة أسطر تسرد فيها تجربتك العملية الأولى (أو تجربة زميل تعرفها): متى كانت، وماذا كنت قد فعلت قبلها، وماذا حدث بعدها. استعمل Präteritum مرّة على الأقل و Plusquamperfekt مرّة على الأقل، وابدأ جملةً واحدة بـnachdem مع مراعاة ترتيبها الصحيح (الفعل في النهاية ثم الفعل المساعد).",
 };

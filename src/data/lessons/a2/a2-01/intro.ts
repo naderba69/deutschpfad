@@ -19,7 +19,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z2",
       de: "Ich kann in vorgegebenen Reisebeispielen Perfekt und Präteritum unterscheiden und eine zur beschriebenen Verwendung passende Zielform wählen.",
-      ar: "أن أميّز في أمثلة سفر موجّهة بين Perfekt وPräteritum، وأختار الصيغة الملائمة للسياق المحدّد.",
+      ar: "أن أميّز في أمثلة سفر موجّهة بين Perfekt و Präteritum، وأختار الصيغة الملائمة للسياق المحدّد.",
       evidence: {
         exerciseIds: ["e14", "e15", "e23", "rq4"],
         taskIds: ["practice:a2-01:e14", "practice:a2-01:e15", "practice:a2-01:e23", "reading:read-a2-01:rq4"],
@@ -90,10 +90,10 @@ export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
       "في A1-14 درستَ صيغة Perfekt. كيف تحكي عن رحلة ماضية؟ قارن «Ich fahre nach Berlin» بـ«Ich bin nach Berlin gefahren»، ثم لاحظ أن «Ich fuhr» صيغة ماضية أخرى تظهر في سياقات مختلفة.",
     motivatingQuestionDe: "Was hast du im Urlaub gemacht?",
     contextAr:
-      "Perfekt (haben/sein + Partizip II) طريقة شائعة للحديث عن أحداث ماضية في سياقات كثيرة، لكنه ليس صيغة الماضي الوحيدة. يظهر Präteritum أيضاً في الحديث والكتابة، ومنه صيغ كثيرة الدوران مثل war وhatte وأفعال ناقصة؛ ويتأثر الاختيار بالسياق والسجل والمنطقة. يبني هذا الدرس على أساس A1-14 ويعرض أمثلة محددة لا قاعدة مطلقة.",
+      "Perfekt (haben/sein + Partizip II) طريقة شائعة للحديث عن أحداث ماضية في سياقات كثيرة، لكنه ليس صيغة الماضي الوحيدة. يظهر Präteritum أيضاً في الحديث والكتابة، ومنه صيغ كثيرة الدوران مثل war و hatte وأفعال ناقصة؛ ويتأثر الاختيار بالسياق والسجل والمنطقة. يبني هذا الدرس على أساس A1-14 ويعرض أمثلة محددة لا قاعدة مطلقة.",
     contextDe: "Ich bin nach Berlin geflogen und habe viel gesehen.",
     connectionToPreviousAr:
-      "في A1-14 درست أساس بناء Perfekt واختيار haben/sein في أمثلة محددة. نعود إليه هنا ونوسّع صور الأفعال القوية، ثم نقارن الاستعمالات الشائعة لـPerfekt وPräteritum. لا تُحوّل صيغة عربية واحدة آلياً إلى زمن ألماني واحد؛ اختر التركيب بحسب المعنى والسياق.",
+      "في A1-14 درست أساس بناء Perfekt واختيار haben/sein في أمثلة محددة. نعود إليه هنا ونوسّع صور الأفعال القوية، ثم نقارن الاستعمالات الشائعة لـPerfekt و Präteritum. لا تُحوّل صيغة عربية واحدة آلياً إلى زمن ألماني واحد؛ اختر التركيب بحسب المعنى والسياق.",
     activateVocabulary: [
       { de: "der Urlaub", ar: "الإجازة" },
       { de: "die Reise", ar: "الرحلة" },
@@ -135,7 +135,7 @@ export const review: NonNullable<Lesson["review"]> = [
       optionExplanations: [
         undefined,
         "«zu» تأخذ Dativ وتُستعمل مع أشخاص ومبانٍ («zu Frau Huber», «zum Bahnhof») لا مع بلدٍ بلا أداة.",
-        "«in» للوجهة تحتاج Accusativ مع أداة («in die Schweiz»)، وDeutschland هنا بلا أداة.",
+        "«in» للوجهة تحتاج Accusativ مع أداة («in die Schweiz»)، و Deutschland هنا بلا أداة.",
         "«aus» للأصل والخروج («Ich komme aus Tunesien») أي عكس الاتجاه المطلوب.",
       ],
     },

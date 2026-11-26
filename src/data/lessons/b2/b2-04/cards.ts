@@ -66,7 +66,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
         { correct: "weinende", options: ["weinende", "geweinte"] },
         { correct: "verlorene", options: ["verlierende", "verlorene"] },
       ],
-      explanation: "فاعل الفعل weinen في هذا المثال → weinende؛ وverloren يصف الحالة الناتجة هنا.",
+      explanation: "فاعل الفعل weinen في هذا المثال → weinende؛ و verloren يصف الحالة الناتجة هنا.",
       errorType: "grammar",
     },
   ];

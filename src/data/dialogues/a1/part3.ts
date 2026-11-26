@@ -237,7 +237,7 @@ export const A1_DIALOGUES_3: DailyDialogue[] = [
       ]},
       { de: "Wo sitzt Thomas?", ar: "أين يجلس توماس؟", options: [
         { text: "Im Wagen drei, auf Platz zwölf", ar: "في العربة الثالثة، المقعد الثاني عشر", correct: true, explanation: "نعم — سارة تقول: «Wagen drei, Platz zwölf»." },
-        { text: "Im Wagen zwei, auf Platz drei", ar: "في العربة الثانية، المقعد الثالث", correct: false, explanation: "لا — قالت سارة «Wagen drei, Platz zwölf»؛ فلا نعكس الرقمين إلى Wagen zwei وPlatz drei." },
+        { text: "Im Wagen zwei, auf Platz drei", ar: "في العربة الثانية، المقعد الثالث", correct: false, explanation: "لا — قالت سارة «Wagen drei, Platz zwölf»؛ فلا نعكس الرقمين إلى Wagen zwei و Platz drei." },
         { text: "Im Wagen zwölf, auf Platz drei", ar: "في العربة الثانية عشرة، المقعد الثالث", correct: false, explanation: "لا — «Wagen drei» و«Platz zwölf»؛ لا نعكس الرقمين." },
       ]},
     ],

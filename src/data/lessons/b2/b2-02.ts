@@ -18,7 +18,7 @@ export const lessonB202: Lesson = {
   order: 1,
   titleDe: "Wirtschaft und Finanzen",
   titleAr: "الاقتصاد والمالية",
-  summary: "التدرّب على نصوص وأمثلة اقتصادية؛ Zustandspassiv (sein + Partizip II)، والمجهول مع الأفعال الناقصة، وبدائل مثل sich lassen و-bar وman.",
+  summary: "التدرّب على نصوص وأمثلة اقتصادية؛ Zustandspassiv (sein + Partizip II)، والمجهول مع الأفعال الناقصة، وبدائل مثل sich lassen و-bar و man.",
   lernziele,
   einfuehrung,
   review,

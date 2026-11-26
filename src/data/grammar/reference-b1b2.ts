@@ -48,8 +48,8 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   {
     id: "b1-praeteritum", level: "B1", category: "tenses",
     titleAr: "الماضي السردي/البسيط (Präteritum)", titleDe: "Das Präteritum",
-    summary: "في الأفعال الضعيفة تُضاف غالباً -te إلى الجذر (arbeitete)، وفي الأفعال القوية يتغير الجذر وتختلف النهاية (ging, kam, sah). من الصيغ الشائعة: war وhatte. يشيع Präteritum في السرد والكتابة؛ وفي الكلام اليومي يشيع أيضاً مع sein وhaben والأفعال الناقصة، بينما يُستعمل Perfekt مع كثير من الأفعال الأخرى.",
-    why: "التعرّف إلى Präteritum يساعد على فهم السرد المكتوب والنصوص القصصية، كما أن صيغ sein وhaben والأفعال الناقصة شائعة في الكلام اليومي.",
+    summary: "في الأفعال الضعيفة تُضاف غالباً -te إلى الجذر (arbeitete)، وفي الأفعال القوية يتغير الجذر وتختلف النهاية (ging, kam, sah). من الصيغ الشائعة: war و hatte. يشيع Präteritum في السرد والكتابة؛ وفي الكلام اليومي يشيع أيضاً مع sein و haben والأفعال الناقصة، بينما يُستعمل Perfekt مع كثير من الأفعال الأخرى.",
+    why: "التعرّف إلى Präteritum يساعد على فهم السرد المكتوب والنصوص القصصية، كما أن صيغ sein و haben والأفعال الناقصة شائعة في الكلام اليومي.",
     examples: [
       { de: "Ich arbeitete fünf Jahre in einer Firma.", ar: "عملت خمس سنوات في شركة." },
       { de: "Er ging jeden Tag zu Fuß.", ar: "كان يمشي كل يوم." },
@@ -72,7 +72,7 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   {
     id: "b1-konjunktiv2", level: "B1", category: "modal",
     titleAr: "صيغة الشرط (Konjunktiv II)", titleDe: "würde, wäre, hätte, könnte",
-    summary: "يُستعمل Konjunktiv II للفرض غير الواقعي والطلب المهذب والتمني. صيغة شائعة: würde + Infinitiv (Ich würde reisen)؛ وتُستعمل كثيراً الصيغ الخاصة wäre وhätte وkönnte، كما توجد صيغ مثل ginge. الاختيار يتبع الفعل والسياق.",
+    summary: "يُستعمل Konjunktiv II للفرض غير الواقعي والطلب المهذب والتمني. صيغة شائعة: würde + Infinitiv (Ich würde reisen)؛ وتُستعمل كثيراً الصيغ الخاصة wäre و hätte و könnte، كما توجد صيغ مثل ginge. الاختيار يتبع الفعل والسياق.",
     why: "تمييز الواقع عن الافتراض — والأدب الشرطي الألماني.",
     examples: [
       { de: "Wenn ich reich wäre, würde ich reisen.", ar: "لو كنت غنياً لسافرت." },
@@ -84,13 +84,13 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   {
     id: "b1-passiv", level: "B1", category: "passive",
     titleAr: "المبني للمجهول (Passiv)", titleDe: "werden + Partizip II",
-    summary: "في Vorgangspassiv للمضارع: werden المصرف + Partizip II (Das Haus wird gebaut)، وللماضي: wurde + Partizip II. يتحول مفعول Akkusativ في الجملة الفاعلة عادةً إلى فاعل نحوي؛ ويمكن ذكر القائم بالفعل بـ von + Dativ، أو السبب/الوسيلة بـ durch + Akkusativ. وman صياغة بديلة لا تطابق المبني للمجهول تماماً.",
+    summary: "في Vorgangspassiv للمضارع: werden المصرف + Partizip II (Das Haus wird gebaut)، وللماضي: wurde + Partizip II. يتحول مفعول Akkusativ في الجملة الفاعلة عادةً إلى فاعل نحوي؛ ويمكن ذكر القائم بالفعل بـ von + Dativ، أو السبب/الوسيلة بـ durch + Akkusativ. و man صياغة بديلة لا تطابق المبني للمجهول تماماً.",
     why: "يسمح المبني للمجهول بتقديم الحدث أو المتأثر به، سواء أُريد إخفاء القائم بالفعل أو كان مجهولاً أو غير مهم في السياق.",
     examples: [
       { de: "Das Haus wird gebaut.", ar: "البيت يُبنى." },
       { de: "Das Haus wurde 1900 gebaut.", ar: "بُني البيت عام 1900." },
     ],
-    eselsbruecke: "«werden + Partizip II = مجهول» — وman بديل سهل.",
+    eselsbruecke: "«werden + Partizip II = مجهول» — و man بديل سهل.",
     mistakeLink: "grammar",
   },
   {
@@ -102,14 +102,14 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
       { de: "ein guter Mann / eine gute Frau / ein gutes Kind", ar: "رجل جيد / امرأة جيدة / طفل جيد" },
       { de: "Das schöne Bild ist teuer.", ar: "الصورة الجميلة غالية." },
     ],
-    eselsbruecke: "مع ein وmein وkein: لاحظ أين تكشف الأداة الجنس وأين تحتاج الصفة إلى إظهاره؛ ثم تحقق من الحالة والعدد.",
+    eselsbruecke: "مع ein و mein و kein: لاحظ أين تكشف الأداة الجنس وأين تحتاج الصفة إلى إظهاره؛ ثم تحقق من الحالة والعدد.",
     mistakeLink: "article",
   },
   {
     id: "b1-temporal", level: "B1", category: "sentences",
     titleAr: "الجمل الزمنية الست", titleDe: "als, wenn, während, bevor, nachdem, bis",
     summary: "تدخل هذه الأدوات جملةً تابعةً ويأتي فعلها المصرف في النهاية. als تُستعمل غالباً لحدث/فترة واحدة في الماضي؛ wenn للتكرار في الماضي أو للحاضر والمستقبل والشرط؛ während (بينما)، bevor (قبل أن)، nachdem (بعد أن)، bis (إلى أن).",
-    why: "تمييز als وwenn يعتمد على الزمن والمعنى: حدث ماضٍ واحد أو فترة ماضية مقابل التكرار، أو الزمن الحاضر/المستقبل، أو الشرط؛ لا تختزل القاعدة في «مرة/عادة» فقط.",
+    why: "تمييز als و wenn يعتمد على الزمن والمعنى: حدث ماضٍ واحد أو فترة ماضية مقابل التكرار، أو الزمن الحاضر/المستقبل، أو الشرط؛ لا تختزل القاعدة في «مرة/عادة» فقط.",
     examples: [
       { de: "Als ich jung war, lebte ich in Tunis.", ar: "عندما كنت صغيراً عشت في تونس." },
       { de: "Wenn ich Zeit habe, lese ich.", ar: "عندما يكون عندي وقت أقرأ." },
@@ -156,7 +156,7 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   {
     id: "b1-ndeklination", level: "B1", category: "nouns",
     titleAr: "تصريف n (n-Deklination)", titleDe: "den Studenten",
-    summary: "مجموعة من الأسماء المذكرة الضعيفة، كثير منها ينتهي بـ -e أو -ent/-ant/-ist/-oge، تأخذ -(e)n في حالات المفرد غير Nominativ وفي الجمع: der Student, den/dem/des Studenten; die Studenten. ليست كل الأسماء المنتهية بـ -e من هذه المجموعة. بعض الأسماء مثل Name وGedanke لها صيغة Genitiv خاصة بـ -ns: des Namens, des Gedankens.",
+    summary: "مجموعة من الأسماء المذكرة الضعيفة، كثير منها ينتهي بـ -e أو -ent/-ant/-ist/-oge، تأخذ -(e)n في حالات المفرد غير Nominativ وفي الجمع: der Student, den/dem/des Studenten; die Studenten. ليست كل الأسماء المنتهية بـ -e من هذه المجموعة. بعض الأسماء مثل Name و Gedanke لها صيغة Genitiv خاصة بـ -ns: des Namens, des Gedankens.",
     why: "لا تكفي قاعدة واحدة للتنبؤ بكل الأسماء؛ احفظ الجنس وصيغ المفرد والجمع مع أمثلة شائعة، وانتبه إلى الأسماء المختلطة والاستثناءات.",
     examples: [
       { de: "Ich kenne den Studenten.", ar: "أعرف الطالب." },
@@ -182,13 +182,13 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   {
     id: "b2-zustandspassiv", level: "B2", category: "passive",
     titleAr: "مجهول الحالة (Zustandspassiv)", titleDe: "sein + Partizip II",
-    summary: "يصف Zustandspassiv غالباً الحالة الناتجة: Die Tür ist geöffnet، مقابل Vorgangspassiv للعملية: Die Tür wird geöffnet. ليس كل sein + Partizip II مجهولاً؛ فقد يكون Partizip صفةً بحسب السياق. أمّا kann geliefert werden فهو Passiv مع Modalverb، وDas Problem lässt sich lösen تعبير إمكاني بديل.",
+    summary: "يصف Zustandspassiv غالباً الحالة الناتجة: Die Tür ist geöffnet، مقابل Vorgangspassiv للعملية: Die Tür wird geöffnet. ليس كل sein + Partizip II مجهولاً؛ فقد يكون Partizip صفةً بحسب السياق. أمّا kann geliefert werden فهو Passiv مع Modalverb، و Das Problem lässt sich lösen تعبير إمكاني بديل.",
     why: "الدقة: عملية (wird) مقابل نتيجة (ist) مقابل إمكانية (kann/sich lassen).",
     examples: [
       { de: "Die Tür ist geöffnet.", ar: "الباب مفتوح (حالة)." },
       { de: "Das Problem lässt sich lösen.", ar: "المشكلة قابلة للحل." },
     ],
-    eselsbruecke: "قارن السياق: ist geöffnet يصف حالة، وwird geöffnet يصف عملية؛ وتحقق من الزمن والمعنى قبل تصنيف Partizip.",
+    eselsbruecke: "قارن السياق: ist geöffnet يصف حالة، و wird geöffnet يصف عملية؛ وتحقق من الزمن والمعنى قبل تصنيف Partizip.",
     mistakeLink: "grammar",
   },
   {
@@ -220,7 +220,7 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   {
     id: "b2-konnektoren-adv", level: "B2", category: "connectives",
     titleAr: "أدوات الربط والتراكيب المصدرية المتقدمة", titleDe: "indem, anstatt/ohne ... zu, es sei denn",
-    summary: "indem تقدّم الطريقة وغالباً تُدخل جملةً فعلها في النهاية؛ anstatt/ohne + zu + مصدر تُستعملان غالباً عندما يكون الفاعل واحداً، أمّا anstatt dass/statt dass فتدخلان جملةً تامة وقد يختلف فاعلها. es sei denn تعني «إلا إذا» وتقدّم استثناءً؛ وje nachdem تعني «بحسب/يتوقف على» وتأتي كثيراً مع ob أو wie.",
+    summary: "indem تقدّم الطريقة وغالباً تُدخل جملةً فعلها في النهاية؛ anstatt/ohne + zu + مصدر تُستعملان غالباً عندما يكون الفاعل واحداً، أمّا anstatt dass/statt dass فتدخلان جملةً تامة وقد يختلف فاعلها. es sei denn تعني «إلا إذا» وتقدّم استثناءً؛ و je nachdem تعني «بحسب/يتوقف على» وتأتي كثيراً مع ob أو wie.",
     why: "اختيار zu-Infinitiv أو جملة dass يتأثر غالباً بتطابق الفاعل: عند اتحاد الفاعل يمكن عادةً استعمال anstatt/ohne ... zu، وعند اختلافه نحتاج جملة تامة.",
     examples: [
       { de: "Man lernt, indem man übt.", ar: "يتعلم المرء بالممارسة." },
@@ -293,7 +293,7 @@ export const GRAMMAR_B1B2: GrammarTopic[] = [
   {
     id: "b2-modalpartikeln", level: "B2", category: "particles",
     titleAr: "أدوات الخطاب الألمانية (Modalpartikeln)", titleDe: "Modalpartikeln: doch, ja, mal, denn, eigentlich, wohl",
-    summary: "أدوات قصيرة تنقل موقف المتكلم ونبرة الخطاب، ولا تقابلها ترجمة عربية ثابتة. doch قد تعارض نفياً أو تلطف دعوة؛ ja قد تشير إلى معلومة مشتركة أو مفاجأة؛ mal تلطف طلباً غير رسمي ولا تعني دائماً «قليلاً»؛ denn تضيف اهتماماً/استغراباً في السؤال؛ eigentlich قد تعيد توجيه السؤال أو تلطّفه؛ وwohl تدل غالباً على استنتاج أو احتمال. يتحدد المعنى بالسياق والتنغيم.",
+    summary: "أدوات قصيرة تنقل موقف المتكلم ونبرة الخطاب، ولا تقابلها ترجمة عربية ثابتة. doch قد تعارض نفياً أو تلطف دعوة؛ ja قد تشير إلى معلومة مشتركة أو مفاجأة؛ mal تلطف طلباً غير رسمي ولا تعني دائماً «قليلاً»؛ denn تضيف اهتماماً/استغراباً في السؤال؛ eigentlich قد تعيد توجيه السؤال أو تلطّفه؛ و wohl تدل غالباً على استنتاج أو احتمال. يتحدد المعنى بالسياق والتنغيم.",
     why: "تشيع هذه الأدوات في الألمانية المحكية وتساعد على فهم النبرة والتعبير عنها؛ يتغير استعمالها بحسب المقام، ولا يلزم إدراجها في كل جملة.",
     examples: [
       { de: "Komm doch mit!", ar: "تعال معنا، هيا!" },

@@ -80,7 +80,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "hätte", options: ["wäre", "hätte"] },
         { correct: "wären", options: ["wären", "hätten"] },
       ],
-      explanation: "اختر المساعد الذي يستعمله الفعل في Perfekt: gehen/kommen مع sein، وmachen مع haben.",
+      explanation: "اختر المساعد الذي يستعمله الفعل في Perfekt: gehen/kommen مع sein، و machen مع haben.",
       errorType: "grammar",
     },
     {
@@ -206,6 +206,6 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     culturalNote: {
       title: "الصحة في ألمانيا",
       content:
-        "«Sport ist Mord» عبارة ساخرة ومبالغ فيها قد تُقال عن الرياضة، وليست معلومة صحية (DWDS: https://www.dwds.de/wb/Sport%20ist%20Mord). في ألمانيا، وللمؤمَّن عليهم بالتأمين الصحي القانوني: الفحص الصحي العام مرة بين 18 و34 عاماً، ثم مرة كل ثلاث سنوات ابتداءً من 35 عاماً. ويُتاح فحص جلد للكشف المبكر عن السرطان للبالغين ابتداءً من 35 عاماً كل سنتين ضمن التغطية القانونية. تحقّق من التفاصيل مع شركة التأمين أو العيادة؛ فهذه معلومات عامة وليست نصيحة شخصية. المصادر الرسمية: https://gesund.bund.de/en/gesundheits-check-up-fuer-erwachsene وhttps://gesund.bund.de/en/krebsfrueherkennung",
+        "«Sport ist Mord» عبارة ساخرة ومبالغ فيها قد تُقال عن الرياضة، وليست معلومة صحية (DWDS: https://www.dwds.de/wb/Sport%20ist%20Mord). في ألمانيا، وللمؤمَّن عليهم بالتأمين الصحي القانوني: الفحص الصحي العام مرة بين 18 و34 عاماً، ثم مرة كل ثلاث سنوات ابتداءً من 35 عاماً. ويُتاح فحص جلد للكشف المبكر عن السرطان للبالغين ابتداءً من 35 عاماً كل سنتين ضمن التغطية القانونية. تحقّق من التفاصيل مع شركة التأمين أو العيادة؛ فهذه معلومات عامة وليست نصيحة شخصية. المصادر الرسمية: https://gesund.bund.de/en/gesundheits-check-up-fuer-erwachsene و https://gesund.bund.de/en/krebsfrueherkennung",
     },
   };

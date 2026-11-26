@@ -17,7 +17,7 @@ export const lessonA111: Lesson = {
   order: 1,
   titleDe: "In der Stadt",
   titleAr: "التنقل في المدينة",
-  summary: "أماكن المدينة والسؤال عن الطريق؛ وجهات مختلفة، مع المقارنة المحددة بين Wo? وWohin? عند in؛ وسائل النقل مع mit + Dativ؛ وضمائر المفعول في أمثلة الاتجاهات.",
+  summary: "أماكن المدينة والسؤال عن الطريق؛ وجهات مختلفة، مع المقارنة المحددة بين Wo? و Wohin? عند in؛ وسائل النقل مع mit + Dativ؛ وضمائر المفعول في أمثلة الاتجاهات.",
   lernziele,
   einfuehrung,
   review,

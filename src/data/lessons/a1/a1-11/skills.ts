@@ -29,7 +29,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
       {
         "de": "der Hauptbahnhof",
         "ar": "المحطة المركزية",
-        "noteAr": "مركّب من Haupt (رئيسي) وBahnhof."
+        "noteAr": "مركّب من Haupt (رئيسي) و Bahnhof."
       },
       {
         "de": "steigt … aus (aussteigen)",
@@ -404,7 +404,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
 
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     "id": "p1",
-    "title": "نطق كلمات المدينة: h وst وau وsch وth",
+    "title": "نطق كلمات المدينة: h و st و au و sch و th",
     "items": [
       {
         "de": "der Bahnhof",
@@ -414,12 +414,12 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       {
         "de": "die Straße",
         "ar": "الشارع",
-        "note": "في النطق الألماني المعياري يبدأ st في هذه الكلمة بصوت قريب من /ʃt/، وß تمثل صوت /s/؛ a طويلة هنا."
+        "note": "في النطق الألماني المعياري يبدأ st في هذه الكلمة بصوت قريب من /ʃt/، و ß تمثل صوت /s/؛ a طويلة هنا."
       },
       {
         "de": "geradeaus",
         "ar": "مباشرةً إلى الأمام",
-        "note": "g هنا صوت /g/، وau تقارب /aʊ/؛ التمثيل العربي تقريب مساعد لا نقل صوتي دقيق."
+        "note": "g هنا صوت /g/، و au تقارب /aʊ/؛ التمثيل العربي تقريب مساعد لا نقل صوتي دقيق."
       },
       {
         "de": "die Apotheke",
@@ -429,7 +429,7 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       {
         "de": "das Krankenhaus",
         "ar": "المستشفى",
-        "note": "في Kranken يمثّل nk صوتاً أنفياً يليه k؛ وh في بداية Haus مسموعة لأنها تبدأ المكوّن الثاني."
+        "note": "في Kranken يمثّل nk صوتاً أنفياً يليه k؛ و h في بداية Haus مسموعة لأنها تبدأ المكوّن الثاني."
       },
       {
         "de": "die Ampel",
@@ -452,17 +452,17 @@ export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
       {
         "de": "Gehen Sie geradeaus!",
         "ar": "اتجه مباشرةً!",
-        "tip": "g ألمانية صلبة /g/، وau تقارب /aʊ/؛ لا تحوّلها إلى ج عربية."
+        "tip": "g ألمانية صلبة /g/، و au تقارب /aʊ/؛ لا تحوّلها إلى ج عربية."
       },
       {
         "de": "Ich gehe in die Stadt.",
         "ar": "أذهب إلى المدينة.",
-        "tip": "st في بداية Stadt يبدأ عادةً بصوت /ʃt/، وa قصيرة قبل dt."
+        "tip": "st في بداية Stadt يبدأ عادةً بصوت /ʃt/، و a قصيرة قبل dt."
       },
       {
         "de": "Der Bahnhof ist weit.",
         "ar": "محطة القطار بعيدة.",
-        "tip": "w الألمانية تقارب /v/، وei تقارب /aɪ/."
+        "tip": "w الألمانية تقارب /v/، و ei تقارب /aɪ/."
       }
     ]
   };
@@ -525,7 +525,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
           ]
         }
       ],
-      "explanation": "القرائن تحدد معنى الوجهة: nach Deutschland لبلد اسمه بلا أداة، zum Bahnhof للوصول إلى المحطة دون التركيز على دخولها، zur Apotheke مع الوقوف خارجها، وins Kino hinein للدخول. تتغير حروف الجر عندما تتغير العلاقة المقصودة.",
+      "explanation": "القرائن تحدد معنى الوجهة: nach Deutschland لبلد اسمه بلا أداة، zum Bahnhof للوصول إلى المحطة دون التركيز على دخولها، zur Apotheke مع الوقوف خارجها، و ins Kino hinein للدخول. تتغير حروف الجر عندما تتغير العلاقة المقصودة.",
       "errorType": "preposition"
     },
     {

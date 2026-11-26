@@ -393,7 +393,7 @@ describe("A2-13 lesson content audit", () => {
     const t2 = lessonA213.theory[1]!;
     const t3 = lessonA213.theory[2]!;
     expect(JSON.stringify(t1.eselsbruecke)).not.toContain("PMW");
-    expect(t1.explanationAr).toContain("أدوات الربط (وobwohl توسعةً)");
+    expect(t1.explanationAr).toContain("أدوات الربط (و obwohl توسعةً)");
     expect(t2.explanationAr).toContain("Krankmeldung");
     expect(t2.explanationAr).toContain("AU");
     expect(t2.explanationAr).toContain("لا نصّاً إلزامياً");

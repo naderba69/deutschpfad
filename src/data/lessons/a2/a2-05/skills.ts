@@ -256,17 +256,17 @@ export const listening: NonNullable<Lesson["listening"]> = {
 
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "p1",
-    title: "أصوات المكتب: ü، sp، وch",
+    title: "أصوات المكتب: ü، sp، و ch",
     items: [
       { de: "das Büro", ar: "المكتب", note: "IPA: [byˈʀoː]؛ ü في المقطع الأول صوت أمامي مدوّر [y]، وليس صوت u العربي؛ o في المقطع المنبور طويل." },
-      { de: "anrufen", ar: "يتصل هاتفياً", note: "IPA: [ˈanʀuːfn̩]؛ الجزء المنفصل an يحمل النبر الرئيس، وrufen يبقى في المصدر من حيث بناء الكلمة." },
+      { de: "anrufen", ar: "يتصل هاتفياً", note: "IPA: [ˈanʀuːfn̩]؛ الجزء المنفصل an يحمل النبر الرئيس، و rufen يبقى في المصدر من حيث بناء الكلمة." },
       { de: "der Kollege", ar: "الزميل", note: "IPA: [kɔˈleːɡə]؛ النبر على المقطع الثاني، وفيه e طويلة [eː]." },
-      { de: "die Besprechung", ar: "الاجتماع", note: "IPA: [bəˈʃpʀɛçʊŋ]؛ sp في بداية المقطع المنبور = [ʃp]، وch بعد e = [ç]، ولا يطابق تماماً شيناً أو خاءً عربية." },
+      { de: "die Besprechung", ar: "الاجتماع", note: "IPA: [bəˈʃpʀɛçʊŋ]؛ sp في بداية المقطع المنبور = [ʃp]، و ch بعد e = [ç]، ولا يطابق تماماً شيناً أو خاءً عربية." },
       { de: "die Nachricht", ar: "الرسالة", note: "IPA: [ˈnaːxʁɪçt]؛ ch بعد a هو [x]، وبعد i هو [ç]؛ يختلف الصوتان بحسب الحركة السابقة." },
       { de: "verbinden", ar: "يحوّل/يصل المكالمة", note: "IPA: [fɛɐ̯ˈbɪndn̩]؛ v في ver هنا [f]، والنبر على bin؛ النطق قد يحقق نهاية -en بمقطع أنفي مخفّف." },
     ],
     tip:
-      "استخدم رموز IPA أو تسجيلاً موثوقاً عند التدرب. لا يقابل ü في Büro صوت عربي مطابق؛ فلا تختزله إلى /u/ أو /i/. وch في Besprechung [ç] ليس شيناً أو خاءً مطابقة؛ أما Nachricht ففيها [x] بعد a و[ç] بعد i. قد يختلف تحقيق r الألماني بحسب المتحدث والمنطقة؛ وهذه الرموز أوصاف قاموسية وليست طريقة نطق وحيدة.",
+      "استخدم رموز IPA أو تسجيلاً موثوقاً عند التدرب. لا يقابل ü في Büro صوت عربي مطابق؛ فلا تختزله إلى /u/ أو /i/. و ch في Besprechung [ç] ليس شيناً أو خاءً مطابقة؛ أما Nachricht ففيها [x] بعد a و[ç] بعد i. قد يختلف تحقيق r الألماني بحسب المتحدث والمنطقة؛ وهذه الرموز أوصاف قاموسية وليست طريقة نطق وحيدة.",
     shadowing: [
       { de: "Firma Weber, guten Tag!", ar: "شركة فيبر، طاب يومك!", tip: "ابدأ بتحية قصيرة واضحة، ثم انطق اسم الشركة؛ هذا تدريب نطق لا تقييم لمكالمة حقيقية." },
       { de: "Ich verbinde Sie.", ar: "سأحوّلك إلى الجهة المطلوبة.", tip: "ich ينتهي بـ /ç/ بعد حركة أمامية؛ verbinde: /fɛɐ̯ˈbɪndə/." },
@@ -297,7 +297,7 @@ export const writing: NonNullable<Lesson["writing"]> = [
         { correct: "warst", options: ["war", "warst", "wart"] },
         { correct: "hatte", options: ["hatte", "hatten", "hattest"] },
       ],
-      explanation: "تتبع الفاعل: ich war، wir hatten، du warst، وFrau Weber hatte.",
+      explanation: "تتبع الفاعل: ich war، wir hatten، du warst، و Frau Weber hatte.",
       errorType: "conjugation",
     },
     {

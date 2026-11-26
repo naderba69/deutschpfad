@@ -530,7 +530,7 @@ describe("A1-10 audited lesson content", () => {
   it("keeps A1-10 in the lesson index and exposes no lesson-duration field", () => {
     const meta = getLessonMeta(lessonA110.id);
     expect(meta?.titleDe).toBe("Arbeit und Berufe");
-    expect(meta?.summary).toContain("الجمل المهنية بـsein وarbeiten als");
+    expect(meta?.summary).toContain("الجمل المهنية بـsein و arbeiten als");
     expect(hasDurationField(lessonA110)).toBe(false);
     expect(LESSON_META.every((item) => !hasDurationField(item))).toBe(true);
   });

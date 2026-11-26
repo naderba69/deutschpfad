@@ -8,7 +8,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z1",
       de: "Ich kann Relativsätze mit „dessen“ und „deren“ bilden.",
-      ar: "أن أبني جملة نسبية تعبّر عن المِلكية بـ dessen وderen.",
+      ar: "أن أبني جملة نسبية تعبّر عن المِلكية بـ dessen و deren.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["e1", "e2", "e3", "e4", "e5", "e6", "e7", "m1", "m3", "m5", "w1", "w3", "q4"],
@@ -18,7 +18,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b2-11:m1", "mini-test:b2-11:m3", "mini-test:b2-11:m5",
           "writing:b2-11:w1", "writing:b2-11:w3", "listening:l3:q4",
         ],
-        labelAr: "أختار dessen أو deren وأصحح الخطأ فيهما وأرتب جملة نسبية (e1 إلى e7 وm1 وm3 وm5 وw1 وw3)، وأفهم الإسناد بـ dessen في q4، دون كشف الحل.",
+        labelAr: "أختار dessen أو deren وأصحح الخطأ فيهما وأرتب جملة نسبية (e1 إلى e7 و m1 و m3 و m5 و w1 و w3)، وأفهم الإسناد بـ dessen في q4، دون كشف الحل.",
       },
     },
     {
@@ -29,13 +29,13 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["e8", "e9", "e10", "e14", "m2"],
         taskIds: ["practice:b2-11:e8", "practice:b2-11:e9", "practice:b2-11:e10", "practice:b2-11:e14", "mini-test:b2-11:m2"],
-        labelAr: "أختار الصيغة الصحيحة وأصحح الخطأ وأحوّل جملة إلى المصدر المزدوج (e8 وe9 وe10 وe14 وm2)، دون كشف الحل.",
+        labelAr: "أختار الصيغة الصحيحة وأصحح الخطأ وأحوّل جملة إلى المصدر المزدوج (e8 و e9 و e10 و e14 و m2)، دون كشف الحل.",
       },
     },
     {
       id: "z3",
       de: "Ich kann „lassen“, „sehen“ und „hören“ im Perfekt korrekt einsetzen.",
-      ar: "أن أصرّف lassen وsehen وhören في الماضي بصيغة المصدر المزدوج.",
+      ar: "أن أصرّف lassen و sehen و hören في الماضي بصيغة المصدر المزدوج.",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["e11", "e12", "e13", "m4", "w2", "q3"],
@@ -43,7 +43,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "practice:b2-11:e11", "practice:b2-11:e12", "practice:b2-11:e13",
           "mini-test:b2-11:m4", "writing:b2-11:w2", "listening:l2:q3",
         ],
-        labelAr: "أكمل جملة بـ lassen بالمصدر، وأختار التركيب الذي يعني التكليف، وأرتب جملة بـ hören (e11 إلى e13 وm4 وw2 وq3)، دون كشف الحل.",
+        labelAr: "أكمل جملة بـ lassen بالمصدر، وأختار التركيب الذي يعني التكليف، وأرتب جملة بـ hören (e11 إلى e13 و m4 و w2 و q3)، دون كشف الحل.",
       },
     },
     {
@@ -57,14 +57,14 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "listening:l1:q1",
           "listening:l1:q2",
         ],
-        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 وq2، دون كشف النص.",
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 و q2، دون كشف النص.",
       },
     },
   ];
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "كيف تصوغ بالألمانية «الكاتب الذي رواياته مترجمة إلى العربية»؟ في هذا المثال تربط العربية الملكية بضمير متصل («رواياته»)، بينما تستعمل الألمانية dessen. وكيف تقول «اضطررت أن أعمل»؟ في Perfekt نقول: Ich habe arbeiten müssen. هذان نمطان يساعدان على فهم الجمل المركّبة، لا حدّ فاصل آلي بين مستويي B1 وB2.",
+      "كيف تصوغ بالألمانية «الكاتب الذي رواياته مترجمة إلى العربية»؟ في هذا المثال تربط العربية الملكية بضمير متصل («رواياته»)، بينما تستعمل الألمانية dessen. وكيف تقول «اضطررت أن أعمل»؟ في Perfekt نقول: Ich habe arbeiten müssen. هذان نمطان يساعدان على فهم الجمل المركّبة، لا حدّ فاصل آلي بين مستويي B1 و B2.",
     contextAr:
       "في المقال الصحفي أو النص الأدبي أو تقرير العمل قد تُجمع معلومات مترابطة في جملة واحدة، بدلاً من فصلها إلى جمل قصيرة. مثال: Der Autor, dessen Romane ins Arabische übersetzt wurden, lebt in Berlin. هذا تركيب مفيد عند قراءة نصوص متقدمة، مع أن اختيار الجمل القصيرة أو المركّبة يتغيّر بحسب الكاتب والسياق.",
     activateVocabulary: [

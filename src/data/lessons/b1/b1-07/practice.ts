@@ -162,7 +162,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       instructionAr: "أكمل بحرف الربط (لأنّ):",
       template: "Ich lerne, ___ ich eine Prüfung habe.",
       blanks: [{ correct: "weil", options: ["weil", "wenn", "ob", "dass"] }],
-      explanation: "weil = لأنّ (سبب). wenn = عندما/إذا، وob = هل، وdass = أنّ.",
+      explanation: "weil = لأنّ (سبب). wenn = عندما/إذا، و ob = هل، و dass = أنّ.",
       errorType: "grammar",
       points: 2,
     },
@@ -192,6 +192,6 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     culturalNote: {
       title: "السياسة الألمانية",
       content:
-        "ألمانيا ديمقراطية برلمانية. ينتخب الناس أعضاء Bundestag عادةً لمدة أربع سنوات، مع إمكان إجراء انتخابات مبكرة إذا حُلّ البرلمان. وينتخب أعضاء Bundestag المستشار/ة؛ لا ينتخبه الناخبون مباشرة. المصادر الرسمية: https://www.bundeswahlleiterin.de/service/glossar/w/wahlperiode.html وhttps://www.bundesregierung.de/breg-de/aktuelles/die-wahl-des-bundeskanzlers-346690 .",
+        "ألمانيا ديمقراطية برلمانية. ينتخب الناس أعضاء Bundestag عادةً لمدة أربع سنوات، مع إمكان إجراء انتخابات مبكرة إذا حُلّ البرلمان. وينتخب أعضاء Bundestag المستشار/ة؛ لا ينتخبه الناخبون مباشرة. المصادر الرسمية: https://www.bundeswahlleiterin.de/service/glossar/w/wahlperiode.html و https://www.bundesregierung.de/breg-de/aktuelles/die-wahl-des-bundeskanzlers-346690 .",
     },
   };

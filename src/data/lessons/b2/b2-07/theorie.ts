@@ -32,13 +32,13 @@ export const theory: NonNullable<Lesson["theory"]> = [
         { de: "Bis 2040 wird sich die Lage vermutlich verändert haben.", ar: "قد تكون الأحوال قد تغيرت بحلول 2040." },
       ],
       comparisonWithArabic:
-        "يمكن تقريب «سأكون قد قرأت» من «Ich werde gelesen haben» عند الحديث عن حدث يكتمل قبل وقت مستقبلي، لكن الترجمة تتوقف على السياق. وفي التخمين عن الماضي تقابل «Er wird den Zug verpasst haben» صياغة مثل «لا بد أنه فاته القطار»؛ وwohl قد يضيف معنى الترجيح، لكنه ليس مقابلاً ثابتاً لـ«لا بد». في الألمانية احفظ بنية Infinitiv Perfekt بعد werden، مع مراعاة ترتيب الفعل في نوع الجملة.",
+        "يمكن تقريب «سأكون قد قرأت» من «Ich werde gelesen haben» عند الحديث عن حدث يكتمل قبل وقت مستقبلي، لكن الترجمة تتوقف على السياق. وفي التخمين عن الماضي تقابل «Er wird den Zug verpasst haben» صياغة مثل «لا بد أنه فاته القطار»؛ و wohl قد يضيف معنى الترجيح، لكنه ليس مقابلاً ثابتاً لـ«لا بد». في الألمانية احفظ بنية Infinitiv Perfekt بعد werden، مع مراعاة ترتيب الفعل في نوع الجملة.",
       eselsbruecke:
         "Futur II = werden + Partizip II + haben/sein؛ قد يصف اكتمالاً قبل نقطة مستقبلية، وقد يصوغ تخميناً عن الماضي. اسأل: هل أعرض اكتمالاً مستقبلياً أم أرجّح أمراً سابقاً؟",
       commonMistakes: [
         { wrong: "Ich werde Deutsch gelernt haben gelernt (تضاعف)", right: "Ich werde Deutsch gelernt haben.", whyAr: "Partizip II يرد مرّة واحدة فقط، ويأتي قبل haben مباشرة: werde + gelernt + haben. وتكراره ناتج عن إضافة المساعد في موضعه الخطأ، أو عن الخلط بين التام (habe gelernt) والمستقبل التام (werde gelernt haben)، وكلاهما يجعل الجملة غير مقبولة مع أنها مفهومة." },
-        { wrong: "Er wird gegangen haben (حركة بـ haben)", right: "Er wird gegangen sein.", whyAr: "أفعال كثيرة لازمة تدل على انتقال أو تغيّر حالة تأخذ sein في Perfekt، مثل gehen وankommen وeinschlafen. لكن لا يكفي معنى الحركة وحده للحكم على كل فعل؛ تحقق من استعمال الفعل ومعناه المحدد في Perfekt." },
-        { wrong: "Futur I أم II؟", right: "I = سأفعل؛ II = سأكون قد فعلت، أو تخمين عن الماضي", whyAr: "الاثنان يبدآن بـ werden ويختلف تركيبهما: Futur I يضع المصدر (werde lernen = سأتعلم)، وFutur II يضع Partizip II والمساعد (werde gelernt haben). قد يدل Futur II على اكتمال قبل نقطة مستقبلية، أو على ترجيح حدث سابق؛ فالاكتمال المستقبلي ليس استعماله الوحيد." },
+        { wrong: "Er wird gegangen haben (حركة بـ haben)", right: "Er wird gegangen sein.", whyAr: "أفعال كثيرة لازمة تدل على انتقال أو تغيّر حالة تأخذ sein في Perfekt، مثل gehen و ankommen و einschlafen. لكن لا يكفي معنى الحركة وحده للحكم على كل فعل؛ تحقق من استعمال الفعل ومعناه المحدد في Perfekt." },
+        { wrong: "Futur I أم II؟", right: "I = سأفعل؛ II = سأكون قد فعلت، أو تخمين عن الماضي", whyAr: "الاثنان يبدآن بـ werden ويختلف تركيبهما: Futur I يضع المصدر (werde lernen = سأتعلم)، و Futur II يضع Partizip II والمساعد (werde gelernt haben). قد يدل Futur II على اكتمال قبل نقطة مستقبلية، أو على ترجيح حدث سابق؛ فالاكتمال المستقبلي ليس استعماله الوحيد." },
       ],
       relatedRuleComparison: {
         title: "Futur I أم Futur II؟",
@@ -78,7 +78,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       commonMistakes: [
         { wrong: "مقال بلا خاتمة", right: "أضف خاتمة إذا طلبتها المهمة، وأجب فيها عن السؤال", whyAr: "كثير من مخططات المقال التدريبي تتضمن خاتمة، لكن شكلها ومقدارها يتبعان المطلوب. في هذا التمرين لخّص موقفك أو أجب عن السؤال؛ لا تُضف رأياً جديداً بلا تعليل." },
         { wrong: "رأي واحد فقط (بلا Contra)", right: "اعرض الجانبين إذا طلبت المهمة مناقشة الرأيين", whyAr: "في المهمة الجدلية التي تطلب المقارنة، اذكر الرأي المقابل وردّ عليه ثم وضّح موقفك. أما إذا طلب السؤال دعم أطروحة واحدة، فلا يلزم إدخال جانب ثانٍ لمجرد اتباع قالب محفوظ." },
-        { wrong: "عبارات شديدة المحادثية في المهمة", right: "اختر سجلاً يلائم القارئ ونوع النص", whyAr: "قد لا تلائم عبارة شديدة المحادثية مثل echt krass مقالاً أكاديمياً؛ يمكن أن تكون besonders problematisch أدق في هذا السياق. لكن الاختيار مرتبط بالمقام والمهمة، وليس منعاً مطلقاً لعبارات بعينها. außerdem وdarüber hinaus رابطان ممكنان حين تناسب العلاقة." },
+        { wrong: "عبارات شديدة المحادثية في المهمة", right: "اختر سجلاً يلائم القارئ ونوع النص", whyAr: "قد لا تلائم عبارة شديدة المحادثية مثل echt krass مقالاً أكاديمياً؛ يمكن أن تكون besonders problematisch أدق في هذا السياق. لكن الاختيار مرتبط بالمقام والمهمة، وليس منعاً مطلقاً لعبارات بعينها. außerdem و darüber hinaus رابطان ممكنان حين تناسب العلاقة." },
       ],
       relatedRuleComparison: {
         title: "Erörterung أم Bericht؟",
@@ -123,7 +123,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       ],
       relatedRuleComparison: {
         title: "حرية الصحافة أم حرية الرأي؟",
-        content: "Pressefreiheit حرية وسائل الإعلام في النشر، وMeinungsfreiheit حرية الأفراد في التعبير. متكاملتان لكن مختلفتان: الصحفي يتمتع بالأولى، والمواطن بالثانية.",
+        content: "Pressefreiheit حرية وسائل الإعلام في النشر، و Meinungsfreiheit حرية الأفراد في التعبير. متكاملتان لكن مختلفتان: الصحفي يتمتع بالأولى، والمواطن بالثانية.",
       },
     },
   ];

@@ -119,11 +119,11 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "أصوات التواصل: tion، ei، وö",
+    title: "أصوات التواصل: tion، ei، و ö",
     items: [
       { de: "die Kommunikation", ar: "التواصل", note: "tion = تسيون: كومونيكاتسيون" },
       { de: "das Missverständnis", ar: "سوء الفهم", note: "شديدة: ميس-فِر-شتندنيس" },
-      { de: "zuhören", ar: "يصغي", note: "z = /ts/، وzu = /tsuː/ تقريباً" },
+      { de: "zuhören", ar: "يصغي", note: "z = /ts/، و zu = /tsuː/ تقريباً" },
       { de: "das Verhalten", ar: "السلوك", note: "v = ف + h: فِر-هالتن" },
       { de: "vermeiden", ar: "يتجنب", note: "ei = آي: فِرمايدن" },
       { de: "das Gefühl", ar: "الشعور", note: "ü طويل بصوت أمامي مستدير، لا مقابل دقيقاً له في العربية" },

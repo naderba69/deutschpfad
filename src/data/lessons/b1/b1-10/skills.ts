@@ -124,10 +124,10 @@ export const pronunciation: Lesson["pronunciation"] = {
     items: [
       { de: "die Zukunft", ar: "المستقبل", note: "IPA: [ˈtsuːkʊnft]؛ u الأولى طويلة والثانية قصيرة." },
       { de: "würde", ar: "كنت سأفعل", note: "IPA: [ˈvʏʁdə]؛ انتبه إلى ü القصيرة وإلى r الألمانية." },
-      { de: "das Gemälde", ar: "اللوحة", note: "IPA: [ɡəˈmɛːldə]؛ g هنا [ɡ] مجهور، وä طويلة." },
-      { de: "der Bürger", ar: "المواطن", note: "IPA: [ˈbʏʁɡɐ]؛ g هنا [ɡ] مجهور، وü قصيرة." },
-      { de: "die Regierung", ar: "الحكومة", note: "IPA: [ʁeˈɡiːʁʊŋ]؛ g هنا [ɡ] مجهور، وie تمثل [iː]." },
-      { de: "während", ar: "بينما", note: "IPA: [ˈvɛːʀənt]؛ w تمثل [v] وä طويلة." },
+      { de: "das Gemälde", ar: "اللوحة", note: "IPA: [ɡəˈmɛːldə]؛ g هنا [ɡ] مجهور، و ä طويلة." },
+      { de: "der Bürger", ar: "المواطن", note: "IPA: [ˈbʏʁɡɐ]؛ g هنا [ɡ] مجهور، و ü قصيرة." },
+      { de: "die Regierung", ar: "الحكومة", note: "IPA: [ʁeˈɡiːʁʊŋ]؛ g هنا [ɡ] مجهور، و ie تمثل [iː]." },
+      { de: "während", ar: "بينما", note: "IPA: [ˈvɛːʀənt]؛ w تمثل [v] و ä طويلة." },
     ],
     tip: "تدريب استماع وترديد باستخدام IPA في الملاحظات. زر النطق يعتمد على صوت الجهاز (TTS) ولا يقيس دقة نطقك.",
     shadowing: [

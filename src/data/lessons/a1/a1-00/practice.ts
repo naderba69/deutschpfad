@@ -31,9 +31,9 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       questionAr: "أي كلمة تُنطق بفاء؟",
       options: ["Video", "Vater", "Wasser", "Wien"],
       correctIndex: 1,
-      optionExplanations: ["لا — «Video» دخيلة شائعة ويُنطق فيها V صوتاً مجهوراً قريباً من V الإنجليزية، لا فاءً؛ أما «Vater» فتبدأ بفاء.", undefined, "لا — «Wasser» تبدأ بـW لا V؛ وW الألمانية تُنطق عادةً قريباً من [v] (ڤ). المطلوب كلمة تبدأ بحرف V ذي نطق [f]: «Vater».", "لا — «Wien» أوّلها «W» لا «V»؛ وفي كلمات ألمانية شائعة مثل «Vater»، تُنطق «V» فاءً."],
+      optionExplanations: ["لا — «Video» دخيلة شائعة ويُنطق فيها V صوتاً مجهوراً قريباً من V الإنجليزية، لا فاءً؛ أما «Vater» فتبدأ بفاء.", undefined, "لا — «Wasser» تبدأ بـW لا V؛ و W الألمانية تُنطق عادةً قريباً من [v] (ڤ). المطلوب كلمة تبدأ بحرف V ذي نطق [f]: «Vater».", "لا — «Wien» أوّلها «W» لا «V»؛ وفي كلمات ألمانية شائعة مثل «Vater»، تُنطق «V» فاءً."],
       explanation:
-        "Vater = فاتر (ف). أما Video فتلفظ ڤ، وWasser وWien بـ ڤ أيضاً.",
+        "Vater = فاتر (ف). أما Video فتلفظ ڤ، و Wasser و Wien بـ ڤ أيضاً.",
       errorType: "spelling",
     },
     {
@@ -103,7 +103,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       type: "dictation",
       instructionAr: "استمع إلى الكلمة كاملة ثم اكتبها:",
       audioText: "Katze",
-      explanation: "Katze = قطة: K-A-T-Z-E — وtz تُنطق تس.",
+      explanation: "Katze = قطة: K-A-T-Z-E — و tz تُنطق تس.",
       errorType: "spelling",
     },
     {
@@ -116,7 +116,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { left: "Z", right: "تس (Zeit = تسايت)" },
         { left: "W", right: "ڤ (Wasser = ڤاسّر)" },
       ],
-      explanation: "في الكلمات الشائعة: J في ja قريب من ي، وV في Vater ف، وZ في Zeit تس، وW في Wasser قريب من ڤ. قد يختلف V في بعض الكلمات الدخيلة مثل Video.",
+      explanation: "في الكلمات الشائعة: J في ja قريب من ي، و V في Vater ف، و Z في Zeit تس، و W في Wasser قريب من ڤ. قد يختلف V في بعض الكلمات الدخيلة مثل Video.",
       errorType: "spelling",
     },
     {
@@ -142,7 +142,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       ],
       correctIndex: 1,
       explanation:
-        "في Wasser يُنطق W بصوت قريب من [v]، وss صوتها مهموس [s] وتشير هنا إلى قصر a.",
+        "في Wasser يُنطق W بصوت قريب من [v]، و ss صوتها مهموس [s] وتشير هنا إلى قصر a.",
       optionExplanations: [
         "هذه قيمة «W» الإنجليزية؛ والألمانية تنطقه ڤ كما في «Wasser».",
         undefined,
@@ -176,7 +176,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       template: "Ich wohne in der Bahnhofstra___e.",
       blanks: [{ correct: "ß", options: ["ß", "ss", "s", "sz"] }],
       explanation:
-        "حرف a في Straße طويل، والعلّة الطويلة يليها ß لا ss. ولو كانت العلّة قصيرة لكُتبت ss كما في Wasser وmuss.",
+        "حرف a في Straße طويل، والعلّة الطويلة يليها ß لا ss. ولو كانت العلّة قصيرة لكُتبت ss كما في Wasser و muss.",
       errorType: "spelling",
     },
     {
@@ -207,7 +207,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { left: "st-", right: "شت في بداية الكلمة (Stadt)" },
       ],
       explanation:
-        "هذه أمثلة تدريبية على أنماط شائعة، وليست جرداً لكل تراكيب الألمانية. قارِن ei وie خصوصاً: تتشابهان في الحروف وتختلفان عادةً في النطق. eu وäu متشابهان في الصوت في أمثلة مثل neu وHäuser، رغم اختلاف الكتابة.",
+        "هذه أمثلة تدريبية على أنماط شائعة، وليست جرداً لكل تراكيب الألمانية. قارِن ei و ie خصوصاً: تتشابهان في الحروف وتختلفان عادةً في النطق. eu و äu متشابهان في الصوت في أمثلة مثل neu و Häuser، رغم اختلاف الكتابة.",
       errorType: "spelling",
     },
     {
@@ -245,12 +245,12 @@ export const fehlerUndTipps: NonNullable<Lesson["fehlerUndTipps"]> = {
       },
     ],
     eselsbruecken: [
-      "ei تُنطق «آي» (مثل mein)، وie تُنطق «إي» ممدودة (مثل Liebe). لا تخلط بينهما: الصوت يتبع المجموعة كلها، لا ترتيب الحرفين.",
-      "W مثل ڤ، V مثل ف في الأغلب — تذكّر: «فاتر وڤاسّر»: Vater (ف) وWasser (ڤ).",
+      "ei تُنطق «آي» (مثل mein)، و ie تُنطق «إي» ممدودة (مثل Liebe). لا تخلط بينهما: الصوت يتبع المجموعة كلها، لا ترتيب الحرفين.",
+      "W مثل ڤ، V مثل ف في الأغلب — تذكّر: «فاتر وڤاسّر»: Vater (ف) و Wasser (ڤ).",
     ],
     culturalNote: {
       title: "لماذا التهجئة مهمة في ألمانيا؟",
       content:
-        "قد يُطلب منك تهجئة اسم أو عنوان في مكالمة أو عند ملء استمارة. تساعد كلمات التهجئة على تمييز الحروف المتشابهة عند سماعها. الأمثلة Anton وBerta وCäsar في هذا الدرس من جدول ألماني تقليدي؛ أما جدول DIN 5009 الحديث فيستخدم أسماء مدن مثل Aachen وBerlin. ليست قائمة هذا الدرس ادعاءً بأن الجميع يستخدمون جدولاً واحداً في كل موقف.",
+        "قد يُطلب منك تهجئة اسم أو عنوان في مكالمة أو عند ملء استمارة. تساعد كلمات التهجئة على تمييز الحروف المتشابهة عند سماعها. الأمثلة Anton و Berta و Cäsar في هذا الدرس من جدول ألماني تقليدي؛ أما جدول DIN 5009 الحديث فيستخدم أسماء مدن مثل Aachen و Berlin. ليست قائمة هذا الدرس ادعاءً بأن الجميع يستخدمون جدولاً واحداً في كل موقف.",
     },
   };

@@ -23,11 +23,11 @@ export const GAP_LESSON_VOCAB: Record<string, VocabEntry[]> = {
   ],
   "b2-11": [
     {de: "die Zugehörigkeit", ar: "الانتماء", exampleDe: "Das Gefühl der Zugehörigkeit ist im Team wichtig.", exampleAr: "الإحساس بالانتماء مهم داخل الفريق."},
-    {de: "das Relativpronomen", ar: "الضمير النسبي", exampleDe: "Dessen und deren sind Relativpronomen im Genitiv.", exampleAr: "dessen وderen ضميران نسبيان في حالة الجر."},
+    {de: "das Relativpronomen", ar: "الضمير النسبي", exampleDe: "Dessen und deren sind Relativpronomen im Genitiv.", exampleAr: "dessen و deren ضميران نسبيان في حالة الجر."},
     {de: "der Besitz", ar: "الملكية", exampleDe: "Das Haus ist in seinem Besitz.", exampleAr: "البيت في ملكيته."},
     {de: "dessen", ar: "الذي / التي له (مذكر أو محايد)", exampleDe: "Das ist der Nachbar, dessen Hund immer bellt.", exampleAr: "هذا الجار الذي كلبه ينبح دائماً."},
     {de: "deren", ar: "التي / الذي لها (مؤنث أو جمع)", exampleDe: "Das ist die Frau, deren Tochter Ärztin ist.", exampleAr: "هذه المرأة التي ابنتها طبيبة."},
-    {de: "das Modalverb", ar: "الفعل المودال", exampleDe: "Können, müssen und dürfen sind Modalverben.", exampleAr: "können وmüssen وdürfen أفعال مودال."},
+    {de: "das Modalverb", ar: "الفعل المودال", exampleDe: "Können, müssen und dürfen sind Modalverben.", exampleAr: "können و müssen و dürfen أفعال مودال."},
     {de: "der Infinitiv", ar: "المصدر", exampleDe: "Im Perfekt steht der doppelte Infinitiv am Ende.", exampleAr: "في الماضي المركب يقع المصدر المزدوج في آخر الجملة."},
     {de: "lassen", ar: "يطلب من غيره أن يفعل", exampleDe: "Ich lasse mein Fahrrad reparieren.", exampleAr: "أطلب من غيري أن يُصلح دراجتي."},
     {de: "reparieren", ar: "يُصلح", exampleDe: "Der Techniker kann das Gerät reparieren.", exampleAr: "يستطيع الفني إصلاح الجهاز."},

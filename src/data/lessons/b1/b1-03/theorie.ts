@@ -14,7 +14,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
 
 وتصريف werden هو عصب هذا التركيب: ich werde · du wirst · er/sie/es wird · wir werden · ihr werdet · sie werden. وفي Präteritum يأتي wurde/wurden، أما Perfekt للمجهول فيأتي مثل ist + Partizip II + worden (Das Haus ist gebaut worden). في هذا التركيب تكون الصيغة worden لا geworden.
 
-يمكن حذف الفاعل الأصلي إذا لم يكن محور الكلام، أو ذكره غالباً بـvon + Dativ: Das Haus wird von den Arbeitern gebaut. وقد تأتي durch + Akkusativ لذكر سبب أو وسيلة أو وسيط، وأحياناً فاعلٍ أيضاً؛ لذلك لا نقسم von وdurch على أساس «عاقل/غير عاقل» وحده.
+يمكن حذف الفاعل الأصلي إذا لم يكن محور الكلام، أو ذكره غالباً بـvon + Dativ: Das Haus wird von den Arbeitern gebaut. وقد تأتي durch + Akkusativ لذكر سبب أو وسيلة أو وسيط، وأحياناً فاعلٍ أيضاً؛ لذلك لا نقسم von و durch على أساس «عاقل/غير عاقل» وحده.
 
 يمكن أيضاً استعمال man مع فعل معلوم لإسناد الفعل إلى فاعل عام غير محدد: Man baut das Haus. هذه صيغة نشطة بفاعل عام، وليست مجهولاً صرفياً. وقد يُختار بينهما بحسب ما يريد المتكلم إبرازَه؛ لا توجد قاعدة أن أحدهما يخصّ الكلام والآخر يخصّ الكتابة.`,
       whyAr:
@@ -38,13 +38,13 @@ export const theory: NonNullable<Lesson["theory"]> = [
         { de: "Die Stadt wurde durch das Hochwasser zerstört.", ar: "دُمّرت المدينة بسبب الفيضان." },
       ],
       comparisonWithArabic:
-        "يمكن تقريب Das Haus wird gebaut إلى «يُبنى البيت»، وDas Haus wurde gebaut إلى «بُني البيت»؛ فيتغير الزمن في الألمانية بتصريف werden، ويبقى Partizip II في الصيغتين. لكن لا نطابق كل جملة آلياً: فالعربية والألمانية تملكان أكثر من طريقة للتعبير عن الحدث والفاعل، وقد تذكر الألمانية المنفّذ: Das Haus wird von der Gemeinde gebaut. وMan baut das Haus جملة نشطة ذات فاعل عام، لا مجهول صرفي. هذه المقارنة تشرح المعنى والفرق البنائي، لا قاعدة تحويل واحد إلى واحد.",
+        "يمكن تقريب Das Haus wird gebaut إلى «يُبنى البيت»، و Das Haus wurde gebaut إلى «بُني البيت»؛ فيتغير الزمن في الألمانية بتصريف werden، ويبقى Partizip II في الصيغتين. لكن لا نطابق كل جملة آلياً: فالعربية والألمانية تملكان أكثر من طريقة للتعبير عن الحدث والفاعل، وقد تذكر الألمانية المنفّذ: Das Haus wird von der Gemeinde gebaut. و Man baut das Haus جملة نشطة ذات فاعل عام، لا مجهول صرفي. هذه المقارنة تشرح المعنى والفرق البنائي، لا قاعدة تحويل واحد إلى واحد.",
       eselsbruecke:
         "في هذا الدرس: werden + Partizip II = Vorgangspassiv. أما werden مع صفة فقد يعني «يصبح» (wird kalt)، ومع المصدر يكوّن Futur (wird arbeiten).",
       commonMistakes: [
         { wrong: "Das Haus wird von die Arbeiter gebaut.", right: "Das Haus wird von den Arbeitern gebaut.", whyAr: "von يأخذ Dativ دائماً، والجمع die Arbeiter يصير den Arbeitern في الجرّ: von den Arbeitern — لا von die Arbeiter كما في حالة الرفع." },
         { wrong: "Das Haus wird bauen (مجهول خاطئ)", right: "Das Haus wird gebaut.", whyAr: "المجهول تركيب من طبقتين: فعل مساعد werden مصرَّفاً + Partizip II في النهاية، فلا يكفي المصدر bauen ولا Partizip وحده، بل wird gebaut معاً." },
-        { wrong: "wird أم wurde؟", right: "wird = مضارع (يُبنى). wurde = ماضٍ (بُني)", whyAr: "الفرق هنا زمني: wird للمضارع وwurde للماضي البسيط، ويتبعهما Partizip II في هذا التركيب." },
+        { wrong: "wird أم wurde؟", right: "wird = مضارع (يُبنى). wurde = ماضٍ (بُني)", whyAr: "الفرق هنا زمني: wird للمضارع و wurde للماضي البسيط، ويتبعهما Partizip II في هذا التركيب." },
       ],
       relatedRuleComparison: {
         title: "Passiv أم Aktiv؟",
@@ -58,13 +58,13 @@ export const theory: NonNullable<Lesson["theory"]> = [
       explanationAr:
                 `التركيب المصدري مع zu يربط معنى فعل أو صفة بمجموعة مصدرية: Er versucht, den Müll zu trennen. يظهر الفعل في نهاية المجموعة، ويُكتب zu منفصلاً عنه في الأفعال غير المنفصلة؛ وفي أمثلة الدرس نفصل المجموعة بفاصلة. أما الفعل المنفصل فيأخذ zu بين السابقة والفعل: ausschalten → auszuschalten، anfangen → anzufangen.
 
-تأخذ الأفعال الناقصة (können · müssen · wollen · dürfen · sollen) المصدر بلا zu: Ich kann schwimmen. أما كثير من الأفعال مثل versuchen وplanen، والصفات في Es ist wichtig، فتأتي مع zu-Infinitiv: Ich versuche, Müll zu trennen؛ Es ist wichtig, Wasser zu sparen. لا تعمم القاعدة على كل الأفعال: فهناك أفعال أخرى وتراكيب خاصة، مثل أفعال الإدراك في Ich sehe ihn kommen.
+تأخذ الأفعال الناقصة (können · müssen · wollen · dürfen · sollen) المصدر بلا zu: Ich kann schwimmen. أما كثير من الأفعال مثل versuchen و planen، والصفات في Es ist wichtig، فتأتي مع zu-Infinitiv: Ich versuche, Müll zu trennen؛ Es ist wichtig, Wasser zu sparen. لا تعمم القاعدة على كل الأفعال: فهناك أفعال أخرى وتراكيب خاصة، مثل أفعال الإدراك في Ich sehe ihn kommen.
 
-انتبه إلى الفرق بين zu-Infinitiv وum … zu: في Ich hoffe, dich zu sehen يكمل المصدر معنى hoffen، ولا يصرّح بهدف. أما um … zu فيعرض الغاية: Ich lerne Deutsch, um in Deutschland zu arbeiten. يستعمل um … zu عادةً عندما يكون فاعل الجملة الرئيسية هو نفسه صاحب الغاية.
+انتبه إلى الفرق بين zu-Infinitiv و um … zu: في Ich hoffe, dich zu sehen يكمل المصدر معنى hoffen، ولا يصرّح بهدف. أما um … zu فيعرض الغاية: Ich lerne Deutsch, um in Deutschland zu arbeiten. يستعمل um … zu عادةً عندما يكون فاعل الجملة الرئيسية هو نفسه صاحب الغاية.
 
 تدخل damit جملة تامة لها فاعل وفعل مصرّف، وتلزم إذا اختلف صاحب الفعل عن صاحب الغاية: Ich lerne Deutsch, damit meine Kinder mich verstehen. ويمكن استعمال damit أيضاً مع اتحاد الفاعل: Ich lerne Deutsch, damit ich Bücher auf Deutsch lesen kann. لذلك لا تقل إن damit ممنوعة حين يتحد الفاعل. هذه أنماط الدرس الشائعة وليست جرداً لكل استعمالات المصدر الألماني.`,
       whyAr:
-                "التركيب يتحدد بالفعل أو الصفة: بعد können يأتي المصدر بلا zu، كما في Ich kann schwimmen؛ وبعد versuchen أو الصفة wichtig يأتي zu-Infinitiv، كما في Ich versuche, Deutsch zu lernen وEs ist wichtig, Deutsch zu lernen. ويكمل المصدر معنى الفعل أو الصفة، ولا يكون دائماً غاية. أما um … zu فيضيف معنى الهدف، وdamit تدخل جملة مصرّفة؛ وهذا الفرق يساعدك على اختيار الصيغة بحسب المعنى لا حفظ zu منفردة.",
+                "التركيب يتحدد بالفعل أو الصفة: بعد können يأتي المصدر بلا zu، كما في Ich kann schwimmen؛ وبعد versuchen أو الصفة wichtig يأتي zu-Infinitiv، كما في Ich versuche, Deutsch zu lernen و Es ist wichtig, Deutsch zu lernen. ويكمل المصدر معنى الفعل أو الصفة، ولا يكون دائماً غاية. أما um … zu فيضيف معنى الهدف، و damit تدخل جملة مصرّفة؛ وهذا الفرق يساعدك على اختيار الصيغة بحسب المعنى لا حفظ zu منفردة.",
       table: {
         title: "التراكيب التي تجذب zu + مصدر (في سياق البيئة)",
         columns: ["التركيب", "المثال", "المعنى"],
@@ -86,7 +86,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
         { de: "Ich lerne Deutsch, damit ich in Deutschland arbeiten kann.", ar: "أتعلم الألمانية لكي أتمكن من العمل في ألمانيا." },
       ],
       comparisonWithArabic:
-        "يمكن تقريب Ich versuche, die Umwelt zu schützen إلى «أحاول حماية البيئة»، وEs ist wichtig, die Umwelt zu schützen إلى «من المهم أن نحمي البيئة». في المثال الأول يكمل المصدر معنى versuchen، وفي الثاني يتمم المعنى الذي تعبّر عنه الصفة wichtig. لذلك لا نقول إن zu تقابل دائماً «أن» أو إنها تعني الغاية؛ الغاية الصريحة تظهر في um … zu، مثل Ich spare Wasser, um die Umwelt zu schützen. وعند اختلاف الفاعلين نستخدم damit: Ich spare Wasser, damit meine Kinder genug Wasser haben. هذه أمثلة تقريبية، لا تطابق صرفياً كاملاً بين اللغتين.",
+        "يمكن تقريب Ich versuche, die Umwelt zu schützen إلى «أحاول حماية البيئة»، و Es ist wichtig, die Umwelt zu schützen إلى «من المهم أن نحمي البيئة». في المثال الأول يكمل المصدر معنى versuchen، وفي الثاني يتمم المعنى الذي تعبّر عنه الصفة wichtig. لذلك لا نقول إن zu تقابل دائماً «أن» أو إنها تعني الغاية؛ الغاية الصريحة تظهر في um … zu، مثل Ich spare Wasser, um die Umwelt zu schützen. وعند اختلاف الفاعلين نستخدم damit: Ich spare Wasser, damit meine Kinder genug Wasser haben. هذه أمثلة تقريبية، لا تطابق صرفياً كاملاً بين اللغتين.",
       eselsbruecke:
         "«zu = راية اللحاق»: المصدر يركض إلى نهاية الجملة ومعه رايته zu. وإذا كان الفعل منفصلاً تلتصق الراية في الوسط: aufstehen → aufzustehen، ausschalten → auszuschalten. ولاحظ: الأفعال الناقصة ترفض الراية تماماً: Ich kann schwimmen (بدون zu).",
       commonMistakes: [

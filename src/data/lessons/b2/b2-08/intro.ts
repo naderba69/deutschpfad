@@ -13,7 +13,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["q1", "q2", "q3", "q4"],
         taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"],
-        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 وq2، وإلى l2 في q3 وl3 في q4، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً بعد الاستماع إلى l1 في q1 و q2، وإلى l2 في q3 و l3 في q4، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -36,7 +36,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "writing:b2-08:w1",
           "writing:b2-08:w2",
         ],
-        labelAr: "أختار حرف الجر الصحيح وأصحح الخطأ فيه وأكمل الجمل بالحرف المناسب (e1 إلى e9 وm1 وm2 وm4 وw1 وw2)، دون كشف الحل.",
+        labelAr: "أختار حرف الجر الصحيح وأصحح الخطأ فيه وأكمل الجمل بالحرف المناسب (e1 إلى e9 و m1 و m2 و m4 و w1 و w2)، دون كشف الحل.",
       },
     },
     {
@@ -61,14 +61,14 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "writing:b2-08:w1",
           "writing:b2-08:w2",
         ],
-        labelAr: "أكمل جملتين قصيرتين بأفعال منتقاة وحروف جرها المناسبة (w1 وw2)، دون كشف الحل. لا يقيس هذا كتابة نص كامل.",
+        labelAr: "أكمل جملتين قصيرتين بأفعال منتقاة وحروف جرها المناسبة (w1 و w2)، دون كشف الحل. لا يقيس هذا كتابة نص كامل.",
       },
     },
   ];
 
 export const einfuehrung: Lesson["einfuehrung"] = {
     motivatingQuestionAr:
-      "بعض الأفعال الألمانية تقترن بحرف جر تختاره المعاجم مع الفعل: sich interessieren für وwarten auf. وقد يتغيّر الحرف أو المعنى مع فعل مثل sich freuen auf/über. تعلّم التركيب مع مثاله وحالته، لا بالترجمة الحرفية وحدها.",
+      "بعض الأفعال الألمانية تقترن بحرف جر تختاره المعاجم مع الفعل: sich interessieren für و warten auf. وقد يتغيّر الحرف أو المعنى مع فعل مثل sich freuen auf/über. تعلّم التركيب مع مثاله وحالته، لا بالترجمة الحرفية وحدها.",
     motivatingQuestionDe: "Wie lernt man Sprachen am besten?",
     contextAr:
       "يتناول الدرس أمثلة على التعدد اللغوي والتبادل، ثم يتدرّب على أفعال تُستعمل مع حروف جر محددة في معانٍ معينة. احفظ كل فعل مع مثاله وسياقه.",

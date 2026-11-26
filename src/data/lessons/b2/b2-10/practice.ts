@@ -167,7 +167,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       options: ["Wegen der Einsparung", "Wegen die Einsparung", "Weil der Einsparung", "Wegen sparen"],
       correctIndex: 0,
       explanation:
-        "wegen حرف جر يلزم Genitiv في اللغة المكتوبة: wegen der Einsparung. وweil أداة ربط لجملة لا لاسم، وwegen sparen خطأ لأن wegen يتبعه اسم (das Sparen) لا فعل.",
+        "wegen حرف جر يلزم Genitiv في اللغة المكتوبة: wegen der Einsparung. و weil أداة ربط لجملة لا لاسم، و wegen sparen خطأ لأن wegen يتبعه اسم (das Sparen) لا فعل.",
       errorType: "case",
       optionExplanations: [
         undefined,
@@ -221,7 +221,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       options: ["indem", "obwohl", "damit", "trotzdem"],
       correctIndex: 0,
       explanation:
-        "indem تبيّن *الوسيلة* (بأن): يتحسّن المرء بأن يقرأ يومياً. وobwohl للتنازل، وdamit للغاية، وtrotzdem ظرف رابط لا أداة جملة ثانوية.",
+        "indem تبيّن *الوسيلة* (بأن): يتحسّن المرء بأن يقرأ يومياً. و obwohl للتنازل، و damit للغاية، و trotzdem ظرف رابط لا أداة جملة ثانوية.",
       errorType: "grammar",
       optionExplanations: [
         undefined,

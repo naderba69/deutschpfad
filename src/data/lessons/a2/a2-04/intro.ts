@@ -20,7 +20,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
     {
       id: "z3",
       de: "Ich kann bei räumlichen Orts- und Zielangaben Dativ und Akkusativ unterscheiden.",
-      ar: "أن أختار Dativ للمكان الذي يقع فيه الفعل أو الحركة، وAkkusativ للوجهة المقصودة، في أمثلة محددة.",
+      ar: "أن أختار Dativ للمكان الذي يقع فيه الفعل أو الحركة، و Akkusativ للوجهة المقصودة، في أمثلة محددة.",
       evidence: { exerciseIds: ["m1", "m2", "m4", "m5"], taskIds: ["mini-test:a2-04:m1", "mini-test:a2-04:m2", "mini-test:a2-04:m4", "mini-test:a2-04:m5"], labelAr: "أجب عن أمثلة الاختبار المصغّر الأربعة؛ الحركة الجسدية وحدها لا تحسم الحالة.", completion: "all-correct" },
     },
     {
@@ -38,9 +38,9 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
   ];
 
 export const einfuehrung: NonNullable<Lesson["einfuehrung"]> = {
-    motivatingQuestionAr: "قارن سؤالين عن الكتاب نفسه: Wo liegt das Buch? — Es liegt auf dem Tisch. وWohin legst du das Buch? — Ich lege es auf den Tisch. كلاهما يتضمن auf، لكن الأول يحدد موضعاً والثاني وجهةً؛ لذلك تختلف أداة التعريف.",
+    motivatingQuestionAr: "قارن سؤالين عن الكتاب نفسه: Wo liegt das Buch? — Es liegt auf dem Tisch. و Wohin legst du das Buch? — Ich lege es auf den Tisch. كلاهما يتضمن auf، لكن الأول يحدد موضعاً والثاني وجهةً؛ لذلك تختلف أداة التعريف.",
     motivatingQuestionDe: "Wo liegt das Buch, und wohin legst du es?",
-    contextAr: "نقرأ إعلاناً سكنياً ونصف مواضع الأشياء ووجهاتها. في الاستعمال المكاني مع Wechselpräpositionen نستخدم Dativ للموقع أو مكان حدوث الحركة، وAkkusativ للوجهة؛ لا تكفي كلمة «حركة» وحدها لتحديد الحالة.",
+    contextAr: "نقرأ إعلاناً سكنياً ونصف مواضع الأشياء ووجهاتها. في الاستعمال المكاني مع Wechselpräpositionen نستخدم Dativ للموقع أو مكان حدوث الحركة، و Akkusativ للوجهة؛ لا تكفي كلمة «حركة» وحدها لتحديد الحالة.",
     contextDe: "Ich ziehe in eine neue Wohnung um.",
     connectionToPreviousAr: "تتذكر Dativ المكاني في «auf dem Tisch» ووجهة الحركة في «in die Stadt». هنا نراجع الفرق مع تسعة Wechselpräpositionen، مع التمييز بين موقع الحركة والوجهة التي تنتهي إليها.",
     activateVocabulary: [

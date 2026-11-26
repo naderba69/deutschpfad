@@ -189,7 +189,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "dass", options: ["dass", "denn", "deshalb"], errorType: "grammar" },
       ],
       explanation:
-        "da أداة جملة ثانوية تصدّر السبب المعروف في الأسلوب الرسمي (الفعل في النهاية: steigen)، وdenn رابط متساوٍ لا يغيّر ترتيب ما بعده، وso ... dass تركيب النتيجة.",
+        "da أداة جملة ثانوية تصدّر السبب المعروف في الأسلوب الرسمي (الفعل في النهاية: steigen)، و denn رابط متساوٍ لا يغيّر ترتيب ما بعده، و so ... dass تركيب النتيجة.",
       errorType: "grammar",
     },
     {

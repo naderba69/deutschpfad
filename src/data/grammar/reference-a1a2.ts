@@ -63,7 +63,7 @@ export const GRAMMAR_A1A2: GrammarTopic[] = [
       { de: "Das Buch ist auf dem Tisch.", ar: "الكتاب على الطاولة." },
       { de: "Die Lampe ist in der Küche.", ar: "المصباح في المطبخ." },
     ],
-    eselsbruecke: "اسأل wo? للموقع: Dativ؛ واسأل wohin? للاتجاه: Akkusativ. احفظ كذلك im = in dem وam = an dem.",
+    eselsbruecke: "اسأل wo? للموقع: Dativ؛ واسأل wohin? للاتجاه: Akkusativ. احفظ كذلك im = in dem و am = an dem.",
     mistakeLink: "preposition",
   },
   {
@@ -82,12 +82,12 @@ export const GRAMMAR_A1A2: GrammarTopic[] = [
     id: "a1-imperativ", level: "A1", category: "verbs",
     titleAr: "صيغة الأمر", titleDe: "Der Imperativ",
     summary: "ثلاث صيغ شائعة: du (غالباً الجذر: Komm!), ihr (صيغة ihr بلا الضمير: Kommt!), Sie (المصدر + Sie: Kommen Sie!). قد تظهر -e أو يتغير حرف العلة في بعض الأفعال: Arbeite! Lies! Nimm! ويُطلب الأمر من du/ihr بلا الضمير عادةً.",
-    why: "تختلف الصيغة باختلاف المخاطَب: du وihr غير رسميتين، وSie للمخاطبة الرسمية. لا تُحذف Sie في الأمر الرسمي: Kommen Sie!",
+    why: "تختلف الصيغة باختلاف المخاطَب: du و ihr غير رسميتين، و Sie للمخاطبة الرسمية. لا تُحذف Sie في الأمر الرسمي: Kommen Sie!",
     examples: [
       { de: "Komm bitte!", ar: "تعال من فضلك!" },
       { de: "Kommen Sie bitte herein!", ar: "تفضلوا بالدخول!" },
     ],
-    eselsbruecke: "في أفعال كثيرة تُحذف نهاية du -st (du kommst → Komm!)، لكن راعِ -e وتغيّر الجذر والاستثناءات مثل Lies! وNimm!.",
+    eselsbruecke: "في أفعال كثيرة تُحذف نهاية du -st (du kommst → Komm!)، لكن راعِ -e وتغيّر الجذر والاستثناءات مثل Lies! و Nimm!.",
     mistakeLink: "grammar",
   },
   {
@@ -131,7 +131,7 @@ export const GRAMMAR_A1A2: GrammarTopic[] = [
   {
     id: "a2-perfekt", level: "A2", category: "tenses",
     titleAr: "الماضي التام (Perfekt)", titleDe: "Das Perfekt",
-    summary: "يتكوّن Perfekt من haben أو sein في المضارع وPartizip II في آخر الجملة. يُستعمل sein غالباً مع أفعال الانتقال أو تغيّر الحالة (مثل gehen وeinschlafen)، وكذلك مع sein وbleiben وwerden؛ ويُستعمل haben مع معظم الأفعال الأخرى. المنتظم غالباً ge- + الجذر + -t، والقوي له صيغ محفوظة وكثيراً ما ينتهي بـ -en. لا تأخذ الأفعال المنتهية بـ -ieren ge-، ولا تأخذها البادئات غير المنفصلة؛ وتأتي بين البادئة والفعل في عدد من البادئات المنفصلة.",
+    summary: "يتكوّن Perfekt من haben أو sein في المضارع و Partizip II في آخر الجملة. يُستعمل sein غالباً مع أفعال الانتقال أو تغيّر الحالة (مثل gehen و einschlafen)، وكذلك مع sein و bleiben و werden؛ ويُستعمل haben مع معظم الأفعال الأخرى. المنتظم غالباً ge- + الجذر + -t، والقوي له صيغ محفوظة وكثيراً ما ينتهي بـ -en. لا تأخذ الأفعال المنتهية بـ -ieren ge-، ولا تأخذها البادئات غير المنفصلة؛ وتأتي بين البادئة والفعل في عدد من البادئات المنفصلة.",
     why: "الزمن الأول في المحادثة — الإطار: المساعد يفتح والتصريف يغلق.",
     examples: [
       { de: "Ich habe gegessen.", ar: "أكلت." },
@@ -168,7 +168,7 @@ export const GRAMMAR_A1A2: GrammarTopic[] = [
   {
     id: "a2-modal", level: "A2", category: "modal",
     titleAr: "أفعال الإمكان والوجوب الستة (Modalverben)", titleDe: "Die Modalverben",
-    summary: "الأفعال الناقصة الستة: können (يستطيع)، müssen (يجب/لا بد)، wollen (يريد)، sollen (ينبغي/من المفترض)، dürfen (يُسمح له)، mögen (يحب/يعجبه). في كثير منها تتشابه صيغة ich وer/sie/es بلا نهاية شخصية، بينما تأخذ du غالباً -st: ich kann, du kannst, er kann. يأتي المصدر التابع في آخر الجملة. möchten صيغة مهذبة شائعة مشتقة من mögen، وليست مصدراً سابعاً.",
+    summary: "الأفعال الناقصة الستة: können (يستطيع)، müssen (يجب/لا بد)، wollen (يريد)، sollen (ينبغي/من المفترض)، dürfen (يُسمح له)، mögen (يحب/يعجبه). في كثير منها تتشابه صيغة ich و er/sie/es بلا نهاية شخصية، بينما تأخذ du غالباً -st: ich kann, du kannst, er kann. يأتي المصدر التابع في آخر الجملة. möchten صيغة مهذبة شائعة مشتقة من mögen، وليست مصدراً سابعاً.",
     why: "فعل الإمكان أو الوجوب يعدّل معنى الفعل الأساسي — والأساسي يذهب للنهاية.",
     examples: [
       { de: "Ich kann Deutsch sprechen.", ar: "أستطيع التحدث بالألمانية." },

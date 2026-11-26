@@ -156,16 +156,16 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "أصوات الثقافة: ä، ö، وsch",
+    title: "أصوات الثقافة: ä، ö، و sch",
     items: [
       { de: "das Gemälde", ar: "اللوحة", note: "ä هنا صوت e طويل /ɛː/؛ النبر على -mäl-؛ تقريب IPA: /ɡəˈmɛːldə/." },
-      { de: "der Maler", ar: "الرسام", note: "النبر على المقطع الأول، وa طويل: /ˈmaːlɐ/." },
+      { de: "der Maler", ar: "الرسام", note: "النبر على المقطع الأول، و a طويل: /ˈmaːlɐ/." },
       { de: "das Museum", ar: "المتحف", note: "النبر على -se-؛ IPA تقريبي: /muˈzeːʊm/." },
-      { de: "wunderschön", ar: "رائع الجمال", note: "IPA تقريبي: /ˈvʊndɐˌʃøːn/؛ لاحظ W /v/ وsch /ʃ/ وö الطويل المدوّر." },
+      { de: "wunderschön", ar: "رائع الجمال", note: "IPA تقريبي: /ˈvʊndɐˌʃøːn/؛ لاحظ W /v/ و sch /ʃ/ و ö الطويل المدوّر." },
       { de: "die Kultur", ar: "الثقافة", note: "النبر على المقطع الثاني؛ IPA: /kʊlˈtuːɐ̯/." },
       { de: "das Jahrhundert", ar: "القرن", note: "J تُنطق /j/ مثل y في yes؛ وفي Jahrhundert يُسمع النبر على الجزء Hundert؛ IPA تقريبي: /jaːɐ̯ˈhʊndɐt/." },
     ],
-    tip: "في wunderschön: W قريبة من /v/، وsch = /ʃ/، وö طويل ومدوّر /øː/. الرمز ː يعني إطالة الصوت، وˈ يحدد موضع النبر؛ وIPA أدق من النقل العربي التقريبي.",
+    tip: "في wunderschön: W قريبة من /v/، و sch = /ʃ/، و ö طويل ومدوّر /øː/. الرمز ː يعني إطالة الصوت، وˈ يحدد موضع النبر؛ و IPA أدق من النقل العربي التقريبي.",
     shadowing: [
       { de: "Das ist ein schönes Bild.", ar: "هذه صورة جميلة.", tip: "ein schönes Bild — نهاية الصفة" },
       { de: "Wir besuchen das berühmte Museum.", ar: "نزور المتحف الشهير.", tip: "das berühmte Museum — -e بعد das" },

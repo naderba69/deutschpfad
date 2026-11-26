@@ -85,7 +85,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         { correct: "keinen", options: ["nicht", "kein", "keine", "keinen"] },
       ],
       explanation:
-        "في هذه الجمل: نفي الفعل بـnicht؛ keine مع Schwester المؤنث؛ kein مع Auto المحايد؛ وkeinen مع Kaffee المذكر في المفعول به.",
+        "في هذه الجمل: نفي الفعل بـnicht؛ keine مع Schwester المؤنث؛ kein مع Auto المحايد؛ و keinen مع Kaffee المذكر في المفعول به.",
       errorType: "negation",
     },
     {
@@ -248,7 +248,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     {
       id: "e18",
       type: "fill-blank",
-      instructionAr: "أكمل بأداة الملكية الصحيحة، مع مراعاة الفرق بين Ihr الرسمية وihr للغائبة:",
+      instructionAr: "أكمل بأداة الملكية الصحيحة، مع مراعاة الفرق بين Ihr الرسمية و ihr للغائبة:",
       errorType: "pronoun",
       caseSensitive: true,
       template:
@@ -385,7 +385,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
         },
       ],
       explanation:
-        "بعد in في أمثلة المكان الثابت يأتي Dativ: das Büro → in einem Büro، وdie Schule → in einer Schule. تعلّم صيغة الأداة مع الاسم وحرف الجر؛ لا تساوِ اسم الحالة الألمانية بحالة عربية.",
+        "بعد in في أمثلة المكان الثابت يأتي Dativ: das Büro → in einem Büro، و die Schule → in einer Schule. تعلّم صيغة الأداة مع الاسم وحرف الجر؛ لا تساوِ اسم الحالة الألمانية بحالة عربية.",
     },
   ];
 

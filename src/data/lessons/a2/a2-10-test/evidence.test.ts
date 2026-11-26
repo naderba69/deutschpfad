@@ -119,7 +119,7 @@ describe("A2-10 lesson content audit", () => {
     const cultural = lessonA210.fehlerUndTipps.culturalNote.content;
     expect(cultural).toContain("تختلف الرسوم والتكاليف");
     expect(cultural).toContain("مساهمة الفصل");
-    expect(cultural).toContain("لا يصح وصف Hauptschule وRealschule");
+    expect(cultural).toContain("لا يصح وصف Hauptschule و Realschule");
     expect(cultural).not.toMatch(/كل الجامعات.*مجانية تقريباً/);
     expect(cultural).toContain("بدلاً من تعميم أن جميع الجامعات");
 

@@ -89,7 +89,7 @@ export const A2_VOCAB: Record<string, VocabEntry[]> = {
     { de: "die Nebenkosten", ar: "المصاريف الإضافية", g: "plural", ex: "Die Nebenkosten kommen zur Miete dazu.", exAr: "المصاريف الإضافية تُدفع بالإضافة إلى الإيجار." },
     { de: "die Heizung", ar: "التدفئة", g: "die", ex: "Die Heizung ist kaputt.", exAr: "التدفئة معطلة." },
     { de: "die Warmmiete / die Kaltmiete", ar: "الإيجار مع التكاليف المشمولة عادةً / الإيجار الأساسي قبلها", g: "die", ex: "Die Warmmiete ist höher als die Kaltmiete.", exAr: "الإيجار مع التكاليف أعلى من الإيجار الأساسي." },
-    { de: "die Wechselpräposition", ar: "حرف الجر المتغير", g: "die", ex: "In und auf sind Wechselpräpositionen.", exAr: "in وauf من حروف الجر المتغيرة." },
+    { de: "die Wechselpräposition", ar: "حرف الجر المتغير", g: "die", ex: "In und auf sind Wechselpräpositionen.", exAr: "in و auf من حروف الجر المتغيرة." },
     { de: "stellen / stehen", ar: "يضع شيئاً قائماً / يكون الشيء قائماً أو موضوعاً", g: "v", ex: "Ich stelle die Lampe auf den Tisch. / Die Lampe steht auf dem Tisch.", exAr: "أضع المصباح على الطاولة. / المصباح على الطاولة." },
     { de: "legen / liegen", ar: "يضع شيئاً أفقياً / يكون الشيء مستلقياً أو موضوعاً أفقياً", g: "v", ex: "Ich lege das Buch auf den Tisch. / Das Buch liegt auf dem Tisch.", exAr: "أضع الكتاب على الطاولة. / الكتاب على الطاولة." },
     { de: "hängen", ar: "يعلّق شيئاً / يكون معلّقاً", g: "v", ex: "Ich hänge das Bild an die Wand. / Das Bild hängt an der Wand.", exAr: "أعلّق الصورة على الحائط. / الصورة معلّقة على الحائط." },

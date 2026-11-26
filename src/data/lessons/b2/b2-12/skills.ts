@@ -120,7 +120,7 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
   id: "p1",
-  title: "أصوات المهن المتقدمة: ö، ü، وch",
+  title: "أصوات المهن المتقدمة: ö، ü، و ch",
   items: [
     { de: "die Beförderung", ar: "الترقية", note: "ö = أو: بِ-فِير-دِرونغ" },
     { de: "die Führungskraft", ar: "القائد", note: "ü + r: فيرونغس-كرافت" },

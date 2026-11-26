@@ -124,9 +124,9 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "أصوات العمل: ei، au، وw",
+    title: "أصوات العمل: ei، au، و w",
     items: [
-      { de: "die Erfahrung", ar: "الخبرة", note: "a طويلة، وh صامتة بعدها: إرفااروڠ" },
+      { de: "die Erfahrung", ar: "الخبرة", note: "a طويلة، و h صامتة بعدها: إرفااروڠ" },
       { de: "der Arbeitgeber", ar: "صاحب العمل", note: "ei = آي: أربايت-غيبر" },
       { de: "das Vorstellungsgespräch", ar: "مقابلة العمل", note: "كلمة طويلة: فورش-تيلونغس-غِشپريش" },
       { de: "der Lebenslauf", ar: "السيرة الذاتية", note: "au = آو: ليبِنْس-لاوف" },

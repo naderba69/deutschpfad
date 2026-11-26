@@ -28,7 +28,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
       { de: "die Idee", ar: "الفكرة", noteAr: "مؤنّثة: die Idee، والجمع die Ideen." },
       { de: "der Kuchen", ar: "الكعكة", noteAr: "مذكّر: der Kuchen، والجمع مثل المفرد (die Kuchen)." },
       { de: "überrascht", ar: "متفاجئ", noteAr: "صفةً من الفعل überraschen: Ich bin überrascht." },
-      { de: "sich freuen", ar: "يفرح", noteAr: "فعل انعكاسي: ich freue mich، وdu freust dich؛ الحرف mich/dich يتغيّر مع الفاعل." },
+      { de: "sich freuen", ar: "يفرح", noteAr: "فعل انعكاسي: ich freue mich، و du freust dich؛ الحرف mich/dich يتغيّر مع الفاعل." },
       { de: "ärgerlich", ar: "غاضب", noteAr: "صفة من الغضب Ärger: Ich bin ärgerlich." },
       { de: "der Streit", ar: "الخلاف", noteAr: "مذكّر: der Streit؛ ومنه الفعل sich streiten (يتخاصم)." },
       { de: "der Nachbar", ar: "الجار", noteAr: "مذكّر ضعيف: der Nachbar — den/dem Nachbarn." },
@@ -303,7 +303,7 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
     id: "p1",
-    title: "أصوات المشاعر: ü، au، وst",
+    title: "أصوات المشاعر: ü، au، و st",
     items: [
       { de: "glücklich", ar: "سعيد", note: "IPA: [ˈɡlʏklɪç]. تقريب العربية لا ينقل صوت ü ولا الحنك الألماني بدقة." },
       { de: "traurig", ar: "حزين", note: "IPA: [ˈtʁaʊ̯ʁɪç]؛ وتَرِد أيضاً نهاية [k]. لا تمثّل كتابة «تراوريش» النطقَ الألماني بدقة." },

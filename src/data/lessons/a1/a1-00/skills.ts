@@ -86,7 +86,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         de: "kennen",
         ar: "يعرف (شخصاً أو مكاناً)",
         noteAr:
-          "يُستعمل kennen غالباً لمعرفة شخص أو مكان أو شيء، وwissen لمعرفة معلومة أو حقيقة. هذا فرق إرشادي بين الفعلين، ولا يطابق تقسيماً عربياً ثابتاً في كل السياقات."
+          "يُستعمل kennen غالباً لمعرفة شخص أو مكان أو شيء، و wissen لمعرفة معلومة أو حقيقة. هذا فرق إرشادي بين الفعلين، ولا يطابق تقسيماً عربياً ثابتاً في كل السياقات."
       },
       {
         de: "Vielen Dank!",
@@ -134,7 +134,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         ],
         correctIndex: 1,
         explanation:
-          "تُستخدم كلمات وأسماء توضيحية لتمييز الحروف عند التهجّي. Anton وBerta وEmil من جدول تهجٍّ ألماني تقليدي؛ لا نقدّم هذه القائمة على أنها معيار DIN 5009 الحالي، الذي يعتمد أسماء مدن. الغرض توضيح الحرف لا ذكر أشخاص بأعيانهم.",
+          "تُستخدم كلمات وأسماء توضيحية لتمييز الحروف عند التهجّي. Anton و Berta و Emil من جدول تهجٍّ ألماني تقليدي؛ لا نقدّم هذه القائمة على أنها معيار DIN 5009 الحالي، الذي يعتمد أسماء مدن. الغرض توضيح الحرف لا ذكر أشخاص بأعيانهم.",
         optionExplanations: [
           "Anton كلمة توضيحية من جدول تهجٍّ تقليدي، وليس صديقاً مذكوراً في النصّ.",
           undefined,
@@ -201,7 +201,7 @@ export const reading: NonNullable<Lesson["reading"]> = {
         options: ["nicht", "ich", "Buchstabe", "lächelt"],
         correctIndex: 2,
         explanation:
-          "في Buchstabe يأتي ch بعد u، فيظهر ach-Laut [x]. أمّا nicht وich وlächelt ففيها ich-Laut [ç]، وهو ليس الشين العربية؛ التقريب الكتابي لا يعلّم النطق وحده، فاستمع إلى أمثلة موثوقة.",
+          "في Buchstabe يأتي ch بعد u، فيظهر ach-Laut [x]. أمّا nicht و ich و lächelt ففيها ich-Laut [ç]، وهو ليس الشين العربية؛ التقريب الكتابي لا يعلّم النطق وحده، فاستمع إلى أمثلة موثوقة.",
         optionExplanations: [
           "في «nicht» يظهر ich-Laut [ç]، وهو ليس الشين العربية ولا الخاء الغليظة.",
           "في «ich» يظهر ich-Laut [ç]؛ لا يطابق الشين العربية. أمّا ach-Laut [x] فيظهر في «Buch».",
@@ -342,7 +342,7 @@ export const listening: NonNullable<Lesson["listening"]> = {
 /* 6) النطق */
 export const pronunciation: NonNullable<Lesson["pronunciation"]> = {
     id: "p1",
-    title: "10 أمثلة على أصوات وأنماط ألمانية: sch وsp وpf — استمع وكرر",
+    title: "10 أمثلة على أصوات وأنماط ألمانية: sch و sp و pf — استمع وكرر",
     items: [
       {
         de: "ich",

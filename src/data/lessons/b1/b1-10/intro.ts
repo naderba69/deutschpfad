@@ -13,7 +13,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["q1", "q2", "q3", "q4"],
         taskIds: ["listening:l1:q1", "listening:l1:q2", "listening:l2:q3", "listening:l3:q4"],
-        labelAr: "أجيب صحيحاً عن q1 وq2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن q1 و q2 بعد الاستماع إلى l1، وعن q3 بعد الاستماع إلى l2، وعن q4 بعد الاستماع إلى l3، دون كشف النص. كشف النص لا يُحتسب أداءً.",
       },
     },
     {
@@ -32,13 +32,13 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b1-10:m5",
           "writing:b1-10:w1",
         ],
-        labelAr: "أجيب صحيحاً عن تمارين الجمل المركبة (e4 وe6 وe7 وe11 وm1 وm5 وw1)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن تمارين الجمل المركبة (e4 و e6 و e7 و e11 و m1 و m5 و w1)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
       },
     },
     {
       id: "z3",
       de: "Ich kann einen irrealen Bedingungssatz mit wenn und Konjunktiv II bilden.",
-      ar: "أن أكوّن جملة شرطية غير واقعية بـ wenn وKonjunktiv II (hätte / würde).",
+      ar: "أن أكوّن جملة شرطية غير واقعية بـ wenn و Konjunktiv II (hätte / würde).",
       evidence: {
         completion: "all-correct",
         exerciseIds: ["e2", "e10", "m3", "w2"],
@@ -48,7 +48,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
           "mini-test:b1-10:m3",
           "writing:b1-10:w2",
         ],
-        labelAr: "أجيب صحيحاً عن تمارين الشرط غير الواقعي (e2 وe10 وm3 وw2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن تمارين الشرط غير الواقعي (e2 و e10 و m3 و w2)، دون كشف الحل. قراءة الشرح لا تُحتسب أداءً.",
       },
     },
     {
@@ -59,7 +59,7 @@ export const lernziele: NonNullable<Lesson["lernziele"]> = [
         completion: "all-correct",
         exerciseIds: ["m2", "w1", "w3"],
         taskIds: ["mini-test:b1-10:m2", "writing:b1-10:w1", "writing:b1-10:w3"],
-        labelAr: "أجيب صحيحاً عن m2، وأكتب w1 وw3 بالصيغة المقبولة. كشف الحل لا يُحتسب أداءً.",
+        labelAr: "أجيب صحيحاً عن m2، وأكتب w1 و w3 بالصيغة المقبولة. كشف الحل لا يُحتسب أداءً.",
       },
     },
   ];

@@ -28,9 +28,9 @@ export const readingB106: ReadingText = {
     { de: "das Publikum", ar: "الجمهور", noteAr: "محايد، ولا يُجمع؛ ein junges Publikum (جمهور شاب)." },
     { de: "der Gegenstand", ar: "الغرض، الشيء المعروض", noteAr: "مذكّر بلاحقة -stand؛ وجمعه die Gegenstände." },
     { de: "trocken", ar: "جاف، مملّ", noteAr: "صفة؛ في المجاز: ein trockener Text (نصّ جاف)." },
-    { de: "lebendig", ar: "حيّ، نابض", noteAr: "صفة؛ ومنها das Leben (الحياة) وleben (يعيش)." },
+    { de: "lebendig", ar: "حيّ، نابض", noteAr: "صفة؛ ومنها das Leben (الحياة) و leben (يعيش)." },
     { de: "beliebt", ar: "محبوب، مرغوب", noteAr: "صفة؛ beliebt bei + Dativ (محبوب عند فلان)." },
-    { de: "die Wirkung", ar: "الأثر، المفعول", noteAr: "مؤنّثة؛ ومنها wirken (يؤثّر) وwirksam (فعّال)." },
+    { de: "die Wirkung", ar: "الأثر، المفعول", noteAr: "مؤنّثة؛ ومنها wirken (يؤثّر) و wirksam (فعّال)." },
     { de: "ausführlich", ar: "مفصّل", noteAr: "صفة؛ ومنها die Ausführung (الصياغة، التنفيذ)." },
   ],
   questions: [

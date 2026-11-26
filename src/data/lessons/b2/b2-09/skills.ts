@@ -123,11 +123,11 @@ export const pronunciation: Lesson["pronunciation"] = {
     title: "النطق والرموز الصوتية (IPA)",
     items: [
       { de: "die Bewerbung", ar: "طلب التوظيف", note: "[bəˈvɛʁbʊŋ] — موضع النبر على المقطع الثاني؛ w تمثل /v/." },
-      { de: "das Anschreiben", ar: "رسالة التقديم", note: "[ˈanʃʁaɪ̯bn̩] — sch تمثل /ʃ/، وei تمثل /aɪ̯/." },
+      { de: "das Anschreiben", ar: "رسالة التقديم", note: "[ˈanʃʁaɪ̯bn̩] — sch تمثل /ʃ/، و ei تمثل /aɪ̯/." },
       { de: "der Lebenslauf", ar: "السيرة الذاتية", note: "[ˈleːbənsˌlaʊ̯f] — au تمثل /aʊ̯/، مع نبر رئيسي ثم ثانوي." },
       { de: "die Stelle", ar: "الوظيفة", note: "[ˈʃtɛlə] — بداية st هنا تمثل /ʃt/." },
       { de: "die Erfahrung", ar: "الخبرة", note: "[ɛɐ̯ˈfaːʁʊŋ] — النبر على مقطع fa؛ قيمة /ʁ/ تختلف إقليمياً." },
-      { de: "die Fähigkeit", ar: "المهارة", note: "[ˈfɛːɪçkaɪ̯t] — h يطيل /ɛː/، وch هنا تمثل /ç/." },
+      { de: "die Fähigkeit", ar: "المهارة", note: "[ˈfɛːɪçkaɪ̯t] — h يطيل /ɛː/، و ch هنا تمثل /ç/." },
     ],
     tip: "النطق مكتوب برموز IPA تقريبية للكلمات الألمانية القياسية؛ تختلف بعض تحققات /ʁ/ إقليمياً. لا تمثل الرموز حكماً على أداء ملف صوتي بعينه.",
     shadowing: [

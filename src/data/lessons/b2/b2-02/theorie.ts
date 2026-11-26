@@ -35,7 +35,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       comparisonWithArabic:
         "يمكن ترجمة «Die Tür wird geöffnet» بـ«يُفتح الباب» و«Die Tür ist geöffnet» بـ«الباب مفتوح»، لكن المقابلات تقريبية ويحدد السياق المعنى. وتستعمل العربية، مثل الألمانية، وسائل متعددة للإمكان والإلزام، كـ«يمكن فتحه» و«قابل للفتح» و«يجب حل المشكلة». لا تقابل الصيغ الألمانية بعضها بعضاً حرفياً دائماً؛ لذا يُستحسن فهم تركيبها وسياقها بدلاً من افتراض تطابق ثابت بين اللغتين.",
       eselsbruecke:
-        "في المثال المعتاد: sein + PII تصف حالة، وwerden + PII يبرز الحدث؛ و«-bar» في «durchführbar» تعني قابل للتنفيذ.",
+        "في المثال المعتاد: sein + PII تصف حالة، و werden + PII يبرز الحدث؛ و«-bar» في «durchführbar» تعني قابل للتنفيذ.",
       commonMistakes: [
         { wrong: "فهم «Die Tür ist geöffnet» بمعنى أن الباب يُفتح الآن", right: "تعني عادةً أن الباب مفتوح؛ وللحدث الجاري: «Die Tür wird gerade geöffnet».", whyAr: "sein + Partizip II يصف الحالة عادةً في هذا المثال، بينما يبرز werden + Partizip II الحدث. لا يكفي Präsens وحده لإثبات أن الحدث يجري لحظة الكلام." },
         { wrong: "اعتبار «Die Tür wird geöffnet» و«Die Tür ist geöffnet» مترادفتين دائماً", right: "الأولى تبرز الحدث، والثانية تصف الحالة في المثال المعتاد.", whyAr: "هما بنيتان مختلفتان، لكن تفسيرهما الدقيق يتأثر بالفعل والسياق؛ لا تستبدل إحداهما بالأخرى من دون مراعاة المقصود." },
@@ -43,7 +43,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       ],
       relatedRuleComparison: {
         title: "Vorgangs- أم Zustandspassiv؟",
-        content: "في المثال المعتاد: werden + Partizip II يبرز الحدث، وsein + Partizip II يصف الحالة؛ لا يعني المضارع وحده أن الحدث يجري الآن.",
+        content: "في المثال المعتاد: werden + Partizip II يبرز الحدث، و sein + Partizip II يصف الحالة؛ لا يعني المضارع وحده أن الحدث يجري الآن.",
       },
     },
     {
