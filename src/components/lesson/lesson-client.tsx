@@ -605,14 +605,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
             )}
 
             {/* زر «التالي» في نهاية القسم — لا حاجة للتمرير للأعلى بعد إنهاء قسم طويل */}
-            <div className="mt-6 space-y-2 border-t pt-4">
-              {/* الجوال: سبب القفل يظهر هنا لأن الشريط اللاصق مخفيّ على الجوال */}
-              {lockMessageNext ? (
-                <p role="status" className="text-xs font-bold text-warning md:hidden">
-                  {lockMessageNext}
-                </p>
-              ) : null}
-              <div className="flex flex-wrap justify-end gap-2">
+            <div className="mt-6 flex flex-wrap justify-end gap-2 border-t pt-4">
               {currentSection < total - 1 ? (
                 <Button size="lg" className="btn-glow gap-2 px-6 whitespace-normal text-center leading-snug" onClick={() => advanceFrom(currentSection)}>
                   أتممت هذا القسم — التالي: {sectionDefs[currentSection + 1].short}
@@ -624,14 +617,12 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
                   إنهاء الدرس
                 </Button>
               )}
-              </div>
             </div>
           </div>
 
-          {/* أزرار التنقل السفلية اللاصقة — على الشاشات الكبيرة فقط. على الجوال يُخفى الشريط
-              لأن كل قسم ينتهي بزر «التالي» ويظهر سبب القفل فوقه؛ وإلا غطّى المحتوى فوق شريط
-              التنقل السفلي (MobileBottomNav). */}
-          <div className="hidden border-t bg-background/95 px-4 py-3 backdrop-blur-md sm:rounded-t-2xl sm:border md:sticky md:bottom-0 md:z-30 md:block">
+          {/* أزرار التنقل السفلية اللاصقة — على الجوال ترتفع فوق شريط التنقل
+              السفلي (MobileBottomNav) فلا يغطيها، وعلى الشاشات الكبيرة تلتصق بأسفل الشاشة */}
+          <div className="sticky bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-30 -mx-4 border-t bg-background/95 px-4 py-3 backdrop-blur-md sm:mx-0 sm:rounded-t-2xl sm:border md:bottom-0">
             {stepMode && lockMessageNext ? (
               <div className="mb-2">
                 {/* الجوال: سطر قصير + زر «لماذا؟» */}
@@ -658,7 +649,7 @@ export function LessonClient({ lesson }: { lesson: Lesson }) {
                 السابق
               </Button>
               {currentSection < total - 1 ? (
-                <Button size="lg" className="btn-glow h-11 w-full gap-2 px-6 whitespace-normal text-center leading-snug md:h-12 md:w-auto" onClick={() => advanceFrom(currentSection)}>
+                <Button size="lg" className="btn-glow w-full gap-2 px-6 whitespace-normal text-center leading-snug md:w-auto" onClick={() => advanceFrom(currentSection)}>
                   التالي: {sectionDefs[currentSection + 1].short}
                   <ArrowLeft className="h-5 w-5" aria-hidden="true" />
                 </Button>
