@@ -10,6 +10,8 @@
  * ═══════════════════════════════════════════════════════════
  */
 
+import {OPEN_PRODUCTION_RUBRIC, criterionLabel} from "@/lib/rubric/open-production";
+
 export interface GoetheLocalResult {
   scores: { name: string; score: number; note: string }[];
   pct: number;
@@ -390,10 +392,10 @@ export async function evaluateWriting(text: string, taskType = "Forumsbeitrag", 
   }
 
   const scores = [
-    { name: "Erfüllung — إنجاز المهمة", score: erfuellung, note: erfuellungNote },
-    { name: "Kohärenz — البنية والترابط", score: kohaerenz, note: kohaerenzNote },
-    { name: "Wortschatz — المفردات", score: wortschatz, note: wortschatzNote },
-    { name: "Struktur — القواعد", score: struktur, note: strukturNote },
+    { name: criterionLabel(OPEN_PRODUCTION_RUBRIC[0]), score: erfuellung, note: erfuellungNote },
+    { name: criterionLabel(OPEN_PRODUCTION_RUBRIC[1]), score: kohaerenz, note: kohaerenzNote },
+    { name: criterionLabel(OPEN_PRODUCTION_RUBRIC[2]), score: wortschatz, note: wortschatzNote },
+    { name: criterionLabel(OPEN_PRODUCTION_RUBRIC[3]), score: struktur, note: strukturNote },
   ];
 
   const pct = Math.round((scores.reduce((s, x) => s + x.score, 0) / 20) * 100);
