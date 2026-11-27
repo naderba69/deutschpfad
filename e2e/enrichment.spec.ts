@@ -46,8 +46,12 @@ test("مكتبة البودكاست تعرض 21 حلقة موزعة", async ({ p
 test("الثقافة الألمانية: 16 بطاقة والجديدة ظاهرة", async ({ page }) => {
   await page.goto("/landeskunde");
   await expect(page.getByText(/16 بطاقة ثقافية/).first()).toBeVisible();
-  await expect(page.getByText("الكرنفال").first()).toBeVisible();
+  // المستوى A1 افتراضياً
   await expect(page.getByText("الخبز الألماني").first()).toBeVisible();
+  // كل مستوى يعرض بطاقاته فقط: الكرنفال في B2
+  await page.getByRole("button", { name: /المستوى B2/ }).click();
+  await expect(page.getByText("الكرنفال").first()).toBeVisible();
+  await expect(page.getByText("الخبز الألماني")).toHaveCount(0);
 });
 
 test("القصص: كل قصة تفتح بسؤالين (شرح بعد الإجابة)", async ({ page }) => {
