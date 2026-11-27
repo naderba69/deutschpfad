@@ -81,7 +81,7 @@ export function B2TopicsClient() {
             >
               <span className="block text-lg" aria-hidden="true">{t.icon}</span>
               <span className="mt-0.5 block leading-tight">{t.titleAr}</span>
-              <span className="font-de mt-0.5 block text-[11px] font-semibold opacity-80">{count} كلمة</span>
+              <span className="font-de mt-0.5 block text-[11px] font-semibold">{count} كلمة</span>
             </button>
           );
         })}
