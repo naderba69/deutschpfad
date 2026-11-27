@@ -63,7 +63,7 @@ export function LandeskundeClient() {
                     onClick={() => setOpen(open === card.id ? null : card.id)}
                     className="mt-3 flex w-full items-center justify-between rounded-lg border border-primary/20 bg-primary/5 px-3 py-2 text-xs font-extrabold text-primary transition-colors hover:bg-primary/10"
                   >
-                    <span>⭐ حقائق مهمة ({card.facts.length})</span>
+                    <span>حقائق مهمة ({card.facts.length})</span>
                     <ChevronDown className={cn("h-4 w-4 transition-transform", open === card.id && "rotate-180")} aria-hidden="true" />
                   </button>
                   {open === card.id && (
