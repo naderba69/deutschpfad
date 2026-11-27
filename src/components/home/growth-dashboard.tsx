@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import {Award, BarChart3, Flame, Target, Trophy} from "lucide-react";
+import {Award, BarChart3, Egg, Flame, Rocket, Sprout, Target, Trophy, Zap} from "lucide-react";
 
 import {useProgress} from "@/components/providers/progress-provider";
 import {LESSON_META} from "@/data/lessons/meta";
@@ -93,8 +93,16 @@ export function GrowthDashboard() {
 
       {/* الأفاتار + الإنجاز اليومي + XP */}
       <div className="mb-4 flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 p-3">
-        <span className="text-3xl" aria-hidden="true">
-          {overallPct >= 75 ? "🏆" : overallPct >= 40 ? "🚀" : overallPct >= 10 ? "🌱" : "🐣"}
+        <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary" aria-hidden="true">
+          {overallPct >= 75 ? (
+            <Trophy className="h-5 w-5" />
+          ) : overallPct >= 40 ? (
+            <Rocket className="h-5 w-5" />
+          ) : overallPct >= 10 ? (
+            <Sprout className="h-5 w-5" />
+          ) : (
+            <Egg className="h-5 w-5" />
+          )}
         </span>
         <div className="min-w-0 flex-1">
           <p className="text-xs font-extrabold">
@@ -102,7 +110,7 @@ export function GrowthDashboard() {
           </p>
           <p className="text-[11px] text-muted-foreground">
             إنجاز اليوم: <span className="font-de font-bold">{activityReadError ? "—" : todayDone}</span> درس · إجمالي XP:{" "}
-            <span className="font-de font-bold text-gold-strong">⚡{xp ?? "—"}</span>
+            <span className="font-de inline-flex items-center gap-0.5 font-bold text-gold-strong"><Zap className="h-3 w-3" aria-hidden="true" />{xp ?? "—"}</span>
           </p>
         </div>
         {todayDone > 0 && <span className="shrink-0 rounded-full bg-success/15 px-2 py-0.5 text-[11px] font-bold text-success">يوم نشط ✓</span>}

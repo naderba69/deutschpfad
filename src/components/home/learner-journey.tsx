@@ -6,6 +6,7 @@ import {
   ArrowLeft,
   Award,
   BookOpen,
+  Compass,
   CheckCircle2,
   ChevronLeft,
   DatabaseBackup,
@@ -20,11 +21,13 @@ import {
   ShoppingBag,
   Sparkles,
   Target,
+  Trophy,
   Upload,
   UserPlus,
   Wand2,
   Zap,
 } from "lucide-react";
+import type {LucideIcon} from "lucide-react";
 
 import {useProgress} from "@/components/providers/progress-provider";
 import {TeacherMentor} from "@/components/home/teacher-mentor";
@@ -52,7 +55,7 @@ import {
 import {getLearnerProfile, getLearnerProfileSync, saveLearnerProfile, type LearnerProfile} from "@/lib/storage/learner";
 import {LEVELS} from "@/lib/constants/curriculum";
 
-const LEVEL_EMOJI: Record<string, string> = { A1: "🚀", A2: "🧭", B1: "🎓", B2: "🏆" };
+const LEVEL_ICON: Record<string, LucideIcon> = { A1: Rocket, A2: Compass, B1: GraduationCap, B2: Trophy };
 const LEVEL_AR: Record<string, string> = { A1: "المبتدئ", A2: "ما قبل المتوسط", B1: "المتوسط", B2: "المتقدم" };
 
 /**
@@ -151,8 +154,8 @@ export function LearnerJourney() {
     if (dailyStreak === 2) return "يومان متتاليان — أنت تبني عادة حقيقية.";
     if (dailyStreak === 3) return "3 أيام! الأسبوع الأول في المتناول.";
     if (dailyStreak === 7) return "أسبوع كامل متتالٍ — هذا إنجاز كبير!";
-    if (dailyStreak === 30) return "30 يوماً! أنت الآن في نادي الملتزمين. 🥇";
-    if (dailyStreak >= 100) return `${dailyStreak} يوماً متتالياً — أنت أسطورة هذا الطريق! 👑`;
+    if (dailyStreak === 30) return "30 يوماً! أنت الآن في نادي الملتزمين.";
+    if (dailyStreak >= 100) return `${dailyStreak} يوماً متتالياً — أنت أسطورة هذا الطريق!`;
     return `${dailyStreak} أيام متتالية — استمر، العادة صارت أقوى منك.`;
   }, [dailyStreak]);
 
@@ -256,7 +259,7 @@ export function LearnerJourney() {
           <CardContent className="p-6">
             <div className="mb-5 text-center">
               <h2 className="text-xl font-extrabold">
-                مرحباً <span className="text-primary">{firstName}</span> 👋 كيف تريد أن نبدأ؟
+                مرحباً <span className="text-primary">{firstName}</span> — كيف تريد أن نبدأ؟
               </h2>
               <p className="mt-1 text-sm text-muted-foreground">
                 اختر الطريقة الأنسب لك — كلاهما يقودك لنفس المسار المتكامل.
@@ -275,7 +278,7 @@ export function LearnerJourney() {
                 </p>
                 <div className="mt-2 flex justify-center gap-2 text-[11px] font-semibold text-muted-foreground">
                   <span className="rounded-full bg-muted px-2 py-0.5">5 دقائق</span>
-                  <span className="rounded-full bg-muted px-2 py-0.5">🎯 اقتراح استرشادي</span>
+                  <span className="rounded-full bg-muted px-2 py-0.5">اقتراح استرشادي</span>
                 </div>
                 <Button asChild className="btn-glow mt-4 w-full gap-1.5">
                   <Link href="/tests/placement?mode=quick">
@@ -295,8 +298,8 @@ export function LearnerJourney() {
                   لا خبرة سابقة؟ نبدأ من الدرس الأول: الأبجدية والنطق — خطوة بخطوة.
                 </p>
                 <div className="mt-2 flex justify-center gap-2 text-[11px] font-semibold text-muted-foreground">
-                  <span className="rounded-full bg-muted px-2 py-0.5">🚀 من A1 تماماً</span>
-                  <span className="rounded-full bg-muted px-2 py-0.5">📚 المسار الكامل</span>
+                  <span className="rounded-full bg-muted px-2 py-0.5">من A1 تماماً</span>
+                  <span className="rounded-full bg-muted px-2 py-0.5">المسار الكامل</span>
                 </div>
                 <Button
                   asChild
@@ -335,7 +338,7 @@ export function LearnerJourney() {
           {/* المستوى الحالي */}
           <div className="flex items-center gap-3 rounded-2xl border bg-card p-4">
             <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-xl" aria-hidden="true">
-              {LEVEL_EMOJI[level]}
+              {React.createElement(LEVEL_ICON[level] ?? Target, {className: "h-5 w-5", "aria-hidden": true})}
             </span>
             <div className="min-w-0">
               <p className="text-[11px] font-bold text-muted-foreground">مستواك</p>
@@ -385,7 +388,7 @@ export function LearnerJourney() {
             </span>
             <div className="min-w-0">
               <p className="text-[11px] font-bold text-muted-foreground">نقاطك XP</p>
-              <p className="font-de truncate text-sm font-extrabold text-blue-600 dark:text-blue-300">⚡ {xp.toLocaleString("ar-EG")}</p>
+              <p className="font-de truncate text-sm font-extrabold text-blue-600 dark:text-blue-300">{xp.toLocaleString("ar-EG")}</p>
               <p className="text-[11px] text-muted-foreground">مستوى {levelNum}</p>
             </div>
           </div>
@@ -455,7 +458,7 @@ export function LearnerJourney() {
           </Card>
         ) : (
           <Card className="border-success/30 bg-success/5 p-6 text-center">
-            <span className="text-4xl" aria-hidden="true">🏆</span>
+            <Trophy className="mx-auto h-10 w-10 text-success" aria-hidden="true" />
             <h3 className="mt-2 text-lg font-extrabold text-success">أتممت المسار كاملاً!</h3>
             <p className="mt-1 text-sm text-muted-foreground">
               يمكنك خوض اختبار الختم B2 لتقييم أدائك؛ إكمال المسار وحده لا يثبت الجاهزية.
