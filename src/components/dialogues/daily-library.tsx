@@ -5,6 +5,10 @@ import {GraduationCap, MessageSquareText} from "lucide-react";
 
 import {DailyDialoguePlayer} from "@/components/dialogues/daily-dialogue-player";
 import {Badge} from "@/components/ui/badge";
+import {Button} from "@/components/ui/button";
+
+/** عدد حوارات كل مستوى المعروضة قبل «عرض الكل» — الحوارات الخمسة الأولى في كل مستوى هي الأساسية */
+const PREVIEW = 6;
 import {getLearnerProfile} from "@/lib/storage/learner";
 import {DAILY_DIALOGUES, DIALOGUE_LEVEL_COUNTS, DIALOGUE_LEVEL_ORDER, getDialoguesByLevel, type DailyDialogue} from "@/data/dialogues";
 import type { LevelCode } from "@/types/curriculum";
@@ -13,6 +17,8 @@ import type { LevelCode } from "@/types/curriculum";
 export function DailyLibrary() {
   const [current, setCurrent] = React.useState<DailyDialogue | null>(null);
   const [suggested, setSuggested] = React.useState<LevelCode | null>(null);
+  /** فتح/طيّ يدوي لكل مستوى؛ المستوى المقترح يُفتح افتراضياً */
+  const [expanded, setExpanded] = React.useState<Partial<Record<LevelCode, boolean>>>({});
 
   React.useEffect(() => {
     void getLearnerProfile().then((p) => {
@@ -47,6 +53,8 @@ export function DailyLibrary() {
       {DIALOGUE_LEVEL_ORDER.map((level) => {
         const dialogues = getDialoguesByLevel(level);
         if (dialogues.length === 0) return null;
+        const open = expanded[level] ?? level === suggested;
+        const shownList = open ? dialogues : dialogues.slice(0, PREVIEW);
         return (
           <section key={level}>
             <div className="mb-3 flex items-center gap-2">
@@ -59,7 +67,7 @@ export function DailyLibrary() {
               </h2>
             </div>
             <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-              {dialogues.map((d) => (
+              {shownList.map((d) => (
                 <button
                   key={d.id}
                   type="button"
@@ -79,6 +87,18 @@ export function DailyLibrary() {
                 </button>
               ))}
             </div>
+            {dialogues.length > PREVIEW ? (
+              <div className="mt-3 flex justify-center">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  aria-expanded={open}
+                  onClick={() => setExpanded((e) => ({ ...e, [level]: !open }))}
+                >
+                  {open ? "عرض الأقل" : `عرض ${dialogues.length - PREVIEW} حواراً آخر في ${level}`}
+                </Button>
+              </div>
+            ) : null}
           </section>
         );
       })}
