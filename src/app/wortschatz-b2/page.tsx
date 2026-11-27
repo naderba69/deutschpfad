@@ -24,7 +24,7 @@ export default function WortschatzB2Page() {
           href="/wortschatz-b2/top500"
           className="mt-4 inline-flex items-center gap-2 rounded-xl border-2 border-gold/50 bg-gold/10 px-4 py-2.5 text-sm font-extrabold text-gold-strong transition-all hover:-translate-y-0.5 hover:shadow-soft"
         >
-          🔥 500 كلمة وتعبير للمراجعة — مرتبة بأولوية تدريبية ←
+          500 كلمة وتعبير للمراجعة — مرتبة بأولوية تدريبية ←
         </a>
       </div>
       <B2TopicsClient />
