@@ -7,6 +7,7 @@
  *  النقل حرفيّ — لا تغيير في أي DOM أو نص.
  * ═══════════════════════════════════════════════════════════
  */
+import {StatusNotice, type Notice} from "@/components/shared/status-notice";
 import * as React from "react";
 
 import {DatabaseBackup, Upload} from "lucide-react";
@@ -57,7 +58,7 @@ export function JourneySection({
  */
 export function BackupCard() {
   const fileRef = React.useRef<HTMLInputElement | null>(null);
-  const [status, setStatus] = React.useState("");
+  const [status, setStatus] = React.useState<Notice | null>(null);
   const [pendingImport, setPendingImport] = React.useState<BackupData | null>(null);
 
   const exportBackup = async () => {
@@ -65,10 +66,10 @@ export function BackupCard() {
       const {buildBackupData, backupFilename, downloadJson} = await import("@/lib/storage/export-import");
       const data = await buildBackupData();
       downloadJson(data, backupFilename());
-      setStatus("✅ نُزّل ملف نسختك — احتفظ به (يتضمن اسمك ومستواك وتقدمك)");
-      setTimeout(() => setStatus(""), 5000);
+      setStatus({text: "نُزّل ملف نسختك — احتفظ به (يتضمن اسمك ومستواك وتقدمك)", kind: "success"});
+      setTimeout(() => setStatus(null), 5000);
     } catch {
-      setStatus("⚠️ تعذّر إنشاء النسخة — جرّب من الإعدادات");
+      setStatus({text: "تعذّر إنشاء النسخة — جرّب من الإعدادات", kind: "warning"});
     }
   };
 
@@ -77,13 +78,13 @@ export function BackupCard() {
       const {validateBackupData, writeBackupData} = await import("@/lib/storage/export-import");
       const parsed = JSON.parse(await file.text());
       if (!validateBackupData(parsed)) {
-        setStatus("⚠️ الملف غير صالح — تأكد أنه ملف نسخة DeutschPfad");
-        setTimeout(() => setStatus(""), 5000);
+        setStatus({text: "الملف غير صالح — تأكد أنه ملف نسخة DeutschPfad", kind: "warning"});
+        setTimeout(() => setStatus(null), 5000);
         return;
       }
       setPendingImport(parsed as BackupData);
     } catch {
-      setStatus("⚠️ فشلت الاستعادة — تأكد من الملف");
+      setStatus({text: "فشلت الاستعادة — تأكد من الملف", kind: "warning"});
     }
   };
 
@@ -93,10 +94,10 @@ export function BackupCard() {
       const {writeBackupData} = await import("@/lib/storage/export-import");
       await writeBackupData(pendingImport, mode);
       setPendingImport(null);
-      setStatus("✅ تمت الاستعادة — أعد تحميل الصفحة لترى مستواك");
+      setStatus({text: "تمت الاستعادة — أعد تحميل الصفحة لترى مستواك", kind: "success"});
       setTimeout(() => window.location.reload(), 1200);
     } catch {
-      setStatus("⚠️ فشلت الاستعادة — تأكد من الملف");
+      setStatus({text: "فشلت الاستعادة — تأكد من الملف", kind: "warning"});
     }
   };
 
@@ -138,7 +139,7 @@ export function BackupCard() {
           />
         </div>
 
-        {status && <p className="rounded-lg bg-muted/30 px-3 py-2 text-xs font-semibold text-foreground">{status}</p>}
+        {status && <StatusNotice kind={status.kind} className="text-xs">{status.text}</StatusNotice>}
 
         <ChoiceDialog
           open={pendingImport !== null}
