@@ -112,7 +112,7 @@ export function StudyStatsCard() {
 
         <Progress value={Math.min(100, Math.round((stats.dailyAvg / 30) * 100))} aria-label="نسبة الهدف اليومي (30 د)" />
         <p className="text-[11px] text-muted-foreground">
-          🎯 الهدف اليومي المقترح: 30 دقيقة — الوصول إلى {stats.dailyAvg}د حالياً.
+          الهدف اليومي المقترح: 30 دقيقة — الوصول إلى {stats.dailyAvg}د حالياً.
         </p>
       </CardContent>
     </Card>

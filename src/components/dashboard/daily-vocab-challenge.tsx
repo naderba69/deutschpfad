@@ -126,7 +126,7 @@ export function DailyVocabChallenge() {
       </CardHeader>
       <CardContent className="space-y-4 p-5">
         <p className="text-xs text-muted-foreground">
-          🔥 5 كلمات جديدة كل يوم (تتغير تلقائياً) — اقلب البطاقة لترى المعنى، استمع، ثم
+          5 كلمات جديدة كل يوم (تتغير تلقائياً) — اقلب البطاقة لترى المعنى، استمع، ثم
           اختبر نفسك. حافظ على السلسلة اليومية!
         </p>
 
@@ -176,7 +176,7 @@ export function DailyVocabChallenge() {
             {added.size === daily.length ? "أُضيفت للبطاقات ✓" : "أضف الكلمات الخمس لبطاقاتي (SM-2)"}
           </Button>
           <Button size="sm" variant="outline" onClick={() => setQuiz((v) => (v === "off" ? "on" : "off"))}>
-            {quiz === "off" ? "🎯 ابدأ اختبار اليوم" : "إغلاق الاختبار"}
+            {quiz === "off" ? "ابدأ اختبار اليوم" : "إغلاق الاختبار"}
           </Button>
         </div>
 

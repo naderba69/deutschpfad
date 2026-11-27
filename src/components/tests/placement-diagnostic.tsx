@@ -16,12 +16,12 @@ import {buildDiagnosticQuestionBank, type DiagnosticQuestion} from "@/lib/tests/
 import {cn} from "@/lib/utils";
 import type { TestLevel, TestResult, TestSkill } from "@/types/test";
 
-const SKILLS: { skill: TestSkill; label: string; icon: string }[] = [
-  { skill: "grammatik", label: "القواعد", icon: "📘" },
-  { skill: "wortschatz", label: "المفردات", icon: "📚" },
-  { skill: "lesen", label: "القراءة", icon: "📖" },
-  { skill: "hören", label: "الاستماع", icon: "🎧" },
-  { skill: "schreiben", label: "الكتابة", icon: "✍️" },
+const SKILLS: { skill: TestSkill; label: string }[] = [
+  { skill: "grammatik", label: "القواعد" },
+  { skill: "wortschatz", label: "المفردات" },
+  { skill: "lesen", label: "القراءة" },
+  { skill: "hören", label: "الاستماع" },
+  { skill: "schreiben", label: "الكتابة" },
 ];
 
 const LEVELS: TestLevel[] = ["A1", "A2", "B1", "B2"];
@@ -188,7 +188,7 @@ export function PlacementDiagnostic() {
                   : "bg-muted/40 text-muted-foreground",
             )}
           >
-            {s.icon} {s.label}
+            {s.label}
             {skillLevels[s.skill] && <span className="font-de ms-1">({skillLevels[s.skill]})</span>}
           </span>
         ))}
@@ -196,7 +196,7 @@ export function PlacementDiagnostic() {
 
       <div className="flex items-center justify-between rounded-xl border bg-muted/30 p-3">
         <p className="text-sm font-bold">
-          {SKILLS[skillIdx].icon} {SKILLS[skillIdx].label} — المستوى{" "}
+          {SKILLS[skillIdx].label} — المستوى{" "}
           <span className="font-de">{level}</span>
         </p>
         <span className="text-xs text-muted-foreground">

@@ -27,7 +27,7 @@ export function TestHub() {
           <CardHeader className="border-b bg-success/10">
             <CardTitle className="flex items-center gap-2 text-lg">
               <Award className="h-5 w-5 text-success" aria-hidden="true" />
-              🏆 تدريب B2 مستوحى من بنية Goethe
+              تدريب B2 مستوحى من بنية Goethe
             </CardTitle>
           </CardHeader>
           <CardContent className="p-5">
@@ -257,7 +257,7 @@ export function TestHub() {
           <CardHeader className="border-b bg-primary/5">
             <CardTitle className="flex items-center gap-2 text-lg">
               <Lock className="h-5 w-5 text-primary" aria-hidden="true" />
-              امتحانات الختم — بوابة الانتقال بين المستويات 🏅
+              امتحانات الختم — بوابة الانتقال بين المستويات
             </CardTitle>
           </CardHeader>
           <CardContent className="p-5">

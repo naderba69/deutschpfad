@@ -50,7 +50,6 @@ export default function FaqPage() {
               {FAQ_ITEMS.filter((i) => i.category === cat).map((item, idx) => (
                 <details key={idx} className="group rounded-xl border bg-card open:border-primary/40">
                   <summary className="cursor-pointer list-none px-4 py-3 font-bold transition-colors hover:text-primary">
-                    <span className="me-2 text-primary">❓</span>
                     {item.q}
                   </summary>
                   <div className="border-t bg-muted/20 px-4 py-3 text-sm leading-relaxed text-muted-foreground">
