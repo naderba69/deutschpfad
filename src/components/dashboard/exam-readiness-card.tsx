@@ -109,7 +109,7 @@ export function ExamReadinessCard({completedUnits, totalUnits, reviewsCount, goa
         <div className="flex flex-wrap gap-2">
           <Button asChild size="sm" variant="outline"><Link href="/tests/level/b2">تدرّب على اختبار B2</Link></Button>
           <Button asChild size="sm" variant="outline"><Link href="/tests/sprechen">تدريب شفهي</Link></Button>
-          <Button asChild size="sm" variant="outline"><Link href="/dashboard/report">📄 تقرير PDF</Link></Button>
+          <Button asChild size="sm" variant="outline"><Link href="/dashboard/report">تقرير PDF</Link></Button>
         </div>
       </CardContent>
     </Card>

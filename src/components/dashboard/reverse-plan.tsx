@@ -134,7 +134,7 @@ export function ReversePlanCard() {
 
             {/* جدول المهام الأسبوعي اليومي */}
             <div className="rounded-xl border bg-card p-3">
-              <p className="mb-2 text-sm font-bold text-primary">🗓️ خطة أسبوعك القادم (يومياً):</p>
+              <p className="mb-2 text-sm font-bold text-primary">خطة أسبوعك القادم (يومياً):</p>
               <div className="space-y-1.5 text-xs">
                 {[
                   { day: "السبت", tasks: `درس جديد (${plan.lessonsPerWeek} دروس أسبوعياً) + 20 دقيقة مفردات` },

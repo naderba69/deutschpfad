@@ -42,7 +42,7 @@ export function HeatmapChart({ cells, streak }: { cells: HeatCell[][]; streak: n
           <Flame className="h-5 w-5 text-orange-500" aria-hidden="true" />
           خريطة نشاطك — آخر 52 أسبوعاً
           <span className="font-de ms-auto rounded-full bg-primary/10 px-3 py-0.5 text-xs font-bold text-primary">
-            🔥 {streak} يوم متتالي
+            {streak} يوم متتالي
           </span>
         </CardTitle>
       </CardHeader>

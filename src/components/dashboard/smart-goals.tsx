@@ -169,7 +169,7 @@ export function SmartGoalsCard() {
 
         <p className="text-xs text-muted-foreground">
           SMART: محدّد (Specific) + قابل للقياس (Measurable) + واقعي — راجع أهدافك نهاية كل
-          أسبوع واحتفل بالإنجاز! 🎉
+          أسبوع واحتفل بالإنجاز!
         </p>
       </CardContent>
     </Card>

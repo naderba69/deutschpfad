@@ -116,7 +116,7 @@ export function LevelSection({
           {examPassed ? (
             <p className="flex flex-wrap items-center gap-2 text-sm">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-success/15 px-3 py-1 text-xs font-bold text-success">
-                ✅ اجتزت بوابة التقدم الداخلية
+                اجتزت بوابة التقدم الداخلية
               </span>
               <span className="text-muted-foreground">
                 سُجل اجتياز تدريب {level.code} الداخلي؛ لا يمثل شهادة أو إثباتاً رسمياً للمستوى.
@@ -137,19 +137,19 @@ export function LevelSection({
           ) : isActive && sealReady ? (
             <div className="flex flex-wrap items-center justify-between gap-3">
               <p className="text-sm text-muted-foreground">
-                🎓 أكملت <span className="font-bold">{pct}%</span> من وحدات {level.code} — يمكنك الآن
+                أكملت <span className="font-bold">{pct}%</span> من وحدات {level.code} — يمكنك الآن
                 إجراء اختبار بوابة التقدم الداخلي لفتح المستوى التالي.
               </p>
               <a
                 href={`/tests/seal/${level.code.toLowerCase()}`}
                 className="inline-flex items-center gap-1.5 rounded-lg bg-gold px-4 py-2 text-sm font-bold text-gold-foreground transition-colors hover:bg-gold/90"
               >
-                🏅 امتحان ختم {level.code}
+                امتحان ختم {level.code}
               </a>
             </div>
           ) : (
             <p className="text-sm text-muted-foreground">
-              🔒 <span className="font-bold">امتحان الختم:</span> أكمل{" "}
+              <span className="font-bold">امتحان الختم:</span> أكمل{" "}
               <span className="font-bold">{level.unlockThreshold}%</span> من وحدات {level.code} ثم
               اجتز الامتحان لفتح المستوى التالي (التقدم الحالي: {pct}%).
             </p>

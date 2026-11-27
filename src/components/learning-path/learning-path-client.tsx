@@ -109,7 +109,7 @@ export function LearningPathClient() {
       <div className="rounded-2xl border bg-card p-4">
         <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
           <h2 className="flex items-center gap-1.5 text-sm font-extrabold">
-            🗺️ خريطة المسار المتعرجة — درساً بدرس
+            خريطة المسار المتعرجة — درساً بدرس
           </h2>
           <div className="flex gap-1 rounded-full border bg-muted/40 p-0.5">
             {LEVELS.map((l) => (

@@ -127,7 +127,7 @@ export function FiveMinutes() {
 
       {done && (
         <div className="rounded-xl border border-success/40 bg-success/10 p-4 text-center">
-          <p className="font-bold text-success">انتهت الكبسولة! 🎉</p>
+          <p className="font-bold text-success">انتهت الكبسولة!</p>
           <p className="mt-1 text-sm text-muted-foreground">
             5 دقائق كافية يومياً — أنجزت جلستك، ارجع غداً للمزيد.
           </p>

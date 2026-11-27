@@ -34,7 +34,7 @@ export default function LearningPathPage() {
       <div className="mb-8 rounded-xl border border-gold/40 bg-gold/10 p-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="min-w-0">
-            <p className="text-sm font-extrabold text-gold-strong">📅 تنظيم التدريب اختياري وقابل للتعديل</p>
+            <p className="text-sm font-extrabold text-gold-strong">تنظيم التدريب اختياري وقابل للتعديل</p>
             <p className="mt-0.5 text-xs text-muted-foreground">
               يمكنك الاستفادة من نموذج جدول تدريبي بحسب وقتك وخبرتك؛ لا يحدد مدة ثابتة للدروس ولا يضمن بلوغ مستوى أو اجتياز اختبار.
             </p>

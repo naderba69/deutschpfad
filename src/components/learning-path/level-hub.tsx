@@ -139,7 +139,7 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
               {doneCount}/{lessons.length} مكتملة
             </span>
             <span className="rounded-full bg-gold/15 px-3 py-1 text-xs font-extrabold text-gold-strong">
-              ⭐ {getLevelMasteryPct(lessons.map((l) => l.id))}% إتقان
+              {getLevelMasteryPct(lessons.map((l) => l.id))}% إتقان
             </span>
           </span>
         </div>
@@ -236,7 +236,7 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
         {/* امتحان الختم — يظهر آلياً عند إتمام كل الدروس */}
         {doneCount === lessons.length && lessons.length > 0 && (
           <div className="rounded-2xl border-2 border-gold/40 bg-gold/10 p-5 text-center">
-            <p className="text-lg font-extrabold text-gold-strong">🏅 أتممت كل دروس {level.code}!</p>
+            <p className="text-lg font-extrabold text-gold-strong">أتممت كل دروس {level.code}!</p>
             <p className="mt-1 text-sm text-muted-foreground">
               أصبحت مؤهلاً لاختبار بوابة التقدم الداخلي — اجتزه لفتح المستوى التالي.
             </p>
@@ -261,7 +261,7 @@ export function LevelHub({ level, lessons }: { level: LevelMeta; lessons: Lesson
 
         {/* ملاحظة */}
         <p className="rounded-xl bg-muted/30 px-4 py-3 text-xs text-muted-foreground">
-          💡 كل درس يدمج: <b>قواعد</b> + <b>تريكات</b> + <b>حوارات</b> + <b>تمارين تفاعلية</b> + <b>نطق مقيّم</b> + <b>كتابة مقيّمة</b> + <b>اختبار</b> — بمنهجية خطوة بخطوة. الدروس تُفتح بالترتيب: أتمّ درساً لفتح التالي.
+          كل درس يدمج: <b>قواعد</b> + <b>تريكات</b> + <b>حوارات</b> + <b>تمارين تفاعلية</b> + <b>نطق مقيّم</b> + <b>كتابة مقيّمة</b> + <b>اختبار</b> — بمنهجية خطوة بخطوة. الدروس تُفتح بالترتيب: أتمّ درساً لفتح التالي.
         </p>
       </div>
     </div>

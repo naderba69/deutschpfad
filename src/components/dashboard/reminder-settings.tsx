@@ -112,7 +112,7 @@ export function ReminderSettings() {
                 onClick={() => void save({ ...prefs, enabled: !prefs.enabled })}
                 active={prefs.enabled}
               >
-                {prefs.enabled ? "🔔 مفعّل" : "🔕 معطّل"}
+                {prefs.enabled ? "مفعّل" : "معطّل"}
               </FilterChip>
               {prefs.enabled && (
                 <select
@@ -142,7 +142,7 @@ export function ReminderSettings() {
               </p>
             )}
             <p className="text-xs text-muted-foreground">
-              💡 تذكير محلي يعمل أثناء فتح التطبيق. بعد النشر، يمكن تفعيل Web Push كاملاً
+              تذكير محلي يعمل أثناء فتح التطبيق. بعد النشر، يمكن تفعيل Web Push كاملاً
               (إشعارات حتى عند إغلاق الموقع) — راجع DEPLOYMENT.md.
             </p>
           </>

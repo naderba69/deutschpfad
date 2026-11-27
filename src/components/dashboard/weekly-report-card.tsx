@@ -77,7 +77,7 @@ export function WeeklyReportCard() {
           تقريرك الأسبوعي
           {due && (
             <span className="ms-auto rounded-full bg-gold px-2.5 py-0.5 text-xs font-bold text-gold-foreground">
-              تقرير جديد جاهز ✨
+              تقرير جديد جاهز
             </span>
           )}
         </CardTitle>
