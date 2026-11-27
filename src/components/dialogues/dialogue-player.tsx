@@ -52,7 +52,7 @@ export function DialoguePlayer({ dialogueId }: { dialogueId: string }) {
       </CardHeader>
       <CardContent className="space-y-4 p-5">
         <p className="rounded-lg bg-muted/30 p-2.5 text-xs text-muted-foreground">
-          📍 {dialogue.situation}
+          {dialogue.situation}
         </p>
 
         {/* الحوار الجاري */}
@@ -83,7 +83,7 @@ export function DialoguePlayer({ dialogueId }: { dialogueId: string }) {
         {/* النهاية */}
         {current.isEnd && (
           <div className="rounded-xl border border-success/40 bg-success/10 p-4 text-center">
-            <p className="font-bold text-success">✅ {current.endMessage}</p>
+            <p className="font-bold text-success">{current.endMessage}</p>
             <Button variant="outline" size="sm" className="mt-3" onClick={restart}>
               <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
               إعادة السيناريو
@@ -113,7 +113,7 @@ function DialogueBubble({ node }: { node: DialogueNode }) {
 function FeedbackMsg({ text }: { text: string }) {
   return (
     <p className="rounded-lg border border-gold/40 bg-gold/10 px-3 py-2 text-xs font-semibold text-gold-foreground">
-      💡 {text}
+      {text}
     </p>
   );
 }
