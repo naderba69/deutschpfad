@@ -96,16 +96,16 @@ export function GoetheB2Exam({ onFinish }: { onFinish?: () => void } = {}) {
   const remaining = useCountdown(totalSeconds, () => {
     // انتهاء الوقت: انتقل تلقائياً للمكوّن التالي (كما في الامتحان الحقيقي)
     if (phase === "lesen") {
-      setExpiredNotice("⏰ انتهى وقت القراءة (65 دقيقة) — انتقلنا تلقائياً للاستماع. ما أجبت عليه يُحتسب.");
+      setExpiredNotice("انتهى وقت القراءة (65 دقيقة) — انتقلنا تلقائياً للاستماع. ما أجبت عليه يُحتسب.");
       finishLesen();
     } else if (phase === "hören") {
-      setExpiredNotice("⏰ انتهى وقت الاستماع (40 دقيقة) — انتقلنا تلقائياً للكتابة.");
+      setExpiredNotice("انتهى وقت الاستماع (40 دقيقة) — انتقلنا تلقائياً للكتابة.");
       finishHoeren();
     } else if (phase === "schreiben") {
-      setExpiredNotice("⏰ انتهى وقت الكتابة (75 دقيقة) — انتقلنا تلقائياً للتحدث.");
+      setExpiredNotice("انتهى وقت الكتابة (75 دقيقة) — انتقلنا تلقائياً للتحدث.");
       finishSchreiben();
     } else if (phase === "sprechen") {
-      setExpiredNotice("⏰ انتهى وقت التحدث — عُرضت النتيجة.");
+      setExpiredNotice("انتهى وقت التحدث — عُرضت النتيجة.");
       setPhase("result");
     }
   });
@@ -164,7 +164,7 @@ export function GoetheB2Exam({ onFinish }: { onFinish?: () => void } = {}) {
           <div className="h-1.5 w-full bg-gradient-to-l from-primary via-gold to-success" aria-hidden="true" />
           <CardContent className="space-y-4 p-6">
             <div>
-              <h2 className="text-2xl font-extrabold">📋 هيكل امتحان Goethe-Zertifikat B2 الرسمي</h2>
+              <h2 className="text-2xl font-extrabold">هيكل امتحان Goethe-Zertifikat B2 الرسمي</h2>
               <p className="mt-1 text-sm text-muted-foreground">
                 أربعة مكوّنات مستقلة · كل مكوّن 100 نقطة · النجاح من 60 في كل مكوّن على حدة
                 (لا يُعوَّض مكوّن ضعيف بآخر قوي — هكذا يعمل الامتحان الحقيقي).
@@ -191,11 +191,11 @@ export function GoetheB2Exam({ onFinish }: { onFinish?: () => void } = {}) {
               ))}
             </ol>
             <p className="rounded-xl border border-gold/40 bg-gold/10 p-3 text-xs leading-relaxed text-muted-foreground">
-              💡 <span className="font-bold text-gold-strong">نصائح الوقت الرسمية (Lesen):</span> Teil 1: 10د · Teil 2: 18د · Teil 3: 12د ·
+              <span className="font-bold text-gold-strong">نصائح الوقت الرسمية (Lesen):</span> Teil 1: 10د · Teil 2: 18د · Teil 3: 12د ·
               Teil 4: 10د · Teil 5: 15د. ابدأ بالأسهل واترك الأصعب للنهاية. المؤقت يبدأ عند الضغط على «ابدأ الامتحان».
             </p>
             <p className="rounded-xl border bg-muted/20 p-3 text-xs leading-relaxed text-muted-foreground">
-              🎲 <span className="font-bold">ثلاثة نماذج كاملة (A/B/C):</span> تُختار مجموعة القراءة
+              <span className="font-bold">ثلاثة نماذج كاملة (A/B/C):</span> تُختار مجموعة القراءة
               والاستماع عشوائياً في كل محاولة — كل نموذج 30+30 سؤالاً بمحتوى مختلف، فلا تتكرر
               الأسئلة بين جلساتك. تدرب 3 مرات وستواجه 180 سؤالاً فريداً.
             </p>
@@ -216,7 +216,7 @@ export function GoetheB2Exam({ onFinish }: { onFinish?: () => void } = {}) {
       <div key={`lesen-${runKey}`} className="space-y-4">
         {lowTime && (
           <div className="rounded-xl border border-amber-500/50 bg-amber-50 p-3 text-center text-sm font-bold text-amber-900 dark:bg-amber-950/40 dark:text-amber-200" role="alert">
-            ⚠️ تبقّى أقل من 5 دقائق — أنهِ الجزء الحالي وراجع إجاباتك.
+            تبقّى أقل من 5 دقائق — أنهِ الجزء الحالي وراجع إجاباتك.
           </div>
         )}
         {expiredNotice && (
@@ -267,7 +267,7 @@ export function GoetheB2Exam({ onFinish }: { onFinish?: () => void } = {}) {
       <div key={`hoeren-${runKey}`} className="space-y-4">
         {lowTime && (
           <div className="rounded-xl border border-amber-500/50 bg-amber-50 p-3 text-center text-sm font-bold text-amber-900 dark:bg-amber-950/40 dark:text-amber-200" role="alert">
-            ⚠️ تبقّى أقل من 5 دقائق — استمع جيداً واختر إجاباتك بسرعة.
+            تبقّى أقل من 5 دقائق — استمع جيداً واختر إجاباتك بسرعة.
           </div>
         )}
         {expiredNotice && (
@@ -322,7 +322,7 @@ export function GoetheB2Exam({ onFinish }: { onFinish?: () => void } = {}) {
       <div key={`schreiben-${runKey}`} className="space-y-5">
         {lowTime && (
           <div className="rounded-xl border border-amber-500/50 bg-amber-50 p-3 text-center text-sm font-bold text-amber-900 dark:bg-amber-950/40 dark:text-amber-200" role="alert">
-            ⚠️ تبقّى أقل من 5 دقائق — أنهِ المهمتين وراجع الأخطاء الشائعة.
+            تبقّى أقل من 5 دقائق — أنهِ المهمتين وراجع الأخطاء الشائعة.
           </div>
         )}
         {expiredNotice && (
@@ -373,7 +373,7 @@ export function GoetheB2Exam({ onFinish }: { onFinish?: () => void } = {}) {
               عدد الكلمات: {w1words} {w1words < w1.minWords ? `(المطلوب ≥ ${w1.minWords})` : "✓ جاهز"}
             </p>
             <details className="rounded-lg border border-dashed p-2 text-xs text-muted-foreground">
-              <summary className="cursor-pointer font-bold">💡 بنية مقترحة + عبارات (اضغط)</summary>
+              <summary className="cursor-pointer font-bold">بنية مقترحة + عبارات (اضغط)</summary>
               <ul className="mt-2 list-inside list-disc space-y-1">
                 {w1.struktur.map((s) => <li key={s}>{s}</li>)}
               </ul>
@@ -414,7 +414,7 @@ export function GoetheB2Exam({ onFinish }: { onFinish?: () => void } = {}) {
               عدد الكلمات: {w2words} {w2words < w2.minWords ? `(المطلوب ≥ ${w2.minWords})` : "✓ جاهز"}
             </p>
             <details className="rounded-lg border border-dashed p-2 text-xs text-muted-foreground">
-              <summary className="cursor-pointer font-bold">💡 بنية مقترحة + عبارات (اضغط)</summary>
+              <summary className="cursor-pointer font-bold">بنية مقترحة + عبارات (اضغط)</summary>
               <ul className="mt-2 list-inside list-disc space-y-1">
                 {w2.struktur.map((s) => <li key={s}>{s}</li>)}
               </ul>
@@ -428,14 +428,14 @@ export function GoetheB2Exam({ onFinish }: { onFinish?: () => void } = {}) {
         </Card>
 
         <p className="rounded-xl border border-gold/40 bg-gold/10 p-3 text-xs text-muted-foreground">
-          ⚖️ <span className="font-bold text-gold-strong">تقييم الكتابة في الامتحان الحقيقي:</span> Erfüllung (25) + Kohärenz (25) +
+          <span className="font-bold text-gold-strong">تقييم الكتابة في الامتحان الحقيقي:</span> Erfüllung (25) + Kohärenz (25) +
           Wortschatz (25) + Struktur (25). هنا يُحسب طول النص آلياً، ويقيّم المعنى بالمعايير الأربعة — ثم قارن بنموذج إجابة أدناه.
         </p>
 
         {/* ربط الكتابة بنماذج Schreibmodelle (نفس موضوعَي المحرك) */}
         <details className="rounded-xl border border-primary/30 bg-primary/5 p-3">
           <summary className="cursor-pointer text-sm font-bold text-primary">
-            📚 قارن إجابتك بنموذج (Gut ثم Sehr gut) — نفس المهمتين
+            قارن إجابتك بنموذج (Gut ثم Sehr gut) — نفس المهمتين
           </summary>
           <div className="mt-3 space-y-4">
             {(() => {
@@ -445,7 +445,7 @@ export function GoetheB2Exam({ onFinish }: { onFinish?: () => void } = {}) {
                 <>
                   {model.forum.map((lv) => (
                     <div key={lv.level} className="rounded-xl border bg-background p-3">
-                      <p className="mb-2 text-xs font-extrabold text-primary">✍️ {lv.title}</p>
+                      <p className="mb-2 text-xs font-extrabold text-primary">{lv.title}</p>
                       <div className="space-y-1.5">
                         {lv.paragraphs.map((p, i) => (
                           <div key={i} className="rounded-lg bg-muted/30 p-2">
@@ -459,7 +459,7 @@ export function GoetheB2Exam({ onFinish }: { onFinish?: () => void } = {}) {
                   ))}
                   {model.email.map((lv) => (
                     <div key={lv.level} className="rounded-xl border bg-background p-3">
-                      <p className="mb-2 text-xs font-extrabold text-primary">📧 {lv.title}</p>
+                      <p className="mb-2 text-xs font-extrabold text-primary">{lv.title}</p>
                       <div className="space-y-1.5">
                         {lv.paragraphs.map((p, i) => (
                           <div key={i} className="rounded-lg bg-muted/30 p-2">
