@@ -93,7 +93,7 @@ export function GemsShopClient() {
       const today = new Date().toISOString().slice(0, 10);
       try {
         if (localStorage.getItem(STORAGE.bonus) === today) {
-          setNotice("جمعت مكافأتك اليوم — عُد غداً 💎");
+          setNotice("جمعت مكافأتك اليوم — عُد غداً.");
           return;
         }
         localStorage.setItem(STORAGE.bonus, today);
@@ -109,13 +109,13 @@ export function GemsShopClient() {
         return;
       }
       setGems(added.balance);
-      setNotice("+15 جوهرة إضافية! عُد غداً 💎");
+      setNotice("+15 جوهرة إضافية! عُد غداً.");
       playCorrect();
       return;
     }
     if (item.category === "utility" && item.id === "freeze") {
       if (gems < item.price) {
-        setNotice("الجواهر غير كافية — أكمل الدروس واجمع المزيد! 💪");
+        setNotice("الجواهر غير كافية — أكمل الدروس واجمع المزيد!");
         return;
       }
       const nextFreeze = freeze + 1;
@@ -128,7 +128,7 @@ export function GemsShopClient() {
       if (spendGems(item.price)) {
         setFreeze(nextFreeze);
         refresh();
-        setNotice(`❄️ حصلت على تجميد سلسلة — لديك الآن ${nextFreeze}`);
+        setNotice(`حصلت على تجميد سلسلة — لديك الآن ${nextFreeze}`);
         playCorrect();
       } else {
         try { localStorage.setItem(STORAGE.freeze, String(freeze)); } catch { /* أظهر فشل العملية أدناه */ }
@@ -139,7 +139,7 @@ export function GemsShopClient() {
     }
     // ثيم أو شارة
     if (gems < item.price) {
-      setNotice("الجواهر غير كافية — أكمل الدروس واجمع المزيد! 💪");
+      setNotice("الجواهر غير كافية — أكمل الدروس واجمع المزيد!");
       return;
     }
     if (spendGems(item.price)) {
@@ -148,22 +148,22 @@ export function GemsShopClient() {
       setOwned(next);
       writeSet(STORAGE.owned, next);
       refresh();
-      setNotice(`✅ اشتريت «${item.name}»!`);
+      setNotice(`اشتريت «${item.name}»!`);
       playCorrect();
     }
   };
 
-  const categories: { id: ShopItem["category"]; label: string; emoji: string }[] = [
-    { id: "theme", label: "الثيمات", emoji: "🎨" },
-    { id: "badge", label: "الشارات", emoji: "🏅" },
-    { id: "utility", label: "أدوات", emoji: "🛠️" },
+  const categories: { id: ShopItem["category"]; label: string }[] = [
+    { id: "theme", label: "الثيمات" },
+    { id: "badge", label: "الشارات" },
+    { id: "utility", label: "أدوات" },
   ];
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-8 sm:px-6">
       <div className="mb-6 space-y-3">
         <h1 className="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-          🛍️ سوق الجواهر
+          سوق الجواهر
         </h1>
         <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
           أنفق جواهرك التي جمعتها من الدروس والتمارين على ثيمات وشارات وأدوات —
@@ -190,7 +190,7 @@ export function GemsShopClient() {
       {categories.map((cat) => (
         <section key={cat.id} className="mb-6">
           <h2 className="mb-3 flex items-center gap-2 text-lg font-extrabold">
-            <span aria-hidden="true">{cat.emoji}</span> {cat.label}
+            {cat.label}
           </h2>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {SHOP_ITEMS.filter((i) => i.category === cat.id).map((item) => {
