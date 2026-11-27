@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import {Crown, Rocket, Trophy} from "lucide-react";
+import {Crown, Rocket, Sprout, Swords, Trophy, Zap, type LucideIcon} from "lucide-react";
 
 import {getRecentEventsResult} from "@/lib/analytics/events";
 import {XP_RULES} from "@/lib/gamification/xp";
@@ -9,7 +9,7 @@ import {cn} from "@/lib/utils";
 
 /**
  * ═══════════════════════════════════════════════════════════
- *  الدوري الأسبوعي 🏆 — رتبتك تُحسب محلياً من نشاطك هذا الأسبوع
+ *  الدوري الأسبوعي — رتبتك تُحسب محلياً من نشاطك هذا الأسبوع
  *  كل XP تجمعه خلال الأسبوع (الإثنين←الأحد) يقرّبك من الرتبة التالية:
  *  متدرج ← واعد ← منافس ← بطل الدوري
  *  — بلا خادم: كل مستخدم يرى دوريه الخاص على متصفحه —
@@ -21,7 +21,7 @@ interface WeeklyStats {
   weekStartLabel: string;
   rankIndex: number; // 0..3
   rankName: string;
-  rankEmoji: string;
+  rankIcon: LucideIcon;
   target: number;
   progressPct: number;
 }
@@ -38,10 +38,10 @@ function weekStart(): { label: string; ts: number } {
 }
 
 const RANKS = [
-  { name: "متدرّج", emoji: "🌱", min: 0 },
-  { name: "واعد", emoji: "🚀", min: 100 },
-  { name: "منافس", emoji: "⚔️", min: 300 },
-  { name: "بطل الدوري", emoji: "👑", min: 600 },
+  { name: "متدرّج", icon: Sprout, min: 0 },
+  { name: "واعد", icon: Rocket, min: 100 },
+  { name: "منافس", icon: Swords, min: 300 },
+  { name: "بطل الدوري", icon: Crown, min: 600 },
 ];
 
 /** حساب XP هذا الأسبوع من الأحداث */
@@ -78,7 +78,7 @@ async function computeWeeklyStats(): Promise<WeeklyStats> {
     weekStartLabel: weekStart().label,
     rankIndex,
     rankName: RANKS[rankIndex].name,
-    rankEmoji: RANKS[rankIndex].emoji,
+    rankIcon: RANKS[rankIndex].icon,
     target,
     progressPct: Math.min(100, Math.round((weekXp / Math.max(1, target)) * 100)),
   };
@@ -115,7 +115,8 @@ export function WeeklyLeague() {
           <span className="text-[11px] font-bold text-muted-foreground">(من {stats.weekStartLabel})</span>
         </p>
         <span className="font-de inline-flex items-center gap-1 rounded-full bg-gold/15 px-2.5 py-1 text-sm font-extrabold text-gold-strong">
-          {stats.rankEmoji} {stats.rankName}
+          <stats.rankIcon className="h-3.5 w-3.5" aria-hidden="true" />
+          {stats.rankName}
         </span>
       </div>
 
@@ -123,8 +124,8 @@ export function WeeklyLeague() {
         {/* التقدم نحو الرتبة التالية */}
         <div className="flex-1">
           <div className="mb-1 flex items-center justify-between text-[11px] font-bold text-muted-foreground">
-            <span className="font-de">⚡ {stats.weekXp} XP هذا الأسبوع</span>
-            {!isTop && <span>التالية: {nextRank.emoji} {nextRank.name} ({stats.target} XP)</span>}
+            <span className="font-de inline-flex items-center gap-1"><Zap className="h-3 w-3" aria-hidden="true" />{stats.weekXp} XP هذا الأسبوع</span>
+            {!isTop && <span>التالية: {nextRank.name} ({stats.target} XP)</span>}
           </div>
           <div className="h-2.5 w-full overflow-hidden rounded-full bg-muted">
             <div
@@ -158,7 +159,7 @@ export function WeeklyLeague() {
                   : "border-muted bg-muted/30 opacity-60",
             )}
           >
-            <span className="block text-sm" aria-hidden="true">{r.emoji}</span>
+            <span className="block" aria-hidden="true"><r.icon className="mx-auto h-4 w-4" /></span>
             <span className="block text-[11px] font-extrabold">{r.name}</span>
           </div>
         ))}
