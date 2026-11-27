@@ -39,7 +39,7 @@ export function DailyLibrary() {
             مستواك: {suggested} — ابدأ بحوارات {suggested}
           </p>
           <p className="mt-1 text-xs text-muted-foreground">
-            كل حوار: محادثة كاملة + نطق + ترجمة + أسئلة فهم + وضع «دورك» 🎭
+            كل حوار: محادثة كاملة + نطق + ترجمة + أسئلة فهم + وضع «دورك»
           </p>
         </div>
       )}

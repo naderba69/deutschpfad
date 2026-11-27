@@ -9,6 +9,19 @@ import {cn} from "@/lib/utils";
 import {getLevelVocab} from "@/data/vocabulary";
 import type { VocabEntry } from "@/data/vocabulary/a1";
 import {FilterChip} from "@/components/ui/filter-chip";
+import {Button} from "@/components/ui/button";
+
+/** عدد البطاقات دفعة واحدة (كان 200 بطاقة معاً) */
+const PAGE_SIZE = 60;
+
+/** رمز «بلا صورة» داخلياً: يبقى للتصفية، ويُعرض بحرف الكلمة الأول بدل مربع أزرق */
+const NO_PICTURE = "🟦";
+
+/** الحرف الأول من الكلمة بلا أداة التعريف (der/die/das) */
+function initialOf(de: string): string {
+  const bare = de.replace(/^(der|die|das)\s+/i, "");
+  return bare.charAt(0).toUpperCase();
+}
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -86,7 +99,7 @@ function emojiFor(word: string): string {
   const key = word.toLowerCase().replace(/[^a-zäöüß]/g, "");
   if (EMOJI[key]) return EMOJI[key];
   if (EMOJI[word.toLowerCase()]) return EMOJI[word.toLowerCase()];
-  return "🟦";
+  return NO_PICTURE;
 }
 
 /** دمج مفردات A1/A2 مع الإيموجي التلقائي */
@@ -120,6 +133,7 @@ export function PictureDictionaryClient() {
   const [query, setQuery] = React.useState("");
   const [level, setLevel] = React.useState<"all" | "A1" | "A2">("all");
   const [emojiFilter, setEmojiFilter] = React.useState<string>("all");
+  const [shown, setShown] = React.useState(PAGE_SIZE);
 
   const filtered = all.filter((v) => {
     if (level !== "all" && v.level !== level) return false;
@@ -135,7 +149,7 @@ export function PictureDictionaryClient() {
     <div className="mx-auto w-full max-w-4xl px-4 py-8 sm:px-6">
       <div className="mb-6 space-y-3">
         <h1 className="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-          🖼️ المعجم المصوّر
+          المعجم المصوّر
         </h1>
         <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
           كلمات A1–A2 بربط بصري (إيموجي دلالي) + نطق — الصورة تثبّت الكلمة في الذاكرة أسرع
@@ -147,7 +161,7 @@ export function PictureDictionaryClient() {
             <input
               aria-label="ابحث في القاموس المصوّر"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => { setQuery(e.target.value); setShown(PAGE_SIZE); }}
               placeholder="ابحث بالكلمة أو بالعربية…"
               className="h-10 w-full rounded-xl border border-input bg-background ps-9 pe-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring"
             />
@@ -156,7 +170,7 @@ export function PictureDictionaryClient() {
             {(["all", "A1", "A2"] as const).map((l) => (
               <FilterChip
                 key={l}
-                onClick={() => setLevel(l)}
+                onClick={() => { setLevel(l); setShown(PAGE_SIZE); }}
                 active={level === l}
               >
                 {l === "all" ? "الكل" : l}
@@ -168,10 +182,10 @@ export function PictureDictionaryClient() {
           {CATEGORIES.map((c) => (
             <FilterChip
               key={c.id}
-              onClick={() => setEmojiFilter(c.id)}
+              onClick={() => { setEmojiFilter(c.id); setShown(PAGE_SIZE); }}
               active={emojiFilter === c.id}
             >
-              {c.id === "all" ? "🗂️ الكل" : `${c.id} ${c.label}`}
+              {c.label}
             </FilterChip>
           ))}
         </div>
@@ -182,13 +196,13 @@ export function PictureDictionaryClient() {
       </p>
 
       <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
-        {filtered.slice(0, 200).map((v) => (
+        {filtered.slice(0, shown).map((v) => (
           <li
             key={`${v.de}-${v.ar}`}
             className="flex items-center gap-2.5 rounded-xl border bg-card p-3 transition-shadow hover:shadow-soft"
           >
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-muted text-xl" aria-hidden="true">
-              {v.emoji}
+              {v.emoji === NO_PICTURE ? <span className="font-de text-base font-extrabold text-primary">{initialOf(v.de)}</span> : v.emoji}
             </span>
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-1">
@@ -208,6 +222,14 @@ export function PictureDictionaryClient() {
           </li>
         ))}
       </ul>
+      {filtered.length > shown ? (
+        <div className="flex flex-col items-center gap-2 pt-4">
+          <p className="text-xs text-muted-foreground">تُعرض {shown} من {filtered.length} كلمة</p>
+          <Button variant="outline" onClick={() => setShown((n) => n + PAGE_SIZE)}>
+            عرض {Math.min(PAGE_SIZE, filtered.length - shown)} كلمة أخرى
+          </Button>
+        </div>
+      ) : null}
       {filtered.length === 0 && (
         <p className="py-10 text-center text-sm text-muted-foreground">لا نتائج — جرّب كلمة أخرى.</p>
       )}
