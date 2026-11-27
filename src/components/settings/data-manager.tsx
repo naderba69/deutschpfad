@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import {AlertTriangle, DatabaseBackup, Download, History, Upload, Wand2} from "lucide-react";
+import {StatusNotice, type Notice, type NoticeKind} from "@/components/shared/status-notice";
 
 import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
@@ -20,7 +21,7 @@ import type { BackupData, Snapshot } from "@/types/storage";
 export function DataManager() {
   const [snapshots, setSnapshots] = React.useState<Snapshot[]>([]);
   const [snapshotsLoadError, setSnapshotsLoadError] = React.useState(false);
-  const [status, setStatus] = React.useState("");
+  const [notice, setNotice] = React.useState<Notice | null>(null);
   const statusTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
   const [coefficient, setCoefficient] = React.useState(1);
   const [coefficientLoadError, setCoefficientLoadError] = React.useState(false);
@@ -43,10 +44,10 @@ export function DataManager() {
     void reload();
   }, [reload]);
 
-  const showStatus = (msg: string, durationMs = 4000) => {
+  const showStatus = (msg: string, durationMs = 4000, kind: NoticeKind = "info") => {
     if (statusTimer.current) clearTimeout(statusTimer.current);
-    setStatus(msg);
-    statusTimer.current = durationMs > 0 ? setTimeout(() => setStatus(""), durationMs) : null;
+    setNotice({text: msg, kind});
+    statusTimer.current = durationMs > 0 ? setTimeout(() => setNotice(null), durationMs) : null;
   };
 
   /* ── التصدير ── */
@@ -54,16 +55,16 @@ export function DataManager() {
     try {
       const data = await buildBackupData();
       downloadJson(data, backupFilename());
-      showStatus("تم تجهيز ملف النسخة الاحتياطية للتنزيل ✓");
+      showStatus("تم تجهيز ملف النسخة الاحتياطية للتنزيل", 4000, "success");
     } catch {
-      showStatus("تعذر إنشاء النسخة الاحتياطية. لم نتمكن من قراءة كل بيانات التخزين؛ أعد المحاولة.");
+      showStatus("تعذر إنشاء النسخة الاحتياطية. لم نتمكن من قراءة كل بيانات التخزين؛ أعد المحاولة.", 4000, "warning");
     }
   };
 
   /* ── الاستيراد ── */
   const handleImport = async (file: File) => {
     if (file.size > MAX_BACKUP_BYTES) {
-      showStatus("⚠️ حجم النسخة يتجاوز الحد الأقصى (20 MiB)");
+      showStatus("حجم النسخة يتجاوز الحد الأقصى (20 MiB)", 4000, "warning");
       return;
     }
 
@@ -71,11 +72,11 @@ export function DataManager() {
     try {
       parsed = JSON.parse(await file.text());
     } catch {
-      showStatus("⚠️ تعذرت قراءة الملف؛ تحقق من أنه JSON صالح.");
+      showStatus("تعذرت قراءة الملف؛ تحقق من أنه JSON صالح.", 4000, "warning");
       return;
     }
     if (!validateBackupData(parsed)) {
-      showStatus("⚠️ الملف غير صالح — تأكد أنه ملف نسخة DeutschPfad");
+      showStatus("الملف غير صالح — تأكد أنه ملف نسخة DeutschPfad", 4000, "warning");
       return;
     }
 
@@ -88,10 +89,10 @@ export function DataManager() {
       await writeBackupData(pendingImport, mode);
       setPendingImport(null);
       await reload();
-      showStatus(`تم الاستيراد (وضع: ${mode === "merge" ? "دمج" : "استبدال"}) ✓`);
+      showStatus(`تم الاستيراد (وضع: ${mode === "merge" ? "دمج" : "استبدال"})`, 4000, "success");
     } catch (error) {
       const detail = error instanceof Error ? error.message : "تعذر تأكيد اكتمال الاستيراد";
-      showStatus(`⚠️ ${detail} راجع بياناتك قبل إعادة المحاولة.`, 0);
+      showStatus(`${detail} راجع بياناتك قبل إعادة المحاولة.`, 0, "warning");
     }
   };
 
@@ -100,9 +101,9 @@ export function DataManager() {
     try {
       await createManualSnapshot();
       await reload();
-      showStatus("تم إنشاء لقطة يدوية ✓");
+      showStatus("تم إنشاء لقطة يدوية", 4000, "success");
     } catch {
-      showStatus("تعذر إنشاء اللقطة الاحتياطية؛ تحقق من مساحة التخزين وأعد المحاولة.");
+      showStatus("تعذر إنشاء اللقطة الاحتياطية؛ تحقق من مساحة التخزين وأعد المحاولة.", 4000, "warning");
     }
   };
 
@@ -123,10 +124,10 @@ export function DataManager() {
       await restoreSnapshot(restoreTarget.id);
       setRestoreTarget(null);
       await reload();
-      showStatus("تمت الاستعادة — أعد تحميل الصفحة");
+      showStatus("تمت الاستعادة — أعد تحميل الصفحة", 4000, "success");
     } catch (error) {
       const detail = error instanceof Error ? error.message : "تعذر تأكيد اكتمال الاستعادة";
-      showStatus(`⚠️ ${detail} تحقق من بياناتك قبل إعادة المحاولة.`, 0);
+      showStatus(`${detail} تحقق من بياناتك قبل إعادة المحاولة.`, 0, "warning");
     }
   };
 
@@ -140,9 +141,9 @@ export function DataManager() {
       await deleteSnapshot(deleteTarget.id);
       setDeleteTarget(null);
       await reload();
-      showStatus("تم حذف اللقطة الاحتياطية.");
+      showStatus("تم حذف اللقطة الاحتياطية.", 4000, "success");
     } catch {
-      showStatus("تعذر حذف اللقطة؛ أعد المحاولة.");
+      showStatus("تعذر حذف اللقطة؛ أعد المحاولة.", 4000, "warning");
     }
   };
 
@@ -159,7 +160,7 @@ export function DataManager() {
       await Promise.all(stores.map((store) => tx.objectStore(store).clear()));
       await tx.done;
     } catch {
-      showStatus("تعذرت إعادة التعيين؛ لم نتمكن من تأكيد مسح قاعدة البيانات. أعد المحاولة.");
+      showStatus("تعذرت إعادة التعيين؛ لم نتمكن من تأكيد مسح قاعدة البيانات. أعد المحاولة.", 4000, "warning");
       return;
     }
     // مسح كل مفاتيح localStorage المملوكة (dp: / deutschpfad:)
@@ -175,7 +176,7 @@ export function DataManager() {
       localStorageResetFailed = true;
     }
     if (localStorageResetFailed) {
-      showStatus("⚠️ مُسحت قاعدة البيانات لكن تعذر مسح بعض البيانات المحلية. لا تُعد تحميل الصفحة قبل تصدير ما يلزم أو التواصل مع الدعم.", 0);
+      showStatus("مُسحت قاعدة البيانات لكن تعذر مسح بعض البيانات المحلية. لا تُعد تحميل الصفحة قبل تصدير ما يلزم أو التواصل مع الدعم.", 0, "warning");
       return;
     }
     window.location.reload();
@@ -184,11 +185,11 @@ export function DataManager() {
   const handleAutoSnapshotNow = async () => {
     try {
       const result = await maybeAutoSnapshot();
-      if (result === "created") showStatus("تم إنشاء لقطة اليوم ✓");
-      else if (result === "already-exists") showStatus("لقطة اليوم موجودة مسبقاً");
-      else showStatus("تعذر التحقق من اللقطات أو إنشاؤها؛ أعد المحاولة.");
+      if (result === "created") showStatus("تم إنشاء لقطة اليوم", 4000, "success");
+      else if (result === "already-exists") showStatus("لقطة اليوم موجودة مسبقاً", 4000, "info");
+      else showStatus("تعذر التحقق من اللقطات أو إنشاؤها؛ أعد المحاولة.", 4000, "warning");
     } catch {
-      showStatus("تعذر إنشاء لقطة اليوم بسبب خطأ في التخزين؛ أعد المحاولة.");
+      showStatus("تعذر إنشاء لقطة اليوم بسبب خطأ في التخزين؛ أعد المحاولة.", 4000, "warning");
     }
     await reload();
   };
@@ -358,11 +359,7 @@ export function DataManager() {
         </CardContent>
       </Card>
 
-      {status && (
-        <div className="rounded-xl border border-primary/30 bg-primary/5 p-3 text-sm font-semibold" role={status.startsWith("⚠️") ? "alert" : "status"}>
-          {status}
-        </div>
-      )}
+      {notice && <StatusNotice kind={notice.kind}>{notice.text}</StatusNotice>}
 
       <ChoiceDialog
         open={pendingImport !== null}

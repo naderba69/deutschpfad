@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import {CheckCircle2, Trophy} from "lucide-react";
+import {AlertTriangle, CheckCircle2, Link2, PackageOpen, Trophy} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
 import {validateBackupData, writeBackupData} from "@/lib/storage/export-import";
@@ -67,7 +67,7 @@ export function SyncHandler() {
         }
       } catch (e) {
         setMode("error");
-        setMessage("⚠️ تعذّر قراءة الرابط — تأكد من نسخه كاملاً.");
+        setMessage("تعذّر قراءة الرابط — تأكد من نسخه كاملاً.");
       }
     })();
   }, []);
@@ -78,7 +78,7 @@ export function SyncHandler() {
       if (!data) throw new Error("لا بيانات");
       await writeBackupData(data, mode);
       setMode("sync");
-      setMessage(`تم استعادة تقدمك (${mode === "merge" ? "دمج" : "استبدال"}) ✓ — رحلتك بين يديك!`);
+      setMessage(`تم استعادة تقدمك (${mode === "merge" ? "دمج" : "استبدال"}) — رحلتك بين يديك!`);
     } catch {
       setMode("error");
       setMessage("تعذّرت الاستعادة — أعد المحاولة.");
@@ -89,7 +89,7 @@ export function SyncHandler() {
     <div className="mx-auto w-full max-w-md px-4 py-16 sm:px-6">
       {mode === "idle" && (
         <div className="rounded-2xl border bg-card p-6 text-center">
-          <p className="text-3xl" aria-hidden="true">🔗</p>
+          <Link2 className="mx-auto h-8 w-8 text-primary" aria-hidden="true" />
           <h1 className="mt-2 text-lg font-extrabold">رابط المزامنة</h1>
           <p className="mt-1 text-sm text-muted-foreground">
             هذا الرابط خاص باستعادة التقدم أو التحدي. ولّد رابطك من
@@ -103,7 +103,7 @@ export function SyncHandler() {
 
       {mode === "challenge" && challenge && (
         <div className="rounded-2xl border border-gold/40 bg-gold/5 p-6 text-center">
-          <p className="text-3xl" aria-hidden="true">🏆</p>
+          <Trophy className="mx-auto h-8 w-8 text-gold-strong" aria-hidden="true" />
           <h1 className="mt-2 text-lg font-extrabold">تحدٍّ من {challenge.name}</h1>
           <div className="mt-4 grid grid-cols-3 gap-2">
             <div className="rounded-xl bg-background p-3">
@@ -120,7 +120,7 @@ export function SyncHandler() {
             </div>
           </div>
           <p className="mt-4 text-sm font-bold text-muted-foreground">
-            هل تستطيع التفوق عليه؟ ابدأ رحلتك وتجاوز نتيجته! 💪
+            هل تستطيع التفوق عليه؟ ابدأ رحلتك وتجاوز نتيجته!
           </p>
           <div className="mt-4 flex flex-wrap justify-center gap-2">
             <Button asChild>
@@ -135,7 +135,7 @@ export function SyncHandler() {
 
       {mode === "loading" && (
         <div className="rounded-2xl border bg-card p-6 text-center">
-          <p className="text-3xl" aria-hidden="true">📦</p>
+          <PackageOpen className="mx-auto h-8 w-8 text-primary" aria-hidden="true" />
           <p className="mt-2 text-sm font-bold">{message}</p>
           <div className="mt-4 flex flex-wrap justify-center gap-2">
             <Button onClick={() => void apply("merge")}>دمج مع تقدمي الحالي</Button>
@@ -157,7 +157,7 @@ export function SyncHandler() {
 
       {mode === "error" && (
         <div className="rounded-2xl border border-destructive/30 bg-destructive/5 p-6 text-center">
-          <p className="text-3xl" aria-hidden="true">⚠️</p>
+          <AlertTriangle className="mx-auto h-8 w-8 text-destructive" aria-hidden="true" />
           <p className="mt-2 text-sm font-bold text-destructive">{message}</p>
           <Button asChild variant="outline" className="mt-4">
             <Link href="/settings">الإعدادات</Link>

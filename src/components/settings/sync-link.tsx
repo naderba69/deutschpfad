@@ -1,5 +1,6 @@
 "use client";
 
+import {StatusNotice, type Notice} from "@/components/shared/status-notice";
 import * as React from "react";
 import {Copy, Link2, Share2, Trophy} from "lucide-react";
 
@@ -22,7 +23,7 @@ import {cn} from "@/lib/utils";
  */
 
 export function SyncLink() {
-  const [status, setStatus] = React.useState<string | null>(null);
+  const [status, setStatus] = React.useState<Notice | null>(null);
   const [syncLink, setSyncLink] = React.useState<string | null>(null);
   const [challengeLink, setChallengeLink] = React.useState<string | null>(null);
   const [importMode, setImportMode] = React.useState(false);
@@ -69,18 +70,18 @@ export function SyncLink() {
     const challenge = `${location.origin}/sync?challenge=${encodeURIComponent(encChallenge)}`;
     setSyncLink(sync);
       setChallengeLink(challenge);
-      setStatus("تم توليد الروابط ✓ — انسخها وشاركها");
+      setStatus({text: "تم توليد الروابط — انسخها وشاركها", kind: "success"});
     } catch {
-      setStatus("تعذّر إنشاء رابط المشاركة؛ جرّب تنزيل ملف النسخة الاحتياطية بدلاً منه.");
+      setStatus({text: "تعذّر إنشاء رابط المشاركة؛ جرّب تنزيل ملف النسخة الاحتياطية بدلاً منه.", kind: "warning"});
     }
   };
 
   const copy = async (text: string, label: string) => {
     try {
       await navigator.clipboard.writeText(text);
-      setStatus(`نُسخ ${label} إلى الحافظة ✓`);
+      setStatus({text: `نُسخ ${label} إلى الحافظة`, kind: "success"});
     } catch {
-      setStatus(`${label}: ${text.slice(0, 60)}…`);
+      setStatus({text: `${label}: ${text.slice(0, 60)}…`, kind: "info"});
     }
   };
 
@@ -90,12 +91,12 @@ export function SyncLink() {
     try {
       const data = await decodeSyncPayload(importCode.trim());
       if (!validateBackupData(data)) {
-        setStatus("⚠️ الرابط غير صالح لبيانات DeutschPfad");
+        setStatus({text: "الرابط غير صالح لبيانات DeutschPfad", kind: "warning"});
         return;
       }
       setPendingSyncData(data as BackupData);
     } catch {
-      setStatus("⚠️ تعذّر فك الرابط — تأكد من نسخه كاملاً");
+      setStatus({text: "تعذّر فك الرابط — تأكد من نسخه كاملاً", kind: "warning"});
     }
   };
 
@@ -104,11 +105,11 @@ export function SyncLink() {
     try {
       await writeBackupData(pendingSyncData, mode);
       setPendingSyncData(null);
-      setStatus(`تم استيراد الرابط (${mode === "merge" ? "دمج" : "استبدال"}) ✓`);
+      setStatus({text: `تم استيراد الرابط (${mode === "merge" ? "دمج" : "استبدال"})`, kind: "success"});
       setImportMode(false);
       setImportCode("");
     } catch {
-      setStatus("⚠️ تعذّر فك الرابط — تأكد من نسخه كاملاً");
+      setStatus({text: "تعذّر فك الرابط — تأكد من نسخه كاملاً", kind: "warning"});
     }
   };
 
@@ -162,7 +163,7 @@ export function SyncLink() {
         </div>
       )}
 
-      {status && <p className="text-xs font-bold text-primary">{status}</p>}
+      {status && <StatusNotice kind={status.kind} className="p-2.5 text-xs">{status.text}</StatusNotice>}
 
       <ChoiceDialog
         open={pendingSyncData !== null}
