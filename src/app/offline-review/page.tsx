@@ -13,7 +13,7 @@ export default function OfflineReviewPage() {
     <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6">
       <div className="mb-8">
         <h1 className="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-          المراجعة دون إنترنت 📴
+          المراجعة دون إنترنت
         </h1>
         <p className="mt-2 max-w-2xl text-balance text-muted-foreground">
           كل مفرداتك (A1→B2) محفوظة في جهازك والنطق محلي — راجع في الطائرة، في المترو، أو

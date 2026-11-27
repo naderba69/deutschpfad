@@ -9,6 +9,7 @@ import * as React from "react";
 import {Search, WifiOff} from "lucide-react";
 
 import {SpeakButton} from "@/components/shared/speak-button";
+import {Button} from "@/components/ui/button";
 import {Card, CardContent} from "@/components/ui/card";
 import {Input} from "@/components/ui/input";
 import {A1_VOCAB} from "@/data/vocabulary/a1";
@@ -27,9 +28,13 @@ const ALL: { level: string; words: VocabEntry[] }[] = [
 
 const LEVELS = ["all", "A1", "A2", "B1", "B2"] as const;
 
+/** عدد البطاقات دفعة واحدة — عرض كل المفردات (نحو 830) دفعة واحدة يُثقل الجوال */
+const PAGE_SIZE = 60;
+
 export function OfflineReviewClient() {
   const [level, setLevel] = React.useState<(typeof LEVELS)[number]>("all");
   const [query, setQuery] = React.useState("");
+  const [shown, setShown] = React.useState(PAGE_SIZE);
 
   const filtered = ALL.flatMap(({ level: lv, words }) =>
     level === "all" || level === lv ? words : [],
@@ -52,13 +57,16 @@ export function OfflineReviewClient() {
       </div>
 
       {/* الفلترة */}
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-wrap items-center gap-2" role="group" aria-label="تصفية بالمستوى">
         {LEVELS.map((l) => (
           <button
             key={l}
             type="button"
             aria-pressed={level === l}
-            onClick={() => setLevel(l)}
+            onClick={() => {
+              setLevel(l);
+              setShown(PAGE_SIZE);
+            }}
             className={cn(
               "font-de rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors",
               level === l ? "border-primary bg-primary text-primary-foreground" : "bg-muted/40 text-muted-foreground hover:border-primary/40",
@@ -71,7 +79,10 @@ export function OfflineReviewClient() {
           <Search className="absolute start-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
           <Input
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setShown(PAGE_SIZE);
+            }}
             placeholder="ابحث…"
             className="ps-9"
             aria-label="ابحث في المفردات"
@@ -84,7 +95,7 @@ export function OfflineReviewClient() {
       </p>
 
       <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-        {filtered.map((w) => (
+        {filtered.slice(0, shown).map((w) => (
           <Card key={`${w.de}-${w.ar}`} className="overflow-hidden">
             <CardContent className="flex items-center justify-between gap-2 p-3">
               <div className="min-w-0">
@@ -104,6 +115,15 @@ export function OfflineReviewClient() {
           </Card>
         ))}
       </div>
+
+      {filtered.length > shown ? (
+        <div className="flex flex-col items-center gap-2 pt-2">
+          <p className="text-xs text-muted-foreground">تُعرض {shown} من {filtered.length} كلمة</p>
+          <Button variant="outline" onClick={() => setShown((n) => n + PAGE_SIZE)}>
+            عرض {Math.min(PAGE_SIZE, filtered.length - shown)} كلمة أخرى
+          </Button>
+        </div>
+      ) : null}
     </div>
   );
 }
