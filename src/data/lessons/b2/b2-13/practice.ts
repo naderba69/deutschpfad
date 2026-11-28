@@ -76,13 +76,13 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
       { correct: "Digitalisierung", options: ["Digitalisierung", "Digitalisieren", "Digital"] },
       { correct: "Verfügbarkeit", options: ["Verfügbarkeit", "Verfügbar", "Verfügung"] },
     ],
-    explanation: "digitalisieren + ung = die Digitalisierung، و verfügbar + keit = die Verfügbarkeit.",
+    explanation: "digitalisier + ung = die Digitalisierung، و verfügbar + keit = die Verfügbarkeit.",
     errorType: "grammar",
   },
   {
     id: "e6",
     type: "error-correction",
-    instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+    instructionAr: "اقرأ الجملة، ثم اختر التصحيح الصحيح للجزء المظلل:",
     wrongSentence: "Trotzdem die Software teuer ist, kaufen wir sie.",
     wrongWord: "Trotzdem",
     correctWord: "Obwohl",
@@ -93,7 +93,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
   {
     id: "e7",
     type: "error-correction",
-    instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+    instructionAr: "اقرأ الجملة، ثم اختر التصحيح الصحيح للجزء المظلل:",
     wrongSentence: "Zwar ist es teuer, sondern wir kaufen es.",
     wrongWord: "sondern",
     correctWord: "aber",
@@ -129,7 +129,7 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
     errorType: "grammar",
     optionExplanations: [
       undefined,
-      "«Weil ... deshalb» للسبب والنتيجة، وتجمع أداتين متعارضتين.",
+      "«Weil ... deshalb» للسبب والنتيجة، لا للموازنة بين وجهين.",
       "«Obwohl ... trotzdem» تجمع أداتي استدراك، وهو ازدواج.",
       "«Damit ... dass» للغاية، ولا تعبّر عن الموازنة.",
     ],
@@ -147,8 +147,8 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
   {
     id: "e11",
     type: "fill-blank",
-    instructionAr: "أكمل بأداة الاستدراك المناسبة:",
-    template: "Das System ist schnell. ___ ist es teuer. (ومع ذلك — أسلوب رسمي)",
+    instructionAr: "أكمل بأداة الاستدراك المناسبة (ومع ذلك — أسلوب رسمي):",
+    template: "Das System ist schnell. ___ ist es teuer.",
     blanks: [
       { correct: "Dennoch", options: ["Dennoch", "Obwohl", "Weil"] },
     ],
@@ -196,7 +196,7 @@ export const fehlerUndTipps: Lesson["fehlerUndTipps"] = {
     { wrong: "Zwar ist es teuer, sondern wir kaufen es.", right: "Zwar ist es teuer, aber wir kaufen es.", whyAr: "sondern بعد نفي فقط؛ الاستدراك مع zwar يكون بـaber." },
   ],
   eselsbruecken: [
-    "اقرأ المركّب من اليمين لتحديد الجنس: Daten+schutz = der Schutz.",
+    "اقرأ المركّب من آخره لتحديد الجنس: Daten+schutz = der Schutz.",
     "«obwohl» ← الفعل في النهاية، «trotzdem» ← الفعل ثانياً، «aber» ← لا تغيير.",
     "«-ung» اسم عملية مؤنث دائماً: die Digitalisierung.",
   ],

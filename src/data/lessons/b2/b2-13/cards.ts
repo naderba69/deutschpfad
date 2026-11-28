@@ -49,7 +49,7 @@ export const miniTest: NonNullable<Lesson["miniTest"]> = [
   {
     id: "m4",
     type: "error-correction",
-    instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+    instructionAr: "اقرأ الجملة، ثم اختر التصحيح الصحيح للجزء المظلل:",
     wrongSentence: "Die Daten werden verschlüsseln gespeichert.",
     wrongWord: "verschlüsseln",
     correctWord: "verschlüsselt",

@@ -32,7 +32,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
       { de: "Sie sollten Ihre Stärken im Gespräch betonen.", ar: "ينبغي أن تبرزوا نقاط قوتكم في المقابلة." },
       { de: "Was würden Sie in Ihrer Karriere anders machen?", ar: "ماذا كنت ستفعل بشكل مختلف في مسارك المهني؟" },
       { de: "Wenn ich damals die Weiterbildung gemacht hätte, wäre ich heute Führungskraft.", ar: "لو أتممت التدريب المستمر حينها، لكنت اليوم قائداً." },
-      { de: "Ich dürfte mich kurz vorstellen.", ar: "هل تسمحون لي بالتعريف بنفسي باختصار؟" },
+      { de: "Dürfte ich mich kurz vorstellen?", ar: "هل تسمحون لي بالتعريف بنفسي باختصار؟" },
     ],
     comparisonWithArabic:
       "العربية تستخدم «لو» للفرضيات غير الواقعية («لو حصلت على الترقية») و«أودّ» و«هل يمكنكم» للتهذيب، وهي مقابلات تقريبية لصيغة الشرط الألمانية. لكن الألمانية تمتلك نظاماً صرفياً كاملاً لهذه الصيغة: würde + المصدر للأفعال الضعيفة، وتحويل حرف العلة للأفعال القوية (bekäme من bekommen)، والأفعال الناقصة الخاصة (könnte، sollte). انتبه إلى أن «würde» ليست فعلاً ناقصاً بل أداة بناء، وأن الفعل الرئيسي يأتي في النهاية بالمصدر: «Ich würde gern arbeiten» لا «Ich würde arbeiten gern». كما أن «möchte» (أودّ) هي الصيغة المهذبة الأكثر شيوعاً للرغبة، وهي مشتقة من mögen بصيغة الشرط.",
@@ -41,7 +41,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
     commonMistakes: [
       { wrong: "Ich würde arbeiten gern.", right: "Ich würde gern arbeiten.", whyAr: "المصدر يأتي في نهاية الجملة بعد würde: «Ich würde gern arbeiten» لا «Ich würde arbeiten gern». الترتيب: الفاعل + würde + (gern) + المصدر في النهاية." },
       { wrong: "Ich will in Ihrem Team arbeiten (في طلب مهذب).", right: "Ich würde gern in Ihrem Team arbeiten.", whyAr: "«will» أمر مباشر قد يبدو فظاً في السياق المهني. «würde gern» تخفف الطلب وتجعله مهذباً: «أودّ» لا «أريد»." },
-      { wrong: "Wenn ich die Stelle bekomme, würde ich...", right: "Wenn ich die Stelle bekäme, würde ich...", whyAr: "في الجملة الشرطية غير الواقعية، الشرط أيضاً بصيغة الشرط: bekäme (من bekommen) لا bekomme (المضارع). الصيغتان متطابقتان في الزمن غير الواقعي." },
+      { wrong: "Wenn ich die Stelle bekomme, würde ich...", right: "Wenn ich die Stelle bekäme, würde ich...", whyAr: "في الجملة الشرطية غير الواقعية، الشرط أيضاً بصيغة الشرط: bekäme (من bekommen) لا bekomme (المضارع). المضارع bekomme يناسب الشرط الواقعي (Wenn ich die Stelle bekomme, werde ich ...)، أما الفرضية غير الواقعية فتحتاج bekäme." },
     ],
     relatedRuleComparison: {
       title: "Konjunktiv II أم Konjunktiv I؟",
@@ -53,7 +53,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
     titleAr: "المبني للمجهول في وثائق التقديم والشهادات",
     titleDe: "Das Passiv in Bewerbungsunterlagen und Arbeitszeugnissen",
     explanationAr:
-      "المبني للمجهول (Passiv) يُستخدم بكثافة في وثائق التقديم الوظيفي: السيرة الذاتية (Lebenslauf)، وشهادات العمل (Arbeitszeugnis)، وخطابات التوصية. السبب أن هذه الوثائق تركز على الإنجازات والمهام المنجزة لا على الفاعل: «Die Projekte wurden erfolgreich abgeschlossen» (أُنجزت المشاريع بنجاح) بدل «Ich habe die Projekte erfolgreich abgeschlossen» (أنجزت المشاريع بنجاح). الصيغة المجهولة تُظهر الإنجاز كحقيقة موضوعية لا كتباهٍ شخصي، وهو الأسلوب المفضل في الوثائق الرسمية.\n\nيُبنى المبني للمجهول من werden + Partizip II، ويُصرَّف werden بحسب الزمن: المضارع (wird abgeschlossen)، الماضي البسيط (wurde abgeschlossen)، الماضي التام (ist abgeschlossen worden)، والمستقبل (wird abgeschlossen werden). في السيرة الذاتية، يُستخدم المضارع التام غالباً لوصف الإنجازات الماضية: «Das Team wurde von mir geleitet» (قادني الفريق — لا، الصحيح: «Das Team ist von mir geleitet worden»). وفي شهادات العمل، تُستخدم صيغ رسمية ثابتة: «Er wurde mit allen Aufgaben betraut» (كُلّف بجميع المهام)، «Die Leistung wurde von der Geschäftsführung anerkannt» (اعتُرفت الإدارة بالأداء).\n\nيُستعمل المبني للمجهول أيضاً مع الأفعال الناقصة (Modalverben): «Die Unterlagen müssen sorgfältig geprüft werden» (يجب فحص الأوراق بعناية)، «Das Projekt soll bis Juni abgeschlossen werden» (يُفترض إنجاز المشروع بحلول يونيو). هنا يأتي Partizip II في النهاية مع werden في المصدر. ومن البدائل الشائعة للمبني للمجهول في السياق المهني: «sich lassen» (يُترك الشيء يُفعل: «Das lässt sich leicht erklären» — يمكن شرح ذلك بسهولة)، و«man» (يقول المرء: «Man prüft die Unterlagen sorgfältig» — تُفحص الأوراق بعناية)، و«es gibt» (يوجد: «Es gibt viele Möglichkeiten» — توجد فرص كثيرة). اختيار البديل يعتمد على السياق: المجهول للرسمية، و man للعمومية، و sich lassen للسهولة أو الصعوبة.\n\n",
+      "المبني للمجهول (Passiv) يُستخدم بكثافة في وثائق التقديم الوظيفي: السيرة الذاتية (Lebenslauf)، وشهادات العمل (Arbeitszeugnis)، وخطابات التوصية. السبب أن هذه الوثائق تركز على الإنجازات والمهام المنجزة لا على الفاعل: «Die Projekte wurden erfolgreich abgeschlossen» (أُنجزت المشاريع بنجاح) بدل «Ich habe die Projekte erfolgreich abgeschlossen» (أنجزت المشاريع بنجاح). الصيغة المجهولة تُظهر الإنجاز كحقيقة موضوعية لا كتباهٍ شخصي، وهو الأسلوب المفضل في الوثائق الرسمية.\n\nيُبنى المبني للمجهول من werden + Partizip II، ويُصرَّف werden بحسب الزمن: المضارع (wird abgeschlossen)، الماضي البسيط (wurde abgeschlossen)، الماضي التام (ist abgeschlossen worden)، والمستقبل (wird abgeschlossen werden). في الوثائق يُستعمل الماضي البسيط للمجهول (wurde + Partizip II) لوصف الإنجازات الماضية، مثل «Das Team wurde von mir geleitet» (قدتُ الفريق). وفي الكلام اليومي أكثر يُستعمل الماضي التام «Das Team ist von mir geleitet worden»، والصيغتان صحيحتان. وفي شهادات العمل، تُستخدم صيغ رسمية ثابتة: «Er wurde mit allen Aufgaben betraut» (كُلّف بجميع المهام)، «Die Leistung wurde von der Geschäftsführung anerkannt» (اعتُرفت الإدارة بالأداء).\n\nيُستعمل المبني للمجهول أيضاً مع الأفعال الناقصة (Modalverben): «Die Unterlagen müssen sorgfältig geprüft werden» (يجب فحص الأوراق بعناية)، «Das Projekt soll bis Juni abgeschlossen werden» (يُفترض إنجاز المشروع بحلول يونيو). هنا يأتي Partizip II في النهاية مع werden في المصدر. ومن البدائل الشائعة للمبني للمجهول في السياق المهني: «sich lassen» (يُترك الشيء يُفعل: «Das lässt sich leicht erklären» — يمكن شرح ذلك بسهولة)، و«man» (يقول المرء: «Man prüft die Unterlagen sorgfältig» — تُفحص الأوراق بعناية)، و«es gibt» (يوجد: «Es gibt viele Möglichkeiten» — توجد فرص كثيرة). اختيار البديل يعتمد على السياق: المجهول للرسمية، و man للعمومية، و sich lassen للسهولة أو الصعوبة.\n\n",
     whyAr:
       "لماذا يُفضَّل المبني للمجهول في وثائق التقديم؟ لأنه يركز على النتيجة والإنجاز لا على الذات: «Die Aufgaben wurden erfüllt» (أُنجزت المهام) تبدو أكثر موضوعية من «Ich habe die Aufgaben erfüllt» (أنجزت المهام). في السيرة الذاتية وشهادات العمل، هذا الأسلوب يُظهر احترافية ويتجنب الانطباع بالتباهي. كما أنه يختصر الجمل: بدل ذكر الفاعل في كل مرة، يُذكر الإنجاز مباشرة. ومن يتقنه يستطيع كتابة وثائق رسمية سليمة تُقرأ باحترام في بيئة العمل الألمانية، حيث تُقدَّر الموضوعية والاختصار.",
     table: {
@@ -63,7 +63,7 @@ export const theory: NonNullable<Lesson["theory"]> = [
         { label: "المضارع", cells: ["wird", "Das Projekt wird geleitet."] },
         { label: "الماضي البسيط", cells: ["wurde", "Das Team wurde vergrößert."] },
         { label: "الماضي التام", cells: ["ist ... worden", "Die Aufgaben sind erfüllt worden."] },
-        { label: "مع ناقص", cells: ["muss ... werden", "Die Unterlagen müssen geprüft werden."] },
+        { label: "مع ناقص", cells: ["müssen ... werden", "Die Unterlagen müssen geprüft werden."] },
         { label: "المستقبل", cells: ["wird ... werden", "Der Vertrag wird unterschrieben werden."] },
       ],
     },
@@ -71,13 +71,13 @@ export const theory: NonNullable<Lesson["theory"]> = [
       { de: "Die Projekte wurden erfolgreich abgeschlossen.", ar: "أُنجزت المشاريع بنجاح." },
       { de: "Er wurde mit allen Aufgaben betraut.", ar: "كُلّف بجميع المهام." },
       { de: "Die Unterlagen müssen sorgfältig geprüft werden.", ar: "يجب فحص الأوراق بعناية." },
-      { de: "Das Team ist von mir geleitet worden.", ar: "قادني الفريق (أنا قُدت الفريق)." },
+      { de: "Das Team ist von mir geleitet worden.", ar: "قدتُ الفريق (الماضي التام)." },
       { de: "Die Leistung wurde von der Geschäftsführung anerkannt.", ar: "اعتُرفت الإدارة بالأداء." },
       { de: "Das Projekt soll bis Juni abgeschlossen werden.", ar: "يُفترض إنجاز المشروع بحلول يونيو." },
       { de: "Das lässt sich leicht erklären.", ar: "يمكن شرح ذلك بسهولة." },
     ],
     comparisonWithArabic:
-      "العربية تستخدم المبني للمجهول أيضاً («أُنجزت المشاريع»، «كُلّف بجميع المهام»)، وهو مقابل تقريبي للمبني للمجهول الألماني. لكن الألمانية تبني المجهول بتركيب ثابت: werden + Partizip II، ويُصرَّف werden بحسب الزمن بينما يبقى Partizip II ثابتاً في النهاية. انتبه إلى أن Partizip II في الماضي التام يأتي مع «worden» لا مع Partizip II نفسه: «ist abgeschlossen worden» لا «ist abgeschlossen gewesen». كما أن العربية قد تستخدم «تم» («تم إنجاز المشروع») وهو مقابل وظيفي لـ «wurde abgeschlossen»، لكن الألمانية لا تستخدم «تم» بل تعتمد على werden. ومن الفروق المهمة أن الألمانية تستخدم المجهول بكثافة أكبر في النصوص الرسمية من العربية، حيث تُفضَّل الجملة الفعلية غالباً.",
+      "العربية تستخدم المبني للمجهول أيضاً («أُنجزت المشاريع»، «كُلّف بجميع المهام»)، وهو مقابل تقريبي للمبني للمجهول الألماني. لكن الألمانية تبني المجهول بتركيب ثابت: werden + Partizip II، ويُصرَّف werden بحسب الزمن بينما يبقى Partizip II ثابتاً في النهاية. انتبه إلى أن Partizip II في الماضي التام يأتي مع «worden» لا مع Partizip II نفسه: «ist abgeschlossen worden» لا «ist abgeschlossen gewesen». كما أن العربية قد تستخدم «تم» («تم إنجاز المشروع») وهو مقابل وظيفي لـ «wurde abgeschlossen»، لكن الألمانية لا تستخدم «تم» بل تعتمد على werden.",
     eselsbruecke:
       "«werden + Partizip II في النهاية»: Die Projekte wurden abgeschlossen. و«مع الناقص»: müssen ... werden (المصدر في النهاية). و«sich lassen» للسهولة: Das lässt sich machen.",
     commonMistakes: [

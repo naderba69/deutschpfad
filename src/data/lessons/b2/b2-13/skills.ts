@@ -127,12 +127,12 @@ export const pronunciation: Lesson["pronunciation"] = {
   items: [
     { de: "die Digitalisierung", ar: "الرقمنة", note: "ung = أونغ: ديغي-تالي-زيرونغ" },
     { de: "die Automatisierung", ar: "الأتمتة", note: "au = آو: آو-توماتي-زيرونغ" },
-    { de: "die Cybersicherheit", ar: "الأمن السيبراني", note: "y = ü: تسايبر-زيشرهايت" },
+    { de: "die Cybersicherheit", ar: "الأمن السيبراني", note: "y = آي (في cyber): تسايبر-زيشرهايت" },
     { de: "der Datenschutz", ar: "حماية البيانات", note: "sch = ش: داتن-شوتس" },
     { de: "nachvollziehbar", ar: "قابل للتتبع", note: "ch = خ: ناخ-فولتسيبار" },
     { de: "die Abhängigkeit", ar: "التبعية", note: "ä = إه: آب-هينغيكهايت" },
   ],
-  tip: "Digitalisierung = ديغي-تالي-زيرونغ — النبرة على «زير»، و ung في النهاية واضحة. Cybersicherheit = تسايبر-زيشرهايت — y تُنطق ü.",
+  tip: "Digitalisierung = ديغي-تالي-زيرونغ — النبرة على «زير»، و ung في النهاية واضحة. Cybersicherheit = تسايبر-زيشرهايت — y هنا تُنطق «آي»، لا ü.",
   shadowing: [
     { de: "Obwohl das System schnell ist, prüft eine Fachkraft jede Antwort.", ar: "رغم أن النظام سريع، يفحص مختص كل إجابة.", tip: "obwohl — الفعل في النهاية" },
     { de: "Zwar bietet KI Chancen, aber sie birgt auch Risiken.", ar: "صحيح أن الذكاء الاصطناعي يقدم فرصاً، لكنه ينطوي على مخاطر.", tip: "zwar ... aber" },

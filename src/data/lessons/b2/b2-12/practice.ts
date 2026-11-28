@@ -94,11 +94,11 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
   {
     id: "e7",
     type: "error-correction",
-    instructionAr: "افحص الجملة: إن وجدت خطأً فاختر تصحيحه، وإلا فاختر «لا خطأ».",
+    instructionAr: "اقرأ الجملة، ثم اختر التصحيح الصحيح للجزء المظلل:",
     wrongSentence: "Die Projekte wurden abgeschlossen haben.",
-    wrongWord: "abgeschlossen haben",
-    correctWord: "abgeschlossen worden",
-    options: ["abgeschlossen worden", "abgeschlossen haben", "abgeschlossen gewesen", "abgeschlossen sein"],
+    wrongWord: "wurden abgeschlossen haben",
+    correctWord: "sind abgeschlossen worden",
+    options: ["sind abgeschlossen worden", "wurden abgeschlossen haben", "sind abgeschlossen gewesen", "wurden abgeschlossen worden"],
     explanation: "في الماضي التام للمبني للمجهول: sein + Partizip II + worden، لا haben.",
     errorType: "grammar",
   },
@@ -122,17 +122,17 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
   {
     id: "e9",
     type: "multiple-choice",
-    instructionAr: "أدوات الربط: اختر الأداة المناسبة:",
+    instructionAr: "أدوات الربط: اختر أداة الغاية (لكي):",
     questionDe: "___ die Leistungen dokumentiert werden, können Beförderungen vergeben werden.",
-    options: ["Damit", "Weil", "Obwohl", "Wenn"],
+    options: ["Damit", "Weil", "Obwohl", "Während"],
     correctIndex: 0,
-    explanation: "«Damit» (لكي) تربط الغاية بالنتيجة: لكي تُوثَّق الإنجازات، يمكن منح الترقيات.",
+    explanation: "«Damit» (لكي) تعبّر عن الغاية: لكي تُوثَّق الإنجازات، يمكن منح الترقيات.",
     errorType: "grammar",
     optionExplanations: [
       undefined,
       "«Weil» للسبب، والجملة هنا للغاية لا للسبب.",
       "«Obwohl» للتناقض، ولا يناسب السياق.",
-      "«Wenn» للشرط الزمني، والجملة للغاية.",
+      "«Während» للتزامن أو التقابل الزمني، لا للغاية.",
     ],
   },
   {
@@ -147,8 +147,8 @@ export const practiceBank: NonNullable<Lesson["practiceBank"]> = [
   {
     id: "e11",
     type: "fill-blank",
-    instructionAr: "أكمل بأداة الربط المناسبة:",
-    template: "___ die Weiterbildung gemacht hätte, wäre ich heute Führungskraft. (لو — شرط ماضٍ)",
+    instructionAr: "أكمل بأداة الشرط (لو — شرط ماضٍ):",
+    template: "___ die Weiterbildung gemacht hätte, wäre ich heute Führungskraft.",
     blanks: [
       { correct: "Wenn", options: ["Wenn", "Weil", "Damit"] },
     ],
