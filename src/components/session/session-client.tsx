@@ -115,7 +115,7 @@ export function SessionClient({lessonId}: {lessonId: string}) {
                 {stage.sections.map((s) => (
                   <li key={s.sectionId} className="flex flex-wrap items-center justify-between gap-2 text-sm">
                     <span>
-                      {s.completed ? "✅ " : "⬜ "}
+                      {s.completed ? "" : "⬜ "}
                       {SECTION_LABEL[s.sectionId] ?? s.sectionId}{" "}
                       <span className="text-xs text-muted-foreground">— {PROOF_LABEL[s.proof]}</span>
                     </span>

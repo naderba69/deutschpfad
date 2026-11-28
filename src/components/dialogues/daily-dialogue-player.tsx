@@ -82,7 +82,7 @@ export function DailyDialoguePlayer({ dialogue, onBack }: { dialogue: DailyDialo
         </div>
 
         <div className="rounded-2xl border bg-card p-5">
-          <p className="text-sm font-extrabold">📋 أسئلة الفهم — ما فهمت من الحوار؟</p>
+          <p className="text-sm font-extrabold">أسئلة الفهم — ما فهمت من الحوار؟</p>
           <div className="mt-3 space-y-3">
             {dialogue.questions.map((q, qIdx) => {
               const answered = answers[qIdx];
@@ -125,7 +125,7 @@ export function DailyDialoguePlayer({ dialogue, onBack }: { dialogue: DailyDialo
 
         {/* المفردات */}
         <div className="rounded-2xl border bg-card p-4">
-          <p className="text-xs font-extrabold text-primary">💎 مفردات الحوار</p>
+          <p className="text-xs font-extrabold text-primary">مفردات الحوار</p>
           <div className="mt-2 flex flex-wrap gap-1.5">
             {dialogue.keyVocab.map((v) => (
               <span key={v.de} className="font-de rounded-full bg-muted px-2.5 py-1 text-[11px] font-bold" dir="ltr">
@@ -141,7 +141,7 @@ export function DailyDialoguePlayer({ dialogue, onBack }: { dialogue: DailyDialo
               {correctCount}/{dialogue.questions.length} إجابات صحيحة
             </p>
             <p className="mt-1 text-xs text-muted-foreground">
-              {correctCount === dialogue.questions.length ? "فهمت الحوار بالكامل — ممتاز! 🎉" : "راجع الجولات التي أخطأت فيها ثم أعد المحاولة."}
+              {correctCount === dialogue.questions.length ? "فهمت الحوار بالكامل — ممتاز!" : "راجع الجولات التي أخطأت فيها ثم أعد المحاولة."}
             </p>
             <Button onClick={onBack} className="mt-3 gap-1.5">
               <ChevronRight className="h-4 w-4" aria-hidden="true" />
@@ -169,11 +169,11 @@ export function DailyDialoguePlayer({ dialogue, onBack }: { dialogue: DailyDialo
           <p className="font-de mt-1 text-sm text-muted-foreground" dir="ltr">{dialogue.titleDe}</p>
           <p className="mt-3 rounded-xl bg-muted/30 px-4 py-2.5 text-sm">{dialogue.situation}</p>
           <p className="mt-2 text-xs text-muted-foreground">
-            {total} جولة حوار · نطق صوتي · ترجمة · أسئلة فهم · وضع «دورك» 🎭
+            {total} جولة حوار · نطق صوتي · ترجمة · أسئلة فهم · وضع «دورك»
           </p>
           {dialogue.audioNoteAr && (
             <p data-testid="dialogue-audio-disclosure" className="mt-2 rounded-lg border border-primary/20 bg-primary/5 px-3 py-2 text-xs font-semibold text-primary">
-              🔊 {dialogue.audioNoteAr}
+{dialogue.audioNoteAr}
             </p>
           )}
           <Button onClick={next} className="btn-glow mt-5 gap-2">
@@ -245,7 +245,7 @@ export function DailyDialoguePlayer({ dialogue, onBack }: { dialogue: DailyDialo
             {turn.speaker} — جولة {step} من {total}
           </p>
           {isMyTurn && (
-            <span className="rounded-full bg-gold/15 px-2 py-0.5 text-[11px] font-extrabold text-gold-strong">🎭 دورك</span>
+            <span className="rounded-full bg-gold/15 px-2 py-0.5 text-[11px] font-extrabold text-gold-strong">دورك</span>
           )}
         </div>
 

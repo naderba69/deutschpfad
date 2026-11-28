@@ -13,7 +13,7 @@ export default function ErrorNotebookPage() {
     <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6">
       <div className="mb-6">
         <h1 className="text-balance text-2xl font-extrabold tracking-tight sm:text-3xl">
-          📖 دفتر أخطائك
+دفتر أخطائك
         </h1>
         <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
           يجمع الدفتر بعض الإجابات غير الصحيحة التي تسجلها تمارين الدروس المدعومة، مع الشرح والإجابة

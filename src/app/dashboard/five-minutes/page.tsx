@@ -13,7 +13,7 @@ export default function FiveMinutesPage() {
     <div className="mx-auto w-full max-w-2xl px-4 py-10 sm:px-6">
       <div className="mb-8">
         <h1 className="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-          وضع 5 دقائق ⚡
+          وضع 5 دقائق
         </h1>
         <p className="mt-2 max-w-xl text-balance text-muted-foreground">
           يوم مزدحم؟ لا مشكلة — كبسولة مركزة تبقيك على اتصال باللغة: كلمة اليوم، ثلاثة

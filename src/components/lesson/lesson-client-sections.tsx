@@ -42,7 +42,7 @@ export function LessonCompletion({ lesson }: { lesson: Lesson }) {
         const {getPersonality, motivationalByPersonality} = await import("@/lib/storage/teacher-personality");
         const p = await getPersonality();
         const core = motivationalByPersonality(p, "success");
-        const nextPart = next ? ` \nالدرس القادم: «${next.titleAr}» — سنبني عليه مباشرة.` : " \nأتممت المسار الكامل — أنت جاهز لاختبار الختم! 🏆";
+        const nextPart = next ? ` \nالدرس القادم: «${next.titleAr}» — سنبني عليه مباشرة.` : " \nأتممت المسار الكامل — أنت جاهز لاختبار الختم!";
         setTeacherWord(`${core}${nextPart}`);
       } catch {
         setTeacherWord(next ? `أحسنت! الدرس القادم: «${next.titleAr}».` : "أحسنت! أتممت المسار الكامل!");
@@ -76,7 +76,7 @@ export function LessonCompletion({ lesson }: { lesson: Lesson }) {
           </span>
           <div>
             <p className="text-sm font-bold">
-              {done ? "أتممت هذا الدرس — أحسنت! 🎉" : "هل أتممت هذا الدرس؟"}
+              {done ? "أتممت هذا الدرس — أحسنت!" : "هل أتممت هذا الدرس؟"}
             </p>
             <p className="text-xs text-muted-foreground">
               {done
@@ -127,7 +127,6 @@ export function LessonCompletion({ lesson }: { lesson: Lesson }) {
 
           {done && teacherWord && (
             <div className="mt-3 flex items-start gap-3 rounded-xl border border-primary/20 bg-primary/5 p-3">
-              <span className="text-xl" aria-hidden="true">🎓</span>
               <div>
                 <p className="text-[11px] font-bold text-primary">كلمة أستاذك بعد الدرس</p>
                 <p className="mt-0.5 whitespace-pre-line text-sm leading-relaxed text-foreground">{teacherWord}</p>
@@ -155,7 +154,7 @@ export function LessonCompletion({ lesson }: { lesson: Lesson }) {
           {/* اقتراح امتحان الختم عند إتمام كل دروس المستوى */}
           {done && isLevelLessonsDone([...completedLessonsSet], level) && (
             <div className="mt-1 flex items-center gap-2 rounded-lg bg-gold/15 px-3 py-1.5 text-xs font-bold text-gold-strong">
-              🏅 أتممت كل دروس {level}
+أتممت كل دروس {level}
               <Link href={`/tests/seal/${level.toLowerCase()}`} className="underline hover:opacity-80">
                 امتحان الختم
               </Link>
@@ -196,7 +195,6 @@ export function DailyGoalBar() {
 
   return (
     <div className="mb-4 flex flex-wrap items-center gap-2 rounded-xl border border-gold/30 bg-gold/10 px-4 py-2.5 text-sm">
-      <span className="text-base" aria-hidden="true">🎯</span>
       <p className="text-sm font-semibold">
         هدف اليوم: <span className="font-de font-extrabold text-gold-strong">{goal} دقيقة</span>
         {studyHour !== undefined && (
@@ -259,7 +257,7 @@ export function LessonPrevNext({ lessonId }: { lessonId: string }) {
             href="/learning-path#path-b2"
             className="inline-flex items-center gap-1.5 rounded-xl border border-success/40 bg-success/10 px-4 py-3 text-sm font-bold text-emerald-800 dark:text-emerald-300 transition-colors hover:bg-success/15"
           >
-            🎓 أتممت المسار الكامل — عد لخارطة الطريق
+أتممت المسار الكامل — عد لخارطة الطريق
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>

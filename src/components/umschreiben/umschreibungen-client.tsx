@@ -202,7 +202,7 @@ export function UmschreibungenClient() {
                 )}
                 <div>
                   {feedback === "correct" ? (
-                    <p className="font-bold text-success">تحويل صحيح! 🎉</p>
+                    <p className="font-bold text-success">تحويل صحيح!</p>
                   ) : (
                     <p className="font-bold text-destructive">ليس تماماً — قارن بالنموذج:</p>
                   )}
@@ -253,7 +253,7 @@ export function UmschreibungenClient() {
             </p>
             <p className="mt-2 font-bold">
               {score.total > 0 && score.correct / score.total >= 0.8
-                ? "ممتاز! أتقنت هذا النوع 🏆"
+                ? "ممتاز! أتقنت هذا النوع"
                 : score.total > 0 && score.correct / score.total >= 0.5
                   ? "جيد — راجع الشرح وعد"
                   : "تدرب أكثر — هذا النوع من أصعب أسئلة B2"}

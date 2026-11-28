@@ -181,7 +181,7 @@ export function LernkartenSection({ lessonId, flashcards: sourceCards }: { lesso
       </div>
 
       <p className="text-center text-xs text-muted-foreground">
-        🔁 بعد الإضافة، تُدار البطاقات بخوارزمية SM-2: تقيّم نفسك (نسيت/صعب/حسن/سهل) فتضبط
+بعد الإضافة، تُدار البطاقات بخوارزمية SM-2: تقيّم نفسك (نسيت/صعب/حسن/سهل) فتضبط
         مواعيد المراجعة تلقائياً — راجعها في صفحة «بطاقاتي».
       </p>
     </div>

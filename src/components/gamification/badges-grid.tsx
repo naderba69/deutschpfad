@@ -55,7 +55,7 @@ export function BadgesGrid() {
           <div className="mb-4 rounded-xl border border-gold/50 bg-gold/10 p-3">
             <p className="inline-flex items-center gap-2 font-bold text-gold-strong-foreground">
               <Sparkles className="h-4 w-4" aria-hidden="true" />
-              شارات جديدة! 🎉
+              شارات جديدة!
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
               {newly.map((id) => BADGES.find((b) => b.id === id)?.name).filter(Boolean).join("، ")}
@@ -94,7 +94,7 @@ export function BadgesGrid() {
         )}
 
         <p className="mt-3 text-center text-xs text-muted-foreground">
-          شارات إضافية تفتح مع مستوياتك (متوسط 🥉 / متقدم 🥈 / خبير 🥇) — أكمل أهدافك SMART
+          شارات إضافية تفتح مع مستوياتك (متوسط / متقدم / خبير) — أكمل أهدافك SMART
           لتفتح «صانع الأهداف» تلقائياً!
         </p>
       </CardContent>

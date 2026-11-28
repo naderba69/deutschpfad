@@ -36,7 +36,7 @@ export function VollPruefungClient() {
     <div className="space-y-6">
       <Card className="overflow-hidden">
         <CardContent className="space-y-3 p-5">
-          <p className="font-bold text-primary">📋 ترتيب الامتحان الكامل:</p>
+          <p className="font-bold text-primary">ترتيب الامتحان الكامل:</p>
           <p className="text-sm text-muted-foreground">
             أكمل المستويات بالترتيب: A1 ثم A2 ثم B1 ثم B2. تُفتح كل مرحلة بعد إكمال التي قبلها.
             يُحفظ التقدم في هذا المتصفح فقط.

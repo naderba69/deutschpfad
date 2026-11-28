@@ -96,7 +96,7 @@ export function B2Top500() {
           </div>
         </div>
         <p className="mt-2 text-xs text-muted-foreground" role="status">
-          🎯 <b>{sorted.length}</b> كلمة وتعبير من أصل {B2_TOP500.length} — مرتبة بحسب أولوية المراجعة الداخلية، لا بيانات تواتر امتحانية.
+<b>{sorted.length}</b> كلمة وتعبير من أصل {B2_TOP500.length} — مرتبة بحسب أولوية المراجعة الداخلية، لا بيانات تواتر امتحانية.
           تعلّم 20 كلمة يومياً = 500 كلمة في 25 يوماً.
         </p>
       </div>

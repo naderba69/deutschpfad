@@ -155,7 +155,6 @@ export function WeeklyReviewClient({ range = "weekly" }: { range?: "weekly" | "m
   if (finished) {
     return (
       <div className="mx-auto max-w-xl space-y-4 text-center">
-        <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-success/15 text-3xl" aria-hidden="true">🏆</span>
         <h2 className="text-xl font-extrabold">أتممت مراجعة أسبوعك!</h2>
         <p className="text-sm text-muted-foreground">
           راجعت {session.length} {session.length === 1 ? "عنصراً" : "عناصر"} {range === "monthly" ? "هذا الشهر" : "هذا الأسبوع"} — أجبت صحيحاً عن {correctCount} منها.
@@ -163,11 +162,11 @@ export function WeeklyReviewClient({ range = "weekly" }: { range?: "weekly" | "m
         {summary && (
           <div className="mx-auto grid max-w-sm grid-cols-2 gap-2 text-center">
             <div className="rounded-xl border border-success/30 bg-success/10 px-3 py-2">
-              <p className="font-de text-lg font-extrabold text-success">⚡ {summary.weekXp}</p>
+              <p className="font-de text-lg font-extrabold text-success">{summary.weekXp}</p>
               <p className="text-[11px] font-bold text-muted-foreground">XP هذا الأسبوع</p>
             </div>
             <div className="rounded-xl border border-gold/30 bg-gold/10 px-3 py-2">
-              <p className="font-de text-lg font-extrabold text-gold-strong">💎 {gems}</p>
+              <p className="font-de text-lg font-extrabold text-gold-strong">{gems}</p>
               <p className="text-[11px] font-bold text-muted-foreground">جواهرك</p>
             </div>
           </div>

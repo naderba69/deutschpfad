@@ -24,7 +24,7 @@ export default function ReadingPage() {
 
       {/* أنواع قراءة غوته B2 الخمسة (المرجع) */}
       <div className="mb-6 rounded-2xl border bg-muted/20 p-4">
-        <p className="mb-3 text-sm font-bold text-primary">📋 أجزاء قراءة Goethe B2 الخمسة — ما الذي يتدرب عليه كل نص:</p>
+        <p className="mb-3 text-sm font-bold text-primary">أجزاء قراءة Goethe B2 الخمسة — ما الذي يتدرب عليه كل نص:</p>
         <div className="grid grid-cols-1 gap-2 text-xs sm:grid-cols-5">
           <div className="rounded-lg border bg-background p-2.5"><p className="font-bold">Teil 1 · Zuordnung</p><p className="mt-0.5 text-muted-foreground">مطابقة آراء/عبارات مع أشخاص</p></div>
           <div className="rounded-lg border bg-background p-2.5"><p className="font-bold">Teil 2 · Artikel</p><p className="mt-0.5 text-muted-foreground">مقال + أسئلة اختيار تفصيلية</p></div>
@@ -37,9 +37,9 @@ export default function ReadingPage() {
       {/* استراتيجيات القراءة السريعة (اقتراح المرحلة النهائية) */}
       <div className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
         {[
-          { title: "🔍 Skimming (قراءة المسح)", desc: "اقرأ العنوان والجملة الأولى من كل فقرة فقط — لتفهم الفكرة العامة في 30 ثانية. هذا أول سؤال في امتحان B2 Lesen." },
-          { title: "🎯 Scanning (قراءة التصيّد)", desc: "ابحث عن الكلمة المفتاحية من السؤال في النص (تواريخ، أسماء، أرقام) — لا تقرأ كل شيء. مهارة إنقاذ الوقت." },
-          { title: "🚫 تجاهل المجهول", desc: "لا تتوقف عند كل كلمة جديدة — خمّن من السياق واستمر. الكلمات المجهولة تُستبعد من الامتحان غالباً." },
+          { title: "Skimming (قراءة المسح)", desc: "اقرأ العنوان والجملة الأولى من كل فقرة فقط — لتفهم الفكرة العامة في 30 ثانية. هذا أول سؤال في امتحان B2 Lesen." },
+          { title: "Scanning (قراءة التصيّد)", desc: "ابحث عن الكلمة المفتاحية من السؤال في النص (تواريخ، أسماء، أرقام) — لا تقرأ كل شيء. مهارة إنقاذ الوقت." },
+          { title: "تجاهل المجهول", desc: "لا تتوقف عند كل كلمة جديدة — خمّن من السياق واستمر. الكلمات المجهولة تُستبعد من الامتحان غالباً." },
         ].map((t) => (
           <div key={t.title} className="rounded-xl border bg-muted/20 p-4">
             <p className="text-sm font-bold">

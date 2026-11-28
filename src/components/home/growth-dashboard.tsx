@@ -167,7 +167,7 @@ export function GrowthDashboard() {
           </span>
           {badges.map((b) => (
             <span key={b.name} title={b.name} className="inline-flex items-center gap-1 rounded-full bg-muted px-2 py-0.5 text-xs">
-              {b.emoji} {b.name}
+              {b.name}
             </span>
           ))}
         </div>

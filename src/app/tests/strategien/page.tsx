@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import {BookOpen, Headphones, Mic, PenLine, type LucideIcon} from "lucide-react";
 
 import {EXAM_STRATEGIEN, GOLDEN_TRAPS, LESEN_TIME_PLAN} from "@/data/exams/strategien";
 import {Badge} from "@/components/ui/badge";
@@ -9,11 +10,11 @@ export const metadata: Metadata = {
     "اقتراحات تدريبية لإدارة الوقت وفهم المهام الشائعة في مستوى B2. الأوقات الواردة إرشادية ويجب التحقق من متطلبات نسخة الامتحان لدى الجهة المنظمة."
 };
 
-const MODULE_META: Record<string, { label: string; emoji: string; color: string }> = {
-  lesen: { label: "القراءة (Lesen)", emoji: "📖", color: "bg-sky-500" },
-  hören: { label: "الاستماع (Hören)", emoji: "🎧", color: "bg-violet-500" },
-  schreiben: { label: "الكتابة (Schreiben)", emoji: "✍️", color: "bg-amber-500" },
-  sprechen: { label: "التحدث (Sprechen)", emoji: "🎤", color: "bg-rose-500" },
+const MODULE_META: Record<string, { label: string; icon: LucideIcon; color: string }> = {
+  lesen: { label: "القراءة (Lesen)", icon: BookOpen, color: "bg-sky-500" },
+  hören: { label: "الاستماع (Hören)", icon: Headphones, color: "bg-violet-500" },
+  schreiben: { label: "الكتابة (Schreiben)", icon: PenLine, color: "bg-amber-500" },
+  sprechen: { label: "التحدث (Sprechen)", icon: Mic, color: "bg-rose-500" },
 };
 
 export default function StrategienPage() {
@@ -50,8 +51,8 @@ export default function StrategienPage() {
           return (
             <div key={modul}>
               <h2 className="mb-3 flex items-center gap-2 text-lg font-extrabold">
-                <span className={`inline-flex h-8 w-8 items-center justify-center rounded-lg text-sm text-white ${meta.color}`}>
-                  {meta.emoji}
+                <span className={`inline-flex h-8 w-8 items-center justify-center rounded-lg text-white ${meta.color}`}>
+                  <meta.icon className="h-4 w-4" aria-hidden="true" />
                 </span>
                 {meta.label}
               </h2>
@@ -85,7 +86,7 @@ export default function StrategienPage() {
                         ))}
                       </ul>
                     </div>
-                    <p className="mt-2 text-xs text-muted-foreground">💡 {s.zeit}</p>
+                    <p className="mt-2 text-xs text-muted-foreground">{s.zeit}</p>
                   </div>
                 ))}
               </div>
@@ -96,7 +97,7 @@ export default function StrategienPage() {
 
       {/* الفخاخ العشرة الذهبية */}
       <div className="mt-8 rounded-xl border border-gold/40 bg-gold/10 p-4">
-        <p className="mb-3 text-sm font-extrabold text-gold-strong">🏆 الفخاخ العشرة الذهبية في القراءة والاستماع</p>
+        <p className="mb-3 text-sm font-extrabold text-gold-strong">الفخاخ العشرة الذهبية في القراءة والاستماع</p>
         <ol className="space-y-1.5">
           {GOLDEN_TRAPS.map((t, i) => (
             <li key={i} className="flex items-start gap-2 text-sm">

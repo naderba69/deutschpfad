@@ -127,7 +127,7 @@ export function ChallengeMode() {
     return (
       <div className="rounded-2xl border bg-muted/20 p-8 text-center">
         <Zap className="mx-auto h-12 w-12 text-gold-strong" aria-hidden="true" />
-        <h2 className="mt-4 text-xl font-extrabold">وضع التحدي الزمني ⚡</h2>
+        <h2 className="mt-4 text-xl font-extrabold">وضع التحدي الزمني</h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
           {QUESTIONS} أسئلة × {SECONDS_PER_QUESTION} ثانية لكل سؤال —
           أجب بأسرع ما يمكن: كل ثانية متبقية = {BONUS_PER_SECOND} نقاط إضافية!
@@ -154,7 +154,7 @@ export function ChallengeMode() {
         <p className="font-de mt-4 text-4xl font-extrabold text-primary">{score} نقطة</p>
         <p className="mt-2 text-sm text-muted-foreground">
           {score >= maxScore * 0.7
-            ? "أداء خارق في التحدي! 🏆"
+            ? "أداء خارق في التحدي!"
             : score >= maxScore * 0.4
               ? "جيد! حاول أسرع في المرة القادمة"
               : "لا بأس — السرعة تأتي مع التدريب"}
@@ -174,7 +174,7 @@ export function ChallengeMode() {
         <p className="text-sm font-bold">
           سؤال {index + 1}/{QUESTIONS}
         </p>
-        <span className="font-de text-sm font-bold text-primary">⭐ {score}</span>
+        <span className="font-de text-sm font-bold text-primary">{score}</span>
         <span
           role="timer"
           aria-label={`الوقت المتبقي لهذا السؤال: ${formatTime(remaining)}`}
@@ -194,7 +194,7 @@ export function ChallengeMode() {
         />
       )}
       <p className="text-center text-xs text-muted-foreground">
-        ⚡ كلما أجبت أسرع، زادت نقاطك — التحدي يختبر سرعتك ودقتك معاً!
+كلما أجبت أسرع، زادت نقاطك — التحدي يختبر سرعتك ودقتك معاً!
       </p>
       <p role="status" aria-live="polite" className="sr-only">
         {expiredNotice}

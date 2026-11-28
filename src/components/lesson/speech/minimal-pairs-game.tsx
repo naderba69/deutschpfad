@@ -155,7 +155,7 @@ export function MinimalPairsGame({ groups, compact }: MinimalPairsGameProps) {
         <p className="font-de mt-3 text-4xl font-extrabold text-primary">{challengeScore}</p>
         <p className="mt-1 font-bold">
           {challengeScore >= 15
-            ? "أذن فولاذية! 🎉"
+            ? "أذن فولاذية!"
             : challengeScore >= 10
               ? "ممتاز — سرعة ودقة رائعة"
               : challengeScore >= 5
@@ -189,7 +189,7 @@ export function MinimalPairsGame({ groups, compact }: MinimalPairsGameProps) {
         <p className="font-de mt-3 text-3xl font-extrabold text-primary">{pct}%</p>
         <p className="mt-1 font-bold">
           {pct >= 80
-            ? "أذن موسيقية ممتازة! 🎉"
+            ? "أذن موسيقية ممتازة!"
             : pct >= 60
               ? "جيد — تحتاج المزيد من التدريب على هذا الفرق"
               : "لا بأس! استمع للأزواج مرة أخرى بتركيز وكرر"}
@@ -266,7 +266,7 @@ export function MinimalPairsGame({ groups, compact }: MinimalPairsGameProps) {
             <span className="font-de shrink-0 text-sm font-extrabold text-destructive">
               ⏱ {timeLeft}s
             </span>
-            <span className="font-de shrink-0 text-sm font-bold text-success">⭐ {challengeScore}</span>
+            <span className="font-de shrink-0 text-sm font-bold text-success">{challengeScore}</span>
           </>
         ) : (
           <>
@@ -281,7 +281,7 @@ export function MinimalPairsGame({ groups, compact }: MinimalPairsGameProps) {
       {/* السؤال */}
       <div className="flex flex-col items-center gap-3 rounded-xl border bg-muted/20 p-5 text-center">
         <p className="text-sm font-semibold text-muted-foreground">استمع جيداً…</p>
-        <SpeakButton text={spokenText} rate={1} variant="gold" size="lg" label="🔊 استمع مرة أخرى" />
+        <SpeakButton text={spokenText} rate={1} variant="gold" size="lg" label="استمع مرة أخرى" />
         {lastCorrect !== null && (
           <p className={cn("font-bold", lastCorrect ? "text-success" : "text-destructive")}>
             {lastCorrect ? "إجابة صحيحة! ✓" : "لا، انتبه للفرق!"}
@@ -317,7 +317,7 @@ export function MinimalPairsGame({ groups, compact }: MinimalPairsGameProps) {
 
       {/* ملاحظة الزوج */}
       <p className="rounded-lg bg-muted/30 p-2.5 text-center text-xs text-muted-foreground">
-        💡 {current.pair.note}
+{current.pair.note}
       </p>
     </div>
   );

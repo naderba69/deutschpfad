@@ -81,7 +81,7 @@ export function FunktionsverbgefuegeTrainer() {
           الكتابة (Struktur) والقراءة. الفهم إلزامي: في نصوص الامتحان ستواجهها كثيراً.
         </p>
         <p className="mt-2 text-xs text-muted-foreground">
-          🧠 <b>الجسر العربي:</b> العربية تفعل مثلها تماماً: «يُعرب عن» بدل «يقول»،
+<b>الجسر العربي:</b> العربية تفعل مثلها تماماً: «يُعرب عن» بدل «يقول»،
           «يدخل حيز التنفيذ» بدل «يبدأ»، «يضع تحت التصرف» بدل «يعطي». فكّر بالرسمي العربي وستجد المعادل.
         </p>
       </div>
@@ -93,7 +93,7 @@ export function FunktionsverbgefuegeTrainer() {
           onClick={() => setShowTable((v) => !v)}
           className="flex w-full items-center justify-between p-4 text-start"
         >
-          <p className="font-extrabold">📋 جدول الـ 14 FVG الأشهر للامتحان</p>
+          <p className="font-extrabold">جدول الـ 14 FVG الأشهر للامتحان</p>
           <span className="text-muted-foreground">{showTable ? "▲" : "▼"}</span>
         </button>
         {showTable && (
@@ -125,7 +125,7 @@ export function FunktionsverbgefuegeTrainer() {
 
       {/* MCQ */}
       <div className="rounded-xl border bg-card p-4">
-        <p className="mb-3 font-extrabold">🧩 تدريب 1 — اختر FVG الصحيح (6 أسئلة)</p>
+        <p className="mb-3 font-extrabold">تدريب 1 — اختر FVG الصحيح (6 أسئلة)</p>
         <div className="space-y-3">
           {MCQ.map((q, qi) => (
             <div key={qi} className="rounded-xl border p-3">
@@ -170,7 +170,7 @@ export function FunktionsverbgefuegeTrainer() {
 
       {/* فجوات */}
       <div className="rounded-xl border bg-card p-4">
-        <p className="mb-3 font-extrabold">✍️ تدريب 2 — أكمل بـ FVG الصحيح (6 جمل)</p>
+        <p className="mb-3 font-extrabold">تدريب 2 — أكمل بـ FVG الصحيح (6 جمل)</p>
         <div className="space-y-3">
           {GAPS.map((g) => {
             const chosen = gapAns[g.id];
@@ -219,7 +219,7 @@ export function FunktionsverbgefuegeTrainer() {
 
       {/* نصائح الامتحان */}
       <div className="rounded-xl border border-gold/40 bg-gold/10 p-4 text-sm">
-        <p className="font-extrabold text-gold-strong">📌 نصائح للامتحان:</p>
+        <p className="font-extrabold text-gold-strong">نصائح للامتحان:</p>
         <ul className="mt-2 space-y-1.5 text-muted-foreground">
           <li>• في <b lang="de">Schreiben</b>: استخدم 2-3 FVG لرفع درجة «Struktur» (z.B. «zur Verfügung stellen»، «eine Rolle spielen»).</li>
           <li>• في <b lang="de">Lesen Teil 2/3</b>: لا تحلل الجملة كلمة كلمة — ابحث عن الاسم المشهور (Kraft، Frage، Verfügung) وافهم الفعل معه.</li>

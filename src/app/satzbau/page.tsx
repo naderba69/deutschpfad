@@ -14,7 +14,7 @@ export default function SatzbauPage() {
     <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6">
       <div className="mb-8">
         <h1 className="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-          لعبة تركيب الجمل (Satzbau) 🧩
+          لعبة تركيب الجمل (Satzbau)
         </h1>
         <p className="mt-2 max-w-2xl text-balance text-muted-foreground">
           {TOTAL_SATZBAU} لغزاً من A1 إلى B2 — انقر الكلمات بالترتيب الصحيح وتعلم قاعدة

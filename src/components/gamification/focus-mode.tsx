@@ -97,7 +97,7 @@ export function FocusMode() {
         ) : (
           <div className="space-y-4">
             <div className="flex items-center justify-between rounded-xl border border-primary/30 bg-primary/5 p-4">
-              <p className="font-bold">الجلسة جارية… 🎧</p>
+              <p className="font-bold">الجلسة جارية…</p>
               <span
                 className="font-de text-2xl font-extrabold text-primary tabular-nums"
                 role="timer"

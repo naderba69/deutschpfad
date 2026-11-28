@@ -86,7 +86,7 @@ export function AiGoetheWriter() {
       setRaw("⚠️ استنفدت حصتك اليومية — تعود غداً.");
       setParsed(null);
     } else if (r.status === "not-configured") {
-      setRaw("🔧 أضف مفاتيح LLM أولاً من الإعدادات لتفعيل هذا المقيّم.");
+      setRaw("أضف مفاتيح LLM أولاً من الإعدادات لتفعيل هذا المقيّم.");
       setParsed(null);
     }
   };
@@ -155,7 +155,7 @@ export function AiGoetheWriter() {
 
           {/* مهمة نموذجية جاهزة */}
           <details className="rounded-xl border bg-muted/20 p-3 text-xs">
-            <summary className="cursor-pointer font-bold text-primary">📋 اختر مهمة امتحانية جاهزة (من نماذج B2)</summary>
+            <summary className="cursor-pointer font-bold text-primary">اختر مهمة امتحانية جاهزة (من نماذج B2)</summary>
             <div className="mt-2 grid gap-1.5">
               {SCHREIB_MODELLE.map((m) => (
                 <button

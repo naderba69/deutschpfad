@@ -145,7 +145,7 @@ export function ReadingLibraryClient() {
           {/* أسئلة الفهم */}
           <Card>
             <CardHeader className="border-b bg-muted/20">
-              <CardTitle className="text-lg">أسئلة الفهم 🎯</CardTitle>
+              <CardTitle className="text-lg">أسئلة الفهم</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 p-5">
               {(current.questions ?? []).map((q, qi) => {
@@ -183,7 +183,7 @@ export function ReadingLibraryClient() {
                     </div>
                     {selected !== undefined && q.explanation && (
                       <p className="mt-2 rounded-lg bg-muted/40 p-2 text-xs text-muted-foreground">
-                        💡 {q.explanation}
+{q.explanation}
                       </p>
                     )}
                   </div>

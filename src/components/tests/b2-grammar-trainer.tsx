@@ -150,7 +150,7 @@ export function B2GrammarTrainer() {
           قواعد ومفردات B2 — {idx + 1}/{questions.length}
         </span>
         <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-bold text-muted-foreground">
-          {current.skill === "grammatik" ? "🧩 قواعد" : "💬 مفردات"}
+          {current.skill === "grammatik" ? "قواعد" : "مفردات"}
         </span>
         <span
           role="timer"

@@ -75,7 +75,7 @@ export function SprechenSection({
       {/* Teil 1: Vortrag */}
       <Card className="border-primary/30">
         <CardContent className="space-y-3 p-5">
-          <h3 className="text-base font-extrabold">🎤 Teil 1 — Vortrag (~{sprechen.teil1Minutes} دقائق)</h3>
+          <h3 className="text-base font-extrabold">Teil 1 — Vortrag (~{sprechen.teil1Minutes} دقائق)</h3>
           <p className="text-sm text-muted-foreground">
             اختر موضوعاً، استعد في <b>{sprechen.vorbereitungMinutes} دقيقة</b> (التحضير المخصص يُدار خارج المؤقت)،
             ثم تحدث عن الموضوع باتباع الأسئلة الإرشادية. استخدم بنية: مقدمة ← وضع حالي ← مشاكل/أسباب ← حلول ← خاتمة.
@@ -109,7 +109,7 @@ export function SprechenSection({
           {v.modelAr && (
             <details className="rounded-xl border border-primary/30 bg-primary/5 p-3" data-testid="vortrag-model">
               <summary className="cursor-pointer text-sm font-extrabold text-primary">
-                💡 إجابة نموذجية — افتحها بعد محاولتك
+إجابة نموذجية — افتحها بعد محاولتك
               </summary>
               <div className="mt-2 space-y-1.5 whitespace-pre-line text-sm leading-relaxed">{v.modelAr}</div>
               <div className="mt-2 flex flex-wrap items-center gap-2 border-t border-primary/20 pt-2">
@@ -131,7 +131,7 @@ export function SprechenSection({
       {/* Teil 2: Diskussion */}
       <Card className="border-gold/40">
         <CardContent className="space-y-3 p-5">
-          <h3 className="text-base font-extrabold">🗣️ Teil 2 — Diskussion (~{sprechen.teil2Minutes} دقائق)</h3>
+          <h3 className="text-base font-extrabold">Teil 2 — Diskussion (~{sprechen.teil2Minutes} دقائق)</h3>
           <p className="text-sm text-muted-foreground">{d.positionAr}</p>
           <div className="rounded-xl border bg-muted/20 p-3">
             <p className="font-bold"><span dir="ltr" lang="de">{d.themaDe}</span></p>
@@ -152,12 +152,12 @@ export function SprechenSection({
             </div>
           </div>
           <p className="text-xs text-muted-foreground">
-            💡 استخدم عبارات النقاش: <span dir="ltr" lang="de">Meiner Meinung nach… / Da stimme ich Ihnen zu, aber… / Ich sehe das anders, denn… / Ein wichtiger Aspekt ist…</span>
+استخدم عبارات النقاش: <span dir="ltr" lang="de">Meiner Meinung nach… / Da stimme ich Ihnen zu, aber… / Ich sehe das anders, denn… / Ein wichtiger Aspekt ist…</span>
           </p>
           {d.modelAr && (
             <details className="rounded-xl border border-gold/40 bg-gold/5 p-3" data-testid="diskussion-model">
               <summary className="cursor-pointer text-sm font-extrabold text-gold-foreground">
-                💡 إجابة نموذجية — افتحها بعد محاولتك
+إجابة نموذجية — افتحها بعد محاولتك
               </summary>
               <div className="mt-2 space-y-1.5 whitespace-pre-line text-sm leading-relaxed">{d.modelAr}</div>
               <div className="mt-2 flex flex-wrap items-center gap-2 border-t border-gold/30 pt-2">

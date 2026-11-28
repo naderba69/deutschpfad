@@ -75,7 +75,6 @@ export function ErrorNotebook() {
   if (rows.length === 0) {
     return (
       <div className="mx-auto max-w-xl rounded-2xl border bg-card p-10 text-center">
-        <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-success/15 text-3xl" aria-hidden="true">✨</span>
         <h2 className="mt-4 text-lg font-extrabold">دفترك نظيف!</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           لا توجد أخطاء مسجلة حالياً؛ قد لا تكون أجبت خطأ في تمرين يدعم التسجيل، أو ربما مُسح السجل.
@@ -127,7 +126,7 @@ export function ErrorNotebook() {
         </div>
         {stats?.top && (
           <p className="mt-3 rounded-lg bg-primary/5 px-3 py-2 text-xs font-bold text-primary">
-            🎯 أكثر بند تكراراً في السجل: «{stats.top.exerciseId ?? stats.top.id}»{stats.top.lessonId ? ` في ${stats.top.lessonId}` : ""} — تكرر تسجيله {stats.top.count} مرة. يمكنك مراجعة شرحه أو إعادة التدريب.
+أكثر بند تكراراً في السجل: «{stats.top.exerciseId ?? stats.top.id}»{stats.top.lessonId ? ` في ${stats.top.lessonId}` : ""} — تكرر تسجيله {stats.top.count} مرة. يمكنك مراجعة شرحه أو إعادة التدريب.
           </p>
         )}
       </div>

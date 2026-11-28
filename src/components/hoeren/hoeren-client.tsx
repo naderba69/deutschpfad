@@ -137,7 +137,7 @@ export function HoerenClient() {
           {phase === "listen" && (
             <div className="space-y-4 text-center">
               <p className="text-sm text-muted-foreground">
-                🎧 استمع كما في الامتحان — <span className="font-bold">النص مخفي!</span> يمكنك
+استمع كما في الامتحان — <span className="font-bold">النص مخفي!</span> يمكنك
                 الاستماع مرتين (مثل غوته الحقيقي).
               </p>
               <div className="flex flex-wrap items-center justify-center gap-3">
@@ -197,7 +197,7 @@ export function HoerenClient() {
               <p className="text-center text-sm text-muted-foreground">
                 {/* ═══ A-06: عتبة نسبية (60%) — كانت ثابتة >=3 فيفشل نص بسؤالين 2/2 ═══ */}
                 {active.questions.length > 0 && score / active.questions.length >= 0.6
-                  ? "أحسنت! فهم استماع جيد — ارفع المستوى 🎉"
+                  ? "أحسنت! فهم استماع جيد — ارفع المستوى"
                   : "راجع النص واستمع مجدداً ثم أعد المحاولة"}
               </p>
               <div className="space-y-2">
@@ -226,7 +226,7 @@ export function HoerenClient() {
               </div>
               <details className="rounded-xl border bg-muted/20 p-3">
                 <summary className="cursor-pointer text-sm font-bold text-primary">
-                  📜 كشف النص الكامل + الترجمة
+كشف النص الكامل + الترجمة
                 </summary>
                 <div className="mt-3 space-y-2">
                   <p className="font-de text-sm leading-relaxed" dir="ltr" lang="de">{active.text}</p>

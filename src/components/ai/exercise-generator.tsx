@@ -119,7 +119,7 @@ export function AiExerciseGenerator() {
             onClick={() => void run()}
             className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            🎲 ولّد تمريناً جديداً
+ولّد تمريناً جديداً
           </button>
         </div>
       )}

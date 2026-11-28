@@ -51,7 +51,7 @@ export function SchreibmodelleClient() {
           </p>
           <p className="text-sm text-muted-foreground">{model.topicAr}</p>
           <div className="rounded-xl bg-muted/30 p-3 text-sm">
-            <p className="font-bold text-primary">📝 المهمة في الامتحان:</p>
+            <p className="font-bold text-primary">المهمة في الامتحان:</p>
             <p className="font-de mt-1" dir="ltr" lang="de">{model.aufgabe}</p>
             <p className="mt-1 text-muted-foreground">{model.aufgabeAr}</p>
           </div>
@@ -138,7 +138,7 @@ export function SchreibmodelleClient() {
 
       {/* استماع للنموذج */}
       <div className="flex flex-wrap items-center gap-3 rounded-xl border bg-muted/20 p-4">
-        <p className="text-sm text-muted-foreground">🔊 استمع للنموذج كاملاً (نطق طبيعي):</p>
+        <p className="text-sm text-muted-foreground">استمع للنموذج كاملاً (نطق طبيعي):</p>
         <SpeakButton text={parts.paragraphs.map((p) => p.de).join(" ")} variant="outline" size="sm" label="استمع للنموذج" />
       </div>
     </div>

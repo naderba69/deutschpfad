@@ -49,7 +49,7 @@ export function TeacherMentor({ profile }: { profile: LearnerProfile }) {
   // عبارة المعلم حسب الشخصية (افتتاحية الجلسة)
   const opening: Record<string, string> = {
     formal: `أهلاً ${firstName}. إليك خطة جلسة اليوم — نلتزم بها بدقة.`,
-    friendly: `${greeting} ${firstName}! أنا أستاذك اليوم — لنبدأ خطوة بخطوة، كلها ممتعة! 🌟`,
+    friendly: `${greeting} ${firstName}! أنا أستاذك اليوم — لنبدأ خطوة بخطوة، كلها ممتعة!`,
     strict: `${firstName}، الوقت ثمين. هذه خطة اليوم — ابدأ ولا تؤجل.`,
   };
 

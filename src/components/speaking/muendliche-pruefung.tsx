@@ -81,7 +81,7 @@ export function MündlichePrüfung() {
             teil === 1 ? "border-primary bg-primary text-primary-foreground" : "bg-background hover:border-primary/50",
           )}
         >
-          🎤 Teil 1 — Vortrag (~4 دقائق)
+Teil 1 — Vortrag (~4 دقائق)
         </button>
         <button
           type="button"
@@ -92,7 +92,7 @@ export function MündlichePrüfung() {
             teil === 2 ? "border-primary bg-primary text-primary-foreground" : "bg-background hover:border-primary/50",
           )}
         >
-          🗣️ Teil 2 — Diskussion (~5 دقائق)
+Teil 2 — Diskussion (~5 دقائق)
         </button>
       </div>
 
@@ -135,7 +135,7 @@ export function MündlichePrüfung() {
               ))}
             </div>
             <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-              💡 قالب تدريبي ممكن للعرض: <b>مقدمة</b> ← <b>الوضع</b> ← <b>الأسباب أو الحجج</b> ←{" "}
+قالب تدريبي ممكن للعرض: <b>مقدمة</b> ← <b>الوضع</b> ← <b>الأسباب أو الحجج</b> ←{" "}
               <b>خلاصة</b>. ليس هذا قالباً رسمياً إلزامياً؛ تدرّب على تنظيم الأفكار بما يناسب المهمة.
             </p>
           </div>
@@ -252,7 +252,7 @@ export function MündlichePrüfung() {
 
       {/* التقييم الذاتي */}
       <div className="rounded-xl border border-gold/40 bg-gold/10 p-4">
-        <p className="text-sm font-bold">📋 تقييم ذاتي للتدريب (1–5، ليس درجة امتحانية):</p>
+        <p className="text-sm font-bold">تقييم ذاتي للتدريب (1–5، ليس درجة امتحانية):</p>
         <div className="mt-2 grid gap-2 text-xs sm:grid-cols-2">
           {[
             { name: "Aussprache", ar: "النطق مفهوم للألماني؟" },
@@ -287,7 +287,7 @@ export function MündlichePrüfung() {
 
       <div className="rounded-xl border border-success/40 bg-success/10 p-4 text-center">
         <CheckCircle2 className="mx-auto h-8 w-8 text-success" aria-hidden="true" />
-        <p className="mt-2 font-bold">أكملت جلسة التدريب الشفهي! 🎉</p>
+        <p className="mt-2 font-bold">أكملت جلسة التدريب الشفهي!</p>
         <p className="mt-1 text-sm text-muted-foreground">
           يمكنك إعادة التدريب بموضوع آخر. هذه الجلسة ليست محاكاة كاملة ولا تقييماً رسمياً؛ راجع تعليمات الامتحان لدى الجهة المنظمة.
         </p>

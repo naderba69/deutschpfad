@@ -138,7 +138,7 @@ export function StudyPlan({ profile, onSaved }: { profile: LearnerProfile; onSav
                 </span>
               </div>
               <p className="mt-1 text-[11px] text-muted-foreground">
-                {pct >= 100 ? "أنجزت هدف اليوم — رائع! 🎉" : `تقدمك نحو هدف اليوم: ${pct}%`}
+                {pct >= 100 ? "أنجزت هدف اليوم — رائع!" : `تقدمك نحو هدف اليوم: ${pct}%`}
               </p>
             </>
           )}

@@ -135,7 +135,6 @@ export function PodcastPlayer({ episode, onBack }: { episode: PodcastEpisode; on
   if (done) {
     return (
       <div className="mx-auto max-w-xl space-y-4 text-center">
-        <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-success/15 text-3xl" aria-hidden="true">🎧</span>
         <h2 className="text-xl font-extrabold">أتممت الاستماع!</h2>
         <p className="text-sm text-muted-foreground">
           أجبت صحيحاً عن {correct} من {episode.questions.length} أسئلة فهم.
@@ -188,10 +187,10 @@ export function PodcastPlayer({ episode, onBack }: { episode: PodcastEpisode; on
         </div>
         <p className="mt-3 text-[11px] font-bold text-muted-foreground">
           {audioSrc && !clipFailed
-            ? "🎙️ تسجيل مولّد آلياً (TTS)، وليس تسجيلاً بشرياً."
+            ? "تسجيل مولّد آلياً (TTS)، وليس تسجيلاً بشرياً."
             : audioSrc
               ? "⚠️ تعذّر تشغيل التسجيل — تُقرأ الحلقة بصوت الجهاز."
-              : "🔊 لم يُنتَج تسجيل لهذه الحلقة بعد — تُقرأ بصوت الجهاز الألماني."}
+              : "لم يُنتَج تسجيل لهذه الحلقة بعد — تُقرأ بصوت الجهاز الألماني."}
         </p>
         {episode.contentNoteAr && (
           <p className="mt-3 rounded-lg border border-amber-500/30 bg-amber-500/5 px-3 py-2 text-start text-xs leading-relaxed text-muted-foreground">

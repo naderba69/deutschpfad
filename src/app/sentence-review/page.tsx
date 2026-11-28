@@ -13,7 +13,7 @@ export default function SentenceReviewPage() {
     <div className="mx-auto w-full max-w-2xl px-4 py-10 sm:px-6">
       <div className="mb-6">
         <h1 className="text-balance text-2xl font-extrabold tracking-tight sm:text-3xl">
-          🧠 مراجعة الجمل
+مراجعة الجمل
         </h1>
         <p className="mt-2 max-w-xl text-sm text-muted-foreground">
           كل جملة من دروسك المكتملة تُضاف تلقائياً إلى نظام التكرار المتباعد (SM-2).

@@ -164,7 +164,7 @@ export function FreeDictation() {
         >
           <p className="font-bold">
             درجتك: <span className="font-de text-xl font-extrabold">{result.score}%</span>{" "}
-            {result.score >= 75 ? "— ممتاز! 🎉" : result.score >= 50 ? "— جيد، واصل التدريب" : "— أعد الاستماع ببطء"}
+            {result.score >= 75 ? "— ممتاز!" : result.score >= 50 ? "— جيد، واصل التدريب" : "— أعد الاستماع ببطء"}
           </p>
           <div className="flex flex-wrap items-center gap-1.5">
             {normalizeGermanText(target)

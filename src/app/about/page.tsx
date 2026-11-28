@@ -46,7 +46,7 @@ export default function AboutPage() {
       </div>
 
       <div className="mt-10 rounded-2xl border border-primary/20 bg-primary/5 p-6 text-center">
-        <h2 className="text-lg font-extrabold">🚀 كيف بدأنا</h2>
+        <h2 className="text-lg font-extrabold">كيف بدأنا</h2>
         <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
           DeutschPfad مشروع تدريبي عربي يضم دروساً وتمارين وأنشطة لممارسة الألمانية. صُممت
           بعض مواده مع مراعاة احتياجات متعلمي العربية، وتعمل بيانات التقدم محلياً على جهازك؛
