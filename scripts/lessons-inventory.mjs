@@ -10,9 +10,8 @@
  *  — دليل مرجعي دائم: أي نقص مستقبلي في أي درس يظهر فوراً.
  * ═══════════════════════════════════════════════════════════════════════
  */
-import { readFileSync, readdirSync, writeFileSync, mkdtempSync } from "node:fs";
-import { tmpdir } from "node:os";
-import { join, dirname } from "node:path";
+import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
+import { join, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import ts from "typescript";
 import { createRequire } from "node:module";
@@ -37,20 +36,41 @@ function estimateMinutes(L) {
     (L.flashcards?.length ?? 0) * 0.25;
   return Math.round(sum / 5) * 5;
 }
-const require = createRequire(import.meta.url);
-const TMP = mkdtempSync(join(tmpdir(), "linv-"));
+const nodeRequire = createRequire(import.meta.url);
+const SRC = join(ROOT, "src");
+const moduleCache = new Map();
+
+/**
+ * محمّل وحدات مضمَّن: يترجم كل ملف TypeScript في الذاكرة، ويحل الاستيرادات
+ * النسبية (`./x`) وalias `@/` إلى شجرة src الفعلية، فتعمل ملفات الدرس المقسّمة
+ * (مثل a1-00.ts الذي يستورد ./a1-00/intro) دون نسخ أو تعديل ملفات مؤقتة.
+ */
+function loadTsModule(file) {
+  if (moduleCache.has(file)) return moduleCache.get(file).exports;
+  const out = ts.transpileModule(readFileSync(file, "utf8"), {
+    compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020, esModuleInterop: true },
+  }).outputText;
+  const mod = { exports: {} };
+  moduleCache.set(file, mod);
+  const req = (spec) => resolveSpecifier(spec, dirname(file));
+  new Function("require", "module", "exports", out)(req, mod, mod.exports);
+  return mod.exports;
+}
+
+function resolveSpecifier(spec, fromDir) {
+  if (spec.startsWith("node:") || (!spec.startsWith(".") && !spec.startsWith("@/"))) return nodeRequire(spec);
+  const base = spec.startsWith("@/") ? join(SRC, spec.slice(2)) : resolve(fromDir, spec);
+  for (const candidate of [base, `${base}.ts`, join(base, "index.ts")]) {
+    if (existsSync(candidate) && statSync(candidate).isFile()) {
+      return candidate.endsWith(".ts") ? loadTsModule(candidate) : nodeRequire(candidate);
+    }
+  }
+  throw new Error(`تعذّر حل الاستيراد '${spec}' من ${fromDir}`);
+}
 
 /* ── تحميل كل الدروس ككائنات حقيقية ── */
 function loadLessons(path) {
-  const src = readFileSync(path, "utf8");
-  const js = ts
-    .transpileModule(src, {
-      compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020 },
-    })
-    .outputText.replace(/^import .*$/gm, "");
-  const tmp = join(TMP, path.split("/").pop().replace(".ts", ".cjs"));
-  writeFileSync(tmp, js);
-  const mod = require(tmp);
+  const mod = loadTsModule(path);
   return Object.values(mod).filter((value) => value && typeof value === "object" && value.id && value.lernziele);
 }
 
