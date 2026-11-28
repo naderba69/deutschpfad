@@ -1,11 +1,14 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import {BookOpen, Bot, CheckCircle2, Send, Sparkles, User, Zap, ZapOff} from "lucide-react";
 
 import {useLLM} from "@/components/providers/llm-provider";
 import {AutoGrowTextarea} from "@/components/shared/auto-grow-textarea";
 import {Button} from "@/components/ui/button";
+import {llmFailureMessage, trimHistory} from "@/lib/llm/conversation";
+import {assistantSystemPrompt} from "@/lib/llm/prompts";
 import {cn} from "@/lib/utils";
 
 const QUICK_PROMPTS = [
@@ -18,6 +21,8 @@ const QUICK_PROMPTS = [
 interface ChatMessage {
   role: "user" | "assistant";
   content: string;
+  /** رسالة عطل تُعرض للمتعلم ولا تدخل تاريخ المحادثة المرسل للنموذج */
+  error?: boolean;
 }
 
 const PROVIDER_LABEL: Record<string, string> = {
@@ -36,35 +41,13 @@ export interface LessonContext {
   theoryTitles: string[];
 }
 
-function buildSystemPrompt(ctx?: LessonContext): string {
-  const base =
-    "أنت معلّم لغة ألمانية محترف للمتعلمين العرب (مستوى A1–B2 وفق CEFR).\n" +
-    "قواعد عملك:\n" +
-    "- ردّك الأساسي بالعربية، مع الجمل الألمانية مكتوبة بدقة إملائية.\n" +
-    "- عند تصحيح خطأ: اشرح «لماذا» باختصار واذكر نوع الخطأ.\n" +
-    "- استخدم مستوى المفردات المناسب لمستوى المتعلم.\n" +
-    "- كن مشجعاً ومختصراً (لا تتجاوز 150 كلمة إلا عند الطلب).\n" +
-    "- عند طلب توليد جمل: أعط 3-5 جمل متدرجة الصعوبة مع الترجمة.";
-
-  if (!ctx) return base;
-
-  return (
-    base +
-    "\n\n── سياق الدرس الذي يدرسه المستخدم الآن ──\n" +
-    `عنوان الدرس: ${ctx.titleAr} (${ctx.titleDe})\n` +
-    `نبذة: ${ctx.summary}\n` +
-    `القواعد المغطاة: ${ctx.theoryTitles.join("؛ ")}\n` +
-    "عند الإجابة: ركّز على هذا الدرس تحديداً، واربط إجاباتك بقواعده ومفرداته."
-  );
-}
-
 /**
  * المعلّم الافتراضي — محادثة حرة تعمل عبر /api/llm
  * — يدعم سياق درس عبر lessonContext (اقتراح المرحلة 5) —
  */
 export function AssistantClient({ lessonContext }: { lessonContext?: LessonContext }) {
   const { isConfigured, providers, remaining, dailyLimit, usageToday, callLLM } = useLLM();
-  const systemPrompt = React.useMemo(() => buildSystemPrompt(lessonContext), [lessonContext]);
+  const systemPrompt = React.useMemo(() => assistantSystemPrompt(lessonContext), [lessonContext]);
   const [messages, setMessages] = React.useState<ChatMessage[]>([]);
   const [input, setInput] = React.useState("");
   const [busy, setBusy] = React.useState(false);
@@ -84,69 +67,44 @@ export function AssistantClient({ lessonContext }: { lessonContext?: LessonConte
     setBusy(true);
 
     try {
+      const sent = trimHistory(history.filter((m) => !m.error));
       const result = await callLLM({
-        messages: [{ role: "system", content: systemPrompt }, ...history],
+        messages: [{ role: "system", content: systemPrompt }, ...sent],
         purpose: lessonContext ? `chat:lesson:${lessonContext.id}` : "chat",
+        maxTokens: 1024,
       });
 
       if (result.ok && result.content) {
         setMessages([...history, { role: "assistant", content: result.content }]);
         setLastProvider(result.provider ?? null);
-      } else if (result.status === "limit") {
-        setMessages([
-          ...history,
-          {
-            role: "assistant",
-            content:
-              "⚠️ استنفدت حصتك اليومية من طلبات الذكاء الاصطناعي (50/50). ستعود الحصة غداً — والدروس والتمارين والبطاقات تعمل جميعها دون أي حصة.",
-          },
-        ]);
-      } else if (result.status === "not-configured") {
-        setMessages([
-          ...history,
-          {
-            role: "assistant",
-            content:
-              "لم تُضف مفاتيح الذكاء الاصطناعي بعد (GEMINI_API_KEY أو GROQ_API_KEY أو OPENROUTER_API_KEY). أضفها في ملف .env.local ثم أعد تشغيل الخادم، وسيظهر المعلّم الافتراضي هنا فوراً.",
-          },
-        ]);
       } else {
-        setMessages([
-          ...history,
-          { role: "assistant", content: `⚠️ حدث خطأ: ${result.error ?? "غير معروف"}` },
-        ]);
+        setMessages([...history, { role: "assistant", content: `⚠️ ${llmFailureMessage(result)}`, error: true }]);
       }
     } finally {
       setBusy(false);
     }
   };
 
-  /* ── غير مضبوط: شاشة إعداد المفاتيح ── */
+  /* ── غير مضبوط: إرشاد المتعلم إلى الإعدادات ── */
   if (!isConfigured) {
     return (
       <div className="rounded-2xl border bg-muted/20 p-8 text-center">
         <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-full bg-muted">
           <ZapOff className="h-8 w-8 text-muted-foreground" aria-hidden="true" />
         </span>
-        <h2 className="mt-4 text-xl font-extrabold">الميزات الذكية غير مفعّلة بعد</h2>
+        <h2 className="mt-4 text-xl font-extrabold">المعلّم الذكي غير مفعّل</h2>
         <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-muted-foreground">
-          المنصة تعمل بالكامل (الدروس والتمارين والبطاقات) بدون أي مفتاح. لتفعيل المعلّم
-          الافتراضي: أضف مفتاحاً واحداً على الأقل في <code dir="ltr" className="font-de">.env.local</code>:
+          كل الدروس والتمارين والبطاقات تعمل بدون أي مفتاح. لتفعيل المعلّم الذكي أضف مفتاح Gemini API
+          الخاص بك من صفحة الإعدادات؛ يُحفظ على جهازك فقط، ويعمل مجاناً ضمن حصة يومية.
         </p>
-        <ul className="mx-auto mt-4 max-w-md space-y-2 rounded-xl border bg-background p-4 text-start text-sm">
-          {[
-            ["GEMINI_API_KEY", "الأساسي — مجاني ~1500 طلب/يوم"],
-            ["GROQ_API_KEY", "احتياطي أول — سريع"],
-            ["OPENROUTER_API_KEY", "احتياطي ثانٍ — تشكيلة نماذج"],
-          ].map(([key, note]) => (
-            <li key={key} className="flex items-start justify-between gap-3">
-              <code dir="ltr" className="font-de font-semibold text-primary">{key}</code>
-              <span className="text-muted-foreground">{note}</span>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-4 text-xs text-muted-foreground">
-          ثم أعد تشغيل الخادم وسيظهر العدّاد اليومي والمعلّم تلقائياً.
+        <Link
+          href="/settings"
+          className="mt-5 inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+        >
+          افتح الإعدادات
+        </Link>
+        <p className="mx-auto mt-4 max-w-md text-xs text-muted-foreground">
+          للمشرف: يمكن أيضاً ضبط مفاتيح الخادم في ملف <code dir="ltr" className="font-de">.env.local</code>.
         </p>
       </div>
     );

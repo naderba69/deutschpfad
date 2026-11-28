@@ -5,6 +5,7 @@ import {GraduationCap, MessageCircleQuestion} from "lucide-react";
 
 import {AiToolShell} from "@/components/ai/ai-tool-shell";
 import {useLLM} from "@/components/providers/llm-provider";
+import {llmFailureMessage} from "@/lib/llm/conversation";
 import {askTeacherPrompt, cefrAssessmentPrompt} from "@/lib/llm/prompts";
 import {useRadioGroupNav} from "@/lib/use-radio-group-nav";
 
@@ -28,16 +29,16 @@ export function AiAskTeacher() {
         { role: "user", content: p.user },
       ],
       purpose: "ask-teacher",
+      maxTokens: 1024,
     });
     if (r.ok && r.content) setResult(r.content);
-    else if (r.status === "limit") setResult("⚠️ استنفدت حصتك اليومية — تعود غداً.");
-    else setResult("⚠️ تعذّر الإجابة — حاول مرة أخرى.");
+    else setResult(`⚠️ ${llmFailureMessage(r)}`);
   };
 
   return (
     <AiToolShell
       title="اسأل المعلّم"
-      description="أي سؤال عن الألمانية: قاعدة، كلمة، تعبير، نطق، ثقافة — أجب بالعربية مع أمثلة ألمانية."
+      description="اسأل عن قاعدة أو كلمة أو تعبير أو ثقافة. تأتي الإجابة بالعربية مع أمثلة ألمانية وترجمتها."
       icon={<MessageCircleQuestion className="h-5 w-5 text-primary" aria-hidden="true" />}
       canRun={question.trim().length > 2}
       buttonLabel="اسأل"
@@ -106,8 +107,7 @@ export function AiCefrAssessment() {
       purpose: "cefr-assessment",
     });
     if (r.ok && r.content) setResult(r.content);
-    else if (r.status === "limit") setResult("⚠️ استنفدت حصتك اليومية — تعود غداً.");
-    else setResult("⚠️ تعذّر التقييم — حاول مرة أخرى.");
+    else setResult(`⚠️ ${llmFailureMessage(r)}`);
   };
 
   return (

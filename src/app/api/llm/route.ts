@@ -13,6 +13,8 @@ export const dynamic = "force-dynamic";
 
 interface RequestBody {
   messages?: unknown;
+  /** تعليمات النظام — حقل مستقل لا يُقبل داخل messages */
+  system?: unknown;
   purpose?: string;
   maxTokens?: number;
   temperature?: number;
@@ -23,6 +25,8 @@ const MAX_MESSAGES = 20;
 const MAX_TOTAL_CHARS = 16000;
 const MAX_BODY_BYTES = 64 * 1024;
 const ALLOWED_ROLES = new Set(["user", "assistant"]); // لا نقبل system من الإنترنت
+/** حد تعليمات النظام (تُحسب ضمن سقف الأحرف الكلي) */
+const MAX_SYSTEM_CHARS = 6000;
 const MAX_TOKENS_CAP = 2048;
 const TEMP_MIN = 0;
 const TEMP_MAX = 2;
@@ -82,9 +86,18 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, status: "error", error: "عدد الرسائل غير صالح" }, { status: 400 });
   }
 
+  // تعليمات النظام (اختيارية): نص واحد بحد طول، تُضاف أولاً من الخادم
+  let systemText = "";
+  if (body.system !== undefined) {
+    if (typeof body.system !== "string" || body.system.length > MAX_SYSTEM_CHARS) {
+      return NextResponse.json({ ok: false, status: "error", error: "تعليمات النظام غير صالحة" }, { status: 400 });
+    }
+    systemText = body.system;
+  }
+
   // تحقق صارم: كل رسالة role مسموح + content نص بحد طول
   const typedMessages: LLMMessage[] = [];
-  let totalChars = 0;
+  let totalChars = systemText.length;
   for (const m of messages) {
     if (!m || typeof m !== "object") {
       return NextResponse.json({ ok: false, status: "error", error: "رسائل غير صالحة" }, { status: 400 });
@@ -106,6 +119,7 @@ export async function POST(req: Request) {
   if (typedMessages.length === 0) {
     return NextResponse.json({ ok: false, status: "error", error: "رسائل غير صالحة" }, { status: 400 });
   }
+  if (systemText) typedMessages.unshift({ role: "system", content: systemText } as LLMMessage);
 
   // clamp المعلمات مع رفض NaN/Infinity ضمنياً إلى قيم افتراضية آمنة
   const requestedMaxTokens = typeof body.maxTokens === "number" && Number.isFinite(body.maxTokens)

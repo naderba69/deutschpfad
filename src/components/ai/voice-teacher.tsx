@@ -12,6 +12,7 @@ import {Headphones, MessageCircle, Mic, Send, Sparkles, Square, Wand2} from "luc
 
 import {Button} from "@/components/ui/button";
 import {useLLM} from "@/components/providers/llm-provider";
+import {llmFailureMessage, splitVoiceReply, trimHistory} from "@/lib/llm/conversation";
 import {voiceTeacherSystemPrompt} from "@/lib/llm/prompts";
 import {createConversationState, respondToUser, type ConversationState} from "@/lib/speech/offline-conversation";
 import {speakGerman, stopSpeaking} from "@/lib/speech/voices";
@@ -37,6 +38,8 @@ interface Msg {
   /** ترجمة عربية للرد (الوضع المحلي فقط) */
   textAr?: string;
   correction?: string;
+  /** رسالة عطل: تُعرض ولا تدخل تاريخ المحادثة */
+  error?: boolean;
 }
 
 /* ── بنك التدريب الموجه (يعمل بلا مفاتيح) ── */
@@ -166,24 +169,22 @@ export function AiVoiceTeacher() {
     setThinking(true);
 
     const p = voiceTeacherSystemPrompt(level, topic.de);
-    const history = updated.map((m) => ({ role: m.role as "user" | "assistant", content: m.text }));
-    const r = await callLLM({ messages: [{ role: "system", content: p.system }, ...history], purpose: "voice-teacher" });
+    const history = trimHistory(
+      updated.filter((m) => !m.error).map((m) => ({ role: m.role, content: m.text })),
+    );
+    const r = await callLLM({
+      messages: [{ role: "system", content: p.system }, ...history],
+      purpose: "voice-teacher",
+      maxTokens: 512,
+    });
     setThinking(false);
 
     if (r.ok && r.content) {
-      let reply = r.content;
-      let correction: string | undefined;
-      const idx = reply.indexOf("###تصحيح:");
-      if (idx !== -1) {
-        correction = reply.slice(idx + "###تصحيح:".length).trim();
-        reply = reply.slice(0, idx).trim();
-      }
+      const { reply, correction } = splitVoiceReply(r.content);
       setMessages((prev) => [...prev, { role: "assistant", text: reply, correction }]);
-      speak(reply.replace(/\*\*/g, ""), level === "A1" || level === "A2" ? 0.9 : 0.95);
-    } else if (r.status === "limit") {
-      setMessages((prev) => [...prev, { role: "assistant", text: "⚠️ استنفدت حصتك اليومية — تعود غداً." }]);
-    } else if (r.status === "not-configured") {
-      setMessages((prev) => [...prev, { role: "assistant", text: "أضف مفاتيح LLM أولاً من الإعدادات، أو استخدم «تدريب موجه»." }]);
+      if (reply) speak(reply.replace(/\*\*/g, ""), level === "A1" || level === "A2" ? 0.9 : 0.95);
+    } else {
+      setMessages((prev) => [...prev, { role: "assistant", text: `⚠️ ${llmFailureMessage(r)}`, error: true }]);
     }
   };
 
