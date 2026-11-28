@@ -196,8 +196,7 @@ export function GoetheB2Exam({ onFinish }: { onFinish?: () => void } = {}) {
             </p>
             <p className="rounded-xl border bg-muted/20 p-3 text-xs leading-relaxed text-muted-foreground">
               <span className="font-bold">ثلاثة نماذج كاملة (A/B/C):</span> تُختار مجموعة القراءة
-              والاستماع عشوائياً في كل محاولة — كل نموذج 30+30 سؤالاً بمحتوى مختلف، فلا تتكرر
-              الأسئلة بين جلساتك. تدرب 3 مرات وستواجه 180 سؤالاً فريداً.
+              والاستماع عشوائياً في كل محاولة، فقد يتكرر نموذج بين محاولتين. كل نموذج فيه 30 نقطة قراءة و30 نقطة استماع، ونصوص أسئلة الاختيار من متعدد مختلفة بين النماذج الثلاثة.
             </p>
             <Button size="lg" className="btn-glow w-full gap-2" onClick={startExam}>
               <PlayCircle className="h-5 w-5" aria-hidden="true" />
