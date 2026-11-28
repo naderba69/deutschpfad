@@ -174,7 +174,7 @@ export function UmformungClient() {
     <div className="mx-auto w-full max-w-2xl px-4 py-8 sm:px-6">
       <div className="mb-6 space-y-3">
         <h1 className="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-          🔄 تحويل الأزمنة (Umformung)
+تحويل الأزمنة (Umformung)
         </h1>
         <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
           مهارة جوهرية في Goethe B1/B2: حوّل الجملة إلى الزمن المطلوب. يقبل التصحيح الصيغ
@@ -186,7 +186,7 @@ export function UmformungClient() {
         <div className="py-10 text-center text-sm text-muted-foreground">جارٍ تحضير التمارين…</div>
       ) : finished ? (
         <div className="rounded-2xl border border-success/40 bg-success/10 p-6 text-center">
-          <p className="text-3xl" aria-hidden="true">🏆</p>
+          <p className="text-3xl" aria-hidden="true"></p>
           <h2 className="mt-2 text-lg font-extrabold">أتممت جلسة التحويل!</h2>
           <p className="mt-1 text-sm text-muted-foreground">
             أجبت صحيحاً عن <span className="font-de font-extrabold">{score}/{shuffled.length}</span> — بمحاولات {attempts}
@@ -272,7 +272,7 @@ export function UmformungClient() {
               <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-success" aria-hidden="true" />
               <div>
                 <p className="font-bold text-success">أحسنت! الصياغة صحيحة.</p>
-                <p className="font-de mt-1 text-muted-foreground" dir="ltr">✅ {task.answers[0]}</p>
+                <p className="font-de mt-1 text-muted-foreground" dir="ltr">{task.answers[0]}</p>
               </div>
             </div>
           )}

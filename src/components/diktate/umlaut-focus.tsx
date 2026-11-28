@@ -47,7 +47,6 @@ export function UmlautFocus() {
   if (done) {
     return (
       <div className="rounded-2xl border border-success/30 bg-success/5 p-6 text-center">
-        <span className="text-3xl" aria-hidden="true">🎉</span>
         <p className="mt-2 text-base font-extrabold">أتممت تمرين الهملات!</p>
         <p className="mt-1 text-sm text-muted-foreground">
           أجبت صحيحاً عن {correctCount} من {UMLAUT_ITEMS.length} كلمة.
@@ -102,7 +101,7 @@ export function UmlautFocus() {
   return (
     <div className="rounded-2xl border bg-card p-5">
       <div className="mb-3 flex items-center justify-between gap-2">
-        <p className="text-xs font-extrabold text-primary">🔤 الهملات الألمانية: ä ö ü ß</p>
+        <p className="text-xs font-extrabold text-primary">الهملات الألمانية: ä ö ü ß</p>
         <span className="font-de text-[11px] font-bold text-muted-foreground">
           {idx + 1}/{UMLAUT_ITEMS.length}
         </span>

@@ -128,7 +128,7 @@ export function MiniTestSection({
           )}
         </span>
         <h3 className="mt-4 text-2xl font-extrabold">
-          {passed ? "أحسنت! اجتزت التقييم 🎉" : "لا بأس — المحاولة جزء من التعلم"}
+          {passed ? "أحسنت! اجتزت التقييم" : "لا بأس — المحاولة جزء من التعلم"}
         </h3>
         <p className="font-de mt-2 text-4xl font-extrabold text-primary">{score}%</p>
         <p className="mt-2 text-sm text-muted-foreground">
@@ -224,7 +224,7 @@ export function MiniTestSection({
       <p className="text-xs text-muted-foreground">
         {wrongCount > 0
           ? `لاحظت ${wrongCount} خطأً حتى الآن — كل خطأ مصنّف لك في التصحيح الفوري.`
-          : "لا أخطاء حتى الآن — استمر! ⭐"}
+          : "لا أخطاء حتى الآن — استمر!"}
       </p>
     </div>
   );

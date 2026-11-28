@@ -63,7 +63,7 @@ export function ShadowingTrainer({ lines }: ShadowingTrainerProps) {
             <p className="mt-1 text-sm text-muted-foreground">{line.ar}</p>
             {line.tip && (
               <p className="mt-2 rounded-lg bg-gold/10 px-2.5 py-1.5 text-xs text-muted-foreground">
-                💡 {line.tip}
+{line.tip}
               </p>
             )}
           </div>

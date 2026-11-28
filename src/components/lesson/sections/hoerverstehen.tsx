@@ -166,7 +166,7 @@ export function HoerverstehenSection({
                   </div>
                   {item.audioNoteAr && (
                     <p data-testid="listening-audio-disclosure" className="rounded-lg border border-primary/20 bg-primary/5 px-3 py-2 text-xs font-semibold text-primary">
-                      🔊 {item.audioNoteAr}
+{item.audioNoteAr}
                     </p>
                   )}
                   <p className="text-xs text-muted-foreground">

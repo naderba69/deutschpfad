@@ -26,7 +26,7 @@ export default function GrammatikPage() {
           href="/grammatik/funktionsverbgefuege"
           className="mt-4 inline-flex items-center gap-2 rounded-xl border-2 border-primary/40 bg-primary/5 px-4 py-2.5 text-sm font-extrabold text-primary transition-all hover:-translate-y-0.5 hover:shadow-soft"
         >
-          🧩 الغوص العميق: Funktionsverbgefüge — الأسلوب الرسمي B2 (درس + تدريبات) ←
+الغوص العميق: Funktionsverbgefüge — الأسلوب الرسمي B2 (درس + تدريبات) ←
         </a>
       </div>
       <GrammarMindMap />

@@ -183,7 +183,7 @@ export function AiVoiceTeacher() {
     } else if (r.status === "limit") {
       setMessages((prev) => [...prev, { role: "assistant", text: "⚠️ استنفدت حصتك اليومية — تعود غداً." }]);
     } else if (r.status === "not-configured") {
-      setMessages((prev) => [...prev, { role: "assistant", text: "🔧 أضف مفاتيح LLM أولاً من الإعدادات، أو استخدم «تدريب موجه»." }]);
+      setMessages((prev) => [...prev, { role: "assistant", text: "أضف مفاتيح LLM أولاً من الإعدادات، أو استخدم «تدريب موجه»." }]);
     }
   };
 
@@ -289,7 +289,7 @@ export function AiVoiceTeacher() {
         /* ══ التدريب الموجه ══ */
         <div className="space-y-4">
           <div className="rounded-xl border border-primary/25 bg-primary/5 p-4">
-            <p className="text-xs font-bold text-primary">🎯 السؤال {gIdx + 1} من {guidedQs.length} — استمع ثم أجب بصوتك:</p>
+            <p className="text-xs font-bold text-primary">السؤال {gIdx + 1} من {guidedQs.length} — استمع ثم أجب بصوتك:</p>
             <p className="font-de mt-2 text-lg font-bold" dir="ltr" lang="de">{gQ.q}</p>
             <p className="mt-1 text-sm text-muted-foreground">{gQ.qAr}</p>
             <div className="mt-3 flex flex-wrap items-center gap-2">
@@ -312,14 +312,14 @@ export function AiVoiceTeacher() {
           {interim && <p className="rounded-lg bg-muted/40 p-2 text-sm italic text-muted-foreground">{interim}</p>}
           {input && (
             <p className="font-de rounded-xl border bg-card p-3 text-sm" dir="ltr" lang="de">
-              🎤 إجابتك: {input}
+إجابتك: {input}
             </p>
           )}
 
           {gAnswered && (
             <div className="space-y-3">
               <div className="rounded-xl border bg-card p-3">
-                <p className="text-xs font-bold text-muted-foreground">✍️ نموذج إجابة:</p>
+                <p className="text-xs font-bold text-muted-foreground">نموذج إجابة:</p>
                 <p className="font-de mt-1 text-sm" dir="ltr" lang="de">{gQ.model}</p>
                 <p className="mt-1 text-xs text-muted-foreground">{gQ.modelAr}</p>
                 <button
@@ -332,7 +332,7 @@ export function AiVoiceTeacher() {
                 </button>
               </div>
               <div className="rounded-xl border border-gold/40 bg-gold/10 p-3 text-sm">
-                <p className="font-bold text-gold-foreground">💡 {gQ.tip}</p>
+                <p className="font-bold text-gold-foreground">{gQ.tip}</p>
               </div>
               <Button onClick={nextGuided}>السؤال التالي ←</Button>
             </div>
@@ -348,7 +348,7 @@ export function AiVoiceTeacher() {
         <>
           {messages.length === 0 && (
             <div className="rounded-xl border border-primary/25 bg-primary/5 p-4 text-sm">
-              <p className="font-bold text-primary">👋 مرحباً! أنا شريكك الألماني.</p>
+              <p className="font-bold text-primary">مرحباً! أنا شريكك الألماني.</p>
               <p className="mt-1 text-muted-foreground">
                 اضغط الميكروفون وتحدث بالألمانية (أو اكتب)، وسأرد عليك صوتاً بالمستوى{" "}
                 <span className="font-de font-bold">{level}</span> حول «{topic.label}». الأخطاء
@@ -371,7 +371,7 @@ export function AiVoiceTeacher() {
                     <p className="mt-1 text-xs text-muted-foreground">{m.textAr}</p>
                   )}
                   {m.role === "assistant" && m.correction && (
-                    <p className="mt-1.5 rounded-lg bg-gold/10 px-2 py-1 text-xs text-gold-strong">✍️ تصحيح: {m.correction}</p>
+                    <p className="mt-1.5 rounded-lg bg-gold/10 px-2 py-1 text-xs text-gold-strong">تصحيح: {m.correction}</p>
                   )}
                   {m.role === "assistant" && (
                     <button
@@ -441,7 +441,7 @@ export function AiVoiceTeacher() {
             : "ابدأ بـ «Hallo!» ثم أجب على أسئلتي. الأخطاء تُصحَّح بلطف داخل الرد."}
         </p>
         {messages.length > 0 && mode !== "guided" && (
-          <Button variant="ghost" size="sm" onClick={reset}>🗑 محادثة جديدة</Button>
+          <Button variant="ghost" size="sm" onClick={reset}>محادثة جديدة</Button>
         )}
       </div>
     </div>

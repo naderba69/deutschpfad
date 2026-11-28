@@ -32,7 +32,7 @@ function drawAchievementCard(
   // الرمز
   g.font = "140px sans-serif";
   g.textAlign = "center";
-  g.fillText(emoji ?? "🎓", 450, 190);
+  g.fillText(emoji ?? "", 450, 190);
   // العنوان
   g.fillStyle = "#ffffff";
   g.font = "bold 56px sans-serif";
@@ -181,7 +181,7 @@ export function Celebration({ title, subtitle, emoji, stats }: {
         className="relative m-6 rounded-2xl border-2 border-gold/40 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 p-8 text-center text-white shadow-xl"
         dir="rtl"
       >
-        <span className="text-6xl" aria-hidden="true">{emoji ?? "🎓"}</span>
+        <span className="text-6xl" aria-hidden="true">{emoji ?? ""}</span>
         <h3 className="mt-3 text-2xl font-extrabold">{title}</h3>
         {subtitle && <p className="mt-1 text-sm text-white/60">{subtitle}</p>}
         {stats && stats.length > 0 && (

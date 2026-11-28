@@ -114,7 +114,7 @@ export function DiktatTrainer() {
 
             {/* التشغيل */}
             <div className="rounded-xl border bg-muted/20 p-4 text-center">
-              <p className="text-sm text-muted-foreground">🎧 استمع ثم اكتب ما سمعت:</p>
+              <p className="text-sm text-muted-foreground">استمع ثم اكتب ما سمعت:</p>
               <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
                 <Button onClick={() => play(0.8)} className="gap-1.5">
                   <Ear className="h-4 w-4" aria-hidden="true" />
@@ -186,7 +186,7 @@ export function DiktatTrainer() {
                 )}
                 <div>
                   {feedback === "correct" ? (
-                    <p className="font-bold text-success">إملاء صحيح! 🎉</p>
+                    <p className="font-bold text-success">إملاء صحيح!</p>
                   ) : (
                     <>
                       <p className="font-bold text-destructive">ليس مطابقاً تماماً — النص الصحيح:</p>
@@ -201,7 +201,7 @@ export function DiktatTrainer() {
             {/* التلميحات */}
             {feedback && (
               <div className="rounded-xl border border-gold/40 bg-gold/10 p-3 text-sm">
-                <p className="font-bold text-gold-foreground">🔤 كلمات التركيز: {current.focusWords.join("، ")}</p>
+                <p className="font-bold text-gold-foreground">كلمات التركيز: {current.focusWords.join("، ")}</p>
                 <p className="mt-1 text-muted-foreground">{current.note}</p>
               </div>
             )}
@@ -218,7 +218,7 @@ export function DiktatTrainer() {
             </p>
             <p className="mt-1 font-bold">
               {score.correct / score.total >= 0.8
-                ? "ممتاز في الإملاء! 🏆"
+                ? "ممتاز في الإملاء!"
                 : "جيد — أعد الجولة لتحسين الدقة"}
             </p>
             <Button className="mt-4" onClick={next} variant="outline">

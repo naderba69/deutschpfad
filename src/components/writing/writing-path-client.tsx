@@ -129,7 +129,7 @@ export function WritingPathClient() {
                       : "border-muted bg-card hover:border-primary/40",
               )}
             >
-              <span className="block text-base" aria-hidden="true">{done ? "✅" : s.emoji}</span>
+              <span className="block text-base" aria-hidden="true">{done ? "✓" : s.emoji}</span>
               <span className="block text-[11px] font-extrabold">{s.title}</span>
               <span className="font-de block text-[11px] font-bold text-muted-foreground">{s.level}</span>
             </button>

@@ -59,7 +59,7 @@ export function MemoryChallenge() {
         <CardHeader className="border-b bg-muted/20">
           <CardTitle className="flex items-center gap-2 text-lg">
             <Brain className="h-5 w-5 text-primary" aria-hidden="true" />
-            تحدي الذاكرة الأسبوعي 🧠
+            تحدي الذاكرة الأسبوعي
           </CardTitle>
         </CardHeader>
         <CardContent className="p-5">
@@ -83,7 +83,7 @@ export function MemoryChallenge() {
           {score}/{ROUNDS}
         </p>
         <p className="mt-1 font-bold">
-          {score >= 7 ? "ذاكرة حديدية! 🏆" : score >= 5 ? "جيد جداً — واصل!" : "تدرب أكثر — الذاكرة عضلة"}
+          {score >= 7 ? "ذاكرة حديدية!" : score >= 5 ? "جيد جداً — واصل!" : "تدرب أكثر — الذاكرة عضلة"}
         </p>
         <Button className="mt-4" onClick={start}>
           جولة جديدة
@@ -99,7 +99,7 @@ export function MemoryChallenge() {
           <span className="text-muted-foreground">
             كلمة {index + 1}/{ROUNDS}
           </span>
-          <span className="font-de font-bold text-primary">⭐ {score}</span>
+          <span className="font-de font-bold text-primary">{score}</span>
         </div>
         <Progress value={((index + 1) / ROUNDS) * 100} aria-label="التقدم في تحدي الذاكرة" />
         <div className="rounded-xl border bg-muted/20 p-6 text-center">

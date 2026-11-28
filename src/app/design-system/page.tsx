@@ -85,7 +85,7 @@ export default function DesignSystemPage() {
           <CardContent className="space-y-4 p-6">
             <div>
               <p className="text-xs font-semibold text-muted-foreground">العربية — Tajawal</p>
-              <p className="text-2xl font-bold">مرحباً بكم في رحلة تعلم اللغة الألمانية 🌍</p>
+              <p className="text-2xl font-bold">مرحباً بكم في رحلة تعلم اللغة الألمانية</p>
             </div>
             <div>
               <p className="text-xs font-semibold text-muted-foreground">
@@ -122,7 +122,7 @@ export default function DesignSystemPage() {
           <Button size="default">متوسط</Button>
           <Button size="lg">كبير</Button>
           <Button size="icon" aria-label="زر أيقونة">
-            ⭐
+
           </Button>
           <Button disabled>معطّل</Button>
         </div>
@@ -207,7 +207,7 @@ export default function DesignSystemPage() {
               <TooltipProvider delayDuration={100}>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline">مرّر فوقي 👆</Button>
+                    <Button variant="outline">مرّر فوقي</Button>
                   </TooltipTrigger>
                   <TooltipContent>هذا تلميح توضيحي أنيق</TooltipContent>
                 </Tooltip>

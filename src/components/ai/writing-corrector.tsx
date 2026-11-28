@@ -31,7 +31,7 @@ export function AiWritingCorrector() {
     });
     if (r.ok && r.content) setResult(r.content);
     else if (r.status === "limit") setResult("⚠️ استنفدت حصتك اليومية — تعود غداً.");
-    else if (r.status === "not-configured") setResult("🔧 أضف مفاتيح LLM أولاً.");
+    else if (r.status === "not-configured") setResult("أضف مفاتيح LLM أولاً.");
   };
 
   return (

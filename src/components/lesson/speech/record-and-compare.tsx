@@ -119,7 +119,7 @@ export function RecordAndCompare({
   return (
     <div className={cn("rounded-xl border bg-background p-3", className)}>
       <p className="mb-2 text-xs font-bold text-muted-foreground">
-        🎤 قارن نطقك بنفسك — استمع للهدف ثم سجّل صوتك وقارن
+قارن نطقك بنفسك — استمع للهدف ثم سجّل صوتك وقارن
       </p>
 
       {/* الهدف */}
@@ -234,7 +234,7 @@ export function RecordAndCompare({
           </button>
           {rated !== null && (
             <span className="text-[11px] font-bold text-muted-foreground">
-              {rated === 1 ? "رائع! 🎉" : rated === 0.5 ? "واصل التدريب — ستتحسن 💪" : "استمع للهدف مرة أخرى وكرر — الممارسة تصنع الفرق ✨"}
+              {rated === 1 ? "رائع! 🎉" : rated === 0.5 ? "واصل التدريب — ستتحسن" : "استمع للهدف مرة أخرى وكرر — الممارسة تصنع الفرق"}
             </span>
           )}
         </div>

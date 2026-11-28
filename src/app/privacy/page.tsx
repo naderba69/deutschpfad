@@ -10,7 +10,7 @@ export default function PrivacyPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-12 sm:px-6">
       <h1 className="text-balance text-3xl font-extrabold tracking-tight">
-        🔒 الخصوصية والشفافية
+الخصوصية والشفافية
       </h1>
       <p className="mt-2 text-sm text-muted-foreground">
         DeutschPfad منصة تدريبية تتاح تدريباتها الأساسية حالياً دون اشتراك مدفوع؛ والخصوصية جزء من تصميمها الأساسي.

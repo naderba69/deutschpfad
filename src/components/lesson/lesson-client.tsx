@@ -55,7 +55,7 @@ function LessonCompletion({ lesson }: { lesson: Lesson }) {
         const {getPersonality, motivationalByPersonality} = await import("@/lib/storage/teacher-personality");
         const p = await getPersonality();
         const core = motivationalByPersonality(p, "success");
-        const nextPart = next ? ` \nالدرس القادم: «${next.titleAr}» — سنبني عليه مباشرة.` : " \nأتممت وحدات المسار. يمكنك تجربة اختبار التقدم الداخلي لمراجعة أدائك؛ لا يثبت ذلك مستوى CEFR أو الجاهزية الرسمية. 🏆";
+        const nextPart = next ? ` \nالدرس القادم: «${next.titleAr}» — سنبني عليه مباشرة.` : " \nأتممت وحدات المسار. يمكنك تجربة اختبار التقدم الداخلي لمراجعة أدائك؛ لا يثبت ذلك مستوى CEFR أو الجاهزية الرسمية.";
         setTeacherWord(`${core}${nextPart}`);
       } catch {
         setTeacherWord(next ? `أحسنت! الدرس القادم: «${next.titleAr}».` : "أحسنت! أتممت المسار الكامل!");

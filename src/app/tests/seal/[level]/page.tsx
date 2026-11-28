@@ -35,7 +35,7 @@ export default async function SealExamPage({ params, searchParams }: Props) {
     <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6">
       <div className="mb-8">
         <h1 className="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-          🏅 امتحان ختم مستوى {level}
+امتحان ختم مستوى {level}
         </h1>
         <p className="mt-2 max-w-2xl text-balance text-muted-foreground">
           هذا هو «بوابة» المستوى التالي: أكمل 80% من وحدات المستوى، ثم اجتز الامتحان
@@ -65,7 +65,7 @@ export default async function SealExamPage({ params, searchParams }: Props) {
             <CardContent className="flex items-start gap-3 p-4">
               <Zap className="mt-0.5 h-6 w-6 shrink-0 text-gold-strong" aria-hidden="true" />
               <div className="flex-1">
-                <p className="font-bold">الختم السريع ⚡</p>
+                <p className="font-bold">الختم السريع</p>
                 <p className="mt-0.5 text-xs text-muted-foreground">
                   20 سؤالاً متوازناً (6 قواعد + 6 مفردات + 3 قراءة + 3 استماع + 2 كتابة)
                   بوقت أقصر لمراجعة سريعة؛ لا يعادل النسخة الأطول في التغطية.
@@ -84,7 +84,7 @@ export default async function SealExamPage({ params, searchParams }: Props) {
 
       {quick && (
         <p className="mb-4 rounded-xl border border-gold/40 bg-gold/10 p-3 text-sm">
-          ⚡ <span className="font-bold">الوضع السريع:</span> 20 سؤالاً بوقت مخفّض — النجاح
+<span className="font-bold">الوضع السريع:</span> 20 سؤالاً بوقت مخفّض — النجاح
           من 60% يختم المستوى كما في النسخة الكاملة.{" "}
           <Link href={`/tests/seal/${rawLevel}`} className="font-bold text-primary underline underline-offset-2">
             عُد للنسخة الكاملة

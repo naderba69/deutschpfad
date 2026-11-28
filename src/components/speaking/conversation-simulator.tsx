@@ -360,7 +360,7 @@ export function ConversationSimulator() {
     <div className="mx-auto w-full max-w-2xl px-4 py-8 sm:px-6">
       <div className="mb-6 space-y-3">
         <h1 className="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-          💬 محادثة تفاعلية محاكية
+محادثة تفاعلية محاكية
         </h1>
         <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
           سيناريوهات واقعية (مقهى، طبيب، بنك) — تختار الرد الأنسب، والمحاور يردّ عليك.
@@ -400,7 +400,7 @@ export function ConversationSimulator() {
 
       {finished ? (
         <div className="rounded-2xl border border-success/40 bg-success/10 p-6 text-center">
-          <p className="text-3xl" aria-hidden="true">🎉</p>
+          <p className="text-3xl" aria-hidden="true"></p>
           <h2 className="mt-2 text-lg font-extrabold">أتممت السيناريو «{scenario.title}»</h2>
           <p className="mt-1 text-sm text-muted-foreground">
             أجبت اختياراً صحيحاً من أصل {scenario.turns.length}: <span className="font-de font-extrabold">{score}/{scenario.turns.length}</span>

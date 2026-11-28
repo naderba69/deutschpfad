@@ -403,7 +403,7 @@ export function OralExam() {
         <p className="font-de mt-4 text-4xl font-extrabold text-primary">
           {totalScore}/{maxScore}
         </p>
-        <p className="mt-1 font-bold">{pct >= 80 ? "تقييمك الذاتي مرتفع في هذه المحاولة 🎉" : pct >= 60 ? "تابع التدريب وراجع ملاحظاتك" : "اختر جانباً واحداً للتدرب عليه مجدداً"}</p>
+        <p className="mt-1 font-bold">{pct >= 80 ? "تقييمك الذاتي مرتفع في هذه المحاولة" : pct >= 60 ? "تابع التدريب وراجع ملاحظاتك" : "اختر جانباً واحداً للتدرب عليه مجدداً"}</p>
         <p className="mt-2 text-sm text-muted-foreground">
           هذه المعايير مخصصة للتأمل الذاتي في هذا التدريب، وقد تختلف عن معايير الجهة المنظمة. النتيجة لا تحدد مستوى CEFR أو الجاهزية لامتحان رسمي، والتدرب لا يضمن تحسناً سريعاً.
         </p>
@@ -440,13 +440,13 @@ export function OralExam() {
       {/* بطاقة موضوع B2 — في Teil 1 (العرض) */}
       {mode === "b2" && partIdx === 0 && (
         <div className="rounded-xl border border-gold/40 bg-gold/10 p-4">
-          <p className="text-xs font-bold text-gold-foreground">🎤 Themenkarte — بطاقة الموضوع (كما في الامتحان)</p>
+          <p className="text-xs font-bold text-gold-foreground">Themenkarte — بطاقة الموضوع (كما في الامتحان)</p>
           <p className="font-de mt-1 text-lg font-extrabold" dir="ltr" lang="de">
             {b2Topic.topicDe}
           </p>
           <p className="text-sm text-muted-foreground">{b2Topic.topicAr}</p>
           <p className="mt-2 text-xs text-muted-foreground">
-            💡 قدّم الموضوع منظمّاً: مقدمة ← الوضع الحالي ← أسباب/مشاكل ← حلول ← رأيك. استخدم
+قدّم الموضوع منظمّاً: مقدمة ← الوضع الحالي ← أسباب/مشاكل ← حلول ← رأيك. استخدم
             عبارات الهيكلة من بنك العبارات.
           </p>
         </div>
@@ -471,7 +471,7 @@ export function OralExam() {
       {/* استراتيجيات المناقشة — في Teil 2 (B2) */}
       {mode === "b2" && partIdx === 1 && (
         <div className="rounded-xl border bg-muted/30 p-3">
-          <p className="mb-2 text-xs font-bold text-muted-foreground">🗣️ عبارات المناقشة الجاهزة:</p>
+          <p className="mb-2 text-xs font-bold text-muted-foreground">عبارات المناقشة الجاهزة:</p>
           <div className="flex flex-wrap gap-1.5">
             {B2_DISKUSSION_STRATEGY.map((s) => (
               <span key={s.de} className="inline-flex items-center gap-1 rounded-full border bg-background px-2.5 py-1 text-xs">

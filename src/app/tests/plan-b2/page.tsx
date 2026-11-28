@@ -104,11 +104,11 @@ export default function PlanB2Page() {
             </div>
             <div className="space-y-3 p-4">
               <div>
-                <p className="mb-1 text-xs font-extrabold text-muted-foreground">🎯 الهدف:</p>
+                <p className="mb-1 text-xs font-extrabold text-muted-foreground">الهدف:</p>
                 <p className="text-sm">{phase.goal}</p>
               </div>
               <div>
-                <p className="mb-1 text-xs font-extrabold text-muted-foreground">🧰 أدوات المنصة:</p>
+                <p className="mb-1 text-xs font-extrabold text-muted-foreground">أدوات المنصة:</p>
                 <div className="flex flex-wrap gap-1.5">
                   {phase.tools.map((t) => (
                     <span key={t} className="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">{t}</span>
@@ -116,7 +116,7 @@ export default function PlanB2Page() {
                 </div>
               </div>
               <div className="rounded-lg border border-success/30 bg-success/5 p-2.5 text-xs text-muted-foreground">
-                📅 <b>الروتين اليومي:</b> {phase.daily}
+<b>الروتين اليومي:</b> {phase.daily}
               </div>
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function PlanB2Page() {
 
       {/* ملاحظات النجاح */}
       <div className="mt-6 space-y-3 rounded-xl border border-gold/40 bg-gold/10 p-4 text-sm">
-        <p className="font-extrabold text-gold-strong">📌 اقتراحات لتنظيم الدراسة (ليست ضماناً للنتيجة):</p>
+        <p className="font-extrabold text-gold-strong">اقتراحات لتنظيم الدراسة (ليست ضماناً للنتيجة):</p>
         <ul className="space-y-1.5 text-muted-foreground">
           <li>• <b>اختر وتيرة قابلة للاستمرار:</b> وزّع التدريب وفق وقتك وقدرتك على التركيز.</li>
           <li>• <b>نوّع مواد الاستماع:</b> جرّب بودكاستاً أو فيديو أو حواراً يناسب مستواك.</li>

@@ -55,7 +55,6 @@ export function GamificationClient() {
       {/* احتفال ترقية المستوى */}
       {levelUp && (
         <div className="animate-[fade-up_0.5s_ease] rounded-2xl border-2 border-gold/50 bg-gradient-to-l from-gold/20 via-card to-gold/10 p-6 text-center shadow-soft">
-          <span className="text-4xl" aria-hidden="true">🎉</span>
           <h2 className="mt-2 text-xl font-extrabold text-gold-strong">
             ترقّيت إلى المستوى {levelUp.to}!
           </h2>
@@ -67,7 +66,7 @@ export function GamificationClient() {
             onClick={() => setLevelUp(null)}
             className="mt-3 rounded-xl bg-gold px-5 py-2 text-sm font-extrabold text-gold-foreground transition-transform hover:scale-[1.02]"
           >
-            رائع! 🏆
+            رائع!
           </button>
         </div>
       )}
@@ -81,7 +80,7 @@ export function GamificationClient() {
             </p>
             <p className="font-de mt-1 text-4xl font-extrabold text-primary">{xp.xp} XP</p>
             <p className="mt-1 text-sm text-muted-foreground">
-              سلسلة أيامك: 🔥 {xp.streak} · أسابيعك المتتالية: 📅 {weeklyStreak}
+              سلسلة أيامك: {xp.streak} · أسابيعك المتتالية: {weeklyStreak}
             </p>
           </div>
           <div className="w-full max-w-xs">

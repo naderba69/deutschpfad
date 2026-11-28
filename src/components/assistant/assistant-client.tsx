@@ -107,7 +107,7 @@ export function AssistantClient({ lessonContext }: { lessonContext?: LessonConte
           {
             role: "assistant",
             content:
-              "🔧 لم تُضف مفاتيح الذكاء الاصطناعي بعد (GEMINI_API_KEY أو GROQ_API_KEY أو OPENROUTER_API_KEY). أضفها في ملف .env.local ثم أعد تشغيل الخادم، وسيظهر المعلّم الافتراضي هنا فوراً.",
+              "لم تُضف مفاتيح الذكاء الاصطناعي بعد (GEMINI_API_KEY أو GROQ_API_KEY أو OPENROUTER_API_KEY). أضفها في ملف .env.local ثم أعد تشغيل الخادم، وسيظهر المعلّم الافتراضي هنا فوراً.",
           },
         ]);
       } else {
@@ -194,7 +194,7 @@ export function AssistantClient({ lessonContext }: { lessonContext?: LessonConte
         {messages.length === 0 && (
           <div className="rounded-xl border border-dashed p-6 text-center text-sm text-muted-foreground">
             ابدأ محادثة مع معلّمك — اسأل عن أي قاعدة، اطلب تصحيحاً، أو ولّد جملة بالضغط على
-            الاقتراحات أدناه 👇
+            الاقتراحات أدناه
           </div>
         )}
         {messages.map((msg, i) => (

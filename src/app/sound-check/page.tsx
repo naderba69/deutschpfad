@@ -113,7 +113,7 @@ export default function SoundCheckPage() {
     <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6">
       <div className="mb-8 text-center">
         <h1 className="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-          فحص الصوت والميكروفون 🎙️
+          فحص الصوت والميكروفون
         </h1>
         <p className="mx-auto mt-2 max-w-xl text-balance text-muted-foreground">
           خطوتان سريعتان تتأكد أن جهازك جاهز للتدريب الصوتي والامتحان الشفهي:
@@ -137,7 +137,7 @@ export default function SoundCheckPage() {
             </p>
             {germanVoice && (
               <p className="rounded-lg bg-muted/30 px-3 py-2 text-xs text-muted-foreground" role="status">
-                🔊 الصوت الألماني في جهازك: <b className="text-foreground">{germanVoice.name}</b>
+الصوت الألماني في جهازك: <b className="text-foreground">{germanVoice.name}</b>
                 {germanVoice.quality >= 2 ? " (جودة عالية)" : " (جودة أساسية)"}
               </p>
             )}
@@ -164,7 +164,7 @@ export default function SoundCheckPage() {
               )}
             </div>
             <p className="rounded-lg bg-muted/30 px-3 py-2 text-xs text-muted-foreground">
-              💡 <b>مهم:</b> النطق يعمل بجهازك (Web Speech API) — <b>لا يحتاج أي مفتاح LLM</b>.
+<b>مهم:</b> النطق يعمل بجهازك (Web Speech API) — <b>لا يحتاج أي مفتاح LLM</b>.
               إن لم تسمع شيئاً: ارفع الصوت، أطفئ الصامت، أو ثبّت «أصوات ألمانية» من إعدادات
               جهازك (Settings ← Language & Voice). استخدم Chrome/Edge لأفضل نتيجة.
             </p>

@@ -92,7 +92,7 @@ export function LanguageTree({ completedUnits }: { completedUnits: string[] }) {
           </svg>
 
           <p className="text-center text-sm text-muted-foreground">
-            كل مستوى تضيفه = فرع جديد 🌿 · كل وحدة تكملها = ورقة خضراء 🍃
+            كل مستوى تضيفه = فرع جديد · كل وحدة تكملها = ورقة خضراء
             <br />
             {grownBranches === 0
               ? "أكمل وحدات من مستوى A1 لتبدأ شجرتك بالنمو!"

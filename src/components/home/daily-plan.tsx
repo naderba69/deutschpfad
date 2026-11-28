@@ -180,7 +180,7 @@ export function DailyPlanCard() {
         </div>
         <p className="mt-1.5 text-center text-[11px] font-semibold text-muted-foreground">
           {done
-            ? "غداً ستخطّط لك خطة جديدة حسب مسارك — نمط مختلف تلقائياً. 🎉"
+            ? "غداً ستخطّط لك خطة جديدة حسب مسارك — نمط مختلف تلقائياً."
             : allDone
               ? "أنجزت كل الأنشطة — اضغط «أنهِ خطة اليوم»!"
               : "اتبع الأنشطة بالترتيب — المعلّم يخطّط وأنت تنفّذ."}

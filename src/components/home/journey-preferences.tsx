@@ -8,11 +8,11 @@ import {Card, CardContent} from "@/components/ui/card";
 import {getPreferences, savePreferences, type LearningGoal, type StudyPace} from "@/lib/storage/preferences";
 import {getPersonality, setPersonality, PERSONALITY_META, type TeacherPersonality} from "@/lib/storage/teacher-personality";
 
-const GOALS: { id: LearningGoal; label: string; emoji: string }[] = [
-  { id: "travel", label: "سفر", emoji: "✈️" },
-  { id: "work", label: "عمل", emoji: "💼" },
-  { id: "study", label: "دراسة", emoji: "🎓" },
-  { id: "exam", label: "امتحان Goethe", emoji: "📜" },
+const GOALS: { id: LearningGoal; label: string }[] = [
+  { id: "travel", label: "سفر" },
+  { id: "work", label: "عمل" },
+  { id: "study", label: "دراسة" },
+  { id: "exam", label: "امتحان Goethe" },
 ];
 
 const PACES: { id: StudyPace; label: string; daily: string }[] = [
@@ -77,7 +77,7 @@ export function JourneyPreferences() {
                   goal === g.id ? "border-primary bg-primary/10 text-primary" : "border-muted bg-card hover:border-primary/40"
                 }`}
               >
-                {g.emoji} {g.label}
+                {g.label}
               </button>
             ))}
           </div>
@@ -116,7 +116,7 @@ export function JourneyPreferences() {
                   personality === t ? "border-success bg-success/10 text-success" : "border-muted bg-card hover:border-success/40"
                 }`}
               >
-                {PERSONALITY_META[t].emoji} {PERSONALITY_META[t].label}
+                {PERSONALITY_META[t].label}
               </button>
             ))}
           </div>

@@ -87,7 +87,7 @@ export function GoetheA1Speaking({
             <Button variant="outline" size="sm" onClick={() =>
                 playPartnerClip(audioBase ? `${audioBase}/m${part.teil}-${turnIdx + 1}.mp3` : undefined, turn.modelDe)
               }>
-              🔊 استمع للعبارة النموذجية
+استمع للعبارة النموذجية
             </Button>
           </div>
         )}

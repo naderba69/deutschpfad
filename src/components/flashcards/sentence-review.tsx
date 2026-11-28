@@ -70,7 +70,6 @@ export function SentenceReview() {
   if (sentences.length === 0) {
     return (
       <div className="rounded-2xl border bg-card p-8 text-center">
-        <span className="mx-auto inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-2xl" aria-hidden="true">🗣️</span>
         <h2 className="mt-3 text-base font-extrabold">لا جمل مستحقة اليوم</h2>
         <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
           {total > 0
@@ -84,7 +83,6 @@ export function SentenceReview() {
   if (done) {
     return (
       <div className="rounded-2xl border bg-card p-8 text-center">
-        <span className="mx-auto inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-success/15 text-2xl" aria-hidden="true">🏆</span>
         <h2 className="mt-3 text-base font-extrabold">أتممت مراجعة اليوم!</h2>
         <p className="mt-1 text-sm text-muted-foreground">راجعت {sentences.length} جملة — عقلك يعيد بناء الطلاقة الآن.</p>
         <Button className="mt-4 gap-1.5" onClick={() => setSessionKey((k) => k + 1)}>
@@ -146,28 +144,28 @@ export function SentenceReview() {
               onClick={() => void rate(0)}
               className="rounded-xl border border-destructive/40 bg-destructive/5 px-2 py-2.5 text-xs font-extrabold text-destructive transition-colors hover:bg-destructive/10"
             >
-              نسيت 🙈
+              نسيت
             </button>
             <button
               type="button"
               onClick={() => void rate(1)}
               className="rounded-xl border border-gold/40 bg-gold/5 px-2 py-2.5 text-xs font-extrabold text-gold-strong transition-colors hover:bg-gold/10"
             >
-              صعبة 😅
+              صعبة
             </button>
             <button
               type="button"
               onClick={() => void rate(3)}
               className="rounded-xl border border-success/40 bg-success/5 px-2 py-2.5 text-xs font-extrabold text-success transition-colors hover:bg-success/10"
             >
-              حسنة 🙂
+              حسنة
             </button>
             <button
               type="button"
               onClick={() => void rate(4)}
               className="rounded-xl border border-primary/40 bg-primary/5 px-2 py-2.5 text-xs font-extrabold text-primary transition-colors hover:bg-primary/10"
             >
-              سهلة 😎
+              سهلة
             </button>
           </div>
         </div>

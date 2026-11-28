@@ -62,7 +62,7 @@ export function WeeklyReportCard() {
       content = buildLocalWeeklyReport(stats);
     }
 
-    content = `💛 ${motivationalMessage(stats)}\n\n` + content;
+    content = `${motivationalMessage(stats)}\n\n` + content;
     setReport(content);
     setDue(false);
     await putRecord("settings", LAST_REPORT_KEY, Date.now());

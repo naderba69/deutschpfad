@@ -75,7 +75,7 @@ export function SealExam({ levelParam, quick = false }: { levelParam: string; qu
         <CardContent className="p-8 text-center">
           <PartyPopper className="mx-auto h-14 w-14 text-success" aria-hidden="true" />
           <h3 className="mt-4 text-2xl font-extrabold text-success">
-            🏅 مستوى {level} مختوم!
+مستوى {level} مختوم!
           </h3>
           <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
             اجتزت بوابة التقدم الداخلية — المستوى التالي مفتوح الآن. هذا الختم لا يمثل شهادة ولا يثبت إتقان المستوى؛ يمكنك إعادة التدريب أو مراجعة مهاراتك.
@@ -132,7 +132,7 @@ export function SealExam({ levelParam, quick = false }: { levelParam: string; qu
   return (
     <div className="space-y-4">
       <div className="rounded-xl border border-gold/40 bg-gold/10 p-4 text-sm">
-        <p className="font-bold text-gold-foreground">🏅 امتحان ختم مستوى {level}</p>
+        <p className="font-bold text-gold-foreground">امتحان ختم مستوى {level}</p>
         <p className="mt-1 text-muted-foreground">
           أسئلة تدريب داخلية في القراءة والاستماع والقواعد، مع مهمة كتابة لا تدخل في النتيجة الآلية (ليست امتحان Goethe ولا تقيس إتقان المستوى). تُفتح بوابة التقدم عند بلوغ عتبة المنصة 60% من الإجابات المصححة آلياً؛ هذا لا يعادل النجاح الرسمي. يمكنك مراجعة المحاولة وإعادتها.
         </p>

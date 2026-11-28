@@ -318,7 +318,7 @@ export function SpeakAndScore({ target, compact }: { target: string; compact?: b
               onClick={() => setOpenFallback((v) => !v)}
               className="inline-flex items-center gap-1 rounded-full border border-gold/40 bg-gold/10 px-2 py-1 text-[11px] font-bold text-gold-strong transition-colors hover:bg-gold/15"
             >
-              {openFallback ? "− إخفاء التسجيل البديل" : "🎤 التسجيل البديل (يعمل دائماً)"}
+              {openFallback ? "− إخفاء التسجيل البديل" : "التسجيل البديل (يعمل دائماً)"}
             </button>
           ) : (
             <div className="flex items-center justify-between gap-2">

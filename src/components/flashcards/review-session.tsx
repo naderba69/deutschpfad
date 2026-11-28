@@ -71,7 +71,7 @@ export function ReviewSession({ refreshKey }: ReviewSessionProps) {
         <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-full bg-success/10">
           <CheckCircle2 className="h-8 w-8 text-success" aria-hidden="true" />
         </span>
-        <h2 className="mt-4 text-xl font-extrabold">لا توجد بطاقات مستحقة اليوم 🎉</h2>
+        <h2 className="mt-4 text-xl font-extrabold">لا توجد بطاقات مستحقة اليوم</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           راجعت كل ما هو مستحق! عد غداً، أو أضف بطاقات من الدروس أو يدوياً.
         </p>
@@ -135,7 +135,7 @@ export function ReviewSession({ refreshKey }: ReviewSessionProps) {
     <div className="space-y-4">
       {/* مؤشر شحن القلوب */}
       <p className="rounded-lg border border-primary/20 bg-primary/5 px-3 py-1.5 text-[11px] font-bold text-primary">
-        💗 كل {REFILLS_PER_HEART} مراجعات تعيد قلباً في الدروس — عدد مراجعاتك المتراكمة: {getRefillCount()}
+كل {REFILLS_PER_HEART} مراجعات تعيد قلباً في الدروس — عدد مراجعاتك المتراكمة: {getRefillCount()}
       </p>
 
       {/* شريط التقدم */}

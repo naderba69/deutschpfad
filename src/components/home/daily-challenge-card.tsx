@@ -49,7 +49,7 @@ export function DailyChallengeCard() {
             <Flame className="h-5 w-5" aria-hidden="true" />
           </span>
           <div>
-            <h4 className="text-sm font-extrabold">تحدي اليوم 🔥</h4>
+            <h4 className="text-sm font-extrabold">تحدي اليوم</h4>
             <p className="text-xs text-muted-foreground">
               5 أسئلة سريعة من مستواك — نقاط وسلسلة. {readError ? "تعذر التحقق من نشاطك اليوم" : completedLessonToday ? "أكملت درساً اليوم ✓" : "جاهز؟"}
             </p>

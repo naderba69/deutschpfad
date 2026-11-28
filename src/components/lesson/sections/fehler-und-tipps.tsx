@@ -55,7 +55,7 @@ export function FehlerUndTippsSection({ data }: { data: FehlerUndTipps }) {
                 key={i}
                 className="rounded-xl border border-gold/30 bg-gold/10 p-3 text-sm leading-relaxed"
               >
-                💡 {trick}
+{trick}
               </li>
             ))}
           </ul>

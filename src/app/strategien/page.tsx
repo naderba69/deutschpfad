@@ -43,7 +43,7 @@ export default function StrategienPage() {
 
       <div className="mt-10 mb-8">
         <h2 className="text-balance text-3xl font-extrabold tracking-tight">
-          ماذا بعد B2؟ 🎓
+          ماذا بعد B2؟
         </h2>
         <p className="mt-2 text-muted-foreground">{AFTER_B2.summary}</p>
       </div>
@@ -60,7 +60,7 @@ export default function StrategienPage() {
       </div>
 
       <div className="mt-8 rounded-xl border border-gold/40 bg-gold/10 p-5">
-        <p className="text-lg font-bold">📚 مصادر موصى بها</p>
+        <p className="text-lg font-bold">مصادر موصى بها</p>
         <ul className="mt-2 space-y-1.5 text-sm">
           {AFTER_B2.resources.map((r, i) => (
             <li key={i} className="flex items-start gap-2">

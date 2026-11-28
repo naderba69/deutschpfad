@@ -54,7 +54,7 @@ export function VortragModelle() {
           <details className="rounded-xl border bg-muted/20 p-3 text-sm">
             {/* هدف اللمس: <summary> بارتفاع 20px كان أصغر من 24px (WCAG 2.5.8) */}
             <summary className="flex min-h-6 cursor-pointer items-center font-bold text-primary">
-              📋 الأسئلة الإرشادية (Leitfragen) — كما في بطاقة الامتحان
+الأسئلة الإرشادية (Leitfragen) — كما في بطاقة الامتحان
             </summary>
             <ul className="mt-2 space-y-1.5">
               {model.leitfragen.map((q, i) => (
@@ -86,7 +86,7 @@ export function VortragModelle() {
 
           {/* استماع للعرض كاملاً */}
           <div className="flex flex-wrap items-center gap-3 rounded-xl border border-gold/40 bg-gold/10 p-3">
-            <p className="text-sm text-muted-foreground">🔊 استمع للعرض كاملاً بوتيرة طبيعية (تدرب على الإلقاء بعده):</p>
+            <p className="text-sm text-muted-foreground">استمع للعرض كاملاً بوتيرة طبيعية (تدرب على الإلقاء بعده):</p>
             <SpeakButton text={model.steps.map((s) => s.de).join(" ")} variant="outline" size="sm" label="استمع للعرض" />
           </div>
         </CardContent>

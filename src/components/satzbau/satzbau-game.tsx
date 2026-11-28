@@ -117,7 +117,7 @@ export function SatzbauGame() {
 
             {/* الترجمة (تلميح) */}
             <p className="rounded-xl border bg-muted/20 p-3 text-sm text-muted-foreground">
-              💬 المعنى: {current.ar}
+المعنى: {current.ar}
             </p>
 
             {/* الجملة المبنية */}
@@ -184,7 +184,7 @@ export function SatzbauGame() {
                 )}
                 <div>
                   {feedback === "correct" ? (
-                    <p className="font-bold text-success">تركيب صحيح! 🎉</p>
+                    <p className="font-bold text-success">تركيب صحيح!</p>
                   ) : (
                     <>
                       <p className="font-bold text-destructive">الترتيب الصحيح:</p>

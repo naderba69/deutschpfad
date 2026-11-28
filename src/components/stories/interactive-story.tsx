@@ -78,14 +78,13 @@ export function InteractiveStoryPlayer({ story, onExit }: { story: InteractiveSt
   if (finished) {
     return (
       <div className="mx-auto max-w-xl space-y-4 text-center">
-        <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-success/15 text-3xl" aria-hidden="true">📚</span>
         <h2 className="text-xl font-extrabold">أتممت القصة!</h2>
         <p className="text-sm text-muted-foreground">
           {story.titleAr} — أجببت عن {correctCount} من {answeredCount} أسئلة فهماً.
         </p>
         <div className="mx-auto grid max-w-xs grid-cols-2 gap-2">
           <div className="rounded-xl border border-gold/30 bg-gold/10 px-3 py-2">
-            <p className="font-de text-lg font-extrabold text-gold-strong">💎 {gemsEarned}</p>
+            <p className="font-de text-lg font-extrabold text-gold-strong">{gemsEarned}</p>
             <p className="text-[11px] font-bold text-muted-foreground">جواهرك الآن</p>
           </div>
           <div className="rounded-xl border border-success/30 bg-success/10 px-3 py-2">
@@ -95,7 +94,7 @@ export function InteractiveStoryPlayer({ story, onExit }: { story: InteractiveSt
         </div>
         {correctCount < answeredCount && (
           <p className="rounded-lg bg-primary/5 px-3 py-2 text-xs font-bold text-primary">
-            💡 أعد قراءة الأجزاء التي أخطأت فيها — الفهم يتكرس بالقراءة المتدرجة.
+أعد قراءة الأجزاء التي أخطأت فيها — الفهم يتكرس بالقراءة المتدرجة.
           </p>
         )}
         {progressSaveFailed && (
@@ -208,7 +207,7 @@ export function InteractiveStoryPlayer({ story, onExit }: { story: InteractiveSt
       {/* اختيارات المسار (إن وُجدت) */}
       {seg.choices && (
         <div className="rounded-2xl border border-gold/30 bg-gold/5 p-4">
-          <p className="mb-3 text-xs font-extrabold text-gold-strong">✨ اختر كيف تستمر القصة:</p>
+          <p className="mb-3 text-xs font-extrabold text-gold-strong">اختر كيف تستمر القصة:</p>
           <div className="grid gap-2">
             {seg.choices.map((c) => (
               <button

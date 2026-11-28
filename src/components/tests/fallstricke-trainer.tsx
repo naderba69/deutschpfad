@@ -138,7 +138,7 @@ export function FallstrickeTrainer() {
           ⚠️ {ex.trapName} · <span dir="ltr" lang="de" className="font-de">{ex.trapNameDe}</span>
         </span>
         <span className="rounded-full bg-muted px-2.5 py-0.5 text-[11px] font-bold text-muted-foreground">
-          {ex.skill === "lesen" ? "📖 قراءة" : "🎧 استماع"}
+          {ex.skill === "lesen" ? "قراءة" : "استماع"}
         </span>
         <span className="font-de ms-auto text-sm font-extrabold text-primary">{score} ✓</span>
       </div>
@@ -184,7 +184,7 @@ export function FallstrickeTrainer() {
                 <span className="font-de ms-1 inline-block w-4 text-xs font-bold opacity-60">{String.fromCharCode(65 + i)}</span>
                 <span dir="ltr" lang="de">{opt}</span>
                 {answered && isTrap && i !== ex.correct && (
-                  <span className="ms-2 rounded-full bg-amber-500/15 px-2 py-0.5 text-[11px] font-bold text-amber-700 dark:text-amber-300">هذه هي المصيدة 🪤</span>
+                  <span className="ms-2 rounded-full bg-amber-500/15 px-2 py-0.5 text-[11px] font-bold text-amber-700 dark:text-amber-300">هذه هي المصيدة</span>
                 )}
               </button>
             );

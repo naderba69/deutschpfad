@@ -55,7 +55,7 @@ export function ResultsPanel({ result, onRetry, onNext, nextLabel, onComplete }:
           )}
         </span>
         <h3 className="mt-4 text-2xl font-extrabold">
-          {result.passed ? "أحسنت! بلغت عتبة هذا التدريب 🎉" : "واصل التدريب — نتيجتك دون عتبة هذا التدريب"}
+          {result.passed ? "أحسنت! بلغت عتبة هذا التدريب" : "واصل التدريب — نتيجتك دون عتبة هذا التدريب"}
         </h3>
         <p className="font-de mt-2 text-4xl font-extrabold text-primary">{result.overallPct}%</p>
         <p className="mt-2 text-sm text-muted-foreground">

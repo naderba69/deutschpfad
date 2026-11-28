@@ -109,7 +109,7 @@ export function VerbDrill() {
             {score.correct}/{score.total}
           </p>
           <p className="mt-2 font-bold">
-            {pct >= 90 ? "ممتاز! أنت تتقن تصريف الأفعال الشاذة 🏆" : pct >= 70 ? "جيد جداً — بقي القليل" : pct >= 50 ? "متوسط — كرر التدريب يومياً" : "لا بأس — الأفعال الشاذة تحتاج تكراراً يومياً"}
+            {pct >= 90 ? "ممتاز! أنت تتقن تصريف الأفعال الشاذة" : pct >= 70 ? "جيد جداً — بقي القليل" : pct >= 50 ? "متوسط — كرر التدريب يومياً" : "لا بأس — الأفعال الشاذة تحتاج تكراراً يومياً"}
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
             دقة {pct}% في {ROUND_SIZE} سؤالاً — راجع الجدول ثم أعد التدريب.
@@ -202,7 +202,7 @@ export function VerbDrill() {
             )}
             <div>
               {feedback === "correct" ? (
-                <p className="font-bold text-success">إجابة صحيحة! 🎉</p>
+                <p className="font-bold text-success">إجابة صحيحة!</p>
               ) : (
                 <p className="font-bold text-destructive">
                   ليس تماماً — الصحيح هو <span className="font-de" dir="ltr" lang="de">{question.answer}</span>
