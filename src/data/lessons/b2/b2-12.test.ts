@@ -11,13 +11,13 @@ import type { Exercise } from "@/types/lesson";
 const lessonMetaList = LESSON_META;
 
 const expectedMultipleChoice: Record<string, { options: string[]; key: string }> = {
-  r1: { options: ["studieren", "studiere", "studiert", "studiert haben"], key: "studieren" },
-  r2: { options: ["treffen", "stellen", "sagen", "machen"], key: "treffen" },
+  r1: { options: ["deren", "dessen", "denen"], key: "deren" },
+  r2: { options: ["arbeiten müssen", "gearbeitet müssen", "gemusst arbeiten", "arbeiten gemusst"], key: "arbeiten müssen" },
   e1: { options: ["bekäme", "bekomme", "bekommen", "bekommen würde"], key: "bekäme" },
   e2: { options: ["würde", "will", "werde", "bin"], key: "würde" },
   e3: { options: ["wurden", "wurde", "werden", "worden"], key: "wurden" },
   e8: { options: ["القائد/المدير", "القوة", "الشركة الكبيرة", "العمل فقط"], key: "القائد/المدير" },
-  e9: { options: ["Damit", "Weil", "Obwohl", "Wenn"], key: "Damit" },
+  e9: { options: ["Damit", "Weil", "Obwohl", "Während"], key: "Damit" },
   m1: { options: ["würden", "werden", "wollen", "sind"], key: "würden" },
   m2: { options: ["wurden", "wurde", "werden", "worden"], key: "wurden" },
   q1: { options: ["die Leistungen", "die Weiterbildung", "die Firma", "das Projekt"], key: "die Leistungen" },
@@ -27,7 +27,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
-  r3: { correct: ["hätte"], options: [["hätte", "habe", "hatte"]] },
+  r3: { correct: ["reparieren"], options: [["reparieren", "repariert", "zu reparieren"]] },
   e5: {
     correct: ["sagen", "sollten"],
     options: [
@@ -55,14 +55,14 @@ const expectedFillBlanks: Record<string, { correct: string[]; options: string[][
 
 const expectedErrorCorrections: Record<string, { wrongWord: string; correctWord: string; options: string[] }> = {
   e7: {
-    wrongWord: "abgeschlossen haben",
-    correctWord: "abgeschlossen worden",
-    options: ["abgeschlossen worden", "abgeschlossen haben", "abgeschlossen gewesen", "abgeschlossen sein"],
+    wrongWord: "wurden abgeschlossen haben",
+    correctWord: "sind abgeschlossen worden",
+    options: ["sind abgeschlossen worden", "wurden abgeschlossen haben", "sind abgeschlossen gewesen", "wurden abgeschlossen worden"],
   },
   m4: {
-    wrongWord: "anerkannt haben",
-    correctWord: "anerkannt worden",
-    options: ["anerkannt worden", "anerkannt haben", "anerkannt gewesen", "anerkannt sein"],
+    wrongWord: "wurden anerkannt haben",
+    correctWord: "sind anerkannt worden",
+    options: ["sind anerkannt worden", "wurden anerkannt haben", "sind anerkannt gewesen", "wurden anerkannt worden"],
   },
 };
 

@@ -120,16 +120,16 @@ export const listening: Lesson["listening"] = {
 
 export const pronunciation: Lesson["pronunciation"] = {
   id: "p1",
-  title: "أصوات المهن المتقدمة: ö، ü، و ch",
+  title: "أصوات المهن المتقدمة: ö، ü، ei، v، au، eu",
   items: [
-    { de: "die Beförderung", ar: "الترقية", note: "ö = أو: بِ-فِير-دِرونغ" },
-    { de: "die Führungskraft", ar: "القائد", note: "ü + r: فيرونغس-كرافت" },
+    { de: "die Beförderung", ar: "الترقية", note: "ö: شفتان مدوّرتان كأنك تقول «أو» ثم تنطق «إي»: بِ-فِير-دِرونغ" },
+    { de: "die Führungskraft", ar: "القائد", note: "ü: شفتان مدوّرتان مع صوت «ي»: فيرونغس-كرافت" },
     { de: "die Weiterbildung", ar: "التدريب المستمر", note: "ei = آي: فايتِر-بيلدونغ" },
     { de: "die Verantwortung", ar: "المسؤولية", note: "v = ف: فير-آنت-فورتونغ" },
-    { de: "der Lebenslauf", ar: "السيرة الذاتية", note: "ch = خ: لِبِنس-لاوف" },
+    { de: "der Lebenslauf", ar: "السيرة الذاتية", note: "au = آو: لِيبِنس-لاوف" },
     { de: "das Arbeitszeugnis", ar: "شهادة العمل", note: "eu = أوي: آر-بايتس-تسويغ-نيس" },
   ],
-  tip: "Beförderung = بِ-فِير-دِرونغ — ö قصيرة. Führungskraft = فيرونغس-كرافت — ü ثم r. Weiterbildung = فايتِر-بيلدونغ — ei واضحة.",
+  tip: "Beförderung = بِ-فِير-دِرونغ — ö قصيرة. Führungskraft = فيرونغس-كرافت — ü في المقطع الأول. Weiterbildung = فايتِر-بيلدونغ — ei واضحة.",
   shadowing: [
     { de: "Wenn ich die Beförderung bekäme, würde ich mehr Verantwortung übernehmen.", ar: "لو حصلت على الترقية، لتوليت مسؤولية أكبر.", tip: "bekäme — صيغة الشرط" },
     { de: "Die Projekte wurden erfolgreich abgeschlossen.", ar: "أُنجزت المشاريع بنجاح.", tip: "wurden abgeschlossen — مجهول" },

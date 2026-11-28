@@ -11,8 +11,8 @@ import type { Exercise } from "@/types/lesson";
 const lessonMetaList = LESSON_META;
 
 const expectedMultipleChoice: Record<string, { options: string[]; key: string }> = {
-  r1: { options: ["studieren", "studiere", "studiert", "studiert haben"], key: "studieren" },
-  r2: { options: ["treffen", "stellen", "sagen", "machen"], key: "treffen" },
+  r1: { options: ["wurden", "werden", "worden", "wurde"], key: "wurden" },
+  r2: { options: ["möchte", "mag", "magst", "mögt"], key: "möchte" },
   e1: { options: ["ent", "ver", "be", "an"], key: "ent" },
   e2: { options: ["der", "die", "das", "den"], key: "der" },
   e3: { options: ["Obwohl", "Trotzdem", "Deshalb", "Damit"], key: "Obwohl" },
