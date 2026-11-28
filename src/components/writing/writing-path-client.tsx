@@ -13,6 +13,8 @@ import {playCorrect, playWrong} from "@/lib/audio/sfx";
 import {addGems, GEM_REWARDS} from "@/lib/gamification/gems";
 import {STAGE_ORDER, getTasksByStage, WRITING_TASKS, type WritingStage, type WritingTask} from "@/data/writing-path";
 import {cn} from "@/lib/utils";
+import {buildTaskScale} from "@/lib/rubric/task-scales";
+import {TaskScaleDetails} from "@/components/rubric/task-scale-details";
 
 /**
  * ═══════════════════════════════════════════════════════════
@@ -190,6 +192,9 @@ export function WritingPathClient() {
           ))}
         </div>
       </div>
+
+      {/* سلّم تدريب ذاتي حسب المستوى ونوع المهمة (غير معتمد)، يظهر قبل الكتابة وأثناءها */}
+      <TaskScaleDetails id={`writing-scale-${task.id}`} scale={buildTaskScale(task.level, task.taskType)} />
 
       {/* منطقة الكتابة */}
       <div className="rounded-2xl border bg-card p-4">

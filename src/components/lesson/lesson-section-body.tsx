@@ -118,7 +118,7 @@ export function LessonSectionBody({
           </div>
         );
       case "oral-production":
-        return <OralProductionSection tasks={lesson.oralProduction ?? []} />;
+        return <OralProductionSection tasks={lesson.oralProduction ?? []} level={lesson.level} />;
       case "vertiefung":
         return <VertiefungSection lessonId={lesson.id} />;
       default:

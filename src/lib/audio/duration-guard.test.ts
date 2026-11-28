@@ -17,6 +17,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { DAILY_DIALOGUES } from "@/data/dialogues";
+import { LESSONS } from "@/data/lessons";
 import { PODCASTS } from "@/data/podcasts";
 import { PRODUCED_PODCAST_AUDIO } from "@/data/podcasts/audio";
 
@@ -57,6 +58,28 @@ function podcastSamples(): Sample[] {
     text: episode.script,
     label: episode.id,
   }));
+}
+
+/**
+ * أسطر الاستماع في الدروس (`listening.items[].lines[]`) التي لها `audioSrc`.
+ * كانت هذه الملفات تُفحص بالوجود فقط (audio-references.test.ts)؛ هنا تُقارن مدّتها
+ * بعدد أحرف النص كما في الحوارات والبودكاست.
+ */
+function lessonSamples(): Sample[] {
+  const samples: Sample[] = [];
+  for (const lesson of LESSONS) {
+    for (const item of lesson.listening?.items ?? []) {
+      item.lines.forEach((line, index) => {
+        if (!line.audioSrc) return;
+        samples.push({
+          file: path.join("public", line.audioSrc.replace(/^\//, "")),
+          text: line.de,
+          label: `${lesson.id}/${item.id}#${index + 1}`,
+        });
+      });
+    }
+  }
+  return samples;
 }
 
 function audit(samples: Sample[]) {
@@ -109,6 +132,14 @@ describe("حارس مدة الصوت — تطابق النص المنطوق مع
     expect(problems, `مقاطع مشبوهة:\n${problems.join("\n")}`).toEqual([]);
   });
 
+  it("كل سطر استماع في الدروس يطابق مدّة نصّه داخل النطاق المسموح", () => {
+    const samples = lessonSamples();
+    const { problems, checked, unreadable } = audit(samples);
+    expect(checked, "لم يُفحص أي سطر درس — الحارس أعمى").toBeGreaterThan(300);
+    expect(unreadable, `ملفات دروس لم تُقرأ:\n${unreadable.join("\n")}`).toEqual([]);
+    expect(problems, `أسطر دروس مشبوهة:\n${problems.join("\n")}`).toEqual([]);
+  });
+
   it("كل حلقة بودكاست مُعلنة يطابق صوتها نصّها", () => {
     const samples = podcastSamples();
     expect(samples.length).toBe(PRODUCED_PODCAST_AUDIO.length);
@@ -130,7 +161,7 @@ describe("حارس مدة الصوت — تطابق النص المنطوق مع
   });
 
   it("كل ملف مُقاس قابل للقراءة (لا ملف تالف يمرّ بلا فحص)", () => {
-    const { unreadable } = audit([...dialogueSamples().samples, ...podcastSamples()]);
+    const { unreadable } = audit([...dialogueSamples().samples, ...podcastSamples(), ...lessonSamples()]);
     expect(unreadable, `ملفات لم تُقرأ:\n${unreadable.join("\n")}`).toEqual([]);
   });
 });

@@ -5,9 +5,12 @@ import {Mic, Square, Volume2} from "lucide-react";
 
 import {SpeakButton} from "@/components/shared/speak-button";
 import {SelfReviewRatings} from "@/components/lesson/sections/self-review-ratings";
+import {TaskScaleDetails} from "@/components/rubric/task-scale-details";
+import {buildTaskScale, SPEAKING_TASK} from "@/lib/rubric/task-scales";
+import type {LevelCode} from "@/types/curriculum";
 import type {OralProductionTask} from "@/types/lesson";
 
-function OralPromptCard({task}: {task: OralProductionTask}) {
+function OralPromptCard({task, level}: {task: OralProductionTask; level: LevelCode}) {
   const [recording, setRecording] = React.useState(false);
   const [requestingMic, setRequestingMic] = React.useState(false);
   const [audioUrl, setAudioUrl] = React.useState<string | null>(null);
@@ -125,6 +128,9 @@ function OralPromptCard({task}: {task: OralProductionTask}) {
           <p className="mt-2 text-xs text-muted-foreground">التسجيل محلي داخل هذه الصفحة ولا يُرسل إلى خادم. لا يجري تحليل الصوت أو إعطاء درجة آلية.</p>
         </div>
       )}
+      <div className="mt-4">
+        <TaskScaleDetails id={`oral-scale-${task.id}`} scale={buildTaskScale(level, SPEAKING_TASK)} />
+      </div>
       <SelfReviewRatings
         id={`oral-review-${task.id}`}
         title="مراجعة ذاتية — بعد أن تتحدث"
@@ -134,14 +140,14 @@ function OralPromptCard({task}: {task: OralProductionTask}) {
   );
 }
 
-export function OralProductionSection({tasks}: {tasks: OralProductionTask[]}) {
+export function OralProductionSection({tasks, level}: {tasks: OralProductionTask[]; level: LevelCode}) {
   if (!tasks.length) return null;
   return (
     <div className="space-y-4">
       <div className="rounded-xl border border-primary/25 bg-primary/5 p-3 text-sm leading-relaxed">
         <strong>تدريب على الإنتاج الشفهي:</strong> حضّر إجابتك ثم قلها بصوتك. يمكنك تسجيلها والاستماع إليها ومراجعتها بنفسك. لا يصحح التطبيق المحتوى أو النطق، ولا تُحتسب هذه المهمة دليلاً على إتقان المستوى.
       </div>
-      {tasks.map((task) => <OralPromptCard key={task.id} task={task} />)}
+      {tasks.map((task) => <OralPromptCard key={task.id} task={task} level={level} />)}
     </div>
   );
 }

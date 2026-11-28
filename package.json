@@ -19,6 +19,7 @@
     "audit:lesson-inventory": "node scripts/lessons-inventory.mjs",
     "audit:inventory": "node scripts/project-inventory.mjs",
     "audit:audio": "node scripts/verify-audio-assets.mjs",
+    "audit:audio-index": "node scripts/audio-index.mjs",
     "audit:pages": "node scripts/audit-pages.mjs",
     "audit:exercises": "node scripts/exercise-integrity-audit.mjs",
     "audit:dom": "node scripts/dom-audit.mjs",
