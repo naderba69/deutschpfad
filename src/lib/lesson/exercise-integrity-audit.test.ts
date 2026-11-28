@@ -56,4 +56,54 @@ describe("exercise integrity audit script", () => {
     expect(invalid.status).toBe(1);
     expect(invalid.stderr).toContain("unknown category");
   });
+
+  it("rejects a fill-blank whose ___ markers do not match its blanks", () => {
+    const result = runAudit(`
+      const q = {type: "fill-blank", template: "Ich ___ und ___ gern.", blanks: [{correct: "esse", options: ["esse"]}]};
+    `);
+    expect(result.status).toBe(1);
+    expect(result.stderr).toContain("2 '___' marker(s) but 1 blank(s)");
+  });
+
+  it("rejects MCQ options that are not literal strings (cannot be checked for duplicates)", () => {
+    const result = runAudit(`
+      const q = {type: "multiple-choice", options: ["a", \`b\`, prefix + "c"], correctIndex: 0};
+    `);
+    expect(result.status).toBe(1);
+    expect(result.stderr).toContain("not literal strings");
+  });
+
+  it("audits mediation tasks: needs taskAr, keyPointsAr and a source text", () => {
+    const valid = runAudit(`
+      const t = {type: "summarize-de-to-ar", titleAr: "عنوان", sourceDe: "Lena kommt aus Berlin.", taskAr: "انقل المعلومات.", keyPointsAr: ["برلين"]};
+    `);
+    expect(valid.status).toBe(0);
+
+    const broken = runAudit(`
+      const t = {type: "merge-info", titleAr: "عنوان", taskAr: "لخّص.", keyPointsAr: []};
+    `);
+    expect(broken.status).toBe(1);
+    expect(broken.stderr).toContain("keyPointsAr must not be empty");
+    expect(broken.stderr).toContain("has no source text");
+  });
+
+  it("reports an unknown type value instead of silently skipping it", () => {
+    const result = runAudit(`const x = {type: "mystery-task", prompt: "?"};`);
+    expect(result.status).toBe(0);
+    expect(result.stderr).toContain("UNCLASSIFIED");
+    expect(result.stderr).toContain("mystery-task: 1");
+  });
+
+  it("does not report known non-exercise event and form types", () => {
+    const result = runAudit(`const e = {type: "exercise-result", ts: 1}; const f = {type: "select", options: ["a"]};`);
+    expect(result.status).toBe(0);
+    expect(result.stderr).not.toContain("UNCLASSIFIED");
+  });
+
+  it("the real repository data passes with the default root", () => {
+    const result = spawnSync(process.execPath, [script], {encoding: "utf8", cwd: process.cwd()});
+    expect(result.stderr).not.toContain("structural problem");
+    expect(result.status).toBe(0);
+    expect(result.stdout).toContain("No structural exercise-integrity problems found.");
+  });
 });

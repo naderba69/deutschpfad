@@ -1,9 +1,13 @@
 #!/usr/bin/env node
 /**
- * Structural audit of lesson exercises using the TypeScript AST.
- * Checks required fields and answer-index bounds without pretending to judge
- * whether the German, translation, distractors, or pedagogical level are good.
- * Usage: node scripts/exercise-integrity-audit.mjs
+ * Structural audit of exercise and task objects in src/data, using the TypeScript AST.
+ * Checks required fields, answer-index bounds, blank counts, and cross-references
+ * without pretending to judge whether the German, translation, distractors, or
+ * pedagogical level are good.
+ *
+ * Every literal `type:` value is either audited below, listed as a non-exercise
+ * (events, form fields), or reported as UNCLASSIFIED so it cannot be silently skipped.
+ * Usage: node scripts/exercise-integrity-audit.mjs [--root <dir>]
  */
 import {readdirSync, readFileSync} from "node:fs";
 import {join, relative} from "node:path";
@@ -12,9 +16,37 @@ import ts from "typescript";
 const rootArg = process.argv.indexOf("--root");
 const ROOT = rootArg >= 0 && process.argv[rootArg + 1]
   ? process.argv[rootArg + 1]
-  : join(process.cwd(), "src/data/lessons");
+  : join(process.cwd(), "src/data");
 const problems = [];
 const counts = {files: 0, exercises: 0, mcq: 0};
+const unclassified = new Map();
+
+/** أنواع التمارين والمهام المفحوصة، مع الحقول الإلزامية لكل نوع */
+const REQUIRED_FIELDS = {
+  "multiple-choice": ["options", "correctIndex"],
+  "word-ordering": ["tokens", "correctSentence"],
+  "fill-blank": ["template", "blanks"],
+  matching: ["pairs"],
+  "error-correction": ["wrongSentence", "options"],
+  transformation: ["prompt", "acceptedAnswers"],
+  dictation: ["audioText"],
+  "true-false": ["textDe", "statements"],
+  "sentence-gap": ["textWithGaps", "sentenceBank", "gapOrder"],
+  zuordnung: ["categories", "items", "correctMap"],
+  // مهام الوساطة (MediationTask): نص مصدر + مهمة + نقاط مفتاحية
+  "summarize-de-to-ar": ["titleAr", "taskAr", "keyPointsAr"],
+  "summarize-ar-to-de": ["titleAr", "taskAr", "keyPointsAr"],
+  "relay-instructions": ["titleAr", "taskAr", "keyPointsAr"],
+  "simplify-announcement": ["titleAr", "taskAr", "keyPointsAr"],
+  "merge-info": ["titleAr", "taskAr", "keyPointsAr"],
+};
+/** مهام الوساطة التي يجب أن يكون لها نص مصدر (ألماني أو عربي) */
+const MEDIATION_TYPES = new Set(["summarize-de-to-ar", "summarize-ar-to-de", "relay-instructions", "simplify-announcement", "merge-info"]);
+/** قيم type ليست تمارين: أحداث تتبّع في الاختبارات، وحقول نماذج (ليست تمارين درسية) */
+const NON_EXERCISE_TYPES = new Set([
+  "exercise-result", "lesson-view", "lesson-completed", "pronunciation-score", "self-pronunciation-rating",
+  "text", "date", "select", "number",
+]);
 
 function collectFiles(dir) {
   const files = [];
@@ -55,21 +87,13 @@ function objectPropertiesFromExpression(node) {
 function visit(node, filename) {
   if (ts.isObjectLiteralExpression(node)) {
     const type = stringValue(getProperty(node, "type")?.initializer);
-    if (type && ["multiple-choice", "word-ordering", "fill-blank", "matching", "error-correction", "transformation", "dictation", "true-false", "sentence-gap", "zuordnung"].includes(type)) {
+    if (type && !REQUIRED_FIELDS[type] && !NON_EXERCISE_TYPES.has(type)) {
+      unclassified.set(type, (unclassified.get(type) ?? 0) + 1);
+    }
+    if (type && REQUIRED_FIELDS[type]) {
       counts.exercises++;
       const at = `${relative(process.cwd(), filename)}:${node.getStart()}`;
-      const required = {
-        "multiple-choice": ["options", "correctIndex"],
-        "word-ordering": ["tokens", "correctSentence"],
-        "fill-blank": ["template", "blanks"],
-        matching: ["pairs"],
-        "error-correction": ["wrongSentence", "options"],
-        transformation: ["prompt", "acceptedAnswers"],
-        dictation: ["audioText"],
-        "true-false": ["textDe", "statements"],
-        "sentence-gap": ["textWithGaps", "sentenceBank", "gapOrder"],
-        zuordnung: ["categories", "items", "correctMap"],
-      }[type] ?? [];
+      const required = REQUIRED_FIELDS[type];
       for (const field of required) {
         if (!getProperty(node, field)) problems.push(`${at}: ${type} missing required field '${field}'`);
       }
@@ -84,6 +108,8 @@ function visit(node, filename) {
           problems.push(`${at}: correctIndex '${indexNode?.getText() ?? "missing"}' is outside the options array`);
         }
         if (options) {
+          const nonLiteral = options.filter((option) => stringValue(option) === null).length;
+          if (nonLiteral) problems.push(`${at}: ${nonLiteral} MCQ option(s) are not literal strings and cannot be audited`);
           const texts = options.map(stringValue);
           const duplicate = texts.find((text, i) => text !== null && texts.indexOf(text) !== i);
           if (duplicate !== undefined) problems.push(`${at}: duplicate MCQ option '${duplicate}'`);
@@ -96,6 +122,13 @@ function visit(node, filename) {
 
       if (type === "fill-blank") {
         const blanks = arrayValues(getProperty(node, "blanks")?.initializer) ?? [];
+        const template = stringValue(getProperty(node, "template")?.initializer);
+        if (template !== null) {
+          const markers = template.split("___").length - 1;
+          if (markers !== blanks.length) {
+            problems.push(`${at}: template has ${markers} '___' marker(s) but ${blanks.length} blank(s)`);
+          }
+        }
         blanks.forEach((blank, index) => {
           const correct = objectString(blank, "correct");
           const choices = arrayValues(getProperty(blank, "options")?.initializer);
@@ -170,6 +203,15 @@ function visit(node, filename) {
         }
       }
 
+      if (MEDIATION_TYPES.has(type)) {
+        const keyPoints = arrayValues(getProperty(node, "keyPointsAr")?.initializer);
+        if (keyPoints !== null && keyPoints.length === 0) problems.push(`${at}: ${type} keyPointsAr must not be empty`);
+        if (!objectString(node, "sourceDe") && !objectString(node, "sourceAr")) {
+          problems.push(`${at}: ${type} has no source text (sourceDe or sourceAr)`);
+        }
+        if (!objectString(node, "taskAr")) problems.push(`${at}: ${type} taskAr must be a literal string`);
+      }
+
       if (["fill-blank", "transformation"].includes(type)) {
         const field = type === "fill-blank" ? "blanks" : "acceptedAnswers";
         const values = arrayValues(getProperty(node, field)?.initializer);
@@ -190,7 +232,11 @@ for (const filename of collectFiles(ROOT)) {
   visit(source, filename);
 }
 
-console.log(`Scanned ${counts.files} lesson data files; found ${counts.exercises} exercise objects (${counts.mcq} multiple-choice).`);
+console.log(`Scanned ${counts.files} data files; found ${counts.exercises} audited exercise/task objects (${counts.mcq} multiple-choice).`);
+if (unclassified.size) {
+  console.warn(`\nUNCLASSIFIED type values (not audited; add to REQUIRED_FIELDS or NON_EXERCISE_TYPES after review):`);
+  for (const [name, n] of [...unclassified].sort((a, b) => b[1] - a[1])) console.warn(`- ${name}: ${n}`);
+}
 if (problems.length) {
   console.error(`\n${problems.length} structural problem(s):`);
   for (const problem of problems) console.error(`- ${problem}`);
