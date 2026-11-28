@@ -17,8 +17,18 @@ const referenced = new Set();
 
 // ── 1) الحوارات ──
 const LEVELS = ["a1", "a2", "b1", "b2"];
+// الحوارات الفعلية في src/data/dialogues/<level>/part*.ts؛ أما <level>.ts فمجرد مُجمِّع.
+// قراءة المجمِّع وحده كانت تُسقط كل الحوارات فتظهر ملفاتها «يتيمة» ويبدو فحص المفقودات نظيفاً.
+const dialogueSources = (level) => {
+  const dir = join(ROOT, "src/data/dialogues", level);
+  const parts = existsSync(dir)
+    ? readdirSync(dir).filter((f) => f.endsWith(".ts") && !f.endsWith(".test.ts")).map((f) => join(dir, f))
+    : [];
+  return [join(ROOT, "src/data/dialogues", `${level}.ts`), ...parts];
+};
 for (const level of LEVELS) {
-  const text = readFileSync(join(ROOT, "src/data/dialogues", `${level}.ts`), "utf8");
+  for (const file of dialogueSources(level)) {
+  const text = readFileSync(file, "utf8");
   // تقسيم إلى كتل حوار عند كل id:
   const blocks = text.split(/\n  \{\n    id: "/).slice(1);
   for (const block of blocks) {
@@ -31,6 +41,7 @@ for (const level of LEVELS) {
       referenced.add(rel);
       if (!existsSync(join(AUDIO, rel))) missing.push(rel);
     }
+  }
   }
 }
 
@@ -67,12 +78,39 @@ for (const level of ["a1", "a2", "b1"]) {
   }
 }
 
+// ── 2ج) المراجع الحرفية في الكود: /audio/... .mp3 في src (دروس، بودكاست، حوارات) ──
+// المسارات المبنية بقالب (${...}) تُحوَّل إلى نمط يطابق الملفات الموجودة، فلا تُعد ملفاتها يتيمة.
+const SRC_DIR = join(ROOT, "src");
+const collectSourceFiles = (dir) =>
+  readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const p = join(dir, entry.name);
+    if (entry.isDirectory()) return collectSourceFiles(p);
+    return /\.(ts|tsx)$/.test(entry.name) && !/\.test\.(ts|tsx)$/.test(entry.name) ? [p] : [];
+  });
+const templatePatterns = [];
+const TEST_FIXTURE_REFS = new Set(["/audio/custom.mp3"]); // قيمة اختبار في audio.test.ts وليست أصلاً
+for (const file of collectSourceFiles(SRC_DIR)) {
+  const text = readFileSync(file, "utf8");
+  for (const m of text.matchAll(/\/audio\/[A-Za-z0-9_./${}-]+\.mp3/g)) {
+    const lit = m[0];
+    if (TEST_FIXTURE_REFS.has(lit)) continue;
+    if (lit.includes("${")) {
+      const re = new RegExp("^" + lit.slice(7).split(/\$\{[^}]*\}/).map((x) => x.replace(/[.*+?^()|[\]\\]/g, "\\$&")).join("[^/]+") + "$");
+      templatePatterns.push(re);
+    } else {
+      const rel = lit.slice(7);
+      referenced.add(rel);
+      if (!existsSync(join(AUDIO, rel))) missing.push(rel);
+    }
+  }
+}
+
 // ── 3) اليتيمة ──
 function walk(dir, prefix = "") {
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
     const rel = prefix ? `${prefix}/${entry.name}` : entry.name;
     if (entry.isDirectory()) walk(join(dir, entry.name), rel);
-    else if (entry.name.endsWith(".mp3") && !referenced.has(rel)) orphans.push(rel);
+    else if (entry.name.endsWith(".mp3") && !referenced.has(rel) && !templatePatterns.some((re) => re.test(rel))) orphans.push(rel);
   }
 }
 walk(AUDIO);
@@ -80,6 +118,15 @@ walk(AUDIO);
 console.log(`مرجعية: ${referenced.size} ملفاً`);
 console.log(`مفقودة: ${missing.length}`);
 for (const m of missing) console.log(`  ✗ ${m}`);
-console.log(`يتيمة: ${orphans.length}`);
-for (const o of orphans) console.log(`  ? ${o}`);
+// مجموعات تُبنى مساراتها بدوال (لا بمراجع حرفية): تُعد «مولّدة» لا يتيمة.
+// بودكاست: المسار = PODCAST_AUDIO_BASE/${ep.id} وتُحصر الملفات في PRODUCED_PODCAST_AUDIO.
+// امتحانات ومحادثة: أسماء تُنشأ بقوالب مثل hoeren-t${teil}.mp3 وتُفحص بالاختبارات الخاصة بها.
+const GENERATED_PREFIXES = ["podcasts/", "exam-", "speaking-"];
+const isGenerated = (o) => GENERATED_PREFIXES.some((p) => o.startsWith(p));
+const trueOrphans = orphans.filter((o) => !isGenerated(o));
+const generatedOrphans = orphans.filter(isGenerated);
+console.log(`يتيمة: ${trueOrphans.length}`);
+for (const o of trueOrphans) console.log(`  ? ${o}`);
+console.log(`مولّدة بدالة (غير مُطابَقة حرفياً؛ تُفحص بالاختبارات الخاصة): ${generatedOrphans.length}`);
+
 if (missing.length > 0) process.exit(1);
