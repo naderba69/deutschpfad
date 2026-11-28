@@ -11,8 +11,8 @@ import type { Exercise } from "@/types/lesson";
 const lessonMetaList = LESSON_META;
 
 const expectedMultipleChoice: Record<string, { options: string[]; key: string }> = {
-  r1: { options: ["studieren", "studiere", "studiert", "studiert haben"], key: "studieren" },
-  r2: { options: ["treffen", "stellen", "sagen", "machen"], key: "treffen" },
+  r1: { options: ["indem", "ohne", "anstatt"], key: "indem" },
+  r2: { options: ["stellen", "geben", "machen"], key: "stellen" },
   e1: { options: ["Verbesserung", "Verbessern", "Besserung", "Verbesser"], key: "Verbesserung" },
   e2: { options: ["Beim Lesen lernt man.", "Man liest und lernt.", "Das Lesen man lernt.", "Lesen ist lernen."], key: "Beim Lesen lernt man." },
   e8: { options: ["التعاون", "الاجتماع", "الشراكة", "العمل المشترك فقط"], key: "التعاون" },
@@ -32,7 +32,7 @@ const expectedMultipleChoice: Record<string, { options: string[]; key: string }>
 };
 
 const expectedFillBlanks: Record<string, { correct: string[]; options: string[][] }> = {
-  r3: { correct: ["hätte"], options: [["hätte", "habe", "hatte"]] },
+  r3: { correct: ["ohne"], options: [["ohne", "weil", "indem"]] },
   e6: {
     correct: ["Nachdenken", "Verbesserung", "Schreiben"],
     options: [

@@ -98,47 +98,45 @@ export const einfuehrung: Lesson["einfuehrung"] = {
   };
 
 export const review: NonNullable<Lesson["review"]> = [
-    {
-      id: "r1",
-      type: "multiple-choice",
-      instructionAr: "مراجعة من B1 (درس b1-10 — المستقبل والخطط): اختر الصيغة:",
-      questionDe: "Ich werde nächstes Jahr in Deutschland ___.",
-      options: ["studieren", "studiere", "studiert", "studiert haben"],
-      correctIndex: 0,
-      explanation: "Futur: werde + Infinitiv.",
-      errorType: "grammar",
-      optionExplanations: [
-        undefined,
-        "«studiere» مع ich، ولا تناسب الفعل بعد werde.",
-        "«studiert» تستعمل Partizip II، والفعل بعد werde يكون مصدراً.",
-        "«studiert haben» زمن الماضي التام، ولا يناسب المستقبل هنا.",
-      ],
-    },
-    {
-      id: "r2",
-      type: "multiple-choice",
-      instructionAr: "مراجعة من B1 (درس b1-09 — الوصلات الاسمية-الفعلية): اختر الفعل المناسب:",
-      questionDe: "eine Entscheidung ___",
-      options: ["treffen", "stellen", "sagen", "machen"],
-      correctIndex: 0,
-      explanation: "القرار يُتخذ: eine Entscheidung treffen.",
-      errorType: "grammar",
-      optionExplanations: [
-        undefined,
-        "«stellen» تعني يطرح، ولا تناسب eine Entscheidung.",
-        "«sagen» تعني يقول، ولا تناسب Entscheidung.",
-        "«machen» لا تشكّل تعبيراً صحيحاً مع Entscheidung؛ نقول eine Entscheidung treffen.",
-      ],
-    },
-    {
-      id: "r3",
-      type: "fill-blank",
-      instructionAr: "مراجعة من B1 (صيغة الشرط — b1-04): أكمل:",
-      template: "Wenn ich mehr Zeit ___, würde ich eine Weiterbildung machen.",
-      blanks: [
-        { correct: "hätte", options: ["hätte", "habe", "hatte"] },
-      ],
-      explanation: "Konjunktiv II: hätte (لا hatte الماضي ولا habe المضارع) — درس b1-04.",
-      errorType: "grammar",
-    },
-  ];
+  {
+    id: "r1",
+    type: "multiple-choice",
+    instructionAr: "مراجعة من b2-05 (أدوات الربط المتقدمة): اختر الرابط المناسب:",
+    questionDe: "Er hat die Aufgabe gelöst, ___ er die Regeln genau beachtet hat.",
+    options: ["indem", "ohne", "anstatt"],
+    correctIndex: 0,
+    explanation: "indem تعني «بأن/عن طريق أن» وتتبعها جملة تابعة بفعل في آخرها.",
+    errorType: "grammar",
+    optionExplanations: [
+      undefined,
+      "«ohne» تتطلب ... zu مع المصدر، وهنا لدينا جملة تابعة بفعل مصرّف.",
+      "«anstatt» تتطلب ... zu مع المصدر، وهنا لدينا جملة تابعة بفعل مصرّف.",
+    ],
+  },
+  {
+    id: "r2",
+    type: "multiple-choice",
+    instructionAr: "مراجعة من b2-05 (تراكيب الفعل الوظيفي): اختر الفعل المناسب:",
+    questionDe: "Die Firma wird den Kunden neue Informationen zur Verfügung ___.",
+    options: ["stellen", "geben", "machen"],
+    correctIndex: 0,
+    explanation: "التركيب الثابت: zur Verfügung stellen = يوفّر/يتيح.",
+    errorType: "grammar",
+    optionExplanations: [
+      undefined,
+      "«geben» لا تشكّل هذا التركيب الثابت مع zur Verfügung.",
+      "«machen» لا تشكّل هذا التركيب الثابت مع zur Verfügung.",
+    ],
+  },
+  {
+    id: "r3",
+    type: "fill-blank",
+    instructionAr: "مراجعة من b2-05 (ohne … zu): أكمل:",
+    template: "Er ging weg, ___ sich zu verabschieden.",
+    blanks: [
+      { correct: "ohne", options: ["ohne", "weil", "indem"] },
+    ],
+    explanation: "ohne + zu + مصدر تعني «دون أن»: ohne sich zu verabschieden.",
+    errorType: "grammar",
+  },
+];
