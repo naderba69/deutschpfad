@@ -11,6 +11,16 @@ import type { LLMCallInput, LLMMessage, LLMProviderName, LLMResult, LLMStatus } 
  * 4) زيادة العدّاد + حفظ الرد في التخزين المؤقت
  */
 
+/** الأغراض الحوارية: التفكير الداخلي يستهلك مخرجات قصيرة ويؤخر الرد — نعطّله فيها */
+const CONVERSATIONAL_PURPOSE = /^(ask-teacher|voice-teacher|chat)/;
+
+/** يفصل رسائل النظام (تُرسل كتعليمات نظام) عن محادثة المستخدم/المساعد */
+export function splitSystem(messages: LLMMessage[]): {system: string; convo: LLMMessage[]} {
+  const system = messages.filter((m) => m.role === "system").map((m) => m.content).join("\n\n");
+  const convo = messages.filter((m) => m.role !== "system");
+  return {system, convo};
+}
+
 export async function callLLM(input: LLMCallInput): Promise<LLMResult> {
   const purpose = input.purpose ?? "general";
   const cacheKey = input.cacheKey ?? (await hashLLMRequest(input.messages, purpose));
@@ -55,6 +65,7 @@ export async function callLLM(input: LLMCallInput): Promise<LLMResult> {
       const content = await callGeminiDirect(userKey, input.messages, {
         maxTokens: input.maxTokens,
         temperature: input.temperature,
+        thinkingBudget: CONVERSATIONAL_PURPOSE.test(purpose) ? 0 : undefined,
       });
       await incrementUsage();
       void setCachedLLM(cacheKey, content, purpose);
@@ -72,11 +83,14 @@ export async function callLLM(input: LLMCallInput): Promise<LLMResult> {
 
   // 3) الاستدعاء عبر الخادم (معطّل افتراضياً — لا يُستدعى بمفتاح المالك)
   try {
+    // رسائل النظام تُرسل في حقل مستقل: الخادم لا يقبل دور system داخل messages
+    const {system, convo} = splitSystem(input.messages);
     const res = await fetch("/api/llm", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        messages: input.messages,
+        messages: convo,
+        system: system || undefined,
         purpose,
         maxTokens: input.maxTokens,
         temperature: input.temperature,
@@ -131,27 +145,33 @@ export async function fetchLLMStatus(): Promise<LLMStatus | null> {
 export async function callGeminiDirect(
   apiKey: string,
   messages: LLMMessage[],
-  opts: { maxTokens?: number; temperature?: number } = {},
+  opts: { maxTokens?: number; temperature?: number; thinkingBudget?: number } = {},
 ): Promise<string> {
   const model = "gemini-2.5-flash";
   // المفتاح في ترويسة الطلب لا في الرابط (لا يظهر في عناوين الصفحات أو السجلات)
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
 
-  // نبني المحتوى: كل الرسائل بنصها
-  const contents = messages.map((m) => ({
+  // رسائل النظام تذهب إلى systemInstruction (لا تُرسل كدور مستخدم)
+  const {system, convo} = splitSystem(messages);
+  const contents = convo.map((m) => ({
     role: m.role === "assistant" ? "model" : "user",
     parts: [{ text: m.content }],
   }));
+  const generationConfig: Record<string, unknown> = {
+    maxOutputTokens: Math.min(2048, Math.max(1, Math.round(opts.maxTokens ?? 512))),
+    temperature: Math.min(2, Math.max(0, opts.temperature ?? 0.7)),
+  };
+  if (opts.thinkingBudget !== undefined) {
+    generationConfig.thinkingConfig = { thinkingBudget: opts.thinkingBudget };
+  }
 
   const res = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey },
     body: JSON.stringify({
+      ...(system ? { systemInstruction: { parts: [{ text: system }] } } : {}),
       contents,
-      generationConfig: {
-        maxOutputTokens: Math.min(2048, Math.max(1, Math.round(opts.maxTokens ?? 512))),
-        temperature: Math.min(2, Math.max(0, opts.temperature ?? 0.7)),
-      },
+      generationConfig,
     }),
     signal: AbortSignal.timeout(45_000),
   });
@@ -165,6 +185,6 @@ export async function callGeminiDirect(
     candidates?: { content?: { parts?: { text?: string }[] } }[];
   };
   const text = data.candidates?.[0]?.content?.parts?.map((p) => p.text ?? "").join("") ?? "";
-  if (!text) throw new Error("لا ردّ من المزود");
+  if (!text.trim()) throw new Error("أعاد المزود ردّاً فارغاً — حاول مرة أخرى");
   return text;
 }
